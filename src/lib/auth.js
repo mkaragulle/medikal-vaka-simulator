@@ -37,6 +37,19 @@ export function signOutDemoUser() {
   localStorage.removeItem(SESSION_STORAGE_KEY);
 }
 
+
+export function createDemoSession() {
+  const demoUser = {
+    id: 'demo-user',
+    email: 'demo@medsim.local',
+    name: 'Demo Kullanıcısı',
+    provider: 'demo',
+    createdAt: new Date().toISOString(),
+  };
+
+  return saveSession(demoUser);
+}
+
 export function registerWithEmail({ email, password }) {
   const normalizedEmail = String(email || '').trim().toLowerCase();
   if (!normalizedEmail || !normalizedEmail.includes('@')) {
@@ -97,7 +110,7 @@ export async function continueWithGoogle() {
     return saveSession(demoUser);
   }
 
-  const [{ initializeApp }, { getAuth, GoogleAuthProvider, signInWithPopup }] = await Promise.all([
+  const [{ initializeApp, getApp, getApps }, { getAuth, GoogleAuthProvider, signInWithPopup }] = await Promise.all([
     import('firebase/app'),
     import('firebase/auth'),
   ]);
@@ -112,7 +125,7 @@ export async function continueWithGoogle() {
     measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
   };
 
-  const app = initializeApp(firebaseConfig);
+  const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
   const credential = await signInWithPopup(auth, provider);

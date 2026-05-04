@@ -1,6 +1,6 @@
 # MedSim Pro Auth Redesign
 
-Modern, sade ve premium görünümlü MedSim Pro giriş/kayıt ekranı.
+Modern, sade, hızlı giriş odaklı ve responsive MedSim Pro giriş/kayıt ekranı.
 
 ## Kurulum
 
@@ -26,7 +26,7 @@ http://localhost:5173
 
 ## Google Auth
 
-Bu zipte Google butonu hazırdır. Firebase environment değişkenleri girilmezse demo Google kullanıcı oluşturur ve localStorage üzerinde oturum açar.
+Google butonu hazırdır. Firebase environment değişkenleri girilmezse demo Google kullanıcısı oluşturur ve localStorage üzerinde oturum açar.
 
 Gerçek Firebase Google Auth için `.env.example` dosyasını `.env` olarak kopyala ve Firebase config bilgilerini doldur:
 
@@ -36,11 +36,11 @@ cp .env.example .env
 
 Vercel'de aynı değişkenleri Project Settings > Environment Variables bölümüne ekle.
 
-## Tasarım Notları
+## Bu sürümde yapılanlar
 
-- Sol panel sadeleştirildi.
-- Stetoskop/gereksiz medikal obje kaldırıldı.
-- Feature cardlarda kutu içinde kutu yapısı kullanılmadı.
-- Google ile devam et butonu eklendi.
-- Form alanları ve hata/başarı mesajları daha sakin hale getirildi.
-- Desktop/tablet/mobil responsive yapı kullanıldı.
+- Giriş ekranı daha modern, sade ve premium SaaS hissinde yeniden tasarlandı.
+- Google ile devam et ve demo ile hızlı başla aksiyonları öne alındı.
+- E-posta girişi daha kompakt hale getirildi.
+- Gereksiz büyük başlıklar, ağır metinler ve göz yoran kart yapısı azaltıldı.
+- Mobil/tablet/desktop responsive yapı iyileştirildi.
+- Firebase tekrar initialize hatasını önlemek için güvenli app initialization eklendi.
