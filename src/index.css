@@ -16911,6 +16911,138 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
 .flask-motion-bubble.bubble-one { animation: flask-bubble-rise 900ms ease-in-out infinite; }
 .flask-motion-bubble.bubble-two { width: 4px; height: 4px; animation: flask-bubble-rise 900ms ease-in-out 230ms infinite; }
 
+.branch-accent-line {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  width: 28px;
+  height: 6px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--route-accent) 55%, white 45%), transparent);
+  opacity: .5;
+}
+
+.flask-liquid-line {
+  animation: flask-liquid-shimmer 1200ms ease-in-out infinite;
+}
+
+.brain-node,
+.sparkle-dot,
+.bone-joint,
+.shield-cross-glow,
+.breath-wave,
+.surgery-streak,
+.shield-halo {
+  position: absolute;
+  pointer-events: none;
+}
+
+.brain-node {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--route-accent) 82%, white 18%);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--route-accent) 56%, transparent);
+  opacity: .25;
+}
+
+.brain-node.node-one { top: 10px; left: 14px; animation: brain-node-pulse 980ms ease-in-out infinite; }
+.brain-node.node-two { top: 16px; right: 10px; animation: brain-node-pulse 980ms ease-in-out 180ms infinite; }
+.brain-node.node-three { bottom: 12px; left: 50%; transform: translateX(-50%); animation: brain-node-pulse 980ms ease-in-out 360ms infinite; }
+
+.sparkle-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--route-accent) 70%, white 30%);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--route-accent) 48%, transparent);
+  opacity: .2;
+}
+
+.sparkle-dot::before,
+.sparkle-dot::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+}
+
+.sparkle-dot::before { width: 10px; height: 2px; }
+.sparkle-dot::after { width: 2px; height: 10px; }
+.sparkle-one { top: 8px; left: 12px; color: color-mix(in srgb, var(--route-accent) 76%, white 24%); animation: sparkle-twinkle 860ms ease-in-out infinite; }
+.sparkle-two { top: 12px; right: 10px; color: color-mix(in srgb, var(--route-accent) 76%, white 24%); animation: sparkle-twinkle 860ms ease-in-out 240ms infinite; }
+.sparkle-three { bottom: 10px; right: 16px; color: color-mix(in srgb, var(--route-accent) 76%, white 24%); animation: sparkle-twinkle 860ms ease-in-out 420ms infinite; }
+
+.surgery-streak {
+  left: 50%;
+  top: 50%;
+  width: 36px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--route-accent) 74%, white 26%), transparent);
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(-35deg);
+  box-shadow: 0 0 12px color-mix(in srgb, var(--route-accent) 38%, transparent);
+}
+
+.surgery-streak.streak-one { animation: surgery-streak-pass 820ms ease-out infinite; }
+.surgery-streak.streak-two { animation: surgery-streak-pass 820ms ease-out 180ms infinite; }
+
+.breath-wave {
+  left: 50%;
+  top: 50%;
+  width: 30px;
+  height: 18px;
+  border: 1px solid color-mix(in srgb, var(--route-accent) 42%, transparent);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.breath-wave.wave-one { animation: breath-wave-expand 1050ms ease-out infinite; }
+.breath-wave.wave-two { animation: breath-wave-expand 1050ms ease-out 240ms infinite; }
+
+.shield-halo {
+  inset: 8px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--route-accent) 36%, transparent);
+  opacity: 0;
+}
+
+.shield-halo.halo-one { animation: shield-halo-pulse 900ms ease-out infinite; }
+.shield-halo.halo-two { animation: shield-halo-pulse 900ms ease-out 240ms infinite; }
+
+.shield-cross-glow {
+  width: 18px;
+  height: 18px;
+  left: 50%;
+  top: 50%;
+  border-radius: 999px;
+  transform: translate(-50%, -42%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--route-accent) 46%, white 54%), transparent 70%);
+  opacity: 0;
+  filter: blur(1px);
+  animation: shield-cross-pulse 900ms ease-in-out infinite;
+}
+
+.bone-joint {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--route-accent) 78%, white 22%);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--route-accent) 34%, transparent);
+  opacity: .58;
+}
+
+.bone-joint.joint-one { top: 17px; left: 14px; animation: bone-joint-pulse 900ms ease-in-out infinite; }
+.bone-joint.joint-two { top: 17px; right: 14px; animation: bone-joint-pulse 900ms ease-in-out 180ms infinite; }
+.bone-joint.joint-three { bottom: 17px; left: 14px; animation: bone-joint-pulse 900ms ease-in-out 360ms infinite; }
+.bone-joint.joint-four { bottom: 17px; right: 14px; animation: bone-joint-pulse 900ms ease-in-out 540ms infinite; }
+
 .branch-route-copy { display: grid; justify-items: center; min-width: 0; text-align: center; }
 .branch-route-copy.solo strong { color: var(--text-primary); font-size: clamp(24px, 2vw, 29px); font-weight: 820; line-height: 1.08; letter-spacing: -0.04em; overflow-wrap: break-word; text-shadow: 0 1px 0 rgba(255,255,255,0.04); }
 .branch-route-reveal { animation: branch-page-reveal 420ms var(--ease-emphasized) both !important; }
@@ -16930,6 +17062,14 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
 @keyframes cardio-heart-glow-loop { 0%, 100% { opacity: 0; } 26% { opacity: .22; } 46% { opacity: .86; } 64% { opacity: .18; } }
 @keyframes flask-sway-loop { 0%, 100% { transform: rotate(0deg) translateY(0); } 25% { transform: rotate(-11deg) translateY(-2px); } 50% { transform: rotate(9deg) translateY(1px); } 76% { transform: rotate(-4deg) translateY(0); } }
 @keyframes flask-bubble-rise { 0% { transform: translate(-50%, 8px) scale(.6); opacity: 0; } 35% { opacity: .78; } 100% { transform: translate(-50%, -28px) scale(1); opacity: 0; } }
+@keyframes flask-liquid-shimmer { 0%, 100% { opacity: .36; transform: translateX(-50%) scaleX(.8); } 50% { opacity: .82; transform: translateX(-50%) scaleX(1.06); } }
+@keyframes brain-node-pulse { 0%, 100% { opacity: .18; transform: scale(.85); } 48% { opacity: 1; transform: scale(1.28); } }
+@keyframes sparkle-twinkle { 0%, 100% { opacity: .18; transform: scale(.7); } 40% { opacity: .95; transform: scale(1.25); } 65% { opacity: .42; transform: scale(.9); } }
+@keyframes surgery-streak-pass { 0%, 100% { opacity: 0; transform: translate(-50%, -50%) rotate(-35deg) scaleX(.2); } 28% { opacity: .9; transform: translate(-50%, -50%) rotate(-35deg) scaleX(1); } 60% { opacity: .24; } }
+@keyframes breath-wave-expand { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.72); } 26% { opacity: .75; } 100% { opacity: 0; transform: translate(-50%, -50%) scale(1.52); } }
+@keyframes shield-halo-pulse { 0% { opacity: 0; transform: scale(.74); } 28% { opacity: .6; } 100% { opacity: 0; transform: scale(1.28); } }
+@keyframes shield-cross-pulse { 0%, 100% { opacity: 0; transform: translate(-50%, -42%) scale(.85); } 42% { opacity: .82; transform: translate(-50%, -42%) scale(1.18); } }
+@keyframes bone-joint-pulse { 0%, 100% { opacity: .42; transform: scale(1); } 42% { opacity: .96; transform: scale(1.24); } }
 @keyframes neuro-glow-loop { 0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); } 45% { transform: scale(1.1); filter: drop-shadow(0 0 15px color-mix(in srgb, currentColor 36%, transparent)); } }
 @keyframes pediatrics-bounce-loop { 0%, 100% { transform: translateY(0) scale(1); } 28% { transform: translateY(-8px) scale(1.04); } 56% { transform: translateY(0) scale(.98); } }
 @keyframes scalpel-slice-loop { 0%, 100% { transform: translateX(0) rotate(0deg); } 28% { transform: translateX(8px) rotate(-18deg); } 54% { transform: translateX(-3px) rotate(10deg); } }

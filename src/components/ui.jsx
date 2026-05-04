@@ -97,10 +97,59 @@ export function BranchTransitionVisual({ branchId, iconName }) {
     <span className={`branch-transition-visual branch-transition-visual-${branchId || 'default'}`.trim()} aria-hidden="true">
       <span className="branch-transition-shine" />
       <Icon name={iconName || 'Activity'} className="branch-transition-icon" size={66} strokeWidth={1.9} />
+
       {branchId === 'internal-medicine' ? (
         <>
           <span className="flask-motion-bubble bubble-one" />
           <span className="flask-motion-bubble bubble-two" />
+          <span className="branch-accent-line flask-liquid-line" />
+        </>
+      ) : null}
+
+      {branchId === 'neurology' ? (
+        <>
+          <span className="brain-node node-one" />
+          <span className="brain-node node-two" />
+          <span className="brain-node node-three" />
+        </>
+      ) : null}
+
+      {branchId === 'pediatrics' ? (
+        <>
+          <span className="sparkle-dot sparkle-one" />
+          <span className="sparkle-dot sparkle-two" />
+          <span className="sparkle-dot sparkle-three" />
+        </>
+      ) : null}
+
+      {branchId === 'general-surgery' ? (
+        <>
+          <span className="surgery-streak streak-one" />
+          <span className="surgery-streak streak-two" />
+        </>
+      ) : null}
+
+      {branchId === 'pulmonology' ? (
+        <>
+          <span className="breath-wave wave-one" />
+          <span className="breath-wave wave-two" />
+        </>
+      ) : null}
+
+      {branchId === 'infectious-diseases' ? (
+        <>
+          <span className="shield-halo halo-one" />
+          <span className="shield-halo halo-two" />
+          <span className="shield-cross-glow" />
+        </>
+      ) : null}
+
+      {branchId === 'orthopedics' ? (
+        <>
+          <span className="bone-joint joint-one" />
+          <span className="bone-joint joint-two" />
+          <span className="bone-joint joint-three" />
+          <span className="bone-joint joint-four" />
         </>
       ) : null}
     </span>
