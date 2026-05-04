@@ -5,7 +5,7 @@ import CaseList from './components/CaseList.jsx';
 import CasePlayer from './components/CasePlayer.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import ExamResults from './components/ExamResults.jsx';
-import { Icon } from './components/ui.jsx';
+import { Icon, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById, getCasesByBranch } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
@@ -15,6 +15,8 @@ import { localBackend } from './services/localBackend.js';
 const STATS_STORAGE_KEY = 'medsim-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'medsim-exam-history-v2';
 const THEME_STORAGE_KEY = 'medsim-theme-v1';
+const BRANCH_TRANSITION_MS = 980;
+const BRANCH_TRANSITION_FADE_MS = 240;
 
 const defaultStats = {
   attempts: 0,
@@ -154,19 +156,31 @@ function App() {
 
   const handleSelectBranch = (branchId) => {
     const branchPool = getCasesByBranch(branchId);
+    const branchMeta = resolveBranchById(branchId);
 
     clearBranchRouteTimers();
-    setSelectedBranchId(branchId);
-    setSelectedCaseId(branchPool[0]?.id ?? null);
-    setIsCaseSidebarOpen(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setBranchRouteTransition({
+      active: true,
+      phase: 'selecting',
+      branchId,
+      iconName: branchIconById[branchId] ?? 'Activity',
+      title: branchMeta?.name ?? branchMeta?.shortName ?? 'Klinik branş',
+      caseCount: branchPool.length,
+    });
 
-    setBranchRouteTransition({ active: true, phase: 'reveal', branchId });
+    const selectTimer = window.setTimeout(() => {
+      setSelectedBranchId(branchId);
+      setSelectedCaseId(branchPool[0]?.id ?? null);
+      setIsCaseSidebarOpen(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setBranchRouteTransition((current) => current ? { ...current, phase: 'reveal' } : null);
+    }, BRANCH_TRANSITION_MS);
+
     const finishTimer = window.setTimeout(() => {
       setBranchRouteTransition(null);
-    }, 560);
+    }, BRANCH_TRANSITION_MS + BRANCH_TRANSITION_FADE_MS);
 
-    branchRouteTimers.current = [finishTimer];
+    branchRouteTimers.current = [selectTimer, finishTimer];
   };
 
   const handleSelectCase = (caseId) => {
@@ -370,12 +384,17 @@ function App() {
         </div>
       </nav>
 
-      {branchRouteTransition?.active && branchRouteTransition.phase === 'selecting' ? (
+      {branchRouteTransition?.active ? (
         <div className={`branch-route-overlay ${branchRouteTransition.phase} branch-route-${branchRouteTransition.branchId || 'default'}`.trim()} aria-hidden="true">
-          <div className="branch-route-card">
-            <span className={`branch-route-orb route-icon-${branchRouteTransition.branchId || 'default'}`.trim()}>
-              <Icon name={branchRouteTransition.iconName || 'Activity'} />
-            </span>
+          <div className="branch-route-stage">
+            <div className={`branch-route-hero route-icon-${branchRouteTransition.branchId || 'default'}`.trim()}>
+              <span className="branch-route-ring ring-one" />
+              <span className="branch-route-ring ring-two" />
+              <span className="branch-route-glow" />
+              <span className="branch-route-orb">
+                <Icon name={branchRouteTransition.iconName || 'Activity'} />
+              </span>
+            </div>
             <div className="branch-route-copy">
               <small>Olgu ekranı hazırlanıyor</small>
               <strong>{branchRouteTransition.title}</strong>
@@ -486,7 +505,13 @@ function App() {
             totalBranches={branches.length}
             examCount={examHistory.length}
           />
-          <BranchSelector branches={branches} cases={cases} onSelectBranch={handleSelectBranch} />
+          <BranchSelector
+            branches={branches}
+            cases={cases}
+            onSelectBranch={handleSelectBranch}
+            launchingBranchId={branchRouteTransition?.phase === 'selecting' ? branchRouteTransition.branchId : null}
+            isTransitioning={Boolean(branchRouteTransition?.active)}
+          />
         </section>
       )}
     </main>

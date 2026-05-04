@@ -1,7 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
 import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
-
-const BRANCH_LAUNCH_DELAY_MS = 420;
 
 function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch }) {
   const branchCases = cases.filter((clinicalCase) => clinicalCase.branchId === branch.id);
@@ -18,11 +15,13 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch }) {
       type="button"
       className={`branch-card ${isLaunching ? 'is-launching' : ''}`.trim()}
       data-branch={branch.id}
+      data-launch-state={isLaunching ? 'launching' : 'idle'}
       onClick={() => onLaunchBranch(branch.id)}
       aria-label={`${branch.name} branşını aç`}
       aria-busy={isLaunching ? 'true' : 'false'}
       disabled={isLocked && !isLaunching}
     >
+      <span className="branch-launch-wave" aria-hidden="true" />
       <div className="branch-card-head">
         <IconBadge icon={branchIconById[branch.id] ?? 'Stethoscope'} tone={tone} />
         <span className="branch-count">{isLaunching ? 'Açılıyor' : `${totalCases} olgu`}</span>
@@ -48,24 +47,10 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch }) {
   );
 }
 
-function BranchSelector({ branches, cases, onSelectBranch }) {
-  const [launchingBranchId, setLaunchingBranchId] = useState(null);
-  const launchTimerRef = useRef(null);
-
-  useEffect(() => () => {
-    if (launchTimerRef.current) {
-      window.clearTimeout(launchTimerRef.current);
-    }
-  }, []);
-
+function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = null, isTransitioning = false }) {
   const handleLaunchBranch = (branchId) => {
-    if (launchingBranchId) return;
-
-    setLaunchingBranchId(branchId);
-
-    launchTimerRef.current = window.setTimeout(() => {
-      onSelectBranch(branchId);
-    }, BRANCH_LAUNCH_DELAY_MS);
+    if (isTransitioning) return;
+    onSelectBranch(branchId);
   };
 
   return (
@@ -83,7 +68,7 @@ function BranchSelector({ branches, cases, onSelectBranch }) {
             branch={branch}
             cases={cases}
             isLaunching={launchingBranchId === branch.id}
-            isLocked={Boolean(launchingBranchId)}
+            isLocked={isTransitioning}
             onLaunchBranch={handleLaunchBranch}
           />
         ))}

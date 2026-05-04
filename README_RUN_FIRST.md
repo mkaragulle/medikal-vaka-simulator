@@ -1,16 +1,47 @@
-# Medikal Vaka Simulator
+# MedSim Pro — Vercel Uyumlu Temiz Kaynak Kod
 
-## Çalıştırma
+Bu paket Vercel deploy için hazırlanmış temiz kaynak kod paketidir. `node_modules`, `dist` ve `package-lock.json` ZIP içine bilerek eklenmemiştir.
 
-PowerShell'de proje klasörüne girin ve komutları tek tek çalıştırın:
+## Lokal Vercel build testi
+
+PowerShell'de proje klasörüne girin:
 
 ```powershell
-npm install
-npm run dev
+cd C:\Users\Muhammed\viteproject\medikal-vaka-simulator
 ```
 
-`>>` görürseniz terminal yarım komut modundadır. `Ctrl + C` ile çıkın ve komutları tekrar tek tek girin.
+Kurulum:
 
-## Not
+```powershell
+npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund
+```
 
-Bu ZIP temiz kaynak kod paketidir. `node_modules` ve `dist` bilerek eklenmemiştir; bunlar bilgisayarınızda `npm install` ve `npm run build/dev` ile yeniden oluşturulur.
+Build testi:
+
+```powershell
+npm run build
+```
+
+Build başarılıysa proje içinde `dist` klasörü oluşur.
+
+## Vercel ayarları
+
+Install Command:
+
+```bash
+npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund
+```
+
+Build Command:
+
+```bash
+npm run build
+```
+
+Output Directory:
+
+```bash
+dist
+```
+
+Bu ayarlar ayrıca `vercel.json` içinde de tanımlıdır.
