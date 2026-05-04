@@ -13,6 +13,7 @@ import { cases, getCaseById, getCasesByBranch } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
 import { pickRandom, shuffleArray } from './utils/randomize.js';
 import { localBackend } from './services/localBackend.js';
+import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
 
 const STATS_STORAGE_KEY = 'medsim-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'medsim-exam-history-v2';
@@ -199,6 +200,58 @@ function App() {
     setExamState(null);
     setMode('study');
     return { ok: true, message: 'Giriş başarılı.' };
+  };
+
+
+  const activateUserSession = (user) => {
+    localBackend.write(CURRENT_USER_STORAGE_KEY, user.id);
+    setCurrentUser(user);
+    setSessionStats(user.stats ?? defaultStats);
+    setExamHistory(user.examHistory ?? []);
+    setWrongAnswers(user.wrongAnswers ?? []);
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setExamState(null);
+    setMode('study');
+  };
+
+  const handleGoogleLogin = async () => {
+    if (!isGoogleAuthConfigured()) {
+      return {
+        ok: false,
+        message: 'Google girişi hazır değil. Vercel Environment Variables içine Firebase bilgilerini eklemelisin.',
+      };
+    }
+
+    const result = await signInWithGoogle();
+    if (!result.ok) return result;
+
+    const profile = result.profile;
+    const normalizedEmail = normalizeEmail(profile.email);
+    const users = loadUsers();
+    const existingIndex = users.findIndex((item) => normalizeEmail(item.email) === normalizedEmail);
+    const baseUser = existingIndex >= 0 ? sanitizeUser(users[existingIndex]) : null;
+
+    const googleUser = sanitizeUser({
+      ...(baseUser ?? {}),
+      id: baseUser?.id ?? buildUserId(normalizedEmail),
+      name: profile.name || baseUser?.name || normalizedEmail.split('@')[0],
+      email: normalizedEmail,
+      provider: 'google',
+      googleUid: profile.googleUid,
+      photoURL: profile.photoURL,
+      createdAt: baseUser?.createdAt ?? Date.now(),
+      lastLoginAt: Date.now(),
+      stats: baseUser?.stats ?? defaultStats,
+      examHistory: baseUser?.examHistory ?? [],
+      wrongAnswers: baseUser?.wrongAnswers ?? [],
+    });
+
+    const nextUsers = existingIndex >= 0 ? [...users] : [...users, googleUser];
+    if (existingIndex >= 0) nextUsers[existingIndex] = googleUser;
+    saveUsers(nextUsers);
+    activateUserSession(googleUser);
+    return { ok: true, message: 'Google ile giriş başarılı.' };
   };
 
   const handleLogout = () => {
@@ -528,6 +581,7 @@ function App() {
         <AuthPanel
           onLogin={handleLogin}
           onRegister={handleRegister}
+          onGoogleLogin={handleGoogleLogin}
           theme={theme}
           onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
         />
