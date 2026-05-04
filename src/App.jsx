@@ -1,793 +1,333 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
-import './index.css';
-import BranchSelector from './components/BranchSelector.jsx';
-import CaseList from './components/CaseList.jsx';
-import CasePlayer from './components/CasePlayer.jsx';
-import HomeCommandCenter from './components/HomeCommandCenter.jsx';
-import AuthPanel from './components/AuthPanel.jsx';
-import WrongAnswersPanel from './components/WrongAnswersPanel.jsx';
-import ExamResults from './components/ExamResults.jsx';
-import { Icon, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
-import { branches } from './data/branches.js';
-import { cases, getCaseById, getCasesByBranch } from './data/cases.js';
-import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
-import { pickRandom, shuffleArray } from './utils/randomize.js';
-import { localBackend } from './services/localBackend.js';
-import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
+import { useMemo, useState } from 'react';
+import {
+  Activity,
+  ArrowRight,
+  ClipboardList,
+  Eye,
+  EyeOff,
+  Lock,
+  Mail,
+  Moon,
+  RefreshCw,
+  ShieldCheck,
+  Sparkles,
+  Trophy,
+  UserRound,
+} from 'lucide-react';
+import {
+  continueWithGoogle,
+  getCurrentSession,
+  loginWithEmail,
+  registerWithEmail,
+  signOutDemoUser,
+} from './lib/auth.js';
 
-const STATS_STORAGE_KEY = 'medsim-session-stats-v2';
-const EXAM_HISTORY_STORAGE_KEY = 'medsim-exam-history-v2';
-const THEME_STORAGE_KEY = 'medsim-theme-v1';
-const BRANCH_TRANSITION_MS = 1750;
-const BRANCH_TRANSITION_FADE_MS = 280;
-const USERS_STORAGE_KEY = 'auth-users-v1';
-const CURRENT_USER_STORAGE_KEY = 'auth-current-user-v1';
-
-const defaultStats = {
-  attempts: 0,
-  correct: 0,
-  score: 0,
-  streak: 0,
-  bestStreak: 0,
-  accuracy: 0,
-};
-
-function loadStoredValue(key, fallback) {
-  return localBackend.read(key, fallback);
+function GoogleIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-5 w-5">
+      <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+      <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.24 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+      <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" />
+      <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84C6.71 7.31 9.14 5.38 12 5.38z" />
+    </svg>
+  );
 }
 
-function normalizeEmail(email = '') {
-  return String(email).trim().toLocaleLowerCase('tr');
-}
+const features = [
+  {
+    title: 'Yanlışlarım',
+    text: 'Yanlış yaptığın vakaları gör ve öğren.',
+    icon: ClipboardList,
+  },
+  {
+    title: 'Performans',
+    text: 'İlerlemeni takip et, gelişimini gör.',
+    icon: Trophy,
+  },
+  {
+    title: 'Tekrar çöz',
+    text: 'İstediğin vakaya kolayca geri dön.',
+    icon: RefreshCw,
+  },
+];
 
-function buildUserId(email = '') {
-  return normalizeEmail(email).replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || `user-${Date.now()}`;
-}
+export default function App() {
+  const [mode, setMode] = useState('login');
+  const [showPassword, setShowPassword] = useState(false);
+  const [remember, setRemember] = useState(true);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [session, setSession] = useState(() => getCurrentSession());
+  const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-function loadUsers() {
-  return localBackend.read(USERS_STORAGE_KEY, []);
-}
-
-function saveUsers(users) {
-  localBackend.write(USERS_STORAGE_KEY, users);
-}
-
-function loadCurrentUser() {
-  const currentUserId = localBackend.read(CURRENT_USER_STORAGE_KEY, null);
-  if (!currentUserId) return null;
-  return loadUsers().find((user) => user.id === currentUserId) ?? null;
-}
-
-function sanitizeUser(user) {
-  if (!user) return null;
-  return {
-    ...user,
-    stats: user.stats ?? defaultStats,
-    examHistory: Array.isArray(user.examHistory) ? user.examHistory : [],
-    wrongAnswers: Array.isArray(user.wrongAnswers) ? user.wrongAnswers : [],
-  };
-}
-
-function buildExamPool(sourceCases = []) {
-  const primary = shuffleArray(sourceCases).slice(0, Math.min(10, sourceCases.length));
-  if (primary.length >= 10) return primary;
-
-  const usedIds = new Set(primary.map((item) => item.id));
-  const backup = shuffleArray(cases).filter((item) => !usedIds.has(item.id)).slice(0, 10 - primary.length);
-  return [...primary, ...backup];
-}
-
-function resolveBranchById(branchId) {
-  return branches.find((branch) => branch.id === branchId) ?? null;
-}
-
-function App() {
-  const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
-  const [selectedBranchId, setSelectedBranchId] = useState(null);
-  const [selectedCaseId, setSelectedCaseId] = useState(null);
-  const [mode, setMode] = useState('study');
-  const [hardMode, setHardMode] = useState(false);
-  const [theme, setTheme] = useState(() => loadStoredValue(THEME_STORAGE_KEY, 'dark'));
-  const [tutorMode, setTutorMode] = useState(true);
-  const [sessionStats, setSessionStats] = useState(() => currentUser?.stats ?? loadStoredValue(STATS_STORAGE_KEY, defaultStats));
-  const [examHistory, setExamHistory] = useState(() => currentUser?.examHistory ?? loadStoredValue(EXAM_HISTORY_STORAGE_KEY, []));
-  const [wrongAnswers, setWrongAnswers] = useState(() => currentUser?.wrongAnswers ?? []);
-  const [examState, setExamState] = useState(null);
-  const [clockTick, setClockTick] = useState(Date.now());
-  const [isCaseSidebarOpen, setIsCaseSidebarOpen] = useState(true);
-  const [branchRouteTransition, setBranchRouteTransition] = useState(null);
-  const branchRouteTimers = useRef([]);
-
-  const selectedBranch = useMemo(
-    () => (selectedBranchId ? resolveBranchById(selectedBranchId) : null),
-    [selectedBranchId],
+  const copy = useMemo(
+    () => ({
+      eyebrow: mode === 'login' ? 'KULLANICI GİRİŞİ' : 'YENİ HESAP',
+      title: mode === 'login' ? 'Giriş yap' : 'Kayıt ol',
+      subtitle: mode === 'login'
+        ? 'Hesabına dön ve kaldığın yerden devam et.'
+        : 'Klinik vaka pratiğini kişisel hesabında başlat.',
+      submit: mode === 'login' ? 'Giriş yap' : 'Hesap oluştur',
+    }),
+    [mode]
   );
 
-  const branchCases = useMemo(
-    () => (selectedBranchId ? getCasesByBranch(selectedBranchId) : []),
-    [selectedBranchId],
-  );
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setLoading(true);
+    setStatus(null);
 
-  const selectedCase = useMemo(() => {
-    if (examState?.active) {
-      return getCaseById(examState.caseIds[examState.currentIndex]);
+    try {
+      const user = mode === 'login'
+        ? loginWithEmail({ email, password })
+        : registerWithEmail({ email, password });
+      setSession(user);
+      setStatus({ type: 'success', message: 'Başarıyla giriş yapıldı.' });
+    } catch (error) {
+      setStatus({ type: 'error', message: error.message || 'İşlem tamamlanamadı.' });
+    } finally {
+      setLoading(false);
     }
-    if (!selectedCaseId) return branchCases[0] ?? null;
-    return getCaseById(selectedCaseId) ?? branchCases[0] ?? null;
-  }, [selectedCaseId, branchCases, examState]);
-
-  const persistCurrentUser = (patch) => {
-    setCurrentUser((current) => {
-      if (!current?.id) return current;
-      const users = loadUsers();
-      const userIndex = users.findIndex((user) => user.id === current.id);
-      if (userIndex < 0) return current;
-      const nextUser = sanitizeUser({ ...users[userIndex], ...patch });
-      const nextUsers = [...users];
-      nextUsers[userIndex] = nextUser;
-      saveUsers(nextUsers);
-      localBackend.write(CURRENT_USER_STORAGE_KEY, nextUser.id);
-      return nextUser;
-    });
   };
 
-  useEffect(() => {
-    if (!currentUser?.id) return;
-    persistCurrentUser({ stats: sessionStats });
-  }, [sessionStats, currentUser?.id]);
+  const handleGoogle = async () => {
+    setLoading(true);
+    setStatus(null);
 
-  useEffect(() => {
-    if (!currentUser?.id) return;
-    persistCurrentUser({ examHistory });
-  }, [examHistory, currentUser?.id]);
-
-  useEffect(() => {
-    if (!currentUser?.id) return;
-    persistCurrentUser({ wrongAnswers });
-  }, [wrongAnswers, currentUser?.id]);
-
-  const handleRegister = ({ name, email, password, confirmPassword }) => {
-    const normalizedEmail = normalizeEmail(email);
-    const displayName = String(name || '').trim();
-    if (!displayName) return { ok: false, message: 'Ad soyad alanı boş olamaz.' };
-    if (!normalizedEmail || !normalizedEmail.includes('@')) return { ok: false, message: 'Geçerli bir e-posta yazmalısın.' };
-    if (String(password || '').length < 4) return { ok: false, message: 'Şifre en az 4 karakter olmalı.' };
-    if (password !== confirmPassword) return { ok: false, message: 'Şifreler eşleşmiyor.' };
-
-    const users = loadUsers();
-    if (users.some((user) => normalizeEmail(user.email) === normalizedEmail)) {
-      return { ok: false, message: 'Bu e-posta ile kayıtlı bir hesap zaten var.' };
-    }
-
-    const newUser = sanitizeUser({
-      id: buildUserId(normalizedEmail),
-      name: displayName,
-      email: normalizedEmail,
-      password,
-      createdAt: Date.now(),
-      stats: defaultStats,
-      examHistory: [],
-      wrongAnswers: [],
-    });
-
-    saveUsers([...users, newUser]);
-    localBackend.write(CURRENT_USER_STORAGE_KEY, newUser.id);
-    setCurrentUser(newUser);
-    setSessionStats(newUser.stats);
-    setExamHistory([]);
-    setWrongAnswers([]);
-    setSelectedBranchId(null);
-    setSelectedCaseId(null);
-    setExamState(null);
-    setMode('study');
-    return { ok: true, message: 'Kayıt oluşturuldu.' };
-  };
-
-  const handleLogin = ({ email, password }) => {
-    const normalizedEmail = normalizeEmail(email);
-    const user = sanitizeUser(loadUsers().find((item) => normalizeEmail(item.email) === normalizedEmail));
-    if (!user || user.password !== password) {
-      return { ok: false, message: 'E-posta veya şifre hatalı.' };
-    }
-
-    localBackend.write(CURRENT_USER_STORAGE_KEY, user.id);
-    setCurrentUser(user);
-    setSessionStats(user.stats ?? defaultStats);
-    setExamHistory(user.examHistory ?? []);
-    setWrongAnswers(user.wrongAnswers ?? []);
-    setSelectedBranchId(null);
-    setSelectedCaseId(null);
-    setExamState(null);
-    setMode('study');
-    return { ok: true, message: 'Giriş başarılı.' };
-  };
-
-
-  const activateUserSession = (user) => {
-    localBackend.write(CURRENT_USER_STORAGE_KEY, user.id);
-    setCurrentUser(user);
-    setSessionStats(user.stats ?? defaultStats);
-    setExamHistory(user.examHistory ?? []);
-    setWrongAnswers(user.wrongAnswers ?? []);
-    setSelectedBranchId(null);
-    setSelectedCaseId(null);
-    setExamState(null);
-    setMode('study');
-  };
-
-  const handleGoogleLogin = async () => {
-    if (!isGoogleAuthConfigured()) {
-      return {
-        ok: false,
-        message: 'Google girişi hazır değil. Vercel Environment Variables içine Firebase bilgilerini eklemelisin.',
-      };
-    }
-
-    const result = await signInWithGoogle();
-    if (!result.ok) return result;
-
-    const profile = result.profile;
-    const normalizedEmail = normalizeEmail(profile.email);
-    const users = loadUsers();
-    const existingIndex = users.findIndex((item) => normalizeEmail(item.email) === normalizedEmail);
-    const baseUser = existingIndex >= 0 ? sanitizeUser(users[existingIndex]) : null;
-
-    const googleUser = sanitizeUser({
-      ...(baseUser ?? {}),
-      id: baseUser?.id ?? buildUserId(normalizedEmail),
-      name: profile.name || baseUser?.name || normalizedEmail.split('@')[0],
-      email: normalizedEmail,
-      provider: 'google',
-      googleUid: profile.googleUid,
-      photoURL: profile.photoURL,
-      createdAt: baseUser?.createdAt ?? Date.now(),
-      lastLoginAt: Date.now(),
-      stats: baseUser?.stats ?? defaultStats,
-      examHistory: baseUser?.examHistory ?? [],
-      wrongAnswers: baseUser?.wrongAnswers ?? [],
-    });
-
-    const nextUsers = existingIndex >= 0 ? [...users] : [...users, googleUser];
-    if (existingIndex >= 0) nextUsers[existingIndex] = googleUser;
-    saveUsers(nextUsers);
-    activateUserSession(googleUser);
-    return { ok: true, message: 'Google ile giriş başarılı.' };
-  };
-
-  const handleLogout = () => {
-    localBackend.remove(CURRENT_USER_STORAGE_KEY);
-    setCurrentUser(null);
-    setSessionStats(defaultStats);
-    setExamHistory([]);
-    setWrongAnswers([]);
-    setSelectedBranchId(null);
-    setSelectedCaseId(null);
-    setExamState(null);
-    setMode('study');
-  };
-
-  const addWrongAnswer = (clinicalCase, selected) => {
-    const branch = resolveBranchById(clinicalCase.branchId);
-    const item = {
-      caseId: clinicalCase.id,
-      title: clinicalCase.title,
-      branchId: clinicalCase.branchId,
-      branchName: branch?.name ?? 'Klinik branş',
-      selected,
-      correctAnswer: clinicalCase.diagnosis.correct,
-      difficulty: clinicalCase.difficulty,
-      lastWrongAt: Date.now(),
-    };
-
-    setWrongAnswers((current) => {
-      const existing = current.find((entry) => entry.caseId === clinicalCase.id);
-      if (existing) {
-        return [
-          { ...existing, ...item, attempts: (existing.attempts || 1) + 1 },
-          ...current.filter((entry) => entry.caseId !== clinicalCase.id),
-        ];
-      }
-      return [{ ...item, attempts: 1, createdAt: Date.now() }, ...current].slice(0, 80);
-    });
-  };
-
-  const removeWrongAnswer = (caseId) => {
-    setWrongAnswers((current) => current.filter((entry) => entry.caseId !== caseId));
-  };
-
-  const clearWrongAnswers = () => setWrongAnswers([]);
-
-  const openWrongCase = (caseId) => {
-    const clinicalCase = getCaseById(caseId);
-    if (!clinicalCase) return;
-    setMode('study');
-    setExamState(null);
-    setSelectedBranchId(clinicalCase.branchId);
-    setSelectedCaseId(clinicalCase.id);
-    setIsCaseSidebarOpen(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  useEffect(() => {
-    if (currentUser?.id) return;
-    localBackend.write(STATS_STORAGE_KEY, sessionStats);
-  }, [sessionStats, currentUser?.id]);
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-    localBackend.write(THEME_STORAGE_KEY, theme);
-  }, [theme]);
-
-  useEffect(() => {
-    if (currentUser?.id) return;
-    localBackend.write(EXAM_HISTORY_STORAGE_KEY, examHistory);
-  }, [examHistory, currentUser?.id]);
-
-  useEffect(() => {
-    if (!selectedBranchId) return;
-    if (!branchCases.some((clinicalCase) => clinicalCase.id === selectedCaseId)) {
-      setSelectedCaseId(branchCases[0]?.id ?? null);
-    }
-  }, [selectedBranchId, branchCases, selectedCaseId]);
-
-  useEffect(() => {
-    if (!examState?.active) return undefined;
-    const interval = window.setInterval(() => setClockTick(Date.now()), 1000);
-    return () => window.clearInterval(interval);
-  }, [examState?.active]);
-
-  useEffect(() => () => {
-    branchRouteTimers.current.forEach((timerId) => window.clearTimeout(timerId));
-  }, []);
-
-  const remainingSeconds = useMemo(() => {
-    if (!examState?.active) return 0;
-    const elapsed = Math.floor((clockTick - examState.startedAt) / 1000);
-    return Math.max(0, examState.durationSeconds - elapsed);
-  }, [examState, clockTick]);
-
-  useEffect(() => {
-    if (examState?.active && remainingSeconds === 0) {
-      finalizeExam();
-    }
-  }, [examState?.active, remainingSeconds]);
-
-  const leaderboardEntries = useMemo(() => {
-    const entries = [];
-    if (sessionStats.attempts) {
-      entries.push({
-        label: 'Toplam puan',
-        subtext: `${sessionStats.attempts} olgu · %${Math.round(sessionStats.accuracy)} doğruluk`,
-        value: sessionStats.score,
+    try {
+      const user = await continueWithGoogle();
+      setSession(user);
+      setStatus({ type: 'success', message: 'Google ile giriş tamamlandı.' });
+    } catch (error) {
+      const isPopupClosed = String(error?.code || '').includes('popup-closed');
+      setStatus({
+        type: 'error',
+        message: isPopupClosed
+          ? 'Google penceresi kapatıldı. Tekrar deneyebilirsin.'
+          : 'Google ile giriş şu anda tamamlanamadı.',
       });
+    } finally {
+      setLoading(false);
     }
-
-    if (sessionStats.bestStreak) {
-      entries.push({
-        label: 'En iyi seri',
-        subtext: 'Art arda doğru yanıt',
-        value: sessionStats.bestStreak,
-      });
-    }
-
-    if (examHistory.length) {
-      const bestExam = [...examHistory].sort((a, b) => b.score - a.score)[0];
-      entries.push({
-        label: 'En iyi blok sınav',
-        subtext: `${bestExam.correct}/${bestExam.total} doğru · %${bestExam.accuracy}`,
-        value: bestExam.score,
-      });
-    }
-
-    return entries.slice(0, 3);
-  }, [examHistory, sessionStats]);
-
-  const clearBranchRouteTimers = () => {
-    branchRouteTimers.current.forEach((timerId) => window.clearTimeout(timerId));
-    branchRouteTimers.current = [];
   };
 
-  const handleSelectBranch = (branchId) => {
-    const branchPool = getCasesByBranch(branchId);
-    const branchMeta = resolveBranchById(branchId);
-
-    clearBranchRouteTimers();
-    setBranchRouteTransition({
-      active: true,
-      phase: 'selecting',
-      branchId,
-      iconName: branchIconById[branchId] ?? 'Activity',
-      title: branchMeta?.name ?? branchMeta?.shortName ?? 'Klinik branş',
-      caseCount: branchPool.length,
-    });
-
-    const selectTimer = window.setTimeout(() => {
-      setSelectedBranchId(branchId);
-      setSelectedCaseId(branchPool[0]?.id ?? null);
-      setIsCaseSidebarOpen(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setBranchRouteTransition((current) => current ? { ...current, phase: 'reveal' } : null);
-    }, BRANCH_TRANSITION_MS);
-
-    const finishTimer = window.setTimeout(() => {
-      setBranchRouteTransition(null);
-    }, BRANCH_TRANSITION_MS + BRANCH_TRANSITION_FADE_MS);
-
-    branchRouteTimers.current = [selectTimer, finishTimer];
+  const handleSignOut = () => {
+    signOutDemoUser();
+    setSession(null);
+    setStatus(null);
   };
-
-  const handleSelectCase = (caseId) => {
-    setSelectedCaseId(caseId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleRandomCase = () => {
-    if (!branchCases.length) return;
-    const nextCase = pickRandom(branchCases, selectedCaseId) ?? branchCases[0];
-    setSelectedCaseId(nextCase.id);
-  };
-
-  const handleSubmitAnswer = ({ clinicalCase, selected, isCorrect }) => {
-    const existingExamAnswer = examState?.active ? examState.answers?.[clinicalCase.id] : null;
-    if (existingExamAnswer) return existingExamAnswer.attemptResult;
-
-    const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, sessionStats.streak);
-
-    if (!isCorrect) {
-      addWrongAnswer(clinicalCase, selected);
-    }
-
-    setSessionStats((current) => {
-      const attempts = current.attempts + 1;
-      const correct = current.correct + (isCorrect ? 1 : 0);
-      const score = current.score + scored.earnedPoints;
-      const streak = scored.nextStreak;
-      const bestStreak = Math.max(current.bestStreak, streak);
-      return {
-        attempts,
-        correct,
-        score,
-        streak,
-        bestStreak,
-        accuracy: calculateAccuracy(correct, attempts),
-      };
-    });
-
-    if (examState?.active) {
-      setExamState((current) => ({
-        ...current,
-        answers: {
-          ...current.answers,
-          [clinicalCase.id]: {
-            caseId: clinicalCase.id,
-            selected,
-            isCorrect,
-            attemptResult: scored,
-          },
-        },
-      }));
-    }
-
-    return scored;
-  };
-
-  function startBlockExam(sourceCases = cases, title = 'Genel klinik blok sınavı') {
-    const pool = buildExamPool(sourceCases);
-    setMode('exam');
-    setIsCaseSidebarOpen(true);
-    setExamState({
-      active: true,
-      title,
-      caseIds: pool.map((item) => item.id),
-      currentIndex: 0,
-      answers: {},
-      durationSeconds: pool.length * 90,
-      startedAt: Date.now(),
-    });
-    setSelectedBranchId(null);
-    setSelectedCaseId(null);
-  }
-
-  const goToNextExamCase = () => {
-    setExamState((current) => {
-      if (!current) return current;
-      const nextIndex = Math.min(current.currentIndex + 1, current.caseIds.length - 1);
-      return { ...current, currentIndex: nextIndex };
-    });
-  };
-
-  const goToPreviousExamCase = () => {
-    setExamState((current) => {
-      if (!current) return current;
-      const nextIndex = Math.max(current.currentIndex - 1, 0);
-      return { ...current, currentIndex: nextIndex };
-    });
-  };
-
-  function finalizeExam() {
-    setExamState((current) => {
-      if (!current?.active) return current;
-
-      const elapsed = Math.floor((Date.now() - current.startedAt) / 1000);
-      const timeUsedSeconds = Math.min(current.durationSeconds, elapsed);
-      const review = current.caseIds.map((caseId) => {
-        const item = getCaseById(caseId);
-        const branch = resolveBranchById(item.branchId);
-        const answer = current.answers[caseId];
-        return {
-          caseId,
-          title: item.title,
-          branchId: item.branchId,
-          branchName: branch.name,
-          selected: answer?.selected ?? null,
-          isCorrect: answer?.isCorrect ?? false,
-          correctAnswer: item.diagnosis.correct,
-          earnedPoints: answer?.attemptResult?.earnedPoints ?? 0,
-        };
-      });
-
-      const total = review.length;
-      const correct = review.filter((item) => item.isCorrect).length;
-      const score = review.reduce((sum, item) => sum + item.earnedPoints, 0);
-      const accuracy = total ? Math.round((correct / total) * 100) : 0;
-
-      const branchBreakdown = Object.values(review.reduce((accumulator, item) => {
-        if (!accumulator[item.branchId]) {
-          accumulator[item.branchId] = {
-            branchId: item.branchId,
-            branchName: item.branchName,
-            total: 0,
-            correct: 0,
-          };
-        }
-        accumulator[item.branchId].total += 1;
-        accumulator[item.branchId].correct += item.isCorrect ? 1 : 0;
-        return accumulator;
-      }, {})).map((item) => ({
-        ...item,
-        accuracy: item.total ? Math.round((item.correct / item.total) * 100) : 0,
-      }));
-
-      const result = {
-        id: Date.now(),
-        title: current.title,
-        total,
-        correct,
-        score,
-        accuracy,
-        timeUsedSeconds,
-        durationSeconds: current.durationSeconds,
-        branchBreakdown,
-        review,
-      };
-
-      setExamHistory((history) => [result, ...history].slice(0, 12));
-      return { active: false, result };
-    });
-  }
-
-  const resetExamToHome = () => {
-    setExamState(null);
-    setMode('study');
-    setSelectedBranchId(null);
-    setSelectedCaseId(null);
-    setIsCaseSidebarOpen(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  if (!currentUser) {
-    return (
-      <main className="app-shell premium-shell" data-theme={theme}>
-        <AuthPanel
-          onLogin={handleLogin}
-          onRegister={handleRegister}
-          onGoogleLogin={handleGoogleLogin}
-          theme={theme}
-          onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
-        />
-      </main>
-    );
-  }
 
   return (
-    <main className="app-shell premium-shell" data-theme={theme}>
-      <nav className="top-shell-nav" aria-label="MedSim Pro üst gezinme">
-        <button className="nav-brand" type="button" onClick={resetExamToHome} aria-label="Ana ekrana dön">
-          <span className="nav-brand-mark" aria-hidden="true"><Icon name="Activity" /></span>
-          <span className="nav-brand-copy"><strong>MedSim Pro</strong><small>TUS odaklı klinik olgu simülatörü</small></span>
-        </button>
-        <div className="segmented-control nav-mode-switch" aria-label="Öğrenme modu seçimi">
-          <button
-            type="button"
-            className={mode === 'study' && !examState?.active ? 'active' : ''}
-            onClick={resetExamToHome}
-            aria-pressed={mode === 'study' && !examState?.active}
-          >
-            Öğrenme modu
-          </button>
-          <button
-            type="button"
-            className={mode === 'exam' || examState?.active ? 'active' : ''}
-            onClick={() => setMode('exam')}
-            aria-pressed={mode === 'exam' || examState?.active}
-          >
-            Sınav modu
-          </button>
-          <button
-            type="button"
-            className={hardMode ? 'active hard-mode-active' : ''}
-            onClick={() => setHardMode((current) => !current)}
-            aria-pressed={hardMode}
-            title="Referans değerleri ve ipuçları azaltılır"
-          >
-            Zor mod
-          </button>
-        </div>
-        <div className="nav-actions" aria-label="Oturum eylemleri">
-          <span className="nav-user-chip" aria-label={`Kullanıcı ${currentUser.name}`}>
-            <Icon name="User" />
-            <span>{currentUser.name}</span>
-          </span>
-          <button type="button" className="nav-wrong-chip" onClick={() => { setSelectedBranchId(null); setSelectedCaseId(null); setExamState(null); setMode('study'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} aria-label="Yanlış çözülenler">
-            <span>Yanlış</span>
-            <strong>{wrongAnswers.length}</strong>
-          </button>
-          <span className="nav-score-chip" aria-label={`Puan ${sessionStats.score}`}><span>Puan</span><strong>{sessionStats.score}</strong></span>
-          <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(cases, 'Genel klinik blok sınavı')}>
-            <Icon name="Timer" />
-            <span>Blok sınav</span>
-          </button>
-          <button type="button" className="btn btn-icon theme-toggle" onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} aria-label={theme === 'dark' ? 'Açık temaya geç' : 'Koyu temaya geç'}>
-            <Icon name={theme === 'dark' ? 'Sun' : 'Moon'} />
-          </button>
-          <button type="button" className="btn btn-icon" onClick={handleLogout} aria-label="Çıkış yap">
-            <Icon name="LogIn" />
-          </button>
-        </div>
-      </nav>
-
-      {branchRouteTransition?.active ? (
-        <div className={`branch-route-overlay ${branchRouteTransition.phase} branch-route-${branchRouteTransition.branchId || 'default'}`.trim()} aria-hidden="true">
-          <div className="branch-route-stage">
-            <div
-              className={`branch-route-hero route-icon-${branchRouteTransition.branchId || 'default'}`.trim()}
-              data-branch={branchRouteTransition.branchId || 'default'}
-            >
-              <span className="branch-route-ring ring-one" />
-              <span className="branch-route-ring ring-two" />
-              <span className="branch-route-glow" />
-              <span className="branch-route-orb">
-                <BranchTransitionVisual
-                  branchId={branchRouteTransition.branchId || 'default'}
-                  iconName={branchRouteTransition.iconName || 'Activity'}
-                />
-              </span>
-            </div>
-            <div className="branch-route-copy solo">
-              <strong>{branchRouteTransition.title}</strong>
-            </div>
+    <main className="auth-shell flex items-center justify-center px-5 py-8 sm:px-8 lg:px-10">
+      <div className="relative z-10 grid w-full max-w-[1480px] gap-7 xl:grid-cols-[1.32fr_0.88fr]">
+        <section className="glass-panel relative overflow-hidden rounded-[2.5rem] p-8 shadow-soft sm:p-10 lg:p-14 xl:min-h-[680px]">
+          <div className="pointer-events-none absolute -right-32 bottom-0 h-[500px] w-[500px] rounded-full bg-teal-100/70 blur-3xl" />
+          <div className="pointer-events-none absolute right-28 top-20 hidden h-20 w-20 rotate-45 rounded-3xl border border-teal-100/80 bg-white/30 xl:block" />
+          <div className="pointer-events-none absolute right-16 top-1/2 hidden h-2 w-2 rounded-full bg-teal-300/60 xl:block" />
+          <div className="pointer-events-none absolute bottom-24 right-40 hidden text-teal-200/90 xl:block">
+            <Sparkles className="h-5 w-5" />
           </div>
-        </div>
-      ) : null}
 
-      {examState?.result ? (
-        <ExamResults
-          result={examState.result}
-          onRestart={() => startBlockExam(cases, 'Genel klinik blok sınavı')}
-          onHome={resetExamToHome}
-        />
-      ) : examState?.active && selectedCase ? (
-        <section className="page-shell exam-active-shell">
-          <section className="exam-banner-card card-surface">
+          <div className="relative flex h-full flex-col justify-between gap-12">
             <div>
-              <h2>{examState.title}</h2>
-              <p>
-                Soru {examState.currentIndex + 1} / {examState.caseIds.length} · Kalan süre{' '}
-                {Math.floor(remainingSeconds / 60)}:{String(remainingSeconds % 60).padStart(2, '0')}
+              <div className="mb-16 flex items-center gap-4 sm:mb-20">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-teal-200/80 bg-white/80 shadow-card">
+                  <Activity className="h-7 w-7 text-teal-700" />
+                </div>
+                <div>
+                  <p className="text-[0.82rem] font-black tracking-[0.34em] text-teal-700">MEDSIM PRO</p>
+                  <p className="mt-1 hidden text-sm font-medium text-slate-500 sm:block">Clinical case practice</p>
+                </div>
+              </div>
+
+              <h1 className="max-w-4xl text-[3.4rem] font-black leading-[0.95] tracking-[-0.075em] text-slate-950 sm:text-[4.6rem] lg:text-[5.5rem] xl:text-[6rem]">
+                Klinik pratiğini hesabında takip et.
+              </h1>
+
+              <p className="mt-8 max-w-2xl text-lg font-medium leading-8 text-slate-600 sm:text-xl">
+                Çözdüğün vakalar, ilerlemen ve yanlışların tek yerde saklanır.
               </p>
             </div>
-            <button type="button" className="btn btn-secondary" onClick={finalizeExam}>Bloku bitir</button>
-          </section>
 
-          <div key={selectedCase.id} className="case-route-transition">
-            <CasePlayer
-              clinicalCase={selectedCase}
-              branch={resolveBranchById(selectedCase.branchId)}
-              mode="exam"
-              onRandomCase={() => {}}
-              onSubmitAnswer={handleSubmitAnswer}
-              tutorMode={tutorMode}
-              onToggleTutorMode={() => setTutorMode((current) => !current)}
-              hardMode={hardMode}
-              examMeta={{
-                active: true,
-                title: examState.title,
-                currentIndex: examState.currentIndex,
-                total: examState.caseIds.length,
-                answers: examState.answers,
-                remainingSeconds,
-              }}
-              onAdvanceExam={goToNextExamCase}
-              onPreviousExam={goToPreviousExamCase}
-              onFinishExam={finalizeExam}
-            />
+            <div className="grid gap-4 sm:grid-cols-3">
+              {features.map(({ title, text, icon: Icon }) => (
+                <article
+                  key={title}
+                  className="group rounded-[1.65rem] border border-slate-200/85 bg-white/68 p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-teal-200 hover:bg-white/88"
+                >
+                  <div className="mb-6 flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-50 text-teal-700 ring-1 ring-teal-100 transition group-hover:bg-teal-600 group-hover:text-white">
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <h3 className="text-lg font-extrabold tracking-[-0.03em] text-slate-950">{title}</h3>
+                  <p className="mt-3 text-sm font-semibold leading-6 text-slate-500">{text}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
-      ) : selectedBranch && selectedCase ? (
-        <section className={`page-shell case-page-shell case-page-bottomrail ${branchRouteTransition?.phase === 'reveal' ? 'branch-route-reveal' : ''}`.trim()}>
-          <section className="content-layout full-width-content-layout">
-            <section className="branch-header-v8 card-surface">
-              <div className="branch-header-v8-main">
-                <button className="branch-back-v8" type="button" onClick={() => setSelectedBranchId(null)}>
-                  <span aria-hidden="true">←</span>
-                  <span>Branşlara dön</span>
-                </button>
-                <div className="branch-header-text">
-                  <h2>{selectedBranch.name}</h2>
-                  <p>{selectedBranch.description}</p>
-                </div>
-              </div>
-              <div className="branch-inline-actions">
-                <span className="branch-case-count">{branchCases.length} olgu</span>
-                <button type="button" className="btn btn-primary" onClick={() => startBlockExam(branchCases, `${selectedBranch.name} blok sınavı`)}>
-                  Branş bloku oluştur
-                </button>
-              </div>
-            </section>
 
-            <div key={selectedCase.id} className="case-route-transition">
-              <CasePlayer
-                clinicalCase={selectedCase}
-                branch={selectedBranch}
-                mode={mode}
-                onRandomCase={handleRandomCase}
-                onSubmitAnswer={handleSubmitAnswer}
-                tutorMode={tutorMode}
-                onToggleTutorMode={() => setTutorMode((current) => !current)}
-                hardMode={hardMode}
-              />
+        <section className="auth-card rounded-[2.5rem] p-7 shadow-soft sm:p-10 lg:p-12 xl:min-h-[680px]">
+          <div className="flex h-full flex-col justify-center">
+            <div className="mb-9 flex items-start justify-between gap-6">
+              <div>
+                <p className="text-xs font-black tracking-[0.34em] text-teal-700">{copy.eyebrow}</p>
+                <h2 className="mt-3 text-5xl font-black tracking-[-0.07em] text-slate-950 sm:text-6xl">{copy.title}</h2>
+                <p className="mt-4 max-w-md text-base font-medium leading-7 text-slate-500">{copy.subtitle}</p>
+              </div>
+              <button
+                type="button"
+                className="flex h-14 w-14 shrink-0 items-center justify-center rounded-3xl border border-slate-200 bg-white text-slate-900 shadow-card transition hover:-translate-y-0.5 hover:border-teal-200 hover:text-teal-700"
+                aria-label="Tema değiştir"
+              >
+                <Moon className="h-6 w-6" />
+              </button>
             </div>
 
-            <section className="bottom-case-browser card-surface">
-              <div className="bottom-case-browser-head">
-                <div>
-                  <h3>Diğer olgular</h3>
+            {session && (
+              <div className="mb-6 rounded-3xl border border-teal-100 bg-teal-50/80 p-4 text-sm font-semibold text-teal-900">
+                <div className="flex items-center justify-between gap-4">
+                  <div>
+                    <p className="font-extrabold">Oturum açık</p>
+                    <p className="mt-1 text-teal-800/80">{session.email}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleSignOut}
+                    className="rounded-2xl bg-white px-4 py-2 text-sm font-extrabold text-teal-700 shadow-sm ring-1 ring-teal-100 transition hover:bg-teal-700 hover:text-white"
+                  >
+                    Çıkış
+                  </button>
                 </div>
-                <span className="bottom-case-browser-count">{branchCases.length} olgu</span>
               </div>
-              <CaseList cases={branchCases} selectedCaseId={selectedCase.id} onSelectCase={handleSelectCase} layout="horizontal" />
-            </section>
-          </section>
+            )}
+
+            <div className="mb-5 grid grid-cols-2 gap-2 rounded-[1.55rem] border border-slate-200 bg-slate-50/70 p-1.5">
+              <button
+                type="button"
+                onClick={() => {
+                  setMode('login');
+                  setStatus(null);
+                }}
+                className={`flex h-14 items-center justify-center gap-2 rounded-[1.25rem] text-base font-extrabold transition ${
+                  mode === 'login'
+                    ? 'teal-button text-white shadow-button'
+                    : 'text-slate-500 hover:bg-white hover:text-slate-900'
+                }`}
+              >
+                <ArrowRight className="h-5 w-5" />
+                Giriş yap
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setMode('register');
+                  setStatus(null);
+                }}
+                className={`flex h-14 items-center justify-center gap-2 rounded-[1.25rem] text-base font-extrabold transition ${
+                  mode === 'register'
+                    ? 'teal-button text-white shadow-button'
+                    : 'text-slate-500 hover:bg-white hover:text-slate-900'
+                }`}
+              >
+                <UserRound className="h-5 w-5" />
+                Kayıt ol
+              </button>
+            </div>
+
+            <button
+              type="button"
+              onClick={handleGoogle}
+              disabled={loading}
+              className="mb-8 flex h-16 w-full items-center justify-center gap-3 rounded-[1.35rem] border border-slate-200 bg-white text-base font-extrabold text-slate-900 shadow-card transition hover:-translate-y-0.5 hover:border-slate-300 hover:shadow-soft disabled:cursor-not-allowed disabled:opacity-60"
+            >
+              <GoogleIcon />
+              Google ile devam et
+            </button>
+
+            <div className="mb-8 flex items-center gap-5">
+              <div className="h-px flex-1 bg-slate-200" />
+              <span className="text-sm font-extrabold text-slate-400">veya</span>
+              <div className="h-px flex-1 bg-slate-200" />
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <label className="input-field flex h-16 items-center gap-4 rounded-[1.25rem] border border-slate-200 bg-white px-5 transition">
+                <Mail className="h-5 w-5 text-slate-500" />
+                <input
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  type="email"
+                  placeholder="E-posta adresi"
+                  className="h-full min-w-0 flex-1 bg-transparent text-base font-bold text-slate-900 outline-none placeholder:text-slate-400"
+                  autoComplete="email"
+                />
+              </label>
+
+              <label className="input-field flex h-16 items-center gap-4 rounded-[1.25rem] border border-slate-200 bg-white px-5 transition">
+                <Lock className="h-5 w-5 text-slate-500" />
+                <input
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Şifre"
+                  className="h-full min-w-0 flex-1 bg-transparent text-base font-bold text-slate-900 outline-none placeholder:text-slate-400"
+                  autoComplete={mode === 'login' ? 'current-password' : 'new-password'}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword((value) => !value)}
+                  className="rounded-xl p-2 text-slate-500 transition hover:bg-slate-50 hover:text-teal-700"
+                  aria-label={showPassword ? 'Şifreyi gizle' : 'Şifreyi göster'}
+                >
+                  {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
+                </button>
+              </label>
+
+              <div className="flex items-center justify-between gap-4 py-1">
+                <label className="flex cursor-pointer items-center gap-3 text-sm font-bold text-slate-500">
+                  <input
+                    checked={remember}
+                    onChange={(event) => setRemember(event.target.checked)}
+                    type="checkbox"
+                    className="h-5 w-5 rounded border-slate-300 text-teal-700 accent-teal-700"
+                  />
+                  Beni hatırla
+                </label>
+                <button type="button" className="text-sm font-black text-teal-700 transition hover:text-teal-900">
+                  Şifremi unuttum
+                </button>
+              </div>
+
+              {status && (
+                <div
+                  className={`rounded-[1.1rem] px-4 py-3 text-sm font-bold ${
+                    status.type === 'success'
+                      ? 'border border-teal-100 bg-teal-50 text-teal-800'
+                      : 'border border-rose-100 bg-rose-50 text-rose-700'
+                  }`}
+                >
+                  {status.message}
+                </div>
+              )}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="teal-button mt-2 flex h-16 w-full items-center justify-center gap-3 rounded-[1.35rem] text-lg font-black text-white shadow-button transition hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60"
+              >
+                <ArrowRight className="h-6 w-6" />
+                {loading ? 'İşleniyor...' : copy.submit}
+              </button>
+            </form>
+
+            <div className="mt-8 flex items-center justify-center gap-2 text-sm font-bold text-slate-500">
+              <ShieldCheck className="h-5 w-5 text-slate-600" />
+              <span>Demo sürüm • veriler bu cihazda saklanır.</span>
+            </div>
+          </div>
         </section>
-      ) : (
-        <section className="page-shell home-page-shell minimal-home-shell">
-          <HomeCommandCenter
-            mode={mode}
-            onChangeMode={setMode}
-            stats={sessionStats}
-            leaderboardEntries={leaderboardEntries}
-            onStartExam={() => startBlockExam(cases, 'Genel klinik blok sınavı')}
-            totalCases={cases.length}
-            totalBranches={branches.length}
-            examCount={examHistory.length}
-          />
-          <WrongAnswersPanel
-            wrongAnswers={wrongAnswers}
-            onOpenCase={openWrongCase}
-            onRemoveCase={removeWrongAnswer}
-            onClearAll={clearWrongAnswers}
-          />
-          <BranchSelector
-            branches={branches}
-            cases={cases}
-            onSelectBranch={handleSelectBranch}
-            launchingBranchId={branchRouteTransition?.phase === 'selecting' ? branchRouteTransition.branchId : null}
-            isTransitioning={Boolean(branchRouteTransition?.active)}
-          />
-        </section>
-      )}
+      </div>
     </main>
   );
 }
-
-export default App;
