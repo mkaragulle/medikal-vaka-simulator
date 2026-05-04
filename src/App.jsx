@@ -15,8 +15,8 @@ import { localBackend } from './services/localBackend.js';
 const STATS_STORAGE_KEY = 'medsim-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'medsim-exam-history-v2';
 const THEME_STORAGE_KEY = 'medsim-theme-v1';
-const BRANCH_TRANSITION_MS = 1180;
-const BRANCH_TRANSITION_FADE_MS = 240;
+const BRANCH_TRANSITION_MS = 1750;
+const BRANCH_TRANSITION_FADE_MS = 280;
 
 const defaultStats = {
   attempts: 0,

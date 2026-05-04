@@ -95,7 +95,14 @@ export function BranchTransitionVisual({ branchId, iconName }) {
 
   return (
     <span className={`branch-transition-visual branch-transition-visual-${branchId || 'default'}`.trim()} aria-hidden="true">
+      <span className="branch-transition-shine" />
       <Icon name={iconName || 'Activity'} className="branch-transition-icon" size={66} strokeWidth={1.9} />
+      {branchId === 'internal-medicine' ? (
+        <>
+          <span className="flask-motion-bubble bubble-one" />
+          <span className="flask-motion-bubble bubble-two" />
+        </>
+      ) : null}
     </span>
   );
 }
