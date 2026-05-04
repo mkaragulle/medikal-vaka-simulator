@@ -3,8 +3,13 @@ import { Icon } from './ui.jsx';
 
 function GoogleLogo() {
   return (
-    <span className="google-logo-mark" aria-hidden="true">
-      <span className="google-g-blue">G</span>
+    <span className="google-logo-ui" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="20" height="20" role="presentation">
+        <path fill="#EA4335" d="M12 10.2v3.9h5.4c-.24 1.26-.96 2.32-2.04 3.04l3.3 2.56c1.92-1.76 3.03-4.36 3.03-7.44 0-.72-.06-1.4-.18-2.06H12Z"/>
+        <path fill="#4285F4" d="M12 22c2.7 0 4.96-.9 6.62-2.44l-3.3-2.56c-.92.62-2.1.98-3.32.98-2.56 0-4.72-1.72-5.5-4.02H3.08v2.64A10 10 0 0 0 12 22Z"/>
+        <path fill="#FBBC05" d="M6.5 13.96A5.96 5.96 0 0 1 6.2 12c0-.68.12-1.34.3-1.96V7.4H3.08A10 10 0 0 0 2 12c0 1.62.38 3.14 1.08 4.56l3.42-2.6Z"/>
+        <path fill="#34A853" d="M12 6.02c1.48 0 2.8.5 3.84 1.5l2.88-2.88C16.94 2.98 14.68 2 12 2a10 10 0 0 0-8.92 5.4l3.42 2.64C7.28 7.74 9.44 6.02 12 6.02Z"/>
+      </svg>
     </span>
   );
 }
@@ -42,7 +47,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, theme, onToggleTheme })
       return;
     }
 
-    setMessage({ type: 'success', text: result.message || 'Giriş başarılı.' });
+    setMessage({ type: 'success', text: result?.message || (isRegister ? 'Hesabın oluşturuldu.' : 'Giriş başarılı.') });
   };
 
   const handleGoogleLogin = async () => {
@@ -56,7 +61,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, theme, onToggleTheme })
       return;
     }
 
-    setMessage({ type: 'success', text: result.message || 'Google ile giriş başarılı.' });
+    setMessage({ type: 'success', text: result?.message || 'Google ile giriş başarılı.' });
   };
 
   return (
@@ -68,7 +73,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, theme, onToggleTheme })
       <div className="auth-dots dots-left" aria-hidden="true" />
       <div className="auth-dots dots-right" aria-hidden="true" />
 
-      <aside className="auth-brand-panel auth-glass-panel auth-showcase-panel">
+      <aside className="auth-brand-panel auth-glass-panel auth-showcase-panel" aria-label="MedSim Pro tanıtım alanı">
         <div className="auth-panel-decoration" aria-hidden="true">
           <span className="auth-soft-disc" />
           <span className="auth-hex hex-one" />
@@ -85,11 +90,14 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, theme, onToggleTheme })
         </div>
 
         <div className="auth-hero-copy">
-          <h1>Klinik pratiğini hesabında takip et.</h1>
+          <h1>
+            <span>Klinik pratiğini</span>
+            <span>hesabında takip et.</span>
+          </h1>
           <p>Çözdüğün vakalar, ilerlemen ve yanlışların tek yerde saklanır.</p>
         </div>
 
-        <div className="auth-feature-grid auth-feature-cards" aria-label="Hesap özellikleri">
+        <div className="auth-feature-grid auth-feature-cards" aria-label="Hesap avantajları">
           <article className="auth-feature-card">
             <Icon name="ClipboardList" />
             <strong>Yanlışlarım</strong>
@@ -111,16 +119,16 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, theme, onToggleTheme })
       <form className="auth-card auth-glass-panel auth-form-panel" onSubmit={handleSubmit}>
         <div className="auth-card-head auth-form-head">
           <div>
-            <p className="auth-eyebrow">{isRegister ? 'Yeni kullanıcı' : 'Kullanıcı girişi'}</p>
+            <p className="auth-eyebrow">KULLANICI GİRİŞİ</p>
             <h2>{isRegister ? 'Kayıt ol' : 'Giriş yap'}</h2>
-            <span>{isRegister ? 'Yeni çalışma hesabını oluştur.' : 'Hesabına dön ve kaldığın yerden devam et.'}</span>
+            <span>{isRegister ? 'Hesabını oluştur ve çözmeye hemen başla.' : 'Hesabına dön ve kaldığın yerden devam et.'}</span>
           </div>
           <button className="auth-theme-button" type="button" onClick={onToggleTheme} aria-label="Tema değiştir">
             <Icon name={theme === 'dark' ? 'Sun' : 'Moon'} />
           </button>
         </div>
 
-        <div className="auth-switch auth-tabs" role="tablist" aria-label="Giriş türü">
+        <div className="auth-switch auth-tabs" role="tablist" aria-label="Kimlik doğrulama sekmeleri">
           <button type="button" className={mode === 'login' ? 'active' : ''} onClick={() => switchMode('login')}>
             <Icon name="LogIn" />
             <span>Giriş yap</span>
@@ -212,7 +220,11 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, theme, onToggleTheme })
             <input type="checkbox" checked={rememberMe} onChange={(event) => setRememberMe(event.target.checked)} />
             <span>Beni hatırla</span>
           </label>
-          <button className="auth-link-button" type="button" onClick={() => setMessage({ type: 'error', text: 'Şifre sıfırlama için gerçek backend/Firebase auth reset akışı bağlanmalı.' })}>
+          <button
+            className="auth-link-button"
+            type="button"
+            onClick={() => setMessage({ type: 'error', text: 'Şifre sıfırlama için Firebase reset-password akışı bağlanmalı.' })}
+          >
             Şifremi unuttum
           </button>
         </div>
@@ -221,7 +233,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, theme, onToggleTheme })
 
         <button className="btn btn-primary auth-submit auth-primary-submit" type="submit" disabled={busy}>
           <Icon name={isRegister ? 'UserPlus' : 'LogIn'} />
-          <span>{busy ? 'İşleniyor...' : isRegister ? 'Kayıt oluştur' : 'Giriş yap'}</span>
+          <span>{busy ? 'İşleniyor...' : isRegister ? 'Kayıt ol' : 'Giriş yap'}</span>
         </button>
 
         <p className="auth-local-note auth-footer-note">

@@ -19877,3 +19877,73 @@ html[data-theme="dark"] .google-g-blue {
   .auth-input-wrap,
   .auth-primary-submit { min-height: 56px; }
 }
+
+/* ===== v104 auth screen refinement ===== */
+.google-logo-ui {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 8px 18px rgba(15, 23, 42, .08);
+}
+
+.auth-hero-copy h1 span {
+  display: block;
+}
+
+.auth-form-head .auth-eyebrow {
+  margin-bottom: 8px;
+}
+
+.auth-form-head h2 {
+  font-size: clamp(44px, 3.8vw, 64px);
+  line-height: .95;
+  letter-spacing: -.055em;
+  margin: 0 0 10px;
+}
+
+.auth-form-head > div > span {
+  display: inline-block;
+  max-width: 360px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.auth-brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.auth-showcase-panel {
+  background:
+    radial-gradient(circle at 92% 58%, color-mix(in srgb, var(--accent) 12%, white 10%), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,.96), rgba(245,251,250,.94));
+}
+
+.auth-feature-card {
+  align-content: start;
+}
+
+.auth-google-button span,
+.auth-tabs button span,
+.auth-primary-submit span {
+  line-height: 1;
+}
+
+@media (max-width: 760px) {
+  .auth-form-head h2 {
+    font-size: 34px;
+  }
+
+  .auth-brand-logo {
+    gap: 12px;
+    font-size: 15px;
+  }
+}
