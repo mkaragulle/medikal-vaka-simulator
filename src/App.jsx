@@ -4,6 +4,8 @@ import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
 import CasePlayer from './components/CasePlayer.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
+import AuthPanel from './components/AuthPanel.jsx';
+import WrongAnswersPanel from './components/WrongAnswersPanel.jsx';
 import ExamResults from './components/ExamResults.jsx';
 import { Icon, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
@@ -17,6 +19,8 @@ const EXAM_HISTORY_STORAGE_KEY = 'medsim-exam-history-v2';
 const THEME_STORAGE_KEY = 'medsim-theme-v1';
 const BRANCH_TRANSITION_MS = 1750;
 const BRANCH_TRANSITION_FADE_MS = 280;
+const USERS_STORAGE_KEY = 'auth-users-v1';
+const CURRENT_USER_STORAGE_KEY = 'auth-current-user-v1';
 
 const defaultStats = {
   attempts: 0,
@@ -29,6 +33,38 @@ const defaultStats = {
 
 function loadStoredValue(key, fallback) {
   return localBackend.read(key, fallback);
+}
+
+function normalizeEmail(email = '') {
+  return String(email).trim().toLocaleLowerCase('tr');
+}
+
+function buildUserId(email = '') {
+  return normalizeEmail(email).replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '') || `user-${Date.now()}`;
+}
+
+function loadUsers() {
+  return localBackend.read(USERS_STORAGE_KEY, []);
+}
+
+function saveUsers(users) {
+  localBackend.write(USERS_STORAGE_KEY, users);
+}
+
+function loadCurrentUser() {
+  const currentUserId = localBackend.read(CURRENT_USER_STORAGE_KEY, null);
+  if (!currentUserId) return null;
+  return loadUsers().find((user) => user.id === currentUserId) ?? null;
+}
+
+function sanitizeUser(user) {
+  if (!user) return null;
+  return {
+    ...user,
+    stats: user.stats ?? defaultStats,
+    examHistory: Array.isArray(user.examHistory) ? user.examHistory : [],
+    wrongAnswers: Array.isArray(user.wrongAnswers) ? user.wrongAnswers : [],
+  };
 }
 
 function buildExamPool(sourceCases = []) {
@@ -45,14 +81,16 @@ function resolveBranchById(branchId) {
 }
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
   const [selectedBranchId, setSelectedBranchId] = useState(null);
   const [selectedCaseId, setSelectedCaseId] = useState(null);
   const [mode, setMode] = useState('study');
   const [hardMode, setHardMode] = useState(false);
   const [theme, setTheme] = useState(() => loadStoredValue(THEME_STORAGE_KEY, 'dark'));
   const [tutorMode, setTutorMode] = useState(true);
-  const [sessionStats, setSessionStats] = useState(() => loadStoredValue(STATS_STORAGE_KEY, defaultStats));
-  const [examHistory, setExamHistory] = useState(() => loadStoredValue(EXAM_HISTORY_STORAGE_KEY, []));
+  const [sessionStats, setSessionStats] = useState(() => currentUser?.stats ?? loadStoredValue(STATS_STORAGE_KEY, defaultStats));
+  const [examHistory, setExamHistory] = useState(() => currentUser?.examHistory ?? loadStoredValue(EXAM_HISTORY_STORAGE_KEY, []));
+  const [wrongAnswers, setWrongAnswers] = useState(() => currentUser?.wrongAnswers ?? []);
   const [examState, setExamState] = useState(null);
   const [clockTick, setClockTick] = useState(Date.now());
   const [isCaseSidebarOpen, setIsCaseSidebarOpen] = useState(true);
@@ -77,9 +115,150 @@ function App() {
     return getCaseById(selectedCaseId) ?? branchCases[0] ?? null;
   }, [selectedCaseId, branchCases, examState]);
 
+  const persistCurrentUser = (patch) => {
+    setCurrentUser((current) => {
+      if (!current?.id) return current;
+      const users = loadUsers();
+      const userIndex = users.findIndex((user) => user.id === current.id);
+      if (userIndex < 0) return current;
+      const nextUser = sanitizeUser({ ...users[userIndex], ...patch });
+      const nextUsers = [...users];
+      nextUsers[userIndex] = nextUser;
+      saveUsers(nextUsers);
+      localBackend.write(CURRENT_USER_STORAGE_KEY, nextUser.id);
+      return nextUser;
+    });
+  };
+
   useEffect(() => {
+    if (!currentUser?.id) return;
+    persistCurrentUser({ stats: sessionStats });
+  }, [sessionStats, currentUser?.id]);
+
+  useEffect(() => {
+    if (!currentUser?.id) return;
+    persistCurrentUser({ examHistory });
+  }, [examHistory, currentUser?.id]);
+
+  useEffect(() => {
+    if (!currentUser?.id) return;
+    persistCurrentUser({ wrongAnswers });
+  }, [wrongAnswers, currentUser?.id]);
+
+  const handleRegister = ({ name, email, password, confirmPassword }) => {
+    const normalizedEmail = normalizeEmail(email);
+    const displayName = String(name || '').trim();
+    if (!displayName) return { ok: false, message: 'Ad soyad alanı boş olamaz.' };
+    if (!normalizedEmail || !normalizedEmail.includes('@')) return { ok: false, message: 'Geçerli bir e-posta yazmalısın.' };
+    if (String(password || '').length < 4) return { ok: false, message: 'Şifre en az 4 karakter olmalı.' };
+    if (password !== confirmPassword) return { ok: false, message: 'Şifreler eşleşmiyor.' };
+
+    const users = loadUsers();
+    if (users.some((user) => normalizeEmail(user.email) === normalizedEmail)) {
+      return { ok: false, message: 'Bu e-posta ile kayıtlı bir hesap zaten var.' };
+    }
+
+    const newUser = sanitizeUser({
+      id: buildUserId(normalizedEmail),
+      name: displayName,
+      email: normalizedEmail,
+      password,
+      createdAt: Date.now(),
+      stats: defaultStats,
+      examHistory: [],
+      wrongAnswers: [],
+    });
+
+    saveUsers([...users, newUser]);
+    localBackend.write(CURRENT_USER_STORAGE_KEY, newUser.id);
+    setCurrentUser(newUser);
+    setSessionStats(newUser.stats);
+    setExamHistory([]);
+    setWrongAnswers([]);
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setExamState(null);
+    setMode('study');
+    return { ok: true, message: 'Kayıt oluşturuldu.' };
+  };
+
+  const handleLogin = ({ email, password }) => {
+    const normalizedEmail = normalizeEmail(email);
+    const user = sanitizeUser(loadUsers().find((item) => normalizeEmail(item.email) === normalizedEmail));
+    if (!user || user.password !== password) {
+      return { ok: false, message: 'E-posta veya şifre hatalı.' };
+    }
+
+    localBackend.write(CURRENT_USER_STORAGE_KEY, user.id);
+    setCurrentUser(user);
+    setSessionStats(user.stats ?? defaultStats);
+    setExamHistory(user.examHistory ?? []);
+    setWrongAnswers(user.wrongAnswers ?? []);
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setExamState(null);
+    setMode('study');
+    return { ok: true, message: 'Giriş başarılı.' };
+  };
+
+  const handleLogout = () => {
+    localBackend.remove(CURRENT_USER_STORAGE_KEY);
+    setCurrentUser(null);
+    setSessionStats(defaultStats);
+    setExamHistory([]);
+    setWrongAnswers([]);
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setExamState(null);
+    setMode('study');
+  };
+
+  const addWrongAnswer = (clinicalCase, selected) => {
+    const branch = resolveBranchById(clinicalCase.branchId);
+    const item = {
+      caseId: clinicalCase.id,
+      title: clinicalCase.title,
+      branchId: clinicalCase.branchId,
+      branchName: branch?.name ?? 'Klinik branş',
+      selected,
+      correctAnswer: clinicalCase.diagnosis.correct,
+      difficulty: clinicalCase.difficulty,
+      lastWrongAt: Date.now(),
+    };
+
+    setWrongAnswers((current) => {
+      const existing = current.find((entry) => entry.caseId === clinicalCase.id);
+      if (existing) {
+        return [
+          { ...existing, ...item, attempts: (existing.attempts || 1) + 1 },
+          ...current.filter((entry) => entry.caseId !== clinicalCase.id),
+        ];
+      }
+      return [{ ...item, attempts: 1, createdAt: Date.now() }, ...current].slice(0, 80);
+    });
+  };
+
+  const removeWrongAnswer = (caseId) => {
+    setWrongAnswers((current) => current.filter((entry) => entry.caseId !== caseId));
+  };
+
+  const clearWrongAnswers = () => setWrongAnswers([]);
+
+  const openWrongCase = (caseId) => {
+    const clinicalCase = getCaseById(caseId);
+    if (!clinicalCase) return;
+    setMode('study');
+    setExamState(null);
+    setSelectedBranchId(clinicalCase.branchId);
+    setSelectedCaseId(clinicalCase.id);
+    setIsCaseSidebarOpen(true);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    if (currentUser?.id) return;
     localBackend.write(STATS_STORAGE_KEY, sessionStats);
-  }, [sessionStats]);
+  }, [sessionStats, currentUser?.id]);
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -87,8 +266,9 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
+    if (currentUser?.id) return;
     localBackend.write(EXAM_HISTORY_STORAGE_KEY, examHistory);
-  }, [examHistory]);
+  }, [examHistory, currentUser?.id]);
 
   useEffect(() => {
     if (!selectedBranchId) return;
@@ -199,6 +379,10 @@ function App() {
     if (existingExamAnswer) return existingExamAnswer.attemptResult;
 
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, sessionStats.streak);
+
+    if (!isCorrect) {
+      addWrongAnswer(clinicalCase, selected);
+    }
 
     setSessionStats((current) => {
       const attempts = current.attempts + 1;
@@ -338,6 +522,19 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  if (!currentUser) {
+    return (
+      <main className="app-shell premium-shell" data-theme={theme}>
+        <AuthPanel
+          onLogin={handleLogin}
+          onRegister={handleRegister}
+          theme={theme}
+          onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
+        />
+      </main>
+    );
+  }
+
   return (
     <main className="app-shell premium-shell" data-theme={theme}>
       <nav className="top-shell-nav" aria-label="MedSim Pro üst gezinme">
@@ -373,6 +570,14 @@ function App() {
           </button>
         </div>
         <div className="nav-actions" aria-label="Oturum eylemleri">
+          <span className="nav-user-chip" aria-label={`Kullanıcı ${currentUser.name}`}>
+            <Icon name="User" />
+            <span>{currentUser.name}</span>
+          </span>
+          <button type="button" className="nav-wrong-chip" onClick={() => { setSelectedBranchId(null); setSelectedCaseId(null); setExamState(null); setMode('study'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} aria-label="Yanlış çözülenler">
+            <span>Yanlış</span>
+            <strong>{wrongAnswers.length}</strong>
+          </button>
           <span className="nav-score-chip" aria-label={`Puan ${sessionStats.score}`}><span>Puan</span><strong>{sessionStats.score}</strong></span>
           <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(cases, 'Genel klinik blok sınavı')}>
             <Icon name="Timer" />
@@ -380,6 +585,9 @@ function App() {
           </button>
           <button type="button" className="btn btn-icon theme-toggle" onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} aria-label={theme === 'dark' ? 'Açık temaya geç' : 'Koyu temaya geç'}>
             <Icon name={theme === 'dark' ? 'Sun' : 'Moon'} />
+          </button>
+          <button type="button" className="btn btn-icon" onClick={handleLogout} aria-label="Çıkış yap">
+            <Icon name="LogIn" />
           </button>
         </div>
       </nav>
@@ -508,6 +716,12 @@ function App() {
             totalCases={cases.length}
             totalBranches={branches.length}
             examCount={examHistory.length}
+          />
+          <WrongAnswersPanel
+            wrongAnswers={wrongAnswers}
+            onOpenCase={openWrongCase}
+            onRemoveCase={removeWrongAnswer}
+            onClearAll={clearWrongAnswers}
           />
           <BranchSelector
             branches={branches}
