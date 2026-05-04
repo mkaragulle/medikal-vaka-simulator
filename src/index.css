@@ -16741,10 +16741,10 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
   place-items: center;
   pointer-events: none;
   background:
-    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--route-accent) 10%, transparent), transparent 28%),
-    color-mix(in srgb, var(--bg) 42%, transparent);
-  backdrop-filter: blur(8px) saturate(1.02);
-  -webkit-backdrop-filter: blur(8px) saturate(1.02);
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--route-accent) 14%, transparent), transparent 28%),
+    color-mix(in srgb, var(--bg) 46%, transparent);
+  backdrop-filter: blur(9px) saturate(1.03);
+  -webkit-backdrop-filter: blur(9px) saturate(1.03);
   animation: branch-overlay-in 220ms var(--ease-standard) both;
 }
 
@@ -16752,77 +16752,78 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
   animation: branch-overlay-out 240ms var(--ease-standard) both;
 }
 
-.branch-route-overlay.branch-route-cardiovascular { --route-accent: var(--danger); }
+.branch-route-overlay.branch-route-cardiovascular { --route-accent: #ff5a5f; }
 .branch-route-overlay.branch-route-internal-medicine { --route-accent: var(--accent-blue); }
 .branch-route-overlay.branch-route-neurology { --route-accent: var(--violet); }
 .branch-route-overlay.branch-route-pediatrics { --route-accent: var(--success); }
 .branch-route-overlay.branch-route-general-surgery { --route-accent: var(--warning); }
 .branch-route-overlay.branch-route-pulmonology { --route-accent: var(--accent); }
 .branch-route-overlay.branch-route-infectious-diseases { --route-accent: var(--lime); }
-.branch-route-overlay.branch-route-orthopedics { --route-accent: color-mix(in srgb, var(--text-muted) 85%, #94a3b8 15%); }
+.branch-route-overlay.branch-route-orthopedics { --route-accent: color-mix(in srgb, var(--text-muted) 82%, #a7b2c3 18%); }
 
 .branch-route-stage {
   display: grid;
   justify-items: center;
-  gap: 18px;
-  width: min(340px, calc(100vw - 40px));
-  animation: branch-stage-pop 360ms var(--ease-emphasized) both;
+  gap: 16px;
+  width: min(320px, calc(100vw - 40px));
+  animation: branch-stage-pop 320ms var(--ease-emphasized) both;
 }
 
 .branch-route-hero {
   position: relative;
-  width: 168px;
-  height: 168px;
+  width: 178px;
+  height: 178px;
   display: grid;
   place-items: center;
 }
 
 .branch-route-glow {
   position: absolute;
-  inset: 24px;
+  inset: 22px;
   border-radius: 999px;
-  background: radial-gradient(circle, color-mix(in srgb, var(--route-accent) 22%, white 6%), transparent 68%);
-  filter: blur(16px);
-  opacity: .72;
-  animation: branch-glow-breathe 1s cubic-bezier(.22,1,.36,1) 1 both;
+  background: radial-gradient(circle, color-mix(in srgb, var(--route-accent) 26%, white 4%), transparent 68%);
+  filter: blur(20px);
+  opacity: .7;
+  animation: branch-glow-breathe 1.15s cubic-bezier(.22,1,.36,1) 1 both;
 }
 
 .branch-route-ring {
   position: absolute;
-  inset: 14px;
+  inset: 12px;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--route-accent) 26%, transparent);
-  background: color-mix(in srgb, var(--route-accent) 2.5%, transparent);
-  opacity: .56;
+  background: color-mix(in srgb, var(--route-accent) 2%, transparent);
+  opacity: .55;
 }
 
 .branch-route-ring.ring-one {
-  animation: branch-ring-expand 900ms cubic-bezier(.22,1,.36,1) 1 both;
+  animation: branch-ring-expand 1000ms cubic-bezier(.22,1,.36,1) 1 both;
 }
 
 .branch-route-ring.ring-two {
   inset: 28px;
   opacity: .72;
-  animation: branch-ring-expand 900ms cubic-bezier(.22,1,.36,1) 120ms 1 both;
+  animation: branch-ring-expand 1000ms cubic-bezier(.22,1,.36,1) 160ms 1 both;
 }
 
 .branch-route-orb {
   position: relative;
   display: grid;
   place-items: center;
-  width: 114px;
-  height: 114px;
+  width: 120px;
+  height: 120px;
   border-radius: 36px;
   color: var(--route-accent);
-  border: 1px solid color-mix(in srgb, var(--route-accent) 30%, var(--border-subtle));
+  border: 1px solid color-mix(in srgb, var(--route-accent) 32%, var(--border-subtle));
   background:
     radial-gradient(circle at 34% 22%, color-mix(in srgb, white 22%, transparent), transparent 26%),
-    radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--route-accent) 16%, transparent), transparent 54%),
+    radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--route-accent) 18%, transparent), transparent 54%),
     linear-gradient(180deg, color-mix(in srgb, var(--surface-elevated) 94%, transparent), color-mix(in srgb, var(--surface-1) 98%, transparent));
   box-shadow:
-    inset 0 1px 0 color-mix(in srgb, white 30%, transparent),
-    0 22px 56px color-mix(in srgb, var(--route-accent) 12%, rgba(2, 8, 16, 0.15));
+    inset 0 1px 0 color-mix(in srgb, white 32%, transparent),
+    0 22px 58px color-mix(in srgb, var(--route-accent) 14%, rgba(2, 8, 16, 0.18));
   animation: branch-orb-enter 360ms var(--ease-emphasized) both;
+  overflow: hidden;
 }
 
 .branch-route-orb::before,
@@ -16838,78 +16839,118 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
   inset: -10px;
   border-radius: 44px;
   border-color: color-mix(in srgb, var(--route-accent) 14%, transparent);
-  opacity: .42;
+  opacity: .38;
 }
 
-.branch-route-orb svg {
-  width: 46px;
-  height: 46px;
+.branch-transition-visual,
+.branch-transition-svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+.branch-transition-visual {
+  width: 68px;
+  height: 68px;
+  display: grid;
+  place-items: center;
+}
+
+.branch-transition-icon {
+  width: 68px;
+  height: 68px;
   stroke-width: 1.95;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--route-accent) 18%, transparent));
   transform-origin: center;
-  animation: route-icon-enter 260ms var(--ease-emphasized) both;
 }
 
-.route-icon-cardiovascular .branch-route-orb svg {
-  animation: route-icon-enter 260ms var(--ease-emphasized) both, cardio-beat-once 860ms cubic-bezier(.22,1,.36,1) 100ms 1 both;
+.branch-transition-svg {
+  width: 78px;
+  height: 78px;
 }
 
-.route-icon-internal-medicine .branch-route-orb svg {
-  animation: route-icon-enter 260ms var(--ease-emphasized) both, flask-sway-once 760ms cubic-bezier(.22,1,.36,1) 80ms 1 both;
+.branch-transition-svg-cardiovascular {
+  overflow: visible;
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--route-accent) 18%, transparent));
 }
 
-.route-icon-neurology .branch-route-orb svg {
-  animation: route-icon-enter 260ms var(--ease-emphasized) both, neuro-pulse-once 800ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+.cardio-heart-outline {
+  stroke-width: 3.1;
+  opacity: .52;
 }
 
-.route-icon-pediatrics .branch-route-orb svg {
-  animation: route-icon-enter 260ms var(--ease-emphasized) both, pediatrics-bounce-once 760ms cubic-bezier(.22,1,.36,1) 80ms 1 both;
+.cardio-heart-glow {
+  stroke-width: 4.2;
+  opacity: 0;
+  filter: blur(2px);
 }
 
-.route-icon-general-surgery .branch-route-orb svg {
-  animation: route-icon-enter 260ms var(--ease-emphasized) both, scalpel-slice-once 760ms cubic-bezier(.22,1,.36,1) 80ms 1 both;
+.cardio-heart-trace {
+  stroke-width: 3.8;
+  stroke-dasharray: 84;
+  stroke-dashoffset: 84;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--route-accent) 36%, transparent));
 }
 
-.route-icon-pulmonology .branch-route-orb svg {
-  animation: route-icon-enter 260ms var(--ease-emphasized) both, lung-breath-once 820ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+.route-icon-cardiovascular .branch-transition-svg-cardiovascular {
+  animation: cardio-icon-bounce 1040ms cubic-bezier(.22,1,.36,1) 1 both;
 }
 
-.route-icon-infectious-diseases .branch-route-orb svg {
-  animation: route-icon-enter 260ms var(--ease-emphasized) both, shield-pop-once 760ms cubic-bezier(.22,1,.36,1) 80ms 1 both;
+.route-icon-cardiovascular .cardio-heart-trace {
+  animation: cardio-trace-line 900ms cubic-bezier(.22,1,.36,1) 110ms 1 both;
 }
 
-.route-icon-orthopedics .branch-route-orb svg {
-  animation: route-icon-enter 260ms var(--ease-emphasized) both, bone-settle-once 760ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+.route-icon-cardiovascular .cardio-heart-glow {
+  animation: cardio-heart-glow 940ms ease 120ms 1 both;
+}
+
+.route-icon-internal-medicine .branch-transition-icon {
+  animation: branch-icon-enter 260ms var(--ease-emphasized) both, flask-sway-once 840ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+  transform-origin: 50% 62%;
+}
+
+.route-icon-neurology .branch-transition-icon {
+  animation: branch-icon-enter 260ms var(--ease-emphasized) both, neuro-pulse-once 900ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+}
+
+.route-icon-pediatrics .branch-transition-icon {
+  animation: branch-icon-enter 260ms var(--ease-emphasized) both, pediatrics-bounce-once 820ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+}
+
+.route-icon-general-surgery .branch-transition-icon {
+  animation: branch-icon-enter 260ms var(--ease-emphasized) both, scalpel-slice-once 780ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+  transform-origin: 52% 48%;
+}
+
+.route-icon-pulmonology .branch-transition-icon {
+  animation: branch-icon-enter 260ms var(--ease-emphasized) both, lung-breath-once 900ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+}
+
+.route-icon-infectious-diseases .branch-transition-icon {
+  animation: branch-icon-enter 260ms var(--ease-emphasized) both, shield-pop-once 820ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+}
+
+.route-icon-orthopedics .branch-transition-icon {
+  animation: branch-icon-enter 260ms var(--ease-emphasized) both, bone-settle-once 820ms cubic-bezier(.22,1,.36,1) 90ms 1 both;
+  transform-origin: center;
 }
 
 .branch-route-copy {
   display: grid;
   justify-items: center;
-  gap: 4px;
+  gap: 0;
   min-width: 0;
   text-align: center;
 }
 
-.branch-route-copy small {
-  color: color-mix(in srgb, var(--route-accent) 82%, var(--text-primary) 18%);
-  font-size: 11px;
-  font-weight: 820;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.branch-route-copy strong {
+.branch-route-copy.solo strong {
   color: var(--text-primary);
-  font-size: clamp(24px, 2vw, 28px);
+  font-size: clamp(24px, 2vw, 29px);
   font-weight: 820;
   line-height: 1.08;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
   overflow-wrap: break-word;
-}
-
-.branch-route-copy span {
-  color: var(--text-secondary);
-  font-size: 13.5px;
-  font-weight: 650;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.04);
 }
 
 .branch-route-reveal {
@@ -16918,7 +16959,7 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
 
 @keyframes branch-overlay-in {
   from { opacity: 0; backdrop-filter: blur(0px); -webkit-backdrop-filter: blur(0px); }
-  to { opacity: 1; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  to { opacity: 1; backdrop-filter: blur(9px); -webkit-backdrop-filter: blur(9px); }
 }
 
 @keyframes branch-overlay-out {
@@ -16932,79 +16973,95 @@ html[data-theme="dark"] :where(.icon-badge, .nav-brand-mark, .btn-icon, .button-
 }
 
 @keyframes branch-ring-expand {
-  0% { transform: scale(.72); opacity: 0; }
-  28% { opacity: .58; }
-  100% { transform: scale(1.22); opacity: 0; }
+  0% { transform: scale(.7); opacity: 0; }
+  26% { opacity: .54; }
+  100% { transform: scale(1.26); opacity: 0; }
 }
 
 @keyframes branch-glow-breathe {
-  0%, 100% { transform: scale(.94); opacity: .42; }
-  50% { transform: scale(1.08); opacity: .8; }
+  0%, 100% { transform: scale(.94); opacity: .36; }
+  50% { transform: scale(1.12); opacity: .82; }
 }
 
 @keyframes branch-orb-enter {
-  0% { opacity: 0; transform: translateY(10px) scale(.88); }
+  0% { opacity: 0; transform: translateY(12px) scale(.88); }
   60% { opacity: 1; transform: translateY(0) scale(1.02); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-@keyframes route-icon-enter {
-  0% { opacity: 0; transform: scale(.76); filter: blur(2px); }
+@keyframes branch-icon-enter {
+  0% { opacity: 0; transform: scale(.72); filter: blur(2px); }
   100% { opacity: 1; transform: scale(1); filter: blur(0); }
 }
 
-@keyframes cardio-beat-once {
-  0%, 100% { transform: scale(1); }
-  18% { transform: scale(1.18); }
-  34% { transform: scale(.95); }
-  50% { transform: scale(1.14); }
+@keyframes cardio-icon-bounce {
+  0% { transform: scale(.88); }
+  18% { transform: scale(1.03); }
+  34% { transform: scale(.98); }
+  52% { transform: scale(1.1); }
   68% { transform: scale(.985); }
+  100% { transform: scale(1); }
+}
+
+@keyframes cardio-trace-line {
+  0% { stroke-dashoffset: 84; opacity: .25; }
+  18% { opacity: 1; }
+  72% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+
+@keyframes cardio-heart-glow {
+  0% { opacity: 0; }
+  24% { opacity: .18; }
+  48% { opacity: .82; }
+  62% { opacity: .22; }
+  100% { opacity: 0; }
 }
 
 @keyframes flask-sway-once {
   0%, 100% { transform: rotate(0deg) translateY(0); }
-  25% { transform: rotate(-8deg) translateY(-1px); }
+  24% { transform: rotate(-10deg) translateY(-1px); }
   50% { transform: rotate(8deg) translateY(0); }
-  74% { transform: rotate(-3deg) translateY(0); }
+  74% { transform: rotate(-4deg) translateY(0); }
 }
 
 @keyframes neuro-pulse-once {
   0%, 100% { transform: scale(1); filter: drop-shadow(0 0 0 transparent); }
-  30% { transform: scale(1.08); filter: drop-shadow(0 0 10px color-mix(in srgb, currentColor 28%, transparent)); }
-  60% { transform: scale(1.02); filter: drop-shadow(0 0 4px color-mix(in srgb, currentColor 18%, transparent)); }
+  30% { transform: scale(1.1); filter: drop-shadow(0 0 12px color-mix(in srgb, currentColor 30%, transparent)); }
+  60% { transform: scale(1.02); filter: drop-shadow(0 0 5px color-mix(in srgb, currentColor 16%, transparent)); }
 }
 
 @keyframes pediatrics-bounce-once {
   0%, 100% { transform: translateY(0) scale(1); }
-  24% { transform: translateY(-7px) scale(1.03); }
+  22% { transform: translateY(-7px) scale(1.03); }
   48% { transform: translateY(0) scale(.98); }
-  68% { transform: translateY(-2px) scale(1.01); }
+  70% { transform: translateY(-2px) scale(1.01); }
 }
 
 @keyframes scalpel-slice-once {
   0%, 100% { transform: translateX(0) rotate(0deg); }
-  28% { transform: translateX(5px) rotate(-15deg); }
-  52% { transform: translateX(-2px) rotate(10deg); }
-  76% { transform: translateX(0) rotate(-3deg); }
+  26% { transform: translateX(7px) rotate(-16deg); }
+  48% { transform: translateX(-2px) rotate(10deg); }
+  72% { transform: translateX(0) rotate(-3deg); }
 }
 
 @keyframes lung-breath-once {
   0%, 100% { transform: scale(1); }
-  34% { transform: scale(1.14); }
+  36% { transform: scale(1.15); }
   68% { transform: scale(.98); }
 }
 
 @keyframes shield-pop-once {
   0%, 100% { transform: scale(1); }
-  26% { transform: scale(1.15); }
-  52% { transform: scale(.95); }
-  74% { transform: scale(1.03); }
+  24% { transform: scale(1.16); }
+  48% { transform: scale(.95); }
+  72% { transform: scale(1.03); }
 }
 
 @keyframes bone-settle-once {
   0%, 100% { transform: rotate(0deg) scale(1); }
-  24% { transform: rotate(-9deg) scale(1.05); }
-  48% { transform: rotate(6deg) scale(.98); }
+  24% { transform: rotate(-10deg) scale(1.06); }
+  48% { transform: rotate(7deg) scale(.98); }
   72% { transform: rotate(-2deg) scale(1.01); }
 }
 
@@ -17018,48 +17075,49 @@ html[data-theme="dark"] .branch-route-overlay,
 .app-shell[data-theme="dark"] .branch-route-overlay {
   background:
     radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--route-accent) 18%, transparent), transparent 30%),
-    rgba(2, 8, 16, 0.42);
+    rgba(2, 8, 16, 0.46);
 }
 
 html[data-theme="dark"] .branch-route-orb,
 .app-shell[data-theme="dark"] .branch-route-orb {
   background:
     radial-gradient(circle at 34% 22%, rgba(255,255,255,0.12), transparent 26%),
-    radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--route-accent) 18%, transparent), transparent 54%),
+    radial-gradient(circle at 50% 18%, color-mix(in srgb, var(--route-accent) 20%, transparent), transparent 54%),
     linear-gradient(180deg, color-mix(in srgb, var(--surface-elevated) 88%, #07111b 12%), color-mix(in srgb, var(--surface-1) 94%, #050d16 6%));
-  border-color: color-mix(in srgb, var(--route-accent) 32%, rgba(255,255,255,0.06));
+  border-color: color-mix(in srgb, var(--route-accent) 34%, rgba(255,255,255,0.06));
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.08),
-    0 22px 56px color-mix(in srgb, var(--route-accent) 12%, rgba(0, 0, 0, 0.34));
+    0 22px 60px color-mix(in srgb, var(--route-accent) 14%, rgba(0, 0, 0, 0.36));
 }
 
 @media (max-width: 680px) {
   .branch-route-stage {
-    gap: 16px;
-    width: min(280px, calc(100vw - 32px));
+    width: min(270px, calc(100vw - 32px));
   }
 
   .branch-route-hero {
-    width: 144px;
-    height: 144px;
+    width: 154px;
+    height: 154px;
   }
 
   .branch-route-orb {
-    width: 96px;
-    height: 96px;
+    width: 104px;
+    height: 104px;
     border-radius: 30px;
   }
 
-  .branch-route-orb::before {
-    border-radius: 22px;
+  .branch-transition-visual,
+  .branch-transition-icon {
+    width: 58px;
+    height: 58px;
   }
 
-  .branch-route-orb svg {
-    width: 40px;
-    height: 40px;
+  .branch-transition-svg {
+    width: 68px;
+    height: 68px;
   }
 
-  .branch-route-copy strong {
+  .branch-route-copy.solo strong {
     font-size: 22px;
   }
 }
@@ -17071,12 +17129,17 @@ html[data-theme="dark"] .branch-route-orb,
   .branch-route-ring,
   .branch-route-glow,
   .branch-route-orb,
-  .branch-route-orb svg,
+  .branch-transition-icon,
+  .branch-transition-svg,
+  .cardio-heart-trace,
+  .cardio-heart-glow,
   .branch-route-reveal {
     animation: none !important;
     transition: none !important;
     transform: none !important;
     filter: none !important;
+    stroke-dashoffset: 0 !important;
+    opacity: 1 !important;
   }
 }
 

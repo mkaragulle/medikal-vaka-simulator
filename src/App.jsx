@@ -5,7 +5,7 @@ import CaseList from './components/CaseList.jsx';
 import CasePlayer from './components/CasePlayer.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import ExamResults from './components/ExamResults.jsx';
-import { Icon, branchIconById } from './components/ui.jsx';
+import { BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById, getCasesByBranch } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
@@ -15,7 +15,7 @@ import { localBackend } from './services/localBackend.js';
 const STATS_STORAGE_KEY = 'medsim-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'medsim-exam-history-v2';
 const THEME_STORAGE_KEY = 'medsim-theme-v1';
-const BRANCH_TRANSITION_MS = 980;
+const BRANCH_TRANSITION_MS = 1180;
 const BRANCH_TRANSITION_FADE_MS = 240;
 
 const defaultStats = {
@@ -387,18 +387,22 @@ function App() {
       {branchRouteTransition?.active ? (
         <div className={`branch-route-overlay ${branchRouteTransition.phase} branch-route-${branchRouteTransition.branchId || 'default'}`.trim()} aria-hidden="true">
           <div className="branch-route-stage">
-            <div className={`branch-route-hero route-icon-${branchRouteTransition.branchId || 'default'}`.trim()}>
+            <div
+              className={`branch-route-hero route-icon-${branchRouteTransition.branchId || 'default'}`.trim()}
+              data-branch={branchRouteTransition.branchId || 'default'}
+            >
               <span className="branch-route-ring ring-one" />
               <span className="branch-route-ring ring-two" />
               <span className="branch-route-glow" />
               <span className="branch-route-orb">
-                <Icon name={branchRouteTransition.iconName || 'Activity'} />
+                <BranchTransitionVisual
+                  branchId={branchRouteTransition.branchId || 'default'}
+                  iconName={branchRouteTransition.iconName || 'Activity'}
+                />
               </span>
             </div>
-            <div className="branch-route-copy">
-              <small>Olgu ekranı hazırlanıyor</small>
+            <div className="branch-route-copy solo">
               <strong>{branchRouteTransition.title}</strong>
-              <span>{branchRouteTransition.caseCount} klinik olgu yükleniyor</span>
             </div>
           </div>
         </div>

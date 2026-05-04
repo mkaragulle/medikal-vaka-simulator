@@ -72,6 +72,34 @@ export function ClinicalCallout({ tone = 'info', icon = 'Sparkles', title = 'Kli
   );
 }
 
+
+
+export function BranchTransitionVisual({ branchId, iconName }) {
+  if (branchId === 'cardiovascular') {
+    return (
+      <svg
+        className="branch-transition-svg branch-transition-svg-cardiovascular"
+        viewBox="0 0 120 120"
+        aria-hidden="true"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path className="cardio-heart-outline" d="M60 99c-8.9-7.3-17.2-14.1-24-20.4C25.6 68.9 19 61.1 19 50.3c0-12.3 8.8-21.1 20.2-21.1 7.5 0 14.4 3.7 20.8 11.2 6.4-7.5 13.3-11.2 20.8-11.2C92.2 29.2 101 38 101 50.3c0 10.8-6.6 18.6-17 28.3C77.2 84.9 68.9 91.7 60 99Z" />
+        <path className="cardio-heart-glow" d="M60 99c-8.9-7.3-17.2-14.1-24-20.4C25.6 68.9 19 61.1 19 50.3c0-12.3 8.8-21.1 20.2-21.1 7.5 0 14.4 3.7 20.8 11.2 6.4-7.5 13.3-11.2 20.8-11.2C92.2 29.2 101 38 101 50.3c0 10.8-6.6 18.6-17 28.3C77.2 84.9 68.9 91.7 60 99Z" />
+        <path className="cardio-heart-trace" d="M16 58h14l7-17 13 34 10-23 6 10h15" />
+      </svg>
+    );
+  }
+
+  return (
+    <span className={`branch-transition-visual branch-transition-visual-${branchId || 'default'}`.trim()} aria-hidden="true">
+      <Icon name={iconName || 'Activity'} className="branch-transition-icon" size={66} strokeWidth={1.9} />
+    </span>
+  );
+}
+
 export const branchIconById = {
   cardiovascular: 'HeartPulse',
   'internal-medicine': 'FlaskConical',
