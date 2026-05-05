@@ -773,7 +773,14 @@ function App() {
               setSelectedCaseId(null);
               setExamState(null);
               setMode('study');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
+              window.setTimeout(() => {
+                const wrongPanel = document.getElementById('wrong-answers-section');
+                if (wrongPanel) {
+                  wrongPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                } else {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+              }, 80);
             }}
             aria-label="Yanlış çözülenler"
             title="Yanlış çözülenler"
@@ -934,12 +941,14 @@ function App() {
             totalBranches={visibleBranches.length}
             examCount={examHistory.length}
           />
-          <WrongAnswersPanel
-            wrongAnswers={visibleWrongAnswers}
-            onOpenCase={openWrongCase}
-            onRemoveCase={removeWrongAnswer}
-            onClearAll={clearWrongAnswers}
-          />
+          <section id="wrong-answers-section" className="wrong-answers-anchor section-anchor" aria-label="Yanlış çözülen vakalar">
+            <WrongAnswersPanel
+              wrongAnswers={visibleWrongAnswers}
+              onOpenCase={openWrongCase}
+              onRemoveCase={removeWrongAnswer}
+              onClearAll={clearWrongAnswers}
+            />
+          </section>
           <BranchSelector
             branches={visibleBranches}
             cases={accessibleCases}

@@ -860,3 +860,111 @@ body:not(.klinikiq-auth-lock) .klinikiq-theme-toggle[data-theme-state="light"] .
     padding-bottom: 44px !important;
   }
 }
+
+/* =========================================================
+   V102 — Definitive right workspace scroll and wrong answers anchor fix
+   Previous refinement clipped every card surface, including the diagnosis
+   workspace. That made the answer feedback area below the options unreachable
+   on some Chromium/Opera GX desktop layouts. This final layer removes that
+   clipping only from the right workspace and makes one clear scroll target.
+   ========================================================= */
+.wrong-answers-anchor {
+  scroll-margin-top: calc(var(--kiq-topbar-height, 92px) + 18px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column {
+  min-height: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell,
+body:not(.klinikiq-auth-lock) .right-workspace-shell.card-surface {
+  min-height: 0 !important;
+  overflow-x: hidden !important;
+  overscroll-behavior-y: contain !important;
+  -webkit-overflow-scrolling: touch !important;
+  touch-action: pan-y !important;
+  scrollbar-gutter: stable !important;
+  scroll-padding-bottom: 28px !important;
+}
+
+@media (min-width: 1025px) {
+  body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column {
+    position: sticky !important;
+    top: clamp(88px, 10vh, 104px) !important;
+    align-self: start !important;
+    height: calc(100dvh - clamp(104px, 12vh, 124px)) !important;
+    max-height: calc(100dvh - clamp(104px, 12vh, 124px)) !important;
+    overflow: visible !important;
+    padding-right: 0 !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell,
+  body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell .tools-panel,
+  body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell .question-panel,
+  body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell .answer-feedback-panel,
+  body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell .answer-feedback-grid {
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::after {
+    content: "";
+    flex: 0 0 14px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell,
+  body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    scrollbar-gutter: auto !important;
+  }
+}
+
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::-webkit-scrollbar,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell::-webkit-scrollbar {
+  width: 10px !important;
+  display: block !important;
+}
+
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::-webkit-scrollbar-track,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::-webkit-scrollbar-thumb,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell::-webkit-scrollbar-thumb {
+  min-height: 46px !important;
+  border: 3px solid transparent !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--text-muted) 36%, transparent) !important;
+  background-clip: padding-box !important;
+}
+
+body:not(.klinikiq-auth-lock) .professional-right-column > .right-workspace-shell::-webkit-scrollbar-thumb:hover,
+body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .right-workspace-shell::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--accent) 46%, transparent) !important;
+  background-clip: padding-box !important;
+}
