@@ -97,6 +97,24 @@ function deriveWhyCorrect(clinicalCase) {
   return truncateSentence(firstSentence || `${clinicalCase.diagnosis?.correct} olgudaki klinik ve tetkik paternini en iyi açıklar.`, 270);
 }
 
+function deriveWhyWrong(clinicalCase, selectedOption, differential) {
+  const feedback = getFeedback(clinicalCase);
+
+  if (typeof feedback.whyWrong === 'string') return feedback.whyWrong;
+  if (selectedOption && feedback.whyWrong && typeof feedback.whyWrong === 'object' && feedback.whyWrong[selectedOption]) {
+    return feedback.whyWrong[selectedOption];
+  }
+
+  if (differential?.explanation) return differential.explanation;
+
+  const correctDiagnosis = feedback.correctDiagnosis || clinicalCase.diagnosis?.correct || 'doğru tanı';
+  if (selectedOption) {
+    return `${selectedOption} bu olguda ayırıcı tanıda düşünülebilir; ancak temel klinik bulgular, zamanlama ve tetkik paterni ${correctDiagnosis} lehine daha güçlüdür.`;
+  }
+
+  return `Seçilen yanıt, olgunun ana klinik ve tetkik paternini ${correctDiagnosis} kadar iyi açıklamaz.`;
+}
+
 function cleanEvidenceText(item = '') {
   const text = normalizeText(item)
     .replace(/^Başvuru:\s*/iu, '')
@@ -270,10 +288,16 @@ function DiagnosisComparisonCard({ diagnosis, selected, glossaryEnabled = true }
   );
 }
 
-function ReasoningEvidenceCard({ whyCorrect, evidenceChain, glossaryEnabled = true }) {
+function ReasoningEvidenceCard({ reasoningText, evidenceChain, isCorrect = true, glossaryEnabled = true }) {
   return (
-    <FeedbackSection icon="Brain" tone="blue" eyebrow="Klinik gerekçe" title="Neden doğru?" className="reasoning-evidence-card">
-      <p className="feedback-body-copy"><GlossaryText text={ensureSentence(whyCorrect)} enabled={glossaryEnabled} /></p>
+    <FeedbackSection
+      icon={isCorrect ? 'Brain' : 'AlertTriangle'}
+      tone={isCorrect ? 'blue' : 'warning'}
+      eyebrow="Klinik gerekçe"
+      title={isCorrect ? 'Neden doğru?' : 'Neden yanlış?'}
+      className="reasoning-evidence-card"
+    >
+      <p className="feedback-body-copy"><GlossaryText text={ensureSentence(reasoningText)} enabled={glossaryEnabled} /></p>
       {evidenceChain.length ? (
         <div className="evidence-chain-box">
           <span>Kanıt zinciri</span>
@@ -346,29 +370,25 @@ function AnswerFeedbackPanel({
   hardMode = false,
 }) {
   const feedback = getFeedback(clinicalCase);
-  const diagnosis = feedback.correctDiagnosis || clinicalCase.diagnosis?.correct || 'Doğru tanı';
   const selectedDiagnosis = feedback.selectedDiagnosis || selected;
-  const diagnosisMeta = pickClinicalMeta(clinicalCase);
   const whyCorrect = deriveWhyCorrect(clinicalCase);
   const evidenceChain = deriveEvidenceChain(clinicalCase);
   const pearls = derivePearls(clinicalCase);
   const differential = buildDifferential(clinicalCase, selectedDiagnosis, evidenceChain);
+  const whyWrong = deriveWhyWrong(clinicalCase, selectedDiagnosis, differential);
+  const reasoningText = isCorrect ? whyCorrect : whyWrong;
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
 
   return (
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'}`} aria-live="polite">
-      <ResultSummary
-        isCorrect={isCorrect}
-        diagnosis={diagnosis}
-        points={difficultyMeta?.points ?? 0}
-        diagnosisMeta={diagnosisMeta}
-        glossaryEnabled={glossaryEnabled}
-      />
-
       <div className="answer-feedback-grid">
-        {!isCorrect ? <DiagnosisComparisonCard diagnosis={diagnosis} selected={selectedDiagnosis} glossaryEnabled={glossaryEnabled} /> : null}
-        <ReasoningEvidenceCard whyCorrect={whyCorrect} evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} />
+        <ReasoningEvidenceCard
+          reasoningText={reasoningText}
+          evidenceChain={evidenceChain}
+          isCorrect={isCorrect}
+          glossaryEnabled={glossaryEnabled}
+        />
         <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} />
         <DifferentialComparisonCard differential={differential} glossaryEnabled={glossaryEnabled} />
         <FeedbackManagementCard managementSteps={managementSteps} glossaryEnabled={glossaryEnabled} />
