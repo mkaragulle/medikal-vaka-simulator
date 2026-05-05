@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import './index.css';
 import './styles/klinikiq-system.css';
+import './styles/klinikiq-refine.css';
 import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
 import CasePlayer from './components/CasePlayer.jsx';
@@ -111,7 +112,7 @@ function App() {
   const [selectedCaseId, setSelectedCaseId] = useState(null);
   const [mode, setMode] = useState('study');
   const [hardMode, setHardMode] = useState(false);
-  const [theme, setTheme] = useState(() => loadStoredValue(THEME_STORAGE_KEY, 'dark'));
+  const [theme, setTheme] = useState(() => loadStoredValue(THEME_STORAGE_KEY, 'light'));
   const [tutorMode, setTutorMode] = useState(true);
   const [sessionStats, setSessionStats] = useState(() => currentUser?.stats ?? loadStoredValue(STATS_STORAGE_KEY, defaultStats));
   const [examHistory, setExamHistory] = useState(() => currentUser?.examHistory ?? loadStoredValue(EXAM_HISTORY_STORAGE_KEY, []));
