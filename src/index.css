@@ -29003,3 +29003,412 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .page-shell .card-surface 
     font-size: 13px;
   }
 }
+
+
+
+/* --------------------------------------------------------------------------
+   KLINIKIQ V149 — final navbar repair
+   The previous grid-based navbar caused center tabs and account/stat chips to
+   collide on wide desktop screens. This block intentionally overrides the
+   older navbar rules with a flex layout, fixed rhythm, compact chips and
+   safer responsive wrapping.
+   -------------------------------------------------------------------------- */
+
+body:not(.klinikiq-auth-lock) .top-shell-nav {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  gap: 16px !important;
+  width: min(1780px, calc(100% - 28px)) !important;
+  min-height: 78px !important;
+  padding: 12px 16px !important;
+  border-radius: 26px !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 96%, transparent), color-mix(in srgb, var(--surface-2) 90%, transparent)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, var(--border-subtle)) !important;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.075) !important;
+  backdrop-filter: blur(18px) saturate(1.05) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand {
+  flex: 1 1 330px !important;
+  max-width: 380px !important;
+  min-width: 230px !important;
+  height: 56px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 13px !important;
+  padding: 0 6px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand-mark {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 16px !important;
+  padding: 6px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand-copy {
+  display: grid !important;
+  gap: 2px !important;
+  min-width: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand strong {
+  font-size: 17px !important;
+  line-height: 1.05 !important;
+  font-weight: 830 !important;
+  letter-spacing: -0.035em !important;
+  color: var(--text-primary) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand small {
+  max-width: 265px !important;
+  font-size: 12.5px !important;
+  line-height: 1.15 !important;
+  font-weight: 650 !important;
+  color: var(--text-muted) !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch {
+  flex: 0 0 clamp(340px, 25vw, 430px) !important;
+  width: clamp(340px, 25vw, 430px) !important;
+  min-width: 340px !important;
+  height: 56px !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 4px !important;
+  border-radius: 22px !important;
+  background: color-mix(in srgb, var(--surface-2) 88%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, var(--border-subtle)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06) !important;
+  z-index: 1 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  min-height: 46px !important;
+  padding: 0 12px !important;
+  border-radius: 16px !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  font-weight: 760 !important;
+  letter-spacing: -0.02em !important;
+  white-space: nowrap !important;
+  color: var(--text-secondary) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button.active {
+  color: var(--text-primary) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, var(--surface-1)), color-mix(in srgb, var(--accent) 6%, var(--surface-2))) !important;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--accent) 16%, transparent),
+    0 8px 18px rgba(15, 23, 42, 0.07) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions {
+  flex: 1 1 620px !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  display: flex !important;
+  grid-auto-flow: unset !important;
+  grid-template-columns: none !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: nowrap !important;
+  gap: 9px !important;
+  overflow: visible !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions > * {
+  flex: 0 0 auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-wrong-chip,
+body:not(.klinikiq-auth-lock) .nav-score-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .btn,
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle {
+  height: 54px !important;
+  min-height: 54px !important;
+  border-radius: 17px !important;
+  margin: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-wrong-chip,
+body:not(.klinikiq-auth-lock) .nav-score-chip {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  padding: 0 13px !important;
+  background: color-mix(in srgb, var(--surface-1) 96%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 9%, var(--border-subtle)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.06) !important;
+  color: var(--text-primary) !important;
+  white-space: nowrap !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-chip {
+  width: clamp(138px, 10vw, 174px) !important;
+  justify-content: flex-start !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-chip svg,
+body:not(.klinikiq-auth-lock) .nav-stat-chip > svg {
+  width: 17px !important;
+  height: 17px !important;
+  color: var(--accent) !important;
+  stroke-width: 2 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-name {
+  display: block !important;
+  max-width: 118px !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  font-weight: 760 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--text-primary) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip {
+  width: 104px !important;
+  padding-inline: 11px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-score-chip {
+  width: 92px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip span {
+  font-size: 11px !important;
+  line-height: 1 !important;
+  font-weight: 770 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: none !important;
+  color: var(--text-muted) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip strong {
+  min-width: 20px !important;
+  padding: 5px 8px !important;
+  border-radius: 999px !important;
+  text-align: center !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  font-weight: 820 !important;
+  color: var(--text-primary) !important;
+  background: color-mix(in srgb, var(--accent) 9%, var(--surface-2)) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-wrong-chip strong {
+  color: #991b1b !important;
+  background: rgba(254, 226, 226, 0.95) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-cta {
+  width: 142px !important;
+  min-width: 142px !important;
+  padding: 0 16px !important;
+  gap: 8px !important;
+  font-size: 14px !important;
+  font-weight: 780 !important;
+  letter-spacing: -0.02em !important;
+  box-shadow: 0 12px 26px color-mix(in srgb, var(--accent) 22%, transparent) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-cta svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+body:not(.klinikiq-auth-lock) .nav-logout-btn {
+  width: 54px !important;
+  min-width: 54px !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon svg,
+body:not(.klinikiq-auth-lock) .nav-logout-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Dark mode: lighter readable cards, no muddy black-on-teal collisions */
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .top-shell-nav,
+.app-shell[data-theme="dark"] .top-shell-nav {
+  background:
+    radial-gradient(circle at 78% 20%, rgba(45, 212, 191, 0.10), transparent 34%),
+    linear-gradient(180deg, rgba(9, 24, 31, 0.94), rgba(7, 19, 27, 0.90)) !important;
+  border-color: rgba(94, 234, 212, 0.16) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255,255,255,0.04) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-mode-switch,
+.app-shell[data-theme="dark"] .nav-mode-switch {
+  background: rgba(8, 22, 29, 0.88) !important;
+  border-color: rgba(148, 163, 184, 0.18) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-mode-switch button,
+.app-shell[data-theme="dark"] .nav-mode-switch button {
+  color: #b8c7d5 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-mode-switch button.active,
+.app-shell[data-theme="dark"] .nav-mode-switch button.active {
+  color: #f8fafc !important;
+  background: linear-gradient(180deg, rgba(45, 212, 191, 0.22), rgba(20, 184, 166, 0.15)) !important;
+  box-shadow: inset 0 0 0 1px rgba(94, 234, 212, 0.20), 0 10px 22px rgba(20, 184, 166, 0.12) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-user-chip,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-wrong-chip,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-score-chip,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle,
+.app-shell[data-theme="dark"] .nav-user-chip,
+.app-shell[data-theme="dark"] .nav-wrong-chip,
+.app-shell[data-theme="dark"] .nav-score-chip,
+.app-shell[data-theme="dark"] .nav-actions .btn-icon,
+.app-shell[data-theme="dark"] .nav-actions .klinikiq-theme-toggle {
+  background: linear-gradient(180deg, rgba(13, 32, 40, 0.96), rgba(9, 25, 33, 0.92)) !important;
+  border-color: rgba(148, 163, 184, 0.18) !important;
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-brand strong,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-user-name,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-stat-chip strong,
+.app-shell[data-theme="dark"] .nav-brand strong,
+.app-shell[data-theme="dark"] .nav-user-name,
+.app-shell[data-theme="dark"] .nav-stat-chip strong {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-brand small,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-stat-chip span,
+.app-shell[data-theme="dark"] .nav-brand small,
+.app-shell[data-theme="dark"] .nav-stat-chip span {
+  color: #a8bac9 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-stat-chip strong,
+.app-shell[data-theme="dark"] .nav-stat-chip strong {
+  background: rgba(45, 212, 191, 0.11) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-wrong-chip strong,
+.app-shell[data-theme="dark"] .nav-wrong-chip strong {
+  color: #fecaca !important;
+  background: rgba(239, 68, 68, 0.17) !important;
+}
+
+/* Responsive: wrap cleanly instead of colliding */
+@media (max-width: 1320px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 10px 14px !important;
+    min-height: 132px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-brand {
+    flex: 1 1 300px !important;
+    order: 1 !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-mode-switch {
+    order: 2 !important;
+    flex: 0 0 min(420px, calc(100% - 20px)) !important;
+    width: min(420px, calc(100% - 20px)) !important;
+    min-width: min(340px, calc(100% - 20px)) !important;
+    margin-left: auto !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-actions {
+    order: 3 !important;
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    justify-content: flex-end !important;
+  }
+}
+
+@media (max-width: 860px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    width: calc(100% - 18px) !important;
+    min-height: auto !important;
+    padding: 12px !important;
+    border-radius: 22px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-brand {
+    max-width: none !important;
+    width: 100% !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-mode-switch {
+    order: 2 !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-actions {
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-user-chip {
+    width: 150px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-cta {
+    width: auto !important;
+    min-width: 134px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  body:not(.klinikiq-auth-lock) .nav-brand small,
+  body:not(.klinikiq-auth-lock) .nav-user-chip,
+  body:not(.klinikiq-auth-lock) .nav-stat-chip span {
+    display: none !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-stat-chip {
+    width: 54px !important;
+    padding: 0 !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-cta {
+    flex: 1 1 160px !important;
+  }
+}

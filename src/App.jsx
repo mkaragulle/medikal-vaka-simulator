@@ -761,12 +761,9 @@ function App() {
           </button>
         </div>
         <div className="nav-actions" aria-label="Oturum eylemleri">
-          <span className="nav-user-chip nav-user-card" aria-label={`Kullanıcı ${currentUser.name}`}>
+          <span className="nav-user-chip nav-user-card" aria-label={`Kullanıcı ${currentUser.name}`} title={currentUser.name}>
             <Icon name="User" />
-            <span className="nav-user-copy">
-              <small>Hesap</small>
-              <strong title={currentUser.name}>{currentUser.name}</strong>
-            </span>
+            <span className="nav-user-name">{currentUser.name}</span>
           </span>
           <button
             type="button"
@@ -779,26 +776,23 @@ function App() {
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             aria-label="Yanlış çözülenler"
+            title="Yanlış çözülenler"
           >
             <Icon name="RotateCcw" />
-            <span className="nav-stat-copy">
-              <small>Yanlışlar</small>
-              <strong>{visibleWrongAnswers.length}</strong>
-            </span>
+            <span>Yanlış</span>
+            <strong>{visibleWrongAnswers.length}</strong>
           </button>
-          <span className="nav-score-chip nav-stat-chip" aria-label={`Puan ${sessionStats.score}`}>
+          <span className="nav-score-chip nav-stat-chip" aria-label={`Puan ${sessionStats.score}`} title={`Puan ${sessionStats.score}`}>
             <Icon name="Trophy" />
-            <span className="nav-stat-copy">
-              <small>Puan</small>
-              <strong>{sessionStats.score}</strong>
-            </span>
+            <span>Puan</span>
+            <strong>{sessionStats.score}</strong>
           </span>
           <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}>
             <Icon name="Timer" />
-            <span>{isDemoUser ? 'Demo blok' : 'Blok sınavı'}</span>
+            <span>{isDemoUser ? 'Demo blok' : 'Blok sınav'}</span>
           </button>
           <ThemeToggle theme={theme} onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} />
-          <button type="button" className="btn btn-icon nav-logout-btn" onClick={handleLogout} aria-label="Çıkış yap">
+          <button type="button" className="btn btn-icon nav-logout-btn" onClick={handleLogout} aria-label="Çıkış yap" title="Çıkış yap">
             <Icon name="LogIn" />
           </button>
         </div>
