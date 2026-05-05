@@ -34,7 +34,7 @@ const authFeatureCards = [
     signal: 'Tekrarla kalıcılığı artırır.'
   },
   {
-    icon: 'BookOpen',
+    icon: 'Notes',
     title: 'Pro Vaka Havuzu',
     description: 'Daha fazla branş, daha fazla vaka ve daha ileri düzey klinik senaryolara eriş.',
     signal: 'Daha geniş klinik maruziyet sağlar.'

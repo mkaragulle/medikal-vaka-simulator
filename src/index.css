@@ -22451,3 +22451,149 @@ body.klinikiq-auth-lock .auth-hero-orbital .auth-orbit-core {
     margin-top: -21px !important;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   V116 — Auth feature cards refinement
+   -------------------------------------------------------------------------- */
+body.klinikiq-auth-lock .auth-minimal-features {
+  align-items: stretch !important;
+  gap: clamp(14px, 1.2vw, 18px) !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-feature-card {
+  min-height: clamp(124px, 14.6vh, 148px) !important;
+  grid-template-columns: 52px minmax(0, 1fr) !important;
+  align-items: start !important;
+  align-content: start !important;
+  gap: 14px !important;
+  padding: 16px 16px 15px !important;
+  border-radius: 22px !important;
+  background:
+    radial-gradient(circle at 12% 14%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 46%),
+    linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 93%, white 4%), color-mix(in srgb, var(--auth-panel-soft) 88%, transparent)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 11%, var(--border-subtle)) !important;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, .05), inset 0 1px 0 rgba(255,255,255,.1) !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  border-radius: 22px 0 0 22px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 76%, white 10%), color-mix(in srgb, var(--accent-blue) 64%, var(--accent) 36%));
+  opacity: .42;
+}
+
+body.klinikiq-auth-lock .auth-minimal-feature-card:hover,
+body.klinikiq-auth-lock .auth-minimal-feature-card:focus-visible,
+body.klinikiq-auth-lock .auth-minimal-feature-card.is-active {
+  transform: translateY(-3px) !important;
+  border-color: color-mix(in srgb, var(--accent) 24%, var(--border-subtle)) !important;
+  box-shadow: 0 22px 44px rgba(15, 118, 110, .10), inset 0 1px 0 rgba(255,255,255,.15) !important;
+}
+
+body.klinikiq-auth-lock .auth-feature-icon {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  min-height: 52px !important;
+  align-self: start !important;
+  justify-self: start !important;
+  border-radius: 16px !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 91%, white 6%), color-mix(in srgb, var(--accent) 10%, var(--auth-panel-soft))) !important;
+  color: color-mix(in srgb, var(--accent) 84%, var(--auth-text-main)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 8px 18px rgba(15, 118, 110, .06) !important;
+}
+
+body.klinikiq-auth-lock .auth-feature-icon svg {
+  width: 24px !important;
+  height: 24px !important;
+  stroke-width: 1.9;
+}
+
+body.klinikiq-auth-lock .auth-minimal-feature-card:hover .auth-feature-icon,
+body.klinikiq-auth-lock .auth-minimal-feature-card:focus-visible .auth-feature-icon,
+body.klinikiq-auth-lock .auth-minimal-feature-card.is-active .auth-feature-icon {
+  transform: translateY(-1px) scale(1.03) !important;
+  color: color-mix(in srgb, var(--accent) 92%, white 4%) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 89%, white 8%), color-mix(in srgb, var(--accent) 14%, var(--auth-panel-soft))) !important;
+}
+
+body.klinikiq-auth-lock .auth-feature-copy {
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 7px !important;
+  padding-top: 1px;
+}
+
+body.klinikiq-auth-lock .auth-feature-copy strong {
+  display: block !important;
+  width: 100% !important;
+  min-height: 2.5em;
+  margin: 0 !important;
+  color: var(--auth-text-main) !important;
+  font-size: 14.4px !important;
+  line-height: 1.24 !important;
+  font-weight: 790 !important;
+  letter-spacing: -0.022em !important;
+  text-wrap: balance;
+}
+
+body.klinikiq-auth-lock .auth-feature-copy span {
+  display: block !important;
+  width: 100% !important;
+  min-height: 3.9em;
+  margin: 0 !important;
+  color: color-mix(in srgb, var(--auth-text-muted) 92%, var(--auth-text-main) 8%) !important;
+  font-size: 12.5px !important;
+  line-height: 1.45 !important;
+  font-weight: 560 !important;
+  letter-spacing: -0.008em !important;
+  text-wrap: pretty;
+}
+
+@media (max-width: 1240px) {
+  body.klinikiq-auth-lock .auth-minimal-feature-card {
+    min-height: 118px !important;
+    grid-template-columns: 46px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding: 14px 14px 13px !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-icon {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    min-height: 46px !important;
+    border-radius: 14px !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-icon svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-copy { gap: 6px !important; }
+  body.klinikiq-auth-lock .auth-feature-copy strong {
+    min-height: 2.55em;
+    font-size: 13.6px !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-copy span {
+    min-height: 4.05em;
+    font-size: 11.8px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body.klinikiq-auth-lock .auth-minimal-feature-card {
+    min-height: auto !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-copy strong,
+  body.klinikiq-auth-lock .auth-feature-copy span {
+    min-height: 0 !important;
+  }
+}
