@@ -23125,3 +23125,228 @@ body.klinikiq-auth-lock .auth-orbit-icon-wrap svg {
     transition-duration: 1ms !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   V118 — Hard fix for desktop orbital hero alignment and animation
+   Reason: older rules left .auth-orbit-item at width/height:0 and used the
+   individual translate property. Some desktop browsers/breakpoints rendered the
+   ring/core using different coordinate systems, so the shield and orbit drifted.
+   This version uses one 100% wrapper per icon, transform-only centering, no
+   per-item animation delays, and a mathematically stable radius inside bounds.
+   -------------------------------------------------------------------------- */
+body.klinikiq-auth-lock .auth-minimal-showcase {
+  grid-template-columns: minmax(0, 1.04fr) minmax(300px, 392px) !important;
+  align-items: center !important;
+  overflow: hidden !important;
+}
+
+body.klinikiq-auth-lock .auth-hero-illustration {
+  position: relative !important;
+  display: grid !important;
+  place-items: center !important;
+  justify-items: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  min-height: clamp(286px, 31vh, 396px) !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  contain: layout paint !important;
+}
+
+body.klinikiq-auth-lock .auth-hero-orbital {
+  --orbit-size: clamp(292px, 23.4vw, 376px);
+  --orbit-badge-size: clamp(42px, 3vw, 52px);
+  --orbit-radius: calc((var(--orbit-size) / 2) - (var(--orbit-badge-size) / 2) - 18px);
+  position: relative !important;
+  width: var(--orbit-size) !important;
+  height: var(--orbit-size) !important;
+  min-width: var(--orbit-size) !important;
+  min-height: var(--orbit-size) !important;
+  display: grid !important;
+  place-items: center !important;
+  justify-self: center !important;
+  align-self: center !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  transform: translateZ(0) !important;
+  translate: none !important;
+  will-change: transform;
+}
+
+body.klinikiq-auth-lock .auth-orbit-ring {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
+  translate: none !important;
+  transform: translate(-50%, -50%) !important;
+  transform-origin: 50% 50% !important;
+  border-radius: 999px !important;
+  pointer-events: none !important;
+}
+body.klinikiq-auth-lock .auth-orbit-ring.orbit-ring-lg {
+  width: calc((var(--orbit-radius) * 2) + var(--orbit-badge-size) + 24px) !important;
+  height: calc((var(--orbit-radius) * 2) + var(--orbit-badge-size) + 24px) !important;
+}
+body.klinikiq-auth-lock .auth-orbit-ring.orbit-ring-md {
+  width: calc((var(--orbit-radius) * 2) + 18px) !important;
+  height: calc((var(--orbit-radius) * 2) + 18px) !important;
+}
+body.klinikiq-auth-lock .auth-orbit-ring.orbit-ring-sm {
+  width: calc((var(--orbit-radius) * 2) - 42px) !important;
+  height: calc((var(--orbit-radius) * 2) - 42px) !important;
+}
+
+body.klinikiq-auth-lock .auth-hero-orbital .auth-orbit-core {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  inset: auto !important;
+  translate: none !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  transform-origin: 50% 50% !important;
+  width: clamp(82px, 6.1vw, 108px) !important;
+  height: clamp(82px, 6.1vw, 108px) !important;
+  display: grid !important;
+  place-items: center !important;
+  z-index: 6 !important;
+  animation: klinikiqCoreCenterPulseV118 5.8s cubic-bezier(.16,1,.3,1) infinite !important;
+}
+
+body.klinikiq-auth-lock .auth-orbit-item {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  translate: none !important;
+  transform-origin: 50% 50% !important;
+  transform: rotate(var(--orbit-angle)) translateZ(0) !important;
+  animation: klinikiqOrbitCenterSpinV118 var(--motion-duration-orbit, 42s) linear infinite !important;
+  animation-delay: 0s !important;
+  animation-play-state: running !important;
+  will-change: transform;
+  z-index: 4 !important;
+  pointer-events: none !important;
+}
+body.klinikiq-auth-lock .auth-orbit-item::before {
+  content: none !important;
+  display: none !important;
+}
+
+body.klinikiq-auth-lock .auth-orbit-badge {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  right: auto !important;
+  bottom: auto !important;
+  width: var(--orbit-badge-size) !important;
+  height: var(--orbit-badge-size) !important;
+  min-width: var(--orbit-badge-size) !important;
+  min-height: var(--orbit-badge-size) !important;
+  margin: 0 !important;
+  translate: none !important;
+  transform: translate(-50%, calc(-50% - var(--orbit-radius))) !important;
+  transform-origin: 50% 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  z-index: 5 !important;
+  overflow: hidden !important;
+}
+
+body.klinikiq-auth-lock .auth-orbit-icon-wrap {
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+  translate: none !important;
+  transform: rotate(var(--orbit-anti-angle)) translateZ(0) !important;
+  transform-origin: 50% 50% !important;
+  animation: klinikiqOrbitIconCounterV118 var(--motion-duration-orbit, 42s) linear infinite !important;
+  animation-delay: 0s !important;
+  animation-play-state: running !important;
+  will-change: transform;
+}
+
+body.klinikiq-auth-lock .auth-orbit-icon-wrap svg {
+  width: 45% !important;
+  height: 45% !important;
+  display: block !important;
+}
+
+@keyframes klinikiqOrbitCenterSpinV118 {
+  from { transform: rotate(var(--orbit-angle)) translateZ(0); }
+  to { transform: rotate(calc(var(--orbit-angle) + 360deg)) translateZ(0); }
+}
+
+@keyframes klinikiqOrbitIconCounterV118 {
+  from { transform: rotate(var(--orbit-anti-angle)) translateZ(0); }
+  to { transform: rotate(calc(var(--orbit-anti-angle) - 360deg)) translateZ(0); }
+}
+
+@keyframes klinikiqCoreCenterPulseV118 {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.025); }
+}
+
+@media (max-width: 1240px) {
+  body.klinikiq-auth-lock .auth-minimal-showcase {
+    grid-template-columns: minmax(0, 1fr) minmax(270px, 336px) !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-orbital {
+    --orbit-size: clamp(260px, 29vw, 326px);
+    --orbit-badge-size: 44px;
+  }
+}
+
+@media (max-width: 1120px) {
+  body.klinikiq-auth-lock .auth-minimal-showcase {
+    grid-template-columns: 1fr !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-illustration {
+    order: -1 !important;
+    min-height: 258px !important;
+    max-width: 360px !important;
+    margin-inline: auto !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-orbital {
+    --orbit-size: clamp(250px, 56vw, 322px);
+    --orbit-badge-size: 42px;
+  }
+}
+
+@media (max-width: 680px) {
+  body.klinikiq-auth-lock .auth-hero-illustration {
+    min-height: 222px !important;
+    max-width: 300px !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-orbital {
+    --orbit-size: clamp(232px, 72vw, 286px);
+    --orbit-badge-size: 40px;
+    --orbit-radius: calc((var(--orbit-size) / 2) - (var(--orbit-badge-size) / 2) - 16px);
+  }
+}
+
+/* Do not let breakpoint/reduced-motion overrides accidentally kill the hero orbit. */
+@media (prefers-reduced-motion: reduce) {
+  body.klinikiq-auth-lock .auth-orbit-item {
+    animation: klinikiqOrbitCenterSpinV118 70s linear infinite !important;
+    animation-delay: 0s !important;
+  }
+  body.klinikiq-auth-lock .auth-orbit-icon-wrap {
+    animation: klinikiqOrbitIconCounterV118 70s linear infinite !important;
+    animation-delay: 0s !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-orbital .auth-orbit-core {
+    animation: none !important;
+  }
+}
