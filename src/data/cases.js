@@ -5068,6 +5068,5729 @@ export const cases = [
       }
     }
   }
+  ,
+  {
+    "id": "cardiovascular-electrical-injury-arrhythmia-001",
+    "branchId": "cardiovascular",
+    "title": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası",
+    "difficulty": "Orta-Zor · Komite/TUS düzeyi",
+    "clinicalFocus": "Alternatif akım, transtorasik akım, VF, OED, yanık ve nörolojik hasar",
+    "demographics": "28 yaş erkek, elektrik teknisyeni",
+    "setting": "Acil servis - iş kazası sonrası ilk değerlendirme",
+    "chiefComplaint": "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı",
+    "stem": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tariflenir. Nemli zemin öyküsü, cilt direncinin azalması nedeniyle düşük voltajın bile klinik risk oluşturabileceğini düşündürür. Bu vaka, PDF'te vurgulanan alternatif akımın tetanik kasılma yaparak maruziyeti uzatması ve transtorasik akımın kalbi zedeleyebilmesi mantığı üzerine kurulmuştur.",
+    "vitals": {
+      "TA": "118/74 mmHg",
+      "Nabız": "124/dk, düzensiz",
+      "Solunum": "20/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.7 C"
+    },
+    "exam": [
+      "Sağ avuç içinde 1.5 cm kuru elektrik yanığı",
+      "Düzensiz taşikardi",
+      "Ön kol fleksörlerinde ağrı ve hassasiyet",
+      "Kısa süreli parestezi",
+      "Bilinç açık, GKS 15",
+      "Solunum sıkıntısı yok"
+    ],
+    "investigations": [
+      {
+        "id": "12-derivasyon-ekg-01",
+        "label": "12 derivasyon EKG",
+        "type": "ecg",
+        "priority": "essential",
+        "summary": "12 derivasyon EKG, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "12 derivasyon EKG, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "12 derivasyon EKG, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "kardiyak-monitorizasyon-01",
+        "label": "Kardiyak monitörizasyon",
+        "type": "ecg",
+        "priority": "essential",
+        "summary": "Kardiyak monitörizasyon, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kardiyak monitörizasyon, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kardiyak monitörizasyon, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "ck-ve-idrar-miyoglobin-01",
+        "label": "CK ve idrar miyoglobin",
+        "type": "urine",
+        "priority": "useful",
+        "summary": "CK ve idrar miyoglobin, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "CK ve idrar miyoglobin, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "CK ve idrar miyoglobin, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "troponin-seri-takibi-01",
+        "label": "Troponin seri takibi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "Troponin seri takibi, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Troponin seri takibi, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Troponin seri takibi, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Elektrik çarpmasına bağlı ventriküler aritmi riski",
+      "options": [
+        "Elektrik çarpmasına bağlı ventriküler aritmi riski",
+        "Yalnızca yüzeyel termal yanık",
+        "Spontan pnömotoraks",
+        "Akut miyokard infarktüsü"
+      ],
+      "explanation": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar; transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır; EKG, monitörizasyon ve OED hazırlığı önceliklidir.",
+      "pearls": [
+        "Alternatif akım doğru akımdan daha tehlikelidir; tetanik kasılma ile temas süresini uzatır.",
+        "Nemli/ıslak cilt direnci azaltır ve düşük voltajı bile riskli yapar.",
+        "50-100 mA VF ile; çok yüksek akımlar asistoli ile ilişkilidir.",
+        "Kardiyak hasar bekleniyorsa sahada ilk istenecek şey OED/defibrilatördür."
+      ],
+      "nextStep": "Güvenli alan sağlandıktan sonra ABC, 12 derivasyon EKG, monitörizasyon ve VF gelişirse defibrilasyon/OED uygulanması.",
+      "answerFeedback": {
+        "diagnosisMeta": "Yüksek riskli elektrik maruziyeti: alternatif akım + kaynaktan ayrılamama + transtorasik potansiyel geçiş + ritim düzensizliği.",
+        "whyCorrect": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar; transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır; EKG, monitörizasyon ve OED hazırlığı önceliklidir.",
+        "evidenceChain": [
+          "Alternatif akım ile elini kaynaktan ayıramama",
+          "Nemli zemin ile cilt direncinin azalması",
+          "Çarpıntı ve düzensiz taşikardi",
+          "EKG'de ventriküler erken vurular"
+        ],
+        "pearls": [
+          "Transtorasik akım vertikal akımdan daha ölümcül olabilir.",
+          "Sinir dokusu en düşük dirençli dokulardandır; parestezi önemli ipucudur.",
+          "Yanık küçük olsa bile derin doku hasarı olabilir."
+        ],
+        "management": [
+          "Olay yerinde elektrik kaynağını kes ve kişisel güvenliği sağla — Kurtarıcıyı ikinci hasta yapmamak için ilk basamaktır.",
+          "ABC değerlendirmesi, nabız-solunum kontrolü, gerekirse CPR — Elektrik çarpmasında ölümcül ritim/solunum durması gelişebilir.",
+          "12 derivasyon EKG ve kardiyak monitörizasyon — VF/VT/asistoli riskini erken saptar.",
+          "VF/VT varsa OED/defibrilasyon — PDF'te kardiyak hasar için OED vurgulanır.",
+          "Yanık, kas hasarı, CK, idrar miyoglobin ve böbrek izlemi — Derin doku hasarı ve rabdomiyoliz dışlanır."
+        ],
+        "learningOutcome": "Elektrik çarpmasında görünür yanığın küçük olması iç organ/kardiyak riski dışlamaz; akım tipi, yol, süre ve çevre koşulları belirleyicidir.",
+        "differentials": {
+          "Yalnızca yüzeyel termal yanık": {
+            "explanation": "Yalnızca yüzeyel termal yanık ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "comparisonPoints": [
+              "Yalnızca yüzeyel termal yanık için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Spontan pnömotoraks": {
+            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "comparisonPoints": [
+              "Spontan pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Akut miyokard infarktüsü": {
+            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "comparisonPoints": [
+              "Akut miyokard infarktüsü için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pulmonology-lightning-apnea-001",
+    "branchId": "pulmonology",
+    "title": "Fırtına sonrası bilinç kaybı ve solunum depresyonu ile getirilen genç hasta",
+    "difficulty": "Zor · Komite/TUS düzeyi",
+    "clinicalFocus": "Yıldırım mekanizması, yüzeyel akım, uzamış apne, kardiyolojik-nörolojik komplikasyon",
+    "demographics": "19 yaş erkek, açık alanda futbol oynarken etkilenmiş",
+    "setting": "Acil servis - fırtına sonrası çoklu yaralanma",
+    "chiefComplaint": "Bilinç kaybı, geçici solunum durması ve deri lezyonları",
+    "stem": "Fırtına sırasında açık alanda bulunan hasta yıldırım düşmesi sonrası yere yığılmıştır. İlk müdahale ekibi birkaç dakika solunumun yüzeyelleştiğini, ardından spontan solunumun döndüğünü bildirir. Gövdede ağ şeklinde eritematöz Lichtenberg benzeri izler ve yüzeyel yanıklar vardır. PDF'te yıldırım çarpmasında elektrik akımının genellikle vücut yüzeyinden geçtiği, deride yanık yapabildiği, bilinç kaybı ve kardiyolojik/nörolojik sorunlara yol açabildiği vurgulanmıştır.",
+    "vitals": {
+      "TA": "102/68 mmHg",
+      "Nabız": "58/dk",
+      "Solunum": "10/dk, düzensiz",
+      "SpO2": "91% oda havası",
+      "Ateş": "36.2 C"
+    },
+    "exam": [
+      "Bilinç dalgalı, GKS 13",
+      "Gövdede Lichtenberg figürü benzeri eritem",
+      "Yüzeyel deri yanıkları",
+      "Geçici işitme azalması ve baş ağrısı",
+      "Açık kırık yok",
+      "Derin yanık alanı geniş değil"
+    ],
+    "investigations": [
+      {
+        "id": "abc-ve-oksijenizasyon-degerlendirmesi-02",
+        "label": "ABC ve oksijenizasyon değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "ABC ve oksijenizasyon değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "ABC ve oksijenizasyon değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "ABC ve oksijenizasyon değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "ekg-ve-ritim-monitorizasyonu-02",
+        "label": "EKG ve ritim monitörizasyonu",
+        "type": "ecg",
+        "priority": "essential",
+        "summary": "EKG ve ritim monitörizasyonu, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "EKG ve ritim monitörizasyonu, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "EKG ve ritim monitörizasyonu, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "arter-kan-gazi-02",
+        "label": "Arter kan gazı",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Arter kan gazı, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Arter kan gazı, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Arter kan gazı, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "norolojik-goz-ve-isitme-degerlendirmesi-02",
+        "label": "Nörolojik, göz ve işitme değerlendirmesi",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Nörolojik, göz ve işitme değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Nörolojik, göz ve işitme değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Nörolojik, göz ve işitme değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Uzamış apneye bağlı kardiyopulmoner arrest riski",
+      "options": [
+        "Uzamış apneye bağlı kardiyopulmoner arrest riski",
+        "Akut miyokard infarktüsü",
+        "Spontan tansiyon pnömotoraks",
+        "Hiperpotasemiye bağlı ani ölüm"
+      ],
+      "explanation": "Yıldırım çarpmasında ani ölüm için sınavda en yüksek verimli nokta uzamış apnedir. Deride yanık, bilinç kaybı, nörolojik/işitsel etkilenme ve kalp-solunum durması birlikte düşünülür.",
+      "pearls": [
+        "Yıldırım akımı çoğu zaman yüzeyden geçer; deride yanık ve Lichtenberg figürleri görülebilir.",
+        "Ani ölüm sorusunda en olası neden uzamış apne olarak vurgulanmıştır.",
+        "Hayatta kalanlarda kardiyolojik ve nörolojik problemler aranmalıdır.",
+        "Korunmada açık alan, tek ağaç, metal ve sudan uzak durmak temel bilgidir."
+      ],
+      "nextStep": "ABC stabilizasyonu, oksijen/ventilasyon desteği, EKG monitörizasyonu ve nörolojik-yaralanma taraması.",
+      "answerFeedback": {
+        "diagnosisMeta": "Fırtına + açık alan + yüzeyel yanık + bilinç kaybı + solunum depresyonu yıldırım çarpmasını destekler.",
+        "whyCorrect": "Yıldırım çarpmasında ani ölüm için sınavda en yüksek verimli nokta uzamış apnedir. Deride yanık, bilinç kaybı, nörolojik/işitsel etkilenme ve kalp-solunum durması birlikte düşünülür.",
+        "evidenceChain": [
+          "Fırtına sırasında açık alanda maruziyet",
+          "Lichtenberg benzeri deri lezyonları",
+          "Geçici bilinç kaybı",
+          "Solunum sayısında düşüklük ve hipoksemi"
+        ],
+        "pearls": [
+          "Miyokard enfarktüsü şıkkı güçlü çeldirici olabilir; asıl mekanizma primer elektriksel/solunumsal etkidir.",
+          "Yıldırım sonrası tüm hastalar ritim ve nörolojik açıdan izlenmelidir."
+        ],
+        "management": [
+          "Güvenli alana taşı ve yıldırım riskinin sürdüğünü değerlendir — İkinci çarpma riski önlenir.",
+          "ABC, oksijen, gerekirse ventilasyon/CPR — Uzamış apne ve arrest ölümcül olabilir.",
+          "EKG ve monitörizasyon — Kalp-solunum sistemi etkilenebilir.",
+          "Nörolojik, işitme ve göz muayenesi — PDF'te beyin, göz ve işitme hasarı vurgulanır.",
+          "Yanık ve travma taraması — Yüzeyel yanık ve sekonder düşme yaralanmaları yönetilir."
+        ],
+        "learningOutcome": "Yıldırım çarpmasında görünür yanıklar tanıyı desteklese de sınavda ölüm mekanizması kardiyopulmoner durma ve özellikle uzamış apne ile ilişkilidir.",
+        "differentials": {
+          "Akut miyokard infarktüsü": {
+            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "comparisonPoints": [
+              "Akut miyokard infarktüsü için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Spontan tansiyon pnömotoraks": {
+            "explanation": "Spontan tansiyon pnömotoraks ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "comparisonPoints": [
+              "Spontan tansiyon pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Hiperpotasemiye bağlı ani ölüm": {
+            "explanation": "Hiperpotasemiye bağlı ani ölüm ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "comparisonPoints": [
+              "Hiperpotasemiye bağlı ani ölüm için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-classic-galactosemia-001",
+    "branchId": "pediatrics",
+    "title": "Süt alımı sonrası uzamış sarılık ve kusma gelişen yenidoğan",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Galaktoz metabolizması, GALT eksikliği, katarakt, karaciğer hasarı, sepsis riski",
+    "demographics": "12 günlük kız bebek",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Anne sütü sonrası kusma, sarılık ve emmeme",
+    "stem": "Doğumdan sonra ilk günlerde iyi olan bebek, süt alımı arttıkça kusma, letarji, uzamış sarılık ve kilo alamama ile başvurur. Katarakt şüphesi ve hepatomegali vardır. Klinik zamanlama, galaktoz içeren süt alımı sonrası toksik metabolit birikimini düşündürür.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "kan-glukozu-bilirubin-ve-karaciger-enzimleri-03",
+        "label": "Kan glukozu, bilirubin ve karaciğer enzimleri",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Kan glukozu, bilirubin ve karaciğer enzimleri, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kan glukozu, bilirubin ve karaciğer enzimleri, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kan glukozu, bilirubin ve karaciğer enzimleri, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "galt-aktivitesi-ve-galaktoz-1-fosfat-03",
+        "label": "GALT aktivitesi ve galaktoz-1-fosfat",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "GALT aktivitesi ve galaktoz-1-fosfat, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "GALT aktivitesi ve galaktoz-1-fosfat, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "GALT aktivitesi ve galaktoz-1-fosfat, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "idrarda-reduktan-madde-03",
+        "label": "İdrarda redüktan madde",
+        "type": "urine",
+        "priority": "useful",
+        "summary": "İdrarda redüktan madde, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "İdrarda redüktan madde, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "İdrarda redüktan madde, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "galt-gen-analizi-ve-aile-taramasi-03",
+        "label": "GALT gen analizi ve aile taraması",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "GALT gen analizi ve aile taraması, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "GALT gen analizi ve aile taraması, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "GALT gen analizi ve aile taraması, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Klasik galaktozemi",
+      "options": [
+        "Klasik galaktozemi",
+        "Laktoz intoleransı",
+        "Herediter fruktoz intoleransı",
+        "Fenilketonüri"
+      ],
+      "explanation": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Süt alımı sonrası yenidoğanda kusma, sarılık, hepatomegali ve katarakt galaktozemiyi düşündürür.",
+        "Laktoz intoleransı daha çok intestinal semptomlarla gider; ağır karaciğer yetmezliği beklenmez.",
+        "Tedavide laktoz/galaktoz kesilir.",
+        "E. coli sepsisi klasik sınav ilişkisidir."
+      ],
+      "nextStep": "Laktoz/galaktoz içeren beslenmeyi kes, uygun formülaya geç, karaciğer ve sepsis açısından değerlendir.",
+      "answerFeedback": {
+        "diagnosisMeta": "Klasik galaktozemi: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Klasik galaktozemi ile uyumlu",
+          "Glukoz 56 mg/dL, direkt bilirubin yüksek, AST/ALT yüksek",
+          "GALT aktivitesi düşük; galaktoz-1-fosfat yüksek",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Laktoz intoleransı": {
+            "explanation": "Laktoz intoleransı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "comparisonPoints": [
+              "Laktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Herediter fruktoz intoleransı": {
+            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "comparisonPoints": [
+              "Herediter fruktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Fenilketonüri": {
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "comparisonPoints": [
+              "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-hereditary-fructose-intolerance-001",
+    "branchId": "pediatrics",
+    "title": "Ek gıda sonrası hipoglisemi atakları olan bebek",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Fruktoz metabolizması, aldolaz B eksikliği, hipoglisemi, karaciğer etkilenimi",
+    "demographics": "10 aylık erkek bebek",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Meyve püresi sonrası kusma, terleme ve letarji",
+    "stem": "Ek gıdaya geçişten sonra özellikle meyve suyu, meyve püresi ve tatlı gıdalarla kusma, solukluk, terleme ve uykuya meyil gelişmektedir. Anne, çocuğun tatlı gıdalardan kaçındığını fark etmiştir. Bu zamanlama fruktoz/sükroz/sorbitol alımıyla tetiklenen metabolik bloğu düşündürür.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "kan-glukozu-ve-elektrolitler-04",
+        "label": "Kan glukozu ve elektrolitler",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Kan glukozu ve elektrolitler, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kan glukozu ve elektrolitler, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kan glukozu ve elektrolitler, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "fruktoz-1-fosfat-aldob-degerlendirmesi-04",
+        "label": "Fruktoz-1-fosfat / ALDOB değerlendirmesi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Fruktoz-1-fosfat / ALDOB değerlendirmesi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Fruktoz-1-fosfat / ALDOB değerlendirmesi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Fruktoz-1-fosfat / ALDOB değerlendirmesi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "idrar-ketonu-ve-metabolik-asidoz-taramasi-04",
+        "label": "İdrar ketonu ve metabolik asidoz taraması",
+        "type": "urine",
+        "priority": "useful",
+        "summary": "İdrar ketonu ve metabolik asidoz taraması, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "İdrar ketonu ve metabolik asidoz taraması, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "İdrar ketonu ve metabolik asidoz taraması, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "aldob-gen-analizi-04",
+        "label": "ALDOB gen analizi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "ALDOB gen analizi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "ALDOB gen analizi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "ALDOB gen analizi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Herediter fruktoz intoleransı",
+      "options": [
+        "Herediter fruktoz intoleransı",
+        "Esansiyel fruktozüri",
+        "Galaktozemi",
+        "GSD Tip Ia"
+      ],
+      "explanation": "Olgu paterni Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Fruktoz alımı sonrası ciddi hipoglisemi HFI için tipiktir.",
+        "Esansiyel fruktozüri genellikle benign seyreder.",
+        "Sorumlu substratlar fruktoz, sükroz ve sorbitoldür.",
+        "Diyetten çıkarma tedavinin temelidir."
+      ],
+      "nextStep": "Fruktoz, sükroz ve sorbitolü diyetten çıkar; hipoglisemiyi hızla düzelt.",
+      "answerFeedback": {
+        "diagnosisMeta": "Herediter fruktoz intoleransı: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Herediter fruktoz intoleransı ile uyumlu",
+          "Glukoz 42 mg/dL, laktat hafif yüksek, transaminazlar yüksek",
+          "Aldolaz B defekti şüphesi; fruktoz-1-fosfat birikimi",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Esansiyel fruktozüri": {
+            "explanation": "Esansiyel fruktozüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "comparisonPoints": [
+              "Esansiyel fruktozüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Galaktozemi": {
+            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "comparisonPoints": [
+              "Galaktozemi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "GSD Tip Ia": {
+            "explanation": "GSD Tip Ia ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "comparisonPoints": [
+              "GSD Tip Ia için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-von-gierke-gsd-001",
+    "branchId": "pediatrics",
+    "title": "Kısa açlıkta nöbet ve belirgin hepatomegali gelişen çocuk",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Glikojenoliz/glukoneogenez çıkış basamağı, glukoz-6-fosfataz eksikliği",
+    "demographics": "2 yaş erkek çocuk",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "3-4 saat açlık sonrası terleme, nöbet ve karın şişliği",
+    "stem": "Çocuk sabahları beslenme geciktiğinde terleme, irritabilite ve bazen nöbet geçirmektedir. Muayenede hepatomegali ve dolgun yanaklı “taş bebek yüzü” görünümü vardır. PDF'te GSD Tip Ia için glukoz-6-fosfataz eksikliği, 3-4 saatlik açlık sonrası hipoglisemi, hepatomegali, laktik asidoz ve hiperlipemi vurgulanmıştır.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "glukoz-laktat-trigliserid-ve-urik-asit-05",
+        "label": "Glukoz, laktat, trigliserid ve ürik asit",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Glukoz, laktat, trigliserid ve ürik asit, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Glukoz, laktat, trigliserid ve ürik asit, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Glukoz, laktat, trigliserid ve ürik asit, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "glukoz-6-fosfataz-aktivitesi-05",
+        "label": "Glukoz-6-fosfataz aktivitesi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Glukoz-6-fosfataz aktivitesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Glukoz-6-fosfataz aktivitesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Glukoz-6-fosfataz aktivitesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "idrar-ketonu-ve-asidoz-degerlendirmesi-05",
+        "label": "İdrar ketonu ve asidoz değerlendirmesi",
+        "type": "urine",
+        "priority": "useful",
+        "summary": "İdrar ketonu ve asidoz değerlendirmesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "İdrar ketonu ve asidoz değerlendirmesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "İdrar ketonu ve asidoz değerlendirmesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "g6pc-gen-analizi-05",
+        "label": "G6PC gen analizi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "G6PC gen analizi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "G6PC gen analizi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "G6PC gen analizi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "GSD Tip Ia - Von Gierke",
+      "options": [
+        "GSD Tip Ia - Von Gierke",
+        "Pompe hastalığı",
+        "McArdle hastalığı",
+        "Herediter fruktoz intoleransı"
+      ],
+      "explanation": "Olgu paterni Glikojen depo hastalığı Tip Ia - Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Açlık hipoglisemisi + hepatomegali karaciğer tipi GSD düşündürür.",
+        "Von Gierke: glukoz-6-fosfataz eksikliği.",
+        "Laktik asidoz, hiperlipemi ve hiperürisemi eşlik edebilir.",
+        "Sık beslenme/gece mısır nişastası yaklaşımı sınavda bilinir."
+      ],
+      "nextStep": "Hipoglisemiyi düzelt, uzun açlığı önle, sık karbonhidrat/mısır nişastası planla ve metabolizma uzmanına yönlendir.",
+      "answerFeedback": {
+        "diagnosisMeta": "Glikojen depo hastalığı Tip Ia - Von Gierke: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Glikojen depo hastalığı Tip Ia - Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Glikojen depo hastalığı Tip Ia — Von Gierke ile uyumlu",
+          "Glukoz 38 mg/dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek",
+          "Glukoz-6-fosfataz aktivitesi düşük",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Pompe hastalığı": {
+            "explanation": "Pompe hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia - Von Gierke lehinedir.",
+            "comparisonPoints": [
+              "Pompe hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri GSD Tip Ia - Von Gierke tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "McArdle hastalığı": {
+            "explanation": "McArdle hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia - Von Gierke lehinedir.",
+            "comparisonPoints": [
+              "McArdle hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri GSD Tip Ia - Von Gierke tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Herediter fruktoz intoleransı": {
+            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia - Von Gierke lehinedir.",
+            "comparisonPoints": [
+              "Herediter fruktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri GSD Tip Ia - Von Gierke tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-phenylketonuria-001",
+    "branchId": "pediatrics",
+    "title": "Küf kokulu idrar ve gelişim geriliği olan bebek",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Fenilalanin hidroksilaz eksikliği, nörotoksisite, yenidoğan taraması",
+    "demographics": "4 aylık kız bebek",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Gelişim geriliği, nöbet ve idrarda küf/küfemsi koku",
+    "stem": "Aile bebeğin giderek daha huzursuz olduğunu, baş kontrolünün zayıf kaldığını ve bezinde küf benzeri koku fark ettiğini söyler. Açık ten ve nöbet öyküsü de vardır. PDF'te en sık aminoasit metabolizması bozukluğu olarak fenilketonüri vurgulandığından vaka yüksek verimli sınav formatına çevrilmiştir.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "plazma-fenilalanin-duzeyi-06",
+        "label": "Plazma fenilalanin düzeyi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Plazma fenilalanin düzeyi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Plazma fenilalanin düzeyi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Plazma fenilalanin düzeyi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "tirozin-ve-fenilalanin-tirozin-orani-06",
+        "label": "Tirozin ve fenilalanin/tirozin oranı",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Tirozin ve fenilalanin/tirozin oranı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Tirozin ve fenilalanin/tirozin oranı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Tirozin ve fenilalanin/tirozin oranı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "yenidogan-tarama-testi-tekrari-06",
+        "label": "Yenidoğan tarama testi tekrarı",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Yenidoğan tarama testi tekrarı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Yenidoğan tarama testi tekrarı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Yenidoğan tarama testi tekrarı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "pah-bh4-iliskili-genetik-ve-kofaktor-degerlendirmesi-06",
+        "label": "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Fenilketonüri",
+      "options": [
+        "Fenilketonüri",
+        "Akçaağaç şurubu idrar hastalığı",
+        "Alkaptonüri",
+        "Albinizm"
+      ],
+      "explanation": "Olgu paterni Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "En sık aminoasit metabolizması bozukluğu PKU olarak vurgulanır.",
+        "Fenilalanin yüksekliği nörotoksiktir; tedavi erken başlamalıdır.",
+        "Diyetle fenilalanin kısıtlaması ve tirozin desteği düşünülür.",
+        "Yenidoğan taraması kritik önemdedir."
+      ],
+      "nextStep": "Fenilalanin kısıtlı diyet başla, tirozin desteğini planla, BH4 yanıtını/genetik tanıyı değerlendir.",
+      "answerFeedback": {
+        "diagnosisMeta": "Fenilketonüri: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Fenilketonüri ile uyumlu",
+          "Fenilalanin yüksek, tirozin düşük/normal",
+          "Fenilalanin hidroksilaz aktivitesi düşük veya BH4 yolu değerlendirilir",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Akçaağaç şurubu idrar hastalığı": {
+            "explanation": "Akçaağaç şurubu idrar hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "comparisonPoints": [
+              "Akçaağaç şurubu idrar hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Alkaptonüri": {
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "comparisonPoints": [
+              "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Albinizm": {
+            "explanation": "Albinizm ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "comparisonPoints": [
+              "Albinizm için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-maple-syrup-urine-disease-001",
+    "branchId": "pediatrics",
+    "title": "Tatlı kokulu idrar ve nörolojik kötüleşme ile başvuran yenidoğan",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Dallı zincirli aminoasit katabolizması, BCKD eksikliği, lösin toksisitesi",
+    "demographics": "8 günlük yenidoğan",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Beslenememe, letarji, tiz ağlama ve idrarda tatlı koku",
+    "stem": "Yenidoğan ilk günlerde normal görünmüş, ardından beslenme güçlüğü, kusma, letarji ve nörolojik kötüleşme gelişmiştir. İdrarda akçaağaç şurubu benzeri tatlı koku tariflenir. Erken dönemde nörotoksik dallı zincirli aminoasit birikimi akla gelir.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "plazma-dalli-zincirli-aminoasitler-07",
+        "label": "Plazma dallı zincirli aminoasitler",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Plazma dallı zincirli aminoasitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Plazma dallı zincirli aminoasitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Plazma dallı zincirli aminoasitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "idrar-organik-asit-ketoasit-analizi-07",
+        "label": "İdrar organik asit/ketoasit analizi",
+        "type": "urine",
+        "priority": "essential",
+        "summary": "İdrar organik asit/ketoasit analizi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "İdrar organik asit/ketoasit analizi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "İdrar organik asit/ketoasit analizi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "kan-gazi-glukoz-ve-elektrolitler-07",
+        "label": "Kan gazı, glukoz ve elektrolitler",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Kan gazı, glukoz ve elektrolitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kan gazı, glukoz ve elektrolitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kan gazı, glukoz ve elektrolitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "bckd-kompleks-genetik-testi-07",
+        "label": "BCKD kompleks genetik testi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "BCKD kompleks genetik testi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "BCKD kompleks genetik testi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "BCKD kompleks genetik testi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Akçaağaç şurubu idrar hastalığı",
+      "options": [
+        "Akçaağaç şurubu idrar hastalığı",
+        "Fenilketonüri",
+        "Galaktozemi",
+        "Homosistinüri"
+      ],
+      "explanation": "Olgu paterni Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Tatlı/akçaağaç şurubu kokusu + yenidoğan nörolojik kötüleşme MSUD için tipiktir.",
+        "Leucine nörotoksisitesi acildir.",
+        "Tedavide BCAA kısıtlaması ve akut dönemde toksik metabolit uzaklaştırılması düşünülür.",
+        "Tiamin yanıtlı formlar olabilir."
+      ],
+      "nextStep": "Acil metabolik stabilizasyon, BCAA kısıtlaması, yüksek lösin varsa yoğun tedavi/diyaliz değerlendirmesi.",
+      "answerFeedback": {
+        "diagnosisMeta": "Akçaağaç şurubu idrar hastalığı: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu",
+          "Lösin, izolösin ve valin yüksek; metabolik asidoz",
+          "BCKD kompleksi aktivitesi düşük",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Fenilketonüri": {
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "comparisonPoints": [
+              "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Galaktozemi": {
+            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "comparisonPoints": [
+              "Galaktozemi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Homosistinüri": {
+            "explanation": "Homosistinüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "comparisonPoints": [
+              "Homosistinüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-alkaptonuria-001",
+    "branchId": "internal-medicine",
+    "title": "İdrarı bekleyince koyulaşan erişkinde eklem yakınmaları",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Homogentisik asit oksidaz eksikliği, okronozis, koyu idrar, eklem tutulumu",
+    "demographics": "35 yaş erkek",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Bel ağrısı, büyük eklem ağrısı ve bekleyince siyahlaşan idrar",
+    "stem": "Hasta yıllardır idrarının beklediğinde koyulaştığını, son yıllarda bel ve diz ağrılarının arttığını belirtir. Kulak kıkırdağında koyu pigmentasyon vardır. Bu klinik, tirozin katabolizması ara ürünü homogentisik asit birikimiyle uyumludur.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "idrarda-homogentisik-asit-08",
+        "label": "İdrarda homogentisik asit",
+        "type": "urine",
+        "priority": "essential",
+        "summary": "İdrarda homogentisik asit, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "İdrarda homogentisik asit, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "İdrarda homogentisik asit, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "idrar-bekletme-alkalinizasyon-gozlemi-08",
+        "label": "İdrar bekletme/alkalinizasyon gözlemi",
+        "type": "urine",
+        "priority": "essential",
+        "summary": "İdrar bekletme/alkalinizasyon gözlemi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "İdrar bekletme/alkalinizasyon gözlemi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "İdrar bekletme/alkalinizasyon gözlemi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "eklem-grafisi-08",
+        "label": "Eklem grafisi",
+        "type": "xray",
+        "priority": "useful",
+        "summary": "Eklem grafisi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Eklem grafisi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Eklem grafisi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "hgd-gen-analizi-08",
+        "label": "HGD gen analizi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "HGD gen analizi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "HGD gen analizi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "HGD gen analizi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Alkaptonüri",
+      "options": [
+        "Alkaptonüri",
+        "Fenilketonüri",
+        "Albinizm",
+        "Tirozinemi Tip I"
+      ],
+      "explanation": "Olgu paterni Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Bekleyince koyulaşan idrar ve okronozis alkaptonüriyi düşündürür.",
+        "Homogentisik asit oksidaz eksiktir.",
+        "Erişkinde dejeneratif eklem hastalığı ile gelebilir.",
+        "Klinik tanıda idrar bulgusu çok yüksek verimlidir."
+      ],
+      "nextStep": "Homogentisik asit düzeyini doğrula, eklem/kalp tutulumunu değerlendir, uzun dönem metabolizma-romatoloji izlemi planla.",
+      "answerFeedback": {
+        "diagnosisMeta": "Alkaptonüri: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Alkaptonüri ile uyumlu",
+          "Rutin biyokimya çoğunlukla stabil; inflamasyon yok",
+          "Homogentisik asit oksidaz defekti",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Fenilketonüri": {
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "comparisonPoints": [
+              "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Albinizm": {
+            "explanation": "Albinizm ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "comparisonPoints": [
+              "Albinizm için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Tirozinemi Tip I": {
+            "explanation": "Tirozinemi Tip I ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "comparisonPoints": [
+              "Tirozinemi Tip I için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-albinism-001",
+    "branchId": "pediatrics",
+    "title": "Fotofobi ve belirgin pigment azalması olan çocuk",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Tirozinaz/melanin sentezi, pigmentasyon azlığı, göz bulguları",
+    "demographics": "6 yaş kız çocuk",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Güneşte yanma, açık renk saç-cilt ve görme sorunları",
+    "stem": "Çocukta doğumdan beri cilt ve saç renginin belirgin açık olduğu, parlak ışıkta gözlerini kıstığı ve okulda tahtayı görmekte zorlandığı belirtilir. Nistagmus ve iris transillüminasyonu saptanır. Melanin sentezindeki bozukluk albinizm lehinedir.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "dermatolojik-ve-okuler-muayene-09",
+        "label": "Dermatolojik ve oküler muayene",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Dermatolojik ve oküler muayene, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Dermatolojik ve oküler muayene, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Dermatolojik ve oküler muayene, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "gorme-keskinligi-ve-retina-degerlendirmesi-09",
+        "label": "Görme keskinliği ve retina değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Görme keskinliği ve retina değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Görme keskinliği ve retina değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Görme keskinliği ve retina değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "tirozinaz-melanin-yolu-genetik-testi-09",
+        "label": "Tirozinaz/melanin yolu genetik testi",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Tirozinaz/melanin yolu genetik testi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Tirozinaz/melanin yolu genetik testi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Tirozinaz/melanin yolu genetik testi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "sendromik-albinizm-ayirici-degerlendirmesi-09",
+        "label": "Sendromik albinizm ayırıcı değerlendirmesi",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Sendromik albinizm ayırıcı değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Sendromik albinizm ayırıcı değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Sendromik albinizm ayırıcı değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Okülokütanöz albinizm",
+      "options": [
+        "Okülokütanöz albinizm",
+        "Fenilketonüri",
+        "Alkaptonüri",
+        "Vitiligo"
+      ],
+      "explanation": "Olgu paterni Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Albinizmde pigmentasyon azlığı ve göz bulguları birlikte düşünülür.",
+        "Melanin sentezi tirozin metabolizmasıyla ilişkilidir.",
+        "Cilt kanseri ve güneş hasarı riski nedeniyle korunma önemlidir.",
+        "PKU'da açık ten olabilir ama ağır pigment yokluğu ve oküler bulgular albinizmi destekler."
+      ],
+      "nextStep": "Güneşten korunma, dermatolojik takip ve oftalmolojik değerlendirme.",
+      "answerFeedback": {
+        "diagnosisMeta": "Okülokütanöz albinizm: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Okülokütanöz albinizm ile uyumlu",
+          "Biyokimya çoğunlukla normal",
+          "Tirozinaz aktivitesi/genetik alt tip değerlendirilir",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Fenilketonüri": {
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "comparisonPoints": [
+              "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Alkaptonüri": {
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "comparisonPoints": [
+              "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Vitiligo": {
+            "explanation": "Vitiligo ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "comparisonPoints": [
+              "Vitiligo için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-homocystinuria-001",
+    "branchId": "pediatrics",
+    "title": "Uzun boy, lens kayması ve tromboz öyküsü olan genç hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Metiyonin metabolizması, homosistein artışı, tromboz ve lens bulguları",
+    "demographics": "14 yaş erkek",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Görme bozukluğu, uzun boy-ince yapı ve bacakta şişlik",
+    "stem": "Hasta uzun boylu ve ince yapılıdır; göz muayenesinde lens subluksasyonu saptanır. Sol bacakta ağrılı şişlik ile derin ven trombozu düşünülür. Bu kombinasyon homosistein artışı ve bağ dokusu/koagülasyon etkilenimini düşündürür.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "plazma-total-homosistein-ve-metiyonin-10",
+        "label": "Plazma total homosistein ve metiyonin",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Plazma total homosistein ve metiyonin, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Plazma total homosistein ve metiyonin, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Plazma total homosistein ve metiyonin, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "oftalmolojik-lens-muayenesi-10",
+        "label": "Oftalmolojik lens muayenesi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Oftalmolojik lens muayenesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Oftalmolojik lens muayenesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Oftalmolojik lens muayenesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "tromboz-risk-ve-koagulasyon-degerlendirmesi-10",
+        "label": "Tromboz risk ve koagülasyon değerlendirmesi",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Tromboz risk ve koagülasyon değerlendirmesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Tromboz risk ve koagülasyon değerlendirmesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Tromboz risk ve koagülasyon değerlendirmesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "cbs-genetik-testi-ve-b6-yaniti-10",
+        "label": "CBS genetik testi ve B6 yanıtı",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "CBS genetik testi ve B6 yanıtı, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "CBS genetik testi ve B6 yanıtı, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "CBS genetik testi ve B6 yanıtı, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Homosistinüri",
+      "options": [
+        "Homosistinüri",
+        "Marfan sendromu",
+        "Alkaptonüri",
+        "Fenilketonüri"
+      ],
+      "explanation": "Olgu paterni Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Lens subluksasyonu + tromboz eğilimi homosistinüri için yüksek verimlidir.",
+        "Marfan ile karışır; tromboz homosistinüriyi destekler.",
+        "B6, folat, B12 ve metiyonin kısıtlaması klinik tipe göre düşünülür.",
+        "Homosistein endotel ve tromboz riskiyle ilişkilidir."
+      ],
+      "nextStep": "DVT yönetimini başlat, homosistein/metiyonin doğrula, vitamin yanıtı ve diyet planla.",
+      "answerFeedback": {
+        "diagnosisMeta": "Homosistinüri: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Homosistinüri ile uyumlu",
+          "Total homosistein yüksek, metiyonin yüksek olabilir",
+          "Sistationin beta sentaz defekti veya B12/folat yolu değerlendirilir",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Marfan sendromu": {
+            "explanation": "Marfan sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "comparisonPoints": [
+              "Marfan sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Alkaptonüri": {
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "comparisonPoints": [
+              "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Fenilketonüri": {
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "comparisonPoints": [
+              "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-pellagra-001",
+    "branchId": "internal-medicine",
+    "title": "Fotosensitif dermatit, diyare ve bilişsel yavaşlama ile başvuru",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Vitamin B3 eksikliği, NAD/NADP, 3D triadı",
+    "demographics": "47 yaş erkek, kronik alkol kullanımı ve kötü beslenme",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Güneş gören alanlarda dermatit, ishal ve unutkanlık",
+    "stem": "Hasta boyun ve el sırtında fotosensitif dermatit, kronik diyare ve dikkat/konsantrasyon bozukluğu ile gelir. Beslenme yetersizliği ve alkol kullanımı niasin eksikliğine zemin hazırlar.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "beslenme-ve-malabsorpsiyon-degerlendirmesi-11",
+        "label": "Beslenme ve malabsorpsiyon değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Beslenme ve malabsorpsiyon değerlendirmesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Beslenme ve malabsorpsiyon değerlendirmesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Beslenme ve malabsorpsiyon değerlendirmesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "temel-biyokimya-albumin-ve-elektrolitler-11",
+        "label": "Temel biyokimya, albümin ve elektrolitler",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Temel biyokimya, albümin ve elektrolitler, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Temel biyokimya, albümin ve elektrolitler, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Temel biyokimya, albümin ve elektrolitler, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "dermatolojik-dagilim-muayenesi-11",
+        "label": "Dermatolojik dağılım muayenesi",
+        "type": "clinical",
+        "priority": "useful",
+        "summary": "Dermatolojik dağılım muayenesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Dermatolojik dağılım muayenesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Dermatolojik dağılım muayenesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "niasin-nad-eksikligi-klinik-dogrulamasi-11",
+        "label": "Niasin/NAD eksikliği klinik doğrulaması",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "Niasin/NAD eksikliği klinik doğrulaması, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Niasin/NAD eksikliği klinik doğrulaması, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Niasin/NAD eksikliği klinik doğrulaması, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Pellagra",
+      "options": [
+        "Pellagra",
+        "Skorbüt",
+        "Beriberi",
+        "Raşitizm"
+      ],
+      "explanation": "Olgu paterni Niasin eksikliği - Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Pellagra: dermatitis, diarrhea, dementia.",
+        "Niasin B3 ve NAD/NADP ile ilişkilidir.",
+        "Hartnup veya karsinoid gibi niasin azalmasına yol açan durumlar da düşünülür.",
+        "Tedavi niasin replasmanı ve beslenme desteğidir."
+      ],
+      "nextStep": "Niasin replasmanı, sıvı-elektrolit desteği ve beslenme düzenlenmesi.",
+      "answerFeedback": {
+        "diagnosisMeta": "Niasin eksikliği - Pellagra: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Niasin eksikliği - Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Niasin eksikliği — Pellagra ile uyumlu",
+          "Elektrolit bozukluğu ve malnütrisyon bulguları",
+          "Niasin/NAD ilişkili eksiklik klinik olarak düşünülür",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Skorbüt": {
+            "explanation": "Skorbüt ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "comparisonPoints": [
+              "Skorbüt için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Beriberi": {
+            "explanation": "Beriberi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "comparisonPoints": [
+              "Beriberi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Raşitizm": {
+            "explanation": "Raşitizm ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "comparisonPoints": [
+              "Raşitizm için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-scurvy-001",
+    "branchId": "internal-medicine",
+    "title": "Diş eti kanaması ve yara iyileşme gecikmesi olan hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Kollajen hidroksilasyonu, kanama, yara iyileşmesi",
+    "demographics": "62 yaş erkek, yalnız yaşıyor, taze sebze-meyve almıyor",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Diş eti kanaması, morarma ve halsizlik",
+    "stem": "Aylarca yetersiz beslenen hastada kolay morarma, perifoliküler kanamalar, diş eti şişliği ve yara iyileşmesinde gecikme vardır. C vitamini eksikliği kollajen sentezini bozar ve damar duvarı bütünlüğünü etkiler.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "diyet-oykusu-ve-mukokutanoz-muayene-12",
+        "label": "Diyet öyküsü ve mukokutanöz muayene",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Diyet öyküsü ve mukokutanöz muayene, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Diyet öyküsü ve mukokutanöz muayene, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Diyet öyküsü ve mukokutanöz muayene, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "plazma-askorbik-asit-duzeyi-12",
+        "label": "Plazma askorbik asit düzeyi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Plazma askorbik asit düzeyi, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Plazma askorbik asit düzeyi, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Plazma askorbik asit düzeyi, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "hemogram-ve-demir-parametreleri-12",
+        "label": "Hemogram ve demir parametreleri",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Hemogram ve demir parametreleri, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Hemogram ve demir parametreleri, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Hemogram ve demir parametreleri, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "yara-iyilesmesi-ve-kollajen-bulgulari-12",
+        "label": "Yara iyileşmesi ve kollajen bulguları",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Yara iyileşmesi ve kollajen bulguları, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Yara iyileşmesi ve kollajen bulguları, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Yara iyileşmesi ve kollajen bulguları, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Skorbüt",
+      "options": [
+        "Skorbüt",
+        "Pellagra",
+        "K vitamini eksikliği",
+        "Hemofili A"
+      ],
+      "explanation": "Olgu paterni Vitamin C eksikliği - Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "C vitamini kollajen hidroksilasyonu için gereklidir.",
+        "Diş eti kanaması, perifoliküler kanama ve kötü yara iyileşmesi tipiktir.",
+        "K vitamini eksikliği koagülasyon testleriyle ayrılır.",
+        "Replasmanla klinik hızla düzelir."
+      ],
+      "nextStep": "Vitamin C replasmanı, beslenme desteği ve kanama/anemi değerlendirmesi.",
+      "answerFeedback": {
+        "diagnosisMeta": "Vitamin C eksikliği - Skorbüt: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Vitamin C eksikliği - Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Vitamin C eksikliği — Skorbüt ile uyumlu",
+          "Hafif anemi, CRP normal",
+          "Askorbik asit eksikliği klinik olarak düşünülür",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Pellagra": {
+            "explanation": "Pellagra ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "comparisonPoints": [
+              "Pellagra için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "K vitamini eksikliği": {
+            "explanation": "K vitamini eksikliği ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "comparisonPoints": [
+              "K vitamini eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Hemofili A": {
+            "explanation": "Hemofili A ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "comparisonPoints": [
+              "Hemofili A için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-hemochromatosis-001",
+    "branchId": "internal-medicine",
+    "title": "Karaciğer enzim yüksekliği, hiperpigmentasyon ve diyabet tablosu",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Demir yüklenmesi, ferritin/transferrin satürasyonu, karaciğer-pankreas-kalp tutulumları",
+    "demographics": "52 yaş erkek",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Halsizlik, ciltte koyulaşma, diyabet ve karaciğer enzim yüksekliği",
+    "stem": "Hastada uzun süredir halsizlik, eklem ağrısı, yeni tanı diyabet ve bronz renkli cilt görünümü vardır. Ferritin ve transferrin satürasyonu yüksek bulunur. Demir metabolizmasında aşırı birikim çoklu organ hasarı yapmaktadır.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "ferritin-ve-transferrin-saturasyonu-13",
+        "label": "Ferritin ve transferrin satürasyonu",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Ferritin ve transferrin satürasyonu, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Ferritin ve transferrin satürasyonu, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Ferritin ve transferrin satürasyonu, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "karaciger-enzimleri-ve-glukoz-hba1c-13",
+        "label": "Karaciğer enzimleri ve glukoz/HbA1c",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Karaciğer enzimleri ve glukoz/HbA1c, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Karaciğer enzimleri ve glukoz/HbA1c, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Karaciğer enzimleri ve glukoz/HbA1c, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "hfe-gen-analizi-13",
+        "label": "HFE gen analizi",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "HFE gen analizi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "HFE gen analizi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "HFE gen analizi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "karaciger-mr-ultrason-veya-elastografi-13",
+        "label": "Karaciğer MR/ultrason veya elastografi",
+        "type": "mri",
+        "priority": "situational",
+        "summary": "Karaciğer MR/ultrason veya elastografi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Karaciğer MR/ultrason veya elastografi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Karaciğer MR/ultrason veya elastografi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Hemokromatozis",
+      "options": [
+        "Hemokromatozis",
+        "Wilson hastalığı",
+        "Demir eksikliği anemisi",
+        "Menkes hastalığı"
+      ],
+      "explanation": "Olgu paterni Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Bronz cilt + diyabet + karaciğer tutulumu hemokromatozis klasiğidir.",
+        "Ferritin ve transferrin satürasyonu tanıda önemlidir.",
+        "Organ hasarı karaciğer, pankreas, kalp ve eklemlerde olabilir.",
+        "Tedavide flebotomi/şelasyon mantığı düşünülür."
+      ],
+      "nextStep": "Ferritin-transferrin satürasyonu ile doğrula, HFE testi ve flebotomi planla; siroz/HCC açısından izle.",
+      "answerFeedback": {
+        "diagnosisMeta": "Hemokromatozis: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Hemokromatozis ile uyumlu",
+          "Ferritin yüksek, transferrin satürasyonu yüksek, AST/ALT yüksek",
+          "HFE ilişkili demir yüklenmesi değerlendirilir",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Wilson hastalığı": {
+            "explanation": "Wilson hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "comparisonPoints": [
+              "Wilson hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Demir eksikliği anemisi": {
+            "explanation": "Demir eksikliği anemisi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "comparisonPoints": [
+              "Demir eksikliği anemisi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Menkes hastalığı": {
+            "explanation": "Menkes hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "comparisonPoints": [
+              "Menkes hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-familial-hypercholesterolemia-001",
+    "branchId": "internal-medicine",
+    "title": "Erken yaşta LDL yüksekliği ve tendon nodülleri olan hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "LDL reseptör/ApoB yolu, yüksek LDL, ateroskleroz riski",
+    "demographics": "17 yaş kız",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Aşil tendonunda şişlik ve ailede erken MI öyküsü",
+    "stem": "Genç hastada Aşil tendon ksantomları, total kolesterol ve LDL'de belirgin yükseklik ve babada 38 yaşında MI öyküsü vardır. Trigliserid normal sınırlardadır. Bu profil LDL temizlenme kusurunu düşündürür.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "aclik-lipid-paneli-14",
+        "label": "Açlık lipid paneli",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Açlık lipid paneli, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Açlık lipid paneli, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Açlık lipid paneli, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "aile-taramasi-ve-erken-kah-oykusu-14",
+        "label": "Aile taraması ve erken KAH öyküsü",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Aile taraması ve erken KAH öyküsü, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Aile taraması ve erken KAH öyküsü, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Aile taraması ve erken KAH öyküsü, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "ldlr-apob-pcsk9-genetik-testi-14",
+        "label": "LDLR/APOB/PCSK9 genetik testi",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "LDLR/APOB/PCSK9 genetik testi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "LDLR/APOB/PCSK9 genetik testi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "LDLR/APOB/PCSK9 genetik testi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "kardiyovaskuler-risk-degerlendirmesi-14",
+        "label": "Kardiyovasküler risk değerlendirmesi",
+        "type": "ecg",
+        "priority": "situational",
+        "summary": "Kardiyovasküler risk değerlendirmesi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kardiyovasküler risk değerlendirmesi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kardiyovasküler risk değerlendirmesi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Ailesel hiperkolesterolemi",
+      "options": [
+        "Ailesel hiperkolesterolemi",
+        "Tangier hastalığı",
+        "Abetalipoproteinemi",
+        "LCAT eksikliği"
+      ],
+      "explanation": "Olgu paterni Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Tendon ksantomu + yüksek LDL + erken koroner hastalık FH için tipiktir.",
+        "Tip IIa: LDL yüksek, trigliserid genelde normaldir.",
+        "ApoB-100/LDL reseptör ilişkisi sınavda sorulabilir.",
+        "Erken agresif lipid düşürücü tedavi gerekir."
+      ],
+      "nextStep": "Lipid düşürücü tedavi, aile taraması ve kardiyovasküler risk yönetimi.",
+      "answerFeedback": {
+        "diagnosisMeta": "Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile uyumlu",
+          "Total kolesterol 360 mg/dL, LDL 285 mg/dL, TG normal",
+          "LDL reseptör/ApoB/PCSK9 yolu değerlendirilir",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Tangier hastalığı": {
+            "explanation": "Tangier hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "comparisonPoints": [
+              "Tangier hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Abetalipoproteinemi": {
+            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "comparisonPoints": [
+              "Abetalipoproteinemi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "LCAT eksikliği": {
+            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "comparisonPoints": [
+              "LCAT eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-tangier-disease-001",
+    "branchId": "internal-medicine",
+    "title": "Turuncu tonsiller ve periferik nöropati ile başvuran genç hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "ABCA1 defekti, HDL düşüklüğü, kolesterol efflux bozukluğu",
+    "demographics": "12 yaş erkek",
+    "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
+    "chiefComplaint": "Büyümüş turuncu tonsiller ve periferik nöropati",
+    "stem": "Çocukta belirgin turuncu tonsiller, hepatosplenomegali ve aralıklı ekstremite uyuşması vardır. Lipid profilinde HDL çok düşük, ApoA-I azalmış bulunur. Kolesterolün hücre dışına taşınmasında görevli ABCA1 defekti düşünülür.",
+    "vitals": {
+      "TA": "Yaşa uygun, stabil",
+      "Nabız": "112/dk",
+      "Solunum": "24/dk",
+      "SpO2": "98% oda havası",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Beslenme sonrası semptom artışı",
+      "Halsizlik/letarji veya gelişimsel etkilenme",
+      "Karaciğer veya nörolojik bulgu klinik senaryoya göre mevcut",
+      "Ailede akrabalık/benzer hastalık sorgulanmalı",
+      "Menenjit bulgusu yok",
+      "Majör travma yok"
+    ],
+    "investigations": [
+      {
+        "id": "lipid-paneli-ve-hdl-duzeyi-15",
+        "label": "Lipid paneli ve HDL düzeyi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Lipid paneli ve HDL düzeyi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Lipid paneli ve HDL düzeyi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Lipid paneli ve HDL düzeyi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "tonsil-ve-lenfoid-doku-muayenesi-15",
+        "label": "Tonsil ve lenfoid doku muayenesi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Tonsil ve lenfoid doku muayenesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Tonsil ve lenfoid doku muayenesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Tonsil ve lenfoid doku muayenesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "periferik-noropati-degerlendirmesi-15",
+        "label": "Periferik nöropati değerlendirmesi",
+        "type": "neurophysiology",
+        "priority": "useful",
+        "summary": "Periferik nöropati değerlendirmesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Periferik nöropati değerlendirmesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Periferik nöropati değerlendirmesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "abca1-gen-analizi-15",
+        "label": "ABCA1 gen analizi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "ABCA1 gen analizi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "ABCA1 gen analizi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "ABCA1 gen analizi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Tangier hastalığı",
+      "options": [
+        "Tangier hastalığı",
+        "Ailesel hiperkolesterolemi",
+        "LCAT eksikliği",
+        "Abetalipoproteinemi"
+      ],
+      "explanation": "Olgu paterni Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "pearls": [
+        "Turuncu tonsiller ve çok düşük HDL Tangier için ayırt ettiricidir.",
+        "ABCA1 kolesterol efflux için gereklidir.",
+        "ApoA-I ve HDL düzeyi belirgin düşüktür.",
+        "Nöropati ve hepatosplenomegali eşlik edebilir."
+      ],
+      "nextStep": "Lipid profilini doğrula, ABCA1 genetik testi ve kardiyometabolik/nörolojik takip planla.",
+      "answerFeedback": {
+        "diagnosisMeta": "Tangier hastalığı: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "evidenceChain": [
+          "Olgu bulguları Tangier hastalığı ile uyumlu",
+          "HDL <5 mg/dL, ApoA-I düşük, LDL düşük/normal",
+          "ABCA1 fonksiyon bozukluğu",
+          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+        ],
+        "pearls": [
+          "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
+          "Tanı testleri tedaviyi geciktirmemelidir.",
+          "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler."
+        ],
+        "management": [
+          "Acil klinik stabilizasyon ve temel laboratuvar değerlendirmesi — Hipoglisemi, asidoz, anemi veya organ yetmezliği varsa mortalite yaratabilir.",
+          "Sorumlu substrat/eksik vitamin veya hedef biyokimyasal bozukluğu düzelt — Patofizyolojik yükü azaltır.",
+          "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
+          "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
+        ],
+        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "differentials": {
+          "Ailesel hiperkolesterolemi": {
+            "explanation": "Ailesel hiperkolesterolemi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "comparisonPoints": [
+              "Ailesel hiperkolesterolemi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "LCAT eksikliği": {
+            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "comparisonPoints": [
+              "LCAT eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Abetalipoproteinemi": {
+            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "comparisonPoints": [
+              "Abetalipoproteinemi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-acute-radiation-syndrome-001",
+    "branchId": "internal-medicine",
+    "title": "Korunmasız radyasyon maruziyeti sonrası bulantı ve sitopeni",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Kısa sürede yüksek doz, prodromal bulgular, kemik iliği baskılanması, cilt hasarı",
+    "demographics": "34 yaş erkek, endüstriyel radyografi çalışanı",
+    "setting": "Acil servis - radyasyon kazası sonrası",
+    "chiefComplaint": "Maruziyetten saatler sonra bulantı, kusma, ishal ve ciltte eritem",
+    "stem": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan sonra kısa sürede yüksek radyasyona maruz kalmıştır. Dakikalar-saatler içinde bulantı, kusma, baş ağrısı ve ishal başlamıştır. Birkaç saat sonra kendini daha iyi hissetse de tam kan sayımında lenfosit düşüşü ve elde eritem görülür. PDF'te ARS için kısa sürede yüksek doz, tüm vücut/büyük vücut bölümü maruziyeti, prodromal gastrointestinal bulgular ve kemik iliği hasarı vurgulanmıştır.",
+    "vitals": {
+      "TA": "96/60 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "22/dk",
+      "SpO2": "97%",
+      "Ateş": "37.8 C"
+    },
+    "exam": [
+      "Elde eritem ve hassasiyet",
+      "Letarji",
+      "Dehidratasyon bulguları",
+      "Lenf nodu büyüklüğü yok",
+      "Isı/kimyasal temas öyküsü yok",
+      "Menenjit bulgusu yok"
+    ],
+    "investigations": [
+      {
+        "id": "tam-kan-sayimi-seri-izlemi-16",
+        "label": "Tam kan sayımı seri izlemi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Tam kan sayımı seri izlemi, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Tam kan sayımı seri izlemi, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Tam kan sayımı seri izlemi, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "maruziyet-zamani-ve-doz-tahmini-16",
+        "label": "Maruziyet zamanı ve doz tahmini",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Maruziyet zamanı ve doz tahmini, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Maruziyet zamanı ve doz tahmini, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Maruziyet zamanı ve doz tahmini, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "elektrolit-bobrek-ve-karaciger-paneli-16",
+        "label": "Elektrolit, böbrek ve karaciğer paneli",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Elektrolit, böbrek ve karaciğer paneli, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Elektrolit, böbrek ve karaciğer paneli, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Elektrolit, böbrek ve karaciğer paneli, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "kontaminasyon-olcumu-ve-dekontaminasyon-taramasi-16",
+        "label": "Kontaminasyon ölçümü ve dekontaminasyon taraması",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Kontaminasyon ölçümü ve dekontaminasyon taraması, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kontaminasyon ölçümü ve dekontaminasyon taraması, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kontaminasyon ölçümü ve dekontaminasyon taraması, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Akut radyasyon sendromu",
+      "options": [
+        "Akut radyasyon sendromu",
+        "Kronik radyasyon sendromu",
+        "Gıda zehirlenmesi",
+        "Termal yanık"
+      ],
+      "explanation": "Kısa sürede yüksek doz maruziyet, prodromal bulantı-kusma-ishal, geçici iyilik dönemi ve kemik iliği baskılanması ARS lehinedir.",
+      "pearls": [
+        "ARS için kısa sürede yüksek doz ve büyük vücut bölümü maruziyeti gerekir.",
+        "İlk belirtiler bulantı, kusma, baş ağrısı ve ishaldir.",
+        "Hematopoietik hasar enfeksiyon ve iç kanama riskini artırır.",
+        "Isı/kimyasal temas olmadan cilt yanığı radyasyon kazasını düşündürür."
+      ],
+      "nextStep": "Radyasyon güvenliği/dekontaminasyon, destek tedavisi, seri CBC ve enfeksiyon/kanama izlemi.",
+      "answerFeedback": {
+        "diagnosisMeta": "Akut yüksek doz + prodromal GIS + lenfopeni + cilt eritemi.",
+        "whyCorrect": "Kısa sürede yüksek doz maruziyet, prodromal bulantı-kusma-ishal, geçici iyilik dönemi ve kemik iliği baskılanması ARS lehinedir.",
+        "evidenceChain": [
+          "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet",
+          "Saatler içinde bulantı-kusma-ishal",
+          "Isı/kimyasal temas olmadan cilt eritemi",
+          "Lenfosit düşüşü"
+        ],
+        "pearls": [
+          "Geçici iyilik dönemi ARS'yi dışlamaz.",
+          "Enfeksiyon ve iç kanama ölüm nedenleri arasındadır."
+        ],
+        "management": [
+          "Radyasyon güvenliği, kontaminasyon değerlendirmesi ve ABC — Hasta ve ekip güvenliği sağlanır.",
+          "Sıvı, antiemetik, elektrolit ve yanık/cilt bakımı — Destek tedavisi ilk basamaktır.",
+          "Seri CBC ve enfeksiyon/kanama izlemi — Kemik iliği hasarı mortaliteyi belirler.",
+          "G-CSF, antibiyotik, hematoloji/kemik iliği nakli değerlendirmesi — Ağır dozlarda gerekebilir."
+        ],
+        "learningOutcome": "Radyasyon sendromlarında zamanlama ayırıcıdır: ARS kısa sürede yüksek dozla; CRS uzun süre düşük dozla gelişir.",
+        "differentials": {
+          "Kronik radyasyon sendromu": {
+            "explanation": "Kronik radyasyon sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "comparisonPoints": [
+              "Kronik radyasyon sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Gıda zehirlenmesi": {
+            "explanation": "Gıda zehirlenmesi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "comparisonPoints": [
+              "Gıda zehirlenmesi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Termal yanık": {
+            "explanation": "Termal yanık ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "comparisonPoints": [
+              "Termal yanık için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-oxidative-stress-injury-001",
+    "branchId": "internal-medicine",
+    "title": "Kimyasal maruziyet sonrası oksidatif hasar bulguları",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "ROS, lipid peroksidasyonu, protein/DNA hasarı, antioksidan savunma",
+    "demographics": "55 yaş erkek, yoğun sigara öyküsü",
+    "setting": "Dahiliye polikliniği - kronik inflamasyon ve oksidatif stres değerlendirmesi",
+    "chiefComplaint": "Halsizlik, efor kapasitesinde azalma ve inflamasyon belirteçlerinde artış",
+    "stem": "Sigara ve kronik inflamasyon öyküsü olan hastada oksidatif stres belirteçleri araştırılır. Lipid peroksidasyon ürünleri artmış, antioksidan kapasite azalmıştır. Vaka, PDF'te serbest radikallerin eşleşmemiş elektron taşıması, ROS türleri, lipid/protein/DNA hasarı ve antioksidan sistemler başlıklarını klinik soru formatına dönüştürür.",
+    "vitals": {
+      "TA": "132/82 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "18/dk",
+      "SpO2": "96%",
+      "Ateş": "36.9 C"
+    },
+    "exam": [
+      "Sigara kokusu ve kronik bronşit bulguları",
+      "Hafif wheezing",
+      "Yorgun görünüm",
+      "Akut enfeksiyon odağı yok",
+      "Ciltte aktif yanık yok"
+    ],
+    "investigations": [
+      {
+        "id": "maruziyet-ve-doku-hasari-oykusu-17",
+        "label": "Maruziyet ve doku hasarı öyküsü",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Maruziyet ve doku hasarı öyküsü, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Maruziyet ve doku hasarı öyküsü, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Maruziyet ve doku hasarı öyküsü, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "hemoliz-ve-hucre-hasari-belirtecleri-17",
+        "label": "Hemoliz ve hücre hasarı belirteçleri",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Hemoliz ve hücre hasarı belirteçleri, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Hemoliz ve hücre hasarı belirteçleri, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Hemoliz ve hücre hasarı belirteçleri, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "antioksidan-sistem-degerlendirmesi-17",
+        "label": "Antioksidan sistem değerlendirmesi",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Antioksidan sistem değerlendirmesi, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Antioksidan sistem değerlendirmesi, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Antioksidan sistem değerlendirmesi, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "temel-biyokimya-ve-organ-fonksiyonlari-17",
+        "label": "Temel biyokimya ve organ fonksiyonları",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "Temel biyokimya ve organ fonksiyonları, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Temel biyokimya ve organ fonksiyonları, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Temel biyokimya ve organ fonksiyonları, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Oksidatif stres ilişkili hücresel hasar",
+      "options": [
+        "Oksidatif stres ilişkili hücresel hasar",
+        "Yalnızca hipoglisemi",
+        "IgE aracılı anafilaksi",
+        "Koagülasyon nekrozu"
+      ],
+      "explanation": "ROS artışı ve antioksidan savunmanın yetersizliği lipid, protein ve DNA hasarıyla sonuçlanır. MDA/4-HNE lipid peroksidasyonu; glutatyon dengesi antioksidan kapasite için kullanılır.",
+      "pearls": [
+        "Serbest radikal eşleşmemiş elektron içerir ve çok reaktiftir.",
+        "Süperoksit, H2O2, hidroksil radikali ve NO önemli türlerdir.",
+        "MDA ve 4-HNE lipid peroksidasyon ürünleridir.",
+        "SOD, katalaz, glutatyon peroksidaz, GSH ve melatonin antioksidan sistemlerde önemlidir."
+      ],
+      "nextStep": "Altta yatan oksidan kaynağı azalt, sigara bırakma ve antioksidan/enzimatik savunma mekanizmasını hedefleyen destek planla.",
+      "answerFeedback": {
+        "diagnosisMeta": "ROS artışı + lipid peroksidasyonu + GSH azalması.",
+        "whyCorrect": "ROS artışı ve antioksidan savunmanın yetersizliği lipid, protein ve DNA hasarıyla sonuçlanır. MDA/4-HNE lipid peroksidasyonu; glutatyon dengesi antioksidan kapasite için kullanılır.",
+        "evidenceChain": [
+          "Sigara ve kronik inflamasyon öyküsü",
+          "MDA/4-HNE yüksekliği",
+          "GSH/GSSG oranında bozulma",
+          "8-OHdG artışı"
+        ],
+        "pearls": [
+          "H2O2 radikal değildir fakat ROS içinde yer alır.",
+          "Geçiş metalleri radikal olmasa da radikal oluşumunda rol oynar."
+        ],
+        "management": [
+          "Oksidan kaynağı ve risk faktörlerini belirle — Sigara/inflamasyon kontrolü esastır.",
+          "Hasar belirteçlerini yorumla — MDA/4-HNE lipid hasarını gösterir.",
+          "Antioksidan savunma kapasitesini değerlendir — GSH ve enzimler mekanizmayı açıklar."
+        ],
+        "learningOutcome": "Oksidatif stres sorularında hasarın hedefi sorulur: lipid -> MDA/4-HNE, protein -> sülfür radikalleri/oksidasyon, DNA -> baz hasarı.",
+        "differentials": {
+          "Yalnızca hipoglisemi": {
+            "explanation": "Yalnızca hipoglisemi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Oksidatif stres ilişkili hücresel hasar lehinedir.",
+            "comparisonPoints": [
+              "Yalnızca hipoglisemi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Oksidatif stres ilişkili hücresel hasar tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "IgE aracılı anafilaksi": {
+            "explanation": "IgE aracılı anafilaksi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Oksidatif stres ilişkili hücresel hasar lehinedir.",
+            "comparisonPoints": [
+              "IgE aracılı anafilaksi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Oksidatif stres ilişkili hücresel hasar tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Koagülasyon nekrozu": {
+            "explanation": "Koagülasyon nekrozu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Oksidatif stres ilişkili hücresel hasar lehinedir.",
+            "comparisonPoints": [
+              "Koagülasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Oksidatif stres ilişkili hücresel hasar tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "cardiovascular-coagulative-necrosis-mi-001",
+    "branchId": "cardiovascular",
+    "title": "Baskı tarzında göğüs ağrısı sonrası beklenen doku hasarı paterni",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "İskemik nekroz, miyokard infarktüsü, morfolojik nekroz tipi",
+    "demographics": "55 yaş erkek",
+    "setting": "Acil servis - göğüs ağrısı",
+    "chiefComplaint": "1 saattir süren baskı tarzı göğüs ağrısı",
+    "stem": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. PDF'te çıkmış soru olarak akut miyokard infarktüsünde kalp kasında gelişmesi beklenen nekroz tipinin koagülasyon nekrozu olduğu vurgulanmıştır.",
+    "vitals": {
+      "TA": "138/86 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "20/dk",
+      "SpO2": "96%",
+      "Ateş": "36.8 C"
+    },
+    "exam": [
+      "Terli ve anksiyöz görünüm",
+      "S4 duyulabilir",
+      "Göğüs ağrısı devam ediyor",
+      "Perikardiyal sürtünme sesi yok",
+      "Fokal nörolojik defisit yok"
+    ],
+    "investigations": [
+      {
+        "id": "12-derivasyon-ekg-18",
+        "label": "12 derivasyon EKG",
+        "type": "ecg",
+        "priority": "essential",
+        "summary": "12 derivasyon EKG, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "12 derivasyon EKG, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "12 derivasyon EKG, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "troponin-ve-kardiyak-biyobelirtecler-18",
+        "label": "Troponin ve kardiyak biyobelirteçler",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Troponin ve kardiyak biyobelirteçler, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Troponin ve kardiyak biyobelirteçler, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Troponin ve kardiyak biyobelirteçler, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "koroner-anjiyografi-18",
+        "label": "Koroner anjiyografi",
+        "type": "ct",
+        "priority": "useful",
+        "summary": "Koroner anjiyografi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Koroner anjiyografi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Koroner anjiyografi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "histoloji-nekroz-tipi-18",
+        "label": "Histoloji/nekroz tipi",
+        "type": "pathology",
+        "priority": "situational",
+        "summary": "Histoloji/nekroz tipi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Histoloji/nekroz tipi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Histoloji/nekroz tipi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Koagülasyon nekrozu",
+      "options": [
+        "Koagülasyon nekrozu",
+        "Likefaksiyon nekrozu",
+        "Kazeifikasyon nekrozu",
+        "Yağ nekrozu"
+      ],
+      "explanation": "Miyokard ve böbrek gibi solid organlarda iskemi sonrası tipik nekroz koagülasyon nekrozudur. Beyin istisna olarak likefaksiyon nekrozu gösterir.",
+      "pearls": [
+        "MI -> koagülasyon nekrozu.",
+        "Renal arter tıkanması -> koagülasyon nekrozu.",
+        "Beyin infarktı -> likefaksiyon nekrozu.",
+        "Tüberküloz granülomu -> kazeifikasyon nekrozu."
+      ],
+      "nextStep": "STEMI protokolü: aspirin/antitrombotik yaklaşım, acil PCI ve hemodinamik izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "İskemi + solid organ + MI = koagülasyon nekrozu. Alan Feedback",
+        "whyCorrect": "Miyokard ve böbrek gibi solid organlarda iskemi sonrası tipik nekroz koagülasyon nekrozudur. Beyin istisna olarak likefaksiyon nekrozu gösterir.",
+        "evidenceChain": [
+          "Şiddetli göğüs ağrısı",
+          "ST elevasyonu",
+          "LAD tam tıkanıklığı",
+          "Troponin yüksekliği"
+        ],
+        "pearls": [
+          "Patoloji cevabı tedavi cevabından ayrıdır: tanı/tedavi PCI; morfolojik tip koagülasyon nekrozudur."
+        ],
+        "management": [
+          "Acil EKG ve STEMI tanısı — Zaman miyokarddır.",
+          "Acil revaskülarizasyon/PCI — İskemik alan kurtarılır.",
+          "Antitrombotik ve destek tedavisi — Trombotik oklüzyon yönetilir.",
+          "Patoloji korelasyonu: koagülasyon nekrozu — Sınav morfoloji bilgisidir."
+        ],
+        "learningOutcome": "Nekroz tipleri sınavda klinik senaryo ile sorulur; organ ve etiyoloji doğru eşleştirilmelidir.",
+        "differentials": {
+          "Likefaksiyon nekrozu": {
+            "explanation": "Likefaksiyon nekrozu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "comparisonPoints": [
+              "Likefaksiyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Kazeifikasyon nekrozu": {
+            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "comparisonPoints": [
+              "Kazeifikasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Yağ nekrozu": {
+            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "comparisonPoints": [
+              "Yağ nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "neurology-liquefactive-necrosis-brain-001",
+    "branchId": "neurology",
+    "title": "Baş ağrısı ve ateş sonrası kaviter beyin lezyonu gelişen hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Beyin dokusunda enzimatik sindirim ve sıvılaşma",
+    "demographics": "42 yaş erkek",
+    "setting": "Nöroloji servisi",
+    "chiefComplaint": "Ateş, baş ağrısı ve fokal nörolojik defisit",
+    "stem": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir. Beyin MR'ında halka tarzı kontrastlanan lezyon görülür. Beyin dokusunda enfeksiyon/iskemi sonrası likefaksiyon nekrozu beklenir.",
+    "vitals": {
+      "TA": "Klinik senaryoya uygun",
+      "Nabız": "Taşikardik olabilir",
+      "Solunum": "Artmış olabilir",
+      "SpO2": "Senaryoya göre değişir",
+      "Ateş": "Enfeksiyonda yüksek olabilir"
+    },
+    "exam": [
+      "Klinik tanıyı destekleyen odak bulgular mevcut",
+      "Sistemik etkilenme bulguları değerlendirilir",
+      "PDF'teki patoloji mekanizmasıyla uyumlu bulgu paterni",
+      "Alternatif tanıyı düşündürecek baskın bulgu yok",
+      "Primer travma bulgusu yok"
+    ],
+    "investigations": [
+      {
+        "id": "beyin-bt-mr-19",
+        "label": "Beyin BT/MR",
+        "type": "mri",
+        "priority": "essential",
+        "summary": "Beyin BT/MR, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Beyin BT/MR, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Beyin BT/MR, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "hemogram-ve-inflamasyon-belirtecleri-19",
+        "label": "Hemogram ve inflamasyon belirteçleri",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Hemogram ve inflamasyon belirteçleri, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Hemogram ve inflamasyon belirteçleri, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Hemogram ve inflamasyon belirteçleri, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "aspirat-kulturu-19",
+        "label": "Aspirat kültürü",
+        "type": "culture",
+        "priority": "useful",
+        "summary": "Aspirat kültürü, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Aspirat kültürü, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Aspirat kültürü, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "patoloji-nekroz-degerlendirmesi-19",
+        "label": "Patoloji/nekroz değerlendirmesi",
+        "type": "pathology",
+        "priority": "situational",
+        "summary": "Patoloji/nekroz değerlendirmesi, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Patoloji/nekroz değerlendirmesi, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Patoloji/nekroz değerlendirmesi, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Likefaksiyon nekrozu",
+      "options": [
+        "Likefaksiyon nekrozu",
+        "Koagülasyon nekrozu",
+        "Kazeifikasyon nekrozu",
+        "Yağ nekrozu"
+      ],
+      "explanation": "Olgunun klinik paterni Likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
+      "pearls": [
+        "Beyin infarktı ve apse likefaksiyon nekrozuyla ilişkilidir.",
+        "Nötrofil enzimleri dokuyu sıvılaştırır.",
+        "Solid organ iskemisi genelde koagülasyon nekrozu yapar."
+      ],
+      "nextStep": "Acil stabilizasyon gerektiren durum dışlandıktan sonra tanıyı doğrulayan temel test ve hedefe yönelik tedavi/yönetim başlatılır.",
+      "answerFeedback": {
+        "diagnosisMeta": "Likefaksiyon nekrozu için belirleyici klinik ve patolojik ipuçları.",
+        "whyCorrect": "Olgunun klinik paterni Likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
+        "evidenceChain": [
+          "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir",
+          "Halka tarzı kontrastlanan apse",
+          "Lökositoz ve CRP yüksek",
+          "PDF'teki mekanizma ile uyumlu ayırıcı tanı paterni"
+        ],
+        "pearls": [
+          "Beyin infarktı ve apse likefaksiyon nekrozuyla ilişkilidir.",
+          "Nötrofil enzimleri dokuyu sıvılaştırır."
+        ],
+        "management": [
+          "Stabilizasyon ve öncelikli klinik karar — Acil risk yönetilir.",
+          "Beyin MR istemi — Tanısal yön verir.",
+          "CBC/CRP ile doğrulama — Ayırıcı tanı netleşir.",
+          "Hedefe yönelik tedavi/izlem — Altta yatan mekanizma yönetilir."
+        ],
+        "learningOutcome": "Patoloji sorularında klinik senaryo, morfolojik patern ve mekanizma birlikte okunmalıdır.",
+        "differentials": {
+          "Koagülasyon nekrozu": {
+            "explanation": "Koagülasyon nekrozu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "comparisonPoints": [
+              "Koagülasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Kazeifikasyon nekrozu": {
+            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "comparisonPoints": [
+              "Kazeifikasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Yağ nekrozu": {
+            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "comparisonPoints": [
+              "Yağ nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "infectious-diseases-caseating-granuloma-tb-001",
+    "branchId": "infectious-diseases",
+    "title": "Kronik öksürük, gece terlemesi ve granülomatöz akciğer bulguları",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Kronik inflamasyon, epiteloid histiyosit, dev hücre, TB dışlama",
+    "demographics": "31 yaş kadın",
+    "setting": "Göğüs hastalıkları polikliniği",
+    "chiefComplaint": "Gece terlemesi, kilo kaybı ve kronik öksürük",
+    "stem": "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır. Biyopside epiteloid histiyositler, dev hücreler ve santral kazeifikasyon izlenir. PDF'te granülomatöz inflamasyonda ülkemizde tüberkülozun mutlaka dışlanması gerektiği vurgulanır.",
+    "vitals": {
+      "TA": "Klinik senaryoya uygun",
+      "Nabız": "Taşikardik olabilir",
+      "Solunum": "Artmış olabilir",
+      "SpO2": "Senaryoya göre değişir",
+      "Ateş": "Enfeksiyonda yüksek olabilir"
+    },
+    "exam": [
+      "Klinik tanıyı destekleyen odak bulgular mevcut",
+      "Sistemik etkilenme bulguları değerlendirilir",
+      "PDF'teki patoloji mekanizmasıyla uyumlu bulgu paterni",
+      "Alternatif tanıyı düşündürecek baskın bulgu yok",
+      "Primer travma bulgusu yok"
+    ],
+    "investigations": [
+      {
+        "id": "akciger-grafisi-veya-toraks-bt-20",
+        "label": "Akciğer grafisi veya toraks BT",
+        "type": "ct",
+        "priority": "essential",
+        "summary": "Akciğer grafisi veya toraks BT, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Akciğer grafisi veya toraks BT, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Akciğer grafisi veya toraks BT, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "arb-boyama-tb-pcr-ve-kultur-20",
+        "label": "ARB boyama, TB PCR ve kültür",
+        "type": "culture",
+        "priority": "essential",
+        "summary": "ARB boyama, TB PCR ve kültür, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "ARB boyama, TB PCR ve kültür, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "ARB boyama, TB PCR ve kültür, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "histopatoloji-20",
+        "label": "Histopatoloji",
+        "type": "pathology",
+        "priority": "useful",
+        "summary": "Histopatoloji, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Histopatoloji, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Histopatoloji, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "igra-ppd-ve-temas-taramasi-20",
+        "label": "IGRA/PPD ve temas taraması",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "IGRA/PPD ve temas taraması, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "IGRA/PPD ve temas taraması, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "IGRA/PPD ve temas taraması, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Tüberkülozla uyumlu kazeifiye granülom",
+      "options": [
+        "Tüberkülozla uyumlu kazeifiye granülom",
+        "Sarkoidoz non-kazeifiye granülom",
+        "Akut apse",
+        "Fibrinoid nekroz"
+      ],
+      "explanation": "Olgunun klinik paterni Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
+      "pearls": [
+        "TB kazeifiye granülomla klasik ilişkilidir.",
+        "Sarkoidoz non-kazeifiye granülom yapar; kazeifikasyon çeldiricidir.",
+        "Kronik inflamasyonda makrofaj, lenfosit ve plazma hücreleri öne çıkar."
+      ],
+      "nextStep": "Acil stabilizasyon gerektiren durum dışlandıktan sonra tanıyı doğrulayan temel test ve hedefe yönelik tedavi/yönetim başlatılır.",
+      "answerFeedback": {
+        "diagnosisMeta": "Kazeifikasyon nekrozlu granülom için belirleyici klinik ve patolojik ipuçları.",
+        "whyCorrect": "Olgunun klinik paterni Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
+        "evidenceChain": [
+          "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır",
+          "Apikal infiltrasyon/kavite",
+          "ARB pozitif olabilir",
+          "PDF'teki mekanizma ile uyumlu ayırıcı tanı paterni"
+        ],
+        "pearls": [
+          "TB kazeifiye granülomla klasik ilişkilidir.",
+          "Sarkoidoz non-kazeifiye granülom yapar; kazeifikasyon çeldiricidir."
+        ],
+        "management": [
+          "Stabilizasyon ve öncelikli klinik karar — Acil risk yönetilir.",
+          "Akciğer grafisi/BT istemi — Tanısal yön verir.",
+          "ARB boyama/kültür ile doğrulama — Ayırıcı tanı netleşir.",
+          "Hedefe yönelik tedavi/izlem — Altta yatan mekanizma yönetilir."
+        ],
+        "learningOutcome": "Patoloji sorularında klinik senaryo, morfolojik patern ve mekanizma birlikte okunmalıdır.",
+        "differentials": {
+          "Sarkoidoz non-kazeifiye granülom": {
+            "explanation": "Sarkoidoz non-kazeifiye granülom ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "comparisonPoints": [
+              "Sarkoidoz non-kazeifiye granülom için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Akut apse": {
+            "explanation": "Akut apse ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "comparisonPoints": [
+              "Akut apse için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Fibrinoid nekroz": {
+            "explanation": "Fibrinoid nekroz ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "comparisonPoints": [
+              "Fibrinoid nekroz için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pulmonology-pulmonary-embolism-dvt-001",
+    "branchId": "pulmonology",
+    "title": "Bacak şişliği sonrası ani dispne ve hipoksemi gelişen hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Tromboz, emboli, infarkt ve şok riski",
+    "demographics": "66 yaş kadın, kalça cerrahisi sonrası",
+    "setting": "Acil servis",
+    "chiefComplaint": "Ani nefes darlığı ve plöritik göğüs ağrısı",
+    "stem": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve plöritik ağrı ile gelir. Sol baldırda şişlik vardır. Virchow triadı bağlamında staz ve endotel hasarı sonrası DVT kaynaklı pulmoner emboli düşünülür.",
+    "vitals": {
+      "TA": "Klinik senaryoya uygun",
+      "Nabız": "Taşikardik olabilir",
+      "Solunum": "Artmış olabilir",
+      "SpO2": "Senaryoya göre değişir",
+      "Ateş": "Enfeksiyonda yüksek olabilir"
+    },
+    "exam": [
+      "Klinik tanıyı destekleyen odak bulgular mevcut",
+      "Sistemik etkilenme bulguları değerlendirilir",
+      "PDF'teki patoloji mekanizmasıyla uyumlu bulgu paterni",
+      "Alternatif tanıyı düşündürecek baskın bulgu yok",
+      "Primer travma bulgusu yok"
+    ],
+    "investigations": [
+      {
+        "id": "d-dimer-ve-arter-kan-gazi-21",
+        "label": "D-dimer ve arter kan gazı",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "D-dimer ve arter kan gazı, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "D-dimer ve arter kan gazı, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "D-dimer ve arter kan gazı, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "bt-pulmoner-anjiyografi-21",
+        "label": "BT pulmoner anjiyografi",
+        "type": "ct",
+        "priority": "essential",
+        "summary": "BT pulmoner anjiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "BT pulmoner anjiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "BT pulmoner anjiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "alt-ekstremite-venoz-doppler-21",
+        "label": "Alt ekstremite venöz Doppler",
+        "type": "ultrasound",
+        "priority": "useful",
+        "summary": "Alt ekstremite venöz Doppler, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Alt ekstremite venöz Doppler, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Alt ekstremite venöz Doppler, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "ekg-ve-ekokardiyografi-21",
+        "label": "EKG ve ekokardiyografi",
+        "type": "ecg",
+        "priority": "situational",
+        "summary": "EKG ve ekokardiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "EKG ve ekokardiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "EKG ve ekokardiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Pulmoner tromboemboli",
+      "options": [
+        "Pulmoner tromboemboli",
+        "Pnömoni",
+        "Spontan pnömotoraks",
+        "Astım atağı"
+      ],
+      "explanation": "Olgunun klinik paterni Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
+      "pearls": [
+        "Cerrahi/immobilizasyon sonrası ani dispne PE düşündürür.",
+        "DVT en sık emboli kaynağıdır.",
+        "Büyük emboli şok ve ani ölüme yol açabilir."
+      ],
+      "nextStep": "Acil stabilizasyon gerektiren durum dışlandıktan sonra tanıyı doğrulayan temel test ve hedefe yönelik tedavi/yönetim başlatılır.",
+      "answerFeedback": {
+        "diagnosisMeta": "Pulmoner tromboemboli için belirleyici klinik ve patolojik ipuçları.",
+        "whyCorrect": "Olgunun klinik paterni Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
+        "evidenceChain": [
+          "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve plöritik ağrı ile gelir",
+          "Yüksek",
+          "Sağ pulmoner arter dalında dolum defekti",
+          "PDF'teki mekanizma ile uyumlu ayırıcı tanı paterni"
+        ],
+        "pearls": [
+          "Cerrahi/immobilizasyon sonrası ani dispne PE düşündürür.",
+          "DVT en sık emboli kaynağıdır."
+        ],
+        "management": [
+          "Stabilizasyon ve öncelikli klinik karar — Acil risk yönetilir.",
+          "D-dimer istemi — Tanısal yön verir.",
+          "BT pulmoner anjiyografi ile doğrulama — Ayırıcı tanı netleşir.",
+          "Hedefe yönelik tedavi/izlem — Altta yatan mekanizma yönetilir."
+        ],
+        "learningOutcome": "Patoloji sorularında klinik senaryo, morfolojik patern ve mekanizma birlikte okunmalıdır.",
+        "differentials": {
+          "Pnömoni": {
+            "explanation": "Pnömoni ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "comparisonPoints": [
+              "Pnömoni için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Spontan pnömotoraks": {
+            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "comparisonPoints": [
+              "Spontan pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Astım atağı": {
+            "explanation": "Astım atağı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "comparisonPoints": [
+              "Astım atağı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "infectious-diseases-septic-shock-001",
+    "branchId": "infectious-diseases",
+    "title": "Ateş, hipotansiyon ve laktat yüksekliği ile acile getirilen hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Doku hipoperfüzyonu, laktat, inflamatuvar vazodilatasyon",
+    "demographics": "70 yaş erkek",
+    "setting": "Acil servis",
+    "chiefComplaint": "Ateş, bilinç bulanıklığı ve tansiyon düşüklüğü",
+    "stem": "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir. Laktat yüksektir. Doku hipoperfüzyonu ve sistemik inflamatuvar yanıt şok tablosunu açıklar.",
+    "vitals": {
+      "TA": "Klinik senaryoya uygun",
+      "Nabız": "Taşikardik olabilir",
+      "Solunum": "Artmış olabilir",
+      "SpO2": "Senaryoya göre değişir",
+      "Ateş": "Enfeksiyonda yüksek olabilir"
+    },
+    "exam": [
+      "Klinik tanıyı destekleyen odak bulgular mevcut",
+      "Sistemik etkilenme bulguları değerlendirilir",
+      "PDF'teki patoloji mekanizmasıyla uyumlu bulgu paterni",
+      "Alternatif tanıyı düşündürecek baskın bulgu yok",
+      "Primer travma bulgusu yok"
+    ],
+    "investigations": [
+      {
+        "id": "laktat-ve-arter-kan-gazi-22",
+        "label": "Laktat ve arter kan gazı",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Laktat ve arter kan gazı, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Laktat ve arter kan gazı, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Laktat ve arter kan gazı, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "kan-kulturu-22",
+        "label": "Kan kültürü",
+        "type": "culture",
+        "priority": "essential",
+        "summary": "Kan kültürü, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kan kültürü, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kan kültürü, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "hemogram-crp-ve-prokalsitonin-22",
+        "label": "Hemogram, CRP ve prokalsitonin",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Hemogram, CRP ve prokalsitonin, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Hemogram, CRP ve prokalsitonin, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Hemogram, CRP ve prokalsitonin, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "odak-goruntuleme-22",
+        "label": "Odak görüntüleme",
+        "type": "xray",
+        "priority": "situational",
+        "summary": "Odak görüntüleme, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Odak görüntüleme, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Odak görüntüleme, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Septik şok",
+      "options": [
+        "Septik şok",
+        "Hipovolemik şok",
+        "Anafilaktik şok",
+        "Nörojenik şok"
+      ],
+      "explanation": "Olgunun klinik paterni Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
+      "pearls": [
+        "Şok doku hipoperfüzyonudur; laktat önemlidir.",
+        "Sepsis + vazodilatasyon + kapiller kaçak septik şok mekanizmasını açıklar.",
+        "İlk basamak sıvı, antibiyotik ve kaynak kontrolüdür."
+      ],
+      "nextStep": "Acil stabilizasyon gerektiren durum dışlandıktan sonra tanıyı doğrulayan temel test ve hedefe yönelik tedavi/yönetim başlatılır.",
+      "answerFeedback": {
+        "diagnosisMeta": "Septik şok için belirleyici klinik ve patolojik ipuçları.",
+        "whyCorrect": "Olgunun klinik paterni Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
+        "evidenceChain": [
+          "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir",
+          "4.2 mmol/L",
+          "Alındı",
+          "PDF'teki mekanizma ile uyumlu ayırıcı tanı paterni"
+        ],
+        "pearls": [
+          "Şok doku hipoperfüzyonudur; laktat önemlidir.",
+          "Sepsis + vazodilatasyon + kapiller kaçak septik şok mekanizmasını açıklar."
+        ],
+        "management": [
+          "Stabilizasyon ve öncelikli klinik karar — Acil risk yönetilir.",
+          "Laktat istemi — Tanısal yön verir.",
+          "Kan kültürü ile doğrulama — Ayırıcı tanı netleşir.",
+          "Hedefe yönelik tedavi/izlem — Altta yatan mekanizma yönetilir."
+        ],
+        "learningOutcome": "Patoloji sorularında klinik senaryo, morfolojik patern ve mekanizma birlikte okunmalıdır.",
+        "differentials": {
+          "Hipovolemik şok": {
+            "explanation": "Hipovolemik şok ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "comparisonPoints": [
+              "Hipovolemik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Anafilaktik şok": {
+            "explanation": "Anafilaktik şok ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "comparisonPoints": [
+              "Anafilaktik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Nörojenik şok": {
+            "explanation": "Nörojenik şok ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "comparisonPoints": [
+              "Nörojenik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-systemic-lupus-erythematosus-001",
+    "branchId": "internal-medicine",
+    "title": "Malar döküntü, proteinüri ve sistemik yakınmaları olan genç kadın",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Otoantikorlar, immün kompleks, multisistem tutulum",
+    "demographics": "24 yaş kadın",
+    "setting": "Klinik/adli değerlendirme ortamı",
+    "chiefComplaint": "Deri döküntüsü, fotosensitivite, eklem ağrısı ve köpüklü idrar",
+    "stem": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır. Anti-dsDNA ve ANA pozitifliği immün kompleks aracılı böbrek tutulumunu destekler. PDF'te SLE'nin multisistem otoimmün hastalık olduğu; deri, böbrek ve kan damarlarının önemli tutulum alanları olduğu vurgulanır.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Tanıya götüren ana bulgular mevcut",
+      "Organ/sistem tutulumları hedefli değerlendirilir",
+      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
+      "Klinik stabilite ayrıca değerlendirilir"
+    ],
+    "investigations": [
+      {
+        "id": "ana-anti-dsdna-ve-kompleman-duzeyleri-23",
+        "label": "ANA, anti-dsDNA ve kompleman düzeyleri",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "ANA, anti-dsDNA ve kompleman düzeyleri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "ANA, anti-dsDNA ve kompleman düzeyleri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "ANA, anti-dsDNA ve kompleman düzeyleri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "tam-idrar-analizi-ve-proteinuri-23",
+        "label": "Tam idrar analizi ve proteinüri",
+        "type": "urine",
+        "priority": "essential",
+        "summary": "Tam idrar analizi ve proteinüri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Tam idrar analizi ve proteinüri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Tam idrar analizi ve proteinüri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "hemogram-23",
+        "label": "Hemogram",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Hemogram, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Hemogram, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Hemogram, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "bobrek-biyopsisi-23",
+        "label": "Böbrek biyopsisi",
+        "type": "pathology",
+        "priority": "situational",
+        "summary": "Böbrek biyopsisi, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Böbrek biyopsisi, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Böbrek biyopsisi, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Sistemik lupus eritematozus",
+      "options": [
+        "Sistemik lupus eritematozus",
+        "Sjögren sendromu",
+        "Romatoid artrit",
+        "Sistemik skleroz"
+      ],
+      "explanation": "Olgu Sistemik lupus eritematozus için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+      "pearls": [
+        "SLE multisistem otoimmün hastalıktır.",
+        "İmmün kompleks ve otoantikorlar hasarda rol oynar.",
+        "Böbrek yetmezliği ve enfeksiyonlar önemli ölüm nedenleridir."
+      ],
+      "nextStep": "Önce güvenlik/stabilizasyon ve zorunlu klinik-adli/immünolojik kararlar; ardından tanı doğrulama ve hedefe yönelik tedavi/izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "Sistemik lupus eritematozus tanısını destekleyen klinik patern.",
+        "whyCorrect": "Olgu Sistemik lupus eritematozus için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır. Alan Feedback",
+        "evidenceChain": [
+          "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır",
+          "Pozitif",
+          "Pozitif, yüksek titre",
+          "Proteinüri ve eritrosit silendirleri"
+        ],
+        "pearls": [
+          "SLE multisistem otoimmün hastalıktır.",
+          "İmmün kompleks ve otoantikorlar hasarda rol oynar."
+        ],
+        "management": [
+          "Acil güvenlik/stabilizasyon ve ön değerlendirme — Hastanın klinik/adli güvenliği sağlanır.",
+          "ANA istemi — İlk tanısal dayanak oluşturulur.",
+          "Anti-dsDNA ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
+          "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
+        ],
+        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "differentials": {
+          "Sjögren sendromu": {
+            "explanation": "Sjögren sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "comparisonPoints": [
+              "Sjögren sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Romatoid artrit": {
+            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "comparisonPoints": [
+              "Romatoid artrit için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Sistemik skleroz": {
+            "explanation": "Sistemik skleroz ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "comparisonPoints": [
+              "Sistemik skleroz için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-sjogren-syndrome-001",
+    "branchId": "internal-medicine",
+    "title": "Göz-ağız kuruluğu ve parotis büyümesi ile başvuru",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Ekzokrin bez otoimmünitesi, sicca semptomları",
+    "demographics": "46 yaş kadın",
+    "setting": "Klinik/adli değerlendirme ortamı",
+    "chiefComplaint": "Göz kuruluğu, ağız kuruluğu ve tekrarlayan diş çürükleri",
+    "stem": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler. Schirmer testi azalmış, SSA/SSB pozitif bulunur. PDF'te göz ve ağız kuruluğu ile karakterize otoimmün hastalık olarak Sjögren sendromu çıkmış soruda yer almıştır.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Tanıya götüren ana bulgular mevcut",
+      "Organ/sistem tutulumları hedefli değerlendirilir",
+      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
+      "Klinik stabilite ayrıca değerlendirilir"
+    ],
+    "investigations": [
+      {
+        "id": "schirmer-testi-24",
+        "label": "Schirmer testi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Schirmer testi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Schirmer testi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Schirmer testi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "anti-ro-ssa-ve-anti-la-ssb-24",
+        "label": "Anti-Ro/SSA ve Anti-La/SSB",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Anti-Ro/SSA ve Anti-La/SSB, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Anti-Ro/SSA ve Anti-La/SSB, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Anti-Ro/SSA ve Anti-La/SSB, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "tukuruk-bezi-ultrasonu-veya-biyopsisi-24",
+        "label": "Tükürük bezi ultrasonu veya biyopsisi",
+        "type": "pathology",
+        "priority": "useful",
+        "summary": "Tükürük bezi ultrasonu veya biyopsisi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Tükürük bezi ultrasonu veya biyopsisi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Tükürük bezi ultrasonu veya biyopsisi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "goz-ve-agiz-komplikasyon-taramasi-24",
+        "label": "Göz ve ağız komplikasyon taraması",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Göz ve ağız komplikasyon taraması, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Göz ve ağız komplikasyon taraması, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Göz ve ağız komplikasyon taraması, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Sjögren sendromu",
+      "options": [
+        "Sjögren sendromu",
+        "SLE",
+        "Romatoid artrit",
+        "Hashimoto tiroiditi"
+      ],
+      "explanation": "Olgu Sjögren sendromu için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+      "pearls": [
+        "Sicca semptomları tanının kalbidir.",
+        "Anti-SSA/SSB güçlü destek sağlar.",
+        "Lenfoma riski uzun dönem izlemin parçasıdır."
+      ],
+      "nextStep": "Önce güvenlik/stabilizasyon ve zorunlu klinik-adli/immünolojik kararlar; ardından tanı doğrulama ve hedefe yönelik tedavi/izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "Sjögren sendromu tanısını destekleyen klinik patern.",
+        "whyCorrect": "Olgu Sjögren sendromu için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+        "evidenceChain": [
+          "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler",
+          "Azalmış gözyaşı",
+          "Pozitif",
+          "Lenfositik infiltrasyon"
+        ],
+        "pearls": [
+          "Sicca semptomları tanının kalbidir.",
+          "Anti-SSA/SSB güçlü destek sağlar."
+        ],
+        "management": [
+          "Acil güvenlik/stabilizasyon ve ön değerlendirme — Hastanın klinik/adli güvenliği sağlanır.",
+          "Schirmer testi istemi — İlk tanısal dayanak oluşturulur.",
+          "Anti-SSA/SSB ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
+          "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
+        ],
+        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "differentials": {
+          "SLE": {
+            "explanation": "SLE ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "comparisonPoints": [
+              "SLE için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Romatoid artrit": {
+            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "comparisonPoints": [
+              "Romatoid artrit için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Hashimoto tiroiditi": {
+            "explanation": "Hashimoto tiroiditi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "comparisonPoints": [
+              "Hashimoto tiroiditi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-rheumatoid-arthritis-001",
+    "branchId": "internal-medicine",
+    "title": "Sabah tutukluğu ve simetrik küçük eklem şişliği olan hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Kronik sinovit, pannus, simetrik küçük eklem tutulumu",
+    "demographics": "38 yaş kadın",
+    "setting": "Klinik/adli değerlendirme ortamı",
+    "chiefComplaint": "El eklemlerinde şişlik, ağrı ve sabah tutukluğu",
+    "stem": "Hasta 2 saati aşan sabah tutukluğu, MCP/PIP eklem şişliği ve simetrik ağrı ile gelir. RF ve anti-CCP pozitiftir. Kronik inflamatuvar sinovyal proliferasyon pannus oluşumuyla kıkırdak ve kemik hasarı yapar.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Tanıya götüren ana bulgular mevcut",
+      "Organ/sistem tutulumları hedefli değerlendirilir",
+      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
+      "Klinik stabilite ayrıca değerlendirilir"
+    ],
+    "investigations": [
+      {
+        "id": "rf-anti-ccp-esr-crp-25",
+        "label": "RF, anti-CCP, ESR/CRP",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "RF, anti-CCP, ESR/CRP, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "RF, anti-CCP, ESR/CRP, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "RF, anti-CCP, ESR/CRP, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "el-bilek-grafisi-veya-ultrasonografi-25",
+        "label": "El-bilek grafisi veya ultrasonografi",
+        "type": "xray",
+        "priority": "essential",
+        "summary": "El-bilek grafisi veya ultrasonografi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "El-bilek grafisi veya ultrasonografi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "El-bilek grafisi veya ultrasonografi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "simetrik-kucuk-eklem-muayenesi-25",
+        "label": "Simetrik küçük eklem muayenesi",
+        "type": "clinical",
+        "priority": "useful",
+        "summary": "Simetrik küçük eklem muayenesi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Simetrik küçük eklem muayenesi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Simetrik küçük eklem muayenesi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "dmard-oncesi-guvenlik-laboratuvari-25",
+        "label": "DMARD öncesi güvenlik laboratuvarı",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "DMARD öncesi güvenlik laboratuvarı, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "DMARD öncesi güvenlik laboratuvarı, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "DMARD öncesi güvenlik laboratuvarı, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Romatoid artrit",
+      "options": [
+        "Romatoid artrit",
+        "Osteoartrit",
+        "SLE artriti",
+        "Gut"
+      ],
+      "explanation": "Olgu Romatoid artrit için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+      "pearls": [
+        "Simetrik küçük eklem tutulumu RA için tipiktir.",
+        "Pannus destrüktif sinovyal proliferasyondur.",
+        "Anti-CCP özgüllüğü yüksek bir belirteçtir."
+      ],
+      "nextStep": "Önce güvenlik/stabilizasyon ve zorunlu klinik-adli/immünolojik kararlar; ardından tanı doğrulama ve hedefe yönelik tedavi/izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "Romatoid artrit tanısını destekleyen klinik patern.",
+        "whyCorrect": "Olgu Romatoid artrit için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır. Alan Feedback",
+        "evidenceChain": [
+          "Hasta 2 saati aşan sabah tutukluğu, MCP/PIP eklem şişliği ve simetrik ağrı ile gelir",
+          "Pozitif",
+          "Pozitif",
+          "Erozif değişiklikler"
+        ],
+        "pearls": [
+          "Simetrik küçük eklem tutulumu RA için tipiktir.",
+          "Pannus destrüktif sinovyal proliferasyondur."
+        ],
+        "management": [
+          "Acil güvenlik/stabilizasyon ve ön değerlendirme — Hastanın klinik/adli güvenliği sağlanır.",
+          "RF istemi — İlk tanısal dayanak oluşturulur.",
+          "Anti-CCP ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
+          "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
+        ],
+        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "differentials": {
+          "Osteoartrit": {
+            "explanation": "Osteoartrit ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "comparisonPoints": [
+              "Osteoartrit için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "SLE artriti": {
+            "explanation": "SLE artriti ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "comparisonPoints": [
+              "SLE artriti için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Gut": {
+            "explanation": "Gut ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "comparisonPoints": [
+              "Gut için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-bruton-agammaglobulinemia-001",
+    "branchId": "pediatrics",
+    "title": "Anne antikoru azaldıktan sonra tekrarlayan enfeksiyonları başlayan bebek",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "BTK defekti, B hücre azalması, pyojenik enfeksiyon",
+    "demographics": "7 aylık erkek bebek",
+    "setting": "Klinik/adli değerlendirme ortamı",
+    "chiefComplaint": "Tekrarlayan otitis media, sinüzit ve pnömoni",
+    "stem": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır. Serum immünoglobulinleri çok düşük, dolaşımda B hücreleri azdır; T hücre fonksiyonu korunmuştur. PDF'te BTK geninin X kromozomunda olduğu, erkeklerde görüldüğü ve maternal Ig'ler düştükten sonra bulgu verdiği belirtilir.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Tanıya götüren ana bulgular mevcut",
+      "Organ/sistem tutulumları hedefli değerlendirilir",
+      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
+      "Klinik stabilite ayrıca değerlendirilir"
+    ],
+    "investigations": [
+      {
+        "id": "serum-immunoglobulinleri-26",
+        "label": "Serum immünoglobulinleri",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Serum immünoglobulinleri, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Serum immünoglobulinleri, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Serum immünoglobulinleri, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "b-hucre-akim-sitometrisi-26",
+        "label": "B hücre akım sitometrisi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "B hücre akım sitometrisi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "B hücre akım sitometrisi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "B hücre akım sitometrisi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "asi-yaniti-ve-enfeksiyon-oykusu-26",
+        "label": "Aşı yanıtı ve enfeksiyon öyküsü",
+        "type": "clinical",
+        "priority": "useful",
+        "summary": "Aşı yanıtı ve enfeksiyon öyküsü, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Aşı yanıtı ve enfeksiyon öyküsü, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Aşı yanıtı ve enfeksiyon öyküsü, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "btk-gen-analizi-26",
+        "label": "BTK gen analizi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "BTK gen analizi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "BTK gen analizi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "BTK gen analizi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Bruton agammaglobulinemisi",
+      "options": [
+        "Bruton agammaglobulinemisi",
+        "İzole IgA yetmezliği",
+        "SCID",
+        "CVID"
+      ],
+      "explanation": "Olgu X-linked agammaglobulinemi - Bruton için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+      "pearls": [
+        "İlk 6 ay maternal Ig nedeniyle korunabilir.",
+        "Erkek bebek + rekürren pyojenik enfeksiyon + B hücre azlığı Bruton lehinedir.",
+        "Tedavi IVIG replasmanıdır."
+      ],
+      "nextStep": "Önce güvenlik/stabilizasyon ve zorunlu klinik-adli/immünolojik kararlar; ardından tanı doğrulama ve hedefe yönelik tedavi/izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "X-linked agammaglobulinemi - Bruton tanısını destekleyen klinik patern. Alan Feedback",
+        "whyCorrect": "Olgu X-linked agammaglobulinemi - Bruton için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+        "evidenceChain": [
+          "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır",
+          "Çok düşük",
+          "CD19+ B hücreleri düşük",
+          "Yetersiz"
+        ],
+        "pearls": [
+          "İlk 6 ay maternal Ig nedeniyle korunabilir.",
+          "Erkek bebek + rekürren pyojenik enfeksiyon + B hücre azlığı Bruton lehinedir."
+        ],
+        "management": [
+          "Acil güvenlik/stabilizasyon ve ön değerlendirme — Hastanın klinik/adli güvenliği sağlanır.",
+          "IgG/IgA/IgM istemi — İlk tanısal dayanak oluşturulur.",
+          "Flow sitometri ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
+          "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
+        ],
+        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "differentials": {
+          "İzole IgA yetmezliği": {
+            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "comparisonPoints": [
+              "İzole IgA yetmezliği için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "SCID": {
+            "explanation": "SCID ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "comparisonPoints": [
+              "SCID için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "CVID": {
+            "explanation": "CVID ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "comparisonPoints": [
+              "CVID için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "infectious-diseases-hiv-aids-001",
+    "branchId": "infectious-diseases",
+    "title": "Kilo kaybı, fırsatçı enfeksiyon ve lenfopeni ile başvuru",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "CD4 T hücre kaybı, fırsatçı enfeksiyon, gp120/gp41/p24",
+    "demographics": "36 yaş erkek",
+    "setting": "Klinik/adli değerlendirme ortamı",
+    "chiefComplaint": "Kilo kaybı, oral kandidiyazis ve kronik ateş",
+    "stem": "Hasta kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ile gelir. HIV Ag/Ab pozitif, viral yük yüksek, CD4 düşük saptanır. Klinik hücresel immünitenin çöküşünü gösterir.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Tanıya götüren ana bulgular mevcut",
+      "Organ/sistem tutulumları hedefli değerlendirilir",
+      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
+      "Klinik stabilite ayrıca değerlendirilir"
+    ],
+    "investigations": [
+      {
+        "id": "hiv-ag-ab-testi-ve-hiv-rna-27",
+        "label": "HIV Ag/Ab testi ve HIV RNA",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "HIV Ag/Ab testi ve HIV RNA, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "HIV Ag/Ab testi ve HIV RNA, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "HIV Ag/Ab testi ve HIV RNA, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "cd4-t-lenfosit-sayimi-27",
+        "label": "CD4 T lenfosit sayımı",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "CD4 T lenfosit sayımı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "CD4 T lenfosit sayımı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "CD4 T lenfosit sayımı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "firsatci-enfeksiyon-taramasi-27",
+        "label": "Fırsatçı enfeksiyon taraması",
+        "type": "xray",
+        "priority": "useful",
+        "summary": "Fırsatçı enfeksiyon taraması, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Fırsatçı enfeksiyon taraması, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Fırsatçı enfeksiyon taraması, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "baslangic-tedavi-guvenlik-laboratuvari-27",
+        "label": "Başlangıç tedavi güvenlik laboratuvarı",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "Başlangıç tedavi güvenlik laboratuvarı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Başlangıç tedavi güvenlik laboratuvarı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Başlangıç tedavi güvenlik laboratuvarı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "HIV/AIDS",
+      "options": [
+        "HIV/AIDS",
+        "Bruton agammaglobulinemisi",
+        "İzole IgA yetmezliği",
+        "SLE"
+      ],
+      "explanation": "Olgu HIV enfeksiyonu / AIDS için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+      "pearls": [
+        "HIV CD4 T hücrelerini hedefler.",
+        "Düşük CD4 fırsatçı enfeksiyon riskini artırır.",
+        "Viral yük tedavi yanıtında izlenir."
+      ],
+      "nextStep": "Önce güvenlik/stabilizasyon ve zorunlu klinik-adli/immünolojik kararlar; ardından tanı doğrulama ve hedefe yönelik tedavi/izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "HIV enfeksiyonu / AIDS tanısını destekleyen klinik patern.",
+        "whyCorrect": "Olgu HIV enfeksiyonu / AIDS için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır. Alan Feedback",
+        "evidenceChain": [
+          "Hasta kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ile gelir",
+          "Pozitif",
+          "Yüksek viral yük",
+          "110/uL"
+        ],
+        "pearls": [
+          "HIV CD4 T hücrelerini hedefler.",
+          "Düşük CD4 fırsatçı enfeksiyon riskini artırır."
+        ],
+        "management": [
+          "Acil güvenlik/stabilizasyon ve ön değerlendirme — Hastanın klinik/adli güvenliği sağlanır.",
+          "HIV Ag/Ab istemi — İlk tanısal dayanak oluşturulur.",
+          "HIV RNA ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
+          "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
+        ],
+        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "differentials": {
+          "Bruton agammaglobulinemisi": {
+            "explanation": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni HIV/AIDS lehinedir.",
+            "comparisonPoints": [
+              "Bruton agammaglobulinemisi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri HIV/AIDS tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "İzole IgA yetmezliği": {
+            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni HIV/AIDS lehinedir.",
+            "comparisonPoints": [
+              "İzole IgA yetmezliği için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri HIV/AIDS tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "SLE": {
+            "explanation": "SLE ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni HIV/AIDS lehinedir.",
+            "comparisonPoints": [
+              "SLE için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri HIV/AIDS tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pediatrics-shaken-baby-syndrome-001",
+    "branchId": "pediatrics",
+    "title": "Huzursuzluk ve bilinç değişikliği ile getirilen bebekte travma şüphesi",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Çocuk istismarı, köprü ven yırtılması, illiyet bağı",
+    "demographics": "4 aylık erkek bebek",
+    "setting": "Klinik/adli değerlendirme ortamı",
+    "chiefComplaint": "Nöbet, letarji ve açıklanamayan morluklar",
+    "stem": "Bebek acile nöbet ve letarjiyle getirilir. Bakıcı travma öyküsü vermemektedir; muayenede farklı yaşlarda ekimozlar, göz dibi muayenesinde retinal kanama, BT'de subdural kanama vardır. PDF'te sarsılmış bebek sendromunun genellikle ilk 6 ayda olduğu, başın ileri geri sallanmasıyla köprü venlerin yırtıldığı ve suç olduğu vurgulanır.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Tanıya götüren ana bulgular mevcut",
+      "Organ/sistem tutulumları hedefli değerlendirilir",
+      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
+      "Klinik stabilite ayrıca değerlendirilir"
+    ],
+    "investigations": [
+      {
+        "id": "kontrastsiz-beyin-bt-mr-28",
+        "label": "Kontrastsız beyin BT/MR",
+        "type": "ct",
+        "priority": "essential",
+        "summary": "Kontrastsız beyin BT/MR, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kontrastsız beyin BT/MR, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kontrastsız beyin BT/MR, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "fundoskopi-28",
+        "label": "Fundoskopi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Fundoskopi, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Fundoskopi, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Fundoskopi, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "iskelet-survey-grafileri-28",
+        "label": "İskelet survey grafileri",
+        "type": "xray",
+        "priority": "useful",
+        "summary": "İskelet survey grafileri, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "İskelet survey grafileri, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "İskelet survey grafileri, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "koagulasyon-paneli-28",
+        "label": "Koagülasyon paneli",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "Koagülasyon paneli, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Koagülasyon paneli, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Koagülasyon paneli, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Sarsılmış bebek sendromu",
+      "options": [
+        "Sarsılmış bebek sendromu",
+        "Doğumsal kanama diyatezi",
+        "Basit düşme",
+        "Menenjit"
+      ],
+      "explanation": "Olgu Sarsılmış bebek sendromu için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+      "pearls": [
+        "Öykü ile bulgu uyumsuzluğu istismar için alarmdır.",
+        "Subdural + retinal kanama klasik triaddır.",
+        "Adli bildirim ve delil zinciri şarttır."
+      ],
+      "nextStep": "Önce güvenlik/stabilizasyon ve zorunlu klinik-adli/immünolojik kararlar; ardından tanı doğrulama ve hedefe yönelik tedavi/izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "Sarsılmış bebek sendromu tanısını destekleyen klinik patern.",
+        "whyCorrect": "Olgu Sarsılmış bebek sendromu için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır. Alan Feedback",
+        "evidenceChain": [
+          "Bebek acile nöbet ve letarjiyle getirilir",
+          "Subdural kanama",
+          "Retinal kanama",
+          "Eski/yeni kırık aranır"
+        ],
+        "pearls": [
+          "Öykü ile bulgu uyumsuzluğu istismar için alarmdır.",
+          "Subdural + retinal kanama klasik triaddır."
+        ],
+        "management": [
+          "Acil güvenlik/stabilizasyon ve ön değerlendirme — Hastanın klinik/adli güvenliği sağlanır.",
+          "Beyin BT/MR istemi — İlk tanısal dayanak oluşturulur.",
+          "Göz dibi ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
+          "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
+        ],
+        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "differentials": {
+          "Doğumsal kanama diyatezi": {
+            "explanation": "Doğumsal kanama diyatezi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sarsılmış bebek sendromu lehinedir.",
+            "comparisonPoints": [
+              "Doğumsal kanama diyatezi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sarsılmış bebek sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Basit düşme": {
+            "explanation": "Basit düşme ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sarsılmış bebek sendromu lehinedir.",
+            "comparisonPoints": [
+              "Basit düşme için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sarsılmış bebek sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Menenjit": {
+            "explanation": "Menenjit ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sarsılmış bebek sendromu lehinedir.",
+            "comparisonPoints": [
+              "Menenjit için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Sarsılmış bebek sendromu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-sexual-assault-evidence-001",
+    "branchId": "internal-medicine",
+    "title": "Cinsel saldırı şüphesinde acil muayene ve delil yönetimi",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Onam, delil zinciri, gebelik/STI profilaksisi, travma bakımı",
+    "demographics": "22 yaş kadın",
+    "setting": "Klinik/adli değerlendirme ortamı",
+    "chiefComplaint": "Cinsel saldırı bildirimi sonrası acil başvuru",
+    "stem": "Hasta saldırıdan 8 saat sonra acile başvurur. Önce güvenlik, tıbbi stabilizasyon ve psikolojik destek sağlanır; onam alınarak adli muayene, örnekleme, gebelik ve STI profilaksisi planlanır. Hekim kayıtlarının resmi belge niteliği ve bildirim sorumluluğu unutulmaz.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Tanıya götüren ana bulgular mevcut",
+      "Organ/sistem tutulumları hedefli değerlendirilir",
+      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
+      "Klinik stabilite ayrıca değerlendirilir"
+    ],
+    "investigations": [
+      {
+        "id": "acil-tibbi-stabilizasyon-ve-travma-muayenesi-29",
+        "label": "Acil tıbbi stabilizasyon ve travma muayenesi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Acil tıbbi stabilizasyon ve travma muayenesi, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Acil tıbbi stabilizasyon ve travma muayenesi, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Acil tıbbi stabilizasyon ve travma muayenesi, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "adli-ornekleme-ve-delil-kiti-29",
+        "label": "Adli örnekleme ve delil kiti",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Adli örnekleme ve delil kiti, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Adli örnekleme ve delil kiti, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Adli örnekleme ve delil kiti, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "gebelik-ve-cybe-testleri-29",
+        "label": "Gebelik ve CYBE testleri",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Gebelik ve CYBE testleri, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Gebelik ve CYBE testleri, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Gebelik ve CYBE testleri, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "psikososyal-guvenlik-ve-konsultasyon-29",
+        "label": "Psikososyal güvenlik ve konsültasyon",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Psikososyal güvenlik ve konsültasyon, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Psikososyal güvenlik ve konsültasyon, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Psikososyal güvenlik ve konsültasyon, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Cinsel saldırı sonrası adli-tıbbi değerlendirme",
+      "options": [
+        "Cinsel saldırı sonrası adli-tıbbi değerlendirme",
+        "Basit anksiyete atağı",
+        "Malpraktis",
+        "Asfiksi"
+      ],
+      "explanation": "Olgu Cinsel saldırı sonrası adli-tıbbi değerlendirme için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+      "pearls": [
+        "Muayene travmatize etmeyecek şekilde, onam ve mahremiyetle yapılır.",
+        "Delil zinciri bozulmamalıdır.",
+        "Gebelik ve STI profilaksisi klinik yönetimin parçasıdır."
+      ],
+      "nextStep": "Önce güvenlik/stabilizasyon ve zorunlu klinik-adli/immünolojik kararlar; ardından tanı doğrulama ve hedefe yönelik tedavi/izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "Cinsel saldırı sonrası adli-tıbbi değerlendirme tanısını destekleyen klinik patern. Alan Feedback",
+        "whyCorrect": "Olgu Cinsel saldırı sonrası adli-tıbbi değerlendirme için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+        "evidenceChain": [
+          "Hasta saldırıdan 8 saat sonra acile başvurur",
+          "Negatif",
+          "Bazal örnekler alındı",
+          "Sürüntü/tırnak/giysi örnekleri"
+        ],
+        "pearls": [
+          "Muayene travmatize etmeyecek şekilde, onam ve mahremiyetle yapılır.",
+          "Delil zinciri bozulmamalıdır."
+        ],
+        "management": [
+          "Acil güvenlik/stabilizasyon ve ön değerlendirme — Hastanın klinik/adli güvenliği sağlanır.",
+          "Gebelik testi istemi — İlk tanısal dayanak oluşturulur.",
+          "STI testleri ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
+          "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
+        ],
+        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "differentials": {
+          "Basit anksiyete atağı": {
+            "explanation": "Basit anksiyete atağı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Cinsel saldırı sonrası adli-tıbbi değerlendirme lehinedir.",
+            "comparisonPoints": [
+              "Basit anksiyete atağı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Cinsel saldırı sonrası adli-tıbbi değerlendirme tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Malpraktis": {
+            "explanation": "Malpraktis ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Cinsel saldırı sonrası adli-tıbbi değerlendirme lehinedir.",
+            "comparisonPoints": [
+              "Malpraktis için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Cinsel saldırı sonrası adli-tıbbi değerlendirme tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Asfiksi": {
+            "explanation": "Asfiksi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Cinsel saldırı sonrası adli-tıbbi değerlendirme lehinedir.",
+            "comparisonPoints": [
+              "Asfiksi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Cinsel saldırı sonrası adli-tıbbi değerlendirme tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-asphyxial-death-001",
+    "branchId": "internal-medicine",
+    "title": "Şüpheli ölüm olgusunda asfiksi bulgularının adli değerlendirmesi",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Oksijenlenme bozukluğu, ölüm bulguları, olay yeri-adli muayene",
+    "demographics": "45 yaş erkek",
+    "setting": "Klinik/adli değerlendirme ortamı",
+    "chiefComplaint": "Evde ölü bulunma ve boyunda iz",
+    "stem": "Kişi kapalı odada boyunda ligatür iziyle ölü bulunur. Dış muayenede siyanoz, peteşiler, boyun çevresinde iz ve livor/rigor değerlendirilir. Amaç ölüm mekanizmasını, olası asfiksi tipini ve otopsi gerekliliğini belirlemektir.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Tanıya götüren ana bulgular mevcut",
+      "Organ/sistem tutulumları hedefli değerlendirilir",
+      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
+      "Klinik stabilite ayrıca değerlendirilir"
+    ],
+    "investigations": [
+      {
+        "id": "olay-yeri-ve-oyku-degerlendirmesi-30",
+        "label": "Olay yeri ve öykü değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Olay yeri ve öykü değerlendirmesi, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Olay yeri ve öykü değerlendirmesi, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Olay yeri ve öykü değerlendirmesi, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "dis-muayene-bulgulari-30",
+        "label": "Dış muayene bulguları",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Dış muayene bulguları, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Dış muayene bulguları, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Dış muayene bulguları, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "otopsi-ve-histopatoloji-30",
+        "label": "Otopsi ve histopatoloji",
+        "type": "pathology",
+        "priority": "useful",
+        "summary": "Otopsi ve histopatoloji, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Otopsi ve histopatoloji, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Otopsi ve histopatoloji, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "toksikoloji-ve-cohb-olcumu-30",
+        "label": "Toksikoloji ve COHb ölçümü",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "Toksikoloji ve COHb ölçümü, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Toksikoloji ve COHb ölçümü, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Toksikoloji ve COHb ölçümü, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Asfiksili ölüm",
+      "options": [
+        "Asfiksili ölüm",
+        "Akut MI",
+        "İnme",
+        "Elektrik çarpması"
+      ],
+      "explanation": "Olgu Asfiksili ölüm için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+      "pearls": [
+        "Asfiksi olgularında dış muayene tek başına yeterli olmayabilir.",
+        "Boyun bulguları, peteşiler ve olay yeri birlikte değerlendirilir.",
+        "Şüpheli ölümde otopsi kararı kritik basamaktır."
+      ],
+      "nextStep": "Önce güvenlik/stabilizasyon ve zorunlu klinik-adli/immünolojik kararlar; ardından tanı doğrulama ve hedefe yönelik tedavi/izlem.",
+      "answerFeedback": {
+        "diagnosisMeta": "Asfiksili ölüm tanısını destekleyen klinik patern.",
+        "whyCorrect": "Olgu Asfiksili ölüm için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir; ancak anahtar ipuçları doğru tanıyı öne çıkarır.",
+        "evidenceChain": [
+          "Kişi kapalı odada boyunda ligatür iziyle ölü bulunur",
+          "Boyunda ligatür izi, peteşi",
+          "Kapalı oda/pozisyon kaydı",
+          "Boyun yapıları ve iç bulgular incelenir"
+        ],
+        "pearls": [
+          "Asfiksi olgularında dış muayene tek başına yeterli olmayabilir.",
+          "Boyun bulguları, peteşiler ve olay yeri birlikte değerlendirilir."
+        ],
+        "management": [
+          "Acil güvenlik/stabilizasyon ve ön değerlendirme — Hastanın klinik/adli güvenliği sağlanır.",
+          "Dış muayene istemi — İlk tanısal dayanak oluşturulur.",
+          "Olay yeri bilgisi ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
+          "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
+        ],
+        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "differentials": {
+          "Akut MI": {
+            "explanation": "Akut MI ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Asfiksili ölüm lehinedir.",
+            "comparisonPoints": [
+              "Akut MI için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Asfiksili ölüm tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "İnme": {
+            "explanation": "İnme ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Asfiksili ölüm lehinedir.",
+            "comparisonPoints": [
+              "İnme için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Asfiksili ölüm tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Elektrik çarpması": {
+            "explanation": "Elektrik çarpması ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Asfiksili ölüm lehinedir.",
+            "comparisonPoints": [
+              "Elektrik çarpması için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Asfiksili ölüm tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-autosomal-recessive-risk-001",
+    "branchId": "internal-medicine",
+    "title": "Akraba evliliği ve aile ağacında tekrarlayan hastalık riski",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Akraba evliliği, taşıyıcılık, kardeşlerde hastalık riski",
+    "demographics": "Akraba evliliği olan çift",
+    "setting": "Eğitim amaçlı KlinikIQ senaryosu",
+    "chiefComplaint": "Önceki çocukta metabolik hastalık, yeni gebelik danışmanlığı",
+    "stem": "Aynı ailede bir çocukta doğuştan metabolik hastalık tanısı vardır; ebeveynler klinik olarak sağlıklıdır ve akrabadır. Pedigree, otozomal resesif kalıtımı düşündürür. KlinikIQ vakasında amaç soy ağacından kalıtım paternini ve tekrarlama riskini seçtirmektir.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Vaka amacına uygun belirleyici bulgular mevcuttur",
+      "Klinik-adli/akademik karar noktası belirgindir",
+      "Acil stabilizasyonu değiştiren ek bulgu yok",
+      "Alternatif tanıyı baskın destekleyen veri yok"
+    ],
+    "investigations": [
+      {
+        "id": "uc-kusak-pedigree-analizi-31",
+        "label": "Üç kuşak pedigree analizi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Üç kuşak pedigree analizi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Üç kuşak pedigree analizi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Üç kuşak pedigree analizi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "tasiyici-tarama-testi-31",
+        "label": "Taşıyıcı tarama testi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Taşıyıcı tarama testi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Taşıyıcı tarama testi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Taşıyıcı tarama testi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "mendel-orani-risk-hesaplama-31",
+        "label": "Mendel oranı/risk hesaplama",
+        "type": "clinical",
+        "priority": "useful",
+        "summary": "Mendel oranı/risk hesaplama, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Mendel oranı/risk hesaplama, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Mendel oranı/risk hesaplama, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "genetik-danismanlik-ve-prenatal-secenekler-31",
+        "label": "Genetik danışmanlık ve prenatal seçenekler",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Genetik danışmanlık ve prenatal seçenekler, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Genetik danışmanlık ve prenatal seçenekler, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Genetik danışmanlık ve prenatal seçenekler, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Otozomal resesif kalıtım",
+      "options": [
+        "Otozomal resesif kalıtım",
+        "Otozomal dominant kalıtım",
+        "X'e bağlı dominant kalıtım",
+        "Mitokondriyal kalıtım"
+      ],
+      "explanation": "Bu olguda en uygun yaklaşım Otozomal resesif kalıtım çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+      "pearls": [
+        "Sağlıklı ebeveynlerden hasta çocuk resesif patern için tipiktir.",
+        "Akraba evliliği resesif hastalık riskini artırır.",
+        "Her gebelikte risk bağımsız değerlendirilir."
+      ],
+      "nextStep": "İlk güvenlik ve klinik karar alındıktan sonra doğrulayıcı test/kayıt/izlem basamağı uygulanır.",
+      "answerFeedback": {
+        "diagnosisMeta": "Otozomal resesif kalıtım için sınav ve klinik karar noktası.",
+        "whyCorrect": "Bu olguda en uygun yaklaşım Otozomal resesif kalıtım çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+        "evidenceChain": [
+          "Aynı ailede bir çocukta doğuştan metabolik hastalık tanısı vardır; ebeveynler klinik olarak sağlıklıdır ve akrabadır",
+          "Hasta kardeş + sağlıklı ebeveynler",
+          "Anne-baba heterozigot",
+          "Tekrarlama riski anlatılır"
+        ],
+        "pearls": [
+          "Sağlıklı ebeveynlerden hasta çocuk resesif patern için tipiktir.",
+          "Akraba evliliği resesif hastalık riskini artırır."
+        ],
+        "management": [
+          "Öncelikli klinik/adli güvenliği sağla — Hasta ve süreç güvenliği sağlanır.",
+          "Pedigree çizimi ile ilk değerlendirme — Tanı/yönetim yönü belirlenir.",
+          "Taşıyıcılık testi ile destekle — Kanıt veya doğrulama sağlar.",
+          "Genetik danışmanlık tamamla — Uzun dönem/sonuç yönetimi için gerekir."
+        ],
+        "learningOutcome": "KlinikIQ formatında hedef, sadece tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını öğretmektir.",
+        "differentials": {
+          "Otozomal dominant kalıtım": {
+            "explanation": "Otozomal dominant kalıtım ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Otozomal resesif kalıtım lehinedir.",
+            "comparisonPoints": [
+              "Otozomal dominant kalıtım için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Otozomal resesif kalıtım tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "X'e bağlı dominant kalıtım": {
+            "explanation": "X'e bağlı dominant kalıtım ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Otozomal resesif kalıtım lehinedir.",
+            "comparisonPoints": [
+              "X'e bağlı dominant kalıtım için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Otozomal resesif kalıtım tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Mitokondriyal kalıtım": {
+            "explanation": "Mitokondriyal kalıtım ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Otozomal resesif kalıtım lehinedir.",
+            "comparisonPoints": [
+              "Mitokondriyal kalıtım için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Otozomal resesif kalıtım tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-pharmacogenetic-toxicity-001",
+    "branchId": "internal-medicine",
+    "title": "Standart doz ilaç sonrası beklenenden ağır toksisite gelişen hasta",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Genetik varyasyon, ilaç metabolizması, toksisite riski",
+    "demographics": "30 yaş kadın",
+    "setting": "Eğitim amaçlı KlinikIQ senaryosu",
+    "chiefComplaint": "Standart doz ilaç sonrası beklenenden ağır yan etki",
+    "stem": "Hasta standart dozda başlanan bir ilaç sonrası aşırı sedasyon ve laboratuvar toksisite bulguları geliştirir. Ailede benzer ilaç yanıtı öyküsü vardır. Farmakogenetik varyasyonlar ilacın biyotransformasyonu, reseptör yanıtı veya taşıyıcı mekanizmasını etkileyebilir.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Vaka amacına uygun belirleyici bulgular mevcuttur",
+      "Klinik-adli/akademik karar noktası belirgindir",
+      "Acil stabilizasyonu değiştiren ek bulgu yok",
+      "Alternatif tanıyı baskın destekleyen veri yok"
+    ],
+    "investigations": [
+      {
+        "id": "farmakogenetik-genotipleme-32",
+        "label": "Farmakogenetik genotipleme",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Farmakogenetik genotipleme, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Farmakogenetik genotipleme, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Farmakogenetik genotipleme, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "ilac-duzeyi-ve-toksisite-paneli-32",
+        "label": "İlaç düzeyi ve toksisite paneli",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "İlaç düzeyi ve toksisite paneli, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "İlaç düzeyi ve toksisite paneli, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "İlaç düzeyi ve toksisite paneli, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "karaciger-ve-bobrek-fonksiyon-testleri-32",
+        "label": "Karaciğer ve böbrek fonksiyon testleri",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Karaciğer ve böbrek fonksiyon testleri, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Karaciğer ve böbrek fonksiyon testleri, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Karaciğer ve böbrek fonksiyon testleri, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "alternatif-ilac-doz-plani-32",
+        "label": "Alternatif ilaç/doz planı",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Alternatif ilaç/doz planı, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Alternatif ilaç/doz planı, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Alternatif ilaç/doz planı, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Farmakogenetik kaynaklı advers ilaç reaksiyonu",
+      "options": [
+        "Farmakogenetik kaynaklı advers ilaç reaksiyonu",
+        "Alerjik anafilaksi",
+        "Doz unutma",
+        "Malabsorpsiyon"
+      ],
+      "explanation": "Bu olguda en uygun yaklaşım Farmakogenetik kaynaklı advers ilaç reaksiyonu çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+      "pearls": [
+        "Aynı doz herkeste aynı etkiyi oluşturmayabilir.",
+        "Biyotransformasyon ve reseptör farklılıkları yanıtı değiştirir.",
+        "Organ yetmezliği ve ilaç etkileşimleri dışlanmalıdır."
+      ],
+      "nextStep": "İlk güvenlik ve klinik karar alındıktan sonra doğrulayıcı test/kayıt/izlem basamağı uygulanır.",
+      "answerFeedback": {
+        "diagnosisMeta": "Farmakogenetik kaynaklı advers ilaç reaksiyonu için sınav ve klinik karar noktası.",
+        "whyCorrect": "Bu olguda en uygun yaklaşım Farmakogenetik kaynaklı advers ilaç reaksiyonu çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+        "evidenceChain": [
+          "Hasta standart dozda başlanan bir ilaç sonrası aşırı sedasyon ve laboratuvar toksisite bulguları geliştirir",
+          "Beklenenden yüksek",
+          "Normal",
+          "Belirgin inhibitör yok"
+        ],
+        "pearls": [
+          "Aynı doz herkeste aynı etkiyi oluşturmayabilir.",
+          "Biyotransformasyon ve reseptör farklılıkları yanıtı değiştirir."
+        ],
+        "management": [
+          "Öncelikli klinik/adli güvenliği sağla — Hasta ve süreç güvenliği sağlanır.",
+          "İlaç düzeyi ile ilk değerlendirme — Tanı/yönetim yönü belirlenir.",
+          "Karaciğer/böbrek fonksiyonu ile destekle — Kanıt veya doğrulama sağlar.",
+          "İlaç etkileşimi sorgusu tamamla — Uzun dönem/sonuç yönetimi için gerekir."
+        ],
+        "learningOutcome": "KlinikIQ formatında hedef, sadece tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını öğretmektir.",
+        "differentials": {
+          "Alerjik anafilaksi": {
+            "explanation": "Alerjik anafilaksi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Farmakogenetik kaynaklı advers ilaç reaksiyonu lehinedir.",
+            "comparisonPoints": [
+              "Alerjik anafilaksi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Farmakogenetik kaynaklı advers ilaç reaksiyonu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Doz unutma": {
+            "explanation": "Doz unutma ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Farmakogenetik kaynaklı advers ilaç reaksiyonu lehinedir.",
+            "comparisonPoints": [
+              "Doz unutma için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Farmakogenetik kaynaklı advers ilaç reaksiyonu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Malabsorpsiyon": {
+            "explanation": "Malabsorpsiyon ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Farmakogenetik kaynaklı advers ilaç reaksiyonu lehinedir.",
+            "comparisonPoints": [
+              "Malabsorpsiyon için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Farmakogenetik kaynaklı advers ilaç reaksiyonu tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-ct-radiation-alara-001",
+    "branchId": "internal-medicine",
+    "title": "Aynı gün tekrarlanması istenen BT için fayda-risk kararı",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "Radyasyon dozu, gereklilik, ALARA, tomografi-akciğer grafisi farkı",
+    "demographics": "48 yaş erkek",
+    "setting": "Eğitim amaçlı KlinikIQ senaryosu",
+    "chiefComplaint": "Düşük kaliteli BT nedeniyle ikinci kez çekim istenmesi",
+    "stem": "Hastaya görüntü kalitesi düşük diye aynı gün ikinci toraks BT istenmiştir. Komite notlarında tipik tomografi dozunun akciğer grafisine göre yaklaşık yüz kat, ikinci çekimde toplam dozun daha da artacağı vurgulanır. KlinikIQ hedefi tetkik gerekçesi ve radyasyon farkındalığını öğretmektir.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Vaka amacına uygun belirleyici bulgular mevcuttur",
+      "Klinik-adli/akademik karar noktası belirgindir",
+      "Acil stabilizasyonu değiştiren ek bulgu yok",
+      "Alternatif tanıyı baskın destekleyen veri yok"
+    ],
+    "investigations": [
+      {
+        "id": "onceki-goruntunun-kalite-degerlendirmesi-33",
+        "label": "Önceki görüntünün kalite değerlendirmesi",
+        "type": "ct",
+        "priority": "essential",
+        "summary": "Önceki görüntünün kalite değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Önceki görüntünün kalite değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Önceki görüntünün kalite değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "klinik-endikasyon-degerlendirmesi-33",
+        "label": "Klinik endikasyon değerlendirmesi",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Klinik endikasyon değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Klinik endikasyon değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Klinik endikasyon değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "kumulatif-doz-kaydi-33",
+        "label": "Kümülatif doz kaydı",
+        "type": "clinical",
+        "priority": "useful",
+        "summary": "Kümülatif doz kaydı, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Kümülatif doz kaydı, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Kümülatif doz kaydı, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "alternatif-modalite-secimi-33",
+        "label": "Alternatif modalite seçimi",
+        "type": "ultrasound",
+        "priority": "situational",
+        "summary": "Alternatif modalite seçimi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Alternatif modalite seçimi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Alternatif modalite seçimi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Gereksiz tekrarlı radyolojik tetkik riski",
+      "options": [
+        "Gereksiz tekrarlı radyolojik tetkik riski",
+        "Akut radyasyon sendromu",
+        "Kronik radyasyon sendromu",
+        "Anafilaksi"
+      ],
+      "explanation": "Bu olguda en uygun yaklaşım Gereksiz tekrarlı radyolojik tetkik riski çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+      "pearls": [
+        "BT dozu akciğer grafisine göre çok daha yüksektir.",
+        "Tekrarlı çekimde kümülatif doz artar.",
+        "Radyasyondan korunmada gereklilik ve optimizasyon esastır."
+      ],
+      "nextStep": "İlk güvenlik ve klinik karar alındıktan sonra doğrulayıcı test/kayıt/izlem basamağı uygulanır.",
+      "answerFeedback": {
+        "diagnosisMeta": "Gereksiz tekrarlı radyolojik tetkik riski için sınav ve klinik karar noktası.",
+        "whyCorrect": "Bu olguda en uygun yaklaşım Gereksiz tekrarlı radyolojik tetkik riski çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler. Alan Feedback",
+        "evidenceChain": [
+          "Hastaya görüntü kalitesi düşük diye aynı gün ikinci toraks BT istenmiştir",
+          "Teknik olarak sınırlı ama bazı alanlar değerlendirilebilir",
+          "Acil bulgu yok",
+          "Kümülatif doz not edilir"
+        ],
+        "pearls": [
+          "BT dozu akciğer grafisine göre çok daha yüksektir.",
+          "Tekrarlı çekimde kümülatif doz artar."
+        ],
+        "management": [
+          "Öncelikli klinik/adli güvenliği sağla — Hasta ve süreç güvenliği sağlanır.",
+          "Önceki görüntü değerlendirme ile ilk değerlendirme — Tanı/yönetim yönü belirlenir.",
+          "Klinik endikasyon ile destekle — Kanıt veya doğrulama sağlar.",
+          "Doz kaydı tamamla — Uzun dönem/sonuç yönetimi için gerekir."
+        ],
+        "learningOutcome": "KlinikIQ formatında hedef, sadece tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını öğretmektir.",
+        "differentials": {
+          "Akut radyasyon sendromu": {
+            "explanation": "Akut radyasyon sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Gereksiz tekrarlı radyolojik tetkik riski lehinedir.",
+            "comparisonPoints": [
+              "Akut radyasyon sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Gereksiz tekrarlı radyolojik tetkik riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Kronik radyasyon sendromu": {
+            "explanation": "Kronik radyasyon sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Gereksiz tekrarlı radyolojik tetkik riski lehinedir.",
+            "comparisonPoints": [
+              "Kronik radyasyon sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Gereksiz tekrarlı radyolojik tetkik riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Anafilaksi": {
+            "explanation": "Anafilaksi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Gereksiz tekrarlı radyolojik tetkik riski lehinedir.",
+            "comparisonPoints": [
+              "Anafilaksi için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Gereksiz tekrarlı radyolojik tetkik riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "internal-medicine-forensic-reporting-001",
+    "branchId": "internal-medicine",
+    "title": "Kesici-delici yaralanmada hekimin adli bildirim kararı",
+    "difficulty": "Orta · Komite/TUS düzeyi",
+    "clinicalFocus": "TCK 280, adli rapor, kayıt saklama, resmi belge",
+    "demographics": "Acilde çalışan pratisyen hekim",
+    "setting": "Eğitim amaçlı KlinikIQ senaryosu",
+    "chiefComplaint": "Bıçak yarasıyla gelen hastada polise bildirim kararı",
+    "stem": "Hasta acile kesici-delici alet yaralanmasıyla gelir ve olayın bildirilmemesini ister. Hekim, görevi sırasında suç belirtisiyle karşılaştığında adli bildirim yükümlülüğü olduğunu bilmeli; tıbbi stabilizasyonu yaptıktan sonra adli kayıt ve rapor süreçlerini başlatmalıdır.",
+    "vitals": {
+      "TA": "Klinik senaryoya göre",
+      "Nabız": "Klinik senaryoya göre",
+      "Solunum": "Klinik senaryoya göre",
+      "SpO2": "Klinik senaryoya göre",
+      "Ateş": "Var/yok"
+    },
+    "exam": [
+      "Vaka amacına uygun belirleyici bulgular mevcuttur",
+      "Klinik-adli/akademik karar noktası belirgindir",
+      "Acil stabilizasyonu değiştiren ek bulgu yok",
+      "Alternatif tanıyı baskın destekleyen veri yok"
+    ],
+    "investigations": [
+      {
+        "id": "yara-muayenesi-ve-objektif-belgeleme-34",
+        "label": "Yara muayenesi ve objektif belgeleme",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Yara muayenesi ve objektif belgeleme, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Yara muayenesi ve objektif belgeleme, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Yara muayenesi ve objektif belgeleme, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "adli-rapor-ve-tibbi-kayit-34",
+        "label": "Adli rapor ve tıbbi kayıt",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "Adli rapor ve tıbbi kayıt, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Adli rapor ve tıbbi kayıt, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Adli rapor ve tıbbi kayıt, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "yetkili-makama-adli-bildirim-34",
+        "label": "Yetkili makama adli bildirim",
+        "type": "clinical",
+        "priority": "useful",
+        "summary": "Yetkili makama adli bildirim, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Yetkili makama adli bildirim, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Yetkili makama adli bildirim, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      },
+      {
+        "id": "fotograflama-ve-delil-zinciri-34",
+        "label": "Fotoğraflama ve delil zinciri",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Fotoğraflama ve delil zinciri, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "findings": [
+          "Fotoğraflama ve delil zinciri, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Parametre/Bulgu",
+            "Fotoğraflama ve delil zinciri, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+            "Klinik yorum",
+            "Değerlendirildi"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "diagnosis": {
+      "correct": "Adli olguya yaklaşım ve bildirim yükümlülüğü",
+      "options": [
+        "Adli olguya yaklaşım ve bildirim yükümlülüğü",
+        "Hasta mahremiyeti nedeniyle hiç bildirmeme",
+        "Sadece reçete verip gönderme",
+        "Malpraktis kesin tanısı"
+      ],
+      "explanation": "Bu olguda en uygun yaklaşım Adli olguya yaklaşım ve bildirim yükümlülüğü çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+      "pearls": [
+        "Kanunları bilmemek mazeret değildir.",
+        "Sağlık mesleği mensubunun suçu bildirmemesi hukuki sorumluluk doğurabilir.",
+        "Tıbbi kayıtlar objektif ve ayrıntılı tutulmalıdır."
+      ],
+      "nextStep": "İlk güvenlik ve klinik karar alındıktan sonra doğrulayıcı test/kayıt/izlem basamağı uygulanır.",
+      "answerFeedback": {
+        "diagnosisMeta": "Adli olguya yaklaşım ve bildirim yükümlülüğü için sınav ve klinik karar noktası.",
+        "whyCorrect": "Bu olguda en uygun yaklaşım Adli olguya yaklaşım ve bildirim yükümlülüğü çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+        "evidenceChain": [
+          "Hasta acile kesici-delici alet yaralanmasıyla gelir ve olayın bildirilmemesini ister",
+          "Kesici-delici yara ölçüldü ve lokalize edildi",
+          "Uygun onam ve protokolle kayıt",
+          "Ayrıntılı ve objektif"
+        ],
+        "pearls": [
+          "Kanunları bilmemek mazeret değildir.",
+          "Sağlık mesleği mensubunun suçu bildirmemesi hukuki sorumluluk doğurabilir."
+        ],
+        "management": [
+          "Öncelikli klinik/adli güvenliği sağla — Hasta ve süreç güvenliği sağlanır.",
+          "Yara muayenesi ile ilk değerlendirme — Tanı/yönetim yönü belirlenir.",
+          "Fotoğraflama ile destekle — Kanıt veya doğrulama sağlar.",
+          "Tıbbi kayıt tamamla — Uzun dönem/sonuç yönetimi için gerekir."
+        ],
+        "learningOutcome": "KlinikIQ formatında hedef, sadece tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını öğretmektir.",
+        "differentials": {
+          "Hasta mahremiyeti nedeniyle hiç bildirmeme": {
+            "explanation": "Hasta mahremiyeti nedeniyle hiç bildirmeme ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Adli olguya yaklaşım ve bildirim yükümlülüğü lehinedir.",
+            "comparisonPoints": [
+              "Hasta mahremiyeti nedeniyle hiç bildirmeme için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Adli olguya yaklaşım ve bildirim yükümlülüğü tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Sadece reçete verip gönderme": {
+            "explanation": "Sadece reçete verip gönderme ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Adli olguya yaklaşım ve bildirim yükümlülüğü lehinedir.",
+            "comparisonPoints": [
+              "Sadece reçete verip gönderme için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Adli olguya yaklaşım ve bildirim yükümlülüğü tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Malpraktis kesin tanısı": {
+            "explanation": "Malpraktis kesin tanısı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Adli olguya yaklaşım ve bildirim yükümlülüğü lehinedir.",
+            "comparisonPoints": [
+              "Malpraktis kesin tanısı için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Adli olguya yaklaşım ve bildirim yükümlülüğü tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
+      }
+    }
+  }
 ];
 
 export function getCasesByBranch(branchId) {
