@@ -2,6 +2,7 @@
   "name": "klinikiq",
   "version": "1.0.0",
   "private": true,
+  "description": "KlinikIQ TUS ve komite odaklı klinik vaka simülatörü",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,5 +15,8 @@
     "react": "19.2.5",
     "react-dom": "19.2.5",
     "firebase": "12.12.1"
+  },
+  "engines": {
+    "node": ">=20.19.0"
   }
 }

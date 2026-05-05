@@ -1,47 +1,54 @@
-# KlinikIQ — Vercel Uyumlu Temiz Kaynak Kod
+# Önce Bunu Oku — KlinikIQ Kurulum ve Deploy
 
-Bu paket Vercel deploy için hazırlanmış temiz kaynak kod paketidir. `node_modules`, `dist` ve `package-lock.json` ZIP içine bilerek eklenmemiştir.
+Bu ZIP, GitHub ve Vercel'e doğrudan yüklenebilecek temiz kaynak kod paketidir. `node_modules`, `dist`, `.vercel` ve gizli environment dosyaları bilerek pakete eklenmemiştir.
 
-## Lokal Vercel build testi
+## 1. ZIP'i doğru aç
 
-PowerShell'de proje klasörüne girin:
+ZIP'i açtıktan sonra repo kökünde şu dosyalar görünmelidir:
 
-```powershell
-cd C:\Users\Muhammed\viteproject\klinikiq
+```text
+package.json
+index.html
+src/
+public/
+vercel.json
 ```
 
-Kurulum:
+Bu dosyalar başka bir iç klasörün altında kalırsa GitHub/Vercel proje kökünü yanlış algılayabilir.
 
-```powershell
-npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund
-```
-
-Build testi:
-
-```powershell
-npm run build
-```
-
-Build başarılıysa proje içinde `dist` klasörü oluşur.
-
-## Vercel ayarları
-
-Install Command:
+## 2. Lokal çalıştırma
 
 ```bash
 npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund
+npm run dev
 ```
 
-Build Command:
+Tarayıcıda aç:
+
+```text
+http://localhost:5173
+```
+
+## 3. Build testi
 
 ```bash
 npm run build
 ```
 
-Output Directory:
+Başarılı build sonrası `dist/` klasörü oluşur. Bu klasör GitHub'a commitlenmemelidir.
 
-```bash
-dist
+## 4. Vercel deploy
+
+Vercel Project Settings içinde:
+
+```text
+Install Command: npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund
+Build Command: npm run build
+Output Directory: dist
 ```
 
-Bu ayarlar ayrıca `vercel.json` içinde de tanımlıdır.
+Bu ayarlar ayrıca `vercel.json` içinde de vardır.
+
+## 5. Firebase Google giriş
+
+`.env.example` dosyasını `.env.local` olarak kopyala ve Firebase değerlerini doldur. Vercel'de aynı değerleri Environment Variables bölümüne ekle.
