@@ -4389,7 +4389,7 @@ export const cases = [
         "id": "culture",
         "label": "Kan kültürü",
         "type": "culture",
-        "summary": "Antibiyotik öncesi alınır; ancak klinik olarak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır."
+        "summary": "Antibiyotik öncesi alınır; ancak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır."
       }
     ],
     "images": [
@@ -5067,18 +5067,17 @@ export const cases = [
         }
       }
     }
-  }
-  ,
+  },
   {
     "id": "cardiovascular-electrical-injury-arrhythmia-001",
     "branchId": "cardiovascular",
     "title": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası",
-    "difficulty": "Orta-Zor · Komite/TUS düzeyi",
+    "difficulty": "Orta-Zor · TUS düzeyi",
     "clinicalFocus": "Alternatif akım, transtorasik akım, VF, OED, yanık ve nörolojik hasar",
     "demographics": "28 yaş erkek, elektrik teknisyeni",
     "setting": "Acil servis - iş kazası sonrası ilk değerlendirme",
     "chiefComplaint": "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı",
-    "stem": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tariflenir. Nemli zemin öyküsü, cilt direncinin azalması nedeniyle düşük voltajın bile klinik risk oluşturabileceğini düşündürür. Bu vaka, PDF'te vurgulanan alternatif akımın tetanik kasılma yaparak maruziyeti uzatması ve transtorasik akımın kalbi zedeleyebilmesi mantığı üzerine kurulmuştur.",
+    "stem": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tariflenir. Nemli zemin öyküsü, cilt direncinin azalması nedeniyle düşük voltajın bile klinik risk oluşturabileceğini düşündürür. alternatif akımın tetanik kasılma yaparak maruziyeti uzatması ve transtorasik akımın kalbi zedeleyebilmesi mantığı üzerine kurulmuştur.",
     "vitals": {
       "TA": "118/74 mmHg",
       "Nabız": "124/dk, düzensiz",
@@ -5100,17 +5099,29 @@ export const cases = [
         "label": "12 derivasyon EKG",
         "type": "ecg",
         "priority": "essential",
-        "summary": "12 derivasyon EKG, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "EKG’de sık ventriküler erken vurular izlendi; ST elevasyonu saptanmadı.",
         "findings": [
-          "12 derivasyon EKG, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Ventriküler irritabilite elektrik maruziyetiyle uyumlu bulundu.",
+          "ST elevasyonu olmaması akut transmural MI olasılığını azaltır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "12 derivasyon EKG, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Ritim",
+            "Düzensiz sinüs taşikardisi",
+            "Sinüs ritmi",
+            "Anormal"
+          ],
+          [
+            "VEV",
+            "Sık ventriküler erken vuru",
+            "Yok/seyrek",
+            "Patolojik"
+          ],
+          [
+            "QTc",
+            "430 ms",
+            "<450 ms",
+            "Normal"
           ]
         ]
       },
@@ -5119,17 +5130,29 @@ export const cases = [
         "label": "Kardiyak monitörizasyon",
         "type": "ecg",
         "priority": "essential",
-        "summary": "Kardiyak monitörizasyon, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Monitör izleminin ilk saatlerinde tekrarlayan VEV izlendi; VF/VT atağı saptanmadı.",
         "findings": [
-          "Kardiyak monitörizasyon, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Transtorasik akım şüphesinde geç aritmi açısından izlem sürdürülür.",
+          "Hemodinami stabil kalmıştır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kardiyak monitörizasyon, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "İlk 2 saat ritim",
+            "Tekrarlayan VEV",
+            "Sürekli sinüs ritmi",
+            "Anormal"
+          ],
+          [
+            "VF/VT",
+            "İzlenmedi",
+            "Yok",
+            "Sorun yok"
+          ],
+          [
+            "Hemodinami",
+            "Stabil",
+            "Stabil",
+            "Normal"
           ]
         ]
       },
@@ -5138,17 +5161,29 @@ export const cases = [
         "label": "CK ve idrar miyoglobin",
         "type": "urine",
         "priority": "useful",
-        "summary": "CK ve idrar miyoglobin, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "CK hafif yüksek bulundu; idrar miyoglobini negatif izlendi.",
         "findings": [
-          "CK ve idrar miyoglobin, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kas etkilenimi hafif düzeydedir.",
+          "Rabdomiyoliz lehine güçlü idrar bulgusu yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "CK ve idrar miyoglobin, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "CK",
+            "780 U/L",
+            "<200 U/L",
+            "Yüksek"
+          ],
+          [
+            "İdrar miyoglobini",
+            "Negatif",
+            "Negatif",
+            "Sorun yok"
+          ],
+          [
+            "Kreatinin",
+            "0.9 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Normal"
           ]
         ]
       },
@@ -5157,17 +5192,23 @@ export const cases = [
         "label": "Troponin seri takibi",
         "type": "lab",
         "priority": "situational",
-        "summary": "Troponin seri takibi, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Troponin başlangıçta normaldir; seri ölçümde anlamlı yükselme beklenmemektedir.",
         "findings": [
-          "Troponin seri takibi, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Miyokard nekrozu lehine biyobelirteç paterni yoktur.",
+          "EKG ve klinikle birlikte izlem yapılır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Troponin seri takibi, Elektrik çarpmasına bağlı ventriküler aritmi riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Troponin I",
+            "0.02 ng/mL",
+            "<0.04 ng/mL",
+            "Normal"
+          ],
+          [
+            "Seri değişim",
+            "Artış yok",
+            "Artış beklenmez",
+            "Sorun yok"
           ]
         ]
       }
@@ -5207,7 +5248,7 @@ export const cases = [
           "Olay yerinde elektrik kaynağını kes ve kişisel güvenliği sağla — Kurtarıcıyı ikinci hasta yapmamak için ilk basamaktır.",
           "ABC değerlendirmesi, nabız-solunum kontrolü, gerekirse CPR — Elektrik çarpmasında ölümcül ritim/solunum durması gelişebilir.",
           "12 derivasyon EKG ve kardiyak monitörizasyon — VF/VT/asistoli riskini erken saptar.",
-          "VF/VT varsa OED/defibrilasyon — PDF'te kardiyak hasar için OED vurgulanır.",
+          "VF/VT varsa OED/defibrilasyon — ölümcül ritimde gecikmeden elektriksel tedavi uygulanır.",
           "Yanık, kas hasarı, CK, idrar miyoglobin ve böbrek izlemi — Derin doku hasarı ve rabdomiyoliz dışlanır."
         ],
         "learningOutcome": "Elektrik çarpmasında görünür yanığın küçük olması iç organ/kardiyak riski dışlamaz; akım tipi, yol, süre ve çevre koşulları belirleyicidir.",
@@ -5244,12 +5285,12 @@ export const cases = [
     "id": "pulmonology-lightning-apnea-001",
     "branchId": "pulmonology",
     "title": "Fırtına sonrası bilinç kaybı ve solunum depresyonu ile getirilen genç hasta",
-    "difficulty": "Zor · Komite/TUS düzeyi",
+    "difficulty": "Zor · TUS düzeyi",
     "clinicalFocus": "Yıldırım mekanizması, yüzeyel akım, uzamış apne, kardiyolojik-nörolojik komplikasyon",
     "demographics": "19 yaş erkek, açık alanda futbol oynarken etkilenmiş",
     "setting": "Acil servis - fırtına sonrası çoklu yaralanma",
     "chiefComplaint": "Bilinç kaybı, geçici solunum durması ve deri lezyonları",
-    "stem": "Fırtına sırasında açık alanda bulunan hasta yıldırım düşmesi sonrası yere yığılmıştır. İlk müdahale ekibi birkaç dakika solunumun yüzeyelleştiğini, ardından spontan solunumun döndüğünü bildirir. Gövdede ağ şeklinde eritematöz Lichtenberg benzeri izler ve yüzeyel yanıklar vardır. PDF'te yıldırım çarpmasında elektrik akımının genellikle vücut yüzeyinden geçtiği, deride yanık yapabildiği, bilinç kaybı ve kardiyolojik/nörolojik sorunlara yol açabildiği vurgulanmıştır.",
+    "stem": "Fırtına sırasında açık alanda bulunan hasta yıldırım düşmesi sonrası yere yığılmıştır. İlk müdahale ekibi birkaç dakika solunumun yüzeyelleştiğini, ardından spontan solunumun döndüğünü bildirir. Gövdede ağ şeklinde eritematöz Lichtenberg benzeri izler ve yüzeyel yanıklar vardır. Solunum depresyonu ve geçici bilinç kaybı birlikte değerlendirildiğinde yıldırım ilişkili kardiyopulmoner etkilenme düşünülür.",
     "vitals": {
       "TA": "102/68 mmHg",
       "Nabız": "58/dk",
@@ -5271,17 +5312,29 @@ export const cases = [
         "label": "ABC ve oksijenizasyon değerlendirmesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "ABC ve oksijenizasyon değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Başvuruda hipoventilasyon ve hafif hipoksemi izlendi; oksijenle satürasyon düzeldi.",
         "findings": [
-          "ABC ve oksijenizasyon değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Solunum depresyonu yıldırım sonrası erken ölüm riskini açıklar.",
+          "Oksijen desteğine hızlı yanıt alınmıştır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "ABC ve oksijenizasyon değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Solunum sayısı",
+            "10/dk",
+            "12-20/dk",
+            "Düşük"
+          ],
+          [
+            "SpO2",
+            "91% → 98%",
+            ">94%",
+            "Düzeldi"
+          ],
+          [
+            "GKS",
+            "13 → 15",
+            "15",
+            "Düzeldi"
           ]
         ]
       },
@@ -5290,17 +5343,29 @@ export const cases = [
         "label": "EKG ve ritim monitörizasyonu",
         "type": "ecg",
         "priority": "essential",
-        "summary": "EKG ve ritim monitörizasyonu, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "EKG’de sinüs bradikardisi izlendi; malign aritmi ve ST elevasyonu saptanmadı.",
         "findings": [
-          "EKG ve ritim monitörizasyonu, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Elektriksel etkilenme ritim izlemi gerektirir.",
+          "Akut MI lehine EKG paterni yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "EKG ve ritim monitörizasyonu, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Ritim",
+            "Sinüs bradikardisi",
+            "Sinüs ritmi",
+            "Anormal"
+          ],
+          [
+            "ST segment",
+            "Elevasyon yok",
+            "İzoelektrik",
+            "Sorun yok"
+          ],
+          [
+            "VT/VF",
+            "İzlenmedi",
+            "Yok",
+            "Sorun yok"
           ]
         ]
       },
@@ -5309,17 +5374,29 @@ export const cases = [
         "label": "Arter kan gazı",
         "type": "lab",
         "priority": "useful",
-        "summary": "Arter kan gazı, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Kan gazında hafif hipoksemi ve hafif laktat yüksekliği saptandı.",
         "findings": [
-          "Arter kan gazı, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Hipoventilasyonun fizyolojik etkisi gösterilmiştir.",
+          "Ağır metabolik asidoz yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Arter kan gazı, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "PaO2",
+            "62 mmHg",
+            "80-100 mmHg",
+            "Düşük"
+          ],
+          [
+            "Laktat",
+            "2.8 mmol/L",
+            "<2 mmol/L",
+            "Hafif yüksek"
+          ],
+          [
+            "pH",
+            "7.36",
+            "7.35-7.45",
+            "Normal"
           ]
         ]
       },
@@ -5328,17 +5405,29 @@ export const cases = [
         "label": "Nörolojik, göz ve işitme değerlendirmesi",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Nörolojik, göz ve işitme değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Nörolojik muayene takipte normale döndü; timpan membran rüptürü saptanmadı.",
         "findings": [
-          "Nörolojik, göz ve işitme değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Geçici bilinç etkilenmesi mevcuttur.",
+          "Kalıcı işitme hasarı lehine erken bulgu yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Nörolojik, göz ve işitme değerlendirmesi, Uzamış apneye bağlı kardiyopulmoner arrest riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "GKS",
+            "13 → 15",
+            "15",
+            "Düzeldi"
+          ],
+          [
+            "Fundus",
+            "Akut patoloji yok",
+            "Doğal",
+            "Sorun yok"
+          ],
+          [
+            "Timpan membran",
+            "Sağlam",
+            "Sağlam",
+            "Normal"
           ]
         ]
       }
@@ -5355,7 +5444,7 @@ export const cases = [
       "explanation": "Yıldırım çarpmasında ani ölüm için sınavda en yüksek verimli nokta uzamış apnedir. Deride yanık, bilinç kaybı, nörolojik/işitsel etkilenme ve kalp-solunum durması birlikte düşünülür.",
       "pearls": [
         "Yıldırım akımı çoğu zaman yüzeyden geçer; deride yanık ve Lichtenberg figürleri görülebilir.",
-        "Ani ölüm sorusunda en olası neden uzamış apne olarak vurgulanmıştır.",
+        "Yıldırım sonrası ani ölümde en kritik mekanizma uzamış apnedir.",
         "Hayatta kalanlarda kardiyolojik ve nörolojik problemler aranmalıdır.",
         "Korunmada açık alan, tek ağaç, metal ve sudan uzak durmak temel bilgidir."
       ],
@@ -5377,7 +5466,7 @@ export const cases = [
           "Güvenli alana taşı ve yıldırım riskinin sürdüğünü değerlendir — İkinci çarpma riski önlenir.",
           "ABC, oksijen, gerekirse ventilasyon/CPR — Uzamış apne ve arrest ölümcül olabilir.",
           "EKG ve monitörizasyon — Kalp-solunum sistemi etkilenebilir.",
-          "Nörolojik, işitme ve göz muayenesi — PDF'te beyin, göz ve işitme hasarı vurgulanır.",
+          "Nörolojik, işitme ve göz muayenesi — yıldırım sonrası sekeller sistematik olarak taranır.",
           "Yanık ve travma taraması — Yüzeyel yanık ve sekonder düşme yaralanmaları yönetilir."
         ],
         "learningOutcome": "Yıldırım çarpmasında görünür yanıklar tanıyı desteklese de sınavda ölüm mekanizması kardiyopulmoner durma ve özellikle uzamış apne ile ilişkilidir.",
@@ -5414,7 +5503,7 @@ export const cases = [
     "id": "pediatrics-classic-galactosemia-001",
     "branchId": "pediatrics",
     "title": "Süt alımı sonrası uzamış sarılık ve kusma gelişen yenidoğan",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Galaktoz metabolizması, GALT eksikliği, katarakt, karaciğer hasarı, sepsis riski",
     "demographics": "12 günlük kız bebek",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -5441,17 +5530,29 @@ export const cases = [
         "label": "Kan glukozu, bilirubin ve karaciğer enzimleri",
         "type": "lab",
         "priority": "essential",
-        "summary": "Kan glukozu, bilirubin ve karaciğer enzimleri, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Hipoglisemi, direkt bilirubin yüksekliği ve transaminaz artışı saptandı.",
         "findings": [
-          "Kan glukozu, bilirubin ve karaciğer enzimleri, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Karaciğer etkilenimi ve metabolik stres klasik galaktozemi ile uyumludur.",
+          "Hipoglisemi acil düzeltilmelidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kan glukozu, bilirubin ve karaciğer enzimleri, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Glukoz",
+            "56 mg/dL",
+            "70-100 mg/dL",
+            "Düşük"
+          ],
+          [
+            "Direkt bilirubin",
+            "2.4 mg/dL",
+            "<0.3 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "AST/ALT",
+            "180/165 U/L",
+            "<40 U/L",
+            "Yüksek"
           ]
         ]
       },
@@ -5460,17 +5561,23 @@ export const cases = [
         "label": "GALT aktivitesi ve galaktoz-1-fosfat",
         "type": "lab",
         "priority": "essential",
-        "summary": "GALT aktivitesi ve galaktoz-1-fosfat, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "GALT aktivitesi belirgin düşük; galaktoz-1-fosfat yüksek bulundu.",
         "findings": [
-          "GALT aktivitesi ve galaktoz-1-fosfat, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Enzim eksikliği tanıyı doğrudan destekler.",
+          "Toksik metabolit birikimi karaciğer ve lens bulgularını açıklar."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "GALT aktivitesi ve galaktoz-1-fosfat, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "GALT aktivitesi",
+            "<10%",
+            "Normal aktivite",
+            "Düşük"
+          ],
+          [
+            "Galaktoz-1-fosfat",
+            "Yüksek",
+            "Düşük/negatif",
+            "Patolojik"
           ]
         ]
       },
@@ -5479,17 +5586,23 @@ export const cases = [
         "label": "İdrarda redüktan madde",
         "type": "urine",
         "priority": "useful",
-        "summary": "İdrarda redüktan madde, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İdrarda redüktan madde pozitif saptandı.",
         "findings": [
-          "İdrarda redüktan madde, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Laktoz/galaktoz alımı sonrası idrarda şeker atılımı mevcuttur.",
+          "Glukoz dışı redüktan şeker olasılığı güçlenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "İdrarda redüktan madde, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Redüktan madde",
+            "Pozitif",
+            "Negatif",
+            "Patolojik"
+          ],
+          [
+            "İdrar glukoz stripi",
+            "Negatif",
+            "Negatif",
+            "Ayırıcı"
           ]
         ]
       },
@@ -5498,17 +5611,23 @@ export const cases = [
         "label": "GALT gen analizi ve aile taraması",
         "type": "lab",
         "priority": "situational",
-        "summary": "GALT gen analizi ve aile taraması, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "GALT gen analizi istendi; aile taraması için genetik danışmanlık planlandı.",
         "findings": [
-          "GALT gen analizi ve aile taraması, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kesin moleküler doğrulama ve aile danışmanlığı sağlar.",
+          "Acil diyet tedavisi test sonucunu beklememelidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "GALT gen analizi ve aile taraması, Klasik galaktozemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "GALT gen analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
+          ],
+          [
+            "Aile taraması",
+            "Önerildi",
+            "Risk yoksa gerekmez",
+            "Gerekli"
           ]
         ]
       }
@@ -5522,7 +5641,7 @@ export const cases = [
         "Herediter fruktoz intoleransı",
         "Fenilketonüri"
       ],
-      "explanation": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Süt alımı sonrası yenidoğanda kusma, sarılık, hepatomegali ve katarakt galaktozemiyi düşündürür.",
         "Laktoz intoleransı daha çok intestinal semptomlarla gider; ağır karaciğer yetmezliği beklenmez.",
@@ -5531,13 +5650,13 @@ export const cases = [
       ],
       "nextStep": "Laktoz/galaktoz içeren beslenmeyi kes, uygun formülaya geç, karaciğer ve sepsis açısından değerlendir.",
       "answerFeedback": {
-        "diagnosisMeta": "Klasik galaktozemi: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Klasik galaktozemi: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Klasik galaktozemi ile uyumlu",
           "Glukoz 56 mg/dL, direkt bilirubin yüksek, AST/ALT yüksek",
           "GALT aktivitesi düşük; galaktoz-1-fosfat yüksek",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -5550,7 +5669,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Laktoz intoleransı": {
             "explanation": "Laktoz intoleransı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
@@ -5584,7 +5703,7 @@ export const cases = [
     "id": "pediatrics-hereditary-fructose-intolerance-001",
     "branchId": "pediatrics",
     "title": "Ek gıda sonrası hipoglisemi atakları olan bebek",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Fruktoz metabolizması, aldolaz B eksikliği, hipoglisemi, karaciğer etkilenimi",
     "demographics": "10 aylık erkek bebek",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -5611,17 +5730,29 @@ export const cases = [
         "label": "Kan glukozu ve elektrolitler",
         "type": "lab",
         "priority": "essential",
-        "summary": "Kan glukozu ve elektrolitler, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Fruktoz alımı sonrası hipoglisemi ve hafif laktat yüksekliği saptandı.",
         "findings": [
-          "Kan glukozu ve elektrolitler, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Bulgu, fruktoz metabolizması bloğuna bağlı akut enerji yetersizliğiyle uyumludur.",
+          "Böbrek fonksiyonlarında belirgin bozulma yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kan glukozu ve elektrolitler, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Glukoz",
+            "42 mg/dL",
+            "70-100 mg/dL",
+            "Düşük"
+          ],
+          [
+            "Laktat",
+            "3.1 mmol/L",
+            "<2 mmol/L",
+            "Yüksek"
+          ],
+          [
+            "Na/K",
+            "Normal",
+            "Normal",
+            "Sorun yok"
           ]
         ]
       },
@@ -5630,17 +5761,23 @@ export const cases = [
         "label": "Fruktoz-1-fosfat / ALDOB değerlendirmesi",
         "type": "lab",
         "priority": "essential",
-        "summary": "Fruktoz-1-fosfat / ALDOB değerlendirmesi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "ALDOB ilişkili defekt şüphesi güçlü; fruktoz-1-fosfat birikimi ile uyumlu sonuç alındı.",
         "findings": [
-          "Fruktoz-1-fosfat / ALDOB değerlendirmesi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Aldolaz B basamağındaki blok tanıyı destekler.",
+          "Esansiyel fruktozüriye göre daha ağır metabolik tablo vardır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Fruktoz-1-fosfat / ALDOB değerlendirmesi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Fruktoz-1-fosfat",
+            "Yüksek",
+            "Düşük",
+            "Patolojik"
+          ],
+          [
+            "ALDOB değerlendirmesi",
+            "Defekt lehine",
+            "Normal",
+            "Patolojik"
           ]
         ]
       },
@@ -5649,17 +5786,23 @@ export const cases = [
         "label": "İdrar ketonu ve metabolik asidoz taraması",
         "type": "urine",
         "priority": "useful",
-        "summary": "İdrar ketonu ve metabolik asidoz taraması, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İdrarda keton pozitifliği ve hafif metabolik asidoz izlendi.",
         "findings": [
-          "İdrar ketonu ve metabolik asidoz taraması, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Açlık/hipoglisemi yanıtı ketonüri oluşturabilir.",
+          "Ağır ketoasidoz paterni yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "İdrar ketonu ve metabolik asidoz taraması, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "İdrar ketonu",
+            "Pozitif",
+            "Negatif",
+            "Patolojik"
+          ],
+          [
+            "Bikarbonat",
+            "19 mmol/L",
+            "22-28 mmol/L",
+            "Düşük"
           ]
         ]
       },
@@ -5668,17 +5811,23 @@ export const cases = [
         "label": "ALDOB gen analizi",
         "type": "lab",
         "priority": "situational",
-        "summary": "ALDOB gen analizi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "ALDOB gen analizi istendi; fruktoz-sükroz-sorbitol kısıtlaması başlatıldı.",
         "findings": [
-          "ALDOB gen analizi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Genetik doğrulama uzun dönem izlem içindir.",
+          "Diyet düzenlemesi acildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "ALDOB gen analizi, Herediter fruktoz intoleransı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "ALDOB gen analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
+          ],
+          [
+            "Diyet yanıtı",
+            "Semptomlarda azalma",
+            "Beklenen",
+            "Olumlu"
           ]
         ]
       }
@@ -5692,7 +5841,7 @@ export const cases = [
         "Galaktozemi",
         "GSD Tip Ia"
       ],
-      "explanation": "Olgu paterni Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Fruktoz alımı sonrası ciddi hipoglisemi HFI için tipiktir.",
         "Esansiyel fruktozüri genellikle benign seyreder.",
@@ -5701,13 +5850,13 @@ export const cases = [
       ],
       "nextStep": "Fruktoz, sükroz ve sorbitolü diyetten çıkar; hipoglisemiyi hızla düzelt.",
       "answerFeedback": {
-        "diagnosisMeta": "Herediter fruktoz intoleransı: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Herediter fruktoz intoleransı: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Herediter fruktoz intoleransı ile uyumlu",
           "Glukoz 42 mg/dL, laktat hafif yüksek, transaminazlar yüksek",
           "Aldolaz B defekti şüphesi; fruktoz-1-fosfat birikimi",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -5720,7 +5869,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Esansiyel fruktozüri": {
             "explanation": "Esansiyel fruktozüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
@@ -5754,12 +5903,12 @@ export const cases = [
     "id": "pediatrics-von-gierke-gsd-001",
     "branchId": "pediatrics",
     "title": "Kısa açlıkta nöbet ve belirgin hepatomegali gelişen çocuk",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Glikojenoliz/glukoneogenez çıkış basamağı, glukoz-6-fosfataz eksikliği",
     "demographics": "2 yaş erkek çocuk",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
     "chiefComplaint": "3-4 saat açlık sonrası terleme, nöbet ve karın şişliği",
-    "stem": "Çocuk sabahları beslenme geciktiğinde terleme, irritabilite ve bazen nöbet geçirmektedir. Muayenede hepatomegali ve dolgun yanaklı “taş bebek yüzü” görünümü vardır. PDF'te GSD Tip Ia için glukoz-6-fosfataz eksikliği, 3-4 saatlik açlık sonrası hipoglisemi, hepatomegali, laktik asidoz ve hiperlipemi vurgulanmıştır.",
+    "stem": "Çocuk sabahları beslenme geciktiğinde terleme, irritabilite ve bazen nöbet geçirmektedir. Muayenede hepatomegali ve dolgun yanaklı “taş bebek yüzü” görünümü vardır. Açlık hipoglisemisi, hepatomegali, laktik asidoz ve hiperlipemi birlikte karaciğer tipi glikojen depo hastalığını düşündürür.",
     "vitals": {
       "TA": "Yaşa uygun, stabil",
       "Nabız": "112/dk",
@@ -5781,17 +5930,35 @@ export const cases = [
         "label": "Glukoz, laktat, trigliserid ve ürik asit",
         "type": "lab",
         "priority": "essential",
-        "summary": "Glukoz, laktat, trigliserid ve ürik asit, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Açlık hipoglisemisiyle birlikte laktat, trigliserid ve ürik asit yüksekliği saptandı.",
         "findings": [
-          "Glukoz, laktat, trigliserid ve ürik asit, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Laboratuvar paterni glukoz-6-fosfataz defektini destekler.",
+          "Hepatik glukoz çıkışı bozulmuştur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Glukoz, laktat, trigliserid ve ürik asit, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Glukoz",
+            "38 mg/dL",
+            "70-100 mg/dL",
+            "Düşük"
+          ],
+          [
+            "Laktat",
+            "5.6 mmol/L",
+            "<2 mmol/L",
+            "Yüksek"
+          ],
+          [
+            "Trigliserid",
+            "420 mg/dL",
+            "<150 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "Ürik asit",
+            "8.2 mg/dL",
+            "2-5.5 mg/dL",
+            "Yüksek"
           ]
         ]
       },
@@ -5800,17 +5967,23 @@ export const cases = [
         "label": "Glukoz-6-fosfataz aktivitesi",
         "type": "lab",
         "priority": "essential",
-        "summary": "Glukoz-6-fosfataz aktivitesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Glukoz-6-fosfataz aktivitesi düşük bulundu.",
         "findings": [
-          "Glukoz-6-fosfataz aktivitesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Son ortak glukoz üretim basamağı etkilenmiştir.",
+          "Açlıkta hipoglisemi ve hepatomegali bu defektle açıklanır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Glukoz-6-fosfataz aktivitesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "G6Paz aktivitesi",
+            "Düşük",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Glukagon yanıtı",
+            "Yetersiz glukoz artışı",
+            "Artış beklenir",
+            "Anormal"
           ]
         ]
       },
@@ -5819,17 +5992,29 @@ export const cases = [
         "label": "İdrar ketonu ve asidoz değerlendirmesi",
         "type": "urine",
         "priority": "useful",
-        "summary": "İdrar ketonu ve asidoz değerlendirmesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İdrarda keton değişken; kan gazında laktik asidoz izlendi.",
         "findings": [
-          "İdrar ketonu ve asidoz değerlendirmesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Laktik asidoz Von Gierke için ayırt ettiricidir.",
+          "Keton düzeyi tek başına tanıyı dışlamaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "İdrar ketonu ve asidoz değerlendirmesi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "İdrar ketonu",
+            "Hafif/ değişken",
+            "Negatif-hafif",
+            "Uyumlu"
+          ],
+          [
+            "pH",
+            "7.29",
+            "7.35-7.45",
+            "Düşük"
+          ],
+          [
+            "Bikarbonat",
+            "17 mmol/L",
+            "22-28 mmol/L",
+            "Düşük"
           ]
         ]
       },
@@ -5838,17 +6023,23 @@ export const cases = [
         "label": "G6PC gen analizi",
         "type": "lab",
         "priority": "situational",
-        "summary": "G6PC gen analizi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "G6PC mutasyonu açısından genetik doğrulama planlandı.",
         "findings": [
-          "G6PC gen analizi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kalıtsal tanı ve aile danışmanlığı için gereklidir.",
+          "Tedavi açlığın önlenmesine odaklanır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "G6PC gen analizi, GSD Tip Ia - Von Gierke olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "G6PC analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
+          ],
+          [
+            "Aile danışmanlığı",
+            "Önerildi",
+            "Risk yoksa gerekmez",
+            "Gerekli"
           ]
         ]
       }
@@ -5862,7 +6053,7 @@ export const cases = [
         "McArdle hastalığı",
         "Herediter fruktoz intoleransı"
       ],
-      "explanation": "Olgu paterni Glikojen depo hastalığı Tip Ia - Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Glikojen depo hastalığı Tip Ia - Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Açlık hipoglisemisi + hepatomegali karaciğer tipi GSD düşündürür.",
         "Von Gierke: glukoz-6-fosfataz eksikliği.",
@@ -5871,13 +6062,13 @@ export const cases = [
       ],
       "nextStep": "Hipoglisemiyi düzelt, uzun açlığı önle, sık karbonhidrat/mısır nişastası planla ve metabolizma uzmanına yönlendir.",
       "answerFeedback": {
-        "diagnosisMeta": "Glikojen depo hastalığı Tip Ia - Von Gierke: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Glikojen depo hastalığı Tip Ia - Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Glikojen depo hastalığı Tip Ia - Von Gierke: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Glikojen depo hastalığı Tip Ia - Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Glikojen depo hastalığı Tip Ia — Von Gierke ile uyumlu",
           "Glukoz 38 mg/dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek",
           "Glukoz-6-fosfataz aktivitesi düşük",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -5890,7 +6081,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Pompe hastalığı": {
             "explanation": "Pompe hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia - Von Gierke lehinedir.",
@@ -5924,12 +6115,12 @@ export const cases = [
     "id": "pediatrics-phenylketonuria-001",
     "branchId": "pediatrics",
     "title": "Küf kokulu idrar ve gelişim geriliği olan bebek",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Fenilalanin hidroksilaz eksikliği, nörotoksisite, yenidoğan taraması",
     "demographics": "4 aylık kız bebek",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
     "chiefComplaint": "Gelişim geriliği, nöbet ve idrarda küf/küfemsi koku",
-    "stem": "Aile bebeğin giderek daha huzursuz olduğunu, baş kontrolünün zayıf kaldığını ve bezinde küf benzeri koku fark ettiğini söyler. Açık ten ve nöbet öyküsü de vardır. PDF'te en sık aminoasit metabolizması bozukluğu olarak fenilketonüri vurgulandığından vaka yüksek verimli sınav formatına çevrilmiştir.",
+    "stem": "Aile bebeğin giderek daha huzursuz olduğunu, baş kontrolünün zayıf kaldığını ve bezinde küf benzeri koku fark ettiğini söyler. Açık ten, nöbet öyküsü ve gelişimsel gecikme fenilalanin metabolizması bozukluğu açısından yüksek klinik şüphe oluşturur.",
     "vitals": {
       "TA": "Yaşa uygun, stabil",
       "Nabız": "112/dk",
@@ -5951,17 +6142,23 @@ export const cases = [
         "label": "Plazma fenilalanin düzeyi",
         "type": "lab",
         "priority": "essential",
-        "summary": "Plazma fenilalanin düzeyi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Plazma fenilalanin düzeyi belirgin yüksek bulundu.",
         "findings": [
-          "Plazma fenilalanin düzeyi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Nörogelişimsel etkilenme riski yüksektir.",
+          "Diyet tedavisi erken başlanmalıdır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Plazma fenilalanin düzeyi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Fenilalanin",
+            "22 mg/dL",
+            "<2 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "Klinik",
+            "Küf kokulu idrar",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -5970,17 +6167,23 @@ export const cases = [
         "label": "Tirozin ve fenilalanin/tirozin oranı",
         "type": "lab",
         "priority": "essential",
-        "summary": "Tirozin ve fenilalanin/tirozin oranı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Tirozin düşük, fenilalanin/tirozin oranı yüksek saptandı.",
         "findings": [
-          "Tirozin ve fenilalanin/tirozin oranı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Fenilalanin hidroksilaz yolunda blok düşündürür.",
+          "Tirozin koşullu esansiyel hale gelir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Tirozin ve fenilalanin/tirozin oranı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Tirozin",
+            "Düşük",
+            "Normal",
+            "Düşük"
+          ],
+          [
+            "Phe/Tyr oranı",
+            "Yüksek",
+            "Normal",
+            "Patolojik"
           ]
         ]
       },
@@ -5989,17 +6192,23 @@ export const cases = [
         "label": "Yenidoğan tarama testi tekrarı",
         "type": "lab",
         "priority": "useful",
-        "summary": "Yenidoğan tarama testi tekrarı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Yenidoğan tarama testi pozitif geldi; tekrar örnek tanıyı destekledi.",
         "findings": [
-          "Yenidoğan tarama testi tekrarı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tarama sonucu klinik şüpheyle uyumludur.",
+          "Kesin değerlendirme tedaviyi geciktirmeden yapılır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Yenidoğan tarama testi tekrarı, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Tarama testi",
+            "Pozitif",
+            "Negatif",
+            "Patolojik"
+          ],
+          [
+            "Tekrar örnek",
+            "Pozitif",
+            "Negatif",
+            "Patolojik"
           ]
         ]
       },
@@ -6008,17 +6217,23 @@ export const cases = [
         "label": "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi",
         "type": "lab",
         "priority": "situational",
-        "summary": "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "PAH gen analizi ve BH4 yanıt değerlendirmesi planlandı.",
         "findings": [
-          "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Klasik PKU ile kofaktör ilişkili formlar ayrılır.",
+          "Tedavi seçimini etkileyebilir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi, Fenilketonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "PAH analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
+          ],
+          [
+            "BH4 yanıtı",
+            "Değerlendirilecek",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       }
@@ -6032,22 +6247,22 @@ export const cases = [
         "Alkaptonüri",
         "Albinizm"
       ],
-      "explanation": "Olgu paterni Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
-        "En sık aminoasit metabolizması bozukluğu PKU olarak vurgulanır.",
+        "PKU, aminoasit metabolizması bozuklukları içinde yüksek verimli ve erken tedavi gerektiren bir tablodur.",
         "Fenilalanin yüksekliği nörotoksiktir; tedavi erken başlamalıdır.",
         "Diyetle fenilalanin kısıtlaması ve tirozin desteği düşünülür.",
         "Yenidoğan taraması kritik önemdedir."
       ],
       "nextStep": "Fenilalanin kısıtlı diyet başla, tirozin desteğini planla, BH4 yanıtını/genetik tanıyı değerlendir.",
       "answerFeedback": {
-        "diagnosisMeta": "Fenilketonüri: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Fenilketonüri: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Fenilketonüri ile uyumlu",
           "Fenilalanin yüksek, tirozin düşük/normal",
           "Fenilalanin hidroksilaz aktivitesi düşük veya BH4 yolu değerlendirilir",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -6060,7 +6275,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Akçaağaç şurubu idrar hastalığı": {
             "explanation": "Akçaağaç şurubu idrar hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
@@ -6094,7 +6309,7 @@ export const cases = [
     "id": "pediatrics-maple-syrup-urine-disease-001",
     "branchId": "pediatrics",
     "title": "Tatlı kokulu idrar ve nörolojik kötüleşme ile başvuran yenidoğan",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Dallı zincirli aminoasit katabolizması, BCKD eksikliği, lösin toksisitesi",
     "demographics": "8 günlük yenidoğan",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -6121,17 +6336,29 @@ export const cases = [
         "label": "Plazma dallı zincirli aminoasitler",
         "type": "lab",
         "priority": "essential",
-        "summary": "Plazma dallı zincirli aminoasitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Lösin, izolösin ve valin düzeyleri belirgin yüksek bulundu.",
         "findings": [
-          "Plazma dallı zincirli aminoasitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Dallı zincirli aminoasit yıkımı bozulmuştur.",
+          "Lösin yüksekliği nörotoksisiteyle ilişkilidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Plazma dallı zincirli aminoasitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Lösin",
+            "Belirgin yüksek",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "İzolösin",
+            "Yüksek",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Valin",
+            "Yüksek",
+            "Normal",
+            "Patolojik"
           ]
         ]
       },
@@ -6140,17 +6367,23 @@ export const cases = [
         "label": "İdrar organik asit/ketoasit analizi",
         "type": "urine",
         "priority": "essential",
-        "summary": "İdrar organik asit/ketoasit analizi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İdrarda dallı zincirli ketoasitler pozitif saptandı.",
         "findings": [
-          "İdrar organik asit/ketoasit analizi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "BCKD kompleksi defektini destekler.",
+          "Tatlı kokulu idrar bulgusunu açıklar."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "İdrar organik asit/ketoasit analizi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Ketoasitler",
+            "Pozitif",
+            "Negatif",
+            "Patolojik"
+          ],
+          [
+            "Koku",
+            "Akçaağaç şurubu benzeri",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -6159,17 +6392,29 @@ export const cases = [
         "label": "Kan gazı, glukoz ve elektrolitler",
         "type": "lab",
         "priority": "useful",
-        "summary": "Kan gazı, glukoz ve elektrolitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Kan gazında metabolik asidoz ve hipoglisemiye eğilim izlendi.",
         "findings": [
-          "Kan gazı, glukoz ve elektrolitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Akut nörolojik kötüleşme metabolik kriz ile uyumludur.",
+          "Elektrolitler yakın izlem gerektirir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kan gazı, glukoz ve elektrolitler, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "pH",
+            "7.28",
+            "7.35-7.45",
+            "Düşük"
+          ],
+          [
+            "Glukoz",
+            "58 mg/dL",
+            "70-100 mg/dL",
+            "Düşük"
+          ],
+          [
+            "Anyon açığı",
+            "Yüksek",
+            "Normal",
+            "Patolojik"
           ]
         ]
       },
@@ -6178,17 +6423,23 @@ export const cases = [
         "label": "BCKD kompleks genetik testi",
         "type": "lab",
         "priority": "situational",
-        "summary": "BCKD kompleks genetik testi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "BCKD kompleks genleri için doğrulayıcı genetik test planlandı.",
         "findings": [
-          "BCKD kompleks genetik testi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tanı ve aile danışmanlığı için kullanılır.",
+          "Akut tedavi laboratuvar doğrulamasını beklememelidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "BCKD kompleks genetik testi, Akçaağaç şurubu idrar hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "BCKD gen analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
+          ],
+          [
+            "Aile danışmanlığı",
+            "Önerildi",
+            "Risk yoksa gerekmez",
+            "Gerekli"
           ]
         ]
       }
@@ -6202,7 +6453,7 @@ export const cases = [
         "Galaktozemi",
         "Homosistinüri"
       ],
-      "explanation": "Olgu paterni Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Tatlı/akçaağaç şurubu kokusu + yenidoğan nörolojik kötüleşme MSUD için tipiktir.",
         "Leucine nörotoksisitesi acildir.",
@@ -6211,13 +6462,13 @@ export const cases = [
       ],
       "nextStep": "Acil metabolik stabilizasyon, BCAA kısıtlaması, yüksek lösin varsa yoğun tedavi/diyaliz değerlendirmesi.",
       "answerFeedback": {
-        "diagnosisMeta": "Akçaağaç şurubu idrar hastalığı: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Akçaağaç şurubu idrar hastalığı: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu",
           "Lösin, izolösin ve valin yüksek; metabolik asidoz",
           "BCKD kompleksi aktivitesi düşük",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -6230,7 +6481,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Fenilketonüri": {
             "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
@@ -6264,7 +6515,7 @@ export const cases = [
     "id": "internal-medicine-alkaptonuria-001",
     "branchId": "internal-medicine",
     "title": "İdrarı bekleyince koyulaşan erişkinde eklem yakınmaları",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Homogentisik asit oksidaz eksikliği, okronozis, koyu idrar, eklem tutulumu",
     "demographics": "35 yaş erkek",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -6291,17 +6542,17 @@ export const cases = [
         "label": "İdrarda homogentisik asit",
         "type": "urine",
         "priority": "essential",
-        "summary": "İdrarda homogentisik asit, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İdrarda homogentisik asit düzeyi yüksek bulundu.",
         "findings": [
-          "İdrarda homogentisik asit, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tirozin yıkım yolunda homogentizat oksidaz defekti desteklenir.",
+          "Kronik okronozis ve artropati riskini açıklar."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "İdrarda homogentisik asit, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Homogentisik asit",
+            "Yüksek",
+            "Düşük/negatif",
+            "Patolojik"
           ]
         ]
       },
@@ -6310,17 +6561,23 @@ export const cases = [
         "label": "İdrar bekletme/alkalinizasyon gözlemi",
         "type": "urine",
         "priority": "essential",
-        "summary": "İdrar bekletme/alkalinizasyon gözlemi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Bekletilen idrar örneği koyu kahverengi-siyah renge döndü.",
         "findings": [
-          "İdrar bekletme/alkalinizasyon gözlemi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Oksidasyonla renk değişimi alkaptonüri için tipiktir.",
+          "Basit gözlem tanısal şüpheyi güçlendirir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "İdrar bekletme/alkalinizasyon gözlemi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "İdrar rengi",
+            "Bekletince siyahlaştı",
+            "Değişmez",
+            "Patolojik"
+          ],
+          [
+            "Alkalinizasyon",
+            "Koyulaşma arttı",
+            "Değişmez",
+            "Uyumlu"
           ]
         ]
       },
@@ -6329,17 +6586,23 @@ export const cases = [
         "label": "Eklem grafisi",
         "type": "xray",
         "priority": "useful",
-        "summary": "Eklem grafisi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Eklem grafisinde dejeneratif artropati bulguları izlendi.",
         "findings": [
-          "Eklem grafisi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kronik pigment birikimi eklem hasarıyla uyumludur.",
+          "Akut enfeksiyöz artrit lehine bulgu yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Eklem grafisi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Omurga/diz grafisi",
+            "Dejeneratif değişiklik",
+            "Yaşa uygun",
+            "Patolojik"
+          ],
+          [
+            "Erozyon",
+            "Belirgin değil",
+            "Yok",
+            "Ayırıcı"
           ]
         ]
       },
@@ -6348,17 +6611,17 @@ export const cases = [
         "label": "HGD gen analizi",
         "type": "lab",
         "priority": "situational",
-        "summary": "HGD gen analizi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "HGD gen analizi için örnek gönderildi.",
         "findings": [
-          "HGD gen analizi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Moleküler doğrulama ve aile danışmanlığı sağlar.",
+          "Tedavi semptom ve komplikasyon kontrolüne yöneliktir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "HGD gen analizi, Alkaptonüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "HGD analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       }
@@ -6372,7 +6635,7 @@ export const cases = [
         "Albinizm",
         "Tirozinemi Tip I"
       ],
-      "explanation": "Olgu paterni Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Bekleyince koyulaşan idrar ve okronozis alkaptonüriyi düşündürür.",
         "Homogentisik asit oksidaz eksiktir.",
@@ -6381,13 +6644,13 @@ export const cases = [
       ],
       "nextStep": "Homogentisik asit düzeyini doğrula, eklem/kalp tutulumunu değerlendir, uzun dönem metabolizma-romatoloji izlemi planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Alkaptonüri: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Alkaptonüri: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Alkaptonüri ile uyumlu",
           "Rutin biyokimya çoğunlukla stabil; inflamasyon yok",
           "Homogentisik asit oksidaz defekti",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -6400,7 +6663,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Fenilketonüri": {
             "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
@@ -6434,7 +6697,7 @@ export const cases = [
     "id": "pediatrics-albinism-001",
     "branchId": "pediatrics",
     "title": "Fotofobi ve belirgin pigment azalması olan çocuk",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Tirozinaz/melanin sentezi, pigmentasyon azlığı, göz bulguları",
     "demographics": "6 yaş kız çocuk",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -6461,17 +6724,23 @@ export const cases = [
         "label": "Dermatolojik ve oküler muayene",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Dermatolojik ve oküler muayene, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Cilt, saç ve iriste yaygın pigment azalması; nistagmus izlendi.",
         "findings": [
-          "Dermatolojik ve oküler muayene, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Melanin sentez bozukluğu belirgindir.",
+          "Vitiligo gibi edinsel odaksal depigmentasyon paterni yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Dermatolojik ve oküler muayene, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Pigmentasyon",
+            "Yaygın azalmış",
+            "Yaşa/ırka uygun",
+            "Düşük"
+          ],
+          [
+            "Nistagmus",
+            "Var",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -6480,17 +6749,23 @@ export const cases = [
         "label": "Görme keskinliği ve retina değerlendirmesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Görme keskinliği ve retina değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Görme keskinliği düşük ve foveal hipoplazi ile uyumlu retina bulgusu izlendi.",
         "findings": [
-          "Görme keskinliği ve retina değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Oküler tutulum okülokütanöz albinizmi destekler.",
+          "Fotofobi klinik tabloya eşlik eder."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Görme keskinliği ve retina değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Görme keskinliği",
+            "Azalmış",
+            "Normal",
+            "Anormal"
+          ],
+          [
+            "Fovea",
+            "Hipoplazi lehine",
+            "Normal",
+            "Patolojik"
           ]
         ]
       },
@@ -6499,17 +6774,17 @@ export const cases = [
         "label": "Tirozinaz/melanin yolu genetik testi",
         "type": "lab",
         "priority": "useful",
-        "summary": "Tirozinaz/melanin yolu genetik testi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Melanin yolu genleri için doğrulayıcı test planlandı.",
         "findings": [
-          "Tirozinaz/melanin yolu genetik testi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Alt tip ayrımı ve aile danışmanlığı için kullanılır.",
+          "Klinik tanı muayene ile güçlüdür."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Tirozinaz/melanin yolu genetik testi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Tirozinaz yolu",
+            "Genetik test planlandı",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       },
@@ -6518,17 +6793,23 @@ export const cases = [
         "label": "Sendromik albinizm ayırıcı değerlendirmesi",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Sendromik albinizm ayırıcı değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Kanama diyatezi ve ağır immün yetmezlik bulgusu saptanmadı.",
         "findings": [
-          "Sendromik albinizm ayırıcı değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Sendromik albinizm olasılığı daha düşük bulundu.",
+          "Chediak-Higashi/Hermansky-Pudlak açısından tarama negatif yönlüdür."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Sendromik albinizm ayırıcı değerlendirmesi, Okülokütanöz albinizm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Trombosit/kanama",
+            "Patoloji yok",
+            "Yok",
+            "Sorun yok"
+          ],
+          [
+            "Tekrarlayan enfeksiyon",
+            "Yok",
+            "Yok",
+            "Sorun yok"
           ]
         ]
       }
@@ -6542,7 +6823,7 @@ export const cases = [
         "Alkaptonüri",
         "Vitiligo"
       ],
-      "explanation": "Olgu paterni Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Albinizmde pigmentasyon azlığı ve göz bulguları birlikte düşünülür.",
         "Melanin sentezi tirozin metabolizmasıyla ilişkilidir.",
@@ -6551,13 +6832,13 @@ export const cases = [
       ],
       "nextStep": "Güneşten korunma, dermatolojik takip ve oftalmolojik değerlendirme.",
       "answerFeedback": {
-        "diagnosisMeta": "Okülokütanöz albinizm: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Okülokütanöz albinizm: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Okülokütanöz albinizm ile uyumlu",
           "Biyokimya çoğunlukla normal",
           "Tirozinaz aktivitesi/genetik alt tip değerlendirilir",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -6570,7 +6851,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Fenilketonüri": {
             "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
@@ -6604,7 +6885,7 @@ export const cases = [
     "id": "pediatrics-homocystinuria-001",
     "branchId": "pediatrics",
     "title": "Uzun boy, lens kayması ve tromboz öyküsü olan genç hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Metiyonin metabolizması, homosistein artışı, tromboz ve lens bulguları",
     "demographics": "14 yaş erkek",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -6631,17 +6912,23 @@ export const cases = [
         "label": "Plazma total homosistein ve metiyonin",
         "type": "lab",
         "priority": "essential",
-        "summary": "Plazma total homosistein ve metiyonin, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Total homosistein ve metiyonin düzeyleri belirgin yüksek bulundu.",
         "findings": [
-          "Plazma total homosistein ve metiyonin, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "CBS eksikliği homosistein birikimiyle uyumludur.",
+          "Tromboz eğilimi bu birikimle ilişkilidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Plazma total homosistein ve metiyonin, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Total homosistein",
+            "Belirgin yüksek",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Metiyonin",
+            "Yüksek",
+            "Normal",
+            "Patolojik"
           ]
         ]
       },
@@ -6650,17 +6937,23 @@ export const cases = [
         "label": "Oftalmolojik lens muayenesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Oftalmolojik lens muayenesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Lens subluksasyonu inferonazal yönde izlendi.",
         "findings": [
-          "Oftalmolojik lens muayenesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Marfan sendromundan ayırıcı tanıda yön bilgisi önemlidir.",
+          "Ektopia lentis homosistinüriyi destekler."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Oftalmolojik lens muayenesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Lens pozisyonu",
+            "İnferonazal subluksasyon",
+            "Merkezde",
+            "Patolojik"
+          ],
+          [
+            "Fotofobi",
+            "Var",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -6669,17 +6962,23 @@ export const cases = [
         "label": "Tromboz risk ve koagülasyon değerlendirmesi",
         "type": "lab",
         "priority": "useful",
-        "summary": "Tromboz risk ve koagülasyon değerlendirmesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Tromboz riski yüksek; akut DVT bulgusu saptanmadı.",
         "findings": [
-          "Tromboz risk ve koagülasyon değerlendirmesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Hastada tromboembolik komplikasyon açısından izlem gerekir.",
+          "Koagülasyon paneli tek başına tanısal değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Tromboz risk ve koagülasyon değerlendirmesi, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "D-dimer",
+            "Hafif yüksek",
+            "Normal",
+            "Uyumlu"
+          ],
+          [
+            "Akut DVT",
+            "Saptanmadı",
+            "Yok",
+            "Sorun yok"
           ]
         ]
       },
@@ -6688,17 +6987,23 @@ export const cases = [
         "label": "CBS genetik testi ve B6 yanıtı",
         "type": "lab",
         "priority": "situational",
-        "summary": "CBS genetik testi ve B6 yanıtı, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "CBS gen analizi ve piridoksin yanıt testi planlandı.",
         "findings": [
-          "CBS genetik testi ve B6 yanıtı, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "B6 yanıtlı formlar tedavi yaklaşımını değiştirir.",
+          "Genetik doğrulama aile danışmanlığı sağlar."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "CBS genetik testi ve B6 yanıtı, Homosistinüri olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "CBS analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
+          ],
+          [
+            "B6 yanıtı",
+            "Değerlendirilecek",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       }
@@ -6712,7 +7017,7 @@ export const cases = [
         "Alkaptonüri",
         "Fenilketonüri"
       ],
-      "explanation": "Olgu paterni Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Lens subluksasyonu + tromboz eğilimi homosistinüri için yüksek verimlidir.",
         "Marfan ile karışır; tromboz homosistinüriyi destekler.",
@@ -6721,13 +7026,13 @@ export const cases = [
       ],
       "nextStep": "DVT yönetimini başlat, homosistein/metiyonin doğrula, vitamin yanıtı ve diyet planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Homosistinüri: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Homosistinüri: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Homosistinüri ile uyumlu",
           "Total homosistein yüksek, metiyonin yüksek olabilir",
           "Sistationin beta sentaz defekti veya B12/folat yolu değerlendirilir",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -6740,7 +7045,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Marfan sendromu": {
             "explanation": "Marfan sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
@@ -6774,7 +7079,7 @@ export const cases = [
     "id": "internal-medicine-pellagra-001",
     "branchId": "internal-medicine",
     "title": "Fotosensitif dermatit, diyare ve bilişsel yavaşlama ile başvuru",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Vitamin B3 eksikliği, NAD/NADP, 3D triadı",
     "demographics": "47 yaş erkek, kronik alkol kullanımı ve kötü beslenme",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -6801,17 +7106,23 @@ export const cases = [
         "label": "Beslenme ve malabsorpsiyon değerlendirmesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Beslenme ve malabsorpsiyon değerlendirmesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Niasin yetersizliğiyle uyumlu tek yönlü beslenme ve malabsorpsiyon riski saptandı.",
         "findings": [
-          "Beslenme ve malabsorpsiyon değerlendirmesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Klinik tablo 3D paternini destekler.",
+          "Alkol kullanımı ve yetersiz protein alımı sorgulanmalıdır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Beslenme ve malabsorpsiyon değerlendirmesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Diyet",
+            "Niasinden fakir",
+            "Dengeli",
+            "Riskli"
+          ],
+          [
+            "Malabsorpsiyon",
+            "Olası",
+            "Yok",
+            "Riskli"
           ]
         ]
       },
@@ -6820,17 +7131,23 @@ export const cases = [
         "label": "Temel biyokimya, albümin ve elektrolitler",
         "type": "lab",
         "priority": "essential",
-        "summary": "Temel biyokimya, albümin ve elektrolitler, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Albümin düşük, elektrolitlerde hafif bozukluk izlendi.",
         "findings": [
-          "Temel biyokimya, albümin ve elektrolitler, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kronik beslenme yetersizliği laboratuvarla desteklenir.",
+          "Ağır böbrek/karaciğer yetmezliği yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Temel biyokimya, albümin ve elektrolitler, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Albümin",
+            "3.0 g/dL",
+            "3.5-5.0 g/dL",
+            "Düşük"
+          ],
+          [
+            "Potasyum",
+            "3.3 mmol/L",
+            "3.5-5.1 mmol/L",
+            "Düşük"
           ]
         ]
       },
@@ -6839,17 +7156,23 @@ export const cases = [
         "label": "Dermatolojik dağılım muayenesi",
         "type": "clinical",
         "priority": "useful",
-        "summary": "Dermatolojik dağılım muayenesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Güneş gören alanlarda simetrik hiperpigmente dermatit izlendi.",
         "findings": [
-          "Dermatolojik dağılım muayenesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Fotosensitif dermatit pellagra için ayırt ettiricidir.",
+          "İzole kontakt dermatit paterni değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Dermatolojik dağılım muayenesi, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Dağılım",
+            "Güneş gören alanlar",
+            "Rastgele değil",
+            "Tipik"
+          ],
+          [
+            "Deri",
+            "Hiperpigmente dermatit",
+            "Normal",
+            "Patolojik"
           ]
         ]
       },
@@ -6858,17 +7181,23 @@ export const cases = [
         "label": "Niasin/NAD eksikliği klinik doğrulaması",
         "type": "lab",
         "priority": "situational",
-        "summary": "Niasin/NAD eksikliği klinik doğrulaması, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Niasin/NAD eksikliğini destekleyen klinik ve beslenme paterni mevcuttur.",
         "findings": [
-          "Niasin/NAD eksikliği klinik doğrulaması, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tedavi yanıtı klinik doğrulamaya katkı sağlar.",
+          "Replasman geciktirilmemelidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Niasin/NAD eksikliği klinik doğrulaması, Pellagra olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Niasin durumu",
+            "Eksiklik lehine",
+            "Yeterli",
+            "Düşük"
+          ],
+          [
+            "Tedavi yanıtı",
+            "Replasmanla düzelme beklenir",
+            "Yanıtsızlık yok",
+            "Olumlu"
           ]
         ]
       }
@@ -6882,7 +7211,7 @@ export const cases = [
         "Beriberi",
         "Raşitizm"
       ],
-      "explanation": "Olgu paterni Niasin eksikliği - Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Niasin eksikliği - Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Pellagra: dermatitis, diarrhea, dementia.",
         "Niasin B3 ve NAD/NADP ile ilişkilidir.",
@@ -6891,13 +7220,13 @@ export const cases = [
       ],
       "nextStep": "Niasin replasmanı, sıvı-elektrolit desteği ve beslenme düzenlenmesi.",
       "answerFeedback": {
-        "diagnosisMeta": "Niasin eksikliği - Pellagra: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Niasin eksikliği - Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Niasin eksikliği - Pellagra: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Niasin eksikliği - Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Niasin eksikliği — Pellagra ile uyumlu",
           "Elektrolit bozukluğu ve malnütrisyon bulguları",
-          "Niasin/NAD ilişkili eksiklik klinik olarak düşünülür",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Niasin/NAD ilişkili eksiklik düşünülür",
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -6910,7 +7239,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Skorbüt": {
             "explanation": "Skorbüt ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
@@ -6944,7 +7273,7 @@ export const cases = [
     "id": "internal-medicine-scurvy-001",
     "branchId": "internal-medicine",
     "title": "Diş eti kanaması ve yara iyileşme gecikmesi olan hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Kollajen hidroksilasyonu, kanama, yara iyileşmesi",
     "demographics": "62 yaş erkek, yalnız yaşıyor, taze sebze-meyve almıyor",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -6971,17 +7300,29 @@ export const cases = [
         "label": "Diyet öyküsü ve mukokutanöz muayene",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Diyet öyküsü ve mukokutanöz muayene, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "C vitamini eksikliğiyle uyumlu kısıtlı diyet ve mukokutanöz kanama bulguları saptandı.",
         "findings": [
-          "Diyet öyküsü ve mukokutanöz muayene, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Diş eti kanaması ve perifoliküler kanama kollajen sentez bozukluğunu destekler.",
+          "Trombositopeni temel açıklama değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Diyet öyküsü ve mukokutanöz muayene, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Diyet",
+            "C vitamininden fakir",
+            "Dengeli",
+            "Riskli"
+          ],
+          [
+            "Diş eti",
+            "Kanamalı/şiş",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Perifoliküler kanama",
+            "Var",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -6990,17 +7331,17 @@ export const cases = [
         "label": "Plazma askorbik asit düzeyi",
         "type": "lab",
         "priority": "essential",
-        "summary": "Plazma askorbik asit düzeyi, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Plazma askorbik asit düzeyi düşük bulundu.",
         "findings": [
-          "Plazma askorbik asit düzeyi, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Eksiklik biyokimyasal olarak desteklenmiştir.",
+          "Replasman tedavisi beklenen düzelmeyi sağlar."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Plazma askorbik asit düzeyi, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Askorbik asit",
+            "Düşük",
+            "Normal",
+            "Düşük"
           ]
         ]
       },
@@ -7009,17 +7350,23 @@ export const cases = [
         "label": "Hemogram ve demir parametreleri",
         "type": "lab",
         "priority": "useful",
-        "summary": "Hemogram ve demir parametreleri, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Hemoglobin düşük; demir depolarında eşlik eden azalma izlendi.",
         "findings": [
-          "Hemogram ve demir parametreleri, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kronik kanama ve beslenme eksikliği anemiyi açıklayabilir.",
+          "Lökositoz belirgin değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Hemogram ve demir parametreleri, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Hemoglobin",
+            "10.4 g/dL",
+            "12-16 g/dL",
+            "Düşük"
+          ],
+          [
+            "Ferritin",
+            "Düşük-normal",
+            "Normal",
+            "Sınırda"
           ]
         ]
       },
@@ -7028,17 +7375,23 @@ export const cases = [
         "label": "Yara iyileşmesi ve kollajen bulguları",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Yara iyileşmesi ve kollajen bulguları, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Yara iyileşmesi gecikmiş ve kollajen zayıflığına bağlı ekimozlar izlendi.",
         "findings": [
-          "Yara iyileşmesi ve kollajen bulguları, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kollajen hidroksilasyonu bozukluğu klinik bulgu verir.",
+          "Vaskülit lehine sistemik kanıt yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Yara iyileşmesi ve kollajen bulguları, Skorbüt olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Yara iyileşmesi",
+            "Gecikmiş",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Ekimoz",
+            "Yaygın",
+            "Yok",
+            "Patolojik"
           ]
         ]
       }
@@ -7052,7 +7405,7 @@ export const cases = [
         "K vitamini eksikliği",
         "Hemofili A"
       ],
-      "explanation": "Olgu paterni Vitamin C eksikliği - Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Vitamin C eksikliği - Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "C vitamini kollajen hidroksilasyonu için gereklidir.",
         "Diş eti kanaması, perifoliküler kanama ve kötü yara iyileşmesi tipiktir.",
@@ -7061,13 +7414,13 @@ export const cases = [
       ],
       "nextStep": "Vitamin C replasmanı, beslenme desteği ve kanama/anemi değerlendirmesi.",
       "answerFeedback": {
-        "diagnosisMeta": "Vitamin C eksikliği - Skorbüt: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Vitamin C eksikliği - Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Vitamin C eksikliği - Skorbüt: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Vitamin C eksikliği - Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Vitamin C eksikliği — Skorbüt ile uyumlu",
           "Hafif anemi, CRP normal",
-          "Askorbik asit eksikliği klinik olarak düşünülür",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Askorbik asit eksikliği düşünülür",
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -7080,7 +7433,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Pellagra": {
             "explanation": "Pellagra ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
@@ -7114,7 +7467,7 @@ export const cases = [
     "id": "internal-medicine-hemochromatosis-001",
     "branchId": "internal-medicine",
     "title": "Karaciğer enzim yüksekliği, hiperpigmentasyon ve diyabet tablosu",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Demir yüklenmesi, ferritin/transferrin satürasyonu, karaciğer-pankreas-kalp tutulumları",
     "demographics": "52 yaş erkek",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -7141,17 +7494,23 @@ export const cases = [
         "label": "Ferritin ve transferrin satürasyonu",
         "type": "lab",
         "priority": "essential",
-        "summary": "Ferritin ve transferrin satürasyonu, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Ferritin ve transferrin satürasyonu belirgin yüksek bulundu.",
         "findings": [
-          "Ferritin ve transferrin satürasyonu, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Demir yüklenmesi tanıyı güçlü destekler.",
+          "İzole inflamasyon ferritin yüksekliğini tek başına açıklamaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Ferritin ve transferrin satürasyonu, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Ferritin",
+            "980 ng/mL",
+            "30-300 ng/mL",
+            "Yüksek"
+          ],
+          [
+            "Transferrin sat.",
+            "72%",
+            "20-45%",
+            "Yüksek"
           ]
         ]
       },
@@ -7160,17 +7519,23 @@ export const cases = [
         "label": "Karaciğer enzimleri ve glukoz/HbA1c",
         "type": "lab",
         "priority": "essential",
-        "summary": "Karaciğer enzimleri ve glukoz/HbA1c, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "ALT/AST yüksek, HbA1c diyabet aralığında saptandı.",
         "findings": [
-          "Karaciğer enzimleri ve glukoz/HbA1c, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Karaciğer ve pankreas tutulumu klinik tabloyu açıklar.",
+          "Bronz diyabet paterni desteklenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Karaciğer enzimleri ve glukoz/HbA1c, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "ALT/AST",
+            "96/88 U/L",
+            "<40 U/L",
+            "Yüksek"
+          ],
+          [
+            "HbA1c",
+            "8.1%",
+            "<5.7%",
+            "Yüksek"
           ]
         ]
       },
@@ -7179,17 +7544,23 @@ export const cases = [
         "label": "HFE gen analizi",
         "type": "lab",
         "priority": "useful",
-        "summary": "HFE gen analizi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "HFE gen analizi C282Y ilişkili mutasyon açısından pozitif bulundu.",
         "findings": [
-          "HFE gen analizi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Primer hemokromatozis doğrulanır.",
+          "Aile taraması gerekir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "HFE gen analizi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "HFE C282Y",
+            "Pozitif",
+            "Negatif",
+            "Patolojik"
+          ],
+          [
+            "Aile taraması",
+            "Önerildi",
+            "Risk yoksa gerekmez",
+            "Gerekli"
           ]
         ]
       },
@@ -7198,17 +7569,23 @@ export const cases = [
         "label": "Karaciğer MR/ultrason veya elastografi",
         "type": "mri",
         "priority": "situational",
-        "summary": "Karaciğer MR/ultrason veya elastografi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Karaciğer görüntülemede demir yüklenmesiyle uyumlu sinyal değişikliği izlendi.",
         "findings": [
-          "Karaciğer MR/ultrason veya elastografi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Siroz ve fibrozis açısından takip gerekir.",
+          "Kitle lehine belirgin bulgu yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Karaciğer MR/ultrason veya elastografi, Hemokromatozis olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Karaciğer MR",
+            "Demir yükü lehine",
+            "Normal sinyal",
+            "Patolojik"
+          ],
+          [
+            "Fokal kitle",
+            "Saptanmadı",
+            "Yok",
+            "Sorun yok"
           ]
         ]
       }
@@ -7222,7 +7599,7 @@ export const cases = [
         "Demir eksikliği anemisi",
         "Menkes hastalığı"
       ],
-      "explanation": "Olgu paterni Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Bronz cilt + diyabet + karaciğer tutulumu hemokromatozis klasiğidir.",
         "Ferritin ve transferrin satürasyonu tanıda önemlidir.",
@@ -7231,13 +7608,13 @@ export const cases = [
       ],
       "nextStep": "Ferritin-transferrin satürasyonu ile doğrula, HFE testi ve flebotomi planla; siroz/HCC açısından izle.",
       "answerFeedback": {
-        "diagnosisMeta": "Hemokromatozis: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Hemokromatozis: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Hemokromatozis ile uyumlu",
           "Ferritin yüksek, transferrin satürasyonu yüksek, AST/ALT yüksek",
           "HFE ilişkili demir yüklenmesi değerlendirilir",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -7250,7 +7627,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Wilson hastalığı": {
             "explanation": "Wilson hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
@@ -7284,7 +7661,7 @@ export const cases = [
     "id": "internal-medicine-familial-hypercholesterolemia-001",
     "branchId": "internal-medicine",
     "title": "Erken yaşta LDL yüksekliği ve tendon nodülleri olan hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "LDL reseptör/ApoB yolu, yüksek LDL, ateroskleroz riski",
     "demographics": "17 yaş kız",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -7311,17 +7688,29 @@ export const cases = [
         "label": "Açlık lipid paneli",
         "type": "lab",
         "priority": "essential",
-        "summary": "Açlık lipid paneli, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "LDL-kolesterol çok yüksek, trigliserid düzeyi belirgin yüksek değil.",
         "findings": [
-          "Açlık lipid paneli, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "İzole ağır LDL yüksekliği ailesel hiperkolesterolemiyi destekler.",
+          "Sekonder dislipidemi nedenleri ayrıca dışlanmalıdır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Açlık lipid paneli, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "LDL-K",
+            "285 mg/dL",
+            "<100 mg/dL",
+            "Çok yüksek"
+          ],
+          [
+            "TG",
+            "135 mg/dL",
+            "<150 mg/dL",
+            "Normal"
+          ],
+          [
+            "Total kolesterol",
+            "360 mg/dL",
+            "<200 mg/dL",
+            "Yüksek"
           ]
         ]
       },
@@ -7330,17 +7719,23 @@ export const cases = [
         "label": "Aile taraması ve erken KAH öyküsü",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Aile taraması ve erken KAH öyküsü, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Birinci derece akrabada erken koroner arter hastalığı öyküsü mevcut.",
         "findings": [
-          "Aile taraması ve erken KAH öyküsü, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Otozomal dominant kalıtım olasılığını güçlendirir.",
+          "Kaskad tarama gereklidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Aile taraması ve erken KAH öyküsü, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Aile öyküsü",
+            "Erken KAH pozitif",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "Tendon ksantom",
+            "Var",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -7349,17 +7744,17 @@ export const cases = [
         "label": "LDLR/APOB/PCSK9 genetik testi",
         "type": "lab",
         "priority": "useful",
-        "summary": "LDLR/APOB/PCSK9 genetik testi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "LDLR/APOB/PCSK9 paneli için genetik doğrulama planlandı.",
         "findings": [
-          "LDLR/APOB/PCSK9 genetik testi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tanıyı destekler ve aile taramasını yönlendirir.",
+          "Negatif sonuç klinik tanıyı tamamen dışlamaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "LDLR/APOB/PCSK9 genetik testi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Genetik panel",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       },
@@ -7368,17 +7763,23 @@ export const cases = [
         "label": "Kardiyovasküler risk değerlendirmesi",
         "type": "ecg",
         "priority": "situational",
-        "summary": "Kardiyovasküler risk değerlendirmesi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "EKG’de akut iskemi yok; uzun dönem aterosklerotik risk yüksek değerlendirildi.",
         "findings": [
-          "Kardiyovasküler risk değerlendirmesi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Acil MI bulgusu olmadan agresif lipid düşürme planlanır.",
+          "Risk değerlendirmesi tedavi yoğunluğunu belirler."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kardiyovasküler risk değerlendirmesi, Ailesel hiperkolesterolemi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "EKG",
+            "Akut iskemi yok",
+            "Normal/ST değişikliği yok",
+            "Sorun yok"
+          ],
+          [
+            "KV risk",
+            "Çok yüksek",
+            "Düşük-orta",
+            "Yüksek"
           ]
         ]
       }
@@ -7392,7 +7793,7 @@ export const cases = [
         "Abetalipoproteinemi",
         "LCAT eksikliği"
       ],
-      "explanation": "Olgu paterni Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Tendon ksantomu + yüksek LDL + erken koroner hastalık FH için tipiktir.",
         "Tip IIa: LDL yüksek, trigliserid genelde normaldir.",
@@ -7401,13 +7802,13 @@ export const cases = [
       ],
       "nextStep": "Lipid düşürücü tedavi, aile taraması ve kardiyovasküler risk yönetimi.",
       "answerFeedback": {
-        "diagnosisMeta": "Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Ailesel hiperkolesterolemi - Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile uyumlu",
           "Total kolesterol 360 mg/dL, LDL 285 mg/dL, TG normal",
           "LDL reseptör/ApoB/PCSK9 yolu değerlendirilir",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -7420,7 +7821,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Tangier hastalığı": {
             "explanation": "Tangier hastalığı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
@@ -7454,7 +7855,7 @@ export const cases = [
     "id": "internal-medicine-tangier-disease-001",
     "branchId": "internal-medicine",
     "title": "Turuncu tonsiller ve periferik nöropati ile başvuran genç hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "ABCA1 defekti, HDL düşüklüğü, kolesterol efflux bozukluğu",
     "demographics": "12 yaş erkek",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
@@ -7481,17 +7882,29 @@ export const cases = [
         "label": "Lipid paneli ve HDL düzeyi",
         "type": "lab",
         "priority": "essential",
-        "summary": "Lipid paneli ve HDL düzeyi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "HDL-kolesterol çok düşük; total kolesterol düşük-normal bulundu.",
         "findings": [
-          "Lipid paneli ve HDL düzeyi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "ABCA1 defektiyle uyumlu HDL oluşum bozukluğu vardır.",
+          "Ailesel hiperkolesterolemiden ayrılır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Lipid paneli ve HDL düzeyi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "HDL-K",
+            "8 mg/dL",
+            ">40 mg/dL",
+            "Çok düşük"
+          ],
+          [
+            "LDL-K",
+            "55 mg/dL",
+            "<100 mg/dL",
+            "Düşük-normal"
+          ],
+          [
+            "TG",
+            "210 mg/dL",
+            "<150 mg/dL",
+            "Yüksek"
           ]
         ]
       },
@@ -7500,17 +7913,23 @@ export const cases = [
         "label": "Tonsil ve lenfoid doku muayenesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Tonsil ve lenfoid doku muayenesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Tonsiller büyük ve turuncu renkte izlendi.",
         "findings": [
-          "Tonsil ve lenfoid doku muayenesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kolesterol ester birikimi tanı için çok tipiktir.",
+          "Akut tonsillit bulgusu ön planda değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Tonsil ve lenfoid doku muayenesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Tonsil rengi",
+            "Turuncu",
+            "Pembe",
+            "Patolojik"
+          ],
+          [
+            "Eksüda",
+            "Yok",
+            "Yok",
+            "Sorun yok"
           ]
         ]
       },
@@ -7519,17 +7938,23 @@ export const cases = [
         "label": "Periferik nöropati değerlendirmesi",
         "type": "neurophysiology",
         "priority": "useful",
-        "summary": "Periferik nöropati değerlendirmesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Periferik nöropatiyle uyumlu duyu azalması saptandı.",
         "findings": [
-          "Periferik nöropati değerlendirmesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tangier hastalığında nöropati görülebilir.",
+          "Motor kayıp belirgin değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Periferik nöropati değerlendirmesi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Duyu muayenesi",
+            "Distal azalma",
+            "Normal",
+            "Anormal"
+          ],
+          [
+            "EMG",
+            "Aksonal nöropati lehine",
+            "Normal",
+            "Patolojik"
           ]
         ]
       },
@@ -7538,17 +7963,17 @@ export const cases = [
         "label": "ABCA1 gen analizi",
         "type": "lab",
         "priority": "situational",
-        "summary": "ABCA1 gen analizi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "ABCA1 gen analizi için örnek gönderildi.",
         "findings": [
-          "ABCA1 gen analizi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Moleküler doğrulama ve aile danışmanlığı sağlar.",
+          "Lipid paneli tanısal şüpheyi güçlü destekler."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "ABCA1 gen analizi, Tangier hastalığı olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "ABCA1 analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       }
@@ -7562,7 +7987,7 @@ export const cases = [
         "LCAT eksikliği",
         "Abetalipoproteinemi"
       ],
-      "explanation": "Olgu paterni Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+      "explanation": "Olgu paterni Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
       "pearls": [
         "Turuncu tonsiller ve çok düşük HDL Tangier için ayırt ettiricidir.",
         "ABCA1 kolesterol efflux için gereklidir.",
@@ -7571,13 +7996,13 @@ export const cases = [
       ],
       "nextStep": "Lipid profilini doğrula, ABCA1 genetik testi ve kardiyometabolik/nörolojik takip planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Tangier hastalığı: PDF'teki klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
-        "whyCorrect": "Olgu paterni Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve PDF'te vurgulanan biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
+        "diagnosisMeta": "Tangier hastalığı: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
+        "whyCorrect": "Olgu paterni Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
         "evidenceChain": [
           "Olgu bulguları Tangier hastalığı ile uyumlu",
           "HDL <5 mg/dL, ApoA-I düşük, LDL düşük/normal",
           "ABCA1 fonksiyon bozukluğu",
-          "PDF vurgusuna göre ilgili mekanizma/sınav ipucu mevcut"
+          "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
           "Acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır.",
@@ -7590,7 +8015,7 @@ export const cases = [
           "Spesifik metabolit, enzim, lipid veya genetik doğrulama yap — Kesin tanı ve aile danışmanlığı sağlar.",
           "Uzun dönem beslenme/metabolizma veya ilgili branş takibi planla — Komplikasyonları azaltır."
         ],
-        "learningOutcome": "Komite metabolizma, vitamin, eser element ve lipoprotein sorularında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Ailesel hiperkolesterolemi": {
             "explanation": "Ailesel hiperkolesterolemi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
@@ -7624,12 +8049,12 @@ export const cases = [
     "id": "internal-medicine-acute-radiation-syndrome-001",
     "branchId": "internal-medicine",
     "title": "Korunmasız radyasyon maruziyeti sonrası bulantı ve sitopeni",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Kısa sürede yüksek doz, prodromal bulgular, kemik iliği baskılanması, cilt hasarı",
     "demographics": "34 yaş erkek, endüstriyel radyografi çalışanı",
     "setting": "Acil servis - radyasyon kazası sonrası",
     "chiefComplaint": "Maruziyetten saatler sonra bulantı, kusma, ishal ve ciltte eritem",
-    "stem": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan sonra kısa sürede yüksek radyasyona maruz kalmıştır. Dakikalar-saatler içinde bulantı, kusma, baş ağrısı ve ishal başlamıştır. Birkaç saat sonra kendini daha iyi hissetse de tam kan sayımında lenfosit düşüşü ve elde eritem görülür. PDF'te ARS için kısa sürede yüksek doz, tüm vücut/büyük vücut bölümü maruziyeti, prodromal gastrointestinal bulgular ve kemik iliği hasarı vurgulanmıştır.",
+    "stem": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan sonra kısa sürede yüksek radyasyona maruz kalmıştır. Dakikalar-saatler içinde bulantı, kusma, baş ağrısı ve ishal başlamıştır. Birkaç saat sonra kendini daha iyi hissetse de tam kan sayımında lenfosit düşüşü ve elde eritem görülür. Kısa sürede yüksek doz maruziyet, prodromal gastrointestinal bulgular ve kemik iliği baskılanması akut radyasyon sendromunu düşündürür.",
     "vitals": {
       "TA": "96/60 mmHg",
       "Nabız": "118/dk",
@@ -7651,17 +8076,29 @@ export const cases = [
         "label": "Tam kan sayımı seri izlemi",
         "type": "lab",
         "priority": "essential",
-        "summary": "Tam kan sayımı seri izlemi, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Seri tam kan sayımında erken lenfopeni ve hafif trombosit düşüklüğü saptandı.",
         "findings": [
-          "Tam kan sayımı seri izlemi, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Hematopoietik etkilenme akut radyasyon sendromunu destekler.",
+          "Lenfosit düşüş hızı doz tahmininde önemlidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Tam kan sayımı seri izlemi, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Lenfosit",
+            "650/µL",
+            "1000-4800/µL",
+            "Düşük"
+          ],
+          [
+            "Trombosit",
+            "130.000/µL",
+            "150.000-450.000/µL",
+            "Düşük"
+          ],
+          [
+            "Lökosit",
+            "3.200/µL",
+            "4.000-10.000/µL",
+            "Düşük"
           ]
         ]
       },
@@ -7670,17 +8107,29 @@ export const cases = [
         "label": "Maruziyet zamanı ve doz tahmini",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Maruziyet zamanı ve doz tahmini, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Maruziyet dakikalar-saatler içinde gelişen prodromal yakınmalarla uyumlu bulundu.",
         "findings": [
-          "Maruziyet zamanı ve doz tahmini, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tüm vücut veya geniş alan maruziyeti olasılığı yüksektir.",
+          "Dozimetri kayıtları doğrulama için istenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Maruziyet zamanı ve doz tahmini, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Semptom başlangıcı",
+            "Saatler içinde",
+            "Gecikmiş beklenmez",
+            "Yüksek risk"
+          ],
+          [
+            "Maruziyet alanı",
+            "Geniş vücut bölümü",
+            "Lokal sınırlı",
+            "Riskli"
+          ],
+          [
+            "Dozimetri",
+            "Beklemede",
+            "Kayıt olmalı",
+            "Eksik"
           ]
         ]
       },
@@ -7689,17 +8138,29 @@ export const cases = [
         "label": "Elektrolit, böbrek ve karaciğer paneli",
         "type": "lab",
         "priority": "useful",
-        "summary": "Elektrolit, böbrek ve karaciğer paneli, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Elektrolitlerde hafif bozulma ve dehidratasyon bulguları saptandı; böbrek fonksiyonu korunmuş.",
         "findings": [
-          "Elektrolit, böbrek ve karaciğer paneli, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kusma-ishal kaynaklı sıvı kaybı mevcuttur.",
+          "Şu an belirgin renal yetmezlik izlenmemiştir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Elektrolit, böbrek ve karaciğer paneli, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Sodyum",
+            "134 mmol/L",
+            "135-145 mmol/L",
+            "Hafif düşük"
+          ],
+          [
+            "Kreatinin",
+            "0.9 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Normal"
+          ],
+          [
+            "ALT/AST",
+            "Hafif yüksek",
+            "<40 U/L",
+            "Hafif yüksek"
           ]
         ]
       },
@@ -7708,17 +8169,23 @@ export const cases = [
         "label": "Kontaminasyon ölçümü ve dekontaminasyon taraması",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Kontaminasyon ölçümü ve dekontaminasyon taraması, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Dış kontaminasyon saptanmadı; elde radyasyon eritemi izlendi.",
         "findings": [
-          "Kontaminasyon ölçümü ve dekontaminasyon taraması, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Dekontaminasyon gereksinimi dış kontaminasyon sonucuna göre belirlenir.",
+          "Cilt bulgusu lokal doz etkisini destekler."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kontaminasyon ölçümü ve dekontaminasyon taraması, Akut radyasyon sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Dış kontaminasyon",
+            "Negatif",
+            "Negatif",
+            "Sorun yok"
+          ],
+          [
+            "Deri bulgusu",
+            "Elde eritem",
+            "Yok",
+            "Patolojik"
           ]
         ]
       }
@@ -7793,12 +8260,12 @@ export const cases = [
     "id": "internal-medicine-oxidative-stress-injury-001",
     "branchId": "internal-medicine",
     "title": "Kimyasal maruziyet sonrası oksidatif hasar bulguları",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "ROS, lipid peroksidasyonu, protein/DNA hasarı, antioksidan savunma",
     "demographics": "55 yaş erkek, yoğun sigara öyküsü",
     "setting": "Dahiliye polikliniği - kronik inflamasyon ve oksidatif stres değerlendirmesi",
     "chiefComplaint": "Halsizlik, efor kapasitesinde azalma ve inflamasyon belirteçlerinde artış",
-    "stem": "Sigara ve kronik inflamasyon öyküsü olan hastada oksidatif stres belirteçleri araştırılır. Lipid peroksidasyon ürünleri artmış, antioksidan kapasite azalmıştır. Vaka, PDF'te serbest radikallerin eşleşmemiş elektron taşıması, ROS türleri, lipid/protein/DNA hasarı ve antioksidan sistemler başlıklarını klinik soru formatına dönüştürür.",
+    "stem": "Sigara ve kronik inflamasyon öyküsü olan hastada halsizlik ve doku hasarı bulguları sonrası oksidatif stres belirteçleri incelenir. Lipid peroksidasyon ürünleri artmış, antioksidan kapasite azalmıştır. Bulgular ROS aracılı hücresel hasarla uyumludur.",
     "vitals": {
       "TA": "132/82 mmHg",
       "Nabız": "88/dk",
@@ -7819,17 +8286,23 @@ export const cases = [
         "label": "Maruziyet ve doku hasarı öyküsü",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Maruziyet ve doku hasarı öyküsü, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Oksidan kimyasal maruziyet sonrası halsizlik ve doku hasarıyla uyumlu öykü alındı.",
         "findings": [
-          "Maruziyet ve doku hasarı öyküsü, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Maruziyet zamanı semptom başlangıcıyla uyumludur.",
+          "Travmatik mekanizma ön planda değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Maruziyet ve doku hasarı öyküsü, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Maruziyet",
+            "Oksidan kimyasal",
+            "Yok",
+            "Riskli"
+          ],
+          [
+            "Semptom başlangıcı",
+            "Kısa süre içinde",
+            "Yok",
+            "Uyumlu"
           ]
         ]
       },
@@ -7838,17 +8311,29 @@ export const cases = [
         "label": "Hemoliz ve hücre hasarı belirteçleri",
         "type": "lab",
         "priority": "essential",
-        "summary": "Hemoliz ve hücre hasarı belirteçleri, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Hemoliz ve hücresel hasar belirteçlerinde artış izlendi.",
         "findings": [
-          "Hemoliz ve hücre hasarı belirteçleri, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Oksidatif membran hasarı eritrositleri etkileyebilir.",
+          "Doku hasarı biyokimyasal olarak desteklenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Hemoliz ve hücre hasarı belirteçleri, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "LDH",
+            "Yüksek",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "İndirekt bilirubin",
+            "Yüksek",
+            "Normal",
+            "Yüksek"
+          ],
+          [
+            "Haptoglobin",
+            "Düşük",
+            "Normal",
+            "Düşük"
           ]
         ]
       },
@@ -7857,17 +8342,23 @@ export const cases = [
         "label": "Antioksidan sistem değerlendirmesi",
         "type": "lab",
         "priority": "useful",
-        "summary": "Antioksidan sistem değerlendirmesi, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Antioksidan kapasite düşük, oksidatif stres belirteçleri yüksek bulundu.",
         "findings": [
-          "Antioksidan sistem değerlendirmesi, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Glutatyon sistemi yük altında kalmıştır.",
+          "Serbest radikal hasarı mekanizmayı destekler."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Antioksidan sistem değerlendirmesi, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "GSH/GSSG oranı",
+            "Düşük",
+            "Normal",
+            "Düşük"
+          ],
+          [
+            "MDA",
+            "Yüksek",
+            "Normal",
+            "Yüksek"
           ]
         ]
       },
@@ -7876,17 +8367,23 @@ export const cases = [
         "label": "Temel biyokimya ve organ fonksiyonları",
         "type": "lab",
         "priority": "situational",
-        "summary": "Temel biyokimya ve organ fonksiyonları, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Böbrek ve karaciğer fonksiyonlarında ağır yetmezlik saptanmadı.",
         "findings": [
-          "Temel biyokimya ve organ fonksiyonları, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Organ fonksiyonları izlemde tutulmalıdır.",
+          "Şu anda yoğun organ destek endikasyonu yoktur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Temel biyokimya ve organ fonksiyonları, Oksidatif stres ilişkili hücresel hasar olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Kreatinin",
+            "Normal",
+            "0.6-1.2 mg/dL",
+            "Sorun yok"
+          ],
+          [
+            "ALT/AST",
+            "Hafif yüksek",
+            "<40 U/L",
+            "Hafif yüksek"
           ]
         ]
       }
@@ -7960,12 +8457,12 @@ export const cases = [
     "id": "cardiovascular-coagulative-necrosis-mi-001",
     "branchId": "cardiovascular",
     "title": "Baskı tarzında göğüs ağrısı sonrası beklenen doku hasarı paterni",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "İskemik nekroz, miyokard infarktüsü, morfolojik nekroz tipi",
     "demographics": "55 yaş erkek",
     "setting": "Acil servis - göğüs ağrısı",
     "chiefComplaint": "1 saattir süren baskı tarzı göğüs ağrısı",
-    "stem": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. PDF'te çıkmış soru olarak akut miyokard infarktüsünde kalp kasında gelişmesi beklenen nekroz tipinin koagülasyon nekrozu olduğu vurgulanmıştır.",
+    "stem": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz paternini düşündüren klasik bir klinik bağlam oluşturur.",
     "vitals": {
       "TA": "138/86 mmHg",
       "Nabız": "102/dk",
@@ -7986,17 +8483,23 @@ export const cases = [
         "label": "12 derivasyon EKG",
         "type": "ecg",
         "priority": "essential",
-        "summary": "12 derivasyon EKG, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "EKG’de ardışık derivasyonlarda ST elevasyonu izlendi.",
         "findings": [
-          "12 derivasyon EKG, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Akut transmural miyokard hasarı paternini destekler.",
+          "Doku düzeyinde koagülasyon nekrozu beklenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "12 derivasyon EKG, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "ST segment",
+            "Elevasyon",
+            "İzoelektrik",
+            "Patolojik"
+          ],
+          [
+            "Resiprokal değişiklik",
+            "Var",
+            "Yok",
+            "Destekleyici"
           ]
         ]
       },
@@ -8005,17 +8508,23 @@ export const cases = [
         "label": "Troponin ve kardiyak biyobelirteçler",
         "type": "lab",
         "priority": "essential",
-        "summary": "Troponin ve kardiyak biyobelirteçler, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Troponin belirgin yüksek ve yükselme eğiliminde bulundu.",
         "findings": [
-          "Troponin ve kardiyak biyobelirteçler, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Miyokard nekrozu biyobelirteçle desteklenir.",
+          "İskemik doku hasarı güçlüdür."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Troponin ve kardiyak biyobelirteçler, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Troponin I",
+            "6.8 ng/mL",
+            "<0.04 ng/mL",
+            "Yüksek"
+          ],
+          [
+            "CK-MB",
+            "Yüksek",
+            "Normal",
+            "Yüksek"
           ]
         ]
       },
@@ -8024,17 +8533,23 @@ export const cases = [
         "label": "Koroner anjiyografi",
         "type": "ct",
         "priority": "useful",
-        "summary": "Koroner anjiyografi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Koroner değerlendirmede LAD düzeyinde kritik tıkanıklık saptandı.",
         "findings": [
-          "Koroner anjiyografi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Nedensel koroner olay gösterilir.",
+          "Reperfüzyon aciliyeti vardır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Koroner anjiyografi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Koroner akım",
+            "LAD kritik tıkanıklık",
+            "Açık damar",
+            "Patolojik"
+          ],
+          [
+            "TIMI akım",
+            "Azalmış",
+            "Normal",
+            "Anormal"
           ]
         ]
       },
@@ -8043,17 +8558,23 @@ export const cases = [
         "label": "Histoloji/nekroz tipi",
         "type": "pathology",
         "priority": "situational",
-        "summary": "Histoloji/nekroz tipi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Histolojik patern koagülasyon nekrozu ile uyumlu olarak yorumlandı.",
         "findings": [
-          "Histoloji/nekroz tipi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Miyokard enfarktüsünde klasik nekroz tipi budur.",
+          "Likefaksiyon nekrozu beyin/apseyle daha ilişkilidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Histoloji/nekroz tipi, Koagülasyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Nekroz tipi",
+            "Koagülasyon",
+            "Canlı doku",
+            "Patolojik"
+          ],
+          [
+            "Hücre konturu",
+            "Korunmuş gölgeler",
+            "Normal",
+            "Uyumlu"
           ]
         ]
       }
@@ -8127,7 +8648,7 @@ export const cases = [
     "id": "neurology-liquefactive-necrosis-brain-001",
     "branchId": "neurology",
     "title": "Baş ağrısı ve ateş sonrası kaviter beyin lezyonu gelişen hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Beyin dokusunda enzimatik sindirim ve sıvılaşma",
     "demographics": "42 yaş erkek",
     "setting": "Nöroloji servisi",
@@ -8143,7 +8664,7 @@ export const cases = [
     "exam": [
       "Klinik tanıyı destekleyen odak bulgular mevcut",
       "Sistemik etkilenme bulguları değerlendirilir",
-      "PDF'teki patoloji mekanizmasıyla uyumlu bulgu paterni",
+      "klinik patoloji mekanizmasıyla uyumlu bulgu paterni",
       "Alternatif tanıyı düşündürecek baskın bulgu yok",
       "Primer travma bulgusu yok"
     ],
@@ -8153,17 +8674,23 @@ export const cases = [
         "label": "Beyin BT/MR",
         "type": "mri",
         "priority": "essential",
-        "summary": "Beyin BT/MR, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Beyin görüntülemede kaviter, santrali sıvılaşmış lezyon izlendi.",
         "findings": [
-          "Beyin BT/MR, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Beyin dokusunda enzimatik sindirim ve likefaksiyon paterni desteklenir.",
+          "Solid tümör görünümü ön planda değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Beyin BT/MR, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "MR bulgusu",
+            "Sıvılaşmış kaviter lezyon",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Ödem",
+            "Çevresel ödem var",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -8172,17 +8699,23 @@ export const cases = [
         "label": "Hemogram ve inflamasyon belirteçleri",
         "type": "lab",
         "priority": "essential",
-        "summary": "Hemogram ve inflamasyon belirteçleri, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Lökositoz ve CRP yüksekliği saptandı.",
         "findings": [
-          "Hemogram ve inflamasyon belirteçleri, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Enfeksiyöz süreç ve apse olasılığını destekler.",
+          "Steril dejeneratif süreç daha geri plandadır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Hemogram ve inflamasyon belirteçleri, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Lökosit",
+            "15.800/µL",
+            "4.000-10.000/µL",
+            "Yüksek"
+          ],
+          [
+            "CRP",
+            "96 mg/L",
+            "<5 mg/L",
+            "Yüksek"
           ]
         ]
       },
@@ -8191,17 +8724,23 @@ export const cases = [
         "label": "Aspirat kültürü",
         "type": "culture",
         "priority": "useful",
-        "summary": "Aspirat kültürü, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Aspirat kültüründe bakteriyel etken üredi.",
         "findings": [
-          "Aspirat kültürü, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Apse tanısı mikrobiyolojik olarak desteklenir.",
+          "Antibiyotik hedefe göre düzenlenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Aspirat kültürü, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Kültür",
+            "Bakteriyel üreme var",
+            "Üreme yok",
+            "Pozitif"
+          ],
+          [
+            "Gram boyama",
+            "Lökosit/bakteri var",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -8210,17 +8749,23 @@ export const cases = [
         "label": "Patoloji/nekroz değerlendirmesi",
         "type": "pathology",
         "priority": "situational",
-        "summary": "Patoloji/nekroz değerlendirmesi, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Patoloji örneğinde likefaksiyon nekrozu ve yoğun nötrofilik inflamasyon izlendi.",
         "findings": [
-          "Patoloji/nekroz değerlendirmesi, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Beyin apsesiyle uyumlu nekroz tipi gösterilir.",
+          "Kazeifiye granülom paterni değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Patoloji/nekroz değerlendirmesi, Likefaksiyon nekrozu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Nekroz tipi",
+            "Likefaksiyon",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "İnflamasyon",
+            "Nötrofil yoğun",
+            "Yok",
+            "Akut"
           ]
         ]
       }
@@ -8248,7 +8793,7 @@ export const cases = [
           "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir",
           "Halka tarzı kontrastlanan apse",
           "Lökositoz ve CRP yüksek",
-          "PDF'teki mekanizma ile uyumlu ayırıcı tanı paterni"
+          "klinik mekanizma ile uyumlu ayırıcı tanı paterni"
         ],
         "pearls": [
           "Beyin infarktı ve apse likefaksiyon nekrozuyla ilişkilidir.",
@@ -8294,12 +8839,12 @@ export const cases = [
     "id": "infectious-diseases-caseating-granuloma-tb-001",
     "branchId": "infectious-diseases",
     "title": "Kronik öksürük, gece terlemesi ve granülomatöz akciğer bulguları",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Kronik inflamasyon, epiteloid histiyosit, dev hücre, TB dışlama",
     "demographics": "31 yaş kadın",
     "setting": "Göğüs hastalıkları polikliniği",
     "chiefComplaint": "Gece terlemesi, kilo kaybı ve kronik öksürük",
-    "stem": "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır. Biyopside epiteloid histiyositler, dev hücreler ve santral kazeifikasyon izlenir. PDF'te granülomatöz inflamasyonda ülkemizde tüberkülozun mutlaka dışlanması gerektiği vurgulanır.",
+    "stem": "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır. Biyopside epiteloid histiyositler, dev hücreler ve santral kazeifikasyon izlenir. Üst lob kavitesi ve kazeifikasyon birlikte tüberküloz ilişkili granülomatöz inflamasyonu güçlü düşündürür.",
     "vitals": {
       "TA": "Klinik senaryoya uygun",
       "Nabız": "Taşikardik olabilir",
@@ -8310,7 +8855,7 @@ export const cases = [
     "exam": [
       "Klinik tanıyı destekleyen odak bulgular mevcut",
       "Sistemik etkilenme bulguları değerlendirilir",
-      "PDF'teki patoloji mekanizmasıyla uyumlu bulgu paterni",
+      "klinik patoloji mekanizmasıyla uyumlu bulgu paterni",
       "Alternatif tanıyı düşündürecek baskın bulgu yok",
       "Primer travma bulgusu yok"
     ],
@@ -8320,17 +8865,23 @@ export const cases = [
         "label": "Akciğer grafisi veya toraks BT",
         "type": "ct",
         "priority": "essential",
-        "summary": "Akciğer grafisi veya toraks BT, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Akciğer görüntülemede üst lob ağırlıklı kaviter lezyonlar izlendi.",
         "findings": [
-          "Akciğer grafisi veya toraks BT, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Reaktivasyon tüberkülozu paternini destekler.",
+          "Basit viral bronşit görünümü değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Akciğer grafisi veya toraks BT, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Akciğer grafisi/BT",
+            "Üst lob kavite",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Hiler bulgu",
+            "Uyumlu değişiklik",
+            "Yok",
+            "Destekleyici"
           ]
         ]
       },
@@ -8339,17 +8890,29 @@ export const cases = [
         "label": "ARB boyama, TB PCR ve kültür",
         "type": "culture",
         "priority": "essential",
-        "summary": "ARB boyama, TB PCR ve kültür, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "ARB boyama ve TB PCR pozitif; kültür sonucu bekleniyor.",
         "findings": [
-          "ARB boyama, TB PCR ve kültür, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Mikobakteriyel enfeksiyon güçlü şekilde desteklenir.",
+          "Kültür duyarlılık için önemlidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "ARB boyama, TB PCR ve kültür, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "ARB boyama",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "TB PCR",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "Kültür",
+            "Beklemede",
+            "Üreme yok",
+            "Beklemede"
           ]
         ]
       },
@@ -8358,17 +8921,23 @@ export const cases = [
         "label": "Histopatoloji",
         "type": "pathology",
         "priority": "useful",
-        "summary": "Histopatoloji, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Biyopside kazeifiye granülomatöz inflamasyon izlendi.",
         "findings": [
-          "Histopatoloji, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tüberküloz için klasik patoloji paternidir.",
+          "Sarkoidozda genellikle non-kazeifiye granülom beklenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Histopatoloji, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Granülom",
+            "Kazeifiye",
+            "Yok/non-kazeifiye",
+            "Patolojik"
+          ],
+          [
+            "Dev hücre",
+            "Var",
+            "Yok",
+            "Destekleyici"
           ]
         ]
       },
@@ -8377,17 +8946,23 @@ export const cases = [
         "label": "IGRA/PPD ve temas taraması",
         "type": "lab",
         "priority": "situational",
-        "summary": "IGRA/PPD ve temas taraması, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "IGRA pozitif; temaslı taraması başlatıldı.",
         "findings": [
-          "IGRA/PPD ve temas taraması, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Bağışıklık yanıtı enfeksiyonla uyumludur.",
+          "Halk sağlığı açısından temaslı izlemi gerekir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "IGRA/PPD ve temas taraması, Tüberkülozla uyumlu kazeifiye granülom olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "IGRA",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "Temaslı taraması",
+            "Başlatıldı",
+            "Gerektiğinde",
+            "Gerekli"
           ]
         ]
       }
@@ -8415,7 +8990,7 @@ export const cases = [
           "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır",
           "Apikal infiltrasyon/kavite",
           "ARB pozitif olabilir",
-          "PDF'teki mekanizma ile uyumlu ayırıcı tanı paterni"
+          "klinik mekanizma ile uyumlu ayırıcı tanı paterni"
         ],
         "pearls": [
           "TB kazeifiye granülomla klasik ilişkilidir.",
@@ -8461,7 +9036,7 @@ export const cases = [
     "id": "pulmonology-pulmonary-embolism-dvt-001",
     "branchId": "pulmonology",
     "title": "Bacak şişliği sonrası ani dispne ve hipoksemi gelişen hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Tromboz, emboli, infarkt ve şok riski",
     "demographics": "66 yaş kadın, kalça cerrahisi sonrası",
     "setting": "Acil servis",
@@ -8477,7 +9052,7 @@ export const cases = [
     "exam": [
       "Klinik tanıyı destekleyen odak bulgular mevcut",
       "Sistemik etkilenme bulguları değerlendirilir",
-      "PDF'teki patoloji mekanizmasıyla uyumlu bulgu paterni",
+      "klinik patoloji mekanizmasıyla uyumlu bulgu paterni",
       "Alternatif tanıyı düşündürecek baskın bulgu yok",
       "Primer travma bulgusu yok"
     ],
@@ -8487,17 +9062,29 @@ export const cases = [
         "label": "D-dimer ve arter kan gazı",
         "type": "lab",
         "priority": "essential",
-        "summary": "D-dimer ve arter kan gazı, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "D-dimer yüksek, kan gazında hipoksemi ve respiratuvar alkaloz izlendi.",
         "findings": [
-          "D-dimer ve arter kan gazı, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tromboemboli olasılığını destekler.",
+          "D-dimer tek başına kesin tanı değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "D-dimer ve arter kan gazı, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "D-dimer",
+            "3200 ng/mL",
+            "<500 ng/mL",
+            "Yüksek"
+          ],
+          [
+            "PaO2",
+            "58 mmHg",
+            "80-100 mmHg",
+            "Düşük"
+          ],
+          [
+            "pCO2",
+            "30 mmHg",
+            "35-45 mmHg",
+            "Düşük"
           ]
         ]
       },
@@ -8506,17 +9093,23 @@ export const cases = [
         "label": "BT pulmoner anjiyografi",
         "type": "ct",
         "priority": "essential",
-        "summary": "BT pulmoner anjiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "BT pulmoner anjiyografide segmenter pulmoner arter dolum defekti saptandı.",
         "findings": [
-          "BT pulmoner anjiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Pulmoner emboli tanısı görüntüleme ile doğrulanır.",
+          "Pnömoni veya pnömotoraks ana bulgu değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "BT pulmoner anjiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "BTPA",
+            "Dolum defekti var",
+            "Yok",
+            "Pozitif"
+          ],
+          [
+            "Emboli düzeyi",
+            "Segmenter",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -8525,17 +9118,23 @@ export const cases = [
         "label": "Alt ekstremite venöz Doppler",
         "type": "ultrasound",
         "priority": "useful",
-        "summary": "Alt ekstremite venöz Doppler, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Alt ekstremite Doppler’de popliteal vende trombüs izlendi.",
         "findings": [
-          "Alt ekstremite venöz Doppler, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "DVT kaynağı gösterilmiştir.",
+          "Bilateral yaygın ödemden farklı lokal venöz patoloji vardır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Alt ekstremite venöz Doppler, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Doppler",
+            "Popliteal DVT",
+            "Trombüs yok",
+            "Pozitif"
+          ],
+          [
+            "Kompresyon",
+            "Komprese olmuyor",
+            "Komprese olur",
+            "Anormal"
           ]
         ]
       },
@@ -8544,17 +9143,23 @@ export const cases = [
         "label": "EKG ve ekokardiyografi",
         "type": "ecg",
         "priority": "situational",
-        "summary": "EKG ve ekokardiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "EKG’de sinüs taşikardisi, ekokardiyografide hafif sağ kalp yüklenmesi izlendi.",
         "findings": [
-          "EKG ve ekokardiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Hemodinamik risk değerlendirmesine katkı sağlar.",
+          "Masif emboli bulgusu belirgin değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "EKG ve ekokardiyografi, Pulmoner tromboemboli olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "EKG",
+            "Sinüs taşikardisi",
+            "Normal ritim",
+            "Anormal"
+          ],
+          [
+            "EKO",
+            "Hafif sağ yüklenme",
+            "Normal",
+            "Hafif patoloji"
           ]
         ]
       }
@@ -8582,7 +9187,7 @@ export const cases = [
           "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve plöritik ağrı ile gelir",
           "Yüksek",
           "Sağ pulmoner arter dalında dolum defekti",
-          "PDF'teki mekanizma ile uyumlu ayırıcı tanı paterni"
+          "klinik mekanizma ile uyumlu ayırıcı tanı paterni"
         ],
         "pearls": [
           "Cerrahi/immobilizasyon sonrası ani dispne PE düşündürür.",
@@ -8628,7 +9233,7 @@ export const cases = [
     "id": "infectious-diseases-septic-shock-001",
     "branchId": "infectious-diseases",
     "title": "Ateş, hipotansiyon ve laktat yüksekliği ile acile getirilen hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Doku hipoperfüzyonu, laktat, inflamatuvar vazodilatasyon",
     "demographics": "70 yaş erkek",
     "setting": "Acil servis",
@@ -8644,7 +9249,7 @@ export const cases = [
     "exam": [
       "Klinik tanıyı destekleyen odak bulgular mevcut",
       "Sistemik etkilenme bulguları değerlendirilir",
-      "PDF'teki patoloji mekanizmasıyla uyumlu bulgu paterni",
+      "klinik patoloji mekanizmasıyla uyumlu bulgu paterni",
       "Alternatif tanıyı düşündürecek baskın bulgu yok",
       "Primer travma bulgusu yok"
     ],
@@ -8654,17 +9259,29 @@ export const cases = [
         "label": "Laktat ve arter kan gazı",
         "type": "lab",
         "priority": "essential",
-        "summary": "Laktat ve arter kan gazı, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Laktat yüksek ve metabolik asidozla uyumlu kan gazı saptandı.",
         "findings": [
-          "Laktat ve arter kan gazı, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Doku hipoperfüzyonu vardır.",
+          "Sıvı resüsitasyonu ve erken antibiyotik geciktirilmemelidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Laktat ve arter kan gazı, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Laktat",
+            "5.1 mmol/L",
+            "<2 mmol/L",
+            "Yüksek"
+          ],
+          [
+            "pH",
+            "7.28",
+            "7.35-7.45",
+            "Düşük"
+          ],
+          [
+            "Bikarbonat",
+            "16 mmol/L",
+            "22-28 mmol/L",
+            "Düşük"
           ]
         ]
       },
@@ -8673,17 +9290,23 @@ export const cases = [
         "label": "Kan kültürü",
         "type": "culture",
         "priority": "essential",
-        "summary": "Kan kültürü, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İki set kan kültürü alındı; sonuç bekleniyor.",
         "findings": [
-          "Kan kültürü, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Antibiyotik öncesi kültür hedefe yönelik tedavi sağlar.",
+          "Tedavi kültür sonucunu beklememelidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kan kültürü, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Kan kültürü",
+            "Alındı",
+            "Alınmalı",
+            "Beklemede"
+          ],
+          [
+            "Üreme",
+            "Beklemede",
+            "Üreme yok",
+            "Beklemede"
           ]
         ]
       },
@@ -8692,17 +9315,29 @@ export const cases = [
         "label": "Hemogram, CRP ve prokalsitonin",
         "type": "lab",
         "priority": "useful",
-        "summary": "Hemogram, CRP ve prokalsitonin, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Lökositoz, CRP ve prokalsitonin yüksekliği izlendi.",
         "findings": [
-          "Hemogram, CRP ve prokalsitonin, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Bakteriyel enfeksiyon ve sistemik inflamasyon desteklenir.",
+          "Tek başına odak göstermez."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Hemogram, CRP ve prokalsitonin, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Lökosit",
+            "19.500/µL",
+            "4.000-10.000/µL",
+            "Yüksek"
+          ],
+          [
+            "CRP",
+            "180 mg/L",
+            "<5 mg/L",
+            "Yüksek"
+          ],
+          [
+            "Prokalsitonin",
+            "18 ng/mL",
+            "<0.5 ng/mL",
+            "Yüksek"
           ]
         ]
       },
@@ -8711,17 +9346,23 @@ export const cases = [
         "label": "Odak görüntüleme",
         "type": "xray",
         "priority": "situational",
-        "summary": "Odak görüntüleme, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Akciğer grafisinde sağ alt zon infiltrasyonu izlendi.",
         "findings": [
-          "Odak görüntüleme, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Olası enfeksiyon odağı pnömoni olarak değerlendirildi.",
+          "Odak kontrolü ve antibiyotik seçimi buna göre planlanır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Odak görüntüleme, Septik şok olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Akciğer grafisi",
+            "Sağ alt zon infiltrasyonu",
+            "Doğal",
+            "Patolojik"
+          ],
+          [
+            "Plevral sıvı",
+            "Belirgin değil",
+            "Yok",
+            "Sorun yok"
           ]
         ]
       }
@@ -8749,7 +9390,7 @@ export const cases = [
           "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir",
           "4.2 mmol/L",
           "Alındı",
-          "PDF'teki mekanizma ile uyumlu ayırıcı tanı paterni"
+          "klinik mekanizma ile uyumlu ayırıcı tanı paterni"
         ],
         "pearls": [
           "Şok doku hipoperfüzyonudur; laktat önemlidir.",
@@ -8795,12 +9436,12 @@ export const cases = [
     "id": "internal-medicine-systemic-lupus-erythematosus-001",
     "branchId": "internal-medicine",
     "title": "Malar döküntü, proteinüri ve sistemik yakınmaları olan genç kadın",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Otoantikorlar, immün kompleks, multisistem tutulum",
     "demographics": "24 yaş kadın",
     "setting": "Klinik/adli değerlendirme ortamı",
     "chiefComplaint": "Deri döküntüsü, fotosensitivite, eklem ağrısı ve köpüklü idrar",
-    "stem": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır. Anti-dsDNA ve ANA pozitifliği immün kompleks aracılı böbrek tutulumunu destekler. PDF'te SLE'nin multisistem otoimmün hastalık olduğu; deri, böbrek ve kan damarlarının önemli tutulum alanları olduğu vurgulanır.",
+    "stem": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır. Anti-dsDNA ve ANA pozitifliği immün kompleks aracılı böbrek tutulumunu destekler. Multisistem tutulum ve böbrek bulgusu sistemik otoimmün hastalık lehinedir.",
     "vitals": {
       "TA": "Klinik senaryoya göre",
       "Nabız": "Klinik senaryoya göre",
@@ -8811,7 +9452,7 @@ export const cases = [
     "exam": [
       "Tanıya götüren ana bulgular mevcut",
       "Organ/sistem tutulumları hedefli değerlendirilir",
-      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "sınav ipucu klinik paterne gömülmüştür",
       "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
       "Klinik stabilite ayrıca değerlendirilir"
     ],
@@ -8821,17 +9462,29 @@ export const cases = [
         "label": "ANA, anti-dsDNA ve kompleman düzeyleri",
         "type": "lab",
         "priority": "essential",
-        "summary": "ANA, anti-dsDNA ve kompleman düzeyleri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "ANA ve anti-dsDNA pozitif, kompleman düzeyleri düşük bulundu.",
         "findings": [
-          "ANA, anti-dsDNA ve kompleman düzeyleri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "İmmün kompleks aktivitesi ve aktif SLE desteklenir.",
+          "Böbrek tutulumu açısından risk yüksektir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "ANA, anti-dsDNA ve kompleman düzeyleri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "ANA",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "Anti-dsDNA",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "C3/C4",
+            "Düşük",
+            "Normal",
+            "Düşük"
           ]
         ]
       },
@@ -8840,17 +9493,29 @@ export const cases = [
         "label": "Tam idrar analizi ve proteinüri",
         "type": "urine",
         "priority": "essential",
-        "summary": "Tam idrar analizi ve proteinüri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İdrarda proteinüri ve mikroskopik hematüri saptandı.",
         "findings": [
-          "Tam idrar analizi ve proteinüri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Lupus nefriti olasılığını güçlendirir.",
+          "Basit sistit için beklenen patern değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Tam idrar analizi ve proteinüri, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Proteinüri",
+            "1.8 g/gün",
+            "<150 mg/gün",
+            "Yüksek"
+          ],
+          [
+            "Eritrosit",
+            "Mikroskopik hematüri",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "Silendir",
+            "Eritrosit silendiri olabilir",
+            "Yok",
+            "Destekleyici"
           ]
         ]
       },
@@ -8859,17 +9524,23 @@ export const cases = [
         "label": "Hemogram",
         "type": "lab",
         "priority": "useful",
-        "summary": "Hemogram, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Hemogramda lenfopeni ve hafif anemi izlendi.",
         "findings": [
-          "Hemogram, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Sistemik otoimmün aktiviteyle uyumludur.",
+          "İzole demir eksikliği tablonun tamamını açıklamaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Hemogram, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Lenfosit",
+            "800/µL",
+            "1000-4800/µL",
+            "Düşük"
+          ],
+          [
+            "Hemoglobin",
+            "10.8 g/dL",
+            "12-16 g/dL",
+            "Düşük"
           ]
         ]
       },
@@ -8878,17 +9549,23 @@ export const cases = [
         "label": "Böbrek biyopsisi",
         "type": "pathology",
         "priority": "situational",
-        "summary": "Böbrek biyopsisi, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Böbrek biyopsisi aktif immün kompleks glomerülonefriti göstermek için planlandı.",
         "findings": [
-          "Böbrek biyopsisi, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tedavi yoğunluğu biyopsi sınıfına göre belirlenir.",
+          "Her proteinüri olgusunda ilk basamak değildir; tutulum şiddetiyle seçilir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Böbrek biyopsisi, Sistemik lupus eritematozus olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Biyopsi",
+            "Planlandı",
+            "Endikasyona göre",
+            "Beklemede"
+          ],
+          [
+            "İmmün kompleks",
+            "Beklenen bulgu",
+            "Yok",
+            "Şüpheli"
           ]
         ]
       }
@@ -8928,7 +9605,7 @@ export const cases = [
           "Anti-dsDNA ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "learningOutcome": "Bu vaka klinik yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
         "differentials": {
           "Sjögren sendromu": {
             "explanation": "Sjögren sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
@@ -8962,12 +9639,12 @@ export const cases = [
     "id": "internal-medicine-sjogren-syndrome-001",
     "branchId": "internal-medicine",
     "title": "Göz-ağız kuruluğu ve parotis büyümesi ile başvuru",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Ekzokrin bez otoimmünitesi, sicca semptomları",
     "demographics": "46 yaş kadın",
     "setting": "Klinik/adli değerlendirme ortamı",
     "chiefComplaint": "Göz kuruluğu, ağız kuruluğu ve tekrarlayan diş çürükleri",
-    "stem": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler. Schirmer testi azalmış, SSA/SSB pozitif bulunur. PDF'te göz ve ağız kuruluğu ile karakterize otoimmün hastalık olarak Sjögren sendromu çıkmış soruda yer almıştır.",
+    "stem": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler. Schirmer testi azalmış, SSA/SSB pozitif bulunur. Objektif gözyaşı azalması ve otoantikor pozitifliği kuruluk sendromunu otoimmün kökenli düşündürür.",
     "vitals": {
       "TA": "Klinik senaryoya göre",
       "Nabız": "Klinik senaryoya göre",
@@ -8978,7 +9655,7 @@ export const cases = [
     "exam": [
       "Tanıya götüren ana bulgular mevcut",
       "Organ/sistem tutulumları hedefli değerlendirilir",
-      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "sınav ipucu klinik paterne gömülmüştür",
       "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
       "Klinik stabilite ayrıca değerlendirilir"
     ],
@@ -8988,17 +9665,23 @@ export const cases = [
         "label": "Schirmer testi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Schirmer testi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Schirmer testinde gözyaşı üretimi düşük bulundu.",
         "findings": [
-          "Schirmer testi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Keratokonjonktivitis sicca objektif olarak desteklenir.",
+          "Sadece subjektif kuruluk değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Schirmer testi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Schirmer",
+            "3 mm/5 dk",
+            ">10 mm/5 dk",
+            "Düşük"
+          ],
+          [
+            "Göz kuruluğu",
+            "Belirgin",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -9007,17 +9690,23 @@ export const cases = [
         "label": "Anti-Ro/SSA ve Anti-La/SSB",
         "type": "lab",
         "priority": "essential",
-        "summary": "Anti-Ro/SSA ve Anti-La/SSB, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Anti-Ro/SSA pozitif, Anti-La/SSB pozitif saptandı.",
         "findings": [
-          "Anti-Ro/SSA ve Anti-La/SSB, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Sjögren sendromu için serolojik destek vardır.",
+          "İzole dehidratasyon bu otoantikorları açıklamaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Anti-Ro/SSA ve Anti-La/SSB, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Anti-Ro/SSA",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "Anti-La/SSB",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
           ]
         ]
       },
@@ -9026,17 +9715,23 @@ export const cases = [
         "label": "Tükürük bezi ultrasonu veya biyopsisi",
         "type": "pathology",
         "priority": "useful",
-        "summary": "Tükürük bezi ultrasonu veya biyopsisi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Minör tükürük bezi biyopsisinde fokal lenfositik sialadenit izlendi.",
         "findings": [
-          "Tükürük bezi ultrasonu veya biyopsisi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tanısal sınıflamayı destekler.",
+          "Akut bakteriyel sialadenit paterni değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Tükürük bezi ultrasonu veya biyopsisi, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Biyopsi",
+            "Fokal lenfositik sialadenit",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Focus skoru",
+            "Yüksek",
+            "<1",
+            "Patolojik"
           ]
         ]
       },
@@ -9045,17 +9740,23 @@ export const cases = [
         "label": "Göz ve ağız komplikasyon taraması",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Göz ve ağız komplikasyon taraması, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Korneal yüzey hasarı ve dental çürük riski değerlendirildi.",
         "findings": [
-          "Göz ve ağız komplikasyon taraması, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kuruluk komplikasyonları izlenmelidir.",
+          "Akut görme kaybı saptanmadı."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Göz ve ağız komplikasyon taraması, Sjögren sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Korneal boyanma",
+            "Hafif pozitif",
+            "Negatif",
+            "Patolojik"
+          ],
+          [
+            "Dental çürük",
+            "Artmış risk",
+            "Normal risk",
+            "Riskli"
           ]
         ]
       }
@@ -9095,7 +9796,7 @@ export const cases = [
           "Anti-SSA/SSB ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "learningOutcome": "Bu vaka klinik yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
         "differentials": {
           "SLE": {
             "explanation": "SLE ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
@@ -9129,7 +9830,7 @@ export const cases = [
     "id": "internal-medicine-rheumatoid-arthritis-001",
     "branchId": "internal-medicine",
     "title": "Sabah tutukluğu ve simetrik küçük eklem şişliği olan hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Kronik sinovit, pannus, simetrik küçük eklem tutulumu",
     "demographics": "38 yaş kadın",
     "setting": "Klinik/adli değerlendirme ortamı",
@@ -9145,7 +9846,7 @@ export const cases = [
     "exam": [
       "Tanıya götüren ana bulgular mevcut",
       "Organ/sistem tutulumları hedefli değerlendirilir",
-      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "sınav ipucu klinik paterne gömülmüştür",
       "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
       "Klinik stabilite ayrıca değerlendirilir"
     ],
@@ -9155,17 +9856,29 @@ export const cases = [
         "label": "RF, anti-CCP, ESR/CRP",
         "type": "lab",
         "priority": "essential",
-        "summary": "RF, anti-CCP, ESR/CRP, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Anti-CCP pozitif, RF pozitif ve inflamasyon belirteçleri yüksek bulundu.",
         "findings": [
-          "RF, anti-CCP, ESR/CRP, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Seropozitif RA güçlü şekilde desteklenir.",
+          "Kristal artrit paterni daha geri plandadır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "RF, anti-CCP, ESR/CRP, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Anti-CCP",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "RF",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "ESR/CRP",
+            "Yüksek",
+            "Normal",
+            "Yüksek"
           ]
         ]
       },
@@ -9174,17 +9887,23 @@ export const cases = [
         "label": "El-bilek grafisi veya ultrasonografi",
         "type": "xray",
         "priority": "essential",
-        "summary": "El-bilek grafisi veya ultrasonografi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "El-bilek görüntülemesinde sinovit ve erken eroziv değişiklikler izlendi.",
         "findings": [
-          "El-bilek grafisi veya ultrasonografi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kronik inflamatuvar artrit desteklenir.",
+          "Travmatik kırık saptanmadı."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "El-bilek grafisi veya ultrasonografi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "USG/grafi",
+            "Sinovit/erozyon",
+            "Normal",
+            "Patolojik"
+          ],
+          [
+            "Kırık",
+            "Yok",
+            "Yok",
+            "Sorun yok"
           ]
         ]
       },
@@ -9193,17 +9912,23 @@ export const cases = [
         "label": "Simetrik küçük eklem muayenesi",
         "type": "clinical",
         "priority": "useful",
-        "summary": "Simetrik küçük eklem muayenesi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "MCP/PIP eklemlerinde simetrik şişlik ve hassasiyet saptandı.",
         "findings": [
-          "Simetrik küçük eklem muayenesi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Küçük eklem simetrisi RA için tipiktir.",
+          "DIP baskın tutulum osteoartriti düşündürürdü."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Simetrik küçük eklem muayenesi, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Dağılım",
+            "Simetrik MCP/PIP",
+            "Asimetrik/DIP",
+            "Tipik"
+          ],
+          [
+            "Sabah tutukluğu",
+            ">1 saat",
+            "<30 dk",
+            "Patolojik"
           ]
         ]
       },
@@ -9212,17 +9937,23 @@ export const cases = [
         "label": "DMARD öncesi güvenlik laboratuvarı",
         "type": "lab",
         "priority": "situational",
-        "summary": "DMARD öncesi güvenlik laboratuvarı, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "DMARD öncesi hemogram, karaciğer-böbrek testleri ve hepatit taraması istendi.",
         "findings": [
-          "DMARD öncesi güvenlik laboratuvarı, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tedavi güvenliği için başlangıç değerleri gerekir.",
+          "Bu testler tanı koydurmaktan çok tedavi hazırlığı sağlar."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "DMARD öncesi güvenlik laboratuvarı, Romatoid artrit olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Hemogram",
+            "Başlangıç için alındı",
+            "Gerekli",
+            "Tamamlandı"
+          ],
+          [
+            "Hepatit taraması",
+            "İstendi",
+            "Tedavi öncesi",
+            "Beklemede"
           ]
         ]
       }
@@ -9262,7 +9993,7 @@ export const cases = [
           "Anti-CCP ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "learningOutcome": "Bu vaka klinik yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
         "differentials": {
           "Osteoartrit": {
             "explanation": "Osteoartrit ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
@@ -9296,12 +10027,12 @@ export const cases = [
     "id": "pediatrics-bruton-agammaglobulinemia-001",
     "branchId": "pediatrics",
     "title": "Anne antikoru azaldıktan sonra tekrarlayan enfeksiyonları başlayan bebek",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "BTK defekti, B hücre azalması, pyojenik enfeksiyon",
     "demographics": "7 aylık erkek bebek",
     "setting": "Klinik/adli değerlendirme ortamı",
     "chiefComplaint": "Tekrarlayan otitis media, sinüzit ve pnömoni",
-    "stem": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır. Serum immünoglobulinleri çok düşük, dolaşımda B hücreleri azdır; T hücre fonksiyonu korunmuştur. PDF'te BTK geninin X kromozomunda olduğu, erkeklerde görüldüğü ve maternal Ig'ler düştükten sonra bulgu verdiği belirtilir.",
+    "stem": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır. Serum immünoglobulinleri çok düşük, dolaşımda B hücreleri azdır; T hücre fonksiyonu korunmuştur. Anne kaynaklı antikorların azaldığı dönemde başlayan bakteriyel enfeksiyonlar humoral immün yetmezliği düşündürür.",
     "vitals": {
       "TA": "Klinik senaryoya göre",
       "Nabız": "Klinik senaryoya göre",
@@ -9312,7 +10043,7 @@ export const cases = [
     "exam": [
       "Tanıya götüren ana bulgular mevcut",
       "Organ/sistem tutulumları hedefli değerlendirilir",
-      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "sınav ipucu klinik paterne gömülmüştür",
       "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
       "Klinik stabilite ayrıca değerlendirilir"
     ],
@@ -9322,17 +10053,29 @@ export const cases = [
         "label": "Serum immünoglobulinleri",
         "type": "lab",
         "priority": "essential",
-        "summary": "Serum immünoglobulinleri, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "IgG, IgA ve IgM düzeyleri belirgin düşük bulundu.",
         "findings": [
-          "Serum immünoglobulinleri, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Humoral immün yetmezlik desteklenir.",
+          "Anne IgG’sinin azaldığı dönem sonrası tablo belirginleşir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Serum immünoglobulinleri, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "IgG",
+            "Düşük",
+            "Yaşa uygun",
+            "Düşük"
+          ],
+          [
+            "IgA",
+            "Düşük",
+            "Yaşa uygun",
+            "Düşük"
+          ],
+          [
+            "IgM",
+            "Düşük",
+            "Yaşa uygun",
+            "Düşük"
           ]
         ]
       },
@@ -9341,17 +10084,23 @@ export const cases = [
         "label": "B hücre akım sitometrisi",
         "type": "lab",
         "priority": "essential",
-        "summary": "B hücre akım sitometrisi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Akım sitometrisinde CD19+ B hücreleri belirgin azaldı.",
         "findings": [
-          "B hücre akım sitometrisi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "B hücre maturasyon defekti Bruton agammaglobulinemisini destekler.",
+          "T hücre yetmezliği baskın değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "B hücre akım sitometrisi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "CD19+ B hücre",
+            "Çok düşük/yok",
+            "Normal",
+            "Düşük"
+          ],
+          [
+            "T hücre sayısı",
+            "Korunmuş",
+            "Normal",
+            "Uyumlu"
           ]
         ]
       },
@@ -9360,17 +10109,23 @@ export const cases = [
         "label": "Aşı yanıtı ve enfeksiyon öyküsü",
         "type": "clinical",
         "priority": "useful",
-        "summary": "Aşı yanıtı ve enfeksiyon öyküsü, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Aşı yanıtı zayıf ve tekrarlayan sinopulmoner enfeksiyon öyküsü mevcut.",
         "findings": [
-          "Aşı yanıtı ve enfeksiyon öyküsü, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Antikor üretim kusuru fonksiyonel olarak gösterilir.",
+          "Tekrarlayan viral enfeksiyonlardan çok bakteriyel enfeksiyonlar öndedir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Aşı yanıtı ve enfeksiyon öyküsü, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Aşı antikoru",
+            "Yetersiz",
+            "Koruyucu titre",
+            "Düşük"
+          ],
+          [
+            "Enfeksiyon paterni",
+            "Tekrarlayan otit/pnömoni",
+            "Seyrek",
+            "Patolojik"
           ]
         ]
       },
@@ -9379,17 +10134,17 @@ export const cases = [
         "label": "BTK gen analizi",
         "type": "lab",
         "priority": "situational",
-        "summary": "BTK gen analizi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "BTK gen analizi planlandı.",
         "findings": [
-          "BTK gen analizi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "X’e bağlı kalıtım ve aile danışmanlığı için gereklidir.",
+          "IVIG kararı klinik ve immünolojik bulgularla desteklenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "BTK gen analizi, Bruton agammaglobulinemisi olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "BTK analizi",
+            "Planlandı",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       }
@@ -9429,7 +10184,7 @@ export const cases = [
           "Flow sitometri ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "learningOutcome": "Bu vaka klinik yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
         "differentials": {
           "İzole IgA yetmezliği": {
             "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
@@ -9463,7 +10218,7 @@ export const cases = [
     "id": "infectious-diseases-hiv-aids-001",
     "branchId": "infectious-diseases",
     "title": "Kilo kaybı, fırsatçı enfeksiyon ve lenfopeni ile başvuru",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "CD4 T hücre kaybı, fırsatçı enfeksiyon, gp120/gp41/p24",
     "demographics": "36 yaş erkek",
     "setting": "Klinik/adli değerlendirme ortamı",
@@ -9479,7 +10234,7 @@ export const cases = [
     "exam": [
       "Tanıya götüren ana bulgular mevcut",
       "Organ/sistem tutulumları hedefli değerlendirilir",
-      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "sınav ipucu klinik paterne gömülmüştür",
       "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
       "Klinik stabilite ayrıca değerlendirilir"
     ],
@@ -9489,17 +10244,23 @@ export const cases = [
         "label": "HIV Ag/Ab testi ve HIV RNA",
         "type": "lab",
         "priority": "essential",
-        "summary": "HIV Ag/Ab testi ve HIV RNA, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "HIV Ag/Ab testi reaktif, HIV RNA pozitif bulundu.",
         "findings": [
-          "HIV Ag/Ab testi ve HIV RNA, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Aktif HIV enfeksiyonu doğrulanır.",
+          "Yalancı pozitif tarama olasılığı RNA ile azalır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "HIV Ag/Ab testi ve HIV RNA, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "HIV Ag/Ab",
+            "Reaktif",
+            "Non-reaktif",
+            "Pozitif"
+          ],
+          [
+            "HIV RNA",
+            "Pozitif/yüksek",
+            "Negatif",
+            "Pozitif"
           ]
         ]
       },
@@ -9508,17 +10269,23 @@ export const cases = [
         "label": "CD4 T lenfosit sayımı",
         "type": "lab",
         "priority": "essential",
-        "summary": "CD4 T lenfosit sayımı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "CD4 T lenfosit sayısı belirgin düşük saptandı.",
         "findings": [
-          "CD4 T lenfosit sayımı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Fırsatçı enfeksiyon riski yüksektir.",
+          "AIDS tanımına girebilecek immün baskılanma vardır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "CD4 T lenfosit sayımı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "CD4",
+            "120/µL",
+            ">500/µL",
+            "Düşük"
+          ],
+          [
+            "CD4 oranı",
+            "Düşük",
+            "Normal",
+            "Düşük"
           ]
         ]
       },
@@ -9527,17 +10294,23 @@ export const cases = [
         "label": "Fırsatçı enfeksiyon taraması",
         "type": "xray",
         "priority": "useful",
-        "summary": "Fırsatçı enfeksiyon taraması, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Akciğer grafisinde bilateral interstisyel infiltrasyon izlendi.",
         "findings": [
-          "Fırsatçı enfeksiyon taraması, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Pneumocystis pnömonisi gibi fırsatçı enfeksiyonlar düşünülür.",
+          "Lokal lobar pnömoni paterni baskın değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Fırsatçı enfeksiyon taraması, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Akciğer grafisi",
+            "Bilateral interstisyel infiltrasyon",
+            "Doğal",
+            "Patolojik"
+          ],
+          [
+            "Oksijen sat.",
+            "Düşük-normal",
+            ">94%",
+            "İzlem"
           ]
         ]
       },
@@ -9546,17 +10319,23 @@ export const cases = [
         "label": "Başlangıç tedavi güvenlik laboratuvarı",
         "type": "lab",
         "priority": "situational",
-        "summary": "Başlangıç tedavi güvenlik laboratuvarı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "ART öncesi böbrek-karaciğer fonksiyonu ve hepatit koenfeksiyon taraması istendi.",
         "findings": [
-          "Başlangıç tedavi güvenlik laboratuvarı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tedavi seçimi ve güvenliği için gereklidir.",
+          "Antiretroviral tedavi geciktirilmeden planlanmalıdır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Başlangıç tedavi güvenlik laboratuvarı, HIV/AIDS olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Kreatinin/ALT",
+            "Başlangıç değeri alındı",
+            "Gerekli",
+            "Tamamlandı"
+          ],
+          [
+            "HBV/HCV",
+            "İstendi",
+            "Tedavi öncesi",
+            "Beklemede"
           ]
         ]
       }
@@ -9596,7 +10375,7 @@ export const cases = [
           "HIV RNA ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "learningOutcome": "Bu vaka klinik yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
         "differentials": {
           "Bruton agammaglobulinemisi": {
             "explanation": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni HIV/AIDS lehinedir.",
@@ -9630,12 +10409,12 @@ export const cases = [
     "id": "pediatrics-shaken-baby-syndrome-001",
     "branchId": "pediatrics",
     "title": "Huzursuzluk ve bilinç değişikliği ile getirilen bebekte travma şüphesi",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Çocuk istismarı, köprü ven yırtılması, illiyet bağı",
     "demographics": "4 aylık erkek bebek",
     "setting": "Klinik/adli değerlendirme ortamı",
     "chiefComplaint": "Nöbet, letarji ve açıklanamayan morluklar",
-    "stem": "Bebek acile nöbet ve letarjiyle getirilir. Bakıcı travma öyküsü vermemektedir; muayenede farklı yaşlarda ekimozlar, göz dibi muayenesinde retinal kanama, BT'de subdural kanama vardır. PDF'te sarsılmış bebek sendromunun genellikle ilk 6 ayda olduğu, başın ileri geri sallanmasıyla köprü venlerin yırtıldığı ve suç olduğu vurgulanır.",
+    "stem": "Bebek acile nöbet ve letarjiyle getirilir. Bakıcı travma öyküsü vermemektedir; muayenede farklı yaşlarda ekimozlar, göz dibi muayenesinde retinal kanama, BT’de subdural kanama vardır. Bulgular kaza dışı travma açısından acil adli-tıbbi değerlendirme gerektirir.",
     "vitals": {
       "TA": "Klinik senaryoya göre",
       "Nabız": "Klinik senaryoya göre",
@@ -9646,7 +10425,7 @@ export const cases = [
     "exam": [
       "Tanıya götüren ana bulgular mevcut",
       "Organ/sistem tutulumları hedefli değerlendirilir",
-      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "sınav ipucu klinik paterne gömülmüştür",
       "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
       "Klinik stabilite ayrıca değerlendirilir"
     ],
@@ -9656,17 +10435,23 @@ export const cases = [
         "label": "Kontrastsız beyin BT/MR",
         "type": "ct",
         "priority": "essential",
-        "summary": "Kontrastsız beyin BT/MR, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Beyin görüntülemede subdural kanama izlendi.",
         "findings": [
-          "Kontrastsız beyin BT/MR, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "İvmelenme-yavaşlama tipi travmayı destekler.",
+          "Basit düşme öyküsüyle açıklanması zordur."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kontrastsız beyin BT/MR, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Beyin BT/MR",
+            "Subdural kanama",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "Parankim ödemi",
+            "Hafif",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -9675,17 +10460,23 @@ export const cases = [
         "label": "Fundoskopi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Fundoskopi, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Fundoskopide bilateral retinal kanama saptandı.",
         "findings": [
-          "Fundoskopi, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Sarsılmış bebek sendromu için güçlü destekleyici bulgudur.",
+          "İzole enfeksiyon bu paterni açıklamaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Fundoskopi, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Retina",
+            "Bilateral kanama",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "Papil ödem",
+            "Değerlendirildi",
+            "Yok",
+            "İzlem"
           ]
         ]
       },
@@ -9694,17 +10485,23 @@ export const cases = [
         "label": "İskelet survey grafileri",
         "type": "xray",
         "priority": "useful",
-        "summary": "İskelet survey grafileri, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İskelet surveyde farklı iyileşme evrelerinde kostal/metafizer lezyonlar izlendi.",
         "findings": [
-          "İskelet survey grafileri, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tek seferlik kaza dışı travma olasılığını güçlendirir.",
+          "Kaza dışı travma açısından bildirim gerekir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "İskelet survey grafileri, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "İskelet survey",
+            "Farklı yaşta lezyonlar",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "Kostal lezyon",
+            "Var",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -9713,17 +10510,23 @@ export const cases = [
         "label": "Koagülasyon paneli",
         "type": "lab",
         "priority": "situational",
-        "summary": "Koagülasyon paneli, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Koagülasyon paneli belirgin bozukluk göstermedi.",
         "findings": [
-          "Koagülasyon paneli, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Kanama diyatezi ayırıcı tanısı geri planda kalır.",
+          "Travma bulguları daha güçlüdür."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Koagülasyon paneli, Sarsılmış bebek sendromu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "PT/aPTT",
+            "Normal",
+            "Normal",
+            "Sorun yok"
+          ],
+          [
+            "Trombosit",
+            "Normal",
+            "Normal",
+            "Sorun yok"
           ]
         ]
       }
@@ -9763,7 +10566,7 @@ export const cases = [
           "Göz dibi ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "learningOutcome": "Bu vaka klinik yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
         "differentials": {
           "Doğumsal kanama diyatezi": {
             "explanation": "Doğumsal kanama diyatezi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sarsılmış bebek sendromu lehinedir.",
@@ -9797,12 +10600,12 @@ export const cases = [
     "id": "internal-medicine-sexual-assault-evidence-001",
     "branchId": "internal-medicine",
     "title": "Cinsel saldırı şüphesinde acil muayene ve delil yönetimi",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Onam, delil zinciri, gebelik/STI profilaksisi, travma bakımı",
     "demographics": "22 yaş kadın",
     "setting": "Klinik/adli değerlendirme ortamı",
     "chiefComplaint": "Cinsel saldırı bildirimi sonrası acil başvuru",
-    "stem": "Hasta saldırıdan 8 saat sonra acile başvurur. Önce güvenlik, tıbbi stabilizasyon ve psikolojik destek sağlanır; onam alınarak adli muayene, örnekleme, gebelik ve STI profilaksisi planlanır. Hekim kayıtlarının resmi belge niteliği ve bildirim sorumluluğu unutulmaz.",
+    "stem": "Hasta saldırıdan 8 saat sonra acile başvurur. Önce güvenlik, tıbbi stabilizasyon ve psikolojik destek sağlanır; onam alınarak adli muayene, örnekleme, gebelik ve STI profilaksisi planlanır.",
     "vitals": {
       "TA": "Klinik senaryoya göre",
       "Nabız": "Klinik senaryoya göre",
@@ -9813,7 +10616,7 @@ export const cases = [
     "exam": [
       "Tanıya götüren ana bulgular mevcut",
       "Organ/sistem tutulumları hedefli değerlendirilir",
-      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "sınav ipucu klinik paterne gömülmüştür",
       "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
       "Klinik stabilite ayrıca değerlendirilir"
     ],
@@ -9823,17 +10626,23 @@ export const cases = [
         "label": "Acil tıbbi stabilizasyon ve travma muayenesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Acil tıbbi stabilizasyon ve travma muayenesi, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Acil muayenede yaşamı tehdit eden yaralanma saptanmadı; genital ve ekstragenital travma sistematik belgelendi.",
         "findings": [
-          "Acil tıbbi stabilizasyon ve travma muayenesi, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Önce tıbbi güvenlik değerlendirilmiştir.",
+          "Muayene rıza ve mahremiyet ilkeleriyle yürütülür."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Acil tıbbi stabilizasyon ve travma muayenesi, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Hemodinami",
+            "Stabil",
+            "Stabil",
+            "Normal"
+          ],
+          [
+            "Travma muayenesi",
+            "Belgelendi",
+            "Belgelendirilmeli",
+            "Tamamlandı"
           ]
         ]
       },
@@ -9842,17 +10651,23 @@ export const cases = [
         "label": "Adli örnekleme ve delil kiti",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Adli örnekleme ve delil kiti, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Adli örnekler uygun kit ile alındı ve delil zinciri kaydedildi.",
         "findings": [
-          "Adli örnekleme ve delil kiti, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Örnekleme zaman penceresi içinde yapılmıştır.",
+          "Kontaminasyonu önlemek için zincir kayıt altındadır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Adli örnekleme ve delil kiti, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Adli kit",
+            "Kullanıldı",
+            "Gerekli",
+            "Tamamlandı"
+          ],
+          [
+            "Delil zinciri",
+            "Kaydedildi",
+            "Kesintisiz",
+            "Tamamlandı"
           ]
         ]
       },
@@ -9861,17 +10676,23 @@ export const cases = [
         "label": "Gebelik ve CYBE testleri",
         "type": "lab",
         "priority": "useful",
-        "summary": "Gebelik ve CYBE testleri, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Gebelik testi negatif; CYBE başlangıç testleri alındı.",
         "findings": [
-          "Gebelik ve CYBE testleri, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Koruyucu tedavi ve izlem planı buna göre düzenlenir.",
+          "Negatif başlangıç testi takip gereksinimini kaldırmaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Gebelik ve CYBE testleri, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "β-hCG",
+            "Negatif",
+            "Negatif",
+            "Sorun yok"
+          ],
+          [
+            "CYBE testleri",
+            "Alındı",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       },
@@ -9880,17 +10701,23 @@ export const cases = [
         "label": "Psikososyal güvenlik ve konsültasyon",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Psikososyal güvenlik ve konsültasyon, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Güvenlik riski değerlendirildi; psikiyatri/sosyal hizmet desteği planlandı.",
         "findings": [
-          "Psikososyal güvenlik ve konsültasyon, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tıbbi, psikolojik ve hukuki destek birlikte yürütülmelidir.",
+          "Hasta güvenliği taburculuk kararını belirler."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Psikososyal güvenlik ve konsültasyon, Cinsel saldırı sonrası adli-tıbbi değerlendirme olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Güvenlik riski",
+            "Değerlendirildi",
+            "Değerlendirilmeli",
+            "Tamamlandı"
+          ],
+          [
+            "Psikososyal destek",
+            "Planlandı",
+            "Gerekli",
+            "Başlatıldı"
           ]
         ]
       }
@@ -9930,7 +10757,7 @@ export const cases = [
           "STI testleri ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "learningOutcome": "Bu vaka klinik yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
         "differentials": {
           "Basit anksiyete atağı": {
             "explanation": "Basit anksiyete atağı ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Cinsel saldırı sonrası adli-tıbbi değerlendirme lehinedir.",
@@ -9964,7 +10791,7 @@ export const cases = [
     "id": "internal-medicine-asphyxial-death-001",
     "branchId": "internal-medicine",
     "title": "Şüpheli ölüm olgusunda asfiksi bulgularının adli değerlendirmesi",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Oksijenlenme bozukluğu, ölüm bulguları, olay yeri-adli muayene",
     "demographics": "45 yaş erkek",
     "setting": "Klinik/adli değerlendirme ortamı",
@@ -9980,7 +10807,7 @@ export const cases = [
     "exam": [
       "Tanıya götüren ana bulgular mevcut",
       "Organ/sistem tutulumları hedefli değerlendirilir",
-      "PDF'te vurgulanan sınav ipucu klinik paterne gömülmüştür",
+      "sınav ipucu klinik paterne gömülmüştür",
       "Daha olası olmayan ayırıcı tanılar için baskın bulgu yok",
       "Klinik stabilite ayrıca değerlendirilir"
     ],
@@ -9990,17 +10817,23 @@ export const cases = [
         "label": "Olay yeri ve öykü değerlendirmesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Olay yeri ve öykü değerlendirmesi, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Olay yeri bulguları asfiksi ile uyumlu çevresel ipuçları içeriyor.",
         "findings": [
-          "Olay yeri ve öykü değerlendirmesi, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Öykü ve olay yeri adli yorumun temelidir.",
+          "Tek başına dış muayene kesin mekanizma vermez."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Olay yeri ve öykü değerlendirmesi, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Olay yeri",
+            "Asfiksi şüphesi destekli",
+            "Doğal ölüm bulgusu yok",
+            "Şüpheli"
+          ],
+          [
+            "Tanık/öykü",
+            "Eksik veya çelişkili",
+            "Tutarlı",
+            "Riskli"
           ]
         ]
       },
@@ -10009,17 +10842,29 @@ export const cases = [
         "label": "Dış muayene bulguları",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Dış muayene bulguları, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Dış muayenede peteşi, siyanoz ve boyun bölgesinde izler izlendi.",
         "findings": [
-          "Dış muayene bulguları, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Asfiksili ölüm lehine destekleyici bulgulardır.",
+          "Bulgular tek başına mekanizmayı kesinleştirmez."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Dış muayene bulguları, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Peteşi",
+            "Var",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "Siyanoz",
+            "Var",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "Boyun izi",
+            "Var",
+            "Yok",
+            "Şüpheli"
           ]
         ]
       },
@@ -10028,17 +10873,23 @@ export const cases = [
         "label": "Otopsi ve histopatoloji",
         "type": "pathology",
         "priority": "useful",
-        "summary": "Otopsi ve histopatoloji, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Otopsi ve histopatoloji ile boyun yapıları ve iç organlar değerlendirildi.",
         "findings": [
-          "Otopsi ve histopatoloji, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Mekanizma ve eşlik eden travma araştırılır.",
+          "Makroskopi ve mikroskopi birlikte yorumlanır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Otopsi ve histopatoloji, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Otopsi",
+            "Yapıldı/planlandı",
+            "Endikasyona göre",
+            "Gerekli"
+          ],
+          [
+            "Histopatoloji",
+            "Örnek alındı",
+            "Gerektiğinde",
+            "Beklemede"
           ]
         ]
       },
@@ -10047,17 +10898,23 @@ export const cases = [
         "label": "Toksikoloji ve COHb ölçümü",
         "type": "lab",
         "priority": "situational",
-        "summary": "Toksikoloji ve COHb ölçümü, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Toksikoloji ve COHb ölçümü istendi.",
         "findings": [
-          "Toksikoloji ve COHb ölçümü, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Zehirlenme ve CO maruziyeti ayırıcı tanıda dışlanmalıdır.",
+          "Negatif sonuç asfiksiyi tek başına kanıtlamaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Toksikoloji ve COHb ölçümü, Asfiksili ölüm olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Toksikoloji",
+            "İstendi",
+            "Gerektiğinde",
+            "Beklemede"
+          ],
+          [
+            "COHb",
+            "İstendi",
+            "<3% beklenir",
+            "Beklemede"
           ]
         ]
       }
@@ -10097,7 +10954,7 @@ export const cases = [
           "Olay yeri bilgisi ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka PDF'teki yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
+        "learningOutcome": "Bu vaka klinik yüksek verimli anahtar kelimeleri klinik senaryoya dönüştürmek için tasarlanmıştır.",
         "differentials": {
           "Akut MI": {
             "explanation": "Akut MI ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Asfiksili ölüm lehinedir.",
@@ -10131,12 +10988,12 @@ export const cases = [
     "id": "internal-medicine-autosomal-recessive-risk-001",
     "branchId": "internal-medicine",
     "title": "Akraba evliliği ve aile ağacında tekrarlayan hastalık riski",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Akraba evliliği, taşıyıcılık, kardeşlerde hastalık riski",
     "demographics": "Akraba evliliği olan çift",
-    "setting": "Eğitim amaçlı KlinikIQ senaryosu",
+    "setting": "Genetik danışmanlık polikliniği",
     "chiefComplaint": "Önceki çocukta metabolik hastalık, yeni gebelik danışmanlığı",
-    "stem": "Aynı ailede bir çocukta doğuştan metabolik hastalık tanısı vardır; ebeveynler klinik olarak sağlıklıdır ve akrabadır. Pedigree, otozomal resesif kalıtımı düşündürür. KlinikIQ vakasında amaç soy ağacından kalıtım paternini ve tekrarlama riskini seçtirmektir.",
+    "stem": "Aynı ailede bir çocukta doğuştan metabolik hastalık tanısı vardır; ebeveynler klinik olarak sağlıklıdır ve akrabadır. Pedigree, otozomal resesif kalıtımı düşündürür ve sonraki gebelikler için tekrarlama riskinin hesaplanmasını gerektirir.",
     "vitals": {
       "TA": "Klinik senaryoya göre",
       "Nabız": "Klinik senaryoya göre",
@@ -10156,17 +11013,23 @@ export const cases = [
         "label": "Üç kuşak pedigree analizi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Üç kuşak pedigree analizi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Pedigree’de etkilenmiş kardeşler ve sağlıklı taşıyıcı ebeveyn paterni izlendi.",
         "findings": [
-          "Üç kuşak pedigree analizi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Otozomal resesif kalıtım desteklenir.",
+          "Her kuşakta dikey geçiş baskın değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Üç kuşak pedigree analizi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Pedigree paterni",
+            "Yatay kümelenme",
+            "Dikey geçiş yok",
+            "AR uyumlu"
+          ],
+          [
+            "Akrabalık",
+            "Var",
+            "Yok",
+            "Riskli"
           ]
         ]
       },
@@ -10175,17 +11038,23 @@ export const cases = [
         "label": "Taşıyıcı tarama testi",
         "type": "lab",
         "priority": "essential",
-        "summary": "Taşıyıcı tarama testi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Ebeveyn taşıyıcılık testi heterozigot taşıyıcılığı destekledi.",
         "findings": [
-          "Taşıyıcı tarama testi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tekrarlama riski hesaplanabilir.",
+          "Etkilenen çocuk için iki mutant alel beklenir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Taşıyıcı tarama testi, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Anne",
+            "Taşıyıcı",
+            "Negatif",
+            "Heterozigot"
+          ],
+          [
+            "Baba",
+            "Taşıyıcı",
+            "Negatif",
+            "Heterozigot"
           ]
         ]
       },
@@ -10194,17 +11063,23 @@ export const cases = [
         "label": "Mendel oranı/risk hesaplama",
         "type": "clinical",
         "priority": "useful",
-        "summary": "Mendel oranı/risk hesaplama, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İki taşıyıcı ebeveyn için hasta çocuk riski %25 olarak hesaplandı.",
         "findings": [
-          "Mendel oranı/risk hesaplama, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Mendel oranı tanı ve danışmanlık için temel bilgidir.",
+          "Cinsiyet bağımlı kalıtım paterni değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Mendel oranı/risk hesaplama, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Hasta çocuk riski",
+            "%25",
+            "Taşıyıcı x taşıyıcı",
+            "Beklenen"
+          ],
+          [
+            "Taşıyıcı çocuk riski",
+            "%50",
+            "Beklenen",
+            "Bilgilendirildi"
           ]
         ]
       },
@@ -10213,17 +11088,23 @@ export const cases = [
         "label": "Genetik danışmanlık ve prenatal seçenekler",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Genetik danışmanlık ve prenatal seçenekler, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Genetik danışmanlık ve prenatal/preimplantasyon seçenekleri görüşüldü.",
         "findings": [
-          "Genetik danışmanlık ve prenatal seçenekler, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Aile planlaması için klinik karar desteği sağlar.",
+          "Zorlayıcı değil bilgilendirici danışmanlık yapılmalıdır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Genetik danışmanlık ve prenatal seçenekler, Otozomal resesif kalıtım olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Danışmanlık",
+            "Verildi/planlandı",
+            "Önerilir",
+            "Tamamlandı"
+          ],
+          [
+            "Prenatal seçenek",
+            "Görüşüldü",
+            "İsteğe bağlı",
+            "Bilgilendirildi"
           ]
         ]
       }
@@ -10237,7 +11118,7 @@ export const cases = [
         "X'e bağlı dominant kalıtım",
         "Mitokondriyal kalıtım"
       ],
-      "explanation": "Bu olguda en uygun yaklaşım Otozomal resesif kalıtım çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+      "explanation": "Bu olguda en uygun yaklaşım Otozomal resesif kalıtım çerçevesidir. klinik vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
       "pearls": [
         "Sağlıklı ebeveynlerden hasta çocuk resesif patern için tipiktir.",
         "Akraba evliliği resesif hastalık riskini artırır.",
@@ -10246,9 +11127,9 @@ export const cases = [
       "nextStep": "İlk güvenlik ve klinik karar alındıktan sonra doğrulayıcı test/kayıt/izlem basamağı uygulanır.",
       "answerFeedback": {
         "diagnosisMeta": "Otozomal resesif kalıtım için sınav ve klinik karar noktası.",
-        "whyCorrect": "Bu olguda en uygun yaklaşım Otozomal resesif kalıtım çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+        "whyCorrect": "Bu olguda en uygun yaklaşım Otozomal resesif kalıtım çerçevesidir. klinik vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
         "evidenceChain": [
-          "Aynı ailede bir çocukta doğuştan metabolik hastalık tanısı vardır; ebeveynler klinik olarak sağlıklıdır ve akrabadır",
+          "Aynı ailede bir çocukta doğuştan metabolik hastalık tanısı vardır; ebeveynler sağlıklıdır ve akrabadır",
           "Hasta kardeş + sağlıklı ebeveynler",
           "Anne-baba heterozigot",
           "Tekrarlama riski anlatılır"
@@ -10263,7 +11144,7 @@ export const cases = [
           "Taşıyıcılık testi ile destekle — Kanıt veya doğrulama sağlar.",
           "Genetik danışmanlık tamamla — Uzun dönem/sonuç yönetimi için gerekir."
         ],
-        "learningOutcome": "KlinikIQ formatında hedef, sadece tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını öğretmektir.",
+        "learningOutcome": "Öğrenme hedefi, yalnızca tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını da kavramaktır.",
         "differentials": {
           "Otozomal dominant kalıtım": {
             "explanation": "Otozomal dominant kalıtım ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Otozomal resesif kalıtım lehinedir.",
@@ -10297,10 +11178,10 @@ export const cases = [
     "id": "internal-medicine-pharmacogenetic-toxicity-001",
     "branchId": "internal-medicine",
     "title": "Standart doz ilaç sonrası beklenenden ağır toksisite gelişen hasta",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Genetik varyasyon, ilaç metabolizması, toksisite riski",
     "demographics": "30 yaş kadın",
-    "setting": "Eğitim amaçlı KlinikIQ senaryosu",
+    "setting": "Klinik farmakoloji / acil ilaç toksisitesi değerlendirmesi",
     "chiefComplaint": "Standart doz ilaç sonrası beklenenden ağır yan etki",
     "stem": "Hasta standart dozda başlanan bir ilaç sonrası aşırı sedasyon ve laboratuvar toksisite bulguları geliştirir. Ailede benzer ilaç yanıtı öyküsü vardır. Farmakogenetik varyasyonlar ilacın biyotransformasyonu, reseptör yanıtı veya taşıyıcı mekanizmasını etkileyebilir.",
     "vitals": {
@@ -10322,17 +11203,23 @@ export const cases = [
         "label": "Farmakogenetik genotipleme",
         "type": "lab",
         "priority": "essential",
-        "summary": "Farmakogenetik genotipleme, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Farmakogenetik testte ilacı yavaş metabolize eden varyant saptandı.",
         "findings": [
-          "Farmakogenetik genotipleme, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Standart dozda toksisite mekanizmasını açıklar.",
+          "Uyum sorunu tek açıklama değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Farmakogenetik genotipleme, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Genotip",
+            "Yavaş metabolizer varyant",
+            "Normal metabolizer",
+            "Patolojik"
+          ],
+          [
+            "Fenotip",
+            "Azalmış klirens",
+            "Normal klirens",
+            "Uyumlu"
           ]
         ]
       },
@@ -10341,17 +11228,23 @@ export const cases = [
         "label": "İlaç düzeyi ve toksisite paneli",
         "type": "lab",
         "priority": "essential",
-        "summary": "İlaç düzeyi ve toksisite paneli, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İlaç düzeyi terapötik aralığın üzerinde ve toksisite belirteçleri pozitif bulundu.",
         "findings": [
-          "İlaç düzeyi ve toksisite paneli, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Doz-yan etki ilişkisi laboratuvarla desteklenir.",
+          "Aşırı doz alımı ayrıca sorgulanmalıdır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "İlaç düzeyi ve toksisite paneli, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "İlaç düzeyi",
+            "Yüksek",
+            "Terapötik aralık",
+            "Toksik"
+          ],
+          [
+            "Toksisite bulgusu",
+            "Pozitif",
+            "Yok",
+            "Patolojik"
           ]
         ]
       },
@@ -10360,17 +11253,23 @@ export const cases = [
         "label": "Karaciğer ve böbrek fonksiyon testleri",
         "type": "lab",
         "priority": "useful",
-        "summary": "Karaciğer ve böbrek fonksiyon testleri, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Karaciğer ve böbrek fonksiyonları doz ayarı için değerlendirildi; ağır yetmezlik saptanmadı.",
         "findings": [
-          "Karaciğer ve böbrek fonksiyon testleri, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Organ yetmezliği toksisiteyi artırabilir.",
+          "Bu olguda genetik yatkınlık daha ön plandadır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Karaciğer ve böbrek fonksiyon testleri, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Kreatinin",
+            "Normal",
+            "0.6-1.2 mg/dL",
+            "Sorun yok"
+          ],
+          [
+            "ALT/AST",
+            "Hafif yüksek",
+            "<40 U/L",
+            "Hafif yüksek"
           ]
         ]
       },
@@ -10379,17 +11278,23 @@ export const cases = [
         "label": "Alternatif ilaç/doz planı",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Alternatif ilaç/doz planı, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "İlaç kesildi; alternatif ajan veya azaltılmış doz planlandı.",
         "findings": [
-          "Alternatif ilaç/doz planı, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tedavi farmakogenetik sonuca göre kişiselleştirilir.",
+          "Aynı dozla devam etmek toksisite riskini artırır."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Alternatif ilaç/doz planı, Farmakogenetik kaynaklı advers ilaç reaksiyonu olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "İlaç yönetimi",
+            "Kesildi/değiştirildi",
+            "Toksisite yoksa devam",
+            "Gerekli"
+          ],
+          [
+            "Yeni doz",
+            "Azaltılmış/alternatif",
+            "Standart",
+            "Planlandı"
           ]
         ]
       }
@@ -10403,7 +11308,7 @@ export const cases = [
         "Doz unutma",
         "Malabsorpsiyon"
       ],
-      "explanation": "Bu olguda en uygun yaklaşım Farmakogenetik kaynaklı advers ilaç reaksiyonu çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+      "explanation": "Bu olguda en uygun yaklaşım Farmakogenetik kaynaklı advers ilaç reaksiyonu çerçevesidir. klinik vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
       "pearls": [
         "Aynı doz herkeste aynı etkiyi oluşturmayabilir.",
         "Biyotransformasyon ve reseptör farklılıkları yanıtı değiştirir.",
@@ -10412,7 +11317,7 @@ export const cases = [
       "nextStep": "İlk güvenlik ve klinik karar alındıktan sonra doğrulayıcı test/kayıt/izlem basamağı uygulanır.",
       "answerFeedback": {
         "diagnosisMeta": "Farmakogenetik kaynaklı advers ilaç reaksiyonu için sınav ve klinik karar noktası.",
-        "whyCorrect": "Bu olguda en uygun yaklaşım Farmakogenetik kaynaklı advers ilaç reaksiyonu çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+        "whyCorrect": "Bu olguda en uygun yaklaşım Farmakogenetik kaynaklı advers ilaç reaksiyonu çerçevesidir. klinik vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
         "evidenceChain": [
           "Hasta standart dozda başlanan bir ilaç sonrası aşırı sedasyon ve laboratuvar toksisite bulguları geliştirir",
           "Beklenenden yüksek",
@@ -10429,7 +11334,7 @@ export const cases = [
           "Karaciğer/böbrek fonksiyonu ile destekle — Kanıt veya doğrulama sağlar.",
           "İlaç etkileşimi sorgusu tamamla — Uzun dönem/sonuç yönetimi için gerekir."
         ],
-        "learningOutcome": "KlinikIQ formatında hedef, sadece tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını öğretmektir.",
+        "learningOutcome": "Öğrenme hedefi, yalnızca tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını da kavramaktır.",
         "differentials": {
           "Alerjik anafilaksi": {
             "explanation": "Alerjik anafilaksi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Farmakogenetik kaynaklı advers ilaç reaksiyonu lehinedir.",
@@ -10463,12 +11368,12 @@ export const cases = [
     "id": "internal-medicine-ct-radiation-alara-001",
     "branchId": "internal-medicine",
     "title": "Aynı gün tekrarlanması istenen BT için fayda-risk kararı",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Radyasyon dozu, gereklilik, ALARA, tomografi-akciğer grafisi farkı",
     "demographics": "48 yaş erkek",
-    "setting": "Eğitim amaçlı KlinikIQ senaryosu",
+    "setting": "Radyoloji istem değerlendirmesi",
     "chiefComplaint": "Düşük kaliteli BT nedeniyle ikinci kez çekim istenmesi",
-    "stem": "Hastaya görüntü kalitesi düşük diye aynı gün ikinci toraks BT istenmiştir. Komite notlarında tipik tomografi dozunun akciğer grafisine göre yaklaşık yüz kat, ikinci çekimde toplam dozun daha da artacağı vurgulanır. KlinikIQ hedefi tetkik gerekçesi ve radyasyon farkındalığını öğretmektir.",
+    "stem": "Aynı gün ikinci toraks BT istenen hastanın önceki görüntüsünün tanısal kalitede olduğu görülür. Yeni klinik kırmızı bayrak veya acil endikasyon yoktur. Bu nedenle tekrar çekimin getireceği iyonizan radyasyon yükü fayda-risk açısından yeniden değerlendirilir.",
     "vitals": {
       "TA": "Klinik senaryoya göre",
       "Nabız": "Klinik senaryoya göre",
@@ -10488,17 +11393,23 @@ export const cases = [
         "label": "Önceki görüntünün kalite değerlendirmesi",
         "type": "ct",
         "priority": "essential",
-        "summary": "Önceki görüntünün kalite değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Önceki BT görüntüsü tanısal kalitede bulundu.",
         "findings": [
-          "Önceki görüntünün kalite değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Aynı endikasyonla tekrar BT gereksiz radyasyon yükü oluşturabilir.",
+          "Yetersiz kalite olsaydı tekrar gerekçelendirilebilirdi."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Önceki görüntünün kalite değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Önceki BT kalitesi",
+            "Tanısal yeterli",
+            "Yetersiz değil",
+            "Yeterli"
+          ],
+          [
+            "Yeni bulgu",
+            "Yok",
+            "Varsa tekrar düşünülebilir",
+            "Sorun yok"
           ]
         ]
       },
@@ -10507,17 +11418,23 @@ export const cases = [
         "label": "Klinik endikasyon değerlendirmesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Klinik endikasyon değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Acil klinik endikasyon veya yeni kırmızı bayrak saptanmadı.",
         "findings": [
-          "Klinik endikasyon değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tetkik gerekliliği klinik soruyla uyumlu olmalıdır.",
+          "Rutin tekrar uygun değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Klinik endikasyon değerlendirmesi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Yeni nörolojik/cerrahi bulgu",
+            "Yok",
+            "Yok",
+            "Sorun yok"
+          ],
+          [
+            "Endikasyon",
+            "Zayıf",
+            "Net olmalı",
+            "Düşük"
           ]
         ]
       },
@@ -10526,17 +11443,23 @@ export const cases = [
         "label": "Kümülatif doz kaydı",
         "type": "clinical",
         "priority": "useful",
-        "summary": "Kümülatif doz kaydı, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Kümülatif doz kaydı tekrar BT ile artacak radyasyon yükünü gösterdi.",
         "findings": [
-          "Kümülatif doz kaydı, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "ALARA ilkesi gereği gereksiz maruziyet azaltılır.",
+          "Tek başına doz korkusu gerekli tetkiki engellememelidir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Kümülatif doz kaydı, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Kümülatif doz",
+            "Artmış",
+            "Mümkün en düşük",
+            "Riskli"
+          ],
+          [
+            "Tekrar BT katkısı",
+            "Düşük",
+            "Yüksek olmalı",
+            "Düşük"
           ]
         ]
       },
@@ -10545,17 +11468,23 @@ export const cases = [
         "label": "Alternatif modalite seçimi",
         "type": "ultrasound",
         "priority": "situational",
-        "summary": "Alternatif modalite seçimi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Ultrason/MR gibi iyonizan radyasyon içermeyen alternatifler uygun bulundu.",
         "findings": [
-          "Alternatif modalite seçimi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Klinik soruya göre alternatif modalite seçilebilir.",
+          "Acil kontrastlı BT endikasyonu şu an güçlü değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Alternatif modalite seçimi, Gereksiz tekrarlı radyolojik tetkik riski olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Alternatif modalite",
+            "USG/MR uygun",
+            "Uygun değilse BT",
+            "Uygun"
+          ],
+          [
+            "İyonizan radyasyon",
+            "Yok",
+            "Minimum tercih edilir",
+            "Avantajlı"
           ]
         ]
       }
@@ -10569,7 +11498,7 @@ export const cases = [
         "Kronik radyasyon sendromu",
         "Anafilaksi"
       ],
-      "explanation": "Bu olguda en uygun yaklaşım Gereksiz tekrarlı radyolojik tetkik riski çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+      "explanation": "Bu olguda en uygun yaklaşım Gereksiz tekrarlı radyolojik tetkik riski çerçevesidir. klinik vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
       "pearls": [
         "BT dozu akciğer grafisine göre çok daha yüksektir.",
         "Tekrarlı çekimde kümülatif doz artar.",
@@ -10578,7 +11507,7 @@ export const cases = [
       "nextStep": "İlk güvenlik ve klinik karar alındıktan sonra doğrulayıcı test/kayıt/izlem basamağı uygulanır.",
       "answerFeedback": {
         "diagnosisMeta": "Gereksiz tekrarlı radyolojik tetkik riski için sınav ve klinik karar noktası.",
-        "whyCorrect": "Bu olguda en uygun yaklaşım Gereksiz tekrarlı radyolojik tetkik riski çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler. Alan Feedback",
+        "whyCorrect": "Bu olguda en uygun yaklaşım Gereksiz tekrarlı radyolojik tetkik riski çerçevesidir. klinik vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler. Alan Feedback",
         "evidenceChain": [
           "Hastaya görüntü kalitesi düşük diye aynı gün ikinci toraks BT istenmiştir",
           "Teknik olarak sınırlı ama bazı alanlar değerlendirilebilir",
@@ -10595,7 +11524,7 @@ export const cases = [
           "Klinik endikasyon ile destekle — Kanıt veya doğrulama sağlar.",
           "Doz kaydı tamamla — Uzun dönem/sonuç yönetimi için gerekir."
         ],
-        "learningOutcome": "KlinikIQ formatında hedef, sadece tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını öğretmektir.",
+        "learningOutcome": "Öğrenme hedefi, yalnızca tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını da kavramaktır.",
         "differentials": {
           "Akut radyasyon sendromu": {
             "explanation": "Akut radyasyon sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Gereksiz tekrarlı radyolojik tetkik riski lehinedir.",
@@ -10629,10 +11558,10 @@ export const cases = [
     "id": "internal-medicine-forensic-reporting-001",
     "branchId": "internal-medicine",
     "title": "Kesici-delici yaralanmada hekimin adli bildirim kararı",
-    "difficulty": "Orta · Komite/TUS düzeyi",
+    "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "TCK 280, adli rapor, kayıt saklama, resmi belge",
     "demographics": "Acilde çalışan pratisyen hekim",
-    "setting": "Eğitim amaçlı KlinikIQ senaryosu",
+    "setting": "Acil servis - adli olgu değerlendirmesi",
     "chiefComplaint": "Bıçak yarasıyla gelen hastada polise bildirim kararı",
     "stem": "Hasta acile kesici-delici alet yaralanmasıyla gelir ve olayın bildirilmemesini ister. Hekim, görevi sırasında suç belirtisiyle karşılaştığında adli bildirim yükümlülüğü olduğunu bilmeli; tıbbi stabilizasyonu yaptıktan sonra adli kayıt ve rapor süreçlerini başlatmalıdır.",
     "vitals": {
@@ -10654,17 +11583,29 @@ export const cases = [
         "label": "Yara muayenesi ve objektif belgeleme",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Yara muayenesi ve objektif belgeleme, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Kesici-delici yara objektif olarak ölçüldü ve nörovasküler durum kaydedildi.",
         "findings": [
-          "Yara muayenesi ve objektif belgeleme, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Tıbbi kayıtlar adli süreçte nesnel olmalıdır.",
+          "Yorumlayıcı/itham edici dil kullanılmaz."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Yara muayenesi ve objektif belgeleme, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Yara boyutu",
+            "2.5 cm kesi",
+            "Yok",
+            "Patolojik"
+          ],
+          [
+            "Nörovasküler durum",
+            "İntakt",
+            "İntakt",
+            "Normal"
+          ],
+          [
+            "Belgeleme",
+            "Tamamlandı",
+            "Gerekli",
+            "Tamamlandı"
           ]
         ]
       },
@@ -10673,17 +11614,23 @@ export const cases = [
         "label": "Adli rapor ve tıbbi kayıt",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Adli rapor ve tıbbi kayıt, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Adli rapor tıbbi bulgulara dayalı olarak düzenlendi.",
         "findings": [
-          "Adli rapor ve tıbbi kayıt, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Rapor tanık beyanı yerine muayene bulgusunu esas alır.",
+          "Kesin suç değerlendirmesi hekimin görevi değildir."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Adli rapor ve tıbbi kayıt, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Adli rapor",
+            "Düzenlendi",
+            "Gerektiğinde",
+            "Tamamlandı"
+          ],
+          [
+            "Tıbbi kayıt",
+            "Objektif",
+            "Objektif olmalı",
+            "Uygun"
           ]
         ]
       },
@@ -10692,17 +11639,23 @@ export const cases = [
         "label": "Yetkili makama adli bildirim",
         "type": "clinical",
         "priority": "useful",
-        "summary": "Yetkili makama adli bildirim, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Adli bildirim yükümlülüğü kapsamında yetkili makama bildirim yapıldı.",
         "findings": [
-          "Yetkili makama adli bildirim, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Adli olgu şüphesi varsa bildirim geciktirilmez.",
+          "Hasta tedavisi ve güvenliği eş zamanlı sürdürülür."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Yetkili makama adli bildirim, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Bildirim",
+            "Yapıldı",
+            "Gerekli",
+            "Tamamlandı"
+          ],
+          [
+            "Yetkili makam",
+            "Bilgilendirildi",
+            "Gerekli",
+            "Tamamlandı"
           ]
         ]
       },
@@ -10711,17 +11664,23 @@ export const cases = [
         "label": "Fotoğraflama ve delil zinciri",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Fotoğraflama ve delil zinciri, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
+        "summary": "Fotoğraflama ve delil zinciri uygun biçimde kaydedildi.",
         "findings": [
-          "Fotoğraflama ve delil zinciri, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-          "Sonuç, vaka öyküsü ve fizik muayene bulgularıyla birlikte yorumlanır."
+          "Delillerin bütünlüğü korunur.",
+          "Gelişigüzel fotoğraf veya kayıtsız materyal kabul edilemez."
         ],
         "rows": [
           [
-            "Parametre/Bulgu",
-            "Fotoğraflama ve delil zinciri, Adli olguya yaklaşım ve bildirim yükümlülüğü olasılığını klinik bağlam içinde değerlendirmek için kullanılır.",
-            "Klinik yorum",
-            "Değerlendirildi"
+            "Fotoğraflama",
+            "Kimliklenmiş/kayıtlı",
+            "Gerektiğinde",
+            "Uygun"
+          ],
+          [
+            "Delil zinciri",
+            "Kaydedildi",
+            "Kesintisiz",
+            "Tamamlandı"
           ]
         ]
       }
@@ -10735,7 +11694,7 @@ export const cases = [
         "Sadece reçete verip gönderme",
         "Malpraktis kesin tanısı"
       ],
-      "explanation": "Bu olguda en uygun yaklaşım Adli olguya yaklaşım ve bildirim yükümlülüğü çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+      "explanation": "Bu olguda en uygun yaklaşım Adli olguya yaklaşım ve bildirim yükümlülüğü çerçevesidir. klinik vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
       "pearls": [
         "Kanunları bilmemek mazeret değildir.",
         "Sağlık mesleği mensubunun suçu bildirmemesi hukuki sorumluluk doğurabilir.",
@@ -10744,7 +11703,7 @@ export const cases = [
       "nextStep": "İlk güvenlik ve klinik karar alındıktan sonra doğrulayıcı test/kayıt/izlem basamağı uygulanır.",
       "answerFeedback": {
         "diagnosisMeta": "Adli olguya yaklaşım ve bildirim yükümlülüğü için sınav ve klinik karar noktası.",
-        "whyCorrect": "Bu olguda en uygun yaklaşım Adli olguya yaklaşım ve bildirim yükümlülüğü çerçevesidir. PDF'teki vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
+        "whyCorrect": "Bu olguda en uygun yaklaşım Adli olguya yaklaşım ve bildirim yükümlülüğü çerçevesidir. klinik vurgular, klinik kararın mekanizmasını ve yasal/akademik önemini destekler.",
         "evidenceChain": [
           "Hasta acile kesici-delici alet yaralanmasıyla gelir ve olayın bildirilmemesini ister",
           "Kesici-delici yara ölçüldü ve lokalize edildi",
@@ -10761,7 +11720,7 @@ export const cases = [
           "Fotoğraflama ile destekle — Kanıt veya doğrulama sağlar.",
           "Tıbbi kayıt tamamla — Uzun dönem/sonuç yönetimi için gerekir."
         ],
-        "learningOutcome": "KlinikIQ formatında hedef, sadece tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını öğretmektir.",
+        "learningOutcome": "Öğrenme hedefi, yalnızca tanıyı değil doğru ilk basamağı ve yanlış seçeneklerin neden geri planda kaldığını da kavramaktır.",
         "differentials": {
           "Hasta mahremiyeti nedeniyle hiç bildirmeme": {
             "explanation": "Hasta mahremiyeti nedeniyle hiç bildirmeme ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Adli olguya yaklaşım ve bildirim yükümlülüğü lehinedir.",
