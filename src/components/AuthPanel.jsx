@@ -54,28 +54,30 @@ const authFeatureCards = [
 ];
 
 const authOrbitIcons = [
-  { icon: 'Stethoscope', label: 'Klinik değerlendirme' },
-  { icon: 'Brain', label: 'Klinik akıl yürütme' },
-  { icon: 'HeartPulse', label: 'Yaşam bulguları' },
-  { icon: 'Gauge', label: 'Performans içgörüleri' },
-  { icon: 'FlaskConical', label: 'Tetkik değerlendirme' },
-  { icon: 'Activity', label: 'Dinamik izlem' },
+  { icon: 'Stethoscope', label: 'Klinik değerlendirme', lane: 'outer' },
+  { icon: 'Brain', label: 'Klinik akıl yürütme', lane: 'outer' },
+  { icon: 'HeartPulse', label: 'Yaşam bulguları', lane: 'outer' },
+  { icon: 'FlaskConical', label: 'Tetkik değerlendirme', lane: 'outer' },
+  { icon: 'Gauge', label: 'Performans içgörüleri', lane: 'inner' },
+  { icon: 'Activity', label: 'Dinamik izlem', lane: 'inner' },
 ];
 
-function OrbitNodes({ items }) {
+function OrbitRotor({ items, lane }) {
   const total = items.length;
 
   return (
-    <span className="kq-orbit-rotor">
+    <span className={`kq-orbit-rotor kq-orbit-rotor-${lane}`} aria-hidden="true">
       {items.map((item, index) => {
-        const angle = Number(((360 / total) * index).toFixed(3));
+        const offset = lane === 'inner' ? 46 : -8;
+        const angle = Number((((360 / total) * index) + offset).toFixed(3));
 
         return (
           <span
             key={item.icon}
-            className="kq-orbit-node"
+            className={`kq-orbit-node kq-orbit-node-${lane}`}
             style={{
-              transform: `rotate(${angle}deg) translateY(calc(-1 * var(--kq-orbit-radius)))`,
+              '--kq-node-angle': `${angle}deg`,
+              transform: `rotate(${angle}deg) translateY(calc(-1 * var(--kq-active-radius)))`,
             }}
             aria-label={item.label}
           >
@@ -83,12 +85,26 @@ function OrbitNodes({ items }) {
               className="kq-orbit-node-face"
               style={{ transform: `rotate(${-angle}deg)` }}
             >
-              <Icon name={item.icon} />
+              <span className="kq-orbit-node-counter">
+                <Icon name={item.icon} />
+              </span>
             </span>
           </span>
         );
       })}
     </span>
+  );
+}
+
+function OrbitNodes({ items }) {
+  const outerItems = items.filter((item) => item.lane !== 'inner');
+  const innerItems = items.filter((item) => item.lane === 'inner');
+
+  return (
+    <>
+      <OrbitRotor items={outerItems} lane="outer" />
+      <OrbitRotor items={innerItems} lane="inner" />
+    </>
   );
 }
 
@@ -190,9 +206,15 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
           <div className="auth-hero-illustration" aria-hidden="true">
             <div className="auth-hero-orbital kq-orbit-stage">
               <span className="kq-orbit-aura" />
+              <span className="kq-orbit-ring kq-orbit-ring-far" />
               <span className="kq-orbit-ring kq-orbit-ring-outer" />
+              <span className="kq-orbit-ring kq-orbit-ring-mid" />
               <span className="kq-orbit-ring kq-orbit-ring-inner" />
-              <span className="kq-orbit-sweep" />
+              <span className="kq-orbit-sweep kq-orbit-sweep-outer" />
+              <span className="kq-orbit-sweep kq-orbit-sweep-inner" />
+              <span className="kq-orbit-dot kq-orbit-dot-a" />
+              <span className="kq-orbit-dot kq-orbit-dot-b" />
+              <span className="kq-orbit-dot kq-orbit-dot-c" />
 
               <span className="kq-orbit-core">
                 <Icon name="ShieldPlus" />
@@ -213,7 +235,6 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
       <form className="auth-minimal-card" onSubmit={handleSubmit}>
         <div className="auth-minimal-head">
           <div>
-            <p>KULLANICI GİRİŞİ</p>
             <h2>{isRegister ? 'Kayıt ol' : 'Giriş yap'}</h2>
             <span>{isRegister ? 'Yeni hesabını oluştur ve klinik olgulara başla.' : 'Hesabına dön ve kaldığın yerden devam et.'}</span>
           </div>

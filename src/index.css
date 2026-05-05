@@ -23899,84 +23899,915 @@ body.klinikiq-auth-lock .kq-orbit-node-face svg {
   }
 }
 
+
 /* =====================================================================
-   V125 — Orbit cloud unclipped / soft aura fix
-   Removes old pseudo-backgrounds and clipping that created hard rectangular bounds.
-   Also increases safe space below the orbit so badges do not collide with feature cards.
+   V123 — ACTUAL shield-centered orbital motion fix
+   Problem fixed: older V122 gave .kq-orbit-rotor a static transform: translate()
+   with !important; CSS keyframes cannot override an !important transform.
+   Result was a static orbit. This final block removes that conflict by using
+   inset:0 for the rotor, so it rotates around the fixed shield center.
    ===================================================================== */
-body.klinikiq-auth-lock .auth-minimal-brand,
-body.klinikiq-auth-lock .auth-minimal-showcase,
-body.klinikiq-auth-lock .auth-hero-illustration,
-body.klinikiq-auth-lock .kq-orbit-stage {
-  overflow: visible !important;
-}
-
-body.klinikiq-auth-lock .auth-hero-illustration,
-body.klinikiq-auth-lock .kq-orbit-stage {
-  contain: none !important;
-}
-
-body.klinikiq-auth-lock .auth-hero-illustration::before,
-body.klinikiq-auth-lock .auth-hero-illustration::after {
-  content: none !important;
-  display: none !important;
-}
-
-body.klinikiq-auth-lock .auth-minimal-showcase {
-  min-height: clamp(360px, 42vh, 520px) !important;
-  align-items: center !important;
-  overflow: visible !important;
-}
 
 body.klinikiq-auth-lock .auth-hero-illustration {
-  min-height: clamp(320px, 38vh, 470px) !important;
-  padding: 18px 0 28px !important;
-  margin-bottom: 4px !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: visible !important;
+  isolation: isolate !important;
 }
 
 body.klinikiq-auth-lock .kq-orbit-stage {
-  --kq-orbit-size: clamp(286px, 31vw, 420px);
-  --kq-orbit-radius: calc(var(--kq-orbit-size) * 0.355);
+  --kq-orbit-size: clamp(300px, 34vw, 460px);
+  --kq-orbit-radius: calc(var(--kq-orbit-size) * 0.36);
+  --kq-core-size: clamp(92px, 9vw, 118px);
+  --kq-node-size: clamp(50px, 4.6vw, 68px);
+
+  position: relative !important;
+  width: var(--kq-orbit-size) !important;
+  height: var(--kq-orbit-size) !important;
+  min-width: var(--kq-orbit-size) !important;
+  min-height: var(--kq-orbit-size) !important;
+  margin-inline: auto !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+  transform: translateZ(0) !important;
+  contain: layout paint;
+}
+
+body.klinikiq-auth-lock .kq-orbit-aura,
+body.klinikiq-auth-lock .kq-orbit-ring,
+body.klinikiq-auth-lock .kq-orbit-sweep,
+body.klinikiq-auth-lock .kq-orbit-core {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
 }
 
 body.klinikiq-auth-lock .kq-orbit-aura {
-  width: 86% !important;
-  height: 86% !important;
+  width: 74% !important;
+  height: 74% !important;
+  border-radius: 50% !important;
   background:
-    radial-gradient(
-      circle,
-      color-mix(in srgb, var(--accent) 14%, transparent) 0%,
-      color-mix(in srgb, var(--accent) 8%, transparent) 34%,
-      color-mix(in srgb, var(--accent) 3%, transparent) 58%,
-      transparent 80%
-    ) !important;
-  filter: blur(18px) !important;
-  opacity: 0.88 !important;
+    radial-gradient(circle,
+      color-mix(in srgb, var(--accent) 16%, transparent) 0%,
+      color-mix(in srgb, var(--accent) 8%, transparent) 38%,
+      transparent 72%) !important;
+  filter: blur(10px);
+  opacity: .95;
+  pointer-events: none;
+  z-index: 0;
+  animation: kqV123AuraPulse 6s ease-in-out infinite !important;
 }
 
-body.klinikiq-auth-lock .kq-orbit-ring-outer,
-body.klinikiq-auth-lock .kq-orbit-sweep {
-  width: calc(var(--kq-orbit-radius) * 2 + var(--kq-node-size) - 8px) !important;
-  height: calc(var(--kq-orbit-radius) * 2 + var(--kq-node-size) - 8px) !important;
+body.klinikiq-auth-lock .kq-orbit-ring {
+  border-radius: 50% !important;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 20%, rgba(17, 24, 39, 0.08)) !important;
+  box-sizing: border-box !important;
+  pointer-events: none !important;
+  background: transparent !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-outer {
+  width: calc(var(--kq-orbit-radius) * 2 + var(--kq-node-size)) !important;
+  height: calc(var(--kq-orbit-radius) * 2 + var(--kq-node-size)) !important;
+  opacity: .55 !important;
+  z-index: 1;
 }
 
 body.klinikiq-auth-lock .kq-orbit-ring-inner {
-  width: calc(var(--kq-orbit-radius) * 2 - 42px) !important;
-  height: calc(var(--kq-orbit-radius) * 2 - 42px) !important;
+  width: calc(var(--kq-orbit-radius) * 2 - 34px) !important;
+  height: calc(var(--kq-orbit-radius) * 2 - 34px) !important;
+  opacity: .28 !important;
+  z-index: 1;
+}
+
+body.klinikiq-auth-lock .kq-orbit-sweep {
+  width: calc(var(--kq-orbit-radius) * 2 + var(--kq-node-size)) !important;
+  height: calc(var(--kq-orbit-radius) * 2 + var(--kq-node-size)) !important;
+  border-radius: 50% !important;
+  border-top: 2px solid color-mix(in srgb, var(--accent) 56%, transparent) !important;
+  border-right: 2px solid transparent !important;
+  border-bottom: 2px solid transparent !important;
+  border-left: 2px solid transparent !important;
+  opacity: .8 !important;
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--accent) 18%, transparent));
+  pointer-events: none !important;
+  z-index: 2;
+  animation: kqV123Sweep 8s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-core {
+  width: var(--kq-core-size) !important;
+  height: var(--kq-core-size) !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  z-index: 5 !important;
+  color: var(--accent) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,255,255,.93)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 15%, rgba(255,255,255,.72)) !important;
+  box-shadow:
+    0 18px 40px color-mix(in srgb, var(--accent) 12%, transparent),
+    0 0 0 10px color-mix(in srgb, var(--accent) 6%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.98) !important;
+  pointer-events: none;
+}
+
+body.klinikiq-auth-lock .kq-orbit-core svg {
+  width: 42% !important;
+  height: 42% !important;
+  display: block;
+}
+
+/* The key fix: no translate(-50%, -50%) and no static transform here. Inset 0 makes
+   the rotor's center exactly match the shield/stage center, so icons orbit the shield. */
+body.klinikiq-auth-lock .kq-orbit-rotor {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 3 !important;
+  transform-origin: 50% 50% !important;
+  pointer-events: none !important;
+  will-change: transform;
+  animation: kqV123OrbitAroundShield 20s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 0 !important;
+  height: 0 !important;
+  transform-origin: center center !important;
+  z-index: 4 !important;
+  will-change: transform;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-face {
+  width: var(--kq-node-size) !important;
+  height: var(--kq-node-size) !important;
+  margin-left: calc(var(--kq-node-size) / -2) !important;
+  margin-top: calc(var(--kq-node-size) / -2) !important;
+  border-radius: 50% !important;
+  display: grid !important;
+  place-items: center !important;
+  color: var(--accent) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,255,255,.93)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, rgba(255,255,255,.72)) !important;
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.08),
+    0 6px 16px color-mix(in srgb, var(--accent) 9%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.98) !important;
+  will-change: transform;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-counter {
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+  transform-origin: 50% 50% !important;
+  will-change: transform;
+  animation: kqV123CounterKeepUpright 20s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-counter svg,
+body.klinikiq-auth-lock .kq-orbit-node-face svg {
+  width: 40% !important;
+  height: 40% !important;
+  display: block;
+}
+
+@keyframes kqV123OrbitAroundShield {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes kqV123CounterKeepUpright {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes kqV123Sweep {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes kqV123AuraPulse {
+  0%, 100% { opacity: .78; transform: translate(-50%, -50%) scale(.98); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
 }
 
 @media (max-width: 767px) {
+  body.klinikiq-auth-lock .kq-orbit-stage {
+    --kq-orbit-size: clamp(250px, 72vw, 320px);
+    --kq-orbit-radius: calc(var(--kq-orbit-size) * .35);
+    --kq-core-size: 88px;
+    --kq-node-size: 50px;
+  }
+}
+
+/* Reduced motion note:
+   Previous versions fully killed .kq-orbit-* animations under prefers-reduced-motion.
+   That can make desktop look broken if the OS/browser flag is accidentally active.
+   Here reduced motion slows the orbit down instead of freezing the product hero. */
+@media (prefers-reduced-motion: reduce) {
+  body.klinikiq-auth-lock .kq-orbit-rotor,
+  body.klinikiq-auth-lock .kq-orbit-node-counter {
+    animation-duration: 80s !important;
+  }
+
+  body.klinikiq-auth-lock .kq-orbit-sweep,
+  body.klinikiq-auth-lock .kq-orbit-aura {
+    animation-duration: 36s !important;
+  }
+}
+
+/* =====================================================================
+   V124 — KlinikIQ premium polish pass
+   - clean auth hero container corner
+   - refined shield-centered multi-lane orbit
+   - softer glow / haze boundaries
+   - lighter demo CTA and removed login kicker
+   - dashboard/header alignment and session panel grid balance
+   ===================================================================== */
+
+/* Auth screen shell and container polish */
+body.klinikiq-auth-lock .app-shell:has(.auth-minimal-shell) {
+  background: #f6fbfa !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-shell {
+  width: min(1660px, calc(100vw - clamp(28px, 3.8vw, 64px))) !important;
+  grid-template-columns: minmax(720px, 1fr) minmax(430px, 540px) !important;
+  gap: clamp(42px, 5vw, 88px) !important;
+  align-items: center !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-brand {
+  min-height: clamp(650px, 86vh, 850px) !important;
+  padding: clamp(34px, 3.6vw, 58px) !important;
+  border-radius: 34px !important;
+  overflow: hidden !important;
+  clip-path: inset(0 round 34px) !important;
+  background:
+    radial-gradient(circle at 63% 38%, rgba(20, 184, 166, .075), transparent 38%),
+    linear-gradient(145deg, rgba(255,255,255,.985), rgba(248,253,252,.96)) !important;
+  border: 1px solid rgba(15, 118, 110, .145) !important;
+  box-shadow:
+    0 28px 80px rgba(15, 23, 42, .085),
+    inset 0 1px 0 rgba(255,255,255,.96) !important;
+  justify-content: space-between !important;
+  gap: clamp(18px, 2.1vh, 28px) !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-brand::before,
+body.klinikiq-auth-lock .auth-minimal-brand::after {
+  display: none !important;
+  content: none !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-showcase {
+  grid-template-columns: minmax(0, .95fr) minmax(390px, 520px) !important;
+  min-height: clamp(360px, 42vh, 500px) !important;
+  gap: clamp(22px, 2.8vw, 46px) !important;
+  overflow: visible !important;
+  contain: layout paint !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-logo-row {
+  gap: 16px !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-logo-copy {
+  font-size: clamp(24px, 1.9vw, 30px) !important;
+  font-weight: 820 !important;
+  letter-spacing: -.035em !important;
+  color: #0f172a !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-logo-mark {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,.86) !important;
+  border-color: rgba(15, 118, 110, .15) !important;
+  box-shadow: 0 14px 34px rgba(15, 118, 110, .08), inset 0 1px 0 rgba(255,255,255,.92) !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-hero h1 {
+  max-width: 560px !important;
+  font-size: clamp(54px, 5.1vw, 88px) !important;
+  line-height: .955 !important;
+  letter-spacing: -.072em !important;
+  font-weight: 820 !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-hero p {
+  max-width: 560px !important;
+  font-size: clamp(16px, 1.05vw, 19px) !important;
+  line-height: 1.55 !important;
+  color: #516178 !important;
+  font-weight: 520 !important;
+}
+
+body.klinikiq-auth-lock .auth-hero-illustration {
+  min-height: clamp(350px, 40vh, 480px) !important;
+  overflow: visible !important;
+  contain: layout paint !important;
+}
+
+body.klinikiq-auth-lock .auth-hero-illustration::before {
+  inset: 6% 3% !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(20,184,166,.16) 0%, rgba(20,184,166,.075) 34%, rgba(20,184,166,.028) 58%, transparent 78%) !important;
+  filter: blur(24px) !important;
+  opacity: .85 !important;
+}
+
+body.klinikiq-auth-lock .auth-hero-illustration::after {
+  width: 104% !important;
+  height: 104% !important;
+  background: radial-gradient(circle, rgba(255,255,255,.34), transparent 72%) !important;
+  filter: blur(28px) !important;
+  opacity: .48 !important;
+}
+
+/* Auth orbit: shield remains fixed, nodes orbit in two controlled lanes. */
+body.klinikiq-auth-lock .kq-orbit-stage {
+  --kq-orbit-size: clamp(360px, 33vw, 520px);
+  --kq-orbit-radius-outer: calc(var(--kq-orbit-size) * .39);
+  --kq-orbit-radius-inner: calc(var(--kq-orbit-size) * .275);
+  --kq-core-size: clamp(88px, 7.2vw, 122px);
+  --kq-node-size: clamp(48px, 4vw, 64px);
+  --kq-node-size-inner: clamp(42px, 3.4vw, 56px);
+  overflow: visible !important;
+  contain: layout paint !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-aura {
+  width: 104% !important;
+  height: 104% !important;
+  background:
+    radial-gradient(circle,
+      rgba(20,184,166,.16) 0%,
+      rgba(20,184,166,.10) 28%,
+      rgba(20,184,166,.045) 53%,
+      rgba(20,184,166,.014) 70%,
+      transparent 84%) !important;
+  filter: blur(30px) !important;
+  opacity: .9 !important;
+  animation: kqV124AuraBreathe 8s cubic-bezier(.37, 0, .2, 1) infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring {
+  border-width: 1.25px !important;
+  border-color: rgba(15, 118, 110, .18) !important;
+  background: transparent !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2) !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-far {
+  width: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-node-size) + 64px) !important;
+  height: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-node-size) + 64px) !important;
+  opacity: .22 !important;
+  border-style: dashed !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-outer {
+  width: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-node-size)) !important;
+  height: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-node-size)) !important;
+  opacity: .58 !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-mid {
+  width: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-node-size-inner) + 34px) !important;
+  height: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-node-size-inner) + 34px) !important;
+  opacity: .36 !important;
+  border-style: dashed !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-inner {
+  width: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-node-size-inner) - 10px) !important;
+  height: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-node-size-inner) - 10px) !important;
+  opacity: .30 !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-core {
+  width: var(--kq-core-size) !important;
+  height: var(--kq-core-size) !important;
+  background:
+    radial-gradient(circle at 34% 26%, rgba(255,255,255,.78), transparent 42%),
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(242,253,251,.94)) !important;
+  border-color: rgba(15, 118, 110, .16) !important;
+  box-shadow:
+    0 26px 70px rgba(15, 118, 110, .15),
+    0 0 0 12px rgba(20,184,166,.055),
+    inset 0 1px 0 rgba(255,255,255,.98) !important;
+  animation: kqV124CoreBreathe 5.8s cubic-bezier(.37, 0, .2, 1) infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-sweep {
+  border-radius: 50% !important;
+  pointer-events: none !important;
+  background: transparent !important;
+  filter: drop-shadow(0 0 8px rgba(20,184,166,.18)) !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-sweep-outer {
+  width: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-node-size)) !important;
+  height: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-node-size)) !important;
+  border-top: 2px solid rgba(20,184,166,.54) !important;
+  border-right: 2px solid transparent !important;
+  border-bottom: 2px solid transparent !important;
+  border-left: 2px solid transparent !important;
+  opacity: .78 !important;
+  animation: kqV124SweepForward 15s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-sweep-inner {
+  width: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-node-size-inner) + 34px) !important;
+  height: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-node-size-inner) + 34px) !important;
+  border-right: 2px solid rgba(20,184,166,.42) !important;
+  border-top: 2px solid transparent !important;
+  border-bottom: 2px solid transparent !important;
+  border-left: 2px solid transparent !important;
+  opacity: .58 !important;
+  animation: kqV124SweepReverse 18s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-dot {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 999px !important;
+  background: rgba(15, 118, 110, .72) !important;
+  box-shadow: 0 0 0 6px rgba(20,184,166,.10), 0 10px 18px rgba(15,118,110,.10) !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-dot-a { transform: rotate(22deg) translateY(calc(var(--kq-orbit-radius-outer) * -1)); }
+body.klinikiq-auth-lock .kq-orbit-dot-b { transform: rotate(148deg) translateY(calc(var(--kq-orbit-radius-inner) * -1)); opacity: .62; }
+body.klinikiq-auth-lock .kq-orbit-dot-c { transform: rotate(276deg) translateY(calc((var(--kq-orbit-radius-outer) + 24px) * -1)); opacity: .54; }
+
+body.klinikiq-auth-lock .kq-orbit-rotor {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  transform-origin: 50% 50% !important;
+  pointer-events: none !important;
+  z-index: 4 !important;
+  will-change: transform !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-rotor-outer {
+  --kq-active-radius: var(--kq-orbit-radius-outer);
+  --kq-active-node-size: var(--kq-node-size);
+  animation: kqV124OrbitForward 30s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-rotor-inner {
+  --kq-active-radius: var(--kq-orbit-radius-inner);
+  --kq-active-node-size: var(--kq-node-size-inner);
+  animation: kqV124OrbitReverse 24s linear infinite !important;
+  z-index: 3 !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node {
+  left: 50% !important;
+  top: 50% !important;
+  width: 0 !important;
+  height: 0 !important;
+  transform-origin: center center !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-face {
+  width: var(--kq-active-node-size) !important;
+  height: var(--kq-active-node-size) !important;
+  margin-left: calc(var(--kq-active-node-size) / -2) !important;
+  margin-top: calc(var(--kq-active-node-size) / -2) !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  color: #0f766e !important;
+  background:
+    radial-gradient(circle at 32% 22%, rgba(255,255,255,.88), transparent 42%),
+    linear-gradient(180deg, rgba(255,255,255,.99), rgba(247,253,252,.94)) !important;
+  border: 1px solid rgba(15, 118, 110, .15) !important;
+  box-shadow:
+    0 16px 34px rgba(15, 23, 42, .075),
+    0 7px 18px rgba(20, 184, 166, .09),
+    inset 0 1px 0 rgba(255,255,255,.98) !important;
+  will-change: transform !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-counter {
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+  animation: kqV124CounterForward 30s linear infinite !important;
+  will-change: transform !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-rotor-inner .kq-orbit-node-counter {
+  animation: kqV124CounterReverse 24s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-counter svg {
+  width: 42% !important;
+  height: 42% !important;
+  stroke-width: 1.9 !important;
+}
+
+/* Login card: remove heavy kicker, relax demo hierarchy */
+body.klinikiq-auth-lock .auth-minimal-card {
+  border-radius: 34px !important;
+  padding: clamp(34px, 3.2vw, 48px) !important;
+  gap: 16px !important;
+  background: rgba(255,255,255,.96) !important;
+  border: 1px solid rgba(15, 23, 42, .08) !important;
+  box-shadow: 0 32px 86px rgba(15, 23, 42, .10), inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-head {
+  align-items: start !important;
+  margin-bottom: 6px !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-head > div > p {
+  display: none !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-head h2 {
+  margin: 0 0 10px !important;
+  font-size: clamp(42px, 3.1vw, 54px) !important;
+  line-height: .96 !important;
+  letter-spacing: -.06em !important;
+  font-weight: 810 !important;
+  color: #0f172a !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-head span {
+  font-size: 15.5px !important;
+  line-height: 1.48 !important;
+  color: #64748b !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-demo {
+  min-height: 54px !important;
+  font-weight: 720 !important;
+  letter-spacing: -.01em !important;
+  color: #0f766e !important;
+  background: linear-gradient(135deg, rgba(240,253,250,.82), rgba(255,255,255,.96)) !important;
+  border-color: rgba(15, 118, 110, .22) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.9) !important;
+  animation: none !important;
+}
+
+body.klinikiq-auth-lock .auth-minimal-note {
+  margin-top: 2px !important;
+  border-radius: 16px !important;
+  font-size: 13px !important;
+  font-weight: 610 !important;
+  background: rgba(248, 253, 252, .88) !important;
+}
+
+/* Dashboard/nav: consistent control geometry and centered dark-mode toggle */
+body:not(.klinikiq-auth-lock) .top-shell-nav {
+  top: 18px !important;
+  width: min(1540px, calc(100% - 56px)) !important;
+  min-height: 78px !important;
+  grid-template-columns: minmax(270px, 1fr) auto minmax(500px, 1fr) !important;
+  gap: 18px !important;
+  padding: 12px 18px !important;
+  border-radius: 24px !important;
+  background: rgba(255,255,255,.88) !important;
+  border-color: rgba(15, 23, 42, .085) !important;
+  box-shadow: 0 18px 54px rgba(15,23,42,.075), inset 0 1px 0 rgba(255,255,255,.86) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions {
+  gap: 8px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-wrong-chip,
+body:not(.klinikiq-auth-lock) .nav-score-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .btn,
+body:not(.klinikiq-auth-lock) .klinikiq-theme-toggle {
+  height: 48px !important;
+  min-height: 48px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(15, 23, 42, .10) !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .045), inset 0 1px 0 rgba(255,255,255,.82) !important;
+}
+
+body:not(.klinikiq-auth-lock) .klinikiq-theme-toggle {
+  width: 48px !important;
+  min-width: 48px !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  background: rgba(255,255,255,.76) !important;
+  color: #0f766e !important;
+}
+
+body:not(.klinikiq-auth-lock) .theme-toggle-track {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .theme-toggle-orb {
+  width: 31px !important;
+  height: 31px !important;
+  display: grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  border-radius: 999px !important;
+  background: rgba(240, 253, 250, .95) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.82) !important;
+}
+
+body:not(.klinikiq-auth-lock) .theme-toggle-orb svg {
+  width: 18.5px !important;
+  height: 18.5px !important;
+  margin: 0 !important;
+  display: block !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon {
+  width: 48px !important;
+  min-width: 48px !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+}
+
+/* Dashboard two-column balance */
+body:not(.klinikiq-auth-lock) .minimal-home-shell {
+  width: min(1540px, calc(100% - 56px)) !important;
+  gap: 22px !important;
+  padding-top: 116px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-dashboard-v8 {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 420px) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+  margin-bottom: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-v8,
+body:not(.klinikiq-auth-lock) .session-summary-v8 {
+  border-radius: 28px !important;
+  background: rgba(255,255,255,.92) !important;
+  border: 1px solid rgba(15, 23, 42, .075) !important;
+  box-shadow: 0 18px 54px rgba(15,23,42,.07), inset 0 1px 0 rgba(255,255,255,.88) !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-v8 {
+  min-height: 430px !important;
+  padding: clamp(36px, 3vw, 52px) !important;
+  gap: 28px !important;
+  align-content: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-v8-main {
+  gap: clamp(28px, 4vw, 64px) !important;
+  align-items: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-copy-v8 h1 {
+  font-size: clamp(58px, 5vw, 84px) !important;
+  line-height: .96 !important;
+  letter-spacing: -.068em !important;
+  font-weight: 820 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-copy-v8 p {
+  max-width: 560px !important;
+  margin-top: 16px !important;
+  font-size: 19px !important;
+  line-height: 1.55 !important;
+  color: #40536d !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v8 .btn {
+  min-height: 58px !important;
+  border-radius: 18px !important;
+  padding-inline: 24px !important;
+  font-size: 16px !important;
+  font-weight: 760 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-mode-v8 {
+  padding: 5px !important;
+  border-radius: 18px !important;
+  background: rgba(248,253,252,.88) !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-mode-v8 button {
+  min-height: 46px !important;
+  padding-inline: 22px !important;
+  border-radius: 14px !important;
+  font-size: 15px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-metrics-v8 {
+  gap: 14px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-metric-card {
+  min-height: 112px !important;
+  padding: 18px !important;
+  border-radius: 20px !important;
+  background: rgba(255,255,255,.74) !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-metric-card strong {
+  font-size: 30px !important;
+}
+
+body:not(.klinikiq-auth-lock) .session-summary-v8 {
+  min-height: 430px !important;
+  height: 100% !important;
+  align-self: stretch !important;
+  padding: 26px !important;
+  gap: 16px !important;
+  align-content: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v8-header {
+  align-items: flex-start !important;
+  gap: 14px !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v8-header span {
+  font-size: 12px !important;
+  letter-spacing: .16em !important;
+  color: #0f766e !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v8-header h2 {
+  font-size: 25px !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.035em !important;
+  margin-top: 8px !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v8-score {
+  width: 74px !important;
+  height: 74px !important;
+  border-radius: 22px !important;
+  background: linear-gradient(180deg, rgba(240,253,250,.94), rgba(255,255,255,.88)) !important;
+  border-color: rgba(15,118,110,.16) !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v8-grid {
+  gap: 10px !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v8-item {
+  min-height: 84px !important;
+  padding: 14px !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.68) !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v8-row {
+  min-height: 62px !important;
+  padding: 12px 14px !important;
+  border-radius: 16px !important;
+  background: rgba(255,255,255,.72) !important;
+}
+
+@keyframes kqV124OrbitForward { to { transform: rotate(360deg); } }
+@keyframes kqV124OrbitReverse { to { transform: rotate(-360deg); } }
+@keyframes kqV124CounterForward { to { transform: rotate(-360deg); } }
+@keyframes kqV124CounterReverse { to { transform: rotate(360deg); } }
+@keyframes kqV124SweepForward { to { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes kqV124SweepReverse { to { transform: translate(-50%, -50%) rotate(-360deg); } }
+@keyframes kqV124AuraBreathe {
+  0%, 100% { opacity: .78; transform: translate(-50%, -50%) scale(.96); }
+  50% { opacity: .96; transform: translate(-50%, -50%) scale(1.04); }
+}
+@keyframes kqV124CoreBreathe {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.025); }
+}
+
+@media (min-width: 1121px) and (max-height: 860px) {
+  body.klinikiq-auth-lock .auth-minimal-brand {
+    min-height: calc(100svh - 32px) !important;
+  }
   body.klinikiq-auth-lock .auth-minimal-showcase {
+    min-height: clamp(310px, 38vh, 420px) !important;
+  }
+  body.klinikiq-auth-lock .kq-orbit-stage {
+    --kq-orbit-size: clamp(320px, 30vw, 440px);
+  }
+  body.klinikiq-auth-lock .auth-minimal-hero h1 {
+    font-size: clamp(46px, 4.3vw, 72px) !important;
+  }
+  body.klinikiq-auth-lock .auth-minimal-feature-card {
+    min-height: 110px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  body.klinikiq-auth-lock .auth-minimal-shell {
+    grid-template-columns: 1fr !important;
+    width: min(760px, calc(100vw - 28px)) !important;
+  }
+  body.klinikiq-auth-lock .auth-minimal-showcase {
+    grid-template-columns: 1fr !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-illustration {
+    order: -1 !important;
+    max-width: 420px !important;
+    margin-inline: auto !important;
+  }
+  body:not(.klinikiq-auth-lock) .top-shell-nav,
+  body:not(.klinikiq-auth-lock) .minimal-home-shell {
+    width: min(100% - 28px, 1120px) !important;
+  }
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    grid-template-columns: 1fr !important;
+    position: sticky !important;
+    transform: none !important;
+    left: auto !important;
+    top: 12px !important;
+    margin: 12px auto 0 !important;
+  }
+  body:not(.klinikiq-auth-lock) .minimal-home-shell {
+    padding-top: 22px !important;
+  }
+  body:not(.klinikiq-auth-lock) .home-dashboard-v8 {
+    grid-template-columns: 1fr !important;
+  }
+  body:not(.klinikiq-auth-lock) .home-hero-v8,
+  body:not(.klinikiq-auth-lock) .session-summary-v8 {
     min-height: auto !important;
   }
+}
 
-  body.klinikiq-auth-lock .auth-hero-illustration {
-    min-height: 280px !important;
-    padding: 8px 0 14px !important;
-  }
-
+@media (max-width: 720px) {
   body.klinikiq-auth-lock .kq-orbit-stage {
-    --kq-orbit-size: clamp(250px, 72vw, 316px);
-    --kq-orbit-radius: calc(var(--kq-orbit-size) * 0.35);
+    --kq-orbit-size: clamp(250px, 76vw, 326px);
+    --kq-core-size: 82px;
+    --kq-node-size: 46px;
+    --kq-node-size-inner: 40px;
+  }
+  body.klinikiq-auth-lock .auth-minimal-brand,
+  body.klinikiq-auth-lock .auth-minimal-card {
+    border-radius: 26px !important;
+    clip-path: inset(0 round 26px) !important;
+  }
+  body:not(.klinikiq-auth-lock) .home-hero-v8-main {
+    grid-template-columns: 1fr !important;
+  }
+  body:not(.klinikiq-auth-lock) .home-metrics-v8 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.klinikiq-auth-lock .kq-orbit-rotor-outer,
+  body.klinikiq-auth-lock .kq-orbit-node-counter {
+    animation-duration: 90s !important;
+  }
+  body.klinikiq-auth-lock .kq-orbit-rotor-inner {
+    animation-duration: 80s !important;
+  }
+  body.klinikiq-auth-lock .kq-orbit-sweep,
+  body.klinikiq-auth-lock .kq-orbit-aura,
+  body.klinikiq-auth-lock .kq-orbit-core {
+    animation-duration: 60s !important;
   }
 }
