@@ -729,9 +729,8 @@ function App() {
   return (
     <main className="app-shell premium-shell" data-theme={theme}>
       <nav className="top-shell-nav" aria-label="KlinikIQ üst gezinme">
-        <button className="nav-brand" type="button" onClick={resetExamToHome} aria-label="Ana ekrana dön">
-          <span className="nav-brand-mark" aria-hidden="true"><BrandMark title="" /></span>
-          <span className="nav-brand-copy"><strong>KlinikIQ</strong><small>TUS odaklı klinik olgu simülatörü</small></span>
+        <button className="nav-brand nav-brand-icon-only" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">
+          <span className="nav-brand-mark nav-brand-mark-pulse" aria-hidden="true"><BrandMark title="" /></span>
         </button>
         <div className="segmented-control nav-mode-switch" aria-label="Öğrenme modu seçimi">
           <button
