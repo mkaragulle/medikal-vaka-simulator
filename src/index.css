@@ -29118,3 +29118,101 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-wrong-chip strong,
     flex: 1 1 160px !important;
   }
 }
+
+/* =========================================================
+   V101 — Right workspace real scroll fix
+   Reason: the right clinical tools / diagnosis workspace was sticky
+   but its content could extend below the viewport without a reliable
+   internal scroll area. This patch gives the side workspace a definite
+   viewport-bound height, keeps the sticky container from becoming the
+   scroll target, and makes the inner card the only vertical scroller.
+   ========================================================= */
+@media (min-width: 1181px) {
+  body:not(.klinikiq-auth-lock) .professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .qbank-shell {
+    min-height: 0 !important;
+    align-items: start !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column {
+    position: sticky !important;
+    top: 96px !important;
+    align-self: start !important;
+    height: calc(100dvh - 112px) !important;
+    max-height: calc(100dvh - 112px) !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    padding-right: 0 !important;
+    scrollbar-width: auto !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell {
+    height: 100% !important;
+    max-height: 100% !important;
+    min-height: 0 !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+    scrollbar-gutter: stable both-edges;
+    scroll-behavior: smooth;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell .tools-panel,
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell .question-panel,
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell .clinical-tools-panel,
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell .diagnostic-decision-panel {
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+    display: block !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell::-webkit-scrollbar-track {
+    background: transparent !important;
+    border-radius: 999px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell::-webkit-scrollbar-thumb {
+    min-height: 44px !important;
+    border: 3px solid transparent !important;
+    border-radius: 999px !important;
+    background: color-mix(in srgb, var(--text-muted) 34%, transparent) !important;
+    background-clip: padding-box !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in srgb, var(--accent) 42%, transparent) !important;
+    background-clip: padding-box !important;
+  }
+}
+
+@media (min-width: 1181px) and (max-width: 1320px) {
+  body:not(.klinikiq-auth-lock) .professional-right-column {
+    top: 154px !important;
+    height: calc(100dvh - 170px) !important;
+    max-height: calc(100dvh - 170px) !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .professional-right-column {
+    position: static !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .professional-right-column .right-workspace-shell {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    scrollbar-gutter: auto !important;
+  }
+}

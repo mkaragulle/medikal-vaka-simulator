@@ -708,7 +708,12 @@ function CasePlayer({
         </div>
 
         <aside className="qbank-side-column professional-right-column">
-          <div className="right-workspace-shell card-surface">
+          <div
+            className="right-workspace-shell card-surface"
+            tabIndex={0}
+            role="region"
+            aria-label="Klinik çalışma araçları ve tanı paneli"
+          >
             {!examMeta?.active ? (
               <CaseToolsPanel
                 clinicalCase={clinicalCase}
