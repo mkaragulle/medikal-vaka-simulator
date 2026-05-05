@@ -22597,3 +22597,531 @@ body.klinikiq-auth-lock .auth-feature-copy span {
     min-height: 0 !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   V117 — Production polish: unified motion, feature cards, orbit, toggle, branches
+   -------------------------------------------------------------------------- */
+:root {
+  --motion-ease-standard: cubic-bezier(.2, .8, .2, 1);
+  --motion-ease-emphasized: cubic-bezier(.22, 1, .36, 1);
+  --motion-ease-soft: cubic-bezier(.16, 1, .3, 1);
+  --motion-duration-fast: 140ms;
+  --motion-duration-base: 220ms;
+  --motion-duration-panel: 420ms;
+  --motion-duration-orbit: 42s;
+  --ui-radius-sm: 12px;
+  --ui-radius-md: 16px;
+  --ui-radius-lg: 22px;
+  --ui-ring-soft: 0 0 0 4px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+:where(.btn, .branch-card, .auth-feature-card-v2, .klinikiq-theme-toggle, .auth-minimal-tabs button, .auth-minimal-google, .auth-minimal-demo) {
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+}
+
+/* Auth feature cards: quieter, aligned, reusable, premium */
+body.klinikiq-auth-lock .auth-minimal-features {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  gap: clamp(12px, 1vw, 16px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+body.klinikiq-auth-lock .auth-feature-card-v2 {
+  position: relative;
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  grid-template-rows: auto;
+  align-items: start !important;
+  align-content: start !important;
+  gap: 13px !important;
+  min-height: clamp(112px, 13vh, 132px) !important;
+  width: 100%;
+  padding: 15px 15px 14px !important;
+  border-radius: 18px !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, var(--border-subtle)) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 94%, white 4%), color-mix(in srgb, var(--auth-panel-soft) 91%, transparent)) !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .042), inset 0 1px 0 rgba(255,255,255,.10) !important;
+  color: var(--auth-text-main);
+  isolation: isolate;
+  overflow: hidden;
+  transform: translateZ(0);
+  transition-property: transform, border-color, background, box-shadow;
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+}
+
+body.klinikiq-auth-lock .auth-feature-card-v2::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle at 22% 8%, color-mix(in srgb, var(--accent) 6%, transparent), transparent 54%);
+  opacity: .72;
+}
+
+body.klinikiq-auth-lock .auth-feature-card-v2::after {
+  content: none !important;
+}
+
+body.klinikiq-auth-lock .auth-feature-card-v2:hover {
+  transform: translateY(-1px) translateZ(0) !important;
+  border-color: color-mix(in srgb, var(--accent) 20%, var(--border-subtle)) !important;
+  box-shadow: 0 14px 30px rgba(15, 118, 110, .075), inset 0 1px 0 rgba(255,255,255,.13) !important;
+}
+
+body.klinikiq-auth-lock .auth-feature-icon {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
+  display: grid !important;
+  place-items: center !important;
+  align-self: start !important;
+  justify-self: start !important;
+  margin: 0 !important;
+  border-radius: 14px !important;
+  color: color-mix(in srgb, var(--accent) 82%, var(--auth-text-main)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 96%, white 5%), color-mix(in srgb, var(--accent) 8%, var(--auth-panel-soft))) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12) !important;
+  transform: none !important;
+  transition-property: transform, color, background, border-color;
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+}
+
+body.klinikiq-auth-lock .auth-feature-icon svg {
+  width: 21px !important;
+  height: 21px !important;
+  stroke-width: 1.85 !important;
+  display: block;
+}
+
+body.klinikiq-auth-lock .auth-feature-card-v2:hover .auth-feature-icon {
+  transform: translateY(-1px) !important;
+  color: color-mix(in srgb, var(--accent) 92%, white 6%) !important;
+  border-color: color-mix(in srgb, var(--accent) 24%, transparent) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 96%, white 7%), color-mix(in srgb, var(--accent) 12%, var(--auth-panel-soft))) !important;
+}
+
+body.klinikiq-auth-lock .auth-feature-copy {
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-rows: minmax(2.35em, auto) minmax(4.05em, auto) !important;
+  gap: 5px !important;
+  padding-top: 1px !important;
+  align-items: start !important;
+}
+
+body.klinikiq-auth-lock .auth-feature-copy strong {
+  margin: 0 !important;
+  color: var(--auth-text-main) !important;
+  font-size: clamp(13.2px, .82vw, 14.6px) !important;
+  line-height: 1.2 !important;
+  font-weight: 760 !important;
+  letter-spacing: -.018em !important;
+  text-wrap: balance;
+}
+
+body.klinikiq-auth-lock .auth-feature-copy span {
+  margin: 0 !important;
+  color: color-mix(in srgb, var(--auth-text-muted) 93%, var(--auth-text-main) 7%) !important;
+  font-size: clamp(11.6px, .72vw, 12.6px) !important;
+  line-height: 1.43 !important;
+  font-weight: 520 !important;
+  letter-spacing: -.006em !important;
+  text-wrap: pretty;
+}
+
+/* Stable orbital hero: one center, fixed bounds, equal angles, desktop/mobile-safe */
+body.klinikiq-auth-lock .auth-minimal-showcase {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(292px, 398px) !important;
+  align-items: center !important;
+  gap: clamp(18px, 2.1vw, 34px) !important;
+  min-height: clamp(292px, 34vh, 410px) !important;
+  overflow: hidden !important;
+  contain: layout paint;
+}
+
+body.klinikiq-auth-lock .auth-minimal-hero {
+  z-index: 3 !important;
+  max-width: 760px !important;
+}
+
+body.klinikiq-auth-lock .auth-hero-illustration {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  min-height: clamp(270px, 30vh, 386px) !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: hidden !important;
+  isolation: isolate !important;
+  contain: layout paint;
+  pointer-events: none;
+}
+
+body.klinikiq-auth-lock .auth-hero-orbital {
+  --orbit-size: clamp(264px, 22.5vw, 370px);
+  --orbit-radius: calc(var(--orbit-size) * .355);
+  position: relative !important;
+  width: var(--orbit-size) !important;
+  height: var(--orbit-size) !important;
+  display: grid !important;
+  place-items: center !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+body.klinikiq-auth-lock .auth-orbit-ring {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  translate: -50% -50% !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 13%, transparent) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.06) !important;
+}
+body.klinikiq-auth-lock .auth-orbit-ring.orbit-ring-lg {
+  width: calc(var(--orbit-radius) * 2 + 64px) !important;
+  height: calc(var(--orbit-radius) * 2 + 64px) !important;
+  opacity: .74 !important;
+}
+body.klinikiq-auth-lock .auth-orbit-ring.orbit-ring-md {
+  width: calc(var(--orbit-radius) * 2 + 18px) !important;
+  height: calc(var(--orbit-radius) * 2 + 18px) !important;
+  opacity: .64 !important;
+}
+body.klinikiq-auth-lock .auth-orbit-ring.orbit-ring-sm {
+  width: calc(var(--orbit-radius) * 2 - 30px) !important;
+  height: calc(var(--orbit-radius) * 2 - 30px) !important;
+  opacity: .42 !important;
+}
+
+body.klinikiq-auth-lock .auth-hero-orbital .auth-orbit-core {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  right: auto !important;
+  inset: auto !important;
+  translate: -50% -50% !important;
+  width: clamp(80px, 6vw, 106px) !important;
+  height: clamp(80px, 6vw, 106px) !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  z-index: 5 !important;
+  transform: translateZ(0) !important;
+  color: color-mix(in srgb, var(--accent) 84%, var(--auth-text-main)) !important;
+  background:
+    radial-gradient(circle at 34% 22%, rgba(255,255,255,.42), transparent 38%),
+    linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 94%, white 6%), color-mix(in srgb, var(--accent) 9%, var(--auth-panel-soft))) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent) !important;
+  box-shadow: 0 22px 52px rgba(15, 118, 110, .13), inset 0 1px 0 rgba(255,255,255,.18) !important;
+  animation: klinikiqCorePulseStable 5.8s var(--motion-ease-soft) infinite !important;
+}
+body.klinikiq-auth-lock .auth-hero-orbital .auth-orbit-core svg {
+  width: 43% !important;
+  height: 43% !important;
+}
+
+body.klinikiq-auth-lock .auth-orbit-item {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 3 !important;
+  transform-origin: 50% 50% !important;
+  animation: klinikiqOrbitStable var(--motion-duration-orbit) linear infinite !important;
+  animation-delay: var(--orbit-delay, 0s) !important;
+  animation-play-state: running !important;
+  will-change: transform;
+  pointer-events: none;
+}
+body.klinikiq-auth-lock .auth-orbit-badge {
+  --orbit-badge-size: clamp(42px, 3vw, 54px);
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: var(--orbit-badge-size) !important;
+  height: var(--orbit-badge-size) !important;
+  margin-left: calc(var(--orbit-badge-size) / -2) !important;
+  margin-top: calc(var(--orbit-badge-size) / -2) !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 50% !important;
+  z-index: 4;
+  color: color-mix(in srgb, var(--accent) 83%, var(--auth-text-main)) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 95%, white 6%), color-mix(in srgb, var(--accent) 8%, var(--auth-panel-soft))) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent) !important;
+  box-shadow: 0 12px 28px rgba(15, 118, 110, .085), inset 0 1px 0 rgba(255,255,255,.16) !important;
+  transform: rotate(var(--orbit-angle)) translateY(calc(var(--orbit-radius) * -1)) rotate(var(--orbit-anti-angle)) !important;
+}
+body.klinikiq-auth-lock .auth-orbit-icon-wrap {
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+  animation: klinikiqOrbitCounterStable var(--motion-duration-orbit) linear infinite !important;
+  animation-delay: var(--orbit-delay, 0s) !important;
+  will-change: transform;
+}
+body.klinikiq-auth-lock .auth-orbit-icon-wrap svg {
+  width: 45% !important;
+  height: 45% !important;
+  stroke-width: 1.85 !important;
+}
+
+@keyframes klinikiqOrbitStable {
+  from { transform: rotate(0deg) translateZ(0); }
+  to { transform: rotate(360deg) translateZ(0); }
+}
+@keyframes klinikiqOrbitCounterStable {
+  from { transform: rotate(0deg) translateZ(0); }
+  to { transform: rotate(-360deg) translateZ(0); }
+}
+@keyframes klinikiqCorePulseStable {
+  0%, 100% { transform: translateZ(0) scale(1); }
+  50% { transform: translateZ(0) scale(1.025); }
+}
+
+/* Theme toggle centering: identical geometry in auth/nav */
+.klinikiq-theme-toggle,
+.theme-toggle {
+  display: inline-grid !important;
+  grid-auto-flow: column;
+  align-items: center !important;
+  justify-content: center !important;
+  place-items: center !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  width: 42px !important;
+  height: 42px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  line-height: 1 !important;
+  overflow: hidden;
+}
+.klinikiq-theme-toggle-auth {
+  min-width: 52px !important;
+  min-height: 52px !important;
+  width: 52px !important;
+  height: 52px !important;
+}
+.theme-toggle-track {
+  width: 100% !important;
+  height: 100% !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+.theme-toggle-orb {
+  position: static !important;
+  width: 28px !important;
+  height: 28px !important;
+  display: grid !important;
+  place-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  translate: none !important;
+  transform: none !important;
+  line-height: 1 !important;
+}
+.klinikiq-theme-toggle-auth .theme-toggle-orb {
+  width: 31px !important;
+  height: 31px !important;
+}
+.theme-toggle-orb svg {
+  width: 18px !important;
+  height: 18px !important;
+  display: block !important;
+  margin: 0 !important;
+  stroke-width: 2 !important;
+}
+.klinikiq-theme-toggle-auth .theme-toggle-orb svg {
+  width: 19px !important;
+  height: 19px !important;
+}
+.klinikiq-theme-toggle:hover .theme-toggle-orb,
+.klinikiq-theme-toggle:active .theme-toggle-orb,
+.klinikiq-theme-toggle:focus-visible .theme-toggle-orb {
+  transform: none !important;
+}
+.klinikiq-theme-toggle:focus-visible {
+  outline: none !important;
+  box-shadow: var(--ui-ring-soft), 0 10px 24px rgba(15, 118, 110, .1) !important;
+}
+.klinikiq-theme-toggle:has(.theme-toggle-label) {
+  width: auto !important;
+  gap: 8px;
+  padding-inline: 10px !important;
+}
+
+/* Branch screen motion: desktop-safe reveal and hover system */
+.branch-grid {
+  perspective: 1200px;
+}
+.branch-card {
+  transform: translateY(0) translateZ(0);
+  animation: branchCardRevealStable 520ms var(--motion-ease-emphasized) both;
+  animation-delay: calc(var(--branch-index, 0) * 46ms);
+  transition-property: transform, border-color, box-shadow, background;
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+  will-change: transform;
+}
+.branch-card:hover:not(:disabled),
+.branch-card:focus-visible:not(:disabled) {
+  transform: translateY(-3px) translateZ(0) !important;
+}
+.branch-card .icon-badge,
+.branch-card .branch-card-footer svg {
+  transition-property: transform, color, background;
+  transition-duration: var(--motion-duration-base);
+  transition-timing-function: var(--motion-ease-standard);
+}
+.branch-card:hover:not(:disabled) .icon-badge,
+.branch-card:focus-visible:not(:disabled) .icon-badge {
+  transform: translateY(-1px) scale(1.025) !important;
+}
+.branch-card:hover:not(:disabled) .branch-card-footer svg,
+.branch-card:focus-visible:not(:disabled) .branch-card-footer svg {
+  transform: translateX(3px) !important;
+}
+.branch-progress span {
+  transition: width var(--motion-duration-panel) var(--motion-ease-emphasized);
+}
+
+@keyframes branchCardRevealStable {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Typography/spacing polish for clinical dashboard surfaces */
+:where(.section-title-row h2, .home-hero-copy-v8 h1, .auth-minimal-hero h1) {
+  letter-spacing: -.055em;
+}
+:where(.section-title-row p, .branch-card-body p, .case-list-card p, .auth-feature-copy span) {
+  text-wrap: pretty;
+}
+:where(.chip, .branch-count, .nav-score-chip span, .auth-minimal-head p) {
+  letter-spacing: .065em;
+}
+
+@media (min-width: 1121px) and (max-height: 820px) {
+  body.klinikiq-auth-lock .auth-minimal-showcase {
+    min-height: clamp(260px, 31vh, 340px) !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-orbital {
+    --orbit-size: clamp(240px, 20vw, 310px);
+  }
+  body.klinikiq-auth-lock .auth-feature-card-v2 {
+    min-height: 104px !important;
+    grid-template-columns: 40px minmax(0, 1fr) !important;
+    padding: 12px !important;
+    gap: 11px !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-icon {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    border-radius: 13px !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-icon svg {
+    width: 19px !important;
+    height: 19px !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-copy {
+    grid-template-rows: auto auto !important;
+    gap: 4px !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-copy strong { font-size: 12.6px !important; line-height: 1.18 !important; }
+  body.klinikiq-auth-lock .auth-feature-copy span { font-size: 11.1px !important; line-height: 1.34 !important; }
+}
+
+@media (max-width: 1240px) {
+  body.klinikiq-auth-lock .auth-minimal-showcase {
+    grid-template-columns: minmax(0, 1fr) minmax(244px, 320px) !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-orbital {
+    --orbit-size: clamp(246px, 29vw, 316px);
+  }
+}
+
+@media (max-width: 1120px) {
+  body.klinikiq-auth-lock .auth-minimal-showcase {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-illustration {
+    order: -1;
+    width: min(100%, 360px) !important;
+    min-height: 258px !important;
+    margin-inline: auto;
+  }
+  body.klinikiq-auth-lock .auth-hero-orbital {
+    --orbit-size: clamp(238px, 58vw, 318px);
+  }
+  body.klinikiq-auth-lock .auth-minimal-features {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-card-v2 {
+    min-height: 112px !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body.klinikiq-auth-lock .auth-minimal-features {
+    grid-template-columns: 1fr !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-card-v2 {
+    min-height: auto !important;
+  }
+  body.klinikiq-auth-lock .auth-feature-copy {
+    grid-template-rows: auto auto !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-illustration {
+    min-height: 220px !important;
+  }
+  body.klinikiq-auth-lock .auth-hero-orbital {
+    --orbit-size: clamp(220px, 67vw, 278px);
+  }
+  body.klinikiq-auth-lock .auth-orbit-badge {
+    --orbit-badge-size: 40px;
+  }
+  .klinikiq-theme-toggle,
+  .theme-toggle {
+    min-width: 40px !important;
+    min-height: 40px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+  }
+  body.klinikiq-auth-lock .auth-orbit-item,
+  body.klinikiq-auth-lock .auth-orbit-icon-wrap,
+  body.klinikiq-auth-lock .auth-hero-orbital .auth-orbit-core,
+  .branch-card,
+  .branch-card .icon-badge,
+  .branch-card .branch-card-footer svg,
+  .auth-feature-card-v2,
+  .klinikiq-theme-toggle,
+  .theme-toggle-orb {
+    animation: none !important;
+    transition-duration: 1ms !important;
+  }
+}

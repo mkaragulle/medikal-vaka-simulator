@@ -16,13 +16,13 @@ function GoogleLogo() {
 
 const authFeatureCards = [
   {
-    icon: 'ClipboardList',
+    icon: 'ClipboardCheck',
     title: 'Yanlış Analizi',
     description: 'Yanlış yaptığın vakaları tekrar incele, eksik noktalarını daha hızlı fark et.',
     signal: 'Eksik kazanımları netleştirir.'
   },
   {
-    icon: 'Trophy',
+    icon: 'TrendUp',
     title: 'Performans Takibi',
     description: 'Branş bazlı ilerlemeni, başarı oranını ve gelişim trendini düzenli takip et.',
     signal: 'İlerlemeni ölçülebilir yapar.'
@@ -34,19 +34,19 @@ const authFeatureCards = [
     signal: 'Tekrarla kalıcılığı artırır.'
   },
   {
-    icon: 'Notes',
+    icon: 'LayeredCards',
     title: 'Pro Vaka Havuzu',
     description: 'Daha fazla branş, daha fazla vaka ve daha ileri düzey klinik senaryolara eriş.',
     signal: 'Daha geniş klinik maruziyet sağlar.'
   },
   {
-    icon: 'Gauge',
+    icon: 'InsightGauge',
     title: 'Akıllı Gelişim Raporları',
     description: 'Güçlü ve zayıf yönlerini net biçimde gör, çalışma planını veriye göre şekillendir.',
     signal: 'Çalışma planını veriye bağlar.'
   },
   {
-    icon: 'Timer',
+    icon: 'Stopwatch',
     title: 'Gerçek Sınav Modu',
     description: 'Süre baskısı altında çözüm pratiği yap, sınav disiplinini ve klinik karar hızını artır.',
     signal: 'Sınav temposuna hazırlar.'
@@ -63,6 +63,18 @@ const authOrbitIcons = [
   { icon: 'ShieldCheck', label: 'Güvenli çalışma akışı' },
 ];
 
+function AuthFeatureCard({ feature }) {
+  return (
+    <article className="auth-minimal-feature-card auth-feature-card-v2">
+      <span className="auth-feature-icon" aria-hidden="true"><Icon name={feature.icon} /></span>
+      <span className="auth-feature-copy">
+        <strong>{feature.title}</strong>
+        <span>{feature.description}</span>
+      </span>
+    </article>
+  );
+}
+
 function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onToggleTheme }) {
   const [mode, setMode] = useState('login');
   const [form, setForm] = useState({ name: '', email: '', password: '', confirmPassword: '' });
@@ -72,7 +84,6 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
   const [demoBusy, setDemoBusy] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
-  const [activeFeature, setActiveFeature] = useState(0);
 
   const isRegister = mode === 'register';
 
@@ -155,13 +166,15 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
               <span className="auth-orbit-core"><Icon name="ShieldPlus" /></span>
               {authOrbitIcons.map((item, index) => {
                 const total = authOrbitIcons.length;
-                const angle = `${(360 / total) * index}deg`;
-                const delay = `${(-34 / total) * index}s`;
+                const angleValue = (360 / total) * index;
+                const angle = `${angleValue}deg`;
+                const delay = `${(-42 / total) * index}s`;
+                const antiAngle = `${angleValue * -1}deg`;
                 return (
                   <span
                     key={item.icon}
                     className="auth-orbit-item"
-                    style={{ '--orbit-angle': angle, '--orbit-delay': delay }}
+                    style={{ '--orbit-angle': angle, '--orbit-anti-angle': antiAngle, '--orbit-delay': delay }}
                     aria-label={item.label}
                   >
                     <span className="auth-orbit-badge">
@@ -177,22 +190,8 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
         </div>
 
         <div className="auth-minimal-features" aria-label="KlinikIQ özellikleri">
-          {authFeatureCards.map((feature, index) => (
-            <button
-              className={`auth-minimal-feature-card ${activeFeature === index ? 'is-active' : ''}`}
-              type="button"
-              key={feature.title}
-              onMouseEnter={() => setActiveFeature(index)}
-              onFocus={() => setActiveFeature(index)}
-              onClick={() => setActiveFeature(index)}
-              aria-pressed={activeFeature === index}
-            >
-              <span className="auth-feature-icon" aria-hidden="true"><Icon name={feature.icon} /></span>
-              <span className="auth-feature-copy">
-                <strong>{feature.title}</strong>
-                <span>{feature.description}</span>
-              </span>
-            </button>
+          {authFeatureCards.map((feature) => (
+            <AuthFeatureCard key={feature.title} feature={feature} />
           ))}
         </div>
       </aside>

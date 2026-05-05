@@ -1,6 +1,6 @@
 import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
 
-function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch }) {
+function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, index = 0 }) {
   const branchCases = cases.filter((clinicalCase) => clinicalCase.branchId === branch.id);
   const totalCases = branchCases.length;
   const priorityCases = branchCases.filter((clinicalCase) => /acil|kritik/i.test(clinicalCase.difficulty)).length;
@@ -20,6 +20,7 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch }) {
       aria-label={`${branch.name} branşını aç`}
       aria-busy={isLaunching ? 'true' : 'false'}
       disabled={isLocked && !isLaunching}
+      style={{ '--branch-index': index }}
     >
       <span className="branch-launch-wave" aria-hidden="true" />
       <div className="branch-card-head">
@@ -62,7 +63,7 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
       </div>
 
       <div className="branch-grid">
-        {branches.map((branch) => (
+        {branches.map((branch, index) => (
           <BranchCard
             key={branch.id}
             branch={branch}
@@ -70,6 +71,7 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
             isLaunching={launchingBranchId === branch.id}
             isLocked={isTransitioning}
             onLaunchBranch={handleLaunchBranch}
+            index={index}
           />
         ))}
       </div>
