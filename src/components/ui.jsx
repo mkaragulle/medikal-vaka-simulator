@@ -84,6 +84,29 @@ export function ClinicalCallout({ tone = 'info', icon = 'Sparkles', title = 'Kli
 
 
 
+export function ThemeToggle({ theme = 'dark', onToggleTheme, className = '', showLabel = false, variant = 'default' }) {
+  const isDark = theme === 'dark';
+  const label = isDark ? 'Açık temaya geç' : 'Koyu temaya geç';
+  return (
+    <button
+      type="button"
+      className={`medsim-theme-toggle theme-toggle ${variant === 'auth' ? 'medsim-theme-toggle-auth' : ''} ${className}`.trim()}
+      onClick={onToggleTheme}
+      aria-label={label}
+      title={label}
+      data-theme-state={theme}
+    >
+      <span className="theme-toggle-track" aria-hidden="true">
+        <span className="theme-toggle-orb">
+          <Icon name={isDark ? 'Sun' : 'Moon'} />
+        </span>
+      </span>
+      {showLabel ? <span className="theme-toggle-label">{isDark ? 'Açık tema' : 'Koyu tema'}</span> : null}
+    </button>
+  );
+}
+
+
 export function BranchTransitionVisual({ branchId, iconName }) {
   if (branchId === 'cardiovascular') {
     return (

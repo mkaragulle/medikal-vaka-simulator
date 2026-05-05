@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icon } from './ui.jsx';
+import { Icon, ThemeToggle } from './ui.jsx';
 
 function GoogleLogo() {
   return (
@@ -125,9 +125,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
             <h2>{isRegister ? 'Kayıt ol' : 'Giriş yap'}</h2>
             <span>{isRegister ? 'Yeni hesabını oluştur ve klinik olgulara başla.' : 'Hesabına dön ve kaldığın yerden devam et.'}</span>
           </div>
-          <button className="auth-minimal-theme" type="button" onClick={onToggleTheme} aria-label="Tema değiştir">
-            <Icon name={theme === 'dark' ? 'Sun' : 'Moon'} />
-          </button>
+          <ThemeToggle theme={theme} onToggleTheme={onToggleTheme} variant="auth" />
         </div>
 
         <div className="auth-minimal-tabs" role="tablist" aria-label="Giriş seçenekleri">

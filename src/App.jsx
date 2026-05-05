@@ -7,7 +7,7 @@ import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
 import WrongAnswersPanel from './components/WrongAnswersPanel.jsx';
 import ExamResults from './components/ExamResults.jsx';
-import { Icon, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
+import { Icon, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById, getCasesByBranch } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
@@ -740,9 +740,7 @@ function App() {
             <Icon name="Timer" />
             <span>{isDemoUser ? 'Demo blok' : 'Blok sınav'}</span>
           </button>
-          <button type="button" className="btn btn-icon theme-toggle" onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} aria-label={theme === 'dark' ? 'Açık temaya geç' : 'Koyu temaya geç'}>
-            <Icon name={theme === 'dark' ? 'Sun' : 'Moon'} />
-          </button>
+          <ThemeToggle theme={theme} onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} />
           <button type="button" className="btn btn-icon" onClick={handleLogout} aria-label="Çıkış yap">
             <Icon name="LogIn" />
           </button>
