@@ -66,7 +66,7 @@ function OrbitNodes({ items }) {
   const total = items.length;
 
   return (
-    <span className="kq-orbit-rotor">
+    <span className="kq-orbit-rotor" aria-hidden="true">
       {items.map((item, index) => {
         const angle = Number(((360 / total) * index).toFixed(3));
 
@@ -83,7 +83,9 @@ function OrbitNodes({ items }) {
               className="kq-orbit-node-face"
               style={{ transform: `rotate(${-angle}deg)` }}
             >
-              <Icon name={item.icon} />
+              <span className="kq-orbit-node-counter">
+                <Icon name={item.icon} />
+              </span>
             </span>
           </span>
         );
