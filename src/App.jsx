@@ -761,21 +761,44 @@ function App() {
           </button>
         </div>
         <div className="nav-actions" aria-label="Oturum eylemleri">
-          <span className="nav-user-chip" aria-label={`Kullanıcı ${currentUser.name}`}>
+          <span className="nav-user-chip nav-user-card" aria-label={`Kullanıcı ${currentUser.name}`}>
             <Icon name="User" />
-            <span>{currentUser.name}</span>
+            <span className="nav-user-copy">
+              <small>Hesap</small>
+              <strong title={currentUser.name}>{currentUser.name}</strong>
+            </span>
           </span>
-          <button type="button" className="nav-wrong-chip" onClick={() => { setSelectedBranchId(null); setSelectedCaseId(null); setExamState(null); setMode('study'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} aria-label="Yanlış çözülenler">
-            <span>Yanlış</span>
-            <strong>{visibleWrongAnswers.length}</strong>
+          <button
+            type="button"
+            className="nav-wrong-chip nav-stat-chip"
+            onClick={() => {
+              setSelectedBranchId(null);
+              setSelectedCaseId(null);
+              setExamState(null);
+              setMode('study');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            aria-label="Yanlış çözülenler"
+          >
+            <Icon name="RotateCcw" />
+            <span className="nav-stat-copy">
+              <small>Yanlışlar</small>
+              <strong>{visibleWrongAnswers.length}</strong>
+            </span>
           </button>
-          <span className="nav-score-chip" aria-label={`Puan ${sessionStats.score}`}><span>Puan</span><strong>{sessionStats.score}</strong></span>
+          <span className="nav-score-chip nav-stat-chip" aria-label={`Puan ${sessionStats.score}`}>
+            <Icon name="Trophy" />
+            <span className="nav-stat-copy">
+              <small>Puan</small>
+              <strong>{sessionStats.score}</strong>
+            </span>
+          </span>
           <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}>
             <Icon name="Timer" />
-            <span>{isDemoUser ? 'Demo blok' : 'Blok sınav'}</span>
+            <span>{isDemoUser ? 'Demo blok' : 'Blok sınavı'}</span>
           </button>
           <ThemeToggle theme={theme} onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} />
-          <button type="button" className="btn btn-icon" onClick={handleLogout} aria-label="Çıkış yap">
+          <button type="button" className="btn btn-icon nav-logout-btn" onClick={handleLogout} aria-label="Çıkış yap">
             <Icon name="LogIn" />
           </button>
         </div>
