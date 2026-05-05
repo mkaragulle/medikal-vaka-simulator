@@ -23350,3 +23350,335 @@ body.klinikiq-auth-lock .auth-orbit-icon-wrap svg {
     animation: none !important;
   }
 }
+
+/* =====================================================================
+   V121 — KlinikIQ orbital hero motion system
+   Dedicated kq-orbit implementation to ensure desktop/mobile movement.
+   ===================================================================== */
+
+body.klinikiq-auth-lock .auth-hero-illustration {
+  display: grid !important;
+  place-items: center !important;
+  overflow: visible !important;
+  isolation: isolate;
+}
+
+body.klinikiq-auth-lock .kq-orbit-stage {
+  --kq-orbit-size: clamp(300px, 34vw, 500px);
+  --kq-orbit-core-size: clamp(88px, 10vw, 124px);
+  --kq-orbit-node-size-outer: clamp(50px, 5vw, 72px);
+  --kq-orbit-node-size-inner: clamp(46px, 4vw, 64px);
+  --kq-orbit-radius-outer: calc(var(--kq-orbit-size) * 0.41);
+  --kq-orbit-radius-inner: calc(var(--kq-orbit-size) * 0.29);
+  --kq-orbit-line: color-mix(in srgb, var(--accent) 22%, rgba(17, 24, 39, 0.06));
+  --kq-orbit-line-strong: color-mix(in srgb, var(--accent) 48%, rgba(255,255,255,0.42));
+  position: relative;
+  width: var(--kq-orbit-size);
+  height: var(--kq-orbit-size);
+  min-width: var(--kq-orbit-size);
+  min-height: var(--kq-orbit-size);
+  margin-inline: auto;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  isolation: isolate;
+  transform: translateZ(0);
+}
+
+body.klinikiq-auth-lock .kq-orbit-aura,
+body.klinikiq-auth-lock .kq-orbit-glow,
+body.klinikiq-auth-lock .kq-orbit-ring,
+body.klinikiq-auth-lock .kq-orbit-core,
+body.klinikiq-auth-lock .kq-orbit-track,
+body.klinikiq-auth-lock .kq-orbit-sweep,
+body.klinikiq-auth-lock .kq-orbit-dots {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+}
+
+body.klinikiq-auth-lock .kq-orbit-aura {
+  width: calc(var(--kq-orbit-size) * 0.72);
+  height: calc(var(--kq-orbit-size) * 0.72);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 18%, transparent) 0%, color-mix(in srgb, var(--accent) 9%, transparent) 34%, transparent 74%);
+  filter: blur(10px);
+  opacity: .92;
+  animation: kqAuraPulse 8s ease-in-out infinite;
+}
+
+body.klinikiq-auth-lock .kq-orbit-glow {
+  width: calc(var(--kq-orbit-size) * 0.88);
+  height: calc(var(--kq-orbit-size) * 0.88);
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--accent) 10%, transparent) 0%, transparent 68%);
+  filter: blur(18px);
+  opacity: .7;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring {
+  border-radius: 50%;
+  border: 1.5px solid var(--kq-orbit-line);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-xl {
+  width: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-orbit-node-size-outer) + 36px);
+  height: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-orbit-node-size-outer) + 36px);
+  opacity: .3;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-lg {
+  width: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-orbit-node-size-outer));
+  height: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-orbit-node-size-outer));
+  border-color: color-mix(in srgb, var(--accent) 30%, rgba(255,255,255,.4));
+  opacity: .58;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-md {
+  width: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-orbit-node-size-inner) + 10px);
+  height: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-orbit-node-size-inner) + 10px);
+  opacity: .42;
+}
+
+body.klinikiq-auth-lock .kq-orbit-ring-sm {
+  width: calc(var(--kq-orbit-core-size) * 1.9);
+  height: calc(var(--kq-orbit-core-size) * 1.9);
+  border-color: color-mix(in srgb, var(--accent) 22%, rgba(255,255,255,.55));
+  opacity: .24;
+}
+
+body.klinikiq-auth-lock .kq-orbit-core {
+  width: var(--kq-orbit-core-size);
+  height: var(--kq-orbit-core-size);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(249,255,255,.92));
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, rgba(255,255,255,.76));
+  box-shadow:
+    0 22px 54px color-mix(in srgb, var(--accent) 14%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.96),
+    0 0 0 10px color-mix(in srgb, var(--accent) 7%, transparent);
+  z-index: 5;
+  animation: kqCoreFloat 6.2s ease-in-out infinite;
+}
+
+body.klinikiq-auth-lock .kq-orbit-core svg {
+  width: 42%;
+  height: 42%;
+}
+
+body.klinikiq-auth-lock .kq-orbit-track {
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  will-change: transform;
+  pointer-events: none;
+}
+
+body.klinikiq-auth-lock .kq-orbit-track-outer {
+  animation: kqOrbitSpinOuter 24s linear infinite !important;
+  z-index: 3;
+}
+
+body.klinikiq-auth-lock .kq-orbit-track-inner {
+  animation: kqOrbitSpinInner 19s linear infinite !important;
+  z-index: 2;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0;
+  height: 0;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-face {
+  display: grid;
+  place-items: center;
+  animation: kqOrbitCounterSpinOuter 24s linear infinite !important;
+  will-change: transform;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-inner .kq-orbit-node-face {
+  animation-name: kqOrbitCounterSpinInner !important;
+  animation-duration: 19s !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-counter {
+  width: var(--kq-orbit-node-size-outer);
+  height: var(--kq-orbit-node-size-outer);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--accent);
+  background: linear-gradient(180deg, rgba(255,255,255,.98), rgba(248,255,255,.92));
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, rgba(255,255,255,.72));
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, 0.08),
+    0 8px 18px color-mix(in srgb, var(--accent) 10%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.96);
+  transition: transform .24s ease, box-shadow .24s ease;
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-inner .kq-orbit-node-counter {
+  width: var(--kq-orbit-node-size-inner);
+  height: var(--kq-orbit-node-size-inner);
+}
+
+body.klinikiq-auth-lock .kq-orbit-node-counter svg {
+  width: 42%;
+  height: 42%;
+}
+
+body.klinikiq-auth-lock .kq-orbit-sweep {
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+body.klinikiq-auth-lock .kq-orbit-sweep-outer {
+  width: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-orbit-node-size-outer));
+  height: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-orbit-node-size-outer));
+  border-top: 2px solid color-mix(in srgb, var(--accent) 48%, transparent);
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 22%, transparent));
+  opacity: .78;
+  animation: kqOrbitSpinOuter 12s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-sweep-inner {
+  width: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-orbit-node-size-inner) + 10px);
+  height: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-orbit-node-size-inner) + 10px);
+  border-right: 2px solid color-mix(in srgb, var(--accent) 36%, transparent);
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  opacity: .62;
+  animation: kqOrbitSpinInner 10s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-dots {
+  border-radius: 50%;
+  opacity: .75;
+  pointer-events: none;
+}
+
+body.klinikiq-auth-lock .kq-orbit-dots::before,
+body.klinikiq-auth-lock .kq-orbit-dots::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 82%, white 18%);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 10%, transparent), 0 0 14px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+body.klinikiq-auth-lock .kq-orbit-dots-outer {
+  width: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-orbit-node-size-outer));
+  height: calc(var(--kq-orbit-radius-outer) * 2 + var(--kq-orbit-node-size-outer));
+  animation: kqOrbitSpinOuter 14s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-dots-outer::before {
+  width: 10px;
+  height: 10px;
+  top: 50%;
+  left: calc(100% - 5px);
+  transform: translateY(-50%);
+}
+
+body.klinikiq-auth-lock .kq-orbit-dots-outer::after {
+  width: 7px;
+  height: 7px;
+  top: 16%;
+  left: 22%;
+}
+
+body.klinikiq-auth-lock .kq-orbit-dots-inner {
+  width: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-orbit-node-size-inner) + 10px);
+  height: calc(var(--kq-orbit-radius-inner) * 2 + var(--kq-orbit-node-size-inner) + 10px);
+  animation: kqOrbitSpinInner 11s linear infinite !important;
+}
+
+body.klinikiq-auth-lock .kq-orbit-dots-inner::before {
+  width: 9px;
+  height: 9px;
+  top: calc(100% - 4px);
+  left: 42%;
+}
+
+body.klinikiq-auth-lock .kq-orbit-dots-inner::after {
+  width: 6px;
+  height: 6px;
+  top: 22%;
+  left: calc(100% - 4px);
+}
+
+@keyframes kqOrbitSpinOuter {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes kqOrbitSpinInner {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes kqOrbitCounterSpinOuter {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+@keyframes kqOrbitCounterSpinInner {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes kqAuraPulse {
+  0%, 100% { opacity: .78; transform: translate(-50%, -50%) scale(0.98); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
+}
+
+@keyframes kqCoreFloat {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+  50% { transform: translate(-50%, -50%) translateY(-6px); }
+}
+
+@media (max-width: 1200px) {
+  body.klinikiq-auth-lock .kq-orbit-stage {
+    --kq-orbit-size: clamp(290px, 33vw, 420px);
+  }
+}
+
+@media (max-width: 767px) {
+  body.klinikiq-auth-lock .kq-orbit-stage {
+    --kq-orbit-size: clamp(250px, 72vw, 320px);
+    --kq-orbit-core-size: 88px;
+    --kq-orbit-node-size-outer: 52px;
+    --kq-orbit-node-size-inner: 46px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.klinikiq-auth-lock .kq-orbit-aura,
+  body.klinikiq-auth-lock .kq-orbit-core,
+  body.klinikiq-auth-lock .kq-orbit-track-outer,
+  body.klinikiq-auth-lock .kq-orbit-track-inner,
+  body.klinikiq-auth-lock .kq-orbit-node-face,
+  body.klinikiq-auth-lock .kq-orbit-sweep,
+  body.klinikiq-auth-lock .kq-orbit-dots {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
