@@ -16,14 +16,6 @@ function buildOptions(options, correct) {
   return shuffled;
 }
 
-function buildTutorHint() {
-  return {
-    priority: 'Önce aciliyet düzeyini, hemodinamiyi ve başvuru bağlamını netleştir.',
-    watch: ['Yakınma paterni', 'Semptom süresi', 'Vital bulgular'],
-    reasoning: 'Seçenekleri tek bir bulguya göre değil, klinik verilerin oluşturduğu bütüncül paternle karşılaştır.',
-  };
-}
-
 function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true }) {
   const isSelected = selected === option;
   const stateClass = submitted
@@ -57,57 +49,6 @@ function AnswerOption({ option, index, selected, submitted, correctAnswer, onSel
       </span>
       <span className="answer-status-icon">{statusIcon ? <Icon name={statusIcon} /> : null}</span>
     </button>
-  );
-}
-
-function ExpertInsightCard({ hint }) {
-  return (
-    <section className="clinical-reasoning-card" aria-label="Klinik akıl yürütme desteği">
-      <header className="clinical-reasoning-card-head">
-        <span className="clinical-reasoning-main-icon" aria-hidden="true">
-          <Icon name="Sparkles" size={18} strokeWidth={2.1} />
-        </span>
-        <strong>Klinik akıl yürütme desteği</strong>
-      </header>
-
-      <div className="clinical-reasoning-stack">
-        <article className="clinical-reasoning-block clinical-reasoning-block-priority">
-          <div className="clinical-reasoning-block-head">
-            <span className="clinical-reasoning-section-icon" aria-hidden="true">
-              <Icon name="Target" size={17} strokeWidth={2.05} />
-            </span>
-            <span className="clinical-reasoning-label">Öncelik</span>
-          </div>
-          <p><GlossaryText text={hint.priority} enabled /></p>
-        </article>
-
-        <article className="clinical-reasoning-block clinical-reasoning-block-evidence">
-          <div className="clinical-reasoning-block-head">
-            <span className="clinical-reasoning-section-icon" aria-hidden="true">
-              <Icon name="Activity" size={17} strokeWidth={2.15} />
-            </span>
-            <span className="clinical-reasoning-label">Ayırt ettiren veriler</span>
-          </div>
-          <div className="clinical-reasoning-chip-row" aria-label="Ayırt ettiren veriler">
-            {hint.watch.map((item) => (
-              <span className="clinical-reasoning-chip" key={item}>
-                <GlossaryText text={item} enabled />
-              </span>
-            ))}
-          </div>
-        </article>
-
-        <article className="clinical-reasoning-block clinical-reasoning-block-logic">
-          <div className="clinical-reasoning-block-head">
-            <span className="clinical-reasoning-section-icon" aria-hidden="true">
-              <Icon name="Brain" size={17} strokeWidth={2.05} />
-            </span>
-            <span className="clinical-reasoning-label">Karar mantığı</span>
-          </div>
-          <p><GlossaryText text={hint.reasoning} enabled /></p>
-        </article>
-      </div>
-    </section>
   );
 }
 
@@ -146,7 +87,6 @@ function DiagnosisQuiz({
   const progressWidth = examMeta?.active
     ? `${Math.round(((examMeta.currentIndex + 1) / examMeta.total) * 100)}%`
     : '0%';
-  const tutorHint = buildTutorHint();
 
   const handleSubmit = () => {
     if (!selected || submitted) return;
@@ -180,7 +120,6 @@ function DiagnosisQuiz({
         </div>
       ) : null}
 
-      {tutorMode && !hardMode && !submitted && selected && !examMeta?.active ? <ExpertInsightCard hint={tutorHint} /> : null}
 
       {!hardMode && !examMeta?.active && !submitted && selected && orderedInvestigationIds.length === 0 ? (
         <div className="preanswer-investigation-nudge">
