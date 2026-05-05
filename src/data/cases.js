@@ -12396,3 +12396,11 @@ export const cases = [
     }
   }
 ];
+
+export function getCasesByBranch(branchId) {
+  return cases.filter((clinicalCase) => clinicalCase.branchId === branchId);
+}
+
+export function getCaseById(id) {
+  return cases.find((clinicalCase) => clinicalCase.id === id);
+}
