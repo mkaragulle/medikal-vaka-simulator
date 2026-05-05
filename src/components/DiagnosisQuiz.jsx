@@ -149,7 +149,7 @@ function DiagnosisQuiz({
 
         {!examMeta?.active ? (
           <button className="btn btn-secondary" type="button" onClick={onRandomCase}>
-            Yeni olgu
+            Yeni vaka çöz
           </button>
         ) : null}
       </div>

@@ -801,7 +801,7 @@ function App() {
           <ThemeToggle
             theme={theme}
             onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
-            variant="auth"
+            variant="navIcon"
             className="nav-theme-toggle"
           />
           <button type="button" className="btn btn-icon nav-logout-btn" onClick={handleLogout} aria-label="Çıkış yap" title="Çıkış yap">

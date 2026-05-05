@@ -28993,3 +28993,149 @@ body:not(.klinikiq-auth-lock) .right-workspace-shell.card-surface {
     scrollbar-gutter: auto !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V151 — Topbar hairline + centered theme control
+   Removes the faint background-grid line showing through the
+   translucent toolbar and locks the in-app dark-theme icon to
+   the exact visual center of the circular auth-style button.
+   ========================================================= */
+body:not(.klinikiq-auth-lock) .top-shell-nav {
+  overflow: hidden !important;
+  isolation: isolate !important;
+  background:
+    linear-gradient(180deg, #ffffff 0%, #fbfffe 100%) !important;
+  background-color: #ffffff !important;
+  background-clip: padding-box !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: rgba(15, 23, 42, 0.075) !important;
+}
+
+body:not(.klinikiq-auth-lock) .top-shell-nav::before,
+body:not(.klinikiq-auth-lock) .top-shell-nav::after {
+  content: none !important;
+  display: none !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .top-shell-nav,
+.app-shell[data-theme="dark"] .top-shell-nav {
+  background:
+    linear-gradient(180deg, #091821 0%, #07141d 100%) !important;
+  background-color: #091821 !important;
+  border-color: rgba(94, 234, 212, 0.16) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-auth {
+  position: relative !important;
+  inline-size: 52px !important;
+  block-size: 52px !important;
+  width: 52px !important;
+  min-width: 52px !important;
+  max-width: 52px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  align-items: center !important;
+  justify-items: center !important;
+  line-height: 0 !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-nav-icon {
+  color: #0f766e !important;
+  background:
+    radial-gradient(circle at 34% 24%, rgba(255,255,255,.96), rgba(255,255,255,.72) 38%, transparent 68%),
+    linear-gradient(180deg, rgba(255,255,255,.98), rgba(247,253,252,.94)) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-nav-icon::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -54% !important;
+  border-radius: inherit !important;
+  background: conic-gradient(from 180deg, transparent 0deg, rgba(20,184,166,.20) 76deg, transparent 136deg) !important;
+  opacity: 0 !important;
+  transition: opacity .18s ease !important;
+  animation: kq-spin 4.6s linear infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-nav-icon:hover::before {
+  opacity: 1 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-nav-icon > .theme-toggle-icon,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-nav-icon > svg {
+  position: relative !important;
+  z-index: 1 !important;
+  display: block !important;
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+  min-height: 20px !important;
+  margin: 0 !important;
+  inset: auto !important;
+  transform: none !important;
+  translate: 0 0 !important;
+  stroke-width: 2 !important;
+  color: currentColor !important;
+  pointer-events: none !important;
+}
+
+/* Defensive reset for older switch-style theme markup if it appears in the nav. */
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle .theme-toggle-track {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle .theme-toggle-orb {
+  position: static !important;
+  inset: auto !important;
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  transform: none !important;
+  translate: 0 0 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-nav-icon,
+.app-shell[data-theme="dark"] .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-nav-icon {
+  color: #67e8f9 !important;
+  background:
+    radial-gradient(circle at 34% 24%, rgba(45,212,191,.18), transparent 58%),
+    linear-gradient(180deg, rgba(13,32,40,.96), rgba(9,25,33,.94)) !important;
+}
+
+@media (max-width: 560px) {
+  body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle,
+  body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.theme-toggle,
+  body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle.klinikiq-theme-toggle-auth {
+    inline-size: 46px !important;
+    block-size: 46px !important;
+    width: 46px !important;
+    min-width: 46px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+  }
+}

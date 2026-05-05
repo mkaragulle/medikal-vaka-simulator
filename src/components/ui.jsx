@@ -106,21 +106,28 @@ export function ClinicalCallout({ tone = 'info', icon = 'Sparkles', title = 'Kli
 
 export function ThemeToggle({ theme = 'dark', onToggleTheme, className = '', showLabel = false, variant = 'default' }) {
   const isDark = theme === 'dark';
+  const isNavIcon = variant === 'navIcon';
   const label = isDark ? 'Açık temaya geç' : 'Koyu temaya geç';
+  const variantClass = variant === 'auth' || isNavIcon ? 'klinikiq-theme-toggle-auth' : '';
+
   return (
     <button
       type="button"
-      className={`klinikiq-theme-toggle theme-toggle ${variant === 'auth' ? 'klinikiq-theme-toggle-auth' : ''} ${className}`.trim()}
+      className={`klinikiq-theme-toggle theme-toggle ${variantClass} ${isNavIcon ? 'klinikiq-theme-toggle-nav-icon' : ''} ${className}`.trim()}
       onClick={onToggleTheme}
       aria-label={label}
       title={label}
       data-theme-state={theme}
     >
-      <span className="theme-toggle-track" aria-hidden="true">
-        <span className="theme-toggle-orb">
-          <Icon name={isDark ? 'Sun' : 'Moon'} />
+      {isNavIcon ? (
+        <Icon name={isDark ? 'Sun' : 'Moon'} className="theme-toggle-icon" />
+      ) : (
+        <span className="theme-toggle-track" aria-hidden="true">
+          <span className="theme-toggle-orb">
+            <Icon name={isDark ? 'Sun' : 'Moon'} />
+          </span>
         </span>
-      </span>
+      )}
       {showLabel ? <span className="theme-toggle-label">{isDark ? 'Açık tema' : 'Koyu tema'}</span> : null}
     </button>
   );
