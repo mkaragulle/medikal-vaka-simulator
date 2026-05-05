@@ -20,8 +20,8 @@ const EXAM_HISTORY_STORAGE_KEY = 'klinikiq-exam-history-v2';
 const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
 const BRANCH_TRANSITION_MS = 1750;
 const BRANCH_TRANSITION_FADE_MS = 280;
-const USERS_STORAGE_KEY = 'auth-users-v1';
-const CURRENT_USER_STORAGE_KEY = 'auth-current-user-v1';
+const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
+const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 
 const DEMO_CASE_IDS = [
   'cv-anterior-stemi-001',

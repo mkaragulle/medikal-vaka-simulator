@@ -65,25 +65,15 @@ export function Icon({ name, className = '', size = 20, strokeWidth = 1.9 }) {
 
 export function BrandMark({ className = '', size = 24, title = 'KlinikIQ' }) {
   return (
-    <svg
+    <span
       className={`brand-symbol ${className}`.trim()}
-      viewBox="0 0 32 32"
-      width={size}
-      height={size}
       role={title ? 'img' : undefined}
       aria-label={title || undefined}
       aria-hidden={title ? undefined : 'true'}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2.2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      style={{ width: size, height: size }}
     >
-      <path d="M9 6v20" />
-      <path d="M22.5 7.5 12.2 16l10.3 8.5" />
-      <path d="M5 17h5.2l1.6-4.2 3.9 8.6 2.2-5.4H27" />
-      <circle cx="16" cy="16" r="13" opacity="0.22" />
-    </svg>
+      <img src="/brand-icon.png" alt={title || ''} width={size} height={size} loading="eager" decoding="async" />
+    </span>
   );
 }
 
