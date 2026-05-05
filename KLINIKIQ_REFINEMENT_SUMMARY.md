@@ -18,3 +18,8 @@ Bu paket, KlinikIQ arayüzü için final profesyonel refinement katmanını içe
 ## Kontrol
 
 `npm run build` komutu production build için başarıyla çalıştırıldı.
+
+## V154 — Home dashboard top gap reduction
+- Reduced the large empty vertical band between the fixed top toolbar and the home dashboard/hero area.
+- Removed the duplicate desktop home-shell top offset while preserving a small safe breathing space under the toolbar.
+- Kept the mobile/tablet sticky toolbar layout unchanged.

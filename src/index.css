@@ -29139,3 +29139,28 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-to
     min-height: 46px !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V154 — Home dashboard top gap reduction
+   The home shell previously had a second desktop offset in addition to the
+   fixed top navigation offset from .app-shell. This created the wide empty
+   band between the toolbar and the KlinikIQ hero/dashboard area. Keep a
+   compact, safe breathing room under the fixed toolbar instead.
+   ========================================================= */
+@media (min-width: 1025px) {
+  body:not(.klinikiq-auth-lock) .minimal-home-shell,
+  body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell {
+    padding-top: 18px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .home-dashboard-v8 {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  body:not(.klinikiq-auth-lock) .minimal-home-shell,
+  body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell {
+    padding-top: 16px !important;
+  }
+}
