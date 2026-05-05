@@ -29164,3 +29164,193 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-to
     padding-top: 16px !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V156 — Dark mode home dashboard contrast repair
+   Fixes muddy/washed-out hero and session cards on the main dashboard.
+   Keeps premium teal identity while restoring readable contrast hierarchy.
+   ========================================================= */
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-dashboard-v8,
+.app-shell[data-theme="dark"] .home-dashboard-v8 {
+  gap: 24px !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-hero-v8,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .session-summary-v8,
+.app-shell[data-theme="dark"] .home-hero-v8,
+.app-shell[data-theme="dark"] .session-summary-v8 {
+  background:
+    radial-gradient(circle at 84% 12%, rgba(45, 212, 191, 0.10), transparent 28%),
+    radial-gradient(circle at 10% 0%, rgba(56, 189, 248, 0.08), transparent 30%),
+    linear-gradient(180deg, rgba(9, 27, 37, 0.98) 0%, rgba(7, 20, 29, 0.98) 100%) !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  box-shadow:
+    0 20px 46px rgba(0, 0, 0, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-hero-v8-bg,
+.app-shell[data-theme="dark"] .home-hero-v8-bg {
+  background:
+    radial-gradient(circle at 74% 16%, rgba(45, 212, 191, 0.16), transparent 22%),
+    radial-gradient(circle at 22% 84%, rgba(56, 189, 248, 0.08), transparent 24%),
+    linear-gradient(90deg, rgba(5, 17, 24, 0.14), rgba(7, 20, 29, 0)) !important;
+  opacity: 1 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-hero-copy-v8 h1,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-header h2,
+.app-shell[data-theme="dark"] .home-hero-copy-v8 h1,
+.app-shell[data-theme="dark"] .summary-v8-header h2 {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-hero-copy-v8 p,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-header span,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-header p,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-item span,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-row small,
+.app-shell[data-theme="dark"] .home-hero-copy-v8 p,
+.app-shell[data-theme="dark"] .summary-v8-header span,
+.app-shell[data-theme="dark"] .summary-v8-header p,
+.app-shell[data-theme="dark"] .summary-v8-item span,
+.app-shell[data-theme="dark"] .summary-v8-row small {
+  color: #9fb3c8 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8 .btn.btn-primary,
+.app-shell[data-theme="dark"] .home-actions-v8 .btn.btn-primary {
+  color: #05211f !important;
+  background: linear-gradient(135deg, #24d2c0 0%, #2bb7d9 100%) !important;
+  box-shadow: 0 14px 32px rgba(45, 212, 191, 0.18) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8 .btn.btn-secondary,
+.app-shell[data-theme="dark"] .home-actions-v8 .btn.btn-secondary {
+  color: #edf6fb !important;
+  background: linear-gradient(180deg, rgba(12, 32, 43, 0.96), rgba(10, 25, 35, 0.96)) !important;
+  border-color: rgba(148, 163, 184, 0.18) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-mode-v8,
+.app-shell[data-theme="dark"] .home-mode-v8 {
+  background: rgba(229, 244, 243, 0.14) !important;
+  border: 1px solid rgba(148, 163, 184, 0.20) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-mode-v8 button,
+.app-shell[data-theme="dark"] .home-mode-v8 button {
+  color: #d9e6ee !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-mode-v8 button.active,
+.app-shell[data-theme="dark"] .home-mode-v8 button.active {
+  color: #f8fafc !important;
+  background: linear-gradient(180deg, rgba(22, 80, 79, 0.98), rgba(15, 63, 64, 0.98)) !important;
+  border: 1px solid rgba(94, 234, 212, 0.22) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.06),
+    0 12px 28px rgba(0, 0, 0, 0.24) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-item,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-row,
+.app-shell[data-theme="dark"] .home-metric-card,
+.app-shell[data-theme="dark"] .summary-v8-item,
+.app-shell[data-theme="dark"] .summary-v8-row {
+  background: linear-gradient(180deg, rgba(18, 38, 49, 0.98), rgba(14, 30, 40, 0.98)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.03) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card span,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card small,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-row > div small,
+.app-shell[data-theme="dark"] .home-metric-card span,
+.app-shell[data-theme="dark"] .home-metric-card small,
+.app-shell[data-theme="dark"] .summary-v8-row > div small {
+  color: #97acbf !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card strong,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-item strong,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-row strong,
+.app-shell[data-theme="dark"] .home-metric-card strong,
+.app-shell[data-theme="dark"] .summary-v8-item strong,
+.app-shell[data-theme="dark"] .summary-v8-row strong {
+  color: #f8fafc !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-row b,
+.app-shell[data-theme="dark"] .summary-v8-row b {
+  color: #2dd4bf !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-row > span,
+.app-shell[data-theme="dark"] .summary-v8-row > span {
+  background: rgba(45, 212, 191, 0.16) !important;
+  color: #5eead4 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-score,
+.app-shell[data-theme="dark"] .summary-v8-score {
+  background: linear-gradient(180deg, rgba(228, 244, 242, 0.92), rgba(214, 228, 229, 0.90)) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-score strong,
+.app-shell[data-theme="dark"] .summary-v8-score strong {
+  color: #0f172a !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v8-score small,
+.app-shell[data-theme="dark"] .summary-v8-score small {
+  color: #5b7284 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-badge,
+.app-shell[data-theme="dark"] .home-metric-card .icon-badge {
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-badge-blue,
+.app-shell[data-theme="dark"] .home-metric-card .icon-badge-blue {
+  background: rgba(56, 189, 248, 0.12) !important;
+  border-color: rgba(56, 189, 248, 0.24) !important;
+  color: #7dd3fc !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-badge-accent,
+.app-shell[data-theme="dark"] .home-metric-card .icon-badge-accent {
+  background: rgba(45, 212, 191, 0.12) !important;
+  border-color: rgba(45, 212, 191, 0.24) !important;
+  color: #5eead4 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-badge-danger,
+.app-shell[data-theme="dark"] .home-metric-card .icon-badge-danger {
+  background: rgba(248, 113, 113, 0.12) !important;
+  border-color: rgba(248, 113, 113, 0.24) !important;
+  color: #fca5a5 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-badge-warning,
+.app-shell[data-theme="dark"] .home-metric-card .icon-badge-warning {
+  background: rgba(251, 191, 36, 0.12) !important;
+  border-color: rgba(251, 191, 36, 0.22) !important;
+  color: #fcd34d !important;
+}
+
+@media (max-width: 768px) {
+  html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-hero-v8,
+  html[data-theme="dark"] body:not(.klinikiq-auth-lock) .session-summary-v8,
+  .app-shell[data-theme="dark"] .home-hero-v8,
+  .app-shell[data-theme="dark"] .session-summary-v8 {
+    background:
+      radial-gradient(circle at 84% 8%, rgba(45, 212, 191, 0.08), transparent 24%),
+      linear-gradient(180deg, rgba(9, 27, 37, 0.98) 0%, rgba(7, 20, 29, 0.98) 100%) !important;
+  }
+}
