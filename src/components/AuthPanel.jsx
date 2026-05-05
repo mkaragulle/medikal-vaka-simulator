@@ -18,40 +18,41 @@ const authFeatureCards = [
   {
     icon: 'ClipboardCheck',
     title: 'Yanlış Analizi',
-    description: 'Yanlış yaptığın vakaları tekrar incele, eksik noktalarını daha hızlı fark et.',
+    description: 'Yanlış vakaları tekrar incele, eksik noktaları hızla fark et.',
     signal: 'Eksik kazanımları netleştirir.'
   },
   {
     icon: 'TrendUp',
     title: 'Performans Takibi',
-    description: 'Branş bazlı ilerlemeni, başarı oranını ve gelişim trendini düzenli takip et.',
+    description: 'Branş bazlı ilerlemeyi ve başarı trendini net takip et.',
     signal: 'İlerlemeni ölçülebilir yapar.'
   },
   {
     icon: 'RotateCcw',
     title: 'Tekrar Çöz',
-    description: 'Çözdüğün vakalara kolayca geri dön, öğrenmeni pekiştir ve hız kazan.',
+    description: 'Çözdüğün vakalara dön, öğrenmeni pekiştir ve hız kazan.',
     signal: 'Tekrarla kalıcılığı artırır.'
   },
   {
     icon: 'LayeredCards',
     title: 'Pro Vaka Havuzu',
-    description: 'Daha fazla branş, daha fazla vaka ve ileri düzey klinik senaryolara eriş.',
+    description: 'Daha fazla branş, vaka ve ileri klinik senaryoya eriş.',
     signal: 'Daha geniş klinik maruziyet sağlar.'
   },
   {
     icon: 'InsightGauge',
     title: 'Akıllı Gelişim Raporları',
-    description: 'Güçlü ve zayıf yönlerini net biçimde gör, çalışma planını veriye göre şekillendir.',
+    description: 'Güçlü ve zayıf yönlerini gör, planını veriye göre şekillendir.',
     signal: 'Çalışma planını veriye bağlar.'
   },
   {
     icon: 'Stopwatch',
     title: 'Gerçek Sınav Modu',
-    description: 'Süre baskısı altında çözüm pratiği yap, sınav disiplinini ve klinik karar hızını artır.',
+    description: 'Süre baskısında pratik yap, klinik karar hızını artır.',
     signal: 'Sınav temposuna hazırlar.'
   }
 ];
+
 
 const authOrbitOuterIcons = [
   { icon: 'Stethoscope', label: 'Klinik değerlendirme' },
@@ -102,6 +103,9 @@ function OrbitAnimation() {
       <span className="kiq-orbit-ring kiq-orbit-ring-core" />
       <span className="kiq-orbit-sweep kiq-orbit-sweep-outer" />
       <span className="kiq-orbit-sweep kiq-orbit-sweep-inner" />
+      <span className="kiq-orbit-light kiq-orbit-light-one" />
+      <span className="kiq-orbit-light kiq-orbit-light-two" />
+      <span className="kiq-orbit-light kiq-orbit-light-three" />
       <span className="kiq-orbit-core">
         <Icon name="ShieldPlus" />
       </span>
@@ -114,9 +118,9 @@ function OrbitAnimation() {
 
 function AuthFeatureCard({ feature }) {
   return (
-    <article className="auth-minimal-feature-card auth-feature-card-v2">
+    <article className="auth-minimal-feature-card auth-feature-card-v2 auth-feature-card-v3">
       <span className="auth-feature-icon" aria-hidden="true"><Icon name={feature.icon} /></span>
-      <span className="auth-feature-copy">
+      <span className="auth-feature-copy auth-feature-copy-compact">
         <strong>{feature.title}</strong>
         <span>{feature.description}</span>
       </span>
@@ -195,31 +199,31 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
       <div className="auth-minimal-glow glow-a" aria-hidden="true" />
       <div className="auth-minimal-glow glow-b" aria-hidden="true" />
 
-      <aside className="auth-minimal-brand" aria-label="KlinikIQ tanıtım alanı">
-        <div className="auth-minimal-logo-row">
+      <aside className="auth-minimal-brand auth-minimal-brand-v4" aria-label="KlinikIQ tanıtım alanı">
+        <div className="auth-minimal-logo-row auth-minimal-logo-row-v4">
           <span className="auth-minimal-logo-mark"><BrandMark title="" /></span>
           <span className="auth-minimal-logo-copy">Klinik<span>IQ</span></span>
         </div>
 
-        <div className="auth-minimal-showcase">
-          <div className="auth-minimal-hero">
+        <div className="auth-minimal-showcase auth-minimal-showcase-v4">
+          <div className="auth-minimal-hero auth-minimal-hero-v4">
             <h1>Klinik pratiğini<br />tek yerde geliştir.</h1>
             <p>Vaka çöz, performansını takip et, eksiklerini gör ve gelişimini veriye dayalı şekilde yönet.</p>
           </div>
 
-          <div className="auth-hero-illustration" aria-hidden="true">
+          <div className="auth-hero-illustration auth-hero-illustration-v4" aria-hidden="true">
             <OrbitAnimation />
           </div>
         </div>
 
-        <div className="auth-minimal-features" aria-label="KlinikIQ özellikleri">
+        <div className="auth-minimal-features auth-minimal-features-v4" aria-label="KlinikIQ özellikleri">
           {authFeatureCards.map((feature) => (
             <AuthFeatureCard key={feature.title} feature={feature} />
           ))}
         </div>
       </aside>
 
-      <form className="auth-minimal-card" onSubmit={handleSubmit}>
+      <form className={`auth-minimal-card ${isRegister ? 'auth-mode-register' : 'auth-mode-login'}`} onSubmit={handleSubmit}>
         <div className="auth-minimal-head">
           <div>
             <h2>{isRegister ? 'Kayıt ol' : 'Giriş yap'}</h2>
@@ -245,10 +249,12 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
             <span>{googleBusy ? 'Google hesabı açılıyor...' : 'Google ile devam et'}</span>
           </button>
 
-          <button className="auth-minimal-demo" type="button" onClick={handleDemoStart} disabled={demoBusy || busy || googleBusy}>
-            <Icon name="Sparkles" />
-            <span>{demoBusy ? 'Demo hazırlanıyor...' : '5 vakalık demo ile başla'}</span>
-          </button>
+          {!isRegister ? (
+            <button className="auth-minimal-demo" type="button" onClick={handleDemoStart} disabled={demoBusy || busy || googleBusy}>
+              <Icon name="Sparkles" />
+              <span>{demoBusy ? 'Demo hazırlanıyor...' : '5 vakalık demo ile başla'}</span>
+            </button>
+          ) : null}
         </div>
 
         <div className="auth-minimal-divider" aria-hidden="true"><span>veya</span></div>
@@ -259,7 +265,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
               <span>Ad soyad</span>
               <div className="auth-minimal-input">
                 <Icon name="User" />
-                <input value={form.name} onChange={(event) => updateField('name', event.target.value)} placeholder="Ad soyad" autoComplete="name" />
+                <input value={form.name} onChange={(event) => updateField('name', event.target.value)} placeholder="Ad soyad" autoComplete="name" required />
               </div>
             </label>
           ) : null}
@@ -268,7 +274,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
             <span>E-posta adresi</span>
             <div className="auth-minimal-input">
               <Icon name="Mail" />
-              <input value={form.email} onChange={(event) => updateField('email', event.target.value)} placeholder="E-posta adresi" type="email" autoComplete="email" />
+              <input value={form.email} onChange={(event) => updateField('email', event.target.value)} placeholder="E-posta adresi" type="email" autoComplete="email" required />
             </div>
           </label>
 
@@ -276,7 +282,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
             <span>Şifre</span>
             <div className="auth-minimal-input">
               <Icon name="Lock" />
-              <input value={form.password} onChange={(event) => updateField('password', event.target.value)} placeholder="Şifre" type={showPassword ? 'text' : 'password'} autoComplete={isRegister ? 'new-password' : 'current-password'} />
+              <input value={form.password} onChange={(event) => updateField('password', event.target.value)} placeholder="Şifre" type={showPassword ? 'text' : 'password'} autoComplete={isRegister ? 'new-password' : 'current-password'} minLength={6} required />
               <button type="button" className="auth-minimal-eye" onClick={() => setShowPassword((current) => !current)} aria-label={showPassword ? 'Şifreyi gizle' : 'Şifreyi göster'}>
                 <Icon name={showPassword ? 'EyeOff' : 'Eye'} />
               </button>
@@ -288,19 +294,21 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
               <span>Şifre tekrar</span>
               <div className="auth-minimal-input">
                 <Icon name="Lock" />
-                <input value={form.confirmPassword} onChange={(event) => updateField('confirmPassword', event.target.value)} placeholder="Şifreyi tekrar yaz" type={showPassword ? 'text' : 'password'} autoComplete="new-password" />
+                <input value={form.confirmPassword} onChange={(event) => updateField('confirmPassword', event.target.value)} placeholder="Şifreyi tekrar yaz" type={showPassword ? 'text' : 'password'} autoComplete="new-password" minLength={6} required />
               </div>
             </label>
           ) : null}
         </div>
 
-        <div className="auth-minimal-options">
-          <label>
-            <input type="checkbox" checked={rememberMe} onChange={(event) => setRememberMe(event.target.checked)} />
-            <span>Beni hatırla</span>
-          </label>
-          <button type="button" onClick={() => setMessage({ type: 'error', text: 'Şifre sıfırlama için Firebase reset-password akışı bağlanmalı.' })}>Şifremi unuttum</button>
-        </div>
+        {!isRegister ? (
+          <div className="auth-minimal-options">
+            <label>
+              <input type="checkbox" checked={rememberMe} onChange={(event) => setRememberMe(event.target.checked)} />
+              <span>Beni hatırla</span>
+            </label>
+            <button type="button" onClick={() => setMessage({ type: 'error', text: 'Şifre sıfırlama için Firebase reset-password akışı bağlanmalı.' })}>Şifremi unuttum</button>
+          </div>
+        ) : null}
 
         {message ? <div className={`auth-minimal-message ${message.type}`}>{message.text}</div> : null}
 
@@ -309,7 +317,6 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
           <span>{busy ? 'İşleniyor...' : isRegister ? 'Kayıt ol' : 'Giriş yap'}</span>
         </button>
 
-        <p className="auth-minimal-note"><Icon name="ShieldCheck" /> Demo sürüm bu cihazda saklanır. Pro özellikler için hesap oluşturabilirsin.</p>
       </form>
     </section>
   );

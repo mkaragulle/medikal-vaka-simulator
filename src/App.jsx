@@ -407,9 +407,31 @@ function App() {
     document.documentElement.classList.toggle('klinikiq-auth-lock', shouldLockAuth);
     document.body.classList.toggle('klinikiq-auth-lock', shouldLockAuth);
 
+    if (shouldLockAuth) {
+      document.documentElement.style.overflow = 'hidden';
+      document.documentElement.style.height = '100dvh';
+      document.body.style.overflow = 'hidden';
+      document.body.style.height = '100dvh';
+      document.body.style.maxHeight = '100dvh';
+      document.body.style.position = 'relative';
+    } else {
+      document.documentElement.style.overflow = '';
+      document.documentElement.style.height = '';
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      document.body.style.maxHeight = '';
+      document.body.style.position = '';
+    }
+
     return () => {
       document.documentElement.classList.remove('klinikiq-auth-lock');
       document.body.classList.remove('klinikiq-auth-lock');
+      document.documentElement.style.overflow = '';
+      document.documentElement.style.height = '';
+      document.body.style.overflow = '';
+      document.body.style.height = '';
+      document.body.style.maxHeight = '';
+      document.body.style.position = '';
     };
   }, [currentUser]);
 
