@@ -21063,3 +21063,54 @@ html[data-theme="dark"] .auth-minimal-google-mark {
     transform: none;
   }
 }
+
+/* Demo access guard banner */
+.demo-access-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 20px;
+  border-color: rgba(20, 184, 166, .28) !important;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(20, 184, 166, .16), transparent 36%),
+    linear-gradient(135deg, rgba(15, 23, 42, .84), rgba(15, 23, 42, .68)) !important;
+}
+
+.demo-access-banner strong {
+  display: block;
+  color: var(--text-primary);
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.demo-access-banner p {
+  max-width: 760px;
+  margin: 5px 0 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.demo-access-banner .btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.app-shell[data-theme="light"] .demo-access-banner,
+html[data-theme="light"] .demo-access-banner {
+  background:
+    radial-gradient(circle at 10% 10%, rgba(20, 184, 166, .14), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, .95), rgba(240, 253, 250, .78)) !important;
+}
+
+@media (max-width: 760px) {
+  .demo-access-banner {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .demo-access-banner .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

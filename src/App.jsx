@@ -23,6 +23,16 @@ const BRANCH_TRANSITION_FADE_MS = 280;
 const USERS_STORAGE_KEY = 'auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'auth-current-user-v1';
 
+const DEMO_CASE_IDS = [
+  'cv-anterior-stemi-001',
+  'im-dka-001',
+  'neuro-mca-stroke-001',
+  'ped-intussusception-001',
+  'surg-appendicitis-001',
+];
+
+const DEMO_EXAM_TITLE = '5 vakalık ücretsiz demo blok';
+
 const defaultStats = {
   attempts: 0,
   correct: 0,
@@ -68,12 +78,25 @@ function sanitizeUser(user) {
   };
 }
 
-function buildExamPool(sourceCases = []) {
-  const primary = shuffleArray(sourceCases).slice(0, Math.min(10, sourceCases.length));
-  if (primary.length >= 10) return primary;
+function isDemoAccount(user) {
+  return Boolean(user?.isDemo || user?.provider === 'demo');
+}
+
+function resolveDemoCases() {
+  return DEMO_CASE_IDS.map((caseId) => getCaseById(caseId)).filter(Boolean);
+}
+
+function buildExamPool(sourceCases = [], maxQuestionCount = 10, fallbackCases = cases) {
+  const safeSource = Array.isArray(sourceCases) ? sourceCases.filter(Boolean) : [];
+  const safeFallback = Array.isArray(fallbackCases) ? fallbackCases.filter(Boolean) : [];
+  const targetCount = Math.min(maxQuestionCount, Math.max(safeSource.length, safeFallback.length));
+  const primary = shuffleArray(safeSource).slice(0, Math.min(targetCount, safeSource.length));
+  if (primary.length >= targetCount) return primary;
 
   const usedIds = new Set(primary.map((item) => item.id));
-  const backup = shuffleArray(cases).filter((item) => !usedIds.has(item.id)).slice(0, 10 - primary.length);
+  const backup = shuffleArray(safeFallback)
+    .filter((item) => !usedIds.has(item.id))
+    .slice(0, targetCount - primary.length);
   return [...primary, ...backup];
 }
 
@@ -97,6 +120,16 @@ function App() {
   const [isCaseSidebarOpen, setIsCaseSidebarOpen] = useState(true);
   const [branchRouteTransition, setBranchRouteTransition] = useState(null);
   const branchRouteTimers = useRef([]);
+  const isDemoUser = isDemoAccount(currentUser);
+
+  const demoCases = useMemo(() => resolveDemoCases(), []);
+  const accessibleCases = useMemo(() => (isDemoUser ? demoCases : cases), [isDemoUser, demoCases]);
+  const accessibleCaseIds = useMemo(() => new Set(accessibleCases.map((clinicalCase) => clinicalCase.id)), [accessibleCases]);
+  const visibleBranches = useMemo(() => {
+    if (!isDemoUser) return branches;
+    const branchIds = new Set(accessibleCases.map((clinicalCase) => clinicalCase.branchId));
+    return branches.filter((branch) => branchIds.has(branch.id));
+  }, [accessibleCases, isDemoUser]);
 
   const selectedBranch = useMemo(
     () => (selectedBranchId ? resolveBranchById(selectedBranchId) : null),
@@ -104,17 +137,20 @@ function App() {
   );
 
   const branchCases = useMemo(
-    () => (selectedBranchId ? getCasesByBranch(selectedBranchId) : []),
-    [selectedBranchId],
+    () => (selectedBranchId ? getCasesByBranch(selectedBranchId).filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id)) : []),
+    [selectedBranchId, accessibleCaseIds],
   );
 
   const selectedCase = useMemo(() => {
     if (examState?.active) {
-      return getCaseById(examState.caseIds[examState.currentIndex]);
+      const examCaseId = examState.caseIds[examState.currentIndex];
+      if (!accessibleCaseIds.has(examCaseId)) return accessibleCases[0] ?? null;
+      return getCaseById(examCaseId) ?? accessibleCases[0] ?? null;
     }
     if (!selectedCaseId) return branchCases[0] ?? null;
+    if (!accessibleCaseIds.has(selectedCaseId)) return branchCases[0] ?? null;
     return getCaseById(selectedCaseId) ?? branchCases[0] ?? null;
-  }, [selectedCaseId, branchCases, examState]);
+  }, [selectedCaseId, branchCases, examState, accessibleCaseIds, accessibleCases]);
 
   const persistCurrentUser = (patch) => {
     setCurrentUser((current) => {
@@ -270,9 +306,9 @@ function App() {
       isDemo: true,
       createdAt: baseUser?.createdAt ?? Date.now(),
       lastLoginAt: Date.now(),
-      stats: baseUser?.stats ?? defaultStats,
-      examHistory: baseUser?.examHistory ?? [],
-      wrongAnswers: baseUser?.wrongAnswers ?? [],
+      stats: defaultStats,
+      examHistory: [],
+      wrongAnswers: [],
     });
 
     const nextUsers = existingIndex >= 0 ? [...users] : [...users, demoUser];
@@ -281,12 +317,12 @@ function App() {
     activateUserSession(demoUser);
 
     window.setTimeout(() => {
-      const demoPool = cases.slice(0, 5);
+      const demoPool = resolveDemoCases();
       setMode('exam');
       setIsCaseSidebarOpen(true);
       setExamState({
         active: true,
-        title: '5 vakalık demo blok',
+        title: DEMO_EXAM_TITLE,
         caseIds: demoPool.map((item) => item.id),
         currentIndex: 0,
         answers: {},
@@ -346,7 +382,7 @@ function App() {
 
   const openWrongCase = (caseId) => {
     const clinicalCase = getCaseById(caseId);
-    if (!clinicalCase) return;
+    if (!clinicalCase || !accessibleCaseIds.has(clinicalCase.id)) return;
     setMode('study');
     setExamState(null);
     setSelectedBranchId(clinicalCase.branchId);
@@ -372,10 +408,15 @@ function App() {
 
   useEffect(() => {
     if (!selectedBranchId) return;
+    if (!visibleBranches.some((branch) => branch.id === selectedBranchId)) {
+      setSelectedBranchId(null);
+      setSelectedCaseId(null);
+      return;
+    }
     if (!branchCases.some((clinicalCase) => clinicalCase.id === selectedCaseId)) {
       setSelectedCaseId(branchCases[0]?.id ?? null);
     }
-  }, [selectedBranchId, branchCases, selectedCaseId]);
+  }, [selectedBranchId, branchCases, selectedCaseId, visibleBranches]);
 
   useEffect(() => {
     if (!examState?.active) return undefined;
@@ -429,13 +470,19 @@ function App() {
     return entries.slice(0, 3);
   }, [examHistory, sessionStats]);
 
+  const visibleWrongAnswers = useMemo(() => (
+    isDemoUser ? wrongAnswers.filter((entry) => accessibleCaseIds.has(entry.caseId)) : wrongAnswers
+  ), [wrongAnswers, isDemoUser, accessibleCaseIds]);
+
   const clearBranchRouteTimers = () => {
     branchRouteTimers.current.forEach((timerId) => window.clearTimeout(timerId));
     branchRouteTimers.current = [];
   };
 
   const handleSelectBranch = (branchId) => {
-    const branchPool = getCasesByBranch(branchId);
+    if (isDemoUser && !visibleBranches.some((branch) => branch.id === branchId)) return;
+    const branchPool = getCasesByBranch(branchId).filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id));
+    if (!branchPool.length) return;
     const branchMeta = resolveBranchById(branchId);
 
     clearBranchRouteTimers();
@@ -464,6 +511,7 @@ function App() {
   };
 
   const handleSelectCase = (caseId) => {
+    if (!accessibleCaseIds.has(caseId)) return;
     setSelectedCaseId(caseId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -518,8 +566,13 @@ function App() {
     return scored;
   };
 
-  function startBlockExam(sourceCases = cases, title = 'Genel klinik blok sınavı') {
-    const pool = buildExamPool(sourceCases);
+  function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
+    const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)
+      .filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id));
+    const pool = isDemoUser
+      ? accessibleCases
+      : buildExamPool(safeSourceCases.length ? safeSourceCases : accessibleCases, 10, cases);
+    if (!pool.length) return;
     setMode('exam');
     setIsCaseSidebarOpen(true);
     setExamState({
@@ -557,21 +610,23 @@ function App() {
 
       const elapsed = Math.floor((Date.now() - current.startedAt) / 1000);
       const timeUsedSeconds = Math.min(current.durationSeconds, elapsed);
-      const review = current.caseIds.map((caseId) => {
-        const item = getCaseById(caseId);
-        const branch = resolveBranchById(item.branchId);
-        const answer = current.answers[caseId];
-        return {
-          caseId,
-          title: item.title,
-          branchId: item.branchId,
-          branchName: branch.name,
-          selected: answer?.selected ?? null,
-          isCorrect: answer?.isCorrect ?? false,
-          correctAnswer: item.diagnosis.correct,
-          earnedPoints: answer?.attemptResult?.earnedPoints ?? 0,
-        };
-      });
+      const review = current.caseIds
+        .filter((caseId) => accessibleCaseIds.has(caseId))
+        .map((caseId) => {
+          const item = getCaseById(caseId);
+          const branch = resolveBranchById(item.branchId);
+          const answer = current.answers[caseId];
+          return {
+            caseId,
+            title: item.title,
+            branchId: item.branchId,
+            branchName: branch?.name ?? 'Klinik branş',
+            selected: answer?.selected ?? null,
+            isCorrect: answer?.isCorrect ?? false,
+            correctAnswer: item.diagnosis.correct,
+            earnedPoints: answer?.attemptResult?.earnedPoints ?? 0,
+          };
+        });
 
       const total = review.length;
       const correct = review.filter((item) => item.isCorrect).length;
@@ -678,12 +733,12 @@ function App() {
           </span>
           <button type="button" className="nav-wrong-chip" onClick={() => { setSelectedBranchId(null); setSelectedCaseId(null); setExamState(null); setMode('study'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} aria-label="Yanlış çözülenler">
             <span>Yanlış</span>
-            <strong>{wrongAnswers.length}</strong>
+            <strong>{visibleWrongAnswers.length}</strong>
           </button>
           <span className="nav-score-chip" aria-label={`Puan ${sessionStats.score}`}><span>Puan</span><strong>{sessionStats.score}</strong></span>
-          <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(cases, 'Genel klinik blok sınavı')}>
+          <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}>
             <Icon name="Timer" />
-            <span>Blok sınav</span>
+            <span>{isDemoUser ? 'Demo blok' : 'Blok sınav'}</span>
           </button>
           <button type="button" className="btn btn-icon theme-toggle" onClick={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} aria-label={theme === 'dark' ? 'Açık temaya geç' : 'Koyu temaya geç'}>
             <Icon name={theme === 'dark' ? 'Sun' : 'Moon'} />
@@ -721,7 +776,7 @@ function App() {
       {examState?.result ? (
         <ExamResults
           result={examState.result}
-          onRestart={() => startBlockExam(cases, 'Genel klinik blok sınavı')}
+          onRestart={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
           onHome={resetExamToHome}
         />
       ) : examState?.active && selectedCase ? (
@@ -777,8 +832,8 @@ function App() {
               </div>
               <div className="branch-inline-actions">
                 <span className="branch-case-count">{branchCases.length} olgu</span>
-                <button type="button" className="btn btn-primary" onClick={() => startBlockExam(branchCases, `${selectedBranch.name} blok sınavı`)}>
-                  Branş bloku oluştur
+                <button type="button" className="btn btn-primary" onClick={() => startBlockExam(branchCases, isDemoUser ? DEMO_EXAM_TITLE : `${selectedBranch.name} blok sınavı`)}>
+                  {isDemoUser ? 'Demo bloku aç' : 'Branş bloku oluştur'}
                 </button>
               </div>
             </section>
@@ -809,25 +864,36 @@ function App() {
         </section>
       ) : (
         <section className="page-shell home-page-shell minimal-home-shell">
+          {isDemoUser ? (
+            <section className="demo-access-banner card-surface" aria-label="Demo sürüm bilgisi">
+              <div>
+                <strong>Ücretsiz demo sürüm</strong>
+                <p>Bu hesap yalnızca 5 sabit demo vakasına erişebilir. Premium vaka havuzu, branş arşivi ve genel blok sınavları kapalıdır.</p>
+              </div>
+              <button type="button" className="btn btn-primary" onClick={() => startBlockExam(accessibleCases, DEMO_EXAM_TITLE)}>
+                <Icon name="Timer" /> 5 vakalık demoyu başlat
+              </button>
+            </section>
+          ) : null}
           <HomeCommandCenter
             mode={mode}
             onChangeMode={setMode}
             stats={sessionStats}
             leaderboardEntries={leaderboardEntries}
-            onStartExam={() => startBlockExam(cases, 'Genel klinik blok sınavı')}
-            totalCases={cases.length}
-            totalBranches={branches.length}
+            onStartExam={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
+            totalCases={accessibleCases.length}
+            totalBranches={visibleBranches.length}
             examCount={examHistory.length}
           />
           <WrongAnswersPanel
-            wrongAnswers={wrongAnswers}
+            wrongAnswers={visibleWrongAnswers}
             onOpenCase={openWrongCase}
             onRemoveCase={removeWrongAnswer}
             onClearAll={clearWrongAnswers}
           />
           <BranchSelector
-            branches={branches}
-            cases={cases}
+            branches={visibleBranches}
+            cases={accessibleCases}
             onSelectBranch={handleSelectBranch}
             launchingBranchId={branchRouteTransition?.phase === 'selecting' ? branchRouteTransition.branchId : null}
             isTransitioning={Boolean(branchRouteTransition?.active)}
