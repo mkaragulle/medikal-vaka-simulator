@@ -36,7 +36,7 @@ const authFeatureCards = [
   {
     icon: 'LayeredCards',
     title: 'Pro Vaka Havuzu',
-    description: 'Daha fazla branş, daha fazla vaka ve daha ileri düzey klinik senaryolara eriş.',
+    description: 'Daha fazla branş, daha fazla vaka ve ileri düzey klinik senaryolara eriş.',
     signal: 'Daha geniş klinik maruziyet sağlar.'
   },
   {
@@ -155,7 +155,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
         <div className="auth-minimal-showcase">
           <div className="auth-minimal-hero">
             <h1>Klinik pratiğini<br />tek yerde geliştir.</h1>
-            <p>Vaka çöz, performansını takip et, eksiklerini gör ve gelişimini sistemli şekilde yönet.</p>
+            <p>Vaka çöz, performansını takip et, eksiklerini gör ve gelişimini veriye dayalı şekilde yönet.</p>
           </div>
 
           <div className="auth-hero-illustration" aria-hidden="true">

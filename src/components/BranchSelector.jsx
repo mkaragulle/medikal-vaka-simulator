@@ -59,6 +59,7 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
       <div className="section-title-row stacked">
         <div>
           <h2>Klinik branş seç</h2>
+          <p>Branşı seç, olgu ekranına geç ve klinik karar pratiğini sistemli şekilde başlat.</p>
         </div>
       </div>
 
