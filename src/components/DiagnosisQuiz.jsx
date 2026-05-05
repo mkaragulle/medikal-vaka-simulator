@@ -18,17 +18,28 @@ function buildOptions(options, correct) {
 
 function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true }) {
   const isSelected = selected === option;
+  const isCorrectOption = option === correctAnswer;
   const stateClass = submitted
-    ? option === correctAnswer
-      ? 'correct'
+    ? isCorrectOption
+      ? 'correct solved'
       : isSelected
-        ? 'wrong'
-        : ''
+        ? 'wrong solved'
+        : 'answered-neutral solved'
     : isSelected
       ? 'selected'
+      : 'idle';
+
+  const statusLabel = submitted
+    ? isCorrectOption
+      ? 'Doğru yanıt'
+      : isSelected
+        ? 'Seçimin yanlış'
+        : ''
+    : isSelected
+      ? 'Seçildi'
       : '';
 
-  const statusIcon = submitted && option === correctAnswer
+  const statusIcon = submitted && isCorrectOption
     ? 'CheckCircle'
     : submitted && isSelected
       ? 'XCircle'
@@ -41,13 +52,17 @@ function AnswerOption({ option, index, selected, submitted, correctAnswer, onSel
       onClick={() => onSelect(option)}
       disabled={submitted}
       aria-pressed={isSelected}
-      aria-label={`${OPTION_LETTERS[index] ?? index + 1}: ${option}`}
+      aria-label={`${OPTION_LETTERS[index] ?? index + 1}: ${option}${statusLabel ? `, ${statusLabel}` : ''}`}
+      data-answer-state={stateClass}
     >
       <span className="answer-letter">{OPTION_LETTERS[index] ?? index + 1}</span>
       <span className="answer-content">
         <span className="answer-title"><GlossaryText text={option} enabled={glossaryEnabled} /></span>
+        {statusLabel ? <span className="answer-state-label">{statusLabel}</span> : null}
       </span>
-      <span className="answer-status-icon">{statusIcon ? <Icon name={statusIcon} /> : null}</span>
+      <span className="answer-status-icon" aria-hidden="true">
+        {statusIcon ? <Icon name={statusIcon} /> : <span className="answer-radio-dot" />}
+      </span>
     </button>
   );
 }
@@ -143,13 +158,21 @@ function DiagnosisQuiz({
       </div>
 
       <div className="quiz-actions">
-        <button className="btn btn-primary" type="button" disabled={!selected || submitted} onClick={handleSubmit}>
-          {examMeta?.active ? 'Yanıtı kaydet' : 'Yanıtı değerlendir'}
+        <button
+          className={`btn answer-evaluate-btn ${submitted ? 'is-complete' : 'btn-primary'}`.trim()}
+          type="button"
+          disabled={!selected || submitted}
+          onClick={handleSubmit}
+        >
+          <Icon name="TrendUp" />
+          <span>{examMeta?.active ? 'Yanıtı kaydet' : 'Yanıtı değerlendir'}</span>
         </button>
 
         {!examMeta?.active ? (
-          <button className="btn btn-secondary" type="button" onClick={onRandomCase}>
-            Yeni vaka çöz
+          <button className="btn btn-secondary answer-next-case-btn" type="button" onClick={onRandomCase}>
+            <Icon name="RotateCcw" />
+            <span>Yeni vaka çöz</span>
+            <Icon name="ArrowRight" className="answer-next-case-arrow" />
           </button>
         ) : null}
       </div>

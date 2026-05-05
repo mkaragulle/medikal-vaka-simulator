@@ -1293,3 +1293,387 @@ body:not(.klinikiq-auth-lock) .app-shell[data-theme="dark"] .nav-actions .nav-th
     min-height: 46px !important;
   }
 }
+
+/* ===== V151 — Modern solved-state answer feedback redesign ===== */
+.diagnostic-decision-panel .question-panel-head.diagnostic-head {
+  align-items: center !important;
+  margin-bottom: 4px !important;
+}
+
+.diagnostic-decision-panel .question-panel-head.diagnostic-head p {
+  display: none !important;
+}
+
+.diagnostic-decision-panel .option-grid {
+  gap: 12px !important;
+}
+
+.diagnostic-decision-panel .answer-option {
+  position: relative !important;
+  isolation: isolate !important;
+  display: grid !important;
+  grid-template-columns: 54px minmax(0, 1fr) 42px !important;
+  align-items: center !important;
+  gap: 14px !important;
+  width: 100% !important;
+  min-height: 74px !important;
+  padding: 14px 16px !important;
+  border-radius: 22px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 86%, var(--text-muted) 8%) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 96%, #fff 4%), color-mix(in srgb, var(--surface-2) 88%, #fff 12%)) !important;
+  color: var(--text-primary) !important;
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, .055),
+    inset 0 1px 0 rgba(255,255,255,.72) !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  transform: translateZ(0) !important;
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    border-color .18s ease,
+    background .18s ease,
+    opacity .18s ease !important;
+}
+
+.diagnostic-decision-panel .answer-option:hover:not(:disabled) {
+  transform: translateY(-2px) !important;
+  border-color: color-mix(in srgb, var(--accent) 42%, var(--border-subtle)) !important;
+  background:
+    radial-gradient(circle at 15% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 42%),
+    linear-gradient(180deg, var(--surface-1), var(--surface-2)) !important;
+  box-shadow:
+    0 16px 34px rgba(15, 23, 42, .085),
+    0 0 0 1px color-mix(in srgb, var(--accent) 10%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.75) !important;
+}
+
+.diagnostic-decision-panel .answer-option:focus-visible {
+  outline: 0 !important;
+  border-color: color-mix(in srgb, var(--accent) 62%, var(--border-subtle)) !important;
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent),
+    0 14px 30px rgba(15, 23, 42, .08) !important;
+}
+
+.diagnostic-decision-panel .answer-option:disabled {
+  cursor: default !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.diagnostic-decision-panel .answer-letter {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 17px !important;
+  display: grid !important;
+  place-items: center !important;
+  background: color-mix(in srgb, var(--surface-1) 95%, #fff 5%) !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 82%, var(--text-muted) 8%) !important;
+  color: color-mix(in srgb, var(--text-secondary) 80%, var(--text-primary)) !important;
+  font-size: 14px !important;
+  font-weight: 860 !important;
+  letter-spacing: .01em !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, .055), inset 0 1px 0 rgba(255,255,255,.76) !important;
+}
+
+.diagnostic-decision-panel .answer-content {
+  display: grid !important;
+  gap: 4px !important;
+  min-width: 0 !important;
+}
+
+.diagnostic-decision-panel .answer-title {
+  display: block !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(15.5px, 1.35vw, 18px) !important;
+  font-weight: 820 !important;
+  line-height: 1.24 !important;
+  letter-spacing: -.025em !important;
+  overflow-wrap: anywhere !important;
+  text-wrap: pretty !important;
+}
+
+.diagnostic-decision-panel .answer-state-label {
+  display: inline-flex !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  align-items: center !important;
+  min-height: 21px !important;
+  padding: 3px 9px !important;
+  border-radius: 999px !important;
+  font-size: 11.5px !important;
+  line-height: 1 !important;
+  font-weight: 820 !important;
+  color: var(--text-muted) !important;
+  background: color-mix(in srgb, var(--surface-2) 78%, transparent) !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 84%, transparent) !important;
+}
+
+.diagnostic-decision-panel .answer-status-icon {
+  width: 40px !important;
+  height: 40px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  color: color-mix(in srgb, var(--text-muted) 72%, var(--text-secondary)) !important;
+}
+
+.diagnostic-decision-panel .answer-status-icon svg {
+  width: 28px !important;
+  height: 28px !important;
+  stroke-width: 2.25 !important;
+}
+
+.diagnostic-decision-panel .answer-radio-dot {
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 999px !important;
+  border: 2px solid color-mix(in srgb, var(--text-muted) 44%, var(--border-subtle)) !important;
+  background: color-mix(in srgb, var(--surface-1) 82%, transparent) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.66) !important;
+}
+
+.diagnostic-decision-panel .answer-option.selected {
+  border-color: color-mix(in srgb, var(--accent) 58%, var(--border-subtle)) !important;
+  background:
+    radial-gradient(circle at 8% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 38%),
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 9%, var(--surface-1)), color-mix(in srgb, var(--accent) 6%, var(--surface-2))) !important;
+  box-shadow:
+    0 16px 34px rgba(13, 148, 136, .12),
+    0 0 0 1px color-mix(in srgb, var(--accent) 18%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.75) !important;
+}
+
+.diagnostic-decision-panel .answer-option.selected .answer-letter {
+  color: var(--accent-strong, var(--accent)) !important;
+  border-color: color-mix(in srgb, var(--accent) 34%, var(--border-subtle)) !important;
+  background: color-mix(in srgb, var(--accent) 11%, var(--surface-1)) !important;
+}
+
+.diagnostic-decision-panel .answer-option.selected .answer-radio-dot {
+  border-color: var(--accent) !important;
+  background:
+    radial-gradient(circle, var(--accent) 0 39%, transparent 42%),
+    color-mix(in srgb, var(--accent) 9%, var(--surface-1)) !important;
+}
+
+.diagnostic-decision-panel .answer-option.solved {
+  animation: klinikiq-answer-settle .24s ease-out both !important;
+}
+
+.diagnostic-decision-panel .answer-option.correct {
+  border-color: color-mix(in srgb, var(--success) 78%, var(--border-subtle)) !important;
+  background:
+    radial-gradient(circle at 13% 0%, color-mix(in srgb, var(--success) 16%, transparent), transparent 42%),
+    linear-gradient(180deg, color-mix(in srgb, var(--success) 10%, var(--surface-1)), color-mix(in srgb, var(--success) 7%, var(--surface-2))) !important;
+  box-shadow:
+    0 16px 36px color-mix(in srgb, var(--success) 17%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--success) 16%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.76) !important;
+}
+
+.diagnostic-decision-panel .answer-option.correct .answer-letter {
+  color: color-mix(in srgb, var(--success) 86%, var(--text-primary)) !important;
+  border-color: color-mix(in srgb, var(--success) 34%, var(--border-subtle)) !important;
+  background: color-mix(in srgb, var(--success) 10%, var(--surface-1)) !important;
+}
+
+.diagnostic-decision-panel .answer-option.correct .answer-state-label {
+  color: color-mix(in srgb, var(--success) 78%, var(--text-primary)) !important;
+  background: color-mix(in srgb, var(--success) 11%, var(--surface-1)) !important;
+  border-color: color-mix(in srgb, var(--success) 28%, var(--border-subtle)) !important;
+}
+
+.diagnostic-decision-panel .answer-option.correct .answer-status-icon {
+  color: #fff !important;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--success) 90%, #fff 3%), color-mix(in srgb, var(--success) 76%, #064e3b 12%)) !important;
+  box-shadow: 0 14px 28px color-mix(in srgb, var(--success) 32%, transparent) !important;
+}
+
+.diagnostic-decision-panel .answer-option.wrong {
+  border-color: color-mix(in srgb, var(--danger) 76%, var(--border-subtle)) !important;
+  background:
+    radial-gradient(circle at 13% 0%, color-mix(in srgb, var(--danger) 15%, transparent), transparent 43%),
+    linear-gradient(180deg, color-mix(in srgb, var(--danger) 9%, var(--surface-1)), color-mix(in srgb, var(--danger) 6%, var(--surface-2))) !important;
+  box-shadow:
+    0 16px 36px color-mix(in srgb, var(--danger) 12%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--danger) 14%, transparent),
+    inset 0 1px 0 rgba(255,255,255,.76) !important;
+}
+
+.diagnostic-decision-panel .answer-option.wrong .answer-letter {
+  color: color-mix(in srgb, var(--danger) 88%, var(--text-primary)) !important;
+  border-color: color-mix(in srgb, var(--danger) 34%, var(--border-subtle)) !important;
+  background: color-mix(in srgb, var(--danger) 10%, var(--surface-1)) !important;
+}
+
+.diagnostic-decision-panel .answer-option.wrong .answer-state-label {
+  color: color-mix(in srgb, var(--danger) 78%, var(--text-primary)) !important;
+  background: color-mix(in srgb, var(--danger) 10%, var(--surface-1)) !important;
+  border-color: color-mix(in srgb, var(--danger) 30%, var(--border-subtle)) !important;
+}
+
+.diagnostic-decision-panel .answer-option.wrong .answer-status-icon {
+  color: color-mix(in srgb, var(--danger) 90%, #b91c1c) !important;
+  background: color-mix(in srgb, var(--danger) 8%, var(--surface-1)) !important;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--danger) 14%, transparent) !important;
+}
+
+.diagnostic-decision-panel .answer-option.answered-neutral {
+  opacity: .84 !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 88%, var(--surface-1)), color-mix(in srgb, var(--surface-3) 76%, var(--surface-2))) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.45) !important;
+}
+
+.diagnostic-decision-panel .answer-option.answered-neutral .answer-letter,
+.diagnostic-decision-panel .answer-option.answered-neutral .answer-title,
+.diagnostic-decision-panel .answer-option.answered-neutral .answer-status-icon {
+  color: color-mix(in srgb, var(--text-secondary) 78%, var(--text-muted)) !important;
+}
+
+.diagnostic-decision-panel .quiz-actions {
+  display: grid !important;
+  gap: 12px !important;
+  margin-top: 2px !important;
+}
+
+.diagnostic-decision-panel .quiz-actions .btn {
+  min-height: 54px !important;
+  border-radius: 20px !important;
+  font-size: 15px !important;
+  font-weight: 840 !important;
+  letter-spacing: -.01em !important;
+  display: inline-grid !important;
+  grid-auto-flow: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+}
+
+.diagnostic-decision-panel .quiz-actions .btn svg {
+  width: 19px !important;
+  height: 19px !important;
+  stroke-width: 2.05 !important;
+}
+
+.diagnostic-decision-panel .answer-evaluate-btn {
+  border: 1px solid color-mix(in srgb, var(--accent) 36%, var(--border-subtle)) !important;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 90%, #0f766e 10%), color-mix(in srgb, var(--accent) 72%, var(--accent-blue) 18%)) !important;
+  color: #fff !important;
+  box-shadow: 0 16px 30px rgba(13, 148, 136, .20) !important;
+}
+
+.diagnostic-decision-panel .answer-evaluate-btn:disabled:not(.is-complete) {
+  color: color-mix(in srgb, var(--text-muted) 80%, var(--text-secondary)) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 88%, var(--text-muted) 6%) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 92%, #fff 8%), color-mix(in srgb, var(--surface-3) 82%, var(--surface-2))) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.58) !important;
+  opacity: 1 !important;
+}
+
+.diagnostic-decision-panel .answer-evaluate-btn.is-complete,
+.diagnostic-decision-panel .answer-evaluate-btn.is-complete:disabled {
+  color: color-mix(in srgb, var(--text-muted) 72%, var(--text-secondary)) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 88%, var(--text-muted) 6%) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 92%, #fff 8%), color-mix(in srgb, var(--surface-3) 82%, var(--surface-2))) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.58) !important;
+  opacity: 1 !important;
+}
+
+.diagnostic-decision-panel .answer-next-case-btn {
+  position: relative !important;
+  overflow: hidden !important;
+  grid-template-columns: auto auto 1fr !important;
+  justify-content: center !important;
+  border-color: color-mix(in srgb, var(--accent) 68%, var(--border-subtle)) !important;
+  color: var(--accent-strong, var(--accent)) !important;
+  background:
+    radial-gradient(circle at 18% 0%, color-mix(in srgb, var(--accent) 13%, transparent), transparent 45%),
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 7%, var(--surface-1)), color-mix(in srgb, var(--accent) 4%, var(--surface-2))) !important;
+  box-shadow: 0 16px 30px rgba(13, 148, 136, .10), inset 0 1px 0 rgba(255,255,255,.65) !important;
+}
+
+.diagnostic-decision-panel .answer-next-case-btn:hover {
+  transform: translateY(-1px) !important;
+  border-color: var(--accent) !important;
+  box-shadow: 0 20px 38px rgba(13, 148, 136, .16), inset 0 1px 0 rgba(255,255,255,.72) !important;
+}
+
+.diagnostic-decision-panel .answer-next-case-arrow {
+  justify-self: end !important;
+  margin-right: 2px !important;
+}
+
+@keyframes klinikiq-answer-settle {
+  from { transform: translateY(3px) scale(.992); opacity: .86; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.app-shell[data-theme="dark"] .diagnostic-decision-panel .answer-option,
+html[data-theme="dark"] .diagnostic-decision-panel .answer-option {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 92%, #0f172a 8%), color-mix(in srgb, var(--surface-3) 84%, #020617 16%)) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.055) !important;
+}
+
+.app-shell[data-theme="dark"] .diagnostic-decision-panel .answer-letter,
+html[data-theme="dark"] .diagnostic-decision-panel .answer-letter {
+  background: color-mix(in srgb, var(--surface-2) 82%, #fff 4%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07) !important;
+}
+
+.app-shell[data-theme="dark"] .diagnostic-decision-panel .answer-option.correct,
+html[data-theme="dark"] .diagnostic-decision-panel .answer-option.correct {
+  background:
+    radial-gradient(circle at 13% 0%, color-mix(in srgb, var(--success) 19%, transparent), transparent 42%),
+    linear-gradient(180deg, color-mix(in srgb, var(--success) 13%, var(--surface-2)), color-mix(in srgb, var(--success) 8%, var(--surface-3))) !important;
+}
+
+.app-shell[data-theme="dark"] .diagnostic-decision-panel .answer-option.wrong,
+html[data-theme="dark"] .diagnostic-decision-panel .answer-option.wrong {
+  background:
+    radial-gradient(circle at 13% 0%, color-mix(in srgb, var(--danger) 17%, transparent), transparent 43%),
+    linear-gradient(180deg, color-mix(in srgb, var(--danger) 12%, var(--surface-2)), color-mix(in srgb, var(--danger) 7%, var(--surface-3))) !important;
+}
+
+@media (max-width: 640px) {
+  .diagnostic-decision-panel .answer-option {
+    grid-template-columns: 46px minmax(0, 1fr) 34px !important;
+    min-height: 68px !important;
+    padding: 12px 12px !important;
+    gap: 11px !important;
+    border-radius: 19px !important;
+  }
+
+  .diagnostic-decision-panel .answer-letter {
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 15px !important;
+  }
+
+  .diagnostic-decision-panel .answer-status-icon {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .diagnostic-decision-panel .answer-status-icon svg,
+  .diagnostic-decision-panel .answer-radio-dot {
+    width: 24px !important;
+    height: 24px !important;
+  }
+
+  .diagnostic-decision-panel .answer-title {
+    font-size: 15px !important;
+    line-height: 1.28 !important;
+  }
+
+  .diagnostic-decision-panel .answer-state-label {
+    display: none !important;
+  }
+
+  .diagnostic-decision-panel .quiz-actions .btn {
+    min-height: 52px !important;
+    border-radius: 18px !important;
+  }
+}
