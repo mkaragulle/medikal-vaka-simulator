@@ -62,6 +62,36 @@ const authOrbitIcons = [
   { icon: 'Activity', label: 'Dinamik izlem' },
 ];
 
+function OrbitNodes({ items }) {
+  const total = items.length;
+
+  return (
+    <span className="kq-orbit-rotor">
+      {items.map((item, index) => {
+        const angle = Number(((360 / total) * index).toFixed(3));
+
+        return (
+          <span
+            key={item.icon}
+            className="kq-orbit-node"
+            style={{
+              transform: `rotate(${angle}deg) translateY(calc(-1 * var(--kq-orbit-radius)))`,
+            }}
+            aria-label={item.label}
+          >
+            <span
+              className="kq-orbit-node-face"
+              style={{ transform: `rotate(${-angle}deg)` }}
+            >
+              <Icon name={item.icon} />
+            </span>
+          </span>
+        );
+      })}
+    </span>
+  );
+}
+
 function AuthFeatureCard({ feature }) {
   return (
     <article className="auth-minimal-feature-card auth-feature-card-v2">
@@ -160,31 +190,15 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
           <div className="auth-hero-illustration" aria-hidden="true">
             <div className="auth-hero-orbital kq-orbit-stage">
               <span className="kq-orbit-aura" />
-              <span className="kq-orbit-ring kq-orbit-ring-lg" />
-              <span className="kq-orbit-ring kq-orbit-ring-md" />
-              <span className="kq-orbit-ring kq-orbit-ring-sm" />
-              <span className="kq-orbit-core"><Icon name="ShieldPlus" /></span>
+              <span className="kq-orbit-ring kq-orbit-ring-outer" />
+              <span className="kq-orbit-ring kq-orbit-ring-inner" />
+              <span className="kq-orbit-sweep" />
 
-              <span className="kq-orbit-track">
-                {authOrbitIcons.map((item, index) => {
-                  const total = authOrbitIcons.length;
-                  const angleValue = Number(((360 / total) * index).toFixed(3));
-                  return (
-                    <span
-                      key={item.icon}
-                      className="kq-orbit-node"
-                      style={{ transform: `rotate(${angleValue}deg) translateY(calc(-1 * var(--kq-orbit-radius)))` }}
-                      aria-label={item.label}
-                    >
-                      <span className="kq-orbit-node-face" style={{ transform: `rotate(${-angleValue}deg)` }}>
-                        <span className="kq-orbit-node-counter">
-                          <Icon name={item.icon} />
-                        </span>
-                      </span>
-                    </span>
-                  );
-                })}
+              <span className="kq-orbit-core">
+                <Icon name="ShieldPlus" />
               </span>
+
+              <OrbitNodes items={authOrbitIcons} />
             </div>
           </div>
         </div>
