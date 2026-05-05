@@ -54,13 +54,13 @@ const authFeatureCards = [
 ];
 
 const authOrbitIcons = [
-  { icon: 'Stethoscope', label: 'Klinik değerlendirme', radius: 'outer', angle: '0deg', delay: '-2s' },
-  { icon: 'Brain', label: 'Klinik akıl yürütme', radius: 'outer', angle: '58deg', delay: '-9s' },
-  { icon: 'HeartPulse', label: 'Yaşam bulguları', radius: 'outer', angle: '118deg', delay: '-15s' },
-  { icon: 'Gauge', label: 'Performans içgörüleri', radius: 'outer', angle: '178deg', delay: '-6s' },
-  { icon: 'FlaskConical', label: 'Tetkik değerlendirme', radius: 'inner', angle: '32deg', delay: '-12s' },
-  { icon: 'Activity', label: 'Dinamik izlem', radius: 'inner', angle: '148deg', delay: '-4s' },
-  { icon: 'ShieldCheck', label: 'Güvenli çalışma akışı', radius: 'inner', angle: '268deg', delay: '-18s' },
+  { icon: 'Stethoscope', label: 'Klinik değerlendirme' },
+  { icon: 'Brain', label: 'Klinik akıl yürütme' },
+  { icon: 'HeartPulse', label: 'Yaşam bulguları' },
+  { icon: 'Gauge', label: 'Performans içgörüleri' },
+  { icon: 'FlaskConical', label: 'Tetkik değerlendirme' },
+  { icon: 'Activity', label: 'Dinamik izlem' },
+  { icon: 'ShieldCheck', label: 'Güvenli çalışma akışı' },
 ];
 
 function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onToggleTheme }) {
@@ -153,18 +153,25 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
               <span className="auth-orbit-ring orbit-ring-md" />
               <span className="auth-orbit-ring orbit-ring-sm" />
               <span className="auth-orbit-core"><Icon name="ShieldPlus" /></span>
-              {authOrbitIcons.map((item) => (
-                <span
-                  key={item.icon}
-                  className={`auth-orbit-item auth-orbit-item-${item.radius}`}
-                  style={{ '--orbit-angle': item.angle, '--orbit-delay': item.delay, '--orbit-counter-angle': `calc(${item.angle} * -1)` }}
-                  aria-label={item.label}
-                >
-                  <span className="auth-orbit-badge">
-                    <Icon name={item.icon} />
+              {authOrbitIcons.map((item, index) => {
+                const total = authOrbitIcons.length;
+                const angle = `${(360 / total) * index}deg`;
+                const delay = `${(-34 / total) * index}s`;
+                return (
+                  <span
+                    key={item.icon}
+                    className="auth-orbit-item"
+                    style={{ '--orbit-angle': angle, '--orbit-delay': delay }}
+                    aria-label={item.label}
+                  >
+                    <span className="auth-orbit-badge">
+                      <span className="auth-orbit-icon-wrap">
+                        <Icon name={item.icon} />
+                      </span>
+                    </span>
                   </span>
-                </span>
-              ))}
+                );
+              })}
             </div>
           </div>
         </div>
