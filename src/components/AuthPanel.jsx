@@ -14,6 +14,45 @@ function GoogleLogo() {
   );
 }
 
+const authFeatureCards = [
+  {
+    icon: 'ClipboardList',
+    title: 'Yanlış Analizi',
+    description: 'Yanlış yaptığın vakaları tekrar incele, eksik noktalarını daha hızlı fark et.',
+    signal: 'Eksik kazanımları netleştirir.'
+  },
+  {
+    icon: 'Trophy',
+    title: 'Performans Takibi',
+    description: 'Branş bazlı ilerlemeni, başarı oranını ve gelişim trendini düzenli takip et.',
+    signal: 'İlerlemeni ölçülebilir yapar.'
+  },
+  {
+    icon: 'RotateCcw',
+    title: 'Tekrar Çöz',
+    description: 'Çözdüğün vakalara kolayca geri dön, öğrenmeni pekiştir ve hız kazan.',
+    signal: 'Tekrarla kalıcılığı artırır.'
+  },
+  {
+    icon: 'BookOpen',
+    title: 'Pro Vaka Havuzu',
+    description: 'Daha fazla branş, daha fazla vaka ve daha ileri düzey klinik senaryolara eriş.',
+    signal: 'Daha geniş klinik maruziyet sağlar.'
+  },
+  {
+    icon: 'Gauge',
+    title: 'Akıllı Gelişim Raporları',
+    description: 'Güçlü ve zayıf yönlerini net biçimde gör, çalışma planını veriye göre şekillendir.',
+    signal: 'Çalışma planını veriye bağlar.'
+  },
+  {
+    icon: 'Timer',
+    title: 'Gerçek Sınav Modu',
+    description: 'Süre baskısı altında çözüm pratiği yap, sınav disiplinini ve klinik karar hızını artır.',
+    signal: 'Sınav temposuna hazırlar.'
+  }
+];
+
 function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onToggleTheme }) {
   const [mode, setMode] = useState('login');
   const [form, setForm] = useState({ name: '', email: '', password: '', confirmPassword: '' });
@@ -23,6 +62,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
   const [demoBusy, setDemoBusy] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(true);
+  const [activeFeature, setActiveFeature] = useState(0);
 
   const isRegister = mode === 'register';
 
@@ -90,31 +130,45 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
           <span />
           <span />
           <span />
+          <span className="auth-orbit-core"><Icon name="ShieldPlus" /></span>
+          <span className="auth-orbit-node node-stethoscope"><Icon name="Stethoscope" /></span>
+          <span className="auth-orbit-node node-brain"><Icon name="Brain" /></span>
+          <span className="auth-orbit-node node-chart"><Icon name="Gauge" /></span>
         </div>
 
         <div className="auth-minimal-logo-row">
           <span className="auth-minimal-logo-mark"><BrandMark title="" /></span>
-          <span className="auth-minimal-logo-copy">KlinikIQ</span>
+          <span className="auth-minimal-logo-copy">Klinik<span>IQ</span></span>
         </div>
 
         <div className="auth-minimal-hero">
-          <h1>Klinik pratiğini<br />hesabında takip et.</h1>
-          <p>Çözdüğün vakalar, ilerlemen ve yanlışların tek yerde saklanır.</p>
+          <h1>Klinik pratiğini<br />tek yerde geliştir.</h1>
+          <p>Vaka çöz, performansını takip et, eksiklerini gör ve gelişimini sistemli şekilde yönet.</p>
+          <div className="auth-hero-insight" aria-live="polite">
+            <span>Öne çıkan değer</span>
+            <strong>{authFeatureCards[activeFeature]?.title}</strong>
+            <small>{authFeatureCards[activeFeature]?.signal}</small>
+          </div>
         </div>
 
-        <div className="auth-minimal-features" aria-label="Hesap özellikleri">
-          <div className="auth-minimal-feature">
-            <Icon name="ClipboardList" />
-            <div><strong>Yanlışlarım</strong><span>Yanlış yaptığın vakaları gör ve öğren.</span></div>
-          </div>
-          <div className="auth-minimal-feature">
-            <Icon name="Trophy" />
-            <div><strong>Performans</strong><span>İlerlemeni takip et, gelişimini gör.</span></div>
-          </div>
-          <div className="auth-minimal-feature">
-            <Icon name="RotateCcw" />
-            <div><strong>Tekrar çöz</strong><span>İstediğin vakaya kolayca geri dön.</span></div>
-          </div>
+        <div className="auth-minimal-features" aria-label="KlinikIQ özellikleri">
+          {authFeatureCards.map((feature, index) => (
+            <button
+              className={`auth-minimal-feature-card ${activeFeature === index ? 'is-active' : ''}`}
+              type="button"
+              key={feature.title}
+              onMouseEnter={() => setActiveFeature(index)}
+              onFocus={() => setActiveFeature(index)}
+              onClick={() => setActiveFeature(index)}
+              aria-pressed={activeFeature === index}
+            >
+              <span className="auth-feature-icon" aria-hidden="true"><Icon name={feature.icon} /></span>
+              <span className="auth-feature-copy">
+                <strong>{feature.title}</strong>
+                <span>{feature.description}</span>
+              </span>
+            </button>
+          ))}
         </div>
       </aside>
 
@@ -147,7 +201,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
 
           <button className="auth-minimal-demo" type="button" onClick={handleDemoStart} disabled={demoBusy || busy || googleBusy}>
             <Icon name="Sparkles" />
-            <span>{demoBusy ? 'Demo hazırlanıyor...' : '5 vaka içeren demo ile başla'}</span>
+            <span>{demoBusy ? 'Demo hazırlanıyor...' : '5 vakalık demo ile başla'}</span>
           </button>
         </div>
 
@@ -209,7 +263,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
           <span>{busy ? 'İşleniyor...' : isRegister ? 'Kayıt ol' : 'Giriş yap'}</span>
         </button>
 
-        <p className="auth-minimal-note"><Icon name="ShieldCheck" /> Demo sürüm • veriler bu cihazda saklanır.</p>
+        <p className="auth-minimal-note"><Icon name="ShieldCheck" /> Demo sürüm bu cihazda saklanır. Pro özellikler için hesap oluşturabilirsin.</p>
       </form>
     </section>
   );
