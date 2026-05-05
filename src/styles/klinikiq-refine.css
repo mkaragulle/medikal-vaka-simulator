@@ -968,3 +968,328 @@ body:not(.klinikiq-auth-lock) .qbank-side-column.professional-right-column > .ri
   background: color-mix(in srgb, var(--accent) 46%, transparent) !important;
   background-clip: padding-box !important;
 }
+
+/* =========================================================
+   V103 — Final premium topbar geometry + auth-matched theme button
+   Fixes the oversized/empty toolbar rhythm seen on wide desktops,
+   normalizes all action controls, and makes the in-app dark-mode
+   button visually identical to the auth screen's circular toggle.
+   ========================================================= */
+:root {
+  --kiq-topbar-height: 68px;
+  --kiq-page-pad-top: 88px;
+  --kiq-nav-sticky-top: 84px;
+  --kiq-control-height: 42px;
+  --kiq-topbar-max: 1320px;
+}
+
+body:not(.klinikiq-auth-lock) .top-shell-nav {
+  width: min(var(--kiq-topbar-max), calc(100% - 24px)) !important;
+  min-height: var(--kiq-topbar-height) !important;
+  grid-template-columns: 52px minmax(388px, 460px) minmax(0, 1fr) !important;
+  gap: 10px !important;
+  padding: 8px 10px !important;
+  border-radius: 24px !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand,
+body:not(.klinikiq-auth-lock) .nav-brand.nav-brand-icon-only {
+  width: 50px !important;
+  min-width: 50px !important;
+  max-width: 50px !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  border-radius: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand-mark,
+body:not(.klinikiq-auth-lock) .nav-brand-mark .brand-symbol,
+body:not(.klinikiq-auth-lock) .nav-brand-mark img {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch,
+body:not(.klinikiq-auth-lock) .segmented-control.nav-mode-switch {
+  height: 48px !important;
+  max-width: 460px !important;
+  border-radius: 19px !important;
+  padding: 4px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button,
+body:not(.klinikiq-auth-lock) .segmented-control.nav-mode-switch button {
+  height: 38px !important;
+  min-height: 38px !important;
+  padding-inline: 10px !important;
+  border-radius: 15px !important;
+  font-size: 12.5px !important;
+  font-weight: 760 !important;
+  letter-spacing: -.012em !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions {
+  width: 100% !important;
+  min-width: 0 !important;
+  gap: 8px !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: nowrap !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions > * {
+  flex-shrink: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-stat-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .btn:not(.nav-theme-toggle),
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon:not(.nav-theme-toggle) {
+  height: var(--kiq-control-height) !important;
+  min-height: var(--kiq-control-height) !important;
+  border-radius: 16px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-chip {
+  flex: 0 1 172px !important;
+  width: 172px !important;
+  max-width: 172px !important;
+  min-width: 132px !important;
+  padding-inline: 12px !important;
+  justify-content: flex-start !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-name {
+  max-width: 112px !important;
+  font-size: 12.6px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip {
+  min-width: 98px !important;
+  padding-inline: 10px !important;
+  gap: 7px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip strong {
+  min-width: 22px !important;
+  height: 22px !important;
+  font-size: 11.8px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .btn-primary.nav-cta {
+  height: 48px !important;
+  min-height: 48px !important;
+  min-width: 142px !important;
+  padding-inline: 17px !important;
+  border-radius: 19px !important;
+  font-size: 12.8px !important;
+  font-weight: 820 !important;
+  gap: 8px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-logout-btn.btn-icon {
+  width: 44px !important;
+  min-width: 44px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  border-radius: 999px !important;
+  padding: 0 !important;
+}
+
+/* Auth-screen dark-mode button parity inside the app toolbar. */
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle.nav-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .theme-toggle.nav-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle-auth.nav-theme-toggle {
+  position: relative !important;
+  flex: 0 0 50px !important;
+  width: 50px !important;
+  min-width: 50px !important;
+  max-width: 50px !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  padding: 0 !important;
+  border-radius: 999px !important;
+  overflow: hidden !important;
+  background: var(--button-ghost-bg, var(--surface-1)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border-subtle)) !important;
+  color: var(--button-ghost-text, var(--text-primary)) !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .075), inset 0 1px 0 rgba(255,255,255,.10) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle.nav-theme-toggle::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: -58% !important;
+  background: conic-gradient(from 180deg, transparent 0deg, color-mix(in srgb, var(--accent) 20%, transparent) 72deg, transparent 128deg) !important;
+  opacity: 0 !important;
+  animation: kq-spin 4.4s linear infinite !important;
+  transition: opacity .2s ease !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle.nav-theme-toggle:hover::before {
+  opacity: 1 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle.nav-theme-toggle:hover {
+  transform: translateY(-1px) !important;
+  color: var(--accent-strong, var(--accent)) !important;
+  border-color: color-mix(in srgb, var(--accent) 34%, var(--border-subtle)) !important;
+  background: var(--button-ghost-bg-hover, var(--surface-2)) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle .theme-toggle-label {
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle .theme-toggle-track {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle .theme-toggle-orb,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle[data-theme-state="dark"] .theme-toggle-orb,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle[data-theme-state="light"] .theme-toggle-orb {
+  width: 30px !important;
+  min-width: 30px !important;
+  height: 30px !important;
+  min-height: 30px !important;
+  margin: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  translate: none !important;
+  transform: none !important;
+  background: color-mix(in srgb, var(--surface-1) 86%, var(--accent) 6%) !important;
+  box-shadow: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle:hover .theme-toggle-orb {
+  transform: scale(1.035) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle .theme-toggle-orb svg,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle svg {
+  width: 19px !important;
+  height: 19px !important;
+  stroke-width: 1.95 !important;
+  color: currentColor !important;
+  transform: none !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-actions .nav-theme-toggle,
+body:not(.klinikiq-auth-lock) .app-shell[data-theme="dark"] .nav-actions .nav-theme-toggle,
+.app-shell[data-theme="dark"] .nav-actions .nav-theme-toggle {
+  background: color-mix(in srgb, var(--surface-2) 88%, transparent) !important;
+  border-color: color-mix(in srgb, var(--accent) 22%, var(--border-subtle)) !important;
+}
+
+@media (max-width: 1180px) {
+  :root {
+    --kiq-topbar-height: 116px;
+    --kiq-page-pad-top: 136px;
+    --kiq-nav-sticky-top: 132px;
+  }
+
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    width: calc(100% - 18px) !important;
+    grid-template-columns: 52px minmax(360px, 1fr) !important;
+    grid-template-areas:
+      "brand modes"
+      "actions actions" !important;
+    row-gap: 8px !important;
+    column-gap: 10px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-actions {
+    grid-area: actions !important;
+    justify-content: flex-end !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-brand { grid-area: brand !important; }
+  body:not(.klinikiq-auth-lock) .nav-mode-switch { grid-area: modes !important; max-width: none !important; }
+  body:not(.klinikiq-auth-lock) .nav-user-chip { margin-right: auto !important; }
+}
+
+@media (max-width: 860px) {
+  :root {
+    --kiq-topbar-height: 160px;
+    --kiq-page-pad-top: 180px;
+    --kiq-nav-sticky-top: 176px;
+  }
+
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    width: calc(100% - 16px) !important;
+    grid-template-columns: 48px minmax(0, 1fr) !important;
+    padding: 8px !important;
+    border-radius: 22px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-actions {
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    padding-bottom: 2px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-actions::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-user-chip {
+    flex: 0 0 150px !important;
+    width: 150px !important;
+    max-width: 150px !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --kiq-topbar-height: 168px;
+    --kiq-page-pad-top: 188px;
+    --kiq-nav-sticky-top: 184px;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-user-chip {
+    display: none !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-stat-chip {
+    min-width: 54px !important;
+    width: 54px !important;
+    padding-inline: 0 !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-stat-chip span {
+    display: none !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-actions .btn-primary.nav-cta {
+    min-width: 120px !important;
+    padding-inline: 12px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle.nav-theme-toggle {
+    flex-basis: 46px !important;
+    width: 46px !important;
+    min-width: 46px !important;
+    height: 46px !important;
+    min-height: 46px !important;
+  }
+}

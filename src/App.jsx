@@ -798,7 +798,12 @@ function App() {
             <Icon name="Timer" />
             <span>{isDemoUser ? 'Demo blok' : 'Blok sınav'}</span>
           </button>
-          <ThemeToggle theme={theme} onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} />
+          <ThemeToggle
+            theme={theme}
+            onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
+            variant="auth"
+            className="nav-theme-toggle"
+          />
           <button type="button" className="btn btn-icon nav-logout-btn" onClick={handleLogout} aria-label="Çıkış yap" title="Çıkış yap">
             <Icon name="LogIn" />
           </button>
