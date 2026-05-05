@@ -53,6 +53,16 @@ const authFeatureCards = [
   }
 ];
 
+const authOrbitIcons = [
+  { icon: 'Stethoscope', label: 'Klinik değerlendirme', radius: 'outer', angle: '0deg', delay: '-2s' },
+  { icon: 'Brain', label: 'Klinik akıl yürütme', radius: 'outer', angle: '58deg', delay: '-9s' },
+  { icon: 'HeartPulse', label: 'Yaşam bulguları', radius: 'outer', angle: '118deg', delay: '-15s' },
+  { icon: 'Gauge', label: 'Performans içgörüleri', radius: 'outer', angle: '178deg', delay: '-6s' },
+  { icon: 'FlaskConical', label: 'Tetkik değerlendirme', radius: 'inner', angle: '32deg', delay: '-12s' },
+  { icon: 'Activity', label: 'Dinamik izlem', radius: 'inner', angle: '148deg', delay: '-4s' },
+  { icon: 'ShieldCheck', label: 'Güvenli çalışma akışı', radius: 'inner', angle: '268deg', delay: '-18s' },
+];
+
 function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onToggleTheme }) {
   const [mode, setMode] = useState('login');
   const [form, setForm] = useState({ name: '', email: '', password: '', confirmPassword: '' });
@@ -126,28 +136,36 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
       <div className="auth-minimal-glow glow-b" aria-hidden="true" />
 
       <aside className="auth-minimal-brand" aria-label="KlinikIQ tanıtım alanı">
-        <div className="auth-minimal-orbit" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-          <span className="auth-orbit-core"><Icon name="ShieldPlus" /></span>
-          <span className="auth-orbit-node node-stethoscope"><Icon name="Stethoscope" /></span>
-          <span className="auth-orbit-node node-brain"><Icon name="Brain" /></span>
-          <span className="auth-orbit-node node-chart"><Icon name="Gauge" /></span>
-        </div>
-
         <div className="auth-minimal-logo-row">
           <span className="auth-minimal-logo-mark"><BrandMark title="" /></span>
           <span className="auth-minimal-logo-copy">Klinik<span>IQ</span></span>
         </div>
 
-        <div className="auth-minimal-hero">
-          <h1>Klinik pratiğini<br />tek yerde geliştir.</h1>
-          <p>Vaka çöz, performansını takip et, eksiklerini gör ve gelişimini sistemli şekilde yönet.</p>
-          <div className="auth-hero-insight" aria-live="polite">
-            <span>Öne çıkan değer</span>
-            <strong>{authFeatureCards[activeFeature]?.title}</strong>
-            <small>{authFeatureCards[activeFeature]?.signal}</small>
+        <div className="auth-minimal-showcase">
+          <div className="auth-minimal-hero">
+            <h1>Klinik pratiğini<br />tek yerde geliştir.</h1>
+            <p>Vaka çöz, performansını takip et, eksiklerini gör ve gelişimini sistemli şekilde yönet.</p>
+          </div>
+
+          <div className="auth-hero-illustration" aria-hidden="true">
+            <div className="auth-hero-orbital">
+              <span className="auth-orbit-ring orbit-ring-lg" />
+              <span className="auth-orbit-ring orbit-ring-md" />
+              <span className="auth-orbit-ring orbit-ring-sm" />
+              <span className="auth-orbit-core"><Icon name="ShieldPlus" /></span>
+              {authOrbitIcons.map((item) => (
+                <span
+                  key={item.icon}
+                  className={`auth-orbit-item auth-orbit-item-${item.radius}`}
+                  style={{ '--orbit-angle': item.angle, '--orbit-delay': item.delay, '--orbit-counter-angle': `calc(${item.angle} * -1)` }}
+                  aria-label={item.label}
+                >
+                  <span className="auth-orbit-badge">
+                    <Icon name={item.icon} />
+                  </span>
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 

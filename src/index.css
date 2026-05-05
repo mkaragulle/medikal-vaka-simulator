@@ -22031,3 +22031,209 @@ body.klinikiq-auth-lock .auth-minimal-card {
 .brand-copy strong {
   letter-spacing: -0.02em;
 }
+
+
+/* --- V114 auth hero illustration refinement: dedicated orbital showcase --- */
+body.klinikiq-auth-lock .auth-minimal-brand {
+  grid-template-rows: auto minmax(0, 1fr) auto !important;
+}
+
+.auth-hero-insight {
+  display: none !important;
+}
+
+.auth-minimal-showcase {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 420px);
+  align-items: center;
+  gap: clamp(20px, 2.2vw, 38px);
+  min-height: clamp(290px, 34vh, 420px);
+}
+
+.auth-minimal-hero {
+  position: relative;
+  z-index: 2;
+  align-self: center !important;
+  justify-self: start;
+}
+
+.auth-hero-illustration {
+  position: relative;
+  z-index: 1;
+  align-self: stretch;
+  min-height: clamp(280px, 30vh, 400px);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+.auth-hero-illustration::before,
+.auth-hero-illustration::after {
+  content: "";
+  position: absolute;
+  inset: auto;
+  border-radius: 999px;
+  pointer-events: none;
+}
+.auth-hero-illustration::before {
+  width: 88%;
+  height: 88%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 11%, transparent), transparent 68%);
+  opacity: .8;
+}
+.auth-hero-illustration::after {
+  width: 58%;
+  height: 58%;
+  background: radial-gradient(circle, color-mix(in srgb, white 26%, transparent), transparent 72%);
+  filter: blur(8px);
+  opacity: .42;
+}
+
+.auth-hero-orbital {
+  --outer-radius: clamp(118px, 9.2vw, 156px);
+  --inner-radius: clamp(82px, 6.7vw, 114px);
+  position: relative;
+  width: min(100%, 390px);
+  aspect-ratio: 1 / 1;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+
+.auth-orbit-ring {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  translate: -50% -50%;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, transparent);
+  background: transparent;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+}
+.auth-orbit-ring.orbit-ring-lg { width: calc(var(--outer-radius) * 2 + 74px); height: calc(var(--outer-radius) * 2 + 74px); }
+.auth-orbit-ring.orbit-ring-md { width: calc(var(--outer-radius) * 2 - 10px); height: calc(var(--outer-radius) * 2 - 10px); opacity: .72; }
+.auth-orbit-ring.orbit-ring-sm { width: calc(var(--inner-radius) * 2 + 52px); height: calc(var(--inner-radius) * 2 + 52px); opacity: .82; }
+
+.auth-hero-orbital .auth-orbit-core {
+  display: grid !important;
+  place-items: center !important;
+  position: absolute !important;
+  inset: 50% auto auto 50% !important;
+  translate: -50% -50%;
+  width: clamp(80px, 6.6vw, 116px) !important;
+  height: clamp(80px, 6.6vw, 116px) !important;
+  right: auto !important;
+  top: auto !important;
+  z-index: 2;
+  color: color-mix(in srgb, var(--accent) 82%, var(--auth-text-main)) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 90%, white 8%), color-mix(in srgb, var(--auth-panel-soft) 82%, var(--accent) 8%)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent) !important;
+  box-shadow: 0 26px 60px rgba(15, 118, 110, .16), inset 0 1px 0 rgba(255,255,255,.2) !important;
+  animation: authCoreBreathe 4.8s ease-in-out infinite !important;
+}
+.auth-hero-orbital .auth-orbit-core svg {
+  width: 44%;
+  height: 44%;
+}
+
+.auth-orbit-item {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0;
+  height: 0;
+  translate: -50% -50%;
+  animation: authOrbitSpin 34s linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+.auth-orbit-item::before {
+  content: "";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 0;
+  height: 0;
+  transform: rotate(var(--orbit-angle)) translateX(var(--orbit-radius));
+}
+.auth-orbit-item-outer { --orbit-radius: var(--outer-radius); }
+.auth-orbit-item-inner { --orbit-radius: var(--inner-radius); }
+.auth-orbit-item .auth-orbit-badge {
+  position: absolute;
+  left: 0;
+  top: 0;
+  translate: -50% -50%;
+  width: clamp(44px, 3.4vw, 58px);
+  height: clamp(44px, 3.4vw, 58px);
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: color-mix(in srgb, var(--accent) 84%, var(--auth-text-main));
+  background: linear-gradient(180deg, color-mix(in srgb, var(--auth-panel-solid) 92%, white 6%), color-mix(in srgb, var(--auth-panel-soft) 86%, var(--accent) 8%));
+  border: 1px solid color-mix(in srgb, var(--accent) 18%, transparent);
+  box-shadow: 0 16px 36px rgba(15, 118, 110, .1), inset 0 1px 0 rgba(255,255,255,.18);
+  animation: authOrbitCounter 34s linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+.auth-orbit-item .auth-orbit-badge svg {
+  width: 46%;
+  height: 46%;
+}
+.auth-orbit-item { transform: rotate(var(--orbit-angle)) translateX(var(--orbit-radius)); }
+.auth-orbit-item.auth-orbit-item-inner .auth-orbit-badge { width: clamp(40px, 3vw, 52px); height: clamp(40px, 3vw, 52px); }
+
+@keyframes authOrbitSpin {
+  from { transform: rotate(var(--orbit-angle)) translateX(var(--orbit-radius)) rotate(0deg); }
+  to { transform: rotate(calc(var(--orbit-angle) + 360deg)) translateX(var(--orbit-radius)) rotate(360deg); }
+}
+@keyframes authOrbitCounter {
+  from { transform: rotate(var(--orbit-counter-angle, 0deg)); }
+  to { transform: rotate(calc(var(--orbit-counter-angle, 0deg) - 360deg)); }
+}
+
+@media (max-width: 1240px) {
+  .auth-minimal-showcase {
+    grid-template-columns: minmax(0, 1fr) minmax(250px, 340px);
+    gap: 18px;
+  }
+  .auth-hero-orbital {
+    width: min(100%, 320px);
+  }
+}
+
+@media (max-width: 1120px) {
+  .auth-minimal-showcase {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .auth-hero-illustration {
+    order: -1;
+    min-height: 260px;
+    max-width: 360px;
+    width: 100%;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .auth-hero-illustration {
+    min-height: 220px;
+    max-width: 290px;
+  }
+  .auth-hero-orbital {
+    width: min(100%, 270px);
+  }
+  .auth-orbit-item .auth-orbit-badge {
+    width: 42px;
+    height: 42px;
+  }
+  .auth-orbit-item.auth-orbit-item-inner .auth-orbit-badge {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-orbit-item,
+  .auth-orbit-item .auth-orbit-badge,
+  .auth-hero-orbital .auth-orbit-core {
+    animation: none !important;
+  }
+}
