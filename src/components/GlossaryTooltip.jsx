@@ -7,7 +7,7 @@ const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
 const TOOLTIP_GAP = 8;
 const MAX_TOOLTIP_WIDTH = 340;
-const TOOLTIP_ROOT_ID = 'medsim-tooltip-layer';
+const TOOLTIP_ROOT_ID = 'klinikiq-tooltip-layer';
 const TOOLTIP_LAYER_Z = 2147483600;
 
 function escapeRegExp(text = '') {
@@ -33,7 +33,7 @@ function getTooltipRoot() {
   if (!root) {
     root = document.createElement('div');
     root.id = TOOLTIP_ROOT_ID;
-    root.setAttribute('data-medsim-layer', 'tooltip');
+    root.setAttribute('data-klinikiq-layer', 'tooltip');
     document.body.appendChild(root);
   }
 

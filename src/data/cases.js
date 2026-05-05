@@ -1,4 +1,4 @@
-// MedSim Pro vaka verisi: TUS'a yakın ama tamamen özgün klinik dil optimizasyonu.
+// KlinikIQ vaka verisi: TUS'a yakın ama tamamen özgün klinik dil optimizasyonu.
 // Not: ÖSYM/TUS soru metinleri kopyalanmamış; yalnızca klinik yoğunluk, terminoloji ve karar verdirici soru kurgusu referans alınmıştır.
 
 export const cases = [

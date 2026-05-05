@@ -1,4 +1,4 @@
-# MedSim Pro — Vercel Uyumlu Temiz Kaynak Kod
+# KlinikIQ — Vercel Uyumlu Temiz Kaynak Kod
 
 Bu paket Vercel deploy için hazırlanmış temiz kaynak kod paketidir. `node_modules`, `dist` ve `package-lock.json` ZIP içine bilerek eklenmemiştir.
 
@@ -7,7 +7,7 @@ Bu paket Vercel deploy için hazırlanmış temiz kaynak kod paketidir. `node_mo
 PowerShell'de proje klasörüne girin:
 
 ```powershell
-cd C:\Users\Muhammed\viteproject\medikal-vaka-simulator
+cd C:\Users\Muhammed\viteproject\klinikiq
 ```
 
 Kurulum:

@@ -62,6 +62,31 @@ export function Icon({ name, className = '', size = 20, strokeWidth = 1.9 }) {
   );
 }
 
+
+export function BrandMark({ className = '', size = 24, title = 'KlinikIQ' }) {
+  return (
+    <svg
+      className={`brand-symbol ${className}`.trim()}
+      viewBox="0 0 32 32"
+      width={size}
+      height={size}
+      role={title ? 'img' : undefined}
+      aria-label={title || undefined}
+      aria-hidden={title ? undefined : 'true'}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 6v20" />
+      <path d="M22.5 7.5 12.2 16l10.3 8.5" />
+      <path d="M5 17h5.2l1.6-4.2 3.9 8.6 2.2-5.4H27" />
+      <circle cx="16" cy="16" r="13" opacity="0.22" />
+    </svg>
+  );
+}
+
 export function IconBadge({ icon = 'Activity', tone = 'teal', size = 'md', className = '' }) {
   return (
     <span className={`icon-badge icon-badge-${tone} icon-badge-${size} ${className}`.trim()} aria-hidden="true">
@@ -90,7 +115,7 @@ export function ThemeToggle({ theme = 'dark', onToggleTheme, className = '', sho
   return (
     <button
       type="button"
-      className={`medsim-theme-toggle theme-toggle ${variant === 'auth' ? 'medsim-theme-toggle-auth' : ''} ${className}`.trim()}
+      className={`klinikiq-theme-toggle theme-toggle ${variant === 'auth' ? 'klinikiq-theme-toggle-auth' : ''} ${className}`.trim()}
       onClick={onToggleTheme}
       aria-label={label}
       title={label}

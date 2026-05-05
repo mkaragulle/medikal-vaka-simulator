@@ -7,7 +7,7 @@ import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
 import WrongAnswersPanel from './components/WrongAnswersPanel.jsx';
 import ExamResults from './components/ExamResults.jsx';
-import { Icon, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
+import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById, getCasesByBranch } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
@@ -15,9 +15,9 @@ import { pickRandom, shuffleArray } from './utils/randomize.js';
 import { localBackend } from './services/localBackend.js';
 import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
 
-const STATS_STORAGE_KEY = 'medsim-session-stats-v2';
-const EXAM_HISTORY_STORAGE_KEY = 'medsim-exam-history-v2';
-const THEME_STORAGE_KEY = 'medsim-theme-v1';
+const STATS_STORAGE_KEY = 'klinikiq-session-stats-v2';
+const EXAM_HISTORY_STORAGE_KEY = 'klinikiq-exam-history-v2';
+const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
 const BRANCH_TRANSITION_MS = 1750;
 const BRANCH_TRANSITION_FADE_MS = 280;
 const USERS_STORAGE_KEY = 'auth-users-v1';
@@ -291,7 +291,7 @@ function App() {
   };
 
   const handleDemoStart = () => {
-    const demoEmail = 'demo@medsim.pro';
+    const demoEmail = 'demo@klinikiq.pro';
     const users = loadUsers();
     const existingIndex = users.findIndex((item) => normalizeEmail(item.email) === demoEmail);
     const baseUser = existingIndex >= 0 ? sanitizeUser(users[existingIndex]) : null;
@@ -403,12 +403,12 @@ function App() {
 
   useEffect(() => {
     const shouldLockAuth = !currentUser;
-    document.documentElement.classList.toggle('medsim-auth-lock', shouldLockAuth);
-    document.body.classList.toggle('medsim-auth-lock', shouldLockAuth);
+    document.documentElement.classList.toggle('klinikiq-auth-lock', shouldLockAuth);
+    document.body.classList.toggle('klinikiq-auth-lock', shouldLockAuth);
 
     return () => {
-      document.documentElement.classList.remove('medsim-auth-lock');
-      document.body.classList.remove('medsim-auth-lock');
+      document.documentElement.classList.remove('klinikiq-auth-lock');
+      document.body.classList.remove('klinikiq-auth-lock');
     };
   }, [currentUser]);
 
@@ -705,10 +705,10 @@ function App() {
 
   return (
     <main className="app-shell premium-shell" data-theme={theme}>
-      <nav className="top-shell-nav" aria-label="MedSim Pro üst gezinme">
+      <nav className="top-shell-nav" aria-label="KlinikIQ üst gezinme">
         <button className="nav-brand" type="button" onClick={resetExamToHome} aria-label="Ana ekrana dön">
-          <span className="nav-brand-mark" aria-hidden="true"><Icon name="Activity" /></span>
-          <span className="nav-brand-copy"><strong>MedSim Pro</strong><small>TUS odaklı klinik olgu simülatörü</small></span>
+          <span className="nav-brand-mark" aria-hidden="true"><BrandMark title="" /></span>
+          <span className="nav-brand-copy"><strong>KlinikIQ</strong><small>TUS odaklı klinik olgu simülatörü</small></span>
         </button>
         <div className="segmented-control nav-mode-switch" aria-label="Öğrenme modu seçimi">
           <button

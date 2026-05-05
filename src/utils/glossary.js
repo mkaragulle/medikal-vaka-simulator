@@ -1,6 +1,6 @@
 const teachingOnly = 'teachingOnly';
 
-// This glossary is generated from medsim_pro_v61_aciklamali_glossary(1).xlsx.
+// This glossary is generated from klinikiq_v61_aciklamali_glossary(1).xlsx.
 // Source columns used: Terim, Alternatif Yazımlar, Kısa Açıklama (Tooltip İçin), Branş / Kategori, Öncelik.
 // The table is treated as the source of truth: no extra low-value/high-value filtering is applied here.
 

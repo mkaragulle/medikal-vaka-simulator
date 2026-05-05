@@ -43,7 +43,7 @@ function CaseToolsPanel({
   onChangeHighlighter,
   hardMode = false,
 }) {
-  const storageKey = `medsim-notes-${clinicalCase.id}`;
+  const storageKey = `klinikiq-notes-${clinicalCase.id}`;
   const [notes, setNotes] = useState('');
 
   useEffect(() => {

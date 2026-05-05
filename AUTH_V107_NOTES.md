@@ -1,4 +1,4 @@
-# MedSim Pro v107 Auth Update
+# KlinikIQ v107 Auth Update
 
 Bu sürüm giriş ekranında özellikle dark theme ve mikro etkileşimleri iyileştirir.
 

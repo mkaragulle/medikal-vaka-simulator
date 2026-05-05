@@ -84,7 +84,7 @@ function HomeCommandCenter({
 
         <div className="home-hero-v8-main">
           <div className="home-hero-copy-v8">
-            <h1>MedSim Pro</h1>
+            <h1>KlinikIQ</h1>
             <p>TUS odaklı klinik akıl yürütme, tetkik seçimi ve olgu çözüm pratiği.</p>
           </div>
 

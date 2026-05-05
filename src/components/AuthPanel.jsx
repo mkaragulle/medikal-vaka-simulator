@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icon, ThemeToggle } from './ui.jsx';
+import { Icon, BrandMark, ThemeToggle } from './ui.jsx';
 
 function GoogleLogo() {
   return (
@@ -80,12 +80,12 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
   };
 
   return (
-    <section className="auth-minimal-shell" aria-label="MedSim Pro giriş ekranı">
+    <section className="auth-minimal-shell" aria-label="KlinikIQ giriş ekranı">
       <div className="auth-minimal-grid" aria-hidden="true" />
       <div className="auth-minimal-glow glow-a" aria-hidden="true" />
       <div className="auth-minimal-glow glow-b" aria-hidden="true" />
 
-      <aside className="auth-minimal-brand" aria-label="MedSim Pro tanıtım alanı">
+      <aside className="auth-minimal-brand" aria-label="KlinikIQ tanıtım alanı">
         <div className="auth-minimal-orbit" aria-hidden="true">
           <span />
           <span />
@@ -93,8 +93,8 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
         </div>
 
         <div className="auth-minimal-logo-row">
-          <span className="auth-minimal-logo-mark"><Icon name="Activity" /></span>
-          <span className="auth-minimal-logo-copy">MEDSIM PRO</span>
+          <span className="auth-minimal-logo-mark"><BrandMark title="" /></span>
+          <span className="auth-minimal-logo-copy">KlinikIQ</span>
         </div>
 
         <div className="auth-minimal-hero">

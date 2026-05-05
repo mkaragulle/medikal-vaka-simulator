@@ -1,4 +1,4 @@
-# MedSim Pro v109 — Layout and Design-System Standardization
+# KlinikIQ v109 — Layout and Design-System Standardization
 
 ## What changed
 

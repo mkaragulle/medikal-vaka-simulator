@@ -1,4 +1,4 @@
-const PREFIX = 'medsim-pro:';
+const PREFIX = 'klinikiq:';
 
 function key(name) {
   return `${PREFIX}${name}`;
