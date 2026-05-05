@@ -402,6 +402,17 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
+    const shouldLockAuth = !currentUser;
+    document.documentElement.classList.toggle('medsim-auth-lock', shouldLockAuth);
+    document.body.classList.toggle('medsim-auth-lock', shouldLockAuth);
+
+    return () => {
+      document.documentElement.classList.remove('medsim-auth-lock');
+      document.body.classList.remove('medsim-auth-lock');
+    };
+  }, [currentUser]);
+
+  useEffect(() => {
     if (currentUser?.id) return;
     localBackend.write(EXAM_HISTORY_STORAGE_KEY, examHistory);
   }, [examHistory, currentUser?.id]);
