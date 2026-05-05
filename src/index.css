@@ -20569,3 +20569,497 @@ html[data-theme="dark"] .google-g-blue {
   }
 }
 
+
+
+/* ===== v107 auth dark-mode optimization + premium micro interactions ===== */
+
+/* Light/dark auth variables are scoped so the rest of MedSim Pro stays untouched. */
+.app-shell:has(.auth-minimal-shell),
+.app-shell[data-theme="light"]:has(.auth-minimal-shell),
+html[data-theme="light"] .app-shell:has(.auth-minimal-shell),
+body[data-theme="light"] .app-shell:has(.auth-minimal-shell) {
+  --auth-page-bg: #f7fbfb;
+  --auth-grid-line: rgba(15, 118, 110, .055);
+  --auth-panel-solid: rgba(255,255,255,.94);
+  --auth-panel-soft: rgba(255,255,255,.72);
+  --auth-panel-border: rgba(15, 23, 42, .08);
+  --auth-panel-shadow: 0 30px 78px rgba(15, 23, 42, .10);
+  --auth-text-main: #0f172a;
+  --auth-text-muted: #64748b;
+  --auth-text-soft: #94a3b8;
+  --auth-field-bg: rgba(255,255,255,.72);
+  --auth-field-bg-focus: rgba(255,255,255,.96);
+  --auth-line-soft: #dbe7e8;
+  --auth-card-ambient: rgba(20, 184, 166, .16);
+  background: var(--auth-page-bg) !important;
+}
+
+.app-shell[data-theme="dark"]:has(.auth-minimal-shell),
+html[data-theme="dark"] .app-shell:has(.auth-minimal-shell),
+body[data-theme="dark"] .app-shell:has(.auth-minimal-shell),
+.app-shell.theme-dark:has(.auth-minimal-shell) {
+  --auth-page-bg: #07111a;
+  --auth-grid-line: rgba(45, 212, 191, .07);
+  --auth-panel-solid: rgba(9, 22, 32, .86);
+  --auth-panel-soft: rgba(13, 32, 45, .68);
+  --auth-panel-border: rgba(125, 211, 252, .13);
+  --auth-panel-shadow: 0 34px 100px rgba(0, 0, 0, .38);
+  --auth-text-main: #f8fafc;
+  --auth-text-muted: #a6b7c9;
+  --auth-text-soft: #7f93a9;
+  --auth-field-bg: rgba(8, 21, 31, .76);
+  --auth-field-bg-focus: rgba(10, 27, 39, .96);
+  --auth-line-soft: rgba(148, 163, 184, .20);
+  --auth-card-ambient: rgba(20, 184, 166, .20);
+  background:
+    radial-gradient(circle at 12% 18%, rgba(20, 184, 166, .13), transparent 26%),
+    radial-gradient(circle at 92% 82%, rgba(14, 165, 233, .11), transparent 28%),
+    #07111a !important;
+  color: var(--auth-text-main);
+}
+
+.app-shell[data-theme="dark"]:has(.auth-minimal-shell)::before,
+html[data-theme="dark"] .app-shell:has(.auth-minimal-shell)::before,
+body[data-theme="dark"] .app-shell:has(.auth-minimal-shell)::before,
+.app-shell.theme-dark:has(.auth-minimal-shell)::before {
+  opacity: 0 !important;
+}
+
+.auth-minimal-shell {
+  perspective: 1400px;
+}
+
+.auth-minimal-grid {
+  background:
+    linear-gradient(var(--auth-grid-line, rgba(15, 118, 110, .055)) 1px, transparent 1px),
+    linear-gradient(90deg, var(--auth-grid-line, rgba(15, 118, 110, .055)) 1px, transparent 1px),
+    radial-gradient(circle at 70% 16%, rgba(20, 184, 166, .10), transparent 30%),
+    linear-gradient(180deg, color-mix(in srgb, var(--auth-page-bg, #f7fbfb) 90%, white 10%) 0%, var(--auth-page-bg, #f7fbfb) 100%) !important;
+  background-size: 38px 38px, 38px 38px, auto, auto !important;
+}
+
+.auth-minimal-glow {
+  animation: authGlowFloat 8s ease-in-out infinite;
+}
+.auth-minimal-glow.glow-b {
+  animation-delay: -3s;
+}
+
+.auth-minimal-brand,
+.auth-minimal-card {
+  transition:
+    transform .28s cubic-bezier(.2,.8,.2,1),
+    border-color .28s ease,
+    box-shadow .28s ease,
+    background .28s ease;
+}
+
+.auth-minimal-brand {
+  color: var(--auth-text-main) !important;
+  border-color: var(--auth-panel-border) !important;
+  background:
+    radial-gradient(circle at 92% 48%, var(--auth-card-ambient), transparent 35%),
+    linear-gradient(145deg, var(--auth-panel-solid), var(--auth-panel-soft)) !important;
+  box-shadow:
+    var(--auth-panel-shadow),
+    inset 0 1px 0 rgba(255,255,255,.12) !important;
+}
+
+.auth-minimal-card {
+  color: var(--auth-text-main) !important;
+  border-color: var(--auth-panel-border) !important;
+  background:
+    linear-gradient(145deg, var(--auth-panel-solid), color-mix(in srgb, var(--auth-panel-soft) 86%, transparent)) !important;
+  box-shadow:
+    var(--auth-panel-shadow),
+    inset 0 1px 0 rgba(255,255,255,.10) !important;
+}
+
+.auth-minimal-brand:hover,
+.auth-minimal-card:hover {
+  border-color: rgba(20, 184, 166, .26) !important;
+}
+
+.auth-minimal-logo-mark {
+  position: relative;
+  overflow: hidden;
+  color: var(--auth-teal) !important;
+  background: color-mix(in srgb, var(--auth-panel-solid) 78%, white 18%) !important;
+  border-color: rgba(20, 184, 166, .24) !important;
+  box-shadow:
+    0 16px 34px rgba(15, 118, 110, .14),
+    inset 0 1px 0 rgba(255,255,255,.22) !important;
+}
+.auth-minimal-logo-mark::after {
+  content: "";
+  position: absolute;
+  inset: 9px;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 184, 166, .28);
+  opacity: 0;
+  transform: scale(.82);
+  animation: authLogoPulse 2.6s ease-out infinite;
+}
+.auth-minimal-logo-mark svg {
+  animation: authPulseLine 2.6s ease-in-out infinite;
+}
+
+.auth-minimal-logo-copy,
+.auth-minimal-head p,
+.auth-minimal-demo,
+.auth-minimal-options button {
+  color: #0f766e !important;
+}
+.app-shell[data-theme="dark"] .auth-minimal-logo-copy,
+html[data-theme="dark"] .auth-minimal-logo-copy,
+.app-shell[data-theme="dark"] .auth-minimal-head p,
+html[data-theme="dark"] .auth-minimal-head p,
+.app-shell[data-theme="dark"] .auth-minimal-demo,
+html[data-theme="dark"] .auth-minimal-demo,
+.app-shell[data-theme="dark"] .auth-minimal-options button,
+html[data-theme="dark"] .auth-minimal-options button {
+  color: #5eead4 !important;
+}
+
+.auth-minimal-hero h1,
+.auth-minimal-head h2,
+.auth-minimal-feature strong {
+  color: var(--auth-text-main) !important;
+}
+.auth-minimal-hero p,
+.auth-minimal-head span,
+.auth-minimal-feature span,
+.auth-minimal-note,
+.auth-minimal-options,
+.auth-minimal-tabs button:not(.active) {
+  color: var(--auth-text-muted) !important;
+}
+
+.auth-minimal-orbit span {
+  border-color: rgba(20, 184, 166, .16) !important;
+  animation: authOrbitDrift 9s ease-in-out infinite;
+}
+.auth-minimal-orbit span:nth-child(2) {
+  animation-delay: -2.6s;
+}
+.auth-minimal-orbit span:nth-child(3) {
+  background: rgba(20, 184, 166, .10) !important;
+  box-shadow: 0 0 42px rgba(20, 184, 166, .16);
+  animation: authOrbitCenter 4.8s ease-in-out infinite;
+}
+
+.auth-minimal-feature {
+  position: relative;
+  padding: 10px 8px;
+  margin: -10px -8px;
+  border-radius: 18px;
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.auth-minimal-feature:hover {
+  transform: translateY(-2px);
+  background: rgba(20, 184, 166, .055);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+}
+.auth-minimal-feature > svg {
+  transition: transform .22s cubic-bezier(.2,.8,.2,1), color .22s ease, filter .22s ease;
+}
+.auth-minimal-feature:hover > svg {
+  transform: translateY(-1px) scale(1.08);
+  color: #14b8a6 !important;
+  filter: drop-shadow(0 8px 14px rgba(20, 184, 166, .18));
+}
+
+.auth-minimal-theme {
+  position: relative;
+  overflow: hidden;
+  color: var(--auth-text-main) !important;
+  border-color: var(--auth-line-soft) !important;
+  background: var(--auth-field-bg) !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, .08), inset 0 1px 0 rgba(255,255,255,.12) !important;
+}
+.auth-minimal-theme::before {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 180deg, transparent, rgba(20, 184, 166, .18), transparent 28%);
+  opacity: 0;
+  transition: opacity .2s ease;
+  animation: authSpin 4s linear infinite;
+}
+.auth-minimal-theme:hover::before {
+  opacity: 1;
+}
+.auth-minimal-theme svg {
+  position: relative;
+  z-index: 1;
+  transition: transform .22s ease;
+}
+.auth-minimal-theme:hover svg {
+  transform: rotate(-18deg) scale(1.06);
+}
+
+.auth-minimal-tabs button,
+.auth-minimal-google,
+.auth-minimal-demo,
+.auth-minimal-submit {
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+.auth-minimal-tabs button:not(.active),
+.auth-minimal-google {
+  border-color: var(--auth-line-soft) !important;
+  background: var(--auth-field-bg) !important;
+  color: var(--auth-text-main) !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, .055), inset 0 1px 0 rgba(255,255,255,.10) !important;
+}
+.auth-minimal-tabs button:not(.active):hover,
+.auth-minimal-google:hover:not(:disabled),
+.auth-minimal-demo:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: rgba(20, 184, 166, .34) !important;
+  box-shadow: 0 20px 38px rgba(15, 118, 110, .12), inset 0 1px 0 rgba(255,255,255,.13) !important;
+}
+
+.auth-minimal-tabs button.active,
+.auth-minimal-submit {
+  background: linear-gradient(135deg, #0f766e, #14b8a6) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+}
+.auth-minimal-tabs button.active::after,
+.auth-minimal-submit::after,
+.auth-minimal-demo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  translate: -130% 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.26), transparent);
+  transition: translate .55s ease;
+}
+.auth-minimal-tabs button.active:hover::after,
+.auth-minimal-submit:hover::after,
+.auth-minimal-demo:hover::after {
+  translate: 130% 0;
+}
+
+.auth-minimal-google .auth-minimal-google-mark {
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+.auth-minimal-google:hover:not(:disabled) .auth-minimal-google-mark {
+  transform: scale(1.08) rotate(-4deg);
+  box-shadow: 0 10px 24px rgba(66, 133, 244, .14), inset 0 0 0 1px rgba(15,23,42,.06);
+}
+
+.auth-minimal-demo {
+  border-color: rgba(20, 184, 166, .24) !important;
+  background:
+    linear-gradient(135deg, rgba(20, 184, 166, .10), rgba(255,255,255,.02)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12) !important;
+}
+.auth-minimal-demo svg {
+  transition: transform .22s ease, filter .22s ease;
+}
+.auth-minimal-demo:hover:not(:disabled) svg {
+  transform: rotate(12deg) scale(1.08);
+  filter: drop-shadow(0 8px 14px rgba(20, 184, 166, .28));
+}
+
+.auth-minimal-divider {
+  color: var(--auth-text-soft) !important;
+}
+.auth-minimal-divider::before,
+.auth-minimal-divider::after {
+  background: var(--auth-line-soft) !important;
+}
+
+.auth-minimal-input {
+  border-color: var(--auth-line-soft) !important;
+  background: var(--auth-field-bg) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.10),
+    0 8px 22px rgba(15, 23, 42, .035) !important;
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+.auth-minimal-input:hover {
+  border-color: rgba(20, 184, 166, .24) !important;
+}
+.auth-minimal-input:focus-within {
+  transform: translateY(-1px);
+  border-color: rgba(20, 184, 166, .48) !important;
+  background: var(--auth-field-bg-focus) !important;
+  box-shadow:
+    0 0 0 4px rgba(20, 184, 166, .10),
+    0 16px 30px rgba(15, 23, 42, .07),
+    inset 0 1px 0 rgba(255,255,255,.16) !important;
+}
+.auth-minimal-input > svg {
+  color: var(--auth-text-soft) !important;
+  transition: color .2s ease, transform .2s ease;
+}
+.auth-minimal-input:focus-within > svg {
+  color: #14b8a6 !important;
+  transform: scale(1.04);
+}
+.auth-minimal-input input {
+  color: var(--auth-text-main) !important;
+  caret-color: #14b8a6;
+}
+.auth-minimal-input input::placeholder {
+  color: var(--auth-text-soft) !important;
+  opacity: .9;
+}
+.auth-minimal-input input:focus,
+.auth-minimal-input input:focus-visible,
+.auth-minimal-eye:focus,
+.auth-minimal-eye:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.auth-minimal-eye {
+  color: var(--auth-text-soft) !important;
+  transition: color .18s ease, transform .18s ease, background .18s ease;
+}
+.auth-minimal-eye:hover {
+  color: #14b8a6 !important;
+  transform: scale(1.04);
+  background: rgba(20, 184, 166, .08) !important;
+}
+
+.auth-minimal-options label {
+  color: var(--auth-text-muted) !important;
+}
+.auth-minimal-options input {
+  border-color: var(--auth-line-soft) !important;
+  background: var(--auth-field-bg) !important;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+}
+.auth-minimal-options input:hover {
+  transform: scale(1.04);
+  border-color: rgba(20, 184, 166, .42) !important;
+}
+.auth-minimal-options input:checked {
+  border-color: #14b8a6 !important;
+  background: linear-gradient(135deg, #0f766e, #14b8a6) !important;
+}
+.auth-minimal-options input:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(20, 184, 166, .12) !important;
+}
+.auth-minimal-options button:hover {
+  color: #14b8a6 !important;
+  text-decoration: none;
+}
+
+.auth-minimal-message {
+  color: var(--auth-text-main) !important;
+  border-color: var(--auth-line-soft) !important;
+}
+.auth-minimal-message.success {
+  color: #0f766e !important;
+  background: rgba(20, 184, 166, .10) !important;
+  border-color: rgba(20, 184, 166, .28) !important;
+}
+.app-shell[data-theme="dark"] .auth-minimal-message.success,
+html[data-theme="dark"] .auth-minimal-message.success {
+  color: #5eead4 !important;
+}
+.auth-minimal-message.error {
+  color: #dc2626 !important;
+  background: rgba(239, 68, 68, .09) !important;
+  border-color: rgba(239, 68, 68, .25) !important;
+}
+.app-shell[data-theme="dark"] .auth-minimal-message.error,
+html[data-theme="dark"] .auth-minimal-message.error {
+  color: #fca5a5 !important;
+}
+
+.auth-minimal-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 24px 50px rgba(15, 118, 110, .30),
+    inset 0 1px 0 rgba(255,255,255,.25) !important;
+}
+.auth-minimal-submit:active:not(:disabled),
+.auth-minimal-google:active:not(:disabled),
+.auth-minimal-demo:active:not(:disabled),
+.auth-minimal-tabs button:active {
+  transform: translateY(0) scale(.99);
+}
+
+.auth-minimal-note {
+  color: var(--auth-text-soft) !important;
+}
+.auth-minimal-note svg {
+  color: var(--auth-text-soft) !important;
+}
+
+.app-shell[data-theme="dark"] .auth-minimal-google-mark,
+html[data-theme="dark"] .auth-minimal-google-mark {
+  background: rgba(255,255,255,.96) !important;
+  box-shadow: inset 0 0 0 1px rgba(15,23,42,.08), 0 8px 18px rgba(0,0,0,.16) !important;
+}
+
+@keyframes authGlowFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(18px, -12px, 0) scale(1.05); }
+}
+@keyframes authLogoPulse {
+  0% { opacity: 0; transform: scale(.74); }
+  28% { opacity: .72; }
+  100% { opacity: 0; transform: scale(1.75); }
+}
+@keyframes authPulseLine {
+  0%, 100% { transform: scaleX(1); filter: drop-shadow(0 0 0 rgba(20,184,166,0)); }
+  42% { transform: scaleX(1.12); filter: drop-shadow(0 0 10px rgba(20,184,166,.36)); }
+  58% { transform: scaleX(.96); }
+}
+@keyframes authOrbitDrift {
+  0%, 100% { transform: rotate(-18deg) translate3d(0,0,0); }
+  50% { transform: rotate(-14deg) translate3d(-10px, 8px, 0); }
+}
+@keyframes authOrbitCenter {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); opacity: .75; }
+  50% { transform: translate3d(-4px, 3px, 0) scale(1.05); opacity: 1; }
+}
+@keyframes authSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-minimal-glow,
+  .auth-minimal-logo-mark::after,
+  .auth-minimal-logo-mark svg,
+  .auth-minimal-orbit span,
+  .auth-minimal-theme::before {
+    animation: none !important;
+  }
+  .auth-minimal-brand,
+  .auth-minimal-card,
+  .auth-minimal-feature,
+  .auth-minimal-tabs button,
+  .auth-minimal-google,
+  .auth-minimal-demo,
+  .auth-minimal-submit,
+  .auth-minimal-input,
+  .auth-minimal-theme svg {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .auth-minimal-brand:hover,
+  .auth-minimal-card:hover,
+  .auth-minimal-feature:hover,
+  .auth-minimal-tabs button:not(.active):hover,
+  .auth-minimal-google:hover:not(:disabled),
+  .auth-minimal-demo:hover:not(:disabled),
+  .auth-minimal-submit:hover:not(:disabled) {
+    transform: none;
+  }
+}
