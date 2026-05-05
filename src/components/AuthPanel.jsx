@@ -53,39 +53,36 @@ const authFeatureCards = [
   }
 ];
 
-const authOrbitIcons = [
-  { icon: 'Stethoscope', label: 'Klinik değerlendirme', lane: 'outer' },
-  { icon: 'Brain', label: 'Klinik akıl yürütme', lane: 'outer' },
-  { icon: 'HeartPulse', label: 'Yaşam bulguları', lane: 'outer' },
-  { icon: 'FlaskConical', label: 'Tetkik değerlendirme', lane: 'outer' },
-  { icon: 'Gauge', label: 'Performans içgörüleri', lane: 'inner' },
-  { icon: 'Activity', label: 'Dinamik izlem', lane: 'inner' },
+const authOrbitOuterIcons = [
+  { icon: 'Stethoscope', label: 'Klinik değerlendirme' },
+  { icon: 'Brain', label: 'Klinik akıl yürütme' },
+  { icon: 'HeartPulse', label: 'Yaşam bulguları' },
+  { icon: 'FlaskConical', label: 'Tetkik değerlendirme' },
 ];
 
-function OrbitRotor({ items, lane }) {
+const authOrbitInnerIcons = [
+  { icon: 'Gauge', label: 'Performans içgörüleri' },
+  { icon: 'Activity', label: 'Dinamik izlem' },
+];
+
+function OrbitRotor({ items, lane = 'outer' }) {
   const total = items.length;
+  const offset = lane === 'inner' ? 48 : -14;
 
   return (
-    <span className={`kq-orbit-rotor kq-orbit-rotor-${lane}`} aria-hidden="true">
+    <span className={`kiq-orbit-rotor kiq-orbit-rotor-${lane}`} aria-hidden="true">
       {items.map((item, index) => {
-        const offset = lane === 'inner' ? 46 : -8;
         const angle = Number((((360 / total) * index) + offset).toFixed(3));
 
         return (
           <span
-            key={item.icon}
-            className={`kq-orbit-node kq-orbit-node-${lane}`}
-            style={{
-              '--kq-node-angle': `${angle}deg`,
-              transform: `rotate(${angle}deg) translateY(calc(-1 * var(--kq-active-radius)))`,
-            }}
+            key={`${lane}-${item.icon}`}
+            className={`kiq-orbit-node kiq-orbit-node-${lane}`}
+            style={{ transform: `rotate(${angle}deg) translateY(calc(-1 * var(--kiq-orbit-radius-${lane})))` }}
             aria-label={item.label}
           >
-            <span
-              className="kq-orbit-node-face"
-              style={{ transform: `rotate(${-angle}deg)` }}
-            >
-              <span className="kq-orbit-node-counter">
+            <span className="kiq-orbit-node-face" style={{ transform: `rotate(${-angle}deg)` }}>
+              <span className="kiq-orbit-node-counter">
                 <Icon name={item.icon} />
               </span>
             </span>
@@ -96,17 +93,24 @@ function OrbitRotor({ items, lane }) {
   );
 }
 
-function OrbitNodes({ items }) {
-  const outerItems = items.filter((item) => item.lane !== 'inner');
-  const innerItems = items.filter((item) => item.lane === 'inner');
-
+function OrbitAnimation() {
   return (
-    <>
-      <OrbitRotor items={outerItems} lane="outer" />
-      <OrbitRotor items={innerItems} lane="inner" />
-    </>
+    <div className="kiq-orbit-stage">
+      <span className="kiq-orbit-aura" />
+      <span className="kiq-orbit-ring kiq-orbit-ring-outer" />
+      <span className="kiq-orbit-ring kiq-orbit-ring-inner" />
+      <span className="kiq-orbit-ring kiq-orbit-ring-core" />
+      <span className="kiq-orbit-sweep kiq-orbit-sweep-outer" />
+      <span className="kiq-orbit-sweep kiq-orbit-sweep-inner" />
+      <span className="kiq-orbit-core">
+        <Icon name="ShieldPlus" />
+      </span>
+      <OrbitRotor items={authOrbitOuterIcons} lane="outer" />
+      <OrbitRotor items={authOrbitInnerIcons} lane="inner" />
+    </div>
   );
 }
+
 
 function AuthFeatureCard({ feature }) {
   return (
@@ -204,24 +208,7 @@ function AuthPanel({ onLogin, onRegister, onGoogleLogin, onDemoStart, theme, onT
           </div>
 
           <div className="auth-hero-illustration" aria-hidden="true">
-            <div className="auth-hero-orbital kq-orbit-stage">
-              <span className="kq-orbit-aura" />
-              <span className="kq-orbit-ring kq-orbit-ring-far" />
-              <span className="kq-orbit-ring kq-orbit-ring-outer" />
-              <span className="kq-orbit-ring kq-orbit-ring-mid" />
-              <span className="kq-orbit-ring kq-orbit-ring-inner" />
-              <span className="kq-orbit-sweep kq-orbit-sweep-outer" />
-              <span className="kq-orbit-sweep kq-orbit-sweep-inner" />
-              <span className="kq-orbit-dot kq-orbit-dot-a" />
-              <span className="kq-orbit-dot kq-orbit-dot-b" />
-              <span className="kq-orbit-dot kq-orbit-dot-c" />
-
-              <span className="kq-orbit-core">
-                <Icon name="ShieldPlus" />
-              </span>
-
-              <OrbitNodes items={authOrbitIcons} />
-            </div>
+            <OrbitAnimation />
           </div>
         </div>
 
