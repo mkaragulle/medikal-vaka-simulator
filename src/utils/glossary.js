@@ -1,8 +1,9 @@
 const teachingOnly = 'teachingOnly';
 
-// This glossary is generated from klinikiq_v61_aciklamali_glossary(1).xlsx.
-// Source columns used: Terim, Alternatif Yazımlar, Kısa Açıklama (Tooltip İçin), Branş / Kategori, Öncelik.
-// The table is treated as the source of truth: no extra low-value/high-value filtering is applied here.
+// Central KlinikIQ glossary.
+// Updated from KlinikIQ_CEHT_Glossary_TUS_Spot_Kelimeler(1).xlsx.
+// Source sheets used: Glossary_All and TUS_Spot_Kelimeler.
+// Duplicate terms are merged by normalized term/alias matching; case linkage is stored as metadata.
 
 export function normalizeGlossaryText(value = '') {
   return String(value)
@@ -23,7 +24,23 @@ export const globalGlossaryTerms = [
     "definition": "Kalbin elektriksel aktivitesini kaydeden testtir; ritim, iletim ve iskemi bulgularını değerlendirmede kullanılır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-anterior-stemi-001",
+      "cv-hocm-001",
+      "cv-tamponade-001",
+      "im-acute-pancreatitis-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "pulmonology-lightning-apnea-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "retrosternal",
@@ -33,7 +50,13 @@ export const globalGlossaryTerms = [
     "definition": "Göğüs kemiği arkasında hissedilen yerleşimi ifade eder; göğüs ağrısı tarifinde sık kullanılır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "göğüs ağrısı",
@@ -44,7 +67,21 @@ export const globalGlossaryTerms = [
     "definition": "Kalp, akciğer, özofagus, kas-iskelet sistemi veya damar kaynaklı olabilen önemli bir başvuru yakınmasıdır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001",
+      "cv-aortic-dissection-001",
+      "inf-endocarditis-001",
+      "pulm-pe-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "hipertansiyon",
@@ -55,7 +92,19 @@ export const globalGlossaryTerms = [
     "definition": "Arteriyel kan basıncının kronik olarak yüksek seyretmesidir; kardiyovasküler ve renal riskleri artırır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "cv-aortic-dissection-001",
+      "im-variceal-bleeding-001",
+      "internal-medicine-systemic-lupus-erythematosus-001",
+      "ortho-femoral-neck-001"
+    ]
   },
   {
     "term": "dislipidemi",
@@ -66,7 +115,15 @@ export const globalGlossaryTerms = [
     "definition": "Kan lipid düzeylerinde bozulmadır; ateroskleroz ve kardiyovasküler risk açısından önemlidir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "internal-medicine-familial-hypercholesterolemia-001"
+    ]
   },
   {
     "term": "derivasyon",
@@ -77,7 +134,19 @@ export const globalGlossaryTerms = [
     "definition": "EKG’de kalbin elektriksel aktivitesine farklı açılardan bakan kayıt düzlemlerini ifade eder.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-anterior-stemi-001",
+      "cv-hocm-001",
+      "cv-tamponade-001",
+      "internal-medicine-familial-hypercholesterolemia-001"
+    ]
   },
   {
     "term": "intravenöz",
@@ -88,7 +157,29 @@ export const globalGlossaryTerms = [
     "definition": "Damar içi uygulamayı ifade eder; acil tedavi ve sıvı/ilaç verilmesinde sık kullanılır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001",
+      "cv-pulmonary-edema-001",
+      "im-acute-pancreatitis-001",
+      "im-dka-001",
+      "im-iron-deficiency-anemia-001",
+      "inf-endocarditis-001",
+      "inf-malaria-001",
+      "neuro-mca-stroke-001",
+      "neuro-ms-001",
+      "ped-epiglottitis-001",
+      "surg-diverticulitis-001",
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "vital bulgular",
@@ -99,7 +190,9 @@ export const globalGlossaryTerms = [
     "definition": "Kan basıncı, nabız, solunum, oksijen satürasyonu ve ateş gibi temel klinik ölçümlerdir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "oksijenizasyon",
@@ -110,7 +203,16 @@ export const globalGlossaryTerms = [
     "definition": "Kanın oksijen taşıma ve dokulara oksijen ulaştırma durumunu ifade eder.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "BT",
@@ -121,7 +223,37 @@ export const globalGlossaryTerms = [
     "definition": "Kesitsel görüntüleme sağlayan radyolojik yöntemdir; akut kanama, travma ve birçok acil tabloda kullanılır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001",
+      "cv-pulmonary-edema-001",
+      "im-acute-pancreatitis-001",
+      "inf-endocarditis-001",
+      "infectious-diseases-caseating-granuloma-tb-001",
+      "neuro-cvst-001",
+      "neuro-mca-stroke-001",
+      "neuro-sah-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "pediatrics-shaken-baby-syndrome-001",
+      "pulm-ipf-uip-001",
+      "pulm-pe-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-near-hanging-asphyxia-001",
+      "pulmonology-pulmonary-embolism-dvt-001",
+      "surg-appendicitis-001",
+      "surg-diverticulitis-001",
+      "surg-pneumoperitoneum-001",
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "MR",
@@ -132,7 +264,21 @@ export const globalGlossaryTerms = [
     "definition": "Manyetik alan kullanarak yüksek yumuşak doku çözünürlüğü sağlayan görüntüleme yöntemidir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "neurology",
+      "orthopedics",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-hemochromatosis-001",
+      "neuro-cvst-001",
+      "neuro-ms-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "ortho-scaphoid-001",
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
   },
   {
     "term": "USG",
@@ -143,7 +289,22 @@ export const globalGlossaryTerms = [
     "definition": "Ses dalgalarıyla yapılan görüntüleme yöntemidir; batın, üriner sistem, damar ve obstetrik değerlendirmelerde sık kullanılır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001",
+      "internal-medicine-rheumatoid-arthritis-001",
+      "ped-intussusception-001",
+      "ped-pyloric-stenosis-001",
+      "pediatrics-homocystinuria-001",
+      "pulm-pe-001",
+      "surg-cholecystitis-001"
+    ]
   },
   {
     "term": "hemodinami",
@@ -156,7 +317,22 @@ export const globalGlossaryTerms = [
     "definition": "Dolaşımın kan basıncı, nabız, perfüzyon ve organ kanlanması açısından değerlendirilmesini ifade eder.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-tamponade-001",
+      "im-variceal-bleeding-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "pulm-pe-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "hipotansiyon",
@@ -167,7 +343,23 @@ export const globalGlossaryTerms = [
     "definition": "Kan basıncının doku perfüzyonunu bozabilecek düzeyde düşük olmasıdır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-tamponade-001",
+      "im-variceal-bleeding-001",
+      "inf-meningococcemia-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "pulm-pe-001",
+      "pulm-pneumothorax-001"
+    ]
   },
   {
     "term": "taşikardi",
@@ -179,7 +371,23 @@ export const globalGlossaryTerms = [
     "definition": "Kalp hızının beklenen aralığın üzerinde olmasıdır; ağrı, ateş, hipovolemi, hipoksemi veya aritmiyle ilişkili olabilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "im-dka-001",
+      "im-iron-deficiency-anemia-001",
+      "im-variceal-bleeding-001",
+      "inf-meningococcemia-001",
+      "infectious-diseases-septic-shock-001",
+      "pulm-pe-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "bradikardi",
@@ -190,7 +398,13 @@ export const globalGlossaryTerms = [
     "definition": "Kalp hızının beklenen aralığın altında olmasıdır; klinik etkisi hemodinamik durumla birlikte değerlendirilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulmonology-lightning-apnea-001"
+    ]
   },
   {
     "term": "hipoksemi",
@@ -202,7 +416,20 @@ export const globalGlossaryTerms = [
     "definition": "Arteriyel oksijenlenmenin azalmasıdır; solunum ve dolaşım değerlendirmesinde önemlidir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "cv-pulmonary-edema-001",
+      "ped-epiglottitis-001",
+      "pulmonology-lightning-apnea-001",
+      "pulmonology-near-hanging-asphyxia-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "hipovolemi",
@@ -214,7 +441,16 @@ export const globalGlossaryTerms = [
     "definition": "Dolaşımdaki etkili sıvı hacminin azalmasıdır; hipotansiyon ve organ perfüzyon bozukluğu ile ilişkili olabilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-acute-radiation-syndrome-001"
+    ]
   },
   {
     "term": "perfüzyon",
@@ -226,7 +462,18 @@ export const globalGlossaryTerms = [
     "definition": "Dokulara yeterli kan akımının sağlanmasıdır. Şok ve organ yetmezliği değerlendirmesinde temel kavramdır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-hocm-001",
+      "im-acute-pancreatitis-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "pulmonology-lightning-apnea-001"
+    ]
   },
   {
     "term": "stabilizasyon",
@@ -238,7 +485,44 @@ export const globalGlossaryTerms = [
     "definition": "Hastanın yaşamı tehdit eden solunum, dolaşım veya bilinç sorunlarının güvenli düzeye getirilmesidir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-tamponade-001",
+      "im-variceal-bleeding-001",
+      "infectious-diseases-caseating-granuloma-tb-001",
+      "infectious-diseases-hiv-aids-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-alkaptonuria-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-hemochromatosis-001",
+      "internal-medicine-pellagra-001",
+      "internal-medicine-rheumatoid-arthritis-001",
+      "internal-medicine-scurvy-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "internal-medicine-sjogren-syndrome-001",
+      "internal-medicine-systemic-lupus-erythematosus-001",
+      "internal-medicine-tangier-disease-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "ped-pyloric-stenosis-001",
+      "pediatrics-albinism-001",
+      "pediatrics-bruton-agammaglobulinemia-001",
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-homocystinuria-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-phenylketonuria-001",
+      "pediatrics-shaken-baby-syndrome-001",
+      "pediatrics-von-gierke-gsd-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "ABC",
@@ -248,7 +532,19 @@ export const globalGlossaryTerms = [
     "definition": "Airway, Breathing, Circulation basamaklarıdır; acil değerlendirmede havayolu, solunum ve dolaşım önceliklerini ifade eder.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "pulmonology-lightning-apnea-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "senkop",
@@ -259,7 +555,14 @@ export const globalGlossaryTerms = [
     "definition": "Beyin kan akımının kısa süreli azalmasına bağlı geçici bilinç kaybıdır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001",
+      "cv-hocm-001"
+    ]
   },
   {
     "term": "diyaforez",
@@ -270,7 +573,14 @@ export const globalGlossaryTerms = [
     "definition": "Terleme artışıdır; ağrı, şok, hipoglisemi veya akut kardiyak olaylarda görülebilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "koagülasyon",
@@ -282,7 +592,21 @@ export const globalGlossaryTerms = [
     "definition": "Kan pıhtılaşma sistemini ifade eder. Kanama riski ve işlem güvenliği açısından değerlendirilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "im-variceal-bleeding-001",
+      "internal-medicine-scurvy-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "pediatrics-homocystinuria-001",
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
   },
   {
     "term": "trombositopeni",
@@ -294,7 +618,16 @@ export const globalGlossaryTerms = [
     "definition": "Trombosit sayısının azalmasıdır; kanama eğilimi ve bazı sistemik hastalıklar açısından önemlidir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "inf-malaria-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "internal-medicine-scurvy-001"
+    ]
   },
   {
     "term": "lökositoz",
@@ -305,7 +638,22 @@ export const globalGlossaryTerms = [
     "definition": "Lökosit sayısının artmasıdır; enfeksiyon, inflamasyon, stres yanıtı veya hematolojik hastalıklarla ilişkili olabilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-scurvy-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "surg-appendicitis-001",
+      "surg-cholecystitis-001",
+      "surg-diverticulitis-001"
+    ]
   },
   {
     "term": "anemi",
@@ -316,7 +664,30 @@ export const globalGlossaryTerms = [
     "definition": "Hemoglobin düzeyinin azalmasıdır; oksijen taşıma kapasitesini ve dolaşım toleransını etkiler.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001",
+      "internal-medicine-alkaptonuria-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-hemochromatosis-001",
+      "internal-medicine-oxidative-stress-injury-001",
+      "internal-medicine-pellagra-001",
+      "internal-medicine-scurvy-001",
+      "internal-medicine-systemic-lupus-erythematosus-001",
+      "internal-medicine-tangier-disease-001",
+      "pediatrics-albinism-001",
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-homocystinuria-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-phenylketonuria-001",
+      "pediatrics-von-gierke-gsd-001"
+    ]
   },
   {
     "term": "transfüzyon",
@@ -328,7 +699,13 @@ export const globalGlossaryTerms = [
     "definition": "Kan veya kan ürünlerinin damar yoluyla verilmesidir; klinik durum, hemoglobin düzeyi ve kanama riskiyle planlanır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001"
+    ]
   },
   {
     "term": "metabolik asidoz",
@@ -338,7 +715,18 @@ export const globalGlossaryTerms = [
     "definition": "Metabolik nedenlerle kan pH’sının asidik yöne kaymasıdır; laktat artışı, böbrek yetmezliği veya toksik/metabolik durumlarla görülebilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pulmonology-lightning-apnea-001"
+    ]
   },
   {
     "term": "anyon açıklığı",
@@ -349,7 +737,13 @@ export const globalGlossaryTerms = [
     "definition": "Sodyum ile ölçülen ana anyonlar arasındaki farktır; metabolik asidoz tipini ayırt etmede kullanılır.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001"
+    ]
   },
   {
     "term": "laktat",
@@ -359,7 +753,25 @@ export const globalGlossaryTerms = [
     "definition": "Doku hipoperfüzyonu, sepsis veya anaerobik metabolizma hakkında bilgi veren biyokimyasal göstergedir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001",
+      "im-dka-001",
+      "infectious-diseases-septic-shock-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-von-gierke-gsd-001",
+      "pulmonology-lightning-apnea-001",
+      "pulmonology-near-hanging-asphyxia-001",
+      "surg-pneumoperitoneum-001",
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "akut böbrek hasarı",
@@ -371,7 +783,9 @@ export const globalGlossaryTerms = [
     "definition": "Böbrek fonksiyonunun kısa sürede bozulmasıdır; kreatinin artışı ve idrar çıkışında azalma ile izlenebilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "oligüri",
@@ -382,7 +796,9 @@ export const globalGlossaryTerms = [
     "definition": "İdrar miktarının azalmasıdır; hipovolemi, böbrek hasarı veya obstrüksiyon açısından önemlidir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "ikter",
@@ -393,7 +809,21 @@ export const globalGlossaryTerms = [
     "definition": "Bilirübin artışına bağlı deri ve skleralarda sararma görünümüdür.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001",
+      "inf-malaria-001",
+      "internal-medicine-oxidative-stress-injury-001",
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-phenylketonuria-001",
+      "surg-cholecystitis-001"
+    ]
   },
   {
     "term": "kolestaz",
@@ -404,7 +834,9 @@ export const globalGlossaryTerms = [
     "definition": "Safra akımının azalması veya tıkanmasıdır; direkt bilirübin, ALP ve GGT artışıyla ilişkili olabilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "asit",
@@ -415,7 +847,23 @@ export const globalGlossaryTerms = [
     "definition": "Periton boşluğunda sıvı birikimidir; siroz, malignite veya enfeksiyon gibi nedenlerle görülebilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001",
+      "inf-tuberculosis-001",
+      "internal-medicine-alkaptonuria-001",
+      "internal-medicine-hemochromatosis-001",
+      "internal-medicine-scurvy-001",
+      "internal-medicine-tangier-disease-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-von-gierke-gsd-001"
+    ]
   },
   {
     "term": "ateş",
@@ -426,7 +874,39 @@ export const globalGlossaryTerms = [
     "definition": "Vücut sıcaklığının artmasıdır; enfeksiyon ve inflamatuvar süreçlerde önemli bir bulgudur.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "inf-endocarditis-001",
+      "inf-malaria-001",
+      "inf-meningococcemia-001",
+      "inf-tuberculosis-001",
+      "infectious-diseases-hiv-aids-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "neuro-sah-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "ped-epiglottitis-001",
+      "ped-kawasaki-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pulm-pneumonia-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-near-hanging-asphyxia-001",
+      "surg-appendicitis-001",
+      "surg-cholecystitis-001",
+      "surg-diverticulitis-001",
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "ampirik antibiyotik",
@@ -437,7 +917,15 @@ export const globalGlossaryTerms = [
     "definition": "Etken kesinleşmeden, olası mikroorganizmalara yönelik başlanan antibiyotik tedavisidir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "pulm-pneumonia-001"
+    ]
   },
   {
     "term": "antibiyogram",
@@ -449,7 +937,13 @@ export const globalGlossaryTerms = [
     "definition": "Mikroorganizmanın hangi antibiyotiklere duyarlı veya dirençli olduğunu gösteren testtir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-caseating-granuloma-tb-001"
+    ]
   },
   {
     "term": "sepsis",
@@ -460,28 +954,73 @@ export const globalGlossaryTerms = [
     "definition": "Enfeksiyona düzensiz konak yanıtı sonucu organ fonksiyon bozukluğu gelişmesidir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001",
+      "cv-tamponade-001",
+      "inf-endocarditis-001",
+      "inf-meningococcemia-001",
+      "infectious-diseases-septic-shock-001",
+      "pediatrics-classic-galactosemia-001"
+    ]
   },
   {
     "term": "septik şok",
     "aliases": [
+      "septic shock",
       "septik şok"
     ],
     "definition": "Sepsise bağlı dolaşım ve hücresel metabolizma bozukluğunun ağır formudur; hızlı stabilizasyon ve kaynak tedavisi gerektirir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "cv-tamponade-001",
+      "infectious-diseases-septic-shock-001"
+    ]
   },
   {
     "term": "hipoglisemi",
     "aliases": [
       "kan glukozu düşük",
+      "hypoglycemia",
       "hipoglisemi"
     ],
     "definition": "Kan glukozunun düşmesidir; bilinç değişikliği ve nörolojik bulguları taklit edebilir.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "neurology",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001",
+      "internal-medicine-alkaptonuria-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-hemochromatosis-001",
+      "internal-medicine-pellagra-001",
+      "internal-medicine-scurvy-001",
+      "internal-medicine-tangier-disease-001",
+      "neuro-mca-stroke-001",
+      "pediatrics-albinism-001",
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-homocystinuria-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-phenylketonuria-001",
+      "pediatrics-von-gierke-gsd-001"
+    ]
   },
   {
     "term": "kontrendikasyon",
@@ -492,7 +1031,14 @@ export const globalGlossaryTerms = [
     "definition": "Bir tedavi veya işlemin uygulanmasını sakıncalı kılan klinik durumdur.",
     "category": "Genel",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-cvst-001",
+      "neuro-mca-stroke-001"
+    ]
   },
   {
     "term": "troponin",
@@ -504,7 +1050,24 @@ export const globalGlossaryTerms = [
     "definition": "Miyokart hücre hasarını gösteren kardiyak biyobelirteçtir; akut koroner sendrom değerlendirmesinde kullanılır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-anterior-stemi-001",
+      "cv-aortic-dissection-001",
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "im-acute-pancreatitis-001",
+      "im-dka-001",
+      "pulm-pe-001",
+      "pulmonology-lightning-apnea-001"
+    ]
   },
   {
     "term": "ST elevasyonu",
@@ -513,10 +1076,22 @@ export const globalGlossaryTerms = [
       "ST elevasyonu",
       "ST yükselmesi"
     ],
-    "definition": "EKG’de ST segmentinin izoelektrik hatta göre yükselmesidir; klinik bağlama göre akut miyokart iskemisini düşündürebilir.",
+    "definition": "EKG’de ST segmentinin izoelektrik hatta göre yükselmesidir; ilgili derivasyon paternine göre akut miyokart iskemisini düşündürebilir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-anterior-stemi-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "pulmonology-lightning-apnea-001"
+    ]
   },
   {
     "term": "resiprokal ST depresyonu",
@@ -528,7 +1103,14 @@ export const globalGlossaryTerms = [
     "definition": "ST elevasyonuna karşılık bazı karşı derivasyonlarda ST çökmesi görülmesidir; akut koroner oklüzyon lehine güçlü bir ipucudur.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "reperfüzyon",
@@ -539,7 +1121,18 @@ export const globalGlossaryTerms = [
     "definition": "Tıkanmış damar akımının yeniden sağlanmasıdır. STEMI ve akut iskemik inmede zaman kritik bir hedeftir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "neurology",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001",
+      "neuro-mca-stroke-001",
+      "pulm-pe-001"
+    ]
   },
   {
     "term": "fibrinoliz",
@@ -550,7 +1143,11 @@ export const globalGlossaryTerms = [
     "definition": "Pıhtının ilaçla çözülmesini hedefleyen reperfüzyon tedavisidir; zaman penceresi ve kontrendikasyonlar önemlidir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "primer PCI",
@@ -562,7 +1159,14 @@ export const globalGlossaryTerms = [
     "definition": "Tıkalı koroner damarın kateter yöntemiyle açılmasını hedefleyen reperfüzyon yaklaşımıdır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "antitrombotik",
@@ -574,7 +1178,22 @@ export const globalGlossaryTerms = [
     "definition": "Tromboz oluşumunu veya büyümesini azaltan tedavi grubudur; kanama riskiyle birlikte değerlendirilir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001",
+      "cv-aortic-dissection-001",
+      "neuro-cvst-001",
+      "pediatrics-homocystinuria-001",
+      "pulm-pe-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "üfürüm",
@@ -586,18 +1205,47 @@ export const globalGlossaryTerms = [
     "definition": "Kalp veya damar içindeki türbülan akıma bağlı duyulan ek sestir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-anterior-stemi-001",
+      "cv-aortic-dissection-001",
+      "cv-hocm-001",
+      "im-dka-001",
+      "inf-endocarditis-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "pediatrics-homocystinuria-001"
+    ]
   },
   {
     "term": "aritmi",
     "aliases": [
+      "Transtorasik elektrik akımı",
       "ritim bozukluğu",
+      "Aritmi/VF riski",
+      "VF riski",
       "aritmi"
     ],
     "definition": "Kalp ritminin normal düzeninden sapmasıdır; hemodinamik etkisi ritim tipi ve klinik durumla belirlenir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-hocm-001",
+      "pulmonology-lightning-apnea-001"
+    ]
   },
   {
     "term": "kontrastsız beyin BT",
@@ -608,7 +1256,19 @@ export const globalGlossaryTerms = [
     "definition": "Kontrast madde verilmeden çekilen beyin tomografisidir; akut kanamayı hızlı dışlamak için kullanılır.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "neuro-cvst-001",
+      "neuro-mca-stroke-001",
+      "neuro-sah-001",
+      "pediatrics-shaken-baby-syndrome-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "orta serebral arter",
@@ -620,7 +1280,13 @@ export const globalGlossaryTerms = [
     "definition": "Beynin geniş bir lateral bölümünü besleyen ana arterlerden biridir; tıkanıklığı afazi ve hemiparezi yapabilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-mca-stroke-001"
+    ]
   },
   {
     "term": "oklüzyon",
@@ -632,7 +1298,18 @@ export const globalGlossaryTerms = [
     "definition": "Damar lümeninin tıkanmasıdır; ilgili dokuda iskemiye neden olabilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "general-surgery",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001",
+      "neuro-mca-stroke-001",
+      "surg-cholecystitis-001"
+    ]
   },
   {
     "term": "son sağlıklı görülme zamanı",
@@ -644,7 +1321,13 @@ export const globalGlossaryTerms = [
     "definition": "Hastanın nörolojik olarak en son normal görüldüğü zamandır; reperfüzyon kararında kritik önemdedir.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-mca-stroke-001"
+    ]
   },
   {
     "term": "afazi",
@@ -656,7 +1339,13 @@ export const globalGlossaryTerms = [
     "definition": "Dil üretimi veya anlama işlevinde bozulmadır. Dominant hemisfer tutulumu ile ilişkili olabilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-mca-stroke-001"
+    ]
   },
   {
     "term": "hemiparezi",
@@ -668,7 +1357,14 @@ export const globalGlossaryTerms = [
     "definition": "Vücudun bir yarısında güç kaybıdır. Fokal nörolojik defisit örüntüsünün önemli bir parçasıdır.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-mca-stroke-001",
+      "neurology-liquefactive-necrosis-brain-001"
+    ]
   },
   {
     "term": "nörolojik defisit",
@@ -680,7 +1376,29 @@ export const globalGlossaryTerms = [
     "definition": "Belirli bir sinir sistemi bölgesinin işlev kaybına bağlı gelişen güçsüzlük, duyu kaybı, konuşma bozukluğu veya görme kaybı gibi bulgulardır.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-aortic-dissection-001",
+      "im-dka-001",
+      "im-primary-hyperparathyroidism-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-hemochromatosis-001",
+      "internal-medicine-pellagra-001",
+      "internal-medicine-scurvy-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "neuro-mca-stroke-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-homocystinuria-001"
+    ]
   },
   {
     "term": "iskemi",
@@ -692,7 +1410,27 @@ export const globalGlossaryTerms = [
     "definition": "Dokuya giden kan akımının azalmasıdır; beyinde kalıcı hasar gelişmeden hızlı değerlendirme gerekir.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "general-surgery",
+      "internal-medicine",
+      "neurology",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001",
+      "im-acute-pancreatitis-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-tangier-disease-001",
+      "neuro-mca-stroke-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "ped-intussusception-001",
+      "ped-pyloric-stenosis-001",
+      "surg-diverticulitis-001",
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "intrakraniyal kanama",
@@ -704,7 +1442,15 @@ export const globalGlossaryTerms = [
     "definition": "Kafa içi kanamadır; akut nörolojik tabloda görüntüleme ile ayırt edilmesi gerekir.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "neuro-mca-stroke-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "büyük damar oklüzyonu",
@@ -716,7 +1462,13 @@ export const globalGlossaryTerms = [
     "definition": "Beyni besleyen büyük arterlerden birinin tıkanmasıdır; mekanik trombektomi kararını etkileyebilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-mca-stroke-001"
+    ]
   },
   {
     "term": "tromboliz",
@@ -728,7 +1480,17 @@ export const globalGlossaryTerms = [
     "definition": "Pıhtıyı eritmeye yönelik ilaç tedavisidir; uygun hasta ve zaman penceresinde değerlendirilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "neurology",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001",
+      "neuro-mca-stroke-001",
+      "pulm-pe-001"
+    ]
   },
   {
     "term": "mekanik trombektomi",
@@ -739,7 +1501,13 @@ export const globalGlossaryTerms = [
     "definition": "Büyük damar tıkanıklığında pıhtının endovasküler yöntemle çıkarılmasıdır.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-mca-stroke-001"
+    ]
   },
   {
     "term": "meningeal irritasyon",
@@ -751,7 +1519,31 @@ export const globalGlossaryTerms = [
     "definition": "Menenkslerin irritasyonunu düşündüren ense sertliği ve benzeri muayene bulgularıdır.",
     "category": "Nörolojik Bilimler",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "inf-malaria-001",
+      "inf-meningococcemia-001",
+      "inf-tuberculosis-001",
+      "infectious-diseases-hiv-aids-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "neuro-cvst-001",
+      "neuro-sah-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-shaken-baby-syndrome-001",
+      "pediatrics-von-gierke-gsd-001",
+      "pulmonology-lightning-apnea-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "pnömotoraks",
@@ -761,7 +1553,22 @@ export const globalGlossaryTerms = [
     "definition": "Plevra boşluğuna hava girmesiyle akciğerin kısmen veya tamamen sönmesidir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-aortic-dissection-001",
+      "cv-tamponade-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-pe-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-lightning-apnea-001",
+      "pulmonology-near-hanging-asphyxia-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "raller",
@@ -772,7 +1579,30 @@ export const globalGlossaryTerms = [
     "definition": "Akciğer oskültasyonunda duyulan, sıvı veya alveoler açılma ile ilişkili ek solunum sesleridir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-anterior-stemi-001",
+      "cv-hocm-001",
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "inf-endocarditis-001",
+      "inf-tuberculosis-001",
+      "infectious-diseases-caseating-granuloma-tb-001",
+      "infectious-diseases-hiv-aids-001",
+      "pediatrics-bruton-agammaglobulinemia-001",
+      "pulm-ipf-uip-001",
+      "pulm-pe-001",
+      "pulm-pneumonia-001",
+      "pulmonology-lightning-apnea-001"
+    ]
   },
   {
     "term": "dispne",
@@ -783,7 +1613,27 @@ export const globalGlossaryTerms = [
     "definition": "Hastanın solunumda zorlanma veya hava açlığı hissetmesidir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "cv-hocm-001",
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "im-iron-deficiency-anemia-001",
+      "inf-endocarditis-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-ipf-uip-001",
+      "pulm-pe-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-near-hanging-asphyxia-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "konsolidasyon",
@@ -794,7 +1644,17 @@ export const globalGlossaryTerms = [
     "definition": "Akciğer dokusunda hava yerine sıvı, hücre veya eksüda birikimiyle oluşan yoğunlaşma görünümüdür.",
     "category": "Göğüs Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-pneumonia-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
   },
   {
     "term": "ventilasyon-perfüzyon",
@@ -805,7 +1665,9 @@ export const globalGlossaryTerms = [
     "definition": "Akciğerde hava dağılımı ile kan akımının uyumunu ifade eder; emboli ve gaz değişimi bozukluklarında önemlidir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "plevral efüzyon",
@@ -816,7 +1678,17 @@ export const globalGlossaryTerms = [
     "definition": "Plevra boşluğunda sıvı birikimidir; enfeksiyon, kalp yetmezliği veya malignite ile ilişkili olabilir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001",
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "pulm-pneumothorax-001"
+    ]
   },
   {
     "term": "prokalsitonin",
@@ -827,7 +1699,13 @@ export const globalGlossaryTerms = [
     "definition": "Bakteriyel enfeksiyon ve sepsis değerlendirmesinde yardımcı olabilen biyobelirteçtir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-septic-shock-001"
+    ]
   },
   {
     "term": "kültür",
@@ -840,7 +1718,24 @@ export const globalGlossaryTerms = [
     "definition": "Mikroorganizmayı üretip tanımlamak için yapılan mikrobiyolojik incelemedir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "inf-meningococcemia-001",
+      "inf-tuberculosis-001",
+      "infectious-diseases-caseating-granuloma-tb-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "ped-kawasaki-001",
+      "pulm-pneumonia-001"
+    ]
   },
   {
     "term": "kan kültürü",
@@ -850,7 +1745,19 @@ export const globalGlossaryTerms = [
     "definition": "Kandaki mikroorganizmayı saptamak için alınan kültür örneğidir; antibiyotik seçimini yönlendirebilir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "inf-endocarditis-001",
+      "inf-meningococcemia-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "ped-epiglottitis-001"
+    ]
   },
   {
     "term": "kaynak kontrolü",
@@ -860,7 +1767,11 @@ export const globalGlossaryTerms = [
     "definition": "Enfeksiyon odağının drenaj, cerrahi veya girişimsel yöntemlerle kontrol altına alınmasıdır.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "melena",
@@ -871,7 +1782,13 @@ export const globalGlossaryTerms = [
     "definition": "Üst gastrointestinal sistem kanamasını düşündüren siyah, katran kıvamında dışkıdır.",
     "category": "İç Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001"
+    ]
   },
   {
     "term": "hematemez",
@@ -882,7 +1799,13 @@ export const globalGlossaryTerms = [
     "definition": "Kan kusmadır; üst gastrointestinal kanama açısından önemli bir bulgudur.",
     "category": "İç Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001"
+    ]
   },
   {
     "term": "portal hipertansiyon",
@@ -892,7 +1815,13 @@ export const globalGlossaryTerms = [
     "definition": "Portal venöz sistem basıncının artmasıdır; varis kanaması ve asit gibi komplikasyonlara yol açabilir.",
     "category": "İç Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001"
+    ]
   },
   {
     "term": "varis",
@@ -904,7 +1833,13 @@ export const globalGlossaryTerms = [
     "definition": "Portal hipertansiyona bağlı gelişebilen genişlemiş venöz yapılardır; kanama riski taşıyabilir.",
     "category": "İç Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001"
+    ]
   },
   {
     "term": "hipertiroidi",
@@ -915,7 +1850,9 @@ export const globalGlossaryTerms = [
     "definition": "Tiroid hormon etkisinin artmasıdır; taşikardi, kilo kaybı, tremor ve ısı intoleransı yapabilir.",
     "category": "İç Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "adrenal yetmezlik",
@@ -926,7 +1863,9 @@ export const globalGlossaryTerms = [
     "definition": "Kortizol üretiminin yetersizliğidir; hipotansiyon, hiponatremi ve hiperkalemiyle ilişkili olabilir.",
     "category": "İç Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "peritonit",
@@ -938,7 +1877,27 @@ export const globalGlossaryTerms = [
     "definition": "Periton irritasyonunu gösteren klinik tablodur; akut batında cerrahi aciliyet açısından önemlidir.",
     "category": "Genel Cerrahi",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001",
+      "im-dka-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "internal-medicine-pellagra-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "ped-intussusception-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "surg-appendicitis-001",
+      "surg-cholecystitis-001",
+      "surg-diverticulitis-001",
+      "surg-pneumoperitoneum-001",
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "ileus",
@@ -950,7 +1909,20 @@ export const globalGlossaryTerms = [
     "definition": "Bağırsak geçişinin mekanik veya fonksiyonel olarak bozulmasıdır.",
     "category": "Genel Cerrahi",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "general-surgery",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cv-hocm-001",
+      "im-acute-pancreatitis-001",
+      "ped-epiglottitis-001",
+      "ped-pyloric-stenosis-001",
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "perforasyon",
@@ -961,7 +1933,16 @@ export const globalGlossaryTerms = [
     "definition": "İçi boş organ duvar bütünlüğünün bozulmasıdır; serbest hava ve peritonit bulgularıyla ilişkili olabilir.",
     "category": "Genel Cerrahi",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-intussusception-001",
+      "surg-diverticulitis-001",
+      "surg-pneumoperitoneum-001"
+    ]
   },
   {
     "term": "endoskopik hemostaz",
@@ -972,7 +1953,11 @@ export const globalGlossaryTerms = [
     "definition": "Endoskopi sırasında kanama odağının durdurulmasına yönelik işlemdir.",
     "category": "Genel Cerrahi",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "dehidratasyon",
@@ -983,7 +1968,21 @@ export const globalGlossaryTerms = [
     "definition": "Vücuttaki sıvı kaybının artmasıdır; çocuklarda hızlı klinik bozulmaya neden olabilir.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-primary-hyperparathyroidism-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-sjogren-syndrome-001",
+      "ped-pyloric-stenosis-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "surg-diverticulitis-001"
+    ]
   },
   {
     "term": "fontanel",
@@ -994,7 +1993,15 @@ export const globalGlossaryTerms = [
     "definition": "Bebeklerde kafatası kemikleri arasındaki yumuşak açıklıklardır; hidrasyon ve kafa içi basınç değerlendirmesinde bilgi verebilir.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-pyloric-stenosis-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
   },
   {
     "term": "siyanoz",
@@ -1005,19 +2012,43 @@ export const globalGlossaryTerms = [
     "definition": "Oksijenlenme azalmasına bağlı deri veya mukozalarda morarma görünümüdür.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "cv-aortic-dissection-001",
+      "cv-hocm-001",
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "internal-medicine-scurvy-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-lightning-apnea-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "hematuri",
     "aliases": [
       "kanlı idrar",
-      "hematuri",
-      "hematüri"
+      "hematuri"
     ],
     "definition": "İdrarda eritrosit bulunmasıdır; taş, enfeksiyon, tümör veya glomerüler hastalıklarla ilişkili olabilir.",
     "category": "urogenital",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
   },
   {
     "term": "piyüri",
@@ -1028,7 +2059,9 @@ export const globalGlossaryTerms = [
     "definition": "İdrarda lökosit bulunmasıdır; üriner sistem enfeksiyonu veya inflamasyonla ilişkili olabilir.",
     "category": "urogenital",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "hidronefroz",
@@ -1038,7 +2071,9 @@ export const globalGlossaryTerms = [
     "definition": "İdrar akımındaki engel nedeniyle böbrek toplayıcı sisteminin genişlemesidir.",
     "category": "urogenital",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "redüksiyon",
@@ -1048,7 +2083,16 @@ export const globalGlossaryTerms = [
     "definition": "Çıkık veya kırık parçalarının anatomik pozisyona getirilmesidir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001",
+      "ortho-shoulder-dislocation-001",
+      "ped-intussusception-001"
+    ]
   },
   {
     "term": "nörovasküler değerlendirme",
@@ -1060,7 +2104,13 @@ export const globalGlossaryTerms = [
     "definition": "Travma sonrası damar ve sinir bütünlüğünü değerlendiren muayenedir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001"
+    ]
   },
   {
     "term": "deplasman",
@@ -1071,7 +2121,15 @@ export const globalGlossaryTerms = [
     "definition": "Kırık parçalarının normal anatomik yerinden kaymasıdır.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Kullanımda",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001",
+      "ortho-femoral-neck-001",
+      "ortho-scaphoid-001"
+    ]
   },
   {
     "term": "Akut koroner sendrom",
@@ -1081,7 +2139,18 @@ export const globalGlossaryTerms = [
     "definition": "Göğüs ağrısı, EKG ve biyobelirteçlerle değerlendirilen miyokart iskemisi spektrumudur.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "im-dka-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "pulm-pe-001"
+    ]
   },
   {
     "term": "STEMI",
@@ -1091,7 +2160,15 @@ export const globalGlossaryTerms = [
     "definition": "ST elevasyonlu miyokart enfarktüsünü ifade eder; akut koroner oklüzyon ve reperfüzyon gereksinimi açısından kritik tanıdır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001",
+      "cv-aortic-dissection-001"
+    ]
   },
   {
     "term": "NSTEMI",
@@ -1101,7 +2178,13 @@ export const globalGlossaryTerms = [
     "definition": "ST elevasyonu olmadan miyokart hasarı biyobelirteç yüksekliğiyle seyreden akut koroner sendrom tipidir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "ST segment elevasyonu",
@@ -1111,7 +2194,13 @@ export const globalGlossaryTerms = [
     "definition": "EKG’de ardışık derivasyonlarda görülürse akut transmural iskemi ve koroner oklüzyon lehinedir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "CK-MB",
@@ -1121,7 +2210,14 @@ export const globalGlossaryTerms = [
     "definition": "Miyokart hasarında yükselebilen kardiyak enzimdir; troponine göre daha az duyarlı/özgül kabul edilir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "Primer perkütan koroner girişim",
@@ -1131,7 +2227,13 @@ export const globalGlossaryTerms = [
     "definition": "STEMI’de tıkalı koroner damarı mekanik olarak açmaya yönelik öncelikli reperfüzyon yöntemidir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "Fibrinolitik tedavi",
@@ -1141,7 +2243,11 @@ export const globalGlossaryTerms = [
     "definition": "Uygun STEMI olgusunda primer girişime zamanında ulaşılamıyorsa pıhtıyı eritmek için kullanılan tedavidir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "P2Y12 inhibitörü",
@@ -1151,7 +2257,13 @@ export const globalGlossaryTerms = [
     "definition": "Trombosit aktivasyonunu azaltan antiplatelet ilaç grubudur; akut koroner sendrom yönetiminde kullanılır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "Antikoagülasyon",
@@ -1161,7 +2273,21 @@ export const globalGlossaryTerms = [
     "definition": "Pıhtı oluşumunu veya ilerlemesini azaltan tedavi yaklaşımıdır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "cv-aortic-dissection-001",
+      "neuro-cvst-001",
+      "pediatrics-homocystinuria-001",
+      "pulm-pe-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "Nitrat",
@@ -1171,7 +2297,13 @@ export const globalGlossaryTerms = [
     "definition": "Vazodilatasyon sağlayarak iskemi ilişkili ağrıyı azaltabilen ilaç grubudur; hipotansiyon gibi durumlarda dikkat gerekir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001"
+    ]
   },
   {
     "term": "Akut aort sendromu",
@@ -1181,7 +2313,13 @@ export const globalGlossaryTerms = [
     "definition": "Aort diseksiyonu, intramural hematom ve penetran ülseri içeren acil aort patolojileri grubudur.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001"
+    ]
   },
   {
     "term": "Stanford tip A diseksiyon",
@@ -1191,7 +2329,11 @@ export const globalGlossaryTerms = [
     "definition": "Asendan aortu tutan aort diseksiyonudur; genellikle acil cerrahi gerektirir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "İntimal flap",
@@ -1201,7 +2343,13 @@ export const globalGlossaryTerms = [
     "definition": "Aort diseksiyonunda lümeni ayıran iç tabaka yırtığına bağlı görüntüleme bulgusudur.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001"
+    ]
   },
   {
     "term": "Gerçek lümen",
@@ -1211,7 +2359,11 @@ export const globalGlossaryTerms = [
     "definition": "Diseksiyonda normal damar lümeninin devamını ifade eder.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Yalancı lümen",
@@ -1221,7 +2373,13 @@ export const globalGlossaryTerms = [
     "definition": "Diseksiyon yırtığı sonrası damar duvarı katları arasında oluşan patolojik kan kanalıdır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001"
+    ]
   },
   {
     "term": "BT anjiyografi",
@@ -1231,7 +2389,20 @@ export const globalGlossaryTerms = [
     "definition": "Damar yapılarının kontrastlı BT ile değerlendirilmesidir; diseksiyon, emboli ve oklüzyonlarda kullanılır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001",
+      "im-acute-pancreatitis-001",
+      "neuro-mca-stroke-001",
+      "neuro-sah-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "Nabız asimetrisi",
@@ -1241,7 +2412,14 @@ export const globalGlossaryTerms = [
     "definition": "Ekstremiteler arasında nabız gücü farkıdır; diseksiyon veya damar tıkanıklığı düşündürebilir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-aortic-dissection-001"
+    ]
   },
   {
     "term": "Aort yetmezliği",
@@ -1251,7 +2429,13 @@ export const globalGlossaryTerms = [
     "definition": "Aort kapağından diyastolde geri kaçış olmasıdır; tip A diseksiyonda gelişebilir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001"
+    ]
   },
   {
     "term": "Kardiyak tamponad",
@@ -1261,7 +2445,13 @@ export const globalGlossaryTerms = [
     "definition": "Perikard boşluğundaki basınç artışı nedeniyle kalp doluşunun bozulduğu hayatı tehdit eden tablodur.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-tamponade-001"
+    ]
   },
   {
     "term": "Beck triadı",
@@ -1271,7 +2461,11 @@ export const globalGlossaryTerms = [
     "definition": "Hipotansiyon, juguler venöz dolgunluk ve kalp seslerinde derinden gelme bulgularından oluşan tamponad ipucudur.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Pulsus paradoksus",
@@ -1281,7 +2475,11 @@ export const globalGlossaryTerms = [
     "definition": "İnspirasyonla sistolik kan basıncında belirgin düşüş olmasıdır; tamponad gibi durumlarda görülebilir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Perikardiyosentez",
@@ -1291,7 +2489,13 @@ export const globalGlossaryTerms = [
     "definition": "Perikard boşluğundaki sıvının iğne/kateterle boşaltılmasıdır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-tamponade-001"
+    ]
   },
   {
     "term": "Kardiyojenik pulmoner ödem",
@@ -1301,7 +2505,16 @@ export const globalGlossaryTerms = [
     "definition": "Sol kalp basınç artışına bağlı alveol/interstisyel sıvı birikimiyle gelişen akut solunum tablosudur.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "pulm-copd-exacerbation-001"
+    ]
   },
   {
     "term": "Ortopne",
@@ -1311,7 +2524,13 @@ export const globalGlossaryTerms = [
     "definition": "Yatar pozisyonda artan nefes darlığıdır; kalp yetersizliği için önemli klinik ipucudur.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001"
+    ]
   },
   {
     "term": "Ejeksiyon fraksiyonu",
@@ -1321,7 +2540,11 @@ export const globalGlossaryTerms = [
     "definition": "Sol ventrikülün her atımda pompaladığı kan yüzdesidir; kalp yetersizliği sınıflamasında kullanılır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Hipertrofik obstrüktif kardiyomiyopati",
@@ -1331,7 +2554,13 @@ export const globalGlossaryTerms = [
     "definition": "Sol ventrikül çıkış yolu obstrüksiyonu ve septal hipertrofiyle seyreden kardiyomiyopatidir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-hocm-001"
+    ]
   },
   {
     "term": "LVOT obstrüksiyonu",
@@ -1341,7 +2570,11 @@ export const globalGlossaryTerms = [
     "definition": "Sol ventrikül çıkış yolunda dinamik veya sabit darlık oluşmasıdır.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Valsalva manevrası",
@@ -1351,7 +2584,13 @@ export const globalGlossaryTerms = [
     "definition": "İntratorasik basıncı artıran manevradır; bazı üfürümlerin şiddetini değiştirmede tanısal ipucu verir.",
     "category": "Kardiyovasküler Tıp",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cv-hocm-001"
+    ]
   },
   {
     "term": "Diyabetik ketoasidoz",
@@ -1361,7 +2600,13 @@ export const globalGlossaryTerms = [
     "definition": "İnsülin eksikliğine bağlı ketozis, hiperglisemi ve anyon açıklı metabolik asidozla seyreden acil tablodur.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001"
+    ]
   },
   {
     "term": "Kussmaul solunumu",
@@ -1371,7 +2616,13 @@ export const globalGlossaryTerms = [
     "definition": "Metabolik asidozu kompanse etmeye yönelik derin ve hızlı solunum paternidir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001"
+    ]
   },
   {
     "term": "Ketonemi",
@@ -1381,7 +2632,13 @@ export const globalGlossaryTerms = [
     "definition": "Kanda keton cisimlerinin artmasıdır; diyabetik ketoasidozda beklenir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001"
+    ]
   },
   {
     "term": "Beta-hidroksibutirat",
@@ -1391,7 +2648,13 @@ export const globalGlossaryTerms = [
     "definition": "DKA’da baskın keton cismidir ve ketozis değerlendirmesinde kullanılır.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001"
+    ]
   },
   {
     "term": "Potasyum replasmanı",
@@ -1401,7 +2664,9 @@ export const globalGlossaryTerms = [
     "definition": "Hipokalemi veya toplam vücut potasyum eksikliğinde potasyumun kontrollü verilmesidir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "Akut pankreatit",
@@ -1411,7 +2676,16 @@ export const globalGlossaryTerms = [
     "definition": "Pankreas inflamasyonudur; tipik ağrı ve enzim yüksekliğiyle tanınır.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001",
+      "surg-cholecystitis-001",
+      "surg-pneumoperitoneum-001"
+    ]
   },
   {
     "term": "Biliyer pankreatit",
@@ -1421,7 +2695,13 @@ export const globalGlossaryTerms = [
     "definition": "Safra taşı veya safra yolu patolojisine bağlı gelişen akut pankreatittir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001"
+    ]
   },
   {
     "term": "Lipaz",
@@ -1431,7 +2711,13 @@ export const globalGlossaryTerms = [
     "definition": "Pankreatit tanısında amilaza göre daha özgül kabul edilen pankreatik enzimdir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001"
+    ]
   },
   {
     "term": "Kolelitiazis",
@@ -1441,7 +2727,9 @@ export const globalGlossaryTerms = [
     "definition": "Safra kesesinde taş bulunmasıdır; biliyer kolik, kolesistit ve pankreatit ile ilişkili olabilir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "MRCP",
@@ -1451,7 +2739,9 @@ export const globalGlossaryTerms = [
     "definition": "Manyetik rezonans kolanjiyopankreatografi; safra ve pankreas kanallarını noninvaziv gösterir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "ERCP",
@@ -1461,7 +2751,13 @@ export const globalGlossaryTerms = [
     "definition": "Endoskopik retrograd kolanjiyopankreatografi; tanısal ve terapötik safra/pankreas kanalı girişimidir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001"
+    ]
   },
   {
     "term": "Oktreotid",
@@ -1471,7 +2767,13 @@ export const globalGlossaryTerms = [
     "definition": "Varis kanamasında portal basıncı azaltmaya yardımcı somatostatin analoğudur.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001"
+    ]
   },
   {
     "term": "Endoskopik bant ligasyonu",
@@ -1481,7 +2783,13 @@ export const globalGlossaryTerms = [
     "definition": "Özofagus varis kanamasında varislerin bantla boğulmasına dayalı endoskopik tedavidir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001"
+    ]
   },
   {
     "term": "Mikrositer anemi",
@@ -1491,7 +2799,13 @@ export const globalGlossaryTerms = [
     "definition": "Eritrosit hacminin düşük olduğu anemi tipidir; demir eksikliği sık nedendir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001"
+    ]
   },
   {
     "term": "Hipokromi",
@@ -1501,17 +2815,32 @@ export const globalGlossaryTerms = [
     "definition": "Eritrositlerde hemoglobin içeriğinin azalmasına bağlı soluk görünümüdür.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001"
+    ]
   },
   {
     "term": "Ferritin",
     "aliases": [
+      "serum ferritin",
       "Ferritin"
     ],
     "definition": "Demir depolarını yansıtan laboratuvar parametresidir; inflamasyonda yükselebilir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001",
+      "internal-medicine-hemochromatosis-001",
+      "internal-medicine-scurvy-001"
+    ]
   },
   {
     "term": "Transferrin satürasyonu",
@@ -1521,7 +2850,13 @@ export const globalGlossaryTerms = [
     "definition": "Transferrinin demirle doluluk oranıdır; demir eksikliğinde düşer.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-hemochromatosis-001"
+    ]
   },
   {
     "term": "Total demir bağlama kapasitesi",
@@ -1531,7 +2866,13 @@ export const globalGlossaryTerms = [
     "definition": "Transferrin kapasitesini dolaylı yansıtır; demir eksikliğinde genellikle artar.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001"
+    ]
   },
   {
     "term": "Pika",
@@ -1541,7 +2882,13 @@ export const globalGlossaryTerms = [
     "definition": "Besin değeri olmayan maddeleri yeme isteğidir; demir eksikliğiyle ilişkili olabilir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001"
+    ]
   },
   {
     "term": "Hiperkalsemi",
@@ -1551,7 +2898,13 @@ export const globalGlossaryTerms = [
     "definition": "Serum kalsiyum düzeyinin yüksek olmasıdır; malignite ve hiperparatiroidi gibi nedenlerle görülür.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-primary-hyperparathyroidism-001"
+    ]
   },
   {
     "term": "Parathormon",
@@ -1561,7 +2914,9 @@ export const globalGlossaryTerms = [
     "definition": "Kalsiyum-fosfor dengesini düzenleyen paratiroid hormonudur.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "Primer hiperparatiroidi",
@@ -1571,7 +2926,13 @@ export const globalGlossaryTerms = [
     "definition": "Paratiroid bezinden uygunsuz PTH fazlalığına bağlı hiperkalsemi tablosudur.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-primary-hyperparathyroidism-001"
+    ]
   },
   {
     "term": "Nefrolitiyazis",
@@ -1581,7 +2942,13 @@ export const globalGlossaryTerms = [
     "definition": "Böbrek taşı hastalığıdır; hiperkalsemi ve hiperparatiroidi ile ilişkili olabilir.",
     "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-primary-hyperparathyroidism-001"
+    ]
   },
   {
     "term": "Akut iskemik inme",
@@ -1591,7 +2958,13 @@ export const globalGlossaryTerms = [
     "definition": "Beyin damar tıkanıklığına bağlı ani nörolojik defisit gelişmesidir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-mca-stroke-001"
+    ]
   },
   {
     "term": "NIHSS",
@@ -1601,7 +2974,11 @@ export const globalGlossaryTerms = [
     "definition": "Akut inmede nörolojik defisit şiddetini sayısal olarak değerlendiren skaladır.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Nonkontrast kraniyal BT",
@@ -1611,7 +2988,11 @@ export const globalGlossaryTerms = [
     "definition": "Akut inmede kanamayı dışlamak için ilk kullanılan görüntüleme yöntemidir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "ASPECTS",
@@ -1621,7 +3002,11 @@ export const globalGlossaryTerms = [
     "definition": "Ön dolaşım inmesinde erken iskemi bulgularını sınıflayan BT skorudur.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Subaraknoid kanama",
@@ -1631,7 +3016,14 @@ export const globalGlossaryTerms = [
     "definition": "Subaraknoid aralığa kanama olmasıdır; ani en şiddetli baş ağrısıyla gelebilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-cvst-001",
+      "neuro-sah-001"
+    ]
   },
   {
     "term": "Thunderclap baş ağrısı",
@@ -1641,7 +3033,14 @@ export const globalGlossaryTerms = [
     "definition": "Saniyeler-dakikalar içinde maksimum şiddete ulaşan baş ağrısıdır; SAK açısından kırmızı bayraktır.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-cvst-001",
+      "neuro-sah-001"
+    ]
   },
   {
     "term": "Lomber ponksiyon",
@@ -1651,7 +3050,13 @@ export const globalGlossaryTerms = [
     "definition": "BOS örneği almak için yapılan işlemdir; menenjit ve SAK değerlendirmesinde kullanılır.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-sah-001"
+    ]
   },
   {
     "term": "Ksantokromi",
@@ -1661,7 +3066,13 @@ export const globalGlossaryTerms = [
     "definition": "BOS’ta sarımsı renk değişikliğidir; subaraknoid kanama sonrası görülebilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-sah-001"
+    ]
   },
   {
     "term": "Nimodipin",
@@ -1671,7 +3082,11 @@ export const globalGlossaryTerms = [
     "definition": "Subaraknoid kanamada vazospazm riskini azaltmak için kullanılan kalsiyum kanal blokörüdür.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Multipl skleroz",
@@ -1681,7 +3096,13 @@ export const globalGlossaryTerms = [
     "definition": "Santral sinir sisteminde inflamatuvar demiyelinizasyonla seyreden kronik hastalıktır.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-ms-001"
+    ]
   },
   {
     "term": "Optik nörit",
@@ -1691,7 +3112,13 @@ export const globalGlossaryTerms = [
     "definition": "Optik sinir inflamasyonudur; ağrılı görme kaybı ve MS ile ilişkili olabilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-ms-001"
+    ]
   },
   {
     "term": "Demiyelinizan plak",
@@ -1701,7 +3128,11 @@ export const globalGlossaryTerms = [
     "definition": "Miyelin kaybına bağlı MR lezyonudur; MS değerlendirmesinde önemlidir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Oligoklonal band",
@@ -1711,7 +3142,11 @@ export const globalGlossaryTerms = [
     "definition": "BOS’ta intratekal immün aktivasyonu gösteren bantlardır; MS tanısına destek verir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Serebral venöz sinüs trombozu",
@@ -1721,7 +3156,14 @@ export const globalGlossaryTerms = [
     "definition": "Beynin venöz sinüslerinde pıhtı gelişmesidir; baş ağrısı, nöbet ve fokal defisit yapabilir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-cvst-001",
+      "neuro-sah-001"
+    ]
   },
   {
     "term": "MR venografi",
@@ -1731,7 +3173,13 @@ export const globalGlossaryTerms = [
     "definition": "Venöz sinüslerin MR ile değerlendirilmesini sağlayan görüntüleme yöntemidir.",
     "category": "Nörolojik Bilimler",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-cvst-001"
+    ]
   },
   {
     "term": "İleoçekal invajinasyon",
@@ -1741,7 +3189,13 @@ export const globalGlossaryTerms = [
     "definition": "İleum segmentinin çekum içine teleskopik şekilde girmesidir; kolik ağrı ve kanlı mukuslu dışkı yapabilir.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-intussusception-001"
+    ]
   },
   {
     "term": "Target sign",
@@ -1751,7 +3205,13 @@ export const globalGlossaryTerms = [
     "definition": "USG’de invajinasyon için tipik hedef/halka görünümüdür.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-intussusception-001"
+    ]
   },
   {
     "term": "Hipertrofik pilor stenozu",
@@ -1761,7 +3221,14 @@ export const globalGlossaryTerms = [
     "definition": "Pilor kas hipertrofisine bağlı gastrik çıkış obstrüksiyonudur; safrasız fışkırır kusma yapar.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-intussusception-001",
+      "ped-pyloric-stenosis-001"
+    ]
   },
   {
     "term": "Hipokloremik metabolik alkaloz",
@@ -1771,7 +3238,13 @@ export const globalGlossaryTerms = [
     "definition": "Kusmaya bağlı klor kaybı ve alkalozla seyreden asit-baz bozukluğudur.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-pyloric-stenosis-001"
+    ]
   },
   {
     "term": "Kawasaki hastalığı",
@@ -1781,7 +3254,13 @@ export const globalGlossaryTerms = [
     "definition": "Uzamış ateş ve mukokutanöz inflamasyonla seyreden çocukluk çağı vaskülitidir.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-kawasaki-001"
+    ]
   },
   {
     "term": "Koroner anevrizma",
@@ -1791,7 +3270,13 @@ export const globalGlossaryTerms = [
     "definition": "Koroner arter duvarında genişlemedir; Kawasaki hastalığının önemli komplikasyonudur.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-kawasaki-001"
+    ]
   },
   {
     "term": "IVIG",
@@ -1801,7 +3286,14 @@ export const globalGlossaryTerms = [
     "definition": "İntravenöz immünoglobulin tedavisidir; Kawasaki ve bazı immün hastalıklarda kullanılır.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-kawasaki-001",
+      "pediatrics-bruton-agammaglobulinemia-001"
+    ]
   },
   {
     "term": "Akut epiglottit",
@@ -1811,7 +3303,13 @@ export const globalGlossaryTerms = [
     "definition": "Epiglot inflamasyonudur; hava yolu obstrüksiyonu riski nedeniyle acildir.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-epiglottitis-001"
+    ]
   },
   {
     "term": "Tripod pozisyonu",
@@ -1821,7 +3319,13 @@ export const globalGlossaryTerms = [
     "definition": "Hava yolu darlığında hastanın öne eğilip ellerinden destek alarak solumasıdır.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-epiglottitis-001"
+    ]
   },
   {
     "term": "Stridor",
@@ -1831,7 +3335,15 @@ export const globalGlossaryTerms = [
     "definition": "Üst hava yolu darlığında duyulan kaba inspiratuvar solunum sesidir.",
     "category": "Çocuk Sağlığı ve Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "ped-epiglottitis-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "Akut apandisit",
@@ -1841,7 +3353,16 @@ export const globalGlossaryTerms = [
     "definition": "Apendiks inflamasyonudur; migratuvar sağ alt kadran ağrısı ve lokal hassasiyet ile seyreder.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001",
+      "surg-appendicitis-001",
+      "surg-diverticulitis-001"
+    ]
   },
   {
     "term": "McBurney noktası",
@@ -1851,7 +3372,11 @@ export const globalGlossaryTerms = [
     "definition": "Sağ alt kadranda apandisit muayenesinde hassasiyet aranılan anatomik noktadır.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Rebound",
@@ -1861,7 +3386,23 @@ export const globalGlossaryTerms = [
     "definition": "Bası kaldırıldığında ağrının artmasıdır; peritoneal irritasyonu düşündürür.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001",
+      "im-dka-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-pellagra-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "surg-appendicitis-001",
+      "surg-cholecystitis-001",
+      "surg-diverticulitis-001",
+      "surg-pneumoperitoneum-001",
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "Akut taşlı kolesistit",
@@ -1871,7 +3412,13 @@ export const globalGlossaryTerms = [
     "definition": "Safra kesesi taşına bağlı gelişen akut safra kesesi inflamasyonudur.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": [
+      "surg-cholecystitis-001"
+    ]
   },
   {
     "term": "Murphy bulgusu",
@@ -1881,7 +3428,13 @@ export const globalGlossaryTerms = [
     "definition": "Sağ üst kadran palpasyonunda inspirasyonun ağrı nedeniyle kesilmesidir; kolesistit lehinedir.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": [
+      "surg-cholecystitis-001"
+    ]
   },
   {
     "term": "Perikolesistik sıvı",
@@ -1891,7 +3444,13 @@ export const globalGlossaryTerms = [
     "definition": "Safra kesesi çevresinde sıvı birikimidir; kolesistit görüntüleme bulgusu olabilir.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": [
+      "surg-cholecystitis-001"
+    ]
   },
   {
     "term": "İnce bağırsak obstrüksiyonu",
@@ -1901,7 +3460,13 @@ export const globalGlossaryTerms = [
     "definition": "İnce bağırsak pasajının mekanik olarak tıkanmasıdır.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": [
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "Adezyon",
@@ -1911,7 +3476,13 @@ export const globalGlossaryTerms = [
     "definition": "Cerrahi veya inflamasyon sonrası oluşan fibrotik yapışıklıklardır; obstrüksiyon nedeni olabilir.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": [
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "Obstipasyon",
@@ -1921,7 +3492,13 @@ export const globalGlossaryTerms = [
     "definition": "Gaz ve dışkı çıkaramama durumudur; bağırsak obstrüksiyonunda görülebilir.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": [
+      "surg-sbo-001"
+    ]
   },
   {
     "term": "Subdiyafragmatik serbest hava",
@@ -1931,7 +3508,15 @@ export const globalGlossaryTerms = [
     "definition": "Diyafram altında serbest hava görünümüdür; içi boş organ perforasyonunu düşündürür.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-acute-pancreatitis-001",
+      "surg-pneumoperitoneum-001"
+    ]
   },
   {
     "term": "Sigmoid divertikülit",
@@ -1941,7 +3526,13 @@ export const globalGlossaryTerms = [
     "definition": "Sigmoid kolondaki divertiküllerin inflamasyonudur; sol alt kadran ağrısı yapabilir.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": [
+      "surg-diverticulitis-001"
+    ]
   },
   {
     "term": "Perikolik inflamasyon",
@@ -1951,7 +3542,13 @@ export const globalGlossaryTerms = [
     "definition": "Kolon çevresi yağ dokusunda inflamasyon bulgusudur; divertikülitte BT bulgusu olabilir.",
     "category": "Genel Cerrahi",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery"
+    ],
+    "relatedCaseIds": [
+      "surg-diverticulitis-001"
+    ]
   },
   {
     "term": "Primer spontan pnömotoraks",
@@ -1961,7 +3558,14 @@ export const globalGlossaryTerms = [
     "definition": "Altta belirgin akciğer hastalığı olmadan plevra boşluğuna hava kaçmasıdır; genç uzun erkeklerde görülebilir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulm-pe-001",
+      "pulm-pneumothorax-001"
+    ]
   },
   {
     "term": "Plevral çizgi",
@@ -1971,7 +3575,15 @@ export const globalGlossaryTerms = [
     "definition": "Akciğer grafisinde pnömotoraksı gösteren visseral plevra hattıdır.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-aortic-dissection-001",
+      "pulm-pneumothorax-001"
+    ]
   },
   {
     "term": "Toraks tüpü",
@@ -1981,7 +3593,9 @@ export const globalGlossaryTerms = [
     "definition": "Plevral boşluktaki hava veya sıvıyı boşaltmak için yerleştirilen tüptür.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "İğne dekompresyon",
@@ -1991,7 +3605,9 @@ export const globalGlossaryTerms = [
     "definition": "Tansiyon pnömotoraksta acil basınç azaltma girişimidir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "Akut pulmoner emboli",
@@ -2001,7 +3617,13 @@ export const globalGlossaryTerms = [
     "definition": "Pulmoner arter dallarının trombüsle tıkanmasıdır; ani dispne ve plöritik ağrı yapabilir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulm-pe-001"
+    ]
   },
   {
     "term": "Wells skoru",
@@ -2011,7 +3633,9 @@ export const globalGlossaryTerms = [
     "definition": "Pulmoner emboli olasılığını klinik olarak sınıflayan skordur.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "CTPA",
@@ -2021,7 +3645,13 @@ export const globalGlossaryTerms = [
     "definition": "BT pulmoner anjiyografi; pulmoner emboli tanısında sık kullanılan görüntülemedir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulm-pe-001"
+    ]
   },
   {
     "term": "V/Q sintigrafisi",
@@ -2031,7 +3661,9 @@ export const globalGlossaryTerms = [
     "definition": "Ventilasyon ve perfüzyon dağılımını karşılaştıran nükleer tıp incelemesidir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "Toplum kökenli pnömoni",
@@ -2041,7 +3673,16 @@ export const globalGlossaryTerms = [
     "definition": "Hastane dışında gelişen akciğer parankim enfeksiyonudur.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "inf-endocarditis-001",
+      "inf-tuberculosis-001"
+    ]
   },
   {
     "term": "CURB-65",
@@ -2051,7 +3692,13 @@ export const globalGlossaryTerms = [
     "definition": "Pnömonide yatış ve mortalite riskini değerlendiren klinik skordur.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulm-pneumonia-001"
+    ]
   },
   {
     "term": "İdiyopatik pulmoner fibrozis",
@@ -2061,7 +3708,13 @@ export const globalGlossaryTerms = [
     "definition": "Nedeni bilinmeyen ilerleyici fibrotik interstisyel akciğer hastalığıdır.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulm-ipf-uip-001"
+    ]
   },
   {
     "term": "Bal peteği görünümü",
@@ -2071,7 +3724,13 @@ export const globalGlossaryTerms = [
     "definition": "İleri fibroziste HRCT’de görülen kistik subplevral paternidir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulm-ipf-uip-001"
+    ]
   },
   {
     "term": "Restriktif patern",
@@ -2081,7 +3740,9 @@ export const globalGlossaryTerms = [
     "definition": "Akciğer hacimlerinde azalmayla giden solunum fonksiyon testi örüntüsüdür.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "DLCO",
@@ -2091,7 +3752,13 @@ export const globalGlossaryTerms = [
     "definition": "Karbonmonoksit difüzyon kapasitesidir; gaz alışverişi ve interstisyel hastalık değerlendirmesinde kullanılır.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulm-ipf-uip-001"
+    ]
   },
   {
     "term": "KOAH alevlenmesi",
@@ -2101,7 +3768,14 @@ export const globalGlossaryTerms = [
     "definition": "KOAH hastasında dispne, balgam miktarı/pürülansı ve öksürüğün akut kötüleşmesidir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulm-copd-exacerbation-001",
+      "pulm-pneumonia-001"
+    ]
   },
   {
     "term": "Hiperkapni",
@@ -2111,7 +3785,9 @@ export const globalGlossaryTerms = [
     "definition": "Kanda karbondioksit düzeyinin artmasıdır; ventilasyon yetmezliğini gösterir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
   },
   {
     "term": "Noninvaziv ventilasyon",
@@ -2121,7 +3797,15 @@ export const globalGlossaryTerms = [
     "definition": "Entübasyon olmadan maske aracılığıyla ventilasyon desteği verilmesidir.",
     "category": "Göğüs Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "pulm-copd-exacerbation-001"
+    ]
   },
   {
     "term": "Reaktivasyon tüberkülozu",
@@ -2131,7 +3815,14 @@ export const globalGlossaryTerms = [
     "definition": "Daha önce alınmış tüberküloz enfeksiyonunun yeniden aktifleşmesiyle gelişen tabloyu ifade eder.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "inf-tuberculosis-001",
+      "infectious-diseases-caseating-granuloma-tb-001"
+    ]
   },
   {
     "term": "ARB",
@@ -2141,7 +3832,14 @@ export const globalGlossaryTerms = [
     "definition": "Aside dirençli basil boyamasıdır; tüberküloz tanısında kullanılır.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "inf-tuberculosis-001",
+      "infectious-diseases-caseating-granuloma-tb-001"
+    ]
   },
   {
     "term": "Kaviter lezyon",
@@ -2151,7 +3849,15 @@ export const globalGlossaryTerms = [
     "definition": "Akciğerde içi boşluklu lezyondur; reaktivasyon TB gibi hastalıklarda görülebilir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "inf-tuberculosis-001",
+      "neurology-liquefactive-necrosis-brain-001"
+    ]
   },
   {
     "term": "Plasmodium falciparum",
@@ -2161,7 +3867,13 @@ export const globalGlossaryTerms = [
     "definition": "Ağır sıtmaya yol açabilen Plasmodium türüdür.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "inf-malaria-001"
+    ]
   },
   {
     "term": "Kalın damla",
@@ -2171,7 +3883,13 @@ export const globalGlossaryTerms = [
     "definition": "Sıtma parazitlerinin saptanmasında kullanılan mikroskobik kan yayması yöntemidir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "inf-malaria-001"
+    ]
   },
   {
     "term": "İnce yayma",
@@ -2181,7 +3899,13 @@ export const globalGlossaryTerms = [
     "definition": "Sıtma tür ayrımı ve parazitemi değerlendirmesinde kullanılan kan yaymasıdır.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "inf-malaria-001"
+    ]
   },
   {
     "term": "Meningokoksemi",
@@ -2191,7 +3915,13 @@ export const globalGlossaryTerms = [
     "definition": "Neisseria meningitidis’in kana yayılmasıyla gelişen sepsis tablosudur.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "inf-meningococcemia-001"
+    ]
   },
   {
     "term": "Peteşi",
@@ -2201,7 +3931,19 @@ export const globalGlossaryTerms = [
     "definition": "Basmakla solmayan küçük noktasal kanama odağıdır.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "inf-meningococcemia-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "pediatrics-von-gierke-gsd-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "Purpura",
@@ -2211,7 +3953,15 @@ export const globalGlossaryTerms = [
     "definition": "Deri veya mukozada daha geniş kanama odaklarıdır; meningokoksemi gibi acillerde görülebilir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "inf-meningococcemia-001",
+      "internal-medicine-acute-radiation-syndrome-001"
+    ]
   },
   {
     "term": "BOS",
@@ -2221,7 +3971,18 @@ export const globalGlossaryTerms = [
     "definition": "Beyin omurilik sıvısıdır; menenjit ve SAK değerlendirmesinde incelenir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "neurology",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "inf-meningococcemia-001",
+      "neuro-ms-001",
+      "neuro-sah-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
   },
   {
     "term": "Seftriakson",
@@ -2231,7 +3992,15 @@ export const globalGlossaryTerms = [
     "definition": "Geniş spektrumlu üçüncü kuşak sefalosporindir; menenjit ve sepsis tedavisinde kullanılabilir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-variceal-bleeding-001",
+      "inf-meningococcemia-001"
+    ]
   },
   {
     "term": "İnfektif endokardit",
@@ -2241,7 +4010,11 @@ export const globalGlossaryTerms = [
     "definition": "Kalp kapakları veya endokard yüzeyinin mikrobiyal enfeksiyonudur.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Vejetasyon",
@@ -2251,7 +4024,13 @@ export const globalGlossaryTerms = [
     "definition": "Endokarditte kapak üzerinde oluşan mikroorganizma, fibrin ve hücrelerden oluşan kitlelerdir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "inf-endocarditis-001"
+    ]
   },
   {
     "term": "Duke kriterleri",
@@ -2261,7 +4040,13 @@ export const globalGlossaryTerms = [
     "definition": "İnfektif endokardit tanısında kullanılan majör/minör kriterlerdir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "inf-endocarditis-001"
+    ]
   },
   {
     "term": "Triküspit kapak",
@@ -2271,7 +4056,11 @@ export const globalGlossaryTerms = [
     "definition": "Sağ atriyum ile sağ ventrikül arasındaki kapaktır; IV madde kullanımında endokardit tutulumu görülebilir.",
     "category": "Enfeksiyon Hastalıkları",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Colles kırığı",
@@ -2281,7 +4070,13 @@ export const globalGlossaryTerms = [
     "definition": "Distal radiusun dorsal angulasyon/deplasmanla kırılmasıdır; çatal sırtı deformitesi yapabilir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001"
+    ]
   },
   {
     "term": "Distal radius kırığı",
@@ -2291,7 +4086,14 @@ export const globalGlossaryTerms = [
     "definition": "El bileğine yakın radius kırığıdır; düşme sonrası sık görülür.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001",
+      "ortho-scaphoid-001"
+    ]
   },
   {
     "term": "Çatal sırtı deformitesi",
@@ -2301,7 +4103,13 @@ export const globalGlossaryTerms = [
     "definition": "Colles kırığında el bileğinde görülen tipik dorsal deformitedir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001"
+    ]
   },
   {
     "term": "Femur boyun kırığı",
@@ -2311,7 +4119,13 @@ export const globalGlossaryTerms = [
     "definition": "Femur başı ile trokanterik bölge arasındaki boyun kısmında kırık oluşmasıdır.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-femoral-neck-001"
+    ]
   },
   {
     "term": "İntrakapsüler kırık",
@@ -2321,7 +4135,13 @@ export const globalGlossaryTerms = [
     "definition": "Eklem kapsülü içinde yer alan kırığı ifade eder; femur boynunda avasküler nekroz riski önemlidir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-femoral-neck-001"
+    ]
   },
   {
     "term": "Avasküler nekroz",
@@ -2331,7 +4151,14 @@ export const globalGlossaryTerms = [
     "definition": "Kemik dokusunun kanlanma bozukluğuna bağlı nekrozudur.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-femoral-neck-001",
+      "ortho-scaphoid-001"
+    ]
   },
   {
     "term": "Hemiartroplasti",
@@ -2341,7 +4168,11 @@ export const globalGlossaryTerms = [
     "definition": "Eklem yüzeyinin bir kısmının protezle değiştirilmesidir; bazı femur boyun kırıklarında kullanılır.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Skafoid kırığı",
@@ -2351,7 +4182,14 @@ export const globalGlossaryTerms = [
     "definition": "El bileği skafoid kemiğinin kırığıdır; anatomik enfiye çukuru hassasiyeti tipiktir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001",
+      "ortho-scaphoid-001"
+    ]
   },
   {
     "term": "Anatomik enfiye çukuru",
@@ -2361,7 +4199,13 @@ export const globalGlossaryTerms = [
     "definition": "Skafoid üzerinde yer alan palpasyon alanıdır; hassasiyeti skafoid kırığını düşündürür.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-scaphoid-001"
+    ]
   },
   {
     "term": "Başparmak spika ateli",
@@ -2371,7 +4215,11 @@ export const globalGlossaryTerms = [
     "definition": "Skafoid kırığı şüphesinde başparmağı ve el bileğini immobilize eden ateldir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": []
   },
   {
     "term": "Glenohumeral çıkık",
@@ -2381,7 +4229,13 @@ export const globalGlossaryTerms = [
     "definition": "Humerus başının glenoid kaviteden çıkmasıdır; anterior çıkık en sık formdur.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-shoulder-dislocation-001"
+    ]
   },
   {
     "term": "Aksiller sinir",
@@ -2391,7 +4245,13 @@ export const globalGlossaryTerms = [
     "definition": "Omuz çıkığında yaralanma riski olan sinirdir; deltoid duyu ve motor fonksiyonla değerlendirilir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-shoulder-dislocation-001"
+    ]
   },
   {
     "term": "Kapalı redüksiyon",
@@ -2401,7 +4261,14 @@ export const globalGlossaryTerms = [
     "definition": "Cerrahi kesi olmadan çıkık veya kırığın anatomik yerine getirilmesidir.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001",
+      "ortho-shoulder-dislocation-001"
+    ]
   },
   {
     "term": "İmmobilizasyon",
@@ -2411,7 +4278,4969 @@ export const globalGlossaryTerms = [
     "definition": "Yaralı bölgenin hareketini kısıtlayarak iyileşmeyi destekleyen uygulamadır.",
     "category": "Ortopedi ve Travmatoloji",
     "priority": "Yüksek/Orta",
-    "mode": teachingOnly
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "orthopedics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "ortho-colles-001",
+      "ortho-femoral-neck-001",
+      "ortho-scaphoid-001",
+      "ortho-shoulder-dislocation-001",
+      "pulmonology-near-hanging-asphyxia-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
+  },
+  {
+    "term": "Statik elektrik alan",
+    "aliases": [
+      "SEA dış yüzeyde birikir",
+      "static electric field",
+      "Statik elektrik alan",
+      "SEA"
+    ],
+    "definition": "Maruz kalan nesne üzerinde yüzey yükü oluşturur; insan vücuduna girmez, dış yüzeyde birikir ve iç alan oluşturmaz.",
+    "category": "Biyofizik / Elektrik alan",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Statik manyetik alan",
+    "aliases": [
+      "static magnetic field",
+      "Statik manyetik alan",
+      "SMA dokulara girer",
+      "SMA",
+      "SMF"
+    ],
+    "definition": "Biyolojik dokulara girerek hareketli iyon/proteinlerle ve manyetik maddelerle etkileşebilir; elektriksel potansiyel ve akımlar oluşturabilir.",
+    "category": "Biyofizik / Manyetik alan",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "ELF-MF",
+    "aliases": [
+      "Extremely low frequency magnetic field",
+      "çok çok düşük frekanslı manyetik alan",
+      "ELF-MF"
+    ],
+    "definition": "Elektriğin üretimi, taşınması veya tüketimi sırasında oluşan düşük frekanslı manyetik alanlardır; zararlı etkinin ortaya çıkması için dokulardaki elektrik alan/akım eşik düzeyi aşılmalıdır.",
+    "category": "Biyofizik / Elektromanyetik maruziyet",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Manyetohidrodinamik kuvvet",
+    "aliases": [
+      "Manyetohidrodinamik kuvvet",
+      "MHD force"
+    ],
+    "definition": "Manyetik alanda hareket eden yüklü parçacıkların oluşturduğu kuvvettir; büyük damarlarda kan akışını yavaşlatabilir.",
+    "category": "Biyofizik / SMA mekanizması",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Manyetik fosfen",
+    "aliases": [
+      "magnetic phosphene",
+      "Manyetik fosfen"
+    ],
+    "definition": "Manyetik alan maruziyeti sırasında görsel sistemde ışık çakması benzeri algı oluşmasıdır.",
+    "category": "Biyofizik / SMA semptomu",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Ferrometalik implant riski",
+    "aliases": [
+      "Ferrometalik implant riski",
+      "pacemaker/implant torque"
+    ],
+    "definition": "Statik manyetik alanlar kalp pili, metal implant veya dış metalik objelere kuvvet/tork uygulayarak klinik risk oluşturabilir.",
+    "category": "Biyofizik / MRI güvenliği",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Elektrik çarpması",
+    "aliases": [
+      "Elektrik çarpması",
+      "electrical injury",
+      "electrocution"
+    ],
+    "definition": "Elektrik akımının vücuttan geçmesiyle ısı, membran hasarı, kas kasılması, aritmi ve yanık oluşturabilen travmadır.",
+    "category": "Acil/Biyofizik / Elektrik travması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001"
+    ]
+  },
+  {
+    "term": "Alternatif akım",
+    "aliases": [
+      "alternating current",
+      "Alternatif akım",
+      "AC"
+    ],
+    "definition": "Yönü periyodik değişen akımdır; tetanik kasılma yaparak kişinin kaynaktan ayrılamamasına neden olabilir.",
+    "category": "Acil/Biyofizik / Elektrik travması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "ped-pyloric-stenosis-001"
+    ]
+  },
+  {
+    "term": "Doğru akım",
+    "aliases": [
+      "direct current",
+      "Doğru akım",
+      "DC"
+    ],
+    "definition": "Tek yönde akan akımdır; elektrik çarpmasında kişiyi kaynaktan uzağa fırlatma eğilimi AC’ye göre daha belirgindir.",
+    "category": "Acil/Biyofizik / Elektrik travması",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Transtorasik akım",
+    "aliases": [
+      "thoracic current pathway",
+      "hand-to-hand current",
+      "Transtorasik akım"
+    ],
+    "definition": "Bir koldan girip diğer koldan çıkan akımın göğüsten geçerek kalbi etkilemesidir; vertikal akımdan daha öldürücü olabilir.",
+    "category": "Acil/Biyofizik / Elektrik travması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001"
+    ]
+  },
+  {
+    "term": "Ventriküler fibrilasyon",
+    "aliases": [
+      "50–100 mA elektrik akımı",
+      "Ventriküler fibrilasyon",
+      "VF"
+    ],
+    "definition": "Ventriküllerin düzensiz, etkisiz elektriksel aktivitesi sonucu dolaşımın durduğu ölümcül aritmidir.",
+    "category": "Acil kardiyoloji / Elektrik travması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "pulmonology-lightning-apnea-001"
+    ]
+  },
+  {
+    "term": "Asistoli",
+    "aliases": [
+      "5–10 A veya yıldırım",
+      "Asistoli",
+      "asystole"
+    ],
+    "definition": "Kalpte elektriksel aktivitenin kaybolmasıdır; çok yüksek akımlarda ve yıldırım çarpmasında daha sık vurgulanır.",
+    "category": "Acil kardiyoloji / Elektrik/yıldırım travması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "pulmonology-lightning-apnea-001"
+    ]
+  },
+  {
+    "term": "Otomatik eksternal defibrilatör",
+    "aliases": [
+      "Otomatik eksternal defibrilatör",
+      "OED",
+      "AED"
+    ],
+    "definition": "Şoklanabilir ritimleri tanıyarak defibrilasyon sağlayan acil müdahale cihazıdır.",
+    "category": "Acil yönetim / Elektrik travması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001"
+    ]
+  },
+  {
+    "term": "Elektroporasyon",
+    "aliases": [
+      "Nanometre porlar",
+      "Elektroporasyon",
+      "electroporation"
+    ],
+    "definition": "Kısa süreli fakat şiddetli elektrik akımıyla hücre zarında nanometre boyutlu geçici porlar oluşmasıdır.",
+    "category": "Biyofizik/Hücre / Membran hasarı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "PEMF",
+    "aliases": [
+      "pulsed electromagnetic field",
+      "pulslu manyetik alan",
+      "PEMF"
+    ],
+    "definition": "Pulslu manyetik alan tedavilerinde hücresel Ca²⁺ artışı ve kalmodulin bağlanması üzerinden etkiler vurgulanır.",
+    "category": "Biyofizik / Tıbbi uygulama",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Biyoelektrik empedans analizi",
+    "aliases": [
+      "Biyoelektrik empedans analizi",
+      "BIA"
+    ],
+    "definition": "Vücuttan düşük düzeyli alternatif akım geçirilerek su, yağ, kas, reaktans, empedans ve faz açısı hakkında bilgi veren ölçüm yöntemidir.",
+    "category": "Biyofizik / Tıbbi ölçüm",
+    "priority": "Düşük",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Yıldırım çarpması",
+    "aliases": [
+      "Yıldırım çarpması",
+      "lightning strike"
+    ],
+    "definition": "Çok yüksek şiddetli elektrik akımına bağlı yüzeyel akım, deri yanığı, bilinç kaybı, kardiyorespiratuvar arrest ve nörolojik hasar oluşturabilen travmadır.",
+    "category": "Acil/Biyofizik / Yıldırım travması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulmonology-lightning-apnea-001"
+    ]
+  },
+  {
+    "term": "Uzamış apne",
+    "aliases": [
+      "Uzamış apne / kardiyorespiratuvar arrest",
+      "Yıldırım çarpması + ani ölüm",
+      "kardiyorespiratuvar arrest",
+      "prolonged apnea",
+      "Uzamış apne"
+    ],
+    "definition": "Solunumun uzun süre durmasıdır; yıldırım çarpmasına bağlı ani ölümde yüksek verimli cevap olarak vurgulanmıştır.",
+    "category": "Acil / Yıldırım travması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulmonology-lightning-apnea-001"
+    ]
+  },
+  {
+    "term": "Lichtenberg figürleri",
+    "aliases": [
+      "Lichtenberg figürleri",
+      "Lichtenberg figures"
+    ],
+    "definition": "Yıldırım/elektrik maruziyetinden sonra deride dallanan, ağaç benzeri geçici izlerdir.",
+    "category": "Acil/Dermatoloji / Yıldırım travması",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulmonology-lightning-apnea-001"
+    ]
+  },
+  {
+    "term": "Akut radyasyon sendromu",
+    "aliases": [
+      "Radyasyon sonrası bulantı-kusma-ishal",
+      "Akut radyasyon sendromu",
+      "radiation sickness",
+      "ARS"
+    ],
+    "definition": "Kısa sürede yüksek doz radyasyona tüm vücut veya büyük bir vücut bölümü maruz kaldığında gelişen sistemik tablodur.",
+    "category": "Radyasyon biyofiziği / Radyasyon hastalığı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-acute-radiation-syndrome-001"
+    ]
+  },
+  {
+    "term": "Prodromal radyasyon belirtileri",
+    "aliases": [
+      "Prodromal radyasyon belirtileri",
+      "nausea-vomiting-diarrhea",
+      "ARS prodrome"
+    ],
+    "definition": "ARS’de ilk görülen bulgular mide bulantısı, kusma, baş ağrısı ve ishaldir.",
+    "category": "Radyasyon biyofiziği / ARS klinik",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kronik radyasyon sendromu",
+    "aliases": [
+      "Düşük doz + yıllarca maruziyet",
+      "Kronik radyasyon sendromu",
+      "CRS"
+    ],
+    "definition": "Düşük radyasyon dozlarına uzun süreli maruziyet sonucu ortaya çıkan, ARS’nin daha hafif/kronik formu olarak anlatılan tablodur.",
+    "category": "Radyasyon biyofiziği / Kronik maruziyet",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-acute-radiation-syndrome-001"
+    ]
+  },
+  {
+    "term": "Radyasyon dermatiti",
+    "aliases": [
+      "radiation dermatitis",
+      "Radyasyon dermatiti",
+      "radiation burn"
+    ],
+    "definition": "Yüksek doz radyasyondan sonra saatler-günler içinde eritem, şişlik, kaşıntı, bül/ülser ve geç iyileşme ile seyreden cilt hasarıdır.",
+    "category": "Radyasyon biyofiziği / Cilt bulgusu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-acute-radiation-syndrome-001"
+    ]
+  },
+  {
+    "term": "Kemik iliği hasarı",
+    "aliases": [
+      "bone marrow suppression",
+      "Kemik iliği hasarı"
+    ],
+    "definition": "Yüksek doz radyasyon sonrası hematopoietik hücrelerin hasarı; enfeksiyon ve iç kanama ölümlerinde temel mekanizmadır.",
+    "category": "Radyasyon biyofiziği / ARS komplikasyonu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-acute-radiation-syndrome-001"
+    ]
+  },
+  {
+    "term": "Radyosensitivite",
+    "aliases": [
+      "Radyosensitivite",
+      "radiosensitivity"
+    ],
+    "definition": "Hücrelerin radyasyon hasarına duyarlılık derecesidir; hızlı bölünen hücreler genellikle daha duyarlıdır.",
+    "category": "Radyasyon biyofiziği / Radyobiyoloji",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Radon gazı",
+    "aliases": [
+      "Yer kabuğu doğal radyasyonu",
+      "Radon gazı",
+      "radon"
+    ],
+    "definition": "Yer kabuğundan kaynaklanan doğal radyasyonun temel kaynağı olarak vurgulanan radyoaktif gazdır.",
+    "category": "Radyasyon biyofiziği / Doğal radyasyon",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kozmik ışın",
+    "aliases": [
+      "Kozmik ışın",
+      "cosmic ray"
+    ],
+    "definition": "Uzaydan gelen doğal radyasyon bileşenidir; yüksek irtifada ve uçuşta maruziyet artar.",
+    "category": "Radyasyon biyofiziği / Doğal radyasyon",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Potasyum-40",
+    "aliases": [
+      "Potasyum-40",
+      "K-40"
+    ],
+    "definition": "Vücutta bulunan doğal radyoaktif izotoplardan biridir; miktarı kas kütlesiyle ilişkilidir.",
+    "category": "Radyasyon biyofiziği / Doğal radyasyon",
+    "priority": "Düşük",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "İyonlaştırıcı radyasyon",
+    "aliases": [
+      "İyonlaştırıcı radyasyon",
+      "ionizing radiation"
+    ],
+    "definition": "Atom/moleküllerden elektron koparabilecek enerjide radyasyondur; DNA zincir kırığı ve hücre hasarı oluşturabilir.",
+    "category": "Radyasyon biyofiziği / Radyasyon türü",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Gama ışını",
+    "aliases": [
+      "Gama ışını",
+      "gamma ray"
+    ],
+    "definition": "Atom çekirdeği kaynaklı elektromanyetik iyonlaştırıcı radyasyondur.",
+    "category": "Radyasyon biyofiziği / Radyasyon türü",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "X ışını",
+    "aliases": [
+      "X ışını",
+      "X-ray"
+    ],
+    "definition": "Elektron uzayı kaynaklı elektromanyetik iyonlaştırıcı radyasyondur; tıbbi görüntülemede kullanılır.",
+    "category": "Radyoloji/Radyasyon / Görüntüleme",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "orthopedics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "inf-tuberculosis-001",
+      "ortho-femoral-neck-001",
+      "ortho-scaphoid-001",
+      "pulm-pneumonia-001",
+      "pulm-pneumothorax-001",
+      "surg-sbo-001"
+    ]
+  },
+  {
+    "term": "Serbest radikal",
+    "aliases": [
+      "Eşleşmemiş elektron",
+      "Serbest radikal",
+      "free radical"
+    ],
+    "definition": "Dış orbitalinde eşleşmemiş elektron bulunduran ve bu nedenle yüksek reaktivite gösteren atom, atom grubu veya moleküldür.",
+    "category": "Biyokimya / Oksidatif stres",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Reaktif oksijen türleri",
+    "aliases": [
+      "Reaktif oksijen türleri",
+      "ROS",
+      "ROT"
+    ],
+    "definition": "Oksijenden türeyen ve lipit, protein ve DNA hasarı oluşturabilen reaktif molekül grubudur.",
+    "category": "Biyokimya / Oksidatif stres",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Süperoksit radikali",
+    "aliases": [
+      "Süperoksit radikali",
+      "superoxide",
+      "O2•−"
+    ],
+    "definition": "Oksijene tek elektron transferiyle oluşan, fizyolojik radikal başlangıcı sayılan ROS türüdür.",
+    "category": "Biyokimya / ROS",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Hidrojen peroksit",
+    "aliases": [
+      "Hidrojen peroksit",
+      "H2O2"
+    ],
+    "definition": "Radikal olmayan fakat hidroksil radikali oluşumuna kaynaklık edebilen reaktif oksijen türevidir.",
+    "category": "Biyokimya / ROS",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Hidroksil radikali",
+    "aliases": [
+      "Fenton reaksiyonu / hidroksil radikali",
+      "Hidroksil radikali",
+      "Fenton reaksiyonu",
+      "Fe2+ + H2O2",
+      "•OH",
+      "HO•"
+    ],
+    "definition": "Çok kısa ömürlü ve en reaktif ROS türlerinden biridir; DNA, lipid ve proteinlerde ağır hasar oluşturur.",
+    "category": "Biyokimya / ROS",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Singlet oksijen",
+    "aliases": [
+      "Singlet oksijen",
+      "1O2"
+    ],
+    "definition": "Enerji absorbsiyonu sonrası oksijenin uyarılmış formudur; dış orbital elektron spin düzeni değişmiştir.",
+    "category": "Biyokimya / ROS",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Hipokloröz asit",
+    "aliases": [
+      "Hipokloröz asit",
+      "HOCl"
+    ],
+    "definition": "Miyeloperoksidaz aracılığıyla nötrofillerde mikrobisidal etki oluşturan reaktif klor bileşiğidir.",
+    "category": "Biyokimya/İmmünoloji / ROS antimikrobiyal",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Nitrik oksit",
+    "aliases": [
+      "Nitrik oksit",
+      "NO"
+    ],
+    "definition": "Hem fizyolojik sinyal molekülü hem de reaktif nitrojen türlerinin öncülü olabilen serbest radikaldir.",
+    "category": "Biyokimya / RNS",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Peroksinitrit",
+    "aliases": [
+      "Peroksinitrit",
+      "ONOO−"
+    ],
+    "definition": "NO ile süperoksitin reaksiyonu sonucu oluşan güçlü oksidan nitrojen türevidir.",
+    "category": "Biyokimya / RNS",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Spin kısıtlaması",
+    "aliases": [
+      "Spin kısıtlaması",
+      "spin restriction"
+    ],
+    "definition": "Oksijenin elektron spin düzeni nedeniyle birçok organik molekülle doğrudan reaksiyona girmesinin kısıtlanmasıdır.",
+    "category": "Biyokimya / Moleküler oksijen",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Geçiş metalleri",
+    "aliases": [
+      "Fe, Cu, Mn, Cr, Co, Ni, Mo",
+      "Geçiş metalleri"
+    ],
+    "definition": "Eşleşmemiş elektron taşıyabilen fakat serbest radikal sayılmayan; radikal oluşumunda önemli rol oynayan metallerdir.",
+    "category": "Biyokimya / Radikal oluşumu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Fenton reaksiyonu",
+    "aliases": [
+      "Fe2+ + H2O2 → Fe3+ + OH− + •OH",
+      "Fenton reaksiyonu"
+    ],
+    "definition": "Demir aracılığıyla H2O2’den hidroksil radikali oluşmasıdır.",
+    "category": "Biyokimya / ROS üretimi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Süperoksit dismutaz",
+    "aliases": [
+      "Süperoksit detoksifikasyonu",
+      "Süperoksit dismutaz",
+      "SOD"
+    ],
+    "definition": "Süperoksiti hidrojen peroksit ve oksijene dönüştüren antioksidan enzimdir.",
+    "category": "Biyokimya / Antioksidan",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Katalaz",
+    "aliases": [
+      "H2O2 → H2O + O2",
+      "Katalaz",
+      "CAT"
+    ],
+    "definition": "Hidrojen peroksiti su ve oksijene parçalayan peroksizomal antioksidan enzimdir.",
+    "category": "Biyokimya / Antioksidan",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Glutatyon peroksidaz",
+    "aliases": [
+      "Glutatyon peroksidaz",
+      "GSH-Px",
+      "GPx"
+    ],
+    "definition": "H2O2 ve organik peroksitleri indirgerken GSH kullanan selenyum bağımlı antioksidan enzimdir.",
+    "category": "Biyokimya / Antioksidan",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Glutatyon",
+    "aliases": [
+      "İndirgenmiş glutatyon",
+      "Glutatyon",
+      "GSH"
+    ],
+    "definition": "Hücre içi temel indirgenmiş antioksidan tripeptittir; peroksit detoksifikasyonunda kullanılır.",
+    "category": "Biyokimya / Antioksidan",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "NADPH",
+    "aliases": [
+      "reduced nicotinamide adenine dinucleotide phosphate",
+      "NADPH"
+    ],
+    "definition": "Glutatyon redüktaz üzerinden GSSG’yi GSH’ye çevirerek antioksidan savunmayı sürdürür.",
+    "category": "Biyokimya / PPP/Antioksidan",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Malondialdehit",
+    "aliases": [
+      "Malondialdehit",
+      "MDA"
+    ],
+    "definition": "Lipid peroksidasyonu sonucu oluşan oksidatif hasar ürünlerinden biridir.",
+    "category": "Biyokimya / Oksidatif hasar belirteci",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "4-Hidroksinonenal",
+    "aliases": [
+      "4-Hidroksinonenal",
+      "4-HNE"
+    ],
+    "definition": "Lipid peroksidasyonu sonucu oluşan reaktif aldehit ürünüdür.",
+    "category": "Biyokimya / Oksidatif hasar belirteci",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Timin glikol",
+    "aliases": [
+      "thymine glycol",
+      "Timin glikol"
+    ],
+    "definition": "DNA baz oksidasyonu sonucu oluşabilen oksidatif DNA hasarı ürünüdür.",
+    "category": "Biyokimya / DNA hasarı",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Sülfür radikalleri",
+    "aliases": [
+      "Protein oksidatif hasarı",
+      "Sülfür radikalleri",
+      "sulfur radicals"
+    ],
+    "definition": "Proteinlerde özellikle sülfür içeren aminoasitlerin oksidasyonu sonucu oluşabilecek radikal türleridir.",
+    "category": "Biyokimya / Protein hasarı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Melatonin",
+    "aliases": [
+      "Melatonin"
+    ],
+    "definition": "Epifiz kaynaklı hormon; antioksidan özellikleri ve gece/mavi ışıkla ilişkili ritim etkileriyle vurgulanır.",
+    "category": "Biyokimya/Fizyoloji / Antioksidan-sirkadiyen",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Hiperglisemi",
+    "aliases": [
+      "hyperglycemia",
+      "Hiperglisemi"
+    ],
+    "definition": "Kan glukozunun yüksek olmasıdır; diyabet başlığıyla birlikte ele alınır.",
+    "category": "Biyokimya/Endokrin / Karbonhidrat metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001"
+    ]
+  },
+  {
+    "term": "Diabetes mellitus Tip 1",
+    "aliases": [
+      "Diabetes mellitus Tip 1",
+      "T1DM"
+    ],
+    "definition": "Otoimmün beta hücre yıkımı ve mutlak insülin eksikliğiyle seyreden diyabet formudur.",
+    "category": "Endokrin/Biyokimya / Diyabet",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Diabetes mellitus Tip 2",
+    "aliases": [
+      "Diabetes mellitus Tip 2",
+      "T2DM"
+    ],
+    "definition": "İnsülin direnci ve ilerleyici beta hücre disfonksiyonu ile seyreden hiperglisemi tablosudur.",
+    "category": "Endokrin/Biyokimya / Diyabet",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Galaktozemi",
+    "aliases": [
+      "classic galactosemia",
+      "Galaktozemi"
+    ],
+    "definition": "Galaktoz metabolizması bozukluğudur; klasik formda GALT eksikliğiyle galaktoz-1-fosfat birikir.",
+    "category": "Biyokimya / Karbonhidrat metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-maple-syrup-urine-disease-001"
+    ]
+  },
+  {
+    "term": "GALT",
+    "aliases": [
+      "galactose-1-phosphate uridyltransferase",
+      "GALT"
+    ],
+    "definition": "Klasik galaktozemide eksik olan enzimdir; galaktoz-1-fosfatın metabolize edilmesini sağlar.",
+    "category": "Biyokimya / Galaktoz metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-classic-galactosemia-001"
+    ]
+  },
+  {
+    "term": "Galaktokinaz eksikliği",
+    "aliases": [
+      "Galaktokinaz eksikliği",
+      "GALK deficiency"
+    ],
+    "definition": "Galaktozun galaktoz-1-fosfata fosforilasyonunda bozukluk; katarakt daha ön planda olabilir.",
+    "category": "Biyokimya / Galaktoz metabolizması",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Herediter fruktoz intoleransı",
+    "aliases": [
+      "Meyve suyu/fruktoz sonrası hipoglisemi",
+      "Herediter fruktoz intoleransı",
+      "HFI"
+    ],
+    "definition": "Aldolaz B eksikliğine bağlı fruktoz-1-fosfat birikimiyle hipoglisemi, karaciğer/böbrek hasarı ve kusma yapan hastalıktır.",
+    "category": "Biyokimya / Fruktoz metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-von-gierke-gsd-001"
+    ]
+  },
+  {
+    "term": "Aldolaz B",
+    "aliases": [
+      "fructose-1-phosphate aldolase",
+      "Aldolaz B"
+    ],
+    "definition": "Herediter fruktoz intoleransında eksik olan karaciğer enzimidir.",
+    "category": "Biyokimya / Fruktoz metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-hereditary-fructose-intolerance-001"
+    ]
+  },
+  {
+    "term": "Esansiyel fruktozüri",
+    "aliases": [
+      "Benign fruktoz metabolizma bozukluğu",
+      "essential fructosuria",
+      "Esansiyel fruktozüri"
+    ],
+    "definition": "Fruktokinaz eksikliğine bağlı genellikle benign fruktoz metabolizması bozukluğudur.",
+    "category": "Biyokimya / Fruktoz metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-hereditary-fructose-intolerance-001"
+    ]
+  },
+  {
+    "term": "Glikojen depo hastalığı",
+    "aliases": [
+      "Açlık hipoglisemisi + hepatomegali",
+      "Glikojen depo hastalığı",
+      "GSD"
+    ],
+    "definition": "Glikojen sentez veya yıkım enzimlerindeki defektlere bağlı hipoglisemi, hepatomegali veya kas semptomları oluşturabilen hastalık grubudur.",
+    "category": "Biyokimya / Glikojen metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-von-gierke-gsd-001"
+    ]
+  },
+  {
+    "term": "Von Gierke hastalığı",
+    "aliases": [
+      "glucose-6-phosphatase deficiency",
+      "Glukoz-6-fosfataz eksikliği",
+      "Von Gierke hastalığı",
+      "GSD I"
+    ],
+    "definition": "Glukoz-6-fosfataz eksikliğine bağlı ağır açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali ile giden GSD’dir.",
+    "category": "Biyokimya / Glikojen depo hastalığı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-von-gierke-gsd-001"
+    ]
+  },
+  {
+    "term": "Pompe hastalığı",
+    "aliases": [
+      "acid alpha-glucosidase deficiency",
+      "Lizozomal asit alfa-glukozidaz",
+      "Pompe hastalığı",
+      "GSD II"
+    ],
+    "definition": "Lizozomal asit alfa-glukozidaz eksikliğiyle kardiyomegali ve kas zayıflığı yapabilen glikojen depo hastalığıdır.",
+    "category": "Biyokimya / Glikojen depo hastalığı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-von-gierke-gsd-001"
+    ]
+  },
+  {
+    "term": "McArdle hastalığı",
+    "aliases": [
+      "muscle glycogen phosphorylase deficiency",
+      "Egzersiz intoleransı + miyoglobinüri",
+      "McArdle hastalığı",
+      "GSD V"
+    ],
+    "definition": "Kas glikojen fosforilaz eksikliğine bağlı egzersiz intoleransı, kramp ve miyoglobinüri yapabilir.",
+    "category": "Biyokimya / Glikojen depo hastalığı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-von-gierke-gsd-001"
+    ]
+  },
+  {
+    "term": "Laktoz intoleransı",
+    "aliases": [
+      "Süt sonrası gaz-diyare",
+      "Laktoz intoleransı",
+      "lactase deficiency"
+    ],
+    "definition": "Laktaz eksikliğine bağlı laktozun sindirilememesi; süt ürünleri sonrası şişkinlik, gaz ve osmotik diyare oluşturur.",
+    "category": "Biyokimya/Gastroenteroloji / Disakkaridaz eksikliği",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-classic-galactosemia-001"
+    ]
+  },
+  {
+    "term": "Pentoz fosfat yolu",
+    "aliases": [
+      "Pentoz fosfat yolu",
+      "HMP shunt",
+      "PPP"
+    ],
+    "definition": "NADPH ve riboz-5-fosfat üreten metabolik yoldur; antioksidan savunmada GSH regenerasyonu için önemlidir.",
+    "category": "Biyokimya / Karbonhidrat metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "G6PD eksikliği",
+    "aliases": [
+      "glucose-6-phosphate dehydrogenase deficiency",
+      "Fava/ilaç sonrası hemoliz",
+      "G6PD eksikliği"
+    ],
+    "definition": "NADPH üretimi azalınca eritrositlerde oksidatif strese bağlı hemoliz gelişen X’e bağlı enzim eksikliğidir.",
+    "category": "Biyokimya/Hematoloji / PPP",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-oxidative-stress-injury-001"
+    ]
+  },
+  {
+    "term": "Fenilketonüri",
+    "aliases": [
+      "Küf/ölü fare kokusu",
+      "phenylketonuria",
+      "Fenilketonüri",
+      "PKU"
+    ],
+    "definition": "Fenilalanin hidroksilaz eksikliği veya BH4 metabolizması bozukluğu sonucu fenilalanin birikimiyle nörogelişimsel hasar yapan hastalıktır.",
+    "category": "Biyokimya / Aminoasit metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-alkaptonuria-001",
+      "pediatrics-albinism-001",
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-homocystinuria-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-phenylketonuria-001"
+    ]
+  },
+  {
+    "term": "Fenilalanin hidroksilaz",
+    "aliases": [
+      "Fenilalanin hidroksilaz",
+      "PAH"
+    ],
+    "definition": "Fenilalanini tirozine çeviren enzimdir; klasik PKU’da eksiktir.",
+    "category": "Biyokimya / PKU",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-phenylketonuria-001"
+    ]
+  },
+  {
+    "term": "Tetrahidrobiyopterin",
+    "aliases": [
+      "Tetrahidrobiyopterin",
+      "BH4"
+    ],
+    "definition": "Fenilalanin hidroksilaz, tirozin hidroksilaz ve triptofan hidroksilaz için kofaktördür.",
+    "category": "Biyokimya / PKU varyantı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-phenylketonuria-001"
+    ]
+  },
+  {
+    "term": "Dihidropteridin redüktaz",
+    "aliases": [
+      "Dihidropteridin redüktaz",
+      "DHPR"
+    ],
+    "definition": "BH4 rejenerasyonunda görevli enzimdir; eksikliği atipik PKU nedeni olabilir.",
+    "category": "Biyokimya / PKU varyantı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Tirozin esansiyel hale gelmesi",
+    "aliases": [
+      "tyrosine becomes essential in PKU",
+      "Tirozin esansiyel hale gelmesi"
+    ],
+    "definition": "Fenilalaninin tirozine dönüşememesi nedeniyle PKU’da tirozin diyetle alınması gereken göreceli esansiyel aminoasit olur.",
+    "category": "Biyokimya / PKU",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Akçaağaç şurubu idrar hastalığı",
+    "aliases": [
+      "Akçaağaç şurubu idrar hastalığı",
+      "Tatlı/akçaağaç kokulu idrar",
+      "Maple syrup urine disease",
+      "MSUD"
+    ],
+    "definition": "Dallı zincirli alfa-ketoasit dehidrogenaz eksikliğine bağlı lösin, izolösin ve valin birikimiyle nörotoksisite ve tatlı idrar kokusu yapan hastalıktır.",
+    "category": "Biyokimya / Aminoasit metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-phenylketonuria-001"
+    ]
+  },
+  {
+    "term": "Dallı zincirli alfa-ketoasit dehidrogenaz",
+    "aliases": [
+      "Dallı zincirli alfa-ketoasit dehidrogenaz",
+      "BCKD"
+    ],
+    "definition": "Lösin, izolösin ve valin katabolizmasında görevli kompleks; MSUD’de eksiktir.",
+    "category": "Biyokimya / MSUD",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-maple-syrup-urine-disease-001"
+    ]
+  },
+  {
+    "term": "Lösin",
+    "aliases": [
+      "leucine",
+      "Lösin"
+    ],
+    "definition": "Dallı zincirli aminoasittir; MSUD’de birikir ve nörotoksisite açısından önemlidir.",
+    "category": "Biyokimya / BCAA",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-maple-syrup-urine-disease-001"
+    ]
+  },
+  {
+    "term": "Alkaptonüri",
+    "aliases": [
+      "Homogentisik asit oksidaz",
+      "alkaptonuria",
+      "Alkaptonüri"
+    ],
+    "definition": "Homogentisik asit oksidaz eksikliğine bağlı homogentisik asit birikimi, koyulaşan idrar ve okronozisle giden hastalıktır.",
+    "category": "Biyokimya / Fenilalanin-tirozin yolu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-alkaptonuria-001",
+      "pediatrics-albinism-001",
+      "pediatrics-homocystinuria-001",
+      "pediatrics-phenylketonuria-001"
+    ]
+  },
+  {
+    "term": "Homogentisik asit oksidaz",
+    "aliases": [
+      "Homogentisik asit oksidaz",
+      "homogentisate oxidase"
+    ],
+    "definition": "Alkaptonüride eksik olan enzimdir.",
+    "category": "Biyokimya / Alkaptonüri",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-alkaptonuria-001"
+    ]
+  },
+  {
+    "term": "Okronozis",
+    "aliases": [
+      "ochronosis",
+      "Okronozis"
+    ],
+    "definition": "Homogentisik asit birikimine bağlı bağ dokularda koyu pigmentasyon gelişmesidir.",
+    "category": "Biyokimya/Patoloji / Alkaptonüri bulgusu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-alkaptonuria-001"
+    ]
+  },
+  {
+    "term": "Albinizm",
+    "aliases": [
+      "Tirozinaz eksikliği",
+      "Albinizm",
+      "albinism"
+    ],
+    "definition": "Tirozinaz eksikliğine bağlı melanin sentez kusuru; hipopigmentasyon, fotofobi ve görme sorunları oluşturur.",
+    "category": "Biyokimya/Dermatoloji / Tirozin metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-alkaptonuria-001",
+      "pediatrics-albinism-001",
+      "pediatrics-phenylketonuria-001"
+    ]
+  },
+  {
+    "term": "Tirozinaz",
+    "aliases": [
+      "tyrosinase",
+      "Tirozinaz"
+    ],
+    "definition": "Melanin sentezinde tirozin metabolizmasını katalizleyen; albinizmde eksikliği vurgulanan enzimdir.",
+    "category": "Biyokimya / Melanin sentezi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-albinism-001"
+    ]
+  },
+  {
+    "term": "Tirozinemi Tip I",
+    "aliases": [
+      "fumarylacetoacetate hydrolase deficiency",
+      "Tirozinemi Tip I"
+    ],
+    "definition": "Fumarilasetoasetat hidrolaz eksikliğine bağlı karaciğer yetmezliği, renal tübüler bozukluk ve succinylacetone birikimiyle giden tirozinemi formudur.",
+    "category": "Biyokimya / Tirozin metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-alkaptonuria-001"
+    ]
+  },
+  {
+    "term": "Tirozinemi Tip II",
+    "aliases": [
+      "tyrosine transaminase deficiency",
+      "Tirozinemi Tip II"
+    ],
+    "definition": "Tirozin transaminaz eksikliğiyle hipertirozinemi/tirozinüri; göz ve deri bulguları daha belirgin olabilir.",
+    "category": "Biyokimya / Tirozin metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Homosistinüri",
+    "aliases": [
+      "Lens aşağı-içe + tromboz",
+      "homocystinuria",
+      "Homosistinüri"
+    ],
+    "definition": "Sıklıkla sistationin beta-sentaz eksikliğine bağlı homosistein birikimi; lens dislokasyonu, tromboz ve marfanoid habitus yapabilir.",
+    "category": "Biyokimya / Metiyonin metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-homocystinuria-001",
+      "pediatrics-maple-syrup-urine-disease-001"
+    ]
+  },
+  {
+    "term": "Sistationin beta-sentaz",
+    "aliases": [
+      "Sistationin beta-sentaz",
+      "CBS"
+    ],
+    "definition": "Homosisteini sistationine dönüştüren B6 bağımlı enzim; klasik homosistinüride eksik olabilir.",
+    "category": "Biyokimya / Homosistinüri",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-homocystinuria-001"
+    ]
+  },
+  {
+    "term": "Ektopia lentis",
+    "aliases": [
+      "lens dislocation",
+      "Ektopia lentis"
+    ],
+    "definition": "Lensin normal yerinden ayrılmasıdır; homosistinüri ve Marfan ayrımında spot bulgudur.",
+    "category": "Göz/Biyokimya / Homosistinüri bulgusu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-homocystinuria-001"
+    ]
+  },
+  {
+    "term": "Nonketotik hiperglisinemi",
+    "aliases": [
+      "Nonketotik hiperglisinemi",
+      "glycine encephalopathy"
+    ],
+    "definition": "Glisin yıkım sistemindeki defekte bağlı ağır nörolojik bulgularla giden aminoasit metabolizma bozukluğudur.",
+    "category": "Biyokimya / Aminoasit metabolizması",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Üre döngüsü bozukluğu",
+    "aliases": [
+      "Üre döngüsü bozukluğu",
+      "urea cycle disorder"
+    ],
+    "definition": "Amonyağın üreye çevrilmesindeki enzim defektleri sonucu hiperamonyemi ve ensefalopati gelişen hastalık grubudur.",
+    "category": "Biyokimya / Aminoasit/azot metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Ornitin transkarbamoilaz eksikliği",
+    "aliases": [
+      "Ornitin transkarbamoilaz eksikliği",
+      "OTC deficiency"
+    ],
+    "definition": "X’e bağlı üre döngüsü bozukluğu; karbamoil fosfat birikimi ve orotik asit artışıyla ilişkilidir.",
+    "category": "Biyokimya / Üre döngüsü",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Hartnup hastalığı",
+    "aliases": [
+      "Hartnup hastalığı",
+      "Hartnup disease"
+    ],
+    "definition": "Nötral aminoasit taşıma defekti; triptofan emilimi azalır, pellagra benzeri bulgular olabilir.",
+    "category": "Biyokimya / Aminoasit transportu",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Sistinozis",
+    "aliases": [
+      "Sistinozis",
+      "cystinosis"
+    ],
+    "definition": "Lizozomal sistin transport defektiyle sistin kristal birikimi ve Fanconi sendromu yapabilen hastalıktır.",
+    "category": "Biyokimya / Aminoasit/transport",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Tiamin eksikliği",
+    "aliases": [
+      "Vitamin B1 deficiency",
+      "Tiamin eksikliği",
+      "beriberi"
+    ],
+    "definition": "Pirüvat dehidrogenaz ve alfa-ketoglutarat dehidrogenaz gibi reaksiyonlarda kofaktör eksikliği; kuru/yaş beriberi ve Wernicke-Korsakoff ile ilişkilidir.",
+    "category": "Biyokimya / Vitaminler",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-pellagra-001"
+    ]
+  },
+  {
+    "term": "Wernicke-Korsakoff sendromu",
+    "aliases": [
+      "Wernicke-Korsakoff sendromu",
+      "Wernicke encephalopathy"
+    ],
+    "definition": "Tiamin eksikliğine bağlı konfüzyon, oftalmopleji ve ataksi ile başlayan; bellek bozukluğu/konfabülasyonla devam edebilen tablodur.",
+    "category": "Nöroloji/Biyokimya / Vitamin B1",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Riboflavin",
+    "aliases": [
+      "Riboflavin",
+      "Vitamin B2"
+    ],
+    "definition": "FAD ve FMN koenzimlerinin öncülüdür; enerji metabolizmasında oksidoredüksiyon reaksiyonlarına katılır.",
+    "category": "Biyokimya / Vitaminler",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Niasin eksikliği",
+    "aliases": [
+      "3D: dermatit-diyare-demans",
+      "Pellagra / B3 eksikliği",
+      "Vitamin B3 deficiency",
+      "Niasin eksikliği",
+      "B3 eksikliği",
+      "pellagra"
+    ],
+    "definition": "NAD/NADP öncülü eksikliği; dermatit, diyare ve demans triadıyla karakterizedir.",
+    "category": "Biyokimya / Vitaminler",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-pellagra-001",
+      "internal-medicine-scurvy-001"
+    ]
+  },
+  {
+    "term": "Piridoksin",
+    "aliases": [
+      "Piridoksin",
+      "Vitamin B6"
+    ],
+    "definition": "Transaminasyon, dekarboksilasyon ve hem sentezinde kofaktör; izoniazid kullanımıyla eksikliği görülebilir.",
+    "category": "Biyokimya/Farmakoloji / Vitaminler",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-homocystinuria-001"
+    ]
+  },
+  {
+    "term": "Folat eksikliği",
+    "aliases": [
+      "Megaloblastik anemi + nörolojik yok",
+      "Vitamin B9 deficiency",
+      "Folat eksikliği"
+    ],
+    "definition": "DNA sentez bozukluğu ve megaloblastik anemi yapar; nöral tüp defekti riskiyle ilişkilidir.",
+    "category": "Biyokimya/Hematoloji / Vitaminler",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kobalamin eksikliği",
+    "aliases": [
+      "Vitamin B12 deficiency",
+      "Kobalamin eksikliği"
+    ],
+    "definition": "DNA sentez bozukluğu, megaloblastik anemi ve subakut kombine dejenerasyon gibi nörolojik bulgular yapabilir.",
+    "category": "Biyokimya/Hematoloji / Vitaminler",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Askorbik asit eksikliği",
+    "aliases": [
+      "Diş eti kanaması + yara iyileşmesi bozukluğu",
+      "Skorbüt / C vitamini eksikliği",
+      "Askorbik asit eksikliği",
+      "Vitamin C deficiency",
+      "C vitamini eksikliği",
+      "skorbüt",
+      "scurvy"
+    ],
+    "definition": "Kollajen hidroksilasyonu bozulduğu için diş eti kanaması, peteşi, yara iyileşme bozukluğu ve kemik bulguları yapar.",
+    "category": "Biyokimya / Vitaminler",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-pellagra-001",
+      "internal-medicine-scurvy-001"
+    ]
+  },
+  {
+    "term": "Vitamin D eksikliği",
+    "aliases": [
+      "Vitamin D eksikliği",
+      "osteomalacia",
+      "rickets"
+    ],
+    "definition": "Kalsiyum-fosfor homeostazı bozulur; çocukta raşitizm, erişkinde osteomalaziye yol açar.",
+    "category": "Biyokimya/Endokrin / Vitaminler",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Vitamin K eksikliği",
+    "aliases": [
+      "phylloquinone deficiency",
+      "Vitamin K eksikliği"
+    ],
+    "definition": "Gama-karboksilasyon bozulması nedeniyle faktör II, VII, IX, X ve protein C/S aktivasyonu azalır; kanama eğilimi yapar.",
+    "category": "Biyokimya/Hematoloji / Vitaminler",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Demir eksikliği anemisi",
+    "aliases": [
+      "Demir eksikliği anemisi",
+      "iron deficiency anemia"
+    ],
+    "definition": "Demir depolarının azalmasıyla mikrositer hipokrom anemi, düşük ferritin ve yüksek TIBC ile seyreden anemidir.",
+    "category": "Hematoloji/Biyokimya / Eser element",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001",
+      "internal-medicine-hemochromatosis-001"
+    ]
+  },
+  {
+    "term": "Transferrin",
+    "aliases": [
+      "iron transport protein",
+      "Transferrin"
+    ],
+    "definition": "Kanda demir taşıyan proteindir; demir eksikliğinde TIBC genellikle artar.",
+    "category": "Hematoloji/Biyokimya / Demir metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001",
+      "internal-medicine-hemochromatosis-001"
+    ]
+  },
+  {
+    "term": "Hepsidin",
+    "aliases": [
+      "Hepsidin",
+      "hepcidin"
+    ],
+    "definition": "Demir emilimi ve makrofajlardan demir salınımını ferroportin üzerinden azaltan karaciğer kaynaklı hormondur.",
+    "category": "Biyokimya/Hematoloji / Demir metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-hemochromatosis-001"
+    ]
+  },
+  {
+    "term": "Hemokromatozis",
+    "aliases": [
+      "hemochromatosis",
+      "Hemokromatozis",
+      "Bronz diyabet"
+    ],
+    "definition": "Aşırı demir birikimine bağlı karaciğer, pankreas, kalp ve deri tutulumu yapabilen demir yüklenme hastalığıdır.",
+    "category": "Biyokimya/Hematoloji / Demir metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-hemochromatosis-001"
+    ]
+  },
+  {
+    "term": "Wilson hastalığı",
+    "aliases": [
+      "hepatolenticular degeneration",
+      "Kayser-Fleischer halkası",
+      "Wilson hastalığı"
+    ],
+    "definition": "Bakır atılım bozukluğu sonucu karaciğer, beyin ve korneada bakır birikimi; Kayser-Fleischer halkasıyla ilişkilidir.",
+    "category": "Biyokimya/Nöroloji / Bakır metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "neurology",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-hemochromatosis-001"
+    ]
+  },
+  {
+    "term": "Menkes hastalığı",
+    "aliases": [
+      "kinky hair disease",
+      "Menkes hastalığı",
+      "Kinky hair"
+    ],
+    "definition": "Bakır emilim/taşınma bozukluğu; kıvırcık/kırılgan saç, nörolojik bozukluk ve bağ dokusu sorunları yapabilir.",
+    "category": "Biyokimya/Pediatri / Bakır metabolizması",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-hemochromatosis-001"
+    ]
+  },
+  {
+    "term": "Çinko eksikliği",
+    "aliases": [
+      "Çinko eksikliği",
+      "zinc deficiency"
+    ],
+    "definition": "Dermatit, alopesi, diyare, yara iyileşme bozukluğu ve immün fonksiyon bozukluğu ile ilişkilidir.",
+    "category": "Biyokimya/Dermatoloji / Eser element",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Akrodermatitis enteropatika",
+    "aliases": [
+      "acrodermatitis enteropathica",
+      "Akrodermatitis enteropatika"
+    ],
+    "definition": "Çinko emilim defektine bağlı periorifisiyel/akral dermatit, alopesi ve diyareyle seyreden hastalıktır.",
+    "category": "Biyokimya/Dermatoloji / Çinko metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Şilomikron",
+    "aliases": [
+      "chylomicron",
+      "Şilomikron"
+    ],
+    "definition": "Diyet trigliseridlerini bağırsaktan periferik dokulara taşıyan büyük lipoproteindir; Apo B-48 içerir.",
+    "category": "Biyokimya / Lipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "VLDL",
+    "aliases": [
+      "very-low-density lipoprotein",
+      "VLDL"
+    ],
+    "definition": "Karaciğer kaynaklı trigliseridleri periferik dokulara taşıyan lipoproteindir.",
+    "category": "Biyokimya / Lipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "LDL",
+    "aliases": [
+      "low-density lipoprotein",
+      "LDL"
+    ],
+    "definition": "Kolesterolü periferik dokulara taşıyan aterojenik lipoproteindir; Apo B-100 içerir.",
+    "category": "Biyokimya/Kardiyoloji / Lipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "HDL",
+    "aliases": [
+      "high-density lipoprotein",
+      "HDL"
+    ],
+    "definition": "Kolesterolü periferden karaciğere taşıyan ters kolesterol taşıma lipoproteinidir; Apo A-I içerir.",
+    "category": "Biyokimya/Kardiyoloji / Lipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "Apo A-I",
+    "aliases": [
+      "Apolipoprotein A-I",
+      "LCAT aktivatörü",
+      "Apo A-I"
+    ],
+    "definition": "HDL’nin temel yapısal proteini ve LCAT aktivatörüdür.",
+    "category": "Biyokimya / Apolipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Apo B-48",
+    "aliases": [
+      "Şilomikron yapısal proteini",
+      "Apolipoprotein B-48",
+      "Apo B-48"
+    ],
+    "definition": "Bağırsakta sentezlenen ve şilomikronların yapısında bulunan apolipoproteindir.",
+    "category": "Biyokimya / Apolipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Apo B-100",
+    "aliases": [
+      "Apolipoprotein B-100",
+      "LDL reseptör ligandı",
+      "Apo B-100"
+    ],
+    "definition": "VLDL, IDL ve LDL yapısında bulunur; LDL reseptörü için ligand görevi görür.",
+    "category": "Biyokimya / Apolipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Apo C-II",
+    "aliases": [
+      "Apolipoprotein C-II",
+      "LPL aktivatörü",
+      "Apo C-II"
+    ],
+    "definition": "Lipoprotein lipazın temel aktivatörüdür; şilomikron/VLDL trigliseridlerinin yıkımında gereklidir.",
+    "category": "Biyokimya / Apolipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Apo C-III",
+    "aliases": [
+      "Apolipoprotein C-III",
+      "Apo C-III"
+    ],
+    "definition": "Lipoprotein lipaz aktivitesini inhibe eden apolipoproteindir.",
+    "category": "Biyokimya / Apolipoprotein",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Apo E",
+    "aliases": [
+      "Apolipoprotein E",
+      "Apo E"
+    ],
+    "definition": "Şilomikron artıkları ve IDL’nin hepatik reseptörlerce tanınmasını sağlayan liganddır; beyinde kolesterol taşıması ve Alzheimer ilişkisi vurgulanır.",
+    "category": "Biyokimya/Nöroloji / Apolipoprotein",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "neurology"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Apo(a)",
+    "aliases": [
+      "Apolipoprotein(a)",
+      "Apo(a)",
+      "Lp(a)"
+    ],
+    "definition": "Lp(a) yapısında bulunan ve proaterojenik, proinflamatuar, antifibrinolitik kabul edilen apolipoproteindir.",
+    "category": "Biyokimya/Kardiyoloji / Apolipoprotein",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Lipoprotein lipaz",
+    "aliases": [
+      "Lipoprotein lipaz",
+      "LPL"
+    ],
+    "definition": "Şilomikron ve VLDL trigliseridlerini hidrolize eden; Apo C-II ile aktive edilen enzimdir.",
+    "category": "Biyokimya / Lipid metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "LCAT",
+    "aliases": [
+      "lecithin-cholesterol acyltransferase",
+      "LCAT"
+    ],
+    "definition": "HDL üzerinde serbest kolesterolü esterleştiren; Apo A-I tarafından aktive edilen enzimdir.",
+    "category": "Biyokimya / HDL metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "CETP",
+    "aliases": [
+      "cholesteryl ester transfer protein",
+      "Apo D",
+      "CETP"
+    ],
+    "definition": "Kolesterol esterleri ve trigliseridlerin lipoproteinler arasında transferinde rol oynar.",
+    "category": "Biyokimya / Lipid transferi",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "ABCA1",
+    "aliases": [
+      "ATP-binding cassette transporter A1",
+      "ABCA1"
+    ],
+    "definition": "Kolesterolün Apo A-I’e aktarılması ve HDL oluşumunda görevli transporterdır; Tangier hastalığında defektlidir.",
+    "category": "Biyokimya / HDL metabolizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "Ailesel hiperkolesterolemi",
+    "aliases": [
+      "familial hypercholesterolemia",
+      "Tendon ksantom + LDL yüksek",
+      "Ailesel hiperkolesterolemi",
+      "Type IIa"
+    ],
+    "definition": "LDL reseptörü veya Apo B-100 ilişkili bozukluklarla yüksek LDL, tendon ksantomları ve erken ateroskleroz yapan hastalıktır.",
+    "category": "Biyokimya/Kardiyoloji / Dislipidemi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "Tangier hastalığı",
+    "aliases": [
+      "Turuncu tonsil + çok düşük HDL",
+      "Tangier hastalığı",
+      "Tangier disease"
+    ],
+    "definition": "ABCA1 defektiyle çok düşük HDL, turuncu tonsiller ve nöropati yapabilen bozukluktur.",
+    "category": "Biyokimya / HDL bozukluğu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "Abetalipoproteinemi",
+    "aliases": [
+      "Apo B içeren lipoprotein yokluğu + akantositoz",
+      "Bassen-Kornzweig disease",
+      "Abetalipoproteinemi"
+    ],
+    "definition": "Apo B içeren lipoproteinlerin oluşum bozukluğu; yağ malabsorpsiyonu, akantositoz ve nörolojik bulgular yapar.",
+    "category": "Biyokimya/Gastroenteroloji / Lipoprotein bozukluğu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "LCAT eksikliği",
+    "aliases": [
+      "Korneal opasite + hemoliz + renal hastalık",
+      "familial LCAT deficiency",
+      "LCAT eksikliği"
+    ],
+    "definition": "HDL kolesterol esterleşmesi bozulur; korneal opasite, hemolitik anemi ve renal hastalık yapabilir.",
+    "category": "Biyokimya / HDL bozukluğu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "Balık gözü hastalığı",
+    "aliases": [
+      "Balık gözü hastalığı",
+      "fish-eye disease"
+    ],
+    "definition": "Parsiyel LCAT eksikliğinin korneal opasite ağırlıklı formudur.",
+    "category": "Biyokimya/Göz / HDL bozukluğu",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Wolman hastalığı",
+    "aliases": [
+      "lysosomal acid lipase deficiency",
+      "Wolman hastalığı"
+    ],
+    "definition": "Lizozomal asit lipaz eksikliğiyle kolesterol ester ve trigliserid birikimi; hepatosplenomegali ve adrenal kalsifikasyon yapabilir.",
+    "category": "Biyokimya / Lipid depo hastalığı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Ksantom",
+    "aliases": [
+      "xanthoma",
+      "Ksantom"
+    ],
+    "definition": "Deride/tendonlarda lipid yüklü makrofaj birikimine bağlı sarımsı lezyonlardır.",
+    "category": "Dermatoloji/Biyokimya / Dislipidemi bulgusu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-tangier-disease-001",
+      "pediatrics-von-gierke-gsd-001"
+    ]
+  },
+  {
+    "term": "Korneal arkus",
+    "aliases": [
+      "arcus cornealis",
+      "Korneal arkus"
+    ],
+    "definition": "Korneada lipid birikimine bağlı halka görünümüdür; genç yaşta dislipidemi açısından anlamlıdır.",
+    "category": "Göz/Biyokimya / Dislipidemi bulgusu",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-tangier-disease-001"
+    ]
+  },
+  {
+    "term": "Atrofi",
+    "aliases": [
+      "atrophy",
+      "Atrofi"
+    ],
+    "definition": "Hücre boyutunda ve doku/organ hacminde azalma; iş yükü azalması, denervasyon, iskemi veya beslenme bozukluğuyla gelişebilir.",
+    "category": "Patoloji / Adaptasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Hipertrofi",
+    "aliases": [
+      "hypertrophy",
+      "Hipertrofi"
+    ],
+    "definition": "Hücre boyutunun artmasıyla organ/doku büyümesidir; bölünemeyen hücrelerde belirgindir.",
+    "category": "Patoloji / Adaptasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "cv-hocm-001"
+    ]
+  },
+  {
+    "term": "Hiperplazi",
+    "aliases": [
+      "hyperplasia",
+      "Hiperplazi"
+    ],
+    "definition": "Hücre sayısının artmasıyla doku/organ büyümesidir; hormonal veya kompansatuar olabilir.",
+    "category": "Patoloji / Adaptasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Metaplazi",
+    "aliases": [
+      "metaplasia",
+      "Metaplazi"
+    ],
+    "definition": "Bir diferansiye hücre tipinin başka bir diferansiye hücre tipiyle yer değiştirmesidir; kronik irritasyona adaptif yanıttır.",
+    "category": "Patoloji / Adaptasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Displazi",
+    "aliases": [
+      "dysplasia",
+      "Displazi"
+    ],
+    "definition": "Epitelde düzensiz büyüme ve sitolojik atipiyle karakterize premalign değişikliktir.",
+    "category": "Patoloji / Prekanseröz değişim",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Reversibl hücre zedelenmesi",
+    "aliases": [
+      "Reversibl hücre zedelenmesi",
+      "reversible cell injury"
+    ],
+    "definition": "Hasar etkeni ortadan kalkarsa hücrenin normale dönebileceği; hücresel şişme ve yağlanma gibi bulgularla giden zedelenmedir.",
+    "category": "Patoloji / Hücre zedelenmesi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "İrreversibl hücre zedelenmesi",
+    "aliases": [
+      "İrreversibl hücre zedelenmesi",
+      "irreversible cell injury"
+    ],
+    "definition": "Mitokondriyal fonksiyon kaybı ve membran hasarı kritik eşiği aşınca geri dönüşsüz hücre ölümü gelişmesidir.",
+    "category": "Patoloji / Hücre zedelenmesi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Hidropik değişiklik",
+    "aliases": [
+      "Hidropik değişiklik",
+      "cellular swelling",
+      "hydropic change"
+    ],
+    "definition": "ATP azalmasına bağlı iyon-su dengesi bozulunca hücre şişmesiyle görülen reversibl hasar bulgusudur.",
+    "category": "Patoloji / Reversibl hasar",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Yağlanma",
+    "aliases": [
+      "fatty change",
+      "steatosis",
+      "Yağlanma"
+    ],
+    "definition": "Hücre içinde trigliserid birikimidir; karaciğerde hipoksi, alkol ve metabolik bozukluklarla görülür.",
+    "category": "Patoloji / Hücre içi birikim",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Nekroz",
+    "aliases": [
+      "necrosis",
+      "Nekroz"
+    ],
+    "definition": "Geri dönüşsüz hücre hasarı sonrası membran bütünlüğü kaybı ve inflamasyonla seyreden patolojik hücre ölümüdür.",
+    "category": "Patoloji / Hücre ölümü",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology",
+      "orthopedics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "infectious-diseases-caseating-granuloma-tb-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-pellagra-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "ortho-femoral-neck-001",
+      "ortho-scaphoid-001",
+      "pulmonology-lightning-apnea-001"
+    ]
+  },
+  {
+    "term": "Apoptoz",
+    "aliases": [
+      "Kaspaz + inflamasyon yok",
+      "programmed cell death",
+      "Apoptoz"
+    ],
+    "definition": "Kaspaz aracılı, kontrollü hücre ölümü; membran bütünlüğü korunur ve genellikle inflamasyon gelişmez.",
+    "category": "Patoloji / Hücre ölümü",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Koagülasyon nekrozu",
+    "aliases": [
+      "İskemi + beyin dışı infarkt",
+      "coagulative necrosis",
+      "Koagülasyon nekrozu"
+    ],
+    "definition": "Doku mimarisinin bir süre korunduğu nekroz tipidir; beyin dışı iskemik infarktlarda tipiktir.",
+    "category": "Patoloji / Nekroz tipi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "neurology-liquefactive-necrosis-brain-001"
+    ]
+  },
+  {
+    "term": "Likefaksiyon nekrozu",
+    "aliases": [
+      "liquefactive necrosis",
+      "Likefaksiyon nekrozu",
+      "Beyin infarktı"
+    ],
+    "definition": "Enzimatik sindirimle dokunun sıvılaşmasıdır; beyin infarktı ve apse için tipiktir.",
+    "category": "Patoloji / Nekroz tipi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "neurology-liquefactive-necrosis-brain-001"
+    ]
+  },
+  {
+    "term": "Kazeifikasyon nekrozu",
+    "aliases": [
+      "Tüberküloz + peynirsi nekroz",
+      "Kazeifikasyon nekrozu",
+      "caseous necrosis"
+    ],
+    "definition": "Peynirsi görünümde nekroz tipidir; tüberküloz granülomlarında klasik olarak görülür.",
+    "category": "Patoloji / Nekroz tipi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "neurology-liquefactive-necrosis-brain-001"
+    ]
+  },
+  {
+    "term": "Yağ nekrozu",
+    "aliases": [
+      "Pankreatit + sabunlaşma",
+      "fat necrosis",
+      "Yağ nekrozu"
+    ],
+    "definition": "Adipoz dokuda lipaz etkisiyle yağ asitleri ve kalsiyum sabunları oluşmasıdır; akut pankreatit ve meme travmasında görülür.",
+    "category": "Patoloji / Nekroz tipi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-coagulative-necrosis-mi-001",
+      "neurology-liquefactive-necrosis-brain-001"
+    ]
+  },
+  {
+    "term": "Fibrinoid nekroz",
+    "aliases": [
+      "Vaskülit/malign HTN + damar duvarı",
+      "fibrinoid necrosis",
+      "Fibrinoid nekroz"
+    ],
+    "definition": "Damar duvarında immün kompleks ve fibrin benzeri materyal birikimiyle görülen nekroz tipidir.",
+    "category": "Patoloji / Nekroz tipi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-caseating-granuloma-tb-001"
+    ]
+  },
+  {
+    "term": "Piknoz",
+    "aliases": [
+      "pyknosis",
+      "Piknoz"
+    ],
+    "definition": "Nekrozda çekirdeğin küçülüp koyulaşmasıdır.",
+    "category": "Patoloji / Nükleer değişiklik",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Karyoreksis",
+    "aliases": [
+      "karyorrhexis",
+      "Karyoreksis"
+    ],
+    "definition": "Nekrozda çekirdeğin parçalanmasıdır.",
+    "category": "Patoloji / Nükleer değişiklik",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Karyolizis",
+    "aliases": [
+      "Karyolizis",
+      "karyolysis"
+    ],
+    "definition": "Nekrozda çekirdek DNA’sının çözünmesi ve soluklaşmasıdır.",
+    "category": "Patoloji / Nükleer değişiklik",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kaspaz",
+    "aliases": [
+      "caspase",
+      "Kaspaz"
+    ],
+    "definition": "Apoptozda proteinleri parçalayan sistein proteaz ailesidir.",
+    "category": "Patoloji / Apoptoz mekanizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Sitokrom c",
+    "aliases": [
+      "cytochrome c",
+      "Sitokrom c"
+    ],
+    "definition": "Mitokondriden sitoplazmaya salınarak intrinsik apoptoz yolunu aktive eden proteindir.",
+    "category": "Patoloji / Apoptoz mekanizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Bcl-2",
+    "aliases": [
+      "B-cell lymphoma 2",
+      "Bcl-2"
+    ],
+    "definition": "Mitokondriyal apoptoz yolunu inhibe eden anti-apoptotik proteindir.",
+    "category": "Patoloji / Apoptoz regülasyonu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "p53",
+    "aliases": [
+      "tumor suppressor p53",
+      "p53"
+    ],
+    "definition": "DNA hasarı sonrası hücre siklus durdurma, onarım veya apoptozu tetikleyen tümör baskılayıcı proteindir.",
+    "category": "Patoloji/Genetik / Hücre döngüsü",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Nekroptozis",
+    "aliases": [
+      "Nekroptozis",
+      "necroptosis"
+    ],
+    "definition": "Morfolojik olarak nekroza benzeyen ancak düzenlenmiş/programlı hücre ölüm yoludur.",
+    "category": "Patoloji / Regüle hücre ölümü",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Piroptozis",
+    "aliases": [
+      "İnflammazom + IL-1β",
+      "Piroptozis",
+      "pyroptosis"
+    ],
+    "definition": "İnflamatuvar kaspazlar ve inflammazomla ilişkili, IL-1β/IL-18 salınımıyla seyreden hücre ölümüdür.",
+    "category": "Patoloji/İmmünoloji / Regüle hücre ölümü",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Ferroptozis",
+    "aliases": [
+      "Demir + lipid peroksidasyonu",
+      "Ferroptozis",
+      "ferroptosis"
+    ],
+    "definition": "Demir bağımlı lipid peroksidasyonu sonucu gelişen regüle hücre ölümü tipidir.",
+    "category": "Patoloji/Biyokimya / Regüle hücre ölümü",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Lipofuscin",
+    "aliases": [
+      "wear-and-tear pigment",
+      "Yaşlanma pigmenti",
+      "Lipofuscin"
+    ],
+    "definition": "Yaşlanma ve oksidatif stresle ilişkili sarı-kahverengi, sindirilemeyen lipid-protein pigmentidir.",
+    "category": "Patoloji / Hücre içi birikim",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Hemosiderin",
+    "aliases": [
+      "Hemosiderin"
+    ],
+    "definition": "Demir içeren altın-kahverengi pigmenttir; lokal kanama veya sistemik demir yüklenmesinde birikir.",
+    "category": "Patoloji/Hematoloji / Pigment",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Distrofik kalsifikasyon",
+    "aliases": [
+      "dystrophic calcification",
+      "Hasarlı doku + normal Ca",
+      "Distrofik kalsifikasyon"
+    ],
+    "definition": "Serum kalsiyumu normal iken ölü/hasarlı dokuda kalsiyum birikmesidir.",
+    "category": "Patoloji / Kalsifikasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Metastatik kalsifikasyon",
+    "aliases": [
+      "Normal doku + hiperkalsemi",
+      "Metastatik kalsifikasyon",
+      "metastatic calcification"
+    ],
+    "definition": "Hiperkalsemiye bağlı normal dokularda kalsiyum birikimidir.",
+    "category": "Patoloji / Kalsifikasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Amiloid",
+    "aliases": [
+      "Kongo kırmızısı + elma yeşili",
+      "Amiloid",
+      "amyloid"
+    ],
+    "definition": "Beta-pleated sheet yapıda ekstraselüler protein birikimidir; Kongo kırmızısı ve elma yeşili birefringence ile tanınır.",
+    "category": "Patoloji / Protein birikimi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Akut inflamasyon",
+    "aliases": [
+      "acute inflammation",
+      "Akut inflamasyon"
+    ],
+    "definition": "Dakika-saatler içinde başlayan, vazodilatasyon, geçirgenlik artışı ve nötrofil göçüyle karakterize inflamatuvar yanıttır.",
+    "category": "Patoloji / İnflamasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "surg-diverticulitis-001"
+    ]
+  },
+  {
+    "term": "Kronik inflamasyon",
+    "aliases": [
+      "chronic inflammation",
+      "Kronik inflamasyon"
+    ],
+    "definition": "Uzun süren inflamatuvar yanıt; makrofaj, lenfosit, plazma hücresi, doku yıkımı ve onarım birlikte görülür.",
+    "category": "Patoloji / İnflamasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "im-iron-deficiency-anemia-001",
+      "infectious-diseases-caseating-granuloma-tb-001"
+    ]
+  },
+  {
+    "term": "Granülom",
+    "aliases": [
+      "granuloma",
+      "Granülom"
+    ],
+    "definition": "Aktive makrofaj/epiteloid histiyosit kümelerinden oluşan kronik inflamasyon paterni; TB ve yabancı cisimlerde görülür.",
+    "category": "Patoloji / Kronik inflamasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-caseating-granuloma-tb-001",
+      "neurology-liquefactive-necrosis-brain-001"
+    ]
+  },
+  {
+    "term": "Makrofaj",
+    "aliases": [
+      "Makrofaj/lenfosit/plazma hücresi",
+      "Kronik inflamasyonun ana hücresi",
+      "plazma hücresi",
+      "macrophage",
+      "Makrofaj",
+      "lenfosit"
+    ],
+    "definition": "Dokulara geçen monositlerden gelişen fagositik hücre; kronik inflamasyonun ana hücresidir.",
+    "category": "Patoloji/İmmünoloji / İnflamasyon hücresi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-caseating-granuloma-tb-001",
+      "infectious-diseases-hiv-aids-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
+  },
+  {
+    "term": "Nötrofil",
+    "aliases": [
+      "Akut inflamasyonun ana hücresi",
+      "neutrophil",
+      "Nötrofil"
+    ],
+    "definition": "Akut bakteriyel inflamasyon ve erken yara iyileşmesinde baskın olan polimorfonükleer lökosittir.",
+    "category": "Patoloji/İmmünoloji / İnflamasyon hücresi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "internal-medicine",
+      "neurology",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "pediatrics-albinism-001",
+      "surg-appendicitis-001"
+    ]
+  },
+  {
+    "term": "Eozinofil",
+    "aliases": [
+      "Parazit/alerji/astım",
+      "eosinophil",
+      "Eozinofil",
+      "Parazit",
+      "alerji",
+      "astım"
+    ],
+    "definition": "Paraziter enfeksiyonlar ve alerjik hastalıklarla ilişkili granülosittir.",
+    "category": "Patoloji/İmmünoloji / İnflamasyon hücresi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "inf-malaria-001",
+      "ped-pyloric-stenosis-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-ipf-uip-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
+  },
+  {
+    "term": "Histamin",
+    "aliases": [
+      "histamine",
+      "Histamin"
+    ],
+    "definition": "Mast hücrelerinden salınan, vazodilatasyon ve damar geçirgenliği artışında erken mediatördür.",
+    "category": "Patoloji/İmmünoloji / Kimyasal mediatör",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Prostaglandin",
+    "aliases": [
+      "Prostaglandin",
+      "PG"
+    ],
+    "definition": "Arachidonik asit metabolitleri; ağrı, ateş, vazodilatasyon ve inflamasyonda rol oynar.",
+    "category": "Patoloji/Farmakoloji / Kimyasal mediatör",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "im-primary-hyperparathyroidism-001",
+      "internal-medicine-pellagra-001",
+      "pediatrics-homocystinuria-001"
+    ]
+  },
+  {
+    "term": "Lökotrien",
+    "aliases": [
+      "Lökotrien",
+      "LT"
+    ],
+    "definition": "Arachidonik asit metabolitleri; bronkokonstriksiyon, damar geçirgenliği ve kemotaksiyle ilişkilidir.",
+    "category": "Patoloji/Farmakoloji / Kimyasal mediatör",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "TNF-α",
+    "aliases": [
+      "tumor necrosis factor alpha",
+      "TNF-α"
+    ],
+    "definition": "Makrofaj kaynaklı proinflamatuvar sitokin; ateş, endotelyal aktivasyon ve kaşeksi/septik şokta rol oynar.",
+    "category": "Patoloji/İmmünoloji / Sitokin",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "IL-1",
+    "aliases": [
+      "interleukin-1",
+      "IL-1"
+    ],
+    "definition": "Ateş, lökosit aktivasyonu ve akut faz yanıtında rol alan proinflamatuvar sitokindir.",
+    "category": "Patoloji/İmmünoloji / Sitokin",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kemotaksi",
+    "aliases": [
+      "chemotaxis",
+      "Kemotaksi"
+    ],
+    "definition": "Lökositlerin kimyasal mediatörlere doğru yönlendirilmiş hareketidir.",
+    "category": "Patoloji / İnflamasyon basamağı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Opsonizasyon",
+    "aliases": [
+      "Opsonizasyon",
+      "opsonization"
+    ],
+    "definition": "Mikroorganizmanın fagositozu kolaylaştıracak moleküllerle kaplanmasıdır; IgG ve C3b önemlidir.",
+    "category": "İmmünoloji/Patoloji / Fagositoz",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Püy",
+    "aliases": [
+      "Püy",
+      "pus"
+    ],
+    "definition": "Nötrofil, nekrotik debris ve sıvıdan oluşan irin materyalidir.",
+    "category": "Patoloji / Akut inflamasyon",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Abse",
+    "aliases": [
+      "abscess",
+      "Abse"
+    ],
+    "definition": "Püy içeren lokalize süpüratif inflamasyon odağıdır.",
+    "category": "Patoloji / Akut inflamasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Primer yara iyileşmesi",
+    "aliases": [
+      "primary intention healing",
+      "Primer yara iyileşmesi"
+    ],
+    "definition": "Temiz, kenarları yaklaşmış yaralarda minimal granülasyon dokusu ve küçük skarla iyileşmedir.",
+    "category": "Patoloji / Doku tamiri",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Sekonder yara iyileşmesi",
+    "aliases": [
+      "Daha fazla granülasyon, inflamasyon, kontraksiyon ve skar",
+      "secondary intention healing",
+      "Sekonder yara iyileşmesi"
+    ],
+    "definition": "Geniş doku kayıplarında daha fazla inflamasyon, granülasyon dokusu, kontraksiyon ve belirgin skarla iyileşmedir.",
+    "category": "Patoloji / Doku tamiri",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Granülasyon dokusu",
+    "aliases": [
+      "Granülasyon dokusu",
+      "granulation tissue"
+    ],
+    "definition": "Anjiyogenez, fibroblast proliferasyonu ve gevşek ekstraselüler matriksten oluşan onarım dokusudur.",
+    "category": "Patoloji / Doku tamiri",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kollajen",
+    "aliases": [
+      "Kollajen",
+      "collagen"
+    ],
+    "definition": "Fibroblastlarca sentezlenen, yara gücü ve skar oluşumunda temel ekstraselüler matriks proteinidir.",
+    "category": "Patoloji/Biyokimya / Doku tamiri",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-scurvy-001"
+    ]
+  },
+  {
+    "term": "Keloid",
+    "aliases": [
+      "Keloid"
+    ],
+    "definition": "Aşırı kollajen birikimiyle yara sınırlarını aşan kabarık skar oluşumudur.",
+    "category": "Patoloji/Dermatoloji / Doku tamiri",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Ödem",
+    "aliases": [
+      "edema",
+      "Ödem"
+    ],
+    "definition": "İnterstisyel doku veya boşluklarda aşırı sıvı birikmesidir.",
+    "category": "Patoloji / Hemodinamik bozukluk",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-pulmonary-edema-001",
+      "cv-tamponade-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-systemic-lupus-erythematosus-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "ped-epiglottitis-001",
+      "ped-kawasaki-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-ipf-uip-001",
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
+  },
+  {
+    "term": "Hiperemi",
+    "aliases": [
+      "hyperemia",
+      "Hiperemi"
+    ],
+    "definition": "Aktif arteriyel kan akımı artışına bağlı dokunun kızarık görünmesidir.",
+    "category": "Patoloji / Hemodinamik bozukluk",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "ped-kawasaki-001",
+      "pediatrics-homocystinuria-001"
+    ]
+  },
+  {
+    "term": "Konjesyon",
+    "aliases": [
+      "congestion",
+      "Konjesyon"
+    ],
+    "definition": "Venöz dönüş azalmasına bağlı pasif kan göllenmesidir; kronik konjesyonda hipoksi ve hemosiderin birikimi olabilir.",
+    "category": "Patoloji / Hemodinamik bozukluk",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "cv-pulmonary-edema-001",
+      "neuro-cvst-001"
+    ]
+  },
+  {
+    "term": "Tromboz",
+    "aliases": [
+      "Virchow triadı",
+      "thrombosis",
+      "Tromboz"
+    ],
+    "definition": "Canlı dolaşım sisteminde kan pıhtısı oluşmasıdır.",
+    "category": "Patoloji/Hematoloji / Hemodinamik bozukluk",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "neurology",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "neuro-cvst-001",
+      "pediatrics-homocystinuria-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
+  },
+  {
+    "term": "Virchow triadı",
+    "aliases": [
+      "endothelial injury",
+      "hypercoagulability",
+      "Virchow triadı",
+      "stasis"
+    ],
+    "definition": "Tromboz oluşumunu açıklayan üçlü: endotelyal hasar, kan akımında staz/türbülans ve hiperkoagülabilitedir.",
+    "category": "Patoloji/Hematoloji / Tromboz mekanizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
+  },
+  {
+    "term": "Emboli",
+    "aliases": [
+      "embolism",
+      "Emboli"
+    ],
+    "definition": "Damar içinde taşınan katı, sıvı veya gaz materyalin uzak bir damarı tıkamasıdır.",
+    "category": "Patoloji / Tromboembolizm",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "cv-pulmonary-edema-001",
+      "inf-endocarditis-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-pe-001",
+      "pulm-pneumonia-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
+  },
+  {
+    "term": "İnfarkt",
+    "aliases": [
+      "infarction",
+      "İnfarkt"
+    ],
+    "definition": "Kan akımı kesilmesine bağlı doku nekrozudur.",
+    "category": "Patoloji / Damar tıkanıklığı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
+  },
+  {
+    "term": "Şok",
+    "aliases": [
+      "Doku hipoperfüzyonu",
+      "shock",
+      "Şok"
+    ],
+    "definition": "Doku hipoperfüzyonu ve hücresel hipoksiyle çoklu organ disfonksiyonuna gidebilen sistemik dolaşım yetmezliğidir.",
+    "category": "Patoloji/Acil / Hemodinamik bozukluk",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-tamponade-001",
+      "im-acute-pancreatitis-001",
+      "inf-meningococcemia-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-sexual-assault-evidence-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
+  },
+  {
+    "term": "DIC",
+    "aliases": [
+      "disseminated intravascular coagulation",
+      "DIC"
+    ],
+    "definition": "Yaygın mikrotrombüs oluşumu ve koagülasyon faktörü tüketimiyle kanama-tromboz birlikteliği oluşturan sendromdur.",
+    "category": "Hematoloji/Patoloji / Koagülopati",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Tip I hipersensitivite",
+    "aliases": [
+      "immediate hypersensitivity",
+      "Tip I hipersensitivite",
+      "IgE + mast hücresi"
+    ],
+    "definition": "IgE aracılı mast hücre degranülasyonu ile dakikalar içinde gelişen alerjik reaksiyondur.",
+    "category": "İmmünoloji / Hipersensitivite",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Tip II hipersensitivite",
+    "aliases": [
+      "antibody-mediated cytotoxic hypersensitivity",
+      "Tip II hipersensitivite",
+      "Hücre yüzeyine IgG/IgM"
+    ],
+    "definition": "IgG/IgM antikorlarının hücre yüzeyi veya matriks antijenlerine bağlanmasıyla hücre hasarı/fonksiyon bozukluğu yapmasıdır.",
+    "category": "İmmünoloji / Hipersensitivite",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Tip III hipersensitivite",
+    "aliases": [
+      "immune complex hypersensitivity",
+      "Tip III hipersensitivite",
+      "İmmün kompleks"
+    ],
+    "definition": "Dolaşan immün komplekslerin dokuda birikerek kompleman ve inflamasyon oluşturmasıdır.",
+    "category": "İmmünoloji / Hipersensitivite",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
+  },
+  {
+    "term": "Tip IV hipersensitivite",
+    "aliases": [
+      "delayed-type hypersensitivity",
+      "Tip IV hipersensitivite",
+      "T hücre gecikmiş yanıt"
+    ],
+    "definition": "T hücre aracılı gecikmiş tip hücresel immün yanıttır.",
+    "category": "İmmünoloji / Hipersensitivite",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Anafilaksi",
+    "aliases": [
+      "anaphylaxis",
+      "Anafilaksi"
+    ],
+    "definition": "Sistemik Tip I hipersensitivite reaksiyonu; hipotansiyon, bronkospazm, ürtiker ve laringeal ödemle seyredebilir.",
+    "category": "Acil/İmmünoloji / Alerji",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-azathioprine-tpmt-toxicity-001"
+    ]
+  },
+  {
+    "term": "Otoimmünite",
+    "aliases": [
+      "autoimmunity",
+      "Otoimmünite"
+    ],
+    "definition": "Self tolerans kaybı sonucu kişinin kendi antijenlerine karşı immün yanıt geliştirmesidir.",
+    "category": "İmmünoloji / Otoimmün hastalık",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Sistemik lupus eritematozus",
+    "aliases": [
+      "Sistemik lupus eritematozus",
+      "Malar raş + anti-dsDNA",
+      "SLE"
+    ],
+    "definition": "Çoklu otoantikor ve immün kompleks aracılı multisistem otoimmün hastalıktır; deri, böbrek, eklem ve hematolojik tutulum yapabilir.",
+    "category": "İmmünoloji/Romatoloji / Otoimmün hastalık",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-hiv-aids-001",
+      "internal-medicine-rheumatoid-arthritis-001",
+      "internal-medicine-sjogren-syndrome-001",
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
+  },
+  {
+    "term": "ANA",
+    "aliases": [
+      "antinuclear antibody",
+      "ANA"
+    ],
+    "definition": "Nükleer antijenlere karşı otoantikor; SLE’de duyarlı fakat özgül olmayan tarama testidir.",
+    "category": "İmmünoloji / Otoantikor",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "orthopedics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "im-dka-001",
+      "inf-endocarditis-001",
+      "inf-malaria-001",
+      "inf-meningococcemia-001",
+      "inf-tuberculosis-001",
+      "internal-medicine-systemic-lupus-erythematosus-001",
+      "ortho-colles-001",
+      "ortho-femoral-neck-001",
+      "ortho-scaphoid-001",
+      "ortho-shoulder-dislocation-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-ipf-uip-001",
+      "pulm-pe-001",
+      "pulm-pneumonia-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-pulmonary-embolism-dvt-001",
+      "surg-appendicitis-001",
+      "surg-cholecystitis-001",
+      "surg-diverticulitis-001",
+      "surg-pneumoperitoneum-001",
+      "surg-sbo-001"
+    ]
+  },
+  {
+    "term": "Anti-dsDNA",
+    "aliases": [
+      "anti-double-stranded DNA antibody",
+      "Anti-dsDNA"
+    ],
+    "definition": "SLE için özgül kabul edilen, lupus nefriti aktivitesiyle ilişkili otoantikordur.",
+    "category": "İmmünoloji / Otoantikor",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
+  },
+  {
+    "term": "Malar döküntü",
+    "aliases": [
+      "butterfly rash",
+      "Malar döküntü"
+    ],
+    "definition": "SLE’de yanak ve burun köprüsünü tutan kelebek tarzı fotosensitif döküntüdür.",
+    "category": "Dermatoloji/İmmünoloji / SLE bulgusu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-sjogren-syndrome-001",
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
+  },
+  {
+    "term": "Sjögren sendromu",
+    "aliases": [
+      "Kuru göz + kuru ağız",
+      "Sjögren sendromu",
+      "Sjogren syndrome"
+    ],
+    "definition": "Ekzokrin bezleri hedefleyen otoimmün hastalık; kuru göz ve kuru ağızla karakterizedir.",
+    "category": "İmmünoloji/Romatoloji / Otoimmün hastalık",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-sjogren-syndrome-001",
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
+  },
+  {
+    "term": "Anti-Ro/SSA",
+    "aliases": [
+      "SSA antibody",
+      "Anti-Ro/SSA"
+    ],
+    "definition": "Sjögren ve SLE ile ilişkili otoantikordur; neonatal lupus ve konjenital kalp bloğu ile de ilişkilidir.",
+    "category": "İmmünoloji / Otoantikor",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-sjogren-syndrome-001"
+    ]
+  },
+  {
+    "term": "Anti-La/SSB",
+    "aliases": [
+      "SSB antibody",
+      "Anti-La/SSB"
+    ],
+    "definition": "Sjögren sendromunda görülebilen otoantikordur.",
+    "category": "İmmünoloji / Otoantikor",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-sjogren-syndrome-001"
+    ]
+  },
+  {
+    "term": "Romatoid artrit",
+    "aliases": [
+      "Simetrik MCP/PIP + sabah tutukluğu",
+      "Romatoid artrit",
+      "RA"
+    ],
+    "definition": "Simetrik küçük eklem artriti, sabah tutukluğu ve pannus oluşumu ile seyreden kronik otoimmün sinovit hastalığıdır.",
+    "category": "İmmünoloji/Romatoloji / Otoimmün hastalık",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-rheumatoid-arthritis-001",
+      "internal-medicine-sjogren-syndrome-001",
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
+  },
+  {
+    "term": "Pannus",
+    "aliases": [
+      "Pannus"
+    ],
+    "definition": "RA’da sinovyumun inflamatuvar proliferasyonu sonucu kıkırdak ve kemiği erozyona uğratan granülasyon dokusudur.",
+    "category": "Patoloji/İmmünoloji / RA patogenezi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-rheumatoid-arthritis-001"
+    ]
+  },
+  {
+    "term": "Anti-CCP",
+    "aliases": [
+      "anti-cyclic citrullinated peptide antibody",
+      "Anti-CCP"
+    ],
+    "definition": "Romatoid artrit için görece özgül otoantikordur ve eroziv hastalıkla ilişkilidir.",
+    "category": "İmmünoloji / Otoantikor",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-rheumatoid-arthritis-001",
+      "pulm-ipf-uip-001"
+    ]
+  },
+  {
+    "term": "Romatoid faktör",
+    "aliases": [
+      "Romatoid faktör",
+      "RF"
+    ],
+    "definition": "IgG’nin Fc kısmına karşı gelişen otoantikordur; RA’da görülebilir ancak özgüllüğü sınırlıdır.",
+    "category": "İmmünoloji / Otoantikor",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-rheumatoid-arthritis-001",
+      "pulm-ipf-uip-001"
+    ]
+  },
+  {
+    "term": "Sistemik skleroz",
+    "aliases": [
+      "Sistemik skleroz",
+      "scleroderma"
+    ],
+    "definition": "Fibrozis, vasküler hasar ve otoimmüniteyle seyreden; deri ve iç organ tutulumu yapabilen hastalıktır.",
+    "category": "İmmünoloji/Romatoloji / Otoimmün hastalık",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-systemic-lupus-erythematosus-001"
+    ]
+  },
+  {
+    "term": "Myastenia gravis",
+    "aliases": [
+      "Yorulmakla artan ptozis/diplopi",
+      "Myastenia gravis",
+      "MG"
+    ],
+    "definition": "Nöromüsküler kavşakta asetilkolin reseptörlerine karşı antikorlarla fluktuasyon gösteren kas güçsüzlüğü yapan hastalıktır.",
+    "category": "Nöroloji/İmmünoloji / Otoimmün hastalık",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "general-surgery",
+      "infectious-diseases",
+      "internal-medicine",
+      "neurology",
+      "orthopedics",
+      "pediatrics",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001",
+      "cv-anterior-stemi-001",
+      "cv-tamponade-001",
+      "im-acute-pancreatitis-001",
+      "im-dka-001",
+      "im-primary-hyperparathyroidism-001",
+      "inf-malaria-001",
+      "inf-meningococcemia-001",
+      "infectious-diseases-septic-shock-001",
+      "internal-medicine-acute-radiation-syndrome-001",
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "internal-medicine-familial-hypercholesterolemia-001",
+      "internal-medicine-oxidative-stress-injury-001",
+      "internal-medicine-pellagra-001",
+      "internal-medicine-scurvy-001",
+      "internal-medicine-systemic-lupus-erythematosus-001",
+      "internal-medicine-tangier-disease-001",
+      "neuro-mca-stroke-001",
+      "neurology-liquefactive-necrosis-brain-001",
+      "ortho-femoral-neck-001",
+      "ped-epiglottitis-001",
+      "ped-intussusception-001",
+      "ped-kawasaki-001",
+      "pediatrics-classic-galactosemia-001",
+      "pediatrics-hereditary-fructose-intolerance-001",
+      "pediatrics-maple-syrup-urine-disease-001",
+      "pediatrics-phenylketonuria-001",
+      "pediatrics-von-gierke-gsd-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-pneumonia-001",
+      "surg-appendicitis-001",
+      "surg-cholecystitis-001",
+      "surg-diverticulitis-001",
+      "surg-pneumoperitoneum-001",
+      "surg-sbo-001"
+    ]
+  },
+  {
+    "term": "IgG4 ilişkili hastalık",
+    "aliases": [
+      "IgG4 ilişkili hastalık",
+      "IgG4-related disease"
+    ],
+    "definition": "IgG4 pozitif plazma hücresi infiltrasyonu ve fibrozisle çeşitli organlarda kitle benzeri tutulum yapabilen immün aracılı hastalıktır.",
+    "category": "İmmünoloji/Patoloji / Fibroinflamatuvar hastalık",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "HIV",
+    "aliases": [
+      "CD4 düşüklüğü + fırsatçı enfeksiyon",
+      "human immunodeficiency virus",
+      "HIV/AIDS",
+      "AIDS",
+      "HIV"
+    ],
+    "definition": "CD4 T lenfositleri hedefleyen retrovirüstür; ilerleyici hücresel immün yetmezliğe ve AIDS’e neden olur.",
+    "category": "İmmünoloji/Enfeksiyon / İmmün yetmezlik",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "inf-tuberculosis-001",
+      "infectious-diseases-hiv-aids-001",
+      "internal-medicine-sexual-assault-evidence-001"
+    ]
+  },
+  {
+    "term": "CD4 T lenfosit",
+    "aliases": [
+      "CD4 T lenfosit",
+      "helper T cell"
+    ],
+    "definition": "Adaptif immün yanıtı düzenleyen yardımcı T hücresidir; HIV enfeksiyonunda temel hedef hücredir.",
+    "category": "İmmünoloji / Hücresel immünite",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-hiv-aids-001"
+    ]
+  },
+  {
+    "term": "gp120",
+    "aliases": [
+      "HIV-CD4 bağlanması",
+      "HIV gp120",
+      "gp120"
+    ],
+    "definition": "HIV’in CD4 ve koreseptörlere bağlanmasında rol alan zarf glikoproteinidir.",
+    "category": "İmmünoloji/Viroloji / HIV",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-hiv-aids-001"
+    ]
+  },
+  {
+    "term": "gp41",
+    "aliases": [
+      "HIV gp41",
+      "gp41"
+    ],
+    "definition": "HIV zarfında membran füzyonunda rol alan glikoproteindir.",
+    "category": "İmmünoloji/Viroloji / HIV",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-hiv-aids-001"
+    ]
+  },
+  {
+    "term": "p24 antijeni",
+    "aliases": [
+      "p24 antijeni",
+      "HIV p24"
+    ],
+    "definition": "HIV kapsid proteinidir; erken enfeksiyon tanısında antijen testlerinde kullanılır.",
+    "category": "İmmünoloji/Viroloji / HIV tanısı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Fırsatçı enfeksiyon",
+    "aliases": [
+      "opportunistic infection",
+      "Fırsatçı enfeksiyon"
+    ],
+    "definition": "İmmün yetmezlikte normalde sınırlı patojenlerin ağır hastalık yapmasıdır.",
+    "category": "İmmünoloji/Enfeksiyon / İmmün yetmezlik",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "infectious-diseases"
+    ],
+    "relatedCaseIds": [
+      "infectious-diseases-hiv-aids-001"
+    ]
+  },
+  {
+    "term": "Adli olgu",
+    "aliases": [
+      "forensic case",
+      "Adli olgu"
+    ],
+    "definition": "Hekimin mesleki uygulama sırasında hukuki bildirim, rapor veya adli süreç gerektiren tıbbi olgudur.",
+    "category": "Adli tıp / Adli yaklaşım",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Adli rapor",
+    "aliases": [
+      "forensic medical report",
+      "Adli rapor"
+    ],
+    "definition": "Adli sürece esas olmak üzere hekim tarafından düzenlenen tıbbi-hukuki belgedir.",
+    "category": "Adli tıp / Raporlama",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-sexual-assault-evidence-001"
+    ]
+  },
+  {
+    "term": "İlliyet bağı",
+    "aliases": [
+      "İlliyet bağı",
+      "causality"
+    ],
+    "definition": "Bir eylem/ihmal ile ortaya çıkan zarar veya ölüm arasında neden-sonuç ilişkisidir.",
+    "category": "Adli tıp / Hukuki değerlendirme",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
+  },
+  {
+    "term": "Malpraktis",
+    "aliases": [
+      "Hekim kusuru + zarar",
+      "medical malpractice",
+      "Malpraktis"
+    ],
+    "definition": "Hekimin kusurlu davranışı sonucu hastada zarar oluşmasıyla cezai, hukuki, idari veya disiplin sorumluluğu doğurabilen durumdur.",
+    "category": "Adli tıp / Hekim sorumluluğu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Aydınlatılmış onam",
+    "aliases": [
+      "Hastanın bilgilendirilmiş kabulü",
+      "Aydınlatılmış onam",
+      "informed consent"
+    ],
+    "definition": "Hastanın yapılacak tıbbi uygulamayı anlayarak özgür iradesiyle kabul etmesini sağlayan hukuki-etik süreçtir.",
+    "category": "Adli tıp/Etik / Hasta hakları",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Ölü muayenesi",
+    "aliases": [
+      "external death examination",
+      "Ölü muayenesi"
+    ],
+    "definition": "Ölümün gerçekleşip gerçekleşmediği, ölüm zamanı bulguları ve adli şüphe açısından dıştan yapılan muayenedir.",
+    "category": "Adli tıp / Ölüm incelemesi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Otopsi",
+    "aliases": [
+      "autopsy",
+      "Otopsi"
+    ],
+    "definition": "Ölüm nedeni, mekanizması ve hukuki soruların aydınlatılması için cesedin sistematik iç/dış incelemesidir.",
+    "category": "Adli tıp / Ölüm incelemesi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Livor mortis",
+    "aliases": [
+      "Yerçekimine bağlı mor lekeler",
+      "postmortem lividity",
+      "Livor mortis",
+      "ölü lekesi"
+    ],
+    "definition": "Ölümden sonra kanın yerçekimiyle bağımlı bölgelerde birikmesiyle oluşan morumsu renk değişikliğidir.",
+    "category": "Adli tıp / Ölüm belirtileri",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Rigor mortis",
+    "aliases": [
+      "ATP tükenmesi sonrası kas sertliği",
+      "Rigor mortis",
+      "ölü katılığı"
+    ],
+    "definition": "Ölüm sonrası ATP tükenmesine bağlı kasların sertleşmesidir.",
+    "category": "Adli tıp / Ölüm belirtileri",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Algor mortis",
+    "aliases": [
+      "Algor mortis",
+      "ölü soğuması"
+    ],
+    "definition": "Ölüm sonrası vücut sıcaklığının çevre koşullarına bağlı olarak düşmesidir.",
+    "category": "Adli tıp / Ölüm belirtileri",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Ekimoz",
+    "aliases": [
+      "ecchymosis",
+      "Ekimoz"
+    ],
+    "definition": "Künt travmaya bağlı deri altı kanama alanıdır; rengi zamanla değişebilir.",
+    "category": "Adli tıp / Yara tanımı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-azathioprine-tpmt-toxicity-001",
+      "internal-medicine-sexual-assault-evidence-001"
+    ]
+  },
+  {
+    "term": "Abrazyon",
+    "aliases": [
+      "Abrazyon",
+      "abrasion",
+      "sıyrık"
+    ],
+    "definition": "Epidermisin yüzeyel mekanik sürtünmeyle kaybıdır.",
+    "category": "Adli tıp / Yara tanımı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Laserasyon",
+    "aliases": [
+      "Düzensiz kenar + doku köprüsü",
+      "Laserasyon",
+      "laceration"
+    ],
+    "definition": "Künt travmayla derinin düzensiz yırtılmasıdır; doku köprüleri görülebilir.",
+    "category": "Adli tıp / Yara tanımı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kesici alet yarası",
+    "aliases": [
+      "Boy derinlikten fazla, düzgün kenar",
+      "Kesici alet yarası",
+      "incised wound"
+    ],
+    "definition": "Keskin kenarlı aletle oluşan, kenarları düzgün ve boyu derinliğinden fazla olabilen yaradır.",
+    "category": "Adli tıp / Yara tanımı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kesici-delici alet yarası",
+    "aliases": [
+      "Kesici-delici alet yarası",
+      "Derinlik boydan fazla",
+      "stab wound"
+    ],
+    "definition": "Sivri/keskin aletle oluşan, derinliği boyundan fazla olabilen penetran yaradır.",
+    "category": "Adli tıp / Yara tanımı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Ateşli silah giriş yarası",
+    "aliases": [
+      "Ateşli silah giriş yarası",
+      "gunshot entry wound"
+    ],
+    "definition": "Mermi giriş yerinde abrazyon halkası, is, tatuaj veya yanık gibi mesafeye bağlı bulgular bulunabilir.",
+    "category": "Adli tıp / Ateşli silah yarası",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Asfiksi",
+    "aliases": [
+      "asphyxia",
+      "Asfiksi"
+    ],
+    "definition": "Oksijenlenmenin bozulmasına bağlı hipoksi ve ölüm gelişebilen durumlar grubudur.",
+    "category": "Adli tıp/Acil / Asfiksili ölüm",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "pulmonology-near-hanging-asphyxia-001"
+    ]
+  },
+  {
+    "term": "Strangülasyon",
+    "aliases": [
+      "Strangülasyon",
+      "strangulation"
+    ],
+    "definition": "Boynun dış kuvvetle sıkıştırılması sonucu hava yolu/damar basısı ve asfiksi oluşmasıdır.",
+    "category": "Adli tıp / Asfiksili ölüm",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "general-surgery",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "surg-sbo-001"
+    ]
+  },
+  {
+    "term": "Çocuk istismarı",
+    "aliases": [
+      "Öyküyle uyumsuz yara",
+      "Çocuk istismarı",
+      "child abuse"
+    ],
+    "definition": "Çocuğun fiziksel, cinsel, duygusal veya ihmal yoluyla zarar görmesidir; öyküyle uyumsuz yaralanma çok önemlidir.",
+    "category": "Adli tıp/Pediatri / İstismar",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
+  },
+  {
+    "term": "Sarsılmış bebek sendromu",
+    "aliases": [
+      "Subdural + retinal kanama",
+      "Sarsılmış bebek sendromu",
+      "shaken baby syndrome",
+      "abusive head trauma"
+    ],
+    "definition": "Bebekte sarsılma sonucu subdural kanama, retinal kanama ve diffüz aksonal hasar gelişebilen istismar tablosudur.",
+    "category": "Adli tıp/Pediatri / İstismar",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
+  },
+  {
+    "term": "Subdural kanama",
+    "aliases": [
+      "subdural hemorrhage",
+      "Subdural kanama"
+    ],
+    "definition": "Dura ile araknoid arasında kanama; sarsılmış bebek ve travmada görülebilir.",
+    "category": "Adli tıp/Nöroloji / Travma bulgusu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
+  },
+  {
+    "term": "Retinal kanama",
+    "aliases": [
+      "retinal hemorrhage",
+      "Retinal kanama"
+    ],
+    "definition": "Retinada kanama; sarsılmış bebek sendromunda destekleyici önemli bulgudur.",
+    "category": "Adli tıp/Göz / İstismar bulgusu",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
+  },
+  {
+    "term": "Diffüz aksonal hasar",
+    "aliases": [
+      "diffuse axonal injury",
+      "Diffüz aksonal hasar"
+    ],
+    "definition": "Akselerasyon-deselerasyon kuvvetleriyle aksonların yaygın hasarıdır; ağır kafa travması ve sarsılma ile ilişkilidir.",
+    "category": "Adli tıp/Nöroloji / Travma mekanizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "neurology"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Cinsel saldırı",
+    "aliases": [
+      "Cinsel saldırı",
+      "sexual assault"
+    ],
+    "definition": "Kişinin rızası dışında cinsel davranışa maruz kalmasıdır; tıbbi stabilizasyon, delil toplama ve bildirim gerektirir.",
+    "category": "Adli tıp / Cinsel suçlar",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-sexual-assault-evidence-001"
+    ]
+  },
+  {
+    "term": "Delil zinciri",
+    "aliases": [
+      "Adli örnek kimden-kime kayıt",
+      "chain of custody",
+      "Delil zinciri"
+    ],
+    "definition": "Adli örneklerin kimden, ne zaman, nasıl alınıp kime teslim edildiğinin kesintisiz kayıt altına alınmasıdır.",
+    "category": "Adli tıp / Delil yönetimi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-sexual-assault-evidence-001",
+      "pediatrics-shaken-baby-syndrome-001"
+    ]
+  },
+  {
+    "term": "Adli toksikoloji",
+    "aliases": [
+      "forensic toxicology",
+      "Adli toksikoloji"
+    ],
+    "definition": "Zehir, alkol, ilaç ve uyuşturucu maddelerin adli örneklerde incelenmesiyle ilgilenen alandır.",
+    "category": "Adli tıp / Laboratuvar",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "İstanbul Protokolü",
+    "aliases": [
+      "İstanbul Protokolü",
+      "Istanbul Protocol"
+    ],
+    "definition": "İşkence ve kötü muamele iddialarının tıbbi-hukuki değerlendirilmesi için uluslararası rehber niteliğinde belgedir.",
+    "category": "Adli tıp/İnsan hakları / Kötü muamele",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Farmakokinetik",
+    "aliases": [
+      "pharmacokinetics",
+      "Farmakokinetik",
+      "ADME"
+    ],
+    "definition": "İlacın vücutta absorbsiyon, dağılım, metabolizma ve eliminasyon süreçlerini inceler.",
+    "category": "Farmakoloji / Temel kavram",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Farmakodinamik",
+    "aliases": [
+      "pharmacodynamics",
+      "Farmakodinamik"
+    ],
+    "definition": "İlacın reseptör, hücre veya sistem üzerindeki etkilerini ve etki mekanizmasını inceler.",
+    "category": "Farmakoloji / Temel kavram",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Biyoyararlanım",
+    "aliases": [
+      "bioavailability",
+      "Biyoyararlanım",
+      "F"
+    ],
+    "definition": "Uygulanan ilacın sistemik dolaşıma değişmeden ulaşan fraksiyonudur.",
+    "category": "Farmakoloji / Farmakokinetik",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "İlk geçiş metabolizması",
+    "aliases": [
+      "İlk geçiş metabolizması",
+      "first-pass metabolism"
+    ],
+    "definition": "Oral alınan ilacın sistemik dolaşıma ulaşmadan bağırsak/karaciğerde metabolize olmasıdır.",
+    "category": "Farmakoloji / Absorpsiyon/metabolizma",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "pediatrics"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Dağılım hacmi",
+    "aliases": [
+      "volume of distribution",
+      "Dağılım hacmi",
+      "Vd"
+    ],
+    "definition": "İlacın plazma dışı dokulara dağılım derecesini gösteren görünür hacim parametresidir.",
+    "category": "Farmakoloji / Farmakokinetik",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Klerens",
+    "aliases": [
+      "clearance",
+      "Klerens",
+      "CL"
+    ],
+    "definition": "Bir ilacın birim zamanda plazmadan temizlenen sanal hacmini gösterir.",
+    "category": "Farmakoloji / Eliminasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Yarı ömür",
+    "aliases": [
+      "Yarı ömür",
+      "half-life",
+      "t1/2"
+    ],
+    "definition": "Plazma ilaç konsantrasyonunun yarıya inmesi için geçen süredir.",
+    "category": "Farmakoloji / Eliminasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Sitokrom P450",
+    "aliases": [
+      "Sitokrom P450",
+      "CYP450"
+    ],
+    "definition": "Karaciğerde faz I ilaç metabolizmasında önemli oksidasyon enzim ailesidir.",
+    "category": "Farmakoloji/Biyokimya / Biyotransformasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Otozomal dominant kalıtım",
+    "aliases": [
+      "Otozomal dominant kalıtım",
+      "AD inheritance"
+    ],
+    "definition": "Tek mutant alelin hastalık oluşturabildiği, dikey soy geçişi gösteren kalıtım paternidir.",
+    "category": "Genetik / Kalıtım",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "internal-medicine-familial-hypercholesterolemia-001"
+    ]
+  },
+  {
+    "term": "Otozomal resesif kalıtım",
+    "aliases": [
+      "Otozomal resesif kalıtım",
+      "AR inheritance"
+    ],
+    "definition": "Hastalığın ortaya çıkması için iki mutant alel gereken; akraba evliliğiyle riski artan kalıtım paternidir.",
+    "category": "Genetik / Kalıtım",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "X'e bağlı kalıtım",
+    "aliases": [
+      "X-linked inheritance",
+      "X'e bağlı kalıtım"
+    ],
+    "definition": "X kromozomu üzerindeki genlerle taşınan, erkeklerde daha belirgin olabilen kalıtım paternidir.",
+    "category": "Genetik / Kalıtım",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-bruton-agammaglobulinemia-001"
+    ]
+  },
+  {
+    "term": "Radyofarmasötik",
+    "aliases": [
+      "radiopharmaceutical",
+      "Radyofarmasötik",
+      "Nükleer tıp"
+    ],
+    "definition": "Tanı veya tedavi amacıyla kullanılan radyoaktif izotop içeren farmasötik preparattır.",
+    "category": "Nükleer tıp / Temel kavram",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "PET",
+    "aliases": [
+      "positron emission tomography",
+      "PET"
+    ],
+    "definition": "Pozitron yayıcı radyofarmasötiklerle metabolik/füzyon görüntüleme sağlayan nükleer tıp yöntemidir.",
+    "category": "Nükleer tıp/Radyoloji / Görüntüleme",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "SPECT",
+    "aliases": [
+      "single-photon emission computed tomography",
+      "SPECT"
+    ],
+    "definition": "Gama yayıcı radyofarmasötiklerle tomografik nükleer görüntüleme yöntemidir.",
+    "category": "Nükleer tıp / Görüntüleme",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kontrast madde",
+    "aliases": [
+      "Kontrast madde",
+      "contrast agent"
+    ],
+    "definition": "Radyolojik görüntülemede anatomik/ vasküler yapıların görünürlüğünü artıran maddedir.",
+    "category": "Radyoloji / Görüntüleme",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Barrett özofagusu",
+    "aliases": [
+      "Barrett özofagusu",
+      "Barrett esophagus"
+    ],
+    "definition": "Distal özofagusta kronik reflüye bağlı skuamöz epitelin intestinal tip kolumnar epitele metaplazisidir.",
+    "category": "Patoloji/Gastroenteroloji / Metaplazi",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Mallory-Denk cisimciği",
+    "aliases": [
+      "Mallory-Denk cisimciği",
+      "Mallory body"
+    ],
+    "definition": "Alkolik karaciğer hastalığında hepatositlerde sitokeratin ara filament birikimleridir.",
+    "category": "Patoloji / Hücre içi birikim",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Councilman cisimciği",
+    "aliases": [
+      "Councilman cisimciği",
+      "apoptotic hepatocyte"
+    ],
+    "definition": "Viral hepatitte görülebilen apoptotik hepatositlerdir.",
+    "category": "Patoloji / Apoptoz örneği",
+    "priority": "Orta",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Reperfüzyon hasarı",
+    "aliases": [
+      "ischemia-reperfusion injury",
+      "Reperfüzyon hasarı"
+    ],
+    "definition": "İskemik dokuya kan akımı geri geldiğinde ROS ve inflamasyon artışıyla hasarın ağırlaşmasıdır.",
+    "category": "Patoloji/Biyokimya / Hücre hasarı",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kalsiyum artışı",
+    "aliases": [
+      "intracellular Ca2+ increase",
+      "Kalsiyum artışı"
+    ],
+    "definition": "Hücre zedelenmesinde fosfolipaz, proteaz, endonükleaz ve ATPaz aktivasyonuna yol açarak hasarı artırır.",
+    "category": "Patoloji / Hücre hasarı mekanizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "ATP azalması",
+    "aliases": [
+      "ATP depletion",
+      "ATP azalması"
+    ],
+    "definition": "Hipoksi/iskemi sırasında enerji bağımlı pompaların bozulmasına, hücresel şişmeye ve ağır hasarda nekroza neden olur.",
+    "category": "Patoloji / Hücre hasarı mekanizması",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Tetanik kasılma",
+    "aliases": [
+      "Alternatif akım + kaynaktan ayrılamama",
+      "Tetanik kasılma"
+    ],
+    "definition": "AC istemsiz kasılma yaparak temas süresini uzatır. AC, DC’den daha tehlikeli.",
+    "category": "Biyofizik/Acil",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "internal-medicine"
+    ],
+    "relatedCaseIds": [
+      "cardiovascular-electrical-injury-arrhythmia-001"
+    ]
+  },
+  {
+    "term": "Muhtemel kanserojen sınıflaması",
+    "aliases": [
+      "Muhtemel kanserojen sınıflaması",
+      "ELF-MF + DSÖ 2B"
+    ],
+    "definition": "Çok düşük frekanslı manyetik alanlarla ilgili sınav vurgusudur. 2B ifadesini yakala.",
+    "category": "Biyofizik",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Radyasyon kazası şüphesi",
+    "aliases": [
+      "Isı/kimyasal/elektrik olmadan yanık",
+      "Radyasyon kazası şüphesi"
+    ],
+    "definition": "Radyasyon dermatiti dış hasar kaynağı olmadan gelişebilir. Cilt yanığı için radyasyon maruziyeti sorgula.",
+    "category": "Radyasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Kozmik radyasyon artışı",
+    "aliases": [
+      "Kozmik radyasyon artışı",
+      "Pilot yüksek irtifa"
+    ],
+    "definition": "Atmosfer koruması azaldıkça kozmik radyasyon artar. Pilot/dağ zirvesi deniz seviyesinden fazla maruz kalır.",
+    "category": "Radyasyon",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Süperoksit oluşumu",
+    "aliases": [
+      "Oksijene tek elektron transferi",
+      "Süperoksit oluşumu"
+    ],
+    "definition": "Spin kısıtlaması aşılarak daha reaktif ROS oluşur. O2 + e− = O2•−.",
+    "category": "Biyokimya",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Lipid peroksidasyonu",
+    "aliases": [
+      "Lipid peroksidasyonu",
+      "MDA / 4-HNE"
+    ],
+    "definition": "Serbest radikalin lipitler üzerindeki ürünleridir. Lipit hasarı sorusunda MDA/4-HNE.",
+    "category": "Biyokimya",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "GALT eksikliği",
+    "aliases": [
+      "Galaktozemi + süt sonrası kusma/sarılık",
+      "GALT eksikliği"
+    ],
+    "definition": "Galaktoz-1-fosfat birikimi karaciğer ve lens toksisitesi yapar. Yenidoğan + süt + katarakt/sepsis = galaktozemi.",
+    "category": "Biyokimya",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-classic-galactosemia-001"
+    ]
+  },
+  {
+    "term": "Klasik PKU",
+    "aliases": [
+      "PAH eksikliği",
+      "Klasik PKU"
+    ],
+    "definition": "Fenilalanin tirozin dönüşümü bozulur. Klasik PKU enzim spotu.",
+    "category": "Biyokimya",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "pediatrics"
+    ],
+    "relatedCaseIds": [
+      "pediatrics-phenylketonuria-001"
+    ]
+  },
+  {
+    "term": "Atipik PKU",
+    "aliases": [
+      "DHPR/BH4 defekti",
+      "Atipik PKU"
+    ],
+    "definition": "Fenilalanin artar, nörotransmitter sentezi de etkilenir. Serotonin/katekolamin sentezinde azalma beklenebilir.",
+    "category": "Biyokimya",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "OTC eksikliği",
+    "aliases": [
+      "Orotik asit artışı + hiperamonyemi",
+      "OTC eksikliği"
+    ],
+    "definition": "X’e bağlı üre döngüsü bozukluğu. Karbamoil fosfat pirimidin yoluna kaçar.",
+    "category": "Biyokimya",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Wernicke ensefalopatisi / B1 eksikliği",
+    "aliases": [
+      "Wernicke ensefalopatisi / B1 eksikliği",
+      "Konfüzyon-oftalmopleji-ataksi",
+      "Wernicke ensefalopatisi",
+      "B1 eksikliği"
+    ],
+    "definition": "Tiamin eksikliği acil replasman gerektirir. Alkolizmde glukozdan önce tiamin verilir.",
+    "category": "Vitamin",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "B12 eksikliği",
+    "aliases": [
+      "Megaloblastik anemi + nörolojik bulgu",
+      "B12 eksikliği"
+    ],
+    "definition": "DNA sentezi ve miyelin metabolizması etkilenir. Metilmalonik asit artar.",
+    "category": "Vitamin",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine",
+      "neurology"
+    ],
+    "relatedCaseIds": [
+      "neuro-ms-001"
+    ]
+  },
+  {
+    "term": "Vitamin K",
+    "aliases": [
+      "II, VII, IX, X + protein C/S",
+      "Vitamin K"
+    ],
+    "definition": "Gama karboksilasyon için gereklidir. Warfarin/Vit K bağlantısı.",
+    "category": "Vitamin",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Makrofaj ve granülasyon dokusu başlangıcı",
+    "aliases": [
+      "Makrofaj ve granülasyon dokusu başlangıcı",
+      "3. gün yara iyileşmesi"
+    ],
+    "definition": "Nötrofiller yerini makrofajlara bırakır. 5. veya 7. gün başlangıcı tuzaktır.",
+    "category": "Patoloji",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Pulmoner emboli",
+    "aliases": [
+      "DVT sonrası ani dispne",
+      "Pulmoner emboli"
+    ],
+    "definition": "Venöz trombüs akciğere embolize olur. DVT → PE zinciri.",
+    "category": "Patoloji",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "cardiovascular",
+      "infectious-diseases",
+      "internal-medicine",
+      "pulmonology"
+    ],
+    "relatedCaseIds": [
+      "cv-anterior-stemi-001",
+      "cv-pulmonary-edema-001",
+      "inf-endocarditis-001",
+      "pulm-copd-exacerbation-001",
+      "pulm-pe-001",
+      "pulm-pneumonia-001",
+      "pulm-pneumothorax-001",
+      "pulmonology-pulmonary-embolism-dvt-001"
+    ]
+  },
+  {
+    "term": "Oral biyoyararlanım düşük",
+    "aliases": [
+      "Oral biyoyararlanım düşük",
+      "First-pass yüksek"
+    ],
+    "definition": "Karaciğer/bağırsakta ilk geçiş metabolizması. IV biyoyararlanım %100.",
+    "category": "Farmakoloji",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Doku dağılımı fazla",
+    "aliases": [
+      "Doku dağılımı fazla",
+      "Vd yüksek"
+    ],
+    "definition": "İlacın plazma dışına dağıldığını düşündürür. Plazma proteinine sıkı bağlı ilaçta Vd düşük olabilir.",
+    "category": "Farmakoloji",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Steady state",
+    "aliases": [
+      "4-5 yarı ömür",
+      "Steady state"
+    ],
+    "definition": "Sabit plazma düzeyine ulaşma süresidir. Yarı ömür doz aralığı ile ilişkili.",
+    "category": "Farmakoloji",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
+  },
+  {
+    "term": "Metabolik aktivite görüntüleme",
+    "aliases": [
+      "Metabolik aktivite görüntüleme",
+      "FDG-PET"
+    ],
+    "definition": "Glukoz analoguyla yüksek metabolik aktivite saptanır. Onkolojik görüntülemede sık kullanılır.",
+    "category": "Nükleer tıp",
+    "priority": "Yüksek",
+    "mode": teachingOnly,
+    "relatedBranches": [
+      "internal-medicine"
+    ],
+    "relatedCaseIds": []
   }
 ];
 

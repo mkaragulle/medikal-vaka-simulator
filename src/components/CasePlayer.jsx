@@ -339,7 +339,7 @@ function buildHemodynamicSummary(vitals = {}) {
 
   return notes.length
     ? `${notes[0].charAt(0).toLocaleUpperCase('tr') + notes[0].slice(1)}; ${notes.slice(1).join(', ')}.`
-    : 'Vital bulgular klinik bağlamla birlikte yorumlanmalıdır.';
+    : 'Vaka verisinde ek vital yorumu girilmemiştir.';
 }
 
 function expandExamFinding(finding = '') {

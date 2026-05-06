@@ -58,8 +58,60 @@ function getLabStatusTone(note = '') {
   return 'neutral';
 }
 
+function normalizeResultRow(row) {
+  return Array.isArray(row)
+    ? { parameter: row[0], value: row[1], reference: row[2], note: row[3] }
+    : {
+      parameter: row.parameter,
+      value: row.value,
+      reference: row.reference,
+      note: row.note || row.interpretation,
+    };
+}
+
+function isLongResultValue(value = '') {
+  const text = String(value || '').trim();
+  return text.length > 64 || text.split(/\s+/).length > 8;
+}
+
 function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true }) {
   if (!rows.length) return null;
+
+  const normalizedRows = rows.map(normalizeResultRow);
+  const useWideResultLayout = hardMode || normalizedRows.some((row) => isLongResultValue(row.value));
+
+  if (useWideResultLayout) {
+    return (
+      <div className="table-wrap lab-table-wrap ordered-result-table-wrap inline-result-table-wrap compact-result-table-wrap">
+        <table className="lab-table ordered-result-table inline-result-table compact-result-table">
+          <thead>
+            <tr>
+              <th>Parametre</th>
+              <th>Sonuç</th>
+            </tr>
+          </thead>
+          <tbody>
+            {normalizedRows.map(({ parameter, value, note }, index) => {
+              const tone = getLabStatusTone(note || value);
+              return (
+                <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
+                  <td>
+                    <div className="lab-parameter-cell">
+                      <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} /></strong>
+                    </div>
+                  </td>
+                  <td>
+                    <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} /></span>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   return (
     <div className="table-wrap lab-table-wrap ordered-result-table-wrap inline-result-table-wrap">
       <table className="lab-table ordered-result-table inline-result-table">
@@ -67,15 +119,12 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true }) {
           <tr>
             <th>Parametre</th>
             <th>Sonuç</th>
-            {!hardMode ? <th>Referans</th> : null}
-            {!hardMode ? <th>Durum</th> : null}
+            <th>Referans</th>
+            <th>Durum</th>
           </tr>
         </thead>
         <tbody>
-          {rows.map((row, index) => {
-            const [parameter, value, reference, note] = Array.isArray(row)
-              ? row
-              : [row.parameter, row.value, row.reference, row.note || row.interpretation];
+          {normalizedRows.map(({ parameter, value, reference, note }, index) => {
             const tone = getLabStatusTone(note);
             return (
               <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
@@ -87,14 +136,12 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true }) {
                 <td>
                   <span className="lab-value-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} /></span>
                 </td>
-                {!hardMode ? <td><span className="lab-reference-text">{reference || '—'}</span></td> : null}
-                {!hardMode ? (
-                  <td>
-                    <span className={`lab-status-pill ${tone}`}>
-                      <GlossaryText text={String(note || '—')} enabled={glossaryEnabled} />
-                    </span>
-                  </td>
-                ) : null}
+                <td><span className="lab-reference-text">{reference || '—'}</span></td>
+                <td>
+                  <span className={`lab-status-pill ${tone}`}>
+                    <GlossaryText text={String(note || '—')} enabled={glossaryEnabled} />
+                  </span>
+                </td>
               </tr>
             );
           })}

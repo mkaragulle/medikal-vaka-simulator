@@ -20,7 +20,7 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Hastanın anksiyöz ve diaforetik olduğu izleniyor",
       "Kalp sesleri ritmik; belirgin ek ses veya üfürüm duyulmuyor",
       "Akciğer oskültasyonunda yaygın ral saptanmıyor",
@@ -173,7 +173,7 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Sağ radial nabız sol tarafa göre daha zayıf alınıyor",
       "Aort odağında yeni başlayan erken diyastolik üfürüm duyuluyor",
       "Fokal nörolojik defisit saptanmıyor",
@@ -325,7 +325,7 @@ export const cases = [
       "Ateş": "37.3 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Juguler venöz dolgunluk belirgin izleniyor",
       "Kalp sesleri derinden ve azalmış şiddette duyuluyor",
       "Pulsus paradoxus 16 mmHg olarak ölçülüyor",
@@ -356,16 +356,18 @@ export const cases = [
         "id": "ecg",
         "label": "12 derivasyon EKG",
         "type": "ecg",
-        "summary": "Sinüs taşikardisi ve düşük voltajlı QRS kompleksleri izleniyor; elektriksel alternans açısından seri değerlendirme yapılabilir.",
+        "summary": "Sinüs taşikardisi, düşük voltajlı QRS kompleksleri ve elektriksel alternans izlendi.",
         "priority": "useful",
         "findings": [
-          "Sinüs taşikardisi ve düşük voltajlı QRS kompleksleri izleniyor; elektriksel alternans açısından seri değerlendirme yapılabilir."
+          "Sinüs taşikardisi",
+          "Düşük voltajlı QRS kompleksleri",
+          "Elektriksel alternans paterni"
         ],
         "rows": [
           [
             "12 derivasyon EKG",
-            "Sinüs taşikardisi ve düşük voltajlı QRS kompleksleri izleniyor; elektriksel alternans açısından seri değerlendirme yapılabilir.",
-            "Beklenen normal patern",
+            "Sinüs taşikardisi, düşük voltaj ve elektriksel alternans",
+            "Normal sinüs ritmi",
             "Tanıyı destekler"
           ]
         ]
@@ -495,7 +497,7 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Bilateral bazal ve orta zonlara yayılan ince raller duyuluyor",
       "S3 gallop mevcut",
       "Pretibial +2 gode bırakan ödem saptanıyor",
@@ -677,12 +679,12 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Sol sternal kenarda sistolik ejeksiyon üfürümü duyuluyor",
       "Üfürüm Valsalva manevrası ve ayakta durma ile artıyor, çömelme ile azalıyor",
       "S4 duyulabiliyor",
       "Periferik siyanoz veya kalp yetersizliği bulgusu saptanmıyor",
-      "Ailede ani kardiyak ölüm, açıklanamayan senkop, belirgin septal hipertrofi ve ritim bozukluğu varlığı implante edilebilir kardiyoverter defibrilatör açısından değerlendirilmelidir. Ailede ani kardiyak ölüm, açıklanamayan senkop, belirgin septal hipertrofi ve ritim bozukluğu varlığı implante edilebilir kardiyoverter defibrilatör açısından değerlendirilmelidir."
+      "Efor sonrası dinlenme halinde belirgin dispne veya akciğer ral bulgusu yok; periferik perfüzyon korunmuş."
     ],
     "investigations": [
       {
@@ -817,12 +819,12 @@ export const cases = [
       "Ateş": "37.1 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
-      "Mukozalar kuru, deri turgoru azalmış",
-      "Solunum derin ve hızlı; Kussmaul solunumu ile uyumlu",
-      "Nefeste aseton kokusu hissediliyor",
-      "Karında yaygın hassasiyet mevcut, defans veya rebound saptanmıyor",
-      "Glukoz 412 mg/dL, keton pozitif; lökosit ve troponin ölçümlerinde eşlik eden tetikleyici lehine belirgin ek bulgu saptanmaz. Glukoz 412 mg/dL, keton pozitif; lökosit ve troponin ölçümlerinde eşlik eden tetikleyici lehine belirgin ek bulgu saptanmaz."
+      "Genel durum orta-kötü; hasta halsiz, susuz ve yorgun görünümde, sorulara yavaş ancak uygun yanıt veriyor.",
+      "Bilinç açık olmakla birlikte dikkat ve oryantasyon hafif dalgalı; belirgin fokal nörolojik defisit saptanmıyor.",
+      "Mukozalar belirgin kuru, deri turgoru azalmış ve kapiller dolum zamanı hafif uzamış.",
+      "Solunum derin ve hızlıdır; solunum paterni Kussmaul solunumu ile uyumludur. Nefeste aseton kokusu fark ediliyor.",
+      "Kardiyak oskültasyonda taşikardi dışında ek ses veya üfürüm duyulmuyor; periferik nabızlar alınabiliyor.",
+      "Abdomen yumuşak; yaygın hafif hassasiyet mevcut ancak defans, rebound veya akut batın bulgusu saptanmıyor."
     ],
     "investigations": [
       {
@@ -901,6 +903,38 @@ export const cases = [
         "summary": "Glukoz: Pozitif (Pozitif); Keton: Pozitif (Pozitif) saptandı.",
         "findings": [
           "Glukoz: Pozitif (Pozitif); Keton: Pozitif (Pozitif) saptandı."
+        ]
+      },
+      {
+        "id": "trigger-screening-dka",
+        "label": "Tam kan sayımı ve kardiyak belirteç taraması",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "Belirgin lökositoz veya troponin yüksekliği saptanmadı; enfeksiyon ya da akut koroner sendrom tetikleyicisi ön planda değildir.",
+        "findings": [
+          "WBC 8.900/mm³",
+          "Nötrofil oranı %66",
+          "hs-Troponin I 8 ng/L"
+        ],
+        "rows": [
+          [
+            "WBC",
+            "8.900/mm³",
+            "4.000-10.000/mm³",
+            "Normal"
+          ],
+          [
+            "Nötrofil",
+            "%66",
+            "%40-70",
+            "Normal"
+          ],
+          [
+            "hs-Troponin I",
+            "8 ng/L",
+            "<34 ng/L",
+            "Normal"
+          ]
         ]
       }
     ],
@@ -998,12 +1032,12 @@ export const cases = [
       "Ateş": "37.8 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Epigastriumda belirgin hassasiyet saptanıyor",
       "Defans minimal, rebound izlenmiyor",
       "Bağırsak sesleri azalmış",
       "Skleralarda belirgin ikter saptanmıyor",
-      "Genel durum ve hidrasyon dikkatle değerlendirildi; hemodinamik instabilite bulgusu belirgin değil."
+      "Mukozalar hafif kuru; periferik perfüzyon korunmuş, soğuk ekstremite veya belirgin şok bulgusu yok."
     ],
     "investigations": [
       {
@@ -1173,12 +1207,12 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Hasta soluk, soğuk terli ve ortostatik semptomatik görünüyor",
       "Palmar eritem ve spider anjiyomlar izleniyor",
       "Splenomegali ve asit bulguları mevcut",
       "Rektal muayenede melena saptanıyor",
-      "Genel durum ve hidrasyon dikkatle değerlendirildi; hemodinamik instabilite bulgusu belirgin değil."
+      "Mukozalar kuru, kapiller dolum hafif uzamış ve periferik nabızlar zayıf dolgunlukta alınıyor."
     ],
     "investigations": [
       {
@@ -1325,12 +1359,12 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Konjonktival solukluk belirgin",
       "Koilonişi izleniyor",
       "Taşikardi dışında kardiyopulmoner patoloji saptanmıyor",
       "Hepatosplenomegali yok",
-      "Premenopozal hastada jinekolojik kanama sık nedenlerden biridir; alarm bulgusu veya risk faktörü varsa gastrointestinal kanama da araştırılır. Premenopozal hastada jinekolojik kanama sık nedenlerden biridir; alarm bulgusu veya risk faktörü varsa gastrointestinal kanama da araştırılır."
+      "Premenopozal hastada jinekolojik kanama sık nedenlerden biridir; alarm bulgusu veya risk faktörü varsa gastrointestinal kanama da araştırılır."
     ],
     "investigations": [
       {
@@ -1488,12 +1522,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Dehidratasyon bulgusu belirgin değil",
       "Fokal nörolojik defisit saptanmıyor",
       "Kemik palpasyonunda yaygın olmayan hassasiyet mevcut",
       "Boyunda palpabl kitle saptanmıyor",
-      "Genel durum ve hidrasyon dikkatle değerlendirildi; hemodinamik instabilite bulgusu belirgin değil."
+      "Mukozalar hafif kuru; proksimal kas gücü hafif azalmış, bilinç açık ve fokal nörolojik defisit yok."
     ],
     "investigations": [
       {
@@ -1676,12 +1710,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Bilinç açık, ancak ekspresif afazi belirgin",
       "Sağ üst ve alt ekstremitede santral tip güç kaybı saptanıyor",
       "Sağ santral fasiyal paralizi mevcut",
       "Sol tarafa bakış tercihi izleniyor",
-      "Bilinç, kraniyal sinirler, motor güç, duyu ve serebellar muayene sistematik değerlendirildi."
+      "Konuşma akıcılığı bozulmuş; sağ santral fasiyal parezi ve sağ tarafta piramidal güç kaybı izleniyor."
     ],
     "investigations": [
       {
@@ -1857,12 +1891,12 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Ense sertliği mevcut",
       "Fotofobi belirgin",
       "Bilinç dalgalanması izleniyor",
       "Fokal motor defisit saptanmıyor",
-      "Bilinç, kraniyal sinirler, motor güç, duyu ve serebellar muayene sistematik değerlendirildi."
+      "Kraniyal sinir muayenesinde belirgin paralizi yok; ense sertliği ve fotofobi meningeal irritasyonu destekliyor."
     ],
     "investigations": [
       {
@@ -2026,12 +2060,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Sağ gözde rölatif afferent pupilla defekti izleniyor",
       "Sol bakışta sağ göz adduksiyon kısıtlılığı ve sol gözde abdüksiyon nistagmusu mevcut",
       "Hafif ataksi saptanıyor",
       "Kas gücü belirgin azalmamış",
-      "Bilinç, kraniyal sinirler, motor güç, duyu ve serebellar muayene sistematik değerlendirildi."
+      "Göz hareketlerinde ağrı ve internükleer oftalmopleji şüphesi mevcut; derin tendon refleksleri canlıdır."
     ],
     "investigations": [
       {
@@ -2209,12 +2243,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Postiktal uykuya eğilim mevcut",
       "Papilödem şüphesi izleniyor",
       "Sağ üst ekstremitede geçici güçsüzlük saptanıyor",
       "Ense sertliği belirgin değil",
-      "Bilinç, kraniyal sinirler, motor güç, duyu ve serebellar muayene sistematik değerlendirildi."
+      "Bilinç açık ancak letarjik; papilödem şüphesi ve hafif ense rahatsızlığı dışında belirgin lateralizan defisit yok."
     ],
     "investigations": [
       {
@@ -2385,12 +2419,12 @@ export const cases = [
       "Ateş": "37.5 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Atak sırasında bacaklarını karnına çektiği izleniyor",
       "Sağ üst kadranda sosis şeklinde kitle palpasyonu şüpheli",
       "Rektal muayenede kanlı-mukuslu dışkı izleniyor",
       "Periton irritasyon bulgusu saptanmıyor",
-      "Genel durum, hidrasyon, beslenme toleransı ve yaşa uygun nörolojik yanıt birlikte değerlendirildi."
+      "Çocuk ataklar arasında soluk ve halsiz görünür; mukozalar hafif kuru, karın sağ üst kadranında palpabl kitle şüphesi vardır."
     ],
     "investigations": [
       {
@@ -2554,12 +2588,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Bebekte hafif dehidratasyon bulguları mevcut",
       "Üst abdomen palpasyonunda zeytin benzeri kitle şüpheli",
       "Beslenme sonrasında epigastriumda görünür peristaltizm izleniyor",
       "Batında distansiyon belirgin değil",
-      "Genel durum, hidrasyon, beslenme toleransı ve yaşa uygun nörolojik yanıt birlikte değerlendirildi."
+      "Bebek aç ve huzursuz görünümde; mukozalar kuru, fontanel hafif çökük ve beslenme sonrası görünür gastrik peristaltizm izleniyor."
     ],
     "investigations": [
       {
@@ -2726,12 +2760,12 @@ export const cases = [
       "Ateş": "39.1 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Bilateral nonpürülan konjonktival hiperemi izleniyor",
       "Dudaklar kuru ve çatlak, dil çilek dili görünümünde",
       "El ve ayaklarda ödem ve eritem mevcut",
       "Tek taraflı servikal lenfadenopati saptanıyor",
-      "Genel durum, hidrasyon, beslenme toleransı ve yaşa uygun nörolojik yanıt birlikte değerlendirildi."
+      "Çocuk irritabl ve halsiz görünümde; avuç içi ve ayak tabanında eritem-ödem, dudaklarda kuruluk ve çatlama belirgin."
     ],
     "investigations": [
       {
@@ -2774,17 +2808,25 @@ export const cases = [
         "id": "echo",
         "label": "Ekokardiyografi",
         "type": "ultrasound",
-        "summary": "Koroner arter ektazisi veya anevrizma açısından başlangıç değerlendirmesi yapılır; erken dönemde normal olabilir.",
+        "summary": "Koroner arterlerde hafif ektazi izlendi; belirgin dev anevrizma veya ventrikül disfonksiyonu saptanmadı.",
         "priority": "useful",
         "findings": [
-          "Koroner arter ektazisi veya anevrizma açısından başlangıç değerlendirmesi yapılır; erken dönemde normal olabilir."
+          "Koroner arterlerde hafif ektazi",
+          "Dev anevrizma saptanmadı",
+          "Sol ventrikül sistolik fonksiyonu korunmuş"
         ],
         "rows": [
           [
-            "Ekokardiyografi",
-            "Koroner arter ektazisi veya anevrizma açısından başlangıç değerlendirmesi yapılır; erken dönemde normal olabilir.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Koroner arterler",
+            "Hafif ektazi",
+            "Normal çap",
+            "Patolojik"
+          ],
+          [
+            "Sol ventrikül fonksiyonu",
+            "Korunmuş",
+            "Korunmuş",
+            "Normal"
           ]
         ]
       },
@@ -2927,12 +2969,12 @@ export const cases = [
       "Ateş": "39.4 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Toksik görünüm belirgin",
       "Tripod pozisyonunda oturuyor",
       "İnspiratuvar stridor duyuluyor",
       "Orofarenks muayenesi havayolu ekibi hazır olmadan zorlanmıyor",
-      "Genel durum, hidrasyon, beslenme toleransı ve yaşa uygun nörolojik yanıt birlikte değerlendirildi."
+      "Çocuk salyasını yutmakta zorlanıyor, boynunu ekstansiyonda tutuyor ve havayolu obstrüksiyonunu artırmamak için orofarenks muayenesi zorlanmıyor."
     ],
     "investigations": [
       {
@@ -3093,7 +3135,7 @@ export const cases = [
       "Ateş": "37.9 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "McBurney noktasında hassasiyet saptanıyor",
       "Rovsing bulgusu pozitif",
       "Hafif defans mevcut, yaygın rebound yok",
@@ -3271,12 +3313,12 @@ export const cases = [
       "Ateş": "38.2 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
-      "Sağ üst kadranda hassasiyet mevcut",
-      "Klinik Murphy bulgusu pozitif",
-      "Skleralarda belirgin ikter saptanmıyor",
-      "Peritoneal irritasyon yaygın değil",
-      "Hepatobiliyer sintigrafide safra kesesi dolumu izlenmedi; bulgu sistik kanal obstrüksiyonu ile uyumludur. USG belirsiz kaldığında akut kolesistit lehine ek kanıt sağlar. Normal dolum olsaydı akut kolesistit daha geri plana düşerdi."
+      "Genel durum orta; hasta ağrı nedeniyle huzursuz, bilinç açık ve koopere.",
+      "Cilt ve skleralarda belirgin ikter yok; mukozalar hafif kuru.",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
+      "Abdomen inspeksiyonunda distansiyon yok; sağ üst kadranda belirgin palpasyon hassasiyeti mevcut.",
+      "Derin inspirasyon sırasında sağ üst kadran palpasyonuyla ağrı nedeniyle inspirasyon kesiliyor; klinik Murphy bulgusu pozitiftir.",
+      "Yaygın defans, rebound veya jeneralize peritonit bulgusu saptanmıyor."
     ],
     "investigations": [
       {
@@ -3331,6 +3373,31 @@ export const cases = [
         "summary": "Lökosit: 14.800/mm³ (Yüksek); CRP: 68 mg/L (Yüksek); ALT: 46 U/L (Yüksek) saptandı.",
         "findings": [
           "Lökosit: 14.800/mm³ (Yüksek); CRP: 68 mg/L (Yüksek); ALT: 46 U/L (Yüksek) saptandı."
+        ]
+      },
+      {
+        "id": "hida-scan-cholecystitis",
+        "label": "Hepatobiliyer sintigrafi",
+        "type": "clinical",
+        "priority": "situational",
+        "summary": "Safra kesesi dolumu izlenmedi; bulgu sistik kanal obstrüksiyonu ve akut kolesistit ile uyumludur.",
+        "findings": [
+          "Safra kesesi dolumu izlenmedi",
+          "Safra yollarında yaygın tıkanıklık paterni saptanmadı"
+        ],
+        "rows": [
+          [
+            "Safra kesesi dolumu",
+            "İzlenmedi",
+            "Dolum izlenir",
+            "Pozitif"
+          ],
+          [
+            "Ekstrahepatik safra yolu geçişi",
+            "Korunmuş",
+            "Korunmuş",
+            "Normal"
+          ]
         ]
       }
     ],
@@ -3426,7 +3493,7 @@ export const cases = [
       "Ateş": "37.4 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Karında belirgin distansiyon mevcut",
       "Bağırsak sesleri metalik ve artmış duyuluyor",
       "Yaygın defans veya rebound saptanmıyor",
@@ -3593,7 +3660,7 @@ export const cases = [
       "Ateş": "38.0 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Hasta hareketsiz yatmayı tercih ediyor",
       "Karında tahta karın görünümünde rijidite mevcut",
       "Yaygın rebound hassasiyeti saptanıyor",
@@ -3760,12 +3827,12 @@ export const cases = [
       "Ateş": "38.1 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
-      "Sol alt kadranda lokalize hassasiyet mevcut",
-      "Hafif defans saptanıyor, yaygın rebound yok",
-      "Rektal muayenede aktif kanama izlenmiyor",
-      "Hemodinamik olarak stabil",
-      "Akut dönemde perforasyon riski nedeniyle kolonoskopi yapılmaz; iyileşme sonrası malignite ayrımı için planlanabilir. Akut dönemde perforasyon riski nedeniyle kolonoskopi yapılmaz; iyileşme sonrası malignite ayrımı için planlanabilir."
+      "Genel durum orta; hasta ağrı nedeniyle hareket etmekten kaçınıyor, bilinç açık ve koopere.",
+      "Ciltte solukluk veya belirgin dehidratasyon bulgusu yok; periferik dolaşım korunmuş.",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
+      "Abdomen hafif distandü; sol alt kadranda lokalize hassasiyet ve hafif defans mevcut.",
+      "Yaygın rebound, tahta karın veya jeneralize peritonit bulgusu saptanmıyor.",
+      "Rektal muayenede aktif kanama ya da ele gelen belirgin kitle izlenmiyor."
     ],
     "investigations": [
       {
@@ -3909,12 +3976,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Sağ hemitoraksta solunum sesleri belirgin azalmış",
       "Perküsyonda sağda hipersonorite mevcut",
       "Trakea orta hatta",
       "Hemodinamik instabilite saptanmıyor",
-      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
+      "Solunum eforu hafif artmış; sağ hemitoraks ekspansiyonu azalmış, siyanoz veya bilinç değişikliği yok."
     ],
     "investigations": [
       {
@@ -4075,12 +4142,12 @@ export const cases = [
       "Ateş": "37.2 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Taşikardi mevcut",
       "Sağ baldır çevresi sol tarafa göre artmış ve palpasyonla hassas",
       "Akciğer oskültasyonunda belirgin fokal ral yok",
       "Hemoptizi ifade edilmiyor",
-      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
+      "Hasta takipneik görünümde; yardımcı solunum kası kullanımı hafif, göğüs duvarı palpasyonuyla ağrı yeniden üretilemiyor."
     ],
     "investigations": [
       {
@@ -4241,12 +4308,12 @@ export const cases = [
       "Ateş": "38.8 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Sağ alt zonda inspiratuvar raller duyuluyor",
       "Aynı bölgede bronşiyal solunum sesi ve matite mevcut",
       "Solunum sayısı artmış",
       "Konfüzyon saptanmıyor",
-      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
+      "Solunum eforu hafif artmış; sağ alt hemitoraksta vokal fremitus artışı ve inspiratuvar ral belirgin."
     ],
     "investigations": [
       {
@@ -4407,12 +4474,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Bilateral bazal inspiratuvar ince Velcro tipi raller duyuluyor",
       "Parmaklarda çomaklaşma mevcut",
       "Wheezing belirgin değil",
       "Periferik ödem saptanmıyor",
-      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
+      "Hasta istirahatte rahat ancak konuşma sonrası hafif dispneik; bazallerde velcro benzeri ince inspiratuvar raller duyuluyor."
     ],
     "investigations": [
       {
@@ -4586,12 +4653,12 @@ export const cases = [
       "Ateş": "37.6 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Yaygın ekspiratuvar ronküs ve wheezing duyuluyor",
       "Ekspirasyon süresi uzamış",
       "Yardımcı solunum kasları kullanılıyor",
       "Periferik siyanoz hafif düzeyde izleniyor",
-      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
+      "Hasta öne eğilerek oturuyor; ekspirasyon uzamış, yardımcı solunum kası kullanımı ve yaygın wheezing belirgin."
     ],
     "investigations": [
       {
@@ -4771,12 +4838,12 @@ export const cases = [
       "Ateş": "37.9 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Kaşektik görünüm ve hafif ateş mevcut",
       "Sağ üst zonda solunum sesleri azalmış ve raller duyuluyor",
       "Servikal lenfadenopati saptanmıyor",
       "Hepatosplenomegali yok",
-      "Genel toksisite, ateş odağı, döküntü, lenfadenopati ve meningeal irritasyon bulguları sistematik değerlendirildi."
+      "Hasta zayıf ve gece terlemesine bağlı nemli görünümdedir; servikal lenf nodları küçük ve mobil palpabl, meningeal irritasyon yok."
     ],
     "investigations": [
       {
@@ -4937,12 +5004,12 @@ export const cases = [
       "Ateş": "39.5 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Ateş yüksekliği ve belirgin halsizlik izleniyor",
       "Skleralarda hafif ikter mevcut",
       "Dalak palpasyonla ele geliyor",
       "Bilinç bulanıklığı saptanmıyor",
-      "Genel toksisite, ateş odağı, döküntü, lenfadenopati ve meningeal irritasyon bulguları sistematik değerlendirildi."
+      "Ateş atağı sırasında titreme ve terleme belirgin; dalak palpabl, ense sertliği veya peteşiyal döküntü yok."
     ],
     "investigations": [
       {
@@ -5003,17 +5070,24 @@ export const cases = [
         "id": "rapid",
         "label": "Hızlı antijen testi",
         "type": "lab",
-        "summary": "Plasmodium antijen testi pozitif; tür ayrımı ve parazitemi için mikroskopik değerlendirme ile birlikte yorumlanır.",
+        "summary": "Plasmodium antijen testi pozitif saptandı; mikroskopide intraeritrositer parazitler izlendi.",
         "priority": "useful",
         "findings": [
-          "Plasmodium antijen testi pozitif; tür ayrımı ve parazitemi için mikroskopik değerlendirme ile birlikte yorumlanır."
+          "Plasmodium antijeni pozitif",
+          "Mikroskopide intraeritrositer parazitler izlendi"
         ],
         "rows": [
           [
-            "Hızlı antijen testi",
-            "Plasmodium antijen testi pozitif; tür ayrımı ve parazitemi için mikroskopik değerlendirme ile birlikte yorumlanır.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Plasmodium antijeni",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "Kalın damla mikroskopisi",
+            "İntraeritrositer parazit izlendi",
+            "Parazit izlenmez",
+            "Pozitif"
           ]
         ]
       }
@@ -5109,12 +5183,12 @@ export const cases = [
       "Ateş": "39.7 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Ense sertliği ve fotofobi mevcut",
       "Alt ekstremitelerde basmakla solmayan peteşi ve purpuralar izleniyor",
       "Taşikardi ve sınırda hipotansiyon mevcut",
       "Bilinç dalgalanması gelişiyor",
-      "Genel toksisite, ateş odağı, döküntü, lenfadenopati ve meningeal irritasyon bulguları sistematik değerlendirildi."
+      "Hasta toksik ve letarjik görünümde; ense sertliği, fotofobi ve basmakla solmayan peteşi-purpura birliktedir."
     ],
     "investigations": [
       {
@@ -5282,12 +5356,12 @@ export const cases = [
       "Ateş": "38.6 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Ateş yüksekliği mevcut",
       "Triküspit odakta yeni sistolik üfürüm duyuluyor",
       "Tırnak yatağında splinter hemoraji şüpheli",
       "Akciğerlerde dağınık raller duyuluyor",
-      "Genel toksisite, ateş odağı, döküntü, lenfadenopati ve meningeal irritasyon bulguları sistematik değerlendirildi."
+      "Hasta subfebril ve halsiz görünümde; yeni sistolik üfürüm, splinter hemoraji şüphesi ve hafif splenomegali mevcuttur."
     ],
     "investigations": [
       {
@@ -5436,13 +5510,11 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "El bileği distal radius düzeyinde şiş ve hassas",
       "Çatal sırtı deformitesi izleniyor",
       "Parmak hareketleri ağrılı ancak korunmuş",
-      "Median sinir duyusu ve radial-ulnar nabızlar değerlendirilerek kayıt altına alınıyor",
-      "Redüksiyon öncesi ve sonrası median sinir fonksiyonu, kapiller dolum ve radial/ulnar nabızlar değerlendirilmelidir. Redüksiyon öncesi ve sonrası median sinir fonksiyonu, kapiller dolum ve radial/ulnar nabızlar değerlendirilmelidir.",
-      "Düşük enerjili fragilite kırığı nedeniyle osteoporoz ve düşme riski açısından ileri değerlendirme planlanır. Düşük enerjili fragilite kırığı nedeniyle osteoporoz ve düşme riski açısından ileri değerlendirme planlanır."
+      "Median sinir duyu alanı, parmak kapiller dolumu ve radial-ulnar nabızlar muayenede korunmuş."
     ],
     "investigations": [
       {
@@ -5581,12 +5653,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Etkilenen ekstremite kısa ve dış rotasyonda duruyor",
       "Kalça hareketleri ağrılı ve kısıtlı",
       "Aksiyel yüklenmeyle ağrı artıyor",
       "Distal nabızlar ve duyu muayenesi korunmuş",
-      "İntrakapsüler kırıklarda femur başı kanlanması bozulabileceğinden avasküler nekroz ve kaynamama riski dikkate alınır. İntrakapsüler kırıklarda femur başı kanlanması bozulabileceğinden avasküler nekroz ve kaynamama riski dikkate alınır."
+      "Kalça çevresinde açık yara veya belirgin hematom yok; distal motor-duyu muayenesi ve periferik dolaşım korunmuş."
     ],
     "investigations": [
       {
@@ -5730,7 +5802,7 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Anatomik enfiye çukurunda belirgin hassasiyet mevcut",
       "Başparmak aksiyel kompresyonu ağrılı",
       "El bileği ekstansiyonu ağrılı ve kısıtlı",
@@ -5868,12 +5940,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Omuz konturu düzleşmiş, deltoid kabarıklığı kaybolmuş",
       "Kol hafif abduksiyon ve dış rotasyonda tutuluyor",
       "Humerus başı anterior-inferior yerleşimli palpe ediliyor",
-      "Aksiller sinir duyusu ve distal nörovasküler durum redüksiyon öncesi değerlendiriliyor",
-      "Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal dolaşım redüksiyon öncesi ve sonrası kayıt altına alınır. Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal dolaşım redüksiyon öncesi ve sonrası kayıt altına alınır."
+      "Aksiller sinir duyu alanı ve distal nörovasküler durum muayenede korunmuş.",
+      "Deltoid bölge duyusu, deltoid kas aktivasyonu ve distal kapiller dolum muayenede korunmuş."
     ],
     "investigations": [
       {
@@ -6800,12 +6872,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum orta; çocuk açlık dönemlerinde irritabl ve terli, dekstroz sonrası klinik olarak belirgin rahatlıyor.",
+      "Genel durum orta; çocuk açlık dönemlerinde irritabl, terli ve halsiz görünümde.",
       "Büyüme geriliği, dolgun yanaklı yüz görünümü ve karında belirgin distansiyon izleniyor.",
-      "Abdomen yumuşak; karaciğer sağ kostal ark altında yaklaşık 5 cm ele geliyor, splenomegali belirgin değil.",
-      "Ciltte ksantom izlenmiyor; mukozalar hafif kuru.",
+      "Mukozalar hafif kuru; ciltte ksantom, peteşi veya yaygın döküntü izlenmiyor.",
+      "Abdomen yumuşak; karaciğer sağ kostal ark altında yaklaşık 5 cm ele geliyor, belirgin splenomegali yok.",
       "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
-      "Nörolojik muayenede hipoglisemi sırasında bilinç dalgalanması olurken glukoz düzeltildikten sonra fokal defisit kalmıyor."
+      "Nörolojik muayenede nöbet sonrası uykuya meyil dışında kalıcı fokal motor defisit veya meningeal irritasyon bulgusu saptanmıyor."
     ],
     "investigations": [
       {
@@ -7006,7 +7078,7 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "İdrar ve bezde küf benzeri belirgin koku fark ediliyor",
       "Açık ten ve saç rengi aileye göre belirgin açık",
       "Baş kontrolü gecikmiş, hafif aksiyal hipotoni var",
@@ -7200,7 +7272,7 @@ export const cases = [
       "Ateş": "36.4 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Yenidoğan letarjik ve emmesi zayıf",
       "Bezde tatlı/akçaağaç şurubu benzeri koku tarifleniyor",
       "Aksiyal hipotoniye intermittan ekstansör postür eşlik ediyor",
@@ -7406,7 +7478,7 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Sklera ve kulak kıkırdağında mavi-siyah pigmentasyon görülüyor",
       "Lomber omurga ve kalçada hareket kısıtlılığı var",
       "Dizlerde krepitasyon ve kronik ağrı mevcut",
@@ -7765,14 +7837,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
-      "Uzun boy, ince ekstremiteler ve araknodaktili izleniyor",
-      "Lens subluksasyonu aşağı-içe yönlü olarak tarifleniyor",
-      "Baldırda hassasiyet ve hafif asimetri mevcut",
-      "Göğüs duvarında pektus deformitesi var",
-      "Aort üfürümü veya akut nörolojik defisit saptanmıyor",
-      "Lens subluksasyonu inferonazal yönde izlendi. Marfan sendromundan ayırıcı tanıda yön bilgisi önemlidir. Ektopia lentis homosistinüriyi destekler.",
-      "Tromboz riski yüksek; akut DVT bulgusu saptanmadı. Hastada tromboembolik komplikasyon açısından izlem gerekir. Koagülasyon paneli tek başına tanısal değildir."
+      "Genel durum iyi-orta; hasta uzun boylu, ince yapılı ve koopere.",
+      "Ekstremiteler uzun, parmaklar ince ve araknodaktili görünümünde; pektus deformitesi izleniyor.",
+      "Göz muayenesinde lens subluksasyonu inferonazal yönde tarifleniyor; konjonktival hiperemi yok.",
+      "Sol baldırda hafif çevre artışı, palpasyonla hassasiyet ve yüzeyel venlerde dolgunluk mevcut; distal nabızlar alınabiliyor.",
+      "Kardiyak oskültasyonda belirgin üfürüm duyulmuyor; akut kalp yetmezliği bulgusu saptanmıyor.",
+      "Nörolojik muayenede bilinç açık, kraniyal sinirler doğal ve akut fokal defisit yok."
     ],
     "investigations": [
       {
@@ -7878,6 +7948,38 @@ export const cases = [
             "Azalmış",
             "Tam kompresibl",
             "Patolojik"
+          ]
+        ]
+      },
+      {
+        "id": "coagulation-panel-hcy",
+        "label": "Koagülasyon paneli",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "PT, aPTT ve INR normal sınırlarda; tromboz eğilimi rutin koagülasyon testleriyle dışlanmaz.",
+        "findings": [
+          "INR 1.0",
+          "PT 12.6 sn",
+          "aPTT 30 sn"
+        ],
+        "rows": [
+          [
+            "INR",
+            "1.0",
+            "0.8-1.2",
+            "Normal"
+          ],
+          [
+            "PT",
+            "12.6 sn",
+            "11-14 sn",
+            "Normal"
+          ],
+          [
+            "aPTT",
+            "30 sn",
+            "25-35 sn",
+            "Normal"
           ]
         ]
       }
@@ -8483,7 +8585,7 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Bilateral Aşil tendonlarında ksantom nodülleri palpabl",
       "Kornea arkusu ve hafif ksantelazma izleniyor",
       "Eruptif ksantom yok, trigliseridemi lehine bulgu saptanmıyor",
@@ -9029,7 +9131,7 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Skleralarda ikter belirgin",
       "Ciltte hafif solukluk ve sararma var",
       "Dalak büyüklüğü belirgin değil",
@@ -9242,7 +9344,7 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Hasta terli ve anksiyöz görünüyor",
       "Kalpte S4 duyuluyor, belirgin üfürüm yok",
       "Akciğer bazallerinde ral saptanmıyor",
@@ -9434,7 +9536,7 @@ export const cases = [
       "Ateş": "38.6 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Hasta somnolandır, GKS 13",
       "Sol hemiparezi ve hafif fasiyal asimetri var",
       "Papil ödemi ve baş ağrısı intrakraniyal basınç artışını düşündürüyor",
@@ -9626,7 +9728,7 @@ export const cases = [
       "Ateş": "38.1 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Zayıf görünüm ve gece terlemesi öyküsü belirgin",
       "Sağ üst zonda solunum sesleri azalmış ve ince ral duyuluyor",
       "Servikal küçük lenf nodları palpabl",
@@ -9824,7 +9926,7 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Hasta dispneik ve takipneik",
       "Sağ baldırda çap artışı, hassasiyet ve ısı artışı var",
       "Akciğer oskültasyonunda belirgin konsolidasyon bulgusu yok",
@@ -10022,7 +10124,7 @@ export const cases = [
       "Ateş": "39.2 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Hasta konfü ve toksik görünüyor",
       "Kapiller dolum 4 saniye, ekstremiteler soğuk ve benekli",
       "Sağ kostovertebral açı hassasiyeti belirgin",
@@ -10226,7 +10328,7 @@ export const cases = [
       "Ateş": "37.6 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Fotosensitif malar döküntü nazolabial olukları koruyor",
       "Ağız içinde ağrısız ülserler var",
       "El bileği ve MCP eklemlerinde simetrik hassasiyet mevcut",
@@ -10430,13 +10532,13 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Konjonktival kuruluk ve punktat keratit bulguları var",
       "Ağız mukozası kuru, dil fissürlü ve dental çürükler belirgin",
       "Parotis bezleri bilateral hafif büyümüş",
       "Artrit bulgusu hafif; belirgin sinovit yok",
       "Malar döküntü ve proteinüri bulgusu saptanmıyor",
-      "Korneal yüzey hasarı ve dental çürük riski değerlendirildi. Kuruluk komplikasyonları izlenmelidir. Akut görme kaybı saptanmadı."
+      "Korneal yüzeyde kurulukla uyumlu mat görünüm vardır; akut görme kaybı veya pürülan konjonktival akıntı saptanmıyor."
     ],
     "investigations": [
       {
@@ -10592,7 +10694,7 @@ export const cases = [
       "Ateş": "37.1 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "MCP ve PIP eklemlerinde simetrik şişlik ve hassasiyet var",
       "Sabah tutukluğu 90 dakika sürüyor",
       "El bileklerinde sinovit ve hareket kısıtlılığı mevcut",
@@ -10766,7 +10868,7 @@ export const cases = [
       "Ateş": "38.4 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Tonsiller belirgin küçük/izlenmiyor",
       "Servikal lenf nodları beklenenden az palpabl",
       "Bilateral otit bulguları ve burun akıntısı mevcut",
@@ -10958,7 +11060,7 @@ export const cases = [
       "Ateş": "38.2 °C"
     },
     "exam": [
-      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
+      "Genel durum stabil; hasta uyanık, koopere ve belirgin akut toksik görünümde değil.",
       "Ağız içinde yaygın beyaz plaklar kazımakla kanıyor",
       "Bilateral servikal ve aksiller lenfadenopati var",
       "Akciğerlerde bilateral ince raller duyuluyor",
@@ -11503,7 +11605,7 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Hasta ajite ve konfü; GKS 12",
       "Boyun ön yüzünde transvers ligatür izi ve hassasiyet var",
       "Ses kısıklığı, stridor başlangıcı ve yutma güçlüğü mevcut",
@@ -11716,7 +11818,7 @@ export const cases = [
       "Ateş": "38.7 °C"
     },
     "exam": [
-      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
       "Oral mukozada ağrılı aftöz ülserler mevcut",
       "Bacaklarda yaygın ekimoz ve peteşiler izleniyor",
       "Karında peritonit bulgusu yok",

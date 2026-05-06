@@ -23,7 +23,7 @@ export const priorityMeta = {
     label: 'Sınırlı katkı',
     tone: 'slate',
     scoreImpact: -1,
-    feedback: 'Bu istem mevcut klinik bağlamda ilk karar basamağını genellikle değiştirmez.',
+    feedback: 'Bu istemde ilk karar basamağını değiştiren ek patoloji saptanmadı.',
   },
   inappropriateEarly: {
     label: 'Erken',
@@ -35,7 +35,7 @@ export const priorityMeta = {
     label: 'Sınırlı katkı',
     tone: 'slate',
     scoreImpact: -1,
-    feedback: 'Bu istem mevcut klinik bağlamda ilk karar basamağını genellikle değiştirmez.',
+    feedback: 'Bu istemde ilk karar basamağını değiştiren ek patoloji saptanmadı.',
   },
   harmfulDelay: {
     label: 'Erken',
@@ -575,7 +575,10 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
     return 'Referans içinde';
   }
 
-  return 'Klinik bağlamla yorumla';
+  const combined = `${parameter} ${value} ${reference}`.toLocaleLowerCase('tr');
+  if (/izlenmedi|saptanmadı|negatif|normal|patoloji yok/.test(combined)) return 'Normal';
+  if (/pozitif|saptandı|izlendi|uyumlu|destekler|elevasyon|depresyon|konsolidasyon|defekt|yüksek|düşük/.test(combined)) return 'Tanıyı destekler';
+  return 'Objektif sonuç';
 }
 
 function sanitizeRows(rows = []) {
@@ -723,9 +726,9 @@ export function buildInvestigationReview(orders = [], orderedIds = []) {
 export function getOrderFeedback(item) {
   const priority = normalizePriority(item.priority);
   if (priority === 'essential') return 'Bu istem mevcut tabloda yüksek tanısal değer taşır.';
-  if (priority === 'useful') return 'Bu istem klinik değerlendirmeye yardımcı bilgi sağlar.';
-  if (priority === 'situational') return 'Bu istem seçilmiş klinik koşullarda anlam kazanabilir.';
+  if (priority === 'useful') return 'Bu istem ayırıcı tanıyı daraltan objektif sonuç sağlar.';
+  if (priority === 'situational') return 'Bu istem yalnızca seçilmiş hastalarda ek objektif bulgu sağlar.';
   if (priority === 'lowPriority') return 'Bu istem mevcut ilk değerlendirme aşamasında sınırlı katkı sağlar.';
   if (priority === 'inappropriateEarly') return 'Bu istem ileri aşamada düşünülebilir; önce temel klinik veriler tamamlanmalıdır.';
-  return 'Bu istem vaka bağlamına göre ek objektif veri sağlar.';
+  return 'Bu istem ek objektif sonuç sağlar.';
 }

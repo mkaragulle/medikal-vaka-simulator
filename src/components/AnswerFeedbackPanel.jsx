@@ -6,7 +6,7 @@ const MAX_PEARL_ITEMS = 3;
 const MAX_MANAGEMENT_ITEMS = 3;
 
 const GENERIC_COMPARISON_PATTERNS = [
-  /belirleyici klinik bağlam doğru tanı lehine/i,
+  /belirleyici klinik bulgular doğru tanı lehine/i,
   /seçeneğin beklenen tipik bulguları/i,
   /ilk yönetim doğru tanının aciliyetine göre/i,
 ];

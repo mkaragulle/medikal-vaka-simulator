@@ -113,7 +113,7 @@ const sequenceTemplates = {
       ['stabilize-circulation', 'Havayolu, dolaşım ve hemodinamik stabiliteyi değerlendir', 'Aktif kanama şüphesinde önce yaşamı tehdit eden durumlar değerlendirilir.'],
       ['iv-access', 'Geniş damar yolu aç ve sıvı/kan ürünü gereksinimini belirle', 'Resüsitasyon ve transfüzyon hazırlığı erken yapılmalıdır.'],
       ['labs-crossmatch', 'Hemogram, koagülasyon ve kan grubu/cross-match tetkiklerini al', 'Kanama şiddeti ve tedavi güvenliği için temel veriler gerekir.'],
-      ['targeted-medication', 'Klinik bağlama göre proton pompası inhibitörü veya vasoaktif tedaviyi başla', 'Tedavi kanamanın olası kaynağına göre erken planlanır.'],
+      ['targeted-medication', 'Kanama kaynağına göre proton pompası inhibitörü veya vasoaktif tedaviyi başla', 'Tedavi kanamanın olası kaynağına göre erken planlanır.'],
       ['endoscopy', 'Stabilizasyon sonrası üst gastrointestinal endoskopi planla', 'Endoskopi tanı ve tedavi açısından ana yöntemdir.'],
       ['definitive-hemostasis', 'Endoskopik hemostaz veya ileri girişim gereksinimini değerlendir', 'Devam eden kanamada kaynak kontrolü gerekir.'],
       ['monitor-rebleed', 'Yeniden kanama, hemoglobin ve hemodinami takibini sürdür', 'Tedavi sonrası yakın izlem yeniden kanamayı yakalamak için gereklidir.'],
@@ -137,7 +137,7 @@ const sequenceTemplates = {
       ['ignore-stability', 'Stabilite değerlendirmesi yapmadan taburculuk planla', 'Stabilite değerlendirilmeden güvenli taburculuk kararı verilmez.', true],
       ['random-treatment', 'Tanısal veri olmadan rastgele tedavi başla', 'Tedavi klinik olasılık ve güvenlik verileriyle birlikte planlanmalıdır.', true],
       ['delay-all', 'Tüm tedaviyi ileri randevuya kadar ertele', 'Acil veya progresif tabloda gecikme hasta güvenliğini bozabilir.', false],
-      ['over-investigate', 'Klinik bağlam olmadan ileri invaziv tetkik planla', 'İleri tetkikler klinik endikasyonla basamaklandırılmalıdır.', false],
+      ['over-investigate', 'Endikasyon olmadan ileri invaziv tetkik planla', 'İleri tetkikler klinik endikasyonla basamaklandırılmalıdır.', false],
     ],
   },
 };
