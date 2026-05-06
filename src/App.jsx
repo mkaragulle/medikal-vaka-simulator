@@ -546,36 +546,6 @@ function App() {
     return Math.max(0, examState.durationSeconds - elapsed);
   }, [examState, clockTick]);
 
-  const leaderboardEntries = useMemo(() => {
-    const entries = [];
-    if (sessionStats.attempts) {
-      entries.push({
-        label: 'Toplam puan',
-        subtext: `${sessionStats.attempts} olgu · %${Math.round(sessionStats.accuracy)} doğruluk`,
-        value: sessionStats.score,
-      });
-    }
-
-    if (sessionStats.bestStreak) {
-      entries.push({
-        label: 'En iyi seri',
-        subtext: 'Art arda doğru yanıt',
-        value: sessionStats.bestStreak,
-      });
-    }
-
-    if (examHistory.length) {
-      const bestExam = [...examHistory].sort((a, b) => b.score - a.score)[0];
-      entries.push({
-        label: 'En iyi blok sınav',
-        subtext: `${bestExam.correct}/${bestExam.total} doğru · %${bestExam.accuracy}`,
-        value: bestExam.score,
-      });
-    }
-
-    return entries.slice(0, 3);
-  }, [examHistory, sessionStats]);
-
   const visibleWrongAnswers = useMemo(() => (
     isDemoUser ? wrongAnswers.filter((entry) => accessibleCaseIds.has(entry.caseId)) : wrongAnswers
   ), [wrongAnswers, isDemoUser, accessibleCaseIds]);
@@ -1127,12 +1097,10 @@ function App() {
             mode={mode}
             onChangeMode={setMode}
             stats={sessionStats}
-            leaderboardEntries={leaderboardEntries}
             onStartExam={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
             onStartAIQuestion={handleStartAIPractice}
             totalCases={accessibleCases.length}
             totalBranches={visibleBranches.length}
-            examCount={examHistory.length}
           />
           <section id="wrong-answers-section" className="wrong-answers-anchor section-anchor" aria-label="Yanlış çözülen vakalar">
             <WrongAnswersPanel

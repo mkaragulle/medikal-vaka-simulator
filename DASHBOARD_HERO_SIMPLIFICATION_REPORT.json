@@ -1,0 +1,35 @@
+{
+  "scope": "Dashboard hero simplification and right-panel de-duplication",
+  "changedFiles": [
+    "src/components/HomeCommandCenter.jsx",
+    "src/App.jsx",
+    "src/styles/klinikiq-refine.css",
+    "DASHBOARD_HERO_SIMPLIFICATION_REPORT.md",
+    "DASHBOARD_HERO_BUILD_VALIDATION_RESULT.md"
+  ],
+  "removedChips": [
+    "Klinik muhakeme",
+    "Tetkik seçimi",
+    "AI destekli pratik"
+  ],
+  "numericMetricsKeptOnlyInLeftHero": [
+    "Çözülen olgu",
+    "Klinik doğruluk",
+    "Doğru seri",
+    "Toplam puan"
+  ],
+  "rightPanelNewPurpose": "Qualitative session guidance: session status, study focus, mode-aware strategy and next-step recommendation.",
+  "staticValidation": {
+    "jsx": "passed via TypeScript parser",
+    "css": "passed via PostCSS parser"
+  },
+  "build": {
+    "status": "not completed in sandbox",
+    "reason": "npm install timed out; vite dependency was unavailable, so npm run build returned vite: not found"
+  },
+  "runCommands": [
+    "npm install",
+    "npm run build",
+    "npm run dev"
+  ]
+}

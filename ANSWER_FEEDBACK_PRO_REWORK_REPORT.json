@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-05-06T20:47:16.533Z",
+  "totalCases": 132,
+  "casesReviewed": 132,
+  "evidenceTitleFixedCases": 131,
+  "evidenceTitleFixedItems": 391,
+  "contextlessEvidenceFixedItems": 5,
+  "optionComparisonRewrittenCases": 132,
+  "examPearlsRewrittenCases": 132,
+  "pulmonaryEmbolismPatchedIds": [
+    "pulm-pe-001",
+    "pulmonology-pulmonary-embolism-dvt-001"
+  ],
+  "acuteRadiationSyndromePatchedIds": [
+    "internal-medicine-acute-radiation-syndrome-001"
+  ],
+  "branchCounts": {
+    "internal-medicine": 19,
+    "minor-rotations": 9,
+    "pediatrics": 5,
+    "general-surgery": 5,
+    "medical-microbiology": 8,
+    "medical-biochemistry": 14,
+    "medical-pathology": 4,
+    "tus-spot-olgular": 62,
+    "medical-pharmacology": 2,
+    "anatomy": 1,
+    "physiology": 1,
+    "histology-embryology": 1,
+    "obstetrics-gynecology": 1
+  },
+  "changedFiles": [
+    "src/data/cases.js",
+    "src/components/AnswerFeedbackPanel.jsx",
+    "src/index.css",
+    "scripts/rework-answer-feedback-all-cases.mjs",
+    "ANSWER_FEEDBACK_PRO_REWORK_REPORT.json",
+    "ANSWER_FEEDBACK_PRO_REWORK_SUMMARY.md",
+    "ANSWER_FEEDBACK_BUILD_VALIDATION_RESULT.md"
+  ],
+  "afterValidation": {
+    "badEvidenceTitleItems": 0,
+    "contextlessEvidenceItems": 0,
+    "genericComparisonHits": 0,
+    "genericLabTitleItems": 0
+  },
+  "validation": {
+    "dataImport": "passed",
+    "staticJsxTranspile": "passed: 36 src .js/.jsx files, 0 diagnostics",
+    "runtimeBannedPhraseGrep": "passed: 0 hits in src and api",
+    "npmInstall": "not completed in sandbox: timed out / offline cache missing @babel/code-frame",
+    "npmRunBuild": "not completed in sandbox: vite not found because dependencies were not installed"
+  }
+}

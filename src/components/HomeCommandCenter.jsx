@@ -12,58 +12,94 @@ function MetricCard({ icon, label, value, tone = 'teal' }) {
   );
 }
 
-function SummaryItem({ label, value }) {
+function InsightRow({ icon, eyebrow, title, description }) {
   return (
-    <div className="summary-v8-item">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
+    <article className="summary-insight-card-v11" role="listitem">
+      <IconBadge icon={icon} tone="teal" size="sm" />
+      <div>
+        <span>{eyebrow}</span>
+        <strong>{title}</strong>
+        <p>{description}</p>
+      </div>
+    </article>
   );
 }
 
-function SessionSummaryCard({ entries, stats, mode, examCount }) {
+function SessionSummaryCard({ stats, mode }) {
   const accuracy = Math.round(stats.accuracy || 0);
-  const status = stats.attempts === 0
-    ? 'İlk olgu bekleniyor'
+  const hasProgress = stats.attempts > 0;
+  const status = !hasProgress
+    ? 'İlk olguya hazır'
     : accuracy >= 75
-      ? 'Güçlü klinik performans'
+      ? 'Güçlü klinik tempo'
       : accuracy >= 50
-        ? 'Dengeli klinik ilerleme'
-        : 'Hedefli tekrar önerilir';
+        ? 'Dengeli ilerleme'
+        : 'Hedefli tekrar zamanı';
+
+  const focus = !hasProgress
+    ? {
+        title: 'Başlangıç bloğu önerilir',
+        description: 'İlk oturum için kısa bir branş bloğu seçip tanı, tetkik ve ilk yönetim akışını birlikte çöz.',
+      }
+    : accuracy >= 75
+      ? {
+          title: 'Zaman baskısıyla pekiştir',
+          description: 'Temel akış güçlü görünüyor; şimdi zamanlı blok ile hız ve karar netliğini artır.',
+        }
+      : accuracy >= 50
+        ? {
+            title: 'Yanlış cevap analizi yap',
+            description: 'Orta düzey performansta en hızlı gelişim, çeldirici ayrımı ve kritik ipucu tekrarından gelir.',
+          }
+        : {
+            title: 'Temel paternleri güçlendir',
+            description: 'Önce sık çıkan TUS paternlerini, kırmızı bayrakları ve ilk tetkik mantığını kısa bloklarla tekrar et.',
+          };
+
+  const modeInsight = mode === 'study'
+    ? {
+        title: 'Öğrenme modunda ilerle',
+        description: 'Feedback kartlarını okuyarak klinik gerekçe, kanıt zinciri ve seçenek eleme mantığını pekiştir.',
+      }
+    : {
+        title: 'Sınav temposunu koru',
+        description: 'Yanıt sonrası yalnızca kritik notları tarayıp süre yönetimini bozmadan sonraki olguya geç.',
+      };
+
+  const nextAction = hasProgress && accuracy < 60
+    ? 'Önce zayıf branştan 10 olguluk öğrenme bloğu çöz.'
+    : mode === 'study'
+      ? 'Hazır olduğunda zamanlı blok oluştur.'
+      : 'Blok sonrası yanlış cevap panelinden tekrar yap.';
 
   return (
-    <aside className="session-summary-v8 card-surface">
-      <header className="summary-v8-header">
+    <aside className="session-summary-v8 session-summary-v11 card-surface">
+      <header className="summary-v8-header summary-v11-header">
         <div>
           <span>Oturum performansı</span>
           <h2>{status}</h2>
-        </div>
-        <div className="summary-v8-score">
-          <strong>%{accuracy}</strong>
-          <small>doğruluk</small>
+          <p>Oturum akışına göre kısa çalışma yönü ve sonraki adım önerisi.</p>
         </div>
       </header>
 
-      <div className="summary-v8-grid">
-        <SummaryItem label="Mod" value={mode === 'study' ? 'Öğrenme' : 'Sınav'} />
-        <SummaryItem label="Toplam puan" value={stats.score} />
-        <SummaryItem label="Doğru seri" value={stats.bestStreak} />
-        <SummaryItem label="Blok" value={examCount} />
+      <div className="summary-v11-insights" role="list">
+        <InsightRow
+          icon="Lightbulb"
+          eyebrow="Çalışma odağı"
+          title={focus.title}
+          description={focus.description}
+        />
+        <InsightRow
+          icon="BookOpen"
+          eyebrow="Aktif strateji"
+          title={modeInsight.title}
+          description={modeInsight.description}
+        />
       </div>
 
-      <div className="summary-v8-history" role="list">
-        {(entries.length ? entries : [
-          { label: 'Henüz yanıtlanmış olgu yok', value: '—' },
-        ]).map((entry, index) => (
-          <div key={`${entry.label}-${index}`} className="summary-v8-row" role="listitem">
-            <span>{index + 1}</span>
-            <div>
-              <strong>{entry.label}</strong>
-              {entry.subtext ? <small>{entry.subtext}</small> : null}
-            </div>
-            <b>{entry.value}</b>
-          </div>
-        ))}
+      <div className="summary-v11-next-step">
+        <span>Sonraki adım</span>
+        <strong>{nextAction}</strong>
       </div>
     </aside>
   );
@@ -73,10 +109,8 @@ function HomeCommandCenter({
   mode,
   onChangeMode,
   stats,
-  leaderboardEntries,
   onStartExam,
   onStartAIQuestion,
-  examCount,
   totalCases = 0,
   totalBranches = 0,
 }) {
@@ -97,11 +131,6 @@ function HomeCommandCenter({
             </span>
             <h1 className="home-brand-title-v10">KlinikIQ</h1>
             <p>TUS odaklı klinik akıl yürütme, tetkik seçimi ve olgu çözüm pratiği.</p>
-            <div className="home-hero-proof-row-v10" aria-label="Klinik öğrenme özellikleri">
-              <span><Icon name="Brain" /> Klinik muhakeme</span>
-              <span><Icon name="ClipboardCheck" /> Tetkik seçimi</span>
-              <span><Icon name="Sparkles" /> AI destekli pratik</span>
-            </div>
           </div>
 
           <aside className="home-action-panel-v10" aria-label="Hızlı başlangıç aksiyonları">
@@ -143,7 +172,7 @@ function HomeCommandCenter({
         </div>
       </section>
 
-      <SessionSummaryCard entries={leaderboardEntries} stats={stats} mode={mode} examCount={examCount} />
+      <SessionSummaryCard stats={stats} mode={mode} />
     </section>
   );
 }

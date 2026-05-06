@@ -170,7 +170,7 @@ function applyQuestionSpec(c, spec) {
     differentialComparison: Object.fromEntries(spec.options.filter((o) => o !== spec.correct).map((opt) => [opt, {
       explanation: (spec.whyWrong || {})[opt] || `${opt} olguda daha zayıf kalır; karar verdirici veri ${spec.correct} lehinedir.`,
       comparisonPoints: [
-        `Ana ipucu: ${spec.evidence?.[0] || 'öykü ve objektif tetkik paterninin birlikte yorumlanması'}`,
+        `Ayırt ettirici nokta: ${spec.evidence?.[0] || 'öykü ve objektif tetkik paterninin birlikte yorumlanması'}`,
         `Çeldirici tuzak: ${opt} benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez.`,
       ],
     }]))

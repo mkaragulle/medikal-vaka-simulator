@@ -102,7 +102,7 @@ function buildWrongFeedbackFromCase(clinicalCase, options) {
     if (option.text === correctText) return accumulator;
     const differential = differentials[option.text];
     accumulator[option.id] = differential?.explanation
-      || `${option.text} bu klinik bağlama yakın bir çeldirici olabilir; ancak olgudaki karar verdirici patern ${correctText} lehinedir ve bu seçeneği geriye iter.`;
+      || `${option.text} için beklenen tipik öykü, muayene veya tetkik paterni bu olguda baskın değildir; olgudaki objektif ipuçları ${correctText} lehinedir.`;
     return accumulator;
   }, {});
 }
@@ -163,13 +163,13 @@ function buildDifferentialComparison(seed, correctText) {
   return seed.options.reduce((accumulator, option) => {
     if (option.text === correctText) return accumulator;
     const feedback = seed.wrongOptionFeedback?.[option.id]
-      || `${option.text} güçlü bir çeldiricidir; ancak olgudaki ana ipuçları ${correctText} lehinedir.`;
+      || `${option.text} güçlü bir çeldirici olabilir; ancak olgudaki objektif ipuçları ${correctText} lehinedir.`;
     accumulator[option.text] = {
       explanation: feedback,
       comparisonPoints: [
-        `${option.text} belirli klinik koşullarda doğru olabilir; bu olguda karar verdirici patern farklıdır.`,
-        `Bu seçenek, ana ipucu olan “${seed.evidenceChain?.[0] || seed.learningTarget}” bilgisini yeterince açıklamaz.`,
-        `Doğru yanıt ${correctText} çünkü veriler tek bir öğrenme hedefi etrafında birleşir.`,
+        `Beklenen patern: ${option.text} kendi özgül öykü, muayene veya tetkik bulgularıyla güç kazanır.`,
+        `Ayırt ettirici olgu verisi: “${seed.evidenceChain?.[0] || seed.learningTarget}”.`,
+        `Doğru yanıt ${correctText}; çünkü öykü, muayene ve objektif veriler aynı tanısal eksende birleşir.`,
       ],
     };
     return accumulator;
@@ -179,7 +179,7 @@ function buildDifferentialComparison(seed, correctText) {
 function maskCorrectAnswerInText(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
   const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
+  return String(text).replace(new RegExp(escaped, 'gi'), 'tanısal ipucu');
 }
 
 function buildInvestigation(item, index, correctText = '') {
@@ -243,7 +243,7 @@ export function buildAIQuestionCase(seed, { generatedId = nowToken(), source = '
         clinicalPearls: [seed.examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparison(seed, correctText),
         managementSteps: seed.managementSteps?.length ? seed.managementSteps.map(richItemText).filter(Boolean) : [
-          'Ana ipucunu belirle ve seçenekleri aynı kategori içinde karşılaştır.',
+          'Ayırt ettirici klinik ipucunu belirle ve seçenekleri aynı kategori içinde karşılaştır.',
           'Objektif tetkik sonuçlarını tanı adı okumadan patern olarak yorumla.',
           'Benzer TUS çeldiricilerinin hangi ipucuyla elendiğini tekrar et.',
         ],

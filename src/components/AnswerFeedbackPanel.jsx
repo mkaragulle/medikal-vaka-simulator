@@ -47,6 +47,18 @@ function trimTrailingPunctuation(value = '') {
   return normalizeText(value).replace(/[.;:]$/u, '');
 }
 
+function isContextlessEvidenceTitle(title = '') {
+  return /^(Kanıt\s*\d+|Kanıt|Gerekçe ipucu|Ayırt ettirici ipucu)$/iu.test(normalizeText(title));
+}
+
+function isLaboratoryEvidence(text = '') {
+  return /troponin|d-dimer|crp|lökosit|hemoglobin|trombosit|glukoz|ph\b|baz açığı|enzim|metabolit|kreatinin|ast|alt|bilirubin|seroloji|kültür|pcr|marker|antikor|antijen|ng\/mL|mg\/dL|pozitif|negatif/iu.test(normalizeText(text));
+}
+
+function isContextlessEvidenceText(text = '') {
+  return /^(Yüksek|Düşük|Normal|Pozitif|Negatif|Saptandı|Saptanmadı)\.?$/iu.test(normalizeText(text));
+}
+
 function capitalizeSentence(value = '') {
   const text = normalizeText(value);
   if (!text) return '';
@@ -208,7 +220,7 @@ function inferEvidenceTitle(text = '', index = 0) {
   if (/yaş|bebek|çocuk|yenidoğan|erkek|kadın|adölesan|gebede/.test(normalized)) return 'Klinik bağlam';
   if (/reseptör|enzim|gen|mutasyon|yolak|hormon|protein|histolojik|nekroz|inflamasyon|morfoloji/.test(normalized)) return 'Mekanizma';
   if (/negatif|saptanmadı|normal|yok/.test(normalized)) return 'Dışlatıcı bulgu';
-  return `Kanıt ${index + 1}`;
+  return index === 0 ? 'Klinik ipucu' : 'Destekleyici bulgu';
 }
 
 function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
@@ -219,12 +231,14 @@ function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
 
   let title = originalTitle;
   const colonMatch = text.match(/^([^:：]{2,42})[:：]\s*(.+)$/u);
-  if (!title && colonMatch) {
+  if ((!title || isContextlessEvidenceTitle(title)) && colonMatch) {
     title = normalizeText(colonMatch[1]);
     text = normalizeText(colonMatch[2]);
   }
 
-  if (!title) title = fallbackTitle || inferEvidenceTitle(text, index);
+  const shouldInferTitle = !title || isContextlessEvidenceTitle(title) || (/^Laboratuvar paterni$/iu.test(title) && !isLaboratoryEvidence(text));
+  if (shouldInferTitle) title = fallbackTitle && !isContextlessEvidenceTitle(fallbackTitle) ? fallbackTitle : inferEvidenceTitle(text, index);
+  if (isContextlessEvidenceText(text)) return null;
   return {
     title: truncateSentence(trimTrailingPunctuation(title), 46),
     text: truncateSentence(text, maxLength),
@@ -233,7 +247,7 @@ function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
 
 function cleanEvidenceText(item, index = 0) {
   const normalized = normalizeTitledItem(item, index, null, 185);
-  if (!normalized) return null;
+  if (!normalized || isContextlessEvidenceTitle(normalized.title) || isContextlessEvidenceText(normalized.text)) return null;
   normalized.text = normalized.text
     .replace(/^Başvuru:\s*/iu, '')
     .replace(/^Muayene:\s*/iu, '')
@@ -290,7 +304,7 @@ function derivePearls(clinicalCase) {
   const pearls = feedback.clinicalPearls || feedback.pearls || clinicalCase.diagnosis?.pearls || [];
   const clue = getMainClue(clinicalCase);
   const rawPearls = Array.isArray(pearls) ? [...pearls] : [];
-  if (rawPearls.length < 2 && clue) rawPearls.push({ label: 'Ayırt ettirici ipucu', text: `${clue} benzer çeldiricileri eleten ana patern olarak hatırlanmalıdır.` });
+  if (rawPearls.length < 2 && clue) rawPearls.push({ label: 'TUS paterni', text: `${clue} benzer sorularda çeldiricileri eleten yüksek verimli patern olarak hatırlanmalıdır.` });
 
   return unique(rawPearls)
     .slice(0, MAX_PEARL_ITEMS)
@@ -336,14 +350,26 @@ function isGenericComparisonPoint(point = '') {
 
 function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) {
   const keyEvidence = evidenceChain[0]?.text || itemText(evidenceChain[0]);
-  const keyInvestigation = (clinicalCase.investigations || []).find((item) => item.summary || item.findings?.length);
+  const secondEvidence = evidenceChain[1]?.text || itemText(evidenceChain[1]);
+  const expectedPattern = inferOptionExpectedPattern(option);
   const points = [
-    keyEvidence ? `Karar verdirici ipucu: ${trimTrailingPunctuation(keyEvidence)}.` : null,
-    keyInvestigation ? `${keyInvestigation.label} bulgusu doğru yanıta yönelten destekleyici kanıttır.` : null,
-    `${option} ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır.`,
+    expectedPattern ? `Beklenen patern: ${expectedPattern}` : null,
+    keyEvidence ? `Olgu verisi: ${trimTrailingPunctuation(keyEvidence)}.` : null,
+    secondEvidence ? `Ek destek: ${trimTrailingPunctuation(secondEvidence)}.` : null,
   ];
 
   return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(item, 155));
+}
+
+function inferOptionExpectedPattern(option = '') {
+  const text = normalizeText(option).toLocaleLowerCase('tr');
+  if (/pnömoni/.test(text)) return 'ateş, öksürük, balgam ve parankimal infiltrasyon beklenir.';
+  if (/pnömotoraks/.test(text)) return 'tek taraflı solunum sesi azalması ve akciğer grafisinde plevral çizgi beklenir.';
+  if (/astım/.test(text)) return 'wheezing ve bronkospazm ön plandadır.';
+  if (/radyasyon/.test(text)) return 'iyonizan radyasyon maruziyeti, GİS prodromu ve hematopoetik baskılanma beklenir.';
+  if (/akut koroner|miyokart|stemi|nstemi/.test(text)) return 'iskemik ağrı, EKG ve troponin paterni beklenir.';
+  if (/panik/.test(text)) return 'objektif organ/tromboemboli bulgusu olmadan ani anksiyete atağı beklenir.';
+  return '';
 }
 
 function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []) {
@@ -363,12 +389,12 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
         explanation: truncateSentence(whyCorrect, 260),
-        comparisonPoints: clue ? [`Ana ipucu: ${trimTrailingPunctuation(clue)}.`] : [],
+        comparisonPoints: clue ? [`Özet patern: ${trimTrailingPunctuation(clue)}.`] : [],
       };
     }
 
     const explicit = wrongMap[option] || {};
-    const explanation = removeMetaLanguage(explicit.explanation || `${option} benzer bir klinik başlık gibi görünebilir; ancak bu olguda ${clue ? `${clue} ` : 'karar verdirici kanıt zinciri '}doğru seçenek lehinedir. Bu şık, olgunun ana ipucunu ve ilk yaklaşımını eksik açıklar.`);
+    const explanation = removeMetaLanguage(explicit.explanation || `${option} için beklenen tipik öykü, muayene veya tetkik paterni bu olguda baskın değildir. ${clue ? `${clue} ` : 'Olgudaki somut kanıtlar '}doğru seçenek lehine daha tutarlıdır.`);
     const nonGenericPoints = unique(explicit.comparisonPoints || []).filter((point) => !isGenericComparisonPoint(point));
 
     return {
