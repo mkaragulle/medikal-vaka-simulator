@@ -30976,3 +30976,282 @@ html[data-theme="dark"] .patient-summary-story-block.unified-history-block,
     grid-template-columns: 28px minmax(0, 1fr) !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   V55 — Patient summary final polish
+   --------------------------------------------------------------------------
+   - Sentence-case content in the first four cards.
+   - True centered icon tiles; legacy direct-span rules must not affect icons.
+   - Priority focus reads as one clean paragraph.
+   - Clinical tip strip is intentionally removed from JSX; keep hidden defensively.
+*/
+.patient-summary-card.premium-reference-summary-card .summary-detail-card > .summary-detail-icon,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card > .summary-detail-icon {
+  inline-size: 44px !important;
+  block-size: 44px !important;
+  min-inline-size: 44px !important;
+  min-block-size: 44px !important;
+  flex: 0 0 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  place-items: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 15px !important;
+  color: #0f8f87 !important;
+  background: linear-gradient(180deg, rgba(224, 250, 247, .95), rgba(236, 253, 245, .82)) !important;
+  border: 1px solid rgba(13, 148, 136, .08) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.72), 0 10px 22px rgba(15, 23, 42, .045) !important;
+  font-size: 0 !important;
+  font-weight: initial !important;
+  letter-spacing: 0 !important;
+  line-height: 1 !important;
+  text-transform: none !important;
+  overflow: hidden !important;
+  opacity: 1 !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-card > .summary-detail-icon svg,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card > .summary-detail-icon svg {
+  inline-size: 20px !important;
+  block-size: 20px !important;
+  max-inline-size: 20px !important;
+  max-block-size: 20px !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin: auto !important;
+  transform: none !important;
+  position: static !important;
+  overflow: visible !important;
+  color: currentColor !important;
+  stroke: currentColor !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-label {
+  display: block !important;
+  margin: 0 0 7px !important;
+  color: #0f766e !important;
+  font-size: 11.2px !important;
+  font-weight: 830 !important;
+  line-height: 1.22 !important;
+  letter-spacing: .055em !important;
+  text-transform: uppercase !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-card .summary-detail-copy p,
+.patient-summary-card.premium-reference-summary-card .summary-detail-card .summary-detail-copy p *,
+.patient-summary-card.premium-reference-summary-card .summary-detail-card .summary-profile-copy,
+.patient-summary-card.premium-reference-summary-card .summary-detail-card .summary-profile-copy *,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list li,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list li *,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card .summary-detail-copy p,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card .summary-detail-copy p *,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-clinical-mini-list,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-clinical-mini-list li,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-clinical-mini-list li * {
+  color: var(--summary-value-color-strong, var(--text-primary)) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  letter-spacing: -.004em !important;
+  text-transform: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+  text-wrap: pretty !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-profile-copy strong,
+.patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-profile-copy strong *,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-profile-copy strong,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-profile-copy strong * {
+  font-size: 15px !important;
+  font-weight: 760 !important;
+  line-height: 1.36 !important;
+  text-transform: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-profile-copy small,
+.patient-summary-card.premium-reference-summary-card .summary-detail-card--profile .summary-profile-copy small *,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-profile-copy small,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card--profile .summary-profile-copy small * {
+  font-size: 13px !important;
+  font-weight: 560 !important;
+  line-height: 1.36 !important;
+  text-transform: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid .summary-detail-card,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .structured-patient-summary-grid.unified-summary-grid .summary-detail-card {
+  display: grid !important;
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-copy,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-copy {
+  min-width: 0 !important;
+  width: 100% !important;
+  display: block !important;
+  padding-top: 0 !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-wide-icon,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-wide-icon {
+  inline-size: 42px !important;
+  block-size: 42px !important;
+  min-inline-size: 42px !important;
+  min-block-size: 42px !important;
+  flex: 0 0 42px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 14px !important;
+  font-size: 0 !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  overflow: hidden !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-wide-icon svg,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-wide-icon svg {
+  inline-size: 20px !important;
+  block-size: 20px !important;
+  display: block !important;
+  flex: 0 0 auto !important;
+  margin: auto !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block .summary-story-text,
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block .summary-story-text *,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block .summary-story-text,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block .summary-story-text * {
+  font-size: 14px !important;
+  font-weight: 520 !important;
+  line-height: 1.6 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus {
+  display: grid !important;
+  grid-template-columns: 42px minmax(0, 1fr) !important;
+  align-items: flex-start !important;
+  gap: 14px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus .summary-wide-content,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus .summary-wide-content {
+  min-width: 0 !important;
+  max-width: none !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus .summary-wide-content > span,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus .summary-wide-content > span {
+  display: block !important;
+  margin: 0 0 8px !important;
+  color: #0f766e !important;
+  font-size: 11.2px !important;
+  font-weight: 850 !important;
+  line-height: 1.22 !important;
+  letter-spacing: .055em !important;
+  text-transform: uppercase !important;
+  white-space: normal !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p,
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p *,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p * {
+  display: inline !important;
+  max-width: none !important;
+  margin: 0 !important;
+  color: var(--summary-focus-text, var(--text-primary)) !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.58 !important;
+  letter-spacing: -.003em !important;
+  text-transform: none !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+  text-wrap: pretty !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p {
+  display: block !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus .glossary-term,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus .glossary-term {
+  display: inline !important;
+  white-space: inherit !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  line-height: inherit !important;
+  text-transform: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip.unified-clinical-tip,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-tip-strip.unified-clinical-tip {
+  display: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (max-width: 720px) {
+  .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid,
+  .patient-summary-card.professional-patient-summary-card.clinical-summary-card .structured-patient-summary-grid.unified-summary-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-areas:
+      "profile"
+      "presentation"
+      "risk"
+      "clues" !important;
+  }
+}
+
+@media (max-width: 540px) {
+  .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid .summary-detail-card,
+  .patient-summary-card.professional-patient-summary-card.clinical-summary-card .structured-patient-summary-grid.unified-summary-grid .summary-detail-card,
+  .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+  .patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus,
+  .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-story-block.unified-history-block,
+  .patient-summary-card.professional-patient-summary-card.clinical-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus {
+    grid-template-columns: 38px minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .patient-summary-card.premium-reference-summary-card .summary-detail-card > .summary-detail-icon,
+  .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-detail-card > .summary-detail-icon,
+  .patient-summary-card.premium-reference-summary-card .summary-wide-icon,
+  .patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-wide-icon {
+    inline-size: 38px !important;
+    block-size: 38px !important;
+    min-inline-size: 38px !important;
+    min-block-size: 38px !important;
+    flex-basis: 38px !important;
+  }
+}

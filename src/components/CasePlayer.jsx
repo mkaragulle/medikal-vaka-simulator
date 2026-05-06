@@ -289,9 +289,41 @@ function buildFocusSentence(clinicalCase) {
   return 'Öykü, muayene ve objektif veriler tek klinik problem etrafında birleştirilmelidir.';
 }
 
+
+function normalizePatientSummaryText(value = '') {
+  let text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (!text) return '';
+
+  const letters = text.replace(/[^A-Za-zÇĞİÖŞÜçğıöşü]/g, '');
+  const upperLetters = (letters.match(/[A-ZÇĞİÖŞÜ]/g) || []).length;
+  const lowerLetters = (letters.match(/[a-zçğıöşü]/g) || []).length;
+  const looksUppercase = letters.length >= 4 && upperLetters > 0 && lowerLetters / Math.max(letters.length, 1) < 0.18;
+
+  if (looksUppercase) {
+    text = text.toLocaleLowerCase('tr');
+
+    const protectedTerms = [
+      'TUS', 'EKG', 'BT', 'MR', 'USG', 'EEG', 'EMG', 'PCR', 'CRP', 'CK', 'CK-MB', 'LDH',
+      'AST', 'ALT', 'ALP', 'GGT', 'BUN', 'TSH', 'T3', 'T4', 'INR', 'PT', 'aPTT', 'HbA1c',
+      'Hb', 'SpO2', 'SpO₂', 'HIV', 'HBV', 'HCV', 'HBsAg', 'Anti-HCV', 'ANA', 'ANCA',
+      'BOS', 'DKA', 'KOAH', 'ARDS', 'DNA', 'RNA', 'IgA', 'IgG', 'IgM', 'IgE', 'LDL', 'HDL',
+      'VLDL', 'ACE', 'ARB', 'NSAİİ', 'SSRI', 'TCA', 'IV', 'IM', 'SC', 'PO', 'ARDS', 'ARDS',
+    ];
+
+    protectedTerms.forEach((term) => {
+      const lower = term.toLocaleLowerCase('tr');
+      const escaped = lower.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      text = text.replace(new RegExp(`(^|[^A-Za-zÇĞİÖŞÜçğıöşü0-9])(${escaped})(?=$|[^A-Za-zÇĞİÖŞÜçğıöşü0-9])`, 'giu'), `$1${term}`);
+    });
+  }
+
+  text = text.replace(/(^|[.!?]\s+)([a-zçğıöşü])/g, (match, prefix, letter) => `${prefix}${letter.toLocaleUpperCase('tr')}`);
+  return text;
+}
+
 function normalizeSummaryItems(value) {
-  if (Array.isArray(value)) return value.map((item) => toDisplayPhrase(item)).filter(Boolean);
-  if (typeof value === 'string' && value.trim()) return [toDisplayPhrase(value)];
+  if (Array.isArray(value)) return value.map((item) => normalizePatientSummaryText(toDisplayPhrase(item))).filter(Boolean);
+  if (typeof value === 'string' && value.trim()) return [normalizePatientSummaryText(toDisplayPhrase(value))];
   return [];
 }
 
@@ -388,9 +420,9 @@ function buildPatientSummary(clinicalCase) {
     2,
     76,
   );
-  const profileText = compactClinicalText(intro.profile || [demographics, setting].filter(Boolean).join(' · '), 92);
-  const presentationText = compactSentence(intro.presentation || complaint, 118);
-  const historyParts = splitSentences(intro.historySummary || fallbackStory).slice(0, 3).map((part) => compactClinicalText(part, 190));
+  const profileText = normalizePatientSummaryText(compactClinicalText(intro.profile || [demographics, setting].filter(Boolean).join(' · '), 92));
+  const presentationText = normalizePatientSummaryText(compactSentence(intro.presentation || complaint, 118));
+  const historyParts = splitSentences(intro.historySummary || fallbackStory).slice(0, 3).map((part) => normalizePatientSummaryText(compactClinicalText(part, 190)));
 
   return {
     rows: [
@@ -399,9 +431,8 @@ function buildPatientSummary(clinicalCase) {
       { kind: 'risk', label: 'Risk bağlamı', items: riskItems, fallback: 'Risk bağlamı vaka öyküsüyle birlikte değerlendirilmelidir.' },
       { kind: 'clues', label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Öykü, muayene ve tetkik verilerinden ayrım yapılmalıdır.' },
     ],
-    history: historyParts.length ? historyParts : [compactSentence(fallbackStory, 190)],
-    focus: compactSentence(intro.priorityFocus || buildFocusSentence(clinicalCase), 230),
-    tip: intro.clinicalTip || buildClinicalTip(clinicalCase, clueItems),
+    history: historyParts.length ? historyParts : [normalizePatientSummaryText(compactSentence(fallbackStory, 190))],
+    focus: normalizePatientSummaryText(compactSentence(intro.priorityFocus || buildFocusSentence(clinicalCase), 260)),
   };
 }
 
@@ -758,16 +789,6 @@ function CasePlayer({
                     <div className="summary-wide-content">
                       <span>ÖNCELİKLİ KLİNİK ODAK</span>
                       <p><GlossaryText text={patientSummary.focus} enabled={!hardMode && !examMeta?.active} /></p>
-                    </div>
-                  </aside>
-
-                  <aside className="patient-summary-tip-strip unified-clinical-tip">
-                    <span className="summary-tip-icon" aria-hidden="true">
-                      <Icon name="Lightbulb" size={25} strokeWidth={1.95} />
-                    </span>
-                    <div className="summary-tip-copy">
-                      <span>KLİNİK İPUCU</span>
-                      <p><GlossaryText text={patientSummary.tip} enabled={!hardMode && !examMeta?.active} /></p>
                     </div>
                   </aside>
                 </div>
