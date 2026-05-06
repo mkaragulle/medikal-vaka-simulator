@@ -1,18 +1,30 @@
 # Build / Validation Result
 
-## Passed
+## Static content validation
 
-- JS/JSX syntax transpile check passed for all source JS/JSX files.
-- Basic CSS brace/paren/bracket balance check passed for `src/index.css`.
+Passed:
+- `src/data/cases.js` imports successfully with Node ESM.
+- 132 cases are readable.
+- Active management sequences: 70.
+- TUS Spot cases with disabled management panel: 62.
+- Active management steps with repeated full case title: 0.
+- Duplicate active management step sets: 0.
+- Banned template leakage patterns in management/investigation/nextStep fields: 0.
 
-## Not fully executed in this environment
+## npm install / build
 
-`npm run build` was not fully executed because installing `firebase@12.12.1` from the package registry repeatedly timed out in the execution environment. The source changes are isolated to React components and CSS; run the following locally to generate a fresh production build:
+`npm install --no-audit --no-fund` and `npm install --ignore-scripts --no-audit --no-fund --omit=optional --prefer-offline` both timed out while fetching the dependency tree, before `node_modules` could be created.
+
+`npm run build` was attempted afterward and failed because Vite was not installed in `node_modules`:
+
+```txt
+sh: 1: vite: not found
+```
+
+Recommended local commands:
 
 ```bash
 npm install
 npm run build
 npm run dev
 ```
-
-The stale pre-existing `dist/` folder was removed from the ZIP to prevent serving an outdated production artifact.

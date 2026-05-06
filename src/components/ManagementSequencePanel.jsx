@@ -177,7 +177,8 @@ export function buildManagementSequence(clinicalCase = {}) {
   const explicit = clinicalCase.managementSequence;
   if (explicit?.enabled === false) return null;
 
-  if (explicit?.steps?.length) {
+  if (Array.isArray(explicit?.steps)) {
+    if (explicit.steps.length === 0) return null;
     const steps = explicit.steps.map((step, index) => normalizeStep(step, index, step.required !== false));
     return {
       title: explicit.title || 'Yönetim sırası',

@@ -480,7 +480,12 @@ function CasePlayer({
   const showExamPanel = !isSpotCase || hasExamData || hasVitalData;
   const hasInvestigationOrders = investigationOrders.length > 0;
   const showInvestigationPanel = hasInvestigationOrders;
-  const showManagementPanel = clinicalCase.managementSequence?.enabled !== false && (!isSpotCase || clinicalCase.managementSequence?.showInSpot === true);
+  const hasExplicitManagementSteps = Array.isArray(clinicalCase.managementSequence?.steps)
+    ? clinicalCase.managementSequence.steps.length > 0
+    : true;
+  const showManagementPanel = clinicalCase.managementSequence?.enabled !== false
+    && hasExplicitManagementSteps
+    && (!isSpotCase || clinicalCase.managementSequence?.showInSpot === true);
   const visibleSectionItems = useMemo(() => SECTION_NAV_ITEMS.filter((item) => {
     if (item.id === 'case-exam') return showExamPanel;
     if (item.id === 'case-investigations') return showInvestigationPanel;

@@ -1,5 +1,6 @@
 // KlinikIQ vaka verisi: TUS odaklı, klinik karar verdirici ve objektif tetkik sonuçlarıyla yapılandırılmıştır.
 // Bu sürümde yönetim sırası ve tetkik istemleri vaka özelinde sadeleştirilmiştir.
+// Final clinical QA: şablon sızıntıları temizlenmiş, vaka başlığı tekrarı kaldırılmıştır.
 
 export const cases = [
   {
@@ -899,7 +900,7 @@ export const cases = [
         "Fokal konsolidasyon ve yüksek ateş yoksa pnömoni daha geri plandadır.",
         "Tedavi oksijenizasyon, preload/afterload azaltılması ve diürez üzerine kurulur."
       ],
-      "nextStep": "Oksijen veya noninvaziv ventilasyon ile solunumu destekle; İntravenöz loop diüretiği başla; Kan basıncı uygunsa vazodilatör tedavi ve tetikleyici neden değerlendirmesi yap.",
+      "nextStep": "Solunum eforu, SpO₂, kan basıncı ve bilinç durumuyla aciliyeti belirle. Hastayı oturt, oksijen ver; hipoksemi veya solunum yorgunluğu varsa noninvaziv ventilasyonu erken başlat. EKG, akciğer grafisi, kan gazı ve natriüretik peptid ile tanıyı ve tetikleyiciyi değerlendir. Hipertansif tabloda nitrat, konjesyonda intravenöz loop diüretik tedaviyi planla. Akut koroner sendrom, aritmi veya kapak patolojisi gibi tetikleyicileri eş zamanlı yönet. Şok, bilinç bozulması veya ventilasyon yetersizliği varsa yoğun bakım ve invaziv havayolu hazırlığı yap.",
       "answerFeedback": {
         "diagnosisMeta": "Akut kalp yetersizliği · alveoler ödem · oksijenizasyon önceliği",
         "whyCorrect": "Ortopne, paroksismal noktürnal dispne, S3, juguler venöz dolgunluk, bilateral raller, yüksek NT-proBNP ve grafide kardiyomegali/perihiler ödem birlikteliği kardiyojenik pulmoner ödemi destekler.",
@@ -915,12 +916,12 @@ export const cases = [
           "Tedavi oksijenizasyon, preload/afterload azaltılması ve diürez üzerine kurulur."
         ],
         "management": [
-          "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı",
-          "Hastayı monitörize et, defibrilatör erişimini ve iki damar yolu hazırlığını sağla",
-          "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kontrendikasyonları dışlayarak başla",
-          "Primer perkütan koroner girişim için kateter laboratuvarını aktive et",
-          "PCI gecikecekse fibrinolitik uygunluğunu kanama riskiyle birlikte değerlendir",
-          "Aritmi, kalp yetmezliği, tekrar iskemi ve kanama komplikasyonlarını yakın izle"
+          "Solunum eforu, SpO₂, kan basıncı ve bilinç durumuyla aciliyeti belirle.",
+          "Hastayı oturt, oksijen ver; hipoksemi veya solunum yorgunluğu varsa noninvaziv ventilasyonu erken başlat.",
+          "EKG, akciğer grafisi, kan gazı ve natriüretik peptid ile tanıyı ve tetikleyiciyi değerlendir.",
+          "Hipertansif tabloda nitrat, konjesyonda intravenöz loop diüretik tedaviyi planla.",
+          "Akut koroner sendrom, aritmi veya kapak patolojisi gibi tetikleyicileri eş zamanlı yönet.",
+          "Şok, bilinç bozulması veya ventilasyon yetersizliği varsa yoğun bakım ve invaziv havayolu hazırlığı yap."
         ],
         "learningOutcome": "Akut kardiyojenik ödemde semptom paterni, S3/JVD ve grafi-laboratuvar uyumu birlikte okunmalıdır.",
         "differentials": {
@@ -950,12 +951,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı",
-          "Hastayı monitörize et, defibrilatör erişimini ve iki damar yolu hazırlığını sağla",
-          "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kontrendikasyonları dışlayarak başla",
-          "Primer perkütan koroner girişim için kateter laboratuvarını aktive et",
-          "PCI gecikecekse fibrinolitik uygunluğunu kanama riskiyle birlikte değerlendir",
-          "Aritmi, kalp yetmezliği, tekrar iskemi ve kanama komplikasyonlarını yakın izle"
+          "Solunum eforu, SpO₂, kan basıncı ve bilinç durumuyla aciliyeti belirle.",
+          "Hastayı oturt, oksijen ver; hipoksemi veya solunum yorgunluğu varsa noninvaziv ventilasyonu erken başlat.",
+          "EKG, akciğer grafisi, kan gazı ve natriüretik peptid ile tanıyı ve tetikleyiciyi değerlendir.",
+          "Hipertansif tabloda nitrat, konjesyonda intravenöz loop diüretik tedaviyi planla.",
+          "Akut koroner sendrom, aritmi veya kapak patolojisi gibi tetikleyicileri eş zamanlı yönet.",
+          "Şok, bilinç bozulması veya ventilasyon yetersizliği varsa yoğun bakım ve invaziv havayolu hazırlığı yap."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -963,87 +964,99 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "STEMI yönetim sırası",
-      "instruction": "Reperfüzyon gecikmesini önleyecek acil kardiyak yönetim basamaklarını sırala.",
+      "title": "Akut kardiyojenik pulmoner ödem yönetim sırası",
+      "instruction": "Hipoksemi, hipertansiyon/volüm yükü ve altta yatan tetikleyiciyi hedefleyen akışı sırala.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "cv-pulmonary-edema-001-r-1-iskemik-gogus-agrisi-ve-ardisik-derivasyonlarda-st-e",
-          "label": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı",
+          "id": "cv-pulmonary-edema-001-r-1-solunum-eforu-spo-kan-basinci-ve-bilinc-durumuyla-aciliyeti-belirle",
+          "label": "Solunum eforu, SpO₂, kan basıncı ve bilinç durumuyla aciliyeti belirle.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "STEMI’de tedavi kararı tipik klinik ve EKG ile verilir; troponin tekrarını beklemek reperfüzyonu geciktirir"
+          "rationale": "Pulmoner ödemde hipoksemi ve solunum yorgunluğu hızla kötüleşebilir."
         },
         {
-          "id": "cv-pulmonary-edema-001-r-2-hastayi-monitorize-et-defibrilator-erisimini-ve-iki-",
-          "label": "Hastayı monitörize et, defibrilatör erişimini ve iki damar yolu hazırlığını sağla",
+          "id": "cv-pulmonary-edema-001-r-2-hastayi-oturt-oksijen-ver-hipoksemi-veya-solunum-yorgunlugu-varsa-niv-bas",
+          "label": "Hastayı oturt, oksijen ver; hipoksemi veya solunum yorgunluğu varsa noninvaziv ventilasyonu erken başlat.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "STEMI erken dönemde ölümcül aritmi ve hemodinamik bozulma riski taşır"
+          "rationale": "Pozisyon ve basınçlı ventilasyon oksijenasyonu ve preload/afterload yükünü azaltır."
         },
         {
-          "id": "cv-pulmonary-edema-001-r-3-aspirin-p2y12-inhibitoru-ve-antikoagulasyonu-kontren",
-          "label": "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kontrendikasyonları dışlayarak başla",
+          "id": "cv-pulmonary-edema-001-r-3-ekg-akciger-grafisi-kan-gazi-ve-natriuretik-peptid-ile-taniyi-ve-tetikle",
+          "label": "EKG, akciğer grafisi, kan gazı ve natriüretik peptid ile tanıyı ve tetikleyiciyi değerlendir.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Antitrombotik tedavi trombüs ilerlemesini azaltır ve reperfüzyon stratejisinin temel parçasıdır"
+          "rationale": "İskemi, aritmi, hipertansif kriz ve volüm yükü tedavi seçimini değiştirir."
         },
         {
-          "id": "cv-pulmonary-edema-001-r-4-primer-perkutan-koroner-girisim-icin-kateter-laborat",
-          "label": "Primer perkütan koroner girişim için kateter laboratuvarını aktive et",
+          "id": "cv-pulmonary-edema-001-r-4-hipertansif-tabloda-nitrat-konjesyonda-intravenoz-loop-diuretik-tedaviyi",
+          "label": "Hipertansif tabloda nitrat, konjesyonda intravenöz loop diüretik tedaviyi planla.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Uygun merkezde en etkili yaklaşım mümkün olan en kısa sürede koroner reperfüzyondur"
+          "rationale": "Tedavi baskın hemodinamik probleme göre seçilmelidir."
         },
         {
-          "id": "cv-pulmonary-edema-001-r-5-pci-gecikecekse-fibrinolitik-uygunlugunu-kanama-risk",
-          "label": "PCI gecikecekse fibrinolitik uygunluğunu kanama riskiyle birlikte değerlendir",
+          "id": "cv-pulmonary-edema-001-r-5-akut-koroner-sendrom-aritmi-veya-kapak-patolojisi-gibi-tetikleyicileri-e",
+          "label": "Akut koroner sendrom, aritmi veya kapak patolojisi gibi tetikleyicileri eş zamanlı yönet.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Zaman hedefi aşılıyorsa ve kontrendikasyon yoksa fibrinoliz mortaliteyi azaltabilir"
+          "rationale": "Pulmoner ödem tek başına değil, altta yatan nedenle birlikte tedavi edilir."
         },
         {
-          "id": "cv-pulmonary-edema-001-r-6-aritmi-kalp-yetmezligi-tekrar-iskemi-ve-kanama-kompl",
-          "label": "Aritmi, kalp yetmezliği, tekrar iskemi ve kanama komplikasyonlarını yakın izle",
+          "id": "cv-pulmonary-edema-001-r-6-sok-bilinc-bozulmasi-veya-ventilasyon-yetersizligi-varsa-yogun-bakim-ve-",
+          "label": "Şok, bilinç bozulması veya ventilasyon yetersizliği varsa yoğun bakım ve invaziv havayolu hazırlığı yap.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Akut dönem izlemi hem tedavi güvenliği hem de erken komplikasyon yönetimi için zorunludur"
+          "rationale": "Klinik kötüleşme gecikmeden ileri destek gerektirir."
         },
         {
-          "id": "cv-pulmonary-edema-001-d-1-troponin-sonucunu-seri-olarak-bekle-ve-reperfuzyon-k",
-          "label": "Troponin sonucunu seri olarak bekle ve reperfüzyon kararını ertele",
+          "id": "cv-pulmonary-edema-001-d-1-her-pulmoner-odem-hastasini-stemi-gibi-dogrudan-kateter-laboratuvarina-g",
+          "label": "Her pulmoner ödem hastasını STEMI gibi doğrudan kateter laboratuvarına gönder.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "ST elevasyonu ile uyumlu klinikte reperfüzyon kararı troponin beklenerek geciktirilmez"
+          "rationale": "Koroner reperfüzyon yalnız STEMI veya uygun AKS kanıtı varsa önceliklidir."
         },
         {
-          "id": "cv-pulmonary-edema-001-d-2-akut-agri-sirasinda-elektif-efor-testi-planla",
-          "label": "Akut ağrı sırasında elektif efor testi planla",
+          "id": "cv-pulmonary-edema-001-d-2-hipoksemi-belirginken-bnp-sonucunu-bekleyip-oksijeni-ertele",
+          "label": "Hipoksemi belirginken BNP sonucunu bekleyip oksijeni ertele.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Efor testi akut koroner oklüzyon şüphesinde kontrendike/uygunsuz bir ilk basamaktır"
+          "rationale": "Solunum desteği laboratuvar sonucunu beklemez."
         },
         {
-          "id": "cv-pulmonary-edema-001-d-3-stemi-paternini-yalniz-analjeziyle-izlemeye-al",
-          "label": "STEMI paternini yalnız analjeziyle izlemeye al",
+          "id": "cv-pulmonary-edema-001-d-3-volum-yuku-olan-hastaya-rutin-hizli-sivi-bolusu-ver",
+          "label": "Volüm yükü olan hastaya rutin hızlı sıvı bolusu ver.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Analjezi destekleyicidir; koroner reperfüzyonun yerine geçmez"
+          "rationale": "Kardiyojenik pulmoner ödemde gereksiz sıvı hipoksemiyi artırabilir."
+        },
+        {
+          "id": "cv-pulmonary-edema-001-d-4-dispneyi-yalniz-bronkospazm-kabul-edip-diuretik-hemodinamik-degerlendirm",
+          "label": "Dispneyi yalnız bronkospazm kabul edip diüretik/hemodinamik değerlendirme yapma.",
+          "required": false,
+          "correctOrder": null,
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Yaygın ral, ortopne ve yüksek BNP kardiyojenik ödem lehinedir."
         }
       ]
     },
@@ -3344,7 +3357,7 @@ export const cases = [
         ],
         "management": [
           "Nörolojik defisitin zaman içinde yayılım ve mekânda yayılım kriterlerini destekleyip desteklemediğini değerlendir",
-          "MR bulguları ve gerekirse BOS oligoklonal bant ile demiyelinizasyonu destekle",
+          "MR bulgularını BOS oligoklonal bant ve klinik atak öyküsüyle destekle",
           "Fonksiyonel kayıp yaratan akut atakta yüksek doz intravenöz metilprednizolon başla",
           "Steroid yanıtsız ağır atakta plazmaferez gereksinimini değerlendir",
           "Hastalık modifiye edici tedaviyi atak sıklığı, MR yükü ve hasta özelliklerine göre planla",
@@ -3393,7 +3406,7 @@ export const cases = [
         },
         "managementSteps": [
           "Nörolojik defisitin zaman içinde yayılım ve mekânda yayılım kriterlerini destekleyip desteklemediğini değerlendir",
-          "MR bulguları ve gerekirse BOS oligoklonal bant ile demiyelinizasyonu destekle",
+          "MR bulgularını BOS oligoklonal bant ve klinik atak öyküsüyle destekle",
           "Fonksiyonel kayıp yaratan akut atakta yüksek doz intravenöz metilprednizolon başla",
           "Steroid yanıtsız ağır atakta plazmaferez gereksinimini değerlendir",
           "Hastalık modifiye edici tedaviyi atak sıklığı, MR yükü ve hasta özelliklerine göre planla",
@@ -3419,8 +3432,8 @@ export const cases = [
           "rationale": "MS tanısında klinik ve görüntüleme ile dissemine tutulum gösterilir"
         },
         {
-          "id": "neuro-ms-001-r-2-mr-bulgulari-ve-gerekirse-bos-oligoklonal-bant-ile-d",
-          "label": "MR bulguları ve gerekirse BOS oligoklonal bant ile demiyelinizasyonu destekle",
+          "id": "neuro-ms-001-r-2-mr-bulgularini-bos-oligoklonal-bant-ve-klinik-atak-oykusuyle-d",
+          "label": "MR bulgularını BOS oligoklonal bant ve klinik atak öyküsüyle destekle",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
@@ -3886,7 +3899,7 @@ export const cases = [
         "Peritonit veya perforasyon varsa cerrahi yaklaşım gerekir.",
         "Dışkıda kan olmaması tanıyı dışlamaz."
       ],
-      "nextStep": "Sıvı resüsitasyonu ve analjezi sağla; USG ile tanıyı destekle; Peritonit yoksa pnömatik veya hidrostatik redüksiyon uygula.",
+      "nextStep": "Kolik ağlama atakları, kusma ve kanlı-mukuslu dışkıyı invajinasyon lehine değerlendir. Dehidratasyon, şok, peritonit ve perforasyon bulgularını erken dışla. Oral alımı kes; damar yolu, sıvı ve analjezi desteğini başlat. Ultrasonografide hedef/pseudokidney bulgusuyla tanıyı doğrula. Stabil ve perforasyonsuz olguda pnömatik/hidrostatik redüksiyon planla. Peritonit, perforasyon veya başarısız redüksiyonda cerrahi değerlendirme iste.",
       "answerFeedback": {
         "diagnosisMeta": "Pediatrik akut batın · invajinasyon · redüksiyon önceliği",
         "whyCorrect": "Süt çocuğunda kolik tarzda ağlama atakları, kusma, kanlı-mukuslu dışkılama ve USG’de target/pseudokidney görünümü ileoçekal invajinasyonu destekler.",
@@ -3902,11 +3915,12 @@ export const cases = [
           "Dışkıda kan olmaması tanıyı dışlamaz."
         ],
         "management": [
-          "Yaşa özgü dehidratasyon, ağrı paterni ve kusma özelliklerini değerlendir",
-          "Sıvı-elektrolit dengesini ve beslenme kesintisini güvenli şekilde düzenle",
-          "Hedef görüntüleme ile tanıyı doğrula",
-          "İleoçekal invajinasyon için definitif girişim veya cerrahi konsültasyon kararını ver",
-          "Aileyi uyarı bulguları ve işlem sonrası takip konusunda bilgilendir"
+          "Kolik ağlama atakları, kusma ve kanlı-mukuslu dışkıyı invajinasyon lehine değerlendir.",
+          "Dehidratasyon, şok, peritonit ve perforasyon bulgularını erken dışla.",
+          "Oral alımı kes; damar yolu, sıvı ve analjezi desteğini başlat.",
+          "Ultrasonografide hedef/pseudokidney bulgusuyla tanıyı doğrula.",
+          "Stabil ve perforasyonsuz olguda pnömatik/hidrostatik redüksiyon planla.",
+          "Peritonit, perforasyon veya başarısız redüksiyonda cerrahi değerlendirme iste."
         ],
         "learningOutcome": "Süt çocuğunda kolik tarzda ağlama atakları, kusma, kanlı-mukuslu dışkılama ve USG’de target/pseudokidney görünümü ileoçekal invajinasyonu destekler.",
         "differentials": {
@@ -3936,11 +3950,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Yaşa özgü dehidratasyon, ağrı paterni ve kusma özelliklerini değerlendir",
-          "Sıvı-elektrolit dengesini ve beslenme kesintisini güvenli şekilde düzenle",
-          "Hedef görüntüleme ile tanıyı doğrula",
-          "İleoçekal invajinasyon için definitif girişim veya cerrahi konsültasyon kararını ver",
-          "Aileyi uyarı bulguları ve işlem sonrası takip konusunda bilgilendir"
+          "Kolik ağlama atakları, kusma ve kanlı-mukuslu dışkıyı invajinasyon lehine değerlendir.",
+          "Dehidratasyon, şok, peritonit ve perforasyon bulgularını erken dışla.",
+          "Oral alımı kes; damar yolu, sıvı ve analjezi desteğini başlat.",
+          "Ultrasonografide hedef/pseudokidney bulgusuyla tanıyı doğrula.",
+          "Stabil ve perforasyonsuz olguda pnömatik/hidrostatik redüksiyon planla.",
+          "Peritonit, perforasyon veya başarısız redüksiyonda cerrahi değerlendirme iste."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -3948,78 +3963,90 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "İleoçekal invajinasyon yönetim sırası",
-      "instruction": "Pediatrik akut batında stabilizasyon ve doğru girişim zamanlamasını sırala.",
-      "minRequiredSteps": 5,
+      "title": "İnvajinasyon yönetim sırası",
+      "instruction": "Stabilizasyon, ultrason ve redüksiyon kararını pediatrik akut batına göre sırala.",
+      "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "ped-intussusception-001-r-1-yasa-ozgu-dehidratasyon-agri-paterni-ve-kusma-ozelli",
-          "label": "Yaşa özgü dehidratasyon, ağrı paterni ve kusma özelliklerini değerlendir",
+          "id": "ped-intussusception-001-r-1-kolik-aglama-ataklari-kusma-ve-kanli-mukuslu-diskiyi-invajinasyon-lehine",
+          "label": "Kolik ağlama atakları, kusma ve kanlı-mukuslu dışkıyı invajinasyon lehine değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Süt çocuğunda klinik bozulma hızlı gelişebilir ve öykü paternleri tanısal ipucu sağlar"
+          "rationale": "Paroksismal ağrı ve çilek jölesi dışkı tipik ipuçlarıdır."
         },
         {
-          "id": "ped-intussusception-001-r-2-sivi-elektrolit-dengesini-ve-beslenme-kesintisini-gu",
-          "label": "Sıvı-elektrolit dengesini ve beslenme kesintisini güvenli şekilde düzenle",
+          "id": "ped-intussusception-001-r-2-dehidratasyon-sok-peritonit-ve-perforasyon-bulgularini-erken-disla",
+          "label": "Dehidratasyon, şok, peritonit ve perforasyon bulgularını erken dışla.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Kusma ve obstrüksiyon tablolarında dehidratasyon/alkaloz riski önceliklidir"
+          "rationale": "Bu bulgular redüksiyon yöntemini ve cerrahi gereksinimi değiştirir."
         },
         {
-          "id": "ped-intussusception-001-r-3-hedef-goruntuleme-ile-taniyi-dogrula",
-          "label": "Hedef görüntüleme ile tanıyı doğrula",
+          "id": "ped-intussusception-001-r-3-oral-alimi-kes-damar-yolu-sivi-ve-analjezi-destegini-baslat",
+          "label": "Oral alımı kes; damar yolu, sıvı ve analjezi desteğini başlat.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Ultrasonografi veya uygun grafi gereksiz tetkik kalabalığı olmadan tanıyı destekler"
+          "rationale": "Çocukta kusma ve üçüncü boşluk kaybı hızlı bozulma yapabilir."
         },
         {
-          "id": "ped-intussusception-001-r-4-ileocekal-invajinasyon-icin-definitif-girisim-veya-c",
-          "label": "İleoçekal invajinasyon için definitif girişim veya cerrahi konsültasyon kararını ver",
+          "id": "ped-intussusception-001-r-4-ultrasonografide-hedef-pseudokidney-bulgusuyla-taniyi-dogrula",
+          "label": "Ultrasonografide hedef/pseudokidney bulgusuyla tanıyı doğrula.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Tedavi seçimi obstrüksiyonun nedeni ve komplikasyon varlığına göre değişir"
+          "rationale": "USG invajinasyonda ilk tercih tanısal görüntülemedir."
         },
         {
-          "id": "ped-intussusception-001-r-5-aileyi-uyari-bulgulari-ve-islem-sonrasi-takip-konusu",
-          "label": "Aileyi uyarı bulguları ve işlem sonrası takip konusunda bilgilendir",
+          "id": "ped-intussusception-001-r-5-stabil-ve-perforasyonsuz-olguda-pnomatik-hidrostatik-reduksiyon-planla",
+          "label": "Stabil ve perforasyonsuz olguda pnömatik/hidrostatik redüksiyon planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Pediatrik olgularda güvenli izlem aile eğitimiyle tamamlanır"
+          "rationale": "Nonoperatif redüksiyon hem tanısal hem tedavi edicidir."
         },
         {
-          "id": "ped-intussusception-001-d-1-safrali-kusmayi-basit-reflu-kabul-ederek-taburcu-et",
-          "label": "Safralı kusmayı basit reflü kabul ederek taburcu et",
-          "required": false,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Safralı kusma obstrüksiyon açısından kırmızı bayraktır"
-        },
-        {
-          "id": "ped-intussusception-001-d-2-sivi-elektrolit-acigini-duzeltmeden-girisime-gonder",
-          "label": "Sıvı-elektrolit açığını düzeltmeden girişime gönder",
-          "required": false,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Pediatrik hastada işlem öncesi güvenli stabilizasyon gerekir"
-        },
-        {
-          "id": "ped-intussusception-001-d-3-taniyi-destekleyen-goruntulemeyi-tamamen-ertele",
-          "label": "Tanıyı destekleyen görüntülemeyi tamamen ertele",
-          "required": false,
+          "id": "ped-intussusception-001-r-6-peritonit-perforasyon-veya-basarisiz-reduksiyonda-cerrahi-degerlendirme-",
+          "label": "Peritonit, perforasyon veya başarısız redüksiyonda cerrahi değerlendirme iste.",
+          "required": true,
+          "correctOrder": 6,
           "unsafe": false,
-          "score": -1,
-          "rationale": "Akut cerrahi olasılıkta hedef görüntüleme yönetimi hızlandırır"
+          "score": 1,
+          "rationale": "Komplike invajinasyon cerrahi müdahale gerektirebilir."
+        },
+        {
+          "id": "ped-intussusception-001-d-1-peritonit-bulgusu-varken-lavman-reduksiyonunda-israr-et",
+          "label": "Peritonit bulgusu varken lavman redüksiyonunda ısrar et.",
+          "required": false,
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Perforasyon/peritonit redüksiyon için kontrendikasyon oluşturabilir."
+        },
+        {
+          "id": "ped-intussusception-001-d-2-kolik-agriyi-basit-gaz-sancisi-kabul-edip-goruntulemeyi-ertele",
+          "label": "Kolik ağrıyı basit gaz sancısı kabul edip görüntülemeyi ertele.",
+          "required": false,
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Tekrarlayan ağlama atakları ve kanlı dışkı akut batın uyarısıdır."
+        },
+        {
+          "id": "ped-intussusception-001-d-3-kusma-ve-dehidratasyon-varken-yalniz-oral-sivi-oner",
+          "label": "Kusma ve dehidratasyon varken yalnız oral sıvı öner.",
+          "required": false,
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Akut obstrüksiyonda damar yolu ve güvenli destek gerekir."
         }
       ]
     },
@@ -4132,7 +4159,7 @@ export const cases = [
         "Safralı kusma distal obstrüksiyon alarmıdır.",
         "Piloromiyotomi kesin tedavi basamağıdır."
       ],
-      "nextStep": "Dehidratasyon ve elektrolit bozukluğunu düzelt; Abdominal USG ile tanıyı doğrula; Stabilizasyon sonrası Ramstedt piloromiyotomi planla.",
+      "nextStep": "Safrasız fışkırır kusma, açlık ve kilo alamamayı pilor stenozu lehine değerlendir. Dehidratasyon ve hipokloremik metabolik alkalozu saptayıp oral alımı kes. İzotonik sıvı ve potasyum replasmanını idrar çıkışıyla güvenli şekilde düzenle. Pilor ultrasonografisiyle kas kalınlığı ve kanal uzunluğunu doğrula. Elektrolit ve volüm durumu düzeldikten sonra Ramstedt piloromiyotomi planla. Ameliyat sonrası beslenme toleransı ve kusma tekrarı açısından izle.",
       "answerFeedback": {
         "diagnosisMeta": "Yenidoğan/süt çocuğu cerrahisi · safrasız kusma · hipokloremik alkaloz",
         "whyCorrect": "Beş haftalık bebekte progresif safrasız fışkırır kusma, kilo alamama, hipokloremik metabolik alkaloz ve USG’de pilor kas kalınlaşması hipertrofik pilor stenozunu destekler.",
@@ -4148,11 +4175,12 @@ export const cases = [
           "Piloromiyotomi kesin tedavi basamağıdır."
         ],
         "management": [
-          "Yaşa özgü dehidratasyon, ağrı paterni ve kusma özelliklerini değerlendir",
-          "Sıvı-elektrolit dengesini ve beslenme kesintisini güvenli şekilde düzenle",
-          "Hedef görüntüleme ile tanıyı doğrula",
-          "Hipertrofik pilor stenozu için definitif girişim veya cerrahi konsültasyon kararını ver",
-          "Aileyi uyarı bulguları ve işlem sonrası takip konusunda bilgilendir"
+          "Safrasız fışkırır kusma, açlık ve kilo alamamayı pilor stenozu lehine değerlendir.",
+          "Dehidratasyon ve hipokloremik metabolik alkalozu saptayıp oral alımı kes.",
+          "İzotonik sıvı ve potasyum replasmanını idrar çıkışıyla güvenli şekilde düzenle.",
+          "Pilor ultrasonografisiyle kas kalınlığı ve kanal uzunluğunu doğrula.",
+          "Elektrolit ve volüm durumu düzeldikten sonra Ramstedt piloromiyotomi planla.",
+          "Ameliyat sonrası beslenme toleransı ve kusma tekrarı açısından izle."
         ],
         "learningOutcome": "Beş haftalık bebekte progresif safrasız fışkırır kusma, kilo alamama, hipokloremik metabolik alkaloz ve USG’de pilor kas kalınlaşması hipertrofik pilor stenozunu destekler.",
         "differentials": {
@@ -4196,11 +4224,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Yaşa özgü dehidratasyon, ağrı paterni ve kusma özelliklerini değerlendir",
-          "Sıvı-elektrolit dengesini ve beslenme kesintisini güvenli şekilde düzenle",
-          "Hedef görüntüleme ile tanıyı doğrula",
-          "Hipertrofik pilor stenozu için definitif girişim veya cerrahi konsültasyon kararını ver",
-          "Aileyi uyarı bulguları ve işlem sonrası takip konusunda bilgilendir"
+          "Safrasız fışkırır kusma, açlık ve kilo alamamayı pilor stenozu lehine değerlendir.",
+          "Dehidratasyon ve hipokloremik metabolik alkalozu saptayıp oral alımı kes.",
+          "İzotonik sıvı ve potasyum replasmanını idrar çıkışıyla güvenli şekilde düzenle.",
+          "Pilor ultrasonografisiyle kas kalınlığı ve kanal uzunluğunu doğrula.",
+          "Elektrolit ve volüm durumu düzeldikten sonra Ramstedt piloromiyotomi planla.",
+          "Ameliyat sonrası beslenme toleransı ve kusma tekrarı açısından izle."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -4209,77 +4238,89 @@ export const cases = [
       "enabled": true,
       "showInSpot": false,
       "title": "Hipertrofik pilor stenozu yönetim sırası",
-      "instruction": "Pediatrik akut batında stabilizasyon ve doğru girişim zamanlamasını sırala.",
-      "minRequiredSteps": 5,
+      "instruction": "Elektrolit düzeltme, ultrason tanısı ve piloromiyotomi hazırlığını sırala.",
+      "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "ped-pyloric-stenosis-001-r-1-yasa-ozgu-dehidratasyon-agri-paterni-ve-kusma-ozelli",
-          "label": "Yaşa özgü dehidratasyon, ağrı paterni ve kusma özelliklerini değerlendir",
+          "id": "ped-pyloric-stenosis-001-r-1-safrasiz-fiskirir-kusma-aclik-ve-kilo-alamamayi-pilor-stenozu-lehine-deg",
+          "label": "Safrasız fışkırır kusma, açlık ve kilo alamamayı pilor stenozu lehine değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Süt çocuğunda klinik bozulma hızlı gelişebilir ve öykü paternleri tanısal ipucu sağlar"
+          "rationale": "Yaş ve kusma paterni tanı için güçlü ipucudur."
         },
         {
-          "id": "ped-pyloric-stenosis-001-r-2-sivi-elektrolit-dengesini-ve-beslenme-kesintisini-gu",
-          "label": "Sıvı-elektrolit dengesini ve beslenme kesintisini güvenli şekilde düzenle",
+          "id": "ped-pyloric-stenosis-001-r-2-dehidratasyon-ve-hipokloremik-metabolik-alkalozu-saptayip-oral-alimi-kes",
+          "label": "Dehidratasyon ve hipokloremik metabolik alkalozu saptayıp oral alımı kes.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Kusma ve obstrüksiyon tablolarında dehidratasyon/alkaloz riski önceliklidir"
+          "rationale": "Asit kaybı ve sıvı eksikliği anestezi öncesi düzeltilmelidir."
         },
         {
-          "id": "ped-pyloric-stenosis-001-r-3-hedef-goruntuleme-ile-taniyi-dogrula",
-          "label": "Hedef görüntüleme ile tanıyı doğrula",
+          "id": "ped-pyloric-stenosis-001-r-3-izotonik-sivi-ve-potasyum-replasmanini-idrar-cikisiyla-guvenli-sekilde-d",
+          "label": "İzotonik sıvı ve potasyum replasmanını idrar çıkışıyla güvenli şekilde düzenle.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Ultrasonografi veya uygun grafi gereksiz tetkik kalabalığı olmadan tanıyı destekler"
+          "rationale": "Elektrolit düzeltilmeden cerrahiye gitmek risklidir."
         },
         {
-          "id": "ped-pyloric-stenosis-001-r-4-hipertrofik-pilor-stenozu-icin-definitif-girisim-vey",
-          "label": "Hipertrofik pilor stenozu için definitif girişim veya cerrahi konsültasyon kararını ver",
+          "id": "ped-pyloric-stenosis-001-r-4-pilor-ultrasonografisiyle-kas-kalinligi-ve-kanal-uzunlugunu-dogrula",
+          "label": "Pilor ultrasonografisiyle kas kalınlığı ve kanal uzunluğunu doğrula.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Tedavi seçimi obstrüksiyonun nedeni ve komplikasyon varlığına göre değişir"
+          "rationale": "USG tanıyı gereksiz radyasyon olmadan destekler."
         },
         {
-          "id": "ped-pyloric-stenosis-001-r-5-aileyi-uyari-bulgulari-ve-islem-sonrasi-takip-konusu",
-          "label": "Aileyi uyarı bulguları ve işlem sonrası takip konusunda bilgilendir",
+          "id": "ped-pyloric-stenosis-001-r-5-elektrolit-ve-volum-durumu-duzeldikten-sonra-ramstedt-piloromiyotomi-pla",
+          "label": "Elektrolit ve volüm durumu düzeldikten sonra Ramstedt piloromiyotomi planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Pediatrik olgularda güvenli izlem aile eğitimiyle tamamlanır"
+          "rationale": "Definitif tedavi cerrahidir ancak önce metabolik stabilizasyon gerekir."
         },
         {
-          "id": "ped-pyloric-stenosis-001-d-1-safrali-kusmayi-basit-reflu-kabul-ederek-taburcu-et",
-          "label": "Safralı kusmayı basit reflü kabul ederek taburcu et",
+          "id": "ped-pyloric-stenosis-001-r-6-ameliyat-sonrasi-beslenme-toleransi-ve-kusma-tekrari-acisindan-izle",
+          "label": "Ameliyat sonrası beslenme toleransı ve kusma tekrarı açısından izle.",
+          "required": true,
+          "correctOrder": 6,
+          "unsafe": false,
+          "score": 1,
+          "rationale": "Erken dönemde kusma devam edebilir; hidrasyon ve beslenme izlenir."
+        },
+        {
+          "id": "ped-pyloric-stenosis-001-d-1-hipokloremik-alkalozu-duzeltmeden-hemen-ameliyata-gonder",
+          "label": "Hipokloremik alkalozu düzeltmeden hemen ameliyata gönder.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Safralı kusma obstrüksiyon açısından kırmızı bayraktır"
+          "rationale": "Elektrolit bozukluğu anestezi riskini artırır."
         },
         {
-          "id": "ped-pyloric-stenosis-001-d-2-sivi-elektrolit-acigini-duzeltmeden-girisime-gonder",
-          "label": "Sıvı-elektrolit açığını düzeltmeden girişime gönder",
+          "id": "ped-pyloric-stenosis-001-d-2-safrasiz-kusmayi-her-durumda-basit-reflu-kabul-edip-taburcu-et",
+          "label": "Safrasız kusmayı her durumda basit reflü kabul edip taburcu et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Pediatrik hastada işlem öncesi güvenli stabilizasyon gerekir"
+          "rationale": "Fışkırır kusma ve alkaloz pilor stenozunu düşündürür."
         },
         {
-          "id": "ped-pyloric-stenosis-001-d-3-taniyi-destekleyen-goruntulemeyi-tamamen-ertele",
-          "label": "Tanıyı destekleyen görüntülemeyi tamamen ertele",
+          "id": "ped-pyloric-stenosis-001-d-3-ultrason-yerine-ilk-basamak-olarak-genis-enfeksiyon-paneli-iste",
+          "label": "Ultrason yerine ilk basamak olarak geniş enfeksiyon paneli iste.",
           "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Akut cerrahi olasılıkta hedef görüntüleme yönetimi hızlandırır"
+          "rationale": "Bu vakada karar verdirici test pilor ultrasonografisidir."
         }
       ]
     },
@@ -4965,7 +5006,7 @@ export const cases = [
         "Erken dönemde ağrı visseral; parietal periton irritasyonu gelişince sağ alt kadrana lokalizedir.",
         "İdrar tetkikinde hafif eritrosit görülebilse de tipik klinik tablo apandisit lehinedir."
       ],
-      "nextStep": "Genel cerrahi değerlendirmesi; uygun antibiyotik ve laparoskopik apendektomi planlanması.",
+      "nextStep": "Ağrı migrasyonu, sağ alt kadran hassasiyeti ve periton bulgularını değerlendir. Oral alımı kes; damar yolu, sıvı ve analjeziyi başlat. Hemogram/CRP ve uygun hastada idrar-gebelik değerlendirmesiyle ayırıcı tanıyı daralt. USG veya BT ile apendiks inflamasyonu ve komplikasyonu doğrula. Genel cerrahi ile apendektomi zamanlamasını ve antibiyotik gereksinimini planla. Perforasyon, apse, yaygın peritonit veya sepsis bulgularını izle.",
       "answerFeedback": {
         "diagnosisMeta": "Akut apandisitte ağrı migrasyonu",
         "whyCorrect": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrı, iştahsızlık, nötrofilik lökositoz ve BT’de inflame apendiks görünümü akut apandisit ile uyumludur.",
@@ -4980,12 +5021,12 @@ export const cases = [
           "İdrar tetkikinde hafif eritrosit görülebilse de tipik klinik tablo apandisit lehinedir."
         ],
         "management": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Ağrı migrasyonu, sağ alt kadran hassasiyeti ve periton bulgularını değerlendir.",
+          "Oral alımı kes; damar yolu, sıvı ve analjeziyi başlat.",
+          "Hemogram/CRP ve uygun hastada idrar-gebelik değerlendirmesiyle ayırıcı tanıyı daralt.",
+          "USG veya BT ile apendiks inflamasyonu ve komplikasyonu doğrula.",
+          "Genel cerrahi ile apendektomi zamanlamasını ve antibiyotik gereksinimini planla.",
+          "Perforasyon, apse, yaygın peritonit veya sepsis bulgularını izle."
         ],
         "learningOutcome": "Akut apandisit tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
         "differentials": {
@@ -5015,12 +5056,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Ağrı migrasyonu, sağ alt kadran hassasiyeti ve periton bulgularını değerlendir.",
+          "Oral alımı kes; damar yolu, sıvı ve analjeziyi başlat.",
+          "Hemogram/CRP ve uygun hastada idrar-gebelik değerlendirmesiyle ayırıcı tanıyı daralt.",
+          "USG veya BT ile apendiks inflamasyonu ve komplikasyonu doğrula.",
+          "Genel cerrahi ile apendektomi zamanlamasını ve antibiyotik gereksinimini planla.",
+          "Perforasyon, apse, yaygın peritonit veya sepsis bulgularını izle."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -5029,86 +5070,89 @@ export const cases = [
       "enabled": true,
       "showInSpot": false,
       "title": "Akut apandisit yönetim sırası",
-      "instruction": "Akut cerrahi karında tanı doğrulama, destek ve zamanlama kararını sırala.",
+      "instruction": "Ağrı migrasyonu, görüntüleme ve cerrahi zamanlamayı sırala.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "surg-appendicitis-001-r-1-agri-migrasyonu-lokal-periton-bulgusu-veya-obstruksi",
-          "label": "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
+          "id": "surg-appendicitis-001-r-1-agri-migrasyonu-sag-alt-kadran-hassasiyeti-ve-periton-bulgularini-degerl",
+          "label": "Ağrı migrasyonu, sağ alt kadran hassasiyeti ve periton bulgularını değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi akut karında fizik muayene tedavi zamanlamasını etkiler"
+          "rationale": "Klinik örüntü apandisit olasılığını ve aciliyetini belirler."
         },
         {
-          "id": "surg-appendicitis-001-r-2-oral-alimi-kes-damar-yolu-ve-sivi-elektrolit-destegi",
-          "label": "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
+          "id": "surg-appendicitis-001-r-2-oral-alimi-kes-damar-yolu-sivi-ve-analjeziyi-baslat",
+          "label": "Oral alımı kes; damar yolu, sıvı ve analjeziyi başlat.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi girişim olasılığında aspirasyon ve dehidratasyon riski azaltılır"
+          "rationale": "Olası operasyon ve dehidratasyon riski için destek tedavisi gerekir."
         },
         {
-          "id": "surg-appendicitis-001-r-3-hedef-laboratuvar-goruntuleme-ile-taniyi-dogrula-ve-",
-          "label": "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
+          "id": "surg-appendicitis-001-r-3-hemogram-crp-ve-uygun-hastada-idrar-gebelik-degerlendirmesiyle-ayirici-t",
+          "label": "Hemogram/CRP ve uygun hastada idrar-gebelik değerlendirmesiyle ayırıcı tanıyı daralt.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Görüntüleme seçimi şüpheli patolojiye göre yapılır; gereksiz tetkik eklenmez"
+          "rationale": "Üriner ve jinekolojik nedenler apandisitle karışabilir."
         },
         {
-          "id": "surg-appendicitis-001-r-4-cerrahi-konsultasyonla-operasyon-veya-konservatif-te",
-          "label": "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
+          "id": "surg-appendicitis-001-r-4-usg-veya-bt-ile-apendiks-inflamasyonu-ve-komplikasyonu-dogrula",
+          "label": "USG veya BT ile apendiks inflamasyonu ve komplikasyonu doğrula.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Akut cerrahi tabloda zamanlama morbiditeyi belirler"
+          "rationale": "Görüntüleme özellikle atipik olguda perforasyon/apseyi gösterir."
         },
         {
-          "id": "surg-appendicitis-001-r-5-endikasyon-varsa-uygun-antibiyotik-ve-agri-kontrolun",
-          "label": "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
+          "id": "surg-appendicitis-001-r-5-genel-cerrahi-ile-apendektomi-zamanlamasini-ve-antibiyotik-gereksinimini",
+          "label": "Genel cerrahi ile apendektomi zamanlamasını ve antibiyotik gereksinimini planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Antibiyotik perforasyon, gangren, kolanjit veya komplike inflamasyonda hedefe yöneliktir"
+          "rationale": "Definitif tedavi çoğu olguda cerrahi yaklaşım ve perioperatif antibiyotiktir."
         },
         {
-          "id": "surg-appendicitis-001-r-6-klinik-kotulesme-peritonit-ve-sepsis-bulgularini-yak",
-          "label": "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle",
+          "id": "surg-appendicitis-001-r-6-perforasyon-apse-yaygin-peritonit-veya-sepsis-bulgularini-izle",
+          "label": "Perforasyon, apse, yaygın peritonit veya sepsis bulgularını izle.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Başlangıçta sınırlı tablo komplikasyona ilerleyebilir"
+          "rationale": "Komplike apandisit tedavi şeklini ve yatış düzeyini değiştirir."
         },
         {
-          "id": "surg-appendicitis-001-d-1-periton-bulgusu-varken-yalniz-oral-analjezikle-tabur",
-          "label": "Periton bulgusu varken yalnız oral analjezikle taburcu et",
+          "id": "surg-appendicitis-001-d-1-periton-bulgusu-varken-yalniz-oral-analjezikle-taburcu-et",
+          "label": "Periton bulgusu varken yalnız oral analjezikle taburcu et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Peritonit veya komplikasyon şüphesinde ayaktan izlem güvenli değildir"
+          "rationale": "Peritonit olasılığı güvenli ayaktan izleme uygun değildir."
         },
         {
-          "id": "surg-appendicitis-001-d-2-cerrahi-degerlendirmeyi-goruntuleme-sonucu-olmadan-h",
-          "label": "Cerrahi değerlendirmeyi görüntüleme sonucu olmadan her durumda ertele",
+          "id": "surg-appendicitis-001-d-2-akut-donemde-kolonoskopiyle-taniyi-kesinlestirmeye-calis",
+          "label": "Akut dönemde kolonoskopiyle tanıyı kesinleştirmeye çalış.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Klinik peritonit varsa cerrahi karar geciktirilmemelidir"
+          "rationale": "Kolonoskopi akut apandisit tanısında ilk yöntem değildir ve riskli olabilir."
         },
         {
-          "id": "surg-appendicitis-001-d-3-antibiyotigi-her-karin-agrisinda-tanidan-bagimsiz-ru",
-          "label": "Antibiyotiği her karın ağrısında tanıdan bağımsız rutin ver",
+          "id": "surg-appendicitis-001-d-3-gebelik-olasiligini-hic-sorgulama",
+          "label": "Gebelik olasılığını hiç sorgulama.",
           "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Antibiyotik endikasyona göre seçilir; tanısal belirsizliği örtmemelidir"
+          "rationale": "Doğurgan yaştaki hastada gebelik görüntüleme ve ayırıcı tanıyı değiştirir."
         }
       ]
     },
@@ -5245,7 +5289,7 @@ export const cases = [
         "Biliyer kolikte ağrı genellikle daha kısa sürer ve inflamasyon bulguları belirgin değildir.",
         "Belirgin sarılık ve koledok dilatasyonu koledokolitiazis açısından ileri değerlendirme gerektirir."
       ],
-      "nextStep": "Sıvı; analjezi; gram negatif ve anaeropları kapsayan antibiyotik ve erken laparoskopik kolesistektomi.",
+      "nextStep": "Ateş, sağ üst kadran hassasiyeti ve Murphy bulgusunu akut kolesistit lehine değerlendir. Oral alımı kes; damar yolu, sıvı, analjezi ve antiemetik desteği başlat. Lökosit, CRP, bilirubin ve karaciğer enzimleriyle kolanjit/koledok taşı riskini değerlendir. Sağ üst kadran ultrasonografisiyle taş, duvar kalınlığı ve perikolesistik sıvıyı doğrula. Ampirik antibiyotik ve erken laparoskopik kolesistektomi planını cerrahiyle belirle. Sarılık, kolanjit veya geniş koledok varsa ERCP gereksinimini değerlendir.",
       "answerFeedback": {
         "diagnosisMeta": "Akut taşlı kolesistitte biliyer kolikten ayrım",
         "whyCorrect": "Süreklilik gösteren sağ üst kadran ağrısı, ateş, lökositoz, Murphy bulgusu ve ultrasonografide taş ile duvar kalınlaşması akut taşlı kolesistit lehinedir.",
@@ -5260,12 +5304,12 @@ export const cases = [
           "Belirgin sarılık ve koledok dilatasyonu koledokolitiazis açısından ileri değerlendirme gerektirir."
         ],
         "management": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Ateş, sağ üst kadran hassasiyeti ve Murphy bulgusunu akut kolesistit lehine değerlendir.",
+          "Oral alımı kes; damar yolu, sıvı, analjezi ve antiemetik desteği başlat.",
+          "Lökosit, CRP, bilirubin ve karaciğer enzimleriyle kolanjit/koledok taşı riskini değerlendir.",
+          "Sağ üst kadran ultrasonografisiyle taş, duvar kalınlığı ve perikolesistik sıvıyı doğrula.",
+          "Ampirik antibiyotik ve erken laparoskopik kolesistektomi planını cerrahiyle belirle.",
+          "Sarılık, kolanjit veya geniş koledok varsa ERCP gereksinimini değerlendir."
         ],
         "learningOutcome": "Akut taşlı kolesistit tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
         "differentials": {
@@ -5295,12 +5339,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Ateş, sağ üst kadran hassasiyeti ve Murphy bulgusunu akut kolesistit lehine değerlendir.",
+          "Oral alımı kes; damar yolu, sıvı, analjezi ve antiemetik desteği başlat.",
+          "Lökosit, CRP, bilirubin ve karaciğer enzimleriyle kolanjit/koledok taşı riskini değerlendir.",
+          "Sağ üst kadran ultrasonografisiyle taş, duvar kalınlığı ve perikolesistik sıvıyı doğrula.",
+          "Ampirik antibiyotik ve erken laparoskopik kolesistektomi planını cerrahiyle belirle.",
+          "Sarılık, kolanjit veya geniş koledok varsa ERCP gereksinimini değerlendir."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -5309,86 +5353,89 @@ export const cases = [
       "enabled": true,
       "showInSpot": false,
       "title": "Akut kolesistit yönetim sırası",
-      "instruction": "Akut cerrahi karında tanı doğrulama, destek ve zamanlama kararını sırala.",
+      "instruction": "Sağ üst kadran ağrısı, biliyer görüntüleme ve erken cerrahi yaklaşımı sırala.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "surg-cholecystitis-001-r-1-agri-migrasyonu-lokal-periton-bulgusu-veya-obstruksi",
-          "label": "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
+          "id": "surg-cholecystitis-001-r-1-ates-sag-ust-kadran-hassasiyeti-ve-murphy-bulgusunu-akut-kolesistit-lehi",
+          "label": "Ateş, sağ üst kadran hassasiyeti ve Murphy bulgusunu akut kolesistit lehine değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi akut karında fizik muayene tedavi zamanlamasını etkiler"
+          "rationale": "Biliyer kolikten ayrım inflamasyon bulgularıyla yapılır."
         },
         {
-          "id": "surg-cholecystitis-001-r-2-oral-alimi-kes-damar-yolu-ve-sivi-elektrolit-destegi",
-          "label": "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
+          "id": "surg-cholecystitis-001-r-2-oral-alimi-kes-damar-yolu-sivi-analjezi-ve-antiemetik-destegi-baslat",
+          "label": "Oral alımı kes; damar yolu, sıvı, analjezi ve antiemetik desteği başlat.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi girişim olasılığında aspirasyon ve dehidratasyon riski azaltılır"
+          "rationale": "Cerrahi olasılığı ve kusma/dehidratasyon riski nedeniyle destek tedavisi gerekir."
         },
         {
-          "id": "surg-cholecystitis-001-r-3-hedef-laboratuvar-goruntuleme-ile-taniyi-dogrula-ve-",
-          "label": "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
+          "id": "surg-cholecystitis-001-r-3-lokosit-crp-bilirubin-ve-karaciger-enzimleriyle-kolanjit-koledok-tasi-ri",
+          "label": "Lökosit, CRP, bilirubin ve karaciğer enzimleriyle kolanjit/koledok taşı riskini değerlendir.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Görüntüleme seçimi şüpheli patolojiye göre yapılır; gereksiz tetkik eklenmez"
+          "rationale": "Kolestaz bulguları ERCP gereksinimini değiştirebilir."
         },
         {
-          "id": "surg-cholecystitis-001-r-4-cerrahi-konsultasyonla-operasyon-veya-konservatif-te",
-          "label": "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
+          "id": "surg-cholecystitis-001-r-4-sag-ust-kadran-ultrasonografisiyle-tas-duvar-kalinligi-ve-perikolesistik",
+          "label": "Sağ üst kadran ultrasonografisiyle taş, duvar kalınlığı ve perikolesistik sıvıyı doğrula.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Akut cerrahi tabloda zamanlama morbiditeyi belirler"
+          "rationale": "USG ilk basamak görüntülemedir."
         },
         {
-          "id": "surg-cholecystitis-001-r-5-endikasyon-varsa-uygun-antibiyotik-ve-agri-kontrolun",
-          "label": "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
+          "id": "surg-cholecystitis-001-r-5-ampirik-antibiyotik-ve-erken-laparoskopik-kolesistektomi-planini-cerrahi",
+          "label": "Ampirik antibiyotik ve erken laparoskopik kolesistektomi planını cerrahiyle belirle.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Antibiyotik perforasyon, gangren, kolanjit veya komplike inflamasyonda hedefe yöneliktir"
+          "rationale": "Erken cerrahi komplikasyonu ve nüksü azaltır."
         },
         {
-          "id": "surg-cholecystitis-001-r-6-klinik-kotulesme-peritonit-ve-sepsis-bulgularini-yak",
-          "label": "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle",
+          "id": "surg-cholecystitis-001-r-6-sarilik-kolanjit-veya-genis-koledok-varsa-ercp-gereksinimini-degerlendir",
+          "label": "Sarılık, kolanjit veya geniş koledok varsa ERCP gereksinimini değerlendir.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Başlangıçta sınırlı tablo komplikasyona ilerleyebilir"
+          "rationale": "Ortak safra yolu obstrüksiyonu cerrahi öncesi endoskopik yaklaşım gerektirebilir."
         },
         {
-          "id": "surg-cholecystitis-001-d-1-periton-bulgusu-varken-yalniz-oral-analjezikle-tabur",
-          "label": "Periton bulgusu varken yalnız oral analjezikle taburcu et",
+          "id": "surg-cholecystitis-001-d-1-ates-ve-murphy-bulgusuna-ragmen-yalniz-antispazmodik-verip-taburcu-et",
+          "label": "Ateş ve Murphy bulgusuna rağmen yalnız antispazmodik verip taburcu et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Peritonit veya komplikasyon şüphesinde ayaktan izlem güvenli değildir"
+          "rationale": "İnflamasyon bulguları akut kolesistit lehinedir ve izlem/tedavi gerektirir."
         },
         {
-          "id": "surg-cholecystitis-001-d-2-cerrahi-degerlendirmeyi-goruntuleme-sonucu-olmadan-h",
-          "label": "Cerrahi değerlendirmeyi görüntüleme sonucu olmadan her durumda ertele",
+          "id": "surg-cholecystitis-001-d-2-kolanjit-bulgularini-ercp-degerlendirmesinden-bagimsiz-kabul-et",
+          "label": "Kolanjit bulgularını ERCP değerlendirmesinden bağımsız kabul et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Klinik peritonit varsa cerrahi karar geciktirilmemelidir"
+          "rationale": "Kolanjit veya koledok taşı varlığı acil drenaj gerektirebilir."
         },
         {
-          "id": "surg-cholecystitis-001-d-3-antibiyotigi-her-karin-agrisinda-tanidan-bagimsiz-ru",
-          "label": "Antibiyotiği her karın ağrısında tanıdan bağımsız rutin ver",
+          "id": "surg-cholecystitis-001-d-3-ultrasonografi-yerine-ilk-basamak-olarak-rutin-kolonoskopi-iste",
+          "label": "Ultrasonografi yerine ilk basamak olarak rutin kolonoskopi iste.",
           "required": false,
-          "unsafe": false,
-          "score": -1,
-          "rationale": "Antibiyotik endikasyona göre seçilir; tanısal belirsizliği örtmemelidir"
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Kolonoskopi biliyer ağrı değerlendirmesinde uygun değildir."
         }
       ]
     },
@@ -5510,7 +5557,7 @@ export const cases = [
         "Ateş, lökositozun belirgin artması, sürekli ağrı, peritonit veya laktat yüksekliği strangülasyon/iskemi açısından uyarıcıdır.",
         "Paralitik ileusta belirgin mekanik geçiş noktası beklenmez."
       ],
-      "nextStep": "Nazogastrik dekompresyon; intravenöz sıvı-elektrolit tedavisi; seri karın muayenesi.",
+      "nextStep": "Kusma, distansiyon, obstipasyon ve geçirilmiş cerrahi öyküsünü obstrüksiyon lehine değerlendir. Oral alımı kes; damar yolu, sıvı-elektrolit replasmanı ve analjezi başlat. Nazogastrik dekompresyonu kusma/distansiyon belirginse uygula. BT ile geçiş noktası, kapalı ans, iskemi veya perforasyon bulgularını değerlendir. Peritonit, ateş, laktat yüksekliği veya kapalı ans varsa acil cerrahi planla. Komplikasyon yoksa konservatif izlemde ağrı, gaz-gaita çıkışı ve laboratuvar yanıtını takip et.",
       "answerFeedback": {
         "diagnosisMeta": "İnce bağırsak obstrüksiyonunda adezyon öyküsü",
         "whyCorrect": "Geçirilmiş abdominal cerrahi öyküsü, kolik ağrı, kusma, distansiyon, obstipasyon ve BT’de geçiş noktası adezyona bağlı mekanik ince bağırsak obstrüksiyonunu düşündürür.",
@@ -5525,12 +5572,12 @@ export const cases = [
           "Paralitik ileusta belirgin mekanik geçiş noktası beklenmez."
         ],
         "management": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Kusma, distansiyon, obstipasyon ve geçirilmiş cerrahi öyküsünü obstrüksiyon lehine değerlendir.",
+          "Oral alımı kes; damar yolu, sıvı-elektrolit replasmanı ve analjezi başlat.",
+          "Nazogastrik dekompresyonu kusma/distansiyon belirginse uygula.",
+          "BT ile geçiş noktası, kapalı ans, iskemi veya perforasyon bulgularını değerlendir.",
+          "Peritonit, ateş, laktat yüksekliği veya kapalı ans varsa acil cerrahi planla.",
+          "Komplikasyon yoksa konservatif izlemde ağrı, gaz-gaita çıkışı ve laboratuvar yanıtını takip et."
         ],
         "learningOutcome": "Adezyona bağlı ince bağırsak obstrüksiyonu tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
         "differentials": {
@@ -5560,12 +5607,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Kusma, distansiyon, obstipasyon ve geçirilmiş cerrahi öyküsünü obstrüksiyon lehine değerlendir.",
+          "Oral alımı kes; damar yolu, sıvı-elektrolit replasmanı ve analjezi başlat.",
+          "Nazogastrik dekompresyonu kusma/distansiyon belirginse uygula.",
+          "BT ile geçiş noktası, kapalı ans, iskemi veya perforasyon bulgularını değerlendir.",
+          "Peritonit, ateş, laktat yüksekliği veya kapalı ans varsa acil cerrahi planla.",
+          "Komplikasyon yoksa konservatif izlemde ağrı, gaz-gaita çıkışı ve laboratuvar yanıtını takip et."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -5573,87 +5620,90 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Adezyona bağlı ince bağırsak obstrüksiyonu yönetim sırası",
-      "instruction": "Akut cerrahi karında tanı doğrulama, destek ve zamanlama kararını sırala.",
+      "title": "İnce bağırsak obstrüksiyonu yönetim sırası",
+      "instruction": "Obstrüksiyon derecesi, strangülasyon bulguları ve cerrahi karar sırasını kur.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "surg-sbo-001-r-1-agri-migrasyonu-lokal-periton-bulgusu-veya-obstruksi",
-          "label": "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
+          "id": "surg-sbo-001-r-1-kusma-distansiyon-obstipasyon-ve-gecirilmis-cerrahi-oykusunu-obstruksiyo",
+          "label": "Kusma, distansiyon, obstipasyon ve geçirilmiş cerrahi öyküsünü obstrüksiyon lehine değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi akut karında fizik muayene tedavi zamanlamasını etkiler"
+          "rationale": "Adezyon öyküsü mekanik ince bağırsak obstrüksiyonunu destekler."
         },
         {
-          "id": "surg-sbo-001-r-2-oral-alimi-kes-damar-yolu-ve-sivi-elektrolit-destegi",
-          "label": "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
+          "id": "surg-sbo-001-r-2-oral-alimi-kes-damar-yolu-sivi-elektrolit-replasmani-ve-analjezi-baslat",
+          "label": "Oral alımı kes; damar yolu, sıvı-elektrolit replasmanı ve analjezi başlat.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi girişim olasılığında aspirasyon ve dehidratasyon riski azaltılır"
+          "rationale": "Kusma ve üçüncü boşluk kaybı hızlı sıvı-elektrolit bozukluğu oluşturur."
         },
         {
-          "id": "surg-sbo-001-r-3-hedef-laboratuvar-goruntuleme-ile-taniyi-dogrula-ve-",
-          "label": "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
+          "id": "surg-sbo-001-r-3-nazogastrik-dekompresyonu-kusma-distansiyon-belirginse-uygula",
+          "label": "Nazogastrik dekompresyonu kusma/distansiyon belirginse uygula.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Görüntüleme seçimi şüpheli patolojiye göre yapılır; gereksiz tetkik eklenmez"
+          "rationale": "Dekompresyon aspirasyon riskini ve intraluminal basıncı azaltır."
         },
         {
-          "id": "surg-sbo-001-r-4-cerrahi-konsultasyonla-operasyon-veya-konservatif-te",
-          "label": "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
+          "id": "surg-sbo-001-r-4-bt-ile-gecis-noktasi-kapali-ans-iskemi-veya-perforasyon-bulgularini-dege",
+          "label": "BT ile geçiş noktası, kapalı ans, iskemi veya perforasyon bulgularını değerlendir.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Akut cerrahi tabloda zamanlama morbiditeyi belirler"
+          "rationale": "Strangülasyon bulguları cerrahi aciliyeti belirler."
         },
         {
-          "id": "surg-sbo-001-r-5-endikasyon-varsa-uygun-antibiyotik-ve-agri-kontrolun",
-          "label": "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
+          "id": "surg-sbo-001-r-5-peritonit-ates-laktat-yuksekligi-veya-kapali-ans-varsa-acil-cerrahi-plan",
+          "label": "Peritonit, ateş, laktat yüksekliği veya kapalı ans varsa acil cerrahi planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Antibiyotik perforasyon, gangren, kolanjit veya komplike inflamasyonda hedefe yöneliktir"
+          "rationale": "İskemi/perforasyon riski beklemeyi tehlikeli kılar."
         },
         {
-          "id": "surg-sbo-001-r-6-klinik-kotulesme-peritonit-ve-sepsis-bulgularini-yak",
-          "label": "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle",
+          "id": "surg-sbo-001-r-6-komplikasyon-yoksa-konservatif-izlemde-agri-gaz-gaita-cikisi-ve-laboratu",
+          "label": "Komplikasyon yoksa konservatif izlemde ağrı, gaz-gaita çıkışı ve laboratuvar yanıtını takip et.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Başlangıçta sınırlı tablo komplikasyona ilerleyebilir"
+          "rationale": "Basit adezif obstrüksiyon seçilmiş hastada cerrahisiz düzelebilir."
         },
         {
-          "id": "surg-sbo-001-d-1-periton-bulgusu-varken-yalniz-oral-analjezikle-tabur",
-          "label": "Periton bulgusu varken yalnız oral analjezikle taburcu et",
+          "id": "surg-sbo-001-d-1-tam-obstruksiyon-suphesinde-oral-laksatifle-pasaj-acmaya-calis",
+          "label": "Tam obstrüksiyon şüphesinde oral laksatifle pasaj açmaya çalış.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Peritonit veya komplikasyon şüphesinde ayaktan izlem güvenli değildir"
+          "rationale": "Oral laksatif aspirasyon ve perforasyon riskini artırabilir."
         },
         {
-          "id": "surg-sbo-001-d-2-cerrahi-degerlendirmeyi-goruntuleme-sonucu-olmadan-h",
-          "label": "Cerrahi değerlendirmeyi görüntüleme sonucu olmadan her durumda ertele",
+          "id": "surg-sbo-001-d-2-peritonit-ve-laktat-yuksekligi-varken-konservatif-izlemde-israr-et",
+          "label": "Peritonit ve laktat yüksekliği varken konservatif izlemde ısrar et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Klinik peritonit varsa cerrahi karar geciktirilmemelidir"
+          "rationale": "Strangülasyon bulguları acil cerrahi gerektirir."
         },
         {
-          "id": "surg-sbo-001-d-3-antibiyotigi-her-karin-agrisinda-tanidan-bagimsiz-ru",
-          "label": "Antibiyotiği her karın ağrısında tanıdan bağımsız rutin ver",
+          "id": "surg-sbo-001-d-3-gecirilmis-cerrahi-oykusunu-tanisal-degerlendirmeye-katma",
+          "label": "Geçirilmiş cerrahi öyküsünü tanısal değerlendirmeye katma.",
           "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Antibiyotik endikasyona göre seçilir; tanısal belirsizliği örtmemelidir"
+          "rationale": "Adezyon en sık mekanik SBO nedenlerinden biridir."
         }
       ]
     },
@@ -5775,7 +5825,7 @@ export const cases = [
         "Serbest hava saptanması perforasyon açısından cerrahi aciliyeti gösterir.",
         "Peritonit bulguları olan hastada gereksiz gecikme mortaliteyi artırır."
       ],
-      "nextStep": "Oral alımın kesilmesi; geniş damar yolu; sıvı resüsitasyonu.",
+      "nextStep": "Ani yaygın ağrı, tahta karın ve serbest hava bulgusunu perforasyon lehine tanı. Oral alımı kes; iki damar yolu, sıvı resüsitasyonu ve yakın monitorizasyon başlat. Geniş spektrum antibiyotik ve intravenöz proton pompası inhibitörü başla. Ayakta grafi veya BT ile serbest hava ve olası perforasyon odağını doğrula. Genel cerrahiyle acil operasyon veya uygun seçilmiş olguda girişimsel planı belirle. Sepsis, laktat, böbrek fonksiyonu ve postoperatif komplikasyonları izle.",
       "answerFeedback": {
         "diagnosisMeta": "Perfore peptik ülserde ani ağrı",
         "whyCorrect": "Ani başlayan epigastrik ağrı, yaygın peritonit bulguları ve diyafram altında serbest hava perforasyon lehinedir; NSAİİ öyküsü peptik ülser perforasyonunu destekler.",
@@ -5790,12 +5840,12 @@ export const cases = [
           "Peritonit bulguları olan hastada gereksiz gecikme mortaliteyi artırır."
         ],
         "management": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Ani yaygın ağrı, tahta karın ve serbest hava bulgusunu perforasyon lehine tanı.",
+          "Oral alımı kes; iki damar yolu, sıvı resüsitasyonu ve yakın monitorizasyon başlat.",
+          "Geniş spektrum antibiyotik ve intravenöz proton pompası inhibitörü başla.",
+          "Ayakta grafi veya BT ile serbest hava ve olası perforasyon odağını doğrula.",
+          "Genel cerrahiyle acil operasyon veya uygun seçilmiş olguda girişimsel planı belirle.",
+          "Sepsis, laktat, böbrek fonksiyonu ve postoperatif komplikasyonları izle."
         ],
         "learningOutcome": "Perfore peptik ülser tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
         "differentials": {
@@ -5825,12 +5875,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Ani yaygın ağrı, tahta karın ve serbest hava bulgusunu perforasyon lehine tanı.",
+          "Oral alımı kes; iki damar yolu, sıvı resüsitasyonu ve yakın monitorizasyon başlat.",
+          "Geniş spektrum antibiyotik ve intravenöz proton pompası inhibitörü başla.",
+          "Ayakta grafi veya BT ile serbest hava ve olası perforasyon odağını doğrula.",
+          "Genel cerrahiyle acil operasyon veya uygun seçilmiş olguda girişimsel planı belirle.",
+          "Sepsis, laktat, böbrek fonksiyonu ve postoperatif komplikasyonları izle."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -5839,86 +5889,89 @@ export const cases = [
       "enabled": true,
       "showInSpot": false,
       "title": "Perfore peptik ülser yönetim sırası",
-      "instruction": "Akut cerrahi karında tanı doğrulama, destek ve zamanlama kararını sırala.",
+      "instruction": "Serbest hava, peritonit ve acil cerrahi hazırlığı doğru sıraya koy.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "surg-pneumoperitoneum-001-r-1-agri-migrasyonu-lokal-periton-bulgusu-veya-obstruksi",
-          "label": "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
+          "id": "surg-pneumoperitoneum-001-r-1-ani-yaygin-agri-tahta-karin-ve-serbest-hava-bulgusunu-perforasyon-lehine",
+          "label": "Ani yaygın ağrı, tahta karın ve serbest hava bulgusunu perforasyon lehine tanı.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi akut karında fizik muayene tedavi zamanlamasını etkiler"
+          "rationale": "Peritonit ve pnömoperitoneum acil cerrahi tablodur."
         },
         {
-          "id": "surg-pneumoperitoneum-001-r-2-oral-alimi-kes-damar-yolu-ve-sivi-elektrolit-destegi",
-          "label": "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
+          "id": "surg-pneumoperitoneum-001-r-2-oral-alimi-kes-iki-damar-yolu-sivi-resusitasyonu-ve-yakin-monitorizasyon",
+          "label": "Oral alımı kes; iki damar yolu, sıvı resüsitasyonu ve yakın monitorizasyon başlat.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi girişim olasılığında aspirasyon ve dehidratasyon riski azaltılır"
+          "rationale": "Perforasyonda sepsis ve hipovolemi riski nedeniyle destek tedavisi gerekir."
         },
         {
-          "id": "surg-pneumoperitoneum-001-r-3-hedef-laboratuvar-goruntuleme-ile-taniyi-dogrula-ve-",
-          "label": "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
+          "id": "surg-pneumoperitoneum-001-r-3-genis-spektrum-antibiyotik-ve-intravenoz-proton-pompasi-inhibitoru-basla",
+          "label": "Geniş spektrum antibiyotik ve intravenöz proton pompası inhibitörü başla.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Görüntüleme seçimi şüpheli patolojiye göre yapılır; gereksiz tetkik eklenmez"
+          "rationale": "Peritoneal kontaminasyon ve asit sekresyonu erken tedavi edilmelidir."
         },
         {
-          "id": "surg-pneumoperitoneum-001-r-4-cerrahi-konsultasyonla-operasyon-veya-konservatif-te",
-          "label": "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
+          "id": "surg-pneumoperitoneum-001-r-4-ayakta-grafi-veya-bt-ile-serbest-hava-ve-olasi-perforasyon-odagini-dogru",
+          "label": "Ayakta grafi veya BT ile serbest hava ve olası perforasyon odağını doğrula.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Akut cerrahi tabloda zamanlama morbiditeyi belirler"
+          "rationale": "Görüntüleme cerrahi planlamayı hızlandırır; klinik peritonitte karar geciktirilmez."
         },
         {
-          "id": "surg-pneumoperitoneum-001-r-5-endikasyon-varsa-uygun-antibiyotik-ve-agri-kontrolun",
-          "label": "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
+          "id": "surg-pneumoperitoneum-001-r-5-genel-cerrahiyle-acil-operasyon-veya-uygun-secilmis-olguda-girisimsel-pl",
+          "label": "Genel cerrahiyle acil operasyon veya uygun seçilmiş olguda girişimsel planı belirle.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Antibiyotik perforasyon, gangren, kolanjit veya komplike inflamasyonda hedefe yöneliktir"
+          "rationale": "Definitif tedavi kaynak kontrolüdür."
         },
         {
-          "id": "surg-pneumoperitoneum-001-r-6-klinik-kotulesme-peritonit-ve-sepsis-bulgularini-yak",
-          "label": "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle",
+          "id": "surg-pneumoperitoneum-001-r-6-sepsis-laktat-bobrek-fonksiyonu-ve-postoperatif-komplikasyonlari-izle",
+          "label": "Sepsis, laktat, böbrek fonksiyonu ve postoperatif komplikasyonları izle.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Başlangıçta sınırlı tablo komplikasyona ilerleyebilir"
+          "rationale": "Perforasyon sonrası sistemik yanıt ve organ disfonksiyonu gelişebilir."
         },
         {
-          "id": "surg-pneumoperitoneum-001-d-1-periton-bulgusu-varken-yalniz-oral-analjezikle-tabur",
-          "label": "Periton bulgusu varken yalnız oral analjezikle taburcu et",
+          "id": "surg-pneumoperitoneum-001-d-1-serbest-hava-varken-yalniz-oral-antasit-verip-gozle",
+          "label": "Serbest hava varken yalnız oral antasit verip gözle.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Peritonit veya komplikasyon şüphesinde ayaktan izlem güvenli değildir"
+          "rationale": "Pnömoperitoneum kaynak kontrolü gerektiren acil durumdur."
         },
         {
-          "id": "surg-pneumoperitoneum-001-d-2-cerrahi-degerlendirmeyi-goruntuleme-sonucu-olmadan-h",
-          "label": "Cerrahi değerlendirmeyi görüntüleme sonucu olmadan her durumda ertele",
+          "id": "surg-pneumoperitoneum-001-d-2-peritonit-bulgusunda-once-elektif-endoskopi-planla",
+          "label": "Peritonit bulgusunda önce elektif endoskopi planla.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Klinik peritonit varsa cerrahi karar geciktirilmemelidir"
+          "rationale": "Akut perforasyonda endoskopi ilk yaklaşım değildir ve gecikme yaratabilir."
         },
         {
-          "id": "surg-pneumoperitoneum-001-d-3-antibiyotigi-her-karin-agrisinda-tanidan-bagimsiz-ru",
-          "label": "Antibiyotiği her karın ağrısında tanıdan bağımsız rutin ver",
+          "id": "surg-pneumoperitoneum-001-d-3-antibiyotik-ve-siviyi-cerrahi-sonrasina-kadar-tamamen-beklet",
+          "label": "Antibiyotik ve sıvıyı cerrahi sonrasına kadar tamamen beklet.",
           "required": false,
-          "unsafe": false,
-          "score": -1,
-          "rationale": "Antibiyotik endikasyona göre seçilir; tanısal belirsizliği örtmemelidir"
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Resüsitasyon ve antibiyotik cerrahi hazırlıkla eş zamanlı başlar."
         }
       ]
     },
@@ -6024,7 +6077,7 @@ export const cases = [
         "BT hem tanıyı destekler hem de apse/perforasyon gibi komplikasyonları ayırt eder.",
         "Akut inflamasyon döneminde kolonoskopiden kaçınılır."
       ],
-      "nextStep": "Klinik şiddete göre oral veya intravenöz antibiyotik; sıvı desteği ve yakın izlem; komplikasyon gelişirse drenaj veya cerrahi değerlendirme.",
+      "nextStep": "Sol alt kadran ağrısı, ateş ve hassasiyeti divertikülit lehine değerlendir. Hemodinami, peritonit ve sepsis bulgularını ilk değerlendirmede ara. Kontrastlı BT ile perikolik inflamasyon, apse, fistül veya serbest perforasyonu değerlendir. Komplike olmayan olguda analjezi, diyet düzenleme ve seçilmiş antibiyotik/yatış kararını ver. Apse, yaygın peritonit veya serbest perforasyon varsa drenaj veya cerrahi planla. Akut dönem düzeldikten sonra kolon kanseri dışlama için kolonoskopi zamanlamasını planla.",
       "answerFeedback": {
         "diagnosisMeta": "Akut sigmoid divertikülitte lokalize ağrı",
         "whyCorrect": "Sol alt kadran ağrısı, ateş, lökositoz ve BT’de sigmoid divertikül çevresinde inflamasyon, apse veya serbest perforasyon olmadan akut komplike olmayan divertikülit ile uyumludur.",
@@ -6039,12 +6092,12 @@ export const cases = [
           "Akut inflamasyon döneminde kolonoskopiden kaçınılır."
         ],
         "management": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Sol alt kadran ağrısı, ateş ve hassasiyeti divertikülit lehine değerlendir.",
+          "Hemodinami, peritonit ve sepsis bulgularını ilk değerlendirmede ara.",
+          "Kontrastlı BT ile perikolik inflamasyon, apse, fistül veya serbest perforasyonu değerlendir.",
+          "Komplike olmayan olguda analjezi, diyet düzenleme ve seçilmiş antibiyotik/yatış kararını ver.",
+          "Apse, yaygın peritonit veya serbest perforasyon varsa drenaj veya cerrahi planla.",
+          "Akut dönem düzeldikten sonra kolon kanseri dışlama için kolonoskopi zamanlamasını planla."
         ],
         "learningOutcome": "Komplike olmayan akut sigmoid divertikülit tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
         "differentials": {
@@ -6074,12 +6127,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
-          "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
-          "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
-          "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
-          "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
-          "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle"
+          "Sol alt kadran ağrısı, ateş ve hassasiyeti divertikülit lehine değerlendir.",
+          "Hemodinami, peritonit ve sepsis bulgularını ilk değerlendirmede ara.",
+          "Kontrastlı BT ile perikolik inflamasyon, apse, fistül veya serbest perforasyonu değerlendir.",
+          "Komplike olmayan olguda analjezi, diyet düzenleme ve seçilmiş antibiyotik/yatış kararını ver.",
+          "Apse, yaygın peritonit veya serbest perforasyon varsa drenaj veya cerrahi planla.",
+          "Akut dönem düzeldikten sonra kolon kanseri dışlama için kolonoskopi zamanlamasını planla."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -6088,86 +6141,89 @@ export const cases = [
       "enabled": true,
       "showInSpot": false,
       "title": "Akut divertikülit yönetim sırası",
-      "instruction": "Akut cerrahi karında tanı doğrulama, destek ve zamanlama kararını sırala.",
+      "instruction": "Komplike/komplike olmayan divertiküliti BT ve klinik bulgularla ayır.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "surg-diverticulitis-001-r-1-agri-migrasyonu-lokal-periton-bulgusu-veya-obstruksi",
-          "label": "Ağrı migrasyonu, lokal periton bulgusu veya obstrüksiyon bulgularını klinik öncelikle değerlendir",
+          "id": "surg-diverticulitis-001-r-1-sol-alt-kadran-agrisi-ates-ve-hassasiyeti-divertikulit-lehine-degerlendi",
+          "label": "Sol alt kadran ağrısı, ateş ve hassasiyeti divertikülit lehine değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi akut karında fizik muayene tedavi zamanlamasını etkiler"
+          "rationale": "Yaşlı hastada lokalize inflamasyon sigmoid divertiküliti düşündürür."
         },
         {
-          "id": "surg-diverticulitis-001-r-2-oral-alimi-kes-damar-yolu-ve-sivi-elektrolit-destegi",
-          "label": "Oral alımı kes, damar yolu ve sıvı-elektrolit desteğini başlat",
+          "id": "surg-diverticulitis-001-r-2-hemodinami-peritonit-ve-sepsis-bulgularini-ilk-degerlendirmede-ara",
+          "label": "Hemodinami, peritonit ve sepsis bulgularını ilk değerlendirmede ara.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Cerrahi girişim olasılığında aspirasyon ve dehidratasyon riski azaltılır"
+          "rationale": "Komplikasyon varlığı yatış ve cerrahi kararını değiştirir."
         },
         {
-          "id": "surg-diverticulitis-001-r-3-hedef-laboratuvar-goruntuleme-ile-taniyi-dogrula-ve-",
-          "label": "Hedef laboratuvar/görüntüleme ile tanıyı doğrula ve komplikasyon varlığını araştır",
+          "id": "surg-diverticulitis-001-r-3-kontrastli-bt-ile-perikolik-inflamasyon-apse-fistul-veya-serbest-perfora",
+          "label": "Kontrastlı BT ile perikolik inflamasyon, apse, fistül veya serbest perforasyonu değerlendir.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Görüntüleme seçimi şüpheli patolojiye göre yapılır; gereksiz tetkik eklenmez"
+          "rationale": "BT hastalığı sınıflandırmada en yararlı görüntülemedir."
         },
         {
-          "id": "surg-diverticulitis-001-r-4-cerrahi-konsultasyonla-operasyon-veya-konservatif-te",
-          "label": "Cerrahi konsültasyonla operasyon veya konservatif tedavi kararını ver",
+          "id": "surg-diverticulitis-001-r-4-komplike-olmayan-olguda-analjezi-diyet-duzenleme-ve-secilmis-antibiyotik",
+          "label": "Komplike olmayan olguda analjezi, diyet düzenleme ve seçilmiş antibiyotik/yatış kararını ver.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Akut cerrahi tabloda zamanlama morbiditeyi belirler"
+          "rationale": "Tedavi hastanın ağırlığı ve risk durumuna göre bireyselleştirilir."
         },
         {
-          "id": "surg-diverticulitis-001-r-5-endikasyon-varsa-uygun-antibiyotik-ve-agri-kontrolun",
-          "label": "Endikasyon varsa uygun antibiyotik ve ağrı kontrolünü başla",
+          "id": "surg-diverticulitis-001-r-5-apse-yaygin-peritonit-veya-serbest-perforasyon-varsa-drenaj-veya-cerrahi",
+          "label": "Apse, yaygın peritonit veya serbest perforasyon varsa drenaj veya cerrahi planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Antibiyotik perforasyon, gangren, kolanjit veya komplike inflamasyonda hedefe yöneliktir"
+          "rationale": "Komplike hastalıkta kaynak kontrolü gerekebilir."
         },
         {
-          "id": "surg-diverticulitis-001-r-6-klinik-kotulesme-peritonit-ve-sepsis-bulgularini-yak",
-          "label": "Klinik kötüleşme, peritonit ve sepsis bulgularını yakın izle",
+          "id": "surg-diverticulitis-001-r-6-akut-donem-duzeldikten-sonra-kolon-kanseri-dislama-icin-kolonoskopi-zama",
+          "label": "Akut dönem düzeldikten sonra kolon kanseri dışlama için kolonoskopi zamanlamasını planla.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Başlangıçta sınırlı tablo komplikasyona ilerleyebilir"
+          "rationale": "Kolonoskopi akut inflamasyon sırasında değil iyileşme sonrası düşünülür."
         },
         {
-          "id": "surg-diverticulitis-001-d-1-periton-bulgusu-varken-yalniz-oral-analjezikle-tabur",
-          "label": "Periton bulgusu varken yalnız oral analjezikle taburcu et",
+          "id": "surg-diverticulitis-001-d-1-akut-inflamasyon-sirasinda-ilk-tani-testi-olarak-kolonoskopi-yap",
+          "label": "Akut inflamasyon sırasında ilk tanı testi olarak kolonoskopi yap.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Peritonit veya komplikasyon şüphesinde ayaktan izlem güvenli değildir"
+          "rationale": "Akut divertikülitte kolonoskopi perforasyon riskini artırabilir."
         },
         {
-          "id": "surg-diverticulitis-001-d-2-cerrahi-degerlendirmeyi-goruntuleme-sonucu-olmadan-h",
-          "label": "Cerrahi değerlendirmeyi görüntüleme sonucu olmadan her durumda ertele",
+          "id": "surg-diverticulitis-001-d-2-peritonit-bulgusu-varken-yalniz-lifli-diyet-oner",
+          "label": "Peritonit bulgusu varken yalnız lifli diyet öner.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Klinik peritonit varsa cerrahi karar geciktirilmemelidir"
+          "rationale": "Peritonit komplikasyon işaretidir ve acil değerlendirme gerektirir."
         },
         {
-          "id": "surg-diverticulitis-001-d-3-antibiyotigi-her-karin-agrisinda-tanidan-bagimsiz-ru",
-          "label": "Antibiyotiği her karın ağrısında tanıdan bağımsız rutin ver",
+          "id": "surg-diverticulitis-001-d-3-bt-de-apse-saptansa-bile-drenaj-cerrahi-seceneklerini-hic-degerlendirme",
+          "label": "BT’de apse saptansa bile drenaj/cerrahi seçeneklerini hiç değerlendirme.",
           "required": false,
-          "unsafe": false,
-          "score": -1,
-          "rationale": "Antibiyotik endikasyona göre seçilir; tanısal belirsizliği örtmemelidir"
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Apse boyutu ve klinik durum kaynak kontrolü kararını etkiler."
         }
       ]
     },
@@ -8433,7 +8489,7 @@ export const cases = [
         "S. aureus intravenöz madde kullanıcılarında akut sağ kalp endokarditinin sık etkenlerindendir.",
         "Sağ kalp tutulumunda septik pulmoner emboliler görülebilir."
       ],
-      "nextStep": "Antibiyotik duyarlılığına göre intravenöz antistafilokokal tedavi; komplikasyon ve cerrahi endikasyonların değerlendirilmesi.",
+      "nextStep": "Uzamış ateş, yeni üfürüm, emboli bulgusu ve IV madde kullanımını birlikte değerlendir. Antibiyotik öncesi farklı ven girişlerinden en az üç set kan kültürü al. Transtorasik ekokardiyografi ve yüksek klinik şüphede TEE ile vejetasyon/kapak hasarını ara. Kültürler alındıktan sonra klinik ağırlığa uygun ampirik IV antibiyotik başla. Etken ve duyarlılık sonucuna göre uzun süreli hedefe yönelik IV tedaviyi düzenle. Kalp yetmezliği, apse, dirençli bakteriyemi veya büyük emboli riski varsa cerrahi değerlendirme iste.",
       "answerFeedback": {
         "diagnosisMeta": "İnfektif endokarditte Duke kriterleri",
         "whyCorrect": "İntravenöz madde kullanımı, uzamış ateş, yeni triküspit üfürüm, tekrarlayan kan kültürlerinde Staphylococcus aureus üremesi ve ekokardiyografide vejetasyon sağ kalp infektif endokarditini destekler.",
@@ -8448,12 +8504,12 @@ export const cases = [
           "Sağ kalp tutulumunda septik pulmoner emboliler görülebilir."
         ],
         "management": [
-          "Ani dispne, plöritik ağrı, taşikardi ve DVT ipuçlarıyla pulmoner emboli olasılığını değerlendir",
-          "Hemodinamik stabiliteyi sınıfla ve yüksek risk bulgularını ara",
-          "Uygun hastada BT pulmoner anjiyografi veya D-dimer stratejisini pretest olasılığa göre seç",
-          "Kontrendikasyon yoksa antikoagülasyon başla",
-          "Şok/hipotansiyon varsa tromboliz veya embolektomi seçeneğini değerlendir",
-          "Altta yatan provoke edici faktör ve tedavi süresini planla"
+          "Uzamış ateş, yeni üfürüm, emboli bulgusu ve IV madde kullanımını birlikte değerlendir.",
+          "Antibiyotik öncesi farklı ven girişlerinden en az üç set kan kültürü al.",
+          "Transtorasik ekokardiyografi ve yüksek klinik şüphede TEE ile vejetasyon/kapak hasarını ara.",
+          "Kültürler alındıktan sonra klinik ağırlığa uygun ampirik IV antibiyotik başla.",
+          "Etken ve duyarlılık sonucuna göre uzun süreli hedefe yönelik IV tedaviyi düzenle.",
+          "Kalp yetmezliği, apse, dirençli bakteriyemi veya büyük emboli riski varsa cerrahi değerlendirme iste."
         ],
         "learningOutcome": "Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
         "differentials": {
@@ -8483,12 +8539,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Ani dispne, plöritik ağrı, taşikardi ve DVT ipuçlarıyla pulmoner emboli olasılığını değerlendir",
-          "Hemodinamik stabiliteyi sınıfla ve yüksek risk bulgularını ara",
-          "Uygun hastada BT pulmoner anjiyografi veya D-dimer stratejisini pretest olasılığa göre seç",
-          "Kontrendikasyon yoksa antikoagülasyon başla",
-          "Şok/hipotansiyon varsa tromboliz veya embolektomi seçeneğini değerlendir",
-          "Altta yatan provoke edici faktör ve tedavi süresini planla"
+          "Uzamış ateş, yeni üfürüm, emboli bulgusu ve IV madde kullanımını birlikte değerlendir.",
+          "Antibiyotik öncesi farklı ven girişlerinden en az üç set kan kültürü al.",
+          "Transtorasik ekokardiyografi ve yüksek klinik şüphede TEE ile vejetasyon/kapak hasarını ara.",
+          "Kültürler alındıktan sonra klinik ağırlığa uygun ampirik IV antibiyotik başla.",
+          "Etken ve duyarlılık sonucuna göre uzun süreli hedefe yönelik IV tedaviyi düzenle.",
+          "Kalp yetmezliği, apse, dirençli bakteriyemi veya büyük emboli riski varsa cerrahi değerlendirme iste."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -8496,87 +8552,99 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Pulmoner emboli yönetim sırası",
-      "instruction": "Risk sınıflaması ve antikoagülasyon/reperfüzyon kararını sırala.",
+      "title": "Enfektif endokardit yönetim sırası",
+      "instruction": "Kültür, ekokardiyografi, antibiyotik ve cerrahi endikasyonları doğru sıraya koy.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "inf-endocarditis-001-r-1-ani-dispne-ploritik-agri-tasikardi-ve-dvt-ipuclariyl",
-          "label": "Ani dispne, plöritik ağrı, taşikardi ve DVT ipuçlarıyla pulmoner emboli olasılığını değerlendir",
+          "id": "inf-endocarditis-001-r-1-uzamis-ates-yeni-ufurum-emboli-bulgusu-ve-iv-madde-kullanimini-birlikte-",
+          "label": "Uzamış ateş, yeni üfürüm, emboli bulgusu ve IV madde kullanımını birlikte değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Pretest olasılık tetkik ve tedavi kararını belirler"
+          "rationale": "Bu birliktelik enfektif endokardit olasılığını yükseltir."
         },
         {
-          "id": "inf-endocarditis-001-r-2-hemodinamik-stabiliteyi-sinifla-ve-yuksek-risk-bulgu",
-          "label": "Hemodinamik stabiliteyi sınıfla ve yüksek risk bulgularını ara",
+          "id": "inf-endocarditis-001-r-2-antibiyotik-oncesi-farkli-ven-girislerinden-en-az-uc-set-kan-kulturu-al",
+          "label": "Antibiyotik öncesi farklı ven girişlerinden en az üç set kan kültürü al.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Masif PE’de reperfüzyon tedavisi gündeme gelir"
+          "rationale": "Etkenin saptanması tedaviyi daraltmak ve süreyi belirlemek için kritiktir."
         },
         {
-          "id": "inf-endocarditis-001-r-3-uygun-hastada-bt-pulmoner-anjiyografi-veya-d-dimer-s",
-          "label": "Uygun hastada BT pulmoner anjiyografi veya D-dimer stratejisini pretest olasılığa göre seç",
+          "id": "inf-endocarditis-001-r-3-transtorasik-ekokardiyografi-yuksek-suphede-tee-ile-vejetasyon-kapak-ha",
+          "label": "Transtorasik ekokardiyografi ve yüksek klinik şüphede TEE ile vejetasyon/kapak hasarını ara.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Düşük ve yüksek olasılıkta test seçimi farklıdır"
+          "rationale": "Ekokardiyografi tanıyı ve komplikasyonları gösterir."
         },
         {
-          "id": "inf-endocarditis-001-r-4-kontrendikasyon-yoksa-antikoagulasyon-basla",
-          "label": "Kontrendikasyon yoksa antikoagülasyon başla",
+          "id": "inf-endocarditis-001-r-4-kulturler-alindiktan-sonra-klinik-agirliga-uygun-ampirik-iv-antibiyotik-",
+          "label": "Kültürler alındıktan sonra klinik ağırlığa uygun ampirik IV antibiyotik başla.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Antikoagülasyon trombüs progresyonu ve mortalite riskini azaltır"
+          "rationale": "Tedavi kan kültürünü geciktirmeden, fakat kültür alımı tamamlandıktan sonra başlatılır."
         },
         {
-          "id": "inf-endocarditis-001-r-5-sok-hipotansiyon-varsa-tromboliz-veya-embolektomi-se",
-          "label": "Şok/hipotansiyon varsa tromboliz veya embolektomi seçeneğini değerlendir",
+          "id": "inf-endocarditis-001-r-5-etken-ve-duyarlilik-sonucuna-gore-uzun-sureli-hedefe-yonelik-iv-tedaviyi",
+          "label": "Etken ve duyarlılık sonucuna göre uzun süreli hedefe yönelik IV tedaviyi düzenle.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Yüksek risk PE’de reperfüzyon hayat kurtarıcı olabilir"
+          "rationale": "Endokarditte tedavi süresi ve ilaç seçimi mikrobiyolojik veriye dayanır."
         },
         {
-          "id": "inf-endocarditis-001-r-6-altta-yatan-provoke-edici-faktor-ve-tedavi-suresini-",
-          "label": "Altta yatan provoke edici faktör ve tedavi süresini planla",
+          "id": "inf-endocarditis-001-r-6-kalp-yetmezligi-apse-direncli-bakteriyemi-veya-buyuk-emboli-riski-varsa-",
+          "label": "Kalp yetmezliği, apse, dirençli bakteriyemi veya büyük emboli riski varsa cerrahi değerlendirme iste.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Uzun dönem antikoagülasyon süresi nüks riskine göre belirlenir"
+          "rationale": "Komplike endokardit yalnız antibiyotikle güvenli yönetilemeyebilir."
         },
         {
-          "id": "inf-endocarditis-001-d-1-sok-bulgusunda-yalniz-d-dimer-sonucunu-bekle",
-          "label": "Şok bulgusunda yalnız D-dimer sonucunu bekle",
+          "id": "inf-endocarditis-001-d-1-pulmoner-emboli-varsayimiyla-kan-kulturu-almadan-yalniz-antikoagulasyon-",
+          "label": "Pulmoner emboli varsayımıyla kan kültürü almadan yalnız antikoagülasyon başla.",
           "required": false,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Hemodinamik instabil PE’de tedavi ve görüntüleme acil planlanır"
-        },
-        {
-          "id": "inf-endocarditis-001-d-2-antikoagulasyonu-kontrendikasyon-degerlendirmeden-ra",
-          "label": "Antikoagülasyonu kontrendikasyon değerlendirmeden rastgele başla",
-          "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Kanama riski ve kontrendikasyonlar tedavi güvenliği için önemlidir"
+          "rationale": "Bu olguda ateş ve üfürüm enfektif endokarditi öncelikli kılar."
         },
         {
-          "id": "inf-endocarditis-001-d-3-dvt-bulgularini-yonetimden-bagimsiz-kabul-et",
-          "label": "DVT bulgularını yönetimden bağımsız kabul et",
+          "id": "inf-endocarditis-001-d-2-tek-negatif-kan-kulturuyle-endokarditi-disla",
+          "label": "Tek negatif kan kültürüyle endokarditi dışla.",
           "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "DVT varlığı PE olasılığını ve tedavi planını destekler"
+          "rationale": "Endokarditte çoklu kültür setleri gerekir; tek örnek yetersizdir."
+        },
+        {
+          "id": "inf-endocarditis-001-d-3-vejetasyon-suphesinde-ekokardiyografiyi-gereksiz-kabul-et",
+          "label": "Vejetasyon şüphesinde ekokardiyografiyi gereksiz kabul et.",
+          "required": false,
+          "correctOrder": null,
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Kapak tutulumu ve komplikasyonların gösterilmesi yönetimi belirler."
+        },
+        {
+          "id": "inf-endocarditis-001-d-4-klinik-duzelince-iv-tedaviyi-birkac-gunde-kes",
+          "label": "Klinik düzelince IV tedaviyi birkaç günde kes.",
+          "required": false,
+          "correctOrder": null,
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Endokardit uzun süreli, hedefe yönelik tedavi gerektirir."
         }
       ]
     },
@@ -9388,7 +9456,7 @@ export const cases = [
         "Anterior omuz çıkığında aksiller sinir yaralanması özellikle sorgulanmalıdır.",
         "Redüksiyon öncesi ve sonrası nörovasküler muayene kayıtlenmelidir."
       ],
-      "nextStep": "Analjezi/sedasyon altında kapalı redüksiyon; redüksiyon sonrası kontrol grafisi ve immobilizasyon-rehabilitasyon planı.",
+      "nextStep": "Distal nabız, kapiller dolum ve aksiller sinir duyusunu redüksiyon öncesi değerlendir. Omuz grafisiyle çıkık yönünü ve eşlik eden kırığı kontrol et. Analjezi/sedasyon koşullarını hazırlayıp kapalı redüksiyon uygula. Redüksiyon sonrası nörovasküler muayeneyi tekrar et. Kontrol grafisiyle humerus başının glenoide oturduğunu doğrula. Kısa süreli immobilizasyon, ortopedi kontrolü ve rehabilitasyon planla.",
       "answerFeedback": {
         "diagnosisMeta": "Travmatik omuz yaralanmasında mekanizma",
         "whyCorrect": "Abduksiyon-dış rotasyon mekanizması, omuz konturunun kaybolması, kolun abduksiyon/dış rotasyonda tutulması ve grafide humerus başının anterior-inferior yerleşimi anterior glenohumeral çıkığı destekler.",
@@ -9403,11 +9471,12 @@ export const cases = [
           "Redüksiyon öncesi ve sonrası nörovasküler muayene kayıtlenmelidir."
         ],
         "management": [
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru"
+          "Distal nabız, kapiller dolum ve aksiller sinir duyusunu redüksiyon öncesi değerlendir.",
+          "Omuz grafisiyle çıkık yönünü ve eşlik eden kırığı kontrol et.",
+          "Analjezi/sedasyon koşullarını hazırlayıp kapalı redüksiyon uygula.",
+          "Redüksiyon sonrası nörovasküler muayeneyi tekrar et.",
+          "Kontrol grafisiyle humerus başının glenoide oturduğunu doğrula.",
+          "Kısa süreli immobilizasyon, ortopedi kontrolü ve rehabilitasyon planla."
         ],
         "learningOutcome": "Anterior glenohumeral çıkık tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
         "differentials": {
@@ -9437,90 +9506,112 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
-          "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru"
+          "Distal nabız, kapiller dolum ve aksiller sinir duyusunu redüksiyon öncesi değerlendir.",
+          "Omuz grafisiyle çıkık yönünü ve eşlik eden kırığı kontrol et.",
+          "Analjezi/sedasyon koşullarını hazırlayıp kapalı redüksiyon uygula.",
+          "Redüksiyon sonrası nörovasküler muayeneyi tekrar et.",
+          "Kontrol grafisiyle humerus başının glenoide oturduğunu doğrula.",
+          "Kısa süreli immobilizasyon, ortopedi kontrolü ve rehabilitasyon planla."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
     },
     "managementSequence": {
       "enabled": true,
-      "showInSpot": true,
-      "title": "Tıbbi-adli yaklaşım sırası",
-      "instruction": "Tıbbi önceliği koruyarak kayıt, bildirim ve güvenlik basamaklarını sırala.",
-      "minRequiredSteps": 5,
+      "showInSpot": false,
+      "title": "Anterior omuz çıkığı yönetim sırası",
+      "instruction": "Travmatik omuz çıkığında görüntüleme, redüksiyon ve nörovasküler kontrol sırasını kur.",
+      "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "ortho-shoulder-dislocation-001-r-1-hastanin-vital-stabilitesini-ve-acil-mudahale-gereks",
-          "label": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
+          "id": "ortho-shoulder-dislocation-001-r-1-distal-nabiz-kapiller-dolum-ve-aksiller-sinir-duyusunu-reduksiyon-oncesi",
+          "label": "Distal nabız, kapiller dolum ve aksiller sinir duyusunu redüksiyon öncesi değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Adli olgu olması tıbbi stabilizasyon önceliğini ortadan kaldırmaz"
+          "rationale": "Omuz çıkığında nörovasküler durum işlem öncesi mutlaka belgelenmelidir."
         },
         {
-          "id": "ortho-shoulder-dislocation-001-r-2-gerekli-tibbi-tedaviyi-gecikmeden-baslat",
-          "label": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
+          "id": "ortho-shoulder-dislocation-001-r-2-omuz-grafisiyle-cikik-yonunu-ve-eslik-eden-kirigi-kontrol-et",
+          "label": "Omuz grafisiyle çıkık yönünü ve eşlik eden kırığı kontrol et.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Adli süreç hiçbir şekilde hayat kurtarıcı veya gerekli tedaviyi geciktirmemelidir"
+          "rationale": "Anterior-inferior çıkık ve kırık varlığı redüksiyon tekniğini ve güvenliğini belirler."
         },
         {
-          "id": "ortho-shoulder-dislocation-001-r-3-yaralanma-olay-bulgularini-objektif-ayrintili-ve-zam",
-          "label": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
+          "id": "ortho-shoulder-dislocation-001-r-3-analjezi-sedasyon-kosullarini-hazirlayip-kapali-reduksiyon-uygula",
+          "label": "Analjezi/sedasyon koşullarını hazırlayıp kapalı redüksiyon uygula.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Kayıtlar hem hasta güvenliği hem de adli süreç için temel belgedir"
+          "rationale": "Ağrı kontrolü ve kas gevşemesi başarılı ve güvenli redüksiyon sağlar."
         },
         {
-          "id": "ortho-shoulder-dislocation-001-r-4-adli-bildirim-veya-ilgili-koruyucu-bildirim-yukumlul",
-          "label": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
+          "id": "ortho-shoulder-dislocation-001-r-4-reduksiyon-sonrasi-norovaskuler-muayeneyi-tekrar-et",
+          "label": "Redüksiyon sonrası nörovasküler muayeneyi tekrar et.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Hekim adli olgu şüphesinde yalnız hastanın beyanıyla yetinemez"
+          "rationale": "İşlem sonrası gelişen sinir veya damar etkilenimi erken yakalanmalıdır."
         },
         {
-          "id": "ortho-shoulder-dislocation-001-r-5-delil-niteligi-tasiyabilecek-materyali-ve-mahremiyet",
-          "label": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru",
+          "id": "ortho-shoulder-dislocation-001-r-5-kontrol-grafisiyle-humerus-basinin-glenoide-oturdugunu-dogrula",
+          "label": "Kontrol grafisiyle humerus başının glenoide oturduğunu doğrula.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Delil zinciri, güvenlik ve mahremiyet adli-tıbbi yaklaşımın ayrılmaz parçasıdır"
+          "rationale": "Redüksiyon başarısı ve eşlik eden kırık kontrol görüntüleme ile belgelenir."
         },
         {
-          "id": "ortho-shoulder-dislocation-001-d-1-adli-surec-tamamlanana-kadar-tibbi-mudahaleyi-ertele",
-          "label": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunda adli süreç tamamlanana kadar tıbbi müdahaleyi ertele",
+          "id": "ortho-shoulder-dislocation-001-r-6-kisa-sureli-immobilizasyon-ortopedi-kontrolu-ve-rehabilitasyon-planla",
+          "label": "Kısa süreli immobilizasyon, ortopedi kontrolü ve rehabilitasyon planla.",
+          "required": true,
+          "correctOrder": 6,
+          "unsafe": false,
+          "score": 1,
+          "rationale": "Nüks ve hareket kısıtlılığını azaltmak için takip ve egzersiz programı gerekir."
+        },
+        {
+          "id": "ortho-shoulder-dislocation-001-d-1-norovaskuler-muayene-yapmadan-reduksiyon-dene",
+          "label": "Nörovasküler muayene yapmadan redüksiyon dene.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Adli işlemler tedaviyi geciktiremez; önce hasta güvenliği sağlanır"
+          "rationale": "İşlem öncesi nörovasküler durum bilinmezse komplikasyon ayırt edilemez."
         },
         {
-          "id": "ortho-shoulder-dislocation-001-d-2-hasta-istemezse-objektif-muayene-kaydi-tutma",
-          "label": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunda hasta istemezse objektif muayene kaydı tutma",
+          "id": "ortho-shoulder-dislocation-001-d-2-reduksiyon-sonrasi-kontrol-grafisini-tamamen-atla",
+          "label": "Redüksiyon sonrası kontrol grafisini tamamen atla.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Adli nitelik taşıyan bulgular tıbbi kayıtta objektif olarak yer almalıdır"
+          "rationale": "Başarısız redüksiyon veya eşlik eden kırık gözden kaçabilir."
         },
         {
-          "id": "ortho-shoulder-dislocation-001-d-3-yaralanmayi-yalniz-sozlu-anlatima-gore-degerlendir",
-          "label": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı olgusunu yalnız sözlü anlatıma göre değerlendir",
+          "id": "ortho-shoulder-dislocation-001-d-3-eslik-eden-kirik-suphesine-ragmen-kuvvetli-manipulasyon-yap",
+          "label": "Eşlik eden kırık şüphesine rağmen kuvvetli manipülasyon yap.",
           "required": false,
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Kırıklı çıkıkta kontrolsüz manipülasyon ek hasar oluşturabilir."
+        },
+        {
+          "id": "ortho-shoulder-dislocation-001-d-4-omuz-cikigini-adli-bildirim-basamaklariyla-ana-akis-gibi-yonet",
+          "label": "Omuz çıkığını adli bildirim basamaklarıyla ana akış gibi yönet.",
+          "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Hekim fizik bulguları, tutarlılığı ve güvenlik riskini bağımsız değerlendirmelidir"
+          "rationale": "Bu vakada ana klinik karar çıkığın güvenli redüksiyonu ve nörovasküler izlemdir."
         }
       ]
     },
@@ -9687,7 +9778,7 @@ export const cases = [
         "50-100 mA VF ile; çok yüksek akımlar asistoli ile ilişkilidir.",
         "Kardiyak hasar bekleniyorsa sahada ilk istenecek şey OED/defibrilatördür."
       ],
-      "nextStep": "Güvenli alan sağlandıktan sonra ABC, 12 derivasyon EKG, monitörizasyon ve VF gelişirse defibrilasyon/OED uygulanması.",
+      "nextStep": "Havayolu, solunum, dolaşım ve bilinç durumunu ilk değerlendirmede kontrol et. 12 derivasyon EKG ve sürekli ritim monitorizasyonu başlat. Giriş-çıkış yanıkları, derin doku hasarı ve eşlik eden düşme travmasını ara. CK, elektrolit, kreatinin ve idrar miyoglobinini izleyerek rabdomiyoliz riskini değerlendir. Yanık bakımı, tetanoz profilaksisi ve sıvı tedavisini klinik bulgulara göre düzenle. Tıbbi stabilizasyon sonrası iş kazası kaydını ve gerekli bildirimi objektif bulgularla tamamla.",
       "answerFeedback": {
         "diagnosisMeta": "Yüksek riskli elektrik maruziyeti: alternatif akım + kaynaktan ayrılamama + transtorasik potansiyel geçiş + ritim düzensizliği.",
         "whyCorrect": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar; transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır; EKG, monitörizasyon ve OED hazırlığı önceliklidir.",
@@ -9703,11 +9794,12 @@ export const cases = [
           "Yanık küçük olsa bile derin doku hasarı olabilir."
         ],
         "management": [
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru"
+          "Havayolu, solunum, dolaşım ve bilinç durumunu ilk değerlendirmede kontrol et.",
+          "12 derivasyon EKG ve sürekli ritim monitorizasyonu başlat.",
+          "Giriş-çıkış yanıkları, derin doku hasarı ve eşlik eden düşme travmasını ara.",
+          "CK, elektrolit, kreatinin ve idrar miyoglobinini izleyerek rabdomiyoliz riskini değerlendir.",
+          "Yanık bakımı, tetanoz profilaksisi ve sıvı tedavisini klinik bulgulara göre düzenle.",
+          "Tıbbi stabilizasyon sonrası iş kazası kaydını ve gerekli bildirimi objektif bulgularla tamamla."
         ],
         "learningOutcome": "Elektrik çarpmasında görünür yanığın küçük olması iç organ/kardiyak riski dışlamaz; akım tipi, yol, süre ve çevre koşulları belirleyicidir.",
         "differentials": {
@@ -9737,90 +9829,112 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
-          "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru"
+          "Havayolu, solunum, dolaşım ve bilinç durumunu ilk değerlendirmede kontrol et.",
+          "12 derivasyon EKG ve sürekli ritim monitorizasyonu başlat.",
+          "Giriş-çıkış yanıkları, derin doku hasarı ve eşlik eden düşme travmasını ara.",
+          "CK, elektrolit, kreatinin ve idrar miyoglobinini izleyerek rabdomiyoliz riskini değerlendir.",
+          "Yanık bakımı, tetanoz profilaksisi ve sıvı tedavisini klinik bulgulara göre düzenle.",
+          "Tıbbi stabilizasyon sonrası iş kazası kaydını ve gerekli bildirimi objektif bulgularla tamamla."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
     },
     "managementSequence": {
       "enabled": true,
-      "showInSpot": true,
-      "title": "Tıbbi-adli yaklaşım sırası",
-      "instruction": "Tıbbi önceliği koruyarak kayıt, bildirim ve güvenlik basamaklarını sırala.",
-      "minRequiredSteps": 5,
+      "showInSpot": false,
+      "title": "Elektrik yaralanması yönetim sırası",
+      "instruction": "İş kazası bağlamını tıbbi stabilizasyonu geciktirmeden, kardiyak ve yanık riskleriyle birlikte sırala.",
+      "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-1-hastanin-vital-stabilitesini-ve-acil-mudahale-gereks",
-          "label": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-1-havayolu-solunum-dolasim-ve-bilinc-durumunu-ilk-degerlendirmede-kontrol-",
+          "label": "Havayolu, solunum, dolaşım ve bilinç durumunu ilk değerlendirmede kontrol et.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Adli olgu olması tıbbi stabilizasyon önceliğini ortadan kaldırmaz"
+          "rationale": "Elektrik yaralanmasında aritmi, solunum durması ve travma birlikte görülebilir."
         },
         {
-          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-2-gerekli-tibbi-tedaviyi-gecikmeden-baslat",
-          "label": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-2-12-derivasyon-ekg-ve-surekli-ritim-monitorizasyonu-baslat",
+          "label": "12 derivasyon EKG ve sürekli ritim monitorizasyonu başlat.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Adli süreç hiçbir şekilde hayat kurtarıcı veya gerekli tedaviyi geciktirmemelidir"
+          "rationale": "Elektrik akımı ölümcül aritmi ve iletim bozukluğu oluşturabilir."
         },
         {
-          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-3-yaralanma-olay-bulgularini-objektif-ayrintili-ve-zam",
-          "label": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-3-giris-cikis-yaniklari-derin-doku-hasari-ve-eslik-eden-dusme-travmasini-a",
+          "label": "Giriş-çıkış yanıkları, derin doku hasarı ve eşlik eden düşme travmasını ara.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Kayıtlar hem hasta güvenliği hem de adli süreç için temel belgedir"
+          "rationale": "Küçük deri lezyonu derin kas hasarını veya travmayı dışlamaz."
         },
         {
-          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-4-adli-bildirim-veya-ilgili-koruyucu-bildirim-yukumlul",
-          "label": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-4-ck-elektrolit-kreatinin-ve-idrar-miyoglobinini-izleyerek-rabdomiyoliz-ri",
+          "label": "CK, elektrolit, kreatinin ve idrar miyoglobinini izleyerek rabdomiyoliz riskini değerlendir.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Hekim adli olgu şüphesinde yalnız hastanın beyanıyla yetinemez"
+          "rationale": "Derin elektrik hasarı akut böbrek hasarı ve elektrolit bozukluğu yapabilir."
         },
         {
-          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-5-delil-niteligi-tasiyabilecek-materyali-ve-mahremiyet",
-          "label": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru",
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-5-yanik-bakimi-tetanoz-profilaksisi-ve-sivi-tedavisini-klinik-bulgulara-go",
+          "label": "Yanık bakımı, tetanoz profilaksisi ve sıvı tedavisini klinik bulgulara göre düzenle.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Delil zinciri, güvenlik ve mahremiyet adli-tıbbi yaklaşımın ayrılmaz parçasıdır"
+          "rationale": "Doku hasarı ve enfeksiyon riski destek tedavisiyle kontrol edilir."
         },
         {
-          "id": "cardiovascular-electrical-injury-arrhythmia-001-d-1-adli-surec-tamamlanana-kadar-tibbi-mudahaleyi-ertele",
-          "label": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunda adli süreç tamamlanana kadar tıbbi müdahaleyi ertele",
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-r-6-tibbi-stabilizasyon-sonrasi-is-kazasi-kaydini-ve-gerekli-bildirimi-objek",
+          "label": "Tıbbi stabilizasyon sonrası iş kazası kaydını ve gerekli bildirimi objektif bulgularla tamamla.",
+          "required": true,
+          "correctOrder": 6,
+          "unsafe": false,
+          "score": 1,
+          "rationale": "Adli/idari süreç tıbbi müdahaleyi geciktirmeden yürütülmelidir."
+        },
+        {
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-d-1-is-kazasi-bildirimi-tamamlanana-kadar-ekg-ve-tedaviyi-ertele",
+          "label": "İş kazası bildirimi tamamlanana kadar EKG ve tedaviyi ertele.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Adli işlemler tedaviyi geciktiremez; önce hasta güvenliği sağlanır"
+          "rationale": "Kayıt ve bildirim tıbbi stabilizasyonun önüne geçemez."
         },
         {
-          "id": "cardiovascular-electrical-injury-arrhythmia-001-d-2-hasta-istemezse-objektif-muayene-kaydi-tutma",
-          "label": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunda hasta istemezse objektif muayene kaydı tutma",
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-d-2-ekg-anormalligi-varken-yalniz-yara-pansumani-yapip-taburcu-et",
+          "label": "EKG anormalliği varken yalnız yara pansumanı yapıp taburcu et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Adli nitelik taşıyan bulgular tıbbi kayıtta objektif olarak yer almalıdır"
+          "rationale": "Aritmi riski olan hastada kardiyak izlem gerekir."
         },
         {
-          "id": "cardiovascular-electrical-injury-arrhythmia-001-d-3-yaralanmayi-yalniz-sozlu-anlatima-gore-degerlendir",
-          "label": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası olgusunu yalnız sözlü anlatıma göre değerlendir",
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-d-3-kucuk-deri-yanigi-var-diye-kas-ve-bobrek-hasarini-disla",
+          "label": "Küçük deri yanığı var diye kas ve böbrek hasarını dışla.",
           "required": false,
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Elektrik yaralanmasında deri bulgusu derin hasarı hafife aldırabilir."
+        },
+        {
+          "id": "cardiovascular-electrical-injury-arrhythmia-001-d-4-olayi-yalniz-hastanin-sozlu-beyanina-gore-kaydedip-muayene-bulgularini-y",
+          "label": "Olayı yalnız hastanın sözlü beyanına göre kaydedip muayene bulgularını yazma.",
+          "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Hekim fizik bulguları, tutarlılığı ve güvenlik riskini bağımsız değerlendirmelidir"
+          "rationale": "İş kazasında objektif tıbbi kayıt hasta güvenliği ve hukuki süreç için gereklidir."
         }
       ]
     },
@@ -9964,7 +10078,7 @@ export const cases = [
         "Hayatta kalanlarda kardiyolojik ve nörolojik problemler aranmalıdır.",
         "Korunmada açık alan, tek ağaç, metal ve sudan uzak durmak temel bilgidir."
       ],
-      "nextStep": "ABC stabilizasyonu, oksijen/ventilasyon desteği, EKG monitörizasyonu ve nörolojik-yaralanma taraması.",
+      "nextStep": "Solunum, dolaşım ve bilinç durumunu hızla değerlendir; apne varsa ventilasyon desteği başlat. EKG çek ve ritim monitorizasyonunu sürdür. Düşme travması, deri yanıkları ve nörolojik defisitleri sistematik ara. CK, kreatinin, elektrolit ve idrar bulgularıyla kas-böbrek hasarını izle. Yanık bakımı, sıvı desteği ve göz/kulak-nörolojik izlem gereksinimini planla. Olay kaydını ve güvenlik bildirimini tıbbi stabilizasyon sonrası tamamla.",
       "answerFeedback": {
         "diagnosisMeta": "Fırtına + açık alan + yüzeyel yanık + bilinç kaybı + solunum depresyonu yıldırım çarpmasını destekler.",
         "whyCorrect": "Yıldırım çarpmasında ani ölüm için sınavda en yüksek verimli nokta uzamış apnedir. Deride yanık, bilinç kaybı, nörolojik/işitsel etkilenme ve kalp-solunum durması birlikte düşünülür.",
@@ -9979,11 +10093,12 @@ export const cases = [
           "Yıldırım sonrası tüm hastalar ritim ve nörolojik açıdan izlenmelidir."
         ],
         "management": [
-          "Bilinç, solunum eforu ve havayolu açıklığını hızla değerlendir",
-          "Gerekirse ventilasyon desteği ve oksijenizasyonu başlat",
-          "Boyun travması, laringeal ödem ve servikal yaralanma bulgularını değerlendir",
-          "Kardiyak ritim ve nörolojik durumu monitörize et",
-          "Adli/yaralanma kaydı ve güvenlik değerlendirmesini tıbbi stabilizasyonla birlikte yürüt"
+          "Solunum, dolaşım ve bilinç durumunu hızla değerlendir; apne varsa ventilasyon desteği başlat.",
+          "EKG çek ve ritim monitorizasyonunu sürdür.",
+          "Düşme travması, deri yanıkları ve nörolojik defisitleri sistematik ara.",
+          "CK, kreatinin, elektrolit ve idrar bulgularıyla kas-böbrek hasarını izle.",
+          "Yanık bakımı, sıvı desteği ve göz/kulak-nörolojik izlem gereksinimini planla.",
+          "Olay kaydını ve güvenlik bildirimini tıbbi stabilizasyon sonrası tamamla."
         ],
         "learningOutcome": "Yıldırım çarpmasında görünür yanıklar tanıyı desteklese de sınavda ölüm mekanizması kardiyopulmoner durma ve özellikle uzamış apne ile ilişkilidir.",
         "differentials": {
@@ -10013,11 +10128,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Bilinç, solunum eforu ve havayolu açıklığını hızla değerlendir",
-          "Gerekirse ventilasyon desteği ve oksijenizasyonu başlat",
-          "Boyun travması, laringeal ödem ve servikal yaralanma bulgularını değerlendir",
-          "Kardiyak ritim ve nörolojik durumu monitörize et",
-          "Adli/yaralanma kaydı ve güvenlik değerlendirmesini tıbbi stabilizasyonla birlikte yürüt"
+          "Solunum, dolaşım ve bilinç durumunu hızla değerlendir; apne varsa ventilasyon desteği başlat.",
+          "EKG çek ve ritim monitorizasyonunu sürdür.",
+          "Düşme travması, deri yanıkları ve nörolojik defisitleri sistematik ara.",
+          "CK, kreatinin, elektrolit ve idrar bulgularıyla kas-böbrek hasarını izle.",
+          "Yanık bakımı, sıvı desteği ve göz/kulak-nörolojik izlem gereksinimini planla.",
+          "Olay kaydını ve güvenlik bildirimini tıbbi stabilizasyon sonrası tamamla."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -10025,78 +10141,99 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Asfiksi/havayolu riski yönetim sırası",
-      "instruction": "Solunum depresyonu ve gecikmiş havayolu ödeminde güvenli yaklaşımı sırala.",
-      "minRequiredSteps": 5,
+      "title": "Yıldırım/elektrik maruziyeti yönetim sırası",
+      "instruction": "Geçici solunum durması, ritim riski, yanık ve travma değerlendirmesini sırala.",
+      "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "pulmonology-lightning-apnea-001-r-1-bilinc-solunum-eforu-ve-havayolu-acikligini-hizla-de",
-          "label": "Bilinç, solunum eforu ve havayolu açıklığını hızla değerlendir",
+          "id": "pulmonology-lightning-apnea-001-r-1-solunum-dolasim-ve-bilinc-durumunu-hizla-degerlendir-apne-varsa-ventilas",
+          "label": "Solunum, dolaşım ve bilinç durumunu hızla değerlendir; apne varsa ventilasyon desteği başlat.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Asfiksi ve yıldırım/boğulma benzeri yaralanmalarda ilk risk oksijenlenmedir"
+          "rationale": "Yıldırım maruziyetinde solunum merkezi baskılanması ve kardiyak arrest görülebilir."
         },
         {
-          "id": "pulmonology-lightning-apnea-001-r-2-gerekirse-ventilasyon-destegi-ve-oksijenizasyonu-bas",
-          "label": "Gerekirse ventilasyon desteği ve oksijenizasyonu başlat",
+          "id": "pulmonology-lightning-apnea-001-r-2-ekg-cek-ve-ritim-monitorizasyonunu-surdur",
+          "label": "EKG çek ve ritim monitorizasyonunu sürdür.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Uzamış apne hipoksik hasar ve arrest riskini artırır"
+          "rationale": "Geçici aritmi veya iletim bozukluğu erken dönemde yakalanmalıdır."
         },
         {
-          "id": "pulmonology-lightning-apnea-001-r-3-boyun-travmasi-laringeal-odem-ve-servikal-yaralanma-",
-          "label": "Boyun travması, laringeal ödem ve servikal yaralanma bulgularını değerlendir",
+          "id": "pulmonology-lightning-apnea-001-r-3-dusme-travmasi-deri-yaniklari-ve-norolojik-defisitleri-sistematik-ara",
+          "label": "Düşme travması, deri yanıkları ve nörolojik defisitleri sistematik ara.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Gecikmiş havayolu ödemi başlangıçta sessiz olabilir"
+          "rationale": "Maruziyet yalnız elektrik etkisi değil mekanik travma da oluşturabilir."
         },
         {
-          "id": "pulmonology-lightning-apnea-001-r-4-kardiyak-ritim-ve-norolojik-durumu-monitorize-et",
-          "label": "Kardiyak ritim ve nörolojik durumu monitörize et",
+          "id": "pulmonology-lightning-apnea-001-r-4-ck-kreatinin-elektrolit-ve-idrar-bulgulariyla-kas-bobrek-hasarini-izle",
+          "label": "CK, kreatinin, elektrolit ve idrar bulgularıyla kas-böbrek hasarını izle.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Elektrik/yıldırım ve asfiksi sonrası aritmi ve hipoksik beyin hasarı izlenir"
+          "rationale": "Rabdomiyoliz ve elektrolit bozuklukları gecikmiş komplikasyon yapabilir."
         },
         {
-          "id": "pulmonology-lightning-apnea-001-r-5-adli-yaralanma-kaydi-ve-guvenlik-degerlendirmesini-t",
-          "label": "Adli/yaralanma kaydı ve güvenlik değerlendirmesini tıbbi stabilizasyonla birlikte yürüt",
+          "id": "pulmonology-lightning-apnea-001-r-5-yanik-bakimi-sivi-destegi-ve-goz-kulak-norolojik-izlem-gereksinimini-pla",
+          "label": "Yanık bakımı, sıvı desteği ve göz/kulak-nörolojik izlem gereksinimini planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Şüpheli boyun basısı veya iş/saha kazası bildirim gerektirebilir"
+          "rationale": "Yıldırım yaralanmasında çoklu sistem etkilenimi olabilir."
         },
         {
-          "id": "pulmonology-lightning-apnea-001-d-1-solunum-depresyonu-varken-yalniz-gozlem-oner",
-          "label": "Solunum depresyonu varken yalnız gözlem öner",
+          "id": "pulmonology-lightning-apnea-001-r-6-olay-kaydini-ve-guvenlik-bildirimini-tibbi-stabilizasyon-sonrasi-tamamla",
+          "label": "Olay kaydını ve güvenlik bildirimini tıbbi stabilizasyon sonrası tamamla.",
+          "required": true,
+          "correctOrder": 6,
+          "unsafe": false,
+          "score": 1,
+          "rationale": "Kayıt önemlidir ancak ana akış yaşam desteği ve komplikasyon izlemdir."
+        },
+        {
+          "id": "pulmonology-lightning-apnea-001-d-1-apneik-hastada-ventilasyon-yerine-yalniz-deri-lezyonlarini-incele",
+          "label": "Apneik hastada ventilasyon yerine yalnız deri lezyonlarını incele.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Apne/hipoventilasyon acil ventilasyon desteği gerektirir"
+          "rationale": "Solunum desteği ilk önceliktir."
         },
         {
-          "id": "pulmonology-lightning-apnea-001-d-2-boyun-basisi-sonrasi-gecikmis-havayolu-odemini-izlem",
-          "label": "Boyun basısı sonrası gecikmiş havayolu ödemini izlem dışı bırak",
+          "id": "pulmonology-lightning-apnea-001-d-2-ekg-normalse-tum-izlemi-hemen-sonlandir",
+          "label": "EKG normalse tüm izlemi hemen sonlandır.",
           "required": false,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Havayolu ödemi saatler içinde kötüleşebilir"
-        },
-        {
-          "id": "pulmonology-lightning-apnea-001-d-3-kardiyak-ritim-izlemi-gereksiz-kabul-et",
-          "label": "Kardiyak ritim izlemi gereksiz kabul et",
-          "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Elektrik/yıldırım etkilenmesinde aritmi riski bulunabilir"
+          "rationale": "Semptomlu veya yüksek riskli maruziyette klinik izlem gerekebilir."
+        },
+        {
+          "id": "pulmonology-lightning-apnea-001-d-3-dusme-veya-travma-olasiligini-degerlendirme-disi-birak",
+          "label": "Düşme veya travma olasılığını değerlendirme dışı bırak.",
+          "required": false,
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Yıldırım çarpması düşme ve künt travma oluşturabilir."
+        },
+        {
+          "id": "pulmonology-lightning-apnea-001-d-4-yanik-kucuk-gorundugu-icin-kas-hasari-ve-bobrek-riskini-hic-arastirma",
+          "label": "Yanık küçük göründüğü için kas hasarı ve böbrek riskini hiç araştırma.",
+          "required": false,
+          "correctOrder": null,
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Elektrik maruziyetinde dış yanık derin hasarı göstermeyebilir."
         }
       ]
     },
@@ -10251,7 +10388,7 @@ export const cases = [
         "Tedavide laktoz/galaktoz kesilir.",
         "E. coli sepsisi klasik sınav ilişkisidir."
       ],
-      "nextStep": "Laktoz/galaktoz içeren beslenmeyi kes, uygun formülaya geç, karaciğer ve sepsis açısından değerlendir.",
+      "nextStep": "Laktoz/galaktoz içeren beslenmeyi kes, uygun formülaya geç, karaciğer hasarı ve E. coli sepsisi bulgularını değerlendir.",
       "answerFeedback": {
         "diagnosisMeta": "Klasik galaktozemi: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu.",
         "whyCorrect": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir.",
@@ -10313,7 +10450,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -10363,31 +10500,31 @@ export const cases = [
           "rationale": "Erken diyet tedavisi komplikasyonları azaltır fakat izlem devam etmelidir."
         },
         {
-          "id": "pediatrics-classic-galactosemia-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "pediatrics-classic-galactosemia-001-d-1-sarilik-ve-kusma-surerken-laktoz-galaktoz-iceren-beslenmeye-devam-et",
+          "label": "Sarılık ve kusma sürerken laktoz/galaktoz içeren beslenmeye devam et.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "rationale": "Galaktoz maruziyeti karaciğer yetmezliği ve sepsis riskini artırır."
         },
         {
-          "id": "pediatrics-classic-galactosemia-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "pediatrics-classic-galactosemia-001-d-2-tani-icin-yalniz-total-bilirubini-izle-ve-hedef-metabolit-enzim-testini-",
+          "label": "Tanı için yalnız total bilirubini izle ve hedef metabolit/enzim testini ertele.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "rationale": "Galaktozemi hedef metabolit ve enzim/genetik testle doğrulanmalıdır."
         },
         {
-          "id": "pediatrics-classic-galactosemia-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "pediatrics-classic-galactosemia-001-d-3-e-coli-sepsisi-olasiligini-klinik-degerlendirme-disinda-birak",
+          "label": "E. coli sepsisi olasılığını klinik değerlendirme dışında bırak.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Klasik galaktozemide neonatal sepsis riski özellikle önemlidir."
         }
       ]
     },
@@ -10598,7 +10735,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -10648,31 +10785,31 @@ export const cases = [
           "rationale": "Yanlışlıkla substrat alımı tekrarlayan krizlere yol açabilir."
         },
         {
-          "id": "pediatrics-hereditary-fructose-intolerance-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "pediatrics-hereditary-fructose-intolerance-001-d-1-tani-koymak-icin-fruktoz-yukleme-testi-yap",
+          "label": "Tanı koymak için fruktoz yükleme testi yap.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "rationale": "Fruktoz yükleme hipoglisemi ve ağır metabolik bozulma yaratabilir."
         },
         {
-          "id": "pediatrics-hereditary-fructose-intolerance-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "pediatrics-hereditary-fructose-intolerance-001-d-2-sukroz-fruktoz-iceren-beslenmeyi-surdurup-yalniz-antiemetik-ver",
+          "label": "Sükroz/fruktoz içeren beslenmeyi sürdürüp yalnız antiemetik ver.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "rationale": "Tetikleyici karbonhidratın kesilmesi tedavinin temelidir."
         },
         {
-          "id": "pediatrics-hereditary-fructose-intolerance-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "pediatrics-hereditary-fructose-intolerance-001-d-3-hipoglisemi-ataklarini-beslenme-oykusunden-bagimsiz-yorumla",
+          "label": "Hipoglisemi ataklarını beslenme öyküsünden bağımsız yorumla.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Ek gıda sonrası zaman ilişkisi HFI için karar verdiricidir."
         }
       ]
     },
@@ -10895,7 +11032,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -10945,31 +11082,31 @@ export const cases = [
           "rationale": "Uzun dönem komplikasyonlar düzenli izlem gerektirir."
         },
         {
-          "id": "pediatrics-von-gierke-gsd-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "pediatrics-von-gierke-gsd-001-d-1-kisa-aclik-nobetlerini-guvenli-kabul-edip-uzun-aclik-testi-uygula",
+          "label": "Kısa açlık nöbetlerini güvenli kabul edip uzun açlık testi uygula.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "rationale": "GSD tip I’de açlık ciddi hipoglisemi ve laktik asidoz oluşturabilir."
         },
         {
-          "id": "pediatrics-von-gierke-gsd-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "pediatrics-von-gierke-gsd-001-d-2-gece-beslenmesi-cig-nisasta-plani-olmadan-yalniz-tek-doz-glukoz-ver",
+          "label": "Gece beslenmesi/çiğ nişasta planı olmadan yalnız tek doz glukoz ver.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "rationale": "Sürekli açlık önleme uzun dönem kontrolün temelidir."
         },
         {
-          "id": "pediatrics-von-gierke-gsd-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "pediatrics-von-gierke-gsd-001-d-3-laktat-trigliserid-ve-urik-asit-paternini-degerlendirme-disi-birak",
+          "label": "Laktat, trigliserid ve ürik asit paternini değerlendirme dışı bırak.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Bu metabolik patern tanısal ayrım sağlar."
         }
       ]
     },
@@ -11180,7 +11317,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -11230,31 +11367,31 @@ export const cases = [
           "rationale": "Tedavi uyumu bozulursa kalıcı bilişsel etkilenme gelişebilir."
         },
         {
-          "id": "pediatrics-phenylketonuria-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "pediatrics-phenylketonuria-001-d-1-fenilalanin-yuksekligine-ragmen-diyet-tedavisini-norolojik-hasar-gelisen",
+          "label": "Fenilalanin yüksekliğine rağmen diyet tedavisini nörolojik hasar gelişene kadar ertele.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "rationale": "PKU’da erken diyet kalıcı bilişsel hasarı önler."
         },
         {
-          "id": "pediatrics-phenylketonuria-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "pediatrics-phenylketonuria-001-d-2-tum-proteini-tamamen-kesip-buyume-izlemini-birak",
+          "label": "Tüm proteini tamamen kesip büyüme izlemini bırak.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "rationale": "Tedavi kontrollü fenilalanin kısıtlaması ve yeterli protein/tirozin desteği gerektirir."
         },
         {
-          "id": "pediatrics-phenylketonuria-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "pediatrics-phenylketonuria-001-d-3-gebelik-cagina-gelince-maternal-pku-danismanligini-hic-planlama",
+          "label": "Gebelik çağına gelince maternal PKU danışmanlığını hiç planlama.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Yüksek fenilalanin fetal gelişimi etkileyebilir."
         }
       ]
     },
@@ -11435,7 +11572,7 @@ export const cases = [
           "Katabolizmayı durdurmak için protein alımını geçici kes, yüksek kalorili glukoz/lipid desteği sağla.",
           "Plazma aminoasitlerinde lösin/izolösin/valin yüksekliğini ve alloisolösini doğrula.",
           "Lösin çok yüksek veya nörolojik kötüleşme varsa diyaliz/yoğun bakım desteğini değerlendir.",
-          "Uzun dönem dallı zincirli aminoasit kısıtlı diyet, özel formula ve gerekirse tiamin yanıtı takibini planla."
+          "Uzun dönem dallı zincirli aminoasit kısıtlı diyet, özel formula ve tiamin yanıtlı alt tip izlemini planla."
         ],
         "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül/enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
@@ -11469,7 +11606,7 @@ export const cases = [
           "Katabolizmayı durdurmak için protein alımını geçici kes, yüksek kalorili glukoz/lipid desteği sağla.",
           "Plazma aminoasitlerinde lösin/izolösin/valin yüksekliğini ve alloisolösini doğrula.",
           "Lösin çok yüksek veya nörolojik kötüleşme varsa diyaliz/yoğun bakım desteğini değerlendir.",
-          "Uzun dönem dallı zincirli aminoasit kısıtlı diyet, özel formula ve gerekirse tiamin yanıtı takibini planla."
+          "Uzun dönem dallı zincirli aminoasit kısıtlı diyet, özel formula ve tiamin yanıtlı alt tip izlemini planla."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -11477,7 +11614,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -11519,7 +11656,7 @@ export const cases = [
         },
         {
           "id": "pediatrics-maple-syrup-urine-disease-001-req-5-uzun-donem-dalli-zincirli-aminoasit-kisitli-diyet-ozel-f",
-          "label": "Uzun dönem dallı zincirli aminoasit kısıtlı diyet, özel formula ve gerekirse tiamin yanıtı takibini planla.",
+          "label": "Uzun dönem dallı zincirli aminoasit kısıtlı diyet, özel formula ve tiamin yanıtlı alt tip izlemini planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
@@ -11527,31 +11664,31 @@ export const cases = [
           "rationale": "Metabolik krizleri önlemek için düzenli beslenme ve izlem gerekir."
         },
         {
-          "id": "pediatrics-maple-syrup-urine-disease-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "pediatrics-maple-syrup-urine-disease-001-d-1-letarjik-yenidoganda-sonucu-beklemek-icin-proteinli-mamayi-surdur",
+          "label": "Letarjik yenidoğanda sonucu beklemek için proteinli mamayı sürdür.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "rationale": "Katabolizma ve lösin yükü nörolojik kötüleşmeyi artırır."
         },
         {
-          "id": "pediatrics-maple-syrup-urine-disease-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "pediatrics-maple-syrup-urine-disease-001-d-2-losin-cok-yuksekken-yogun-bakim-diyaliz-secenegini-degerlendirme",
+          "label": "Lösin çok yüksekken yoğun bakım/diyaliz seçeneğini değerlendirme.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "rationale": "Ağır lösin yüksekliği beyin ödemi ve koma riski taşır."
         },
         {
-          "id": "pediatrics-maple-syrup-urine-disease-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "pediatrics-maple-syrup-urine-disease-001-d-3-alloizolosin-ve-dalli-zincirli-aminoasit-profilini-gereksiz-kabul-et",
+          "label": "Alloizolösin ve dallı zincirli aminoasit profilini gereksiz kabul et.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Bu profil MSUD için hedef tanısal veridir."
         }
       ]
     },
@@ -11750,7 +11887,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -11800,31 +11937,31 @@ export const cases = [
           "rationale": "Ochronosis sistemik komplikasyonlara yol açabilir."
         },
         {
-          "id": "internal-medicine-alkaptonuria-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "internal-medicine-alkaptonuria-001-d-1-bekleyen-idrar-koyulasmasini-yalniz-dehidratasyon-sayip-metabolit-testin",
+          "label": "Bekleyen idrar koyulaşmasını yalnız dehidratasyon sayıp metabolit testini isteme.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Homogentisik asit artışı alkaptonürinin temel bulgusudur."
         },
         {
-          "id": "internal-medicine-alkaptonuria-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "internal-medicine-alkaptonuria-001-d-2-eklem-ve-kapak-komplikasyonlarini-uzun-donem-izlem-disinda-birak",
+          "label": "Eklem ve kapak komplikasyonlarını uzun dönem izlem dışında bırak.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Ochronosis sistemik bağ doku ve kapak tutulumu yapabilir."
         },
         {
-          "id": "internal-medicine-alkaptonuria-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "internal-medicine-alkaptonuria-001-d-3-agrili-artropatiyi-enfeksiyon-varsayarak-uzun-sureli-antibiyotikle-yonet",
+          "label": "Ağrılı artropatiyi enfeksiyon varsayarak uzun süreli antibiyotikle yönet.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "rationale": "Bu tabloda sorun enfeksiyon değil pigment birikimine bağlı dejenerasyondur."
         }
       ]
     },
@@ -12015,7 +12152,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -12065,31 +12202,31 @@ export const cases = [
           "rationale": "Kalıtım paterni aile planlaması için önemlidir."
         },
         {
-          "id": "pediatrics-albinism-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "pediatrics-albinism-001-d-1-fotofobi-ve-nistagmus-varken-oftalmoloji-degerlendirmesini-ertele",
+          "label": "Fotofobi ve nistagmus varken oftalmoloji değerlendirmesini ertele.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Albinizmde fonksiyonel yük çoğunlukla oküler etkilenimden gelir."
         },
         {
-          "id": "pediatrics-albinism-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "pediatrics-albinism-001-d-2-gunesten-korunma-ve-deri-taramasini-gereksiz-kabul-et",
+          "label": "Güneşten korunma ve deri taramasını gereksiz kabul et.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Melanin eksikliği UV hasarı ve deri kanseri riskini artırır."
         },
         {
-          "id": "pediatrics-albinism-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "pediatrics-albinism-001-d-3-kanama-veya-immun-yetmezlik-bulgularini-sendromik-albinizm-acisindan-sor",
+          "label": "Kanama veya immün yetmezlik bulgularını sendromik albinizm açısından sorgulama.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Hermansky-Pudlak ve Chediak-Higashi gibi tablolar ek risk taşır."
         }
       ]
     },
@@ -12338,7 +12475,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -12388,31 +12525,31 @@ export const cases = [
           "rationale": "Uzun dönem riskler düzenli izlem gerektirir."
         },
         {
-          "id": "pediatrics-homocystinuria-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "pediatrics-homocystinuria-001-d-1-akut-bacak-sisligini-yalniz-ortopedik-agri-kabul-edip-trombozu-dislama",
+          "label": "Akut bacak şişliğini yalnız ortopedik ağrı kabul edip trombozu dışlama.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "rationale": "Homosistinüri venöz/arteriyel tromboz riskini artırır."
         },
         {
-          "id": "pediatrics-homocystinuria-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "pediatrics-homocystinuria-001-d-2-homosistein-ve-metiyonin-olcmeden-yalniz-marfan-sendromu-izlemi-yap",
+          "label": "Homosistein ve metiyonin ölçmeden yalnız Marfan sendromu izlemi yap.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Metabolik testler ayırıcı tanıyı belirler."
         },
         {
-          "id": "pediatrics-homocystinuria-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "pediatrics-homocystinuria-001-d-3-piridoksin-yaniti-ve-betain-diyet-seceneklerini-hic-degerlendirme",
+          "label": "Piridoksin yanıtı ve betain/diyet seçeneklerini hiç değerlendirme.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Tedavi homosistein düzeyini düşürmeye yöneliktir."
         }
       ]
     },
@@ -12578,7 +12715,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -12628,31 +12765,31 @@ export const cases = [
           "rationale": "Tedavi yanıtı klinik olarak izlenir."
         },
         {
-          "id": "internal-medicine-pellagra-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "internal-medicine-pellagra-001-d-1-fotosensitif-dermatiti-yalniz-topikal-steroidle-yonetip-niasin-eksikligi",
+          "label": "Fotosensitif dermatiti yalnız topikal steroidle yönetip niasin eksikliğini düzeltme.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "rationale": "Pellagraya özgü sistemik eksiklik yerine konmalıdır."
         },
         {
-          "id": "internal-medicine-pellagra-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "internal-medicine-pellagra-001-d-2-diyare-ve-bilissel-yavaslamayi-taniyla-iliskisiz-kabul-et",
+          "label": "Diyare ve bilişsel yavaşlamayı tanıyla ilişkisiz kabul et.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Dermatit-diyare-demans üçlüsü pellagra için öğreticidir."
         },
         {
-          "id": "internal-medicine-pellagra-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "internal-medicine-pellagra-001-d-3-beslenme-yetersizligi-alkol-kullanimi-veya-izoniazid-oykusunu-sorgulama",
+          "label": "Beslenme yetersizliği, alkol kullanımı veya izoniazid öyküsünü sorgulama.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Niasin eksikliğinin nedeni tedavi planını etkiler."
         }
       ]
     },
@@ -12806,7 +12943,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -12856,31 +12993,31 @@ export const cases = [
           "rationale": "Komplikasyonlar ve kombine beslenme eksiklikleri izlenmelidir."
         },
         {
-          "id": "internal-medicine-scurvy-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "internal-medicine-scurvy-001-d-1-dis-eti-kanamasi-ve-perifolikuler-peteside-c-vitamini-yerine-yalniz-anti",
+          "label": "Diş eti kanaması ve perifoliküler peteşide C vitamini yerine yalnız antikoagülan kes.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Skorbütte kollajen sentez bozukluğu hedef tedavi gerektirir."
         },
         {
-          "id": "internal-medicine-scurvy-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "internal-medicine-scurvy-001-d-2-beslenme-oykusunu-almadan-genis-koagulasyon-calismasina-yonel",
+          "label": "Beslenme öyküsünü almadan geniş koagülasyon çalışmasına yönel.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Yetersiz C vitamini alımı tanı için temel ipucudur."
         },
         {
-          "id": "internal-medicine-scurvy-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "internal-medicine-scurvy-001-d-3-c-vitamini-replasmanini-laboratuvar-sonucu-cikana-kadar-haftalarca-ertel",
+          "label": "C vitamini replasmanını laboratuvar sonucu çıkana kadar haftalarca ertele.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Klinik şüphede replasman güvenli ve etkilidir."
         }
       ]
     },
@@ -13091,7 +13228,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -13141,31 +13278,31 @@ export const cases = [
           "rationale": "Organ hasarı prognozu belirler."
         },
         {
-          "id": "internal-medicine-hemochromatosis-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "internal-medicine-hemochromatosis-001-d-1-yuksek-ferritin-ve-transferrin-saturasyonu-varken-demir-destegi-basla",
+          "label": "Yüksek ferritin ve transferrin satürasyonu varken demir desteği başla.",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "rationale": "Demir yüklenmesinde demir desteği zararlıdır."
         },
         {
-          "id": "internal-medicine-hemochromatosis-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "internal-medicine-hemochromatosis-001-d-2-karaciger-pankreas-ve-kalp-komplikasyonlarini-izlem-disinda-birak",
+          "label": "Karaciğer, pankreas ve kalp komplikasyonlarını izlem dışında bırak.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Hemokromatozis çoklu organ hasarı yapabilir."
         },
         {
-          "id": "internal-medicine-hemochromatosis-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "internal-medicine-hemochromatosis-001-d-3-aile-taramasi-ve-genetik-danismanligi-gereksiz-kabul-et",
+          "label": "Aile taraması ve genetik danışmanlığı gereksiz kabul et.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "HFE ilişkili hastalıkta aile bireyleri risk altında olabilir."
         }
       ]
     },
@@ -13351,7 +13488,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -13401,31 +13538,31 @@ export const cases = [
           "rationale": "Tedavi yaşam boyu sürer ve hedef LDL’ye göre ayarlanır."
         },
         {
-          "id": "internal-medicine-familial-hypercholesterolemia-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "internal-medicine-familial-hypercholesterolemia-001-d-1-tendon-ksantomlari-ve-erken-mi-oykusune-ragmen-yalniz-dusuk-doz-diyet-on",
+          "label": "Tendon ksantomları ve erken MI öyküsüne rağmen yalnız düşük doz diyet öner.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "FH yüksek yoğunluklu lipid düşürücü tedavi ve risk azaltma gerektirir."
         },
         {
-          "id": "internal-medicine-familial-hypercholesterolemia-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "internal-medicine-familial-hypercholesterolemia-001-d-2-ldl-duzeyi-cok-yuksekken-sekonder-nedenleri-ve-aile-taramasini-hic-deger",
+          "label": "LDL düzeyi çok yüksekken sekonder nedenleri ve aile taramasını hiç değerlendirme.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Sekonder nedenler dışlanmalı ve kaskad tarama planlanmalıdır."
         },
         {
-          "id": "internal-medicine-familial-hypercholesterolemia-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "internal-medicine-familial-hypercholesterolemia-001-d-3-ailede-erken-kardiyak-olum-oykusunu-risk-siniflamasina-katma",
+          "label": "Ailede erken kardiyak ölüm öyküsünü risk sınıflamasına katma.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Aile öyküsü FH ve erken ateroskleroz için kilit ipucudur."
         }
       ]
     },
@@ -13610,7 +13747,7 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Yönetim sırası",
+      "title": "Metabolik hastalık yönetim sırası",
       "instruction": "Bu olguda klinik öncelikleri doğru sıraya koy.",
       "minRequiredSteps": 5,
       "steps": [
@@ -13660,31 +13797,31 @@ export const cases = [
           "rationale": "Spesifik küratif tedavi olmadığından izlem ve risk azaltma önemlidir."
         },
         {
-          "id": "internal-medicine-tangier-disease-001-dist-1-semptomlar-surse-bile-hedef-metabolik-testi-ve-tedaviyi-",
-          "label": "Semptomlar sürse bile hedef metabolik testi ve tedaviyi kontrol randevusuna ertele.",
+          "id": "internal-medicine-tangier-disease-001-d-1-turuncu-tonsilleri-yalniz-tekrarlayan-tonsillit-kabul-edip-lipid-profili",
+          "label": "Turuncu tonsilleri yalnız tekrarlayan tonsillit kabul edip lipid profilini isteme.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik veya vitamin eksikliği tablolarında erken tanı/tedavi komplikasyonu önler."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Tangier hastalığında çok düşük HDL ve tonsil bulgusu birliktedir."
         },
         {
-          "id": "internal-medicine-tangier-disease-001-dist-2-tum-olgulari-ayni-genis-biyokimya-paneliyle-yonetip-hede",
-          "label": "Tüm olguları aynı geniş biyokimya paneliyle yönetip hedef testi sonraya bırak.",
+          "id": "internal-medicine-tangier-disease-001-d-2-periferik-noropatiyi-metabolik-hastalikla-iliskisiz-kabul-et",
+          "label": "Periferik nöropatiyi metabolik hastalıkla ilişkisiz kabul et.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "ABCA1 bozukluğu nöropatiyle birlikte görülebilir."
         },
         {
-          "id": "internal-medicine-tangier-disease-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
-          "label": "Beslenme veya tetikleyici öyküsünü tanısal değerlendirmeye katma.",
+          "id": "internal-medicine-tangier-disease-001-d-3-aile-oykusu-ve-genetik-danismanligi-tamamen-atla",
+          "label": "Aile öyküsü ve genetik danışmanlığı tamamen atla.",
           "required": false,
           "correctOrder": null,
-          "unsafe": true,
-          "score": -2,
-          "rationale": "Metabolik ve vitamin hastalıklarında maruziyet-zaman ilişkisi temel ipucudur."
+          "unsafe": false,
+          "score": -1,
+          "rationale": "Kalıtsal lipid taşıma bozukluğunda aile değerlendirmesi önemlidir."
         }
       ]
     },
@@ -13865,7 +14002,7 @@ export const cases = [
           "Maruziyet süresi, mesafe, koruyucu ekipman ve prodromal semptom zamanını değerlendir",
           "Kontaminasyon varsa kıyafetleri çıkarıp dekontaminasyon uygula",
           "Mutlak lenfosit sayısı trendi ve dozimetri ile doz tahmini yap",
-          "Hematolojik destek, enfeksiyon önleme ve gerekirse G-CSF tedavisini planla",
+          "Hematolojik destek, enfeksiyon önleme ve G-CSF endikasyonunu planla",
           "Radyasyon güvenliği, adli/iş sağlığı bildirimi ve uzun dönem kanser takibini düzenle"
         ],
         "learningOutcome": "Radyasyon sendromlarında zamanlama ayırıcıdır: ARS kısa sürede yüksek dozla; CRS uzun süre düşük dozla gelişir.",
@@ -13899,7 +14036,7 @@ export const cases = [
           "Maruziyet süresi, mesafe, koruyucu ekipman ve prodromal semptom zamanını değerlendir",
           "Kontaminasyon varsa kıyafetleri çıkarıp dekontaminasyon uygula",
           "Mutlak lenfosit sayısı trendi ve dozimetri ile doz tahmini yap",
-          "Hematolojik destek, enfeksiyon önleme ve gerekirse G-CSF tedavisini planla",
+          "Hematolojik destek, enfeksiyon önleme ve G-CSF endikasyonunu planla",
           "Radyasyon güvenliği, adli/iş sağlığı bildirimi ve uzun dönem kanser takibini düzenle"
         ]
       },
@@ -13940,8 +14077,8 @@ export const cases = [
           "rationale": "Lenfosit düşüş hızı radyasyon dozu ve prognoz hakkında bilgi verir"
         },
         {
-          "id": "internal-medicine-acute-radiation-syndrome-001-r-4-hematolojik-destek-enfeksiyon-onleme-ve-gerekirse-g-",
-          "label": "Hematolojik destek, enfeksiyon önleme ve gerekirse G-CSF tedavisini planla",
+          "id": "internal-medicine-acute-radiation-syndrome-001-r-4-hematolojik-destek-enfeksiyon-onleme-ve-g-csf-endikasyonunu-",
+          "label": "Hematolojik destek, enfeksiyon önleme ve G-CSF endikasyonunu planla",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
@@ -14432,7 +14569,7 @@ export const cases = [
         "Beyin infarktı -> likefaksiyon nekrozu.",
         "Tüberküloz granülomu -> kazeifikasyon nekrozu."
       ],
-      "nextStep": "STEMI protokolü: aspirin/antitrombotik yaklaşım, acil PCI ve hemodinamik izlem.",
+      "nextStep": "İskemik göğüs ağrısı ve EKG bulgularını akut koroner oklüzyon açısından hızla değerlendir. Monitörizasyon, damar yolu ve defibrilatör erişimini hazırla. Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kanama riskini dışlayarak başla. Primer PCI veya uygun reperfüzyon yolunu zaman hedeflerine göre başlat. Troponin değişimini ve komplikasyonları izle; tedavi kararını troponin gecikmesine bağlama. Koagülatif nekrozun saatler içinde gelişen morfolojik karşılığını öğrenme hedefi olarak yorumla.",
       "answerFeedback": {
         "diagnosisMeta": "İskemi + solid organ + MI = koagülasyon nekrozu. Alan Feedback",
         "whyCorrect": "Miyokard ve böbrek gibi solid organlarda iskemi sonrası tipik nekroz koagülasyon nekrozudur. Beyin istisna olarak likefaksiyon nekrozu gösterir.",
@@ -14446,12 +14583,12 @@ export const cases = [
           "Patoloji cevabı tedavi cevabından ayrıdır: tanı/tedavi PCI; morfolojik tip koagülasyon nekrozudur."
         ],
         "management": [
-          "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı",
-          "Hastayı monitörize et, defibrilatör erişimini ve iki damar yolu hazırlığını sağla",
-          "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kontrendikasyonları dışlayarak başla",
-          "Primer perkütan koroner girişim için kateter laboratuvarını aktive et",
-          "PCI gecikecekse fibrinolitik uygunluğunu kanama riskiyle birlikte değerlendir",
-          "Aritmi, kalp yetmezliği, tekrar iskemi ve kanama komplikasyonlarını yakın izle"
+          "İskemik göğüs ağrısı ve EKG bulgularını akut koroner oklüzyon açısından hızla değerlendir.",
+          "Monitörizasyon, damar yolu ve defibrilatör erişimini hazırla.",
+          "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kanama riskini dışlayarak başla.",
+          "Primer PCI veya uygun reperfüzyon yolunu zaman hedeflerine göre başlat.",
+          "Troponin değişimini ve komplikasyonları izle; tedavi kararını troponin gecikmesine bağlama.",
+          "Koagülatif nekrozun saatler içinde gelişen morfolojik karşılığını öğrenme hedefi olarak yorumla."
         ],
         "learningOutcome": "Nekroz tiplerinde organ, iskemi/enfeksiyon mekanizması ve morfoloji birlikte eşleştirilmelidir.",
         "differentials": {
@@ -14481,12 +14618,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı",
-          "Hastayı monitörize et, defibrilatör erişimini ve iki damar yolu hazırlığını sağla",
-          "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kontrendikasyonları dışlayarak başla",
-          "Primer perkütan koroner girişim için kateter laboratuvarını aktive et",
-          "PCI gecikecekse fibrinolitik uygunluğunu kanama riskiyle birlikte değerlendir",
-          "Aritmi, kalp yetmezliği, tekrar iskemi ve kanama komplikasyonlarını yakın izle"
+          "İskemik göğüs ağrısı ve EKG bulgularını akut koroner oklüzyon açısından hızla değerlendir.",
+          "Monitörizasyon, damar yolu ve defibrilatör erişimini hazırla.",
+          "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kanama riskini dışlayarak başla.",
+          "Primer PCI veya uygun reperfüzyon yolunu zaman hedeflerine göre başlat.",
+          "Troponin değişimini ve komplikasyonları izle; tedavi kararını troponin gecikmesine bağlama.",
+          "Koagülatif nekrozun saatler içinde gelişen morfolojik karşılığını öğrenme hedefi olarak yorumla."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -14494,87 +14631,90 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "STEMI yönetim sırası",
-      "instruction": "Reperfüzyon gecikmesini önleyecek acil kardiyak yönetim basamaklarını sırala.",
+      "title": "Akut MI ve koagülatif nekroz yönetim sırası",
+      "instruction": "Klinik STEMI kararını histopatolojik nekroz zamanlamasıyla karıştırmadan sırala.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-r-1-iskemik-gogus-agrisi-ve-ardisik-derivasyonlarda-st-e",
-          "label": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-r-1-iskemik-gogus-agrisi-ve-ekg-bulgularini-akut-koroner-okluzyon-acisindan-",
+          "label": "İskemik göğüs ağrısı ve EKG bulgularını akut koroner oklüzyon açısından hızla değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "STEMI’de tedavi kararı tipik klinik ve EKG ile verilir; troponin tekrarını beklemek reperfüzyonu geciktirir"
+          "rationale": "Akut MI’da ilk karar klinik ve EKG ile verilir; histolojik nekroz tanıyı bekletmez."
         },
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-r-2-hastayi-monitorize-et-defibrilator-erisimini-ve-iki-",
-          "label": "Hastayı monitörize et, defibrilatör erişimini ve iki damar yolu hazırlığını sağla",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-r-2-monitorizasyon-damar-yolu-ve-defibrilator-erisimini-hazirla",
+          "label": "Monitörizasyon, damar yolu ve defibrilatör erişimini hazırla.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "STEMI erken dönemde ölümcül aritmi ve hemodinamik bozulma riski taşır"
+          "rationale": "Erken dönemde aritmi ve hemodinamik bozulma mortalite nedenidir."
         },
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-r-3-aspirin-p2y12-inhibitoru-ve-antikoagulasyonu-kontren",
-          "label": "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kontrendikasyonları dışlayarak başla",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-r-3-aspirin-p2y12-inhibitoru-ve-antikoagulasyonu-kanama-riskini-dislayarak-b",
+          "label": "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kanama riskini dışlayarak başla.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Antitrombotik tedavi trombüs ilerlemesini azaltır ve reperfüzyon stratejisinin temel parçasıdır"
+          "rationale": "Trombüs progresyonunu azaltan tedavi reperfüzyon stratejisiyle birlikte yürütülür."
         },
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-r-4-primer-perkutan-koroner-girisim-icin-kateter-laborat",
-          "label": "Primer perkütan koroner girişim için kateter laboratuvarını aktive et",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-r-4-primer-pci-veya-uygun-reperfuzyon-yolunu-zaman-hedeflerine-gore-baslat",
+          "label": "Primer PCI veya uygun reperfüzyon yolunu zaman hedeflerine göre başlat.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Uygun merkezde en etkili yaklaşım mümkün olan en kısa sürede koroner reperfüzyondur"
+          "rationale": "Canlı miyokardı kurtarmak için reperfüzyon geciktirilmemelidir."
         },
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-r-5-pci-gecikecekse-fibrinolitik-uygunlugunu-kanama-risk",
-          "label": "PCI gecikecekse fibrinolitik uygunluğunu kanama riskiyle birlikte değerlendir",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-r-5-troponin-degisimini-ve-komplikasyonlari-izle-tedavi-kararini-troponin-ge",
+          "label": "Troponin değişimini ve komplikasyonları izle; tedavi kararını troponin gecikmesine bağlama.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Zaman hedefi aşılıyorsa ve kontrendikasyon yoksa fibrinoliz mortaliteyi azaltabilir"
+          "rationale": "Biyobelirteçler tanıyı destekler ancak ST elevasyonunda reperfüzyonu geciktirmez."
         },
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-r-6-aritmi-kalp-yetmezligi-tekrar-iskemi-ve-kanama-kompl",
-          "label": "Aritmi, kalp yetmezliği, tekrar iskemi ve kanama komplikasyonlarını yakın izle",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-r-6-koagulatif-nekrozun-saatler-icinde-gelisen-morfolojik-karsiligini-ogrenm",
+          "label": "Koagülatif nekrozun saatler içinde gelişen morfolojik karşılığını öğrenme hedefi olarak yorumla.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Akut dönem izlemi hem tedavi güvenliği hem de erken komplikasyon yönetimi için zorunludur"
+          "rationale": "Patoloji bilgisi klinik aciliyeti açıklar; akut tedavinin yerine geçmez."
         },
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-d-1-troponin-sonucunu-seri-olarak-bekle-ve-reperfuzyon-k",
-          "label": "Troponin sonucunu seri olarak bekle ve reperfüzyon kararını ertele",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-d-1-koagulatif-nekroz-histolojisi-gorulene-kadar-reperfuzyonu-beklet",
+          "label": "Koagülatif nekroz histolojisi görülene kadar reperfüzyonu beklet.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "ST elevasyonu ile uyumlu klinikte reperfüzyon kararı troponin beklenerek geciktirilmez"
+          "rationale": "Histolojik kanıt beklemek miyokard kaybını artırır."
         },
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-d-2-akut-agri-sirasinda-elektif-efor-testi-planla",
-          "label": "Akut ağrı sırasında elektif efor testi planla",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-d-2-st-elevasyonu-sirasinda-elektif-efor-testi-planla",
+          "label": "ST elevasyonu sırasında elektif efor testi planla.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Efor testi akut koroner oklüzyon şüphesinde kontrendike/uygunsuz bir ilk basamaktır"
+          "rationale": "Akut oklüzyon şüphesinde efor testi uygun değildir."
         },
         {
-          "id": "cardiovascular-coagulative-necrosis-mi-001-d-3-stemi-paternini-yalniz-analjeziyle-izlemeye-al",
-          "label": "STEMI paternini yalnız analjeziyle izlemeye al",
+          "id": "cardiovascular-coagulative-necrosis-mi-001-d-3-agri-azalinca-antitrombotik-ve-monitorizasyonu-sonlandir",
+          "label": "Ağrı azalınca antitrombotik ve monitorizasyonu sonlandır.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Analjezi destekleyicidir; koroner reperfüzyonun yerine geçmez"
+          "rationale": "Semptom azalması koroner oklüzyon riskini ortadan kaldırmaz."
         }
       ]
     },
@@ -15305,7 +15445,7 @@ export const cases = [
         "DVT en sık emboli kaynağıdır.",
         "Büyük emboli şok ve ani ölüme yol açabilir."
       ],
-      "nextStep": "Acil stabilizasyon gerektiren durum dışlandıktan sonra tanıyı doğrulayan temel test ve hedefe yönelik tedavi/yönetim başlatılır.",
+      "nextStep": "Ani dispne, plöritik ağrı, taşikardi ve DVT bulgularını birlikte değerlendir. Hemodinamik stabilite ve sağ ventrikül yüklenmesi bulgularını sınıfla. Pretest olasılığa göre D-dimer ya da BT pulmoner anjiyografi stratejisini seç. Kontrendikasyon yoksa antikoagülasyonu başlat ve kanama riskini izle. Şok veya kalıcı hipotansiyon varsa reperfüzyon tedavisi seçeneğini değerlendir. DVT kaynağı, provoke edici faktör ve akciğer enfarktı komplikasyonlarını izlem planına ekle.",
       "answerFeedback": {
         "diagnosisMeta": "Pulmoner tromboemboli için belirleyici klinik ve patolojik ipuçları.",
         "whyCorrect": "Olgunun klinik paterni Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler.",
@@ -15320,12 +15460,12 @@ export const cases = [
           "DVT en sık emboli kaynağıdır."
         ],
         "management": [
-          "Ani dispne, plöritik ağrı, taşikardi ve DVT ipuçlarıyla pulmoner emboli olasılığını değerlendir",
-          "Hemodinamik stabiliteyi sınıfla ve yüksek risk bulgularını ara",
-          "Uygun hastada BT pulmoner anjiyografi veya D-dimer stratejisini pretest olasılığa göre seç",
-          "Kontrendikasyon yoksa antikoagülasyon başla",
-          "Şok/hipotansiyon varsa tromboliz veya embolektomi seçeneğini değerlendir",
-          "Altta yatan provoke edici faktör ve tedavi süresini planla"
+          "Ani dispne, plöritik ağrı, taşikardi ve DVT bulgularını birlikte değerlendir.",
+          "Hemodinamik stabilite ve sağ ventrikül yüklenmesi bulgularını sınıfla.",
+          "Pretest olasılığa göre D-dimer ya da BT pulmoner anjiyografi stratejisini seç.",
+          "Kontrendikasyon yoksa antikoagülasyonu başlat ve kanama riskini izle.",
+          "Şok veya kalıcı hipotansiyon varsa reperfüzyon tedavisi seçeneğini değerlendir.",
+          "DVT kaynağı, provoke edici faktör ve akciğer enfarktı komplikasyonlarını izlem planına ekle."
         ],
         "learningOutcome": "Patoloji başlıklarında organ, etiyoloji ve morfolojik patern birlikte yorumlanmalıdır.",
         "differentials": {
@@ -15355,12 +15495,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Ani dispne, plöritik ağrı, taşikardi ve DVT ipuçlarıyla pulmoner emboli olasılığını değerlendir",
-          "Hemodinamik stabiliteyi sınıfla ve yüksek risk bulgularını ara",
-          "Uygun hastada BT pulmoner anjiyografi veya D-dimer stratejisini pretest olasılığa göre seç",
-          "Kontrendikasyon yoksa antikoagülasyon başla",
-          "Şok/hipotansiyon varsa tromboliz veya embolektomi seçeneğini değerlendir",
-          "Altta yatan provoke edici faktör ve tedavi süresini planla"
+          "Ani dispne, plöritik ağrı, taşikardi ve DVT bulgularını birlikte değerlendir.",
+          "Hemodinamik stabilite ve sağ ventrikül yüklenmesi bulgularını sınıfla.",
+          "Pretest olasılığa göre D-dimer ya da BT pulmoner anjiyografi stratejisini seç.",
+          "Kontrendikasyon yoksa antikoagülasyonu başlat ve kanama riskini izle.",
+          "Şok veya kalıcı hipotansiyon varsa reperfüzyon tedavisi seçeneğini değerlendir.",
+          "DVT kaynağı, provoke edici faktör ve akciğer enfarktı komplikasyonlarını izlem planına ekle."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -15368,87 +15508,90 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Pulmoner emboli yönetim sırası",
-      "instruction": "Risk sınıflaması ve antikoagülasyon/reperfüzyon kararını sırala.",
+      "title": "Pulmoner emboli ve akciğer enfarktı yönetim sırası",
+      "instruction": "PE klinik kararını DVT kaynağı ve patolojik enfarkt paternleriyle ilişkilendir.",
       "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "pulmonology-pulmonary-embolism-dvt-001-r-1-ani-dispne-ploritik-agri-tasikardi-ve-dvt-ipuclariyl",
-          "label": "Ani dispne, plöritik ağrı, taşikardi ve DVT ipuçlarıyla pulmoner emboli olasılığını değerlendir",
+          "id": "pulmonology-pulmonary-embolism-dvt-001-r-1-ani-dispne-ploritik-agri-tasikardi-ve-dvt-bulgularini-birlikte-degerlend",
+          "label": "Ani dispne, plöritik ağrı, taşikardi ve DVT bulgularını birlikte değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Pretest olasılık tetkik ve tedavi kararını belirler"
+          "rationale": "Klinik olasılık görüntüleme ve antikoagülasyon kararını yönlendirir."
         },
         {
-          "id": "pulmonology-pulmonary-embolism-dvt-001-r-2-hemodinamik-stabiliteyi-sinifla-ve-yuksek-risk-bulgu",
-          "label": "Hemodinamik stabiliteyi sınıfla ve yüksek risk bulgularını ara",
+          "id": "pulmonology-pulmonary-embolism-dvt-001-r-2-hemodinamik-stabilite-ve-sag-ventrikul-yuklenmesi-bulgularini-sinifla",
+          "label": "Hemodinamik stabilite ve sağ ventrikül yüklenmesi bulgularını sınıfla.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Masif PE’de reperfüzyon tedavisi gündeme gelir"
+          "rationale": "Masif/submasif ayrımı tromboliz veya yoğun bakım gereksinimini belirler."
         },
         {
-          "id": "pulmonology-pulmonary-embolism-dvt-001-r-3-uygun-hastada-bt-pulmoner-anjiyografi-veya-d-dimer-s",
-          "label": "Uygun hastada BT pulmoner anjiyografi veya D-dimer stratejisini pretest olasılığa göre seç",
+          "id": "pulmonology-pulmonary-embolism-dvt-001-r-3-pretest-olasiliga-gore-d-dimer-ya-da-bt-pulmoner-anjiyografi-stratejisin",
+          "label": "Pretest olasılığa göre D-dimer ya da BT pulmoner anjiyografi stratejisini seç.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Düşük ve yüksek olasılıkta test seçimi farklıdır"
+          "rationale": "Gereksiz testleri azaltmak için tanı yolu klinik olasılıkla başlar."
         },
         {
-          "id": "pulmonology-pulmonary-embolism-dvt-001-r-4-kontrendikasyon-yoksa-antikoagulasyon-basla",
-          "label": "Kontrendikasyon yoksa antikoagülasyon başla",
+          "id": "pulmonology-pulmonary-embolism-dvt-001-r-4-kontrendikasyon-yoksa-antikoagulasyonu-baslat-ve-kanama-riskini-izle",
+          "label": "Kontrendikasyon yoksa antikoagülasyonu başlat ve kanama riskini izle.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Antikoagülasyon trombüs progresyonu ve mortalite riskini azaltır"
+          "rationale": "PE tedavisinin temeli pıhtı progresyonunu önlemektir."
         },
         {
-          "id": "pulmonology-pulmonary-embolism-dvt-001-r-5-sok-hipotansiyon-varsa-tromboliz-veya-embolektomi-se",
-          "label": "Şok/hipotansiyon varsa tromboliz veya embolektomi seçeneğini değerlendir",
+          "id": "pulmonology-pulmonary-embolism-dvt-001-r-5-sok-veya-kalici-hipotansiyon-varsa-reperfuzyon-tedavisi-secenegini-deger",
+          "label": "Şok veya kalıcı hipotansiyon varsa reperfüzyon tedavisi seçeneğini değerlendir.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Yüksek risk PE’de reperfüzyon hayat kurtarıcı olabilir"
+          "rationale": "Yüksek riskli PE’de tromboliz veya embolektomi hayat kurtarıcı olabilir."
         },
         {
-          "id": "pulmonology-pulmonary-embolism-dvt-001-r-6-altta-yatan-provoke-edici-faktor-ve-tedavi-suresini-",
-          "label": "Altta yatan provoke edici faktör ve tedavi süresini planla",
+          "id": "pulmonology-pulmonary-embolism-dvt-001-r-6-dvt-kaynagi-provoke-edici-faktor-ve-akciger-enfarkti-komplikasyonlarini-",
+          "label": "DVT kaynağı, provoke edici faktör ve akciğer enfarktı komplikasyonlarını izlem planına ekle.",
           "required": true,
           "correctOrder": 6,
           "unsafe": false,
           "score": 1,
-          "rationale": "Uzun dönem antikoagülasyon süresi nüks riskine göre belirlenir"
+          "rationale": "Nüks önleme ve tedavi süresi altta yatan riskle belirlenir."
         },
         {
           "id": "pulmonology-pulmonary-embolism-dvt-001-d-1-sok-bulgusunda-yalniz-d-dimer-sonucunu-bekle",
-          "label": "Şok bulgusunda yalnız D-dimer sonucunu bekle",
+          "label": "Şok bulgusunda yalnız D-dimer sonucunu bekle.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Hemodinamik instabil PE’de tedavi ve görüntüleme acil planlanır"
+          "rationale": "Yüksek riskli PE’de gecikme mortaliteyi artırır."
         },
         {
-          "id": "pulmonology-pulmonary-embolism-dvt-001-d-2-antikoagulasyonu-kontrendikasyon-degerlendirmeden-ra",
-          "label": "Antikoagülasyonu kontrendikasyon değerlendirmeden rastgele başla",
+          "id": "pulmonology-pulmonary-embolism-dvt-001-d-2-antikoagulasyonu-kanama-riski-ve-kontrendikasyon-degerlendirmeden-rastge",
+          "label": "Antikoagülasyonu kanama riski ve kontrendikasyon değerlendirmeden rastgele başla.",
           "required": false,
-          "unsafe": false,
-          "score": -1,
-          "rationale": "Kanama riski ve kontrendikasyonlar tedavi güvenliği için önemlidir"
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Tedavi güvenliği için kanama riski değerlendirilmelidir."
         },
         {
-          "id": "pulmonology-pulmonary-embolism-dvt-001-d-3-dvt-bulgularini-yonetimden-bagimsiz-kabul-et",
-          "label": "DVT bulgularını yönetimden bağımsız kabul et",
+          "id": "pulmonology-pulmonary-embolism-dvt-001-d-3-dvt-bulgularini-pe-yonetiminden-bagimsiz-kabul-et",
+          "label": "DVT bulgularını PE yönetiminden bağımsız kabul et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "DVT varlığı PE olasılığını ve tedavi planını destekler"
+          "rationale": "Alt ekstremite trombozu embolinin kaynağı ve tedavi süresinin ipucudur."
         }
       ]
     },
@@ -16226,7 +16369,7 @@ export const cases = [
           "Göz-ağız kuruluğu, parotis büyümesi ve ekstraglandüler bulguları birlikte değerlendir",
           "Schirmer testi, oküler boyama ve tükürük bezi değerlendirmesiyle objektif kuruluğu destekle",
           "Anti-Ro/SSA, Anti-La/SSB ve eşlik eden otoimmün hastalıkları değerlendir",
-          "Semptomatik kuruluk için yapay gözyaşı, ağız bakımı ve gerekirse sekretagog tedavi planla",
+          "Semptomatik kuruluk için yapay gözyaşı, ağız bakımı ve sekretagog tedavi endikasyonunu planla",
           "Purpura, kalıcı parotis büyümesi, lenfadenopati veya proteinüri varsa sistemik/lenfoproliferatif tutulum açısından araştır"
         ],
         "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı/yönetim kararına ulaşmalıdır.",
@@ -16260,7 +16403,7 @@ export const cases = [
           "Göz-ağız kuruluğu, parotis büyümesi ve ekstraglandüler bulguları birlikte değerlendir",
           "Schirmer testi, oküler boyama ve tükürük bezi değerlendirmesiyle objektif kuruluğu destekle",
           "Anti-Ro/SSA, Anti-La/SSB ve eşlik eden otoimmün hastalıkları değerlendir",
-          "Semptomatik kuruluk için yapay gözyaşı, ağız bakımı ve gerekirse sekretagog tedavi planla",
+          "Semptomatik kuruluk için yapay gözyaşı, ağız bakımı ve sekretagog tedavi endikasyonunu planla",
           "Purpura, kalıcı parotis büyümesi, lenfadenopati veya proteinüri varsa sistemik/lenfoproliferatif tutulum açısından araştır"
         ]
       },
@@ -16302,7 +16445,7 @@ export const cases = [
         },
         {
           "id": "internal-medicine-sjogren-syndrome-001-r-4-semptomatik-kuruluk-icin-yapay-gozyasi-agiz-bakimi-v",
-          "label": "Semptomatik kuruluk için yapay gözyaşı, ağız bakımı ve gerekirse sekretagog tedavi planla",
+          "label": "Semptomatik kuruluk için yapay gözyaşı, ağız bakımı ve sekretagog tedavi endikasyonunu planla",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
@@ -17594,7 +17737,7 @@ export const cases = [
         "Konjonktival peteşiler venöz dönüş engellenmesi ve basınç artışıyla ilişkilidir.",
         "Servikal omurga ve boyun damar yaralanması dışlanmalıdır."
       ],
-      "nextStep": "Havayolu güvenliği, yüksek akımlı oksijen, entübasyon hazırlığı, servikal immobilizasyon ve boyun damar/havayolu görüntülemesi.",
+      "nextStep": "Havayolu açıklığı, solunum eforu, oksijenasyon ve dolaşımı ilk dakikada değerlendir. Servikal omurga güvenliğini koruyarak oksijen veya ventilasyon desteği sağla. Boyun yumuşak doku hasarı, laringeal ödem, stridor ve nörolojik defisitleri ara. Klinik endikasyon varsa servikal BT/BT anjiyografi ve kan gazı-laktat değerlendirmesi yap. Gecikmiş pulmoner ödem, aspirasyon ve hipoksik beyin hasarı açısından gözlem planla. Tıbbi stabilizasyon sonrası psikiyatrik güvenlik ve adli kayıt sürecini başlat.",
       "answerFeedback": {
         "diagnosisMeta": "Boyun basısı · hipoksemi · peteşi · laringeal ödem · gecikmiş havayolu riski",
         "whyCorrect": "Mekanizma ve objektif hipoksemi-havayolu bulguları asfiksiyi gösterir; panik atağı veya izole nöbet bu fizik muayene ve BT bulgularını açıklamaz.",
@@ -17609,11 +17752,12 @@ export const cases = [
           "Başlangıç BT normal olsa bile hipoksik hasar için nörolojik izlem gerekir."
         ],
         "management": [
-          "Bilinç, solunum eforu ve havayolu açıklığını hızla değerlendir",
-          "Gerekirse ventilasyon desteği ve oksijenizasyonu başlat",
-          "Boyun travması, laringeal ödem ve servikal yaralanma bulgularını değerlendir",
-          "Kardiyak ritim ve nörolojik durumu monitörize et",
-          "Adli/yaralanma kaydı ve güvenlik değerlendirmesini tıbbi stabilizasyonla birlikte yürüt"
+          "Havayolu açıklığı, solunum eforu, oksijenasyon ve dolaşımı ilk dakikada değerlendir.",
+          "Servikal omurga güvenliğini koruyarak oksijen veya ventilasyon desteği sağla.",
+          "Boyun yumuşak doku hasarı, laringeal ödem, stridor ve nörolojik defisitleri ara.",
+          "Klinik endikasyon varsa servikal BT/BT anjiyografi ve kan gazı-laktat değerlendirmesi yap.",
+          "Gecikmiş pulmoner ödem, aspirasyon ve hipoksik beyin hasarı açısından gözlem planla.",
+          "Tıbbi stabilizasyon sonrası psikiyatrik güvenlik ve adli kayıt sürecini başlat."
         ],
         "learningOutcome": "Asfiksi başlığı canlı acil tabloya dönüştürüldüğünde öğrenci vital, kan gazı, boyun bulguları ve görüntülemeyi birlikte yorumlayarak havayolu önceliğini öğrenir.",
         "differentials": {
@@ -17640,11 +17784,12 @@ export const cases = [
           }
         },
         "managementSteps": [
-          "Bilinç, solunum eforu ve havayolu açıklığını hızla değerlendir",
-          "Gerekirse ventilasyon desteği ve oksijenizasyonu başlat",
-          "Boyun travması, laringeal ödem ve servikal yaralanma bulgularını değerlendir",
-          "Kardiyak ritim ve nörolojik durumu monitörize et",
-          "Adli/yaralanma kaydı ve güvenlik değerlendirmesini tıbbi stabilizasyonla birlikte yürüt"
+          "Havayolu açıklığı, solunum eforu, oksijenasyon ve dolaşımı ilk dakikada değerlendir.",
+          "Servikal omurga güvenliğini koruyarak oksijen veya ventilasyon desteği sağla.",
+          "Boyun yumuşak doku hasarı, laringeal ödem, stridor ve nörolojik defisitleri ara.",
+          "Klinik endikasyon varsa servikal BT/BT anjiyografi ve kan gazı-laktat değerlendirmesi yap.",
+          "Gecikmiş pulmoner ödem, aspirasyon ve hipoksik beyin hasarı açısından gözlem planla.",
+          "Tıbbi stabilizasyon sonrası psikiyatrik güvenlik ve adli kayıt sürecini başlat."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -17652,78 +17797,99 @@ export const cases = [
     "managementSequence": {
       "enabled": true,
       "showInSpot": false,
-      "title": "Asfiksi/havayolu riski yönetim sırası",
-      "instruction": "Solunum depresyonu ve gecikmiş havayolu ödeminde güvenli yaklaşımı sırala.",
-      "minRequiredSteps": 5,
+      "title": "Boyun basısı/asfiksi yönetim sırası",
+      "instruction": "Havayolu, servikal travma, hipoksik hasar ve güvenlik değerlendirmesini sırala.",
+      "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "pulmonology-near-hanging-asphyxia-001-r-1-bilinc-solunum-eforu-ve-havayolu-acikligini-hizla-de",
-          "label": "Bilinç, solunum eforu ve havayolu açıklığını hızla değerlendir",
+          "id": "pulmonology-near-hanging-asphyxia-001-r-1-havayolu-acikligi-solunum-eforu-oksijenasyon-ve-dolasimi-ilk-dakikada-de",
+          "label": "Havayolu açıklığı, solunum eforu, oksijenasyon ve dolaşımı ilk dakikada değerlendir.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Asfiksi ve yıldırım/boğulma benzeri yaralanmalarda ilk risk oksijenlenmedir"
+          "rationale": "Boyun basısı sonrası gecikmiş havayolu ödemi ve hipoksik bozulma gelişebilir."
         },
         {
-          "id": "pulmonology-near-hanging-asphyxia-001-r-2-gerekirse-ventilasyon-destegi-ve-oksijenizasyonu-bas",
-          "label": "Gerekirse ventilasyon desteği ve oksijenizasyonu başlat",
+          "id": "pulmonology-near-hanging-asphyxia-001-r-2-servikal-omurga-guvenligini-koruyarak-oksijen-veya-ventilasyon-destegi-s",
+          "label": "Servikal omurga güvenliğini koruyarak oksijen veya ventilasyon desteği sağla.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Uzamış apne hipoksik hasar ve arrest riskini artırır"
+          "rationale": "Eşlik eden boyun travması dışlanmadan manipülasyon risklidir."
         },
         {
-          "id": "pulmonology-near-hanging-asphyxia-001-r-3-boyun-travmasi-laringeal-odem-ve-servikal-yaralanma-",
-          "label": "Boyun travması, laringeal ödem ve servikal yaralanma bulgularını değerlendir",
+          "id": "pulmonology-near-hanging-asphyxia-001-r-3-boyun-yumusak-doku-hasari-laringeal-odem-stridor-ve-norolojik-defisitler",
+          "label": "Boyun yumuşak doku hasarı, laringeal ödem, stridor ve nörolojik defisitleri ara.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Gecikmiş havayolu ödemi başlangıçta sessiz olabilir"
+          "rationale": "Havayolu ve nörolojik komplikasyonlar başlangıçta hafif görünebilir."
         },
         {
-          "id": "pulmonology-near-hanging-asphyxia-001-r-4-kardiyak-ritim-ve-norolojik-durumu-monitorize-et",
-          "label": "Kardiyak ritim ve nörolojik durumu monitörize et",
+          "id": "pulmonology-near-hanging-asphyxia-001-r-4-klinik-endikasyon-varsa-servikal-bt-bt-anjiyografi-ve-kan-gazi-laktat-de",
+          "label": "Klinik endikasyon varsa servikal BT/BT anjiyografi ve kan gazı-laktat değerlendirmesi yap.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Elektrik/yıldırım ve asfiksi sonrası aritmi ve hipoksik beyin hasarı izlenir"
+          "rationale": "Vasküler yaralanma, omurga hasarı ve hipoksi derecesi tedaviyi değiştirir."
         },
         {
-          "id": "pulmonology-near-hanging-asphyxia-001-r-5-adli-yaralanma-kaydi-ve-guvenlik-degerlendirmesini-t",
-          "label": "Adli/yaralanma kaydı ve güvenlik değerlendirmesini tıbbi stabilizasyonla birlikte yürüt",
+          "id": "pulmonology-near-hanging-asphyxia-001-r-5-gecikmis-pulmoner-odem-aspirasyon-ve-hipoksik-beyin-hasari-acisindan-goz",
+          "label": "Gecikmiş pulmoner ödem, aspirasyon ve hipoksik beyin hasarı açısından gözlem planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Şüpheli boyun basısı veya iş/saha kazası bildirim gerektirebilir"
+          "rationale": "Yakın izlem komplikasyonları erken saptar."
         },
         {
-          "id": "pulmonology-near-hanging-asphyxia-001-d-1-solunum-depresyonu-varken-yalniz-gozlem-oner",
-          "label": "Solunum depresyonu varken yalnız gözlem öner",
+          "id": "pulmonology-near-hanging-asphyxia-001-r-6-tibbi-stabilizasyon-sonrasi-psikiyatrik-guvenlik-ve-adli-kayit-surecini-",
+          "label": "Tıbbi stabilizasyon sonrası psikiyatrik güvenlik ve adli kayıt sürecini başlat.",
+          "required": true,
+          "correctOrder": 6,
+          "unsafe": false,
+          "score": 1,
+          "rationale": "Güvenlik değerlendirmesi gereklidir ancak havayolu yönetimini geciktirmez."
+        },
+        {
+          "id": "pulmonology-near-hanging-asphyxia-001-d-1-boyun-basisi-sonrasi-stridoru-basit-anksiyete-kabul-edip-taburcu-et",
+          "label": "Boyun basısı sonrası stridoru basit anksiyete kabul edip taburcu et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Apne/hipoventilasyon acil ventilasyon desteği gerektirir"
+          "rationale": "Stridor havayolu ödemi veya laringeal yaralanma belirtisi olabilir."
         },
         {
-          "id": "pulmonology-near-hanging-asphyxia-001-d-2-boyun-basisi-sonrasi-gecikmis-havayolu-odemini-izlem",
-          "label": "Boyun basısı sonrası gecikmiş havayolu ödemini izlem dışı bırak",
+          "id": "pulmonology-near-hanging-asphyxia-001-d-2-servikal-travma-dislanmadan-agresif-boyun-manipulasyonu-yap",
+          "label": "Servikal travma dışlanmadan agresif boyun manipülasyonu yap.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Havayolu ödemi saatler içinde kötüleşebilir"
+          "rationale": "Olası servikal yaralanmada immobilizasyon güvenliği gerekir."
         },
         {
-          "id": "pulmonology-near-hanging-asphyxia-001-d-3-kardiyak-ritim-izlemi-gereksiz-kabul-et",
-          "label": "Kardiyak ritim izlemi gereksiz kabul et",
+          "id": "pulmonology-near-hanging-asphyxia-001-d-3-oksijenizasyon-bozukken-yalniz-psikiyatrik-gorusme-bekle",
+          "label": "Oksijenizasyon bozukken yalnız psikiyatrik görüşme bekle.",
           "required": false,
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Önce tıbbi stabilizasyon sağlanmalıdır."
+        },
+        {
+          "id": "pulmonology-near-hanging-asphyxia-001-d-4-gecikmis-pulmoner-odem-riskini-izlem-disi-birak",
+          "label": "Gecikmiş pulmoner ödem riskini izlem dışı bırak.",
+          "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Elektrik/yıldırım etkilenmesinde aritmi riski bulunabilir"
+          "rationale": "Yakın ası/asfiksi sonrası solunum komplikasyonları geç ortaya çıkabilir."
         }
       ]
     },
@@ -18483,7 +18649,7 @@ export const cases = [
       "pearls": [
         "Zehirlenmede tedavi ve örnek koruma eş zamanlıdır; stabilizasyon geciktirilmez.",
         "Şüpheli kaplar, ilaç blisterleri ve biyolojik örnekler zincir korunarak saklanmalıdır.",
-        "Toksikoloji örnekleri somut sonuç amacıyla alınır; boş “gerekirse” paneli oluşturulmaz."
+        "Toksikoloji örnekleri somut sonuç amacıyla alınır; boş ve hedefsiz panel oluşturulmaz."
       ],
       "nextStep": "ABC stabilizasyonu, dekontaminasyon/antidot gereksinimi değerlendirmesi, örnek alma ve adli kayıt sürecini birlikte yürüt.",
       "answerFeedback": {
@@ -18504,7 +18670,7 @@ export const cases = [
         "clinicalPearls": [
           "Zehirlenmede tedavi ve örnek koruma eş zamanlıdır; stabilizasyon geciktirilmez.",
           "Şüpheli kaplar, ilaç blisterleri ve biyolojik örnekler zincir korunarak saklanmalıdır.",
-          "Toksikoloji örnekleri somut sonuç amacıyla alınır; boş “gerekirse” paneli oluşturulmaz."
+          "Toksikoloji örnekleri somut sonuç amacıyla alınır; boş ve hedefsiz panel oluşturulmaz."
         ],
         "differentialComparison": {
           "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek": {
@@ -18577,7 +18743,7 @@ export const cases = [
         "İşveren talebi tıbbi-adli kayıt içeriğini belirleyemez.",
         "Nörovasküler muayene el yaralanmalarında mutlaka kaydedilmelidir."
       ],
-      "nextStep": "Yara bakımı, tetanoz profilaksisi, gerekirse grafi ve nörovasküler takip ile objektif iş kazası/adli kayıt sürecini yürüt.",
+      "nextStep": "Yara bakımı, tetanoz profilaksisi, endikasyon varsa grafi ve nörovasküler takip ile objektif iş kazası/adli kayıt sürecini yürüt.",
       "answerFeedback": {
         "correctDiagnosis": "Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası/adli bildirim sürecini başlatmak",
         "diagnosisMeta": "İş kazasında acil tıbbi bakım, yaralanma kaydı ve bildirim/raporlama yaklaşımı",
@@ -19201,17 +19367,65 @@ export const cases = [
         "id": "direct-xray-humerus",
         "label": "Direkt humerus grafisi",
         "type": "xray",
-        "priority": "useful",
-        "summary": "Sağ humerus orta şaft düzeyinde deplase kırık hattı izleniyor.",
+        "priority": "essential",
+        "summary": "Sağ humerus orta-distal şaft düzeyinde deplase kırık hattı izleniyor.",
         "findings": [
-          "Kırık lokalizasyonu radial sinirin spiral oluk komşuluğu nedeniyle nörolojik muayene ile birlikte değerlendirilmelidir."
+          "Kırık hattı radial sinirin spiral oluk komşuluğuyla uyumludur ve nörolojik defisit ile birlikte yorumlanmalıdır."
         ],
         "rows": [
           [
             "Direkt humerus grafisi",
-            "Orta şaft düzeyinde kırık hattı",
+            "Orta-distal şaftta deplase kırık hattı",
             "Kırık yok",
-            "Anatomik korelasyon sağlar"
+            "Radial sinir hasarıyla anatomik korelasyon sağlar"
+          ]
+        ]
+      },
+      {
+        "id": "neurovascular-exam-radial-nerve",
+        "label": "Nörovasküler muayene kaydı",
+        "type": "clinical",
+        "priority": "essential",
+        "summary": "El bileği ve parmak ekstansiyonu belirgin zayıf; birinci dorsal web aralığında hipoestezi var. Radial-ulnar nabızlar palpabl ve kapiller dolum normal.",
+        "findings": [
+          "Damar yaralanması olmadan radial sinir motor-duyu defisitini destekler."
+        ],
+        "rows": [
+          [
+            "El bileği/parmak ekstansiyonu",
+            "Belirgin zayıf",
+            "Tam kuvvet",
+            "Radial sinir motor tutulumu"
+          ],
+          [
+            "Birinci dorsal web duyusu",
+            "Azalmış",
+            "Normal",
+            "Radial sinir duyu alanı etkilenmiş"
+          ],
+          [
+            "Distal nabız ve kapiller dolum",
+            "Korunmuş",
+            "Korunmuş",
+            "Acil damar yaralanması lehine bulgu yok"
+          ]
+        ]
+      },
+      {
+        "id": "post-immobilization-control-xray",
+        "label": "İmmobilizasyon sonrası kontrol grafisi",
+        "type": "xray",
+        "priority": "useful",
+        "summary": "İmmobilizasyon sonrası kırık hizalanması kabul edilebilir sınırlarda izleniyor.",
+        "findings": [
+          "Kontrol görüntüleme ortopedi izlemi ve stabilizasyon planını destekler."
+        ],
+        "rows": [
+          [
+            "Kontrol grafisi",
+            "Kabul edilebilir hizalanma",
+            "Belirgin deplasman yok",
+            "Takip planını destekler"
           ]
         ]
       }
@@ -19219,79 +19433,100 @@ export const cases = [
     "images": [],
     "managementSequence": {
       "enabled": true,
-      "showInSpot": true,
-      "title": "Tıbbi-adli yaklaşım sırası",
-      "instruction": "Tıbbi önceliği koruyarak kayıt, bildirim ve güvenlik basamaklarını sırala.",
-      "minRequiredSteps": 5,
+      "showInSpot": false,
+      "title": "Radial sinir yaralanması yönetim sırası",
+      "instruction": "Kırık, nörovasküler muayene ve radial sinir izlemini klinik sıraya yerleştir.",
+      "minRequiredSteps": 6,
       "steps": [
         {
-          "id": "anatomy-radial-nerve-humerus-fracture-001-r-1-hastanin-vital-stabilitesini-ve-acil-mudahale-gereks",
-          "label": "Humerus şaft travması sonrası el bileği düşüklüğü olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
+          "id": "anatomy-radial-nerve-humerus-fracture-001-r-1-ust-ekstremitenin-norovaskuler-muayenesini-omuzdan-ele-kadar-tamamla",
+          "label": "Üst ekstremitenin nörovasküler muayenesini omuzdan ele kadar tamamla.",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Adli olgu olması tıbbi stabilizasyon önceliğini ortadan kaldırmaz"
+          "rationale": "Radial sinir motor-duyu fonksiyonu, distal dolaşım ve kompartman bulguları ilk kararı belirler."
         },
         {
-          "id": "anatomy-radial-nerve-humerus-fracture-001-r-2-gerekli-tibbi-tedaviyi-gecikmeden-baslat",
-          "label": "Humerus şaft travması sonrası el bileği düşüklüğü olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
+          "id": "anatomy-radial-nerve-humerus-fracture-001-r-2-el-bilegi-parmak-ekstansiyonu-basparmak-abduksiyonu-ve-birinci-dorsal-we",
+          "label": "El bileği-parmak ekstansiyonu, başparmak abduksiyonu ve birinci dorsal web duyusunu kaydet.",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Adli süreç hiçbir şekilde hayat kurtarıcı veya gerekli tedaviyi geciktirmemelidir"
+          "rationale": "Bu bulgular radial sinir hasarını median, ulnar ve aksiller sinir lezyonlarından ayırır."
         },
         {
-          "id": "anatomy-radial-nerve-humerus-fracture-001-r-3-yaralanma-olay-bulgularini-objektif-ayrintili-ve-zam",
-          "label": "Humerus şaft travması sonrası el bileği düşüklüğü bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
+          "id": "anatomy-radial-nerve-humerus-fracture-001-r-3-humerus-grafileriyle-kirigin-seviyesi-deplasmani-ve-ekleme-uzanimini-dog",
+          "label": "Humerus grafileriyle kırığın seviyesi, deplasmanı ve ekleme uzanımını doğrula.",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Kayıtlar hem hasta güvenliği hem de adli süreç için temel belgedir"
+          "rationale": "Kırık lokalizasyonu stabilizasyon yöntemini ve sinir izlem planını değiştirir."
         },
         {
-          "id": "anatomy-radial-nerve-humerus-fracture-001-r-4-adli-bildirim-veya-ilgili-koruyucu-bildirim-yukumlul",
-          "label": "Humerus şaft travması sonrası el bileği düşüklüğü için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
+          "id": "anatomy-radial-nerve-humerus-fracture-001-r-4-acik-kirik-damar-yaralanmasi-kompartman-bulgusu-veya-ilerleyici-defisiti",
+          "label": "Açık kırık, damar yaralanması, kompartman bulgusu veya ilerleyici defisiti acil dışla.",
           "required": true,
           "correctOrder": 4,
           "unsafe": false,
           "score": 1,
-          "rationale": "Hekim adli olgu şüphesinde yalnız hastanın beyanıyla yetinemez"
+          "rationale": "Bu bulgulardan biri varsa beklemeksizin ortopedik cerrahi değerlendirme gerekir."
         },
         {
-          "id": "anatomy-radial-nerve-humerus-fracture-001-r-5-delil-niteligi-tasiyabilecek-materyali-ve-mahremiyet",
-          "label": "Humerus şaft travması sonrası el bileği düşüklüğü sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru",
+          "id": "anatomy-radial-nerve-humerus-fracture-001-r-5-kapali-kirikta-uygun-immobilizasyon-sagla-ve-ortopedi-takibini-planla",
+          "label": "Kapalı kırıkta uygun immobilizasyon sağla ve ortopedi takibini planla.",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
           "score": 1,
-          "rationale": "Delil zinciri, güvenlik ve mahremiyet adli-tıbbi yaklaşımın ayrılmaz parçasıdır"
+          "rationale": "İzole radial sinir palsilerinin önemli bir kısmı seri izlemle düzelebilir."
         },
         {
-          "id": "anatomy-radial-nerve-humerus-fracture-001-d-1-adli-surec-tamamlanana-kadar-tibbi-mudahaleyi-ertele",
-          "label": "Humerus şaft travması sonrası el bileği düşüklüğü olgusunda adli süreç tamamlanana kadar tıbbi müdahaleyi ertele",
+          "id": "anatomy-radial-nerve-humerus-fracture-001-r-6-radial-sinir-fonksiyonunu-seri-muayenelerle-izle-duzelme-yoksa-emg-ve-ce",
+          "label": "Radial sinir fonksiyonunu seri muayenelerle izle; düzelme yoksa EMG ve cerrahi zamanlamasını planla.",
+          "required": true,
+          "correctOrder": 6,
+          "unsafe": false,
+          "score": 1,
+          "rationale": "Persistan defisit sinir kesisi, sıkışma veya iyileşme gecikmesi açısından ileri değerlendirme gerektirir."
+        },
+        {
+          "id": "anatomy-radial-nerve-humerus-fracture-001-d-1-norovaskuler-muayene-yapmadan-yalniz-analjezik-verip-taburcu-et",
+          "label": "Nörovasküler muayene yapmadan yalnız analjezik verip taburcu et.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Adli işlemler tedaviyi geciktiremez; önce hasta güvenliği sağlanır"
+          "rationale": "Travmatik ekstremite yaralanmasında distal dolaşım ve sinir fonksiyonu belgelenmeden güvenli taburculuk yapılamaz."
         },
         {
-          "id": "anatomy-radial-nerve-humerus-fracture-001-d-2-hasta-istemezse-objektif-muayene-kaydi-tutma",
-          "label": "Humerus şaft travması sonrası el bileği düşüklüğü olgusunda hasta istemezse objektif muayene kaydı tutma",
+          "id": "anatomy-radial-nerve-humerus-fracture-001-d-2-acik-kirik-veya-nabiz-kaybini-elektif-poliklinik-kontrolune-birak",
+          "label": "Açık kırık veya nabız kaybını elektif poliklinik kontrolüne bırak.",
           "required": false,
+          "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Adli nitelik taşıyan bulgular tıbbi kayıtta objektif olarak yer almalıdır"
+          "rationale": "Açık kırık ve damar yaralanması acil cerrahi değerlendirme gerektirir."
         },
         {
-          "id": "anatomy-radial-nerve-humerus-fracture-001-d-3-yaralanmayi-yalniz-sozlu-anlatima-gore-degerlendir",
-          "label": "Humerus şaft travması sonrası el bileği düşüklüğü olgusunu yalnız sözlü anlatıma göre değerlendir",
+          "id": "anatomy-radial-nerve-humerus-fracture-001-d-3-el-bilegi-dusuklugunu-kirikla-iliskisiz-kabul-edip-grafiyi-ertele",
+          "label": "El bileği düşüklüğünü kırıkla ilişkisiz kabul edip grafiyi ertele.",
           "required": false,
+          "correctOrder": null,
+          "unsafe": true,
+          "score": -2,
+          "rationale": "Travma sonrası radial sinir bulgusu humerus şaft kırığıyla doğrudan ilişkilidir."
+        },
+        {
+          "id": "anatomy-radial-nerve-humerus-fracture-001-d-4-kapali-kirikta-izole-radial-sinir-palsisini-otomatik-acil-sinir-eksplora",
+          "label": "Kapalı kırıkta izole radial sinir palsisini otomatik acil sinir eksplorasyonu kabul et.",
+          "required": false,
+          "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Hekim fizik bulguları, tutarlılığı ve güvenlik riskini bağımsız değerlendirmelidir"
+          "rationale": "Kapalı humerus şaft kırığında izole radial sinir palsisi çoğu durumda seri izlemle değerlendirilir."
         }
       ]
     },
@@ -19309,7 +19544,7 @@ export const cases = [
         "El bileği düşüklüğü radial sinir hasarının klasik motor bulgusudur.",
         "Birinci dorsal web aralığı radial sinirin önemli duyu alanıdır."
       ],
-      "nextStep": "Nörovasküler muayeneyi seri izle, kırık stabilizasyonu sağla ve ortopedi konsültasyonu planla.",
+      "nextStep": "Üst ekstremitenin nörovasküler muayenesini omuzdan ele kadar tamamla. El bileği-parmak ekstansiyonu, başparmak abduksiyonu ve birinci dorsal web duyusunu kaydet. Humerus grafileriyle kırığın seviyesi, deplasmanı ve ekleme uzanımını doğrula. Açık kırık, damar yaralanması, kompartman bulgusu veya ilerleyici defisiti acil dışla. Kapalı kırıkta uygun immobilizasyon sağla ve ortopedi takibini planla. Radial sinir fonksiyonunu seri muayenelerle izle; düzelme yoksa EMG ve cerrahi zamanlamasını planla.",
       "answerFeedback": {
         "correctDiagnosis": "Radial sinir yaralanması",
         "diagnosisMeta": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi",
@@ -19330,11 +19565,12 @@ export const cases = [
           "Birinci dorsal web aralığı radial sinirin önemli duyu alanıdır."
         ],
         "managementSteps": [
-          "Humerus şaft travması sonrası el bileği düşüklüğü olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
-          "Humerus şaft travması sonrası el bileği düşüklüğü olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
-          "Humerus şaft travması sonrası el bileği düşüklüğü bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
-          "Humerus şaft travması sonrası el bileği düşüklüğü için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
-          "Humerus şaft travması sonrası el bileği düşüklüğü sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru"
+          "Üst ekstremitenin nörovasküler muayenesini omuzdan ele kadar tamamla.",
+          "El bileği-parmak ekstansiyonu, başparmak abduksiyonu ve birinci dorsal web duyusunu kaydet.",
+          "Humerus grafileriyle kırığın seviyesi, deplasmanı ve ekleme uzanımını doğrula.",
+          "Açık kırık, damar yaralanması, kompartman bulgusu veya ilerleyici defisiti acil dışla.",
+          "Kapalı kırıkta uygun immobilizasyon sağla ve ortopedi takibini planla.",
+          "Radial sinir fonksiyonunu seri muayenelerle izle; düzelme yoksa EMG ve cerrahi zamanlamasını planla."
         ],
         "differentialComparison": {
           "Median sinir yaralanması": {
@@ -19351,11 +19587,12 @@ export const cases = [
           }
         },
         "management": [
-          "Humerus şaft travması sonrası el bileği düşüklüğü olgusunda vital stabilite ve acil müdahale gereksinimini değerlendir",
-          "Humerus şaft travması sonrası el bileği düşüklüğü olgusunda gerekli tıbbi tedaviyi gecikmeden başlat",
-          "Humerus şaft travması sonrası el bileği düşüklüğü bulgularını objektif, ayrıntılı ve zaman bilgisiyle kaydet",
-          "Humerus şaft travması sonrası el bileği düşüklüğü için adli bildirim veya ilgili koruyucu bildirim yükümlülüğünü yerine getir",
-          "Humerus şaft travması sonrası el bileği düşüklüğü sürecinde delil niteliği taşıyabilecek materyali ve mahremiyeti koru"
+          "Üst ekstremitenin nörovasküler muayenesini omuzdan ele kadar tamamla.",
+          "El bileği-parmak ekstansiyonu, başparmak abduksiyonu ve birinci dorsal web duyusunu kaydet.",
+          "Humerus grafileriyle kırığın seviyesi, deplasmanı ve ekleme uzanımını doğrula.",
+          "Açık kırık, damar yaralanması, kompartman bulgusu veya ilerleyici defisiti acil dışla.",
+          "Kapalı kırıkta uygun immobilizasyon sağla ve ortopedi takibini planla.",
+          "Radial sinir fonksiyonunu seri muayenelerle izle; düzelme yoksa EMG ve cerrahi zamanlamasını planla."
         ]
       },
       "question": "Bu olguda en olası tanı hangisidir?"
@@ -24897,7 +25134,3 @@ export const cases = [
     "title": "Doğumda resüsitasyon ve asidoz"
   }
 ];
-
-export const getCaseById = (caseId) => cases.find((clinicalCase) => clinicalCase.id === caseId);
-
-export const getCasesByBranch = (branchId) => cases.filter((clinicalCase) => clinicalCase.branchId === branchId);
