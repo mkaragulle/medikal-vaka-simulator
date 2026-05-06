@@ -63,4 +63,12 @@ export const branches = [
     accent: 'slate',
     icon: 'bone',
   },
+  {
+    id: 'quick-case',
+    name: 'Hızlı CASE',
+    shortName: 'Hızlı CASE',
+    description: 'Kısa öykü, muayene ve hedefe yönelik karar sorularıyla hızlı klinik tekrar.',
+    accent: 'teal',
+    icon: 'quick',
+  },
 ];

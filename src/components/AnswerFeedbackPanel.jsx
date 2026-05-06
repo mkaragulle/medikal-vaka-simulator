@@ -331,11 +331,14 @@ function ClinicalPearlsList({ pearls, glossaryEnabled = true }) {
   );
 }
 
-function DifferentialComparisonCard({ differential, glossaryEnabled = true }) {
+function DifferentialComparisonCard({ differential, glossaryEnabled = true, isQuickCase = false }) {
   if (!differential) return null;
+  const selectedLabel = isQuickCase ? 'Seçilen yanıt:' : 'Seçilen tanı:';
+  const title = isQuickCase ? 'Yanıt karşılaştırması' : 'Ayırıcı tanı karşılaştırması';
+  const eyebrow = isQuickCase ? 'Karar analizi' : 'Ayırıcı tanı';
   return (
-    <FeedbackSection icon="AlertTriangle" tone="warning" eyebrow="Ayırıcı tanı" title="Ayırıcı tanı karşılaştırması" className="differential-comparison-card">
-      <div className="differential-option-chip"><span>Seçilen tanı:</span> <GlossaryText text={differential.option} enabled={glossaryEnabled} /></div>
+    <FeedbackSection icon="AlertTriangle" tone="warning" eyebrow={eyebrow} title={title} className="differential-comparison-card">
+      <div className="differential-option-chip"><span>{selectedLabel}</span> <GlossaryText text={differential.option} enabled={glossaryEnabled} /></div>
       <p className="feedback-body-copy"><GlossaryText text={ensureSentence(differential.explanation)} enabled={glossaryEnabled} /></p>
       {differential.comparisonPoints?.length ? (
         <ul className="comparison-point-list">
@@ -379,6 +382,7 @@ function AnswerFeedbackPanel({
   const reasoningText = isCorrect ? whyCorrect : whyWrong;
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
+  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
 
   return (
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'}`} aria-live="polite">
@@ -390,7 +394,7 @@ function AnswerFeedbackPanel({
           glossaryEnabled={glossaryEnabled}
         />
         <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} />
-        <DifferentialComparisonCard differential={differential} glossaryEnabled={glossaryEnabled} />
+        <DifferentialComparisonCard differential={differential} glossaryEnabled={glossaryEnabled} isQuickCase={isQuickCase} />
         <FeedbackManagementCard managementSteps={managementSteps} glossaryEnabled={glossaryEnabled} />
       </div>
 

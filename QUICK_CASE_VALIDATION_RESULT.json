@@ -1,0 +1,159 @@
+{
+  "generatedAt": "2026-05-06T11:37:42.784Z",
+  "caseCount": 78,
+  "branchCount": 9,
+  "quickBranchExists": true,
+  "quickCaseCount": 15,
+  "movedExistingCaseCount": 4,
+  "newlyWrittenQuickCaseCount": 11,
+  "duplicateCaseIds": [],
+  "physicalExamForbiddenHits": [],
+  "quickValidationErrors": [],
+  "checks": {
+    "uniqueIds": true,
+    "quickBranchExists": true,
+    "physicalExamClean": true,
+    "quickSchemaValid": true,
+    "quickInvestigationLimitValid": true,
+    "quickManagementDisabled": true
+  },
+  "quickCaseIds": [
+    {
+      "id": "cardiovascular-electrical-injury-arrhythmia-001",
+      "title": "Elektrik çarpması sonrası monitörizasyon ve iş kazası kaydı",
+      "category": "Acil karar",
+      "investigationCount": 2
+    },
+    {
+      "id": "pediatrics-shaken-baby-syndrome-001",
+      "title": "Açıklanamayan morluk ve bilinç değişikliğinde çocuk istismarı yaklaşımı",
+      "category": "Adli",
+      "investigationCount": 2
+    },
+    {
+      "id": "internal-medicine-sexual-assault-evidence-001",
+      "title": "Cinsel saldırı sonrası ilk tıbbi-adli yaklaşım",
+      "category": "Adli",
+      "investigationCount": 2
+    },
+    {
+      "id": "pulmonology-near-hanging-asphyxia-001",
+      "title": "Boyun basısı sonrası gecikmiş havayolu riski",
+      "category": "Acil karar",
+      "investigationCount": 2
+    },
+    {
+      "id": "quick-stab-wound-forensic-001",
+      "title": "Kesici-delici yaralanmada adli bildirim kararı",
+      "category": "Adli",
+      "investigationCount": 0
+    },
+    {
+      "id": "quick-domestic-violence-001",
+      "title": "Aile içi şiddet şüphesinde güvenlik ve kayıt yaklaşımı",
+      "category": "Adli",
+      "investigationCount": 0
+    },
+    {
+      "id": "quick-unconscious-consent-001",
+      "title": "Bilinci kapalı hastada acil müdahale ve onam",
+      "category": "Etik",
+      "investigationCount": 0
+    },
+    {
+      "id": "quick-urticaria-angioedema-001",
+      "title": "Ani başlayan ürtiker ve hafif anjiyoödem",
+      "category": "Klinik spot",
+      "investigationCount": 0
+    },
+    {
+      "id": "quick-scarlet-fever-001",
+      "title": "Ateşli çocukta zımpara kağıdı döküntüsü",
+      "category": "TUS spot",
+      "investigationCount": 0
+    },
+    {
+      "id": "quick-needle-stick-exposure-001",
+      "title": "Sağlık çalışanında iğne batması sonrası ilk yaklaşım",
+      "category": "Yönetim",
+      "investigationCount": 1
+    },
+    {
+      "id": "quick-carbon-monoxide-001",
+      "title": "Soba sonrası baş ağrısı ve kiraz kırmızısı olmayan hipoksi şüphesi",
+      "category": "Acil karar",
+      "investigationCount": 1
+    },
+    {
+      "id": "quick-simple-febrile-seizure-001",
+      "title": "Basit febril nöbet sonrası aile bilgilendirmesi",
+      "category": "Klinik spot",
+      "investigationCount": 0
+    },
+    {
+      "id": "quick-scaphoid-xray-normal-001",
+      "title": "Grafisi normal el bileği travmasında skafoid şüphesi",
+      "category": "Muayene odaklı",
+      "investigationCount": 1
+    },
+    {
+      "id": "quick-epiglottitis-airway-001",
+      "title": "Tripod pozisyonlu çocukta havayolu önceliği",
+      "category": "Acil karar",
+      "investigationCount": 0
+    },
+    {
+      "id": "quick-anaphylaxis-adrenaline-001",
+      "title": "Çoklu sistem tutulumu olan alerjik reaksiyonda ilk tedavi",
+      "category": "Acil karar",
+      "investigationCount": 0
+    }
+  ],
+  "branchCounts": [
+    {
+      "id": "cardiovascular",
+      "name": "Kardiyovasküler Tıp",
+      "caseCount": 6
+    },
+    {
+      "id": "internal-medicine",
+      "name": "İç Hastalıkları",
+      "caseCount": 17
+    },
+    {
+      "id": "neurology",
+      "name": "Nörolojik Bilimler",
+      "caseCount": 5
+    },
+    {
+      "id": "pediatrics",
+      "name": "Çocuk Sağlığı ve Hastalıkları",
+      "caseCount": 12
+    },
+    {
+      "id": "general-surgery",
+      "name": "Genel Cerrahi",
+      "caseCount": 5
+    },
+    {
+      "id": "pulmonology",
+      "name": "Göğüs Hastalıkları",
+      "caseCount": 7
+    },
+    {
+      "id": "infectious-diseases",
+      "name": "Enfeksiyon Hastalıkları",
+      "caseCount": 7
+    },
+    {
+      "id": "orthopedics",
+      "name": "Ortopedi ve Travmatoloji",
+      "caseCount": 4
+    },
+    {
+      "id": "quick-case",
+      "name": "Hızlı CASE",
+      "caseCount": 15
+    }
+  ]
+}

@@ -225,6 +225,7 @@ export const branchIconById = {
   pulmonology: 'Lungs',
   'infectious-diseases': 'ShieldPlus',
   orthopedics: 'Bone',
+  'quick-case': 'Stopwatch',
 };
 
 export const branchToneById = {
@@ -236,4 +237,5 @@ export const branchToneById = {
   pulmonology: 'sky',
   'infectious-diseases': 'lime',
   orthopedics: 'slate',
+  'quick-case': 'teal',
 };

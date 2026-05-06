@@ -84,6 +84,10 @@ function DiagnosisQuiz({
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
+  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
+  const questionTitle = clinicalCase.questionTitle || clinicalCase.diagnosis?.questionTitle || (isQuickCase ? 'Hızlı karar sorusu' : 'En olası tanı');
+  const questionText = clinicalCase.question || clinicalCase.diagnosis?.question || (isQuickCase ? 'Bu kısa olguda en uygun yanıtı seç.' : 'Olgu paternine en uygun seçeneği işaretle.');
+  const optionGroupLabel = isQuickCase ? 'Yanıt seçenekleri' : 'Tanı seçenekleri';
 
   const options = useMemo(
     () => buildOptions(clinicalCase.diagnosis.options, clinicalCase.diagnosis.correct),
@@ -113,8 +117,8 @@ function DiagnosisQuiz({
     <section className="question-panel diagnostic-decision-panel" id="case-quiz" aria-label="Klinik karar sorusu">
       <div className="question-panel-head diagnostic-head">
         <div>
-          <h2>En olası tanı</h2>
-          <p>Olgu paternine en uygun seçeneği işaretle.</p>
+          <h2>{questionTitle}</h2>
+          <p><GlossaryText text={questionText} enabled={!hardMode && !examMeta?.active} /></p>
         </div>
 
         <div className="question-score-chip compact-meta-pill">
@@ -138,11 +142,11 @@ function DiagnosisQuiz({
 
       {!hardMode && !examMeta?.active && !submitted && selected && orderedInvestigationIds.length === 0 ? (
         <div className="preanswer-investigation-nudge">
-          Tanı seçmeden önce karar verdirici tetkikleri istemeyi düşünebilirsin.
+          {isQuickCase ? 'Bu hızlı olguda karar çoğunlukla öykü ve muayene üzerinden verilir.' : 'Tanı seçmeden önce karar verdirici tetkikleri istemeyi düşünebilirsin.'}
         </div>
       ) : null}
 
-      <div className="option-grid" role="group" aria-label="Tanı seçenekleri">
+      <div className="option-grid" role="group" aria-label={optionGroupLabel}>
         {options.map((option, index) => (
           <AnswerOption
             key={option}
@@ -184,7 +188,7 @@ function DiagnosisQuiz({
               <IconBadge icon="CheckCircle" tone="blue" size="sm" />
               <div>
                 <span className="feedback-badge neutral">Yanıt kaydedildi</span>
-                <p className="feedback-answer">Doğru tanı ve gerekçe blok sonunda ayrıntılı gösterilecek.</p>
+                <p className="feedback-answer">Doğru yanıt ve gerekçe blok sonunda ayrıntılı gösterilecek.</p>
               </div>
             </div>
 

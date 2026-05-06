@@ -1,0 +1,126 @@
+{
+  "updatedAt": "2026-05-06T11:02:29.015Z",
+  "totalChanges": 15,
+  "changes": [
+    {
+      "caseId": "cardiovascular-electrical-injury-arrhythmia-001",
+      "title": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası",
+      "removed": "Solunum sistemi muayenesinde ral, wheezing veya solunum sıkıntısı yok; oksijen satürasyonu oda havasında korunmuş.",
+      "added": "Solunum sistemi muayenesinde ral, wheezing veya belirgin solunum sıkıntısı yok; göğüs ekspansiyonu simetrik ve hasta oda havasında rahat nefes alır görünümde.",
+      "destination": "vitals.SpO2 / klinik solunum muayenesi",
+      "note": "Oksijen satürasyonu fizik muayene bulgusu değil vital/monitör ölçümüdür; solunum gözlemi ve oskültasyon bulgularıyla yeniden yazıldı."
+    },
+    {
+      "caseId": "pulmonology-lightning-apnea-001",
+      "title": "Fırtına sonrası bilinç kaybı ve solunum depresyonu ile getirilen genç hasta",
+      "removed": "Solunum yüzeyel ve düzensiz; oksijen verilince satürasyon yükseliyor, siyanoz geriliyor.",
+      "added": "Solunum yüzeyel ve düzensiz; havayolu desteği sonrası solunum eforu azalıyor ve periferik siyanoz geriliyor.",
+      "destination": "vitals.SpO2 / arter-kan-gazi-02",
+      "note": "Satürasyon yanıtı objektif ölçüm olduğundan çıkarıldı; doğrudan gözlenebilir solunum paterni ve siyanozla ifade edildi."
+    },
+    {
+      "caseId": "pulmonology-lightning-apnea-001",
+      "title": "Fırtına sonrası bilinç kaybı ve solunum depresyonu ile getirilen genç hasta",
+      "removed": "Başvuruda hipoventilasyon ve hafif hipoksemi izlendi; oksijenle satürasyon düzeldi. Solunum depresyonu yıldırım sonrası erken ölüm riskini açıklar. Oksijen desteğine hızlı yanıt alınmıştır.",
+      "added": "Solunum depresyonu klinik olarak belirgin; takipte uyanıklık artışıyla solunum ritmi düzenlenmeye başlıyor. Yaygın bronkospazm veya tek taraflı solunum sesi kaybı izlenmiyor.",
+      "destination": "arter-kan-gazi-02 / vitals.SpO2",
+      "note": "Hipoksemi ve satürasyon yanıtı kan gazı/vital ölçüm alanında bırakıldı; fizik muayene klinik solunum bulgularıyla yeniden yazıldı."
+    },
+    {
+      "caseId": "pediatrics-hereditary-fructose-intolerance-001",
+      "title": "Ek gıda sonrası hipoglisemi atakları olan bebek",
+      "removed": "Meyve püresi alımı sonrası adrenerjik hipoglisemi bulguları belirginleşiyor; tatlı gıdalardan kaçınma öyküsü aile tarafından doğrulanıyor.",
+      "added": "Meyve püresi alımı sonrasında solukluk, terleme, irritabilite ve uykuya meyil belirginleşiyor; tatlı gıdalardan kaçınma öyküsü aile tarafından doğrulanıyor.",
+      "destination": "kan-glukozu-ve-elektrolitler-04",
+      "note": "Hipoglisemi laboratuvarla doğrulanacak metabolik sonuçtur; fizik muayene adrenerjik klinik bulgularla yeniden yazıldı."
+    },
+    {
+      "caseId": "pediatrics-hereditary-fructose-intolerance-001",
+      "title": "Ek gıda sonrası hipoglisemi atakları olan bebek",
+      "removed": "Nörolojik muayenede hipoglisemi düzelince bilinç hızla toparlıyor; kalıcı fokal defisit yok.",
+      "added": "Nörolojik muayenede atak sırasında uykuya meyil dışında kalıcı fokal defisit yok; uyarana yanıt alınabiliyor.",
+      "destination": "kan-glukozu-ve-elektrolitler-04",
+      "note": "Hipoglisemi düzelmesi tedavi/lab takibi bilgisi olduğu için çıkarıldı; nörolojik muayene bulgusu korunarak yeniden yazıldı."
+    },
+    {
+      "caseId": "pediatrics-phenylketonuria-001",
+      "title": "Küf kokulu idrar ve gelişim geriliği olan bebek",
+      "removed": "İdrar ve bezde küf benzeri belirgin koku fark ediliyor",
+      "added": "Bezde küf benzeri belirgin koku fark ediliyor; cilt ve saç pigmentasyonu aileye göre açık görünümde.",
+      "destination": "plazma-fenilalanin-duzeyi-06 / yenidogan-tarama-testi-tekrari-06",
+      "note": "İdrar örneğine ait ifade fizik muayeneden çıkarıldı; gözlenebilir koku ve pigment bulgusu korundu."
+    },
+    {
+      "caseId": "internal-medicine-alkaptonuria-001",
+      "title": "İdrarı bekleyince koyulaşan erişkinde eklem yakınmaları",
+      "removed": "İdrar örneği bekletildiğinde koyulaşıyor",
+      "added": "Yürüyüş antalgik; lomber ekstansiyon ve kalça iç rotasyonu ağrılı ve kısıtlıdır.",
+      "destination": "idrarda-homogentisik-asit-08",
+      "note": "İdrar örneğinin bekletilerek koyulaşması fizik muayene değil idrar/kimyasal gözlem sonucudur; mevcut idrar panelinde bırakıldı."
+    },
+    {
+      "caseId": "internal-medicine-acute-radiation-syndrome-001",
+      "title": "Korunmasız radyasyon maruziyeti sonrası bulantı ve sitopeni",
+      "removed": "Vücut yüzeyinde yaygın partikül kontaminasyonu, mukozal yanık veya açık yara kontaminasyonu saptanmıyor.",
+      "added": "Vücut yüzeyinde yaygın görünür partikül/kirlenme yok; mukozal yanık veya açık yara izlenmiyor.",
+      "destination": "radiation-survey",
+      "note": "Radyoaktif kontaminasyon kararı survey metre sonucuna bağlı olduğundan fizik muayene görünür yüzey bulgularıyla sınırlandı."
+    },
+    {
+      "caseId": "internal-medicine-acute-radiation-syndrome-001",
+      "title": "Korunmasız radyasyon maruziyeti sonrası bulantı ve sitopeni",
+      "removed": "Ciltte yaygın peteşi veya purpura yok; ancak seri izlemde sitopeni gelişimi açısından risk mevcut.",
+      "added": "Ciltte yaygın peteşi, purpura veya aktif mukozal kanama izlenmiyor.",
+      "destination": "tam-kan-sayimi-seri-izlemi-16",
+      "note": "Sitopeni seri tam kan sayımı ile değerlendirilecek objektif bulgudur; fizik muayene kanama bulgularıyla sınırlandı."
+    },
+    {
+      "caseId": "internal-medicine-acute-radiation-syndrome-001",
+      "title": "Korunmasız radyasyon maruziyeti sonrası bulantı ve sitopeni",
+      "removed": "Dış kontaminasyon saptanmadı; elde radyasyon eritemi izlendi. Dekontaminasyon gereksinimi dış kontaminasyon sonucuna göre belirlenir. Cilt bulgusu lokal doz etkisini destekler.",
+      "added": "Sağ elde lokal eritem ve hassasiyet belirgin; lezyon çevresinde bül, nekroz veya aktif kanama izlenmiyor. Sistemik etkilenim fizik muayeneyle değil seri laboratuvar ve dozimetriyle değerlendirilmelidir.",
+      "destination": "radiation-survey / radiation-dosimetry",
+      "note": "Dış kontaminasyon/survey sonucu fizik muayeneden çıkarıldı; lokal cilt muayenesi korundu."
+    },
+    {
+      "caseId": "internal-medicine-sjogren-syndrome-001",
+      "title": "Göz-ağız kuruluğu ve parotis büyümesi ile başvuru",
+      "removed": "Malar döküntü ve proteinüri bulgusu saptanmıyor",
+      "added": "Malar döküntü, fotosensitif deri lezyonu veya periferik ödem izlenmiyor.",
+      "destination": "idrar-analizi-ayirici-24",
+      "note": "Proteinüri fizik muayene ile saptanamaz; ayırıcı tanı için idrar paneline taşındı."
+    },
+    {
+      "caseId": "internal-medicine-sjogren-syndrome-001",
+      "title": "Göz-ağız kuruluğu ve parotis büyümesi ile başvuru",
+      "removed": "Fizik muayeneden çıkarılan objektif bilgi için yeni panel eklendi",
+      "added": "İdrar analizi ve renal tutulum taraması",
+      "destination": "investigations.idrar-analizi-ayirici-24",
+      "note": "Proteinüri ifadesi fizik muayeneden çıkarıldı ve objektif idrar paneli olarak eklendi."
+    },
+    {
+      "caseId": "pulmonology-pulmonary-embolism-dvt-001",
+      "title": "Bacak şişliği sonrası ani dispne ve hipoksemi gelişen hasta",
+      "removed": "Akciğer oskültasyonunda belirgin konsolidasyon bulgusu yok",
+      "added": "Akciğer oskültasyonunda belirgin fokal ral, bronşiyal solunum sesi veya plevral frotman duyulmuyor.",
+      "destination": "odaklı fizik muayene; görüntüleme paneli gerektiğinde ayrı",
+      "note": "Konsolidasyon radyolojik bir sonuç gibi algılanabileceği için fizik muayene, oskültasyon/perküsyon bulgularıyla yeniden yazıldı."
+    },
+    {
+      "caseId": "infectious-diseases-septic-shock-001",
+      "title": "Ateş, hipotansiyon ve laktat yüksekliği ile acile getirilen hasta",
+      "removed": "Öykü/stem düzenlendi",
+      "added": "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir. Laktat yüksektir. Yakınları son saatlerde idrar miktarının belirgin azaldığını belirtir. Doku hipoperfüzyonu ve sistemik inflamatuvar yanıt şok tablosunu açıklar.",
+      "destination": "stem / hasta öyküsü",
+      "note": "Oligüri bilgisi doğrudan fizik muayene bulgusu olmadığı için öykü/izlem bilgisi olarak stem içine alındı."
+    },
+    {
+      "caseId": "infectious-diseases-septic-shock-001",
+      "title": "Ateş, hipotansiyon ve laktat yüksekliği ile acile getirilen hasta",
+      "removed": "İdrar çıkışı son 6 saatte azalmış",
+      "added": "Mukozalar kuru; hasta hipotansif şok görünümünde ve periferik perfüzyonu belirgin bozulmuş.",
+      "destination": "stem / hasta öyküsü ve şok klinik muayenesi",
+      "note": "İdrar çıkışı gözlem/öykü-izlem bilgisidir; fizik muayene dehidratasyon ve hipoperfüzyon bulgularıyla yeniden yazıldı."
+    }
+  ]
+}

@@ -674,6 +674,9 @@ export function buildInvestigationOrders(clinicalCase = {}) {
     .filter((item) => item && item.type !== 'management' && item.orderable !== false)
     .map((item, index) => normalizeInvestigation(item, clinicalCase, index));
 
+  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
+  if (isQuickCase) return caseItems.slice(0, 4);
+
   const branchItems = [...(branchOrderBank[clinicalCase.branchId] || []), ...genericOrderBank]
     .map((item, index) => normalizeSynthetic(item, clinicalCase, index))
     .filter((item) => !hasActualCategory(item, caseItems));

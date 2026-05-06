@@ -360,6 +360,8 @@ function App() {
       branchName: branch?.name ?? 'Klinik branş',
       selected,
       correctAnswer: clinicalCase.diagnosis.correct,
+      caseType: clinicalCase.caseType ?? 'classic',
+      questionType: clinicalCase.questionType ?? 'diagnosis',
       difficulty: clinicalCase.difficulty,
       lastWrongAt: Date.now(),
     };
@@ -659,6 +661,7 @@ function App() {
             selected: answer?.selected ?? null,
             isCorrect: answer?.isCorrect ?? false,
             correctAnswer: item.diagnosis.correct,
+            caseType: item.caseType ?? 'classic',
             earnedPoints: answer?.attemptResult?.earnedPoints ?? 0,
           };
         });
@@ -894,7 +897,7 @@ function App() {
               <div className="branch-inline-actions">
                 <span className="branch-case-count">{branchCases.length} olgu</span>
                 <button type="button" className="btn btn-primary" onClick={() => startBlockExam(branchCases, isDemoUser ? DEMO_EXAM_TITLE : `${selectedBranch.name} blok sınavı`)}>
-                  {isDemoUser ? 'Demo bloku aç' : 'Branş bloku oluştur'}
+                  {isDemoUser ? 'Demo bloku aç' : selectedBranch.id === 'quick-case' ? 'Hızlı blok oluştur' : 'Branş bloku oluştur'}
                 </button>
               </div>
             </section>

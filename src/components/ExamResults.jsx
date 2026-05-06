@@ -52,7 +52,7 @@ function ExamResults({ result, onRestart, onHome }) {
                   <div>
                     <small>Soru {index + 1} · {item.branchName}</small>
                     <strong>{item.title}</strong>
-                    <p>Seçilen: {item.selected || 'Yanıtlanmadı'} · Doğru tanı: {item.correctAnswer}</p>
+                    <p>Seçilen: {item.selected || 'Yanıtlanmadı'} · {item.caseType === 'quick' ? 'Doğru yanıt' : 'Doğru tanı'}: {item.correctAnswer}</p>
                   </div>
                   <span>{item.isCorrect ? 'Doğru' : 'Yanlış'}</span>
                 </div>

@@ -3,11 +3,12 @@ import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
 function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, index = 0 }) {
   const branchCases = cases.filter((clinicalCase) => clinicalCase.branchId === branch.id);
   const totalCases = branchCases.length;
+  const isQuickBranch = branch.id === 'quick-case';
   const priorityCases = branchCases.filter((clinicalCase) => /acil|kritik/i.test(clinicalCase.difficulty)).length;
   const avgPoints = totalCases
     ? Math.round(branchCases.reduce((sum, item) => sum + (/zor|kritik/i.test(item.difficulty) ? 22 : /acil/i.test(item.difficulty) ? 18 : 14), 0) / totalCases)
     : 0;
-  const progress = Math.min(100, 28 + priorityCases * 14);
+  const progress = Math.min(100, 28 + (isQuickBranch ? Math.max(totalCases, 1) * 5 : priorityCases * 14));
   const tone = branchToneById[branch.id] ?? 'teal';
 
   return (
@@ -36,12 +37,12 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, inde
       <div className="branch-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
 
       <div className="branch-card-meta">
-        <span>{priorityCases} acil-kritik olgu</span>
-        <span>{avgPoints} ortalama puan</span>
+        <span>{isQuickBranch ? `${totalCases} kısa karar olgusu` : `${priorityCases} acil-kritik olgu`}</span>
+        <span>{isQuickBranch ? 'adli · etik · TUS spot' : `${avgPoints} ortalama puan`}</span>
       </div>
 
       <div className="branch-card-footer" aria-hidden="true">
-        <span>{isLaunching ? 'Olgu ekranına geçiliyor' : 'Branşa gir'}</span>
+        <span>{isLaunching ? 'Olgu ekranına geçiliyor' : isQuickBranch ? 'Hızlı CASE’e gir' : 'Branşa gir'}</span>
         <Icon name="ArrowRight" />
       </div>
     </button>
