@@ -574,10 +574,18 @@ function AnswerFeedbackPanel({
       />
 
       <div className="answer-feedback-grid answer-feedback-grid-pro">
-        <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />
-        <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} />
-        <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} />
-        <FeedbackManagementCard managementSteps={managementSteps} glossaryEnabled={glossaryEnabled} clinicalCase={clinicalCase} />
+        <div className="feedback-column feedback-primary-column">
+          <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />
+          <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} />
+        </div>
+
+        {(pearls.length || managementSteps.length) ? (
+          <div className="feedback-column feedback-support-column">
+            <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} />
+            <FeedbackManagementCard managementSteps={managementSteps} glossaryEnabled={glossaryEnabled} clinicalCase={clinicalCase} />
+          </div>
+        ) : null}
+
         <OptionComparisonCard comparisons={optionComparisons} glossaryEnabled={glossaryEnabled} isSpotCase={isSpotCase} />
       </div>
 
