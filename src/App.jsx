@@ -528,6 +528,7 @@ function App() {
       branchId,
       iconName: branchIconById[branchId] ?? 'Activity',
       title: branchMeta?.name ?? branchMeta?.shortName ?? 'Klinik branş',
+      subtitle: branchMeta?.transitionTagline ?? branchMeta?.description ?? '',
       caseCount: branchPool.length,
     });
 
@@ -830,6 +831,7 @@ function App() {
             </div>
             <div className="branch-route-copy solo">
               <strong>{branchRouteTransition.title}</strong>
+              {branchRouteTransition.subtitle ? <span>{branchRouteTransition.subtitle}</span> : null}
             </div>
           </div>
         </div>

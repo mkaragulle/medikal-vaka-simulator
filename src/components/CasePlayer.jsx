@@ -163,8 +163,11 @@ function buildVitalDisplay(label, value = '') {
 }
 
 function buildDerivedVitalEntries(vitals = {}) {
+  const hasAnyVital = Object.values(vitals || {}).some((value) => String(value || '').trim());
+  if (!hasAnyVital) return [];
+
   const orderedBase = ['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş']
-    .filter((key) => vitals[key] !== undefined)
+    .filter((key) => vitals[key] !== undefined && String(vitals[key] || '').trim())
     .map((key) => [key, vitals[key]]);
 
   const bp = String(vitals.TA || '');
@@ -179,11 +182,10 @@ function buildDerivedVitalEntries(vitals = {}) {
     if (shockIndex >= 1) note = 'yüksek';
     else if (shockIndex >= 0.9) note = 'sınırda';
     orderedBase.push(['Şok indeksi', `${rounded} ${note}`]);
-  } else {
-    orderedBase.push(['Şok indeksi', '—']);
   }
 
-  const extraEntries = Object.entries(vitals).filter(([key]) => !['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş'].includes(key));
+  const extraEntries = Object.entries(vitals)
+    .filter(([key, value]) => !['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş'].includes(key) && String(value || '').trim());
   return [...orderedBase, ...extraEntries];
 }
 
@@ -473,14 +475,18 @@ function CasePlayer({
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
+  const hasExamData = Array.isArray(clinicalCase.exam) && clinicalCase.exam.some((finding) => String(finding || '').trim());
+  const hasVitalData = vitalEntries.length > 0;
+  const showExamPanel = !isSpotCase || hasExamData || hasVitalData;
   const hasInvestigationOrders = investigationOrders.length > 0;
-  const showInvestigationPanel = !isSpotCase || hasInvestigationOrders;
-  const showManagementPanel = !isSpotCase && clinicalCase.managementSequence?.enabled !== false;
+  const showInvestigationPanel = hasInvestigationOrders;
+  const showManagementPanel = clinicalCase.managementSequence?.enabled !== false && (!isSpotCase || clinicalCase.managementSequence?.showInSpot === true);
   const visibleSectionItems = useMemo(() => SECTION_NAV_ITEMS.filter((item) => {
+    if (item.id === 'case-exam') return showExamPanel;
     if (item.id === 'case-investigations') return showInvestigationPanel;
     if (item.id === 'case-management') return showManagementPanel;
     return true;
-  }), [showInvestigationPanel, showManagementPanel]);
+  }), [showExamPanel, showInvestigationPanel, showManagementPanel]);
   const heroEyebrow = isSpotCase
     ? `TUS Spot Olgular • ${clinicalCase.spotCategory || 'TUS spot'}`
     : `${branch.shortName ?? branch.name} • ${toDisplayPhrase(clinicalCase.setting)}`;
@@ -662,46 +668,48 @@ function CasePlayer({
               glossaryEnabled={!hardMode && !examMeta?.active}
             />
 
-            <section className="clinical-data-card card-surface section-anchor" id="case-exam" ref={examRef} data-section="case-exam">
-              <div className="panel-title-row compact refined-section-heading">
-                <div><h2>Muayene ve vital bulgular</h2></div>
-              </div>
+            {showExamPanel ? (
+              <section className="clinical-data-card card-surface section-anchor" id="case-exam" ref={examRef} data-section="case-exam">
+                <div className="panel-title-row compact refined-section-heading">
+                  <div><h2>Muayene ve vital bulgular</h2></div>
+                </div>
 
-              <div className="vitals-grid professional-vitals-grid">
-                {vitalEntries.map(([label, value]) => (
-                  <VitalCard key={label} label={label} value={value} glossaryEnabled={!hardMode && !examMeta?.active} />
-                ))}
-              </div>
+                {hasVitalData ? (
+                  <div className="vitals-grid professional-vitals-grid">
+                    {vitalEntries.map(([label, value]) => (
+                      <VitalCard key={label} label={label} value={value} glossaryEnabled={!hardMode && !examMeta?.active} />
+                    ))}
+                  </div>
+                ) : null}
 
-              <div className="qbank-accordion-stack">
-                <AccordionItem
-                  defaultOpen
-                  prefix={<Icon name="Stethoscope" />}
-                  badge="Objektif veri"
-                  title="Fizik muayene"
-                >
-                  {clinicalCase.exam?.length ? (
-                    <div className="detail-block exam-finding-block">
-                      <ul className="clean-list dense scientific-finding-list">
-                        {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={!hardMode && !examMeta?.active} /></li>)}
-                      </ul>
-                    </div>
-                  ) : (
-                    <p className="detail-copy">Belirgin anormal fizik muayene bulgusu saptanmamaktadır.</p>
-                  )}
-
-                  {!examMeta?.active ? (
-                    <details className="spoiler-disclosure neutral-disclosure">
-                      <summary>Yorumu göster</summary>
-                      <div className="detail-block scientific-summary-block">
-                        <h4>Hemodinamik değerlendirme</h4>
-                        <p><GlossaryText text={hemodynamicSummary} enabled={!hardMode && !examMeta?.active} /></p>
+                {hasExamData ? (
+                  <div className="qbank-accordion-stack">
+                    <AccordionItem
+                      defaultOpen
+                      prefix={<Icon name="Stethoscope" />}
+                      badge="Objektif veri"
+                      title="Fizik muayene"
+                    >
+                      <div className="detail-block exam-finding-block">
+                        <ul className="clean-list dense scientific-finding-list">
+                          {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={!hardMode && !examMeta?.active} /></li>)}
+                        </ul>
                       </div>
-                    </details>
-                  ) : null}
-                </AccordionItem>
-              </div>
-            </section>
+
+                      {!examMeta?.active && hasVitalData ? (
+                        <details className="spoiler-disclosure neutral-disclosure">
+                          <summary>Yorumu göster</summary>
+                          <div className="detail-block scientific-summary-block">
+                            <h4>Hemodinamik değerlendirme</h4>
+                            <p><GlossaryText text={hemodynamicSummary} enabled={!hardMode && !examMeta?.active} /></p>
+                          </div>
+                        </details>
+                      ) : null}
+                    </AccordionItem>
+                  </div>
+                ) : null}
+              </section>
+            ) : null}
 
             {showInvestigationPanel ? (
               <section id="case-investigations" className="section-anchor" ref={ordersRef} data-section="case-investigations">

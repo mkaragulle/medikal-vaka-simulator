@@ -46,6 +46,20 @@ const iconPaths = {
   Trash2: <><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 14h10l1-14"/><path d="M9 7V4h6v3"/></>,
   RotateCcw: <><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v6h6"/></>,
   X: <path d="M6 6l12 12M18 6 6 18"/>,
+
+  AnatomyTorso: <><path d="M12 3.4c2.7 0 4.8 1.9 4.8 4.5 0 1.5-.7 2.9-1.8 3.7l1.8 6.2c.3 1.1-.5 2.2-1.6 2.2H8.8c-1.1 0-1.9-1.1-1.6-2.2L9 11.6a4.4 4.4 0 0 1-1.8-3.7c0-2.6 2.1-4.5 4.8-4.5Z"/><path d="M9.2 11.7h5.6"/><path d="M10.3 7.2h3.4M9.8 15.2h4.4"/><path d="M7 9.7 4.8 12M17 9.7l2.2 2.3"/></>,
+  PhysiologyWave: <><path d="M3 12h3.8l1.4-3.4 3.2 7.9 2.2-10.4 2.5 5.9H21"/><path d="M5.2 18.2c1.9 1.3 4.2 2.1 6.8 2.1 4.2 0 7.7-2.2 9-5.3"/><path d="M18.8 5.8c-1.9-1.3-4.2-2.1-6.8-2.1-4.2 0-7.7 2.2-9 5.3"/></>,
+  HistologyCells: <><circle cx="8" cy="9" r="3.3"/><circle cx="15.7" cy="8.1" r="2.5"/><circle cx="14.7" cy="16.1" r="3.8"/><path d="M8 9h.01M15.7 8.1h.01M14.7 16.1h.01"/><path d="M10.6 11.1 12.2 13.2M12.3 8.7 10.9 9.1"/></>,
+  BiochemFlask: <><path d="M9.1 3.2h5.8"/><path d="M10.2 3.2v5.1L5.9 17a3.1 3.1 0 0 0 2.8 4.4h6.6a3.1 3.1 0 0 0 2.8-4.4l-4.3-8.7V3.2"/><path d="M8 15.4c1.6-.8 3.3.8 4.9.1 1.1-.5 2-.8 3.1-.1"/><circle cx="10" cy="12" r=".7"/><circle cx="14.5" cy="17.3" r=".7"/></>,
+  Microbe: <><ellipse cx="12" cy="12" rx="5.2" ry="6.6"/><path d="M8.5 8.4 15.5 15.6M15.4 8.5 8.6 15.5"/><path d="M12 3.8V2.4M12 21.6v-1.4M5.9 5.9 4.9 4.9M19.1 19.1l-1-1M18.1 5.9l1-1M4.9 19.1l1-1M3.8 12H2.4M21.6 12h-1.4"/><circle cx="10" cy="11" r=".6"/><circle cx="14.2" cy="12.8" r=".6"/></>,
+  PathologySlide: <><rect x="4.5" y="5" width="15" height="14" rx="2.2"/><path d="M8 8.2h8"/><path d="M8.2 15.7c2.4-3.3 5.4 2.8 7.8-.8"/><circle cx="9.2" cy="12.2" r="1.1"/><circle cx="14.7" cy="11.7" r="1.3"/><path d="M10.1 20.6h3.8"/></>,
+  PharmacologyCapsule: <><path d="M7.2 16.8 16.8 7.2a3.4 3.4 0 1 1 4.8 4.8L12 21.6a3.4 3.4 0 1 1-4.8-4.8Z"/><path d="m11.4 12.6 4 4"/><path d="M4.4 8.2c1.5-2.6 3.8-4.2 7.1-4.7M19.5 15.8c-1.5 2.6-3.8 4.2-7.1 4.7"/></>,
+  InternalSystems: <><path d="M12 4.1v15.8"/><path d="M12 10.2c-2.2-2.4-5.8-2.3-6.9.4v2.7a3.7 3.7 0 0 0 3.8 3.4c1.8 0 3.1-1.8 3.1-4.5"/><path d="M12 10.2c2.2-2.4 5.8-2.3 6.9.4v2.7a3.7 3.7 0 0 1-3.8 3.4c-1.8 0-3.1-1.8-3.1-4.5"/><path d="M9 7.2a3 3 0 0 1 6 0"/><path d="M8.1 20.3h7.8"/></>,
+  PediatricsChild: <><circle cx="12" cy="7.1" r="3"/><path d="M7.2 20.2c.7-4 2.3-6.6 4.8-6.6s4.1 2.6 4.8 6.6"/><path d="M8.2 13.2 5.1 16.1M15.8 13.2l3.1 2.9"/><path d="M10.3 9.4c1.1.8 2.3.8 3.4 0"/><path d="M18.6 5.8l.6 1.4 1.4.6-1.4.6-.6 1.4-.6-1.4-1.4-.6 1.4-.6.6-1.4Z"/></>,
+  SurgeryBlade: <><path d="M15.2 3.8 20.2 8.8"/><path d="M3.8 20.2 18 6a1.8 1.8 0 0 1 2.5 2.5L6.3 22.7l-2.5-2.5Z"/><path d="m8.7 15.3-2.8-2.8"/><path d="M12.6 10.4 16 13.8"/></>,
+  ObgynUterus: <><path d="M8.6 5.1v5.4a3.4 3.4 0 0 0 6.8 0V5.1"/><path d="M8.6 5.1C6.7 5.3 5.1 6.7 4.9 8.7M15.4 5.1c1.9.2 3.5 1.6 3.7 3.6"/><path d="M12 13.9v6.3"/><path d="M9.3 20.2h5.4"/><circle cx="7.3" cy="10.1" r="1.6"/><circle cx="16.7" cy="10.1" r="1.6"/></>,
+  MinorGrid: <><rect x="4" y="4" width="6.2" height="6.2" rx="1.5"/><rect x="13.8" y="4" width="6.2" height="6.2" rx="1.5"/><rect x="4" y="13.8" width="6.2" height="6.2" rx="1.5"/><rect x="13.8" y="13.8" width="6.2" height="6.2" rx="1.5"/><path d="M12 7.1h0M7.1 12h0M16.9 12h0M12 16.9h0"/></>,
+  TusSpotFlash: <><path d="M12 3.2 13.7 8l5.1 1.6-4.2 3.1.1 5.4L12 15l-2.7 3.1.1-5.4-4.2-3.1L10.3 8 12 3.2Z"/><path d="M19.2 4.8l.6 1.7 1.7.6-1.7.6-.6 1.7-.6-1.7-1.7-.6 1.7-.6.6-1.7Z"/><path d="M4.8 16.2l.5 1.3 1.3.5-1.3.5-.5 1.3-.5-1.3-1.3-.5 1.3-.5.5-1.3Z"/></>,
   Zap: <><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></>,
 };
 
@@ -135,102 +149,51 @@ export function ThemeToggle({ theme = 'dark', onToggleTheme, className = '', sho
 }
 
 
+const branchTransitionEffects = {
+  'tus-spot-olgular': ['spot-ray ray-one', 'spot-ray ray-two', 'spot-spark spark-one', 'spot-spark spark-two'],
+  anatomy: ['anatomy-segment segment-one', 'anatomy-segment segment-two', 'anatomy-dot dot-one', 'anatomy-dot dot-two'],
+  physiology: ['physiology-wave wave-one', 'physiology-wave wave-two', 'physiology-pulse-dot pulse-dot'],
+  'histology-embryology': ['cell-orbit orbit-one', 'cell-orbit orbit-two', 'cell-seed seed-one', 'cell-seed seed-two'],
+  'medical-biochemistry': ['flask-motion-bubble bubble-one', 'flask-motion-bubble bubble-two', 'flask-motion-bubble bubble-three', 'branch-accent-line flask-liquid-line'],
+  'medical-microbiology': ['microbe-particle particle-one', 'microbe-particle particle-two', 'microbe-halo halo-one', 'microbe-halo halo-two'],
+  'medical-pathology': ['pathology-focus focus-one', 'pathology-focus focus-two', 'pathology-cell cell-one', 'pathology-cell cell-two'],
+  'medical-pharmacology': ['pharma-ring ring-one', 'pharma-ring ring-two', 'pharma-dose dose-one'],
+  'internal-medicine': ['internal-breath breath-one', 'internal-breath breath-two', 'internal-heart-dot heart-dot'],
+  pediatrics: ['peds-aura aura-one', 'peds-aura aura-two', 'peds-spark spark-one', 'peds-spark spark-two'],
+  'general-surgery': ['surgery-streak streak-one', 'surgery-streak streak-two', 'surgery-glint glint-one'],
+  'obstetrics-gynecology': ['obgyn-halo halo-one', 'obgyn-halo halo-two', 'obgyn-core core-one'],
+  'minor-rotations': ['minor-tile tile-one', 'minor-tile tile-two', 'minor-tile tile-three', 'minor-tile tile-four'],
+};
+
 export function BranchTransitionVisual({ branchId, iconName }) {
-  if (branchId === 'cardiovascular') {
-    return (
-      <svg
-        className="branch-transition-svg branch-transition-svg-cardiovascular"
-        viewBox="0 0 120 120"
-        aria-hidden="true"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <path className="cardio-heart-outline" d="M60 99c-8.9-7.3-17.2-14.1-24-20.4C25.6 68.9 19 61.1 19 50.3c0-12.3 8.8-21.1 20.2-21.1 7.5 0 14.4 3.7 20.8 11.2 6.4-7.5 13.3-11.2 20.8-11.2C92.2 29.2 101 38 101 50.3c0 10.8-6.6 18.6-17 28.3C77.2 84.9 68.9 91.7 60 99Z" />
-        <path className="cardio-heart-glow" d="M60 99c-8.9-7.3-17.2-14.1-24-20.4C25.6 68.9 19 61.1 19 50.3c0-12.3 8.8-21.1 20.2-21.1 7.5 0 14.4 3.7 20.8 11.2 6.4-7.5 13.3-11.2 20.8-11.2C92.2 29.2 101 38 101 50.3c0 10.8-6.6 18.6-17 28.3C77.2 84.9 68.9 91.7 60 99Z" />
-        <path className="cardio-heart-trace" d="M16 58h14l7-17 13 34 10-23 6 10h15" />
-      </svg>
-    );
-  }
+  const effectTokens = branchTransitionEffects[branchId] ?? ['default-orbit orbit-one', 'default-orbit orbit-two'];
 
   return (
-    <span className={`branch-transition-visual branch-transition-visual-${branchId || 'default'}`.trim()} aria-hidden="true">
+    <span className={`branch-transition-visual branch-transition-visual-${branchId || 'default'}`.trim()} aria-hidden="true" data-branch={branchId || 'default'}>
       <span className="branch-transition-shine" />
-      <Icon name={iconName || 'Activity'} className="branch-transition-icon" size={66} strokeWidth={1.9} />
-
-      {branchId === 'medical-biochemistry' ? (
-        <>
-          <span className="flask-motion-bubble bubble-one" />
-          <span className="flask-motion-bubble bubble-two" />
-          <span className="branch-accent-line flask-liquid-line" />
-        </>
-      ) : null}
-
-      {branchId === 'minor-rotations' ? (
-        <>
-          <span className="brain-node node-one" />
-          <span className="brain-node node-two" />
-          <span className="brain-node node-three" />
-        </>
-      ) : null}
-
-      {branchId === 'pediatrics' ? (
-        <>
-          <span className="sparkle-dot sparkle-one" />
-          <span className="sparkle-dot sparkle-two" />
-          <span className="sparkle-dot sparkle-three" />
-        </>
-      ) : null}
-
-      {branchId === 'general-surgery' ? (
-        <>
-          <span className="surgery-streak streak-one" />
-          <span className="surgery-streak streak-two" />
-        </>
-      ) : null}
-
-      {branchId === 'physiology' ? (
-        <>
-          <span className="breath-wave wave-one" />
-          <span className="breath-wave wave-two" />
-        </>
-      ) : null}
-
-      {branchId === 'medical-microbiology' ? (
-        <>
-          <span className="shield-halo halo-one" />
-          <span className="shield-halo halo-two" />
-          <span className="shield-cross-glow" />
-        </>
-      ) : null}
-
-      {branchId === 'anatomy' ? (
-        <>
-          <span className="bone-joint joint-one" />
-          <span className="bone-joint joint-two" />
-          <span className="bone-joint joint-three" />
-          <span className="bone-joint joint-four" />
-        </>
-      ) : null}
+      <span className="branch-transition-core-glow" />
+      {effectTokens.map((token) => (
+        <span key={token} className={`branch-motion-effect ${token}`} />
+      ))}
+      <Icon name={iconName || 'Activity'} className="branch-transition-icon" size={76} strokeWidth={1.75} />
     </span>
   );
 }
 
 export const branchIconById = {
-  'tus-spot-olgular': 'Sparkles',
-  anatomy: 'Bone',
-  physiology: 'Activity',
-  'histology-embryology': 'LayeredCards',
-  'medical-biochemistry': 'FlaskConical',
-  'medical-microbiology': 'ShieldPlus',
-  'medical-pathology': 'ClipboardList',
-  'medical-pharmacology': 'Droplets',
-  'internal-medicine': 'Stethoscope',
-  pediatrics: 'Baby',
-  'general-surgery': 'Scalpel',
-  'obstetrics-gynecology': 'HeartPulse',
-  'minor-rotations': 'BookOpen',
+  'tus-spot-olgular': 'TusSpotFlash',
+  anatomy: 'AnatomyTorso',
+  physiology: 'PhysiologyWave',
+  'histology-embryology': 'HistologyCells',
+  'medical-biochemistry': 'BiochemFlask',
+  'medical-microbiology': 'Microbe',
+  'medical-pathology': 'PathologySlide',
+  'medical-pharmacology': 'PharmacologyCapsule',
+  'internal-medicine': 'InternalSystems',
+  pediatrics: 'PediatricsChild',
+  'general-surgery': 'SurgeryBlade',
+  'obstetrics-gynecology': 'ObgynUterus',
+  'minor-rotations': 'MinorGrid',
 };
 export const branchToneById = {
   'tus-spot-olgular': 'accent',
