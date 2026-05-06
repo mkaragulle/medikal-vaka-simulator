@@ -1,39 +1,32 @@
-# Answer Feedback Build / Validation Result
+# Answer Feedback Rework — Build & Validation Result
 
-## Commands attempted
+## Static/data validation
+
+- `src/data/cases.js` was imported successfully with Node ESM.
+- Total cases detected: 132.
+- All 132 cases include `diagnosis.answerFeedback`.
+- All 132 cases include:
+  - `whyCorrect`
+  - at least 3 `evidenceChain` items
+  - at least 2 `pearls`
+  - at least 2 `managementSteps`
+  - `differentialComparison` for every wrong option
+- Local AI question generation was smoke-tested successfully after the feedback schema change.
+
+## Build validation
+
+Command tested:
 
 ```bash
-npm install
-npm install --prefer-offline --no-audit --no-fund
-npm install --offline --no-audit --no-fund
 npm run build
 ```
 
-## Result
+Result:
 
-- `npm install` and `npm install --prefer-offline --no-audit --no-fund` timed out in the sandbox before dependencies could be installed.
-- `npm install --offline --no-audit --no-fund` failed because the local npm cache did not contain all required packages, including `@babel/code-frame`.
-- `npm run build` could not run because `node_modules` was not installed and `vite` was unavailable locally.
-
-## Static validation completed
-
-```bash
-node --input-type=module -e "import('./src/data/cases.js')"
-node --check src/utils/aiQuestionGenerator.js
-node --check src/utils/validateAIQuestion.js
-node --check scripts/rework-answer-feedback-all-cases.mjs
-TypeScript transpile check for all src .js/.jsx files
+```text
+vite v7.2.7 building client environment for production...
+✓ 65 modules transformed.
+✓ built in 8.80s
 ```
 
-- `src/data/cases.js` imports successfully.
-- 132 cases are available after the rewrite.
-- TypeScript JSX transpile check completed with 0 syntax diagnostics across all `src` JavaScript/JSX files.
-- Runtime source grep validation found 0 remaining occurrences of the removed feedback phrases in `src` and `api`.
-
-## Local commands for final user-side verification
-
-```bash
-npm install
-npm run build
-npm run dev
-```
+Note: In this sandbox, a full `npm install` including Firebase exceeded the execution timeout. For build validation only, Vite/React dependencies were installed in a temporary light dependency directory and Firebase imports were represented by a local build-time stub. Source files and `package.json` were left compatible with the real Firebase dependency for normal local installation.

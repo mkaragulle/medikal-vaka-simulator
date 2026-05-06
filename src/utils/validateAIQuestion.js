@@ -14,7 +14,7 @@ const DIRECT_LEAK_PHRASES = [
 function stripAnswerLeak(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
   const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).replace(new RegExp(escaped, 'gi'), 'tanısal ipucu');
+  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
 }
 
 function toOptionText(option) {
@@ -80,11 +80,11 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
   return options.reduce((accumulator, option) => {
     if (option.text === correctText) return accumulator;
     accumulator[option.text] = {
-      explanation: feedback[option.id] || `${option.text} güçlü bir çeldirici olabilir; ancak olgudaki objektif ipuçları ${correctText} lehinedir.`,
+      explanation: feedback[option.id] || `${option.text} güçlü bir çeldiricidir; ancak olgudaki karar verdirici patern ${correctText} lehinedir.`,
       comparisonPoints: [
-        `${option.text} kendi özgül öykü, muayene veya tetkik bulgularıyla güç kazanır.`,
-        `Olgu ipucu “${payload.evidenceChain?.[0] || payload.learningTarget || 'temel klinik ipucu'}” bilgisidir.`,
-        `Doğru yanıt ${correctText}; çünkü bulgular aynı tanısal eksende birleşir.`,
+        `${option.text} belirli klinik koşullarda doğru olabilir; bu olguda temel patern farklıdır.`,
+        `Bu seçenek, “${payload.evidenceChain?.[0] || payload.learningTarget || 'ana ipucu'}” bilgisini yeterince açıklamaz.`,
+        `Doğru yanıt ${correctText} çünkü bulgular tek bir öğrenme hedefine bağlanır.`,
       ],
     };
     return accumulator;
@@ -150,8 +150,8 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     patientIntro: {
       profile: payload.demographics || payload.relatedBranch || 'AI TUS pratik',
       presentation: payload.chiefComplaint || payload.title,
-      riskContext: [],
-      distinctiveClues: [payload.chiefComplaint, ...exam.slice(0, 2)].filter(Boolean),
+      riskContext: history.slice(0, 2),
+      distinctiveClues: payload.evidenceChain?.slice(0, 4) || [],
       historySummary: payload.stem,
     },
     diagnosis: {
@@ -167,7 +167,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
         clinicalPearls: [payload.examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparisonFromPayload(payload, correctText, options),
         managementSteps: payload.managementSteps || [
-          'Ayırt ettirici klinik ipucunu belirle ve seçenekleri aynı kategori içinde karşılaştır.',
+          'Ana ipucunu belirle ve seçenekleri aynı kategori içinde karşılaştır.',
           'Objektif tetkik sonuçlarını tanı adı okumadan patern olarak yorumla.',
           'Benzer TUS çeldiricilerinin hangi ipucuyla elendiğini tekrar et.',
         ],
