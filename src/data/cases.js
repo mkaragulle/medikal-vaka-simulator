@@ -1,5 +1,5 @@
 // KlinikIQ vaka verisi: TUS odaklı, klinik karar verdirici ve objektif tetkik sonuçlarıyla yapılandırılmıştır.
-// Patient intro QA: Hasta özeti ve klinik öykü tek kartta normalize edilmiştir.
+// Patient intro QA v2: Hasta özeti kartı okunabilir 2x2 yapı, kısa risk/ipucu listeleri ve özgün klinik odak cümleleriyle rafine edilmiştir.
 
 export const cases = [
   {
@@ -257,19 +257,17 @@ export const cases = [
       "profile": "58 yaşında erkek · Acil servis",
       "presentation": "Kırk beş dakikadır devam eden retrosternal baskı tarzında göğüs ağrısı",
       "riskContext": [
-        "Hipertansiyon öyküsü",
-        "Dislipidemi/aterosklerotik risk",
-        "Sigara maruziyeti",
-        "Vasküler/iskemik risk bağlamı"
+        "Kontrolsüz hipertansiyon / vasküler stres",
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
-        "Retrosternal baskı tarzında ağrının sol kola ve mandibulaya yayılması iskemik ağrı lehinedir",
-        "Soğuk terleme ve bulantı gibi otonom semptomlar akut koroner sendrom ihtimalini artırır",
-        "V2–V5 derivasyonlarında ST segment elevasyonu anterior duvar tutulumunu gösterir",
-        "İnferior derivasyonlardaki resiprokal ST depresyonu akut oklüzyon lehine ek kanıttır"
+        "Sol kola/mandibulaya yayılan baskı tarzı ağrı",
+        "Soğuk terleme ve bulantı",
+        "V2–V5 ST elevasyonu",
+        "Resiprokal ST depresyonu"
       ],
       "historySummary": "Sublingual nitrat uygulanmasına rağmen ağrısında belirgin gerileme olmadığı öğreniliyor.",
-      "priorityFocus": "Retrosternal baskı tarzında ağrının sol kola ve mandibulaya yayılması iskemik ağrı, Anterior ST elevasyonlu miyokart enfarktüsü açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Sol kola/mandibulaya yayılan baskı tarzı ağrı akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -527,18 +525,17 @@ export const cases = [
       "profile": "64 yaşında erkek · Acil servis",
       "presentation": "Sırta yayılan ani başlangıçlı çok şiddetli göğüs ağrısı",
       "riskContext": [
-        "Hipertansiyon öyküsü",
-        "Travma/yaralanma sonrası başvuru",
-        "Vasküler/iskemik risk bağlamı"
+        "Kontrolsüz hipertansiyon / vasküler stres",
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
-        "Kontrolsüz hipertansiyon akut aort sendromu için temel risk faktörüdür",
-        "Yırtılır tarzda ağrının sırta yayılması ve ani maksimum şiddete ulaşması diseksiyon lehinedir",
-        "Üst ekstremiteler arası nabız veya kan basıncı farkı dallanma tutulumu düşündürür",
-        "Asendan aortta intimal flap görülmesi Stanford tip A sınıflamasını belirler"
+        "Kontrolsüz hipertansiyon öyküsü",
+        "Sırta yayılan ani yırtılır ağrı",
+        "Nabız/TA asimetrisi",
+        "Asendan aort intimal flap bulgusu"
       ],
       "historySummary": "Kontrolsüz hipertansiyon öyküsü bulunan hasta, ağrının aniden başladığını ve başlangıç anında maksimum şiddete ulaştığını ifade ediyor. Sağ üst ekstremiteden ölçülen kan basıncının sol üst ekstremiteye göre daha düşük olduğu, ağrıya senkop veya travmanın eşlik etmediği öğreniliyor. Ani maksimum şiddette ağrı, ekstremiteler arası nabız veya kan basıncı farkı ve yeni diyastolik üfürüm akut aort sendromu ihtimalini artırır.",
-      "priorityFocus": "Kontrolsüz hipertansiyon akut aort sendromu için temel risk faktörüdür, Stanford tip A aort diseksiyonu için kırmızı bayraktır; ağrının ani-maksimum başlaması ve nabız/TA farkı çeldirici ACS tanılarını geri plana iter."
+      "priorityFocus": "Kontrolsüz hipertansiyon öyküsü akut aort sendromu için kırmızı bayraktır; ani maksimum ağrı ve nabız/TA farkı ACS çeldiricisini geri plana iter."
     }
   },
   {
@@ -805,17 +802,16 @@ export const cases = [
       "profile": "46 yaşında kadın · Acil servis",
       "presentation": "Giderek artan nefes darlığı ve göğüste basınç hissi",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü",
-        "Vasküler/iskemik risk bağlamı"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Progresif dispne ve presenkop hemodinamik etkilenmeyi düşündürür",
-        "Juguler venöz dolgunluk ve akciğerlerin görece temiz olması obstrüktif paterni destekler",
-        "Pulsus paradoxus intratorasik basınç değişimlerine duyarlı düşük dolum durumunu gösterir",
-        "Sağ atriyum/sağ ventrikül diyastolik kollapsı ekokardiyografik olarak tamponad lehinedir"
+        "Progresif dispne ve presenkop",
+        "Juguler venöz dolgunluk",
+        "Pulsus paradoxus",
+        "Sağ kalp boşluklarında diyastolik kollaps"
       ],
       "historySummary": "Oturur pozisyonda kısmi rahatlama olduğunu, eforla yakınmalarının belirgin arttığını ifade ediyor.",
-      "priorityFocus": "Progresif dispne ve presenkop hemodinamik etkilenmeyi, Kardiyak tamponad lehine kritik obstrüktif şok paternidir; tedavide zaman kaybettiren rutin sıvı/diüretik yaklaşımından kaçınılır."
+      "priorityFocus": "Progresif dispne ve presenkop kardiyak tamponad lehine obstrüktif şok paternidir; ekokardiyografik kollaps acil drenaj kararını güçlendirir."
     }
   },
   {
@@ -1115,17 +1111,17 @@ export const cases = [
       "profile": "72 yaşında kadın · Acil servis",
       "presentation": "Gece artan nefes darlığı, ortopne ve pembe köpüklü balgam",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü",
-        "Vasküler/iskemik risk bağlamı"
+        "Aterosklerotik risk zemini",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını düşündürür",
-        "S3 ve juguler venöz dolgunluk konjestif kalp yetersizliği lehinedir",
+        "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını",
+        "S3 ve Juguler venöz dolgunluk",
         "Bilateral yaygın raller alveoler/interstisyel ödemle uyumludur",
         "NT-proBNP yüksekliği ve perihiler ödem paterni kardiyojenik kökeni güçlendirir"
       ],
       "historySummary": "Azalmış ejeksiyon fraksiyonlu kalp yetersizliği ve geçirilmiş miyokart enfarktüsü öyküsü olan hasta, üç gündür artan bacak ödemi, ortopne ve paroksismal noktürnal dispne ifade ediyor. Son günlerde tuz alımının arttığı ve diüretik tedavisini düzensiz kullandığı öğreniliyor.",
-      "priorityFocus": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını, Akut dekompanse kalp yetersizliğine bağlı kardiyojenik pulmoner ödem açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -1371,17 +1367,16 @@ export const cases = [
       "profile": "22 yaşında erkek · Spor hekimliği / İç Hastalıkları",
       "presentation": "Basketbol antrenmanı sırasında gelişen kısa süreli senkop",
       "riskContext": [
-        "Aile öyküsü/genetik yatkınlık",
-        "Vasküler/iskemik risk bağlamı"
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi açısından uyarıcıdır",
-        "Ailede ani kardiyak ölüm öyküsü kalıtsal kardiyomiyopati ihtimalini artırır",
-        "Valsalva ile üfürüm artışı preload azalınca obstrüksiyonun arttığını gösterir",
+        "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi",
+        "Ailede ani kardiyak ölüm öyküsü kalıtsal kardiyomiyopati",
+        "Valsalva ile üfürüm artışı preload azalınca obstrüksiyonun arttığını",
         "Asimetrik septal hipertrofi ekokardiyografik olarak"
       ],
       "historySummary": "Yirmi iki yaşındaki erkek hasta son aylarda eforla çarpıntı, göğüste sıkışma ve presenkop yakınmaları olduğunu ifade ediyor. Aile öyküsünde genç yaşta açıklanamayan ani kardiyak ölüm bulunduğu öğreniliyor.",
-      "priorityFocus": "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi açısından uyarıcıdır, Hipertrofik obstrüktif kardiyomiyopati açısından en güçlü ipucudur. Ailede ani kardiyak ölüm öyküsü kalıtsal kardiyomiyopati eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Eforla ilişkili senkopta aile öyküsü, dinamik çıkış yolu obstrüksiyonu ve ani kardiyak ölüm riski bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi karar verdirici klinik ipucudur; preload azaltan manevralar HOCM üfürümünü artırır."
     }
   },
   {
@@ -1703,16 +1698,16 @@ export const cases = [
       "profile": "19 yaşında kadın · Acil servis",
       "presentation": "Kusma, karın ağrısı ve derin-hızlı solunum",
       "riskContext": [
-        "Diyabet öyküsü"
+        "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu gösterir",
-        "Beta-hidroksibutirat yüksekliği keton üretiminin baskın olduğunu gösterir",
+        "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu",
+        "Beta-hidroksibutirat yüksekliği keton üretiminin baskın olduğunu",
         "Düşük pH ve bikarbonat artmış anyon açıklı metabolik asidozla uyumludur",
-        "Serum potasyumu yüksek görünse bile total vücut potasyumu genellikle azalmıştır"
+        "Serum potasyumu yüksek görünse bile total vücut potasyumu genellikle"
       ],
       "historySummary": "Tip 1 diyabet tanısıyla izlenen hasta, son iki gündür insülin dozlarını atladığını ifade ediyor. Poliüri, polidipsi, halsizlik, bulantı-kusma ve yaygın karın ağrısı yakınmaları olduğu öğreniliyor.",
-      "priorityFocus": "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu, kalıtsal/metabolik hastalık için karar verdiricidir; özgül klinik ipucu ve metabolit paterni çeldiricileri ayırır."
+      "priorityFocus": "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu DKA tanısının temel paternidir; sıvı ve potasyum güvenliği insülin tedavisinden önce değerlendirilir."
     }
   },
   {
@@ -1993,16 +1988,16 @@ export const cases = [
       "profile": "48 yaşında erkek · Acil servis",
       "presentation": "Sırta yayılan şiddetli epigastrik ağrı",
       "riskContext": [
-        "Acil servis bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
         "Epigastrik ağrının sırta yayılması pankreatik ağrı paterniyle uyumludur",
         "Lipaz yüksekliği pankreatit tanısında amilaza göre daha özgül kabul edilir",
         "Safra kesesi taşı ve ALT yüksekliği biliyer etiyolojiyi destekler",
-        "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak değildir"
+        "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak"
       ],
       "historySummary": "Hasta ağrının yağlı yemek sonrasında başladığını, kuşak tarzında sırta yayıldığını ve öne eğilmekle kısmen azaldığını ifade ediyor. Bulantı ve tekrarlayan kusma yakınmaları mevcut.",
-      "priorityFocus": "Epigastrik ağrının sırta yayılması pankreatik ağrı paterniyle uyumludur, akut pankreatit tanısını destekler; biliyer etiyoloji varsa kolestaz bulguları ve USG birlikte değerlendirilir."
+      "priorityFocus": "Epigastrik ağrının sırta yayılması pankreatik ağrı paterniyle uyumludur karar verdirici klinik ipucudur; akut pankreatit tanısı için ağrı, enzim yüksekliği ve görüntülemeden ikisinin bulunması yeterlidir."
     }
   },
   {
@@ -2259,16 +2254,16 @@ export const cases = [
       "profile": "55 yaşında erkek · Acil servis",
       "presentation": "Bol miktarda kan kusma ve baş dönmesi",
       "riskContext": [
-        "Siroz/portal hipertansiyon zemini"
+        "Siroz ve portal hipertansiyon zemini"
       ],
       "distinctiveClues": [
         "Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur",
-        "Hematemez ve melena üst gastrointestinal kanama lehinedir",
-        "Hipotansiyon/taşikardi kanama şiddetini gösterir",
+        "Hematemez ve melena üst gastrointestinal kanama",
+        "Hipotansiyon/taşikardi kanama şiddetini",
         "Endoskopide distal özofageal varislerden aktif kanama görülmesi tanısaldır"
       ],
       "historySummary": "Daha önce asit nedeniyle tedavi aldığı, son günlerde halsizlik ve iştahsızlığının arttığı öğreniliyor.",
-      "priorityFocus": "Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur, varis kanaması lehinedir; resüsitasyonla birlikte vazoaktif tedavi, antibiyotik ve erken endoskopi planlanır."
+      "priorityFocus": "Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur varis kanaması olasılığını yükseltir; resüsitasyonla birlikte vazoaktif tedavi, antibiyotik ve erken endoskopi planlanır."
     }
   },
   {
@@ -2524,16 +2519,16 @@ export const cases = [
       "profile": "42 yaşında kadın · İç Hastalıkları polikliniği",
       "presentation": "Halsizlik, eforla nefes darlığı ve buz yeme isteği",
       "riskContext": [
-        "İç Hastalıkları polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
         "Pika yakınması demir eksikliğinde sık görülen destekleyici semptomdur",
-        "Düşük ferritin demir depolarının azaldığını gösterir",
+        "Düşük ferritin demir depolarının azaldığını",
         "Yüksek TDBK transferrin artışını ve demir eksikliğini destekler",
-        "RDW yüksekliği farklı boyutta eritrositlerin arttığını gösterir"
+        "RDW yüksekliği farklı boyutta eritrositlerin arttığını"
       ],
       "historySummary": "Hasta son altı aydır giderek artan yorgunluk, saç dökülmesi, çarpıntı ve pika yakınmaları olduğunu ifade ediyor. Menstrüasyonlarının uzun sürdüğü ve kanama miktarının arttığı öğreniliyor.",
-      "priorityFocus": "Pika yakınması demir eksikliğinde sık görülen destekleyici semptomdur, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "Pika yakınması demir eksikliğinde sık görülen destekleyici semptomdur SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -2816,16 +2811,16 @@ export const cases = [
       "profile": "60 yaşında kadın · İç Hastalıkları polikliniği",
       "presentation": "Tekrarlayan böbrek taşı, kabızlık ve halsizlik",
       "riskContext": [
-        "İç Hastalıkları polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
         "Tekrarlayan böbrek taşı hiperkalsiürinin klinik sonucudur",
         "Serum kalsiyumu yüksekken PTH’nin yüksek olması uygunsuzdur",
-        "Hipofosfatemi PTH etkisiyle renal fosfat atılımını düşündürür",
+        "Hipofosfatemi PTH etkisiyle renal fosfat atılımını",
         "Maligniteye bağlı hiperkalsemide PTH genellikle baskılı beklenir"
       ],
       "historySummary": "Hasta son bir yıl içinde iki kez renal kolik atağı geçirdiğini ifade ediyor. Kabızlık, yaygın kemik ağrısı, halsizlik ve hafif depresif duygu durum yakınmaları olduğu öğreniliyor.",
-      "priorityFocus": "Tekrarlayan böbrek taşı hiperkalsiürinin klinik sonucudur, anatomik lokalizasyonu belirler; doğru cevap komşuluk, innervasyon veya damar-sinir ilişkisi üzerinden seçilir."
+      "priorityFocus": "Tekrarlayan böbrek taşı hiperkalsiürinin klinik sonucudur karar verdirici klinik ipucudur; sestamibi sintigrafisi tanı koydurmaz; preoperatif lokalizasyon içindir."
     }
   },
   {
@@ -3112,16 +3107,16 @@ export const cases = [
       "profile": "70 yaşında erkek · İnme merkezi acili",
       "presentation": "Konuşma bozukluğu ve sağ taraf güçsüzlüğü",
       "riskContext": [
-        "İlaç veya toksin maruziyeti"
+        "Toksin/ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit tablosu oluşturur",
+        "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit",
         "Ekspresif afazi dominant hemisfer kortikal tutulumuyla uyumludur",
         "Kontrastsız beyin BT’de kanama saptanmaması hemorajiyi geri plana iter",
-        "BT anjiyografide sol MCA proksimal segmentinde dolum kesintisi büyük damar oklüzyonunu gösterir"
+        "BT anjiyografide sol MCA proksimal segmentinde dolum kesintisi büyük damar"
       ],
       "historySummary": "Hasta yakınları, hastanın 70 dakika önce son kez normal görüldüğünü; ardından ani konuşma bozukluğu, sağ kol ve bacakta güç kaybı ve bakış deviasyonu geliştiğini belirtiyor. Antikoagülan kullanım öyküsü olmadığı öğreniliyor.",
-      "priorityFocus": "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit tablosu oluşturur, akut inme yaklaşımında zaman penceresi ve kanama dışlanmasını öne çıkarır; hipoglisemi gibi taklitçiler hızla elenir."
+      "priorityFocus": "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit karar verdirici klinik ipucudur; son sağlıklı görülme zamanı reperfüzyon kararının temel belirleyicisidir."
     }
   },
   {
@@ -3396,16 +3391,16 @@ export const cases = [
       "profile": "52 yaşında kadın · Acil servis",
       "presentation": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı",
       "riskContext": [
-        "Acil servis bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
         "Thunderclap baş ağrısı SAH için klasik alarm bulgusudur",
-        "Ense sertliği meningeal irritasyonu gösterir",
+        "Ense sertliği meningeal irritasyonu",
         "Erken kontrastsız BT subaraknoid kanı gösterebilir",
         "Anevrizma odağı kesin tedavi planını belirler"
       ],
       "historySummary": "Hasta baş ağrısının aniden başladığını, daha önce yaşadığı baş ağrılarından tamamen farklı olduğunu ve saniyeler içinde en yüksek şiddete ulaştığını ifade ediyor. Kusma ve fotofobi eşlik ediyor; polikistik böbrek hastalığı öyküsü mevcut.",
-      "priorityFocus": "Thunderclap baş ağrısı SAH için klasik alarm bulgusudur, Anevrizmal subaraknoid kanama açısından en güçlü ipucudur. Ense sertliği meningeal irritasyonu eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Thunderclap baş ağrısında subaraknoid kanama, kontrastsız BT, lomber ponksiyon ve anevrizma bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Thunderclap baş ağrısı SAH için klasik alarm bulgusudur karar verdirici klinik ipucudur; ani en şiddetli baş ağrısı aksi kanıtlanana kadar SAH kabul edilmelidir."
     }
   },
   {
@@ -3694,16 +3689,16 @@ export const cases = [
       "profile": "29 yaşında kadın · Nöroloji polikliniği",
       "presentation": "Sağ gözde bulanık görme öyküsü ve yeni başlayan çift görme",
       "riskContext": [
-        "Nöroloji polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
         "Önceden optik nörit geçirilmesi zamanda yayılım ipucudur",
-        "Diplopi beyin sapı tutulumu düşündürür",
+        "Diplopi beyin sapı tutulumu",
         "MR’da periventriküler ve infratentorial plaklar mekânda yayılımı destekler",
         "BOS oligoklonal bant pozitifliği tanıyı güçlendirebilir"
       ],
       "historySummary": "Hasta sekiz ay önce kendiliğinden düzelen ağrılı sağ görme azalması atağı geçirdiğini, şimdi ise horizontal diplopi, dengesizlik ve kısa süreli uyuşmalar yaşadığını ifade ediyor.",
-      "priorityFocus": "Önceden optik nörit geçirilmesi zamanda yayılım ipucudur, Relapsing-remitting multipl skleroz açısından en güçlü ipucudur. Diplopi beyin sapı tutulumu eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Zaman ve mekanda yayılım, optik nörit, internükleer oftalmopleji ve BOS oligoklonal bant yorumu bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Önceden optik nörit geçirilmesi zamanda yayılım ipucudur karar verdirici klinik ipucudur; mS tanısı tek MR lezyonuyla değil klinik-MR yayılım mantığıyla kurulur."
     }
   },
   {
@@ -3985,16 +3980,17 @@ export const cases = [
       "profile": "31 yaşında kadın · Acil servis",
       "presentation": "Şiddetli baş ağrısı ve ilk kez gelişen jeneralize nöbet",
       "riskContext": [
-        "Gebelik veya postpartum dönem"
+        "Gebelik/postpartum fizyolojik risk",
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
         "Lohusalık hiperkoagülabilite için güçlü risk dönemidir",
         "Baş ağrısının progresif seyri venöz basınç artışıyla uyumludur",
         "Nöbet kortikal venöz tutulumda sık görülebilir",
-        "MR venografi sinüs trombozunu doğrudan gösterir"
+        "MR venografi sinüs trombozunu doğrudan"
       ],
       "historySummary": "Lohusalık döneminde sıvı alımının azaldığı ve uzun süre yatakta kaldığı öğreniliyor.",
-      "priorityFocus": "Lohusalık hiperkoagülabilite için güçlü risk dönemidir, Serebral venöz sinüs trombozu açısından en güçlü ipucudur. Baş ağrısının progresif seyri venöz basınç artışıyla uyumludur eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Serebral venöz sinüs trombozunda postpartum risk, intrakraniyal basınç bulguları ve MR venografi bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Lohusalık hiperkoagülabilite için güçlü risk dönemidir karar verdirici klinik ipucudur; cVST’de hemorajik lezyon olsa bile antikoagülasyon çoğu durumda temel tedavidir."
     }
   },
   {
@@ -4272,16 +4268,16 @@ export const cases = [
       "profile": "9 aylık erkek bebek · Çocuk acil",
       "presentation": "Ataklar halinde ağlama ve bacaklarını karnına çekme",
       "riskContext": [
-        "Pediatrik güvenlik/yaş bağımlı risk"
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu düşündürür",
+        "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu",
         "Kanlı-mukuslu dışkı invajinasyon için klasik ipucudur",
         "USG hedef bulgusu tanısal değeri yüksek bir bulgudur",
         "Peritonit yoksa pnömatik/hidrostatik redüksiyon ilk tedavi olabilir"
       ],
       "historySummary": "Dokuz aylık bebek, birkaç dakikalık huzursuzluk ve şiddetli ağlama atakları sonrasında kısa süreli sakinleşme dönemleri göstermektedir. Son dışkısında mukus ve kan karışımı fark edildiği, aralarda kusma olduğu öğreniliyor.",
-      "priorityFocus": "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu, İleoçekal invajinasyon açısından en güçlü ipucudur. Kanlı-mukuslu dışkı invajinasyon için klasik ipucudur eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, İnvajinasyonda paroksismal ağrı, hedef görünümü, redüksiyon yaklaşımı ve cerrahi uyarı bulguları bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu karar verdirici klinik ipucudur; invajinasyon en sık ileoçekal bölgede görülür."
     }
   },
   {
@@ -4561,16 +4557,16 @@ export const cases = [
       "profile": "5 haftalık erkek bebek · Çocuk acil",
       "presentation": "Beslenme sonrası fışkırır tarzda kusma",
       "riskContext": [
-        "Pediatrik güvenlik/yaş bağımlı risk"
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu düşündürür",
+        "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu",
         "Hipokloremi ve metabolik alkaloz mide asidi kaybını yansıtır",
         "Yaş aralığı klasik pilor stenozu dönemine uyar",
         "USG’de pilor kası kalınlığı ve kanal uzunluğu"
       ],
       "historySummary": "Beş haftalık erkek bebek son bir haftadır her beslenmeden kısa süre sonra safrasız ve fışkırır tarzda kusuyor. Kusma sonrasında tekrar emmek istediği, kilo alımının azaldığı ve bez sayısının düştüğü öğreniliyor.",
-      "priorityFocus": "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -4874,18 +4870,17 @@ export const cases = [
       "profile": "3 yaşında kız çocuk · Çocuk acil / pediatri servisi",
       "presentation": "Altı gündür düşmeyen ateş ve döküntü",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru",
-        "İlaç veya toksin maruziyeti",
-        "Enfeksiyon/temas öyküsü"
+        "Travma veya adli kayıt gerektiren olay",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Ateşin beş günü aşması Kawasaki için temel koşuldur",
-        "Nonpürülan konjonktivit ve çilek dili mukokutanöz inflamasyonu gösterir",
+        "Nonpürülan konjonktivit ve çilek dili mukokutanöz inflamasyonu",
         "El-ayak ödemi/deskuamasyon vaskülitik süreci destekler",
         "Koroner arter tutulumu erken tedavi gerektirir"
       ],
       "historySummary": "Üç yaşındaki çocuk, antibiyotik tedavisine rağmen devam eden yüksek ateş nedeniyle getiriliyor. Ateşe bilateral göz kızarıklığı, dudaklarda çatlama, gövdede döküntü ve el-ayaklarda şişlik eşlik ediyor.",
-      "priorityFocus": "Ateşin beş günü aşması Kawasaki için temel koşuldur, Kawasaki hastalığı açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Ateşin beş günü aşması Kawasaki için temel koşuldur akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -5145,16 +5140,16 @@ export const cases = [
       "profile": "6 yaşında erkek çocuk · Çocuk acil",
       "presentation": "Yutamama, salya akması ve solunum sıkıntısı",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Salya akması ve yutamama supraglottik obstrüksiyon lehinedir",
+        "Salya akması ve yutamama supraglottik obstrüksiyon",
         "Tripod pozisyonu hava yolu açıklığını koruma çabasıdır",
         "Toksik görünüm bakteriyel ağır enfeksiyonu destekler",
         "Boğaz muayenesi hava yolunu provoke edebileceği için dikkatle planlanmalıdır"
       ],
       "historySummary": "Aşıları eksik olduğu öğrenilen altı yaşındaki çocuk, ani başlayan yüksek ateş, şiddetli boğaz ağrısı, yutamama ve boğuk ses nedeniyle getiriliyor. Muayene sırasında öne eğilerek oturduğu ve salyasını yutamadığı izleniyor.",
-      "priorityFocus": "Salya akması ve yutamama supraglottik obstrüksiyon, Akut epiglottit açısından en güçlü ipucudur. Tripod pozisyonu hava yolu açıklığını koruma çabasıdır eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Akut epiglottitte havayolu güvenliği, lateral boyun grafisi ve muayene sırasında risk yönetimi bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Salya akması ve yutamama supraglottik obstrüksiyon karar verdirici klinik ipucudur; epiglottitte ajitasyon ve gereksiz manipülasyon obstrüksiyonu artırabilir."
     }
   },
   {
@@ -5440,16 +5435,16 @@ export const cases = [
       "profile": "24 yaşında erkek · Acil servis",
       "presentation": "Sağ alt kadran ağrısı ve iştahsızlık",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Sağ alt kadran ağrısı ve iştahsızlık",
         "McBurney noktasında hassasiyet saptanıyor",
         "Hemogram ve inflamasyon belirteçleri: Lökosit 15.400/mm³ saptandı",
-        "Kontrastlı abdomen BT: Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor"
+        "Kontrastlı abdomen BT: Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ"
       ],
       "historySummary": "Yirmi dört yaşındaki erkek hasta, 12 saat önce periumbilikal başlayan ağrının giderek sağ alt kadrana lokalize olduğunu ifade ediyor. Bulantı, iştahsızlık ve düşük dereceli ateş yakınmaları mevcut.",
-      "priorityFocus": "Başvuru yakınması: Sağ alt kadran ağrısı ve iştahsızlık, Akut apandisit açısından en güçlü ipucudur. McBurney noktasında hassasiyet saptanıyor eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Akut apandisitte ağrı migrasyonu, peritoneal irritasyon bulguları ve görüntüleme seçimi bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Başvuru yakınması: Sağ alt kadran ağrısı ve iştahsızlık karar verdirici klinik ipucudur; erken dönemde ağrı visseral; parietal periton irritasyonu gelişince sağ alt kadrana lokalizedir."
     }
   },
   {
@@ -5738,16 +5733,16 @@ export const cases = [
       "profile": "47 yaşında kadın · Acil servis",
       "presentation": "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı",
         "Sağ üst kadranda hassasiyet mevcut",
-        "Sağ üst kadran ultrasonografisi: Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı",
+        "Sağ üst kadran ultrasonografisi: Safra kesesinde taş, duvar kalınlaşması,",
         "Laboratuvar: Lökosit 14.800/mm³ saptandı"
       ],
       "historySummary": "Kırk yedi yaşındaki kadın hasta, 18 saattir devam eden sağ üst kadran ağrısı, bulantı ve ateş yakınmalarıyla başvuruyor. Daha önce kendiliğinden düzelen kısa süreli biliyer kolik atakları olduğu öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı, Akut taşlı kolesistit açısından en güçlü ipucudur. Sağ üst kadranda hassasiyet mevcut eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Akut taşlı kolesistitte biliyer kolikten ayrım, ultrasonografi bulguları ve erken kolesistektomi bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Başvuru yakınması: Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı karar verdirici klinik ipucudur; biliyer kolikte ağrı genellikle daha kısa sürer ve inflamasyon bulguları belirgin değildir."
     }
   },
   {
@@ -6021,16 +6016,16 @@ export const cases = [
       "profile": "63 yaşında erkek · Acil servis",
       "presentation": "Karında şişlik, kusma ve gaz-gaita çıkaramama",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Karında şişlik, kusma ve gaz-gaita çıkaramama",
         "Karında belirgin distansiyon mevcut",
-        "Ayakta direkt karın grafisi: Santral yerleşimli dilate ince bağırsak ansları ve çoklu hava-sıvı seviyeleri izleniyor",
-        "Kontrastlı abdomen BT: İnce bağırsakta geçiş noktası ve proksimal dilatasyon izleniyor"
+        "Ayakta direkt karın grafisi: Santral yerleşimli dilate ince bağırsak ansları",
+        "Kontrastlı abdomen BT: İnce bağırsakta geçiş noktası ve proksimal dilatasyon"
       ],
       "historySummary": "Daha önce kolon cerrahisi geçirmiş olan hasta, son 24 saattir kolik tarzda karın ağrısı, tekrarlayan kusma ve obstipasyon yakınmaları olduğunu ifade ediyor. Ateş veya belirgin dışkıda kan ifade etmiyor.",
-      "priorityFocus": "Başvuru yakınması: Karında şişlik, kusma ve gaz-gaita çıkaramama, Adezyona bağlı ince bağırsak obstrüksiyonu açısından en güçlü ipucudur. Karında belirgin distansiyon mevcut eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, İnce bağırsak obstrüksiyonunda adezyon öyküsü, hava-sıvı seviyeleri, strangülasyon bulguları ve bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Başvuru yakınması: Karında şişlik, kusma ve gaz-gaita çıkaramama karar verdirici klinik ipucudur; ateş, lökositozun belirgin artması, sürekli ağrı, peritonit veya laktat yüksekliği strangülasyon/iskemi."
     }
   },
   {
@@ -6304,16 +6299,16 @@ export const cases = [
       "profile": "57 yaşında erkek · Acil servis",
       "presentation": "Ani başlayan çok şiddetli epigastrik ağrı",
       "riskContext": [
-        "Acil servis bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Ani başlayan çok şiddetli epigastrik ağrı",
         "Hasta hareketsiz yatmayı tercih ediyor",
-        "Ayakta akciğer/abdomen grafisi: Diyafram altında serbest hava ile uyumlu görünüm izleniyor",
+        "Ayakta akciğer/abdomen grafisi: Diyafram altında serbest hava ile uyumlu",
         "Kontrastlı abdomen BT: Üst abdomende serbest hava ve sıvı"
       ],
       "historySummary": "NSAİİ kullanım öyküsü olan hasta, epigastriumda aniden başlayan ağrının kısa sürede tüm karna yayıldığını ifade ediyor. Ağrı hareketle ve öksürmekle artıyor; bulantı eşlik ediyor.",
-      "priorityFocus": "Başvuru yakınması: Ani başlayan çok şiddetli epigastrik ağrı, akut pankreatit tanısını destekler; biliyer etiyoloji varsa kolestaz bulguları ve USG birlikte değerlendirilir."
+      "priorityFocus": "Başvuru yakınması: Ani başlayan çok şiddetli epigastrik ağrı karar verdirici klinik ipucudur; serbest hava saptanması perforasyon açısından cerrahi aciliyeti."
     }
   },
   {
@@ -6571,16 +6566,16 @@ export const cases = [
       "profile": "68 yaşında kadın · Acil servis",
       "presentation": "Sol alt kadranda ağrı ve ateş",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Sol alt kadranda ağrı ve ateş",
         "Sol alt kadranda lokalize hassasiyet mevcut",
-        "Kontrastlı abdomen BT: Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon",
+        "Kontrastlı abdomen BT: Sigmoid kolonda divertiküller, segmental duvar",
         "Laboratuvar: Lökosit 13.900/mm³ saptandı"
       ],
       "historySummary": "Altmış sekiz yaşındaki kadın hasta iki gündür sol alt kadranda giderek artan ağrı, kabızlık ve düşük dereceli ateş olduğunu ifade ediyor. Daha önce kolonoskopide divertikülozis saptandığı öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Sol alt kadranda ağrı ve ateş, anatomik lokalizasyonu belirler; doğru cevap komşuluk, innervasyon veya damar-sinir ilişkisi üzerinden seçilir."
+      "priorityFocus": "Başvuru yakınması: Sol alt kadranda ağrı ve ateş karar verdirici klinik ipucudur; bT hem tanıyı destekler hem de apse/perforasyon gibi komplikasyonları ayırt eder."
     }
   },
   {
@@ -6842,18 +6837,18 @@ export const cases = [
       "profile": "23 yaşında uzun boylu zayıf erkek · Acil servis",
       "presentation": "Ani sağ göğüs ağrısı ve nefes darlığı",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru",
-        "Enfeksiyon/temas öyküsü",
-        "Vasküler/iskemik risk bağlamı"
+        "Aterosklerotik risk zemini",
+        "Travma veya adli kayıt gerektiren olay",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Ani sağ göğüs ağrısı ve nefes darlığı",
         "Sağ hemitoraksta solunum sesleri belirgin azalmış",
-        "Akciğer grafisi: Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan",
+        "Akciğer grafisi: Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde",
         "Kan gazı: pH 7.43 saptandı"
       ],
       "historySummary": "Uzun boylu ve zayıf yapılı 23 yaşındaki erkek hasta, istirahat sırasında aniden başlayan batıcı sağ göğüs ağrısı ve nefes darlığı nedeniyle başvuruyor. Travma, ateş veya balgam öyküsü yoktur.",
-      "priorityFocus": "Başvuru yakınması: Ani sağ göğüs ağrısı ve nefes darlığı, aktif tüberküloz lehinedir; izolasyon ve mikrobiyolojik doğrulama tedavi planıyla birlikte yürütülür."
+      "priorityFocus": "Başvuru yakınması: Ani sağ göğüs ağrısı ve nefes darlığı aktif tüberküloz olasılığını artırır; hava yolu izolasyonu ve mikrobiyolojik doğrulama birlikte planlanır."
     }
   },
   {
@@ -7126,16 +7121,16 @@ export const cases = [
       "profile": "36 yaşında kadın · Acil servis",
       "presentation": "Ani nefes darlığı ve batıcı göğüs ağrısı",
       "riskContext": [
-        "Vasküler/iskemik risk bağlamı"
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Ani nefes darlığı ve batıcı göğüs ağrısı",
         "Taşikardi mevcut",
-        "BT pulmoner anjiyografi: Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor",
+        "BT pulmoner anjiyografi: Sağ alt lob segmental pulmoner arter dalında kontrast",
         "D-dimer: D-dimer 2.400 ng/mL FEU saptandı"
       ],
       "historySummary": "Otuz altı yaşındaki kadın hasta, iki gün önce uzun süreli uçuş yaptığını ve oral kontraseptif kullandığını belirtiyor. Ani başlayan nefes darlığına sağ yan ağrısı, çarpıntı ve sağ baldırda ağrı-şişlik eşlik ediyor.",
-      "priorityFocus": "Başvuru yakınması: Ani nefes darlığı ve batıcı göğüs ağrısı, pulmoner emboli olasılığını yükseltir; hemodinamik durum tanı ve reperfüzyon kararını belirler."
+      "priorityFocus": "Başvuru yakınması: Ani nefes darlığı ve batıcı göğüs ağrısı pulmoner emboli olasılığını yükseltir; hemodinamik durum tanı ve reperfüzyon kararını belirler."
     }
   },
   {
@@ -7404,17 +7399,16 @@ export const cases = [
       "profile": "67 yaşında erkek · Acil servis",
       "presentation": "Öksürük, ateş ve nefes almakla artan yan ağrısı",
       "riskContext": [
-        "İlaç veya toksin maruziyeti",
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Öksürük, ateş ve nefes almakla artan yan ağrısı",
         "Sağ alt zonda inspiratuvar raller duyuluyor",
-        "Akciğer grafisi: Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı izleniyor",
+        "Akciğer grafisi: Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı",
         "Laboratuvar: Lökosit 16.700/mm³ saptandı"
       ],
       "historySummary": "KOAH öyküsü olan 67 yaşındaki erkek hasta, üç gündür ateş, titreme, pürülan balgam ve sağ yan ağrısı olduğunu ifade ediyor. Yakın zamanda hastane yatışı veya antibiyotik kullanımı olmadığı öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Öksürük, ateş ve nefes almakla artan yan ağrısı, aktif tüberküloz lehinedir; izolasyon ve mikrobiyolojik doğrulama tedavi planıyla birlikte yürütülür."
+      "priorityFocus": "Başvuru yakınması: Öksürük, ateş ve nefes almakla artan yan ağrısı aktif tüberküloz olasılığını artırır; hava yolu izolasyonu ve mikrobiyolojik doğrulama birlikte planlanır."
     }
   },
   {
@@ -7688,16 +7682,16 @@ export const cases = [
       "profile": "69 yaşında erkek · Göğüs hastalıkları polikliniği",
       "presentation": "Aylar içinde artan efor dispnesi ve kuru öksürük",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Aylar içinde artan efor dispnesi ve kuru öksürük",
         "Bilateral bazal inspiratuvar ince Velcro tipi raller duyuluyor",
-        "Yüksek çözünürlüklü toraks BT: Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği",
+        "Yüksek çözünürlüklü toraks BT: Bazal ve subplevral ağırlıklı retikülasyon,",
         "Solunum fonksiyon testi: FVC %62 beklenen saptandı"
       ],
       "historySummary": "Altmış dokuz yaşındaki erkek hasta, son bir yılda merdiven çıkarken belirginleşen nefes darlığı ve kuru öksürük yakınmaları olduğunu ifade ediyor. Bağ dokusu hastalığını düşündüren eklem şişliği, Raynaud fenomeni veya belirgin çevresel maruziyet ifade etmiyor.",
-      "priorityFocus": "Başvuru yakınması: Aylar içinde artan efor dispnesi ve kuru öksürük, pulmoner emboli olasılığını yükseltir; hemodinamik durum tanı ve reperfüzyon kararını belirler."
+      "priorityFocus": "Başvuru yakınması: Aylar içinde artan efor dispnesi ve kuru öksürük karar verdirici klinik ipucudur; uIP paterni; subplevral-bazal retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterizedir."
     }
   },
   {
@@ -7988,17 +7982,17 @@ export const cases = [
       "profile": "66 yaşında erkek · Acil servis",
       "presentation": "Artan nefes darlığı ve balgam miktarı",
       "riskContext": [
-        "Sigara maruziyeti",
-        "Enfeksiyon/temas öyküsü"
+        "Aterosklerotik risk zemini",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Artan nefes darlığı ve balgam miktarı",
         "Yaygın ekspiratuvar ronküs ve wheezing duyuluyor",
         "Arter kan gazı: pH 7.31 saptandı",
-        "Akciğer grafisi: Hiperinflasyon bulguları izleniyor; belirgin yeni lobar konsolidasyon saptanmıyor"
+        "Akciğer grafisi: Hiperinflasyon bulguları izleniyor"
       ],
       "historySummary": "Ağır sigara öyküsü ve KOAH tanısı olan hasta, üç gündür dispnesinin arttığını, balgam miktarı ve pürülansında belirgin artış olduğunu ifade ediyor. Evde kullandığı inhaler tedaviyle rahatlamadığı öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Artan nefes darlığı ve balgam miktarı, aktif tüberküloz lehinedir; izolasyon ve mikrobiyolojik doğrulama tedavi planıyla birlikte yürütülür."
+      "priorityFocus": "Başvuru yakınması: Artan nefes darlığı ve balgam miktarı aktif tüberküloz olasılığını artırır; hava yolu izolasyonu ve mikrobiyolojik doğrulama birlikte planlanır."
     }
   },
   {
@@ -8260,16 +8254,16 @@ export const cases = [
       "profile": "44 yaşında erkek · Enfeksiyon hastalıkları / Acil",
       "presentation": "Üç haftadan uzun süren öksürük ve kilo kaybı",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Üç haftadan uzun süren öksürük ve kilo kaybı",
         "Kaşektik görünüm ve hafif ateş mevcut",
-        "Akciğer grafisi: Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu görünüm izleniyor",
-        "Balgam ARB ve moleküler inceleme: Balgam yaymasında aside dirençli basil görülüyor"
+        "Akciğer grafisi: Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu",
+        "Balgam ARB ve moleküler inceleme: Balgam yaymasında aside dirençli basil"
       ],
       "historySummary": "Kırk dört yaşındaki erkek hasta, gece terlemesi, iştahsızlık, 6 kg kilo kaybı ve aralıklı hemoptizi yakınmaları olduğunu ifade ediyor. Kalabalık yaşam koşulu ve daha önce tedavi almamış tüberküloz temas öyküsü bulunuyor.",
-      "priorityFocus": "Başvuru yakınması: Üç haftadan uzun süren öksürük ve kilo kaybı, aktif tüberküloz lehinedir; izolasyon ve mikrobiyolojik doğrulama tedavi planıyla birlikte yürütülür."
+      "priorityFocus": "Başvuru yakınması: Üç haftadan uzun süren öksürük ve kilo kaybı aktif tüberküloz olasılığını artırır; hava yolu izolasyonu ve mikrobiyolojik doğrulama birlikte planlanır."
     }
   },
   {
@@ -8558,16 +8552,17 @@ export const cases = [
       "profile": "32 yaşında erkek · Acil servis / Enfeksiyon",
       "presentation": "Titreme ile yükselen ateş ve yaygın halsizlik",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı",
+        "Endemik bölge veya vektör maruziyeti"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Titreme ile yükselen ateş ve yaygın halsizlik",
         "Ateş yüksekliği ve belirgin halsizlik izleniyor",
-        "Kalın damla ve ince yayma: Eritrositler içinde halka formları ve yüksek parazitemi izleniyor",
+        "Kalın damla ve ince yayma: Eritrositler içinde halka formları ve yüksek",
         "Laboratuvar: Trombosit 62.000/mm³ saptandı"
       ],
       "historySummary": "Otuz iki yaşındaki erkek hasta iki hafta önce Batı Afrika’dan döndüğünü ve kemoprofilaksi kullanmadığını belirtiyor. Ateş ataklarına baş ağrısı, miyalji, bulantı ve koyu renkli idrar eşlik ediyor.",
-      "priorityFocus": "Başvuru yakınması: Titreme ile yükselen ateş ve yaygın halsizlik, falciparum sıtması açısından ayırt ettiricidir; yüksek parazitemi ve trombositopeni ağır hastalık riskini artırır."
+      "priorityFocus": "Başvuru yakınması: Titreme ile yükselen ateş ve yaygın halsizlik karar verdirici klinik ipucudur; falciparum sıtması hızla ağır hastalığa ilerleyebilir; tedavi geciktirilmemelidir."
     }
   },
   {
@@ -8849,16 +8844,16 @@ export const cases = [
       "profile": "18 yaşında üniversite öğrencisi · Acil servis",
       "presentation": "Yüksek ateş, şiddetli baş ağrısı ve döküntü",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Yüksek ateş, şiddetli baş ağrısı ve döküntü",
         "Ense sertliği ve fotofobi mevcut",
         "BOS incelemesi: Açılış basıncı Yüksek saptandı",
-        "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor"
+        "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar"
       ],
       "historySummary": "Yakın temaslıları olduğu öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Yüksek ateş, şiddetli baş ağrısı ve döküntü, bakteriyel menenjit/meningokoksemi açısından acil uyarıdır; kültür alınsa da antibiyotik tedavisi geciktirilmez."
+      "priorityFocus": "Başvuru yakınması: Yüksek ateş, şiddetli baş ağrısı ve döküntü bakteriyel menenjit/meningokoksemi açısından acil uyarıdır; antibiyotik kültür için gereksiz geciktirilmez."
     }
   },
   {
@@ -9131,17 +9126,17 @@ export const cases = [
       "profile": "38 yaşında erkek · Enfeksiyon hastalıkları servisi",
       "presentation": "İki haftadır ateş, halsizlik ve gece terlemesi",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü",
-        "Vasküler/iskemik risk bağlamı"
+        "Aterosklerotik risk zemini",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: İki haftadır ateş, halsizlik ve gece terlemesi",
         "Ateş yüksekliği mevcut",
-        "Kan kültürleri: Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor",
-        "Transtorasik/Transözofageal ekokardiyografi: Triküspit kapakta hareketli vejetasyon ile uyumlu kitle izleniyor"
+        "Kan kültürleri: Farklı venlerden alınan üç kan kültüründe metisiline duyarlı",
+        "Transtorasik/Transözofageal ekokardiyografi: Triküspit kapakta hareketli"
       ],
       "historySummary": "İntravenöz madde kullanımı öyküsü olan hasta, ateş, gece terlemesi, iştahsızlık ve son günlerde gelişen nefes darlığı yakınmalarıyla başvuruyor. Göğüs ağrısı ve öksürük de ifade ediyor.",
-      "priorityFocus": "Başvuru yakınması: İki haftadır ateş, halsizlik ve gece terlemesi, pulmoner emboli olasılığını yükseltir; hemodinamik durum tanı ve reperfüzyon kararını belirler."
+      "priorityFocus": "Başvuru yakınması: İki haftadır ateş, halsizlik ve gece terlemesi pulmoner emboli olasılığını yükseltir; hemodinamik durum tanı ve reperfüzyon kararını belirler."
     }
   },
   {
@@ -9390,16 +9385,16 @@ export const cases = [
       "profile": "67 yaşında kadın · Acil servis",
       "presentation": "Düşme sonrası el bileğinde ağrı ve şekil bozukluğu",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Düşme sonrası el bileğinde ağrı ve şekil bozukluğu",
         "El bileği distal radius düzeyinde şiş ve hassas",
-        "El bileği direkt grafisi: Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman ile uyumlu",
-        "Nörovasküler değerlendirme: Redüksiyon öncesi ve sonrası median sinir fonksiyonu, kapiller dolum ve radial/ulnar"
+        "El bileği direkt grafisi: Distal radius metafizinde kırık hattı, dorsal",
+        "Nörovasküler değerlendirme: Redüksiyon öncesi ve sonrası median sinir"
       ],
       "historySummary": "Osteoporoz öyküsü olan 67 yaşındaki kadın hasta, avuç içi yere bakacak şekilde açık el üzerine düştükten sonra el bileğinde ağrı, şişlik ve şekil bozukluğu geliştiğini ifade ediyor.",
-      "priorityFocus": "Başvuru yakınması: Düşme sonrası el bileğinde ağrı ve şekil bozukluğu, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Başvuru yakınması: Düşme sonrası el bileğinde ağrı ve şekil bozukluğu karar verdirici klinik ipucudur; smith kırığında distal fragman volar yöne deplase olur."
     }
   },
   {
@@ -9654,17 +9649,17 @@ export const cases = [
       "profile": "78 yaşında kadın · Acil servis",
       "presentation": "Kalça ağrısı ve yürüyememe",
       "riskContext": [
-        "Hipertansiyon öyküsü",
-        "Travma/yaralanma sonrası başvuru"
+        "Kontrolsüz hipertansiyon / vasküler stres",
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Kalça ağrısı ve yürüyememe",
         "Etkilenen ekstremite kısa ve dış rotasyonda duruyor",
-        "Pelvis ve kalça direkt grafisi: Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu",
+        "Pelvis ve kalça direkt grafisi: Femur boynu subkapital bölgesinde",
         "Preoperatif laboratuvar: Hemoglobin 11.2 g/dL saptandı"
       ],
       "historySummary": "Yetmiş sekiz yaşındaki kadın hasta, ev içinde düşük enerjili düşme sonrasında ayağa kalkamadığını ve kalça ağrısının belirgin olduğunu ifade ediyor. Osteoporoz ve hipertansiyon öyküsü mevcut.",
-      "priorityFocus": "Başvuru yakınması: Kalça ağrısı ve yürüyememe, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Başvuru yakınması: Kalça ağrısı ve yürüyememe karar verdirici klinik ipucudur; femur boyun kırıkları intrakapsüler olduğu için femur başı kanlanması açısından risklidir."
     }
   },
   {
@@ -9896,16 +9891,16 @@ export const cases = [
       "profile": "26 yaşında erkek · Acil servis",
       "presentation": "Düşme sonrası radial taraflı el bileği ağrısı",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Düşme sonrası radial taraflı el bileği ağrısı",
         "Anatomik enfiye çukurunda belirgin hassasiyet mevcut",
         "Skafoid grafileri: İlk grafilerde kırık hattı seçilemeyebilir",
-        "El bileği MR: Klinik şüphe yüksekse erken dönemde okült skafoid kırığını göstermek için kullanılabilir"
+        "El bileği MR: Klinik şüphe yüksekse erken dönemde okült skafoid kırığını"
       ],
       "historySummary": "Yirmi altı yaşındaki erkek hasta, kaykaydan açık el üzerine düştükten sonra el bileğinin radial tarafında ağrı geliştiğini ifade ediyor. İlk başvuru grafisinde belirgin kırık hattı izlenmediği halde ağrısı devam ediyor.",
-      "priorityFocus": "Başvuru yakınması: Düşme sonrası radial taraflı el bileği ağrısı, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Başvuru yakınması: Düşme sonrası radial taraflı el bileği ağrısı karar verdirici klinik ipucudur; skafoidin proksimal kutbu retrograd kanlandığı için avasküler nekroz riski taşır."
     }
   },
   {
@@ -10160,16 +10155,16 @@ export const cases = [
       "profile": "21 yaşında erkek · Acil servis",
       "presentation": "Omuzda şiddetli ağrı ve hareket ettirememe",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
         "Başvuru yakınması: Omuzda şiddetli ağrı ve hareket ettirememe",
         "Omuz konturu düzleşmiş, deltoid kabarıklığı kaybolmuş",
-        "Omuz direkt grafisi: Humerus başı glenoid kaviteye göre anterior-inferior yer değiştirmiştir",
-        "Nörovasküler muayene: Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal dolaşım redüksiyon öncesi ve sonrası"
+        "Omuz direkt grafisi: Humerus başı glenoid kaviteye göre anterior-inferior yer",
+        "Nörovasküler muayene: Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal"
       ],
       "historySummary": "Yirmi bir yaşındaki erkek hasta, basketbol oynarken kolu abduksiyon ve dış rotasyondayken düşmesi sonrası omuzunda ani ağrı ve hareket kısıtlılığı geliştiğini ifade ediyor.",
-      "priorityFocus": "Başvuru yakınması: Omuzda şiddetli ağrı ve hareket ettirememe, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Başvuru yakınması: Omuzda şiddetli ağrı ve hareket ettirememe karar verdirici klinik ipucudur; anterior omuz çıkığında aksiller sinir yaralanması özellikle sorgulanmalıdır."
     }
   },
   {
@@ -10498,8 +10493,8 @@ export const cases = [
       "profile": "28 yaş erkek, elektrik teknisyeni · Acil servis - iş kazası sonrası ilk değerlendirme",
       "presentation": "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru",
-        "Enfeksiyon/temas öyküsü"
+        "Travma veya adli kayıt gerektiren olay",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Alternatif akım ile elini kaynaktan ayıramama",
@@ -10508,7 +10503,7 @@ export const cases = [
         "EKG'de ventriküler erken vurular"
       ],
       "historySummary": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tarifler. Nemli zemin öyküsü cilt direncinin azalmasına, el-gövde hattındaki temas ise transtorasik akım geçişi ve ventriküler aritmi riskine işaret eder.",
-      "priorityFocus": "Alternatif akım ile elini kaynaktan ayıramama, Elektrik çarpmasına bağlı ventriküler aritmi riski açısından en güçlü ipucudur. Nemli zemin ile cilt direncinin azalması eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Alternatif akım, transtorasik akım, VF, OED, yanık ve nörolojik hasar bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Alternatif akım ile elini kaynaktan ayıramama karar verdirici klinik ipucudur; transtorasik akım vertikal akımdan daha ölümcül olabilir."
     }
   },
   {
@@ -10813,7 +10808,7 @@ export const cases = [
       "profile": "19 yaş erkek, açık alanda futbol oynarken etkilenmiş · Acil servis - fırtına sonrası çoklu yaralanma",
       "presentation": "Bilinç kaybı, geçici solunum durması ve deri lezyonları",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
         "Fırtına sırasında açık alanda maruziyet",
@@ -10822,7 +10817,7 @@ export const cases = [
         "Solunum sayısında düşüklük ve hipoksemi"
       ],
       "historySummary": "Fırtına sırasında açık alanda bulunan hasta yıldırım düşmesi sonrası yere yığılmıştır. İlk müdahale ekibi birkaç dakika solunumun yüzeyelleştiğini, ardından spontan solunumun döndüğünü bildirir. Gövdede ağ şeklinde eritematöz Lichtenberg benzeri izler ve yüzeyel yanıklar vardır.",
-      "priorityFocus": "Fırtına sırasında açık alanda maruziyet, anatomik lokalizasyonu belirler; doğru cevap komşuluk, innervasyon veya damar-sinir ilişkisi üzerinden seçilir."
+      "priorityFocus": "Fırtına sırasında açık alanda maruziyet karar verdirici klinik ipucudur; miyokard enfarktüsü şıkkı güçlü çeldirici olabilir; asıl mekanizma primer elektriksel/solunumsal etkidir."
     }
   },
   {
@@ -11119,8 +11114,7 @@ export const cases = [
       "profile": "12 günlük kız bebek · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Anne sütü sonrası kusma, sarılık ve emmeme",
       "riskContext": [
-        "Yenidoğan/metabolik hastalık bağlamı",
-        "Pediatrik güvenlik/yaş bağımlı risk"
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
         "Olgu bulguları Klasik galaktozemi ile uyumlu",
@@ -11129,7 +11123,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Doğumdan sonra ilk günlerde iyi olan bebek, süt alımı arttıkça kusma, letarji, uzamış sarılık ve kilo alamama ile başvurur. Katarakt şüphesi ve hepatomegali vardır. Klinik zamanlama, galaktoz içeren süt alımı sonrası toksik metabolit birikimini düşündürür.",
-      "priorityFocus": "Olgu bulguları Klasik galaktozemi ile uyumlu, kalıtsal/metabolik hastalık için karar verdiricidir; özgül klinik ipucu ve metabolit paterni çeldiricileri ayırır."
+      "priorityFocus": "Olgu bulguları Klasik galaktozemi ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -11420,7 +11414,8 @@ export const cases = [
       "profile": "10 aylık erkek bebek · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Meyve püresi sonrası kusma, terleme ve letarji",
       "riskContext": [
-        "Pediatrik güvenlik/yaş bağımlı risk"
+        "Diyabet veya metabolik dekompansasyon riski",
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
         "Olgu bulguları Herediter fruktoz intoleransı ile uyumlu",
@@ -11429,7 +11424,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Ek gıdaya geçişten sonra özellikle meyve suyu, meyve püresi ve tatlı gıdalarla kusma, solukluk, terleme ve uykuya meyil gelişmektedir. Anne, çocuğun tatlı gıdalardan kaçındığını fark etmiştir. Bu zamanlama fruktoz/sükroz/sorbitol alımıyla tetiklenen metabolik bloğu düşündürür.",
-      "priorityFocus": "Olgu bulguları Herediter fruktoz intoleransı ile uyumlu, kalıtsal/metabolik hastalık için karar verdiricidir; özgül klinik ipucu ve metabolit paterni çeldiricileri ayırır."
+      "priorityFocus": "Olgu bulguları Herediter fruktoz intoleransı ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -11732,7 +11727,8 @@ export const cases = [
       "profile": "2 yaş erkek çocuk · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "3-4 saat açlık sonrası terleme, nöbet ve karın şişliği",
       "riskContext": [
-        "Pediatrik güvenlik/yaş bağımlı risk"
+        "Diyabet veya metabolik dekompansasyon riski",
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
         "Olgu bulguları Glikojen depo hastalığı Tip Ia — Von Gierke ile uyumlu",
@@ -11741,7 +11737,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Çocuk sabahları beslenme geciktiğinde terleme, irritabilite ve bazen nöbet geçirmektedir. Muayenede hepatomegali ve dolgun yanaklı “taş bebek yüzü” görünümü vardır. Açlık hipoglisemisi, hepatomegali, laktik asidoz ve hiperlipemi birlikte karaciğer tipi glikojen depo hastalığını düşündürür.",
-      "priorityFocus": "Olgu bulguları Glikojen depo hastalığı Tip Ia — Von Gierke ile uyumlu, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "Olgu bulguları Glikojen depo hastalığı Tip Ia — Von Gierke ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -12032,8 +12028,7 @@ export const cases = [
       "profile": "4 aylık kız bebek · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Gelişim geriliği, nöbet ve idrarda küf/küfemsi koku",
       "riskContext": [
-        "Yenidoğan/metabolik hastalık bağlamı",
-        "Pediatrik güvenlik/yaş bağımlı risk"
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
         "Olgu bulguları Fenilketonüri ile uyumlu",
@@ -12042,7 +12037,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Aile bebeğin giderek daha huzursuz olduğunu, baş kontrolünün zayıf kaldığını ve bezinde küf benzeri koku fark ettiğini söyler. Açık ten, nöbet öyküsü ve gelişimsel gecikme fenilalanin metabolizması bozukluğu açısından yüksek klinik şüphe oluşturur.",
-      "priorityFocus": "Olgu bulguları Fenilketonüri ile uyumlu, kalıtsal/metabolik hastalık için karar verdiricidir; özgül klinik ipucu ve metabolit paterni çeldiricileri ayırır."
+      "priorityFocus": "Olgu bulguları Fenilketonüri ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -12345,7 +12340,7 @@ export const cases = [
       "profile": "8 günlük yenidoğan · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Beslenememe, letarji, tiz ağlama ve idrarda tatlı koku",
       "riskContext": [
-        "Yenidoğan/metabolik hastalık bağlamı"
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
         "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu",
@@ -12354,7 +12349,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Yenidoğan ilk günlerde normal görünmüş, ardından beslenme güçlüğü, kusma, letarji ve nörolojik kötüleşme gelişmiştir. İdrarda akçaağaç şurubu benzeri tatlı koku tariflenir. Erken dönemde nörotoksik dallı zincirli aminoasit birikimi akla gelir.",
-      "priorityFocus": "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -12633,7 +12628,7 @@ export const cases = [
       "profile": "35 yaş erkek · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Bel ağrısı, büyük eklem ağrısı ve bekleyince siyahlaşan idrar",
       "riskContext": [
-        "Pediatri/metabolizma polikliniği veya acil başvuru bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
         "Olgu bulguları Alkaptonüri ile uyumlu",
@@ -12642,7 +12637,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hasta yıllardır idrarının beklediğinde koyulaştığını, son yıllarda bel ve diz ağrılarının arttığını belirtir. Kulak kıkırdağında koyu pigmentasyon vardır. Bu klinik, tirozin katabolizması ara ürünü homogentisik asit birikimiyle uyumludur.",
-      "priorityFocus": "Olgu bulguları Alkaptonüri ile uyumlu, kalıtsal/metabolik hastalık için karar verdiricidir; özgül klinik ipucu ve metabolit paterni çeldiricileri ayırır."
+      "priorityFocus": "Olgu bulguları Alkaptonüri ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -12913,7 +12908,7 @@ export const cases = [
       "profile": "6 yaş kız çocuk · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Güneşte yanma, açık renk saç-cilt ve görme sorunları",
       "riskContext": [
-        "Pediatri/metabolizma polikliniği veya acil başvuru bağlamında değerlendirme"
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
         "Olgu bulguları Okülokütanöz albinizm ile uyumlu",
@@ -12922,7 +12917,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Çocukta doğumdan beri cilt ve saç renginin belirgin açık olduğu, parlak ışıkta gözlerini kıstığı ve okulda tahtayı görmekte zorlandığı belirtilir. Nistagmus ve iris transillüminasyonu saptanır. Melanin sentezindeki bozukluk albinizm lehinedir.",
-      "priorityFocus": "Olgu bulguları Okülokütanöz albinizm ile uyumlu, Okülokütanöz albinizm açısından en güçlü ipucudur. Biyokimya çoğunlukla normal eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Tirozinaz/melanin sentezi, pigmentasyon azlığı, göz bulguları bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Olgu bulguları Okülokütanöz albinizm ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -13251,7 +13246,7 @@ export const cases = [
       "profile": "14 yaş erkek · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Görme bozukluğu, uzun boy-ince yapı ve bacakta şişlik",
       "riskContext": [
-        "Vasküler/iskemik risk bağlamı"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
         "Olgu bulguları Homosistinüri ile uyumlu",
@@ -13260,7 +13255,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hasta uzun boylu ve ince yapılıdır; göz muayenesinde lens subluksasyonu saptanır. Sol bacakta ağrılı şişlik ile derin ven trombozu düşünülür. Bu kombinasyon homosistein artışı ve bağ dokusu/koagülasyon etkilenimini düşündürür.",
-      "priorityFocus": "Olgu bulguları Homosistinüri ile uyumlu, kalıtsal/metabolik hastalık için karar verdiricidir; özgül klinik ipucu ve metabolit paterni çeldiricileri ayırır."
+      "priorityFocus": "Olgu bulguları Homosistinüri ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -13506,7 +13501,7 @@ export const cases = [
       "profile": "47 yaş erkek, kronik alkol kullanımı ve kötü beslenme · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Güneş gören alanlarda dermatit, ishal ve unutkanlık",
       "riskContext": [
-        "Pediatri/metabolizma polikliniği veya acil başvuru bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
         "Olgu bulguları Niasin eksikliği — Pellagra ile uyumlu",
@@ -13515,7 +13510,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hasta son aylarda çoğunlukla mısır ve karbonhidrat ağırlıklı beslendiğini; et, balık, yumurta ve süt ürünlerini çok az tükettiğini belirtir. Kronik ishal atakları nedeniyle kilo kaybı, halsizlik ve iştahsızlık gelişmiştir. Güneş gören alanlarda simetrik dermatit, oral mukozada glossit, kronik diyare ve bilişsel yavaşlama birlikte niasin eksikliğini düşündürür.",
-      "priorityFocus": "Olgu bulguları Niasin eksikliği — Pellagra ile uyumlu, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "Olgu bulguları Niasin eksikliği — Pellagra ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -13749,7 +13744,7 @@ export const cases = [
       "profile": "62 yaş erkek, yalnız yaşıyor, taze sebze-meyve almıyor · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Diş eti kanaması, morarma ve halsizlik",
       "riskContext": [
-        "Pediatri/metabolizma polikliniği veya acil başvuru bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
         "Olgu bulguları Vitamin C eksikliği — Skorbüt ile uyumlu",
@@ -13758,7 +13753,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama paterni C vitamini eksikliğini düşündürür.",
-      "priorityFocus": "Olgu bulguları Vitamin C eksikliği — Skorbüt ile uyumlu, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "Olgu bulguları Vitamin C eksikliği — Skorbüt ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -14049,7 +14044,7 @@ export const cases = [
       "profile": "52 yaş erkek · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Halsizlik, ciltte koyulaşma, diyabet ve karaciğer enzim yüksekliği",
       "riskContext": [
-        "Diyabet öyküsü"
+        "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
         "Olgu bulguları Hemokromatozis ile uyumlu",
@@ -14058,7 +14053,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hastada uzun süredir halsizlik, eklem ağrısı, yeni tanı diyabet ve bronz renkli cilt görünümü vardır. Ferritin ve transferrin satürasyonu yüksek bulunur. Demir metabolizmasında aşırı birikim çoklu organ hasarı yapmaktadır.",
-      "priorityFocus": "Olgu bulguları Hemokromatozis ile uyumlu, Hemokromatozis açısından en güçlü ipucudur. Ferritin yüksek, transferrin satürasyonu yüksek, AST/ALT yüksek eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Demir yüklenmesi, ferritin/transferrin satürasyonu, karaciğer-pankreas-kalp tutulumları bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Olgu bulguları Hemokromatozis ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -14324,17 +14319,17 @@ export const cases = [
       "profile": "17 yaş kız · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Aşil tendonunda şişlik ve ailede erken MI öyküsü",
       "riskContext": [
-        "Aile öyküsü/genetik yatkınlık",
-        "Vasküler/iskemik risk bağlamı"
+        "Aterosklerotik risk zemini",
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile uyumlu",
+        "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile",
         "Total kolesterol 360 mg/dL, LDL 285 mg/dL, TG normal",
         "LDL reseptör/ApoB/PCSK9 yolu değerlendirildi",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Genç hastada Aşil tendon ksantomları, total kolesterol ve LDL'de belirgin yükseklik ve babada 38 yaşında MI öyküsü vardır. Trigliserid normal sınırlardadır. Bu profil LDL temizlenme kusurunu düşündürür.",
-      "priorityFocus": "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile uyumlu, Ailesel hiperkolesterolemi açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -14599,7 +14594,7 @@ export const cases = [
       "profile": "12 yaş erkek · Pediatri/metabolizma polikliniği veya acil başvuru",
       "presentation": "Büyümüş turuncu tonsiller ve periferik nöropati",
       "riskContext": [
-        "Pediatri/metabolizma polikliniği veya acil başvuru bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
         "Olgu bulguları Tangier hastalığı ile uyumlu",
@@ -14608,7 +14603,7 @@ export const cases = [
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Çocukta belirgin turuncu tonsiller, hepatosplenomegali ve aralıklı ekstremite uyuşması vardır. Lipid profilinde HDL çok düşük, ApoA-I azalmış bulunur. Kolesterolün hücre dışına taşınmasında görevli ABCA1 defekti düşünülür.",
-      "priorityFocus": "Olgu bulguları Tangier hastalığı ile uyumlu, Tangier hastalığı açısından en güçlü ipucudur. HDL <5 mg/dL, ApoA-I düşük, LDL düşük/normal eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, ABCA1 defekti, HDL düşüklüğü, kolesterol efflux bozukluğu bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Olgu bulguları Tangier hastalığı ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -14909,7 +14904,7 @@ export const cases = [
       "profile": "34 yaş erkek, endüstriyel radyografi çalışanı · Acil servis - radyasyon kazası sonrası",
       "presentation": "Maruziyetten saatler sonra bulantı, kusma, ishal ve ciltte eritem",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
         "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet",
@@ -14918,7 +14913,7 @@ export const cases = [
         "Lenfosit düşüşü"
       ],
       "historySummary": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan yaklaşık 2 saat sonra bulantı, kusma, baş ağrısı, halsizlik ve yaygın yanma hissi geliştiğini ifade eder. Olaydan sonra kısa bir iyilik dönemi olsa da sağ elde lokal eritem ortaya çıkmış ve seri tam kan sayımlarında lenfosit düşüşü başlamıştır. Semptomların kısa sürede başlaması ve erken lenfopeni yüksek doz iyonizan radyasyon maruziyetini düşündürür.",
-      "priorityFocus": "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet, anatomik lokalizasyonu belirler; doğru cevap komşuluk, innervasyon veya damar-sinir ilişkisi üzerinden seçilir."
+      "priorityFocus": "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet karar verdirici klinik ipucudur; geçici iyilik dönemi ARS'yi dışlamaz."
     }
   },
   {
@@ -15228,7 +15223,7 @@ export const cases = [
       "profile": "22 yaş erkek · Acil servis",
       "presentation": "Bakla yedikten sonra koyu idrar, halsizlik ve sararma",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Bakla tüketiminden sonra semptom başlaması",
@@ -15237,7 +15232,7 @@ export const cases = [
         "Heinz cisimciği ve bite cell görülmesi"
       ],
       "historySummary": "Daha önce sağlıklı olan hasta, bakla tüketiminden 24 saat sonra halsizlik, bel ağrısı, sarılık ve çay renginde idrar yakınmalarıyla başvurur. Ateşi yoktur; enfeksiyon odağı saptanmaz. Oksidatif tetikleyici sonrası ani hemoliz ve periferik yayma bulguları G6PD eksikliğiyle uyumludur.",
-      "priorityFocus": "Bakla tüketiminden sonra semptom başlaması, G6PD eksikliğine bağlı akut hemolitik kriz açısından en güçlü ipucudur. Koyu idrar ve sarılık eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Oksidatif stres altında eritrosit hasarı, G6PD eksikliği ve akut hemoliz bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Bakla tüketiminden sonra semptom başlaması karar verdirici klinik ipucudur; sulfonamid, antimalaryal ve bakla atağı tetikleyebilir."
     }
   },
   {
@@ -15537,7 +15532,7 @@ export const cases = [
       "profile": "55 yaş erkek · Acil servis - göğüs ağrısı",
       "presentation": "1 saattir süren baskı tarzı göğüs ağrısı",
       "riskContext": [
-        "Vasküler/iskemik risk bağlamı"
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
         "Şiddetli göğüs ağrısı",
@@ -15546,7 +15541,7 @@ export const cases = [
         "Troponin yüksekliği"
       ],
       "historySummary": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz paternini düşündüren klasik bir bulgu paterni oluşturur.",
-      "priorityFocus": "Şiddetli göğüs ağrısı, anatomik lokalizasyonu belirler; doğru cevap komşuluk, innervasyon veya damar-sinir ilişkisi üzerinden seçilir."
+      "priorityFocus": "Şiddetli göğüs ağrısı karar verdirici klinik ipucudur; patoloji cevabı tedavi cevabından ayrıdır: tanı/tedavi PCI; morfolojik tip koagülasyon nekrozudur."
     }
   },
   {
@@ -15832,17 +15827,16 @@ export const cases = [
       "profile": "42 yaş erkek · Nöroloji servisi",
       "presentation": "Ateş, baş ağrısı ve fokal nörolojik defisit",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü",
-        "Vasküler/iskemik risk bağlamı"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir",
+        "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile",
         "Halka tarzı kontrastlanan apse",
         "Lökositoz ve CRP yüksek",
-        "klinik mekanizma ile uyumlu ayırıcı tanı paterni"
+        "Klinik mekanizma ile uyumlu ayırıcı tanı paterni"
       ],
       "historySummary": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir. Beyin MR'ında halka tarzı kontrastlanan lezyon görülür. Beyin dokusunda enfeksiyon/iskemi sonrası likefaksiyon nekrozu beklenir.",
-      "priorityFocus": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir, Likefaksiyon nekrozu açısından en güçlü ipucudur. Halka tarzı kontrastlanan apse eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Beyin dokusunda enzimatik sindirim ve sıvılaşma bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile karar verdirici klinik ipucudur; beyin infarktı ve apse likefaksiyon nekrozuyla ilişkilidir."
     }
   },
   {
@@ -16145,16 +16139,16 @@ export const cases = [
       "profile": "31 yaş kadın · Göğüs hastalıkları polikliniği",
       "presentation": "Gece terlemesi, kilo kaybı ve kronik öksürük",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır",
+        "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır",
         "Apikal infiltrasyon/kavite",
         "ARB pozitif olabilir",
-        "klinik mekanizma ile uyumlu ayırıcı tanı paterni"
+        "Klinik mekanizma ile uyumlu ayırıcı tanı paterni"
       ],
       "historySummary": "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır. Biyopside epiteloid histiyositler, dev hücreler ve santral kazeifikasyon izlenir. Üst lob kavitesi ve kazeifikasyon birlikte tüberküloz ilişkili granülomatöz inflamasyonu güçlü düşündürür.",
-      "priorityFocus": "üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır, aktif tüberküloz lehinedir; izolasyon ve mikrobiyolojik doğrulama tedavi planıyla birlikte yürütülür."
+      "priorityFocus": "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır aktif tüberküloz olasılığını artırır; hava yolu izolasyonu ve mikrobiyolojik doğrulama birlikte planlanır."
     }
   },
   {
@@ -16460,16 +16454,16 @@ export const cases = [
       "profile": "66 yaş kadın, kalça cerrahisi sonrası · Acil servis",
       "presentation": "Ani nefes darlığı ve plöritik göğüs ağrısı",
       "riskContext": [
-        "Vasküler/iskemik risk bağlamı"
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
-        "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve plöritik ağrı ile gelir",
+        "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve",
         "Yüksek",
         "Sağ pulmoner arter dalında dolum defekti",
-        "klinik mekanizma ile uyumlu ayırıcı tanı paterni"
+        "Klinik mekanizma ile uyumlu ayırıcı tanı paterni"
       ],
       "historySummary": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve plöritik ağrı ile gelir. Sol baldırda şişlik vardır. Virchow triadı bağlamında staz ve endotel hasarı sonrası DVT kaynaklı pulmoner emboli düşünülür.",
-      "priorityFocus": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve plöritik ağrı ile gelir, pulmoner emboli olasılığını yükseltir; hemodinamik durum tanı ve reperfüzyon kararını belirler."
+      "priorityFocus": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve pulmoner emboli olasılığını yükseltir; hemodinamik durum tanı ve reperfüzyon kararını belirler."
     }
   },
   {
@@ -16781,16 +16775,16 @@ export const cases = [
       "profile": "70 yaş erkek · Acil servis",
       "presentation": "Ateş, bilinç bulanıklığı ve tansiyon düşüklüğü",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir",
+        "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve",
         "4.2 mmol/L",
         "Alındı",
-        "klinik mekanizma ile uyumlu ayırıcı tanı paterni"
+        "Klinik mekanizma ile uyumlu ayırıcı tanı paterni"
       ],
       "historySummary": "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir. Laktat yüksektir. Yakınları son saatlerde idrar miktarının belirgin azaldığını belirtir.",
-      "priorityFocus": "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir, Septik şok açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -17101,16 +17095,16 @@ export const cases = [
       "profile": "24 yaş kadın · Klinik/adli değerlendirme ortamı",
       "presentation": "Deri döküntüsü, fotosensitivite, eklem ağrısı ve köpüklü idrar",
       "riskContext": [
-        "Klinik/adli değerlendirme ortamı bağlamında değerlendirme"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır",
+        "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri",
         "Pozitif",
         "Pozitif, yüksek titre",
         "Proteinüri ve eritrosit silendirleri"
       ],
       "historySummary": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır. Anti-dsDNA ve ANA pozitifliği immün kompleks aracılı böbrek tutulumunu destekler. Multisistem tutulum ve böbrek bulgusu sistemik otoimmün hastalık lehinedir.",
-      "priorityFocus": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır, Sistemik lupus eritematozus açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -17397,16 +17391,16 @@ export const cases = [
       "profile": "46 yaş kadın · Klinik/adli değerlendirme ortamı",
       "presentation": "Göz kuruluğu, ağız kuruluğu ve tekrarlayan diş çürükleri",
       "riskContext": [
-        "Klinik/adli değerlendirme ortamı bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler",
+        "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis",
         "Azalmış gözyaşı",
         "Pozitif",
         "Lenfositik infiltrasyon"
       ],
       "historySummary": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler. Schirmer testi azalmış, SSA/SSB pozitif bulunur. Objektif gözyaşı azalması ve otoantikor pozitifliği kuruluk sendromunu otoimmün kökenli düşündürür.",
-      "priorityFocus": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler, Sjögren sendromu açısından en güçlü ipucudur. Azalmış gözyaşı eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, Ekzokrin bez otoimmünitesi, sicca semptomları bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis karar verdirici klinik ipucudur; sicca semptomları tanının kalbidir."
     }
   },
   {
@@ -17686,15 +17680,16 @@ export const cases = [
       "profile": "38 yaş kadın · Klinik/adli değerlendirme ortamı",
       "presentation": "El eklemlerinde şişlik, ağrı ve sabah tutukluğu",
       "riskContext": [
-        "Klinik/adli değerlendirme ortamı bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Hasta 2 saati aşan sabah tutukluğu, MCP/PIP eklem şişliği ve simetrik ağrı ile gelir",
+        "Hasta 2 saati aşan sabah tutukluğu, MCP/PIP eklem şişliği ve simetrik ağrı ile",
         "Pozitif",
-        "Erozif değişiklikler"
+        "Erozif değişiklikler",
+        "Kronik sinovit, pannus, simetrik küçük eklem tutulumu"
       ],
       "historySummary": "Hasta 2 saati aşan sabah tutukluğu, MCP/PIP eklem şişliği ve simetrik ağrı ile gelir. RF ve anti-CCP pozitiftir. Kronik inflamatuvar sinovyal proliferasyon pannus oluşumuyla kıkırdak ve kemik hasarı yapar.",
-      "priorityFocus": "Hasta 2 saati aşan sabah tutukluğu, MCP/PIP eklem şişliği ve simetrik ağrı ile gelir, anatomik lokalizasyonu belirler; doğru cevap komşuluk, innervasyon veya damar-sinir ilişkisi üzerinden seçilir."
+      "priorityFocus": "Hasta 2 saati aşan sabah tutukluğu, MCP/PIP eklem şişliği ve simetrik ağrı ile karar verdirici klinik ipucudur; simetrik küçük eklem tutulumu RA için tipiktir."
     }
   },
   {
@@ -17994,17 +17989,17 @@ export const cases = [
       "profile": "7 aylık erkek bebek · Klinik/adli değerlendirme ortamı",
       "presentation": "Tekrarlayan otitis media, sinüzit ve pnömoni",
       "riskContext": [
-        "Pediatrik güvenlik/yaş bağımlı risk",
-        "Enfeksiyon/temas öyküsü"
+        "Yenidoğan veya süt çocukluğu yaş riski",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır",
+        "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu",
         "Çok düşük",
-        "CD19+ B hücreleri düşük",
+        "CD19, B hücreleri düşük",
         "Yetersiz"
       ],
       "historySummary": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır. Serum immünoglobulinleri çok düşük, dolaşımda B hücreleri azdır; T hücre fonksiyonu korunmuştur. Anne kaynaklı antikorların azaldığı dönemde başlayan bakteriyel enfeksiyonlar humoral immün yetmezliği düşündürür.",
-      "priorityFocus": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır, pnömonide etken/yerleşim ayrımını güçlendirir; tedavi kararı klinik şiddet ve olası patojene göre verilir."
+      "priorityFocus": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu karar verdirici klinik ipucudur; ilk 6 ay maternal Ig nedeniyle korunabilir."
     }
   },
   {
@@ -18290,7 +18285,8 @@ export const cases = [
       "profile": "36 yaş erkek · Klinik/adli değerlendirme ortamı",
       "presentation": "Kilo kaybı, oral kandidiyazis ve kronik ateş",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "İmmünsüpresyon veya HIV ilişkili enfeksiyon riski",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "Hasta kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ile gelir",
@@ -18299,7 +18295,7 @@ export const cases = [
         "110/uL"
       ],
       "historySummary": "Hasta kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ile gelir. HIV Ag/Ab pozitif, viral yük yüksek, CD4 düşük saptanır. Klinik hücresel immünitenin çöküşünü gösterir.",
-      "priorityFocus": "Hasta kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ile gelir, HIV/AIDS açısından en güçlü ipucudur. Pozitif eşlik ettiğinde çeldirici seçenekler geri planda kalır. TUS’ta odak, CD4 T hücre kaybı, fırsatçı enfeksiyon, gp120/gp41/p24 bilgisini doğru klinik bağlama yerleştirmektir."
+      "priorityFocus": "Hasta kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ile gelir karar verdirici klinik ipucudur; hIV CD4 T hücrelerini hedefler."
     }
   },
   {
@@ -18449,17 +18445,18 @@ export const cases = [
       "profile": "8 aylık erkek bebek · Acil servis",
       "presentation": "Nöbet sonrası letarji ve açıklanamayan ekimozlar",
       "riskContext": [
-        "Pediatrik güvenlik/yaş bağımlı risk",
-        "Travma/yaralanma sonrası başvuru"
+        "Yenidoğan veya süt çocukluğu yaş riski",
+        "Çocukta güvenlik ve öykü-bulgu uyumu riski",
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "tutarsız öykü + farklı yaşlarda ekimoz + letarji",
-        "Nöbet sonrası letarji ve beslenme bozukluğu basit postiktal tabloyla sınırlı görünmez",
-        "Farklı iyileşme evrelerinde ekimozlar kaza dışı travmayı düşündürür",
+        "Tutarsız öykü, farklı yaşlarda ekimoz, letarji",
+        "Nöbet sonrası letarji",
+        "Farklı yaşlarda ekimozlar",
         "Bakıcı öyküsü bildirilen mekanizmayı fizik bulgularla açıklayamaz"
       ],
       "historySummary": "Bebek acile nöbet ve letarji nedeniyle getirilir. Bakıcı net travma öyküsü vermez; anlatılan hafif düşme öyküsü muayene bulgularının yaygınlığı ve farklı yaşlardaki morluklarla uyumlu değildir. Hekim aynı anda yaşamı tehdit eden durumu değerlendirmek, güvenliği sağlamak ve çocuk istismarı olasılığını doğru yönetmek zorundadır.",
-      "priorityFocus": "tutarsız öykü + farklı yaşlarda ekimoz + letarji, çocuk istismarı için kritik kırmızı bayraktır; kesin tanı beklenmeden güvenlik, kayıt ve bildirim süreci başlatılır."
+      "priorityFocus": "Tutarsız öykü, farklı yaşlarda ekimozlar ve letarji çocuk istismarı açısından kırmızı bayraktır; kesin tanı beklenmeden güvenlik, kayıt ve bildirim süreci başlatılmalıdır."
     }
   },
   {
@@ -18617,16 +18614,16 @@ export const cases = [
       "profile": "22 yaşında kadın hasta · Acil servis",
       "presentation": "Saldırı sonrası ağrı, yoğun kaygı ve ekimozlar",
       "riskContext": [
-        "Pediatrik güvenlik/yaş bağımlı risk"
+        "Çocukta güvenlik ve öykü-bulgu uyumu riski"
       ],
       "distinctiveClues": [
-        "cinsel saldırı sonrası erken başvuru + onam/mahremiyet + delil zinciri",
-        "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama açısından zaman duyarlıdır",
-        "Aktif dış kanama veya bilinç kaybı yok; stabilite değerlendirmesi yine ilk basamaktır",
+        "Cinsel saldırı sonrası erken başvuru, onam/mahremiyet, delil zinciri",
+        "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama",
+        "Aktif dış kanama veya bilinç kaybı yok",
         "Hasta ne yapılacağı ve mahremiyet konusunda bilgilendirilmek istemektedir"
       ],
       "historySummary": "Hasta saldırıdan yaklaşık 8 saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler; aktif dış kanama veya bilinç kaybı yoktur. Hasta muayene sırasında mahremiyet, güvenlik ve ne yapılacağı konusunda bilgilendirilmek istediğini söyler.",
-      "priorityFocus": "cinsel saldırı sonrası erken başvuru + onam/mahremiyet + delil zinciri, çocuk istismarı için kritik kırmızı bayraktır; kesin tanı beklenmeden güvenlik, kayıt ve bildirim süreci başlatılır."
+      "priorityFocus": "Cinsel saldırı sonrası erken başvuruda güvenlik, mahremiyet, bilgilendirilmiş onam ve delil zinciri aynı klinik süreç içinde korunmalıdır."
     }
   },
   {
@@ -18956,7 +18953,7 @@ export const cases = [
       "profile": "31 yaş erkek · Acil servis - resüsitasyon alanı",
       "presentation": "Boyun basısı sonrası bilinç bulanıklığı ve nefes darlığı",
       "riskContext": [
-        "Acil servis - resüsitasyon alanı bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
         "Boyun basısı ve kısa bilinç kaybı",
@@ -18965,7 +18962,7 @@ export const cases = [
         "BT’de laringeal ödem"
       ],
       "historySummary": "Hasta boyun basısı sonrası yakınları tarafından yarı bilinçli halde bulunarak acile getiriliyor. Olaydan sonra kısa süreli bilinç kaybı, ses kısıklığı, yutma ağrısı ve nefes darlığı tarifleniyor. Boyunda ligatür izi, konjonktival peteşiler ve hipoksemi; asfiksiye bağlı havayolu ve nörolojik hasar riskini düşündürür.",
-      "priorityFocus": "Boyun basısı ve kısa bilinç kaybı, hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir; terapötik hipotermi ilk 6 saat içinde düşünülür."
+      "priorityFocus": "Boyun basısı ve kısa bilinç kaybı hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir; terapötik hipotermi ilk 6 saatte düşünülür."
     }
   },
   {
@@ -19278,9 +19275,9 @@ export const cases = [
       "profile": "29 yaş kadın, inflamatuvar bağırsak hastalığı nedeniyle izlenen hasta · Acil servis - ilaç toksisitesi değerlendirmesi",
       "presentation": "Azatioprin başlandıktan üç hafta sonra ateş, ağız yarası ve halsizlik",
       "riskContext": [
-        "Aile öyküsü/genetik yatkınlık",
-        "İlaç veya toksin maruziyeti",
-        "Enfeksiyon/temas öyküsü"
+        "Toksin/ilaç maruziyeti olasılığı",
+        "Enfeksiyon ve temas/izolasyon bağlamı",
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
         "Azatioprin başlanmasından sonra zaman uyumlu toksisite",
@@ -19289,7 +19286,7 @@ export const cases = [
         "TPMT düşük aktivite varyantı ve yüksek 6-TGN düzeyi"
       ],
       "historySummary": "İnflamatuvar bağırsak hastalığı için standart doz azatioprin başlanan hasta, üç hafta içinde ateş, belirgin halsizlik, oral ülser ve kolay morarma ile başvurur. Dozu önerildiği gibi kullandığını söyler; ailede benzer ilaç yanıtı öyküsü vardır. Ağır lökopeni ve trombositopeni, tiopürin metabolizmasını etkileyen farmakogenetik yatkınlığı düşündürür.",
-      "priorityFocus": "Azatioprin başlanmasından sonra zaman uyumlu toksisite, ilaç-etki veya toksisite eşleşmesini kurdurur; TUS’ta doğru yanıt mekanizma/antidot bilgisinden gelir."
+      "priorityFocus": "Azatioprin başlanmasından sonra zaman uyumlu toksisite karar verdirici klinik ipucudur; nötropenik ateşte kültür sonucu beklenmez."
     }
   },
   {
@@ -19418,16 +19415,16 @@ export const cases = [
       "profile": "24 yaşında erkek hasta · Acil servis",
       "presentation": "Sağ ön kolda kesici-delici alet yaralanması",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "kesici-delici yaralanma + tutarsız olay öyküsü",
+        "Kesici-delici yaralanma, tutarsız olay öyküsü",
         "Kesici-delici alet yaralanması acil servise başvuru nedenidir",
         "Olay öyküsü kısa ve tutarsızdır",
         "Yara derinliği hastanın beyanıyla tam uyumlu değildir"
       ],
       "historySummary": "Yaranın kazara olduğunu söyler; ancak olay öyküsü kısa, tutarsız ve yara derinliği beyanla tam uyumlu değildir. Bilinci açık, vital bulguları stabildir.",
-      "priorityFocus": "kesici-delici yaralanma + tutarsız olay öyküsü, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Kesici-delici alet yaralanmasında tıbbi müdahale ile adli bildirim ve kayıt sürecini eş zamanlı yürütme bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Kesici-delici yaralanma, tutarsız olay öyküsü doğru seçeneği belirleyen temel ipucudur; kesici-delici yaralanmalar adli olgu olarak değerlendirilir."
     }
   },
   {
@@ -19556,16 +19553,16 @@ export const cases = [
       "profile": "31 yaşında erkek hasta · Acil servis",
       "presentation": "Motosiklet kazası sonrası omuz ve diz ağrısı",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "trafik kazası + kısa süreli sersemlik + travma bulguları",
+        "Trafik kazası, kısa süreli sersemlik, travma bulguları",
         "Motosiklet kazası travmatik olaydır ve adli nitelik taşır",
         "Kısa süreli sersemlik kafa travması açısından kayıt gerektirir",
         "Omuz ve diz ağrısı travma muayenesinin ayrıntılandırılmasını gerektirir"
       ],
       "historySummary": "Hasta motosiklet kazası sonrası acile getirilir. Kask taktığını, kısa süreli sersemlik yaşadığını ve sağ omuz-diz ağrısı olduğunu söyler. Alkol almadığını belirtir.",
-      "priorityFocus": "trafik kazası + kısa süreli sersemlik + travma bulguları, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Trafik kazası, kısa süreli sersemlik, travma bulguları doğru seçeneği belirleyen temel ipucudur; trafik kazası olgularında adli bildirim/rapor süreci başlatılır."
     }
   },
   {
@@ -19694,16 +19691,16 @@ export const cases = [
       "profile": "67 yaşında erkek hasta · Acil servis resüsitasyon alanı",
       "presentation": "Bilinç kaybı ve solunum sıkıntısı",
       "riskContext": [
-        "Acil servis resüsitasyon alanı bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "bilinç kapalı hasta + hava yolu riski + yakına ulaşılamaması",
+        "Bilinç kapalı hasta, hava yolu riski, yakına ulaşılamaması",
         "Hasta bilinçsiz ve sorulara yanıt vermiyor",
         "Solunum yüzeyel; hava yolu güvenliği açısından risk var",
         "Yakını henüz hastaneye ulaşmamış"
       ],
       "historySummary": "Hasta evde bilinçsiz bulunarak ambulansla getirilir. Yakını henüz hastaneye ulaşmamıştır. Hasta sorulara yanıt vermez, solunumu yüzeyeldir ve hava yolu güvenliği açısından risklidir.",
-      "priorityFocus": "bilinç kapalı hasta + hava yolu riski + yakına ulaşılamaması, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Acil yaşam tehdidinde varsayılan onam ilkesi ve tedaviyi geciktirmeme bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Bilinç kapalı hastada hava yolu riski varsa yaşam tehdidi nedeniyle varsayılan onamla acil stabilizasyon geciktirilmeden yapılmalıdır."
     }
   },
   {
@@ -19832,18 +19829,17 @@ export const cases = [
       "profile": "34 yaşında kadın hasta · Acil servis",
       "presentation": "Tekrarlayan düşme öyküsü ve yüz-boyun ekimozları",
       "riskContext": [
-        "Pediatrik güvenlik/yaş bağımlı risk",
-        "Travma/yaralanma sonrası başvuru",
-        "Vasküler/iskemik risk bağlamı"
+        "Çocukta güvenlik ve öykü-bulgu uyumu riski",
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "eşin kontrol edici varlığı + yalnız kalınca güvende hissetmediğini ima etme",
+        "Eşin kontrol edici varlığı, yalnız kalınca güvende hissetmediğini ima etme",
         "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor",
         "Hasta yalnız kalınca evde güvende hissetmediğini ima ediyor",
         "Morluklar şiddet olasılığı açısından objektif kayda ihtiyaç duyuyor"
       ],
       "historySummary": "Hasta “merdivenden düştüğünü” söyleyerek başvurur. Eşi sürekli yanında durmakta ve hastanın sorulara tek başına yanıt vermesine izin vermemektedir. Hasta kısa süre yalnız kaldığında evde güvende hissetmediğini ima eder.",
-      "priorityFocus": "eşin kontrol edici varlığı + yalnız kalınca güvende hissetmediğini ima etme, çocuk istismarı için kritik kırmızı bayraktır; kesin tanı beklenmeden güvenlik, kayıt ve bildirim süreci başlatılır."
+      "priorityFocus": "Eşin görüşmeyi kontrol etmesi ve hastanın yalnızken güvende olmadığını ima etmesi aile içi şiddet açısından mahrem güvenlik değerlendirmesini zorunlu kılar."
     }
   },
   {
@@ -20003,17 +19999,17 @@ export const cases = [
       "profile": "40 yaşında erkek hasta · Acil servis",
       "presentation": "Ani bilinç bulanıklığı ve kusma",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru",
-        "İlaç veya toksin maruziyeti"
+        "Travma veya adli kayıt gerektiren olay",
+        "Toksin/ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "bilinç bulanıklığı + etiketsiz şişe/ilaç blisterleri + şüpheli zehirlenme",
+        "Bilinç bulanıklığı, etiketsiz şişe/ilaç blisterleri, şüpheli zehirlenme",
         "Hasta bilinç bulanıklığı ve kusma ile getiriliyor",
         "Masada etiketsiz içecek şişesi ve ilaç blisterleri bulunmuş",
         "Hasta sorulara tutarsız yanıt veriyor; öykü güvenilir değil"
       ],
       "historySummary": "Hasta evde bilinç bulanıklığı ve kusma sonrası getirilir. Yakınları, masada etiketsiz bir içecek şişesi ve ilaç blisterleri gördüklerini söyler. Hasta aralıklı uyanık, sorulara tutarsız yanıt verir.",
-      "priorityFocus": "bilinç bulanıklığı + etiketsiz şişe/ilaç blisterleri + şüpheli zehirlenme, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Zehirlenme şüphesinde tıbbi stabilizasyon, toksikolojik örneklerin doğru alınması ve adli kayıt bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Bilinç bulanıklığı, etiketsiz şişe/ilaç blisterleri, şüpheli zehirlenme doğru seçeneği belirleyen temel ipucudur; zehirlenmede ABC tedavisi örnek alma için bekletilmez."
     }
   },
   {
@@ -20142,16 +20138,16 @@ export const cases = [
       "profile": "45 yaşında erkek işçi · Acil servis",
       "presentation": "El pres makinesinde parmak ezilmesi",
       "riskContext": [
-        "Acil servis bağlamında değerlendirme"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "işyerinde pres yaralanması + işverenin kayıt yönlendirmesi",
+        "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi",
         "Yaralanma fabrikada pres makinesiyle gerçekleşmiş",
         "İşveren “basit yaralanma” olarak yazılmasını istemiş",
         "Hasta ağrılı; el yaralanması fonksiyonel risk taşır"
       ],
       "historySummary": "Hasta fabrikada pres makinesine sağ elini sıkıştırdıktan sonra acile gelir. İşverenin “basit yaralanma olarak yazılsın” dediğini belirtir. Hasta ağrılıdır, aktif masif kanama yoktur.",
-      "priorityFocus": "işyerinde pres yaralanması + işverenin kayıt yönlendirmesi, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak İş kazasında acil tıbbi bakım, yaralanma kaydı ve bildirim/raporlama yaklaşımı bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi doğru seçeneği belirleyen temel ipucudur; iş kazasında objektif tıbbi kayıt ve bildirim esastır."
     }
   },
   {
@@ -20280,16 +20276,16 @@ export const cases = [
       "profile": "19 yaşında kadın hasta · Acil poliklinik",
       "presentation": "Fıstıklı tatlı sonrası kaşıntı ve dudak şişliği",
       "riskContext": [
-        "Acil poliklinik bağlamında değerlendirme"
+        "Ayaktan başvuruda tanısal önceliklendirme"
       ],
       "distinctiveClues": [
-        "ürtiker + hafif anjiyoödem; hipotansiyon/solunum bulgusu yok",
+        "Ürtiker, hafif anjiyoödem; hipotansiyon/solunum bulgusu yok",
         "Fıstık sonrası 20 dakika içinde kaşıntı ve kabarıklık gelişmiş",
         "Dudak şişliği hafif; solunum sıkıntısı veya bayılma yok",
         "Kusma, göğüste sıkışma ve hipotansiyon tariflenmiyor"
       ],
       "historySummary": "Hasta fıstık içeren tatlı yedikten yaklaşık 20 dakika sonra yaygın kaşıntı, dudaklarda hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma, kusma veya göğüste sıkışma tariflemez.",
-      "priorityFocus": "ürtiker + hafif anjiyoödem; hipotansiyon/solunum bulgusu yok, anafilaksi için yeterli klinik paterndir; ilk ilaç antihistaminik değil IM adrenalindir."
+      "priorityFocus": "Hipotansiyon, solunum bulgusu veya çoklu sistem tutulumu yoksa izole ürtiker/hafif anjiyoödem düşünülür; ilk yaklaşım antihistaminik ve yakın izlemdir."
     }
   },
   {
@@ -20417,16 +20413,16 @@ export const cases = [
       "profile": "5 yaşında çocuk · Çocuk acil",
       "presentation": "Ateş, boğaz ağrısı ve gövdeden başlayan döküntü",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü",
+        "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü",
         "Ateş ve boğaz ağrısı döküntüden önce başlamış",
         "Döküntü gövdeden yayılıyor ve dokununca pütürlü hissediliyor",
         "Klinik patern streptokokal farenjit sonrası kızılı destekliyor"
       ],
       "historySummary": "Çocuk 3 gündür ateş ve boğaz ağrısı sonrası gövdeden başlayıp yayılan ince döküntü nedeniyle getirilir. Aile döküntünün dokununca pütürlü hissedildiğini söyler.",
-      "priorityFocus": "ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Kızıl hastalığında klinik döküntü paterninden etkeni tanıma bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü kızıl için tipiktir; zımpara kağıdı döküntüsü ve farenjit Streptococcus pyogenes’i düşündürür."
     }
   },
   {
@@ -20555,17 +20551,17 @@ export const cases = [
       "profile": "2 yaşında kız çocuk · Çocuk acil",
       "presentation": "Elinden çekildikten sonra sağ kolunu kullanmama",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru",
-        "Enfeksiyon/temas öyküsü"
+        "Travma veya adli kayıt gerektiren olay",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "elinden çekilme sonrası kolu kullanmama; ateş/direkt travma yok",
+        "Elinden çekilme sonrası kolu kullanmama; ateş/direkt travma yok",
         "Yakınma çocuğun elinden çekilmesinden hemen sonra başlamış",
         "Düşme veya direkt travma öyküsü yok",
         "Ateş yok; septik artrit lehine sistemik bulgu bulunmuyor"
       ],
       "historySummary": "Çocuk kaldırımdan inerken annesi tarafından elinden çekildikten sonra ağlamış ve sağ kolunu kullanmamaya başlamıştır. Düşme, direkt travma veya ateş öyküsü yoktur.",
-      "priorityFocus": "elinden çekilme sonrası kolu kullanmama; ateş/direkt travma yok, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Elinden çekilme sonrası kolu kullanmama; ateş/direkt travma yok radius başı subluksasyonu için tipiktir; direkt travma/deformite yoksa kapalı redüksiyon ön plandadır."
     }
   },
   {
@@ -20694,16 +20690,16 @@ export const cases = [
       "profile": "7 yaşında aşısız çocuk · Çocuk polikliniği",
       "presentation": "Ateş, öksürük, göz kızarıklığı ve döküntü",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "öksürük-konjunktivit-koriza + yüzde başlayan döküntü + Koplik lekeleri",
+        "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, Koplik lekeleri",
         "Aşıları eksik çocukta prodromal ateş ve öksürük var",
         "Koriza ve konjunktivit kızamığın “3C” bulgularını tamamlıyor",
         "Döküntü yüzden başlayıp gövdeye yayılıyor"
       ],
       "historySummary": "Aşıları eksik olan çocuk 4 gündür ateş, öksürük, burun akıntısı ve göz kızarıklığı sonrası yüzden başlayıp gövdeye yayılan döküntü ile getirilir.",
-      "priorityFocus": "öksürük-konjunktivit-koriza + yüzde başlayan döküntü + Koplik lekeleri, pnömonide etken/yerleşim ayrımını güçlendirir; tedavi kararı klinik şiddet ve olası patojene göre verilir."
+      "priorityFocus": "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, Koplik lekeleri kızamık için yüksek verimli spot ipucudur; Koplik lekesi kızamıkta ayırt ettirici kabul edilir."
     }
   },
   {
@@ -20831,17 +20827,16 @@ export const cases = [
       "profile": "52 yaşında erkek hasta · Acil poliklinik",
       "presentation": "Ani başlayan burun kanaması",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru",
-        "İlaç veya toksin maruziyeti"
+        "Toksin/ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "stabil anterior epistaksis",
+        "Stabil anterior epistaksis",
         "Kanama anterior epistaksis ile uyumlu ve hasta stabil",
         "Antikoagülan kullanımı ve travma öyküsü yok",
         "Kan tadı yutma kanın arkaya akabileceğini gösterir; hasta öne eğilmelidir"
       ],
       "historySummary": "Hasta 20 dakikadır devam eden burun kanaması nedeniyle başvurur. Bilinci açık, yutkunmakla hafif kan tadı aldığını söyler. Antikoagülan kullanmaz, travma öyküsü yoktur.",
-      "priorityFocus": "stabil anterior epistaksis, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Stabil epistaksiste ilk basamak bası ve lokal yaklaşım kararını verme bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Stabil anterior epistaksis doğru seçeneği belirleyen temel ipucudur; anterior epistaksiste ilk basamak: öne eğilme, burun kanatlarına 10-15 dakika direkt bası."
     }
   },
   {
@@ -20970,16 +20965,16 @@ export const cases = [
       "profile": "70 yaşında erkek hasta · Acil dışı ev ziyareti / 112 değerlendirmesi",
       "presentation": "Evde ölü bulunma",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "yalnız yaşayan kişide şüpheli ölüm koşulları",
+        "Yalnız yaşayan kişide şüpheli ölüm koşulları",
         "Kişi evinde yalnız bulunmuştur",
         "Ölüm koşulları net ve doğal seyirle açıklanmış değildir",
         "Olay yeri ve deliller bozulmadan korunmalıdır"
       ],
       "historySummary": "Hasta evinde yalnız yaşarken yakınları tarafından ölü bulunur. Yakınları ölümün ne zaman gerçekleştiğini bilmez. Odada dağınıklık ve yerde kırık cam parçaları olduğu belirtilir.",
-      "priorityFocus": "yalnız yaşayan kişide şüpheli ölüm koşulları, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Yalnız yaşayan kişide şüpheli ölüm koşulları doğru seçeneği belirleyen temel ipucudur; şüpheli ölümde defin ruhsatı düzenlenmez; adli makama bildirilir."
     }
   },
   {
@@ -21247,13 +21242,14 @@ export const cases = [
       "profile": "27 yaşında erkek hasta · Acil servis",
       "presentation": "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi"
+        "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı",
+        "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama"
       ],
       "historySummary": "Hasta bisikletten düştükten sonra sağ üst kolunda ağrı ve el bileğini yukarı kaldıramama yakınmasıyla başvurur. Travma doğrudan humerus orta şaftına yönelmiştir.",
-      "priorityFocus": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı karar verdirici klinik ipucudur; radial sinir spiral olukta humerus şaftına komşudur."
     }
   },
   {
@@ -21420,13 +21416,14 @@ export const cases = [
       "profile": "68 yaşında kadın hasta · Poliklinik",
       "presentation": "Ayağa kalkınca kısa süreli baş dönmesi",
       "riskContext": [
-        "Poliklinik bağlamında değerlendirme"
+        "Ayaktan başvuruda tanısal önceliklendirme"
       ],
       "distinctiveClues": [
-        "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı"
+        "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı",
+        "Ayağa kalkınca kısa süreli baş dönmesi"
       ],
       "historySummary": "Hasta özellikle sabah yataktan kalkınca birkaç saniye süren sersemlik hissettiğini, oturunca yakınmasının düzeldiğini söyler. Yeni başlanan diüretik tedavi sonrası sıvı alımı azalmıştır.",
-      "priorityFocus": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı, ilaç-etki veya toksisite eşleşmesini kurdurur; TUS’ta doğru yanıt mekanizma/antidot bilgisinden gelir."
+      "priorityFocus": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı karar verdirici klinik ipucudur; baroreseptör refleksi saniyeler içinde çalışan hızlı homeostatik mekanizmadır."
     }
   },
   {
@@ -21612,13 +21609,14 @@ export const cases = [
       "profile": "9 yaşında erkek çocuk · Çocuk cerrahisi polikliniği",
       "presentation": "Boyun ön orta hatta şişlik",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı"
+        "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat",
+        "Boyun ön orta hatta şişlik"
       ],
       "historySummary": "Aile, çocuğun boyun ön orta hattında son aylarda fark edilen, zaman zaman büyüyen ağrısız bir şişlik olduğunu belirtir. Üst solunum yolu enfeksiyonlarından sonra belirginleştiği öğrenilir.",
-      "priorityFocus": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı, anatomik lokalizasyonu belirler; doğru cevap komşuluk, innervasyon veya damar-sinir ilişkisi üzerinden seçilir."
+      "priorityFocus": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat karar verdirici klinik ipucudur; tiroglossal kanal kisti orta hattadır ve dil protrüzyonu ile hareket eder."
     }
   },
   {
@@ -21833,13 +21831,14 @@ export const cases = [
       "profile": "29 yaşında kadın hasta · Acil servis",
       "presentation": "Altı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Gebelik/postpartum fizyolojik risk"
       ],
       "distinctiveClues": [
-        "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi"
+        "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik",
+        "Altı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme"
       ],
       "historySummary": "Hasta son adet tarihine göre yaklaşık 6 haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır.",
-      "priorityFocus": "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi, anatomik lokalizasyonu belirler; doğru cevap komşuluk, innervasyon veya damar-sinir ilişkisi üzerinden seçilir."
+      "priorityFocus": "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik karar verdirici klinik ipucudur; üreme çağında karın ağrısı olan hastada gebelik mutlaka dışlanmalıdır."
     }
   },
   {
@@ -22036,13 +22035,14 @@ export const cases = [
       "profile": "42 yaşında erkek hasta · Acil servis",
       "presentation": "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon",
       "riskContext": [
-        "İlaç veya toksin maruziyeti"
+        "Toksin/ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, muskarinik-nikotinik bulgular ve antidot seçimi"
+        "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu,",
+        "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon"
       ],
       "historySummary": "Hasta kapalı alanda pestisit uyguladıktan sonra bulantı, terleme, tükürük artışı ve nefes darlığı gelişmesiyle acile getirilir. Üzerinde yoğun kimyasal koku fark edilir.",
-      "priorityFocus": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, muskarinik-nikotinik bulgular ve antidot seçimi, ilaç-etki veya toksisite eşleşmesini kurdurur; TUS’ta doğru yanıt mekanizma/antidot bilgisinden gelir."
+      "priorityFocus": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, karar verdirici klinik ipucudur; miyozis, bronkore, bradikardi ve fasikülasyon kolinerjik toksidromu."
     }
   },
   {
@@ -22194,16 +22194,16 @@ export const cases = [
       "profile": "49 yaşında kadın · Acil servis",
       "presentation": "Saatler içinde gelişen bol sulu, kansız ishal",
       "riskContext": [
-        "Seyahat/endemik bölge öyküsü"
+        "Endemik bölge veya vektör maruziyeti"
       ],
       "distinctiveClues": [
-        "bol sulu kansız ishal + hızlı dehidratasyon + darting motility",
-        "Bol sulu ve kansız ishal sekresyonel ishali düşündürür",
+        "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility",
+        "Bol sulu ve kansız ishal sekresyonel ishali",
         "Dehidratasyon hızla gelişmiştir",
         "Darting motility Vibrio cholerae için ayırt ettirici laboratuvar ipucudur"
       ],
       "historySummary": "49 yaşındaki kadın hasta Yemen seyahatinden kısa süre sonra pirinç suyu görünümünde çok sayıda sulu dışkılama, ağır susuzluk, halsizlik ve kas krampları ile başvurur. Dışkıda kan tariflemez ve karın ağrısı belirgin değildir.",
-      "priorityFocus": "bol sulu kansız ishal + hızlı dehidratasyon + darting motility, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Kolera tanısında pirinç suyu tarzı sulu ishal, ağır dehidratasyon, oksidaz pozitiflik ve darting/yıldız kayması hareketi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility doğru seçeneği belirleyen temel ipucudur; vibrio cholerae: pirinç suyu dışkı, hızlı dehidratasyon, darting motility."
     }
   },
   {
@@ -22348,17 +22348,17 @@ export const cases = [
       "profile": "28 yaşında erkek · Enfeksiyon polikliniği",
       "presentation": "Bulanık görme ve tedavisiz HIV öyküsü",
       "riskContext": [
-        "İlaç veya toksin maruziyeti",
-        "Enfeksiyon/temas öyküsü"
+        "Toksin/ilaç maruziyeti olasılığı",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "AIDS/CMV retiniti tedavisi + gansiklovir sonrası nötropeni",
+        "AIDS/CMV retiniti tedavisi, gansiklovir sonrası nötropeni",
         "Tedavisiz HIV öyküsü CMV retiniti riskini artırır",
         "Bulanık görme ve retinal bulgular CMV retinitiyle uyumludur",
-        "Tedavi sonrası nötropeni gelişmesi gansiklovir toksisitesini düşündürür"
+        "Tedavi sonrası nötropeni gelişmesi gansiklovir toksisitesini"
       ],
       "historySummary": "28 yaşındaki erkek hastada tedavisiz HIV enfeksiyonu zemininde CMV retiniti tedavisi başlanır. Antiviral tedavinin ikinci haftasında ateşsiz halsizlik ve ağız içinde aft benzeri lezyonlar gelişir; ilaç yan etkisi sorgulanır.",
-      "priorityFocus": "AIDS/CMV retiniti tedavisi + gansiklovir sonrası nötropeni, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak CMV retiniti tedavisinde gansiklovir kaynaklı kemik iliği supresyonu ve foskarnet alternatifi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "AIDS/CMV retiniti tedavisi, gansiklovir sonrası nötropeni doğru seçeneği belirleyen temel ipucudur; gansiklovir/valgansiklovir: CMV tedavisi, nötropeni/kemik iliği baskılanması."
     }
   },
   {
@@ -22490,16 +22490,16 @@ export const cases = [
       "profile": "55 yaşında erkek · Acil servis",
       "presentation": "Ateş ve bacakta ağrılı sıcak kızarıklık",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "keskin sınırlı sıcak eritem + lenfatik yüzeyel enfeksiyon",
+        "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon",
         "Eritem keskin sınırlı ve sıcak tarifleniyor",
         "Klinik yüzeyel dermal/lenfatik enfeksiyon paternindedir",
         "Streptokokal etken ve penisilin duyarlılığı TUS spot bilgisidir"
       ],
       "historySummary": "55 yaşındaki erkek hasta, yakın dönemde boğaz enfeksiyonu geçirdikten sonra eski safen ven çıkarım skarı çevresinde hızla yayılan ağrılı ve sıcak deri kızarıklığı fark eder. Lezyon tek taraflıdır ve kısa sürede ateş-halsizlik eşlik etmiştir.",
-      "priorityFocus": "keskin sınırlı sıcak eritem + lenfatik yüzeyel enfeksiyon, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Erizipelde keskin sınırlı kabarık eritem ve ilk tercih penisilin tedavisi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon doğru seçeneği belirleyen temel ipucudur; erizipel: keskin sınırlı, parlak-kırmızı, sıcak plak; etken çoğunlukla Streptococcus pyogenes."
     }
   },
   {
@@ -22625,16 +22625,16 @@ export const cases = [
       "profile": "Sağlık çalışanı · Ameliyathane",
       "presentation": "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma",
       "riskContext": [
-        "Ameliyathane bağlamında değerlendirme"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "HCV RNA pozitif kaynak + perkütan yaralanma",
+        "HCV RNA pozitif kaynak, perkütan yaralanma",
         "Kaynak hasta HCV RNA pozitiftir",
         "Yaralanma perkütan iğne batmasıdır",
         "Temas sonrası profilaksi seçenekleri HBV ile karıştırılmamalıdır"
       ],
       "historySummary": "Yaralanma hemen yıkanır, olay kayıt altına alınır ve kaynak hastanın HCV RNA pozitif olduğu öğrenilir.",
-      "priorityFocus": "HCV RNA pozitif kaynak + perkütan yaralanma, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak HCV iğne batması sonrası aşı/immünoglobulin olmadığı ve erken HCV RNA izlemi gerektiği bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "HCV RNA pozitif kaynak, perkütan yaralanma doğru seçeneği belirleyen temel ipucudur; hCV iğne batmasında aşı/immünoglobulin yoktur."
     }
   },
   {
@@ -22773,16 +22773,16 @@ export const cases = [
       "profile": "18 yaşında erkek · Verem savaşı dispanseri",
       "presentation": "Aktif akciğer tüberkülozu olan aile bireyiyle yakın temas",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "aktif TB ev içi temas + PPD dönüşümü + aktif hastalık dışlama",
+        "Aktif TB ev içi temas, PPD dönüşümü, aktif hastalık dışlama",
         "Ev içi/yakın temas yüksek bulaş riski taşır",
         "PPD dönüşümü yeni enfeksiyon lehine yorumlanır",
         "Profilaksi başlamadan önce aktif TB dışlanmalıdır"
       ],
       "historySummary": "18 yaşındaki erkek hasta, aktif akciğer tüberkülozu tanısı alan aile bireyiyle aynı evde yaşamaktadır. Kendisi asemptomatiktir ve çocukluk döneminde BCG aşısı olduğunu belirtir.",
-      "priorityFocus": "aktif TB ev içi temas + PPD dönüşümü + aktif hastalık dışlama, aktif tüberküloz lehinedir; izolasyon ve mikrobiyolojik doğrulama tedavi planıyla birlikte yürütülür."
+      "priorityFocus": "Aktif TB ev içi temas, PPD dönüşümü, aktif hastalık dışlama aktif tüberküloz olasılığını artırır; hava yolu izolasyonu ve mikrobiyolojik doğrulama birlikte planlanır."
     }
   },
   {
@@ -22909,16 +22909,16 @@ export const cases = [
       "profile": "27 yaşında erkek diş hekimi · Göğüs hastalıkları polikliniği",
       "presentation": "İşle ilişkili öksürük, hışıltı ve el dorsumunda kaşıntılı lezyonlar",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "işte artan hışıltı + hafta sonu düzelme + lateksle temas/dermatit",
+        "İşte artan hışıltı, hafta sonu düzelme, lateksle temas/dermatit",
         "Öksürük ve hışıltı iş ortamıyla ilişkilidir",
-        "Hafta sonu/işten uzaklaşınca düzelme mesleki astım lehinedir",
+        "Hafta sonu/işten uzaklaşınca düzelme mesleki astım",
         "El dorsumundaki kaşıntılı lezyon lateks duyarlılığına eşlik edebilir"
       ],
       "historySummary": "Son bir yıldır iş günlerinde nefes darlığı, öksürük ve hışıltı atakları yaşayan hastanın el dorsal yüzlerinde kronik irritan/alerjik dermatit benzeri lezyonlar bulunuyor.",
-      "priorityFocus": "işte artan hışıltı + hafta sonu düzelme + lateksle temas/dermatit, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "İşte artan hışıltı, hafta sonu düzelme, lateksle temas/dermatit SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -23050,7 +23050,7 @@ export const cases = [
       "profile": "72 yaşında kadın · Acil servis",
       "presentation": "Ateş, öksürük, sarı balgam ve uykuya meyil",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
         "CURB-65 kriterleri; ateşin skorda yer almaması",
@@ -23059,7 +23059,7 @@ export const cases = [
         "Uykuya meyil konfüzyon başlığını çağrıştırabilir; ateş çeldiricidir"
       ],
       "historySummary": "Pnömoni düşünülen hastada hekim yatış kararını CURB-65 kriterleriyle yapılandırmak ister.",
-      "priorityFocus": "CURB-65 kriterleri; ateşin skorda yer almaması, aktif tüberküloz lehinedir; izolasyon ve mikrobiyolojik doğrulama tedavi planıyla birlikte yürütülür."
+      "priorityFocus": "CURB-65 kriterleri; ateşin skorda yer almaması aktif tüberküloz olasılığını artırır; hava yolu izolasyonu ve mikrobiyolojik doğrulama birlikte planlanır."
     }
   },
   {
@@ -23210,16 +23210,16 @@ export const cases = [
       "profile": "20 yaşında erkek · Acil servis",
       "presentation": "Fıstıklı tatlıdan sonra boğazda şişme, kaşıntı, karın ağrısı ve baş dönmesi",
       "riskContext": [
-        "Acil servis bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu",
+        "Besin sonrası çoklu sistem reaksiyon, mast hücre aktivasyonu",
         "Besin sonrası kısa sürede alerjik reaksiyon gelişmiş",
-        "Çoklu sistem tutulumu mast hücre aracılı reaksiyonu düşündürür",
+        "Çoklu sistem tutulumu mast hücre aracılı reaksiyonu",
         "Akut dönemde triptaz yüksekliği mast hücre aktivasyonunu destekler"
       ],
       "historySummary": "20 yaşındaki erkek hasta, fıstıklı tatlı yedikten kısa süre sonra yaygın kaşıntı, ürtiker, boğazda şişme hissi, karın ağrısı ve baş dönmesi tarif eder. Alerjik rinit ve astım öyküsü vardır.",
-      "priorityFocus": "besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu, anafilaksi için yeterli klinik paterndir; ilk ilaç antihistaminik değil IM adrenalindir."
+      "priorityFocus": "Besin sonrası çoklu sistem reaksiyon, mast hücre aktivasyonu doğru seçeneği belirleyen temel ipucudur; serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir."
     }
   },
   {
@@ -23371,18 +23371,18 @@ export const cases = [
       "profile": "62 yaşında erkek · Dahiliye polikliniği",
       "presentation": "Son aylarda dirençli hipertansiyon atakları ve tekrarlayan akciğer ödemi",
       "riskContext": [
-        "Hipertansiyon öyküsü",
-        "Sigara maruziyeti",
-        "Diyabet öyküsü"
+        "Kontrolsüz hipertansiyon / vasküler stres",
+        "Aterosklerotik risk zemini",
+        "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "dirençli hipertansiyon + tekrarlayan flash akciğer ödemi + hipokalemi",
+        "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi",
         "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır",
         "Dirençli ağır hipertansiyon kısa sürede belirginleşmiş",
         "Tekrarlayan ani akciğer ödemi renovasküler hipertansiyon için güçlü ipucudur"
       ],
       "historySummary": "62 yaşındaki erkek hastada kısa süre içinde ağır ve dirençli hipertansiyon atakları ile tekrarlayan ani akciğer ödemi gelişmiştir. Diyabet ve uzun süreli sigara öyküsü vardır.",
-      "priorityFocus": "dirençli hipertansiyon + tekrarlayan flash akciğer ödemi + hipokalemi, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Renovasküler hipertansiyonda flash pulmoner ödem, abdominal üfürüm ve hipokalemi ipuçları bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi doğru seçeneği belirleyen temel ipucudur; renal arter stenozu: dirençli HT, flash akciğer ödemi, hipokalemi."
     }
   },
   {
@@ -23508,7 +23508,7 @@ export const cases = [
       "profile": "45 yaşında kadın · Kardiyoloji polikliniği",
       "presentation": "Efor dispnesi, periferik ödem ve pulmoner hipertansiyon tanısı",
       "riskContext": [
-        "Hipertansiyon öyküsü"
+        "Kontrolsüz hipertansiyon / vasküler stres"
       ],
       "distinctiveClues": [
         "PAH tedavisinde verapamilin negatif inotrop etkisi",
@@ -23517,7 +23517,7 @@ export const cases = [
         "Verapamil negatif inotrop etkisi nedeniyle PAH’da uygun seçenek değildir"
       ],
       "historySummary": "Sağ kalp kateterizasyonu ile pulmoner hipertansiyon kesinleşen hastada tedavi seçenekleri gözden geçiriliyor.",
-      "priorityFocus": "PAH tedavisinde verapamilin negatif inotrop etkisi, pulmoner emboli olasılığını yükseltir; hemodinamik durum tanı ve reperfüzyon kararını belirler."
+      "priorityFocus": "PAH tedavisinde verapamilin negatif inotrop etkisi doğru seçeneği belirleyen temel ipucudur; pAH’da verapamilden kaçınılır; sağ ventrikül yetmezliğini kötüleştirebilir."
     }
   },
   {
@@ -23649,17 +23649,17 @@ export const cases = [
       "profile": "70 yaşında kadın · Acil servis",
       "presentation": "Tedaviye uyumsuz hipertansiyon sonrası ani nefes darlığı",
       "riskContext": [
-        "Hipertansiyon öyküsü",
-        "İlaç veya toksin maruziyeti"
+        "Kontrolsüz hipertansiyon / vasküler stres",
+        "Toksin/ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "ani pulmoner ödem + ağır hipertansiyon + sistolik yetmezlik öyküsü yok",
+        "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok",
         "Antihipertansif uyumsuzluğu sonrası ani nefes darlığı gelişmiş",
         "Önceden ciddi sistolik kalp yetersizliği öyküsü yok",
-        "Klinik patern hipertansif akut pulmoner ödemi düşündürür"
+        "Klinik patern hipertansif akut pulmoner ödemi"
       ],
       "historySummary": "70 yaşındaki kadın hasta antihipertansif ilaçlarını düzensiz kullandıktan sonra ani başlayan şiddetli nefes darlığı ile acile başvurur. Önceden bilinen ciddi sistolik kalp yetersizliği öyküsü yoktur.",
-      "priorityFocus": "ani pulmoner ödem + ağır hipertansiyon + sistolik yetmezlik öyküsü yok, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Akut hipertansif akciğer ödeminde başlangıç tedavisi olarak intravenöz vazodilatör bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok doğru seçeneği belirleyen temel ipucudur; hipertansif pulmoner ödemde temel hızlı hamle afterload azaltmaktır: IV nitrat/nitroprussid gibi vazodilatörler."
     }
   },
   {
@@ -23784,16 +23784,16 @@ export const cases = [
       "profile": "60 yaşında kadın · Gastroenteroloji polikliniği",
       "presentation": "Bulantı ve yemekten sonra şişkinlik",
       "riskContext": [
-        "Gastroenteroloji polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "ileri yaşta yeni başlayan dispepsi",
+        "İleri yaşta yeni başlayan dispepsi",
         "Hasta ileri yaş grubundadır",
         "Yakınmalar daha önce yokken yeni başlamıştır",
         "Kilo kaybı veya disfaji yokluğu endoskopi gereğini tamamen ortadan kaldırmaz"
       ],
       "historySummary": "Daha önce benzer yakınması olmayan hastada kilo kaybı, yutma güçlüğü veya kusma yok; ancak yakınmalar yeni başlamış ve hasta ileri yaş grubunda.",
-      "priorityFocus": "ileri yaşta yeni başlayan dispepsi, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak İleri yaşta yeni başlayan dispepside endoskopi önceliği bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "İleri yaşta yeni başlayan dispepsi doğru seçeneği belirleyen temel ipucudur; yeni başlayan dispepside ileri yaş endoskopi endikasyonudur."
     }
   },
   {
@@ -23935,16 +23935,16 @@ export const cases = [
       "profile": "Erişkin hasta · Endoskopi ünitesi",
       "presentation": "Reflü yakınmaları nedeniyle yapılan endoskopi",
       "riskContext": [
-        "Endoskopi ünitesi bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Z çizgisi proksimalinde kolumnar mukoza + kronik reflü",
+        "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü",
         "Uzun süreli reflü öyküsü vardır",
         "Endoskopide Z çizgisinin proksimaline uzanan kolumnar mukoza görülür",
-        "Patern skuamöz epitelin intestinal tip kolumnar metaplazisini düşündürür"
+        "Patern skuamöz epitelin intestinal tip kolumnar metaplazisini"
       ],
       "historySummary": "Soru, distal özofagusta görülen mukozal paternin hangi tanıyı düşündürdüğünü sorgular.",
-      "priorityFocus": "Z çizgisi proksimalinde kolumnar mukoza + kronik reflü, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Barrett özofagusunda skuamokolumnar bileşke proksimalinde kolumnar metaplazi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü doğru seçeneği belirleyen temel ipucudur; barrett özofagusu: kronik GERD, distal özofagusta intestinal metaplazi."
     }
   },
   {
@@ -24089,16 +24089,16 @@ export const cases = [
       "profile": "57 yaşında erkek · Gastroenteroloji polikliniği",
       "presentation": "Yemeklerden sonra sağ üst kadran ağrısı",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "safra taşı + geniş koledok; kolanjit yok",
-        "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni düşündürür",
+        "Safra taşı, geniş koledok; kolanjit yok",
+        "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni",
         "USG’de safra kesesi taşları ve koledok genişlemesi vardır",
         "Ateş, titreme ve belirgin sarılık yok; acil kolanjit paterni baskın değildir"
       ],
       "historySummary": "57 yaşındaki erkek hasta yağlı yemeklerden sonra artan sağ üst kadran ağrısı nedeniyle değerlendirilir. Ateş, titreme ve belirgin sarılık tariflemez; akut kolanjit bulgusu ön planda değildir.",
-      "priorityFocus": "safra taşı + geniş koledok; kolanjit yok, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Koledok taşından şüphelenilen stabil hastada MRKP seçimi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Safra taşı, geniş koledok; kolanjit yok doğru seçeneği belirleyen temel ipucudur; mRCP koledok taşı şüphesinde noninvaziv biliyer görüntüleme sağlar."
     }
   },
   {
@@ -24251,16 +24251,16 @@ export const cases = [
       "profile": "HCV sirozlu erişkin hasta · Acil servis",
       "presentation": "Dalgınlık, uykuya eğilim ve karında hassasiyet",
       "riskContext": [
-        "Siroz/portal hipertansiyon zemini"
+        "Siroz ve portal hipertansiyon zemini"
       ],
       "distinctiveClues": [
-        "siroz + asit + mental durum değişikliği/karın hassasiyeti",
+        "Siroz, asit, mental durum değişikliği/karın hassasiyeti",
         "Dekompanse siroz ve belirgin asit mevcut",
         "Dalgınlık/uykuya eğilim yeni gelişmiştir",
-        "Karın hassasiyeti enfekte asiti düşündürür"
+        "Karın hassasiyeti enfekte asiti"
       ],
       "historySummary": "Dekompanse sirozu olan hastada son iki günde dikkat azalması ve hafif uykuya eğilim gelişiyor; muayenede belirgin asit var.",
-      "priorityFocus": "siroz + asit + mental durum değişikliği/karın hassasiyeti, varis kanaması lehinedir; resüsitasyonla birlikte vazoaktif tedavi, antibiyotik ve erken endoskopi planlanır."
+      "priorityFocus": "Siroz, asit, mental durum değişikliği/karın hassasiyeti varis kanaması olasılığını yükseltir; resüsitasyonla birlikte vazoaktif tedavi, antibiyotik ve erken endoskopi planlanır."
     }
   },
   {
@@ -24424,16 +24424,16 @@ export const cases = [
       "profile": "Erişkin erkek · Acil servis",
       "presentation": "Genel durum bozukluğu ve hipotansiyon",
       "riskContext": [
-        "Acil servis bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "hiperpigmentasyon + hipotansiyon + hiponatremi/hiperpotasemi/hipoglisemi",
+        "Hiperpigmentasyon, hipotansiyon, hiponatremi/hiperpotasemi/hipoglisemi",
         "Uzun süredir deri ve mukozalarda koyulaşma vardır",
         "Hipotansif kriz ve belirgin halsizlik mevcuttur",
         "Na düşük, K yüksek ve glukoz düşüktür"
       ],
       "historySummary": "Deri ve mukozalarda uzun süredir artan koyulaşma fark edilmektedir.",
-      "priorityFocus": "hiperpigmentasyon + hipotansiyon + hiponatremi/hiperpotasemi/hipoglisemi, anafilaksi için yeterli klinik paterndir; ilk ilaç antihistaminik değil IM adrenalindir."
+      "priorityFocus": "Hiperpigmentasyon, hipotansiyon, hiponatremi/hiperpotasemi/hipoglisemi doğru seçeneği belirleyen temel ipucudur; adrenal kriz tedavisi: IV hidrokortizon, izotonik salin, gerekirse dekstroz."
     }
   },
   {
@@ -24597,16 +24597,16 @@ export const cases = [
       "profile": "20 yaşında kadın · Endokrinoloji polikliniği",
       "presentation": "Çarpıntı, titreme ve sinirlilik atakları",
       "riskContext": [
-        "Endokrinoloji polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "TSH baskılı, sT4 yüksek + düşük tiroglobulin + düşük uptake",
+        "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake",
         "Çarpıntı, titreme ve kilo kaybı tirotoksikoz bulgularıdır",
         "TRAb negatiftir; Graves lehine değildir",
         "Tiroglobulin düşük ve radyoaktif iyot tutulumu baskılıdır"
       ],
       "historySummary": "20 yaşındaki kadın hasta çarpıntı, titreme, sinirlilik ve kilo kaybı ataklarıyla başvurur. Tiroid bezi ağrısızdır; hastanın eksojen tiroid hormonu kullanımı başlangıçta net değildir.",
-      "priorityFocus": "TSH baskılı, sT4 yüksek + düşük tiroglobulin + düşük uptake, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Tirotoksikozis faktitisyada düşük tiroglobulin ve baskılanmış radyoaktif iyot tutulumu bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake doğru seçeneği belirleyen temel ipucudur; düşük tiroglobulin, düşük uptake = eksojen hormon alımı/faktitisya düşün."
     }
   },
   {
@@ -24745,16 +24745,16 @@ export const cases = [
       "profile": "42 yaşında erkek · Endokrinoloji polikliniği",
       "presentation": "Baş ağrısı ve libido azalması",
       "riskContext": [
-        "Endokrinoloji polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "makroadenom + beklenenden düşük prolaktin",
+        "Makroadenom, beklenenden düşük prolaktin",
         "MR’da 2 cm hipofiz makroadenomu vardır",
-        "Baş ağrısı, libido azalması ve görme alanı yakınması kitle etkisini düşündürür",
+        "Baş ağrısı, libido azalması ve görme alanı yakınması kitle etkisini",
         "Bazal prolaktin tümör boyutuna göre düşük görünmektedir"
       ],
       "historySummary": "42 yaşındaki erkek hasta baş ağrısı, libido azalması ve hafif görme alanı yakınmasıyla endokrinolojiye başvurur. Büyük hipofizer lezyon şüphesinde prolaktin düzeyinin beklenenden düşük görünmesi tanısal sorun yaratır.",
-      "priorityFocus": "makroadenom + beklenenden düşük prolaktin, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Prolaktinoma şüphesinde hook effect için serum dilüsyonu bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Makroadenom, beklenenden düşük prolaktin doğru seçeneği belirleyen temel ipucudur; hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir."
     }
   },
   {
@@ -24882,16 +24882,16 @@ export const cases = [
       "profile": "55 yaşında hasta · Onkoloji konseyi",
       "presentation": "Metastatik kolon adenokarsinomu",
       "riskContext": [
-        "Onkoloji konseyi bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "metastatik kolon adenokarsinomu tedavi markerları",
+        "Metastatik kolon adenokarsinomu tedavi markerları",
         "Biyopsi kolon adenokarsinomu göstermektedir",
         "Karaciğer metastazı sistemik tedavi planını gerektirir",
         "KRAS/NRAS ve MSI tedavi seçimini etkiler"
       ],
       "historySummary": "Kolonoskopide inen kolonda kitle, karaciğerde metastatik lezyonlar ve biyopside adenokarsinom saptanan hastada sistemik tedavi planlanıyor.",
-      "priorityFocus": "metastatik kolon adenokarsinomu tedavi markerları, CD20 açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Metastatik kolon adenokarsinomu tedavi markerları akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -25043,16 +25043,16 @@ export const cases = [
       "profile": "75 yaşında erkek · Hematoloji polikliniği",
       "presentation": "Boyun ve aksillada uzun süredir lenf nodu şişliği",
       "riskContext": [
-        "Hematoloji polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre",
+        "Yaşlı hasta, kronik lenfositoz, CD5/CD23 klonal B hücre",
         "Yaşlı hastada uzun süredir süren lenfositoz vardır",
         "Boyun ve aksillada lenf nodları eşlik eder",
         "Yaymada olgun küçük lenfositler izlenir"
       ],
       "historySummary": "75 yaşındaki erkek hasta boyun ve aksillada uzun süredir devam eden lenf nodu şişlikleriyle başvurur. Rutin kontrollerinde yıllardır süren lenfositoz öyküsü vardır ve hasta belirgin B semptomu tariflemez.",
-      "priorityFocus": "yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak KLL tanısında periferik kan akım sitometri ile immünfenotiplendirme bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Yaşlı hasta, kronik lenfositoz, CD5/CD23 klonal B hücre doğru seçeneği belirleyen temel ipucudur; cLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir."
     }
   },
   {
@@ -25216,16 +25216,16 @@ export const cases = [
       "profile": "58 yaşında kadın · Dahiliye polikliniği",
       "presentation": "Halsizlik, sararma ve çarpıntı",
       "riskContext": [
-        "Dahiliye polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği",
-        "Halsizlik, sararma ve çarpıntı akut anemiyi düşündürür",
-        "Retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı hemoliz lehinedir",
+        "Hemoliz bulguları, direkt Coombs IgG/C3 pozitifliği",
+        "Halsizlik, sararma ve çarpıntı akut anemiyi",
+        "Retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı hemoliz",
         "Kanama öyküsü yoktur"
       ],
       "historySummary": "Kanama öyküsü yoktur; tablo hemolitik süreç açısından değerlendirilir.",
-      "priorityFocus": "hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Otoimmün hemolitik anemide direkt Coombs testi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Hemoliz bulguları, direkt Coombs IgG/C3 pozitifliği doğru seçeneği belirleyen temel ipucudur; otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur."
     }
   },
   {
@@ -25348,16 +25348,16 @@ export const cases = [
       "profile": "Genetik danışmanlık olgusu · TUS tekrar modülü",
       "presentation": "Herediter kanser sendromu-gen eşleşmesi",
       "riskContext": [
-        "Aile öyküsü/genetik yatkınlık"
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "herediter difüz mide kanseri gen eşleşmesi",
+        "Herediter difüz mide kanseri gen eşleşmesi",
         "Soru yanlış sendrom-gen eşleşmesini soruyor",
         "Herediter difüz mide kanserinde beklenen gen CDH1’dir",
         "ATM seçeneği bu sendrom için temel eşleşme değildir"
       ],
       "historySummary": "Ailesinde genç yaşta diffüz mide kanseri, meme-over kanseri ve sarkom öyküleri bulunan bir aile için sendrom-gen eşleşmeleri gözden geçirilir. Soru, yanlış eşleşmeyi ayırt etmeye odaklanır.",
-      "priorityFocus": "herediter difüz mide kanseri gen eşleşmesi, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Herediter difüz mide kanserinde CDH1 ilişkisi; ATM’nin yanlış eşleşme olması bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Herediter difüz mide kanseri gen eşleşmesi doğru seçeneği belirleyen temel ipucudur; herediter difüz mide kanseri: CDH1."
     }
   },
   {
@@ -25490,17 +25490,16 @@ export const cases = [
       "profile": "30 yaşında kadın · Acil servis",
       "presentation": "İV antibiyotik uygulamasından dakikalar sonra fenalık ve kaşıntı",
       "riskContext": [
-        "İlaç veya toksin maruziyeti",
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "ilaç sonrası dakikalar içinde yaygın döküntü + fenalık/kaşıntı",
+        "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık/kaşıntı",
         "Antibiyotik uygulamasından dakikalar sonra reaksiyon gelişmiştir",
-        "Avuç içi kaşıntısı ve yaygın döküntü mast hücre aracılı reaksiyonu düşündürür",
-        "Fenalık hissi sistemik reaksiyon lehinedir"
+        "Avuç içi kaşıntısı ve yaygın döküntü mast hücre aracılı reaksiyonu",
+        "Fenalık hissi sistemik reaksiyon"
       ],
       "historySummary": "Pnömoni nedeniyle başlanan antibiyotik sonrası avuç içi kaşıntısı, fenalık hissi ve yaygın döküntü gelişiyor.",
-      "priorityFocus": "ilaç sonrası dakikalar içinde yaygın döküntü + fenalık/kaşıntı, anafilaksi için yeterli klinik paterndir; ilk ilaç antihistaminik değil IM adrenalindir."
+      "priorityFocus": "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık/kaşıntı doğru seçeneği belirleyen temel ipucudur; anafilakside ilk ilaç IM adrenalindir."
     }
   },
   {
@@ -25628,16 +25627,16 @@ export const cases = [
       "profile": "58 yaşında kadın · Romatoloji polikliniği",
       "presentation": "Parmak uçlarında ağrı, morarma ve ülser",
       "riskContext": [
-        "Romatoloji polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Raynaud + ağrılı dijital ülser + CCB yetersizliği",
+        "Raynaud, ağrılı dijital ülser, CCB yetersizliği",
         "Uzun süreli Raynaud yakınmaları vardır",
         "Parmak uçlarında ağrılı morarma ve ülser gelişmiştir",
         "Aspirin ve kalsiyum kanal blokerinden yeterli yanıt alınamamıştır"
       ],
       "historySummary": "Uzun süredir Raynaud yakınmaları olan hastada son haftalarda parmak uçlarında ağrılı morarma ve ülser gelişiyor; aspirin ve kalsiyum kanal blokerinden yeterli fayda görmemiş.",
-      "priorityFocus": "Raynaud + ağrılı dijital ülser + CCB yetersizliği, İloprost ve bosentan açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Raynaud, ağrılı dijital ülser, CCB yetersizliği akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -25784,16 +25783,16 @@ export const cases = [
       "profile": "28 yaşında kadın · Romatoloji polikliniği",
       "presentation": "Fotosensitivite, malar döküntü ve eklem ağrısı",
       "riskContext": [
-        "Romatoloji polikliniği bağlamında değerlendirme"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü",
+        "SLE aktivite izlemi, anti-dsDNA yüksekliği, kompleman düşüklüğü",
         "Fotosensitivite, malar döküntü ve artralji SLE paternini destekler",
-        "Bacaklarda şişlik renal aktivite ihtimalini artırır",
+        "Bacaklarda şişlik renal aktivite",
         "Anti-dsDNA yüksek ve C3/C4 düşüktür"
       ],
       "historySummary": "28 yaşındaki kadın hasta fotosensitivite, malar döküntü, el küçük eklemlerinde ağrı ve son haftalarda bacaklarda hafif şişlik yakınmalarıyla romatoloji kontrolüne gelir. Mevcut yakınmalar hastalık aktivitesi açısından değerlendirilir.",
-      "priorityFocus": "SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "SLE aktivite izlemi, anti-dsDNA yüksekliği, kompleman düşüklüğü SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -25930,16 +25929,16 @@ export const cases = [
       "profile": "Erişkin hasta · Nefroloji polikliniği",
       "presentation": "Nefrotik düzeyde proteinüri",
       "riskContext": [
-        "Nefroloji polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği",
+        "Erişkinde nefrotik proteinüri, anti-PLA2R pozitifliği",
         "Erişkin hastada nefrotik düzeyde proteinüri ve ödem vardır",
-        "Biyopsi membranöz nefropati ile uyumludur",
+        "Biyopsi membranöz nefropati",
         "Serum anti-PLA2R pozitifliği primer formu destekler"
       ],
       "historySummary": "Klinik tablo primer membranöz nefropati ile sekonder nedenlerin ayırt edilmesini gerektirir.",
-      "priorityFocus": "erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Primer membranöz glomerülonefritte anti-PLA2R antikorunun ayırt ettirici değeri bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Erişkinde nefrotik proteinüri, anti-PLA2R pozitifliği doğru seçeneği belirleyen temel ipucudur; primer membranöz nefropati markerı: anti-PLA2R."
     }
   },
   {
@@ -26065,16 +26064,16 @@ export const cases = [
       "profile": "Uzun süreli diyabeti olan erişkin hasta · Nefroloji polikliniği",
       "presentation": "Proteinüriye eşlik eden atipik böbrek bulgusu",
       "riskContext": [
-        "Diyabet öyküsü"
+        "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı",
+        "Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı",
         "Uzun süreli diyabette albuminüri vardır",
         "Böbrek fonksiyon bozukluğu yavaş ilerlemektedir",
         "Soru diyabet dışı etiyoloji kırmızı bayrağını sorar"
       ],
       "historySummary": "Uzun süreli diyabeti olan hastada albuminüri ve yavaş ilerleyen böbrek fonksiyon bozukluğu izlenmektedir. Hekim, diyabetik nefropati dışı bir etiyolojiyi düşündürecek kırmızı bayrak bulgusunu ayırt etmek ister.",
-      "priorityFocus": "diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Diyabetik nefropati dışında etiyoloji düşündüren makroskopik hematüri bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı doğru seçeneği belirleyen temel ipucudur; diyabetik nefropati dışı ipuçları: aktif idrar sedimenti, makroskopik hematüri, hızlı GFR düşüşü, kısa diyabet süresi."
     }
   },
   {
@@ -26232,16 +26231,16 @@ export const cases = [
       "profile": "54 yaşında erkek · Acil servis",
       "presentation": "Halsizlik, güçsüzlük ve bulantı",
       "riskContext": [
-        "Acil servis bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "K+ 7.1 + sivri T + QRS genişlemesi",
+        "K, 7.1, sivri T, QRS genişlemesi",
         "Potasyum 7.1 mEq/L ile kritik düzeydedir",
         "EKG’de sivri T dalgaları ve P dalga basıklaşması vardır",
-        "QRS genişlemesi kardiyak membran instabilitesini gösterir"
+        "QRS genişlemesi kardiyak membran instabilitesini"
       ],
       "historySummary": "Kronik böbrek hastalığı olan 54 yaşındaki erkek hasta halsizlik, kas güçsüzlüğü ve bulantı ile acile başvurur. Klinik tablo potasyum yüksekliğine bağlı kardiyak membran instabilitesi açısından acil değerlendirilir.",
-      "priorityFocus": "K+ 7.1 + sivri T + QRS genişlemesi, acil hiperpotasemide membran stabilizasyonu gerektirir; EKG değişikliği varsa ilk adım IV kalsiyumdur."
+      "priorityFocus": "K, 7.1, sivri T, QRS genişlemesi EKG değişiklikli hiperpotasemi paternidir; ilk hedef IV kalsiyumla miyokard membranını stabilize etmektir."
     }
   },
   {
@@ -26368,16 +26367,16 @@ export const cases = [
       "profile": "69 yaşında kadın · Geriatri polikliniği",
       "presentation": "Unutkanlık yakınması",
       "riskContext": [
-        "Geriatri polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "eş kaybı sonrası isteksizlik + iştah azalması + unutkanlık",
+        "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık",
         "Unutkanlık eş kaybından sonra artmıştır",
         "İştah azalması, keyifsizlik ve ilgide azalma vardır",
         "Klinik başlangıç duygusal stresörle ilişkilidir"
       ],
       "historySummary": "Yakınları unutkanlığın eş kaybından sonra arttığını, hastada iştah azalması, keyifsizlik ve ilgide azalma geliştiğini belirtiyor.",
-      "priorityFocus": "eş kaybı sonrası isteksizlik + iştah azalması + unutkanlık, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Geriatrik depresyonda motivasyon kaybı, psikomotor yavaşlama ve ipucuyla hatırlamanın korunması bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık doğru seçeneği belirleyen temel ipucudur; geriatrik depresyon unutkanlıkla gelebilir ve demansı taklit edebilir."
     }
   },
   {
@@ -26503,16 +26502,16 @@ export const cases = [
       "profile": "20 yaşında kadın · Dermatoloji polikliniği",
       "presentation": "Gövdede yaygınlaşan skuamlı döküntü",
       "riskContext": [
-        "Dermatoloji polikliniği bağlamında değerlendirme"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "önce tek madalyon plak, sonra gövde döküntüsü",
+        "Önce tek madalyon plak, sonra gövde döküntüsü",
         "İlk olarak gövdede tek büyük oval skuamlı plak çıkmıştır",
         "Sonra gövde ve proksimal ekstremitelerde çok sayıda benzer döküntü gelişmiştir",
         "Mukozal erozyon ve sistemik toksisite yoktur"
       ],
       "historySummary": "20 yaşındaki kadın hasta birkaç gün önce gövdede tek büyük oval skuamlı plak fark ettikten sonra gövde ve proksimal ekstremitelerde çok sayıda benzer döküntü gelişmesi nedeniyle başvurur. Sistemik toksisite veya mukozal erozyon tariflemez.",
-      "priorityFocus": "önce tek madalyon plak, sonra gövde döküntüsü, Pitriazis rozea açısından karar verdiricidir; TUS’ta EKG paterni reperfüzyon kararını troponinden önce belirler."
+      "priorityFocus": "Önce tek madalyon plak, sonra gövde döküntüsü akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -26658,16 +26657,16 @@ export const cases = [
       "profile": "56 yaşında kadın · Dermatoloji polikliniği",
       "presentation": "Ayakta kaşıntılı skuamlı lezyonlar",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "interdigital maserasyon + plantar hiperkeratotik skuam",
+        "İnterdigital maserasyon, plantar hiperkeratotik skuam",
         "Parmak aralarında maserasyon vardır",
         "Plantar hiperkeratotik skuam dermatofit enfeksiyonunu destekler",
         "Klinik mantar enfeksiyonu olarak değerlendirilmiştir"
       ],
       "historySummary": "Ayak parmak aralarında maserasyon ve plantar hiperkeratotik skuam gelişen hastada mantar enfeksiyonu düşünülüyor.",
-      "priorityFocus": "interdigital maserasyon + plantar hiperkeratotik skuam, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Tinea pedis tanısında KOH hifa ve tedavide terbinafin bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "İnterdigital maserasyon, plantar hiperkeratotik skuam doğru seçeneği belirleyen temel ipucudur; tinea pedis tedavisinde topikal terbinafin/azol antifungaller kullanılır."
     }
   },
   {
@@ -26801,16 +26800,16 @@ export const cases = [
       "profile": "65 yaşında erkek · Acil servis",
       "presentation": "Sağ tarafta ani güç kaybı",
       "riskContext": [
-        "Acil servis bağlamında değerlendirme"
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "bacakta koldan belirgin motor defisit",
-        "Ani başlayan tek taraflı güç kaybı vasküler olayı düşündürür",
+        "Bacakta koldan belirgin motor defisit",
+        "Ani başlayan tek taraflı güç kaybı vasküler olayı",
         "Defisit sağ bacakta belirgin, sağ kolda hafiftir",
         "Konuşma bozukluğu ön planda değildir"
       ],
       "historySummary": "65 yaşındaki erkek hasta ani başlayan sağ taraf güç kaybı ile acile getirilir. Güç kaybı sağ bacakta belirgin, sağ kolda ise daha hafiftir; konuşma bozukluğu ön planda değildir.",
-      "priorityFocus": "bacakta koldan belirgin motor defisit, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Anterior serebral arter infarktında alt ekstremite ağırlıklı motor defisit bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Bacakta koldan belirgin motor defisit doğru seçeneği belirleyen temel ipucudur; aCA infarktı: karşı bacakta belirgin güç/kuyu, abuli/idrar inkontinansı görülebilir."
     }
   },
   {
@@ -26936,16 +26935,16 @@ export const cases = [
       "profile": "33 yaşında erkek · Nöroloji polikliniği",
       "presentation": "Ellerde kuvvetsizlik ve gevşemede güçlük",
       "riskContext": [
-        "Nöroloji polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "yumruk sonrası gevşemede güçlük + meksiletin yanıtı",
+        "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı",
         "Yumruk sonrası gevşeme gecikmesi miyotoni bulgusudur",
         "Meksiletinle gevşeme güçlüğünün azalması miyotoniyi destekler",
         "Erişkin başlangıçlı distal güçsüzlük/myotoni paternine uyar"
       ],
       "historySummary": "Hasta yumruk yaptıktan sonra parmaklarını açmakta zorlanıyor; meksiletin ile gevşeme güçlüğünün azaldığını söylüyor.",
-      "priorityFocus": "yumruk sonrası gevşemede güçlük + meksiletin yanıtı, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Miyotonik distrofide miyotoni, frontal kellik, temporal atrofi ve pitoz bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı doğru seçeneği belirleyen temel ipucudur; miyotonik distrofi: myotoni, distal güçsüzlük, frontal kellik, katarakt, kalp iletim bozukluğu."
     }
   },
   {
@@ -27097,16 +27096,16 @@ export const cases = [
       "profile": "32 yaşında kadın · Acil servis",
       "presentation": "Baş ağrısı, yüksek ateş, kişilik değişikliği ve nöbet",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "ateş + kişilik değişikliği + fokal nöbet + temporal tutulum paterni",
-        "Akut ateş ve baş ağrısı ensefalit tablosunu düşündürür",
+        "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum paterni",
+        "Akut ateş ve baş ağrısı ensefalit tablosunu",
         "Davranış değişikliği ve anlamsız konuşma temporal/frontal tutulum ipucudur",
         "Fokal motor nöbet HSV ensefalitinde sık görülür"
       ],
       "historySummary": "32 yaşındaki kadın hasta akut başlayan ateş, baş ağrısı, davranış değişikliği, anlamsız konuşma ve fokal motor nöbetlerle acile getirilir. Tablo ensefalit etkeni açısından acil değerlendirme gerektirir.",
-      "priorityFocus": "ateş + kişilik değişikliği + fokal nöbet + temporal tutulum paterni, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak HSV ensefalitinde ateş, kişilik değişikliği, fokal nöbet ve lenfositik BOS paterni bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum paterni doğru seçeneği belirleyen temel ipucudur; hSV ensefaliti: temporal lob, kişilik değişikliği, fokal nöbet."
     }
   },
   {
@@ -27229,16 +27228,16 @@ export const cases = [
       "profile": "Üniversite öğrencisi · Psikiyatri görüşmesi",
       "presentation": "Yoğun rekabet ve kişilerarası çatışma",
       "riskContext": [
-        "Psikiyatri görüşmesi bağlamında değerlendirme"
+        "Endemik bölge veya vektör maruziyeti"
       ],
       "distinctiveClues": [
-        "kendi kıskançlığını başkasına atfetme",
+        "Kendi kıskançlığını başkasına atfetme",
         "Kişi kendi kıskançlığını kabul etmiyor",
         "Aynı duyguyu arkadaşına atfediyor",
         "Arkadaşının kendisini geçmeye çalıştığını söylemesi dışa atıf örüntüsüdür"
       ],
       "historySummary": "Kişi kendisindeki kıskançlığı kabul etmiyor; bunun yerine yakın arkadaşının kendisini kıskandığını ve sürekli onu geçmeye çalıştığını söylüyor.",
-      "priorityFocus": "kendi kıskançlığını başkasına atfetme, falciparum sıtması açısından ayırt ettiricidir; yüksek parazitemi ve trombositopeni ağır hastalık riskini artırır."
+      "priorityFocus": "Kendi kıskançlığını başkasına atfetme doğru seçeneği belirleyen temel ipucudur; yansıtma: kabul edilemeyen duygu/dürtüyü başkasına atfetme."
     }
   },
   {
@@ -27364,15 +27363,16 @@ export const cases = [
       "profile": "Alkol kullanım bozukluğu olan hasta · Servis",
       "presentation": "Konfabulasyon ve yeni bilgi öğrenmede bozulma",
       "riskContext": [
-        "Servis bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "alkol/beslenme bozukluğu + anterograd amnezi + konfabulasyon",
+        "Alkol/beslenme bozukluğu, anterograd amnezi, konfabulasyon",
         "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır",
-        "Konfabulasyon Korsakoff sendromu için yüksek verimli ipucudur"
+        "Konfabulasyon Korsakoff sendromu için yüksek verimli ipucudur",
+        "Wernicke-Korsakoff sendromunda mamiller cisim lezyonu"
       ],
       "historySummary": "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasında anterograd amnezi ve konfabulasyon gelişiyor.",
-      "priorityFocus": "alkol/beslenme bozukluğu + anterograd amnezi + konfabulasyon, SLE aktivitesi açısından anlamlıdır; aktivite takibinde ANA’dan çok anti-dsDNA ve kompleman öne çıkar."
+      "priorityFocus": "Alkol/beslenme bozukluğu, anterograd amnezi, konfabulasyon SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -27497,16 +27497,16 @@ export const cases = [
       "profile": "Erişkin hasta · Ortopedi polikliniği",
       "presentation": "Kronik diz ağrısı",
       "riskContext": [
-        "Ortopedi polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "osteoartrit grafi bulguları; periferik erozyon beklenmez",
-        "Kronik mekanik diz ağrısı ve krepitasyon OA ile uyumludur",
+        "Osteoartrit grafi bulguları; periferik erozyon beklenmez",
+        "Kronik mekanik diz ağrısı ve krepitasyon OA",
         "Soru OA’da beklenmeyen grafi bulgusunu soruyor",
-        "Periferik erozyon dejeneratif değil inflamatuvar artrit lehinedir"
+        "Periferik erozyon dejeneratif değil inflamatuvar artrit"
       ],
       "historySummary": "Soru, osteoartritte beklenen ve beklenmeyen direkt grafi bulgularını ayırt etmeye odaklanır.",
-      "priorityFocus": "osteoartrit grafi bulguları; periferik erozyon beklenmez, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Osteoartritte osteofit, subkondral skleroz/kist ve eklem aralığı daralması; periferik erozyonun beklenmemesi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Osteoartrit grafi bulguları; periferik erozyon beklenmez doğru seçeneği belirleyen temel ipucudur; oA grafisi: osteofit, eklem aralığı daralması, subkondral skleroz/kist."
     }
   },
   {
@@ -27634,16 +27634,16 @@ export const cases = [
       "profile": "23 yaşında erkek sporcu · Spor hekimliği polikliniği",
       "presentation": "Omuz ön kısmında ağrı",
       "riskContext": [
-        "Spor hekimliği polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "anterior omuz ağrısı + dirsek fleksiyonu/supinasyonla artış + Speed/Yergason",
+        "Anterior omuz ağrısı, dirsek fleksiyonu/supinasyonla artış, Speed/Yergason",
         "Cirit sporu tekrarlayan omuz yüklenmesi oluşturur",
         "Ağrı anterior omuzdadır",
         "Dirsek fleksiyonu ve supinasyon ağrıyı artırır"
       ],
       "historySummary": "Cirit sporu yapan hastada özellikle dirsek fleksiyonu ve supinasyonla artan anterior omuz ağrısı gelişiyor.",
-      "priorityFocus": "anterior omuz ağrısı + dirsek fleksiyonu/supinasyonla artış + Speed/Yergason, ortopedik aciliyetin ana ipucudur; nörovasküler muayene ve uygun immobilizasyon ilk basamaktır."
+      "priorityFocus": "Anterior omuz ağrısı, dirsek fleksiyonu/supinasyonla artış, Speed/Yergason doğru seçeneği belirleyen temel ipucudur; biseps tendiniti: anterior omuz ağrısı, Speed/Yergason pozitifliği."
     }
   },
   {
@@ -27770,16 +27770,16 @@ export const cases = [
       "profile": "Erişkin hasta · Servis izolasyon alanı",
       "presentation": "Öksürük, gece terlemesi ve ARB pozitif balgam",
       "riskContext": [
-        "Enfeksiyon/temas öyküsü"
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "aktif akciğer TB şüphesi/ARB pozitif balgam",
-        "Öksürük, gece terlemesi ve kilo kaybı aktif TB düşündürür",
+        "Aktif akciğer TB şüphesi/ARB pozitif balgam",
+        "Öksürük, gece terlemesi ve kilo kaybı aktif TB",
         "Balgamda aside dirençli basil pozitifliği bulaştırıcılığı destekler",
         "TB partikülleri havada asılı kalan aerosol çekirdekleriyle bulaşır"
       ],
       "historySummary": "Öksürük, gece terlemesi ve kilo kaybı olan hastada aktif akciğer tüberkülozu düşünülmektedir. Servis ortamında hasta ile temas sırasında uygulanacak izolasyon önlemi sorgulanır.",
-      "priorityFocus": "aktif akciğer TB şüphesi/ARB pozitif balgam, aktif tüberküloz lehinedir; izolasyon ve mikrobiyolojik doğrulama tedavi planıyla birlikte yürütülür."
+      "priorityFocus": "Aktif akciğer TB şüphesi/ARB pozitif balgam aktif tüberküloz olasılığını artırır; hava yolu izolasyonu ve mikrobiyolojik doğrulama birlikte planlanır."
     }
   },
   {
@@ -27917,16 +27917,16 @@ export const cases = [
       "profile": "Boksör · Acil servis",
       "presentation": "Başına darbe sonrası baş ağrısı, amnezi ve bulanık görme",
       "riskContext": [
-        "Travma/yaralanma sonrası başvuru"
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "baş travması sonrası amnezi/konsantrasyon bozukluğu + BT normal olabilir",
+        "Baş travması sonrası amnezi/konsantrasyon bozukluğu, BT normal olabilir",
         "Başına darbe sonrası nörolojik yakınmalar başlamıştır",
-        "Amnezi ve konsantrasyon bozukluğu fonksiyonel beyin etkilenmesini düşündürür",
+        "Amnezi ve konsantrasyon bozukluğu fonksiyonel beyin etkilenmesini",
         "GKS yüksek olabilir ve BT normal olabilir"
       ],
       "historySummary": "Boks sırasında başına darbe alan hastada kısa süreli dikkat ve konsantrasyon bozukluğu, amnezi ve bulanık görme gelişir. GKS yüksek seyretse de yakınmalar travma sonrası klinik fonksiyon bozukluğunu düşündürür.",
-      "priorityFocus": "baş travması sonrası amnezi/konsantrasyon bozukluğu + BT normal olabilir, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Serebral konküzyonda geçici dikkat-oryantasyon bozukluğu ve normal BT bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Baş travması sonrası amnezi/konsantrasyon bozukluğu, BT normal olabilir doğru seçeneği belirleyen temel ipucudur; konküzyon klinik tanıdır; BT normal olabilir."
     }
   },
   {
@@ -28064,18 +28064,17 @@ export const cases = [
       "profile": "2 günlük yenidoğan · Yenidoğan servisi",
       "presentation": "Sırtta küçük papülopüstüler lezyonlar",
       "riskContext": [
-        "Yenidoğan/metabolik hastalık bağlamı",
-        "Pediatrik güvenlik/yaş bağımlı risk",
-        "Enfeksiyon/temas öyküsü"
+        "Yenidoğan veya süt çocukluğu yaş riski",
+        "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "iyi görünen term yenidoğanda geçici papülopüstüller",
+        "İyi görünen term yenidoğanda geçici papülopüstüller",
         "Term yenidoğanda doğumdan kısa süre sonra döküntü başlamıştır",
         "Bebek iyi görünür ve ateş yoktur",
         "Gövde/sırtta küçük papülopüstüller vardır"
       ],
       "historySummary": "Term yenidoğanda doğumdan kısa süre sonra gövde ve sırtta sarı-beyaz küçük papülopüstüller gelişir. Bebek iyi görünür, ateş yoktur ve lezyonlar kısa sürede gerileme eğilimindedir.",
-      "priorityFocus": "iyi görünen term yenidoğanda geçici papülopüstüller, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Eritema toksikumda steril püstül ve Wright boyamada eozinofil bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "İyi görünen term yenidoğanda geçici papülopüstüller doğru seçeneği belirleyen temel ipucudur; eritema toksikum: benign, geçici, eozinofilli papülopüstüler yenidoğan döküntüsü."
     }
   },
   {
@@ -28220,16 +28219,16 @@ export const cases = [
       "profile": "10 yaşında kız çocuk · Çocuk acil",
       "presentation": "Halsizlik, kusma, koyu idrar ve sarılık",
       "riskContext": [
-        "Seyahat/endemik bölge öyküsü"
+        "Endemik bölge veya vektör maruziyeti"
       ],
       "distinctiveClues": [
-        "kamp sonrası akut hepatit + koyu idrar/sarılık",
+        "Kamp sonrası akut hepatit, koyu idrar/sarılık",
         "Yaz kampından birkaç hafta sonra semptomlar başlamıştır",
-        "Koyu idrar ve ikter hepatoselüler/kolestatik bilirubin artışını düşündürür",
+        "Koyu idrar ve ikter hepatoselüler/kolestatik bilirubin artışını",
         "Kusma ve halsizlik akut viral hepatit prodromuyla uyumludur"
       ],
       "historySummary": "Yaz kampından birkaç hafta sonra halsizlik, kusma, koyu idrar ve ikter gelişen çocukta akut hepatit düşünülüyor.",
-      "priorityFocus": "kamp sonrası akut hepatit + koyu idrar/sarılık, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Akut hepatit A tanısında Anti-HAV IgM bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Kamp sonrası akut hepatit, koyu idrar/sarılık doğru seçeneği belirleyen temel ipucudur; akut HAV tanısı: anti-HAV IgM."
     }
   },
   {
@@ -28376,17 +28375,17 @@ export const cases = [
       "profile": "2 yaşında kız çocuk · Çocuk metabolizma polikliniği",
       "presentation": "Gelişme geriliği ve ağır anemi",
       "riskContext": [
-        "Diyabet öyküsü",
-        "Aile öyküsü/genetik yatkınlık"
+        "Diyabet veya metabolik dekompansasyon riski",
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "sensorinöral işitme kaybı + diyabet + megaloblastik anemi",
-        "Akraba ebeveyn öyküsü kalıtsal hastalık olasılığını artırır",
+        "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi",
+        "Akraba ebeveyn öyküsü kalıtsal hastalık",
         "Sensorinöral işitme kaybı ve diyabet birlikte izlenir",
-        "Ağır makrositer anemi megaloblastik süreci düşündürür"
+        "Ağır makrositer anemi megaloblastik süreci"
       ],
       "historySummary": "Akraba ebeveynlerin 2 yaşındaki çocuğunda gelişme geriliği, sensorinöral işitme kaybı, diyabet ve belirgin solukluk birlikte izlenir. Kalıtsal vitamin taşıma bozukluğu düşünülür.",
-      "priorityFocus": "sensorinöral işitme kaybı + diyabet + megaloblastik anemi, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Tiamin taşıyıcı bozukluğuna bağlı tiamin yanıtlı megaloblastik anemi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi doğru seçeneği belirleyen temel ipucudur; thiamine-responsive megaloblastic anemia: diyabet, sensorinöral işitme kaybı, megaloblastik anemi."
     }
   },
   {
@@ -28514,16 +28513,16 @@ export const cases = [
       "profile": "10 yaşında erkek çocuk · Çocuk nöroloji polikliniği",
       "presentation": "Davranış değişikliği ve okul başarısında gerileme",
       "riskContext": [
-        "Aile öyküsü/genetik yatkınlık"
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "erkek çocuk + adrenal yetmezlik + posterior beyaz cevher tutulumu",
+        "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu",
         "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır",
-        "Cilt hiperpigmentasyonu adrenal yetmezliği düşündürür",
+        "Cilt hiperpigmentasyonu adrenal yetmezliği",
         "Ailede erkek bireylerde erken nörolojik kötüleşme öyküsü vardır"
       ],
       "historySummary": "10 yaşındaki erkek çocukta okul başarısında gerileme, davranış değişikliği ve ciltte hiperpigmentasyon gelişir. Ailede erkek bireylerde erken yaş nörolojik kötüleşme öyküsü olduğu öğrenilir.",
-      "priorityFocus": "erkek çocuk + adrenal yetmezlik + posterior beyaz cevher tutulumu, kalıtsal/metabolik hastalık için karar verdiricidir; özgül klinik ipucu ve metabolit paterni çeldiricileri ayırır."
+      "priorityFocus": "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu doğru seçeneği belirleyen temel ipucudur; x-ALD: ABCD1, çok uzun zincirli yağ asitleri ↑, adrenal yetmezlik, beyaz cevher demiyelinizasyonu."
     }
   },
   {
@@ -28651,16 +28650,16 @@ export const cases = [
       "profile": "15 yaşında kız · Çocuk endokrin polikliniği",
       "presentation": "Puberte gecikmesi ve mukokutanöz bulgular",
       "riskContext": [
-        "Çocuk endokrin polikliniği bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "kronik kandidiyazis + hipoparatiroidi/Addison bulguları",
+        "Kronik kandidiyazis, hipoparatiroidi/Addison bulguları",
         "Kronik kandidiyal ağız lezyonları vardır",
-        "Mukozal hiperpigmentasyon Addison olasılığını artırır",
+        "Mukozal hiperpigmentasyon Addison",
         "Tırnak distrofisi ve gelişimsel gecikme eşlik eder"
       ],
       "historySummary": "Kronik kandidiyal ağız lezyonları, mukozal hiperpigmentasyon, tırnak distrofisi ve gelişimsel gecikme bulguları olan ergende otoimmün endokrinopati düşünülüyor.",
-      "priorityFocus": "kronik kandidiyazis + hipoparatiroidi/Addison bulguları, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Tip 1 otoimmün poliglandüler sendromda kandidiyazis, hipoparatiroidi/adrenal yetmezlik ilişkisi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Kronik kandidiyazis, hipoparatiroidi/Addison bulguları doğru seçeneği belirleyen temel ipucudur; aPECED/APS-1: kronik mukokutanöz kandidiyazis, hipoparatiroidi, Addison."
     }
   },
   {
@@ -28788,16 +28787,16 @@ export const cases = [
       "profile": "10 yaşında erkek · Çocuk acil",
       "presentation": "Akut hemiparezi ve marfanoid görünüm",
       "riskContext": [
-        "Çocuk acil bağlamında değerlendirme"
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "marfanoid habitus + lens öyküsü + çocukta tromboz/inme",
-        "Akrabalık öyküsü otozomal resesif metabolik hastalık olasılığını artırır",
+        "Marfanoid habitus, lens öyküsü, çocukta tromboz/inme",
+        "Akrabalık öyküsü otozomal resesif metabolik hastalık",
         "Uzun boy ve araknodaktili marfanoid görünüm oluşturur",
-        "Önceki lens cerrahisi ektopia lentis öyküsünü düşündürür"
+        "Önceki lens cerrahisi ektopia lentis öyküsünü"
       ],
       "historySummary": "Akrabalık öyküsü olan 10 yaşındaki erkek çocuk ani başlayan sol taraf güçsüzlüğü ile acile getirilir. Uzun boy, ince uzun parmaklar ve önceki lens cerrahisi öyküsü dikkat çeker.",
-      "priorityFocus": "marfanoid habitus + lens öyküsü + çocukta tromboz/inme, kalıtsal/metabolik hastalık için karar verdiricidir; özgül klinik ipucu ve metabolit paterni çeldiricileri ayırır."
+      "priorityFocus": "Marfanoid habitus, lens öyküsü, çocukta tromboz/inme doğru seçeneği belirleyen temel ipucudur; homosistinüri: marfanoid habitus, lens subluksasyonu, tromboz/inme riski."
     }
   },
   {
@@ -28971,17 +28970,16 @@ export const cases = [
       "profile": "Term yenidoğan · Yenidoğan servisi",
       "presentation": "Doğumda solukluk ve ağır anemi",
       "riskContext": [
-        "Yenidoğan/metabolik hastalık bağlamı",
-        "Pediatrik güvenlik/yaş bağımlı risk"
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "yenidoğanda ağır anemi + dış kanama/hemoliz yok",
+        "Yenidoğanda ağır anemi, dış kanama/hemoliz yok",
         "Term yenidoğan doğumdan hemen sonra belirgin soluk ve taşikardiktir",
-        "Zayıf perfüzyon ağır aneminin hemodinamik etkisini gösterir",
+        "Zayıf perfüzyon ağır aneminin hemodinamik etkisini",
         "Anne veya bebekte belirgin dış kanama yoktur"
       ],
       "historySummary": "Anne veya bebekte belirgin dış kanama öyküsü yoktur; hemolizsiz fetal kan kaybı olasılığı araştırılır.",
-      "priorityFocus": "yenidoğanda ağır anemi + dış kanama/hemoliz yok, bu spot olguda doğru cevaba götüren ana ipucudur; TUS’ta odak Fetomaternal kanama tanısında Kleihauer-Betke testi bilgisini çeldiriciden ayırmaktır."
+      "priorityFocus": "Yenidoğanda ağır anemi, dış kanama/hemoliz yok doğru seçeneği belirleyen temel ipucudur; fetomaternal hemoraji tanısı: Kleihauer-Betke testi."
     }
   },
   {
@@ -29139,17 +29137,16 @@ export const cases = [
       "profile": "Yenidoğan · Yenidoğan yoğun bakım",
       "presentation": "Doğumda resüsitasyon ve asidoz",
       "riskContext": [
-        "Yenidoğan/metabolik hastalık bağlamı",
-        "Vasküler/iskemik risk bağlamı"
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "term bebekte perinatal asfiksi + ağır asidoz + orta-ağır HİE",
-        "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi düşündürür",
+        "Term bebekte perinatal asfiksi, ağır asidoz, orta-ağır HİE",
+        "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi",
         "Letarji, tonus azalması ve zayıf emme ensefalopati bulgularıdır",
-        "pH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir"
+        "PH 6.9 ve baz açığı -15 ağır metabolik asidozu"
       ],
       "historySummary": "Bulgular orta-ağır hipoksik iskemik ensefalopati açısından değerlendirilir.",
-      "priorityFocus": "term bebekte perinatal asfiksi + ağır asidoz + orta-ağır HİE, hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir; terapötik hipotermi ilk 6 saat içinde düşünülür."
+      "priorityFocus": "Term bebekte perinatal asfiksi, ağır asidoz, orta-ağır HİE hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir; terapötik hipotermi ilk 6 saatte düşünülür."
     }
   }
 ];

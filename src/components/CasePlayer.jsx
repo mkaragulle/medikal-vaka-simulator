@@ -295,6 +295,39 @@ function normalizeSummaryItems(value) {
   return [];
 }
 
+function summaryRowKind(label = '') {
+  const normalized = label.toLocaleLowerCase('tr');
+  if (normalized.includes('profil')) return 'profile';
+  if (normalized.includes('başvuru')) return 'presentation';
+  if (normalized.includes('risk')) return 'risk';
+  if (normalized.includes('ipucu')) return 'clues';
+  return 'default';
+}
+
+function shouldUseCompactList(items = []) {
+  return items.length > 2 || items.some((item) => String(item).length > 34);
+}
+
+function PatientSummaryItems({ items = [], enabled = true }) {
+  if (!items.length) return null;
+
+  if (shouldUseCompactList(items)) {
+    return (
+      <ul className="summary-clinical-mini-list">
+        {items.map((item) => (
+          <li key={item}><GlossaryText text={item} enabled={enabled} /></li>
+        ))}
+      </ul>
+    );
+  }
+
+  return (
+    <div className="summary-risk-chip-row clinical-intro-chip-row compact-chip-row">
+      {items.map((chip) => <em key={chip}><GlossaryText text={chip} enabled={enabled} /></em>)}
+    </div>
+  );
+}
+
 function buildPatientSummary(clinicalCase) {
   const intro = clinicalCase.patientIntro || {};
   const demographics = toDisplayPhrase(clinicalCase.demographics);
@@ -310,10 +343,10 @@ function buildPatientSummary(clinicalCase) {
 
   return {
     rows: [
-      { label: 'Profil', value: intro.profile || [demographics, setting].filter(Boolean).join(' · ') },
-      { label: 'Başvuru', value: intro.presentation || complaint },
-      { label: 'Risk bağlamı', items: riskItems, fallback: 'Vaka metninde belirgin ek risk bağlamı verilmemiş.' },
-      { label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Ayırt ettirici veri öykü, muayene ve tetkik akışından çıkarılmalıdır.' },
+      { kind: 'profile', label: 'Profil', value: intro.profile || [demographics, setting].filter(Boolean).join(' · ') },
+      { kind: 'presentation', label: 'Başvuru', value: intro.presentation || complaint },
+      { kind: 'risk', label: 'Risk bağlamı', items: riskItems, fallback: 'Risk bağlamı vaka öyküsü ve objektif bulgularla birlikte değerlendirilmelidir.' },
+      { kind: 'clues', label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Ayırt ettirici ipuçları öykü, muayene ve tetkik verilerinden birlikte çıkarılmalıdır.' },
     ],
     history: splitSentences(intro.historySummary || fallbackStory).slice(0, 4),
     focus: intro.priorityFocus || buildFocusSentence(clinicalCase),
@@ -606,13 +639,11 @@ function CasePlayer({
 
                   <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid">
                     {patientSummary.rows.map((row) => (
-                      <section key={row.label} className={row.items ? 'summary-detail-card risk-chip-card' : 'summary-detail-card'}>
+                      <section key={row.label} className={`summary-detail-card summary-detail-card--${row.kind || summaryRowKind(row.label)}${row.items ? ' risk-chip-card' : ''}`}>
                         <span>{row.label}</span>
                         {row.items ? (
                           row.items.length ? (
-                            <div className="summary-risk-chip-row clinical-intro-chip-row">
-                              {row.items.map((chip) => <em key={chip}><GlossaryText text={chip} enabled={!hardMode && !examMeta?.active} /></em>)}
-                            </div>
+                            <PatientSummaryItems items={row.items} enabled={!hardMode && !examMeta?.active} />
                           ) : <p>{row.fallback}</p>
                         ) : (
                           <p><GlossaryText text={row.value} enabled={!hardMode && !examMeta?.active} /></p>
