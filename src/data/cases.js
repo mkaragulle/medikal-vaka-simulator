@@ -1,5 +1,5 @@
-// KlinikIQ vaka verisi: TUS'a yakın ama tamamen özgün klinik dil optimizasyonu.
-// Not: ÖSYM/TUS soru metinleri kopyalanmamış; yalnızca klinik yoğunluk, terminoloji ve karar verdirici soru kurgusu referans alınmıştır.
+// KlinikIQ vaka verisi: TUS odaklı, klinik karar verdirici ve objektif tetkik sonuçlarıyla yapılandırılmıştır.
+// Not: ÖSYM/TUS soru metinleri kopyalanmamış; vakalar özgün eğitim senaryoları olarak yazılmıştır.
 
 export const cases = [
   {
@@ -20,10 +20,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Hastanın anksiyöz ve diaforetik olduğu izleniyor",
       "Kalp sesleri ritmik; belirgin ek ses veya üfürüm duyulmuyor",
       "Akciğer oskültasyonunda yaygın ral saptanmıyor",
-      "Periferik nabızlar bilateral simetrik alınıyor"
+      "Periferik nabızlar bilateral simetrik alınıyor",
+      "Periferik nabızlar bilateral palpabl; belirgin periferik siyanoz veya soğukluk saptanmıyor."
     ],
     "investigations": [
       {
@@ -41,7 +43,7 @@ export const cases = [
             "12 derivasyon EKG",
             "V2-V5 derivasyonlarında belirgin ST segment elevasyonu, inferior derivasyonlarda karşılıklı ST segment depresyonu izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -70,40 +72,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Kardiyak biyobelirteçler sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "hs-Troponin I: 188 ng/L (Yüksek); CK-MB: 23 ng/mL (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ]
-      },
-      {
-        "id": "initial-management",
-        "label": "Acil tedavi kararı",
-        "type": "clinical",
-        "summary": "EKG’de anterior STEMI paterni olduğu için primer perkütan koroner girişim endikasyonu oluştu; biyobelirteç tekrarını bekleme gereksinimi yok.",
-        "priority": "useful",
-        "findings": [
-          "Acil reperfüzyon kararı EKG ile verildi.",
-          "Merkez gecikmesi varsa fibrinolitik algoritma gündeme alınır."
-        ],
-        "rows": [
-          [
-            "Reperfüzyon endikasyonu",
-            "Var",
-            "Yok",
-            "Acil"
-          ],
-          [
-            "Kapı-balon hedefi",
-            "<90 dk",
-            "<90 dk",
-            "Uygun"
-          ],
-          [
-            "Biyobelirteç bekleme",
-            "Gerekmez",
-            "Gerekmez",
-            "Doğru karar"
-          ]
+          "hs-Troponin I: 188 ng/L (Yüksek); CK-MB: 23 ng/mL (Yüksek) saptandı."
         ]
       }
     ],
@@ -151,7 +122,8 @@ export const cases = [
         "management": [
           "Kateter laboratuvarını primer perkütan koroner girişim için aktive et",
           "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu başla",
-          "Ritim, kan basıncı ve oksijenizasyonu sürekli izle"
+          "Ritim, kan basıncı ve oksijenizasyonu sürekli izle",
+          "EKG’de anterior STEMI paterni olduğu için primer perkütan koroner girişim endikasyonu oluştu; biyobelirteç tekrarını bekleme gereksinimi yok. Acil reperfüzyon kararı EKG ile verildi. Merkez gecikmesi varsa fibrinolitik algoritma gündeme alınır."
         ],
         "learningOutcome": "Anterior STEMI’de tanı-tedavi zamanını belirleyen veri EKG paternidir.",
         "differentials": {
@@ -192,7 +164,7 @@ export const cases = [
     "demographics": "64 yaşında erkek",
     "setting": "Acil servis",
     "chiefComplaint": "Sırta yayılan ani başlangıçlı çok şiddetli göğüs ağrısı",
-    "stem": "Kontrolsüz hipertansiyon öyküsü bulunan hasta, ağrının aniden başladığını ve başlangıç anında maksimum şiddete ulaştığını ifade ediyor. Sağ üst ekstremiteden ölçülen kan basıncının sol üst ekstremiteye göre daha düşük olduğu, ağrıya senkop veya travmanın eşlik etmediği öğreniliyor.",
+    "stem": "Kontrolsüz hipertansiyon öyküsü bulunan hasta, ağrının aniden başladığını ve başlangıç anında maksimum şiddete ulaştığını ifade ediyor. Sağ üst ekstremiteden ölçülen kan basıncının sol üst ekstremiteye göre daha düşük olduğu, ağrıya senkop veya travmanın eşlik etmediği öğreniliyor. Ani maksimum şiddette ağrı, ekstremiteler arası nabız veya kan basıncı farkı ve yeni diyastolik üfürüm akut aort sendromu ihtimalini artırır. Ani maksimum şiddette ağrı, ekstremiteler arası nabız veya kan basıncı farkı ve yeni diyastolik üfürüm akut aort sendromu ihtimalini artırır.",
     "vitals": {
       "TA": "190/108 mmHg",
       "Nabız": "112/dk",
@@ -201,10 +173,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Sağ radial nabız sol tarafa göre daha zayıf alınıyor",
       "Aort odağında yeni başlayan erken diyastolik üfürüm duyuluyor",
       "Fokal nörolojik defisit saptanmıyor",
-      "Göğüs duvarında palpasyonla hassasiyet izlenmiyor"
+      "Göğüs duvarında palpasyonla hassasiyet izlenmiyor",
+      "Periferik nabızlar bilateral palpabl; belirgin periferik siyanoz veya soğukluk saptanmıyor."
     ],
     "investigations": [
       {
@@ -222,13 +196,13 @@ export const cases = [
             "Kontrastlı toraks BT anjiyografi",
             "Asendan aortadan başlayarak arkus düzeyine uzanan intimal flap ve gerçek-yalancı lümen ayrımı izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Başlangıç laboratuvarı",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -251,27 +225,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Başlangıç laboratuvarı sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "D-dimer: Yüksek (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ]
-      },
-      {
-        "id": "risk",
-        "label": "Klinik risk ipuçları",
-        "type": "clinical",
-        "summary": "Ani maksimum şiddette ağrı, ekstremiteler arası nabız veya kan basıncı farkı ve yeni diyastolik üfürüm akut aort sendromu ihtimalini artırır.",
-        "priority": "useful",
-        "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ],
-        "rows": [
-          [
-            "Klinik risk ipuçları",
-            "Ani maksimum şiddette ağrı, ekstremiteler arası nabız veya kan basıncı farkı ve yeni diyastolik üfürüm akut aort sendromu ihtimalini artırır.",
-            "Beklenen normal patern",
-            "Yorumlandı"
-          ]
+          "D-dimer: Yüksek (Yüksek) saptandı."
         ]
       }
     ],
@@ -369,10 +325,12 @@ export const cases = [
       "Ateş": "37.3 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Juguler venöz dolgunluk belirgin izleniyor",
       "Kalp sesleri derinden ve azalmış şiddette duyuluyor",
       "Pulsus paradoxus 16 mmHg olarak ölçülüyor",
-      "Akciğer oskültasyonunda belirgin ral duyulmuyor"
+      "Akciğer oskültasyonunda belirgin ral duyulmuyor",
+      "Periferik nabızlar bilateral palpabl; belirgin periferik siyanoz veya soğukluk saptanmıyor."
     ],
     "investigations": [
       {
@@ -390,7 +348,7 @@ export const cases = [
             "Yatak başı transtorasik ekokardiyografi",
             "Geniş perikardiyal efüzyon, sağ atriyum ve sağ ventrikül diyastolik kollapsı, inferior vena kavada dilatasyon ve inspiratuvar kollaps azalması izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -401,20 +359,20 @@ export const cases = [
         "summary": "Sinüs taşikardisi ve düşük voltajlı QRS kompleksleri izleniyor; elektriksel alternans açısından seri değerlendirme yapılabilir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sinüs taşikardisi ve düşük voltajlı QRS kompleksleri izleniyor; elektriksel alternans açısından seri değerlendirme yapılabilir."
         ],
         "rows": [
           [
             "12 derivasyon EKG",
             "Sinüs taşikardisi ve düşük voltajlı QRS kompleksleri izleniyor; elektriksel alternans açısından seri değerlendirme yapılabilir.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -437,9 +395,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 11.200/mm³ (Yüksek); hs-Troponin I: Hafif yüksek (Yüksek); CRP: 42 mg/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Lökosit: 11.200/mm³ (Yüksek); hs-Troponin I: Hafif yüksek (Yüksek); CRP: 42 mg/L (Yüksek) saptandı."
         ]
       }
     ],
@@ -537,10 +495,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Bilateral bazal ve orta zonlara yayılan ince raller duyuluyor",
       "S3 gallop mevcut",
       "Pretibial +2 gode bırakan ödem saptanıyor",
-      "Juguler venöz dolgunluk izleniyor"
+      "Juguler venöz dolgunluk izleniyor",
+      "Periferik nabızlar bilateral palpabl; belirgin periferik siyanoz veya soğukluk saptanmıyor."
     ],
     "investigations": [
       {
@@ -558,13 +518,13 @@ export const cases = [
             "Akciğer grafisi",
             "Kardiyomegali, pulmoner vasküler redistribüsyon, Kerley B çizgileri ve bilateral perihiler alveoler-interstisyel opasiteler izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -587,9 +547,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "NT-proBNP: 6.400 pg/mL (Yüksek); Sodyum: 132 mmol/L (Düşük); hs-Troponin I: Hafif yüksek (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "NT-proBNP: 6.400 pg/mL (Yüksek); Sodyum: 132 mmol/L (Düşük); hs-Troponin I: Hafif yüksek (Yüksek) saptandı."
         ]
       },
       {
@@ -617,9 +577,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Arter kan gazı sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "pH: 7.47 (Yüksek); PaO2: 56 mmHg (Düşük); PaCO2: 31 mmHg (Düşük) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "pH: 7.47 (Yüksek); PaO2: 56 mmHg (Düşük); PaCO2: 31 mmHg (Düşük) saptandı."
         ]
       }
     ],
@@ -717,10 +677,12 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Sol sternal kenarda sistolik ejeksiyon üfürümü duyuluyor",
       "Üfürüm Valsalva manevrası ve ayakta durma ile artıyor, çömelme ile azalıyor",
       "S4 duyulabiliyor",
-      "Periferik siyanoz veya kalp yetersizliği bulgusu saptanmıyor"
+      "Periferik siyanoz veya kalp yetersizliği bulgusu saptanmıyor",
+      "Ailede ani kardiyak ölüm, açıklanamayan senkop, belirgin septal hipertrofi ve ritim bozukluğu varlığı implante edilebilir kardiyoverter defibrilatör açısından değerlendirilmelidir. Ailede ani kardiyak ölüm, açıklanamayan senkop, belirgin septal hipertrofi ve ritim bozukluğu varlığı implante edilebilir kardiyoverter defibrilatör açısından değerlendirilmelidir."
     ],
     "investigations": [
       {
@@ -738,7 +700,7 @@ export const cases = [
             "Transtorasik ekokardiyografi",
             "Asimetrik septal hipertrofi, sistolik anterior mitral kapak hareketi ve dinamik sol ventrikül çıkış yolu gradiyenti saptanıyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -749,32 +711,14 @@ export const cases = [
         "summary": "Sol ventrikül hipertrofisi voltaj kriterleri ve lateral derivasyonlarda repolarizasyon değişiklikleri izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sol ventrikül hipertrofisi voltaj kriterleri ve lateral derivasyonlarda repolarizasyon değişiklikleri izleniyor."
         ],
         "rows": [
           [
             "12 derivasyon EKG",
             "Sol ventrikül hipertrofisi voltaj kriterleri ve lateral derivasyonlarda repolarizasyon değişiklikleri izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
-          ]
-        ]
-      },
-      {
-        "id": "risk",
-        "label": "Ani ölüm risk değerlendirmesi",
-        "type": "clinical",
-        "summary": "Ailede ani kardiyak ölüm, açıklanamayan senkop, belirgin septal hipertrofi ve ritim bozukluğu varlığı implante edilebilir kardiyoverter defibrilatör açısından değerlendirilmelidir.",
-        "priority": "useful",
-        "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ],
-        "rows": [
-          [
-            "Ani ölüm risk değerlendirmesi",
-            "Ailede ani kardiyak ölüm, açıklanamayan senkop, belirgin septal hipertrofi ve ritim bozukluğu varlığı implante edilebilir kardiyoverter defibrilatör açısından değerlendirilmelidir.",
-            "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -873,10 +817,12 @@ export const cases = [
       "Ateş": "37.1 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Mukozalar kuru, deri turgoru azalmış",
       "Solunum derin ve hızlı; Kussmaul solunumu ile uyumlu",
       "Nefeste aseton kokusu hissediliyor",
-      "Karında yaygın hassasiyet mevcut, defans veya rebound saptanmıyor"
+      "Karında yaygın hassasiyet mevcut, defans veya rebound saptanmıyor",
+      "Glukoz 412 mg/dL, keton pozitif; lökosit ve troponin ölçümlerinde eşlik eden tetikleyici lehine belirgin ek bulgu saptanmaz. Glukoz 412 mg/dL, keton pozitif; lökosit ve troponin ölçümlerinde eşlik eden tetikleyici lehine belirgin ek bulgu saptanmaz."
     ],
     "investigations": [
       {
@@ -922,9 +868,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Arter kan gazı ve metabolik panel sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "pH: 7.18 (Düşük); HCO3-: 8 mmol/L (Düşük); Anyon açıklığı: 28 mmol/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "pH: 7.18 (Düşük); HCO3-: 8 mmol/L (Düşük); Anyon açıklığı: 28 mmol/L (Yüksek) saptandı."
         ]
       },
       {
@@ -952,27 +898,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "İdrar tetkiki sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Glukoz: Pozitif (Pozitif); Keton: Pozitif (Pozitif) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ]
-      },
-      {
-        "id": "trigger",
-        "label": "Tetikleyici neden araştırması",
-        "type": "clinical",
-        "summary": "Glukoz 412 mg/dL, keton pozitif; lökosit ve troponin ölçümlerinde eşlik eden tetikleyici lehine belirgin ek bulgu saptanmaz.",
-        "priority": "useful",
-        "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ],
-        "rows": [
-          [
-            "Tetikleyici neden araştırması",
-            "Glukoz 412 mg/dL, keton pozitif; lökosit ve troponin ölçümlerinde eşlik eden tetikleyici lehine belirgin ek bulgu saptanmaz.",
-            "Beklenen normal patern",
-            "Yorumlandı"
-          ]
+          "Glukoz: Pozitif (Pozitif); Keton: Pozitif (Pozitif) saptandı."
         ]
       }
     ],
@@ -1070,10 +998,12 @@ export const cases = [
       "Ateş": "37.8 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Epigastriumda belirgin hassasiyet saptanıyor",
       "Defans minimal, rebound izlenmiyor",
       "Bağırsak sesleri azalmış",
-      "Skleralarda belirgin ikter saptanmıyor"
+      "Skleralarda belirgin ikter saptanmıyor",
+      "Genel durum ve hidrasyon dikkatle değerlendirildi; hemodinamik instabilite bulgusu belirgin değil."
     ],
     "investigations": [
       {
@@ -1107,9 +1037,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Pankreatit laboratuvarı sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lipaz: 1.280 U/L (Yüksek); Amilaz: 410 U/L (Yüksek); ALT: 186 U/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Lipaz: 1.280 U/L (Yüksek); Amilaz: 410 U/L (Yüksek); ALT: 186 U/L (Yüksek) saptandı."
         ]
       },
       {
@@ -1119,14 +1049,14 @@ export const cases = [
         "summary": "Safra kesesinde çok sayıda milimetrik taş izleniyor; koledok belirgin dilate değildir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Safra kesesinde çok sayıda milimetrik taş izleniyor; koledok belirgin dilate değildir."
         ],
         "rows": [
           [
             "Hepatobiliyer ultrasonografi",
             "Safra kesesinde çok sayıda milimetrik taş izleniyor; koledok belirgin dilate değildir.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -1137,14 +1067,14 @@ export const cases = [
         "summary": "Pankreas çevresi yağlı planlarda inflamasyon ve sınırlı peripankreatik sıvı koleksiyonu izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Pankreas çevresi yağlı planlarda inflamasyon ve sınırlı peripankreatik sıvı koleksiyonu izleniyor."
         ],
         "rows": [
           [
             "Kontrastlı abdomen BT",
             "Pankreas çevresi yağlı planlarda inflamasyon ve sınırlı peripankreatik sıvı koleksiyonu izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -1208,7 +1138,7 @@ export const cases = [
           "Akut inferior miyokart enfarktüsü": {
             "explanation": "İnferior MI epigastrik ağrı ve bulantıyla gelebilir; ancak lipaz yüksekliği ve pankreatit görüntüleme bulguları abdominal nedeni destekler.",
             "comparisonPoints": [
-              "MI ayırımı için EKG ve troponin yorumlandı.",
+              "MI ayırımı için EKG ve troponin değerlendirildi.",
               "Bu olguda biliyer taş varlığı etiyolojik ipucudur.",
               "Ağrı-görüntüleme-enzim üçlüsü pankreatit tanısını güçlendirir."
             ]
@@ -1243,10 +1173,12 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Hasta soluk, soğuk terli ve ortostatik semptomatik görünüyor",
       "Palmar eritem ve spider anjiyomlar izleniyor",
       "Splenomegali ve asit bulguları mevcut",
-      "Rektal muayenede melena saptanıyor"
+      "Rektal muayenede melena saptanıyor",
+      "Genel durum ve hidrasyon dikkatle değerlendirildi; hemodinamik instabilite bulgusu belirgin değil."
     ],
     "investigations": [
       {
@@ -1274,9 +1206,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Hemogram ve koagülasyon sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Hemoglobin: 7.8 g/dL (Düşük); Trombosit: 72.000/mm³ (Düşük); INR: 1.9 (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Hemoglobin: 7.8 g/dL (Düşük); Trombosit: 72.000/mm³ (Düşük); INR: 1.9 (Yüksek) saptandı."
         ]
       },
       {
@@ -1286,45 +1218,14 @@ export const cases = [
         "summary": "Distal özofagusta geniş variköz venler ve aktif kanama odağı izleniyor; endoskopik bant ligasyonu için uygundur.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Distal özofagusta geniş variköz venler ve aktif kanama odağı izleniyor; endoskopik bant ligasyonu için uygundur."
         ],
         "rows": [
           [
             "Üst gastrointestinal sistem endoskopisi",
             "Distal özofagusta geniş variköz venler ve aktif kanama odağı izleniyor; endoskopik bant ligasyonu için uygundur.",
             "Beklenen normal patern",
-            "Yorumlandı"
-          ]
-        ]
-      },
-      {
-        "id": "initial",
-        "label": "Acil yaklaşım",
-        "type": "clinical",
-        "summary": "Hemodinamik instabilite ve Hb düşüklüğü nedeniyle iki geniş damar yolu, kan hazırlığı, oktreotid ve antibiyotik profilaksisi başlatıldı.",
-        "priority": "useful",
-        "findings": [
-          "Endoskopi öncesi resüsitasyon geciktirilmez.",
-          "Siroz zemininde üst GIS kanama varis kanamasını düşündürür."
-        ],
-        "rows": [
-          [
-            "TA",
-            "88/54 mmHg",
-            ">90/60 mmHg",
-            "Düşük"
-          ],
-          [
-            "Hemoglobin",
-            "7.4 g/dL",
-            "12-16 g/dL",
-            "Düşük"
-          ],
-          [
-            "İlk tedavi",
-            "Oktreotid + seftriakson başlandı",
-            "Başlanmalı",
-            "Uygun"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -1373,7 +1274,8 @@ export const cases = [
         "management": [
           "Havayolu ve dolaşımı stabilize et",
           "Vazoaktif tedavi ve seftriakson profilaksisi başla",
-          "Erken üst GİS endoskopisiyle bant ligasyonu uygula"
+          "Erken üst GİS endoskopisiyle bant ligasyonu uygula",
+          "Hemodinamik instabilite ve Hb düşüklüğü nedeniyle iki geniş damar yolu, kan hazırlığı, oktreotid ve antibiyotik profilaksisi başlatıldı. Endoskopi öncesi resüsitasyon geciktirilmez. Siroz zemininde üst GIS kanama varis kanamasını düşündürür."
         ],
         "learningOutcome": "Sirozlu hastada masif hematemez varis kanaması kabul edilerek resüsitasyon + vazoaktif tedavi + endoskopi üçlüsü planlanır.",
         "differentials": {
@@ -1423,10 +1325,12 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Konjonktival solukluk belirgin",
       "Koilonişi izleniyor",
       "Taşikardi dışında kardiyopulmoner patoloji saptanmıyor",
-      "Hepatosplenomegali yok"
+      "Hepatosplenomegali yok",
+      "Premenopozal hastada jinekolojik kanama sık nedenlerden biridir; alarm bulgusu veya risk faktörü varsa gastrointestinal kanama da araştırılır. Premenopozal hastada jinekolojik kanama sık nedenlerden biridir; alarm bulgusu veya risk faktörü varsa gastrointestinal kanama da araştırılır."
     ],
     "investigations": [
       {
@@ -1466,9 +1370,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Hemogram ve demir çalışmaları sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Hemoglobin: 8.9 g/dL (Düşük); MCV: 66 fL (Düşük); RDW: %19 (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Hemoglobin: 8.9 g/dL (Düşük); MCV: 66 fL (Düşük); RDW: %19 (Yüksek) saptandı."
         ]
       },
       {
@@ -1478,32 +1382,14 @@ export const cases = [
         "summary": "Mikrositer ve hipokrom eritrositler, belirgin anizositoz ve poikilositoz izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Mikrositer ve hipokrom eritrositler, belirgin anizositoz ve poikilositoz izleniyor."
         ],
         "rows": [
           [
             "Periferik yayma",
             "Mikrositer ve hipokrom eritrositler, belirgin anizositoz ve poikilositoz izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
-          ]
-        ]
-      },
-      {
-        "id": "etiology",
-        "label": "Etiyoloji değerlendirmesi",
-        "type": "clinical",
-        "summary": "Premenopozal hastada jinekolojik kanama sık nedenlerden biridir; alarm bulgusu veya risk faktörü varsa gastrointestinal kanama da araştırılır.",
-        "priority": "useful",
-        "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ],
-        "rows": [
-          [
-            "Etiyoloji değerlendirmesi",
-            "Premenopozal hastada jinekolojik kanama sık nedenlerden biridir; alarm bulgusu veya risk faktörü varsa gastrointestinal kanama da araştırılır.",
-            "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -1602,10 +1488,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Dehidratasyon bulgusu belirgin değil",
       "Fokal nörolojik defisit saptanmıyor",
       "Kemik palpasyonunda yaygın olmayan hassasiyet mevcut",
-      "Boyunda palpabl kitle saptanmıyor"
+      "Boyunda palpabl kitle saptanmıyor",
+      "Genel durum ve hidrasyon dikkatle değerlendirildi; hemodinamik instabilite bulgusu belirgin değil."
     ],
     "investigations": [
       {
@@ -1639,14 +1527,14 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Kalsiyum-PTH profili sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Düzeltilmiş kalsiyum: 11.8 mg/dL (Yüksek); Fosfor: 2.1 mg/dL (Düşük); PTH: 146 pg/mL (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Düzeltilmiş kalsiyum: 11.8 mg/dL (Yüksek); Fosfor: 2.1 mg/dL (Düşük); PTH: 146 pg/mL (Yüksek) saptandı."
         ]
       },
       {
         "id": "urine",
-        "label": "24 saatlik idrar değerlendirmesi",
+        "label": "24 saatlik idrar",
         "type": "lab",
         "rows": [
           [
@@ -1663,9 +1551,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "24 saatlik idrar değerlendirmesi sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "İdrar kalsiyumu: Yüksek (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "İdrar kalsiyumu: Yüksek (Yüksek) saptandı."
         ]
       },
       {
@@ -1788,10 +1676,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Bilinç açık, ancak ekspresif afazi belirgin",
       "Sağ üst ve alt ekstremitede santral tip güç kaybı saptanıyor",
       "Sağ santral fasiyal paralizi mevcut",
-      "Sol tarafa bakış tercihi izleniyor"
+      "Sol tarafa bakış tercihi izleniyor",
+      "Bilinç, kraniyal sinirler, motor güç, duyu ve serebellar muayene sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -1801,14 +1691,14 @@ export const cases = [
         "summary": "Akut intrakraniyal kanama saptanmıyor; erken iskemik değişiklikler açısından değerlendirme sınırlıdır.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Akut intrakraniyal kanama saptanmıyor; erken iskemik değişiklikler açısından değerlendirme sınırlıdır."
         ],
         "rows": [
           [
             "Kontrastsız beyin BT",
             "Akut intrakraniyal kanama saptanmıyor; erken iskemik değişiklikler açısından değerlendirme sınırlıdır.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -1819,14 +1709,14 @@ export const cases = [
         "summary": "Sol orta serebral arter proksimal segmentinde damar dolum kesintisi izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sol orta serebral arter proksimal segmentinde damar dolum kesintisi izleniyor."
         ],
         "rows": [
           [
             "BT anjiyografi",
             "Sol orta serebral arter proksimal segmentinde damar dolum kesintisi izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -1855,9 +1745,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Acil laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Glukoz: 118 mg/dL (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Glukoz: 118 mg/dL (Yüksek) saptandı."
         ]
       }
     ],
@@ -1967,10 +1857,12 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Ense sertliği mevcut",
       "Fotofobi belirgin",
       "Bilinç dalgalanması izleniyor",
-      "Fokal motor defisit saptanmıyor"
+      "Fokal motor defisit saptanmıyor",
+      "Bilinç, kraniyal sinirler, motor güç, duyu ve serebellar muayene sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -1980,14 +1872,14 @@ export const cases = [
         "summary": "Bazal sisternalarda ve sulkuslarda hiperdens kan ile uyumlu görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Bazal sisternalarda ve sulkuslarda hiperdens kan ile uyumlu görünüm izleniyor."
         ],
         "rows": [
           [
             "Kontrastsız beyin BT",
             "Bazal sisternalarda ve sulkuslarda hiperdens kan ile uyumlu görünüm izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -1998,14 +1890,14 @@ export const cases = [
         "summary": "Anterior kommunikan arter düzeyinde sakküler anevrizma ile uyumlu odak görülüyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Anterior kommunikan arter düzeyinde sakküler anevrizma ile uyumlu odak görülüyor."
         ],
         "rows": [
           [
             "BT anjiyografi",
             "Anterior kommunikan arter düzeyinde sakküler anevrizma ile uyumlu odak görülüyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -2034,9 +1926,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "BOS incelemesi sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Eritrosit: Yüksek (Yüksek); Ksantokromi: Pozitif (Pozitif); Açılış basıncı: Yüksek (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Eritrosit: Yüksek (Yüksek); Ksantokromi: Pozitif (Pozitif); Açılış basıncı: Yüksek (Yüksek) saptandı."
         ]
       }
     ],
@@ -2134,10 +2026,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Sağ gözde rölatif afferent pupilla defekti izleniyor",
       "Sol bakışta sağ göz adduksiyon kısıtlılığı ve sol gözde abdüksiyon nistagmusu mevcut",
       "Hafif ataksi saptanıyor",
-      "Kas gücü belirgin azalmamış"
+      "Kas gücü belirgin azalmamış",
+      "Bilinç, kraniyal sinirler, motor güç, duyu ve serebellar muayene sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -2147,14 +2041,14 @@ export const cases = [
         "summary": "Periventriküler, juxtakortikal ve infratentoryal bölgelerde demiyelinizan plaklarla uyumlu T2/FLAIR hiperintens lezyonlar izleniyor; bazı lezyonlarda kontrast tutulumu mevcut.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Periventriküler, juxtakortikal ve infratentoryal bölgelerde demiyelinizan plaklarla uyumlu T2/FLAIR hiperintens lezyonlar izleniyor; bazı lezyonlarda kontrast tutulumu mevcut."
         ],
         "rows": [
           [
             "Beyin ve servikal spinal MR",
             "Periventriküler, juxtakortikal ve infratentoryal bölgelerde demiyelinizan plaklarla uyumlu T2/FLAIR hiperintens lezyonlar izleniyor; bazı lezyonlarda kontrast tutulumu mevcut.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -2183,9 +2077,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "BOS incelemesi sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Oligoklonal bant: Pozitif (Pozitif); IgG indeksi: Yüksek (Yüksek); Hücre sayısı: Hafif lenfositoz (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Oligoklonal bant: Pozitif (Pozitif); IgG indeksi: Yüksek (Yüksek); Hücre sayısı: Hafif lenfositoz (Yüksek) saptandı."
         ]
       },
       {
@@ -2195,14 +2089,14 @@ export const cases = [
         "summary": "P100 latansında uzama saptanıyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "P100 latansında uzama saptanıyor."
         ],
         "rows": [
           [
             "Görsel uyarılmış potansiyel",
             "P100 latansında uzama saptanıyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -2315,10 +2209,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Postiktal uykuya eğilim mevcut",
       "Papilödem şüphesi izleniyor",
       "Sağ üst ekstremitede geçici güçsüzlük saptanıyor",
-      "Ense sertliği belirgin değil"
+      "Ense sertliği belirgin değil",
+      "Bilinç, kraniyal sinirler, motor güç, duyu ve serebellar muayene sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -2328,14 +2224,14 @@ export const cases = [
         "summary": "Superior sagittal sinüs ve sağ transvers sinüste akım sinyali kaybı izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Superior sagittal sinüs ve sağ transvers sinüste akım sinyali kaybı izleniyor."
         ],
         "rows": [
           [
             "Beyin MR venografi",
             "Superior sagittal sinüs ve sağ transvers sinüste akım sinyali kaybı izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -2346,20 +2242,20 @@ export const cases = [
         "summary": "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı ile uyumlu görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı ile uyumlu görünüm izleniyor."
         ],
         "rows": [
           [
             "Kontrastsız beyin BT",
             "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı ile uyumlu görünüm izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -2382,9 +2278,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "D-dimer: Yüksek (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "D-dimer: Yüksek (Yüksek) saptandı."
         ]
       }
     ],
@@ -2489,10 +2385,12 @@ export const cases = [
       "Ateş": "37.5 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Atak sırasında bacaklarını karnına çektiği izleniyor",
       "Sağ üst kadranda sosis şeklinde kitle palpasyonu şüpheli",
       "Rektal muayenede kanlı-mukuslu dışkı izleniyor",
-      "Periton irritasyon bulgusu saptanmıyor"
+      "Periton irritasyon bulgusu saptanmıyor",
+      "Genel durum, hidrasyon, beslenme toleransı ve yaşa uygun nörolojik yanıt birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -2502,14 +2400,14 @@ export const cases = [
         "summary": "Sağ alt kadranda transvers kesitte hedef işareti, longitudinal kesitte yalancı böbrek görünümü izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sağ alt kadranda transvers kesitte hedef işareti, longitudinal kesitte yalancı böbrek görünümü izleniyor."
         ],
         "rows": [
           [
             "Abdominal ultrasonografi",
             "Sağ alt kadranda transvers kesitte hedef işareti, longitudinal kesitte yalancı böbrek görünümü izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -2520,20 +2418,20 @@ export const cases = [
         "summary": "Ayakta direkt karın grafisinde hava-sıvı seviyeleri izlenir; serbest intraperitoneal hava saptanmaz.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Ayakta direkt karın grafisinde hava-sıvı seviyeleri izlenir; serbest intraperitoneal hava saptanmaz."
         ],
         "rows": [
           [
             "Ayakta direkt karın grafisi",
             "Ayakta direkt karın grafisinde hava-sıvı seviyeleri izlenir; serbest intraperitoneal hava saptanmaz.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -2556,9 +2454,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "CRP: 8 mg/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "CRP: 8 mg/L (Yüksek) saptandı."
         ]
       }
     ],
@@ -2656,10 +2554,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Bebekte hafif dehidratasyon bulguları mevcut",
       "Üst abdomen palpasyonunda zeytin benzeri kitle şüpheli",
       "Beslenme sonrasında epigastriumda görünür peristaltizm izleniyor",
-      "Batında distansiyon belirgin değil"
+      "Batında distansiyon belirgin değil",
+      "Genel durum, hidrasyon, beslenme toleransı ve yaşa uygun nörolojik yanıt birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -2693,9 +2593,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Elektrolit ve kan gazı sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "pH: 7.52 (Yüksek); Klor: 86 mmol/L (Düşük); Potasyum: 3.0 mmol/L (Düşük) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "pH: 7.52 (Yüksek); Klor: 86 mmol/L (Düşük); Potasyum: 3.0 mmol/L (Düşük) saptandı."
         ]
       },
       {
@@ -2705,45 +2605,14 @@ export const cases = [
         "summary": "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı ile uyumlu görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı ile uyumlu görünüm izleniyor."
         ],
         "rows": [
           [
             "Pilor ultrasonografisi",
             "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı ile uyumlu görünüm izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
-          ]
-        ]
-      },
-      {
-        "id": "management",
-        "label": "Tedavi öncesi hazırlık",
-        "type": "clinical",
-        "summary": "Hipokloremik metabolik alkaloz ve hipokalemi saptandığı için piloromiyotomi öncesi sıvı-elektrolit düzeltmesi yapıldı.",
-        "priority": "useful",
-        "findings": [
-          "Cerrahi stabilizasyon sonrası planlanır.",
-          "Kusma kaynaklı elektrolit paterni tanıyı destekler."
-        ],
-        "rows": [
-          [
-            "pH",
-            "7.52",
-            "7.35-7.45",
-            "Yüksek"
-          ],
-          [
-            "Klor",
-            "84 mmol/L",
-            "98-106 mmol/L",
-            "Düşük"
-          ],
-          [
-            "Potasyum",
-            "2.9 mmol/L",
-            "3.5-5.0 mmol/L",
-            "Düşük"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -2792,7 +2661,8 @@ export const cases = [
         "management": [
           "Dehidratasyon ve elektrolit bozukluğunu düzelt",
           "Abdominal USG ile tanıyı doğrula",
-          "Stabilizasyon sonrası Ramstedt piloromiyotomi planla"
+          "Stabilizasyon sonrası Ramstedt piloromiyotomi planla",
+          "Hipokloremik metabolik alkaloz ve hipokalemi saptandığı için piloromiyotomi öncesi sıvı-elektrolit düzeltmesi yapıldı. Cerrahi stabilizasyon sonrası planlanır. Kusma kaynaklı elektrolit paterni tanıyı destekler."
         ],
         "learningOutcome": "Beş haftalık bebekte progresif safrasız fışkırır kusma, kilo alamama, hipokloremik metabolik alkaloz ve USG’de pilor kas kalınlaşması hipertrofik pilor stenozunu destekler.",
         "differentials": {
@@ -2856,10 +2726,12 @@ export const cases = [
       "Ateş": "39.1 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Bilateral nonpürülan konjonktival hiperemi izleniyor",
       "Dudaklar kuru ve çatlak, dil çilek dili görünümünde",
       "El ve ayaklarda ödem ve eritem mevcut",
-      "Tek taraflı servikal lenfadenopati saptanıyor"
+      "Tek taraflı servikal lenfadenopati saptanıyor",
+      "Genel durum, hidrasyon, beslenme toleransı ve yaşa uygun nörolojik yanıt birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -2893,9 +2765,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "İnflamasyon ve hematolojik değerlendirme sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "CRP: 96 mg/L (Yüksek); Sedimentasyon: 78 mm/saat (Yüksek); Trombosit: 520.000/mm³ (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "CRP: 96 mg/L (Yüksek); Sedimentasyon: 78 mm/saat (Yüksek); Trombosit: 520.000/mm³ (Yüksek) saptandı."
         ]
       },
       {
@@ -2905,14 +2777,14 @@ export const cases = [
         "summary": "Koroner arter ektazisi veya anevrizma açısından başlangıç değerlendirmesi yapılır; erken dönemde normal olabilir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Koroner arter ektazisi veya anevrizma açısından başlangıç değerlendirmesi yapılır; erken dönemde normal olabilir."
         ],
         "rows": [
           [
             "Ekokardiyografi",
             "Koroner arter ektazisi veya anevrizma açısından başlangıç değerlendirmesi yapılır; erken dönemde normal olabilir.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -2941,9 +2813,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "İdrar tetkiki sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: Pozitif (Pozitif) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Lökosit: Pozitif (Pozitif) saptandı."
         ]
       }
     ],
@@ -3055,10 +2927,12 @@ export const cases = [
       "Ateş": "39.4 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Toksik görünüm belirgin",
       "Tripod pozisyonunda oturuyor",
       "İnspiratuvar stridor duyuluyor",
-      "Orofarenks muayenesi havayolu ekibi hazır olmadan zorlanmıyor"
+      "Orofarenks muayenesi havayolu ekibi hazır olmadan zorlanmıyor",
+      "Genel durum, hidrasyon, beslenme toleransı ve yaşa uygun nörolojik yanıt birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -3068,20 +2942,20 @@ export const cases = [
         "summary": "Epiglotta ödem ile uyumlu başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Epiglotta ödem ile uyumlu başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır."
         ],
         "rows": [
           [
             "Lateral boyun grafisi",
             "Epiglotta ödem ile uyumlu başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -3104,40 +2978,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 18.600/mm³ (Yüksek); CRP: 112 mg/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ]
-      },
-      {
-        "id": "airway",
-        "label": "Havayolu planı",
-        "type": "clinical",
-        "summary": "Stridor, salya akması, tripod pozisyonu ve hipoksemi nedeniyle kontrollü havayolu güvenliği endikasyonu oluştu.",
-        "priority": "useful",
-        "findings": [
-          "Havayolu manipülasyonu deneyimli ekip ve kontrollü koşul gerektirir.",
-          "Boğaz muayenesiyle ajitasyon yaratmak obstrüksiyonu artırabilir."
-        ],
-        "rows": [
-          [
-            "Stridor",
-            "Var",
-            "Yok",
-            "Acil bulgu"
-          ],
-          [
-            "SpO2",
-            "91%",
-            ">95%",
-            "Düşük"
-          ],
-          [
-            "Tripod pozisyonu",
-            "Var",
-            "Yok",
-            "Patolojik"
-          ]
+          "Lökosit: 18.600/mm³ (Yüksek); CRP: 112 mg/L (Yüksek) saptandı."
         ]
       }
     ],
@@ -3185,7 +3028,8 @@ export const cases = [
         "management": [
           "Hastayı sakin tut ve hava yolu ekibini çağır",
           "Kontrollü ortamda entübasyon hazırlığı yap",
-          "Geniş spektrumlu intravenöz antibiyotik başla"
+          "Geniş spektrumlu intravenöz antibiyotik başla",
+          "Stridor, salya akması, tripod pozisyonu ve hipoksemi nedeniyle kontrollü havayolu güvenliği endikasyonu oluştu. Havayolu manipülasyonu deneyimli ekip ve kontrollü koşul gerektirir. Boğaz muayenesiyle ajitasyon yaratmak obstrüksiyonu artırabilir."
         ],
         "learningOutcome": "Toksik görünümlü çocukta yüksek ateş, disfaji, salya akması, muffled voice ve tripod pozisyonu akut epiglottiti düşündürür.",
         "differentials": {
@@ -3249,10 +3093,12 @@ export const cases = [
       "Ateş": "37.9 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "McBurney noktasında hassasiyet saptanıyor",
       "Rovsing bulgusu pozitif",
       "Hafif defans mevcut, yaygın rebound yok",
-      "Psoas veya obturator irritasyon bulguları değerlendiriliyor"
+      "Psoas veya obturator irritasyon bulguları değerlendiriliyor",
+      "Abdomen inspeksiyon, oskültasyon, palpasyon ve periton irritasyon bulguları açısından sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -3280,9 +3126,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Hemogram ve inflamasyon belirteçleri sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 15.400/mm³ (Yüksek); Nötrofil: %84 (Yüksek); CRP: 38 mg/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Lökosit: 15.400/mm³ (Yüksek); Nötrofil: %84 (Yüksek); CRP: 38 mg/L (Yüksek) saptandı."
         ]
       },
       {
@@ -3292,14 +3138,14 @@ export const cases = [
         "summary": "Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor; apendikolit görülebilir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor; apendikolit görülebilir."
         ],
         "rows": [
           [
             "Kontrastlı abdomen BT",
             "Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor; apendikolit görülebilir.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -3328,9 +3174,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "İdrar tetkiki sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "İdrar tetkiki sonuçları referans aralığında/negatif saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "İdrar tetkiki sonuçları referans aralığında/negatif saptandı."
         ]
       }
     ],
@@ -3366,7 +3212,7 @@ export const cases = [
         "evidenceChain": [
           "Başvuru yakınması: Sağ alt kadran ağrısı ve iştahsızlık.",
           "McBurney noktasında hassasiyet saptanıyor.",
-          "Hemogram ve inflamasyon belirteçleri: Lökosit 15.400/mm³ olarak yorumlandı.",
+          "Hemogram ve inflamasyon belirteçleri: Lökosit 15.400/mm³ saptandı.",
           "Kontrastlı abdomen BT: Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor; apendikolit görülebilir."
         ],
         "pearls": [
@@ -3425,10 +3271,12 @@ export const cases = [
       "Ateş": "38.2 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Sağ üst kadranda hassasiyet mevcut",
       "Klinik Murphy bulgusu pozitif",
       "Skleralarda belirgin ikter saptanmıyor",
-      "Peritoneal irritasyon yaygın değil"
+      "Peritoneal irritasyon yaygın değil",
+      "Hepatobiliyer sintigrafide safra kesesi dolumu izlenmedi; bulgu sistik kanal obstrüksiyonu ile uyumludur. USG belirsiz kaldığında akut kolesistit lehine ek kanıt sağlar. Normal dolum olsaydı akut kolesistit daha geri plana düşerdi."
     ],
     "investigations": [
       {
@@ -3438,20 +3286,20 @@ export const cases = [
         "summary": "Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı artışı izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı artışı izleniyor."
         ],
         "rows": [
           [
             "Sağ üst kadran ultrasonografisi",
             "Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı artışı izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -3480,34 +3328,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 14.800/mm³ (Yüksek); CRP: 68 mg/L (Yüksek); ALT: 46 U/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ]
-      },
-      {
-        "id": "hbs",
-        "label": "Hepatobiliyer sintigrafi",
-        "type": "clinical",
-        "summary": "Hepatobiliyer sintigrafide safra kesesi dolumu izlenmedi; bulgu sistik kanal obstrüksiyonu ile uyumludur.",
-        "priority": "useful",
-        "findings": [
-          "USG belirsiz kaldığında akut kolesistit lehine ek kanıt sağlar.",
-          "Normal dolum olsaydı akut kolesistit daha geri plana düşerdi."
-        ],
-        "rows": [
-          [
-            "Safra kesesi dolumu",
-            "İzlenmedi",
-            "İzlenmeli",
-            "Patolojik"
-          ],
-          [
-            "Sistik kanal obstrüksiyonu",
-            "Lehine",
-            "Yok",
-            "Destekleyici"
-          ]
+          "Lökosit: 14.800/mm³ (Yüksek); CRP: 68 mg/L (Yüksek); ALT: 46 U/L (Yüksek) saptandı."
         ]
       }
     ],
@@ -3544,7 +3367,7 @@ export const cases = [
           "Başvuru yakınması: Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı.",
           "Sağ üst kadranda hassasiyet mevcut.",
           "Sağ üst kadran ultrasonografisi: Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı artışı izleniyor.",
-          "Laboratuvar: Lökosit 14.800/mm³ olarak yorumlandı."
+          "Laboratuvar: Lökosit 14.800/mm³ saptandı."
         ],
         "pearls": [
           "Biliyer kolikte ağrı genellikle daha kısa sürer ve inflamasyon bulguları belirgin değildir.",
@@ -3603,10 +3426,12 @@ export const cases = [
       "Ateş": "37.4 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Karında belirgin distansiyon mevcut",
       "Bağırsak sesleri metalik ve artmış duyuluyor",
       "Yaygın defans veya rebound saptanmıyor",
-      "İnguinal herni muayenesinde strangülasyon bulgusu yok"
+      "İnguinal herni muayenesinde strangülasyon bulgusu yok",
+      "Abdomen inspeksiyon, oskültasyon, palpasyon ve periton irritasyon bulguları açısından sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -3616,14 +3441,14 @@ export const cases = [
         "summary": "Santral yerleşimli dilate ince bağırsak ansları ve çoklu hava-sıvı seviyeleri izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Santral yerleşimli dilate ince bağırsak ansları ve çoklu hava-sıvı seviyeleri izleniyor."
         ],
         "rows": [
           [
             "Ayakta direkt karın grafisi",
             "Santral yerleşimli dilate ince bağırsak ansları ve çoklu hava-sıvı seviyeleri izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -3634,20 +3459,20 @@ export const cases = [
         "summary": "İnce bağırsakta geçiş noktası ve proksimal dilatasyon izleniyor; kapalı ans veya iskemi bulgusu belirgin değildir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "İnce bağırsakta geçiş noktası ve proksimal dilatasyon izleniyor; kapalı ans veya iskemi bulgusu belirgin değildir."
         ],
         "rows": [
           [
             "Kontrastlı abdomen BT",
             "İnce bağırsakta geçiş noktası ve proksimal dilatasyon izleniyor; kapalı ans veya iskemi bulgusu belirgin değildir.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -3670,9 +3495,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 11.800/mm³ (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Lökosit: 11.800/mm³ (Yüksek) saptandı."
         ]
       }
     ],
@@ -3768,10 +3593,12 @@ export const cases = [
       "Ateş": "38.0 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Hasta hareketsiz yatmayı tercih ediyor",
       "Karında tahta karın görünümünde rijidite mevcut",
       "Yaygın rebound hassasiyeti saptanıyor",
-      "Bağırsak sesleri azalmış"
+      "Bağırsak sesleri azalmış",
+      "Abdomen inspeksiyon, oskültasyon, palpasyon ve periton irritasyon bulguları açısından sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -3781,14 +3608,14 @@ export const cases = [
         "summary": "Diyafram altında serbest hava ile uyumlu görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Diyafram altında serbest hava ile uyumlu görünüm izleniyor."
         ],
         "rows": [
           [
             "Ayakta akciğer/abdomen grafisi",
             "Diyafram altında serbest hava ile uyumlu görünüm izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -3799,20 +3626,20 @@ export const cases = [
         "summary": "Üst abdomende serbest hava ve sıvı; mide-duodenum komşuluğunda perforasyon odağı açısından şüpheli görünüm mevcut.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Üst abdomende serbest hava ve sıvı; mide-duodenum komşuluğunda perforasyon odağı açısından şüpheli görünüm mevcut."
         ],
         "rows": [
           [
             "Kontrastlı abdomen BT",
             "Üst abdomende serbest hava ve sıvı; mide-duodenum komşuluğunda perforasyon odağı açısından şüpheli görünüm mevcut.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -3835,9 +3662,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 16.200/mm³ (Yüksek); CRP: 54 mg/L (Yüksek); Laktat: 2.4 mmol/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Lökosit: 16.200/mm³ (Yüksek); CRP: 54 mg/L (Yüksek); Laktat: 2.4 mmol/L (Yüksek) saptandı."
         ]
       }
     ],
@@ -3933,10 +3760,12 @@ export const cases = [
       "Ateş": "38.1 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Sol alt kadranda lokalize hassasiyet mevcut",
       "Hafif defans saptanıyor, yaygın rebound yok",
       "Rektal muayenede aktif kanama izlenmiyor",
-      "Hemodinamik olarak stabil"
+      "Hemodinamik olarak stabil",
+      "Akut dönemde perforasyon riski nedeniyle kolonoskopi yapılmaz; iyileşme sonrası malignite ayrımı için planlanabilir. Akut dönemde perforasyon riski nedeniyle kolonoskopi yapılmaz; iyileşme sonrası malignite ayrımı için planlanabilir."
     ],
     "investigations": [
       {
@@ -3946,20 +3775,20 @@ export const cases = [
         "summary": "Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon izleniyor; apse veya serbest perforasyon saptanmıyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon izleniyor; apse veya serbest perforasyon saptanmıyor."
         ],
         "rows": [
           [
             "Kontrastlı abdomen BT",
             "Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon izleniyor; apse veya serbest perforasyon saptanmıyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -3982,27 +3811,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 13.900/mm³ (Yüksek); CRP: 82 mg/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ]
-      },
-      {
-        "id": "colonoscopy",
-        "label": "Kolonoskopi zamanlaması",
-        "type": "clinical",
-        "summary": "Akut dönemde perforasyon riski nedeniyle kolonoskopi yapılmaz; iyileşme sonrası malignite ayrımı için planlanabilir.",
-        "priority": "useful",
-        "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ],
-        "rows": [
-          [
-            "Kolonoskopi zamanlaması",
-            "Akut dönemde perforasyon riski nedeniyle kolonoskopi yapılmaz; iyileşme sonrası malignite ayrımı için planlanabilir.",
-            "Beklenen normal patern",
-            "Yorumlandı"
-          ]
+          "Lökosit: 13.900/mm³ (Yüksek); CRP: 82 mg/L (Yüksek) saptandı."
         ]
       }
     ],
@@ -4039,7 +3850,7 @@ export const cases = [
           "Başvuru yakınması: Sol alt kadranda ağrı ve ateş.",
           "Sol alt kadranda lokalize hassasiyet mevcut.",
           "Kontrastlı abdomen BT: Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon izleniyor; apse veya serbest perforasyon saptanmıyor.",
-          "Laboratuvar: Lökosit 13.900/mm³ olarak yorumlandı."
+          "Laboratuvar: Lökosit 13.900/mm³ saptandı."
         ],
         "pearls": [
           "BT hem tanıyı destekler hem de apse/perforasyon gibi komplikasyonları ayırt eder.",
@@ -4098,10 +3909,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Sağ hemitoraksta solunum sesleri belirgin azalmış",
       "Perküsyonda sağda hipersonorite mevcut",
       "Trakea orta hatta",
-      "Hemodinamik instabilite saptanmıyor"
+      "Hemodinamik instabilite saptanmıyor",
+      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -4111,14 +3924,14 @@ export const cases = [
         "summary": "Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan izleniyor; mediastinal şift yok.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan izleniyor; mediastinal şift yok."
         ],
         "rows": [
           [
             "Akciğer grafisi",
             "Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan izleniyor; mediastinal şift yok.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -4147,9 +3960,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Kan gazı sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "PaO2: 72 mmHg (Düşük); PaCO2: 34 mmHg (Düşük) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "PaO2: 72 mmHg (Düşük); PaCO2: 34 mmHg (Düşük) saptandı."
         ]
       },
       {
@@ -4159,14 +3972,14 @@ export const cases = [
         "summary": "Tanı grafiyle konulabiliyorsa rutin gerekli değildir; altta yatan bül veya sekonder neden araştırılacaksa değerlendirilebilir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Tanı grafiyle konulabiliyorsa rutin gerekli değildir; altta yatan bül veya sekonder neden araştırılacaksa değerlendirilebilir."
         ],
         "rows": [
           [
             "Toraks BT",
             "Tanı grafiyle konulabiliyorsa rutin gerekli değildir; altta yatan bül veya sekonder neden araştırılacaksa değerlendirilebilir.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -4204,7 +4017,7 @@ export const cases = [
           "Başvuru yakınması: Ani sağ göğüs ağrısı ve nefes darlığı.",
           "Sağ hemitoraksta solunum sesleri belirgin azalmış.",
           "Akciğer grafisi: Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan izleniyor; mediastinal şift yok.",
-          "Kan gazı: pH 7.43 olarak yorumlandı."
+          "Kan gazı: pH 7.43 saptandı."
         ],
         "pearls": [
           "Hipotansiyon, trakeal deviasyon ve belirgin solunum sıkıntısı gerilim pnömotoraksı düşündürür ve acil dekompresyon gerektirir.",
@@ -4262,10 +4075,12 @@ export const cases = [
       "Ateş": "37.2 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Taşikardi mevcut",
       "Sağ baldır çevresi sol tarafa göre artmış ve palpasyonla hassas",
       "Akciğer oskültasyonunda belirgin fokal ral yok",
-      "Hemoptizi ifade edilmiyor"
+      "Hemoptizi ifade edilmiyor",
+      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -4275,14 +4090,14 @@ export const cases = [
         "summary": "Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor."
         ],
         "rows": [
           [
             "BT pulmoner anjiyografi",
             "Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -4311,9 +4126,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "D-dimer sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "D-dimer: 2.400 ng/mL FEU (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "D-dimer: 2.400 ng/mL FEU (Yüksek) saptandı."
         ]
       },
       {
@@ -4323,14 +4138,14 @@ export const cases = [
         "summary": "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs ile uyumlu segment izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs ile uyumlu segment izleniyor."
         ],
         "rows": [
           [
             "Alt ekstremite venöz Doppler ultrasonografi",
             "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs ile uyumlu segment izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -4368,7 +4183,7 @@ export const cases = [
           "Başvuru yakınması: Ani nefes darlığı ve batıcı göğüs ağrısı.",
           "Taşikardi mevcut.",
           "BT pulmoner anjiyografi: Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor.",
-          "D-dimer: D-dimer 2.400 ng/mL FEU olarak yorumlandı."
+          "D-dimer: D-dimer 2.400 ng/mL FEU saptandı."
         ],
         "pearls": [
           "D-dimer düşük klinik olasılıkta dışlama amacıyla daha değerlidir; yüksek olasılıkta doğrudan görüntüleme gerekir.",
@@ -4426,10 +4241,12 @@ export const cases = [
       "Ateş": "38.8 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Sağ alt zonda inspiratuvar raller duyuluyor",
       "Aynı bölgede bronşiyal solunum sesi ve matite mevcut",
       "Solunum sayısı artmış",
-      "Konfüzyon saptanmıyor"
+      "Konfüzyon saptanmıyor",
+      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -4439,20 +4256,20 @@ export const cases = [
         "summary": "Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı izleniyor."
         ],
         "rows": [
           [
             "Akciğer grafisi",
             "Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -4475,9 +4292,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 16.700/mm³ (Yüksek); CRP: 132 mg/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Lökosit: 16.700/mm³ (Yüksek); CRP: 132 mg/L (Yüksek) saptandı."
         ]
       },
       {
@@ -4487,14 +4304,14 @@ export const cases = [
         "summary": "Ağır hastalık, yatış gereksinimi veya tedavi başarısızlığı varsa balgam Gram boyama/kültür ve kan kültürleri alınır.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Ağır hastalık, yatış gereksinimi veya tedavi başarısızlığı varsa balgam Gram boyama/kültür ve kan kültürleri alınır."
         ],
         "rows": [
           [
             "Mikrobiyolojik örnekleme",
             "Ağır hastalık, yatış gereksinimi veya tedavi başarısızlığı varsa balgam Gram boyama/kültür ve kan kültürleri alınır.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -4532,7 +4349,7 @@ export const cases = [
           "Başvuru yakınması: Öksürük, ateş ve nefes almakla artan yan ağrısı.",
           "Sağ alt zonda inspiratuvar raller duyuluyor.",
           "Akciğer grafisi: Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı izleniyor.",
-          "Laboratuvar: Lökosit 16.700/mm³ olarak yorumlandı."
+          "Laboratuvar: Lökosit 16.700/mm³ saptandı."
         ],
         "pearls": [
           "CURB-65 gibi skorlar yatış kararında yardımcıdır; tanıyı tek başına koydurmaz.",
@@ -4590,10 +4407,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Bilateral bazal inspiratuvar ince Velcro tipi raller duyuluyor",
       "Parmaklarda çomaklaşma mevcut",
       "Wheezing belirgin değil",
-      "Periferik ödem saptanmıyor"
+      "Periferik ödem saptanmıyor",
+      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -4603,14 +4422,14 @@ export const cases = [
         "summary": "Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği görünümü izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği görünümü izleniyor."
         ],
         "rows": [
           [
             "Yüksek çözünürlüklü toraks BT",
             "Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği görünümü izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -4639,9 +4458,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Solunum fonksiyon testi sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "FVC: %62 beklenen (Düşük); DLCO: %48 beklenen (Düşük) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "FVC: %62 beklenen (Düşük); DLCO: %48 beklenen (Düşük) saptandı."
         ]
       },
       {
@@ -4669,9 +4488,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Sekonder neden taraması sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Sekonder neden taraması sonuçları referans aralığında/negatif saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sekonder neden taraması sonuçları referans aralığında/negatif saptandı."
         ]
       }
     ],
@@ -4708,7 +4527,7 @@ export const cases = [
           "Başvuru yakınması: Aylar içinde artan efor dispnesi ve kuru öksürük.",
           "Bilateral bazal inspiratuvar ince Velcro tipi raller duyuluyor.",
           "Yüksek çözünürlüklü toraks BT: Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği görünümü izleniyor.",
-          "Solunum fonksiyon testi: FVC %62 beklenen olarak yorumlandı."
+          "Solunum fonksiyon testi: FVC %62 beklenen saptandı."
         ],
         "pearls": [
           "UIP paterni; subplevral-bazal retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterizedir.",
@@ -4767,10 +4586,12 @@ export const cases = [
       "Ateş": "37.6 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Yaygın ekspiratuvar ronküs ve wheezing duyuluyor",
       "Ekspirasyon süresi uzamış",
       "Yardımcı solunum kasları kullanılıyor",
-      "Periferik siyanoz hafif düzeyde izleniyor"
+      "Periferik siyanoz hafif düzeyde izleniyor",
+      "Solunum işi, yardımcı solunum kası kullanımı, oskültasyon bulguları ve oksijen satürasyonu birlikte değerlendirildi."
     ],
     "investigations": [
       {
@@ -4804,9 +4625,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Arter kan gazı sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "pH: 7.31 (Düşük); PaCO2: 58 mmHg (Yüksek); PaO2: 55 mmHg (Düşük) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "pH: 7.31 (Düşük); PaCO2: 58 mmHg (Yüksek); PaO2: 55 mmHg (Düşük) saptandı."
         ]
       },
       {
@@ -4816,20 +4637,20 @@ export const cases = [
         "summary": "Hiperinflasyon bulguları izleniyor; belirgin yeni lobar konsolidasyon saptanmıyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Hiperinflasyon bulguları izleniyor; belirgin yeni lobar konsolidasyon saptanmıyor."
         ],
         "rows": [
           [
             "Akciğer grafisi",
             "Hiperinflasyon bulguları izleniyor; belirgin yeni lobar konsolidasyon saptanmıyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -4852,9 +4673,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Lökosit: 12.900/mm³ (Yüksek); CRP: 42 mg/L (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Lökosit: 12.900/mm³ (Yüksek); CRP: 42 mg/L (Yüksek) saptandı."
         ]
       }
     ],
@@ -4890,7 +4711,7 @@ export const cases = [
         "evidenceChain": [
           "Başvuru yakınması: Artan nefes darlığı ve balgam miktarı.",
           "Yaygın ekspiratuvar ronküs ve wheezing duyuluyor.",
-          "Arter kan gazı: pH 7.31 olarak yorumlandı.",
+          "Arter kan gazı: pH 7.31 saptandı.",
           "Akciğer grafisi: Hiperinflasyon bulguları izleniyor; belirgin yeni lobar konsolidasyon saptanmıyor."
         ],
         "pearls": [
@@ -4950,10 +4771,12 @@ export const cases = [
       "Ateş": "37.9 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Kaşektik görünüm ve hafif ateş mevcut",
       "Sağ üst zonda solunum sesleri azalmış ve raller duyuluyor",
       "Servikal lenfadenopati saptanmıyor",
-      "Hepatosplenomegali yok"
+      "Hepatosplenomegali yok",
+      "Genel toksisite, ateş odağı, döküntü, lenfadenopati ve meningeal irritasyon bulguları sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -4963,14 +4786,14 @@ export const cases = [
         "summary": "Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu görünüm izleniyor."
         ],
         "rows": [
           [
             "Akciğer grafisi",
             "Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu görünüm izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -4981,20 +4804,20 @@ export const cases = [
         "summary": "Balgam yaymasında aside dirençli basil görülüyor; nükleik asit amplifikasyon testi ve kültür ilaç duyarlılığı için gönderiliyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Balgam yaymasında aside dirençli basil görülüyor; nükleik asit amplifikasyon testi ve kültür ilaç duyarlılığı için gönderiliyor."
         ],
         "rows": [
           [
             "Balgam ARB ve moleküler inceleme",
             "Balgam yaymasında aside dirençli basil görülüyor; nükleik asit amplifikasyon testi ve kültür ilaç duyarlılığı için gönderiliyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -5017,9 +4840,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Sedimentasyon: 74 mm/saat (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Sedimentasyon: 74 mm/saat (Yüksek) saptandı."
         ]
       }
     ],
@@ -5114,10 +4937,12 @@ export const cases = [
       "Ateş": "39.5 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Ateş yüksekliği ve belirgin halsizlik izleniyor",
       "Skleralarda hafif ikter mevcut",
       "Dalak palpasyonla ele geliyor",
-      "Bilinç bulanıklığı saptanmıyor"
+      "Bilinç bulanıklığı saptanmıyor",
+      "Genel toksisite, ateş odağı, döküntü, lenfadenopati ve meningeal irritasyon bulguları sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -5127,20 +4952,20 @@ export const cases = [
         "summary": "Eritrositler içinde halka formları ve yüksek parazitemi izleniyor; bazı eritrositlerde birden fazla halka formu dikkati çekiyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Eritrositler içinde halka formları ve yüksek parazitemi izleniyor; bazı eritrositlerde birden fazla halka formu dikkati çekiyor."
         ],
         "rows": [
           [
             "Kalın damla ve ince yayma",
             "Eritrositler içinde halka formları ve yüksek parazitemi izleniyor; bazı eritrositlerde birden fazla halka formu dikkati çekiyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
         "id": "labs",
-        "label": "Laboratuvar",
+        "label": "Tam kan sayımı ve biyokimya paneli",
         "type": "lab",
         "rows": [
           [
@@ -5169,9 +4994,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Trombosit: 62.000/mm³ (Düşük); Hemoglobin: 10.9 g/dL (Düşük); Total bilirubin: 2.6 mg/dL (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Trombosit: 62.000/mm³ (Düşük); Hemoglobin: 10.9 g/dL (Düşük); Total bilirubin: 2.6 mg/dL (Yüksek) saptandı."
         ]
       },
       {
@@ -5181,14 +5006,14 @@ export const cases = [
         "summary": "Plasmodium antijen testi pozitif; tür ayrımı ve parazitemi için mikroskopik değerlendirme ile birlikte yorumlanır.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Plasmodium antijen testi pozitif; tür ayrımı ve parazitemi için mikroskopik değerlendirme ile birlikte yorumlanır."
         ],
         "rows": [
           [
             "Hızlı antijen testi",
             "Plasmodium antijen testi pozitif; tür ayrımı ve parazitemi için mikroskopik değerlendirme ile birlikte yorumlanır.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -5226,7 +5051,7 @@ export const cases = [
           "Başvuru yakınması: Titreme ile yükselen ateş ve yaygın halsizlik.",
           "Ateş yüksekliği ve belirgin halsizlik izleniyor.",
           "Kalın damla ve ince yayma: Eritrositler içinde halka formları ve yüksek parazitemi izleniyor; bazı eritrositlerde birden fazla halka formu dikkati çekiyor.",
-          "Laboratuvar: Trombosit 62.000/mm³ olarak yorumlandı."
+          "Laboratuvar: Trombosit 62.000/mm³ saptandı."
         ],
         "pearls": [
           "Falciparum sıtması hızla ağır hastalığa ilerleyebilir; tedavi geciktirilmemelidir.",
@@ -5284,10 +5109,12 @@ export const cases = [
       "Ateş": "39.7 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Ense sertliği ve fotofobi mevcut",
       "Alt ekstremitelerde basmakla solmayan peteşi ve purpuralar izleniyor",
       "Taşikardi ve sınırda hipotansiyon mevcut",
-      "Bilinç dalgalanması gelişiyor"
+      "Bilinç dalgalanması gelişiyor",
+      "Genel toksisite, ateş odağı, döküntü, lenfadenopati ve meningeal irritasyon bulguları sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -5321,9 +5148,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "BOS incelemesi sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Açılış basıncı: Yüksek (Yüksek); Lökosit: 2.200/mm³ (Yüksek); Protein: 180 mg/dL (Yüksek) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Açılış basıncı: Yüksek (Yüksek); Lökosit: 2.200/mm³ (Yüksek); Protein: 180 mg/dL (Yüksek) saptandı."
         ]
       },
       {
@@ -5333,14 +5160,14 @@ export const cases = [
         "summary": "Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor."
         ],
         "rows": [
           [
             "BOS Gram boyama",
             "Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -5351,14 +5178,14 @@ export const cases = [
         "summary": "Antibiyotik öncesi alınır; ancak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Antibiyotik öncesi alınır; ancak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır."
         ],
         "rows": [
           [
             "Kan kültürü",
             "Antibiyotik öncesi alınır; ancak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -5395,7 +5222,7 @@ export const cases = [
         "evidenceChain": [
           "Başvuru yakınması: Yüksek ateş, şiddetli baş ağrısı ve döküntü.",
           "Ense sertliği ve fotofobi mevcut.",
-          "BOS incelemesi: Açılış basıncı Yüksek olarak yorumlandı.",
+          "BOS incelemesi: Açılış basıncı Yüksek saptandı.",
           "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor."
         ],
         "pearls": [
@@ -5455,10 +5282,12 @@ export const cases = [
       "Ateş": "38.6 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Ateş yüksekliği mevcut",
       "Triküspit odakta yeni sistolik üfürüm duyuluyor",
       "Tırnak yatağında splinter hemoraji şüpheli",
-      "Akciğerlerde dağınık raller duyuluyor"
+      "Akciğerlerde dağınık raller duyuluyor",
+      "Genel toksisite, ateş odağı, döküntü, lenfadenopati ve meningeal irritasyon bulguları sistematik değerlendirildi."
     ],
     "investigations": [
       {
@@ -5468,14 +5297,14 @@ export const cases = [
         "summary": "Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor."
         ],
         "rows": [
           [
             "Kan kültürleri",
             "Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -5486,14 +5315,14 @@ export const cases = [
         "summary": "Triküspit kapakta hareketli vejetasyon ile uyumlu kitle izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Triküspit kapakta hareketli vejetasyon ile uyumlu kitle izleniyor."
         ],
         "rows": [
           [
             "Transtorasik/Transözofageal ekokardiyografi",
             "Triküspit kapakta hareketli vejetasyon ile uyumlu kitle izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -5504,14 +5333,14 @@ export const cases = [
         "summary": "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli ile uyumlu görünüm oluşturuyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli ile uyumlu görünüm oluşturuyor."
         ],
         "rows": [
           [
             "Toraks BT",
             "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli ile uyumlu görünüm oluşturuyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -5607,10 +5436,13 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "El bileği distal radius düzeyinde şiş ve hassas",
       "Çatal sırtı deformitesi izleniyor",
       "Parmak hareketleri ağrılı ancak korunmuş",
-      "Median sinir duyusu ve radial-ulnar nabızlar değerlendirilerek kayıt altına alınıyor"
+      "Median sinir duyusu ve radial-ulnar nabızlar değerlendirilerek kayıt altına alınıyor",
+      "Redüksiyon öncesi ve sonrası median sinir fonksiyonu, kapiller dolum ve radial/ulnar nabızlar değerlendirilmelidir. Redüksiyon öncesi ve sonrası median sinir fonksiyonu, kapiller dolum ve radial/ulnar nabızlar değerlendirilmelidir.",
+      "Düşük enerjili fragilite kırığı nedeniyle osteoporoz ve düşme riski açısından ileri değerlendirme planlanır. Düşük enerjili fragilite kırığı nedeniyle osteoporoz ve düşme riski açısından ileri değerlendirme planlanır."
     ],
     "investigations": [
       {
@@ -5620,50 +5452,39 @@ export const cases = [
         "summary": "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman ile uyumlu görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman ile uyumlu görünüm izleniyor."
         ],
         "rows": [
           [
             "El bileği direkt grafisi",
             "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman ile uyumlu görünüm izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
       {
-        "id": "neurovascular",
-        "label": "Nörovasküler değerlendirme",
-        "type": "clinical",
-        "summary": "Redüksiyon öncesi ve sonrası median sinir fonksiyonu, kapiller dolum ve radial/ulnar nabızlar değerlendirilmelidir.",
+        "id": "post-reduction-xray",
+        "label": "Redüksiyon sonrası kontrol grafisi",
+        "type": "xray",
         "priority": "useful",
+        "summary": "Kontrol grafisinde dorsal angülasyon azaldı ve radial yükseklik kısmen düzeldi.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Kapalı redüksiyonun yeterliliği objektif olarak izlenir.",
+          "Eklem içi belirgin basamaklanma saptanmadı."
         ],
         "rows": [
           [
-            "Nörovasküler değerlendirme",
-            "Redüksiyon öncesi ve sonrası median sinir fonksiyonu, kapiller dolum ve radial/ulnar nabızlar değerlendirilmelidir.",
-            "Beklenen normal patern",
-            "Yorumlandı"
-          ]
-        ]
-      },
-      {
-        "id": "bone",
-        "label": "Osteoporoz değerlendirmesi",
-        "type": "clinical",
-        "summary": "Düşük enerjili fragilite kırığı nedeniyle osteoporoz ve düşme riski açısından ileri değerlendirme planlanır.",
-        "priority": "useful",
-        "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ],
-        "rows": [
+            "Dorsal angülasyon",
+            "5°",
+            "<10°",
+            "Objektif bulgu"
+          ],
           [
-            "Osteoporoz değerlendirmesi",
-            "Düşük enerjili fragilite kırığı nedeniyle osteoporoz ve düşme riski açısından ileri değerlendirme planlanır.",
-            "Beklenen normal patern",
-            "Yorumlandı"
+            "Eklem içi basamaklanma",
+            "Saptanmadı",
+            "Saptanmamalı",
+            "Negatif"
           ]
         ]
       }
@@ -5760,10 +5581,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Etkilenen ekstremite kısa ve dış rotasyonda duruyor",
       "Kalça hareketleri ağrılı ve kısıtlı",
       "Aksiyel yüklenmeyle ağrı artıyor",
-      "Distal nabızlar ve duyu muayenesi korunmuş"
+      "Distal nabızlar ve duyu muayenesi korunmuş",
+      "İntrakapsüler kırıklarda femur başı kanlanması bozulabileceğinden avasküler nekroz ve kaynamama riski dikkate alınır. İntrakapsüler kırıklarda femur başı kanlanması bozulabileceğinden avasküler nekroz ve kaynamama riski dikkate alınır."
     ],
     "investigations": [
       {
@@ -5773,14 +5596,14 @@ export const cases = [
         "summary": "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu görünüm izleniyor."
         ],
         "rows": [
           [
             "Pelvis ve kalça direkt grafisi",
             "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu görünüm izleniyor.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -5809,27 +5632,9 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Preoperatif laboratuvar sonucunda olguya özgü bulgu kaydedildi.",
+        "summary": "Hemoglobin: 11.2 g/dL (Düşük) saptandı.",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ]
-      },
-      {
-        "id": "risk",
-        "label": "Komplikasyon değerlendirmesi",
-        "type": "clinical",
-        "summary": "İntrakapsüler kırıklarda femur başı kanlanması bozulabileceğinden avasküler nekroz ve kaynamama riski dikkate alınır.",
-        "priority": "useful",
-        "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ],
-        "rows": [
-          [
-            "Komplikasyon değerlendirmesi",
-            "İntrakapsüler kırıklarda femur başı kanlanması bozulabileceğinden avasküler nekroz ve kaynamama riski dikkate alınır.",
-            "Beklenen normal patern",
-            "Yorumlandı"
-          ]
+          "Hemoglobin: 11.2 g/dL (Düşük) saptandı."
         ]
       }
     ],
@@ -5856,7 +5661,7 @@ export const cases = [
       "explanation": "Düşük enerjili düşme sonrası kalça ağrısı, yürüyememe, ekstremitede kısalık-dış rotasyon ve grafide subkapital intrakapsüler kırık femur boyun kırığı ile uyumludur.",
       "pearls": [
         "Femur boyun kırıkları intrakapsüler olduğu için femur başı kanlanması açısından risklidir.",
-        "Yaşlı ve deplase kırıklarda artroplasti seçenekleri sıklıkla yorumlandı."
+        "Yaşlı ve deplase kırıklarda artroplasti seçenekleri sıklıkla tercih edilir."
       ],
       "nextStep": "Analjezi; immobilizasyon; cerrahi risk değerlendirmesi ve erken ortopedik cerrahi planlama.",
       "answerFeedback": {
@@ -5866,11 +5671,11 @@ export const cases = [
           "Başvuru yakınması: Kalça ağrısı ve yürüyememe.",
           "Etkilenen ekstremite kısa ve dış rotasyonda duruyor.",
           "Pelvis ve kalça direkt grafisi: Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu görünüm izleniyor.",
-          "Preoperatif laboratuvar: Hemoglobin 11.2 g/dL olarak yorumlandı."
+          "Preoperatif laboratuvar: Hemoglobin 11.2 g/dL saptandı."
         ],
         "pearls": [
           "Femur boyun kırıkları intrakapsüler olduğu için femur başı kanlanması açısından risklidir.",
-          "Yaşlı ve deplase kırıklarda artroplasti seçenekleri sıklıkla yorumlandı."
+          "Yaşlı ve deplase kırıklarda artroplasti seçenekleri sıklıkla tercih edilir."
         ],
         "management": [
           "Analjezi",
@@ -5925,10 +5730,12 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Anatomik enfiye çukurunda belirgin hassasiyet mevcut",
       "Başparmak aksiyel kompresyonu ağrılı",
       "El bileği ekstansiyonu ağrılı ve kısıtlı",
-      "Nörovasküler muayene normal"
+      "Nörovasküler muayene normal",
+      "İlgili ekstremitede deformite, şişlik, lokal hassasiyet, aktif-pasif hareket ve fonksiyon kaybı değerlendirildi."
     ],
     "investigations": [
       {
@@ -5938,14 +5745,14 @@ export const cases = [
         "summary": "İlk grafilerde kırık hattı seçilemeyebilir; özel skafoid projeksiyonları ve kontrol grafileri gerekebilir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "İlk grafilerde kırık hattı seçilemeyebilir; özel skafoid projeksiyonları ve kontrol grafileri gerekebilir."
         ],
         "rows": [
           [
             "Skafoid grafileri",
             "İlk grafilerde kırık hattı seçilemeyebilir; özel skafoid projeksiyonları ve kontrol grafileri gerekebilir.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -5956,45 +5763,14 @@ export const cases = [
         "summary": "Klinik şüphe yüksekse erken dönemde okült skafoid kırığını göstermek için kullanılabilir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Klinik şüphe yüksekse erken dönemde okült skafoid kırığını göstermek için kullanılabilir."
         ],
         "rows": [
           [
             "El bileği MR",
             "Klinik şüphe yüksekse erken dönemde okült skafoid kırığını göstermek için kullanılabilir.",
             "Beklenen normal patern",
-            "Yorumlandı"
-          ]
-        ]
-      },
-      {
-        "id": "immobilization",
-        "label": "İlk yaklaşım",
-        "type": "clinical",
-        "summary": "Anatomik enfiye çukuru hassasiyeti devam ettiği için ilk grafi negatif olsa da başparmak destekli kısa kol ateli uygulandı.",
-        "priority": "useful",
-        "findings": [
-          "Erken grafi skafoid kırığını atlayabilir.",
-          "İmmobilizasyon avasküler nekroz riskini azaltır."
-        ],
-        "rows": [
-          [
-            "Anatomik enfiye çukuru hassasiyeti",
-            "Pozitif",
-            "Negatif",
-            "Patolojik"
-          ],
-          [
-            "İlk grafi",
-            "Kırık hattı net değil",
-            "Normal",
-            "Yetersiz dışlama"
-          ],
-          [
-            "İlk yaklaşım",
-            "Başparmak destekli atel",
-            "Gerekmez",
-            "Endike"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -6041,7 +5817,8 @@ export const cases = [
         "management": [
           "Başparmak destekli immobilizasyon",
           "erken MR veya 10-14 gün sonra kontrol grafisi",
-          "deplase kırıkta ortopedik cerrahi değerlendirme"
+          "deplase kırıkta ortopedik cerrahi değerlendirme",
+          "Anatomik enfiye çukuru hassasiyeti devam ettiği için ilk grafi negatif olsa da başparmak destekli kısa kol ateli uygulandı. Erken grafi skafoid kırığını atlayabilir. İmmobilizasyon avasküler nekroz riskini azaltır."
         ],
         "learningOutcome": "Skafoid kırığı tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
         "differentials": {
@@ -6091,10 +5868,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Omuz konturu düzleşmiş, deltoid kabarıklığı kaybolmuş",
       "Kol hafif abduksiyon ve dış rotasyonda tutuluyor",
       "Humerus başı anterior-inferior yerleşimli palpe ediliyor",
-      "Aksiller sinir duyusu ve distal nörovasküler durum redüksiyon öncesi değerlendiriliyor"
+      "Aksiller sinir duyusu ve distal nörovasküler durum redüksiyon öncesi değerlendiriliyor",
+      "Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal dolaşım redüksiyon öncesi ve sonrası kayıt altına alınır. Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal dolaşım redüksiyon öncesi ve sonrası kayıt altına alınır."
     ],
     "investigations": [
       {
@@ -6104,32 +5883,14 @@ export const cases = [
         "summary": "Humerus başı glenoid kaviteye göre anterior-inferior yer değiştirmiştir; belirgin eşlik eden kırık hattı izlenmez.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Humerus başı glenoid kaviteye göre anterior-inferior yer değiştirmiştir; belirgin eşlik eden kırık hattı izlenmez."
         ],
         "rows": [
           [
             "Omuz direkt grafisi",
             "Humerus başı glenoid kaviteye göre anterior-inferior yer değiştirmiştir; belirgin eşlik eden kırık hattı izlenmez.",
             "Beklenen normal patern",
-            "Yorumlandı"
-          ]
-        ]
-      },
-      {
-        "id": "neurovascular",
-        "label": "Nörovasküler muayene",
-        "type": "clinical",
-        "summary": "Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal dolaşım redüksiyon öncesi ve sonrası kayıt altına alınır.",
-        "priority": "useful",
-        "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
-        ],
-        "rows": [
-          [
-            "Nörovasküler muayene",
-            "Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal dolaşım redüksiyon öncesi ve sonrası kayıt altına alınır.",
-            "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       },
@@ -6140,14 +5901,14 @@ export const cases = [
         "summary": "Başarılı redüksiyonun ve eşlik eden Hill-Sachs veya Bankart lezyonu gibi kemik yaralanmalarının değerlendirilmesi için kontrol grafisi çekilir.",
         "priority": "useful",
         "findings": [
-          "Sonuç tanısal karar için somut veri sağlar."
+          "Başarılı redüksiyonun ve eşlik eden Hill-Sachs veya Bankart lezyonu gibi kemik yaralanmalarının değerlendirilmesi için kontrol grafisi çekilir."
         ],
         "rows": [
           [
             "Redüksiyon sonrası kontrol",
             "Başarılı redüksiyonun ve eşlik eden Hill-Sachs veya Bankart lezyonu gibi kemik yaralanmalarının değerlendirilmesi için kontrol grafisi çekilir.",
             "Beklenen normal patern",
-            "Yorumlandı"
+            "Tanıyı destekler"
           ]
         ]
       }
@@ -6234,7 +5995,7 @@ export const cases = [
     "demographics": "28 yaş erkek, elektrik teknisyeni",
     "setting": "Acil servis - iş kazası sonrası ilk değerlendirme",
     "chiefComplaint": "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı",
-    "stem": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tariflenir. Nemli zemin öyküsü, cilt direncinin azalması nedeniyle düşük voltajın bile klinik risk oluşturabileceğini düşündürür. alternatif akımın tetanik kasılma yaparak maruziyeti uzatması ve transtorasik akımın kalbi zedeleyebilmesi mantığı üzerine kurulmuştur.",
+    "stem": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tarifler. Nemli zemin öyküsü cilt direncinin azalmasına, el-gövde hattındaki temas ise transtorasik akım geçişi ve ventriküler aritmi riskine işaret eder.",
     "vitals": {
       "TA": "118/74 mmHg",
       "Nabız": "124/dk, düzensiz",
@@ -6243,11 +6004,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Sağ avuç içinde 1.5 cm kuru elektrik giriş yanığı izleniyor",
-      "Kalp oskültasyonunda düzensiz taşikardi duyuluyor",
-      "Ön kol fleksörlerinde hassasiyet ve hafif kas ağrısı var",
-      "Bilinç açık, GKS 15; fokal nörolojik defisit saptanmıyor",
-      "Kompartman sendromu bulgusu yok"
+      "Genel durum orta; hasta kaygılı ancak koopere, bilinç açık ve GKS 15.",
+      "Sağ avuç içinde yaklaşık 1.5 cm kuru, keskin sınırlı elektrik giriş yanığı; çevresinde hafif eritem ve hassasiyet mevcut.",
+      "Kardiyovasküler muayenede düzensiz taşikardi duyuluyor; belirgin üfürüm, kalp yetmezliği bulgusu veya periferik nabız asimetrisi saptanmıyor.",
+      "Solunum sistemi muayenesinde ral, wheezing veya solunum sıkıntısı yok; oksijen satürasyonu oda havasında korunmuş.",
+      "Sağ ön kol fleksörlerinde hassasiyet mevcut; pasif germe ile belirgin ağrı, ileri ödem veya kompartman sendromu bulgusu yok.",
+      "Nörolojik muayenede kısa süreli parestezi dışında motor defisit, lateralizan bulgu veya bilinç bozukluğu saptanmıyor."
     ],
     "investigations": [
       {
@@ -6455,44 +6217,16 @@ export const cases = [
       "Ateş": "36.2 °C"
     },
     "exam": [
-      "Bilinç dalgalı, GKS 13; kısa süreli konfüzyon sürüyor",
-      "Gövdede dallanan Lichtenberg benzeri eritematöz izler var",
-      "Yüzeyel yanık alanları mevcut, derin yanık saptanmıyor",
-      "Akciğer oskültasyonunda yaygın ral veya tek taraflı solunum azalması yok",
-      "Geçici tinnitus ve işitme azalması tarifliyor"
+      "Genel durum orta-kötü; hasta başlangıçta konfüze, takipte uyanıklığı artıyor ve GKS 13’ten 15’e yükseliyor.",
+      "Solunum yüzeyel ve düzensiz; oksijen verilince satürasyon yükseliyor, siyanoz geriliyor.",
+      "Gövdede dallanan Lichtenberg benzeri eritematöz izler ve yüzeyel yanık alanları izleniyor; derin yanık, yaygın nekroz veya aktif kanama yok.",
+      "Kardiyovasküler muayenede bradikardi eğilimi dışında kalp sesleri doğal; periferik perfüzyon korunmuş.",
+      "Akciğer oskültasyonunda tek taraflı solunum azalması, yaygın ral veya belirgin bronkospazm saptanmıyor.",
+      "Baş-boyun değerlendirmesinde timpan membran rüptürü yok; hasta geçici tinnitus ve işitme azalması tarifliyor.",
+      "Nörolojik muayenede fokal motor defisit veya meningeal irritasyon bulgusu saptanmıyor.",
+      "Başvuruda hipoventilasyon ve hafif hipoksemi izlendi; oksijenle satürasyon düzeldi. Solunum depresyonu yıldırım sonrası erken ölüm riskini açıklar. Oksijen desteğine hızlı yanıt alınmıştır."
     ],
     "investigations": [
-      {
-        "id": "abc-ve-oksijenizasyon-degerlendirmesi-02",
-        "label": "ABC ve oksijenizasyon değerlendirmesi",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Başvuruda hipoventilasyon ve hafif hipoksemi izlendi; oksijenle satürasyon düzeldi.",
-        "findings": [
-          "Solunum depresyonu yıldırım sonrası erken ölüm riskini açıklar.",
-          "Oksijen desteğine hızlı yanıt alınmıştır."
-        ],
-        "rows": [
-          [
-            "Solunum sayısı",
-            "10/dk",
-            "12-20/dk",
-            "Düşük"
-          ],
-          [
-            "SpO2",
-            "91% → 98%",
-            ">94%",
-            "Düzeldi"
-          ],
-          [
-            "GKS",
-            "13 → 15",
-            "15",
-            "Düzeldi"
-          ]
-        ]
-      },
       {
         "id": "ekg-ve-ritim-monitorizasyonu-02",
         "label": "EKG ve ritim monitörizasyonu",
@@ -6556,32 +6290,32 @@ export const cases = [
         ]
       },
       {
-        "id": "norolojik-goz-ve-isitme-degerlendirmesi-02",
-        "label": "Nörolojik, göz ve işitme değerlendirmesi",
-        "type": "clinical",
-        "priority": "situational",
-        "summary": "Nörolojik muayene takipte normale döndü; timpan membran rüptürü saptanmadı.",
+        "id": "lightning-cardiac-muscle-lab",
+        "label": "CK, troponin ve elektrolit paneli",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "CK hafif yüksek, troponin ve potasyum normal sınırlarda saptandı.",
         "findings": [
-          "Geçici bilinç etkilenmesi mevcuttur.",
-          "Kalıcı işitme hasarı lehine erken bulgu yoktur."
+          "Derin kas hasarı sınırlı görünmektedir.",
+          "Hiperkalemi veya miyokard nekrozu lehine erken biyobelirteç yoktur."
         ],
         "rows": [
           [
-            "GKS",
-            "13 → 15",
-            "15",
-            "Düzeldi"
+            "CK",
+            "620 U/L",
+            "<200 U/L",
+            "Yüksek"
           ],
           [
-            "Fundus",
-            "Akut patoloji yok",
-            "Doğal",
-            "Sorun yok"
+            "Troponin I",
+            "0.01 ng/mL",
+            "<0.04 ng/mL",
+            "Normal"
           ],
           [
-            "Timpan membran",
-            "Sağlam",
-            "Sağlam",
+            "Potasyum",
+            "4.1 mmol/L",
+            "3.5-5.1 mmol/L",
             "Normal"
           ]
         ]
@@ -6672,11 +6406,12 @@ export const cases = [
       "Ateş": "37.2 °C"
     },
     "exam": [
-      "Belirgin sarılık ve beslenme sırasında çabuk yorulma izleniyor",
-      "Karaciğer kot altında 3 cm ele geliyor",
-      "Bilateral hafif lens opasitesi/katarakt şüphesi var",
-      "Mukozalar kuru, kilo alımı yetersiz",
-      "Ense sertliği ve fokal nörolojik bulgu yok"
+      "Genel durum orta; yenidoğan letarjik, emme gücü azalmış ve beslenme sırasında çabuk yoruluyor.",
+      "Cilt ve skleralarda belirgin sarılık izleniyor; mukozalar hafif kuru.",
+      "Abdomen yumuşak; karaciğer sağ kostal ark altında 3 cm ele geliyor, belirgin splenomegali yok.",
+      "Göz muayenesinde bilateral hafif lens opasitesi/katarakt şüphesi mevcut.",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor; sepsis odağı açısından belirgin cilt lezyonu yok.",
+      "Nörolojik muayenede ense sertliği ve fokal defisit yok; tonus hafif azalmış."
     ],
     "investigations": [
       {
@@ -6871,11 +6606,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Meyve püresi sonrası solukluk, terleme ve uykuya meyil izleniyor",
-      "Karaciğer kot altında 2 cm ele geliyor",
-      "Kapiller dolum 3 saniye, hafif dehidratasyon bulgusu var",
-      "Nöbet sonrası dönem dışında fokal nörolojik defisit yok",
-      "İshal veya belirgin enfeksiyon odağı saptanmıyor"
+      "Genel durum orta; atak sırasında soluk, terli ve uykuya meyilli görünümde.",
+      "Meyve püresi alımı sonrası adrenerjik hipoglisemi bulguları belirginleşiyor; tatlı gıdalardan kaçınma öyküsü aile tarafından doğrulanıyor.",
+      "Abdomen yumuşak; karaciğer sağ kostal ark altında 2 cm ele geliyor, asit veya peritonit bulgusu yok.",
+      "Kapiller dolum yaklaşık 3 saniye; hafif dehidratasyon bulguları mevcut.",
+      "Nörolojik muayenede hipoglisemi düzelince bilinç hızla toparlıyor; kalıcı fokal defisit yok.",
+      "Ateş, boğaz hiperemisi, meningeal irritasyon veya belirgin enfeksiyon odağı saptanmıyor."
     ],
     "investigations": [
       {
@@ -6911,7 +6647,7 @@ export const cases = [
       },
       {
         "id": "fruktoz-1-fosfat-aldob-degerlendirmesi-04",
-        "label": "Fruktoz-1-fosfat / ALDOB değerlendirmesi",
+        "label": "Fruktoz-1-fosfat ve ALDOB analizi",
         "type": "lab",
         "priority": "essential",
         "summary": "ALDOB ilişkili defekt şüphesi güçlü; fruktoz-1-fosfat birikimi ile uyumlu sonuç alındı.",
@@ -6964,23 +6700,17 @@ export const cases = [
         "label": "ALDOB gen analizi",
         "type": "lab",
         "priority": "situational",
-        "summary": "ALDOB gen analizi istendi; fruktoz-sükroz-sorbitol kısıtlaması başlatıldı.",
+        "summary": "ALDOB geninde patojenik varyant saptandı.",
         "findings": [
-          "Genetik doğrulama uzun dönem izlem içindir.",
-          "Diyet düzenlemesi acildir."
+          "Moleküler sonuç herediter fruktoz intoleransını doğrular.",
+          "Fruktoz-sükroz-sorbitol kısıtlaması sürdürülür."
         ],
         "rows": [
           [
-            "ALDOB gen analizi",
-            "Planlandı",
-            "Gerektiğinde",
-            "Beklemede"
-          ],
-          [
-            "Diyet yanıtı",
-            "Semptomlarda azalma",
-            "Beklenen",
-            "Olumlu"
+            "ALDOB varyantı",
+            "Patojenik varyant",
+            "Patojenik varyant yok",
+            "Pozitif"
           ]
         ]
       }
@@ -7070,11 +6800,12 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Karında belirgin distansiyon ve 5 cm hepatomegali var",
-      "Dolgun yanaklı yüz görünümü ve büyüme geriliği izleniyor",
-      "Açlık sonrası terleme ve irritabilite mevcut",
-      "Dekstroz sonrası bilinç düzeyi hızla düzeliyor",
-      "Splenomegali ve enfeksiyon odağı saptanmıyor"
+      "Genel durum orta; çocuk açlık dönemlerinde irritabl ve terli, dekstroz sonrası klinik olarak belirgin rahatlıyor.",
+      "Büyüme geriliği, dolgun yanaklı yüz görünümü ve karında belirgin distansiyon izleniyor.",
+      "Abdomen yumuşak; karaciğer sağ kostal ark altında yaklaşık 5 cm ele geliyor, splenomegali belirgin değil.",
+      "Ciltte ksantom izlenmiyor; mukozalar hafif kuru.",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
+      "Nörolojik muayenede hipoglisemi sırasında bilinç dalgalanması olurken glukoz düzeltildikten sonra fokal defisit kalmıyor."
     ],
     "investigations": [
       {
@@ -7141,7 +6872,7 @@ export const cases = [
       },
       {
         "id": "idrar-ketonu-ve-asidoz-degerlendirmesi-05",
-        "label": "İdrar ketonu ve asidoz değerlendirmesi",
+        "label": "İdrar ketonu ve kan gazı",
         "type": "urine",
         "priority": "useful",
         "summary": "İdrarda keton değişken; kan gazında laktik asidoz izlendi.",
@@ -7175,23 +6906,17 @@ export const cases = [
         "label": "G6PC gen analizi",
         "type": "lab",
         "priority": "situational",
-        "summary": "G6PC mutasyonu açısından genetik doğrulama planlandı.",
+        "summary": "G6PC geninde patojenik varyant saptandı.",
         "findings": [
-          "Kalıtsal tanı ve aile danışmanlığı için gereklidir.",
-          "Tedavi açlığın önlenmesine odaklanır."
+          "Moleküler sonuç Von Gierke tanısını doğrular.",
+          "Beslenme tedavisi genetik sonucu beklemeden başlatılır."
         ],
         "rows": [
           [
-            "G6PC analizi",
-            "Planlandı",
-            "Gerektiğinde",
-            "Beklemede"
-          ],
-          [
-            "Aile danışmanlığı",
-            "Önerildi",
-            "Risk yoksa gerekmez",
-            "Gerekli"
+            "G6PC varyantı",
+            "Patojenik varyant",
+            "Patojenik varyant yok",
+            "Pozitif"
           ]
         ]
       }
@@ -7281,6 +7006,7 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "İdrar ve bezde küf benzeri belirgin koku fark ediliyor",
       "Açık ten ve saç rengi aileye göre belirgin açık",
       "Baş kontrolü gecikmiş, hafif aksiyal hipotoni var",
@@ -7365,26 +7091,26 @@ export const cases = [
       },
       {
         "id": "pah-bh4-iliskili-genetik-ve-kofaktor-degerlendirmesi-06",
-        "label": "PAH/BH4 ilişkili genetik ve kofaktör değerlendirmesi",
+        "label": "PAH gen analizi ve BH4 yanıt testi",
         "type": "lab",
         "priority": "situational",
-        "summary": "PAH gen analizi ve BH4 yanıt değerlendirmesi planlandı.",
+        "summary": "PAH aktivitesi düşük, BH4 yanıt testi negatif saptandı.",
         "findings": [
-          "Klasik PKU ile kofaktör ilişkili formlar ayrılır.",
-          "Tedavi seçimini etkileyebilir."
+          "Yüksek fenilalaninle birlikte PAH eksikliği klasik PKU ile uyumludur.",
+          "BH4 yanıtının olmaması klasik diyet tedavisini öne çıkarır."
         ],
         "rows": [
           [
-            "PAH analizi",
-            "Planlandı",
-            "Gerektiğinde",
-            "Beklemede"
+            "PAH aktivitesi",
+            "%12",
+            ">%50",
+            "Düşük"
           ],
           [
-            "BH4 yanıtı",
-            "Değerlendirilecek",
-            "Gerektiğinde",
-            "Beklemede"
+            "BH4 yanıt testi",
+            "Negatif",
+            "Pozitif/negatif",
+            "Negatif"
           ]
         ]
       }
@@ -7412,7 +7138,7 @@ export const cases = [
         "evidenceChain": [
           "Olgu bulguları Fenilketonüri ile uyumlu",
           "Fenilalanin yüksek, tirozin düşük/normal",
-          "Fenilalanin hidroksilaz aktivitesi düşük veya BH4 yolu yorumlandı",
+          "Fenilalanin hidroksilaz aktivitesi düşük veya BH4 yolu değerlendirildi",
           "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
@@ -7474,6 +7200,7 @@ export const cases = [
       "Ateş": "36.4 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Yenidoğan letarjik ve emmesi zayıf",
       "Bezde tatlı/akçaağaç şurubu benzeri koku tarifleniyor",
       "Aksiyal hipotoniye intermittan ekstansör postür eşlik ediyor",
@@ -7679,6 +7406,7 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Sklera ve kulak kıkırdağında mavi-siyah pigmentasyon görülüyor",
       "Lomber omurga ve kalçada hareket kısıtlılığı var",
       "Dizlerde krepitasyon ve kronik ağrı mevcut",
@@ -7860,63 +7588,16 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Saç, kaş ve ciltte yaygın hipopigmentasyon izleniyor",
-      "Fotofobi ve horizontal nistagmus belirgin",
-      "İris transilluminasyon bulgusu pozitif",
-      "Ciltte güneş hasarına yatkın eritem alanları mevcut",
-      "Hepatosplenomegali veya nörolojik defisit yok"
+      "Genel durum iyi; çocuk fotofobi nedeniyle parlak ışıkta gözlerini kısmakta ve başını çevirmektedir.",
+      "Cilt ve saçlarda yaygın pigment azalması izleniyor; güneş gören alanlarda aktinik hasar veya malignite şüphesi taşıyan lezyon yok.",
+      "İris pigmentasyonu belirgin azalmış; horizontal nistagmus ve fiksasyon güçlüğü mevcut.",
+      "Görme keskinliği yaşa göre düşük; şaşılık ve foveal hipoplaziyle uyumlu bulgular eşlik ediyor.",
+      "Mukozal kanama, tekrarlayan ağır enfeksiyon veya nörolojik gelişim geriliği saptanmıyor.",
+      "Abdomen muayenesinde hepatosplenomegali yok; kardiyopulmoner muayene doğal.",
+      "Cilt, saç ve iriste yaygın pigment azalması; nistagmus izlendi. Melanin sentez bozukluğu belirgindir. Vitiligo gibi edinsel odaksal depigmentasyon paterni yoktur.",
+      "Görme keskinliği düşük ve foveal hipoplazi ile uyumlu retina bulgusu izlendi. Oküler tutulum okülokütanöz albinizmi destekler. Fotofobi klinik tabloya eşlik eder."
     ],
     "investigations": [
-      {
-        "id": "dermatolojik-ve-okuler-muayene-09",
-        "label": "Dermatolojik ve oküler muayene",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Cilt, saç ve iriste yaygın pigment azalması; nistagmus izlendi.",
-        "findings": [
-          "Melanin sentez bozukluğu belirgindir.",
-          "Vitiligo gibi edinsel odaksal depigmentasyon paterni yoktur."
-        ],
-        "rows": [
-          [
-            "Pigmentasyon",
-            "Yaygın azalmış",
-            "Yaşa/ırka uygun",
-            "Düşük"
-          ],
-          [
-            "Nistagmus",
-            "Var",
-            "Yok",
-            "Patolojik"
-          ]
-        ]
-      },
-      {
-        "id": "gorme-keskinligi-ve-retina-degerlendirmesi-09",
-        "label": "Görme keskinliği ve retina değerlendirmesi",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Görme keskinliği düşük ve foveal hipoplazi ile uyumlu retina bulgusu izlendi.",
-        "findings": [
-          "Oküler tutulum okülokütanöz albinizmi destekler.",
-          "Fotofobi klinik tabloya eşlik eder."
-        ],
-        "rows": [
-          [
-            "Görme keskinliği",
-            "Azalmış",
-            "Normal",
-            "Anormal"
-          ],
-          [
-            "Fovea",
-            "Hipoplazi lehine",
-            "Normal",
-            "Patolojik"
-          ]
-        ]
-      },
       {
         "id": "tirozinaz-melanin-yolu-genetik-testi-09",
         "label": "Tirozinaz/melanin yolu genetik testi",
@@ -7937,27 +7618,64 @@ export const cases = [
         ]
       },
       {
-        "id": "sendromik-albinizm-ayirici-degerlendirmesi-09",
-        "label": "Sendromik albinizm ayırıcı değerlendirmesi",
+        "id": "visual-acuity-oct",
+        "label": "Görme keskinliği ve optik koherens tomografi",
         "type": "clinical",
-        "priority": "situational",
-        "summary": "Kanama diyatezi ve ağır immün yetmezlik bulgusu saptanmadı.",
+        "priority": "essential",
+        "summary": "Görme keskinliği düşük ve OCT’de foveal hipoplazi ile uyumlu bulgu saptandı.",
         "findings": [
-          "Sendromik albinizm olasılığı daha düşük bulundu.",
-          "Chediak-Higashi/Hermansky-Pudlak açısından tarama negatif yönlüdür."
+          "Foveal hipoplazi ve nistagmus okülokütanöz albinizmle uyumludur.",
+          "Retinal kitle veya aktif inflamasyon izlenmedi."
         ],
         "rows": [
           [
-            "Trombosit/kanama",
-            "Patoloji yok",
-            "Yok",
-            "Sorun yok"
+            "Sağ göz görme keskinliği",
+            "0.3",
+            "Yaşa göre ≥0.8",
+            "Düşük"
           ],
           [
-            "Tekrarlayan enfeksiyon",
-            "Yok",
-            "Yok",
-            "Sorun yok"
+            "Sol göz görme keskinliği",
+            "0.4",
+            "Yaşa göre ≥0.8",
+            "Düşük"
+          ],
+          [
+            "OCT fovea",
+            "Foveal hipoplazi",
+            "Normal foveal çukur",
+            "Tanıyı destekler"
+          ]
+        ]
+      },
+      {
+        "id": "albinism-cbc-platelet",
+        "label": "Tam kan sayımı ve trombosit",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Trombosit sayısı ve nötrofil düzeyi normal sınırlarda saptandı.",
+        "findings": [
+          "Ağır kanama diyatezi veya immün yetmezlik düşündüren laboratuvar bulgusu yoktur.",
+          "Bu sonuç sendromik albinizm olasılığını azaltır."
+        ],
+        "rows": [
+          [
+            "Trombosit",
+            "285.000/mm³",
+            "150.000-450.000/mm³",
+            "Normal"
+          ],
+          [
+            "Nötrofil",
+            "3.200/mm³",
+            "1.500-8.000/mm³",
+            "Normal"
+          ],
+          [
+            "Hemoglobin",
+            "12.6 g/dL",
+            "11.5-15.5 g/dL",
+            "Normal"
           ]
         ]
       }
@@ -7985,7 +7703,7 @@ export const cases = [
         "evidenceChain": [
           "Olgu bulguları Okülokütanöz albinizm ile uyumlu",
           "Biyokimya çoğunlukla normal",
-          "Tirozinaz aktivitesi/genetik alt tip yorumlandı",
+          "Tirozinaz aktivitesi/genetik alt tip değerlendirildi",
           "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
@@ -8047,11 +7765,14 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Uzun boy, ince ekstremiteler ve araknodaktili izleniyor",
       "Lens subluksasyonu aşağı-içe yönlü olarak tarifleniyor",
       "Baldırda hassasiyet ve hafif asimetri mevcut",
       "Göğüs duvarında pektus deformitesi var",
-      "Aort üfürümü veya akut nörolojik defisit saptanmıyor"
+      "Aort üfürümü veya akut nörolojik defisit saptanmıyor",
+      "Lens subluksasyonu inferonazal yönde izlendi. Marfan sendromundan ayırıcı tanıda yön bilgisi önemlidir. Ektopia lentis homosistinüriyi destekler.",
+      "Tromboz riski yüksek; akut DVT bulgusu saptanmadı. Hastada tromboembolik komplikasyon açısından izlem gerekir. Koagülasyon paneli tek başına tanısal değildir."
     ],
     "investigations": [
       {
@@ -8080,56 +7801,6 @@ export const cases = [
         ]
       },
       {
-        "id": "oftalmolojik-lens-muayenesi-10",
-        "label": "Oftalmolojik lens muayenesi",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Lens subluksasyonu inferonazal yönde izlendi.",
-        "findings": [
-          "Marfan sendromundan ayırıcı tanıda yön bilgisi önemlidir.",
-          "Ektopia lentis homosistinüriyi destekler."
-        ],
-        "rows": [
-          [
-            "Lens pozisyonu",
-            "İnferonazal subluksasyon",
-            "Merkezde",
-            "Patolojik"
-          ],
-          [
-            "Fotofobi",
-            "Var",
-            "Yok",
-            "Patolojik"
-          ]
-        ]
-      },
-      {
-        "id": "tromboz-risk-ve-koagulasyon-degerlendirmesi-10",
-        "label": "Tromboz risk ve koagülasyon değerlendirmesi",
-        "type": "lab",
-        "priority": "useful",
-        "summary": "Tromboz riski yüksek; akut DVT bulgusu saptanmadı.",
-        "findings": [
-          "Hastada tromboembolik komplikasyon açısından izlem gerekir.",
-          "Koagülasyon paneli tek başına tanısal değildir."
-        ],
-        "rows": [
-          [
-            "D-dimer",
-            "Hafif yüksek",
-            "Normal",
-            "Uyumlu"
-          ],
-          [
-            "Akut DVT",
-            "Saptanmadı",
-            "Yok",
-            "Sorun yok"
-          ]
-        ]
-      },
-      {
         "id": "cbs-genetik-testi-ve-b6-yaniti-10",
         "label": "CBS genetik testi ve B6 yanıtı",
         "type": "lab",
@@ -8151,6 +7822,62 @@ export const cases = [
             "Değerlendirilecek",
             "Gerektiğinde",
             "Beklemede"
+          ]
+        ]
+      },
+      {
+        "id": "homocysteine-met-panel",
+        "label": "Plazma homosistein ve metiyonin düzeyi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Plazma homosistein ve metiyonin düzeyleri belirgin yüksek saptandı.",
+        "findings": [
+          "Patern sistationin beta sentaz eksikliğini destekler.",
+          "Marfan sendromunda homosistein yüksekliği beklenmez."
+        ],
+        "rows": [
+          [
+            "Total homosistein",
+            "126 µmol/L",
+            "5-15 µmol/L",
+            "Yüksek"
+          ],
+          [
+            "Metiyonin",
+            "96 µmol/L",
+            "10-45 µmol/L",
+            "Yüksek"
+          ],
+          [
+            "Vitamin B12",
+            "520 pg/mL",
+            "200-900 pg/mL",
+            "Normal"
+          ]
+        ]
+      },
+      {
+        "id": "venous-doppler-hcy",
+        "label": "Alt ekstremite venöz Doppler USG",
+        "type": "ultrasound",
+        "priority": "useful",
+        "summary": "Sol popliteal vende parsiyel trombüs izlendi.",
+        "findings": [
+          "Tromboz eğilimi homosistinüri için önemli klinik ipucudur.",
+          "DVT varlığı akut antikoagülasyon kararını etkiler."
+        ],
+        "rows": [
+          [
+            "Sol popliteal ven",
+            "Parsiyel trombüs",
+            "Trombüs yok",
+            "Pozitif"
+          ],
+          [
+            "Kompresibilite",
+            "Azalmış",
+            "Tam kompresibl",
+            "Patolojik"
           ]
         ]
       }
@@ -8178,7 +7905,7 @@ export const cases = [
         "evidenceChain": [
           "Olgu bulguları Homosistinüri ile uyumlu",
           "Total homosistein yüksek, metiyonin yüksek olabilir",
-          "Sistationin beta sentaz defekti veya B12/folat yolu yorumlandı",
+          "Sistationin beta sentaz defekti veya B12/folat yolu değerlendirildi",
           "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
@@ -8231,7 +7958,7 @@ export const cases = [
     "demographics": "47 yaş erkek, kronik alkol kullanımı ve kötü beslenme",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
     "chiefComplaint": "Güneş gören alanlarda dermatit, ishal ve unutkanlık",
-    "stem": "Hasta boyun ve el sırtında fotosensitif dermatit, kronik diyare ve dikkat/konsantrasyon bozukluğu ile gelir. Beslenme yetersizliği ve alkol kullanımı niasin eksikliğine zemin hazırlar.",
+    "stem": "Hasta son aylarda çoğunlukla mısır ve karbonhidrat ağırlıklı beslendiğini; et, balık, yumurta ve süt ürünlerini çok az tükettiğini belirtir. Kronik ishal atakları nedeniyle kilo kaybı, halsizlik ve iştahsızlık gelişmiştir. Güneş gören alanlarda simetrik dermatit, oral mukozada glossit, kronik diyare ve bilişsel yavaşlama birlikte niasin eksikliğini düşündürür.",
     "vitals": {
       "TA": "108/68 mmHg",
       "Nabız": "104/dk",
@@ -8240,38 +7967,16 @@ export const cases = [
       "Ateş": "37.0 °C"
     },
     "exam": [
-      "Boyun ve el sırtlarında fotosensitif hiperpigmente dermatit var",
-      "Dil parlak kırmızı ve hassas; glossit izleniyor",
-      "Sulu dışkılama ve hafif dehidratasyon bulguları mevcut",
-      "Dikkat ve kısa süreli bellek belirgin yavaş",
-      "Fokal nörolojik defisit ve meningeal irritasyon yok"
+      "Genel durum orta; hasta halsiz, kilo kaybetmiş ve dikkatini sürdürmekte zorlanıyor.",
+      "Cilt muayenesinde yüz, boyun, el dorsumları ve ön kollarda güneş gören alanlarla sınırlı simetrik, keskin sınırlı, hiperpigmente ve hafif skuamlı dermatit izleniyor.",
+      "Boyun çevresindeki lezyonlar kolye benzeri fotosensitif dağılım gösteriyor; vezikül, nekroz veya yaygın selülit bulgusu yok.",
+      "Oral mukozada eritem, dilde parlak kırmızı görünüm ve papilla silinmesi mevcut.",
+      "Abdomen yumuşak; yaygın hassasiyet, defans veya rebound saptanmıyor; kronik ishal öyküsüne rağmen akut batın bulgusu yok.",
+      "Nörolojik muayenede fokal defisit yok; hasta irritabilite, unutkanlık ve konsantrasyon güçlüğü tarifliyor.",
+      "Güneş gören alanlarda simetrik hiperpigmente dermatit izlendi. Fotosensitif dermatit pellagra için ayırt ettiricidir. İzole kontakt dermatit paterni değildir.",
+      "Niasin/NAD eksikliğini destekleyen klinik ve beslenme paterni mevcuttur. Tedavi yanıtı klinik doğrulamaya katkı sağlar. Replasman geciktirilmemelidir."
     ],
     "investigations": [
-      {
-        "id": "beslenme-ve-malabsorpsiyon-degerlendirmesi-11",
-        "label": "Beslenme ve malabsorpsiyon değerlendirmesi",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Niasin yetersizliğiyle uyumlu tek yönlü beslenme ve malabsorpsiyon riski saptandı.",
-        "findings": [
-          "Klinik tablo 3D paternini destekler.",
-          "Alkol kullanımı ve yetersiz protein alımı sorgulanmalıdır."
-        ],
-        "rows": [
-          [
-            "Diyet",
-            "Niasinden fakir",
-            "Dengeli",
-            "Riskli"
-          ],
-          [
-            "Malabsorpsiyon",
-            "Olası",
-            "Yok",
-            "Riskli"
-          ]
-        ]
-      },
       {
         "id": "temel-biyokimya-albumin-ve-elektrolitler-11",
         "label": "Temel biyokimya, albümin ve elektrolitler",
@@ -8298,52 +8003,33 @@ export const cases = [
         ]
       },
       {
-        "id": "dermatolojik-dagilim-muayenesi-11",
-        "label": "Dermatolojik dağılım muayenesi",
-        "type": "clinical",
-        "priority": "useful",
-        "summary": "Güneş gören alanlarda simetrik hiperpigmente dermatit izlendi.",
-        "findings": [
-          "Fotosensitif dermatit pellagra için ayırt ettiricidir.",
-          "İzole kontakt dermatit paterni değildir."
-        ],
-        "rows": [
-          [
-            "Dağılım",
-            "Güneş gören alanlar",
-            "Rastgele değil",
-            "Tipik"
-          ],
-          [
-            "Deri",
-            "Hiperpigmente dermatit",
-            "Normal",
-            "Patolojik"
-          ]
-        ]
-      },
-      {
-        "id": "niasin-nad-eksikligi-klinik-dogrulamasi-11",
-        "label": "Niasin/NAD eksikliği klinik doğrulaması",
+        "id": "niacin-metabolite",
+        "label": "İdrar N1-metilnikotinamid düzeyi",
         "type": "lab",
-        "priority": "situational",
-        "summary": "Niasin/NAD eksikliğini destekleyen klinik ve beslenme paterni mevcuttur.",
+        "priority": "essential",
+        "summary": "İdrarda N1-metilnikotinamid atılımı belirgin düşük saptandı.",
         "findings": [
-          "Tedavi yanıtı klinik doğrulamaya katkı sağlar.",
-          "Replasman geciktirilmemelidir."
+          "Düşük metabolit atılımı niasin eksikliğini destekler.",
+          "Normal B12 ve TSH, bilişsel yavaşlama için alternatif metabolik nedenleri geri plana iter."
         ],
         "rows": [
           [
-            "Niasin durumu",
-            "Eksiklik lehine",
-            "Yeterli",
+            "N1-metilnikotinamid",
+            "0.4 mg/g kreatinin",
+            ">1.5 mg/g kreatinin",
             "Düşük"
           ],
           [
-            "Tedavi yanıtı",
-            "Replasmanla düzelme beklenir",
-            "Yanıtsızlık yok",
-            "Olumlu"
+            "Vitamin B12",
+            "410 pg/mL",
+            "200-900 pg/mL",
+            "Normal"
+          ],
+          [
+            "TSH",
+            "2.1 mIU/L",
+            "0.4-4.0 mIU/L",
+            "Normal"
           ]
         ]
       }
@@ -8424,7 +8110,7 @@ export const cases = [
     "demographics": "62 yaş erkek, yalnız yaşıyor, taze sebze-meyve almıyor",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
     "chiefComplaint": "Diş eti kanaması, morarma ve halsizlik",
-    "stem": "Aylarca yetersiz beslenen hastada kolay morarma, perifoliküler kanamalar, diş eti şişliği ve yara iyileşmesinde gecikme vardır. C vitamini eksikliği kollajen sentezini bozar ve damar duvarı bütünlüğünü etkiler.",
+    "stem": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama paterni C vitamini eksikliğini düşündürür. C vitamini eksikliğiyle uyumlu kısıtlı diyet ve mukokutanöz kanama bulguları saptandı. Diş eti kanaması ve perifoliküler kanama kollajen sentez bozukluğunu destekler. Trombositopeni temel açıklama değildir.",
     "vitals": {
       "TA": "110/70 mmHg",
       "Nabız": "92/dk",
@@ -8433,44 +8119,15 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Diş etlerinde şişlik, spontan kanama ve hassasiyet var",
-      "Bacaklarda perifoliküler peteşi ve ekimozlar izleniyor",
-      "Kıvrık/korkskrew kıllar belirgin",
-      "Eski yara yerinde kapanma gecikmiş",
-      "Karaciğer-dalak büyüklüğü ve lenfadenopati yok"
+      "Genel durum orta; hasta halsiz, soluk ve beslenme kısıtlılığına bağlı zayıf görünümde.",
+      "Diş etlerinde şişlik, kolay kanama ve gingival hassasiyet mevcut; oral ülser veya pürülan akıntı yok.",
+      "Alt ekstremitelerde perifoliküler peteşiler, ekimozlar ve tirbuşon kıllar izleniyor.",
+      "Eski küçük travma alanlarında morarma belirgin; açık yara kenarında granülasyon zayıf ve iyileşme gecikmiş.",
+      "Abdomen yumuşak, hepatosplenomegali yok; yaygın lenfadenopati saptanmıyor.",
+      "Nörolojik muayenede fokal defisit yok; eklem hareketleri ağrı nedeniyle kısıtlı olabilir.",
+      "Yara iyileşmesi gecikmiş ve kollajen zayıflığına bağlı ekimozlar izlendi. Kollajen hidroksilasyonu bozukluğu klinik bulgu verir. Vaskülit lehine sistemik kanıt yoktur."
     ],
     "investigations": [
-      {
-        "id": "diyet-oykusu-ve-mukokutanoz-muayene-12",
-        "label": "Diyet öyküsü ve mukokutanöz muayene",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "C vitamini eksikliğiyle uyumlu kısıtlı diyet ve mukokutanöz kanama bulguları saptandı.",
-        "findings": [
-          "Diş eti kanaması ve perifoliküler kanama kollajen sentez bozukluğunu destekler.",
-          "Trombositopeni temel açıklama değildir."
-        ],
-        "rows": [
-          [
-            "Diyet",
-            "C vitamininden fakir",
-            "Dengeli",
-            "Riskli"
-          ],
-          [
-            "Diş eti",
-            "Kanamalı/şiş",
-            "Normal",
-            "Patolojik"
-          ],
-          [
-            "Perifoliküler kanama",
-            "Var",
-            "Yok",
-            "Patolojik"
-          ]
-        ]
-      },
       {
         "id": "plazma-askorbik-asit-duzeyi-12",
         "label": "Plazma askorbik asit düzeyi",
@@ -8516,27 +8173,33 @@ export const cases = [
         ]
       },
       {
-        "id": "yara-iyilesmesi-ve-kollajen-bulgulari-12",
-        "label": "Yara iyileşmesi ve kollajen bulguları",
-        "type": "clinical",
-        "priority": "situational",
-        "summary": "Yara iyileşmesi gecikmiş ve kollajen zayıflığına bağlı ekimozlar izlendi.",
+        "id": "vitamin-c-level",
+        "label": "Plazma askorbik asit düzeyi",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Plazma askorbik asit düzeyi belirgin düşük saptandı.",
         "findings": [
-          "Kollajen hidroksilasyonu bozukluğu klinik bulgu verir.",
-          "Vaskülit lehine sistemik kanıt yoktur."
+          "Düşük askorbik asit düzeyi skorbüt tanısını destekler.",
+          "Koagülasyon testlerinin normal olması primer koagülopatiyi geri plana iter."
         ],
         "rows": [
           [
-            "Yara iyileşmesi",
-            "Gecikmiş",
-            "Normal",
-            "Patolojik"
+            "Askorbik asit",
+            "0.1 mg/dL",
+            "0.4-1.5 mg/dL",
+            "Düşük"
           ],
           [
-            "Ekimoz",
-            "Yaygın",
-            "Yok",
-            "Patolojik"
+            "PT",
+            "12.4 sn",
+            "11-14 sn",
+            "Normal"
+          ],
+          [
+            "aPTT",
+            "31 sn",
+            "25-35 sn",
+            "Normal"
           ]
         ]
       }
@@ -8626,11 +8289,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Yüz ve el sırtlarında bronz hiperpigmentasyon izleniyor",
-      "Karaciğer kot altında 4 cm ele geliyor",
-      "İkinci ve üçüncü MCP eklemlerinde ağrı ve hareket kısıtlılığı var",
-      "Periferik ödem veya asit saptanmıyor",
-      "Aktif gastrointestinal kanama bulgusu yok"
+      "Genel durum iyi-orta; hasta kronik halsizlik ve eklem ağrısı tarifliyor.",
+      "Ciltte özellikle yüz, el sırtı ve güneş gören alanlarda bronz-gri hiperpigmentasyon izleniyor.",
+      "Abdomen muayenesinde karaciğer kenarı sağ kostal ark altında ele geliyor; asit veya belirgin splenomegali yok.",
+      "Metakarpofalangeal eklemlerde hafif hassasiyet mevcut; aktif sinovit baskın değil.",
+      "Kardiyak muayenede belirgin kalp yetmezliği bulgusu saptanmıyor.",
+      "Nörolojik muayenede fokal defisit yok; diyabete bağlı periferik duyu azalması hafif düzeyde."
     ],
     "investigations": [
       {
@@ -8757,7 +8421,7 @@ export const cases = [
         "evidenceChain": [
           "Olgu bulguları Hemokromatozis ile uyumlu",
           "Ferritin yüksek, transferrin satürasyonu yüksek, AST/ALT yüksek",
-          "HFE ilişkili demir yüklenmesi yorumlandı",
+          "HFE ilişkili demir yüklenmesi değerlendirildi",
           "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
@@ -8810,7 +8474,7 @@ export const cases = [
     "demographics": "17 yaş kız",
     "setting": "Pediatri/metabolizma polikliniği veya acil başvuru",
     "chiefComplaint": "Aşil tendonunda şişlik ve ailede erken MI öyküsü",
-    "stem": "Genç hastada Aşil tendon ksantomları, total kolesterol ve LDL'de belirgin yükseklik ve babada 38 yaşında MI öyküsü vardır. Trigliserid normal sınırlardadır. Bu profil LDL temizlenme kusurunu düşündürür.",
+    "stem": "Genç hastada Aşil tendon ksantomları, total kolesterol ve LDL'de belirgin yükseklik ve babada 38 yaşında MI öyküsü vardır. Trigliserid normal sınırlardadır. Bu profil LDL temizlenme kusurunu düşündürür. Birinci derece akrabada erken koroner arter hastalığı öyküsü mevcut. Otozomal dominant kalıtım ihtimalini güçlendirir. Kaskad tarama gereklidir.",
     "vitals": {
       "TA": "130/82 mmHg",
       "Nabız": "76/dk",
@@ -8819,6 +8483,7 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Bilateral Aşil tendonlarında ksantom nodülleri palpabl",
       "Kornea arkusu ve hafif ksantelazma izleniyor",
       "Eruptif ksantom yok, trigliseridemi lehine bulgu saptanmıyor",
@@ -8858,31 +8523,6 @@ export const cases = [
         ]
       },
       {
-        "id": "aile-taramasi-ve-erken-kah-oykusu-14",
-        "label": "Aile taraması ve erken KAH öyküsü",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Birinci derece akrabada erken koroner arter hastalığı öyküsü mevcut.",
-        "findings": [
-          "Otozomal dominant kalıtım ihtimalini güçlendirir.",
-          "Kaskad tarama gereklidir."
-        ],
-        "rows": [
-          [
-            "Aile öyküsü",
-            "Erken KAH pozitif",
-            "Yok",
-            "Patolojik"
-          ],
-          [
-            "Tendon ksantom",
-            "Var",
-            "Yok",
-            "Patolojik"
-          ]
-        ]
-      },
-      {
         "id": "ldlr-apob-pcsk9-genetik-testi-14",
         "label": "LDLR/APOB/PCSK9 genetik testi",
         "type": "lab",
@@ -8903,26 +8543,26 @@ export const cases = [
       },
       {
         "id": "kardiyovaskuler-risk-degerlendirmesi-14",
-        "label": "Kardiyovasküler risk değerlendirmesi",
+        "label": "12 derivasyon EKG",
         "type": "ecg",
         "priority": "situational",
-        "summary": "EKG’de akut iskemi yok; uzun dönem aterosklerotik risk yüksek değerlendirildi.",
+        "summary": "EKG’de akut iskemi bulgusu saptanmadı; ritim sinüs ve ST-T segmentleri izoelektrik izlendi.",
         "findings": [
-          "Acil MI bulgusu olmadan agresif lipid düşürme planlanır.",
-          "Risk değerlendirmesi tedavi yoğunluğunu belirler."
+          "Akut koroner sendrom bulgusu yoktur.",
+          "Uzun dönem aterosklerotik risk lipid paterniyle belirlenir."
         ],
         "rows": [
           [
-            "EKG",
-            "Akut iskemi yok",
-            "Normal/ST değişikliği yok",
-            "Sorun yok"
+            "Ritim",
+            "Sinüs ritmi",
+            "Sinüs ritmi",
+            "Normal"
           ],
           [
-            "KV risk",
-            "Çok yüksek",
-            "Düşük-orta",
-            "Yüksek"
+            "ST elevasyonu",
+            "Saptanmadı",
+            "Saptanmamalı",
+            "Negatif"
           ]
         ]
       }
@@ -8950,7 +8590,7 @@ export const cases = [
         "evidenceChain": [
           "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile uyumlu",
           "Total kolesterol 360 mg/dL, LDL 285 mg/dL, TG normal",
-          "LDL reseptör/ApoB/PCSK9 yolu yorumlandı",
+          "LDL reseptör/ApoB/PCSK9 yolu değerlendirildi",
           "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
         ],
         "pearls": [
@@ -9012,11 +8652,13 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Tonsiller belirgin turuncu renkte ve büyümüş",
-      "Hepatosplenomegali hafif düzeyde palpabl",
-      "Distal vibrasyon duyusu azalmış, hipoaktif refleksler mevcut",
-      "Tendon ksantomları izlenmiyor",
-      "Akut enfeksiyon odağı saptanmıyor"
+      "Genel durum iyi; hasta distal uyuşma ve yürüme sırasında dengesizlik tarifliyor.",
+      "Orofaringeal muayenede tonsiller belirgin büyümüş ve turuncu-sarı renkte izleniyor.",
+      "Periferik nörolojik muayenede eldiven-çorap tarzı duyu azalması ve derin tendon reflekslerinde azalma mevcut.",
+      "Abdomen muayenesinde hafif hepatosplenomegali saptanıyor; asit yok.",
+      "Ciltte ksantom belirgin değil; korneal arkus izlenmiyor.",
+      "Kardiyopulmoner muayenede akut iskemi veya kalp yetmezliği bulgusu yok.",
+      "Tonsiller büyük ve turuncu renkte izlendi. Kolesterol ester birikimi tanı için çok tipiktir. Akut tonsillit bulgusu ön planda değildir."
     ],
     "investigations": [
       {
@@ -9051,52 +8693,27 @@ export const cases = [
         ]
       },
       {
-        "id": "tonsil-ve-lenfoid-doku-muayenesi-15",
-        "label": "Tonsil ve lenfoid doku muayenesi",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Tonsiller büyük ve turuncu renkte izlendi.",
-        "findings": [
-          "Kolesterol ester birikimi tanı için çok tipiktir.",
-          "Akut tonsillit bulgusu ön planda değildir."
-        ],
-        "rows": [
-          [
-            "Tonsil rengi",
-            "Turuncu",
-            "Pembe",
-            "Patolojik"
-          ],
-          [
-            "Eksüda",
-            "Yok",
-            "Yok",
-            "Sorun yok"
-          ]
-        ]
-      },
-      {
         "id": "periferik-noropati-degerlendirmesi-15",
-        "label": "Periferik nöropati değerlendirmesi",
+        "label": "Sinir ileti çalışması",
         "type": "neurophysiology",
         "priority": "useful",
-        "summary": "Periferik nöropatiyle uyumlu duyu azalması saptandı.",
+        "summary": "Duyu sinir aksiyon potansiyellerinde belirgin amplitüd azalması saptandı.",
         "findings": [
-          "Tangier hastalığında nöropati görülebilir.",
-          "Motor kayıp belirgin değildir."
+          "Elektrofizyolojik patern periferik nöropatiyi objektif olarak destekler.",
+          "Motor iletim belirgin korunmuştur."
         ],
         "rows": [
           [
-            "Duyu muayenesi",
-            "Distal azalma",
-            "Normal",
-            "Anormal"
+            "Sural SNAP amplitüdü",
+            "3 µV",
+            ">6 µV",
+            "Düşük"
           ],
           [
-            "EMG",
-            "Aksonal nöropati lehine",
-            "Normal",
-            "Patolojik"
+            "Median motor iletim hızı",
+            "51 m/sn",
+            ">50 m/sn",
+            "Normal"
           ]
         ]
       },
@@ -9196,7 +8813,7 @@ export const cases = [
     "demographics": "34 yaş erkek, endüstriyel radyografi çalışanı",
     "setting": "Acil servis - radyasyon kazası sonrası",
     "chiefComplaint": "Maruziyetten saatler sonra bulantı, kusma, ishal ve ciltte eritem",
-    "stem": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan sonra kısa sürede yüksek radyasyona maruz kalmıştır. Dakikalar-saatler içinde bulantı, kusma, baş ağrısı ve ishal başlamıştır. Birkaç saat sonra kendini daha iyi hissetse de tam kan sayımında lenfosit düşüşü ve elde eritem görülür. Kısa sürede yüksek doz maruziyet, prodromal gastrointestinal bulgular ve kemik iliği baskılanması akut radyasyon sendromunu düşündürür.",
+    "stem": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan yaklaşık 2 saat sonra bulantı, kusma, baş ağrısı, halsizlik ve yaygın yanma hissi geliştiğini ifade eder. Olaydan sonra kısa bir iyilik dönemi olsa da sağ elde lokal eritem ortaya çıkmış ve seri tam kan sayımlarında lenfosit düşüşü başlamıştır. Semptomların kısa sürede başlaması ve erken lenfopeni yüksek doz iyonizan radyasyon maruziyetini düşündürür. Maruziyet dakikalar-saatler içinde gelişen prodromal yakınmalarla uyumlu bulundu. Tüm vücut veya geniş alan maruziyeti olasılığı yüksektir. Dozimetri kayıtları doğrulama için istenir.",
     "vitals": {
       "TA": "96/60 mmHg",
       "Nabız": "118/dk",
@@ -9205,11 +8822,14 @@ export const cases = [
       "Ateş": "37.8 C"
     },
     "exam": [
-      "Elde eritem ve hassasiyet",
-      "Letarji",
-      "Dehidratasyon bulguları",
-      "Lenf nodu büyüklüğü yok",
-      "Isı/kimyasal temas öyküsü yok"
+      "Genel durum orta; hasta huzursuz, halsiz ve bulantılı görünümde, bilinç açık ve oryantasyon tam.",
+      "Sağ el dorsumunda keskin sınırlı eritem, hassasiyet ve hafif ödem izleniyor; bül, nekroz veya açık yara yok.",
+      "Vücut yüzeyinde yaygın partikül kontaminasyonu, mukozal yanık veya açık yara kontaminasyonu saptanmıyor.",
+      "Ciltte yaygın peteşi veya purpura yok; ancak seri izlemde sitopeni gelişimi açısından risk mevcut.",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor; akciğer sesleri doğal.",
+      "Abdomen yumuşak; defans-rebound yok, hafif yaygın hassasiyet dışında akut batın bulgusu izlenmiyor.",
+      "Nörolojik muayenede fokal defisit, ense sertliği veya nöbet bulgusu yok.",
+      "Dış kontaminasyon saptanmadı; elde radyasyon eritemi izlendi. Dekontaminasyon gereksinimi dış kontaminasyon sonucuna göre belirlenir. Cilt bulgusu lokal doz etkisini destekler."
     ],
     "investigations": [
       {
@@ -9220,7 +8840,7 @@ export const cases = [
         "summary": "Seri tam kan sayımında erken lenfopeni ve hafif trombosit düşüklüğü saptandı.",
         "findings": [
           "Hematopoietik etkilenme akut radyasyon sendromunu destekler.",
-          "Lenfosit düşüş hızı doz tahmininde önemlidir."
+          "Erken ve hızlı lenfosit düşüşü hematopoetik etkilenmeyi destekler."
         ],
         "rows": [
           [
@@ -9240,37 +8860,6 @@ export const cases = [
             "3.200/µL",
             "4.000-10.000/µL",
             "Düşük"
-          ]
-        ]
-      },
-      {
-        "id": "maruziyet-zamani-ve-doz-tahmini-16",
-        "label": "Maruziyet zamanı ve doz tahmini",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Maruziyet dakikalar-saatler içinde gelişen prodromal yakınmalarla uyumlu bulundu.",
-        "findings": [
-          "Tüm vücut veya geniş alan maruziyeti olasılığı yüksektir.",
-          "Dozimetri kayıtları doğrulama için istenir."
-        ],
-        "rows": [
-          [
-            "Semptom başlangıcı",
-            "Saatler içinde",
-            "Gecikmiş beklenmez",
-            "Yüksek risk"
-          ],
-          [
-            "Maruziyet alanı",
-            "Geniş vücut bölümü",
-            "Lokal sınırlı",
-            "Riskli"
-          ],
-          [
-            "Dozimetri",
-            "Beklemede",
-            "Kayıt olmalı",
-            "Eksik"
           ]
         ]
       },
@@ -9306,27 +8895,52 @@ export const cases = [
         ]
       },
       {
-        "id": "kontaminasyon-olcumu-ve-dekontaminasyon-taramasi-16",
-        "label": "Kontaminasyon ölçümü ve dekontaminasyon taraması",
-        "type": "clinical",
-        "priority": "situational",
-        "summary": "Dış kontaminasyon saptanmadı; elde radyasyon eritemi izlendi.",
+        "id": "radiation-dosimetry",
+        "label": "Bireysel dozimetri kaydı",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Dozimetri kaydında tüm vücut eşdeğer doz yaklaşık 2.6 Gy olarak hesaplandı.",
         "findings": [
-          "Dekontaminasyon gereksinimi dış kontaminasyon sonucuna göre belirlenir.",
-          "Cilt bulgusu lokal doz etkisini destekler."
+          "Doz düzeyi hematopoetik akut radyasyon sendromu ile uyumludur.",
+          "Prodromal yakınmaların erken başlaması anlamlı sistemik maruziyeti destekler."
         ],
         "rows": [
           [
-            "Dış kontaminasyon",
-            "Negatif",
-            "Negatif",
-            "Sorun yok"
+            "Tahmini tüm vücut doz",
+            "2.6 Gy",
+            "<0.1 Gy",
+            "Yüksek"
           ],
           [
-            "Deri bulgusu",
-            "Elde eritem",
-            "Yok",
-            "Patolojik"
+            "Lokal el dozu",
+            "6.5 Gy",
+            "<0.1 Gy",
+            "Yüksek"
+          ]
+        ]
+      },
+      {
+        "id": "radiation-survey",
+        "label": "Radyasyon survey metre ölçümü",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Hasta yüzeyinde dış kontaminasyon düzeyi arka plan radyasyonuna yakın ölçüldü.",
+        "findings": [
+          "Dış kontaminasyon saptanmaması dekontaminasyon önceliğini azaltır.",
+          "Lokal eritem, kontaminasyondan çok lokal radyasyon hasarıyla uyumludur."
+        ],
+        "rows": [
+          [
+            "Vücut yüzeyi sayım hızı",
+            "0.12 µSv/saat",
+            "0.05-0.20 µSv/saat",
+            "Normal"
+          ],
+          [
+            "Açık yara kontaminasyonu",
+            "Saptanmadı",
+            "Saptanmamalı",
+            "Negatif"
           ]
         ]
       }
@@ -9415,6 +9029,7 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Skleralarda ikter belirgin",
       "Ciltte hafif solukluk ve sararma var",
       "Dalak büyüklüğü belirgin değil",
@@ -9627,6 +9242,7 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Hasta terli ve anksiyöz görünüyor",
       "Kalpte S4 duyuluyor, belirgin üfürüm yok",
       "Akciğer bazallerinde ral saptanmıyor",
@@ -9714,7 +9330,7 @@ export const cases = [
         "label": "Histoloji/nekroz tipi",
         "type": "pathology",
         "priority": "situational",
-        "summary": "Histolojik patern koagülasyon nekrozu ile uyumlu olarak yorumlandı.",
+        "summary": "Histolojik patern koagülasyon nekrozu ile uyumlu saptandı.",
         "findings": [
           "Miyokard enfarktüsünde klasik nekroz tipi budur.",
           "Likefaksiyon nekrozu beyin/apseyle daha ilişkilidir."
@@ -9818,6 +9434,7 @@ export const cases = [
       "Ateş": "38.6 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Hasta somnolandır, GKS 13",
       "Sol hemiparezi ve hafif fasiyal asimetri var",
       "Papil ödemi ve baş ağrısı intrakraniyal basınç artışını düşündürüyor",
@@ -9902,7 +9519,7 @@ export const cases = [
       },
       {
         "id": "patoloji-nekroz-degerlendirmesi-19",
-        "label": "Patoloji/nekroz değerlendirmesi",
+        "label": "Patoloji/nekroz",
         "type": "pathology",
         "priority": "situational",
         "summary": "Patoloji örneğinde likefaksiyon nekrozu ve yoğun nötrofilik inflamasyon izlendi.",
@@ -10009,6 +9626,7 @@ export const cases = [
       "Ateş": "38.1 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Zayıf görünüm ve gece terlemesi öyküsü belirgin",
       "Sağ üst zonda solunum sesleri azalmış ve ince ral duyuluyor",
       "Servikal küçük lenf nodları palpabl",
@@ -10206,6 +9824,7 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Hasta dispneik ve takipneik",
       "Sağ baldırda çap artışı, hassasiyet ve ısı artışı var",
       "Akciğer oskültasyonunda belirgin konsolidasyon bulgusu yok",
@@ -10403,6 +10022,7 @@ export const cases = [
       "Ateş": "39.2 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Hasta konfü ve toksik görünüyor",
       "Kapiller dolum 4 saniye, ekstremiteler soğuk ve benekli",
       "Sağ kostovertebral açı hassasiyeti belirgin",
@@ -10606,6 +10226,7 @@ export const cases = [
       "Ateş": "37.6 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Fotosensitif malar döküntü nazolabial olukları koruyor",
       "Ağız içinde ağrısız ülserler var",
       "El bileği ve MCP eklemlerinde simetrik hassasiyet mevcut",
@@ -10761,7 +10382,7 @@ export const cases = [
           "Anti-dsDNA ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka öykü, muayene ve tetkik bulgularını birlikte yorumlayarak tanısal karar vermeyi öğretir.",
+        "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı/yönetim kararına ulaşmalıdır.",
         "differentials": {
           "Sjögren sendromu": {
             "explanation": "Sjögren sendromu ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
@@ -10809,11 +10430,13 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Konjonktival kuruluk ve punktat keratit bulguları var",
       "Ağız mukozası kuru, dil fissürlü ve dental çürükler belirgin",
       "Parotis bezleri bilateral hafif büyümüş",
       "Artrit bulgusu hafif; belirgin sinovit yok",
-      "Malar döküntü ve proteinüri bulgusu saptanmıyor"
+      "Malar döküntü ve proteinüri bulgusu saptanmıyor",
+      "Korneal yüzey hasarı ve dental çürük riski değerlendirildi. Kuruluk komplikasyonları izlenmelidir. Akut görme kaybı saptanmadı."
     ],
     "investigations": [
       {
@@ -10821,23 +10444,17 @@ export const cases = [
         "label": "Schirmer testi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Schirmer testinde gözyaşı üretimi düşük bulundu.",
+        "summary": "Schirmer testinde 5 dakikada gözyaşı 3 mm ölçüldü; belirgin lakrimal hiposekresyon saptandı.",
         "findings": [
-          "Keratokonjonktivitis sicca objektif olarak desteklenir.",
-          "Sadece subjektif kuruluk değildir."
+          "Objektif göz kuruluğu Sjögren sendromunu destekler.",
+          "Konjonktival enfeksiyon bulgusu baskın değildir."
         ],
         "rows": [
           [
-            "Schirmer",
+            "Schirmer testi",
             "3 mm/5 dk",
             ">10 mm/5 dk",
             "Düşük"
-          ],
-          [
-            "Göz kuruluğu",
-            "Belirgin",
-            "Yok",
-            "Patolojik"
           ]
         ]
       },
@@ -10890,31 +10507,6 @@ export const cases = [
             "Patolojik"
           ]
         ]
-      },
-      {
-        "id": "goz-ve-agiz-komplikasyon-taramasi-24",
-        "label": "Göz ve ağız komplikasyon taraması",
-        "type": "clinical",
-        "priority": "situational",
-        "summary": "Korneal yüzey hasarı ve dental çürük riski değerlendirildi.",
-        "findings": [
-          "Kuruluk komplikasyonları izlenmelidir.",
-          "Akut görme kaybı saptanmadı."
-        ],
-        "rows": [
-          [
-            "Korneal boyanma",
-            "Hafif pozitif",
-            "Negatif",
-            "Patolojik"
-          ],
-          [
-            "Dental çürük",
-            "Artmış risk",
-            "Normal risk",
-            "Riskli"
-          ]
-        ]
       }
     ],
     "images": [],
@@ -10952,7 +10544,7 @@ export const cases = [
           "Anti-SSA/SSB ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka öykü, muayene ve tetkik bulgularını birlikte yorumlayarak tanısal karar vermeyi öğretir.",
+        "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı/yönetim kararına ulaşmalıdır.",
         "differentials": {
           "SLE": {
             "explanation": "SLE ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
@@ -11000,11 +10592,13 @@ export const cases = [
       "Ateş": "37.1 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "MCP ve PIP eklemlerinde simetrik şişlik ve hassasiyet var",
       "Sabah tutukluğu 90 dakika sürüyor",
       "El bileklerinde sinovit ve hareket kısıtlılığı mevcut",
       "DIP tutulumu belirgin değil",
-      "Döküntü, oral aft ve fotosensitivite saptanmıyor"
+      "Döküntü, oral aft ve fotosensitivite saptanmıyor",
+      "MCP/PIP eklemlerinde simetrik şişlik ve hassasiyet saptandı. Küçük eklem simetrisi RA için tipiktir. DIP baskın tutulum osteoartriti düşündürürdü."
     ],
     "investigations": [
       {
@@ -11060,31 +10654,6 @@ export const cases = [
             "Yok",
             "Yok",
             "Sorun yok"
-          ]
-        ]
-      },
-      {
-        "id": "simetrik-kucuk-eklem-muayenesi-25",
-        "label": "Simetrik küçük eklem muayenesi",
-        "type": "clinical",
-        "priority": "useful",
-        "summary": "MCP/PIP eklemlerinde simetrik şişlik ve hassasiyet saptandı.",
-        "findings": [
-          "Küçük eklem simetrisi RA için tipiktir.",
-          "DIP baskın tutulum osteoartriti düşündürürdü."
-        ],
-        "rows": [
-          [
-            "Dağılım",
-            "Simetrik MCP/PIP",
-            "Asimetrik/DIP",
-            "Tipik"
-          ],
-          [
-            "Sabah tutukluğu",
-            ">1 saat",
-            "<30 dk",
-            "Patolojik"
           ]
         ]
       },
@@ -11149,7 +10718,7 @@ export const cases = [
           "Anti-CCP ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka öykü, muayene ve tetkik bulgularını birlikte yorumlayarak tanısal karar vermeyi öğretir.",
+        "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı/yönetim kararına ulaşmalıdır.",
         "differentials": {
           "Osteoartrit": {
             "explanation": "Osteoartrit ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
@@ -11188,7 +10757,7 @@ export const cases = [
     "demographics": "7 aylık erkek bebek",
     "setting": "Klinik/adli değerlendirme ortamı",
     "chiefComplaint": "Tekrarlayan otitis media, sinüzit ve pnömoni",
-    "stem": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır. Serum immünoglobulinleri çok düşük, dolaşımda B hücreleri azdır; T hücre fonksiyonu korunmuştur. Anne kaynaklı antikorların azaldığı dönemde başlayan bakteriyel enfeksiyonlar humoral immün yetmezliği düşündürür.",
+    "stem": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır. Serum immünoglobulinleri çok düşük, dolaşımda B hücreleri azdır; T hücre fonksiyonu korunmuştur. Anne kaynaklı antikorların azaldığı dönemde başlayan bakteriyel enfeksiyonlar humoral immün yetmezliği düşündürür. Aşı yanıtı zayıf ve tekrarlayan sinopulmoner enfeksiyon öyküsü mevcut. Antikor üretim kusuru fonksiyonel olarak gösterilir. Tekrarlayan viral enfeksiyonlardan çok bakteriyel enfeksiyonlar öndedir.",
     "vitals": {
       "TA": "84/50 mmHg",
       "Nabız": "136/dk",
@@ -11197,6 +10766,7 @@ export const cases = [
       "Ateş": "38.4 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Tonsiller belirgin küçük/izlenmiyor",
       "Servikal lenf nodları beklenenden az palpabl",
       "Bilateral otit bulguları ve burun akıntısı mevcut",
@@ -11261,31 +10831,6 @@ export const cases = [
         ]
       },
       {
-        "id": "asi-yaniti-ve-enfeksiyon-oykusu-26",
-        "label": "Aşı yanıtı ve enfeksiyon öyküsü",
-        "type": "clinical",
-        "priority": "useful",
-        "summary": "Aşı yanıtı zayıf ve tekrarlayan sinopulmoner enfeksiyon öyküsü mevcut.",
-        "findings": [
-          "Antikor üretim kusuru fonksiyonel olarak gösterilir.",
-          "Tekrarlayan viral enfeksiyonlardan çok bakteriyel enfeksiyonlar öndedir."
-        ],
-        "rows": [
-          [
-            "Aşı antikoru",
-            "Yetersiz",
-            "Koruyucu titre",
-            "Düşük"
-          ],
-          [
-            "Enfeksiyon paterni",
-            "Tekrarlayan otit/pnömoni",
-            "Seyrek",
-            "Patolojik"
-          ]
-        ]
-      },
-      {
         "id": "btk-gen-analizi-26",
         "label": "BTK gen analizi",
         "type": "lab",
@@ -11301,6 +10846,31 @@ export const cases = [
             "Planlandı",
             "Gerektiğinde",
             "Beklemede"
+          ]
+        ]
+      },
+      {
+        "id": "vaccine-antibody-titers",
+        "label": "Aşıya özgü antikor titreleri",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Tetanos ve pnömokok antikor titreleri koruyucu düzeyin altında saptandı.",
+        "findings": [
+          "Zayıf antikor yanıtı humoral immün yetmezliği destekler.",
+          "T hücre aracılı ağır viral/fungal tablo baskın değildir."
+        ],
+        "rows": [
+          [
+            "Anti-tetanos IgG",
+            "0.03 IU/mL",
+            ">0.1 IU/mL",
+            "Düşük"
+          ],
+          [
+            "Pnömokok serotip antikorları",
+            "Koruyucu değil",
+            "Koruyucu",
+            "Düşük"
           ]
         ]
       }
@@ -11340,7 +10910,7 @@ export const cases = [
           "Flow sitometri ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka öykü, muayene ve tetkik bulgularını birlikte yorumlayarak tanısal karar vermeyi öğretir.",
+        "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı/yönetim kararına ulaşmalıdır.",
         "differentials": {
           "İzole IgA yetmezliği": {
             "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
@@ -11388,6 +10958,7 @@ export const cases = [
       "Ateş": "38.2 °C"
     },
     "exam": [
+      "Genel durum stabil; hasta koopere ve sistemik muayene tanısal ipuçlarını tamamlayacak şekilde yapılmıştır.",
       "Ağız içinde yaygın beyaz plaklar kazımakla kanıyor",
       "Bilateral servikal ve aksiller lenfadenopati var",
       "Akciğerlerde bilateral ince raller duyuluyor",
@@ -11472,7 +11043,7 @@ export const cases = [
       },
       {
         "id": "baslangic-tedavi-guvenlik-laboratuvari-27",
-        "label": "Başlangıç tedavi güvenlik laboratuvarı",
+        "label": "ART öncesi böbrek-karaciğer ve hepatit paneli",
         "type": "lab",
         "priority": "situational",
         "summary": "ART öncesi böbrek-karaciğer fonksiyonu ve hepatit koenfeksiyon taraması istendi.",
@@ -11531,7 +11102,7 @@ export const cases = [
           "HIV RNA ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka öykü, muayene ve tetkik bulgularını birlikte yorumlayarak tanısal karar vermeyi öğretir.",
+        "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı/yönetim kararına ulaşmalıdır.",
         "differentials": {
           "Bruton agammaglobulinemisi": {
             "explanation": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni HIV/AIDS lehinedir.",
@@ -11579,11 +11150,13 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Bebek irritabl ve aralıklı letarjik",
-      "Ön fontanel hafif kabarık",
-      "Retinal kanama şüphesi için fundus muayenesi pozitif",
-      "Dış travma izi sınırlı, açıklanan düşme mekanizması bulgularla uyumsuz",
-      "Uzun kemiklerde palpasyonla hassasiyet var"
+      "Genel durum kötü; bebek irritabl ve aralıklı letarjik, beslenmesi zayıf.",
+      "Ön fontanel hafif kabarık; baş çevresi yaşına göre üst persentilde.",
+      "Ciltte farklı yaşlarda ekimozlar izleniyor; açıklanan travma mekanizması fizik bulgularla uyumlu değil.",
+      "Göz dibi muayenesinde bilateral çok katlı retinal kanama saptanıyor.",
+      "Uzun kemik palpasyonunda hassasiyet mevcut; belirgin deformite her alanda görünür değil.",
+      "Nörolojik muayenede bilinç dalgalanması ve nöbet sonrası letarji var; ense sertliği belirgin değil.",
+      "Fundoskopide bilateral retinal kanama saptandı. Sarsılmış bebek sendromu için güçlü destekleyici bulgudur. İzole enfeksiyon bu paterni açıklamaz."
     ],
     "investigations": [
       {
@@ -11608,31 +11181,6 @@ export const cases = [
             "Hafif",
             "Yok",
             "Patolojik"
-          ]
-        ]
-      },
-      {
-        "id": "fundoskopi-28",
-        "label": "Fundoskopi",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Fundoskopide bilateral retinal kanama saptandı.",
-        "findings": [
-          "Sarsılmış bebek sendromu için güçlü destekleyici bulgudur.",
-          "İzole enfeksiyon bu paterni açıklamaz."
-        ],
-        "rows": [
-          [
-            "Retina",
-            "Bilateral kanama",
-            "Yok",
-            "Patolojik"
-          ],
-          [
-            "Papil ödem",
-            "Değerlendirildi",
-            "Yok",
-            "İzlem"
           ]
         ]
       },
@@ -11722,7 +11270,7 @@ export const cases = [
           "Göz dibi ile tanıyı güçlendirme — Ayırıcı tanı daraltılır.",
           "Hedefe yönelik tedavi, izlem veya adli bildirim — Vakanın temel yönetim basamağı tamamlanır."
         ],
-        "learningOutcome": "Bu vaka öykü, muayene ve tetkik bulgularını birlikte yorumlayarak tanısal karar vermeyi öğretir.",
+        "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı/yönetim kararına ulaşmalıdır.",
         "differentials": {
           "Doğumsal kanama diyatezi": {
             "explanation": "Doğumsal kanama diyatezi ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Sarsılmış bebek sendromu lehinedir.",
@@ -11770,44 +11318,15 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Hasta kaygılı ve ağlamaklı; bilinç açık, GKS 15",
-      "Boyun ve ön kolda ekimozlar ile yüzeyel sıyrıklar izleniyor",
-      "Abdominal hassasiyet ve peritonit bulgusu yok",
-      "Genital muayene yalnızca onam sonrası, mahremiyet korunarak yapılıyor",
-      "Aktif kanama veya hemodinamik instabilite saptanmıyor"
+      "Genel durum orta; hasta kaygılı ve ağlamaklı, bilinç açık, koopere ve GKS 15.",
+      "Boyun ve ön kolda farklı boyutlarda ekimozlar ile yüzeyel sıyrıklar izleniyor; aktif dış kanama yok.",
+      "Kardiyopulmoner muayenede travmaya bağlı ek patolojik bulgu saptanmıyor; solunum sıkıntısı yok.",
+      "Abdomen yumuşak; defans, rebound veya organ yaralanmasını düşündüren yaygın hassasiyet yok.",
+      "Genital muayene yalnızca açık onam ve mahremiyet sağlandıktan sonra yapılmış; aktif genital kanama veya hemodinamik instabilite saptanmamış.",
+      "Nörolojik muayenede bilinç kaybı, fokal defisit veya akut intoksikasyon bulgusu yok.",
+      "Yaşamı tehdit eden yaralanma saptanmadı; ön kolda ekimoz ve yüzeyel sıyrıklar kaydedildi. Aktif genital kanama izlenmedi. Hemodinamik stabilite acil cerrahi gereksinimi olmadığını gösterir. Genital muayene onam ve mahremiyet sağlandıktan sonra yapılır."
     ],
     "investigations": [
-      {
-        "id": "travma-muayenesi-sexual-assault-001",
-        "label": "Travma ve genital/ekstragenital muayene",
-        "type": "clinical",
-        "priority": "essential",
-        "summary": "Yaşamı tehdit eden yaralanma saptanmadı; ön kolda ekimoz ve yüzeyel sıyrıklar kaydedildi. Aktif genital kanama izlenmedi.",
-        "findings": [
-          "Hemodinamik stabilite acil cerrahi gereksinimi olmadığını gösterir.",
-          "Genital muayene onam ve mahremiyet sağlandıktan sonra yapılır."
-        ],
-        "rows": [
-          [
-            "Hemodinami",
-            "Stabil",
-            "Stabil",
-            "Normal"
-          ],
-          [
-            "Ekstragenital travma",
-            "Ön kolda ekimoz/sıyrık",
-            "Yok",
-            "Patolojik"
-          ],
-          [
-            "Aktif kanama",
-            "Yok",
-            "Yok",
-            "Dışlandı"
-          ]
-        ]
-      },
       {
         "id": "gebelik-testi-sexual-assault-001",
         "label": "Gebelik testi",
@@ -11871,33 +11390,33 @@ export const cases = [
         ]
       },
       {
-        "id": "adli-ornekleme-delil-zinciri-001",
-        "label": "Adli örnekleme ve delil zinciri",
-        "type": "clinical",
+        "id": "toxicology-panel",
+        "label": "İdrar toksikoloji paneli",
+        "type": "urine",
         "priority": "situational",
-        "summary": "Hasta onamı sonrası örnekler alındı; etiketleme, saat ve teslim kaydı eksiksiz yapıldı.",
+        "summary": "Sedatif-hipnotik madde taraması negatif saptandı.",
         "findings": [
-          "Örnekler zaman penceresi içinde alınmıştır.",
-          "Kayıt zincirinin korunması örnek bütünlüğünü sağlar."
+          "Negatif tarama ilaçla kolaylaştırılmış saldırıyı tamamen dışlamaz; örnek zamanlaması önemlidir.",
+          "Bilinç kaybı öyküsü olmadığı için sonuç yönetimi sınırlı değiştirir."
         ],
         "rows": [
           [
-            "Onam",
-            "Alındı",
-            "Alınmalı",
-            "Uygun"
+            "Benzodiazepin",
+            "Negatif",
+            "Negatif",
+            "Negatif"
           ],
           [
-            "Örnekleme zamanı",
-            "8. saat",
-            "Erken başvuru",
-            "Uygun"
+            "GHB taraması",
+            "Negatif",
+            "Negatif",
+            "Negatif"
           ],
           [
-            "Teslim kaydı",
-            "Tam",
-            "Tam olmalı",
-            "Uygun"
+            "Etanol",
+            "Saptanmadı",
+            "Saptanmamalı",
+            "Negatif"
           ]
         ]
       }
@@ -11936,7 +11455,8 @@ export const cases = [
           "Onam, mahremiyet ve güvenli iletişimi sağla",
           "Gebelik testi, CYBE başlangıç testleri ve uygun profilaksileri planla",
           "Adli örnekleri uygun etiketleme ve teslim kaydıyla al",
-          "Psikiyatri/sosyal hizmet ve güvenli taburculuk planı yap"
+          "Psikiyatri/sosyal hizmet ve güvenli taburculuk planı yap",
+          "Hasta onamı sonrası örnekler alındı; etiketleme, saat ve teslim kaydı eksiksiz yapıldı. Örnekler zaman penceresi içinde alınmıştır. Kayıt zincirinin korunması örnek bütünlüğünü sağlar."
         ],
         "learningOutcome": "Cinsel saldırı sonrası olgu, hukuki ezber yerine tıbbi stabilite, somut travma bulgusu, gebelik/CYBE yönetimi ve delil bütünlüğü üzerinden klinik karar olarak ele alınmalıdır.",
         "differentials": {
@@ -11983,6 +11503,7 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Hasta ajite ve konfü; GKS 12",
       "Boyun ön yüzünde transvers ligatür izi ve hassasiyet var",
       "Ses kısıklığı, stridor başlangıcı ve yutma güçlüğü mevcut",
@@ -12195,6 +11716,7 @@ export const cases = [
       "Ateş": "38.7 °C"
     },
     "exam": [
+      "Genel durum klinik tabloyla uyumlu şekilde değerlendirilmiş; bilinç, solunum işi ve dolaşım bulguları ilk bakıda kaydedilmiştir.",
       "Oral mukozada ağrılı aftöz ülserler mevcut",
       "Bacaklarda yaygın ekimoz ve peteşiler izleniyor",
       "Karında peritonit bulgusu yok",
@@ -12272,32 +11794,32 @@ export const cases = [
       },
       {
         "id": "enfeksiyon-paneli-neutropenic-001",
-        "label": "Nötropenik ateş değerlendirmesi",
+        "label": "Kan kültürleri ve CRP",
         "type": "culture",
         "priority": "essential",
-        "summary": "Kan kültürleri alındı; CRP yüksek bulundu. Klinik tablo nötropenik ateş olarak yönetildi.",
+        "summary": "CRP yüksek, kan kültürleri ilk değerlendirmede üreme göstermedi.",
         "findings": [
-          "Kültür sonucu beklenmeden ampirik antibiyotik gerekir.",
-          "Ateş kaynağı belirgin olmasa bile ağır nötropeni tek başına risklidir."
+          "Kültür sonucu beklenmeden nötropenik ateş protokolü başlatılır.",
+          "Belirgin odak olmaması ağır nötropeni riskini azaltmaz."
         ],
         "rows": [
           [
-            "Ateş",
-            "38.7 °C",
-            "<38 °C",
-            "Yüksek"
-          ],
-          [
             "CRP",
-            "96 mg/L",
+            "86 mg/L",
             "<5 mg/L",
             "Yüksek"
           ],
           [
             "Kan kültürü",
-            "Alındı, sonuç bekleniyor",
-            "Negatif",
-            "Beklemede"
+            "İlk 24 saatte üreme yok",
+            "Üreme yok",
+            "Negatif"
+          ],
+          [
+            "Mutlak nötrofil",
+            "220/mm³",
+            ">1500/mm³",
+            "Kritik düşük"
           ]
         ]
       },
