@@ -25134,3 +25134,12 @@ export const cases = [
     "title": "Doğumda resüsitasyon ve asidoz"
   }
 ];
+
+export function getCaseById(caseId) {
+  return cases.find((clinicalCase) => clinicalCase.id === caseId) ?? null;
+}
+
+export function getCasesByBranch(branchId) {
+  if (!branchId) return cases;
+  return cases.filter((clinicalCase) => clinicalCase.branchId === branchId);
+}
