@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
@@ -11,7 +11,7 @@ import WrongAnswersPanel from './components/WrongAnswersPanel.jsx';
 import ExamResults from './components/ExamResults.jsx';
 import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
-import { cases, getCaseById, getCasesByBranch } from './data/cases.js';
+import { cases, getCaseById } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
 import { pickRandom, shuffleArray } from './utils/randomize.js';
 import { localBackend } from './services/localBackend.js';
@@ -20,8 +20,8 @@ import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.
 const STATS_STORAGE_KEY = 'klinikiq-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'klinikiq-exam-history-v2';
 const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
-const BRANCH_TRANSITION_MS = 1750;
-const BRANCH_TRANSITION_FADE_MS = 280;
+const BRANCH_TRANSITION_MS = 920;
+const BRANCH_TRANSITION_FADE_MS = 180;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 
@@ -107,6 +107,31 @@ function resolveBranchById(branchId) {
   return branches.find((branch) => branch.id === branchId) ?? null;
 }
 
+function getUserMotionPreference() {
+  if (typeof window === 'undefined' || !window.matchMedia) return false;
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+function scrollToTopSmart({ smooth = false } = {}) {
+  if (typeof window === 'undefined') return;
+  const behavior = smooth && !getUserMotionPreference() ? 'smooth' : 'auto';
+  window.scrollTo({ top: 0, behavior });
+}
+
+function buildAccessibleCaseIndex(accessibleCases = []) {
+  const byId = new Map();
+  const byBranchId = new Map();
+
+  accessibleCases.forEach((clinicalCase) => {
+    byId.set(clinicalCase.id, clinicalCase);
+    if (!byBranchId.has(clinicalCase.branchId)) byBranchId.set(clinicalCase.branchId, []);
+    byBranchId.get(clinicalCase.branchId).push(clinicalCase);
+  });
+
+  return { byId, byBranchId, ids: new Set(byId.keys()) };
+}
+
+
 function App() {
   const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
   const [selectedBranchId, setSelectedBranchId] = useState(null);
@@ -127,7 +152,8 @@ function App() {
 
   const demoCases = useMemo(() => resolveDemoCases(), []);
   const accessibleCases = useMemo(() => (isDemoUser ? demoCases : cases), [isDemoUser, demoCases]);
-  const accessibleCaseIds = useMemo(() => new Set(accessibleCases.map((clinicalCase) => clinicalCase.id)), [accessibleCases]);
+  const accessibleCaseIndex = useMemo(() => buildAccessibleCaseIndex(accessibleCases), [accessibleCases]);
+  const accessibleCaseIds = accessibleCaseIndex.ids;
   const visibleBranches = useMemo(() => {
     if (!isDemoUser) return branches;
     const branchIds = new Set(accessibleCases.map((clinicalCase) => clinicalCase.branchId));
@@ -140,20 +166,20 @@ function App() {
   );
 
   const branchCases = useMemo(
-    () => (selectedBranchId ? getCasesByBranch(selectedBranchId).filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id)) : []),
-    [selectedBranchId, accessibleCaseIds],
+    () => (selectedBranchId ? accessibleCaseIndex.byBranchId.get(selectedBranchId) ?? [] : []),
+    [selectedBranchId, accessibleCaseIndex],
   );
 
   const selectedCase = useMemo(() => {
     if (examState?.active) {
       const examCaseId = examState.caseIds[examState.currentIndex];
       if (!accessibleCaseIds.has(examCaseId)) return accessibleCases[0] ?? null;
-      return getCaseById(examCaseId) ?? accessibleCases[0] ?? null;
+      return accessibleCaseIndex.byId.get(examCaseId) ?? accessibleCases[0] ?? null;
     }
     if (!selectedCaseId) return branchCases[0] ?? null;
     if (!accessibleCaseIds.has(selectedCaseId)) return branchCases[0] ?? null;
-    return getCaseById(selectedCaseId) ?? branchCases[0] ?? null;
-  }, [selectedCaseId, branchCases, examState, accessibleCaseIds, accessibleCases]);
+    return accessibleCaseIndex.byId.get(selectedCaseId) ?? branchCases[0] ?? null;
+  }, [selectedCaseId, branchCases, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
 
   const persistCurrentUser = (patch) => {
     setCurrentUser((current) => {
@@ -334,7 +360,7 @@ function App() {
       });
       setSelectedBranchId(null);
       setSelectedCaseId(null);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToTopSmart({ smooth: false });
     }, 0);
 
     return { ok: true, message: '5 vakalık demo başlatıldı.' };
@@ -352,7 +378,7 @@ function App() {
     setMode('study');
   };
 
-  const addWrongAnswer = (clinicalCase, selected) => {
+  const addWrongAnswer = useCallback((clinicalCase, selected) => {
     const branch = resolveBranchById(clinicalCase.branchId);
     const item = {
       caseId: clinicalCase.id,
@@ -375,7 +401,7 @@ function App() {
       }
       return [{ ...item, attempts: 1, createdAt: Date.now() }, ...current].slice(0, 80);
     });
-  };
+  }, []);
 
   const removeWrongAnswer = (caseId) => {
     setWrongAnswers((current) => current.filter((entry) => entry.caseId !== caseId));
@@ -391,7 +417,7 @@ function App() {
     setSelectedBranchId(clinicalCase.branchId);
     setSelectedCaseId(clinicalCase.id);
     setIsCaseSidebarOpen(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTopSmart({ smooth: false });
   };
 
   useEffect(() => {
@@ -470,12 +496,6 @@ function App() {
     return Math.max(0, examState.durationSeconds - elapsed);
   }, [examState, clockTick]);
 
-  useEffect(() => {
-    if (examState?.active && remainingSeconds === 0) {
-      finalizeExam();
-    }
-  }, [examState?.active, remainingSeconds]);
-
   const leaderboardEntries = useMemo(() => {
     const entries = [];
     if (sessionStats.attempts) {
@@ -510,14 +530,25 @@ function App() {
     isDemoUser ? wrongAnswers.filter((entry) => accessibleCaseIds.has(entry.caseId)) : wrongAnswers
   ), [wrongAnswers, isDemoUser, accessibleCaseIds]);
 
-  const clearBranchRouteTimers = () => {
+  const activeExamCaseMeta = useMemo(() => (examState?.active ? {
+    active: true,
+    title: examState.title,
+    currentIndex: examState.currentIndex,
+    total: examState.caseIds.length,
+    answers: examState.answers,
+  } : null), [examState?.active, examState?.title, examState?.currentIndex, examState?.caseIds, examState?.answers]);
+
+  const noopRandomCase = useCallback(() => {}, []);
+  const handleToggleTutorMode = useCallback(() => setTutorMode((current) => !current), []);
+
+  const clearBranchRouteTimers = useCallback(() => {
     branchRouteTimers.current.forEach((timerId) => window.clearTimeout(timerId));
     branchRouteTimers.current = [];
-  };
+  }, []);
 
-  const handleSelectBranch = (branchId) => {
+  const handleSelectBranch = useCallback((branchId) => {
     if (isDemoUser && !visibleBranches.some((branch) => branch.id === branchId)) return;
-    const branchPool = getCasesByBranch(branchId).filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id));
+    const branchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
     if (!branchPool.length) return;
     const branchMeta = resolveBranchById(branchId);
 
@@ -536,7 +567,7 @@ function App() {
       setSelectedBranchId(branchId);
       setSelectedCaseId(branchPool[0]?.id ?? null);
       setIsCaseSidebarOpen(true);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      scrollToTopSmart({ smooth: false });
       setBranchRouteTransition((current) => current ? { ...current, phase: 'reveal' } : null);
     }, BRANCH_TRANSITION_MS);
 
@@ -545,21 +576,22 @@ function App() {
     }, BRANCH_TRANSITION_MS + BRANCH_TRANSITION_FADE_MS);
 
     branchRouteTimers.current = [selectTimer, finishTimer];
-  };
+  }, [accessibleCaseIndex, clearBranchRouteTimers, isDemoUser, visibleBranches]);
 
-  const handleSelectCase = (caseId) => {
+  const handleSelectCase = useCallback((caseId) => {
     if (!accessibleCaseIds.has(caseId)) return;
     setSelectedCaseId(caseId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+    scrollToTopSmart({ smooth: false });
+  }, [accessibleCaseIds]);
 
-  const handleRandomCase = () => {
+  const handleRandomCase = useCallback(() => {
     if (!branchCases.length) return;
     const nextCase = pickRandom(branchCases, selectedCaseId) ?? branchCases[0];
     setSelectedCaseId(nextCase.id);
-  };
+    scrollToTopSmart({ smooth: false });
+  }, [branchCases, selectedCaseId]);
 
-  const handleSubmitAnswer = ({ clinicalCase, selected, isCorrect }) => {
+  const handleSubmitAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
     const existingExamAnswer = examState?.active ? examState.answers?.[clinicalCase.id] : null;
     if (existingExamAnswer) return existingExamAnswer.attemptResult;
 
@@ -601,7 +633,7 @@ function App() {
     }
 
     return scored;
-  };
+  }, [addWrongAnswer, examState, sessionStats.streak]);
 
   function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
     const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)
@@ -625,23 +657,23 @@ function App() {
     setSelectedCaseId(null);
   }
 
-  const goToNextExamCase = () => {
+  const goToNextExamCase = useCallback(() => {
     setExamState((current) => {
       if (!current) return current;
       const nextIndex = Math.min(current.currentIndex + 1, current.caseIds.length - 1);
       return { ...current, currentIndex: nextIndex };
     });
-  };
+  }, []);
 
-  const goToPreviousExamCase = () => {
+  const goToPreviousExamCase = useCallback(() => {
     setExamState((current) => {
       if (!current) return current;
       const nextIndex = Math.max(current.currentIndex - 1, 0);
       return { ...current, currentIndex: nextIndex };
     });
-  };
+  }, []);
 
-  function finalizeExam() {
+  const finalizeExam = useCallback(() => {
     setExamState((current) => {
       if (!current?.active) return current;
 
@@ -650,7 +682,8 @@ function App() {
       const review = current.caseIds
         .filter((caseId) => accessibleCaseIds.has(caseId))
         .map((caseId) => {
-          const item = getCaseById(caseId);
+          const item = accessibleCaseIndex.byId.get(caseId);
+          if (!item) return null;
           const branch = resolveBranchById(item.branchId);
           const answer = current.answers[caseId];
           return {
@@ -663,7 +696,8 @@ function App() {
             correctAnswer: item.diagnosis.correct,
             earnedPoints: answer?.attemptResult?.earnedPoints ?? 0,
           };
-        });
+        })
+        .filter(Boolean);
 
       const total = review.length;
       const correct = review.filter((item) => item.isCorrect).length;
@@ -703,7 +737,13 @@ function App() {
       setExamHistory((history) => [result, ...history].slice(0, 12));
       return { active: false, result };
     });
-  }
+  }, [accessibleCaseIds, accessibleCaseIndex]);
+
+  useEffect(() => {
+    if (examState?.active && remainingSeconds === 0) {
+      finalizeExam();
+    }
+  }, [examState?.active, remainingSeconds, finalizeExam]);
 
   const resetExamToHome = () => {
     setExamState(null);
@@ -711,7 +751,7 @@ function App() {
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setIsCaseSidebarOpen(true);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    scrollToTopSmart({ smooth: false });
   };
 
   if (!currentUser) {
@@ -780,7 +820,7 @@ function App() {
                 if (wrongPanel) {
                   wrongPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 } else {
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  scrollToTopSmart({ smooth: false });
                 }
               }, 80);
             }}
@@ -856,24 +896,17 @@ function App() {
             <button type="button" className="btn btn-secondary" onClick={finalizeExam}>Bloku bitir</button>
           </section>
 
-          <div key={selectedCase.id} className="case-route-transition">
+          <div className="case-route-transition" data-case-id={selectedCase.id}>
             <CasePlayer
               clinicalCase={selectedCase}
               branch={resolveBranchById(selectedCase.branchId)}
               mode="exam"
-              onRandomCase={() => {}}
+              onRandomCase={noopRandomCase}
               onSubmitAnswer={handleSubmitAnswer}
               tutorMode={tutorMode}
-              onToggleTutorMode={() => setTutorMode((current) => !current)}
+              onToggleTutorMode={handleToggleTutorMode}
               hardMode={hardMode}
-              examMeta={{
-                active: true,
-                title: examState.title,
-                currentIndex: examState.currentIndex,
-                total: examState.caseIds.length,
-                answers: examState.answers,
-                remainingSeconds,
-              }}
+              examMeta={activeExamCaseMeta}
               onAdvanceExam={goToNextExamCase}
               onPreviousExam={goToPreviousExamCase}
               onFinishExam={finalizeExam}
@@ -902,7 +935,7 @@ function App() {
               </div>
             </section>
 
-            <div key={selectedCase.id} className="case-route-transition">
+            <div className="case-route-transition" data-case-id={selectedCase.id}>
               <CasePlayer
                 clinicalCase={selectedCase}
                 branch={selectedBranch}
@@ -910,7 +943,7 @@ function App() {
                 onRandomCase={handleRandomCase}
                 onSubmitAnswer={handleSubmitAnswer}
                 tutorMode={tutorMode}
-                onToggleTutorMode={() => setTutorMode((current) => !current)}
+                onToggleTutorMode={handleToggleTutorMode}
                 hardMode={hardMode}
               />
             </div>

@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 
@@ -321,25 +321,23 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
     setSubmitted(false);
   }, [clinicalCase.id, sequence]);
 
-  if (!sequence) return null;
+  const requiredSteps = useMemo(() => sequence ? sequence.steps.filter((step) => step.required).sort((a, b) => a.correctOrder - b.correctOrder) : [], [sequence]);
+  const correctById = useMemo(() => new Map(requiredSteps.map((step) => [step.id, step.correctOrder])), [requiredSteps]);
+  const selectedIds = useMemo(() => new Set(planSteps.map((step) => step.id)), [planSteps]);
+  const poolSteps = useMemo(() => availableSteps.filter((step) => !selectedIds.has(step.id)), [availableSteps, selectedIds]);
+  const planScore = useMemo(() => sequence ? scorePlan(planSteps, sequence) : { score: 0, max: 0, correctRequired: 0, selectedUnnecessary: 0, missingRequired: 0 }, [planSteps, sequence]);
 
-  const requiredSteps = sequence.steps.filter((step) => step.required).sort((a, b) => a.correctOrder - b.correctOrder);
-  const correctById = new Map(requiredSteps.map((step) => [step.id, step.correctOrder]));
-  const selectedIds = new Set(planSteps.map((step) => step.id));
-  const poolSteps = availableSteps.filter((step) => !selectedIds.has(step.id));
-  const planScore = scorePlan(planSteps, sequence);
-
-  const addStep = (step) => {
+  const addStep = useCallback((step) => {
     if (submitted) return;
     setPlanSteps((current) => current.some((item) => item.id === step.id) ? current : [...current, step]);
-  };
+  }, [submitted]);
 
-  const removeStep = (stepId) => {
+  const removeStep = useCallback((stepId) => {
     if (submitted) return;
     setPlanSteps((current) => current.filter((step) => step.id !== stepId));
-  };
+  }, [submitted]);
 
-  const moveStep = (index, direction) => {
+  const moveStep = useCallback((index, direction) => {
     setPlanSteps((current) => {
       const nextIndex = index + direction;
       if (nextIndex < 0 || nextIndex >= current.length) return current;
@@ -347,13 +345,16 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
       [next[index], next[nextIndex]] = [next[nextIndex], next[index]];
       return next;
     });
-  };
+  }, []);
 
-  const reset = () => {
+  const reset = useCallback(() => {
+    if (!sequence) return;
     setAvailableSteps(deterministicShuffle(sequence.steps, `${clinicalCase.id}-management-options-reset`));
     setPlanSteps([]);
     setSubmitted(false);
-  };
+  }, [clinicalCase.id, sequence]);
+
+  if (!sequence) return null;
 
   return (
     <section className="card-surface management-sequence-panel advanced-management-panel v38-management-panel" aria-label="Yönetim sırası">
@@ -467,4 +468,4 @@ function ManagementSequencePanel({ clinicalCase, mode = 'study', hardMode = fals
   );
 }
 
-export default ManagementSequencePanel;
+export default memo(ManagementSequencePanel);

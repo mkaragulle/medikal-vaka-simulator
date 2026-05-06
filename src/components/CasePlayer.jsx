@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import DiagnosisQuiz from './DiagnosisQuiz.jsx';
 import InvestigationPanel from './InvestigationPanel.jsx';
 import ManagementSequencePanel from './ManagementSequencePanel.jsx';
@@ -553,10 +553,10 @@ function CasePlayer({
   onPreviousExam,
   onFinishExam,
 }) {
-  const displayFocus = buildNonRevealingFocus(clinicalCase);
-  const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
+  const displayFocus = useMemo(() => buildNonRevealingFocus(clinicalCase), [clinicalCase]);
+  const difficultyMeta = useMemo(() => getDifficultyMeta(clinicalCase.difficulty), [clinicalCase.difficulty]);
   const patientSummary = useMemo(() => buildPatientSummary(clinicalCase), [clinicalCase]);
-  const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase]);
+  const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase.vitals]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const hasExamData = Array.isArray(clinicalCase.exam) && clinicalCase.exam.some((finding) => String(finding || '').trim());
@@ -576,14 +576,15 @@ function CasePlayer({
     if (item.id === 'case-management') return showManagementPanel;
     return true;
   }), [showExamPanel, showInvestigationPanel, showManagementPanel]);
-  const heroEyebrow = isSpotCase
+  const heroEyebrow = useMemo(() => (isSpotCase
     ? `TUS Spot Olgular • ${clinicalCase.spotCategory || 'TUS spot'}`
-    : `${branch.shortName ?? branch.name} • ${toDisplayPhrase(clinicalCase.setting)}`;
+    : `${branch.shortName ?? branch.name} • ${toDisplayPhrase(clinicalCase.setting)}`), [branch.name, branch.shortName, clinicalCase.setting, clinicalCase.spotCategory, isSpotCase]);
   const [orderedInvestigationIds, setOrderedInvestigationIds] = useState([]);
 
   const [highlighted, setHighlighted] = useState({});
   const [activeHighlighter, setActiveHighlighter] = useState('yellow');
   const [activeSection, setActiveSection] = useState('case-story');
+  const activeSectionRef = useRef('case-story');
 
   const storyRef = useRef(null);
   const examRef = useRef(null);
@@ -600,11 +601,18 @@ function CasePlayer({
   useEffect(() => {
     setHighlighted({});
     setOrderedInvestigationIds([]);
+    activeSectionRef.current = 'case-story';
     setActiveSection('case-story');
   }, [clinicalCase.id]);
 
   useEffect(() => {
     let frame = 0;
+
+    const setActiveSectionIfChanged = (id) => {
+      if (!id || activeSectionRef.current === id) return;
+      activeSectionRef.current = id;
+      setActiveSection(id);
+    };
 
     const updateActiveSection = () => {
       frame = 0;
@@ -624,18 +632,18 @@ function CasePlayer({
 
       const containing = candidates.find((item) => item.top <= probeLine && item.bottom > probeLine);
       if (containing) {
-        setActiveSection(containing.id);
+        setActiveSectionIfChanged(containing.id);
         return;
       }
 
       const passed = candidates.filter((item) => item.top <= probeLine).pop();
       if (passed) {
-        setActiveSection(passed.id);
+        setActiveSectionIfChanged(passed.id);
         return;
       }
 
       const nearest = candidates.sort((a, b) => a.distance - b.distance)[0];
-      if (nearest?.id) setActiveSection(nearest.id);
+      if (nearest?.id) setActiveSectionIfChanged(nearest.id);
     };
 
     const requestUpdate = () => {
@@ -654,7 +662,7 @@ function CasePlayer({
     };
   }, [clinicalCase.id, sectionRefs, visibleSectionItems]);
 
-  const toggleHighlight = (index) => {
+  const toggleHighlight = useCallback((index) => {
     setHighlighted((current) => {
       if (current[index]) {
         const next = { ...current };
@@ -663,29 +671,30 @@ function CasePlayer({
       }
       return { ...current, [index]: activeHighlighter };
     });
-  };
+  }, [activeHighlighter]);
 
-  const scrollToSection = (id) => {
+  const scrollToSection = useCallback((id) => {
     const target = sectionRefs[id]?.current;
     if (!target) return;
 
+    activeSectionRef.current = id;
     setActiveSection(id);
 
     const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
     const offset = getStickyOffset();
     window.scrollTo({ top: Math.max(absoluteTop - offset, 0), behavior: 'smooth' });
-  };
+  }, [sectionRefs]);
 
-  const handleOrderInvestigation = (id) => {
+  const handleOrderInvestigation = useCallback((id) => {
     setOrderedInvestigationIds((current) => current.includes(id) ? current : [...current, id]);
-  };
+  }, []);
 
 
-  const examPanelMeta = examMeta?.active
+  const examPanelMeta = useMemo(() => (examMeta?.active
     ? { ...examMeta, hasPrevious: examMeta.currentIndex > 0, hasNext: examMeta.currentIndex < examMeta.total - 1 }
-    : null;
+    : null), [examMeta]);
 
-  const existingAnswer = examMeta?.answers?.[clinicalCase.id] ?? null;
+  const existingAnswer = useMemo(() => examMeta?.answers?.[clinicalCase.id] ?? null, [clinicalCase.id, examMeta]);
 
   return (
     <article className="clinical-case qbank-case" data-branch={branch.id} data-case-type={isSpotCase ? 'spot' : 'standard'} data-mode={mode} data-hard-mode={hardMode ? 'true' : 'false'}>
@@ -826,6 +835,7 @@ function CasePlayer({
                   hardMode={hardMode}
                   orderedInvestigationIds={orderedInvestigationIds}
                   onOrderInvestigation={handleOrderInvestigation}
+                  orders={investigationOrders}
                 />
               </section>
             ) : null}
@@ -879,4 +889,4 @@ function CasePlayer({
   );
 }
 
-export default CasePlayer;
+export default memo(CasePlayer);

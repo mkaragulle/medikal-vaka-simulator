@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 import {
@@ -453,7 +453,7 @@ function DiagnosticOrdersPanel({ orders, orderedInvestigationIds, onOrderInvesti
     if (!orderedInvestigationIds.length) setOpenResultIds([]);
   }, [orderedInvestigationIds.length]);
 
-  const handleToggleOrder = (item) => {
+  const handleToggleOrder = useCallback((item) => {
     const alreadySelected = orderedInvestigationIds.includes(item.id);
 
     if (!alreadySelected) {
@@ -467,7 +467,7 @@ function DiagnosticOrdersPanel({ orders, orderedInvestigationIds, onOrderInvesti
         ? current.filter((id) => id !== item.id)
         : [...current, item.id]
     ));
-  };
+  }, [onOrderInvestigation, orderedInvestigationIds]);
 
   return (
     <div className="diagnostic-orders-panel smart-diagnostic-orders-panel" aria-label="İstenebilir tetkikler">
@@ -492,8 +492,9 @@ function InvestigationPanel({
   hardMode = false,
   orderedInvestigationIds = [],
   onOrderInvestigation,
+  orders: providedOrders = null,
 }) {
-  const orders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
+  const orders = useMemo(() => providedOrders ?? buildInvestigationOrders(clinicalCase), [clinicalCase, providedOrders]);
 
   return (
     <section className="card-surface investigation-order-section refined-investigation-order-section smart-investigation-order-section" aria-label="Tetkik istemi">
@@ -516,4 +517,4 @@ function InvestigationPanel({
   );
 }
 
-export default InvestigationPanel;
+export default memo(InvestigationPanel);

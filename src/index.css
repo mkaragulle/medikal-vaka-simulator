@@ -31255,3 +31255,193 @@ html[data-theme="dark"] .patient-summary-story-block.unified-history-block,
     flex-basis: 38px !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   V98 — Performance stabilization pass
+   Keeps KlinikIQ's premium motion language while removing paint-heavy loops.
+   -------------------------------------------------------------------------- */
+:root {
+  --motion-fast: 140ms;
+  --motion-page: 190ms;
+  --motion-route: 920ms;
+}
+
+:where(.branch-card, .case-list-item, .answer-option, .btn, .section-nav-btn, .requested-test-card, .inline-order-result, .advanced-step-card, .summary-detail-card) {
+  transition-property: transform, opacity, background-color, border-color, color !important;
+  transition-duration: var(--motion-fast) !important;
+  transition-timing-function: var(--ease-standard) !important;
+}
+
+:where(.branch-card, .case-list-item, .answer-option, .btn, .section-nav-btn, .requested-test-card, .advanced-step-card):hover {
+  transform: translate3d(0, -1px, 0) !important;
+}
+
+:where(.card-surface, .branch-card, .question-panel, .right-workspace-shell, .patient-summary-card, .clinical-data-card, .diagnostic-decision-panel, .diagnostic-orders-panel, .management-feedback-panel, .bottom-case-browser) {
+  contain: paint;
+}
+
+.case-route-transition {
+  animation: klinikiqCaseSwap var(--motion-page) cubic-bezier(.22, 1, .36, 1) both !important;
+  will-change: opacity, transform;
+}
+
+@keyframes klinikiqCaseSwap {
+  from { opacity: 0; transform: translate3d(0, 8px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+.branch-route-overlay {
+  background:
+    radial-gradient(circle at 50% 50%, color-mix(in srgb, var(--route-accent) 13%, transparent), transparent 34%),
+    color-mix(in srgb, var(--bg) 72%, transparent) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: branch-overlay-in 160ms var(--ease-standard) both !important;
+  contain: paint !important;
+}
+
+.branch-route-overlay.reveal { animation: branch-overlay-out 170ms var(--ease-standard) both !important; }
+.branch-route-stage { animation: klinikiqRouteStageIn 220ms cubic-bezier(.22, 1, .36, 1) both !important; }
+
+@keyframes klinikiqRouteStageIn {
+  from { opacity: 0; transform: translate3d(0, 10px, 0) scale(.97); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+
+.branch-route-hero::before,
+.branch-route-hero::after,
+.branch-route-ring.ring-two,
+.branch-route-orb::after,
+.branch-transition-shine,
+.branch-motion-effect {
+  display: none !important;
+}
+
+.branch-route-ring {
+  opacity: .42 !important;
+  animation: branch-ring-expand 1150ms cubic-bezier(.22, 1, .36, 1) 1 both !important;
+  will-change: transform, opacity;
+}
+
+.branch-route-glow {
+  inset: 28px !important;
+  opacity: .34 !important;
+  filter: none !important;
+  animation: none !important;
+  background: radial-gradient(circle, color-mix(in srgb, var(--route-accent) 20%, transparent), transparent 68%) !important;
+}
+
+.branch-route-orb {
+  animation: branch-orb-enter 260ms cubic-bezier(.22, 1, .36, 1) both !important;
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--route-accent) 12%, rgba(2, 8, 16, .14)) !important;
+  will-change: transform, opacity;
+}
+
+.branch-route-overlay .branch-transition-visual,
+.branch-route-overlay .branch-transition-icon,
+.branch-route-overlay .branch-transition-svg,
+.branch-route-overlay .branch-icon-glyph,
+.branch-route-overlay .cardio-heart-trace,
+.branch-route-overlay .cardio-heart-glow {
+  filter: none !important;
+  animation: klinikiqRouteIconFloat 1080ms ease-in-out infinite !important;
+  will-change: transform, opacity;
+}
+
+@keyframes klinikiqRouteIconFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50% { transform: translate3d(0, -3px, 0) scale(1.025); opacity: .96; }
+}
+
+.branch-route-reveal {
+  animation: klinikiqPageReveal 220ms cubic-bezier(.22, 1, .36, 1) both !important;
+}
+
+@keyframes klinikiqPageReveal {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .branch-card[data-branch] .branch-card-head .icon-badge svg {
+    animation: none !important;
+  }
+  .branch-card[data-branch]:hover .branch-card-head .icon-badge svg,
+  .branch-card[data-branch]:focus-visible .branch-card-head .icon-badge svg {
+    animation: klinikiqBranchIconHover 520ms cubic-bezier(.22, 1, .36, 1) 1 both !important;
+  }
+}
+
+@keyframes klinikiqBranchIconHover {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  52% { transform: translate3d(0, -2px, 0) scale(1.045); }
+}
+
+.branch-card.is-launching,
+.branch-card.is-launching[data-branch] {
+  transform: translate3d(0, -2px, 0) scale(1.006) !important;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--branch-motion-accent, var(--accent)) 13%, transparent), var(--shadow-card) !important;
+  transition: transform 180ms cubic-bezier(.22, 1, .36, 1), border-color 180ms var(--ease-standard) !important;
+}
+
+.branch-card.is-launching .branch-launch-wave,
+.branch-card.is-launching[data-branch] .branch-launch-wave {
+  animation: klinikiqLaunchWave 620ms cubic-bezier(.22, 1, .36, 1) 1 both !important;
+}
+
+@keyframes klinikiqLaunchWave {
+  0% { opacity: 0; transform: scale(.98); }
+  38% { opacity: .42; transform: scale(1.01); }
+  100% { opacity: 0; transform: scale(1.035); }
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand-mark-pulse {
+  animation: klinikiqNavBrandPulseLite 5.5s ease-in-out infinite !important;
+  will-change: transform, opacity;
+}
+
+@keyframes klinikiqNavBrandPulseLite {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: 1; }
+  50% { transform: translate3d(0, -1px, 0) scale(1.018); opacity: .96; }
+}
+
+.answer-option.correct,
+.answer-option.wrong,
+.answer-option.selected {
+  box-shadow: none !important;
+}
+
+.answer-option.solved .answer-status-icon {
+  animation: klinikiqAnswerPop 170ms cubic-bezier(.22, 1, .36, 1) 1 both;
+}
+
+@keyframes klinikiqAnswerPop {
+  from { transform: scale(.92); opacity: .7; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+:where(.floating-glossary-tooltip, .glossary-tooltip.floating-glossary-tooltip, #klinikiq-tooltip-layer .floating-glossary-tooltip) {
+  will-change: transform, opacity !important;
+  transition: transform 120ms var(--ease-standard), opacity 120ms var(--ease-standard) !important;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .16) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+  .branch-route-overlay .branch-route-hero,
+  .branch-route-overlay .branch-route-ring,
+  .branch-route-overlay .branch-route-glow,
+  .branch-route-overlay .branch-route-orb,
+  .branch-route-overlay .branch-transition-visual,
+  .branch-route-overlay .branch-transition-icon,
+  .branch-route-overlay .branch-transition-svg,
+  .branch-route-overlay .cardio-heart-trace,
+  .branch-route-overlay .cardio-heart-glow {
+    animation: none !important;
+  }
+}

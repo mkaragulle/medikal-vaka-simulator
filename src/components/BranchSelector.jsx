@@ -1,16 +1,12 @@
+import { memo, useCallback, useMemo } from 'react';
 import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
 import { TUS_SPOT_BRANCH_ID } from '../data/branches.js';
 
-function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, index = 0, variant = 'grid' }) {
-  const branchCases = cases.filter((clinicalCase) => clinicalCase.branchId === branch.id);
-  const totalCases = branchCases.length;
+function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch, index = 0, variant = 'grid' }) {
+  const totalCases = branchStats?.totalCases ?? 0;
   const isSpotBranch = branch.id === TUS_SPOT_BRANCH_ID;
-  const priorityCases = isSpotBranch
-    ? branchCases.filter((clinicalCase) => clinicalCase.caseType === 'spot').length
-    : branchCases.filter((clinicalCase) => /acil|kritik/i.test(clinicalCase.difficulty)).length;
-  const avgPoints = totalCases
-    ? Math.round(branchCases.reduce((sum, item) => sum + (/zor|kritik/i.test(item.difficulty) ? 22 : /acil/i.test(item.difficulty) ? 18 : 14), 0) / totalCases)
-    : 0;
+  const priorityCases = branchStats?.priorityCases ?? 0;
+  const avgPoints = branchStats?.avgPoints ?? 0;
   const progress = Math.min(100, 28 + priorityCases * 14);
   const tone = branchToneById[branch.id] ?? 'accent';
   const isFeatured = variant === 'featured';
@@ -58,14 +54,37 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, inde
   );
 }
 
+const MemoizedBranchCard = memo(BranchCard);
+
 function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = null, isTransitioning = false }) {
-  const handleLaunchBranch = (branchId) => {
+  const branchStatsById = useMemo(() => {
+    const stats = new Map();
+
+    cases.forEach((clinicalCase) => {
+      const branchId = clinicalCase.branchId;
+      const current = stats.get(branchId) ?? { totalCases: 0, priorityCases: 0, pointsTotal: 0, avgPoints: 0 };
+      current.totalCases += 1;
+      current.priorityCases += branchId === TUS_SPOT_BRANCH_ID
+        ? clinicalCase.caseType === 'spot' ? 1 : 0
+        : /acil|kritik/i.test(clinicalCase.difficulty) ? 1 : 0;
+      current.pointsTotal += /zor|kritik/i.test(clinicalCase.difficulty) ? 22 : /acil/i.test(clinicalCase.difficulty) ? 18 : 14;
+      stats.set(branchId, current);
+    });
+
+    stats.forEach((value) => {
+      value.avgPoints = value.totalCases ? Math.round(value.pointsTotal / value.totalCases) : 0;
+    });
+
+    return stats;
+  }, [cases]);
+
+  const handleLaunchBranch = useCallback((branchId) => {
     if (isTransitioning) return;
     onSelectBranch(branchId);
-  };
+  }, [isTransitioning, onSelectBranch]);
 
-  const spotBranch = branches.find((branch) => branch.id === TUS_SPOT_BRANCH_ID);
-  const standardBranches = branches.filter((branch) => branch.id !== TUS_SPOT_BRANCH_ID);
+  const spotBranch = useMemo(() => branches.find((branch) => branch.id === TUS_SPOT_BRANCH_ID), [branches]);
+  const standardBranches = useMemo(() => branches.filter((branch) => branch.id !== TUS_SPOT_BRANCH_ID), [branches]);
 
   return (
     <section className="section-block branches-section" id="branches">
@@ -78,9 +97,9 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
 
       {spotBranch ? (
         <div className="tus-spot-olgular-feature-row" aria-label="TUS Spot Olgular özel alanı">
-          <BranchCard
+          <MemoizedBranchCard
             branch={spotBranch}
-            cases={cases}
+            branchStats={branchStatsById.get(spotBranch.id)}
             isLaunching={launchingBranchId === spotBranch.id}
             isLocked={isTransitioning}
             onLaunchBranch={handleLaunchBranch}
@@ -92,10 +111,10 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
 
       <div className="branch-grid tus-branch-grid" aria-label="TUS ana branşları">
         {standardBranches.map((branch, index) => (
-          <BranchCard
+          <MemoizedBranchCard
             key={branch.id}
             branch={branch}
-            cases={cases}
+            branchStats={branchStatsById.get(branch.id)}
             isLaunching={launchingBranchId === branch.id}
             isLocked={isTransitioning}
             onLaunchBranch={handleLaunchBranch}
@@ -107,4 +126,4 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
   );
 }
 
-export default BranchSelector;
+export default memo(BranchSelector);

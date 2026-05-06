@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { shuffleArray } from '../utils/randomize.js';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon, IconBadge } from './ui.jsx';
@@ -16,7 +16,7 @@ function buildOptions(options, correct) {
   return shuffled;
 }
 
-function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true }) {
+const AnswerOption = memo(function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true }) {
   const isSelected = selected === option;
   const isCorrectOption = option === correctAnswer;
   const stateClass = submitted
@@ -65,7 +65,7 @@ function AnswerOption({ option, index, selected, submitted, correctAnswer, onSel
       </span>
     </button>
   );
-}
+});
 
 
 function DiagnosisQuiz({
@@ -106,14 +106,16 @@ function DiagnosisQuiz({
   const questionPrompt = clinicalCase.question || clinicalCase.diagnosis?.question || '';
   const questionHeading = isSpotCase ? (clinicalCase.questionType === 'diagnosis' ? 'TUS spot tanı sorusu' : clinicalCase.questionType === 'test' ? 'TUS spot tetkik sorusu' : clinicalCase.questionType === 'treatment' ? 'TUS spot tedavi sorusu' : 'TUS spot karar sorusu') : 'En olası tanı';
   const questionSubtext = isSpotCase
-    ? (clinicalCase.clinicalFocus || 'Kısa TUS olgusunda en doğru yanıtı seç.')
+    ? (submitted && clinicalCase.clinicalFocus
+      ? clinicalCase.clinicalFocus
+      : 'Kısa TUS olgusunda öykü, muayene ve objektif verileri yorumlayarak en doğru yanıtı seç.')
     : 'Olgu paternine en uygun seçeneği işaretle.';
 
-  const handleSubmit = () => {
+  const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;
     onSubmitAnswer?.({ clinicalCase, selected, isCorrect });
     setSubmitted(true);
-  };
+  }, [clinicalCase, isCorrect, onSubmitAnswer, selected, submitted]);
 
   return (
     <section className="question-panel diagnostic-decision-panel" id="case-quiz" aria-label="Klinik karar sorusu">
@@ -235,4 +237,4 @@ function DiagnosisQuiz({
   );
 }
 
-export default DiagnosisQuiz;
+export default memo(DiagnosisQuiz);

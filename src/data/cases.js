@@ -1,6 +1,3 @@
-// KlinikIQ vaka verisi: TUS odaklı, klinik karar verdirici ve objektif tetkik sonuçlarıyla yapılandırılmıştır.
-// Final exam/vitals QA: Her vaka fizik muayene ve temel vital seti ile doğrulanmıştır; fizik muayene alanından tetkik sonuçları ayrıştırılmıştır.
-
 export const cases = [
   {
     "id": "cv-anterior-stemi-001",
@@ -35,15 +32,15 @@ export const cases = [
         "summary": "V2-V5 derivasyonlarında belirgin ST segment elevasyonu, inferior derivasyonlarda karşılıklı ST segment depresyonu izleniyor.",
         "findings": [
           "Aynı koroner sulama alanını gösteren ardışık derivasyonlarda ST elevasyonu acil reperfüzyon gerektiren bir paterndir.",
-          "Resiprokal ST depresyonu akut transmural iskemi lehine ek kanıt sağlar."
+          "Resiprokal ST depresyonu akut transmural iskemi açısından ek kanıt sağlar."
         ],
         "priority": "useful",
         "rows": [
           [
             "12 derivasyon EKG",
             "V2-V5 derivasyonlarında belirgin ST segment elevasyonu, inferior derivasyonlarda karşılıklı ST segment depresyonu izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -310,8 +307,8 @@ export const cases = [
           [
             "Kontrastlı toraks BT anjiyografi",
             "Asendan aortadan başlayarak arkus düzeyine uzanan intimal flap ve gerçek-yalancı lümen ayrımı izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -578,8 +575,8 @@ export const cases = [
           [
             "Yatak başı transtorasik ekokardiyografi",
             "Geniş perikardiyal efüzyon, sağ atriyum ve sağ ventrikül diyastolik kollapsı, inferior vena kavada dilatasyon ve inspiratuvar kollaps azalması izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -599,7 +596,7 @@ export const cases = [
             "12 derivasyon EKG",
             "Sinüs taşikardisi, düşük voltaj ve elektriksel alternans",
             "Normal sinüs ritmi",
-            "Tanıyı destekler"
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -811,7 +808,7 @@ export const cases = [
         "Sağ kalp boşluklarında diyastolik kollaps"
       ],
       "historySummary": "Oturur pozisyonda kısmi rahatlama olduğunu, eforla yakınmalarının belirgin arttığını ifade ediyor.",
-      "priorityFocus": "Progresif dispne ve presenkop kardiyak tamponad lehine obstrüktif şok paternidir; ekokardiyografik kollaps acil drenaj kararını güçlendirir."
+      "priorityFocus": "Progresif dispne ve presenkop ilgili klinik tablo lehine obstrüktif şok paternidir; ekokardiyografik kollaps acil drenaj kararını güçlendirir."
     }
   },
   {
@@ -846,7 +843,7 @@ export const cases = [
         "type": "xray",
         "summary": "Kardiyomegali, pulmoner vasküler redistribüsyon, Kerley B çizgileri ve bilateral perihiler alveoler-interstisyel opasiteler izleniyor.",
         "findings": [
-          "Perihiler alveoler opasiteler ve interstisyel çizgilenme hidrostatik pulmoner ödem ile uyumludur.",
+          "Perihiler alveoler opasiteler ve interstisyel çizgilenme hidrostatik pulmoner ödem paternini gösterir.",
           "Plevral efüzyon kardiyojenik ödem tablosuna eşlik edebilir."
         ],
         "priority": "useful",
@@ -854,8 +851,8 @@ export const cases = [
           [
             "Akciğer grafisi",
             "Kardiyomegali, pulmoner vasküler redistribüsyon, Kerley B çizgileri ve bilateral perihiler alveoler-interstisyel opasiteler izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -1156,7 +1153,7 @@ export const cases = [
         "type": "ultrasound",
         "summary": "Asimetrik septal hipertrofi, sistolik anterior mitral kapak hareketi ve dinamik sol ventrikül çıkış yolu gradiyenti saptanıyor.",
         "findings": [
-          "Septal kalınlık artışı ve dinamik gradiyent obstrüktif kardiyomiyopati lehinedir.",
+          "Septal kalınlık artışı ve dinamik gradiyent obstrüktif kardiyomiyopati açısından anlamlıdır.",
           "Preload azalması obstrüksiyonu artırarak üfürüm şiddetini artırır."
         ],
         "priority": "useful",
@@ -1164,8 +1161,8 @@ export const cases = [
           [
             "Transtorasik ekokardiyografi",
             "Asimetrik septal hipertrofi, sistolik anterior mitral kapak hareketi ve dinamik sol ventrikül çıkış yolu gradiyenti saptanıyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -1182,8 +1179,8 @@ export const cases = [
           [
             "12 derivasyon EKG",
             "Sol ventrikül hipertrofisi voltaj kriterleri ve lateral derivasyonlarda repolarizasyon değişiklikleri izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -1448,7 +1445,7 @@ export const cases = [
           ]
         ],
         "priority": "essential",
-        "summary": "pH 7.18, HCO3- 8 mmol/L ve anyon açıklığı 28 mmol/L saptanır; yüksek anyon açıklı metabolik asidoz DKA ile uyumludur.",
+        "summary": "pH 7.18, HCO3- 8 mmol/L ve anyon açıklığı 28 mmol/L saptanır.",
         "findings": [
           "pH: 7.18 (Düşük); HCO3-: 8 mmol/L (Düşük); Anyon açıklığı: 28 mmol/L (Yüksek) saptandı."
         ]
@@ -1478,7 +1475,7 @@ export const cases = [
           ]
         ],
         "priority": "essential",
-        "summary": "Glukoz yüksek, keton pozitif saptanır; hiperglisemi ve ketozis tanısal üçlüyü tamamlar.",
+        "summary": "Glukoz yüksek, keton pozitif saptanır; hiperglisemi ve ketozis ketozis ve asidoz paternini birlikte gösterir.",
         "findings": [
           "Glukoz: Pozitif (Pozitif); Keton: Pozitif (Pozitif) saptandı."
         ]
@@ -1785,8 +1782,8 @@ export const cases = [
           [
             "Hepatobiliyer ultrasonografi",
             "Safra kesesinde çok sayıda milimetrik taş izleniyor; koledok belirgin dilate değildir.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -1803,8 +1800,8 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "Pankreas çevresi yağlı planlarda inflamasyon ve sınırlı peripankreatik sıvı koleksiyonu izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -2069,8 +2066,8 @@ export const cases = [
           [
             "Üst gastrointestinal sistem endoskopisi",
             "Distal özofagusta geniş variköz venler ve aktif kanama odağı izleniyor; endoskopik bant ligasyonu için uygundur.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -2345,8 +2342,8 @@ export const cases = [
           [
             "Periferik yayma",
             "Mikrositer ve hipokrom eritrositler, belirgin anizositoz ve poikilositoz izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -2624,7 +2621,7 @@ export const cases = [
         "summary": "Boyun ultrasonografisi/sestamibi korelasyonunda sağ inferior paratiroid lojunda fokal lezyon izlendi.",
         "priority": "useful",
         "findings": [
-          "Lokalizasyon cerrahi planlamayı destekler.",
+          "Lokalizasyon cerrahi planlamayı klinik yorumda önemlidir.",
           "Tanı biyokimya ile konur; görüntüleme lokalizasyon içindir."
         ],
         "rows": [
@@ -2862,8 +2859,8 @@ export const cases = [
           [
             "Kontrastsız beyin BT",
             "Akut intrakraniyal kanama saptanmıyor; erken iskemik değişiklikler açısından değerlendirme sınırlıdır.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -2880,8 +2877,8 @@ export const cases = [
           [
             "BT anjiyografi",
             "Sol orta serebral arter proksimal segmentinde damar dolum kesintisi izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -3149,17 +3146,17 @@ export const cases = [
         "id": "ct",
         "label": "Kontrastsız beyin BT",
         "type": "ct",
-        "summary": "Bazal sisternalarda ve sulkuslarda hiperdens kan ile uyumlu görünüm izleniyor.",
+        "summary": "Bazal sisternalarda ve sulkuslarda hiperdens kan paterninde görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Bazal sisternalarda ve sulkuslarda hiperdens kan ile uyumlu görünüm izleniyor."
+          "Bazal sisternalarda ve sulkuslarda hiperdens kan paterninde görünüm izleniyor."
         ],
         "rows": [
           [
             "Kontrastsız beyin BT",
-            "Bazal sisternalarda ve sulkuslarda hiperdens kan ile uyumlu görünüm izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Bazal sisternalarda ve sulkuslarda hiperdens kan paterninde görünüm izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -3167,17 +3164,17 @@ export const cases = [
         "id": "cta",
         "label": "BT anjiyografi",
         "type": "ct",
-        "summary": "Anterior kommunikan arter düzeyinde sakküler anevrizma ile uyumlu odak görülüyor.",
+        "summary": "Anterior kommunikan arter düzeyinde sakküler anevrizma paterninde odak görülüyor.",
         "priority": "useful",
         "findings": [
-          "Anterior kommunikan arter düzeyinde sakküler anevrizma ile uyumlu odak görülüyor."
+          "Anterior kommunikan arter düzeyinde sakküler anevrizma paterninde odak görülüyor."
         ],
         "rows": [
           [
             "BT anjiyografi",
-            "Anterior kommunikan arter düzeyinde sakküler anevrizma ile uyumlu odak görülüyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Anterior kommunikan arter düzeyinde sakküler anevrizma paterninde odak görülüyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -3442,8 +3439,8 @@ export const cases = [
           [
             "Beyin ve servikal spinal MR",
             "Periventriküler, juxtakortikal ve infratentoryal bölgelerde demiyelinizan plaklarla uyumlu T2/FLAIR hiperintens lezyonlar izleniyor; bazı lezyonlarda kontrast tutulumu mevcut.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -3490,8 +3487,8 @@ export const cases = [
           [
             "Görsel uyarılmış potansiyel",
             "P100 latansında uzama saptanıyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -3740,8 +3737,8 @@ export const cases = [
           [
             "Beyin MR venografi",
             "Superior sagittal sinüs ve sağ transvers sinüste akım sinyali kaybı izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -3749,17 +3746,17 @@ export const cases = [
         "id": "ct",
         "label": "Kontrastsız beyin BT",
         "type": "ct",
-        "summary": "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı ile uyumlu görünüm izleniyor.",
+        "summary": "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı paterninde görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı ile uyumlu görünüm izleniyor."
+          "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı paterninde görünüm izleniyor."
         ],
         "rows": [
           [
             "Kontrastsız beyin BT",
-            "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı ile uyumlu görünüm izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı paterninde görünüm izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -4032,8 +4029,8 @@ export const cases = [
           [
             "Abdominal ultrasonografi",
             "Sağ alt kadranda transvers kesitte hedef işareti, longitudinal kesitte yalancı böbrek görünümü izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -4050,8 +4047,8 @@ export const cases = [
           [
             "Ayakta direkt karın grafisi",
             "Ayakta direkt karın grafisinde hava-sıvı seviyeleri izlenir; serbest intraperitoneal hava saptanmaz.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -4346,17 +4343,17 @@ export const cases = [
         "id": "usg",
         "label": "Pilor ultrasonografisi",
         "type": "ultrasound",
-        "summary": "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı ile uyumlu görünüm izleniyor.",
+        "summary": "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı paterninde görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı ile uyumlu görünüm izleniyor."
+          "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı paterninde görünüm izleniyor."
         ],
         "rows": [
           [
             "Pilor ultrasonografisi",
-            "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı ile uyumlu görünüm izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Pilor kas kalınlığı ve kanal uzunluğu artmış; mide çıkışında geçiş kısıtlılığı paterninde görünüm izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -4913,17 +4910,17 @@ export const cases = [
         "id": "neck-xray",
         "label": "Lateral boyun grafisi",
         "type": "xray",
-        "summary": "Epiglotta ödem ile uyumlu başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
+        "summary": "Epiglotta ödem paterninde başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
         "priority": "useful",
         "findings": [
-          "Epiglotta ödem ile uyumlu başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır."
+          "Epiglotta ödem paterninde başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır."
         ],
         "rows": [
           [
             "Lateral boyun grafisi",
-            "Epiglotta ödem ile uyumlu başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Epiglotta ödem paterninde başparmak bulgusu izlenebilir; inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -5219,8 +5216,8 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor; apendikolit görülebilir.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -5486,8 +5483,8 @@ export const cases = [
           [
             "Sağ üst kadran ultrasonografisi",
             "Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı artışı izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -5532,7 +5529,7 @@ export const cases = [
         "label": "Hepatobiliyer sintigrafi",
         "type": "clinical",
         "priority": "situational",
-        "summary": "Safra kesesi dolumu izlenmedi; bulgu sistik kanal obstrüksiyonu ve akut kolesistit ile uyumludur.",
+        "summary": "Safra kesesi dolumu izlenmedi.",
         "findings": [
           "Safra kesesi dolumu izlenmedi",
           "Safra yollarında yaygın tıkanıklık paterni saptanmadı"
@@ -5782,8 +5779,8 @@ export const cases = [
           [
             "Ayakta direkt karın grafisi",
             "Santral yerleşimli dilate ince bağırsak ansları ve çoklu hava-sıvı seviyeleri izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -5800,8 +5797,8 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "İnce bağırsakta geçiş noktası ve proksimal dilatasyon izleniyor; kapalı ans veya iskemi bulgusu belirgin değildir.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -6056,17 +6053,17 @@ export const cases = [
         "id": "upright-xray",
         "label": "Ayakta akciğer/abdomen grafisi",
         "type": "xray",
-        "summary": "Diyafram altında serbest hava ile uyumlu görünüm izleniyor.",
+        "summary": "Diyafram altında serbest hava paterninde görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Diyafram altında serbest hava ile uyumlu görünüm izleniyor."
+          "Diyafram altında serbest hava paterninde görünüm izleniyor."
         ],
         "rows": [
           [
             "Ayakta akciğer/abdomen grafisi",
-            "Diyafram altında serbest hava ile uyumlu görünüm izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Diyafram altında serbest hava paterninde görünüm izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -6083,8 +6080,8 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "Üst abdomende serbest hava ve sıvı; mide-duodenum komşuluğunda perforasyon odağı açısından şüpheli görünüm mevcut.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -6350,8 +6347,8 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon izleniyor; apse veya serbest perforasyon saptanmıyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -6617,8 +6614,8 @@ export const cases = [
           [
             "Akciğer grafisi",
             "Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan izleniyor; mediastinal şift yok.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -6665,8 +6662,8 @@ export const cases = [
           [
             "Toraks BT",
             "Tanı grafiyle konulabiliyorsa rutin gerekli değildir; altta yatan bül veya sekonder neden araştırılacaksa değerlendirilebilir.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -6890,8 +6887,8 @@ export const cases = [
           [
             "BT pulmoner anjiyografi",
             "Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -6929,17 +6926,17 @@ export const cases = [
         "id": "leg-usg",
         "label": "Alt ekstremite venöz Doppler ultrasonografi",
         "type": "ultrasound",
-        "summary": "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs ile uyumlu segment izleniyor.",
+        "summary": "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor.",
         "priority": "useful",
         "findings": [
-          "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs ile uyumlu segment izleniyor."
+          "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor."
         ],
         "rows": [
           [
             "Alt ekstremite venöz Doppler ultrasonografi",
-            "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs ile uyumlu segment izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -7163,7 +7160,7 @@ export const cases = [
         "id": "cxr",
         "label": "Akciğer grafisi",
         "type": "xray",
-        "summary": "Sağ alt lobda hava bronkogramı içeren lobar konsolidasyon izlenir; bulgu klinikle birlikte bakteriyel pnömoniyi destekler.",
+        "summary": "Sağ alt lobda hava bronkogramı içeren lobar konsolidasyon izlenir.",
         "priority": "essential",
         "findings": [
           "Sağ alt lob konsolidasyonu",
@@ -7174,8 +7171,8 @@ export const cases = [
           [
             "Akciğer grafisi",
             "Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -7204,7 +7201,7 @@ export const cases = [
           ]
         ],
         "priority": "useful",
-        "summary": "Lökosit 16.700/mm³ ve CRP 132 mg/L saptanır; sistemik inflamasyonu ve yatış/şiddet değerlendirmesini destekler.",
+        "summary": "Lökosit 16.700/mm³ ve CRP 132 mg/L saptanır.",
         "findings": [
           "Lökositoz ve yüksek CRP",
           "Böbrek fonksiyonu antibiyotik dozu için değerlendirilir"
@@ -7224,8 +7221,8 @@ export const cases = [
           [
             "Mikrobiyolojik örnekleme",
             "Ağır hastalık, yatış gereksinimi veya tedavi başarısızlığı varsa balgam Gram boyama/kültür ve kan kültürleri alınır.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -7450,8 +7447,8 @@ export const cases = [
           [
             "Yüksek çözünürlüklü toraks BT",
             "Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği görünümü izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -7769,8 +7766,8 @@ export const cases = [
           [
             "Akciğer grafisi",
             "Hiperinflasyon bulguları izleniyor; belirgin yeni lobar konsolidasyon saptanmıyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -8025,17 +8022,17 @@ export const cases = [
         "id": "cxr",
         "label": "Akciğer grafisi",
         "type": "xray",
-        "summary": "Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu görünüm izleniyor.",
+        "summary": "Üst zon ağırlıklı infiltrasyon ve kavitasyon paterninde görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu görünüm izleniyor."
+          "Üst zon ağırlıklı infiltrasyon ve kavitasyon paterninde görünüm izleniyor."
         ],
         "rows": [
           [
             "Akciğer grafisi",
-            "Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu görünüm izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Üst zon ağırlıklı infiltrasyon ve kavitasyon paterninde görünüm izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -8052,8 +8049,8 @@ export const cases = [
           [
             "Balgam ARB ve moleküler inceleme",
             "Balgam yaymasında aside dirençli basil görülüyor; nükleik asit amplifikasyon testi ve kültür ilaç duyarlılığı için gönderiliyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -8305,8 +8302,8 @@ export const cases = [
           [
             "Kalın damla ve ince yayma",
             "Eritrositler içinde halka formları ve yüksek parazitemi izleniyor; bazı eritrositlerde birden fazla halka formu dikkati çekiyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -8640,8 +8637,8 @@ export const cases = [
           [
             "BOS Gram boyama",
             "Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -8658,8 +8655,8 @@ export const cases = [
           [
             "Kan kültürü",
             "Antibiyotik öncesi alınır; ancak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -8895,8 +8892,8 @@ export const cases = [
           [
             "Kan kültürleri",
             "Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -8904,17 +8901,17 @@ export const cases = [
         "id": "echo",
         "label": "Transtorasik/Transözofageal ekokardiyografi",
         "type": "ultrasound",
-        "summary": "Triküspit kapakta hareketli vejetasyon ile uyumlu kitle izleniyor.",
+        "summary": "Triküspit kapakta hareketli vejetasyon paterninde kitle izleniyor.",
         "priority": "useful",
         "findings": [
-          "Triküspit kapakta hareketli vejetasyon ile uyumlu kitle izleniyor."
+          "Triküspit kapakta hareketli vejetasyon paterninde kitle izleniyor."
         ],
         "rows": [
           [
             "Transtorasik/Transözofageal ekokardiyografi",
-            "Triküspit kapakta hareketli vejetasyon ile uyumlu kitle izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Triküspit kapakta hareketli vejetasyon paterninde kitle izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -8922,17 +8919,17 @@ export const cases = [
         "id": "ct",
         "label": "Toraks BT",
         "type": "ct",
-        "summary": "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli ile uyumlu görünüm oluşturuyor.",
+        "summary": "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli paterninde görünüm oluşturuyor.",
         "priority": "useful",
         "findings": [
-          "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli ile uyumlu görünüm oluşturuyor."
+          "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli paterninde görünüm oluşturuyor."
         ],
         "rows": [
           [
             "Toraks BT",
-            "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli ile uyumlu görünüm oluşturuyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli paterninde görünüm oluşturuyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -9168,17 +9165,17 @@ export const cases = [
         "id": "xray",
         "label": "El bileği direkt grafisi",
         "type": "xray",
-        "summary": "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman ile uyumlu görünüm izleniyor.",
+        "summary": "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman paterninde görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman ile uyumlu görünüm izleniyor."
+          "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman paterninde görünüm izleniyor."
         ],
         "rows": [
           [
             "El bileği direkt grafisi",
-            "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman ile uyumlu görünüm izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman paterninde görünüm izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -9427,17 +9424,17 @@ export const cases = [
         "id": "xray",
         "label": "Pelvis ve kalça direkt grafisi",
         "type": "xray",
-        "summary": "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu görünüm izleniyor.",
+        "summary": "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman paterninde görünüm izleniyor.",
         "priority": "useful",
         "findings": [
-          "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu görünüm izleniyor."
+          "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman paterninde görünüm izleniyor."
         ],
         "rows": [
           [
             "Pelvis ve kalça direkt grafisi",
-            "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu görünüm izleniyor.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman paterninde görünüm izleniyor.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -9667,7 +9664,7 @@ export const cases = [
     "branchId": "minor-rotations",
     "title": "El bileği travması sonrası anatomik enfiye çukuru hassasiyeti",
     "difficulty": "Temel-orta · Ortopedi travma",
-    "clinicalFocus": "Skafoid kırığında ilk grafi normal olabilirliği, immobilizasyon ve avasküler nekroz riski",
+    "clinicalFocus": "Okült karpal kırık şüphesinde ilk grafi negatifliğini yönetme",
     "demographics": "26 yaşında erkek",
     "setting": "Acil servis",
     "chiefComplaint": "Düşme sonrası radial taraflı el bileği ağrısı",
@@ -9701,8 +9698,8 @@ export const cases = [
           [
             "Skafoid grafileri",
             "İlk grafilerde kırık hattı seçilemeyebilir; özel skafoid projeksiyonları ve kontrol grafileri gerekebilir.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -9710,17 +9707,17 @@ export const cases = [
         "id": "mri",
         "label": "El bileği MR",
         "type": "mri",
-        "summary": "Klinik şüphe yüksekse erken dönemde okült skafoid kırığını göstermek için kullanılabilir.",
+        "summary": "Klinik şüphe yüksekse erken dönemde okült karpal kırık hattını göstermek için kullanılabilir.",
         "priority": "useful",
         "findings": [
-          "Klinik şüphe yüksekse erken dönemde okült skafoid kırığını göstermek için kullanılabilir."
+          "Klinik şüphe yüksekse erken dönemde okült karpal kırık hattını göstermek için kullanılabilir."
         ],
         "rows": [
           [
             "El bileği MR",
-            "Klinik şüphe yüksekse erken dönemde okült skafoid kırığını göstermek için kullanılabilir.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Klinik şüphe yüksekse erken dönemde okült karpal kırık hattını göstermek için kullanılabilir.",
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -9738,31 +9735,32 @@ export const cases = [
       }
     ],
     "diagnosis": {
-      "correct": "Skafoid kırığı",
+      "correct": "Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak",
       "options": [
-        "Skafoid kırığı",
-        "Distal radius kırığı",
-        "De Quervain tenosinoviti",
-        "Triangüler fibrokartilaj kompleks yaralanması"
+        "Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak",
+        "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek",
+        "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak",
+        "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak"
       ],
-      "explanation": "Açık el üzerine düşme sonrası anatomik enfiye çukuru hassasiyeti ve başparmak aksiyel yüklenme ağrısı, ilk grafi normal olsa bile skafoid kırığı açısından yüksek şüphe oluşturur.",
+      "explanation": "FOOSH travması sonrası anatomik enfiye çukuru hassasiyeti varsa ilk grafiler negatif olsa bile okült skafoid yaralanma dışlanamaz; avasküler nekroz riskini azaltmak için immobilizasyon ve kontrol grafi/MR planlanmalıdır.",
       "pearls": [
-        "Skafoidin proksimal kutbu retrograd kanlandığı için avasküler nekroz riski taşır.",
-        "Negatif ilk grafi skafoid kırığını dışlamaz."
+        "Skafoid yaralanmada ilk grafi negatif olabilir.",
+        "Klinik şüphe yüksekse immobilizasyon yapılır.",
+        "Proksimal kutup kanlanması nedeniyle avasküler nekroz riski önemlidir."
       ],
       "nextStep": "Başparmak destekli immobilizasyon; erken MR veya 10-14 gün sonra kontrol grafisi; deplase kırıkta ortopedik cerrahi değerlendirme.",
       "answerFeedback": {
-        "diagnosisMeta": "Skafoid kırığında ilk grafi normal olabilirliği",
-        "whyCorrect": "Açık el üzerine düşme sonrası anatomik enfiye çukuru hassasiyeti ve başparmak aksiyel yüklenme ağrısı, ilk grafi normal olsa bile skafoid kırığı açısından yüksek şüphe oluşturur.",
+        "diagnosisMeta": "Okült karpal kırık şüphesinde ilk grafi negatifliğini yönetme",
+        "whyCorrect": "FOOSH travması sonrası anatomik enfiye çukuru hassasiyeti varsa ilk grafiler negatif olsa bile okült skafoid yaralanma dışlanamaz; avasküler nekroz riskini azaltmak için immobilizasyon ve kontrol grafi/MR planlanmalıdır.",
         "evidenceChain": [
-          "Başvuru yakınması: Düşme sonrası radial taraflı el bileği ağrısı.",
-          "Anatomik enfiye çukurunda belirgin hassasiyet mevcut.",
-          "Skafoid grafileri: İlk grafilerde kırık hattı seçilemeyebilir; özel skafoid projeksiyonları ve kontrol grafileri gerekebilir.",
-          "El bileği MR: Klinik şüphe yüksekse erken dönemde okült skafoid kırığını göstermek için kullanılabilir."
+          "Açık el üzerine düşme mekanizması vardır.",
+          "Anatomik enfiye çukuru hassasiyeti kritik klinik bulgudur.",
+          "İlk grafilerde kırık hattı seçilemeyebilir."
         ],
         "pearls": [
-          "Skafoidin proksimal kutbu retrograd kanlandığı için avasküler nekroz riski taşır.",
-          "Negatif ilk grafi skafoid kırığını dışlamaz."
+          "Skafoid yaralanmada ilk grafi negatif olabilir.",
+          "Klinik şüphe yüksekse immobilizasyon yapılır.",
+          "Proksimal kutup kanlanması nedeniyle avasküler nekroz riski önemlidir."
         ],
         "management": [
           "FOOSH mekanizması ve anatomik enfiye çukuru hassasiyetini skafoid kırığı lehine değerlendir",
@@ -9771,7 +9769,7 @@ export const cases = [
           "10-14 gün sonra kontrol grafisi veya erken MR/BT planla",
           "Deplase/proksimal kırık veya nörovasküler sorun varsa ortopedi konsültasyonu iste"
         ],
-        "learningOutcome": "Skafoid kırığı tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "FOOSH travması sonrası anatomik enfiye çukuru hassasiyeti varsa ilk grafiler negatif olsa bile okült skafoid yaralanma dışlanamaz; avasküler nekroz riskini azaltmak için immobilizasyon ve kontrol grafi/MR planlanmalıdır.",
         "differentials": {
           "Distal radius kırığı": {
             "explanation": "Distal radius kırığı ayırıcı tanıda düşünülebilir; ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Skafoid kırığı lehine daha tutarlıdır.",
@@ -9804,9 +9802,44 @@ export const cases = [
           "Klinik şüphe yüksekse başparmak spika atel/alçı ile immobilize et",
           "10-14 gün sonra kontrol grafisi veya erken MR/BT planla",
           "Deplase/proksimal kırık veya nörovasküler sorun varsa ortopedi konsültasyonu iste"
-        ]
+        ],
+        "correctDiagnosis": "Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak",
+        "shortDiagnosisMeta": "minor-rotations",
+        "whyWrong": {
+          "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek": "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
+          "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak": "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
+          "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak": "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır."
+        },
+        "clinicalPearls": [
+          "Skafoid yaralanmada ilk grafi negatif olabilir.",
+          "Klinik şüphe yüksekse immobilizasyon yapılır.",
+          "Proksimal kutup kanlanması nedeniyle avasküler nekroz riski önemlidir."
+        ],
+        "differentialComparison": {
+          "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek": {
+            "explanation": "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek olguda daha zayıf kalır; karar verdirici veri Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehinedir.",
+            "comparisonPoints": [
+              "Ana ipucu: Açık el üzerine düşme mekanizması vardır.",
+              "Çeldirici tuzak: Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
+            ]
+          },
+          "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak": {
+            "explanation": "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak olguda daha zayıf kalır; karar verdirici veri Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehinedir.",
+            "comparisonPoints": [
+              "Ana ipucu: Açık el üzerine düşme mekanizması vardır.",
+              "Çeldirici tuzak: Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
+            ]
+          },
+          "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak": {
+            "explanation": "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak olguda daha zayıf kalır; karar verdirici veri Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehinedir.",
+            "comparisonPoints": [
+              "Ana ipucu: Açık el üzerine düşme mekanizması vardır.",
+              "Çeldirici tuzak: Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
+            ]
+          }
+        }
       },
-      "question": "Bu olguda en olası tanı hangisidir?"
+      "question": "Anatomik enfiye çukuru hassasiyeti olan ve ilk grafisi negatif olabilen bu hastada en uygun ilk yaklaşım hangisidir?"
     },
     "managementSequence": {
       "enabled": true,
@@ -9886,7 +9919,7 @@ export const cases = [
         }
       ]
     },
-    "question": "Bu olguda en olası tanı hangisidir?",
+    "question": "Anatomik enfiye çukuru hassasiyeti olan ve ilk grafisi negatif olabilen bu hastada en uygun ilk yaklaşım hangisidir?",
     "patientIntro": {
       "profile": "26 yaşında erkek · Acil servis",
       "presentation": "Düşme sonrası radial taraflı el bileği ağrısı",
@@ -9900,8 +9933,9 @@ export const cases = [
         "El bileği MR: Klinik şüphe yüksekse erken dönemde okült skafoid kırığını"
       ],
       "historySummary": "Yirmi altı yaşındaki erkek hasta, kaykaydan açık el üzerine düştükten sonra el bileğinin radial tarafında ağrı geliştiğini ifade ediyor. İlk başvuru grafisinde belirgin kırık hattı izlenmediği halde ağrısı devam ediyor.",
-      "priorityFocus": "Başvuru yakınması: Düşme sonrası radial taraflı el bileği ağrısı karar verdirici klinik ipucudur; skafoidin proksimal kutbu retrograd kanlandığı için avasküler nekroz riski taşır."
-    }
+      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
+    },
+    "questionType": "treatment"
   },
   {
     "id": "ortho-shoulder-dislocation-001",
@@ -9942,8 +9976,8 @@ export const cases = [
           [
             "Omuz direkt grafisi",
             "Humerus başı glenoid kaviteye göre anterior-inferior yer değiştirmiştir; belirgin eşlik eden kırık hattı izlenmez.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -9960,8 +9994,8 @@ export const cases = [
           [
             "Redüksiyon sonrası kontrol",
             "Başarılı redüksiyonun ve eşlik eden Hill-Sachs veya Bankart lezyonu gibi kemik yaralanmalarının değerlendirilmesi için kontrol grafisi çekilir.",
-            "Beklenen normal patern",
-            "Tanıyı destekler"
+            "Normalde beklenmeyen patern",
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -10263,7 +10297,7 @@ export const cases = [
         "summary": "CK hafif yüksek bulundu; idrar miyoglobini negatif izlendi.",
         "findings": [
           "Kas etkilenimi hafif düzeydedir.",
-          "Rabdomiyoliz lehine güçlü idrar bulgusu yoktur."
+          "Rabdomiyoliz açısından güçlü idrar bulgusu yoktur."
         ],
         "rows": [
           [
@@ -10293,7 +10327,7 @@ export const cases = [
         "priority": "situational",
         "summary": "Troponin başlangıçta normaldir; seri ölçümde anlamlı yükselme beklenmemektedir.",
         "findings": [
-          "Miyokard nekrozu lehine biyobelirteç paterni yoktur.",
+          "Miyokard nekrozu açısından biyobelirteç paterni yoktur.",
           "EKG ve klinikle birlikte izlem yapılır."
         ],
         "rows": [
@@ -10542,7 +10576,7 @@ export const cases = [
         "summary": "EKG’de sinüs bradikardisi izlendi; malign aritmi ve ST elevasyonu saptanmadı.",
         "findings": [
           "Elektriksel etkilenme ritim izlemi gerektirir.",
-          "Akut MI lehine EKG paterni yoktur."
+          "Akut MI açısından EKG paterni yoktur."
         ],
         "rows": [
           [
@@ -10604,7 +10638,7 @@ export const cases = [
         "summary": "CK hafif yüksek, troponin ve potasyum normal sınırlarda saptandı.",
         "findings": [
           "Derin kas hasarı sınırlı görünmektedir.",
-          "Hiperkalemi veya miyokard nekrozu lehine erken biyobelirteç yoktur."
+          "Hiperkalemi veya miyokard nekrozu açısından erken biyobelirteç yoktur."
         ],
         "rows": [
           [
@@ -10853,7 +10887,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Hipoglisemi, direkt bilirubin yüksekliği ve transaminaz artışı saptandı.",
         "findings": [
-          "Karaciğer etkilenimi ve metabolik stres klasik galaktozemi ile uyumludur.",
+          "Karaciğer etkilenimi ve metabolik stres bu klinik patern paternini gösterir.",
           "Hipoglisemi acil düzeltilmelidir."
         ],
         "rows": [
@@ -10884,7 +10918,7 @@ export const cases = [
         "priority": "essential",
         "summary": "GALT aktivitesi belirgin düşük; galaktoz-1-fosfat yüksek bulundu.",
         "findings": [
-          "Enzim eksikliği tanıyı doğrudan destekler.",
+          "Enzim eksikliği Objektif doğrulama verisi sağlar.",
           "Toksik metabolit birikimi karaciğer ve lens bulgularını açıklar."
         ],
         "rows": [
@@ -11117,13 +11151,13 @@ export const cases = [
         "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Klasik galaktozemi ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "Glukoz 56 mg/dL, direkt bilirubin yüksek, AST/ALT yüksek",
         "GALT aktivitesi düşük; galaktoz-1-fosfat yüksek",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Doğumdan sonra ilk günlerde iyi olan bebek, süt alımı arttıkça kusma, letarji, uzamış sarılık ve kilo alamama ile başvurur. Katarakt şüphesi ve hepatomegali vardır. Klinik zamanlama, galaktoz içeren süt alımı sonrası toksik metabolit birikimini düşündürür.",
-      "priorityFocus": "Olgu bulguları Klasik galaktozemi ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -11188,9 +11222,9 @@ export const cases = [
         "label": "Fruktoz-1-fosfat ve ALDOB analizi",
         "type": "lab",
         "priority": "essential",
-        "summary": "ALDOB ilişkili defekt şüphesi güçlü; fruktoz-1-fosfat birikimi ile uyumlu sonuç alındı.",
+        "summary": "ALDOB ilişkili defekt şüphesi güçlü; fruktoz-1-fosfat birikimi paterninde sonuç alındı.",
         "findings": [
-          "Aldolaz B basamağındaki blok tanıyı destekler.",
+          "Aldolaz B basamağındaki blok Klinik olarak anlamlı.",
           "Esansiyel fruktozüriye göre daha ağır metabolik tablo vardır."
         ],
         "rows": [
@@ -11202,7 +11236,7 @@ export const cases = [
           ],
           [
             "ALDOB değerlendirmesi",
-            "Defekt lehine",
+            "Defekt açısından",
             "Normal",
             "Patolojik"
           ]
@@ -11240,7 +11274,7 @@ export const cases = [
         "priority": "situational",
         "summary": "ALDOB geninde patojenik varyant saptandı.",
         "findings": [
-          "Moleküler sonuç herediter fruktoz intoleransını doğrular.",
+          "Moleküler sonuç bu klinik paterni doğrular.",
           "Fruktoz-sükroz-sorbitol kısıtlaması sürdürülür."
         ],
         "rows": [
@@ -11418,13 +11452,13 @@ export const cases = [
         "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Herediter fruktoz intoleransı ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "Glukoz 42 mg/dL, laktat hafif yüksek, transaminazlar yüksek",
         "Aldolaz B defekti şüphesi; fruktoz-1-fosfat birikimi",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Ek gıdaya geçişten sonra özellikle meyve suyu, meyve püresi ve tatlı gıdalarla kusma, solukluk, terleme ve uykuya meyil gelişmektedir. Anne, çocuğun tatlı gıdalardan kaçındığını fark etmiştir. Bu zamanlama fruktoz/sükroz/sorbitol alımıyla tetiklenen metabolik bloğu düşündürür.",
-      "priorityFocus": "Olgu bulguları Herediter fruktoz intoleransı ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -11460,7 +11494,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Açlık hipoglisemisiyle birlikte laktat, trigliserid ve ürik asit yüksekliği saptandı.",
         "findings": [
-          "Laboratuvar paterni glukoz-6-fosfataz defektini destekler.",
+          "Laboratuvar paterni glukoz-6-fosfataz defektini klinik yorumda önemlidir.",
           "Hepatik glukoz çıkışı bozulmuştur."
         ],
         "rows": [
@@ -11530,7 +11564,7 @@ export const cases = [
             "İdrar ketonu",
             "Hafif/ değişken",
             "Negatif-hafif",
-            "Uyumlu"
+            "Yorum gerektirir"
           ],
           [
             "pH",
@@ -11553,7 +11587,7 @@ export const cases = [
         "priority": "situational",
         "summary": "G6PC geninde patojenik varyant saptandı.",
         "findings": [
-          "Moleküler sonuç Von Gierke tanısını doğrular.",
+          "Moleküler sonuç Von Gierke objektif doğrulama verisi sağlar.",
           "Beslenme tedavisi genetik sonucu beklemeden başlatılır."
         ],
         "rows": [
@@ -11848,7 +11882,7 @@ export const cases = [
         "priority": "situational",
         "summary": "PAH aktivitesi düşük, BH4 yanıt testi negatif saptandı.",
         "findings": [
-          "Yüksek fenilalaninle birlikte PAH eksikliği klasik PKU ile uyumludur.",
+          "Yüksek fenilalaninle birlikte PAH eksikliği klasik PKU paternini gösterir.",
           "BH4 yanıtının olmaması klasik diyet tedavisini öne çıkarır."
         ],
         "rows": [
@@ -12031,13 +12065,13 @@ export const cases = [
         "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Fenilketonüri ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "Fenilalanin yüksek, tirozin düşük/normal",
         "Fenilalanin hidroksilaz aktivitesi düşük veya BH4 yolu değerlendirildi",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Aile bebeğin giderek daha huzursuz olduğunu, baş kontrolünün zayıf kaldığını ve bezinde küf benzeri koku fark ettiğini söyler. Açık ten, nöbet öyküsü ve gelişimsel gecikme fenilalanin metabolizması bozukluğu açısından yüksek klinik şüphe oluşturur.",
-      "priorityFocus": "Olgu bulguları Fenilketonüri ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -12104,7 +12138,7 @@ export const cases = [
         "priority": "essential",
         "summary": "İdrarda dallı zincirli ketoasitler pozitif saptandı.",
         "findings": [
-          "BCKD kompleksi defektini destekler.",
+          "BCKD kompleksi defektini klinik yorumda önemlidir.",
           "Tatlı kokulu idrar bulgusunu açıklar."
         ],
         "rows": [
@@ -12129,7 +12163,7 @@ export const cases = [
         "priority": "useful",
         "summary": "Kan gazında metabolik asidoz ve hipoglisemiye eğilim izlendi.",
         "findings": [
-          "Akut nörolojik kötüleşme metabolik kriz ile uyumludur.",
+          "Akut nörolojik kötüleşme metabolik kriz paternini gösterir.",
           "Elektrolitler yakın izlem gerektirir."
         ],
         "rows": [
@@ -12343,13 +12377,13 @@ export const cases = [
         "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "Lösin, izolösin ve valin yüksek; metabolik asidoz",
         "BCKD kompleksi aktivitesi düşük",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Yenidoğan ilk günlerde normal görünmüş, ardından beslenme güçlüğü, kusma, letarji ve nörolojik kötüleşme gelişmiştir. İdrarda akçaağaç şurubu benzeri tatlı koku tariflenir. Erken dönemde nörotoksik dallı zincirli aminoasit birikimi akla gelir.",
-      "priorityFocus": "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -12404,7 +12438,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Bekletilen idrar örneği koyu kahverengi-siyah renge döndü.",
         "findings": [
-          "Oksidasyonla renk değişimi alkaptonüri için tipiktir.",
+          "Oksidasyonla renk değişimi bu klinik patern için tipiktir.",
           "Basit gözlem tanısal şüpheyi güçlendirir."
         ],
         "rows": [
@@ -12418,7 +12452,7 @@ export const cases = [
             "Alkalinizasyon",
             "Koyulaşma arttı",
             "Değişmez",
-            "Uyumlu"
+            "Yorum gerektirir"
           ]
         ]
       },
@@ -12430,7 +12464,7 @@ export const cases = [
         "summary": "Eklem grafisinde dejeneratif artropati bulguları izlendi.",
         "findings": [
           "Kronik pigment birikimi eklem hasarıyla uyumludur.",
-          "Akut enfeksiyöz artrit lehine bulgu yoktur."
+          "Akut enfeksiyöz artrit açısından bulgu yoktur."
         ],
         "rows": [
           [
@@ -12631,13 +12665,13 @@ export const cases = [
         "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Alkaptonüri ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "Rutin biyokimya çoğunlukla stabil; inflamasyon yok",
         "Homogentisik asit oksidaz defekti",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hasta yıllardır idrarının beklediğinde koyulaştığını, son yıllarda bel ve diz ağrılarının arttığını belirtir. Kulak kıkırdağında koyu pigmentasyon vardır. Bu klinik, tirozin katabolizması ara ürünü homogentisik asit birikimiyle uyumludur.",
-      "priorityFocus": "Olgu bulguları Alkaptonüri ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -12689,9 +12723,9 @@ export const cases = [
         "label": "Görme keskinliği ve optik koherens tomografi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Görme keskinliği düşük ve OCT’de foveal hipoplazi ile uyumlu bulgu saptandı.",
+        "summary": "Görme keskinliği düşük ve OCT’de foveal hipoplazi paterninde bulgu saptandı.",
         "findings": [
-          "Foveal hipoplazi ve nistagmus okülokütanöz albinizmle uyumludur.",
+          "Foveal hipoplazi ve nistagmus bu klinik paternle uyumludur.",
           "Retinal kitle veya aktif inflamasyon izlenmedi."
         ],
         "rows": [
@@ -12711,7 +12745,7 @@ export const cases = [
             "OCT fovea",
             "Foveal hipoplazi",
             "Normal foveal çukur",
-            "Tanıyı destekler"
+            "Klinik olarak anlamlı"
           ]
         ]
       },
@@ -12911,13 +12945,13 @@ export const cases = [
         "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Okülokütanöz albinizm ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "Biyokimya çoğunlukla normal",
         "Tirozinaz aktivitesi/genetik alt tip değerlendirildi",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Çocukta doğumdan beri cilt ve saç renginin belirgin açık olduğu, parlak ışıkta gözlerini kıstığı ve okulda tahtayı görmekte zorlandığı belirtilir. Nistagmus ve iris transillüminasyonu saptanır. Melanin sentezindeki bozukluk albinizm lehinedir.",
-      "priorityFocus": "Olgu bulguları Okülokütanöz albinizm ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -13003,7 +13037,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Plazma homosistein ve metiyonin düzeyleri belirgin yüksek saptandı.",
         "findings": [
-          "Patern sistationin beta sentaz eksikliğini destekler.",
+          "Patern sistationin beta sentaz eksikliğini klinik yorumda önemlidir.",
           "Marfan sendromunda homosistein yüksekliği beklenmez."
         ],
         "rows": [
@@ -13034,7 +13068,7 @@ export const cases = [
         "priority": "useful",
         "summary": "Sol popliteal vende parsiyel trombüs izlendi.",
         "findings": [
-          "Tromboz eğilimi homosistinüri için önemli klinik ipucudur.",
+          "Tromboz eğilimi bu klinik patern için önemli klinik ipucudur.",
           "DVT varlığı akut antikoagülasyon kararını etkiler."
         ],
         "rows": [
@@ -13249,13 +13283,13 @@ export const cases = [
         "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Homosistinüri ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "Total homosistein yüksek, metiyonin yüksek olabilir",
         "Sistationin beta sentaz defekti veya B12/folat yolu değerlendirildi",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hasta uzun boylu ve ince yapılıdır; göz muayenesinde lens subluksasyonu saptanır. Sol bacakta ağrılı şişlik ile derin ven trombozu düşünülür. Bu kombinasyon homosistein artışı ve bağ dokusu/koagülasyon etkilenimini düşündürür.",
-      "priorityFocus": "Olgu bulguları Homosistinüri ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -13315,7 +13349,7 @@ export const cases = [
         "priority": "essential",
         "summary": "İdrarda N1-metilnikotinamid atılımı belirgin düşük saptandı.",
         "findings": [
-          "Düşük metabolit atılımı niasin eksikliğini destekler.",
+          "Düşük metabolit atılımı niasin eksikliğini klinik yorumda önemlidir.",
           "Normal B12 ve TSH, bilişsel yavaşlama için alternatif metabolik nedenleri geri plana iter."
         ],
         "rows": [
@@ -13504,13 +13538,13 @@ export const cases = [
         "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Niasin eksikliği — Pellagra ile uyumlu",
+        "Olgu bulguları Niasin eksikliği — ilgili klinik tablo ile uyumlu",
         "Elektrolit bozukluğu ve malnütrisyon bulguları",
         "Niasin/NAD ilişkili eksiklik düşünülür",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hasta son aylarda çoğunlukla mısır ve karbonhidrat ağırlıklı beslendiğini; et, balık, yumurta ve süt ürünlerini çok az tükettiğini belirtir. Kronik ishal atakları nedeniyle kilo kaybı, halsizlik ve iştahsızlık gelişmiştir. Güneş gören alanlarda simetrik dermatit, oral mukozada glossit, kronik diyare ve bilişsel yavaşlama birlikte niasin eksikliğini düşündürür.",
-      "priorityFocus": "Olgu bulguları Niasin eksikliği — Pellagra ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
+      "priorityFocus": "Olgu bulguları Niasin eksikliği — ilgili klinik tablo ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -13543,7 +13577,7 @@ export const cases = [
         "label": "Plazma askorbik asit düzeyi",
         "type": "lab",
         "priority": "essential",
-        "summary": "Plazma askorbik asit düzeyi belirgin düşük saptanır; diş eti kanaması ve perifoliküler peteşilerle birlikte skorbütü destekler.",
+        "summary": "Plazma askorbik asit düzeyi belirgin düşük saptanır.",
         "findings": [
           "Eksiklik biyokimyasal olarak desteklenmiştir.",
           "Replasman tedavisi beklenen düzelmeyi sağlar."
@@ -13747,13 +13781,13 @@ export const cases = [
         "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Vitamin C eksikliği — Skorbüt ile uyumlu",
+        "Olgu bulguları Vitamin C eksikliği — ilgili klinik tablo ile uyumlu",
         "Hafif anemi, CRP normal",
         "Askorbik asit eksikliği düşünülür",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama paterni C vitamini eksikliğini düşündürür.",
-      "priorityFocus": "Olgu bulguları Vitamin C eksikliği — Skorbüt ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
+      "priorityFocus": "Olgu bulguları Vitamin C eksikliği — ilgili klinik tablo ile uyumlu SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
     }
   },
   {
@@ -13789,7 +13823,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Ferritin ve transferrin satürasyonu belirgin yüksek bulundu.",
         "findings": [
-          "Demir yüklenmesi tanıyı güçlü destekler.",
+          "Demir yüklenmesi tanıyı güçlü klinik yorumda önemlidir.",
           "İzole inflamasyon ferritin yüksekliğini tek başına açıklamaz."
         ],
         "rows": [
@@ -13839,7 +13873,7 @@ export const cases = [
         "priority": "useful",
         "summary": "HFE gen analizi C282Y ilişkili mutasyon açısından pozitif bulundu.",
         "findings": [
-          "Primer hemokromatozis doğrulanır.",
+          "Primer bu klinik patern objektif olarak gösterilir.",
           "Aile taraması gerekir."
         ],
         "rows": [
@@ -13865,12 +13899,12 @@ export const cases = [
         "summary": "Karaciğer görüntülemede demir yüklenmesiyle uyumlu sinyal değişikliği izlendi.",
         "findings": [
           "Siroz ve fibrozis açısından takip gerekir.",
-          "Kitle lehine belirgin bulgu yoktur."
+          "Kitle açısından belirgin bulgu yoktur."
         ],
         "rows": [
           [
             "Karaciğer MR",
-            "Demir yükü lehine",
+            "Demir yükü açısından",
             "Normal sinyal",
             "Patolojik"
           ],
@@ -14047,13 +14081,13 @@ export const cases = [
         "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Hemokromatozis ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "Ferritin yüksek, transferrin satürasyonu yüksek, AST/ALT yüksek",
         "HFE ilişkili demir yüklenmesi değerlendirildi",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Hastada uzun süredir halsizlik, eklem ağrısı, yeni tanı diyabet ve bronz renkli cilt görünümü vardır. Ferritin ve transferrin satürasyonu yüksek bulunur. Demir metabolizmasında aşırı birikim çoklu organ hasarı yapmaktadır.",
-      "priorityFocus": "Olgu bulguları Hemokromatozis ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -14089,7 +14123,7 @@ export const cases = [
         "priority": "essential",
         "summary": "LDL-kolesterol çok yüksek, trigliserid düzeyi belirgin yüksek değil.",
         "findings": [
-          "İzole ağır LDL yüksekliği ailesel hiperkolesterolemiyi destekler.",
+          "İzole ağır LDL yüksekliği bu klinik paternyi klinik yorumda önemlidir.",
           "Sekonder dislipidemi nedenleri ayrıca dışlanmalıdır."
         ],
         "rows": [
@@ -14120,7 +14154,7 @@ export const cases = [
         "priority": "useful",
         "summary": "LDLR/APOB/PCSK9 paneli için genetik doğrulama planlandı.",
         "findings": [
-          "Tanıyı destekler ve aile taramasını yönlendirir.",
+          "Klinik olarak anlamlı ve aile taramasını yönlendirir.",
           "Negatif sonuç klinik tanıyı tamamen dışlamaz."
         ],
         "rows": [
@@ -14323,13 +14357,13 @@ export const cases = [
         "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile",
+        "Olgu bulguları ilgili klinik tablo — Tip IIa hiperlipoproteinemi ile",
         "Total kolesterol 360 mg/dL, LDL 285 mg/dL, TG normal",
         "LDL reseptör/ApoB/PCSK9 yolu değerlendirildi",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Genç hastada Aşil tendon ksantomları, total kolesterol ve LDL'de belirgin yükseklik ve babada 38 yaşında MI öyküsü vardır. Trigliserid normal sınırlardadır. Bu profil LDL temizlenme kusurunu düşündürür.",
-      "priorityFocus": "Olgu bulguları Ailesel hiperkolesterolemi — Tip IIa hiperlipoproteinemi ile akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo — Tip IIa hiperlipoproteinemi ile akut koroner oklüzyon açısından karar verdiricidir; ST elevasyonu varsa reperfüzyon kararı troponin beklenmeden planlanır."
     }
   },
   {
@@ -14395,7 +14429,7 @@ export const cases = [
         "priority": "useful",
         "summary": "Duyu sinir aksiyon potansiyellerinde belirgin amplitüd azalması saptandı.",
         "findings": [
-          "Elektrofizyolojik patern periferik nöropatiyi objektif olarak destekler.",
+          "Elektrofizyolojik patern periferik nöropatiyi objektif olarak klinik yorumda önemlidir.",
           "Motor iletim belirgin korunmuştur."
         ],
         "rows": [
@@ -14421,7 +14455,7 @@ export const cases = [
         "summary": "ABCA1 gen analizi için örnek gönderildi.",
         "findings": [
           "Moleküler doğrulama ve aile danışmanlığı sağlar.",
-          "Lipid paneli tanısal şüpheyi güçlü destekler."
+          "Lipid paneli tanısal şüpheyi güçlü klinik yorumda önemlidir."
         ],
         "rows": [
           [
@@ -14597,13 +14631,13 @@ export const cases = [
         "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Tangier hastalığı ile uyumlu",
+        "Olgu bulguları ilgili klinik tablo ile uyumlu",
         "HDL <5 mg/dL, ApoA-I düşük, LDL düşük/normal",
         "ABCA1 fonksiyon bozukluğu",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
       "historySummary": "Çocukta belirgin turuncu tonsiller, hepatosplenomegali ve aralıklı ekstremite uyuşması vardır. Lipid profilinde HDL çok düşük, ApoA-I azalmış bulunur. Kolesterolün hücre dışına taşınmasında görevli ABCA1 defekti düşünülür.",
-      "priorityFocus": "Olgu bulguları Tangier hastalığı ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur; acil metabolik, hematolojik veya organ yetmezliği bulgusu varsa önce stabilizasyon yapılır."
     }
   },
   {
@@ -14641,8 +14675,8 @@ export const cases = [
         "priority": "essential",
         "summary": "Seri tam kan sayımında erken lenfopeni ve hafif trombosit düşüklüğü saptandı.",
         "findings": [
-          "Hematopoietik etkilenme akut radyasyon sendromunu destekler.",
-          "Erken ve hızlı lenfosit düşüşü hematopoetik etkilenmeyi destekler."
+          "Hematopoietik etkilenme bu klinik paternnu klinik yorumda önemlidir.",
+          "Erken ve hızlı lenfosit düşüşü hematopoetik etkilenmeyi klinik yorumda önemlidir."
         ],
         "rows": [
           [
@@ -14703,8 +14737,8 @@ export const cases = [
         "priority": "essential",
         "summary": "Dozimetri kaydında tüm vücut eşdeğer doz yaklaşık 2.6 Gy olarak hesaplandı.",
         "findings": [
-          "Doz düzeyi hematopoetik akut radyasyon sendromu ile uyumludur.",
-          "Prodromal yakınmaların erken başlaması anlamlı sistemik maruziyeti destekler."
+          "Doz düzeyi hematopoetik bu klinik patern paternini gösterir.",
+          "Prodromal yakınmaların erken başlaması anlamlı sistemik maruziyeti klinik yorumda önemlidir."
         ],
         "rows": [
           [
@@ -14949,7 +14983,7 @@ export const cases = [
         "priority": "essential",
         "summary": "İndirekt bilirubin ve LDH yüksek, haptoglobin düşük saptandı. Bulgular intravasküler hemolizle uyumludur.",
         "findings": [
-          "İndirekt hiperbilirubinemi hemolizi destekler.",
+          "İndirekt hiperbilirubinemi hemolizi klinik yorumda önemlidir.",
           "Düşük haptoglobin dolaşım içi hemoglobini bağladığını gösterir."
         ],
         "rows": [
@@ -14984,7 +15018,7 @@ export const cases = [
         "label": "Periferik yayma",
         "type": "microscopy",
         "priority": "essential",
-        "summary": "Heinz cisimcikleri ve ısırılmış eritrositler görüldü. Bulgular oksidatif eritrosit hasarını destekler.",
+        "summary": "Heinz cisimcikleri ve ısırılmış eritrositler görüldü.",
         "findings": [
           "Bite cell görünümü dalakta hasarlı hemoglobinin temizlenmesiyle ilişkilidir.",
           "Sferosit baskınlığı olmadığı için herediter sferositoz geri plandadır."
@@ -15015,7 +15049,7 @@ export const cases = [
         "label": "İdrar analizi",
         "type": "urine",
         "priority": "useful",
-        "summary": "İdrarda hemoglobin pozitif, eritrosit az saptandı. Bu patern hemoglobinüri ile uyumludur.",
+        "summary": "İdrarda hemoglobin pozitif, eritrosit az saptandı. Bu patern hemoglobinüri paternini gösterir.",
         "findings": [
           "Koyu idrar hemolizle açıklanır.",
           "Çok sayıda eritrosit olmaması primer hematüriyi geri plana iter."
@@ -15268,8 +15302,8 @@ export const cases = [
         "priority": "essential",
         "summary": "EKG’de ardışık derivasyonlarda ST elevasyonu izlendi.",
         "findings": [
-          "Akut transmural miyokard hasarı paternini destekler.",
-          "Doku düzeyinde koagülasyon nekrozu beklenir."
+          "Akut transmural miyokard hasarı paternini klinik yorumda önemlidir.",
+          "Doku düzeyinde bu klinik patern beklenir."
         ],
         "rows": [
           [
@@ -15338,13 +15372,13 @@ export const cases = [
       },
       {
         "id": "histoloji-nekroz-tipi-18",
-        "label": "Histoloji/nekroz tipi",
+        "label": "Histolojik doku hasarı paterni",
         "type": "pathology",
         "priority": "situational",
-        "summary": "Histolojik patern koagülasyon nekrozu ile uyumlu saptandı.",
+        "summary": "Miyokard liflerinin hücre konturları korunmuş, sitoplazma eozinofilikleşmiş ve çekirdek boyanması kaybolmuş izlenir.",
         "findings": [
-          "Miyokard enfarktüsünde klasik nekroz tipi budur.",
-          "Likefaksiyon nekrozu beyin/apseyle daha ilişkilidir."
+          "Protein denatürasyonu baskın morfolojik patern oluşturur.",
+          "Beyin dokusundaki sıvılaşma paterni izlenmez."
         ],
         "rows": [
           [
@@ -15357,7 +15391,7 @@ export const cases = [
             "Hücre konturu",
             "Korunmuş gölgeler",
             "Normal",
-            "Uyumlu"
+            "Yorum gerektirir"
           ]
         ]
       }
@@ -15541,7 +15575,7 @@ export const cases = [
         "Troponin yüksekliği"
       ],
       "historySummary": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz paternini düşündüren klasik bir bulgu paterni oluşturur.",
-      "priorityFocus": "Şiddetli göğüs ağrısı karar verdirici klinik ipucudur; patoloji cevabı tedavi cevabından ayrıdır: tanı/tedavi PCI; morfolojik tip koagülasyon nekrozudur."
+      "priorityFocus": "Şiddetli göğüs ağrısı karar verdirici klinik ipucudur; patoloji cevabı tedavi cevabından ayrıdır: tanı/tedavi PCI; morfolojik tip ilgili klinik tablodur."
     }
   },
   {
@@ -15602,7 +15636,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Lökositoz ve CRP yüksekliği saptandı.",
         "findings": [
-          "Enfeksiyöz süreç ve apse ihtimalini destekler.",
+          "Enfeksiyöz süreç ve apse ihtimalini klinik yorumda önemlidir.",
           "Steril dejeneratif süreç daha geri plandadır."
         ],
         "rows": [
@@ -15647,13 +15681,13 @@ export const cases = [
       },
       {
         "id": "patoloji-nekroz-degerlendirmesi-19",
-        "label": "Patoloji/nekroz",
+        "label": "Patolojik doku hasarı paterni",
         "type": "pathology",
         "priority": "situational",
-        "summary": "Patoloji örneğinde likefaksiyon nekrozu ve yoğun nötrofilik inflamasyon izlendi.",
+        "summary": "Beyin dokusunda santrali sıvılaşmış kaviter alan, yoğun nötrofilik inflamasyon ve doku mimarisinde çözülme izlenir.",
         "findings": [
-          "Beyin apsesiyle uyumlu nekroz tipi gösterilir.",
-          "Kazeifiye granülom paterni değildir."
+          "Enzimatik sindirim baskındır.",
+          "Hücre konturlarının uzun süre korunduğu solid patern izlenmez."
         ],
         "rows": [
           [
@@ -15835,8 +15869,8 @@ export const cases = [
         "Lökositoz ve CRP yüksek",
         "Klinik mekanizma ile uyumlu ayırıcı tanı paterni"
       ],
-      "historySummary": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir. Beyin MR'ında halka tarzı kontrastlanan lezyon görülür. Beyin dokusunda enfeksiyon/iskemi sonrası likefaksiyon nekrozu beklenir.",
-      "priorityFocus": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile karar verdirici klinik ipucudur; beyin infarktı ve apse likefaksiyon nekrozuyla ilişkilidir."
+      "historySummary": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir. Beyin MR'ında halka tarzı kontrastlanan lezyon görülür. Beyin dokusunda enfeksiyon/iskemi sonrası ilgili klinik tablo beklenir.",
+      "priorityFocus": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile karar verdirici klinik ipucudur; beyin infarktı ve apse ilgili klinik tabloyla ilişkilidir."
     }
   },
   {
@@ -15872,7 +15906,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Akciğer görüntülemede üst lob ağırlıklı kaviter lezyonlar izlendi.",
         "findings": [
-          "Reaktivasyon tüberkülozu paternini destekler.",
+          "Reaktivasyon tüberkülozu paternini klinik yorumda önemlidir.",
           "Basit viral bronşit görünümü değildir."
         ],
         "rows": [
@@ -16184,7 +16218,7 @@ export const cases = [
         "priority": "essential",
         "summary": "D-dimer yüksek, kan gazında hipoksemi ve respiratuvar alkaloz izlendi.",
         "findings": [
-          "Tromboemboli ihtimalini destekler.",
+          "Tromboemboli ihtimalini klinik yorumda önemlidir.",
           "D-dimer tek başına kesin tanı değildir."
         ],
         "rows": [
@@ -16215,7 +16249,7 @@ export const cases = [
         "priority": "essential",
         "summary": "BT pulmoner anjiyografide segmenter pulmoner arter dolum defekti saptandı.",
         "findings": [
-          "Pulmoner emboli tanısı görüntüleme ile doğrulanır.",
+          "Pulmoner emboli tanısı görüntüleme ile objektif olarak gösterilir.",
           "Pnömoni veya pnömotoraks ana bulgu değildir."
         ],
         "rows": [
@@ -16817,7 +16851,7 @@ export const cases = [
         "label": "SLE serolojisi ve aktivite paneli",
         "type": "lab",
         "priority": "essential",
-        "summary": "ANA pozitif, anti-dsDNA yüksek, C3 ve C4 düşük saptanır; bulgular aktif SLE ve nefrit riski lehinedir.",
+        "summary": "ANA pozitif, anti-dsDNA yüksek, C3 ve C4 düşük saptanır.",
         "findings": [
           "İmmün kompleks aktivitesi ve aktif SLE desteklenir.",
           "Böbrek tutulumu açısından risk yüksektir."
@@ -17141,7 +17175,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Schirmer testinde 5 dakikada gözyaşı 3 mm ölçüldü; belirgin lakrimal hiposekresyon saptandı.",
         "findings": [
-          "Objektif göz kuruluğu Sjögren sendromunu destekler.",
+          "Objektif göz kuruluğu bu klinik paternnu klinik yorumda önemlidir.",
           "Konjonktival enfeksiyon bulgusu baskın değildir."
         ],
         "rows": [
@@ -17160,7 +17194,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Anti-Ro/SSA pozitif, Anti-La/SSB pozitif saptandı.",
         "findings": [
-          "Sjögren sendromu için serolojik destek vardır.",
+          "bu klinik patern için serolojik destek vardır.",
           "İzole dehidratasyon bu otoantikorları açıklamaz."
         ],
         "rows": [
@@ -17185,7 +17219,7 @@ export const cases = [
         "priority": "useful",
         "summary": "Minör tükürük bezi biyopsisinde fokal lenfositik sialadenit izlendi.",
         "findings": [
-          "Tanısal sınıflamayı destekler.",
+          "Tanısal sınıflamayı klinik yorumda önemlidir.",
           "Akut bakteriyel sialadenit paterni değildir."
         ],
         "rows": [
@@ -17211,7 +17245,7 @@ export const cases = [
         "summary": "Proteinüri ve mikroskobik hematüri saptanmadı; renal tutulum açısından aktif bulgu izlenmedi.",
         "findings": [
           "Proteinüri veya hematüri olmaması lupus nefriti gibi renal tutulumla giden ayırıcı tanıları geri plana iter.",
-          "Sjögren sendromunda tanıyı esas olarak sicca bulguları, Schirmer testi, otoantikorlar ve tükürük bezi değerlendirmesi destekler."
+          "bu klinik paternnda tanıyı esas olarak sicca bulguları, Schirmer testi, otoantikorlar ve tükürük bezi değerlendirmesi klinik yorumda önemlidir."
         ],
         "rows": [
           [
@@ -17756,7 +17790,7 @@ export const cases = [
         "priority": "essential",
         "summary": "Akım sitometrisinde CD19+ B hücreleri belirgin azaldı.",
         "findings": [
-          "B hücre maturasyon defekti Bruton agammaglobulinemisini destekler.",
+          "B hücre maturasyon defekti bu klinik paternni klinik yorumda önemlidir.",
           "T hücre yetmezliği baskın değildir."
         ],
         "rows": [
@@ -17770,7 +17804,7 @@ export const cases = [
             "T hücre sayısı",
             "Korunmuş",
             "Normal",
-            "Uyumlu"
+            "Yorum gerektirir"
           ]
         ]
       },
@@ -17800,7 +17834,7 @@ export const cases = [
         "priority": "useful",
         "summary": "Tetanos ve pnömokok antikor titreleri koruyucu düzeyin altında saptandı.",
         "findings": [
-          "Zayıf antikor yanıtı humoral immün yetmezliği destekler.",
+          "Zayıf antikor yanıtı humoral immün yetmezliği klinik yorumda önemlidir.",
           "T hücre aracılı ağır viral/fungal tablo baskın değildir."
         ],
         "rows": [
@@ -18035,7 +18069,7 @@ export const cases = [
         "priority": "essential",
         "summary": "HIV Ag/Ab testi reaktif, HIV RNA pozitif bulundu.",
         "findings": [
-          "Aktif HIV enfeksiyonu doğrulanır.",
+          "Aktif HIV enfeksiyonu objektif olarak gösterilir.",
           "Yalancı pozitif tarama olasılığı RNA ile azalır."
         ],
         "rows": [
@@ -18328,9 +18362,9 @@ export const cases = [
         "id": "tus-spot-child-abuse-head-imaging",
         "label": "Kontrastsız beyin BT/MR",
         "type": "imaging",
-        "summary": "Subdural kanama ile uyumlu ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir.",
+        "summary": "Subdural kanama paterninde ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir.",
         "findings": [
-          "Subdural kanama ile uyumlu ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir."
+          "Subdural kanama paterninde ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir."
         ],
         "priority": "targeted"
       },
@@ -18657,7 +18691,7 @@ export const cases = [
         "label": "Arter kan gazı",
         "type": "lab",
         "priority": "essential",
-        "summary": "Hipoksemi, hafif respiratuvar asidoz ve laktat yüksekliği saptandı. Bulgular asfiksi sonrası doku hipoksisini destekler.",
+        "summary": "Hipoksemi, hafif respiratuvar asidoz ve laktat yüksekliği saptandı.",
         "findings": [
           "Oksijenizasyon bozukluğu acil havayolu kararını etkiler.",
           "Laktat yüksekliği hipoperfüzyon/hipoksi kanıtıdır."
@@ -19424,7 +19458,7 @@ export const cases = [
         "Yara derinliği hastanın beyanıyla tam uyumlu değildir"
       ],
       "historySummary": "Yaranın kazara olduğunu söyler; ancak olay öyküsü kısa, tutarsız ve yara derinliği beyanla tam uyumlu değildir. Bilinci açık, vital bulguları stabildir.",
-      "priorityFocus": "Kesici-delici yaralanma, tutarsız olay öyküsü doğru seçeneği belirleyen temel ipucudur; kesici-delici yaralanmalar adli olgu olarak değerlendirilir."
+      "priorityFocus": "Kesici-delici yaralanma, tutarsız olay öyküsü klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -19562,7 +19596,7 @@ export const cases = [
         "Omuz ve diz ağrısı travma muayenesinin ayrıntılandırılmasını gerektirir"
       ],
       "historySummary": "Hasta motosiklet kazası sonrası acile getirilir. Kask taktığını, kısa süreli sersemlik yaşadığını ve sağ omuz-diz ağrısı olduğunu söyler. Alkol almadığını belirtir.",
-      "priorityFocus": "Trafik kazası, kısa süreli sersemlik, travma bulguları doğru seçeneği belirleyen temel ipucudur; trafik kazası olgularında adli bildirim/rapor süreci başlatılır."
+      "priorityFocus": "Trafik kazası, kısa süreli sersemlik, travma bulguları klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -19872,9 +19906,9 @@ export const cases = [
         "id": "tus-spot-poisoning-basic-tox",
         "label": "Hedefe yönelik toksikoloji paneli",
         "type": "toxicology",
-        "summary": "İdrarda benzodiazepin pozitif; etanol düzeyi 18 mg/dL; parasetamol düzeyi toksik aralıkta değil. Sonuçlar sedatif ilaç alımını destekler.",
+        "summary": "İdrarda benzodiazepin pozitif; etanol düzeyi 18 mg/dL; parasetamol düzeyi toksik aralıkta değil. Sonuçlar sedatif ilaç alımını klinik yorumda önemlidir.",
         "findings": [
-          "İdrarda benzodiazepin pozitif; etanol düzeyi 18 mg/dL; parasetamol düzeyi toksik aralıkta değil. Sonuçlar sedatif ilaç alımını destekler."
+          "İdrarda benzodiazepin pozitif; etanol düzeyi 18 mg/dL; parasetamol düzeyi toksik aralıkta değil. Sonuçlar sedatif ilaç alımını klinik yorumda önemlidir."
         ],
         "priority": "targeted",
         "rows": [
@@ -20009,7 +20043,7 @@ export const cases = [
         "Hasta sorulara tutarsız yanıt veriyor; öykü güvenilir değil"
       ],
       "historySummary": "Hasta evde bilinç bulanıklığı ve kusma sonrası getirilir. Yakınları, masada etiketsiz bir içecek şişesi ve ilaç blisterleri gördüklerini söyler. Hasta aralıklı uyanık, sorulara tutarsız yanıt verir.",
-      "priorityFocus": "Bilinç bulanıklığı, etiketsiz şişe/ilaç blisterleri, şüpheli zehirlenme doğru seçeneği belirleyen temel ipucudur; zehirlenmede ABC tedavisi örnek alma için bekletilmez."
+      "priorityFocus": "Bilinç bulanıklığı, etiketsiz şişe/ilaç blisterleri, şüpheli zehirlenme klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -20147,7 +20181,7 @@ export const cases = [
         "Hasta ağrılı; el yaralanması fonksiyonel risk taşır"
       ],
       "historySummary": "Hasta fabrikada pres makinesine sağ elini sıkıştırdıktan sonra acile gelir. İşverenin “basit yaralanma olarak yazılsın” dediğini belirtir. Hasta ağrılıdır, aktif masif kanama yoktur.",
-      "priorityFocus": "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi doğru seçeneği belirleyen temel ipucudur; iş kazasında objektif tıbbi kayıt ve bildirim esastır."
+      "priorityFocus": "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -20187,12 +20221,12 @@ export const cases = [
     },
     "question": "Bu olguda en uygun ilk yaklaşım hangisidir?",
     "diagnosis": {
-      "correct": "Oral/uygun antihistaminik tedavi, tetikleyiciden kaçınma önerisi ve yakın klinik izlem",
+      "correct": "Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma",
       "options": [
-        "Oral/uygun antihistaminik tedavi, tetikleyiciden kaçınma önerisi ve yakın klinik izlem",
-        "Hemen trombolitik tedavi başlamak",
-        "Geniş spektrumlu antibiyotik başlamak",
-        "Solunum sıkıntısı olmamasına rağmen rutin acil entübasyon yapmak"
+        "Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma",
+        "İntramüsküler adrenalin ve acil anafilaksi yönetimi",
+        "Sistemik kortikosteroidi tek tedavi olarak vermek",
+        "Geniş spektrumlu antibiyotik başlamak"
       ],
       "explanation": "Bu tablo izole akut ürtiker-hafif anjiyoödem ile uyumludur; hipotansiyon, wheezing, dispne, senkop, kusma veya çoklu sistem tutulumu yoktur. Bu nedenle ilk yaklaşım antihistaminik, tetikleyiciden kaçınma ve yakın izlem olmalıdır; anafilaksi bulgusu gelişirse IM adrenalin gerekir.",
       "pearls": [
@@ -20202,7 +20236,7 @@ export const cases = [
       ],
       "nextStep": "Hava yolu, solunum, dolaşım ve anafilaksi bulgularını hızla dışla. Oral/uygun antihistaminik ver ve tetikleyiciden kaçınmayı anlat. Solunum, hipotansiyon veya progresyon gelişirse IM adrenalin planıyla yakın izle.",
       "answerFeedback": {
-        "correctDiagnosis": "Oral/uygun antihistaminik tedavi, tetikleyiciden kaçınma önerisi ve yakın klinik izlem",
+        "correctDiagnosis": "Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma",
         "diagnosisMeta": "Ürtiker ile anafilaksiyi ayırt ederek ilk tedavi kararını verme",
         "shortDiagnosisMeta": "Acil karar",
         "whyCorrect": "Bu tablo izole akut ürtiker-hafif anjiyoödem ile uyumludur; hipotansiyon, wheezing, dispne, senkop, kusma veya çoklu sistem tutulumu yoktur. Bu nedenle ilk yaklaşım antihistaminik, tetikleyiciden kaçınma ve yakın izlem olmalıdır; anafilaksi bulgusu gelişirse IM adrenalin gerekir.",
@@ -20422,7 +20456,7 @@ export const cases = [
         "Klinik patern streptokokal farenjit sonrası kızılı destekliyor"
       ],
       "historySummary": "Çocuk 3 gündür ateş ve boğaz ağrısı sonrası gövdeden başlayıp yayılan ince döküntü nedeniyle getirilir. Aile döküntünün dokununca pütürlü hissedildiğini söyler.",
-      "priorityFocus": "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü kızıl için tipiktir; zımpara kağıdı döküntüsü ve farenjit Streptococcus pyogenes’i düşündürür."
+      "priorityFocus": "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü kızıl için tipiktir; zımpara kağıdı döküntüsü ve farenjit ilgili klinik tablo’i düşündürür."
     }
   },
   {
@@ -20561,7 +20595,7 @@ export const cases = [
         "Ateş yok; septik artrit lehine sistemik bulgu bulunmuyor"
       ],
       "historySummary": "Çocuk kaldırımdan inerken annesi tarafından elinden çekildikten sonra ağlamış ve sağ kolunu kullanmamaya başlamıştır. Düşme, direkt travma veya ateş öyküsü yoktur.",
-      "priorityFocus": "Elinden çekilme sonrası kolu kullanmama; ateş/direkt travma yok radius başı subluksasyonu için tipiktir; direkt travma/deformite yoksa kapalı redüksiyon ön plandadır."
+      "priorityFocus": "Elinden çekilme sonrası kolu kullanmama; ateş/direkt travma yok ilgili klinik tablo için tipiktir; direkt travma/deformite yoksa kapalı redüksiyon ön plandadır."
     }
   },
   {
@@ -20693,13 +20727,13 @@ export const cases = [
         "Enfeksiyon ve temas/izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, Koplik lekeleri",
+        "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, ilgili klinik tablo",
         "Aşıları eksik çocukta prodromal ateş ve öksürük var",
         "Koriza ve konjunktivit kızamığın “3C” bulgularını tamamlıyor",
         "Döküntü yüzden başlayıp gövdeye yayılıyor"
       ],
       "historySummary": "Aşıları eksik olan çocuk 4 gündür ateş, öksürük, burun akıntısı ve göz kızarıklığı sonrası yüzden başlayıp gövdeye yayılan döküntü ile getirilir.",
-      "priorityFocus": "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, Koplik lekeleri kızamık için yüksek verimli spot ipucudur; Koplik lekesi kızamıkta ayırt ettirici kabul edilir."
+      "priorityFocus": "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, ilgili klinik tablo kızamık için yüksek verimli spot ipucudur; Koplik lekesi kızamıkta ayırt ettirici kabul edilir."
     }
   },
   {
@@ -20836,7 +20870,7 @@ export const cases = [
         "Kan tadı yutma kanın arkaya akabileceğini gösterir; hasta öne eğilmelidir"
       ],
       "historySummary": "Hasta 20 dakikadır devam eden burun kanaması nedeniyle başvurur. Bilinci açık, yutkunmakla hafif kan tadı aldığını söyler. Antikoagülan kullanmaz, travma öyküsü yoktur.",
-      "priorityFocus": "Stabil anterior epistaksis doğru seçeneği belirleyen temel ipucudur; anterior epistaksiste ilk basamak: öne eğilme, burun kanatlarına 10-15 dakika direkt bası."
+      "priorityFocus": "Stabil anterior epistaksis klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -20974,7 +21008,7 @@ export const cases = [
         "Olay yeri ve deliller bozulmadan korunmalıdır"
       ],
       "historySummary": "Hasta evinde yalnız yaşarken yakınları tarafından ölü bulunur. Yakınları ölümün ne zaman gerçekleştiğini bilmez. Odada dağınıklık ve yerde kırık cam parçaları olduğu belirtilir.",
-      "priorityFocus": "Yalnız yaşayan kişide şüpheli ölüm koşulları doğru seçeneği belirleyen temel ipucudur; şüpheli ölümde defin ruhsatı düzenlenmez; adli makama bildirilir."
+      "priorityFocus": "Yalnız yaşayan kişide şüpheli ölüm koşulları klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -21028,7 +21062,7 @@ export const cases = [
         "priority": "essential",
         "summary": "El bileği ve parmak ekstansiyonu belirgin zayıf; birinci dorsal web aralığında hipoestezi var. Radial-ulnar nabızlar palpabl ve kapiller dolum normal.",
         "findings": [
-          "Damar yaralanması olmadan radial sinir motor-duyu defisitini destekler."
+          "Damar yaralanması olmadan radial sinir motor-duyu defisitini klinik yorumda önemlidir."
         ],
         "rows": [
           [
@@ -21047,7 +21081,7 @@ export const cases = [
             "Distal nabız ve kapiller dolum",
             "Korunmuş",
             "Korunmuş",
-            "Acil damar yaralanması lehine bulgu yok"
+            "Yorum gerektirir"
           ]
         ]
       },
@@ -21058,14 +21092,14 @@ export const cases = [
         "priority": "useful",
         "summary": "İmmobilizasyon sonrası kırık hizalanması kabul edilebilir sınırlarda izleniyor.",
         "findings": [
-          "Kontrol görüntüleme ortopedi izlemi ve stabilizasyon planını destekler."
+          "Kontrol görüntüleme ortopedi izlemi ve stabilizasyon planını klinik yorumda önemlidir."
         ],
         "rows": [
           [
             "Kontrol grafisi",
             "Kabul edilebilir hizalanma",
             "Belirgin deplasman yok",
-            "Takip planını destekler"
+            "Takip planını klinik yorumda önemlidir"
           ]
         ]
       }
@@ -21470,7 +21504,7 @@ export const cases = [
             "Boyun ultrasonografisi",
             "Hyoid komşuluğunda orta hat kistik lezyon",
             "Kistik lezyon yok",
-            "Tanıyı destekler"
+            "Klinik olarak anlamlı"
           ]
         ]
       }
@@ -21620,7 +21654,7 @@ export const cases = [
         "Boyun ön orta hatta şişlik"
       ],
       "historySummary": "Aile, çocuğun boyun ön orta hattında son aylarda fark edilen, zaman zaman büyüyen ağrısız bir şişlik olduğunu belirtir. Üst solunum yolu enfeksiyonlarından sonra belirginleştiği öğrenilir.",
-      "priorityFocus": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat karar verdirici klinik ipucudur; tiroglossal kanal kisti orta hattadır ve dil protrüzyonu ile hareket eder."
+      "priorityFocus": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat karar verdirici klinik ipucudur; ilgili klinik tablo orta hattadır ve dil protrüzyonu ile hareket eder."
     }
   },
   {
@@ -21674,14 +21708,14 @@ export const cases = [
         "priority": "useful",
         "summary": "Uterin kavitede intrauterin gebelik kesesi izlenmiyor; sağ adneksiyel bölgede heterojen kitle ve az miktarda serbest sıvı mevcut.",
         "findings": [
-          "Beta-hCG pozitifliği ile intrauterin kese yokluğu ve adneksiyel kitle ektopik gebelik lehinedir."
+          "Beta-hCG pozitifliği ile intrauterin kese yokluğu ve adneksiyel kitle bu klinik patern açısından anlamlıdır."
         ],
         "rows": [
           [
             "Transvajinal ultrasonografi",
             "İntrauterin kese yok; sağ adneksiyel kitle ve az serbest sıvı",
             "İntrauterin kese izlenmesi",
-            "Ektopik gebelik lehine"
+            "Yorum gerektirir"
           ]
         ]
       }
@@ -21838,11 +21872,11 @@ export const cases = [
         "Gebelik/postpartum fizyolojik risk"
       ],
       "distinctiveClues": [
-        "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik",
+        "ilgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik",
         "Altı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme"
       ],
       "historySummary": "Hasta son adet tarihine göre yaklaşık 6 haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır.",
-      "priorityFocus": "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik karar verdirici klinik ipucudur; üreme çağında karın ağrısı olan hastada gebelik mutlaka dışlanmalıdır."
+      "priorityFocus": "ilgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik karar verdirici klinik ipucudur; üreme çağında karın ağrısı olan hastada gebelik mutlaka dışlanmalıdır."
     }
   },
   {
@@ -21878,14 +21912,14 @@ export const cases = [
         "priority": "useful",
         "summary": "Eritrosit asetilkolinesteraz aktivitesi belirgin düşük saptandı.",
         "findings": [
-          "Düşük kolinesteraz aktivitesi organofosfat maruziyetini destekler; tedavi klinik şüpheyle geciktirilmez."
+          "Düşük kolinesteraz aktivitesi organofosfat maruziyetini klinik yorumda önemlidir; tedavi klinik şüpheyle geciktirilmez."
         ],
         "rows": [
           [
             "Eritrosit asetilkolinesteraz",
             "Belirgin düşük",
             "Referans aralıkta",
-            "Toksidromu destekler"
+            "Toksidromu klinik yorumda önemlidir"
           ]
         ]
       }
@@ -22204,10 +22238,10 @@ export const cases = [
         "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility",
         "Bol sulu ve kansız ishal sekresyonel ishali",
         "Dehidratasyon hızla gelişmiştir",
-        "Darting motility Vibrio cholerae için ayırt ettirici laboratuvar ipucudur"
+        "Darting motility ilgili klinik tablo için ayırt ettirici laboratuvar ipucudur"
       ],
       "historySummary": "49 yaşındaki kadın hasta Yemen seyahatinden kısa süre sonra pirinç suyu görünümünde çok sayıda sulu dışkılama, ağır susuzluk, halsizlik ve kas krampları ile başvurur. Dışkıda kan tariflemez ve karın ağrısı belirgin değildir.",
-      "priorityFocus": "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility doğru seçeneği belirleyen temel ipucudur; vibrio cholerae: pirinç suyu dışkı, hızlı dehidratasyon, darting motility."
+      "priorityFocus": "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -22368,7 +22402,7 @@ export const cases = [
         "Tedavi sonrası nötropeni gelişmesi gansiklovir toksisitesini"
       ],
       "historySummary": "28 yaşındaki erkek hastada tedavisiz HIV enfeksiyonu zemininde CMV retiniti tedavisi başlanır. Antiviral tedavinin ikinci haftasında ateşsiz halsizlik ve ağız içinde aft benzeri lezyonlar gelişir; ilaç yan etkisi sorgulanır.",
-      "priorityFocus": "AIDS/CMV retiniti tedavisi, gansiklovir sonrası nötropeni doğru seçeneği belirleyen temel ipucudur; gansiklovir/valgansiklovir: CMV tedavisi, nötropeni/kemik iliği baskılanması."
+      "priorityFocus": "AIDS/CMV retiniti tedavisi, gansiklovir sonrası nötropeni klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -22509,7 +22543,7 @@ export const cases = [
         "Streptokokal etken ve penisilin duyarlılığı TUS spot bilgisidir"
       ],
       "historySummary": "55 yaşındaki erkek hasta, yakın dönemde boğaz enfeksiyonu geçirdikten sonra eski safen ven çıkarım skarı çevresinde hızla yayılan ağrılı ve sıcak deri kızarıklığı fark eder. Lezyon tek taraflıdır ve kısa sürede ateş-halsizlik eşlik etmiştir.",
-      "priorityFocus": "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon doğru seçeneği belirleyen temel ipucudur; erizipel: keskin sınırlı, parlak-kırmızı, sıcak plak; etken çoğunlukla Streptococcus pyogenes."
+      "priorityFocus": "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -22650,7 +22684,7 @@ export const cases = [
         "Temas sonrası profilaksi seçenekleri HBV ile karıştırılmamalıdır"
       ],
       "historySummary": "Yaralanma hemen yıkanır, olay kayıt altına alınır ve kaynak hastanın HCV RNA pozitif olduğu öğrenilir.",
-      "priorityFocus": "HCV RNA pozitif kaynak, perkütan yaralanma doğru seçeneği belirleyen temel ipucudur; hCV iğne batmasında aşı/immünoglobulin yoktur."
+      "priorityFocus": "HCV RNA pozitif kaynak, perkütan yaralanma klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -22688,7 +22722,7 @@ export const cases = [
         "type": "clinical",
         "summary": "PPD önce 8 mm iken 17 mm ölçülür; akciğer grafisinde aktif infiltrasyon veya kavite saptanmaz.",
         "findings": [
-          "PPD dönüşümü yakın temas sonrası latent enfeksiyon lehinedir.",
+          "PPD dönüşümü yakın temas sonrası latent enfeksiyon açısından anlamlıdır.",
           "Normal akciğer grafisi aktif akciğer tüberkülozu olasılığını azaltır."
         ],
         "priority": "essential"
@@ -23101,7 +23135,7 @@ export const cases = [
       "triptaz"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Anafilaksi ayırıcı tanısında serum triptazın rolü",
+    "clinicalFocus": "Anafilakside triptaz yüksekliğini yorumlama",
     "demographics": "20 yaşında erkek",
     "setting": "Acil servis",
     "chiefComplaint": "Fıstıklı tatlıdan sonra boğazda şişme, kaşıntı, karın ağrısı ve baş dönmesi",
@@ -23120,26 +23154,26 @@ export const cases = [
     "investigations": [
       {
         "id": "tus-spot-tryptase",
-        "label": "Serum triptaz",
+        "label": "Akut serum triptaz ölçümü",
         "type": "lab",
-        "summary": "Akut reaksiyon sonrası örnekte triptaz yüksek saptanır; mast hücre aktivasyonunu destekler.",
+        "summary": "Akut reaksiyon sonrası alınan örnekte triptaz yüksek saptanır.",
         "findings": [
-          "Akut reaksiyon sonrası örnekte triptaz yüksek saptanır; mast hücre aktivasyonunu destekler."
+          "Mast hücre granül içeriğinin sistemik dolaşıma geçtiğini gösteren biyokimyasal patern."
         ],
         "priority": "useful",
         "rows": [
           [
             "Serum triptaz",
-            "Akut reaksiyon sonrası örnekte triptaz yüksek saptanır; mast hücre aktivasyonunu destekler.",
-            "Beklenen/karar eşiği",
-            "Karar verdirici"
+            "Yüksek",
+            "Bazal düzeyle karşılaştırılır",
+            "Yüksek"
           ]
         ]
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "Bu reaksiyonun mast hücre aktivasyonu ile ilişkisini desteklemek için en uygun tetkik hangisidir?",
+    "questionType": "diagnosis",
+    "question": "Akut reaksiyon sonrası yüksek triptaz sonucunun en doğru yorumu hangisidir?",
     "spotPearl": "Serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir.",
     "learningOutcome": "Bu spot olguda ana ipucunu (besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -23152,68 +23186,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q8",
     "diagnosis": {
-      "correct": "Serum triptaz düzeyi",
+      "correct": "Mast hücre aracılı sistemik aktivasyon",
       "options": [
-        "Serum triptaz düzeyi",
-        "Total IgE düzeyi",
-        "Troponin düzeyi",
-        "Kompleman C4 düzeyi"
+        "Mast hücre aracılı sistemik aktivasyon",
+        "İzole IgE sensitizasyonu",
+        "Kompleman aracılı herediter anjiyoödem",
+        "Miyokardiyal nekroz paterni"
       ],
-      "explanation": "Besin sonrası çoklu sistem alerjik reaksiyonda serum triptaz yüksekliği mast hücre aktivasyonunu destekler. Ancak anafilaksi klinik tanıdır; hipotansiyon veya solunum bulgusu varsa tedavi triptaz sonucunu beklemeden IM adrenalinle başlar.",
+      "explanation": "Akut çoklu sistem alerjik reaksiyondan sonra serum triptazının yükselmesi mast hücre degranülasyonunu destekler; tek başına total IgE yüksekliği akut sistemik aktivasyonu aynı güçte göstermez.",
       "pearls": [
-        "Serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir.",
-        "Triptaz tanıyı destekler; acil tedavi kararını geciktirmez.",
-        "Anafilakside ilk tedavi IM adrenalindir."
+        "Triptaz akut anafilaksi/mast hücre aktivasyonunu destekler.",
+        "Normal triptaz anafilaksiyi tamamen dışlamaz.",
+        "Tedavide gecikmeden IM adrenalin önceliklidir."
       ],
       "nextStep": "Önce hava yolu, solunum ve dolaşım bulgularını değerlendir. Anafilaksi kriterleri varsa IM adrenalin uygula. Tanıyı desteklemek için uygun zamanda serum triptaz örneği al ve izlem planla.",
       "answerFeedback": {
-        "correctDiagnosis": "Serum triptaz düzeyi",
-        "diagnosisMeta": "Anafilaksi ayırıcı tanısında serum triptazın rolü",
+        "correctDiagnosis": "Mast hücre aracılı sistemik aktivasyon",
+        "diagnosisMeta": "Anafilakside triptaz yüksekliğini yorumlama",
         "shortDiagnosisMeta": "Tetkik / Alerji",
-        "whyCorrect": "Besin sonrası çoklu sistem alerjik reaksiyonda serum triptaz yüksekliği mast hücre aktivasyonunu destekler. Ancak anafilaksi klinik tanıdır; hipotansiyon veya solunum bulgusu varsa tedavi triptaz sonucunu beklemeden IM adrenalinle başlar.",
+        "whyCorrect": "Akut çoklu sistem alerjik reaksiyondan sonra serum triptazının yükselmesi mast hücre degranülasyonunu destekler; tek başına total IgE yüksekliği akut sistemik aktivasyonu aynı güçte göstermez.",
         "whyWrong": {
-          "Total IgE düzeyi": "Total IgE düzeyi bu olguda elenir: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek. Karar verdiren ipucu besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu olduğu için doğru yanıt Serum triptaz düzeyi olmalıdır.",
-          "Troponin düzeyi": "Troponin düzeyi bu olguda elenir: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek. Karar verdiren ipucu besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu olduğu için doğru yanıt Serum triptaz düzeyi olmalıdır.",
-          "Kompleman C4 düzeyi": "Kompleman C4 düzeyi bu olguda elenir: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek. Karar verdiren ipucu besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu olduğu için doğru yanıt Serum triptaz düzeyi olmalıdır."
+          "İzole IgE sensitizasyonu": "İzole IgE sensitizasyonu ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
+          "Kompleman aracılı herediter anjiyoödem": "Kompleman aracılı herediter anjiyoödem ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
+          "Miyokardiyal nekroz paterni": "Miyokardiyal nekroz paterni ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır."
         },
         "evidenceChain": [
-          "Besin sonrası kısa sürede alerjik reaksiyon gelişmiş.",
-          "Çoklu sistem tutulumu mast hücre aracılı reaksiyonu düşündürür.",
-          "Akut dönemde triptaz yüksekliği mast hücre aktivasyonunu destekler."
+          "Besin sonrası çoklu sistem alerjik reaksiyon gelişmiştir.",
+          "Akut dönemde alınan örnekte triptaz yüksek saptanmıştır.",
+          "Triptaz mast hücre degranülasyonuyla ilişkilidir."
         ],
         "clinicalPearls": [
-          "Serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir.",
-          "Triptaz tanıyı destekler; acil tedavi kararını geciktirmez.",
-          "Anafilakside ilk tedavi IM adrenalindir."
+          "Triptaz akut anafilaksi/mast hücre aktivasyonunu destekler.",
+          "Normal triptaz anafilaksiyi tamamen dışlamaz.",
+          "Tedavide gecikmeden IM adrenalin önceliklidir."
         ],
         "pearls": [
-          "Serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir.",
-          "Triptaz tanıyı destekler; acil tedavi kararını geciktirmez.",
-          "Anafilakside ilk tedavi IM adrenalindir."
+          "Triptaz akut anafilaksi/mast hücre aktivasyonunu destekler.",
+          "Normal triptaz anafilaksiyi tamamen dışlamaz.",
+          "Tedavide gecikmeden IM adrenalin önceliklidir."
         ],
         "differentialComparison": {
-          "Total IgE düzeyi": {
-            "explanation": "Total IgE düzeyi bu olguda elenir: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek. Karar verdiren ipucu besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu olduğu için doğru yanıt Serum triptaz düzeyi olmalıdır.",
+          "İzole IgE sensitizasyonu": {
+            "explanation": "İzole IgE sensitizasyonu olguda daha zayıf kalır; karar verdirici veri Mast hücre aracılı sistemik aktivasyon lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu.",
-              "Çeldirici tuzak: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek.",
-              "Sınav incisi: Serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir."
+              "Ana ipucu: Besin sonrası çoklu sistem alerjik reaksiyon gelişmiştir.",
+              "Çeldirici tuzak: İzole IgE sensitizasyonu benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Troponin düzeyi": {
-            "explanation": "Troponin düzeyi bu olguda elenir: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek. Karar verdiren ipucu besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu olduğu için doğru yanıt Serum triptaz düzeyi olmalıdır.",
+          "Kompleman aracılı herediter anjiyoödem": {
+            "explanation": "Kompleman aracılı herediter anjiyoödem olguda daha zayıf kalır; karar verdirici veri Mast hücre aracılı sistemik aktivasyon lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu.",
-              "Çeldirici tuzak: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek.",
-              "Sınav incisi: Serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir."
+              "Ana ipucu: Besin sonrası çoklu sistem alerjik reaksiyon gelişmiştir.",
+              "Çeldirici tuzak: Kompleman aracılı herediter anjiyoödem benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Kompleman C4 düzeyi": {
-            "explanation": "Kompleman C4 düzeyi bu olguda elenir: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek. Karar verdiren ipucu besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu olduğu için doğru yanıt Serum triptaz düzeyi olmalıdır.",
+          "Miyokardiyal nekroz paterni": {
+            "explanation": "Miyokardiyal nekroz paterni olguda daha zayıf kalır; karar verdirici veri Mast hücre aracılı sistemik aktivasyon lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu.",
-              "Çeldirici tuzak: Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek.",
-              "Sınav incisi: Serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir."
+              "Ana ipucu: Besin sonrası çoklu sistem alerjik reaksiyon gelişmiştir.",
+              "Çeldirici tuzak: Miyokardiyal nekroz paterni benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -23231,7 +23262,7 @@ export const cases = [
         "spotClue": "besin sonrası çoklu sistem reaksiyon + mast hücre aktivasyonu.",
         "trap": "Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek."
       },
-      "question": "Bu reaksiyonun mast hücre aktivasyonu ile ilişkisini desteklemek için en uygun tetkik hangisidir?"
+      "question": "Akut reaksiyon sonrası yüksek triptaz sonucunun en doğru yorumu hangisidir?"
     },
     "title": "Besin sonrası çoklu sistem alerjik reaksiyon",
     "patientIntro": {
@@ -23247,7 +23278,7 @@ export const cases = [
         "Akut dönemde triptaz yüksekliği mast hücre aktivasyonunu destekler"
       ],
       "historySummary": "20 yaşındaki erkek hasta, fıstıklı tatlı yedikten kısa süre sonra yaygın kaşıntı, ürtiker, boğazda şişme hissi, karın ağrısı ve baş dönmesi tarif eder. Alerjik rinit ve astım öyküsü vardır.",
-      "priorityFocus": "Besin sonrası çoklu sistem reaksiyon, mast hücre aktivasyonu doğru seçeneği belirleyen temel ipucudur; serum triptaz anafilaksi/mast hücre aktivasyonunu destekleyen testtir."
+      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
     }
   },
   {
@@ -23282,15 +23313,15 @@ export const cases = [
         "id": "tus-spot-renovascular-k",
         "label": "Temel biyokimya",
         "type": "lab",
-        "summary": "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm lehine hipokalemi.",
+        "summary": "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm açısından hipokalemi.",
         "findings": [
-          "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm lehine hipokalemi."
+          "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm açısından hipokalemi."
         ],
         "priority": "useful",
         "rows": [
           [
             "Temel biyokimya",
-            "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm lehine hipokalemi.",
+            "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm açısından hipokalemi.",
             "Beklenen/karar eşiği",
             "Karar verdirici"
           ]
@@ -23407,10 +23438,10 @@ export const cases = [
         "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi",
         "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır",
         "Dirençli ağır hipertansiyon kısa sürede belirginleşmiş",
-        "Tekrarlayan ani akciğer ödemi renovasküler hipertansiyon için güçlü ipucudur"
+        "Tekrarlayan ani akciğer ödemi ilgili klinik tablo için güçlü ipucudur"
       ],
       "historySummary": "62 yaşındaki erkek hastada kısa süre içinde ağır ve dirençli hipertansiyon atakları ile tekrarlayan ani akciğer ödemi gelişmiştir. Diyabet ve uzun süreli sigara öyküsü vardır.",
-      "priorityFocus": "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi doğru seçeneği belirleyen temel ipucudur; renal arter stenozu: dirençli HT, flash akciğer ödemi, hipokalemi."
+      "priorityFocus": "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -23551,7 +23582,7 @@ export const cases = [
         "Verapamil negatif inotrop etkisi nedeniyle PAH’da uygun seçenek değildir"
       ],
       "historySummary": "Sağ kalp kateterizasyonu ile pulmoner hipertansiyon kesinleşen hastada tedavi seçenekleri gözden geçiriliyor.",
-      "priorityFocus": "PAH tedavisinde verapamilin negatif inotrop etkisi doğru seçeneği belirleyen temel ipucudur; pAH’da verapamilden kaçınılır; sağ ventrikül yetmezliğini kötüleştirebilir."
+      "priorityFocus": "PAH tedavisinde verapamilin negatif inotrop etkisi klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -23693,7 +23724,7 @@ export const cases = [
         "Klinik patern hipertansif akut pulmoner ödemi"
       ],
       "historySummary": "70 yaşındaki kadın hasta antihipertansif ilaçlarını düzensiz kullandıktan sonra ani başlayan şiddetli nefes darlığı ile acile başvurur. Önceden bilinen ciddi sistolik kalp yetersizliği öyküsü yoktur.",
-      "priorityFocus": "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok doğru seçeneği belirleyen temel ipucudur; hipertansif pulmoner ödemde temel hızlı hamle afterload azaltmaktır: IV nitrat/nitroprussid gibi vazodilatörler."
+      "priorityFocus": "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -23833,7 +23864,7 @@ export const cases = [
         "Kilo kaybı veya disfaji yokluğu endoskopi gereğini tamamen ortadan kaldırmaz"
       ],
       "historySummary": "Daha önce benzer yakınması olmayan hastada kilo kaybı, yutma güçlüğü veya kusma yok; ancak yakınmalar yeni başlamış ve hasta ileri yaş grubunda.",
-      "priorityFocus": "İleri yaşta yeni başlayan dispepsi doğru seçeneği belirleyen temel ipucudur; yeni başlayan dispepside ileri yaş endoskopi endikasyonudur."
+      "priorityFocus": "İleri yaşta yeni başlayan dispepsi klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -23994,7 +24025,7 @@ export const cases = [
         "Patern skuamöz epitelin intestinal tip kolumnar metaplazisini"
       ],
       "historySummary": "Soru, distal özofagusta görülen mukozal paternin hangi tanıyı düşündürdüğünü sorgular.",
-      "priorityFocus": "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü doğru seçeneği belirleyen temel ipucudur; barrett özofagusu: kronik GERD, distal özofagusta intestinal metaplazi."
+      "priorityFocus": "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -24154,7 +24185,7 @@ export const cases = [
         "Ateş, titreme ve belirgin sarılık yok; acil kolanjit paterni baskın değildir"
       ],
       "historySummary": "57 yaşındaki erkek hasta yağlı yemeklerden sonra artan sağ üst kadran ağrısı nedeniyle değerlendirilir. Ateş, titreme ve belirgin sarılık tariflemez; akut kolanjit bulgusu ön planda değildir.",
-      "priorityFocus": "Safra taşı, geniş koledok; kolanjit yok doğru seçeneği belirleyen temel ipucudur; mRCP koledok taşı şüphesinde noninvaziv biliyer görüntüleme sağlar."
+      "priorityFocus": "Safra taşı, geniş koledok; kolanjit yok klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -24169,7 +24200,7 @@ export const cases = [
       "SBP"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Sirozda asit + klinik kötüleşmede spontan bakteriyel peritonit için tanısal parasentez",
+    "clinicalFocus": "Sirotik asitte PMN eşiğini ve ilk tedaviyi yorumlama",
     "demographics": "HCV sirozlu erişkin hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Dalgınlık, uykuya eğilim ve karında hassasiyet",
@@ -24188,26 +24219,33 @@ export const cases = [
     "investigations": [
       {
         "id": "tus-spot-ascites-pmn",
-        "label": "Tanısal parasentez",
+        "label": "Tanısal parasentez ve asit sıvısı analizi",
         "type": "fluid",
-        "summary": "Asit sıvısında PMN sayımı istenir; ≥250/mm³ SBP lehinedir.",
+        "summary": "Asit sıvısında PMN 420/mm³ saptanır; kültür sonucu beklemededir.",
         "findings": [
-          "Asit sıvısında PMN sayımı istenir; ≥250/mm³ SBP lehinedir."
+          "PMN sayısı enfekte asit açısından kritik eşik değerin üzerindedir.",
+          "Kültür sonucu tedavi başlangıcını geciktirmemelidir."
         ],
         "priority": "useful",
         "rows": [
           [
-            "Tanısal parasentez",
-            "Asit sıvısında PMN sayımı istenir; ≥250/mm³ SBP lehinedir.",
-            "Beklenen/karar eşiği",
-            "Karar verdirici"
+            "Asit PMN",
+            "420/mm³",
+            "<250/mm³",
+            "Yüksek"
+          ],
+          [
+            "Asit kültürü",
+            "Beklemede",
+            "Üreme yok",
+            "Beklemede"
           ]
         ]
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "Bu hastanın değerlendirmesinde öncelikle hangi inceleme yapılmalıdır?",
+    "questionType": "treatment",
+    "question": "Asit sıvısında PMN ≥250/mm³ saptanan bu hastada en uygun sonraki adım hangisidir?",
     "spotPearl": "Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır.",
     "learningOutcome": "Bu spot olguda ana ipucunu (siroz + asit + mental durum değişikliği/karın hassasiyeti) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -24220,69 +24258,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q15",
     "diagnosis": {
-      "correct": "Asit sıvısında polimorfonükleer lökosit sayımı",
+      "correct": "Ampirik üçüncü kuşak sefalosporin tedavisi başlamak",
       "options": [
-        "Asit sıvısında polimorfonükleer lökosit sayımı",
-        "HCV RNA düzeyi",
-        "Üst GİS endoskopisi",
-        "Abdominal MR görüntüleme"
+        "Ampirik üçüncü kuşak sefalosporin tedavisi başlamak",
+        "HCV RNA sonucunu bekleyip tedaviyi ertelemek",
+        "Öncelikle elektif üst GİS endoskopisi planlamak",
+        "Semptomsuz izlemle parasentezi tekrarlamamak"
       ],
-      "explanation": "Sirozlu hastada asit, karın hassasiyeti ve yeni mental durum değişikliği spontan bakteriyel peritoniti düşündürür. İlk inceleme tanısal parasentez ve asit PMN sayımıdır; PMN ≥250/mm³ SBP lehine kabul edilir.",
+      "explanation": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP paternini düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır.",
       "pearls": [
-        "Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır.",
-        "SBP tanı eşiği: asit PMN ≥250/mm³.",
-        "SBP’de albümin ve uygun antibiyotik mortaliteyi azaltır."
+        "Sirotik asitte PMN ≥250/mm³ SBP için kritik eşiktir.",
+        "SBP şüphesinde tanısal parasentez geciktirilmemelidir.",
+        "Ampirik tedavide sıklıkla üçüncü kuşak sefalosporin tercih edilir."
       ],
       "nextStep": "Gecikmeden tanısal parasentez yap. Asit PMN, kültür ve temel analizleri gönder. SBP şüphesinde uygun antibiyotik ve albümin desteğini planla.",
       "answerFeedback": {
-        "correctDiagnosis": "Asit sıvısında polimorfonükleer lökosit sayımı",
-        "diagnosisMeta": "Sirozda asit + klinik kötüleşmede spontan bakteriyel peritonit için tanısal parasentez",
+        "correctDiagnosis": "Ampirik üçüncü kuşak sefalosporin tedavisi başlamak",
+        "diagnosisMeta": "Sirotik asitte PMN eşiğini ve ilk tedaviyi yorumlama",
         "shortDiagnosisMeta": "Tetkik / Yönetim",
-        "whyCorrect": "Sirozlu hastada asit, karın hassasiyeti ve yeni mental durum değişikliği spontan bakteriyel peritoniti düşündürür. İlk inceleme tanısal parasentez ve asit PMN sayımıdır; PMN ≥250/mm³ SBP lehine kabul edilir.",
+        "whyCorrect": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP paternini düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır.",
         "whyWrong": {
-          "HCV RNA düzeyi": "HCV RNA düzeyi bu olguda elenir: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak. Karar verdiren ipucu siroz + asit + mental durum değişikliği/karın hassasiyeti olduğu için doğru yanıt Asit sıvısında polimorfonükleer lökosit sayımı olmalıdır.",
-          "Üst GİS endoskopisi": "Üst GİS endoskopisi bu olguda elenir: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak. Karar verdiren ipucu siroz + asit + mental durum değişikliği/karın hassasiyeti olduğu için doğru yanıt Asit sıvısında polimorfonükleer lökosit sayımı olmalıdır.",
-          "Abdominal MR görüntüleme": "Abdominal MR görüntüleme bu olguda elenir: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak. Karar verdiren ipucu siroz + asit + mental durum değişikliği/karın hassasiyeti olduğu için doğru yanıt Asit sıvısında polimorfonükleer lökosit sayımı olmalıdır."
+          "HCV RNA sonucunu bekleyip tedaviyi ertelemek": "HCV RNA sonucunu bekleyip tedaviyi ertelemek ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
+          "Öncelikle elektif üst GİS endoskopisi planlamak": "Öncelikle elektif üst GİS endoskopisi planlamak ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
+          "Semptomsuz izlemle parasentezi tekrarlamamak": "Semptomsuz izlemle parasentezi tekrarlamamak ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır."
         },
         "evidenceChain": [
-          "Dekompanse siroz ve belirgin asit mevcut.",
-          "Dalgınlık/uykuya eğilim yeni gelişmiştir.",
-          "Karın hassasiyeti enfekte asiti düşündürür.",
-          "Asit PMN sayımı SBP tanısında karar verdiricidir."
+          "Siroz/asit zemininde dalgınlık ve karın hassasiyeti vardır.",
+          "Asit sıvısında PMN sayısı eşik değerin üzerindedir.",
+          "Bu durumda tedavi kültür sonucunu beklemeden başlatılır."
         ],
         "clinicalPearls": [
-          "Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır.",
-          "SBP tanı eşiği: asit PMN ≥250/mm³.",
-          "SBP’de albümin ve uygun antibiyotik mortaliteyi azaltır."
+          "Sirotik asitte PMN ≥250/mm³ SBP için kritik eşiktir.",
+          "SBP şüphesinde tanısal parasentez geciktirilmemelidir.",
+          "Ampirik tedavide sıklıkla üçüncü kuşak sefalosporin tercih edilir."
         ],
         "pearls": [
-          "Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır.",
-          "SBP tanı eşiği: asit PMN ≥250/mm³.",
-          "SBP’de albümin ve uygun antibiyotik mortaliteyi azaltır."
+          "Sirotik asitte PMN ≥250/mm³ SBP için kritik eşiktir.",
+          "SBP şüphesinde tanısal parasentez geciktirilmemelidir.",
+          "Ampirik tedavide sıklıkla üçüncü kuşak sefalosporin tercih edilir."
         ],
         "differentialComparison": {
-          "HCV RNA düzeyi": {
-            "explanation": "HCV RNA düzeyi bu olguda elenir: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak. Karar verdiren ipucu siroz + asit + mental durum değişikliği/karın hassasiyeti olduğu için doğru yanıt Asit sıvısında polimorfonükleer lökosit sayımı olmalıdır.",
+          "HCV RNA sonucunu bekleyip tedaviyi ertelemek": {
+            "explanation": "HCV RNA sonucunu bekleyip tedaviyi ertelemek olguda daha zayıf kalır; karar verdirici veri Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: siroz + asit + mental durum değişikliği/karın hassasiyeti.",
-              "Çeldirici tuzak: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak.",
-              "Sınav incisi: Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır."
+              "Ana ipucu: Siroz/asit zemininde dalgınlık ve karın hassasiyeti vardır.",
+              "Çeldirici tuzak: HCV RNA sonucunu bekleyip tedaviyi ertelemek benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Üst GİS endoskopisi": {
-            "explanation": "Üst GİS endoskopisi bu olguda elenir: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak. Karar verdiren ipucu siroz + asit + mental durum değişikliği/karın hassasiyeti olduğu için doğru yanıt Asit sıvısında polimorfonükleer lökosit sayımı olmalıdır.",
+          "Öncelikle elektif üst GİS endoskopisi planlamak": {
+            "explanation": "Öncelikle elektif üst GİS endoskopisi planlamak olguda daha zayıf kalır; karar verdirici veri Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: siroz + asit + mental durum değişikliği/karın hassasiyeti.",
-              "Çeldirici tuzak: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak.",
-              "Sınav incisi: Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır."
+              "Ana ipucu: Siroz/asit zemininde dalgınlık ve karın hassasiyeti vardır.",
+              "Çeldirici tuzak: Öncelikle elektif üst GİS endoskopisi planlamak benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Abdominal MR görüntüleme": {
-            "explanation": "Abdominal MR görüntüleme bu olguda elenir: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak. Karar verdiren ipucu siroz + asit + mental durum değişikliği/karın hassasiyeti olduğu için doğru yanıt Asit sıvısında polimorfonükleer lökosit sayımı olmalıdır.",
+          "Semptomsuz izlemle parasentezi tekrarlamamak": {
+            "explanation": "Semptomsuz izlemle parasentezi tekrarlamamak olguda daha zayıf kalır; karar verdirici veri Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: siroz + asit + mental durum değişikliği/karın hassasiyeti.",
-              "Çeldirici tuzak: Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak.",
-              "Sınav incisi: Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır."
+              "Ana ipucu: Siroz/asit zemininde dalgınlık ve karın hassasiyeti vardır.",
+              "Çeldirici tuzak: Semptomsuz izlemle parasentezi tekrarlamamak benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -24300,7 +24334,7 @@ export const cases = [
         "spotClue": "siroz + asit + mental durum değişikliği/karın hassasiyeti.",
         "trap": "Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP’yi atlamak."
       },
-      "question": "Bu hastanın değerlendirmesinde öncelikle hangi inceleme yapılmalıdır?"
+      "question": "Asit sıvısında PMN ≥250/mm³ saptanan bu hastada en uygun sonraki adım hangisidir?"
     },
     "title": "Dalgınlık, uykuya eğilim ve karında hassasiyet",
     "patientIntro": {
@@ -24316,7 +24350,7 @@ export const cases = [
         "Karın hassasiyeti enfekte asiti"
       ],
       "historySummary": "Dekompanse sirozu olan hastada son iki günde dikkat azalması ve hafif uykuya eğilim gelişiyor; muayenede belirgin asit var.",
-      "priorityFocus": "Siroz, asit, mental durum değişikliği/karın hassasiyeti varis kanaması olasılığını yükseltir; resüsitasyonla birlikte vazoaktif tedavi, antibiyotik ve erken endoskopi planlanır."
+      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
     }
   },
   {
@@ -24353,7 +24387,7 @@ export const cases = [
         "type": "lab",
         "summary": "Na 126 mEq/L, K 5.8 mEq/L, glukoz 58 mg/dL. Hiponatremi, hiperpotasemi ve hipoglisemi primer adrenal krizle uyumludur.",
         "findings": [
-          "Na 126 mEq/L, K 5.8 mEq/L ve glukoz 58 mg/dL acil glukokortikoid-mineralokortikoid eksen yetmezliğini destekler."
+          "Na 126 mEq/L, K 5.8 mEq/L ve glukoz 58 mg/dL acil glukokortikoid-mineralokortikoid eksen yetmezliğini klinik yorumda önemlidir."
         ],
         "priority": "essential",
         "rows": [
@@ -24489,7 +24523,7 @@ export const cases = [
         "Na düşük, K yüksek ve glukoz düşüktür"
       ],
       "historySummary": "Deri ve mukozalarda uzun süredir artan koyulaşma fark edilmektedir.",
-      "priorityFocus": "Hiperpigmentasyon, hipotansiyon, hiponatremi/hiperpotasemi/hipoglisemi doğru seçeneği belirleyen temel ipucudur; adrenal kriz tedavisi: IV hidrokortizon, izotonik salin, gerekirse dekstroz."
+      "priorityFocus": "Hiperpigmentasyon, hipotansiyon, hiponatremi/hiperpotasemi/hipoglisemi klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -24526,7 +24560,7 @@ export const cases = [
         "type": "lab",
         "summary": "sT4 yüksek, TSH baskılı, TRAb negatif, tiroglobulin düşük ve radyoaktif iyot tutulumu baskılıdır.",
         "findings": [
-          "Düşük tiroglobulin ve düşük radyoaktif iyot tutulumu eksojen tiroid hormonu alımını destekler."
+          "Düşük tiroglobulin ve düşük radyoaktif iyot tutulumu eksojen tiroid hormonu alımını klinik yorumda önemlidir."
         ],
         "priority": "essential",
         "rows": [
@@ -24668,7 +24702,7 @@ export const cases = [
         "Tiroglobulin düşük ve radyoaktif iyot tutulumu baskılıdır"
       ],
       "historySummary": "20 yaşındaki kadın hasta çarpıntı, titreme, sinirlilik ve kilo kaybı ataklarıyla başvurur. Tiroid bezi ağrısızdır; hastanın eksojen tiroid hormonu kullanımı başlangıçta net değildir.",
-      "priorityFocus": "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake doğru seçeneği belirleyen temel ipucudur; düşük tiroglobulin, düşük uptake = eksojen hormon alımı/faktitisya düşün."
+      "priorityFocus": "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -24682,7 +24716,7 @@ export const cases = [
       "hook effect"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Prolaktinoma şüphesinde hook effect için serum dilüsyonu",
+    "clinicalFocus": "Makroadenomda hook effect nedeniyle yalancı düşük prolaktin sonucunu tanıma",
     "demographics": "42 yaşında erkek",
     "setting": "Endokrinoloji polikliniği",
     "chiefComplaint": "Baş ağrısı ve libido azalması",
@@ -24702,19 +24736,19 @@ export const cases = [
     "investigations": [
       {
         "id": "pituitary-mri-prolactin-dilution",
-        "label": "Hipofiz MR ve dilüe prolaktin ölçümü",
+        "label": "Hipofiz MR ve prolaktin ölçüm paterni",
         "type": "lab",
-        "summary": "MR’da 2 cm hipofiz makroadenomu izlenir; bazal prolaktin beklenenden düşükken dilüsyon sonrası belirgin yüksek ölçülür.",
+        "summary": "MR’da 2 cm hipofiz makroadenomu izlenir; bazal prolaktin beklenenden düşük, dilüsyon sonrası belirgin yüksek ölçülür.",
         "findings": [
-          "Makroadenom boyutuna göre düşük görünen prolaktin hook effect düşündürür.",
-          "Serum dilüsyonu yalancı düşük sonucu düzeltir."
+          "Kitle boyutu ile bazal hormon düzeyi arasında uyumsuzluk vardır.",
+          "Dilüsyon sonrası ölçümde belirgin artış izlenir."
         ],
         "priority": "essential"
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "Prolaktinoma tanısını netleştirmek için ilk olarak hangi işlem daha uygundur?",
+    "questionType": "diagnosis",
+    "question": "Makroadenom boyutu ile başlangıç prolaktin sonucu arasındaki uyumsuzluğun en doğru açıklaması hangisidir?",
     "spotPearl": "Hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir.",
     "learningOutcome": "Bu spot olguda ana ipucunu (makroadenom + beklenenden düşük prolaktin) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -24727,69 +24761,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q18",
     "diagnosis": {
-      "correct": "Serumun dilüe edilerek prolaktin ölçülmesi",
+      "correct": "Hook effect nedeniyle yalancı düşük immünoassay sonucu",
       "options": [
-        "Serumun dilüe edilerek prolaktin ölçülmesi",
-        "TRH stimülasyon testi",
-        "Prolaktin antikoru bakılması",
-        "Testosteron düzeyi ölçülmesi"
+        "Hook effect nedeniyle yalancı düşük immünoassay sonucu",
+        "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi",
+        "Dopamin agonistine bağlı tümör küçülmesi",
+        "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi"
       ],
-      "explanation": "Büyük hipofiz makroadenomunda prolaktin düzeyinin beklenenden düşük ölçülmesi hook effect düşündürür. İlk doğru işlem serumun dilüe edilerek prolaktinin yeniden ölçülmesidir; dilüsyon sonrası belirgin yükselme prolaktinomayı ortaya çıkarır.",
+      "explanation": "Büyük hipofiz makroadenomunda beklenenden düşük prolaktin ölçümü, çok yüksek antijen düzeyinin immünoassay sinyalini bozduğu hook effect ile açıklanabilir; serum dilüsyonu sonrası belirgin yüksek ölçüm bu mekanizmayı destekler.",
       "pearls": [
-        "Hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir.",
-        "Makroadenom + düşük/uyumsuz prolaktin varsa dilüsyonla tekrar ölç.",
-        "Prolaktinomada tedavide dopamin agonistleri ön plandadır."
+        "Hook effect çok yüksek antijen düzeyinde yalancı düşük sonuç oluşturabilir.",
+        "Makroadenom-prolaktin uyumsuzluğunda serum dilüsyonu istenir.",
+        "TRH stimülasyon testi bu senaryoda ilk çözüm değildir."
       ],
       "nextStep": "Makroadenom boyutu ile prolaktin düzeyinin uyumunu kontrol et. Hook effect için serum dilüsyonu iste. Gerçek prolaktin düzeyine göre prolaktinoma tedavi planını yap.",
       "answerFeedback": {
-        "correctDiagnosis": "Serumun dilüe edilerek prolaktin ölçülmesi",
-        "diagnosisMeta": "Prolaktinoma şüphesinde hook effect için serum dilüsyonu",
+        "correctDiagnosis": "Hook effect nedeniyle yalancı düşük immünoassay sonucu",
+        "diagnosisMeta": "Makroadenomda hook effect nedeniyle yalancı düşük prolaktin sonucunu tanıma",
         "shortDiagnosisMeta": "Tetkik / Endokrinoloji",
-        "whyCorrect": "Büyük hipofiz makroadenomunda prolaktin düzeyinin beklenenden düşük ölçülmesi hook effect düşündürür. İlk doğru işlem serumun dilüe edilerek prolaktinin yeniden ölçülmesidir; dilüsyon sonrası belirgin yükselme prolaktinomayı ortaya çıkarır.",
+        "whyCorrect": "Büyük hipofiz makroadenomunda beklenenden düşük prolaktin ölçümü, çok yüksek antijen düzeyinin immünoassay sinyalini bozduğu hook effect ile açıklanabilir; serum dilüsyonu sonrası belirgin yüksek ölçüm bu mekanizmayı destekler.",
         "whyWrong": {
-          "TRH stimülasyon testi": "TRH stimülasyon testi bu olguda elenir: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak. Karar verdiren ipucu makroadenom + beklenenden düşük prolaktin olduğu için doğru yanıt Serumun dilüe edilerek prolaktin ölçülmesi olmalıdır.",
-          "Prolaktin antikoru bakılması": "Prolaktin antikoru bakılması bu olguda elenir: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak. Karar verdiren ipucu makroadenom + beklenenden düşük prolaktin olduğu için doğru yanıt Serumun dilüe edilerek prolaktin ölçülmesi olmalıdır.",
-          "Testosteron düzeyi ölçülmesi": "Testosteron düzeyi ölçülmesi bu olguda elenir: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak. Karar verdiren ipucu makroadenom + beklenenden düşük prolaktin olduğu için doğru yanıt Serumun dilüe edilerek prolaktin ölçülmesi olmalıdır."
+          "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi": "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
+          "Dopamin agonistine bağlı tümör küçülmesi": "Dopamin agonistine bağlı tümör küçülmesi ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
+          "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi": "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır."
         },
         "evidenceChain": [
           "MR’da 2 cm hipofiz makroadenomu vardır.",
-          "Baş ağrısı, libido azalması ve görme alanı yakınması kitle etkisini düşündürür.",
-          "Bazal prolaktin tümör boyutuna göre düşük görünmektedir.",
-          "Dilüsyon sonrası prolaktin belirgin yüksek ölçülür."
+          "Bazal prolaktin kitle boyutuna göre beklenenden düşük görünmüştür.",
+          "Dilüsyon sonrası prolaktin belirgin yüksek ölçülmüştür."
         ],
         "clinicalPearls": [
-          "Hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir.",
-          "Makroadenom + düşük/uyumsuz prolaktin varsa dilüsyonla tekrar ölç.",
-          "Prolaktinomada tedavide dopamin agonistleri ön plandadır."
+          "Hook effect çok yüksek antijen düzeyinde yalancı düşük sonuç oluşturabilir.",
+          "Makroadenom-prolaktin uyumsuzluğunda serum dilüsyonu istenir.",
+          "TRH stimülasyon testi bu senaryoda ilk çözüm değildir."
         ],
         "pearls": [
-          "Hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir.",
-          "Makroadenom + düşük/uyumsuz prolaktin varsa dilüsyonla tekrar ölç.",
-          "Prolaktinomada tedavide dopamin agonistleri ön plandadır."
+          "Hook effect çok yüksek antijen düzeyinde yalancı düşük sonuç oluşturabilir.",
+          "Makroadenom-prolaktin uyumsuzluğunda serum dilüsyonu istenir.",
+          "TRH stimülasyon testi bu senaryoda ilk çözüm değildir."
         ],
         "differentialComparison": {
-          "TRH stimülasyon testi": {
-            "explanation": "TRH stimülasyon testi bu olguda elenir: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak. Karar verdiren ipucu makroadenom + beklenenden düşük prolaktin olduğu için doğru yanıt Serumun dilüe edilerek prolaktin ölçülmesi olmalıdır.",
+          "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi": {
+            "explanation": "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi olguda daha zayıf kalır; karar verdirici veri Hook effect nedeniyle yalancı düşük immünoassay sonucu lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: makroadenom + beklenenden düşük prolaktin.",
-              "Çeldirici tuzak: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak.",
-              "Sınav incisi: Hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir."
+              "Ana ipucu: MR’da 2 cm hipofiz makroadenomu vardır.",
+              "Çeldirici tuzak: Primer hipotiroidiye bağlı gerçek hiperprolaktinemi benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Prolaktin antikoru bakılması": {
-            "explanation": "Prolaktin antikoru bakılması bu olguda elenir: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak. Karar verdiren ipucu makroadenom + beklenenden düşük prolaktin olduğu için doğru yanıt Serumun dilüe edilerek prolaktin ölçülmesi olmalıdır.",
+          "Dopamin agonistine bağlı tümör küçülmesi": {
+            "explanation": "Dopamin agonistine bağlı tümör küçülmesi olguda daha zayıf kalır; karar verdirici veri Hook effect nedeniyle yalancı düşük immünoassay sonucu lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: makroadenom + beklenenden düşük prolaktin.",
-              "Çeldirici tuzak: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak.",
-              "Sınav incisi: Hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir."
+              "Ana ipucu: MR’da 2 cm hipofiz makroadenomu vardır.",
+              "Çeldirici tuzak: Dopamin agonistine bağlı tümör küçülmesi benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Testosteron düzeyi ölçülmesi": {
-            "explanation": "Testosteron düzeyi ölçülmesi bu olguda elenir: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak. Karar verdiren ipucu makroadenom + beklenenden düşük prolaktin olduğu için doğru yanıt Serumun dilüe edilerek prolaktin ölçülmesi olmalıdır.",
+          "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi": {
+            "explanation": "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi olguda daha zayıf kalır; karar verdirici veri Hook effect nedeniyle yalancı düşük immünoassay sonucu lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: makroadenom + beklenenden düşük prolaktin.",
-              "Çeldirici tuzak: Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak.",
-              "Sınav incisi: Hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir."
+              "Ana ipucu: MR’da 2 cm hipofiz makroadenomu vardır.",
+              "Çeldirici tuzak: Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -24807,7 +24837,7 @@ export const cases = [
         "spotClue": "makroadenom + beklenenden düşük prolaktin.",
         "trap": "Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak."
       },
-      "question": "Prolaktinoma tanısını netleştirmek için ilk olarak hangi işlem daha uygundur?"
+      "question": "Makroadenom boyutu ile başlangıç prolaktin sonucu arasındaki uyumsuzluğun en doğru açıklaması hangisidir?"
     },
     "title": "Hipofiz makroadenomunda düşük görünen prolaktin",
     "patientIntro": {
@@ -24823,7 +24853,7 @@ export const cases = [
         "Bazal prolaktin tümör boyutuna göre düşük görünmektedir"
       ],
       "historySummary": "42 yaşındaki erkek hasta baş ağrısı, libido azalması ve hafif görme alanı yakınmasıyla endokrinolojiye başvurur. Büyük hipofizer lezyon şüphesinde prolaktin düzeyinin beklenenden düşük görünmesi tanısal sorun yaratır.",
-      "priorityFocus": "Makroadenom, beklenenden düşük prolaktin doğru seçeneği belirleyen temel ipucudur; hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir."
+      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
     }
   },
   {
@@ -24980,7 +25010,7 @@ export const cases = [
       "akım sitometri"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "KLL tanısında periferik kan akım sitometri ile immünfenotiplendirme",
+    "clinicalFocus": "Lenfositozda CLL immünfenotipini yorumlama",
     "demographics": "75 yaşında erkek",
     "setting": "Hematoloji polikliniği",
     "chiefComplaint": "Boyun ve aksillada uzun süredir lenf nodu şişliği",
@@ -24999,11 +25029,11 @@ export const cases = [
     "investigations": [
       {
         "id": "cll-cbc-smear-flow",
-        "label": "Hemogram, yayma ve akım sitometri",
+        "label": "Hemogram, periferik yayma ve immünfenotip",
         "type": "lab",
-        "summary": "Mutlak lenfositoz ve olgun küçük lenfositler izlenir; akım sitometride CD5+ CD23+ klonal B hücre popülasyonu saptanır.",
+        "summary": "Mutlak lenfositoz ve olgun küçük lenfositler izlenir; CD5+ CD23+ klonal B hücre popülasyonu saptanır.",
         "findings": [
-          "Periferik kan akım sitometrisi KLL tanısı için temel testtir."
+          "Lenfosit artışı reaktif değil klonal B hücre popülasyonu ile ilişkilidir."
         ],
         "priority": "essential",
         "rows": [
@@ -25023,8 +25053,8 @@ export const cases = [
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "Bu aşamada tanı için en uygun inceleme hangisidir?",
+    "questionType": "diagnosis",
+    "question": "CD5+ CD23+ klonal B hücre popülasyonu ile birlikte bu hematolojik patern en çok hangi tanıyı destekler?",
     "spotPearl": "CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir.",
     "learningOutcome": "Bu spot olguda ana ipucunu (yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -25037,69 +25067,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q20",
     "diagnosis": {
-      "correct": "Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme",
+      "correct": "Kronik lenfositik lösemi",
       "options": [
-        "Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme",
-        "PET-BT çekimi",
-        "BCR-ABL PCR",
-        "Kemik iliğinde del17p incelemesi"
+        "Kronik lenfositik lösemi",
+        "Mantle hücreli lenfoma",
+        "Reaktif viral lenfositoz",
+        "Kronik miyeloid lösemi"
       ],
-      "explanation": "Uzun süredir lenfositozu olan yaşlı hastada küçük olgun lenfositler CLL’yi düşündürür; tanıyı doğrulayan temel inceleme periferik kanda akım sitometri ile lenfosit immünfenotiplendirmedir. PET-BT veya del17p tanı ilk basamağı değil, seçilmiş evreleme/prognoz-tedavi kararı basamaklarıdır.",
+      "explanation": "Yaşlı hastada kalıcı lenfositoz, küçük olgun lenfositler ve CD5+ CD23+ klonal B hücre popülasyonu kronik lenfositik lösemi için tipik bir immünfenotip oluşturur.",
       "pearls": [
-        "CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir.",
-        "Klasik immünfenotip: CD5+ CD23+ klonal B hücre.",
-        "del17p tedavi/prognoz kararında önemlidir; ilk tanı testi değildir."
+        "CLL tipik olarak CD5+ CD23+ klonal B hücreleriyle seyreder.",
+        "Mantle hücreli lenfoma genellikle cyclin D1/SOX11 ve t(11;14) ile ilişkilidir.",
+        "Reaktif lenfositozda klonal immünfenotip beklenmez."
       ],
       "nextStep": "Hemogram ve periferik yaymayı değerlendir. Periferik kanda akım sitometri ile klonal B hücre immünfenotipini doğrula. Semptom, sitopeni ve genetik risklere göre izlem/tedavi kararı ver.",
       "answerFeedback": {
-        "correctDiagnosis": "Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme",
-        "diagnosisMeta": "KLL tanısında periferik kan akım sitometri ile immünfenotiplendirme",
+        "correctDiagnosis": "Kronik lenfositik lösemi",
+        "diagnosisMeta": "Lenfositozda CLL immünfenotipini yorumlama",
         "shortDiagnosisMeta": "Tetkik / Hematoloji",
-        "whyCorrect": "Uzun süredir lenfositozu olan yaşlı hastada küçük olgun lenfositler CLL’yi düşündürür; tanıyı doğrulayan temel inceleme periferik kanda akım sitometri ile lenfosit immünfenotiplendirmedir. PET-BT veya del17p tanı ilk basamağı değil, seçilmiş evreleme/prognoz-tedavi kararı basamaklarıdır.",
+        "whyCorrect": "Yaşlı hastada kalıcı lenfositoz, küçük olgun lenfositler ve CD5+ CD23+ klonal B hücre popülasyonu kronik lenfositik lösemi için tipik bir immünfenotip oluşturur.",
         "whyWrong": {
-          "PET-BT çekimi": "PET-BT çekimi bu olguda elenir: Tanıyı evreleme veya prognostik testlerle başlatmak. Karar verdiren ipucu yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre olduğu için doğru yanıt Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme olmalıdır.",
-          "BCR-ABL PCR": "BCR-ABL PCR bu olguda elenir: Tanıyı evreleme veya prognostik testlerle başlatmak. Karar verdiren ipucu yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre olduğu için doğru yanıt Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme olmalıdır.",
-          "Kemik iliğinde del17p incelemesi": "Kemik iliğinde del17p incelemesi bu olguda elenir: Tanıyı evreleme veya prognostik testlerle başlatmak. Karar verdiren ipucu yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre olduğu için doğru yanıt Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme olmalıdır."
+          "Mantle hücreli lenfoma": "Mantle hücreli lenfoma ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
+          "Reaktif viral lenfositoz": "Reaktif viral lenfositoz ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
+          "Kronik miyeloid lösemi": "Kronik miyeloid lösemi ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır."
         },
         "evidenceChain": [
-          "Yaşlı hastada uzun süredir süren lenfositoz vardır.",
-          "Boyun ve aksillada lenf nodları eşlik eder.",
-          "Yaymada olgun küçük lenfositler izlenir.",
-          "Akım sitometride CD5+ CD23+ klonal B hücre popülasyonu CLL ile uyumludur."
+          "Uzun süredir lenfadenopati ve mutlak lenfositoz vardır.",
+          "Periferik yaymada olgun küçük lenfositler izlenir.",
+          "Akım sitometride CD5+ CD23+ klonal B hücre popülasyonu saptanır."
         ],
         "clinicalPearls": [
-          "CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir.",
-          "Klasik immünfenotip: CD5+ CD23+ klonal B hücre.",
-          "del17p tedavi/prognoz kararında önemlidir; ilk tanı testi değildir."
+          "CLL tipik olarak CD5+ CD23+ klonal B hücreleriyle seyreder.",
+          "Mantle hücreli lenfoma genellikle cyclin D1/SOX11 ve t(11;14) ile ilişkilidir.",
+          "Reaktif lenfositozda klonal immünfenotip beklenmez."
         ],
         "pearls": [
-          "CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir.",
-          "Klasik immünfenotip: CD5+ CD23+ klonal B hücre.",
-          "del17p tedavi/prognoz kararında önemlidir; ilk tanı testi değildir."
+          "CLL tipik olarak CD5+ CD23+ klonal B hücreleriyle seyreder.",
+          "Mantle hücreli lenfoma genellikle cyclin D1/SOX11 ve t(11;14) ile ilişkilidir.",
+          "Reaktif lenfositozda klonal immünfenotip beklenmez."
         ],
         "differentialComparison": {
-          "PET-BT çekimi": {
-            "explanation": "PET-BT çekimi bu olguda elenir: Tanıyı evreleme veya prognostik testlerle başlatmak. Karar verdiren ipucu yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre olduğu için doğru yanıt Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme olmalıdır.",
+          "Mantle hücreli lenfoma": {
+            "explanation": "Mantle hücreli lenfoma olguda daha zayıf kalır; karar verdirici veri Kronik lenfositik lösemi lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre.",
-              "Çeldirici tuzak: Tanıyı evreleme veya prognostik testlerle başlatmak.",
-              "Sınav incisi: CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir."
+              "Ana ipucu: Uzun süredir lenfadenopati ve mutlak lenfositoz vardır.",
+              "Çeldirici tuzak: Mantle hücreli lenfoma benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "BCR-ABL PCR": {
-            "explanation": "BCR-ABL PCR bu olguda elenir: Tanıyı evreleme veya prognostik testlerle başlatmak. Karar verdiren ipucu yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre olduğu için doğru yanıt Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme olmalıdır.",
+          "Reaktif viral lenfositoz": {
+            "explanation": "Reaktif viral lenfositoz olguda daha zayıf kalır; karar verdirici veri Kronik lenfositik lösemi lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre.",
-              "Çeldirici tuzak: Tanıyı evreleme veya prognostik testlerle başlatmak.",
-              "Sınav incisi: CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir."
+              "Ana ipucu: Uzun süredir lenfadenopati ve mutlak lenfositoz vardır.",
+              "Çeldirici tuzak: Reaktif viral lenfositoz benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Kemik iliğinde del17p incelemesi": {
-            "explanation": "Kemik iliğinde del17p incelemesi bu olguda elenir: Tanıyı evreleme veya prognostik testlerle başlatmak. Karar verdiren ipucu yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre olduğu için doğru yanıt Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme olmalıdır.",
+          "Kronik miyeloid lösemi": {
+            "explanation": "Kronik miyeloid lösemi olguda daha zayıf kalır; karar verdirici veri Kronik lenfositik lösemi lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre.",
-              "Çeldirici tuzak: Tanıyı evreleme veya prognostik testlerle başlatmak.",
-              "Sınav incisi: CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir."
+              "Ana ipucu: Uzun süredir lenfadenopati ve mutlak lenfositoz vardır.",
+              "Çeldirici tuzak: Kronik miyeloid lösemi benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -25117,7 +25143,7 @@ export const cases = [
         "spotClue": "yaşlı hasta + kronik lenfositoz + CD5/CD23 klonal B hücre.",
         "trap": "Tanıyı evreleme veya prognostik testlerle başlatmak."
       },
-      "question": "Bu aşamada tanı için en uygun inceleme hangisidir?"
+      "question": "CD5+ CD23+ klonal B hücre popülasyonu ile birlikte bu hematolojik patern en çok hangi tanıyı destekler?"
     },
     "title": "Boyun ve aksillada uzun süredir lenf nodu şişliği",
     "patientIntro": {
@@ -25133,7 +25159,7 @@ export const cases = [
         "Yaymada olgun küçük lenfositler izlenir"
       ],
       "historySummary": "75 yaşındaki erkek hasta boyun ve aksillada uzun süredir devam eden lenf nodu şişlikleriyle başvurur. Rutin kontrollerinde yıllardır süren lenfositoz öyküsü vardır ve hasta belirgin B semptomu tariflemez.",
-      "priorityFocus": "Yaşlı hasta, kronik lenfositoz, CD5/CD23 klonal B hücre doğru seçeneği belirleyen temel ipucudur; cLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir."
+      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
     }
   },
   {
@@ -25147,7 +25173,7 @@ export const cases = [
       "direkt Coombs"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Otoimmün hemolitik anemide direkt Coombs testi",
+    "clinicalFocus": "Coombs pozitif ekstravasküler hemoliz paternini yorumlama",
     "demographics": "58 yaşında kadın",
     "setting": "Dahiliye polikliniği",
     "chiefComplaint": "Halsizlik, sararma ve çarpıntı",
@@ -25166,11 +25192,11 @@ export const cases = [
     "investigations": [
       {
         "id": "aiha-hemolysis-coombs",
-        "label": "Hemoliz paneli ve direkt Coombs",
+        "label": "Hemoliz paneli ve direkt antiglobulin testi",
         "type": "lab",
-        "summary": "Retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı vardır; direkt Coombs testi IgG/C3 pozitif saptanır.",
+        "summary": "Retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı vardır; direkt antiglobulin testinde IgG/C3 pozitifliği saptanır.",
         "findings": [
-          "Hemoliz verileri aneminin yıkıma bağlı olduğunu; direkt Coombs otoimmün mekanizmayı destekler."
+          "Hemoliz laboratuvarı antikor aracılı eritrosit yıkımıyla birlikte değerlendirilir."
         ],
         "priority": "essential",
         "rows": [
@@ -25202,8 +25228,8 @@ export const cases = [
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "Bu olguda en olası tanı ve uygun doğrulayıcı test hangisidir?",
+    "questionType": "diagnosis",
+    "question": "Retikülositoz, LDH/indirekt bilirubin yüksekliği ve IgG/C3 pozitifliği en çok hangi tabloyu destekler?",
     "spotPearl": "Otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur.",
     "learningOutcome": "Bu spot olguda ana ipucunu (hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -25216,69 +25242,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q21",
     "diagnosis": {
-      "correct": "Otoimmün hemolitik anemi - Direkt Coombs testi",
+      "correct": "Sıcak tip otoimmün hemolitik anemi",
       "options": [
-        "Otoimmün hemolitik anemi - Direkt Coombs testi",
-        "Megaloblastik anemi - Ozmotik frajilite testi",
-        "Aplastik anemi - Kemik iliği aspirasyonu",
-        "PNH - ADAMTS-13 düzeyi"
+        "Sıcak tip otoimmün hemolitik anemi",
+        "Megaloblastik anemi",
+        "Aplastik anemi",
+        "Paroksismal nokturnal hemoglobinüri"
       ],
-      "explanation": "Kısa sürede gelişen sarılık, retikülositoz, LDH ve indirekt bilirubin yüksekliği hemolizi düşündürür; IgG/C3 pozitif direkt Coombs testi otoimmün hemolitik anemiyi doğrular. Ozmotik frajilite herediter sferositoz; ADAMTS-13 TTP için kullanılır.",
+      "explanation": "Hemoliz laboratuvarı ile birlikte direkt antiglobulin testinde IgG/C3 pozitifliği, antikor aracılı hemolizi ve özellikle sıcak tip otoimmün hemolitik anemi paternini destekler.",
       "pearls": [
-        "Otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur.",
-        "Sıcak AIHA genellikle IgG aracılıdır.",
-        "PNH için akım sitometri; TTP için ADAMTS-13 düşünülür."
+        "Otoimmün hemolitik anemide direkt Coombs/DAT pozitifliği beklenir.",
+        "Megaloblastik anemide MCV yüksekliği ve B12/folat bağlamı öne çıkar.",
+        "Aplastik anemide retikülositoz değil pansitopeni ve üretim azlığı beklenir."
       ],
       "nextStep": "Hemodinami ve anemi şiddetini değerlendir. Hemoliz paneliyle birlikte direkt Coombs testini iste. AIHA doğrulanırsa altta yatan neden ve steroid/immünsüpresyon gereğini planla.",
       "answerFeedback": {
-        "correctDiagnosis": "Otoimmün hemolitik anemi - Direkt Coombs testi",
-        "diagnosisMeta": "Otoimmün hemolitik anemide direkt Coombs testi",
+        "correctDiagnosis": "Sıcak tip otoimmün hemolitik anemi",
+        "diagnosisMeta": "Coombs pozitif ekstravasküler hemoliz paternini yorumlama",
         "shortDiagnosisMeta": "Tetkik / Hematoloji",
-        "whyCorrect": "Kısa sürede gelişen sarılık, retikülositoz, LDH ve indirekt bilirubin yüksekliği hemolizi düşündürür; IgG/C3 pozitif direkt Coombs testi otoimmün hemolitik anemiyi doğrular. Ozmotik frajilite herediter sferositoz; ADAMTS-13 TTP için kullanılır.",
+        "whyCorrect": "Hemoliz laboratuvarı ile birlikte direkt antiglobulin testinde IgG/C3 pozitifliği, antikor aracılı hemolizi ve özellikle sıcak tip otoimmün hemolitik anemi paternini destekler.",
         "whyWrong": {
-          "Megaloblastik anemi - Ozmotik frajilite testi": "Megaloblastik anemi - Ozmotik frajilite testi bu olguda elenir: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek. Karar verdiren ipucu hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği olduğu için doğru yanıt Otoimmün hemolitik anemi - Direkt Coombs testi olmalıdır.",
-          "Aplastik anemi - Kemik iliği aspirasyonu": "Aplastik anemi - Kemik iliği aspirasyonu bu olguda elenir: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek. Karar verdiren ipucu hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği olduğu için doğru yanıt Otoimmün hemolitik anemi - Direkt Coombs testi olmalıdır.",
-          "PNH - ADAMTS-13 düzeyi": "PNH - ADAMTS-13 düzeyi bu olguda elenir: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek. Karar verdiren ipucu hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği olduğu için doğru yanıt Otoimmün hemolitik anemi - Direkt Coombs testi olmalıdır."
+          "Megaloblastik anemi": "Megaloblastik anemi ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
+          "Aplastik anemi": "Aplastik anemi ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
+          "Paroksismal nokturnal hemoglobinüri": "Paroksismal nokturnal hemoglobinüri ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır."
         },
         "evidenceChain": [
-          "Halsizlik, sararma ve çarpıntı akut anemiyi düşündürür.",
-          "Retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı hemoliz lehinedir.",
-          "Kanama öyküsü yoktur.",
-          "Direkt Coombs IgG/C3 pozitifliği immün hemolizi destekler."
+          "Sarılık ve çarpıntıya hemoliz laboratuvarı eşlik eder.",
+          "Retikülositoz kemik iliği yanıtını gösterir.",
+          "Direkt antiglobulin testinde IgG/C3 pozitifliği vardır."
         ],
         "clinicalPearls": [
-          "Otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur.",
-          "Sıcak AIHA genellikle IgG aracılıdır.",
-          "PNH için akım sitometri; TTP için ADAMTS-13 düşünülür."
+          "Otoimmün hemolitik anemide direkt Coombs/DAT pozitifliği beklenir.",
+          "Megaloblastik anemide MCV yüksekliği ve B12/folat bağlamı öne çıkar.",
+          "Aplastik anemide retikülositoz değil pansitopeni ve üretim azlığı beklenir."
         ],
         "pearls": [
-          "Otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur.",
-          "Sıcak AIHA genellikle IgG aracılıdır.",
-          "PNH için akım sitometri; TTP için ADAMTS-13 düşünülür."
+          "Otoimmün hemolitik anemide direkt Coombs/DAT pozitifliği beklenir.",
+          "Megaloblastik anemide MCV yüksekliği ve B12/folat bağlamı öne çıkar.",
+          "Aplastik anemide retikülositoz değil pansitopeni ve üretim azlığı beklenir."
         ],
         "differentialComparison": {
-          "Megaloblastik anemi - Ozmotik frajilite testi": {
-            "explanation": "Megaloblastik anemi - Ozmotik frajilite testi bu olguda elenir: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek. Karar verdiren ipucu hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği olduğu için doğru yanıt Otoimmün hemolitik anemi - Direkt Coombs testi olmalıdır.",
+          "Megaloblastik anemi": {
+            "explanation": "Megaloblastik anemi olguda daha zayıf kalır; karar verdirici veri Sıcak tip otoimmün hemolitik anemi lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği.",
-              "Çeldirici tuzak: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek.",
-              "Sınav incisi: Otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur."
+              "Ana ipucu: Sarılık ve çarpıntıya hemoliz laboratuvarı eşlik eder.",
+              "Çeldirici tuzak: Megaloblastik anemi benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Aplastik anemi - Kemik iliği aspirasyonu": {
-            "explanation": "Aplastik anemi - Kemik iliği aspirasyonu bu olguda elenir: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek. Karar verdiren ipucu hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği olduğu için doğru yanıt Otoimmün hemolitik anemi - Direkt Coombs testi olmalıdır.",
+          "Aplastik anemi": {
+            "explanation": "Aplastik anemi olguda daha zayıf kalır; karar verdirici veri Sıcak tip otoimmün hemolitik anemi lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği.",
-              "Çeldirici tuzak: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek.",
-              "Sınav incisi: Otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur."
+              "Ana ipucu: Sarılık ve çarpıntıya hemoliz laboratuvarı eşlik eder.",
+              "Çeldirici tuzak: Aplastik anemi benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "PNH - ADAMTS-13 düzeyi": {
-            "explanation": "PNH - ADAMTS-13 düzeyi bu olguda elenir: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek. Karar verdiren ipucu hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği olduğu için doğru yanıt Otoimmün hemolitik anemi - Direkt Coombs testi olmalıdır.",
+          "Paroksismal nokturnal hemoglobinüri": {
+            "explanation": "Paroksismal nokturnal hemoglobinüri olguda daha zayıf kalır; karar verdirici veri Sıcak tip otoimmün hemolitik anemi lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği.",
-              "Çeldirici tuzak: Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek.",
-              "Sınav incisi: Otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur."
+              "Ana ipucu: Sarılık ve çarpıntıya hemoliz laboratuvarı eşlik eder.",
+              "Çeldirici tuzak: Paroksismal nokturnal hemoglobinüri benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -25296,7 +25318,7 @@ export const cases = [
         "spotClue": "hemoliz bulguları + direkt Coombs IgG/C3 pozitifliği.",
         "trap": "Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek."
       },
-      "question": "Bu olguda en olası tanı ve uygun doğrulayıcı test hangisidir?"
+      "question": "Retikülositoz, LDH/indirekt bilirubin yüksekliği ve IgG/C3 pozitifliği en çok hangi tabloyu destekler?"
     },
     "title": "Halsizlik, sararma ve çarpıntı",
     "patientIntro": {
@@ -25312,7 +25334,7 @@ export const cases = [
         "Kanama öyküsü yoktur"
       ],
       "historySummary": "Kanama öyküsü yoktur; tablo hemolitik süreç açısından değerlendirilir.",
-      "priorityFocus": "Hemoliz bulguları, direkt Coombs IgG/C3 pozitifliği doğru seçeneği belirleyen temel ipucudur; otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur."
+      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
     }
   },
   {
@@ -25454,7 +25476,7 @@ export const cases = [
         "ATM seçeneği bu sendrom için temel eşleşme değildir"
       ],
       "historySummary": "Ailesinde genç yaşta diffüz mide kanseri, meme-over kanseri ve sarkom öyküleri bulunan bir aile için sendrom-gen eşleşmeleri gözden geçirilir. Soru, yanlış eşleşmeyi ayırt etmeye odaklanır.",
-      "priorityFocus": "Herediter difüz mide kanseri gen eşleşmesi doğru seçeneği belirleyen temel ipucudur; herediter difüz mide kanseri: CDH1."
+      "priorityFocus": "Herediter difüz mide kanseri gen eşleşmesi klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -25504,9 +25526,9 @@ export const cases = [
       "correct": "İntramüsküler adrenalin",
       "options": [
         "İntramüsküler adrenalin",
-        "Oral antihistaminik",
-        "Sadece sistemik kortikosteroid",
-        "Fibrinolitik tedavi"
+        "İntravenöz H1 antihistaminik tek başına",
+        "Nebül salbutamolü tek tedavi olarak vermek",
+        "Sistemik kortikosteroid yanıtını beklemek"
       ],
       "explanation": "İlaç uygulamasından dakikalar sonra gelişen sistemik alerjik reaksiyon anafilaksi olarak ele alınmalıdır; ilk seçilecek tedavi intramüsküler adrenalindir. Antihistaminik ve steroidler destek tedavidir, hava yolu/dolaşım riskini adrenalin kadar hızlı düzeltmez.",
       "pearls": [
@@ -25596,7 +25618,7 @@ export const cases = [
         "Fenalık hissi sistemik reaksiyon"
       ],
       "historySummary": "Pnömoni nedeniyle başlanan antibiyotik sonrası avuç içi kaşıntısı, fenalık hissi ve yaygın döküntü gelişiyor.",
-      "priorityFocus": "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık/kaşıntı doğru seçeneği belirleyen temel ipucudur; anafilakside ilk ilaç IM adrenalindir."
+      "priorityFocus": "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık/kaşıntı klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -25647,9 +25669,9 @@ export const cases = [
       "correct": "İloprost ve bosentan",
       "options": [
         "İloprost ve bosentan",
-        "Erlotinib ve trastuzumab",
-        "Sunitinib ve erlotinib",
-        "Trastuzumab ve bosentan"
+        "Nifedipin ve lokal yara bakımı",
+        "Sildenafil ve düşük doz aspirin",
+        "Siklofosfamid ve yüksek doz steroid"
       ],
       "explanation": "Sistemik skleroz/Raynaud zemininde gelişen ağrılı dijital ülserlerde prostasiklin analoğu iloprost ve endotelin reseptör antagonisti bosentan uygun kombinasyondur. Bosentan özellikle yeni dijital ülser gelişimini azaltmada önemlidir.",
       "pearls": [
@@ -25755,7 +25777,7 @@ export const cases = [
       "kompleman"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "SLE hastalık aktivitesi takibinde anti-dsDNA ve kompleman düzeyleri",
+    "clinicalFocus": "SLE aktivitesinde anti-dsDNA ve kompleman tüketimini yorumlama",
     "demographics": "28 yaşında kadın",
     "setting": "Romatoloji polikliniği",
     "chiefComplaint": "Fotosensitivite, malar döküntü ve eklem ağrısı",
@@ -25776,24 +25798,36 @@ export const cases = [
         "id": "tus-spot-sle-activity",
         "label": "Otoimmün aktivite paneli",
         "type": "serology",
-        "summary": "Anti-dsDNA yüksek, C3/C4 düşük; aktif hastalık lehine patern.",
+        "summary": "Anti-dsDNA yüksek, C3 ve C4 düşük saptanır.",
         "findings": [
-          "Anti-dsDNA yüksek, C3/C4 düşük; aktif hastalık lehine patern."
+          "Otoantikor artışı ile kompleman tüketimi birlikte izlenir."
         ],
         "priority": "useful",
         "rows": [
           [
-            "Otoimmün aktivite paneli",
-            "Anti-dsDNA yüksek, C3/C4 düşük; aktif hastalık lehine patern.",
-            "Beklenen/karar eşiği",
-            "Karar verdirici"
+            "Anti-dsDNA",
+            "Yüksek",
+            "Düşük/negatif",
+            "Yüksek"
+          ],
+          [
+            "C3",
+            "Düşük",
+            "Normal",
+            "Düşük"
+          ],
+          [
+            "C4",
+            "Düşük",
+            "Normal",
+            "Düşük"
           ]
         ]
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "Bu hastalıkta aktivite izlemi için en yararlı belirteçler hangileridir?",
+    "questionType": "diagnosis",
+    "question": "Anti-dsDNA yüksekliği ve C3/C4 düşüklüğü olan bu panelin en doğru yorumu hangisidir?",
     "spotPearl": "SLE aktivite takibi: anti-dsDNA ↑, C3/C4 ↓.",
     "learningOutcome": "Bu spot olguda ana ipucunu (SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -25806,69 +25840,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q25",
     "diagnosis": {
-      "correct": "Anti-dsDNA ve kompleman düzeyleri",
+      "correct": "Aktif SLE alevlenmesini destekleyen serolojik patern",
       "options": [
-        "Anti-dsDNA ve kompleman düzeyleri",
-        "ANA ve anti-Sm",
-        "Anti-Ro ve anti-La",
-        "RF ve anti-CCP"
+        "Aktif SLE alevlenmesini destekleyen serolojik patern",
+        "İzole ANA pozitifliğiyle sınırlı tarama sonucu",
+        "Sınırlı kutanöz sistemik skleroz paterni",
+        "Romatoid artrit aktivitesini gösteren patern"
       ],
-      "explanation": "SLE’de ANA tanıda duyarlı bir tarama markerıdır ancak aktivite takibi için en yararlı belirteçler anti-dsDNA artışı ve kompleman düşüklüğüdür. Özellikle renal aktivite şüphesinde bu ikili TUS’ta sık sorulur.",
+      "explanation": "SLE bağlamında anti-dsDNA yüksekliği ve C3/C4 düşüklüğü immün kompleks aracılı aktiviteyi düşündürür; izole ANA tanısal taramada duyarlı olsa da aktivite takibinde aynı ayırt ediciliğe sahip değildir.",
       "pearls": [
-        "SLE aktivite takibi: anti-dsDNA ↑, C3/C4 ↓.",
-        "ANA duyarlıdır ama aktivite izlemi için ana marker değildir.",
-        "Anti-Sm özgüldür fakat aktivite takibinde anti-dsDNA/kompleman kadar kullanılmaz."
+        "SLE aktivite takibinde anti-dsDNA artışı ve kompleman düşüklüğü yüksek verimlidir.",
+        "ANA duyarlıdır fakat aktivite takibinde spesifik değildir.",
+        "Anti-centromere sınırlı kutanöz sistemik sklerozla ilişkilidir."
       ],
       "nextStep": "Klinik aktivite ve renal bulguları değerlendir. Anti-dsDNA, C3/C4, idrar proteinüri/aktif sediment takibini yap. Aktiviteye göre immünsüpresif tedavi ve nefroloji değerlendirmesini planla.",
       "answerFeedback": {
-        "correctDiagnosis": "Anti-dsDNA ve kompleman düzeyleri",
-        "diagnosisMeta": "SLE hastalık aktivitesi takibinde anti-dsDNA ve kompleman düzeyleri",
+        "correctDiagnosis": "Aktif SLE alevlenmesini destekleyen serolojik patern",
+        "diagnosisMeta": "SLE aktivitesinde anti-dsDNA ve kompleman tüketimini yorumlama",
         "shortDiagnosisMeta": "Tetkik / Romatoloji",
-        "whyCorrect": "SLE’de ANA tanıda duyarlı bir tarama markerıdır ancak aktivite takibi için en yararlı belirteçler anti-dsDNA artışı ve kompleman düşüklüğüdür. Özellikle renal aktivite şüphesinde bu ikili TUS’ta sık sorulur.",
+        "whyCorrect": "SLE bağlamında anti-dsDNA yüksekliği ve C3/C4 düşüklüğü immün kompleks aracılı aktiviteyi düşündürür; izole ANA tanısal taramada duyarlı olsa da aktivite takibinde aynı ayırt ediciliğe sahip değildir.",
         "whyWrong": {
-          "ANA ve anti-Sm": "ANA ve anti-Sm bu olguda elenir: ANA’yı aktivite markerı sanmak. Karar verdiren ipucu SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü olduğu için doğru yanıt Anti-dsDNA ve kompleman düzeyleri olmalıdır.",
-          "Anti-Ro ve anti-La": "Anti-Ro ve anti-La bu olguda elenir: ANA’yı aktivite markerı sanmak. Karar verdiren ipucu SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü olduğu için doğru yanıt Anti-dsDNA ve kompleman düzeyleri olmalıdır.",
-          "RF ve anti-CCP": "RF ve anti-CCP bu olguda elenir: ANA’yı aktivite markerı sanmak. Karar verdiren ipucu SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü olduğu için doğru yanıt Anti-dsDNA ve kompleman düzeyleri olmalıdır."
+          "İzole ANA pozitifliğiyle sınırlı tarama sonucu": "İzole ANA pozitifliğiyle sınırlı tarama sonucu ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır.",
+          "Sınırlı kutanöz sistemik skleroz paterni": "Sınırlı kutanöz sistemik skleroz paterni ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır.",
+          "Romatoid artrit aktivitesini gösteren patern": "Romatoid artrit aktivitesini gösteren patern ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır."
         },
         "evidenceChain": [
-          "Fotosensitivite, malar döküntü ve artralji SLE paternini destekler.",
-          "Bacaklarda şişlik renal aktivite ihtimalini artırır.",
-          "Anti-dsDNA yüksek ve C3/C4 düşüktür.",
-          "Bu patern aktif hastalık lehinedir."
+          "Fotosensitivite, malar döküntü ve eklem ağrısı SLE bağlamı oluşturur.",
+          "Anti-dsDNA yüksek bulunmuştur.",
+          "C3/C4 düşüklüğü kompleman tüketimini gösterir."
         ],
         "clinicalPearls": [
-          "SLE aktivite takibi: anti-dsDNA ↑, C3/C4 ↓.",
-          "ANA duyarlıdır ama aktivite izlemi için ana marker değildir.",
-          "Anti-Sm özgüldür fakat aktivite takibinde anti-dsDNA/kompleman kadar kullanılmaz."
+          "SLE aktivite takibinde anti-dsDNA artışı ve kompleman düşüklüğü yüksek verimlidir.",
+          "ANA duyarlıdır fakat aktivite takibinde spesifik değildir.",
+          "Anti-centromere sınırlı kutanöz sistemik sklerozla ilişkilidir."
         ],
         "pearls": [
-          "SLE aktivite takibi: anti-dsDNA ↑, C3/C4 ↓.",
-          "ANA duyarlıdır ama aktivite izlemi için ana marker değildir.",
-          "Anti-Sm özgüldür fakat aktivite takibinde anti-dsDNA/kompleman kadar kullanılmaz."
+          "SLE aktivite takibinde anti-dsDNA artışı ve kompleman düşüklüğü yüksek verimlidir.",
+          "ANA duyarlıdır fakat aktivite takibinde spesifik değildir.",
+          "Anti-centromere sınırlı kutanöz sistemik sklerozla ilişkilidir."
         ],
         "differentialComparison": {
-          "ANA ve anti-Sm": {
-            "explanation": "ANA ve anti-Sm bu olguda elenir: ANA’yı aktivite markerı sanmak. Karar verdiren ipucu SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü olduğu için doğru yanıt Anti-dsDNA ve kompleman düzeyleri olmalıdır.",
+          "İzole ANA pozitifliğiyle sınırlı tarama sonucu": {
+            "explanation": "İzole ANA pozitifliğiyle sınırlı tarama sonucu olguda daha zayıf kalır; karar verdirici veri Aktif SLE alevlenmesini destekleyen serolojik patern lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü.",
-              "Çeldirici tuzak: ANA’yı aktivite markerı sanmak.",
-              "Sınav incisi: SLE aktivite takibi: anti-dsDNA ↑, C3/C4 ↓."
+              "Ana ipucu: Fotosensitivite, malar döküntü ve eklem ağrısı SLE bağlamı oluşturur.",
+              "Çeldirici tuzak: İzole ANA pozitifliğiyle sınırlı tarama sonucu benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Anti-Ro ve anti-La": {
-            "explanation": "Anti-Ro ve anti-La bu olguda elenir: ANA’yı aktivite markerı sanmak. Karar verdiren ipucu SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü olduğu için doğru yanıt Anti-dsDNA ve kompleman düzeyleri olmalıdır.",
+          "Sınırlı kutanöz sistemik skleroz paterni": {
+            "explanation": "Sınırlı kutanöz sistemik skleroz paterni olguda daha zayıf kalır; karar verdirici veri Aktif SLE alevlenmesini destekleyen serolojik patern lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü.",
-              "Çeldirici tuzak: ANA’yı aktivite markerı sanmak.",
-              "Sınav incisi: SLE aktivite takibi: anti-dsDNA ↑, C3/C4 ↓."
+              "Ana ipucu: Fotosensitivite, malar döküntü ve eklem ağrısı SLE bağlamı oluşturur.",
+              "Çeldirici tuzak: Sınırlı kutanöz sistemik skleroz paterni benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "RF ve anti-CCP": {
-            "explanation": "RF ve anti-CCP bu olguda elenir: ANA’yı aktivite markerı sanmak. Karar verdiren ipucu SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü olduğu için doğru yanıt Anti-dsDNA ve kompleman düzeyleri olmalıdır.",
+          "Romatoid artrit aktivitesini gösteren patern": {
+            "explanation": "Romatoid artrit aktivitesini gösteren patern olguda daha zayıf kalır; karar verdirici veri Aktif SLE alevlenmesini destekleyen serolojik patern lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü.",
-              "Çeldirici tuzak: ANA’yı aktivite markerı sanmak.",
-              "Sınav incisi: SLE aktivite takibi: anti-dsDNA ↑, C3/C4 ↓."
+              "Ana ipucu: Fotosensitivite, malar döküntü ve eklem ağrısı SLE bağlamı oluşturur.",
+              "Çeldirici tuzak: Romatoid artrit aktivitesini gösteren patern benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -25886,7 +25916,7 @@ export const cases = [
         "spotClue": "SLE aktivite izlemi + anti-dsDNA yüksekliği + kompleman düşüklüğü.",
         "trap": "ANA’yı aktivite markerı sanmak."
       },
-      "question": "Bu hastalıkta aktivite izlemi için en yararlı belirteçler hangileridir?"
+      "question": "Anti-dsDNA yüksekliği ve C3/C4 düşüklüğü olan bu panelin en doğru yorumu hangisidir?"
     },
     "title": "Fotosensitivite, malar döküntü ve eklem ağrısı",
     "patientIntro": {
@@ -25902,7 +25932,7 @@ export const cases = [
         "Anti-dsDNA yüksek ve C3/C4 düşüktür"
       ],
       "historySummary": "28 yaşındaki kadın hasta fotosensitivite, malar döküntü, el küçük eklemlerinde ağrı ve son haftalarda bacaklarda hafif şişlik yakınmalarıyla romatoloji kontrolüne gelir. Mevcut yakınmalar hastalık aktivitesi açısından değerlendirilir.",
-      "priorityFocus": "SLE aktivite izlemi, anti-dsDNA yüksekliği, kompleman düşüklüğü SLE aktivitesi için anlamlıdır; takipte ANA’dan çok anti-dsDNA artışı ve kompleman düşüklüğü kullanılır."
+      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
     }
   },
   {
@@ -25916,7 +25946,7 @@ export const cases = [
       "anti-PLA2R"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Primer membranöz glomerülonefritte anti-PLA2R antikorunun ayırt ettirici değeri",
+    "clinicalFocus": "Nefrotik sendromda anti-PLA2R pozitifliğini ve membranöz paterni yorumlama",
     "demographics": "Erişkin hasta",
     "setting": "Nefroloji polikliniği",
     "chiefComplaint": "Nefrotik düzeyde proteinüri",
@@ -25935,18 +25965,18 @@ export const cases = [
     "investigations": [
       {
         "id": "membranous-biopsy-pla2r",
-        "label": "Böbrek biyopsisi ve anti-PLA2R",
+        "label": "Böbrek biyopsisi ve serum otoantikor paneli",
         "type": "pathology",
-        "summary": "Biyopsi membranöz nefropatiyle uyumludur; serum anti-PLA2R antikoru pozitif saptanır.",
+        "summary": "Biyopside diffüz kapiller duvar kalınlaşması ve granüler immün birikim paterni; serum anti-PLA2R pozitifliği saptanır.",
         "findings": [
-          "Anti-PLA2R pozitifliği primer membranöz nefropati lehine güçlü destek sağlar."
+          "Nefrotik proteinüriyle birlikte glomerüler membranöz patern ve ilgili otoantikor pozitifliği izlenir."
         ],
         "priority": "essential"
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "Primer membranöz nefropati lehine en yardımcı belirteç hangisidir?",
+    "questionType": "diagnosis",
+    "question": "Nefrotik proteinüriyle birlikte bu biyopsi-seroloji paterni en çok hangi tanıyı destekler?",
     "spotPearl": "Primer membranöz nefropati markerı: anti-PLA2R.",
     "learningOutcome": "Bu spot olguda ana ipucunu (erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -25959,68 +25989,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q26",
     "diagnosis": {
-      "correct": "Anti-PLA2R antikoru",
+      "correct": "Primer membranöz nefropati",
       "options": [
-        "Anti-PLA2R antikoru",
-        "Anti-dsDNA antikoru",
-        "Anti-FGF23 antikoru",
-        "Anti-anjiyotensin 1 antikoru"
+        "Primer membranöz nefropati",
+        "Lupus nefriti",
+        "Minimal değişiklik hastalığı",
+        "Diyabetik nefropati"
       ],
-      "explanation": "Erişkinde nefrotik sendrom ve membranöz nefropati biyopsisi varlığında anti-PLA2R antikoru primer membranöz nefropati lehine en yardımcı belirteçtir. Anti-dsDNA lupus nefriti için; FGF23 fosfat metabolizması için düşünülür.",
+      "explanation": "Erişkinde nefrotik düzeyde proteinüri, membranöz glomerüler patern ve serum anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler.",
       "pearls": [
-        "Primer membranöz nefropati markerı: anti-PLA2R.",
-        "Sekonder nedenler: malignite, HBV, SLE, ilaçlar gibi durumlar dışlanmalıdır.",
-        "Anti-dsDNA lupus aktivitesi/nefriti ile ilişkilidir."
+        "Anti-PLA2R primer membranöz nefropatiyle ilişkilidir.",
+        "Lupus nefritinde ANA/anti-dsDNA ve sistemik bulgular beklenir.",
+        "Minimal değişiklik hastalığında ışık mikroskopisi genellikle belirgin membranöz kalınlaşma göstermez."
       ],
       "nextStep": "Nefrotik sendrom şiddetini ve böbrek fonksiyonunu değerlendir. Anti-PLA2R ve sekonder neden taramasını yap. Risk sınıfına göre destek tedavi ve immünsüpresyon gereğini planla.",
       "answerFeedback": {
-        "correctDiagnosis": "Anti-PLA2R antikoru",
-        "diagnosisMeta": "Primer membranöz glomerülonefritte anti-PLA2R antikorunun ayırt ettirici değeri",
+        "correctDiagnosis": "Primer membranöz nefropati",
+        "diagnosisMeta": "Nefrotik sendromda anti-PLA2R pozitifliğini ve membranöz paterni yorumlama",
         "shortDiagnosisMeta": "Tetkik / Nefroloji",
-        "whyCorrect": "Erişkinde nefrotik sendrom ve membranöz nefropati biyopsisi varlığında anti-PLA2R antikoru primer membranöz nefropati lehine en yardımcı belirteçtir. Anti-dsDNA lupus nefriti için; FGF23 fosfat metabolizması için düşünülür.",
+        "whyCorrect": "Erişkinde nefrotik düzeyde proteinüri, membranöz glomerüler patern ve serum anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler.",
         "whyWrong": {
-          "Anti-dsDNA antikoru": "Anti-dsDNA antikoru bu olguda elenir: Diğer otoantikorları primer membranöz nefropati markerı sanmak. Karar verdiren ipucu erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği olduğu için doğru yanıt Anti-PLA2R antikoru olmalıdır.",
-          "Anti-FGF23 antikoru": "Anti-FGF23 antikoru bu olguda elenir: Diğer otoantikorları primer membranöz nefropati markerı sanmak. Karar verdiren ipucu erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği olduğu için doğru yanıt Anti-PLA2R antikoru olmalıdır.",
-          "Anti-anjiyotensin 1 antikoru": "Anti-anjiyotensin 1 antikoru bu olguda elenir: Diğer otoantikorları primer membranöz nefropati markerı sanmak. Karar verdiren ipucu erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği olduğu için doğru yanıt Anti-PLA2R antikoru olmalıdır."
+          "Lupus nefriti": "Lupus nefriti ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
+          "Minimal değişiklik hastalığı": "Minimal değişiklik hastalığı ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
+          "Diyabetik nefropati": "Diyabetik nefropati ayırıcı seçenek olarak düşünülebilir; ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır."
         },
         "evidenceChain": [
-          "Erişkin hastada nefrotik düzeyde proteinüri ve ödem vardır.",
-          "Biyopsi membranöz nefropati ile uyumludur.",
-          "Serum anti-PLA2R pozitifliği primer formu destekler."
+          "Nefrotik düzeyde proteinüri vardır.",
+          "Biyopsi membranöz glomerüler patern gösterir.",
+          "Serum anti-PLA2R pozitifliği primer form lehine güçlü serolojik ipucudur."
         ],
         "clinicalPearls": [
-          "Primer membranöz nefropati markerı: anti-PLA2R.",
-          "Sekonder nedenler: malignite, HBV, SLE, ilaçlar gibi durumlar dışlanmalıdır.",
-          "Anti-dsDNA lupus aktivitesi/nefriti ile ilişkilidir."
+          "Anti-PLA2R primer membranöz nefropatiyle ilişkilidir.",
+          "Lupus nefritinde ANA/anti-dsDNA ve sistemik bulgular beklenir.",
+          "Minimal değişiklik hastalığında ışık mikroskopisi genellikle belirgin membranöz kalınlaşma göstermez."
         ],
         "pearls": [
-          "Primer membranöz nefropati markerı: anti-PLA2R.",
-          "Sekonder nedenler: malignite, HBV, SLE, ilaçlar gibi durumlar dışlanmalıdır.",
-          "Anti-dsDNA lupus aktivitesi/nefriti ile ilişkilidir."
+          "Anti-PLA2R primer membranöz nefropatiyle ilişkilidir.",
+          "Lupus nefritinde ANA/anti-dsDNA ve sistemik bulgular beklenir.",
+          "Minimal değişiklik hastalığında ışık mikroskopisi genellikle belirgin membranöz kalınlaşma göstermez."
         ],
         "differentialComparison": {
-          "Anti-dsDNA antikoru": {
-            "explanation": "Anti-dsDNA antikoru bu olguda elenir: Diğer otoantikorları primer membranöz nefropati markerı sanmak. Karar verdiren ipucu erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği olduğu için doğru yanıt Anti-PLA2R antikoru olmalıdır.",
+          "Lupus nefriti": {
+            "explanation": "Lupus nefriti olguda daha zayıf kalır; karar verdirici veri Primer membranöz nefropati lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği.",
-              "Çeldirici tuzak: Diğer otoantikorları primer membranöz nefropati markerı sanmak.",
-              "Sınav incisi: Primer membranöz nefropati markerı: anti-PLA2R."
+              "Ana ipucu: Nefrotik düzeyde proteinüri vardır.",
+              "Çeldirici tuzak: Lupus nefriti benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Anti-FGF23 antikoru": {
-            "explanation": "Anti-FGF23 antikoru bu olguda elenir: Diğer otoantikorları primer membranöz nefropati markerı sanmak. Karar verdiren ipucu erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği olduğu için doğru yanıt Anti-PLA2R antikoru olmalıdır.",
+          "Minimal değişiklik hastalığı": {
+            "explanation": "Minimal değişiklik hastalığı olguda daha zayıf kalır; karar verdirici veri Primer membranöz nefropati lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği.",
-              "Çeldirici tuzak: Diğer otoantikorları primer membranöz nefropati markerı sanmak.",
-              "Sınav incisi: Primer membranöz nefropati markerı: anti-PLA2R."
+              "Ana ipucu: Nefrotik düzeyde proteinüri vardır.",
+              "Çeldirici tuzak: Minimal değişiklik hastalığı benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Anti-anjiyotensin 1 antikoru": {
-            "explanation": "Anti-anjiyotensin 1 antikoru bu olguda elenir: Diğer otoantikorları primer membranöz nefropati markerı sanmak. Karar verdiren ipucu erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği olduğu için doğru yanıt Anti-PLA2R antikoru olmalıdır.",
+          "Diyabetik nefropati": {
+            "explanation": "Diyabetik nefropati olguda daha zayıf kalır; karar verdirici veri Primer membranöz nefropati lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği.",
-              "Çeldirici tuzak: Diğer otoantikorları primer membranöz nefropati markerı sanmak.",
-              "Sınav incisi: Primer membranöz nefropati markerı: anti-PLA2R."
+              "Ana ipucu: Nefrotik düzeyde proteinüri vardır.",
+              "Çeldirici tuzak: Diyabetik nefropati benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -26038,7 +26065,7 @@ export const cases = [
         "spotClue": "erişkinde nefrotik proteinüri + anti-PLA2R pozitifliği.",
         "trap": "Diğer otoantikorları primer membranöz nefropati markerı sanmak."
       },
-      "question": "Primer membranöz nefropati lehine en yardımcı belirteç hangisidir?"
+      "question": "Nefrotik proteinüriyle birlikte bu biyopsi-seroloji paterni en çok hangi tanıyı destekler?"
     },
     "title": "Nefrotik düzeyde proteinüri",
     "patientIntro": {
@@ -26053,8 +26080,8 @@ export const cases = [
         "Biyopsi membranöz nefropati",
         "Serum anti-PLA2R pozitifliği primer formu destekler"
       ],
-      "historySummary": "Klinik tablo primer membranöz nefropati ile sekonder nedenlerin ayırt edilmesini gerektirir.",
-      "priorityFocus": "Erişkinde nefrotik proteinüri, anti-PLA2R pozitifliği doğru seçeneği belirleyen temel ipucudur; primer membranöz nefropati markerı: anti-PLA2R."
+      "historySummary": "Klinik tablo ilgili klinik tablo ile sekonder nedenlerin ayırt edilmesini gerektirir.",
+      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
     }
   },
   {
@@ -26189,13 +26216,13 @@ export const cases = [
         "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı",
+        "Diyabetik nefropati paterninde ilgili klinik tablo kırmızı bayrağı",
         "Uzun süreli diyabette albuminüri vardır",
         "Böbrek fonksiyon bozukluğu yavaş ilerlemektedir",
         "Soru diyabet dışı etiyoloji kırmızı bayrağını sorar"
       ],
       "historySummary": "Uzun süreli diyabeti olan hastada albuminüri ve yavaş ilerleyen böbrek fonksiyon bozukluğu izlenmektedir. Hekim, diyabetik nefropati dışı bir etiyolojiyi düşündürecek kırmızı bayrak bulgusunu ayırt etmek ister.",
-      "priorityFocus": "Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı doğru seçeneği belirleyen temel ipucudur; diyabetik nefropati dışı ipuçları: aktif idrar sedimenti, makroskopik hematüri, hızlı GFR düşüşü, kısa diyabet süresi."
+      "priorityFocus": "Diyabetik nefropati paterninde ilgili klinik tablo kırmızı bayrağı klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -26504,7 +26531,7 @@ export const cases = [
         "Klinik başlangıç duygusal stresörle ilişkilidir"
       ],
       "historySummary": "Yakınları unutkanlığın eş kaybından sonra arttığını, hastada iştah azalması, keyifsizlik ve ilgide azalma geliştiğini belirtiyor.",
-      "priorityFocus": "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık doğru seçeneği belirleyen temel ipucudur; geriatrik depresyon unutkanlıkla gelebilir ve demansı taklit edebilir."
+      "priorityFocus": "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -26714,9 +26741,9 @@ export const cases = [
       "correct": "Terbinafin",
       "options": [
         "Terbinafin",
-        "Asiklovir",
-        "Permetrin",
-        "Mupirosin"
+        "Topikal asiklovir",
+        "Topikal permetrin",
+        "Topikal mupirosin"
       ],
       "explanation": "Ayak parmak aralarında maserasyon ve plantar skuam tinea pedis/dermatofit enfeksiyonu ile uyumludur; uygun tedavi terbinafin gibi antifungaldir. Asiklovir HSV/VZV, permetrin skabies/pediküloz, mupirosin bakteriyel impetigo için düşünülür.",
       "pearls": [
@@ -26806,7 +26833,7 @@ export const cases = [
         "Klinik mantar enfeksiyonu olarak değerlendirilmiştir"
       ],
       "historySummary": "Ayak parmak aralarında maserasyon ve plantar hiperkeratotik skuam gelişen hastada mantar enfeksiyonu düşünülüyor.",
-      "priorityFocus": "İnterdigital maserasyon, plantar hiperkeratotik skuam doğru seçeneği belirleyen temel ipucudur; tinea pedis tedavisinde topikal terbinafin/azol antifungaller kullanılır."
+      "priorityFocus": "İnterdigital maserasyon, plantar hiperkeratotik skuam klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -26949,7 +26976,7 @@ export const cases = [
         "Konuşma bozukluğu ön planda değildir"
       ],
       "historySummary": "65 yaşındaki erkek hasta ani başlayan sağ taraf güç kaybı ile acile getirilir. Güç kaybı sağ bacakta belirgin, sağ kolda ise daha hafiftir; konuşma bozukluğu ön planda değildir.",
-      "priorityFocus": "Bacakta koldan belirgin motor defisit doğru seçeneği belirleyen temel ipucudur; aCA infarktı: karşı bacakta belirgin güç/kuyu, abuli/idrar inkontinansı görülebilir."
+      "priorityFocus": "Bacakta koldan belirgin motor defisit klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -27090,7 +27117,7 @@ export const cases = [
         "Erişkin başlangıçlı distal güçsüzlük/myotoni paternine uyar"
       ],
       "historySummary": "Hasta yumruk yaptıktan sonra parmaklarını açmakta zorlanıyor; meksiletin ile gevşeme güçlüğünün azaldığını söylüyor.",
-      "priorityFocus": "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı doğru seçeneği belirleyen temel ipucudur; miyotonik distrofi: myotoni, distal güçsüzlük, frontal kellik, katarakt, kalp iletim bozukluğu."
+      "priorityFocus": "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -27251,7 +27278,7 @@ export const cases = [
         "Fokal motor nöbet HSV ensefalitinde sık görülür"
       ],
       "historySummary": "32 yaşındaki kadın hasta akut başlayan ateş, baş ağrısı, davranış değişikliği, anlamsız konuşma ve fokal motor nöbetlerle acile getirilir. Tablo ensefalit etkeni açısından acil değerlendirme gerektirir.",
-      "priorityFocus": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum paterni doğru seçeneği belirleyen temel ipucudur; hSV ensefaliti: temporal lob, kişilik değişikliği, fokal nöbet."
+      "priorityFocus": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum paterni klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -27393,7 +27420,7 @@ export const cases = [
         "Arkadaşının kendisini geçmeye çalıştığını söylemesi dışa atıf örüntüsüdür"
       ],
       "historySummary": "Kişi kendisindeki kıskançlığı kabul etmiyor; bunun yerine yakın arkadaşının kendisini kıskandığını ve sürekli onu geçmeye çalıştığını söylüyor.",
-      "priorityFocus": "Kendi kıskançlığını başkasına atfetme doğru seçeneği belirleyen temel ipucudur; yansıtma: kabul edilemeyen duygu/dürtüyü başkasına atfetme."
+      "priorityFocus": "Kendi kıskançlığını başkasına atfetme klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -27669,13 +27696,13 @@ export const cases = [
         "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Osteoartrit grafi bulguları; periferik erozyon beklenmez",
+        "Osteoartrit grafi bulguları; ilgili klinik tablo beklenmez",
         "Kronik mekanik diz ağrısı ve krepitasyon OA",
         "Soru OA’da beklenmeyen grafi bulgusunu soruyor",
-        "Periferik erozyon dejeneratif değil inflamatuvar artrit"
+        "ilgili klinik tablo dejeneratif değil inflamatuvar artrit"
       ],
       "historySummary": "Soru, osteoartritte beklenen ve beklenmeyen direkt grafi bulgularını ayırt etmeye odaklanır.",
-      "priorityFocus": "Osteoartrit grafi bulguları; periferik erozyon beklenmez doğru seçeneği belirleyen temel ipucudur; oA grafisi: osteofit, eklem aralığı daralması, subkondral skleroz/kist."
+      "priorityFocus": "Osteoartrit grafi bulguları; ilgili klinik tablo beklenmez klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -27819,7 +27846,7 @@ export const cases = [
         "Dirsek fleksiyonu ve supinasyon ağrıyı artırır"
       ],
       "historySummary": "Cirit sporu yapan hastada özellikle dirsek fleksiyonu ve supinasyonla artan anterior omuz ağrısı gelişiyor.",
-      "priorityFocus": "Anterior omuz ağrısı, dirsek fleksiyonu/supinasyonla artış, Speed/Yergason doğru seçeneği belirleyen temel ipucudur; biseps tendiniti: anterior omuz ağrısı, Speed/Yergason pozitifliği."
+      "priorityFocus": "Anterior omuz ağrısı, dirsek fleksiyonu/supinasyonla artış, Speed/Yergason klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -27999,7 +28026,7 @@ export const cases = [
         "type": "ct",
         "summary": "Akut intrakraniyal kanama, kitle etkisi veya kafatası kırığı saptanmaz.",
         "findings": [
-          "Normal BT, geçici klinik fonksiyon bozukluğu ile birlikte konküzyonu destekler."
+          "Normal BT, geçici klinik fonksiyon bozukluğu ile birlikte konküzyonu klinik yorumda önemlidir."
         ],
         "priority": "useful"
       }
@@ -28115,7 +28142,7 @@ export const cases = [
         "GKS yüksek olabilir ve BT normal olabilir"
       ],
       "historySummary": "Boks sırasında başına darbe alan hastada kısa süreli dikkat ve konsantrasyon bozukluğu, amnezi ve bulanık görme gelişir. GKS yüksek seyretse de yakınmalar travma sonrası klinik fonksiyon bozukluğunu düşündürür.",
-      "priorityFocus": "Baş travması sonrası amnezi/konsantrasyon bozukluğu, BT normal olabilir doğru seçeneği belirleyen temel ipucudur; konküzyon klinik tanıdır; BT normal olabilir."
+      "priorityFocus": "Baş travması sonrası amnezi/konsantrasyon bozukluğu, BT normal olabilir klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -28152,7 +28179,7 @@ export const cases = [
         "type": "pathology",
         "summary": "Püstül içeriğinde bol eozinofil görülür; kültürde üreme olmaz.",
         "findings": [
-          "Steril püstül ve eozinofil baskınlığı eritema toksikum için tipiktir."
+          "Steril püstül ve eozinofil baskınlığı benign yenidoğan döküntüsü paternini klinik yorumda önemlidir."
         ],
         "priority": "useful"
       }
@@ -28269,7 +28296,7 @@ export const cases = [
         "Gövde/sırtta küçük papülopüstüller vardır"
       ],
       "historySummary": "Term yenidoğanda doğumdan kısa süre sonra gövde ve sırtta sarı-beyaz küçük papülopüstüller gelişir. Bebek iyi görünür, ateş yoktur ve lezyonlar kısa sürede gerileme eğilimindedir.",
-      "priorityFocus": "İyi görünen term yenidoğanda geçici papülopüstüller doğru seçeneği belirleyen temel ipucudur; eritema toksikum: benign, geçici, eozinofilli papülopüstüler yenidoğan döküntüsü."
+      "priorityFocus": "İyi görünen term yenidoğanda geçici papülopüstüller klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -28283,7 +28310,7 @@ export const cases = [
       "Anti-HAV IgM"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Akut hepatit A tanısında Anti-HAV IgM",
+    "clinicalFocus": "Akut hepatit serolojisinde IgM paternini yorumlama",
     "demographics": "10 yaşında kız çocuk",
     "setting": "Çocuk acil",
     "chiefComplaint": "Halsizlik, kusma, koyu idrar ve sarılık",
@@ -28301,27 +28328,52 @@ export const cases = [
     ],
     "investigations": [
       {
-        "id": "tus-spot-hav-igm",
-        "label": "Hepatit A serolojisi",
-        "type": "serology",
-        "summary": "Anti-HAV IgM pozitif saptanır; akut hepatit A ile uyumludur.",
+        "id": "acute-hepatitis-serology-panel",
+        "label": "Akut hepatit serolojisi paneli",
+        "type": "lab",
+        "priority": "essential",
+        "summary": "Anti-HAV IgM pozitif; HBsAg, anti-HBc IgM ve anti-HCV negatif saptanır.",
         "findings": [
-          "Anti-HAV IgM pozitif saptanır; akut hepatit A ile uyumludur."
+          "HAV IgM pozitifliği yakın dönem hepatit A maruziyetini düşündürür.",
+          "HBV ve HCV göstergeleri bu panelde negatif izlenir."
         ],
-        "priority": "useful",
         "rows": [
           [
-            "Hepatit A serolojisi",
-            "Anti-HAV IgM pozitif saptanır; akut hepatit A ile uyumludur.",
-            "Beklenen/karar eşiği",
-            "Karar verdirici"
+            "Anti-HAV IgM",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "Anti-HAV IgG",
+            "Erken/pozitif olabilir",
+            "Negatif veya pozitif",
+            "Yorum gerektirir"
+          ],
+          [
+            "HBsAg",
+            "Negatif",
+            "Negatif",
+            "Negatif"
+          ],
+          [
+            "Anti-HBc IgM",
+            "Negatif",
+            "Negatif",
+            "Negatif"
+          ],
+          [
+            "Anti-HCV",
+            "Negatif",
+            "Negatif",
+            "Negatif"
           ]
         ]
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "En olası tanıyı desteklemek için öncelikle hangi test istenmelidir?",
+    "questionType": "diagnosis",
+    "question": "Bu serolojik paternin en doğru yorumu hangisidir?",
     "spotPearl": "Akut HAV tanısı: anti-HAV IgM.",
     "learningOutcome": "Bu spot olguda ana ipucunu (kamp sonrası akut hepatit + koyu idrar/sarılık) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -28334,68 +28386,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q44",
     "diagnosis": {
-      "correct": "Anti-HAV IgM",
+      "correct": "Akut hepatit A enfeksiyonu",
       "options": [
-        "Anti-HAV IgM",
-        "Direkt Coombs",
-        "Ozmotik frajilite",
-        "Hemoglobin elektroforezi"
+        "Akut hepatit A enfeksiyonu",
+        "Geçirilmiş hepatit A bağışıklığı",
+        "Akut hepatit B enfeksiyonu",
+        "Akut hepatit C enfeksiyonu"
       ],
-      "explanation": "Kamp/ortak gıda-su maruziyeti sonrası halsizlik, kusma, koyu idrar ve sarılık akut viral hepatiti düşündürür; akut HAV tanısını destekleyen ilk test anti-HAV IgM’dir. Coombs, ozmotik frajilite ve hemoglobin elektroforezi hemolitik anemi ayırımı içindir.",
+      "explanation": "Akut hepatit kliniğinde Anti-HAV IgM pozitifliği ve HBV/HCV göstergelerinin negatif olması en güçlü biçimde akut hepatit A enfeksiyonunu destekler; yalnız Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı düşündürürdü.",
       "pearls": [
-        "Akut HAV tanısı: anti-HAV IgM.",
-        "HAV fekal-oral bulaşır; kamp/ortak gıda-su öyküsü ipucudur.",
-        "Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir."
+        "Anti-HAV IgM akut veya yakın dönem HAV enfeksiyonunu gösterir.",
+        "Anti-HAV IgG geçirilmiş enfeksiyon veya aşı bağışıklığıyla ilişkilidir.",
+        "Akut hepatit B için HBsAg ve anti-HBc IgM beklenir."
       ],
       "nextStep": "Karaciğer enzimleri, bilirubin ve koagülasyon durumunu değerlendir. Anti-HAV IgM ile akut HAV’ı doğrula. Destek tedavisi, hijyen/bulaş önlemleri ve fulminan hepatit uyarılarını izle.",
       "answerFeedback": {
-        "correctDiagnosis": "Anti-HAV IgM",
-        "diagnosisMeta": "Akut hepatit A tanısında Anti-HAV IgM",
+        "correctDiagnosis": "Akut hepatit A enfeksiyonu",
+        "diagnosisMeta": "Akut hepatit serolojisinde IgM paternini yorumlama",
         "shortDiagnosisMeta": "Tetkik / Pediatri",
-        "whyCorrect": "Kamp/ortak gıda-su maruziyeti sonrası halsizlik, kusma, koyu idrar ve sarılık akut viral hepatiti düşündürür; akut HAV tanısını destekleyen ilk test anti-HAV IgM’dir. Coombs, ozmotik frajilite ve hemoglobin elektroforezi hemolitik anemi ayırımı içindir.",
+        "whyCorrect": "Akut hepatit kliniğinde Anti-HAV IgM pozitifliği ve HBV/HCV göstergelerinin negatif olması en güçlü biçimde akut hepatit A enfeksiyonunu destekler; yalnız Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı düşündürürdü.",
         "whyWrong": {
-          "Direkt Coombs": "Direkt Coombs bu olguda elenir: Hemoliz testlerini hepatit serolojisi yerine seçmek. Karar verdiren ipucu kamp sonrası akut hepatit + koyu idrar/sarılık olduğu için doğru yanıt Anti-HAV IgM olmalıdır.",
-          "Ozmotik frajilite": "Ozmotik frajilite bu olguda elenir: Hemoliz testlerini hepatit serolojisi yerine seçmek. Karar verdiren ipucu kamp sonrası akut hepatit + koyu idrar/sarılık olduğu için doğru yanıt Anti-HAV IgM olmalıdır.",
-          "Hemoglobin elektroforezi": "Hemoglobin elektroforezi bu olguda elenir: Hemoliz testlerini hepatit serolojisi yerine seçmek. Karar verdiren ipucu kamp sonrası akut hepatit + koyu idrar/sarılık olduğu için doğru yanıt Anti-HAV IgM olmalıdır."
+          "Geçirilmiş hepatit A bağışıklığı": "Geçirilmiş enfeksiyon/aşı bağışıklığında Anti-HAV IgG baskındır; IgM pozitifliği akut dönem lehinedir.",
+          "Akut hepatit B enfeksiyonu": "Akut HBV için HBsAg ve anti-HBc IgM pozitifliği beklenir; bu panelde HBV göstergeleri negatif verilmiştir.",
+          "Akut hepatit C enfeksiyonu": "Akut HCV değerlendirmesinde HCV RNA/anti-HCV paterni önemlidir; HAV IgM pozitifliği bu seçenekten daha spesifiktir."
         },
         "evidenceChain": [
-          "Yaz kampından birkaç hafta sonra semptomlar başlamıştır.",
-          "Koyu idrar ve ikter hepatoselüler/kolestatik bilirubin artışını düşündürür.",
-          "Kusma ve halsizlik akut viral hepatit prodromuyla uyumludur."
+          "Kamp sonrası halsizlik, kusma, koyu idrar ve ikter akut hepatit bağlamı oluşturur.",
+          "Anti-HAV IgM pozitifliği yakın dönem HAV enfeksiyonunu düşündürür.",
+          "HBsAg, anti-HBc IgM ve anti-HCV negatifliği yakın HBV/HCV olasılığını zayıflatır."
         ],
         "clinicalPearls": [
-          "Akut HAV tanısı: anti-HAV IgM.",
-          "HAV fekal-oral bulaşır; kamp/ortak gıda-su öyküsü ipucudur.",
-          "Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir."
+          "Anti-HAV IgM akut veya yakın dönem HAV enfeksiyonunu gösterir.",
+          "Anti-HAV IgG geçirilmiş enfeksiyon veya aşı bağışıklığıyla ilişkilidir.",
+          "Akut hepatit B için HBsAg ve anti-HBc IgM beklenir."
         ],
         "pearls": [
-          "Akut HAV tanısı: anti-HAV IgM.",
-          "HAV fekal-oral bulaşır; kamp/ortak gıda-su öyküsü ipucudur.",
-          "Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir."
+          "Anti-HAV IgM akut veya yakın dönem HAV enfeksiyonunu gösterir.",
+          "Anti-HAV IgG geçirilmiş enfeksiyon veya aşı bağışıklığıyla ilişkilidir.",
+          "Akut hepatit B için HBsAg ve anti-HBc IgM beklenir."
         ],
         "differentialComparison": {
-          "Direkt Coombs": {
-            "explanation": "Direkt Coombs bu olguda elenir: Hemoliz testlerini hepatit serolojisi yerine seçmek. Karar verdiren ipucu kamp sonrası akut hepatit + koyu idrar/sarılık olduğu için doğru yanıt Anti-HAV IgM olmalıdır.",
+          "Geçirilmiş hepatit A bağışıklığı": {
+            "explanation": "Geçirilmiş enfeksiyon/aşı bağışıklığında Anti-HAV IgG baskındır; IgM pozitifliği akut dönem lehinedir.",
             "comparisonPoints": [
-              "Ana ipucu: kamp sonrası akut hepatit + koyu idrar/sarılık.",
-              "Çeldirici tuzak: Hemoliz testlerini hepatit serolojisi yerine seçmek.",
-              "Sınav incisi: Akut HAV tanısı: anti-HAV IgM."
+              "Ana ipucu: Kamp sonrası halsizlik, kusma, koyu idrar ve ikter akut hepatit bağlamı oluşturur.",
+              "Çeldirici tuzak: Geçirilmiş hepatit A bağışıklığı benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Ozmotik frajilite": {
-            "explanation": "Ozmotik frajilite bu olguda elenir: Hemoliz testlerini hepatit serolojisi yerine seçmek. Karar verdiren ipucu kamp sonrası akut hepatit + koyu idrar/sarılık olduğu için doğru yanıt Anti-HAV IgM olmalıdır.",
+          "Akut hepatit B enfeksiyonu": {
+            "explanation": "Akut HBV için HBsAg ve anti-HBc IgM pozitifliği beklenir; bu panelde HBV göstergeleri negatif verilmiştir.",
             "comparisonPoints": [
-              "Ana ipucu: kamp sonrası akut hepatit + koyu idrar/sarılık.",
-              "Çeldirici tuzak: Hemoliz testlerini hepatit serolojisi yerine seçmek.",
-              "Sınav incisi: Akut HAV tanısı: anti-HAV IgM."
+              "Ana ipucu: Kamp sonrası halsizlik, kusma, koyu idrar ve ikter akut hepatit bağlamı oluşturur.",
+              "Çeldirici tuzak: Akut hepatit B enfeksiyonu benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Hemoglobin elektroforezi": {
-            "explanation": "Hemoglobin elektroforezi bu olguda elenir: Hemoliz testlerini hepatit serolojisi yerine seçmek. Karar verdiren ipucu kamp sonrası akut hepatit + koyu idrar/sarılık olduğu için doğru yanıt Anti-HAV IgM olmalıdır.",
+          "Akut hepatit C enfeksiyonu": {
+            "explanation": "Akut HCV değerlendirmesinde HCV RNA/anti-HCV paterni önemlidir; HAV IgM pozitifliği bu seçenekten daha spesifiktir.",
             "comparisonPoints": [
-              "Ana ipucu: kamp sonrası akut hepatit + koyu idrar/sarılık.",
-              "Çeldirici tuzak: Hemoliz testlerini hepatit serolojisi yerine seçmek.",
-              "Sınav incisi: Akut HAV tanısı: anti-HAV IgM."
+              "Ana ipucu: Kamp sonrası halsizlik, kusma, koyu idrar ve ikter akut hepatit bağlamı oluşturur.",
+              "Çeldirici tuzak: Akut hepatit C enfeksiyonu benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -28413,7 +28462,7 @@ export const cases = [
         "spotClue": "kamp sonrası akut hepatit + koyu idrar/sarılık.",
         "trap": "Hemoliz testlerini hepatit serolojisi yerine seçmek."
       },
-      "question": "En olası tanıyı desteklemek için öncelikle hangi test istenmelidir?"
+      "question": "Bu serolojik paternin en doğru yorumu hangisidir?"
     },
     "title": "Halsizlik, kusma, koyu idrar ve sarılık",
     "patientIntro": {
@@ -28429,7 +28478,7 @@ export const cases = [
         "Kusma ve halsizlik akut viral hepatit prodromuyla uyumludur"
       ],
       "historySummary": "Yaz kampından birkaç hafta sonra halsizlik, kusma, koyu idrar ve ikter gelişen çocukta akut hepatit düşünülüyor.",
-      "priorityFocus": "Kamp sonrası akut hepatit, koyu idrar/sarılık doğru seçeneği belirleyen temel ipucudur; akut HAV tanısı: anti-HAV IgM."
+      "priorityFocus": "Kamp sonrası gelişen sarılıkta hepatit serolojisi paneli tanıdan çok patern yorumlaması gerektirir."
     }
   },
   {
@@ -28592,7 +28641,7 @@ export const cases = [
         "Ağır makrositer anemi megaloblastik süreci"
       ],
       "historySummary": "Akraba ebeveynlerin 2 yaşındaki çocuğunda gelişme geriliği, sensorinöral işitme kaybı, diyabet ve belirgin solukluk birlikte izlenir. Kalıtsal vitamin taşıma bozukluğu düşünülür.",
-      "priorityFocus": "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi doğru seçeneği belirleyen temel ipucudur; thiamine-responsive megaloblastic anemia: diyabet, sensorinöral işitme kaybı, megaloblastik anemi."
+      "priorityFocus": "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -28735,7 +28784,7 @@ export const cases = [
         "Ailede erkek bireylerde erken nörolojik kötüleşme öyküsü vardır"
       ],
       "historySummary": "10 yaşındaki erkek çocukta okul başarısında gerileme, davranış değişikliği ve ciltte hiperpigmentasyon gelişir. Ailede erkek bireylerde erken yaş nörolojik kötüleşme öyküsü olduğu öğrenilir.",
-      "priorityFocus": "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu doğru seçeneği belirleyen temel ipucudur; x-ALD: ABCD1, çok uzun zincirli yağ asitleri ↑, adrenal yetmezlik, beyaz cevher demiyelinizasyonu."
+      "priorityFocus": "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -28878,7 +28927,7 @@ export const cases = [
         "Tırnak distrofisi ve gelişimsel gecikme eşlik eder"
       ],
       "historySummary": "Kronik kandidiyal ağız lezyonları, mukozal hiperpigmentasyon, tırnak distrofisi ve gelişimsel gecikme bulguları olan ergende otoimmün endokrinopati düşünülüyor.",
-      "priorityFocus": "Kronik kandidiyazis, hipoparatiroidi/Addison bulguları doğru seçeneği belirleyen temel ipucudur; aPECED/APS-1: kronik mukokutanöz kandidiyazis, hipoparatiroidi, Addison."
+      "priorityFocus": "Kronik kandidiyazis, hipoparatiroidi/Addison bulguları klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -29021,7 +29070,7 @@ export const cases = [
         "Önceki lens cerrahisi ektopia lentis öyküsünü"
       ],
       "historySummary": "Akrabalık öyküsü olan 10 yaşındaki erkek çocuk ani başlayan sol taraf güçsüzlüğü ile acile getirilir. Uzun boy, ince uzun parmaklar ve önceki lens cerrahisi öyküsü dikkat çeker.",
-      "priorityFocus": "Marfanoid habitus, lens öyküsü, çocukta tromboz/inme doğru seçeneği belirleyen temel ipucudur; homosistinüri: marfanoid habitus, lens subluksasyonu, tromboz/inme riski."
+      "priorityFocus": "Marfanoid habitus, lens öyküsü, çocukta tromboz/inme klinik muhakemede ayırt ettirici ipucu oluşturur."
     }
   },
   {
@@ -29035,7 +29084,7 @@ export const cases = [
       "Kleihauer-Betke"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Fetomaternal kanama tanısında Kleihauer-Betke testi",
+    "clinicalFocus": "Ağır neonatal anemide hemolizsiz kan kaybı paternini yorumlama",
     "demographics": "Term yenidoğan",
     "setting": "Yenidoğan servisi",
     "chiefComplaint": "Doğumda solukluk ve ağır anemi",
@@ -29084,18 +29133,38 @@ export const cases = [
       },
       {
         "id": "kleihauer-betke",
-        "label": "Kleihauer-Betke testi",
+        "label": "Maternal kanda fetal eritrosit taraması",
         "type": "lab",
-        "summary": "Maternal kanda fetal eritrositler saptanır; fetomaternal kanama lehinedir.",
+        "summary": "Maternal periferik yaymada HbF içeren fetal eritrositler gösterilir.",
         "findings": [
-          "Kleihauer-Betke testi maternal dolaşımdaki fetal hemoglobini gösterir."
+          "Anne dolaşımında fetal eritrosit varlığı objektif olarak gösterilir."
         ],
-        "priority": "essential"
+        "priority": "essential",
+        "rows": [
+          [
+            "Maternal kanda fetal eritrosit",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "Yenidoğan direkt Coombs",
+            "Negatif",
+            "Negatif",
+            "Normal"
+          ],
+          [
+            "Periferik yayma",
+            "Belirgin hemoliz bulgusu yok",
+            "Hemoliz saptanmamalı",
+            "Beklenen"
+          ]
+        ]
       }
     ],
     "images": [],
-    "questionType": "test",
-    "question": "Bu tanıyı doğrulamak için en uygun test hangisidir?",
+    "questionType": "diagnosis",
+    "question": "Bu neonatal anemi paterninin en doğru yorumu hangisidir?",
     "spotPearl": "Fetomaternal hemoraji tanısı: Kleihauer-Betke testi.",
     "learningOutcome": "Bu spot olguda ana ipucunu (yenidoğanda ağır anemi + dış kanama/hemoliz yok) yakalayıp çeldiriciyi eleyerek doğru sınav kararına ulaşır.",
     "managementSequence": {
@@ -29108,69 +29177,65 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q49",
     "diagnosis": {
-      "correct": "Kleihauer-Betke testi",
+      "correct": "Fetomaternal hemorajiye bağlı akut fetal kan kaybı",
       "options": [
-        "Kleihauer-Betke testi",
-        "İndirekt Coombs testi",
-        "Eritropoietin düzeyi",
-        "Plazma haptoglobin düzeyi"
+        "Fetomaternal hemorajiye bağlı akut fetal kan kaybı",
+        "Rh alloimmünizasyonuna bağlı hemolitik hastalık",
+        "Konjenital aplastik anemi",
+        "Fizyolojik yenidoğan anemisi"
       ],
-      "explanation": "Doğumda belirgin solukluk, taşikardi ve zayıf perfüzyonla ağır anemi varsa; dış kanama ve hemoliz kanıtı yoksa fetomaternal hemoraji düşünülür. Tanıyı doğrulamak için anne kanında fetal eritrositleri gösteren Kleihauer-Betke testi kullanılır.",
+      "explanation": "Doğumda ağır anemi, zayıf perfüzyon, direkt Coombs negatifliği ve hemoliz bulgusu olmaması; maternal dolaşımda fetal eritrosit gösterilmesiyle birlikte fetomaternal hemorajiye bağlı fetal kan kaybını destekler.",
       "pearls": [
-        "Fetomaternal hemoraji tanısı: Kleihauer-Betke testi.",
-        "İndirekt Coombs alloimmün hemoliz değerlendirmesindedir.",
-        "Ağır neonatal anemide dolaşım desteği ve transfüzyon gerekebilir."
+        "Fetomaternal hemorajide yenidoğanda ağır anemi olabilir, hemoliz bulguları belirgin olmayabilir.",
+        "Direkt Coombs negatifliği Rh/ABO hemolitik hastalığı geri plana iter.",
+        "Ağır neonatal anemide önce stabilizasyon, ardından kan kaybı/hemoliz ayrımı yapılır."
       ],
       "nextStep": "Yenidoğanın dolaşım ve oksijenasyonunu stabilize et. Hemoglobin, retikülosit ve hemoliz bulgularını değerlendir. Anne kanında Kleihauer-Betke testi ile fetal eritrositleri araştır.",
       "answerFeedback": {
-        "correctDiagnosis": "Kleihauer-Betke testi",
-        "diagnosisMeta": "Fetomaternal kanama tanısında Kleihauer-Betke testi",
+        "correctDiagnosis": "Fetomaternal hemorajiye bağlı akut fetal kan kaybı",
+        "diagnosisMeta": "Ağır neonatal anemide hemolizsiz kan kaybı paternini yorumlama",
         "shortDiagnosisMeta": "Tetkik / Yenidoğan",
-        "whyCorrect": "Doğumda belirgin solukluk, taşikardi ve zayıf perfüzyonla ağır anemi varsa; dış kanama ve hemoliz kanıtı yoksa fetomaternal hemoraji düşünülür. Tanıyı doğrulamak için anne kanında fetal eritrositleri gösteren Kleihauer-Betke testi kullanılır.",
+        "whyCorrect": "Doğumda ağır anemi, zayıf perfüzyon, direkt Coombs negatifliği ve hemoliz bulgusu olmaması; maternal dolaşımda fetal eritrosit gösterilmesiyle birlikte fetomaternal hemorajiye bağlı fetal kan kaybını destekler.",
         "whyWrong": {
-          "İndirekt Coombs testi": "İndirekt Coombs testi bu olguda elenir: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak. Karar verdiren ipucu yenidoğanda ağır anemi + dış kanama/hemoliz yok olduğu için doğru yanıt Kleihauer-Betke testi olmalıdır.",
-          "Eritropoietin düzeyi": "Eritropoietin düzeyi bu olguda elenir: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak. Karar verdiren ipucu yenidoğanda ağır anemi + dış kanama/hemoliz yok olduğu için doğru yanıt Kleihauer-Betke testi olmalıdır.",
-          "Plazma haptoglobin düzeyi": "Plazma haptoglobin düzeyi bu olguda elenir: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak. Karar verdiren ipucu yenidoğanda ağır anemi + dış kanama/hemoliz yok olduğu için doğru yanıt Kleihauer-Betke testi olmalıdır."
+          "Rh alloimmünizasyonuna bağlı hemolitik hastalık": "Rh alloimmünizasyonunda Coombs pozitifliği ve hemoliz bulguları beklenir; bu olguda hemoliz kanıtı baskın değildir.",
+          "Konjenital aplastik anemi": "Aplastik tabloda kemik iliği üretim yetersizliği ve sıklıkla ek sitopeniler beklenir; ani doğum sonrası hipoperfüzyon-kan kaybı paterni daha güçlüdür.",
+          "Fizyolojik yenidoğan anemisi": "Fizyolojik anemi doğum anında Hb 6.2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir."
         },
         "evidenceChain": [
-          "Term yenidoğan doğumdan hemen sonra belirgin soluk ve taşikardiktir.",
-          "Zayıf perfüzyon ağır aneminin hemodinamik etkisini gösterir.",
-          "Anne veya bebekte belirgin dış kanama yoktur.",
-          "Hemoliz olmadan fetal kan kaybı araştırılmaktadır."
+          "Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
+          "Direkt Coombs negatifliği alloimmün hemolizi zayıflatır.",
+          "Maternal kanda fetal eritrositlerin gösterilmesi fetustan anneye kan geçişi olduğunu gösterir."
         ],
         "clinicalPearls": [
-          "Fetomaternal hemoraji tanısı: Kleihauer-Betke testi.",
-          "İndirekt Coombs alloimmün hemoliz değerlendirmesindedir.",
-          "Ağır neonatal anemide dolaşım desteği ve transfüzyon gerekebilir."
+          "Fetomaternal hemorajide yenidoğanda ağır anemi olabilir, hemoliz bulguları belirgin olmayabilir.",
+          "Direkt Coombs negatifliği Rh/ABO hemolitik hastalığı geri plana iter.",
+          "Ağır neonatal anemide önce stabilizasyon, ardından kan kaybı/hemoliz ayrımı yapılır."
         ],
         "pearls": [
-          "Fetomaternal hemoraji tanısı: Kleihauer-Betke testi.",
-          "İndirekt Coombs alloimmün hemoliz değerlendirmesindedir.",
-          "Ağır neonatal anemide dolaşım desteği ve transfüzyon gerekebilir."
+          "Fetomaternal hemorajide yenidoğanda ağır anemi olabilir, hemoliz bulguları belirgin olmayabilir.",
+          "Direkt Coombs negatifliği Rh/ABO hemolitik hastalığı geri plana iter.",
+          "Ağır neonatal anemide önce stabilizasyon, ardından kan kaybı/hemoliz ayrımı yapılır."
         ],
         "differentialComparison": {
-          "İndirekt Coombs testi": {
-            "explanation": "İndirekt Coombs testi bu olguda elenir: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak. Karar verdiren ipucu yenidoğanda ağır anemi + dış kanama/hemoliz yok olduğu için doğru yanıt Kleihauer-Betke testi olmalıdır.",
+          "Rh alloimmünizasyonuna bağlı hemolitik hastalık": {
+            "explanation": "Rh alloimmünizasyonunda Coombs pozitifliği ve hemoliz bulguları beklenir; bu olguda hemoliz kanıtı baskın değildir.",
             "comparisonPoints": [
-              "Ana ipucu: yenidoğanda ağır anemi + dış kanama/hemoliz yok.",
-              "Çeldirici tuzak: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak.",
-              "Sınav incisi: Fetomaternal hemoraji tanısı: Kleihauer-Betke testi."
+              "Ana ipucu: Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
+              "Çeldirici tuzak: Rh alloimmünizasyonuna bağlı hemolitik hastalık benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Eritropoietin düzeyi": {
-            "explanation": "Eritropoietin düzeyi bu olguda elenir: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak. Karar verdiren ipucu yenidoğanda ağır anemi + dış kanama/hemoliz yok olduğu için doğru yanıt Kleihauer-Betke testi olmalıdır.",
+          "Konjenital aplastik anemi": {
+            "explanation": "Aplastik tabloda kemik iliği üretim yetersizliği ve sıklıkla ek sitopeniler beklenir; ani doğum sonrası hipoperfüzyon-kan kaybı paterni daha güçlüdür.",
             "comparisonPoints": [
-              "Ana ipucu: yenidoğanda ağır anemi + dış kanama/hemoliz yok.",
-              "Çeldirici tuzak: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak.",
-              "Sınav incisi: Fetomaternal hemoraji tanısı: Kleihauer-Betke testi."
+              "Ana ipucu: Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
+              "Çeldirici tuzak: Konjenital aplastik anemi benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           },
-          "Plazma haptoglobin düzeyi": {
-            "explanation": "Plazma haptoglobin düzeyi bu olguda elenir: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak. Karar verdiren ipucu yenidoğanda ağır anemi + dış kanama/hemoliz yok olduğu için doğru yanıt Kleihauer-Betke testi olmalıdır.",
+          "Fizyolojik yenidoğan anemisi": {
+            "explanation": "Fizyolojik anemi doğum anında Hb 6.2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir.",
             "comparisonPoints": [
-              "Ana ipucu: yenidoğanda ağır anemi + dış kanama/hemoliz yok.",
-              "Çeldirici tuzak: Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak.",
-              "Sınav incisi: Fetomaternal hemoraji tanısı: Kleihauer-Betke testi."
+              "Ana ipucu: Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
+              "Çeldirici tuzak: Fizyolojik yenidoğan anemisi benzer bir bağlamda düşünülebilir ancak bu olgudaki paternle tam örtüşmez."
             ]
           }
         },
@@ -29188,7 +29253,7 @@ export const cases = [
         "spotClue": "yenidoğanda ağır anemi + dış kanama/hemoliz yok.",
         "trap": "Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak."
       },
-      "question": "Bu tanıyı doğrulamak için en uygun test hangisidir?"
+      "question": "Bu neonatal anemi paterninin en doğru yorumu hangisidir?"
     },
     "title": "Doğumda solukluk ve ağır anemi",
     "patientIntro": {
@@ -29204,7 +29269,7 @@ export const cases = [
         "Anne veya bebekte belirgin dış kanama yoktur"
       ],
       "historySummary": "Anne veya bebekte belirgin dış kanama öyküsü yoktur; hemolizsiz fetal kan kaybı olasılığı araştırılır.",
-      "priorityFocus": "Yenidoğanda ağır anemi, dış kanama/hemoliz yok doğru seçeneği belirleyen temel ipucudur; fetomaternal hemoraji tanısı: Kleihauer-Betke testi."
+      "priorityFocus": "Ağır neonatal anemide dış kanama ve hemoliz yokluğu kan kaybının kaynağını sistematik yorumlamayı gerektirir."
     }
   },
   {
@@ -29239,9 +29304,9 @@ export const cases = [
         "id": "cord-gas-hie",
         "label": "Kord kan gazı",
         "type": "lab",
-        "summary": "pH 6.90 ve baz açığı -15 mmol/L; ağır metabolik asidoz perinatal asfiksi lehinedir.",
+        "summary": "pH 6.90 ve baz açığı -15 mmol/L.",
         "findings": [
-          "Ağır asidoz ve ensefalopati bulguları terapötik hipotermi uygunluğunu destekler."
+          "Ağır asidoz ve ensefalopati bulguları nöroprotektif tedavi penceresi açısından kritik eşik oluşturur."
         ],
         "priority": "essential",
         "rows": [
@@ -29275,11 +29340,11 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q50",
     "diagnosis": {
-      "correct": "Hipotermi tedavisi",
+      "correct": "Terapötik hipotermi",
       "options": [
-        "Hipotermi tedavisi",
-        "Hiperbarik oksijen",
-        "Periton diyalizi",
+        "Terapötik hipotermi",
+        "Profilaktik fenitoin monoterapisi",
+        "Hiperbarik oksijen tedavisi",
         "Rutin profilaktik antibiyotik"
       ],
       "explanation": "Term yenidoğanda doğumda resüsitasyon, ağır metabolik asidoz ve orta-ağır hipoksik iskemik ensefalopati bulguları varsa nörolojik sekel riskini azaltan yaklaşım terapötik hipotermidir. En kritik TUS bilgisi tedavinin ilk 6 saat içinde başlanmasıdır.",
@@ -29290,7 +29355,7 @@ export const cases = [
       ],
       "nextStep": "Resüsitasyon sonrası solunum, dolaşım, glukoz ve nöbetleri stabilize et. HİE şiddetini ve hipotermi uygunluğunu ilk saatlerde değerlendir. Uygunsa terapötik hipotermiyi ilk 6 saat içinde başlat ve yoğun bakım izlemi planla.",
       "answerFeedback": {
-        "correctDiagnosis": "Hipotermi tedavisi",
+        "correctDiagnosis": "Terapötik hipotermi",
         "diagnosisMeta": "Hipoksik iskemik ensefalopatide nörolojik sekel azaltmak için hipotermi tedavisi",
         "shortDiagnosisMeta": "Yenidoğan / Tedavi",
         "whyCorrect": "Term yenidoğanda doğumda resüsitasyon, ağır metabolik asidoz ve orta-ağır hipoksik iskemik ensefalopati bulguları varsa nörolojik sekel riskini azaltan yaklaşım terapötik hipotermidir. En kritik TUS bilgisi tedavinin ilk 6 saat içinde başlanmasıdır.",
@@ -29376,11 +29441,10 @@ export const cases = [
   }
 ];
 
-export function getCaseById(caseId) {
-  return cases.find((clinicalCase) => clinicalCase.id === caseId) ?? null;
+export function getCasesByBranch(branchId) {
+  return cases.filter((clinicalCase) => clinicalCase.branchId === branchId);
 }
 
-export function getCasesByBranch(branchId) {
-  if (!branchId) return cases;
-  return cases.filter((clinicalCase) => clinicalCase.branchId === branchId);
+export function getCaseById(caseId) {
+  return cases.find((clinicalCase) => clinicalCase.id === caseId);
 }
