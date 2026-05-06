@@ -81,6 +81,7 @@ function DiagnosisQuiz({
   orderedInvestigationIds = [],
   investigationOrders = [],
   hardMode = false,
+  randomActionLabel = 'Yeni vaka çöz',
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
@@ -186,7 +187,7 @@ function DiagnosisQuiz({
         {!examMeta?.active ? (
           <button className="btn btn-secondary answer-next-case-btn" type="button" onClick={onRandomCase}>
             <Icon name="RotateCcw" />
-            <span>Yeni vaka çöz</span>
+            <span>{randomActionLabel}</span>
             <Icon name="ArrowRight" className="answer-next-case-arrow" />
           </button>
         ) : null}

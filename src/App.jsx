@@ -9,17 +9,20 @@ import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
 import WrongAnswersPanel from './components/WrongAnswersPanel.jsx';
 import ExamResults from './components/ExamResults.jsx';
+import AIGeneratedQuestionView from './components/AIGeneratedQuestionView.jsx';
 import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById } from './data/cases.js';
 import { scoreAttempt, calculateAccuracy } from './utils/scoring.js';
 import { pickRandom, shuffleArray } from './utils/randomize.js';
 import { localBackend } from './services/localBackend.js';
+import { createAIQuestion } from './services/aiQuestionService.js';
 import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
 
 const STATS_STORAGE_KEY = 'klinikiq-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'klinikiq-exam-history-v2';
 const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
+const AI_PRACTICE_STATS_STORAGE_KEY = 'klinikiq-ai-practice-stats-v1';
 const BRANCH_TRANSITION_MS = 920;
 const BRANCH_TRANSITION_FADE_MS = 180;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
@@ -43,6 +46,14 @@ const defaultStats = {
   streak: 0,
   bestStreak: 0,
   accuracy: 0,
+};
+
+const defaultAIPracticeStats = {
+  attempts: 0,
+  correct: 0,
+  score: 0,
+  streak: 0,
+  bestStreak: 0,
 };
 
 function loadStoredValue(key, fallback) {
@@ -143,12 +154,22 @@ function App() {
   const [sessionStats, setSessionStats] = useState(() => currentUser?.stats ?? loadStoredValue(STATS_STORAGE_KEY, defaultStats));
   const [examHistory, setExamHistory] = useState(() => currentUser?.examHistory ?? loadStoredValue(EXAM_HISTORY_STORAGE_KEY, []));
   const [wrongAnswers, setWrongAnswers] = useState(() => currentUser?.wrongAnswers ?? []);
+  const [aiPracticeStats, setAIPracticeStats] = useState(() => loadStoredValue(AI_PRACTICE_STATS_STORAGE_KEY, defaultAIPracticeStats));
+  const [aiPracticeState, setAIPracticeState] = useState({ active: false, question: null, loading: false, error: null });
   const [examState, setExamState] = useState(null);
   const [clockTick, setClockTick] = useState(Date.now());
   const [isCaseSidebarOpen, setIsCaseSidebarOpen] = useState(true);
   const [branchRouteTransition, setBranchRouteTransition] = useState(null);
   const branchRouteTimers = useRef([]);
+  const aiQuestionTimer = useRef(null);
   const isDemoUser = isDemoAccount(currentUser);
+
+  function clearAIQuestionTimer() {
+    if (aiQuestionTimer.current) {
+      window.clearTimeout(aiQuestionTimer.current);
+      aiQuestionTimer.current = null;
+    }
+  }
 
   const demoCases = useMemo(() => resolveDemoCases(), []);
   const accessibleCases = useMemo(() => (isDemoUser ? demoCases : cases), [isDemoUser, demoCases]);
@@ -211,6 +232,10 @@ function App() {
     persistCurrentUser({ wrongAnswers });
   }, [wrongAnswers, currentUser?.id]);
 
+  useEffect(() => {
+    localBackend.write(AI_PRACTICE_STATS_STORAGE_KEY, aiPracticeStats);
+  }, [aiPracticeStats]);
+
   const handleRegister = ({ name, email, password, confirmPassword }) => {
     const normalizedEmail = normalizeEmail(email);
     const displayName = String(name || '').trim();
@@ -241,6 +266,7 @@ function App() {
     setSessionStats(newUser.stats);
     setExamHistory([]);
     setWrongAnswers([]);
+    setAIPracticeState({ active: false, question: null, loading: false, error: null });
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -260,6 +286,7 @@ function App() {
     setSessionStats(user.stats ?? defaultStats);
     setExamHistory(user.examHistory ?? []);
     setWrongAnswers(user.wrongAnswers ?? []);
+    setAIPracticeState({ active: false, question: null, loading: false, error: null });
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -274,6 +301,7 @@ function App() {
     setSessionStats(user.stats ?? defaultStats);
     setExamHistory(user.examHistory ?? []);
     setWrongAnswers(user.wrongAnswers ?? []);
+    setAIPracticeState({ active: false, question: null, loading: false, error: null });
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -360,6 +388,7 @@ function App() {
       });
       setSelectedBranchId(null);
       setSelectedCaseId(null);
+      setAIPracticeState({ active: false, question: null, loading: false, error: null });
       scrollToTopSmart({ smooth: false });
     }, 0);
 
@@ -372,6 +401,7 @@ function App() {
     setSessionStats(defaultStats);
     setExamHistory([]);
     setWrongAnswers([]);
+    setAIPracticeState({ active: false, question: null, loading: false, error: null });
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -412,6 +442,8 @@ function App() {
   const openWrongCase = (caseId) => {
     const clinicalCase = getCaseById(caseId);
     if (!clinicalCase || !accessibleCaseIds.has(clinicalCase.id)) return;
+    clearAIQuestionTimer();
+    setAIPracticeState({ active: false, question: null, loading: false, error: null });
     setMode('study');
     setExamState(null);
     setSelectedBranchId(clinicalCase.branchId);
@@ -488,6 +520,7 @@ function App() {
 
   useEffect(() => () => {
     branchRouteTimers.current.forEach((timerId) => window.clearTimeout(timerId));
+    if (aiQuestionTimer.current) window.clearTimeout(aiQuestionTimer.current);
   }, []);
 
   const remainingSeconds = useMemo(() => {
@@ -547,6 +580,8 @@ function App() {
   }, []);
 
   const handleSelectBranch = useCallback((branchId) => {
+    clearAIQuestionTimer();
+    setAIPracticeState({ active: false, question: null, loading: false, error: null });
     if (isDemoUser && !visibleBranches.some((branch) => branch.id === branchId)) return;
     const branchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
     if (!branchPool.length) return;
@@ -635,6 +670,65 @@ function App() {
     return scored;
   }, [addWrongAnswer, examState, sessionStats.streak]);
 
+
+  const generateNextAIQuestion = useCallback((previousQuestionId = null) => {
+    clearAIQuestionTimer();
+    setAIPracticeState((current) => ({
+      active: true,
+      question: current.question,
+      loading: true,
+      error: null,
+    }));
+
+    aiQuestionTimer.current = window.setTimeout(async () => {
+      const result = await createAIQuestion({ previousQuestionId, branchFilter: 'random' });
+      setAIPracticeState({
+        active: true,
+        question: result.question,
+        loading: false,
+        error: result.ok ? null : (result.error || new Error('AI question generation failed')),
+      });
+      aiQuestionTimer.current = null;
+    }, 420);
+  }, []);
+
+  const handleStartAIPractice = useCallback(() => {
+    clearAIQuestionTimer();
+    setMode('study');
+    setExamState(null);
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setIsCaseSidebarOpen(true);
+    generateNextAIQuestion(aiPracticeState.question?.id ?? null);
+    scrollToTopSmart({ smooth: false });
+  }, [aiPracticeState.question?.id, generateNextAIQuestion]);
+
+  const handleGenerateNextAIQuestion = useCallback(() => {
+    generateNextAIQuestion(aiPracticeState.question?.id ?? null);
+    scrollToTopSmart({ smooth: false });
+  }, [aiPracticeState.question?.id, generateNextAIQuestion]);
+
+  const handleSubmitAIAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
+    const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, aiPracticeStats.streak);
+    const earnedPoints = isCorrect ? 5 : 0;
+
+    setAIPracticeStats((current) => {
+      const attempts = current.attempts + 1;
+      const correct = current.correct + (isCorrect ? 1 : 0);
+      const streak = isCorrect ? current.streak + 1 : 0;
+      const bestStreak = Math.max(current.bestStreak || 0, streak);
+      return {
+        attempts,
+        correct,
+        streak,
+        bestStreak,
+        score: current.score + earnedPoints,
+      };
+    });
+
+    return { ...scored, earnedPoints, nextStreak: isCorrect ? aiPracticeStats.streak + 1 : 0 };
+  }, [aiPracticeStats.streak]);
+
   function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
     const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)
       .filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id));
@@ -642,7 +736,9 @@ function App() {
       ? accessibleCases
       : buildExamPool(safeSourceCases.length ? safeSourceCases : accessibleCases, 10, cases);
     if (!pool.length) return;
+    clearAIQuestionTimer();
     setMode('exam');
+    setAIPracticeState({ active: false, question: null, loading: false, error: null });
     setIsCaseSidebarOpen(true);
     setExamState({
       active: true,
@@ -746,7 +842,9 @@ function App() {
   }, [examState?.active, remainingSeconds, finalizeExam]);
 
   const resetExamToHome = () => {
+    clearAIQuestionTimer();
     setExamState(null);
+    setAIPracticeState({ active: false, question: null, loading: false, error: null });
     setMode('study');
     setSelectedBranchId(null);
     setSelectedCaseId(null);
@@ -811,9 +909,11 @@ function App() {
             type="button"
             className="nav-wrong-chip nav-stat-chip"
             onClick={() => {
+              clearAIQuestionTimer();
               setSelectedBranchId(null);
               setSelectedCaseId(null);
               setExamState(null);
+              setAIPracticeState({ active: false, question: null, loading: false, error: null });
               setMode('study');
               window.setTimeout(() => {
                 const wrongPanel = document.getElementById('wrong-answers-section');
@@ -877,7 +977,20 @@ function App() {
         </div>
       ) : null}
 
-      {examState?.result ? (
+      {aiPracticeState.active ? (
+        <AIGeneratedQuestionView
+          question={aiPracticeState.question}
+          loading={aiPracticeState.loading}
+          error={aiPracticeState.error}
+          aiStats={aiPracticeStats}
+          onGenerateQuestion={handleGenerateNextAIQuestion}
+          onSubmitAnswer={handleSubmitAIAnswer}
+          onBackHome={resetExamToHome}
+          tutorMode={tutorMode}
+          onToggleTutorMode={handleToggleTutorMode}
+          hardMode={hardMode}
+        />
+      ) : examState?.result ? (
         <ExamResults
           result={examState.result}
           onRestart={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
@@ -978,6 +1091,7 @@ function App() {
             stats={sessionStats}
             leaderboardEntries={leaderboardEntries}
             onStartExam={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
+            onStartAIQuestion={handleStartAIPractice}
             totalCases={accessibleCases.length}
             totalBranches={visibleBranches.length}
             examCount={examHistory.length}

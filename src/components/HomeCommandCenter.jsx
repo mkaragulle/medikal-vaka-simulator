@@ -75,6 +75,7 @@ function HomeCommandCenter({
   stats,
   leaderboardEntries,
   onStartExam,
+  onStartAIQuestion,
   examCount,
 }) {
   return (
@@ -91,6 +92,7 @@ function HomeCommandCenter({
           <div className="home-actions-v8">
             <a href="#branches" className="btn btn-primary">Olgu çözmeye başla <Icon name="ArrowRight" /></a>
             <button type="button" className="btn btn-secondary" onClick={onStartExam}><Icon name="Timer" />Zamanlı blok oluştur</button>
+            <button type="button" className="btn btn-secondary ai-hero-action" onClick={onStartAIQuestion}><Icon name="Sparkles" />AI ile Soru Üret</button>
           </div>
         </div>
 

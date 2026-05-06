@@ -552,6 +552,8 @@ function CasePlayer({
   onAdvanceExam,
   onPreviousExam,
   onFinishExam,
+  randomActionLabel = 'Yeni vaka çöz',
+  heroActionLabel = 'Yeni vaka çöz',
 }) {
   const displayFocus = useMemo(() => buildNonRevealingFocus(clinicalCase), [clinicalCase]);
   const difficultyMeta = useMemo(() => getDifficultyMeta(clinicalCase.difficulty), [clinicalCase.difficulty]);
@@ -708,7 +710,7 @@ function CasePlayer({
               <div className="qbank-actions">
                 <span className={`case-hero-meta ${difficultyMeta.tone}`}>{difficultyMeta.label} · {difficultyMeta.points}p</span>
                 {!examMeta?.active ? (
-                  <button className="btn btn-secondary compact case-refresh-btn" type="button" onClick={onRandomCase}>Yeni vaka çöz</button>
+                  <button className="btn btn-secondary compact case-refresh-btn" type="button" onClick={onRandomCase}>{heroActionLabel}</button>
                 ) : null}
               </div>
             </div>
@@ -881,6 +883,7 @@ function CasePlayer({
               orderedInvestigationIds={orderedInvestigationIds}
               investigationOrders={investigationOrders}
               hardMode={hardMode}
+              randomActionLabel={randomActionLabel}
             />
           </div>
         </aside>
