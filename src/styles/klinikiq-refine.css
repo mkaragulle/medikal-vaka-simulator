@@ -2039,3 +2039,464 @@ html[data-theme="dark"] .patient-summary-focus-strip.refined-focus-callout.unifi
     font-size: 13.2px !important;
   }
 }
+
+/* ===== Patient summary card — reference-image premium redesign ===== */
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card {
+  --ps-teal: #0b8f86;
+  --ps-teal-strong: #047c75;
+  --ps-navy: #0b1633;
+  --ps-muted: #53647a;
+  --ps-border: rgba(148, 163, 184, .24);
+  --ps-soft-teal: rgba(15, 148, 136, .105);
+  --ps-soft-blue: rgba(37, 121, 204, .085);
+  display: grid !important;
+  gap: 22px !important;
+  margin-top: 22px !important;
+  padding: 28px !important;
+  border-radius: 30px !important;
+  border: 1px solid var(--ps-border) !important;
+  background:
+    radial-gradient(circle at 8% -5%, rgba(20, 184, 166, .08), transparent 33%),
+    radial-gradient(circle at 96% 4%, rgba(56, 189, 248, .055), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(247, 252, 253, .965)) !important;
+  box-shadow:
+    0 22px 52px rgba(15, 23, 42, .105),
+    inset 0 1px 0 rgba(255, 255, 255, .92) !important;
+  overflow: hidden !important;
+  color: var(--ps-navy) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-head.compact-summary-head.premium-summary-head {
+  display: grid !important;
+  grid-template-columns: 68px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 18px !important;
+  margin: 0 0 8px !important;
+  padding: 0 !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-main-icon {
+  width: 62px !important;
+  height: 62px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 22px !important;
+  color: #fff !important;
+  background:
+    radial-gradient(circle at 24% 18%, rgba(255, 255, 255, .28), transparent 38%),
+    linear-gradient(145deg, #0ea5a0 0%, #01887f 56%, #006f69 100%) !important;
+  box-shadow:
+    0 16px 30px rgba(7, 136, 128, .26),
+    inset 0 1px 0 rgba(255, 255, 255, .36) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-head-copy strong {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--ps-navy) !important;
+  font-size: clamp(26px, 3.2vw, 36px) !important;
+  font-weight: 860 !important;
+  line-height: 1.04 !important;
+  letter-spacing: -.04em !important;
+  text-transform: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-head-copy p {
+  margin: 8px 0 0 !important;
+  color: var(--ps-muted) !important;
+  font-size: clamp(15px, 1.65vw, 20px) !important;
+  font-weight: 520 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -.01em !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(280px, 1fr)) !important;
+  gap: 18px !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid .summary-detail-card {
+  display: grid !important;
+  grid-template-columns: 72px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 18px !important;
+  min-width: 0 !important;
+  min-height: 134px !important;
+  padding: 24px 27px !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(148, 163, 184, .22) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(253, 254, 255, .96)) !important;
+  box-shadow:
+    0 12px 28px rgba(15, 23, 42, .065),
+    inset 0 1px 0 rgba(255, 255, 255, .9) !important;
+  overflow: hidden !important;
+  contain: layout paint !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-icon,
+.patient-summary-card.premium-reference-summary-card .summary-wide-icon,
+.patient-summary-card.premium-reference-summary-card .summary-tip-icon {
+  display: grid !important;
+  place-items: center !important;
+  flex: 0 0 auto !important;
+  color: var(--ps-teal) !important;
+  background:
+    radial-gradient(circle at 26% 18%, rgba(255, 255, 255, .82), transparent 42%),
+    linear-gradient(145deg, rgba(221, 246, 244, .98), rgba(237, 249, 249, .96)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .78),
+    0 8px 18px rgba(15, 23, 42, .045) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-icon {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 18px !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-copy {
+  min-width: 0 !important;
+  padding-top: 1px !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-label,
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span,
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip span,
+.patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip span {
+  display: block !important;
+  margin: 0 0 12px !important;
+  color: var(--ps-teal-strong) !important;
+  font-size: 14px !important;
+  font-weight: 880 !important;
+  line-height: 1.12 !important;
+  letter-spacing: .045em !important;
+  text-transform: uppercase !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-card p,
+.patient-summary-card.premium-reference-summary-card .summary-detail-card p *,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list li,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list li * {
+  color: var(--ps-navy) !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.42 !important;
+  letter-spacing: -.018em !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  hyphens: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-card--profile p,
+.patient-summary-card.premium-reference-summary-card .summary-detail-card--profile p * {
+  font-weight: 820 !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-card--profile p {
+  display: block !important;
+  white-space: pre-line !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list.refined-summary-bullet-list {
+  display: grid !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list.refined-summary-bullet-list li {
+  position: relative !important;
+  margin: 0 !important;
+  padding-left: 22px !important;
+  font-weight: 640 !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list.refined-summary-bullet-list li::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: .72em !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 999px !important;
+  background: var(--ps-teal) !important;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, .09) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus {
+  display: grid !important;
+  grid-template-columns: 70px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 18px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 25px 28px !important;
+  border-radius: 24px !important;
+  overflow: hidden !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .82) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block {
+  border: 1px solid rgba(96, 165, 250, .33) !important;
+  background:
+    radial-gradient(circle at 98% 8%, rgba(96, 165, 250, .07), transparent 34%),
+    linear-gradient(180deg, rgba(248, 252, 255, .98), rgba(245, 250, 255, .96)) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-wide-icon {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 18px !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-wide-icon--history {
+  color: #0968cf !important;
+  background:
+    radial-gradient(circle at 24% 16%, rgba(255, 255, 255, .84), transparent 42%),
+    linear-gradient(145deg, rgba(224, 239, 255, .98), rgba(240, 247, 255, .96)) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label {
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-label span {
+  color: #0b5cb8 !important;
+  margin-bottom: 14px !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block .summary-story-text {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--ps-navy) !important;
+  font-size: clamp(18px, 1.55vw, 22px) !important;
+  font-weight: 520 !important;
+  line-height: 1.62 !important;
+  letter-spacing: -.02em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block .stem-sentence {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  color: inherit !important;
+  font: inherit !important;
+  cursor: pointer !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block .stem-sentence + .stem-sentence::before {
+  content: ' ' !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-story-block .stem-sentence.highlighted {
+  border-radius: 6px !important;
+  padding: 1px 4px !important;
+  background: rgba(250, 204, 21, .26) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus {
+  border: 1px solid rgba(20, 184, 166, .36) !important;
+  background:
+    radial-gradient(circle at 96% 0%, rgba(20, 184, 166, .1), transparent 38%),
+    linear-gradient(180deg, rgba(243, 252, 250, .98), rgba(247, 253, 252, .96)) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip .summary-wide-content {
+  min-width: 0 !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip p,
+.patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip p * {
+  margin: 0 !important;
+  color: var(--ps-navy) !important;
+  font-size: clamp(17px, 1.48vw, 21px) !important;
+  font-weight: 780 !important;
+  line-height: 1.54 !important;
+  letter-spacing: -.02em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip.unified-clinical-tip {
+  display: grid !important;
+  grid-template-columns: 40px max-content minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 14px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 14px 22px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(148, 163, 184, .2) !important;
+  background:
+    linear-gradient(180deg, rgba(245, 251, 250, .98), rgba(239, 248, 247, .95)) !important;
+  box-shadow:
+    0 10px 22px rgba(15, 23, 42, .04),
+    inset 0 1px 0 rgba(255, 255, 255, .78) !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-tip-icon {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 12px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip .summary-tip-copy {
+  display: contents !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip span {
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip p,
+.patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip p * {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: 16px !important;
+  font-weight: 520 !important;
+  line-height: 1.42 !important;
+  letter-spacing: -.012em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.app-shell[data-theme="dark"] .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card,
+html[data-theme="dark"] .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card {
+  --ps-navy: #eaf3ff;
+  --ps-muted: #a6b5c7;
+  --ps-border: rgba(148, 163, 184, .18);
+  background:
+    radial-gradient(circle at 8% -6%, rgba(20, 184, 166, .16), transparent 34%),
+    linear-gradient(180deg, rgba(15, 23, 42, .96), rgba(2, 6, 23, .98)) !important;
+  box-shadow: 0 22px 52px rgba(0, 0, 0, .32), inset 0 1px 0 rgba(255, 255, 255, .055) !important;
+}
+
+.app-shell[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid .summary-detail-card,
+html[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid .summary-detail-card,
+.app-shell[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+html[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+.app-shell[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus,
+html[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus,
+.app-shell[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip.unified-clinical-tip,
+html[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip.unified-clinical-tip {
+  background: linear-gradient(180deg, rgba(15, 23, 42, .74), rgba(15, 23, 42, .58)) !important;
+  border-color: rgba(148, 163, 184, .17) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05) !important;
+}
+
+.app-shell[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip p,
+.app-shell[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip p *,
+html[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip p,
+html[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip p * {
+  color: #cbd5e1 !important;
+}
+
+@media (max-width: 980px) {
+  .patient-summary-card.professional-patient-summary-card.clinical-summary-card.premium-reference-summary-card {
+    padding: 22px !important;
+    border-radius: 26px !important;
+    gap: 18px !important;
+  }
+
+  .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .patient-summary-card.premium-reference-summary-card .patient-summary-head.compact-summary-head.premium-summary-head,
+  .patient-summary-card.premium-reference-summary-card .structured-patient-summary-grid.unified-summary-grid .summary-detail-card,
+  .patient-summary-card.premium-reference-summary-card .patient-summary-story-block.unified-history-block,
+  .patient-summary-card.premium-reference-summary-card .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .patient-summary-card.premium-reference-summary-card .patient-summary-main-icon,
+  .patient-summary-card.premium-reference-summary-card .summary-detail-icon,
+  .patient-summary-card.premium-reference-summary-card .summary-wide-icon {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 16px !important;
+  }
+
+  .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip.unified-clinical-tip {
+    grid-template-columns: 34px minmax(0, 1fr) !important;
+  }
+
+  .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip .summary-tip-copy {
+    display: grid !important;
+    gap: 5px !important;
+  }
+
+  .patient-summary-card.premium-reference-summary-card .patient-summary-tip-strip span {
+    white-space: normal !important;
+  }
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-detail-card p,
+.patient-summary-card.premium-reference-summary-card .summary-detail-card p *,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list li,
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list li * {
+  overflow-wrap: break-word !important;
+  word-break: normal !important;
+  hyphens: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-profile-copy {
+  margin: 0 !important;
+  display: grid !important;
+  gap: 8px !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-profile-copy strong,
+.patient-summary-card.premium-reference-summary-card .summary-profile-copy strong * {
+  display: block !important;
+  color: var(--ps-navy) !important;
+  font-size: 19px !important;
+  font-weight: 840 !important;
+  line-height: 1.24 !important;
+  letter-spacing: -.02em !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-profile-copy small,
+.patient-summary-card.premium-reference-summary-card .summary-profile-copy small * {
+  display: block !important;
+  color: #1f2a44 !important;
+  font-size: 17px !important;
+  font-weight: 520 !important;
+  line-height: 1.25 !important;
+  letter-spacing: -.012em !important;
+}
+
+.app-shell[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .summary-profile-copy small,
+.app-shell[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .summary-profile-copy small *,
+html[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .summary-profile-copy small,
+html[data-theme="dark"] .patient-summary-card.premium-reference-summary-card .summary-profile-copy small * {
+  color: #cbd5e1 !important;
+}

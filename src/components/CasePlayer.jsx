@@ -335,6 +335,27 @@ function summaryRowKind(label = '') {
   return 'default';
 }
 
+function summaryIconName(kind = '') {
+  const normalized = String(kind || '').toLocaleLowerCase('tr');
+  if (normalized.includes('profile')) return 'User';
+  if (normalized.includes('presentation')) return 'AlertTriangle';
+  if (normalized.includes('risk')) return 'Shield';
+  if (normalized.includes('clues')) return 'ClipboardList';
+  return 'Notes';
+}
+
+function splitProfileText(value = '') {
+  const parts = String(value || '')
+    .split(/\s*[·•]\s*/)
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  return {
+    primary: parts[0] || String(value || '').trim(),
+    secondary: parts.slice(1).join(' · '),
+  };
+}
+
 function PatientSummaryItems({ items = [], enabled = true }) {
   if (!items.length) return null;
 
@@ -658,70 +679,94 @@ function CasePlayer({
               <div className="case-title-copy">
                 <h1><GlossaryText text={clinicalCase.title} enabled={!hardMode && !examMeta?.active} /></h1>
                 <p><GlossaryText text={displayFocus} enabled={!hardMode && !examMeta?.active} /></p>
-                <div className="patient-summary-card professional-patient-summary-card clinical-summary-card">
-                  {/* cognitive-load: tekrar eden küçük bilgi kartları tek structured hasta özetinde toplandı */}
+                <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card">
+                  {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
                   <header className="patient-summary-head compact-summary-head premium-summary-head">
-                    <IconBadge icon="ClipboardList" tone="accent" size="sm" />
-                    <div>
+                    <span className="patient-summary-main-icon" aria-hidden="true">
+                      <Icon name="ClipboardList" size={29} strokeWidth={1.95} />
+                    </span>
+                    <div className="patient-summary-head-copy">
                       <strong>Hasta özeti</strong>
                       <p>Olgunun temel klinik çerçevesi</p>
                     </div>
                   </header>
 
                   <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid">
-                    {patientSummary.rows.map((row) => (
-                      <section key={row.label} className={`summary-detail-card summary-detail-card--${row.kind || summaryRowKind(row.label)}${row.items ? ' risk-chip-card' : ''}`}>
-                        <span>{row.label}</span>
-                        {row.items ? (
-                          row.items.length ? (
-                            <PatientSummaryItems items={row.items} enabled={!hardMode && !examMeta?.active} />
-                          ) : <p>{row.fallback}</p>
-                        ) : (
-                          <p><GlossaryText text={row.value} enabled={!hardMode && !examMeta?.active} /></p>
-                        )}
-                      </section>
-                    ))}
+                    {patientSummary.rows.map((row) => {
+                      const rowKind = row.kind || summaryRowKind(row.label);
+                      const profileCopy = rowKind === 'profile' ? splitProfileText(row.value) : null;
+                      return (
+                        <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
+                          <span className="summary-detail-icon" aria-hidden="true">
+                            <Icon name={summaryIconName(rowKind)} size={27} strokeWidth={1.92} />
+                          </span>
+                          <div className="summary-detail-copy">
+                            <span className="summary-detail-label">{row.label.toLocaleUpperCase('tr')}</span>
+                            {row.items ? (
+                              row.items.length ? (
+                                <PatientSummaryItems items={row.items} enabled={!hardMode && !examMeta?.active} />
+                              ) : <p>{row.fallback}</p>
+                            ) : profileCopy ? (
+                              <p className="summary-profile-copy">
+                                <strong><GlossaryText text={profileCopy.primary} enabled={!hardMode && !examMeta?.active} /></strong>
+                                {profileCopy.secondary ? <small><GlossaryText text={profileCopy.secondary} enabled={!hardMode && !examMeta?.active} /></small> : null}
+                              </p>
+                            ) : (
+                              <p><GlossaryText text={row.value} enabled={!hardMode && !examMeta?.active} /></p>
+                            )}
+                          </div>
+                        </section>
+                      );
+                    })}
                   </div>
 
                   <section className="patient-summary-story-block unified-history-block" aria-label="Kısa klinik öykü özeti">
-                    <div className="summary-story-label">
-                      <Icon name="BookOpen" size={15} />
-                      <span>Kısa klinik öykü özeti</span>
-                    </div>
-                    <div className="summary-story-text">
-                      {patientSummary.history.map((part, index) => (
-                        <span
-                          key={`${clinicalCase.id}-summary-story-${index}`}
-                          role="button"
-                          tabIndex={0}
-                          className={highlighted[index] ? `stem-sentence highlighted hl-${highlighted[index]}` : 'stem-sentence'}
-                          onClick={() => toggleHighlight(index)}
-                          onKeyDown={(event) => {
-                            if (event.key === 'Enter' || event.key === ' ') {
-                              event.preventDefault();
-                              toggleHighlight(index);
-                            }
-                          }}
-                          aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
-                        >
-                          <GlossaryText text={toSentence(part)} enabled={!hardMode && !examMeta?.active} />
-                        </span>
-                      ))}
+                    <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
+                      <Icon name="Notes" size={28} strokeWidth={1.92} />
+                    </span>
+                    <div className="summary-wide-content">
+                      <div className="summary-story-label">
+                        <span>KISA KLİNİK ÖYKÜ ÖZETİ</span>
+                      </div>
+                      <div className="summary-story-text">
+                        {patientSummary.history.map((part, index) => (
+                          <span
+                            key={`${clinicalCase.id}-summary-story-${index}`}
+                            role="button"
+                            tabIndex={0}
+                            className={highlighted[index] ? `stem-sentence highlighted hl-${highlighted[index]}` : 'stem-sentence'}
+                            onClick={() => toggleHighlight(index)}
+                            onKeyDown={(event) => {
+                              if (event.key === 'Enter' || event.key === ' ') {
+                                event.preventDefault();
+                                toggleHighlight(index);
+                              }
+                            }}
+                            aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
+                          >
+                            <GlossaryText text={toSentence(part)} enabled={!hardMode && !examMeta?.active} />
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </section>
 
                   <aside className="patient-summary-focus-strip refined-focus-callout unified-priority-focus">
-                    <Icon name="Target" size={16} />
-                    <div>
-                      <span>Öncelikli klinik odak</span>
+                    <span className="summary-wide-icon summary-wide-icon--focus" aria-hidden="true">
+                      <Icon name="Target" size={31} strokeWidth={1.95} />
+                    </span>
+                    <div className="summary-wide-content">
+                      <span>ÖNCELİKLİ KLİNİK ODAK</span>
                       <p><GlossaryText text={patientSummary.focus} enabled={!hardMode && !examMeta?.active} /></p>
                     </div>
                   </aside>
 
                   <aside className="patient-summary-tip-strip unified-clinical-tip">
-                    <Icon name="Sparkles" size={14} />
-                    <div>
-                      <span>Klinik ipucu</span>
+                    <span className="summary-tip-icon" aria-hidden="true">
+                      <Icon name="Lightbulb" size={25} strokeWidth={1.95} />
+                    </span>
+                    <div className="summary-tip-copy">
+                      <span>KLİNİK İPUCU</span>
                       <p><GlossaryText text={patientSummary.tip} enabled={!hardMode && !examMeta?.active} /></p>
                     </div>
                   </aside>
