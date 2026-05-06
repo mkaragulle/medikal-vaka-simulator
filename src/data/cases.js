@@ -1,5 +1,5 @@
 // KlinikIQ vaka verisi: TUS odaklı, klinik karar verdirici ve objektif tetkik sonuçlarıyla yapılandırılmıştır.
-// Patient intro QA v2: Hasta özeti kartı okunabilir 2x2 yapı, kısa risk/ipucu listeleri ve özgün klinik odak cümleleriyle rafine edilmiştir.
+// Final exam/vitals QA: Her vaka fizik muayene ve temel vital seti ile doğrulanmıştır; fizik muayene alanından tetkik sonuçları ayrıştırılmıştır.
 
 export const cases = [
   {
@@ -21268,7 +21268,11 @@ export const cases = [
       "Ayakta TA": "104/66 mmHg",
       "Yatar Nabız": "72/dk",
       "Ayakta Nabız": "96/dk",
-      "Ateş": "36.4 °C"
+      "Ateş": "36.4 °C",
+      "TA": "104/66 mmHg ayakta",
+      "Nabız": "96/dk ayakta",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında"
     },
     "exam": [
       "Genel durum iyi; bilinç açık ve oryantasyon tam.",
@@ -22223,7 +22227,13 @@ export const cases = [
     "setting": "Enfeksiyon polikliniği",
     "chiefComplaint": "Bulanık görme ve tedavisiz HIV öyküsü",
     "stem": "28 yaşındaki erkek hastada tedavisiz HIV enfeksiyonu zemininde CMV retiniti tedavisi başlanır. Antiviral tedavinin ikinci haftasında ateşsiz halsizlik ve ağız içinde aft benzeri lezyonlar gelişir; ilaç yan etkisi sorgulanır.",
-    "vitals": {},
+    "vitals": {
+      "TA": "116/74 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.9 °C"
+    },
     "exam": [
       "Genel durum stabil; göz yakınması dışında belirgin sistemik toksisite bulgusu yok."
     ],
@@ -22519,7 +22529,13 @@ export const cases = [
     "setting": "Ameliyathane",
     "chiefComplaint": "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma",
     "stem": "Ameliyathane sırasında cerrahın eline kontamine enjektör iğnesi batar. Yaralanma hemen yıkanır, olay kayıt altına alınır ve kaynak hastanın HCV RNA pozitif olduğu öğrenilir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "122/78 mmHg",
+      "Nabız": "84/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99 oda havasında",
+      "Ateş": "36.7 °C"
+    },
     "exam": [
       "Yaralanma yüzeyel perkütan giriş yeri şeklinde; aktif kanama minimal."
     ],
@@ -22654,7 +22670,13 @@ export const cases = [
     "setting": "Verem savaşı dispanseri",
     "chiefComplaint": "Aktif akciğer tüberkülozu olan aile bireyiyle yakın temas",
     "stem": "18 yaşındaki erkek hasta, aktif akciğer tüberkülozu tanısı alan aile bireyiyle aynı evde yaşamaktadır. Kendisi asemptomatiktir ve çocukluk döneminde BCG aşısı olduğunu belirtir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "118/76 mmHg",
+      "Nabız": "76/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99 oda havasında",
+      "Ateş": "36.6 °C"
+    },
     "exam": [
       "Genel durum iyi; öksürük, ateş veya gece terlemesi tariflemiyor.",
       "Akciğer oskültasyonu olağan."
@@ -22802,7 +22824,13 @@ export const cases = [
     "setting": "Göğüs hastalıkları polikliniği",
     "chiefComplaint": "İşle ilişkili öksürük, hışıltı ve el dorsumunda kaşıntılı lezyonlar",
     "stem": "Son bir yıldır iş günlerinde nefes darlığı, öksürük ve hışıltı atakları yaşayan hastanın el dorsal yüzlerinde kronik irritan/alerjik dermatit benzeri lezyonlar bulunuyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "128/78 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%96 oda havasında",
+      "Ateş": "36.7 °C"
+    },
     "exam": [
       "Solunum eforu istirahatte normal; ekspiryum sonunda hafif wheezing duyuluyor.",
       "El dorsumlarında erozyonlu ve hiperkeratotik kaşıntılı plaklar izleniyor."
@@ -23401,7 +23429,13 @@ export const cases = [
     "setting": "Kardiyoloji polikliniği",
     "chiefComplaint": "Efor dispnesi, periferik ödem ve pulmoner hipertansiyon tanısı",
     "stem": "Sağ kalp kateterizasyonu ile pulmoner hipertansiyon kesinleşen hastada tedavi seçenekleri gözden geçiriliyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "112/70 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%93 oda havasında",
+      "Ateş": "36.6 °C"
+    },
     "exam": [
       "Boyun ven dolgunluğu, hepatomegali ve pretibial ödem mevcut.",
       "Kalp sesleri taşikardik; sağ kalp yüklenmesini düşündüren bulgular var."
@@ -23678,7 +23712,13 @@ export const cases = [
     "setting": "Gastroenteroloji polikliniği",
     "chiefComplaint": "Bulantı ve yemekten sonra şişkinlik",
     "stem": "Daha önce benzer yakınması olmayan hastada kilo kaybı, yutma güçlüğü veya kusma yok; ancak yakınmalar yeni başlamış ve hasta ileri yaş grubunda.",
-    "vitals": {},
+    "vitals": {
+      "TA": "124/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.8 °C"
+    },
     "exam": [
       "Genel durum iyi; batın muayenesinde patolojik bulgu saptanmıyor."
     ],
@@ -23812,8 +23852,18 @@ export const cases = [
     "setting": "Endoskopi ünitesi",
     "chiefComplaint": "Reflü yakınmaları nedeniyle yapılan endoskopi",
     "stem": "Uzun süreli reflü yakınmaları olan erişkin hastada endoskopik değerlendirme yapılır. Soru, distal özofagusta görülen mukozal paternin hangi tanıyı düşündürdüğünü sorgular.",
-    "vitals": {},
-    "exam": [],
+    "vitals": {
+      "TA": "122/76 mmHg",
+      "Nabız": "80/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.7 °C"
+    },
+    "exam": [
+      "Genel durum iyi; hasta uyanık ve koopere.",
+      "Batın yumuşak; epigastrik bölgede belirgin defans veya rebound saptanmıyor.",
+      "Orofarenks ve solunum muayenesinde akut iritasyon veya aspirasyon bulgusu izlenmiyor."
+    ],
     "investigations": [
       {
         "id": "tus-spot-barrett-endoscopy",
@@ -23963,7 +24013,13 @@ export const cases = [
     "setting": "Gastroenteroloji polikliniği",
     "chiefComplaint": "Yemeklerden sonra sağ üst kadran ağrısı",
     "stem": "57 yaşındaki erkek hasta yağlı yemeklerden sonra artan sağ üst kadran ağrısı nedeniyle değerlendirilir. Ateş, titreme ve belirgin sarılık tariflemez; akut kolanjit bulgusu ön planda değildir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "132/80 mmHg",
+      "Nabız": "86/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.9 °C"
+    },
     "exam": [
       "Batın yumuşak; Murphy bulgusu belirgin değil.",
       "Sarılık veya akut kolanjit bulgusu yok."
@@ -24452,7 +24508,13 @@ export const cases = [
     "setting": "Endokrinoloji polikliniği",
     "chiefComplaint": "Çarpıntı, titreme ve sinirlilik atakları",
     "stem": "20 yaşındaki kadın hasta çarpıntı, titreme, sinirlilik ve kilo kaybı ataklarıyla başvurur. Tiroid bezi ağrısızdır; hastanın eksojen tiroid hormonu kullanımı başlangıçta net değildir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "138/78 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.8 °C"
+    },
     "exam": [
       "Canlı bakış ve ellerde ince tremor var.",
       "Tiroid palpasyonunda belirgin hassasiyet veya nodül saptanmıyor."
@@ -24625,10 +24687,17 @@ export const cases = [
     "setting": "Endokrinoloji polikliniği",
     "chiefComplaint": "Baş ağrısı ve libido azalması",
     "stem": "42 yaşındaki erkek hasta baş ağrısı, libido azalması ve hafif görme alanı yakınmasıyla endokrinolojiye başvurur. Büyük hipofizer lezyon şüphesinde prolaktin düzeyinin beklenenden düşük görünmesi tanısal sorun yaratır.",
-    "vitals": {},
+    "vitals": {
+      "TA": "126/78 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.6 °C"
+    },
     "exam": [
-      "Görme alanı yakınması hafif; galaktore yok.",
-      "Vital bulguları stabil."
+      "Genel durum iyi; hasta uyanık ve koopere.",
+      "Görme alanı yakınması hafif; belirgin kraniyal sinir defisiti izlenmiyor.",
+      "Galaktore saptanmıyor; meme ve tiroid muayenesinde akut patolojik bulgu yok."
     ],
     "investigations": [
       {
@@ -24774,7 +24843,13 @@ export const cases = [
     "setting": "Onkoloji konseyi",
     "chiefComplaint": "Metastatik kolon adenokarsinomu",
     "stem": "Kolonoskopide inen kolonda kitle, karaciğerde metastatik lezyonlar ve biyopside adenokarsinom saptanan hastada sistemik tedavi planlanıyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "118/72 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%97 oda havasında",
+      "Ateş": "36.8 °C"
+    },
     "exam": [
       "Genel durumda hafif düşkünlük ve anemiye bağlı solukluk izleniyor.",
       "Batında belirgin peritonit bulgusu yok."
@@ -24910,7 +24985,13 @@ export const cases = [
     "setting": "Hematoloji polikliniği",
     "chiefComplaint": "Boyun ve aksillada uzun süredir lenf nodu şişliği",
     "stem": "75 yaşındaki erkek hasta boyun ve aksillada uzun süredir devam eden lenf nodu şişlikleriyle başvurur. Rutin kontrollerinde yıllardır süren lenfositoz öyküsü vardır ve hasta belirgin B semptomu tariflemez.",
-    "vitals": {},
+    "vitals": {
+      "TA": "128/74 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.7 °C"
+    },
     "exam": [
       "Servikal ve aksiller bölgelerde mobil, lastik kıvamlı çok sayıda lenfadenopati palpe ediliyor.",
       "Hepatosplenomegali belirgin değil."
@@ -25071,7 +25152,13 @@ export const cases = [
     "setting": "Dahiliye polikliniği",
     "chiefComplaint": "Halsizlik, sararma ve çarpıntı",
     "stem": "58 yaşındaki kadın hasta kısa sürede gelişen halsizlik, sararma ve çarpıntı yakınmalarıyla başvurur. Kanama öyküsü yoktur; tablo hemolitik süreç açısından değerlendirilir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "110/70 mmHg",
+      "Nabız": "108/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%97 oda havasında",
+      "Ateş": "36.9 °C"
+    },
     "exam": [
       "Cilt ve skleralarda hafif ikter izleniyor.",
       "Taşikardik ancak hemodinamik olarak stabil."
@@ -25244,8 +25331,18 @@ export const cases = [
     "setting": "TUS tekrar modülü",
     "chiefComplaint": "Herediter kanser sendromu-gen eşleşmesi",
     "stem": "Ailesinde genç yaşta diffüz mide kanseri, meme-over kanseri ve sarkom öyküleri bulunan bir aile için sendrom-gen eşleşmeleri gözden geçirilir. Soru, yanlış eşleşmeyi ayırt etmeye odaklanır.",
-    "vitals": {},
-    "exam": [],
+    "vitals": {
+      "TA": "120/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.7 °C"
+    },
+    "exam": [
+      "Genel durum iyi; hasta uyanık ve koopere.",
+      "Batın muayenesinde ele gelen kitle, defans veya rebound saptanmıyor.",
+      "Periferik lenf nodu bölgelerinde belirgin patolojik büyüme palpe edilmiyor."
+    ],
     "investigations": [],
     "images": [],
     "questionType": "spot",
@@ -25519,7 +25616,14 @@ export const cases = [
     "setting": "Romatoloji polikliniği",
     "chiefComplaint": "Parmak uçlarında ağrı, morarma ve ülser",
     "stem": "Uzun süredir Raynaud yakınmaları olan hastada son haftalarda parmak uçlarında ağrılı morarma ve ülser gelişiyor; aspirin ve kalsiyum kanal blokerinden yeterli fayda görmemiş.",
-    "vitals": {},
+    "vitals": {
+      "TA": "132/82 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.6 °C",
+      "Ağrı skoru": "6/10"
+    },
     "exam": [
       "Her iki elde sklerodaktili ve yüz bölgesinde yaygın telanjiektaziler var.",
       "Sol el 2-3. parmak uçlarında ağrılı iskemik ülserler izleniyor."
@@ -25656,7 +25760,13 @@ export const cases = [
     "setting": "Romatoloji polikliniği",
     "chiefComplaint": "Fotosensitivite, malar döküntü ve eklem ağrısı",
     "stem": "28 yaşındaki kadın hasta fotosensitivite, malar döküntü, el küçük eklemlerinde ağrı ve son haftalarda bacaklarda hafif şişlik yakınmalarıyla romatoloji kontrolüne gelir. Mevcut yakınmalar hastalık aktivitesi açısından değerlendirilir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "118/74 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "37.2 °C"
+    },
     "exam": [
       "Yüzde nazolabial kıvrımları koruyan malar eritem var.",
       "MCP eklemlerinde hassasiyet ve hafif şişlik izleniyor."
@@ -25811,7 +25921,13 @@ export const cases = [
     "setting": "Nefroloji polikliniği",
     "chiefComplaint": "Nefrotik düzeyde proteinüri",
     "stem": "Erişkin hasta nefrotik düzeyde proteinüri ve pretibial ödem nedeniyle nefrolojiye başvurur. Klinik tablo primer membranöz nefropati ile sekonder nedenlerin ayırt edilmesini gerektirir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "146/88 mmHg",
+      "Nabız": "86/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.8 °C"
+    },
     "exam": [
       "Pretibial ödem mevcut; kan basıncı hafif yüksek.",
       "Sistemik lupus veya malignite düşündüren belirgin muayene bulgusu yok."
@@ -25957,7 +26073,13 @@ export const cases = [
     "setting": "Nefroloji polikliniği",
     "chiefComplaint": "Proteinüriye eşlik eden atipik böbrek bulgusu",
     "stem": "Uzun süreli diyabeti olan hastada albuminüri ve yavaş ilerleyen böbrek fonksiyon bozukluğu izlenmektedir. Hekim, diyabetik nefropati dışı bir etiyolojiyi düşündürecek kırmızı bayrak bulgusunu ayırt etmek ister.",
-    "vitals": {},
+    "vitals": {
+      "TA": "142/84 mmHg",
+      "Nabız": "84/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.7 °C"
+    },
     "exam": [
       "Periferik ödem hafif; akut enfeksiyon bulgusu yok."
     ],
@@ -26259,7 +26381,13 @@ export const cases = [
     "setting": "Geriatri polikliniği",
     "chiefComplaint": "Unutkanlık yakınması",
     "stem": "Yakınları unutkanlığın eş kaybından sonra arttığını, hastada iştah azalması, keyifsizlik ve ilgide azalma geliştiğini belirtiyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "126/72 mmHg",
+      "Nabız": "74/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.6 °C"
+    },
     "exam": [
       "Psikomotor yavaşlama ve düşük motivasyon izleniyor.",
       "Serbest hatırlama zayıf, ipucu ile hatırlama görece korunmuş."
@@ -26395,7 +26523,13 @@ export const cases = [
     "setting": "Dermatoloji polikliniği",
     "chiefComplaint": "Gövdede yaygınlaşan skuamlı döküntü",
     "stem": "20 yaşındaki kadın hasta birkaç gün önce gövdede tek büyük oval skuamlı plak fark ettikten sonra gövde ve proksimal ekstremitelerde çok sayıda benzer döküntü gelişmesi nedeniyle başvurur. Sistemik toksisite veya mukozal erozyon tariflemez.",
-    "vitals": {},
+    "vitals": {
+      "TA": "112/70 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99 oda havasında",
+      "Ateş": "36.7 °C"
+    },
     "exam": [
       "Gövde ve proksimal ekstremitelerde eritemli skuamlı makülopapüller izleniyor.",
       "Daha büyük oval skuamlı madalyon plak seçiliyor."
@@ -26531,7 +26665,13 @@ export const cases = [
     "setting": "Dermatoloji polikliniği",
     "chiefComplaint": "Ayakta kaşıntılı skuamlı lezyonlar",
     "stem": "Ayak parmak aralarında maserasyon ve plantar hiperkeratotik skuam gelişen hastada mantar enfeksiyonu düşünülüyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "118/74 mmHg",
+      "Nabız": "76/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99 oda havasında",
+      "Ateş": "36.6 °C"
+    },
     "exam": [
       "İnterdijital aralıklarda masere skuamlı lezyonlar izleniyor.",
       "Plantar yüzeyde hiperkeratotik skuamlı alanlar mevcut."
@@ -26828,7 +26968,13 @@ export const cases = [
     "setting": "Nöroloji polikliniği",
     "chiefComplaint": "Ellerde kuvvetsizlik ve gevşemede güçlük",
     "stem": "Hasta yumruk yaptıktan sonra parmaklarını açmakta zorlanıyor; meksiletin ile gevşeme güçlüğünün azaldığını söylüyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "122/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.6 °C"
+    },
     "exam": [
       "Frontal kellik, temporal kas atrofisi ve hafif bilateral pitozis izleniyor.",
       "El sıkma sonrası gevşeme gecikiyor."
@@ -27124,8 +27270,18 @@ export const cases = [
     "setting": "Psikiyatri görüşmesi",
     "chiefComplaint": "Yoğun rekabet ve kişilerarası çatışma",
     "stem": "Kişi kendisindeki kıskançlığı kabul etmiyor; bunun yerine yakın arkadaşının kendisini kıskandığını ve sürekli onu geçmeye çalıştığını söylüyor.",
-    "vitals": {},
-    "exam": [],
+    "vitals": {
+      "TA": "118/76 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99 oda havasında",
+      "Ateş": "36.7 °C"
+    },
+    "exam": [
+      "Genel görünüm düzenli; bilinç açık, oryantasyon ve konuşma akışı korunmuş.",
+      "Görüşme sırasında kendi kabul edemediği duyguları karşı tarafa atfetme eğilimi belirgin.",
+      "Halüsinasyon, dezorganize düşünce veya akut psikotik bulgu saptanmıyor."
+    ],
     "investigations": [],
     "images": [],
     "questionType": "spot",
@@ -27256,7 +27412,13 @@ export const cases = [
     "setting": "Servis",
     "chiefComplaint": "Konfabulasyon ve yeni bilgi öğrenmede bozulma",
     "stem": "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasında anterograd amnezi ve konfabulasyon gelişiyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "116/72 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.6 °C"
+    },
     "exam": [
       "Hasta uyanık ancak yakın dönem belleği belirgin bozuk.",
       "Konuşurken bellek boşluklarını uydurma yanıtlarla dolduruyor."
@@ -27391,7 +27553,14 @@ export const cases = [
     "setting": "Ortopedi polikliniği",
     "chiefComplaint": "Kronik diz ağrısı",
     "stem": "Erişkin hasta merdiven inip çıkarken artan kronik diz ağrısı ve hareketle krepitasyon yakınmasıyla başvurur. Soru, osteoartritte beklenen ve beklenmeyen direkt grafi bulgularını ayırt etmeye odaklanır.",
-    "vitals": {},
+    "vitals": {
+      "TA": "134/78 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.6 °C",
+      "Ağrı skoru": "5/10"
+    },
     "exam": [
       "Dizde krepitasyon ve hareketle ağrı mevcut; belirgin kızarıklık veya ısı artışı yok."
     ],
@@ -27526,7 +27695,14 @@ export const cases = [
     "setting": "Spor hekimliği polikliniği",
     "chiefComplaint": "Omuz ön kısmında ağrı",
     "stem": "Cirit sporu yapan hastada özellikle dirsek fleksiyonu ve supinasyonla artan anterior omuz ağrısı gelişiyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "120/76 mmHg",
+      "Nabız": "80/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99 oda havasında",
+      "Ateş": "36.6 °C",
+      "Ağrı skoru": "6/10"
+    },
     "exam": [
       "Omuz ön kısmında bicipital oluk üzerinde lokal hassasiyet var.",
       "Speed ve Yergason testleri pozitif; nörolojik muayene normal."
@@ -27663,7 +27839,13 @@ export const cases = [
     "setting": "Servis izolasyon alanı",
     "chiefComplaint": "Öksürük, gece terlemesi ve ARB pozitif balgam",
     "stem": "Öksürük, gece terlemesi ve kilo kaybı olan hastada aktif akciğer tüberkülozu düşünülmektedir. Servis ortamında hasta ile temas sırasında uygulanacak izolasyon önlemi sorgulanır.",
-    "vitals": {},
+    "vitals": {
+      "TA": "110/70 mmHg",
+      "Nabız": "98/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%96 oda havasında",
+      "Ateş": "37.9 °C"
+    },
     "exam": [
       "Hasta öksürüyor; belirgin hemoptizi yok.",
       "Solunum eforu stabil."
@@ -27798,7 +27980,14 @@ export const cases = [
     "setting": "Acil servis",
     "chiefComplaint": "Başına darbe sonrası baş ağrısı, amnezi ve bulanık görme",
     "stem": "Boks sırasında başına darbe alan hastada kısa süreli dikkat ve konsantrasyon bozukluğu, amnezi ve bulanık görme gelişir. GKS yüksek seyretse de yakınmalar travma sonrası klinik fonksiyon bozukluğunu düşündürür.",
-    "vitals": {},
+    "vitals": {
+      "TA": "124/78 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99 oda havasında",
+      "Ateş": "36.6 °C",
+      "GKS": "15"
+    },
     "exam": [
       "GKS 15; fokal motor defisit saptanmıyor.",
       "Kısa süreli amnezi ve baş dönmesi mevcut."
@@ -27945,7 +28134,13 @@ export const cases = [
     "setting": "Yenidoğan servisi",
     "chiefComplaint": "Sırtta küçük papülopüstüler lezyonlar",
     "stem": "Term yenidoğanda doğumdan kısa süre sonra gövde ve sırtta sarı-beyaz küçük papülopüstüller gelişir. Bebek iyi görünür, ateş yoktur ve lezyonlar kısa sürede gerileme eğilimindedir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "68/42 mmHg",
+      "Nabız": "136/dk",
+      "Solunum": "42/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.9 °C"
+    },
     "exam": [
       "Genel durum iyi; ateş veya toksik görünüm yok.",
       "Sırt bölgesinde 1-2 mm papülopüstüler lezyonlar izleniyor."
@@ -28093,7 +28288,13 @@ export const cases = [
     "setting": "Çocuk acil",
     "chiefComplaint": "Halsizlik, kusma, koyu idrar ve sarılık",
     "stem": "Yaz kampından birkaç hafta sonra halsizlik, kusma, koyu idrar ve ikter gelişen çocukta akut hepatit düşünülüyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "100/64 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "37.7 °C"
+    },
     "exam": [
       "Skleralarda ikter ve hepatomegali mevcut.",
       "Batında sağ üst kadran hassasiyeti var; ensefalopati bulgusu yok."
@@ -28248,7 +28449,13 @@ export const cases = [
     "setting": "Çocuk metabolizma polikliniği",
     "chiefComplaint": "Gelişme geriliği ve ağır anemi",
     "stem": "Akraba ebeveynlerin 2 yaşındaki çocuğunda gelişme geriliği, sensorinöral işitme kaybı, diyabet ve belirgin solukluk birlikte izlenir. Kalıtsal vitamin taşıma bozukluğu düşünülür.",
-    "vitals": {},
+    "vitals": {
+      "TA": "90/55 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.8 °C"
+    },
     "exam": [
       "Yaşıtlarına göre zayıf ve kısa görünümde.",
       "Belirgin solukluk var; akut kanama bulgusu yok."
@@ -28405,7 +28612,13 @@ export const cases = [
     "setting": "Çocuk nöroloji polikliniği",
     "chiefComplaint": "Davranış değişikliği ve okul başarısında gerileme",
     "stem": "10 yaşındaki erkek çocukta okul başarısında gerileme, davranış değişikliği ve ciltte hiperpigmentasyon gelişir. Ailede erkek bireylerde erken yaş nörolojik kötüleşme öyküsü olduğu öğrenilir.",
-    "vitals": {},
+    "vitals": {
+      "TA": "96/60 mmHg",
+      "Nabız": "94/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.5 °C"
+    },
     "exam": [
       "Dikkat azalması ve hafif spastisite izleniyor.",
       "Ciltte adrenal yetmezliği düşündüren hiperpigmentasyon mevcut."
@@ -28542,7 +28755,13 @@ export const cases = [
     "setting": "Çocuk endokrin polikliniği",
     "chiefComplaint": "Puberte gecikmesi ve mukokutanöz bulgular",
     "stem": "Kronik kandidiyal ağız lezyonları, mukozal hiperpigmentasyon, tırnak distrofisi ve gelişimsel gecikme bulguları olan ergende otoimmün endokrinopati düşünülüyor.",
-    "vitals": {},
+    "vitals": {
+      "TA": "100/62 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.6 °C"
+    },
     "exam": [
       "Deri altı yağ dokusu azalmış, tırnaklarda distrofi var.",
       "Ağızda kandidiyal lezyon ve mukozalarda hiperpigmentasyon izleniyor."
@@ -28679,7 +28898,13 @@ export const cases = [
     "setting": "Çocuk acil",
     "chiefComplaint": "Akut hemiparezi ve marfanoid görünüm",
     "stem": "Akrabalık öyküsü olan 10 yaşındaki erkek çocuk ani başlayan sol taraf güçsüzlüğü ile acile getirilir. Uzun boy, ince uzun parmaklar ve önceki lens cerrahisi öyküsü dikkat çeker.",
-    "vitals": {},
+    "vitals": {
+      "TA": "112/70 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%98 oda havasında",
+      "Ateş": "36.7 °C"
+    },
     "exam": [
       "Açık saç rengi, uzun ince parmaklar ve marfanoid görünüm dikkat çekiyor.",
       "Sol hemiparezi bulguları mevcut."

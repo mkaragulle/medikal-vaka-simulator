@@ -432,7 +432,6 @@ function buildPatientSummary(clinicalCase) {
       { kind: 'clues', label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Öykü, muayene ve tetkik verilerinden ayrım yapılmalıdır.' },
     ],
     history: historyParts.length ? historyParts : [normalizePatientSummaryText(compactSentence(fallbackStory, 190))],
-    focus: normalizePatientSummaryText(compactSentence(intro.priorityFocus || buildFocusSentence(clinicalCase), 260)),
   };
 }
 
@@ -557,7 +556,6 @@ function CasePlayer({
   const displayFocus = buildNonRevealingFocus(clinicalCase);
   const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
   const patientSummary = useMemo(() => buildPatientSummary(clinicalCase), [clinicalCase]);
-  const hemodynamicSummary = useMemo(() => buildHemodynamicSummary(clinicalCase.vitals), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
@@ -781,16 +779,6 @@ function CasePlayer({
                       </div>
                     </div>
                   </section>
-
-                  <aside className="patient-summary-focus-strip refined-focus-callout unified-priority-focus">
-                    <span className="summary-wide-icon summary-wide-icon--focus" aria-hidden="true">
-                      <Icon name="Target" size={31} strokeWidth={1.95} />
-                    </span>
-                    <div className="summary-wide-content">
-                      <span>ÖNCELİKLİ KLİNİK ODAK</span>
-                      <p><GlossaryText text={patientSummary.focus} enabled={!hardMode && !examMeta?.active} /></p>
-                    </div>
-                  </aside>
                 </div>
               </div>
             </div>
@@ -824,16 +812,6 @@ function CasePlayer({
                           {clinicalCase.exam.map((finding) => <li key={finding}><GlossaryText text={expandExamFinding(finding)} enabled={!hardMode && !examMeta?.active} /></li>)}
                         </ul>
                       </div>
-
-                      {!examMeta?.active && hasVitalData ? (
-                        <details className="spoiler-disclosure neutral-disclosure">
-                          <summary>Yorumu göster</summary>
-                          <div className="detail-block scientific-summary-block">
-                            <h4>Hemodinamik değerlendirme</h4>
-                            <p><GlossaryText text={hemodynamicSummary} enabled={!hardMode && !examMeta?.active} /></p>
-                          </div>
-                        </details>
-                      ) : null}
                     </AccordionItem>
                   </div>
                 ) : null}
