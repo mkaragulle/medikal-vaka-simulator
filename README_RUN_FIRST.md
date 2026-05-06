@@ -52,3 +52,23 @@ Bu ayarlar ayrıca `vercel.json` içinde de vardır.
 ## 5. Firebase Google giriş
 
 `.env.example` dosyasını `.env.local` olarak kopyala ve Firebase değerlerini doldur. Vercel'de aynı değerleri Environment Variables bölümüne ekle.
+
+## AI ile Soru Üret notu
+
+Bu sürümde AI soru üretim ekranı iki modlu çalışır:
+
+- Varsayılan: local akıllı generator + tekrar engelleme. API key gerekmez.
+- Gerçek AI: `.env.local` içinde `VITE_ENABLE_REAL_AI=true` yapılır ve deploy edilen serverless ortamında `GEMINI_API_KEY` tanımlanır.
+
+Local çalıştırma:
+
+```bash
+npm install
+npm run dev
+```
+
+Build kontrolü:
+
+```bash
+npm run build
+```

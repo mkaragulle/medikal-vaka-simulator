@@ -20,13 +20,49 @@ function AIStat({ label, value, icon, tone = 'teal' }) {
   );
 }
 
+function AISourceBadge({ usedRemoteAI, fallback, generationSource }) {
+  const label = usedRemoteAI
+    ? 'Gerçek AI aktif'
+    : fallback
+      ? 'AI fallback: local generator'
+      : 'Local akıllı generator';
+  const icon = usedRemoteAI ? 'Sparkles' : fallback ? 'ShieldCheck' : 'LayeredCards';
+
+  return (
+    <span className={`ai-source-badge ${usedRemoteAI ? 'remote' : fallback ? 'fallback' : 'local'}`.trim()} title={generationSource || label}>
+      <Icon name={icon} />
+      {label}
+    </span>
+  );
+}
+
+function AIBranchFilter({ branchFilter, branchOptions = [], onChangeBranchFilter, disabled = false }) {
+  const normalizedValue = branchFilter || 'random';
+  return (
+    <label className="ai-branch-filter-control">
+      <span>Konu / branş</span>
+      <select
+        value={normalizedValue}
+        onChange={(event) => onChangeBranchFilter?.(event.target.value)}
+        disabled={disabled}
+        aria-label="AI soru branş filtresi"
+      >
+        {branchOptions.map((branch) => {
+          const value = branch === 'Rastgele' ? 'random' : branch;
+          return <option key={branch} value={value}>{branch}</option>;
+        })}
+      </select>
+    </label>
+  );
+}
+
 function AILoadingState() {
   return (
     <section className="ai-generation-state card-surface" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
       <div>
         <h2>AI soru hazırlanıyor...</h2>
-        <p>Spot bilgiye uygun soru oluşturuluyor; TUS odaklı çeldiriciler dengeleniyor.</p>
+        <p>Spot bilgiye uygun soru oluşturuluyor; tekrar kontrolü ve TUS odaklı çeldirici dengesi uygulanıyor.</p>
       </div>
     </section>
   );
@@ -38,7 +74,7 @@ function AIErrorState({ onGenerateQuestion }) {
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
         <h2>Soru üretilemedi.</h2>
-        <p>Hazır spot soru havuzundan yeni bir soru getirildi veya tekrar denenebilir.</p>
+        <p>Gerçek AI yanıtı alınamazsa sistem güvenli şekilde hazır/local spot soru generatorüne döner.</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
         <Icon name="RotateCcw" /> Tekrar dene
@@ -52,6 +88,12 @@ function AIGeneratedQuestionView({
   loading = false,
   error = null,
   aiStats,
+  generationSource = null,
+  usedRemoteAI = false,
+  fallback = false,
+  branchFilter = 'random',
+  branchOptions = [],
+  onChangeBranchFilter,
   onGenerateQuestion,
   onSubmitAnswer,
   onBackHome,
@@ -67,16 +109,28 @@ function AIGeneratedQuestionView({
         <div className="ai-practice-title-block">
           <span className="ai-practice-kicker"><Icon name="Sparkles" /> AI pratik modu</span>
           <h1>AI ile Üretilen TUS Spot Sorusu</h1>
-          <p>Spot bilgileri pekiştirmek için yapay zekâ tarafından oluşturulan kısa klinik soru.</p>
+          <p>Spot bilgileri pekiştirmek için yapay zekâya hazır mimariyle oluşturulan kısa klinik soru.</p>
+          <div className="ai-practice-meta-row">
+            <AISourceBadge usedRemoteAI={usedRemoteAI} fallback={fallback} generationSource={generationSource} />
+            {question?.aiMeta?.signature ? <span className="ai-signature-chip">Tekrar imzası: {question.aiMeta.signature}</span> : null}
+          </div>
         </div>
 
-        <div className="ai-practice-actions">
-          <button type="button" className="btn btn-secondary" onClick={onBackHome}>
-            <span aria-hidden="true">←</span> Dashboard’a dön
-          </button>
-          <button type="button" className="btn btn-primary ai-generate-cta" onClick={onGenerateQuestion} disabled={loading}>
-            <Icon name="Sparkles" /> Yeni AI sorusu üret
-          </button>
+        <div className="ai-practice-actions ai-practice-actions-pro">
+          <AIBranchFilter
+            branchFilter={branchFilter}
+            branchOptions={branchOptions}
+            onChangeBranchFilter={onChangeBranchFilter}
+            disabled={loading}
+          />
+          <div className="ai-practice-button-row">
+            <button type="button" className="btn btn-secondary" onClick={onBackHome}>
+              <span aria-hidden="true">←</span> Dashboard’a dön
+            </button>
+            <button type="button" className="btn btn-primary ai-generate-cta" onClick={onGenerateQuestion} disabled={loading}>
+              <Icon name="Sparkles" /> Yeni AI sorusu üret
+            </button>
+          </div>
         </div>
       </section>
 
@@ -85,6 +139,13 @@ function AIGeneratedQuestionView({
         <AIStat icon="Target" tone="teal" label="Doğruluk" value={`%${accuracy}`} />
         <AIStat icon="Trophy" tone="warning" label="AI puan" value={aiStats?.score || 0} />
       </section>
+
+      {fallback && !loading && !error ? (
+        <section className="ai-fallback-notice card-surface" aria-live="polite">
+          <Icon name="ShieldCheck" />
+          <span>Gerçek AI yanıtı alınamadığında uygulama kırılmasın diye local soru generatorü devreye girdi.</span>
+        </section>
+      ) : null}
 
       {loading ? <AILoadingState /> : null}
       {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}

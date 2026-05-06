@@ -1,0 +1,157 @@
+const RECENT_AI_QUESTION_IDS_KEY = 'klinikiq-recent-ai-question-ids-v2';
+const RECENT_AI_QUESTION_SIGNATURES_KEY = 'klinikiq-recent-ai-question-signatures-v2';
+const AI_QUESTION_HISTORY_KEY = 'klinikiq-ai-question-history-v2';
+const MAX_RECENT_IDS = 36;
+const MAX_RECENT_SIGNATURES = 64;
+const MAX_HISTORY_ITEMS = 48;
+
+function canUseStorage() {
+  return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
+}
+
+function safeRead(key, fallback) {
+  if (!canUseStorage()) return fallback;
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return fallback;
+    const parsed = JSON.parse(raw);
+    return parsed ?? fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function safeWrite(key, value) {
+  if (!canUseStorage()) return;
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Storage can be unavailable in private mode; generation must still work.
+  }
+}
+
+export function normalizeQuestionText(value = '') {
+  return String(value)
+    .toLocaleLowerCase('tr')
+    .replace(/ı/g, 'i')
+    .replace(/[âîû]/g, (match) => ({ â: 'a', î: 'i', û: 'u' }[match] || match))
+    .replace(/[^a-z0-9çğıöşü\s]/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function stableHash(value = '') {
+  const text = normalizeQuestionText(value);
+  let hash = 2166136261;
+  for (let index = 0; index < text.length; index += 1) {
+    hash ^= text.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return `q${(hash >>> 0).toString(36)}`;
+}
+
+export function makeQuestionSignature(question = {}) {
+  const correct = question?.diagnosis?.correct || question?.correctAnswer || '';
+  const sourceKey = question?.seedId || question?.sourceCaseId || question?.id || '';
+  const payload = [
+    sourceKey,
+    question?.title,
+    question?.stem,
+    question?.question,
+    correct,
+    question?.learningTarget || question?.clinicalFocus,
+  ].filter(Boolean).join(' | ');
+  return stableHash(payload);
+}
+
+export function makeSeedSignature(seed = {}) {
+  const correctOption = Array.isArray(seed.options)
+    ? seed.options.find((option) => option.id === seed.correctAnswer)?.text
+    : '';
+  return stableHash([
+    seed.seedId,
+    seed.sourceCaseId,
+    seed.title,
+    seed.stem,
+    seed.question,
+    correctOption,
+    seed.learningTarget,
+  ].filter(Boolean).join(' | '));
+}
+
+export function getRecentAIQuestionIds() {
+  return safeRead(RECENT_AI_QUESTION_IDS_KEY, []);
+}
+
+export function getRecentAIQuestionSignatures() {
+  return safeRead(RECENT_AI_QUESTION_SIGNATURES_KEY, []);
+}
+
+export function getAIQuestionHistory() {
+  return safeRead(AI_QUESTION_HISTORY_KEY, []);
+}
+
+export function rememberAIQuestion(question = {}) {
+  const questionId = question.id || question.seedId || question.sourceCaseId;
+  const seedId = question.seedId || question.sourceCaseId || null;
+  const signature = makeQuestionSignature(question);
+  const title = question.title || question.learningTarget || 'AI spot soru';
+  const branch = question.relatedBranch || question.branchName || 'TUS';
+  const correct = question?.diagnosis?.correct || question?.correctAnswer || '';
+
+  if (questionId) {
+    const recentIds = getRecentAIQuestionIds();
+    const idCandidates = [questionId, seedId].filter(Boolean);
+    const updatedIds = [
+      ...idCandidates,
+      ...recentIds.filter((id) => !idCandidates.includes(id)),
+    ].slice(0, MAX_RECENT_IDS);
+    safeWrite(RECENT_AI_QUESTION_IDS_KEY, updatedIds);
+  }
+
+  if (signature) {
+    const recentSignatures = getRecentAIQuestionSignatures();
+    const updatedSignatures = [
+      signature,
+      ...recentSignatures.filter((item) => item !== signature),
+    ].slice(0, MAX_RECENT_SIGNATURES);
+    safeWrite(RECENT_AI_QUESTION_SIGNATURES_KEY, updatedSignatures);
+  }
+
+  const history = getAIQuestionHistory();
+  const historyItem = {
+    id: questionId || signature,
+    seedId,
+    signature,
+    title,
+    branch,
+    correct,
+    createdAt: Date.now(),
+  };
+  const updatedHistory = [
+    historyItem,
+    ...history.filter((item) => item.id !== historyItem.id && item.signature !== signature),
+  ].slice(0, MAX_HISTORY_ITEMS);
+  safeWrite(AI_QUESTION_HISTORY_KEY, updatedHistory);
+  return historyItem;
+}
+
+export function buildRecentQuestionContext(limit = 12) {
+  const history = getAIQuestionHistory().slice(0, limit);
+  return {
+    recentIds: getRecentAIQuestionIds(),
+    recentSignatures: getRecentAIQuestionSignatures(),
+    recentQuestionSummaries: history.map((item) => ({
+      title: item.title,
+      branch: item.branch,
+      correct: item.correct,
+      signature: item.signature,
+    })),
+  };
+}
+
+export function clearAIQuestionHistory() {
+  if (!canUseStorage()) return;
+  [RECENT_AI_QUESTION_IDS_KEY, RECENT_AI_QUESTION_SIGNATURES_KEY, AI_QUESTION_HISTORY_KEY]
+    .forEach((key) => window.localStorage.removeItem(key));
+}
