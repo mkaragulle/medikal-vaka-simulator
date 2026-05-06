@@ -1,5 +1,5 @@
 // KlinikIQ vaka verisi: TUS odaklı, klinik karar verdirici ve objektif tetkik sonuçlarıyla yapılandırılmıştır.
-// Not: ÖSYM/TUS soru metinleri kopyalanmamış; vakalar özgün eğitim senaryoları olarak yazılmıştır.
+// Not: ÖSYM/TUS soru metinleri kopyalanmamış; PDF'teki bilgiler özgün KlinikIQ eğitim senaryolarına dönüştürülmüştür.
 
 export const cases = [
   {
@@ -11267,12 +11267,11 @@ export const cases = [
   },
   {
     "id": "pediatrics-shaken-baby-syndrome-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Adli",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "forensic",
     "title": "Travma öyküsü tutarsız bebekte çocuk istismarı şüphesi",
-    "difficulty": "Acil · Hızlı CASE",
+    "difficulty": "Acil · TUS Spot",
     "clinicalFocus": "Çocuk istismarı şüphesinde tıbbi stabilizasyon, ayrıntılı kayıt, güvenlik ve adli bildirim kararı",
     "learningOutcome": "Öğrenci çocuk istismarı şüphesinde tıbbi stabilizasyonun, kayıt tutmanın ve bildirim yükümlülüğünün birlikte yürütülmesi gerektiğini ayırt eder.",
     "demographics": "8 aylık erkek bebek",
@@ -11296,7 +11295,7 @@ export const cases = [
     ],
     "investigations": [
       {
-        "id": "quick-child-abuse-head-imaging",
+        "id": "tus-spot-child-abuse-head-imaging",
         "label": "Kontrastsız beyin BT/MR",
         "type": "imaging",
         "summary": "Subdural kanama ile uyumlu ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir.",
@@ -11306,7 +11305,7 @@ export const cases = [
         "priority": "targeted"
       },
       {
-        "id": "quick-child-abuse-skeletal-survey",
+        "id": "tus-spot-child-abuse-skeletal-survey",
         "label": "İskelet survey grafileri",
         "type": "imaging",
         "summary": "Farklı iyileşme evrelerinde posterior kosta ve metafizer lezyonlar saptanır; tekrarlayan travma olasılığı artar.",
@@ -11374,16 +11373,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Adli",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Çocuk istismarı olgularında kesin tanı beklenmeden şüphe düzeyiyle güvenlik ve bildirim süreci başlatılır."
   },
   {
     "id": "internal-medicine-sexual-assault-evidence-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Adli / Etik",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "forensic",
     "title": "Cinsel saldırı sonrası acile başvuran hastada ilk yaklaşım",
-    "difficulty": "Acil · Hızlı CASE",
+    "difficulty": "Acil · TUS Spot",
     "clinicalFocus": "Cinsel saldırı sonrası tıbbi stabilite, onam, mahremiyet, profilaksi ve delil zinciri",
     "learningOutcome": "Öğrenci cinsel saldırı sonrası acil başvuruda onam, mahremiyet, tıbbi tedavi ve delil zinciri önceliklerini birlikte uygular.",
     "demographics": "22 yaşında kadın hasta",
@@ -11407,7 +11408,7 @@ export const cases = [
     ],
     "investigations": [
       {
-        "id": "quick-sexual-assault-pregnancy-test",
+        "id": "tus-spot-sexual-assault-pregnancy-test",
         "label": "Gebelik testi",
         "type": "laboratory",
         "summary": "Serum/idrarda β-hCG negatif; acil kontrasepsiyon gerekliliği risk ve zaman penceresine göre değerlendirilir.",
@@ -11425,7 +11426,7 @@ export const cases = [
         ]
       },
       {
-        "id": "quick-sexual-assault-baseline-sti",
+        "id": "tus-spot-sexual-assault-baseline-sti",
         "label": "Başlangıç CYBE paneli",
         "type": "microbiology",
         "summary": "HIV Ag/Ab, HBsAg, anti-HCV ve sifiliz taraması başlangıç kayıt değeri olarak alınır; profilaksi kararı klinik riskle birlikte verilir.",
@@ -11493,7 +11494,10 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Adli / Etik",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Cinsel saldırı olgusunda muayene ve örnekleme hastanın bilgilendirilmiş onamı ve mahremiyetiyle yürütülür."
   },
   {
     "id": "pulmonology-near-hanging-asphyxia-001",
@@ -11928,13 +11932,12 @@ export const cases = [
     }
   },
   {
-    "id": "quick-forensic-stab-wound-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Adli",
+    "id": "tus-spot-forensic-stab-wound-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "forensic",
     "title": "Kesici-delici yaralanmada adli bildirim kararı",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Kesici-delici alet yaralanmasında tıbbi müdahale ile adli bildirim ve kayıt sürecini eş zamanlı yürütme",
     "learningOutcome": "Öğrenci adli yaralanmada tıbbi stabilizasyon, objektif kayıt ve bildirim basamaklarını ayırt eder.",
     "demographics": "24 yaşında erkek hasta",
@@ -12015,16 +12018,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Adli",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Kesici-delici yaralanmada olay öyküsü tutarsızsa adli olgu yaklaşımı gerekir."
   },
   {
-    "id": "quick-forensic-traffic-accident-report-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Adli",
+    "id": "tus-spot-forensic-traffic-accident-report-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "forensic",
     "title": "Trafik kazası sonrası acil serviste adli rapor yaklaşımı",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Trafik kazasında objektif muayene kaydı, yaşamsal risk değerlendirmesi ve adli rapor düzenleme",
     "learningOutcome": "Öğrenci trafik kazasında adli raporun objektif muayene kaydı ve tıbbi önceliklerle birlikte düzenlenmesi gerektiğini açıklar.",
     "demographics": "31 yaşında erkek hasta",
@@ -12105,16 +12110,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Adli",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Trafik kazaları adli olgu olarak değerlendirilir."
   },
   {
-    "id": "quick-ethics-unconscious-consent-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Etik",
+    "id": "tus-spot-ethics-unconscious-consent-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "management",
     "title": "Bilinci kapalı hastada onam ve acil müdahale",
-    "difficulty": "Acil · Hızlı CASE",
+    "difficulty": "Acil · TUS Spot",
     "clinicalFocus": "Acil yaşam tehdidinde varsayılan onam ilkesi ve tedaviyi geciktirmeme",
     "learningOutcome": "Öğrenci bilinci kapalı hastada acil yaşam tehdidi olduğunda varsayılan onamla müdahale edilmesi gerektiğini ayırt eder.",
     "demographics": "67 yaşında erkek hasta",
@@ -12195,16 +12202,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Etik",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Acil yaşam tehdidinde onam yokluğu tedaviyi geciktirme gerekçesi değildir."
   },
   {
-    "id": "quick-domestic-violence-safety-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Adli / Etik",
+    "id": "tus-spot-domestic-violence-safety-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "forensic",
     "title": "Aile içi şiddet şüphesinde hekim yaklaşımı",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Şiddet şüphesinde güvenlik, mahrem görüşme, objektif kayıt ve uygun yönlendirme/bildirim",
     "learningOutcome": "Öğrenci aile içi şiddet şüphesinde mahrem görüşme, güvenlik değerlendirmesi ve objektif kayıt gerekliliğini uygular.",
     "demographics": "34 yaşında kadın hasta",
@@ -12285,16 +12294,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Adli / Etik",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Şiddet şüphesinde hasta fail olabilecek kişiyle aynı ortamda sorgulanmamalıdır."
   },
   {
-    "id": "quick-forensic-poisoning-sample-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Adli",
+    "id": "tus-spot-forensic-poisoning-sample-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "forensic",
     "title": "Şüpheli zehirlenmede örnek saklama ve bildirim",
-    "difficulty": "Acil · Hızlı CASE",
+    "difficulty": "Acil · TUS Spot",
     "clinicalFocus": "Zehirlenme şüphesinde tıbbi stabilizasyon, toksikolojik örneklerin doğru alınması ve adli kayıt",
     "learningOutcome": "Öğrenci şüpheli zehirlenmede stabilizasyon, toksikolojik örnek alma ve adli kayıt sürecini birlikte yönetir.",
     "demographics": "40 yaşında erkek hasta",
@@ -12318,7 +12329,7 @@ export const cases = [
     ],
     "investigations": [
       {
-        "id": "quick-poisoning-basic-tox",
+        "id": "tus-spot-poisoning-basic-tox",
         "label": "Hedefe yönelik toksikoloji paneli",
         "type": "toxicology",
         "summary": "İdrarda benzodiazepin pozitif; etanol düzeyi 18 mg/dL; parasetamol düzeyi toksik aralıkta değil. Sonuçlar sedatif ilaç alımını destekler.",
@@ -12406,16 +12417,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Adli",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Zehirlenmede tedavi ve örnek koruma eş zamanlıdır; stabilizasyon geciktirilmez."
   },
   {
-    "id": "quick-occupational-accident-reporting-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Adli / Yönetim",
+    "id": "tus-spot-occupational-accident-reporting-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "forensic",
     "title": "İş kazası sonrası raporlama ve tıbbi öncelik",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "İş kazasında acil tıbbi bakım, yaralanma kaydı ve bildirim/raporlama yaklaşımı",
     "learningOutcome": "Öğrenci iş kazasında objektif kayıt, adli/kurumsal bildirim ve tıbbi tedavi önceliklerini ayırt eder.",
     "demographics": "45 yaşında erkek işçi",
@@ -12496,16 +12509,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Adli / Yönetim",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "İş kazasında rapor objektif tıbbi bulguya dayanır."
   },
   {
-    "id": "quick-clinical-urticaria-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Acil karar",
+    "id": "tus-spot-clinical-urticaria-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "next-step",
     "title": "Ani başlayan ürtiker ve hafif anjiyoödem",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Ürtiker ile anafilaksiyi ayırt ederek ilk tedavi kararını verme",
     "learningOutcome": "Öğrenci izole ürtiker/anjiyoödem ile anafilaksi ayrımını yaparak ilk tedaviyi seçer.",
     "demographics": "19 yaşında kadın hasta",
@@ -12586,16 +12601,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Acil karar",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Anafilakside hipotansiyon, solunum bulgusu veya çoklu sistem tutulumu adrenalin endikasyonunu güçlendirir."
   },
   {
-    "id": "quick-tus-scarlet-fever-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "TUS spot",
+    "id": "tus-spot-tus-scarlet-fever-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "spot",
     "title": "Ateşli çocukta zımpara kağıdı döküntüsü",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Kızıl hastalığında klinik döküntü paterninden etkeni tanıma",
     "learningOutcome": "Öğrenci kızıl hastalığının klinik paternini ve etkenini ayırt eder.",
     "demographics": "5 yaşında çocuk",
@@ -12676,16 +12693,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "TUS spot",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Kızılda zımpara kağıdı döküntüsü, Pastia çizgileri ve çilek dili TUS açısından ayırt ettiricidir."
   },
   {
-    "id": "quick-exam-nursemaid-elbow-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Muayene odaklı",
+    "id": "tus-spot-exam-nursemaid-elbow-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "diagnosis",
     "title": "Çekilme sonrası kolunu kullanmayan çocuk",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Radius başı subluksasyonunu öykü ve muayene ile tanıma",
     "learningOutcome": "Öğrenci radius başı subluksasyonunu gereksiz tetkik istemeden öykü ve muayene ile tanır.",
     "demographics": "2 yaşında kız çocuk",
@@ -12766,16 +12785,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Muayene odaklı",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Nursemaid elbow tipik olarak 1–4 yaşta elden çekilme sonrası görülür."
   },
   {
-    "id": "quick-tus-koplik-measles-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "TUS spot",
+    "id": "tus-spot-tus-koplik-measles-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "spot",
     "title": "Öksürük, konjunktivit ve Koplik lekeleri",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Kızamıkta prodrom ve enantem bulgusunu tanıma",
     "learningOutcome": "Öğrenci kızamıkta prodrom, döküntü yönü ve Koplik lekelerinin ayırt ettirici değerini tanımlar.",
     "demographics": "7 yaşında aşısız çocuk",
@@ -12856,16 +12877,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "TUS spot",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Kızamıkta “3C”: cough, coryza, conjunctivitis; Koplik lekeleri yüksek verimli ipucudur."
   },
   {
-    "id": "quick-emergency-epistaxis-first-step-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Acil karar",
+    "id": "tus-spot-emergency-epistaxis-first-step-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "next-step",
     "title": "Ön burun kanamasında ilk müdahale",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Stabil epistaksiste ilk basamak bası ve lokal yaklaşım kararını verme",
     "learningOutcome": "Öğrenci stabil anterior epistaksiste basit ama doğru ilk müdahaleyi seçer.",
     "demographics": "52 yaşında erkek hasta",
@@ -12946,16 +12969,18 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Acil karar",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Anterior epistaksiste ilk basamak direkt basıdır."
   },
   {
-    "id": "quick-forensic-death-suspicion-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Adli",
+    "id": "tus-spot-forensic-death-suspicion-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
     "questionType": "forensic",
     "title": "Şüpheli ölümde hekimin adli süreç yaklaşımı",
-    "difficulty": "Temel-orta · Hızlı CASE",
+    "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Şüpheli ölümde olay yerini/delilleri bozmama, tıbbi ölüm değerlendirmesi ve adli bildirim",
     "learningOutcome": "Öğrenci şüpheli ölümde adli bildirim, delil koruma ve objektif kayıt sorumluluğunu açıklar.",
     "demographics": "70 yaşında erkek hasta",
@@ -13036,7 +13061,10 @@ export const cases = [
           }
         }
       }
-    }
+    },
+    "spotCategory": "Adli",
+    "relatedBranch": "Küçük Stajlar",
+    "spotPearl": "Şüpheli ölümde defin ruhsatı rutin biçimde düzenlenmez."
   },
   {
     "id": "anatomy-radial-nerve-humerus-fracture-001",
@@ -13546,6 +13574,4458 @@ export const cases = [
           },
           "Beta bloker zehirlenmesi; glukagon tedavisi": {
             "explanation": "Beta bloker zehirlenmesi; glukagon tedavisi bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-vibrio-cholerae-darting-motility-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Mikrobiyoloji",
+    "relatedBranch": "Tıbbi Mikrobiyoloji",
+    "tags": [
+      "kolera",
+      "Vibrio cholerae",
+      "seyahat ishali"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Kolera tanısında pirinç suyu tarzı sulu ishal, ağır dehidratasyon, oksidaz pozitiflik ve darting/yıldız kayması hareketi",
+    "demographics": "49 yaşında kadın",
+    "setting": "Acil servis",
+    "chiefComplaint": "Yemen seyahati sonrası saatler içinde çok sayıda bol sulu, kansız dışkılama",
+    "stem": "Hasta kısa sürede ağır susuzluk, halsizlik ve kas krampları tarifliyor; dışkıda kan veya belirgin karın hassasiyeti anlatmıyor.",
+    "vitals": {},
+    "exam": [
+      "Genel durum orta-kötü; mukozalar kuru ve deri turgoru azalmış.",
+      "Karında defans veya rebound yok; barsak sesleri artmış duyuluyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-vibrio-darkfield",
+        "label": "Dışkı mikroskobisi ve kültür",
+        "type": "microbiology",
+        "summary": "Karanlık alan mikroskobunda darting hareketli basiller; kültürde oksidaz pozitif bakteri üremesi.",
+        "findings": [
+          "Karanlık alan mikroskobunda darting hareketli basiller; kültürde oksidaz pozitif bakteri üremesi."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Dışkı mikroskobisi ve kültür",
+            "Karanlık alan mikroskobunda darting hareketli basiller; kültürde oksidaz pozitif bakteri üremesi.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu tabloyu en iyi açıklayan etken hangisidir?",
+    "spotPearl": "Vibrio cholerae karanlık alan mikroskobunda hızlı darting/yıldız kayması hareketi gösterebilir; tedavide sıvı-elektrolit replasmanı esastır.",
+    "learningOutcome": "Öğrenci kolera için ayırt ettirici mikrobiyolojik ipuçlarını tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q1",
+    "diagnosis": {
+      "correct": "Vibrio cholerae",
+      "options": [
+        "Vibrio cholerae",
+        "Shigella flexneri",
+        "Yersinia enterocolitica",
+        "Enterotoksijenik Escherichia coli"
+      ],
+      "explanation": "Bol sulu kansız ishal, ağır dehidratasyon, oksidaz pozitiflik ve karanlık alan mikroskobunda çok hareketli basiller kolerayı destekler.",
+      "pearls": [
+        "Vibrio cholerae karanlık alan mikroskobunda hızlı darting/yıldız kayması hareketi gösterebilir; tedavide sıvı-elektrolit replasmanı esastır."
+      ],
+      "nextStep": "Öğrenci kolera için ayırt ettirici mikrobiyolojik ipuçlarını tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Vibrio cholerae",
+        "diagnosisMeta": "Kolera tanısında pirinç suyu tarzı sulu ishal, ağır dehidratasyon, oksidaz pozitiflik ve darting/yıldız kayması hareketi",
+        "shortDiagnosisMeta": "Mikrobiyoloji",
+        "whyCorrect": "Bol sulu kansız ishal, ağır dehidratasyon, oksidaz pozitiflik ve karanlık alan mikroskobunda çok hareketli basiller kolerayı destekler.",
+        "whyWrong": {
+          "Shigella flexneri": "Shigella flexneri bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Vibrio cholerae seçeneğini destekler.",
+          "Yersinia enterocolitica": "Yersinia enterocolitica bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Vibrio cholerae seçeneğini destekler.",
+          "Enterotoksijenik Escherichia coli": "Enterotoksijenik Escherichia coli bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Vibrio cholerae seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Yemen seyahati sonrası saatler içinde çok sayıda bol sulu, kansız dışkılama",
+          "Hasta kısa sürede ağır susuzluk, halsizlik ve kas krampları tarifliyor; dışkıda kan veya belirgin karın hassasiyeti anlatmıyor.",
+          "Genel durum orta-kötü; mukozalar kuru ve deri turgoru azalmış.",
+          "Karanlık alan mikroskobunda darting hareketli basiller; kültürde oksidaz pozitif bakteri üremesi."
+        ],
+        "clinicalPearls": [
+          "Vibrio cholerae karanlık alan mikroskobunda hızlı darting/yıldız kayması hareketi gösterebilir; tedavide sıvı-elektrolit replasmanı esastır."
+        ],
+        "managementSteps": [
+          "Öğrenci kolera için ayırt ettirici mikrobiyolojik ipuçlarını tanır."
+        ],
+        "learningOutcome": "Öğrenci kolera için ayırt ettirici mikrobiyolojik ipuçlarını tanır.",
+        "differentialComparison": {
+          "Shigella flexneri": {
+            "explanation": "Shigella flexneri bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Vibrio cholerae seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Yersinia enterocolitica": {
+            "explanation": "Yersinia enterocolitica bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Vibrio cholerae seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Enterotoksijenik Escherichia coli": {
+            "explanation": "Enterotoksijenik Escherichia coli bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Vibrio cholerae seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-cmv-retinitis-ganciclovir-neutropenia-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Farmakoloji / Enfeksiyon",
+    "relatedBranch": "Tıbbi Farmakoloji",
+    "tags": [
+      "CMV",
+      "gansiklovir",
+      "foskarnet"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "CMV retiniti tedavisinde gansiklovir kaynaklı kemik iliği supresyonu ve foskarnet alternatifi",
+    "demographics": "28 yaşında erkek",
+    "setting": "Enfeksiyon polikliniği",
+    "chiefComplaint": "Bulanık görme ve tedavisiz HIV öyküsü",
+    "stem": "Uzun süredir antiretroviral tedavi almayan hastada oftalmolojik değerlendirme CMV retiniti ile uyumlu bulunuyor; antiviral tedavinin ikinci haftasında ağır nötropeni gelişiyor.",
+    "vitals": {},
+    "exam": [
+      "Genel durum stabil; göz yakınması dışında belirgin sistemik toksisite bulgusu yok."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-cmv-cbc",
+        "label": "Tam kan sayımı",
+        "type": "hematology",
+        "summary": "Tedavinin 14. gününde WBC 900/mm³ ve nötrofil 500/mm³; belirgin lökopeni/nötropeni.",
+        "findings": [
+          "Tedavinin 14. gününde WBC 900/mm³ ve nötrofil 500/mm³; belirgin lökopeni/nötropeni."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Tam kan sayımı",
+            "Tedavinin 14. gününde WBC 900/mm³ ve nötrofil 500/mm³; belirgin lökopeni/nötropeni.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu yan etki en çok hangi ilaçla ilişkilidir ve uygun alternatif hangisidir?",
+    "spotPearl": "CMV retinitinde gansiklovir nötropeni yapabilir; foskarnet nefrotoksisite riski taşıyan ama kemik iliği baskısı daha az olan alternatiftir.",
+    "learningOutcome": "Öğrenci antiviral yan etki-tedavi alternatifi eşleşmesini kurar.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q2",
+    "diagnosis": {
+      "correct": "Gansiklovir - Foskarnet",
+      "options": [
+        "Gansiklovir - Foskarnet",
+        "Asiklovir - Ribavirin",
+        "Oseltamivir - Tenofovir",
+        "Famsiklovir - Valasiklovir"
+      ],
+      "explanation": "Gansiklovir CMV retinitinde etkilidir ancak kemik iliği supresyonu ve nötropeni yapabilir; bu durumda foskarnet alternatif seçenektir.",
+      "pearls": [
+        "CMV retinitinde gansiklovir nötropeni yapabilir; foskarnet nefrotoksisite riski taşıyan ama kemik iliği baskısı daha az olan alternatiftir."
+      ],
+      "nextStep": "Öğrenci antiviral yan etki-tedavi alternatifi eşleşmesini kurar.",
+      "answerFeedback": {
+        "correctDiagnosis": "Gansiklovir - Foskarnet",
+        "diagnosisMeta": "CMV retiniti tedavisinde gansiklovir kaynaklı kemik iliği supresyonu ve foskarnet alternatifi",
+        "shortDiagnosisMeta": "Farmakoloji / Enfeksiyon",
+        "whyCorrect": "Gansiklovir CMV retinitinde etkilidir ancak kemik iliği supresyonu ve nötropeni yapabilir; bu durumda foskarnet alternatif seçenektir.",
+        "whyWrong": {
+          "Asiklovir - Ribavirin": "Asiklovir - Ribavirin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Gansiklovir - Foskarnet seçeneğini destekler.",
+          "Oseltamivir - Tenofovir": "Oseltamivir - Tenofovir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Gansiklovir - Foskarnet seçeneğini destekler.",
+          "Famsiklovir - Valasiklovir": "Famsiklovir - Valasiklovir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Gansiklovir - Foskarnet seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Bulanık görme ve tedavisiz HIV öyküsü",
+          "Uzun süredir antiretroviral tedavi almayan hastada oftalmolojik değerlendirme CMV retiniti ile uyumlu bulunuyor; antiviral tedavinin ikinci haftasında ağır nötropeni gelişiyor.",
+          "Genel durum stabil; göz yakınması dışında belirgin sistemik toksisite bulgusu yok.",
+          "Tedavinin 14. gününde WBC 900/mm³ ve nötrofil 500/mm³; belirgin lökopeni/nötropeni."
+        ],
+        "clinicalPearls": [
+          "CMV retinitinde gansiklovir nötropeni yapabilir; foskarnet nefrotoksisite riski taşıyan ama kemik iliği baskısı daha az olan alternatiftir."
+        ],
+        "managementSteps": [
+          "Öğrenci antiviral yan etki-tedavi alternatifi eşleşmesini kurar."
+        ],
+        "learningOutcome": "Öğrenci antiviral yan etki-tedavi alternatifi eşleşmesini kurar.",
+        "differentialComparison": {
+          "Asiklovir - Ribavirin": {
+            "explanation": "Asiklovir - Ribavirin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Gansiklovir - Foskarnet seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Oseltamivir - Tenofovir": {
+            "explanation": "Oseltamivir - Tenofovir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Gansiklovir - Foskarnet seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Famsiklovir - Valasiklovir": {
+            "explanation": "Famsiklovir - Valasiklovir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Gansiklovir - Foskarnet seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-erysipelas-penicillin-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tanı / Tedavi",
+    "relatedBranch": "Tıbbi Mikrobiyoloji",
+    "tags": [
+      "erizipel",
+      "Streptococcus pyogenes"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Erizipelde keskin sınırlı kabarık eritem ve ilk tercih penisilin tedavisi",
+    "demographics": "55 yaşında erkek",
+    "setting": "Acil servis",
+    "chiefComplaint": "Ateş ve bacakta sıcak-kızarık lezyon",
+    "stem": "Yakın dönemde tonsillit geçiren hastada eski safen ven çıkarım skarı boyunca hızla yayılan, ağrılı ve sıcak deri lezyonu gelişiyor.",
+    "vitals": {},
+    "exam": [
+      "Ateşli ve halsiz görünümde.",
+      "Sol tibia medial yüzde deriden kabarık, sıcak, hassas ve sınırları belirgin eritemli plak izleniyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu klinik tabloda en olası tanı ve ilk tercih tedavi hangisidir?",
+    "spotPearl": "Erizipel yüzeyel dermis ve lenfatikleri tutar; sınırları selülite göre daha belirgin ve kabarık olabilir.",
+    "learningOutcome": "Öğrenci erizipel-selülit ayrımını ve ilk tedavi seçimini bilir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q3",
+    "diagnosis": {
+      "correct": "Erizipel - Penisilin G",
+      "options": [
+        "Erizipel - Penisilin G",
+        "Selülit - Meropenem",
+        "Eritrazma - Eritromisin",
+        "Fronkül - Ampisilin-sulbaktam"
+      ],
+      "explanation": "Keskin sınırlı, kabarık ve sıcak eritem streptokok kaynaklı erizipeli düşündürür; ilk tercih penisilin grubu tedavidir.",
+      "pearls": [
+        "Erizipel yüzeyel dermis ve lenfatikleri tutar; sınırları selülite göre daha belirgin ve kabarık olabilir."
+      ],
+      "nextStep": "Öğrenci erizipel-selülit ayrımını ve ilk tedavi seçimini bilir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Erizipel - Penisilin G",
+        "diagnosisMeta": "Erizipelde keskin sınırlı kabarık eritem ve ilk tercih penisilin tedavisi",
+        "shortDiagnosisMeta": "Tanı / Tedavi",
+        "whyCorrect": "Keskin sınırlı, kabarık ve sıcak eritem streptokok kaynaklı erizipeli düşündürür; ilk tercih penisilin grubu tedavidir.",
+        "whyWrong": {
+          "Selülit - Meropenem": "Selülit - Meropenem bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Erizipel - Penisilin G seçeneğini destekler.",
+          "Eritrazma - Eritromisin": "Eritrazma - Eritromisin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Erizipel - Penisilin G seçeneğini destekler.",
+          "Fronkül - Ampisilin-sulbaktam": "Fronkül - Ampisilin-sulbaktam bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Erizipel - Penisilin G seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Ateş ve bacakta sıcak-kızarık lezyon",
+          "Yakın dönemde tonsillit geçiren hastada eski safen ven çıkarım skarı boyunca hızla yayılan, ağrılı ve sıcak deri lezyonu gelişiyor.",
+          "Ateşli ve halsiz görünümde."
+        ],
+        "clinicalPearls": [
+          "Erizipel yüzeyel dermis ve lenfatikleri tutar; sınırları selülite göre daha belirgin ve kabarık olabilir."
+        ],
+        "managementSteps": [
+          "Öğrenci erizipel-selülit ayrımını ve ilk tedavi seçimini bilir."
+        ],
+        "learningOutcome": "Öğrenci erizipel-selülit ayrımını ve ilk tedavi seçimini bilir.",
+        "differentialComparison": {
+          "Selülit - Meropenem": {
+            "explanation": "Selülit - Meropenem bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Erizipel - Penisilin G seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Eritrazma - Eritromisin": {
+            "explanation": "Eritrazma - Eritromisin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Erizipel - Penisilin G seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Fronkül - Ampisilin-sulbaktam": {
+            "explanation": "Fronkül - Ampisilin-sulbaktam bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Erizipel - Penisilin G seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-hcv-needlestick-followup-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Yönetim / Enfeksiyon kontrolü",
+    "relatedBranch": "Tıbbi Mikrobiyoloji",
+    "tags": [
+      "HCV",
+      "iğne batması",
+      "mesleki temas"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "HCV iğne batması sonrası aşı/immünoglobulin olmadığı ve erken HCV RNA izlemi gerektiği",
+    "demographics": "Cerrah",
+    "setting": "Ameliyathane",
+    "chiefComplaint": "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma",
+    "stem": "Cerrahın eline kontamine enjektör iğnesi batıyor. Yaralanma hemen yıkanıp kayıt altına alınıyor; kaynak hastanın HCV RNA pozitif olduğu biliniyor.",
+    "vitals": {},
+    "exam": [
+      "Yaralanma yüzeyel perkütan giriş yeri şeklinde; aktif kanama minimal."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "management",
+    "question": "Bu durumda sağlık çalışanı için en uygun izlem yaklaşımı hangisidir?",
+    "spotPearl": "HCV temasında HBV’den farklı olarak aşı/immünoglobulin profilaksisi yoktur; erken RNA takibi serokonversiyondan önce enfeksiyonu yakalar.",
+    "learningOutcome": "Öğrenci HCV temas sonrası yaklaşımı HBV temasından ayırır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q4",
+    "diagnosis": {
+      "correct": "Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi",
+      "options": [
+        "Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi",
+        "Hemen hepatit C aşısı yapmak",
+        "Hepatit C immünoglobulini uygulamak",
+        "Rutin profilaktik antiviral tedavi başlamak"
+      ],
+      "explanation": "HCV için etkili aşı veya standart immünoglobulin profilaksisi yoktur; temas sonrası temel yaklaşım kayıt, başlangıç serolojisi ve erken HCV RNA izlemdir.",
+      "pearls": [
+        "HCV temasında HBV’den farklı olarak aşı/immünoglobulin profilaksisi yoktur; erken RNA takibi serokonversiyondan önce enfeksiyonu yakalar."
+      ],
+      "nextStep": "Öğrenci HCV temas sonrası yaklaşımı HBV temasından ayırır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi",
+        "diagnosisMeta": "HCV iğne batması sonrası aşı/immünoglobulin olmadığı ve erken HCV RNA izlemi gerektiği",
+        "shortDiagnosisMeta": "Yönetim / Enfeksiyon kontrolü",
+        "whyCorrect": "HCV için etkili aşı veya standart immünoglobulin profilaksisi yoktur; temas sonrası temel yaklaşım kayıt, başlangıç serolojisi ve erken HCV RNA izlemdir.",
+        "whyWrong": {
+          "Hemen hepatit C aşısı yapmak": "Hemen hepatit C aşısı yapmak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi seçeneğini destekler.",
+          "Hepatit C immünoglobulini uygulamak": "Hepatit C immünoglobulini uygulamak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi seçeneğini destekler.",
+          "Rutin profilaktik antiviral tedavi başlamak": "Rutin profilaktik antiviral tedavi başlamak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma",
+          "Cerrahın eline kontamine enjektör iğnesi batıyor. Yaralanma hemen yıkanıp kayıt altına alınıyor; kaynak hastanın HCV RNA pozitif olduğu biliniyor.",
+          "Yaralanma yüzeyel perkütan giriş yeri şeklinde; aktif kanama minimal."
+        ],
+        "clinicalPearls": [
+          "HCV temasında HBV’den farklı olarak aşı/immünoglobulin profilaksisi yoktur; erken RNA takibi serokonversiyondan önce enfeksiyonu yakalar."
+        ],
+        "managementSteps": [
+          "Öğrenci HCV temas sonrası yaklaşımı HBV temasından ayırır."
+        ],
+        "learningOutcome": "Öğrenci HCV temas sonrası yaklaşımı HBV temasından ayırır.",
+        "differentialComparison": {
+          "Hemen hepatit C aşısı yapmak": {
+            "explanation": "Hemen hepatit C aşısı yapmak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Hepatit C immünoglobulini uygulamak": {
+            "explanation": "Hepatit C immünoglobulini uygulamak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Rutin profilaktik antiviral tedavi başlamak": {
+            "explanation": "Rutin profilaktik antiviral tedavi başlamak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Başlangıç anti-HCV kaydı ve 2-4 hafta sonra HCV RNA izlemi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-tb-contact-ppd-conversion-inh-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Yönetim / Mikrobiyoloji",
+    "relatedBranch": "Tıbbi Mikrobiyoloji",
+    "tags": [
+      "tüberküloz",
+      "temaslı",
+      "PPD"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Aktif TB temaslısında PPD dönüşümü ve normal akciğer grafisi ile izoniyazid profilaksisi",
+    "demographics": "18 yaşında erkek",
+    "setting": "Verem savaşı dispanseri",
+    "chiefComplaint": "Aktif akciğer tüberkülozu olan aile bireyiyle yakın temas",
+    "stem": "Hasta asemptomatik. Çocuklukta BCG öyküsü var; önceki PPD 8 mm iken son değerlendirmede 17 mm ölçülüyor ve akciğer grafisi normal.",
+    "vitals": {},
+    "exam": [
+      "Genel durum iyi; öksürük, ateş veya gece terlemesi tariflemiyor.",
+      "Akciğer oskültasyonu olağan."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "management",
+    "question": "Bu temaslı için en uygun yaklaşım hangisidir?",
+    "spotPearl": "BCG öyküsü PPD dönüşümünü otomatik açıklamaz; yakın temas ve anlamlı artış latent enfeksiyon lehinedir.",
+    "learningOutcome": "Öğrenci TB temaslı taraması ve latent enfeksiyon yönetimini uygular.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q5",
+    "diagnosis": {
+      "correct": "İzoniyazid profilaksisi başlamak",
+      "options": [
+        "İzoniyazid profilaksisi başlamak",
+        "Aktif TB gibi dörtlü tedavi başlamak",
+        "BCG’ye bağlayıp takip etmeden bırakmak",
+        "Aylık balgam yayması ile tedavisiz izlemek"
+      ],
+      "explanation": "Aktif TB dışlanmış ve PPD dönüşümü olan yakın temaslıda latent TB enfeksiyonu kabul edilerek izoniyazid profilaksisi verilir.",
+      "pearls": [
+        "BCG öyküsü PPD dönüşümünü otomatik açıklamaz; yakın temas ve anlamlı artış latent enfeksiyon lehinedir."
+      ],
+      "nextStep": "Öğrenci TB temaslı taraması ve latent enfeksiyon yönetimini uygular.",
+      "answerFeedback": {
+        "correctDiagnosis": "İzoniyazid profilaksisi başlamak",
+        "diagnosisMeta": "Aktif TB temaslısında PPD dönüşümü ve normal akciğer grafisi ile izoniyazid profilaksisi",
+        "shortDiagnosisMeta": "Yönetim / Mikrobiyoloji",
+        "whyCorrect": "Aktif TB dışlanmış ve PPD dönüşümü olan yakın temaslıda latent TB enfeksiyonu kabul edilerek izoniyazid profilaksisi verilir.",
+        "whyWrong": {
+          "Aktif TB gibi dörtlü tedavi başlamak": "Aktif TB gibi dörtlü tedavi başlamak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İzoniyazid profilaksisi başlamak seçeneğini destekler.",
+          "BCG’ye bağlayıp takip etmeden bırakmak": "BCG’ye bağlayıp takip etmeden bırakmak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İzoniyazid profilaksisi başlamak seçeneğini destekler.",
+          "Aylık balgam yayması ile tedavisiz izlemek": "Aylık balgam yayması ile tedavisiz izlemek bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İzoniyazid profilaksisi başlamak seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Aktif akciğer tüberkülozu olan aile bireyiyle yakın temas",
+          "Hasta asemptomatik. Çocuklukta BCG öyküsü var; önceki PPD 8 mm iken son değerlendirmede 17 mm ölçülüyor ve akciğer grafisi normal.",
+          "Genel durum iyi; öksürük, ateş veya gece terlemesi tariflemiyor."
+        ],
+        "clinicalPearls": [
+          "BCG öyküsü PPD dönüşümünü otomatik açıklamaz; yakın temas ve anlamlı artış latent enfeksiyon lehinedir."
+        ],
+        "managementSteps": [
+          "Öğrenci TB temaslı taraması ve latent enfeksiyon yönetimini uygular."
+        ],
+        "learningOutcome": "Öğrenci TB temaslı taraması ve latent enfeksiyon yönetimini uygular.",
+        "differentialComparison": {
+          "Aktif TB gibi dörtlü tedavi başlamak": {
+            "explanation": "Aktif TB gibi dörtlü tedavi başlamak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İzoniyazid profilaksisi başlamak seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "BCG’ye bağlayıp takip etmeden bırakmak": {
+            "explanation": "BCG’ye bağlayıp takip etmeden bırakmak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İzoniyazid profilaksisi başlamak seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Aylık balgam yayması ile tedavisiz izlemek": {
+            "explanation": "Aylık balgam yayması ile tedavisiz izlemek bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İzoniyazid profilaksisi başlamak seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-occupational-asthma-latex-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Mesleki hastalık",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "mesleksel astım",
+      "lateks",
+      "alerji testi"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Mesleksel astımda maruziyet ilişkisi ve alerji/duyarlanma değerlendirmesi",
+    "demographics": "27 yaşında erkek diş hekimi",
+    "setting": "Göğüs hastalıkları polikliniği",
+    "chiefComplaint": "İşle ilişkili öksürük, hışıltı ve el dorsumunda kaşıntılı lezyonlar",
+    "stem": "Son bir yıldır iş günlerinde nefes darlığı, öksürük ve hışıltı atakları yaşayan hastanın el dorsal yüzlerinde kronik irritan/alerjik dermatit benzeri lezyonlar bulunuyor.",
+    "vitals": {},
+    "exam": [
+      "Solunum eforu istirahatte normal; ekspiryum sonunda hafif wheezing duyuluyor.",
+      "El dorsumlarında erozyonlu ve hiperkeratotik kaşıntılı plaklar izleniyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "test",
+    "question": "Bu olguda en olası tanı ve en uygun doğrulayıcı yaklaşım hangisidir?",
+    "spotPearl": "Mesleksel astımda semptomların iş ortamıyla ilişkisi ve duyarlanma testleri tanısal ipucudur.",
+    "learningOutcome": "Öğrenci mesleki maruziyet ipuçlarını solunum ve deri bulgularıyla ilişkilendirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q6",
+    "diagnosis": {
+      "correct": "Mesleksel astım - Alerji testi",
+      "options": [
+        "Mesleksel astım - Alerji testi",
+        "KOAH - Spirometriyle sabit obstrüksiyon",
+        "Behçet hastalığı - Paterji testi",
+        "Psöriazis - Cilt biyopsisi"
+      ],
+      "explanation": "Meslekle ilişkili tekrarlayan hışıltı ve el dermatiti özellikle lateks/kimyasal duyarlanma ile mesleksel astımı düşündürür; alerji değerlendirmesi destekleyicidir.",
+      "pearls": [
+        "Mesleksel astımda semptomların iş ortamıyla ilişkisi ve duyarlanma testleri tanısal ipucudur."
+      ],
+      "nextStep": "Öğrenci mesleki maruziyet ipuçlarını solunum ve deri bulgularıyla ilişkilendirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Mesleksel astım - Alerji testi",
+        "diagnosisMeta": "Mesleksel astımda maruziyet ilişkisi ve alerji/duyarlanma değerlendirmesi",
+        "shortDiagnosisMeta": "Tetkik / Mesleki hastalık",
+        "whyCorrect": "Meslekle ilişkili tekrarlayan hışıltı ve el dermatiti özellikle lateks/kimyasal duyarlanma ile mesleksel astımı düşündürür; alerji değerlendirmesi destekleyicidir.",
+        "whyWrong": {
+          "KOAH - Spirometriyle sabit obstrüksiyon": "KOAH - Spirometriyle sabit obstrüksiyon bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mesleksel astım - Alerji testi seçeneğini destekler.",
+          "Behçet hastalığı - Paterji testi": "Behçet hastalığı - Paterji testi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mesleksel astım - Alerji testi seçeneğini destekler.",
+          "Psöriazis - Cilt biyopsisi": "Psöriazis - Cilt biyopsisi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mesleksel astım - Alerji testi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "İşle ilişkili öksürük, hışıltı ve el dorsumunda kaşıntılı lezyonlar",
+          "Son bir yıldır iş günlerinde nefes darlığı, öksürük ve hışıltı atakları yaşayan hastanın el dorsal yüzlerinde kronik irritan/alerjik dermatit benzeri lezyonlar bulunuyor.",
+          "Solunum eforu istirahatte normal; ekspiryum sonunda hafif wheezing duyuluyor."
+        ],
+        "clinicalPearls": [
+          "Mesleksel astımda semptomların iş ortamıyla ilişkisi ve duyarlanma testleri tanısal ipucudur."
+        ],
+        "managementSteps": [
+          "Öğrenci mesleki maruziyet ipuçlarını solunum ve deri bulgularıyla ilişkilendirir."
+        ],
+        "learningOutcome": "Öğrenci mesleki maruziyet ipuçlarını solunum ve deri bulgularıyla ilişkilendirir.",
+        "differentialComparison": {
+          "KOAH - Spirometriyle sabit obstrüksiyon": {
+            "explanation": "KOAH - Spirometriyle sabit obstrüksiyon bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mesleksel astım - Alerji testi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Behçet hastalığı - Paterji testi": {
+            "explanation": "Behçet hastalığı - Paterji testi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mesleksel astım - Alerji testi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Psöriazis - Cilt biyopsisi": {
+            "explanation": "Psöriazis - Cilt biyopsisi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mesleksel astım - Alerji testi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-curb65-fever-not-criterion-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "TUS spot / Yönetim",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "CURB-65",
+      "pnömoni"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "CURB-65 bileşenleri ve ateşin skorda yer almaması",
+    "demographics": "72 yaşında kadın",
+    "setting": "Acil servis",
+    "chiefComplaint": "Ateş, öksürük, sarı balgam ve uykuya meyil",
+    "stem": "Pnömoni düşünülen yaşlı hastada konfüzyon, takipne ve sistemik inflamasyon bulguları var. Hekim yatış kararını CURB-65 kriterleriyle yapılandırmak istiyor.",
+    "vitals": {},
+    "exam": [
+      "Bilinç bulanık ve uykuya meyilli.",
+      "Solunum sayısı belirgin artmış; cilt soluk ve hafif terli."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "spot",
+    "question": "CURB-65 pnömoni ağırlık skorunda aşağıdakilerden hangisi yer almaz?",
+    "spotPearl": "CURB-65 içinde ateş yoktur; C-konfüzyon, U-üre, R-solunum sayısı, B-kan basıncı, 65-yaştır.",
+    "learningOutcome": "Öğrenci pnömonide yatış kararını skor bileşenleriyle ilişkilendirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q7",
+    "diagnosis": {
+      "correct": "Ateş yüksekliği",
+      "options": [
+        "Ateş yüksekliği",
+        "Yaşın 65 ve üzerinde olması",
+        "Bilinç durumunda bozulma",
+        "Solunum sayısının artması"
+      ],
+      "explanation": "CURB-65; Confusion, Urea, Respiratory rate, Blood pressure ve age ≥65 bileşenlerinden oluşur. Ateş klinik değerlendirmede önemlidir ama skor kriteri değildir.",
+      "pearls": [
+        "CURB-65 içinde ateş yoktur; C-konfüzyon, U-üre, R-solunum sayısı, B-kan basıncı, 65-yaştır."
+      ],
+      "nextStep": "Öğrenci pnömonide yatış kararını skor bileşenleriyle ilişkilendirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Ateş yüksekliği",
+        "diagnosisMeta": "CURB-65 bileşenleri ve ateşin skorda yer almaması",
+        "shortDiagnosisMeta": "TUS spot / Yönetim",
+        "whyCorrect": "CURB-65; Confusion, Urea, Respiratory rate, Blood pressure ve age ≥65 bileşenlerinden oluşur. Ateş klinik değerlendirmede önemlidir ama skor kriteri değildir.",
+        "whyWrong": {
+          "Yaşın 65 ve üzerinde olması": "Yaşın 65 ve üzerinde olması bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Ateş yüksekliği seçeneğini destekler.",
+          "Bilinç durumunda bozulma": "Bilinç durumunda bozulma bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Ateş yüksekliği seçeneğini destekler.",
+          "Solunum sayısının artması": "Solunum sayısının artması bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Ateş yüksekliği seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Ateş, öksürük, sarı balgam ve uykuya meyil",
+          "Pnömoni düşünülen yaşlı hastada konfüzyon, takipne ve sistemik inflamasyon bulguları var. Hekim yatış kararını CURB-65 kriterleriyle yapılandırmak istiyor.",
+          "Bilinç bulanık ve uykuya meyilli."
+        ],
+        "clinicalPearls": [
+          "CURB-65 içinde ateş yoktur; C-konfüzyon, U-üre, R-solunum sayısı, B-kan basıncı, 65-yaştır."
+        ],
+        "managementSteps": [
+          "Öğrenci pnömonide yatış kararını skor bileşenleriyle ilişkilendirir."
+        ],
+        "learningOutcome": "Öğrenci pnömonide yatış kararını skor bileşenleriyle ilişkilendirir.",
+        "differentialComparison": {
+          "Yaşın 65 ve üzerinde olması": {
+            "explanation": "Yaşın 65 ve üzerinde olması bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Ateş yüksekliği seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Bilinç durumunda bozulma": {
+            "explanation": "Bilinç durumunda bozulma bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Ateş yüksekliği seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Solunum sayısının artması": {
+            "explanation": "Solunum sayısının artması bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Ateş yüksekliği seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-anaphylaxis-tryptase-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Alerji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "anafilaksi",
+      "triptaz"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Anafilaksi ayırıcı tanısında serum triptazın rolü",
+    "demographics": "20 yaşında erkek",
+    "setting": "Acil servis",
+    "chiefComplaint": "Fıstıklı tatlıdan sonra boğazda şişme, kaşıntı, karın ağrısı ve baş dönmesi",
+    "stem": "Alerjik rinit ve astım öyküsü olan hasta besin alımından kısa süre sonra cilt, gastrointestinal ve kardiyovasküler semptomlar tarifliyor.",
+    "vitals": {},
+    "exam": [
+      "Yaygın ürtikeryal lezyonlar ve hafif dudak ödemi izleniyor.",
+      "Solunum sıkıntısı belirgin değil ancak hasta anksiyöz görünüyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-tryptase",
+        "label": "Serum triptaz",
+        "type": "lab",
+        "summary": "Akut reaksiyon sonrası örnekte triptaz yüksek saptanır; mast hücre aktivasyonunu destekler.",
+        "findings": [
+          "Akut reaksiyon sonrası örnekte triptaz yüksek saptanır; mast hücre aktivasyonunu destekler."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Serum triptaz",
+            "Akut reaksiyon sonrası örnekte triptaz yüksek saptanır; mast hücre aktivasyonunu destekler.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Bu reaksiyonun mast hücre aktivasyonu ile ilişkisini desteklemek için en uygun tetkik hangisidir?",
+    "spotPearl": "Anafilaksi sonrası serum triptaz erken dönemde yükselerek mast hücre aktivasyonunu destekleyebilir.",
+    "learningOutcome": "Öğrenci anafilaksi ayırıcı tanısında hedefe yönelik tetkiki seçer.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q8",
+    "diagnosis": {
+      "correct": "Serum triptaz düzeyi",
+      "options": [
+        "Serum triptaz düzeyi",
+        "Total IgE düzeyi",
+        "Troponin düzeyi",
+        "Kompleman C4 düzeyi"
+      ],
+      "explanation": "Serum triptaz mast hücre degranülasyonunu destekleyen en uygun testtir; total IgE spesifik akut reaksiyon doğrulaması için yeterli değildir.",
+      "pearls": [
+        "Anafilaksi sonrası serum triptaz erken dönemde yükselerek mast hücre aktivasyonunu destekleyebilir."
+      ],
+      "nextStep": "Öğrenci anafilaksi ayırıcı tanısında hedefe yönelik tetkiki seçer.",
+      "answerFeedback": {
+        "correctDiagnosis": "Serum triptaz düzeyi",
+        "diagnosisMeta": "Anafilaksi ayırıcı tanısında serum triptazın rolü",
+        "shortDiagnosisMeta": "Tetkik / Alerji",
+        "whyCorrect": "Serum triptaz mast hücre degranülasyonunu destekleyen en uygun testtir; total IgE spesifik akut reaksiyon doğrulaması için yeterli değildir.",
+        "whyWrong": {
+          "Total IgE düzeyi": "Total IgE düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serum triptaz düzeyi seçeneğini destekler.",
+          "Troponin düzeyi": "Troponin düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serum triptaz düzeyi seçeneğini destekler.",
+          "Kompleman C4 düzeyi": "Kompleman C4 düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serum triptaz düzeyi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Fıstıklı tatlıdan sonra boğazda şişme, kaşıntı, karın ağrısı ve baş dönmesi",
+          "Alerjik rinit ve astım öyküsü olan hasta besin alımından kısa süre sonra cilt, gastrointestinal ve kardiyovasküler semptomlar tarifliyor.",
+          "Yaygın ürtikeryal lezyonlar ve hafif dudak ödemi izleniyor.",
+          "Akut reaksiyon sonrası örnekte triptaz yüksek saptanır; mast hücre aktivasyonunu destekler."
+        ],
+        "clinicalPearls": [
+          "Anafilaksi sonrası serum triptaz erken dönemde yükselerek mast hücre aktivasyonunu destekleyebilir."
+        ],
+        "managementSteps": [
+          "Öğrenci anafilaksi ayırıcı tanısında hedefe yönelik tetkiki seçer."
+        ],
+        "learningOutcome": "Öğrenci anafilaksi ayırıcı tanısında hedefe yönelik tetkiki seçer.",
+        "differentialComparison": {
+          "Total IgE düzeyi": {
+            "explanation": "Total IgE düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serum triptaz düzeyi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Troponin düzeyi": {
+            "explanation": "Troponin düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serum triptaz düzeyi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Kompleman C4 düzeyi": {
+            "explanation": "Kompleman C4 düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serum triptaz düzeyi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-renovascular-hypertension-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tanı",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "renovasküler hipertansiyon",
+      "renal arter stenozu"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Renovasküler hipertansiyonda flash pulmoner ödem, abdominal üfürüm ve hipokalemi ipuçları",
+    "demographics": "62 yaşında erkek",
+    "setting": "Dahiliye polikliniği",
+    "chiefComplaint": "Son aylarda dirençli hipertansiyon atakları ve tekrarlayan akciğer ödemi",
+    "stem": "Daha önce belirgin hipertansiyon öyküsü olmayan diyabetik ve sigara içen hastada kısa sürede ağır hipertansiyon, tekrarlayan pulmoner ödem ve hipokalemi gelişiyor.",
+    "vitals": {},
+    "exam": [
+      "Kan basıncı yüksek; kalp ritmi düzenli.",
+      "Sol paraumbilikal bölgede sistolik üfürüm duyuluyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-renovascular-k",
+        "label": "Temel biyokimya",
+        "type": "lab",
+        "summary": "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm lehine hipokalemi.",
+        "findings": [
+          "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm lehine hipokalemi."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Temel biyokimya",
+            "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm lehine hipokalemi.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu tabloyu en iyi açıklayan tanı hangisidir?",
+    "spotPearl": "Renal arter stenozu tekrarlayan flash pulmoner ödem ve abdominal üfürümle TUS’ta sık yakalanır.",
+    "learningOutcome": "Öğrenci sekonder hipertansiyon ipuçlarını tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q9",
+    "diagnosis": {
+      "correct": "Renovasküler hipertansiyon",
+      "options": [
+        "Renovasküler hipertansiyon",
+        "Feokromositoma",
+        "Aort koarktasyonu",
+        "Hipertiroidizm"
+      ],
+      "explanation": "Aterosklerotik risk faktörleri, geç başlangıçlı dirençli hipertansiyon, flash pulmoner ödem, abdominal üfürüm ve hipokalemi renal arter stenozunu düşündürür.",
+      "pearls": [
+        "Renal arter stenozu tekrarlayan flash pulmoner ödem ve abdominal üfürümle TUS’ta sık yakalanır."
+      ],
+      "nextStep": "Öğrenci sekonder hipertansiyon ipuçlarını tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Renovasküler hipertansiyon",
+        "diagnosisMeta": "Renovasküler hipertansiyonda flash pulmoner ödem, abdominal üfürüm ve hipokalemi ipuçları",
+        "shortDiagnosisMeta": "Tanı",
+        "whyCorrect": "Aterosklerotik risk faktörleri, geç başlangıçlı dirençli hipertansiyon, flash pulmoner ödem, abdominal üfürüm ve hipokalemi renal arter stenozunu düşündürür.",
+        "whyWrong": {
+          "Feokromositoma": "Feokromositoma bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Renovasküler hipertansiyon seçeneğini destekler.",
+          "Aort koarktasyonu": "Aort koarktasyonu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Renovasküler hipertansiyon seçeneğini destekler.",
+          "Hipertiroidizm": "Hipertiroidizm bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Renovasküler hipertansiyon seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Son aylarda dirençli hipertansiyon atakları ve tekrarlayan akciğer ödemi",
+          "Daha önce belirgin hipertansiyon öyküsü olmayan diyabetik ve sigara içen hastada kısa sürede ağır hipertansiyon, tekrarlayan pulmoner ödem ve hipokalemi gelişiyor.",
+          "Kan basıncı yüksek; kalp ritmi düzenli.",
+          "Serum potasyumu 3.2 mEq/L; sekonder hiperaldosteronizm lehine hipokalemi."
+        ],
+        "clinicalPearls": [
+          "Renal arter stenozu tekrarlayan flash pulmoner ödem ve abdominal üfürümle TUS’ta sık yakalanır."
+        ],
+        "managementSteps": [
+          "Öğrenci sekonder hipertansiyon ipuçlarını tanır."
+        ],
+        "learningOutcome": "Öğrenci sekonder hipertansiyon ipuçlarını tanır.",
+        "differentialComparison": {
+          "Feokromositoma": {
+            "explanation": "Feokromositoma bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Renovasküler hipertansiyon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Aort koarktasyonu": {
+            "explanation": "Aort koarktasyonu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Renovasküler hipertansiyon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Hipertiroidizm": {
+            "explanation": "Hipertiroidizm bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Renovasküler hipertansiyon seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-pah-verapamil-not-recommended-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tedavi",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "pulmoner hipertansiyon",
+      "verapamil"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Pulmoner arteriyel hipertansiyonda hedef tedaviler ve verapamilin önerilmemesi",
+    "demographics": "45 yaşında kadın",
+    "setting": "Kardiyoloji polikliniği",
+    "chiefComplaint": "Efor dispnesi, periferik ödem ve pulmoner hipertansiyon tanısı",
+    "stem": "Sağ kalp kateterizasyonu ile pulmoner hipertansiyon kesinleşen hastada tedavi seçenekleri gözden geçiriliyor.",
+    "vitals": {},
+    "exam": [
+      "Boyun ven dolgunluğu, hepatomegali ve pretibial ödem mevcut.",
+      "Kalp sesleri taşikardik; sağ kalp yüklenmesini düşündüren bulgular var."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu hastalık grubunda aşağıdaki ilaçlardan hangisi genellikle önerilmez?",
+    "spotPearl": "PAH tedavisinde kalsiyum kanal blokeri yalnızca vazoreaktivite pozitif seçilmiş hastalarda düşünülür; verapamil tercih edilmez.",
+    "learningOutcome": "Öğrenci PAH ilaç gruplarını ve sakıncalı seçeneği ayırt eder.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q10",
+    "diagnosis": {
+      "correct": "Verapamil",
+      "options": [
+        "Verapamil",
+        "Bosentan",
+        "Tadalafil",
+        "İnhaler iloprost"
+      ],
+      "explanation": "Pulmoner hipertansiyonda endotelin reseptör antagonistleri, PDE-5 inhibitörleri ve prostasiklin analogları kullanılabilir; verapamil negatif inotrop etkisi nedeniyle uygun seçenek değildir.",
+      "pearls": [
+        "PAH tedavisinde kalsiyum kanal blokeri yalnızca vazoreaktivite pozitif seçilmiş hastalarda düşünülür; verapamil tercih edilmez."
+      ],
+      "nextStep": "Öğrenci PAH ilaç gruplarını ve sakıncalı seçeneği ayırt eder.",
+      "answerFeedback": {
+        "correctDiagnosis": "Verapamil",
+        "diagnosisMeta": "Pulmoner arteriyel hipertansiyonda hedef tedaviler ve verapamilin önerilmemesi",
+        "shortDiagnosisMeta": "Tedavi",
+        "whyCorrect": "Pulmoner hipertansiyonda endotelin reseptör antagonistleri, PDE-5 inhibitörleri ve prostasiklin analogları kullanılabilir; verapamil negatif inotrop etkisi nedeniyle uygun seçenek değildir.",
+        "whyWrong": {
+          "Bosentan": "Bosentan bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Verapamil seçeneğini destekler.",
+          "Tadalafil": "Tadalafil bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Verapamil seçeneğini destekler.",
+          "İnhaler iloprost": "İnhaler iloprost bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Verapamil seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Efor dispnesi, periferik ödem ve pulmoner hipertansiyon tanısı",
+          "Sağ kalp kateterizasyonu ile pulmoner hipertansiyon kesinleşen hastada tedavi seçenekleri gözden geçiriliyor.",
+          "Boyun ven dolgunluğu, hepatomegali ve pretibial ödem mevcut."
+        ],
+        "clinicalPearls": [
+          "PAH tedavisinde kalsiyum kanal blokeri yalnızca vazoreaktivite pozitif seçilmiş hastalarda düşünülür; verapamil tercih edilmez."
+        ],
+        "managementSteps": [
+          "Öğrenci PAH ilaç gruplarını ve sakıncalı seçeneği ayırt eder."
+        ],
+        "learningOutcome": "Öğrenci PAH ilaç gruplarını ve sakıncalı seçeneği ayırt eder.",
+        "differentialComparison": {
+          "Bosentan": {
+            "explanation": "Bosentan bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Verapamil seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Tadalafil": {
+            "explanation": "Tadalafil bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Verapamil seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "İnhaler iloprost": {
+            "explanation": "İnhaler iloprost bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Verapamil seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-hypertensive-pulmonary-edema-vasodilator-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Acil tedavi",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "hipertansif akciğer ödemi",
+      "nitrat"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Akut hipertansif akciğer ödeminde başlangıç tedavisi olarak intravenöz vazodilatör",
+    "demographics": "70 yaşında kadın",
+    "setting": "Acil servis",
+    "chiefComplaint": "Tedaviye uyumsuz hipertansiyon sonrası ani nefes darlığı",
+    "stem": "Uzun süredir hipertansiyonu olan hasta diyet ve ilaçlarını düzensiz kullanıyor. Akut dispneyle başvuruyor; yakın zamanda sistolik fonksiyonların korunmuş olduğu biliniyor.",
+    "vitals": {},
+    "exam": [
+      "Kan basıncı belirgin yüksek, nabız hızlı ve ritmik.",
+      "S4 duyuluyor; akciğer bazal ve orta zonlarda ince raller mevcut."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu tabloda en uygun başlangıç tedavisi hangisidir?",
+    "spotPearl": "Korunmuş EF ve çok yüksek kan basıncı ile gelen akut akciğer ödeminde pozitif inotrop değil, vazodilatasyon önceliklidir.",
+    "learningOutcome": "Öğrenci akut hipertansif akciğer ödeminde ilk tedavi mantığını bilir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q11",
+    "diagnosis": {
+      "correct": "İntravenöz vazodilatör tedavi",
+      "options": [
+        "İntravenöz vazodilatör tedavi",
+        "Fibrinolitik tedavi",
+        "İntravenöz pozitif inotrop tedavi",
+        "Oral beta bloker yüklemesi"
+      ],
+      "explanation": "Hipertansif akut akciğer ödeminde temel problem yüksek afterload ve basınç yüküdür; hızlı etkili IV vazodilatörler başlangıç tedavisinin merkezindedir.",
+      "pearls": [
+        "Korunmuş EF ve çok yüksek kan basıncı ile gelen akut akciğer ödeminde pozitif inotrop değil, vazodilatasyon önceliklidir."
+      ],
+      "nextStep": "Öğrenci akut hipertansif akciğer ödeminde ilk tedavi mantığını bilir.",
+      "answerFeedback": {
+        "correctDiagnosis": "İntravenöz vazodilatör tedavi",
+        "diagnosisMeta": "Akut hipertansif akciğer ödeminde başlangıç tedavisi olarak intravenöz vazodilatör",
+        "shortDiagnosisMeta": "Acil tedavi",
+        "whyCorrect": "Hipertansif akut akciğer ödeminde temel problem yüksek afterload ve basınç yüküdür; hızlı etkili IV vazodilatörler başlangıç tedavisinin merkezindedir.",
+        "whyWrong": {
+          "Fibrinolitik tedavi": "Fibrinolitik tedavi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz vazodilatör tedavi seçeneğini destekler.",
+          "İntravenöz pozitif inotrop tedavi": "İntravenöz pozitif inotrop tedavi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz vazodilatör tedavi seçeneğini destekler.",
+          "Oral beta bloker yüklemesi": "Oral beta bloker yüklemesi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz vazodilatör tedavi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Tedaviye uyumsuz hipertansiyon sonrası ani nefes darlığı",
+          "Uzun süredir hipertansiyonu olan hasta diyet ve ilaçlarını düzensiz kullanıyor. Akut dispneyle başvuruyor; yakın zamanda sistolik fonksiyonların korunmuş olduğu biliniyor.",
+          "Kan basıncı belirgin yüksek, nabız hızlı ve ritmik."
+        ],
+        "clinicalPearls": [
+          "Korunmuş EF ve çok yüksek kan basıncı ile gelen akut akciğer ödeminde pozitif inotrop değil, vazodilatasyon önceliklidir."
+        ],
+        "managementSteps": [
+          "Öğrenci akut hipertansif akciğer ödeminde ilk tedavi mantığını bilir."
+        ],
+        "learningOutcome": "Öğrenci akut hipertansif akciğer ödeminde ilk tedavi mantığını bilir.",
+        "differentialComparison": {
+          "Fibrinolitik tedavi": {
+            "explanation": "Fibrinolitik tedavi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz vazodilatör tedavi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "İntravenöz pozitif inotrop tedavi": {
+            "explanation": "İntravenöz pozitif inotrop tedavi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz vazodilatör tedavi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Oral beta bloker yüklemesi": {
+            "explanation": "Oral beta bloker yüklemesi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz vazodilatör tedavi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-new-dyspepsia-age-sixty-endoscopy-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Yönetim / Gastroenteroloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "dispepsi",
+      "endoskopi"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "İleri yaşta yeni başlayan dispepside endoskopi önceliği",
+    "demographics": "60 yaşında kadın",
+    "setting": "Gastroenteroloji polikliniği",
+    "chiefComplaint": "Bulantı ve yemekten sonra şişkinlik",
+    "stem": "Daha önce benzer yakınması olmayan hastada kilo kaybı, yutma güçlüğü veya kusma yok; ancak yakınmalar yeni başlamış ve hasta ileri yaş grubunda.",
+    "vitals": {},
+    "exam": [
+      "Genel durum iyi; batın muayenesinde patolojik bulgu saptanmıyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "management",
+    "question": "Bu hastada diğer seçeneklere göre en uygun ilk yaklaşım hangisidir?",
+    "spotPearl": "Genç dispepside test-et-tedavi/PPI denenebilir; ileri yaşta yeni semptom endoskopi gerektirir.",
+    "learningOutcome": "Öğrenci dispepside yaş ve alarm bulgularına göre yönetim seçer.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q12",
+    "diagnosis": {
+      "correct": "Üst gastrointestinal endoskopi yapmak",
+      "options": [
+        "Üst gastrointestinal endoskopi yapmak",
+        "Antiasit verip uzun süre izlemek",
+        "Sadece dört hafta PPI denemesi yapmak",
+        "H2 bloker ve PPI’ı birlikte başlamak"
+      ],
+      "explanation": "Yeni başlangıçlı dispepside ileri yaş alarm eşiği kabul edilir; malignite ve organik patoloji dışlanması için endoskopi önceliklidir.",
+      "pearls": [
+        "Genç dispepside test-et-tedavi/PPI denenebilir; ileri yaşta yeni semptom endoskopi gerektirir."
+      ],
+      "nextStep": "Öğrenci dispepside yaş ve alarm bulgularına göre yönetim seçer.",
+      "answerFeedback": {
+        "correctDiagnosis": "Üst gastrointestinal endoskopi yapmak",
+        "diagnosisMeta": "İleri yaşta yeni başlayan dispepside endoskopi önceliği",
+        "shortDiagnosisMeta": "Yönetim / Gastroenteroloji",
+        "whyCorrect": "Yeni başlangıçlı dispepside ileri yaş alarm eşiği kabul edilir; malignite ve organik patoloji dışlanması için endoskopi önceliklidir.",
+        "whyWrong": {
+          "Antiasit verip uzun süre izlemek": "Antiasit verip uzun süre izlemek bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Üst gastrointestinal endoskopi yapmak seçeneğini destekler.",
+          "Sadece dört hafta PPI denemesi yapmak": "Sadece dört hafta PPI denemesi yapmak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Üst gastrointestinal endoskopi yapmak seçeneğini destekler.",
+          "H2 bloker ve PPI’ı birlikte başlamak": "H2 bloker ve PPI’ı birlikte başlamak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Üst gastrointestinal endoskopi yapmak seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Bulantı ve yemekten sonra şişkinlik",
+          "Daha önce benzer yakınması olmayan hastada kilo kaybı, yutma güçlüğü veya kusma yok; ancak yakınmalar yeni başlamış ve hasta ileri yaş grubunda.",
+          "Genel durum iyi; batın muayenesinde patolojik bulgu saptanmıyor."
+        ],
+        "clinicalPearls": [
+          "Genç dispepside test-et-tedavi/PPI denenebilir; ileri yaşta yeni semptom endoskopi gerektirir."
+        ],
+        "managementSteps": [
+          "Öğrenci dispepside yaş ve alarm bulgularına göre yönetim seçer."
+        ],
+        "learningOutcome": "Öğrenci dispepside yaş ve alarm bulgularına göre yönetim seçer.",
+        "differentialComparison": {
+          "Antiasit verip uzun süre izlemek": {
+            "explanation": "Antiasit verip uzun süre izlemek bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Üst gastrointestinal endoskopi yapmak seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Sadece dört hafta PPI denemesi yapmak": {
+            "explanation": "Sadece dört hafta PPI denemesi yapmak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Üst gastrointestinal endoskopi yapmak seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "H2 bloker ve PPI’ı birlikte başlamak": {
+            "explanation": "H2 bloker ve PPI’ı birlikte başlamak bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Üst gastrointestinal endoskopi yapmak seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-barrett-columnar-zline-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tanı / Patoloji",
+    "relatedBranch": "Tıbbi Patoloji",
+    "tags": [
+      "Barrett",
+      "metaplazi"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Barrett özofagusunda skuamokolumnar bileşke proksimalinde kolumnar metaplazi",
+    "demographics": "Erişkin hasta",
+    "setting": "Endoskopi ünitesi",
+    "chiefComplaint": "Reflü yakınmaları nedeniyle yapılan endoskopi",
+    "stem": "Endoskopide mide tipi kolumnar mukozanın Z çizgisinden özofagus içine doğru uzandığı görülüyor.",
+    "vitals": {},
+    "exam": [
+      "Muayenede akut patoloji yok; bulgu endoskopik değerlendirmede saptanıyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-barrett-endoscopy",
+        "label": "Üst GİS endoskopisi",
+        "type": "endoscopy",
+        "summary": "Z çizgisinin proksimaline uzanan kolumnar mukoza izlenir.",
+        "findings": [
+          "Z çizgisinin proksimaline uzanan kolumnar mukoza izlenir."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Üst GİS endoskopisi",
+            "Z çizgisinin proksimaline uzanan kolumnar mukoza izlenir.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu endoskopik görünüm öncelikle hangi tanıyı düşündürür?",
+    "spotPearl": "Barrett özofagusu adenokarsinom riskini artıran intestinal metaplazidir; tanı biyopsi ile doğrulanır.",
+    "learningOutcome": "Öğrenci endoskopik Z çizgisi bulgusunu Barrett metaplazisiyle ilişkilendirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q13",
+    "diagnosis": {
+      "correct": "Barrett özofagusu",
+      "options": [
+        "Barrett özofagusu",
+        "Kandida özofajiti",
+        "Leiomiyom",
+        "Özofagus adenokarsinomu"
+      ],
+      "explanation": "Distal özofagusta skuamöz epitelin intestinal tip kolumnar metaplaziyle yer değiştirmesi Barrett özofagusunu düşündürür.",
+      "pearls": [
+        "Barrett özofagusu adenokarsinom riskini artıran intestinal metaplazidir; tanı biyopsi ile doğrulanır."
+      ],
+      "nextStep": "Öğrenci endoskopik Z çizgisi bulgusunu Barrett metaplazisiyle ilişkilendirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Barrett özofagusu",
+        "diagnosisMeta": "Barrett özofagusunda skuamokolumnar bileşke proksimalinde kolumnar metaplazi",
+        "shortDiagnosisMeta": "Tanı / Patoloji",
+        "whyCorrect": "Distal özofagusta skuamöz epitelin intestinal tip kolumnar metaplaziyle yer değiştirmesi Barrett özofagusunu düşündürür.",
+        "whyWrong": {
+          "Kandida özofajiti": "Kandida özofajiti bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Barrett özofagusu seçeneğini destekler.",
+          "Leiomiyom": "Leiomiyom bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Barrett özofagusu seçeneğini destekler.",
+          "Özofagus adenokarsinomu": "Özofagus adenokarsinomu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Barrett özofagusu seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Reflü yakınmaları nedeniyle yapılan endoskopi",
+          "Endoskopide mide tipi kolumnar mukozanın Z çizgisinden özofagus içine doğru uzandığı görülüyor.",
+          "Muayenede akut patoloji yok; bulgu endoskopik değerlendirmede saptanıyor.",
+          "Z çizgisinin proksimaline uzanan kolumnar mukoza izlenir."
+        ],
+        "clinicalPearls": [
+          "Barrett özofagusu adenokarsinom riskini artıran intestinal metaplazidir; tanı biyopsi ile doğrulanır."
+        ],
+        "managementSteps": [
+          "Öğrenci endoskopik Z çizgisi bulgusunu Barrett metaplazisiyle ilişkilendirir."
+        ],
+        "learningOutcome": "Öğrenci endoskopik Z çizgisi bulgusunu Barrett metaplazisiyle ilişkilendirir.",
+        "differentialComparison": {
+          "Kandida özofajiti": {
+            "explanation": "Kandida özofajiti bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Barrett özofagusu seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Leiomiyom": {
+            "explanation": "Leiomiyom bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Barrett özofagusu seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Özofagus adenokarsinomu": {
+            "explanation": "Özofagus adenokarsinomu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Barrett özofagusu seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-biliary-stones-dilated-cbd-mrcp-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Gastroenteroloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "MRKP",
+      "koledokolitiazis"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Koledok taşından şüphelenilen stabil hastada MRKP seçimi",
+    "demographics": "57 yaşında erkek",
+    "setting": "Gastroenteroloji polikliniği",
+    "chiefComplaint": "Yemeklerden sonra sağ üst kadran ağrısı",
+    "stem": "Ultrasonda çok sayıda küçük safra taşı ve koledok çapında belirgin genişleme izleniyor; intrahepatik safra yolları belirgin dilate değil.",
+    "vitals": {},
+    "exam": [
+      "Batın yumuşak; Murphy bulgusu belirgin değil.",
+      "Sarılık veya akut kolanjit bulgusu yok."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-biliary-usg",
+        "label": "Üst abdominal USG",
+        "type": "radiology",
+        "summary": "Safra kesesinde çok sayıda küçük taş ve koledokta genişleme izlenir.",
+        "findings": [
+          "Safra kesesinde çok sayıda küçük taş ve koledokta genişleme izlenir."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Üst abdominal USG",
+            "Safra kesesinde çok sayıda küçük taş ve koledokta genişleme izlenir.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Bu hastada sonraki aşamada en uygun görüntüleme hangisidir?",
+    "spotPearl": "MRKP koledok taşını noninvaziv göstermede değerlidir; ERCP tanıdan çok tedavi/girişim gerektiren durumda öncelik kazanır.",
+    "learningOutcome": "Öğrenci biliyer obstrüksiyon şüphesinde uygun tetkiki seçer.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q14",
+    "diagnosis": {
+      "correct": "Manyetik rezonans kolanjiyopankreatografi",
+      "options": [
+        "Manyetik rezonans kolanjiyopankreatografi",
+        "Üst GİS endoskopisi",
+        "Perkütan transhepatik kolanjiyografi",
+        "Toraks manyetik rezonans görüntüleme"
+      ],
+      "explanation": "Safra taşı ve geniş koledok koledokolitiazis şüphesi doğurur; noninvaziv kanal değerlendirmesi için MRKP uygundur.",
+      "pearls": [
+        "MRKP koledok taşını noninvaziv göstermede değerlidir; ERCP tanıdan çok tedavi/girişim gerektiren durumda öncelik kazanır."
+      ],
+      "nextStep": "Öğrenci biliyer obstrüksiyon şüphesinde uygun tetkiki seçer.",
+      "answerFeedback": {
+        "correctDiagnosis": "Manyetik rezonans kolanjiyopankreatografi",
+        "diagnosisMeta": "Koledok taşından şüphelenilen stabil hastada MRKP seçimi",
+        "shortDiagnosisMeta": "Tetkik / Gastroenteroloji",
+        "whyCorrect": "Safra taşı ve geniş koledok koledokolitiazis şüphesi doğurur; noninvaziv kanal değerlendirmesi için MRKP uygundur.",
+        "whyWrong": {
+          "Üst GİS endoskopisi": "Üst GİS endoskopisi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Manyetik rezonans kolanjiyopankreatografi seçeneğini destekler.",
+          "Perkütan transhepatik kolanjiyografi": "Perkütan transhepatik kolanjiyografi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Manyetik rezonans kolanjiyopankreatografi seçeneğini destekler.",
+          "Toraks manyetik rezonans görüntüleme": "Toraks manyetik rezonans görüntüleme bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Manyetik rezonans kolanjiyopankreatografi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Yemeklerden sonra sağ üst kadran ağrısı",
+          "Ultrasonda çok sayıda küçük safra taşı ve koledok çapında belirgin genişleme izleniyor; intrahepatik safra yolları belirgin dilate değil.",
+          "Batın yumuşak; Murphy bulgusu belirgin değil.",
+          "Safra kesesinde çok sayıda küçük taş ve koledokta genişleme izlenir."
+        ],
+        "clinicalPearls": [
+          "MRKP koledok taşını noninvaziv göstermede değerlidir; ERCP tanıdan çok tedavi/girişim gerektiren durumda öncelik kazanır."
+        ],
+        "managementSteps": [
+          "Öğrenci biliyer obstrüksiyon şüphesinde uygun tetkiki seçer."
+        ],
+        "learningOutcome": "Öğrenci biliyer obstrüksiyon şüphesinde uygun tetkiki seçer.",
+        "differentialComparison": {
+          "Üst GİS endoskopisi": {
+            "explanation": "Üst GİS endoskopisi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Manyetik rezonans kolanjiyopankreatografi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Perkütan transhepatik kolanjiyografi": {
+            "explanation": "Perkütan transhepatik kolanjiyografi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Manyetik rezonans kolanjiyopankreatografi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Toraks manyetik rezonans görüntüleme": {
+            "explanation": "Toraks manyetik rezonans görüntüleme bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Manyetik rezonans kolanjiyopankreatografi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-cirrhosis-ascites-sbp-paracentesis-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Yönetim",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "siroz",
+      "asit",
+      "SBP"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Sirozda asit + klinik kötüleşmede spontan bakteriyel peritonit için tanısal parasentez",
+    "demographics": "HCV sirozlu erişkin hasta",
+    "setting": "Acil servis",
+    "chiefComplaint": "Dalgınlık, uykuya eğilim ve karında hassasiyet",
+    "stem": "Dekompanse sirozu olan hastada son iki günde dikkat azalması ve hafif uykuya eğilim gelişiyor; muayenede belirgin asit var.",
+    "vitals": {},
+    "exam": [
+      "Belirgin asit bulguları mevcut.",
+      "Batında tüm kadranlarda hafif hassasiyet var; defans ve rebound yok."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-ascites-pmn",
+        "label": "Tanısal parasentez",
+        "type": "fluid",
+        "summary": "Asit sıvısında PMN sayımı istenir; ≥250/mm³ SBP lehinedir.",
+        "findings": [
+          "Asit sıvısında PMN sayımı istenir; ≥250/mm³ SBP lehinedir."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Tanısal parasentez",
+            "Asit sıvısında PMN sayımı istenir; ≥250/mm³ SBP lehinedir.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Bu hastanın değerlendirmesinde öncelikle hangi inceleme yapılmalıdır?",
+    "spotPearl": "Asitli siroz hastasında hastane başvurusu veya klinik kötüleşme varsa tanısal parasentez geciktirilmemelidir.",
+    "learningOutcome": "Öğrenci spontan bakteriyel peritonitte ilk tanısal adımı bilir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q15",
+    "diagnosis": {
+      "correct": "Asit sıvısında polimorfonükleer lökosit sayımı",
+      "options": [
+        "Asit sıvısında polimorfonükleer lökosit sayımı",
+        "HCV RNA düzeyi",
+        "Üst GİS endoskopisi",
+        "Abdominal MR görüntüleme"
+      ],
+      "explanation": "Sirozlu ve asitli hastada klinik kötüleşme, karın hassasiyeti veya ensefalopati geliştiğinde SBP dışlanmalıdır; tanı asit PMN sayımıyla konur.",
+      "pearls": [
+        "Asitli siroz hastasında hastane başvurusu veya klinik kötüleşme varsa tanısal parasentez geciktirilmemelidir."
+      ],
+      "nextStep": "Öğrenci spontan bakteriyel peritonitte ilk tanısal adımı bilir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Asit sıvısında polimorfonükleer lökosit sayımı",
+        "diagnosisMeta": "Sirozda asit + klinik kötüleşmede spontan bakteriyel peritonit için tanısal parasentez",
+        "shortDiagnosisMeta": "Tetkik / Yönetim",
+        "whyCorrect": "Sirozlu ve asitli hastada klinik kötüleşme, karın hassasiyeti veya ensefalopati geliştiğinde SBP dışlanmalıdır; tanı asit PMN sayımıyla konur.",
+        "whyWrong": {
+          "HCV RNA düzeyi": "HCV RNA düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Asit sıvısında polimorfonükleer lökosit sayımı seçeneğini destekler.",
+          "Üst GİS endoskopisi": "Üst GİS endoskopisi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Asit sıvısında polimorfonükleer lökosit sayımı seçeneğini destekler.",
+          "Abdominal MR görüntüleme": "Abdominal MR görüntüleme bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Asit sıvısında polimorfonükleer lökosit sayımı seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Dalgınlık, uykuya eğilim ve karında hassasiyet",
+          "Dekompanse sirozu olan hastada son iki günde dikkat azalması ve hafif uykuya eğilim gelişiyor; muayenede belirgin asit var.",
+          "Belirgin asit bulguları mevcut.",
+          "Asit sıvısında PMN sayımı istenir; ≥250/mm³ SBP lehinedir."
+        ],
+        "clinicalPearls": [
+          "Asitli siroz hastasında hastane başvurusu veya klinik kötüleşme varsa tanısal parasentez geciktirilmemelidir."
+        ],
+        "managementSteps": [
+          "Öğrenci spontan bakteriyel peritonitte ilk tanısal adımı bilir."
+        ],
+        "learningOutcome": "Öğrenci spontan bakteriyel peritonitte ilk tanısal adımı bilir.",
+        "differentialComparison": {
+          "HCV RNA düzeyi": {
+            "explanation": "HCV RNA düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Asit sıvısında polimorfonükleer lökosit sayımı seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Üst GİS endoskopisi": {
+            "explanation": "Üst GİS endoskopisi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Asit sıvısında polimorfonükleer lökosit sayımı seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Abdominal MR görüntüleme": {
+            "explanation": "Abdominal MR görüntüleme bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Asit sıvısında polimorfonükleer lökosit sayımı seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-adrenal-crisis-hydrocortisone-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Acil tedavi / Endokrinoloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "adrenal kriz",
+      "hidrokortizon"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Adrenal krizde hidrokortizon tedavisi",
+    "demographics": "Erişkin erkek",
+    "setting": "Acil servis",
+    "chiefComplaint": "Genel durum bozukluğu ve hipotansiyon",
+    "stem": "Zayıf görünümlü hastada belirgin halsizlik ve sıvı tedavisine yanıt vermeyen hipotansiyon var; deri ve mukozalarda koyulaşma dikkati çekiyor.",
+    "vitals": {},
+    "exam": [
+      "Hasta zayıf ve bitkin görünümde.",
+      "Ciltte ve mukozalarda yaygın hiperpigmentasyon izleniyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-adrenal-electrolytes",
+        "label": "Elektrolit paneli",
+        "type": "lab",
+        "summary": "Hiponatremi ve hiperpotasemi saptanır; primer adrenal yetmezliği destekler.",
+        "findings": [
+          "Hiponatremi ve hiperpotasemi saptanır; primer adrenal yetmezliği destekler."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Elektrolit paneli",
+            "Hiponatremi ve hiperpotasemi saptanır; primer adrenal yetmezliği destekler.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu klinik durumda en uygun acil tedavi hangisidir?",
+    "spotPearl": "Adrenal krizde tanısal testler tedaviyi geciktirmemelidir; IV hidrokortizon ve sıvı desteği verilir.",
+    "learningOutcome": "Öğrenci adrenal krizde ilk tedaviyi tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q16",
+    "diagnosis": {
+      "correct": "Hidrokortizon",
+      "options": [
+        "Hidrokortizon",
+        "Nalokson",
+        "Glukagon",
+        "Beta bloker"
+      ],
+      "explanation": "Hiperpigmentasyon, sıvıya dirençli hipotansiyon, hiponatremi ve hiperpotasemi primer adrenal yetmezlik krizini düşündürür; acil tedavi hidrokortizondur.",
+      "pearls": [
+        "Adrenal krizde tanısal testler tedaviyi geciktirmemelidir; IV hidrokortizon ve sıvı desteği verilir."
+      ],
+      "nextStep": "Öğrenci adrenal krizde ilk tedaviyi tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Hidrokortizon",
+        "diagnosisMeta": "Adrenal krizde hidrokortizon tedavisi",
+        "shortDiagnosisMeta": "Acil tedavi / Endokrinoloji",
+        "whyCorrect": "Hiperpigmentasyon, sıvıya dirençli hipotansiyon, hiponatremi ve hiperpotasemi primer adrenal yetmezlik krizini düşündürür; acil tedavi hidrokortizondur.",
+        "whyWrong": {
+          "Nalokson": "Nalokson bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hidrokortizon seçeneğini destekler.",
+          "Glukagon": "Glukagon bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hidrokortizon seçeneğini destekler.",
+          "Beta bloker": "Beta bloker bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hidrokortizon seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Genel durum bozukluğu ve hipotansiyon",
+          "Zayıf görünümlü hastada belirgin halsizlik ve sıvı tedavisine yanıt vermeyen hipotansiyon var; deri ve mukozalarda koyulaşma dikkati çekiyor.",
+          "Hasta zayıf ve bitkin görünümde.",
+          "Hiponatremi ve hiperpotasemi saptanır; primer adrenal yetmezliği destekler."
+        ],
+        "clinicalPearls": [
+          "Adrenal krizde tanısal testler tedaviyi geciktirmemelidir; IV hidrokortizon ve sıvı desteği verilir."
+        ],
+        "managementSteps": [
+          "Öğrenci adrenal krizde ilk tedaviyi tanır."
+        ],
+        "learningOutcome": "Öğrenci adrenal krizde ilk tedaviyi tanır.",
+        "differentialComparison": {
+          "Nalokson": {
+            "explanation": "Nalokson bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hidrokortizon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Glukagon": {
+            "explanation": "Glukagon bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hidrokortizon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Beta bloker": {
+            "explanation": "Beta bloker bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hidrokortizon seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-factitious-thyrotoxicosis-low-tg-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tanı / Endokrinoloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "tirotoksikoz",
+      "tiroglobulin"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Tirotoksikozis faktitisyada düşük tiroglobulin ve baskılanmış radyoaktif iyot tutulumu",
+    "demographics": "20 yaşında kadın",
+    "setting": "Endokrinoloji polikliniği",
+    "chiefComplaint": "Çarpıntı, titreme ve sinirlilik atakları",
+    "stem": "Hasta tekrarlayan tirotoksik semptomlarla başvuruyor; otoimmün belirteçler negatif, radyoaktif iyot tutulumu ve tiroglobulin düzeyi düşük bulunuyor.",
+    "vitals": {},
+    "exam": [
+      "Canlı bakış ve ellerde ince tremor var.",
+      "Tiroid palpasyonunda belirgin hassasiyet veya nodül saptanmıyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-thyrotoxicosis-profile",
+        "label": "Tiroid değerlendirmesi",
+        "type": "lab",
+        "summary": "sT3/sT4 yüksek, TSH baskılı, TRAb negatif, tiroglobulin düşük ve radyoaktif iyot tutulumu baskılı.",
+        "findings": [
+          "sT3/sT4 yüksek, TSH baskılı, TRAb negatif, tiroglobulin düşük ve radyoaktif iyot tutulumu baskılı."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Tiroid değerlendirmesi",
+            "sT3/sT4 yüksek, TSH baskılı, TRAb negatif, tiroglobulin düşük ve radyoaktif iyot tutulumu baskılı.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu bulgularla en uyumlu tanı hangisidir?",
+    "spotPearl": "Tiroglobulin düşükse eksojen hormon alımı düşün; subakut tiroiditte ağrı ve inflamasyon, Graves’te TRAb/uptake yüksekliği beklenir.",
+    "learningOutcome": "Öğrenci tirotoksikoz etiyolojilerini laboratuvar paterniyle ayırır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q17",
+    "diagnosis": {
+      "correct": "Tirotoksikozis faktitisya",
+      "options": [
+        "Tirotoksikozis faktitisya",
+        "Graves hastalığı",
+        "Subakut tiroidit",
+        "TSH salgılayan hipofiz adenomu"
+      ],
+      "explanation": "Eksojen tiroid hormonu alımında hormonlar yüksek, TSH baskılı, radyoaktif iyot tutulumu ve tiroglobulin düşüktür.",
+      "pearls": [
+        "Tiroglobulin düşükse eksojen hormon alımı düşün; subakut tiroiditte ağrı ve inflamasyon, Graves’te TRAb/uptake yüksekliği beklenir."
+      ],
+      "nextStep": "Öğrenci tirotoksikoz etiyolojilerini laboratuvar paterniyle ayırır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Tirotoksikozis faktitisya",
+        "diagnosisMeta": "Tirotoksikozis faktitisyada düşük tiroglobulin ve baskılanmış radyoaktif iyot tutulumu",
+        "shortDiagnosisMeta": "Tanı / Endokrinoloji",
+        "whyCorrect": "Eksojen tiroid hormonu alımında hormonlar yüksek, TSH baskılı, radyoaktif iyot tutulumu ve tiroglobulin düşüktür.",
+        "whyWrong": {
+          "Graves hastalığı": "Graves hastalığı bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tirotoksikozis faktitisya seçeneğini destekler.",
+          "Subakut tiroidit": "Subakut tiroidit bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tirotoksikozis faktitisya seçeneğini destekler.",
+          "TSH salgılayan hipofiz adenomu": "TSH salgılayan hipofiz adenomu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tirotoksikozis faktitisya seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Çarpıntı, titreme ve sinirlilik atakları",
+          "Hasta tekrarlayan tirotoksik semptomlarla başvuruyor; otoimmün belirteçler negatif, radyoaktif iyot tutulumu ve tiroglobulin düzeyi düşük bulunuyor.",
+          "Canlı bakış ve ellerde ince tremor var.",
+          "sT3/sT4 yüksek, TSH baskılı, TRAb negatif, tiroglobulin düşük ve radyoaktif iyot tutulumu baskılı."
+        ],
+        "clinicalPearls": [
+          "Tiroglobulin düşükse eksojen hormon alımı düşün; subakut tiroiditte ağrı ve inflamasyon, Graves’te TRAb/uptake yüksekliği beklenir."
+        ],
+        "managementSteps": [
+          "Öğrenci tirotoksikoz etiyolojilerini laboratuvar paterniyle ayırır."
+        ],
+        "learningOutcome": "Öğrenci tirotoksikoz etiyolojilerini laboratuvar paterniyle ayırır.",
+        "differentialComparison": {
+          "Graves hastalığı": {
+            "explanation": "Graves hastalığı bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tirotoksikozis faktitisya seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Subakut tiroidit": {
+            "explanation": "Subakut tiroidit bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tirotoksikozis faktitisya seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "TSH salgılayan hipofiz adenomu": {
+            "explanation": "TSH salgılayan hipofiz adenomu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tirotoksikozis faktitisya seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-prolactinoma-hook-effect-dilution-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Endokrinoloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "prolaktinoma",
+      "hook effect"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Prolaktinoma şüphesinde hook effect için serum dilüsyonu",
+    "demographics": "42 yaşında erkek",
+    "setting": "Endokrinoloji polikliniği",
+    "chiefComplaint": "Baş ağrısı ve libido azalması",
+    "stem": "Hipofiz MR’da 2 cm adenom saptanan hastanın bazal prolaktini makroadenom boyutuna göre beklenenden daha düşük düzeydedir.",
+    "vitals": {},
+    "exam": [
+      "Görme alanı yakınması hafif; galaktore yok.",
+      "Vital bulguları stabil."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-prolactin-dilution",
+        "label": "Dilüe prolaktin ölçümü",
+        "type": "lab",
+        "summary": "Dilüsyon sonrası prolaktin düzeyi belirgin yüksek bulunur; hook effect düzeltilmiş olur.",
+        "findings": [
+          "Dilüsyon sonrası prolaktin düzeyi belirgin yüksek bulunur; hook effect düzeltilmiş olur."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Dilüe prolaktin ölçümü",
+            "Dilüsyon sonrası prolaktin düzeyi belirgin yüksek bulunur; hook effect düzeltilmiş olur.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Prolaktinoma tanısını netleştirmek için ilk olarak hangi işlem daha uygundur?",
+    "spotPearl": "Makroadenom + beklenenden düşük prolaktin varsa hook effect düşün ve örneği dilüe ederek ölç.",
+    "learningOutcome": "Öğrenci prolaktinoma değerlendirmesinde hook effect tuzağını tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q18",
+    "diagnosis": {
+      "correct": "Serumun dilüe edilerek prolaktin ölçülmesi",
+      "options": [
+        "Serumun dilüe edilerek prolaktin ölçülmesi",
+        "TRH stimülasyon testi",
+        "Prolaktin antikoru bakılması",
+        "Testosteron düzeyi ölçülmesi"
+      ],
+      "explanation": "Büyük prolaktinomalarda çok yüksek prolaktin immünoassayde hook effect nedeniyle yalancı düşük ölçülebilir; serum dilüsyonu ile gerçek düzey ortaya konur.",
+      "pearls": [
+        "Makroadenom + beklenenden düşük prolaktin varsa hook effect düşün ve örneği dilüe ederek ölç."
+      ],
+      "nextStep": "Öğrenci prolaktinoma değerlendirmesinde hook effect tuzağını tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Serumun dilüe edilerek prolaktin ölçülmesi",
+        "diagnosisMeta": "Prolaktinoma şüphesinde hook effect için serum dilüsyonu",
+        "shortDiagnosisMeta": "Tetkik / Endokrinoloji",
+        "whyCorrect": "Büyük prolaktinomalarda çok yüksek prolaktin immünoassayde hook effect nedeniyle yalancı düşük ölçülebilir; serum dilüsyonu ile gerçek düzey ortaya konur.",
+        "whyWrong": {
+          "TRH stimülasyon testi": "TRH stimülasyon testi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serumun dilüe edilerek prolaktin ölçülmesi seçeneğini destekler.",
+          "Prolaktin antikoru bakılması": "Prolaktin antikoru bakılması bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serumun dilüe edilerek prolaktin ölçülmesi seçeneğini destekler.",
+          "Testosteron düzeyi ölçülmesi": "Testosteron düzeyi ölçülmesi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serumun dilüe edilerek prolaktin ölçülmesi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Baş ağrısı ve libido azalması",
+          "Hipofiz MR’da 2 cm adenom saptanan hastanın bazal prolaktini makroadenom boyutuna göre beklenenden daha düşük düzeydedir.",
+          "Görme alanı yakınması hafif; galaktore yok.",
+          "Dilüsyon sonrası prolaktin düzeyi belirgin yüksek bulunur; hook effect düzeltilmiş olur."
+        ],
+        "clinicalPearls": [
+          "Makroadenom + beklenenden düşük prolaktin varsa hook effect düşün ve örneği dilüe ederek ölç."
+        ],
+        "managementSteps": [
+          "Öğrenci prolaktinoma değerlendirmesinde hook effect tuzağını tanır."
+        ],
+        "learningOutcome": "Öğrenci prolaktinoma değerlendirmesinde hook effect tuzağını tanır.",
+        "differentialComparison": {
+          "TRH stimülasyon testi": {
+            "explanation": "TRH stimülasyon testi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serumun dilüe edilerek prolaktin ölçülmesi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Prolaktin antikoru bakılması": {
+            "explanation": "Prolaktin antikoru bakılması bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serumun dilüe edilerek prolaktin ölçülmesi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Testosteron düzeyi ölçülmesi": {
+            "explanation": "Testosteron düzeyi ölçülmesi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serumun dilüe edilerek prolaktin ölçülmesi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-metastatic-colon-cancer-biomarkers-cd20-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Patoloji / Onkoloji",
+    "relatedBranch": "Tıbbi Patoloji",
+    "tags": [
+      "kolon kanseri",
+      "KRAS",
+      "MSI"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Kolorektal kanserde KRAS/NRAS/BRAF/MSI kullanılırken CD20’nin tedavi planlamasında yeri olmaması",
+    "demographics": "55 yaşında hasta",
+    "setting": "Onkoloji konseyi",
+    "chiefComplaint": "Metastatik kolon adenokarsinomu",
+    "stem": "Kolonoskopide inen kolonda kitle, karaciğerde metastatik lezyonlar ve biyopside adenokarsinom saptanan hastada sistemik tedavi planlanıyor.",
+    "vitals": {},
+    "exam": [
+      "Genel durumda hafif düşkünlük ve anemiye bağlı solukluk izleniyor.",
+      "Batında belirgin peritonit bulgusu yok."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "spot",
+    "question": "Sistemik tedavi planlarken aşağıdakilerden hangisi bu kanser için rutin karar verdirici marker değildir?",
+    "spotPearl": "Kolorektal kanserde anti-EGFR tedavi için RAS wild-type önemlidir; MSI immünoterapi kararında değerlidir.",
+    "learningOutcome": "Öğrenci tümör-marker ilişkisini tedavi kararıyla eşleştirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q19",
+    "diagnosis": {
+      "correct": "CD20",
+      "options": [
+        "CD20",
+        "KRAS",
+        "NRAS",
+        "Mikrosatellit instabilite"
+      ],
+      "explanation": "Metastatik kolorektal kanserde RAS/BRAF durumu ve MSI tedavi seçimini etkiler; CD20 lenfoid neoplazilerde kullanılan bir belirteçtir.",
+      "pearls": [
+        "Kolorektal kanserde anti-EGFR tedavi için RAS wild-type önemlidir; MSI immünoterapi kararında değerlidir."
+      ],
+      "nextStep": "Öğrenci tümör-marker ilişkisini tedavi kararıyla eşleştirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "CD20",
+        "diagnosisMeta": "Kolorektal kanserde KRAS/NRAS/BRAF/MSI kullanılırken CD20’nin tedavi planlamasında yeri olmaması",
+        "shortDiagnosisMeta": "Patoloji / Onkoloji",
+        "whyCorrect": "Metastatik kolorektal kanserde RAS/BRAF durumu ve MSI tedavi seçimini etkiler; CD20 lenfoid neoplazilerde kullanılan bir belirteçtir.",
+        "whyWrong": {
+          "KRAS": "KRAS bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu CD20 seçeneğini destekler.",
+          "NRAS": "NRAS bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu CD20 seçeneğini destekler.",
+          "Mikrosatellit instabilite": "Mikrosatellit instabilite bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu CD20 seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Metastatik kolon adenokarsinomu",
+          "Kolonoskopide inen kolonda kitle, karaciğerde metastatik lezyonlar ve biyopside adenokarsinom saptanan hastada sistemik tedavi planlanıyor.",
+          "Genel durumda hafif düşkünlük ve anemiye bağlı solukluk izleniyor."
+        ],
+        "clinicalPearls": [
+          "Kolorektal kanserde anti-EGFR tedavi için RAS wild-type önemlidir; MSI immünoterapi kararında değerlidir."
+        ],
+        "managementSteps": [
+          "Öğrenci tümör-marker ilişkisini tedavi kararıyla eşleştirir."
+        ],
+        "learningOutcome": "Öğrenci tümör-marker ilişkisini tedavi kararıyla eşleştirir.",
+        "differentialComparison": {
+          "KRAS": {
+            "explanation": "KRAS bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu CD20 seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "NRAS": {
+            "explanation": "NRAS bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu CD20 seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Mikrosatellit instabilite": {
+            "explanation": "Mikrosatellit instabilite bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu CD20 seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-cll-flow-cytometry-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Hematoloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "KLL",
+      "akım sitometri"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "KLL tanısında periferik kan akım sitometri ile immünfenotiplendirme",
+    "demographics": "75 yaşında erkek",
+    "setting": "Hematoloji polikliniği",
+    "chiefComplaint": "Boyun ve aksillada uzun süredir lenf nodu şişliği",
+    "stem": "Yıllardır lökositozu olan hastada belirgin lenfositoz ve olgun görünümlü lenfositler izleniyor; çok sayıda servikal ve aksiller lenfadenopati mevcut.",
+    "vitals": {},
+    "exam": [
+      "Servikal ve aksiller bölgelerde mobil, lastik kıvamlı çok sayıda lenfadenopati palpe ediliyor.",
+      "Hepatosplenomegali belirgin değil."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-cll-flow",
+        "label": "Akım sitometri",
+        "type": "hematology",
+        "summary": "Periferik kanda CD5+ CD23+ klonal B lenfosit popülasyonu saptanır.",
+        "findings": [
+          "Periferik kanda CD5+ CD23+ klonal B lenfosit popülasyonu saptanır."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Akım sitometri",
+            "Periferik kanda CD5+ CD23+ klonal B lenfosit popülasyonu saptanır.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Bu aşamada tanı için en uygun inceleme hangisidir?",
+    "spotPearl": "KLL’de tanı için akım sitometri; tedavi kararı/risk için del17p gibi testler kullanılır.",
+    "learningOutcome": "Öğrenci KLL’de ilk tanısal testi ayırt eder.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q20",
+    "diagnosis": {
+      "correct": "Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme",
+      "options": [
+        "Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme",
+        "PET-BT çekimi",
+        "BCR-ABL PCR",
+        "Kemik iliğinde del17p incelemesi"
+      ],
+      "explanation": "KLL tanısı periferik kanda klonal B lenfosit fenotipinin gösterilmesiyle konur; sitogenetik risk belirleme tanıdan sonra prognostik amaçlıdır.",
+      "pearls": [
+        "KLL’de tanı için akım sitometri; tedavi kararı/risk için del17p gibi testler kullanılır."
+      ],
+      "nextStep": "Öğrenci KLL’de ilk tanısal testi ayırt eder.",
+      "answerFeedback": {
+        "correctDiagnosis": "Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme",
+        "diagnosisMeta": "KLL tanısında periferik kan akım sitometri ile immünfenotiplendirme",
+        "shortDiagnosisMeta": "Tetkik / Hematoloji",
+        "whyCorrect": "KLL tanısı periferik kanda klonal B lenfosit fenotipinin gösterilmesiyle konur; sitogenetik risk belirleme tanıdan sonra prognostik amaçlıdır.",
+        "whyWrong": {
+          "PET-BT çekimi": "PET-BT çekimi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme seçeneğini destekler.",
+          "BCR-ABL PCR": "BCR-ABL PCR bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme seçeneğini destekler.",
+          "Kemik iliğinde del17p incelemesi": "Kemik iliğinde del17p incelemesi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Boyun ve aksillada uzun süredir lenf nodu şişliği",
+          "Yıllardır lökositozu olan hastada belirgin lenfositoz ve olgun görünümlü lenfositler izleniyor; çok sayıda servikal ve aksiller lenfadenopati mevcut.",
+          "Servikal ve aksiller bölgelerde mobil, lastik kıvamlı çok sayıda lenfadenopati palpe ediliyor.",
+          "Periferik kanda CD5+ CD23+ klonal B lenfosit popülasyonu saptanır."
+        ],
+        "clinicalPearls": [
+          "KLL’de tanı için akım sitometri; tedavi kararı/risk için del17p gibi testler kullanılır."
+        ],
+        "managementSteps": [
+          "Öğrenci KLL’de ilk tanısal testi ayırt eder."
+        ],
+        "learningOutcome": "Öğrenci KLL’de ilk tanısal testi ayırt eder.",
+        "differentialComparison": {
+          "PET-BT çekimi": {
+            "explanation": "PET-BT çekimi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "BCR-ABL PCR": {
+            "explanation": "BCR-ABL PCR bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Kemik iliğinde del17p incelemesi": {
+            "explanation": "Kemik iliğinde del17p incelemesi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik kanda akım sitometri ile lenfosit immünfenotiplendirme seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-aiha-direct-coombs-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Hematoloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "AIHA",
+      "direkt Coombs"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Otoimmün hemolitik anemide direkt Coombs testi",
+    "demographics": "58 yaşında kadın",
+    "setting": "Dahiliye polikliniği",
+    "chiefComplaint": "Halsizlik, sararma ve çarpıntı",
+    "stem": "Kısa sürede gelişen anemiye retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı eşlik ediyor.",
+    "vitals": {},
+    "exam": [
+      "Cilt ve skleralarda hafif ikter izleniyor.",
+      "Taşikardik ancak hemodinamik olarak stabil."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-aiha-coombs",
+        "label": "Direkt Coombs testi",
+        "type": "hematology",
+        "summary": "IgG ve/veya C3 pozitifliği saptanır; otoimmün hemolizi destekler.",
+        "findings": [
+          "IgG ve/veya C3 pozitifliği saptanır; otoimmün hemolizi destekler."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Direkt Coombs testi",
+            "IgG ve/veya C3 pozitifliği saptanır; otoimmün hemolizi destekler.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Bu olguda en olası tanı ve uygun doğrulayıcı test hangisidir?",
+    "spotPearl": "Direkt Coombs eritrosit yüzeyine bağlı antikor/komplemanı gösterir; otoimmün hemolitik aneminin kilit testidir.",
+    "learningOutcome": "Öğrenci hemoliz paterninden doğru testi seçer.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q21",
+    "diagnosis": {
+      "correct": "Otoimmün hemolitik anemi - Direkt Coombs testi",
+      "options": [
+        "Otoimmün hemolitik anemi - Direkt Coombs testi",
+        "Megaloblastik anemi - Ozmotik frajilite testi",
+        "Aplastik anemi - Kemik iliği aspirasyonu",
+        "PNH - ADAMTS-13 düzeyi"
+      ],
+      "explanation": "Retikülositoz, LDH/indirekt bilirubin yüksekliği ve akut anemi hemolizi düşündürür; otoimmün hemoliz direkt Coombs testi ile desteklenir.",
+      "pearls": [
+        "Direkt Coombs eritrosit yüzeyine bağlı antikor/komplemanı gösterir; otoimmün hemolitik aneminin kilit testidir."
+      ],
+      "nextStep": "Öğrenci hemoliz paterninden doğru testi seçer.",
+      "answerFeedback": {
+        "correctDiagnosis": "Otoimmün hemolitik anemi - Direkt Coombs testi",
+        "diagnosisMeta": "Otoimmün hemolitik anemide direkt Coombs testi",
+        "shortDiagnosisMeta": "Tetkik / Hematoloji",
+        "whyCorrect": "Retikülositoz, LDH/indirekt bilirubin yüksekliği ve akut anemi hemolizi düşündürür; otoimmün hemoliz direkt Coombs testi ile desteklenir.",
+        "whyWrong": {
+          "Megaloblastik anemi - Ozmotik frajilite testi": "Megaloblastik anemi - Ozmotik frajilite testi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Otoimmün hemolitik anemi - Direkt Coombs testi seçeneğini destekler.",
+          "Aplastik anemi - Kemik iliği aspirasyonu": "Aplastik anemi - Kemik iliği aspirasyonu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Otoimmün hemolitik anemi - Direkt Coombs testi seçeneğini destekler.",
+          "PNH - ADAMTS-13 düzeyi": "PNH - ADAMTS-13 düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Otoimmün hemolitik anemi - Direkt Coombs testi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Halsizlik, sararma ve çarpıntı",
+          "Kısa sürede gelişen anemiye retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı eşlik ediyor.",
+          "Cilt ve skleralarda hafif ikter izleniyor.",
+          "IgG ve/veya C3 pozitifliği saptanır; otoimmün hemolizi destekler."
+        ],
+        "clinicalPearls": [
+          "Direkt Coombs eritrosit yüzeyine bağlı antikor/komplemanı gösterir; otoimmün hemolitik aneminin kilit testidir."
+        ],
+        "managementSteps": [
+          "Öğrenci hemoliz paterninden doğru testi seçer."
+        ],
+        "learningOutcome": "Öğrenci hemoliz paterninden doğru testi seçer.",
+        "differentialComparison": {
+          "Megaloblastik anemi - Ozmotik frajilite testi": {
+            "explanation": "Megaloblastik anemi - Ozmotik frajilite testi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Otoimmün hemolitik anemi - Direkt Coombs testi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Aplastik anemi - Kemik iliği aspirasyonu": {
+            "explanation": "Aplastik anemi - Kemik iliği aspirasyonu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Otoimmün hemolitik anemi - Direkt Coombs testi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "PNH - ADAMTS-13 düzeyi": {
+            "explanation": "PNH - ADAMTS-13 düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Otoimmün hemolitik anemi - Direkt Coombs testi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-hereditary-cancer-wrong-match-atm-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "TUS spot / Genetik",
+    "relatedBranch": "Tıbbi Patoloji",
+    "tags": [
+      "CDH1",
+      "herediter kanser"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Herediter difüz mide kanserinde CDH1 ilişkisi; ATM’nin yanlış eşleşme olması",
+    "demographics": "Sınav spotu",
+    "setting": "TUS tekrar modülü",
+    "chiefComplaint": "Herediter kanser sendromu eşleştirmesi",
+    "stem": "Öğrenciye sık sorulan herediter kanser sendromu-gen eşleştirmeleri kısa klinik bağlamla sorgulanıyor.",
+    "vitals": {},
+    "exam": [
+      "Muayene gerektirmeyen sınav spotu."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "spot",
+    "question": "Aşağıdaki eşleşmelerden hangisi yanlıştır?",
+    "spotPearl": "CDH1 = herediter difüz mide kanseri; TP53 = Li-Fraumeni; PTEN = Cowden; BRCA = herediter meme/over kanseri.",
+    "learningOutcome": "Öğrenci gen-sendrom eşleşmelerinde yüksek verimli ayırt edici bilgiyi hatırlar.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q22",
+    "diagnosis": {
+      "correct": "Herediter difüz mide kanseri - ATM",
+      "options": [
+        "Herediter difüz mide kanseri - ATM",
+        "Li-Fraumeni sendromu - TP53",
+        "Cowden sendromu - PTEN",
+        "Herediter meme-over kanseri - BRCA1/2"
+      ],
+      "explanation": "Herediter difüz mide kanseri klasik olarak CDH1 mutasyonu ile ilişkilidir; ATM bu eşleşme için doğru gen değildir.",
+      "pearls": [
+        "CDH1 = herediter difüz mide kanseri; TP53 = Li-Fraumeni; PTEN = Cowden; BRCA = herediter meme/over kanseri."
+      ],
+      "nextStep": "Öğrenci gen-sendrom eşleşmelerinde yüksek verimli ayırt edici bilgiyi hatırlar.",
+      "answerFeedback": {
+        "correctDiagnosis": "Herediter difüz mide kanseri - ATM",
+        "diagnosisMeta": "Herediter difüz mide kanserinde CDH1 ilişkisi; ATM’nin yanlış eşleşme olması",
+        "shortDiagnosisMeta": "TUS spot / Genetik",
+        "whyCorrect": "Herediter difüz mide kanseri klasik olarak CDH1 mutasyonu ile ilişkilidir; ATM bu eşleşme için doğru gen değildir.",
+        "whyWrong": {
+          "Li-Fraumeni sendromu - TP53": "Li-Fraumeni sendromu - TP53 bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herediter difüz mide kanseri - ATM seçeneğini destekler.",
+          "Cowden sendromu - PTEN": "Cowden sendromu - PTEN bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herediter difüz mide kanseri - ATM seçeneğini destekler.",
+          "Herediter meme-over kanseri - BRCA1/2": "Herediter meme-over kanseri - BRCA1/2 bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herediter difüz mide kanseri - ATM seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Herediter kanser sendromu eşleştirmesi",
+          "Öğrenciye sık sorulan herediter kanser sendromu-gen eşleştirmeleri kısa klinik bağlamla sorgulanıyor.",
+          "Muayene gerektirmeyen sınav spotu."
+        ],
+        "clinicalPearls": [
+          "CDH1 = herediter difüz mide kanseri; TP53 = Li-Fraumeni; PTEN = Cowden; BRCA = herediter meme/over kanseri."
+        ],
+        "managementSteps": [
+          "Öğrenci gen-sendrom eşleşmelerinde yüksek verimli ayırt edici bilgiyi hatırlar."
+        ],
+        "learningOutcome": "Öğrenci gen-sendrom eşleşmelerinde yüksek verimli ayırt edici bilgiyi hatırlar.",
+        "differentialComparison": {
+          "Li-Fraumeni sendromu - TP53": {
+            "explanation": "Li-Fraumeni sendromu - TP53 bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herediter difüz mide kanseri - ATM seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Cowden sendromu - PTEN": {
+            "explanation": "Cowden sendromu - PTEN bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herediter difüz mide kanseri - ATM seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Herediter meme-over kanseri - BRCA1/2": {
+            "explanation": "Herediter meme-over kanseri - BRCA1/2 bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herediter difüz mide kanseri - ATM seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-anaphylaxis-im-epinephrine-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Acil tedavi",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "anafilaksi",
+      "adrenalin"
+    ],
+    "difficulty": "TUS Spot · Kolay",
+    "clinicalFocus": "Anafilakside ilk tedavinin intramüsküler adrenalin olması",
+    "demographics": "30 yaşında kadın",
+    "setting": "Acil servis",
+    "chiefComplaint": "İV antibiyotik uygulamasından dakikalar sonra fenalık ve kaşıntı",
+    "stem": "Pnömoni nedeniyle başlanan antibiyotik sonrası avuç içi kaşıntısı, fenalık hissi ve yaygın döküntü gelişiyor.",
+    "vitals": {},
+    "exam": [
+      "Kan basıncı 60/40 mmHg, nabız 115/dk.",
+      "Yaygın ürtikeryal döküntü, ronküs ve wheezing duyuluyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu klinik tabloda ilk seçilecek tedavi hangisidir?",
+    "spotPearl": "Anafilakside antihistaminik ve steroid yardımcıdır; yaşam kurtarıcı ilk ilaç IM adrenalindir.",
+    "learningOutcome": "Öğrenci anafilaksi tedavisinde önceliği doğru belirler.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q23",
+    "diagnosis": {
+      "correct": "İntramüsküler adrenalin",
+      "options": [
+        "İntramüsküler adrenalin",
+        "Oral antihistaminik",
+        "Sadece sistemik kortikosteroid",
+        "Fibrinolitik tedavi"
+      ],
+      "explanation": "Hipotansiyon ve solunum sistemi bulgularının eşlik ettiği akut alerjik reaksiyon anafilaksidir; ilk tedavi IM adrenalindir.",
+      "pearls": [
+        "Anafilakside antihistaminik ve steroid yardımcıdır; yaşam kurtarıcı ilk ilaç IM adrenalindir."
+      ],
+      "nextStep": "Öğrenci anafilaksi tedavisinde önceliği doğru belirler.",
+      "answerFeedback": {
+        "correctDiagnosis": "İntramüsküler adrenalin",
+        "diagnosisMeta": "Anafilakside ilk tedavinin intramüsküler adrenalin olması",
+        "shortDiagnosisMeta": "Acil tedavi",
+        "whyCorrect": "Hipotansiyon ve solunum sistemi bulgularının eşlik ettiği akut alerjik reaksiyon anafilaksidir; ilk tedavi IM adrenalindir.",
+        "whyWrong": {
+          "Oral antihistaminik": "Oral antihistaminik bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntramüsküler adrenalin seçeneğini destekler.",
+          "Sadece sistemik kortikosteroid": "Sadece sistemik kortikosteroid bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntramüsküler adrenalin seçeneğini destekler.",
+          "Fibrinolitik tedavi": "Fibrinolitik tedavi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntramüsküler adrenalin seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "İV antibiyotik uygulamasından dakikalar sonra fenalık ve kaşıntı",
+          "Pnömoni nedeniyle başlanan antibiyotik sonrası avuç içi kaşıntısı, fenalık hissi ve yaygın döküntü gelişiyor.",
+          "Kan basıncı 60/40 mmHg, nabız 115/dk."
+        ],
+        "clinicalPearls": [
+          "Anafilakside antihistaminik ve steroid yardımcıdır; yaşam kurtarıcı ilk ilaç IM adrenalindir."
+        ],
+        "managementSteps": [
+          "Öğrenci anafilaksi tedavisinde önceliği doğru belirler."
+        ],
+        "learningOutcome": "Öğrenci anafilaksi tedavisinde önceliği doğru belirler.",
+        "differentialComparison": {
+          "Oral antihistaminik": {
+            "explanation": "Oral antihistaminik bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntramüsküler adrenalin seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Sadece sistemik kortikosteroid": {
+            "explanation": "Sadece sistemik kortikosteroid bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntramüsküler adrenalin seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Fibrinolitik tedavi": {
+            "explanation": "Fibrinolitik tedavi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntramüsküler adrenalin seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-scleroderma-digital-ulcer-iloprost-bosentan-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tedavi / Romatoloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "skleroderma",
+      "iloprost",
+      "bosentan"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Sistemik sklerozda dijital iskemik lezyonlarda iloprost ve bosentan kullanımı",
+    "demographics": "58 yaşında kadın",
+    "setting": "Romatoloji polikliniği",
+    "chiefComplaint": "Parmak uçlarında ağrı, morarma ve ülser",
+    "stem": "Uzun süredir Raynaud yakınmaları olan hastada son haftalarda parmak uçlarında ağrılı morarma ve ülser gelişiyor; aspirin ve kalsiyum kanal blokerinden yeterli fayda görmemiş.",
+    "vitals": {},
+    "exam": [
+      "Her iki elde sklerodaktili ve yüz bölgesinde yaygın telanjiektaziler var.",
+      "Sol el 2-3. parmak uçlarında ağrılı iskemik ülserler izleniyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu hastadaki dijital lezyonlar için uygun ilaç kombinasyonu hangisidir?",
+    "spotPearl": "Sklerodermada dijital ülser tedavisinde iloprost ve bosentan TUS’ta sık sorgulanan ilaçlardır.",
+    "learningOutcome": "Öğrenci romatolojik vaskülopati tedavi seçeneklerini ayırt eder.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q24",
+    "diagnosis": {
+      "correct": "İloprost ve bosentan",
+      "options": [
+        "İloprost ve bosentan",
+        "Erlotinib ve trastuzumab",
+        "Sunitinib ve erlotinib",
+        "Trastuzumab ve bosentan"
+      ],
+      "explanation": "Sistemik sklerozda dijital ülserlerde prostasiklin analoğu iloprost ve endotelin reseptör antagonisti bosentan kullanılabilir.",
+      "pearls": [
+        "Sklerodermada dijital ülser tedavisinde iloprost ve bosentan TUS’ta sık sorgulanan ilaçlardır."
+      ],
+      "nextStep": "Öğrenci romatolojik vaskülopati tedavi seçeneklerini ayırt eder.",
+      "answerFeedback": {
+        "correctDiagnosis": "İloprost ve bosentan",
+        "diagnosisMeta": "Sistemik sklerozda dijital iskemik lezyonlarda iloprost ve bosentan kullanımı",
+        "shortDiagnosisMeta": "Tedavi / Romatoloji",
+        "whyCorrect": "Sistemik sklerozda dijital ülserlerde prostasiklin analoğu iloprost ve endotelin reseptör antagonisti bosentan kullanılabilir.",
+        "whyWrong": {
+          "Erlotinib ve trastuzumab": "Erlotinib ve trastuzumab bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İloprost ve bosentan seçeneğini destekler.",
+          "Sunitinib ve erlotinib": "Sunitinib ve erlotinib bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İloprost ve bosentan seçeneğini destekler.",
+          "Trastuzumab ve bosentan": "Trastuzumab ve bosentan bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İloprost ve bosentan seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Parmak uçlarında ağrı, morarma ve ülser",
+          "Uzun süredir Raynaud yakınmaları olan hastada son haftalarda parmak uçlarında ağrılı morarma ve ülser gelişiyor; aspirin ve kalsiyum kanal blokerinden yeterli fayda görmemiş.",
+          "Her iki elde sklerodaktili ve yüz bölgesinde yaygın telanjiektaziler var."
+        ],
+        "clinicalPearls": [
+          "Sklerodermada dijital ülser tedavisinde iloprost ve bosentan TUS’ta sık sorgulanan ilaçlardır."
+        ],
+        "managementSteps": [
+          "Öğrenci romatolojik vaskülopati tedavi seçeneklerini ayırt eder."
+        ],
+        "learningOutcome": "Öğrenci romatolojik vaskülopati tedavi seçeneklerini ayırt eder.",
+        "differentialComparison": {
+          "Erlotinib ve trastuzumab": {
+            "explanation": "Erlotinib ve trastuzumab bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İloprost ve bosentan seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Sunitinib ve erlotinib": {
+            "explanation": "Sunitinib ve erlotinib bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İloprost ve bosentan seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Trastuzumab ve bosentan": {
+            "explanation": "Trastuzumab ve bosentan bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İloprost ve bosentan seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-sle-activity-dsdna-complement-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Romatoloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "SLE",
+      "anti-dsDNA",
+      "kompleman"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "SLE hastalık aktivitesi takibinde anti-dsDNA ve kompleman düzeyleri",
+    "demographics": "28 yaşında kadın",
+    "setting": "Romatoloji polikliniği",
+    "chiefComplaint": "Fotosensitivite, malar döküntü ve eklem ağrısı",
+    "stem": "SLE tanısı alan hastada renal tutulum düşündüren idrar bulguları olduğu öğreniliyor; hekim hastalık aktivitesini izleyecek belirteçleri seçmek istiyor.",
+    "vitals": {},
+    "exam": [
+      "Yüzde nazolabial kıvrımları koruyan malar eritem var.",
+      "MCP eklemlerinde hassasiyet ve hafif şişlik izleniyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-sle-activity",
+        "label": "Otoimmün aktivite paneli",
+        "type": "serology",
+        "summary": "Anti-dsDNA yüksek, C3/C4 düşük; aktif hastalık lehine patern.",
+        "findings": [
+          "Anti-dsDNA yüksek, C3/C4 düşük; aktif hastalık lehine patern."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Otoimmün aktivite paneli",
+            "Anti-dsDNA yüksek, C3/C4 düşük; aktif hastalık lehine patern.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Bu hastalıkta aktivite izlemi için en yararlı belirteçler hangileridir?",
+    "spotPearl": "SLE’de ANA tanı taramasında; anti-dsDNA ve kompleman düzeyleri aktivite izlemi için daha değerlidir.",
+    "learningOutcome": "Öğrenci SLE tanı belirteçleri ile aktivite belirteçlerini ayırır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q25",
+    "diagnosis": {
+      "correct": "Anti-dsDNA ve kompleman düzeyleri",
+      "options": [
+        "Anti-dsDNA ve kompleman düzeyleri",
+        "ANA ve anti-Sm",
+        "Anti-Ro ve anti-La",
+        "RF ve anti-CCP"
+      ],
+      "explanation": "SLE aktivitesi, özellikle lupus nefriti aktivitesi, anti-dsDNA artışı ve C3/C4 düşüklüğüyle izlenebilir; ANA tanıda duyarlı olsa da aktivite takibi için uygun değildir.",
+      "pearls": [
+        "SLE’de ANA tanı taramasında; anti-dsDNA ve kompleman düzeyleri aktivite izlemi için daha değerlidir."
+      ],
+      "nextStep": "Öğrenci SLE tanı belirteçleri ile aktivite belirteçlerini ayırır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Anti-dsDNA ve kompleman düzeyleri",
+        "diagnosisMeta": "SLE hastalık aktivitesi takibinde anti-dsDNA ve kompleman düzeyleri",
+        "shortDiagnosisMeta": "Tetkik / Romatoloji",
+        "whyCorrect": "SLE aktivitesi, özellikle lupus nefriti aktivitesi, anti-dsDNA artışı ve C3/C4 düşüklüğüyle izlenebilir; ANA tanıda duyarlı olsa da aktivite takibi için uygun değildir.",
+        "whyWrong": {
+          "ANA ve anti-Sm": "ANA ve anti-Sm bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-dsDNA ve kompleman düzeyleri seçeneğini destekler.",
+          "Anti-Ro ve anti-La": "Anti-Ro ve anti-La bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-dsDNA ve kompleman düzeyleri seçeneğini destekler.",
+          "RF ve anti-CCP": "RF ve anti-CCP bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-dsDNA ve kompleman düzeyleri seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Fotosensitivite, malar döküntü ve eklem ağrısı",
+          "SLE tanısı alan hastada renal tutulum düşündüren idrar bulguları olduğu öğreniliyor; hekim hastalık aktivitesini izleyecek belirteçleri seçmek istiyor.",
+          "Yüzde nazolabial kıvrımları koruyan malar eritem var.",
+          "Anti-dsDNA yüksek, C3/C4 düşük; aktif hastalık lehine patern."
+        ],
+        "clinicalPearls": [
+          "SLE’de ANA tanı taramasında; anti-dsDNA ve kompleman düzeyleri aktivite izlemi için daha değerlidir."
+        ],
+        "managementSteps": [
+          "Öğrenci SLE tanı belirteçleri ile aktivite belirteçlerini ayırır."
+        ],
+        "learningOutcome": "Öğrenci SLE tanı belirteçleri ile aktivite belirteçlerini ayırır.",
+        "differentialComparison": {
+          "ANA ve anti-Sm": {
+            "explanation": "ANA ve anti-Sm bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-dsDNA ve kompleman düzeyleri seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Anti-Ro ve anti-La": {
+            "explanation": "Anti-Ro ve anti-La bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-dsDNA ve kompleman düzeyleri seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "RF ve anti-CCP": {
+            "explanation": "RF ve anti-CCP bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-dsDNA ve kompleman düzeyleri seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-membranous-nephropathy-anti-pla2r-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Nefroloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "membranöz nefropati",
+      "anti-PLA2R"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Primer membranöz glomerülonefritte anti-PLA2R antikorunun ayırt ettirici değeri",
+    "demographics": "Erişkin hasta",
+    "setting": "Nefroloji polikliniği",
+    "chiefComplaint": "Nefrotik düzeyde proteinüri",
+    "stem": "Böbrek biyopsisi membranöz nefropatiyle uyumlu olan hastada primer ve sekonder neden ayrımı yapılmak isteniyor.",
+    "vitals": {},
+    "exam": [
+      "Pretibial ödem mevcut; kan basıncı hafif yüksek.",
+      "Sistemik lupus veya malignite düşündüren belirgin muayene bulgusu yok."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-pla2r",
+        "label": "Anti-PLA2R antikoru",
+        "type": "serology",
+        "summary": "Pozitif saptanır; primer membranöz nefropati lehine destekleyici bulgu.",
+        "findings": [
+          "Pozitif saptanır; primer membranöz nefropati lehine destekleyici bulgu."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Anti-PLA2R antikoru",
+            "Pozitif saptanır; primer membranöz nefropati lehine destekleyici bulgu.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Primer membranöz nefropati lehine en yardımcı belirteç hangisidir?",
+    "spotPearl": "Erişkin primer membranöz nefropatide anti-PLA2R antikoru yüksek verimli tanısal ipucudur.",
+    "learningOutcome": "Öğrenci glomerülopati-marker eşleşmesini bilir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q26",
+    "diagnosis": {
+      "correct": "Anti-PLA2R antikoru",
+      "options": [
+        "Anti-PLA2R antikoru",
+        "Anti-dsDNA antikoru",
+        "Anti-FGF23 antikoru",
+        "Anti-anjiyotensin 1 antikoru"
+      ],
+      "explanation": "Anti-PLA2R antikoru primer membranöz nefropati için güçlü bir belirteçtir; anti-dsDNA sekonder lupus ilişkisini düşündürür.",
+      "pearls": [
+        "Erişkin primer membranöz nefropatide anti-PLA2R antikoru yüksek verimli tanısal ipucudur."
+      ],
+      "nextStep": "Öğrenci glomerülopati-marker eşleşmesini bilir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Anti-PLA2R antikoru",
+        "diagnosisMeta": "Primer membranöz glomerülonefritte anti-PLA2R antikorunun ayırt ettirici değeri",
+        "shortDiagnosisMeta": "Tetkik / Nefroloji",
+        "whyCorrect": "Anti-PLA2R antikoru primer membranöz nefropati için güçlü bir belirteçtir; anti-dsDNA sekonder lupus ilişkisini düşündürür.",
+        "whyWrong": {
+          "Anti-dsDNA antikoru": "Anti-dsDNA antikoru bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-PLA2R antikoru seçeneğini destekler.",
+          "Anti-FGF23 antikoru": "Anti-FGF23 antikoru bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-PLA2R antikoru seçeneğini destekler.",
+          "Anti-anjiyotensin 1 antikoru": "Anti-anjiyotensin 1 antikoru bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-PLA2R antikoru seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Nefrotik düzeyde proteinüri",
+          "Böbrek biyopsisi membranöz nefropatiyle uyumlu olan hastada primer ve sekonder neden ayrımı yapılmak isteniyor.",
+          "Pretibial ödem mevcut; kan basıncı hafif yüksek.",
+          "Pozitif saptanır; primer membranöz nefropati lehine destekleyici bulgu."
+        ],
+        "clinicalPearls": [
+          "Erişkin primer membranöz nefropatide anti-PLA2R antikoru yüksek verimli tanısal ipucudur."
+        ],
+        "managementSteps": [
+          "Öğrenci glomerülopati-marker eşleşmesini bilir."
+        ],
+        "learningOutcome": "Öğrenci glomerülopati-marker eşleşmesini bilir.",
+        "differentialComparison": {
+          "Anti-dsDNA antikoru": {
+            "explanation": "Anti-dsDNA antikoru bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-PLA2R antikoru seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Anti-FGF23 antikoru": {
+            "explanation": "Anti-FGF23 antikoru bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-PLA2R antikoru seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Anti-anjiyotensin 1 antikoru": {
+            "explanation": "Anti-anjiyotensin 1 antikoru bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-PLA2R antikoru seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-diabetic-nephropathy-atypical-hematuria-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "TUS spot / Nefroloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "diyabetik nefropati",
+      "hematüri"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Diyabetik nefropati dışında etiyoloji düşündüren makroskopik hematüri",
+    "demographics": "Diyabetli erişkin hasta",
+    "setting": "Nefroloji polikliniği",
+    "chiefComplaint": "Proteinüri ve böbrek fonksiyon bozukluğu",
+    "stem": "Uzun süreli diyabetli hastada böbrek etkilenimi değerlendirilirken hangi bulgunun diyabetik nefropati dışı nedeni düşündüreceği sorgulanıyor.",
+    "vitals": {},
+    "exam": [
+      "Periferik ödem hafif; akut enfeksiyon bulgusu yok."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "spot",
+    "question": "Aşağıdaki bulgulardan hangisi diyabetik nefropati dışı etiyolojiyi daha güçlü düşündürür?",
+    "spotPearl": "Diyabetik nefropatide retinopati ve mikroalbüminüri eşlik edebilir; makroskopik hematüri atipiktir.",
+    "learningOutcome": "Öğrenci diyabetik böbrek hastalığında kırmızı bayrakları tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q27",
+    "diagnosis": {
+      "correct": "Makroskopik hematüri",
+      "options": [
+        "Makroskopik hematüri",
+        "Diyabetik retinopati varlığı",
+        "Önceden bilinen mikroalbüminüri",
+        "Böbrek boyutlarının normal/artmış olması"
+      ],
+      "explanation": "Makroskopik hematüri diyabetik nefropati için tipik değildir ve farklı glomerüler/ürolojik etiyoloji araştırılmasını gerektirir.",
+      "pearls": [
+        "Diyabetik nefropatide retinopati ve mikroalbüminüri eşlik edebilir; makroskopik hematüri atipiktir."
+      ],
+      "nextStep": "Öğrenci diyabetik böbrek hastalığında kırmızı bayrakları tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Makroskopik hematüri",
+        "diagnosisMeta": "Diyabetik nefropati dışında etiyoloji düşündüren makroskopik hematüri",
+        "shortDiagnosisMeta": "TUS spot / Nefroloji",
+        "whyCorrect": "Makroskopik hematüri diyabetik nefropati için tipik değildir ve farklı glomerüler/ürolojik etiyoloji araştırılmasını gerektirir.",
+        "whyWrong": {
+          "Diyabetik retinopati varlığı": "Diyabetik retinopati varlığı bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Makroskopik hematüri seçeneğini destekler.",
+          "Önceden bilinen mikroalbüminüri": "Önceden bilinen mikroalbüminüri bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Makroskopik hematüri seçeneğini destekler.",
+          "Böbrek boyutlarının normal/artmış olması": "Böbrek boyutlarının normal/artmış olması bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Makroskopik hematüri seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Proteinüri ve böbrek fonksiyon bozukluğu",
+          "Uzun süreli diyabetli hastada böbrek etkilenimi değerlendirilirken hangi bulgunun diyabetik nefropati dışı nedeni düşündüreceği sorgulanıyor.",
+          "Periferik ödem hafif; akut enfeksiyon bulgusu yok."
+        ],
+        "clinicalPearls": [
+          "Diyabetik nefropatide retinopati ve mikroalbüminüri eşlik edebilir; makroskopik hematüri atipiktir."
+        ],
+        "managementSteps": [
+          "Öğrenci diyabetik böbrek hastalığında kırmızı bayrakları tanır."
+        ],
+        "learningOutcome": "Öğrenci diyabetik böbrek hastalığında kırmızı bayrakları tanır.",
+        "differentialComparison": {
+          "Diyabetik retinopati varlığı": {
+            "explanation": "Diyabetik retinopati varlığı bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Makroskopik hematüri seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Önceden bilinen mikroalbüminüri": {
+            "explanation": "Önceden bilinen mikroalbüminüri bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Makroskopik hematüri seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Böbrek boyutlarının normal/artmış olması": {
+            "explanation": "Böbrek boyutlarının normal/artmış olması bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Makroskopik hematüri seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-hyperkalemia-ecg-calcium-gluconate-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Acil tedavi / Nefroloji",
+    "relatedBranch": "İç Hastalıkları",
+    "tags": [
+      "hiperpotasemi",
+      "kalsiyum glukonat"
+    ],
+    "difficulty": "TUS Spot · Zor",
+    "clinicalFocus": "EKG değişikliği olan hiperpotasemide ilk adım IV kalsiyum glukonat",
+    "demographics": "54 yaşında erkek",
+    "setting": "Acil servis",
+    "chiefComplaint": "Halsizlik, güçsüzlük ve bulantı",
+    "stem": "Kronik böbrek hastalığı olan hastada ağır hiperpotasemi ve metabolik asidoz saptanıyor; EKG’de membran instabilitesini düşündüren değişiklikler mevcut.",
+    "vitals": {},
+    "exam": [
+      "Genel durum orta; kas güçsüzlüğü belirgin.",
+      "Kardiyak oskültasyonda belirgin üfürüm yok."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-hyperkalemia-ecg",
+        "label": "EKG ve elektrolit",
+        "type": "ecg",
+        "summary": "K+ 7.1 mEq/L; sivri T, P dalga basıklaşması ve QRS genişlemesi izlenir.",
+        "findings": [
+          "K+ 7.1 mEq/L; sivri T, P dalga basıklaşması ve QRS genişlemesi izlenir."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "EKG ve elektrolit",
+            "K+ 7.1 mEq/L; sivri T, P dalga basıklaşması ve QRS genişlemesi izlenir.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu hastada ilk uygulanması gereken tedavi hangisidir?",
+    "spotPearl": "EKG değişikliği olan hiperpotasemide ilk ilaç kalsiyum glukonattır; potasyumu düşürmez ama aritmi riskini azaltır.",
+    "learningOutcome": "Öğrenci hiperpotasemi acil algoritmasında önceliği doğru belirler.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q28",
+    "diagnosis": {
+      "correct": "İntravenöz kalsiyum glukonat",
+      "options": [
+        "İntravenöz kalsiyum glukonat",
+        "Hemodiyaliz",
+        "İnsülin ve dekstroz",
+        "Sodyum polistiren sülfonat"
+      ],
+      "explanation": "Hiperpotasemiye EKG değişikliği eşlik ediyorsa ilk adım kardiyak membranı stabilize etmek için IV kalsiyum glukonattır; potasyumu düşüren tedaviler hemen ardından verilir.",
+      "pearls": [
+        "EKG değişikliği olan hiperpotasemide ilk ilaç kalsiyum glukonattır; potasyumu düşürmez ama aritmi riskini azaltır."
+      ],
+      "nextStep": "Öğrenci hiperpotasemi acil algoritmasında önceliği doğru belirler.",
+      "answerFeedback": {
+        "correctDiagnosis": "İntravenöz kalsiyum glukonat",
+        "diagnosisMeta": "EKG değişikliği olan hiperpotasemide ilk adım IV kalsiyum glukonat",
+        "shortDiagnosisMeta": "Acil tedavi / Nefroloji",
+        "whyCorrect": "Hiperpotasemiye EKG değişikliği eşlik ediyorsa ilk adım kardiyak membranı stabilize etmek için IV kalsiyum glukonattır; potasyumu düşüren tedaviler hemen ardından verilir.",
+        "whyWrong": {
+          "Hemodiyaliz": "Hemodiyaliz bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz kalsiyum glukonat seçeneğini destekler.",
+          "İnsülin ve dekstroz": "İnsülin ve dekstroz bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz kalsiyum glukonat seçeneğini destekler.",
+          "Sodyum polistiren sülfonat": "Sodyum polistiren sülfonat bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz kalsiyum glukonat seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Halsizlik, güçsüzlük ve bulantı",
+          "Kronik böbrek hastalığı olan hastada ağır hiperpotasemi ve metabolik asidoz saptanıyor; EKG’de membran instabilitesini düşündüren değişiklikler mevcut.",
+          "Genel durum orta; kas güçsüzlüğü belirgin.",
+          "K+ 7.1 mEq/L; sivri T, P dalga basıklaşması ve QRS genişlemesi izlenir."
+        ],
+        "clinicalPearls": [
+          "EKG değişikliği olan hiperpotasemide ilk ilaç kalsiyum glukonattır; potasyumu düşürmez ama aritmi riskini azaltır."
+        ],
+        "managementSteps": [
+          "Öğrenci hiperpotasemi acil algoritmasında önceliği doğru belirler."
+        ],
+        "learningOutcome": "Öğrenci hiperpotasemi acil algoritmasında önceliği doğru belirler.",
+        "differentialComparison": {
+          "Hemodiyaliz": {
+            "explanation": "Hemodiyaliz bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz kalsiyum glukonat seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "İnsülin ve dekstroz": {
+            "explanation": "İnsülin ve dekstroz bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz kalsiyum glukonat seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Sodyum polistiren sülfonat": {
+            "explanation": "Sodyum polistiren sülfonat bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İntravenöz kalsiyum glukonat seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-geriatric-depression-pseudodementia-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tanı / Psikiyatri",
+    "relatedBranch": "Küçük Stajlar",
+    "tags": [
+      "geriatrik depresyon",
+      "psödodemans"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Geriatrik depresyonda motivasyon kaybı, psikomotor yavaşlama ve ipucuyla hatırlamanın korunması",
+    "demographics": "69 yaşında kadın",
+    "setting": "Geriatri polikliniği",
+    "chiefComplaint": "Unutkanlık yakınması",
+    "stem": "Yakınları unutkanlığın eş kaybından sonra arttığını, hastada iştah azalması, keyifsizlik ve ilgide azalma geliştiğini belirtiyor.",
+    "vitals": {},
+    "exam": [
+      "Psikomotor yavaşlama ve düşük motivasyon izleniyor.",
+      "Serbest hatırlama zayıf, ipucu ile hatırlama görece korunmuş."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu tabloyu en iyi açıklayan tanı hangisidir?",
+    "spotPearl": "Yaşlıda depresyon demansı taklit edebilir; ipucuyla hatırlama korunması ve motivasyon kaybı önemli ipuçlarıdır.",
+    "learningOutcome": "Öğrenci depresyon-demans ayrımında klinik ipuçlarını kullanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q29",
+    "diagnosis": {
+      "correct": "Geriatrik depresyon",
+      "options": [
+        "Geriatrik depresyon",
+        "Normal basınçlı hidrosefali",
+        "Lewy cisimcikli demans",
+        "Vasküler demans"
+      ],
+      "explanation": "Depresif belirtiler, testlere düşük katılım ve ipucuyla hatırlamanın korunması depresyona bağlı psödodemans tablosunu destekler.",
+      "pearls": [
+        "Yaşlıda depresyon demansı taklit edebilir; ipucuyla hatırlama korunması ve motivasyon kaybı önemli ipuçlarıdır."
+      ],
+      "nextStep": "Öğrenci depresyon-demans ayrımında klinik ipuçlarını kullanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Geriatrik depresyon",
+        "diagnosisMeta": "Geriatrik depresyonda motivasyon kaybı, psikomotor yavaşlama ve ipucuyla hatırlamanın korunması",
+        "shortDiagnosisMeta": "Tanı / Psikiyatri",
+        "whyCorrect": "Depresif belirtiler, testlere düşük katılım ve ipucuyla hatırlamanın korunması depresyona bağlı psödodemans tablosunu destekler.",
+        "whyWrong": {
+          "Normal basınçlı hidrosefali": "Normal basınçlı hidrosefali bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Geriatrik depresyon seçeneğini destekler.",
+          "Lewy cisimcikli demans": "Lewy cisimcikli demans bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Geriatrik depresyon seçeneğini destekler.",
+          "Vasküler demans": "Vasküler demans bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Geriatrik depresyon seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Unutkanlık yakınması",
+          "Yakınları unutkanlığın eş kaybından sonra arttığını, hastada iştah azalması, keyifsizlik ve ilgide azalma geliştiğini belirtiyor.",
+          "Psikomotor yavaşlama ve düşük motivasyon izleniyor."
+        ],
+        "clinicalPearls": [
+          "Yaşlıda depresyon demansı taklit edebilir; ipucuyla hatırlama korunması ve motivasyon kaybı önemli ipuçlarıdır."
+        ],
+        "managementSteps": [
+          "Öğrenci depresyon-demans ayrımında klinik ipuçlarını kullanır."
+        ],
+        "learningOutcome": "Öğrenci depresyon-demans ayrımında klinik ipuçlarını kullanır.",
+        "differentialComparison": {
+          "Normal basınçlı hidrosefali": {
+            "explanation": "Normal basınçlı hidrosefali bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Geriatrik depresyon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Lewy cisimcikli demans": {
+            "explanation": "Lewy cisimcikli demans bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Geriatrik depresyon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Vasküler demans": {
+            "explanation": "Vasküler demans bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Geriatrik depresyon seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-pityriasis-rosea-herald-patch-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Muayene odaklı / Dermatoloji",
+    "relatedBranch": "Küçük Stajlar",
+    "tags": [
+      "pitriazis rozea",
+      "herald patch"
+    ],
+    "difficulty": "TUS Spot · Kolay",
+    "clinicalFocus": "Pitriazis rozeada herald patch ve gövde-proksimal ekstremite dağılımı",
+    "demographics": "20 yaşında kadın",
+    "setting": "Dermatoloji polikliniği",
+    "chiefComplaint": "Döküntü",
+    "stem": "Hasta birkaç gündür gövdede ve proksimal ekstremitelerde artan döküntü nedeniyle başvuruyor.",
+    "vitals": {},
+    "exam": [
+      "Gövde ve proksimal ekstremitelerde eritemli skuamlı makülopapüller izleniyor.",
+      "Daha büyük oval skuamlı madalyon plak seçiliyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu bulgularla en uyumlu tanı hangisidir?",
+    "spotPearl": "Pitriazis rozea genellikle kendi kendini sınırlayan, herald patch ile başlayan döküntülü tablodur.",
+    "learningOutcome": "Öğrenci dermatolojik patern tanımasını pekiştirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q30",
+    "diagnosis": {
+      "correct": "Pitriazis rozea",
+      "options": [
+        "Pitriazis rozea",
+        "Pemfigus vulgaris",
+        "Toksik epidermal nekroliz",
+        "Hidradenitis süpürativa"
+      ],
+      "explanation": "Herald patch/madalyon plak ve gövde-proksimal ekstremite yerleşimli skuamlı döküntü pitriazis rozea için tipiktir.",
+      "pearls": [
+        "Pitriazis rozea genellikle kendi kendini sınırlayan, herald patch ile başlayan döküntülü tablodur."
+      ],
+      "nextStep": "Öğrenci dermatolojik patern tanımasını pekiştirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Pitriazis rozea",
+        "diagnosisMeta": "Pitriazis rozeada herald patch ve gövde-proksimal ekstremite dağılımı",
+        "shortDiagnosisMeta": "Muayene odaklı / Dermatoloji",
+        "whyCorrect": "Herald patch/madalyon plak ve gövde-proksimal ekstremite yerleşimli skuamlı döküntü pitriazis rozea için tipiktir.",
+        "whyWrong": {
+          "Pemfigus vulgaris": "Pemfigus vulgaris bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Pitriazis rozea seçeneğini destekler.",
+          "Toksik epidermal nekroliz": "Toksik epidermal nekroliz bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Pitriazis rozea seçeneğini destekler.",
+          "Hidradenitis süpürativa": "Hidradenitis süpürativa bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Pitriazis rozea seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Döküntü",
+          "Hasta birkaç gündür gövdede ve proksimal ekstremitelerde artan döküntü nedeniyle başvuruyor.",
+          "Gövde ve proksimal ekstremitelerde eritemli skuamlı makülopapüller izleniyor."
+        ],
+        "clinicalPearls": [
+          "Pitriazis rozea genellikle kendi kendini sınırlayan, herald patch ile başlayan döküntülü tablodur."
+        ],
+        "managementSteps": [
+          "Öğrenci dermatolojik patern tanımasını pekiştirir."
+        ],
+        "learningOutcome": "Öğrenci dermatolojik patern tanımasını pekiştirir.",
+        "differentialComparison": {
+          "Pemfigus vulgaris": {
+            "explanation": "Pemfigus vulgaris bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Pitriazis rozea seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Toksik epidermal nekroliz": {
+            "explanation": "Toksik epidermal nekroliz bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Pitriazis rozea seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Hidradenitis süpürativa": {
+            "explanation": "Hidradenitis süpürativa bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Pitriazis rozea seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-tinea-pedis-terbinafine-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tedavi / Dermatoloji",
+    "relatedBranch": "Küçük Stajlar",
+    "tags": [
+      "tinea pedis",
+      "KOH",
+      "terbinafin"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Tinea pedis tanısında KOH hifa ve tedavide terbinafin",
+    "demographics": "56 yaşında kadın",
+    "setting": "Dermatoloji polikliniği",
+    "chiefComplaint": "Ayakta kaşıntılı skuamlı lezyonlar",
+    "stem": "Ayak parmak aralarında maserasyon ve plantar hiperkeratotik skuam gelişen hastada mantar enfeksiyonu düşünülüyor.",
+    "vitals": {},
+    "exam": [
+      "İnterdijital aralıklarda masere skuamlı lezyonlar izleniyor.",
+      "Plantar yüzeyde hiperkeratotik skuamlı alanlar mevcut."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-koh-hyphae",
+        "label": "KOH mikroskopisi",
+        "type": "microbiology",
+        "summary": "Dallanan paternde septalı hifalar görülür.",
+        "findings": [
+          "Dallanan paternde septalı hifalar görülür."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "KOH mikroskopisi",
+            "Dallanan paternde septalı hifalar görülür.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Bu hastada en uygun tedavi seçeneği hangisidir?",
+    "spotPearl": "Dermatofit enfeksiyonlarında KOH’da septalı hifa görülür; terbinafin skualen epoksidaz inhibitörüdür.",
+    "learningOutcome": "Öğrenci mantar morfolojisi ile tedaviyi eşleştirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q31",
+    "diagnosis": {
+      "correct": "Terbinafin",
+      "options": [
+        "Terbinafin",
+        "Asiklovir",
+        "Permetrin",
+        "Mupirosin"
+      ],
+      "explanation": "KOH incelemede septalı hifaların görülmesi dermatofit enfeksiyonunu destekler; tinea pediste terbinafin uygun antifungaldir.",
+      "pearls": [
+        "Dermatofit enfeksiyonlarında KOH’da septalı hifa görülür; terbinafin skualen epoksidaz inhibitörüdür."
+      ],
+      "nextStep": "Öğrenci mantar morfolojisi ile tedaviyi eşleştirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Terbinafin",
+        "diagnosisMeta": "Tinea pedis tanısında KOH hifa ve tedavide terbinafin",
+        "shortDiagnosisMeta": "Tedavi / Dermatoloji",
+        "whyCorrect": "KOH incelemede septalı hifaların görülmesi dermatofit enfeksiyonunu destekler; tinea pediste terbinafin uygun antifungaldir.",
+        "whyWrong": {
+          "Asiklovir": "Asiklovir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Terbinafin seçeneğini destekler.",
+          "Permetrin": "Permetrin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Terbinafin seçeneğini destekler.",
+          "Mupirosin": "Mupirosin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Terbinafin seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Ayakta kaşıntılı skuamlı lezyonlar",
+          "Ayak parmak aralarında maserasyon ve plantar hiperkeratotik skuam gelişen hastada mantar enfeksiyonu düşünülüyor.",
+          "İnterdijital aralıklarda masere skuamlı lezyonlar izleniyor.",
+          "Dallanan paternde septalı hifalar görülür."
+        ],
+        "clinicalPearls": [
+          "Dermatofit enfeksiyonlarında KOH’da septalı hifa görülür; terbinafin skualen epoksidaz inhibitörüdür."
+        ],
+        "managementSteps": [
+          "Öğrenci mantar morfolojisi ile tedaviyi eşleştirir."
+        ],
+        "learningOutcome": "Öğrenci mantar morfolojisi ile tedaviyi eşleştirir.",
+        "differentialComparison": {
+          "Asiklovir": {
+            "explanation": "Asiklovir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Terbinafin seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Permetrin": {
+            "explanation": "Permetrin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Terbinafin seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Mupirosin": {
+            "explanation": "Mupirosin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Terbinafin seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-aca-stroke-leg-predominant-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Anatomi / Nöroloji",
+    "relatedBranch": "Anatomi",
+    "tags": [
+      "ACA",
+      "inme",
+      "nöroanatomi"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Anterior serebral arter infarktında alt ekstremite ağırlıklı motor defisit",
+    "demographics": "65 yaşında erkek",
+    "setting": "Acil servis",
+    "chiefComplaint": "Sağ tarafta ani güç kaybı",
+    "stem": "Akut inme şüphesiyle getirilen hastada sağ alt ekstremite kuvvet kaybı sağ üst ekstremiteye göre belirgin daha fazladır.",
+    "vitals": {},
+    "exam": [
+      "Sağ alt ekstremite plejik, sağ üst ekstremite 4/5 kuvvetinde.",
+      "Sağ Babinski pozitif."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu nörolojik dağılımda en olası etkilenen arter hangisidir?",
+    "spotPearl": "ACA infarktı bacak ağırlıklı kontralateral motor/duyu defisitiyle TUS’ta ayırt ettirilir.",
+    "learningOutcome": "Öğrenci vasküler nöroanatomi ile klinik defisit dağılımını ilişkilendirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q32",
+    "diagnosis": {
+      "correct": "Anterior serebral arter",
+      "options": [
+        "Anterior serebral arter",
+        "Orta serebral arter",
+        "Posterior serebral arter",
+        "Baziler arter"
+      ],
+      "explanation": "Medial frontal-parietal korteks alt ekstremite motor-duyu alanlarını içerir ve anterior serebral arter tarafından beslenir.",
+      "pearls": [
+        "ACA infarktı bacak ağırlıklı kontralateral motor/duyu defisitiyle TUS’ta ayırt ettirilir."
+      ],
+      "nextStep": "Öğrenci vasküler nöroanatomi ile klinik defisit dağılımını ilişkilendirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Anterior serebral arter",
+        "diagnosisMeta": "Anterior serebral arter infarktında alt ekstremite ağırlıklı motor defisit",
+        "shortDiagnosisMeta": "Anatomi / Nöroloji",
+        "whyCorrect": "Medial frontal-parietal korteks alt ekstremite motor-duyu alanlarını içerir ve anterior serebral arter tarafından beslenir.",
+        "whyWrong": {
+          "Orta serebral arter": "Orta serebral arter bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anterior serebral arter seçeneğini destekler.",
+          "Posterior serebral arter": "Posterior serebral arter bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anterior serebral arter seçeneğini destekler.",
+          "Baziler arter": "Baziler arter bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anterior serebral arter seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Sağ tarafta ani güç kaybı",
+          "Akut inme şüphesiyle getirilen hastada sağ alt ekstremite kuvvet kaybı sağ üst ekstremiteye göre belirgin daha fazladır.",
+          "Sağ alt ekstremite plejik, sağ üst ekstremite 4/5 kuvvetinde."
+        ],
+        "clinicalPearls": [
+          "ACA infarktı bacak ağırlıklı kontralateral motor/duyu defisitiyle TUS’ta ayırt ettirilir."
+        ],
+        "managementSteps": [
+          "Öğrenci vasküler nöroanatomi ile klinik defisit dağılımını ilişkilendirir."
+        ],
+        "learningOutcome": "Öğrenci vasküler nöroanatomi ile klinik defisit dağılımını ilişkilendirir.",
+        "differentialComparison": {
+          "Orta serebral arter": {
+            "explanation": "Orta serebral arter bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anterior serebral arter seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Posterior serebral arter": {
+            "explanation": "Posterior serebral arter bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anterior serebral arter seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Baziler arter": {
+            "explanation": "Baziler arter bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anterior serebral arter seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-myotonic-dystrophy-frontal-balding-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tanı / Nöromüsküler",
+    "relatedBranch": "Küçük Stajlar",
+    "tags": [
+      "miyotonik distrofi",
+      "miyotoni"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Miyotonik distrofide miyotoni, frontal kellik, temporal atrofi ve pitoz",
+    "demographics": "33 yaşında erkek",
+    "setting": "Nöroloji polikliniği",
+    "chiefComplaint": "Ellerde kuvvetsizlik ve gevşemede güçlük",
+    "stem": "Hasta yumruk yaptıktan sonra parmaklarını açmakta zorlanıyor; meksiletin ile gevşeme güçlüğünün azaldığını söylüyor.",
+    "vitals": {},
+    "exam": [
+      "Frontal kellik, temporal kas atrofisi ve hafif bilateral pitozis izleniyor.",
+      "El sıkma sonrası gevşeme gecikiyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu tablo için en olası tanı hangisidir?",
+    "spotPearl": "Miyotonik distrofi erişkin başlangıçlı miyotoni + katarakt/frontal kellik/endokrin etkilenim gibi sistemik bulgularla gelir.",
+    "learningOutcome": "Öğrenci miyotoni paternini diğer nöromüsküler hastalıklardan ayırır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q33",
+    "diagnosis": {
+      "correct": "Miyotonik distrofi",
+      "options": [
+        "Miyotonik distrofi",
+        "Myastenia gravis",
+        "Lambert-Eaton sendromu",
+        "Duchenne musküler distrofisi"
+      ],
+      "explanation": "Miyotoni, distal güçsüzlük, frontal kellik, temporal atrofi ve pitozis miyotonik distrofi için tipiktir.",
+      "pearls": [
+        "Miyotonik distrofi erişkin başlangıçlı miyotoni + katarakt/frontal kellik/endokrin etkilenim gibi sistemik bulgularla gelir."
+      ],
+      "nextStep": "Öğrenci miyotoni paternini diğer nöromüsküler hastalıklardan ayırır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Miyotonik distrofi",
+        "diagnosisMeta": "Miyotonik distrofide miyotoni, frontal kellik, temporal atrofi ve pitoz",
+        "shortDiagnosisMeta": "Tanı / Nöromüsküler",
+        "whyCorrect": "Miyotoni, distal güçsüzlük, frontal kellik, temporal atrofi ve pitozis miyotonik distrofi için tipiktir.",
+        "whyWrong": {
+          "Myastenia gravis": "Myastenia gravis bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Miyotonik distrofi seçeneğini destekler.",
+          "Lambert-Eaton sendromu": "Lambert-Eaton sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Miyotonik distrofi seçeneğini destekler.",
+          "Duchenne musküler distrofisi": "Duchenne musküler distrofisi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Miyotonik distrofi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Ellerde kuvvetsizlik ve gevşemede güçlük",
+          "Hasta yumruk yaptıktan sonra parmaklarını açmakta zorlanıyor; meksiletin ile gevşeme güçlüğünün azaldığını söylüyor.",
+          "Frontal kellik, temporal kas atrofisi ve hafif bilateral pitozis izleniyor."
+        ],
+        "clinicalPearls": [
+          "Miyotonik distrofi erişkin başlangıçlı miyotoni + katarakt/frontal kellik/endokrin etkilenim gibi sistemik bulgularla gelir."
+        ],
+        "managementSteps": [
+          "Öğrenci miyotoni paternini diğer nöromüsküler hastalıklardan ayırır."
+        ],
+        "learningOutcome": "Öğrenci miyotoni paternini diğer nöromüsküler hastalıklardan ayırır.",
+        "differentialComparison": {
+          "Myastenia gravis": {
+            "explanation": "Myastenia gravis bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Miyotonik distrofi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Lambert-Eaton sendromu": {
+            "explanation": "Lambert-Eaton sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Miyotonik distrofi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Duchenne musküler distrofisi": {
+            "explanation": "Duchenne musküler distrofisi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Miyotonik distrofi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-hsv-encephalitis-temporal-features-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Mikrobiyoloji / Nöroloji",
+    "relatedBranch": "Tıbbi Mikrobiyoloji",
+    "tags": [
+      "HSV ensefaliti",
+      "asiklovir"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "HSV ensefalitinde ateş, kişilik değişikliği, fokal nöbet ve lenfositik BOS paterni",
+    "demographics": "32 yaşında kadın",
+    "setting": "Acil servis",
+    "chiefComplaint": "Baş ağrısı, yüksek ateş, kişilik değişikliği ve nöbet",
+    "stem": "Daha önce sağlıklı olan hastada akut ensefalopati, anlamsız konuşma ve fokal motor nöbetler gelişiyor; ilk BT patolojik değil.",
+    "vitals": {},
+    "exam": [
+      "Uykuya meyilli; oryantasyon ve kooperasyon bozuk.",
+      "Meningeal irritasyon belirgin değil ancak fokal nörolojik bulgular eşlik ediyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-hsv-csf",
+        "label": "BOS incelemesi",
+        "type": "csf",
+        "summary": "Hafif protein artışı ve lenfositik pleositoz; bakteriyel pürülan menenjit paterni yok.",
+        "findings": [
+          "Hafif protein artışı ve lenfositik pleositoz; bakteriyel pürülan menenjit paterni yok."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "BOS incelemesi",
+            "Hafif protein artışı ve lenfositik pleositoz; bakteriyel pürülan menenjit paterni yok.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu hastada en olası etken hangisidir?",
+    "spotPearl": "HSV ensefaliti temporal lob tutulumu, kişilik değişikliği ve fokal nöbetle TUS’ta sık sorulur.",
+    "learningOutcome": "Öğrenci ensefalit etkenini klinik nörolojik paternle tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q34",
+    "diagnosis": {
+      "correct": "Herpes simpleks virus",
+      "options": [
+        "Herpes simpleks virus",
+        "Streptococcus pneumoniae",
+        "Polio virus",
+        "Borrelia burgdorferi"
+      ],
+      "explanation": "Ateş, kişilik değişikliği, fokal nöbet ve lenfositik pleositoz HSV ensefalitini düşündürür; ampirik asiklovir geciktirilmemelidir.",
+      "pearls": [
+        "HSV ensefaliti temporal lob tutulumu, kişilik değişikliği ve fokal nöbetle TUS’ta sık sorulur."
+      ],
+      "nextStep": "Öğrenci ensefalit etkenini klinik nörolojik paternle tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Herpes simpleks virus",
+        "diagnosisMeta": "HSV ensefalitinde ateş, kişilik değişikliği, fokal nöbet ve lenfositik BOS paterni",
+        "shortDiagnosisMeta": "Mikrobiyoloji / Nöroloji",
+        "whyCorrect": "Ateş, kişilik değişikliği, fokal nöbet ve lenfositik pleositoz HSV ensefalitini düşündürür; ampirik asiklovir geciktirilmemelidir.",
+        "whyWrong": {
+          "Streptococcus pneumoniae": "Streptococcus pneumoniae bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herpes simpleks virus seçeneğini destekler.",
+          "Polio virus": "Polio virus bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herpes simpleks virus seçeneğini destekler.",
+          "Borrelia burgdorferi": "Borrelia burgdorferi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herpes simpleks virus seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Baş ağrısı, yüksek ateş, kişilik değişikliği ve nöbet",
+          "Daha önce sağlıklı olan hastada akut ensefalopati, anlamsız konuşma ve fokal motor nöbetler gelişiyor; ilk BT patolojik değil.",
+          "Uykuya meyilli; oryantasyon ve kooperasyon bozuk.",
+          "Hafif protein artışı ve lenfositik pleositoz; bakteriyel pürülan menenjit paterni yok."
+        ],
+        "clinicalPearls": [
+          "HSV ensefaliti temporal lob tutulumu, kişilik değişikliği ve fokal nöbetle TUS’ta sık sorulur."
+        ],
+        "managementSteps": [
+          "Öğrenci ensefalit etkenini klinik nörolojik paternle tanır."
+        ],
+        "learningOutcome": "Öğrenci ensefalit etkenini klinik nörolojik paternle tanır.",
+        "differentialComparison": {
+          "Streptococcus pneumoniae": {
+            "explanation": "Streptococcus pneumoniae bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herpes simpleks virus seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Polio virus": {
+            "explanation": "Polio virus bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herpes simpleks virus seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Borrelia burgdorferi": {
+            "explanation": "Borrelia burgdorferi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Herpes simpleks virus seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-projection-defense-mechanism-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Psikiyatri / Etik",
+    "relatedBranch": "Küçük Stajlar",
+    "tags": [
+      "yansıtma",
+      "savunma mekanizması"
+    ],
+    "difficulty": "TUS Spot · Kolay",
+    "clinicalFocus": "Yansıtma savunma mekanizması",
+    "demographics": "Üniversite öğrencisi",
+    "setting": "Psikiyatri görüşmesi",
+    "chiefComplaint": "Yoğun rekabet ve kişilerarası çatışma",
+    "stem": "Kişi kendisindeki kıskançlığı kabul etmiyor; bunun yerine yakın arkadaşının kendisini kıskandığını ve sürekli onu geçmeye çalıştığını söylüyor.",
+    "vitals": {},
+    "exam": [
+      "Düşünce içeriği gerçeklik değerlendirmesini tamamen bozmuyor; savunma mekanizması düzeyinde açıklanabilir."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "spot",
+    "question": "Bu örüntüde en olası savunma mekanizması hangisidir?",
+    "spotPearl": "Yansıtma: “Bende olan kabul edilemez duygu onda var.” Mantığıyla çalışır.",
+    "learningOutcome": "Öğrenci savunma mekanizmalarını kısa örnek üzerinden ayırt eder.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q35",
+    "diagnosis": {
+      "correct": "Yansıtma",
+      "options": [
+        "Yansıtma",
+        "Bastırma",
+        "Yer değiştirme",
+        "Baskılama"
+      ],
+      "explanation": "Kişinin kabul edemediği kendi duygu/dürtüsünü başka bir kişiye atfetmesi yansıtma savunma mekanizmasıdır.",
+      "pearls": [
+        "Yansıtma: “Bende olan kabul edilemez duygu onda var.” Mantığıyla çalışır."
+      ],
+      "nextStep": "Öğrenci savunma mekanizmalarını kısa örnek üzerinden ayırt eder.",
+      "answerFeedback": {
+        "correctDiagnosis": "Yansıtma",
+        "diagnosisMeta": "Yansıtma savunma mekanizması",
+        "shortDiagnosisMeta": "Psikiyatri / Etik",
+        "whyCorrect": "Kişinin kabul edemediği kendi duygu/dürtüsünü başka bir kişiye atfetmesi yansıtma savunma mekanizmasıdır.",
+        "whyWrong": {
+          "Bastırma": "Bastırma bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Yansıtma seçeneğini destekler.",
+          "Yer değiştirme": "Yer değiştirme bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Yansıtma seçeneğini destekler.",
+          "Baskılama": "Baskılama bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Yansıtma seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Yoğun rekabet ve kişilerarası çatışma",
+          "Kişi kendisindeki kıskançlığı kabul etmiyor; bunun yerine yakın arkadaşının kendisini kıskandığını ve sürekli onu geçmeye çalıştığını söylüyor.",
+          "Düşünce içeriği gerçeklik değerlendirmesini tamamen bozmuyor; savunma mekanizması düzeyinde açıklanabilir."
+        ],
+        "clinicalPearls": [
+          "Yansıtma: “Bende olan kabul edilemez duygu onda var.” Mantığıyla çalışır."
+        ],
+        "managementSteps": [
+          "Öğrenci savunma mekanizmalarını kısa örnek üzerinden ayırt eder."
+        ],
+        "learningOutcome": "Öğrenci savunma mekanizmalarını kısa örnek üzerinden ayırt eder.",
+        "differentialComparison": {
+          "Bastırma": {
+            "explanation": "Bastırma bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Yansıtma seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Yer değiştirme": {
+            "explanation": "Yer değiştirme bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Yansıtma seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Baskılama": {
+            "explanation": "Baskılama bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Yansıtma seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-korsakoff-mammillary-bodies-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Anatomi / Nöropsikiyatri",
+    "relatedBranch": "Anatomi",
+    "tags": [
+      "mamiller cisim",
+      "Korsakoff"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Wernicke-Korsakoff sendromunda mamiller cisim lezyonu",
+    "demographics": "Alkol kullanım bozukluğu olan hasta",
+    "setting": "Servis",
+    "chiefComplaint": "Konfabulasyon ve yeni bilgi öğrenmede bozulma",
+    "stem": "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasında anterograd amnezi ve konfabulasyon gelişiyor.",
+    "vitals": {},
+    "exam": [
+      "Hasta uyanık ancak yakın dönem belleği belirgin bozuk.",
+      "Konuşurken bellek boşluklarını uydurma yanıtlarla dolduruyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "spot",
+    "question": "Bu tabloya yol açan lezyonun en olası anatomik yeri hangisidir?",
+    "spotPearl": "Konfabulasyon + anterograd amnezi + alkol/beslenme bozukluğu = Korsakoff; mamiller cisimler yüksek verimli anatomik lokalizasyondur.",
+    "learningOutcome": "Öğrenci bellek bozukluğu sendromunu anatomik yapı ile eşleştirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q36",
+    "diagnosis": {
+      "correct": "Mamiller cisimler",
+      "options": [
+        "Mamiller cisimler",
+        "Oksipital korteks",
+        "İnsüler korteks",
+        "Gyrus angularis"
+      ],
+      "explanation": "Tiamin eksikliği ilişkili Wernicke-Korsakoff sendromunda mamiller cisimler ve medial talamik yapılar etkilenebilir.",
+      "pearls": [
+        "Konfabulasyon + anterograd amnezi + alkol/beslenme bozukluğu = Korsakoff; mamiller cisimler yüksek verimli anatomik lokalizasyondur."
+      ],
+      "nextStep": "Öğrenci bellek bozukluğu sendromunu anatomik yapı ile eşleştirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Mamiller cisimler",
+        "diagnosisMeta": "Wernicke-Korsakoff sendromunda mamiller cisim lezyonu",
+        "shortDiagnosisMeta": "Anatomi / Nöropsikiyatri",
+        "whyCorrect": "Tiamin eksikliği ilişkili Wernicke-Korsakoff sendromunda mamiller cisimler ve medial talamik yapılar etkilenebilir.",
+        "whyWrong": {
+          "Oksipital korteks": "Oksipital korteks bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mamiller cisimler seçeneğini destekler.",
+          "İnsüler korteks": "İnsüler korteks bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mamiller cisimler seçeneğini destekler.",
+          "Gyrus angularis": "Gyrus angularis bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mamiller cisimler seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Konfabulasyon ve yeni bilgi öğrenmede bozulma",
+          "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasında anterograd amnezi ve konfabulasyon gelişiyor.",
+          "Hasta uyanık ancak yakın dönem belleği belirgin bozuk."
+        ],
+        "clinicalPearls": [
+          "Konfabulasyon + anterograd amnezi + alkol/beslenme bozukluğu = Korsakoff; mamiller cisimler yüksek verimli anatomik lokalizasyondur."
+        ],
+        "managementSteps": [
+          "Öğrenci bellek bozukluğu sendromunu anatomik yapı ile eşleştirir."
+        ],
+        "learningOutcome": "Öğrenci bellek bozukluğu sendromunu anatomik yapı ile eşleştirir.",
+        "differentialComparison": {
+          "Oksipital korteks": {
+            "explanation": "Oksipital korteks bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mamiller cisimler seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "İnsüler korteks": {
+            "explanation": "İnsüler korteks bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mamiller cisimler seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Gyrus angularis": {
+            "explanation": "Gyrus angularis bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Mamiller cisimler seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-knee-osteoarthritis-peripheral-erosion-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "TUS spot / Ortopedi",
+    "relatedBranch": "Küçük Stajlar",
+    "tags": [
+      "osteoartrit",
+      "grafi"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Osteoartritte osteofit, subkondral skleroz/kist ve eklem aralığı daralması; periferik erozyonun beklenmemesi",
+    "demographics": "Erişkin hasta",
+    "setting": "Ortopedi polikliniği",
+    "chiefComplaint": "Kronik diz ağrısı",
+    "stem": "Diz osteoartriti nedeniyle direkt grafi değerlendiriliyor; öğrenciden tipik ve atipik bulguları ayırması isteniyor.",
+    "vitals": {},
+    "exam": [
+      "Dizde krepitasyon ve hareketle ağrı mevcut; belirgin kızarıklık veya ısı artışı yok."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "spot",
+    "question": "Diz osteoartritinde aşağıdaki grafi bulgularından hangisi en az beklenir?",
+    "spotPearl": "Erozyon romatoid/inflamatuvar artrit lehine; osteofit ve skleroz osteoartrit lehinedir.",
+    "learningOutcome": "Öğrenci dejeneratif ve inflamatuvar eklem grafisi bulgularını ayırır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q37",
+    "diagnosis": {
+      "correct": "Periferik erozyon",
+      "options": [
+        "Periferik erozyon",
+        "Osteofit",
+        "Subkondral skleroz",
+        "Subkondral kist"
+      ],
+      "explanation": "Osteoartritte eklem aralığı daralması, osteofit, subkondral skleroz ve kist beklenir; erozyon inflamatuvar artritleri düşündürür.",
+      "pearls": [
+        "Erozyon romatoid/inflamatuvar artrit lehine; osteofit ve skleroz osteoartrit lehinedir."
+      ],
+      "nextStep": "Öğrenci dejeneratif ve inflamatuvar eklem grafisi bulgularını ayırır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Periferik erozyon",
+        "diagnosisMeta": "Osteoartritte osteofit, subkondral skleroz/kist ve eklem aralığı daralması; periferik erozyonun beklenmemesi",
+        "shortDiagnosisMeta": "TUS spot / Ortopedi",
+        "whyCorrect": "Osteoartritte eklem aralığı daralması, osteofit, subkondral skleroz ve kist beklenir; erozyon inflamatuvar artritleri düşündürür.",
+        "whyWrong": {
+          "Osteofit": "Osteofit bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik erozyon seçeneğini destekler.",
+          "Subkondral skleroz": "Subkondral skleroz bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik erozyon seçeneğini destekler.",
+          "Subkondral kist": "Subkondral kist bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik erozyon seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Kronik diz ağrısı",
+          "Diz osteoartriti nedeniyle direkt grafi değerlendiriliyor; öğrenciden tipik ve atipik bulguları ayırması isteniyor.",
+          "Dizde krepitasyon ve hareketle ağrı mevcut; belirgin kızarıklık veya ısı artışı yok."
+        ],
+        "clinicalPearls": [
+          "Erozyon romatoid/inflamatuvar artrit lehine; osteofit ve skleroz osteoartrit lehinedir."
+        ],
+        "managementSteps": [
+          "Öğrenci dejeneratif ve inflamatuvar eklem grafisi bulgularını ayırır."
+        ],
+        "learningOutcome": "Öğrenci dejeneratif ve inflamatuvar eklem grafisi bulgularını ayırır.",
+        "differentialComparison": {
+          "Osteofit": {
+            "explanation": "Osteofit bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik erozyon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Subkondral skleroz": {
+            "explanation": "Subkondral skleroz bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik erozyon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Subkondral kist": {
+            "explanation": "Subkondral kist bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Periferik erozyon seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-biceps-tendinitis-speed-yergason-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Muayene odaklı / Ortopedi",
+    "relatedBranch": "Küçük Stajlar",
+    "tags": [
+      "biseps tendiniti",
+      "Speed",
+      "Yergason"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Biseps tendinitinde anterior omuz hassasiyeti, Speed ve Yergason pozitifliği",
+    "demographics": "23 yaşında erkek sporcu",
+    "setting": "Spor hekimliği polikliniği",
+    "chiefComplaint": "Omuz ön kısmında ağrı",
+    "stem": "Cirit sporu yapan hastada özellikle dirsek fleksiyonu ve supinasyonla artan anterior omuz ağrısı gelişiyor.",
+    "vitals": {},
+    "exam": [
+      "Omuz ön kısmında bicipital oluk üzerinde lokal hassasiyet var.",
+      "Speed ve Yergason testleri pozitif; nörolojik muayene normal."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu olguda en olası tanı hangisidir?",
+    "spotPearl": "Speed ve Yergason testleri biseps tendonu patolojileri için yüksek verimli muayene ipuçlarıdır.",
+    "learningOutcome": "Öğrenci omuz özel testlerini tanıyla eşleştirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q38",
+    "diagnosis": {
+      "correct": "Biseps tendiniti",
+      "options": [
+        "Biseps tendiniti",
+        "Rotator cuff yırtığı",
+        "Servikal radikülopati",
+        "Lateral epikondilit"
+      ],
+      "explanation": "Anterior omuz ağrısı, bicipital oluk hassasiyeti ve Speed/Yergason pozitifliği biseps uzun baş tendinitini düşündürür.",
+      "pearls": [
+        "Speed ve Yergason testleri biseps tendonu patolojileri için yüksek verimli muayene ipuçlarıdır."
+      ],
+      "nextStep": "Öğrenci omuz özel testlerini tanıyla eşleştirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Biseps tendiniti",
+        "diagnosisMeta": "Biseps tendinitinde anterior omuz hassasiyeti, Speed ve Yergason pozitifliği",
+        "shortDiagnosisMeta": "Muayene odaklı / Ortopedi",
+        "whyCorrect": "Anterior omuz ağrısı, bicipital oluk hassasiyeti ve Speed/Yergason pozitifliği biseps uzun baş tendinitini düşündürür.",
+        "whyWrong": {
+          "Rotator cuff yırtığı": "Rotator cuff yırtığı bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Biseps tendiniti seçeneğini destekler.",
+          "Servikal radikülopati": "Servikal radikülopati bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Biseps tendiniti seçeneğini destekler.",
+          "Lateral epikondilit": "Lateral epikondilit bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Biseps tendiniti seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Omuz ön kısmında ağrı",
+          "Cirit sporu yapan hastada özellikle dirsek fleksiyonu ve supinasyonla artan anterior omuz ağrısı gelişiyor.",
+          "Omuz ön kısmında bicipital oluk üzerinde lokal hassasiyet var."
+        ],
+        "clinicalPearls": [
+          "Speed ve Yergason testleri biseps tendonu patolojileri için yüksek verimli muayene ipuçlarıdır."
+        ],
+        "managementSteps": [
+          "Öğrenci omuz özel testlerini tanıyla eşleştirir."
+        ],
+        "learningOutcome": "Öğrenci omuz özel testlerini tanıyla eşleştirir.",
+        "differentialComparison": {
+          "Rotator cuff yırtığı": {
+            "explanation": "Rotator cuff yırtığı bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Biseps tendiniti seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Servikal radikülopati": {
+            "explanation": "Servikal radikülopati bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Biseps tendiniti seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Lateral epikondilit": {
+            "explanation": "Lateral epikondilit bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Biseps tendiniti seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-tb-n95-airborne-isolation-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Enfeksiyon kontrolü",
+    "relatedBranch": "Tıbbi Mikrobiyoloji",
+    "tags": [
+      "tüberküloz",
+      "N95",
+      "hava yolu izolasyonu"
+    ],
+    "difficulty": "TUS Spot · Kolay",
+    "clinicalFocus": "Mycobacterium tuberculosis için N95 ve hava yolu izolasyonu",
+    "demographics": "Erişkin hasta",
+    "setting": "Servis izolasyon alanı",
+    "chiefComplaint": "Öksürük, gece terlemesi ve ARB pozitif balgam",
+    "stem": "Aktif akciğer tüberkülozu düşünülen hastayla temas sırasında kullanılacak izolasyon önlemi soruluyor.",
+    "vitals": {},
+    "exam": [
+      "Hasta öksürüyor; belirgin hemoptizi yok.",
+      "Solunum eforu stabil."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "management",
+    "question": "Bu hasta ile temas sırasında hangi izolasyon önlemi gerekir?",
+    "spotPearl": "Tüberküloz = hava yolu izolasyonu + N95; meningokok/boğmaca gibi etkenlerde damlacık önlemi öne çıkar.",
+    "learningOutcome": "Öğrenci enfeksiyon kontrolünde bulaş yoluna göre izolasyon seçer.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q39",
+    "diagnosis": {
+      "correct": "N95 maske ile hava yolu izolasyonu",
+      "options": [
+        "N95 maske ile hava yolu izolasyonu",
+        "Sadece standart cerrahi maske",
+        "Temas izolasyonu",
+        "Damlacık izolasyonu"
+      ],
+      "explanation": "Mycobacterium tuberculosis havayolu ile bulaşır; N95/FFP2 düzeyi maske ve uygun izolasyon gerekir.",
+      "pearls": [
+        "Tüberküloz = hava yolu izolasyonu + N95; meningokok/boğmaca gibi etkenlerde damlacık önlemi öne çıkar."
+      ],
+      "nextStep": "Öğrenci enfeksiyon kontrolünde bulaş yoluna göre izolasyon seçer.",
+      "answerFeedback": {
+        "correctDiagnosis": "N95 maske ile hava yolu izolasyonu",
+        "diagnosisMeta": "Mycobacterium tuberculosis için N95 ve hava yolu izolasyonu",
+        "shortDiagnosisMeta": "Enfeksiyon kontrolü",
+        "whyCorrect": "Mycobacterium tuberculosis havayolu ile bulaşır; N95/FFP2 düzeyi maske ve uygun izolasyon gerekir.",
+        "whyWrong": {
+          "Sadece standart cerrahi maske": "Sadece standart cerrahi maske bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu N95 maske ile hava yolu izolasyonu seçeneğini destekler.",
+          "Temas izolasyonu": "Temas izolasyonu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu N95 maske ile hava yolu izolasyonu seçeneğini destekler.",
+          "Damlacık izolasyonu": "Damlacık izolasyonu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu N95 maske ile hava yolu izolasyonu seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Öksürük, gece terlemesi ve ARB pozitif balgam",
+          "Aktif akciğer tüberkülozu düşünülen hastayla temas sırasında kullanılacak izolasyon önlemi soruluyor.",
+          "Hasta öksürüyor; belirgin hemoptizi yok."
+        ],
+        "clinicalPearls": [
+          "Tüberküloz = hava yolu izolasyonu + N95; meningokok/boğmaca gibi etkenlerde damlacık önlemi öne çıkar."
+        ],
+        "managementSteps": [
+          "Öğrenci enfeksiyon kontrolünde bulaş yoluna göre izolasyon seçer."
+        ],
+        "learningOutcome": "Öğrenci enfeksiyon kontrolünde bulaş yoluna göre izolasyon seçer.",
+        "differentialComparison": {
+          "Sadece standart cerrahi maske": {
+            "explanation": "Sadece standart cerrahi maske bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu N95 maske ile hava yolu izolasyonu seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Temas izolasyonu": {
+            "explanation": "Temas izolasyonu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu N95 maske ile hava yolu izolasyonu seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Damlacık izolasyonu": {
+            "explanation": "Damlacık izolasyonu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu N95 maske ile hava yolu izolasyonu seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-concussion-normal-ct-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Acil karar / Nöroloji",
+    "relatedBranch": "Küçük Stajlar",
+    "tags": [
+      "konküzyon",
+      "kafa travması"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Serebral konküzyonda geçici dikkat-oryantasyon bozukluğu ve normal BT",
+    "demographics": "Boksör",
+    "setting": "Acil servis",
+    "chiefComplaint": "Başına darbe sonrası baş ağrısı, amnezi ve bulanık görme",
+    "stem": "Spor sırasında başına darbe alan hastada kısa süreli dikkat ve konsantrasyon bozukluğu gelişiyor; GKS 15 ve kontrastsız BT normal.",
+    "vitals": {},
+    "exam": [
+      "GKS 15; fokal motor defisit saptanmıyor.",
+      "Kısa süreli amnezi ve baş dönmesi mevcut."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-concussion-ct",
+        "label": "Kontrastsız kraniyal BT",
+        "type": "radiology",
+        "summary": "Akut kanama veya kitle etkisi saptanmaz.",
+        "findings": [
+          "Akut kanama veya kitle etkisi saptanmaz."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Kontrastsız kraniyal BT",
+            "Akut kanama veya kitle etkisi saptanmaz.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu olguda en olası tanı hangisidir?",
+    "spotPearl": "Konküzyonda görüntüleme normal olabilir; tanı klinik geçici fonksiyon bozukluğu üzerinden konur.",
+    "learningOutcome": "Öğrenci minor kafa travmasında konküzyon paternini tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q40",
+    "diagnosis": {
+      "correct": "Serebral konküzyon",
+      "options": [
+        "Serebral konküzyon",
+        "Akut subdural kanama",
+        "Serebral kontüzyon",
+        "Subaraknoid kanama"
+      ],
+      "explanation": "Kafa travması sonrası geçici bilişsel bozulma, amnezi ve normal BT serebral konküzyon ile uyumludur.",
+      "pearls": [
+        "Konküzyonda görüntüleme normal olabilir; tanı klinik geçici fonksiyon bozukluğu üzerinden konur."
+      ],
+      "nextStep": "Öğrenci minor kafa travmasında konküzyon paternini tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Serebral konküzyon",
+        "diagnosisMeta": "Serebral konküzyonda geçici dikkat-oryantasyon bozukluğu ve normal BT",
+        "shortDiagnosisMeta": "Acil karar / Nöroloji",
+        "whyCorrect": "Kafa travması sonrası geçici bilişsel bozulma, amnezi ve normal BT serebral konküzyon ile uyumludur.",
+        "whyWrong": {
+          "Akut subdural kanama": "Akut subdural kanama bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serebral konküzyon seçeneğini destekler.",
+          "Serebral kontüzyon": "Serebral kontüzyon bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serebral konküzyon seçeneğini destekler.",
+          "Subaraknoid kanama": "Subaraknoid kanama bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serebral konküzyon seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Başına darbe sonrası baş ağrısı, amnezi ve bulanık görme",
+          "Spor sırasında başına darbe alan hastada kısa süreli dikkat ve konsantrasyon bozukluğu gelişiyor; GKS 15 ve kontrastsız BT normal.",
+          "GKS 15; fokal motor defisit saptanmıyor.",
+          "Akut kanama veya kitle etkisi saptanmaz."
+        ],
+        "clinicalPearls": [
+          "Konküzyonda görüntüleme normal olabilir; tanı klinik geçici fonksiyon bozukluğu üzerinden konur."
+        ],
+        "managementSteps": [
+          "Öğrenci minor kafa travmasında konküzyon paternini tanır."
+        ],
+        "learningOutcome": "Öğrenci minor kafa travmasında konküzyon paternini tanır.",
+        "differentialComparison": {
+          "Akut subdural kanama": {
+            "explanation": "Akut subdural kanama bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serebral konküzyon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Serebral kontüzyon": {
+            "explanation": "Serebral kontüzyon bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serebral konküzyon seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Subaraknoid kanama": {
+            "explanation": "Subaraknoid kanama bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Serebral konküzyon seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-neonatal-erythema-toxicum-eosinophils-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Pediatri / Dermatoloji",
+    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+    "tags": [
+      "eritema toksikum",
+      "yenidoğan"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Eritema toksikumda steril püstül ve Wright boyamada eozinofil",
+    "demographics": "2 günlük yenidoğan",
+    "setting": "Yenidoğan servisi",
+    "chiefComplaint": "Sırtta küçük papülopüstüler lezyonlar",
+    "stem": "Term yenidoğanda doğumdan kısa süre sonra sarı-beyaz küçük papülopüstüller gelişiyor; kültürde üreme yok ve lezyonlar hızla geriliyor.",
+    "vitals": {},
+    "exam": [
+      "Genel durum iyi; ateş veya toksik görünüm yok.",
+      "Sırt bölgesinde 1-2 mm papülopüstüler lezyonlar izleniyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-erythema-toxic-wright",
+        "label": "Püstül materyali Wright boyası",
+        "type": "microbiology",
+        "summary": "Bol eozinofil görülür; kültürde üreme olmaz.",
+        "findings": [
+          "Bol eozinofil görülür; kültürde üreme olmaz."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Püstül materyali Wright boyası",
+            "Bol eozinofil görülür; kültürde üreme olmaz.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu lezyonlar için en olası tanı hangisidir?",
+    "spotPearl": "Eritema toksikum benign ve kendini sınırlayıcıdır; püstül içeriğinde eozinofiller görülebilir.",
+    "learningOutcome": "Öğrenci yenidoğan döküntülerinde benign paternleri ayırt eder.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q43",
+    "diagnosis": {
+      "correct": "Eritema toksikum",
+      "options": [
+        "Eritema toksikum",
+        "Neonatal akne",
+        "Miliaria rubra",
+        "İnfantil akropüstülozis"
+      ],
+      "explanation": "Sağlıklı yenidoğanda steril püstüller, eozinofil baskın mikroskopi ve spontan gerileme eritema toksikum için tipiktir.",
+      "pearls": [
+        "Eritema toksikum benign ve kendini sınırlayıcıdır; püstül içeriğinde eozinofiller görülebilir."
+      ],
+      "nextStep": "Öğrenci yenidoğan döküntülerinde benign paternleri ayırt eder.",
+      "answerFeedback": {
+        "correctDiagnosis": "Eritema toksikum",
+        "diagnosisMeta": "Eritema toksikumda steril püstül ve Wright boyamada eozinofil",
+        "shortDiagnosisMeta": "Pediatri / Dermatoloji",
+        "whyCorrect": "Sağlıklı yenidoğanda steril püstüller, eozinofil baskın mikroskopi ve spontan gerileme eritema toksikum için tipiktir.",
+        "whyWrong": {
+          "Neonatal akne": "Neonatal akne bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Eritema toksikum seçeneğini destekler.",
+          "Miliaria rubra": "Miliaria rubra bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Eritema toksikum seçeneğini destekler.",
+          "İnfantil akropüstülozis": "İnfantil akropüstülozis bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Eritema toksikum seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Sırtta küçük papülopüstüler lezyonlar",
+          "Term yenidoğanda doğumdan kısa süre sonra sarı-beyaz küçük papülopüstüller gelişiyor; kültürde üreme yok ve lezyonlar hızla geriliyor.",
+          "Genel durum iyi; ateş veya toksik görünüm yok.",
+          "Bol eozinofil görülür; kültürde üreme olmaz."
+        ],
+        "clinicalPearls": [
+          "Eritema toksikum benign ve kendini sınırlayıcıdır; püstül içeriğinde eozinofiller görülebilir."
+        ],
+        "managementSteps": [
+          "Öğrenci yenidoğan döküntülerinde benign paternleri ayırt eder."
+        ],
+        "learningOutcome": "Öğrenci yenidoğan döküntülerinde benign paternleri ayırt eder.",
+        "differentialComparison": {
+          "Neonatal akne": {
+            "explanation": "Neonatal akne bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Eritema toksikum seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Miliaria rubra": {
+            "explanation": "Miliaria rubra bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Eritema toksikum seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "İnfantil akropüstülozis": {
+            "explanation": "İnfantil akropüstülozis bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Eritema toksikum seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-acute-hav-igm-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Pediatri",
+    "relatedBranch": "Tıbbi Mikrobiyoloji",
+    "tags": [
+      "HAV",
+      "Anti-HAV IgM"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Akut hepatit A tanısında Anti-HAV IgM",
+    "demographics": "10 yaşında kız çocuk",
+    "setting": "Çocuk acil",
+    "chiefComplaint": "Halsizlik, kusma, koyu idrar ve sarılık",
+    "stem": "Yaz kampından birkaç hafta sonra halsizlik, kusma, koyu idrar ve ikter gelişen çocukta akut hepatit düşünülüyor.",
+    "vitals": {},
+    "exam": [
+      "Skleralarda ikter ve hepatomegali mevcut.",
+      "Batında sağ üst kadran hassasiyeti var; ensefalopati bulgusu yok."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-hav-igm",
+        "label": "Hepatit A serolojisi",
+        "type": "serology",
+        "summary": "Anti-HAV IgM pozitif saptanır; akut hepatit A ile uyumludur.",
+        "findings": [
+          "Anti-HAV IgM pozitif saptanır; akut hepatit A ile uyumludur."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Hepatit A serolojisi",
+            "Anti-HAV IgM pozitif saptanır; akut hepatit A ile uyumludur.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "En olası tanıyı desteklemek için öncelikle hangi test istenmelidir?",
+    "spotPearl": "Akut HAV = Anti-HAV IgM; geçirilmiş/aşılı bağışıklıkta Anti-HAV IgG beklenir.",
+    "learningOutcome": "Öğrenci akut viral hepatit serolojisini doğru seçer.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q44",
+    "diagnosis": {
+      "correct": "Anti-HAV IgM",
+      "options": [
+        "Anti-HAV IgM",
+        "Direkt Coombs",
+        "Ozmotik frajilite",
+        "Hemoglobin elektroforezi"
+      ],
+      "explanation": "Akut hepatit A enfeksiyonunda tanıyı destekleyen serolojik belirteç Anti-HAV IgM’dir.",
+      "pearls": [
+        "Akut HAV = Anti-HAV IgM; geçirilmiş/aşılı bağışıklıkta Anti-HAV IgG beklenir."
+      ],
+      "nextStep": "Öğrenci akut viral hepatit serolojisini doğru seçer.",
+      "answerFeedback": {
+        "correctDiagnosis": "Anti-HAV IgM",
+        "diagnosisMeta": "Akut hepatit A tanısında Anti-HAV IgM",
+        "shortDiagnosisMeta": "Tetkik / Pediatri",
+        "whyCorrect": "Akut hepatit A enfeksiyonunda tanıyı destekleyen serolojik belirteç Anti-HAV IgM’dir.",
+        "whyWrong": {
+          "Direkt Coombs": "Direkt Coombs bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-HAV IgM seçeneğini destekler.",
+          "Ozmotik frajilite": "Ozmotik frajilite bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-HAV IgM seçeneğini destekler.",
+          "Hemoglobin elektroforezi": "Hemoglobin elektroforezi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-HAV IgM seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Halsizlik, kusma, koyu idrar ve sarılık",
+          "Yaz kampından birkaç hafta sonra halsizlik, kusma, koyu idrar ve ikter gelişen çocukta akut hepatit düşünülüyor.",
+          "Skleralarda ikter ve hepatomegali mevcut.",
+          "Anti-HAV IgM pozitif saptanır; akut hepatit A ile uyumludur."
+        ],
+        "clinicalPearls": [
+          "Akut HAV = Anti-HAV IgM; geçirilmiş/aşılı bağışıklıkta Anti-HAV IgG beklenir."
+        ],
+        "managementSteps": [
+          "Öğrenci akut viral hepatit serolojisini doğru seçer."
+        ],
+        "learningOutcome": "Öğrenci akut viral hepatit serolojisini doğru seçer.",
+        "differentialComparison": {
+          "Direkt Coombs": {
+            "explanation": "Direkt Coombs bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-HAV IgM seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Ozmotik frajilite": {
+            "explanation": "Ozmotik frajilite bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-HAV IgM seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Hemoglobin elektroforezi": {
+            "explanation": "Hemoglobin elektroforezi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Anti-HAV IgM seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-thiamine-responsive-megaloblastic-anemia-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Temel bilim / Pediatri",
+    "relatedBranch": "Tıbbi Biyokimya",
+    "tags": [
+      "tiamin",
+      "TRMA",
+      "makrositer anemi"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Tiamin taşıyıcı bozukluğuna bağlı tiamin yanıtlı megaloblastik anemi",
+    "demographics": "2 yaşında kız çocuk",
+    "setting": "Çocuk metabolizma polikliniği",
+    "chiefComplaint": "Gelişme geriliği ve ağır anemi",
+    "stem": "Akraba ebeveynlerin çocuğunda sensorinöral işitme kaybı ve diyabet öyküsüne ağır makrositer anemi eşlik ediyor.",
+    "vitals": {},
+    "exam": [
+      "Yaşıtlarına göre zayıf ve kısa görünümde.",
+      "Belirgin solukluk var; akut kanama bulgusu yok."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-trma-cbc",
+        "label": "Tam kan sayımı",
+        "type": "hematology",
+        "summary": "Hemoglobin 5 g/dL, MCV 110 fL; ağır makrositer anemi.",
+        "findings": [
+          "Hemoglobin 5 g/dL, MCV 110 fL; ağır makrositer anemi."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Tam kan sayımı",
+            "Hemoglobin 5 g/dL, MCV 110 fL; ağır makrositer anemi.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "spot",
+    "question": "Bu tabloya en olası olarak hangi vitamin eksikliği/taşıma bozukluğu yol açar?",
+    "spotPearl": "TRMA sendromu: tiamin yanıtlı megaloblastik anemi + diyabet + sensorinöral işitme kaybı.",
+    "learningOutcome": "Öğrenci pediatrik metabolik sendromu vitamin ilişkisiyle eşleştirir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q45",
+    "diagnosis": {
+      "correct": "Tiamin",
+      "options": [
+        "Tiamin",
+        "Piridoksin",
+        "Riboflavin",
+        "Niasin"
+      ],
+      "explanation": "Diyabet, sensorinöral işitme kaybı ve megaloblastik anemi birlikteliği tiamin yanıtlı megaloblastik anemi sendromunu düşündürür.",
+      "pearls": [
+        "TRMA sendromu: tiamin yanıtlı megaloblastik anemi + diyabet + sensorinöral işitme kaybı."
+      ],
+      "nextStep": "Öğrenci pediatrik metabolik sendromu vitamin ilişkisiyle eşleştirir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Tiamin",
+        "diagnosisMeta": "Tiamin taşıyıcı bozukluğuna bağlı tiamin yanıtlı megaloblastik anemi",
+        "shortDiagnosisMeta": "Temel bilim / Pediatri",
+        "whyCorrect": "Diyabet, sensorinöral işitme kaybı ve megaloblastik anemi birlikteliği tiamin yanıtlı megaloblastik anemi sendromunu düşündürür.",
+        "whyWrong": {
+          "Piridoksin": "Piridoksin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tiamin seçeneğini destekler.",
+          "Riboflavin": "Riboflavin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tiamin seçeneğini destekler.",
+          "Niasin": "Niasin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tiamin seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Gelişme geriliği ve ağır anemi",
+          "Akraba ebeveynlerin çocuğunda sensorinöral işitme kaybı ve diyabet öyküsüne ağır makrositer anemi eşlik ediyor.",
+          "Yaşıtlarına göre zayıf ve kısa görünümde.",
+          "Hemoglobin 5 g/dL, MCV 110 fL; ağır makrositer anemi."
+        ],
+        "clinicalPearls": [
+          "TRMA sendromu: tiamin yanıtlı megaloblastik anemi + diyabet + sensorinöral işitme kaybı."
+        ],
+        "managementSteps": [
+          "Öğrenci pediatrik metabolik sendromu vitamin ilişkisiyle eşleştirir."
+        ],
+        "learningOutcome": "Öğrenci pediatrik metabolik sendromu vitamin ilişkisiyle eşleştirir.",
+        "differentialComparison": {
+          "Piridoksin": {
+            "explanation": "Piridoksin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tiamin seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Riboflavin": {
+            "explanation": "Riboflavin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tiamin seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Niasin": {
+            "explanation": "Niasin bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tiamin seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-xlinked-ald-white-matter-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Temel bilim / Nöroloji",
+    "relatedBranch": "Tıbbi Biyokimya",
+    "tags": [
+      "adrenolökodistrofi",
+      "VLCFA",
+      "peroksizom"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "X-ALD’de çok uzun zincirli yağ asidi artışı ve beyaz cevher tutulumu",
+    "demographics": "Sınav spotu",
+    "setting": "TUS tekrar modülü",
+    "chiefComplaint": "X’e bağlı adrenolökodistrofi bilgisi",
+    "stem": "Öğrenciden X’e bağlı adrenolökodistrofi için doğru ve yanlış özellikleri ayırması isteniyor.",
+    "vitals": {},
+    "exam": [
+      "Muayene gerektirmeyen sınav spotu."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "spot",
+    "question": "X’e bağlı adrenolökodistrofi için aşağıdakilerden hangisi yanlıştır?",
+    "spotPearl": "X-ALD = ABCD1/peroksizom + VLCFA artışı + adrenal yetmezlik + beyaz cevher hastalığı.",
+    "learningOutcome": "Öğrenci metabolik nörolojik hastalıkta temel patolojiyi ayırt eder.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q46",
+    "diagnosis": {
+      "correct": "İlerleyici gri cevher hastalığıdır",
+      "options": [
+        "İlerleyici gri cevher hastalığıdır",
+        "Plazmada çok uzun zincirli yağ asitleri yüksektir",
+        "İzole adrenal yetmezlikle seyredebilir",
+        "MR lezyonları posterior bölgelerde görülebilir"
+      ],
+      "explanation": "X-ALD peroksizomal bozukluk olup çok uzun zincirli yağ asitleri birikir ve santral sinir sisteminde özellikle beyaz cevher etkilenir.",
+      "pearls": [
+        "X-ALD = ABCD1/peroksizom + VLCFA artışı + adrenal yetmezlik + beyaz cevher hastalığı."
+      ],
+      "nextStep": "Öğrenci metabolik nörolojik hastalıkta temel patolojiyi ayırt eder.",
+      "answerFeedback": {
+        "correctDiagnosis": "İlerleyici gri cevher hastalığıdır",
+        "diagnosisMeta": "X-ALD’de çok uzun zincirli yağ asidi artışı ve beyaz cevher tutulumu",
+        "shortDiagnosisMeta": "Temel bilim / Nöroloji",
+        "whyCorrect": "X-ALD peroksizomal bozukluk olup çok uzun zincirli yağ asitleri birikir ve santral sinir sisteminde özellikle beyaz cevher etkilenir.",
+        "whyWrong": {
+          "Plazmada çok uzun zincirli yağ asitleri yüksektir": "Plazmada çok uzun zincirli yağ asitleri yüksektir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İlerleyici gri cevher hastalığıdır seçeneğini destekler.",
+          "İzole adrenal yetmezlikle seyredebilir": "İzole adrenal yetmezlikle seyredebilir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İlerleyici gri cevher hastalığıdır seçeneğini destekler.",
+          "MR lezyonları posterior bölgelerde görülebilir": "MR lezyonları posterior bölgelerde görülebilir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İlerleyici gri cevher hastalığıdır seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "X’e bağlı adrenolökodistrofi bilgisi",
+          "Öğrenciden X’e bağlı adrenolökodistrofi için doğru ve yanlış özellikleri ayırması isteniyor.",
+          "Muayene gerektirmeyen sınav spotu."
+        ],
+        "clinicalPearls": [
+          "X-ALD = ABCD1/peroksizom + VLCFA artışı + adrenal yetmezlik + beyaz cevher hastalığı."
+        ],
+        "managementSteps": [
+          "Öğrenci metabolik nörolojik hastalıkta temel patolojiyi ayırt eder."
+        ],
+        "learningOutcome": "Öğrenci metabolik nörolojik hastalıkta temel patolojiyi ayırt eder.",
+        "differentialComparison": {
+          "Plazmada çok uzun zincirli yağ asitleri yüksektir": {
+            "explanation": "Plazmada çok uzun zincirli yağ asitleri yüksektir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İlerleyici gri cevher hastalığıdır seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "İzole adrenal yetmezlikle seyredebilir": {
+            "explanation": "İzole adrenal yetmezlikle seyredebilir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İlerleyici gri cevher hastalığıdır seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "MR lezyonları posterior bölgelerde görülebilir": {
+            "explanation": "MR lezyonları posterior bölgelerde görülebilir bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu İlerleyici gri cevher hastalığıdır seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-apeced-candidiasis-hypoparathyroid-addison-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tanı / Endokrinoloji",
+    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+    "tags": [
+      "APECED",
+      "kandidiyazis",
+      "adrenal yetmezlik"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Tip 1 otoimmün poliglandüler sendromda kandidiyazis, hipoparatiroidi/adrenal yetmezlik ilişkisi",
+    "demographics": "15 yaşında kız",
+    "setting": "Çocuk endokrin polikliniği",
+    "chiefComplaint": "Puberte gecikmesi ve mukokutanöz bulgular",
+    "stem": "Kronik kandidiyal ağız lezyonları, mukozal hiperpigmentasyon, tırnak distrofisi ve gelişimsel gecikme bulguları olan ergende otoimmün endokrinopati düşünülüyor.",
+    "vitals": {},
+    "exam": [
+      "Deri altı yağ dokusu azalmış, tırnaklarda distrofi var.",
+      "Ağızda kandidiyal lezyon ve mukozalarda hiperpigmentasyon izleniyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu tabloyla en uyumlu tanı hangisidir?",
+    "spotPearl": "APECED triadı: kronik mukokutanöz kandidiyazis, hipoparatiroidi, adrenal yetmezlik.",
+    "learningOutcome": "Öğrenci otoimmün poliglandüler sendrom ipuçlarını tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q47",
+    "diagnosis": {
+      "correct": "Tip 1 otoimmün endokrinopati",
+      "options": [
+        "Tip 1 otoimmün endokrinopati",
+        "Turner sendromu",
+        "Kallmann sendromu",
+        "Çölyak hastalığı"
+      ],
+      "explanation": "Kronik mukokutanöz kandidiyazis, adrenal yetmezlik/hipoparatiroidi bulguları ve ektodermal değişiklikler APECED/tip 1 otoimmün poliglandüler sendromu düşündürür.",
+      "pearls": [
+        "APECED triadı: kronik mukokutanöz kandidiyazis, hipoparatiroidi, adrenal yetmezlik."
+      ],
+      "nextStep": "Öğrenci otoimmün poliglandüler sendrom ipuçlarını tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Tip 1 otoimmün endokrinopati",
+        "diagnosisMeta": "Tip 1 otoimmün poliglandüler sendromda kandidiyazis, hipoparatiroidi/adrenal yetmezlik ilişkisi",
+        "shortDiagnosisMeta": "Tanı / Endokrinoloji",
+        "whyCorrect": "Kronik mukokutanöz kandidiyazis, adrenal yetmezlik/hipoparatiroidi bulguları ve ektodermal değişiklikler APECED/tip 1 otoimmün poliglandüler sendromu düşündürür.",
+        "whyWrong": {
+          "Turner sendromu": "Turner sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tip 1 otoimmün endokrinopati seçeneğini destekler.",
+          "Kallmann sendromu": "Kallmann sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tip 1 otoimmün endokrinopati seçeneğini destekler.",
+          "Çölyak hastalığı": "Çölyak hastalığı bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tip 1 otoimmün endokrinopati seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Puberte gecikmesi ve mukokutanöz bulgular",
+          "Kronik kandidiyal ağız lezyonları, mukozal hiperpigmentasyon, tırnak distrofisi ve gelişimsel gecikme bulguları olan ergende otoimmün endokrinopati düşünülüyor.",
+          "Deri altı yağ dokusu azalmış, tırnaklarda distrofi var."
+        ],
+        "clinicalPearls": [
+          "APECED triadı: kronik mukokutanöz kandidiyazis, hipoparatiroidi, adrenal yetmezlik."
+        ],
+        "managementSteps": [
+          "Öğrenci otoimmün poliglandüler sendrom ipuçlarını tanır."
+        ],
+        "learningOutcome": "Öğrenci otoimmün poliglandüler sendrom ipuçlarını tanır.",
+        "differentialComparison": {
+          "Turner sendromu": {
+            "explanation": "Turner sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tip 1 otoimmün endokrinopati seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Kallmann sendromu": {
+            "explanation": "Kallmann sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tip 1 otoimmün endokrinopati seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Çölyak hastalığı": {
+            "explanation": "Çölyak hastalığı bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Tip 1 otoimmün endokrinopati seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-homocystinuria-stroke-lens-long-fingers-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tıbbi Biyokimya / Pediatri",
+    "relatedBranch": "Tıbbi Biyokimya",
+    "tags": [
+      "homosistinüri",
+      "tromboz",
+      "lens ektopisi"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Klasik homosistinüri bulguları: lens ektopisi, marfanoid görünüm, tromboz",
+    "demographics": "10 yaşında erkek",
+    "setting": "Çocuk acil",
+    "chiefComplaint": "İshal sonrası sol tarafta güçsüzlük",
+    "stem": "Akrabalık öyküsü olan çocukta uzun boy, ince uzun parmaklar, önceki göz ameliyatı ve akut tromboembolik inme bulguları bulunuyor.",
+    "vitals": {},
+    "exam": [
+      "Açık saç rengi, uzun ince parmaklar ve marfanoid görünüm dikkat çekiyor.",
+      "Sol hemiparezi bulguları mevcut."
+    ],
+    "investigations": [],
+    "images": [],
+    "questionType": "diagnosis",
+    "question": "Bu çocukta en olası doğumsal metabolik hastalık hangisidir?",
+    "spotPearl": "Homosistinüri = lens ektopisi aşağı-içe, marfanoid görünüm, tromboz riski.",
+    "learningOutcome": "Öğrenci metabolik hastalıkta fenotip-tromboz ilişkisini tanır.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q48",
+    "diagnosis": {
+      "correct": "Klasik homosistinüri",
+      "options": [
+        "Klasik homosistinüri",
+        "Fenilketonüri",
+        "Hurler sendromu",
+        "Gaucher sendromu"
+      ],
+      "explanation": "Lens ektopisi/oftalmolojik cerrahi öyküsü, marfanoid görünüm, gelişimsel sorunlar ve tromboemboli klasik homosistinüriyi düşündürür.",
+      "pearls": [
+        "Homosistinüri = lens ektopisi aşağı-içe, marfanoid görünüm, tromboz riski."
+      ],
+      "nextStep": "Öğrenci metabolik hastalıkta fenotip-tromboz ilişkisini tanır.",
+      "answerFeedback": {
+        "correctDiagnosis": "Klasik homosistinüri",
+        "diagnosisMeta": "Klasik homosistinüri bulguları: lens ektopisi, marfanoid görünüm, tromboz",
+        "shortDiagnosisMeta": "Tıbbi Biyokimya / Pediatri",
+        "whyCorrect": "Lens ektopisi/oftalmolojik cerrahi öyküsü, marfanoid görünüm, gelişimsel sorunlar ve tromboemboli klasik homosistinüriyi düşündürür.",
+        "whyWrong": {
+          "Fenilketonüri": "Fenilketonüri bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Klasik homosistinüri seçeneğini destekler.",
+          "Hurler sendromu": "Hurler sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Klasik homosistinüri seçeneğini destekler.",
+          "Gaucher sendromu": "Gaucher sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Klasik homosistinüri seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "İshal sonrası sol tarafta güçsüzlük",
+          "Akrabalık öyküsü olan çocukta uzun boy, ince uzun parmaklar, önceki göz ameliyatı ve akut tromboembolik inme bulguları bulunuyor.",
+          "Açık saç rengi, uzun ince parmaklar ve marfanoid görünüm dikkat çekiyor."
+        ],
+        "clinicalPearls": [
+          "Homosistinüri = lens ektopisi aşağı-içe, marfanoid görünüm, tromboz riski."
+        ],
+        "managementSteps": [
+          "Öğrenci metabolik hastalıkta fenotip-tromboz ilişkisini tanır."
+        ],
+        "learningOutcome": "Öğrenci metabolik hastalıkta fenotip-tromboz ilişkisini tanır.",
+        "differentialComparison": {
+          "Fenilketonüri": {
+            "explanation": "Fenilketonüri bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Klasik homosistinüri seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Hurler sendromu": {
+            "explanation": "Hurler sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Klasik homosistinüri seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Gaucher sendromu": {
+            "explanation": "Gaucher sendromu bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Klasik homosistinüri seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-fetomaternal-hemorrhage-kleihauer-betke-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Tetkik / Yenidoğan",
+    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+    "tags": [
+      "fetomaternal kanama",
+      "Kleihauer-Betke"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Fetomaternal kanama tanısında Kleihauer-Betke testi",
+    "demographics": "Term yenidoğan",
+    "setting": "Yenidoğan servisi",
+    "chiefComplaint": "Doğumda solukluk ve ağır anemi",
+    "stem": "Doğumda soluk görünen bebekte ağır anemi var; periferik yaymada hemoliz yok ve direkt Coombs negatif.",
+    "vitals": {},
+    "exam": [
+      "Genel muayene doğumsal anomali veya aktif kanama göstermiyor.",
+      "Belirgin solukluk dışında fizik muayene olağan."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-kleihauer-betke",
+        "label": "Kleihauer-Betke testi",
+        "type": "hematology",
+        "summary": "Maternal kanda fetal eritrositler saptanır; fetomaternal kanama lehine.",
+        "findings": [
+          "Maternal kanda fetal eritrositler saptanır; fetomaternal kanama lehine."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Kleihauer-Betke testi",
+            "Maternal kanda fetal eritrositler saptanır; fetomaternal kanama lehine.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "test",
+    "question": "Bu tanıyı doğrulamak için en uygun test hangisidir?",
+    "spotPearl": "Kleihauer-Betke testi fetal hemoglobini maternal dolaşımda saptayarak fetomaternal kanamayı destekler.",
+    "learningOutcome": "Öğrenci yenidoğan anemisinde doğru doğrulayıcı testi seçer.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q49",
+    "diagnosis": {
+      "correct": "Kleihauer-Betke testi",
+      "options": [
+        "Kleihauer-Betke testi",
+        "İndirekt Coombs testi",
+        "Eritropoietin düzeyi",
+        "Plazma haptoglobin düzeyi"
+      ],
+      "explanation": "Hemolizsiz ağır yenidoğan anemisi fetomaternal kanamayı düşündürür; Kleihauer-Betke testi maternal kanda fetal eritrositleri gösterir.",
+      "pearls": [
+        "Kleihauer-Betke testi fetal hemoglobini maternal dolaşımda saptayarak fetomaternal kanamayı destekler."
+      ],
+      "nextStep": "Öğrenci yenidoğan anemisinde doğru doğrulayıcı testi seçer.",
+      "answerFeedback": {
+        "correctDiagnosis": "Kleihauer-Betke testi",
+        "diagnosisMeta": "Fetomaternal kanama tanısında Kleihauer-Betke testi",
+        "shortDiagnosisMeta": "Tetkik / Yenidoğan",
+        "whyCorrect": "Hemolizsiz ağır yenidoğan anemisi fetomaternal kanamayı düşündürür; Kleihauer-Betke testi maternal kanda fetal eritrositleri gösterir.",
+        "whyWrong": {
+          "İndirekt Coombs testi": "İndirekt Coombs testi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Kleihauer-Betke testi seçeneğini destekler.",
+          "Eritropoietin düzeyi": "Eritropoietin düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Kleihauer-Betke testi seçeneğini destekler.",
+          "Plazma haptoglobin düzeyi": "Plazma haptoglobin düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Kleihauer-Betke testi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Doğumda solukluk ve ağır anemi",
+          "Doğumda soluk görünen bebekte ağır anemi var; periferik yaymada hemoliz yok ve direkt Coombs negatif.",
+          "Genel muayene doğumsal anomali veya aktif kanama göstermiyor.",
+          "Maternal kanda fetal eritrositler saptanır; fetomaternal kanama lehine."
+        ],
+        "clinicalPearls": [
+          "Kleihauer-Betke testi fetal hemoglobini maternal dolaşımda saptayarak fetomaternal kanamayı destekler."
+        ],
+        "managementSteps": [
+          "Öğrenci yenidoğan anemisinde doğru doğrulayıcı testi seçer."
+        ],
+        "learningOutcome": "Öğrenci yenidoğan anemisinde doğru doğrulayıcı testi seçer.",
+        "differentialComparison": {
+          "İndirekt Coombs testi": {
+            "explanation": "İndirekt Coombs testi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Kleihauer-Betke testi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Eritropoietin düzeyi": {
+            "explanation": "Eritropoietin düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Kleihauer-Betke testi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Plazma haptoglobin düzeyi": {
+            "explanation": "Plazma haptoglobin düzeyi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Kleihauer-Betke testi seçeneğini destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "tus-spot-pdf-hie-therapeutic-hypothermia-001",
+    "branchId": "tus-spot-olgular",
+    "caseType": "spot",
+    "spotCategory": "Yenidoğan / Tedavi",
+    "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
+    "tags": [
+      "HİE",
+      "hipotermi"
+    ],
+    "difficulty": "TUS Spot · Orta",
+    "clinicalFocus": "Hipoksik iskemik ensefalopatide nörolojik sekel azaltmak için hipotermi tedavisi",
+    "demographics": "Yenidoğan",
+    "setting": "Yenidoğan yoğun bakım",
+    "chiefComplaint": "Doğumda resüsitasyon ve asidoz",
+    "stem": "Canlandırma gereken term bebekte ağır asidoz ve orta derecede hipoksik iskemik ensefalopati bulguları gelişiyor.",
+    "vitals": {},
+    "exam": [
+      "Letarji, tonus azalması ve zayıf emme izleniyor.",
+      "Nöbet aktivitesi açısından yakın izlem gerekiyor."
+    ],
+    "investigations": [
+      {
+        "id": "tus-spot-hie-cord-gas",
+        "label": "Kord kan gazı",
+        "type": "bloodGas",
+        "summary": "pH 6.9 ve baz açığı -15; perinatal asfiksi lehine ağır metabolik asidoz.",
+        "findings": [
+          "pH 6.9 ve baz açığı -15; perinatal asfiksi lehine ağır metabolik asidoz."
+        ],
+        "priority": "useful",
+        "rows": [
+          [
+            "Kord kan gazı",
+            "pH 6.9 ve baz açığı -15; perinatal asfiksi lehine ağır metabolik asidoz.",
+            "Beklenen/karar eşiği",
+            "Karar verdirici"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "questionType": "treatment",
+    "question": "Nörolojik sekel riskini azaltmak için en uygun yaklaşım hangisidir?",
+    "spotPearl": "HİE’de ilk 6 saat içinde başlanan terapötik hipotermi yüksek verimli tedavi bilgisidir.",
+    "learningOutcome": "Öğrenci neonatal HİE tedavi prensibini bilir.",
+    "managementSequence": {
+      "enabled": false
+    },
+    "sourceQuestion": "PDF 2018 KTBT Q50",
+    "diagnosis": {
+      "correct": "Hipotermi tedavisi",
+      "options": [
+        "Hipotermi tedavisi",
+        "Hiperbarik oksijen",
+        "Periton diyalizi",
+        "Rutin profilaktik antibiyotik"
+      ],
+      "explanation": "Uygun gestasyonel yaş ve zaman penceresinde orta-ağır HİE’de terapötik hipotermi nörolojik sekel riskini azaltır.",
+      "pearls": [
+        "HİE’de ilk 6 saat içinde başlanan terapötik hipotermi yüksek verimli tedavi bilgisidir."
+      ],
+      "nextStep": "Öğrenci neonatal HİE tedavi prensibini bilir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Hipotermi tedavisi",
+        "diagnosisMeta": "Hipoksik iskemik ensefalopatide nörolojik sekel azaltmak için hipotermi tedavisi",
+        "shortDiagnosisMeta": "Yenidoğan / Tedavi",
+        "whyCorrect": "Uygun gestasyonel yaş ve zaman penceresinde orta-ağır HİE’de terapötik hipotermi nörolojik sekel riskini azaltır.",
+        "whyWrong": {
+          "Hiperbarik oksijen": "Hiperbarik oksijen bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hipotermi tedavisi seçeneğini destekler.",
+          "Periton diyalizi": "Periton diyalizi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hipotermi tedavisi seçeneğini destekler.",
+          "Rutin profilaktik antibiyotik": "Rutin profilaktik antibiyotik bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hipotermi tedavisi seçeneğini destekler."
+        },
+        "evidenceChain": [
+          "Doğumda resüsitasyon ve asidoz",
+          "Canlandırma gereken term bebekte ağır asidoz ve orta derecede hipoksik iskemik ensefalopati bulguları gelişiyor.",
+          "Letarji, tonus azalması ve zayıf emme izleniyor.",
+          "pH 6.9 ve baz açığı -15; perinatal asfiksi lehine ağır metabolik asidoz."
+        ],
+        "clinicalPearls": [
+          "HİE’de ilk 6 saat içinde başlanan terapötik hipotermi yüksek verimli tedavi bilgisidir."
+        ],
+        "managementSteps": [
+          "Öğrenci neonatal HİE tedavi prensibini bilir."
+        ],
+        "learningOutcome": "Öğrenci neonatal HİE tedavi prensibini bilir.",
+        "differentialComparison": {
+          "Hiperbarik oksijen": {
+            "explanation": "Hiperbarik oksijen bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hipotermi tedavisi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Periton diyalizi": {
+            "explanation": "Periton diyalizi bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hipotermi tedavisi seçeneğini destekler.",
+            "comparisonPoints": []
+          },
+          "Rutin profilaktik antibiyotik": {
+            "explanation": "Rutin profilaktik antibiyotik bu olguda güçlü bir çeldiricidir; ancak karar verdirici ipucu Hipotermi tedavisi seçeneğini destekler.",
             "comparisonPoints": []
           }
         }

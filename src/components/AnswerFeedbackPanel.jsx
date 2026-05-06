@@ -242,7 +242,7 @@ function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, classN
   );
 }
 
-function ResultSummary({ isCorrect, diagnosis, points, diagnosisMeta, glossaryEnabled = true }) {
+function ResultSummary({ isCorrect, diagnosis, points, diagnosisMeta, glossaryEnabled = true, isSpotCase = false }) {
   const statusTone = isCorrect ? 'success' : 'danger';
   return (
     <header className={`answer-feedback-summary ${statusTone}`}>
@@ -251,12 +251,12 @@ function ResultSummary({ isCorrect, diagnosis, points, diagnosisMeta, glossaryEn
       </div>
       <div className="answer-feedback-summary-copy">
         <span className={`feedback-status-pill ${statusTone}`}>{isCorrect ? 'Doğru' : 'Yanlış'}</span>
-        <h3>{isCorrect ? 'Tanı doğru seçildi' : 'Seçilen tanı doğru değil'}</h3>
-        {isCorrect ? <p><GlossaryText text={diagnosis} enabled={glossaryEnabled} /></p> : <p>Doğru yanıt ve seçilen tanı aşağıda karşılaştırılmıştır.</p>}
+        <h3>{isCorrect ? (isSpotCase ? 'Karar doğru seçildi' : 'Tanı doğru seçildi') : (isSpotCase ? 'Seçilen yanıt doğru değil' : 'Seçilen tanı doğru değil')}</h3>
+        {isCorrect ? <p><GlossaryText text={diagnosis} enabled={glossaryEnabled} /></p> : <p>{isSpotCase ? 'Doğru yanıt ve seçilen seçenek aşağıda karşılaştırılmıştır.' : 'Doğru yanıt ve seçilen tanı aşağıda karşılaştırılmıştır.'}</p>}
         {isCorrect && diagnosisMeta ? <small><GlossaryText text={diagnosisMeta} enabled={glossaryEnabled} /></small> : null}
       </div>
       <div className="answer-feedback-meta-row" aria-label="Yanıt özeti">
-        {isCorrect ? <span>Vaka puanı: {points} p</span> : <span>Tanı puanı: 0</span>}
+        {isCorrect ? <span>Vaka puanı: {points} p</span> : <span>{isSpotCase ? 'Yanıt puanı: 0' : 'Tanı puanı: 0'}</span>}
       </div>
     </header>
   );
@@ -264,7 +264,7 @@ function ResultSummary({ isCorrect, diagnosis, points, diagnosisMeta, glossaryEn
 
 function DiagnosisSummaryCard({ diagnosis, diagnosisMeta }) {
   return (
-    <FeedbackSection icon="Target" tone="success" eyebrow="Tanısal sonuç" title="Doğru tanı" className="diagnosis-summary-card">
+    <FeedbackSection icon="Target" tone="success" eyebrow={isSpotCase ? 'Doğru seçenek' : 'Tanısal sonuç'} title={isSpotCase ? 'Doğru yanıt' : 'Doğru tanı'} className="diagnosis-summary-card">
       <div className="diagnosis-name-card">
         <strong><GlossaryText text={diagnosis} enabled={glossaryEnabled} /></strong>
         {diagnosisMeta ? <span>{diagnosisMeta}</span> : null}
@@ -273,15 +273,15 @@ function DiagnosisSummaryCard({ diagnosis, diagnosisMeta }) {
   );
 }
 
-function DiagnosisComparisonCard({ diagnosis, selected, glossaryEnabled = true }) {
+function DiagnosisComparisonCard({ diagnosis, selected, glossaryEnabled = true, isSpotCase = false }) {
   return (
     <section className="diagnosis-comparison-card" aria-label="Doğru tanı ve seçilen tanı karşılaştırması">
       <div className="diagnosis-compare-item correct">
-        <span>Doğru tanı</span>
+        <span>{isSpotCase ? 'Doğru yanıt' : 'Doğru tanı'}</span>
         <strong><GlossaryText text={diagnosis} enabled={glossaryEnabled} /></strong>
       </div>
       <div className="diagnosis-compare-item wrong">
-        <span>Seçilen tanı</span>
+        <span>{isSpotCase ? 'Seçilen yanıt' : 'Seçilen tanı'}</span>
         <strong><GlossaryText text={selected} enabled={glossaryEnabled} /></strong>
       </div>
     </section>
@@ -331,11 +331,11 @@ function ClinicalPearlsList({ pearls, glossaryEnabled = true }) {
   );
 }
 
-function DifferentialComparisonCard({ differential, glossaryEnabled = true }) {
+function DifferentialComparisonCard({ differential, glossaryEnabled = true, isSpotCase = false }) {
   if (!differential) return null;
   return (
-    <FeedbackSection icon="AlertTriangle" tone="warning" eyebrow="Ayırıcı tanı" title="Ayırıcı tanı karşılaştırması" className="differential-comparison-card">
-      <div className="differential-option-chip"><span>Seçilen tanı:</span> <GlossaryText text={differential.option} enabled={glossaryEnabled} /></div>
+    <FeedbackSection icon="AlertTriangle" tone="warning" eyebrow="Ayırıcı tanı" title={isSpotCase ? 'Seçenek karşılaştırması' : 'Ayırıcı tanı karşılaştırması'} className="differential-comparison-card">
+      <div className="differential-option-chip"><span>{isSpotCase ? 'Seçilen yanıt:' : 'Seçilen tanı:'}</span> <GlossaryText text={differential.option} enabled={glossaryEnabled} /></div>
       <p className="feedback-body-copy"><GlossaryText text={ensureSentence(differential.explanation)} enabled={glossaryEnabled} /></p>
       {differential.comparisonPoints?.length ? (
         <ul className="comparison-point-list">
@@ -379,6 +379,7 @@ function AnswerFeedbackPanel({
   const reasoningText = isCorrect ? whyCorrect : whyWrong;
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
+  const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
 
   return (
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'}`} aria-live="polite">
@@ -390,7 +391,7 @@ function AnswerFeedbackPanel({
           glossaryEnabled={glossaryEnabled}
         />
         <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} />
-        <DifferentialComparisonCard differential={differential} glossaryEnabled={glossaryEnabled} />
+        <DifferentialComparisonCard differential={differential} glossaryEnabled={glossaryEnabled} isSpotCase={isSpotCase} />
         <FeedbackManagementCard managementSteps={managementSteps} glossaryEnabled={glossaryEnabled} />
       </div>
 

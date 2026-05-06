@@ -26,7 +26,7 @@ const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 
 const DEMO_CASE_IDS = [
-  'quick-forensic-stab-wound-001',
+  'tus-spot-forensic-stab-wound-001',
   'cv-anterior-stemi-001',
   'im-dka-001',
   'neuro-mca-stroke-001',

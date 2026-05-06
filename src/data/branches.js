@@ -1,11 +1,11 @@
 export const STANDARD_BRANCHES = [
   {
-    "id": "quick-case",
-    "name": "HIZLI CASE",
-    "shortName": "HIZLI CASE",
-    "description": "Kısa öykü, hedefe yönelik muayene, gerekirse sınırlı tetkik ve hızlı klinik karar sorularıyla TUS odaklı mini olgu alanı. Adli yaklaşım, yönetim kararı, spot bilgi ve kısa klinik senaryolar bu bölümde yer alır.",
+    "id": "tus-spot-olgular",
+    "name": "TUS Spot Olgular",
+    "shortName": "TUS Spot Olgular",
+    "description": "Kısa klinik senaryolarla TUS’ta sık yoklanan tanı, tedavi, tetkik, adli yaklaşım ve spot bilgileri hızlıca pekiştir. Gereksiz tetkik kalabalığı olmadan karar odaklı mini olgular çöz.",
     "accent": "teal",
-    "icon": "quick",
+    "icon": "spot",
     "layout": "featured"
   },
   {
@@ -120,6 +120,8 @@ export const BRANCH_DESCRIPTION_BY_ID = Object.freeze(
   }, {}),
 );
 
-export const QUICK_CASE_BRANCH_ID = 'quick-case';
+export const TUS_SPOT_BRANCH_ID = 'tus-spot-olgular';
+export const SPOT_CASE_BRANCH_ID = TUS_SPOT_BRANCH_ID;
+export const LEGACY_QUICK_CASE_BRANCH_ID = TUS_SPOT_BRANCH_ID; // Backward-compatible alias value for old persisted data.
 
 export const branches = STANDARD_BRANCHES;

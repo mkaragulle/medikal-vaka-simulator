@@ -472,17 +472,17 @@ function CasePlayer({
   const hemodynamicSummary = useMemo(() => buildHemodynamicSummary(clinicalCase.vitals), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
-  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
+  const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const hasInvestigationOrders = investigationOrders.length > 0;
-  const showInvestigationPanel = !isQuickCase || hasInvestigationOrders;
-  const showManagementPanel = !isQuickCase && clinicalCase.managementSequence?.enabled !== false;
+  const showInvestigationPanel = !isSpotCase || hasInvestigationOrders;
+  const showManagementPanel = !isSpotCase && clinicalCase.managementSequence?.enabled !== false;
   const visibleSectionItems = useMemo(() => SECTION_NAV_ITEMS.filter((item) => {
     if (item.id === 'case-investigations') return showInvestigationPanel;
     if (item.id === 'case-management') return showManagementPanel;
     return true;
   }), [showInvestigationPanel, showManagementPanel]);
-  const heroEyebrow = isQuickCase
-    ? `Hızlı CASE • ${clinicalCase.quickCategory || 'Kısa karar'}`
+  const heroEyebrow = isSpotCase
+    ? `TUS Spot Olgular • ${clinicalCase.spotCategory || 'TUS spot'}`
     : `${branch.shortName ?? branch.name} • ${toDisplayPhrase(clinicalCase.setting)}`;
   const [orderedInvestigationIds, setOrderedInvestigationIds] = useState([]);
 
@@ -593,7 +593,7 @@ function CasePlayer({
   const existingAnswer = examMeta?.answers?.[clinicalCase.id] ?? null;
 
   return (
-    <article className="clinical-case qbank-case" data-branch={branch.id} data-case-type={isQuickCase ? 'quick' : 'standard'} data-mode={mode} data-hard-mode={hardMode ? 'true' : 'false'}>
+    <article className="clinical-case qbank-case" data-branch={branch.id} data-case-type={isSpotCase ? 'spot' : 'standard'} data-mode={mode} data-hard-mode={hardMode ? 'true' : 'false'}>
       <section className="qbank-shell professional-qbank-shell">
         <div className="qbank-main-column expanded-main-column">
           <CaseSectionNav activeSection={activeSection} onJump={scrollToSection} items={visibleSectionItems} />
@@ -730,7 +730,7 @@ function CasePlayer({
             role="region"
             aria-label="Klinik çalışma araçları ve tanı paneli"
           >
-            {!examMeta?.active && !isQuickCase ? (
+            {!examMeta?.active && !isSpotCase ? (
               <CaseToolsPanel
                 clinicalCase={clinicalCase}
                 tutorMode={tutorMode}

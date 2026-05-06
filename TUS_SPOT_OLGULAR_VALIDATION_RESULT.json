@@ -1,0 +1,26 @@
+{
+  "totalCases": 132,
+  "totalBranches": 13,
+  "spotBranchId": "tus-spot-olgular",
+  "spotCases": 62,
+  "duplicateCaseIds": [],
+  "unknownBranchIds": [],
+  "badSpotCases": [],
+  "branchCounts": {
+    "TUS Spot Olgular": 62,
+    "Anatomi": 1,
+    "Fizyoloji": 1,
+    "Histoloji ve Embriyoloji": 1,
+    "Tıbbi Biyokimya": 14,
+    "Tıbbi Mikrobiyoloji": 8,
+    "Tıbbi Patoloji": 4,
+    "Tıbbi Farmakoloji": 2,
+    "İç Hastalıkları": 19,
+    "Çocuk Sağlığı ve Hastalıkları": 5,
+    "Genel Cerrahi": 5,
+    "Kadın Hastalıkları ve Doğum": 1,
+    "Küçük Stajlar": 9
+  },
+  "standardBranchCount": 12,
+  "passed": true
+}

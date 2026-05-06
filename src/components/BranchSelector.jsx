@@ -1,12 +1,12 @@
 import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
-import { QUICK_CASE_BRANCH_ID } from '../data/branches.js';
+import { TUS_SPOT_BRANCH_ID } from '../data/branches.js';
 
 function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, index = 0, variant = 'grid' }) {
   const branchCases = cases.filter((clinicalCase) => clinicalCase.branchId === branch.id);
   const totalCases = branchCases.length;
-  const isQuickBranch = branch.id === QUICK_CASE_BRANCH_ID;
-  const priorityCases = isQuickBranch
-    ? branchCases.filter((clinicalCase) => clinicalCase.caseType === 'quick').length
+  const isSpotBranch = branch.id === TUS_SPOT_BRANCH_ID;
+  const priorityCases = isSpotBranch
+    ? branchCases.filter((clinicalCase) => clinicalCase.caseType === 'spot').length
     : branchCases.filter((clinicalCase) => /acil|kritik/i.test(clinicalCase.difficulty)).length;
   const avgPoints = totalCases
     ? Math.round(branchCases.reduce((sum, item) => sum + (/zor|kritik/i.test(item.difficulty) ? 22 : /acil/i.test(item.difficulty) ? 18 : 14), 0) / totalCases)
@@ -21,7 +21,7 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, inde
       className={[
         'branch-card',
         isFeatured ? 'branch-card-featured' : '',
-        isQuickBranch ? 'quick-case-card' : '',
+        isSpotBranch ? 'tus-spot-olgular-card' : '',
         isLaunching ? 'is-launching' : '',
       ].filter(Boolean).join(' ')}
       data-branch={branch.id}
@@ -35,7 +35,7 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, inde
       <span className="branch-launch-wave" aria-hidden="true" />
       <div className="branch-card-head">
         <IconBadge icon={branchIconById[branch.id] ?? 'Stethoscope'} tone={tone} />
-        <span className="branch-count">{isLaunching ? 'Açılıyor' : `${totalCases} ${isQuickBranch ? 'hızlı olgu' : 'olgu'}`}</span>
+        <span className="branch-count">{isLaunching ? 'Açılıyor' : `${totalCases} ${isSpotBranch ? 'spot olgu' : 'olgu'}`}</span>
       </div>
 
       <div className="branch-card-body">
@@ -46,12 +46,12 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, inde
       <div className="branch-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
 
       <div className="branch-card-meta">
-        <span>{isQuickBranch ? `${priorityCases} hızlı karar` : `${priorityCases} acil-kritik olgu`}</span>
+        <span>{isSpotBranch ? `${priorityCases} spot karar` : `${priorityCases} acil-kritik olgu`}</span>
         <span>{avgPoints} ortalama puan</span>
       </div>
 
       <div className="branch-card-footer" aria-hidden="true">
-        <span>{isLaunching ? 'Olgu ekranına geçiliyor' : isQuickBranch ? 'Hızlı çöz' : 'Branşa gir'}</span>
+        <span>{isLaunching ? 'Olgu ekranına geçiliyor' : isSpotBranch ? 'Spot çöz' : 'Branşa gir'}</span>
         <Icon name="ArrowRight" />
       </div>
     </button>
@@ -64,24 +64,24 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
     onSelectBranch(branchId);
   };
 
-  const quickBranch = branches.find((branch) => branch.id === QUICK_CASE_BRANCH_ID);
-  const standardBranches = branches.filter((branch) => branch.id !== QUICK_CASE_BRANCH_ID);
+  const spotBranch = branches.find((branch) => branch.id === TUS_SPOT_BRANCH_ID);
+  const standardBranches = branches.filter((branch) => branch.id !== TUS_SPOT_BRANCH_ID);
 
   return (
     <section className="section-block branches-section" id="branches">
       <div className="section-title-row stacked">
         <div>
           <h2>Klinik branş seç</h2>
-          <p>Üstte hızlı karar pratiği, altta TUS mimarisine göre standardize edilmiş 12 ana branş yer alır.</p>
+          <p>Üstte spot karar pratiği, altta TUS mimarisine göre standardize edilmiş 12 ana branş yer alır.</p>
         </div>
       </div>
 
-      {quickBranch ? (
-        <div className="quick-case-feature-row" aria-label="Hızlı CASE özel alanı">
+      {spotBranch ? (
+        <div className="tus-spot-olgular-feature-row" aria-label="TUS Spot Olgular özel alanı">
           <BranchCard
-            branch={quickBranch}
+            branch={spotBranch}
             cases={cases}
-            isLaunching={launchingBranchId === quickBranch.id}
+            isLaunching={launchingBranchId === spotBranch.id}
             isLocked={isTransitioning}
             onLaunchBranch={handleLaunchBranch}
             index={0}

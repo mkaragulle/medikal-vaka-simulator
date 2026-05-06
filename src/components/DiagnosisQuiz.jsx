@@ -102,11 +102,11 @@ function DiagnosisQuiz({
   const progressWidth = examMeta?.active
     ? `${Math.round(((examMeta.currentIndex + 1) / examMeta.total) * 100)}%`
     : '0%';
-  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
+  const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const questionPrompt = clinicalCase.question || clinicalCase.diagnosis?.question || '';
-  const questionHeading = isQuickCase ? 'Hızlı karar sorusu' : 'En olası tanı';
-  const questionSubtext = isQuickCase
-    ? (clinicalCase.clinicalFocus || 'Kısa olguda en doğru klinik kararı seç.')
+  const questionHeading = isSpotCase ? (clinicalCase.questionType === 'diagnosis' ? 'TUS spot tanı sorusu' : clinicalCase.questionType === 'test' ? 'TUS spot tetkik sorusu' : clinicalCase.questionType === 'treatment' ? 'TUS spot tedavi sorusu' : 'TUS spot karar sorusu') : 'En olası tanı';
+  const questionSubtext = isSpotCase
+    ? (clinicalCase.clinicalFocus || 'Kısa TUS olgusunda en doğru yanıtı seç.')
     : 'Olgu paternine en uygun seçeneği işaretle.';
 
   const handleSubmit = () => {
@@ -142,20 +142,20 @@ function DiagnosisQuiz({
       ) : null}
 
 
-      {!isQuickCase && investigationOrders.length > 0 && !hardMode && !examMeta?.active && !submitted && selected && orderedInvestigationIds.length === 0 ? (
+      {!isSpotCase && investigationOrders.length > 0 && !hardMode && !examMeta?.active && !submitted && selected && orderedInvestigationIds.length === 0 ? (
         <div className="preanswer-investigation-nudge">
           Tanı seçmeden önce karar verdirici tetkikleri istemeyi düşünebilirsin.
         </div>
       ) : null}
 
-      {isQuickCase && questionPrompt ? (
-        <div className="quick-case-question-callout" role="note">
+      {isSpotCase && questionPrompt ? (
+        <div className="tus-spot-olgular-question-callout" role="note">
           <Icon name="Target" size={16} />
           <strong><GlossaryText text={questionPrompt} enabled={!hardMode && !examMeta?.active} /></strong>
         </div>
       ) : null}
 
-      <div className="option-grid" role="group" aria-label={isQuickCase ? 'Hızlı karar seçenekleri' : 'Tanı seçenekleri'}>
+      <div className="option-grid" role="group" aria-label={isSpotCase ? 'TUS spot seçenekleri' : 'Tanı seçenekleri'}>
         {options.map((option, index) => (
           <AnswerOption
             key={option}
@@ -197,7 +197,7 @@ function DiagnosisQuiz({
               <IconBadge icon="CheckCircle" tone="blue" size="sm" />
               <div>
                 <span className="feedback-badge neutral">Yanıt kaydedildi</span>
-                <p className="feedback-answer">Doğru tanı ve gerekçe blok sonunda ayrıntılı gösterilecek.</p>
+                <p className="feedback-answer">Doğru yanıt ve gerekçe blok sonunda ayrıntılı gösterilecek.</p>
               </div>
             </div>
 

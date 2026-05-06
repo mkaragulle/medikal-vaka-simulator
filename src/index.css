@@ -29403,24 +29403,24 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-ba
   }
 }
 
-/* Hızlı CASE integration */
-.branch-card[data-branch="quick-case"] .branch-card-head .icon-badge {
+/* TUS Spot Olgular integration */
+.branch-card[data-branch="tus-spot-olgular"] .branch-card-head .icon-badge {
   color: var(--accent);
   background: color-mix(in srgb, var(--accent) 14%, transparent);
   border-color: color-mix(in srgb, var(--accent) 36%, transparent);
 }
-.branch-card[data-branch="quick-case"] .branch-progress span {
+.branch-card[data-branch="tus-spot-olgular"] .branch-progress span {
   background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 72%, white 12%), color-mix(in srgb, var(--accent-blue) 62%, white 8%));
 }
-.branch-card.is-launching[data-branch="quick-case"] .icon-badge svg {
-  animation: branch-quick-tick 420ms cubic-bezier(.22,1,.36,1) 1 both;
+.branch-card.is-launching[data-branch="tus-spot-olgular"] .icon-badge svg {
+  animation: branch-spot-tick 420ms cubic-bezier(.22,1,.36,1) 1 both;
 }
-@keyframes branch-quick-tick {
+@keyframes branch-spot-tick {
   0%, 100% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 0 transparent); }
   30% { transform: rotate(-12deg) scale(1.16); filter: drop-shadow(0 0 9px color-mix(in srgb, currentColor 28%, transparent)); }
   62% { transform: rotate(10deg) scale(1.05); }
 }
-.quick-case-question-callout {
+.tus-spot-olgular-question-callout {
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -29432,27 +29432,27 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-ba
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), color-mix(in srgb, var(--surface-1) 92%, transparent));
   box-shadow: inset 0 1px 0 color-mix(in srgb, white 38%, transparent);
 }
-.quick-case-question-callout svg {
+.tus-spot-olgular-question-callout svg {
   flex: 0 0 auto;
   color: var(--accent);
   margin-top: 2px;
 }
-.quick-case-question-callout strong {
+.tus-spot-olgular-question-callout strong {
   font-size: 13px;
   line-height: 1.45;
   letter-spacing: -0.01em;
 }
-.clinical-case[data-case-type="quick"] .professional-content-stack {
+.clinical-case[data-case-type="spot"] .professional-content-stack {
   gap: 14px;
 }
-.clinical-case[data-case-type="quick"] .case-hero-card {
+.clinical-case[data-case-type="spot"] .case-hero-card {
   border-color: color-mix(in srgb, var(--accent) 18%, var(--border-subtle));
 }
-.clinical-case[data-case-type="quick"] .right-workspace-shell {
+.clinical-case[data-case-type="spot"] .right-workspace-shell {
   position: sticky;
   top: calc(var(--topbar-height, 76px) + 16px);
 }
-.clinical-case[data-case-type="quick"] .diagnostic-decision-panel .question-panel-head h2::after {
+.clinical-case[data-case-type="spot"] .diagnostic-decision-panel .question-panel-head h2::after {
   content: "";
   display: inline-block;
   width: 7px;
@@ -29463,27 +29463,27 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-ba
   box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 12%, transparent);
   vertical-align: middle;
 }
-html[data-theme="dark"] .quick-case-question-callout,
-.app-shell[data-theme="dark"] .quick-case-question-callout {
+html[data-theme="dark"] .tus-spot-olgular-question-callout,
+.app-shell[data-theme="dark"] .tus-spot-olgular-question-callout {
   background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, transparent), color-mix(in srgb, var(--surface-1) 88%, transparent));
   box-shadow: inset 0 1px 0 color-mix(in srgb, white 10%, transparent);
 }
 @media (prefers-reduced-motion: reduce) {
-  .branch-card.is-launching[data-branch="quick-case"] .icon-badge svg { animation: none !important; }
+  .branch-card.is-launching[data-branch="tus-spot-olgular"] .icon-badge svg { animation: none !important; }
 }
 
-/* === KlinikIQ TUS branch architecture rework: 1 featured HIZLI CASE + 12 standardized cards === */
+/* === KlinikIQ TUS branch architecture rework: 1 featured TUS Spot Olgular + 12 standardized cards === */
 .branches-section {
   gap: 16px !important;
 }
 
-.quick-case-feature-row {
+.tus-spot-olgular-feature-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   margin-top: 4px;
 }
 
-.branch-card-featured.quick-case-card {
+.branch-card-featured.tus-spot-olgular-card {
   min-height: 184px !important;
   grid-template-columns: auto minmax(0, 1fr) auto;
   grid-template-rows: auto auto auto;
@@ -29499,7 +29499,7 @@ html[data-theme="dark"] .quick-case-question-callout,
   box-shadow: 0 18px 46px color-mix(in srgb, var(--accent) 12%, transparent), var(--shadow-card);
 }
 
-.branch-card-featured.quick-case-card .branch-card-head {
+.branch-card-featured.tus-spot-olgular-card .branch-card-head {
   grid-column: 1;
   grid-row: 1 / span 3;
   align-self: stretch;
@@ -29508,57 +29508,57 @@ html[data-theme="dark"] .quick-case-question-callout,
   justify-items: start;
 }
 
-.branch-card-featured.quick-case-card .branch-card-head .icon-badge {
+.branch-card-featured.tus-spot-olgular-card .branch-card-head .icon-badge {
   width: 58px !important;
   height: 58px !important;
   border-radius: 18px !important;
 }
 
-.branch-card-featured.quick-case-card .branch-card-head .icon-badge svg {
+.branch-card-featured.tus-spot-olgular-card .branch-card-head .icon-badge svg {
   width: 27px !important;
   height: 27px !important;
 }
 
-.branch-card-featured.quick-case-card .branch-count {
+.branch-card-featured.tus-spot-olgular-card .branch-count {
   background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
   border-color: color-mix(in srgb, var(--accent) 28%, transparent);
   color: var(--accent);
 }
 
-.branch-card-featured.quick-case-card .branch-card-body {
+.branch-card-featured.tus-spot-olgular-card .branch-card-body {
   grid-column: 2;
   grid-row: 1 / span 2;
   gap: 8px;
 }
 
-.branch-card-featured.quick-case-card .branch-card-body h3 {
+.branch-card-featured.tus-spot-olgular-card .branch-card-body h3 {
   font-size: clamp(24px, 3.2vw, 36px) !important;
   line-height: 1.05;
   letter-spacing: -0.045em;
   -webkit-line-clamp: 1;
 }
 
-.branch-card-featured.quick-case-card .branch-card-body p {
+.branch-card-featured.tus-spot-olgular-card .branch-card-body p {
   max-width: 920px;
   font-size: 14.5px !important;
   line-height: 1.62 !important;
   -webkit-line-clamp: 3 !important;
 }
 
-.branch-card-featured.quick-case-card .branch-progress {
+.branch-card-featured.tus-spot-olgular-card .branch-progress {
   grid-column: 2;
   grid-row: 3;
   width: min(100%, 620px);
 }
 
-.branch-card-featured.quick-case-card .branch-card-meta {
+.branch-card-featured.tus-spot-olgular-card .branch-card-meta {
   grid-column: 3;
   grid-row: 1;
   justify-content: flex-end;
   align-self: start;
 }
 
-.branch-card-featured.quick-case-card .branch-card-footer {
+.branch-card-featured.tus-spot-olgular-card .branch-card-footer {
   grid-column: 3;
   grid-row: 3;
   justify-self: end;
@@ -29591,12 +29591,12 @@ html[data-theme="dark"] .quick-case-question-callout,
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
-  .branch-card-featured.quick-case-card {
+  .branch-card-featured.tus-spot-olgular-card {
     grid-template-columns: auto minmax(0, 1fr);
   }
 
-  .branch-card-featured.quick-case-card .branch-card-meta,
-  .branch-card-featured.quick-case-card .branch-card-footer {
+  .branch-card-featured.tus-spot-olgular-card .branch-card-meta,
+  .branch-card-featured.tus-spot-olgular-card .branch-card-footer {
     grid-column: 2;
     justify-self: start;
   }
@@ -29607,22 +29607,22 @@ html[data-theme="dark"] .quick-case-question-callout,
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  .branch-card-featured.quick-case-card {
+  .branch-card-featured.tus-spot-olgular-card {
     grid-template-columns: 1fr;
     min-height: auto !important;
   }
 
-  .branch-card-featured.quick-case-card .branch-card-head,
-  .branch-card-featured.quick-case-card .branch-card-body,
-  .branch-card-featured.quick-case-card .branch-progress,
-  .branch-card-featured.quick-case-card .branch-card-meta,
-  .branch-card-featured.quick-case-card .branch-card-footer {
+  .branch-card-featured.tus-spot-olgular-card .branch-card-head,
+  .branch-card-featured.tus-spot-olgular-card .branch-card-body,
+  .branch-card-featured.tus-spot-olgular-card .branch-progress,
+  .branch-card-featured.tus-spot-olgular-card .branch-card-meta,
+  .branch-card-featured.tus-spot-olgular-card .branch-card-footer {
     grid-column: 1;
     grid-row: auto;
     justify-self: stretch;
   }
 
-  .branch-card-featured.quick-case-card .branch-card-head {
+  .branch-card-featured.tus-spot-olgular-card .branch-card-head {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29636,7 +29636,7 @@ html[data-theme="dark"] .quick-case-question-callout,
 }
 
 /* TUS branch transition color tokens for standardized branch IDs */
-.branch-route-overlay.branch-route-quick-case { --route-accent: var(--accent); }
+.branch-route-overlay.branch-route-tus-spot-olgular { --route-accent: var(--accent); }
 .branch-route-overlay.branch-route-anatomy { --route-accent: color-mix(in srgb, var(--text-muted) 80%, #a7b2c3 20%); }
 .branch-route-overlay.branch-route-physiology { --route-accent: var(--danger); }
 .branch-route-overlay.branch-route-histology-embryology { --route-accent: var(--violet); }

@@ -218,7 +218,7 @@ export function BranchTransitionVisual({ branchId, iconName }) {
 }
 
 export const branchIconById = {
-  'quick-case': 'Stopwatch',
+  'tus-spot-olgular': 'Sparkles',
   anatomy: 'Bone',
   physiology: 'Activity',
   'histology-embryology': 'LayeredCards',
@@ -233,7 +233,7 @@ export const branchIconById = {
   'minor-rotations': 'BookOpen',
 };
 export const branchToneById = {
-  'quick-case': 'accent',
+  'tus-spot-olgular': 'accent',
   anatomy: 'slate',
   physiology: 'danger',
   'histology-embryology': 'violet',
