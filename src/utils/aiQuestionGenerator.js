@@ -5,6 +5,7 @@ import { shuffleArray } from './randomize.js';
 import {
   buildRecentQuestionContext,
   makeQuestionSignature,
+  makeQuestionTopicSignature,
   makeSeedSignature,
 } from './aiQuestionHistory.js';
 import { validateAIQuestionCase } from './validateAIQuestion.js';
@@ -22,8 +23,16 @@ function optionTextById(seed, optionId) {
   return seed.options.find((option) => option.id === optionId)?.text || seed.options[0]?.text || '';
 }
 
+function richItemText(item = '') {
+  if (!item) return '';
+  if (typeof item === 'string') return item;
+  return [item.title || item.label, item.text || item.summary || item.explanation || item.description]
+    .filter(Boolean)
+    .join(': ');
+}
+
 function uniqueStrings(items = []) {
-  return Array.from(new Set(items.map((item) => String(item || '').trim()).filter(Boolean)));
+  return Array.from(new Set(items.map((item) => String(richItemText(item) || '').trim()).filter(Boolean)));
 }
 
 function sanitizeOptionText(text = '') {
@@ -134,7 +143,7 @@ function buildCaseDerivedSeed(clinicalCase) {
     wrongOptionFeedback: buildWrongFeedbackFromCase(clinicalCase, options),
     evidenceChain,
     examPearl: getCasePearl(clinicalCase),
-    managementSteps: feedback.managementSteps || feedback.management || [],
+    managementSteps: (feedback.managementSteps || feedback.management || []).map(richItemText).filter(Boolean),
     nextQuestionSeed: feedback.learningOutcome || clinicalCase.clinicalFocus || clinicalCase.title,
   };
 }
@@ -233,7 +242,7 @@ export function buildAIQuestionCase(seed, { generatedId = nowToken(), source = '
         pearls: [seed.examPearl].filter(Boolean),
         clinicalPearls: [seed.examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparison(seed, correctText),
-        managementSteps: seed.managementSteps?.length ? seed.managementSteps : [
+        managementSteps: seed.managementSteps?.length ? seed.managementSteps.map(richItemText).filter(Boolean) : [
           'Ana ipucunu belirle ve seçenekleri aynı kategori içinde karşılaştır.',
           'Objektif tetkik sonuçlarını tanı adı okumadan patern olarak yorumla.',
           'Benzer TUS çeldiricilerinin hangi ipucuyla elendiğini tekrar et.',
@@ -248,10 +257,12 @@ export function buildAIQuestionCase(seed, { generatedId = nowToken(), source = '
       sourceSeedId: seed.seedId,
       sourceCaseId: seed.sourceCaseId || null,
       signature: null,
+      topicSignature: null,
     },
   };
 
   question.aiMeta.signature = makeQuestionSignature(question);
+  question.aiMeta.topicSignature = makeQuestionTopicSignature(question);
   return question;
 }
 
@@ -281,9 +292,15 @@ function scoreSeedNovelty(seed, context, previousSeedId) {
   return score;
 }
 
+function rankSeedsByNovelty(pool, { previousQuestionId = null, context = buildRecentQuestionContext() } = {}) {
+  const previousSeedId = previousSeedIdFromQuestionId(previousQuestionId);
+  return shuffleArray(pool)
+    .sort((a, b) => scoreSeedNovelty(b, context, previousSeedId) - scoreSeedNovelty(a, context, previousSeedId));
+}
+
 function pickNonRepeatingSeed(pool, { previousQuestionId = null, context = buildRecentQuestionContext() } = {}) {
   const previousSeedId = previousSeedIdFromQuestionId(previousQuestionId);
-  const ranked = shuffleArray(pool).sort((a, b) => scoreSeedNovelty(b, context, previousSeedId) - scoreSeedNovelty(a, context, previousSeedId));
+  const ranked = rankSeedsByNovelty(pool, { previousQuestionId, context });
   const fresh = ranked.find((seed) => {
     const signature = makeSeedSignature(seed);
     return seed.seedId !== previousSeedId
@@ -296,14 +313,23 @@ function pickNonRepeatingSeed(pool, { previousQuestionId = null, context = build
 
 export function generateAIQuestion({ previousQuestionId = null, branchFilter = 'random', context = buildRecentQuestionContext() } = {}) {
   const pool = getEligibleSeeds(branchFilter);
-  const seed = pickNonRepeatingSeed(pool, { previousQuestionId, context });
-  const question = buildAIQuestionCase(seed, { source: seed.sourceCaseId ? 'case-derived-local-generator' : 'curated-local-generator' });
-  const validation = validateAIQuestionCase(question, context.recentSignatures);
-  if (!validation.ok) {
-    const fallbackSeed = shuffleArray(pool).find((item) => item.seedId !== seed.seedId) || AI_QUESTION_SEEDS[0];
-    return buildAIQuestionCase(fallbackSeed, { source: 'local-generator-validation-fallback' });
+  const firstSeed = pickNonRepeatingSeed(pool, { previousQuestionId, context });
+  const ranked = rankSeedsByNovelty(pool, { previousQuestionId, context });
+  const candidates = [
+    firstSeed,
+    ...ranked.filter((seed) => seed.seedId !== firstSeed.seedId),
+  ].filter(Boolean);
+
+  for (const seed of candidates) {
+    const question = buildAIQuestionCase(seed, {
+      source: seed.sourceCaseId ? 'case-derived-local-generator' : 'curated-local-generator',
+    });
+    const validation = validateAIQuestionCase(question, context.recentSignatures);
+    if (validation.ok) return question;
   }
-  return question;
+
+  const exhaustedSeed = candidates.find((seed) => seed.seedId !== previousSeedIdFromQuestionId(previousQuestionId)) || candidates[0] || AI_QUESTION_SEEDS[0];
+  return buildAIQuestionCase(exhaustedSeed, { source: 'local-generator-exhausted-pool-fallback' });
 }
 
 export function listAIQuestionBranches() {

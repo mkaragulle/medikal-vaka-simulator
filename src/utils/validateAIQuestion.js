@@ -1,5 +1,5 @@
 import { shuffleArray } from './randomize.js';
-import { makeQuestionSignature, normalizeQuestionText } from './aiQuestionHistory.js';
+import { makeQuestionSignature, makeQuestionTopicSignature, normalizeQuestionText } from './aiQuestionHistory.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const DIRECT_LEAK_PHRASES = [
@@ -125,7 +125,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
 
   const normalized = {
     id: payload.id || `ai-generated-remote-${Date.now()}`,
-    seedId: payload.seedId || payload.id || null,
+    seedId: payload.seedId || null,
     source: payload.source || 'real-ai',
     caseType: 'ai-spot',
     branchId: 'tus-spot-olgular',
@@ -179,12 +179,14 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
       generator: payload.source || 'real-ai-provider',
       schemaVersion: 'ai-spot-v2',
       signature: null,
+      topicSignature: null,
       validationWarnings: validation.warnings,
       provider: payload.provider || null,
     },
   };
 
   normalized.aiMeta.signature = makeQuestionSignature(normalized);
+  normalized.aiMeta.topicSignature = makeQuestionTopicSignature(normalized);
   return normalized;
 }
 
@@ -198,7 +200,9 @@ export function validateAIQuestionCase(question = {}, recentSignatures = []) {
   if (!Array.isArray(question?.diagnosis?.answerFeedback?.evidenceChain) || question.diagnosis.answerFeedback.evidenceChain.length < 3) errors.push('kanıt zinciri yetersiz');
 
   const signature = makeQuestionSignature(question);
+  const topicSignature = makeQuestionTopicSignature(question);
   if (recentSignatures.includes(signature)) errors.push('yakın geçmişte aynı içerik imzası üretildi');
+  if (recentSignatures.includes(topicSignature)) errors.push('yakın geçmişte aynı konu/doğru cevap paterni üretildi');
 
-  return { ok: errors.length === 0, errors, signature };
+  return { ok: errors.length === 0, errors, signature, topicSignature };
 }

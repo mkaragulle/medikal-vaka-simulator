@@ -6,6 +6,7 @@ const runtimeEnv = import.meta.env || {};
 const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-question';
 const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI || 'false').toLowerCase() === 'true';
 const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 9000);
+const AI_REMOTE_RETRY_COUNT = Math.max(1, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 3));
 
 function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -13,11 +14,14 @@ function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
   return { controller, timeoutId };
 }
 
-async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, context }) {
-  if (!ENABLE_REAL_AI || typeof window === 'undefined') {
-    return null;
+function makeAntiRepeatNonce() {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
   }
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+}
 
+async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context, attempt }) {
   const { controller, timeoutId } = withTimeout();
   try {
     const response = await fetch(AI_ENDPOINT, {
@@ -30,6 +34,8 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
         recentIds: context.recentIds,
         recentSignatures: context.recentSignatures,
         recentQuestionSummaries: context.recentQuestionSummaries,
+        attempt,
+        antiRepeatNonce: makeAntiRepeatNonce(),
       }),
     });
 
@@ -45,28 +51,54 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
       ...normalized.aiMeta,
       provider: payload.provider || rawQuestion.provider || 'remote-ai-provider',
       remote: true,
+      remoteAttempt: attempt,
     };
 
     const validation = validateAIQuestionCase(normalized, context.recentSignatures);
     if (!validation.ok) {
-      throw new Error(`Remote AI validation failed: ${validation.errors.join('; ')}`);
+      const error = new Error(`Remote AI validation failed: ${validation.errors.join('; ')}`);
+      error.validation = validation;
+      throw error;
     }
 
-    rememberAIQuestion(normalized);
-    return {
-      ok: true,
-      question: normalized,
-      source: normalized.aiMeta.provider || 'real-ai',
-      usedRemoteAI: true,
-      fallback: false,
-    };
+    return normalized;
   } finally {
     window.clearTimeout(timeoutId);
   }
 }
 
+async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, context }) {
+  if (!ENABLE_REAL_AI || typeof window === 'undefined') {
+    return null;
+  }
+
+  let lastError = null;
+  for (let attempt = 1; attempt <= AI_REMOTE_RETRY_COUNT; attempt += 1) {
+    try {
+      const normalized = await fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context, attempt });
+      rememberAIQuestion(normalized);
+      return {
+        ok: true,
+        question: normalized,
+        source: normalized.aiMeta.provider || 'real-ai',
+        usedRemoteAI: true,
+        fallback: false,
+      };
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError || new Error('Remote AI question generation failed');
+}
+
 function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context, reason = null }) {
-  const question = generateAIQuestion({ previousQuestionId, branchFilter, context });
+  const refreshedContext = buildRecentQuestionContext(18);
+  const question = generateAIQuestion({
+    previousQuestionId,
+    branchFilter,
+    context: refreshedContext.recentSignatures?.length ? refreshedContext : context,
+  });
   rememberAIQuestion(question);
   return {
     ok: true,
@@ -79,7 +111,7 @@ function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context
 }
 
 export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random' } = {}) {
-  const context = buildRecentQuestionContext(14);
+  const context = buildRecentQuestionContext(18);
 
   try {
     const remoteResult = await requestRemoteAIQuestion({ previousQuestionId, branchFilter, context });
@@ -97,5 +129,5 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'real-ai-with-local-fallback' : 'local-generator-only';
+  return ENABLE_REAL_AI ? 'real-ai-with-validated-anti-repeat-and-local-fallback' : 'local-generator-only';
 }

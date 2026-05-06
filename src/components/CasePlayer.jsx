@@ -344,15 +344,23 @@ function compactSentence(value = '', maxLength = 220) {
   return compactClinicalText(toSentence(first), maxLength);
 }
 
+function richFeedbackText(item) {
+  if (!item) return '';
+  if (typeof item === 'string') return item;
+  return [item.label || item.title, item.text || item.summary || item.explanation || item.description]
+    .filter(Boolean)
+    .join(': ');
+}
+
 function buildClinicalTip(clinicalCase, clueItems = []) {
   const pearls = clinicalCase.diagnosis?.answerFeedback?.pearls || clinicalCase.diagnosis?.pearls || [];
-  if (pearls.length) return compactSentence(pearls[0], 170);
+  if (pearls.length) return compactSentence(richFeedbackText(pearls[0]), 170);
 
   const learningOutcome = clinicalCase.diagnosis?.answerFeedback?.learningOutcome;
-  if (learningOutcome) return compactSentence(learningOutcome, 170);
+  if (learningOutcome) return compactSentence(richFeedbackText(learningOutcome), 170);
 
   if (clueItems.length) {
-    return compactSentence(`${clueItems[0]} tanısal ayrımı güçlendiren ana klinik ipucudur.`, 170);
+    return compactSentence(`${richFeedbackText(clueItems[0])} tanısal ayrımı güçlendiren ana klinik ipucudur.`, 170);
   }
 
   return 'Tek bulguya değil, öykü-muayene-tetkik uyumuna göre karar ver.';

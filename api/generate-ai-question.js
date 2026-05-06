@@ -64,23 +64,36 @@ function validateRawQuestion(question = {}) {
   return { ok: errors.length === 0, errors };
 }
 
-function buildPrompt({ branchFilter = 'Rastgele', recentQuestionSummaries = [] }) {
+function buildPrompt({ branchFilter = 'Rastgele', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
   const recentList = recentQuestionSummaries
-    .slice(0, 12)
-    .map((item, index) => `${index + 1}. ${item.branch || 'TUS'} | ${item.title || ''} | doğru: ${item.correct || ''}`)
+    .slice(0, 18)
+    .map((item, index) => `${index + 1}. ${item.branch || 'TUS'} | başlık: ${item.title || ''} | doğru: ${item.correct || ''}`)
     .join('\n');
+
+  const forbiddenTopics = recentQuestionSummaries
+    .slice(0, 18)
+    .map((item) => [item.title, item.correct].filter(Boolean).join(' / '))
+    .filter(Boolean)
+    .join('; ');
 
   return `Sen KlinikIQ için çalışan kıdemli TUS soru yazarı ve medikal eğitim içerik denetleyicisisin.
 
 Görev: Tek bir yeni TUS odaklı, kısa klinik spot soru üret. Soru Türkçe olmalı, bilimsel olarak doğru olmalı ve JSON dışında hiçbir açıklama döndürmemelisin.
 
 Branş isteği: ${branchFilter || 'Rastgele'}
+Üretim denemesi: ${attempt}
+Çeşitlilik anahtarı: ${antiRepeatNonce || Date.now()}
 
 Yakın zamanda üretilen sorular:
 ${recentList || 'Henüz yok.'}
 
+YASAK konu/doğru cevap listesi:
+${forbiddenTopics || 'Henüz yok.'}
+
 Kesin kurallar:
-- Yakın listedeki konu, başlık, doğru cevap veya aynı serolojik/tetkik paternini tekrar etme.
+- Yakın listedeki konu, başlık, doğru cevap, öğrenme hedefi veya aynı serolojik/tetkik paternini tekrar etme.
+- Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
+- Deneme 2 veya 3 ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç.
 - Tek bir ana öğrenme hedefi olsun.
 - 5 seçenek üret: A, B, C, D, E.
 - Tüm seçenekler aynı kategori içinde olsun; tanı sorusunda tanılar, tedavi sorusunda tedaviler, tetkik sorusunda tetkikler.
@@ -88,7 +101,11 @@ Kesin kurallar:
 - Tetkik sonucunda doğru tanı/cevap cümle olarak yazılmasın.
 - Tetkik yorumu “... tanısını doğrular”, “... ile uyumludur”, “kesin tanıdır” gibi direkt tanı dili kullanmasın.
 - Doğru cevap, verilen objektif veriler yorumlanarak bulunmalı.
-- Her yanlış seçenek için neden yanlış olduğuna dair kısa ama öğretici feedback yaz.
+- Her yanlış seçenek için neden yanlış olduğuna dair kısa ama öğretici feedback yaz; yanlış şık neyi yakalar, neyi kaçırır ve hangi ipucuyla elenir açık olsun.
+- explanation 2-4 cümlelik Klinik Gerekçe kalitesinde olmalı.
+- evidenceChain 3-5 somut olgu ipucundan oluşmalı; meta cümle veya öğrenme çıktısı yazma.
+- examPearl TUS hap bilgisi olmalı; mümkünse kırmızı bayrak, sık tuzak, ilk adım veya ayırt ettirici marker vurgula.
+- managementSteps 2-4 kısa ilk yaklaşım/yönetim basamağı içermeli; temel bilim sorusunda mekanistik yaklaşım notu gibi yaz.
 
 Aşağıdaki JSON şemasını birebir döndür:
 {
@@ -136,6 +153,7 @@ Aşağıdaki JSON şemasını birebir döndür:
   },
   "evidenceChain": ["kritik ipucu 1", "kritik ipucu 2", "doğru yoruma götüren bağlantı"],
   "examPearl": "TUS için kısa hap bilgi",
+  "managementSteps": ["ilk yaklaşım basamağı 1", "ilk yaklaşım basamağı 2", "ilk yaklaşım basamağı 3"],
   "nextQuestionSeed": "Benzer/zor soru için konu tohumu"
 }`;
 }
