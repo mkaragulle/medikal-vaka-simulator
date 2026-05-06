@@ -295,6 +295,37 @@ function normalizeSummaryItems(value) {
   return [];
 }
 
+function compactClinicalText(value = '', maxLength = 170) {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (!text || text.length <= maxLength) return text;
+  const cut = text.slice(0, maxLength);
+  const naturalBreak = Math.max(cut.lastIndexOf(';'), cut.lastIndexOf(','), cut.lastIndexOf(' '));
+  return `${cut.slice(0, naturalBreak > 80 ? naturalBreak : maxLength).trim()}…`;
+}
+
+function limitSummaryItems(items = [], maxItems = 2, maxLength = 78) {
+  return Array.from(new Set(items.map((item) => compactClinicalText(item, maxLength)).filter(Boolean))).slice(0, maxItems);
+}
+
+function compactSentence(value = '', maxLength = 220) {
+  const first = splitSentences(value)[0] || String(value || '').trim();
+  return compactClinicalText(toSentence(first), maxLength);
+}
+
+function buildClinicalTip(clinicalCase, clueItems = []) {
+  const pearls = clinicalCase.diagnosis?.answerFeedback?.pearls || clinicalCase.diagnosis?.pearls || [];
+  if (pearls.length) return compactSentence(pearls[0], 170);
+
+  const learningOutcome = clinicalCase.diagnosis?.answerFeedback?.learningOutcome;
+  if (learningOutcome) return compactSentence(learningOutcome, 170);
+
+  if (clueItems.length) {
+    return compactSentence(`${clueItems[0]} tanısal ayrımı güçlendiren ana klinik ipucudur.`, 170);
+  }
+
+  return 'Tek bulguya değil, öykü-muayene-tetkik uyumuna göre karar ver.';
+}
+
 function summaryRowKind(label = '') {
   const normalized = label.toLocaleLowerCase('tr');
   if (normalized.includes('profil')) return 'profile';
@@ -304,27 +335,15 @@ function summaryRowKind(label = '') {
   return 'default';
 }
 
-function shouldUseCompactList(items = []) {
-  return items.length > 2 || items.some((item) => String(item).length > 34);
-}
-
 function PatientSummaryItems({ items = [], enabled = true }) {
   if (!items.length) return null;
 
-  if (shouldUseCompactList(items)) {
-    return (
-      <ul className="summary-clinical-mini-list">
-        {items.map((item) => (
-          <li key={item}><GlossaryText text={item} enabled={enabled} /></li>
-        ))}
-      </ul>
-    );
-  }
-
   return (
-    <div className="summary-risk-chip-row clinical-intro-chip-row compact-chip-row">
-      {items.map((chip) => <em key={chip}><GlossaryText text={chip} enabled={enabled} /></em>)}
-    </div>
+    <ul className="summary-clinical-mini-list refined-summary-bullet-list">
+      {items.map((item) => (
+        <li key={item}><GlossaryText text={item} enabled={enabled} /></li>
+      ))}
+    </ul>
   );
 }
 
@@ -334,22 +353,34 @@ function buildPatientSummary(clinicalCase) {
   const complaint = toDisplayPhrase(clinicalCase.chiefComplaint);
   const setting = toDisplayPhrase(clinicalCase.setting);
   const fallbackStory = buildStoryParts(clinicalCase).join(' ');
-  const riskItems = normalizeSummaryItems(intro.riskContext).length
-    ? normalizeSummaryItems(intro.riskContext)
-    : extractPatientRiskChips(clinicalCase);
-  const clueItems = normalizeSummaryItems(intro.distinctiveClues).length
-    ? normalizeSummaryItems(intro.distinctiveClues)
-    : extractPatientClueChips(clinicalCase);
+  const riskItems = limitSummaryItems(
+    normalizeSummaryItems(intro.riskContext).length
+      ? normalizeSummaryItems(intro.riskContext)
+      : extractPatientRiskChips(clinicalCase),
+    2,
+    76,
+  );
+  const clueItems = limitSummaryItems(
+    normalizeSummaryItems(intro.distinctiveClues).length
+      ? normalizeSummaryItems(intro.distinctiveClues)
+      : extractPatientClueChips(clinicalCase),
+    2,
+    76,
+  );
+  const profileText = compactClinicalText(intro.profile || [demographics, setting].filter(Boolean).join(' · '), 92);
+  const presentationText = compactSentence(intro.presentation || complaint, 118);
+  const historyParts = splitSentences(intro.historySummary || fallbackStory).slice(0, 3).map((part) => compactClinicalText(part, 190));
 
   return {
     rows: [
-      { kind: 'profile', label: 'Profil', value: intro.profile || [demographics, setting].filter(Boolean).join(' · ') },
-      { kind: 'presentation', label: 'Başvuru', value: intro.presentation || complaint },
-      { kind: 'risk', label: 'Risk bağlamı', items: riskItems, fallback: 'Risk bağlamı vaka öyküsü ve objektif bulgularla birlikte değerlendirilmelidir.' },
-      { kind: 'clues', label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Ayırt ettirici ipuçları öykü, muayene ve tetkik verilerinden birlikte çıkarılmalıdır.' },
+      { kind: 'profile', label: 'Profil', value: profileText },
+      { kind: 'presentation', label: 'Başvuru', value: presentationText },
+      { kind: 'risk', label: 'Risk bağlamı', items: riskItems, fallback: 'Risk bağlamı vaka öyküsüyle birlikte değerlendirilmelidir.' },
+      { kind: 'clues', label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Öykü, muayene ve tetkik verilerinden ayrım yapılmalıdır.' },
     ],
-    history: splitSentences(intro.historySummary || fallbackStory).slice(0, 4),
-    focus: intro.priorityFocus || buildFocusSentence(clinicalCase),
+    history: historyParts.length ? historyParts : [compactSentence(fallbackStory, 190)],
+    focus: compactSentence(intro.priorityFocus || buildFocusSentence(clinicalCase), 230),
+    tip: intro.clinicalTip || buildClinicalTip(clinicalCase, clueItems),
   };
 }
 
@@ -684,6 +715,14 @@ function CasePlayer({
                     <div>
                       <span>Öncelikli klinik odak</span>
                       <p><GlossaryText text={patientSummary.focus} enabled={!hardMode && !examMeta?.active} /></p>
+                    </div>
+                  </aside>
+
+                  <aside className="patient-summary-tip-strip unified-clinical-tip">
+                    <Icon name="Sparkles" size={14} />
+                    <div>
+                      <span>Klinik ipucu</span>
+                      <p><GlossaryText text={patientSummary.tip} enabled={!hardMode && !examMeta?.active} /></p>
                     </div>
                   </aside>
                 </div>

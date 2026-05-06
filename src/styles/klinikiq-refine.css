@@ -1677,3 +1677,365 @@ html[data-theme="dark"] .diagnostic-decision-panel .answer-option.wrong {
     border-radius: 18px !important;
   }
 }
+
+/* === V34 Hasta Özeti premium readability redesign === */
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card {
+  width: 100% !important;
+  margin-top: 18px !important;
+  padding: 18px !important;
+  border-radius: 28px !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--border-subtle)) !important;
+  background:
+    radial-gradient(circle at 14% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 95%, #f0fdfa 5%), color-mix(in srgb, var(--surface-2) 91%, #ecfeff 9%)) !important;
+  box-shadow: 0 22px 54px rgba(15, 23, 42, .075), inset 0 1px 0 rgba(255, 255, 255, .84) !important;
+  overflow: hidden !important;
+}
+
+.patient-summary-head.compact-summary-head.premium-summary-head {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin: 0 0 14px !important;
+  padding: 0 1px 13px !important;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 13%, transparent) !important;
+}
+
+.patient-summary-head.compact-summary-head.premium-summary-head .icon-badge {
+  flex: 0 0 auto !important;
+  width: 38px !important;
+  height: 38px !important;
+  border-radius: 15px !important;
+  color: color-mix(in srgb, var(--accent) 74%, #0f766e 26%) !important;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 13%, #fff), color-mix(in srgb, var(--accent) 8%, #fff)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent) !important;
+  box-shadow: 0 12px 24px color-mix(in srgb, var(--accent) 14%, transparent), inset 0 1px 0 rgba(255, 255, 255, .82) !important;
+}
+
+.patient-summary-head.compact-summary-head.premium-summary-head strong {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(18px, 2vw, 21px) !important;
+  font-weight: 850 !important;
+  letter-spacing: -.025em !important;
+  line-height: 1.08 !important;
+}
+
+.patient-summary-head.compact-summary-head.premium-summary-head p {
+  margin: 4px 0 0 !important;
+  color: var(--text-muted) !important;
+  font-size: 12.5px !important;
+  font-weight: 620 !important;
+  letter-spacing: .01em !important;
+  line-height: 1.25 !important;
+}
+
+.structured-patient-summary-grid.unified-summary-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  margin: 0 !important;
+}
+
+.structured-patient-summary-grid.unified-summary-grid .summary-detail-card {
+  min-width: 0 !important;
+  min-height: 96px !important;
+  padding: 14px 15px !important;
+  border-radius: 20px !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, var(--border-subtle)) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface) 96%, #f8fafc 4%), color-mix(in srgb, var(--surface-2) 92%, #f0fdfa 8%)) !important;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, .045), inset 0 1px 0 rgba(255, 255, 255, .76) !important;
+  overflow: hidden !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.structured-patient-summary-grid.unified-summary-grid .summary-detail-card--profile {
+  background:
+    radial-gradient(circle at 0% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 44%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 96%, #ecfeff 4%), color-mix(in srgb, var(--surface-2) 90%, #f0fdfa 10%)) !important;
+}
+
+.structured-patient-summary-grid.unified-summary-grid .summary-detail-card > span {
+  display: block !important;
+  margin: 0 0 8px !important;
+  color: color-mix(in srgb, var(--accent) 72%, var(--text-muted) 28%) !important;
+  font-size: 10.5px !important;
+  font-weight: 850 !important;
+  letter-spacing: .105em !important;
+  text-transform: uppercase !important;
+  line-height: 1.15 !important;
+}
+
+.structured-patient-summary-grid.unified-summary-grid .summary-detail-card > p,
+.structured-patient-summary-grid.unified-summary-grid .summary-detail-card > p * {
+  margin: 0 !important;
+  color: var(--text-primary) !important;
+  font-size: 13.8px !important;
+  font-weight: 680 !important;
+  line-height: 1.42 !important;
+  letter-spacing: -.006em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.structured-patient-summary-grid.unified-summary-grid .summary-detail-card--profile > p,
+.structured-patient-summary-grid.unified-summary-grid .summary-detail-card--profile > p * {
+  font-size: 14.8px !important;
+  font-weight: 780 !important;
+  letter-spacing: -.012em !important;
+}
+
+.summary-clinical-mini-list.refined-summary-bullet-list {
+  display: grid !important;
+  gap: 6px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.summary-clinical-mini-list.refined-summary-bullet-list li {
+  position: relative !important;
+  margin: 0 !important;
+  padding: 0 0 0 14px !important;
+  color: var(--text-primary) !important;
+  font-size: 13.25px !important;
+  font-weight: 650 !important;
+  line-height: 1.38 !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.summary-clinical-mini-list.refined-summary-bullet-list li::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: .62em !important;
+  width: 5px !important;
+  height: 5px !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--accent) 72%, #14b8a6 28%) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 10%, transparent) !important;
+}
+
+.patient-summary-story-block.unified-history-block {
+  margin-top: 12px !important;
+  padding: 15px 16px !important;
+  border-radius: 22px !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 10%, var(--border-subtle)) !important;
+  background: color-mix(in srgb, var(--surface) 93%, #f8fafc 7%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72) !important;
+}
+
+.patient-summary-story-block.unified-history-block .summary-story-label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  margin: 0 0 9px !important;
+  color: color-mix(in srgb, var(--accent) 72%, var(--text-muted) 28%) !important;
+}
+
+.patient-summary-story-block.unified-history-block .summary-story-label span {
+  color: inherit !important;
+  font-size: 11px !important;
+  font-weight: 850 !important;
+  letter-spacing: .095em !important;
+  text-transform: uppercase !important;
+}
+
+.patient-summary-story-block.unified-history-block .summary-story-text {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--text-primary) !important;
+  font-size: 14px !important;
+  font-weight: 610 !important;
+  line-height: 1.55 !important;
+  letter-spacing: -.006em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.patient-summary-story-block.unified-history-block .stem-sentence {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 2px !important;
+  border-radius: 7px !important;
+  background: transparent !important;
+  box-decoration-break: clone !important;
+  -webkit-box-decoration-break: clone !important;
+}
+
+.patient-summary-story-block.unified-history-block .stem-sentence + .stem-sentence::before {
+  content: ' ' !important;
+}
+
+.patient-summary-story-block.unified-history-block .stem-sentence.highlighted {
+  background: color-mix(in srgb, var(--accent) 13%, transparent) !important;
+}
+
+.patient-summary-focus-strip.refined-focus-callout.unified-priority-focus {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  margin-top: 12px !important;
+  padding: 15px 16px !important;
+  border-radius: 22px !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent) !important;
+  background:
+    radial-gradient(circle at 92% 0%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 42%),
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 15%, var(--surface)), color-mix(in srgb, #e6fffb 58%, var(--surface) 42%)) !important;
+  box-shadow: 0 14px 30px color-mix(in srgb, var(--accent) 11%, transparent), inset 0 1px 0 rgba(255, 255, 255, .74) !important;
+}
+
+.patient-summary-focus-strip.refined-focus-callout.unified-priority-focus > svg {
+  flex: 0 0 auto !important;
+  margin-top: 2px !important;
+  color: color-mix(in srgb, var(--accent) 78%, #0f766e 22%) !important;
+}
+
+.patient-summary-focus-strip.refined-focus-callout.unified-priority-focus > div {
+  min-width: 0 !important;
+}
+
+.patient-summary-focus-strip.refined-focus-callout.unified-priority-focus span {
+  display: block !important;
+  margin: 0 0 5px !important;
+  color: color-mix(in srgb, var(--accent) 76%, #0f172a 24%) !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: .09em !important;
+  text-transform: uppercase !important;
+  line-height: 1.15 !important;
+}
+
+.patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p,
+.patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p * {
+  margin: 0 !important;
+  color: var(--text-primary) !important;
+  font-size: 14.25px !important;
+  font-weight: 760 !important;
+  line-height: 1.47 !important;
+  letter-spacing: -.01em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.patient-summary-tip-strip.unified-clinical-tip {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  margin-top: 10px !important;
+  padding: 11px 14px !important;
+  border-radius: 18px !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 13%, var(--border-subtle)) !important;
+  background: color-mix(in srgb, var(--surface) 88%, #ecfeff 12%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .7) !important;
+}
+
+.patient-summary-tip-strip.unified-clinical-tip > svg {
+  flex: 0 0 auto !important;
+  margin-top: 2px !important;
+  color: color-mix(in srgb, var(--accent) 70%, #0f766e 30%) !important;
+}
+
+.patient-summary-tip-strip.unified-clinical-tip > div {
+  min-width: 0 !important;
+}
+
+.patient-summary-tip-strip.unified-clinical-tip span {
+  display: block !important;
+  margin: 0 0 3px !important;
+  color: color-mix(in srgb, var(--accent) 68%, var(--text-muted) 32%) !important;
+  font-size: 10.5px !important;
+  font-weight: 850 !important;
+  letter-spacing: .085em !important;
+  text-transform: uppercase !important;
+  line-height: 1.15 !important;
+}
+
+.patient-summary-tip-strip.unified-clinical-tip p,
+.patient-summary-tip-strip.unified-clinical-tip p * {
+  margin: 0 !important;
+  color: var(--text-secondary) !important;
+  font-size: 13.2px !important;
+  font-weight: 650 !important;
+  line-height: 1.42 !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+}
+
+.app-shell[data-theme="dark"] .patient-summary-card.professional-patient-summary-card.clinical-summary-card,
+html[data-theme="dark"] .patient-summary-card.professional-patient-summary-card.clinical-summary-card {
+  background:
+    radial-gradient(circle at 14% 0%, color-mix(in srgb, var(--accent) 17%, transparent), transparent 36%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-2) 87%, #042f2e 13%), color-mix(in srgb, var(--surface-3) 90%, #020617 10%)) !important;
+  box-shadow: 0 22px 54px rgba(0, 0, 0, .26), inset 0 1px 0 rgba(255, 255, 255, .055) !important;
+}
+
+.app-shell[data-theme="dark"] .structured-patient-summary-grid.unified-summary-grid .summary-detail-card,
+html[data-theme="dark"] .structured-patient-summary-grid.unified-summary-grid .summary-detail-card,
+.app-shell[data-theme="dark"] .patient-summary-story-block.unified-history-block,
+html[data-theme="dark"] .patient-summary-story-block.unified-history-block,
+.app-shell[data-theme="dark"] .patient-summary-tip-strip.unified-clinical-tip,
+html[data-theme="dark"] .patient-summary-tip-strip.unified-clinical-tip {
+  background: color-mix(in srgb, var(--surface-2) 88%, #042f2e 12%) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.055) !important;
+}
+
+.app-shell[data-theme="dark"] .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus,
+html[data-theme="dark"] .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus {
+  background:
+    radial-gradient(circle at 92% 0%, color-mix(in srgb, var(--accent) 24%, transparent), transparent 44%),
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 15%, var(--surface-2)), color-mix(in srgb, var(--surface-3) 84%, #042f2e 16%)) !important;
+}
+
+@media (max-width: 820px) {
+  .patient-summary-card.professional-patient-summary-card.clinical-summary-card {
+    padding: 15px !important;
+    border-radius: 24px !important;
+  }
+
+  .structured-patient-summary-grid.unified-summary-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .structured-patient-summary-grid.unified-summary-grid .summary-detail-card {
+    min-height: auto !important;
+    padding: 13px 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .patient-summary-story-block.unified-history-block,
+  .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus,
+  .patient-summary-tip-strip.unified-clinical-tip {
+    border-radius: 18px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .patient-summary-head.compact-summary-head.premium-summary-head {
+    align-items: flex-start !important;
+  }
+
+  .patient-summary-head.compact-summary-head.premium-summary-head .icon-badge {
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 13px !important;
+  }
+
+  .structured-patient-summary-grid.unified-summary-grid .summary-detail-card > p,
+  .structured-patient-summary-grid.unified-summary-grid .summary-detail-card > p *,
+  .patient-summary-story-block.unified-history-block .summary-story-text,
+  .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p,
+  .patient-summary-focus-strip.refined-focus-callout.unified-priority-focus p * {
+    font-size: 13.2px !important;
+  }
+}
