@@ -25,8 +25,60 @@ const BASIC_SCIENCE_BRANCHES = new Set([
   'medical-microbiology',
 ]);
 
-function normalizeText(value = '') {
+
+const BAD_INLINE_LABEL_PATTERNS = [
+  /^Beklenen patern:\s*/iu,
+  /^Olgu verisi:\s*/iu,
+  /^Ek destek:\s*/iu,
+  /^Bu olgudaki ayırt ettirici nokta:\s*/iu,
+  /^[^.!?]{2,34}\s+lehine ek destek:\s*/iu,
+];
+
+const GENERIC_PEARL_LABELS = new Set([
+  'TUS kırmızı bayrağı',
+  'İlk adım',
+  'Mekanizma',
+  'Pellagra',
+  'TUS paterni',
+  'Sınav incisi',
+  'Hap bilgi',
+]);
+
+function removeTruncationArtifacts(value = '') {
   return String(value ?? '')
+    .replace(/…+/gu, '.')
+    .replace(/\.\.\.+/gu, '.')
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/\.\s*\./g, '.')
+    .replace(/;\s*\./g, '.')
+    .replace(/,\s*\./g, '.')
+    .replace(/\bancak da\b/giu, 'ancak')
+    .replace(/\bNiasin\/niktotinamid\b/giu, 'Niasin/nikotinamid')
+    .replace(/\bPH\b/g, 'pH')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function stripInlineLabel(value = '') {
+  let text = removeTruncationArtifacts(value);
+  BAD_INLINE_LABEL_PATTERNS.forEach((pattern) => {
+    text = text.replace(pattern, '');
+  });
+  return text.trim();
+}
+
+function sentenceWithoutColonLabel(title = '', body = '') {
+  const cleanTitle = trimTrailingPunctuation(removeTruncationArtifacts(title));
+  const cleanBody = ensureSentence(stripInlineLabel(body));
+  if (!cleanTitle || GENERIC_PEARL_LABELS.has(cleanTitle)) return cleanBody;
+  if (/^[A-ZÇĞİÖŞÜ][a-zçğıöşü]+$/u.test(cleanTitle) && cleanBody.toLocaleLowerCase('tr').includes(cleanTitle.toLocaleLowerCase('tr'))) {
+    return cleanBody;
+  }
+  return cleanBody;
+}
+
+function normalizeText(value = '') {
+  return removeTruncationArtifacts(value)
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .trim();
@@ -72,10 +124,18 @@ function ensureSentence(value = '') {
 }
 
 function truncateSentence(value = '', limit = 230) {
-  const text = normalizeText(value);
+  const text = removeTruncationArtifacts(normalizeText(value));
   if (text.length <= limit) return text;
-  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').trim();
-  return `${cut}…`;
+  const sentenceBoundary = Math.max(
+    text.lastIndexOf('.', limit),
+    text.lastIndexOf('!', limit),
+    text.lastIndexOf('?', limit)
+  );
+  if (sentenceBoundary > Math.max(80, limit * 0.45)) return text.slice(0, sentenceBoundary + 1).trim();
+  const softBoundary = Math.max(text.lastIndexOf(';', limit), text.lastIndexOf(',', limit));
+  const cutAt = softBoundary > Math.max(80, limit * 0.45) ? softBoundary : text.lastIndexOf(' ', limit);
+  const cut = text.slice(0, cutAt > 0 ? cutAt : limit).trim();
+  return ensureSentence(cut);
 }
 
 function splitIntoSentences(text = '') {
@@ -291,12 +351,12 @@ function deriveEvidenceChain(clinicalCase) {
 
 function inferPearlLabel(text = '', index = 0) {
   const normalized = normalizeText(text).toLocaleLowerCase('tr');
-  if (/kırmızı bayrak|red flag|tutarsız|acil|geciktirmez/.test(normalized)) return 'TUS kırmızı bayrağı';
-  if (/ilk|başla|önce|bekleme|stabilizasyon|reperfüzyon|bildirim/.test(normalized)) return 'İlk adım';
-  if (/değil|kaçır|karışır|tuzak|çeldirici|yanlış/.test(normalized)) return 'Sık tuzak';
-  if (/mekanizma|enzim|reseptör|gen|yolak|inhibe|aktive/.test(normalized)) return 'Mekanizma';
+  if (/kırmızı bayrak|red flag|tutarsız|acil|geciktirmez/.test(normalized)) return 'Acil öncelik';
+  if (/ilk|başla|önce|bekleme|stabilizasyon|reperfüzyon|bildirim/.test(normalized)) return 'Tedavi önceliği';
+  if (/değil|kaçır|karışır|tuzak|çeldirici|yanlış/.test(normalized)) return 'Sık karışan nokta';
+  if (/mekanizma|enzim|reseptör|gen|yolak|inhibe|aktive/.test(normalized)) return 'Mekanizma bağlantısı';
   if (/tanı|test|marker|seroloji|kültür|pcr|histoloji/.test(normalized)) return 'Ayırt ettirici bulgu';
-  return index === 0 ? 'Sınav incisi' : 'Hap bilgi';
+  return index === 0 ? 'Sınav ipucu' : 'Hap bilgi';
 }
 
 function derivePearls(clinicalCase) {
@@ -319,12 +379,32 @@ function derivePearls(clinicalCase) {
 
 function inferManagementTitle(text = '', index = 0) {
   const normalized = normalizeText(text).toLocaleLowerCase('tr');
-  if (/stabil|abc|hava yolu|solunum|dolaşım|monitör|damar yolu|nöbet/.test(normalized)) return 'Stabilizasyon';
+  if (/fotosensitif|triad|patern|ayırt|düşündür|lehine|semptom|bulgu/.test(normalized)) return 'Klinik patern';
+  if (/stabil|abc|hava yolu|solunum|dolaşım|monitör|damar yolu|nöbet|hipotansiyon|şok/.test(normalized)) return 'Stabilite kontrolü';
   if (/kaydet|dokümante|objektif|adli|bildirim|güvenlik|koruyucu/.test(normalized)) return /bildirim|güvenlik|koruyucu|adli/.test(normalized) ? 'Güvenlik ve bildirim' : 'Objektif kayıt';
-  if (/tetkik|ekg|bt|mr|usg|kültür|seroloji|biyopsi|marker|laboratuvar|doğrula/.test(normalized)) return 'Tanısal doğrulama';
-  if (/tedavi|başla|ver|antibiyotik|antikoagülasyon|aspirin|insülin|antidot|cerrahi|pci|reperfüzyon|hipotermi|sıvı/.test(normalized)) return 'İlk tedavi';
-  if (/izle|takip|kontrol|komplikasyon|yanıt|daralt|değiştir/.test(normalized)) return 'İzlem';
-  return index === 0 ? 'İlk karar' : 'Sonraki adım';
+  if (/tetkik|ekg|bt|mr|usg|kültür|seroloji|biyopsi|marker|laboratuvar|doğrula|olasılık/.test(normalized)) return 'Tanısal doğrulama';
+  if (/tedavi|başla|ver|replasman|antibiyotik|antikoagülasyon|aspirin|insülin|antidot|cerrahi|pci|reperfüzyon|hipotermi|sıvı/.test(normalized)) return 'Tedavi önceliği';
+  if (/malnütrisyon|alkol|malabsorpsiyon|izoniazid|neden|altta yatan|risk|maruziyet|öykü/.test(normalized)) return 'Altta yatan neden';
+  if (/eşlik|vitamin|eksiklik|beslenme|elektrolit/.test(normalized)) return 'Eşlik eden eksiklikler';
+  if (/izle|takip|kontrol|komplikasyon|yanıt|daralt|değiştir/.test(normalized)) return 'Klinik izlem';
+  if (/mekanizma|enzim|yolak|reseptör|hormon|substrat|metabolit/.test(normalized)) return 'Mekanizma bağlantısı';
+  return ['Klinik patern', 'Karar noktası', 'Uygulama basamağı', 'İzlem planı'][index] || 'Sonraki adım';
+}
+
+function isLowQualityManagementTitle(title = '') {
+  return /^(Mekanistik yaklaşım|Klinik olasılığı belirle|İlk tedavi|İlk karar|Sonraki adım)$/iu.test(normalizeText(title));
+}
+
+function dedupeStepTitles(items = []) {
+  const titleCounts = new Map();
+  return items.map((item, index) => {
+    if (!item) return item;
+    const key = normalizeText(item.title).toLocaleLowerCase('tr');
+    const nextCount = (titleCounts.get(key) || 0) + 1;
+    titleCounts.set(key, nextCount);
+    if (nextCount === 1 && !isLowQualityManagementTitle(item.title)) return item;
+    return { ...item, title: inferManagementTitle(item.text, index) };
+  });
 }
 
 function deriveManagementSteps(clinicalCase) {
@@ -338,10 +418,16 @@ function deriveManagementSteps(clinicalCase) {
     steps = splitActionItems(nextStep);
   }
 
-  return unique(steps)
+  return dedupeStepTitles(unique(steps)
     .slice(0, MAX_MANAGEMENT_ITEMS)
-    .map((step, index) => normalizeTitledItem(step, index, inferManagementTitle(itemText(step), index), 170))
-    .filter(Boolean);
+    .map((step, index) => {
+      const explicitTitle = itemTitle(step);
+      const fallback = !explicitTitle || isLowQualityManagementTitle(explicitTitle)
+        ? inferManagementTitle(itemText(step), index)
+        : explicitTitle;
+      return normalizeTitledItem(step, index, fallback, 190);
+    })
+    .filter(Boolean));
 }
 
 function isGenericComparisonPoint(point = '') {
@@ -349,16 +435,16 @@ function isGenericComparisonPoint(point = '') {
 }
 
 function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) {
-  const keyEvidence = evidenceChain[0]?.text || itemText(evidenceChain[0]);
-  const secondEvidence = evidenceChain[1]?.text || itemText(evidenceChain[1]);
+  const keyEvidence = stripInlineLabel(evidenceChain[0]?.text || itemText(evidenceChain[0]));
+  const secondEvidence = stripInlineLabel(evidenceChain[1]?.text || itemText(evidenceChain[1]));
   const expectedPattern = inferOptionExpectedPattern(option);
   const points = [
-    expectedPattern ? `Beklenen patern: ${expectedPattern}` : null,
-    keyEvidence ? `Olgu verisi: ${trimTrailingPunctuation(keyEvidence)}.` : null,
-    secondEvidence ? `Ek destek: ${trimTrailingPunctuation(secondEvidence)}.` : null,
+    expectedPattern ? `${capitalizeSentence(expectedPattern)}` : null,
+    keyEvidence ? `Bu olguda ${trimTrailingPunctuation(keyEvidence)} bulgusu karar verdirici ipucudur.` : null,
+    secondEvidence ? `${capitalizeSentence(trimTrailingPunctuation(secondEvidence))} tanısal yorumu güçlendirir.` : null,
   ];
 
-  return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(item, 155));
+  return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(stripInlineLabel(item), 170));
 }
 
 function inferOptionExpectedPattern(option = '') {
@@ -370,6 +456,15 @@ function inferOptionExpectedPattern(option = '') {
   if (/akut koroner|miyokart|stemi|nstemi/.test(text)) return 'iskemik ağrı, EKG ve troponin paterni beklenir.';
   if (/panik/.test(text)) return 'objektif organ/tromboemboli bulgusu olmadan ani anksiyete atağı beklenir.';
   return '';
+}
+
+function cleanComparisonPoint(point = '') {
+  const cleaned = stripInlineLabel(point)
+    .replace(/^doğru seçenek lehine\s*/iu, '')
+    .replace(/^olguda\s+/iu, 'Bu olguda ')
+    .trim();
+  if (!cleaned) return '';
+  return truncateSentence(cleaned, 180);
 }
 
 function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []) {
@@ -394,8 +489,8 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
     }
 
     const explicit = wrongMap[option] || {};
-    const explanation = removeMetaLanguage(explicit.explanation || `${option} için beklenen tipik öykü, muayene veya tetkik paterni bu olguda baskın değildir. ${clue ? `${clue} ` : 'Olgudaki somut kanıtlar '}doğru seçenek lehine daha tutarlıdır.`);
-    const nonGenericPoints = unique(explicit.comparisonPoints || []).filter((point) => !isGenericComparisonPoint(point));
+    const explanation = removeMetaLanguage(explicit.explanation || `${option} için beklenen klinik patern bu olguda baskın değildir. ${clue ? `${clue} ` : 'Olgudaki somut kanıtlar '}doğru seçenek lehine daha tutarlı bir bütün oluşturur.`);
+    const nonGenericPoints = unique(explicit.comparisonPoints || []).filter((point) => !isGenericComparisonPoint(point)).map(cleanComparisonPoint).filter(Boolean);
 
     return {
       option,
@@ -465,7 +560,7 @@ function ClinicalPearlsList({ pearls, glossaryEnabled = true }) {
         {pearls.map((pearl, index) => (
           <div className="clinical-pearl-item clinical-pearl-item-pro" key={`${pearl.label}-${pearl.text}-${index}`}>
             <span aria-hidden="true" />
-            <p><strong><GlossaryText text={pearl.label} enabled={glossaryEnabled} />:</strong> <GlossaryText text={ensureSentence(pearl.text)} enabled={glossaryEnabled} /></p>
+            <p><GlossaryText text={sentenceWithoutColonLabel(pearl.label, pearl.text)} enabled={glossaryEnabled} /></p>
           </div>
         ))}
       </div>
@@ -503,12 +598,15 @@ function FeedbackManagementCard({ managementSteps, glossaryEnabled = true, clini
   if (!managementSteps.length) return null;
   const isBasic = BASIC_SCIENCE_BRANCHES.has(clinicalCase?.branchId) && clinicalCase?.caseType !== 'spot';
   return (
-    <FeedbackSection icon="Timer" tone="warning" eyebrow={isBasic ? 'Yaklaşım' : 'Yönetim'} title={isBasic ? 'Mekanistik yaklaşım notu' : 'İlk yönetim basamağı'} className="feedback-management-card">
+    <FeedbackSection icon="Timer" tone="warning" eyebrow={isBasic ? 'Yaklaşım' : 'Yönetim'} title={isBasic ? 'Klinik yaklaşım notu' : 'İlk yönetim basamağı'} className="feedback-management-card">
       <div className="management-action-list">
         {managementSteps.map((step, index) => (
           <div className="management-action-item management-action-item-pro" key={`${step.title}-${step.text}-${index}`}>
             <b>{index + 1}</b>
-            <p><strong><GlossaryText text={step.title} enabled={glossaryEnabled} />:</strong> <GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} /></p>
+            <div className="management-action-copy">
+              <strong><GlossaryText text={step.title} enabled={glossaryEnabled} /></strong>
+              <p><GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} /></p>
+            </div>
           </div>
         ))}
       </div>

@@ -4421,3 +4421,41 @@ body:not(.klinikiq-auth-lock) .option-comparison-head strong {
     max-width: 100% !important;
   }
 }
+
+/* Feedback text-quality refinement: separates step titles from body copy without colon-heavy inline labels. */
+body:not(.klinikiq-auth-lock) .answer-feedback-panel-pro .management-action-copy {
+  display: grid;
+  gap: 0.25rem;
+  min-width: 0;
+}
+
+body:not(.klinikiq-auth-lock) .answer-feedback-panel-pro .management-action-copy > strong {
+  display: block;
+  margin: 0;
+  color: var(--text-strong, #0f172a);
+  font-size: 0.9rem;
+  font-weight: 780;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+body:not(.klinikiq-auth-lock) .answer-feedback-panel-pro .management-action-copy > p {
+  margin: 0;
+  color: var(--text-muted, #475569);
+  font-size: 0.9rem;
+  line-height: 1.58;
+}
+
+body:not(.klinikiq-auth-lock) .answer-feedback-panel-pro .clinical-pearl-item-pro p {
+  line-height: 1.62;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .answer-feedback-panel-pro .management-action-copy > strong,
+.app-shell[data-theme="dark"] .answer-feedback-panel-pro .management-action-copy > strong {
+  color: rgba(248, 250, 252, 0.94);
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .answer-feedback-panel-pro .management-action-copy > p,
+.app-shell[data-theme="dark"] .answer-feedback-panel-pro .management-action-copy > p {
+  color: rgba(203, 213, 225, 0.86);
+}

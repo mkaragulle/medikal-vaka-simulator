@@ -82,8 +82,8 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
     accumulator[option.text] = {
       explanation: feedback[option.id] || `${option.text} güçlü bir çeldirici olabilir; ancak olgudaki objektif ipuçları ${correctText} lehinedir.`,
       comparisonPoints: [
-        `Beklenen patern: ${option.text} kendi özgül öykü, muayene veya tetkik bulgularıyla güç kazanır.`,
-        `Ayırt ettirici olgu verisi: “${payload.evidenceChain?.[0] || payload.learningTarget || 'temel klinik ipucu'}”.`,
+        `${option.text} kendi özgül öykü, muayene veya tetkik bulgularıyla güç kazanır.`,
+        `Olgu ipucu “${payload.evidenceChain?.[0] || payload.learningTarget || 'temel klinik ipucu'}” bilgisidir.`,
         `Doğru yanıt ${correctText}; çünkü bulgular aynı tanısal eksende birleşir.`,
       ],
     };

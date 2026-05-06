@@ -167,8 +167,8 @@ function buildDifferentialComparison(seed, correctText) {
     accumulator[option.text] = {
       explanation: feedback,
       comparisonPoints: [
-        `Beklenen patern: ${option.text} kendi özgül öykü, muayene veya tetkik bulgularıyla güç kazanır.`,
-        `Ayırt ettirici olgu verisi: “${seed.evidenceChain?.[0] || seed.learningTarget}”.`,
+        `${option.text} kendi özgül öykü, muayene veya tetkik bulgularıyla güç kazanır.`,
+        `Olgu ipucu “${seed.evidenceChain?.[0] || seed.learningTarget}” bilgisidir.`,
         `Doğru yanıt ${correctText}; çünkü öykü, muayene ve objektif veriler aynı tanısal eksende birleşir.`,
       ],
     };
