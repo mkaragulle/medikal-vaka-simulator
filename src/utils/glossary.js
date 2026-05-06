@@ -13,6 +13,84 @@ export function normalizeGlossaryText(value = '') {
     .trim();
 }
 
+export const UNIT_BLACKLIST = [
+  'mg',
+  'g',
+  'kg',
+  'mcg',
+  'µg',
+  'μg',
+  'ng',
+  'mL',
+  'L',
+  'dL',
+  'mg/dL',
+  'mg/L',
+  'g/dL',
+  'mmol/L',
+  'mEq/L',
+  'IU/L',
+  'U/L',
+  'pg/mL',
+  'ng/mL',
+  'µIU/mL',
+  'μIU/mL',
+  'mmHg',
+  'bpm',
+  '°C',
+  '%',
+  '/mm³',
+  '/mm3',
+  'x10^3/µL',
+  'x10^3/μL',
+];
+
+function escapeUnitRegExp(value = '') {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
+export function normalizeUnitToken(value = '') {
+  return String(value)
+    .replace(/μ/g, 'µ')
+    .replace(/\s+/g, '')
+    .trim();
+}
+
+const UNIT_BLACKLIST_SET = new Set(UNIT_BLACKLIST.map(normalizeUnitToken));
+
+const NUMERIC_UNIT_PATTERN = UNIT_BLACKLIST
+  .map(normalizeUnitToken)
+  .filter(Boolean)
+  .sort((a, b) => b.length - a.length)
+  .map(escapeUnitRegExp)
+  .join('|');
+
+const NUMERIC_UNIT_REGEX = new RegExp(
+  `\\b\\d+(?:[.,]\\d+)?(?:\\s*(?:/|–|-|to)\\s*\\d+(?:[.,]\\d+)?)?\\s*(?:${NUMERIC_UNIT_PATTERN})(?=$|[\\s,;:.!?)}\\]\\[]|\\/)`,
+  'gu',
+);
+
+export function isBlacklistedUnitToken(value = '') {
+  return UNIT_BLACKLIST_SET.has(normalizeUnitToken(value));
+}
+
+export function getProtectedUnitRanges(text = '') {
+  const source = String(text).replace(/μ/g, 'µ');
+  const ranges = [];
+  NUMERIC_UNIT_REGEX.lastIndex = 0;
+  let match;
+
+  while ((match = NUMERIC_UNIT_REGEX.exec(source)) !== null) {
+    ranges.push({ start: match.index, end: match.index + match[0].length });
+  }
+
+  return ranges;
+}
+
+export function isInsideProtectedUnitRange(start, end, ranges = []) {
+  return ranges.some((range) => start < range.end && end > range.start);
+}
+
 export const globalGlossaryTerms = [
   {
     "term": "EKG",

@@ -49,13 +49,182 @@ function groupOrdersByCategory(orders = []) {
 }
 
 
-function getLabStatusTone(note = '') {
-  const normalized = String(note || '').toLocaleLowerCase('tr');
-  if (!normalized || normalized === '—') return 'neutral';
-  if (/(yüksek|artmış|pozitif|uygunsuz|kritik)/i.test(normalized)) return 'warning';
-  if (/(düşük|azalmış|eksik|negatif değil)/i.test(normalized)) return 'danger';
-  if (/(normal|referans içinde|uyumlu|stabil|negatif)/i.test(normalized)) return 'success';
-  return 'neutral';
+function normalizeClinicalText(value = '') {
+  return String(value || '')
+    .toLocaleLowerCase('tr')
+    .replace(/ı/g, 'i')
+    .replace(/İ/g, 'i')
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .replace(/â/g, 'a')
+    .replace(/î/g, 'i')
+    .replace(/û/g, 'u')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function hasAny(text, patterns = []) {
+  return patterns.some((pattern) => pattern.test(text));
+}
+
+function parseClinicalNumber(rawValue = '') {
+  const source = String(rawValue || '').replace(/,/g, '.');
+  const match = source.match(/-?\d+(?:[.,]\d+)?/);
+  if (!match) return null;
+  const token = match[0];
+  const normalized = /^\d{1,3}(?:\.\d{3})+(?:\.\d+)?$/.test(token)
+    ? token.replace(/\./g, '')
+    : token;
+  const parsed = Number.parseFloat(normalized);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function extractReferenceNumbers(rawReference = '') {
+  const source = String(rawReference || '')
+    .replace(/,/g, '.')
+    .replace(/(\d)\s*[-–—]\s*(\d)/g, '$1 $2');
+  const matches = source.match(/-?\d+(?:[.,]\d+)?/g) || [];
+  return matches
+    .map((token) => {
+      const normalized = /^\d{1,3}(?:\.\d{3})+(?:\.\d+)?$/.test(token)
+        ? token.replace(/\./g, '')
+        : token;
+      const parsed = Number.parseFloat(normalized);
+      return Number.isFinite(parsed) ? parsed : null;
+    })
+    .filter((number) => number !== null);
+}
+
+function evaluateNumericStatus(value = '', reference = '') {
+  const numericValue = parseClinicalNumber(value);
+  const refText = String(reference || '').trim();
+  const normalizedReference = normalizeClinicalText(refText);
+  if (numericValue === null || !refText || refText === '—') return null;
+
+  const referenceNumbers = extractReferenceNumbers(refText);
+  if (/^</.test(normalizedReference) && referenceNumbers.length) {
+    return numericValue < referenceNumbers[0]
+      ? { tone: 'success', label: 'Referans içinde' }
+      : { tone: 'danger', label: 'Yüksek' };
+  }
+  if (/^≤|^<=/.test(normalizedReference) && referenceNumbers.length) {
+    return numericValue <= referenceNumbers[0]
+      ? { tone: 'success', label: 'Referans içinde' }
+      : { tone: 'danger', label: 'Yüksek' };
+  }
+  if (/^>/.test(normalizedReference) && referenceNumbers.length) {
+    return numericValue > referenceNumbers[0]
+      ? { tone: 'success', label: 'Referans içinde' }
+      : { tone: 'danger', label: 'Düşük' };
+  }
+  if (/^≥|^>=/.test(normalizedReference) && referenceNumbers.length) {
+    return numericValue >= referenceNumbers[0]
+      ? { tone: 'success', label: 'Referans içinde' }
+      : { tone: 'danger', label: 'Düşük' };
+  }
+  if (referenceNumbers.length >= 2 && /[-–—]/.test(refText)) {
+    const [low, high] = referenceNumbers[0] <= referenceNumbers[1]
+      ? [referenceNumbers[0], referenceNumbers[1]]
+      : [referenceNumbers[1], referenceNumbers[0]];
+    if (numericValue < low) return { tone: 'danger', label: 'Düşük' };
+    if (numericValue > high) return { tone: 'danger', label: 'Yüksek' };
+    return { tone: 'success', label: 'Referans içinde' };
+  }
+  return null;
+}
+
+const ABSENCE_RESULT_PATTERNS = [
+  /\bsaptanmadi\b/,
+  /\bizlenmedi\b/,
+  /\bgorulmedi\b/,
+  /\byok\b/,
+  /\bnegatif\b/,
+  /\bnormal sinirlarda\b/,
+  /\breferans icinde\b/,
+  /\bpatoloji saptanmadi\b/,
+  /\banormal bulgu yok\b/,
+  /\bdislan(?:di|ir)\b/,
+];
+
+const ABSENCE_REFERENCE_PATTERNS = [
+  /\bsaptanmamali\b/,
+  /\bsaptanmaz\b/,
+  /\bolmamali\b/,
+  /\bbeklenmez\b/,
+  /\bizlenmemeli\b/,
+  /\byok\b/,
+  /\bnegatif\b/,
+  /\bnormal\b/,
+  /\bpatoloji yok\b/,
+];
+
+const PRESENCE_RESULT_PATTERNS = [
+  /\bsaptandi\b/,
+  /\bizlendi\b/,
+  /\bvar\b/,
+  /\bpozitif\b/,
+  /\bartmis\b/,
+  /\bartis\b/,
+  /\byuksek\b/,
+  /\bazalmis\b/,
+  /\bdusuk\b/,
+  /\banormal\b/,
+  /\bkritik\b/,
+];
+
+function evaluateSemanticStatus(row = {}) {
+  const value = String(row.value || '');
+  const reference = String(row.reference || '');
+  const note = String(row.note || '');
+  const parameter = String(row.parameter || '');
+  const valueText = normalizeClinicalText(value);
+  const referenceText = normalizeClinicalText(reference);
+  const noteText = normalizeClinicalText(note);
+  const combinedText = normalizeClinicalText(`${parameter} ${value} ${reference} ${note}`);
+
+  if (!valueText && !noteText) return { tone: 'neutral', label: '—' };
+
+  const numericStatus = evaluateNumericStatus(value, reference);
+  if (numericStatus) {
+    if (/\bsinirda\b/.test(noteText) || /\bhafif\b/.test(noteText)) {
+      return { tone: 'warning', label: note || numericStatus.label };
+    }
+    return noteText && /\bnormal\b|\breferans icinde\b|\buygun\b/.test(noteText)
+      ? { tone: 'success', label: note }
+      : numericStatus;
+  }
+
+  const resultShowsAbsence = hasAny(valueText, ABSENCE_RESULT_PATTERNS);
+  const referenceExpectsAbsence = hasAny(referenceText, ABSENCE_REFERENCE_PATTERNS);
+  const resultShowsPresence = hasAny(valueText, PRESENCE_RESULT_PATTERNS);
+
+  if (resultShowsAbsence && referenceExpectsAbsence) {
+    if (/\bnegatif\b/.test(valueText) && /\bnegatif\b/.test(referenceText)) return { tone: 'success', label: 'Normal' };
+    return { tone: 'success', label: 'Beklenen' };
+  }
+
+  if ((/\bnormal\b|\breferans icinde\b|\bstabil\b|\buygun\b|\buyumlu\b/.test(valueText) || /\bnormal\b|\breferans icinde\b|\bstabil\b|\buygun\b|\buyumlu\b/.test(noteText)) && !/\buyumlu degil\b|\banormal\b/.test(combinedText)) {
+    return { tone: 'success', label: note || 'Normal' };
+  }
+
+  if (resultShowsPresence && referenceExpectsAbsence) {
+    if (/\bsinirda\b|\bhafif\b/.test(combinedText)) return { tone: 'warning', label: note || 'Dikkat' };
+    if (/\bpozitif\b/.test(valueText)) return { tone: 'danger', label: 'Pozitif' };
+    return { tone: 'danger', label: 'Anormal' };
+  }
+
+  if (/\bdusuk risk\b|\brisk dusuk\b/.test(combinedText)) return { tone: 'success', label: 'Düşük risk' };
+  if (/\bkritik\b|\bacil\b|\bagir\b|\bbelirgin\b/.test(noteText)) return { tone: 'danger', label: note || 'Kritik' };
+  if (/\bsinirda\b|\bhafif\b|\btakip\b|\bdikkat\b/.test(noteText)) return { tone: 'warning', label: note || 'Dikkat' };
+  if (/\byuksek\b/.test(noteText)) return { tone: 'danger', label: note || 'Yüksek' };
+  if (/\bdusuk\b/.test(noteText)) return { tone: 'danger', label: note || 'Düşük' };
+  if (/\bpozitif\b|\bsaptandi\b|\bvar\b/.test(noteText)) return { tone: 'danger', label: note || 'Anormal' };
+  if (/\bnegatif\b|\bsaptanmadi\b|\byok\b/.test(noteText)) return { tone: 'success', label: note || 'Normal' };
+
+  return { tone: 'neutral', label: note || 'Bilgi' };
 }
 
 function normalizeResultRow(row) {
@@ -91,8 +260,8 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true }) {
             </tr>
           </thead>
           <tbody>
-            {normalizedRows.map(({ parameter, value, note }, index) => {
-              const tone = getLabStatusTone(note || value);
+            {normalizedRows.map(({ parameter, value, reference, note }, index) => {
+              const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
               return (
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
@@ -125,7 +294,8 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true }) {
         </thead>
         <tbody>
           {normalizedRows.map(({ parameter, value, reference, note }, index) => {
-            const tone = getLabStatusTone(note);
+            const status = evaluateSemanticStatus({ parameter, value, reference, note });
+            const tone = status.tone;
             return (
               <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                 <td>
@@ -139,7 +309,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true }) {
                 <td><span className="lab-reference-text">{reference || '—'}</span></td>
                 <td>
                   <span className={`lab-status-pill ${tone}`}>
-                    <GlossaryText text={String(note || '—')} enabled={glossaryEnabled} />
+                    <GlossaryText text={String(status.label || '—')} enabled={glossaryEnabled} />
                   </span>
                 </td>
               </tr>

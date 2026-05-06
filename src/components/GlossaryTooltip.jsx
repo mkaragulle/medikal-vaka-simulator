@@ -1,6 +1,12 @@
 import { useCallback, useEffect, useId, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { getGlossaryTerms, normalizeGlossaryText } from '../utils/glossary.js';
+import {
+  getGlossaryTerms,
+  getProtectedUnitRanges,
+  isBlacklistedUnitToken,
+  isInsideProtectedUnitRange,
+  normalizeGlossaryText,
+} from '../utils/glossary.js';
 
 const MAX_TERMS_PER_TEXT = 5;
 const VIEWPORT_PADDING = 12;
@@ -17,6 +23,37 @@ function escapeRegExp(text = '') {
 function clamp(value, min, max) {
   if (max < min) return min;
   return Math.min(Math.max(value, min), max);
+}
+
+function isStrictAcronymAlias(alias = '') {
+  const value = String(alias).trim();
+  return /^[A-ZÇĞİÖŞÜ0-9]{1,4}$/.test(value) && /[A-ZÇĞİÖŞÜ]/.test(value);
+}
+
+function isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, protectedUnitRanges) {
+  if (!item?.alias || !matchedValue) return false;
+
+  // Laboratory and vital-sign units must never become glossary links.
+  if (isBlacklistedUnitToken(matchedValue) || isBlacklistedUnitToken(item.alias)) return false;
+
+  // Do not link any token inside expressions such as "0.9 mg/dL", "120/80 mmHg", or "38.2 °C".
+  if (isInsideProtectedUnitRange(matchStart, matchEnd, protectedUnitRanges)) return false;
+
+  // Short medical acronyms are intentionally case-sensitive. This prevents "mg" from matching "MG".
+  if (isStrictAcronymAlias(item.alias) && matchedValue !== item.alias) return false;
+
+  const before = source.slice(Math.max(0, matchStart - 12), matchStart);
+  const after = source.slice(matchEnd, Math.min(source.length, matchEnd + 12));
+  const numericUnitContext = /(?:^|[\s:(])\d+(?:[.,]\d+)?\s*$/.test(before) || /^\s*(?:\/|mg\/|g\/|ng\/|pg\/|mmol\/|mEq\/|IU\/|U\/|dL|mL|L|mmHg|bpm|°C|%)/.test(after);
+
+  return !numericUnitContext;
+}
+
+function resolveGlossaryEntryForMatch(matcher, matchedValue, source, matchStart, matchEnd, protectedUnitRanges) {
+  const normalized = normalizeGlossaryText(matchedValue);
+  const candidates = matcher.aliasMap.get(normalized) || [];
+  const selected = candidates.find((item) => isValidAliasMatch(item, matchedValue, source, matchStart, matchEnd, protectedUnitRanges));
+  return selected?.entry || null;
 }
 
 function getViewportSize() {
@@ -55,23 +92,31 @@ function makeMatcher(terms = []) {
   terms.forEach((entry) => {
     const aliases = entry.aliases?.length ? entry.aliases : [entry.term];
     aliases.forEach((alias) => {
-      if (!alias) return;
-      aliasEntries.push({ alias, normalized: normalizeGlossaryText(alias), entry });
+      if (!alias || isBlacklistedUnitToken(alias)) return;
+      aliasEntries.push({ alias: String(alias), normalized: normalizeGlossaryText(alias), entry });
     });
   });
 
   const deduped = Array.from(
-    new Map(aliasEntries.map((item) => [item.normalized, item])).values(),
+    new Map(aliasEntries.map((item) => [`${item.normalized}::${item.alias}::${item.entry.term}`, item])).values(),
   ).sort((a, b) => b.alias.length - a.alias.length);
 
   if (!deduped.length) return null;
 
   const pattern = deduped.map((item) => escapeRegExp(item.alias)).join('|');
+  const aliasMap = deduped.reduce((map, item) => {
+    const current = map.get(item.normalized) || [];
+    current.push(item);
+    map.set(item.normalized, current);
+    return map;
+  }, new Map());
+
   return {
     regex: new RegExp(`(^|[^\\p{L}\\p{N}_])(${pattern})(?=$|[^\\p{L}\\p{N}_])`, 'giu'),
-    aliasMap: new Map(deduped.map((item) => [item.normalized, item.entry])),
+    aliasMap,
   };
 }
+
 
 function splitByGlossary(text = '', terms = []) {
   const source = String(text);
@@ -80,6 +125,7 @@ function splitByGlossary(text = '', terms = []) {
 
   const parts = [];
   const usedTerms = new Set();
+  const protectedUnitRanges = getProtectedUnitRanges(source);
   let lastIndex = 0;
   let match;
 
@@ -91,8 +137,7 @@ function splitByGlossary(text = '', terms = []) {
 
     if (matchStart > lastIndex) parts.push({ type: 'text', value: source.slice(lastIndex, matchStart) });
 
-    const normalized = normalizeGlossaryText(value);
-    const entry = matcher.aliasMap.get(normalized);
+    const entry = resolveGlossaryEntryForMatch(matcher, value, source, matchStart, matchEnd, protectedUnitRanges);
     const canonical = normalizeGlossaryText(entry?.term || value);
 
     if (entry && usedTerms.size < MAX_TERMS_PER_TEXT && !usedTerms.has(canonical)) {
