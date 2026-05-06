@@ -34,7 +34,7 @@ function BranchCard({ branch, cases, isLaunching, isLocked, onLaunchBranch, inde
     >
       <span className="branch-launch-wave" aria-hidden="true" />
       <div className="branch-card-head">
-        <IconBadge icon={branchIconById[branch.id] ?? 'Stethoscope'} tone={tone} />
+        <IconBadge icon={branchIconById[branch.id] ?? 'Stethoscope'} tone={tone} branchId={branch.id} />
         <span className="branch-count">{isLaunching ? 'Açılıyor' : `${totalCases} ${isSpotBranch ? 'spot olgu' : 'olgu'}`}</span>
       </div>
 

@@ -722,25 +722,34 @@ function normalizeSynthetic(item, clinicalCase, index = 0) {
 }
 
 export function buildInvestigationOrders(clinicalCase = {}) {
-  const caseItems = (clinicalCase.availableInvestigations || clinicalCase.investigations || [])
+  const explicitSource = Array.isArray(clinicalCase.availableInvestigations)
+    ? clinicalCase.availableInvestigations
+    : Array.isArray(clinicalCase.investigations)
+      ? clinicalCase.investigations
+      : [];
+
+  const caseItems = explicitSource
     .filter((item) => item && item.type !== 'management' && item.orderable !== false)
     .map((item, index) => normalizeInvestigation(item, clinicalCase, index));
 
-  const branchItems = [...(branchOrderBank[clinicalCase.branchId] || []), ...genericOrderBank]
-    .map((item, index) => normalizeSynthetic(item, clinicalCase, index))
-    .filter((item) => !hasActualCategory(item, caseItems));
+  // KlinikIQ vaka verileri artık tetkik kararını vaka özelinde taşır. Bu nedenle
+  // CBC/biyokimya/akciğer grafisi gibi genel bankalar otomatik eklenmez; yalnızca
+  // eski veriyle uyumluluk için açıkça izin verilen vakalarda yedek banka kullanılır.
+  const syntheticItems = clinicalCase.useSyntheticInvestigationBank === true && caseItems.length === 0
+    ? [...(branchOrderBank[clinicalCase.branchId] || []), ...genericOrderBank]
+      .map((item, index) => normalizeSynthetic(item, clinicalCase, index))
+      .filter((item) => !hasActualCategory(item, caseItems))
+    : [];
 
   const seen = new Set();
   const merged = [];
 
-  [...caseItems, ...branchItems].forEach((item) => {
+  [...caseItems, ...syntheticItems].forEach((item) => {
     const key = item.id || normalizeId(item.label);
     const labelKey = normalizeId(item.label);
-    const categoryKey = canonicalCategory(item);
-    if (seen.has(key) || seen.has(labelKey) || seen.has(categoryKey)) return;
+    if (seen.has(key) || seen.has(labelKey)) return;
     seen.add(key);
     seen.add(labelKey);
-    seen.add(categoryKey);
     merged.push(item);
   });
 

@@ -59,7 +59,7 @@ function textPool(clinicalCase = {}) {
 const sequenceTemplates = {
   stroke: {
     required: [
-      ['abc-glucose', 'ABC, vital stabilizasyon ve hipoglisemi gibi inme taklitçilerini hızlı dışla', 'Acil nörolojik defisitte önce yaşamı tehdit eden durumlar ve hızlı düzeltilebilir taklitçiler değerlendirilir.'],
+      ['abc-glucose', 'Havayolu-dolaşım güvenliğini, glukozu ve hızlı düzeltilebilir inme taklitçilerini değerlendir', 'Acil nörolojik defisitte önce yaşamı tehdit eden durumlar ve hızlı düzeltilebilir taklitçiler değerlendirilir.'],
       ['last-known-well', 'Son sağlıklı görülme zamanını netleştir', 'Reperfüzyon kararında zaman penceresi temel belirleyicidir.'],
       ['noncontrast-ct', 'Kontrastsız beyin BT ile kanamayı dışla', 'Kanama dışlanmadan reperfüzyon tedavisi güvenli biçimde planlanamaz.'],
       ['vascular-imaging', 'Damar görüntüleme ile büyük damar oklüzyonunu değerlendir', 'Büyük damar oklüzyonu mekanik trombektomi kararını etkiler.'],
@@ -93,13 +93,13 @@ const sequenceTemplates = {
   },
   sepsis: {
     required: [
-      ['abc-sepsis', 'ABC, vital bulgular ve sepsis açısından aciliyet değerlendirmesi yap', 'Enfeksiyon şüphesinde önce stabilite ve organ perfüzyonu değerlendirilir.'],
-      ['oxygen-iv-fluid', 'Oksijenasyon, damar yolu ve sıvı gereksinimini değerlendir', 'Destek tedavisi klinik bozulmayı önlemek için erken planlanır.'],
-      ['cultures-labs', 'Kan kültürü ve gerekli temel tetkikleri al', 'Mikrobiyolojik örnekler tedaviyi geciktirmeden, mümkünse antibiyotik öncesi alınır.'],
-      ['empiric-antibiotic', 'Klinik gecikme yaratmadan ampirik antibiyotik başla', 'Sepsis veya ağır enfeksiyonda antibiyotik gecikmesi kötü sonuçla ilişkilidir.'],
-      ['source-evaluation', 'Görüntüleme ve laboratuvar sonuçlarıyla enfeksiyon odağını değerlendir', 'Kaynak belirlenmesi tedavi hedefini ve gerekirse kaynak kontrolünü belirler.'],
+      ['abc-sepsis', 'Hipotansiyon, bilinç değişikliği, laktat yüksekliği ve organ perfüzyonunu acil risk açısından değerlendir', 'Enfeksiyon şüphesinde önce stabilite ve organ perfüzyonu değerlendirilir.'],
+      ['oxygen-iv-fluid', 'Oksijen ihtiyacı, damar yolu ve kristalloid sıvı yanıtını erken planla', 'Destek tedavisi klinik bozulmayı önlemek için erken planlanır.'],
+      ['cultures-labs', 'Antibiyotiği geciktirmeden önce kan kültürü ve odağa yönelik örnekleri al', 'Mikrobiyolojik örnekler tedaviyi geciktirmeden, mümkünse antibiyotik öncesi alınır.'],
+      ['empiric-antibiotic', 'Olası odağı kapsayan ampirik antibiyotiği ilk saat içinde başla', 'Sepsis veya ağır enfeksiyonda antibiyotik gecikmesi kötü sonuçla ilişkilidir.'],
+      ['source-evaluation', 'Görüntüleme ve laboratuvar sonuçlarıyla enfeksiyon odağını değerlendir', 'Odak belirlenmesi antibiyotik seçimini ve kaynak kontrolü gereksinimini belirler.'],
       ['deescalate', 'Kültür/duyarlılık sonuçlarına göre tedaviyi daralt veya değiştir', 'Gereksiz geniş spektrum baskısını azaltmak için tedavi yeniden düzenlenir.'],
-      ['monitor-response', 'Klinik yanıt ve komplikasyonları izle', 'Tedavi başarısı vital bulgular, laboratuvar ve organ fonksiyonuyla takip edilir.'],
+      ['monitor-response', 'Ateş, hemodinami, laktat ve organ fonksiyonlarıyla yanıtı izle', 'Tedavi başarısı vital bulgular, laboratuvar ve organ fonksiyonuyla takip edilir.'],
     ],
     distractors: [
       ['wait-culture', 'Kültür sonucu çıkana kadar antibiyotiği tamamen beklet', 'Ağır enfeksiyon veya sepsis şüphesinde antibiyotik geciktirilmemelidir.', true],
@@ -127,11 +127,11 @@ const sequenceTemplates = {
   },
   default: {
     required: [
-      ['stability', 'ABC, vital bulgular ve aciliyet düzeyini değerlendir', 'Güvenli klinik yönetim stabilite değerlendirmesiyle başlar.'],
+      ['stability', 'Solunum, dolaşım, bilinç ve ağrı düzeyine göre aciliyet önceliğini belirle', 'Güvenli klinik yönetim stabilite değerlendirmesiyle başlar.'],
       ['focused-history', 'Öykü ve fizik muayenedeki ayırt edici bulguları netleştir', 'Yönetim kararı klinik örüntünün doğru tanımlanmasına dayanır.'],
-      ['initial-tests', 'Gerekli ilk tetkikleri seç ve objektif veriyi tamamla', 'Tanısal karar ve tedavi güvenliği için temel veriler gerekir.'],
-      ['targeted-treatment', 'Klinik tabloya uygun ilk tedavi veya girişimi planla', 'Tedavi tanı olasılığı, aciliyet ve risk ile birlikte belirlenir.'],
-      ['monitor', 'Klinik yanıt ve komplikasyonları izle', 'İlk yaklaşım sonrası hasta yanıtı yeniden değerlendirilmelidir.'],
+      ['initial-tests', 'Tanı veya tedavi kararını değiştiren hedef tetkikleri seç', 'Tanısal karar ve tedavi güvenliği için temel veriler gerekir.'],
+      ['targeted-treatment', 'Tanıyı destekleyen bulgulara göre ilk tedavi veya girişimi başlat', 'Tedavi, tanısal olasılık ve hasta güvenliğiyle birlikte belirlenir.'],
+      ['monitor', 'Ateş, hemodinami, laktat ve organ fonksiyonlarıyla yanıtı izle', 'İlk yaklaşım sonrası hasta yanıtı yeniden değerlendirilmelidir.'],
     ],
     distractors: [
       ['ignore-stability', 'Stabilite değerlendirmesi yapmadan taburculuk planla', 'Stabilite değerlendirilmeden güvenli taburculuk kararı verilmez.', true],

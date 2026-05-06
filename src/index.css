@@ -30057,3 +30057,159 @@ html[data-theme="dark"] .branch-card[data-branch] .branch-card-head .icon-badge,
 }
 .spot-ray.ray-one { --ray-rot: 20deg; }
 .spot-ray.ray-two { --ray-rot: -58deg; }
+
+/* ========================================================================
+   V104 — Focused optical icon correction for the 4 problem branch cards
+   Scope: TUS Spot Olgular, Tıbbi Mikrobiyoloji, Tıbbi Farmakoloji,
+          Çocuk Sağlığı ve Hastalıkları.
+   ======================================================================== */
+.branch-card:is([data-branch="tus-spot-olgular"], [data-branch="medical-microbiology"], [data-branch="medical-pharmacology"], [data-branch="pediatrics"]) .branch-card-head .branch-icon-badge {
+  display: grid !important;
+  place-items: center !important;
+  position: relative !important;
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  border-radius: 18px !important;
+  overflow: visible !important;
+  isolation: isolate !important;
+  transform-origin: 50% 50% !important;
+}
+
+.branch-card:is([data-branch="tus-spot-olgular"], [data-branch="medical-microbiology"], [data-branch="medical-pharmacology"], [data-branch="pediatrics"]) .branch-card-head .branch-icon-badge::before {
+  content: '';
+  position: absolute;
+  inset: 7px;
+  z-index: -1;
+  border-radius: 15px;
+  background: radial-gradient(circle, color-mix(in srgb, var(--branch-motion-accent) 18%, transparent), transparent 70%);
+  opacity: .42;
+  filter: blur(7px);
+  transform: translateZ(0);
+}
+
+.branch-icon-glyph {
+  display: block !important;
+  width: 31px !important;
+  height: 31px !important;
+  overflow: visible !important;
+  color: currentColor !important;
+  transform-box: fill-box !important;
+  transform-origin: 50% 50% !important;
+  backface-visibility: hidden !important;
+}
+.branch-icon-glyph-card { stroke-width: 1.72 !important; }
+.branch-icon-glyph-transition { width: 82px !important; height: 82px !important; stroke-width: 1.62 !important; }
+.branch-icon-glyph * { vector-effect: non-scaling-stroke; transform-box: fill-box; transform-origin: center; }
+
+.branch-icon-badge-tus-spot-olgular .branch-icon-glyph-card { transform: translate(.15px, .15px) scale(1.02) !important; }
+.branch-icon-badge-medical-microbiology .branch-icon-glyph-card { transform: translate(.1px, .1px) scale(1.01) !important; }
+.branch-icon-badge-medical-pharmacology .branch-icon-glyph-card { transform: translate(.35px, .25px) scale(.97) !important; }
+.branch-icon-badge-pediatrics .branch-icon-glyph-card { transform: translate(0, .35px) scale(1) !important; }
+.branch-transition-visual[data-branch="tus-spot-olgular"] .branch-icon-glyph-transition { transform: translate(.2px, .1px) scale(1.02) !important; }
+.branch-transition-visual[data-branch="medical-microbiology"] .branch-icon-glyph-transition { transform: translate(.1px, .05px) scale(1.01) !important; }
+.branch-transition-visual[data-branch="medical-pharmacology"] .branch-icon-glyph-transition { transform: translate(.6px, .35px) scale(.98) !important; }
+.branch-transition-visual[data-branch="pediatrics"] .branch-icon-glyph-transition { transform: translate(0, .45px) scale(1) !important; }
+
+.branch-icon-glyph .spot-star-inner,
+.branch-icon-glyph .microbe-dot,
+.branch-icon-glyph .pharma-capsule-highlight { opacity: .38; }
+.branch-icon-glyph .microbe-spikes,
+.branch-icon-glyph .pharma-effect-lines { opacity: .72; }
+.branch-icon-glyph .peds-care-star,
+.branch-icon-glyph .spot-sparkle { opacity: .86; }
+
+.branch-card[data-branch="tus-spot-olgular"] .branch-card-head .branch-icon-badge { box-shadow: inset 0 1px 0 color-mix(in srgb, white 40%, transparent), 0 14px 30px color-mix(in srgb, var(--branch-motion-accent) 18%, transparent) !important; }
+.branch-card[data-branch="medical-microbiology"] .branch-card-head .branch-icon-badge { box-shadow: inset 0 1px 0 color-mix(in srgb, white 34%, transparent), 0 14px 30px color-mix(in srgb, var(--lime) 14%, transparent) !important; }
+.branch-card[data-branch="medical-pharmacology"] .branch-card-head .branch-icon-badge { box-shadow: inset 0 1px 0 color-mix(in srgb, white 34%, transparent), 0 14px 30px color-mix(in srgb, var(--success) 15%, transparent) !important; }
+.branch-card[data-branch="pediatrics"] .branch-card-head .branch-icon-badge { box-shadow: inset 0 1px 0 color-mix(in srgb, white 36%, transparent), 0 14px 30px color-mix(in srgb, var(--sky) 16%, transparent) !important; }
+
+.branch-card:is([data-branch="tus-spot-olgular"], [data-branch="medical-microbiology"], [data-branch="medical-pharmacology"], [data-branch="pediatrics"]) .branch-card-head .branch-icon-badge > .branch-icon-glyph,
+.branch-card.is-launching:is([data-branch="tus-spot-olgular"], [data-branch="medical-microbiology"], [data-branch="medical-pharmacology"], [data-branch="pediatrics"]) .branch-card-head .branch-icon-badge > .branch-icon-glyph,
+.route-icon-tus-spot-olgular .branch-icon-glyph.branch-transition-icon,
+.route-icon-medical-microbiology .branch-icon-glyph.branch-transition-icon,
+.route-icon-medical-pharmacology .branch-icon-glyph.branch-transition-icon,
+.route-icon-pediatrics .branch-icon-glyph.branch-transition-icon { animation: none !important; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .branch-card[data-branch="tus-spot-olgular"] .spot-star-main { animation: kqCardSpotStarPulse 3s cubic-bezier(.22, 1, .36, 1) infinite; }
+  .branch-card[data-branch="tus-spot-olgular"] .spot-sparkle-one { animation: kqCardSparkPop 3s ease-in-out infinite; animation-delay: 160ms; }
+  .branch-card[data-branch="tus-spot-olgular"] .spot-sparkle-two { animation: kqCardSparkPop 3s ease-in-out infinite; animation-delay: 620ms; }
+  .branch-card[data-branch="medical-microbiology"] .microbe-core { animation: kqCardMicrobeBreath 3.25s ease-in-out infinite; }
+  .branch-card[data-branch="medical-microbiology"] .microbe-spikes { animation: kqCardMicrobeSpikes 3.25s ease-in-out infinite; }
+  .branch-card[data-branch="medical-microbiology"] .microbe-dot-one { animation: kqCardMicrobeDot 3.25s ease-in-out infinite; }
+  .branch-card[data-branch="medical-microbiology"] .microbe-dot-two { animation: kqCardMicrobeDot 3.25s ease-in-out infinite; animation-delay: 480ms; }
+  .branch-card[data-branch="medical-pharmacology"] .pharma-capsule-core { animation: kqCardPharmaSwing 3.65s cubic-bezier(.22, 1, .36, 1) infinite; transform-origin: 48% 54%; }
+  .branch-card[data-branch="medical-pharmacology"] .pharma-effect-lines { animation: kqCardPharmaEffect 3.65s ease-in-out infinite; }
+  .branch-card[data-branch="pediatrics"] .peds-child-core { animation: kqCardPedsBreath 3.8s ease-in-out infinite; }
+  .branch-card[data-branch="pediatrics"] .peds-care-star { animation: kqCardPedsStar 3.8s ease-in-out infinite; animation-delay: 240ms; }
+
+  .branch-card.is-launching[data-branch="tus-spot-olgular"] .spot-star-main { animation: kqLaunchSpotStar 860ms cubic-bezier(.22, 1, .36, 1) 1 both !important; }
+  .branch-card.is-launching[data-branch="tus-spot-olgular"] .spot-sparkle { animation: kqLaunchSparkPop 860ms ease-in-out 1 both !important; }
+  .branch-card.is-launching[data-branch="medical-microbiology"] .microbe-core { animation: kqLaunchMicrobeBloom 860ms cubic-bezier(.22, 1, .36, 1) 1 both !important; }
+  .branch-card.is-launching[data-branch="medical-microbiology"] .microbe-spikes { animation: kqLaunchMicrobeSpikes 860ms ease-in-out 1 both !important; }
+  .branch-card.is-launching[data-branch="medical-pharmacology"] .pharma-capsule-core { animation: kqLaunchPharmaSwing 860ms cubic-bezier(.22, 1, .36, 1) 1 both !important; }
+  .branch-card.is-launching[data-branch="medical-pharmacology"] .pharma-effect-lines { animation: kqLaunchPharmaEffect 860ms ease-in-out 1 both !important; }
+  .branch-card.is-launching[data-branch="pediatrics"] .peds-child-core { animation: kqLaunchPedsBreath 860ms cubic-bezier(.22, 1, .36, 1) 1 both !important; }
+  .branch-card.is-launching[data-branch="pediatrics"] .peds-care-star { animation: kqLaunchPedsStar 860ms ease-in-out 1 both !important; }
+
+  .route-icon-tus-spot-olgular .spot-star-main { animation: kqRouteSpotStar 1.35s cubic-bezier(.22, 1, .36, 1) infinite; }
+  .route-icon-tus-spot-olgular .spot-sparkle-one { animation: kqRouteSparkPop 1.35s ease-in-out infinite; animation-delay: 120ms; }
+  .route-icon-tus-spot-olgular .spot-sparkle-two { animation: kqRouteSparkPop 1.35s ease-in-out infinite; animation-delay: 360ms; }
+  .route-icon-medical-microbiology .microbe-core { animation: kqRouteMicrobeCore 1.55s ease-in-out infinite; }
+  .route-icon-medical-microbiology .microbe-spikes { animation: kqRouteMicrobeSpikes 1.55s ease-in-out infinite; }
+  .route-icon-medical-microbiology .microbe-dot-one { animation: kqRouteMicrobeDot 1.55s ease-in-out infinite; }
+  .route-icon-medical-microbiology .microbe-dot-two { animation: kqRouteMicrobeDot 1.55s ease-in-out infinite; animation-delay: 260ms; }
+  .route-icon-medical-pharmacology .pharma-capsule-core { animation: kqRoutePharmaSwing 1.6s cubic-bezier(.22, 1, .36, 1) infinite; transform-origin: 48% 54%; }
+  .route-icon-medical-pharmacology .pharma-effect-lines { animation: kqRoutePharmaEffect 1.6s ease-in-out infinite; }
+  .route-icon-pediatrics .peds-child-core { animation: kqRoutePedsBreath 1.65s ease-in-out infinite; }
+  .route-icon-pediatrics .peds-care-star { animation: kqRoutePedsStar 1.65s ease-in-out infinite; animation-delay: 160ms; }
+}
+
+.branch-transition-visual[data-branch="tus-spot-olgular"] .branch-transition-core-glow,
+.branch-transition-visual[data-branch="medical-microbiology"] .branch-transition-core-glow,
+.branch-transition-visual[data-branch="medical-pharmacology"] .branch-transition-core-glow,
+.branch-transition-visual[data-branch="pediatrics"] .branch-transition-core-glow { inset: 12px !important; opacity: .52 !important; }
+.branch-transition-visual[data-branch="tus-spot-olgular"] .spot-ray { width: 66px !important; }
+.branch-transition-visual[data-branch="medical-microbiology"] .microbe-particle { transform-origin: 46px 46px !important; }
+.branch-transition-visual[data-branch="medical-pharmacology"] .pharma-ring { border-radius: 30px !important; }
+.branch-transition-visual[data-branch="pediatrics"] .peds-aura { border-radius: 28px !important; }
+
+@keyframes kqCardSpotStarPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 42%{transform:scale(1.055);filter:drop-shadow(0 0 7px color-mix(in srgb,currentColor 28%,transparent))} 68%{transform:scale(.992)} }
+@keyframes kqCardSparkPop { 0%,72%,100%{opacity:.42;transform:scale(.76) rotate(0deg)} 38%{opacity:1;transform:scale(1.16) rotate(45deg)} }
+@keyframes kqCardMicrobeBreath { 0%,100%{transform:scale(1)} 48%{transform:scale(1.052)} 72%{transform:scale(.992)} }
+@keyframes kqCardMicrobeSpikes { 0%,100%{opacity:.58;transform:rotate(0deg)} 50%{opacity:.92;transform:rotate(3deg)} }
+@keyframes kqCardMicrobeDot { 0%,100%{opacity:.32;transform:scale(.84)} 46%{opacity:.9;transform:scale(1.18)} }
+@keyframes kqCardPharmaSwing { 0%,100%{transform:rotate(0deg)} 42%{transform:rotate(-3.2deg) translateY(-.4px)} 67%{transform:rotate(1.5deg) translateY(.2px)} }
+@keyframes kqCardPharmaEffect { 0%,100%{opacity:.42;transform:scale(.96)} 48%{opacity:.95;transform:scale(1.025)} }
+@keyframes kqCardPedsBreath { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-.9px) scale(1.035)} 72%{transform:translateY(.25px) scale(.996)} }
+@keyframes kqCardPedsStar { 0%,72%,100%{opacity:.46;transform:scale(.78) rotate(0deg)} 42%{opacity:1;transform:scale(1.16) rotate(45deg)} }
+@keyframes kqLaunchSpotStar { 0%,100%{transform:scale(1) rotate(0deg)} 24%{transform:scale(1.16) rotate(-4deg)} 52%{transform:scale(.95) rotate(2deg)} 76%{transform:scale(1.055) rotate(-1deg)} }
+@keyframes kqLaunchSparkPop { 0%{opacity:0;transform:scale(.52) rotate(0deg)} 42%{opacity:1;transform:scale(1.28) rotate(45deg)} 100%{opacity:.78;transform:scale(1) rotate(0deg)} }
+@keyframes kqLaunchMicrobeBloom { 0%,100%{transform:scale(1) rotate(0deg)} 24%{transform:scale(1.13) rotate(4deg)} 52%{transform:scale(.95) rotate(-2deg)} 76%{transform:scale(1.04)} }
+@keyframes kqLaunchMicrobeSpikes { 0%,100%{opacity:.72;transform:rotate(0deg)} 36%{opacity:1;transform:rotate(8deg)} 70%{opacity:.65;transform:rotate(-3deg)} }
+@keyframes kqLaunchPharmaSwing { 0%,100%{transform:rotate(0deg) scale(1)} 24%{transform:rotate(-6deg) scale(1.08)} 50%{transform:rotate(3deg) scale(.96)} 74%{transform:rotate(-1deg) scale(1.025)} }
+@keyframes kqLaunchPharmaEffect { 0%,100%{opacity:.48;transform:scale(.96)} 42%{opacity:1;transform:scale(1.13)} }
+@keyframes kqLaunchPedsBreath { 0%,100%{transform:translateY(0) scale(1)} 26%{transform:translateY(-2px) scale(1.075)} 54%{transform:translateY(.7px) scale(.972)} 76%{transform:translateY(-.6px) scale(1.02)} }
+@keyframes kqLaunchPedsStar { 0%{opacity:0;transform:scale(.5) rotate(0deg)} 46%{opacity:1;transform:scale(1.28) rotate(45deg)} 100%{opacity:.82;transform:scale(1) rotate(0deg)} }
+@keyframes kqRouteSpotStar { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 8px color-mix(in srgb,var(--route-accent) 24%,transparent))} 34%{transform:scale(1.085);filter:drop-shadow(0 0 18px color-mix(in srgb,var(--route-accent) 42%,transparent))} 62%{transform:scale(.982)} }
+@keyframes kqRouteSparkPop { 0%,100%{opacity:.28;transform:scale(.62) rotate(0deg)} 44%{opacity:1;transform:scale(1.24) rotate(45deg)} }
+@keyframes kqRouteMicrobeCore { 0%,100%{transform:scale(1) rotate(0deg)} 48%{transform:scale(1.07) rotate(3deg)} 72%{transform:scale(.99) rotate(-1.5deg)} }
+@keyframes kqRouteMicrobeSpikes { 0%,100%{opacity:.58;transform:rotate(0deg)} 50%{opacity:.98;transform:rotate(7deg)} }
+@keyframes kqRouteMicrobeDot { 0%,100%{opacity:.32;transform:scale(.78)} 42%{opacity:.96;transform:scale(1.28)} }
+@keyframes kqRoutePharmaSwing { 0%,100%{transform:rotate(0deg)} 42%{transform:rotate(-5deg) translateY(-.8px)} 66%{transform:rotate(2.3deg) translateY(.2px)} }
+@keyframes kqRoutePharmaEffect { 0%,100%{opacity:.32;transform:scale(.92)} 44%{opacity:.95;transform:scale(1.1)} }
+@keyframes kqRoutePedsBreath { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-2.4px) scale(1.055)} 72%{transform:translateY(.5px) scale(.99)} }
+@keyframes kqRoutePedsStar { 0%,100%{opacity:.24;transform:scale(.62) rotate(0deg)} 42%{opacity:1;transform:scale(1.25) rotate(45deg)} }
+
+@media (prefers-reduced-motion: reduce) {
+  .branch-icon-glyph .spot-star-main,
+  .branch-icon-glyph .spot-sparkle,
+  .branch-icon-glyph .microbe-core,
+  .branch-icon-glyph .microbe-spikes,
+  .branch-icon-glyph .microbe-dot,
+  .branch-icon-glyph .pharma-capsule-core,
+  .branch-icon-glyph .pharma-effect-lines,
+  .branch-icon-glyph .peds-child-core,
+  .branch-icon-glyph .peds-care-star { animation: none !important; }
+}

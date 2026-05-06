@@ -1,0 +1,33 @@
+{
+  "totalCases": 132,
+  "spotCases": 62,
+  "spotSimplified": 62,
+  "managementRewritten": 84,
+  "explicitInvestigationRemoved": 1,
+  "explicitInvestigationCorrected": 9,
+  "mappedCases": [
+    "im-dka-001",
+    "pulm-pneumonia-001",
+    "inf-malaria-001",
+    "inf-meningococcemia-001",
+    "pediatrics-classic-galactosemia-001",
+    "pediatrics-hereditary-fructose-intolerance-001",
+    "pediatrics-von-gierke-gsd-001",
+    "pediatrics-phenylketonuria-001",
+    "pediatrics-maple-syrup-urine-disease-001",
+    "internal-medicine-alkaptonuria-001",
+    "pediatrics-albinism-001",
+    "pediatrics-homocystinuria-001",
+    "internal-medicine-pellagra-001",
+    "internal-medicine-scurvy-001",
+    "internal-medicine-hemochromatosis-001",
+    "internal-medicine-familial-hypercholesterolemia-001",
+    "internal-medicine-tangier-disease-001",
+    "internal-medicine-oxidative-stress-injury-001",
+    "infectious-diseases-septic-shock-001",
+    "internal-medicine-systemic-lupus-erythematosus-001",
+    "internal-medicine-rheumatoid-arthritis-001",
+    "pediatrics-bruton-agammaglobulinemia-001"
+  ],
+  "remainingForbiddenHits": 0
+}
