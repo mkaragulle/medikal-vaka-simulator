@@ -150,8 +150,8 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     patientIntro: {
       profile: payload.demographics || payload.relatedBranch || 'AI TUS pratik',
       presentation: payload.chiefComplaint || payload.title,
-      riskContext: history.slice(0, 2),
-      distinctiveClues: payload.evidenceChain?.slice(0, 4) || [],
+      riskContext: [],
+      distinctiveClues: [payload.chiefComplaint, ...exam.slice(0, 2)].filter(Boolean),
       historySummary: payload.stem,
     },
     diagnosis: {

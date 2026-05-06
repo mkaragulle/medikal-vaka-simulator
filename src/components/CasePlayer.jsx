@@ -267,6 +267,10 @@ function extractPatientClueChips(clinicalCase) {
     ['Ateş', /ateş|febril/],
     ['Hışıltı', /hışıltı|wheezing/],
     ['Sarılık', /sarılık|ikter/],
+    ['Sağ üst kadran ağrısı', /sağ üst kadran|murphy|biliyer/],
+    ['Sağ alt kadran ağrısı', /sağ alt kadran|mcburney|rovsing|psoas/],
+    ['Kolik karın ağrısı', /kolik tarzda karın ağrısı|obstipasyon|distansiyon/],
+    ['Ani başlangıçlı ağrı', /ani başlangıç|başlangıç anında maksimum|yırtılır/],
     ['Peteşi/purpura', /peteşi|purpura/],
   ];
   return Array.from(new Set(rules.filter(([, pattern]) => pattern.test(source)).map(([label]) => label))).slice(0, 5);
@@ -321,10 +325,62 @@ function normalizePatientSummaryText(value = '') {
   return text;
 }
 
-function normalizeSummaryItems(value) {
-  if (Array.isArray(value)) return value.map((item) => normalizePatientSummaryText(toDisplayPhrase(item))).filter(Boolean);
-  if (typeof value === 'string' && value.trim()) return [normalizePatientSummaryText(toDisplayPhrase(value))];
-  return [];
+function rawSummaryItemText(item) {
+  if (!item) return '';
+  if (typeof item === 'string') return item;
+  if (typeof item === 'object') {
+    const title = item.title || item.label || item.category || '';
+    const body = item.text || item.summary || item.description || item.explanation || '';
+    return [title, body].filter(Boolean).join(': ');
+  }
+  return String(item || '');
+}
+
+function stripSummaryMetaPrefix(value = '') {
+  let text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (!text) return '';
+
+  const prefixPattern = /^(başvuru yakınması|öykü ipucu|risk faktörü|risk bağlamı|klinik bağlam|klinik ipucu|ayırt ettirici ipucu|fizik muayene bulgusu|fizik muayene|muayene bulgusu|vital bulgu|laboratuvar(?: paterni| bulgusu| sonucu)?|hemogram(?: ve inflamasyon belirteçleri)?|biyokimya|seroloji|kültür|pcr|ekg(?: paterni| bulgusu)?|görüntüleme(?: bulgusu)?|direkt grafi|akciğer grafisi|kontrastlı abdomen bt|abdomen bt|toraks bt|bt pulmoner anjiyografi|bt|mr|mrg|usg|ultrasonografi|sağ üst kadran ultrasonografisi|ekokardiyografi|eko|endoskopi|kolonoskopi)\s*[:：\-–]\s*/i;
+
+  for (let i = 0; i < 2; i += 1) {
+    text = text.replace(prefixPattern, '').trim();
+  }
+
+  return text
+    .replace(/^[-–•·\s]+/, '')
+    .replace(/\s+[,.;:]/g, (match) => match.trim())
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function isObjectivePatientSummaryItem(value = '') {
+  const text = String(value || '').toLocaleLowerCase('tr');
+  if (!text) return false;
+
+  const hasNumericUnit = /\d+(?:[.,]\d+)?\s*(?:\/mm³|\/mm3|mg\/dl|mmol\/l|ng\/ml|pg\/ml|iu\/l|u\/l|g\/dl|%|mmhg|cm|mm)\b/i.test(text);
+  const labTerm = /\b(lökosit|lokosit|wbc|nötrofil|trombosit|plt|hb|hemoglobin|crp|sedimentasyon|prokalsitonin|troponin|ck-mb|ck|d-dimer|ddimer|lipaz|amilaz|bilirubin|ast|alt|alp|ggt|kreatinin|üre|bun|glukoz|keton|laktat|ph|hco3|pco2|po2|inr|apt[tı]|pt|tsh|t3|t4|elektrolit|sodyum|potasyum|kalsiyum|idrar|serum|kan gazı|hemogram|biyokimya|seroloji|kültür|pcr)\b/i.test(text);
+  const imagingOrTracingTerm = /\b(ekg|elektrokardiyografi|st elevasyonu|st depresyonu|qrs|qt|bt|tomografi|mr|mrg|usg|ultrasonografi|grafi|radyografi|akciğer grafisi|ekokardiyografi|eko|endoskopi|kolonoskopi|anjiyografi|dolum defekti|duvar kalınlaşması|perikolesistik|infiltrasyon|konsolidasyon)\b/i.test(text);
+
+  return (labTerm && (hasNumericUnit || /saptandı|yüksek|düşük|pozitif|negatif|artmış|azalmış/.test(text))) || imagingOrTracingTerm;
+}
+
+function normalizeSummaryItems(value, options = {}) {
+  const items = Array.isArray(value) ? value : (typeof value === 'string' && value.trim() ? [value] : []);
+  const { purpose = 'default', allowObjective = false } = options;
+
+  return items
+    .map((item) => stripSummaryMetaPrefix(rawSummaryItemText(item)))
+    .map((item) => normalizePatientSummaryText(toDisplayPhrase(item)))
+    .filter(Boolean)
+    .filter((item) => {
+      if (allowObjective) return true;
+      if (purpose === 'risk') {
+        return !isObjectivePatientSummaryItem(item)
+          && !/hassasiyet|defans|rebound|murphy|ral|ronküs|üfürüm|ödem|juguler|muayene/i.test(item)
+          && !/enfeksiyon ve temas\/izolasyon bağlamı|acil başvuru bağlamında stabilite değerlendirmesi|tanısal karar diğer klinik verilerle desteklenir/i.test(item);
+      }
+      return !isObjectivePatientSummaryItem(item);
+    });
 }
 
 function compactClinicalText(value = '', maxLength = 170) {
@@ -414,17 +470,15 @@ function buildPatientSummary(clinicalCase) {
   const complaint = toDisplayPhrase(clinicalCase.chiefComplaint);
   const setting = toDisplayPhrase(clinicalCase.setting);
   const fallbackStory = buildStoryParts(clinicalCase).join(' ');
+  const introRiskItems = normalizeSummaryItems(intro.riskContext, { purpose: 'risk' });
+  const introClueItems = normalizeSummaryItems(intro.distinctiveClues, { purpose: 'clues' });
   const riskItems = limitSummaryItems(
-    normalizeSummaryItems(intro.riskContext).length
-      ? normalizeSummaryItems(intro.riskContext)
-      : extractPatientRiskChips(clinicalCase),
+    introRiskItems.length ? introRiskItems : extractPatientRiskChips(clinicalCase),
     2,
     76,
   );
   const clueItems = limitSummaryItems(
-    normalizeSummaryItems(intro.distinctiveClues).length
-      ? normalizeSummaryItems(intro.distinctiveClues)
-      : extractPatientClueChips(clinicalCase),
+    introClueItems.length ? introClueItems : extractPatientClueChips(clinicalCase),
     2,
     76,
   );
@@ -436,8 +490,8 @@ function buildPatientSummary(clinicalCase) {
     rows: [
       { kind: 'profile', label: 'Profil', value: profileText },
       { kind: 'presentation', label: 'Başvuru', value: presentationText },
-      { kind: 'risk', label: 'Risk bağlamı', items: riskItems, fallback: 'Risk bağlamı vaka öyküsüyle birlikte değerlendirilmelidir.' },
-      { kind: 'clues', label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Öykü, muayene ve tetkik verilerinden ayrım yapılmalıdır.' },
+      { kind: 'risk', label: 'Risk bağlamı', items: riskItems, fallback: 'Belirgin risk faktörü öyküde ön planda değil.' },
+      { kind: 'clues', label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Yakınma ve muayene bulguları birlikte değerlendirilmelidir.' },
     ],
     history: historyParts.length ? historyParts : [normalizePatientSummaryText(compactSentence(fallbackStory, 190))],
   };

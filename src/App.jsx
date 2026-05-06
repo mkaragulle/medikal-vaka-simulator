@@ -435,6 +435,9 @@ function App() {
       selected,
       correctAnswer: clinicalCase.diagnosis.correct,
       difficulty: clinicalCase.difficulty,
+      clinicalFocus: clinicalCase.clinicalFocus ?? clinicalCase.diagnosis?.answerFeedback?.diagnosisMeta ?? '',
+      question: clinicalCase.diagnosis?.question ?? clinicalCase.question ?? '',
+      diagnosisMeta: clinicalCase.diagnosis?.answerFeedback?.diagnosisMeta ?? '',
       lastWrongAt: Date.now(),
     };
 
@@ -1097,6 +1100,8 @@ function App() {
             mode={mode}
             onChangeMode={setMode}
             stats={sessionStats}
+            wrongAnswers={visibleWrongAnswers}
+            examHistory={examHistory}
             onStartExam={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
             onStartAIQuestion={handleStartAIPractice}
             totalCases={accessibleCases.length}

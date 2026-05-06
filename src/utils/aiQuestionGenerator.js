@@ -226,8 +226,8 @@ export function buildAIQuestionCase(seed, { generatedId = nowToken(), source = '
     patientIntro: {
       profile: [seed.demographics, seed.setting].filter(Boolean).join(' · '),
       presentation: seed.chiefComplaint || seed.title,
-      riskContext: Array.isArray(seed.evidenceChain) ? seed.evidenceChain.slice(0, 2) : [],
-      distinctiveClues: Array.isArray(seed.evidenceChain) ? seed.evidenceChain.slice(1, 5) : [],
+      riskContext: [],
+      distinctiveClues: [seed.chiefComplaint, ...(Array.isArray(seed.exam) ? seed.exam.slice(0, 2) : [])].filter(Boolean),
       historySummary: seed.stem,
     },
     diagnosis: {

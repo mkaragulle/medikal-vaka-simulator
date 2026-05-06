@@ -3815,3 +3815,298 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v11-next-step,
   border-color: rgba(94, 234, 212, .22) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.045) !important;
 }
+
+/* ===== Patient summary cleanup + AI action alignment refinement =====
+   Removes the cramped/manual-chip feeling in the patient summary cards and
+   aligns the AI practice branch selector + action buttons as one clean control block.
+*/
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list.refined-summary-bullet-list,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-clinical-mini-list.refined-summary-bullet-list {
+  display: grid !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list.refined-summary-bullet-list li,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-clinical-mini-list.refined-summary-bullet-list li {
+  display: grid !important;
+  grid-template-columns: 8px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 10px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+}
+
+.patient-summary-card.premium-reference-summary-card .summary-clinical-mini-list.refined-summary-bullet-list li::before,
+.patient-summary-card.professional-patient-summary-card.clinical-summary-card .summary-clinical-mini-list.refined-summary-bullet-list li::before {
+  content: "" !important;
+  inline-size: 6px !important;
+  block-size: 6px !important;
+  margin-top: .68em !important;
+  border-radius: 999px !important;
+  background: #0f9f99 !important;
+  box-shadow: 0 0 0 3px rgba(15, 159, 153, .08) !important;
+}
+
+.ai-practice-actions.ai-practice-actions-pro {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  justify-items: stretch !important;
+  align-items: stretch !important;
+  gap: 12px !important;
+  width: min(530px, 100%) !important;
+  min-width: min(530px, 100%) !important;
+}
+
+.ai-practice-actions.ai-practice-actions-pro .ai-branch-filter-control {
+  width: 100% !important;
+}
+
+.ai-practice-actions.ai-practice-actions-pro .ai-branch-filter-control select {
+  min-height: 56px !important;
+  border-radius: 18px !important;
+  padding-inline: 18px 44px !important;
+  font-size: 15px !important;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, .055) !important;
+}
+
+.ai-practice-actions.ai-practice-actions-pro .ai-practice-button-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr) !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.ai-practice-actions.ai-practice-actions-pro .ai-practice-button-row .btn {
+  width: 100% !important;
+  min-height: 56px !important;
+  justify-content: center !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  border-radius: 18px !important;
+  padding-inline: 18px !important;
+}
+
+@media (max-width: 980px) {
+  .ai-practice-actions.ai-practice-actions-pro {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-practice-actions.ai-practice-actions-pro .ai-practice-button-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ai-practice-actions.ai-practice-actions-pro .ai-practice-button-row .btn {
+    min-height: 52px !important;
+  }
+}
+
+/* ===== Session performance personalized insight v12 =====
+   - Converts the dashboard right panel into a data-driven personal insight area.
+   - Fixes icon container centering with a single fixed-size flex contract.
+   - Keeps numeric metrics only in the hero metric row; right panel uses qualitative guidance.
+*/
+body:not(.klinikiq-auth-lock) .session-summary-v12 {
+  display: grid !important;
+  grid-template-rows: auto auto 1fr !important;
+  gap: 16px !important;
+  overflow: hidden !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v12-header {
+  display: grid !important;
+  gap: 12px !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v12-kicker {
+  width: fit-content !important;
+  max-width: 100% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  min-height: 32px !important;
+  padding: 7px 11px !important;
+  border-radius: 999px !important;
+  color: #0f766e !important;
+  background: rgba(240, 253, 250, .92) !important;
+  border: 1px solid rgba(20, 184, 166, .18) !important;
+  box-shadow: 0 10px 24px rgba(20, 184, 166, .055) !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v12-kicker svg {
+  width: 15px !important;
+  height: 15px !important;
+  flex: 0 0 15px !important;
+  display: block !important;
+  stroke-width: 2.05 !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v12-kicker span {
+  color: inherit !important;
+  font-size: 10.5px !important;
+  font-weight: 880 !important;
+  letter-spacing: .105em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v12-insights {
+  gap: 12px !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-insight-card-v12 {
+  grid-template-columns: 44px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 13px !important;
+  padding: 15px !important;
+  border-radius: 23px !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .78), rgba(248, 253, 252, .72)) !important;
+  border: 1px solid rgba(15, 23, 42, .072) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.86),
+    0 10px 28px rgba(15, 23, 42, .035) !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-insight-card-v12 .summary-icon-badge-v12,
+body:not(.klinikiq-auth-lock) .summary-insight-card-v12 .icon-badge.summary-icon-badge-v12 {
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+  flex: 0 0 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: start !important;
+  padding: 0 !important;
+  line-height: 0 !important;
+  border-radius: 16px !important;
+  color: #0f766e !important;
+  background:
+    radial-gradient(circle at 30% 18%, rgba(255,255,255,.95), transparent 42%),
+    linear-gradient(135deg, rgba(204, 251, 241, .92), rgba(240, 253, 250, .86)) !important;
+  border-color: rgba(20, 184, 166, .22) !important;
+  box-shadow:
+    0 10px 24px rgba(20, 184, 166, .08),
+    inset 0 1px 0 rgba(255,255,255,.92) !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-insight-card-v12 .summary-icon-badge-v12 svg,
+body:not(.klinikiq-auth-lock) .summary-insight-card-v12 .icon-badge.summary-icon-badge-v12 svg {
+  width: 19px !important;
+  height: 19px !important;
+  min-width: 19px !important;
+  min-height: 19px !important;
+  display: block !important;
+  margin: 0 !important;
+  transform: none !important;
+  stroke-width: 2.05 !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-insight-copy-v12 {
+  min-width: 0 !important;
+  display: grid !important;
+  align-content: start !important;
+  gap: 0 !important;
+  padding-top: 1px !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-insight-copy-v12 strong {
+  max-width: 100% !important;
+  overflow-wrap: anywhere !important;
+  text-wrap: pretty !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-insight-copy-v12 p {
+  max-width: 100% !important;
+  text-wrap: pretty !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v12-next-step {
+  position: relative !important;
+  align-self: end !important;
+  padding: 16px !important;
+  border-radius: 23px !important;
+  overflow: hidden !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v12-next-step::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  pointer-events: none !important;
+  background: radial-gradient(circle at 88% 12%, rgba(45, 212, 191, .18), transparent 30%) !important;
+}
+
+body:not(.klinikiq-auth-lock) .summary-v12-next-step span,
+body:not(.klinikiq-auth-lock) .summary-v12-next-step strong {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+@media (max-width: 1040px) {
+  body:not(.klinikiq-auth-lock) .session-summary-v12 {
+    grid-template-rows: auto !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .summary-v12-next-step {
+    align-self: stretch !important;
+  }
+}
+
+@media (max-width: 680px) {
+  body:not(.klinikiq-auth-lock) .summary-v12-kicker span {
+    white-space: normal !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .summary-insight-card-v12 {
+    grid-template-columns: 42px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding: 13px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .summary-insight-card-v12 .summary-icon-badge-v12,
+  body:not(.klinikiq-auth-lock) .summary-insight-card-v12 .icon-badge.summary-icon-badge-v12 {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    max-width: 42px !important;
+    flex-basis: 42px !important;
+    border-radius: 15px !important;
+  }
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-v12-kicker,
+.app-shell[data-theme="dark"] .summary-v12-kicker {
+  color: #5eead4 !important;
+  background: rgba(20, 184, 166, .12) !important;
+  border-color: rgba(94, 234, 212, .22) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.04) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-insight-card-v12,
+.app-shell[data-theme="dark"] .summary-insight-card-v12 {
+  background: linear-gradient(180deg, rgba(15, 35, 46, .76), rgba(12, 30, 40, .70)) !important;
+  border-color: rgba(148, 163, 184, .16) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035), 0 10px 28px rgba(0,0,0,.16) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .summary-insight-card-v12 .summary-icon-badge-v12,
+.app-shell[data-theme="dark"] .summary-insight-card-v12 .summary-icon-badge-v12 {
+  color: #67e8f9 !important;
+  background: linear-gradient(135deg, rgba(19, 78, 74, .82), rgba(8, 47, 73, .68)) !important;
+  border-color: rgba(94, 234, 212, .24) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.055), 0 10px 24px rgba(0,0,0,.18) !important;
+}
