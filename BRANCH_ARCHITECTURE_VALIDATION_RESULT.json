@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-05-06T13:05:45.332Z",
+  "branchCount": 13,
+  "featuredQuickCaseCount": 1,
+  "standardBranchCount": 12,
+  "expectedStandardBranchCount": 12,
+  "totalCases": 84,
+  "duplicateBranchIds": [],
+  "duplicateCaseIds": [],
+  "casesWithUnknownBranch": [],
+  "countsByBranch": {
+    "HIZLI CASE": 14,
+    "Anatomi": 1,
+    "Fizyoloji": 1,
+    "Histoloji ve Embriyoloji": 1,
+    "Tıbbi Biyokimya": 14,
+    "Tıbbi Mikrobiyoloji": 8,
+    "Tıbbi Patoloji": 4,
+    "Tıbbi Farmakoloji": 2,
+    "İç Hastalıkları": 19,
+    "Çocuk Sağlığı ve Hastalıkları": 5,
+    "Genel Cerrahi": 5,
+    "Kadın Hastalıkları ve Doğum": 1,
+    "Küçük Stajlar": 9
+  },
+  "standardBranchNames": [
+    "Anatomi",
+    "Fizyoloji",
+    "Histoloji ve Embriyoloji",
+    "Tıbbi Biyokimya",
+    "Tıbbi Mikrobiyoloji",
+    "Tıbbi Patoloji",
+    "Tıbbi Farmakoloji",
+    "İç Hastalıkları",
+    "Çocuk Sağlığı ve Hastalıkları",
+    "Genel Cerrahi",
+    "Kadın Hastalıkları ve Doğum",
+    "Küçük Stajlar"
+  ],
+  "quickCaseTitles": [
+    "Travma öyküsü tutarsız bebekte çocuk istismarı şüphesi",
+    "Cinsel saldırı sonrası acile başvuran hastada ilk yaklaşım",
+    "Kesici-delici yaralanmada adli bildirim kararı",
+    "Trafik kazası sonrası acil serviste adli rapor yaklaşımı",
+    "Bilinci kapalı hastada onam ve acil müdahale",
+    "Aile içi şiddet şüphesinde hekim yaklaşımı",
+    "Şüpheli zehirlenmede örnek saklama ve bildirim",
+    "İş kazası sonrası raporlama ve tıbbi öncelik",
+    "Ani başlayan ürtiker ve hafif anjiyoödem",
+    "Ateşli çocukta zımpara kağıdı döküntüsü",
+    "Çekilme sonrası kolunu kullanmayan çocuk",
+    "Öksürük, konjunktivit ve Koplik lekeleri",
+    "Ön burun kanamasında ilk müdahale",
+    "Şüpheli ölümde hekimin adli süreç yaklaşımı"
+  ],
+  "allStandardBranchesHaveCases": true,
+  "caseImportStatus": "passed",
+  "syntaxChecks": {
+    "src/data/branches.js": "passed via node --check",
+    "src/data/cases.js": "passed via node --check",
+    "src/utils/investigationOrders.js": "passed via node --check",
+    "src/utils/glossary.js": "passed via node --check"
+  },
+  "build": {
+    "status": "not_completed_in_sandbox",
+    "reason": "npm install could not complete in the sandbox. Offline install failed with ENOTCACHED for @grpc/proto-loader; online install hung and was terminated. No node_modules were packaged."
+  }
+}

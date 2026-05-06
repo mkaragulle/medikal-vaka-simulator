@@ -4,7 +4,7 @@
 export const cases = [
   {
     "id": "cv-anterior-stemi-001",
-    "branchId": "cardiovascular",
+    "branchId": "internal-medicine",
     "title": "Retrosternal baskı tarzında göğüs ağrısı ve acil EKG bulguları",
     "difficulty": "Acil · TUS düzeyi",
     "clinicalFocus": "Akut koroner sendromda iskemik ağrı paterni, ardışık derivasyon analizi ve reperfüzyon endikasyonu",
@@ -157,7 +157,7 @@ export const cases = [
   },
   {
     "id": "cv-aortic-dissection-001",
-    "branchId": "cardiovascular",
+    "branchId": "internal-medicine",
     "title": "Ani başlayan yırtılır tarzda torasik ağrı ve nabız asimetrisi",
     "difficulty": "Acil · Kritik ayırıcı tanı",
     "clinicalFocus": "Akut aort sendromunda ağrı karakteri, nabız-tansiyon farkı, aort kapak yetmezliği ve BT anjiyografi bulgularının yorumu",
@@ -309,7 +309,7 @@ export const cases = [
   },
   {
     "id": "cv-tamponade-001",
-    "branchId": "cardiovascular",
+    "branchId": "internal-medicine",
     "title": "Hipotansiyon, juguler venöz dolgunluk ve kalp seslerinde derinden gelme",
     "difficulty": "Acil · Yatak başı tanı",
     "clinicalFocus": "Perikardiyal efüzyonun tamponad fizyolojisine ilerlemesi, pulsus paradoxus ve yatak başı ekokardiyografi bulguları",
@@ -481,7 +481,7 @@ export const cases = [
   },
   {
     "id": "cv-pulmonary-edema-001",
-    "branchId": "cardiovascular",
+    "branchId": "internal-medicine",
     "title": "Akut dispne, ortopne ve yaygın bilateral raller",
     "difficulty": "Orta · Kardiyopulmoner acil",
     "clinicalFocus": "Akut dispnede volüm yüklenmesi, hipoksemi, akciğer grafisi ve natriüretik peptid yorumu",
@@ -663,12 +663,12 @@ export const cases = [
   },
   {
     "id": "cv-hocm-001",
-    "branchId": "cardiovascular",
+    "branchId": "internal-medicine",
     "title": "Genç sporcuda eforla senkop ve manevra ile değişen sistolik üfürüm",
     "difficulty": "Orta-zor · Kardiyomiyopati",
     "clinicalFocus": "Eforla ilişkili senkopta aile öyküsü, dinamik çıkış yolu obstrüksiyonu ve ani kardiyak ölüm riski",
     "demographics": "22 yaşında erkek",
-    "setting": "Spor hekimliği / Kardiyoloji",
+    "setting": "Spor hekimliği / İç Hastalıkları",
     "chiefComplaint": "Basketbol antrenmanı sırasında gelişen kısa süreli senkop",
     "stem": "Yirmi iki yaşındaki erkek hasta son aylarda eforla çarpıntı, göğüste sıkışma ve presenkop yakınmaları olduğunu ifade ediyor. Aile öyküsünde genç yaşta açıklanamayan ani kardiyak ölüm bulunduğu öğreniliyor.",
     "vitals": {
@@ -1348,7 +1348,7 @@ export const cases = [
     "difficulty": "Temel-orta · Hematoloji",
     "clinicalFocus": "Demir eksikliği anemisinde eritrosit indeksleri, demir çalışmaları ve kanama kaynağı araştırması",
     "demographics": "42 yaşında kadın",
-    "setting": "Dahiliye polikliniği",
+    "setting": "İç Hastalıkları polikliniği",
     "chiefComplaint": "Halsizlik, eforla nefes darlığı ve buz yeme isteği",
     "stem": "Hasta son altı aydır giderek artan yorgunluk, saç dökülmesi, çarpıntı ve pika yakınmaları olduğunu ifade ediyor. Menstrüasyonlarının uzun sürdüğü ve kanama miktarının arttığı öğreniliyor.",
     "vitals": {
@@ -1511,7 +1511,7 @@ export const cases = [
     "difficulty": "Orta · Endokrinoloji",
     "clinicalFocus": "Hiperkalsemi ayırıcı tanısında PTH yorumu, fosfor düzeyi, hiperkalsiüri ve cerrahi endikasyonlar",
     "demographics": "60 yaşında kadın",
-    "setting": "Dahiliye polikliniği",
+    "setting": "İç Hastalıkları polikliniği",
     "chiefComplaint": "Tekrarlayan böbrek taşı, kabızlık ve halsizlik",
     "stem": "Hasta son bir yıl içinde iki kez renal kolik atağı geçirdiğini ifade ediyor. Kabızlık, yaygın kemik ağrısı, halsizlik ve hafif depresif duygu durum yakınmaları olduğu öğreniliyor.",
     "vitals": {
@@ -1694,7 +1694,7 @@ export const cases = [
   },
   {
     "id": "neuro-mca-stroke-001",
-    "branchId": "neurology",
+    "branchId": "minor-rotations",
     "title": "Ani afazi, sağ hemiparezi ve akut inme değerlendirmesi",
     "difficulty": "Acil · Nöroloji",
     "clinicalFocus": "Akut iskemik inmede son sağlıklı görülme zamanı, damar sulama alanı lokalizasyonu ve reperfüzyon uygunluğu",
@@ -1875,7 +1875,7 @@ export const cases = [
   },
   {
     "id": "neuro-sah-001",
-    "branchId": "neurology",
+    "branchId": "minor-rotations",
     "title": "Ani başlangıçlı en şiddetli baş ağrısı ve meningeal irritasyon",
     "difficulty": "Acil · Nörovasküler",
     "clinicalFocus": "Thunderclap baş ağrısında subaraknoid kanama, kontrastsız BT, lomber ponksiyon ve anevrizma araştırması",
@@ -2044,7 +2044,7 @@ export const cases = [
   },
   {
     "id": "neuro-ms-001",
-    "branchId": "neurology",
+    "branchId": "minor-rotations",
     "title": "Optik nörit öyküsü, diplopi ve demiyelinizan plaklar",
     "difficulty": "Orta · Demiyelinizan hastalık",
     "clinicalFocus": "Zaman ve mekanda yayılım, optik nörit, internükleer oftalmopleji ve BOS oligoklonal bant yorumu",
@@ -2227,7 +2227,7 @@ export const cases = [
   },
   {
     "id": "neuro-cvst-001",
-    "branchId": "neurology",
+    "branchId": "minor-rotations",
     "title": "Lohusalık döneminde progresif baş ağrısı ve nöbet",
     "difficulty": "Acil · Nörovasküler",
     "clinicalFocus": "Serebral venöz sinüs trombozunda postpartum risk, intrakraniyal basınç bulguları ve MR venografi",
@@ -3960,7 +3960,7 @@ export const cases = [
   },
   {
     "id": "pulm-pneumothorax-001",
-    "branchId": "pulmonology",
+    "branchId": "internal-medicine",
     "title": "Uzun boylu genç erkekte ani plöritik ağrı ve tek taraflı solunum sesi azalması",
     "difficulty": "Acil · Plevral hastalık",
     "clinicalFocus": "Primer spontan pnömotoraksta klinik bulgular, grafide plevral çizgi ve gerilim bulgularının ayırımı",
@@ -4126,7 +4126,7 @@ export const cases = [
   },
   {
     "id": "pulm-pe-001",
-    "branchId": "pulmonology",
+    "branchId": "internal-medicine",
     "title": "Risk faktörü olan hastada ani dispne, plöritik ağrı ve taşikardi",
     "difficulty": "Acil · Tromboemboli",
     "clinicalFocus": "Pulmoner embolide klinik olasılık, D-dimer kullanımı, BT pulmoner anjiyografi ve sağ kalp yüklenmesi",
@@ -4292,7 +4292,7 @@ export const cases = [
   },
   {
     "id": "pulm-pneumonia-001",
-    "branchId": "pulmonology",
+    "branchId": "medical-microbiology",
     "title": "Ateş, pürülan balgam ve lobar konsolidasyon",
     "difficulty": "Temel-orta · Enfeksiyon/pulmonoloji",
     "clinicalFocus": "Toplum kökenli pnömonide klinik-radyolojik tanı, ağırlık skoru ve ampirik tedavi seçimi",
@@ -4458,7 +4458,7 @@ export const cases = [
   },
   {
     "id": "pulm-ipf-uip-001",
-    "branchId": "pulmonology",
+    "branchId": "internal-medicine",
     "title": "Aylar içinde artan efor dispnesi, kuru öksürük ve bazal ince raller",
     "difficulty": "Orta-zor · İnterstisyel akciğer hastalığı",
     "clinicalFocus": "Fibrotik interstisyel akciğer hastalığı şüphesinde yüksek çözünürlüklü BT paterni, restriktif fizyoloji ve sekonder nedenlerin dışlanması",
@@ -4637,7 +4637,7 @@ export const cases = [
   },
   {
     "id": "pulm-copd-exacerbation-001",
-    "branchId": "pulmonology",
+    "branchId": "internal-medicine",
     "title": "KOAH hastasında dispne, balgam pürülansı ve hiperkapnik solunum yetmezliği",
     "difficulty": "Orta · Obstrüktif akciğer hastalığı",
     "clinicalFocus": "KOAH alevlenmesinde Anthonisen bulguları, kan gazı yorumu, bronkodilatör ve noninvaziv ventilasyon endikasyonu",
@@ -4822,7 +4822,7 @@ export const cases = [
   },
   {
     "id": "inf-tuberculosis-001",
-    "branchId": "infectious-diseases",
+    "branchId": "medical-microbiology",
     "title": "Uzamış öksürük, gece terlemesi ve apikal kaviter lezyon",
     "difficulty": "Orta · Enfeksiyon hastalıkları",
     "clinicalFocus": "Pulmoner tüberkülozda kronik semptomlar, ARB yayma, kültür/moleküler test ve temaslı değerlendirmesi",
@@ -4988,7 +4988,7 @@ export const cases = [
   },
   {
     "id": "inf-malaria-001",
-    "branchId": "infectious-diseases",
+    "branchId": "medical-microbiology",
     "title": "Endemik bölge dönüşü ateş, trombositopeni ve intraeritrositer parazitler",
     "difficulty": "Orta · Seyahat enfeksiyonu",
     "clinicalFocus": "Sıtmada seyahat öyküsü, kalın damla-ince yayma, falciparum ağır hastalık riski ve acil tedavi",
@@ -5167,7 +5167,7 @@ export const cases = [
   },
   {
     "id": "inf-meningococcemia-001",
-    "branchId": "infectious-diseases",
+    "branchId": "medical-microbiology",
     "title": "Yurt öğrencisinde ateş, ense sertliği ve peteşiyal-purpural döküntü",
     "difficulty": "Acil · Menenjit/sepsis",
     "clinicalFocus": "Meningokok menenjitinde sepsis bulguları, BOS Gram boyama, izolasyon ve profilaksi",
@@ -5340,7 +5340,7 @@ export const cases = [
   },
   {
     "id": "inf-endocarditis-001",
-    "branchId": "infectious-diseases",
+    "branchId": "medical-microbiology",
     "title": "İntravenöz madde kullanımı öyküsünde uzamış ateş ve yeni üfürüm",
     "difficulty": "Orta-zor · Kardiyoenfeksiyon",
     "clinicalFocus": "İnfektif endokarditte Duke kriterleri, kan kültürü, ekokardiyografi ve sağ kalp tutulumunda septik pulmoner emboli",
@@ -5494,7 +5494,7 @@ export const cases = [
   },
   {
     "id": "ortho-colles-001",
-    "branchId": "orthopedics",
+    "branchId": "minor-rotations",
     "title": "Açık el üzerine düşme sonrası çatal sırtı deformitesi",
     "difficulty": "Temel · Ortopedi travma",
     "clinicalFocus": "Distal radius kırığında travma mekanizması, deformite, nörovasküler muayene ve redüksiyon sonrası kontrol",
@@ -5637,7 +5637,7 @@ export const cases = [
   },
   {
     "id": "ortho-femoral-neck-001",
-    "branchId": "orthopedics",
+    "branchId": "minor-rotations",
     "title": "Düşük enerjili düşme sonrası kalça ağrısı, kısalık ve dış rotasyon",
     "difficulty": "Temel-orta · Ortopedik acil",
     "clinicalFocus": "Yaşlı hastada femur boyun kırığı, intrakapsüler kırık riski, avasküler nekroz ve cerrahi seçenekler",
@@ -5786,7 +5786,7 @@ export const cases = [
   },
   {
     "id": "ortho-scaphoid-001",
-    "branchId": "orthopedics",
+    "branchId": "minor-rotations",
     "title": "El bileği travması sonrası anatomik enfiye çukuru hassasiyeti",
     "difficulty": "Temel-orta · Ortopedi travma",
     "clinicalFocus": "Skafoid kırığında ilk grafi normal olabilirliği, immobilizasyon ve avasküler nekroz riski",
@@ -5924,7 +5924,7 @@ export const cases = [
   },
   {
     "id": "ortho-shoulder-dislocation-001",
-    "branchId": "orthopedics",
+    "branchId": "minor-rotations",
     "title": "Travma sonrası omuz kontur kaybı ve hareket kısıtlılığı",
     "difficulty": "Temel-orta · Ortopedi travma",
     "clinicalFocus": "Travmatik omuz yaralanmasında mekanizma, deformite, aksiller sinir muayenesi ve redüksiyon sonrası görüntüleme",
@@ -6060,14 +6060,14 @@ export const cases = [
   },
   {
     "id": "cardiovascular-electrical-injury-arrhythmia-001",
-    "branchId": "quick-case",
-    "title": "Elektrik çarpması sonrası monitörizasyon ve iş kazası kaydı",
-    "difficulty": "Hızlı · İş kazası/acil",
-    "clinicalFocus": "Elektrik yaralanmasında güvenli alan, ABC, EKG-monitörizasyon, yanık değerlendirmesi ve iş kazası/adli kayıt yaklaşımı",
+    "branchId": "internal-medicine",
+    "title": "Elektrik temasından sonra çarpıntı ve el yanığı ile başvuran iş kazası",
+    "difficulty": "Orta-Zor · TUS düzeyi",
+    "clinicalFocus": "Alternatif akım, transtorasik akım, VF, OED, yanık ve nörolojik hasar",
     "demographics": "28 yaş erkek, elektrik teknisyeni",
     "setting": "Acil servis - iş kazası sonrası ilk değerlendirme",
     "chiefComplaint": "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı",
-    "stem": "28 yaşında elektrik teknisyeni 220 V alternatif akımla temas sonrası kısa süre elini çekemediğini, çarpıntı ve sağ elde yanık olduğunu söyler. Nemli zemin ve el-gövde hattı transtorasik akım riskini artırır. Bu kısa olguda amaç yalnız yanığı görmek değil, aritmi ve iş kazası yönetimini doğru önceliklendirmektir.",
+    "stem": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tarifler. Nemli zemin öyküsü cilt direncinin azalmasına, el-gövde hattındaki temas ise transtorasik akım geçişi ve ventriküler aritmi riskine işaret eder.",
     "vitals": {
       "TA": "118/74 mmHg",
       "Nabız": "124/dk, düzensiz",
@@ -6077,10 +6077,11 @@ export const cases = [
     },
     "exam": [
       "Genel durum orta; hasta kaygılı ancak koopere, bilinç açık ve GKS 15.",
-      "Sağ avuç içinde kuru, keskin sınırlı küçük elektrik giriş yanığı ve çevresinde hassasiyet vardır.",
-      "Kardiyovasküler muayenede düzensiz taşikardi duyulur; belirgin üfürüm veya kalp yetmezliği bulgusu yoktur.",
-      "Solunum sıkıntısı, yaygın ral veya wheezing saptanmaz.",
-      "Sağ ön kolda kompartman sendromu lehine pasif germe ağrısı veya ileri ödem yoktur."
+      "Sağ avuç içinde yaklaşık 1.5 cm kuru, keskin sınırlı elektrik giriş yanığı; çevresinde hafif eritem ve hassasiyet mevcut.",
+      "Kardiyovasküler muayenede düzensiz taşikardi duyuluyor; belirgin üfürüm, kalp yetmezliği bulgusu veya periferik nabız asimetrisi saptanmıyor.",
+      "Solunum sistemi muayenesinde ral, wheezing veya belirgin solunum sıkıntısı yok; göğüs ekspansiyonu simetrik ve hasta oda havasında rahat nefes alır görünümde.",
+      "Sağ ön kol fleksörlerinde hassasiyet mevcut; pasif germe ile belirgin ağrı, ileri ödem veya kompartman sendromu bulgusu yok.",
+      "Nörolojik muayenede kısa süreli parestezi dışında motor defisit, lateralizan bulgu veya bilinç bozukluğu saptanmıyor."
     ],
     "investigations": [
       {
@@ -6144,60 +6145,135 @@ export const cases = [
             "Normal"
           ]
         ]
+      },
+      {
+        "id": "ck-ve-idrar-miyoglobin-01",
+        "label": "CK ve idrar miyoglobin",
+        "type": "urine",
+        "priority": "useful",
+        "summary": "CK hafif yüksek bulundu; idrar miyoglobini negatif izlendi.",
+        "findings": [
+          "Kas etkilenimi hafif düzeydedir.",
+          "Rabdomiyoliz lehine güçlü idrar bulgusu yoktur."
+        ],
+        "rows": [
+          [
+            "CK",
+            "780 U/L",
+            "<200 U/L",
+            "Yüksek"
+          ],
+          [
+            "İdrar miyoglobini",
+            "Negatif",
+            "Negatif",
+            "Sorun yok"
+          ],
+          [
+            "Kreatinin",
+            "0.9 mg/dL",
+            "0.6-1.2 mg/dL",
+            "Normal"
+          ]
+        ]
+      },
+      {
+        "id": "troponin-seri-takibi-01",
+        "label": "Troponin seri takibi",
+        "type": "lab",
+        "priority": "situational",
+        "summary": "Troponin başlangıçta normaldir; seri ölçümde anlamlı yükselme beklenmemektedir.",
+        "findings": [
+          "Miyokard nekrozu lehine biyobelirteç paterni yoktur.",
+          "EKG ve klinikle birlikte izlem yapılır."
+        ],
+        "rows": [
+          [
+            "Troponin I",
+            "0.02 ng/mL",
+            "<0.04 ng/mL",
+            "Normal"
+          ],
+          [
+            "Seri değişim",
+            "Artış yok",
+            "Artış beklenmez",
+            "Sorun yok"
+          ]
+        ]
       }
     ],
     "images": [],
     "diagnosis": {
-      "correct": "Güvenli alan sağlandıktan sonra ABC, 12 derivasyon EKG, kardiyak monitörizasyon ve iş kazası/adli kayıt sürecini başlatmak",
+      "correct": "Elektrik çarpmasına bağlı ventriküler aritmi riski",
       "options": [
-        "Güvenli alan sağlandıktan sonra ABC, 12 derivasyon EKG, kardiyak monitörizasyon ve iş kazası/adli kayıt sürecini başlatmak",
-        "Yalnız yüzeyel yanık pansumanı yapıp EKG istemeden taburcu etmek",
-        "Adli/iş kazası kaydı için tıbbi monitörizasyonu ertelemek",
-        "Troponin normal gelirse ritim izlemi olmadan riski dışlamak"
+        "Elektrik çarpmasına bağlı ventriküler aritmi riski",
+        "Yalnızca yüzeyel termal yanık",
+        "Spontan pnömotoraks",
+        "Akut miyokard infarktüsü"
       ],
-      "question": "Bu hastada en uygun ilk yönetim kararı hangisidir?",
-      "questionTitle": "İlk yaklaşım sorusu",
-      "explanation": "Alternatif akım ve transtorasik hat aritmi riskini artırır. Güvenli alan, ABC, EKG ve monitörizasyon tıbbi önceliktir; iş kazası/adli kayıt tıbbi bakımı geciktirmeden yürütülür.",
+      "explanation": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar; transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır; EKG, monitörizasyon ve OED hazırlığı önceliklidir.",
       "pearls": [
-        "Alternatif akım tetanik kasılmayla temas süresini uzatabilir.",
-        "Transtorasik akımda EKG ve ritim izlemi yanık boyutundan bağımsız olarak önemlidir.",
-        "İş kazası kaydı tıbbi müdahalenin yerine geçmez; eş zamanlı yürütülür."
+        "Alternatif akım doğru akımdan daha tehlikelidir; tetanik kasılma ile temas süresini uzatır.",
+        "Nemli/ıslak cilt direnci azaltır ve düşük voltajı bile riskli yapar.",
+        "50-100 mA VF ile; çok yüksek akımlar asistoli ile ilişkilidir.",
+        "Kardiyak hasar bekleniyorsa sahada ilk istenecek şey OED/defibrilatördür."
       ],
-      "nextStep": "Güvenli alan sağlandıktan sonra ABC, 12 derivasyon EKG, kardiyak monitörizasyon ve iş kazası/adli kayıt sürecini başlatmak",
+      "nextStep": "Güvenli alan sağlandıktan sonra ABC, 12 derivasyon EKG, monitörizasyon ve VF gelişirse defibrilasyon/OED uygulanması.",
       "answerFeedback": {
-        "diagnosisMeta": "Elektrik yaralanması · aritmi riski · iş kazası kaydı",
-        "shortDiagnosisMeta": "Öğrenme çıktısı: elektrik yaralanmasında aritmi ve kayıt sorumluluğunu birlikte yönetme",
-        "whyCorrect": "Bu seçenek hem yaşamı tehdit eden aritmi riskini hem de iş kazası/adli kayıt gereksinimini doğru sırayla karşılar.",
+        "diagnosisMeta": "Yüksek riskli elektrik maruziyeti: alternatif akım + kaynaktan ayrılamama + transtorasik potansiyel geçiş + ritim düzensizliği.",
+        "whyCorrect": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar; transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır; EKG, monitörizasyon ve OED hazırlığı önceliklidir.",
         "evidenceChain": [
-          "Alternatif akım ve nemli zemin temas süresini ve akım geçişini artırır.",
-          "El-gövde hattı transtorasik akım ihtimali taşır.",
-          "Düzensiz taşikardi EKG/monitörizasyon gerektirir."
+          "Alternatif akım ile elini kaynaktan ayıramama",
+          "Nemli zemin ile cilt direncinin azalması",
+          "Çarpıntı ve düzensiz taşikardi",
+          "EKG'de ventriküler erken vurular"
         ],
         "pearls": [
-          "Yanık küçük olsa bile ritim riski küçük olmak zorunda değildir.",
-          "Tıbbi stabilizasyon ve kayıt süreci eş zamanlıdır."
+          "Transtorasik akım vertikal akımdan daha ölümcül olabilir.",
+          "Sinir dokusu en düşük dirençli dokulardandır; parestezi önemli ipucudur.",
+          "Yanık küçük olsa bile derin doku hasarı olabilir."
         ],
         "management": [
-          "Güvenli alan ve ABC",
-          "12 derivasyon EKG ve monitörizasyon",
-          "Yanık/kompartman değerlendirmesi ve iş kazası kaydı"
+          "Olay yerinde elektrik kaynağını kes ve kişisel güvenliği sağla — Kurtarıcıyı ikinci hasta yapmamak için ilk basamaktır.",
+          "ABC değerlendirmesi, nabız-solunum kontrolü, gerekirse CPR — Elektrik çarpmasında ölümcül ritim/solunum durması gelişebilir.",
+          "12 derivasyon EKG ve kardiyak monitörizasyon — VF/VT/asistoli riskini erken saptar.",
+          "VF/VT varsa OED/defibrilasyon — ölümcül ritimde gecikmeden elektriksel tedavi uygulanır.",
+          "Yanık, kas hasarı, CK, idrar miyoglobin ve böbrek izlemi — Derin doku hasarı ve rabdomiyoliz dışlanır."
         ],
-        "learningOutcome": "Elektrik yaralanmasında ilk karar EKG-monitörizasyon güvenliği ve kayıt sorumluluğunu birlikte planlamaktır.",
-        "differentials": {}
+        "learningOutcome": "Elektrik çarpmasında görünür yanığın küçük olması iç organ/kardiyak riski dışlamaz; akım tipi, yol, süre ve çevre koşulları belirleyicidir.",
+        "differentials": {
+          "Yalnızca yüzeyel termal yanık": {
+            "explanation": "Yalnızca yüzeyel termal yanık ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "comparisonPoints": [
+              "Yalnızca yüzeyel termal yanık için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Spontan pnömotoraks": {
+            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "comparisonPoints": [
+              "Spontan pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          },
+          "Akut miyokard infarktüsü": {
+            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir; ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "comparisonPoints": [
+              "Akut miyokard infarktüsü için beklenen baskın bulgular bu olguda ön planda değildir.",
+              "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
+              "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
+            ]
+          }
+        }
       }
-    },
-    "caseType": "quick",
-    "managementSequence": {
-      "enabled": false
-    },
-    "quickCategory": "Acil karar",
-    "questionTitle": "İlk yaklaşım sorusu",
-    "questionType": "next-step",
-    "question": "Bu hastada en uygun ilk yönetim kararı hangisidir?"
+    }
   },
   {
     "id": "pulmonology-lightning-apnea-001",
-    "branchId": "pulmonology",
+    "branchId": "internal-medicine",
     "title": "Fırtına sonrası bilinç kaybı ve solunum depresyonu ile getirilen genç hasta",
     "difficulty": "Zor · TUS düzeyi",
     "clinicalFocus": "Yıldırım mekanizması, yüzeyel akım, uzamış apne, kardiyolojik-nörolojik komplikasyon",
@@ -6386,7 +6462,7 @@ export const cases = [
   },
   {
     "id": "pediatrics-classic-galactosemia-001",
-    "branchId": "pediatrics",
+    "branchId": "medical-biochemistry",
     "title": "Süt alımı sonrası uzamış sarılık ve kusma gelişen yenidoğan",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Galaktoz metabolizması, GALT eksikliği, katarakt, karaciğer hasarı, sepsis riski",
@@ -6586,7 +6662,7 @@ export const cases = [
   },
   {
     "id": "pediatrics-hereditary-fructose-intolerance-001",
-    "branchId": "pediatrics",
+    "branchId": "medical-biochemistry",
     "title": "Ek gıda sonrası hipoglisemi atakları olan bebek",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Fruktoz metabolizması, aldolaz B eksikliği, hipoglisemi, karaciğer etkilenimi",
@@ -6780,7 +6856,7 @@ export const cases = [
   },
   {
     "id": "pediatrics-von-gierke-gsd-001",
-    "branchId": "pediatrics",
+    "branchId": "medical-biochemistry",
     "title": "Kısa açlıkta nöbet ve belirgin hepatomegali gelişen çocuk",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Glikojenoliz/glukoneogenez çıkış basamağı, glukoz-6-fosfataz eksikliği",
@@ -6986,7 +7062,7 @@ export const cases = [
   },
   {
     "id": "pediatrics-phenylketonuria-001",
-    "branchId": "pediatrics",
+    "branchId": "medical-biochemistry",
     "title": "Küf kokulu idrar ve gelişim geriliği olan bebek",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Fenilalanin hidroksilaz eksikliği, nörotoksisite, yenidoğan taraması",
@@ -7180,7 +7256,7 @@ export const cases = [
   },
   {
     "id": "pediatrics-maple-syrup-urine-disease-001",
-    "branchId": "pediatrics",
+    "branchId": "medical-biochemistry",
     "title": "Tatlı kokulu idrar ve nörolojik kötüleşme ile başvuran yenidoğan",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Dallı zincirli aminoasit katabolizması, BCKD eksikliği, lösin toksisitesi",
@@ -7386,7 +7462,7 @@ export const cases = [
   },
   {
     "id": "internal-medicine-alkaptonuria-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-biochemistry",
     "title": "İdrarı bekleyince koyulaşan erişkinde eklem yakınmaları",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Homogentisik asit oksidaz eksikliği, okronozis, koyu idrar, eklem tutulumu",
@@ -7568,7 +7644,7 @@ export const cases = [
   },
   {
     "id": "pediatrics-albinism-001",
-    "branchId": "pediatrics",
+    "branchId": "medical-biochemistry",
     "title": "Fotofobi ve belirgin pigment azalması olan çocuk",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Tirozinaz/melanin sentezi, pigmentasyon azlığı, göz bulguları",
@@ -7745,7 +7821,7 @@ export const cases = [
   },
   {
     "id": "pediatrics-homocystinuria-001",
-    "branchId": "pediatrics",
+    "branchId": "medical-biochemistry",
     "title": "Uzun boy, lens kayması ve tromboz öyküsü olan genç hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Metiyonin metabolizması, homosistein artışı, tromboz ve lens bulguları",
@@ -7977,7 +8053,7 @@ export const cases = [
   },
   {
     "id": "internal-medicine-pellagra-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-biochemistry",
     "title": "Fotosensitif dermatit, diyare ve bilişsel yavaşlama ile başvuru",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Vitamin B3 eksikliği, NAD/NADP, 3D triadı",
@@ -8129,7 +8205,7 @@ export const cases = [
   },
   {
     "id": "internal-medicine-scurvy-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-biochemistry",
     "title": "Diş eti kanaması ve yara iyileşme gecikmesi olan hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Kollajen hidroksilasyonu, kanama, yara iyileşmesi",
@@ -8299,7 +8375,7 @@ export const cases = [
   },
   {
     "id": "internal-medicine-hemochromatosis-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-biochemistry",
     "title": "Karaciğer enzim yüksekliği, hiperpigmentasyon ve diyabet tablosu",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Demir yüklenmesi, ferritin/transferrin satürasyonu, karaciğer-pankreas-kalp tutulumları",
@@ -8493,7 +8569,7 @@ export const cases = [
   },
   {
     "id": "internal-medicine-familial-hypercholesterolemia-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-biochemistry",
     "title": "Erken yaşta LDL yüksekliği ve tendon nodülleri olan hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "LDL reseptör/ApoB yolu, yüksek LDL, ateroskleroz riski",
@@ -8662,7 +8738,7 @@ export const cases = [
   },
   {
     "id": "internal-medicine-tangier-disease-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-biochemistry",
     "title": "Turuncu tonsiller ve periferik nöropati ile başvuran genç hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "ABCA1 defekti, HDL düşüklüğü, kolesterol efflux bozukluğu",
@@ -8832,7 +8908,7 @@ export const cases = [
   },
   {
     "id": "internal-medicine-acute-radiation-syndrome-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-pathology",
     "title": "Korunmasız radyasyon maruziyeti sonrası bulantı ve sitopeni",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Kısa sürede yüksek doz, prodromal bulgular, kemik iliği baskılanması, cilt hasarı",
@@ -9039,7 +9115,7 @@ export const cases = [
   },
   {
     "id": "internal-medicine-oxidative-stress-injury-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-biochemistry",
     "title": "Bakla sonrası koyu idrar ve sarılık gelişen hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Oksidatif stres altında eritrosit hasarı, G6PD eksikliği ve akut hemoliz",
@@ -9252,7 +9328,7 @@ export const cases = [
   },
   {
     "id": "cardiovascular-coagulative-necrosis-mi-001",
-    "branchId": "cardiovascular",
+    "branchId": "medical-pathology",
     "title": "Uzamış göğüs ağrısı sonrası reperfüzyon gerektiren hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "İskemik nekroz, miyokard infarktüsü, morfolojik nekroz tipi",
@@ -9444,7 +9520,7 @@ export const cases = [
   },
   {
     "id": "neurology-liquefactive-necrosis-brain-001",
-    "branchId": "neurology",
+    "branchId": "medical-pathology",
     "title": "Baş ağrısı ve ateş sonrası kaviter beyin lezyonu gelişen hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Beyin dokusunda enzimatik sindirim ve sıvılaşma",
@@ -9636,7 +9712,7 @@ export const cases = [
   },
   {
     "id": "infectious-diseases-caseating-granuloma-tb-001",
-    "branchId": "infectious-diseases",
+    "branchId": "medical-microbiology",
     "title": "Kronik öksürük, gece terlemesi ve granülomatöz akciğer bulguları",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Kronik inflamasyon, epiteloid histiyosit, dev hücre, TB dışlama",
@@ -9834,7 +9910,7 @@ export const cases = [
   },
   {
     "id": "pulmonology-pulmonary-embolism-dvt-001",
-    "branchId": "pulmonology",
+    "branchId": "medical-pathology",
     "title": "Bacak şişliği sonrası ani dispne ve hipoksemi gelişen hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Tromboz, emboli, infarkt ve şok riski",
@@ -10032,7 +10108,7 @@ export const cases = [
   },
   {
     "id": "infectious-diseases-septic-shock-001",
-    "branchId": "infectious-diseases",
+    "branchId": "medical-microbiology",
     "title": "Ateş, hipotansiyon ve laktat yüksekliği ile acile getirilen hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "Doku hipoperfüzyonu, laktat, inflamatuvar vazodilatasyon",
@@ -10999,7 +11075,7 @@ export const cases = [
   },
   {
     "id": "infectious-diseases-hiv-aids-001",
-    "branchId": "infectious-diseases",
+    "branchId": "medical-microbiology",
     "title": "Kilo kaybı, fırsatçı enfeksiyon ve lenfopeni ile başvuru",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "CD4 T hücre kaybı, fırsatçı enfeksiyon, gp120/gp41/p24",
@@ -11192,276 +11268,243 @@ export const cases = [
   {
     "id": "pediatrics-shaken-baby-syndrome-001",
     "branchId": "quick-case",
-    "title": "Açıklanamayan morluk ve bilinç değişikliğinde çocuk istismarı yaklaşımı",
-    "difficulty": "Hızlı · Adli pediatri",
-    "clinicalFocus": "Çocuk istismarı şüphesinde stabilizasyon, koruma, kayıt, ilgili birimlere bildirim ve ayırıcı tanı dışlama",
-    "demographics": "4 aylık erkek bebek",
-    "setting": "Klinik/adli değerlendirme ortamı",
-    "chiefComplaint": "Nöbet, letarji ve açıklanamayan morluklar",
-    "stem": "4 aylık bebek nöbet ve letarjiyle getirilir. Bakıcı net travma öyküsü vermez; muayenede farklı yaşlarda ekimozlar ve öyküyle uyumsuz fizik bulgular vardır. Bu tablo yalnız tanısal bir problem değil, çocuk güvenliği ve yasal bildirim gerektiren tıbbi-adli bir durumdur.",
+    "caseType": "quick",
+    "quickCategory": "Adli",
+    "questionType": "forensic",
+    "title": "Travma öyküsü tutarsız bebekte çocuk istismarı şüphesi",
+    "difficulty": "Acil · Hızlı CASE",
+    "clinicalFocus": "Çocuk istismarı şüphesinde tıbbi stabilizasyon, ayrıntılı kayıt, güvenlik ve adli bildirim kararı",
+    "learningOutcome": "Öğrenci çocuk istismarı şüphesinde tıbbi stabilizasyonun, kayıt tutmanın ve bildirim yükümlülüğünün birlikte yürütülmesi gerektiğini ayırt eder.",
+    "demographics": "8 aylık erkek bebek",
+    "setting": "Acil servis",
+    "chiefComplaint": "Nöbet sonrası letarji ve açıklanamayan ekimozlar",
+    "stem": "Bebek acile nöbet ve letarji nedeniyle getirilir. Bakıcı net travma öyküsü vermez; anlatılan hafif düşme öyküsü muayene bulgularının yaygınlığı ve farklı yaşlardaki morluklarla uyumlu değildir. Hekim aynı anda yaşamı tehdit eden durumu değerlendirmek, güvenliği sağlamak ve çocuk istismarı olasılığını doğru yönetmek zorundadır.",
     "vitals": {
-      "TA": "76/44 mmHg",
-      "Nabız": "158/dk",
-      "Solunum": "24/dk, düzensiz",
-      "SpO2": "%94",
-      "Ateş": "36.5 °C"
+      "TA": "88/52 mmHg",
+      "Nabız": "154/dk",
+      "Solunum": "32/dk",
+      "SpO2": "%97",
+      "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum kötü; bebek irritabl ve aralıklı letarjiktir, beslenmesi zayıftır.",
-      "Ön fontanel hafif kabarık izlenir.",
-      "Ciltte farklı yaşlarda ekimozlar görülür; açıklanan mekanizma muayene bulgularıyla uyumlu değildir.",
-      "Fundoskopik değerlendirmede retinal kanama şüphesi vardır; göz hastalıkları konsültasyonu gerekir.",
-      "Nörolojik muayenede bilinç dalgalanması ve nöbet sonrası letarji vardır."
+      "Genel durum orta-kötü; bebek irritabl, aralıklı letarjik ve beslenmesi zayıf görünümde.",
+      "Ön fontanel hafif kabarık; baş çevresi yaşına göre üst persentilde izleniyor.",
+      "Gövde ve ekstremitelerde farklı iyileşme evrelerinde ekimozlar mevcut; bildirilen mekanizma fizik bulgularla uyumlu değildir.",
+      "Fundoskopide bilateral retinal kanama izleniyor.",
+      "Uzun kemik palpasyonunda yer yer hassasiyet var; belirgin açık yara veya aktif dış kanama yok.",
+      "Nörolojik muayenede bilinç dalgalanması ve nöbet sonrası letarji mevcut; ense sertliği belirgin değil."
     ],
     "investigations": [
       {
-        "id": "kontrastsiz-beyin-bt-mr-28",
+        "id": "quick-child-abuse-head-imaging",
         "label": "Kontrastsız beyin BT/MR",
-        "type": "ct",
-        "priority": "essential",
-        "summary": "Beyin görüntülemede subdural kanama izlendi.",
+        "type": "imaging",
+        "summary": "Subdural kanama ile uyumlu ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir.",
         "findings": [
-          "İvmelenme-yavaşlama tipi travmayı destekler.",
-          "Basit düşme öyküsüyle açıklanması zordur."
+          "Subdural kanama ile uyumlu ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir."
         ],
-        "rows": [
-          [
-            "Beyin BT/MR",
-            "Subdural kanama",
-            "Yok",
-            "Patolojik"
-          ],
-          [
-            "Parankim ödemi",
-            "Hafif",
-            "Yok",
-            "Patolojik"
-          ]
-        ]
+        "priority": "targeted"
       },
       {
-        "id": "iskelet-survey-grafileri-28",
+        "id": "quick-child-abuse-skeletal-survey",
         "label": "İskelet survey grafileri",
-        "type": "xray",
-        "priority": "useful",
-        "summary": "İskelet surveyde farklı iyileşme evrelerinde kostal/metafizer lezyonlar izlendi.",
+        "type": "imaging",
+        "summary": "Farklı iyileşme evrelerinde posterior kosta ve metafizer lezyonlar saptanır; tekrarlayan travma olasılığı artar.",
         "findings": [
-          "Tek seferlik kaza dışı travma ihtimalini güçlendirir.",
-          "Kaza dışı travma açısından bildirim gerekir."
+          "Farklı iyileşme evrelerinde posterior kosta ve metafizer lezyonlar saptanır; tekrarlayan travma olasılığı artar."
         ],
-        "rows": [
-          [
-            "İskelet survey",
-            "Farklı yaşta lezyonlar",
-            "Yok",
-            "Patolojik"
-          ],
-          [
-            "Kostal lezyon",
-            "Var",
-            "Yok",
-            "Patolojik"
-          ]
-        ]
+        "priority": "targeted"
       }
     ],
     "images": [],
-    "diagnosis": {
-      "correct": "Bebeği stabilize ederken çocuk istismarı şüphesiyle koruma/adli bildirim ve ayrıntılı kayıt sürecini başlatmak",
-      "options": [
-        "Bebeği stabilize ederken çocuk istismarı şüphesiyle koruma/adli bildirim ve ayrıntılı kayıt sürecini başlatmak",
-        "Bakıcı travma öyküsü vermediği için istismar olasılığını dışlamak",
-        "Görüntüleme sonucu kesinleşene kadar çocuğu aynı bakım verenle taburcu etmek",
-        "Önce yalnız antiepileptik verip sosyal/adli değerlendirmeyi poliklinik kontrolüne bırakmak"
-      ],
-      "question": "Bu durumda hekimin öncelikli sorumluluğu nedir?",
-      "questionTitle": "Çocuk koruma kararı",
-      "explanation": "Çocuk istismarı şüphesinde hekim önce tıbbi stabilizasyonu sağlar; ancak güvenlik, ayrıntılı kayıt, multidisipliner değerlendirme ve yasal bildirim ertelenmez. Öykü-bulgu uyumsuzluğu ve farklı yaşta ekimozlar güçlü alarm bulgularıdır.",
-      "pearls": [
-        "Öykü ile bulgu uyumsuzluğu istismar için kırmızı bayraktır.",
-        "Çocuk güvenliği taburculuk kararından önce değerlendirilmelidir.",
-        "Kanama diyatezi gibi ayırıcılar araştırılabilir; bu bildirim sorumluluğunu ortadan kaldırmaz."
-      ],
-      "nextStep": "Bebeği stabilize ederken çocuk istismarı şüphesiyle koruma/adli bildirim ve ayrıntılı kayıt sürecini başlatmak",
-      "answerFeedback": {
-        "diagnosisMeta": "Adli pediatri · çocuk istismarı şüphesi · güvenlik ve bildirim",
-        "shortDiagnosisMeta": "Öğrenme çıktısı: istismar şüphesinde stabilizasyon ve bildirim birlikte yürütülür",
-        "whyCorrect": "Bu seçenek bebeğin akut tıbbi güvenliğini ve çocuk koruma sorumluluğunu aynı anda karşılar; kesin tanıyı beklemek çocuğu yeniden risk altında bırakabilir.",
-        "evidenceChain": [
-          "Bebekte nöbet ve letarji vardır; önce stabilizasyon gerekir.",
-          "Farklı yaşlarda ekimozlar ve açıklanamayan mekanizma istismar şüphesini artırır.",
-          "Çocuk güvenliği ve kayıt sorumluluğu tıbbi değerlendirmenin parçasıdır."
-        ],
-        "pearls": [
-          "Şüphe yeterlidir; kesin kanıt beklemek gerekmez.",
-          "Ayrıntılı, objektif ve yargısız kayıt tutulmalıdır."
-        ],
-        "management": [
-          "ABC ve nöbet yönetimi",
-          "Çocuk koruma/adli bildirim",
-          "Güvenli yatış ve multidisipliner değerlendirme"
-        ],
-        "learningOutcome": "Çocuk istismarı şüphesinde hekim stabilizasyon, güvenlik, kayıt ve bildirim yükümlülüklerini birlikte yürütür.",
-        "differentials": {}
-      }
-    },
-    "caseType": "quick",
     "managementSequence": {
       "enabled": false
     },
-    "quickCategory": "Adli",
-    "questionTitle": "Çocuk koruma kararı",
-    "questionType": "forensic",
-    "question": "Bu durumda hekimin öncelikli sorumluluğu nedir?"
+    "question": "Bu durumda hekimin en uygun ilk tıbbi-adli yaklaşımı nedir?",
+    "diagnosis": {
+      "correct": "Tıbbi stabilizasyonu sağlarken ayrıntılı kayıt, çocuk güvenliği ve adli bildirim sürecini başlatmak",
+      "options": [
+        "Tıbbi stabilizasyonu sağlarken ayrıntılı kayıt, çocuk güvenliği ve adli bildirim sürecini başlatmak",
+        "Bakıcı travma olmadığını söylediği için adli bildirim yapmadan taburcu etmek",
+        "Adli süreç tamamlanana kadar acil tıbbi müdahaleyi ertelemek",
+        "Yalnızca antiepileptik verip bulguların düzelmesini beklemek"
+      ],
+      "explanation": "Çocuk istismarı şüphesinde hekim önce hastanın acil tıbbi stabilizasyonunu sağlar; bulguları objektif biçimde kaydeder, çocuğun güvenliğini gözetir ve yetkili adli/koruyucu mekanizmaları gecikmeden harekete geçirir. Şüphe varlığı bildirim için yeterlidir; adli süreç tıbbi müdahaleyi geciktirmemelidir.",
+      "pearls": [
+        "Çocuk istismarı olgularında kesin tanı beklenmeden şüphe düzeyiyle güvenlik ve bildirim süreci başlatılır.",
+        "Farklı yaşlarda ekimozlar, tutarsız öykü ve retinal kanama kaza dışı travma açısından kırmızı bayraktır.",
+        "Tıbbi tedavi, adli bildirim ve koruyucu yaklaşım eş zamanlı yürütülür."
+      ],
+      "nextStep": "ABC ve nöbet kontrolünü sağla; bulguları ayrıntılı kaydet, çocuğun güvenliğini sağla ve adli/koruyucu bildirim sürecini başlat.",
+      "answerFeedback": {
+        "correctDiagnosis": "Tıbbi stabilizasyonu sağlarken ayrıntılı kayıt, çocuk güvenliği ve adli bildirim sürecini başlatmak",
+        "diagnosisMeta": "Adli",
+        "shortDiagnosisMeta": "Adli",
+        "whyCorrect": "Çocuk istismarı şüphesinde hekim önce hastanın acil tıbbi stabilizasyonunu sağlar; bulguları objektif biçimde kaydeder, çocuğun güvenliğini gözetir ve yetkili adli/koruyucu mekanizmaları gecikmeden harekete geçirir. Şüphe varlığı bildirim için yeterlidir; adli süreç tıbbi müdahaleyi geciktirmemelidir.",
+        "whyWrong": {
+          "Bakıcı travma olmadığını söylediği için adli bildirim yapmadan taburcu etmek": "Bakıcı beyanı fizik bulgularla çelişiyorsa hekim yalnız beyana dayanarak adli/koruyucu süreci atlayamaz.",
+          "Adli süreç tamamlanana kadar acil tıbbi müdahaleyi ertelemek": "Adli süreç tıbbi stabilizasyonu geciktiremez; yaşamı tehdit eden durumlar önceliklidir.",
+          "Yalnızca antiepileptik verip bulguların düzelmesini beklemek": "Nöbet tedavisi gerekebilir; ancak açıklanamayan travma bulguları ve güvenlik riski ayrıca yönetilmelidir."
+        },
+        "evidenceChain": [
+          "Nöbet sonrası letarji ve açıklanamayan ekimozlar",
+          "Genel durum orta-kötü; bebek irritabl, aralıklı letarjik ve beslenmesi zayıf görünümde.",
+          "Öğrenci çocuk istismarı şüphesinde tıbbi stabilizasyonun, kayıt tutmanın ve bildirim yükümlülüğünün birlikte yürütülmesi gerektiğini ayırt eder."
+        ],
+        "clinicalPearls": [
+          "Çocuk istismarı olgularında kesin tanı beklenmeden şüphe düzeyiyle güvenlik ve bildirim süreci başlatılır.",
+          "Farklı yaşlarda ekimozlar, tutarsız öykü ve retinal kanama kaza dışı travma açısından kırmızı bayraktır.",
+          "Tıbbi tedavi, adli bildirim ve koruyucu yaklaşım eş zamanlı yürütülür."
+        ],
+        "managementSteps": [
+          "ABC ve nöbet kontrolünü sağla; bulguları ayrıntılı kaydet, çocuğun güvenliğini sağla ve adli/koruyucu bildirim sürecini başlat."
+        ],
+        "differentialComparison": {
+          "Bakıcı travma olmadığını söylediği için adli bildirim yapmadan taburcu etmek": {
+            "explanation": "Bakıcı beyanı fizik bulgularla çelişiyorsa hekim yalnız beyana dayanarak adli/koruyucu süreci atlayamaz.",
+            "comparisonPoints": []
+          },
+          "Adli süreç tamamlanana kadar acil tıbbi müdahaleyi ertelemek": {
+            "explanation": "Adli süreç tıbbi stabilizasyonu geciktiremez; yaşamı tehdit eden durumlar önceliklidir.",
+            "comparisonPoints": []
+          },
+          "Yalnızca antiepileptik verip bulguların düzelmesini beklemek": {
+            "explanation": "Nöbet tedavisi gerekebilir; ancak açıklanamayan travma bulguları ve güvenlik riski ayrıca yönetilmelidir.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
   },
   {
     "id": "internal-medicine-sexual-assault-evidence-001",
     "branchId": "quick-case",
-    "title": "Cinsel saldırı sonrası ilk tıbbi-adli yaklaşım",
-    "difficulty": "Hızlı · Adli/etik",
-    "clinicalFocus": "Cinsel saldırıda stabilizasyon, onam, mahremiyet, delil zinciri, gebelik/CYBE profilaksisi ve güvenli taburculuk planı",
-    "demographics": "22 yaş kadın",
-    "setting": "Klinik/adli değerlendirme ortamı",
-    "chiefComplaint": "Saldırı sonrası ağrı, kaygı ve tıbbi değerlendirme isteği",
-    "stem": "22 yaşında kadın hasta saldırıdan yaklaşık 8 saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler; aktif kanama veya bilinç kaybı yoktur. Klinik amaç hem tıbbi güvenliği sağlamak hem de hastanın onamı ve mahremiyeti korunarak zaman duyarlı adli-tıbbi süreci doğru başlatmaktır.",
+    "caseType": "quick",
+    "quickCategory": "Adli / Etik",
+    "questionType": "forensic",
+    "title": "Cinsel saldırı sonrası acile başvuran hastada ilk yaklaşım",
+    "difficulty": "Acil · Hızlı CASE",
+    "clinicalFocus": "Cinsel saldırı sonrası tıbbi stabilite, onam, mahremiyet, profilaksi ve delil zinciri",
+    "learningOutcome": "Öğrenci cinsel saldırı sonrası acil başvuruda onam, mahremiyet, tıbbi tedavi ve delil zinciri önceliklerini birlikte uygular.",
+    "demographics": "22 yaşında kadın hasta",
+    "setting": "Acil servis",
+    "chiefComplaint": "Saldırı sonrası ağrı, yoğun kaygı ve ekimozlar",
+    "stem": "Hasta saldırıdan yaklaşık 8 saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler; aktif dış kanama veya bilinç kaybı yoktur. Hasta muayene sırasında mahremiyet, güvenlik ve ne yapılacağı konusunda bilgilendirilmek istediğini söyler.",
     "vitals": {
-      "TA": "118/76 mmHg",
-      "Nabız": "112/dk",
+      "TA": "118/74 mmHg",
+      "Nabız": "104/dk",
       "Solunum": "20/dk",
-      "SpO2": "%99",
-      "Ateş": "36.9 °C"
+      "SpO2": "%98",
+      "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta; hasta kaygılı ve ağlamaklı, bilinç açık, koopere ve GKS 15.",
-      "Boyun ve ön kolda farklı boyutlarda ekimozlar ile yüzeyel sıyrıklar izlenir; aktif dış kanama yoktur.",
-      "Abdomen yumuşak; defans, rebound veya organ yaralanmasını düşündüren yaygın hassasiyet yoktur.",
-      "Genital muayene yalnızca açık onam ve mahremiyet sağlandıktan sonra yapılmalıdır; aktif kanama veya hemodinamik instabilite izlenmez.",
-      "Nörolojik muayenede fokal defisit veya akut intoksikasyon bulgusu yoktur."
+      "Genel durum orta; hasta kaygılı ve ağlamaklı, bilinci açık ve koopere.",
+      "Boyun ve ön kolda ekimozlar ile yüzeyel sıyrıklar izleniyor; aktif dış kanama yok.",
+      "Kardiyopulmoner muayenede travmaya bağlı ek patolojik bulgu saptanmıyor.",
+      "Batın yumuşak; defans, rebound veya yaygın hassasiyet yok.",
+      "Genital muayene yalnız açık onam ve mahremiyet sağlandıktan sonra yapılmalıdır; hasta bilgilendirme talep etmektedir.",
+      "Nörolojik muayenede bilinç kaybı, fokal defisit veya akut intoksikasyon bulgusu yok."
     ],
     "investigations": [
       {
-        "id": "gebelik-testi-sexual-assault-001",
+        "id": "quick-sexual-assault-pregnancy-test",
         "label": "Gebelik testi",
-        "type": "urine",
-        "priority": "essential",
-        "summary": "İdrar β-hCG negatif saptandı. Acil kontrasepsiyon zaman penceresi içinde planlandı.",
+        "type": "laboratory",
+        "summary": "Serum/idrarda β-hCG negatif; acil kontrasepsiyon gerekliliği risk ve zaman penceresine göre değerlendirilir.",
         "findings": [
-          "Negatif sonuç mevcut gebeliği desteklemez.",
-          "Saldırı sonrası gebelik riski için zamanında koruyucu yaklaşım gerekir."
+          "Serum/idrarda β-hCG negatif; acil kontrasepsiyon gerekliliği risk ve zaman penceresine göre değerlendirilir."
         ],
+        "priority": "targeted",
         "rows": [
-          [
-            "İdrar β-hCG",
-            "Negatif",
-            "Negatif",
-            "Normal"
-          ],
-          [
-            "Son adet",
-            "10 gün önce",
-            "Düzenli",
-            "Zamanlama uygun"
-          ],
-          [
-            "Acil kontrasepsiyon",
-            "Endike",
-            "Risk yoksa gerekmez",
-            "Gerekli"
-          ]
+          {
+            "parameter": "β-hCG",
+            "value": "Negatif",
+            "reference": "Negatif",
+            "note": "Beklenen"
+          }
         ]
       },
       {
-        "id": "cybe-baslangic-paneli-001",
-        "label": "CYBE başlangıç paneli",
-        "type": "lab",
-        "priority": "useful",
-        "summary": "HIV Ag/Ab, HBsAg, anti-HCV ve sifiliz başlangıç testleri negatif geldi; profilaksi ve takip planlandı.",
+        "id": "quick-sexual-assault-baseline-sti",
+        "label": "Başlangıç CYBE paneli",
+        "type": "microbiology",
+        "summary": "HIV Ag/Ab, HBsAg, anti-HCV ve sifiliz taraması başlangıç kayıt değeri olarak alınır; profilaksi kararı klinik riskle birlikte verilir.",
         "findings": [
-          "Negatif başlangıç testleri yeni bulaşı tamamen dışlamaz.",
-          "HIV PEP kararı risk ve süreye göre verilir."
+          "HIV Ag/Ab, HBsAg, anti-HCV ve sifiliz taraması başlangıç kayıt değeri olarak alınır; profilaksi kararı klinik riskle birlikte verilir."
         ],
-        "rows": [
-          [
-            "HIV Ag/Ab",
-            "Negatif",
-            "Negatif",
-            "Başlangıç"
-          ],
-          [
-            "HBsAg",
-            "Negatif",
-            "Negatif",
-            "Başlangıç"
-          ],
-          [
-            "Sifiliz serolojisi",
-            "Negatif",
-            "Negatif",
-            "Başlangıç"
-          ]
-        ]
+        "priority": "targeted"
       }
     ],
     "images": [],
-    "diagnosis": {
-      "correct": "Tıbbi stabilizasyonu sağlarken onam, mahremiyet, delil zinciri, profilaksi ve bildirim/kayıt sürecini başlatmak",
-      "options": [
-        "Tıbbi stabilizasyonu sağlarken onam, mahremiyet, delil zinciri, profilaksi ve bildirim/kayıt sürecini başlatmak",
-        "Hastanın kaygısı baskın olduğu için yalnız psikiyatrik sedasyon yapıp taburcu etmek",
-        "Adli süreç tamamlanana kadar tıbbi muayene ve tedaviyi ertelemek",
-        "Hastanın beyanı tek başına yeterli olmadığı için kayıt ve örnekleme yapmamak"
-      ],
-      "question": "Bu olguda hekimin en uygun ilk tıbbi-adli yaklaşımı hangisidir?",
-      "questionTitle": "Tıbbi-adli karar sorusu",
-      "explanation": "Cinsel saldırı başvurusunda tıbbi stabilizasyon ve travma taraması önceliklidir; muayene ve örnekleme onam, mahremiyet ve delil zinciri korunarak yapılır. Gebelik ve CYBE profilaksisi zaman penceresinde değerlendirilir; adli süreç tıbbi bakımı geciktirmemelidir.",
-      "pearls": [
-        "Adli süreç tıbbi stabilizasyonu geciktirmez.",
-        "Muayene ve örnekleme travma-duyarlı iletişim, mahremiyet ve onamla yürütülür.",
-        "Negatif başlangıç CYBE testleri takip gereksinimini ortadan kaldırmaz."
-      ],
-      "nextStep": "Tıbbi stabilizasyonu sağlarken onam, mahremiyet, delil zinciri, profilaksi ve bildirim/kayıt sürecini başlatmak",
-      "answerFeedback": {
-        "diagnosisMeta": "Adli/etik yaklaşım · cinsel saldırı · onamlı örnekleme",
-        "shortDiagnosisMeta": "Öğrenme çıktısı: cinsel saldırıda güvenli tıbbi-adli akışı kurma",
-        "whyCorrect": "Bu seçenek tıbbi önceliği, hasta özerkliğini, mahremiyeti, zaman duyarlı profilaksi gereksinimini ve adli kayıt sorumluluğunu birlikte karşılar.",
-        "evidenceChain": [
-          "Hasta saldırıdan 8 saat sonra başvurmuştur; zaman duyarlı örnekleme ve profilaksi penceresi vardır.",
-          "Aktif kanama ve bilinç kaybı olmaması stabil değerlendirme olanağı sağlar; bu durum adli kayıt gereksinimini ortadan kaldırmaz.",
-          "Ekimoz ve sıyrıkların kayıt altına alınması gerekir."
-        ],
-        "pearls": [
-          "Önce yaşamı tehdit eden yaralanma dışlanır.",
-          "Adli süreç ve tıbbi bakım eş zamanlı yürütülür.",
-          "Hasta güvenliği taburculuk kararının parçasıdır."
-        ],
-        "management": [
-          "ABC ve travma taramasını yap",
-          "Onam, mahremiyet ve delil zincirini sağla",
-          "Gebelik/CYBE profilaksisi ve güvenli taburculuk planını düzenle"
-        ],
-        "learningOutcome": "Cinsel saldırı başvurusunda hekim tıbbi stabilizasyon, onamlı muayene, delil korunması, profilaksi ve güvenlik planını birlikte yürütür.",
-        "differentials": {}
-      }
-    },
-    "caseType": "quick",
     "managementSequence": {
       "enabled": false
     },
-    "quickCategory": "Adli",
-    "questionTitle": "Tıbbi-adli karar sorusu",
-    "questionType": "forensic",
-    "question": "Bu olguda hekimin en uygun ilk tıbbi-adli yaklaşımı hangisidir?"
+    "question": "Bu olguda en doğru tıbbi-adli ilk yaklaşım hangisidir?",
+    "diagnosis": {
+      "correct": "Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek",
+      "options": [
+        "Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek",
+        "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak",
+        "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek",
+        "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek"
+      ],
+      "explanation": "Cinsel saldırı sonrası yaklaşımda hastanın güvenliği, acil tıbbi stabilitesi, travma değerlendirmesi, mahremiyet ve bilgilendirilmiş onam esastır. Uygun zaman penceresinde delil niteliğindeki örnekler zincir korunarak alınır; gebelik ve CYBE riski için profilaksi ve danışmanlık planlanır.",
+      "pearls": [
+        "Cinsel saldırı olgusunda muayene ve örnekleme hastanın bilgilendirilmiş onamı ve mahremiyetiyle yürütülür.",
+        "Adli süreç tıbbi tedaviyi geciktirmemeli, tıbbi ve adli örneklerin amaçları ayrı kaydedilmelidir.",
+        "Gebelik, CYBE profilaksisi, psikososyal destek ve güvenlik planı yaklaşımın parçasıdır."
+      ],
+      "nextStep": "Güvenlik ve stabiliteyi değerlendir; bilgilendirilmiş onamla muayene/örnekleme, profilaksi, kayıt ve uygun adli yönlendirmeyi başlat.",
+      "answerFeedback": {
+        "correctDiagnosis": "Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek",
+        "diagnosisMeta": "Adli / Etik",
+        "shortDiagnosisMeta": "Adli / Etik",
+        "whyCorrect": "Cinsel saldırı sonrası yaklaşımda hastanın güvenliği, acil tıbbi stabilitesi, travma değerlendirmesi, mahremiyet ve bilgilendirilmiş onam esastır. Uygun zaman penceresinde delil niteliğindeki örnekler zincir korunarak alınır; gebelik ve CYBE riski için profilaksi ve danışmanlık planlanır.",
+        "whyWrong": {
+          "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak": "Bilgilendirilmiş onam ve mahremiyet temel ilkedir; örnekleme bu çerçevede yapılmalıdır.",
+          "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek": "Psikolojik destek önemlidir; ancak travma, gebelik, CYBE, delil zinciri ve güvenlik yönetimi atlanamaz.",
+          "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek": "Adli delil süreci tıbbi tedaviyi geciktiremez; hasta güvenliği ve tedavi önceliklidir."
+        },
+        "evidenceChain": [
+          "Saldırı sonrası ağrı, yoğun kaygı ve ekimozlar",
+          "Genel durum orta; hasta kaygılı ve ağlamaklı, bilinci açık ve koopere.",
+          "Öğrenci cinsel saldırı sonrası acil başvuruda onam, mahremiyet, tıbbi tedavi ve delil zinciri önceliklerini birlikte uygular."
+        ],
+        "clinicalPearls": [
+          "Cinsel saldırı olgusunda muayene ve örnekleme hastanın bilgilendirilmiş onamı ve mahremiyetiyle yürütülür.",
+          "Adli süreç tıbbi tedaviyi geciktirmemeli, tıbbi ve adli örneklerin amaçları ayrı kaydedilmelidir.",
+          "Gebelik, CYBE profilaksisi, psikososyal destek ve güvenlik planı yaklaşımın parçasıdır."
+        ],
+        "managementSteps": [
+          "Güvenlik ve stabiliteyi değerlendir; bilgilendirilmiş onamla muayene/örnekleme, profilaksi, kayıt ve uygun adli yönlendirmeyi başlat."
+        ],
+        "differentialComparison": {
+          "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak": {
+            "explanation": "Bilgilendirilmiş onam ve mahremiyet temel ilkedir; örnekleme bu çerçevede yapılmalıdır.",
+            "comparisonPoints": []
+          },
+          "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek": {
+            "explanation": "Psikolojik destek önemlidir; ancak travma, gebelik, CYBE, delil zinciri ve güvenlik yönetimi atlanamaz.",
+            "comparisonPoints": []
+          },
+          "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek": {
+            "explanation": "Adli delil süreci tıbbi tedaviyi geciktiremez; hasta güvenliği ve tedavi önceliklidir.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
   },
   {
     "id": "pulmonology-near-hanging-asphyxia-001",
-    "branchId": "quick-case",
-    "title": "Boyun basısı sonrası gecikmiş havayolu riski",
-    "difficulty": "Hızlı · Acil/adli",
-    "clinicalFocus": "Yakın ası/boğulma olgusunda ABC, servikal immobilizasyon, havayolu ödemi izlemi ve adli güvenlik yaklaşımı",
+    "branchId": "minor-rotations",
+    "title": "Boyun basısı sonrası bilinç değişikliği ve hipoksemi ile getirilen hasta",
+    "difficulty": "Zor · Acil karar",
+    "clinicalFocus": "Asfiksi, hipoksik beyin hasarı, havayolu ödemi ve boyun travması taraması",
     "demographics": "31 yaş erkek",
     "setting": "Acil servis - resüsitasyon alanı",
     "chiefComplaint": "Boyun basısı sonrası bilinç bulanıklığı ve nefes darlığı",
-    "stem": "Boyun basısı sonrası kısa süreli bilinç kaybı olan hasta acile getirilir. Ses kısıklığı, boyunda ligatür izi ve konfüzyon vardır. İlk karar tanı etiketinden çok havayolu güvenliği, servikal koruma, oksijenizasyon ve adli güvenlik sürecini doğru başlatmaktır.",
+    "stem": "Hasta boyun basısı sonrası yakınları tarafından yarı bilinçli halde bulunarak acile getiriliyor. Olaydan sonra kısa süreli bilinç kaybı, ses kısıklığı, yutma ağrısı ve nefes darlığı tarifleniyor. Boyunda ligatür izi, konjonktival peteşiler ve hipoksemi; asfiksiye bağlı havayolu ve nörolojik hasar riskini düşündürür.",
     "vitals": {
       "TA": "92/58 mmHg",
       "Nabız": "128/dk",
@@ -11470,11 +11513,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta-kötü; hasta konfüze ve ajitedir.",
-      "Boyunda yatay ligatür izi, lokal hassasiyet ve hafif yumuşak doku şişliği izlenir.",
-      "Ses kısıklığı vardır; belirgin stridor başlangıçta yoktur ancak havayolu ödemi açısından risklidir.",
-      "Konjonktival peteşiler görülür.",
-      "Servikal omurga hassasiyeti nedeniyle boyun hareketleri kısıtlanır ve immobilizasyon sürdürülür."
+      "Genel durum orta; hasta uyanık, koopere ve klinik yakınmasına uygun şekilde huzursuz görünümde.",
+      "Hasta ajite ve konfü; GKS 12",
+      "Boyun ön yüzünde transvers ligatür izi ve hassasiyet var",
+      "Ses kısıklığı, stridor başlangıcı ve yutma güçlüğü mevcut",
+      "Konjonktival peteşiler ve yüzde siyanoz izleniyor",
+      "Servikal omurga immobilizasyonu sürdürülüyor"
     ],
     "investigations": [
       {
@@ -11544,60 +11588,129 @@ export const cases = [
             "Dışlandı"
           ]
         ]
+      },
+      {
+        "id": "beyin-bt-near-hanging-001",
+        "label": "Kontrastsız beyin BT",
+        "type": "ct",
+        "priority": "useful",
+        "summary": "Akut kanama izlenmedi; erken hipoksik hasar BT’de belirgin değil.",
+        "findings": [
+          "İlk BT normal olabilir; nörolojik izlem sürer.",
+          "Kanama dışlanması bilinç değişikliği ayırıcı tanısını daraltır."
+        ],
+        "rows": [
+          [
+            "İntrakranial kanama",
+            "Yok",
+            "Yok",
+            "Dışlandı"
+          ],
+          [
+            "Beyin ödemi",
+            "Belirgin değil",
+            "Yok",
+            "İzlem"
+          ],
+          [
+            "GKS",
+            "12",
+            "15",
+            "Düşük"
+          ]
+        ]
+      },
+      {
+        "id": "akciğer-grafisi-aspirasyon-001",
+        "label": "Akciğer grafisi",
+        "type": "xray",
+        "priority": "situational",
+        "summary": "Sağ bazalde hafif infiltrasyon izlendi; aspirasyon açısından izlem planlandı.",
+        "findings": [
+          "Asfiksi sonrası aspirasyon ve akciğer ödemi gelişebilir.",
+          "Şu an yaygın ARDS bulgusu yoktur."
+        ],
+        "rows": [
+          [
+            "Sağ bazal infiltrasyon",
+            "Hafif",
+            "Yok",
+            "Şüpheli"
+          ],
+          [
+            "Pnömotoraks",
+            "Yok",
+            "Yok",
+            "Dışlandı"
+          ]
+        ]
       }
     ],
     "images": [],
     "diagnosis": {
-      "correct": "ABC değerlendirmesi, yüksek akımlı oksijen, servikal immobilizasyon ve entübasyon hazırlığıyla yakın izlem başlatmak",
+      "correct": "Boyun basısına bağlı asfiksi ve havayolu ödemi riski",
       "options": [
-        "ABC değerlendirmesi, yüksek akımlı oksijen, servikal immobilizasyon ve entübasyon hazırlığıyla yakın izlem başlatmak",
-        "Panik atak düşünerek kısa gözlem sonrası taburcu etmek",
-        "Adli süreç tamamlanana kadar oksijen ve havayolu değerlendirmesini ertelemek",
-        "Sadece boyun cilt lezyonuna pansuman yapıp poliklinik kontrolü vermek"
+        "Boyun basısına bağlı asfiksi ve havayolu ödemi riski",
+        "Basit panik atağı",
+        "Primer epileptik nöbet",
+        "Akut bakteriyel menenjit"
       ],
-      "question": "Bu olguda ilk yapılması gereken en uygun yaklaşım hangisidir?",
-      "questionTitle": "Acil yönetim sorusu",
-      "explanation": "Boyun basısı sonrası havayolu ödemi gecikmeli kötüleşebilir. Bu nedenle ABC, oksijenizasyon, servikal immobilizasyon, entübasyon hazırlığı ve yakın izlem önceliklidir; adli süreç tıbbi müdahaleyi geciktirmez.",
+      "explanation": "Boyun basısı sonrası hipoksemi, konfüzyon, peteşi, ligatür izi, ses kısıklığı ve BT’de laringeal ödem asfiksiye bağlı havayolu-nörolojik risk tablosunu destekler.",
       "pearls": [
-        "Ses kısıklığı, stridor veya progresif boyun şişliği entübasyon eşiğini düşürür.",
-        "Yakın ası/boğulma olgusunda başlangıç muayenesi iyi görünse bile gecikmiş havayolu ödemi gelişebilir.",
-        "Servikal omurga ve boyun damar yaralanması seçilmiş olgularda değerlendirilir."
+        "Yakın boğulma/asfiksi olgusunda havayolu ödemi gecikmeli kötüleşebilir.",
+        "Konjonktival peteşiler venöz dönüş engellenmesi ve basınç artışıyla ilişkilidir.",
+        "Servikal omurga ve boyun damar yaralanması dışlanmalıdır."
       ],
-      "nextStep": "ABC değerlendirmesi, yüksek akımlı oksijen, servikal immobilizasyon ve entübasyon hazırlığıyla yakın izlem başlatmak",
+      "nextStep": "Havayolu güvenliği, yüksek akımlı oksijen, entübasyon hazırlığı, servikal immobilizasyon ve boyun damar/havayolu görüntülemesi.",
       "answerFeedback": {
-        "diagnosisMeta": "Acil/adli yaklaşım · boyun basısı · havayolu riski",
-        "shortDiagnosisMeta": "Öğrenme çıktısı: boyun basısında gecikmiş havayolu riskini yönetme",
-        "whyCorrect": "Mekanizma ve fizik bulgular gecikmiş havayolu riski oluşturur; en güvenli ilk yaklaşım oksijenizasyon, havayolu hazırlığı ve servikal korumadır.",
+        "diagnosisMeta": "Boyun basısı · hipoksemi · peteşi · laringeal ödem · gecikmiş havayolu riski",
+        "whyCorrect": "Mekanizma ve objektif hipoksemi-havayolu bulguları asfiksiyi gösterir; panik atağı veya izole nöbet bu fizik muayene ve BT bulgularını açıklamaz.",
         "evidenceChain": [
-          "Boyun basısı ve kısa bilinç kaybı öyküsü vardır.",
-          "Ses kısıklığı ve ligatür izi havayolu/laringotrakeal risk düşündürür.",
-          "Konfüzyon ve peteşi asfiksi mekanizmasını destekler."
+          "Boyun basısı ve kısa bilinç kaybı",
+          "SpO2 %86 ve kan gazında hipoksemi",
+          "Ligatür izi ve konjonktival peteşi",
+          "BT’de laringeal ödem"
         ],
         "pearls": [
-          "Adli süreç tıbbi müdahaleyi geciktirmez.",
-          "Havayolu bulguları dinamik olabilir; yakın izlem gerekir."
+          "Ses kısıklığı ve stridor entübasyon eşiğini düşürür.",
+          "Başlangıç BT normal olsa bile hipoksik hasar için nörolojik izlem gerekir."
         ],
         "management": [
-          "ABC ve oksijenizasyon",
-          "Servikal immobilizasyon",
-          "Entübasyon hazırlığı ve adli güvenlik bildirimi"
+          "Servikal immobilizasyonla ABC değerlendirmesi yap",
+          "Yüksek akımlı oksijen ver ve entübasyon hazırlığı yap",
+          "Boyun BT anjiyografi ve havayolu değerlendirmesiyle diseksiyon/ödem/kırık ara",
+          "Nörolojik izlem ve aspirasyon/akciğer ödemi takibi yap"
         ],
-        "learningOutcome": "Yakın ası/boğulma olgusunda karar, tanıdan önce havayolu ve servikal güvenlik üzerinden verilir.",
-        "differentials": {}
+        "learningOutcome": "Asfiksi başlığı canlı acil tabloya dönüştürüldüğünde öğrenci vital, kan gazı, boyun bulguları ve görüntülemeyi birlikte yorumlayarak havayolu önceliğini öğrenir.",
+        "differentials": {
+          "Basit panik atağı": {
+            "explanation": "Panik atakta hipoksemi, ligatür izi, peteşi ve laringeal ödem beklenmez.",
+            "comparisonPoints": [
+              "Panik atakta SpO2 genellikle normaldir",
+              "Objektif boyun travması asfiksi lehinedir"
+            ]
+          },
+          "Primer epileptik nöbet": {
+            "explanation": "Nöbet bilinç değişikliği yapabilir; ancak boyun izi, peteşi ve havayolu ödemi nöbetle açıklanmaz.",
+            "comparisonPoints": [
+              "Nöbette lateral dil ısırığı/inkontinans destekleyicidir",
+              "Bu olguda mekanizma boyun basısıdır"
+            ]
+          },
+          "Akut bakteriyel menenjit": {
+            "explanation": "Ateş, ense sertliği ve BOS bulguları beklenir; bu vakada mekanik asfiksi bulguları baskındır.",
+            "comparisonPoints": [
+              "Menenjitte enfeksiyon bulguları ön plandadır",
+              "BT boyun bulgusu menenjiti açıklamaz"
+            ]
+          }
+        }
       }
-    },
-    "caseType": "quick",
-    "managementSequence": {
-      "enabled": false
-    },
-    "quickCategory": "Acil karar",
-    "questionTitle": "Acil yönetim sorusu",
-    "questionType": "next-step",
-    "question": "Bu olguda ilk yapılması gereken en uygun yaklaşım hangisidir?"
+    }
   },
   {
     "id": "internal-medicine-azathioprine-tpmt-toxicity-001",
-    "branchId": "internal-medicine",
+    "branchId": "medical-pharmacology",
     "title": "Standart doz immünsüpresan sonrası ateş ve pansitopeni gelişen hasta",
     "difficulty": "Orta · TUS düzeyi",
     "clinicalFocus": "TPMT/NUDT15 ilişkili azatioprin toksisitesi, pansitopeni ve kişiselleştirilmiş ilaç dozu",
@@ -11815,410 +11928,701 @@ export const cases = [
     }
   },
   {
-    "id": "quick-stab-wound-forensic-001",
+    "id": "quick-forensic-stab-wound-001",
     "branchId": "quick-case",
     "caseType": "quick",
     "quickCategory": "Adli",
+    "questionType": "forensic",
     "title": "Kesici-delici yaralanmada adli bildirim kararı",
-    "difficulty": "Hızlı · Adli",
-    "clinicalFocus": "Kesici-delici yaralanmada tıbbi bakım ve adli bildirim birlikte yürütülür.",
-    "demographics": "24 yaşında erkek",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Kesici-delici alet yaralanmasında tıbbi müdahale ile adli bildirim ve kayıt sürecini eş zamanlı yürütme",
+    "learningOutcome": "Öğrenci adli yaralanmada tıbbi stabilizasyon, objektif kayıt ve bildirim basamaklarını ayırt eder.",
+    "demographics": "24 yaşında erkek hasta",
     "setting": "Acil servis",
-    "chiefComplaint": "Sağ ön kolda kesici-delici alet yarası",
-    "stem": "Hasta sağ ön kolda kesici-delici alet yaralanmasıyla başvurur. Yaralanmanın kazara olduğunu söyler; ancak öykü tutarsızdır ve yara çizgisel-derindir. Bilinci açık, vital bulguları stabildir; aktif arteriyel kanama tariflenmez.",
+    "chiefComplaint": "Sağ ön kolda kesici-delici alet yaralanması",
+    "stem": "Hasta sağ ön kolda kesici-delici alet yaralanması ile acile başvurur. Yaranın kazara olduğunu söyler; ancak olay öyküsü kısa, tutarsız ve yara derinliği beyanla tam uyumlu değildir. Bilinci açık, vital bulguları stabildir.",
     "vitals": {
       "TA": "122/78 mmHg",
       "Nabız": "88/dk",
       "Solunum": "16/dk",
       "SpO2": "%99",
-      "Ateş": "36.6 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
-      "Sağ ön kolda yaklaşık 4 cm uzunluğunda kesici-delici alet yarası izlenir.",
-      "Distal nabızlar alınır, kapiller dolum normaldir.",
-      "Duyu ve motor muayene korunmuştur; belirgin tendon kesisi bulgusu yoktur.",
-      "Aktif arteriyel kanama veya hemodinamik instabilite saptanmaz."
+      "Genel durum iyi; hasta uyanık, koopere ve hemodinamik olarak stabil görünümde.",
+      "Sağ ön kolda yaklaşık 4 cm uzunluğunda kesici-delici alet yarası izleniyor.",
+      "Aktif arteriyel kanama yok; yara çevresinde sınırlı hassasiyet mevcut.",
+      "Distal radial ve ulnar nabızlar alınabiliyor, kapiller dolum normal.",
+      "Parmak fleksiyon-ekstansiyonu korunmuş; belirgin tendon kesisi bulgusu yok.",
+      "Duyu muayenesi simetrik; belirgin motor defisit saptanmıyor."
     ],
     "investigations": [],
     "images": [],
     "managementSequence": {
       "enabled": false
     },
-    "questionTitle": "Tıbbi-adli yaklaşım",
     "question": "Bu durumda hekimin en uygun yaklaşımı nedir?",
-    "questionType": "forensic",
     "diagnosis": {
       "correct": "Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak",
       "options": [
         "Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak",
-        "Yalnızca yara bakımını yapıp hastayı taburcu etmek",
-        "Hastanın beyanını esas alarak adli bildirim yapmamak",
-        "Adli süreç tamamlanana kadar tıbbi müdahaleyi ertelemek"
+        "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek",
+        "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak",
+        "Adli süreç tamamlanana kadar yara bakımını ertelemek"
       ],
-      "question": "Bu durumda hekimin en uygun yaklaşımı nedir?",
-      "questionTitle": "Tıbbi-adli yaklaşım",
-      "explanation": "Kesici-delici alet yaralanmaları adli olgu niteliği taşıyabilir. Hekim önce tıbbi stabilizasyonu ve yara bakımını sağlar; eş zamanlı olarak objektif kayıt ve adli bildirim yükümlülüğünü yerine getirir.",
+      "explanation": "Kesici-delici alet yaralanması adli olgu niteliği taşıyabilir. Hekim önce tıbbi değerlendirme ve gerekli müdahaleyi yapar; eş zamanlı olarak objektif kayıt, uygun bildirim ve adli süreç başlatılır. Adli süreç tıbbi tedaviyi geciktirmez.",
       "pearls": [
-        "Adli süreç tıbbi müdahaleyi geciktirmez.",
-        "Yara lokalizasyonu, boyutu, nörovasküler durum ve hastanın beyanı objektif kaydedilmelidir."
+        "Kesici-delici yaralanmada olay öyküsü tutarsızsa adli olgu yaklaşımı gerekir.",
+        "Tıbbi müdahale adli bildirimi beklemez; iki süreç eş zamanlı yürür.",
+        "Nörovasküler muayene yara yönetiminin kritik parçasıdır."
       ],
-      "nextStep": "Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak",
+      "nextStep": "Yara bakımını, tetanoz profilaksisi değerlendirmesini, nörovasküler kayıtları ve adli bildirimi eş zamanlı yürüt.",
       "answerFeedback": {
+        "correctDiagnosis": "Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak",
         "diagnosisMeta": "Adli",
-        "shortDiagnosisMeta": "Kesici-delici yaralanmada tıbbi bakım ve adli bildirim birlikte yürütülür.",
-        "whyCorrect": "Kesici-delici alet yaralanmaları adli olgu niteliği taşıyabilir. Hekim önce tıbbi stabilizasyonu ve yara bakımını sağlar; eş zamanlı olarak objektif kayıt ve adli bildirim yükümlülüğünü yerine getirir.",
+        "shortDiagnosisMeta": "Adli",
+        "whyCorrect": "Kesici-delici alet yaralanması adli olgu niteliği taşıyabilir. Hekim önce tıbbi değerlendirme ve gerekli müdahaleyi yapar; eş zamanlı olarak objektif kayıt, uygun bildirim ve adli süreç başlatılır. Adli süreç tıbbi tedaviyi geciktirmez.",
+        "whyWrong": {
+          "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek": "Adli olgu şüphesi taşıyan yaralanmalarda yalnız tedaviyle yetinmek uygun değildir.",
+          "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak": "Hekim beyanı kaydeder; fakat fizik bulgular ve olay uyumsuzluğu adli değerlendirmeyi gerektirebilir.",
+          "Adli süreç tamamlanana kadar yara bakımını ertelemek": "Tıbbi müdahale acildir ve adli süreç nedeniyle ertelenmemelidir."
+        },
         "evidenceChain": [
-          "Hasta sağ ön kolda kesici-delici alet yaralanmasıyla başvurur. Yaralanmanın kazara olduğunu söyler; ancak öykü tutarsızdır ve yara çizgisel-derindir. Bilinci açık, vital bulguları stabildir; aktif arteriyel kanama tariflenmez.",
-          "Sağ ön kolda yaklaşık 4 cm uzunluğunda kesici-delici alet yarası izlenir.",
-          "Distal nabızlar alınır, kapiller dolum normaldir."
+          "Sağ ön kolda kesici-delici alet yaralanması",
+          "Genel durum iyi; hasta uyanık, koopere ve hemodinamik olarak stabil görünümde.",
+          "Öğrenci adli yaralanmada tıbbi stabilizasyon, objektif kayıt ve bildirim basamaklarını ayırt eder."
         ],
-        "pearls": [
-          "Adli süreç tıbbi müdahaleyi geciktirmez.",
-          "Yara lokalizasyonu, boyutu, nörovasküler durum ve hastanın beyanı objektif kaydedilmelidir."
+        "clinicalPearls": [
+          "Kesici-delici yaralanmada olay öyküsü tutarsızsa adli olgu yaklaşımı gerekir.",
+          "Tıbbi müdahale adli bildirimi beklemez; iki süreç eş zamanlı yürür.",
+          "Nörovasküler muayene yara yönetiminin kritik parçasıdır."
         ],
-        "management": [
-          "Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak",
-          "Kesici-delici yaralanmada tıbbi bakım ve adli bildirim birlikte yürütülür."
+        "managementSteps": [
+          "Yara bakımını, tetanoz profilaksisi değerlendirmesini, nörovasküler kayıtları ve adli bildirimi eş zamanlı yürüt."
         ],
-        "learningOutcome": "Kesici-delici yaralanmada tıbbi bakım ve adli bildirim birlikte yürütülür.",
-        "differentials": {
-          "Yalnızca yara bakımını yapıp hastayı taburcu etmek": {
-            "explanation": "Yalnızca yara bakımını yapıp hastayı taburcu etmek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+        "differentialComparison": {
+          "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek": {
+            "explanation": "Adli olgu şüphesi taşıyan yaralanmalarda yalnız tedaviyle yetinmek uygun değildir.",
+            "comparisonPoints": []
           },
-          "Hastanın beyanını esas alarak adli bildirim yapmamak": {
-            "explanation": "Hastanın beyanını esas alarak adli bildirim yapmamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak": {
+            "explanation": "Hekim beyanı kaydeder; fakat fizik bulgular ve olay uyumsuzluğu adli değerlendirmeyi gerektirebilir.",
+            "comparisonPoints": []
           },
-          "Adli süreç tamamlanana kadar tıbbi müdahaleyi ertelemek": {
-            "explanation": "Adli süreç tamamlanana kadar tıbbi müdahaleyi ertelemek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Adli süreç tamamlanana kadar yara bakımını ertelemek": {
+            "explanation": "Tıbbi müdahale acildir ve adli süreç nedeniyle ertelenmemelidir.",
+            "comparisonPoints": []
           }
         }
       }
     }
   },
   {
-    "id": "quick-domestic-violence-001",
+    "id": "quick-forensic-traffic-accident-report-001",
     "branchId": "quick-case",
     "caseType": "quick",
     "quickCategory": "Adli",
-    "title": "Aile içi şiddet şüphesinde güvenlik ve kayıt yaklaşımı",
-    "difficulty": "Hızlı · Adli",
-    "clinicalFocus": "Şiddet şüphesinde hekim tıbbi değerlendirme, güvenlik planı ve kayıt sorumluluğunu birlikte ele alır.",
-    "demographics": "34 yaşında kadın",
+    "questionType": "forensic",
+    "title": "Trafik kazası sonrası acil serviste adli rapor yaklaşımı",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Trafik kazasında objektif muayene kaydı, yaşamsal risk değerlendirmesi ve adli rapor düzenleme",
+    "learningOutcome": "Öğrenci trafik kazasında adli raporun objektif muayene kaydı ve tıbbi önceliklerle birlikte düzenlenmesi gerektiğini açıklar.",
+    "demographics": "31 yaşında erkek hasta",
     "setting": "Acil servis",
-    "chiefComplaint": "Yüz ve kol bölgesinde morluklar",
-    "stem": "Hasta merdivenden düştüğünü söyler; ancak ekimozların yerleşimi ve farklı yaşta olması öyküyle uyumlu değildir. Yanındaki kişi tüm soruları hastanın yerine yanıtlamaya çalışır. Hasta yalnız kalınca evde güvende olmadığını ima eder.",
+    "chiefComplaint": "Motosiklet kazası sonrası omuz ve diz ağrısı",
+    "stem": "Hasta motosiklet kazası sonrası acile getirilir. Kask taktığını, kısa süreli sersemlik yaşadığını ve sağ omuz-diz ağrısı olduğunu söyler. Alkol almadığını belirtir. Vital bulguları stabildir ve bilinci açıktır.",
     "vitals": {
       "TA": "126/82 mmHg",
       "Nabız": "96/dk",
       "Solunum": "18/dk",
       "SpO2": "%98",
-      "Ateş": "36.8 °C"
-    },
-    "exam": [
-      "Yüz, üst kol ve ön kolda farklı renklerde ekimozlar görülür.",
-      "Sol zigomatik bölgede hassasiyet vardır; aktif kanama yoktur.",
-      "Bilinç açık, oryantasyon tamdır.",
-      "Karın muayenesinde defans veya rebound yoktur."
-    ],
-    "investigations": [],
-    "images": [],
-    "managementSequence": {
-      "enabled": false
-    },
-    "questionTitle": "Güvenlik kararı",
-    "question": "Hastanın güvenliği ve tıbbi-adli süreç açısından en doğru adım hangisidir?",
-    "questionType": "forensic",
-    "diagnosis": {
-      "correct": "Hastayı güvenli ve mahrem ortamda tek başına değerlendirmek, yaralanmaları objektif kaydetmek ve gerekli destek/bildirim sürecini başlatmak",
-      "options": [
-        "Hastayı güvenli ve mahrem ortamda tek başına değerlendirmek, yaralanmaları objektif kaydetmek ve gerekli destek/bildirim sürecini başlatmak",
-        "Eşlik eden kişinin anlatımını yeterli kabul edip hastayı taburcu etmek",
-        "Hasta açıkça şikâyetçi olmadıkça hiçbir kayıt tutmamak",
-        "Yalnız analjezik verip sosyal risk değerlendirmesini yapmamak"
-      ],
-      "question": "Hastanın güvenliği ve tıbbi-adli süreç açısından en doğru adım hangisidir?",
-      "questionTitle": "Güvenlik kararı",
-      "explanation": "Aile içi şiddet şüphesinde mahrem görüşme, güvenlik değerlendirmesi, objektif kayıt ve ilgili destek mekanizmalarına yönlendirme temel basamaktır. Hastanın güvenliği klinik yönetimin parçasıdır.",
-      "pearls": [
-        "Öykü-bulgu uyumsuzluğu şiddet açısından kırmızı bayraktır.",
-        "Mahrem görüşme yapılmadan güvenilir öykü alınamayabilir."
-      ],
-      "nextStep": "Hastayı güvenli ve mahrem ortamda tek başına değerlendirmek, yaralanmaları objektif kaydetmek ve gerekli destek/bildirim sürecini başlatmak",
-      "answerFeedback": {
-        "diagnosisMeta": "Adli",
-        "shortDiagnosisMeta": "Şiddet şüphesinde hekim tıbbi değerlendirme, güvenlik planı ve kayıt sorumluluğunu birlikte ele alır.",
-        "whyCorrect": "Aile içi şiddet şüphesinde mahrem görüşme, güvenlik değerlendirmesi, objektif kayıt ve ilgili destek mekanizmalarına yönlendirme temel basamaktır. Hastanın güvenliği klinik yönetimin parçasıdır.",
-        "evidenceChain": [
-          "Hasta merdivenden düştüğünü söyler; ancak ekimozların yerleşimi ve farklı yaşta olması öyküyle uyumlu değildir. Yanındaki kişi tüm soruları hastanın yerine yanıtlamaya çalışır. Hasta yalnız kalınca evde güvende olmadığını ima eder.",
-          "Yüz, üst kol ve ön kolda farklı renklerde ekimozlar görülür.",
-          "Sol zigomatik bölgede hassasiyet vardır; aktif kanama yoktur."
-        ],
-        "pearls": [
-          "Öykü-bulgu uyumsuzluğu şiddet açısından kırmızı bayraktır.",
-          "Mahrem görüşme yapılmadan güvenilir öykü alınamayabilir."
-        ],
-        "management": [
-          "Hastayı güvenli ve mahrem ortamda tek başına değerlendirmek, yaralanmaları objektif kaydetmek ve gerekli destek/bildirim sürecini başlatmak",
-          "Şiddet şüphesinde hekim tıbbi değerlendirme, güvenlik planı ve kayıt sorumluluğunu birlikte ele alır."
-        ],
-        "learningOutcome": "Şiddet şüphesinde hekim tıbbi değerlendirme, güvenlik planı ve kayıt sorumluluğunu birlikte ele alır.",
-        "differentials": {
-          "Eşlik eden kişinin anlatımını yeterli kabul edip hastayı taburcu etmek": {
-            "explanation": "Eşlik eden kişinin anlatımını yeterli kabul edip hastayı taburcu etmek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Hastayı güvenli ve mahrem ortamda tek başına değerlendirmek, yaralanmaları objektif kaydetmek ve gerekli destek/bildirim sürecini başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          },
-          "Hasta açıkça şikâyetçi olmadıkça hiçbir kayıt tutmamak": {
-            "explanation": "Hasta açıkça şikâyetçi olmadıkça hiçbir kayıt tutmamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Hastayı güvenli ve mahrem ortamda tek başına değerlendirmek, yaralanmaları objektif kaydetmek ve gerekli destek/bildirim sürecini başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          },
-          "Yalnız analjezik verip sosyal risk değerlendirmesini yapmamak": {
-            "explanation": "Yalnız analjezik verip sosyal risk değerlendirmesini yapmamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Hastayı güvenli ve mahrem ortamda tek başına değerlendirmek, yaralanmaları objektif kaydetmek ve gerekli destek/bildirim sürecini başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          }
-        }
-      }
-    }
-  },
-  {
-    "id": "quick-unconscious-consent-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Etik",
-    "title": "Bilinci kapalı hastada acil müdahale ve onam",
-    "difficulty": "Hızlı · Etik",
-    "clinicalFocus": "Bilinci kapalı acil hastada varsayılan onamla hayat kurtarıcı müdahale yapılır.",
-    "demographics": "62 yaşında erkek",
-    "setting": "Acil servis",
-    "chiefComplaint": "Bilinç kaybı ve solunum sıkıntısı",
-    "stem": "Hasta bilinç kapalı ve solunum eforu artmış halde acile getirilir. Yakınlarına ulaşılamaz. Klinik tablo havayolu güvenliği açısından acil müdahale gerektirir.",
-    "vitals": {
-      "TA": "92/58 mmHg",
-      "Nabız": "118/dk",
-      "Solunum": "8/dk, yüzeyel",
-      "SpO2": "%84",
       "Ateş": "36.4 °C"
     },
     "exam": [
-      "Bilinç kapalıdır; ağrılı uyaranla inleme yanıtı vardır.",
-      "Solunum yüzeyel ve yetersizdir; siyanoz eğilimi izlenir.",
-      "Havayolu koruyucu refleksleri zayıftır.",
-      "Periferik nabızlar hızlı ve zayıf alınır."
+      "Genel durum iyi; hasta uyanık, oryante ve koopere.",
+      "Sağ omuzda hassasiyet ve hareketle ağrı mevcut; belirgin deformite yok.",
+      "Sağ diz ön yüzde sıyrık ve hassasiyet izleniyor; aktif kanama yok.",
+      "Pupiller izokorik ve ışık refleksi bilateral doğal.",
+      "Fokal nörolojik defisit, ense sertliği veya bilinç dalgalanması yok.",
+      "Batın yumuşak, defans ve rebound saptanmıyor."
     ],
     "investigations": [],
     "images": [],
     "managementSequence": {
       "enabled": false
     },
-    "questionTitle": "Etik/acil karar",
-    "question": "Bu durumda hekimin en uygun etik ve klinik yaklaşımı nedir?",
-    "questionType": "ethics",
+    "question": "Bu olguda adli rapor açısından en uygun yaklaşım hangisidir?",
     "diagnosis": {
-      "correct": "Varsayılan onam ilkesiyle hayat kurtarıcı acil müdahaleyi başlatmak",
+      "correct": "Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi/rapor sürecini başlatmak",
       "options": [
-        "Varsayılan onam ilkesiyle hayat kurtarıcı acil müdahaleyi başlatmak",
-        "Yakın onamı gelene kadar havayolu müdahalesini ertelemek",
-        "Hastanın bilinci kapalı olduğu için hiçbir işlem yapmamak",
-        "Sadece gözlem yapıp spontan düzelmeyi beklemek"
+        "Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi/rapor sürecini başlatmak",
+        "Hasta alkol almadığını söylediği için adli kayıt açmamak",
+        "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek",
+        "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek"
       ],
-      "question": "Bu durumda hekimin en uygun etik ve klinik yaklaşımı nedir?",
-      "questionTitle": "Etik/acil karar",
-      "explanation": "Hayatı tehdit eden acil durumda hasta onam veremiyor ve yakınlarına ulaşılamıyorsa varsayılan onam kabul edilir. Hekim gerekli hayat kurtarıcı müdahaleyi geciktirmeden yapar.",
+      "explanation": "Trafik kazası adli olgu niteliği taşır. Hekim tıbbi değerlendirme ve tedaviyi geciktirmeden yapar; muayene bulgularını, lezyon yerlerini ve hastanın beyanını objektif şekilde kaydeder ve adli rapor/bildirim sürecini başlatır.",
       "pearls": [
-        "Acil ve hayatı tehdit eden durumda onam yokluğu tedaviyi geciktirmez.",
-        "Müdahale tıbbi gereklilikle sınırlı ve kayıt altına alınmış olmalıdır."
+        "Trafik kazaları adli olgu olarak değerlendirilir.",
+        "Rapor; görülen bulguları, hastanın beyanını ve tıbbi değerlendirmeyi objektif biçimde ayırmalıdır.",
+        "Adli bekleyiş tedavi ve ağrı kontrolünü geciktirmez."
       ],
-      "nextStep": "Varsayılan onam ilkesiyle hayat kurtarıcı acil müdahaleyi başlatmak",
+      "nextStep": "Travma muayenesini tamamla, gerekli görüntülemeyi endikasyona göre iste, bulguları objektif yaz ve adli bildirim/rapor sürecini başlat.",
       "answerFeedback": {
-        "diagnosisMeta": "Etik",
-        "shortDiagnosisMeta": "Bilinci kapalı acil hastada varsayılan onamla hayat kurtarıcı müdahale yapılır.",
-        "whyCorrect": "Hayatı tehdit eden acil durumda hasta onam veremiyor ve yakınlarına ulaşılamıyorsa varsayılan onam kabul edilir. Hekim gerekli hayat kurtarıcı müdahaleyi geciktirmeden yapar.",
+        "correctDiagnosis": "Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi/rapor sürecini başlatmak",
+        "diagnosisMeta": "Adli",
+        "shortDiagnosisMeta": "Adli",
+        "whyCorrect": "Trafik kazası adli olgu niteliği taşır. Hekim tıbbi değerlendirme ve tedaviyi geciktirmeden yapar; muayene bulgularını, lezyon yerlerini ve hastanın beyanını objektif şekilde kaydeder ve adli rapor/bildirim sürecini başlatır.",
+        "whyWrong": {
+          "Hasta alkol almadığını söylediği için adli kayıt açmamak": "Adli olgu niteliği yalnız alkol beyanına bağlı değildir; trafik kazası başlı başına adli değerlendirme gerektirir.",
+          "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek": "Travma bulguları objektif ve ayrıntılı kaydedilmelidir.",
+          "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek": "Tıbbi bakım kolluk işlemleri beklenerek ertelenemez."
+        },
         "evidenceChain": [
-          "Hasta bilinç kapalı ve solunum eforu artmış halde acile getirilir. Yakınlarına ulaşılamaz. Klinik tablo havayolu güvenliği açısından acil müdahale gerektirir.",
-          "Bilinç kapalıdır; ağrılı uyaranla inleme yanıtı vardır.",
-          "Solunum yüzeyel ve yetersizdir; siyanoz eğilimi izlenir."
+          "Motosiklet kazası sonrası omuz ve diz ağrısı",
+          "Genel durum iyi; hasta uyanık, oryante ve koopere.",
+          "Öğrenci trafik kazasında adli raporun objektif muayene kaydı ve tıbbi önceliklerle birlikte düzenlenmesi gerektiğini açıklar."
         ],
-        "pearls": [
-          "Acil ve hayatı tehdit eden durumda onam yokluğu tedaviyi geciktirmez.",
-          "Müdahale tıbbi gereklilikle sınırlı ve kayıt altına alınmış olmalıdır."
+        "clinicalPearls": [
+          "Trafik kazaları adli olgu olarak değerlendirilir.",
+          "Rapor; görülen bulguları, hastanın beyanını ve tıbbi değerlendirmeyi objektif biçimde ayırmalıdır.",
+          "Adli bekleyiş tedavi ve ağrı kontrolünü geciktirmez."
         ],
-        "management": [
-          "Varsayılan onam ilkesiyle hayat kurtarıcı acil müdahaleyi başlatmak",
-          "Bilinci kapalı acil hastada varsayılan onamla hayat kurtarıcı müdahale yapılır."
+        "managementSteps": [
+          "Travma muayenesini tamamla, gerekli görüntülemeyi endikasyona göre iste, bulguları objektif yaz ve adli bildirim/rapor sürecini başlat."
         ],
-        "learningOutcome": "Bilinci kapalı acil hastada varsayılan onamla hayat kurtarıcı müdahale yapılır.",
-        "differentials": {
-          "Yakın onamı gelene kadar havayolu müdahalesini ertelemek": {
-            "explanation": "Yakın onamı gelene kadar havayolu müdahalesini ertelemek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Varsayılan onam ilkesiyle hayat kurtarıcı acil müdahaleyi başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+        "differentialComparison": {
+          "Hasta alkol almadığını söylediği için adli kayıt açmamak": {
+            "explanation": "Adli olgu niteliği yalnız alkol beyanına bağlı değildir; trafik kazası başlı başına adli değerlendirme gerektirir.",
+            "comparisonPoints": []
           },
-          "Hastanın bilinci kapalı olduğu için hiçbir işlem yapmamak": {
-            "explanation": "Hastanın bilinci kapalı olduğu için hiçbir işlem yapmamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Varsayılan onam ilkesiyle hayat kurtarıcı acil müdahaleyi başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek": {
+            "explanation": "Travma bulguları objektif ve ayrıntılı kaydedilmelidir.",
+            "comparisonPoints": []
           },
-          "Sadece gözlem yapıp spontan düzelmeyi beklemek": {
-            "explanation": "Sadece gözlem yapıp spontan düzelmeyi beklemek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Varsayılan onam ilkesiyle hayat kurtarıcı acil müdahaleyi başlatmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek": {
+            "explanation": "Tıbbi bakım kolluk işlemleri beklenerek ertelenemez.",
+            "comparisonPoints": []
           }
         }
       }
     }
   },
   {
-    "id": "quick-urticaria-angioedema-001",
+    "id": "quick-ethics-unconscious-consent-001",
     "branchId": "quick-case",
     "caseType": "quick",
-    "quickCategory": "Klinik spot",
-    "title": "Ani başlayan ürtiker ve hafif anjiyoödem",
-    "difficulty": "Hızlı · Klinik spot",
-    "clinicalFocus": "Ürtiker ile anafilaksi ayrımı solunum, dolaşım ve çoklu sistem tutulumu üzerinden yapılır.",
-    "demographics": "19 yaşında kadın",
-    "setting": "Acil servis",
-    "chiefComplaint": "Yaygın kaşıntı ve dudakta şişlik",
-    "stem": "Hasta fıstık içeren tatlı yedikten 20 dakika sonra yaygın kaşıntı, dudakta hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma veya karın ağrısı tariflemez.",
+    "quickCategory": "Etik",
+    "questionType": "management",
+    "title": "Bilinci kapalı hastada onam ve acil müdahale",
+    "difficulty": "Acil · Hızlı CASE",
+    "clinicalFocus": "Acil yaşam tehdidinde varsayılan onam ilkesi ve tedaviyi geciktirmeme",
+    "learningOutcome": "Öğrenci bilinci kapalı hastada acil yaşam tehdidi olduğunda varsayılan onamla müdahale edilmesi gerektiğini ayırt eder.",
+    "demographics": "67 yaşında erkek hasta",
+    "setting": "Acil servis resüsitasyon alanı",
+    "chiefComplaint": "Bilinç kaybı ve solunum sıkıntısı",
+    "stem": "Hasta evde bilinçsiz bulunarak ambulansla getirilir. Yakını henüz hastaneye ulaşmamıştır. Hasta sorulara yanıt vermez, solunumu yüzeyeldir ve hava yolu güvenliği açısından risklidir.",
     "vitals": {
-      "TA": "118/74 mmHg",
-      "Nabız": "88/dk",
-      "Solunum": "16/dk",
+      "TA": "86/54 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "8/dk",
+      "SpO2": "%84",
+      "Ateş": "36.2 °C"
+    },
+    "exam": [
+      "Genel durum kötü; hasta bilinçsiz ve ağrılı uyaranla yetersiz yanıt veriyor.",
+      "Solunum yüzeyel, hava yolu korunumu zayıf ve sekresyon aspirasyon riski mevcut.",
+      "Cilt soğuk ve terli, kapiller dolum gecikmiş.",
+      "Kalp sesleri taşikardik; belirgin üfürüm duyulmuyor.",
+      "Akciğer oskültasyonunda bilateral kaba solunum sesleri mevcut.",
+      "Fokal travma bulgusu ilk değerlendirmede belirgin değil."
+    ],
+    "investigations": [],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "question": "Yakınına ulaşılamayan bu hastada en uygun etik-klinik yaklaşım nedir?",
+    "diagnosis": {
+      "correct": "Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak",
+      "options": [
+        "Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak",
+        "Yakını gelene kadar hiçbir girişim yapmadan beklemek",
+        "Onam alınamadığı için hastayı başka merkeze sevk etmek",
+        "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak"
+      ],
+      "explanation": "Bilinci kapalı ve yaşamı tehdit eden durumda hastanın karar verme kapasitesi yoksa ve temsilciye zamanında ulaşılamıyorsa acil tıbbi müdahale varsayılan onam ilkesiyle yapılır. Müdahaleyi geciktirmek hasta güvenliğini riske atar.",
+      "pearls": [
+        "Acil yaşam tehdidinde onam yokluğu tedaviyi geciktirme gerekçesi değildir.",
+        "Varsayılan onam yalnız acil ve gerekli müdahaleler için geçerlidir.",
+        "Karar, müdahale gerekçesi ve ulaşılamayan onam süreci kaydedilmelidir."
+      ],
+      "nextStep": "Hava yolu, solunum ve dolaşımı stabilize et; gerekli acil müdahaleyi yap ve karar sürecini kaydet.",
+      "answerFeedback": {
+        "correctDiagnosis": "Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak",
+        "diagnosisMeta": "Etik",
+        "shortDiagnosisMeta": "Etik",
+        "whyCorrect": "Bilinci kapalı ve yaşamı tehdit eden durumda hastanın karar verme kapasitesi yoksa ve temsilciye zamanında ulaşılamıyorsa acil tıbbi müdahale varsayılan onam ilkesiyle yapılır. Müdahaleyi geciktirmek hasta güvenliğini riske atar.",
+        "whyWrong": {
+          "Yakını gelene kadar hiçbir girişim yapmadan beklemek": "Beklemek hipoksi ve dolaşım bozukluğunu ağırlaştırabilir.",
+          "Onam alınamadığı için hastayı başka merkeze sevk etmek": "Stabilizasyon yapılmadan sevk güvenli değildir.",
+          "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak": "Yaşam kurtarıcı acil müdahaleler onam beklenerek ertelenmez."
+        },
+        "evidenceChain": [
+          "Bilinç kaybı ve solunum sıkıntısı",
+          "Genel durum kötü; hasta bilinçsiz ve ağrılı uyaranla yetersiz yanıt veriyor.",
+          "Öğrenci bilinci kapalı hastada acil yaşam tehdidi olduğunda varsayılan onamla müdahale edilmesi gerektiğini ayırt eder."
+        ],
+        "clinicalPearls": [
+          "Acil yaşam tehdidinde onam yokluğu tedaviyi geciktirme gerekçesi değildir.",
+          "Varsayılan onam yalnız acil ve gerekli müdahaleler için geçerlidir.",
+          "Karar, müdahale gerekçesi ve ulaşılamayan onam süreci kaydedilmelidir."
+        ],
+        "managementSteps": [
+          "Hava yolu, solunum ve dolaşımı stabilize et; gerekli acil müdahaleyi yap ve karar sürecini kaydet."
+        ],
+        "differentialComparison": {
+          "Yakını gelene kadar hiçbir girişim yapmadan beklemek": {
+            "explanation": "Beklemek hipoksi ve dolaşım bozukluğunu ağırlaştırabilir.",
+            "comparisonPoints": []
+          },
+          "Onam alınamadığı için hastayı başka merkeze sevk etmek": {
+            "explanation": "Stabilizasyon yapılmadan sevk güvenli değildir.",
+            "comparisonPoints": []
+          },
+          "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak": {
+            "explanation": "Yaşam kurtarıcı acil müdahaleler onam beklenerek ertelenmez.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "quick-domestic-violence-safety-001",
+    "branchId": "quick-case",
+    "caseType": "quick",
+    "quickCategory": "Adli / Etik",
+    "questionType": "forensic",
+    "title": "Aile içi şiddet şüphesinde hekim yaklaşımı",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Şiddet şüphesinde güvenlik, mahrem görüşme, objektif kayıt ve uygun yönlendirme/bildirim",
+    "learningOutcome": "Öğrenci aile içi şiddet şüphesinde mahrem görüşme, güvenlik değerlendirmesi ve objektif kayıt gerekliliğini uygular.",
+    "demographics": "34 yaşında kadın hasta",
+    "setting": "Acil servis",
+    "chiefComplaint": "Tekrarlayan düşme öyküsü ve yüz-boyun ekimozları",
+    "stem": "Hasta “merdivenden düştüğünü” söyleyerek başvurur. Eşi sürekli yanında durmakta ve hastanın sorulara tek başına yanıt vermesine izin vermemektedir. Hasta kısa süre yalnız kaldığında evde güvende hissetmediğini ima eder.",
+    "vitals": {
+      "TA": "132/78 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "18/dk",
       "SpO2": "%99",
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum iyi, bilinç açık ve konuşması rahattır.",
-      "Gövde ve üst ekstremitelerde yaygın ürtikeryal plaklar izlenir.",
-      "Dudaklarda hafif anjiyoödem vardır.",
-      "Stridor, wheezing, hipotansiyon veya bilinç değişikliği saptanmaz."
+      "Genel durum orta; hasta kaygılı, çekingen ve göz teması kısıtlı.",
+      "Yüz, boyun ve üst kolda farklı yaşlarda ekimozlar izleniyor.",
+      "Boyunda yüzeyel tırnak izleriyle uyumlu lineer sıyrıklar mevcut.",
+      "Solunum sıkıntısı yok; kardiyopulmoner muayenede akut patoloji saptanmıyor.",
+      "Batın yumuşak; defans ve rebound yok.",
+      "Nörolojik muayenede bilinç açık, fokal defisit yok."
     ],
     "investigations": [],
     "images": [],
     "managementSequence": {
       "enabled": false
     },
-    "questionTitle": "İlk yaklaşım",
-    "question": "Bu olguda en uygun ilk yaklaşım hangisidir?",
-    "questionType": "management",
+    "question": "Hastanın güvenliği ve yasal süreç açısından en doğru ilk adım hangisidir?",
     "diagnosis": {
-      "correct": "Oral antihistaminik ve yakın klinik izlem",
+      "correct": "Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek/bildirim sürecini başlatmak",
       "options": [
-        "Oral antihistaminik ve yakın klinik izlem",
-        "Hemen entübasyon",
-        "Geniş spektrumlu antibiyotik",
-        "Acil trombolitik tedavi"
+        "Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek/bildirim sürecini başlatmak",
+        "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek",
+        "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek",
+        "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek"
       ],
-      "question": "Bu olguda en uygun ilk yaklaşım hangisidir?",
-      "questionTitle": "İlk yaklaşım",
-      "explanation": "Tek sistemle sınırlı ürtiker ve hafif anjiyoödemde, solunum/dolaşım tutulumu yoksa antihistaminik ve izlem uygundur. Anafilaksi bulgusu gelişirse intramüsküler adrenalin öncelik kazanır.",
+      "explanation": "Aile içi şiddet şüphesinde hastanın güvenliği ve mahremiyeti önceliklidir. Hekim eşlik eden kişiden ayrı, güvenli görüşme yapmalı; bulguları objektif kaydetmeli, acil riskleri değerlendirmeli ve uygun destek/bildirim mekanizmalarını başlatmalıdır.",
       "pearls": [
-        "Hipotansiyon, wheezing, stridor veya çoklu sistem tutulumu varsa anafilaksi düşün ve IM adrenalin ver.",
-        "Hafif izole ürtikerde gereksiz antibiyotik veya trombolitik yeri yoktur."
+        "Şiddet şüphesinde hasta fail olabilecek kişiyle aynı ortamda sorgulanmamalıdır.",
+        "Lezyonların yeri, boyutu ve yaşı objektif yazılmalıdır.",
+        "Güvenlik planı ve destek mekanizmaları klinik yaklaşımın parçasıdır."
       ],
-      "nextStep": "Oral antihistaminik ve yakın klinik izlem",
+      "nextStep": "Hastayı güvenli mahrem ortamda değerlendir; risk, kayıt, tedavi, sosyal destek ve bildirim basamaklarını planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Klinik spot",
-        "shortDiagnosisMeta": "Ürtiker ile anafilaksi ayrımı solunum, dolaşım ve çoklu sistem tutulumu üzerinden yapılır.",
-        "whyCorrect": "Tek sistemle sınırlı ürtiker ve hafif anjiyoödemde, solunum/dolaşım tutulumu yoksa antihistaminik ve izlem uygundur. Anafilaksi bulgusu gelişirse intramüsküler adrenalin öncelik kazanır.",
+        "correctDiagnosis": "Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek/bildirim sürecini başlatmak",
+        "diagnosisMeta": "Adli / Etik",
+        "shortDiagnosisMeta": "Adli / Etik",
+        "whyCorrect": "Aile içi şiddet şüphesinde hastanın güvenliği ve mahremiyeti önceliklidir. Hekim eşlik eden kişiden ayrı, güvenli görüşme yapmalı; bulguları objektif kaydetmeli, acil riskleri değerlendirmeli ve uygun destek/bildirim mekanizmalarını başlatmalıdır.",
+        "whyWrong": {
+          "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek": "Eşin varlığı hasta güvenliğini ve beyan özgürlüğünü bozabilir.",
+          "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek": "Tutarsız öykü ve çoklu ekimozlar şiddet açısından sorgulanmalıdır.",
+          "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek": "Fiziksel tedavi tek başına yeterli değildir; güvenlik ve destek gereksinimi değerlendirilmelidir."
+        },
         "evidenceChain": [
-          "Hasta fıstık içeren tatlı yedikten 20 dakika sonra yaygın kaşıntı, dudakta hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma veya karın ağrısı tariflemez.",
-          "Genel durum iyi, bilinç açık ve konuşması rahattır.",
-          "Gövde ve üst ekstremitelerde yaygın ürtikeryal plaklar izlenir."
+          "Tekrarlayan düşme öyküsü ve yüz-boyun ekimozları",
+          "Genel durum orta; hasta kaygılı, çekingen ve göz teması kısıtlı.",
+          "Öğrenci aile içi şiddet şüphesinde mahrem görüşme, güvenlik değerlendirmesi ve objektif kayıt gerekliliğini uygular."
         ],
-        "pearls": [
-          "Hipotansiyon, wheezing, stridor veya çoklu sistem tutulumu varsa anafilaksi düşün ve IM adrenalin ver.",
-          "Hafif izole ürtikerde gereksiz antibiyotik veya trombolitik yeri yoktur."
+        "clinicalPearls": [
+          "Şiddet şüphesinde hasta fail olabilecek kişiyle aynı ortamda sorgulanmamalıdır.",
+          "Lezyonların yeri, boyutu ve yaşı objektif yazılmalıdır.",
+          "Güvenlik planı ve destek mekanizmaları klinik yaklaşımın parçasıdır."
         ],
-        "management": [
-          "Oral antihistaminik ve yakın klinik izlem",
-          "Ürtiker ile anafilaksi ayrımı solunum, dolaşım ve çoklu sistem tutulumu üzerinden yapılır."
+        "managementSteps": [
+          "Hastayı güvenli mahrem ortamda değerlendir; risk, kayıt, tedavi, sosyal destek ve bildirim basamaklarını planla."
         ],
-        "learningOutcome": "Ürtiker ile anafilaksi ayrımı solunum, dolaşım ve çoklu sistem tutulumu üzerinden yapılır.",
-        "differentials": {
-          "Hemen entübasyon": {
-            "explanation": "Hemen entübasyon bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Oral antihistaminik ve yakın klinik izlem seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+        "differentialComparison": {
+          "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek": {
+            "explanation": "Eşin varlığı hasta güvenliğini ve beyan özgürlüğünü bozabilir.",
+            "comparisonPoints": []
           },
-          "Geniş spektrumlu antibiyotik": {
-            "explanation": "Geniş spektrumlu antibiyotik bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Oral antihistaminik ve yakın klinik izlem seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek": {
+            "explanation": "Tutarsız öykü ve çoklu ekimozlar şiddet açısından sorgulanmalıdır.",
+            "comparisonPoints": []
           },
-          "Acil trombolitik tedavi": {
-            "explanation": "Acil trombolitik tedavi bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Oral antihistaminik ve yakın klinik izlem seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek": {
+            "explanation": "Fiziksel tedavi tek başına yeterli değildir; güvenlik ve destek gereksinimi değerlendirilmelidir.",
+            "comparisonPoints": []
           }
         }
       }
     }
   },
   {
-    "id": "quick-scarlet-fever-001",
+    "id": "quick-forensic-poisoning-sample-001",
     "branchId": "quick-case",
     "caseType": "quick",
-    "quickCategory": "TUS spot",
-    "title": "Ateşli çocukta zımpara kağıdı döküntüsü",
-    "difficulty": "Hızlı · TUS spot",
-    "clinicalFocus": "Kızıl hastalığının klasik döküntü paternini ve etkenini tanımak.",
-    "demographics": "5 yaşında çocuk",
-    "setting": "Çocuk acil",
-    "chiefComplaint": "Ateş, boğaz ağrısı ve döküntü",
-    "stem": "Çocuk 3 gündür ateş ve boğaz ağrısı sonrası gövdeden başlayan ince döküntü nedeniyle getirilir. Aile döküntünün dokunmakla pütürlü olduğunu söyler.",
+    "quickCategory": "Adli",
+    "questionType": "forensic",
+    "title": "Şüpheli zehirlenmede örnek saklama ve bildirim",
+    "difficulty": "Acil · Hızlı CASE",
+    "clinicalFocus": "Zehirlenme şüphesinde tıbbi stabilizasyon, toksikolojik örneklerin doğru alınması ve adli kayıt",
+    "learningOutcome": "Öğrenci şüpheli zehirlenmede stabilizasyon, toksikolojik örnek alma ve adli kayıt sürecini birlikte yönetir.",
+    "demographics": "40 yaşında erkek hasta",
+    "setting": "Acil servis",
+    "chiefComplaint": "Ani bilinç bulanıklığı ve kusma",
+    "stem": "Hasta evde bilinç bulanıklığı ve kusma sonrası getirilir. Yakınları, masada etiketsiz bir içecek şişesi ve ilaç blisterleri gördüklerini söyler. Hasta aralıklı uyanık, sorulara tutarsız yanıt verir.",
     "vitals": {
-      "TA": "Yaşa uygun",
+      "TA": "104/66 mmHg",
       "Nabız": "112/dk",
       "Solunum": "22/dk",
-      "SpO2": "%99",
-      "Ateş": "38.7 °C"
+      "SpO2": "%96",
+      "Ateş": "36.1 °C"
     },
     "exam": [
-      "Tonsiller hiperemi ve eksüda izlenir.",
-      "Çilek dili görünümü vardır.",
-      "Aksiller ve inguinal bölgelerde Pastia çizgileri seçilir.",
-      "Döküntü zımpara kağıdı hissindedir."
+      "Genel durum orta-kötü; hasta somnolans ve ajitasyon arasında dalgalanıyor.",
+      "Pupiller orta genişlikte ve ışığa yanıtlı.",
+      "Ağız çevresinde kusmuk bulaşı mevcut; hava yolu aspirasyon açısından riskli.",
+      "Cilt nemli; belirgin siyanoz yok.",
+      "Akciğerlerde kaba ronküsler duyuluyor.",
+      "Fokal nörolojik defisit saptanmıyor."
+    ],
+    "investigations": [
+      {
+        "id": "quick-poisoning-basic-tox",
+        "label": "Hedefe yönelik toksikoloji paneli",
+        "type": "toxicology",
+        "summary": "İdrarda benzodiazepin pozitif; etanol düzeyi 18 mg/dL; parasetamol düzeyi toksik aralıkta değil. Sonuçlar sedatif ilaç alımını destekler.",
+        "findings": [
+          "İdrarda benzodiazepin pozitif; etanol düzeyi 18 mg/dL; parasetamol düzeyi toksik aralıkta değil. Sonuçlar sedatif ilaç alımını destekler."
+        ],
+        "priority": "targeted",
+        "rows": [
+          {
+            "parameter": "Benzodiazepin taraması",
+            "value": "Pozitif",
+            "reference": "Negatif",
+            "note": "Anormal"
+          },
+          {
+            "parameter": "Etanol",
+            "value": "18 mg/dL",
+            "reference": "<10 mg/dL",
+            "note": "Hafif yüksek"
+          },
+          {
+            "parameter": "Parasetamol",
+            "value": "Toksik aralıkta değil",
+            "reference": "Toksik olmamalı",
+            "note": "Beklenen"
+          }
+        ]
+      }
+    ],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "question": "Bu şüpheli zehirlenme olgusunda en uygun ilk yaklaşım hangisidir?",
+    "diagnosis": {
+      "correct": "ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak",
+      "options": [
+        "ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak",
+        "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek",
+        "Adli örnek alınana kadar hava yolu müdahalesini ertelemek",
+        "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak"
+      ],
+      "explanation": "Şüpheli zehirlenmede ilk öncelik hava yolu, solunum ve dolaşım güvenliğidir. Eş zamanlı olarak kan/idrardan toksikolojik örnekler uygun şekilde alınır, şüpheli materyal korunur, zincir ve kayıt düzeni sağlanır ve adli bildirim yapılır.",
+      "pearls": [
+        "Zehirlenmede tedavi ve örnek koruma eş zamanlıdır; stabilizasyon geciktirilmez.",
+        "Şüpheli kaplar, ilaç blisterleri ve biyolojik örnekler zincir korunarak saklanmalıdır.",
+        "Toksikoloji örnekleri somut sonuç amacıyla alınır; boş “gerekirse” paneli oluşturulmaz."
+      ],
+      "nextStep": "ABC stabilizasyonu, dekontaminasyon/antidot gereksinimi değerlendirmesi, örnek alma ve adli kayıt sürecini birlikte yürüt.",
+      "answerFeedback": {
+        "correctDiagnosis": "ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak",
+        "diagnosisMeta": "Adli",
+        "shortDiagnosisMeta": "Adli",
+        "whyCorrect": "Şüpheli zehirlenmede ilk öncelik hava yolu, solunum ve dolaşım güvenliğidir. Eş zamanlı olarak kan/idrardan toksikolojik örnekler uygun şekilde alınır, şüpheli materyal korunur, zincir ve kayıt düzeni sağlanır ve adli bildirim yapılır.",
+        "whyWrong": {
+          "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek": "Şüpheli materyalin korunması adli ve toksikolojik değerlendirme için önemlidir.",
+          "Adli örnek alınana kadar hava yolu müdahalesini ertelemek": "Hava yolu güvenliği örnek alma sürecinden önce gelir.",
+          "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak": "Bilinç değişikliği kayıt gerekliliğini ortadan kaldırmaz; objektif bulgular yazılmalıdır."
+        },
+        "evidenceChain": [
+          "Ani bilinç bulanıklığı ve kusma",
+          "Genel durum orta-kötü; hasta somnolans ve ajitasyon arasında dalgalanıyor.",
+          "Öğrenci şüpheli zehirlenmede stabilizasyon, toksikolojik örnek alma ve adli kayıt sürecini birlikte yönetir."
+        ],
+        "clinicalPearls": [
+          "Zehirlenmede tedavi ve örnek koruma eş zamanlıdır; stabilizasyon geciktirilmez.",
+          "Şüpheli kaplar, ilaç blisterleri ve biyolojik örnekler zincir korunarak saklanmalıdır.",
+          "Toksikoloji örnekleri somut sonuç amacıyla alınır; boş “gerekirse” paneli oluşturulmaz."
+        ],
+        "managementSteps": [
+          "ABC stabilizasyonu, dekontaminasyon/antidot gereksinimi değerlendirmesi, örnek alma ve adli kayıt sürecini birlikte yürüt."
+        ],
+        "differentialComparison": {
+          "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek": {
+            "explanation": "Şüpheli materyalin korunması adli ve toksikolojik değerlendirme için önemlidir.",
+            "comparisonPoints": []
+          },
+          "Adli örnek alınana kadar hava yolu müdahalesini ertelemek": {
+            "explanation": "Hava yolu güvenliği örnek alma sürecinden önce gelir.",
+            "comparisonPoints": []
+          },
+          "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak": {
+            "explanation": "Bilinç değişikliği kayıt gerekliliğini ortadan kaldırmaz; objektif bulgular yazılmalıdır.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "quick-occupational-accident-reporting-001",
+    "branchId": "quick-case",
+    "caseType": "quick",
+    "quickCategory": "Adli / Yönetim",
+    "questionType": "forensic",
+    "title": "İş kazası sonrası raporlama ve tıbbi öncelik",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "İş kazasında acil tıbbi bakım, yaralanma kaydı ve bildirim/raporlama yaklaşımı",
+    "learningOutcome": "Öğrenci iş kazasında objektif kayıt, adli/kurumsal bildirim ve tıbbi tedavi önceliklerini ayırt eder.",
+    "demographics": "45 yaşında erkek işçi",
+    "setting": "Acil servis",
+    "chiefComplaint": "El pres makinesinde parmak ezilmesi",
+    "stem": "Hasta fabrikada pres makinesine sağ elini sıkıştırdıktan sonra acile gelir. İşverenin “basit yaralanma olarak yazılsın” dediğini belirtir. Hasta ağrılıdır, aktif masif kanama yoktur.",
+    "vitals": {
+      "TA": "138/84 mmHg",
+      "Nabız": "94/dk",
+      "Solunum": "17/dk",
+      "SpO2": "%99",
+      "Ateş": "36.5 °C"
+    },
+    "exam": [
+      "Genel durum iyi; hasta ağrılı ancak koopere.",
+      "Sağ ikinci ve üçüncü parmakta ezilme, ödem ve subungual hematom izleniyor.",
+      "Kapiller dolum ikinci parmakta hafif gecikmiş, üçüncü parmakta normal.",
+      "Aktif arteriyel kanama yok; açık kontamine yara alanı mevcut.",
+      "Parmak hareketleri ağrı nedeniyle kısıtlı; belirgin amputasyon yok.",
+      "Duyu muayenesinde distal uçta hafif hipoestezi tarifleniyor."
     ],
     "investigations": [],
     "images": [],
     "managementSequence": {
       "enabled": false
     },
-    "questionTitle": "TUS spot sorusu",
-    "question": "Bu klinik tabloyu en iyi açıklayan etken hangisidir?",
+    "question": "Bu olguda hekimin en uygun raporlama yaklaşımı nedir?",
+    "diagnosis": {
+      "correct": "Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası/adli bildirim sürecini başlatmak",
+      "options": [
+        "Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası/adli bildirim sürecini başlatmak",
+        "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek",
+        "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek",
+        "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak"
+      ],
+      "explanation": "İş kazası şüphesinde hekim tıbbi müdahaleyi geciktirmeden yapar, yaralanmanın mekanizmasını ve objektif muayene bulgularını kaydeder ve gerekli bildirim/raporlama sürecini başlatır. Kayıt işveren veya hasta isteğine göre değiştirilmez.",
+      "pearls": [
+        "İş kazasında rapor objektif tıbbi bulguya dayanır.",
+        "İşveren talebi tıbbi-adli kayıt içeriğini belirleyemez.",
+        "Nörovasküler muayene el yaralanmalarında mutlaka kaydedilmelidir."
+      ],
+      "nextStep": "Yara bakımı, tetanoz profilaksisi, gerekirse grafi ve nörovasküler takip ile objektif iş kazası/adli kayıt sürecini yürüt.",
+      "answerFeedback": {
+        "correctDiagnosis": "Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası/adli bildirim sürecini başlatmak",
+        "diagnosisMeta": "Adli / Yönetim",
+        "shortDiagnosisMeta": "Adli / Yönetim",
+        "whyCorrect": "İş kazası şüphesinde hekim tıbbi müdahaleyi geciktirmeden yapar, yaralanmanın mekanizmasını ve objektif muayene bulgularını kaydeder ve gerekli bildirim/raporlama sürecini başlatır. Kayıt işveren veya hasta isteğine göre değiştirilmez.",
+        "whyWrong": {
+          "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek": "Tıbbi kayıt gerçeğe ve objektif bulguya dayanmalıdır.",
+          "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek": "Tıbbi bakım raporlama nedeniyle geciktirilmez.",
+          "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak": "Rapor klinik bulguları eksiksiz yansıtmalıdır."
+        },
+        "evidenceChain": [
+          "El pres makinesinde parmak ezilmesi",
+          "Genel durum iyi; hasta ağrılı ancak koopere.",
+          "Öğrenci iş kazasında objektif kayıt, adli/kurumsal bildirim ve tıbbi tedavi önceliklerini ayırt eder."
+        ],
+        "clinicalPearls": [
+          "İş kazasında rapor objektif tıbbi bulguya dayanır.",
+          "İşveren talebi tıbbi-adli kayıt içeriğini belirleyemez.",
+          "Nörovasküler muayene el yaralanmalarında mutlaka kaydedilmelidir."
+        ],
+        "managementSteps": [
+          "Yara bakımı, tetanoz profilaksisi, gerekirse grafi ve nörovasküler takip ile objektif iş kazası/adli kayıt sürecini yürüt."
+        ],
+        "differentialComparison": {
+          "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek": {
+            "explanation": "Tıbbi kayıt gerçeğe ve objektif bulguya dayanmalıdır.",
+            "comparisonPoints": []
+          },
+          "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek": {
+            "explanation": "Tıbbi bakım raporlama nedeniyle geciktirilmez.",
+            "comparisonPoints": []
+          },
+          "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak": {
+            "explanation": "Rapor klinik bulguları eksiksiz yansıtmalıdır.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "quick-clinical-urticaria-001",
+    "branchId": "quick-case",
+    "caseType": "quick",
+    "quickCategory": "Acil karar",
+    "questionType": "next-step",
+    "title": "Ani başlayan ürtiker ve hafif anjiyoödem",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Ürtiker ile anafilaksiyi ayırt ederek ilk tedavi kararını verme",
+    "learningOutcome": "Öğrenci izole ürtiker/anjiyoödem ile anafilaksi ayrımını yaparak ilk tedaviyi seçer.",
+    "demographics": "19 yaşında kadın hasta",
+    "setting": "Acil poliklinik",
+    "chiefComplaint": "Fıstıklı tatlı sonrası kaşıntı ve dudak şişliği",
+    "stem": "Hasta fıstık içeren tatlı yedikten yaklaşık 20 dakika sonra yaygın kaşıntı, dudaklarda hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma, kusma veya göğüste sıkışma tariflemez.",
+    "vitals": {
+      "TA": "116/72 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99",
+      "Ateş": "36.6 °C"
+    },
+    "exam": [
+      "Genel durum iyi; hasta uyanık, konuşabiliyor ve solunum sıkıntısı göstermiyor.",
+      "Gövde ve üst ekstremitelerde yaygın ürtikeryal plaklar izleniyor.",
+      "Dudaklarda hafif anjiyoödem mevcut; dil ve uvulada belirgin ödem yok.",
+      "Stridor, wheezing veya yardımcı solunum kası kullanımı saptanmıyor.",
+      "Cilt sıcak ve perfüzyon iyi; kapiller dolum normal.",
+      "Bilinç değişikliği, hipotansif görünüm veya yaygın gastrointestinal yakınma yok."
+    ],
+    "investigations": [],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "question": "Bu olguda en uygun ilk yaklaşım hangisidir?",
+    "diagnosis": {
+      "correct": "Oral/uygun antihistaminik tedavi, tetikleyiciden kaçınma önerisi ve yakın klinik izlem",
+      "options": [
+        "Oral/uygun antihistaminik tedavi, tetikleyiciden kaçınma önerisi ve yakın klinik izlem",
+        "Hemen trombolitik tedavi başlamak",
+        "Geniş spektrumlu antibiyotik başlamak",
+        "Solunum sıkıntısı olmamasına rağmen rutin acil entübasyon yapmak"
+      ],
+      "explanation": "Bu tablo izole ürtiker ve hafif anjiyoödem ile uyumludur; hipotansiyon, bronkospazm, stridor, solunum sıkıntısı veya çoklu sistem tutulumu yoktur. İlk yaklaşım antihistaminik tedavi ve yakın izlem olmalıdır; anafilaksi bulguları gelişirse intramüsküler adrenalin öncelik kazanır.",
+      "pearls": [
+        "Anafilakside hipotansiyon, solunum bulgusu veya çoklu sistem tutulumu adrenalin endikasyonunu güçlendirir.",
+        "İzole ürtikerde gereksiz antibiyotik veya trombolitik tedavi yeri yoktur.",
+        "Dudak ödeminde hava yolu bulguları aktif olarak izlenmelidir."
+      ],
+      "nextStep": "Antihistaminik ver, kısa süre gözle, anafilaksi bulgularını aktif izle ve tetikleyiciden kaçınma eğitimi ver.",
+      "answerFeedback": {
+        "correctDiagnosis": "Oral/uygun antihistaminik tedavi, tetikleyiciden kaçınma önerisi ve yakın klinik izlem",
+        "diagnosisMeta": "Acil karar",
+        "shortDiagnosisMeta": "Acil karar",
+        "whyCorrect": "Bu tablo izole ürtiker ve hafif anjiyoödem ile uyumludur; hipotansiyon, bronkospazm, stridor, solunum sıkıntısı veya çoklu sistem tutulumu yoktur. İlk yaklaşım antihistaminik tedavi ve yakın izlem olmalıdır; anafilaksi bulguları gelişirse intramüsküler adrenalin öncelik kazanır.",
+        "whyWrong": {
+          "Hemen trombolitik tedavi başlamak": "Trombolitik tedavi alerjik ürtiker tablosunda endike değildir.",
+          "Geniş spektrumlu antibiyotik başlamak": "Bulgular enfeksiyon veya selülit değil, alerjik ürtiker lehinedir.",
+          "Solunum sıkıntısı olmamasına rağmen rutin acil entübasyon yapmak": "Hava yolu tehdidi yoksa rutin entübasyon uygun değildir; ancak ödem ilerlemesi izlenmelidir."
+        },
+        "evidenceChain": [
+          "Fıstıklı tatlı sonrası kaşıntı ve dudak şişliği",
+          "Genel durum iyi; hasta uyanık, konuşabiliyor ve solunum sıkıntısı göstermiyor.",
+          "Öğrenci izole ürtiker/anjiyoödem ile anafilaksi ayrımını yaparak ilk tedaviyi seçer."
+        ],
+        "clinicalPearls": [
+          "Anafilakside hipotansiyon, solunum bulgusu veya çoklu sistem tutulumu adrenalin endikasyonunu güçlendirir.",
+          "İzole ürtikerde gereksiz antibiyotik veya trombolitik tedavi yeri yoktur.",
+          "Dudak ödeminde hava yolu bulguları aktif olarak izlenmelidir."
+        ],
+        "managementSteps": [
+          "Antihistaminik ver, kısa süre gözle, anafilaksi bulgularını aktif izle ve tetikleyiciden kaçınma eğitimi ver."
+        ],
+        "differentialComparison": {
+          "Hemen trombolitik tedavi başlamak": {
+            "explanation": "Trombolitik tedavi alerjik ürtiker tablosunda endike değildir.",
+            "comparisonPoints": []
+          },
+          "Geniş spektrumlu antibiyotik başlamak": {
+            "explanation": "Bulgular enfeksiyon veya selülit değil, alerjik ürtiker lehinedir.",
+            "comparisonPoints": []
+          },
+          "Solunum sıkıntısı olmamasına rağmen rutin acil entübasyon yapmak": {
+            "explanation": "Hava yolu tehdidi yoksa rutin entübasyon uygun değildir; ancak ödem ilerlemesi izlenmelidir.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "quick-tus-scarlet-fever-001",
+    "branchId": "quick-case",
+    "caseType": "quick",
+    "quickCategory": "TUS spot",
     "questionType": "spot",
+    "title": "Ateşli çocukta zımpara kağıdı döküntüsü",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Kızıl hastalığında klinik döküntü paterninden etkeni tanıma",
+    "learningOutcome": "Öğrenci kızıl hastalığının klinik paternini ve etkenini ayırt eder.",
+    "demographics": "5 yaşında çocuk",
+    "setting": "Çocuk acil",
+    "chiefComplaint": "Ateş, boğaz ağrısı ve gövdeden başlayan döküntü",
+    "stem": "Çocuk 3 gündür ateş ve boğaz ağrısı sonrası gövdeden başlayıp yayılan ince döküntü nedeniyle getirilir. Aile döküntünün dokununca pütürlü hissedildiğini söyler.",
+    "vitals": {
+      "TA": "96/60 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%98",
+      "Ateş": "38.6 °C"
+    },
+    "exam": [
+      "Genel durum orta; çocuk ateşli ancak toksik görünümde değil.",
+      "Tonsiller hiperemi ve eksüdatif görünüm mevcut.",
+      "Dil başlangıçta beyaz kaplı, papillalar belirgin; çilek dili görünümü gelişmiş.",
+      "Gövde ve fleksural alanlarda zımpara kağıdı hissinde ince eritemli döküntü izleniyor.",
+      "Aksiller ve inguinal kıvrımlarda Pastia çizgileri belirgin.",
+      "Ense sertliği, peteşi-purpura veya veziküler döküntü saptanmıyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "question": "Bu klinik tabloyu en iyi açıklayan etken hangisidir?",
     "diagnosis": {
       "correct": "Streptococcus pyogenes",
       "options": [
@@ -12227,425 +12631,454 @@ export const cases = [
         "Varicella-zoster virus",
         "Measles virus"
       ],
-      "question": "Bu klinik tabloyu en iyi açıklayan etken hangisidir?",
-      "questionTitle": "TUS spot sorusu",
-      "explanation": "Ateş, tonsillofarenjit, çilek dili, Pastia çizgileri ve zımpara kağıdı döküntüsü kızıl hastalığı düşündürür; etken A grubu beta-hemolitik Streptococcus pyogenes’tir.",
+      "explanation": "Ateş, tonsillofarenjit, çilek dili, Pastia çizgileri ve zımpara kağıdı döküntüsü kızıl hastalığını düşündürür. Kızılın tipik etkeni eritrojenik toksin üreten A grubu beta-hemolitik Streptococcus pyogenes’tir.",
       "pearls": [
-        "Kızılda Pastia çizgileri, çilek dili ve zımpara kağıdı döküntüsü ayırt ettiricidir.",
-        "Tedavi komplikasyonları azaltmak için beta-laktam temellidir."
+        "Kızılda zımpara kağıdı döküntüsü, Pastia çizgileri ve çilek dili TUS açısından ayırt ettiricidir.",
+        "Veziküler lezyon suçiçeğini; tokatlanmış yanak parvovirüsü; Koplik lekeleri kızamığı düşündürür.",
+        "Klinik bağlam varsa hızlı antijen/kültür ile doğrulama ve antibiyotik tedavisi planlanır."
       ],
-      "nextStep": "Streptococcus pyogenes",
+      "nextStep": "Klinik şüpheye göre hızlı antijen/kültür doğrulaması ve uygun antibiyotik tedavisini planla.",
       "answerFeedback": {
+        "correctDiagnosis": "Streptococcus pyogenes",
         "diagnosisMeta": "TUS spot",
-        "shortDiagnosisMeta": "Kızıl hastalığının klasik döküntü paternini ve etkenini tanımak.",
-        "whyCorrect": "Ateş, tonsillofarenjit, çilek dili, Pastia çizgileri ve zımpara kağıdı döküntüsü kızıl hastalığı düşündürür; etken A grubu beta-hemolitik Streptococcus pyogenes’tir.",
+        "shortDiagnosisMeta": "TUS spot",
+        "whyCorrect": "Ateş, tonsillofarenjit, çilek dili, Pastia çizgileri ve zımpara kağıdı döküntüsü kızıl hastalığını düşündürür. Kızılın tipik etkeni eritrojenik toksin üreten A grubu beta-hemolitik Streptococcus pyogenes’tir.",
+        "whyWrong": {
+          "Parvovirus B19": "Parvovirüste tokatlanmış yanak görünümü ve dantel tarzı döküntü beklenir.",
+          "Varicella-zoster virus": "Suçiçeğinde farklı evrede veziküler lezyonlar tipiktir.",
+          "Measles virus": "Kızamıkta öksürük-konjunktivit-Koplik lekeleri ve baştan başlayan döküntü beklenir."
+        },
         "evidenceChain": [
-          "Çocuk 3 gündür ateş ve boğaz ağrısı sonrası gövdeden başlayan ince döküntü nedeniyle getirilir. Aile döküntünün dokunmakla pütürlü olduğunu söyler.",
-          "Tonsiller hiperemi ve eksüda izlenir.",
-          "Çilek dili görünümü vardır."
+          "Ateş, boğaz ağrısı ve gövdeden başlayan döküntü",
+          "Genel durum orta; çocuk ateşli ancak toksik görünümde değil.",
+          "Öğrenci kızıl hastalığının klinik paternini ve etkenini ayırt eder."
         ],
-        "pearls": [
-          "Kızılda Pastia çizgileri, çilek dili ve zımpara kağıdı döküntüsü ayırt ettiricidir.",
-          "Tedavi komplikasyonları azaltmak için beta-laktam temellidir."
+        "clinicalPearls": [
+          "Kızılda zımpara kağıdı döküntüsü, Pastia çizgileri ve çilek dili TUS açısından ayırt ettiricidir.",
+          "Veziküler lezyon suçiçeğini; tokatlanmış yanak parvovirüsü; Koplik lekeleri kızamığı düşündürür.",
+          "Klinik bağlam varsa hızlı antijen/kültür ile doğrulama ve antibiyotik tedavisi planlanır."
         ],
-        "management": [
-          "Streptococcus pyogenes",
-          "Kızıl hastalığının klasik döküntü paternini ve etkenini tanımak."
+        "managementSteps": [
+          "Klinik şüpheye göre hızlı antijen/kültür doğrulaması ve uygun antibiyotik tedavisini planla."
         ],
-        "learningOutcome": "Kızıl hastalığının klasik döküntü paternini ve etkenini tanımak.",
-        "differentials": {
+        "differentialComparison": {
           "Parvovirus B19": {
-            "explanation": "Parvovirus B19 bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Streptococcus pyogenes seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+            "explanation": "Parvovirüste tokatlanmış yanak görünümü ve dantel tarzı döküntü beklenir.",
+            "comparisonPoints": []
           },
           "Varicella-zoster virus": {
-            "explanation": "Varicella-zoster virus bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Streptococcus pyogenes seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+            "explanation": "Suçiçeğinde farklı evrede veziküler lezyonlar tipiktir.",
+            "comparisonPoints": []
           },
           "Measles virus": {
-            "explanation": "Measles virus bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Streptococcus pyogenes seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+            "explanation": "Kızamıkta öksürük-konjunktivit-Koplik lekeleri ve baştan başlayan döküntü beklenir.",
+            "comparisonPoints": []
           }
         }
       }
     }
   },
   {
-    "id": "quick-needle-stick-exposure-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Yönetim",
-    "title": "Sağlık çalışanında iğne batması sonrası ilk yaklaşım",
-    "difficulty": "Hızlı · Yönetim",
-    "clinicalFocus": "Kesici-delici mesleki maruziyette yara bakımı, kayıt, seroloji ve profilaksi kararını basamaklandırmak.",
-    "demographics": "27 yaşında intörn hekim",
-    "setting": "Hastane acili",
-    "chiefComplaint": "Kanlı iğne batması",
-    "stem": "Hekim kan alma sonrası kullanılan iğnenin eldiveni delerek parmağına battığını söyler. Kaynak hastanın HIV/HBV/HCV durumu bilinmemektedir. Olay dakikalar önce olmuştur.",
-    "vitals": {
-      "TA": "Stabil",
-      "Nabız": "Stabil",
-      "Solunum": "Stabil",
-      "SpO2": "Normal",
-      "Ateş": "Ateş yok"
-    },
-    "exam": [
-      "Parmak ucunda yüzeyel ponksiyon alanı vardır.",
-      "Aktif kanama minimaldir.",
-      "Motor ve duyu muayenesi normaldir.",
-      "Yaygın doku kaybı veya derin tendon yaralanması bulgusu yoktur."
-    ],
-    "investigations": [
-      {
-        "id": "source-and-baseline-serology-quick",
-        "label": "Kaynak ve başlangıç serolojisi",
-        "type": "lab",
-        "priority": "essential",
-        "summary": "Kaynak hastadan HIV Ag/Ab, HBsAg ve anti-HCV; sağlık çalışanından başlangıç serolojileri istenir. Sonuçlar profilaksi ve takip planını belirler.",
-        "rows": [
-          [
-            "Kaynak HIV Ag/Ab",
-            "Acil çalışılıyor",
-            "Negatif",
-            "Risk değerlendirmesi"
-          ],
-          [
-            "Kaynak HBsAg",
-            "Acil çalışılıyor",
-            "Negatif",
-            "Risk değerlendirmesi"
-          ],
-          [
-            "Çalışan anti-HBs",
-            "Bilinmiyor",
-            ">10 mIU/mL",
-            "Bağışıklık değerlendirilecek"
-          ]
-        ]
-      }
-    ],
-    "images": [],
-    "managementSequence": {
-      "enabled": false
-    },
-    "questionTitle": "Maruziyet yönetimi",
-    "question": "Bu durumda en uygun ilk yaklaşım hangisidir?",
-    "questionType": "management",
-    "diagnosis": {
-      "correct": "Yarayı su-sabunla temizleyip olayı kaydetmek, kaynak/çalışan serolojisini almak ve HIV PEP gereksinimini hemen değerlendirmek",
-      "options": [
-        "Yarayı su-sabunla temizleyip olayı kaydetmek, kaynak/çalışan serolojisini almak ve HIV PEP gereksinimini hemen değerlendirmek",
-        "Yarayı kuvvetle sıkarak kanatmak ve başka işlem yapmamak",
-        "Kaynak serolojileri sonuçlanana kadar tüm profilaksileri mutlaka ertelemek",
-        "İğne batması küçük olduğu için kayıt ve takip yapmamak"
-      ],
-      "question": "Bu durumda en uygun ilk yaklaşım hangisidir?",
-      "questionTitle": "Maruziyet yönetimi",
-      "explanation": "İğne batmasında yara temizliği, olay kaydı, kaynak ve çalışan başlangıç serolojileri ile HIV/HBV/HCV risk değerlendirmesi yapılır. HIV PEP yüksek riskte gecikmeden değerlendirilmelidir.",
-      "pearls": [
-        "İğne batmasında yarayı travmatize edecek şekilde sıkmak önerilmez.",
-        "HBV yaklaşımı çalışanın bağışıklık durumuna göre değişir."
-      ],
-      "nextStep": "Yarayı su-sabunla temizleyip olayı kaydetmek, kaynak/çalışan serolojisini almak ve HIV PEP gereksinimini hemen değerlendirmek",
-      "answerFeedback": {
-        "diagnosisMeta": "Yönetim",
-        "shortDiagnosisMeta": "Kesici-delici mesleki maruziyette yara bakımı, kayıt, seroloji ve profilaksi kararını basamaklandırmak.",
-        "whyCorrect": "İğne batmasında yara temizliği, olay kaydı, kaynak ve çalışan başlangıç serolojileri ile HIV/HBV/HCV risk değerlendirmesi yapılır. HIV PEP yüksek riskte gecikmeden değerlendirilmelidir.",
-        "evidenceChain": [
-          "Hekim kan alma sonrası kullanılan iğnenin eldiveni delerek parmağına battığını söyler. Kaynak hastanın HIV/HBV/HCV durumu bilinmemektedir. Olay dakikalar önce olmuştur.",
-          "Parmak ucunda yüzeyel ponksiyon alanı vardır.",
-          "Aktif kanama minimaldir."
-        ],
-        "pearls": [
-          "İğne batmasında yarayı travmatize edecek şekilde sıkmak önerilmez.",
-          "HBV yaklaşımı çalışanın bağışıklık durumuna göre değişir."
-        ],
-        "management": [
-          "Yarayı su-sabunla temizleyip olayı kaydetmek, kaynak/çalışan serolojisini almak ve HIV PEP gereksinimini hemen değerlendirmek",
-          "Kesici-delici mesleki maruziyette yara bakımı, kayıt, seroloji ve profilaksi kararını basamaklandırmak."
-        ],
-        "learningOutcome": "Kesici-delici mesleki maruziyette yara bakımı, kayıt, seroloji ve profilaksi kararını basamaklandırmak.",
-        "differentials": {
-          "Yarayı kuvvetle sıkarak kanatmak ve başka işlem yapmamak": {
-            "explanation": "Yarayı kuvvetle sıkarak kanatmak ve başka işlem yapmamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Yarayı su-sabunla temizleyip olayı kaydetmek, kaynak/çalışan serolojisini almak ve HIV PEP gereksinimini hemen değerlendirmek seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          },
-          "Kaynak serolojileri sonuçlanana kadar tüm profilaksileri mutlaka ertelemek": {
-            "explanation": "Kaynak serolojileri sonuçlanana kadar tüm profilaksileri mutlaka ertelemek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Yarayı su-sabunla temizleyip olayı kaydetmek, kaynak/çalışan serolojisini almak ve HIV PEP gereksinimini hemen değerlendirmek seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          },
-          "İğne batması küçük olduğu için kayıt ve takip yapmamak": {
-            "explanation": "İğne batması küçük olduğu için kayıt ve takip yapmamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Yarayı su-sabunla temizleyip olayı kaydetmek, kaynak/çalışan serolojisini almak ve HIV PEP gereksinimini hemen değerlendirmek seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          }
-        }
-      }
-    }
-  },
-  {
-    "id": "quick-carbon-monoxide-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Acil karar",
-    "title": "Soba sonrası baş ağrısı ve kiraz kırmızısı olmayan hipoksi şüphesi",
-    "difficulty": "Hızlı · Acil karar",
-    "clinicalFocus": "CO zehirlenmesinde nabız oksimetresine güvenmeden oksijen tedavisine başlama kararını vermek.",
-    "demographics": "31 yaşında kadın",
-    "setting": "Acil servis",
-    "chiefComplaint": "Baş ağrısı, bulantı ve sersemlik",
-    "stem": "Hasta kapalı ortamda soba yandıktan sonra baş ağrısı, bulantı ve sersemlik geliştiğini söyler. Aynı evdeki iki kişide de benzer yakınmalar vardır. Oda havasında nabız oksimetresi normal sınıra yakın görünmektedir.",
-    "vitals": {
-      "TA": "124/78 mmHg",
-      "Nabız": "102/dk",
-      "Solunum": "18/dk",
-      "SpO2": "%98",
-      "Ateş": "36.5 °C"
-    },
-    "exam": [
-      "Bilinç açık ancak hasta halsiz ve sersem görünür.",
-      "Deri rengi olağan; kiraz kırmızısı görünüm belirgin değildir.",
-      "Nörolojik muayenede lateralizan defisit yoktur.",
-      "Akciğer oskültasyonunda belirgin ral veya wheezing duyulmaz."
-    ],
-    "investigations": [
-      {
-        "id": "co-oximetry-quick",
-        "label": "Ko-oksimetri",
-        "type": "lab",
-        "priority": "essential",
-        "summary": "Karboksihemoglobin %18 saptandı; bulgu karbonmonoksit maruziyetini destekler.",
-        "rows": [
-          [
-            "Karboksihemoglobin",
-            "%18",
-            "<%3",
-            "Yüksek"
-          ],
-          [
-            "Laktat",
-            "2.1 mmol/L",
-            "<2 mmol/L",
-            "Sınırda"
-          ]
-        ]
-      }
-    ],
-    "images": [],
-    "managementSequence": {
-      "enabled": false
-    },
-    "questionTitle": "Acil ilk tedavi",
-    "question": "Bu klinik durumda ilk yapılması gereken işlem hangisidir?",
-    "questionType": "management",
-    "diagnosis": {
-      "correct": "Hastayı ortamdan uzaklaştırıp yüksek akımlı %100 oksijen başlamak",
-      "options": [
-        "Hastayı ortamdan uzaklaştırıp yüksek akımlı %100 oksijen başlamak",
-        "Nabız oksimetresi normal olduğu için taburcu etmek",
-        "Önce geniş spektrumlu antibiyotik başlamak",
-        "Sadece antiemetik verip evine göndermek"
-      ],
-      "question": "Bu klinik durumda ilk yapılması gereken işlem hangisidir?",
-      "questionTitle": "Acil ilk tedavi",
-      "explanation": "Karbonmonoksit zehirlenmesinde nabız oksimetresi yanıltıcı olabilir. Şüphede hastayı maruziyetten uzaklaştırmak ve %100 oksijen başlamak geciktirilmemelidir.",
-      "pearls": [
-        "CO zehirlenmesinde SpO₂ normal görünebilir.",
-        "Aynı ortamda birden çok kişide benzer semptom olması güçlü ipucudur."
-      ],
-      "nextStep": "Hastayı ortamdan uzaklaştırıp yüksek akımlı %100 oksijen başlamak",
-      "answerFeedback": {
-        "diagnosisMeta": "Acil karar",
-        "shortDiagnosisMeta": "CO zehirlenmesinde nabız oksimetresine güvenmeden oksijen tedavisine başlama kararını vermek.",
-        "whyCorrect": "Karbonmonoksit zehirlenmesinde nabız oksimetresi yanıltıcı olabilir. Şüphede hastayı maruziyetten uzaklaştırmak ve %100 oksijen başlamak geciktirilmemelidir.",
-        "evidenceChain": [
-          "Hasta kapalı ortamda soba yandıktan sonra baş ağrısı, bulantı ve sersemlik geliştiğini söyler. Aynı evdeki iki kişide de benzer yakınmalar vardır. Oda havasında nabız oksimetresi normal sınıra yakın görünmektedir.",
-          "Bilinç açık ancak hasta halsiz ve sersem görünür.",
-          "Deri rengi olağan; kiraz kırmızısı görünüm belirgin değildir."
-        ],
-        "pearls": [
-          "CO zehirlenmesinde SpO₂ normal görünebilir.",
-          "Aynı ortamda birden çok kişide benzer semptom olması güçlü ipucudur."
-        ],
-        "management": [
-          "Hastayı ortamdan uzaklaştırıp yüksek akımlı %100 oksijen başlamak",
-          "CO zehirlenmesinde nabız oksimetresine güvenmeden oksijen tedavisine başlama kararını vermek."
-        ],
-        "learningOutcome": "CO zehirlenmesinde nabız oksimetresine güvenmeden oksijen tedavisine başlama kararını vermek.",
-        "differentials": {
-          "Nabız oksimetresi normal olduğu için taburcu etmek": {
-            "explanation": "Nabız oksimetresi normal olduğu için taburcu etmek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Hastayı ortamdan uzaklaştırıp yüksek akımlı %100 oksijen başlamak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          },
-          "Önce geniş spektrumlu antibiyotik başlamak": {
-            "explanation": "Önce geniş spektrumlu antibiyotik başlamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Hastayı ortamdan uzaklaştırıp yüksek akımlı %100 oksijen başlamak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          },
-          "Sadece antiemetik verip evine göndermek": {
-            "explanation": "Sadece antiemetik verip evine göndermek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Hastayı ortamdan uzaklaştırıp yüksek akımlı %100 oksijen başlamak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          }
-        }
-      }
-    }
-  },
-  {
-    "id": "quick-simple-febrile-seizure-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Klinik spot",
-    "title": "Basit febril nöbet sonrası aile bilgilendirmesi",
-    "difficulty": "Hızlı · Klinik spot",
-    "clinicalFocus": "Basit febril nöbet kriterlerini tanıyıp gereksiz ileri tetkikten kaçınmak.",
-    "demographics": "18 aylık çocuk",
-    "setting": "Çocuk acil",
-    "chiefComplaint": "Ateş sırasında kısa nöbet",
-    "stem": "Çocuk üst solunum yolu enfeksiyonu sırasında 2 dakika süren jeneralize tonik-klonik nöbet geçirmiştir. Nöbet kendiliğinden durmuştur; gün içinde tekrar etmemiştir. Gelişimi normaldir.",
-    "vitals": {
-      "TA": "Yaşa uygun",
-      "Nabız": "126/dk",
-      "Solunum": "24/dk",
-      "SpO2": "%99",
-      "Ateş": "38.8 °C"
-    },
-    "exam": [
-      "Genel durum iyi, nöbet sonrası hızla normale dönmüştür.",
-      "Ense sertliği yoktur.",
-      "Fokal nörolojik defisit saptanmaz.",
-      "Otoskopide hafif hiperemi dışında ağır sistemik bulgu yoktur."
-    ],
-    "investigations": [],
-    "images": [],
-    "managementSequence": {
-      "enabled": false
-    },
-    "questionTitle": "Yönetim kararı",
-    "question": "Bu olguda en uygun yaklaşım hangisidir?",
-    "questionType": "management",
-    "diagnosis": {
-      "correct": "Basit febril nöbet olarak değerlendirip ateş odağını yönetmek ve aileyi bilgilendirmek",
-      "options": [
-        "Basit febril nöbet olarak değerlendirip ateş odağını yönetmek ve aileyi bilgilendirmek",
-        "Her hastaya acil lomber ponksiyon yapmak",
-        "Uzun süreli antiepileptik profilaksi başlamak",
-        "Beyin tümörü düşünerek acil kraniyal MR istemek"
-      ],
-      "question": "Bu olguda en uygun yaklaşım hangisidir?",
-      "questionTitle": "Yönetim kararı",
-      "explanation": "6 ay-5 yaş arası, kısa süren, jeneralize, tek ve nörolojik muayenesi normal nöbet basit febril nöbetle uyumludur. Menenjit bulgusu veya kompleks özellik yoksa rutin ileri nörolojik tetkik gerekmez.",
-      "pearls": [
-        "Basit febril nöbet 15 dakikadan kısa, jeneralize ve 24 saatte tek nöbettir.",
-        "Ense sertliği, toksik görünüm veya bilinçte kalıcı bozulma varsa yaklaşım değişir."
-      ],
-      "nextStep": "Basit febril nöbet olarak değerlendirip ateş odağını yönetmek ve aileyi bilgilendirmek",
-      "answerFeedback": {
-        "diagnosisMeta": "Klinik spot",
-        "shortDiagnosisMeta": "Basit febril nöbet kriterlerini tanıyıp gereksiz ileri tetkikten kaçınmak.",
-        "whyCorrect": "6 ay-5 yaş arası, kısa süren, jeneralize, tek ve nörolojik muayenesi normal nöbet basit febril nöbetle uyumludur. Menenjit bulgusu veya kompleks özellik yoksa rutin ileri nörolojik tetkik gerekmez.",
-        "evidenceChain": [
-          "Çocuk üst solunum yolu enfeksiyonu sırasında 2 dakika süren jeneralize tonik-klonik nöbet geçirmiştir. Nöbet kendiliğinden durmuştur; gün içinde tekrar etmemiştir. Gelişimi normaldir.",
-          "Genel durum iyi, nöbet sonrası hızla normale dönmüştür.",
-          "Ense sertliği yoktur."
-        ],
-        "pearls": [
-          "Basit febril nöbet 15 dakikadan kısa, jeneralize ve 24 saatte tek nöbettir.",
-          "Ense sertliği, toksik görünüm veya bilinçte kalıcı bozulma varsa yaklaşım değişir."
-        ],
-        "management": [
-          "Basit febril nöbet olarak değerlendirip ateş odağını yönetmek ve aileyi bilgilendirmek",
-          "Basit febril nöbet kriterlerini tanıyıp gereksiz ileri tetkikten kaçınmak."
-        ],
-        "learningOutcome": "Basit febril nöbet kriterlerini tanıyıp gereksiz ileri tetkikten kaçınmak.",
-        "differentials": {
-          "Her hastaya acil lomber ponksiyon yapmak": {
-            "explanation": "Her hastaya acil lomber ponksiyon yapmak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Basit febril nöbet olarak değerlendirip ateş odağını yönetmek ve aileyi bilgilendirmek seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          },
-          "Uzun süreli antiepileptik profilaksi başlamak": {
-            "explanation": "Uzun süreli antiepileptik profilaksi başlamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Basit febril nöbet olarak değerlendirip ateş odağını yönetmek ve aileyi bilgilendirmek seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          },
-          "Beyin tümörü düşünerek acil kraniyal MR istemek": {
-            "explanation": "Beyin tümörü düşünerek acil kraniyal MR istemek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Basit febril nöbet olarak değerlendirip ateş odağını yönetmek ve aileyi bilgilendirmek seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
-          }
-        }
-      }
-    }
-  },
-  {
-    "id": "quick-scaphoid-xray-normal-001",
+    "id": "quick-exam-nursemaid-elbow-001",
     "branchId": "quick-case",
     "caseType": "quick",
     "quickCategory": "Muayene odaklı",
-    "title": "Grafisi normal el bileği travmasında skafoid şüphesi",
-    "difficulty": "Hızlı · Muayene odaklı",
-    "clinicalFocus": "Skafoid şüphesinde muayene bulgusunu grafiden daha öncelikli yorumlayıp immobilizasyon kararı vermek.",
-    "demographics": "21 yaşında erkek",
-    "setting": "Acil servis",
-    "chiefComplaint": "Düşme sonrası el bileği ağrısı",
-    "stem": "Hasta açık el üzerine düşme sonrası radial el bileği ağrısı tarifler. İlk direkt grafi normal raporlanmıştır; ancak ağrı devam etmektedir.",
+    "questionType": "diagnosis",
+    "title": "Çekilme sonrası kolunu kullanmayan çocuk",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Radius başı subluksasyonunu öykü ve muayene ile tanıma",
+    "learningOutcome": "Öğrenci radius başı subluksasyonunu gereksiz tetkik istemeden öykü ve muayene ile tanır.",
+    "demographics": "2 yaşında kız çocuk",
+    "setting": "Çocuk acil",
+    "chiefComplaint": "Elinden çekildikten sonra sağ kolunu kullanmama",
+    "stem": "Çocuk kaldırımdan inerken annesi tarafından elinden çekildikten sonra ağlamış ve sağ kolunu kullanmamaya başlamıştır. Düşme, direkt travma veya ateş öyküsü yoktur.",
     "vitals": {
-      "TA": "118/76 mmHg",
-      "Nabız": "82/dk",
-      "Solunum": "16/dk",
+      "TA": "92/58 mmHg",
+      "Nabız": "108/dk",
+      "Solunum": "22/dk",
       "SpO2": "%99",
-      "Ateş": "36.5 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
-      "Anatomik enfiye çukurunda belirgin hassasiyet vardır.",
-      "Başparmak aksiyel yüklenmesi ağrıyı artırır.",
-      "El bileğinde belirgin deformite yoktur.",
-      "Distal nörovasküler muayene normaldir."
+      "Genel durum iyi; çocuk koluna dokunulmadığında sakin.",
+      "Sağ üst ekstremite gövde yanında pronasyonda tutuluyor.",
+      "Dirsek çevresinde belirgin şişlik, ekimoz veya deformite yok.",
+      "El bileği ve omuz palpasyonunda belirgin hassasiyet saptanmıyor.",
+      "Distal nabızlar alınabiliyor, kapiller dolum normal.",
+      "Duyu-motor değerlendirme yaşına uygun ve simetrik görünüyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "question": "Bu olguda en olası tanı hangisidir?",
+    "diagnosis": {
+      "correct": "Radius başı subluksasyonu",
+      "options": [
+        "Radius başı subluksasyonu",
+        "Suprakondiler humerus kırığı",
+        "Septik artrit",
+        "Omuz çıkığı"
+      ],
+      "explanation": "Küçük çocukta aksiyel çekilme sonrası kolu pronasyonda tutma, belirgin şişlik/deformite olmaması ve kolu kullanmama radius başı subluksasyonunu düşündürür. Tipik öykü ve muayene varsa gereksiz görüntüleme yerine redüksiyon manevrası önceliklidir.",
+      "pearls": [
+        "Nursemaid elbow tipik olarak 1–4 yaşta elden çekilme sonrası görülür.",
+        "Belirgin şişlik, ekimoz, deformite veya atipik travma varsa grafi düşünülür.",
+        "Redüksiyon sonrası çocuk kısa sürede kolunu kullanmaya başlar."
+      ],
+      "nextStep": "Atipik kırık bulgusu yoksa uygun redüksiyon manevrası yap ve fonksiyonun geri dönüşünü gözle.",
+      "answerFeedback": {
+        "correctDiagnosis": "Radius başı subluksasyonu",
+        "diagnosisMeta": "Muayene odaklı",
+        "shortDiagnosisMeta": "Muayene odaklı",
+        "whyCorrect": "Küçük çocukta aksiyel çekilme sonrası kolu pronasyonda tutma, belirgin şişlik/deformite olmaması ve kolu kullanmama radius başı subluksasyonunu düşündürür. Tipik öykü ve muayene varsa gereksiz görüntüleme yerine redüksiyon manevrası önceliklidir.",
+        "whyWrong": {
+          "Suprakondiler humerus kırığı": "Kırıkta çoğu zaman travma, şişlik, deformite veya belirgin lokal hassasiyet beklenir.",
+          "Septik artrit": "Ateş, sistemik bulgu ve eklemde belirgin ağrı/hareket kısıtlılığı beklenir.",
+          "Omuz çıkığı": "Mekanizma ve ekstremite pozisyonu omuz çıkığından çok dirsek subluksasyonunu destekler."
+        },
+        "evidenceChain": [
+          "Elinden çekildikten sonra sağ kolunu kullanmama",
+          "Genel durum iyi; çocuk koluna dokunulmadığında sakin.",
+          "Öğrenci radius başı subluksasyonunu gereksiz tetkik istemeden öykü ve muayene ile tanır."
+        ],
+        "clinicalPearls": [
+          "Nursemaid elbow tipik olarak 1–4 yaşta elden çekilme sonrası görülür.",
+          "Belirgin şişlik, ekimoz, deformite veya atipik travma varsa grafi düşünülür.",
+          "Redüksiyon sonrası çocuk kısa sürede kolunu kullanmaya başlar."
+        ],
+        "managementSteps": [
+          "Atipik kırık bulgusu yoksa uygun redüksiyon manevrası yap ve fonksiyonun geri dönüşünü gözle."
+        ],
+        "differentialComparison": {
+          "Suprakondiler humerus kırığı": {
+            "explanation": "Kırıkta çoğu zaman travma, şişlik, deformite veya belirgin lokal hassasiyet beklenir.",
+            "comparisonPoints": []
+          },
+          "Septik artrit": {
+            "explanation": "Ateş, sistemik bulgu ve eklemde belirgin ağrı/hareket kısıtlılığı beklenir.",
+            "comparisonPoints": []
+          },
+          "Omuz çıkığı": {
+            "explanation": "Mekanizma ve ekstremite pozisyonu omuz çıkığından çok dirsek subluksasyonunu destekler.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "quick-tus-koplik-measles-001",
+    "branchId": "quick-case",
+    "caseType": "quick",
+    "quickCategory": "TUS spot",
+    "questionType": "spot",
+    "title": "Öksürük, konjunktivit ve Koplik lekeleri",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Kızamıkta prodrom ve enantem bulgusunu tanıma",
+    "learningOutcome": "Öğrenci kızamıkta prodrom, döküntü yönü ve Koplik lekelerinin ayırt ettirici değerini tanımlar.",
+    "demographics": "7 yaşında aşısız çocuk",
+    "setting": "Çocuk polikliniği",
+    "chiefComplaint": "Ateş, öksürük, göz kızarıklığı ve döküntü",
+    "stem": "Aşıları eksik olan çocuk 4 gündür ateş, öksürük, burun akıntısı ve göz kızarıklığı sonrası yüzden başlayıp gövdeye yayılan döküntü ile getirilir.",
+    "vitals": {
+      "TA": "98/62 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%97",
+      "Ateş": "39.0 °C"
+    },
+    "exam": [
+      "Genel durum orta; çocuk ateşli ve halsiz görünüyor.",
+      "Konjunktival hiperemi, burun akıntısı ve öksürük mevcut.",
+      "Bukkal mukozada eritemli zemin üzerinde küçük beyazımsı Koplik lekeleri izleniyor.",
+      "Yüzden başlayıp gövdeye yayılan makülopapüler döküntü mevcut.",
+      "Ense sertliği veya peteşiyal döküntü yok.",
+      "Solunum seslerinde belirgin fokal ral duyulmuyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "question": "Bu klinik tablo için en ayırt ettirici mukozal bulgu hangisidir?",
+    "diagnosis": {
+      "correct": "Koplik lekeleri",
+      "options": [
+        "Koplik lekeleri",
+        "Pastia çizgileri",
+        "Forchheimer lekeleri",
+        "Ağrısız oral ülser"
+      ],
+      "explanation": "Aşısız çocukta ateş, öksürük, konjunktivit, nezle ve yüzden başlayan makülopapüler döküntü kızamık için tipiktir. Bukkal mukozadaki Koplik lekeleri kızamığın klasik ayırt ettirici enantemidir.",
+      "pearls": [
+        "Kızamıkta “3C”: cough, coryza, conjunctivitis; Koplik lekeleri yüksek verimli ipucudur.",
+        "Pastia çizgileri kızılı düşündürür.",
+        "Kızamık bulaştırıcılığı yüksek olduğu için izolasyon yaklaşımı önemlidir."
+      ],
+      "nextStep": "Klinik şüphe varsa izolasyon, bildirim ve destek tedavisi yaklaşımını planla.",
+      "answerFeedback": {
+        "correctDiagnosis": "Koplik lekeleri",
+        "diagnosisMeta": "TUS spot",
+        "shortDiagnosisMeta": "TUS spot",
+        "whyCorrect": "Aşısız çocukta ateş, öksürük, konjunktivit, nezle ve yüzden başlayan makülopapüler döküntü kızamık için tipiktir. Bukkal mukozadaki Koplik lekeleri kızamığın klasik ayırt ettirici enantemidir.",
+        "whyWrong": {
+          "Pastia çizgileri": "Pastia çizgileri kızılda fleksural alanlarda görülür.",
+          "Forchheimer lekeleri": "Forchheimer lekeleri kızamıkçık gibi tablolarda görülebilir, kızamığın klasik ipucu değildir.",
+          "Ağrısız oral ülser": "Ağrısız oral ülser SLE gibi otoimmün tabloları düşündürebilir."
+        },
+        "evidenceChain": [
+          "Ateş, öksürük, göz kızarıklığı ve döküntü",
+          "Genel durum orta; çocuk ateşli ve halsiz görünüyor.",
+          "Öğrenci kızamıkta prodrom, döküntü yönü ve Koplik lekelerinin ayırt ettirici değerini tanımlar."
+        ],
+        "clinicalPearls": [
+          "Kızamıkta “3C”: cough, coryza, conjunctivitis; Koplik lekeleri yüksek verimli ipucudur.",
+          "Pastia çizgileri kızılı düşündürür.",
+          "Kızamık bulaştırıcılığı yüksek olduğu için izolasyon yaklaşımı önemlidir."
+        ],
+        "managementSteps": [
+          "Klinik şüphe varsa izolasyon, bildirim ve destek tedavisi yaklaşımını planla."
+        ],
+        "differentialComparison": {
+          "Pastia çizgileri": {
+            "explanation": "Pastia çizgileri kızılda fleksural alanlarda görülür.",
+            "comparisonPoints": []
+          },
+          "Forchheimer lekeleri": {
+            "explanation": "Forchheimer lekeleri kızamıkçık gibi tablolarda görülebilir, kızamığın klasik ipucu değildir.",
+            "comparisonPoints": []
+          },
+          "Ağrısız oral ülser": {
+            "explanation": "Ağrısız oral ülser SLE gibi otoimmün tabloları düşündürebilir.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "quick-emergency-epistaxis-first-step-001",
+    "branchId": "quick-case",
+    "caseType": "quick",
+    "quickCategory": "Acil karar",
+    "questionType": "next-step",
+    "title": "Ön burun kanamasında ilk müdahale",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Stabil epistaksiste ilk basamak bası ve lokal yaklaşım kararını verme",
+    "learningOutcome": "Öğrenci stabil anterior epistaksiste basit ama doğru ilk müdahaleyi seçer.",
+    "demographics": "52 yaşında erkek hasta",
+    "setting": "Acil poliklinik",
+    "chiefComplaint": "Ani başlayan burun kanaması",
+    "stem": "Hasta 20 dakikadır devam eden burun kanaması nedeniyle başvurur. Bilinci açık, yutkunmakla hafif kan tadı aldığını söyler. Antikoagülan kullanmaz, travma öyküsü yoktur.",
+    "vitals": {
+      "TA": "148/86 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%98",
+      "Ateş": "36.8 °C"
+    },
+    "exam": [
+      "Genel durum iyi; hasta oturur pozisyonda ve koopere.",
+      "Ön rinoskopide sağ anterior septumda sızıntı tarzı kanama odağı izleniyor.",
+      "Ağız içine aktif yoğun kan akışı yok.",
+      "Cilt soluk veya soğuk terli değil; kapiller dolum normal.",
+      "Nazal travma, septal hematom veya yüz kemik deformitesi saptanmıyor.",
+      "Solunum sıkıntısı ve bilinç değişikliği yok."
+    ],
+    "investigations": [],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "question": "Bu stabil anterior epistaksis olgusunda ilk yapılması gereken işlem hangisidir?",
+    "diagnosis": {
+      "correct": "Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak",
+      "options": [
+        "Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak",
+        "Hastayı geriye yatırıp kanı yutmasını sağlamak",
+        "İlk basamak olarak acil cerrahi ligasyon yapmak",
+        "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak"
+      ],
+      "explanation": "Stabil anterior epistaksiste ilk yaklaşım hastayı oturtup öne eğmek ve burun kanatlarına yeterli süre direkt bası uygulamaktır. Geriye yatırmak aspirasyon ve kan yutma riskini artırır; invaziv işlemler ilk basamak değildir.",
+      "pearls": [
+        "Anterior epistaksiste ilk basamak direkt basıdır.",
+        "Hasta geriye değil öne eğilmelidir.",
+        "Posterior kanama, hemodinamik bozulma veya kontrol edilemeyen kanama ileri yaklaşım gerektirir."
+      ],
+      "nextStep": "Öne eğ, burun kanatlarına direkt bası uygula; devam ederse topikal vazokonstriktör/koter/tampon seçeneklerini değerlendir.",
+      "answerFeedback": {
+        "correctDiagnosis": "Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak",
+        "diagnosisMeta": "Acil karar",
+        "shortDiagnosisMeta": "Acil karar",
+        "whyCorrect": "Stabil anterior epistaksiste ilk yaklaşım hastayı oturtup öne eğmek ve burun kanatlarına yeterli süre direkt bası uygulamaktır. Geriye yatırmak aspirasyon ve kan yutma riskini artırır; invaziv işlemler ilk basamak değildir.",
+        "whyWrong": {
+          "Hastayı geriye yatırıp kanı yutmasını sağlamak": "Geriye yatırmak kan yutma ve aspirasyon riskini artırır.",
+          "İlk basamak olarak acil cerrahi ligasyon yapmak": "Cerrahi yaklaşım kontrol edilemeyen veya posterior kanamalarda düşünülür.",
+          "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak": "Hemodinamik bozukluk yoksa masif transfüzyon endike değildir."
+        },
+        "evidenceChain": [
+          "Ani başlayan burun kanaması",
+          "Genel durum iyi; hasta oturur pozisyonda ve koopere.",
+          "Öğrenci stabil anterior epistaksiste basit ama doğru ilk müdahaleyi seçer."
+        ],
+        "clinicalPearls": [
+          "Anterior epistaksiste ilk basamak direkt basıdır.",
+          "Hasta geriye değil öne eğilmelidir.",
+          "Posterior kanama, hemodinamik bozulma veya kontrol edilemeyen kanama ileri yaklaşım gerektirir."
+        ],
+        "managementSteps": [
+          "Öne eğ, burun kanatlarına direkt bası uygula; devam ederse topikal vazokonstriktör/koter/tampon seçeneklerini değerlendir."
+        ],
+        "differentialComparison": {
+          "Hastayı geriye yatırıp kanı yutmasını sağlamak": {
+            "explanation": "Geriye yatırmak kan yutma ve aspirasyon riskini artırır.",
+            "comparisonPoints": []
+          },
+          "İlk basamak olarak acil cerrahi ligasyon yapmak": {
+            "explanation": "Cerrahi yaklaşım kontrol edilemeyen veya posterior kanamalarda düşünülür.",
+            "comparisonPoints": []
+          },
+          "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak": {
+            "explanation": "Hemodinamik bozukluk yoksa masif transfüzyon endike değildir.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "quick-forensic-death-suspicion-001",
+    "branchId": "quick-case",
+    "caseType": "quick",
+    "quickCategory": "Adli",
+    "questionType": "forensic",
+    "title": "Şüpheli ölümde hekimin adli süreç yaklaşımı",
+    "difficulty": "Temel-orta · Hızlı CASE",
+    "clinicalFocus": "Şüpheli ölümde olay yerini/delilleri bozmama, tıbbi ölüm değerlendirmesi ve adli bildirim",
+    "learningOutcome": "Öğrenci şüpheli ölümde adli bildirim, delil koruma ve objektif kayıt sorumluluğunu açıklar.",
+    "demographics": "70 yaşında erkek hasta",
+    "setting": "Acil dışı ev ziyareti / 112 değerlendirmesi",
+    "chiefComplaint": "Evde ölü bulunma",
+    "stem": "Hasta evinde yalnız yaşarken yakınları tarafından ölü bulunur. Yakınları ölümün ne zaman gerçekleştiğini bilmez. Odada dağınıklık ve yerde kırık cam parçaları olduğu belirtilir. Hekim ölüm değerlendirmesi için çağrılır.",
+    "vitals": {
+      "TA": "—",
+      "Nabız": "—",
+      "Solunum": "—",
+      "SpO2": "—",
+      "Ateş": "—"
+    },
+    "exam": [
+      "Bilinç yok; spontan solunum ve santral nabız alınmıyor.",
+      "Pupiller geniş ve ışık refleksi alınmıyor.",
+      "Vücutta ölü morlukları ve katılık bulguları izleniyor.",
+      "Yüz ve el sırtında yüzeyel sıyrıklar mevcut.",
+      "Olay çevresinde kırık cam parçaları ve dağınıklık tarifleniyor.",
+      "Doğal ölüm süreciyle uyumlu net tıbbi öykü elde edilemiyor."
+    ],
+    "investigations": [],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "question": "Bu durumda hekimin en uygun adli yaklaşımı nedir?",
+    "diagnosis": {
+      "correct": "Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek",
+      "options": [
+        "Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek",
+        "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek",
+        "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak",
+        "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek"
+      ],
+      "explanation": "Ölüm nedeni açık değilse, travma/olay yeri şüphesi varsa veya doğal ölümden emin olunamıyorsa şüpheli ölüm yaklaşımı gerekir. Hekim tıbbi ölüm bulgularını değerlendirir, gözlenen bulguları kaydeder, delil niteliği taşıyabilecek unsurları bozmaz ve adli makamlara bildirir.",
+      "pearls": [
+        "Şüpheli ölümde defin ruhsatı rutin biçimde düzenlenmez.",
+        "Olay yeri ve olası deliller korunmalıdır.",
+        "Hekim gördüğü bulguları objektif yazar; ölüm nedenini zorlamayla doğal kabul etmez."
+      ],
+      "nextStep": "Ölüm bulgularını değerlendir, gözlemleri kaydet, olay yerini bozma ve yetkili adli makamlara bildirim yap.",
+      "answerFeedback": {
+        "correctDiagnosis": "Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek",
+        "diagnosisMeta": "Adli",
+        "shortDiagnosisMeta": "Adli",
+        "whyCorrect": "Ölüm nedeni açık değilse, travma/olay yeri şüphesi varsa veya doğal ölümden emin olunamıyorsa şüpheli ölüm yaklaşımı gerekir. Hekim tıbbi ölüm bulgularını değerlendirir, gözlenen bulguları kaydeder, delil niteliği taşıyabilecek unsurları bozmaz ve adli makamlara bildirir.",
+        "whyWrong": {
+          "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek": "Ölüm nedeni açık değilse doğal ölüm kabulü uygun değildir.",
+          "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak": "Olay yeri ve delil olabilecek unsurlar bozulmamalıdır.",
+          "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek": "Yaşlılık tek başına doğal ölüm kanıtı değildir; bağlam değerlendirilmelidir."
+        },
+        "evidenceChain": [
+          "Evde ölü bulunma",
+          "Bilinç yok; spontan solunum ve santral nabız alınmıyor.",
+          "Öğrenci şüpheli ölümde adli bildirim, delil koruma ve objektif kayıt sorumluluğunu açıklar."
+        ],
+        "clinicalPearls": [
+          "Şüpheli ölümde defin ruhsatı rutin biçimde düzenlenmez.",
+          "Olay yeri ve olası deliller korunmalıdır.",
+          "Hekim gördüğü bulguları objektif yazar; ölüm nedenini zorlamayla doğal kabul etmez."
+        ],
+        "managementSteps": [
+          "Ölüm bulgularını değerlendir, gözlemleri kaydet, olay yerini bozma ve yetkili adli makamlara bildirim yap."
+        ],
+        "differentialComparison": {
+          "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek": {
+            "explanation": "Ölüm nedeni açık değilse doğal ölüm kabulü uygun değildir.",
+            "comparisonPoints": []
+          },
+          "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak": {
+            "explanation": "Olay yeri ve delil olabilecek unsurlar bozulmamalıdır.",
+            "comparisonPoints": []
+          },
+          "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek": {
+            "explanation": "Yaşlılık tek başına doğal ölüm kanıtı değildir; bağlam değerlendirilmelidir.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "anatomy-radial-nerve-humerus-fracture-001",
+    "branchId": "anatomy",
+    "title": "Humerus şaft travması sonrası el bileği düşüklüğü",
+    "difficulty": "Temel-orta · Anatomi",
+    "clinicalFocus": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi",
+    "learningOutcome": "Öğrenci humerus şaft kırığında radial sinir yaralanmasını anatomik seyir ve muayene bulgularıyla ilişkilendirir.",
+    "demographics": "27 yaşında erkek hasta",
+    "setting": "Acil servis",
+    "chiefComplaint": "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama",
+    "stem": "Hasta bisikletten düştükten sonra sağ üst kolunda ağrı ve el bileğini yukarı kaldıramama yakınmasıyla başvurur. Travma doğrudan humerus orta şaftına yönelmiştir.",
+    "vitals": {
+      "TA": "118/74 mmHg",
+      "Nabız": "84/dk",
+      "Solunum": "16/dk",
+      "SpO2": "%99",
+      "Ateş": "36.6 °C"
+    },
+    "exam": [
+      "Genel durum iyi; hasta uyanık, koopere ve hemodinamik olarak stabil.",
+      "Sağ üst kol orta bölümünde hassasiyet, şişlik ve hareketle ağrı izleniyor.",
+      "El bileği ve parmak ekstansiyonu belirgin zayıf; el bileği düşük pozisyonda duruyor.",
+      "Birinci dorsal web aralığında duyu azalması mevcut.",
+      "Radial ve ulnar nabızlar alınabiliyor; kapiller dolum normal."
     ],
     "investigations": [
       {
-        "id": "wrist-xray-quick",
-        "label": "El bileği direkt grafisi",
+        "id": "direct-xray-humerus",
+        "label": "Direkt humerus grafisi",
         "type": "xray",
         "priority": "useful",
-        "summary": "İlk grafide belirgin kırık hattı izlenmedi; klinik skafoid hassasiyeti devam ediyor.",
+        "summary": "Sağ humerus orta şaft düzeyinde deplase kırık hattı izleniyor.",
+        "findings": [
+          "Kırık lokalizasyonu radial sinirin spiral oluk komşuluğu nedeniyle nörolojik muayene ile birlikte değerlendirilmelidir."
+        ],
         "rows": [
           [
-            "Skafoid kırık hattı",
-            "İlk grafide izlenmedi",
-            "Yok",
-            "Klinik şüphe sürüyor"
+            "Direkt humerus grafisi",
+            "Orta şaft düzeyinde kırık hattı",
+            "Kırık yok",
+            "Anatomik korelasyon sağlar"
           ]
         ]
       }
@@ -12654,250 +13087,466 @@ export const cases = [
     "managementSequence": {
       "enabled": false
     },
-    "questionTitle": "Muayene odaklı karar",
-    "question": "Bu durumda en uygun yönetim kararı nedir?",
-    "questionType": "next-step",
     "diagnosis": {
-      "correct": "Skafoid kırığı şüphesiyle immobilizasyon ve kontrol görüntüleme planlamak",
+      "correct": "Radial sinir yaralanması",
       "options": [
-        "Skafoid kırığı şüphesiyle immobilizasyon ve kontrol görüntüleme planlamak",
-        "Grafi normal olduğu için hemen temas sporuna dönüş vermek",
-        "Antibiyotik başlamak",
-        "Acil laparotomi hazırlamak"
+        "Radial sinir yaralanması",
+        "Median sinir yaralanması",
+        "Ulnar sinir yaralanması",
+        "Aksiller sinir yaralanması"
       ],
-      "question": "Bu durumda en uygun yönetim kararı nedir?",
-      "questionTitle": "Muayene odaklı karar",
-      "explanation": "Skafoid kırığı ilk grafide görünmeyebilir. Anatomik enfiye çukuru hassasiyeti varsa immobilizasyon ve kontrol grafi/MR/BT planı uygundur.",
+      "explanation": "Humerus orta şaftı spiral oluk komşuluğunda radial sinirle yakın ilişkilidir. El bileği-parmak ekstansiyon kaybı ve birinci dorsal web aralığında duyu azalması radial sinir tutulumunu destekler.",
       "pearls": [
-        "Skafoid proksimal kutup kanlanması zayıf olduğu için avasküler nekroz riski önemlidir.",
-        "Normal ilk grafi klinik şüpheyi dışlamaz."
+        "Radial sinir spiral olukta humerus şaftına komşudur.",
+        "El bileği düşüklüğü radial sinir hasarının klasik motor bulgusudur.",
+        "Birinci dorsal web aralığı radial sinirin önemli duyu alanıdır."
       ],
-      "nextStep": "Skafoid kırığı şüphesiyle immobilizasyon ve kontrol görüntüleme planlamak",
+      "nextStep": "Nörovasküler muayeneyi seri izle, kırık stabilizasyonu sağla ve ortopedi konsültasyonu planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Muayene odaklı",
-        "shortDiagnosisMeta": "Skafoid şüphesinde muayene bulgusunu grafiden daha öncelikli yorumlayıp immobilizasyon kararı vermek.",
-        "whyCorrect": "Skafoid kırığı ilk grafide görünmeyebilir. Anatomik enfiye çukuru hassasiyeti varsa immobilizasyon ve kontrol grafi/MR/BT planı uygundur.",
+        "correctDiagnosis": "Radial sinir yaralanması",
+        "diagnosisMeta": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi",
+        "shortDiagnosisMeta": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi",
+        "whyCorrect": "Humerus orta şaftı spiral oluk komşuluğunda radial sinirle yakın ilişkilidir. El bileği-parmak ekstansiyon kaybı ve birinci dorsal web aralığında duyu azalması radial sinir tutulumunu destekler.",
+        "whyWrong": {
+          "Median sinir yaralanması": "Median sinir yaralanması bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Ulnar sinir yaralanması": "Ulnar sinir yaralanması bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Aksiller sinir yaralanması": "Aksiller sinir yaralanması bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz."
+        },
         "evidenceChain": [
-          "Hasta açık el üzerine düşme sonrası radial el bileği ağrısı tarifler. İlk direkt grafi normal raporlanmıştır; ancak ağrı devam etmektedir.",
-          "Anatomik enfiye çukurunda belirgin hassasiyet vardır.",
-          "Başparmak aksiyel yüklenmesi ağrıyı artırır."
+          "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi",
+          "Öğrenci humerus şaft kırığında radial sinir yaralanmasını anatomik seyir ve muayene bulgularıyla ilişkilendirir."
         ],
-        "pearls": [
-          "Skafoid proksimal kutup kanlanması zayıf olduğu için avasküler nekroz riski önemlidir.",
-          "Normal ilk grafi klinik şüpheyi dışlamaz."
+        "clinicalPearls": [
+          "Radial sinir spiral olukta humerus şaftına komşudur.",
+          "El bileği düşüklüğü radial sinir hasarının klasik motor bulgusudur.",
+          "Birinci dorsal web aralığı radial sinirin önemli duyu alanıdır."
         ],
-        "management": [
-          "Skafoid kırığı şüphesiyle immobilizasyon ve kontrol görüntüleme planlamak",
-          "Skafoid şüphesinde muayene bulgusunu grafiden daha öncelikli yorumlayıp immobilizasyon kararı vermek."
+        "managementSteps": [
+          "Nörovasküler muayeneyi seri izle, kırık stabilizasyonu sağla ve ortopedi konsültasyonu planla."
         ],
-        "learningOutcome": "Skafoid şüphesinde muayene bulgusunu grafiden daha öncelikli yorumlayıp immobilizasyon kararı vermek.",
-        "differentials": {
-          "Grafi normal olduğu için hemen temas sporuna dönüş vermek": {
-            "explanation": "Grafi normal olduğu için hemen temas sporuna dönüş vermek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Skafoid kırığı şüphesiyle immobilizasyon ve kontrol görüntüleme planlamak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+        "differentialComparison": {
+          "Median sinir yaralanması": {
+            "explanation": "Median sinir yaralanması bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           },
-          "Antibiyotik başlamak": {
-            "explanation": "Antibiyotik başlamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Skafoid kırığı şüphesiyle immobilizasyon ve kontrol görüntüleme planlamak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Ulnar sinir yaralanması": {
+            "explanation": "Ulnar sinir yaralanması bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           },
-          "Acil laparotomi hazırlamak": {
-            "explanation": "Acil laparotomi hazırlamak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Skafoid kırığı şüphesiyle immobilizasyon ve kontrol görüntüleme planlamak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Aksiller sinir yaralanması": {
+            "explanation": "Aksiller sinir yaralanması bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           }
         }
       }
     }
   },
   {
-    "id": "quick-epiglottitis-airway-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Acil karar",
-    "title": "Tripod pozisyonlu çocukta havayolu önceliği",
-    "difficulty": "Hızlı · Acil karar",
-    "clinicalFocus": "Epiglottit şüphesinde tanısal meraktan önce havayolu güvenliğini önceliklendirmek.",
-    "demographics": "4 yaşında çocuk",
-    "setting": "Çocuk acil",
-    "chiefComplaint": "Ateş, disfaji ve salya akması",
-    "stem": "Çocuk yüksek ateş, boğaz ağrısı, yutamama ve salya akmasıyla getirilir. Aile çocuğun oturur pozisyonda daha rahat nefes aldığını belirtir.",
+    "id": "physiology-baroreceptor-reflex-orthostatic-001",
+    "branchId": "physiology",
+    "title": "Ayağa kalkınca baş dönmesi ve kompansatuvar taşikardi",
+    "difficulty": "Temel-orta · Fizyoloji",
+    "clinicalFocus": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı",
+    "learningOutcome": "Öğrenci ortostatik durumda baroreseptör refleksinin kalp hızı ve damar tonusu üzerindeki etkisini açıklar.",
+    "demographics": "68 yaşında kadın hasta",
+    "setting": "Poliklinik",
+    "chiefComplaint": "Ayağa kalkınca kısa süreli baş dönmesi",
+    "stem": "Hasta özellikle sabah yataktan kalkınca birkaç saniye süren sersemlik hissettiğini, oturunca yakınmasının düzeldiğini söyler. Yeni başlanan diüretik tedavi sonrası sıvı alımı azalmıştır.",
     "vitals": {
-      "TA": "Yaşa uygun",
-      "Nabız": "138/dk",
-      "Solunum": "34/dk",
-      "SpO2": "%93",
-      "Ateş": "39.2 °C"
+      "Yatar TA": "128/76 mmHg",
+      "Ayakta TA": "104/66 mmHg",
+      "Yatar Nabız": "72/dk",
+      "Ayakta Nabız": "96/dk",
+      "Ateş": "36.4 °C"
     },
     "exam": [
-      "Çocuk toksik görünür ve tripod pozisyonunda oturur.",
-      "Salya akması belirgindir; yutkunmakta zorlanır.",
-      "Ağız içi muayeneye direnç gösterir.",
-      "İnspiratuvar stridor duyulur; hasta ajite edilmemelidir."
+      "Genel durum iyi; bilinç açık ve oryantasyon tam.",
+      "Ayağa kalkınca kısa süreli dengesizlik hissi oluyor ancak senkop gelişmiyor.",
+      "Mukozalar hafif kuru; periferik dolaşım korunmuş.",
+      "Kalp sesleri ritmik, belirgin üfürüm duyulmuyor.",
+      "Fokal nörolojik defisit saptanmıyor."
     ],
     "investigations": [],
     "images": [],
     "managementSequence": {
       "enabled": false
     },
-    "questionTitle": "Havayolu kararı",
-    "question": "Bu klinik durumda ilk yapılması gereken en uygun işlem hangisidir?",
-    "questionType": "management",
     "diagnosis": {
-      "correct": "Havayolunu güvenli ekip ve ortamda sağlamak; çocuğu ajite edecek boğaz muayenesinden kaçınmak",
+      "correct": "Baroreseptör refleksine bağlı sempatik kompansasyon",
       "options": [
-        "Havayolunu güvenli ekip ve ortamda sağlamak; çocuğu ajite edecek boğaz muayenesinden kaçınmak",
-        "Dil basacağıyla agresif farinks muayenesi yapmak",
-        "Aileye evde takip önerip taburcu etmek",
-        "Önce oral gıda alımını denetmek"
+        "Baroreseptör refleksine bağlı sempatik kompansasyon",
+        "Parasempatik aktivitenin belirgin artışı",
+        "Renin salgısının anlık tamamen baskılanması",
+        "İnsülin aracılı vazodilatasyon"
       ],
-      "question": "Bu klinik durumda ilk yapılması gereken en uygun işlem hangisidir?",
-      "questionTitle": "Havayolu kararı",
-      "explanation": "Epiglottit şüphesinde ajitasyon ve agresif boğaz muayenesi tam havayolu obstrüksiyonunu tetikleyebilir. Öncelik güvenli havayolu yönetimidir.",
+      "explanation": "Ayağa kalkınca venöz dönüş ve arteriyel basınç azalır. Karotis sinüs ve aort kavsindeki baroreseptör uyarısı azalınca sempatik tonus artar; kalp hızı ve periferik direnç yükselerek kan basıncı korunmaya çalışılır.",
       "pearls": [
-        "Tripod pozisyonu, salya akması ve toksik görünüm epiglottit açısından alarmdır.",
-        "Boğaz muayenesi havayolu hazırlığı olmadan yapılmamalıdır."
+        "Baroreseptör refleksi saniyeler içinde çalışan hızlı homeostatik mekanizmadır.",
+        "Ortostatik durumda kompansatuvar taşikardi beklenir.",
+        "Yaşlılık, hipovolemi ve ilaçlar bu refleks yanıtı klinik hale getirebilir."
       ],
-      "nextStep": "Havayolunu güvenli ekip ve ortamda sağlamak; çocuğu ajite edecek boğaz muayenesinden kaçınmak",
+      "nextStep": "Ortostatik vital bulguları yorumla, sıvı durumu ve ilaçları değerlendir, düşme riskini azaltacak öneriler ver.",
       "answerFeedback": {
-        "diagnosisMeta": "Acil karar",
-        "shortDiagnosisMeta": "Epiglottit şüphesinde tanısal meraktan önce havayolu güvenliğini önceliklendirmek.",
-        "whyCorrect": "Epiglottit şüphesinde ajitasyon ve agresif boğaz muayenesi tam havayolu obstrüksiyonunu tetikleyebilir. Öncelik güvenli havayolu yönetimidir.",
+        "correctDiagnosis": "Baroreseptör refleksine bağlı sempatik kompansasyon",
+        "diagnosisMeta": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı",
+        "shortDiagnosisMeta": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı",
+        "whyCorrect": "Ayağa kalkınca venöz dönüş ve arteriyel basınç azalır. Karotis sinüs ve aort kavsindeki baroreseptör uyarısı azalınca sempatik tonus artar; kalp hızı ve periferik direnç yükselerek kan basıncı korunmaya çalışılır.",
+        "whyWrong": {
+          "Parasempatik aktivitenin belirgin artışı": "Parasempatik aktivitenin belirgin artışı bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Renin salgısının anlık tamamen baskılanması": "Renin salgısının anlık tamamen baskılanması bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "İnsülin aracılı vazodilatasyon": "İnsülin aracılı vazodilatasyon bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz."
+        },
         "evidenceChain": [
-          "Çocuk yüksek ateş, boğaz ağrısı, yutamama ve salya akmasıyla getirilir. Aile çocuğun oturur pozisyonda daha rahat nefes aldığını belirtir.",
-          "Çocuk toksik görünür ve tripod pozisyonunda oturur.",
-          "Salya akması belirgindir; yutkunmakta zorlanır."
+          "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı",
+          "Öğrenci ortostatik durumda baroreseptör refleksinin kalp hızı ve damar tonusu üzerindeki etkisini açıklar."
         ],
-        "pearls": [
-          "Tripod pozisyonu, salya akması ve toksik görünüm epiglottit açısından alarmdır.",
-          "Boğaz muayenesi havayolu hazırlığı olmadan yapılmamalıdır."
+        "clinicalPearls": [
+          "Baroreseptör refleksi saniyeler içinde çalışan hızlı homeostatik mekanizmadır.",
+          "Ortostatik durumda kompansatuvar taşikardi beklenir.",
+          "Yaşlılık, hipovolemi ve ilaçlar bu refleks yanıtı klinik hale getirebilir."
         ],
-        "management": [
-          "Havayolunu güvenli ekip ve ortamda sağlamak; çocuğu ajite edecek boğaz muayenesinden kaçınmak",
-          "Epiglottit şüphesinde tanısal meraktan önce havayolu güvenliğini önceliklendirmek."
+        "managementSteps": [
+          "Ortostatik vital bulguları yorumla, sıvı durumu ve ilaçları değerlendir, düşme riskini azaltacak öneriler ver."
         ],
-        "learningOutcome": "Epiglottit şüphesinde tanısal meraktan önce havayolu güvenliğini önceliklendirmek.",
-        "differentials": {
-          "Dil basacağıyla agresif farinks muayenesi yapmak": {
-            "explanation": "Dil basacağıyla agresif farinks muayenesi yapmak bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Havayolunu güvenli ekip ve ortamda sağlamak; çocuğu ajite edecek boğaz muayenesinden kaçınmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+        "differentialComparison": {
+          "Parasempatik aktivitenin belirgin artışı": {
+            "explanation": "Parasempatik aktivitenin belirgin artışı bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           },
-          "Aileye evde takip önerip taburcu etmek": {
-            "explanation": "Aileye evde takip önerip taburcu etmek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Havayolunu güvenli ekip ve ortamda sağlamak; çocuğu ajite edecek boğaz muayenesinden kaçınmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Renin salgısının anlık tamamen baskılanması": {
+            "explanation": "Renin salgısının anlık tamamen baskılanması bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           },
-          "Önce oral gıda alımını denetmek": {
-            "explanation": "Önce oral gıda alımını denetmek bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası Havayolunu güvenli ekip ve ortamda sağlamak; çocuğu ajite edecek boğaz muayenesinden kaçınmak seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "İnsülin aracılı vazodilatasyon": {
+            "explanation": "İnsülin aracılı vazodilatasyon bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           }
         }
       }
     }
   },
   {
-    "id": "quick-anaphylaxis-adrenaline-001",
-    "branchId": "quick-case",
-    "caseType": "quick",
-    "quickCategory": "Acil karar",
-    "title": "Çoklu sistem tutulumu olan alerjik reaksiyonda ilk tedavi",
-    "difficulty": "Hızlı · Acil karar",
-    "clinicalFocus": "Anafilaksi bulgularını tanıyıp ilk tedavi olarak IM adrenalini seçmek.",
-    "demographics": "36 yaşında erkek",
-    "setting": "Acil servis",
-    "chiefComplaint": "Arı sokması sonrası nefes darlığı ve baygınlık hissi",
-    "stem": "Hasta arı sokmasından 10 dakika sonra yaygın kaşıntı, dudak şişliği, nefes darlığı ve baygınlık hissi geliştirir.",
+    "id": "histology-embryology-thyroglossal-duct-cyst-001",
+    "branchId": "histology-embryology",
+    "title": "Dil çıkarınca hareket eden orta hat boyun kitlesi",
+    "difficulty": "Temel-orta · Embriyoloji",
+    "clinicalFocus": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı",
+    "learningOutcome": "Öğrenci tiroglossal kanal kistini embriyolojik köken ve fizik muayene bulgularıyla tanır.",
+    "demographics": "9 yaşında erkek çocuk",
+    "setting": "Çocuk cerrahisi polikliniği",
+    "chiefComplaint": "Boyun ön orta hatta şişlik",
+    "stem": "Aile, çocuğun boyun ön orta hattında son aylarda fark edilen, zaman zaman büyüyen ağrısız bir şişlik olduğunu belirtir. Üst solunum yolu enfeksiyonlarından sonra belirginleştiği öğrenilir.",
     "vitals": {
-      "TA": "82/50 mmHg",
-      "Nabız": "128/dk",
-      "Solunum": "28/dk",
-      "SpO2": "%91",
+      "TA": "100/62 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%99",
+      "Ateş": "36.7 °C"
+    },
+    "exam": [
+      "Genel durum iyi; çocuk aktif, bilinç açık ve koopere.",
+      "Hyoid kemik komşuluğunda orta hatta düzgün sınırlı, yumuşak kıvamlı kitle palpe ediliyor.",
+      "Kitle yutkunma ve dil protrüzyonu ile yukarı doğru hareket ediyor.",
+      "Ciltte kızarıklık, ısı artışı veya fluktuasyon belirgin değil.",
+      "Servikal lenfadenopati saptanmıyor."
+    ],
+    "investigations": [
+      {
+        "id": "neck-ultrasound",
+        "label": "Boyun ultrasonografisi",
+        "type": "ultrasound",
+        "priority": "useful",
+        "summary": "Orta hatta hyoid komşuluğunda ince duvarlı kistik lezyon izleniyor; tiroid dokusu normal yerleşiminde görülüyor.",
+        "findings": [
+          "Normal tiroid dokusunun yerinde izlenmesi cerrahi planlama öncesinde önemlidir."
+        ],
+        "rows": [
+          [
+            "Boyun ultrasonografisi",
+            "Hyoid komşuluğunda orta hat kistik lezyon",
+            "Kistik lezyon yok",
+            "Tanıyı destekler"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "diagnosis": {
+      "correct": "Tiroglossal kanal kisti",
+      "options": [
+        "Tiroglossal kanal kisti",
+        "Brankial yarık kisti",
+        "Dermoid kist",
+        "Reaktif servikal lenfadenit"
+      ],
+      "explanation": "Tiroid bezi foramen çekumdan aşağı inerken tiroglossal kanal geriler. Kanal kalıntısı orta hatta, hyoid komşuluğunda, yutkunma ve dil çıkarma ile hareket eden kistik kitle oluşturur.",
+      "pearls": [
+        "Tiroglossal kanal kisti orta hattadır ve dil protrüzyonu ile hareket eder.",
+        "Brankial yarık kisti genellikle lateral boyun kitlesidir.",
+        "Cerrahi öncesi normal tiroid dokusunun yerinde olduğu gösterilmelidir."
+      ],
+      "nextStep": "Enfeksiyon yoksa elektif cerrahi değerlendirme ve Sistrunk prosedürü açısından yönlendirme planla.",
+      "answerFeedback": {
+        "correctDiagnosis": "Tiroglossal kanal kisti",
+        "diagnosisMeta": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı",
+        "shortDiagnosisMeta": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı",
+        "whyCorrect": "Tiroid bezi foramen çekumdan aşağı inerken tiroglossal kanal geriler. Kanal kalıntısı orta hatta, hyoid komşuluğunda, yutkunma ve dil çıkarma ile hareket eden kistik kitle oluşturur.",
+        "whyWrong": {
+          "Brankial yarık kisti": "Brankial yarık kisti bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Dermoid kist": "Dermoid kist bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Reaktif servikal lenfadenit": "Reaktif servikal lenfadenit bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz."
+        },
+        "evidenceChain": [
+          "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı",
+          "Öğrenci tiroglossal kanal kistini embriyolojik köken ve fizik muayene bulgularıyla tanır."
+        ],
+        "clinicalPearls": [
+          "Tiroglossal kanal kisti orta hattadır ve dil protrüzyonu ile hareket eder.",
+          "Brankial yarık kisti genellikle lateral boyun kitlesidir.",
+          "Cerrahi öncesi normal tiroid dokusunun yerinde olduğu gösterilmelidir."
+        ],
+        "managementSteps": [
+          "Enfeksiyon yoksa elektif cerrahi değerlendirme ve Sistrunk prosedürü açısından yönlendirme planla."
+        ],
+        "differentialComparison": {
+          "Brankial yarık kisti": {
+            "explanation": "Brankial yarık kisti bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
+          },
+          "Dermoid kist": {
+            "explanation": "Dermoid kist bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
+          },
+          "Reaktif servikal lenfadenit": {
+            "explanation": "Reaktif servikal lenfadenit bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "obgyn-ectopic-pregnancy-001",
+    "branchId": "obstetrics-gynecology",
+    "title": "Amenore sonrası tek taraflı pelvik ağrı ve vajinal kanama",
+    "difficulty": "Acil · Kadın Hastalıkları ve Doğum",
+    "clinicalFocus": "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi",
+    "learningOutcome": "Öğrenci erken gebelikte ağrı-kanama tablosunda ektopik gebelik olasılığını ve ilk yönetim önceliğini açıklar.",
+    "demographics": "29 yaşında kadın hasta",
+    "setting": "Acil servis",
+    "chiefComplaint": "Altı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme",
+    "stem": "Hasta son adet tarihine göre yaklaşık 6 haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır.",
+    "vitals": {
+      "TA": "96/62 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "20/dk",
+      "SpO2": "%98",
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Hasta soluk, terli ve anksiyöz görünür.",
-      "Yaygın ürtikeryal plaklar ve dudaklarda anjiyoödem vardır.",
-      "Akciğer oskültasyonunda yaygın wheezing duyulur.",
-      "Periferik nabızlar hızlı ve zayıftır; kapiller dolum gecikmiştir."
+      "Genel durum orta; hasta ağrılı ve hafif soluk görünümde.",
+      "Batında sağ alt kadranda hassasiyet mevcut; yaygın defans belirgin değil.",
+      "Servikal hareketle ağrı tarifleniyor.",
+      "Spekulum muayenesinde az miktarda koyu vajinal kanama izleniyor.",
+      "Omuz ağrısı tariflemiyor; bilinç açık ve koopere."
     ],
-    "investigations": [],
+    "investigations": [
+      {
+        "id": "pregnancy-test-beta-hcg",
+        "label": "Gebelik testi ve beta-hCG",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Serum beta-hCG 2400 mIU/mL saptandı.",
+        "findings": [
+          "Pozitif beta-hCG erken gebelik varlığını gösterir ve ultrason bulgusuyla birlikte yorumlanır."
+        ],
+        "rows": [
+          [
+            "Serum beta-hCG",
+            "2400 mIU/mL",
+            "Negatif veya <5 mIU/mL",
+            "Pozitif"
+          ]
+        ]
+      },
+      {
+        "id": "transvaginal-ultrasound",
+        "label": "Transvajinal ultrasonografi",
+        "type": "ultrasound",
+        "priority": "useful",
+        "summary": "Uterin kavitede intrauterin gebelik kesesi izlenmiyor; sağ adneksiyel bölgede heterojen kitle ve az miktarda serbest sıvı mevcut.",
+        "findings": [
+          "Beta-hCG pozitifliği ile intrauterin kese yokluğu ve adneksiyel kitle ektopik gebelik lehinedir."
+        ],
+        "rows": [
+          [
+            "Transvajinal ultrasonografi",
+            "İntrauterin kese yok; sağ adneksiyel kitle ve az serbest sıvı",
+            "İntrauterin kese izlenmesi",
+            "Ektopik gebelik lehine"
+          ]
+        ]
+      }
+    ],
     "images": [],
     "managementSequence": {
       "enabled": false
     },
-    "questionTitle": "Acil tedavi sorusu",
-    "question": "Bu olguda ilk verilmesi gereken tedavi hangisidir?",
-    "questionType": "management",
     "diagnosis": {
-      "correct": "İntramüsküler adrenalin",
+      "correct": "Ektopik gebelik",
       "options": [
-        "İntramüsküler adrenalin",
-        "Oral antihistaminik ile evde takip",
-        "Geniş spektrumlu antibiyotik",
-        "Acil tromboliz"
+        "Ektopik gebelik",
+        "Basit dismenore",
+        "Akut sistit",
+        "Ovulasyon ağrısı"
       ],
-      "question": "Bu olguda ilk verilmesi gereken tedavi hangisidir?",
-      "questionTitle": "Acil tedavi sorusu",
-      "explanation": "Alerjen maruziyeti sonrası cilt bulgularına solunum ve dolaşım tutulumu eşlik ediyorsa anafilaksi vardır. İlk ve hayat kurtarıcı tedavi intramüsküler adrenalindir.",
+      "explanation": "Adet gecikmesi, pozitif beta-hCG, tek taraflı pelvik ağrı, vajinal kanama ve intrauterin kese yokluğu ektopik gebeliği düşündürür. Hemodinamik durum ve rüptür riski ilk yönetimi belirler.",
       "pearls": [
-        "Anafilakside antihistaminikler adrenalin yerine geçmez.",
-        "Hipotansiyon veya wheezing varlığında IM adrenalin geciktirilmemelidir."
+        "Üreme çağında karın ağrısı olan hastada gebelik mutlaka dışlanmalıdır.",
+        "Pozitif beta-hCG ile uterusta kese görülmemesi ektopik gebelik açısından kritik uyarıdır.",
+        "Hemodinamik instabilite cerrahi yaklaşımı öne çıkarır."
       ],
-      "nextStep": "İntramüsküler adrenalin",
+      "nextStep": "Hemodinamik durumu seri değerlendir, kadın doğum konsültasyonu iste ve rüptür riski açısından acil yönetim planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Acil karar",
-        "shortDiagnosisMeta": "Anafilaksi bulgularını tanıyıp ilk tedavi olarak IM adrenalini seçmek.",
-        "whyCorrect": "Alerjen maruziyeti sonrası cilt bulgularına solunum ve dolaşım tutulumu eşlik ediyorsa anafilaksi vardır. İlk ve hayat kurtarıcı tedavi intramüsküler adrenalindir.",
+        "correctDiagnosis": "Ektopik gebelik",
+        "diagnosisMeta": "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi",
+        "shortDiagnosisMeta": "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi",
+        "whyCorrect": "Adet gecikmesi, pozitif beta-hCG, tek taraflı pelvik ağrı, vajinal kanama ve intrauterin kese yokluğu ektopik gebeliği düşündürür. Hemodinamik durum ve rüptür riski ilk yönetimi belirler.",
+        "whyWrong": {
+          "Basit dismenore": "Basit dismenore bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Akut sistit": "Akut sistit bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Ovulasyon ağrısı": "Ovulasyon ağrısı bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz."
+        },
         "evidenceChain": [
-          "Hasta arı sokmasından 10 dakika sonra yaygın kaşıntı, dudak şişliği, nefes darlığı ve baygınlık hissi geliştirir.",
-          "Hasta soluk, terli ve anksiyöz görünür.",
-          "Yaygın ürtikeryal plaklar ve dudaklarda anjiyoödem vardır."
+          "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi",
+          "Öğrenci erken gebelikte ağrı-kanama tablosunda ektopik gebelik olasılığını ve ilk yönetim önceliğini açıklar."
         ],
-        "pearls": [
-          "Anafilakside antihistaminikler adrenalin yerine geçmez.",
-          "Hipotansiyon veya wheezing varlığında IM adrenalin geciktirilmemelidir."
+        "clinicalPearls": [
+          "Üreme çağında karın ağrısı olan hastada gebelik mutlaka dışlanmalıdır.",
+          "Pozitif beta-hCG ile uterusta kese görülmemesi ektopik gebelik açısından kritik uyarıdır.",
+          "Hemodinamik instabilite cerrahi yaklaşımı öne çıkarır."
         ],
-        "management": [
-          "İntramüsküler adrenalin",
-          "Anafilaksi bulgularını tanıyıp ilk tedavi olarak IM adrenalini seçmek."
+        "managementSteps": [
+          "Hemodinamik durumu seri değerlendir, kadın doğum konsültasyonu iste ve rüptür riski açısından acil yönetim planla."
         ],
-        "learningOutcome": "Anafilaksi bulgularını tanıyıp ilk tedavi olarak IM adrenalini seçmek.",
-        "differentials": {
-          "Oral antihistaminik ile evde takip": {
-            "explanation": "Oral antihistaminik ile evde takip bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası İntramüsküler adrenalin seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+        "differentialComparison": {
+          "Basit dismenore": {
+            "explanation": "Basit dismenore bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           },
-          "Geniş spektrumlu antibiyotik": {
-            "explanation": "Geniş spektrumlu antibiyotik bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası İntramüsküler adrenalin seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Akut sistit": {
+            "explanation": "Akut sistit bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           },
-          "Acil tromboliz": {
-            "explanation": "Acil tromboliz bu kısa olguda güvenli ve öncelikli yaklaşım değildir; temel karar noktası İntramüsküler adrenalin seçeneğini destekler.",
-            "comparisonPoints": [
-              "Öncelik hasta güvenliği ve klinik aciliyet sırasıdır.",
-              "Gereksiz tetkik veya gecikme bu formatta doğru karar değildir."
-            ]
+          "Ovulasyon ağrısı": {
+            "explanation": "Ovulasyon ağrısı bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
+          }
+        }
+      }
+    }
+  },
+  {
+    "id": "pharm-organophosphate-cholinergic-crisis-001",
+    "branchId": "medical-pharmacology",
+    "title": "Pestisit maruziyeti sonrası miyozis, bronkore ve kas fasikülasyonları",
+    "difficulty": "Acil · Tıbbi Farmakoloji",
+    "clinicalFocus": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, muskarinik-nikotinik bulgular ve antidot seçimi",
+    "learningOutcome": "Öğrenci kolinerjik toksidromu tanır ve atropin ile pralidoksim kullanım mantığını açıklar.",
+    "demographics": "42 yaşında erkek hasta",
+    "setting": "Acil servis",
+    "chiefComplaint": "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon",
+    "stem": "Hasta kapalı alanda pestisit uyguladıktan sonra bulantı, terleme, tükürük artışı ve nefes darlığı gelişmesiyle acile getirilir. Üzerinde yoğun kimyasal koku fark edilir.",
+    "vitals": {
+      "TA": "104/68 mmHg",
+      "Nabız": "58/dk",
+      "Solunum": "24/dk",
+      "SpO2": "%92",
+      "Ateş": "36.5 °C"
+    },
+    "exam": [
+      "Genel durum orta-kötü; hasta terli ve sekresyonları artmış görünümde.",
+      "Pupiller bilateral miyotik.",
+      "Ağız ve solunum yolu sekresyonlarında belirgin artış mevcut.",
+      "Akciğer oskültasyonunda yaygın ronküs ve sekresyon sesleri duyuluyor.",
+      "Ekstremitelerde ince fasikülasyonlar izleniyor."
+    ],
+    "investigations": [
+      {
+        "id": "cholinesterase-level",
+        "label": "Kolinesteraz aktivitesi",
+        "type": "lab",
+        "priority": "useful",
+        "summary": "Eritrosit asetilkolinesteraz aktivitesi belirgin düşük saptandı.",
+        "findings": [
+          "Düşük kolinesteraz aktivitesi organofosfat maruziyetini destekler; tedavi klinik şüpheyle geciktirilmez."
+        ],
+        "rows": [
+          [
+            "Eritrosit asetilkolinesteraz",
+            "Belirgin düşük",
+            "Referans aralıkta",
+            "Toksidromu destekler"
+          ]
+        ]
+      }
+    ],
+    "images": [],
+    "managementSequence": {
+      "enabled": false
+    },
+    "diagnosis": {
+      "correct": "Organofosfat zehirlenmesi; atropin ve pralidoksim tedavisi",
+      "options": [
+        "Organofosfat zehirlenmesi; atropin ve pralidoksim tedavisi",
+        "Opioid zehirlenmesi; nalokson tedavisi",
+        "Siyanür zehirlenmesi; hidroksokobalamin tedavisi",
+        "Beta bloker zehirlenmesi; glukagon tedavisi"
+      ],
+      "explanation": "Organofosfatlar asetilkolinesterazı inhibe ederek muskarinik, nikotinik ve santral kolinerjik bulgular oluşturur. Sekresyon, bronkore ve bronkospazm için atropin; enzim reaktivasyonu için pralidoksim kullanılır.",
+      "pearls": [
+        "Miyozis, bronkore, bradikardi ve fasikülasyon kolinerjik toksidromu düşündürür.",
+        "Atropin özellikle muskarinik sekresyonları kontrol eder.",
+        "Pralidoksim nikotinik bulgular ve enzim reaktivasyonu için erken dönemde değerlidir."
+      ],
+      "nextStep": "Dekontaminasyon güvenliğini sağla, havayolu/oksijenizasyonu destekle, atropin ve pralidoksim tedavisini başlat.",
+      "answerFeedback": {
+        "correctDiagnosis": "Organofosfat zehirlenmesi; atropin ve pralidoksim tedavisi",
+        "diagnosisMeta": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, muskarinik-nikotinik bulgular ve antidot seçimi",
+        "shortDiagnosisMeta": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, muskarinik-nikotinik bulgular ve antidot seçimi",
+        "whyCorrect": "Organofosfatlar asetilkolinesterazı inhibe ederek muskarinik, nikotinik ve santral kolinerjik bulgular oluşturur. Sekresyon, bronkore ve bronkospazm için atropin; enzim reaktivasyonu için pralidoksim kullanılır.",
+        "whyWrong": {
+          "Opioid zehirlenmesi; nalokson tedavisi": "Opioid zehirlenmesi; nalokson tedavisi bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Siyanür zehirlenmesi; hidroksokobalamin tedavisi": "Siyanür zehirlenmesi; hidroksokobalamin tedavisi bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+          "Beta bloker zehirlenmesi; glukagon tedavisi": "Beta bloker zehirlenmesi; glukagon tedavisi bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz."
+        },
+        "evidenceChain": [
+          "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, muskarinik-nikotinik bulgular ve antidot seçimi",
+          "Öğrenci kolinerjik toksidromu tanır ve atropin ile pralidoksim kullanım mantığını açıklar."
+        ],
+        "clinicalPearls": [
+          "Miyozis, bronkore, bradikardi ve fasikülasyon kolinerjik toksidromu düşündürür.",
+          "Atropin özellikle muskarinik sekresyonları kontrol eder.",
+          "Pralidoksim nikotinik bulgular ve enzim reaktivasyonu için erken dönemde değerlidir."
+        ],
+        "managementSteps": [
+          "Dekontaminasyon güvenliğini sağla, havayolu/oksijenizasyonu destekle, atropin ve pralidoksim tedavisini başlat."
+        ],
+        "differentialComparison": {
+          "Opioid zehirlenmesi; nalokson tedavisi": {
+            "explanation": "Opioid zehirlenmesi; nalokson tedavisi bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
+          },
+          "Siyanür zehirlenmesi; hidroksokobalamin tedavisi": {
+            "explanation": "Siyanür zehirlenmesi; hidroksokobalamin tedavisi bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
+          },
+          "Beta bloker zehirlenmesi; glukagon tedavisi": {
+            "explanation": "Beta bloker zehirlenmesi; glukagon tedavisi bu olgudaki ana klinik örüntüyü ve karar verdirici bulguyu en iyi açıklamaz.",
+            "comparisonPoints": []
           }
         }
       }

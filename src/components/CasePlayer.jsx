@@ -15,15 +15,12 @@ import {
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { buildInvestigationOrders } from '../utils/investigationOrders.js';
 
-const BASE_SECTION_NAV_ITEMS = [
+const SECTION_NAV_ITEMS = [
   { id: 'case-story', label: 'Öykü', icon: 'ClipboardList' },
   { id: 'case-exam', label: 'Muayene', icon: 'Activity' },
+  { id: 'case-investigations', label: 'Tetkik', icon: 'Search' },
+  { id: 'case-management', label: 'Yönetim', icon: 'Target' },
 ];
-
-const OPTIONAL_SECTION_NAV_ITEMS = {
-  investigations: { id: 'case-investigations', label: 'Tetkik', icon: 'Search' },
-  management: { id: 'case-management', label: 'Yönetim', icon: 'Target' },
-};
 
 const vitalLabels = {
   TA: 'Kan basıncı',
@@ -425,7 +422,7 @@ function CaseNarrative({
   );
 }
 
-function CaseSectionNav({ activeSection, onJump, items }) {
+function CaseSectionNav({ activeSection, onJump, items = SECTION_NAV_ITEMS }) {
   return (
     <nav className="case-section-nav card-surface professional-section-nav" aria-label="Olgu bölüm navigasyonu">
       {items.map((item) => (
@@ -468,7 +465,6 @@ function CasePlayer({
   onPreviousExam,
   onFinishExam,
 }) {
-  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
   const displayFocus = buildNonRevealingFocus(clinicalCase);
   const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
   const storyParts = useMemo(() => buildStoryParts(clinicalCase), [clinicalCase]);
@@ -476,13 +472,18 @@ function CasePlayer({
   const hemodynamicSummary = useMemo(() => buildHemodynamicSummary(clinicalCase.vitals), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
-  const hasInvestigationPanel = investigationOrders.length > 0;
-  const hasManagementPanel = !isQuickCase && clinicalCase.managementSequence?.enabled !== false;
-  const sectionNavItems = useMemo(() => [
-    ...BASE_SECTION_NAV_ITEMS,
-    ...(hasInvestigationPanel ? [OPTIONAL_SECTION_NAV_ITEMS.investigations] : []),
-    ...(hasManagementPanel ? [OPTIONAL_SECTION_NAV_ITEMS.management] : []),
-  ], [hasInvestigationPanel, hasManagementPanel]);
+  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
+  const hasInvestigationOrders = investigationOrders.length > 0;
+  const showInvestigationPanel = !isQuickCase || hasInvestigationOrders;
+  const showManagementPanel = !isQuickCase && clinicalCase.managementSequence?.enabled !== false;
+  const visibleSectionItems = useMemo(() => SECTION_NAV_ITEMS.filter((item) => {
+    if (item.id === 'case-investigations') return showInvestigationPanel;
+    if (item.id === 'case-management') return showManagementPanel;
+    return true;
+  }), [showInvestigationPanel, showManagementPanel]);
+  const heroEyebrow = isQuickCase
+    ? `Hızlı CASE • ${clinicalCase.quickCategory || 'Kısa karar'}`
+    : `${branch.shortName ?? branch.name} • ${toDisplayPhrase(clinicalCase.setting)}`;
   const [orderedInvestigationIds, setOrderedInvestigationIds] = useState([]);
 
   const [highlighted, setHighlighted] = useState({});
@@ -515,7 +516,7 @@ function CasePlayer({
       const offset = getStickyOffset();
       const probeLine = offset + 18;
 
-      const candidates = sectionNavItems
+      const candidates = visibleSectionItems
         .map((item) => {
           const element = sectionRefs[item.id]?.current;
           if (!element) return null;
@@ -556,7 +557,7 @@ function CasePlayer({
       window.removeEventListener('scroll', requestUpdate);
       window.removeEventListener('resize', requestUpdate);
     };
-  }, [clinicalCase.id, sectionRefs, sectionNavItems]);
+  }, [clinicalCase.id, sectionRefs, visibleSectionItems]);
 
   const toggleHighlight = (index) => {
     setHighlighted((current) => {
@@ -592,14 +593,14 @@ function CasePlayer({
   const existingAnswer = examMeta?.answers?.[clinicalCase.id] ?? null;
 
   return (
-    <article className="clinical-case qbank-case" data-branch={branch.id} data-mode={mode} data-hard-mode={hardMode ? 'true' : 'false'} data-case-type={isQuickCase ? 'quick' : 'classic'}>
+    <article className="clinical-case qbank-case" data-branch={branch.id} data-case-type={isQuickCase ? 'quick' : 'standard'} data-mode={mode} data-hard-mode={hardMode ? 'true' : 'false'}>
       <section className="qbank-shell professional-qbank-shell">
         <div className="qbank-main-column expanded-main-column">
-          <CaseSectionNav activeSection={activeSection} onJump={scrollToSection} items={sectionNavItems} />
+          <CaseSectionNav activeSection={activeSection} onJump={scrollToSection} items={visibleSectionItems} />
 
           <section className="case-hero-card card-surface professional-case-hero section-anchor" id="case-story" ref={storyRef} data-section="case-story">
             <div className="case-hero-topline">
-              <span className="case-eyebrow">{branch.shortName ?? branch.name} • {isQuickCase && clinicalCase.quickCategory ? clinicalCase.quickCategory + ' • ' : ''}{toDisplayPhrase(clinicalCase.setting)}</span>
+              <span className="case-eyebrow">{heroEyebrow}</span>
               <div className="qbank-actions">
                 <span className={`case-hero-meta ${difficultyMeta.tone}`}>{difficultyMeta.label} · {difficultyMeta.points}p</span>
                 {!examMeta?.active ? (
@@ -702,7 +703,7 @@ function CasePlayer({
               </div>
             </section>
 
-            {hasInvestigationPanel ? (
+            {showInvestigationPanel ? (
               <section id="case-investigations" className="section-anchor" ref={ordersRef} data-section="case-investigations">
                 <InvestigationPanel
                   clinicalCase={clinicalCase}
@@ -714,7 +715,7 @@ function CasePlayer({
               </section>
             ) : null}
 
-            {hasManagementPanel ? (
+            {showManagementPanel ? (
               <section id="case-management" className="section-anchor" ref={managementRef} data-section="case-management">
                 <ManagementSequencePanel clinicalCase={clinicalCase} mode={examMeta?.active ? 'exam' : mode} hardMode={hardMode} />
               </section>
@@ -729,7 +730,7 @@ function CasePlayer({
             role="region"
             aria-label="Klinik çalışma araçları ve tanı paneli"
           >
-            {!examMeta?.active ? (
+            {!examMeta?.active && !isQuickCase ? (
               <CaseToolsPanel
                 clinicalCase={clinicalCase}
                 tutorMode={tutorMode}

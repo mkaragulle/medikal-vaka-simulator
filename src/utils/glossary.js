@@ -1126,7 +1126,7 @@ export const globalGlossaryTerms = [
       "troponin"
     ],
     "definition": "Miyokart hücre hasarını gösteren kardiyak biyobelirteçtir; akut koroner sendrom değerlendirmesinde kullanılır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1155,7 +1155,7 @@ export const globalGlossaryTerms = [
       "ST yükselmesi"
     ],
     "definition": "EKG’de ST segmentinin izoelektrik hatta göre yükselmesidir; ilgili derivasyon paternine göre akut miyokart iskemisini düşündürebilir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1179,7 +1179,7 @@ export const globalGlossaryTerms = [
       "resiprokal değişiklik"
     ],
     "definition": "ST elevasyonuna karşılık bazı karşı derivasyonlarda ST çökmesi görülmesidir; akut koroner oklüzyon lehine güçlü bir ipucudur.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1197,7 +1197,7 @@ export const globalGlossaryTerms = [
       "reperfüzyon"
     ],
     "definition": "Tıkanmış damar akımının yeniden sağlanmasıdır. STEMI ve akut iskemik inmede zaman kritik bir hedeftir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1219,7 +1219,7 @@ export const globalGlossaryTerms = [
       "fibrinoliz"
     ],
     "definition": "Pıhtının ilaçla çözülmesini hedefleyen reperfüzyon tedavisidir; zaman penceresi ve kontrendikasyonlar önemlidir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1235,7 +1235,7 @@ export const globalGlossaryTerms = [
       "PCI"
     ],
     "definition": "Tıkalı koroner damarın kateter yöntemiyle açılmasını hedefleyen reperfüzyon yaklaşımıdır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1254,7 +1254,7 @@ export const globalGlossaryTerms = [
       "antiagregan"
     ],
     "definition": "Tromboz oluşumunu veya büyümesini azaltan tedavi grubudur; kanama riskiyle birlikte değerlendirilir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1281,7 +1281,7 @@ export const globalGlossaryTerms = [
       "üfürüm"
     ],
     "definition": "Kalp veya damar içindeki türbülan akıma bağlı duyulan ek sestir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1312,7 +1312,7 @@ export const globalGlossaryTerms = [
       "aritmi"
     ],
     "definition": "Kalp ritminin normal düzeninden sapmasıdır; hemodinamik etkisi ritim tipi ve klinik durumla belirlenir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1332,7 +1332,7 @@ export const globalGlossaryTerms = [
       "kontrastsız beyin BT"
     ],
     "definition": "Kontrast madde verilmeden çekilen beyin tomografisidir; akut kanamayı hızlı dışlamak için kullanılır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1356,7 +1356,7 @@ export const globalGlossaryTerms = [
       "MCA"
     ],
     "definition": "Beynin geniş bir lateral bölümünü besleyen ana arterlerden biridir; tıkanıklığı afazi ve hemiparezi yapabilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1374,7 +1374,7 @@ export const globalGlossaryTerms = [
       "oklüzyon"
     ],
     "definition": "Damar lümeninin tıkanmasıdır; ilgili dokuda iskemiye neden olabilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1397,7 +1397,7 @@ export const globalGlossaryTerms = [
       "last known well"
     ],
     "definition": "Hastanın nörolojik olarak en son normal görüldüğü zamandır; reperfüzyon kararında kritik önemdedir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1415,7 +1415,7 @@ export const globalGlossaryTerms = [
       "afazi"
     ],
     "definition": "Dil üretimi veya anlama işlevinde bozulmadır. Dominant hemisfer tutulumu ile ilişkili olabilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1433,7 +1433,7 @@ export const globalGlossaryTerms = [
       "hemipleji"
     ],
     "definition": "Vücudun bir yarısında güç kaybıdır. Fokal nörolojik defisit örüntüsünün önemli bir parçasıdır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1452,7 +1452,7 @@ export const globalGlossaryTerms = [
       "fokal defisit"
     ],
     "definition": "Belirli bir sinir sistemi bölgesinin işlev kaybına bağlı gelişen güçsüzlük, duyu kaybı, konuşma bozukluğu veya görme kaybı gibi bulgulardır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1486,7 +1486,7 @@ export const globalGlossaryTerms = [
       "iskemi"
     ],
     "definition": "Dokuya giden kan akımının azalmasıdır; beyinde kalıcı hasar gelişmeden hızlı değerlendirme gerekir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1518,7 +1518,7 @@ export const globalGlossaryTerms = [
       "beyin kanaması"
     ],
     "definition": "Kafa içi kanamadır; akut nörolojik tabloda görüntüleme ile ayırt edilmesi gerekir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1538,7 +1538,7 @@ export const globalGlossaryTerms = [
       "MCA oklüzyonu"
     ],
     "definition": "Beyni besleyen büyük arterlerden birinin tıkanmasıdır; mekanik trombektomi kararını etkileyebilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1556,7 +1556,7 @@ export const globalGlossaryTerms = [
       "tromboliz"
     ],
     "definition": "Pıhtıyı eritmeye yönelik ilaç tedavisidir; uygun hasta ve zaman penceresinde değerlendirilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1577,7 +1577,7 @@ export const globalGlossaryTerms = [
       "trombektomi"
     ],
     "definition": "Büyük damar tıkanıklığında pıhtının endovasküler yöntemle çıkarılmasıdır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1595,7 +1595,7 @@ export const globalGlossaryTerms = [
       "ense sertliği"
     ],
     "definition": "Menenkslerin irritasyonunu düşündüren ense sertliği ve benzeri muayene bulgularıdır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1629,7 +1629,7 @@ export const globalGlossaryTerms = [
       "pnömotoraks"
     ],
     "definition": "Plevra boşluğuna hava girmesiyle akciğerin kısmen veya tamamen sönmesidir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1655,7 +1655,7 @@ export const globalGlossaryTerms = [
       "ral"
     ],
     "definition": "Akciğer oskültasyonunda duyulan, sıvı veya alveoler açılma ile ilişkili ek solunum sesleridir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1689,7 +1689,7 @@ export const globalGlossaryTerms = [
       "dispne"
     ],
     "definition": "Hastanın solunumda zorlanma veya hava açlığı hissetmesidir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1720,7 +1720,7 @@ export const globalGlossaryTerms = [
       "konsolidasyon"
     ],
     "definition": "Akciğer dokusunda hava yerine sıvı, hücre veya eksüda birikimiyle oluşan yoğunlaşma görünümüdür.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1741,7 +1741,7 @@ export const globalGlossaryTerms = [
       "V/Q"
     ],
     "definition": "Akciğerde hava dağılımı ile kan akımının uyumunu ifade eder; emboli ve gaz değişimi bozukluklarında önemlidir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [],
@@ -1754,7 +1754,7 @@ export const globalGlossaryTerms = [
       "efüzyon"
     ],
     "definition": "Plevra boşluğunda sıvı birikimidir; enfeksiyon, kalp yetmezliği veya malignite ile ilişkili olabilir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1775,7 +1775,7 @@ export const globalGlossaryTerms = [
       "PCT"
     ],
     "definition": "Bakteriyel enfeksiyon ve sepsis değerlendirmesinde yardımcı olabilen biyobelirteçtir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1794,7 +1794,7 @@ export const globalGlossaryTerms = [
       "kültür"
     ],
     "definition": "Mikroorganizmayı üretip tanımlamak için yapılan mikrobiyolojik incelemedir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1821,7 +1821,7 @@ export const globalGlossaryTerms = [
       "kan kültürü"
     ],
     "definition": "Kandaki mikroorganizmayı saptamak için alınan kültür örneğidir; antibiyotik seçimini yönlendirebilir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -1843,7 +1843,7 @@ export const globalGlossaryTerms = [
       "kaynak kontrolü"
     ],
     "definition": "Enfeksiyon odağının drenaj, cerrahi veya girişimsel yöntemlerle kontrol altına alınmasıdır.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2159,7 +2159,7 @@ export const globalGlossaryTerms = [
       "redüksiyon"
     ],
     "definition": "Çıkık veya kırık parçalarının anatomik pozisyona getirilmesidir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2180,7 +2180,7 @@ export const globalGlossaryTerms = [
       "distal nabız"
     ],
     "definition": "Travma sonrası damar ve sinir bütünlüğünü değerlendiren muayenedir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2197,7 +2197,7 @@ export const globalGlossaryTerms = [
       "deplase"
     ],
     "definition": "Kırık parçalarının normal anatomik yerinden kaymasıdır.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Kullanımda",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2215,7 +2215,7 @@ export const globalGlossaryTerms = [
       "Akut koroner sendrom"
     ],
     "definition": "Göğüs ağrısı, EKG ve biyobelirteçlerle değerlendirilen miyokart iskemisi spektrumudur.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2236,7 +2236,7 @@ export const globalGlossaryTerms = [
       "STEMI"
     ],
     "definition": "ST elevasyonlu miyokart enfarktüsünü ifade eder; akut koroner oklüzyon ve reperfüzyon gereksinimi açısından kritik tanıdır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2254,7 +2254,7 @@ export const globalGlossaryTerms = [
       "NSTEMI"
     ],
     "definition": "ST elevasyonu olmadan miyokart hasarı biyobelirteç yüksekliğiyle seyreden akut koroner sendrom tipidir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2270,7 +2270,7 @@ export const globalGlossaryTerms = [
       "ST segment elevasyonu"
     ],
     "definition": "EKG’de ardışık derivasyonlarda görülürse akut transmural iskemi ve koroner oklüzyon lehinedir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2286,7 +2286,7 @@ export const globalGlossaryTerms = [
       "CK-MB"
     ],
     "definition": "Miyokart hasarında yükselebilen kardiyak enzimdir; troponine göre daha az duyarlı/özgül kabul edilir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2303,7 +2303,7 @@ export const globalGlossaryTerms = [
       "Primer perkütan koroner girişim"
     ],
     "definition": "STEMI’de tıkalı koroner damarı mekanik olarak açmaya yönelik öncelikli reperfüzyon yöntemidir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2319,7 +2319,7 @@ export const globalGlossaryTerms = [
       "Fibrinolitik tedavi"
     ],
     "definition": "Uygun STEMI olgusunda primer girişime zamanında ulaşılamıyorsa pıhtıyı eritmek için kullanılan tedavidir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2333,7 +2333,7 @@ export const globalGlossaryTerms = [
       "P2Y12 inhibitörü"
     ],
     "definition": "Trombosit aktivasyonunu azaltan antiplatelet ilaç grubudur; akut koroner sendrom yönetiminde kullanılır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2349,7 +2349,7 @@ export const globalGlossaryTerms = [
       "Antikoagülasyon"
     ],
     "definition": "Pıhtı oluşumunu veya ilerlemesini azaltan tedavi yaklaşımıdır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2373,7 +2373,7 @@ export const globalGlossaryTerms = [
       "Nitrat"
     ],
     "definition": "Vazodilatasyon sağlayarak iskemi ilişkili ağrıyı azaltabilen ilaç grubudur; hipotansiyon gibi durumlarda dikkat gerekir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2389,7 +2389,7 @@ export const globalGlossaryTerms = [
       "Akut aort sendromu"
     ],
     "definition": "Aort diseksiyonu, intramural hematom ve penetran ülseri içeren acil aort patolojileri grubudur.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2405,7 +2405,7 @@ export const globalGlossaryTerms = [
       "Stanford tip A diseksiyon"
     ],
     "definition": "Asendan aortu tutan aort diseksiyonudur; genellikle acil cerrahi gerektirir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2419,7 +2419,7 @@ export const globalGlossaryTerms = [
       "İntimal flap"
     ],
     "definition": "Aort diseksiyonunda lümeni ayıran iç tabaka yırtığına bağlı görüntüleme bulgusudur.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2435,7 +2435,7 @@ export const globalGlossaryTerms = [
       "Gerçek lümen"
     ],
     "definition": "Diseksiyonda normal damar lümeninin devamını ifade eder.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2449,7 +2449,7 @@ export const globalGlossaryTerms = [
       "Yalancı lümen"
     ],
     "definition": "Diseksiyon yırtığı sonrası damar duvarı katları arasında oluşan patolojik kan kanalıdır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2465,7 +2465,7 @@ export const globalGlossaryTerms = [
       "BT anjiyografi"
     ],
     "definition": "Damar yapılarının kontrastlı BT ile değerlendirilmesidir; diseksiyon, emboli ve oklüzyonlarda kullanılır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2488,7 +2488,7 @@ export const globalGlossaryTerms = [
       "Nabız asimetrisi"
     ],
     "definition": "Ekstremiteler arasında nabız gücü farkıdır; diseksiyon veya damar tıkanıklığı düşündürebilir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2505,7 +2505,7 @@ export const globalGlossaryTerms = [
       "Aort yetmezliği"
     ],
     "definition": "Aort kapağından diyastolde geri kaçış olmasıdır; tip A diseksiyonda gelişebilir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2521,7 +2521,7 @@ export const globalGlossaryTerms = [
       "Kardiyak tamponad"
     ],
     "definition": "Perikard boşluğundaki basınç artışı nedeniyle kalp doluşunun bozulduğu hayatı tehdit eden tablodur.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2537,7 +2537,7 @@ export const globalGlossaryTerms = [
       "Beck triadı"
     ],
     "definition": "Hipotansiyon, juguler venöz dolgunluk ve kalp seslerinde derinden gelme bulgularından oluşan tamponad ipucudur.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2551,7 +2551,7 @@ export const globalGlossaryTerms = [
       "Pulsus paradoksus"
     ],
     "definition": "İnspirasyonla sistolik kan basıncında belirgin düşüş olmasıdır; tamponad gibi durumlarda görülebilir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2565,7 +2565,7 @@ export const globalGlossaryTerms = [
       "Perikardiyosentez"
     ],
     "definition": "Perikard boşluğundaki sıvının iğne/kateterle boşaltılmasıdır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2581,7 +2581,7 @@ export const globalGlossaryTerms = [
       "Kardiyojenik pulmoner ödem"
     ],
     "definition": "Sol kalp basınç artışına bağlı alveol/interstisyel sıvı birikimiyle gelişen akut solunum tablosudur.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2600,7 +2600,7 @@ export const globalGlossaryTerms = [
       "Ortopne"
     ],
     "definition": "Yatar pozisyonda artan nefes darlığıdır; kalp yetersizliği için önemli klinik ipucudur.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2616,7 +2616,7 @@ export const globalGlossaryTerms = [
       "Ejeksiyon fraksiyonu"
     ],
     "definition": "Sol ventrikülün her atımda pompaladığı kan yüzdesidir; kalp yetersizliği sınıflamasında kullanılır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2630,7 +2630,7 @@ export const globalGlossaryTerms = [
       "Hipertrofik obstrüktif kardiyomiyopati"
     ],
     "definition": "Sol ventrikül çıkış yolu obstrüksiyonu ve septal hipertrofiyle seyreden kardiyomiyopatidir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2646,7 +2646,7 @@ export const globalGlossaryTerms = [
       "LVOT obstrüksiyonu"
     ],
     "definition": "Sol ventrikül çıkış yolunda dinamik veya sabit darlık oluşmasıdır.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -2660,7 +2660,7 @@ export const globalGlossaryTerms = [
       "Valsalva manevrası"
     ],
     "definition": "İntratorasik basıncı artıran manevradır; bazı üfürümlerin şiddetini değiştirmede tanısal ipucu verir.",
-    "category": "Kardiyovasküler Tıp",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3034,7 +3034,7 @@ export const globalGlossaryTerms = [
       "Akut iskemik inme"
     ],
     "definition": "Beyin damar tıkanıklığına bağlı ani nörolojik defisit gelişmesidir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3050,7 +3050,7 @@ export const globalGlossaryTerms = [
       "NIHSS"
     ],
     "definition": "Akut inmede nörolojik defisit şiddetini sayısal olarak değerlendiren skaladır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3064,7 +3064,7 @@ export const globalGlossaryTerms = [
       "Nonkontrast kraniyal BT"
     ],
     "definition": "Akut inmede kanamayı dışlamak için ilk kullanılan görüntüleme yöntemidir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3078,7 +3078,7 @@ export const globalGlossaryTerms = [
       "ASPECTS"
     ],
     "definition": "Ön dolaşım inmesinde erken iskemi bulgularını sınıflayan BT skorudur.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3092,7 +3092,7 @@ export const globalGlossaryTerms = [
       "Subaraknoid kanama"
     ],
     "definition": "Subaraknoid aralığa kanama olmasıdır; ani en şiddetli baş ağrısıyla gelebilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3109,7 +3109,7 @@ export const globalGlossaryTerms = [
       "Thunderclap baş ağrısı"
     ],
     "definition": "Saniyeler-dakikalar içinde maksimum şiddete ulaşan baş ağrısıdır; SAK açısından kırmızı bayraktır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3126,7 +3126,7 @@ export const globalGlossaryTerms = [
       "Lomber ponksiyon"
     ],
     "definition": "BOS örneği almak için yapılan işlemdir; menenjit ve SAK değerlendirmesinde kullanılır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3142,7 +3142,7 @@ export const globalGlossaryTerms = [
       "Ksantokromi"
     ],
     "definition": "BOS’ta sarımsı renk değişikliğidir; subaraknoid kanama sonrası görülebilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3158,7 +3158,7 @@ export const globalGlossaryTerms = [
       "Nimodipin"
     ],
     "definition": "Subaraknoid kanamada vazospazm riskini azaltmak için kullanılan kalsiyum kanal blokörüdür.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3172,7 +3172,7 @@ export const globalGlossaryTerms = [
       "Multipl skleroz"
     ],
     "definition": "Santral sinir sisteminde inflamatuvar demiyelinizasyonla seyreden kronik hastalıktır.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3188,7 +3188,7 @@ export const globalGlossaryTerms = [
       "Optik nörit"
     ],
     "definition": "Optik sinir inflamasyonudur; ağrılı görme kaybı ve MS ile ilişkili olabilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3204,7 +3204,7 @@ export const globalGlossaryTerms = [
       "Demiyelinizan plak"
     ],
     "definition": "Miyelin kaybına bağlı MR lezyonudur; MS değerlendirmesinde önemlidir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3218,7 +3218,7 @@ export const globalGlossaryTerms = [
       "Oligoklonal band"
     ],
     "definition": "BOS’ta intratekal immün aktivasyonu gösteren bantlardır; MS tanısına destek verir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3232,7 +3232,7 @@ export const globalGlossaryTerms = [
       "Serebral venöz sinüs trombozu"
     ],
     "definition": "Beynin venöz sinüslerinde pıhtı gelişmesidir; baş ağrısı, nöbet ve fokal defisit yapabilir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3249,7 +3249,7 @@ export const globalGlossaryTerms = [
       "MR venografi"
     ],
     "definition": "Venöz sinüslerin MR ile değerlendirilmesini sağlayan görüntüleme yöntemidir.",
-    "category": "Nörolojik Bilimler",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3634,7 +3634,7 @@ export const globalGlossaryTerms = [
       "Primer spontan pnömotoraks"
     ],
     "definition": "Altta belirgin akciğer hastalığı olmadan plevra boşluğuna hava kaçmasıdır; genç uzun erkeklerde görülebilir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3651,7 +3651,7 @@ export const globalGlossaryTerms = [
       "Plevral çizgi"
     ],
     "definition": "Akciğer grafisinde pnömotoraksı gösteren visseral plevra hattıdır.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3669,7 +3669,7 @@ export const globalGlossaryTerms = [
       "Toraks tüpü"
     ],
     "definition": "Plevral boşluktaki hava veya sıvıyı boşaltmak için yerleştirilen tüptür.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [],
@@ -3681,7 +3681,7 @@ export const globalGlossaryTerms = [
       "İğne dekompresyon"
     ],
     "definition": "Tansiyon pnömotoraksta acil basınç azaltma girişimidir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [],
@@ -3693,7 +3693,7 @@ export const globalGlossaryTerms = [
       "Akut pulmoner emboli"
     ],
     "definition": "Pulmoner arter dallarının trombüsle tıkanmasıdır; ani dispne ve plöritik ağrı yapabilir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3709,7 +3709,7 @@ export const globalGlossaryTerms = [
       "Wells skoru"
     ],
     "definition": "Pulmoner emboli olasılığını klinik olarak sınıflayan skordur.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [],
@@ -3721,7 +3721,7 @@ export const globalGlossaryTerms = [
       "CTPA"
     ],
     "definition": "BT pulmoner anjiyografi; pulmoner emboli tanısında sık kullanılan görüntülemedir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3737,7 +3737,7 @@ export const globalGlossaryTerms = [
       "V/Q sintigrafisi"
     ],
     "definition": "Ventilasyon ve perfüzyon dağılımını karşılaştıran nükleer tıp incelemesidir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [],
@@ -3749,7 +3749,7 @@ export const globalGlossaryTerms = [
       "Toplum kökenli pnömoni"
     ],
     "definition": "Hastane dışında gelişen akciğer parankim enfeksiyonudur.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3768,7 +3768,7 @@ export const globalGlossaryTerms = [
       "CURB-65"
     ],
     "definition": "Pnömonide yatış ve mortalite riskini değerlendiren klinik skordur.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3784,7 +3784,7 @@ export const globalGlossaryTerms = [
       "İdiyopatik pulmoner fibrozis"
     ],
     "definition": "Nedeni bilinmeyen ilerleyici fibrotik interstisyel akciğer hastalığıdır.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3800,7 +3800,7 @@ export const globalGlossaryTerms = [
       "Bal peteği görünümü"
     ],
     "definition": "İleri fibroziste HRCT’de görülen kistik subplevral paternidir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3816,7 +3816,7 @@ export const globalGlossaryTerms = [
       "Restriktif patern"
     ],
     "definition": "Akciğer hacimlerinde azalmayla giden solunum fonksiyon testi örüntüsüdür.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [],
@@ -3828,7 +3828,7 @@ export const globalGlossaryTerms = [
       "DLCO"
     ],
     "definition": "Karbonmonoksit difüzyon kapasitesidir; gaz alışverişi ve interstisyel hastalık değerlendirmesinde kullanılır.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3844,7 +3844,7 @@ export const globalGlossaryTerms = [
       "KOAH alevlenmesi"
     ],
     "definition": "KOAH hastasında dispne, balgam miktarı/pürülansı ve öksürüğün akut kötüleşmesidir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3861,7 +3861,7 @@ export const globalGlossaryTerms = [
       "Hiperkapni"
     ],
     "definition": "Kanda karbondioksit düzeyinin artmasıdır; ventilasyon yetmezliğini gösterir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [],
@@ -3873,7 +3873,7 @@ export const globalGlossaryTerms = [
       "Noninvaziv ventilasyon"
     ],
     "definition": "Entübasyon olmadan maske aracılığıyla ventilasyon desteği verilmesidir.",
-    "category": "Göğüs Hastalıkları",
+    "category": "İç Hastalıkları",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3891,7 +3891,7 @@ export const globalGlossaryTerms = [
       "Reaktivasyon tüberkülozu"
     ],
     "definition": "Daha önce alınmış tüberküloz enfeksiyonunun yeniden aktifleşmesiyle gelişen tabloyu ifade eder.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3908,7 +3908,7 @@ export const globalGlossaryTerms = [
       "ARB"
     ],
     "definition": "Aside dirençli basil boyamasıdır; tüberküloz tanısında kullanılır.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3925,7 +3925,7 @@ export const globalGlossaryTerms = [
       "Kaviter lezyon"
     ],
     "definition": "Akciğerde içi boşluklu lezyondur; reaktivasyon TB gibi hastalıklarda görülebilir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3943,7 +3943,7 @@ export const globalGlossaryTerms = [
       "Plasmodium falciparum"
     ],
     "definition": "Ağır sıtmaya yol açabilen Plasmodium türüdür.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3959,7 +3959,7 @@ export const globalGlossaryTerms = [
       "Kalın damla"
     ],
     "definition": "Sıtma parazitlerinin saptanmasında kullanılan mikroskobik kan yayması yöntemidir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3975,7 +3975,7 @@ export const globalGlossaryTerms = [
       "İnce yayma"
     ],
     "definition": "Sıtma tür ayrımı ve parazitemi değerlendirmesinde kullanılan kan yaymasıdır.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -3991,7 +3991,7 @@ export const globalGlossaryTerms = [
       "Meningokoksemi"
     ],
     "definition": "Neisseria meningitidis’in kana yayılmasıyla gelişen sepsis tablosudur.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4007,7 +4007,7 @@ export const globalGlossaryTerms = [
       "Peteşi"
     ],
     "definition": "Basmakla solmayan küçük noktasal kanama odağıdır.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4029,7 +4029,7 @@ export const globalGlossaryTerms = [
       "Purpura"
     ],
     "definition": "Deri veya mukozada daha geniş kanama odaklarıdır; meningokoksemi gibi acillerde görülebilir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4047,7 +4047,7 @@ export const globalGlossaryTerms = [
       "BOS"
     ],
     "definition": "Beyin omurilik sıvısıdır; menenjit ve SAK değerlendirmesinde incelenir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4068,7 +4068,7 @@ export const globalGlossaryTerms = [
       "Seftriakson"
     ],
     "definition": "Geniş spektrumlu üçüncü kuşak sefalosporindir; menenjit ve sepsis tedavisinde kullanılabilir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4086,7 +4086,7 @@ export const globalGlossaryTerms = [
       "İnfektif endokardit"
     ],
     "definition": "Kalp kapakları veya endokard yüzeyinin mikrobiyal enfeksiyonudur.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4100,7 +4100,7 @@ export const globalGlossaryTerms = [
       "Vejetasyon"
     ],
     "definition": "Endokarditte kapak üzerinde oluşan mikroorganizma, fibrin ve hücrelerden oluşan kitlelerdir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4116,7 +4116,7 @@ export const globalGlossaryTerms = [
       "Duke kriterleri"
     ],
     "definition": "İnfektif endokardit tanısında kullanılan majör/minör kriterlerdir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4132,7 +4132,7 @@ export const globalGlossaryTerms = [
       "Triküspit kapak"
     ],
     "definition": "Sağ atriyum ile sağ ventrikül arasındaki kapaktır; IV madde kullanımında endokardit tutulumu görülebilir.",
-    "category": "Enfeksiyon Hastalıkları",
+    "category": "Tıbbi Mikrobiyoloji",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4146,7 +4146,7 @@ export const globalGlossaryTerms = [
       "Colles kırığı"
     ],
     "definition": "Distal radiusun dorsal angulasyon/deplasmanla kırılmasıdır; çatal sırtı deformitesi yapabilir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4162,7 +4162,7 @@ export const globalGlossaryTerms = [
       "Distal radius kırığı"
     ],
     "definition": "El bileğine yakın radius kırığıdır; düşme sonrası sık görülür.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4179,7 +4179,7 @@ export const globalGlossaryTerms = [
       "Çatal sırtı deformitesi"
     ],
     "definition": "Colles kırığında el bileğinde görülen tipik dorsal deformitedir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4195,7 +4195,7 @@ export const globalGlossaryTerms = [
       "Femur boyun kırığı"
     ],
     "definition": "Femur başı ile trokanterik bölge arasındaki boyun kısmında kırık oluşmasıdır.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4211,7 +4211,7 @@ export const globalGlossaryTerms = [
       "İntrakapsüler kırık"
     ],
     "definition": "Eklem kapsülü içinde yer alan kırığı ifade eder; femur boynunda avasküler nekroz riski önemlidir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4227,7 +4227,7 @@ export const globalGlossaryTerms = [
       "Avasküler nekroz"
     ],
     "definition": "Kemik dokusunun kanlanma bozukluğuna bağlı nekrozudur.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4244,7 +4244,7 @@ export const globalGlossaryTerms = [
       "Hemiartroplasti"
     ],
     "definition": "Eklem yüzeyinin bir kısmının protezle değiştirilmesidir; bazı femur boyun kırıklarında kullanılır.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4258,7 +4258,7 @@ export const globalGlossaryTerms = [
       "Skafoid kırığı"
     ],
     "definition": "El bileği skafoid kemiğinin kırığıdır; anatomik enfiye çukuru hassasiyeti tipiktir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4275,7 +4275,7 @@ export const globalGlossaryTerms = [
       "Anatomik enfiye çukuru"
     ],
     "definition": "Skafoid üzerinde yer alan palpasyon alanıdır; hassasiyeti skafoid kırığını düşündürür.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4291,7 +4291,7 @@ export const globalGlossaryTerms = [
       "Başparmak spika ateli"
     ],
     "definition": "Skafoid kırığı şüphesinde başparmağı ve el bileğini immobilize eden ateldir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4305,7 +4305,7 @@ export const globalGlossaryTerms = [
       "Glenohumeral çıkık"
     ],
     "definition": "Humerus başının glenoid kaviteden çıkmasıdır; anterior çıkık en sık formdur.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4321,7 +4321,7 @@ export const globalGlossaryTerms = [
       "Aksiller sinir"
     ],
     "definition": "Omuz çıkığında yaralanma riski olan sinirdir; deltoid duyu ve motor fonksiyonla değerlendirilir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4337,7 +4337,7 @@ export const globalGlossaryTerms = [
       "Kapalı redüksiyon"
     ],
     "definition": "Cerrahi kesi olmadan çıkık veya kırığın anatomik yerine getirilmesidir.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -4354,7 +4354,7 @@ export const globalGlossaryTerms = [
       "İmmobilizasyon"
     ],
     "definition": "Yaralı bölgenin hareketini kısıtlayarak iyileşmeyi destekleyen uygulamadır.",
-    "category": "Ortopedi ve Travmatoloji",
+    "category": "Küçük Stajlar",
     "priority": "Yüksek/Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -6288,7 +6288,7 @@ export const globalGlossaryTerms = [
       "LDL"
     ],
     "definition": "Kolesterolü periferik dokulara taşıyan aterojenik lipoproteindir; Apo B-100 içerir.",
-    "category": "Biyokimya/Kardiyoloji / Lipoprotein",
+    "category": "Tıbbi Biyokimya / Lipoprotein",
     "priority": "Yüksek",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -6307,7 +6307,7 @@ export const globalGlossaryTerms = [
       "HDL"
     ],
     "definition": "Kolesterolü periferden karaciğere taşıyan ters kolesterol taşıma lipoproteinidir; Apo A-I içerir.",
-    "category": "Biyokimya/Kardiyoloji / Lipoprotein",
+    "category": "Tıbbi Biyokimya / Lipoprotein",
     "priority": "Yüksek",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -6421,7 +6421,7 @@ export const globalGlossaryTerms = [
       "Lp(a)"
     ],
     "definition": "Lp(a) yapısında bulunan ve proaterojenik, proinflamatuar, antifibrinolitik kabul edilen apolipoproteindir.",
-    "category": "Biyokimya/Kardiyoloji / Apolipoprotein",
+    "category": "Tıbbi Biyokimya / Apolipoprotein",
     "priority": "Orta",
     "mode": teachingOnly,
     "relatedBranches": [
@@ -6506,7 +6506,7 @@ export const globalGlossaryTerms = [
       "Type IIa"
     ],
     "definition": "LDL reseptörü veya Apo B-100 ilişkili bozukluklarla yüksek LDL, tendon ksantomları ve erken ateroskleroz yapan hastalıktır.",
-    "category": "Biyokimya/Kardiyoloji / Dislipidemi",
+    "category": "Tıbbi Biyokimya / Dislipidemi",
     "priority": "Yüksek",
     "mode": teachingOnly,
     "relatedBranches": [

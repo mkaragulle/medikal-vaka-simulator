@@ -495,8 +495,6 @@ function InvestigationPanel({
 }) {
   const orders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
 
-  if (!orders.length) return null;
-
   return (
     <section className="card-surface investigation-order-section refined-investigation-order-section smart-investigation-order-section" aria-label="Tetkik istemi">
       <div className="panel-title-row compact investigation-order-head refined-investigation-order-head smart-investigation-order-head">

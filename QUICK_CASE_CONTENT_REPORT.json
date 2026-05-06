@@ -1,0 +1,22 @@
+{
+  "totalCasesAfterUpdate": 79,
+  "quickCasesTotal": 14,
+  "movedExistingCases": [
+    "pediatrics-shaken-baby-syndrome-001",
+    "internal-medicine-sexual-assault-evidence-001"
+  ],
+  "newQuickCases": [
+    "quick-forensic-stab-wound-001",
+    "quick-forensic-traffic-accident-report-001",
+    "quick-ethics-unconscious-consent-001",
+    "quick-domestic-violence-safety-001",
+    "quick-forensic-poisoning-sample-001",
+    "quick-occupational-accident-reporting-001",
+    "quick-clinical-urticaria-001",
+    "quick-tus-scarlet-fever-001",
+    "quick-exam-nursemaid-elbow-001",
+    "quick-tus-koplik-measles-001",
+    "quick-emergency-epistaxis-first-step-001",
+    "quick-forensic-death-suspicion-001"
+  ]
+}

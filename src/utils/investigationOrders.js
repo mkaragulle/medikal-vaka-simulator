@@ -60,6 +60,7 @@ export const typeLabels = {
   nuclear: 'Nükleer tıp',
   urine: 'İdrar',
   culture: 'Kültür',
+  toxicology: 'Toksikoloji',
 };
 
 export const investigationIconByType = {
@@ -77,6 +78,7 @@ export const investigationIconByType = {
   nuclear: 'Sparkles',
   urine: 'Droplets',
   culture: 'FlaskConical',
+  toxicology: 'FlaskConical',
 };
 
 
@@ -137,6 +139,10 @@ export const orderCategoryMeta = {
     label: 'Kan hazırlığı',
     description: 'Transfüzyon hazırlığı.',
   },
+  toxicology: {
+    label: 'Toksikoloji',
+    description: 'Toksik madde ve ilaç maruziyeti değerlendirmesi.',
+  },
   other: {
     label: 'Diğer tetkikler',
     description: 'Ek tetkikler.',
@@ -157,6 +163,7 @@ function inferOrderCategory(item = {}, clinicalCase = {}) {
   if (canonical === 'crossmatch' || /(kan grubu|cross|transfüzyon|eritrosit süspansiyonu)/.test(text)) return 'bloodBank';
   if (type === 'pathology' || canonical === 'pathology' || /(biyopsi|sitoloji|histopatoloji|periferik yayma)/.test(text)) return 'pathology';
   if (/(gebelik testi|beta-hcg|hcg|üriner sistem|ürogenital)/.test(text)) return 'urogenital';
+  if (type === 'toxicology' || canonical === 'toxicology' || /(toksikoloji|zehir|etanol|benzodiazepin|parasetamol)/.test(text)) return 'toxicology';
   if (type === 'urine' || canonical === 'urine') return 'urine';
   if (/(glukoz|elektrolit|keton|metabolik)/.test(text)) return 'metabolic';
   if (type === 'culture' || canonical === 'culture' || /(kültür|mikrobiyoloji|mikroskopi)/.test(text)) return 'microbiology';
@@ -178,6 +185,47 @@ const genericOrderBank = [
 ];
 
 const branchOrderBank = {
+  anatomy: [
+    { id: 'direct-xray-anatomy', label: 'Direkt grafi', type: 'xray', priority: 'essential', synthetic: true },
+    { id: 'neurovascular-exam-anatomy', label: 'Hedefe yönelik nörovasküler muayene kaydı', type: 'clinical', priority: 'essential', synthetic: true },
+  ],
+  physiology: [
+    { id: 'orthostatic-vitals-physiology', label: 'Ortostatik vital bulgular', type: 'clinical', priority: 'essential', synthetic: true },
+    { id: 'basic-electrolytes-physiology', label: 'Temel elektrolit paneli', type: 'lab', priority: 'situational', synthetic: true },
+  ],
+  'histology-embryology': [
+    { id: 'targeted-ultrasound-histoembryo', label: 'Hedefe yönelik ultrasonografi', type: 'ultrasound', priority: 'useful', synthetic: true },
+    { id: 'pathology-histoembryo', label: 'Histopatolojik değerlendirme', type: 'pathology', priority: 'situational', synthetic: true },
+  ],
+  'medical-biochemistry': [
+    { id: 'metabolic-panel-biochem', label: 'Metabolik panel', type: 'lab', priority: 'essential', synthetic: true },
+    { id: 'enzyme-assay-biochem', label: 'Enzim / metabolit analizi', type: 'lab', priority: 'essential', synthetic: true },
+    { id: 'urine-metabolite-biochem', label: 'İdrarda metabolit incelemesi', type: 'urine', priority: 'useful', synthetic: true },
+  ],
+  'medical-microbiology': [
+    { id: 'culture-microbiology', label: 'Kültür ve duyarlılık', type: 'culture', priority: 'essential', synthetic: true },
+    { id: 'microscopy-microbiology', label: 'Mikroskopik inceleme', type: 'microscopy', priority: 'essential', synthetic: true },
+    { id: 'serology-pcr-microbiology', label: 'Seroloji / PCR', type: 'lab', priority: 'useful', synthetic: true },
+  ],
+  'medical-pathology': [
+    { id: 'pathology-panel', label: 'Histopatolojik inceleme', type: 'pathology', priority: 'essential', synthetic: true },
+    { id: 'morphology-correlation', label: 'Morfolojik patern korelasyonu', type: 'clinical', priority: 'useful', synthetic: true },
+  ],
+  'medical-pharmacology': [
+    { id: 'toxidrome-assessment', label: 'Toksidrom değerlendirmesi', type: 'clinical', priority: 'essential', synthetic: true },
+    { id: 'drug-level-toxicology', label: 'Toksikoloji / ilaç düzeyi', type: 'toxicology', priority: 'useful', synthetic: true },
+  ],
+  'obstetrics-gynecology': [
+    { id: 'pregnancy-test-obgyn', label: 'Gebelik testi / beta-hCG', type: 'lab', priority: 'essential', synthetic: true },
+    { id: 'transvaginal-usg-obgyn', label: 'Transvajinal ultrasonografi', type: 'ultrasound', priority: 'essential', synthetic: true },
+    { id: 'cbc-obgyn', label: 'Hemogram', type: 'lab', priority: 'useful', synthetic: true },
+  ],
+  'minor-rotations': [
+    { id: 'focused-exam-minor', label: 'Hedefe yönelik branş muayenesi', type: 'clinical', priority: 'essential', synthetic: true },
+    { id: 'xray-minor', label: 'Direkt grafi', type: 'xray', priority: 'useful', synthetic: true },
+    { id: 'brain-ct-minor', label: 'Kontrastsız beyin BT', type: 'ct', priority: 'situational', synthetic: true },
+    { id: 'mri-minor', label: 'MR', type: 'mri', priority: 'situational', synthetic: true },
+  ],
   cardiovascular: [
     { id: 'ecg-screen', label: '12 derivasyon EKG', type: 'ecg', priority: 'essential', synthetic: true },
     { id: 'troponin-screen', label: 'Kardiyak troponin', type: 'lab', priority: 'essential', synthetic: true },
@@ -250,9 +298,13 @@ function inferPriority(item, clinicalCase) {
   const text = `${item.id || ''} ${item.label || ''} ${item.type || ''}`.toLocaleLowerCase('tr');
   const branch = clinicalCase?.branchId || '';
   if (item.type === 'management') return 'inappropriateEarly';
-  if (branch === 'cardiovascular' && /(ecg|ekg|troponin|marker|biyobelirteç)/.test(text)) return 'essential';
-  if (branch === 'internal-medicine' && /(cbc|hemogram|koag|endoskopi|liver|karaciğer|cross)/.test(text)) return 'essential';
-  if (branch === 'neurology' && /(inme|stroke|mca|orta serebral|beyin bt|kontrastsız|anjiyografi|glukoz|elektrolit|acil laboratuvar|koagülasyon|inr|trombosit)/.test(`${text} ${clinicalCase?.title || ''} ${clinicalCase?.clinicalFocus || ''}`.toLocaleLowerCase('tr'))) return 'essential';
+  if (branch === 'internal-medicine' && /(ecg|ekg|troponin|marker|biyobelirteç|cbc|hemogram|koag|endoskopi|liver|karaciğer|cross|kan gazı|d-dimer|bt pulmoner|akciğer grafisi)/.test(text)) return 'essential';
+  if (branch === 'medical-biochemistry' && /(metabolit|enzim|glukoz|keton|amonyak|laktat|lipid|aminoasit|organik asit)/.test(text)) return 'essential';
+  if (branch === 'medical-microbiology' && /(kültür|mikroskopi|pcr|seroloji|antijen|boyama|parazit|kan kültürü)/.test(text)) return 'essential';
+  if (branch === 'medical-pathology' && /(patoloji|histopatoloji|biyopsi|sitoloji|morfoloji|nekroz|granülom)/.test(text)) return 'essential';
+  if (branch === 'medical-pharmacology' && /(toksikoloji|ilaç düzeyi|antidot|kolinesteraz|parasetamol|organofosfat)/.test(text)) return 'essential';
+  if (branch === 'obstetrics-gynecology' && /(hcg|gebelik|transvajinal|ultrason|hemogram|kan grubu)/.test(text)) return 'essential';
+  if (branch === 'minor-rotations' && /(inme|stroke|mca|beyin bt|kontrastsız|anjiyografi|glukoz|elektrolit|grafi|xray|mr|mri|nörovasküler)/.test(`${text} ${clinicalCase?.title || ''} ${clinicalCase?.clinicalFocus || ''}`.toLocaleLowerCase('tr'))) return 'essential';
   if (/(ct|bt|mri|mr|ultrason|usg|grafi|xray|endoscopy|endoskopi|ecg|ekg|lab|laboratuvar)/.test(text)) return 'useful';
   return 'lowPriority';
 }
@@ -673,9 +725,6 @@ export function buildInvestigationOrders(clinicalCase = {}) {
   const caseItems = (clinicalCase.availableInvestigations || clinicalCase.investigations || [])
     .filter((item) => item && item.type !== 'management' && item.orderable !== false)
     .map((item, index) => normalizeInvestigation(item, clinicalCase, index));
-
-  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
-  if (isQuickCase) return caseItems.slice(0, 4);
 
   const branchItems = [...(branchOrderBank[clinicalCase.branchId] || []), ...genericOrderBank]
     .map((item, index) => normalizeSynthetic(item, clinicalCase, index))

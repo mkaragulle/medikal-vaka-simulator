@@ -46,6 +46,7 @@ const iconPaths = {
   Trash2: <><path d="M4 7h16"/><path d="M10 11v6M14 11v6"/><path d="M6 7l1 14h10l1-14"/><path d="M9 7V4h6v3"/></>,
   RotateCcw: <><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v6h6"/></>,
   X: <path d="M6 6l12 12M18 6 6 18"/>,
+  Zap: <><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></>,
 };
 
 export function Icon({ name, className = '', size = 20, strokeWidth = 1.9 }) {
@@ -158,7 +159,7 @@ export function BranchTransitionVisual({ branchId, iconName }) {
       <span className="branch-transition-shine" />
       <Icon name={iconName || 'Activity'} className="branch-transition-icon" size={66} strokeWidth={1.9} />
 
-      {branchId === 'internal-medicine' ? (
+      {branchId === 'medical-biochemistry' ? (
         <>
           <span className="flask-motion-bubble bubble-one" />
           <span className="flask-motion-bubble bubble-two" />
@@ -166,7 +167,7 @@ export function BranchTransitionVisual({ branchId, iconName }) {
         </>
       ) : null}
 
-      {branchId === 'neurology' ? (
+      {branchId === 'minor-rotations' ? (
         <>
           <span className="brain-node node-one" />
           <span className="brain-node node-two" />
@@ -189,14 +190,14 @@ export function BranchTransitionVisual({ branchId, iconName }) {
         </>
       ) : null}
 
-      {branchId === 'pulmonology' ? (
+      {branchId === 'physiology' ? (
         <>
           <span className="breath-wave wave-one" />
           <span className="breath-wave wave-two" />
         </>
       ) : null}
 
-      {branchId === 'infectious-diseases' ? (
+      {branchId === 'medical-microbiology' ? (
         <>
           <span className="shield-halo halo-one" />
           <span className="shield-halo halo-two" />
@@ -204,7 +205,7 @@ export function BranchTransitionVisual({ branchId, iconName }) {
         </>
       ) : null}
 
-      {branchId === 'orthopedics' ? (
+      {branchId === 'anatomy' ? (
         <>
           <span className="bone-joint joint-one" />
           <span className="bone-joint joint-two" />
@@ -217,25 +218,32 @@ export function BranchTransitionVisual({ branchId, iconName }) {
 }
 
 export const branchIconById = {
-  cardiovascular: 'HeartPulse',
-  'internal-medicine': 'FlaskConical',
-  neurology: 'Brain',
+  'quick-case': 'Stopwatch',
+  anatomy: 'Bone',
+  physiology: 'Activity',
+  'histology-embryology': 'LayeredCards',
+  'medical-biochemistry': 'FlaskConical',
+  'medical-microbiology': 'ShieldPlus',
+  'medical-pathology': 'ClipboardList',
+  'medical-pharmacology': 'Droplets',
+  'internal-medicine': 'Stethoscope',
   pediatrics: 'Baby',
   'general-surgery': 'Scalpel',
-  pulmonology: 'Lungs',
-  'infectious-diseases': 'ShieldPlus',
-  orthopedics: 'Bone',
-  'quick-case': 'Stopwatch',
+  'obstetrics-gynecology': 'HeartPulse',
+  'minor-rotations': 'BookOpen',
 };
-
 export const branchToneById = {
-  cardiovascular: 'danger',
+  'quick-case': 'accent',
+  anatomy: 'slate',
+  physiology: 'danger',
+  'histology-embryology': 'violet',
+  'medical-biochemistry': 'blue',
+  'medical-microbiology': 'lime',
+  'medical-pathology': 'warning',
+  'medical-pharmacology': 'success',
   'internal-medicine': 'blue',
-  neurology: 'violet',
-  pediatrics: 'success',
+  pediatrics: 'sky',
   'general-surgery': 'warning',
-  pulmonology: 'sky',
-  'infectious-diseases': 'lime',
-  orthopedics: 'slate',
-  'quick-case': 'teal',
+  'obstetrics-gynecology': 'danger',
+  'minor-rotations': 'slate',
 };

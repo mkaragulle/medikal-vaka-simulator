@@ -26,6 +26,7 @@ const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 
 const DEMO_CASE_IDS = [
+  'quick-forensic-stab-wound-001',
   'cv-anterior-stemi-001',
   'im-dka-001',
   'neuro-mca-stroke-001',
@@ -33,7 +34,7 @@ const DEMO_CASE_IDS = [
   'surg-appendicitis-001',
 ];
 
-const DEMO_EXAM_TITLE = '5 vakalık ücretsiz demo blok';
+const DEMO_EXAM_TITLE = `${DEMO_CASE_IDS.length} vakalık ücretsiz demo blok`;
 
 const defaultStats = {
   attempts: 0,
@@ -360,8 +361,6 @@ function App() {
       branchName: branch?.name ?? 'Klinik branş',
       selected,
       correctAnswer: clinicalCase.diagnosis.correct,
-      caseType: clinicalCase.caseType ?? 'classic',
-      questionType: clinicalCase.questionType ?? 'diagnosis',
       difficulty: clinicalCase.difficulty,
       lastWrongAt: Date.now(),
     };
@@ -661,7 +660,6 @@ function App() {
             selected: answer?.selected ?? null,
             isCorrect: answer?.isCorrect ?? false,
             correctAnswer: item.diagnosis.correct,
-            caseType: item.caseType ?? 'classic',
             earnedPoints: answer?.attemptResult?.earnedPoints ?? 0,
           };
         });
@@ -897,7 +895,7 @@ function App() {
               <div className="branch-inline-actions">
                 <span className="branch-case-count">{branchCases.length} olgu</span>
                 <button type="button" className="btn btn-primary" onClick={() => startBlockExam(branchCases, isDemoUser ? DEMO_EXAM_TITLE : `${selectedBranch.name} blok sınavı`)}>
-                  {isDemoUser ? 'Demo bloku aç' : selectedBranch.id === 'quick-case' ? 'Hızlı blok oluştur' : 'Branş bloku oluştur'}
+                  {isDemoUser ? 'Demo bloku aç' : 'Branş bloku oluştur'}
                 </button>
               </div>
             </section>
@@ -932,10 +930,10 @@ function App() {
             <section className="demo-access-banner card-surface" aria-label="Demo sürüm bilgisi">
               <div>
                 <strong>Ücretsiz demo sürüm</strong>
-                <p>Bu hesap yalnızca 5 sabit demo vakasına erişebilir. Premium vaka havuzu, branş arşivi ve genel blok sınavları kapalıdır.</p>
+                <p>Bu hesap yalnızca {demoCases.length} sabit demo vakasına erişebilir. Premium vaka havuzu, branş arşivi ve genel blok sınavları kapalıdır.</p>
               </div>
               <button type="button" className="btn btn-primary" onClick={() => startBlockExam(accessibleCases, DEMO_EXAM_TITLE)}>
-                <Icon name="Timer" /> 5 vakalık demoyu başlat
+                <Icon name="Timer" /> {demoCases.length} vakalık demoyu başlat
               </button>
             </section>
           ) : null}

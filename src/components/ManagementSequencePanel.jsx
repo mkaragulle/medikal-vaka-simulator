@@ -177,9 +177,6 @@ export function buildManagementSequence(clinicalCase = {}) {
   const explicit = clinicalCase.managementSequence;
   if (explicit?.enabled === false) return null;
 
-  const isQuickCase = clinicalCase.caseType === 'quick' || clinicalCase.branchId === 'quick-case';
-  if (isQuickCase && !explicit?.steps?.length) return null;
-
   if (explicit?.steps?.length) {
     const steps = explicit.steps.map((step, index) => normalizeStep(step, index, step.required !== false));
     return {

@@ -29402,3 +29402,263 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-metric-card .icon-ba
     width: 66% !important;
   }
 }
+
+/* Hızlı CASE integration */
+.branch-card[data-branch="quick-case"] .branch-card-head .icon-badge {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 36%, transparent);
+}
+.branch-card[data-branch="quick-case"] .branch-progress span {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 72%, white 12%), color-mix(in srgb, var(--accent-blue) 62%, white 8%));
+}
+.branch-card.is-launching[data-branch="quick-case"] .icon-badge svg {
+  animation: branch-quick-tick 420ms cubic-bezier(.22,1,.36,1) 1 both;
+}
+@keyframes branch-quick-tick {
+  0%, 100% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 0 transparent); }
+  30% { transform: rotate(-12deg) scale(1.16); filter: drop-shadow(0 0 9px color-mix(in srgb, currentColor 28%, transparent)); }
+  62% { transform: rotate(10deg) scale(1.05); }
+}
+.quick-case-question-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 13px;
+  margin: 2px 0 12px;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border-subtle));
+  border-radius: 16px;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 10%, transparent), color-mix(in srgb, var(--surface-1) 92%, transparent));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 38%, transparent);
+}
+.quick-case-question-callout svg {
+  flex: 0 0 auto;
+  color: var(--accent);
+  margin-top: 2px;
+}
+.quick-case-question-callout strong {
+  font-size: 13px;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+.clinical-case[data-case-type="quick"] .professional-content-stack {
+  gap: 14px;
+}
+.clinical-case[data-case-type="quick"] .case-hero-card {
+  border-color: color-mix(in srgb, var(--accent) 18%, var(--border-subtle));
+}
+.clinical-case[data-case-type="quick"] .right-workspace-shell {
+  position: sticky;
+  top: calc(var(--topbar-height, 76px) + 16px);
+}
+.clinical-case[data-case-type="quick"] .diagnostic-decision-panel .question-panel-head h2::after {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin-left: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent) 12%, transparent);
+  vertical-align: middle;
+}
+html[data-theme="dark"] .quick-case-question-callout,
+.app-shell[data-theme="dark"] .quick-case-question-callout {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 12%, transparent), color-mix(in srgb, var(--surface-1) 88%, transparent));
+  box-shadow: inset 0 1px 0 color-mix(in srgb, white 10%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  .branch-card.is-launching[data-branch="quick-case"] .icon-badge svg { animation: none !important; }
+}
+
+/* === KlinikIQ TUS branch architecture rework: 1 featured HIZLI CASE + 12 standardized cards === */
+.branches-section {
+  gap: 16px !important;
+}
+
+.quick-case-feature-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  margin-top: 4px;
+}
+
+.branch-card-featured.quick-case-card {
+  min-height: 184px !important;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto;
+  align-items: center;
+  column-gap: 20px;
+  row-gap: 12px;
+  padding: 22px !important;
+  border-radius: 24px !important;
+  background:
+    radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 34%),
+    linear-gradient(135deg, color-mix(in srgb, var(--surface-1) 94%, var(--accent) 6%), color-mix(in srgb, var(--surface-2) 92%, var(--accent-blue) 8%));
+  border-color: color-mix(in srgb, var(--accent) 30%, var(--border-subtle)) !important;
+  box-shadow: 0 18px 46px color-mix(in srgb, var(--accent) 12%, transparent), var(--shadow-card);
+}
+
+.branch-card-featured.quick-case-card .branch-card-head {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  align-self: stretch;
+  display: grid;
+  align-content: space-between;
+  justify-items: start;
+}
+
+.branch-card-featured.quick-case-card .branch-card-head .icon-badge {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 18px !important;
+}
+
+.branch-card-featured.quick-case-card .branch-card-head .icon-badge svg {
+  width: 27px !important;
+  height: 27px !important;
+}
+
+.branch-card-featured.quick-case-card .branch-count {
+  background: color-mix(in srgb, var(--accent) 10%, var(--surface-2));
+  border-color: color-mix(in srgb, var(--accent) 28%, transparent);
+  color: var(--accent);
+}
+
+.branch-card-featured.quick-case-card .branch-card-body {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  gap: 8px;
+}
+
+.branch-card-featured.quick-case-card .branch-card-body h3 {
+  font-size: clamp(24px, 3.2vw, 36px) !important;
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  -webkit-line-clamp: 1;
+}
+
+.branch-card-featured.quick-case-card .branch-card-body p {
+  max-width: 920px;
+  font-size: 14.5px !important;
+  line-height: 1.62 !important;
+  -webkit-line-clamp: 3 !important;
+}
+
+.branch-card-featured.quick-case-card .branch-progress {
+  grid-column: 2;
+  grid-row: 3;
+  width: min(100%, 620px);
+}
+
+.branch-card-featured.quick-case-card .branch-card-meta {
+  grid-column: 3;
+  grid-row: 1;
+  justify-content: flex-end;
+  align-self: start;
+}
+
+.branch-card-featured.quick-case-card .branch-card-footer {
+  grid-column: 3;
+  grid-row: 3;
+  justify-self: end;
+  align-self: end;
+  min-height: 40px;
+  padding-inline: 14px;
+}
+
+.tus-branch-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  margin-top: 0 !important;
+}
+
+.tus-branch-grid .branch-card {
+  min-height: 226px !important;
+}
+
+.tus-branch-grid .branch-card-body h3 {
+  -webkit-line-clamp: 2;
+}
+
+.tus-branch-grid .branch-card-body p {
+  -webkit-line-clamp: 3 !important;
+}
+
+@media (max-width: 1100px) {
+  .tus-branch-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .branch-card-featured.quick-case-card {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .branch-card-featured.quick-case-card .branch-card-meta,
+  .branch-card-featured.quick-case-card .branch-card-footer {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 768px) {
+  .tus-branch-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .branch-card-featured.quick-case-card {
+    grid-template-columns: 1fr;
+    min-height: auto !important;
+  }
+
+  .branch-card-featured.quick-case-card .branch-card-head,
+  .branch-card-featured.quick-case-card .branch-card-body,
+  .branch-card-featured.quick-case-card .branch-progress,
+  .branch-card-featured.quick-case-card .branch-card-meta,
+  .branch-card-featured.quick-case-card .branch-card-footer {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: stretch;
+  }
+
+  .branch-card-featured.quick-case-card .branch-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .tus-branch-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* TUS branch transition color tokens for standardized branch IDs */
+.branch-route-overlay.branch-route-quick-case { --route-accent: var(--accent); }
+.branch-route-overlay.branch-route-anatomy { --route-accent: color-mix(in srgb, var(--text-muted) 80%, #a7b2c3 20%); }
+.branch-route-overlay.branch-route-physiology { --route-accent: var(--danger); }
+.branch-route-overlay.branch-route-histology-embryology { --route-accent: var(--violet); }
+.branch-route-overlay.branch-route-medical-biochemistry { --route-accent: var(--accent-blue); }
+.branch-route-overlay.branch-route-medical-microbiology { --route-accent: var(--lime); }
+.branch-route-overlay.branch-route-medical-pathology { --route-accent: var(--warning); }
+.branch-route-overlay.branch-route-medical-pharmacology { --route-accent: var(--success); }
+.branch-route-overlay.branch-route-obstetrics-gynecology { --route-accent: var(--danger); }
+.branch-route-overlay.branch-route-minor-rotations { --route-accent: color-mix(in srgb, var(--text-muted) 82%, #a7b2c3 18%); }
+
+/* Standardized branch micro-motion bindings */
+.branch-card[data-branch="medical-biochemistry"] .branch-card-head .icon-badge { animation: branchSway 3.8s ease-in-out infinite; }
+.branch-card[data-branch="minor-rotations"] .branch-card-head .icon-badge { animation: branchPulseGlow 2.8s ease-in-out infinite; }
+.branch-card[data-branch="minor-rotations"] .branch-card-head .icon-badge::after { animation: branchSoftRing 2.8s ease-in-out infinite; }
+.branch-card[data-branch="physiology"] .branch-card-head .icon-badge { animation: branchBreathe 4s ease-in-out infinite; }
+.branch-card[data-branch="physiology"] .branch-card-head .icon-badge svg { animation: branchLungFloat 4s ease-in-out infinite; }
+.branch-card[data-branch="medical-microbiology"] .branch-card-head .icon-badge { animation: branchShieldPop 3.4s cubic-bezier(.16, 1, .3, 1) infinite; }
+.branch-card[data-branch="medical-microbiology"] .branch-card-head .icon-badge::after { animation: branchShieldRing 3.4s cubic-bezier(.16, 1, .3, 1) infinite; }
+.branch-card[data-branch="anatomy"] .branch-card-head .icon-badge { animation: branchSettleTilt 4.2s cubic-bezier(.2, .8, .2, 1) infinite; }
+.branch-card.is-launching[data-branch="medical-biochemistry"] .icon-badge svg { animation: branch-internal-sway 420ms cubic-bezier(.22,1,.36,1) 1 both; }
+.branch-card.is-launching[data-branch="minor-rotations"] .icon-badge svg { animation: branch-neuro-glow 420ms cubic-bezier(.22,1,.36,1) 1 both; }
+.branch-card.is-launching[data-branch="physiology"] .icon-badge svg { animation: branch-lung-breathe 420ms cubic-bezier(.22,1,.36,1) 1 both; }
+.branch-card.is-launching[data-branch="medical-microbiology"] .icon-badge svg { animation: branch-shield-pop 420ms cubic-bezier(.22,1,.36,1) 1 both; }
+.branch-card.is-launching[data-branch="medical-microbiology"] .icon-badge::after { animation: branch-shield-ring 420ms cubic-bezier(.22,1,.36,1) 1 both; }
+.branch-card.is-launching[data-branch="anatomy"] .icon-badge svg { animation: branch-bone-settle 420ms cubic-bezier(.22,1,.36,1) 1 both; }

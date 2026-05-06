@@ -1,0 +1,219 @@
+{
+  "architecture": "Top-level featured HIZLI CASE module plus 12 standardized TUS branches in a 4 x 3 desktop grid.",
+  "standardBranchSource": "src/data/branches.js exports STANDARD_BRANCHES, BRANCH_NAME_BY_ID, QUICK_CASE_BRANCH_ID and branches from a single source.",
+  "finalBranches": [
+    {
+      "id": "quick-case",
+      "name": "HIZLI CASE",
+      "description": "Kısa öykü, hedefe yönelik muayene, gerekirse sınırlı tetkik ve hızlı klinik karar sorularıyla TUS odaklı mini olgu alanı. Adli yaklaşım, yönetim kararı, spot bilgi ve kısa klinik senaryolar bu bölümde yer alır.",
+      "layout": "featured top module"
+    },
+    {
+      "id": "anatomy",
+      "name": "Anatomi",
+      "description": "Bölgesel yapı, komşuluk ilişkileri, sinir-damar seyri ve klinik anatomik korelasyonlar.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "physiology",
+      "name": "Fizyoloji",
+      "description": "Sistem işleyişi, homeostaz, temel mekanizmalar ve klinik fizyolojik yorumlar.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "histology-embryology",
+      "name": "Histoloji ve Embriyoloji",
+      "description": "Doku yapısı, mikroskobik özellikler ve gelişimsel süreçlerin klinik yansımaları.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "medical-biochemistry",
+      "name": "Tıbbi Biyokimya",
+      "description": "Metabolik yollar, enzim bozuklukları, biyokimyasal tanı mantığı ve laboratuvar ilişkileri.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "medical-microbiology",
+      "name": "Tıbbi Mikrobiyoloji",
+      "description": "Bakteri, virüs, mantar ve parazitlerin tanısal, klinik ve laboratuvar temelli değerlendirilmesi.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "medical-pathology",
+      "name": "Tıbbi Patoloji",
+      "description": "Hastalıkların hücresel ve doku düzeyindeki temeli, morfolojik paternler ve klinik korelasyon.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "medical-pharmacology",
+      "name": "Tıbbi Farmakoloji",
+      "description": "İlaç etki mekanizmaları, yan etkiler, etkileşimler ve klinik tedavi kararlarının temeli.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "internal-medicine",
+      "name": "İç Hastalıkları",
+      "description": "Dahili ayırıcı tanılar, metabolik ve sistemik hastalıklar, kardiyopulmoner ve iç organ temelli klinik kararlar.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "pediatrics",
+      "name": "Çocuk Sağlığı ve Hastalıkları",
+      "description": "Yaşa özgü değerlendirme, pediatrik aciller, büyüme-gelişme ve çocukluk çağı hastalıkları.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "general-surgery",
+      "name": "Genel Cerrahi",
+      "description": "Akut batın, cerrahi yaklaşım, travma, zamanlama ve ameliyat gerektiren karar süreçleri.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "obstetrics-gynecology",
+      "name": "Kadın Hastalıkları ve Doğum",
+      "description": "Gebelik, obstetrik aciller, jinekolojik tablolar ve kadın sağlığına yönelik klinik yaklaşım.",
+      "layout": "standard 4 x 3 grid card"
+    },
+    {
+      "id": "minor-rotations",
+      "name": "Küçük Stajlar",
+      "description": "Nöroloji, psikiyatri, dermatoloji, KBB, göz, ortopedi, acil ve diğer kısa staj alanlarına ait yüksek verimli olgular.",
+      "layout": "standard 4 x 3 grid card"
+    }
+  ],
+  "countsByBranch": {
+    "HIZLI CASE": 14,
+    "Anatomi": 1,
+    "Fizyoloji": 1,
+    "Histoloji ve Embriyoloji": 1,
+    "Tıbbi Biyokimya": 14,
+    "Tıbbi Mikrobiyoloji": 8,
+    "Tıbbi Patoloji": 4,
+    "Tıbbi Farmakoloji": 2,
+    "İç Hastalıkları": 19,
+    "Çocuk Sağlığı ve Hastalıkları": 5,
+    "Genel Cerrahi": 5,
+    "Kadın Hastalıkları ve Doğum": 1,
+    "Küçük Stajlar": 9
+  },
+  "quickCases": [
+    {
+      "id": "pediatrics-shaken-baby-syndrome-001",
+      "title": "Travma öyküsü tutarsız bebekte çocuk istismarı şüphesi",
+      "quickCategory": "Adli"
+    },
+    {
+      "id": "internal-medicine-sexual-assault-evidence-001",
+      "title": "Cinsel saldırı sonrası acile başvuran hastada ilk yaklaşım",
+      "quickCategory": "Adli / Etik"
+    },
+    {
+      "id": "quick-forensic-stab-wound-001",
+      "title": "Kesici-delici yaralanmada adli bildirim kararı",
+      "quickCategory": "Adli"
+    },
+    {
+      "id": "quick-forensic-traffic-accident-report-001",
+      "title": "Trafik kazası sonrası acil serviste adli rapor yaklaşımı",
+      "quickCategory": "Adli"
+    },
+    {
+      "id": "quick-ethics-unconscious-consent-001",
+      "title": "Bilinci kapalı hastada onam ve acil müdahale",
+      "quickCategory": "Etik"
+    },
+    {
+      "id": "quick-domestic-violence-safety-001",
+      "title": "Aile içi şiddet şüphesinde hekim yaklaşımı",
+      "quickCategory": "Adli / Etik"
+    },
+    {
+      "id": "quick-forensic-poisoning-sample-001",
+      "title": "Şüpheli zehirlenmede örnek saklama ve bildirim",
+      "quickCategory": "Adli"
+    },
+    {
+      "id": "quick-occupational-accident-reporting-001",
+      "title": "İş kazası sonrası raporlama ve tıbbi öncelik",
+      "quickCategory": "Adli / Yönetim"
+    },
+    {
+      "id": "quick-clinical-urticaria-001",
+      "title": "Ani başlayan ürtiker ve hafif anjiyoödem",
+      "quickCategory": "Acil karar"
+    },
+    {
+      "id": "quick-tus-scarlet-fever-001",
+      "title": "Ateşli çocukta zımpara kağıdı döküntüsü",
+      "quickCategory": "TUS spot"
+    },
+    {
+      "id": "quick-exam-nursemaid-elbow-001",
+      "title": "Çekilme sonrası kolunu kullanmayan çocuk",
+      "quickCategory": "Muayene odaklı"
+    },
+    {
+      "id": "quick-tus-koplik-measles-001",
+      "title": "Öksürük, konjunktivit ve Koplik lekeleri",
+      "quickCategory": "TUS spot"
+    },
+    {
+      "id": "quick-emergency-epistaxis-first-step-001",
+      "title": "Ön burun kanamasında ilk müdahale",
+      "quickCategory": "Acil karar"
+    },
+    {
+      "id": "quick-forensic-death-suspicion-001",
+      "title": "Şüpheli ölümde hekimin adli süreç yaklaşımı",
+      "quickCategory": "Adli"
+    }
+  ],
+  "addedCases": [
+    {
+      "id": "anatomy-radial-nerve-humerus-fracture-001",
+      "title": "Humerus şaft travması sonrası el bileği düşüklüğü",
+      "branchId": "anatomy"
+    },
+    {
+      "id": "physiology-baroreceptor-reflex-orthostatic-001",
+      "title": "Ayağa kalkınca baş dönmesi ve kompansatuvar taşikardi",
+      "branchId": "physiology"
+    },
+    {
+      "id": "histology-embryology-thyroglossal-duct-cyst-001",
+      "title": "Dil çıkarınca hareket eden orta hat boyun kitlesi",
+      "branchId": "histology-embryology"
+    },
+    {
+      "id": "obgyn-ectopic-pregnancy-001",
+      "title": "Amenore sonrası tek taraflı pelvik ağrı ve vajinal kanama",
+      "branchId": "obstetrics-gynecology"
+    },
+    {
+      "id": "pharm-organophosphate-cholinergic-crisis-001",
+      "title": "Pestisit maruziyeti sonrası miyozis, bronkore ve kas fasikülasyonları",
+      "branchId": "medical-pharmacology"
+    }
+  ],
+  "redistributionPolicy": {
+    "İç Hastalıkları": "Cardiology, pulmonology, endocrine, nephrology, rheumatology, hematology, gastroenterology and systemic adult medicine cases were consolidated under this TUS-level heading.",
+    "Çocuk Sağlığı ve Hastalıkları": "Age-specific pediatric emergency and childhood disease cases were kept here unless their main learning objective was biochemical or quick forensic/management reasoning.",
+    "Genel Cerrahi": "Acute abdomen and operation-timing cases were retained here.",
+    "Kadın Hastalıkları ve Doğum": "A new ectopic pregnancy case was added so the branch is not empty and has an obstetric/gynecologic emergency anchor.",
+    "Küçük Stajlar": "Neurology, orthopedics and airway/forensic-adjacent specialty cases were consolidated here.",
+    "Temel Bilimler": "Biochemistry, microbiology, pathology and pharmacology cases were redistributed by learning objective; anatomy, physiology and histology/embryology received new integrated TUS-style cases.",
+    "HIZLI CASE": "Quick, forensic, ethical, management and TUS-spot mini cases remain isolated as a featured top module."
+  },
+  "changedFiles": [
+    "src/data/branches.js",
+    "src/data/cases.js",
+    "src/components/BranchSelector.jsx",
+    "src/components/ui.jsx",
+    "src/index.css",
+    "src/utils/investigationOrders.js",
+    "src/utils/glossary.js",
+    "BRANCH_ARCHITECTURE_REWORK_REPORT.json",
+    "BRANCH_ARCHITECTURE_REWORK_SUMMARY.md",
+    "BRANCH_ARCHITECTURE_VALIDATION_RESULT.json"
+  ]
+}
