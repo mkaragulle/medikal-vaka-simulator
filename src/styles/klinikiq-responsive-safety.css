@@ -745,3 +745,205 @@ body:not(.klinikiq-auth-lock) .answer-feedback-panel-without-summary {
 body:not(.klinikiq-auth-lock) .answer-feedback-panel-without-summary > .answer-feedback-grid-pro {
   margin-top: 0 !important;
 }
+
+
+/* ============================================================================
+   KlinikIQ vertical text prevention patch
+   Purpose: risk/context, distinctive clues, chips and short clinical lists must
+   remain readable. These rules intentionally sit after the broader responsive
+   guards so they win the cascade for patient summary and similar list cards.
+   ============================================================================ */
+
+body:not(.klinikiq-auth-lock) :where(
+  .patient-summary-card,
+  .summary-detail-card,
+  .summary-detail-copy,
+  .summary-clinical-mini-list,
+  .summary-clinical-mini-list li,
+  .patient-summary-story-block,
+  .patient-summary-focus-strip,
+  .patient-summary-tip-strip,
+  .investigation-option-copy,
+  .smart-order-copy,
+  .requested-test-copy,
+  .feedback-body-copy,
+  .evidence-chain-copy,
+  .clinical-pearl-item-pro,
+  .management-step-copy,
+  .option-comparison-copy
+) {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  min-inline-size: 0 !important;
+  max-inline-size: 100% !important;
+}
+
+body:not(.klinikiq-auth-lock) :where(
+  .patient-summary-card,
+  .summary-detail-card,
+  .summary-detail-copy,
+  .summary-clinical-mini-list,
+  .summary-clinical-mini-list li,
+  .patient-summary-story-block,
+  .patient-summary-focus-strip,
+  .patient-summary-tip-strip
+) :where(p, li, span, strong, small, em, b, a, button) {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+  text-transform: none;
+}
+
+body:not(.klinikiq-auth-lock) .patient-summary-card :where(.glossary-term, .glossary-term *, .summary-clinical-mini-list li > span) {
+  display: inline !important;
+  white-space: inherit !important;
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  line-height: inherit !important;
+}
+
+body:not(.klinikiq-auth-lock) .patient-summary-card .structured-patient-summary-grid.unified-summary-grid,
+body:not(.klinikiq-auth-lock) .structured-patient-summary-grid.unified-summary-grid.patient-summary-grid,
+body:not(.klinikiq-auth-lock) .patient-summary-grid.structured-patient-summary-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)) !important;
+  align-items: stretch !important;
+  gap: clamp(12px, 1.55vw, 16px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--risk,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--clues,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card.risk-chip-card {
+  grid-column: 1 / -1 !important;
+  display: grid !important;
+  grid-template-columns: 48px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 14px !important;
+  min-width: 0 !important;
+  width: 100% !important;
+  overflow: visible !important;
+  contain: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--risk .summary-detail-copy,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--clues .summary-detail-copy,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card.risk-chip-card .summary-detail-copy {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--risk .summary-clinical-mini-list,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--clues .summary-clinical-mini-list,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card.risk-chip-card .summary-clinical-mini-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 8px !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--risk .summary-clinical-mini-list li,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--clues .summary-clinical-mini-list li,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card.risk-chip-card .summary-clinical-mini-list li {
+  display: block !important;
+  position: relative !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  padding: 0 0 0 17px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  font-size: clamp(13.4px, 1.05vw, 14px) !important;
+  line-height: 1.55 !important;
+  letter-spacing: -.006em !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
+  hyphens: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--risk .summary-detail-label,
+body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--clues .summary-detail-label {
+  text-transform: uppercase !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  white-space: normal !important;
+}
+
+body:not(.klinikiq-auth-lock) :where(
+  .badge,
+  .chip,
+  [class*="chip"],
+  [class*="badge"],
+  [class*="pill"],
+  .order-priority-chip,
+  .investigation-option-state,
+  .option-comparison-status,
+  .case-hero-meta,
+  .difficulty-chip
+) {
+  writing-mode: horizontal-tb !important;
+  text-orientation: mixed !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+  hyphens: none !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 920px) {
+  body:not(.klinikiq-auth-lock) .patient-summary-card .structured-patient-summary-grid.unified-summary-grid,
+  body:not(.klinikiq-auth-lock) .structured-patient-summary-grid.unified-summary-grid.patient-summary-grid,
+  body:not(.klinikiq-auth-lock) .patient-summary-grid.structured-patient-summary-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+@media (max-width: 540px) {
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card,
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--risk,
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--clues,
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card.risk-chip-card {
+    grid-template-columns: 40px minmax(0, 1fr) !important;
+    gap: 11px !important;
+    padding: 14px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-icon {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+  }
+}
+
+@media (max-width: 340px) {
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card,
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--risk,
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card--clues,
+  body:not(.klinikiq-auth-lock) .patient-summary-card .summary-detail-card.risk-chip-card {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+}
+
+
+/* Preserve intentional small section labels after sentence-case body safeguards. */
+body:not(.klinikiq-auth-lock) .patient-summary-card :where(
+  .summary-detail-label,
+  .summary-story-label span,
+  .patient-summary-focus-strip span,
+  .patient-summary-tip-strip span
+) {
+  text-transform: uppercase !important;
+  letter-spacing: .045em !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+}

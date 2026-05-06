@@ -456,7 +456,7 @@ function PatientSummaryItems({ items = [], enabled = true }) {
   if (!items.length) return null;
 
   return (
-    <ul className="summary-clinical-mini-list refined-summary-bullet-list">
+    <ul className="summary-clinical-mini-list refined-summary-bullet-list summary-readable-list">
       {items.map((item) => (
         <li key={item}><GlossaryText text={item} enabled={enabled} /></li>
       ))}
@@ -798,7 +798,7 @@ function CasePlayer({
                       const rowKind = row.kind || summaryRowKind(row.label);
                       const profileCopy = rowKind === 'profile' ? splitProfileText(row.value) : null;
                       return (
-                        <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`}>
+                        <section key={row.label} className={`summary-detail-card summary-detail-card--${rowKind}${row.items ? ' risk-chip-card' : ''}`} data-summary-kind={rowKind}>
                           <span className="summary-detail-icon" aria-hidden="true">
                             <Icon name={summaryIconName(rowKind)} size={27} strokeWidth={1.92} />
                           </span>
