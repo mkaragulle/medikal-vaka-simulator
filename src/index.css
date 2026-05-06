@@ -30213,3 +30213,292 @@ html[data-theme="dark"] .branch-card[data-branch] .branch-card-head .icon-badge,
   .branch-icon-glyph .peds-child-core,
   .branch-icon-glyph .peds-care-star { animation: none !important; }
 }
+
+/* ==========================================================
+   V82 — Tetkik istemi inner panel soft-radius refinement
+   Removes clipped rectangular corners and harmonizes the inner
+   diagnostic-order panel with the premium KlinikIQ card language.
+   ========================================================== */
+.card-surface.investigation-order-section.refined-investigation-order-section.smart-investigation-order-section,
+.investigation-order-section.refined-investigation-order-section.smart-investigation-order-section,
+.refined-investigation-order-section.smart-investigation-order-section,
+.smart-investigation-order-section {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  border-radius: 30px !important;
+  padding: clamp(20px, 2.45vw, 28px) !important;
+  gap: clamp(18px, 2vw, 24px) !important;
+  background:
+    radial-gradient(circle at 88% 4%, color-mix(in srgb, var(--accent-blue) 8%, transparent), transparent 42%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 99%, white 1%), color-mix(in srgb, var(--surface-2) 36%, var(--surface-1) 64%)) !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 84%, var(--accent) 16%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .72) inset,
+    0 18px 48px color-mix(in srgb, #0f172a 7%, transparent) !important;
+  background-clip: padding-box !important;
+}
+
+.smart-investigation-order-section::before,
+.smart-investigation-order-section::after,
+.refined-investigation-order-section.smart-investigation-order-section::before,
+.refined-investigation-order-section.smart-investigation-order-section::after {
+  border-radius: inherit !important;
+  pointer-events: none !important;
+}
+
+.smart-investigation-order-head,
+.refined-investigation-order-head.smart-investigation-order-head,
+.investigation-order-head {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.diagnostic-orders-panel.smart-diagnostic-orders-panel,
+.smart-diagnostic-orders-panel {
+  position: relative !important;
+  z-index: 1 !important;
+  display: grid !important;
+  gap: clamp(22px, 2.35vw, 30px) !important;
+  width: 100% !important;
+  padding: clamp(22px, 2.5vw, 30px) !important;
+  border-radius: 26px !important;
+  overflow: hidden !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(255, 255, 255, .82)),
+    color-mix(in srgb, var(--surface-1) 96%, var(--accent) 4%) !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 86%, var(--accent) 14%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .78) inset,
+    0 16px 42px color-mix(in srgb, #0f172a 5%, transparent) !important;
+  background-clip: padding-box !important;
+}
+
+.diagnostic-orders-panel.smart-diagnostic-orders-panel::before,
+.smart-diagnostic-orders-panel::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  pointer-events: none !important;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, .42),
+    inset 0 -18px 34px color-mix(in srgb, var(--accent) 2.5%, transparent) !important;
+}
+
+.order-category-section.smart-order-category-section,
+.smart-order-category-section,
+.order-category-section {
+  position: relative !important;
+  display: grid !important;
+  gap: 13px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 20px !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.order-category-head.smart-order-category-head,
+.smart-order-category-head,
+.order-category-head {
+  display: block !important;
+  padding: 0 2px 3px !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.order-category-head h3,
+.smart-order-category-head h3 {
+  color: var(--text-primary) !important;
+  font-weight: 800 !important;
+  letter-spacing: .035em !important;
+}
+
+.order-category-head p,
+.smart-order-category-head p {
+  color: var(--text-muted) !important;
+}
+
+.order-category-grid,
+.smart-order-category-grid,
+.diagnostic-orders-panel .order-category-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 14px !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
+.order-card-shell.requested-test-card,
+.order-card-shell {
+  position: relative !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  border-radius: 22px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 82%, var(--accent) 18%) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .92), rgba(255, 255, 255, .76)),
+    color-mix(in srgb, var(--surface-1) 92%, var(--surface-2) 8%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .66) inset,
+    0 10px 30px color-mix(in srgb, #0f172a 5%, transparent) !important;
+  background-clip: padding-box !important;
+}
+
+.order-card-shell.requested-test-card:hover,
+.order-card-shell:hover {
+  border-color: color-mix(in srgb, var(--accent) 26%, var(--border-subtle)) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .72) inset,
+    0 14px 34px color-mix(in srgb, var(--accent) 7%, transparent),
+    0 12px 30px color-mix(in srgb, #0f172a 6%, transparent) !important;
+}
+
+.order-card-shell.requested-test-card.requested,
+.order-card-shell.requested-test-card.expanded,
+.order-card-shell.selected {
+  border-color: color-mix(in srgb, var(--accent) 32%, var(--border-subtle)) !important;
+  background:
+    radial-gradient(circle at 0 0, color-mix(in srgb, var(--accent) 7%, transparent), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .82)),
+    color-mix(in srgb, var(--surface-1) 88%, var(--accent) 12%) !important;
+}
+
+.smart-order-card.requested-test-card-head.investigation-option-card,
+.neutral-order-card.requested-test-card-head.investigation-option-card,
+.smart-order-card.investigation-option-card,
+.neutral-order-card.investigation-option-card,
+.investigation-option-card {
+  border-radius: 22px !important;
+  min-height: 78px !important;
+  padding: 15px 17px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.smart-order-card.requested-test-card-head.investigation-option-card:hover:not(:disabled),
+.neutral-order-card.requested-test-card-head.investigation-option-card:hover:not(:disabled),
+.smart-order-card.investigation-option-card:hover:not(:disabled),
+.neutral-order-card.investigation-option-card:hover:not(:disabled),
+.investigation-option-card:hover:not(:disabled) {
+  background: linear-gradient(90deg, color-mix(in srgb, var(--accent) 4%, transparent), transparent 72%) !important;
+  transform: none !important;
+}
+
+.requested-test-card-head .icon-badge,
+.smart-order-card.requested-test-card-head .icon-badge,
+.investigation-option-card.requested-test-card-head .icon-badge,
+.smart-order-card .icon-badge,
+.investigation-option-card .icon-badge {
+  border-radius: 16px !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .54),
+    0 8px 18px color-mix(in srgb, var(--accent-blue) 8%, transparent) !important;
+}
+
+.smart-order-state,
+.investigation-option-state,
+.order-status-chip {
+  border-radius: 999px !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 84%, var(--accent) 16%) !important;
+  background: color-mix(in srgb, var(--surface-1) 84%, var(--surface-2) 16%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .52) !important;
+}
+
+.inline-order-result.requested-result-panel,
+.inline-order-result {
+  overflow: hidden !important;
+  border-radius: 18px !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 92%, transparent), color-mix(in srgb, var(--surface-2) 66%, transparent)) !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 84%, var(--accent) 16%) !important;
+  box-shadow: 0 10px 26px color-mix(in srgb, #0f172a 4%, transparent) !important;
+}
+
+html[data-theme="dark"] .card-surface.investigation-order-section.refined-investigation-order-section.smart-investigation-order-section,
+html[data-theme="dark"] .investigation-order-section.refined-investigation-order-section.smart-investigation-order-section,
+html[data-theme="dark"] .refined-investigation-order-section.smart-investigation-order-section,
+html[data-theme="dark"] .smart-investigation-order-section,
+.app-shell[data-theme="dark"] .card-surface.investigation-order-section.refined-investigation-order-section.smart-investigation-order-section,
+.app-shell[data-theme="dark"] .investigation-order-section.refined-investigation-order-section.smart-investigation-order-section,
+.app-shell[data-theme="dark"] .refined-investigation-order-section.smart-investigation-order-section,
+.app-shell[data-theme="dark"] .smart-investigation-order-section {
+  background:
+    radial-gradient(circle at 88% 4%, color-mix(in srgb, var(--accent-blue) 12%, transparent), transparent 44%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 96%, transparent), color-mix(in srgb, var(--surface-2) 96%, transparent)) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 72%, var(--accent) 28%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .04) inset,
+    0 18px 46px rgba(0, 0, 0, .24) !important;
+}
+
+html[data-theme="dark"] .diagnostic-orders-panel.smart-diagnostic-orders-panel,
+html[data-theme="dark"] .smart-diagnostic-orders-panel,
+.app-shell[data-theme="dark"] .diagnostic-orders-panel.smart-diagnostic-orders-panel,
+.app-shell[data-theme="dark"] .smart-diagnostic-orders-panel {
+  background:
+    radial-gradient(circle at 100% 0, color-mix(in srgb, var(--accent) 8%, transparent), transparent 46%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-elevated) 88%, transparent), color-mix(in srgb, var(--surface-2) 94%, transparent)) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 74%, var(--accent) 26%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .045) inset,
+    0 16px 40px rgba(0, 0, 0, .18) !important;
+}
+
+html[data-theme="dark"] .order-card-shell.requested-test-card,
+html[data-theme="dark"] .order-card-shell,
+.app-shell[data-theme="dark"] .order-card-shell.requested-test-card,
+.app-shell[data-theme="dark"] .order-card-shell {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-elevated) 90%, transparent), color-mix(in srgb, var(--surface-2) 88%, transparent)) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 78%, var(--accent) 22%) !important;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, .035) inset,
+    0 10px 28px rgba(0, 0, 0, .16) !important;
+}
+
+html[data-theme="dark"] .smart-order-state,
+html[data-theme="dark"] .investigation-option-state,
+html[data-theme="dark"] .order-status-chip,
+.app-shell[data-theme="dark"] .smart-order-state,
+.app-shell[data-theme="dark"] .investigation-option-state,
+.app-shell[data-theme="dark"] .order-status-chip {
+  background: color-mix(in srgb, var(--surface-elevated) 78%, transparent) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 78%, var(--accent) 22%) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04) !important;
+}
+
+@media (max-width: 720px) {
+  .card-surface.investigation-order-section.refined-investigation-order-section.smart-investigation-order-section,
+  .investigation-order-section.refined-investigation-order-section.smart-investigation-order-section,
+  .refined-investigation-order-section.smart-investigation-order-section,
+  .smart-investigation-order-section {
+    border-radius: 24px !important;
+    padding: 16px !important;
+  }
+
+  .diagnostic-orders-panel.smart-diagnostic-orders-panel,
+  .smart-diagnostic-orders-panel {
+    border-radius: 22px !important;
+    padding: 16px !important;
+    gap: 18px !important;
+  }
+
+  .order-card-shell.requested-test-card,
+  .order-card-shell,
+  .smart-order-card.requested-test-card-head.investigation-option-card,
+  .neutral-order-card.requested-test-card-head.investigation-option-card,
+  .smart-order-card.investigation-option-card,
+  .neutral-order-card.investigation-option-card,
+  .investigation-option-card {
+    border-radius: 18px !important;
+  }
+}
