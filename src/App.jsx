@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
+import './styles/klinikiq-responsive-safety.css';
 import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
 import CasePlayer from './components/CasePlayer.jsx';

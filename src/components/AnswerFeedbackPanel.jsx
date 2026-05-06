@@ -1,4 +1,4 @@
-import { Icon, IconBadge } from './ui.jsx';
+import { IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 
 const MAX_EVIDENCE_ITEMS = 5;
@@ -423,29 +423,6 @@ function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, classN
   );
 }
 
-function ResultSummary({ isCorrect, diagnosis, selected, points, diagnosisMeta, glossaryEnabled = true, isSpotCase = false }) {
-  const statusTone = isCorrect ? 'success' : 'danger';
-  return (
-    <header className={`answer-feedback-summary ${statusTone}`}>
-      <div className="answer-feedback-status-icon">
-        <Icon name={isCorrect ? 'CheckCircle' : 'XCircle'} />
-      </div>
-      <div className="answer-feedback-summary-copy">
-        <span className={`feedback-status-pill ${statusTone}`}>{isCorrect ? 'Doğru' : 'Yanlış'}</span>
-        <h3>{isCorrect ? (isSpotCase ? 'Karar doğru seçildi' : 'Tanı doğru seçildi') : (isSpotCase ? 'Seçilen yanıt doğru değil' : 'Seçilen tanı doğru değil')}</h3>
-        {isCorrect ? (
-          <p><GlossaryText text={diagnosis} enabled={glossaryEnabled} /></p>
-        ) : (
-          <p><strong>Doğru:</strong> <GlossaryText text={diagnosis} enabled={glossaryEnabled} /> · <strong>Seçimin:</strong> <GlossaryText text={selected} enabled={glossaryEnabled} /></p>
-        )}
-        {diagnosisMeta ? <small><GlossaryText text={diagnosisMeta} enabled={glossaryEnabled} /></small> : null}
-      </div>
-      <div className="answer-feedback-meta-row" aria-label="Yanıt özeti">
-        {isCorrect ? <span>Vaka puanı: {points} p</span> : <span>{isSpotCase ? 'Yanıt puanı: 0' : 'Tanı puanı: 0'}</span>}
-      </div>
-    </header>
-  );
-}
 
 function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true }) {
   return (
@@ -543,7 +520,6 @@ function AnswerFeedbackPanel({
   clinicalCase,
   selected,
   isCorrect,
-  difficultyMeta,
   children,
   hardMode = false,
 }) {
@@ -558,21 +534,9 @@ function AnswerFeedbackPanel({
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
-  const diagnosisMeta = pickClinicalMeta(clinicalCase);
-  const points = difficultyMeta?.points || 0;
 
   return (
-    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">
-      <ResultSummary
-        isCorrect={isCorrect}
-        diagnosis={clinicalCase.diagnosis?.correct}
-        selected={selectedDiagnosis}
-        points={points}
-        diagnosisMeta={diagnosisMeta}
-        glossaryEnabled={glossaryEnabled}
-        isSpotCase={isSpotCase}
-      />
-
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro answer-feedback-panel-without-summary`} aria-live="polite">
       <div className="answer-feedback-grid answer-feedback-grid-pro">
         <div className="feedback-column feedback-primary-column">
           <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />

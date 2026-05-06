@@ -1,0 +1,27 @@
+{
+  "task": "Remove global post-answer result summary card",
+  "status": "completed_static_validation_passed",
+  "removedFromRenderPath": true,
+  "summaryComponentRemoved": "ResultSummary",
+  "preservedEducationalCards": [
+    "Klinik gerekçe",
+    "Kanıt zinciri",
+    "Sınav notu / Kritik ipuçları",
+    "Yönetim / İlk yönetim basamağı",
+    "Seçenek karşılaştırması"
+  ],
+  "changedFiles": [
+    "src/components/AnswerFeedbackPanel.jsx",
+    "src/components/DiagnosisQuiz.jsx",
+    "src/styles/klinikiq-responsive-safety.css",
+    "ANSWER_RESULT_SUMMARY_REMOVAL_REPORT.md",
+    "ANSWER_RESULT_SUMMARY_BUILD_VALIDATION_RESULT.md",
+    "ANSWER_RESULT_SUMMARY_REMOVAL_REPORT.json"
+  ],
+  "validation": {
+    "typescriptParseCheck": "passed",
+    "activeSourceScanForRemovedSummaryStrings": "passed",
+    "npmInstall": "timeout_in_sandbox",
+    "npmRunBuild": "not_completed_vite_not_found_due_to_missing_dependencies"
+  }
+}

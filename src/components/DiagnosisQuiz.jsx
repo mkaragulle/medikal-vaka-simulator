@@ -218,7 +218,6 @@ function DiagnosisQuiz({
             clinicalCase={clinicalCase}
             selected={selected}
             isCorrect={isCorrect}
-            difficultyMeta={difficultyMeta}
             hardMode={hardMode}
           >
             {examMeta?.active ? (
