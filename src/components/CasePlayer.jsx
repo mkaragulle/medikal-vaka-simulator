@@ -4,7 +4,7 @@ import InvestigationPanel from './InvestigationPanel.jsx';
 import ManagementSequencePanel from './ManagementSequencePanel.jsx';
 import AccordionItem from './AccordionItem.jsx';
 import CaseToolsPanel from './CaseToolsPanel.jsx';
-import { ClinicalCallout, Icon, IconBadge } from './ui.jsx';
+import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 import {
   buildNonRevealingFocus,
@@ -289,21 +289,34 @@ function buildFocusSentence(clinicalCase) {
   return 'Öykü, muayene ve objektif veriler tek klinik problem etrafında birleştirilmelidir.';
 }
 
+function normalizeSummaryItems(value) {
+  if (Array.isArray(value)) return value.map((item) => toDisplayPhrase(item)).filter(Boolean);
+  if (typeof value === 'string' && value.trim()) return [toDisplayPhrase(value)];
+  return [];
+}
+
 function buildPatientSummary(clinicalCase) {
+  const intro = clinicalCase.patientIntro || {};
   const demographics = toDisplayPhrase(clinicalCase.demographics);
   const complaint = toDisplayPhrase(clinicalCase.chiefComplaint);
   const setting = toDisplayPhrase(clinicalCase.setting);
-  const riskChips = extractPatientRiskChips(clinicalCase);
-  const clueChips = extractPatientClueChips(clinicalCase);
+  const fallbackStory = buildStoryParts(clinicalCase).join(' ');
+  const riskItems = normalizeSummaryItems(intro.riskContext).length
+    ? normalizeSummaryItems(intro.riskContext)
+    : extractPatientRiskChips(clinicalCase);
+  const clueItems = normalizeSummaryItems(intro.distinctiveClues).length
+    ? normalizeSummaryItems(intro.distinctiveClues)
+    : extractPatientClueChips(clinicalCase);
 
   return {
     rows: [
-      { label: 'Profil', value: [demographics, setting].filter(Boolean).join(' · ') },
-      { label: 'Başvuru', value: complaint },
-      { label: 'Risk bağlamı', chips: riskChips, fallback: 'Belirgin risk bilgisi verilmemiş.' },
-      { label: 'Ayırt edici ipuçları', chips: clueChips, fallback: 'Ek ipuçları öykü ve muayeneden çıkarılmalıdır.' },
+      { label: 'Profil', value: intro.profile || [demographics, setting].filter(Boolean).join(' · ') },
+      { label: 'Başvuru', value: intro.presentation || complaint },
+      { label: 'Risk bağlamı', items: riskItems, fallback: 'Vaka metninde belirgin ek risk bağlamı verilmemiş.' },
+      { label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Ayırt ettirici veri öykü, muayene ve tetkik akışından çıkarılmalıdır.' },
     ],
-    focus: buildFocusSentence(clinicalCase),
+    history: splitSentences(intro.historySummary || fallbackStory).slice(0, 4),
+    focus: intro.priorityFocus || buildFocusSentence(clinicalCase),
   };
 }
 
@@ -382,48 +395,6 @@ function VitalCard({ label, value, glossaryEnabled = true }) {
   );
 }
 
-function CaseNarrative({
-  clinicalCase,
-  storyParts,
-  highlighted,
-  activeHighlighter,
-  toggleHighlight,
-  glossaryEnabled = true,
-}) {
-  const chips = extractClinicalChips(clinicalCase);
-
-  return (
-    <section className="case-narrative-card card-surface professional-story-card">
-      <div className="case-section-heading refined-section-heading">
-        <div>
-          <h2>Klinik öykü</h2>
-        </div>
-      </div>
-
-      <div className="stem-highlight-wrap professional-story-text">
-        {storyParts.map((part, index) => (
-          <span
-            key={`${clinicalCase.id}-story-${index}`}
-            role="button"
-            tabIndex={0}
-            className={highlighted[index] ? `stem-sentence highlighted hl-${highlighted[index]}` : 'stem-sentence'}
-            onClick={() => toggleHighlight(index)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault();
-                toggleHighlight(index);
-              }
-            }}
-            aria-label={`${activeHighlighter} rengiyle cümleyi vurgula`}
-          >
-            <GlossaryText text={toSentence(part)} enabled={glossaryEnabled} />
-          </span>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function CaseSectionNav({ activeSection, onJump, items = SECTION_NAV_ITEMS }) {
   return (
     <nav className="case-section-nav card-surface professional-section-nav" aria-label="Olgu bölüm navigasyonu">
@@ -469,7 +440,6 @@ function CasePlayer({
 }) {
   const displayFocus = buildNonRevealingFocus(clinicalCase);
   const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
-  const storyParts = useMemo(() => buildStoryParts(clinicalCase), [clinicalCase]);
   const patientSummary = useMemo(() => buildPatientSummary(clinicalCase), [clinicalCase]);
   const hemodynamicSummary = useMemo(() => buildHemodynamicSummary(clinicalCase.vitals), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase]);
@@ -634,28 +604,55 @@ function CasePlayer({
                     </div>
                   </header>
 
-                  <div className="patient-summary-grid structured-patient-summary-grid">
+                  <div className="patient-summary-grid structured-patient-summary-grid unified-summary-grid">
                     {patientSummary.rows.map((row) => (
-                      <section key={row.label} className={row.chips ? 'summary-detail-card risk-chip-card' : 'summary-detail-card'}>
+                      <section key={row.label} className={row.items ? 'summary-detail-card risk-chip-card' : 'summary-detail-card'}>
                         <span>{row.label}</span>
-                        {row.chips ? (
-                          row.chips.length ? (
-                            <div className="summary-risk-chip-row">
-                              {row.chips.map((chip) => <em key={chip}>{chip}</em>)}
+                        {row.items ? (
+                          row.items.length ? (
+                            <div className="summary-risk-chip-row clinical-intro-chip-row">
+                              {row.items.map((chip) => <em key={chip}><GlossaryText text={chip} enabled={!hardMode && !examMeta?.active} /></em>)}
                             </div>
                           ) : <p>{row.fallback}</p>
                         ) : (
-                          <p>{row.value}</p>
+                          <p><GlossaryText text={row.value} enabled={!hardMode && !examMeta?.active} /></p>
                         )}
                       </section>
                     ))}
                   </div>
 
-                  <aside className="patient-summary-focus-strip refined-focus-callout">
+                  <section className="patient-summary-story-block unified-history-block" aria-label="Kısa klinik öykü özeti">
+                    <div className="summary-story-label">
+                      <Icon name="BookOpen" size={15} />
+                      <span>Kısa klinik öykü özeti</span>
+                    </div>
+                    <div className="summary-story-text">
+                      {patientSummary.history.map((part, index) => (
+                        <span
+                          key={`${clinicalCase.id}-summary-story-${index}`}
+                          role="button"
+                          tabIndex={0}
+                          className={highlighted[index] ? `stem-sentence highlighted hl-${highlighted[index]}` : 'stem-sentence'}
+                          onClick={() => toggleHighlight(index)}
+                          onKeyDown={(event) => {
+                            if (event.key === 'Enter' || event.key === ' ') {
+                              event.preventDefault();
+                              toggleHighlight(index);
+                            }
+                          }}
+                          aria-label={`${activeHighlighter} rengiyle öykü cümlesini vurgula`}
+                        >
+                          <GlossaryText text={toSentence(part)} enabled={!hardMode && !examMeta?.active} />
+                        </span>
+                      ))}
+                    </div>
+                  </section>
+
+                  <aside className="patient-summary-focus-strip refined-focus-callout unified-priority-focus">
                     <Icon name="Target" size={16} />
                     <div>
                       <span>Öncelikli klinik odak</span>
-                      <p>{patientSummary.focus}</p>
+                      <p><GlossaryText text={patientSummary.focus} enabled={!hardMode && !examMeta?.active} /></p>
                     </div>
                   </aside>
                 </div>
@@ -664,15 +661,6 @@ function CasePlayer({
           </section>
 
           <div className="qbank-content-stack professional-content-stack">
-            <CaseNarrative
-              clinicalCase={clinicalCase}
-              storyParts={storyParts}
-              highlighted={highlighted}
-              activeHighlighter={activeHighlighter}
-              toggleHighlight={toggleHighlight}
-              glossaryEnabled={!hardMode && !examMeta?.active}
-            />
-
             {showExamPanel ? (
               <section className="clinical-data-card card-surface section-anchor" id="case-exam" ref={examRef} data-section="case-exam">
                 <div className="panel-title-row compact refined-section-heading">

@@ -1,9 +1,9 @@
 import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 
-const MAX_EVIDENCE_ITEMS = 4;
-const MAX_PEARL_ITEMS = 3;
-const MAX_MANAGEMENT_ITEMS = 3;
+const MAX_EVIDENCE_ITEMS = 5;
+const MAX_PEARL_ITEMS = 4;
+const MAX_MANAGEMENT_ITEMS = 4;
 
 const GENERIC_COMPARISON_PATTERNS = [
   /belirleyici klinik bulgular doğru tanı lehine/i,
@@ -176,7 +176,7 @@ function deriveManagementSteps(clinicalCase) {
   const nextStep = clinicalCase.diagnosis?.nextStep || '';
   const steps = splitActionItems(nextStep);
   if (steps.length) return unique(steps).slice(0, MAX_MANAGEMENT_ITEMS);
-  return nextStep ? [trimTrailingPunctuation(nextStep)] : ['İlk basamağı klinik aciliyet ve hedef organ riski üzerinden planla'];
+  return nextStep ? [trimTrailingPunctuation(nextStep)] : ['Önce olgudaki kırmızı bayrağı doğrula ve en güvenli ilk klinik eylemi seç'];
 }
 
 function normalizeDifferentialItem(item) {
@@ -195,10 +195,10 @@ function isGenericComparisonPoint(point = '') {
 function buildNaturalComparisonPoints(clinicalCase, selectedOption, evidenceChain = []) {
   const keyInvestigation = (clinicalCase.investigations || []).find((item) => item.summary || item.findings?.length);
   const points = [
-    `${selectedOption} klinik ayırıcı tanıda yer alabilir`,
+    `${selectedOption} bu olgudaki karar verdirici ipucunu açıklamadığı için elenir`,
     evidenceChain[0] || null,
-    keyInvestigation ? `${keyInvestigation.label} bulguları ayırıcı tanıyı daraltır` : null,
-    'İlk yönetim, aciliyet ve hedef organ riski üzerinden belirlenir',
+    keyInvestigation ? `${keyInvestigation.label} bulgusu doğru yanıta yönelten destekleyici kanıttır` : null,
+    'İlk adım, olgunun ana kırmızı bayrağına göre seçilmelidir',
   ];
 
   return unique(points.filter(Boolean)).slice(0, 4).map((item) => truncateSentence(item, 145));
@@ -215,14 +215,14 @@ function buildDifferential(clinicalCase, selectedOption, evidenceChain = []) {
     const nonGenericPoints = unique(explicit.comparisonPoints || []).filter((point) => !isGenericComparisonPoint(point));
     return {
       option: selectedOption,
-      explanation: explicit.explanation || `${selectedOption} ayırıcı tanıda yer alabilir; ancak karar verdirici bulgular farklı bir yönü destekler.`,
+      explanation: explicit.explanation || `${selectedOption} bu olguda ana ipucuyla uyumlu değildir; karar verdirici bulgular doğru seçeneği destekler.`,
       comparisonPoints: (nonGenericPoints.length ? nonGenericPoints : buildNaturalComparisonPoints(clinicalCase, selectedOption, evidenceChain)).slice(0, 4),
     };
   }
 
   return {
     option: selectedOption,
-    explanation: `${selectedOption} ayırıcı tanıda yer alabilir; ancak zamanlama, muayene ve ilk tetkik verileri bu seçeneği geri planda bırakır.`,
+    explanation: `${selectedOption} bu olguda elenir; zamanlama, muayene ve ilk tetkik verileri doğru seçeneği daha net destekler.`,
     comparisonPoints: buildNaturalComparisonPoints(clinicalCase, selectedOption, evidenceChain),
   };
 }
@@ -262,7 +262,7 @@ function ResultSummary({ isCorrect, diagnosis, points, diagnosisMeta, glossaryEn
   );
 }
 
-function DiagnosisSummaryCard({ diagnosis, diagnosisMeta }) {
+function DiagnosisSummaryCard({ diagnosis, diagnosisMeta, glossaryEnabled = true, isSpotCase = false }) {
   return (
     <FeedbackSection icon="Target" tone="success" eyebrow={isSpotCase ? 'Doğru seçenek' : 'Tanısal sonuç'} title={isSpotCase ? 'Doğru yanıt' : 'Doğru tanı'} className="diagnosis-summary-card">
       <div className="diagnosis-name-card">
