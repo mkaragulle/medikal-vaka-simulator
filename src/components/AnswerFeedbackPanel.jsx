@@ -364,9 +364,9 @@ function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) 
   const keyEvidence = evidenceChain[0]?.text || itemText(evidenceChain[0]);
   const keyInvestigation = (clinicalCase.investigations || []).find((item) => item.summary || item.findings?.length);
   const points = [
-    keyEvidence ? `Karar verdirici ipucu: ${trimTrailingPunctuation(keyEvidence)}.` : null,
+    keyEvidence ? `${trimTrailingPunctuation(keyEvidence)} doğru yanıta yönelten temel bulgudur.` : null,
     keyInvestigation ? `${keyInvestigation.label} bulgusu doğru yanıta yönelten destekleyici kanıttır.` : null,
-    `${option} ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır.`,
+    `${option} ancak kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır.`,
   ];
 
   return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(item, 155));

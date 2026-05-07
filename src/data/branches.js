@@ -1,4 +1,4 @@
-export const STANDARD_BRANCHES = [
+export const branches = [
   {
     "id": "tus-spot-olgular",
     "name": "TUS Spot Olgular",
@@ -58,8 +58,8 @@ export const STANDARD_BRANCHES = [
     "id": "medical-pathology",
     "name": "Tıbbi Patoloji",
     "shortName": "Tıbbi Patoloji",
-    "description": "Hastalıkların hücresel ve doku düzeyindeki temeli, morfolojik paternler ve klinik korelasyon.",
-    "transitionTagline": "Doku paternini yorumla, hastalığın temelini kavra.",
+    "description": "Hastalıkların hücresel ve doku düzeyindeki temeli, morfolojik bulgu örüntüleri ve klinik korelasyon.",
+    "transitionTagline": "Doku bulgu örüntüsünü yorumla, hastalığın temelini kavra.",
     "accent": "warning",
     "icon": "pathology"
   },
@@ -118,23 +118,3 @@ export const STANDARD_BRANCHES = [
     "icon": "minor"
   }
 ];
-
-export const BRANCH_NAME_BY_ID = Object.freeze(
-  STANDARD_BRANCHES.reduce((acc, branch) => {
-    acc[branch.id] = branch.name;
-    return acc;
-  }, {}),
-);
-
-export const BRANCH_DESCRIPTION_BY_ID = Object.freeze(
-  STANDARD_BRANCHES.reduce((acc, branch) => {
-    acc[branch.id] = branch.description;
-    return acc;
-  }, {}),
-);
-
-export const TUS_SPOT_BRANCH_ID = 'tus-spot-olgular';
-export const SPOT_CASE_BRANCH_ID = TUS_SPOT_BRANCH_ID;
-export const LEGACY_QUICK_CASE_BRANCH_ID = TUS_SPOT_BRANCH_ID; // Backward-compatible alias value for old persisted data.
-
-export const branches = STANDARD_BRANCHES;

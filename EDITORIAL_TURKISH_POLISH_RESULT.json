@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-05-07T12:51:43.121Z",
+  "summary": {
+    "cases": {
+      "count": 132,
+      "strings": 20475,
+      "changed": 1651,
+      "headingPrefix": 0,
+      "english": 17,
+      "punctuation": 119
+    },
+    "AI_QUESTION_SEEDS": {
+      "count": 6,
+      "strings": 312,
+      "changed": 42,
+      "headingPrefix": 0,
+      "english": 1,
+      "punctuation": 34
+    },
+    "AI_BRANCH_TEMPLATE_SEEDS": {
+      "count": 11,
+      "strings": 560,
+      "changed": 24,
+      "headingPrefix": 0,
+      "english": 0,
+      "punctuation": 16
+    },
+    "AI_SYNTHETIC_FALLBACK_SEEDS": {
+      "count": 13,
+      "strings": 665,
+      "changed": 47,
+      "headingPrefix": 0,
+      "english": 5,
+      "punctuation": 42
+    }
+  }
+}

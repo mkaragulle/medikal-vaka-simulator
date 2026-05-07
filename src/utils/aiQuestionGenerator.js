@@ -13,6 +13,7 @@ import {
 import { validateAIQuestionCase } from './validateAIQuestion.js';
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, runAIQuestionQualityGate } from './aiQuestionQualityGate.js';
+import { normalizeMedicalTurkish, repairEditorialQuality } from './editorialQuality.js';
 import { attachQuestionDedupeFields, createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
 import {
   branchFilterMatchesSeed,
@@ -36,10 +37,10 @@ const MAX_GENERATION_ATTEMPTS = 180;
 const BRANCH_NAME_BY_ID = Object.fromEntries((branches || []).map((branch) => [branch.id, branch.name || branch.shortName || branch.id]));
 
 const FALLBACK_DISTRACTORS_BY_BRANCH = {
-  'Tıbbi Mikrobiyoloji': ['Geçirilmiş enfeksiyon paterni', 'Aşı sonrası bağışıklık paterni', 'Kronik taşıyıcılık paterni', 'Reaktivasyon paterni', 'Kontaminasyon lehine sonuç'],
+  'Tıbbi Mikrobiyoloji': ['Geçirilmiş enfeksiyon bulgusu', 'Aşı sonrası bağışıklık bulgusu', 'Kronik taşıyıcılık', 'Reaktivasyon bulgusu', 'Kontaminasyon lehine sonuç'],
   'Tıbbi Farmakoloji': ['Nalokson', 'Flumazenil', 'N-asetilsistein', 'Fomepizol', 'Dantrolen', 'Metilen mavisi'],
   'Tıbbi Biyokimya': ['Fenilalanin hidroksilaz defekti', 'Ornitin transkarbamilaz defekti', 'Propionil-CoA karboksilaz defekti', 'Homogentizat oksidaz defekti', 'Pirüvat dehidrogenaz defekti'],
-  'İç Hastalıkları': ['Sekonder endokrin yetmezlik', 'Akut enfeksiyöz tablo', 'Primer hiperaldosteronizm', 'Uygunsuz ADH sendromu', 'Fonksiyonel yakınma paterni'],
+  'İç Hastalıkları': ['Sekonder endokrin yetmezlik', 'Akut enfeksiyöz tablo', 'Primer hiperaldosteronizm', 'Uygunsuz ADH sendromu', 'Fonksiyonel yakınma'],
   'Çocuk Sağlığı ve Hastalıkları': ['Epiglotit', 'Yabancı cisim aspirasyonu', 'Bronşiolit', 'Astım atağı', 'Bakteriyel trakeit'],
   'Kadın Hastalıkları ve Doğum': ['Normal intrauterin gebelik', 'Tam abortus', 'Molar gebelik', 'Korpus luteum kisti rüptürü', 'Pelvik inflamatuvar hastalık'],
   default: ['Yakın klinik olasılık', 'Farklı mekanizmalı benzer tablo', 'Geçirilmiş hastalık bulgusu', 'Akut komplikasyon dışı durum', 'Normal varyant'],
@@ -50,13 +51,13 @@ const SCENARIO_OPENERS = [
   'Acil karar basamağına getirilen olguda',
   'Poliklinik değerlendirmesinde ayırıcı tanı gerektiren tabloda',
   'Nöbetçi hekimin hızlı yorumlaması gereken spot olguda',
-  'Temel bilim bilgisinin klinik paternle birleştirildiği soruda',
+  'Temel bilim bilgisinin klinik tabloyla birleştirildiği soruda',
   'Klinik karar toplantısında tartışılan kısa olguda',
 ];
 
 const QUESTION_ANGLES = [
   {
-    id: 'pattern',
+    id: 'clinical-cue',
     label: 'klinik yorum',
     question: 'Bu olguda öykü, muayene ve objektif veriler birlikte düşünüldüğünde en uygun seçenek hangisidir?',
     stemCue: 'öykü, muayene ve seçilmiş objektif veriler birlikte değerlendirilir',
@@ -306,14 +307,14 @@ function buildVariantProfile(seed, attempt = 0, context = {}, branchFilter = '')
 function maskCorrectConcept(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
   const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
+  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici bulgu');
 }
 
 function buildStem(seed, profile, correctText) {
   const controlledStem = buildBranchAwareStem(seed, profile, profile.angle, correctText);
   if (seed.source === 'embedded-case-concept-only') return controlledStem;
 
-  const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'karar verdirici patern');
+  const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'karar verdirici bulgu');
   const branchRule = getBranchRuleForSeed(seed);
   if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return `${controlledStem} ${buildVariantStemModifier(seed, profile)}`.replace(/\s+/g, ' ').trim();
   if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return `${controlledStem} ${buildVariantStemModifier(seed, profile)}`.replace(/\s+/g, ' ').trim();
@@ -366,10 +367,8 @@ function buildEvidenceChain(seed, profile, correctText) {
 }
 
 function cleanClinicalSummaryItem(value = '') {
-  return sanitizeMeasurementText(String(value || ''))
+  return normalizeMedicalTurkish(String(value || ''))
     .replace(/\s+/g, ' ')
-    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern)\s*[:：-]\s*/iu, '')
-    .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .replace(/(?<!\d)\.(?=\S)/g, '. ')
@@ -407,25 +406,25 @@ function buildInvestigation(item, index, correctText = '') {
   const strip = (text = '') => {
     if (!text || !correctText) return text || '';
     const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
+    return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici bulgu');
   };
   return {
     id: item.id || `ai-investigation-${index + 1}`,
-    label: sanitizeMeasurementText(item.label || `Tetkik ${index + 1}`),
+    label: normalizeMedicalTurkish(item.label || `Tetkik ${index + 1}`),
     type: item.type || 'lab',
     priority: item.priority || (index === 0 ? 'essential' : 'useful'),
     rows: Array.isArray(item.rows) ? item.rows.map((row) => Array.isArray(row) ? row.map(sanitizeMeasurementText) : sanitizeMeasurementText(row)) : undefined,
-    summary: sanitizeMeasurementText(strip(item.summary || '')),
-    findings: Array.isArray(item.findings) ? item.findings.map((finding) => sanitizeMeasurementText(strip(finding))) : [],
-    interpretation: 'Objektif sonuçlar tanıyı doğrudan söylemeden klinik yorum gerektirir.',
+    summary: repairEditorialQuality(strip(item.summary || '')),
+    findings: Array.isArray(item.findings) ? item.findings.map((finding) => repairEditorialQuality(strip(finding))) : [],
+    interpretation: 'Objektif sonuçlar öykü ve muayene bulgularıyla birlikte yorumlanır.',
   };
 }
 
 function buildSyntheticInvestigation(seed, profile, correctText = '') {
-  const learningCue = sanitizeMeasurementText(maskCorrectConcept(seed.examPearl || seed.learningTarget || 'Ana klinik bulgu', correctText));
+  const learningCue = repairEditorialQuality(maskCorrectConcept(seed.examPearl || seed.learningTarget || 'Ana klinik bulgu', correctText));
   const branchLabel = profile.angle.id === 'lab' ? 'Hedefli laboratuvar verisi' : profile.angle.id === 'mechanism' ? 'Mekanizma ipucu' : 'Objektif karar verisi';
   return [{
-    id: `ai-synthetic-pattern-${profile.variantNo}`,
+    id: `ai-synthetic-clinical-cue-${profile.variantNo}`, 
     label: branchLabel,
     type: profile.angle.id === 'mechanism' ? 'mechanism' : 'lab',
     priority: 'essential',
@@ -442,7 +441,7 @@ function buildWrongFeedback(options, correctText, seed) {
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
     const seeded = seed.wrongOptionFeedback?.[option.id];
-    accumulator[option.id] = seeded || `${option.text} benzer tabloda düşünülebilir; ancak olgudaki somut bulgular ${correctText} lehine daha güçlüdür.`;
+    accumulator[option.id] = repairEditorialQuality(seeded || `${option.text} uygun klinik koşullarda düşünülebilir. Olgudaki somut bulgular ${correctText} lehine daha güçlüdür.`);
     return accumulator;
   }, {});
 }
@@ -451,11 +450,11 @@ function buildDifferentialComparison(options, correctText, wrongOptionFeedback, 
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
     accumulator[option.text] = {
-      explanation: wrongOptionFeedback[option.id] || `${option.text} bu klinik bağlamda düşünülebilir; ancak temel patern ${correctText} lehinedir.`,
+      explanation: repairEditorialQuality(wrongOptionFeedback[option.id] || `${option.text} uygun klinik koşullarda düşünülebilir. Temel bulgular ${correctText} lehinedir.`),
       comparisonPoints: [
-        `${option.text} bazı olgularda benzer yakınma oluşturabilir; ancak bu olgudaki ana bulguları tam açıklamaz.`,
-        `${correctText} olgudaki somut bulgularla daha güçlü uyum gösterir.`,
-        'Ayırıcı tanıda belirleyici olan, öykü ve muayene bulgularının birlikte oluşturduğu klinik tablodur.',
+        repairEditorialQuality(`${option.text} bazı olgularda benzer yakınma oluşturabilir. Bu olgudaki ana bulguları tam açıklamaz.`),
+        repairEditorialQuality(`${correctText} olgudaki somut bulgularla daha güçlü uyum gösterir.`),
+        'Ayırıcı tanıda belirleyici olan öykü ve muayene bulgularının birlikte oluşturduğu klinik tablodur.',
       ],
     };
     return accumulator;

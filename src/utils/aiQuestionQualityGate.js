@@ -9,6 +9,8 @@ import {
   detectTemplateLikeFeedback,
   detectInvalidClinicalMeasurementFormat,
   repairFeedbackText as repairEditorialFeedbackText,
+  repairEditorialQuality,
+  normalizeMedicalTurkish,
   validateClinicalMeaning,
   validateGeneratedCaseText,
 } from './editorialQuality.js';
@@ -18,7 +20,7 @@ export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'çeldirici',
   'doğru seçenek',
   'yanıt ekseni',
-  'patern ve mekanizma',
+  'bulgu ilişkisi ve mekanizma',
   'kısa ve hedef odaklı yorumlanmalıdır',
   'klinik değerlendirme için ek veri',
   'klinik bağlamda',
@@ -36,7 +38,7 @@ export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'hedeflenen öğrenme çıktısıyla',
   'gömülü vakadaki metni tekrar etmekten',
   'direkt tanı adı arama',
-  'patern yorumlaması beklenir',
+  'bulgu yorumu beklenir',
   'yanıtı açık etmeden',
   'seçenekler arasında doğrudan ezber',
   'tus sorusunda doğru ayrım',
@@ -74,33 +76,22 @@ function hasForbiddenPhrase(text = '') {
 }
 
 function cleanSentence(text = '') {
-  let value = sanitizeMeasurementText(String(text || ''))
+  let value = normalizeMedicalTurkish(String(text || ''))
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .replace(/(?<!\d)\.(?=\S)/g, '. ')
     .replace(/\s*\/\s*/g, '/')
-    .replace(/\bAI\s*spot\b/giu, '')
-    .replace(/\bçeldirici\s+ayrımı\b/giu, 'ayırıcı tanı')
-    .replace(/\bçeldiriciler\b/giu, 'alternatifler')
-    .replace(/\bçeldiriciyi\b/giu, 'alternatifi')
-    .replace(/\bçeldirici\b/giu, 'alternatif')
-    .replace(/\böğrenci\b/giu, 'hekim adayı')
-    .replace(/\bverilen öğrenme hedefi\b/giu, 'klinik bilgi')
-    .replace(/\böğrenme hedefi\b/giu, 'klinik bilgi')
-    .replace(/\bdoğru seçenek\b/giu, 'uygun yanıt')
-    .replace(/\byanıt ekseni\b/giu, 'klinik karar')
-    .replace(/\bpatern ve mekanizma\b/giu, 'bulgu ilişkisi')
-    .replace(/\bpatern yorumlaması\b/giu, 'bulgu yorumu')
-    .replace(/\bklinik bağlamda\b/giu, 'bu tabloda')
-    .replace(/\bklinik değerlendirme için ek veri sağlar\b/giu, 'objektif destek sağlar')
-    .replace(/\bsonuçlar tek bir tanı adını yazmaz;?\s*/giu, '')
-    .replace(/\byüzeysel anahtar kelimeyle değil\b/giu, '')
-    .replace(/\bkısa ve hedef odaklı yorumlanmalıdır\b/giu, 'birlikte değerlendirilir')
+    .replace(/çeldiriciler/giu, 'yanlış seçenekler')
+    .replace(/çeldiriciyi/giu, 'yanlış seçeneği')
+    .replace(/çeldirici/giu, 'yanlış seçenek')
+    .replace(/öğrenci/giu, 'hekim adayı')
+    .replace(/yanıt ekseni/giu, 'klinik karar')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/^[,.;:!?\-\s]+|[,.;:!?\-\s]+$/g, '')
     .trim();
+  value = value.replace(/([.!?])\s+([a-zçğıöşü])/gu, (_, punct, letter) => `${punct} ${letter.toLocaleUpperCase('tr')}`);
   return value;
 }
 
@@ -169,7 +160,7 @@ function deriveBranchSpecificRisk(question = {}) {
     if (/dehidratasyon|ishal|kusma|gastroenterit/.test(bundle)) {
       return ['Süt çocuklarında hızlı sıvı kaybı riski', 'Kusma veya ishalle oral alımın azalması', 'Kapiller dolum ve idrar çıkışının izlenmesi'];
     }
-    if (/wheezing|bronsiolit|oksuruk|solunum/.test(bundle)) {
+    if (/hışıltılı solunum|hisi?lti|bronsiolit|oksuruk|solunum/.test(bundle)) {
       return ['Süt çocukluğu döneminde küçük hava yolu obstrüksiyonu', 'Beslenme azalması ve solunum eforu riski', 'Hipoksemi gelişimi açısından yakın izlem'];
     }
     if (/nobet|febril/.test(bundle)) {
@@ -187,7 +178,7 @@ function deriveBranchSpecificRisk(question = {}) {
     return ['İlaç veya toksin maruziyeti öyküsü', 'Doz ve zaman ilişkisinin klinik tabloyu belirlemesi', 'Antidot veya destek tedavisi gereksinimi'];
   }
   if (/mikrobiyoloji|seroloji|kultur|viral|bakteri|direnc|temas/.test(bundle)) {
-    return ['Temas öyküsü veya örnek türünün yorumu değiştirmesi', 'Bağışıklık durumunun etken ayrımına etkisi', 'Seroloji, kültür veya direnç paterninin birlikte değerlendirilmesi'];
+    return ['Temas öyküsü veya örnek türünün yorumu değiştirmesi', 'Bağışıklık durumunun etken ayrımına etkisi', 'Seroloji, kültür veya direnç sonucunun birlikte değerlendirilmesi'];
   }
   if (/fizyoloji|baroreseptor|sempatik|vagal|ventilasyon|perfuzyon/.test(bundle)) {
     return ['Temel mekanizmanın klinik bulguyla ilişkilendirilmesi', 'Kompansatuvar yanıtın yönünün ayırt edilmesi', 'Sistem yanıtının kısa süreli değişkenlerle değerlendirilmesi'];
@@ -216,8 +207,8 @@ function deriveBranchSpecificClues(question = {}) {
     if (/dehidratasyon|ishal|kusma|gastroenterit/.test(bundle)) {
       return ['Mukozalarda kuruluk', 'Gözyaşı ve idrar çıkışında azalma', 'Taşikardi veya kapiller dolum uzaması', 'Sıvı kaybının derecesini gösteren vital bulgular'];
     }
-    if (/wheezing|bronsiolit|oksuruk|solunum/.test(bundle)) {
-      return ['Ekspiratuvar wheezing', 'Subkostal çekilme veya takipne', 'Beslenmede azalma', 'Hipoksemi varlığının değerlendirilmesi'];
+    if (/hışıltılı solunum|hisi?lti|bronsiolit|oksuruk|solunum/.test(bundle)) {
+      return ['Ekspiratuvar hışıltılı solunum', 'Subkostal çekilme veya takipne', 'Beslenmede azalma', 'Hipoksemi varlığının değerlendirilmesi'];
     }
     if (/nobet|febril/.test(bundle)) {
       return ['Ateşle eş zamanlı kısa süreli nöbet', 'Fokal nörolojik bulgu olmaması', 'Postiktal dönemin kısa olması', 'Ense sertliği veya bilinç bozukluğu yokluğu'];
@@ -237,7 +228,7 @@ function deriveBranchSpecificClues(question = {}) {
   if (mixed.length >= 3) return mixed;
 
   if (/farmakoloji|ilac|toksin|antidot/.test(bundle)) return ['Maruziyet zamanı ve doz ilişkisi', 'Toksidromla uyumlu vital veya muayene bulgusu', 'Antidot gerektiren klinik belirti', 'Benzer toksisitelerin ayrımı'];
-  if (/mikrobiyoloji|seroloji|kultur|viral|bakteri|direnc|temas/.test(bundle)) return ['Örnek türü ve temas öyküsü', 'Seroloji veya kültür paterninin yönü', 'Bağışıklık durumuyla uyumlu etken olasılığı', 'Tedavi veya izolasyon kararını etkileyen bulgu'];
+  if (/mikrobiyoloji|seroloji|kultur|viral|bakteri|direnc|temas/.test(bundle)) return ['Örnek türü ve temas öyküsü', 'Seroloji veya kültür sonucunun yönü', 'Bağışıklık durumuyla uyumlu etken olasılığı', 'Tedavi veya izolasyon kararını etkileyen bulgu'];
   if (/fizyoloji|baroreseptor|sempatik|vagal|ventilasyon|perfuzyon/.test(bundle)) return ['Başlangıç değişkeninin yönü', 'Kompansatuvar yanıtın beklenen sonucu', 'Karşıt fizyolojik yanıtların elenmesi', 'Mekanizmayı destekleyen objektif bulgu'];
   return ['Başvuru yakınmasının ani veya ilerleyici seyri', 'Muayene bulgusunun tanısal yön göstermesi', 'Objektif tetkik sonucunun tabloyla uyumu', 'Alternatif seçenekleri dışlayan temel ipucu'];
 }
@@ -258,7 +249,7 @@ function safeDemographic(question = {}) {
       return /eritema toksikum|papulopustuler/.test(bundle) ? '3 günlük yenidoğan' : '10 günlük yenidoğan';
     }
     if (/bruton|pyojenik|b hucre|immunglobulin|otitis|sinuzit/.test(bundle)) return '8 aylık erkek bebek';
-    if (/wheezing|bronsiolit/.test(bundle)) return '8 aylık erkek bebek';
+    if (/hışıltılı solunum|hisi?lti|bronsiolit/.test(bundle)) return '8 aylık erkek bebek';
     if (/kawasaki|koroner|konjonktivit|mukozal|dudak/.test(bundle)) return '4 yaş kız çocuk';
     if (/emme\s+azalması/i.test([question.stem, question.chiefComplaint, question.patientIntro?.presentation].join(' ')) && !/yenidoğan|bebek|aylık/i.test(raw)) {
       return '3 aylık kız bebek';
@@ -284,7 +275,7 @@ function normalizePediatricPresentation(question = {}) {
   if (/kawasaki|koroner|konjonktivit|mukozal|dudak/.test(bundle)) return 'Beş gündür süren ateş ve döküntü';
   if (/yenidogan|sarilik|bilirubin|emme/.test(bundle)) return 'Sarılık ve emme azalması';
   if (/dehidratasyon|ishal|kusma|gastroenterit/.test(bundle)) return 'Kusma ve dehidratasyon';
-  if (/wheezing|bronsiolit|oksuruk|solunum/.test(bundle)) return 'Wheezing ve öksürük';
+  if (/hışıltılı solunum|hisi?lti|bronsiolit|oksuruk|solunum/.test(bundle)) return 'Hışıltılı solunum ve öksürük';
   if (/nobet|febril/.test(bundle)) return 'Ateşle ilişkili nöbet';
   if (/emme\s+azalması/i.test(presentation) && !/yenidoğan|bebek|aylık/i.test(profile)) {
     presentation = presentation.replace(/\s*ve\s*emme\s+azalması/giu, '').replace(/emme\s+azalması/giu, 'halsizlik').trim() || 'Ateş ve halsizlik';
@@ -298,7 +289,7 @@ function normalizeSettingForQuestion(question = {}) {
   const bundle = textBundle(question);
   if (isPediatrics(question)) {
     if (/yenidogan|hie|hipoksik|iskemik|asfiksi|eritema toksikum|sarilik|bilirubin/.test(bundle)) return 'Yenidoğan servisinde değerlendirilir';
-    if (/wheezing|bronsiolit|dehidratasyon|nobet|kawasaki|ates/.test(bundle)) return 'çocuk acile getirilir';
+    if (/hışıltılı solunum|hisi?lti|bronsiolit|dehidratasyon|nobet|kawasaki|ates/.test(bundle)) return 'çocuk acile getirilir';
     return 'pediatri polikliniğine başvurur';
   }
   if (isObgyn(question)) return /acil|kanama|ağrı|agri/.test(bundle) ? 'kadın doğum aciline başvurur' : 'kadın doğum polikliniğine başvurur';
@@ -351,7 +342,7 @@ function repairFeedbackText(text = '', question = {}) {
   const cleaned = repairEditorialFeedbackText(cleanSentence(text), { correct, clue: clues[0] });
   if (cleaned && cleaned.length >= 40 && !hasForbiddenPhrase(cleaned) && !detectBrokenSentence(cleaned) && !detectTemplateLikeFeedback(cleaned)) return cleaned;
   if (correct) {
-    return cleanSentence(`${correct} en uygun yanıttır; çünkü ${clues.join(' ve ') || 'verilen somut klinik bulgular'} bu seçeneği diğer olasılıklardan ayırır.`);
+    return cleanSentence(`${correct} en uygun yanıttır. ${clues.join(' ve ') || 'Somut klinik bulgular'} bu seçeneği diğer olasılıklardan ayırır.`);
   }
   return 'Somut klinik bulgular birlikte değerlendirildiğinde en uygun seçenek belirlenir.';
 }
@@ -360,7 +351,7 @@ function repairWrongFeedback(text = '', optionText = '', question = {}) {
   const cleaned = cleanSentence(text);
   if (cleaned && cleaned.length >= 25 && !hasForbiddenPhrase(cleaned)) return cleaned;
   const correct = getQuestionCorrectText(question);
-  return cleanSentence(`${optionText} bazı olgularda düşünülebilir; ancak bu tabloda ana bulgular ${correct || 'doğru yanıt'} lehine daha güçlüdür.`);
+  return cleanSentence(`${optionText} uygun klinik koşullarda düşünülebilir. Bu tabloda ana bulgular ${correct || 'uygun yanıt'} lehine daha güçlüdür.`);
 }
 
 function repairDifferentialComparison(comparison = {}, question = {}) {

@@ -1,0 +1,57 @@
+{
+  "generatedAt": "2026-05-07T13:11:56.367Z",
+  "branchSmokeGenerated": 12,
+  "blockedEditorialPatternHits": 0,
+  "elapsedMs": 19406,
+  "generated": [
+    {
+      "title": "Yutamama, salya akması ve solunum sıkıntısı",
+      "correct": "Akut epiglottit"
+    },
+    {
+      "title": "Ateş, baş ağrısı ve fokal nörolojik defisit",
+      "correct": "Likefaksiyon nekrozu"
+    },
+    {
+      "title": "Şiddetli baş ağrısı ve ilk kez gelişen jeneralize nöbet",
+      "correct": "Serebral venöz sinüs trombozu"
+    },
+    {
+      "title": "Halsizlik, kusma, koyu idrar ve sarılık",
+      "correct": "Akut hepatit A enfeksiyonu"
+    },
+    {
+      "title": "Antidot seçimi gerektiren tablo",
+      "correct": "TPMT düşük aktivitesine bağlı azatioprin toksisitesi"
+    },
+    {
+      "title": "Anne sütü sonrası kusma, sarılık ve emmeme",
+      "correct": "Klasik galaktozemi"
+    },
+    {
+      "title": "El pres makinesinde parmak ezilmesi",
+      "correct": "Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak"
+    },
+    {
+      "title": "Davranış değişikliği ve okul başarısında gerileme",
+      "correct": "İlerleyici gri cevher tutulumu tipiktir"
+    },
+    {
+      "title": "Ani başlayan burun kanaması",
+      "correct": "Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak"
+    },
+    {
+      "title": "Konuşma bozukluğu ve sağ taraf güçsüzlüğü",
+      "correct": "Sol orta serebral arter oklüzyonuna bağlı akut iskemik inme"
+    },
+    {
+      "title": "Üç haftadan uzun süren öksürük ve kilo kaybı",
+      "correct": "Reaktivasyon pulmoner tüberküloz"
+    },
+    {
+      "title": "Ateş, baş ağrısı ve fokal nörolojik defisit",
+      "correct": "Likefaksiyon nekrozu"
+    }
+  ],
+  "bad": []
+}

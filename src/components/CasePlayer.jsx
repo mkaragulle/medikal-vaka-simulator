@@ -160,7 +160,7 @@ function extractClinicalChips(clinicalCase) {
     ['Kusma', /kusma/],
     ['Dispne', /dispne|nefes darlığı/],
     ['Senkop', /senkop|bayılma/],
-    ['Hışıltı', /hışıltı|wheezing/],
+    ['Hışıltı', /hışıltı|hışıltılı solunum/],
     ['Fokal güç kaybı', /güçsüzlük|kuvvet kaybı|hemiparezi|pleji/],
     ['Konuşma bozukluğu', /afazi|konuşma bozukluğu/],
     ['Hematemez', /hematemez|kanlı kusma/],
@@ -203,7 +203,7 @@ function extractPatientClueChips(clinicalCase) {
     ['Hematemez', /hematemez|kanlı kusma/],
     ['Melena', /melena|siyah dışkı/],
     ['Ateş', /ateş|febril/],
-    ['Hışıltı', /hışıltı|wheezing/],
+    ['Hışıltı', /hışıltı|hışıltılı solunum/],
     ['Sarılık', /sarılık|ikter/],
     ['Peteşi/purpura', /peteşi|purpura/],
   ];

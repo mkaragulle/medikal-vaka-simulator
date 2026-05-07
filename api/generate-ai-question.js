@@ -91,8 +91,8 @@ YASAK konu/doğru cevap listesi:
 ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
-- Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik paternini tekrar etme.
-- Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
+- Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik veya tetkik yorumunu tekrar etme.
+- Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji yorumu, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
 - Deneme 2 veya 3 ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç.
 - Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
@@ -105,7 +105,7 @@ Kesin kurallar:
 - explanation 2-4 cümlelik Klinik Gerekçe kalitesinde olmalı.
 - evidenceChain 3-5 somut olgu ipucundan oluşmalı; meta cümle veya öğrenme çıktısı yazma.
 - examPearl TUS hap bilgisi olmalı; mümkünse kırmızı bayrak, sık tuzak, ilk adım veya ayırt ettirici marker vurgula.
-- managementSteps 2-4 kısa ilk yaklaşım/yönetim basamağı içermeli; temel bilim sorusunda mekanistik yaklaşım notu gibi yaz.
+- managementSteps alanı 2-4 kısa ilk yaklaşım veya yönetim basamağı içermeli. Temel bilim sorusunda mekanizmaya odaklanan kısa bir yaklaşım notu yaz.
 
 Aşağıdaki JSON şemasını birebir döndür:
 {

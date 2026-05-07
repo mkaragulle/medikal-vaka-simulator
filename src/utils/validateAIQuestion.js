@@ -5,14 +5,13 @@ import { attachQuestionDedupeFields, createAIQuestionId, validateQuestionNovelty
 import { validateBranchFit } from './aiBranchRules.js';
 import { detectInvalidMeasurementFormat, sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, validateAIQuestionQuality } from './aiQuestionQualityGate.js';
+import { repairEditorialQuality, normalizeMedicalTurkish } from './editorialQuality.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
 function cleanClinicalSummaryItem(value = '') {
-  return sanitizeMeasurementText(String(value || ''))
+  return normalizeMedicalTurkish(String(value || ''))
     .replace(/\s+/g, ' ')
-    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern)\s*[:：-]\s*/iu, '')
-    .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .replace(/(?<!\d)\.(?=\S)/g, '. ')
@@ -64,7 +63,7 @@ const DIRECT_LEAK_PHRASES = [
 function stripAnswerLeak(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
   const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
+  return repairEditorialQuality(String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici bulgu')); 
 }
 
 function toOptionText(option) {
@@ -134,10 +133,10 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
   return options.reduce((accumulator, option) => {
     if (option.text === correctText) return accumulator;
     accumulator[option.text] = {
-      explanation: feedback[option.id] || `${option.text} bazı olgularda düşünülebilir; ancak bu tablodaki somut bulgular ${correctText} lehine daha güçlüdür.`,
+      explanation: repairEditorialQuality(feedback[option.id] || `${option.text} uygun klinik koşullarda düşünülebilir. Bu tablodaki somut bulgular ${correctText} lehine daha güçlüdür.`),
       comparisonPoints: [
-        `${option.text} belirli klinik koşullarda doğru olabilir; bu olgudaki ana bulgular farklıdır.`,
-        `Bu seçenek, olgudaki temel bulguları yeterince açıklamaz.`,
+        repairEditorialQuality(`${option.text} uygun klinik koşullarda düşünülebilir. Bu olgudaki ana bulgular farklıdır.`),
+        `Bu seçenek olgudaki temel bulguları yeterince açıklamaz.`,
         `${correctText} öykü, muayene ve objektif verilerle daha güçlü uyum gösterir.`,
       ],
     };
@@ -155,8 +154,8 @@ function normalizeInvestigation(item, index, correctText) {
     label: sanitizeMeasurementText(item?.label || item?.name || `Tetkik ${index + 1}`),
     type: item?.type || 'lab',
     priority: item?.priority || (index === 0 ? 'essential' : 'useful'),
-    summary: sanitizeMeasurementText(summary),
-    findings,
+    summary: repairEditorialQuality(summary),
+    findings: findings.map((finding) => repairEditorialQuality(finding)),
     interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte değerlendirilir.',
   };
 }
@@ -184,23 +183,23 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     caseType: 'ai-spot',
     branchId: 'tus-spot-olgular',
     branchName: payload.relatedBranch || 'AI TUS Spot',
-    title: sanitizeMeasurementText(payload.title),
+    title: repairEditorialQuality(payload.title),
     relatedBranch: payload.relatedBranch || 'TUS Spot Olgular',
     spotCategory: `AI Spot • ${payload.relatedBranch || 'TUS'}`,
     difficulty: payload.difficulty || 'Orta-Zor',
-    learningTarget: sanitizeMeasurementText(payload.learningTarget),
-    demographics: sanitizeMeasurementText(payload.demographics || 'TUS adayı için kısa klinik bağlam'),
-    setting: sanitizeMeasurementText(payload.setting || 'Kısa klinik pratik'),
-    chiefComplaint: sanitizeMeasurementText(payload.chiefComplaint || payload.learningTarget),
-    stem: sanitizeMeasurementText(payload.stem),
-    history: history.map(sanitizeMeasurementText),
-    exam: exam.map(sanitizeMeasurementText),
+    learningTarget: repairEditorialQuality(payload.learningTarget),
+    demographics: repairEditorialQuality(payload.demographics || 'TUS adayı için kısa klinik bağlam'),
+    setting: repairEditorialQuality(payload.setting || 'Kısa klinik pratik'),
+    chiefComplaint: repairEditorialQuality(payload.chiefComplaint || payload.learningTarget),
+    stem: repairEditorialQuality(payload.stem),
+    history: history.map((item) => repairEditorialQuality(item)),
+    exam: exam.map((item) => repairEditorialQuality(item)),
     vitals,
     investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)),
-    findings: { history: history.map(sanitizeMeasurementText), exam: exam.map(sanitizeMeasurementText), vitals, investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)) },
+    findings: { history: history.map((item) => repairEditorialQuality(item)), exam: exam.map((item) => repairEditorialQuality(item)), vitals, investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)) },
     options,
     correctAnswer: correctId,
-    question: sanitizeMeasurementText(payload.question),
+    question: repairEditorialQuality(payload.question),
     questionType: payload.questionType || 'spot',
     clinicalFocus: payload.learningTarget,
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
@@ -214,21 +213,21 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     diagnosis: {
       correct: correctText,
       options: shuffleArray(options.map((option) => option.text)),
-      explanation: payload.explanation,
+      explanation: repairEditorialQuality(payload.explanation),
       nextStep: payload.nextStep || 'Olgudaki somut ipuçlarını seçeneklerle karşılaştır.',
-      pearls: [payload.examPearl].filter(Boolean),
+      pearls: [repairEditorialQuality(payload.examPearl)].filter(Boolean),
       answerFeedback: {
-        whyCorrect: payload.explanation,
-        evidenceChain: payload.evidenceChain || [],
-        pearls: [payload.examPearl].filter(Boolean),
-        clinicalPearls: [payload.examPearl].filter(Boolean),
+        whyCorrect: repairEditorialQuality(payload.explanation),
+        evidenceChain: (payload.evidenceChain || []).map((item) => repairEditorialQuality(item)),
+        pearls: [repairEditorialQuality(payload.examPearl)].filter(Boolean),
+        clinicalPearls: [repairEditorialQuality(payload.examPearl)].filter(Boolean),
         differentialComparison: buildDifferentialComparisonFromPayload(payload, correctText, options),
         managementSteps: payload.managementSteps || [
           'Öykü, muayene ve vital bulguları birlikte değerlendir.',
           'Objektif tetkik verilerini klinik tabloyla ilişkilendir.',
           'Alternatif seçenekleri olgudaki somut bulgularla ele.',
         ],
-        learningOutcome: payload.learningTarget,
+        learningOutcome: repairEditorialQuality(payload.learningTarget),
       },
     },
     aiMeta: {
