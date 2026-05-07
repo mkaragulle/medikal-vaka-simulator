@@ -6,6 +6,7 @@ import { branches } from '../data/branches.js';
 import { shuffleArray } from './randomize.js';
 import {
   buildRecentQuestionContext,
+  buildRelaxedRecentQuestionContext,
   makeSeedSignature,
   normalizeQuestionText,
   stableHash,
@@ -30,10 +31,10 @@ import {
 const AI_BRANCH_ID = 'tus-spot-olgular';
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const CASE_CONCEPT_LIMIT = 220;
-const MAX_PRIMARY_ATTEMPTS = 12;
-const MAX_REPAIR_ATTEMPTS = 4;
-const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 60;
-const MAX_GENERATION_ATTEMPTS = 180;
+const MAX_PRIMARY_ATTEMPTS = 18;
+const MAX_REPAIR_ATTEMPTS = 5;
+const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 48;
+const MAX_GENERATION_ATTEMPTS = 160;
 const BRANCH_NAME_BY_ID = Object.fromEntries((branches || []).map((branch) => [branch.id, branch.name || branch.shortName || branch.id]));
 
 const FALLBACK_DISTRACTORS_BY_BRANCH = {
@@ -312,14 +313,18 @@ function maskCorrectConcept(text = '', correctText = '') {
 
 function buildStem(seed, profile, correctText) {
   const controlledStem = buildBranchAwareStem(seed, profile, profile.angle, correctText);
-  if (seed.source === 'embedded-case-concept-only') return controlledStem;
+  const variantCue = VARIANT_STEM_MODIFIERS[(profile.variantNo + profile.answerShift) % VARIANT_STEM_MODIFIERS.length] || '';
+  const angleCue = profile.angle?.stemCue ? `${profile.angle.stemCue}.` : '';
+  const variantSentence = repairAIGeneratedText([angleCue, variantCue].filter(Boolean).join(' '), { fallback: '' });
+  const withVariant = (text = '') => repairAIGeneratedText([text, variantSentence].filter(Boolean).join(' '), { fallback: text });
+  if (seed.source === 'embedded-case-concept-only') return withVariant(controlledStem);
 
   const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'karar verdirici patern');
   const branchRule = getBranchRuleForSeed(seed);
-  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return repairAIGeneratedText(controlledStem, { fallback: controlledStem });
-  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return repairAIGeneratedText(controlledStem, { fallback: controlledStem });
+  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return withVariant(controlledStem);
+  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return withVariant(controlledStem);
   const cleanBase = repairAIGeneratedText(baseStem, { fallback: baseStem });
-  return cleanBase || repairAIGeneratedText(controlledStem, { fallback: controlledStem });
+  return withVariant(cleanBase || controlledStem);
 }
 
 function normalizeOptionObjects(options = []) {
@@ -338,7 +343,14 @@ function buildBalancedOptions(seed, profile) {
   const completeTexts = optionTexts.length === 5 ? optionTexts : uniqueStrings([...optionTexts, ...(FALLBACK_DISTRACTORS_BY_BRANCH[seed.relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default)]).slice(0, 5);
 
   const correct = correctOption?.text || completeTexts[0];
-  const remaining = shuffleArray(completeTexts.filter((text) => normalizeQuestionText(text) !== normalizeQuestionText(correct)));
+  const fallbackPool = FALLBACK_DISTRACTORS_BY_BRANCH[seed.relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default;
+  let diversifiedTexts = [...completeTexts];
+  const extraDistractor = fallbackPool.find((item) => !diversifiedTexts.some((text) => normalizeQuestionText(text) === normalizeQuestionText(item)));
+  if (extraDistractor && profile.variantNo % 2 === 1) {
+    const wrongTexts = diversifiedTexts.filter((text) => normalizeQuestionText(text) !== normalizeQuestionText(correct));
+    diversifiedTexts = uniqueStrings([correct, ...wrongTexts.slice(0, 3), extraDistractor]).slice(0, 5);
+  }
+  const remaining = shuffleArray(diversifiedTexts.filter((text) => normalizeQuestionText(text) !== normalizeQuestionText(correct)));
   const finalTexts = [...remaining.slice(0, profile.answerShift), correct, ...remaining.slice(profile.answerShift)].slice(0, 5);
   while (finalTexts.length < 5) {
     const fallback = (FALLBACK_DISTRACTORS_BY_BRANCH[seed.relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default)
@@ -669,10 +681,21 @@ function logAIGenerationDebug(message, payload = {}) {
 function validateGeneratedCandidate(question, seed, context, branchFilter, errors, stage, attempt) {
   const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
   if (validation.ok) {
+    const rejectionSummary = errors.reduce((summary, item) => {
+      (item.errors || []).forEach((error) => {
+        const key = String(error).split(':').slice(0, 2).join(':');
+        summary[key] = (summary[key] || 0) + 1;
+      });
+      return summary;
+    }, {});
     question.aiMeta = {
       ...(question.aiMeta || {}),
       generationStage: stage,
       generationAttempt: attempt,
+      rejectedCandidatesBeforeSuccess: errors.length,
+      rejectionSummary,
+      fallbackUsed: /fallback|relaxed/i.test(stage),
+      repairAttempted: /repair|relaxed/i.test(stage) || errors.some((item) => (item.errors || []).some((error) => /quality|schema|contentSignature/i.test(String(error)))),
       validationErrors: [],
     };
     return { ok: true, question };
@@ -753,9 +776,22 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
   const fallback = generateFromSyntheticTemplate(branchFilter, context, previousQuestionId, errors);
   if (fallback) return fallback;
 
+  const relaxedContext = buildRelaxedRecentQuestionContext(24);
+  const relaxed = tryGenerateFromSeeds(pool, {
+    context: relaxedContext,
+    branchFilter,
+    previousQuestionId,
+    errors,
+    stage: 'relaxed-history-seed-mutation',
+    maxAttempts: Math.min(72, Math.max(24, pool.length * 2)),
+    attemptOffset: 1200,
+    sourceFactory: (seed) => (seed.source === 'embedded-case-concept-only' ? 'concept-template-relaxed-generator' : 'curated-template-relaxed-generator'),
+  });
+  if (relaxed) return relaxed;
+
   const canUseBroadSynthetic = ['random', 'rastgele'].includes(String(branchFilter || 'random').toLocaleLowerCase('tr'));
   if (canUseBroadSynthetic) {
-    const broadSynthetic = generateFromSyntheticTemplate('random', context, previousQuestionId, errors);
+    const broadSynthetic = generateFromSyntheticTemplate('random', relaxedContext, previousQuestionId, errors);
     if (broadSynthetic) return broadSynthetic;
   }
 

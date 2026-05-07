@@ -4,9 +4,9 @@ const AI_QUESTION_HISTORY_KEY = 'klinikiq-ai-question-history-v5';
 const LEGACY_RECENT_AI_QUESTION_IDS_KEYS = ['klinikiq-recent-ai-question-ids-v4', 'klinikiq-recent-ai-question-ids-v3', 'klinikiq-recent-ai-question-ids-v2'];
 const LEGACY_RECENT_AI_QUESTION_SIGNATURES_KEYS = ['klinikiq-recent-ai-question-signatures-v4', 'klinikiq-recent-ai-question-signatures-v3', 'klinikiq-recent-ai-question-signatures-v2'];
 const LEGACY_AI_QUESTION_HISTORY_KEYS = ['klinikiq-ai-question-history-v4', 'klinikiq-ai-question-history-v3', 'klinikiq-ai-question-history-v2'];
-const MAX_RECENT_IDS = 240;
-const MAX_RECENT_SIGNATURES = 720;
-const MAX_HISTORY_ITEMS = 240;
+const MAX_RECENT_IDS = 140;
+const MAX_RECENT_SIGNATURES = 180;
+const MAX_HISTORY_ITEMS = 150;
 
 const memoryStore = new Map();
 
@@ -297,10 +297,21 @@ export function rememberAIQuestion(question = {}) {
 }
 
 export function buildRecentQuestionContext(limit = 50) {
-  const history = getAIQuestionHistory().slice(0, limit);
+  const safeLimit = Math.max(10, Number(limit) || 50);
+  const history = getAIQuestionHistory().slice(0, safeLimit);
   return {
-    recentIds: getRecentAIQuestionIds(),
-    recentSignatures: getRecentAIQuestionSignatures(),
+    recentIds: getRecentAIQuestionIds().slice(0, Math.max(40, safeLimit * 2)),
+    recentSignatures: getRecentAIQuestionSignatures().slice(0, Math.max(80, safeLimit * 3)),
+    recentQuestionSummaries: history.map((item) => ({ ...item })),
+  };
+}
+
+export function buildRelaxedRecentQuestionContext(limit = 24) {
+  const safeLimit = Math.max(12, Number(limit) || 24);
+  const history = getAIQuestionHistory().slice(0, safeLimit);
+  return {
+    recentIds: getRecentAIQuestionIds().slice(0, Math.max(32, safeLimit)),
+    recentSignatures: getRecentAIQuestionSignatures().slice(0, Math.max(64, safeLimit * 2)),
     recentQuestionSummaries: history.map((item) => ({ ...item })),
   };
 }

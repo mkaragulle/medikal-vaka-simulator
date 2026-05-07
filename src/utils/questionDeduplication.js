@@ -253,12 +253,12 @@ export function findEmbeddedCaseOverlap(question = {}, embeddedCases = []) {
     const targetSimilarity = similarityScore(fingerprint.learningTarget, embedded.learningTarget);
 
     const conceptOnlySource = question.aiMeta?.sourceConceptOnly || /concept-template|synthetic-template/i.test(String(question.source || ''));
-    if (titleExact && stemSimilarity >= (conceptOnlySource ? 0.72 : 0.55)) return { caseId: embedded.id, reason: 'title-stem-overlap', score: stemSimilarity };
+    if (titleExact && stemSimilarity >= (conceptOnlySource ? 0.88 : 0.55) && (!conceptOnlySource || sameCorrect || sameLearningTarget)) return { caseId: embedded.id, reason: 'title-stem-overlap', score: stemSimilarity };
     if (questionExact && sameCorrect && stemSimilarity >= 0.45) return { caseId: embedded.id, reason: 'question-correct-exact', score: 1 };
-    if (optionSetExact && sameCorrect && (sameLearningTarget || targetSimilarity >= 0.72) && (stemSimilarity >= 0.58 || questionSimilarity >= 0.74 || combinedSimilarity >= 0.82)) return { caseId: embedded.id, reason: 'option-target-correct-overlap', score: Math.max(stemSimilarity, questionSimilarity, targetSimilarity) };
-    if (stemSimilarity >= (conceptOnlySource ? 0.82 : 0.76) && (sameCorrect || targetSimilarity >= 0.74)) return { caseId: embedded.id, reason: 'stem-target-too-similar', score: stemSimilarity };
+    if (optionSetExact && sameCorrect && (sameLearningTarget || targetSimilarity >= 0.78) && (stemSimilarity >= (conceptOnlySource ? 0.82 : 0.58) || questionSimilarity >= 0.80 || combinedSimilarity >= 0.88)) return { caseId: embedded.id, reason: 'option-target-correct-overlap', score: Math.max(stemSimilarity, questionSimilarity, targetSimilarity) };
+    if (stemSimilarity >= (conceptOnlySource ? 0.90 : 0.76) && (sameCorrect || targetSimilarity >= 0.78)) return { caseId: embedded.id, reason: 'stem-target-too-similar', score: stemSimilarity };
     if (questionSimilarity >= 0.86 && sameCorrect && (stemSimilarity >= 0.42 || sameLearningTarget)) return { caseId: embedded.id, reason: 'question-too-similar', score: questionSimilarity };
-    if (combinedSimilarity >= (conceptOnlySource ? 0.92 : 0.88)) return { caseId: embedded.id, reason: 'combined-too-similar', score: combinedSimilarity };
+    if (combinedSimilarity >= (conceptOnlySource ? 0.97 : 0.90) && (sameCorrect || sameLearningTarget || optionSetExact)) return { caseId: embedded.id, reason: 'combined-too-similar', score: combinedSimilarity };
   }
 
   return null;
