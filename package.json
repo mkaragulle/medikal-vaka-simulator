@@ -1,22 +1,24 @@
 {
   "name": "klinikiq",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "KlinikIQ TUS ve komite odaklı klinik vaka simülatörü",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --minify false",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "5.1.4",
-    "vite": "7.2.7",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
-    "firebase": "12.12.1"
+    "firebase": "^12.12.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
   },
   "engines": {
     "node": ">=20.19.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.1",
+    "vite": "^8.0.11"
   }
 }

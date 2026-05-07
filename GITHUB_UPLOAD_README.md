@@ -1,26 +1,43 @@
-# GitHub Upload Notu
+# GitHub upload instructions
 
-Bu ZIP GitHub'a yüklemek için temiz paketlenmiştir. ZIP içindeki dosyaları mevcut proje klasörünün içine çıkarın:
+Use this ZIP as the repository root. After extracting it, you should immediately see these files:
 
-`C:\Users\Muhammed\viteproject\medikal-vaka-simulator`
+- `package.json`
+- `index.html`
+- `vite.config.js`
+- `src/`
+- `public/`
+- `api/`
 
-Sonra PowerShell'de proje klasöründe şu komutları çalıştırın:
+Do not upload the ZIP file itself to GitHub. Upload the extracted files and folders.
 
-```powershell
-cd C:\Users\Muhammed\viteproject\medikal-vaka-simulator
-git status
+## Terminal upload
+
+```bash
+cd PATH_TO_EXTRACTED_FOLDER
+git init
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
 git add .
-git commit -m "Update KlinikIQ GitHub ready fix"
-git remote set-url origin https://github.com/mkaragulle/medikal-vaka-simulator.git
+git commit -m "Finalize KlinikIQ AI and clinical QA fixes"
 git push -u origin main
 ```
 
-Eğer `nothing to commit, working tree clean` yazıyorsa dosyalar zaten GitHub'daki remote ile aynıdır. Bu durumda sorun ZIP değil; GitHub/Vercel tarafındaki deploy, cache, branch veya repo ayarıdır.
+If GitHub says the remote already has files:
 
-Remote URL şu olmamalıdır:
+```bash
+git pull origin main --rebase
+git push origin main
+```
 
-`https://github.com/mkaragulle/medikal-vaka-simulator/tree/main/`
+If `remote origin already exists` appears:
 
-Doğru remote URL şudur:
+```bash
+git remote remove origin
+git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git push -u origin main
+```
 
-`https://github.com/mkaragulle/medikal-vaka-simulator.git`
+## GitHub website upload
+
+Open the repository on GitHub, click **Add file → Upload files**, then drag the extracted files and folders, not the ZIP.
