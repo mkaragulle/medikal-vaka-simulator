@@ -1,5 +1,115 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
+const AI_QUESTION_JSON_SCHEMA = {
+  type: 'object',
+  additionalProperties: false,
+  required: [
+    'id',
+    'source',
+    'caseType',
+    'title',
+    'relatedBranch',
+    'difficulty',
+    'learningTarget',
+    'demographics',
+    'setting',
+    'chiefComplaint',
+    'stem',
+    'findings',
+    'question',
+    'options',
+    'correctAnswer',
+    'explanation',
+    'wrongOptionFeedback',
+    'evidenceChain',
+    'examPearl',
+    'managementSteps',
+    'nextQuestionSeed',
+  ],
+  properties: {
+    id: { type: 'string' },
+    source: { type: 'string', enum: ['real-ai'] },
+    caseType: { type: 'string', enum: ['ai-spot'] },
+    title: { type: 'string' },
+    relatedBranch: { type: 'string' },
+    difficulty: { type: 'string' },
+    learningTarget: { type: 'string' },
+    demographics: { type: 'string' },
+    setting: { type: 'string' },
+    chiefComplaint: { type: 'string' },
+    stem: { type: 'string' },
+    findings: {
+      type: 'object',
+      additionalProperties: false,
+      required: ['history', 'exam', 'vitals', 'investigations'],
+      properties: {
+        history: { type: 'array', items: { type: 'string' } },
+        exam: { type: 'array', items: { type: 'string' } },
+        vitals: {
+          type: 'object',
+          additionalProperties: false,
+          required: ['TA', 'Nabız', 'Solunum', 'Ateş', 'SpO₂'],
+          properties: {
+            TA: { type: 'string' },
+            'Nabız': { type: 'string' },
+            Solunum: { type: 'string' },
+            'Ateş': { type: 'string' },
+            'SpO₂': { type: 'string' },
+          },
+        },
+        investigations: {
+          type: 'array',
+          items: {
+            type: 'object',
+            additionalProperties: false,
+            required: ['id', 'label', 'type', 'priority', 'summary', 'findings', 'rows'],
+            properties: {
+              id: { type: 'string' },
+              label: { type: 'string' },
+              type: { type: 'string' },
+              priority: { type: 'string' },
+              summary: { type: 'string' },
+              findings: { type: 'array', items: { type: 'string' } },
+              rows: {
+                type: 'array',
+                items: {
+                  type: 'array',
+                  items: { type: 'string' },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    question: { type: 'string' },
+    options: {
+      type: 'array',
+      items: {
+        type: 'object',
+        additionalProperties: false,
+        required: ['id', 'text'],
+        properties: {
+          id: { type: 'string', enum: OPTION_IDS },
+          text: { type: 'string' },
+        },
+      },
+    },
+    correctAnswer: { type: 'string', enum: OPTION_IDS },
+    explanation: { type: 'string' },
+    wrongOptionFeedback: {
+      type: 'object',
+      additionalProperties: false,
+      required: OPTION_IDS,
+      properties: Object.fromEntries(OPTION_IDS.map((id) => [id, { type: 'string' }])),
+    },
+    evidenceChain: { type: 'array', items: { type: 'string' } },
+    examPearl: { type: 'string' },
+    managementSteps: { type: 'array', items: { type: 'string' } },
+    nextQuestionSeed: { type: 'string' },
+  },
+};
+
 function sendJson(response, status, payload) {
   response.statusCode = status;
   response.setHeader('Content-Type', 'application/json; charset=utf-8');
@@ -30,7 +140,7 @@ function parseJsonBody(request) {
 }
 
 function extractJsonFromText(text = '') {
-  const trimmed = String(text).trim();
+  const trimmed = String(text || '').trim();
   if (trimmed.startsWith('{')) return JSON.parse(trimmed);
   const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
   if (fenced?.[1]) return JSON.parse(fenced[1].trim());
@@ -40,6 +150,19 @@ function extractJsonFromText(text = '') {
   throw new Error('No JSON object found in model response');
 }
 
+function extractOpenAIText(payload = {}) {
+  if (typeof payload.output_text === 'string' && payload.output_text.trim()) return payload.output_text;
+  const chunks = [];
+  (payload.output || []).forEach((item) => {
+    (item.content || []).forEach((content) => {
+      if (typeof content.text === 'string') chunks.push(content.text);
+      if (typeof content.output_text === 'string') chunks.push(content.output_text);
+    });
+  });
+  const text = chunks.join('\n').trim();
+  if (!text) throw new Error('OpenAI response did not contain output_text');
+  return text;
+}
 
 const REMOTE_FORBIDDEN_TEXT_PATTERNS = [
   /Morfolojik patern\s*[.:]\s*Morfolojik patern/iu,
@@ -116,12 +239,12 @@ function validateRawQuestion(question = {}) {
 
 function buildPrompt({ branchFilter = 'Rastgele', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
   const recentList = recentQuestionSummaries
-    .slice(0, 18)
+    .slice(0, 22)
     .map((item, index) => `${index + 1}. ${item.branch || 'TUS'} | başlık: ${item.title || ''} | doğru: ${item.correct || ''}`)
     .join('\n');
 
   const forbiddenTopics = recentQuestionSummaries
-    .slice(0, 18)
+    .slice(0, 22)
     .map((item) => [item.title, item.correct].filter(Boolean).join(' / '))
     .filter(Boolean)
     .join('; ');
@@ -143,6 +266,7 @@ ${forbiddenTopics || 'Henüz yok.'}
 Kesin kurallar:
 - Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik paternini tekrar etme.
 - Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
+- Aynı hastalık kullanılacaksa soru açısı kesin değişsin: tanı yerine ilk tedavi, tetkik yorumu, komplikasyon, mekanizma veya yönetim basamağı sor.
 - Deneme 2 veya 3 ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç.
 - Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
@@ -164,111 +288,154 @@ Kesin kurallar:
 - Temel bilim/mekanizma sorusunda gerçek objektif veri yoksa findings.investigations boş dizi olsun; "Laboratuvar" placeholder kartı üretme.
 - Patoloji sorularında teori cümlesini laboratuvar sonucu gibi gösterme. Gerekirse yalnız histopatolojik değerlendirme kullan.
 - Ayırt ettirici ipuçları ve evidenceChain madde metinlerinde "Etiket: açıklama" yapısı kullanma; doğrudan doğal cümle yaz.
+- JSON şemasındaki tüm alanları doldur. source her zaman "real-ai", caseType her zaman "ai-spot" olsun.
+- wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı bulunsun; doğru seçenek için de kısa doğru gerekçesi yazabilirsin.`;
+}
 
-Aşağıdaki JSON şemasını birebir döndür:
-{
-  "id": "ai-generated-remote-unique-id",
-  "source": "real-ai",
-  "caseType": "ai-spot",
-  "title": "Tanıyı doğrudan ele vermeyen kısa başlık",
-  "relatedBranch": "Tıbbi Mikrobiyoloji / Tıbbi Farmakoloji / İç Hastalıkları / vb.",
-  "difficulty": "Orta-Zor",
-  "learningTarget": "Soru ile ölçülen ana TUS bilgisi",
-  "demographics": "Kısa hasta profili veya temel bilim bağlamı",
-  "setting": "Acil / poliklinik / laboratuvar / temel bilim bağlamı",
-  "chiefComplaint": "Kısa başvuru nedeni veya odak",
-  "stem": "Kısa klinik senaryo veya bilgi bağlamı",
-  "findings": {
-    "history": ["öykü ipucu 1", "öykü ipucu 2"],
-    "exam": ["muayene ipucu 1", "muayene ipucu 2"],
-    "vitals": {"TA": "...", "Nabız": "...", "Ateş": "..."},
-    "investigations": [
+async function callOpenAIQuestion(prompt) {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) return null;
+
+  const model = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+  const baseUrl = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
+  const maxOutputTokens = Number(process.env.OPENAI_MAX_OUTPUT_TOKENS || 2600);
+  const requestBody = {
+    model,
+    input: [
       {
-        "id": "objective-test-1",
-        "label": "Tetkik adı",
-        "type": "lab",
-        "priority": "essential",
-        "summary": "Objektif sonuç; tanı adı yazma.",
-        "findings": ["objektif bulgu 1", "objektif bulgu 2"],
-        "rows": [["Parametre", "Sonuç + birim", "Referans", "Durum"]]
-      }
-    ]
-  },
-  "question": "Soru kökü",
-  "options": [
-    {"id": "A", "text": "..."},
-    {"id": "B", "text": "..."},
-    {"id": "C", "text": "..."},
-    {"id": "D", "text": "..."},
-    {"id": "E", "text": "..."}
-  ],
-  "correctAnswer": "C",
-  "explanation": "Doğru cevabın bilimsel gerekçesi, 2-4 cümle.",
-  "wrongOptionFeedback": {
-    "A": "...",
-    "B": "...",
-    "D": "...",
-    "E": "..."
-  },
-  "evidenceChain": ["kritik ipucu 1", "kritik ipucu 2", "doğru yoruma götüren bağlantı"],
-  "examPearl": "TUS için kısa hap bilgi",
-  "managementSteps": ["ilk yaklaşım basamağı 1", "ilk yaklaşım basamağı 2", "ilk yaklaşım basamağı 3"],
-  "nextQuestionSeed": "Benzer/zor soru için konu tohumu"
-}`;
+        role: 'system',
+        content: 'You produce medically accurate Turkish TUS-style exam questions as strict JSON. Never include explanations outside JSON.',
+      },
+      { role: 'user', content: prompt },
+    ],
+    text: {
+      format: {
+        type: 'json_schema',
+        name: 'klinikiq_ai_spot_question',
+        strict: true,
+        schema: AI_QUESTION_JSON_SCHEMA,
+      },
+    },
+    max_output_tokens: maxOutputTokens,
+    store: false,
+  };
+
+  if (process.env.OPENAI_TEMPERATURE) requestBody.temperature = Number(process.env.OPENAI_TEMPERATURE);
+  if (process.env.OPENAI_TOP_P) requestBody.top_p = Number(process.env.OPENAI_TOP_P);
+
+  const openAIResponse = await fetch(`${baseUrl}/responses`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify(requestBody),
+  });
+
+  if (!openAIResponse.ok) {
+    const errorText = await openAIResponse.text();
+    const error = new Error(`OpenAI request failed with ${openAIResponse.status}: ${errorText.slice(0, 500)}`);
+    error.status = openAIResponse.status;
+    throw error;
+  }
+
+  const data = await openAIResponse.json();
+  const modelText = extractOpenAIText(data);
+  const question = extractJsonFromText(modelText);
+  question.id = `ai-generated-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  question.source = 'real-ai';
+  question.provider = 'openai';
+  return question;
+}
+
+async function callGeminiQuestion(prompt) {
+  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+  if (!apiKey) return null;
+
+  const model = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+  const geminiResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      generationConfig: {
+        temperature: 0.92,
+        topP: 0.92,
+        maxOutputTokens: 2400,
+        responseMimeType: 'application/json',
+      },
+      contents: [
+        {
+          role: 'user',
+          parts: [{ text: prompt }],
+        },
+      ],
+    }),
+  });
+
+  if (!geminiResponse.ok) {
+    const errorText = await geminiResponse.text();
+    const error = new Error(`Gemini request failed with ${geminiResponse.status}: ${errorText.slice(0, 500)}`);
+    error.status = geminiResponse.status;
+    throw error;
+  }
+
+  const data = await geminiResponse.json();
+  const modelText = data?.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('\n') || '';
+  const question = extractJsonFromText(modelText);
+  question.id = `ai-generated-gemini-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  question.source = 'real-ai';
+  question.provider = 'gemini';
+  return question;
+}
+
+function selectProviderStatus() {
+  return {
+    hasOpenAI: Boolean(process.env.OPENAI_API_KEY),
+    hasGemini: Boolean(process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY),
+  };
+}
+
+async function generateWithAvailableProvider(prompt) {
+  const providerStatus = selectProviderStatus();
+  const preferred = String(process.env.AI_PROVIDER || 'openai').toLowerCase();
+  const providerOrder = preferred === 'gemini' ? ['gemini', 'openai'] : ['openai', 'gemini'];
+  const errors = [];
+
+  for (const provider of providerOrder) {
+    try {
+      if (provider === 'openai' && providerStatus.hasOpenAI) return await callOpenAIQuestion(prompt);
+      if (provider === 'gemini' && providerStatus.hasGemini) return await callGeminiQuestion(prompt);
+    } catch (error) {
+      errors.push(`${provider}: ${error?.message || error}`);
+    }
+  }
+
+  if (!providerStatus.hasOpenAI && !providerStatus.hasGemini) {
+    const error = new Error('Missing server-side AI API key. Set OPENAI_API_KEY or GEMINI_API_KEY in the deployment environment.');
+    error.status = 503;
+    throw error;
+  }
+
+  const error = new Error(errors.join(' | ') || 'Remote AI providers failed');
+  error.status = 502;
+  throw error;
 }
 
 export default async function handler(request, response) {
-  if (request.method !== 'POST') {
-    return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
+  if (request.method === 'OPTIONS') {
+    response.statusCode = 204;
+    response.end();
+    return;
   }
 
-  const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
-  const model = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
-
-  if (!apiKey) {
-    return sendJson(response, 503, {
-      ok: false,
-      error: 'Missing GEMINI_API_KEY on the server. Local fallback should be used by the frontend.',
-    });
+  if (request.method !== 'POST') {
+    return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
   }
 
   try {
     const body = await parseJsonBody(request);
     const prompt = buildPrompt(body);
-    const geminiResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        generationConfig: {
-          temperature: 0.92,
-          topP: 0.92,
-          maxOutputTokens: 2200,
-          responseMimeType: 'application/json',
-        },
-        contents: [
-          {
-            role: 'user',
-            parts: [{ text: prompt }],
-          },
-        ],
-      }),
-    });
-
-    if (!geminiResponse.ok) {
-      const errorText = await geminiResponse.text();
-      return sendJson(response, 502, {
-        ok: false,
-        error: 'Gemini request failed',
-        detail: errorText.slice(0, 500),
-      });
-    }
-
-    const data = await geminiResponse.json();
-    const modelText = data?.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('\n') || '';
-    const question = extractJsonFromText(modelText);
-    question.id = question.id || `ai-generated-remote-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-    question.source = 'real-ai';
-    question.provider = 'gemini';
+    const question = await generateWithAvailableProvider(prompt);
 
     const validation = validateRawQuestion(question);
     const editorialValidation = validateRemoteEditorialQuality(question);
@@ -276,6 +443,7 @@ export default async function handler(request, response) {
       return sendJson(response, 422, {
         ok: false,
         error: 'Model response failed editorial validation',
+        provider: question.provider || 'remote-ai',
         validationErrors: editorialValidation.errors,
       });
     }
@@ -284,17 +452,19 @@ export default async function handler(request, response) {
       return sendJson(response, 422, {
         ok: false,
         error: 'Model response failed schema validation',
+        provider: question.provider || 'remote-ai',
         validationErrors: validation.errors,
       });
     }
 
     return sendJson(response, 200, {
       ok: true,
-      provider: 'gemini',
+      provider: question.provider || 'remote-ai',
       question,
     });
   } catch (error) {
-    return sendJson(response, 500, {
+    const status = error?.status && Number(error.status) >= 400 ? Number(error.status) : 500;
+    return sendJson(response, status, {
       ok: false,
       error: error?.message || 'AI question generation failed',
     });

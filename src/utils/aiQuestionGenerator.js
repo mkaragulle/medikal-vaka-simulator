@@ -817,11 +817,12 @@ function buildSignatureOnlyContext(context = {}, limit = 60) {
 
 function buildEffectiveNoveltyContext(context = {}) {
   const recentSummaryCount = (context.recentQuestionSummaries || []).length;
-  if (recentSummaryCount < 24) return context;
+  if (recentSummaryCount <= 10) return context;
   return {
     ...context,
     recentIds: (context.recentIds || []).slice(0, 60),
-    recentSignatures: context.recentSignatures || [],
+    // Exact signature matching is retained, but very old semantic summaries are trimmed so the local fallback cannot stall after long sessions.
+    recentSignatures: (context.recentSignatures || []).slice(0, 160),
     recentQuestionSummaries: (context.recentQuestionSummaries || []).slice(0, 10),
   };
 }

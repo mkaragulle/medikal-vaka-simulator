@@ -57,8 +57,19 @@ Bu ayarlar ayrıca `vercel.json` içinde de vardır.
 
 Bu sürümde AI soru üretim ekranı iki modlu çalışır:
 
-- Varsayılan: local akıllı generator + tekrar engelleme. API key gerekmez.
-- Gerçek AI: `.env.local` içinde `VITE_ENABLE_REAL_AI=true` yapılır ve deploy edilen serverless ortamında `GEMINI_API_KEY` tanımlanır.
+- Ana yol: gerçek AI endpointi (`/api/generate-ai-question`) üzerinden server-side OpenAI Responses API çağrısı yapar. API key frontend bundle içine girmez.
+- Güvenli fallback: OpenAI/Gemini endpointi çalışmazsa uygulama local akıllı generator ile kırılmadan devam eder.
+
+Vercel Environment Variables içine en az şunu ekle:
+
+```txt
+OPENAI_API_KEY=sk-...
+OPENAI_MODEL=gpt-4o-mini
+AI_PROVIDER=openai
+VITE_ENABLE_REAL_AI=true
+```
+
+İstersen alternatif/ikincil sağlayıcı olarak `GEMINI_API_KEY` de tanımlanabilir. `OPENAI_API_KEY` veya `GEMINI_API_KEY` yoksa gerçek AI devreye giremez ve sistem local fallback ile çalışır.
 
 Local çalıştırma:
 

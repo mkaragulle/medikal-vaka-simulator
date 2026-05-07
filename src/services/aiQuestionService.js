@@ -4,7 +4,7 @@ import { normalizeGeneratedAIQuestion, validateAIQuestionCase } from '../utils/v
 
 const runtimeEnv = import.meta.env || {};
 const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-question';
-const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI || 'false').toLowerCase() === 'true';
+const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI ?? 'true').toLowerCase() !== 'false';
 const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 9000);
 const AI_REMOTE_RETRY_COUNT = Math.max(1, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 3));
 
@@ -94,7 +94,7 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
 
 function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context, reason = null }) {
   try {
-    const refreshedContext = buildRecentQuestionContext(30);
+    const refreshedContext = buildRecentQuestionContext(12);
     const effectiveContext = refreshedContext.recentSignatures?.length ? refreshedContext : context;
     const question = generateAIQuestion({
       previousQuestionId,
@@ -123,7 +123,7 @@ function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context
 }
 
 export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random' } = {}) {
-  const context = buildRecentQuestionContext(30);
+  const context = buildRecentQuestionContext(24);
 
   try {
     const remoteResult = await requestRemoteAIQuestion({ previousQuestionId, branchFilter, context });

@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-05-07T18:20:17.863Z",
+  "generatedAt": "2026-05-07T19:02:32.627Z",
   "methodology": "100 local AI-question generations: 50 in one branch and 50 distributed across branches. Each accepted question had passed the generator quality gate; this script additionally checks exact contentSignature repetition, option-order-only repetition, branch fit, exact embedded-case copy, error state, stage, repair/fallback usage and rejected-candidate counters recorded by the generator.",
   "sameBranch": {
     "requested": 50,
     "generated": 50,
     "errors": 0,
-    "rejectedCandidates": 17,
-    "duplicateRejectedCandidates": 16,
-    "qualityRejectedCandidates": 1,
+    "rejectedCandidates": 18,
+    "duplicateRejectedCandidates": 18,
+    "qualityRejectedCandidates": 0,
     "repairUsed": 0,
     "fallbackUsed": 0,
     "embeddedExactCopies": 0,
     "branchFailures": 0,
     "repeatedContentSignatures": 0,
     "onlyOptionOrderChanges": 0,
-    "maxGenerationMs": 1317,
-    "averageGenerationMs": 318,
+    "maxGenerationMs": 4293,
+    "averageGenerationMs": 693,
     "stages": {
       "primary-mutated-seed": 50
     },
@@ -28,17 +28,17 @@
     "requested": 50,
     "generated": 50,
     "errors": 0,
-    "rejectedCandidates": 10,
-    "duplicateRejectedCandidates": 2,
-    "qualityRejectedCandidates": 8,
+    "rejectedCandidates": 9,
+    "duplicateRejectedCandidates": 0,
+    "qualityRejectedCandidates": 9,
     "repairUsed": 0,
     "fallbackUsed": 0,
     "embeddedExactCopies": 0,
     "branchFailures": 0,
     "repeatedContentSignatures": 0,
     "onlyOptionOrderChanges": 0,
-    "maxGenerationMs": 3033,
-    "averageGenerationMs": 351,
+    "maxGenerationMs": 3311,
+    "averageGenerationMs": 679,
     "stages": {
       "primary-mutated-seed": 50
     },
@@ -71,109 +71,109 @@
     "branchFailures": 0,
     "repeatedContentSignatures": 0,
     "onlyOptionOrderChanges": 0,
-    "maxGenerationMs": 3033,
-    "averageGenerationMs": 335
+    "maxGenerationMs": 4293,
+    "averageGenerationMs": 686
   },
   "sample": [
     {
-      "id": "ai-spot-movt9ecd-1-4fdf088c-a036-4f57-964e-83b10516f7b4",
+      "id": "ai-spot-movur0mx-1-a8f80938-3cfb-4bfe-9673-570c0d4a41f0",
       "branch": "Çocuk Sağlığı ve Hastalıkları",
       "title": "Süt çocuğunda fışkırır kusma.",
-      "questionType": "spot",
+      "questionType": "test",
       "correct": "Hipertrofik pilor stenozu",
-      "signature": "cs-q1uog2qo",
+      "signature": "cs-qib7o6z",
       "stage": "primary-mutated-seed",
       "seed": "branch-peds-pyloric-stenosis-001-variant-9"
     },
     {
-      "id": "ai-spot-movt9em7-2-6b767a59-b720-4f72-a3fc-0c3a3aebec97",
+      "id": "ai-spot-movur1m9-2-7ae8fd67-46bf-4473-b6d6-c970116f7d64",
       "branch": "Çocuk Sağlığı ve Hastalıkları",
       "title": "Havlar tarzda öksürük ve ses kısıklığı.",
-      "questionType": "diagnosis",
+      "questionType": "test",
       "correct": "Deksametazon + nebulize epinefrin",
-      "signature": "cs-qmwpmba",
+      "signature": "cs-q13pfmgy",
       "stage": "primary-mutated-seed",
       "seed": "ai-croup-treatment-001-variant-12"
     },
     {
-      "id": "ai-spot-movt9esw-3-fe8d9085-21d0-42ac-a320-7ab183768551",
+      "id": "ai-spot-movur25u-3-dda15963-e06c-4540-8388-8b39c183faa0",
       "branch": "Çocuk Sağlığı ve Hastalıkları",
       "title": "Ateş sonrası kısa nöbet.",
       "questionType": "diagnosis",
       "correct": "Basit febril konvülziyon",
-      "signature": "cs-q1ki9dd8",
+      "signature": "cs-q952mn1",
       "stage": "primary-mutated-seed",
       "seed": "branch-peds-febrile-seizure-001-variant-7"
     },
     {
-      "id": "ai-spot-movt9eyv-4-bdb84927-d9ce-46a1-a0ad-11e29b6ed340",
+      "id": "ai-spot-movur2kb-4-6c358a9e-f0ac-4fb0-9420-490d3f042cef",
       "branch": "Çocuk Sağlığı ve Hastalıkları",
       "title": "Ateş sonrası kısa nöbet.",
       "questionType": "diagnosis",
       "correct": "Basit febril konvülziyon",
-      "signature": "cs-q1hml0cu",
+      "signature": "cs-qnrfghj",
       "stage": "primary-mutated-seed",
       "seed": "branch-peds-febrile-seizure-001-variant-3"
     },
     {
-      "id": "ai-spot-movt9f5o-5-fc0eb3c9-ce07-4735-8e48-ca5212484e1f",
+      "id": "ai-spot-movur337-5-74713c79-67c3-48fc-b852-302bbb6fdd2d",
       "branch": "Çocuk Sağlığı ve Hastalıkları",
       "title": "Ateş sonrası kısa nöbet.",
-      "questionType": "spot",
+      "questionType": "treatment",
       "correct": "Basit febril konvülziyon",
-      "signature": "cs-q923g6f",
+      "signature": "cs-q1tznqdd",
       "stage": "primary-mutated-seed",
       "seed": "branch-peds-febrile-seizure-001-variant-10"
     },
     {
-      "id": "ai-spot-movt9qoi-1y-735ebfdd-dcad-4496-badd-d774ef4ea69f",
+      "id": "ai-spot-movurpup-1y-629605c5-47c3-4d0b-a2f0-20f70af36cce",
       "branch": "Tıbbi Mikrobiyoloji",
       "title": "Akut hepatit paneli yorumu.",
       "questionType": "diagnosis",
       "correct": "Akut hepatit A enfeksiyonu",
-      "signature": "cs-qtx9ldf",
+      "signature": "cs-q18v039v",
       "stage": "primary-mutated-seed",
-      "seed": "synthetic-micro-hav-variant-001-variant-1"
+      "seed": "synthetic-micro-hav-variant-001-variant-11"
     },
     {
-      "id": "ai-spot-movt9qv0-1z-506aad61-ac55-4b42-83ef-6ca6f88f2558",
+      "id": "ai-spot-movurq8w-1z-0a16a1cb-b62c-484b-9f58-b60035d568f0",
       "branch": "Tıbbi Farmakoloji",
       "title": "Parasetamol doz aşımı.",
-      "questionType": "diagnosis",
+      "questionType": "treatment",
       "correct": "N-asetilsistein",
-      "signature": "cs-qz5orp7",
+      "signature": "cs-q1lprv54",
       "stage": "primary-mutated-seed",
-      "seed": "synthetic-pharm-acetaminophen-001-variant-4"
+      "seed": "synthetic-pharm-acetaminophen-001-variant-1"
     },
     {
-      "id": "ai-spot-movt9r14-20-29f2bfc4-d89f-4cf7-93e3-0e51cdd44c84",
+      "id": "ai-spot-movurqi9-20-0b83232e-43ef-4b80-90c7-b0e3c676d27c",
       "branch": "Tıbbi Biyokimya",
-      "title": "Yenidoğanda beslenme sonrası nörolojik kötüleşme.",
-      "questionType": "spot",
-      "correct": "Dallı zincirli alfa-ketoasit dehidrogenaz kompleksi",
-      "signature": "cs-qt8abt3",
+      "title": "Yenidoğan taramasında fenilalanin yüksekliği.",
+      "questionType": "test",
+      "correct": "Fenilalanin hidroksilaz defekti",
+      "signature": "cs-qd854xm",
       "stage": "primary-mutated-seed",
-      "seed": "ai-msud-biochemistry-001"
+      "seed": "synthetic-biochem-pku-001-variant-8"
     },
     {
-      "id": "ai-spot-movt9rle-22-e63b58d6-75b2-45e1-bb9e-ea5014dded87",
+      "id": "ai-spot-movurr9h-22-e5423944-d80f-4cd3-a1b1-8d619c55e5a2",
       "branch": "İç Hastalıkları",
       "title": "Poliüri ve derin solunum.",
-      "questionType": "spot",
+      "questionType": "test",
       "correct": "İzotonik salin ile sıvı resüsitasyonu",
-      "signature": "cs-q1k70om4",
+      "signature": "cs-qs620za",
       "stage": "primary-mutated-seed",
-      "seed": "synthetic-internal-dka-001-variant-1"
+      "seed": "synthetic-internal-dka-001-variant-8"
     },
     {
-      "id": "ai-spot-movt9rth-23-2e5b0384-872b-4d84-be36-e9160d8a4449",
+      "id": "ai-spot-movurrp8-23-e66fe9a8-cb40-4ca2-aa80-645d8ebb0ee8",
       "branch": "Çocuk Sağlığı ve Hastalıkları",
-      "title": "Süt çocuğunda hışıltılı solunum.",
-      "questionType": "diagnosis",
-      "correct": "Nazal aspirasyon, oksijen ve hidrasyon desteği",
-      "signature": "cs-qvvlnhj",
+      "title": "Ateş sonrası kısa nöbet.",
+      "questionType": "test",
+      "correct": "Basit febril konvülziyon",
+      "signature": "cs-q127g0dw",
       "stage": "primary-mutated-seed",
-      "seed": "synthetic-peds-bronchiolitis-001-variant-13"
+      "seed": "branch-peds-febrile-seizure-001-variant-8"
     }
   ]
 }

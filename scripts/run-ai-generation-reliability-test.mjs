@@ -99,7 +99,7 @@ async function runBatch({ count, branchForIndex }) {
 
   for (let index = 0; index < count; index += 1) {
     const branchFilter = branchForIndex(index);
-    const context = buildRecentQuestionContext(30);
+    const context = buildRecentQuestionContext(16);
     const startedAt = Date.now();
     try {
       const question = generateAIQuestion({ previousQuestionId, branchFilter, context });
