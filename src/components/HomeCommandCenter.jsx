@@ -182,15 +182,6 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
   };
 }
 
-function SummaryItem({ label, value }) {
-  return (
-    <div className="summary-v8-item">
-      <span>{label}</span>
-      <strong>{value}</strong>
-    </div>
-  );
-}
-
 function InsightCard({ insight }) {
   return (
     <article className="performance-insight-card">
@@ -221,13 +212,6 @@ function SessionSummaryCard({ stats, mode, examCount, wrongAnswers }) {
           <small>doğruluk</small>
         </div>
       </header>
-
-      <div className="summary-v8-grid performance-micro-grid">
-        <SummaryItem label="Mod" value={mode === 'study' ? 'Öğrenme' : 'Sınav'} />
-        <SummaryItem label="Çözülen" value={stats.attempts || 0} />
-        <SummaryItem label="Doğru seri" value={stats.bestStreak || 0} />
-        <SummaryItem label="Blok" value={examCount || 0} />
-      </div>
 
       <div className="performance-insight-list">
         <InsightCard insight={insight.focus} />
