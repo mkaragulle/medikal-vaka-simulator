@@ -2,6 +2,7 @@ import { normalizeQuestionText } from './aiQuestionHistory.js';
 import { attachQuestionDedupeFields, getQuestionCorrectText, getQuestionOptionTexts, toPlainText } from './questionDeduplication.js';
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { validateBranchFit } from './aiBranchRules.js';
+import { removeInlineFieldLabels, repairMisplacedClinicalData, validateClinicalFieldPlacement } from './clinicalFieldPlacement.js';
 import {
   detectBrokenSentence,
   detectExcessivePunctuation,
@@ -76,7 +77,7 @@ function hasForbiddenPhrase(text = '') {
 }
 
 function cleanSentence(text = '') {
-  let value = normalizeMedicalTurkish(String(text || ''))
+  let value = normalizeMedicalTurkish(removeInlineFieldLabels(String(text || '')))
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
@@ -448,8 +449,9 @@ export function repairAIQuestionQuality(question = {}) {
     ];
   }
 
-  attachQuestionDedupeFields(repaired);
-  return repaired;
+  const fieldRepaired = repairMisplacedClinicalData(repaired);
+  attachQuestionDedupeFields(fieldRepaired);
+  return fieldRepaired;
 }
 
 function visibleQualityTexts(question = {}) {
@@ -540,6 +542,10 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
   const editorial = validateGeneratedCaseText(question);
   if (!editorial.ok) errors.push(...editorial.errors.map((error) => `editorial:${error}`));
   warnings.push(...editorial.warnings);
+
+  const fieldPlacement = validateClinicalFieldPlacement(question);
+  if (!fieldPlacement.ok) errors.push(...fieldPlacement.errors.map((error) => `field-placement:${error}`));
+  warnings.push(...fieldPlacement.warnings.map((warning) => `field-placement:${warning}`));
 
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), warnings: Array.from(new Set(warnings)) };
 }

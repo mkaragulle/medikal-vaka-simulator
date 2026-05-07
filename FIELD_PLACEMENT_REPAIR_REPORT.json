@@ -1,0 +1,12 @@
+{
+  "checkedCases": 132,
+  "semanticPassAppliedToCases": 132,
+  "patientIntroClueBlocksNormalized": 132,
+  "evidenceChainBlocksNormalized": 132,
+  "misplacedExamFindingsMovedOrRemoved": 67,
+  "lastIncrementalRepairRunChangedCases": 21,
+  "finalValidationErrors": 0,
+  "finalValidationWarnings": 0,
+  "errors": [],
+  "warnings": []
+}

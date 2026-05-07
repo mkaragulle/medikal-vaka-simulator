@@ -17,12 +17,11 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Hastanın anksiyöz ve diaforetik olduğu izleniyor.",
-      "Kalp sesleri ritmik.",
-      "Akciğer oskültasyonunda yaygın ral saptanmıyor.",
-      "Periferik nabızlar bilateral simetrik alınıyor.",
-      "Periferik nabızlar bilateral palpabl."
+      "Hastanın anksiyöz ve diaforetik olduğu izleniyor",
+      "Kalp sesleri ritmik",
+      "Akciğer oskültasyonunda yaygın ral saptanmıyor",
+      "Periferik nabızlar bilateral simetrik alınıyor",
+      "Periferik nabızlar bilateral palpabl"
     ],
     "investigations": [
       {
@@ -95,7 +94,7 @@ export const cases = [
         "Non-ST elevasyonlu miyokart enfarktüsü",
         "Pulmoner emboli"
       ],
-      "explanation": "İskemik karakterde göğüs ağrısı ile ardışık anterior derivasyonlarda ST elevasyonunun birlikte bulunması akut koroner oklüzyon bulgu örüntüsünü oluşturur. Bu tabloda tedavi kararı troponin tekrarını beklemeden EKG üzerinden verilir. Bu nedenle en uygun yanıt Anterior ST elevasyonlu miyokart enfarktüsü seçeneğidir.",
+      "explanation": "İskemik karakterde göğüs ağrısı ile ardışık anterior derivasyonlarda ST elevasyonunun birlikte bulunması akut koroner oklüzyon bulgu örüntüsünü oluşturur. Bu tabloda tedavi kararı troponin tekrarını beklemeden EKG üzerinden verilir. Anterior ST elevasyonlu miyokart enfarktüsü seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -116,23 +115,23 @@ export const cases = [
         "whyCorrect": "İskemik karakterde göğüs ağrısı ile ardışık anterior derivasyonlarda ST elevasyonunun birlikte bulunması akut koroner oklüzyon bulgu örüntüsünü oluşturur. Bu tabloda tedavi kararı troponin tekrarını beklemeden EKG üzerinden verilir. Bu nedenle en uygun yanıt Anterior ST elevasyonlu miyokart enfarktüsü seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Retrosternal baskı tarzında ağrının sol kola ve mandibulaya yayılması iskemik ağrı lehinedir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Soğuk terleme ve bulantı gibi otonom semptomlar akut koroner sendrom ihtimalini artırır."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Öykü",
             "text": "V2–V5 derivasyonlarında ST segment elevasyonu anterior duvar tutulumunu gösterir."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Öykü",
             "text": "İnferior derivasyonlardaki resiprokal ST depresyonu akut oklüzyon lehine ek kanıttır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Sol kola veya mandibulaya yayılan baskı tarzı ağrı."
           }
         ],
@@ -354,18 +353,20 @@ export const cases = [
       "profile": "58 yaşında erkek · Acil servis",
       "presentation": "Kırk beş dakikadır devam eden retrosternal baskı tarzında göğüs ağrısı",
       "riskContext": [
-        "Kontrolsüz hipertansiyon ve akut vasküler stres.",
-        "Aterosklerotik risk zemini."
+        "Kontrolsüz hipertansiyon ve akut vasküler stres",
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
-        "Sol kola ve mandibulaya yayılan baskı tarzı ağrı.",
-        "Soğuk terleme ve bulantı.",
-        "V2–V5 ST elevasyonu.",
-        "Resiprokal ST depresyonu."
+        "Sol kola ve mandibulaya yayılan baskı tarzı ağrı",
+        "Soğuk terleme ve bulantı",
+        "V2–V5 ST elevasyonu",
+        "Resiprokal ST depresyonu",
+        "Kırk beş dakikadır devam eden retrosternal baskı tarzında göğüs ağrısı"
       ],
       "historySummary": "Sublingual nitrat uygulanmasına rağmen ağrısında belirgin gerileme olmadığı öğreniliyor.",
-      "priorityFocus": "Sol kola ve mandibulaya yayılan baskı tarzı ağrı akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Sol kola ve mandibulaya yayılan baskı tarzı ağrı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "cv-aortic-dissection-001",
@@ -385,12 +386,11 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Sağ radial nabız sol tarafa göre daha zayıf alınıyor.",
-      "Aort odağında yeni başlayan erken diyastolik üfürüm duyuluyor.",
-      "Fokal nörolojik defisit saptanmıyor.",
-      "Göğüs duvarında palpasyonla hassasiyet izlenmiyor.",
-      "Periferik nabızlar bilateral palpabl."
+      "Sağ radial nabız sol tarafa göre daha zayıf alınıyor",
+      "Aort odağında yeni başlayan erken diyastolik üfürüm duyuluyor",
+      "Fokal nörolojik defisit saptanmıyor",
+      "Göğüs duvarında palpasyonla hassasiyet izlenmiyor",
+      "Periferik nabızlar bilateral palpabl"
     ],
     "investigations": [
       {
@@ -463,7 +463,7 @@ export const cases = [
         "Spontan pnömotoraks",
         "Özofagus perforasyonu"
       ],
-      "explanation": "Ani başlayan ve başlangıçta maksimum şiddete ulaşan göğüs-sırt ağrısına nabız veya kan basıncı asimetrisi, yeni diyastolik üfürüm ve BT anjiyografide asendan aort intimal flapinin eşlik etmesi Stanford tip A aort diseksiyonunu destekler. Bu nedenle en uygun yanıt Stanford tip A aort diseksiyonu seçeneğidir.",
+      "explanation": "Ani başlayan ve başlangıçta maksimum şiddete ulaşan göğüs-sırt ağrısına nabız veya kan basıncı asimetrisi, yeni diyastolik üfürüm ve BT anjiyografide asendan aort intimal flapinin eşlik etmesi Stanford tip A aort diseksiyonunu destekler. Stanford tip A aort diseksiyonu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -484,23 +484,23 @@ export const cases = [
         "whyCorrect": "Ani başlayan ve başlangıçta maksimum şiddete ulaşan göğüs-sırt ağrısına nabız veya kan basıncı asimetrisi, yeni diyastolik üfürüm ve BT anjiyografide asendan aort intimal flapinin eşlik etmesi Stanford tip A aort diseksiyonunu destekler. Bu nedenle en uygun yanıt Stanford tip A aort diseksiyonu seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Kontrolsüz hipertansiyon akut aort sendromu için temel risk faktörüdür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Yırtılır tarzda ağrının sırta yayılması ve ani maksimum şiddete ulaşması diseksiyon lehinedir."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Vital bulgu",
             "text": "Üst ekstremiteler arası nabız veya kan basıncı farkı dallanma tutulumu düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Asendan aortta intimal flap görülmesi Stanford tip A sınıflamasını belirler."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Kontrolsüz hipertansiyon öyküsü."
           }
         ],
@@ -722,18 +722,20 @@ export const cases = [
       "profile": "64 yaşında erkek · Acil servis",
       "presentation": "Sırta yayılan ani başlangıçlı çok şiddetli göğüs ağrısı",
       "riskContext": [
-        "Kontrolsüz hipertansiyon ve akut vasküler stres.",
-        "Aterosklerotik risk zemini."
+        "Kontrolsüz hipertansiyon ve akut vasküler stres",
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
-        "Kontrolsüz hipertansiyon öyküsü.",
-        "Sırta yayılan ani yırtılır ağrı.",
-        "Nabız ve kan basıncı asimetrisi.",
-        "Asendan aort intimal flap bulgusu."
+        "Kontrolsüz hipertansiyon öyküsü",
+        "Sırta yayılan ani yırtılır ağrı",
+        "Nabız ve kan basıncı asimetrisi",
+        "Asendan aort intimal flap bulgusu",
+        "Sırta yayılan ani başlangıçlı çok şiddetli göğüs ağrısı"
       ],
       "historySummary": "Kontrolsüz hipertansiyon öyküsü bulunan hasta, ağrının aniden başladığını ve başlangıç anında maksimum şiddete ulaştığını ifade ediyor. Sağ üst ekstremiteden ölçülen kan basıncının sol üst ekstremiteye göre daha düşük olduğu, ağrıya senkop veya travmanın eşlik etmediği öğreniliyor. Ani maksimum şiddette ağrı, ekstremiteler arası nabız veya kan basıncı farkı ve yeni diyastolik.",
-      "priorityFocus": "Kontrolsüz hipertansiyon öyküsü akut aort sendromu için kırmızı bayraktır."
-    }
+      "priorityFocus": "Kontrolsüz hipertansiyon öyküsü klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "cv-tamponade-001",
@@ -753,12 +755,11 @@ export const cases = [
       "Ateş": "37.3 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Juguler venöz dolgunluk belirgin izleniyor.",
-      "Kalp sesleri derinden ve azalmış şiddette duyuluyor.",
-      "Pulsus paradoxus 16 mmHg olarak ölçülüyor.",
-      "Akciğer oskültasyonunda belirgin ral duyulmuyor.",
-      "Periferik nabızlar bilateral palpabl."
+      "Juguler venöz dolgunluk belirgin izleniyor",
+      "Kalp sesleri derinden ve azalmış şiddette duyuluyor",
+      "Pulsus paradoxus 16 mmHg olarak ölçülüyor",
+      "Akciğer oskültasyonunda belirgin ral duyulmuyor",
+      "Periferik nabızlar bilateral palpabl"
     ],
     "investigations": [
       {
@@ -851,7 +852,7 @@ export const cases = [
         "Tansiyon pnömotoraks",
         "Septik şok"
       ],
-      "explanation": "Hipotansiyon, juguler venöz dolgunluk, kalp seslerinde azalma, pulsus paradoxus ve ekokardiyografide sağ kalp diyastolik kollapsı birlikte kardiyak tamponad fizyolojisini gösterir. Bu nedenle en uygun yanıt Kardiyak tamponad seçeneğidir.",
+      "explanation": "Hipotansiyon, juguler venöz dolgunluk, kalp seslerinde azalma, pulsus paradoxus ve ekokardiyografide sağ kalp diyastolik kollapsı birlikte kardiyak tamponad fizyolojisini gösterir. Kardiyak tamponad seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -872,23 +873,23 @@ export const cases = [
         "whyCorrect": "Hipotansiyon, juguler venöz dolgunluk, kalp seslerinde azalma, pulsus paradoxus ve ekokardiyografide sağ kalp diyastolik kollapsı birlikte kardiyak tamponad fizyolojisini gösterir. Bu nedenle en uygun yanıt Kardiyak tamponad seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Progresif dispne ve presenkop hemodinamik etkilenmeyi düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Juguler venöz dolgunluk ve akciğerlerin görece temiz olması obstrüktif bulgu örüntüsü destekler."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Pulsus paradoxus intratorasik basınç değişimlerine duyarlı düşük dolum durumunu gösterir."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Öykü",
             "text": "Sağ atriyum veya sağ ventrikül diyastolik kollapsı ekokardiyografik olarak tamponad lehinedir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Progresif dispne ve presenkop."
           }
         ],
@@ -1101,17 +1102,19 @@ export const cases = [
       "profile": "46 yaşında kadın · Acil servis",
       "presentation": "Giderek artan nefes darlığı ve göğüste basınç hissi",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Progresif dispne ve presenkop.",
-        "Juguler venöz dolgunluk.",
-        "Pulsus paradoxus.",
-        "Sağ kalp boşluklarında diyastolik kollaps."
+        "Progresif dispne ve presenkop",
+        "Juguler venöz dolgunluk",
+        "Pulsus paradoxus",
+        "Sağ kalp boşluklarında diyastolik kollaps",
+        "Giderek artan nefes darlığı ve göğüste basınç hissi"
       ],
       "historySummary": "Oturur pozisyonda kısmi rahatlama olduğunu, eforla yakınmalarının belirgin arttığını ifade ediyor.",
-      "priorityFocus": "Progresif dispne ve presenkop ilgili klinik tablo lehine obstrüktif şok bulgu örüntüsüdür."
-    }
+      "priorityFocus": "Progresif dispne ve presenkop klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "cv-pulmonary-edema-001",
@@ -1131,12 +1134,11 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Bilateral bazal ve orta zonlara yayılan ince raller duyuluyor.",
-      "S3 gallop mevcut.",
-      "Pretibial ve 2 gode bırakan ödem saptanıyor.",
-      "Juguler venöz dolgunluk izleniyor.",
-      "Periferik nabızlar bilateral palpabl."
+      "Bilateral bazal ve orta zonlara yayılan ince raller duyuluyor",
+      "S3 gallop mevcut",
+      "Pretibial ve 2 gode bırakan ödem saptanıyor",
+      "Juguler venöz dolgunluk izleniyor",
+      "Periferik nabızlar bilateral palpabl"
     ],
     "investigations": [
       {
@@ -1194,7 +1196,7 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "pH",
+            "PH",
             "7.47",
             "7.35-7.45",
             "Yüksek"
@@ -1213,9 +1215,9 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "pH: 7.47 (Yüksek).",
+        "summary": "PH: 7.47 (Yüksek).",
         "findings": [
-          "pH: 7."
+          "PH: 7."
         ]
       }
     ],
@@ -1239,7 +1241,7 @@ export const cases = [
         "Pulmoner emboli",
         "Toplum kökenli pnömoni"
       ],
-      "explanation": "Ortopne, paroksismal noktürnal dispne, S3, juguler venöz dolgunluk, bilateral raller, yüksek NT-proBNP ve grafide kardiyomegali veya perihiler ödem birlikteliği kardiyojenik pulmoner ödemi destekler. Bu nedenle en uygun yanıt Akut dekompanse kalp yetersizliğine bağlı kardiyojenik pulmoner ödem seçeneğidir.",
+      "explanation": "Ortopne, paroksismal noktürnal dispne, S3, juguler venöz dolgunluk, bilateral raller, yüksek NT-proBNP ve grafide kardiyomegali veya perihiler ödem birlikteliği kardiyojenik pulmoner ödemi destekler. Akut dekompanse kalp yetersizliğine bağlı kardiyojenik pulmoner ödem seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -1260,23 +1262,23 @@ export const cases = [
         "whyCorrect": "Ortopne, paroksismal noktürnal dispne, S3, juguler venöz dolgunluk, bilateral raller, yüksek NT-proBNP ve grafide kardiyomegali veya perihiler ödem birlikteliği kardiyojenik pulmoner ödemi destekler. Bu nedenle en uygun yanıt Akut dekompanse kalp yetersizliğine bağlı kardiyojenik pulmoner ödem seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "S3 ve juguler venöz dolgunluk konjestif kalp yetersizliği lehinedir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Bilateral yaygın raller alveoler veya interstisyel ödemle uyumludur."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "NT-proBNP yüksekliği ve perihiler ödem bulgu örüntüsü kardiyojenik kökeni güçlendirir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını."
           }
         ],
@@ -1510,18 +1512,20 @@ export const cases = [
       "profile": "72 yaşında kadın · Acil servis",
       "presentation": "Gece artan nefes darlığı, ortopne ve pembe köpüklü balgam",
       "riskContext": [
-        "Aterosklerotik risk zemini.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Aterosklerotik risk zemini",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını gösterir.",
-        "S3 ve Juguler venöz dolgunluk.",
-        "Bilateral yaygın raller alveoler ve interstisyel ödemle uyumludur.",
-        "NT-proBNP yüksekliği ve perihiler ödem bulgu örüntüsü kardiyojenik kökeni güçlendirir."
+        "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını gösterir",
+        "S3 ve Juguler venöz dolgunluk",
+        "Bilateral yaygın raller alveoler ve interstisyel ödemle uyumludur",
+        "NT-proBNP yüksekliği ve perihiler ödem bulgu örüntüsü kardiyojenik kökeni güçlendirir",
+        "Gece artan nefes darlığı, ortopne ve pembe köpüklü balgam"
       ],
       "historySummary": "Azalmış ejeksiyon fraksiyonlu kalp yetersizliği ve geçirilmiş miyokart enfarktüsü öyküsü olan hasta, üç gündür artan bacak ödemi, ortopne ve paroksismal noktürnal dispne ifade ediyor. Son günlerde tuz alımının arttığı ve diüretik tedavisini düzensiz kullandığı öğreniliyor.",
-      "priorityFocus": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını gösterir klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "cv-hocm-001",
@@ -1541,12 +1545,12 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Sol sternal kenarda sistolik ejeksiyon üfürümü duyuluyor.",
-      "Üfürüm Valsalva manevrası ve ayakta durma ile artıyor, çömelme ile azalıyor.",
-      "S4 duyulabiliyor.",
-      "Periferik siyanoz veya kalp yetersizliği bulgusu saptanmıyor.",
-      "Efor sonrası dinlenme halinde belirgin dispne veya akciğer ral bulgusu yok."
+      "Genel durum stabil",
+      "Sol sternal kenarda sistolik ejeksiyon üfürümü duyuluyor",
+      "Üfürüm Valsalva manevrası ve ayakta durma ile artıyor, çömelme ile azalıyor",
+      "S4 duyulabiliyor",
+      "Periferik siyanoz veya kalp yetersizliği bulgusu saptanmıyor",
+      "Efor sonrası dinlenme halinde belirgin dispne veya akciğer ral bulgusu yok"
     ],
     "investigations": [
       {
@@ -1607,7 +1611,7 @@ export const cases = [
         "Vazovagal senkop",
         "Atriyal septal defekt"
       ],
-      "explanation": "Genç sporcuda eforla senkop, ailede ani ölüm öyküsü, Valsalva ile artan sistolik üfürüm ve ekokardiyografide asimetrik septal hipertrofi hipertrofik obstrüktif kardiyomiyopati için tipik bir örüntüdür. Bu nedenle en uygun yanıt Hipertrofik obstrüktif kardiyomiyopati seçeneğidir.",
+      "explanation": "Genç sporcuda eforla senkop, ailede ani ölüm öyküsü, Valsalva ile artan sistolik üfürüm ve ekokardiyografide asimetrik septal hipertrofi hipertrofik obstrüktif kardiyomiyopati için tipik bir örüntüdür. Hipertrofik obstrüktif kardiyomiyopati seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -1628,23 +1632,23 @@ export const cases = [
         "whyCorrect": "Genç sporcuda eforla senkop, ailede ani ölüm öyküsü, Valsalva ile artan sistolik üfürüm ve ekokardiyografide asimetrik septal hipertrofi hipertrofik obstrüktif kardiyomiyopati için tipik bir örüntüdür. Bu nedenle en uygun yanıt Hipertrofik obstrüktif kardiyomiyopati seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi açısından uyarıcıdır."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Ailede ani kardiyak ölüm öyküsü kalıtsal kardiyomiyopati ihtimalini artırır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Valsalva ile üfürüm artışı preload azalınca obstrüksiyonun arttığını gösterir."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Öykü",
             "text": "Asimetrik septal hipertrofi ekokardiyografik olarak tanıyı destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi."
           }
         ],
@@ -1866,17 +1870,19 @@ export const cases = [
       "profile": "22 yaşında erkek · Spor hekimliği veya İç Hastalıkları",
       "presentation": "Basketbol antrenmanı sırasında gelişen kısa süreli senkop",
       "riskContext": [
-        "Aile öyküsü veya kalıtsal yatkınlık."
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi riskini düşündürür.",
-        "Ailede ani kardiyak ölüm öyküsü kalıtsal kardiyomiyopati lehinedir.",
-        "Valsalva ile üfürüm artışı preload azalınca obstrüksiyonun arttığını gösterir.",
-        "Asimetrik septal hipertrofi ekokardiyografik olarak doğrulanır."
+        "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi riskini düşündürür",
+        "Ailede ani kardiyak ölüm öyküsü kalıtsal kardiyomiyopati lehinedir",
+        "Valsalva ile üfürüm artışı preload azalınca obstrüksiyonun arttığını gösterir",
+        "Asimetrik septal hipertrofi ekokardiyografik olarak doğrulanır",
+        "Basketbol antrenmanı sırasında gelişen kısa süreli senkop"
       ],
       "historySummary": "Yirmi iki yaşındaki erkek hasta son aylarda eforla çarpıntı, göğüste sıkışma ve presenkop yakınmaları olduğunu ifade ediyor. Aile öyküsünde genç yaşTA açıklanamayan ani kardiyak ölüm bulunduğu öğreniliyor.",
-      "priorityFocus": "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi riskini düşündürür klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "im-dka-001",
@@ -1896,12 +1902,12 @@ export const cases = [
       "Ateş": "37.1 °C"
     },
     "exam": [
-      "Genel durum orta-kötü.",
-      "Bilinç açık olmakla birlikte dikkat ve oryantasyon hafif dalgalı.",
-      "Mukozalar belirgin kuru, deri turgoru azalmış ve kapiller dolum zamanı hafif uzamış.",
-      "Solunum derin ve hızlıdır.",
-      "Kardiyak oskültasyonda taşikardi dışında ek ses veya üfürüm duyulmuyor.",
-      "Abdomen yumuşak."
+      "Genel durum orta-kötü",
+      "Bilinç açık olmakla birlikte dikkat ve oryantasyon hafif dalgalı",
+      "Mukozalar belirgin kuru, deri turgoru azalmış ve kapiller dolum zamanı hafif uzamış",
+      "Solunum derin ve hızlıdır",
+      "Kardiyak oskültasyonda taşikardi dışında ek ses veya üfürüm duyulmuyor",
+      "Abdomen yumuşak"
     ],
     "investigations": [
       {
@@ -1910,7 +1916,7 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "pH",
+            "PH",
             "7.18",
             "7.35-7.45",
             "Düşük"
@@ -1947,9 +1953,9 @@ export const cases = [
           ]
         ],
         "priority": "Essential",
-        "summary": "pH 7.18, HCO3- 8 mmol/L ve anyon açıklığı 28 mmol/L saptanır.",
+        "summary": "PH 7.18, HCO3- 8 mmol/L ve anyon açıklığı 28 mmol/L saptanır.",
         "findings": [
-          "pH: 7."
+          "PH: 7."
         ]
       },
       {
@@ -2035,7 +2041,7 @@ export const cases = [
         "Akut apandisit",
         "Laktik asidoz"
       ],
-      "explanation": "Tip 1 diyabet öyküsünde kusma, karın ağrısı ve Kussmaul solunumuna hiperglisemi, ketonemi, düşük pH, düşük bikarbonat ve artmış anyon açıklığının eşlik etmesi diyabetik ketoasidoz tanısını destekler. Bu nedenle en uygun yanıt Diyabetik ketoasidoz seçeneğidir.",
+      "explanation": "Tip 1 diyabet öyküsünde kusma, karın ağrısı ve Kussmaul solunumuna hiperglisemi, ketonemi, düşük pH, düşük bikarbonat ve artmış anyon açıklığının eşlik etmesi diyabetik ketoasidoz tanısını destekler. Diyabetik ketoasidoz seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -2056,23 +2062,23 @@ export const cases = [
         "whyCorrect": "Tip 1 diyabet öyküsünde kusma, karın ağrısı ve Kussmaul solunumuna hiperglisemi, ketonemi, düşük pH, düşük bikarbonat ve artmış anyon açıklığının eşlik etmesi diyabetik ketoasidoz tanısını destekler. Bu nedenle en uygun yanıt Diyabetik ketoasidoz seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu gösterir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Beta-hidroksibutirat yüksekliği keton üretiminin baskın olduğunu gösterir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Düşük pH ve bikarbonat artmış anyon açıklı metabolik asidozla uyumludur."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Serum potasyumu yüksek görünse bile total vücut potasyumu genellikle azalmıştır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu."
           }
         ],
@@ -2297,17 +2303,19 @@ export const cases = [
       "profile": "19 yaşında kadın · Acil servis",
       "presentation": "Kusma, karın ağrısı ve derin-hızlı solunum",
       "riskContext": [
-        "Diyabet veya metabolik dekompansasyon riski."
+        "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu gösterir.",
-        "Beta-hidroksibutirat yüksekliği keton üretiminin baskın olduğunu gösterir.",
-        "Düşük pH ve bikarbonat artmış anyon açıklı metabolik asidozla uyumludur.",
-        "Serum potasyumu yüksek görünse bile total vücut potasyumu genellikle azalmıştır."
+        "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu gösterir",
+        "Beta-hidroksibutirat yüksekliği keton üretiminin baskın olduğunu gösterir",
+        "Düşük pH ve bikarbonat artmış anyon açıklı metabolik asidozla uyumludur",
+        "Serum potasyumu yüksek görünse bile total vücut potasyumu genellikle azalmıştır",
+        "Kusma, karın ağrısı ve derin-hızlı solunum"
       ],
       "historySummary": "Tip 1 diyabet tanısıyla izlenen hasta, son iki gündür insülin dozlarını atladığını ifade ediyor. Poliüri, polidipsi, halsizlik, bulantı-kusma ve yaygın karın ağrısı yakınmaları olduğu öğreniliyor.",
-      "priorityFocus": "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu DKA tanısının temel bulgudür."
-    }
+      "priorityFocus": "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu gösterir klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "im-acute-pancreatitis-001",
@@ -2327,12 +2335,11 @@ export const cases = [
       "Ateş": "37.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Epigastriumda belirgin hassasiyet saptanıyor.",
-      "Defans minimal, rebound izlenmiyor.",
-      "Bağırsak sesleri azalmış.",
-      "Skleralarda belirgin ikter saptanmıyor.",
-      "Mukozalar hafif kuru."
+      "Epigastriumda belirgin hassasiyet saptanıyor",
+      "Defans minimal, rebound izlenmiyor",
+      "Bağırsak sesleri azalmış",
+      "Skleralarda belirgin ikter saptanmıyor",
+      "Mukozalar hafif kuru"
     ],
     "investigations": [
       {
@@ -2428,7 +2435,7 @@ export const cases = [
         "Akut inferior miyokart enfarktüsü",
         "Mezenter iskemi"
       ],
-      "explanation": "Sırta yayılan epigastrik ağrıya lipazın üst sınırın üç katından fazla yükselmesi ve görüntüleme bulgularının eşlik etmesi akut pankreatit tanısını karşılar. ALT yüksekliği ve safra taşı biliyer nedeni öne çıkarır. Bu nedenle en uygun yanıt Akut biliyer pankreatit seçeneğidir.",
+      "explanation": "Sırta yayılan epigastrik ağrıya lipazın üst sınırın üç katından fazla yükselmesi ve görüntüleme bulgularının eşlik etmesi akut pankreatit tanısını karşılar. ALT yüksekliği ve safra taşı biliyer nedeni öne çıkarır. Akut biliyer pankreatit seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -2449,19 +2456,19 @@ export const cases = [
         "whyCorrect": "Sırta yayılan epigastrik ağrıya lipazın üst sınırın üç katından fazla yükselmesi ve görüntüleme bulgularının eşlik etmesi akut pankreatit tanısını karşılar. ALT yüksekliği ve safra taşı biliyer nedeni öne çıkarır. Bu nedenle en uygun yanıt Akut biliyer pankreatit seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Epigastrik ağrının sırta yayılması pankreatik ağrı bulgu örüntüsüyle uyumludur."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Lipaz yüksekliği pankreatit tanısında amilaza göre daha özgül kabul edilir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Safra kesesi taşı ve ALT yüksekliği biliyer etiyolojiyi destekler."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak değildir."
           }
         ],
@@ -2683,17 +2690,19 @@ export const cases = [
       "profile": "48 yaşında erkek · Acil servis",
       "presentation": "Sırta yayılan şiddetli epigastrik ağrı",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Epigastrik ağrının sırta yayılması pankreatik ağrı bulgu örüntüsüyle uyumludur.",
-        "Lipaz yüksekliği pankreatit tanısında amilaza göre daha özgül kabul edilir.",
-        "Safra kesesi TAşı ve ALT yüksekliği biliyer etiyolojiyi destekler.",
-        "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak değildir."
+        "Epigastrik ağrının sırta yayılması pankreatik ağrı bulgu örüntüsüyle uyumludur",
+        "Lipaz yüksekliği pankreatit tanısında amilaza göre daha özgül kabul edilir",
+        "Safra kesesi TAşı ve ALT yüksekliği biliyer etiyolojiyi destekler",
+        "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak değildir",
+        "Sırta yayılan şiddetli epigastrik ağrı"
       ],
       "historySummary": "Hasta ağrının yağlı yemek sonrasında başladığını, kuşak tarzında sırta yayıldığını ve öne eğilmekle kısmen azaldığını ifade ediyor. Bulantı ve tekrarlayan kusma yakınmaları mevcut.",
-      "priorityFocus": "Epigastrik ağrının sırta yayılması pankreatik ağrı bulgu örüntüsüyle uyumludur karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Epigastrik ağrının sırta yayılması pankreatik ağrı bulgu örüntüsüyle uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "im-variceal-bleeding-001",
@@ -2713,12 +2722,11 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Hasta soluk, soğuk terli ve ortostatik semptomatik görünüyor.",
-      "Palmar eritem ve spider anjiyomlar izleniyor.",
-      "Splenomegali ve asit bulguları mevcut.",
-      "Rektal muayenede melena saptanıyor.",
-      "Mukozalar kuru, kapiller dolum hafif uzamış ve periferik nabızlar zayıf dolgunlukta alınıyor."
+      "Hasta soluk, soğuk terli ve ortostatik semptomatik görünüyor",
+      "Palmar eritem ve spider anjiyomlar izleniyor",
+      "Splenomegali ve asit bulguları mevcut",
+      "Rektal muayenede melena saptanıyor",
+      "Mukozalar kuru, kapiller dolum hafif uzamış ve periferik nabızlar zayıf dolgunlukta alınıyor"
     ],
     "investigations": [
       {
@@ -2790,7 +2798,7 @@ export const cases = [
         "Eroziv gastrit",
         "Kolon divertikül kanaması"
       ],
-      "explanation": "Siroz ve portal hipertansiyon bulguları olan hastada masif hematemez, melena, hipovolemik bulgular ve endoskopide aktif özofageal varis kanaması izlenmesi tanıyı doğrudan destekler. Bu nedenle en uygun yanıt Özofagus varis kanaması seçeneğidir.",
+      "explanation": "Siroz ve portal hipertansiyon bulguları olan hastada masif hematemez, melena, hipovolemik bulgular ve endoskopide aktif özofageal varis kanaması izlenmesi tanıyı doğrudan destekler. Özofagus varis kanaması seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -2811,19 +2819,19 @@ export const cases = [
         "whyCorrect": "Siroz ve portal hipertansiyon bulguları olan hastada masif hematemez, melena, hipovolemik bulgular ve endoskopide aktif özofageal varis kanaması izlenmesi tanıyı doğrudan destekler. Bu nedenle en uygun yanıt Özofagus varis kanaması seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Hematemez ve melena üst gastrointestinal kanama lehinedir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Hipotansiyon veya taşikardi kanama şiddetini gösterir."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Endoskopide distal özofageal varislerden aktif kanama görülmesi tanısaldır."
           }
         ],
@@ -3045,17 +3053,19 @@ export const cases = [
       "profile": "55 yaşında erkek · Acil servis",
       "presentation": "Bol miktarda kan kusma ve baş dönmesi",
       "riskContext": [
-        "Siroz ve portal hipertansiyon zemini."
+        "Siroz ve portal hipertansiyon zemini"
       ],
       "distinctiveClues": [
-        "Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur.",
-        "Hematemez ve melena üst gastrointestinal kanama lehinedir.",
-        "Hipotansiyon ve TAşikardi kanama şiddetini gösterir.",
-        "Endoskopide distal özofageal varislerden aktif kanama görülmesi tanısaldır."
+        "Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur",
+        "Hematemez ve melena üst gastrointestinal kanama lehinedir",
+        "Hipotansiyon ve TAşikardi kanama şiddetini gösterir",
+        "Endoskopide distal özofageal varislerden aktif kanama görülmesi tanısaldır",
+        "Bol miktarda kan kusma ve baş dönmesi"
       ],
       "historySummary": "Daha önce asit nedeniyle tedavi aldığı, son günlerde halsizlik ve iştahsızlığının arttığı öğreniliyor.",
-      "priorityFocus": "Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur varis kanaması olasılığını yükseltir."
-    }
+      "priorityFocus": "Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "im-iron-deficiency-anemia-001",
@@ -3075,10 +3085,10 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Konjonktival solukluk, hafif glossit ve tırnaklarda kırılganlık izleniyor.",
-      "Kardiyopulmoner muayenede belirgin patolojik oskültasyon bulgusu yok.",
-      "Batın yumuşak."
+      "Genel durum stabil",
+      "Konjonktival solukluk, hafif glossit ve tırnaklarda kırılganlık izleniyor",
+      "Kardiyopulmoner muayenede belirgin patolojik oskültasyon bulgusu yok",
+      "Batın yumuşak"
     ],
     "investigations": [
       {
@@ -3162,7 +3172,7 @@ export const cases = [
         "Kronik hastalık anemisi",
         "Megaloblastik anemi"
       ],
-      "explanation": "Mikrositoz, hipokromi, yüksek RDW, düşük ferritin ve yüksek total demir bağlama kapasitesi demir eksikliği anemisiyle uyumludur. Erişkinde kronik kan kaybı kaynağı mutlaka araştırılmalıdır. Bu nedenle en uygun yanıt Demir eksikliği anemisi seçeneğidir.",
+      "explanation": "Mikrositoz, hipokromi, yüksek RDW, düşük ferritin ve yüksek total demir bağlama kapasitesi demir eksikliği anemisiyle uyumludur. Erişkinde kronik kan kaybı kaynağı mutlaka araştırılmalıdır. Demir eksikliği anemisi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -3183,19 +3193,19 @@ export const cases = [
         "whyCorrect": "Mikrositoz, hipokromi, yüksek RDW, düşük ferritin ve yüksek total demir bağlama kapasitesi demir eksikliği anemisiyle uyumludur. Erişkinde kronik kan kaybı kaynağı mutlaka araştırılmalıdır. Bu nedenle en uygun yanıt Demir eksikliği anemisi seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Pika yakınması demir eksikliğinde sık görülen semptomdur."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Düşük ferritin demir depolarının azaldığını gösterir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Yüksek TDBK transferrin artışını ve demir eksikliğini destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "RDW yüksekliği farklı boyutta eritrositlerin arttığını gösterir."
           }
         ],
@@ -3408,17 +3418,19 @@ export const cases = [
       "profile": "42 yaşında kadın · İç Hastalıkları polikliniği",
       "presentation": "Halsizlik, eforla nefes darlığı ve buz yeme isteği",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Pika yakınması demir eksikliğinde sık görülen semptomdur.",
-        "Düşük ferritin demir depolarının azaldığını gösterir.",
-        "Yüksek TDBK transferrin artışını ve demir eksikliğini destekler.",
-        "RDW yüksekliği farklı boyutta eritrositlerin arttığını gösterir."
+        "Pika yakınması demir eksikliğinde sık görülen semptomdur",
+        "Düşük ferritin demir depolarının azaldığını gösterir",
+        "Yüksek TDBK transferrin artışını ve demir eksikliğini destekler",
+        "RDW yüksekliği farklı boyutta eritrositlerin arttığını gösterir",
+        "Halsizlik, eforla nefes darlığı ve buz yeme isteği"
       ],
       "historySummary": "Hasta son ALTı aydır giderek artan yorgunluk, saç dökülmesi, çarpıntı ve pika yakınmaları olduğunu ifade ediyor. Menstrüasyonlarının uzun sürdüğü ve kanama miktarının arttığı öğreniliyor.",
-      "priorityFocus": "Pika yakınması demir eksikliğinde sık görülen semptomdur SLE aktivitesi için anlamlıdır."
-    }
+      "priorityFocus": "Pika yakınması demir eksikliğinde sık görülen semptomdur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "im-primary-hyperparathyroidism-001",
@@ -3438,12 +3450,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Dehidratasyon bulgusu belirgin değil.",
-      "Fokal nörolojik defisit saptanmıyor.",
-      "Kemik palpasyonunda yaygın olmayan hassasiyet mevcut.",
-      "Boyunda palpabl kitle saptanmıyor.",
-      "Mukozalar hafif kuru."
+      "Genel durum stabil",
+      "Dehidratasyon bulgusu belirgin değil",
+      "Fokal nörolojik defisit saptanmıyor",
+      "Kemik palpasyonunda yaygın olmayan hassasiyet mevcut",
+      "Boyunda palpabl kitle saptanmıyor",
+      "Mukozalar hafif kuru"
     ],
     "investigations": [
       {
@@ -3552,7 +3564,7 @@ export const cases = [
         "Ailesel hipokalsiürik hiperkalsemi",
         "D vitamini intoksikasyonu"
       ],
-      "explanation": "Hiperkalsemiye rağmen PTH düzeyinin baskılanmamış ve yüksek kalması PTH aracılı hiperkalsemiyi gösterir. Nefrolitiyazis, hiperkalsiüri ve hipofosfatemi primer hiperparatiroidiyi destekler. Bu nedenle en uygun yanıt Primer hiperparatiroidi seçeneğidir.",
+      "explanation": "Hiperkalsemiye rağmen PTH düzeyinin baskılanmamış ve yüksek kalması PTH aracılı hiperkalsemiyi gösterir. Nefrolitiyazis, hiperkalsiüri ve hipofosfatemi primer hiperparatiroidiyi destekler. Primer hiperparatiroidi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -3573,19 +3585,19 @@ export const cases = [
         "whyCorrect": "Hiperkalsemiye rağmen PTH düzeyinin baskılanmamış ve yüksek kalması PTH aracılı hiperkalsemiyi gösterir. Nefrolitiyazis, hiperkalsiüri ve hipofosfatemi primer hiperparatiroidiyi destekler. Bu nedenle en uygun yanıt Primer hiperparatiroidi seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Tekrarlayan böbrek taşı hiperkalsiürinin klinik sonucudur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Serum kalsiyumu yüksekken PTH'nin yüksek olması uygunsuzdur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hipofosfatemi PTH etkisiyle renal fosfat atılımını düşündürür."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Maligniteye bağlı hiperkalsemide PTH genellikle baskılı beklenir."
           }
         ],
@@ -3798,17 +3810,19 @@ export const cases = [
       "profile": "60 yaşında kadın · İç Hastalıkları polikliniği",
       "presentation": "Tekrarlayan böbrek TAşı, kabızlık ve halsizlik",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Tekrarlayan böbrek TAşı hiperkalsiürinin klinik sonucudur.",
-        "Serum kalsiyumu yüksekken PTH'nin yüksek olması uygunsuzdur.",
-        "Hipofosfatemi PTH etkisiyle renal fosfat atılımını artırdığını gösterir.",
-        "Maligniteye bağlı hiperkalsemide PTH genellikle baskılı beklenir."
+        "Tekrarlayan böbrek TAşı hiperkalsiürinin klinik sonucudur",
+        "Serum kalsiyumu yüksekken PTH'nin yüksek olması uygunsuzdur",
+        "Hipofosfatemi PTH etkisiyle renal fosfat atılımını artırdığını gösterir",
+        "Maligniteye bağlı hiperkalsemide PTH genellikle baskılı beklenir",
+        "Tekrarlayan böbrek taşı, kabızlık ve halsizlik"
       ],
       "historySummary": "Hasta son bir yıl içinde iki kez renal kolik atağı geçirdiğini ifade ediyor. Kabızlık, yaygın kemik ağrısı, halsizlik ve hafif depresif duygu durum yakınmaları olduğu öğreniliyor.",
-      "priorityFocus": "Tekrarlayan böbrek TAşı hiperkalsiürinin klinik sonucudur karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Tekrarlayan böbrek TAşı hiperkalsiürinin klinik sonucudur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "neuro-mca-stroke-001",
@@ -3828,12 +3842,11 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Bilinç açık, ancak ekspresif afazi belirgin.",
-      "Sağ üst ve alt ekstremitede santral tip güç kaybı saptanıyor.",
-      "Sağ santral fasiyal paralizi mevcut.",
-      "Sol tarafa bakış tercihi izleniyor.",
-      "Konuşma akıcılığı bozulmuş."
+      "Bilinç açık, ancak ekspresif afazi belirgin",
+      "Sağ üst ve alt ekstremitede santral tip güç kaybı saptanıyor",
+      "Sağ santral fasiyal paralizi mevcut",
+      "Sol tarafa bakış tercihi izleniyor",
+      "Konuşma akıcılığı bozulmuş"
     ],
     "investigations": [
       {
@@ -3923,7 +3936,7 @@ export const cases = [
         "İntraserebral hemoraji",
         "Migren aurası"
       ],
-      "explanation": "Ani afazi ve sağ hemiparezi ile BT anjiyografide sol orta serebral arter oklüzyonunun birlikte bulunması akut iskemik inme tanısını destekler. Tedavi kararı son sağlıklı görülme zamanı ve görüntüleme ile şekillenir. Bu nedenle en uygun yanıt Sol orta serebral arter oklüzyonuna bağlı akut iskemik inme seçeneğidir.",
+      "explanation": "Ani afazi ve sağ hemiparezi ile BT anjiyografide sol orta serebral arter oklüzyonunun birlikte bulunması akut iskemik inme tanısını destekler. Tedavi kararı son sağlıklı görülme zamanı ve görüntüleme ile şekillenir. Sol orta serebral arter oklüzyonuna bağlı akut iskemik inme seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -3944,23 +3957,23 @@ export const cases = [
         "whyCorrect": "Ani başlayan afazi ve sağ hemiparezi kortikal damar sulama alanına uyan fokal nörolojik defisit oluşturur. Kanamanın dışlanması ve BT anjiyografide büyük damar oklüzyonunun gösterilmesi iskemik inme tanısını destekler. Bu nedenle en uygun yanıt Sol orta serebral arter oklüzyonuna bağlı akut iskemik inme seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit tablosu oluşturur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Ekspresif afazi dominant hemisfer kortikal tutulumuyla uyumludur."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "Kontrastsız beyin BT'de kanama saptanmaması hemorajiyi geri plana iter."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Görüntüleme",
             "text": "BT anjiyografide sol MCA proksimal segmentinde dolum kesintisi büyük damar oklüzyonunu gösterir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit."
           }
         ],
@@ -4201,17 +4214,19 @@ export const cases = [
       "profile": "70 yaşında erkek · İnme merkezi acili",
       "presentation": "Konuşma bozukluğu ve sağ taraf güçsüzlüğü",
       "riskContext": [
-        "Toksin veya ilaç maruziyeti olasılığı."
+        "Toksin veya ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit lehinedir.",
-        "Ekspresif afazi dominant hemisfer kortikal tutulumuyla uyumludur.",
-        "Kontrastsız beyin BT'de kanama saptanmaması hemorajiyi geri plana iter.",
-        "BT anjiyografide sol MCA proksimal segmentinde dolum kesintisi büyük damar oklüzyonunu düşündürür."
+        "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit lehinedir",
+        "Ekspresif afazi dominant hemisfer kortikal tutulumuyla uyumludur",
+        "Kontrastsız beyin BT'de kanama saptanmaması hemorajiyi geri plana iter",
+        "BT anjiyografide sol MCA proksimal segmentinde dolum kesintisi büyük damar oklüzyonunu düşündürür",
+        "Konuşma bozukluğu ve sağ taraf güçsüzlüğü"
       ],
       "historySummary": "Hasta yakınları, hastanın 70 dakika önce son kez normal görüldüğünü. Ardından ani konuşma bozukluğu, sağ kol ve bacakta güç kaybı ve bakış deviasyonu geliştiğini belirtiyor. Antikoagülan kullanım öyküsü olmadığı öğreniliyor.",
-      "priorityFocus": "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Ani başlayan konuşma bozukluğu ve sağ taraf güçsüzlüğü fokal nörolojik defisit lehinedir klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "neuro-sah-001",
@@ -4231,12 +4246,11 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Ense sertliği mevcut.",
-      "Fotofobi belirgin.",
-      "Bilinç dalgalanması izleniyor.",
-      "Fokal motor defisit saptanmıyor.",
-      "Kraniyal sinir muayenesinde belirgin paralizi yok."
+      "Ense sertliği mevcut",
+      "Fotofobi belirgin",
+      "Bilinç dalgalanması izleniyor",
+      "Fokal motor defisit saptanmıyor",
+      "Kraniyal sinir muayenesinde belirgin paralizi yok"
     ],
     "investigations": [
       {
@@ -4326,7 +4340,7 @@ export const cases = [
         "Bakteriyel menenjit",
         "Serebral venöz sinüs trombozu"
       ],
-      "explanation": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan bulgu örüntüsünün görülmesi anevrizmal subaraknoid kanama ile uyumludur. Bu nedenle en uygun yanıt Anevrizmal subaraknoid kanama seçeneğidir.",
+      "explanation": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan bulgu örüntüsünün görülmesi anevrizmal subaraknoid kanama ile uyumludur. Anevrizmal subaraknoid kanama seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -4347,19 +4361,19 @@ export const cases = [
         "whyCorrect": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan bulgu örüntüsünün görülmesi anevrizmal subaraknoid kanama ile uyumludur. Bu nedenle en uygun yanıt Anevrizmal subaraknoid kanama seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Thunderclap baş ağrısı SAH için klasik alarm bulgusudur."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Ense sertliği meningeal irritasyonu gösterir."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "Erken kontrastsız BT subaraknoid kanı gösterebilir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Anevrizma odağı kesin tedavi planını belirler."
           }
         ],
@@ -4581,17 +4595,19 @@ export const cases = [
       "profile": "52 yaşında kadın · Acil servis",
       "presentation": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Thunderclap baş ağrısı SAH için klasik alarm bulgusudur.",
-        "Ense sertliği meningeal irritasyonu gösterir.",
-        "Erken kontrastsız BT subaraknoid kanı gösterebilir.",
-        "Anevrizma odağı kesin tedavi planını belirler."
+        "Thunderclap baş ağrısı SAH için klasik alarm bulgusudur",
+        "Ense sertliği meningeal irritasyonu gösterir",
+        "Erken kontrastsız BT subaraknoid kanı gösterebilir",
+        "Anevrizma odağı kesin tedavi planını belirler",
+        "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı"
       ],
       "historySummary": "Hasta baş ağrısının aniden başladığını, daha önce yaşadığı baş ağrılarından tamamen farklı olduğunu ve saniyeler içinde en yüksek şiddete ulaştığını ifade ediyor. Kusma ve fotofobi eşlik ediyor. Polikistik böbrek hastalığı öyküsü mevcut.",
-      "priorityFocus": "Thunderclap baş ağrısı SAH için klasik alarm bulgusudur karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Thunderclap baş ağrısı SAH için klasik alarm bulgusudur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "neuro-ms-001",
@@ -4611,12 +4627,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Sağ gözde rölatif afferent pupilla defekti izleniyor.",
-      "Sol bakışta sağ göz adduksiyon kısıtlılığı ve sol gözde abdüksiyon nistagmusu mevcut.",
-      "Hafif ataksi saptanıyor.",
-      "Kas gücü belirgin azalmamış.",
-      "Göz hareketlerinde ağrı ve internükleer oftalmopleji şüphesi mevcut."
+      "Genel durum stabil",
+      "Sağ gözde rölatif afferent pupilla defekti izleniyor",
+      "Sol bakışta sağ göz adduksiyon kısıtlılığı ve sol gözde abdüksiyon nistagmusu mevcut",
+      "Hafif ataksi saptanıyor",
+      "Kas gücü belirgin azalmamış",
+      "Göz hareketlerinde ağrı ve internükleer oftalmopleji şüphesi mevcut"
     ],
     "investigations": [
       {
@@ -4706,7 +4722,7 @@ export const cases = [
         "Akut dissemine ensefalomiyelit",
         "Miyastenia gravis"
       ],
-      "explanation": "Optik nörit öyküsü, yeni diplopi veya duyu bulguları ve MR'da farklı bölgelerde demiyelinizan plakların bulunması relapsing-remitting multipl sklerozu destekler. Bu nedenle en uygun yanıt Ataklarla seyreden multipl skleroz seçeneğidir.",
+      "explanation": "Optik nörit öyküsü, yeni diplopi veya duyu bulguları ve MR'da farklı bölgelerde demiyelinizan plakların bulunması relapsing-remitting multipl sklerozu destekler. Ataklarla seyreden multipl skleroz seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -4727,19 +4743,19 @@ export const cases = [
         "whyCorrect": "Optik nörit öyküsü, yeni diplopi veya duyu bulguları ve MR'da farklı bölgelerde demiyelinizan plakların bulunması relapsing-remitting multipl sklerozu destekler. Bu nedenle en uygun yanıt Ataklarla seyreden multipl skleroz seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Önceden optik nörit geçirilmesi zamanda yayılım ipucudur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Diplopi beyin sapı tutulumu düşündürür."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "MR'da periventriküler ve infratentorial plaklar mekânda yayılımı destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "BOS oligoklonal bant pozitifliği tanıyı güçlendirebilir."
           }
         ],
@@ -4975,17 +4991,19 @@ export const cases = [
       "profile": "29 yaşında kadın · Nöroloji polikliniği",
       "presentation": "Sağ gözde bulanık görme öyküsü ve yeni başlayan çift görme",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Önceden optik nörit geçirilmesi zamanda yayılım ipucudur.",
-        "Diplopi beyin sapı tutulumu.",
-        "MR'da periventriküler ve infratentorial plaklar mekânda yayılımı destekler.",
-        "BOS oligoklonal bant pozitifliği tanıyı güçlendirebilir."
+        "Önceden optik nörit geçirilmesi zamanda yayılım ipucudur",
+        "Diplopi beyin sapı tutulumu",
+        "MR'da periventriküler ve infratentorial plaklar mekânda yayılımı destekler",
+        "BOS oligoklonal bant pozitifliği tanıyı güçlendirebilir",
+        "Sağ gözde bulanık görme öyküsü ve yeni başlayan çift görme"
       ],
       "historySummary": "Hasta sekiz ay önce kendiliğinden düzelen ağrılı sağ görme azalması atağı geçirdiğini, şimdi ise horizontal diplopi, dengesizlik ve kısa süreli uyuşmalar yaşadığını ifade ediyor.",
-      "priorityFocus": "Önceden optik nörit geçirilmesi zamanda yayılım ipucudur karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Önceden optik nörit geçirilmesi zamanda yayılım ipucudur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "neuro-cvst-001",
@@ -5005,12 +5023,11 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Postiktal uykuya eğilim mevcut.",
-      "Papilödem şüphesi izleniyor.",
-      "Sağ üst ekstremitede geçici güçsüzlük saptanıyor.",
-      "Ense sertliği belirgin değil.",
-      "Bilinç açık ancak letarjik."
+      "Postiktal uykuya eğilim mevcut",
+      "Papilödem şüphesi izleniyor",
+      "Sağ üst ekstremitede geçici güçsüzlük saptanıyor",
+      "Ense sertliği belirgin değil",
+      "Bilinç açık ancak letarjik"
     ],
     "investigations": [
       {
@@ -5100,7 +5117,7 @@ export const cases = [
         "Eklampsi",
         "Bakteriyel menenjit"
       ],
-      "explanation": "Lohusalık döneminde progresif baş ağrısı, nöbet ve venöz görüntülemede sinüs dolum defekti serebral venöz sinüs trombozunu destekler. Bu nedenle en uygun yanıt Serebral venöz sinüs trombozu seçeneğidir.",
+      "explanation": "Lohusalık döneminde progresif baş ağrısı, nöbet ve venöz görüntülemede sinüs dolum defekti serebral venöz sinüs trombozunu destekler. Serebral venöz sinüs trombozu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -5121,19 +5138,19 @@ export const cases = [
         "whyCorrect": "Lohusalık döneminde progresif baş ağrısı, nöbet ve venöz görüntülemede sinüs dolum defekti serebral venöz sinüs trombozunu destekler. Bu nedenle en uygun yanıt Serebral venöz sinüs trombozu seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Lohusalık hiperkoagülabilite için güçlü risk dönemidir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Baş ağrısının progresif seyri venöz basınç artışıyla uyumludur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Nöbet kortikal venöz tutulumda sık görülebilir."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "MR venografi sinüs trombozunu doğrudan gösterir."
           }
         ],
@@ -5362,18 +5379,20 @@ export const cases = [
       "profile": "31 yaşında kadın · Acil servis",
       "presentation": "Şiddetli baş ağrısı ve ilk kez gelişen jeneralize nöbet",
       "riskContext": [
-        "Gebelik ve postpartum döneme bağlı tromboz riski.",
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Gebelik ve postpartum döneme bağlı tromboz riski",
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Lohusalık hiperkoagülabilite için güçlü risk dönemidir.",
-        "Baş ağrısının progresif seyri venöz basınç artışıyla uyumludur.",
-        "Nöbet kortikal venöz tutulumda sık görülebilir.",
-        "MR venografi sinüs trombozunu doğrudan gösterir."
+        "Lohusalık hiperkoagülabilite için güçlü risk dönemidir",
+        "Baş ağrısının progresif seyri venöz basınç artışıyla uyumludur",
+        "Nöbet kortikal venöz tutulumda sık görülebilir",
+        "MR venografi sinüs trombozunu doğrudan gösterir",
+        "Şiddetli baş ağrısı ve ilk kez gelişen jeneralize nöbet"
       ],
       "historySummary": "Lohusalık döneminde sıvı alımının azaldığı ve uzun süre yatakta kaldığı öğreniliyor.",
-      "priorityFocus": "Lohusalık hiperkoagülabilite için güçlü risk dönemidir karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Lohusalık hiperkoagülabilite için güçlü risk dönemidir klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "ped-intussusception-001",
@@ -5393,12 +5412,11 @@ export const cases = [
       "Ateş": "37.5 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Atak sırasında bacaklarını karnına çektiği izleniyor.",
-      "Sağ üst kadranda sosis şeklinde kitle palpasyonu şüpheli.",
-      "Rektal muayenede kanlı-mukuslu dışkı izleniyor.",
-      "Periton irritasyon bulgusu saptanmıyor.",
-      "Çocuk ataklar arasında soluk ve halsiz görünür."
+      "Atak sırasında bacaklarını karnına çektiği izleniyor",
+      "Sağ üst kadranda sosis şeklinde kitle palpasyonu şüpheli",
+      "Rektal muayenede kanlı-mukuslu dışkı izleniyor",
+      "Periton irritasyon bulgusu saptanmıyor",
+      "Çocuk ataklar arasında soluk ve halsiz görünür"
     ],
     "investigations": [
       {
@@ -5488,7 +5506,7 @@ export const cases = [
         "Akut gastroenterit",
         "Midgut volvulusu"
       ],
-      "explanation": "Süt çocuğunda kolik tarzda ağlama atakları, kusma, kanlı-mukuslu dışkılama ve USG'de hedef veya psödoböbrek görünümü ileoçekal invajinasyonu destekler. Bu nedenle en uygun yanıt İleoçekal invajinasyon seçeneğidir.",
+      "explanation": "Süt çocuğunda kolik tarzda ağlama atakları, kusma, kanlı-mukuslu dışkılama ve USG'de hedef veya psödoböbrek görünümü ileoçekal invajinasyonu destekler. İleoçekal invajinasyon seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -5509,23 +5527,23 @@ export const cases = [
         "whyCorrect": "Süt çocuğunda kolik tarzda ağlama atakları, kusma, kanlı-mukuslu dışkılama ve USG'de hedef veya psödoböbrek görünümü ileoçekal invajinasyonu destekler. Bu nedenle en uygun yanıt İleoçekal invajinasyon seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Kanlı-mukuslu dışkı invajinasyon için klasik ipucudur."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "USG hedef bulgusu tanısal değeri yüksek bir bulgudur."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "Peritonit yoksa pnömatik veya hidrostatik redüksiyon ilk tedavi olabilir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu."
           }
         ],
@@ -5750,17 +5768,19 @@ export const cases = [
       "profile": "9 aylık erkek bebek · Çocuk acil",
       "presentation": "Ataklar halinde ağlama ve bacaklarını karnına çekme",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu düşündürür.",
-        "Kanlı-mukuslu dışkı invajinasyon için klasik ipucudur.",
-        "USG hedef bulgusu tanısal değeri yüksek bir bulgudur.",
-        "Peritonit yoksa pnömatik veya hidrostatik redüksiyon ilk tedavi olabilir."
+        "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu düşündürür",
+        "Kanlı-mukuslu dışkı invajinasyon için klasik ipucudur",
+        "USG hedef bulgusu tanısal değeri yüksek bir bulgudur",
+        "Peritonit yoksa pnömatik veya hidrostatik redüksiyon ilk tedavi olabilir",
+        "Ataklar halinde ağlama ve bacaklarını karnına çekme"
       ],
       "historySummary": "Dokuz aylık bebek, birkaç dakikalık huzursuzluk ve şiddetli ağlama atakları sonrasında kısa süreli sakinleşme dönemleri göstermektedir. Son dışkısında mukus ve kan karışımı fark edildiği, aralarda kusma olduğu öğreniliyor.",
-      "priorityFocus": "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu düşündürür klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "ped-pyloric-stenosis-001",
@@ -5780,12 +5800,11 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Bebekte hafif dehidratasyon bulguları mevcut.",
-      "Üst abdomen palpasyonunda zeytin benzeri kitle şüpheli.",
-      "Beslenme sonrasında epigastriumda görünür peristaltizm izleniyor.",
-      "Batında distansiyon belirgin değil.",
-      "Bebek aç ve huzursuz görünümde."
+      "Bebekte hafif dehidratasyon bulguları mevcut",
+      "Üst abdomen palpasyonunda zeytin benzeri kitle şüpheli",
+      "Beslenme sonrasında epigastriumda görünür peristaltizm izleniyor",
+      "Batında distansiyon belirgin değil",
+      "Bebek aç ve huzursuz görünümde"
     ],
     "investigations": [
       {
@@ -5794,7 +5813,7 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "pH",
+            "PH",
             "7.52",
             "7.35-7.45",
             "Yüksek"
@@ -5819,9 +5838,9 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "pH: 7.52 (Yüksek).",
+        "summary": "PH: 7.52 (Yüksek).",
         "findings": [
-          "pH: 7."
+          "PH: 7."
         ]
       },
       {
@@ -5863,7 +5882,7 @@ export const cases = [
         "İnvajinasyon",
         "Duodenal atrezi"
       ],
-      "explanation": "Beş haftalık bebekte progresif safrasız fışkırır kusma, kilo alamama, hipokloremik metabolik alkaloz ve USG'de pilor kas kalınlaşması hipertrofik pilor stenozunu destekler. Bu nedenle en uygun yanıt Hipertrofik pilor stenozu seçeneğidir.",
+      "explanation": "Beş haftalık bebekte progresif safrasız fışkırır kusma, kilo alamama, hipokloremik metabolik alkaloz ve USG'de pilor kas kalınlaşması hipertrofik pilor stenozunu destekler. Hipertrofik pilor stenozu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -5884,23 +5903,23 @@ export const cases = [
         "whyCorrect": "Beş haftalık bebekte progresif safrasız fışkırır kusma, kilo alamama, hipokloremik metabolik alkaloz ve USG'de pilor kas kalınlaşması hipertrofik pilor stenozunu destekler. Bu nedenle en uygun yanıt Hipertrofik pilor stenozu seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hipokloremi ve metabolik alkaloz mide asidi kaybını yansıtır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Yaş aralığı klasik pilor stenozu dönemine uyar."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "USG'de pilor kası kalınlığı ve kanal uzunluğu tanıyı destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu."
           }
         ],
@@ -6139,17 +6158,19 @@ export const cases = [
       "profile": "5 haftalık erkek bebek · Çocuk acil",
       "presentation": "Beslenme sonrası fışkırır tarzda kusma",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu düşündürür.",
-        "Hipokloremi ve metabolik alkaloz mide asidi kaybını yansıtır.",
-        "Yaş aralığı klasik pilor stenozu dönemine uyar.",
-        "USG'de pilor kası kalınlığı ve kanal uzunluğu pilor stenozunu destekler."
+        "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu düşündürür",
+        "Hipokloremi ve metabolik alkaloz mide asidi kaybını yansıtır",
+        "Yaş aralığı klasik pilor stenozu dönemine uyar",
+        "USG'de pilor kası kalınlığı ve kanal uzunluğu pilor stenozunu destekler",
+        "Beslenme sonrası fışkırır tarzda kusma"
       ],
       "historySummary": "Beş haftalık erkek bebek son bir haftadır her beslenmeden kısa süre sonra safrasız ve fışkırır tarzda kusuyor. Kusma sonrasında tekrar emmek istediği, kilo alımının azaldığı ve bez sayısının düştüğü öğreniliyor.",
-      "priorityFocus": "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu SLE aktivitesi için anlamlıdır."
-    }
+      "priorityFocus": "Safrasız fışkırır kusma pilor çıkış obstrüksiyonunu düşündürür klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "ped-kawasaki-001",
@@ -6169,12 +6190,11 @@ export const cases = [
       "Ateş": "39.1 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Bilateral nonpürülan konjonktival hiperemi izleniyor.",
-      "Dudaklar kuru ve çatlak, dil çilek dili görünümünde.",
-      "El ve ayaklarda ödem ve eritem mevcut.",
-      "Tek taraflı servikal lenfadenopati saptanıyor.",
-      "Çocuk irritabl ve halsiz görünümde."
+      "Bilateral nonpürülan konjonktival hiperemi izleniyor",
+      "Dudaklar kuru ve çatlak, dil çilek dili görünümünde",
+      "El ve ayaklarda ödem ve eritem mevcut",
+      "Tek taraflı servikal lenfadenopati saptanıyor",
+      "Çocuk irritabl ve halsiz görünümde"
     ],
     "investigations": [
       {
@@ -6290,7 +6310,7 @@ export const cases = [
         "Adenovirus enfeksiyonu",
         "Stevens-Johnson sendromu"
       ],
-      "explanation": "Beş günden uzun süren ateşe konjonktivit, oral mukozal değişiklik, ekstremite bulguları, döküntü ve lenfadenopatinin eşlik etmesi Kawasaki hastalığı tanısını destekler. Bu nedenle en uygun yanıt Kawasaki hastalığı seçeneğidir.",
+      "explanation": "Beş günden uzun süren ateşe konjonktivit, oral mukozal değişiklik, ekstremite bulguları, döküntü ve lenfadenopatinin eşlik etmesi Kawasaki hastalığı tanısını destekler. Kawasaki hastalığı seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -6311,19 +6331,19 @@ export const cases = [
         "whyCorrect": "Beş günden uzun süren ateşe konjonktivit, oral mukozal değişiklik, ekstremite bulguları, döküntü ve lenfadenopatinin eşlik etmesi Kawasaki hastalığı tanısını destekler. Bu nedenle en uygun yanıt Kawasaki hastalığı seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Vital bulgu",
             "text": "Ateşin beş günü aşması Kawasaki için temel koşuldur."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Nonpürülan konjonktivit ve çilek dili mukokutanöz inflamasyonu gösterir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "El-ayak ödemi veya deskuamasyon vaskülitik süreci destekler."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Koroner arter tutulumu erken tedavi gerektirir."
           }
         ],
@@ -6550,18 +6570,20 @@ export const cases = [
       "profile": "3 yaşında kız çocuk · Çocuk acil veya pediatri servisi",
       "presentation": "ALTı gündür düşmeyen ateş ve döküntü",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Travma veya adli kayıt gerektiren olay",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Ateşin beş günü aşması Kawasaki için temel koşuldur.",
-        "Nonpürülan konjonktivit ve çilek dili mukokutanöz inflamasyonu destekler.",
-        "El ve ayak ödemi ile deskuamasyon vaskülitik süreci destekler.",
-        "Koroner arter tutulumu erken tedavi gerektirir."
+        "Ateşin beş günü aşması Kawasaki için temel koşuldur",
+        "Nonpürülan konjonktivit ve çilek dili mukokutanöz inflamasyonu destekler",
+        "El ve ayak ödemi ile deskuamasyon vaskülitik süreci destekler",
+        "Koroner arter tutulumu erken tedavi gerektirir",
+        "Altı gündür düşmeyen ateş ve döküntü"
       ],
       "historySummary": "Üç yaşındaki çocuk, antibiyotik tedavisine rağmen devam eden yüksek ateş nedeniyle getiriliyor. Ateşe bilateral göz kızarıklığı, dudaklarda çatlama, gövdede döküntü ve el-ayaklarda şişlik eşlik ediyor.",
-      "priorityFocus": "Ateşin beş günü aşması Kawasaki için temel koşuldur akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Ateşin beş günü aşması Kawasaki için temel koşuldur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "ped-epiglottitis-001",
@@ -6581,12 +6603,11 @@ export const cases = [
       "Ateş": "39.4 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Toksik görünüm belirgin.",
-      "Tripod pozisyonunda oturuyor.",
-      "İnspiratuvar stridor duyuluyor.",
-      "Orofarenks muayenesi havayolu ekibi hazır olmadan zorlanmıyor.",
-      "Çocuk salyasını yutmakta zorlanıyor, boynunu ekstansiyonda tutuyor ve havayolu obstrüksiyonunu artırmamak için orofarenks muayenesi zorlanmıyor."
+      "Toksik görünüm belirgin",
+      "Tripod pozisyonunda oturuyor",
+      "İnspiratuvar stridor duyuluyor",
+      "Orofarenks muayenesi havayolu ekibi hazır olmadan zorlanmıyor",
+      "Çocuk salyasını yutmakta zorlanıyor, boynunu ekstansiyonda tutuyor ve havayolu obstrüksiyonunu artırmamak için orofarenks muayenesi zorlanmıyor"
     ],
     "investigations": [
       {
@@ -6658,7 +6679,7 @@ export const cases = [
         "Peritonsiller apse",
         "Yabancı cisim aspirasyonu"
       ],
-      "explanation": "Toksik görünümlü çocukta yüksek ateş, disfaji, salya akması, boğuk ses ve tripod pozisyonu akut epiglottiti düşündürür. Hava yolu güvenliği tanısal işlemlerden önce gelir. Bu nedenle en uygun yanıt Akut epiglottit seçeneğidir.",
+      "explanation": "Toksik görünümlü çocukta yüksek ateş, disfaji, salya akması, boğuk ses ve tripod pozisyonu akut epiglottiti düşündürür. Hava yolu güvenliği tanısal işlemlerden önce gelir. Akut epiglottit seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -6679,23 +6700,23 @@ export const cases = [
         "whyCorrect": "Toksik görünümlü çocukta yüksek ateş, disfaji, salya akması, boğuk ses ve tripod pozisyonu akut epiglottiti düşündürür. Hava yolu güvenliği tanısal işlemlerden önce gelir. Bu nedenle en uygun yanıt Akut epiglottit seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Salya akması ve yutamama supraglottik obstrüksiyon lehinedir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Fizik muayene",
             "text": "Tripod pozisyonu hava yolu açıklığını koruma çabasıdır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Toksik görünüm bakteriyel ağır enfeksiyonu destekler."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Boğaz muayenesi hava yolunu provoke edebileceği için dikkatle planlanmalıdır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Salya akması ve yutamama supraglottik obstrüksiyon."
           }
         ],
@@ -6922,17 +6943,19 @@ export const cases = [
       "profile": "6 yaşında erkek çocuk · Çocuk acil",
       "presentation": "Yutamama, salya akması ve solunum sıkıntısı",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Salya akması ve yutamama supraglottik obstrüksiyonu düşündürür.",
-        "Tripod pozisyonu hava yolu açıklığını koruma çabasıdır.",
-        "Toksik görünüm bakteriyel ağır enfeksiyonu destekler.",
-        "Boğaz muayenesi hava yolunu provoke edebileceği için dikkatle planlanmalıdır."
+        "Salya akması ve yutamama supraglottik obstrüksiyonu düşündürür",
+        "Tripod pozisyonu hava yolu açıklığını koruma çabasıdır",
+        "Toksik görünüm bakteriyel ağır enfeksiyonu destekler",
+        "Boğaz muayenesi hava yolunu provoke edebileceği için dikkatle planlanmalıdır",
+        "Yutamama, salya akması ve solunum sıkıntısı"
       ],
       "historySummary": "Aşıları eksik olduğu öğrenilen ALTı yaşındaki çocuk, ani başlayan yüksek ateş, şiddetli boğaz ağrısı, yutamama ve boğuk ses nedeniyle getiriliyor. Muayene sırasında öne eğilerek oturduğu ve salyasını yutamadığı izleniyor.",
-      "priorityFocus": "Salya akması ve yutamama supraglottik obstrüksiyon karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Salya akması ve yutamama supraglottik obstrüksiyonu düşündürür klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "surg-appendicitis-001",
@@ -6952,10 +6975,9 @@ export const cases = [
       "Ateş": "37.9 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "McBurney noktasında belirgin hassasiyet mevcut.",
-      "Sağ alt kadranda hafif defans izleniyor.",
-      "Psoas veya obturator irritasyon bulguları klinik olarak değerlendiriliyor."
+      "McBurney noktasında belirgin hassasiyet mevcut",
+      "Sağ alt kadranda hafif defans izleniyor",
+      "Psoas veya obturator irritasyon bulguları klinik olarak değerlendiriliyor"
     ],
     "investigations": [
       {
@@ -7057,7 +7079,7 @@ export const cases = [
         "Üreter taşı",
         "Akut gastroenterit"
       ],
-      "explanation": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrı, iştahsızlık, nötrofilik lökositoz ve BT'de inflame apendiks görünümü akut apandisit ile uyumludur. Bu nedenle en uygun yanıt Akut apandisit seçeneğidir.",
+      "explanation": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrı, iştahsızlık, nötrofilik lökositoz ve BT'de inflame apendiks görünümü akut apandisit ile uyumludur. Akut apandisit seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -7078,20 +7100,16 @@ export const cases = [
             "text": "Sağ alt kadran ağrısı ve iştahsızlık."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Fizik muayene",
             "text": "McBurney noktasında hassasiyet saptanıyor."
           },
           {
-            "title": "Hemogram ve inflamasyon belirteçleri",
-            "text": "Lökosit 15."
+            "title": "Laboratuvar",
+            "text": "Nötrofil baskın lökositoz"
           },
           {
-            "title": "Kontrastlı abdomen BT",
+            "title": "Öykü",
             "text": "Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Sağ alt kadran ağrısı ve iştahsızlık."
           }
         ],
         "pearls": [
@@ -7305,19 +7323,21 @@ export const cases = [
     "question": "Bu olguda en olası tanı hangisidir?",
     "patientIntro": {
       "profile": "24 yaşında erkek · Acil servis",
-      "presentation": "Sağ ALT kadran ağrısı ve iştahsızlık",
+      "presentation": "Sağ alt kadran ağrısı ve iştahsızlık",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Sağ ALT kadran ağrısı ve iştahsızlık.",
-        "McBurney noktasında hassasiyet saptanıyor.",
-        "Lökosit 15.",
-        "Abdomen BT'de Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokusunda inflamasyonu destekler."
+        "Sağ alt kadran ağrısı ve iştahsızlık",
+        "McBurney noktasında hassasiyet",
+        "Nötrofil baskın lökositoz",
+        "Abdomen BT'de Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokusunda inflamasyonu destekler",
+        "McBurney noktasında belirgin hassasiyet mevcut"
       ],
-      "historySummary": "Yirmi dört yaşındaki erkek hasta, 12 saat önce periumbilikal başlayan ağrının giderek sağ ALT kadrana lokalize olduğunu ifade ediyor. Bulantı, iştahsızlık ve düşük dereceli ateş yakınmaları mevcut.",
-      "priorityFocus": "Başvuru yakınması: Sağ ALT kadran ağrısı ve iştahsızlık karar verdirici klinik ipucudur."
-    }
+      "historySummary": "Yirmi dört yaşındaki erkek hasta, 12 saat önce periumbilikal başlayan ağrının giderek sağ alt kadrana lokalize olduğunu ifade ediyor. Bulantı, iştahsızlık ve düşük dereceli ateş yakınmaları mevcut.",
+      "priorityFocus": "Sağ alt kadran ağrısı ve iştahsızlık klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "surg-cholecystitis-001",
@@ -7337,12 +7357,11 @@ export const cases = [
       "Ateş": "38.2 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Cilt ve skleralarda belirgin ikter yok.",
-      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
-      "Abdomen inspeksiyonunda distansiyon yok.",
-      "Derin inspirasyon sırasında sağ üst kadran palpasyonuyla ağrı nedeniyle inspirasyon kesiliyor.",
-      "Yaygın defans, rebound veya jeneralize peritonit bulgusu saptanmıyor."
+      "Cilt ve skleralarda belirgin ikter yok",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor",
+      "Abdomen inspeksiyonunda distansiyon yok",
+      "Derin inspirasyon sırasında sağ üst kadran palpasyonuyla ağrı nedeniyle inspirasyon kesiliyor",
+      "Yaygın defans, rebound veya jeneralize peritonit bulgusu saptanmıyor"
     ],
     "investigations": [
       {
@@ -7445,7 +7464,7 @@ export const cases = [
         "Akut pankreatit",
         "Peptik ülser hastalığı"
       ],
-      "explanation": "Süreklilik gösteren sağ üst kadran ağrısı, ateş, lökositoz, Murphy bulgusu ve ultrasonografide taş ile duvar kalınlaşması akut taşlı kolesistit lehinedir. Bu nedenle en uygun yanıt Akut taşlı kolesistit seçeneğidir.",
+      "explanation": "Süreklilik gösteren sağ üst kadran ağrısı, ateş, lökositoz, Murphy bulgusu ve ultrasonografide taş ile duvar kalınlaşması akut taşlı kolesistit lehinedir. Akut taşlı kolesistit seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -7466,20 +7485,16 @@ export const cases = [
             "text": "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Fizik muayene",
             "text": "Sağ üst kadranda hassasiyet mevcut."
           },
           {
-            "title": "Sağ üst kadran ultrasonografisi",
+            "title": "Başvuru yakınması",
             "text": "Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı artışı izleniyor."
           },
           {
             "title": "Laboratuvar",
-            "text": "Lökosit 14."
-          },
-          {
-            "title": "Tedavi önceliği",
-            "text": "Başvuru yakınması: Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı."
+            "text": "Nötrofil baskın lökositoz"
           }
         ],
         "pearls": [
@@ -7695,17 +7710,19 @@ export const cases = [
       "profile": "47 yaşında kadın · Acil servis",
       "presentation": "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı.",
-        "Sağ üst kadranda hassasiyet mevcut.",
-        "Sağ üst kadran USG'de Safra kesesinde TAş, duvar kalınlaşması akut inflamasyonu destekler.",
-        "Lökosit 14."
+        "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı",
+        "Sağ üst kadranda hassasiyet mevcut",
+        "Sağ üst kadran USG'de Safra kesesinde TAş, duvar kalınlaşması akut inflamasyonu destekler",
+        "Nötrofil baskın lökositoz",
+        "Cilt ve skleralarda belirgin ikter yok"
       ],
       "historySummary": "Kırk yedi yaşındaki kadın hasta, 18 saattir devam eden sağ üst kadran ağrısı, bulantı ve ateş yakınmalarıyla başvuruyor. Daha önce kendiliğinden düzelen kısa süreli biliyer kolik atakları olduğu öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "surg-sbo-001",
@@ -7725,10 +7742,9 @@ export const cases = [
       "Ateş": "37.4 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Abdomen distandü.",
-      "Yaygın kramp tarzı hassasiyet var.",
-      "Eski laparotomi skarı izleniyor."
+      "Abdomen distandü",
+      "Yaygın kramp tarzı hassasiyet var",
+      "Eski laparotomi skarı izleniyor"
     ],
     "investigations": [
       {
@@ -7818,7 +7834,7 @@ export const cases = [
         "Sigmoid volvulus",
         "Akut mezenter iskemi"
       ],
-      "explanation": "Geçirilmiş abdominal cerrahi öyküsü, kolik ağrı, kusma, distansiyon, obstipasyon ve BT'de geçiş noktası adezyona bağlı mekanik ince bağırsak obstrüksiyonunu düşündürür. Bu nedenle en uygun yanıt Adezyona bağlı ince bağırsak obstrüksiyonu seçeneğidir.",
+      "explanation": "Geçirilmiş abdominal cerrahi öyküsü, kolik ağrı, kusma, distansiyon, obstipasyon ve BT'de geçiş noktası adezyona bağlı mekanik ince bağırsak obstrüksiyonunu düşündürür. Adezyona bağlı ince bağırsak obstrüksiyonu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -7839,20 +7855,16 @@ export const cases = [
             "text": "Karında şişlik, kusma ve gaz-gaita çıkaramama."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Karında belirgin distansiyon mevcut."
           },
           {
-            "title": "Ayakta direkt karın grafisi",
+            "title": "Öykü",
             "text": "Santral yerleşimli dilate ince bağırsak ansları ve çoklu hava-sıvı seviyeleri izleniyor."
           },
           {
-            "title": "Kontrastlı abdomen BT",
+            "title": "Öykü",
             "text": "İnce bağırsakta geçiş noktası ve proksimal dilatasyon izleniyor."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Karında şişlik, kusma ve gaz-gaita çıkaramama."
           }
         ],
         "pearls": [
@@ -8068,17 +8080,19 @@ export const cases = [
       "profile": "63 yaşında erkek · Acil servis",
       "presentation": "Karında şişlik, kusma ve gaz-gaita çıkaramama",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Karında şişlik, kusma ve gaz-gaita çıkaramama.",
-        "Karında belirgin distansiyon mevcut.",
-        "Direkt karın grafisinde Santral yerleşimli dilate ince bağırsak anslarında obstrüksiyonu destekler.",
-        "Abdomen BT'de İnce bağırsakta geçiş noktası ve proksimal dilatasyon mekanik obstrüksiyonu destekler."
+        "Karında şişlik, kusma ve gaz-gaita çıkaramama",
+        "Karında belirgin distansiyon mevcut",
+        "Direkt karın grafisinde Santral yerleşimli dilate ince bağırsak anslarında obstrüksiyonu destekler",
+        "Abdomen BT'de İnce bağırsakta geçiş noktası ve proksimal dilatasyon mekanik obstrüksiyonu destekler",
+        "Abdomen distandü"
       ],
       "historySummary": "Daha önce kolon cerrahisi geçirmiş olan hasta, son 24 saattir kolik tarzda karın ağrısı, tekrarlayan kusma ve obstipasyon yakınmaları olduğunu ifade ediyor. Ateş veya belirgin dışkıda kan ifade etmiyor.",
-      "priorityFocus": "Başvuru yakınması: Karında şişlik, kusma ve gaz-gaita çıkaramama karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Karında şişlik, kusma ve gaz-gaita çıkaramama klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "surg-pneumoperitoneum-001",
@@ -8098,10 +8112,10 @@ export const cases = [
       "Ateş": "38.0 °C"
     },
     "exam": [
-      "Genel durum orta-kötü.",
-      "Abdomen tahta karın görünümünde rijit ve yaygın hassas.",
-      "Yaygın defans ve rebound hassasiyeti saptanıyor.",
-      "Barsak sesleri azalmış duyuluyor."
+      "Genel durum orta-kötü",
+      "Abdomen tahta karın görünümünde rijit ve yaygın hassas",
+      "Yaygın defans ve rebound hassasiyeti saptanıyor",
+      "Barsak sesleri azalmış duyuluyor"
     ],
     "investigations": [
       {
@@ -8191,7 +8205,7 @@ export const cases = [
         "Akut kolesistit",
         "Renal kolik"
       ],
-      "explanation": "Ani başlayan epigastrik ağrı, yaygın peritonit bulguları ve diyafram altında serbest hava perforasyon lehinedir. NSAİİ öyküsü peptik ülser perforasyonunu destekler. Bu nedenle en uygun yanıt Perfore peptik ülser seçeneğidir.",
+      "explanation": "Ani başlayan epigastrik ağrı, yaygın peritonit bulguları ve diyafram altında serbest hava perforasyon lehinedir. NSAİİ öyküsü peptik ülser perforasyonunu destekler. Perfore peptik ülser seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -8212,20 +8226,16 @@ export const cases = [
             "text": "Ani başlayan çok şiddetli epigastrik ağrı."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Hasta hareketsiz yatmayı tercih ediyor."
           },
           {
-            "title": "Ayakta akciğer veya abdomen grafisi",
+            "title": "Öykü",
             "text": "Diyafram altında serbest hava ile uyumlu görünüm izleniyor."
           },
           {
-            "title": "Kontrastlı abdomen BT",
+            "title": "Öykü",
             "text": "Üst abdomende serbest hava ve sıvı."
-          },
-          {
-            "title": "Tedavi önceliği",
-            "text": "Başvuru yakınması: Ani başlayan çok şiddetli epigastrik ağrı."
           }
         ],
         "pearls": [
@@ -8441,17 +8451,19 @@ export const cases = [
       "profile": "57 yaşında erkek · Acil servis",
       "presentation": "Ani başlayan çok şiddetli epigastrik ağrı",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Ani başlayan çok şiddetli epigastrik ağrı.",
-        "Hasta hareketsiz yatmayı tercih ediyor.",
-        "Ayakta grafide Diyafram ALTında serbest hava ile uyumludur.",
-        "Abdomen BT'de Üst abdomende serbest hava ve sıvı."
+        "Ani başlayan çok şiddetli epigastrik ağrı",
+        "Hasta hareketsiz yatmayı tercih ediyor",
+        "Ayakta grafide Diyafram ALTında serbest hava ile uyumludur",
+        "Abdomen BT'de Üst abdomende serbest hava ve sıvı",
+        "Genel durum orta-kötü"
       ],
       "historySummary": "NSAİİ kullanım öyküsü olan hasta, epigastriumda aniden başlayan ağrının kısa sürede tüm karna yayıldığını ifade ediyor. Ağrı hareketle ve öksürmekle artıyor. Bulantı eşlik ediyor.",
-      "priorityFocus": "Başvuru yakınması: Ani başlayan çok şiddetli epigastrik ağrı karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Ani başlayan çok şiddetli epigastrik ağrı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "surg-diverticulitis-001",
@@ -8471,12 +8483,11 @@ export const cases = [
       "Ateş": "38.1 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Ciltte solukluk veya belirgin dehidratasyon bulgusu yok.",
-      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
-      "Abdomen hafif distandü.",
-      "Yaygın rebound, tahta karın veya jeneralize peritonit bulgusu saptanmıyor.",
-      "Rektal muayenede aktif kanama ya da ele gelen belirgin kitle izlenmiyor."
+      "Ciltte solukluk veya belirgin dehidratasyon bulgusu yok",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor",
+      "Abdomen hafif distandü",
+      "Yaygın rebound, tahta karın veya jeneralize peritonit bulgusu saptanmıyor",
+      "Rektal muayenede aktif kanama ya da ele gelen belirgin kitle izlenmiyor"
     ],
     "investigations": [
       {
@@ -8548,7 +8559,7 @@ export const cases = [
         "Kolon kanseri perforasyonu",
         "Akut apandisit"
       ],
-      "explanation": "Sol alt kadran ağrısı, ateş, lökositoz ve BT'de sigmoid divertikül çevresinde inflamasyon, apse veya serbest perforasyon olmadan akut komplike olmayan divertikülit ile uyumludur. Bu nedenle en uygun yanıt Komplike olmayan akut sigmoid divertikülit seçeneğidir.",
+      "explanation": "Sol alt kadran ağrısı, ateş, lökositoz ve BT'de sigmoid divertikül çevresinde inflamasyon, apse veya serbest perforasyon olmadan akut komplike olmayan divertikülit ile uyumludur. Komplike olmayan akut sigmoid divertikülit seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -8569,20 +8580,16 @@ export const cases = [
             "text": "Sol alt kadranda ağrı ve ateş."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Fizik muayene",
             "text": "Sol alt kadranda lokalize hassasiyet mevcut."
           },
           {
-            "title": "Kontrastlı abdomen BT",
+            "title": "Öykü",
             "text": "Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon izleniyor."
           },
           {
             "title": "Laboratuvar",
-            "text": "Lökosit 13."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Sol alt kadranda ağrı ve ateş."
+            "text": "Nötrofil baskın lökositoz"
           }
         ],
         "pearls": [
@@ -8796,19 +8803,21 @@ export const cases = [
     "question": "Bu olguda en olası tanı hangisidir?",
     "patientIntro": {
       "profile": "68 yaşında kadın · Acil servis",
-      "presentation": "Sol ALT kadranda ağrı ve ateş",
+      "presentation": "Sol alt kadranda ağrı ve ateş",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Sol ALT kadranda ağrı ve ateş.",
-        "Sol ALT kadranda lokalize hassasiyet mevcut.",
-        "Abdomen BT'de Sigmoid kolonda divertiküller, segmental duvar.",
-        "Lökosit 13."
+        "Sol alt kadranda ağrı ve ateş",
+        "Sol alt kadranda lokalize hassasiyet mevcut",
+        "Abdomen BT'de Sigmoid kolonda divertiküller, segmental duvar",
+        "Nötrofil baskın lökositoz",
+        "Ciltte solukluk veya belirgin dehidratasyon bulgusu yok"
       ],
-      "historySummary": "Altmış sekiz yaşındaki kadın hasta iki gündür sol ALT kadranda giderek artan ağrı, kabızlık ve düşük dereceli ateş olduğunu ifade ediyor. Daha önce kolonoskopide divertikülozis saptandığı öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Sol ALT kadranda ağrı ve ateş karar verdirici klinik ipucudur."
-    }
+      "historySummary": "Altmış sekiz yaşındaki kadın hasta iki gündür sol alt kadranda giderek artan ağrı, kabızlık ve düşük dereceli ateş olduğunu ifade ediyor. Daha önce kolonoskopide divertikülozis saptandığı öğreniliyor.",
+      "priorityFocus": "Sol alt kadranda ağrı ve ateş klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pulm-pneumothorax-001",
@@ -8828,12 +8837,11 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Sağ hemitoraksta solunum sesleri belirgin azalmış.",
-      "Perküsyonda sağda hipersonorite mevcut.",
-      "Trakea orta hatta.",
-      "Hemodinamik instabilite saptanmıyor.",
-      "Solunum eforu hafif artmış."
+      "Sağ hemitoraksta solunum sesleri belirgin azalmış",
+      "Perküsyonda sağda hipersonorite mevcut",
+      "Trakea orta hatta",
+      "Hemodinamik instabilite saptanmıyor",
+      "Solunum eforu hafif artmış"
     ],
     "investigations": [
       {
@@ -8860,7 +8868,7 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "pH",
+            "PH",
             "7.43",
             "7.35-7.45",
             "Referans içinde"
@@ -8923,7 +8931,7 @@ export const cases = [
         "Lobar pnömoni",
         "Plevral efüzyon"
       ],
-      "explanation": "Genç, uzun-zayıf erkek hastada travmasız ani plöritik ağrı, tek taraflı solunum sesi azalması, hipersonorite ve grafide plevral çizgi primer spontan pnömotoraksı destekler. Bu nedenle en uygun yanıt Primer spontan pnömotoraks seçeneğidir.",
+      "explanation": "Genç, uzun-zayıf erkek hastada travmasız ani plöritik ağrı, tek taraflı solunum sesi azalması, hipersonorite ve grafide plevral çizgi primer spontan pnömotoraksı destekler. Primer spontan pnömotoraks seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -8944,20 +8952,16 @@ export const cases = [
             "text": "Ani sağ göğüs ağrısı ve nefes darlığı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Sağ hemitoraksta solunum sesleri belirgin azalmış."
           },
           {
-            "title": "Akciğer grafisi",
+            "title": "Öykü",
             "text": "Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan izleniyor."
           },
           {
-            "title": "Kan gazı",
-            "text": "pH 7.43 saptandı."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Ani sağ göğüs ağrısı ve nefes darlığı."
+            "title": "Laboratuvar",
+            "text": "PH 7.43 saptandı."
           }
         ],
         "pearls": [
@@ -9161,19 +9165,21 @@ export const cases = [
       "profile": "23 yaşında uzun boylu zayıf erkek · Acil servis",
       "presentation": "Ani sağ göğüs ağrısı ve nefes darlığı",
       "riskContext": [
-        "Aterosklerotik risk zemini.",
-        "Travma veya adli kayıt gerektiren olay.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Aterosklerotik risk zemini",
+        "Travma veya adli kayıt gerektiren olay",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Ani sağ göğüs ağrısı ve nefes darlığı.",
-        "Sağ hemitoraksta solunum sesleri belirgin azalmış.",
-        "Akciğer grafisinde Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde damar izlerinin kaybı pnömotoraksı destekler.",
-        "Kan gazı: pH 7.43 saptandı."
+        "Ani sağ göğüs ağrısı ve nefes darlığı",
+        "Sağ hemitoraksta solunum sesleri belirgin azalmış",
+        "Akciğer grafisinde Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde damar izlerinin kaybı pnömotoraksı destekler",
+        "Kan gazı: pH 7.43 saptandı",
+        "Perküsyonda sağda hipersonorite mevcut"
       ],
       "historySummary": "Uzun boylu ve zayıf yapılı 23 yaşındaki erkek hasta, istirahat sırasında aniden başlayan batıcı sağ göğüs ağrısı ve nefes darlığı nedeniyle başvuruyor. Travma, ateş veya balgam öyküsü yoktur.",
-      "priorityFocus": "Başvuru yakınması: Ani sağ göğüs ağrısı ve nefes darlığı aktif tüberküloz olasılığını artırır."
-    }
+      "priorityFocus": "Ani sağ göğüs ağrısı ve nefes darlığı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pulm-pe-001",
@@ -9193,12 +9199,11 @@ export const cases = [
       "Ateş": "37.2 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Taşikardi mevcut.",
-      "Sağ baldır çevresi sol tarafa göre artmış ve palpasyonla hassas.",
-      "Akciğer oskültasyonunda belirgin fokal ral yok.",
-      "Hemoptizi ifade edilmiyor.",
-      "Hasta takipneik görünümde."
+      "Taşikardi mevcut",
+      "Sağ baldır çevresi sol tarafa göre artmış ve palpasyonla hassas",
+      "Akciğer oskültasyonunda belirgin fokal ral yok",
+      "Hemoptizi ifade edilmiyor",
+      "Hasta takipneik görünümde"
     ],
     "investigations": [
       {
@@ -9288,7 +9293,7 @@ export const cases = [
         "Akut koroner sendrom",
         "Panik atak"
       ],
-      "explanation": "Uzun uçuş ve oral kontraseptif kullanımı gibi tromboemboli riskleri, ani dispne, plöritik ağrı, taşikardi, D-dimer yüksekliği ve BT pulmoner anjiyografide dolum defekti pulmoner emboli ile uyumludur. Bu nedenle en uygun yanıt Akut pulmoner emboli seçeneğidir.",
+      "explanation": "Uzun uçuş ve oral kontraseptif kullanımı gibi tromboemboli riskleri, ani dispne, plöritik ağrı, taşikardi, D-dimer yüksekliği ve BT pulmoner anjiyografide dolum defekti pulmoner emboli ile uyumludur. Akut pulmoner emboli seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -9309,20 +9314,16 @@ export const cases = [
             "text": "Ani nefes darlığı ve batıcı göğüs ağrısı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Taşikardi mevcut."
           },
           {
-            "title": "BT pulmoner anjiyografi",
+            "title": "Görüntüleme",
             "text": "Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor."
           },
           {
-            "title": "D-dimer",
+            "title": "Laboratuvar",
             "text": "D-dimer 2."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Ani nefes darlığı ve batıcı göğüs ağrısı."
           }
         ],
         "pearls": [
@@ -9535,17 +9536,19 @@ export const cases = [
       "profile": "36 yaşında kadın · Acil servis",
       "presentation": "Ani nefes darlığı ve batıcı göğüs ağrısı",
       "riskContext": [
-        "Aterosklerotik risk zemini."
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Ani nefes darlığı ve batıcı göğüs ağrısı.",
-        "TAşikardi mevcut.",
-        "BT pulmoner anjiyografide Sağ ALT lob segmental pulmoner arter dalında kontrast dolum defektini gösterir.",
-        "D-dimer 2."
+        "Ani nefes darlığı ve batıcı göğüs ağrısı",
+        "TAşikardi mevcut",
+        "BT pulmoner anjiyografide sağ alt lob segmental pulmoner arter dalında kontrast dolum defektini gösterir",
+        "D-dimer 2",
+        "Sağ baldır çevresi sol tarafa göre artmış ve palpasyonla hassas"
       ],
       "historySummary": "Otuz ALTı yaşındaki kadın hasta, iki gün önce uzun süreli uçuş yaptığını ve oral kontraseptif kullandığını belirtiyor. Ani başlayan nefes darlığına sağ yan ağrısı, çarpıntı ve sağ baldırda ağrı-şişlik eşlik ediyor.",
-      "priorityFocus": "Başvuru yakınması: Ani nefes darlığı ve batıcı göğüs ağrısı pulmoner emboli olasılığını yükseltir."
-    }
+      "priorityFocus": "Ani nefes darlığı ve batıcı göğüs ağrısı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pulm-pneumonia-001",
@@ -9565,12 +9568,11 @@ export const cases = [
       "Ateş": "38.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Sağ alt zonda inspiratuvar raller duyuluyor.",
-      "Aynı bölgede bronşiyal solunum sesi ve matite mevcut.",
-      "Solunum sayısı artmış.",
-      "Konfüzyon saptanmıyor.",
-      "Solunum eforu hafif artmış."
+      "Sağ alt zonda inspiratuvar raller duyuluyor",
+      "Aynı bölgede bronşiyal solunum sesi ve matite mevcut",
+      "Solunum sayısı artmış",
+      "Konfüzyon saptanmıyor",
+      "Solunum eforu hafif artmış"
     ],
     "investigations": [
       {
@@ -9676,7 +9678,7 @@ export const cases = [
         "Akut KOAH alevlenmesi",
         "Tüberküloz"
       ],
-      "explanation": "Ateş, titreme, pürülan balgam, plöritik ağrı, fokal oskültasyon bulguları ve grafide hava bronkogramlı lobar konsolidasyon toplum kökenli pnömoniyi destekler. Bu nedenle en uygun yanıt Toplum kökenli lobar pnömoni seçeneğidir.",
+      "explanation": "Ateş, titreme, pürülan balgam, plöritik ağrı, fokal oskültasyon bulguları ve grafide hava bronkogramlı lobar konsolidasyon toplum kökenli pnömoniyi destekler. Toplum kökenli lobar pnömoni seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -9697,20 +9699,16 @@ export const cases = [
             "text": "Öksürük, ateş ve nefes almakla artan yan ağrısı."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Fizik muayene",
             "text": "Sağ alt zonda inspiratuvar raller duyuluyor."
           },
           {
-            "title": "Akciğer grafisi",
+            "title": "Görüntüleme",
             "text": "Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı izleniyor."
           },
           {
             "title": "Laboratuvar",
-            "text": "Lökosit 16."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Öksürük, ateş ve nefes almakla artan yan ağrısı."
+            "text": "Nötrofil baskın lökositoz"
           }
         ],
         "pearls": [
@@ -9917,17 +9915,19 @@ export const cases = [
       "profile": "67 yaşında erkek · Acil servis",
       "presentation": "Öksürük, ateş ve nefes almakla artan yan ağrısı",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Öksürük, ateş ve nefes almakla artan yan ağrısı.",
-        "Sağ ALT zonda inspiratuvar raller duyuluyor.",
-        "Akciğer grafisinde Sağ ALT lobda hava bronkogramı içeren konsolidasyon alanı.",
-        "Lökosit 16."
+        "Öksürük, ateş ve nefes almakla artan yan ağrısı",
+        "Sağ alt zonda inspiratuvar raller",
+        "Hava bronkogramı içeren lobar konsolidasyon",
+        "Nötrofil baskın lökositoz",
+        "Aynı bölgede bronşiyal solunum sesi ve matite mevcut"
       ],
       "historySummary": "KOAH öyküsü olan 67 yaşındaki erkek hasta, üç gündür ateş, titreme, pürülan balgam ve sağ yan ağrısı olduğunu ifade ediyor. Yakın zamanda hastane yatışı veya antibiyotik kullanımı olmadığı öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Öksürük, ateş ve nefes almakla artan yan ağrısı aktif tüberküloz olasılığını artırır."
-    }
+      "priorityFocus": "Öksürük, ateş ve nefes almakla artan yan ağrısı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pulm-ipf-uip-001",
@@ -9947,12 +9947,12 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Bilateral bazal inspiratuvar ince Velcro tipi raller duyuluyor.",
-      "Parmaklarda çomaklaşma mevcut.",
-      "hışıltılı solunum belirgin değil.",
-      "Periferik ödem saptanmıyor.",
-      "Hasta istirahatte rahat ancak konuşma sonrası hafif dispneik."
+      "Genel durum stabil",
+      "Bilateral bazal inspiratuvar ince Velcro tipi raller duyuluyor",
+      "Parmaklarda çomaklaşma mevcut",
+      "Hışıltılı solunum belirgin değil",
+      "Periferik ödem saptanmıyor",
+      "Hasta istirahatte rahat ancak konuşma sonrası hafif dispneik"
     ],
     "investigations": [
       {
@@ -10054,7 +10054,7 @@ export const cases = [
         "KOAH",
         "Kronik hipersensitivite pnömonisi"
       ],
-      "explanation": "İleri yaş, progresif kuru öksürük ve dispne, bazal Velcro tipi raller, restriktif solunum fonksiyon bulgu örüntüsü, düşük DLCO ve HRCT'de bazal-subplevral UIP bulgu örüntüsü idiyopatik pulmoner fibrozisi destekler. Bu nedenle en uygun yanıt İdiyopatik pulmoner fibrozis seçeneğidir.",
+      "explanation": "İleri yaş, progresif kuru öksürük ve dispne, bazal Velcro tipi raller, restriktif solunum fonksiyon bulgu örüntüsü, düşük DLCO ve HRCT'de bazal-subplevral UIP bulgu örüntüsü idiyopatik pulmoner fibrozisi destekler. İdiyopatik pulmoner fibrozis seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -10075,20 +10075,16 @@ export const cases = [
             "text": "Aylar içinde artan efor dispnesi ve kuru öksürük."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Bilateral bazal inspiratuvar ince Velcro tipi raller duyuluyor."
           },
           {
-            "title": "Yüksek çözünürlüklü toraks BT",
+            "title": "Öykü",
             "text": "Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği görünümü izleniyor."
           },
           {
-            "title": "Solunum fonksiyon testi",
+            "title": "Öykü",
             "text": "FVC %62 beklenen saptandı."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Aylar içinde artan efor dispnesi ve kuru öksürük."
           }
         ],
         "pearls": [
@@ -10292,17 +10288,19 @@ export const cases = [
       "profile": "69 yaşında erkek · Göğüs hastalıkları polikliniği",
       "presentation": "Aylar içinde artan efor dispnesi ve kuru öksürük",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Aylar içinde artan efor dispnesi ve kuru öksürük.",
-        "Bilateral bazal inspiratuvar ince Velcro tipi raller duyuluyor.",
-        "Yüksek çözünürlüklü toraks BT: Bazal ve subplevral ağırlıklı retikülasyon.",
-        "Solunum fonksiyon testi: FVC %62 beklenen saptandı."
+        "Aylar içinde artan efor dispnesi ve kuru öksürük",
+        "Bilateral bazal inspiratuvar ince Velcro tipi raller",
+        "Yüksek çözünürlüklü toraks BT: Bazal ve subplevral ağırlıklı retikülasyon",
+        "Solunum fonksiyon testi: FVC %62 beklenen saptandı",
+        "Genel durum stabil"
       ],
       "historySummary": "Altmış dokuz yaşındaki erkek hasta, son bir yılda merdiven çıkarken belirginleşen nefes darlığı ve kuru öksürük yakınmaları olduğunu ifade ediyor. Bağ dokusu hastalığını düşündüren eklem şişliği, Raynaud fenomeni veya belirgin çevresel maruziyet ifade etmiyor.",
-      "priorityFocus": "Başvuru yakınması: Aylar içinde artan efor dispnesi ve kuru öksürük karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Aylar içinde artan efor dispnesi ve kuru öksürük klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pulm-copd-exacerbation-001",
@@ -10322,12 +10320,11 @@ export const cases = [
       "Ateş": "37.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Yaygın ekspiratuvar ronküs ve hışıltılı solunum duyuluyor.",
-      "Ekspirasyon süresi uzamış.",
-      "Yardımcı solunum kasları kullanılıyor.",
-      "Periferik siyanoz hafif düzeyde izleniyor.",
-      "Hasta öne eğilerek oturuyor."
+      "Yaygın ekspiratuvar ronküs ve hışıltılı solunum duyuluyor",
+      "Ekspirasyon süresi uzamış",
+      "Yardımcı solunum kasları kullanılıyor",
+      "Periferik siyanoz hafif düzeyde izleniyor",
+      "Hasta öne eğilerek oturuyor"
     ],
     "investigations": [
       {
@@ -10336,7 +10333,7 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "pH",
+            "PH",
             "7.31",
             "7.35-7.45",
             "Düşük"
@@ -10361,9 +10358,9 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "pH: 7.31 (Düşük).",
+        "summary": "PH: 7.31 (Düşük).",
         "findings": [
-          "pH: 7."
+          "PH: 7."
         ]
       },
       {
@@ -10435,7 +10432,7 @@ export const cases = [
         "Pulmoner emboli",
         "Pnömotoraks"
       ],
-      "explanation": "Bilinen KOAH hastasında dispne artışı, balgam miktarı ve pürülansında artış, yaygın hışıltılı solunum ve hiperkapnik asidoz akut KOAH alevlenmesini destekler. Bu nedenle en uygun yanıt Akut KOAH alevlenmesi seçeneğidir.",
+      "explanation": "Bilinen KOAH hastasında dispne artışı, balgam miktarı ve pürülansında artış, yaygın hışıltılı solunum ve hiperkapnik asidoz akut KOAH alevlenmesini destekler. Akut KOAH alevlenmesi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -10456,26 +10453,22 @@ export const cases = [
             "text": "Artan nefes darlığı ve balgam miktarı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Fizik muayene",
             "text": "Yaygın ekspiratuvar ronküs ve hışıltılı solunum duyuluyor."
           },
           {
-            "title": "Arter kan gazı",
-            "text": "pH 7.31 saptandı."
+            "title": "Laboratuvar",
+            "text": "PH 7.31 saptandı."
           },
           {
-            "title": "Akciğer grafisi",
+            "title": "Öykü",
             "text": "Hiperinflasyon bulguları izleniyor."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Artan nefes darlığı ve balgam miktarı."
           }
         ],
         "pearls": [
           {
             "label": "Sınav incisi",
-            "text": "pH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
+            "text": "PH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
           },
           {
             "label": "Mekanizma özeti",
@@ -10553,7 +10546,7 @@ export const cases = [
         "clinicalPearls": [
           {
             "label": "Sınav incisi",
-            "text": "pH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
+            "text": "PH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
           },
           {
             "label": "Mekanizma özeti",
@@ -10682,18 +10675,20 @@ export const cases = [
       "profile": "66 yaşında erkek · Acil servis",
       "presentation": "Artan nefes darlığı ve balgam miktarı",
       "riskContext": [
-        "Aterosklerotik risk zemini.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Aterosklerotik risk zemini",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Artan nefes darlığı ve balgam miktarı.",
-        "Yaygın ekspiratuvar ronküs ve hışıltılı solunum duyuluyor.",
-        "Arter kan gazı: pH 7.31 saptandı.",
-        "Akciğer grafisinde Hiperinflasyon bulguları izleniyor."
+        "Artan nefes darlığı ve balgam miktarı",
+        "Yaygın ekspiratuvar ronküs ve hışıltılı solunum",
+        "Arter kan gazı: pH 7.31 saptandı",
+        "Akciğer grafisinde Hiperinflasyon bulguları izleniyor",
+        "Ekspirasyon süresi uzamış"
       ],
       "historySummary": "Ağır sigara öyküsü ve KOAH tanısı olan hasta, üç gündür dispnesinin arttığını, balgam miktarı ve pürülansında belirgin artış olduğunu ifade ediyor. Evde kullandığı inhaler tedaviyle rahatlamadığı öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Artan nefes darlığı ve balgam miktarı aktif tüberküloz olasılığını artırır."
-    }
+      "priorityFocus": "Artan nefes darlığı ve balgam miktarı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "inf-tuberculosis-001",
@@ -10713,12 +10708,11 @@ export const cases = [
       "Ateş": "37.9 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Kaşektik görünüm ve hafif ateş mevcut.",
-      "Sağ üst zonda solunum sesleri azalmış ve raller duyuluyor.",
-      "Servikal lenfadenopati saptanmıyor.",
-      "Hepatosplenomegali yok.",
-      "Hasta zayıf ve gece terlemesine bağlı nemli görünümdedir."
+      "Kaşektik görünüm ve hafif ateş mevcut",
+      "Sağ üst zonda solunum sesleri azalmış ve raller duyuluyor",
+      "Servikal lenfadenopati saptanmıyor",
+      "Hepatosplenomegali yok",
+      "Hasta zayıf ve gece terlemesine bağlı nemli görünümdedir"
     ],
     "investigations": [
       {
@@ -10808,7 +10802,7 @@ export const cases = [
         "Akciğer absesi",
         "Pulmoner aspergilloz"
       ],
-      "explanation": "Üç haftadan uzun öksürük, kilo kaybı, gece terlemesi, hemoptizi, apikal kaviter lezyon ve balgamda aside dirençli basil saptanması reaktivasyon pulmoner tüberkülozu destekler. Bu nedenle en uygun yanıt Reaktivasyon pulmoner tüberküloz seçeneğidir.",
+      "explanation": "Üç haftadan uzun öksürük, kilo kaybı, gece terlemesi, hemoptizi, apikal kaviter lezyon ve balgamda aside dirençli basil saptanması reaktivasyon pulmoner tüberkülozu destekler. Reaktivasyon pulmoner tüberküloz seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -10829,20 +10823,16 @@ export const cases = [
             "text": "Üç haftadan uzun süren öksürük ve kilo kaybı."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Kaşektik görünüm ve hafif ateş mevcut."
           },
           {
-            "title": "Akciğer grafisi",
+            "title": "Görüntüleme",
             "text": "Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumlu görünüm izleniyor."
           },
           {
-            "title": "Balgam ARB ve moleküler inceleme",
+            "title": "Başvuru yakınması",
             "text": "Balgam yaymasında aside dirençli basil görülüyor."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Üç haftadan uzun süren öksürük ve kilo kaybı."
           }
         ],
         "pearls": [
@@ -11046,17 +11036,19 @@ export const cases = [
       "profile": "44 yaşında erkek · Enfeksiyon hastalıkları veya Acil",
       "presentation": "Üç haftadan uzun süren öksürük ve kilo kaybı",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Üç haftadan uzun süren öksürük ve kilo kaybı.",
-        "Kaşektik görünüm ve hafif ateş mevcut.",
-        "Akciğer grafisinde Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumludur.",
-        "Balgam ARB ve moleküler incelemede Balgam yaymasında aside dirençli basil görülmesi tüberkülozu destekler."
+        "Üç haftadan uzun süren öksürük ve kilo kaybı",
+        "Kaşektik görünüm ve hafif ateş mevcut",
+        "Akciğer grafisinde Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumludur",
+        "Balgam ARB ve moleküler incelemede Balgam yaymasında aside dirençli basil görülmesi tüberkülozu destekler",
+        "Sağ üst zonda solunum sesleri azalmış ve raller"
       ],
       "historySummary": "Kırk dört yaşındaki erkek hasta, gece terlemesi, iştahsızlık, 6 kg kilo kaybı ve aralıklı hemoptizi yakınmaları olduğunu ifade ediyor. Kalabalık yaşam koşulu ve daha önce tedavi almamış tüberküloz temas öyküsü bulunuyor.",
-      "priorityFocus": "Başvuru yakınması: Üç haftadan uzun süren öksürük ve kilo kaybı aktif tüberküloz olasılığını artırır."
-    }
+      "priorityFocus": "Üç haftadan uzun süren öksürük ve kilo kaybı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "inf-malaria-001",
@@ -11076,12 +11068,11 @@ export const cases = [
       "Ateş": "39.5 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Ateş yüksekliği ve belirgin halsizlik izleniyor.",
-      "Skleralarda hafif ikter mevcut.",
-      "Dalak palpasyonla ele geliyor.",
-      "Bilinç bulanıklığı saptanmıyor.",
-      "Ateş atağı sırasında titreme ve terleme belirgin."
+      "Ateş yüksekliği ve belirgin halsizlik izleniyor",
+      "Skleralarda hafif ikter mevcut",
+      "Dalak palpasyonla ele geliyor",
+      "Bilinç bulanıklığı saptanmıyor",
+      "Ateş atağı sırasında titreme ve terleme belirgin"
     ],
     "investigations": [
       {
@@ -11184,7 +11175,7 @@ export const cases = [
         "Leptospiroz",
         "Tifo"
       ],
-      "explanation": "Endemik bölge dönüşü ateş, kemoprofilaksi almama, trombositopeni, hemoliz bulguları ve yaymada çoklu halka formları ile yüksek parazitemi Plasmodium falciparum sıtmasını düşündürür. Bu nedenle en uygun yanıt Plasmodium falciparum sıtması seçeneğidir.",
+      "explanation": "Endemik bölge dönüşü ateş, kemoprofilaksi almama, trombositopeni, hemoliz bulguları ve yaymada çoklu halka formları ile yüksek parazitemi Plasmodium falciparum sıtmasını düşündürür. Plasmodium falciparum sıtması seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -11205,20 +11196,16 @@ export const cases = [
             "text": "Titreme ile yükselen ateş ve yaygın halsizlik."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Ateş yüksekliği ve belirgin halsizlik izleniyor."
           },
           {
-            "title": "Kalın damla ve ince yayma",
+            "title": "Öykü",
             "text": "Eritrositler içinde halka formları ve yüksek parazitemi izleniyor."
           },
           {
             "title": "Laboratuvar",
             "text": "Trombosit 62."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Titreme ile yükselen ateş ve yaygın halsizlik."
           }
         ],
         "pearls": [
@@ -11434,18 +11421,20 @@ export const cases = [
       "profile": "32 yaşında erkek · Acil servis veya Enfeksiyon",
       "presentation": "Titreme ile yükselen ateş ve yaygın halsizlik",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı.",
-        "Endemik bölge veya vektör maruziyeti."
+        "Enfeksiyon ve temas ve izolasyon bağlamı",
+        "Endemik bölge veya vektör maruziyeti"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Titreme ile yükselen ateş ve yaygın halsizlik.",
-        "Ateş yüksekliği ve belirgin halsizlik izleniyor.",
-        "Kalın damla ve ince yayma: Eritrositler içinde halka formları ve yüksek.",
-        "Trombosit 62."
+        "Titreme ile yükselen ateş ve yaygın halsizlik",
+        "Ateş yüksekliği ve belirgin halsizlik izleniyor",
+        "Kalın damla ve ince yayma: Eritrositler içinde halka formları ve yüksek",
+        "Trombosit 62",
+        "Skleralarda hafif ikter mevcut"
       ],
       "historySummary": "Otuz iki yaşındaki erkek hasta iki hafta önce Batı Afrika'dan döndüğünü ve kemoprofilaksi kullanmadığını belirtiyor. Ateş ataklarına baş ağrısı, miyalji, bulantı ve koyu renkli idrar eşlik ediyor.",
-      "priorityFocus": "Başvuru yakınması: Titreme ile yükselen ateş ve yaygın halsizlik karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Titreme ile yükselen ateş ve yaygın halsizlik klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "inf-meningococcemia-001",
@@ -11465,12 +11454,11 @@ export const cases = [
       "Ateş": "39.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Ense sertliği ve fotofobi mevcut.",
-      "Alt ekstremitelerde basmakla solmayan peteşi ve purpuralar izleniyor.",
-      "Taşikardi ve sınırda hipotansiyon mevcut.",
-      "Bilinç dalgalanması gelişiyor.",
-      "Hasta toksik ve letarjik görünümde."
+      "Ense sertliği ve fotofobi mevcut",
+      "Alt ekstremitelerde basmakla solmayan peteşi ve purpuralar izleniyor",
+      "Taşikardi ve sınırda hipotansiyon mevcut",
+      "Bilinç dalgalanması gelişiyor",
+      "Hasta toksik ve letarjik görünümde"
     ],
     "investigations": [
       {
@@ -11578,7 +11566,7 @@ export const cases = [
         "Pnömokok menenjiti",
         "Toksik şok sendromu"
       ],
-      "explanation": "Ani ateş, meningeal irritasyon, basmakla solmayan peteşiyal-purpural döküntü ve BOS Gram boyamada Gram negatif diplokok görülmesi meningokok menenjiti veya meningokoksemi ile uyumludur. Bu nedenle en uygun yanıt Meningokok menenjiti ve meningokoksemi seçeneğidir.",
+      "explanation": "Ani ateş, meningeal irritasyon, basmakla solmayan peteşiyal-purpural döküntü ve BOS Gram boyamada Gram negatif diplokok görülmesi meningokok menenjiti veya meningokoksemi ile uyumludur. Meningokok menenjiti ve meningokoksemi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -11599,20 +11587,16 @@ export const cases = [
             "text": "Yüksek ateş, şiddetli baş ağrısı ve döküntü."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Ense sertliği ve fotofobi mevcut."
           },
           {
-            "title": "BOS incelemesi",
+            "title": "Öykü",
             "text": "Açılış basıncı Yüksek saptandı."
           },
           {
-            "title": "BOS Gram boyama",
+            "title": "Öykü",
             "text": "Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor."
-          },
-          {
-            "title": "Muayene bulgusu",
-            "text": "Başvuru yakınması: Yüksek ateş, şiddetli baş ağrısı ve döküntü."
           }
         ],
         "pearls": [
@@ -11828,17 +11812,19 @@ export const cases = [
       "profile": "18 yaşında üniversite öğrencisi · Acil servis",
       "presentation": "Yüksek ateş, şiddetli baş ağrısı ve döküntü",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Yüksek ateş, şiddetli baş ağrısı ve döküntü.",
-        "Ense sertliği ve fotofobi mevcut.",
-        "BOS incelemesi: Açılış basıncı Yüksek saptandı.",
-        "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar."
+        "Yüksek ateş, şiddetli baş ağrısı ve döküntü",
+        "Ense sertliği ve fotofobi mevcut",
+        "BOS incelemesi: Açılış basıncı Yüksek saptandı",
+        "Nötrofil baskın lökositoz",
+        "Alt ekstremitelerde basmakla solmayan peteşi ve purpuralar izleniyor"
       ],
       "historySummary": "Yakın temaslıları olduğu öğreniliyor.",
-      "priorityFocus": "Başvuru yakınması: Yüksek ateş, şiddetli baş ağrısı ve döküntü bakteriyel menenjit ve meningokoksemi açısından acil uyarıdır."
-    }
+      "priorityFocus": "Yüksek ateş, şiddetli baş ağrısı ve döküntü klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "inf-endocarditis-001",
@@ -11858,12 +11844,12 @@ export const cases = [
       "Ateş": "38.6 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Ateş yüksekliği mevcut.",
-      "Triküspit odakta yeni sistolik üfürüm duyuluyor.",
-      "Tırnak yatağında splinter hemoraji şüpheli.",
-      "Akciğerlerde dağınık raller duyuluyor.",
-      "Hasta subfebril ve halsiz görünümde."
+      "Genel durum stabil",
+      "Ateş yüksekliği mevcut",
+      "Triküspit odakta yeni sistolik üfürüm duyuluyor",
+      "Tırnak yatağında splinter hemoraji şüpheli",
+      "Akciğerlerde dağınık raller duyuluyor",
+      "Hasta subfebril ve halsiz görünümde"
     ],
     "investigations": [
       {
@@ -11953,7 +11939,7 @@ export const cases = [
         "Viral miyokardit",
         "Toplum kökenli pnömoni"
       ],
-      "explanation": "İntravenöz madde kullanımı, uzamış ateş, yeni triküspit üfürüm, tekrarlayan kan kültürlerinde Staphylococcus aureus üremesi ve ekokardiyografide vejetasyon sağ kalp infektif endokarditini destekler. Bu nedenle en uygun yanıt Staphylococcus aureus ilişkili sağ kalp infektif endokarditi seçeneğidir.",
+      "explanation": "İntravenöz madde kullanımı, uzamış ateş, yeni triküspit üfürüm, tekrarlayan kan kültürlerinde Staphylococcus aureus üremesi ve ekokardiyografide vejetasyon sağ kalp infektif endokarditini destekler. Staphylococcus aureus ilişkili sağ kalp infektif endokarditi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -11974,20 +11960,16 @@ export const cases = [
             "text": "İki haftadır ateş, halsizlik ve gece terlemesi."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Ateş yüksekliği mevcut."
           },
           {
-            "title": "Kan kültürleri",
+            "title": "Laboratuvar",
             "text": "Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor."
           },
           {
-            "title": "Transtorasik veya Transözofageal ekokardiyografi",
+            "title": "Öykü",
             "text": "Triküspit kapakta hareketli vejetasyon ile uyumlu kitle izleniyor."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: İki haftadır ateş, halsizlik ve gece terlemesi."
           }
         ],
         "pearls": [
@@ -12204,18 +12186,20 @@ export const cases = [
       "profile": "38 yaşında erkek · Enfeksiyon hastalıkları servisi",
       "presentation": "İki haftadır ateş, halsizlik ve gece terlemesi",
       "riskContext": [
-        "Aterosklerotik risk zemini.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Aterosklerotik risk zemini",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: İki haftadır ateş, halsizlik ve gece terlemesi.",
-        "Ateş yüksekliği mevcut.",
-        "Kan kültürlerinde Farklı venlerden alınan üç kan kültüründe metisiline duyarlı S.",
-        "Ekokardiyografide Triküspit kapakta hareketli vejetasyonu destekler."
+        "İki haftadır ateş, halsizlik ve gece terlemesi",
+        "Ateş yüksekliği mevcut",
+        "Kan kültürlerinde Farklı venlerden alınan üç kan kültüründe metisiline duyarlı S",
+        "Ekokardiyografide Triküspit kapakta hareketli vejetasyonu destekler",
+        "Genel durum stabil"
       ],
       "historySummary": "İntravenöz madde kullanımı öyküsü olan hasta, ateş, gece terlemesi, iştahsızlık ve son günlerde gelişen nefes darlığı yakınmalarıyla başvuruyor. Göğüs ağrısı ve öksürük de ifade ediyor.",
-      "priorityFocus": "Başvuru yakınması: İki haftadır ateş, halsizlik ve gece terlemesi pulmoner emboli olasılığını yükseltir."
-    }
+      "priorityFocus": "İki haftadır ateş, halsizlik ve gece terlemesi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "ortho-colles-001",
@@ -12235,11 +12219,10 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "El bileği distal radius düzeyinde şiş ve hassas.",
-      "Çatal sırtı deformitesi izleniyor.",
-      "Parmak hareketleri ağrılı ancak korunmuş.",
-      "Median sinir duyu alanı, parmak kapiller dolumu ve radial-ulnar nabızlar muayenede korunmuş."
+      "El bileği distal radius düzeyinde şiş ve hassas",
+      "Çatal sırtı deformitesi izleniyor",
+      "Parmak hareketleri ağrılı ancak korunmuş",
+      "Median sinir duyu alanı, parmak kapiller dolumu ve radial-ulnar nabızlar muayenede korunmuş"
     ],
     "investigations": [
       {
@@ -12306,7 +12289,7 @@ export const cases = [
         "Skafoid kırığı",
         "Barton kırığı"
       ],
-      "explanation": "Açık el üzerine düşme sonrası distal radius kırığına dorsal açılanma veya deplasman ve çatal sırtı deformitesinin eşlik etmesi Colles kırığı ile uyumludur. Bu nedenle en uygun yanıt Colles tipi distal radius kırığı seçeneğidir.",
+      "explanation": "Açık el üzerine düşme sonrası distal radius kırığına dorsal açılanma veya deplasman ve çatal sırtı deformitesinin eşlik etmesi Colles kırığı ile uyumludur. Colles tipi distal radius kırığı seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -12327,20 +12310,16 @@ export const cases = [
             "text": "Düşme sonrası el bileğinde ağrı ve şekil bozukluğu."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "El bileği distal radius düzeyinde şiş ve hassas."
           },
           {
-            "title": "El bileği direkt grafisi",
+            "title": "Öykü",
             "text": "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman ile uyumlu görünüm izleniyor."
           },
           {
-            "title": "Nörovasküler değerlendirme",
+            "title": "Fizik muayene",
             "text": "Redüksiyon öncesi ve sonrası median sinir fonksiyonu, kapiller dolum ve radial veya ulnar nabızlar değerlendirilmelidir."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Düşme sonrası el bileğinde ağrı ve şekil bozukluğu."
           }
         ],
         "pearls": [
@@ -12553,17 +12532,19 @@ export const cases = [
       "profile": "67 yaşında kadın · Acil servis",
       "presentation": "Düşme sonrası el bileğinde ağrı ve şekil bozukluğu",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Düşme sonrası el bileğinde ağrı ve şekil bozukluğu.",
-        "El bileği distal radius düzeyinde şiş ve hassas.",
-        "El bileği direkt grafisi: Distal radius metafizinde kırık hattı, dorsal açılanmayı destekler.",
-        "Nörovasküler değerlendirmede Redüksiyon öncesi ve sonrası median sinir değerlendirmesi komplikasyon taraması için önemlidir."
+        "Düşme sonrası el bileğinde ağrı ve şekil bozukluğu",
+        "El bileği distal radius düzeyinde şiş ve hassas",
+        "El bileği direkt grafisi: Distal radius metafizinde kırık hattı, dorsal açılanmayı destekler",
+        "Nörovasküler değerlendirmede Redüksiyon öncesi ve sonrası median sinir değerlendirmesi komplikasyon taraması için önemlidir",
+        "Çatal sırtı deformitesi izleniyor"
       ],
       "historySummary": "Osteoporoz öyküsü olan 67 yaşındaki kadın hasta, avuç içi yere bakacak şekilde açık el üzerine düştükten sonra el bileğinde ağrı, şişlik ve şekil bozukluğu geliştiğini ifade ediyor.",
-      "priorityFocus": "Başvuru yakınması: Düşme sonrası el bileğinde ağrı ve şekil bozukluğu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Düşme sonrası el bileğinde ağrı ve şekil bozukluğu klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "ortho-femoral-neck-001",
@@ -12583,12 +12564,11 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Etkilenen ekstremite kısa ve dış rotasyonda duruyor.",
-      "Kalça hareketleri ağrılı ve kısıtlı.",
-      "Aksiyel yüklenmeyle ağrı artıyor.",
-      "Distal nabızlar ve duyu muayenesi korunmuş.",
-      "Kalça çevresinde açık yara veya belirgin hematom yok."
+      "Etkilenen ekstremite kısa ve dış rotasyonda duruyor",
+      "Kalça hareketleri ağrılı ve kısıtlı",
+      "Aksiyel yüklenmeyle ağrı artıyor",
+      "Distal nabızlar ve duyu muayenesi korunmuş",
+      "Kalça çevresinde açık yara veya belirgin hematom yok"
     ],
     "investigations": [
       {
@@ -12660,7 +12640,7 @@ export const cases = [
         "Kalça çıkığı",
         "Pubis kolu kırığı"
       ],
-      "explanation": "Düşük enerjili düşme sonrası kalça ağrısı, yürüyememe, ekstremitede kısalık-dış rotasyon ve grafide subkapital intrakapsüler kırık femur boyun kırığı ile uyumludur. Bu nedenle en uygun yanıt Subkapital intrakapsüler femur boyun kırığı seçeneğidir.",
+      "explanation": "Düşük enerjili düşme sonrası kalça ağrısı, yürüyememe, ekstremitede kısalık-dış rotasyon ve grafide subkapital intrakapsüler kırık femur boyun kırığı ile uyumludur. Subkapital intrakapsüler femur boyun kırığı seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -12681,20 +12661,16 @@ export const cases = [
             "text": "Kalça ağrısı ve yürüyememe."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Etkilenen ekstremite kısa ve dış rotasyonda duruyor."
           },
           {
-            "title": "Pelvis ve kalça direkt grafisi",
+            "title": "Öykü",
             "text": "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman ile uyumlu görünüm izleniyor."
           },
           {
-            "title": "Preoperatif laboratuvar",
+            "title": "Laboratuvar",
             "text": "Hemoglobin 11."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Kalça ağrısı ve yürüyememe."
           }
         ],
         "pearls": [
@@ -12907,18 +12883,20 @@ export const cases = [
       "profile": "78 yaşında kadın · Acil servis",
       "presentation": "Kalça ağrısı ve yürüyememe",
       "riskContext": [
-        "Kontrolsüz hipertansiyon ve akut vasküler stres.",
-        "Travma veya adli kayıt gerektiren olay."
+        "Kontrolsüz hipertansiyon ve akut vasküler stres",
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Kalça ağrısı ve yürüyememe.",
-        "Etkilenen ekstremite kısa ve dış rotasyonda duruyor.",
-        "Pelvis ve kalça direkt grafisi: Femur boynu subkapital bölgesinde.",
-        "Hemoglobin 11."
+        "Kalça ağrısı ve yürüyememe",
+        "Etkilenen ekstremite kısa ve dış rotasyonda duruyor",
+        "Pelvis ve kalça direkt grafisi: Femur boynu subkapital bölgesinde",
+        "Hemoglobin 11",
+        "Kalça hareketleri ağrılı ve kısıtlı"
       ],
       "historySummary": "Yetmiş sekiz yaşındaki kadın hasta, ev içinde düşük enerjili düşme sonrasında ayağa kalkamadığını ve kalça ağrısının belirgin olduğunu ifade ediyor. Osteoporoz ve hipertansiyon öyküsü mevcut.",
-      "priorityFocus": "Başvuru yakınması: Kalça ağrısı ve yürüyememe karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Kalça ağrısı ve yürüyememe klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "ortho-scaphoid-001",
@@ -12938,12 +12916,11 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Anatomik enfiye çukurunda belirgin hassasiyet mevcut.",
-      "Başparmak aksiyel kompresyonu ağrılı.",
-      "El bileği ekstansiyonu ağrılı ve kısıtlı.",
-      "Nörovasküler muayene normal.",
-      "İlgili ekstremitede deformite, şişlik, lokal hassasiyet, aktif-pasif hareket ve fonksiyon kaybı değerlendirildi."
+      "Anatomik enfiye çukurunda belirgin hassasiyet mevcut",
+      "Başparmak aksiyel kompresyonu ağrılı",
+      "El bileği ekstansiyonu ağrılı ve kısıtlı",
+      "Nörovasküler muayene normal",
+      "İlgili ekstremitede deformite, şişlik, lokal hassasiyet, aktif-pasif hareket ve fonksiyon kaybı değerlendirildi"
     ],
     "investigations": [
       {
@@ -13003,7 +12980,7 @@ export const cases = [
         "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak",
         "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak"
       ],
-      "explanation": "FOOSH travması sonrası anatomik enfiye çukuru hassasiyeti varsa ilk grafiler negatif olsa bile okült skafoid yaralanma dışlanamaz. Avasküler nekroz riskini azaltmak için immobilizasyon ve kontrol grafi veya MR planlanmalıdır. Bu nedenle en uygun yanıt Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak seçeneğidir.",
+      "explanation": "FOOSH travması sonrası anatomik enfiye çukuru hassasiyeti varsa ilk grafiler negatif olsa bile okült skafoid yaralanma dışlanamaz. Avasküler nekroz riskini azaltmak için immobilizasyon ve kontrol grafi veya MR planlanmalıdır. Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -13024,23 +13001,23 @@ export const cases = [
         "whyCorrect": "FOOSH travması sonrası anatomik enfiye çukuru hassasiyeti varsa ilk grafiler negatif olsa bile okült skafoid yaralanma dışlanamaz. Avasküler nekroz riskini azaltmak için immobilizasyon ve kontrol grafi veya MR planlanmalıdır. Bu nedenle en uygun yanıt Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Açık el üzerine düşme mekanizması vardır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Anatomik enfiye çukuru hassasiyeti kritik klinik bulgudur."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Öykü",
             "text": "İlk grafilerde kırık hattı seçilemeyebilir."
           },
           {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Düşme sonrası radial taraflı el bileği ağrısı."
+            "title": "Başvuru yakınması",
+            "text": "Düşme sonrası radial taraflı el bileği ağrısı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Fizik muayene",
             "text": "Anatomik enfiye çukurunda belirgin hassasiyet mevcut."
           }
         ],
@@ -13255,18 +13232,20 @@ export const cases = [
       "profile": "26 yaşında erkek · Acil servis",
       "presentation": "Düşme sonrası radial taraflı el bileği ağrısı",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Düşme sonrası radial taraflı el bileği ağrısı.",
-        "Anatomik enfiye çukurunda belirgin hassasiyet mevcut.",
-        "Skafoid grafileri: İlk grafilerde kırık hattı seçilemeyebilir.",
-        "El bileği MR: Klinik şüphe yüksekse erken dönemde okült skafoid kırığını."
+        "Düşme sonrası radial taraflı el bileği ağrısı",
+        "Anatomik enfiye çukurunda belirgin hassasiyet mevcut",
+        "Skafoid grafileri: İlk grafilerde kırık hattı seçilemeyebilir",
+        "El bileği MR: Klinik şüphe yüksekse erken dönemde okült skafoid kırığını",
+        "Başparmak aksiyel kompresyonu ağrılı"
       ],
       "historySummary": "Yirmi ALTı yaşındaki erkek hasta, kaykaydan açık el üzerine düştükten sonra el bileğinin radial tarafında ağrı geliştiğini ifade ediyor. İlk başvuru grafisinde belirgin kırık hattı izlenmediği halde ağrısı devam ediyor.",
-      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
+      "priorityFocus": "Düşme sonrası radial taraflı el bileği ağrısı klinik kararı yönlendirir."
     },
-    "questionType": "Treatment"
+    "questionType": "Treatment",
+    "learningTarget": ""
   },
   {
     "id": "ortho-shoulder-dislocation-001",
@@ -13286,12 +13265,11 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Omuz konturu düzleşmiş, deltoid kabarıklığı kaybolmuş.",
-      "Kol hafif abduksiyon ve dış rotasyonda tutuluyor.",
-      "Humerus başı anterior-inferior yerleşimli palpe ediliyor.",
-      "Aksiller sinir duyu alanı ve distal nörovasküler durum muayenede korunmuş.",
-      "Deltoid bölge duyusu, deltoid kas aktivasyonu ve distal kapiller dolum muayenede korunmuş."
+      "Omuz konturu düzleşmiş, deltoid kabarıklığı kaybolmuş",
+      "Kol hafif abduksiyon ve dış rotasyonda tutuluyor",
+      "Humerus başı anterior-inferior yerleşimli palpe ediliyor",
+      "Aksiller sinir duyu alanı ve distal nörovasküler durum muayenede korunmuş",
+      "Deltoid bölge duyusu, deltoid kas aktivasyonu ve distal kapiller dolum muayenede korunmuş"
     ],
     "investigations": [
       {
@@ -13351,7 +13329,7 @@ export const cases = [
         "Proksimal humerus kırığı",
         "Rotator manşet yırtığı"
       ],
-      "explanation": "Abduksiyon-dış rotasyon mekanizması, omuz konturunun kaybolması, kolun abduksiyon veya dış rotasyonda tutulması ve grafide humerus başının anterior-inferior yerleşimi anterior glenohumeral çıkığı destekler. Bu nedenle en uygun yanıt Anterior glenohumeral çıkık seçeneğidir.",
+      "explanation": "Abduksiyon-dış rotasyon mekanizması, omuz konturunun kaybolması, kolun abduksiyon veya dış rotasyonda tutulması ve grafide humerus başının anterior-inferior yerleşimi anterior glenohumeral çıkığı destekler. Anterior glenohumeral çıkık seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -13372,20 +13350,16 @@ export const cases = [
             "text": "Omuzda şiddetli ağrı ve hareket ettirememe."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Omuz konturu düzleşmiş, deltoid kabarıklığı kaybolmuş."
           },
           {
-            "title": "Omuz direkt grafisi",
+            "title": "Öykü",
             "text": "Humerus başı glenoid kaviteye göre anterior-inferior yer değiştirmiştir."
           },
           {
-            "title": "Nörovasküler muayene",
+            "title": "Öykü",
             "text": "Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal dolaşım redüksiyon öncesi ve sonrası kayıt altına alınır."
-          },
-          {
-            "title": "Destekleyen bulgu",
-            "text": "Başvuru yakınması: Omuzda şiddetli ağrı ve hareket ettirememe."
           }
         ],
         "pearls": [
@@ -13610,17 +13584,19 @@ export const cases = [
       "profile": "21 yaşında erkek · Acil servis",
       "presentation": "Omuzda şiddetli ağrı ve hareket ettirememe",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Başvuru yakınması: Omuzda şiddetli ağrı ve hareket ettirememe.",
-        "Omuz konturu düzleşmiş, deltoid kabarıklığı kaybolmuş.",
-        "Omuz grafisinde Humerus başı glenoid kaviteye göre anterior-inferior yerleşimli çıkığı destekler.",
-        "Nörovasküler muayenede Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal nörovasküler bütünlüğü değerlendirmede önemlidir."
+        "Omuzda şiddetli ağrı ve hareket ettirememe",
+        "Omuz konturu düzleşmiş, deltoid kabarıklığı kaybolmuş",
+        "Omuz grafisinde Humerus başı glenoid kaviteye göre anterior-inferior yerleşimli çıkığı destekler",
+        "Nörovasküler muayenede Deltoid bölge duyusu, deltoid kas fonksiyonu ve distal nörovasküler bütünlüğü değerlendirmede önemlidir",
+        "Kol hafif abduksiyon ve dış rotasyonda tutuluyor"
       ],
       "historySummary": "Yirmi bir yaşındaki erkek hasta, basketbol oynarken kolu abduksiyon ve dış rotasyondayken düşmesi sonrası omuzunda ani ağrı ve hareket kısıtlılığı geliştiğini ifade ediyor.",
-      "priorityFocus": "Başvuru yakınması: Omuzda şiddetli ağrı ve hareket ettirememe karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Omuzda şiddetli ağrı ve hareket ettirememe klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "cardiovascular-electrical-injury-arrhythmia-001",
@@ -13640,12 +13616,11 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Sağ avuç içinde yaklaşık 1.",
-      "Kardiyovasküler muayenede düzensiz taşikardi duyuluyor.",
-      "Solunum sistemi muayenesinde ral, hışıltılı solunum veya belirgin solunum sıkıntısı yok.",
-      "Sağ ön kol fleksörlerinde hassasiyet mevcut.",
-      "Nörolojik muayenede kısa süreli parestezi dışında motor defisit, lateralizan bulgu veya bilinç bozukluğu saptanmıyor."
+      "Sağ avuç içinde yaklaşık 1",
+      "Kardiyovasküler muayenede düzensiz taşikardi duyuluyor",
+      "Solunum sistemi muayenesinde ral, hışıltılı solunum veya belirgin solunum sıkıntısı yok",
+      "Sağ ön kol fleksörlerinde hassasiyet mevcut",
+      "Nörolojik muayenede kısa süreli parestezi dışında motor defisit, lateralizan bulgu veya bilinç bozukluğu saptanmıyor"
     ],
     "investigations": [
       {
@@ -13776,7 +13751,7 @@ export const cases = [
         "Spontan pnömotoraks",
         "Akut miyokard infarktüsü"
       ],
-      "explanation": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar. Transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır. Bu nedenle en uygun yanıt Elektrik çarpmasına bağlı ventriküler aritmi riski seçeneğidir.",
+      "explanation": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar. Transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır. Elektrik çarpmasına bağlı ventriküler aritmi riski seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -13801,23 +13776,23 @@ export const cases = [
         "whyCorrect": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar. Transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır. Bu nedenle en uygun yanıt Elektrik çarpmasına bağlı ventriküler aritmi riski seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Alternatif akım ile elini kaynaktan ayıramama."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Nemli zemin ile cilt direncinin azalması."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Çarpıntı ve düzensiz taşikardi."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Öykü",
             "text": "EKG'de ventriküler erken vurular."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı başvurunun ana problemidir."
           }
         ],
@@ -14059,18 +14034,20 @@ export const cases = [
       "profile": "28 yaş erkek, elektrik teknisyeni · Acil servis. İş kazası sonrası ilk değerlendirme",
       "presentation": "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Travma veya adli kayıt gerektiren olay",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Alternatif akım ile elini kaynaktan ayıramama.",
-        "Nemli zemin ile cilt direncinin azalması.",
-        "Çarpıntı ve düzensiz TAşikardi.",
-        "EKG'de ventriküler erken vurular."
+        "Alternatif akım ile elini kaynaktan ayıramama",
+        "Nemli zemin ile cilt direncinin azalması",
+        "Çarpıntı ve düzensiz TAşikardi",
+        "EKG'de ventriküler erken vurular",
+        "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı"
       ],
       "historySummary": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tarifler. Nemli zemin öyküsü cilt direncinin azalmasına, el-gövde hattındaki temas ise transtorasik akım geçişi.",
-      "priorityFocus": "Alternatif akım ile elini kaynaktan ayıramama karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Alternatif akım ile elini kaynaktan ayıramama klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pulmonology-lightning-apnea-001",
@@ -14090,14 +14067,13 @@ export const cases = [
       "Ateş": "36.2 °C"
     },
     "exam": [
-      "Genel durum orta-kötü.",
-      "Solunum yüzeyel ve düzensiz.",
-      "Gövdede dallanan Lichtenberg benzeri eritematöz izler ve yüzeyel yanık alanları izleniyor.",
-      "Kardiyovasküler muayenede bradikardi eğilimi dışında kalp sesleri doğal.",
-      "Akciğer oskültasyonunda tek taraflı solunum azalması, yaygın ral veya belirgin bronkospazm saptanmıyor.",
-      "Baş-boyun değerlendirmesinde timpan membran rüptürü yok.",
-      "Nörolojik muayenede fokal motor defisit veya meningeal irritasyon bulgusu saptanmıyor.",
-      "Solunum depresyonu klinik olarak belirgin."
+      "Genel durum orta-kötü",
+      "Solunum yüzeyel ve düzensiz",
+      "Gövdede dallanan Lichtenberg benzeri eritematöz izler ve yüzeyel yanık alanları izleniyor",
+      "Kardiyovasküler muayenede bradikardi eğilimi dışında kalp sesleri doğal",
+      "Akciğer oskültasyonunda tek taraflı solunum azalması, yaygın ral veya belirgin bronkospazm saptanmıyor",
+      "Nörolojik muayenede fokal motor defisit veya meningeal irritasyon bulgusu saptanmıyor",
+      "Solunum depresyonu klinik olarak belirgin"
     ],
     "investigations": [
       {
@@ -14155,7 +14131,7 @@ export const cases = [
             "Hafif yüksek"
           ],
           [
-            "pH",
+            "PH",
             "7.36",
             "7.35-7.45",
             "Normal"
@@ -14192,6 +14168,16 @@ export const cases = [
             "Normal"
           ]
         ]
+      },
+      {
+        "id": "auto-field-lab-1",
+        "label": "Hedefli laboratuvar değerlendirmesi",
+        "type": "Lab",
+        "priority": "Useful",
+        "summary": "Baş-boyun değerlendirmesinde timpan membran rüptürü yok",
+        "findings": [
+          "Baş-boyun değerlendirmesinde timpan membran rüptürü yok"
+        ]
       }
     ],
     "images": [],
@@ -14203,7 +14189,7 @@ export const cases = [
         "Spontan tansiyon pnömotoraks",
         "Hiperpotasemiye bağlı ani ölüm"
       ],
-      "explanation": "Yıldırım çarpmasında ani ölüm için sınavda en yüksek verimli nokta uzamış apnedir. Deride yanık, bilinç kaybı, nörolojik veya işitsel etkilenme ve kalp-solunum durması birlikte düşünülür. Bu nedenle en uygun yanıt Uzamış apneye bağlı kardiyopulmoner arrest riski seçeneğidir.",
+      "explanation": "Yıldırım çarpmasında ani ölüm için sınavda en yüksek verimli nokta uzamış apnedir. Deride yanık, bilinç kaybı, nörolojik veya işitsel etkilenme ve kalp-solunum durması birlikte düşünülür. Uzamış apneye bağlı kardiyopulmoner arrest riski seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -14228,23 +14214,23 @@ export const cases = [
         "whyCorrect": "Yıldırım çarpmasında ani ölüm için sınavda en yüksek verimli nokta uzamış apnedir. Deride yanık, bilinç kaybı, nörolojik veya işitsel etkilenme ve kalp-solunum durması birlikte düşünülür. Bu nedenle en uygun yanıt Uzamış apneye bağlı kardiyopulmoner arrest riski seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Fırtına sırasında açık alanda maruziyet."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Lichtenberg benzeri deri lezyonları."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Geçici bilinç kaybı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Vital bulgu",
             "text": "Solunum sayısında düşüklük ve hipoksemi."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Bilinç kaybı, geçici solunum durması ve deri lezyonları başvurunun ana problemidir."
           }
         ],
@@ -14486,17 +14472,19 @@ export const cases = [
       "profile": "19 yaş erkek, açık alanda futbol oynarken etkilenmiş · Acil servis. Fırtına sonrası çoklu yaralanma",
       "presentation": "Bilinç kaybı, geçici solunum durması ve deri lezyonları",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Fırtına sırasında açık alanda maruziyet.",
-        "Lichtenberg benzeri deri lezyonları.",
-        "Geçici bilinç kaybı.",
-        "Solunum sayısında düşüklük ve hipoksemi."
+        "Fırtına sırasında açık alanda maruziyet",
+        "Lichtenberg benzeri deri lezyonları",
+        "Geçici bilinç kaybı",
+        "Solunum sayısında düşüklük ve hipoksemi",
+        "Bilinç kaybı, geçici solunum durması ve deri lezyonları"
       ],
       "historySummary": "Fırtına sırasında açık alanda bulunan hasta yıldırım düşmesi sonrası yere yığılmıştır. İlk müdahale ekibi birkaç dakika solunumun yüzeyelleştiğini, ardından spontan solunumun döndüğünü bildirir. Gövdede ağ şeklinde eritematöz Lichtenberg benzeri izler ve yüzeyel yanıklar vardır.",
-      "priorityFocus": "Fırtına sırasında açık alanda maruziyet karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Fırtına sırasında açık alanda maruziyet klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-classic-galactosemia-001",
@@ -14516,12 +14504,11 @@ export const cases = [
       "Ateş": "37.2 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Cilt ve skleralarda belirgin sarılık izleniyor.",
-      "Abdomen yumuşak.",
-      "Göz muayenesinde bilateral hafif lens opasitesi veya katarakt şüphesi mevcut.",
-      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
-      "Nörolojik muayenede ense sertliği ve fokal defisit yok."
+      "Cilt ve skleralarda belirgin sarılık izleniyor",
+      "Abdomen yumuşak",
+      "Göz muayenesinde bilateral hafif lens opasitesi veya katarakt şüphesi mevcut",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor",
+      "Nörolojik muayenede ense sertliği ve fokal defisit yok"
     ],
     "investigations": [
       {
@@ -14640,7 +14627,7 @@ export const cases = [
         "Herediter fruktoz intoleransı",
         "Fenilketonüri"
       ],
-      "explanation": "Olgu bulgu örüntüsü Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Klasik galaktozemi seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Klasik galaktozemi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -14665,23 +14652,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Klasik galaktozemi seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Olgu bulguları Klasik galaktozemi ile uyumlu."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Glukoz 56 mg/dL, direkt bilirubin yüksek, AST veya ALT yüksek."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "GALT aktivitesi düşük."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -14905,17 +14892,19 @@ export const cases = [
       "profile": "12 günlük kız bebek · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Anne sütü sonrası kusma, sarılık ve emmeme",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "Glukoz 56 mg ve dL, direkt bilirubin yüksek, AST ve ALT yüksekliği destekler.",
-        "GALT aktivitesi düşük.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "Glukoz 56 mg ve dL, direkt bilirubin yüksek, AST ve ALT yüksekliği destekler",
+        "GALT aktivitesi düşük",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Anne sütü sonrası kusma, sarılık ve emmeme"
       ],
       "historySummary": "Doğumdan sonra ilk günlerde iyi olan bebek, süt alımı arttıkça kusma, letarji, uzamış sarılık ve kilo alamama ile başvurur. Katarakt şüphesi ve hepatomegali vardır. Klinik zamanlama, galaktoz içeren süt alımı sonrası toksik metabolit birikimini düşündürür.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-hereditary-fructose-intolerance-001",
@@ -14935,12 +14924,11 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Meyve püresi alımı sonrasında solukluk, terleme, irritabilite ve uykuya meyil belirginleşiyor.",
-      "Abdomen yumuşak.",
-      "Kapiller dolum yaklaşık 3 saniye.",
-      "Nörolojik muayenede atak sırasında uykuya meyil dışında kalıcı fokal defisit yok.",
-      "Ateş, boğaz hiperemisi, meningeal irritasyon veya belirgin enfeksiyon odağı saptanmıyor."
+      "Meyve püresi alımı sonrasında solukluk, terleme, irritabilite ve uykuya meyil belirginleşiyor",
+      "Abdomen yumuşak",
+      "Kapiller dolum yaklaşık 3 saniye",
+      "Nörolojik muayenede atak sırasında uykuya meyil dışında kalıcı fokal defisit yok",
+      "Ateş, boğaz hiperemisi, meningeal irritasyon veya belirgin enfeksiyon odağı saptanmıyor"
     ],
     "investigations": [
       {
@@ -15053,7 +15041,7 @@ export const cases = [
         "Galaktozemi",
         "GSD Tip Ia"
       ],
-      "explanation": "Olgu bulgu örüntüsü Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Herediter fruktoz intoleransı seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Herediter fruktoz intoleransı seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -15078,23 +15066,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Herediter fruktoz intoleransı seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Olgu bulguları Herediter fruktoz intoleransı ile uyumlu."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Glukoz 42 mg/dL, laktat hafif yüksek, transaminazlar yüksek."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Aldolaz B defekti şüphesi."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -15318,18 +15306,20 @@ export const cases = [
       "profile": "10 aylık erkek bebek · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Meyve püresi sonrası kusma, terleme ve letarji",
       "riskContext": [
-        "Diyabet veya metabolik dekompansasyon riski.",
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Diyabet veya metabolik dekompansasyon riski",
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "Glukoz 42 mg ve dL, laktat hafif yüksek, transaminazlar yüksek.",
-        "Aldolaz B defekti şüphesi.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "Glukoz 42 mg ve dL, laktat hafif yüksek, transaminazlar yüksek",
+        "Aldolaz B defekti şüphesi",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Meyve püresi sonrası kusma, terleme ve letarji"
       ],
       "historySummary": "Ek gıdaya geçişten sonra özellikle meyve suyu, meyve püresi ve tatlı gıdalarla kusma, solukluk, terleme ve uykuya meyil gelişmektedir. Anne, çocuğun tatlı gıdalardan kaçındığını fark etmiştir. Bu zamanlama fruktoz ve sükroz ve sorbitol alımıyla tetiklenen metabolik bloğu düşündürür.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-von-gierke-gsd-001",
@@ -15349,12 +15339,11 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Büyüme geriliği, dolgun yanaklı yüz görünümü ve karında belirgin distansiyon izleniyor.",
-      "Mukozalar hafif kuru.",
-      "Abdomen yumuşak.",
-      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
-      "Nörolojik muayenede nöbet sonrası uykuya meyil dışında kalıcı fokal motor defisit veya meningeal irritasyon bulgusu saptanmıyor."
+      "Büyüme geriliği, dolgun yanaklı yüz görünümü ve karında belirgin distansiyon izleniyor",
+      "Mukozalar hafif kuru",
+      "Abdomen yumuşak",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor",
+      "Nörolojik muayenede nöbet sonrası uykuya meyil dışında kalıcı fokal motor defisit veya meningeal irritasyon bulgusu saptanmıyor"
     ],
     "investigations": [
       {
@@ -15437,7 +15426,7 @@ export const cases = [
             "Yorum gerektirir"
           ],
           [
-            "pH",
+            "PH",
             "7.29",
             "7.35-7.45",
             "Düşük"
@@ -15479,7 +15468,7 @@ export const cases = [
         "McArdle hastalığı",
         "Herediter fruktoz intoleransı"
       ],
-      "explanation": "Olgu bulgu örüntüsü Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt GSD Tip Ia ve Von Gierke seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. GSD Tip Ia ve Von Gierke seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -15504,23 +15493,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt GSD Tip Ia ve Von Gierke seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Olgu bulguları Glikojen depo hastalığı Tip Ia—Von Gierke ile uyumlu."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Glukoz 38 mg/dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Glukoz-6-fosfataz aktivitesi düşük."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "3-4 saat açlık sonrası terleme, nöbet ve karın şişliği başvurunun ana problemidir."
           }
         ],
@@ -15744,18 +15733,20 @@ export const cases = [
       "profile": "2 yaş erkek çocuk · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "3-4 saat açlık sonrası terleme, nöbet ve karın şişliği",
       "riskContext": [
-        "Diyabet veya metabolik dekompansasyon riski.",
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Diyabet veya metabolik dekompansasyon riski",
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Glikojen depo hastalığı Tip Ia—Von Gierke ile uyumludur.",
-        "Glukoz 38 mg ve dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek.",
-        "Glukoz-6-fosfataz aktivitesi düşüktür.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları Glikojen depo hastalığı Tip Ia—Von Gierke ile uyumludur",
+        "Glukoz 38 mg ve dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek",
+        "Glukoz-6-fosfataz aktivitesi düşüktür",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "3-4 saat açlık sonrası terleme, nöbet ve karın şişliği"
       ],
       "historySummary": "Çocuk sabahları beslenme geciktiğinde terleme, irritabilite ve bazen nöbet geçirmektedir. Muayenede hepatomegali ve dolgun yanaklı \"TAş bebek yüzü\" görünümü vardır. Açlık hipoglisemisi, hepatomegali, laktik asidoz ve hiperlipemi birlikte karaciğer tipi glikojen depo hastalığını düşündürür.",
-      "priorityFocus": "Olgu bulguları Glikojen depo hastalığı Tip Ia—Von Gierke ile uyumlu SLE aktivitesi için anlamlıdır."
-    }
+      "priorityFocus": "Olgu bulguları Glikojen depo hastalığı Tip Ia—Von Gierke ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-phenylketonuria-001",
@@ -15775,12 +15766,11 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Bezde küf benzeri belirgin koku fark ediliyor.",
-      "Açık ten ve saç rengi aileye göre belirgin açık.",
-      "Baş kontrolü gecikmiş, hafif aksiyal hipotoni var.",
-      "Ekzematöz deri lezyonları izleniyor.",
-      "Hepatomegali ve sarılık saptanmıyor."
+      "Bezde küf benzeri belirgin koku fark ediliyor",
+      "Açık ten ve saç rengi aileye göre belirgin açık",
+      "Baş kontrolü gecikmiş, hafif aksiyal hipotoni var",
+      "Ekzematöz deri lezyonları izleniyor",
+      "Hepatomegali ve sarılık saptanmıyor"
     ],
     "investigations": [
       {
@@ -15893,7 +15883,7 @@ export const cases = [
         "Alkaptonüri",
         "Albinizm"
       ],
-      "explanation": "Olgu bulgu örüntüsü Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Fenilketonüri seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Fenilketonüri seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -15918,23 +15908,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Fenilketonüri seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Olgu bulguları Fenilketonüri ile uyumlu."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "Fenilalanin yüksek, tirozin düşük veya normal."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Fenilalanin hidroksilaz aktivitesi düşük veya BH4 yolu değerlendirildi."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -16158,17 +16148,19 @@ export const cases = [
       "profile": "4 aylık kız bebek · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Gelişim geriliği, nöbet ve idrarda küf ve küfemsi koku",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "Fenilalanin yüksek, tirozin düşük ve normal.",
-        "Fenilalanin hidroksilaz aktivitesi düşük veya BH4 yolu değerlendirilir.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "Fenilalanin yüksek, tirozin düşük ve normal",
+        "Fenilalanin hidroksilaz aktivitesi düşük veya BH4 yolu değerlendirilir",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Gelişim geriliği, nöbet ve idrarda küf veya küfemsi koku"
       ],
       "historySummary": "Aile bebeğin giderek daha huzursuz olduğunu, baş kontrolünün zayıf kaldığını ve bezinde küf benzeri koku fark ettiğini söyler. Açık ten, nöbet öyküsü ve gelişimsel gecikme fenilalanin metabolizması bozukluğu açısından yüksek klinik şüphe oluşturur.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-maple-syrup-urine-disease-001",
@@ -16188,12 +16180,11 @@ export const cases = [
       "Ateş": "36.4 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Yenidoğan letarjik ve emmesi zayıf.",
-      "Bezde tatlı veya akçaağaç şurubu benzeri koku tarifleniyor.",
-      "Aksiyal hipotoniye intermittan ekstansör postür eşlik ediyor.",
-      "Fontanel bombeli değil, ense sertliği yok.",
-      "Dehidratasyon hafif düzeyde."
+      "Yenidoğan letarjik ve emmesi zayıf",
+      "Bezde tatlı veya akçaağaç şurubu benzeri koku tarifleniyor",
+      "Aksiyal hipotoniye intermittan ekstansör postür eşlik ediyor",
+      "Fontanel bombeli değil, ense sertliği yok",
+      "Dehidratasyon hafif düzeyde"
     ],
     "investigations": [
       {
@@ -16264,7 +16255,7 @@ export const cases = [
         ],
         "rows": [
           [
-            "pH",
+            "PH",
             "7.28",
             "7.35-7.45",
             "Düşük"
@@ -16318,7 +16309,7 @@ export const cases = [
         "Galaktozemi",
         "Homosistinüri"
       ],
-      "explanation": "Olgu bulgu örüntüsü Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Akçaağaç şurubu idrar hastalığı seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Akçaağaç şurubu idrar hastalığı seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -16343,23 +16334,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Akçaağaç şurubu idrar hastalığı seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Lösin, izolösin ve valin yüksek."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "BCKD kompleksi aktivitesi düşük."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -16583,17 +16574,19 @@ export const cases = [
       "profile": "8 günlük yenidoğan · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Beslenememe, letarji, tiz ağlama ve idrarda tatlı koku",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "Lösin, izolösin ve valin yüksek.",
-        "BCKD kompleksi aktivitesi düşüktür.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "Lösin, izolösin ve valin yüksek",
+        "BCKD kompleksi aktivitesi düşüktür",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Beslenememe, letarji, tiz ağlama ve idrarda tatlı koku"
       ],
       "historySummary": "Yenidoğan ilk günlerde normal görünmüş, ardından beslenme güçlüğü, kusma, letarji ve nörolojik kötüleşme gelişmiştir. İdrarda akçaağaç şurubu benzeri tatlı koku tariflenir. Erken dönemde nörotoksik dallı zincirli aminoasit birikimi akla gelir.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu SLE aktivitesi için anlamlıdır."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-alkaptonuria-001",
@@ -16613,12 +16606,11 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Sklera ve kulak kıkırdağında mavi-siyah pigmentasyon görülüyor.",
-      "Lomber omurga ve kalçada hareket kısıtlılığı var.",
-      "Dizlerde krepitasyon ve kronik ağrı mevcut.",
-      "Akut sıcak-kızarık eklem bulgusu yok.",
-      "Yürüyüş antalgik."
+      "Sklera ve kulak kıkırdağında mavi-siyah pigmentasyon görülüyor",
+      "Lomber omurga ve kalçada hareket kısıtlılığı var",
+      "Dizlerde krepitasyon ve kronik ağrı mevcut",
+      "Akut sıcak-kızarık eklem bulgusu yok",
+      "Yürüyüş antalgik"
     ],
     "investigations": [
       {
@@ -16719,7 +16711,7 @@ export const cases = [
         "Albinizm",
         "Tirozinemi Tip I"
       ],
-      "explanation": "Olgu bulgu örüntüsü Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Alkaptonüri seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Alkaptonüri seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -16744,23 +16736,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Alkaptonüri seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Olgu bulguları Alkaptonüri ile uyumlu."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Rutin biyokimya çoğunlukla stabil."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Homogentisik asit oksidaz defekti."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -16984,17 +16976,19 @@ export const cases = [
       "profile": "35 yaş erkek · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Bel ağrısı, büyük eklem ağrısı ve bekleyince siyahlaşan idrar",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "Rutin biyokimya çoğunlukla stabil.",
-        "Homogentisik asit oksidaz defekti.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "Rutin biyokimya çoğunlukla stabil",
+        "Homogentisik asit oksidaz defekti",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Bel ağrısı, büyük eklem ağrısı ve bekleyince siyahlaşan idrar"
       ],
       "historySummary": "Hasta yıllardır idrarının beklediğinde koyulaştığını, son yıllarda bel ve diz ağrılarının arttığını belirtir. Kulak kıkırdağında koyu pigmentasyon vardır. Bu klinik, tirozin katabolizması ara ürünü homogentisik asit birikimiyle uyumludur.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-albinism-001",
@@ -17014,11 +17008,10 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Saç, kaş ve kirpiklerde belirgin pigment azalması izleniyor.",
-      "Cilt açık renkli.",
-      "Fotofobi, nistagmus ve görme keskinliğinde azalma saptanıyor.",
-      "Fundoskopik değerlendirmede foveal hipoplazi ile uyumlu görünüm izleniyor."
+      "Saç, kaş ve kirpiklerde belirgin pigment azalması izleniyor",
+      "Cilt açık renkli",
+      "Fotofobi, nistagmus ve görme keskinliğinde azalma saptanıyor",
+      "Fundoskopik değerlendirmede foveal hipoplazi ile uyumlu görünüm izleniyor"
     ],
     "investigations": [
       {
@@ -17112,7 +17105,7 @@ export const cases = [
         "Alkaptonüri",
         "Vitiligo"
       ],
-      "explanation": "Olgu bulgu örüntüsü Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Okülokütanöz albinizm seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Okülokütanöz albinizm seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -17137,23 +17130,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Okülokütanöz albinizm seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Olgu bulguları Okülokütanöz albinizm ile uyumlu."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "Biyokimya çoğunlukla normal."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Tirozinaz aktivitesi veya genetik alt tip değerlendirildi."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -17377,17 +17370,19 @@ export const cases = [
       "profile": "6 yaş kız çocuk · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Güneşte yanma, açık renk saç-cilt ve görme sorunları",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "Biyokimya çoğunlukla normal.",
-        "Tirozinaz aktivitesi ve genetik ALT tip değerlendirilir.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "Biyokimya çoğunlukla normal",
+        "Tirozinaz aktivitesi ve genetik ALT tip değerlendirilir",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Güneşte yanma, açık renk saç-cilt ve görme sorunları"
       ],
       "historySummary": "Çocukta doğumdan beri cilt ve saç renginin belirgin açık olduğu, parlak ışıkta gözlerini kıstığı ve okulda tahtayı görmekte zorlandığı belirtilir. Nistagmus ve iris transillüminasyonu saptanır. Melanin sentezindeki bozukluk albinizm lehinedir.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-homocystinuria-001",
@@ -17407,12 +17402,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum iyi-orta.",
-      "Ekstremiteler uzun, parmaklar ince ve araknodaktili görünümünde.",
-      "Göz muayenesinde lens subluksasyonu inferonazal yönde tarifleniyor.",
-      "Sol baldırda hafif çevre artışı, palpasyonla hassasiyet ve yüzeyel venlerde dolgunluk mevcut.",
-      "Kardiyak oskültasyonda belirgin üfürüm duyulmuyor.",
-      "Nörolojik muayenede bilinç açık, kraniyal sinirler doğal ve akut fokal defisit yok."
+      "Genel durum iyi-orta",
+      "Ekstremiteler uzun, parmaklar ince ve araknodaktili görünümünde",
+      "Göz muayenesinde lens subluksasyonu inferonazal yönde tarifleniyor",
+      "Sol baldırda hafif çevre artışı, palpasyonla hassasiyet ve yüzeyel venlerde dolgunluk mevcut",
+      "Kardiyak oskültasyonda belirgin üfürüm duyulmuyor",
+      "Nörolojik muayenede bilinç açık, kraniyal sinirler doğal ve akut fokal defisit yok"
     ],
     "investigations": [
       {
@@ -17472,7 +17467,7 @@ export const cases = [
         "priority": "Essential",
         "summary": "Plazma homosistein ve metiyonin düzeyleri belirgin yüksek saptandı.",
         "findings": [
-          "bulgu örüntüsü sistationin beta sentaz eksikliğini destekler.",
+          "Bulgu örüntüsü sistationin beta sentaz eksikliğini destekler.",
           "Marfan sendromunda homosistein yüksekliği beklenmez."
         ],
         "rows": [
@@ -17563,7 +17558,7 @@ export const cases = [
         "Alkaptonüri",
         "Fenilketonüri"
       ],
-      "explanation": "Olgu bulgu örüntüsü Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Homosistinüri seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Homosistinüri seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -17588,23 +17583,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Homosistinüri seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Olgu bulguları Homosistinüri ile uyumlu."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Total homosistein yüksek, metiyonin yüksek olabilir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Sistationin beta sentaz defekti veya B12 veya folat yolu değerlendirildi."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -17828,17 +17823,19 @@ export const cases = [
       "profile": "14 yaş erkek · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Görme bozukluğu, uzun boy-ince yapı ve bacakta şişlik",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "Total homosistein yüksek, metiyonin yüksek olabilir.",
-        "Sistationin beta-sentaz defekti veya B12 ve folat yolu değerlendirilir.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "Total homosistein yüksek, metiyonin yüksek olabilir",
+        "Sistationin beta-sentaz defekti veya B12 ve folat yolu değerlendirilir",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Görme bozukluğu, uzun boy-ince yapı ve bacakta şişlik"
       ],
       "historySummary": "Hasta uzun boylu ve ince yapılıdır. Göz muayenesinde lens subluksasyonu saptanır. Sol bacakta ağrılı şişlik ile derin ven trombozu düşünülür.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-pellagra-001",
@@ -17858,11 +17855,11 @@ export const cases = [
       "Ateş": "37.0 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Güneşe açık alanlarda simetrik hiperpigmente, skuamlı dermatit izleniyor.",
-      "Dil hiperemik ve parlak görünümde.",
-      "Nörolojik muayenede dikkat azalması ve bilişsel yavaşlama mevcut.",
-      "Batın yumuşak."
+      "Genel durum stabil",
+      "Güneşe açık alanlarda simetrik hiperpigmente, skuamlı dermatit izleniyor",
+      "Dil hiperemik ve parlak görünümde",
+      "Nörolojik muayenede dikkat azalması ve bilişsel yavaşlama mevcut",
+      "Batın yumuşak"
     ],
     "investigations": [
       {
@@ -17931,7 +17928,7 @@ export const cases = [
         "Beriberi",
         "Raşitizm"
       ],
-      "explanation": "Olgu bulgu örüntüsü Niasin eksikliği. Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Pellagra seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Niasin eksikliği. Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Pellagra seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -17956,23 +17953,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Niasin eksikliği. Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Pellagra seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Olgu bulguları Niasin eksikliği—Pellagra ile uyumlu."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Elektrolit bozukluğu ve malnütrisyon bulguları."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Niasin veya NAD ilişkili eksiklik düşünülür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları Niasin eksikliği—ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -18196,17 +18193,19 @@ export const cases = [
       "profile": "47 yaş erkek, kronik alkol kullanımı ve kötü beslenme · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Güneş gören alanlarda dermatit, ishal ve unutkanlık",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Niasin eksikliği—ilgili klinik tablo ile uyumludur.",
-        "Elektrolit bozukluğu ve malnütrisyon bulguları.",
-        "Niasin ve NAD ilişkili eksiklik düşünülür.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları Niasin eksikliği—ilgili klinik tablo ile uyumludur",
+        "Elektrolit bozukluğu ve malnütrisyon bulguları",
+        "Niasin ve NAD ilişkili eksiklik düşünülür",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Güneş gören alanlarda dermatit, ishal ve unutkanlık"
       ],
       "historySummary": "Hasta son aylarda çoğunlukla mısır ve karbonhidrat ağırlıklı beslendiğini. Et, balık, yumurta ve süt ürünlerini çok az tükettiğini belirtir. Kronik ishal atakları nedeniyle kilo kaybı, halsizlik ve iştahsızlık gelişmiştir.",
-      "priorityFocus": "Olgu bulguları Niasin eksikliği—ilgili klinik tablo ile uyumlu SLE aktivitesi için anlamlıdır."
-    }
+      "priorityFocus": "Olgu bulguları Niasin eksikliği—ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-scurvy-001",
@@ -18226,11 +18225,11 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Diş etlerinde şişlik, hassasiyet ve kolay kanama izleniyor.",
-      "Alt ekstremitelerde perifoliküler peteşi ve ekimozlar mevcut.",
-      "Ciltte kuruluk ve yara iyileşmesinde gecikme alanları görülüyor.",
-      "Eklem muayenesinde belirgin aktif sinovit saptanmıyor."
+      "Genel durum stabil",
+      "Diş etlerinde şişlik, hassasiyet ve kolay kanama izleniyor",
+      "Alt ekstremitelerde perifoliküler peteşi ve ekimozlar mevcut",
+      "Ciltte kuruluk ve yara iyileşmesinde gecikme alanları görülüyor",
+      "Eklem muayenesinde belirgin aktif sinovit saptanmıyor"
     ],
     "investigations": [
       {
@@ -18287,7 +18286,7 @@ export const cases = [
         "K vitamini eksikliği",
         "Hemofili A"
       ],
-      "explanation": "Olgu bulgu örüntüsü Vitamin C eksikliği. Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Skorbüt seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Vitamin C eksikliği. Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Skorbüt seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -18312,23 +18311,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Vitamin C eksikliği. Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Skorbüt seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Olgu bulguları Vitamin C eksikliği—Skorbüt ile uyumlu."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Hafif anemi, CRP normal."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Askorbik asit eksikliği düşünülür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları Vitamin C eksikliği—ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -18552,17 +18551,19 @@ export const cases = [
       "profile": "62 yaş erkek, yalnız yaşıyor, taze sebze-meyve almıyor · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Diş eti kanaması, morarma ve halsizlik",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları Vitamin C eksikliği—ilgili klinik tablo ile uyumludur.",
-        "Hafif anemi, CRP normal.",
-        "Askorbik asit eksikliği düşünülür.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları Vitamin C eksikliği—ilgili klinik tablo ile uyumludur",
+        "Yüksek CRP ile inflamatuvar yanıt",
+        "Askorbik asit eksikliği düşünülür",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Diş eti kanaması, morarma ve halsizlik"
       ],
       "historySummary": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama bulgu örüntüsü C vitamini eksikliğini düşündürür.",
-      "priorityFocus": "Olgu bulguları Vitamin C eksikliği—ilgili klinik tablo ile uyumlu SLE aktivitesi için anlamlıdır."
-    }
+      "priorityFocus": "Olgu bulguları Vitamin C eksikliği—ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-hemochromatosis-001",
@@ -18582,12 +18583,12 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum iyi-orta.",
-      "Ciltte özellikle yüz, el sırtı ve güneş gören alanlarda bronz-gri hiperpigmentasyon izleniyor.",
-      "Abdomen muayenesinde karaciğer kenarı sağ kostal ark altında ele geliyor.",
-      "Metakarpofalangeal eklemlerde hafif hassasiyet mevcut.",
-      "Kardiyak muayenede belirgin kalp yetmezliği bulgusu saptanmıyor.",
-      "Nörolojik muayenede fokal defisit yok."
+      "Genel durum iyi-orta",
+      "Ciltte özellikle yüz, el sırtı ve güneş gören alanlarda bronz-gri hiperpigmentasyon izleniyor",
+      "Abdomen muayenesinde karaciğer kenarı sağ kostal ark altında ele geliyor",
+      "Metakarpofalangeal eklemlerde hafif hassasiyet mevcut",
+      "Kardiyak muayenede belirgin kalp yetmezliği bulgusu saptanmıyor",
+      "Nörolojik muayenede fokal defisit yok"
     ],
     "investigations": [
       {
@@ -18700,7 +18701,7 @@ export const cases = [
         "Demir eksikliği anemisi",
         "Menkes hastalığı"
       ],
-      "explanation": "Olgu bulgu örüntüsü Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Hemokromatozis seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Hemokromatozis seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -18725,23 +18726,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Hemokromatozis seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Olgu bulguları Hemokromatozis ile uyumlu."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Ferritin yüksek, transferrin satürasyonu yüksek, AST veya ALT yüksek."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "HFE ilişkili demir yüklenmesi değerlendirildi."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -18965,17 +18966,19 @@ export const cases = [
       "profile": "52 yaş erkek · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Halsizlik, ciltte koyulaşma, diyabet ve karaciğer enzim yüksekliği",
       "riskContext": [
-        "Diyabet veya metabolik dekompansasyon riski."
+        "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "Ferritin yüksek, transferrin satürasyonu yüksek, AST ve ALT yüksekliği destekler.",
-        "HFE ilişkili demir yüklenmesi değerlendirilir.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "Ferritin yüksek, transferrin satürasyonu yüksek, AST ve ALT yüksekliği destekler",
+        "HFE ilişkili demir yüklenmesi değerlendirilir",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Halsizlik, ciltte koyulaşma, diyabet ve karaciğer enzim yüksekliği"
       ],
       "historySummary": "Hastada uzun süredir halsizlik, eklem ağrısı, yeni tanı diyabet ve bronz renkli cilt görünümü vardır. Ferritin ve transferrin satürasyonu yüksek bulunur. Demir metabolizmasında aşırı birikim çoklu organ hasarı yapmaktadır.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-familial-hypercholesterolemia-001",
@@ -18995,12 +18998,11 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Bilateral Aşil tendonlarında ksantom nodülleri palpabl.",
-      "Kornea arkusu ve hafif ksantelazma izleniyor.",
-      "Eruptif ksantom yok, trigliseridemi lehine bulgu saptanmıyor.",
-      "Kalp oskültasyonunda üfürüm yok.",
-      "Periferik nabızlar simetrik alınıyor."
+      "Bilateral Aşil tendonlarında ksantom nodülleri palpabl",
+      "Kornea arkusu ve hafif ksantelazma izleniyor",
+      "Eruptif ksantom yok, trigliseridemi lehine bulgu saptanmıyor",
+      "Kalp oskültasyonunda üfürüm yok",
+      "Periferik nabızlar simetrik alınıyor"
     ],
     "investigations": [
       {
@@ -19088,7 +19090,7 @@ export const cases = [
         "Abetalipoproteinemi",
         "LCAT eksikliği"
       ],
-      "explanation": "Olgu bulgu örüntüsü Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Ailesel hiperkolesterolemi seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Ailesel hiperkolesterolemi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -19113,23 +19115,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Ailesel hiperkolesterolemi seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Olgu bulguları Ailesel hiperkolesterolemi—Tip IIa hiperlipoproteinemi ile uyumlu."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Laboratuvar",
             "text": "Total kolesterol 360 mg/dL, LDL 285 mg/dL, TG normal."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "LDL reseptör veya ApoB veya PCSK9 yolu değerlendirildi."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo—Tip IIa hiperlipoproteinemi ile."
           }
         ],
@@ -19353,18 +19355,20 @@ export const cases = [
       "profile": "17 yaş kız · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Aşil tendonunda şişlik ve ailede erken MI öyküsü",
       "riskContext": [
-        "Aterosklerotik risk zemini.",
-        "Aile öyküsü veya kalıtsal yatkınlık."
+        "Aterosklerotik risk zemini",
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo—Tip IIa hiperlipoproteinemi ile.",
-        "Total kolesterol 360 mg ve dL, LDL 285 mg ve dL, TG normal.",
-        "LDL reseptörü, ApoB veya PCSK9 yolu değerlendirilir.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo—Tip IIa hiperlipoproteinemi ile",
+        "Total kolesterol 360 mg ve dL, LDL 285 mg ve dL, TG normal",
+        "LDL reseptörü, ApoB veya PCSK9 yolu değerlendirilir",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Aşil tendonunda şişlik ve ailede erken MI öyküsü"
       ],
       "historySummary": "Genç hastada Aşil tendon ksantomları, total kolesterol ve LDL'de belirgin yükseklik ve babada 38 yaşında MI öyküsü vardır. Trigliserid normal sınırlardadır. Bu profil LDL temizlenme kusurunu düşündürür.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo—Tip IIa hiperlipoproteinemi ile akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo—Tip IIa hiperlipoproteinemi ile klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-tangier-disease-001",
@@ -19384,11 +19388,11 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Tonsiller büyük ve turuncu renkli izleniyor.",
-      "Abdomen muayenesinde hafif hepatosplenomegali saptanıyor.",
-      "Periferik nörolojik muayenede distal duyu azalması mevcut.",
-      "Kardiyak ve solunum muayenesinde belirgin patolojik oskültasyon bulgusu yok."
+      "Genel durum stabil",
+      "Tonsiller büyük ve turuncu renkli izleniyor",
+      "Abdomen muayenesinde hafif hepatosplenomegali saptanıyor",
+      "Periferik nörolojik muayenede distal duyu azalması mevcut",
+      "Kardiyak ve solunum muayenesinde belirgin patolojik oskültasyon bulgusu yok"
     ],
     "investigations": [
       {
@@ -19476,7 +19480,7 @@ export const cases = [
         "LCAT eksikliği",
         "Abetalipoproteinemi"
       ],
-      "explanation": "Olgu bulgu örüntüsü Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Tangier hastalığı seçeneğidir.",
+      "explanation": "Olgu bulgu örüntüsü Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Tangier hastalığı seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -19501,23 +19505,23 @@ export const cases = [
         "whyCorrect": "Olgu bulgu örüntüsü Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun yanıt Tangier hastalığı seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Olgu bulguları Tangier hastalığı ile uyumlu."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Laboratuvar",
             "text": "HDL <5 mg/dL, ApoA-I düşük, LDL düşük veya normal."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "ABCA1 fonksiyon bozukluğu."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olgu bulguları ilgili klinik tablo ile uyumlu."
           }
         ],
@@ -19741,17 +19745,19 @@ export const cases = [
       "profile": "12 yaş erkek · Pediatri veya metabolizma polikliniği veya acil başvuru",
       "presentation": "Büyümüş turuncu tonsiller ve periferik nöropati",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Olgu bulguları ilgili klinik tablo ile uyumludur.",
-        "HDL <5 mg ve dL, ApoA-I düşük, LDL düşük ve normal.",
-        "ABCA1 fonksiyon bozukluğu.",
-        "Hedef mekanizma ve sınav ipuçları tabloyu destekler."
+        "Olgu bulguları ilgili klinik tablo ile uyumludur",
+        "HDL <5 mg ve dL, ApoA-I düşük, LDL düşük ve normal",
+        "ABCA1 fonksiyon bozukluğu",
+        "Hedef mekanizma ve sınav ipuçları tabloyu destekler",
+        "Büyümüş turuncu tonsiller ve periferik nöropati"
       ],
       "historySummary": "Çocukta belirgin turuncu tonsiller, hepatosplenomegali ve aralıklı ekstremite uyuşması vardır. Lipid profilinde HDL çok düşük, ApoA-I azalmış bulunur. Kolesterolün hücre dışına TAşınmasında görevli ABCA1 defekti düşünülür.",
-      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumlu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Olgu bulguları ilgili klinik tablo ile uyumludur klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-acute-radiation-syndrome-001",
@@ -19771,14 +19777,13 @@ export const cases = [
       "Ateş": "37.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Sağ el dorsumunda keskin sınırlı eritem, hassasiyet ve hafif ödem izleniyor.",
-      "Vücut yüzeyinde yaygın görünür partikül veya kirlenme yok.",
-      "Ciltte yaygın peteşi, purpura veya aktif mukozal kanama izlenmiyor.",
-      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor.",
-      "Abdomen yumuşak.",
-      "Nörolojik muayenede fokal defisit, ense sertliği veya nöbet bulgusu yok.",
-      "Sağ elde lokal eritem ve hassasiyet belirgin."
+      "Sağ el dorsumunda keskin sınırlı eritem, hassasiyet ve hafif ödem izleniyor",
+      "Vücut yüzeyinde yaygın görünür partikül veya kirlenme yok",
+      "Ciltte yaygın peteşi, purpura veya aktif mukozal kanama izlenmiyor",
+      "Kardiyopulmoner muayenede ek patolojik bulgu saptanmıyor",
+      "Abdomen yumuşak",
+      "Nörolojik muayenede fokal defisit, ense sertliği veya nöbet bulgusu yok",
+      "Sağ elde lokal eritem ve hassasiyet belirgin"
     ],
     "investigations": [
       {
@@ -19903,7 +19908,7 @@ export const cases = [
         "Gıda zehirlenmesi",
         "Termal yanık"
       ],
-      "explanation": "Kısa sürede yüksek doz maruziyet, prodromal bulantı-kusma-ishal, geçici iyilik dönemi ve kemik iliği baskılanması ARS lehinedir. Bu nedenle en uygun yanıt Akut radyasyon sendromu seçeneğidir.",
+      "explanation": "Kısa sürede yüksek doz maruziyet, prodromal bulantı-kusma-ishal, geçici iyilik dönemi ve kemik iliği baskılanması ARS lehinedir. Akut radyasyon sendromu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -19928,23 +19933,23 @@ export const cases = [
         "whyCorrect": "Kısa sürede yüksek doz maruziyet, prodromal bulantı-kusma-ishal, geçici iyilik dönemi ve kemik iliği baskılanması ARS lehinedir. Bu nedenle en uygun yanıt Akut radyasyon sendromu seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Saatler içinde bulantı-kusma-ishal."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Isı veya kimyasal temas olmadan cilt eritemi."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Lenfosit düşüşü."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Maruziyetten saatler sonra bulantı, kusma, ishal ve ciltte eritem başvurunun ana problemidir."
           }
         ],
@@ -20165,17 +20170,19 @@ export const cases = [
       "profile": "34 yaş erkek, endüstriyel radyografi çalışanı · Acil servis. Radyasyon kazası sonrası",
       "presentation": "Maruziyetten saatler sonra bulantı, kusma, ishal ve ciltte eritem",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet.",
-        "Saatler içinde bulantı-kusma-ishal.",
-        "Isı veya kimyasal temas olmadan gelişen cilt eritemi.",
-        "Lenfosit düşüşü."
+        "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet",
+        "Saatler içinde bulantı-kusma-ishal",
+        "Isı veya kimyasal temas olmadan gelişen cilt eritemi",
+        "Lenfosit düşüşü",
+        "Maruziyetten saatler sonra bulantı, kusma, ishal ve ciltte eritem"
       ],
       "historySummary": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan yaklaşık 2 saat sonra bulantı, kusma, baş ağrısı, halsizlik ve yaygın yanma hissi geliştiğini ifade eder. Olaydan sonra kısa bir iyilik dönemi olsa da sağ elde lokal eritem ortaya çıkmış ve seri tam kan sayımlarında lenfosit düşüşü başlamıştır. Semptomların kısa sürede başlaması ve erken lenfopeni yüksek doz.",
-      "priorityFocus": "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-oxidative-stress-injury-001",
@@ -20195,12 +20202,11 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Skleralarda ikter belirgin.",
-      "Ciltte hafif solukluk ve sararma var.",
-      "Dalak büyüklüğü belirgin değil.",
-      "Kostovertebral açı hassasiyeti yok.",
-      "Nörolojik muayene doğal."
+      "Skleralarda ikter belirgin",
+      "Ciltte hafif solukluk ve sararma var",
+      "Dalak büyüklüğü belirgin değil",
+      "Kostovertebral açı hassasiyeti yok",
+      "Nörolojik muayene doğal"
     ],
     "investigations": [
       {
@@ -20337,7 +20343,7 @@ export const cases = [
         "Otoimmün hemolitik anemi",
         "Akut viral hepatit"
       ],
-      "explanation": "Bakla gibi oksidatif tetikleyici sonrası ani sarılık, koyu idrar, indirekt bilirubin yüksekliği, düşük haptoglobin ve periferik yaymada Heinz cisimciği veya bite cell görülmesi G6PD ilişkili hemolizi destekler. Bu nedenle en uygun yanıt G6PD eksikliğine bağlı akut hemolitik kriz seçeneğidir.",
+      "explanation": "Bakla gibi oksidatif tetikleyici sonrası ani sarılık, koyu idrar, indirekt bilirubin yüksekliği, düşük haptoglobin ve periferik yaymada Heinz cisimciği veya bite cell görülmesi G6PD ilişkili hemolizi destekler. G6PD eksikliğine bağlı akut hemolitik kriz seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -20358,23 +20364,23 @@ export const cases = [
         "whyCorrect": "Oksidatif maruziyet sonrası hemoliz bulguları ve periferik yayma bulgu örüntüsü G6PD eksikliğini en güçlü seçenek yapar. Bu nedenle en uygun yanıt G6PD eksikliğine bağlı akut hemolitik kriz seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Bakla tüketiminden sonra semptom başlaması."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Koyu idrar ve sarılık."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "İndirekt bilirubin yüksekliği ve haptoglobin düşüklüğü."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Heinz cisimciği ve bite cell görülmesi."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Bakla yedikten sonra koyu idrar, halsizlik ve sararma başvurunun ana problemidir."
           }
         ],
@@ -20595,17 +20601,19 @@ export const cases = [
       "profile": "22 yaş erkek · Acil servis",
       "presentation": "Bakla yedikten sonra koyu idrar, halsizlik ve sararma",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Bakla tüketiminden sonra semptom başlaması.",
-        "Koyu idrar ve sarılık.",
-        "İndirekt bilirubin yüksekliği ve haptoglobin düşüklüğü.",
-        "Heinz cisimciği ve bite cell görülmesi."
+        "Bakla tüketiminden sonra semptom başlaması",
+        "Koyu idrar ve sarılık",
+        "İndirekt bilirubin yüksekliği ve haptoglobin düşüklüğü",
+        "Heinz cisimciği ve bite cell görülmesi",
+        "Bakla yedikten sonra koyu idrar, halsizlik ve sararma"
       ],
       "historySummary": "Daha önce sağlıklı olan hasta, bakla tüketiminden 24 saat sonra halsizlik, bel ağrısı, sarılık ve çay renginde idrar yakınmalarıyla başvurur. Ateşi yoktur. Enfeksiyon odağı saptanmaz.",
-      "priorityFocus": "Bakla tüketiminden sonra semptom başlaması karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Bakla tüketiminden sonra semptom başlaması klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "cardiovascular-coagulative-necrosis-mi-001",
@@ -20625,12 +20633,11 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Hasta terli ve anksiyöz görünüyor.",
-      "Kalpte S4 duyuluyor, belirgin üfürüm yok.",
-      "Akciğer bazallerinde ral saptanmıyor.",
-      "Periferik nabızlar simetrik alınıyor.",
-      "Fokal nörolojik defisit yok."
+      "Hasta terli ve anksiyöz görünüyor",
+      "Kalpte S4 duyuluyor, belirgin üfürüm yok",
+      "Akciğer bazallerinde ral saptanmıyor",
+      "Periferik nabızlar simetrik alınıyor",
+      "Fokal nörolojik defisit yok"
     ],
     "investigations": [
       {
@@ -20743,7 +20750,7 @@ export const cases = [
         "Kazeifikasyon nekrozu",
         "Yağ nekrozu"
       ],
-      "explanation": "Miyokard ve böbrek gibi solid organlarda iskemi sonrası tipik nekroz koagülasyon nekrozudur. Beyin istisna olarak likefaksiyon nekrozu gösterir. Bu nedenle en uygun yanıt Koagülasyon nekrozu seçeneğidir.",
+      "explanation": "Miyokard ve böbrek gibi solid organlarda iskemi sonrası tipik nekroz koagülasyon nekrozudur. Beyin istisna olarak likefaksiyon nekrozu gösterir. Koagülasyon nekrozu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -20768,23 +20775,23 @@ export const cases = [
         "whyCorrect": "Miyokard ve böbrek gibi solid organlarda iskemi sonrası tipik nekroz koagülasyon nekrozudur. Beyin istisna olarak likefaksiyon nekrozu gösterir. Bu nedenle en uygun yanıt Koagülasyon nekrozu seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Şiddetli göğüs ağrısı."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Öykü",
             "text": "ST elevasyonu."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "LAD tam tıkanıklığı."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Troponin yüksekliği."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "1 saattir süren baskı tarzı göğüs ağrısı başvurunun ana problemidir."
           }
         ],
@@ -21017,17 +21024,19 @@ export const cases = [
       "profile": "55 yaş erkek · Acil servis. Göğüs ağrısı",
       "presentation": "1 saattir süren baskı tarzı göğüs ağrısı",
       "riskContext": [
-        "Aterosklerotik risk zemini."
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
-        "Şiddetli göğüs ağrısı.",
-        "ST elevasyonu.",
-        "LAD tam tıkanıklığı.",
-        "Troponin yüksekliği."
+        "Şiddetli göğüs ağrısı",
+        "ST elevasyonu",
+        "LAD tam tıkanıklığı",
+        "Troponin yüksekliği",
+        "1 saattir süren baskı tarzı göğüs ağrısı"
       ],
       "historySummary": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz bulgu örüntüsünü düşündüren klasik bir bulgu bulgu örüntüsü oluşturur.",
-      "priorityFocus": "Şiddetli göğüs ağrısı karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Şiddetli göğüs ağrısı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "neurology-liquefactive-necrosis-brain-001",
@@ -21047,12 +21056,12 @@ export const cases = [
       "Ateş": "38.6 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Hasta somnolandır, GKS 13.",
-      "Sol hemiparezi ve hafif fasiyal asimetri var.",
-      "Papil ödemi ve baş ağrısı intrakraniyal basınç artışını düşündürüyor.",
-      "Ense sertliği hafif pozitif.",
-      "Kronik tüberküloz bulgusu veya yaygın lenfadenopati yok."
+      "Genel durum stabil",
+      "Hasta somnolandır, GKS 13",
+      "Sol hemiparezi ve hafif fasiyal asimetri var",
+      "Papil ödemi ve baş ağrısı intrakraniyal basınç artışını düşündürüyor",
+      "Ense sertliği hafif pozitif",
+      "Kronik tüberküloz bulgusu veya yaygın lenfadenopati yok"
     ],
     "investigations": [
       {
@@ -21165,7 +21174,7 @@ export const cases = [
         "Kazeifikasyon nekrozu",
         "Yağ nekrozu"
       ],
-      "explanation": "Olgunun klinik bulgu örüntüsü Likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun yanıt Likefaksiyon nekrozu seçeneğidir.",
+      "explanation": "Olgunun klinik bulgu örüntüsü Likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Likefaksiyon nekrozu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -21186,23 +21195,23 @@ export const cases = [
         "whyCorrect": "Olgunun klinik bulgu örüntüsü Likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun yanıt Likefaksiyon nekrozu seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Halka tarzı kontrastlanan apse."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Lökositoz ve CRP yüksek."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsü."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile."
           }
         ],
@@ -21415,17 +21424,19 @@ export const cases = [
       "profile": "42 yaş erkek · Nöroloji servisi",
       "presentation": "Ateş, baş ağrısı ve fokal nörolojik defisit",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile.",
-        "Halka tarzı kontrastlanan apse.",
-        "Lökositoz ve CRP yüksek.",
-        "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsünü destekler."
+        "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile",
+        "Halka tarzı kontrastlanan apse",
+        "Nötrofil baskın lökositoz",
+        "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsünü destekler",
+        "Ateş, baş ağrısı ve fokal nörolojik defisit"
       ],
       "historySummary": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir. Beyin MR'ında halka tarzı kontrastlanan lezyon görülür. Beyin dokusunda enfeksiyon ve iskemi sonrası ilgili klinik tablo beklenir.",
-      "priorityFocus": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "infectious-diseases-caseating-granuloma-tb-001",
@@ -21445,12 +21456,12 @@ export const cases = [
       "Ateş": "38.1 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Zayıf görünüm ve gece terlemesi öyküsü belirgin.",
-      "Sağ üst zonda solunum sesleri azalmış ve ince ral duyuluyor.",
-      "Servikal küçük lenf nodları palpabl.",
-      "Hemoptizi için balgamda çizgisel kan tarifleniyor.",
-      "Akut solunum yetmezliği bulgusu yok."
+      "Genel durum stabil",
+      "Zayıf görünüm ve gece terlemesi öyküsü belirgin",
+      "Sağ üst zonda solunum sesleri azalmış ve ince ral duyuluyor",
+      "Servikal küçük lenf nodları palpabl",
+      "Hemoptizi için balgamda çizgisel kan tarifleniyor",
+      "Akut solunum yetmezliği bulgusu yok"
     ],
     "investigations": [
       {
@@ -21569,7 +21580,7 @@ export const cases = [
         "Akut apse",
         "Fibrinoid nekroz"
       ],
-      "explanation": "Olgunun klinik bulgu örüntüsü Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun yanıt Tüberkülozla uyumlu kazeifiye granülom seçeneğidir.",
+      "explanation": "Olgunun klinik bulgu örüntüsü Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Tüberkülozla uyumlu kazeifiye granülom seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -21590,23 +21601,23 @@ export const cases = [
         "whyCorrect": "Olgunun klinik bulgu örüntüsü Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun yanıt Tüberkülozla uyumlu kazeifiye granülom seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Görüntüleme",
             "text": "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Görüntüleme",
             "text": "Apikal infiltrasyon veya kavite."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "ARB pozitif olabilir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsü."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Görüntüleme",
             "text": "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır."
           }
         ],
@@ -21828,17 +21839,19 @@ export const cases = [
       "profile": "31 yaş kadın · Göğüs hastalıkları polikliniği",
       "presentation": "Gece terlemesi, kilo kaybı ve kronik öksürük",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır.",
-        "Apikal infiltrasyon ve kaviter lezyon.",
-        "ARB pozitif olabilir.",
-        "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsünü destekler."
+        "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır",
+        "Apikal infiltrasyon ve kaviter lezyon",
+        "ARB pozitif olabilir",
+        "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsünü destekler",
+        "Gece terlemesi, kilo kaybı ve kronik öksürük"
       ],
       "historySummary": "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır. Biyopside epiteloid histiyositler, dev hücreler ve santral kazeifikasyon izlenir. Üst lob kavitesi ve kazeifikasyon birlikte tüberküloz ilişkili granülomatöz inflamasyonu güçlü düşündürür.",
-      "priorityFocus": "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır aktif tüberküloz olasılığını artırır."
-    }
+      "priorityFocus": "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pulmonology-pulmonary-embolism-dvt-001",
@@ -21858,12 +21871,11 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Hasta dispneik ve takipneik.",
-      "Sağ baldırda çap artışı, hassasiyet ve ısı artışı var.",
-      "Akciğer oskültasyonunda belirgin fokal ral, bronşiyal solunum sesi veya plevral frotman duyulmuyor.",
-      "Juguler venöz dolgunluk hafif artmış.",
-      "Göğüs duvarı palpasyonuyla ağrı yeniden üretilemiyor."
+      "Hasta dispneik ve takipneik",
+      "Sağ baldırda çap artışı, hassasiyet ve ısı artışı var",
+      "Akciğer oskültasyonunda belirgin fokal ral, bronşiyal solunum sesi veya plevral frotman duyulmuyor",
+      "Juguler venöz dolgunluk hafif artmış",
+      "Göğüs duvarı palpasyonuyla ağrı yeniden üretilemiyor"
     ],
     "investigations": [
       {
@@ -21982,7 +21994,7 @@ export const cases = [
         "Spontan pnömotoraks",
         "Astım atağı"
       ],
-      "explanation": "Olgunun klinik bulgu örüntüsü Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun yanıt Pulmoner tromboemboli seçeneğidir.",
+      "explanation": "Olgunun klinik bulgu örüntüsü Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Pulmoner tromboemboli seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -22003,23 +22015,23 @@ export const cases = [
         "whyCorrect": "Olgunun klinik bulgu örüntüsü Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun yanıt Pulmoner tromboemboli seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve plöritik ağrı ile gelir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Yüksek."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Görüntüleme",
             "text": "Sağ pulmoner arter dalında dolum defekti."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsü."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve."
           }
         ],
@@ -22244,17 +22256,19 @@ export const cases = [
       "profile": "66 yaş kadın, kalça cerrahisi sonrası · Acil servis",
       "presentation": "Ani nefes darlığı ve plöritik göğüs ağrısı",
       "riskContext": [
-        "Aterosklerotik risk zemini."
+        "Aterosklerotik risk zemini"
       ],
       "distinctiveClues": [
-        "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, TAşikardi ve.",
-        "Yüksek.",
-        "Sağ pulmoner arter dalında dolum defekti.",
-        "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsünü destekler."
+        "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, TAşikardi ve",
+        "Yüksek",
+        "Sağ pulmoner arter dalında dolum defekti",
+        "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsünü destekler",
+        "Ani nefes darlığı ve plöritik göğüs ağrısı"
       ],
       "historySummary": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, TAşikardi ve plöritik ağrı ile gelir. Sol baldırda şişlik vardır. Virchow triadı bağlamında staz ve endotel hasarı sonrası DVT kaynaklı pulmoner emboli düşünülür.",
-      "priorityFocus": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, TAşikardi ve pulmoner emboli olasılığını yükseltir."
-    }
+      "priorityFocus": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, TAşikardi ve klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "infectious-diseases-septic-shock-001",
@@ -22274,12 +22288,11 @@ export const cases = [
       "Ateş": "39.2 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Hasta konfü ve toksik görünüyor.",
-      "Kapiller dolum 4 saniye, ekstremiteler soğuk ve benekli.",
-      "Sağ kostovertebral açı hassasiyeti belirgin.",
-      "Mukozalar kuru.",
-      "Menenjit bulgusu ve yaygın döküntü yok."
+      "Hasta konfü ve toksik görünüyor",
+      "Kapiller dolum 4 saniye, ekstremiteler soğuk ve benekli",
+      "Sağ kostovertebral açı hassasiyeti belirgin",
+      "Mukozalar kuru",
+      "Menenjit bulgusu ve yaygın döküntü yok"
     ],
     "investigations": [
       {
@@ -22300,7 +22313,7 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "pH",
+            "PH",
             "7.28",
             "7.35-7.45",
             "Düşük"
@@ -22404,7 +22417,7 @@ export const cases = [
         "Anafilaktik şok",
         "Nörojenik şok"
       ],
-      "explanation": "Olgunun klinik bulgu örüntüsü Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun yanıt Septik şok seçeneğidir.",
+      "explanation": "Olgunun klinik bulgu örüntüsü Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Septik şok seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -22425,19 +22438,19 @@ export const cases = [
         "whyCorrect": "Olgunun klinik bulgu örüntüsü Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun yanıt Septik şok seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Alındı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsü."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve."
           }
         ],
@@ -22662,16 +22675,19 @@ export const cases = [
       "profile": "70 yaş erkek · Acil servis",
       "presentation": "Ateş, bilinç bulanıklığı ve tansiyon düşüklüğü",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Pnömoni odağı olan hasta ateş, TAşikardi, hipotansiyon, soğuk ekstremite ve.",
-        "Alındı.",
-        "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsünü destekler."
+        "Pnömoni odağı olan hasta ateş, TAşikardi, hipotansiyon, soğuk ekstremite ve",
+        "Alındı",
+        "Klinik mekanizma ile uyumlu ayırıcı tanı bulgu örüntüsünü destekler",
+        "Ateş, bilinç bulanıklığı ve tansiyon düşüklüğü",
+        "Hasta konfü ve toksik görünüyor"
       ],
       "historySummary": "Pnömoni odağı olan hasta ateş, TAşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir. Laktat yüksektir. Yakınları son saatlerde idrar miktarının belirgin azaldığını belirtir.",
-      "priorityFocus": "Pnömoni odağı olan hasta ateş, TAşikardi, hipotansiyon, soğuk ekstremite ve akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Pnömoni odağı olan hasta ateş, TAşikardi, hipotansiyon, soğuk ekstremite ve klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-systemic-lupus-erythematosus-001",
@@ -22691,11 +22707,11 @@ export const cases = [
       "Ateş": "37.6 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Yanaklarda nazolabial kıvrımları koruyan eritemli malar döküntü izleniyor.",
-      "Oral mukozada ağrısız ülser mevcut.",
-      "MCP eklemlerinde hassasiyet ve hafif şişlik saptanıyor.",
-      "Pretibial bölgede hafif gode bırakan ödem mevcut."
+      "Genel durum stabil",
+      "Yanaklarda nazolabial kıvrımları koruyan eritemli malar döküntü izleniyor",
+      "Oral mukozada ağrısız ülser mevcut",
+      "MCP eklemlerinde hassasiyet ve hafif şişlik saptanıyor",
+      "Pretibial bölgede hafif gode bırakan ödem mevcut"
     ],
     "investigations": [
       {
@@ -22820,7 +22836,7 @@ export const cases = [
         "Romatoid artrit",
         "Sistemik skleroz"
       ],
-      "explanation": "Olgu Sistemik lupus eritematozus için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt Sistemik lupus eritematozus seçeneğidir.",
+      "explanation": "Olgu Sistemik lupus eritematozus için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Sistemik lupus eritematozus seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -22841,23 +22857,23 @@ export const cases = [
         "whyCorrect": "Olgu Sistemik lupus eritematozus için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt Sistemik lupus eritematozus seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Pozitif."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Pozitif, yüksek titre."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Laboratuvar",
             "text": "Proteinüri ve eritrosit silendirleri."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri."
           }
         ],
@@ -23082,17 +23098,19 @@ export const cases = [
       "profile": "24 yaş kadın · Klinik veya adli değerlendirme ortamı",
       "presentation": "Deri döküntüsü, fotosensitivite, eklem ağrısı ve köpüklü idrar",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri.",
-        "Pozitiftir.",
-        "Pozitif, yüksek titre.",
-        "Proteinüri ve eritrosit silendirleri."
+        "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri",
+        "Pozitiftir",
+        "Pozitif, yüksek titre",
+        "Proteinüri ve eritrosit silendirleri",
+        "Deri döküntüsü, fotosensitivite, eklem ağrısı ve köpüklü idrar"
       ],
       "historySummary": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır. Anti-dsDNA ve ANA pozitifliği immün kompleks aracılı böbrek tutulumunu destekler. Multisistem tutulum ve böbrek bulgusu sistemik otoimmün hastalık lehinedir.",
-      "priorityFocus": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-sjogren-syndrome-001",
@@ -23112,13 +23130,13 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Konjonktival kuruluk ve punktat keratit bulguları var.",
-      "Ağız mukozası kuru, dil fissürlü ve dental çürükler belirgin.",
-      "Parotis bezleri bilateral hafif büyümüş.",
-      "Artrit bulgusu hafif.",
-      "Malar döküntü, fotosensitif deri lezyonu veya periferik ödem izlenmiyor.",
-      "Korneal yüzeyde kurulukla uyumlu mat görünüm vardır."
+      "Genel durum stabil",
+      "Konjonktival kuruluk ve punktat keratit bulguları var",
+      "Ağız mukozası kuru, dil fissürlü ve dental çürükler belirgin",
+      "Parotis bezleri bilateral hafif büyümüş",
+      "Artrit bulgusu hafif",
+      "Malar döküntü, fotosensitif deri lezyonu veya periferik ödem izlenmiyor",
+      "Korneal yüzeyde kurulukla uyumlu mat görünüm vardır"
     ],
     "investigations": [
       {
@@ -23231,7 +23249,7 @@ export const cases = [
         "Romatoid artrit",
         "Hashimoto tiroiditi"
       ],
-      "explanation": "Olgu Sjögren sendromu için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt Sjögren sendromu seçeneğidir.",
+      "explanation": "Olgu Sjögren sendromu için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Sjögren sendromu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -23252,23 +23270,23 @@ export const cases = [
         "whyCorrect": "Olgu Sjögren sendromu için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt Sjögren sendromu seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler."
           },
           {
-            "title": "Klinik bağlam",
+            "title": "Öykü",
             "text": "Azalmış gözyaşı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Pozitif."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Görüntüleme",
             "text": "Lenfositik infiltrasyon."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis."
           }
         ],
@@ -23481,17 +23499,19 @@ export const cases = [
       "profile": "46 yaş kadın · Klinik veya adli değerlendirme ortamı",
       "presentation": "Göz kuruluğu, ağız kuruluğu ve tekrarlayan diş çürükleri",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis.",
-        "Azalmış gözyaşı.",
-        "Pozitiftir.",
-        "Lenfositik infiltrasyon."
+        "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis",
+        "Azalmış gözyaşı",
+        "Pozitiftir",
+        "Lenfositik infiltrasyon",
+        "Göz kuruluğu, ağız kuruluğu ve tekrarlayan diş çürükleri"
       ],
       "historySummary": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler. Schirmer testi azalmış, SSA ve SSB pozitif bulunur. Objektif gözyaşı azalması ve otoantikor pozitifliği kuruluk sendromunu otoimmün kökenli düşündürür.",
-      "priorityFocus": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-rheumatoid-arthritis-001",
@@ -23511,11 +23531,11 @@ export const cases = [
       "Ateş": "37.1 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Her iki el MCP ve PIP eklemlerinde simetrik şişlik, hassasiyet ve hareket kısıtlılığı saptanıyor.",
-      "DIP eklemlerinde belirgin tutulum yok.",
-      "El bileklerinde hafif sinovit bulguları mevcut.",
-      "Ciltte psöriyatik plak veya tofüs izlenmiyor."
+      "Genel durum stabil",
+      "Her iki el MCP ve PIP eklemlerinde simetrik şişlik, hassasiyet ve hareket kısıtlılığı saptanıyor",
+      "DIP eklemlerinde belirgin tutulum yok",
+      "El bileklerinde hafif sinovit bulguları mevcut",
+      "Ciltte psöriyatik plak veya tofüs izlenmiyor"
     ],
     "investigations": [
       {
@@ -23609,7 +23629,7 @@ export const cases = [
         "SLE artriti",
         "Gut"
       ],
-      "explanation": "Olgu Romatoid artrit için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt Romatoid artrit seçeneğidir.",
+      "explanation": "Olgu Romatoid artrit için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Romatoid artrit seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -23630,23 +23650,23 @@ export const cases = [
         "whyCorrect": "Olgu Romatoid artrit için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt Romatoid artrit seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Fizik muayene",
             "text": "Hasta 2 saati aşan sabah tutukluğu, MCP veya PIP eklem şişliği ve simetrik ağrı ile gelir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Pozitif."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Erozif değişiklikler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Fizik muayene",
             "text": "Hasta 2 saati aşan sabah tutukluğu, MCP veya PIP eklem şişliği ve simetrik ağrı ile."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "El eklemlerinde şişlik, ağrı ve sabah tutukluğu başvurunun ana problemidir."
           }
         ],
@@ -23871,17 +23891,19 @@ export const cases = [
       "profile": "38 yaş kadın · Klinik veya adli değerlendirme ortamı",
       "presentation": "El eklemlerinde şişlik, ağrı ve sabah tutukluğu",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "İki saati aşan sabah tutukluğu ve simetrik MCP-PIP eklem tutulumu.",
-        "Pozitiftir.",
-        "Erozif değişiklikler.",
-        "Kronik sinovit, pannus, simetrik küçük eklem tutulumu."
+        "İki saati aşan sabah tutukluğu ve simetrik MCP-PIP eklem tutulumu",
+        "Pozitiftir",
+        "Erozif değişiklikler",
+        "Kronik sinovit, pannus, simetrik küçük eklem tutulumu",
+        "El eklemlerinde şişlik, ağrı ve sabah tutukluğu"
       ],
       "historySummary": "İki saati aşan sabah tutukluğu ve simetrik MCP-PIP eklem tutulumu gelir. RF ve anti-CCP pozitiftir. Kronik inflamatuvar sinovyal proliferasyon pannus oluşumuyla kıkırdak ve kemik hasarı yapar.",
-      "priorityFocus": "İki saati aşan sabah tutukluğu ve simetrik MCP-PIP eklem tutulumu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "İki saati aşan sabah tutukluğu ve simetrik MCP-PIP eklem tutulumu klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-bruton-agammaglobulinemia-001",
@@ -23901,12 +23923,12 @@ export const cases = [
       "Ateş": "38.4 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Tonsiller belirgin küçük veya izlenmiyor.",
-      "Servikal lenf nodları beklenenden az palpabl.",
-      "Bilateral otit bulguları ve burun akıntısı mevcut.",
-      "Akciğer bazallerinde kaba raller duyuluyor.",
-      "Döküntü veya kronik ishal bulgusu baskın değil."
+      "Genel durum stabil",
+      "Tonsiller belirgin küçük veya izlenmiyor",
+      "Servikal lenf nodları beklenenden az palpabl",
+      "Bilateral otit bulguları ve burun akıntısı mevcut",
+      "Akciğer bazallerinde kaba raller duyuluyor",
+      "Döküntü veya kronik ishal bulgusu baskın değil"
     ],
     "investigations": [
       {
@@ -24019,7 +24041,7 @@ export const cases = [
         "SCID",
         "CVID"
       ],
-      "explanation": "Olgu X-linked agammaglobulinemi. Bruton için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt Bruton agammaglobulinemisi seçeneğidir.",
+      "explanation": "Olgu X-linked agammaglobulinemi. Bruton için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bruton agammaglobulinemisi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -24040,23 +24062,23 @@ export const cases = [
         "whyCorrect": "Olgu X-linked agammaglobulinemi. Bruton için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt Bruton agammaglobulinemisi seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik bağlam",
+            "title": "Öykü",
             "text": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Çok düşük."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "CD19 ve B hücreleri düşük."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Yetersiz."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu."
           }
         ],
@@ -24281,18 +24303,20 @@ export const cases = [
       "profile": "7 aylık erkek bebek · Klinik veya adli değerlendirme ortamı",
       "presentation": "Tekrarlayan otitis media, sinüzit ve pnömoni",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Yenidoğan veya süt çocukluğu yaş riski",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu.",
-        "Çok düşük.",
-        "CD19, B hücreleri düşük.",
-        "Yetersiz."
+        "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu",
+        "Çok düşük",
+        "CD19, B hücreleri düşük",
+        "Yetersiz",
+        "Tekrarlayan otitis media, sinüzit ve pnömoni"
       ],
       "historySummary": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır. Serum immünoglobulinleri çok düşük, dolaşımda B hücreleri azdır. T hücre fonksiyonu korunmuştur.",
-      "priorityFocus": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "infectious-diseases-hiv-aids-001",
@@ -24312,12 +24336,12 @@ export const cases = [
       "Ateş": "38.2 °C"
     },
     "exam": [
-      "Genel durum stabil.",
-      "Ağız içinde yaygın beyaz plaklar kazımakla kanıyor.",
-      "Bilateral servikal ve aksiller lenfadenopati var.",
-      "Akciğerlerde bilateral ince raller duyuluyor.",
-      "Kilo kaybı ve gece terlemesi belirgin.",
-      "Meningeal irritasyon bulgusu yok."
+      "Genel durum stabil",
+      "Ağız içinde yaygın beyaz plaklar kazımakla kanıyor",
+      "Bilateral servikal ve aksiller lenfadenopati var",
+      "Akciğerlerde bilateral ince raller duyuluyor",
+      "Kilo kaybı ve gece terlemesi belirgin",
+      "Meningeal irritasyon bulgusu yok"
     ],
     "investigations": [
       {
@@ -24430,7 +24454,7 @@ export const cases = [
         "İzole IgA yetmezliği",
         "SLE"
       ],
-      "explanation": "Olgu HIV enfeksiyonu veya AIDS için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt HIV veya AIDS seçeneğidir.",
+      "explanation": "Olgu HIV enfeksiyonu veya AIDS için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. HIV veya AIDS seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -24451,19 +24475,19 @@ export const cases = [
         "whyCorrect": "Olgu HIV enfeksiyonu veya AIDS için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun yanıt HIV veya AIDS seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ileri immünsüpresyonu düşündürür."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "HIV Ag/Ab pozitifliği enfeksiyon taramasını destekler."
           },
           {
-            "title": "Viral yük",
+            "title": "Öykü",
             "text": "Yüksek viral yük aktif viral replikasyonu gösterir."
           },
           {
-            "title": "CD4 düzeyi",
+            "title": "Öykü",
             "text": "CD4 110/µL fırsatçı enfeksiyon riskini belirgin artırır."
           }
         ],
@@ -24676,18 +24700,20 @@ export const cases = [
       "profile": "36 yaş erkek · Klinik veya adli değerlendirme ortamı",
       "presentation": "Kilo kaybı, oral kandidiyazis ve kronik ateş",
       "riskContext": [
-        "Hücresel immünite baskılanması fırsatçı enfeksiyon riskini artırır.",
-        "Cinsel temas, kan teması ve önceki test öyküsü tanısal yaklaşımı etkiler."
+        "Hücresel immünite baskılanması fırsatçı enfeksiyon riskini artırır",
+        "Cinsel temas, kan teması ve önceki test öyküsü tanısal yaklaşımı etkiler"
       ],
       "distinctiveClues": [
-        "Kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ileri immünsüpresyonu düşündürür.",
-        "HIV Ag/Ab pozitifliği enfeksiyon taramasında ana objektif bulgudur.",
-        "Yüksek viral yük aktif viral replikasyonu gösterir.",
-        "CD4 110/µL düzeyi fırsatçı enfeksiyon riskini belirgin artırır."
+        "Kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ileri immünsüpresyonu düşündürür",
+        "HIV Ag/Ab pozitifliği enfeksiyon taramasında ana objektif bulgudur",
+        "Yüksek viral yük aktif viral replikasyonu gösterir",
+        "CD4 110/µL düzeyi fırsatçı enfeksiyon riskini belirgin artırır",
+        "Kilo kaybı, oral kandidiyazis ve kronik ateş"
       ],
       "historySummary": "Kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyareye HIV Ag/Ab pozitifliği, yüksek viral yük ve düşük CD4 düzeyi eşlik eder.",
-      "priorityFocus": "Hasta kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ile gelir karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyare ileri immünsüpresyonu düşündürür klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pediatrics-shaken-baby-syndrome-001",
@@ -24710,9 +24736,9 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum orta-kötü.",
-      "Ön fontanel hafif kabarık.",
-      "Gövde ve ekstremitelerde farklı iyileşme evrelerinde ekimozlar mevcut."
+      "Genel durum orta-kötü",
+      "Ön fontanel hafif kabarık",
+      "Gövde ve ekstremitelerde farklı iyileşme evrelerinde ekimozlar mevcut"
     ],
     "investigations": [
       {
@@ -24770,7 +24796,7 @@ export const cases = [
         "Adli süreç tamamlanana kadar acil tıbbi müdahaleyi ertelemek",
         "Yalnızca antiepileptik verip bulguların düzelmesini beklemek"
       ],
-      "explanation": "Bu olguda nöbet tek başına açıklayıcı değildir. Farklı yaşlarda ekimozlar, tutarsız travma öyküsü ve letarji kaza dışı travma veya çocuk istismarı için kırmızı bayraktır. Doğru yaklaşım, acil stabilizasyonu sürdürürken bulguları objektif kaydetmek, çocuğun güvenliğini sağlamak ve adli veya koruyucu bildirimi başlatmaktır. Bu nedenle en uygun yanıt Tıbbi stabilizasyonu sağlarken ayrıntılı kayıt, çocuk güvenliği ve adli bildirim sürecini başlatmak seçeneğidir.",
+      "explanation": "Bu olguda nöbet tek başına açıklayıcı değildir. Farklı yaşlarda ekimozlar, tutarsız travma öyküsü ve letarji kaza dışı travma veya çocuk istismarı için kırmızı bayraktır. Doğru yaklaşım, acil stabilizasyonu sürdürürken bulguları objektif kaydetmek, çocuğun güvenliğini sağlamak ve adli veya koruyucu bildirimi başlatmaktır. Tıbbi stabilizasyonu sağlarken ayrıntılı kayıt, çocuk güvenliği ve adli bildirim sürecini başlatmak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -24798,19 +24824,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Letarji",
+            "title": "Öykü",
             "text": "Postiktal tablo beklenebilir."
           },
           {
-            "title": "Ekimozların yaşı",
+            "title": "Başvuru yakınması",
             "text": "Farklı iyileşme evrelerindeki morluklar tekrarlayan travmayı düşündürür."
           },
           {
-            "title": "Öykü-bulgu uyumsuzluğu",
+            "title": "Başvuru yakınması",
             "text": "Bildirilen hafif düşme öyküsü yaygın fizik bulgularla açıklanamaz."
           },
           {
-            "title": "Yüksek özgüllükte ipuçları",
+            "title": "Başvuru yakınması",
             "text": "Retinal kanama, subdural kanama, posterior kosta ve metafizer lezyon istismar şüphesini güçlendirir."
           }
         ],
@@ -24909,19 +24935,21 @@ export const cases = [
       "profile": "8 aylık erkek bebek · Acil servis",
       "presentation": "Nöbet sonrası letarji ve açıklanamayan ekimozlar",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski.",
-        "Çocukta güvenlik ve öykü-bulgu uyumu riski.",
-        "Travma veya adli kayıt gerektiren olay."
+        "Yenidoğan veya süt çocukluğu yaş riski",
+        "Çocukta güvenlik ve öykü-bulgu uyumu riski",
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Tutarsız öykü, farklı yaşlarda ekimoz, letarji.",
-        "Nöbet sonrası letarji.",
-        "Farklı yaşlarda ekimozlar.",
-        "Bakıcı öyküsü bildirilen mekanizmayı fizik bulgularla açıklayamaz."
+        "Tutarsız öykü, farklı yaşlarda ekimoz, letarji",
+        "Nöbet sonrası letarji",
+        "Farklı yaşlarda ekimozlar",
+        "Bakıcı öyküsü bildirilen mekanizmayı fizik bulgularla açıklayamaz",
+        "Nöbet sonrası letarji ve açıklanamayan ekimozlar"
       ],
       "historySummary": "Bebek acile nöbet ve letarji nedeniyle getirilir. Bakıcı net travma öyküsü vermez. Anlatılan hafif düşme öyküsü muayene bulgularının yaygınlığı ve farklı yaşlardaki morluklarla uyumlu değildir.",
-      "priorityFocus": "Tutarsız öykü, farklı yaşlarda ekimozlar ve letarji çocuk istismarı açısından kırmızı bayraktır."
-    }
+      "priorityFocus": "Tutarsız öykü, farklı yaşlarda ekimoz, letarji klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-sexual-assault-evidence-001",
@@ -24944,9 +24972,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Boyun ve ön kolda ekimozlar ile yüzeyel sıyrıklar izleniyor.",
-      "Kardiyopulmoner muayenede travmaya bağlı ek patolojik bulgu saptanmıyor."
+      "Boyun ve ön kolda ekimozlar ile yüzeyel sıyrıklar izleniyor",
+      "Kardiyopulmoner muayenede travmaya bağlı ek patolojik bulgu saptanmıyor"
     ],
     "investigations": [
       {
@@ -25023,7 +25050,7 @@ export const cases = [
         "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek",
         "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek"
       ],
-      "explanation": "Cinsel saldırı başvurusunda doğru ilk yaklaşım hastanın güvenliğini, tıbbi stabilitesini ve mahremiyetini sağlamaktır. Genital muayene, örnek alma, profilaksi ve raporlama bilgilendirilmiş onam ve delil zinciri korunarak yürütülür. Adli gereklilik tedaviyi veya onamı ortadan kaldırmaz. Bu nedenle en uygun yanıt Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek seçeneğidir.",
+      "explanation": "Cinsel saldırı başvurusunda doğru ilk yaklaşım hastanın güvenliğini, tıbbi stabilitesini ve mahremiyetini sağlamaktır. Genital muayene, örnek alma, profilaksi ve raporlama bilgilendirilmiş onam ve delil zinciri korunarak yürütülür. Adli gereklilik tedaviyi veya onamı ortadan kaldırmaz. Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -25051,23 +25078,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama açısından zaman duyarlıdır."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Başvuru yakınması",
             "text": "Aktif dış kanama veya bilinç kaybı yok."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Hasta ne yapılacağı ve mahremiyet konusunda bilgilendirilmek istemektedir."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Ön kol morluğu fiziksel travmanın objektif kaydını gerektirir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Cinsel saldırı sonrası erken başvuru, onam veya mahremiyet, delil zinciri."
           }
         ],
@@ -25167,17 +25194,19 @@ export const cases = [
       "profile": "22 yaşında kadın hasta · Acil servis",
       "presentation": "Saldırı sonrası ağrı, yoğun kaygı ve ekimozlar",
       "riskContext": [
-        "Çocukta güvenlik ve öykü-bulgu uyumu riski."
+        "Çocukta güvenlik ve öykü-bulgu uyumu riski"
       ],
       "distinctiveClues": [
-        "Cinsel saldırı sonrası erken başvuru ve delil zinciri gereksinimi.",
-        "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama.",
-        "Aktif dış kanama veya bilinç kaybı yok.",
-        "Hasta ne yapılacağı ve mahremiyet konusunda bilgilendirilmek istemektedir."
+        "Cinsel saldırı sonrası erken başvuru ve delil zinciri gereksinimi",
+        "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama",
+        "Aktif dış kanama veya bilinç kaybı yok",
+        "Hasta ne yapılacağı ve mahremiyet konusunda bilgilendirilmek istemektedir",
+        "Saldırı sonrası ağrı, yoğun kaygı ve ekimozlar"
       ],
       "historySummary": "Hasta saldırıdan yaklaşık 8 saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler. Aktif dış kanama veya bilinç kaybı yoktur.",
-      "priorityFocus": "Cinsel saldırı sonrası erken başvuruda güvenlik, mahremiyet, bilgilendirilmiş onam ve delil zinciri aynı klinik süreç içinde korunmalıdır."
-    }
+      "priorityFocus": "Cinsel saldırı sonrası erken başvuru ve delil zinciri gereksinimi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pulmonology-near-hanging-asphyxia-001",
@@ -25197,12 +25226,11 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Hasta ajite ve konfü.",
-      "Boyun ön yüzünde transvers ligatür izi ve hassasiyet var.",
-      "Ses kısıklığı, stridor başlangıcı ve yutma güçlüğü mevcut.",
-      "Konjonktival peteşiler ve yüzde siyanoz izleniyor.",
-      "Servikal omurga immobilizasyonu sürdürülüyor."
+      "Hasta ajite ve konfü",
+      "Boyun ön yüzünde transvers ligatür izi ve hassasiyet var",
+      "Ses kısıklığı, stridor başlangıcı ve yutma güçlüğü mevcut",
+      "Konjonktival peteşiler ve yüzde siyanoz izleniyor",
+      "Servikal omurga immobilizasyonu sürdürülüyor"
     ],
     "investigations": [
       {
@@ -25229,7 +25257,7 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "pH",
+            "PH",
             "7.28",
             "7.35-7.45",
             "Düşük"
@@ -25339,7 +25367,7 @@ export const cases = [
         "Primer epileptik nöbet",
         "Akut bakteriyel menenjit"
       ],
-      "explanation": "Boyun basısı sonrası hipoksemi, konfüzyon, peteşi, ligatür izi, ses kısıklığı ve BT'de laringeal ödem asfiksiye bağlı havayolu-nörolojik risk tablosunu destekler. Bu nedenle en uygun yanıt Boyun basısına bağlı asfiksi ve havayolu ödemi riski seçeneğidir.",
+      "explanation": "Boyun basısı sonrası hipoksemi, konfüzyon, peteşi, ligatür izi, ses kısıklığı ve BT'de laringeal ödem asfiksiye bağlı havayolu-nörolojik risk tablosunu destekler. Boyun basısına bağlı asfiksi ve havayolu ödemi riski seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -25360,23 +25388,23 @@ export const cases = [
         "whyCorrect": "Mekanizma ve objektif hipoksemi-havayolu bulguları asfiksiyi gösterir. Panik atağı veya izole nöbet bu fizik muayene ve BT bulgularını açıklamaz. Bu nedenle en uygun yanıt Boyun basısına bağlı asfiksi ve havayolu ödemi riski seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Boyun basısı ve kısa bilinç kaybı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "SpO₂ %86 ve kan gazında hipoksemi."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Fizik muayene",
             "text": "Ligatür izi ve konjonktival peteşi."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "BT'de laringeal ödem."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Boyun basısı sonrası bilinç bulanıklığı ve nefes darlığı başvurunun ana problemidir."
           }
         ],
@@ -25615,17 +25643,19 @@ export const cases = [
       "profile": "31 yaş erkek · Acil servis. Resüsitasyon alanı",
       "presentation": "Boyun basısı sonrası bilinç bulanıklığı ve nefes darlığı",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Boyun basısı ve kısa bilinç kaybı.",
-        "SpO₂ %86 ve kan gazında hipoksemi.",
-        "Ligatür izi ve konjonktival peteşi.",
-        "BT'de laringeal ödem."
+        "Boyun basısı ve kısa bilinç kaybı",
+        "SpO₂ %86 ve kan gazında hipoksemi",
+        "Ligatür izi ve konjonktival peteşi",
+        "BT'de laringeal ödem",
+        "Boyun basısı sonrası bilinç bulanıklığı ve nefes darlığı"
       ],
       "historySummary": "Hasta boyun basısı sonrası yakınları tarafından yarı bilinçli halde bulunarak acile getiriliyor. Olaydan sonra kısa süreli bilinç kaybı, ses kısıklığı, yutma ağrısı ve nefes darlığı tarifleniyor. Boyunda ligatür izi, konjonktival peteşiler ve hipoksemi.",
-      "priorityFocus": "Boyun basısı ve kısa bilinç kaybı hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir."
-    }
+      "priorityFocus": "Boyun basısı ve kısa bilinç kaybı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "internal-medicine-azathioprine-tpmt-toxicity-001",
@@ -25645,12 +25675,11 @@ export const cases = [
       "Ateş": "38.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Oral mukozada ağrılı aftöz ülserler mevcut.",
-      "Bacaklarda yaygın ekimoz ve peteşiler izleniyor.",
-      "Karında peritonit bulgusu yok.",
-      "Akciğer oskültasyonunda belirgin odak saptanmıyor.",
-      "Lenfadenopati ve hepatosplenomegali belirgin değil."
+      "Oral mukozada ağrılı aftöz ülserler mevcut",
+      "Bacaklarda yaygın ekimoz ve peteşiler izleniyor",
+      "Karında peritonit bulgusu yok",
+      "Akciğer oskültasyonunda belirgin odak saptanmıyor",
+      "Lenfadenopati ve hepatosplenomegali belirgin değil"
     ],
     "investigations": [
       {
@@ -25793,7 +25822,7 @@ export const cases = [
         "İlaç dozunu unutmaya bağlı tedavi başarısızlığı",
         "Akut viral üst solunum yolu enfeksiyonu"
       ],
-      "explanation": "Standart doz azatioprin sonrası kısa sürede pansitopeni, nötropenik ateş ve TPMT düşük aktivite varyantı görülmesi farmakogenetik kaynaklı tiopürin toksisitesini destekler. Bu nedenle en uygun yanıt TPMT düşük aktivitesine bağlı azatioprin toksisitesi seçeneğidir.",
+      "explanation": "Standart doz azatioprin sonrası kısa sürede pansitopeni, nötropenik ateş ve TPMT düşük aktivite varyantı görülmesi farmakogenetik kaynaklı tiopürin toksisitesini destekler. TPMT düşük aktivitesine bağlı azatioprin toksisitesi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -25814,23 +25843,23 @@ export const cases = [
         "whyCorrect": "Doz uyumu olmasına rağmen standart dozda ağır miyelosupresyon gelişmesi ve TPMT varyantının saptanması farmakogenetik toksisiteyi en güçlü tanı yapar. Bu nedenle en uygun yanıt TPMT düşük aktivitesine bağlı azatioprin toksisitesi seçeneğidir.",
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Azatioprin başlanmasından sonra zaman uyumlu toksisite."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Ateş, oral ülser ve ekimoz."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Ağır nötropeni ve trombositopeni."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "TPMT düşük aktivite varyantı ve yüksek 6-TGN düzeyi."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Azatioprin başlandıktan üç hafta sonra ateş, ağız yarası ve halsizlik başvurunun ana problemidir."
           }
         ],
@@ -26048,19 +26077,21 @@ export const cases = [
       "profile": "29 yaş kadın, inflamatuvar bağırsak hastalığı nedeniyle izlenen hasta · Acil servis. İlaç toksisitesi değerlendirmesi",
       "presentation": "Azatioprin başlandıktan üç hafta sonra ateş, ağız yarası ve halsizlik",
       "riskContext": [
-        "Toksin veya ilaç maruziyeti olasılığı.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı.",
-        "Aile öyküsü veya kalıtsal yatkınlık."
+        "Toksin veya ilaç maruziyeti olasılığı",
+        "Enfeksiyon ve temas ve izolasyon bağlamı",
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Azatioprin başlanmasından sonra zaman uyumlu toksisite.",
-        "Ateş, oral ülser ve ekimoz.",
-        "Ağır nötropeni ve trombositopeni.",
-        "TPMT düşük aktivite varyantı ve yüksek 6-TGN düzeyi."
+        "Azatioprin başlanmasından sonra zaman uyumlu toksisite",
+        "Ateş, oral ülser ve ekimoz",
+        "Ağır nötropeni ve trombositopeni",
+        "TPMT düşük aktivite varyantı ve yüksek 6-TGN düzeyi",
+        "Azatioprin başlandıktan üç hafta sonra ateş, ağız yarası ve halsizlik"
       ],
       "historySummary": "İnflamatuvar bağırsak hastalığı için standart doz azatioprin başlanan hasta, üç hafta içinde ateş, belirgin halsizlik, oral ülser ve kolay morarma ile başvurur. Dozu önerildiği gibi kullandığını söyler. Ailede benzer ilaç yanıtı öyküsü vardır.",
-      "priorityFocus": "Azatioprin başlanmasından sonra zaman uyumlu toksisite karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Azatioprin başlanmasından sonra zaman uyumlu toksisite klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-forensic-stab-wound-001",
@@ -26083,9 +26114,8 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Sağ ön kolda yaklaşık 4 cm uzunluğunda kesici-delici alet yarası izleniyor.",
-      "Aktif arteriyel kanama yok."
+      "Sağ ön kolda yaklaşık 4 cm uzunluğunda kesici-delici alet yarası izleniyor",
+      "Aktif arteriyel kanama yok"
     ],
     "investigations": [],
     "images": [],
@@ -26106,7 +26136,7 @@ export const cases = [
         "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak",
         "Adli süreç tamamlanana kadar yara bakımını ertelemek"
       ],
-      "explanation": "Kesici-delici alet yaralanması adli olgu niteliği taşır. Olayın kazara olduğu söylenmesi hekimin kayıt ve bildirim yükümlülüğünü kaldırmaz. Tıbbi müdahale geciktirilmeden yapılmalı, yara özellikleri objektif kaydedilmeli ve adli bildirim başlatılmalıdır. Bu nedenle en uygun yanıt Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak seçeneğidir.",
+      "explanation": "Kesici-delici alet yaralanması adli olgu niteliği taşır. Olayın kazara olduğu söylenmesi hekimin kayıt ve bildirim yükümlülüğünü kaldırmaz. Tıbbi müdahale geciktirilmeden yapılmalı, yara özellikleri objektif kaydedilmeli ve adli bildirim başlatılmalıdır. Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -26134,23 +26164,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Kesici-delici alet yaralanması acil servise başvuru nedenidir."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Olay öyküsü kısa ve tutarsızdır."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Yara derinliği hastanın beyanıyla tam uyumlu değildir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Vital bulgular stabil olduğu için kayıt ve bildirim tedaviyle eş zamanlı yürütülebilir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Kesici-delici yaralanma, tutarsız olay öyküsü."
           }
         ],
@@ -26250,17 +26280,19 @@ export const cases = [
       "profile": "24 yaşında erkek hasta · Acil servis",
       "presentation": "Sağ ön kolda kesici-delici alet yaralanması",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Kesici-delici yaralanma, tutarsız olay öyküsü.",
-        "Kesici-delici alet yaralanması acil servise başvuru nedenidir.",
-        "Olay öyküsü kısa ve tutarsızdır.",
-        "Yara derinliği hastanın beyanıyla tam uyumlu değildir."
+        "Kesici-delici yaralanma, tutarsız olay öyküsü",
+        "Kesici-delici alet yaralanması acil servise başvuru nedenidir",
+        "Olay öyküsü kısa ve tutarsızdır",
+        "Yara derinliği hastanın beyanıyla tam uyumlu değildir",
+        "Sağ ön kolda kesici-delici alet yaralanması"
       ],
       "historySummary": "Yaranın kazara olduğunu söyler. Ancak olay öyküsü kısa, tutarsız ve yara derinliği beyanla tam uyumlu değildir. Bilinci açık, vital bulguları stabildir.",
-      "priorityFocus": "Kesici-delici yaralanma, tutarsız olay öyküsü klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Kesici-delici yaralanma, tutarsız olay öyküsü klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-forensic-traffic-accident-report-001",
@@ -26283,9 +26315,8 @@ export const cases = [
       "Ateş": "36.4 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Sağ omuzda hassasiyet ve hareketle ağrı mevcut.",
-      "Sağ diz ön yüzde sıyrık ve hassasiyet izleniyor."
+      "Sağ omuzda hassasiyet ve hareketle ağrı mevcut",
+      "Sağ diz ön yüzde sıyrık ve hassasiyet izleniyor"
     ],
     "investigations": [],
     "images": [],
@@ -26306,7 +26337,7 @@ export const cases = [
         "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek",
         "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek"
       ],
-      "explanation": "Trafik kazası sonrası acil başvuru adli olgu kabul edilir. Hastanın alkol almadığını söylemesi veya stabil olması objektif kayıt yükümlülüğünü ortadan kaldırmaz. Doğru yaklaşım travma bulgularını ayrıntılı yazmak, gerekli tıbbi değerlendirmeyi yapmak ve adli rapor veya bildirim sürecini başlatmaktır. Bu nedenle en uygun yanıt Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak seçeneğidir.",
+      "explanation": "Trafik kazası sonrası acil başvuru adli olgu kabul edilir. Hastanın alkol almadığını söylemesi veya stabil olması objektif kayıt yükümlülüğünü ortadan kaldırmaz. Doğru yaklaşım travma bulgularını ayrıntılı yazmak, gerekli tıbbi değerlendirmeyi yapmak ve adli rapor veya bildirim sürecini başlatmaktır. Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -26334,23 +26365,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Motosiklet kazası travmatik olaydır ve adli nitelik taşır."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Kısa süreli sersemlik kafa travması açısından kayıt gerektirir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Omuz ve diz ağrısı travma muayenesinin ayrıntılandırılmasını gerektirir."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Alkol almadığını beyan etmesi objektif değerlendirme gereğini kaldırmaz."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Trafik kazası, kısa süreli sersemlik, travma bulguları."
           }
         ],
@@ -26450,17 +26481,19 @@ export const cases = [
       "profile": "31 yaşında erkek hasta · Acil servis",
       "presentation": "Motosiklet kazası sonrası omuz ve diz ağrısı",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Trafik kazası, kısa süreli sersemlik, travma bulguları.",
-        "Motosiklet kazası travmatik olaydır ve adli nitelik TAşır.",
-        "Kısa süreli sersemlik kafa travması açısından kayıt gerektirir.",
-        "Omuz ve diz ağrısı travma muayenesinin ayrıntılandırılmasını gerektirir."
+        "Trafik kazası, kısa süreli sersemlik, travma bulguları",
+        "Motosiklet kazası travmatik olaydır ve adli nitelik TAşır",
+        "Kısa süreli sersemlik kafa travması açısından kayıt gerektirir",
+        "Omuz ve diz ağrısı travma muayenesinin ayrıntılandırılmasını gerektirir",
+        "Motosiklet kazası sonrası omuz ve diz ağrısı"
       ],
       "historySummary": "Hasta motosiklet kazası sonrası acile getirilir. Kask taktığını, kısa süreli sersemlik yaşadığını ve sağ omuz-diz ağrısı olduğunu söyler. Alkol almadığını belirtir.",
-      "priorityFocus": "Trafik kazası, kısa süreli sersemlik, travma bulguları klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Trafik kazası, kısa süreli sersemlik, travma bulguları klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-ethics-unconscious-consent-001",
@@ -26483,9 +26516,8 @@ export const cases = [
       "Ateş": "36.2 °C"
     },
     "exam": [
-      "Genel durum kötü.",
-      "Solunum yüzeyel, hava yolu korunumu zayıf ve sekresyon aspirasyon riski mevcut.",
-      "Cilt soğuk ve terli, kapiller dolum gecikmiş."
+      "Solunum yüzeyel, hava yolu korunumu zayıf ve sekresyon aspirasyon riski mevcut",
+      "Cilt soğuk ve terli, kapiller dolum gecikmiş"
     ],
     "investigations": [],
     "images": [],
@@ -26506,7 +26538,7 @@ export const cases = [
         "Onam alınamadığı için hastayı başka merkeze sevk etmek",
         "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak"
       ],
-      "explanation": "Yakınına ulaşılamayan, bilinci kapalı ve hava yolu riski olan hastada acil durum varsayılan onam ilkesini doğurur. Yaşamı tehdit eden tablo varsa gerekli stabilizasyon ve müdahale yapılır. Onam eksikliği acil tedaviyi erteleme gerekçesi değildir. Bu nedenle en uygun yanıt Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak seçeneğidir.",
+      "explanation": "Yakınına ulaşılamayan, bilinci kapalı ve hava yolu riski olan hastada acil durum varsayılan onam ilkesini doğurur. Yaşamı tehdit eden tablo varsa gerekli stabilizasyon ve müdahale yapılır. Onam eksikliği acil tedaviyi erteleme gerekçesi değildir. Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -26534,23 +26566,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Hasta bilinçsiz ve sorulara yanıt vermiyor."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Solunum yüzeyel."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Yakını henüz hastaneye ulaşmamış."
           },
           {
-            "title": "Klinik bağlam",
+            "title": "Öykü",
             "text": "Gecikme yaşamı tehdit eden solunum veya dolaşım sorunlarına yol açabilir."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Bilinç kapalı hasta, hava yolu riski, yakına ulaşılamaması."
           }
         ],
@@ -26650,17 +26682,19 @@ export const cases = [
       "profile": "67 yaşında erkek hasta · Acil servis resüsitasyon alanı",
       "presentation": "Bilinç kaybı ve solunum sıkıntısı",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Bilinç kapalı hasta, hava yolu riski, yakına ulaşılamaması.",
-        "Hasta bilinçsiz ve sorulara yanıt vermiyor.",
-        "Solunum yüzeyel.",
-        "Yakını henüz hastaneye ulaşmamış."
+        "Bilinç kapalı hasta, hava yolu riski, yakına ulaşılamaması",
+        "Hasta bilinçsiz ve sorulara yanıt vermiyor",
+        "Solunum yüzeyel",
+        "Yakını henüz hastaneye ulaşmamış",
+        "Bilinç kaybı ve solunum sıkıntısı"
       ],
       "historySummary": "Hasta evde bilinçsiz bulunarak ambulansla getirilir. Yakını henüz hastaneye ulaşmamıştır. Hasta sorulara yanıt vermez, solunumu yüzeyeldir ve hava yolu güvenliği açısından risklidir.",
-      "priorityFocus": "Bilinç kapalı hastada hava yolu riski varsa yaşam tehdidi nedeniyle varsayılan onamla acil stabilizasyon geciktirilmeden yapılmalıdır."
-    }
+      "priorityFocus": "Bilinç kapalı hasta, hava yolu riski, yakına ulaşılamaması klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-domestic-violence-safety-001",
@@ -26683,9 +26717,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Yüz, boyun ve üst kolda farklı yaşlarda ekimozlar izleniyor.",
-      "Boyunda yüzeyel tırnak izleriyle uyumlu lineer sıyrıklar mevcut."
+      "Yüz, boyun ve üst kolda farklı yaşlarda ekimozlar izleniyor",
+      "Boyunda yüzeyel tırnak izleriyle uyumlu lineer sıyrıklar mevcut"
     ],
     "investigations": [],
     "images": [],
@@ -26706,7 +26739,7 @@ export const cases = [
         "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek",
         "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek"
       ],
-      "explanation": "Aile içi şiddet şüphesinde hasta güvenli ve mahrem ortamda tek başına değerlendirilmelidir. Kontrol edici eş varlığı, tutarsız düşme öyküsü ve güvenlik iması risk değerlendirmesi, objektif kayıt, destek ve uygun bildirim sürecini gerektirir. Bu nedenle en uygun yanıt Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak seçeneğidir.",
+      "explanation": "Aile içi şiddet şüphesinde hasta güvenli ve mahrem ortamda tek başına değerlendirilmelidir. Kontrol edici eş varlığı, tutarsız düşme öyküsü ve güvenlik iması risk değerlendirmesi, objektif kayıt, destek ve uygun bildirim sürecini gerektirir. Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -26734,23 +26767,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Hasta yalnız kalınca evde güvende hissetmediğini ima ediyor."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Morluklar şiddet olasılığı açısından objektif kayda ihtiyaç duyuyor."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Mahrem görüşme yapılmadan güvenlik riski doğru değerlendirilemez."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Eşin kontrol edici varlığı, yalnız kalınca güvende hissetmediğini ima etme."
           }
         ],
@@ -26850,18 +26883,20 @@ export const cases = [
       "profile": "34 yaşında kadın hasta · Acil servis",
       "presentation": "Tekrarlayan düşme öyküsü ve yüz-boyun ekimozları",
       "riskContext": [
-        "Çocukta güvenlik ve öykü-bulgu uyumu riski.",
-        "Travma veya adli kayıt gerektiren olay."
+        "Çocukta güvenlik ve öykü-bulgu uyumu riski",
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Eşin kontrol edici varlığı, yalnız kalınca güvende hissetmediğini ima etme.",
-        "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor.",
-        "Hasta yalnız kalınca evde güvende hissetmediğini ima ediyor.",
-        "Morluklar şiddet olasılığı açısından objektif kayda ihtiyaç duyuyor."
+        "Eşin kontrol edici varlığı, yalnız kalınca güvende hissetmediğini ima etme",
+        "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor",
+        "Hasta yalnız kalınca evde güvende hissetmediğini ima ediyor",
+        "Morluklar şiddet olasılığı açısından objektif kayda ihtiyaç duyuyor",
+        "Tekrarlayan düşme öyküsü ve yüz-boyun ekimozları"
       ],
       "historySummary": "Hasta \"merdivenden düştüğünü\" söyleyerek başvurur. Eşi sürekli yanında durmakta ve hastanın sorulara tek başına yanıt vermesine izin vermemektedir. Hasta kısa süre yalnız kaldığında evde güvende hissetmediğini ima eder.",
-      "priorityFocus": "Eşin görüşmeyi kontrol etmesi ve hastanın yalnızken güvende olmadığını ima etmesi aile içi şiddet açısından mahrem güvenlik değerlendirmesini zorunlu kılar."
-    }
+      "priorityFocus": "Eşin kontrol edici varlığı, yalnız kalınca güvende hissetmediğini ima etme klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-forensic-poisoning-sample-001",
@@ -26884,9 +26919,9 @@ export const cases = [
       "Ateş": "36.1 °C"
     },
     "exam": [
-      "Genel durum orta-kötü.",
-      "Pupiller orta genişlikte ve ışığa yanıtlı.",
-      "Ağız çevresinde kusmuk bulaşı mevcut."
+      "Genel durum orta-kötü",
+      "Pupiller orta genişlikte ve ışığa yanıtlı",
+      "Ağız çevresinde kusmuk bulaşı mevcut"
     ],
     "investigations": [
       {
@@ -26938,7 +26973,7 @@ export const cases = [
         "Adli örnek alınana kadar hava yolu müdahalesini ertelemek",
         "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak"
       ],
-      "explanation": "Şüpheli zehirlenmede ilk öncelik ABC stabilizasyonudur. Eş zamanlı olarak toksikolojik örnekler uygun şekilde alınır, şüpheli materyal korunur ve adli bildirim yapılır. Etiketsiz şişe ve tutarsız yanıtlar örnek saklama ve kayıt zincirini özellikle önemli hale getirir. Bu nedenle en uygun yanıt ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak seçeneğidir.",
+      "explanation": "Şüpheli zehirlenmede ilk öncelik ABC stabilizasyonudur. Eş zamanlı olarak toksikolojik örnekler uygun şekilde alınır, şüpheli materyal korunur ve adli bildirim yapılır. Etiketsiz şişe ve tutarsız yanıtlar örnek saklama ve kayıt zincirini özellikle önemli hale getirir. ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -26966,23 +27001,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Hasta bilinç bulanıklığı ve kusma ile getiriliyor."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Masada etiketsiz içecek şişesi ve ilaç blisterleri bulunmuş."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Hasta sorulara tutarsız yanıt veriyor."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Şüpheli materyal toksikolojik ve adli kanıt değerindedir."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Bilinç bulanıklığı, etiketsiz şişe veya ilaç blisterleri, şüpheli zehirlenme."
           }
         ],
@@ -27082,18 +27117,20 @@ export const cases = [
       "profile": "40 yaşında erkek hasta · Acil servis",
       "presentation": "Ani bilinç bulanıklığı ve kusma",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay.",
-        "Toksin veya ilaç maruziyeti olasılığı."
+        "Travma veya adli kayıt gerektiren olay",
+        "Toksin veya ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "Bilinç bulanıklığı ve şüpheli toksik madde maruziyeti.",
-        "Hasta bilinç bulanıklığı ve kusma ile getiriliyor.",
-        "Masada etiketsiz içecek şişesi ve ilaç blisterleri bulunmuş.",
-        "Hasta sorulara tutarsız yanıt veriyor."
+        "Bilinç bulanıklığı ve şüpheli toksik madde maruziyeti",
+        "Hasta bilinç bulanıklığı ve kusma ile getiriliyor",
+        "Masada etiketsiz içecek şişesi ve ilaç blisterleri bulunmuş",
+        "Hasta sorulara tutarsız yanıt veriyor",
+        "Ani bilinç bulanıklığı ve kusma"
       ],
       "historySummary": "Hasta evde bilinç bulanıklığı ve kusma sonrası getirilir. Yakınları, masada etiketsiz bir içecek şişesi ve ilaç blisterleri gördüklerini söyler. Hasta aralıklı uyanık, sorulara tutarsız yanıt verir.",
-      "priorityFocus": "Bilinç bulanıklığı ve şüpheli toksik madde maruziyeti klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Bilinç bulanıklığı ve şüpheli toksik madde maruziyeti klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-occupational-accident-reporting-001",
@@ -27116,9 +27153,8 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Sağ ikinci ve üçüncü parmakta ezilme, ödem ve subungual hematom izleniyor.",
-      "Kapiller dolum ikinci parmakta hafif gecikmiş, üçüncü parmakta normal."
+      "Sağ ikinci ve üçüncü parmakta ezilme, ödem ve subungual hematom izleniyor",
+      "Kapiller dolum ikinci parmakta hafif gecikmiş, üçüncü parmakta normal"
     ],
     "investigations": [],
     "images": [],
@@ -27139,7 +27175,7 @@ export const cases = [
         "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek",
         "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak"
       ],
-      "explanation": "İş kazasında hekimin görevi işverenin isteğine göre kayıt düzenlemek değil, tıbbi bulguları objektif yazmak ve bildirim sürecini başlatmaktır. Tıbbi müdahale geciktirilmeden yapılır. Yaralanmanın iş kazası veya adli niteliği kayda geçirilir. Bu nedenle en uygun yanıt Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak seçeneğidir.",
+      "explanation": "İş kazasında hekimin görevi işverenin isteğine göre kayıt düzenlemek değil, tıbbi bulguları objektif yazmak ve bildirim sürecini başlatmaktır. Tıbbi müdahale geciktirilmeden yapılır. Yaralanmanın iş kazası veya adli niteliği kayda geçirilir. Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -27167,23 +27203,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Yaralanma fabrikada pres makinesiyle gerçekleşmiş."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "İşveren \"basit yaralanma\" olarak yazılmasını istemiş."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Hasta ağrılı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Masif kanama olmasa da doku, sinir ve tendon hasarı değerlendirilmelidir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi."
           }
         ],
@@ -27283,17 +27319,19 @@ export const cases = [
       "profile": "45 yaşında erkek işçi · Acil servis",
       "presentation": "El pres makinesinde parmak ezilmesi",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi.",
-        "Yaralanma fabrikada pres makinesiyle gerçekleşmiş.",
-        "İşveren \"basit yaralanma\" olarak yazılmasını istemiş.",
-        "Hasta ağrılı."
+        "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi",
+        "Yaralanma fabrikada pres makinesiyle gerçekleşmiş",
+        "İşveren \"basit yaralanma\" olarak yazılmasını istemiş",
+        "Hasta ağrılı",
+        "El pres makinesinde parmak ezilmesi"
       ],
       "historySummary": "Hasta fabrikada pres makinesine sağ elini sıkıştırdıktan sonra acile gelir. İşverenin \"basit yaralanma olarak yazılsın\" dediğini belirtir. Hasta ağrılıdır, aktif masif kanama yoktur.",
-      "priorityFocus": "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "İşyerinde pres yaralanması, işverenin kayıt yönlendirmesi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-clinical-urticaria-001",
@@ -27316,9 +27354,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Gövde ve üst ekstremitelerde yaygın ürtikeryal plaklar izleniyor.",
-      "Dudaklarda hafif anjiyoödem mevcut."
+      "Gövde ve üst ekstremitelerde yaygın ürtikeryal plaklar izleniyor",
+      "Dudaklarda hafif anjiyoödem mevcut"
     ],
     "investigations": [],
     "images": [],
@@ -27339,7 +27376,7 @@ export const cases = [
         "Sistemik kortikosteroidi tek tedavi olarak vermek",
         "Geniş spektrumlu antibiyotik başlamak"
       ],
-      "explanation": "Bu tablo izole akut ürtiker-hafif anjiyoödem ile uyumludur. Hipotansiyon, hışıltılı solunum, dispne, senkop, kusma veya çoklu sistem tutulumu yoktur. Bu nedenle ilk yaklaşım antihistaminik, tetikleyiciden kaçınma ve yakın izlem olmalıdır. Bu nedenle en uygun yanıt Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma seçeneğidir.",
+      "explanation": "Bu tablo izole akut ürtiker-hafif anjiyoödem ile uyumludur. Hipotansiyon, hışıltılı solunum, dispne, senkop, kusma veya çoklu sistem tutulumu yoktur. Bu nedenle ilk yaklaşım antihistaminik, tetikleyiciden kaçınma ve yakın izlem olmalıdır. Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -27367,23 +27404,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Fıstık sonrası 20 dakika içinde kaşıntı ve kabarıklık gelişmiş."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "Dudak şişliği hafif."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Kusma, göğüste sıkışma ve hipotansiyon tariflenmiyor."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Vital stabilite acil entübasyon gerektiren tabloyu desteklemiyor."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Ürtiker, hafif anjiyoödem."
           }
         ],
@@ -27483,17 +27520,19 @@ export const cases = [
       "profile": "19 yaşında kadın hasta · Acil poliklinik",
       "presentation": "Fıstıklı tatlı sonrası kaşıntı ve dudak şişliği",
       "riskContext": [
-        "Ayaktan başvuruda tanısal önceliklendirme."
+        "Ayaktan başvuruda tanısal önceliklendirme"
       ],
       "distinctiveClues": [
-        "Ürtiker ve hafif anjiyoödem.",
-        "Fıstık sonrası 20 dakika içinde kaşıntı ve kabarıklık gelişmiş.",
-        "Dudak şişliği hafif.",
-        "Kusma, göğüste sıkışma ve hipotansiyon tariflenmiyor."
+        "Ürtiker ve hafif anjiyoödem",
+        "Fıstık sonrası 20 dakika içinde kaşıntı ve kabarıklık gelişmiş",
+        "Dudak şişliği hafif",
+        "Kusma, göğüste sıkışma ve hipotansiyon tariflenmiyor",
+        "Fıstıklı tatlı sonrası kaşıntı ve dudak şişliği"
       ],
       "historySummary": "Hasta fıstık içeren tatlı yedikten yaklaşık 20 dakika sonra yaygın kaşıntı, dudaklarda hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma, kusma veya göğüste sıkışma tariflemez.",
-      "priorityFocus": "Hipotansiyon, solunum bulgusu veya çoklu sistem tutulumu yoksa izole ürtiker ve hafif anjiyoödem düşünülür."
-    }
+      "priorityFocus": "Ürtiker ve hafif anjiyoödem klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-tus-scarlet-fever-001",
@@ -27516,9 +27555,8 @@ export const cases = [
       "Ateş": "38.6 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Tonsiller hiperemi ve eksüdatif görünüm mevcut.",
-      "Dil başlangıçta beyaz kaplı, papillalar belirgin."
+      "Tonsiller hiperemi ve eksüdatif görünüm mevcut",
+      "Dil başlangıçta beyaz kaplı, papillalar belirgin"
     ],
     "investigations": [],
     "images": [],
@@ -27539,7 +27577,7 @@ export const cases = [
         "Varicella-zoster virus",
         "Measles virus"
       ],
-      "explanation": "Ateş ve boğaz ağrısını izleyen pütürlü \"zımpara kağıdı\" döküntüsü kızıl için tipiktir ve etken Streptococcus pyogenes'tir. TUS'ta pütürlü döküntü, Pastia çizgileri ve çilek dili streptokokal toksin aracılı tabloyu düşündürür. Bu nedenle en uygun yanıt Streptococcus pyogenes seçeneğidir.",
+      "explanation": "Ateş ve boğaz ağrısını izleyen pütürlü \"zımpara kağıdı\" döküntüsü kızıl için tipiktir ve etken Streptococcus pyogenes'tir. TUS'ta pütürlü döküntü, Pastia çizgileri ve çilek dili streptokokal toksin aracılı tabloyu düşündürür. Streptococcus pyogenes seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -27567,19 +27605,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Ateş ve boğaz ağrısı döküntüden önce başlamış."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Döküntü gövdeden yayılıyor ve dokununca pütürlü hissediliyor."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Klinik tablo streptokokal farenjit sonrası kızılı destekliyor."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü."
           }
         ],
@@ -27679,17 +27717,19 @@ export const cases = [
       "profile": "5 yaşında çocuk · Çocuk acil",
       "presentation": "Ateş, boğaz ağrısı ve gövdeden başlayan döküntü",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü.",
-        "Ateş ve boğaz ağrısı döküntüden önce başlamış.",
-        "Döküntü gövdeden yayılıyor ve dokununca pütürlü hissediliyor.",
-        "Klinik tablo streptokokal farenjit sonrası kızılı destekliyor."
+        "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü",
+        "Ateş ve boğaz ağrısı döküntüden önce başlamış",
+        "Döküntü gövdeden yayılıyor ve dokununca pütürlü hissediliyor",
+        "Klinik tablo streptokokal farenjit sonrası kızılı destekliyor",
+        "Ateş, boğaz ağrısı ve gövdeden başlayan döküntü"
       ],
       "historySummary": "Çocuk 3 gündür ateş ve boğaz ağrısı sonrası gövdeden başlayıp yayılan ince döküntü nedeniyle getirilir. Aile döküntünün dokununca pütürlü hissedildiğini söyler.",
-      "priorityFocus": "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü kızıl için tipiktir."
-    }
+      "priorityFocus": "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-exam-nursemaid-elbow-001",
@@ -27712,9 +27752,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Sağ üst ekstremite gövde yanında pronasyonda tutuluyor.",
-      "Dirsek çevresinde belirgin şişlik, ekimoz veya deformite yok."
+      "Sağ üst ekstremite gövde yanında pronasyonda tutuluyor",
+      "Dirsek çevresinde belirgin şişlik, ekimoz veya deformite yok"
     ],
     "investigations": [],
     "images": [],
@@ -27735,7 +27774,7 @@ export const cases = [
         "Septik artrit",
         "Omuz çıkığı"
       ],
-      "explanation": "Küçük çocukta elinden çekilme sonrası kolu kullanmama ve direkt travma veya ateş olmaması radius başı subluksasyonu için klasik ipucudur. Suprakondiler kırıkta düşme ve belirgin deformite. Septik artritte ateş ve sistemik bulgu beklenir. Bu nedenle en uygun yanıt Radius başı subluksasyonu seçeneğidir.",
+      "explanation": "Küçük çocukta elinden çekilme sonrası kolu kullanmama ve direkt travma veya ateş olmaması radius başı subluksasyonu için klasik ipucudur. Suprakondiler kırıkta düşme ve belirgin deformite. Septik artritte ateş ve sistemik bulgu beklenir. Radius başı subluksasyonu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -27763,23 +27802,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Başvuru yakınması",
             "text": "Yakınma çocuğun elinden çekilmesinden hemen sonra başlamış."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Düşme veya direkt travma öyküsü yok."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Ateş yok."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Kolunu kullanmama radial head subluksasyonunun tipik sunumudur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Elinden çekilme sonrası kolu kullanmama."
           }
         ],
@@ -27879,18 +27918,20 @@ export const cases = [
       "profile": "2 yaşında kız çocuk · Çocuk acil",
       "presentation": "Elinden çekildikten sonra sağ kolunu kullanmama",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Travma veya adli kayıt gerektiren olay",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Elinden çekilme sonrası kolu kullanmama.",
-        "Yakınma çocuğun elinden çekilmesinden hemen sonra başlamış.",
-        "Düşme veya direkt travma öyküsü yok.",
-        "Ateş yok."
+        "Elinden çekilme sonrası kolu kullanmama",
+        "Yakınma çocuğun elinden çekilmesinden hemen sonra başlamış",
+        "Düşme veya direkt travma öyküsü yok",
+        "Ateş yok",
+        "Elinden çekildikten sonra sağ kolunu kullanmama"
       ],
       "historySummary": "Çocuk kaldırımdan inerken annesi tarafından elinden çekildikten sonra ağlamış ve sağ kolunu kullanmamaya başlamıştır. Düşme, direkt travma veya ateş öyküsü yoktur.",
-      "priorityFocus": "Elinden çekilme sonrası kolu kullanmama."
-    }
+      "priorityFocus": "Elinden çekilme sonrası kolu kullanmama klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-tus-koplik-measles-001",
@@ -27913,9 +27954,8 @@ export const cases = [
       "Ateş": "39.0 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Konjunktival hiperemi, burun akıntısı ve öksürük mevcut.",
-      "Bukkal mukozada eritemli zemin üzerinde küçük beyazımsı Koplik lekeleri izleniyor."
+      "Konjunktival hiperemi, burun akıntısı ve öksürük mevcut",
+      "Bukkal mukozada eritemli zemin üzerinde küçük beyazımsı Koplik lekeleri izleniyor"
     ],
     "investigations": [],
     "images": [],
@@ -27936,7 +27976,7 @@ export const cases = [
         "Forchheimer lekeleri",
         "Ağrısız oral ülser"
       ],
-      "explanation": "Aşısı eksik çocukta ateş, öksürük, burun akıntısı, konjunktivit ve yüzden başlayan döküntü kızamığı düşündürür. Ayırt ettirici mukozal bulgu Koplik lekeleridir. Koplik lekeleri molar hizasında bukkal mukozada beyaz-mavimsi odaklar olarak sorulur. Bu nedenle en uygun yanıt Koplik lekeleri seçeneğidir.",
+      "explanation": "Aşısı eksik çocukta ateş, öksürük, burun akıntısı, konjunktivit ve yüzden başlayan döküntü kızamığı düşündürür. Ayırt ettirici mukozal bulgu Koplik lekeleridir. Koplik lekeleri molar hizasında bukkal mukozada beyaz-mavimsi odaklar olarak sorulur. Koplik lekeleri seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -27964,23 +28004,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Aşıları eksik çocukta prodromal ateş ve öksürük var."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Koriza ve konjunktivit kızamığın \"3C\" bulgularını tamamlıyor."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Döküntü yüzden başlayıp gövdeye yayılıyor."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Soru özellikle mukozal ayırt ettirici bulguyu sorguluyor."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, ilgili klinik tablo."
           }
         ],
@@ -28080,17 +28120,19 @@ export const cases = [
       "profile": "7 yaşında aşısız çocuk · Çocuk polikliniği",
       "presentation": "Ateş, öksürük, göz kızarıklığı ve döküntü",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, ilgili klinik tablo.",
-        "Aşıları eksik çocukta prodromal ateş ve öksürük var.",
-        "Koriza ve konjunktivit kızamığın \"3C\" bulgularını tamamlıyor.",
-        "Döküntü yüzden başlayıp gövdeye yayılıyor."
+        "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, ilgili klinik tablo",
+        "Aşıları eksik çocukta prodromal ateş ve öksürük var",
+        "Koriza ve konjunktivit kızamığın \"3C\" bulgularını tamamlıyor",
+        "Döküntü yüzden başlayıp gövdeye yayılıyor",
+        "Ateş, öksürük, göz kızarıklığı ve döküntü"
       ],
       "historySummary": "Aşıları eksik olan çocuk 4 gündür ateş, öksürük, burun akıntısı ve göz kızarıklığı sonrası yüzden başlayıp gövdeye yayılan döküntü ile getirilir.",
-      "priorityFocus": "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, ilgili klinik tablo kızamık için yüksek verimli spot ipucudur."
-    }
+      "priorityFocus": "Öksürük-konjunktivit-koriza, yüzde başlayan döküntü, ilgili klinik tablo klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-emergency-epistaxis-first-step-001",
@@ -28113,9 +28155,8 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Ön rinoskopide sağ anterior septumda sızıntı tarzı kanama odağı izleniyor.",
-      "Ağız içine aktif yoğun kan akışı yok."
+      "Ön rinoskopide sağ anterior septumda sızıntı tarzı kanama odağı izleniyor",
+      "Ağız içine aktif yoğun kan akışı yok"
     ],
     "investigations": [],
     "images": [],
@@ -28136,7 +28177,7 @@ export const cases = [
         "İlk basamak olarak acil cerrahi ligasyon yapmak",
         "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak"
       ],
-      "explanation": "Stabil anterior epistaksiste ilk işlem hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamaktır. Geriye yatırmak kanın yutulmasına veya aspirasyona yol açabilir. Cerrahi ligasyon veya transfüzyon ilk basamak değildir. Bu nedenle en uygun yanıt Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak seçeneğidir.",
+      "explanation": "Stabil anterior epistaksiste ilk işlem hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamaktır. Geriye yatırmak kanın yutulmasına veya aspirasyona yol açabilir. Cerrahi ligasyon veya transfüzyon ilk basamak değildir. Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -28164,19 +28205,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Kanama anterior epistaksis ile uyumlu ve hasta stabil."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Antikoagülan kullanımı ve travma öyküsü yok."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Kan tadı yutma kanın arkaya akabileceğini gösterir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Stabil anterior epistaksis."
           }
         ],
@@ -28276,17 +28317,19 @@ export const cases = [
       "profile": "52 yaşında erkek hasta · Acil poliklinik",
       "presentation": "Ani başlayan burun kanaması",
       "riskContext": [
-        "Toksin veya ilaç maruziyeti olasılığı."
+        "Toksin veya ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "Stabil anterior epistaksis.",
-        "Kanama anterior epistaksis ile uyumlu ve hasta stabil.",
-        "Antikoagülan kullanımı ve travma öyküsü yok.",
-        "Kan tadı yutma kanın arkaya akabileceğini gösterir."
+        "Stabil anterior epistaksis",
+        "Kanama anterior epistaksis ile uyumlu ve hasta stabil",
+        "Antikoagülan kullanımı ve travma öyküsü yok",
+        "Kan tadı yutma kanın arkaya akabileceğini gösterir",
+        "Ani başlayan burun kanaması"
       ],
       "historySummary": "Hasta 20 dakikadır devam eden burun kanaması nedeniyle başvurur. Bilinci açık, yutkunmakla hafif kan tadı aldığını söyler. Antikoagülan kullanmaz, travma öyküsü yoktur.",
-      "priorityFocus": "Stabil anterior epistaksis klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Stabil anterior epistaksis klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-forensic-death-suspicion-001",
@@ -28309,9 +28352,9 @@ export const cases = [
       "Ateş": "—"
     },
     "exam": [
-      "Bilinç yok.",
-      "Pupiller geniş ve ışık refleksi alınmıyor.",
-      "Vücutta ölü morlukları ve katılık bulguları izleniyor."
+      "Bilinç yok",
+      "Pupiller geniş ve ışık refleksi alınmıyor",
+      "Vücutta ölü morlukları ve katılık bulguları izleniyor"
     ],
     "investigations": [],
     "images": [],
@@ -28332,7 +28375,7 @@ export const cases = [
         "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak",
         "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek"
       ],
-      "explanation": "Şüpheli ölümde hekim ölüm nedenini doğal varsayarak defin ruhsatı düzenlemez. Bulguları kaydeder, olay yerini veya delilleri bozmaz ve yetkili adli makamlara bildirim yapar. TUS'ta \"şüpheli koşul\" varsa adli süreç önceliklidir. Bu nedenle en uygun yanıt Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek seçeneğidir.",
+      "explanation": "Şüpheli ölümde hekim ölüm nedenini doğal varsayarak defin ruhsatı düzenlemez. Bulguları kaydeder, olay yerini veya delilleri bozmaz ve yetkili adli makamlara bildirim yapar. TUS'ta \"şüpheli koşul\" varsa adli süreç önceliklidir. Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -28360,23 +28403,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Kişi evinde yalnız bulunmuştur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Ölüm koşulları net ve doğal seyirle açıklanmış değildir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Olay yeri ve deliller bozulmadan korunmalıdır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Hekimin rolü objektif bulguyu kaydetmek ve adli bildirimi yapmaktır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Yalnız yaşayan kişide şüpheli ölüm koşulları."
           }
         ],
@@ -28476,17 +28519,19 @@ export const cases = [
       "profile": "70 yaşında erkek hasta · Acil dışı ev ziyareti veya 112 değerlendirmesi",
       "presentation": "Evde ölü bulunma",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Yalnız yaşayan kişide şüpheli ölüm koşulları.",
-        "Kişi evinde yalnız bulunmuştur.",
-        "Ölüm koşulları net ve doğal seyirle açıklanmış değildir.",
-        "Olay yeri ve deliller bozulmadan korunmalıdır."
+        "Yalnız yaşayan kişide şüpheli ölüm koşulları",
+        "Kişi evinde yalnız bulunmuştur",
+        "Ölüm koşulları net ve doğal seyirle açıklanmış değildir",
+        "Olay yeri ve deliller bozulmadan korunmalıdır",
+        "Evde ölü bulunma"
       ],
       "historySummary": "Hasta evinde yalnız yaşarken yakınları tarafından ölü bulunur. Yakınları ölümün ne zaman gerçekleştiğini bilmez. Odada dağınıklık ve yerde kırık cam parçaları olduğu belirtilir.",
-      "priorityFocus": "Yalnız yaşayan kişide şüpheli ölüm koşulları klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Yalnız yaşayan kişide şüpheli ölüm koşulları klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "anatomy-radial-nerve-humerus-fracture-001",
@@ -28507,11 +28552,10 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Sağ üst kol orta bölümünde hassasiyet, şişlik ve hareketle ağrı izleniyor.",
-      "El bileği ve parmak ekstansiyonu belirgin zayıf.",
-      "Birinci dorsal web aralığında duyu azalması mevcut.",
-      "Radial ve ulnar nabızlar alınabiliyor."
+      "Sağ üst kol orta bölümünde hassasiyet, şişlik ve hareketle ağrı izleniyor",
+      "El bileği ve parmak ekstansiyonu belirgin zayıf",
+      "Birinci dorsal web aralığında duyu azalması mevcut",
+      "Radial ve ulnar nabızlar alınabiliyor"
     ],
     "investigations": [
       {
@@ -28689,7 +28733,7 @@ export const cases = [
         "Ulnar sinir yaralanması",
         "Aksiller sinir yaralanması"
       ],
-      "explanation": "Humerus orta şaftı spiral oluk komşuluğunda radial sinirle yakın ilişkilidir. El bileği-parmak ekstansiyon kaybı ve birinci dorsal web aralığında duyu azalması radial sinir tutulumunu destekler. Bu nedenle en uygun yanıt Radial sinir yaralanması seçeneğidir.",
+      "explanation": "Humerus orta şaftı spiral oluk komşuluğunda radial sinirle yakın ilişkilidir. El bileği-parmak ekstansiyon kaybı ve birinci dorsal web aralığında duyu azalması radial sinir tutulumunu destekler. Radial sinir yaralanması seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -28717,23 +28761,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama başvurunun ana problemidir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Genel durum iyi."
           }
         ],
@@ -28837,15 +28881,19 @@ export const cases = [
       "profile": "27 yaşında erkek hasta · Acil servis",
       "presentation": "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı.",
-        "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama."
+        "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı",
+        "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama",
+        "Sağ üst kol orta bölümünde hassasiyet, şişlik ve hareketle ağrı izleniyor",
+        "El bileği ve parmak ekstansiyonu belirgin zayıf",
+        "Birinci dorsal web aralığında duyu azalması mevcut"
       ],
       "historySummary": "Hasta bisikletten düştükten sonra sağ üst kolunda ağrı ve el bileğini yukarı kaldıramama yakınmasıyla başvurur. Travma doğrudan humerus orta şaftına yönelmiştir.",
-      "priorityFocus": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "physiology-baroreceptor-reflex-orthostatic-001",
@@ -28870,11 +28918,10 @@ export const cases = [
       "SpO2": "%98 oda havasında"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Ayağa kalkınca kısa süreli dengesizlik hissi oluyor ancak senkop gelişmiyor.",
-      "Mukozalar hafif kuru.",
-      "Kalp sesleri ritmik, belirgin üfürüm duyulmuyor.",
-      "Fokal nörolojik defisit saptanmıyor."
+      "Ayağa kalkınca kısa süreli dengesizlik hissi oluyor ancak senkop gelişmiyor",
+      "Mukozalar hafif kuru",
+      "Kalp sesleri ritmik, belirgin üfürüm duyulmuyor",
+      "Fokal nörolojik defisit saptanmıyor"
     ],
     "investigations": [],
     "images": [],
@@ -28955,7 +29002,7 @@ export const cases = [
         "Renin salgısının anlık tamamen baskılanması",
         "İnsülin aracılı vazodilatasyon"
       ],
-      "explanation": "Ayağa kalkınca venöz dönüş ve arteriyel basınç azalır. Karotis sinüs ve aort kavsindeki baroreseptör uyarısı azalınca sempatik tonus artar. Kalp hızı ve periferik direnç yükselerek kan basıncı korunmaya çalışılır. Bu nedenle en uygun yanıt Baroreseptör refleksine bağlı sempatik kompansasyon seçeneğidir.",
+      "explanation": "Ayağa kalkınca venöz dönüş ve arteriyel basınç azalır. Karotis sinüs ve aort kavsindeki baroreseptör uyarısı azalınca sempatik tonus artar. Kalp hızı ve periferik direnç yükselerek kan basıncı korunmaya çalışılır. Baroreseptör refleksine bağlı sempatik kompansasyon seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -28983,23 +29030,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Ayağa kalkınca kısa süreli baş dönmesi."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Ayağa kalkınca kısa süreli baş dönmesi başvurunun ana problemidir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Genel durum iyi."
           },
           {
-            "title": "Gerekçe bağlantısı",
+            "title": "Öykü",
             "text": "Ayağa kalkınca venöz dönüş ve arteriyel basınç azalır."
           }
         ],
@@ -29103,15 +29150,19 @@ export const cases = [
       "profile": "68 yaşında kadın hasta · Poliklinik",
       "presentation": "Ayağa kalkınca kısa süreli baş dönmesi",
       "riskContext": [
-        "Ayaktan başvuruda tanısal önceliklendirme."
+        "Ayaktan başvuruda tanısal önceliklendirme"
       ],
       "distinctiveClues": [
-        "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı.",
-        "Ayağa kalkınca kısa süreli baş dönmesi."
+        "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı",
+        "Ayağa kalkınca kısa süreli baş dönmesi",
+        "Ayağa kalkınca kısa süreli dengesizlik hissi oluyor ancak senkop gelişmiyor",
+        "Mukozalar hafif kuru",
+        "Kalp sesleri ritmik, belirgin üfürüm duyulmuyor"
       ],
       "historySummary": "Hasta özellikle sabah yataktan kalkınca birkaç saniye süren sersemlik hissettiğini, oturunca yakınmasının düzeldiğini söyler. Yeni başlanan diüretik tedavi sonrası sıvı alımı azalmıştır.",
-      "priorityFocus": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "histology-embryology-thyroglossal-duct-cyst-001",
@@ -29132,11 +29183,10 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Hyoid kemik komşuluğunda orta hatta düzgün sınırlı, yumuşak kıvamlı kitle palpe ediliyor.",
-      "Kitle yutkunma ve dil protrüzyonu ile yukarı doğru hareket ediyor.",
-      "Ciltte kızarıklık, ısı artışı veya fluktuasyon belirgin değil.",
-      "Servikal lenfadenopati saptanmıyor."
+      "Hyoid kemik komşuluğunda orta hatta düzgün sınırlı, yumuşak kıvamlı kitle palpe ediliyor",
+      "Kitle yutkunma ve dil protrüzyonu ile yukarı doğru hareket ediyor",
+      "Ciltte kızarıklık, ısı artışı veya fluktuasyon belirgin değil",
+      "Servikal lenfadenopati saptanmıyor"
     ],
     "investigations": [
       {
@@ -29236,7 +29286,7 @@ export const cases = [
         "Dermoid kist",
         "Reaktif servikal lenfadenit"
       ],
-      "explanation": "Tiroid bezi foramen çekumdan aşağı inerken tiroglossal kanal geriler. Kanal kalıntısı orta hatta, hyoid komşuluğunda, yutkunma ve dil çıkarma ile hareket eden kistik kitle oluşturur. Bu nedenle en uygun yanıt Tiroglossal kanal kisti seçeneğidir.",
+      "explanation": "Tiroid bezi foramen çekumdan aşağı inerken tiroglossal kanal geriler. Kanal kalıntısı orta hatta, hyoid komşuluğunda, yutkunma ve dil çıkarma ile hareket eden kistik kitle oluşturur. Tiroglossal kanal kisti seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -29264,23 +29314,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Boyun ön orta hatta şişlik."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Boyun ön orta hatta şişlik başvurunun ana problemidir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Genel durum iyi."
           }
         ],
@@ -29384,15 +29434,19 @@ export const cases = [
       "profile": "9 yaşında erkek çocuk · Çocuk cerrahisi polikliniği",
       "presentation": "Boyun ön orta hatta şişlik",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat.",
-        "Boyun ön orta hatta şişlik."
+        "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat",
+        "Boyun ön orta hatta şişlik",
+        "Hyoid kemik komşuluğunda orta hatta düzgün sınırlı, yumuşak kıvamlı kitle palpe ediliyor",
+        "Kitle yutkunma ve dil protrüzyonu ile yukarı doğru hareket ediyor",
+        "Ciltte kızarıklık, ısı artışı veya fluktuasyon belirgin değil"
       ],
       "historySummary": "Aile, çocuğun boyun ön orta hattında son aylarda fark edilen, zaman zaman büyüyen ağrısız bir şişlik olduğunu belirtir. Üst solunum yolu enfeksiyonlarından sonra belirginleştiği öğrenilir.",
-      "priorityFocus": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "obgyn-ectopic-pregnancy-001",
@@ -29413,11 +29467,10 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Batında sağ alt kadranda hassasiyet mevcut.",
-      "Servikal hareketle ağrı tarifleniyor.",
-      "Spekulum muayenesinde az miktarda koyu vajinal kanama izleniyor.",
-      "Omuz ağrısı tariflemiyor."
+      "Batında sağ alt kadranda hassasiyet mevcut",
+      "Servikal hareketle ağrı tarifleniyor",
+      "Spekulum muayenesinde az miktarda koyu vajinal kanama izleniyor",
+      "Omuz ağrısı tariflemiyor"
     ],
     "investigations": [
       {
@@ -29544,7 +29597,7 @@ export const cases = [
         "Akut sistit",
         "Ovulasyon ağrısı"
       ],
-      "explanation": "Adet gecikmesi, pozitif beta-hCG, tek taraflı pelvik ağrı, vajinal kanama ve intrauterin kese yokluğu ektopik gebeliği düşündürür. Hemodinamik durum ve rüptür riski ilk yönetimi belirler. Bu nedenle en uygun yanıt Ektopik gebelik seçeneğidir.",
+      "explanation": "Adet gecikmesi, pozitif beta-hCG, tek taraflı pelvik ağrı, vajinal kanama ve intrauterin kese yokluğu ektopik gebeliği düşündürür. Hemodinamik durum ve rüptür riski ilk yönetimi belirler. Ektopik gebelik seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -29572,23 +29625,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Altı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Altı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme başvurunun ana problemidir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Genel durum orta."
           }
         ],
@@ -29692,15 +29745,19 @@ export const cases = [
       "profile": "29 yaşında kadın hasta · Acil servis",
       "presentation": "ALTı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme",
       "riskContext": [
-        "Gebelik ve postpartum döneme bağlı tromboz riski."
+        "Gebelik ve postpartum döneme bağlı tromboz riski"
       ],
       "distinctiveClues": [
-        "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik.",
-        "ALTı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme."
+        "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik",
+        "ALTı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme",
+        "Batında sağ alt kadranda hassasiyet mevcut",
+        "Servikal hareketle ağrı tarifleniyor",
+        "Spekulum muayenesinde az miktarda koyu vajinal kanama izleniyor"
       ],
-      "historySummary": "Hasta son adet tarihine göre yaklaşık 6 haftalık gecikme olduğunu, son 12 saatte sağ ALT kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır.",
-      "priorityFocus": "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik karar verdirici klinik ipucudur."
-    }
+      "historySummary": "Hasta son adet tarihine göre yaklaşık 6 haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır.",
+      "priorityFocus": "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "pharm-organophosphate-cholinergic-crisis-001",
@@ -29721,11 +29778,11 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel durum orta-kötü.",
-      "Pupiller bilateral miyotik.",
-      "Ağız ve solunum yolu sekresyonlarında belirgin artış mevcut.",
-      "Akciğer oskültasyonunda yaygın ronküs ve sekresyon sesleri duyuluyor.",
-      "Ekstremitelerde ince fasikülasyonlar izleniyor."
+      "Genel durum orta-kötü",
+      "Pupiller bilateral miyotik",
+      "Ağız ve solunum yolu sekresyonlarında belirgin artış mevcut",
+      "Akciğer oskültasyonunda yaygın ronküs ve sekresyon sesleri duyuluyor",
+      "Ekstremitelerde ince fasikülasyonlar izleniyor"
     ],
     "investigations": [
       {
@@ -29862,23 +29919,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, muskarinik-nikotinik bulgular ve antidot seçimi."
           },
           {
-            "title": "Destekleyen bulgu",
-            "text": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu,."
+            "title": "Öykü",
+            "text": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, ."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon."
           },
           {
-            "title": "Başvuru bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon başvurunun ana problemidir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Genel durum orta-kötü."
           }
         ],
@@ -29982,15 +30039,19 @@ export const cases = [
       "profile": "42 yaşında erkek hasta · Acil servis",
       "presentation": "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon",
       "riskContext": [
-        "Toksin veya ilaç maruziyeti olasılığı."
+        "Toksin veya ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu.",
-        "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon."
+        "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu",
+        "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon",
+        "Genel durum orta-kötü",
+        "Pupiller bilateral miyotik",
+        "Ağız ve solunum yolu sekresyonlarında belirgin artış mevcut"
       ],
       "historySummary": "Hasta kapalı alanda pestisit uyguladıktan sonra bulantı, terleme, tükürük artışı ve nefes darlığı gelişmesiyle acile getirilir. Üzerinde yoğun kimyasal koku fark edilir.",
-      "priorityFocus": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu, karar verdirici klinik ipucudur."
-    }
+      "priorityFocus": "Organofosfat zehirlenmesinde asetilkolinesteraz inhibisyonu klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-vibrio-cholerae-darting-motility-001",
@@ -30017,8 +30078,8 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum orta-kötü.",
-      "Karında defans veya rebound yok."
+      "Genel durum orta-kötü",
+      "Karında defans veya rebound yok"
     ],
     "investigations": [
       {
@@ -30062,7 +30123,7 @@ export const cases = [
         "Yersinia enterocolitica",
         "Enterotoksijenik Escherichia coli"
       ],
-      "explanation": "Pirinç suyu tarzında bol sulu kansız ishal, hızlı dehidratasyon ve darting motility Vibrio cholerae için klasik TUS ipuçlarıdır. Kolerada invazyon değil toksin aracılı sekresyon ön plandadır. Bu yüzden kanlı dışkı beklenmez. Bu nedenle en uygun yanıt Vibrio cholerae seçeneğidir.",
+      "explanation": "Pirinç suyu tarzında bol sulu kansız ishal, hızlı dehidratasyon ve darting motility Vibrio cholerae için klasik TUS ipuçlarıdır. Kolerada invazyon değil toksin aracılı sekresyon ön plandadır. Bu yüzden kanlı dışkı beklenmez. Vibrio cholerae seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -30090,23 +30151,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Bol sulu ve kansız ishal sekresyonel ishali düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Dehidratasyon hızla gelişmiştir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Darting motility Vibrio cholerae için ayırt ettirici laboratuvar ipucudur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Bol sulu ve kansız ishal sekresyonel ishali."
           }
         ],
@@ -30204,17 +30265,19 @@ export const cases = [
       "profile": "49 yaşında kadın · Acil servis",
       "presentation": "Saatler içinde gelişen bol sulu, kansız ishal",
       "riskContext": [
-        "Endemik bölge veya vektör maruziyeti."
+        "Endemik bölge veya vektör maruziyeti"
       ],
       "distinctiveClues": [
-        "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility.",
-        "Bol sulu ve kansız ishal sekresyonel ishali.",
-        "Dehidratasyon hızla gelişmiştir.",
-        "Darting motility ilgili klinik tablo için ayırt ettirici laboratuvar ipucudur."
+        "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility",
+        "Bol sulu ve kansız ishal sekresyonel ishali",
+        "Dehidratasyon hızla gelişmiştir",
+        "Darting motility ilgili klinik tablo için ayırt ettirici laboratuvar ipucudur",
+        "Saatler içinde gelişen bol sulu, kansız ishal"
       ],
       "historySummary": "49 yaşındaki kadın hasta Yemen seyahatinden kısa süre sonra pirinç suyu görünümünde çok sayıda sulu dışkılama, ağır susuzluk, halsizlik ve kas krampları ile başvurur. Dışkıda kan tariflemez ve karın ağrısı belirgin değildir.",
-      "priorityFocus": "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Bol sulu kansız ishal, hızlı dehidratasyon, darting motility klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-cmv-retinitis-ganciclovir-neutropenia-001",
@@ -30241,7 +30304,7 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum stabil."
+      "Genel durum stabil"
     ],
     "investigations": [
       {
@@ -30285,7 +30348,7 @@ export const cases = [
         "Oseltamivir ve tenofovir",
         "Famsiklovir ve valasiklovir"
       ],
-      "explanation": "CMV retiniti tedavisinde gansiklovir veya valgansiklovirin tipik doz sınırlayıcı toksisitesi kemik iliği baskılanması ve nötropenidir. Nötropeni belirginleşirse foskarnet alternatif olabilir. Foskarnetin ana toksisitesi nefrotoksisite ve elektrolit bozukluğudur. Bu nedenle en uygun yanıt Gansiklovir ve Foskarnet seçeneğidir.",
+      "explanation": "CMV retiniti tedavisinde gansiklovir veya valgansiklovirin tipik doz sınırlayıcı toksisitesi kemik iliği baskılanması ve nötropenidir. Nötropeni belirginleşirse foskarnet alternatif olabilir. Foskarnetin ana toksisitesi nefrotoksisite ve elektrolit bozukluğudur. Gansiklovir ve Foskarnet seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -30313,19 +30376,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Tedavisiz HIV öyküsü CMV retiniti riskini artırır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Bulanık görme ve retinal bulgular CMV retinitiyle uyumludur."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Tedavi sonrası nötropeni gelişmesi gansiklovir toksisitesini düşündürür."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "AIDS veya CMV retiniti tedavisi, gansiklovir sonrası nötropeni."
           }
         ],
@@ -30423,18 +30486,20 @@ export const cases = [
       "profile": "28 yaşında erkek · Enfeksiyon polikliniği",
       "presentation": "Bulanık görme ve tedavisiz HIV öyküsü",
       "riskContext": [
-        "Toksin veya ilaç maruziyeti olasılığı.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Toksin veya ilaç maruziyeti olasılığı",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "AIDS ve CMV retiniti tedavisi, gansiklovir sonrası nötropeni.",
-        "Tedavisiz HIV öyküsü CMV retiniti riskini artırır.",
-        "Bulanık görme ve retinal bulgular CMV retinitiyle uyumludur.",
-        "Tedavi sonrası nötropeni gelişmesi gansiklovir toksisitesini."
+        "AIDS ve CMV retiniti tedavisi, gansiklovir sonrası nötropeni",
+        "Tedavisiz HIV öyküsü CMV retiniti riskini artırır",
+        "Bulanık görme ve retinal bulgular CMV retinitiyle uyumludur",
+        "Tedavi sonrası nötropeni gelişmesi gansiklovir toksisitesini",
+        "Bulanık görme ve tedavisiz HIV öyküsü"
       ],
       "historySummary": "28 yaşındaki erkek hastada tedavisiz HIV enfeksiyonu zemininde CMV retiniti tedavisi başlanır. Antiviral tedavinin ikinci haftasında ateşsiz halsizlik ve ağız içinde aft benzeri lezyonlar gelişir. İlaç yan etkisi sorgulanır.",
-      "priorityFocus": "AIDS ve CMV retiniti tedavisi, gansiklovir sonrası nötropeni klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "AIDS ve CMV retiniti tedavisi, gansiklovir sonrası nötropeni klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-erysipelas-penicillin-001",
@@ -30460,8 +30525,8 @@ export const cases = [
       "Ateş": "38.3 °C"
     },
     "exam": [
-      "Ateşli ve halsiz görünümde.",
-      "Sol tibia medial yüzde deriden kabarık, sıcak, hassas ve sınırları belirgin eritemli plak izleniyor."
+      "Ateşli ve halsiz görünümde",
+      "Sol tibia medial yüzde deriden kabarık, sıcak, hassas ve sınırları belirgin eritemli plak izleniyor"
     ],
     "investigations": [],
     "images": [],
@@ -30486,7 +30551,7 @@ export const cases = [
         "Eritrazma. Eritromisin",
         "Fronkül. Ampisilin-sulbaktam"
       ],
-      "explanation": "Keskin sınırlı, sıcak, ağrılı ve yüzeyel eritem erizipel için tipiktir. En sık etken beta-hemolitik streptokoklardır. İlk tercih tedavi penisilin hattıdır. Bu nedenle en uygun yanıt Erizipel ve Penisilin G seçeneğidir.",
+      "explanation": "Keskin sınırlı, sıcak, ağrılı ve yüzeyel eritem erizipel için tipiktir. En sık etken beta-hemolitik streptokoklardır. İlk tercih tedavi penisilin hattıdır. Erizipel ve Penisilin G seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -30514,19 +30579,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Eritem keskin sınırlı ve sıcak tarifleniyor."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Klinik tablo yüzeyel dermal veya lenfatik enfeksiyonu düşündürür."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Streptokokal etken ve penisilin duyarlılığı TUS spot bilgisidir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon."
           }
         ],
@@ -30624,17 +30689,19 @@ export const cases = [
       "profile": "55 yaşında erkek · Acil servis",
       "presentation": "Ateş ve bacakta ağrılı sıcak kızarıklık",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon.",
-        "Eritem keskin sınırlı ve sıcak tarifleniyor.",
-        "Klinik tablo yüzeyel dermal ve lenfatik enfeksiyonu düşündürür.",
-        "Streptokokal etken ve penisilin duyarlılığı TUS spot bilgisidir."
+        "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon",
+        "Eritem keskin sınırlı ve sıcak tarifleniyor",
+        "Klinik tablo yüzeyel dermal ve lenfatik enfeksiyonu düşündürür",
+        "Streptokokal etken ve penisilin duyarlılığı TUS spot bilgisidir",
+        "Ateş ve bacakta ağrılı sıcak kızarıklık"
       ],
       "historySummary": "55 yaşındaki erkek hasta, yakın dönemde boğaz enfeksiyonu geçirdikten sonra eski safen ven çıkarım skarı çevresinde hızla yayılan ağrılı ve sıcak deri kızarıklığı fark eder. Lezyon tek taraflıdır ve kısa sürede ateş-halsizlik eşlik etmiştir.",
-      "priorityFocus": "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-hcv-needlestick-followup-001",
@@ -30661,7 +30728,7 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Yaralanma yüzeyel perkütan giriş yeri şeklinde."
+      "Yaralanma yüzeyel perkütan giriş yeri şeklinde"
     ],
     "investigations": [],
     "images": [],
@@ -30686,7 +30753,7 @@ export const cases = [
         "Hepatit C immünoglobulini uygulamak",
         "Rutin profilaktik antiviral tedavi başlamak"
       ],
-      "explanation": "HCV temasında HBV'den farklı olarak aşı veya immünoglobulin profilaksisi yoktur. Doğru yaklaşım başlangıç anti-HCV veya ALT değerlendirmesi ve erken dönemde HCV RNA ile serolojik takiptir. Enfeksiyon gelişirse tedavi planlanır. Bu nedenle en uygun yanıt Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi seçeneğidir.",
+      "explanation": "HCV temasında HBV'den farklı olarak aşı veya immünoglobulin profilaksisi yoktur. Doğru yaklaşım başlangıç anti-HCV veya ALT değerlendirmesi ve erken dönemde HCV RNA ile serolojik takiptir. Enfeksiyon gelişirse tedavi planlanır. Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -30714,19 +30781,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Kaynak hasta HCV RNA pozitiftir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Yaralanma perkütan iğne batmasıdır."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Temas sonrası profilaksi seçenekleri HBV ile karıştırılmamalıdır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "HCV RNA pozitif kaynak, perkütan yaralanma."
           }
         ],
@@ -30824,17 +30891,19 @@ export const cases = [
       "profile": "Sağlık çalışanı · Ameliyathane",
       "presentation": "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "HCV RNA pozitif kaynak, perkütan yaralanma.",
-        "Kaynak hasta HCV RNA pozitiftir.",
-        "Yaralanma perkütan iğne batmasıdır.",
-        "Temas sonrası profilaksi seçenekleri HBV ile karıştırılmamalıdır."
+        "HCV RNA pozitif kaynak, perkütan yaralanma",
+        "Kaynak hasta HCV RNA pozitiftir",
+        "Yaralanma perkütan iğne batmasıdır",
+        "Temas sonrası profilaksi seçenekleri HBV ile karıştırılmamalıdır",
+        "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma"
       ],
       "historySummary": "Yaralanma hemen yıkanır, olay kayıt ALTına alınır ve kaynak hastanın HCV RNA pozitif olduğu öğrenilir.",
-      "priorityFocus": "HCV RNA pozitif kaynak, perkütan yaralanma klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "HCV RNA pozitif kaynak, perkütan yaralanma klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-tb-contact-ppd-conversion-inh-001",
@@ -30861,8 +30930,7 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Akciğer oskültasyonu olağan."
+      "Akciğer oskültasyonu olağan"
     ],
     "investigations": [
       {
@@ -30920,7 +30988,7 @@ export const cases = [
         "BCG’ye bağlayıp takip etmeden bırakmak",
         "Aylık balgam yayması ile tedavisiz izlemek"
       ],
-      "explanation": "Aktif akciğer tüberkülozu ile yakın temas sonrası PPD veya IGRA pozitifliği veya dönüşümü latent TB enfeksiyonunu düşündürür. Profilaksi öncesi aktif hastalık semptom ve akciğer grafisiyle dışlanmalı. Aktif hastalık yoksa izoniyazid temelli latent TB tedavisi planlanmalıdır. Bu nedenle en uygun yanıt İzoniyazid profilaksisi başlamak seçeneğidir.",
+      "explanation": "Aktif akciğer tüberkülozu ile yakın temas sonrası PPD veya IGRA pozitifliği veya dönüşümü latent TB enfeksiyonunu düşündürür. Profilaksi öncesi aktif hastalık semptom ve akciğer grafisiyle dışlanmalı. Aktif hastalık yoksa izoniyazid temelli latent TB tedavisi planlanmalıdır. İzoniyazid profilaksisi başlamak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -30948,19 +31016,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Ev içi veya yakın temas yüksek bulaş riski taşır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "PPD dönüşümü yeni enfeksiyon lehine yorumlanır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Profilaksi başlamadan önce aktif TB dışlanmalıdır."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Aktif TB ev içi temas, PPD dönüşümü, aktif hastalık dışlama."
           }
         ],
@@ -31058,17 +31126,19 @@ export const cases = [
       "profile": "18 yaşında erkek · Verem savaşı dispanseri",
       "presentation": "Aktif akciğer tüberkülozu olan aile bireyiyle yakın temas",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Aktif TB ev içi temas, PPD dönüşümü, aktif hastalık dışlama.",
-        "Ev içi ve yakın temas yüksek bulaş riski TAşır.",
-        "PPD dönüşümü yeni enfeksiyon lehine yorumlanır.",
-        "Profilaksi başlamadan önce aktif TB dışlanmalıdır."
+        "Aktif TB ev içi temas, PPD dönüşümü, aktif hastalık dışlama",
+        "Ev içi ve yakın temas yüksek bulaş riski TAşır",
+        "PPD dönüşümü yeni enfeksiyon lehine yorumlanır",
+        "Profilaksi başlamadan önce aktif TB dışlanmalıdır",
+        "Aktif akciğer tüberkülozu olan aile bireyiyle yakın temas"
       ],
       "historySummary": "18 yaşındaki erkek hasta, aktif akciğer tüberkülozu tanısı alan aile bireyiyle aynı evde yaşamaktadır. Kendisi asemptomatiktir ve çocukluk döneminde BCG aşısı olduğunu belirtir.",
-      "priorityFocus": "Aktif TB ev içi temas, PPD dönüşümü, aktif hastalık dışlama aktif tüberküloz olasılığını artırır."
-    }
+      "priorityFocus": "Aktif TB ev içi temas, PPD dönüşümü, aktif hastalık dışlama klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-occupational-asthma-latex-001",
@@ -31095,8 +31165,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Solunum eforu istirahatte normal.",
-      "El dorsumlarında erozyonlu ve hiperkeratotik kaşıntılı plaklar izleniyor."
+      "Solunum eforu istirahatte normal",
+      "El dorsumlarında erozyonlu ve hiperkeratotik kaşıntılı plaklar izleniyor"
     ],
     "investigations": [],
     "images": [],
@@ -31121,7 +31191,7 @@ export const cases = [
         "Behçet hastalığı. Paterji testi",
         "Psöriazis. Cilt biyopsisi"
       ],
-      "explanation": "Semptomların iş ortamında artıp uzaklaşınca azalması mesleki astımı düşündürür. Lateks teması ve elde kaşıntılı lezyonlar lateks duyarlılığını destekler. Tanısal yaklaşım semptom-iş ilişkisini objektifleştiren seri PEF veya spirometri ve mesleki maruziyet değerlendirmesidir. Bu nedenle en uygun yanıt Mesleksel astım ve Alerji testi seçeneğidir.",
+      "explanation": "Semptomların iş ortamında artıp uzaklaşınca azalması mesleki astımı düşündürür. Lateks teması ve elde kaşıntılı lezyonlar lateks duyarlılığını destekler. Tanısal yaklaşım semptom-iş ilişkisini objektifleştiren seri PEF veya spirometri ve mesleki maruziyet değerlendirmesidir. Mesleksel astım ve Alerji testi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -31149,19 +31219,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Öksürük ve hışıltı iş ortamıyla ilişkilidir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Hafta sonu veya işten uzaklaşınca düzelme mesleki astım lehinedir."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "El dorsumundaki kaşıntılı lezyon lateks duyarlılığına eşlik edebilir."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "İşte artan hışıltı, hafta sonu düzelme, lateksle temas veya dermatit."
           }
         ],
@@ -31259,17 +31329,19 @@ export const cases = [
       "profile": "27 yaşında erkek diş hekimi · Göğüs hastalıkları polikliniği",
       "presentation": "İşle ilişkili öksürük, hışıltı ve el dorsumunda kaşıntılı lezyonlar",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "İşte artan hışıltı, hafta sonu düzelme, lateksle temas ve dermatit.",
-        "Öksürük ve hışıltı iş ortamıyla ilişkilidir.",
-        "Hafta sonu ve işten uzaklaşınca düzelme mesleki ASTım.",
-        "El dorsumundaki kaşıntılı lezyon lateks duyarlılığına eşlik edebilir."
+        "İşte artan hışıltı, hafta sonu düzelme, lateksle temas ve dermatit",
+        "Öksürük ve hışıltı iş ortamıyla ilişkilidir",
+        "Hafta sonu ve işten uzaklaşınca düzelme mesleki ASTım",
+        "El dorsumundaki kaşıntılı lezyon lateks duyarlılığına eşlik edebilir",
+        "İşle ilişkili öksürük, hışıltı ve el dorsumunda kaşıntılı lezyonlar"
       ],
       "historySummary": "Son bir yıldır iş günlerinde nefes darlığı, öksürük ve hışıltı atakları yaşayan hastanın el dorsal yüzlerinde kronik irritan ve alerjik dermatit benzeri lezyonlar bulunuyor.",
-      "priorityFocus": "İşte artan hışıltı, hafta sonu düzelme, lateksle temas ve dermatit SLE aktivitesi için anlamlıdır."
-    }
+      "priorityFocus": "İşte artan hışıltı, hafta sonu düzelme, lateksle temas ve dermatit klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-curb65-fever-not-criterion-001",
@@ -31295,8 +31367,8 @@ export const cases = [
       "Ateş": "38.6 °C"
     },
     "exam": [
-      "Bilinç bulanık ve uykuya meyilli.",
-      "Solunum sayısı belirgin artmış."
+      "Bilinç bulanık ve uykuya meyilli",
+      "Solunum sayısı belirgin artmış"
     ],
     "investigations": [],
     "images": [],
@@ -31321,7 +31393,7 @@ export const cases = [
         "Bilinç durumunda bozulma",
         "Solunum sayısının artması"
       ],
-      "explanation": "CURB-65 pnömoni ağırlık skorunda ateş yer almaz. Skor. Konfüzyon, üre yüksekliği, solunum sayısı ≥30/dk, düşük kan basıncı ve yaş ≥65 maddelerinden oluşur. Bu nedenle en uygun yanıt Ateş yüksekliği seçeneğidir.",
+      "explanation": "CURB-65 pnömoni ağırlık skorunda ateş yer almaz. Skor. Konfüzyon, üre yüksekliği, solunum sayısı ≥30/dk, düşük kan basıncı ve yaş ≥65 maddelerinden oluşur. Ateş yüksekliği seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -31349,19 +31421,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Soru pnömoni ağırlık skorunun kriterlerini sorguluyor."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Ateş pnömonide sık bulgu olsa da CURB-65 bileşeni değildir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Uykuya meyil konfüzyon başlığını çağrıştırabilir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "CURB-65 kriterleri."
           }
         ],
@@ -31459,17 +31531,19 @@ export const cases = [
       "profile": "72 yaşında kadın · Acil servis",
       "presentation": "Ateş, öksürük, sarı balgam ve uykuya meyil",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "CURB-65 kriterleri.",
-        "Soru pnömoni ağırlık skorunun kriterlerini sorguluyor.",
-        "Ateş pnömonide sık bulgu olsa da CURB-65 bileşeni değildir.",
-        "Uykuya meyil konfüzyon başlığını çağrıştırabilir."
+        "CURB-65 kriterleri",
+        "Soru pnömoni ağırlık skorunun kriterlerini sorguluyor",
+        "Ateş pnömonide sık bulgu olsa da CURB-65 bileşeni değildir",
+        "Uykuya meyil konfüzyon başlığını çağrıştırabilir",
+        "Ateş, öksürük, sarı balgam ve uykuya meyil"
       ],
       "historySummary": "Pnömoni düşünülen hastada hekim yatış kararını CURB-65 kriterleriyle yapılandırmak ister.",
-      "priorityFocus": "CURB-65 kriterleri."
-    }
+      "priorityFocus": "CURB-65 kriterleri klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-anaphylaxis-tryptase-001",
@@ -31495,8 +31569,8 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Yaygın ürtikeryal lezyonlar ve hafif dudak ödemi izleniyor.",
-      "Solunum sıkıntısı belirgin değil ancak hasta anksiyöz görünüyor."
+      "Yaygın ürtikeryal lezyonlar ve hafif dudak ödemi izleniyor",
+      "Solunum sıkıntısı belirgin değil ancak hasta anksiyöz görünüyor"
     ],
     "investigations": [
       {
@@ -31540,7 +31614,7 @@ export const cases = [
         "Kompleman aracılı herediter anjiyoödem",
         "Miyokardiyal nekroz bulgu örüntüsü"
       ],
-      "explanation": "Akut çoklu sistem alerjik reaksiyondan sonra serum triptazının yükselmesi mast hücre degranülasyonunu destekler. Tek başına total IgE yüksekliği akut sistemik aktivasyonu aynı güçte göstermez. Bu nedenle en uygun yanıt Mast hücre aracılı sistemik aktivasyon seçeneğidir.",
+      "explanation": "Akut çoklu sistem alerjik reaksiyondan sonra serum triptazının yükselmesi mast hücre degranülasyonunu destekler. Tek başına total IgE yüksekliği akut sistemik aktivasyonu aynı güçte göstermez. Mast hücre aracılı sistemik aktivasyon seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -31568,23 +31642,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Besin sonrası çoklu sistem alerjik reaksiyon gelişmiştir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Akut dönemde alınan örnekte triptaz yüksek saptanmıştır."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Triptaz mast hücre degranülasyonuyla ilişkilidir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Besin sonrası çoklu sistem reaksiyon, mast hücre aktivasyonu."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Besin sonrası kısa sürede alerjik reaksiyon gelişmiş."
           }
         ],
@@ -31690,17 +31764,19 @@ export const cases = [
       "profile": "20 yaşında erkek · Acil servis",
       "presentation": "Fıstıklı tatlıdan sonra boğazda şişme, kaşıntı, karın ağrısı ve baş dönmesi",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Besin sonrası çoklu sistem reaksiyon, mast hücre aktivasyonu.",
-        "Besin sonrası kısa sürede alerjik reaksiyon gelişmiş.",
-        "Çoklu sistem tutulumu mast hücre aracılı reaksiyonu.",
-        "Akut dönemde triptaz yüksekliği mast hücre aktivasyonunu destekler."
+        "Besin sonrası çoklu sistem reaksiyon, mast hücre aktivasyonu",
+        "Besin sonrası kısa sürede alerjik reaksiyon gelişmiş",
+        "Çoklu sistem tutulumu mast hücre aracılı reaksiyonu",
+        "Akut dönemde triptaz yüksekliği mast hücre aktivasyonunu destekler",
+        "Fıstıklı tatlıdan sonra boğazda şişme, kaşıntı, karın ağrısı ve baş dönmesi"
       ],
       "historySummary": "20 yaşındaki erkek hasta, fıstıklı tatlı yedikten kısa süre sonra yaygın kaşıntı, ürtiker, boğazda şişme hissi, karın ağrısı ve baş dönmesi tarif eder. Alerjik rinit ve ASTım öyküsü vardır.",
-      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
-    }
+      "priorityFocus": "Besin sonrası çoklu sistem reaksiyon, mast hücre aktivasyonu klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-renovascular-hypertension-001",
@@ -31726,8 +31802,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Kan basıncı yüksek.",
-      "Sol paraumbilikal bölgede sistolik üfürüm duyuluyor."
+      "Kan basıncı yüksek",
+      "Sol paraumbilikal bölgede sistolik üfürüm duyuluyor"
     ],
     "investigations": [
       {
@@ -31771,7 +31847,7 @@ export const cases = [
         "Aort koarktasyonu",
         "Hipertiroidizm"
       ],
-      "explanation": "Yaşlı aterosklerotik riskli hastada kısa sürede gelişen dirençli hipertansiyon, tekrarlayan ani akciğer ödemi ve hipokalemi renovasküler hipertansiyon veya renal arter stenozu için tipiktir. Flash pulmoner ödem renovasküler hastalıkta çok güçlü sınav ipucudur. Bu nedenle en uygun yanıt Renovasküler hipertansiyon seçeneğidir.",
+      "explanation": "Yaşlı aterosklerotik riskli hastada kısa sürede gelişen dirençli hipertansiyon, tekrarlayan ani akciğer ödemi ve hipokalemi renovasküler hipertansiyon veya renal arter stenozu için tipiktir. Flash pulmoner ödem renovasküler hastalıkta çok güçlü sınav ipucudur. Renovasküler hipertansiyon seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -31799,23 +31875,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Dirençli ağır hipertansiyon kısa sürede belirginleşmiş."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Tekrarlayan ani akciğer ödemi renovasküler hipertansiyon için güçlü ipucudur."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Hipokalemi sekonder hiperaldosteronizmle uyumludur."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi."
           }
         ],
@@ -31913,19 +31989,21 @@ export const cases = [
       "profile": "62 yaşında erkek · Dahiliye polikliniği",
       "presentation": "Son aylarda dirençli hipertansiyon atakları ve tekrarlayan akciğer ödemi",
       "riskContext": [
-        "Kontrolsüz hipertansiyon ve akut vasküler stres.",
-        "Aterosklerotik risk zemini.",
-        "Diyabet veya metabolik dekompansasyon riski."
+        "Kontrolsüz hipertansiyon ve akut vasküler stres",
+        "Aterosklerotik risk zemini",
+        "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi.",
-        "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır.",
-        "Dirençli ağır hipertansiyon kısa sürede belirginleşmiş.",
-        "Tekrarlayan ani akciğer ödemi ilgili klinik tablo için güçlü ipucudur."
+        "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi",
+        "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır",
+        "Dirençli ağır hipertansiyon kısa sürede belirginleşmiş",
+        "Tekrarlayan ani akciğer ödemi ilgili klinik tablo için güçlü ipucudur",
+        "Son aylarda dirençli hipertansiyon atakları ve tekrarlayan akciğer ödemi"
       ],
       "historySummary": "62 yaşındaki erkek hastada kısa süre içinde ağır ve dirençli hipertansiyon atakları ile tekrarlayan ani akciğer ödemi gelişmiştir. Diyabet ve uzun süreli sigara öyküsü vardır.",
-      "priorityFocus": "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Dirençli hipertansiyon, tekrarlayan flash akciğer ödemi, hipokalemi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-pah-verapamil-not-recommended-001",
@@ -31951,8 +32029,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Boyun ven dolgunluğu, hepatomegali ve pretibial ödem mevcut.",
-      "Kalp sesleri taşikardik."
+      "Boyun ven dolgunluğu, hepatomegali ve pretibial ödem mevcut",
+      "Kalp sesleri taşikardik"
     ],
     "investigations": [],
     "images": [],
@@ -31977,7 +32055,7 @@ export const cases = [
         "Tadalafil",
         "İnhaler iloprost"
       ],
-      "explanation": "Pulmoner arteriyel hipertansiyonda verapamil genellikle önerilmez. Negatif inotrop etkisi sağ ventrikül fonksiyonunu kötüleştirebilir. PAH hedef tedavilerinde endotelin reseptör antagonistleri, PDE-5 inhibitörleri ve prostasiklin analogları öne çıkar. Bu nedenle en uygun yanıt Verapamil seçeneğidir.",
+      "explanation": "Pulmoner arteriyel hipertansiyonda verapamil genellikle önerilmez. Negatif inotrop etkisi sağ ventrikül fonksiyonunu kötüleştirebilir. PAH hedef tedavilerinde endotelin reseptör antagonistleri, PDE-5 inhibitörleri ve prostasiklin analogları öne çıkar. Verapamil seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -32005,19 +32083,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "PAH sağ kalp kateterizasyonu ile doğrulanmış."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Soru tedavi seçeneklerinden genellikle önerilmeyeni sorguluyor."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "Verapamil negatif inotrop etkisi nedeniyle PAH'da uygun seçenek değildir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "PAH tedavisinde verapamilin negatif inotrop etkisi."
           }
         ],
@@ -32115,17 +32193,19 @@ export const cases = [
       "profile": "45 yaşında kadın · Kardiyoloji polikliniği",
       "presentation": "Efor dispnesi, periferik ödem ve pulmoner hipertansiyon tanısı",
       "riskContext": [
-        "Kontrolsüz hipertansiyon ve akut vasküler stres."
+        "Kontrolsüz hipertansiyon ve akut vasküler stres"
       ],
       "distinctiveClues": [
-        "PAH tedavisinde verapamilin negatif inotrop etkisi.",
-        "PAH sağ kalp kateterizasyonu ile doğrulanmış.",
-        "Soru tedavi seçeneklerinden genellikle önerilmeyeni sorguluyor.",
-        "Verapamil negatif inotrop etkisi nedeniyle PAH'da uygun seçenek değildir."
+        "PAH tedavisinde verapamilin negatif inotrop etkisi",
+        "PAH sağ kalp kateterizasyonu ile doğrulanmış",
+        "Soru tedavi seçeneklerinden genellikle önerilmeyeni sorguluyor",
+        "Verapamil negatif inotrop etkisi nedeniyle PAH'da uygun seçenek değildir",
+        "Efor dispnesi, periferik ödem ve pulmoner hipertansiyon tanısı"
       ],
       "historySummary": "Sağ kalp kateterizasyonu ile pulmoner hipertansiyon kesinleşen hastada tedavi seçenekleri gözden geçiriliyor.",
-      "priorityFocus": "PAH tedavisinde verapamilin negatif inotrop etkisi klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "PAH tedavisinde verapamilin negatif inotrop etkisi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-hypertensive-pulmonary-edema-vasodilator-001",
@@ -32151,8 +32231,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Kan basıncı belirgin yüksek, nabız hızlı ve ritmik.",
-      "S4 duyuluyor."
+      "Kan basıncı belirgin yüksek, nabız hızlı ve ritmik",
+      "S4 duyuluyor"
     ],
     "investigations": [],
     "images": [],
@@ -32177,7 +32257,7 @@ export const cases = [
         "İntravenöz pozitif inotrop tedavi",
         "Oral beta bloker yüklemesi"
       ],
-      "explanation": "Ağır hipertansiyon zemininde gelişen akut pulmoner ödemde afterload yükü baskındır. Uygun başlangıç tedavisi IV vazodilatör tedavi ve oksijenasyon desteğidir. Pozitif inotrop hipotansif düşük debi tablosunda düşünülür. Bu nedenle en uygun yanıt İntravenöz vazodilatör tedavi seçeneğidir.",
+      "explanation": "Ağır hipertansiyon zemininde gelişen akut pulmoner ödemde afterload yükü baskındır. Uygun başlangıç tedavisi IV vazodilatör tedavi ve oksijenasyon desteğidir. Pozitif inotrop hipotansif düşük debi tablosunda düşünülür. İntravenöz vazodilatör tedavi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -32205,19 +32285,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Antihipertansif uyumsuzluğu sonrası ani nefes darlığı gelişmiş."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Önceden ciddi sistolik kalp yetersizliği öyküsü yok."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Klinik tablo hipertansif akut pulmoner ödemi düşündürür."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok."
           }
         ],
@@ -32315,18 +32395,20 @@ export const cases = [
       "profile": "70 yaşında kadın · Acil servis",
       "presentation": "Tedaviye uyumsuz hipertansiyon sonrası ani nefes darlığı",
       "riskContext": [
-        "Kontrolsüz hipertansiyon ve akut vasküler stres.",
-        "Toksin veya ilaç maruziyeti olasılığı."
+        "Kontrolsüz hipertansiyon ve akut vasküler stres",
+        "Toksin veya ilaç maruziyeti olasılığı"
       ],
       "distinctiveClues": [
-        "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok.",
-        "Antihipertansif uyumsuzluğu sonrası ani nefes darlığı gelişmiş.",
-        "Önceden ciddi sistolik kalp yetersizliği öyküsü yok.",
-        "Klinik tablo hipertansif akut pulmoner ödemi."
+        "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok",
+        "Antihipertansif uyumsuzluğu sonrası ani nefes darlığı gelişmiş",
+        "Önceden ciddi sistolik kalp yetersizliği öyküsü yok",
+        "Klinik tablo hipertansif akut pulmoner ödemi",
+        "Tedaviye uyumsuz hipertansiyon sonrası ani nefes darlığı"
       ],
       "historySummary": "70 yaşındaki kadın hasta antihipertansif ilaçlarını düzensiz kullandıktan sonra ani başlayan şiddetli nefes darlığı ile acile başvurur. Önceden bilinen ciddi sistolik kalp yetersizliği öyküsü yoktur.",
-      "priorityFocus": "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-new-dyspepsia-age-sixty-endoscopy-001",
@@ -32351,9 +32433,7 @@ export const cases = [
       "SpO2": "%98 oda havasında",
       "Ateş": "36.8 °C"
     },
-    "exam": [
-      "Genel durum iyi."
-    ],
+    "exam": [],
     "investigations": [],
     "images": [],
     "questionType": "yönetim",
@@ -32377,7 +32457,7 @@ export const cases = [
         "Sadece dört hafta PPI denemesi yapmak",
         "H2 bloker ve PPI’ı birlikte başlamak"
       ],
-      "explanation": "İleri yaşta yeni başlayan dispepsi, klasik alarm bulgusu olmasa bile malignite ve organik patoloji açısından endoskopi gerektirir. Genç ve alarmsız dispepside PPI denemesi düşünülebilir. Bu olguda yaş tek başına yaklaşımı değiştirir. Bu nedenle en uygun yanıt Üst gastrointestinal endoskopi yapmak seçeneğidir.",
+      "explanation": "İleri yaşta yeni başlayan dispepsi, klasik alarm bulgusu olmasa bile malignite ve organik patoloji açısından endoskopi gerektirir. Genç ve alarmsız dispepside PPI denemesi düşünülebilir. Bu olguda yaş tek başına yaklaşımı değiştirir. Üst gastrointestinal endoskopi yapmak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -32405,19 +32485,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Hasta ileri yaş grubundadır."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Başvuru yakınması",
             "text": "Yakınmalar daha önce yokken yeni başlamıştır."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Görüntüleme",
             "text": "Kilo kaybı veya disfaji yokluğu endoskopi gereğini tamamen ortadan kaldırmaz."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "İleri yaşta yeni başlayan dispepsi."
           }
         ],
@@ -32515,17 +32595,19 @@ export const cases = [
       "profile": "60 yaşında kadın · Gastroenteroloji polikliniği",
       "presentation": "Bulantı ve yemekten sonra şişkinlik",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "İleri yaşTA yeni başlayan dispepsi.",
-        "Hasta ileri yaş grubundadır.",
-        "Yakınmalar daha önce yokken yeni başlamıştır.",
-        "Kilo kaybı veya disfaji yokluğu endoskopi gereğini tamamen ortadan kaldırmaz."
+        "İleri yaşTA yeni başlayan dispepsi",
+        "Hasta ileri yaş grubundadır",
+        "Yakınmalar daha önce yokken yeni başlamıştır",
+        "Kilo kaybı veya disfaji yokluğu endoskopi gereğini tamamen ortadan kaldırmaz",
+        "Bulantı ve yemekten sonra şişkinlik"
       ],
       "historySummary": "Daha önce benzer yakınması olmayan hastada kilo kaybı, yutma güçlüğü veya kusma yok. Ancak yakınmalar yeni başlamış ve hasta ileri yaş grubunda.",
-      "priorityFocus": "İleri yaşTA yeni başlayan dispepsi klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "İleri yaşTA yeni başlayan dispepsi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-barrett-columnar-zline-001",
@@ -32541,7 +32623,7 @@ export const cases = [
     "clinicalFocus": "Barrett özofagusunda skuamokolumnar bileşke proksimalinde kolumnar metaplazi.",
     "demographics": "Erişkin hasta",
     "setting": "Endoskopi ünitesi",
-    "chiefComplaint": "Reflü yakınmaları nedeniyle yapılan endoskopi.",
+    "chiefComplaint": "Uzun süreli reflü yakınmaları olan erişkin hastada endoskopik değerlendirme yapılır",
     "stem": "Uzun süreli reflü yakınmaları olan erişkin hastada endoskopik değerlendirme yapılır. Soru, distal özofagusta görülen mukozal bulgu örüntüsünün hangi tanıyı düşündürdüğünü sorgular.",
     "vitals": {
       "TA": "122/76 mmHg",
@@ -32551,9 +32633,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Batın yumuşak.",
-      "Orofarenks ve solunum muayenesinde akut iritasyon veya aspirasyon bulgusu izlenmiyor."
+      "Batın yumuşak",
+      "Orofarenks ve solunum muayenesinde akut iritasyon veya aspirasyon bulgusu izlenmiyor"
     ],
     "investigations": [
       {
@@ -32597,7 +32678,7 @@ export const cases = [
         "Leiomiyom",
         "Özofagus adenokarsinomu"
       ],
-      "explanation": "Kronik reflü hastasında distal özofagusta Z çizgisinin proksimaline uzanan kolumnar mukoza Barrett özofagusunu düşündürür. Tanı intestinal metaplazinin histolojik gösterilmesiyle kesinleşir. Adenokarsinom riski nedeniyle takip önemlidir. Bu nedenle en uygun yanıt Barrett özofagusu seçeneğidir.",
+      "explanation": "Kronik reflü hastasında distal özofagusta Z çizgisinin proksimaline uzanan kolumnar mukoza Barrett özofagusunu düşündürür. Tanı intestinal metaplazinin histolojik gösterilmesiyle kesinleşir. Adenokarsinom riski nedeniyle takip önemlidir. Barrett özofagusu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -32625,19 +32706,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Başvuru yakınması",
             "text": "Uzun süreli reflü öyküsü vardır."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Öykü",
             "text": "Endoskopide Z çizgisinin proksimaline uzanan kolumnar mukoza görülür."
           },
           {
-            "title": "Destekleyen bulgu",
-            "text": "bulgu örüntüsü skuamöz epitelin intestinal tip kolumnar metaplazisini düşündürür."
+            "title": "Öykü",
+            "text": "Bulgu örüntüsü skuamöz epitelin intestinal tip kolumnar metaplazisini düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü."
           }
         ],
@@ -32735,17 +32816,19 @@ export const cases = [
       "profile": "Erişkin hasta · Endoskopi ünitesi",
       "presentation": "Reflü yakınmaları nedeniyle yapılan endoskopi",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü.",
-        "Uzun süreli reflü öyküsü vardır.",
-        "Endoskopide Z çizgisinin proksimaline uzanan kolumnar mukoza görülür.",
-        "bulgu örüntüsü skuamöz epitelin intestinal tip kolumnar metaplazisini."
+        "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü",
+        "Uzun süreli reflü öyküsü vardır",
+        "Endoskopide Z çizgisinin proksimaline uzanan kolumnar mukoza görülür",
+        "Bulgu örüntüsü skuamöz epitelin intestinal tip kolumnar metaplazisini",
+        "Reflü yakınmaları nedeniyle yapılan endoskopi"
       ],
       "historySummary": "Soru, distal özofagusta görülen mukozal bulgu örüntüsünün hangi tanıyı düşündürdüğünü sorgular.",
-      "priorityFocus": "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-biliary-stones-dilated-cbd-mrcp-001",
@@ -32771,8 +32854,8 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Batın yumuşak.",
-      "Sarılık veya akut kolanjit bulgusu yok."
+      "Batın yumuşak",
+      "Sarılık veya akut kolanjit bulgusu yok"
     ],
     "investigations": [
       {
@@ -32816,7 +32899,7 @@ export const cases = [
         "Perkütan transhepatik kolanjiyografi",
         "Toraks manyetik rezonans görüntüleme"
       ],
-      "explanation": "Safra taşı öyküsü ve USG'de koledok genişliği koledok taşı şüphesini doğurur. Akut kolanjit bulgusu yoksa sonraki uygun noninvaziv görüntüleme MRCP'dir. ERCP daha çok yüksek olasılık veya terapötik ihtiyaçta öne çıkar. Bu nedenle en uygun yanıt Manyetik rezonans kolanjiyopankreatografi seçeneğidir.",
+      "explanation": "Safra taşı öyküsü ve USG'de koledok genişliği koledok taşı şüphesini doğurur. Akut kolanjit bulgusu yoksa sonraki uygun noninvaziv görüntüleme MRCP'dir. ERCP daha çok yüksek olasılık veya terapötik ihtiyaçta öne çıkar. Manyetik rezonans kolanjiyopankreatografi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -32844,23 +32927,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Başvuru yakınması",
             "text": "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni düşündürür."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "USG'de safra kesesi taşları ve koledok genişlemesi vardır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Ateş, titreme ve belirgin sarılık yok."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Safra taşı, geniş koledok."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni."
           }
         ],
@@ -32958,17 +33041,19 @@ export const cases = [
       "profile": "57 yaşında erkek · Gastroenteroloji polikliniği",
       "presentation": "Yemeklerden sonra sağ üst kadran ağrısı",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Safra TAşı, geniş koledok.",
-        "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni.",
-        "USG'de safra kesesi TAşları ve koledok genişlemesi vardır.",
-        "Ateş, titreme ve belirgin sarılık yok."
+        "Safra TAşı, geniş koledok",
+        "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni",
+        "USG'de safra kesesi TAşları ve koledok genişlemesi vardır",
+        "Ateş, titreme ve belirgin sarılık yok",
+        "Yemeklerden sonra sağ üst kadran ağrısı"
       ],
       "historySummary": "57 yaşındaki erkek hasta yağlı yemeklerden sonra artan sağ üst kadran ağrısı nedeniyle değerlendirilir. Ateş, titreme ve belirgin sarılık tariflemez. Akut kolanjit bulgusu ön planda değildir.",
-      "priorityFocus": "Safra TAşı, geniş koledok."
-    }
+      "priorityFocus": "Safra TAşı, geniş koledok klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-cirrhosis-ascites-sbp-paracentesis-001",
@@ -32995,8 +33080,8 @@ export const cases = [
       "Ateş": "38.2 °C"
     },
     "exam": [
-      "Belirgin asit bulguları mevcut.",
-      "Batında tüm kadranlarda hafif hassasiyet var."
+      "Belirgin asit bulguları mevcut",
+      "Batında tüm kadranlarda hafif hassasiyet var"
     ],
     "investigations": [
       {
@@ -33047,7 +33132,7 @@ export const cases = [
         "Öncelikle elektif üst GİS endoskopisi planlamak",
         "Semptomsuz izlemle parasentezi tekrarlamamak"
       ],
-      "explanation": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP bulgu örüntüsünü düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun yanıt Ampirik üçüncü kuşak sefalosporin tedavisi başlamak seçeneğidir.",
+      "explanation": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP bulgu örüntüsünü düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Ampirik üçüncü kuşak sefalosporin tedavisi başlamak seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -33075,23 +33160,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Siroz veya asit zemininde dalgınlık ve karın hassasiyeti vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Asit sıvısında PMN sayısı eşik değerin üzerindedir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Bu durumda tedavi kültür sonucunu beklemeden başlatılır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Siroz, asit, mental durum değişikliği veya karın hassasiyeti."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Dekompanse siroz ve belirgin asit mevcut."
           }
         ],
@@ -33197,17 +33282,19 @@ export const cases = [
       "profile": "HCV sirozlu erişkin hasta · Acil servis",
       "presentation": "Dalgınlık, uykuya eğilim ve karında hassasiyet",
       "riskContext": [
-        "Siroz ve portal hipertansiyon zemini."
+        "Siroz ve portal hipertansiyon zemini"
       ],
       "distinctiveClues": [
-        "Siroz, asit, mental durum değişikliği ve karın hassasiyeti.",
-        "Dekompanse siroz ve belirgin asit mevcut.",
-        "Dalgınlık ve uykuya eğilim yeni gelişmiştir.",
-        "Karın hassasiyeti enfekte asiti."
+        "Siroz, asit, mental durum değişikliği ve karın hassasiyeti",
+        "Dekompanse siroz ve belirgin asit mevcut",
+        "Dalgınlık ve uykuya eğilim yeni gelişmiştir",
+        "Karın hassasiyeti enfekte asiti",
+        "Dalgınlık, uykuya eğilim ve karında hassasiyet"
       ],
       "historySummary": "Dekompanse sirozu olan hastada son iki günde dikkat azalması ve hafif uykuya eğilim gelişiyor. Muayenede belirgin asit var.",
-      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
-    }
+      "priorityFocus": "Siroz, asit, mental durum değişikliği ve karın hassasiyeti klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-adrenal-crisis-hydrocortisone-001",
@@ -33233,8 +33320,8 @@ export const cases = [
       "Ateş": "37.2 °C"
     },
     "exam": [
-      "Hasta zayıf ve bitkin görünümde.",
-      "Ciltte ve mukozalarda yaygın hiperpigmentasyon izleniyor."
+      "Hasta zayıf ve bitkin görünümde",
+      "Ciltte ve mukozalarda yaygın hiperpigmentasyon izleniyor"
     ],
     "investigations": [
       {
@@ -33290,7 +33377,7 @@ export const cases = [
         "Glukagon",
         "Beta bloker"
       ],
-      "explanation": "Hiperpigmentasyon, hipotansif kriz, hiponatremi, hiperpotasemi ve hipoglisemi primer adrenal krizi düşündürür. Acil tedavi hidrokortizon ve izotonik sıvı veya glukoz desteğidir. Laboratuvar doğrulaması tedaviyi geciktirmemelidir. Bu nedenle en uygun yanıt Hidrokortizon seçeneğidir.",
+      "explanation": "Hiperpigmentasyon, hipotansif kriz, hiponatremi, hiperpotasemi ve hipoglisemi primer adrenal krizi düşündürür. Acil tedavi hidrokortizon ve izotonik sıvı veya glukoz desteğidir. Laboratuvar doğrulaması tedaviyi geciktirmemelidir. Hidrokortizon seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -33318,23 +33405,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Uzun süredir deri ve mukozalarda koyulaşma vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Hipotansif kriz ve belirgin halsizlik mevcuttur."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Na düşük, K yüksek ve glukoz düşüktür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Bu elektrolit bulgu örüntüsü primer adrenal yetmezlik krizini destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Hiperpigmentasyon, hipotansiyon, hiponatremi veya hiperpotasemi veya hipoglisemi."
           }
         ],
@@ -33432,17 +33519,19 @@ export const cases = [
       "profile": "Erişkin erkek · Acil servis",
       "presentation": "Genel durum bozukluğu ve hipotansiyon",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Hiperpigmentasyon, hipotansiyon, hiponatremi ve hiperpotasemi ve hipoglisemi.",
-        "Uzun süredir deri ve mukozalarda koyulaşma vardır.",
-        "Hipotansif kriz ve belirgin halsizlik mevcuttur.",
-        "Na düşük, K yüksek ve glukoz düşüktür."
+        "Hiperpigmentasyon, hipotansiyon, hiponatremi ve hiperpotasemi ve hipoglisemi",
+        "Uzun süredir deri ve mukozalarda koyulaşma vardır",
+        "Hipotansif kriz ve belirgin halsizlik mevcuttur",
+        "Na düşük, K yüksek ve glukoz düşüktür",
+        "Genel durum bozukluğu ve hipotansiyon"
       ],
       "historySummary": "Deri ve mukozalarda uzun süredir artan koyulaşma fark edilmektedir.",
-      "priorityFocus": "Hiperpigmentasyon, hipotansiyon, hiponatremi ve hiperpotasemi ve hipoglisemi klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Hiperpigmentasyon, hipotansiyon, hiponatremi ve hiperpotasemi ve hipoglisemi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-factitious-thyrotoxicosis-low-tg-001",
@@ -33468,8 +33557,8 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Canlı bakış ve ellerde ince tremor var.",
-      "Tiroid palpasyonunda belirgin hassasiyet veya nodül saptanmıyor."
+      "Canlı bakış ve ellerde ince tremor var",
+      "Tiroid palpasyonunda belirgin hassasiyet veya nodül saptanmıyor"
     ],
     "investigations": [
       {
@@ -33531,7 +33620,7 @@ export const cases = [
         "Subakut tiroidit",
         "TSH salgılayan hipofiz adenomu"
       ],
-      "explanation": "Tirotoksikozis faktitisyada eksojen tiroid hormonu alımı nedeniyle TSH baskılı ve sT4 yüksektir. Tiroglobulin düşük, radyoaktif iyot tutulumu baskılıdır. Graves'te TRAb pozitifliği ve uptake artışı. Bu nedenle en uygun yanıt Tirotoksikozis faktitisya seçeneğidir.",
+      "explanation": "Tirotoksikozis faktitisyada eksojen tiroid hormonu alımı nedeniyle TSH baskılı ve sT4 yüksektir. Tiroglobulin düşük, radyoaktif iyot tutulumu baskılıdır. Graves'te TRAb pozitifliği ve uptake artışı. Tirotoksikozis faktitisya seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -33559,23 +33648,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Çarpıntı, titreme ve kilo kaybı tirotoksikoz bulgularıdır."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "TRAb negatiftir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Tiroglobulin düşük ve radyoaktif iyot tutulumu baskılıdır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Ağrısız tiroid bezi subakut tiroiditi geri plana iter."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake."
           }
         ],
@@ -33673,17 +33762,19 @@ export const cases = [
       "profile": "20 yaşında kadın · Endokrinoloji polikliniği",
       "presentation": "Çarpıntı, titreme ve sinirlilik atakları",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake.",
-        "Çarpıntı, titreme ve kilo kaybı tirotoksikoz bulgularıdır.",
-        "TRAb negatiftir.",
-        "Tiroglobulin düşük ve radyoaktif iyot tutulumu baskılıdır."
+        "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake",
+        "Çarpıntı, titreme ve kilo kaybı tirotoksikoz bulgularıdır",
+        "TRAb negatiftir",
+        "Tiroglobulin düşük ve radyoaktif iyot tutulumu baskılıdır",
+        "Çarpıntı, titreme ve sinirlilik atakları"
       ],
       "historySummary": "20 yaşındaki kadın hasta çarpıntı, titreme, sinirlilik ve kilo kaybı ataklarıyla başvurur. Tiroid bezi ağrısızdır. Hastanın eksojen tiroid hormonu kullanımı başlangıçTA net değildir.",
-      "priorityFocus": "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "TSH baskılı, sT4 yüksek, düşük tiroglobulin, düşük uptake klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-prolactinoma-hook-effect-dilution-001",
@@ -33709,9 +33800,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Görme alanı yakınması hafif.",
-      "Galaktore saptanmıyor."
+      "Görme alanı yakınması hafif",
+      "Galaktore saptanmıyor"
     ],
     "investigations": [
       {
@@ -33768,7 +33858,7 @@ export const cases = [
         "Dopamin agonistine bağlı tümör küçülmesi",
         "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi"
       ],
-      "explanation": "Büyük hipofiz makroadenomunda beklenenden düşük prolaktin ölçümü, çok yüksek antijen düzeyinin immünoassay sinyalini bozduğu hook effect ile açıklanabilir. Serum dilüsyonu sonrası belirgin yüksek ölçüm bu mekanizmayı destekler. Bu nedenle en uygun yanıt Hook effect nedeniyle yalancı düşük immünoassay sonucu seçeneğidir.",
+      "explanation": "Büyük hipofiz makroadenomunda beklenenden düşük prolaktin ölçümü, çok yüksek antijen düzeyinin immünoassay sinyalini bozduğu hook effect ile açıklanabilir. Serum dilüsyonu sonrası belirgin yüksek ölçüm bu mekanizmayı destekler. Hook effect nedeniyle yalancı düşük immünoassay sonucu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -33796,19 +33886,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "MR'da 2 cm hipofiz makroadenomu vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Bazal prolaktin kitle boyutuna göre beklenenden düşük görünmüştür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Dilüsyon sonrası prolaktin belirgin yüksek ölçülmüştür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Makroadenom, beklenenden düşük prolaktin."
           }
         ],
@@ -33914,17 +34004,19 @@ export const cases = [
       "profile": "42 yaşında erkek · Endokrinoloji polikliniği",
       "presentation": "Baş ağrısı ve libido azalması",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Makroadenom, beklenenden düşük prolaktin.",
-        "MR'da 2 cm hipofiz makroadenomu vardır.",
-        "Baş ağrısı, libido azalması ve görme alanı yakınması kitle etkisini.",
-        "Bazal prolaktin tümör boyutuna göre düşük görünmektedir."
+        "Makroadenom, beklenenden düşük prolaktin",
+        "MR'da 2 cm hipofiz makroadenomu vardır",
+        "Baş ağrısı, libido azalması ve görme alanı yakınması kitle etkisini",
+        "Bazal prolaktin tümör boyutuna göre düşük görünmektedir",
+        "Baş ağrısı ve libido azalması"
       ],
       "historySummary": "42 yaşındaki erkek hasta baş ağrısı, libido azalması ve hafif görme alanı yakınmasıyla endokrinolojiye başvurur. Büyük hipofizer lezyon şüphesinde prolaktin düzeyinin beklenenden düşük görünmesi tanısal sorun yaratır.",
-      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
-    }
+      "priorityFocus": "Makroadenom, beklenenden düşük prolaktin klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-metastatic-colon-cancer-biomarkers-cd20-001",
@@ -33951,8 +34043,8 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durumda hafif düşkünlük ve anemiye bağlı solukluk izleniyor.",
-      "Batında belirgin peritonit bulgusu yok."
+      "Genel durumda hafif düşkünlük ve anemiye bağlı solukluk izleniyor",
+      "Batında belirgin peritonit bulgusu yok"
     ],
     "investigations": [],
     "images": [],
@@ -33977,7 +34069,7 @@ export const cases = [
         "NRAS",
         "Mikrosatellit instabilite"
       ],
-      "explanation": "Metastatik kolorektal kanserde sistemik tedavi kararında KRAS, NRAS, BRAF ve mikrosatellit instabilite veya MMR durumu önemlidir. CD20 B hücreli lenfomalarda kullanılan bir marker olup kolon adenokarsinomunda rutin karar verdirici marker değildir. Bu nedenle en uygun yanıt CD20 seçeneğidir.",
+      "explanation": "Metastatik kolorektal kanserde sistemik tedavi kararında KRAS, NRAS, BRAF ve mikrosatellit instabilite veya MMR durumu önemlidir. CD20 B hücreli lenfomalarda kullanılan bir marker olup kolon adenokarsinomunda rutin karar verdirici marker değildir. CD20 seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -34005,23 +34097,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Biyopsi kolon adenokarsinomu göstermektedir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Karaciğer metastazı sistemik tedavi planını gerektirir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "KRAS veya NRAS ve MSI tedavi seçimini etkiler."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "CD20 kolon adenokarsinomu için rutin karar markerı değildir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Metastatik kolon adenokarsinomu tedavi markerları."
           }
         ],
@@ -34119,17 +34211,19 @@ export const cases = [
       "profile": "55 yaşında hasta · Onkoloji konseyi",
       "presentation": "Metastatik kolon adenokarsinomu",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Metastatik kolon adenokarsinomu tedavi markerları.",
-        "Biyopsi kolon adenokarsinomu göstermektedir.",
-        "Karaciğer metastazı sistemik tedavi planını gerektirir.",
-        "KRAS ve NRAS ve MSI tedavi seçimini etkiler."
+        "Metastatik kolon adenokarsinomu tedavi markerları",
+        "Biyopsi kolon adenokarsinomu göstermektedir",
+        "Karaciğer metastazı sistemik tedavi planını gerektirir",
+        "KRAS ve NRAS ve MSI tedavi seçimini etkiler",
+        "Metastatik kolon adenokarsinomu"
       ],
       "historySummary": "Kolonoskopide inen kolonda kitle, karaciğerde metastatik lezyonlar ve biyopside adenokarsinom saptanan hastada sistemik tedavi planlanıyor.",
-      "priorityFocus": "Metastatik kolon adenokarsinomu tedavi markerları akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Metastatik kolon adenokarsinomu tedavi markerları klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-cll-flow-cytometry-001",
@@ -34155,8 +34249,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Servikal ve aksiller bölgelerde mobil, lastik kıvamlı çok sayıda lenfadenopati palpe ediliyor.",
-      "Hepatosplenomegali belirgin değil."
+      "Servikal ve aksiller bölgelerde mobil, lastik kıvamlı çok sayıda lenfadenopati palpe ediliyor",
+      "Hepatosplenomegali belirgin değil"
     ],
     "investigations": [
       {
@@ -34206,7 +34300,7 @@ export const cases = [
         "Reaktif viral lenfositoz",
         "Kronik miyeloid lösemi"
       ],
-      "explanation": "Yaşlı hastada kalıcı lenfositoz, küçük olgun lenfositler ve CD5 ve CD23 ve klonal B hücre popülasyonu kronik lenfositik lösemi için tipik bir immünfenotip oluşturur. Bu nedenle en uygun yanıt Kronik lenfositik lösemi seçeneğidir.",
+      "explanation": "Yaşlı hastada kalıcı lenfositoz, küçük olgun lenfositler ve CD5 ve CD23 ve klonal B hücre popülasyonu kronik lenfositik lösemi için tipik bir immünfenotip oluşturur. Kronik lenfositik lösemi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -34234,23 +34328,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Fizik muayene",
             "text": "Uzun süredir lenfadenopati ve mutlak lenfositoz vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Periferik yaymada olgun küçük lenfositler izlenir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Akım sitometride CD5 ve CD23 ve klonal B hücre popülasyonu saptanır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Yaşlı hasta, kronik lenfositoz, CD5 veya CD23 klonal B hücre."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Yaşlı hastada uzun süredir süren lenfositoz vardır."
           }
         ],
@@ -34261,7 +34355,7 @@ export const cases = [
           },
           {
             "label": "Mekanizma özeti",
-            "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11. 14) ile ilişkilidir."
+            "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11.14) ile ilişkilidir."
           },
           {
             "label": "Sınav incisi",
@@ -34279,7 +34373,7 @@ export const cases = [
           },
           {
             "label": "Mekanizma özeti",
-            "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11. 14) ile ilişkilidir."
+            "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11.14) ile ilişkilidir."
           },
           {
             "label": "Sınav incisi",
@@ -34356,17 +34450,19 @@ export const cases = [
       "profile": "75 yaşında erkek · Hematoloji polikliniği",
       "presentation": "Boyun ve aksillada uzun süredir lenf nodu şişliği",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Yaşlı hasta, kronik lenfositoz, CD5 ve CD23 klonal B hücre.",
-        "Yaşlı hastada uzun süredir süren lenfositoz vardır.",
-        "Boyun ve aksillada lenf nodları eşlik eder.",
-        "Yaymada olgun küçük lenfositler izlenir."
+        "Yaşlı hasta, kronik lenfositoz, CD5 ve CD23 klonal B hücre",
+        "Yaşlı hastada uzun süredir süren lenfositoz vardır",
+        "Boyun ve aksillada lenf nodları eşlik eder",
+        "Yaymada olgun küçük lenfositler izlenir",
+        "Boyun ve aksillada uzun süredir lenf nodu şişliği"
       ],
       "historySummary": "75 yaşındaki erkek hasta boyun ve aksillada uzun süredir devam eden lenf nodu şişlikleriyle başvurur. Rutin kontrollerinde yıllardır süren lenfositoz öyküsü vardır ve hasta belirgin B semptomu tariflemez.",
-      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
-    }
+      "priorityFocus": "Yaşlı hasta, kronik lenfositoz, CD5 ve CD23 klonal B hücre klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-aiha-direct-coombs-001",
@@ -34392,8 +34488,8 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Cilt ve skleralarda hafif ikter izleniyor.",
-      "Taşikardik ancak hemodinamik olarak stabil."
+      "Cilt ve skleralarda hafif ikter izleniyor",
+      "Taşikardik ancak hemodinamik olarak stabil"
     ],
     "investigations": [
       {
@@ -34455,7 +34551,7 @@ export const cases = [
         "Aplastik anemi",
         "Paroksismal nokturnal hemoglobinüri"
       ],
-      "explanation": "Hemoliz laboratuvarı ile birlikte direkt antiglobulin testinde IgG veya C3 pozitifliği, antikor aracılı hemolizi ve özellikle sıcak tip otoimmün hemolitik anemi bulgu örüntüsünü destekler. Bu nedenle en uygun yanıt Sıcak tip otoimmün hemolitik anemi seçeneğidir.",
+      "explanation": "Hemoliz laboratuvarı ile birlikte direkt antiglobulin testinde IgG veya C3 pozitifliği, antikor aracılı hemolizi ve özellikle sıcak tip otoimmün hemolitik anemi bulgu örüntüsünü destekler. Sıcak tip otoimmün hemolitik anemi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -34483,19 +34579,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Sarılık ve çarpıntıya hemoliz laboratuvarı eşlik eder."
           },
           {
-            "title": "Retikülositoz",
+            "title": "Öykü",
             "text": "Retikülositoz kemik iliği yanıtını gösterir."
           },
           {
-            "title": "Direkt antiglobulin testi",
+            "title": "Laboratuvar",
             "text": "IgG veya C3 pozitifliği otoimmün hemolizi destekler."
           },
           {
-            "title": "Dışlatıcı öykü",
+            "title": "Başvuru yakınması",
             "text": "Kanama öyküsünün olmaması hemolitik süreci öne çıkarır."
           }
         ],
@@ -34601,17 +34697,19 @@ export const cases = [
       "profile": "58 yaşında kadın · Dahiliye polikliniği",
       "presentation": "Halsizlik, sararma ve çarpıntı",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Hemoliz bulguları ve direkt Coombs IgG/C3 pozitifliği otoimmün hemolitik anemi lehinedir.",
-        "Halsizlik, sararma ve çarpıntı akut anemi kliniğini destekler.",
-        "Retikülositoz kemik iliği yanıtını gösterir.",
-        "Kanama öyküsünün olmaması hemolitik süreci öne çıkarır."
+        "Hemoliz bulguları ve direkt Coombs IgG/C3 pozitifliği otoimmün hemolitik anemi lehinedir",
+        "Halsizlik, sararma ve çarpıntı akut anemi kliniğini destekler",
+        "Retikülositoz kemik iliği yanıtını gösterir",
+        "Kanama öyküsünün olmaması hemolitik süreci öne çıkarır",
+        "Halsizlik, sararma ve çarpıntı"
       ],
       "historySummary": "Kanama öyküsü olmadan gelişen sararma, retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı hemolizi düşündürür.",
-      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
-    }
+      "priorityFocus": "Hemoliz bulguları ve direkt Coombs IgG/C3 pozitifliği otoimmün hemolitik anemi lehinedir klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-hereditary-cancer-wrong-match-atm-001",
@@ -34637,9 +34735,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Batın muayenesinde ele gelen kitle, defans veya rebound saptanmıyor.",
-      "Periferik lenf nodu bölgelerinde belirgin patolojik büyüme palpe edilmiyor."
+      "Batın muayenesinde ele gelen kitle, defans veya rebound saptanmıyor",
+      "Periferik lenf nodu bölgelerinde belirgin patolojik büyüme palpe edilmiyor"
     ],
     "investigations": [],
     "images": [],
@@ -34664,7 +34761,7 @@ export const cases = [
         "Cowden sendromu. PTEN",
         "Herediter meme-over kanseri. BRCA1 veya 2"
       ],
-      "explanation": "Herediter difüz mide kanserinin klasik geni CDH1'dir. ATM bu sendromla temel eşleşme değildir. Li-Fraumeni-TP53, Cowden-PTEN ve herediter meme-over kanseri-BRCA1 veya 2 eşleşmeleri doğru yüksek verimli eşleşmelerdir. Bu nedenle en uygun yanıt Herediter difüz mide kanseri ve ATM seçeneğidir.",
+      "explanation": "Herediter difüz mide kanserinin klasik geni CDH1'dir. ATM bu sendromla temel eşleşme değildir. Li-Fraumeni-TP53, Cowden-PTEN ve herediter meme-over kanseri-BRCA1 veya 2 eşleşmeleri doğru yüksek verimli eşleşmelerdir. Herediter difüz mide kanseri ve ATM seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -34692,19 +34789,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Soru yanlış sendrom-gen eşleşmesini soruyor."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Herediter difüz mide kanserinde beklenen gen CDH1'dir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "ATM seçeneği bu sendrom için temel eşleşme değildir."
           },
           {
-            "title": "Mekanizma",
+            "title": "Öykü",
             "text": "Herediter difüz mide kanseri gen eşleşmesi."
           }
         ],
@@ -34802,17 +34899,19 @@ export const cases = [
       "profile": "Genetik danışmanlık olgusu · TUS tekrar modülü",
       "presentation": "Herediter kanser sendromu-gen eşleşmesi",
       "riskContext": [
-        "Aile öyküsü veya kalıtsal yatkınlık."
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Herediter difüz mide kanseri gen eşleşmesi.",
-        "Soru yanlış sendrom-gen eşleşmesini soruyor.",
-        "Herediter difüz mide kanserinde beklenen gen CDH1'dir.",
-        "ATM seçeneği bu sendrom için temel eşleşme değildir."
+        "Herediter difüz mide kanseri gen eşleşmesi",
+        "Soru yanlış sendrom-gen eşleşmesini soruyor",
+        "Herediter difüz mide kanserinde beklenen gen CDH1'dir",
+        "ATM seçeneği bu sendrom için temel eşleşme değildir",
+        "Herediter kanser sendromu-gen eşleşmesi"
       ],
       "historySummary": "Ailesinde genç yaşTA yaygın mide kanseri, meme-over kanseri ve sarkom öyküleri bulunan bir aile için sendrom-gen eşleşmeleri gözden geçirilir. Soru, yanlış eşleşmeyi ayırt etmeye odaklanır.",
-      "priorityFocus": "Herediter difüz mide kanseri gen eşleşmesi klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Herediter difüz mide kanseri gen eşleşmesi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-anaphylaxis-im-epinephrine-001",
@@ -34838,9 +34937,9 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Yaygın ürtikeryal döküntü ve dudak çevresinde ödem izleniyor.",
-      "Akciğer oskültasyonunda bilateral hışıltılı solunum ve ronküs duyuluyor.",
-      "Hasta soluk, huzursuz ve soğuk terli görünümde."
+      "Yaygın ürtikeryal döküntü ve dudak çevresinde ödem izleniyor",
+      "Akciğer oskültasyonunda bilateral hışıltılı solunum ve ronküs duyuluyor",
+      "Hasta soluk, huzursuz ve soğuk terli görünümde"
     ],
     "investigations": [],
     "images": [],
@@ -34865,7 +34964,7 @@ export const cases = [
         "Nebül salbutamolü tek tedavi olarak vermek",
         "Sistemik kortikosteroid yanıtını beklemek"
       ],
-      "explanation": "İlaç uygulamasından dakikalar sonra gelişen sistemik alerjik reaksiyon anafilaksi olarak ele alınmalıdır. İlk seçilecek tedavi intramüsküler adrenalindir. Antihistaminik ve steroidler destek tedavidir, hava yolu veya dolaşım riskini adrenalin kadar hızlı düzeltmez. Bu nedenle en uygun yanıt İntramüsküler adrenalin seçeneğidir.",
+      "explanation": "İlaç uygulamasından dakikalar sonra gelişen sistemik alerjik reaksiyon anafilaksi olarak ele alınmalıdır. İlk seçilecek tedavi intramüsküler adrenalindir. Antihistaminik ve steroidler destek tedavidir, hava yolu veya dolaşım riskini adrenalin kadar hızlı düzeltmez. İntramüsküler adrenalin seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -34893,19 +34992,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Antibiyotik uygulamasından dakikalar sonra reaksiyon gelişmiştir."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Laboratuvar",
             "text": "Avuç içi kaşıntısı ve yaygın döküntü mast hücre aracılı reaksiyonu düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Fenalık hissi sistemik reaksiyon lehinedir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık veya kaşıntı."
           }
         ],
@@ -35003,17 +35102,19 @@ export const cases = [
       "profile": "30 yaşında kadın · Acil servis",
       "presentation": "İV antibiyotik uygulamasından dakikalar sonra fenalık ve kaşıntı",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık ve kaşıntı.",
-        "Antibiyotik uygulamasından dakikalar sonra reaksiyon gelişmiştir.",
-        "Avuç içi kaşıntısı ve yaygın döküntü mast hücre aracılı reaksiyonu.",
-        "Fenalık hissi sistemik reaksiyon."
+        "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık ve kaşıntı",
+        "Antibiyotik uygulamasından dakikalar sonra reaksiyon gelişmiştir",
+        "Avuç içi kaşıntısı ve yaygın döküntü mast hücre aracılı reaksiyonu",
+        "Fenalık hissi sistemik reaksiyon",
+        "İV antibiyotik uygulamasından dakikalar sonra fenalık ve kaşıntı"
       ],
       "historySummary": "Pnömoni nedeniyle başlanan antibiyotik sonrası avuç içi kaşıntısı, fenalık hissi ve yaygın döküntü gelişiyor.",
-      "priorityFocus": "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık ve kaşıntı klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "İlaç sonrası dakikalar içinde yaygın döküntü, fenalık ve kaşıntı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-scleroderma-digital-ulcer-iloprost-bosentan-001",
@@ -35041,8 +35142,8 @@ export const cases = [
       "Ağrı skoru": "6 veya 10"
     },
     "exam": [
-      "Her iki elde sklerodaktili ve yüz bölgesinde yaygın telanjiektaziler var.",
-      "Sol el 2-3."
+      "Her iki elde sklerodaktili ve yüz bölgesinde yaygın telanjiektaziler var",
+      "Sol el 2-3"
     ],
     "investigations": [],
     "images": [],
@@ -35067,7 +35168,7 @@ export const cases = [
         "Sildenafil ve düşük doz aspirin",
         "Siklofosfamid ve yüksek doz steroid"
       ],
-      "explanation": "Sistemik skleroz veya Raynaud zemininde gelişen ağrılı dijital ülserlerde prostasiklin analoğu iloprost ve endotelin reseptör antagonisti bosentan uygun kombinasyondur. Bosentan özellikle yeni dijital ülser gelişimini azaltmada önemlidir. Bu nedenle en uygun yanıt İloprost ve bosentan seçeneğidir.",
+      "explanation": "Sistemik skleroz veya Raynaud zemininde gelişen ağrılı dijital ülserlerde prostasiklin analoğu iloprost ve endotelin reseptör antagonisti bosentan uygun kombinasyondur. Bosentan özellikle yeni dijital ülser gelişimini azaltmada önemlidir. İloprost ve bosentan seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -35095,23 +35196,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Uzun süreli Raynaud yakınmaları vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Parmak uçlarında ağrılı morarma ve ülser gelişmiştir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Aspirin ve kalsiyum kanal blokerinden yeterli yanıt alınamamıştır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "İloprost-bosentan vasküler hedefli tedaviyle uyumludur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Raynaud, ağrılı dijital ülser, CCB yetersizliği."
           }
         ],
@@ -35209,17 +35310,19 @@ export const cases = [
       "profile": "58 yaşında kadın · Romatoloji polikliniği",
       "presentation": "Parmak uçlarında ağrı, morarma ve ülser",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Raynaud, ağrılı dijital ülser, CCB yetersizliği.",
-        "Uzun süreli Raynaud yakınmaları vardır.",
-        "Parmak uçlarında ağrılı morarma ve ülser gelişmiştir.",
-        "Aspirin ve kalsiyum kanal blokerinden yeterli yanıt alınamamıştır."
+        "Raynaud, ağrılı dijital ülser, CCB yetersizliği",
+        "Uzun süreli Raynaud yakınmaları vardır",
+        "Parmak uçlarında ağrılı morarma ve ülser gelişmiştir",
+        "Aspirin ve kalsiyum kanal blokerinden yeterli yanıt alınamamıştır",
+        "Parmak uçlarında ağrı, morarma ve ülser"
       ],
       "historySummary": "Uzun süredir Raynaud yakınmaları olan hastada son haftalarda parmak uçlarında ağrılı morarma ve ülser gelişiyor. Aspirin ve kalsiyum kanal blokerinden yeterli fayda görmemiş.",
-      "priorityFocus": "Raynaud, ağrılı dijital ülser, CCB yetersizliği akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Raynaud, ağrılı dijital ülser, CCB yetersizliği klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-sle-activity-dsdna-complement-001",
@@ -35246,8 +35349,8 @@ export const cases = [
       "Ateş": "37.2 °C"
     },
     "exam": [
-      "Yüzde nazolabial kıvrımları koruyan malar eritem var.",
-      "MCP eklemlerinde hassasiyet ve hafif şişlik izleniyor."
+      "Yüzde nazolabial kıvrımları koruyan malar eritem var",
+      "MCP eklemlerinde hassasiyet ve hafif şişlik izleniyor"
     ],
     "investigations": [
       {
@@ -35303,7 +35406,7 @@ export const cases = [
         "Sınırlı kutanöz sistemik skleroz bulgu örüntüsü",
         "Romatoid artrit aktivitesini gösteren bulgu örüntüsü"
       ],
-      "explanation": "SLE bağlamında anti-dsDNA yüksekliği ve C3 veya C4 düşüklüğü immün kompleks aracılı aktiviteyi düşündürür. İzole ANA tanısal taramada duyarlı olsa da aktivite takibinde aynı ayırt ediciliğe sahip değildir. Bu nedenle en uygun yanıt Aktif SLE alevlenmesini destekleyen serolojik bulgu örüntüsü seçeneğidir.",
+      "explanation": "SLE bağlamında anti-dsDNA yüksekliği ve C3 veya C4 düşüklüğü immün kompleks aracılı aktiviteyi düşündürür. İzole ANA tanısal taramada duyarlı olsa da aktivite takibinde aynı ayırt ediciliğe sahip değildir. Aktif SLE alevlenmesini destekleyen serolojik bulgu örüntüsü seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -35331,23 +35434,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Fotosensitivite, malar döküntü ve eklem ağrısı SLE bağlamı oluşturur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Anti-dsDNA yüksek bulunmuştur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "C3 veya C4 düşüklüğü kompleman tüketimini gösterir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "SLE aktivite izlemi, anti-dsDNA yüksekliği, kompleman düşüklüğü."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Fotosensitivite, malar döküntü ve artralji SLE bulgu örüntüsünü destekler."
           }
         ],
@@ -35453,18 +35556,20 @@ export const cases = [
       "profile": "28 yaşında kadın · Romatoloji polikliniği",
       "presentation": "Fotosensitivite, malar döküntü ve eklem ağrısı",
       "riskContext": [
-        "SLE’de renal tutulum ve kompleman tüketimi hastalık aktivitesi açısından önemlidir.",
-        "Fotosensitivite ve malar döküntü sistemik otoimmün alevlenme bağlamı oluşturur."
+        "SLE’de renal tutulum ve kompleman tüketimi hastalık aktivitesi açısından önemlidir",
+        "Fotosensitivite ve malar döküntü sistemik otoimmün alevlenme bağlamı oluşturur"
       ],
       "distinctiveClues": [
-        "Fotosensitivite, malar döküntü ve artralji SLE bulgu örüntüsünü destekler.",
-        "Bacaklarda hafif şişlik renal aktivite açısından uyarıcıdır.",
-        "Anti-dsDNA yüksekliği hastalık aktivitesini destekler.",
-        "C3 ve C4 düşüklüğü kompleman tüketimini gösterir."
+        "Fotosensitivite, malar döküntü ve artralji SLE bulgu örüntüsünü destekler",
+        "Bacaklarda hafif şişlik renal aktivite açısından uyarıcıdır",
+        "Anti-dsDNA yüksekliği hastalık aktivitesini destekler",
+        "C3 ve C4 düşüklüğü kompleman tüketimini gösterir",
+        "Fotosensitivite, malar döküntü ve eklem ağrısı"
       ],
       "historySummary": "Fotosensitivite, malar döküntü, artralji ve bacaklarda hafif şişlik SLE aktivitesi açısından uyarıcıdır.",
-      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
-    }
+      "priorityFocus": "Fotosensitivite, malar döküntü ve artralji SLE bulgu örüntüsünü destekler klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-membranous-nephropathy-anti-pla2r-001",
@@ -35490,8 +35595,8 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Pretibial ödem mevcut.",
-      "Sistemik lupus veya malignite düşündüren belirgin muayene bulgusu yok."
+      "Pretibial ödem mevcut",
+      "Sistemik lupus veya malignite düşündüren belirgin muayene bulgusu yok"
     ],
     "investigations": [
       {
@@ -35555,7 +35660,7 @@ export const cases = [
         "Minimal değişiklik hastalığı",
         "Diyabetik nefropati"
       ],
-      "explanation": "Erişkinde nefrotik düzeyde proteinüri, membranöz glomerüler bulgu örüntüsü ve serum anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler. Bu nedenle en uygun yanıt Primer membranöz nefropati seçeneğidir.",
+      "explanation": "Erişkinde nefrotik düzeyde proteinüri, membranöz glomerüler bulgu örüntüsü ve serum anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler. Primer membranöz nefropati seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -35583,23 +35688,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Mekanizma özeti",
+            "title": "Öykü",
             "text": "Nefrotik düzeyde proteinüri vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Biyopsi membranöz glomerüler bulgu örüntüsü gösterir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Serum anti-PLA2R pozitifliği primer form lehine güçlü serolojik ipucudur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Erişkinde nefrotik proteinüri, anti-PLA2R pozitifliği."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Erişkin hastada nefrotik düzeyde proteinüri ve ödem vardır."
           }
         ],
@@ -35705,17 +35810,19 @@ export const cases = [
       "profile": "Erişkin hasta · Nefroloji polikliniği",
       "presentation": "Nefrotik düzeyde proteinüri",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Erişkinde nefrotik proteinüri, anti-PLA2R pozitifliği.",
-        "Erişkin hastada nefrotik düzeyde proteinüri ve ödem vardır.",
-        "Biyopsi membranöz nefropati.",
-        "Serum anti-PLA2R pozitifliği primer formu destekler."
+        "Erişkinde nefrotik proteinüri, anti-PLA2R pozitifliği",
+        "Erişkin hastada nefrotik düzeyde proteinüri ve ödem vardır",
+        "Biyopsi membranöz nefropati",
+        "Serum anti-PLA2R pozitifliği primer formu destekler",
+        "Nefrotik düzeyde proteinüri"
       ],
       "historySummary": "Klinik tablo ilgili klinik tablo ile sekonder nedenlerin ayırt edilmesini gerektirir.",
-      "priorityFocus": "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir."
-    }
+      "priorityFocus": "Erişkinde nefrotik proteinüri, anti-PLA2R pozitifliği klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-diabetic-nephropathy-atypical-hematuria-001",
@@ -35741,7 +35848,7 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Periferik ödem hafif."
+      "Periferik ödem hafif"
     ],
     "investigations": [],
     "images": [],
@@ -35766,7 +35873,7 @@ export const cases = [
         "Önceden bilinen mikroalbüminüri",
         "Böbrek boyutlarının normal veya artmış olması"
       ],
-      "explanation": "Diyabetik nefropati genellikle albuminüri ve yavaş ilerleyen böbrek fonksiyon kaybı ile seyreder. Makroskopik hematüri atipiktir ve diyabet dışı glomerüler veya ürolojik nedeni düşündürür. Diyabetik retinopati ve uzun süreli mikroalbüminüri diyabetik nefropatiyi destekler. Bu nedenle en uygun yanıt Makroskopik hematüri seçeneğidir.",
+      "explanation": "Diyabetik nefropati genellikle albuminüri ve yavaş ilerleyen böbrek fonksiyon kaybı ile seyreder. Makroskopik hematüri atipiktir ve diyabet dışı glomerüler veya ürolojik nedeni düşündürür. Diyabetik retinopati ve uzun süreli mikroalbüminüri diyabetik nefropatiyi destekler. Makroskopik hematüri seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -35794,23 +35901,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Laboratuvar",
             "text": "Uzun süreli diyabette albuminüri vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Böbrek fonksiyon bozukluğu yavaş ilerlemektedir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Soru diyabet dışı etiyoloji kırmızı bayrağını sorar."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Makroskopik hematüri tipik diyabetik nefropati bulgusu değildir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Diyabetik nefropati bulgu örüntüsünde ilgili klinik tablo kırmızı bayrağı."
           }
         ],
@@ -35908,17 +36015,19 @@ export const cases = [
       "profile": "Uzun süreli diyabeti olan erişkin hasta · Nefroloji polikliniği",
       "presentation": "Proteinüriye eşlik eden atipik böbrek bulgusu",
       "riskContext": [
-        "Diyabet veya metabolik dekompansasyon riski."
+        "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "Diyabetik nefropati bulgu örüntüsünde ilgili klinik tablo kırmızı bayrağı.",
-        "Uzun süreli diyabette albuminüri vardır.",
-        "Böbrek fonksiyon bozukluğu yavaş ilerlemektedir.",
-        "Soru diyabet dışı etiyoloji kırmızı bayrağını sorar."
+        "Diyabetik nefropati bulgu örüntüsünde ilgili klinik tablo kırmızı bayrağı",
+        "Uzun süreli diyabette albuminüri vardır",
+        "Böbrek fonksiyon bozukluğu yavaş ilerlemektedir",
+        "Soru diyabet dışı etiyoloji kırmızı bayrağını sorar",
+        "Proteinüriye eşlik eden atipik böbrek bulgusu"
       ],
       "historySummary": "Uzun süreli diyabeti olan hastada albuminüri ve yavaş ilerleyen böbrek fonksiyon bozukluğu izlenmektedir. Hekim, diyabetik nefropati dışı bir etiyolojiyi düşündürecek kırmızı bayrak bulgusunu ayırt etmek ister.",
-      "priorityFocus": "Diyabetik nefropati bulgu örüntüsünde ilgili klinik tablo kırmızı bayrağı klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Diyabetik nefropati bulgu örüntüsünde ilgili klinik tablo kırmızı bayrağı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-hyperkalemia-ecg-calcium-gluconate-001",
@@ -35944,8 +36053,7 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Genel durum orta.",
-      "Kardiyak oskültasyonda belirgin üfürüm yok."
+      "Kardiyak oskültasyonda belirgin üfürüm yok"
     ],
     "investigations": [
       {
@@ -35995,7 +36103,7 @@ export const cases = [
         "İnsülin ve dekstroz",
         "Sodyum polistiren sülfonat"
       ],
-      "explanation": "EKG değişikliği olan ağır hiperpotasemide ilk hedef kardiyak membranı stabilize etmektir. Bunun için IV kalsiyum glukonat verilir. İnsülin-dekstroz potasyumu hücre içine kaydırır ama membran stabilizasyonu sağlamaz. Bu nedenle en uygun yanıt İntravenöz kalsiyum glukonat seçeneğidir.",
+      "explanation": "EKG değişikliği olan ağır hiperpotasemide ilk hedef kardiyak membranı stabilize etmektir. Bunun için IV kalsiyum glukonat verilir. İnsülin-dekstroz potasyumu hücre içine kaydırır ama membran stabilizasyonu sağlamaz. İntravenöz kalsiyum glukonat seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -36023,23 +36131,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Laboratuvar",
             "text": "Potasyum 7."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Öykü",
             "text": "EKG'de sivri T dalgaları ve P dalga basıklaşması vardır."
           },
           {
-            "title": "EKG bulgu örüntüsü",
+            "title": "Öykü",
             "text": "QRS genişlemesi kardiyak membran instabilitesini gösterir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Kronik böbrek hastalığı hiperpotasemi riskini artırır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "K, 7."
           }
         ],
@@ -36137,17 +36245,19 @@ export const cases = [
       "profile": "54 yaşında erkek · Acil servis",
       "presentation": "Halsizlik, güçsüzlük ve bulantı",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "K, 7.",
-        "Potasyum 7.",
-        "EKG'de sivri T dalgaları ve P dalga basıklaşması vardır.",
-        "QRS genişlemesi kardiyak membran instabilitesini."
+        "Potasyum 7",
+        "EKG'de sivri T dalgaları ve P dalga basıklaşması vardır",
+        "QRS genişlemesi kardiyak membran instabilitesini",
+        "Halsizlik, güçsüzlük ve bulantı",
+        "Kardiyak oskültasyonda belirgin üfürüm yok"
       ],
       "historySummary": "Kronik böbrek hastalığı olan 54 yaşındaki erkek hasta halsizlik, kas güçsüzlüğü ve bulantı ile acile başvurur. Klinik tablo potasyum yüksekliğine bağlı kardiyak membran instabilitesi açısından acil değerlendirilir.",
-      "priorityFocus": "K, 7."
-    }
+      "priorityFocus": "Potasyum 7 klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-geriatric-depression-pseudodementia-001",
@@ -36173,8 +36283,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Psikomotor yavaşlama ve düşük motivasyon izleniyor.",
-      "Serbest hatırlama zayıf, ipucu ile hatırlama görece korunmuş."
+      "Psikomotor yavaşlama ve düşük motivasyon izleniyor",
+      "Serbest hatırlama zayıf, ipucu ile hatırlama görece korunmuş"
     ],
     "investigations": [],
     "images": [],
@@ -36199,7 +36309,7 @@ export const cases = [
         "Lewy cisimcikli demans",
         "Vasküler demans"
       ],
-      "explanation": "Yaşlı hastada eş kaybı sonrası belirgin keyifsizlik, iştah azalması, ilgi kaybı ve unutkanlık geriatrik depresyon veya pseudodementia bulgu örüntüsünü düşündürür. Demansta ilerleyici kognitif yıkım baskındır. Depresyonda duygudurum belirtileri ve yakın başlangıç önemli ipuçlarıdır. Bu nedenle en uygun yanıt Geriatrik depresyon seçeneğidir.",
+      "explanation": "Yaşlı hastada eş kaybı sonrası belirgin keyifsizlik, iştah azalması, ilgi kaybı ve unutkanlık geriatrik depresyon veya pseudodementia bulgu örüntüsünü düşündürür. Demansta ilerleyici kognitif yıkım baskındır. Depresyonda duygudurum belirtileri ve yakın başlangıç önemli ipuçlarıdır. Geriatrik depresyon seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -36227,23 +36337,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Unutkanlık eş kaybından sonra artmıştır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "İştah azalması, keyifsizlik ve ilgide azalma vardır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Klinik başlangıç duygusal stresörle ilişkilidir."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "Normal basınçlı hidrosefali triadı belirtilmemiştir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık."
           }
         ],
@@ -36341,17 +36451,19 @@ export const cases = [
       "profile": "69 yaşında kadın · Geriatri polikliniği",
       "presentation": "Unutkanlık yakınması",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık.",
-        "Unutkanlık eş kaybından sonra artmıştır.",
-        "İştah azalması, keyifsizlik ve ilgide azalma vardır.",
-        "Klinik başlangıç duygusal stresörle ilişkilidir."
+        "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık",
+        "Unutkanlık eş kaybından sonra artmıştır",
+        "İştah azalması, keyifsizlik ve ilgide azalma vardır",
+        "Klinik başlangıç duygusal stresörle ilişkilidir",
+        "Unutkanlık yakınması"
       ],
       "historySummary": "Yakınları unutkanlığın eş kaybından sonra arttığını, hastada iştah azalması, keyifsizlik ve ilgide azalma geliştiğini belirtiyor.",
-      "priorityFocus": "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Eş kaybı sonrası isteksizlik, iştah azalması, unutkanlık klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-pityriasis-rosea-herald-patch-001",
@@ -36377,8 +36489,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Gövde ve proksimal ekstremitelerde eritemli skuamlı makülopapüller izleniyor.",
-      "Daha büyük oval skuamlı madalyon plak seçiliyor."
+      "Gövde ve proksimal ekstremitelerde eritemli skuamlı makülopapüller izleniyor",
+      "Daha büyük oval skuamlı madalyon plak seçiliyor"
     ],
     "investigations": [],
     "images": [],
@@ -36403,7 +36515,7 @@ export const cases = [
         "Toksik epidermal nekroliz",
         "Hidradenitis süpürativa"
       ],
-      "explanation": "Önce tek büyük oval skuamlı \"herald patch\" çıkması, ardından gövde ve proksimal ekstremitelerde benzer döküntü gelişmesi pitriazis rozea için tipiktir. Sistemik toksisite ve mukozal erozyon olmaması TEN veya pemfigus gibi ağır tabloları geri plana iter. Bu nedenle en uygun yanıt Pitriazis rozea seçeneğidir.",
+      "explanation": "Önce tek büyük oval skuamlı \"herald patch\" çıkması, ardından gövde ve proksimal ekstremitelerde benzer döküntü gelişmesi pitriazis rozea için tipiktir. Sistemik toksisite ve mukozal erozyon olmaması TEN veya pemfigus gibi ağır tabloları geri plana iter. Pitriazis rozea seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -36431,19 +36543,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "İlk olarak gövdede tek büyük oval skuamlı plak çıkmıştır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Sonra gövde ve proksimal ekstremitelerde çok sayıda benzer döküntü gelişmiştir."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "Mukozal erozyon ve sistemik toksisite yoktur."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Önce tek madalyon plak, sonra gövde döküntüsü."
           }
         ],
@@ -36541,17 +36653,19 @@ export const cases = [
       "profile": "20 yaşında kadın · Dermatoloji polikliniği",
       "presentation": "Gövdede yaygınlaşan skuamlı döküntü",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Önce tek madalyon plak, sonra gövde döküntüsü.",
-        "İlk olarak gövdede tek büyük oval skuamlı plak çıkmıştır.",
-        "Sonra gövde ve proksimal ekstremitelerde çok sayıda benzer döküntü gelişmiştir.",
-        "Mukozal erozyon ve sistemik toksisite yoktur."
+        "Önce tek madalyon plak, sonra gövde döküntüsü",
+        "İlk olarak gövdede tek büyük oval skuamlı plak çıkmıştır",
+        "Sonra gövde ve proksimal ekstremitelerde çok sayıda benzer döküntü gelişmiştir",
+        "Mukozal erozyon ve sistemik toksisite yoktur",
+        "Gövdede yaygınlaşan skuamlı döküntü"
       ],
       "historySummary": "20 yaşındaki kadın hasta birkaç gün önce gövdede tek büyük oval skuamlı plak fark ettikten sonra gövde ve proksimal ekstremitelerde çok sayıda benzer döküntü gelişmesi nedeniyle başvurur. Sistemik toksisite veya mukozal erozyon tariflemez.",
-      "priorityFocus": "Önce tek madalyon plak, sonra gövde döküntüsü akut koroner oklüzyon açısından karar verdiricidir."
-    }
+      "priorityFocus": "Önce tek madalyon plak, sonra gövde döküntüsü klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-tinea-pedis-terbinafine-001",
@@ -36578,8 +36692,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "İnterdijital aralıklarda masere skuamlı lezyonlar izleniyor.",
-      "Plantar yüzeyde hiperkeratotik skuamlı alanlar mevcut."
+      "İnterdijital aralıklarda masere skuamlı lezyonlar izleniyor",
+      "Plantar yüzeyde hiperkeratotik skuamlı alanlar mevcut"
     ],
     "investigations": [
       {
@@ -36623,7 +36737,7 @@ export const cases = [
         "Topikal permetrin",
         "Topikal mupirosin"
       ],
-      "explanation": "Ayak parmak aralarında maserasyon ve plantar skuam tinea pedis veya dermatofit enfeksiyonu ile uyumludur. Uygun tedavi terbinafin gibi antifungaldir. Asiklovir HSV veya VZV, permetrin skabies veya pediküloz, mupirosin bakteriyel impetigo için düşünülür. Bu nedenle en uygun yanıt Terbinafin seçeneğidir.",
+      "explanation": "Ayak parmak aralarında maserasyon ve plantar skuam tinea pedis veya dermatofit enfeksiyonu ile uyumludur. Uygun tedavi terbinafin gibi antifungaldir. Asiklovir HSV veya VZV, permetrin skabies veya pediküloz, mupirosin bakteriyel impetigo için düşünülür. Terbinafin seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -36651,19 +36765,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Parmak aralarında maserasyon vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Plantar hiperkeratotik skuam dermatofit enfeksiyonunu destekler."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Klinik mantar enfeksiyonu olarak değerlendirilmiştir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "İnterdigital maserasyon, plantar hiperkeratotik skuam."
           }
         ],
@@ -36761,17 +36875,19 @@ export const cases = [
       "profile": "56 yaşında kadın · Dermatoloji polikliniği",
       "presentation": "Ayakta kaşıntılı skuamlı lezyonlar",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "İnterdigital maserasyon, plantar hiperkeratotik skuam.",
-        "Parmak aralarında maserasyon vardır.",
-        "Plantar hiperkeratotik skuam dermatofit enfeksiyonunu destekler.",
-        "Klinik mantar enfeksiyonu olarak değerlendirilmiştir."
+        "İnterdigital maserasyon, plantar hiperkeratotik skuam",
+        "Parmak aralarında maserasyon vardır",
+        "Plantar hiperkeratotik skuam dermatofit enfeksiyonunu destekler",
+        "Klinik mantar enfeksiyonu olarak değerlendirilmiştir",
+        "Ayakta kaşıntılı skuamlı lezyonlar"
       ],
       "historySummary": "Ayak parmak aralarında maserasyon ve plantar hiperkeratotik skuam gelişen hastada mantar enfeksiyonu düşünülüyor.",
-      "priorityFocus": "İnterdigital maserasyon, plantar hiperkeratotik skuam klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "İnterdigital maserasyon, plantar hiperkeratotik skuam klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-aca-stroke-leg-predominant-001",
@@ -36798,8 +36914,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Sağ alt ekstremite plejik, sağ üst ekstremite 4 veya 5 kuvvetinde.",
-      "Sağ Babinski pozitif."
+      "Sağ alt ekstremite plejik, sağ üst ekstremite 4 veya 5 kuvvetinde",
+      "Sağ Babinski pozitif"
     ],
     "investigations": [],
     "images": [],
@@ -36824,7 +36940,7 @@ export const cases = [
         "Posterior serebral arter",
         "Baziler arter"
       ],
-      "explanation": "Motor defisitin bacakta koldan belirgin olması medial frontal-parasagittal korteks tutulumu ve anterior serebral arter enfarktını düşündürür. MCA daha çok yüz-kol baskın güçsüzlük ve afazi veya ihmal ile sorulur. Bu nedenle en uygun yanıt Anterior serebral arter seçeneğidir.",
+      "explanation": "Motor defisitin bacakta koldan belirgin olması medial frontal-parasagittal korteks tutulumu ve anterior serebral arter enfarktını düşündürür. MCA daha çok yüz-kol baskın güçsüzlük ve afazi veya ihmal ile sorulur. Anterior serebral arter seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -36852,23 +36968,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Ani başlayan tek taraflı güç kaybı vasküler olayı düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Defisit sağ bacakta belirgin, sağ kolda hafiftir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Konuşma bozukluğu ön planda değildir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Bacak ağırlıklı motor korteks alanı ACA sulama sahasındadır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Bacakta koldan belirgin motor defisit."
           }
         ],
@@ -36966,17 +37082,19 @@ export const cases = [
       "profile": "65 yaşında erkek · Acil servis",
       "presentation": "Sağ tarafta ani güç kaybı",
       "riskContext": [
-        "Acil başvuru bağlamında stabilite değerlendirmesi."
+        "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Bacakta koldan belirgin motor defisit.",
-        "Ani başlayan tek taraflı güç kaybı vasküler olayı.",
-        "Defisit sağ bacakta belirgin, sağ kolda hafiftir.",
-        "Konuşma bozukluğu ön planda değildir."
+        "Bacakta koldan belirgin motor defisit",
+        "Ani başlayan tek taraflı güç kaybı vasküler olayı",
+        "Defisit sağ bacakta belirgin, sağ kolda hafiftir",
+        "Konuşma bozukluğu ön planda değildir",
+        "Sağ tarafta ani güç kaybı"
       ],
       "historySummary": "65 yaşındaki erkek hasta ani başlayan sağ taraf güç kaybı ile acile getirilir. Güç kaybı sağ bacakta belirgin, sağ kolda ise daha hafiftir. Konuşma bozukluğu ön planda değildir.",
-      "priorityFocus": "Bacakta koldan belirgin motor defisit klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Bacakta koldan belirgin motor defisit klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-myotonic-dystrophy-frontal-balding-001",
@@ -37002,8 +37120,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Frontal kellik, temporal kas atrofisi ve hafif bilateral pitozis izleniyor.",
-      "El sıkma sonrası gevşeme gecikiyor."
+      "Frontal kellik, temporal kas atrofisi ve hafif bilateral pitozis izleniyor",
+      "El sıkma sonrası gevşeme gecikiyor"
     ],
     "investigations": [],
     "images": [],
@@ -37028,7 +37146,7 @@ export const cases = [
         "Lambert-Eaton sendromu",
         "Duchenne musküler distrofisi"
       ],
-      "explanation": "Yumruk yaptıktan sonra parmakları açmada zorlanma miyotoni için tipiktir ve miyotonik distrofiye işaret eder. Miyotonik distrofi multisistemiktir. Frontal kellik, katarakt, iletim bozukluğu ve endokrin bulgular TUS ipuçlarıdır. Bu nedenle en uygun yanıt Miyotonik distrofi seçeneğidir.",
+      "explanation": "Yumruk yaptıktan sonra parmakları açmada zorlanma miyotoni için tipiktir ve miyotonik distrofiye işaret eder. Miyotonik distrofi multisistemiktir. Frontal kellik, katarakt, iletim bozukluğu ve endokrin bulgular TUS ipuçlarıdır. Miyotonik distrofi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -37056,19 +37174,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Öykü",
             "text": "Yumruk sonrası gevşeme gecikmesi miyotoni bulgusudur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Meksiletinle gevşeme güçlüğünün azalması miyotoniyi destekler."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Başvuru yakınması",
             "text": "Erişkin başlangıçlı distal güçsüzlük veya myotoni bulgu örüntüsüne uyar."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı."
           }
         ],
@@ -37166,17 +37284,19 @@ export const cases = [
       "profile": "33 yaşında erkek · Nöroloji polikliniği",
       "presentation": "Ellerde kuvvetsizlik ve gevşemede güçlük",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı.",
-        "Yumruk sonrası gevşeme gecikmesi miyotoni bulgusudur.",
-        "Meksiletinle gevşeme güçlüğünün azalması miyotoniyi destekler.",
-        "Erişkin başlangıçlı distal güçsüzlük ve myotoni bulgu örüntüsüne uyar."
+        "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı",
+        "Yumruk sonrası gevşeme gecikmesi miyotoni bulgusudur",
+        "Meksiletinle gevşeme güçlüğünün azalması miyotoniyi destekler",
+        "Erişkin başlangıçlı distal güçsüzlük ve myotoni bulgu örüntüsüne uyar",
+        "Ellerde kuvvetsizlik ve gevşemede güçlük"
       ],
       "historySummary": "Hasta yumruk yaptıktan sonra parmaklarını açmakta zorlanıyor. Meksiletin ile gevşeme güçlüğünün azaldığını söylüyor.",
-      "priorityFocus": "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-hsv-encephalitis-temporal-features-001",
@@ -37202,8 +37322,8 @@ export const cases = [
       "Ateş": "39.1 °C"
     },
     "exam": [
-      "Uykuya meyilli.",
-      "Meningeal irritasyon belirgin değil ancak fokal nörolojik bulgular eşlik ediyor."
+      "Uykuya meyilli",
+      "Meningeal irritasyon belirgin değil ancak fokal nörolojik bulgular eşlik ediyor"
     ],
     "investigations": [
       {
@@ -37247,7 +37367,7 @@ export const cases = [
         "Polio virus",
         "Borrelia burgdorferi"
       ],
-      "explanation": "Ateş, baş ağrısı, davranış veya kişilik değişikliği, anlamsız konuşma ve fokal nöbet HSV ensefaliti için klasik bulgu örüntüsü oluşturur. Temporal lob tutulumu özellikle HSV-1 ile ilişkilidir. Tedavi şüphesi varsa asiklovir geciktirilmeden başlanır. Bu nedenle en uygun yanıt Herpes simpleks virus seçeneğidir.",
+      "explanation": "Ateş, baş ağrısı, davranış veya kişilik değişikliği, anlamsız konuşma ve fokal nöbet HSV ensefaliti için klasik bulgu örüntüsü oluşturur. Temporal lob tutulumu özellikle HSV-1 ile ilişkilidir. Tedavi şüphesi varsa asiklovir geciktirilmeden başlanır. Herpes simpleks virus seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -37275,23 +37395,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Akut ateş ve baş ağrısı ensefalit tablosunu düşündürür."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Davranış değişikliği ve anlamsız konuşma temporal veya frontal tutulum ipucudur."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Fokal motor nöbet HSV ensefalitinde sık görülür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "BOS lenfositik bulgu örüntüsü bakteriyel pürülan menenjiti geri plana iter."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum bulgu örüntüsü."
           }
         ],
@@ -37389,17 +37509,19 @@ export const cases = [
       "profile": "32 yaşında kadın · Acil servis",
       "presentation": "Baş ağrısı, yüksek ateş, kişilik değişikliği ve nöbet",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum bulgu örüntüsü.",
-        "Akut ateş ve baş ağrısı ensefalit tablosunu.",
-        "Davranış değişikliği ve anlamsız konuşma temporal ve frontal tutulum ipucudur.",
-        "Fokal motor nöbet HSV ensefalitinde sık görülür."
+        "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum bulgu örüntüsü",
+        "Akut ateş ve baş ağrısı ensefalit tablosunu",
+        "Davranış değişikliği ve anlamsız konuşma temporal ve frontal tutulum ipucudur",
+        "Fokal motor nöbet HSV ensefalitinde sık görülür",
+        "Baş ağrısı, yüksek ateş, kişilik değişikliği ve nöbet"
       ],
       "historySummary": "32 yaşındaki kadın hasta akut başlayan ateş, baş ağrısı, davranış değişikliği, anlamsız konuşma ve fokal motor nöbetlerle acile getirilir. Tablo ensefalit etkeni açısından acil değerlendirme gerektirir.",
-      "priorityFocus": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum bulgu örüntüsü klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum bulgu örüntüsü klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-projection-defense-mechanism-001",
@@ -37425,9 +37547,9 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Genel görünüm düzenli.",
-      "Görüşme sırasında kendi kabul edemediği duyguları karşı tarafa atfetme eğilimi belirgin.",
-      "Halüsinasyon, dezorganize düşünce veya akut psikotik bulgu saptanmıyor."
+      "Genel görünüm düzenli",
+      "Görüşme sırasında kendi kabul edemediği duyguları karşı tarafa atfetme eğilimi belirgin",
+      "Halüsinasyon, dezorganize düşünce veya akut psikotik bulgu saptanmıyor"
     ],
     "investigations": [],
     "images": [],
@@ -37452,7 +37574,7 @@ export const cases = [
         "Yer değiştirme",
         "Baskılama"
       ],
-      "explanation": "Kişinin kabul edemediği kendi kıskançlığını arkadaşının kendisini kıskandığı şeklinde dışarıya atfetmesi yansıtmadır. Yansıtmanın spot ipucu, kişinin kendi duygu veya dürtüsünü başkasına aitmiş gibi anlatmasıdır. Bu nedenle en uygun yanıt Yansıtma seçeneğidir.",
+      "explanation": "Kişinin kabul edemediği kendi kıskançlığını arkadaşının kendisini kıskandığı şeklinde dışarıya atfetmesi yansıtmadır. Yansıtmanın spot ipucu, kişinin kendi duygu veya dürtüsünü başkasına aitmiş gibi anlatmasıdır. Yansıtma seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -37480,19 +37602,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Kişi kendi kıskançlığını kabul etmiyor."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Aynı duyguyu arkadaşına atfediyor."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Arkadaşının kendisini geçmeye çalıştığını söylemesi dışa atıf örüntüsüdür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Kendi kıskançlığını başkasına atfetme."
           }
         ],
@@ -37590,17 +37712,19 @@ export const cases = [
       "profile": "Üniversite öğrencisi · Psikiyatri görüşmesi",
       "presentation": "Yoğun rekabet ve kişilerarası çatışma",
       "riskContext": [
-        "Endemik bölge veya vektör maruziyeti."
+        "Endemik bölge veya vektör maruziyeti"
       ],
       "distinctiveClues": [
-        "Kendi kıskançlığını başkasına atfetme.",
-        "Kişi kendi kıskançlığını kabul etmiyor.",
-        "Aynı duyguyu arkadaşına atfediyor.",
-        "Arkadaşının kendisini geçmeye çalıştığını söylemesi dışa atıf örüntüsüdür."
+        "Kendi kıskançlığını başkasına atfetme",
+        "Kişi kendi kıskançlığını kabul etmiyor",
+        "Aynı duyguyu arkadaşına atfediyor",
+        "Arkadaşının kendisini geçmeye çalıştığını söylemesi dışa atıf örüntüsüdür",
+        "Yoğun rekabet ve kişilerarası çatışma"
       ],
       "historySummary": "Kişi kendisindeki kıskançlığı kabul etmiyor. Bunun yerine yakın arkadaşının kendisini kıskandığını ve sürekli onu geçmeye çalıştığını söylüyor.",
-      "priorityFocus": "Kendi kıskançlığını başkasına atfetme klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Kendi kıskançlığını başkasına atfetme klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-korsakoff-mammillary-bodies-001",
@@ -37626,8 +37750,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Hasta uyanık ancak yakın dönem belleği belirgin bozuk.",
-      "Konuşurken bellek boşluklarını uydurma yanıtlarla dolduruyor."
+      "Hasta uyanık ancak yakın dönem belleği belirgin bozuk",
+      "Konuşurken bellek boşluklarını uydurma yanıtlarla dolduruyor"
     ],
     "investigations": [],
     "images": [],
@@ -37652,7 +37776,7 @@ export const cases = [
         "İnsüler korteks",
         "Gyrus angularis"
       ],
-      "explanation": "Alkol kullanım bozukluğu ve beslenme bozukluğu zemininde anterograd amnezi ve konfabulasyon Korsakoff sendromunu düşündürür. Tipik lezyon mamiller cisimler ve medial talamik yapılardır. Tiamin eksikliği temel mekanizmadır. Bu nedenle en uygun yanıt Mamiller cisimler seçeneğidir.",
+      "explanation": "Alkol kullanım bozukluğu ve beslenme bozukluğu zemininde anterograd amnezi ve konfabulasyon Korsakoff sendromunu düşündürür. Tipik lezyon mamiller cisimler ve medial talamik yapılardır. Tiamin eksikliği temel mekanizmadır. Mamiller cisimler seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -37680,19 +37804,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Yeni bilgi öğrenmede bozulma anterograd amneziyi gösterir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Konfabulasyon Korsakoff sendromu için yüksek verimli ipucudur."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Alkol veya beslenme bozukluğu, anterograd amnezi, konfabulasyon."
           }
         ],
@@ -37790,17 +37914,19 @@ export const cases = [
       "profile": "Alkol kullanım bozukluğu olan hasta · Servis",
       "presentation": "Konfabulasyon ve yeni bilgi öğrenmede bozulma",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Alkol ve beslenme bozukluğu, anterograd amnezi, konfabulasyon.",
-        "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır.",
-        "Konfabulasyon Korsakoff sendromu için yüksek verimli ipucudur.",
-        "Wernicke-Korsakoff sendromunda mamiller cisim lezyonu."
+        "Alkol ve beslenme bozukluğu, anterograd amnezi, konfabulasyon",
+        "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır",
+        "Konfabulasyon Korsakoff sendromu için yüksek verimli ipucudur",
+        "Wernicke-Korsakoff sendromunda mamiller cisim lezyonu",
+        "Konfabulasyon ve yeni bilgi öğrenmede bozulma"
       ],
       "historySummary": "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasında anterograd amnezi ve konfabulasyon gelişiyor.",
-      "priorityFocus": "Alkol ve beslenme bozukluğu, anterograd amnezi, konfabulasyon SLE aktivitesi için anlamlıdır."
-    }
+      "priorityFocus": "Alkol ve beslenme bozukluğu, anterograd amnezi, konfabulasyon klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-knee-osteoarthritis-peripheral-erosion-001",
@@ -37827,7 +37953,7 @@ export const cases = [
       "Ağrı skoru": "5 veya 10"
     },
     "exam": [
-      "Dizde krepitasyon ve hareketle ağrı mevcut."
+      "Dizde krepitasyon ve hareketle ağrı mevcut"
     ],
     "investigations": [],
     "images": [],
@@ -37852,7 +37978,7 @@ export const cases = [
         "Subkondral skleroz",
         "Subkondral kist"
       ],
-      "explanation": "Diz osteoartritinde beklenen grafi bulguları eklem aralığı daralması, osteofit, subkondral skleroz ve subkondral kisttir. Periferik erozyon inflamatuvar artritleri düşündürür ve OA için tipik değildir. Bu nedenle en uygun yanıt Periferik erozyon seçeneğidir.",
+      "explanation": "Diz osteoartritinde beklenen grafi bulguları eklem aralığı daralması, osteofit, subkondral skleroz ve subkondral kisttir. Periferik erozyon inflamatuvar artritleri düşündürür ve OA için tipik değildir. Periferik erozyon seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -37880,23 +38006,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Fizik muayene",
             "text": "Kronik mekanik diz ağrısı ve krepitasyon OA ile uyumludur."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "Soru OA'da beklenmeyen grafi bulgusunu soruyor."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Periferik erozyon dejeneratif değil inflamatuvar artrit lehinedir."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "Osteoartrit grafi bulguları."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Fizik muayene",
             "text": "Kronik mekanik diz ağrısı ve krepitasyon OA."
           }
         ],
@@ -37994,17 +38120,19 @@ export const cases = [
       "profile": "Erişkin hasta · Ortopedi polikliniği",
       "presentation": "Kronik diz ağrısı",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Osteoartrit grafi bulguları.",
-        "Kronik mekanik diz ağrısı ve krepitasyon OA.",
-        "Soru OA'da beklenmeyen grafi bulgusunu soruyor.",
-        "İlgili klinik tablo dejeneratif değil inflamatuvar artrit."
+        "Osteoartrit grafi bulguları",
+        "Kronik mekanik diz ağrısı ve krepitasyon OA",
+        "Soru OA'da beklenmeyen grafi bulgusunu soruyor",
+        "İlgili klinik tablo dejeneratif değil inflamatuvar artrit",
+        "Kronik diz ağrısı"
       ],
       "historySummary": "Soru, osteoartritte beklenen ve beklenmeyen direkt grafi bulgularını ayırt etmeye odaklanır.",
-      "priorityFocus": "Osteoartrit grafi bulguları."
-    }
+      "priorityFocus": "Osteoartrit grafi bulguları klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-biceps-tendinitis-speed-yergason-001",
@@ -38032,8 +38160,8 @@ export const cases = [
       "Ağrı skoru": "6 veya 10"
     },
     "exam": [
-      "Omuz ön kısmında bicipital oluk üzerinde lokal hassasiyet var.",
-      "Speed ve Yergason testleri pozitif."
+      "Omuz ön kısmında bicipital oluk üzerinde lokal hassasiyet var",
+      "Speed ve Yergason testleri pozitif"
     ],
     "investigations": [],
     "images": [],
@@ -38058,7 +38186,7 @@ export const cases = [
         "Servikal radikülopati",
         "Lateral epikondilit"
       ],
-      "explanation": "Anterior omuz ağrısının dirsek fleksiyonu ve supinasyonla artması biseps uzun baş tendiniti için tipiktir. Speed ve Yergason testleri bu tendonu provoke eder. Rotator cuff yırtığında abduksiyon güçsüzlüğü. Bu nedenle en uygun yanıt Biseps tendiniti seçeneğidir.",
+      "explanation": "Anterior omuz ağrısının dirsek fleksiyonu ve supinasyonla artması biseps uzun baş tendiniti için tipiktir. Speed ve Yergason testleri bu tendonu provoke eder. Rotator cuff yırtığında abduksiyon güçsüzlüğü. Biseps tendiniti seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -38086,23 +38214,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Cirit sporu tekrarlayan omuz yüklenmesi oluşturur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Ağrı anterior omuzdadır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Dirsek fleksiyonu ve supinasyon ağrıyı artırır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Speed testi biseps tendonunu provoke eder."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Anterior omuz ağrısı, dirsek fleksiyonu veya supinasyonla artış, Speed veya Yergason."
           }
         ],
@@ -38200,17 +38328,19 @@ export const cases = [
       "profile": "23 yaşında erkek sporcu · Spor hekimliği polikliniği",
       "presentation": "Omuz ön kısmında ağrı",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Anterior omuz ağrısı, dirsek fleksiyonu ve supinasyonla artış, Speed ve Yergason.",
-        "Cirit sporu tekrarlayan omuz yüklenmesi oluşturur.",
-        "Ağrı anterior omuzdadır.",
-        "Dirsek fleksiyonu ve supinasyon ağrıyı artırır."
+        "Anterior omuz ağrısı, dirsek fleksiyonu ve supinasyonla artış, Speed ve Yergason",
+        "Cirit sporu tekrarlayan omuz yüklenmesi oluşturur",
+        "Ağrı anterior omuzdadır",
+        "Dirsek fleksiyonu ve supinasyon ağrıyı artırır",
+        "Omuz ön kısmında ağrı"
       ],
       "historySummary": "Cirit sporu yapan hastada özellikle dirsek fleksiyonu ve supinasyonla artan anterior omuz ağrısı gelişiyor.",
-      "priorityFocus": "Anterior omuz ağrısı, dirsek fleksiyonu ve supinasyonla artış, Speed ve Yergason klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Anterior omuz ağrısı, dirsek fleksiyonu ve supinasyonla artış, Speed ve Yergason klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-tb-n95-airborne-isolation-001",
@@ -38237,8 +38367,8 @@ export const cases = [
       "Ateş": "37.9 °C"
     },
     "exam": [
-      "Hasta öksürüyor.",
-      "Solunum eforu stabil."
+      "Hasta öksürüyor",
+      "Solunum eforu stabil"
     ],
     "investigations": [],
     "images": [],
@@ -38263,7 +38393,7 @@ export const cases = [
         "Temas izolasyonu",
         "Damlacık izolasyonu"
       ],
-      "explanation": "Aktif akciğer tüberkülozu hava yolu ile bulaşır. Hasta ile temas sırasında N95 maske ve hava yolu izolasyonu gerekir. Cerrahi maske standart veya damlacık önlem için yeterli değildir. Bu nedenle en uygun yanıt N95 maske ile hava yolu izolasyonu seçeneğidir.",
+      "explanation": "Aktif akciğer tüberkülozu hava yolu ile bulaşır. Hasta ile temas sırasında N95 maske ve hava yolu izolasyonu gerekir. Cerrahi maske standart veya damlacık önlem için yeterli değildir. N95 maske ile hava yolu izolasyonu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -38291,23 +38421,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Öksürük, gece terlemesi ve kilo kaybı aktif TB düşündürür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Balgamda aside dirençli basil pozitifliği bulaştırıcılığı destekler."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "TB partikülleri havada asılı kalan aerosol çekirdekleriyle bulaşır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Aktif akciğer TB şüphesi veya ARB pozitif balgam."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Öksürük, gece terlemesi ve kilo kaybı aktif TB."
           }
         ],
@@ -38405,17 +38535,19 @@ export const cases = [
       "profile": "Erişkin hasta · Servis izolasyon alanı",
       "presentation": "Öksürük, gece terlemesi ve ARB pozitif balgam",
       "riskContext": [
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Aktif akciğer TB şüphesi ve ARB pozitif balgam.",
-        "Öksürük, gece terlemesi ve kilo kaybı aktif TB.",
-        "Balgamda aside dirençli basil pozitifliği bulaştırıcılığı destekler.",
-        "TB partikülleri havada asılı kalan aerosol çekirdekleriyle bulaşır."
+        "Aktif akciğer TB şüphesi ve ARB pozitif balgam",
+        "Öksürük, gece terlemesi ve kilo kaybı aktif TB",
+        "Balgamda aside dirençli basil pozitifliği bulaştırıcılığı destekler",
+        "TB partikülleri havada asılı kalan aerosol çekirdekleriyle bulaşır",
+        "Öksürük, gece terlemesi ve ARB pozitif balgam"
       ],
       "historySummary": "Öksürük, gece terlemesi ve kilo kaybı olan hastada aktif akciğer tüberkülozu düşünülmektedir. Servis ortamında hasta ile temas sırasında uygulanacak izolasyon önlemi sorgulanır.",
-      "priorityFocus": "Aktif akciğer TB şüphesi ve ARB pozitif balgam aktif tüberküloz olasılığını artırır."
-    }
+      "priorityFocus": "Aktif akciğer TB şüphesi ve ARB pozitif balgam klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-concussion-normal-ct-001",
@@ -38442,8 +38574,8 @@ export const cases = [
       "GKS": "15"
     },
     "exam": [
-      "GKS 15.",
-      "Kısa süreli amnezi ve baş dönmesi mevcut."
+      "GKS 15",
+      "Kısa süreli amnezi ve baş dönmesi mevcut"
     ],
     "investigations": [
       {
@@ -38487,7 +38619,7 @@ export const cases = [
         "Serebral kontüzyon",
         "Subaraknoid kanama"
       ],
-      "explanation": "Baş travması sonrası kısa süreli dikkat-konsantrasyon bozukluğu, amnezi, baş ağrısı ve bulanık görme serebral konküzyonla uyumludur. Konküzyonda yapısal lezyon olmayabileceği için BT normal olabilir. Subdural kanama veya kontüzyonda görüntüleme bulgusu beklenir. Bu nedenle en uygun yanıt Serebral konküzyon seçeneğidir.",
+      "explanation": "Baş travması sonrası kısa süreli dikkat-konsantrasyon bozukluğu, amnezi, baş ağrısı ve bulanık görme serebral konküzyonla uyumludur. Konküzyonda yapısal lezyon olmayabileceği için BT normal olabilir. Subdural kanama veya kontüzyonda görüntüleme bulgusu beklenir. Serebral konküzyon seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -38515,23 +38647,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Başına darbe sonrası nörolojik yakınmalar başlamıştır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Amnezi ve konsantrasyon bozukluğu fonksiyonel beyin etkilenmesini düşündürür."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "GKS yüksek olabilir ve BT normal olabilir."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Fokal yapısal kanama bulgusu tariflenmemiştir."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "Baş travması sonrası amnezi veya konsantrasyon bozukluğu, BT normal olabilir."
           }
         ],
@@ -38629,17 +38761,19 @@ export const cases = [
       "profile": "Boksör · Acil servis",
       "presentation": "Başına darbe sonrası baş ağrısı, amnezi ve bulanık görme",
       "riskContext": [
-        "Travma veya adli kayıt gerektiren olay."
+        "Travma veya adli kayıt gerektiren olay"
       ],
       "distinctiveClues": [
-        "Baş travması sonrası amnezi ve konsantrasyon bozukluğu, BT normal olabilir.",
-        "Başına darbe sonrası nörolojik yakınmalar başlamıştır.",
-        "Amnezi ve konsantrasyon bozukluğu fonksiyonel beyin etkilenmesini.",
-        "GKS yüksek olabilir ve BT normal olabilir."
+        "Baş travması sonrası amnezi ve konsantrasyon bozukluğu, BT normal olabilir",
+        "Başına darbe sonrası nörolojik yakınmalar başlamıştır",
+        "Amnezi ve konsantrasyon bozukluğu fonksiyonel beyin etkilenmesini",
+        "GKS yüksek olabilir ve BT normal olabilir",
+        "Başına darbe sonrası baş ağrısı, amnezi ve bulanık görme"
       ],
       "historySummary": "Boks sırasında başına darbe alan hastada kısa süreli dikkat ve konsantrasyon bozukluğu, amnezi ve bulanık görme gelişir. GKS yüksek seyretse de yakınmalar travma sonrası klinik fonksiyon bozukluğunu düşündürür.",
-      "priorityFocus": "Baş travması sonrası amnezi ve konsantrasyon bozukluğu, BT normal olabilir klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Baş travması sonrası amnezi ve konsantrasyon bozukluğu, BT normal olabilir klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-neonatal-erythema-toxicum-eosinophils-001",
@@ -38665,8 +38799,7 @@ export const cases = [
       "Ateş": "36.9 °C"
     },
     "exam": [
-      "Genel durum iyi.",
-      "Sırt bölgesinde 1-2 mm papülopüstüler lezyonlar izleniyor."
+      "Sırt bölgesinde 1-2 mm papülopüstüler lezyonlar izleniyor"
     ],
     "investigations": [
       {
@@ -38718,7 +38851,7 @@ export const cases = [
         "Miliaria rubra",
         "İnfantil akropüstülozis"
       ],
-      "explanation": "Term ve iyi görünen yenidoğanda doğumdan kısa süre sonra gelişen sarı-beyaz papülopüstüller ve kısa sürede gerileme eritema toksikum için tipiktir. Yaymada eozinofiller görülebilir. Tedavi gerekmez, aileye benign seyir anlatılır. Bu nedenle en uygun yanıt Eritema toksikum seçeneğidir.",
+      "explanation": "Term ve iyi görünen yenidoğanda doğumdan kısa süre sonra gelişen sarı-beyaz papülopüstüller ve kısa sürede gerileme eritema toksikum için tipiktir. Yaymada eozinofiller görülebilir. Tedavi gerekmez, aileye benign seyir anlatılır. Eritema toksikum seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -38746,23 +38879,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Muayene bulgusu",
+            "title": "Laboratuvar",
             "text": "Term yenidoğanda doğumdan kısa süre sonra döküntü başlamıştır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Başvuru yakınması",
             "text": "Bebek iyi görünür ve ateş yoktur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Gövde veya sırtta küçük papülopüstüller vardır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Lezyonlar kısa sürede gerileme eğilimindedir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "İyi görünen term yenidoğanda geçici papülopüstüller."
           }
         ],
@@ -38860,18 +38993,20 @@ export const cases = [
       "profile": "2 günlük yenidoğan · Yenidoğan servisi",
       "presentation": "Sırtta küçük papülopüstüler lezyonlar",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski.",
-        "Enfeksiyon ve temas ve izolasyon bağlamı."
+        "Yenidoğan veya süt çocukluğu yaş riski",
+        "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "İyi görünen term yenidoğanda geçici papülopüstüller.",
-        "Term yenidoğanda doğumdan kısa süre sonra döküntü başlamıştır.",
-        "Bebek iyi görünür ve ateş yoktur.",
-        "Gövde ve sırtta küçük papülopüstüller vardır."
+        "İyi görünen term yenidoğanda geçici papülopüstüller",
+        "Term yenidoğanda doğumdan kısa süre sonra döküntü başlamıştır",
+        "Bebek iyi görünür ve ateş yoktur",
+        "Gövde ve sırtta küçük papülopüstüller vardır",
+        "Sırtta küçük papülopüstüler lezyonlar"
       ],
       "historySummary": "Term yenidoğanda doğumdan kısa süre sonra gövde ve sırtta sarı-beyaz küçük papülopüstüller gelişir. Bebek iyi görünür, ateş yoktur ve lezyonlar kısa sürede gerileme eğilimindedir.",
-      "priorityFocus": "İyi görünen term yenidoğanda geçici papülopüstüller klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "İyi görünen term yenidoğanda geçici papülopüstüller klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-acute-hav-igm-001",
@@ -38897,8 +39032,8 @@ export const cases = [
       "Ateş": "37.7 °C"
     },
     "exam": [
-      "Skleralarda ikter ve hepatomegali mevcut.",
-      "Batında sağ üst kadran hassasiyeti var."
+      "Skleralarda ikter ve hepatomegali mevcut",
+      "Batında sağ üst kadran hassasiyeti var"
     ],
     "investigations": [
       {
@@ -38967,7 +39102,7 @@ export const cases = [
         "Akut hepatit B enfeksiyonu",
         "Akut hepatit C enfeksiyonu"
       ],
-      "explanation": "Akut hepatit kliniğinde Anti-HAV IgM pozitifliği ve HBV veya HCV göstergelerinin negatif olması en güçlü biçimde akut hepatit A enfeksiyonunu destekler. Yalnız Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı düşündürürdü. Bu nedenle en uygun yanıt Akut hepatit A enfeksiyonu seçeneğidir.",
+      "explanation": "Akut hepatit kliniğinde Anti-HAV IgM pozitifliği ve HBV veya HCV göstergelerinin negatif olması en güçlü biçimde akut hepatit A enfeksiyonunu destekler. Yalnız Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı düşündürürdü. Akut hepatit A enfeksiyonu seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -38995,23 +39130,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Başvuru yakınması",
             "text": "Kamp sonrası halsizlik, kusma, koyu idrar ve ikter akut hepatit bağlamı oluşturur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Laboratuvar",
             "text": "Anti-HAV IgM pozitifliği yakın dönem HAV enfeksiyonunu düşündürür."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Laboratuvar",
             "text": "HBsAg, anti-HBc IgM ve anti-HCV negatifliği yakın HBV veya HCV olasılığını zayıflatır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Kamp sonrası akut hepatit, koyu idrar veya sarılık."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Öykü",
             "text": "Yaz kampından birkaç hafta sonra semptomlar başlamıştır."
           }
         ],
@@ -39117,17 +39252,19 @@ export const cases = [
       "profile": "10 yaşında kız çocuk · Çocuk acil",
       "presentation": "Halsizlik, kusma, koyu idrar ve sarılık",
       "riskContext": [
-        "Endemik bölge veya vektör maruziyeti."
+        "Endemik bölge veya vektör maruziyeti"
       ],
       "distinctiveClues": [
-        "Kamp sonrası akut hepatit, koyu idrar ve sarılık.",
-        "Yaz kampından birkaç hafta sonra semptomlar başlamıştır.",
-        "Koyu idrar ve ikter hepatoselüler ve kolestatik bilirubin artışını.",
-        "Kusma ve halsizlik akut viral hepatit prodromuyla uyumludur."
+        "Kamp sonrası akut hepatit, koyu idrar ve sarılık",
+        "Yaz kampından birkaç hafta sonra semptomlar başlamıştır",
+        "Koyu idrar ve ikter hepatoselüler ve kolestatik bilirubin artışını",
+        "Kusma ve halsizlik akut viral hepatit prodromuyla uyumludur",
+        "Halsizlik, kusma, koyu idrar ve sarılık"
       ],
       "historySummary": "Yaz kampından birkaç hafta sonra halsizlik, kusma, koyu idrar ve ikter gelişen çocukta akut hepatit düşünülüyor.",
-      "priorityFocus": "Kamp sonrası gelişen sarılıkta hepatit serolojisi paneli tanıdan çok bulgu örüntüsü yorumlaması gerektirir."
-    }
+      "priorityFocus": "Kamp sonrası akut hepatit, koyu idrar ve sarılık klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-thiamine-responsive-megaloblastic-anemia-001",
@@ -39154,8 +39291,8 @@ export const cases = [
       "Ateş": "36.8 °C"
     },
     "exam": [
-      "Yaşıtlarına göre zayıf ve kısa görünümde.",
-      "Belirgin solukluk var."
+      "Yaşıtlarına göre zayıf ve kısa görünümde",
+      "Belirgin solukluk var"
     ],
     "investigations": [
       {
@@ -39199,7 +39336,7 @@ export const cases = [
         "Riboflavin",
         "Niasin"
       ],
-      "explanation": "Sensorinöral işitme kaybı, diyabet ve ağır makrositer veya megaloblastik anemi triadı tiamin-duyarlı megaloblastik anemi sendromunu düşündürür. Temel sorun tiamin taşıma bozukluğudur. TUS'ta cevap tiamin olarak yakalanır. Bu nedenle en uygun yanıt Tiamin seçeneğidir.",
+      "explanation": "Sensorinöral işitme kaybı, diyabet ve ağır makrositer veya megaloblastik anemi triadı tiamin-duyarlı megaloblastik anemi sendromunu düşündürür. Temel sorun tiamin taşıma bozukluğudur. TUS'ta cevap tiamin olarak yakalanır. Tiamin seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -39227,23 +39364,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Akraba ebeveyn öyküsü kalıtsal hastalık olasılığını artırır."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Sensorinöral işitme kaybı ve diyabet birlikte izlenir."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Ağır makrositer anemi megaloblastik süreci düşündürür."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Triad tiamin-duyarlı megaloblastik anemiye uyar."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Fizik muayene",
             "text": "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi."
           }
         ],
@@ -39341,18 +39478,20 @@ export const cases = [
       "profile": "2 yaşında kız çocuk · Çocuk metabolizma polikliniği",
       "presentation": "Gelişme geriliği ve ağır anemi",
       "riskContext": [
-        "Diyabet veya metabolik dekompansasyon riski.",
-        "Aile öyküsü veya kalıtsal yatkınlık."
+        "Diyabet veya metabolik dekompansasyon riski",
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi.",
-        "Akraba ebeveyn öyküsü kalıtsal hastalık.",
-        "Sensorinöral işitme kaybı ve diyabet birlikte izlenir.",
-        "Ağır makrositer anemi megaloblastik süreci."
+        "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi",
+        "Akraba ebeveyn öyküsü kalıtsal hastalık",
+        "Sensorinöral işitme kaybı ve diyabet birlikte izlenir",
+        "Ağır makrositer anemi megaloblastik süreci",
+        "Gelişme geriliği ve ağır anemi"
       ],
       "historySummary": "Akraba ebeveynlerin 2 yaşındaki çocuğunda gelişme geriliği, sensorinöral işitme kaybı, diyabet ve belirgin solukluk birlikte izlenir. Kalıtsal vitamin TAşıma bozukluğu düşünülür.",
-      "priorityFocus": "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Sensorinöral işitme kaybı, diyabet, megaloblastik anemi klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-xlinked-ald-white-matter-001",
@@ -39379,8 +39518,8 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Dikkat azalması ve hafif spastisite izleniyor.",
-      "Ciltte adrenal yetmezliği düşündüren hiperpigmentasyon mevcut."
+      "Dikkat azalması ve hafif spastisite izleniyor",
+      "Ciltte adrenal yetmezliği düşündüren hiperpigmentasyon mevcut"
     ],
     "investigations": [],
     "images": [],
@@ -39405,7 +39544,7 @@ export const cases = [
         "İzole adrenal yetmezlikle seyredebilir",
         "MR lezyonları posterior bölgelerde görülebilir"
       ],
-      "explanation": "X'e bağlı adrenolökodistrofi peroksizomal çok uzun zincirli yağ asidi yıkım bozukluğudur. Adrenal yetmezlik ve ilerleyici beyaz cevher tutulumu yapar. Bu nedenle \"ilerleyici gri cevher hastalığıdır\" ifadesi yanlıştır. Bu nedenle en uygun yanıt İlerleyici gri cevher tutulumu tipiktir seçeneğidir.",
+      "explanation": "X'e bağlı adrenolökodistrofi peroksizomal çok uzun zincirli yağ asidi yıkım bozukluğudur. Adrenal yetmezlik ve ilerleyici beyaz cevher tutulumu yapar. Bu nedenle \"ilerleyici gri cevher hastalığıdır\" ifadesi yanlıştır. İlerleyici gri cevher tutulumu tipiktir seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -39433,23 +39572,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik bağlam",
+            "title": "Öykü",
             "text": "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Cilt hiperpigmentasyonu adrenal yetmezliği düşündürür."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Ailede erkek bireylerde erken nörolojik kötüleşme öyküsü vardır."
           },
           {
-            "title": "Görüntüleme bulgusu",
+            "title": "Görüntüleme",
             "text": "MR posterior beyaz cevher tutulumu ALD ile uyumludur."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu."
           }
         ],
@@ -39464,7 +39603,7 @@ export const cases = [
           },
           {
             "label": "Sık tuzak",
-            "text": "gri cevher tutulumu ifadesi bu nedenle yanlıştır."
+            "text": "Gri cevher tutulumu ifadesi bu nedenle yanlıştır."
           }
         ],
         "pearls": [
@@ -39478,7 +39617,7 @@ export const cases = [
           },
           {
             "label": "Sık tuzak",
-            "text": "gri cevher tutulumu ifadesi bu nedenle yanlıştır."
+            "text": "Gri cevher tutulumu ifadesi bu nedenle yanlıştır."
           }
         ],
         "differentialComparison": {
@@ -39547,17 +39686,19 @@ export const cases = [
       "profile": "10 yaşında erkek çocuk · Çocuk nöroloji polikliniği",
       "presentation": "Davranış değişikliği ve okul başarısında gerileme",
       "riskContext": [
-        "Aile öyküsü veya kalıtsal yatkınlık."
+        "Aile öyküsü veya kalıtsal yatkınlık"
       ],
       "distinctiveClues": [
-        "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu.",
-        "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır.",
-        "Cilt hiperpigmentasyonu adrenal yetmezliği.",
-        "Ailede erkek bireylerde erken nörolojik kötüleşme öyküsü vardır."
+        "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu",
+        "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır",
+        "Cilt hiperpigmentasyonu adrenal yetmezliği",
+        "Ailede erkek bireylerde erken nörolojik kötüleşme öyküsü vardır",
+        "Davranış değişikliği ve okul başarısında gerileme"
       ],
       "historySummary": "10 yaşındaki erkek çocukta okul başarısında gerileme, davranış değişikliği ve ciltte hiperpigmentasyon gelişir. Ailede erkek bireylerde erken yaş nörolojik kötüleşme öyküsü olduğu öğrenilir.",
-      "priorityFocus": "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Erkek çocuk, adrenal yetmezlik, posterior beyaz cevher tutulumu klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-apeced-candidiasis-hypoparathyroid-addison-001",
@@ -39584,8 +39725,8 @@ export const cases = [
       "Ateş": "36.6 °C"
     },
     "exam": [
-      "Deri altı yağ dokusu azalmış, tırnaklarda distrofi var.",
-      "Ağızda kandidiyal lezyon ve mukozalarda hiperpigmentasyon izleniyor."
+      "Deri altı yağ dokusu azalmış, tırnaklarda distrofi var",
+      "Ağızda kandidiyal lezyon ve mukozalarda hiperpigmentasyon izleniyor"
     ],
     "investigations": [],
     "images": [],
@@ -39610,7 +39751,7 @@ export const cases = [
         "Kallmann sendromu",
         "Çölyak hastalığı"
       ],
-      "explanation": "Kronik mukokutanöz kandidiyazis, otoimmün hipoparatiroidi ve Addison hastalığı birlikteliği APECED veya otoimmün poliglandüler sendrom tip 1 için klasiktir. AIRE mutasyonu ile ilişkilidir ve TUS'ta \"tip 1 otoimmün endokrinopati\" olarak sorulabilir. Bu nedenle en uygun yanıt Tip 1 otoimmün endokrinopati seçeneğidir.",
+      "explanation": "Kronik mukokutanöz kandidiyazis, otoimmün hipoparatiroidi ve Addison hastalığı birlikteliği APECED veya otoimmün poliglandüler sendrom tip 1 için klasiktir. AIRE mutasyonu ile ilişkilidir ve TUS'ta \"tip 1 otoimmün endokrinopati\" olarak sorulabilir. Tip 1 otoimmün endokrinopati seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -39638,23 +39779,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Klinik ipucu",
+            "title": "Öykü",
             "text": "Kronik kandidiyal ağız lezyonları vardır."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Mukozal hiperpigmentasyon Addison olasılığını artırır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Tırnak distrofisi ve gelişimsel gecikme eşlik eder."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Kandidiyazis ve endokrin otoimmünite APECED bulgu örüntüsüdür."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Kronik kandidiyazis, hipoparatiroidi veya Addison bulguları."
           }
         ],
@@ -39752,17 +39893,19 @@ export const cases = [
       "profile": "15 yaşında kız · Çocuk endokrin polikliniği",
       "presentation": "Puberte gecikmesi ve mukokutanöz bulgular",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Kronik kandidiyazis, hipoparatiroidi ve Addison bulguları.",
-        "Kronik kandidiyal ağız lezyonları vardır.",
-        "Mukozal hiperpigmentasyon Addison.",
-        "Tırnak distrofisi ve gelişimsel gecikme eşlik eder."
+        "Kronik kandidiyazis, hipoparatiroidi ve Addison bulguları",
+        "Kronik kandidiyal ağız lezyonları vardır",
+        "Mukozal hiperpigmentasyon Addison",
+        "Tırnak distrofisi ve gelişimsel gecikme eşlik eder",
+        "Puberte gecikmesi ve mukokutanöz bulgular"
       ],
       "historySummary": "Kronik kandidiyal ağız lezyonları, mukozal hiperpigmentasyon, tırnak distrofisi ve gelişimsel gecikme bulguları olan ergende otoimmün endokrinopati düşünülüyor.",
-      "priorityFocus": "Kronik kandidiyazis, hipoparatiroidi ve Addison bulguları klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Kronik kandidiyazis, hipoparatiroidi ve Addison bulguları klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-homocystinuria-stroke-lens-long-fingers-001",
@@ -39789,8 +39932,8 @@ export const cases = [
       "Ateş": "36.7 °C"
     },
     "exam": [
-      "Açık saç rengi, uzun ince parmaklar ve marfanoid görünüm dikkat çekiyor.",
-      "Sol hemiparezi bulguları mevcut."
+      "Açık saç rengi, uzun ince parmaklar ve marfanoid görünüm dikkat çekiyor",
+      "Sol hemiparezi bulguları mevcut"
     ],
     "investigations": [],
     "images": [],
@@ -39815,7 +39958,7 @@ export const cases = [
         "Hurler sendromu",
         "Gaucher sendromu"
       ],
-      "explanation": "Uzun boy-ince parmaklar ve lens patolojisi Marfan'ı düşündürebilir. Ancak çocukta akut hemiparezi veya tromboz eğilimi klasik homosistinüri için güçlü ipucudur. Klasik homosistinüri sistationin beta-sentaz bozukluğu ile ilişkilidir. Bu nedenle en uygun yanıt Klasik homosistinüri seçeneğidir.",
+      "explanation": "Uzun boy-ince parmaklar ve lens patolojisi Marfan'ı düşündürebilir. Ancak çocukta akut hemiparezi veya tromboz eğilimi klasik homosistinüri için güçlü ipucudur. Klasik homosistinüri sistationin beta-sentaz bozukluğu ile ilişkilidir. Klasik homosistinüri seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -39843,23 +39986,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar bulgu örüntüsü",
+            "title": "Öykü",
             "text": "Akrabalık öyküsü otozomal resesif metabolik hastalık olasılığını artırır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Uzun boy ve araknodaktili marfanoid görünüm oluşturur."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Önceki lens cerrahisi ektopia lentis öyküsünü düşündürür."
           },
           {
-            "title": "Klinik bağlam",
+            "title": "Fizik muayene",
             "text": "Çocukta akut hemiparezi tromboembolik eğilimle uyumludur."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Marfanoid habitus, lens öyküsü, çocukta tromboz veya inme."
           }
         ],
@@ -39957,17 +40100,19 @@ export const cases = [
       "profile": "10 yaşında erkek · Çocuk acil",
       "presentation": "Akut hemiparezi ve marfanoid görünüm",
       "riskContext": [
-        "Öykü ve objektif bulgularla klinik bağlam kurulmalı."
+        "Öykü ve objektif bulgularla klinik bağlam kurulmalı"
       ],
       "distinctiveClues": [
-        "Marfanoid habitus, lens öyküsü, çocukta tromboz ve inme.",
-        "Akrabalık öyküsü otozomal resesif metabolik hastalık.",
-        "Uzun boy ve araknodaktili marfanoid görünüm oluşturur.",
-        "Önceki lens cerrahisi ektopia lentis öyküsünü."
+        "Marfanoid habitus, lens öyküsü, çocukta tromboz ve inme",
+        "Akrabalık öyküsü otozomal resesif metabolik hastalık",
+        "Uzun boy ve araknodaktili marfanoid görünüm oluşturur",
+        "Önceki lens cerrahisi ektopia lentis öyküsünü",
+        "Akut hemiparezi ve marfanoid görünüm"
       ],
       "historySummary": "Akrabalık öyküsü olan 10 yaşındaki erkek çocuk ani başlayan sol taraf güçsüzlüğü ile acile getirilir. Uzun boy, ince uzun parmaklar ve önceki lens cerrahisi öyküsü dikkat çeker.",
-      "priorityFocus": "Marfanoid habitus, lens öyküsü, çocukta tromboz ve inme klinik muhakemeyi yönlendiren temel bulgudur."
-    }
+      "priorityFocus": "Marfanoid habitus, lens öyküsü, çocukta tromboz ve inme klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-fetomaternal-hemorrhage-kleihauer-betke-001",
@@ -39993,8 +40138,8 @@ export const cases = [
       "Ateş": "36.5 °C"
     },
     "exam": [
-      "Genel muayene doğumsal anomali veya aktif kanama göstermiyor.",
-      "Belirgin solukluk dışında fizik muayene olağan."
+      "Genel muayene doğumsal anomali veya aktif kanama göstermiyor",
+      "Belirgin solukluk dışında fizik muayene olağan"
     ],
     "investigations": [
       {
@@ -40080,7 +40225,7 @@ export const cases = [
         "Konjenital aplastik anemi",
         "Fizyolojik yenidoğan anemisi"
       ],
-      "explanation": "Doğumda ağır anemi, zayıf perfüzyon, direkt Coombs negatifliği ve hemoliz bulgusu olmaması. Maternal dolaşımda fetal eritrosit gösterilmesiyle birlikte fetomaternal hemorajiye bağlı fetal kan kaybını destekler. Bu nedenle en uygun yanıt Fetomaternal hemorajiye bağlı akut fetal kan kaybı seçeneğidir.",
+      "explanation": "Doğumda ağır anemi, zayıf perfüzyon, direkt Coombs negatifliği ve hemoliz bulgusu olmaması. Maternal dolaşımda fetal eritrosit gösterilmesiyle birlikte fetomaternal hemorajiye bağlı fetal kan kaybını destekler. Fetomaternal hemorajiye bağlı akut fetal kan kaybı seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -40108,23 +40253,23 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır."
           },
           {
-            "title": "Dışlatıcı bulgu",
+            "title": "Öykü",
             "text": "Direkt Coombs negatifliği alloimmün hemolizi zayıflatır."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Öykü",
             "text": "Maternal kanda fetal eritrositlerin gösterilmesi fetustan anneye kan geçişi olduğunu gösterir."
           },
           {
-            "title": "Destekleyen bulgu",
+            "title": "Başvuru yakınması",
             "text": "Yenidoğanda ağır anemi, dış kanama veya hemoliz yok."
           },
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Term yenidoğan doğumdan hemen sonra belirgin soluk ve taşikardiktir."
           }
         ],
@@ -40230,17 +40375,19 @@ export const cases = [
       "profile": "Term yenidoğan · Yenidoğan servisi",
       "presentation": "Doğumda solukluk ve ağır anemi",
       "riskContext": [
-        "Yenidoğan veya süt çocukluğu yaş riski."
+        "Yenidoğan veya süt çocukluğu yaş riski"
       ],
       "distinctiveClues": [
-        "Yenidoğanda ağır anemi, dış kanama ve hemoliz yok.",
-        "Term yenidoğan doğumdan hemen sonra belirgin soluk ve TAşikardiktir.",
-        "Zayıf perfüzyon ağır aneminin hemodinamik etkisini.",
-        "Anne veya bebekte belirgin dış kanama yoktur."
+        "Yenidoğanda ağır anemi, dış kanama ve hemoliz yok",
+        "Term yenidoğan doğumdan hemen sonra belirgin soluk ve TAşikardiktir",
+        "Zayıf perfüzyon ağır aneminin hemodinamik etkisini",
+        "Anne veya bebekte belirgin dış kanama yoktur",
+        "Doğumda solukluk ve ağır anemi"
       ],
       "historySummary": "Anne veya bebekte belirgin dış kanama öyküsü yoktur. Hemolizsiz fetal kan kaybı olasılığı araştırılır.",
-      "priorityFocus": "Ağır neonatal anemide dış kanama ve hemoliz yokluğu kan kaybının kaynağını sistematik yorumlamayı gerektirir."
-    }
+      "priorityFocus": "Yenidoğanda ağır anemi, dış kanama ve hemoliz yok klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   },
   {
     "id": "tus-spot-pdf-hie-therapeutic-hypothermia-001",
@@ -40266,22 +40413,22 @@ export const cases = [
       "Ateş": "36.1 °C"
     },
     "exam": [
-      "Letarji, yaygın hipotonisite ve zayıf emme izleniyor.",
-      "Moro refleksi zayıf."
+      "Letarji, yaygın hipotonisite ve zayıf emme izleniyor",
+      "Moro refleksi zayıf"
     ],
     "investigations": [
       {
         "id": "cord-gas-hie",
         "label": "Kord kan gazı",
         "type": "Lab",
-        "summary": "pH 6.90 ve baz açığı -15 mmol/L.",
+        "summary": "PH 6.90 ve baz açığı -15 mmol/L.",
         "findings": [
           "Ağır asidoz ve ensefalopati bulguları nöroprotektif tedavi penceresi açısından kritik eşik oluşturur."
         ],
         "priority": "Essential",
         "rows": [
           [
-            "pH",
+            "PH",
             "6.90",
             "7.25–7.35",
             "Düşük"
@@ -40317,7 +40464,7 @@ export const cases = [
         "Hiperbarik oksijen tedavisi",
         "Rutin profilaktik antibiyotik"
       ],
-      "explanation": "Term yenidoğanda doğumda resüsitasyon, ağır metabolik asidoz ve orta-ağır hipoksik iskemik ensefalopati bulguları varsa nörolojik sekel riskini azaltan yaklaşım terapötik hipotermidir. En kritik TUS bilgisi tedavinin ilk 6 saat içinde başlanmasıdır. Bu nedenle en uygun yanıt Terapötik hipotermi seçeneğidir.",
+      "explanation": "Term yenidoğanda doğumda resüsitasyon, ağır metabolik asidoz ve orta-ağır hipoksik iskemik ensefalopati bulguları varsa nörolojik sekel riskini azaltan yaklaşım terapötik hipotermidir. En kritik TUS bilgisi tedavinin ilk 6 saat içinde başlanmasıdır. Terapötik hipotermi seçeneğidir.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -40345,19 +40492,19 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Öykü ipucu",
+            "title": "Öykü",
             "text": "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi düşündürür."
           },
           {
-            "title": "Muayene bulgusu",
+            "title": "Öykü",
             "text": "Letarji, tonus azalması ve zayıf emme ensefalopati bulgularıdır."
           },
           {
-            "title": "Laboratuvar bulgu örüntüsü",
-            "text": "pH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir."
+            "title": "Laboratuvar",
+            "text": "PH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir."
           },
           {
-            "title": "Tedavi penceresi",
+            "title": "Öykü",
             "text": "Term bebekte orta-ağır HİE nöroprotektif tedavi endikasyonudur."
           }
         ],
@@ -40455,17 +40602,19 @@ export const cases = [
       "profile": "Yenidoğan · Yenidoğan yoğun bakım",
       "presentation": "Doğumda resüsitasyon ve asidoz",
       "riskContext": [
-        "Term yenidoğanda perinatal asfiksi nörolojik sekel riskini artırır.",
-        "İlk 6 saat nöroprotektif tedavi penceresi açısından kritiktir."
+        "Term yenidoğanda perinatal asfiksi nörolojik sekel riskini artırır",
+        "İlk 6 saat nöroprotektif tedavi penceresi açısından kritiktir"
       ],
       "distinctiveClues": [
-        "Term bebekte perinatal asfiksi ve ağır asidoz HİE riskini artırır.",
-        "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi düşündürür.",
-        "Letarji, tonus azalması ve zayıf emme ensefalopati bulgularıdır.",
-        "pH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir."
+        "Term bebekte perinatal asfiksi ve ağır asidoz HİE riskini artırır",
+        "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi düşündürür",
+        "Letarji, tonus azalması ve zayıf emme ensefalopati bulgularıdır",
+        "PH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir",
+        "Doğumda resüsitasyon ve asidoz"
       ],
       "historySummary": "Doğumda resüsitasyon, ağır metabolik asidoz ve ensefalopati bulguları orta-ağır hipoksik iskemik ensefalopatiyi düşündürür.",
-      "priorityFocus": "Term bebekte perinatal asfiksi, ağır asidoz, orta-ağır HİE hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir."
-    }
+      "priorityFocus": "Term bebekte perinatal asfiksi ve ağır asidoz HİE riskini artırır klinik kararı yönlendirir."
+    },
+    "learningTarget": ""
   }
 ];
