@@ -1,6 +1,7 @@
 import { memo, useCallback, useEffect, useMemo, useState } from 'react';
 import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
+import { sanitizeMeasurementText } from '../utils/clinicalFormatters.js';
 import {
   buildInvestigationOrders,
   getOrderCategoryMeta,
@@ -228,7 +229,7 @@ function evaluateSemanticStatus(row = {}) {
 }
 
 function normalizeResultRow(row) {
-  return Array.isArray(row)
+  const normalized = Array.isArray(row)
     ? { parameter: row[0], value: row[1], reference: row[2], note: row[3] }
     : {
       parameter: row.parameter,
@@ -236,6 +237,13 @@ function normalizeResultRow(row) {
       reference: row.reference,
       note: row.note || row.interpretation,
     };
+
+  return {
+    parameter: sanitizeMeasurementText(normalized.parameter || ''),
+    value: sanitizeMeasurementText(normalized.value || ''),
+    reference: sanitizeMeasurementText(normalized.reference || ''),
+    note: sanitizeMeasurementText(normalized.note || ''),
+  };
 }
 
 const PARAMETER_TABLE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);

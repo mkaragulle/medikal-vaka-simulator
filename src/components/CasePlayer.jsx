@@ -14,6 +14,14 @@ import {
 } from '../utils/displayText.js';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { buildInvestigationOrders } from '../utils/investigationOrders.js';
+import {
+  calculateShockIndex,
+  formatVitalMeasurement,
+  parseSystolicBloodPressure,
+  parseVitalNumber,
+  sanitizeMeasurementText,
+  sanitizeVitalsObject,
+} from '../utils/clinicalFormatters.js';
 
 const SECTION_NAV_ITEMS = [
   { id: 'case-story', label: 'Öykü', icon: 'ClipboardList' },
@@ -95,111 +103,41 @@ function buildProfessionalStory(clinicalCase) {
 }
 
 function buildVitalDisplay(label, value = '') {
-  const raw = String(value).replace(/\s+/g, ' ').trim();
-  if (!raw) return { primary: '—', unit: '', note: '' };
-
-  if (label === 'TA') {
-    const match = raw.match(/^(\d+\s*\/\s*\d+)(?:\s*(mmhg))?(?:\s+(.+))?$/i);
-    if (match) {
-      return {
-        primary: match[1].replace(/\s+/g, ''),
-        unit: match[2] ? 'mmHg' : '',
-        note: match[3] || '',
-      };
-    }
-  }
-
-  if (label === 'Ateş') {
-    const match = raw.match(/^(\d+(?:[.,]\d+)?)(?:\s*(°?\s*[CFKcfk]))?(?:\s+(.+))?$/);
-    if (match) {
-      const normalizedUnit = match[2]
-        ? match[2].replace(/\s+/g, '').replace(/^C$/i, '°C').replace(/^F$/i, '°F').toUpperCase()
-        : '';
-      return {
-        primary: match[1],
-        unit: normalizedUnit,
-        note: match[3] || '',
-      };
-    }
-  }
-
-  if (label === 'Nabız' || label === 'Solunum') {
-    const match = raw.match(/^(\d+(?:[.,]\d+)?)(\s*\/\s*[A-Za-zÇĞİÖŞÜçğıöşü]+)?(?:\s+(.+))?$/);
-    if (match) {
-      const normalizedUnit = match[2]
-        ? match[2].replace(/\s+/g, '').replace(/^\/dk$/i, '/dk')
-        : '';
-      return {
-        primary: match[1],
-        unit: normalizedUnit,
-        note: match[3] || '',
-      };
-    }
-  }
-
-  if (label === 'SpO2') {
-    const match = raw.match(/^(%\s*\d+(?:[.,]\d+)?)(?:\s+(.+))?$/);
-    if (match) {
-      return {
-        primary: match[1].replace(/\s+/g, ''),
-        unit: '',
-        note: match[2] || '',
-      };
-    }
-  }
-
-  if (label === 'Şok indeksi') {
-    const match = raw.match(/^(\d+(?:[.,]\d+)?)(?:\s+(.+))?$/);
-    if (match) {
-      return {
-        primary: match[1],
-        unit: '',
-        note: match[2] || '',
-      };
-    }
-  }
-
-  return { primary: raw, unit: '', note: '' };
+  return formatVitalMeasurement(label, value);
 }
 
 function buildDerivedVitalEntries(vitals = {}) {
-  const hasAnyVital = Object.values(vitals || {}).some((value) => String(value || '').trim());
+  const normalizedVitals = sanitizeVitalsObject(vitals);
+  const hasAnyVital = Object.values(normalizedVitals || {}).some((value) => String(value || '').trim());
   if (!hasAnyVital) return [];
 
   const orderedBase = ['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş']
-    .filter((key) => vitals[key] !== undefined && String(vitals[key] || '').trim())
-    .map((key) => [key, vitals[key]]);
+    .filter((key) => normalizedVitals[key] !== undefined && String(normalizedVitals[key] || '').trim())
+    .map((key) => [key, normalizedVitals[key]]);
 
-  const bp = String(vitals.TA || '');
-  const hr = String(vitals.Nabız || '');
-  const systolic = parseFloat(bp.split('/')[0]?.replace(/[^0-9.]/g, ''));
-  const pulse = parseFloat(hr.replace(/[^0-9.]/g, ''));
-
-  if (!Number.isNaN(systolic) && !Number.isNaN(pulse) && systolic > 0) {
-    const shockIndex = pulse / systolic;
-    const rounded = shockIndex.toFixed(2);
-    let note = 'normal';
-    if (shockIndex >= 1) note = 'yüksek';
-    else if (shockIndex >= 0.9) note = 'sınırda';
-    orderedBase.push(['Şok indeksi', `${rounded} ${note}`]);
+  const shockIndex = calculateShockIndex(normalizedVitals.Nabız, normalizedVitals.TA);
+  if (shockIndex) {
+    orderedBase.push(['Şok indeksi', `${shockIndex.formatted} ${shockIndex.note}`]);
   }
 
-  const extraEntries = Object.entries(vitals)
-    .filter(([key, value]) => !['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş'].includes(key) && String(value || '').trim());
+  const extraEntries = Object.entries(normalizedVitals)
+    .filter(([key, value]) => !['TA', 'Nabız', 'Solunum', 'SpO2', 'Ateş'].includes(key) && String(value || '').trim())
+    .map(([key, value]) => [key, sanitizeMeasurementText(value)]);
   return [...orderedBase, ...extraEntries];
 }
 
 function getVitalStatus(label, value = '') {
-  const normalized = String(value).replace(',', '.');
-  const number = parseFloat(normalized.replace(/[^0-9.]/g, ''));
+  const cleaned = sanitizeMeasurementText(value);
+  const number = parseVitalNumber(cleaned);
 
   if (label === 'TA') {
-    return /1[5-9][0-9]|2[0-9][0-9]|9[0-9]\/|8[0-9]\//.test(value) ? 'warning' : 'neutral';
+    const systolic = parseSystolicBloodPressure(cleaned);
+    return systolic !== null && (systolic >= 140 || systolic < 90) ? 'warning' : 'neutral';
   }
-  if (label === 'Nabız') return number >= 100 || number <= 50 ? 'warning' : 'normal';
-  if (label === 'SpO2') return number < 94 ? 'danger' : number < 96 ? 'warning' : 'normal';
-  if (label === 'Ateş') return number >= 38 || number < 35 ? 'warning' : 'normal';
-  if (label === 'Şok indeksi') return number >= 1 ? 'danger' : number >= 0.9 ? 'warning' : 'normal';
+  if (label === 'Nabız') return number !== null && (number >= 100 || number <= 50) ? 'warning' : 'normal';
+  if (label === 'SpO2') return number !== null && number < 94 ? 'danger' : number !== null && number < 96 ? 'warning' : 'normal';
+  if (label === 'Ateş') return number !== null && (number >= 38 || number < 35) ? 'warning' : 'normal';
+  if (label === 'Şok indeksi') return number !== null && number >= 1 ? 'danger' : number !== null && number >= 0.9 ? 'warning' : 'normal';
 
   return 'neutral';
 }
@@ -291,7 +229,7 @@ function buildFocusSentence(clinicalCase) {
 
 
 function normalizePatientSummaryText(value = '') {
-  let text = String(value || '').replace(/\s+/g, ' ').trim();
+  let text = sanitizeMeasurementText(String(value || '')).replace(/\s+/g, ' ').trim();
   if (!text) return '';
 
   const letters = text.replace(/[^A-Za-zÇĞİÖŞÜçğıöşü]/g, '');
@@ -337,13 +275,14 @@ function compactClinicalText(value = '', maxLength = 170) {
 }
 
 function cleanPatientSummaryBullet(value = '') {
-  return String(value || '')
+  return sanitizeMeasurementText(String(value || ''))
     .replace(/\s+/g, ' ')
     .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|TUS kırmızı bayrağı|Ana kanıt|Kritik ipucu|karar verdirici patern|Destekleyici bulgu)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
-    .replace(/([,.;:!?])(?=\S)/g, '$1 ')
-    .replace(/\s*\/\s*/g, ' veya ')
+    .replace(/([,;:!?])(?=\S)/g, '$1 ')
+    .replace(/(?<!\d)\.(?=\S)/g, '. ')
+    .replace(/\s*\/\s*/g, '/')
     .replace(/\bve\s+ve\b/giu, 've')
     .replace(/\bve\s+veya\b/giu, 'veya')
     .replace(/\s{2,}/g, ' ')
@@ -482,35 +421,32 @@ function buildPatientSummary(clinicalCase) {
 }
 
 function buildHemodynamicSummary(vitals = {}) {
+  const normalizedVitals = sanitizeVitalsObject(vitals);
   const notes = [];
-  const bp = vitals.TA || '';
-  const hr = String(vitals.Nabız || '');
-  const spo2 = String(vitals.SpO2 || '');
-  const temp = String(vitals.Ateş || '');
+  const systolic = parseSystolicBloodPressure(normalizedVitals.TA || '');
+  const pulse = parseVitalNumber(normalizedVitals.Nabız || '');
+  const sat = parseVitalNumber(normalizedVitals.SpO2 || '');
+  const temperature = parseVitalNumber(normalizedVitals.Ateş || '');
 
-  const systolic = parseFloat(bp.split('/')[0]);
-  if (!Number.isNaN(systolic)) {
+  if (systolic !== null) {
     if (systolic >= 180) notes.push('kan basıncı belirgin yüksek');
     else if (systolic >= 140) notes.push('kan basıncı yüksek');
     else if (systolic < 90) notes.push('hipotansif eğilim var');
     else notes.push('kan basıncı korunmuş');
   }
 
-  const pulse = parseFloat(hr.replace(/[^0-9.]/g, ''));
-  if (!Number.isNaN(pulse)) {
+  if (pulse !== null) {
     if (pulse >= 100) notes.push('nabız hızlı');
     else if (pulse <= 50) notes.push('nabız yavaş');
     else notes.push('nabız aralığı stabil');
   }
 
-  const sat = parseFloat(spo2.replace(/[^0-9.]/g, ''));
-  if (!Number.isNaN(sat)) {
+  if (sat !== null) {
     notes.push(sat < 94 ? 'oksijenizasyon sınırda' : 'oksijenizasyon korunmuş');
   }
 
-  const t = parseFloat(temp.replace(/[^0-9.]/g, ''));
-  if (!Number.isNaN(t)) {
-    notes.push(t >= 38 ? 'ateş yüksekliği var' : 'ateş yüksekliği yok');
+  if (temperature !== null) {
+    notes.push(temperature >= 38 ? 'ateş yüksekliği var' : 'ateş yüksekliği yok');
   }
 
   return notes.length

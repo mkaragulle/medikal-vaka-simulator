@@ -11,6 +11,7 @@ import {
   stableHash,
 } from './aiQuestionHistory.js';
 import { validateAIQuestionCase } from './validateAIQuestion.js';
+import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, runAIQuestionQualityGate } from './aiQuestionQualityGate.js';
 import { attachQuestionDedupeFields, createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
 import {
@@ -365,13 +366,14 @@ function buildEvidenceChain(seed, profile, correctText) {
 }
 
 function cleanClinicalSummaryItem(value = '') {
-  return String(value || '')
+  return sanitizeMeasurementText(String(value || ''))
     .replace(/\s+/g, ' ')
     .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
-    .replace(/([,.;:!?])(?=\S)/g, '$1 ')
-    .replace(/\s*\/\s*/g, ' veya ')
+    .replace(/([,;:!?])(?=\S)/g, '$1 ')
+    .replace(/(?<!\d)\.(?=\S)/g, '. ')
+    .replace(/\s*\/\s*/g, '/')
     .replace(/[\s,;:.]+$/u, '')
     .trim();
 }
@@ -409,18 +411,18 @@ function buildInvestigation(item, index, correctText = '') {
   };
   return {
     id: item.id || `ai-investigation-${index + 1}`,
-    label: item.label || `Tetkik ${index + 1}`,
+    label: sanitizeMeasurementText(item.label || `Tetkik ${index + 1}`),
     type: item.type || 'lab',
     priority: item.priority || (index === 0 ? 'essential' : 'useful'),
-    rows: Array.isArray(item.rows) ? item.rows : undefined,
-    summary: strip(item.summary || ''),
-    findings: Array.isArray(item.findings) ? item.findings.map(strip) : [],
+    rows: Array.isArray(item.rows) ? item.rows.map((row) => Array.isArray(row) ? row.map(sanitizeMeasurementText) : sanitizeMeasurementText(row)) : undefined,
+    summary: sanitizeMeasurementText(strip(item.summary || '')),
+    findings: Array.isArray(item.findings) ? item.findings.map((finding) => sanitizeMeasurementText(strip(finding))) : [],
     interpretation: 'Objektif sonuçlar tanıyı doğrudan söylemeden klinik yorum gerektirir.',
   };
 }
 
 function buildSyntheticInvestigation(seed, profile, correctText = '') {
-  const learningCue = maskCorrectConcept(seed.examPearl || seed.learningTarget || 'Ana klinik bulgu', correctText);
+  const learningCue = sanitizeMeasurementText(maskCorrectConcept(seed.examPearl || seed.learningTarget || 'Ana klinik bulgu', correctText));
   const branchLabel = profile.angle.id === 'lab' ? 'Hedefli laboratuvar verisi' : profile.angle.id === 'mechanism' ? 'Mekanizma ipucu' : 'Objektif karar verisi';
   return [{
     id: `ai-synthetic-pattern-${profile.variantNo}`,
@@ -492,6 +494,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
   const investigations = seed.source === 'embedded-case-concept-only'
     ? buildSyntheticInvestigation(seed, profile, normalizedCorrectText)
     : (seed.investigations || []).map((item, index) => buildInvestigation(item, index, normalizedCorrectText));
+  const generatedVitals = sanitizeVitalsObject(Object.keys(seed.vitals || {}).length ? seed.vitals : buildBranchVitals(seed, profile));
   const diagnosisOptions = options.map((option) => option.text);
   const optionSet = makeOptionSetSignature(options);
   const generationSignatureSeed = stableHash([
@@ -499,7 +502,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     profile.angle.id,
     profile.variantNo,
     titleBase,
-    stem,
+    sanitizeMeasurementText(stem),
     questionPrompt,
     normalizedCorrectText,
     optionSet,
@@ -512,27 +515,27 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     caseType: 'ai-spot',
     branchId: AI_BRANCH_ID,
     branchName: seed.relatedBranch || 'TUS Spot Olgular',
-    title: titleBase,
+    title: sanitizeMeasurementText(titleBase),
     relatedBranch: seed.relatedBranch || 'TUS Spot Olgular',
     spotCategory: seed.spotCategory || `AI Spot • ${seed.relatedBranch || 'TUS'}`,
     difficulty: seed.difficulty || 'Orta-Zor',
-    learningTarget: seed.learningTarget,
-    demographics: profile.demographic,
-    setting: profile.setting,
-    chiefComplaint: profile.presentation || seed.chiefComplaint || titleBase,
-    stem,
-    exam: Array.isArray(seed.exam) && seed.exam.length ? seed.exam : [
+    learningTarget: sanitizeMeasurementText(seed.learningTarget),
+    demographics: sanitizeMeasurementText(profile.demographic),
+    setting: sanitizeMeasurementText(profile.setting),
+    chiefComplaint: sanitizeMeasurementText(profile.presentation || seed.chiefComplaint || titleBase),
+    stem: sanitizeMeasurementText(stem),
+    exam: (Array.isArray(seed.exam) && seed.exam.length ? seed.exam : [
       ...buildBranchExamDefaults(seed, profile),
-    ],
-    vitals: Object.keys(seed.vitals || {}).length ? seed.vitals : buildBranchVitals(seed, profile),
+    ]).map(sanitizeMeasurementText),
+    vitals: generatedVitals,
     investigations,
-    question: questionPrompt,
+    question: sanitizeMeasurementText(questionPrompt),
     questionType: profile.angle.id === 'first-step' ? 'treatment' : profile.angle.id === 'lab' ? 'test' : profile.angle.id === 'mechanism' ? 'spot' : 'diagnosis',
-    clinicalFocus: seed.learningTarget,
+    clinicalFocus: sanitizeMeasurementText(seed.learningTarget),
     findings: {
-      history: [stem],
-      exam: Array.isArray(seed.exam) && seed.exam.length ? seed.exam : buildBranchExamDefaults(seed, profile),
-      vitals: Object.keys(seed.vitals || {}).length ? seed.vitals : buildBranchVitals(seed, profile),
+      history: [sanitizeMeasurementText(stem)],
+      exam: (Array.isArray(seed.exam) && seed.exam.length ? seed.exam : buildBranchExamDefaults(seed, profile)).map(sanitizeMeasurementText),
+      vitals: generatedVitals,
       investigations,
     },
     options,
@@ -547,11 +550,11 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     generatedAt: new Date().toISOString(),
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
-      profile: [profile.demographic, profile.setting].filter(Boolean).join(' · '),
-      presentation: profile.presentation || seed.chiefComplaint || titleBase,
+      profile: sanitizeMeasurementText([profile.demographic, profile.setting].filter(Boolean).join(' · ')),
+      presentation: sanitizeMeasurementText(profile.presentation || seed.chiefComplaint || titleBase),
       riskContext: buildAIRiskContext(seed, profile),
       distinctiveClues: buildAIClueItems(evidenceChain, seed, normalizedCorrectText),
-      historySummary: stem,
+      historySummary: sanitizeMeasurementText(stem),
     },
     diagnosis: {
       correct: normalizedCorrectText,

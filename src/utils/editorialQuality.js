@@ -1,13 +1,15 @@
+import { detectInvalidMeasurementFormat, sanitizeMeasurementText } from './clinicalFormatters.js';
 const WEAK_LABEL_PATTERN = /^(Klinik olasılığı belirle|İlk tedavi|Mekanizma|TUS kırmızı bayrağı|Ayırt ettirici ipucu|Karar verdirici ipucu|Karar verdiren ipucu|Olgu verisi|Ek destek|Destekleyici kanıt)\s*[:：-]\s*/iu;
 const META_LANGUAGE_PATTERN = /(öğrenme hedefi|doğru seçenek verilen|yanıt ekseni|generator|AI spot|gömülü vaka|yüzeysel anahtar kelime|tek öğrenme hedefi|çeldirici)/iu;
 const BROKEN_ENDING_PATTERN = /(Bu nedenle en iyi yanıt\.?|Bu nedenle en uygun yanıt\.?|açısından değerlendirilir\.?|ile uyumludur ve\.?|tanısını\.?|en iyi yanıt\.)$/iu;
 const CLINICAL_CONTENT_PATTERN = /(ateş|ağrı|eritem|ödem|dispne|göğüs|karın|kusma|ishal|döküntü|senkop|travma|kanama|hipotansiyon|taşikardi|hipoksemi|muayene|vital|laboratuvar|ekg|bt|mr|usg|grafi|seroloji|kültür|pcr|troponin|lökosit|crp|bilirubin|glukoz|ph|hco3|tanı|tedavi|etken|reseptör|enzim|mutasyon|hormon|histoloji|biyopsi|belirti|bulgu|klinik|risk|hasta|çocuk|yenidoğan|kadın|erkek|menenjit|pnömoni|erizipel|kawasaki|asfiksi|antidot|ilaç)/iu;
 
 export function normalizeEditorialText(text = '') {
-  return String(text ?? '')
+  return sanitizeMeasurementText(String(text ?? ''))
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
-    .replace(/([,.;:!?])(?=\S)/g, '$1 ')
+    .replace(/([,;:!?])(?=\S)/g, '$1 ')
+    .replace(/(?<!\d)\.(?=\S)/g, '. ')
     .replace(/\.{3}|…/g, '')
     .trim();
 }
@@ -26,6 +28,10 @@ export function detectExcessivePunctuation(text = '') {
   const semicolonCount = (value.match(/;/g) || []).length;
   const dashCount = (value.match(/\s[-–—]\s/g) || []).length;
   return colonCount > 1 || semicolonCount > 0 || dashCount > 2 || /\.\.\.|…/u.test(value);
+}
+
+export function detectInvalidClinicalMeasurementFormat(text = '') {
+  return detectInvalidMeasurementFormat(text);
 }
 
 export function detectMetaLanguage(text = '') {
@@ -59,7 +65,7 @@ export function repairFeedbackText(text = '', { correct = '', clue = '' } = {}) 
   let value = normalizeEditorialText(text)
     .replace(WEAK_LABEL_PATTERN, '')
     .replace(/\s*;\s*/g, '. ')
-    .replace(/\s*\/\s*/g, ' veya ')
+    .replace(/\s*\/\s*/g, '/')
     .replace(/\s*\+\s*/g, ' ve ')
     .replace(/Erysipelas/giu, 'Erizipel')
     .replace(/\bçeldiricileri\b/giu, 'alternatifleri')
@@ -106,6 +112,7 @@ export function validateGeneratedCaseText(caseItem = {}) {
     if (detectBrokenSentence(text)) errors.push(`yarım cümle: ${preview}`);
     if (detectMetaLanguage(text)) errors.push(`meta/generator dili: ${preview}`);
     if (detectTemplateLikeFeedback(text)) errors.push(`şablon feedback: ${preview}`);
+    if (detectInvalidClinicalMeasurementFormat(text)) errors.push(`hatalı ölçüm formatı: ${preview}`);
     if (detectExcessivePunctuation(text)) warnings.push(`noktalama kontrolü: ${preview}`);
   });
   const options = caseItem?.diagnosis?.options || caseItem?.options || [];

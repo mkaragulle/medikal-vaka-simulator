@@ -1,11 +1,13 @@
 import { normalizeQuestionText } from './aiQuestionHistory.js';
 import { attachQuestionDedupeFields, getQuestionCorrectText, getQuestionOptionTexts, toPlainText } from './questionDeduplication.js';
+import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { validateBranchFit } from './aiBranchRules.js';
 import {
   detectBrokenSentence,
   detectExcessivePunctuation,
   detectMetaLanguage,
   detectTemplateLikeFeedback,
+  detectInvalidClinicalMeasurementFormat,
   repairFeedbackText as repairEditorialFeedbackText,
   validateClinicalMeaning,
   validateGeneratedCaseText,
@@ -72,11 +74,12 @@ function hasForbiddenPhrase(text = '') {
 }
 
 function cleanSentence(text = '') {
-  let value = String(text || '')
+  let value = sanitizeMeasurementText(String(text || ''))
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
-    .replace(/([,.;:!?])(?=\S)/g, '$1 ')
-    .replace(/\s*\/\s*/g, ' veya ')
+    .replace(/([,;:!?])(?=\S)/g, '$1 ')
+    .replace(/(?<!\d)\.(?=\S)/g, '. ')
+    .replace(/\s*\/\s*/g, '/')
     .replace(/\bAI\s*spot\b/giu, '')
     .replace(/\bçeldirici\s+ayrımı\b/giu, 'ayırıcı tanı')
     .replace(/\bçeldiriciler\b/giu, 'alternatifler')
@@ -321,7 +324,7 @@ function buildNaturalHistorySummary(question = {}) {
 }
 
 function normalizeInvestigationQuality(investigation = {}, index = 0) {
-  const label = investigation.label || investigation.name || `Hedefli tetkik ${index + 1}`;
+  const label = sanitizeMeasurementText(investigation.label || investigation.name || `Hedefli tetkik ${index + 1}`);
   const rawSummary = cleanSentence(investigation.summary || investigation.result || investigation.interpretation || '');
   const rawFindings = filterQualityItems(investigation.findings || investigation.rows || [], 4);
   if (rawSummary && !hasForbiddenPhrase(rawSummary)) {
@@ -410,11 +413,12 @@ export function repairAIQuestionQuality(question = {}) {
   }
 
   repaired.investigations = (Array.isArray(repaired.investigations) ? repaired.investigations : []).map(normalizeInvestigationQuality);
+  repaired.vitals = sanitizeVitalsObject(repaired.vitals || repaired.findings?.vitals || {});
   repaired.findings = {
     ...(repaired.findings || {}),
     history: [repaired.patientIntro.historySummary],
     exam: Array.isArray(repaired.exam) ? repaired.exam.map(cleanSentence).filter(Boolean) : repaired.findings?.exam || [],
-    vitals: repaired.vitals || repaired.findings?.vitals || {},
+    vitals: repaired.vitals,
     investigations: repaired.investigations,
   };
 
@@ -536,6 +540,7 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
   if (!getQuestionCorrectText(question)) errors.push('doğru cevap metni eksik');
 
   texts.forEach((text) => {
+    if (detectInvalidClinicalMeasurementFormat(text)) errors.push(`hatalı ölçüm formatı: ${String(text).slice(0, 90)}`);
     if (detectBrokenSentence(text)) errors.push(`yarım cümle: ${String(text).slice(0, 90)}`);
     if (detectMetaLanguage(text)) errors.push(`meta/generator dili: ${String(text).slice(0, 90)}`);
     if (detectTemplateLikeFeedback(text)) errors.push(`şablon feedback: ${String(text).slice(0, 90)}`);

@@ -10,11 +10,11 @@ export const cases = [
     "chiefComplaint": "Kırk beş dakikadır devam eden retrosternal baskı tarzında göğüs ağrısı.",
     "stem": "Hipertansiyon, dislipidemi ve 35 paket-yıl sigara öyküsü olan hasta. İstirahat sırasında başlayan, sol kola ve mandibulaya yayılan, soğuk terleme ve bulantının eşlik ettiği göğüs ağrısı nedeniyle acil servise başvuruyor. Sublingual nitrat uygulanmasına rağmen ağrısında belirgin gerileme olmadığı öğreniliyor.",
     "vitals": {
-      "TA": "152 veya 94 mmHg",
-      "Nabız": "106 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "152/94 mmHg",
+      "Nabız": "106/dk",
+      "Solunum": "20/dk",
       "SpO2": "%95",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -51,27 +51,27 @@ export const cases = [
         "rows": [
           [
             "Hs-Troponin I",
-            "188 ng veya L",
-            "<34 ng veya L",
+            "188 ng/L",
+            "<34 ng/L",
             "Yüksek"
           ],
           [
             "CK-MB",
-            "23 ng veya mL",
-            "<5 ng veya mL",
+            "23 ng/mL",
+            "<5 ng/mL",
             "Yüksek"
           ],
           [
             "Kreatinin",
-            "0. 9 mg veya dL",
-            "0. 6-1. 2 mg veya dL",
+            "0.9 mg/dL",
+            "0.6-1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Hs-Troponin I: 188 ng veya L (Yüksek). CK-MB: 23 ng veya mL (Yüksek) saptandı.",
+        "summary": "Hs-Troponin I: 188 ng/L (Yüksek). CK-MB: 23 ng/mL (Yüksek) saptandı.",
         "findings": [
-          "Hs-Troponin I: 188 ng veya L (Yüksek)."
+          "Hs-Troponin I: 188 ng/L (Yüksek)."
         ]
       }
     ],
@@ -79,8 +79,8 @@ export const cases = [
       {
         "title": "12 derivasyon EKG",
         "caption": "Prekordiyal derivasyonlarda belirgin repolarizasyon değişiklikleri ve karşılıklı değişiklikler izlenir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya AMI%20anterior%20(CardioNetworks%20ECGpedia). Png",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: AMI_anterior_(CardioNetworks_ECGpedia). Png",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya AMI%20anterior%20(CardioNetworks%20ECGpedia). Png",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: AMI_anterior_(CardioNetworks_ECGpedia). Png",
         "sourceName": "",
         "license": "CC BY-SA",
         "modality": "Ecg",
@@ -378,11 +378,11 @@ export const cases = [
     "chiefComplaint": "Sırta yayılan ani başlangıçlı çok şiddetli göğüs ağrısı.",
     "stem": "Kontrolsüz hipertansiyon öyküsü bulunan hasta, ağrının aniden başladığını ve başlangıç anında maksimum şiddete ulaştığını ifade ediyor. Sağ üst ekstremiteden ölçülen kan basıncının sol üst ekstremiteye göre daha düşük olduğu, ağrıya senkop veya travmanın eşlik etmediği öğreniliyor. Ani maksimum şiddette ağrı, ekstremiteler arası nabız veya kan basıncı farkı ve yeni diyastolik üfürüm akut aort sendromu ihtimalini artırır. Ani maksimum şiddette ağrı, ekstremiteler arası nabız veya kan basıncı farkı ve yeni diyastolik üfürüm akut aort sendromu ihtimalini artırır.",
     "vitals": {
-      "TA": "190 veya 108 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "190/108 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "22/dk",
       "SpO2": "%97",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -426,13 +426,13 @@ export const cases = [
           [
             "Hs-Troponin I",
             "Sınırda",
-            "<34 ng veya L",
+            "<34 ng/L",
             "Sınırda"
           ],
           [
             "Hemoglobin",
-            "13. 8 g veya dL",
-            "13. 5-17. 5 g veya dL",
+            "13.8 g/dL",
+            "13.5-17.5 g/dL",
             "Referans içinde"
           ]
         ],
@@ -447,8 +447,8 @@ export const cases = [
       {
         "title": "Toraks BT",
         "caption": "İntimal flap ile gerçek ve yalancı lümen ayrımı akut aort diseksiyonunu destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya DissectionCT. Png",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: DissectionCT. Png",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya DissectionCT. Png",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: DissectionCT. Png",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ct",
@@ -471,7 +471,7 @@ export const cases = [
         },
         {
           "label": "Ayırıcı nokta",
-          "text": "Vazodilatör verilmeden önce beta-blokaj ile kalp hızı ve dP veya dt azaltılmalıdır."
+          "text": "Vazodilatör verilmeden önce beta-blokaj ile kalp hızı ve dP/dt azaltılmalıdır."
         },
         {
           "label": "Klinik not",
@@ -511,7 +511,7 @@ export const cases = [
           },
           {
             "label": "Ayırıcı nokta",
-            "text": "Vazodilatör verilmeden önce beta-blokaj ile kalp hızı ve dP veya dt azaltılmalıdır."
+            "text": "Vazodilatör verilmeden önce beta-blokaj ile kalp hızı ve dP/dt azaltılmalıdır."
           },
           {
             "label": "Klinik not",
@@ -593,7 +593,7 @@ export const cases = [
           },
           {
             "label": "Ayırıcı nokta",
-            "text": "Vazodilatör verilmeden önce beta-blokaj ile kalp hızı ve dP veya dt azaltılmalıdır."
+            "text": "Vazodilatör verilmeden önce beta-blokaj ile kalp hızı ve dP/dt azaltılmalıdır."
           },
           {
             "label": "Klinik not",
@@ -746,11 +746,11 @@ export const cases = [
     "chiefComplaint": "Giderek artan nefes darlığı ve göğüste basınç hissi.",
     "stem": "Bir hafta önce viral üst solunum yolu enfeksiyonu geçirdiği öğrenilen hasta, progresif dispne, halsizlik ve presenkop yakınmalarıyla acil servise getiriliyor. Oturur pozisyonda kısmi rahatlama olduğunu, eforla yakınmalarının belirgin arttığını ifade ediyor.",
     "vitals": {
-      "TA": "84 veya 56 mmHg",
-      "Nabız": "128 veya dk",
-      "Solunum": "28 veya dk",
+      "TA": "84/56 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "28/dk",
       "SpO2": "%93",
-      "Ateş": "37. 3 °C"
+      "Ateş": "37.3 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -807,25 +807,25 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "11. 200 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "11.200/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
             "Hs-Troponin I",
             "Hafif yüksek",
-            "<34 ng veya L",
+            "<34 ng/L",
             "Yüksek"
           ],
           [
             "CRP",
-            "42 mg veya L",
-            "<5 mg veya L",
+            "42 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 11. 200 veya mm³ (Yüksek).",
+        "summary": "Lökosit: 11.200/mm³ (Yüksek).",
         "findings": [
           "Lökosit: 11."
         ]
@@ -835,8 +835,8 @@ export const cases = [
       {
         "title": "Kardiyak ultrason görüntüsü",
         "caption": "Kalp çevresindeki sıvı birikimi tamponad fizyolojisine ilerleyebilir. Tanı yatak başı eko ile desteklenir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya PericardialeffusionUS. PNG",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: PericardialeffusionUS. PNG",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya PericardialeffusionUS. PNG",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: PericardialeffusionUS. PNG",
         "sourceName": "",
         "license": "CC BY-SA",
         "modality": "Ultrasound",
@@ -1124,11 +1124,11 @@ export const cases = [
     "chiefComplaint": "Gece artan nefes darlığı, ortopne ve pembe köpüklü balgam.",
     "stem": "Azalmış ejeksiyon fraksiyonlu kalp yetersizliği ve geçirilmiş miyokart enfarktüsü öyküsü olan hasta, üç gündür artan bacak ödemi, ortopne ve paroksismal noktürnal dispne ifade ediyor. Son günlerde tuz alımının arttığı ve diüretik tedavisini düzensiz kullandığı öğreniliyor.",
     "vitals": {
-      "TA": "168 veya 96 mmHg",
-      "Nabız": "118 veya dk",
-      "Solunum": "30 veya dk",
+      "TA": "168/96 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "30/dk",
       "SpO2": "%86 oda havası",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -1165,25 +1165,25 @@ export const cases = [
         "rows": [
           [
             "NT-proBNP",
-            "6. 400 pg veya mL",
+            "6.400 pg/mL",
             "Yaşa göre değişir",
             "Yüksek"
           ],
           [
             "Sodyum",
-            "132 mmol veya L",
-            "135-145 mmol veya L",
+            "132 mmol/L",
+            "135-145 mmol/L",
             "Düşük"
           ],
           [
             "Hs-Troponin I",
             "Hafif yüksek",
-            "<34 ng veya L",
+            "<34 ng/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "NT-proBNP: 6. 400 pg veya mL (Yüksek).",
+        "summary": "NT-proBNP: 6.400 pg/mL (Yüksek).",
         "findings": [
           "NT-proBNP: 6."
         ]
@@ -1194,28 +1194,28 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "PH",
-            "7. 47",
-            "7. 35-7. 45",
+            "pH",
+            "7.47",
+            "7.35-7.45",
             "Yüksek"
           ],
           [
             "PaO2",
             "56 mmHg",
-            "80-100 mmHg",
+            "80/100 mmHg",
             "Düşük"
           ],
           [
             "PaCO2",
             "31 mmHg",
-            "35-45 mmHg",
+            "35/45 mmHg",
             "Düşük"
           ]
         ],
         "priority": "Useful",
-        "summary": "PH: 7. 47 (Yüksek).",
+        "summary": "pH: 7.47 (Yüksek).",
         "findings": [
-          "PH: 7."
+          "pH: 7."
         ]
       }
     ],
@@ -1223,8 +1223,8 @@ export const cases = [
       {
         "title": "Akciğer grafisi",
         "caption": "İnterstisyel ve alveoler ödem bulguları akut dekompanse kalp yetersizliğini destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Pulmonary%20oedema. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Pulmonary_oedema. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Pulmonary%20oedema. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Pulmonary_oedema. Jpg",
         "sourceName": "",
         "license": "CC BY-SA",
         "modality": "Xray",
@@ -1534,11 +1534,11 @@ export const cases = [
     "chiefComplaint": "Basketbol antrenmanı sırasında gelişen kısa süreli senkop.",
     "stem": "Yirmi iki yaşındaki erkek hasta son aylarda eforla çarpıntı, göğüste sıkışma ve presenkop yakınmaları olduğunu ifade ediyor. Aile öyküsünde genç yaşta açıklanamayan ani kardiyak ölüm bulunduğu öğreniliyor.",
     "vitals": {
-      "TA": "118 veya 72 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "14 veya dk",
+      "TA": "118/72 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "14/dk",
       "SpO2": "%99",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -1591,8 +1591,8 @@ export const cases = [
       {
         "title": "Ekokardiyografi ölçümü",
         "caption": "Dinamik çıkış yolu obstrüksiyonu egzersizle senkop ve sistolik üfürümün temel mekanizmasını açıklar.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Hypertrophic%20Cardiomyopathy%20-%20Intraventricular%20Pressure%20Tracing. Png",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Hypertrophic_Cardiomyopathy_-_Intraventricular_Pressure_Tracing. Png",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Hypertrophic%20Cardiomyopathy%20-%20Intraventricular%20Pressure%20Tracing. Png",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Hypertrophic_Cardiomyopathy_-_Intraventricular_Pressure_Tracing. Png",
         "sourceName": "",
         "license": "CC BY-SA",
         "modality": "Lab",
@@ -1889,11 +1889,11 @@ export const cases = [
     "chiefComplaint": "Kusma, karın ağrısı ve derin-hızlı solunum.",
     "stem": "Tip 1 diyabet tanısıyla izlenen hasta, son iki gündür insülin dozlarını atladığını ifade ediyor. Poliüri, polidipsi, halsizlik, bulantı-kusma ve yaygın karın ağrısı yakınmaları olduğu öğreniliyor.",
     "vitals": {
-      "TA": "96 veya 60 mmHg",
-      "Nabız": "124 veya dk",
-      "Solunum": "30 veya dk Kussmaul",
+      "TA": "96/60 mmHg",
+      "Nabız": "124/dk",
+      "Solunum": "30/dk Kussmaul",
       "SpO2": "%98",
-      "Ateş": "37. 1 °C"
+      "Ateş": "37.1 °C"
     },
     "exam": [
       "Genel durum orta-kötü.",
@@ -1910,46 +1910,46 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "PH",
-            "7. 18",
-            "7. 35-7. 45",
+            "pH",
+            "7.18",
+            "7.35-7.45",
             "Düşük"
           ],
           [
             "HCO3-",
-            "8 mmol veya L",
-            "22-26 mmol veya L",
+            "8 mmol/L",
+            "22-26 mmol/L",
             "Düşük"
           ],
           [
             "Anyon açıklığı",
-            "28 mmol veya L",
-            "8-12 mmol veya L",
+            "28 mmol/L",
+            "8-12 mmol/L",
             "Yüksek"
           ],
           [
             "Glukoz",
-            "486 mg veya dL",
-            "70-100 mg veya dL",
+            "486 mg/dL",
+            "70-100 mg/dL",
             "Yüksek"
           ],
           [
             "Beta-hidroksibutirat",
-            "6. 2 mmol veya L",
-            "<0. 6 mmol veya L",
+            "6.2 mmol/L",
+            "<0.6 mmol/L",
             "Yüksek"
           ],
           [
             "Potasyum",
-            "5. 4 mmol veya L",
-            "3. 5-5. 1 mmol veya L",
+            "5.4 mmol/L",
+            "3.5-5.1 mmol/L",
             "Yüksek"
           ]
         ],
         "priority": "Essential",
-        "summary": "pH 7.18, HCO3- 8 mmol veya L ve anyon açıklığı 28 mmol veya L saptanır.",
+        "summary": "pH 7.18, HCO3- 8 mmol/L ve anyon açıklığı 28 mmol/L saptanır.",
         "findings": [
-          "PH: 7."
+          "pH: 7."
         ]
       },
       {
@@ -1991,13 +1991,13 @@ export const cases = [
         "findings": [
           "WBC 8.",
           "Nötrofil oranı %66.",
-          "Hs-Troponin I 8 ng veya L."
+          "Hs-Troponin I 8 ng/L."
         ],
         "rows": [
           [
             "WBC",
-            "8. 900 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "8.900/mm³",
+            "4.000–10.000/mm³",
             "Normal"
           ],
           [
@@ -2008,8 +2008,8 @@ export const cases = [
           ],
           [
             "Hs-Troponin I",
-            "8 ng veya L",
-            "<34 ng veya L",
+            "8 ng/L",
+            "<34 ng/L",
             "Normal"
           ]
         ]
@@ -2019,8 +2019,8 @@ export const cases = [
       {
         "title": "Metabolik asidoz şeması",
         "caption": "İnsülin eksikliği lipoliz, ketogenez ve yüksek anyon açıklı metabolik asidoza yol açar.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Diabetic%20Ketoacidosis. Png",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Diabetic_Ketoacidosis. Png",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Diabetic%20Ketoacidosis. Png",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Diabetic_Ketoacidosis. Png",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Lab",
@@ -2320,11 +2320,11 @@ export const cases = [
     "chiefComplaint": "Sırta yayılan şiddetli epigastrik ağrı.",
     "stem": "Hasta ağrının yağlı yemek sonrasında başladığını, kuşak tarzında sırta yayıldığını ve öne eğilmekle kısmen azaldığını ifade ediyor. Bulantı ve tekrarlayan kusma yakınmaları mevcut.",
     "vitals": {
-      "TA": "108 veya 68 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "108/68 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "22/dk",
       "SpO2": "%96",
-      "Ateş": "37. 8 °C"
+      "Ateş": "37.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -2342,31 +2342,31 @@ export const cases = [
         "rows": [
           [
             "Lipaz",
-            "1. 280 U veya L",
-            "<60 U veya L",
+            "1.280 U/L",
+            "<60 U/L",
             "Yüksek"
           ],
           [
             "Amilaz",
-            "410 U veya L",
-            "<100 U veya L",
+            "410 U/L",
+            "<100 U/L",
             "Yüksek"
           ],
           [
             "ALT",
-            "186 U veya L",
-            "<41 U veya L",
+            "186 U/L",
+            "<41 U/L",
             "Yüksek"
           ],
           [
             "Kalsiyum",
-            "8. 0 mg veya dL",
-            "8. 5-10. 5 mg veya dL",
+            "8.0 mg/dL",
+            "8.5-10.5 mg/dL",
             "Düşük"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lipaz: 1. 280 U veya L (Yüksek).",
+        "summary": "Lipaz: 1.280 U/L (Yüksek).",
         "findings": [
           "Lipaz: 1."
         ]
@@ -2412,8 +2412,8 @@ export const cases = [
       {
         "title": "Abdominal BT",
         "caption": "Peripankreatik yağlı dokuda inflamatuvar değişiklikler ve sınırlı sıvı izlenir. Organize koleksiyon saptanmaz.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Akute%20exsudative%20Pankreatitis%20-%20CT%20axial. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Akute_exsudative_Pankreatitis_-_CT_axial. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Akute%20exsudative%20Pankreatitis%20-%20CT%20axial. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Akute_exsudative_Pankreatitis_-_CT_axial. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ct",
@@ -2706,11 +2706,11 @@ export const cases = [
     "chiefComplaint": "Bol miktarda kan kusma ve baş dönmesi.",
     "stem": "Alkole bağlı siroz tanısıyla izlenen hasta ani başlayan hematemez ve melena nedeniyle acil servise getiriliyor. Daha önce asit nedeniyle tedavi aldığı, son günlerde halsizlik ve iştahsızlığının arttığı öğreniliyor.",
     "vitals": {
-      "TA": "88 veya 54 mmHg",
-      "Nabız": "132 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "88/54 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "24/dk",
       "SpO2": "%96",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -2728,25 +2728,25 @@ export const cases = [
         "rows": [
           [
             "Hemoglobin",
-            "7. 8 g veya dL",
-            "13. 5-17. 5 g veya dL",
+            "7.8 g/dL",
+            "13.5-17.5 g/dL",
             "Düşük"
           ],
           [
             "Trombosit",
-            "72. 000 veya mm³",
-            "150. 000-400. 000 veya mm³",
+            "72.000/mm³",
+            "150.000–400.000/mm³",
             "Düşük"
           ],
           [
             "INR",
-            "1. 9",
-            "0. 8-1. 2",
+            "1.9",
+            "0.8-1.2",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Hemoglobin: 7. 8 g veya dL (Düşük).",
+        "summary": "Hemoglobin: 7.8 g/dL (Düşük).",
         "findings": [
           "Hemoglobin: 7."
         ]
@@ -2774,8 +2774,8 @@ export const cases = [
       {
         "title": "Üst gastrointestinal endoskopi",
         "caption": "Aktif varis kanaması portal hipertansiyon zemininde masif hematemezin önemli nedenidir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Bleeding%20esophageal%20varices. Png",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Bleeding_esophageal_varices. Png",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Bleeding%20esophageal%20varices. Png",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Bleeding_esophageal_varices. Png",
         "sourceName": "",
         "license": "CC BY-SA",
         "modality": "Endoscopy",
@@ -3068,11 +3068,11 @@ export const cases = [
     "chiefComplaint": "Halsizlik, eforla nefes darlığı ve buz yeme isteği.",
     "stem": "Hasta son altı aydır giderek artan yorgunluk, saç dökülmesi, çarpıntı ve pika yakınmaları olduğunu ifade ediyor. Menstrüasyonlarının uzun sürdüğü ve kanama miktarının arttığı öğreniliyor.",
     "vitals": {
-      "TA": "110 veya 70 mmHg",
-      "Nabız": "96 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "110/70 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -3088,8 +3088,8 @@ export const cases = [
         "rows": [
           [
             "Hemoglobin",
-            "8. 9 g veya dL",
-            "12-16 g veya dL",
+            "8.9 g/dL",
+            "12-16 g/dL",
             "Düşük"
           ],
           [
@@ -3101,13 +3101,13 @@ export const cases = [
           [
             "RDW",
             "%19",
-            "%11. 5-14. 5",
+            "%11.5-14.5",
             "Yüksek"
           ],
           [
             "Ferritin",
-            "6 ng veya mL",
-            "15-150 ng veya mL",
+            "6 ng/mL",
+            "15-150 ng/mL",
             "Düşük"
           ],
           [
@@ -3118,7 +3118,7 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Hemoglobin: 8. 9 g veya dL (Düşük).",
+        "summary": "Hemoglobin: 8.9 g/dL (Düşük).",
         "findings": [
           "Hemoglobin: 8."
         ]
@@ -3146,8 +3146,8 @@ export const cases = [
       {
         "title": "Periferik yayma",
         "caption": "Mikrositoz ve hipokromi eritrosit indeksleriyle birlikte demir eksikliğini destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Iron%20deficiency%20anemia%20blood%20film. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Iron_deficiency_anemia_blood_film. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Iron%20deficiency%20anemia%20blood%20film. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Iron_deficiency_anemia_blood_film. Jpg",
         "sourceName": "",
         "license": "CC BY-SA",
         "modality": "Microscopy",
@@ -3431,11 +3431,11 @@ export const cases = [
     "chiefComplaint": "Tekrarlayan böbrek taşı, kabızlık ve halsizlik.",
     "stem": "Hasta son bir yıl içinde iki kez renal kolik atağı geçirdiğini ifade ediyor. Kabızlık, yaygın kemik ağrısı, halsizlik ve hafif depresif duygu durum yakınmaları olduğu öğreniliyor.",
     "vitals": {
-      "TA": "136 veya 82 mmHg",
-      "Nabız": "82 veya dk",
-      "Solunum": "14 veya dk",
+      "TA": "136/82 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "14/dk",
       "SpO2": "%98",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -3453,31 +3453,31 @@ export const cases = [
         "rows": [
           [
             "Düzeltilmiş kalsiyum",
-            "11. 8 mg veya dL",
-            "8. 5-10. 5 mg veya dL",
+            "11.8 mg/dL",
+            "8.5-10.5 mg/dL",
             "Yüksek"
           ],
           [
             "Fosfor",
-            "2. 1 mg veya dL",
-            "2. 5-4. 5 mg veya dL",
+            "2.1 mg/dL",
+            "2.5-4.5 mg/dL",
             "Düşük"
           ],
           [
             "PTH",
-            "146 pg veya mL",
-            "15-65 pg veya mL",
+            "146 pg/mL",
+            "15-65 pg/mL",
             "Yüksek"
           ],
           [
             "25-OH D vitamini",
-            "28 ng veya mL",
-            "20-50 ng veya mL",
+            "28 ng/mL",
+            "20-50 ng/mL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Düzeltilmiş kalsiyum: 11. 8 mg veya dL (Yüksek).",
+        "summary": "Düzeltilmiş kalsiyum: 11.8 mg/dL (Yüksek).",
         "findings": [
           "Düzeltilmiş kalsiyum: 11."
         ]
@@ -3536,8 +3536,8 @@ export const cases = [
       {
         "title": "Histoloji preparatı",
         "caption": "Primer hiperparatiroidinin sık nedeni paratiroid adenomudur. Tanı öncelikle biyokimyasal paternle konur.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Parathyroid%20adenoma%2C%20mixed%20type%20--%20very%20high%20mag. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Parathyroid_adenoma%2C_mixed_type_--_very_high_mag. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Parathyroid%20adenoma%2C%20mixed%20type%20--%20very%20high%20mag. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Parathyroid_adenoma%2C_mixed_type_--_very_high_mag. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Pathology",
@@ -3821,11 +3821,11 @@ export const cases = [
     "chiefComplaint": "Konuşma bozukluğu ve sağ taraf güçsüzlüğü.",
     "stem": "Hasta yakınları, hastanın 70 dakika önce son kez normal görüldüğünü. Ardından ani konuşma bozukluğu, sağ kol ve bacakta güç kaybı ve bakış deviasyonu geliştiğini belirtiyor. Antikoagülan kullanım öyküsü olmadığı öğreniliyor.",
     "vitals": {
-      "TA": "172 veya 96 mmHg",
-      "Nabız": "92 veya dk düzensiz",
-      "Solunum": "18 veya dk",
+      "TA": "172/96 mmHg",
+      "Nabız": "92/dk düzensiz",
+      "Solunum": "18/dk",
       "SpO2": "%97",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -3879,27 +3879,27 @@ export const cases = [
         "rows": [
           [
             "Glukoz",
-            "118 mg veya dL",
-            "70-100 mg veya dL",
+            "118 mg/dL",
+            "70-100 mg/dL",
             "Yüksek"
           ],
           [
             "Trombosit",
-            "240. 000 veya mm³",
-            "150. 000-400. 000 veya mm³",
+            "240.000/mm³",
+            "150.000–400.000/mm³",
             "Referans içinde"
           ],
           [
             "INR",
-            "1. 0",
-            "0. 8-1. 2",
+            "1.0",
+            "0.8-1.2",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Glukoz: 118 mg veya dL (Yüksek) saptandı.",
+        "summary": "Glukoz: 118 mg/dL (Yüksek) saptandı.",
         "findings": [
-          "Glukoz: 118 mg veya dL (Yüksek) saptandı."
+          "Glukoz: 118 mg/dL (Yüksek) saptandı."
         ]
       }
     ],
@@ -3907,8 +3907,8 @@ export const cases = [
       {
         "title": "Kraniyal BT",
         "caption": "MCA sulama alanındaki hipodansite ve kortikal tutulum vasküler lokalizasyonu destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya CT%20Brain%20MCA%20Infarct. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: CT_Brain_MCA_Infarct. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya CT%20Brain%20MCA%20Infarct. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: CT_Brain_MCA_Infarct. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ct",
@@ -4224,11 +4224,11 @@ export const cases = [
     "chiefComplaint": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı.",
     "stem": "Hasta baş ağrısının aniden başladığını, daha önce yaşadığı baş ağrılarından tamamen farklı olduğunu ve saniyeler içinde en yüksek şiddete ulaştığını ifade ediyor. Kusma ve fotofobi eşlik ediyor. Polikistik böbrek hastalığı öyküsü mevcut.",
     "vitals": {
-      "TA": "178 veya 102 mmHg",
-      "Nabız": "98 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "178/102 mmHg",
+      "Nabız": "98/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -4310,8 +4310,8 @@ export const cases = [
       {
         "title": "Kraniyal BT",
         "caption": "Bazal sisternalarda hiperdens kan ani gök gürültüsü baş ağrısı ile birlikte SAH lehinedir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya CT%20scan%20-%20subarachnoid%20hemorrhage. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: CT_scan_-_subarachnoid_hemorrhage. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya CT%20scan%20-%20subarachnoid%20hemorrhage. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: CT_scan_-_subarachnoid_hemorrhage. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ct",
@@ -4604,11 +4604,11 @@ export const cases = [
     "chiefComplaint": "Sağ gözde bulanık görme öyküsü ve yeni başlayan çift görme.",
     "stem": "Hasta sekiz ay önce kendiliğinden düzelen ağrılı sağ görme azalması atağı geçirdiğini, şimdi ise horizontal diplopi, dengesizlik ve kısa süreli uyuşmalar yaşadığını ifade ediyor.",
     "vitals": {
-      "TA": "118 veya 74 mmHg",
-      "Nabız": "78 veya dk",
-      "Solunum": "14 veya dk",
+      "TA": "118/74 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "14/dk",
       "SpO2": "%99",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -4651,13 +4651,13 @@ export const cases = [
           [
             "IgG indeksi",
             "Yüksek",
-            "<0. 7",
+            "<0.7",
             "Yüksek"
           ],
           [
             "Hücre sayısı",
             "Hafif lenfositoz",
-            "0-5 veya mm³",
+            "0–5/mm³",
             "Yüksek"
           ]
         ],
@@ -4690,8 +4690,8 @@ export const cases = [
       {
         "title": "Kraniyal MR",
         "caption": "Periventriküler demiyelinizan plakların ventriküllere dik uzanımı MS için tipik görüntüleme ipucudur.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Axial%20MRI%20scans%20of%20a%20person%20with%20multiple%20sclerosis%20(30208218503). Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Axial_MRI_scans_of_a_person_with_multiple_sclerosis_(30208218503). Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Axial%20MRI%20scans%20of%20a%20person%20with%20multiple%20sclerosis%20(30208218503). Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Axial_MRI_scans_of_a_person_with_multiple_sclerosis_(30208218503). Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Mri",
@@ -4998,11 +4998,11 @@ export const cases = [
     "chiefComplaint": "Şiddetli baş ağrısı ve ilk kez gelişen jeneralize nöbet.",
     "stem": "Doğumdan on gün sonra başlayan ve giderek artan baş ağrısı olan hasta, jeneralize tonik-klonik nöbet sonrasında acil servise getiriliyor. Lohusalık döneminde sıvı alımının azaldığı ve uzun süre yatakta kaldığı öğreniliyor.",
     "vitals": {
-      "TA": "142 veya 88 mmHg",
-      "Nabız": "96 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "142/88 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -5057,19 +5057,19 @@ export const cases = [
           [
             "D-dimer",
             "Yüksek",
-            "<500 ng veya mL FEU",
+            "<500 ng/mL FEU",
             "Yüksek"
           ],
           [
             "Trombosit",
-            "260. 000 veya mm³",
-            "150. 000-400. 000 veya mm³",
+            "260.000/mm³",
+            "150.000–400.000/mm³",
             "Referans içinde"
           ],
           [
             "INR",
-            "1. 0",
-            "0. 8-1. 2",
+            "1.0",
+            "0.8-1.2",
             "Referans içinde"
           ]
         ],
@@ -5084,8 +5084,8 @@ export const cases = [
       {
         "title": "Kraniyal MR venografi",
         "caption": "Transvers sinüste akım kaybı ve dolum defekti postpartum baş ağrısı-nöbet tablosunu açıklar.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Sinusthrombose%20rechts%20Sinus%20transversalis%2076W%20-%20MR%20-%20001. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Sinusthrombose_rechts_Sinus_transversalis_76W_-_MR_-_001. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Sinusthrombose%20rechts%20Sinus%20transversalis%2076W%20-%20MR%20-%20001.Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Sinusthrombose_rechts_Sinus_transversalis_76W_-_MR_-_001.Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Mri",
@@ -5386,11 +5386,11 @@ export const cases = [
     "chiefComplaint": "Ataklar halinde ağlama ve bacaklarını karnına çekme.",
     "stem": "Dokuz aylık bebek, birkaç dakikalık huzursuzluk ve şiddetli ağlama atakları sonrasında kısa süreli sakinleşme dönemleri göstermektedir. Son dışkısında mukus ve kan karışımı fark edildiği, aralarda kusma olduğu öğreniliyor.",
     "vitals": {
-      "TA": "86 veya 52 mmHg",
-      "Nabız": "148 veya dk",
-      "Solunum": "30 veya dk",
+      "TA": "86/52 mmHg",
+      "Nabız": "148/dk",
+      "Solunum": "30/dk",
       "SpO2": "%98",
-      "Ateş": "37. 5 °C"
+      "Ateş": "37.5 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -5444,27 +5444,27 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "13. 200 veya mm³",
-            "5. 000-15. 000 veya mm³",
+            "13.200/mm³",
+            "5.000–15.000/mm³",
             "Referans içinde"
           ],
           [
             "Hemoglobin",
-            "11. 8 g veya dL",
-            "10. 5-13. 5 g veya dL",
+            "11.8 g/dL",
+            "10.5-13.5 g/dL",
             "Referans içinde"
           ],
           [
             "CRP",
-            "8 mg veya L",
-            "<5 mg veya L",
+            "8 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "CRP: 8 mg veya L (Yüksek) saptandı.",
+        "summary": "CRP: 8 mg/L (Yüksek) saptandı.",
         "findings": [
-          "CRP: 8 mg veya L (Yüksek) saptandı."
+          "CRP: 8 mg/L (Yüksek) saptandı."
         ]
       }
     ],
@@ -5472,8 +5472,8 @@ export const cases = [
       {
         "title": "Abdominal ultrasonografi",
         "caption": "Ultrasonda konsantrik halka görünümü ileoçekal invajinasyon için tipiktir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Intussusception%20on%20ultrasound. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Intussusception_on_ultrasound. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Intussusception%20on%20ultrasound. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Intussusception_on_ultrasound. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ultrasound",
@@ -5773,11 +5773,11 @@ export const cases = [
     "chiefComplaint": "Beslenme sonrası fışkırır tarzda kusma.",
     "stem": "Beş haftalık erkek bebek son bir haftadır her beslenmeden kısa süre sonra safrasız ve fışkırır tarzda kusuyor. Kusma sonrasında tekrar emmek istediği, kilo alımının azaldığı ve bez sayısının düştüğü öğreniliyor.",
     "vitals": {
-      "TA": "82 veya 48 mmHg",
-      "Nabız": "156 veya dk",
-      "Solunum": "32 veya dk",
+      "TA": "82/48 mmHg",
+      "Nabız": "156/dk",
+      "Solunum": "32/dk",
       "SpO2": "%99",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -5794,34 +5794,34 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "PH",
-            "7. 52",
-            "7. 35-7. 45",
+            "pH",
+            "7.52",
+            "7.35-7.45",
             "Yüksek"
           ],
           [
             "Klor",
-            "86 mmol veya L",
-            "98-107 mmol veya L",
+            "86 mmol/L",
+            "98-107 mmol/L",
             "Düşük"
           ],
           [
             "Potasyum",
-            "3. 0 mmol veya L",
-            "3. 5-5. 1 mmol veya L",
+            "3.0 mmol/L",
+            "3.5-5.1 mmol/L",
             "Düşük"
           ],
           [
             "HCO3-",
-            "34 mmol veya L",
-            "22-26 mmol veya L",
+            "34 mmol/L",
+            "22-26 mmol/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "PH: 7. 52 (Yüksek).",
+        "summary": "pH: 7.52 (Yüksek).",
         "findings": [
-          "PH: 7."
+          "pH: 7."
         ]
       },
       {
@@ -5847,8 +5847,8 @@ export const cases = [
       {
         "title": "Pilor ultrasonografisi",
         "caption": "Kalınlaşmış pilor kası ve uzamış kanal safrasız fışkırır kusmayı açıklar.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya PyloricStenosisUS. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: PyloricStenosisUS. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya PyloricStenosisUS. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: PyloricStenosisUS. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ultrasound",
@@ -6162,11 +6162,11 @@ export const cases = [
     "chiefComplaint": "Altı gündür düşmeyen ateş ve döküntü.",
     "stem": "Üç yaşındaki çocuk, antibiyotik tedavisine rağmen devam eden yüksek ateş nedeniyle getiriliyor. Ateşe bilateral göz kızarıklığı, dudaklarda çatlama, gövdede döküntü ve el-ayaklarda şişlik eşlik ediyor.",
     "vitals": {
-      "TA": "92 veya 58 mmHg",
-      "Nabız": "132 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "92/58 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "24/dk",
       "SpO2": "%99",
-      "Ateş": "39. 1 °C"
+      "Ateş": "39.1 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -6184,33 +6184,33 @@ export const cases = [
         "rows": [
           [
             "CRP",
-            "96 mg veya L",
-            "<5 mg veya L",
+            "96 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
             "Sedimentasyon",
-            "78 mm veya saat",
-            "<20 mm veya saat",
+            "78 mm/saat",
+            "<20 mm/saat",
             "Yüksek"
           ],
           [
             "Trombosit",
-            "520. 000 veya mm³",
-            "150. 000-400. 000 veya mm³",
+            "520.000/mm³",
+            "150.000–400.000/mm³",
             "Yüksek"
           ],
           [
             "ALT",
             "Hafif yüksek",
-            "<41 U veya L",
+            "<41 U/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "CRP: 96 mg veya L (Yüksek). Sedimentasyon: 78 mm veya saat (Yüksek).",
+        "summary": "CRP: 96 mg/L (Yüksek). Sedimentasyon: 78 mm/saat (Yüksek).",
         "findings": [
-          "CRP: 96 mg veya L (Yüksek)."
+          "CRP: 96 mg/L (Yüksek)."
         ]
       },
       {
@@ -6274,8 +6274,8 @@ export const cases = [
       {
         "title": "Oral mukoza bulgusu",
         "caption": "Çilek dili ve çatlamış dudaklar uzamış ateşle birlikte Kawasaki klinik yorumu destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Kawasaki%20symptoms%20B. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Kawasaki_symptoms_B. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Kawasaki%20symptoms%20B. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Kawasaki_symptoms_B. Jpg",
         "sourceName": "",
         "license": "CC BY",
         "modality": "Clinical",
@@ -6574,11 +6574,11 @@ export const cases = [
     "chiefComplaint": "Yutamama, salya akması ve solunum sıkıntısı.",
     "stem": "Aşıları eksik olduğu öğrenilen altı yaşındaki çocuk, ani başlayan yüksek ateş, şiddetli boğaz ağrısı, yutamama ve boğuk ses nedeniyle getiriliyor. Muayene sırasında öne eğilerek oturduğu ve salyasını yutamadığı izleniyor.",
     "vitals": {
-      "TA": "94 veya 60 mmHg",
-      "Nabız": "148 veya dk",
-      "Solunum": "34 veya dk",
+      "TA": "94/60 mmHg",
+      "Nabız": "148/dk",
+      "Solunum": "34/dk",
       "SpO2": "%91",
-      "Ateş": "39. 4 °C"
+      "Ateş": "39.4 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -6614,14 +6614,14 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "18. 600 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "18.600/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
             "CRP",
-            "112 mg veya L",
-            "<5 mg veya L",
+            "112 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
@@ -6632,7 +6632,7 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 18. 600 veya mm³ (Yüksek).",
+        "summary": "Lökosit: 18.600/mm³ (Yüksek).",
         "findings": [
           "Lökosit: 18."
         ]
@@ -6642,8 +6642,8 @@ export const cases = [
       {
         "title": "Boyun lateral grafisi",
         "caption": "Lateral boyun grafisinde kalınlaşmış epiglot üst havayolu obstrüksiyonu riskini gösterir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Epiglottitis. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Epiglottitis. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Epiglottitis. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Epiglottitis. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -6945,11 +6945,11 @@ export const cases = [
     "chiefComplaint": "Sağ alt kadran ağrısı ve iştahsızlık.",
     "stem": "Yirmi dört yaşındaki erkek hasta, 12 saat önce periumbilikal başlayan ağrının giderek sağ alt kadrana lokalize olduğunu ifade ediyor. Bulantı, iştahsızlık ve düşük dereceli ateş yakınmaları mevcut.",
     "vitals": {
-      "TA": "118 veya 72 mmHg",
-      "Nabız": "102 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "118/72 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "18/dk",
       "SpO2": "%99",
-      "Ateş": "37. 9 °C"
+      "Ateş": "37.9 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -6965,8 +6965,8 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "15. 400 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "15.400/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
@@ -6977,13 +6977,13 @@ export const cases = [
           ],
           [
             "CRP",
-            "38 mg veya L",
-            "<5 mg veya L",
+            "38 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 15. 400 veya mm³ (Yüksek).",
+        "summary": "Lökosit: 15.400/mm³ (Yüksek).",
         "findings": [
           "Lökosit: 15."
         ]
@@ -7041,8 +7041,8 @@ export const cases = [
       {
         "title": "Abdominal BT",
         "caption": "Dilate apendiks ve çevresel yağlı plan inflamasyonu cerrahi doğru yanıtı açıklar.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya CT%20scan%20of%20the%20abdomen%20showing%20acute%20appendicitis. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: CT_scan_of_the_abdomen_showing_acute_appendicitis. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya CT%20scan%20of%20the%20abdomen%20showing%20acute%20appendicitis. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: CT_scan_of_the_abdomen_showing_acute_appendicitis. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ct",
@@ -7330,11 +7330,11 @@ export const cases = [
     "chiefComplaint": "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı.",
     "stem": "Kırk yedi yaşındaki kadın hasta, 18 saattir devam eden sağ üst kadran ağrısı, bulantı ve ateş yakınmalarıyla başvuruyor. Daha önce kendiliğinden düzelen kısa süreli biliyer kolik atakları olduğu öğreniliyor.",
     "vitals": {
-      "TA": "126 veya 78 mmHg",
-      "Nabız": "104 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "126/78 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98",
-      "Ateş": "38. 2 °C"
+      "Ateş": "38.2 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -7370,31 +7370,31 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "14. 800 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "14.800/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
             "CRP",
-            "68 mg veya L",
-            "<5 mg veya L",
+            "68 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
             "Total bilirubin",
-            "1. 1 mg veya dL",
-            "0. 2-1. 2 mg veya dL",
+            "1.1 mg/dL",
+            "0.2-1.2 mg/dL",
             "Referans içinde"
           ],
           [
             "ALT",
-            "46 U veya L",
-            "<41 U veya L",
+            "46 U/L",
+            "<41 U/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 14. 800 veya mm³ (Yüksek).",
+        "summary": "Lökosit: 14.800/mm³ (Yüksek).",
         "findings": [
           "Lökosit: 14."
         ]
@@ -7429,8 +7429,8 @@ export const cases = [
       {
         "title": "Sağ üst kadran ultrasonografisi",
         "caption": "Taş, duvar kalınlaşması ve perikolesistik sıvı akut kolesistiti destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Ultrasonography%20of%20cholecystitis. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Ultrasonography_of_cholecystitis. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Ultrasonography%20of%20cholecystitis. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Ultrasonography_of_cholecystitis. Jpg",
         "sourceName": "",
         "license": "CC0",
         "modality": "Ultrasound",
@@ -7718,11 +7718,11 @@ export const cases = [
     "chiefComplaint": "Karında şişlik, kusma ve gaz-gaita çıkaramama.",
     "stem": "Daha önce kolon cerrahisi geçirmiş olan hasta, son 24 saattir kolik tarzda karın ağrısı, tekrarlayan kusma ve obstipasyon yakınmaları olduğunu ifade ediyor. Ateş veya belirgin dışkıda kan ifade etmiyor.",
     "vitals": {
-      "TA": "104 veya 66 mmHg",
-      "Nabız": "116 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "104/66 mmHg",
+      "Nabız": "116/dk",
+      "Solunum": "20/dk",
       "SpO2": "%97",
-      "Ateş": "37. 4 °C"
+      "Ateş": "37.4 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -7774,25 +7774,25 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "11. 800 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "11.800/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
             "Laktat",
-            "1. 6 mmol veya L",
-            "<2. 0 mmol veya L",
+            "1.6 mmol/L",
+            "<2.0 mmol/L",
             "Referans içinde"
           ],
           [
             "Kreatinin",
-            "1. 1 mg veya dL",
-            "0. 6-1. 2 mg veya dL",
+            "1.1 mg/dL",
+            "0.6-1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 11. 800 veya mm³ (Yüksek) saptandı.",
+        "summary": "Lökosit: 11.800/mm³ (Yüksek) saptandı.",
         "findings": [
           "Lökosit: 11."
         ]
@@ -7802,8 +7802,8 @@ export const cases = [
       {
         "title": "Ayakta direkt batın grafisi",
         "caption": "Çoklu hava-sıvı seviyeleri ve dilate ince barsak ansları mekanik obstrüksiyonu destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Upright%20X-ray%20demonstrating%20small%20bowel%20obstruction. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Upright_X-ray_demonstrating_small_bowel_obstruction. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Upright%20X-ray%20demonstrating%20small%20bowel%20obstruction. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Upright_X-ray_demonstrating_small_bowel_obstruction. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -8091,11 +8091,11 @@ export const cases = [
     "chiefComplaint": "Ani başlayan çok şiddetli epigastrik ağrı.",
     "stem": "NSAİİ kullanım öyküsü olan hasta, epigastriumda aniden başlayan ağrının kısa sürede tüm karna yayıldığını ifade ediyor. Ağrı hareketle ve öksürmekle artıyor. Bulantı eşlik ediyor.",
     "vitals": {
-      "TA": "96 veya 58 mmHg",
-      "Nabız": "122 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "96/58 mmHg",
+      "Nabız": "122/dk",
+      "Solunum": "24/dk",
       "SpO2": "%96",
-      "Ateş": "38. 0 °C"
+      "Ateş": "38.0 °C"
     },
     "exam": [
       "Genel durum orta-kötü.",
@@ -8147,25 +8147,25 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "16. 200 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "16.200/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
             "CRP",
-            "54 mg veya L",
-            "<5 mg veya L",
+            "54 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
             "Laktat",
-            "2. 4 mmol veya L",
-            "<2. 0 mmol veya L",
+            "2.4 mmol/L",
+            "<2.0 mmol/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 16. 200 veya mm³ (Yüksek).",
+        "summary": "Lökosit: 16.200/mm³ (Yüksek).",
         "findings": [
           "Lökosit: 16."
         ]
@@ -8175,8 +8175,8 @@ export const cases = [
       {
         "title": "Ayakta direkt grafi",
         "caption": "Diyafram altında serbest hava gastrointestinal perforasyon için kritik radyolojik bulgudur.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Pneumoperitoneum. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Pneumoperitoneum. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Pneumoperitoneum. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Pneumoperitoneum. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -8464,11 +8464,11 @@ export const cases = [
     "chiefComplaint": "Sol alt kadranda ağrı ve ateş.",
     "stem": "Altmış sekiz yaşındaki kadın hasta iki gündür sol alt kadranda giderek artan ağrı, kabızlık ve düşük dereceli ateş olduğunu ifade ediyor. Daha önce kolonoskopide divertikülozis saptandığı öğreniliyor.",
     "vitals": {
-      "TA": "128 veya 78 mmHg",
-      "Nabız": "98 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "128/78 mmHg",
+      "Nabız": "98/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98",
-      "Ateş": "38. 1 °C"
+      "Ateş": "38.1 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -8504,25 +8504,25 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "13. 900 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "13.900/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
             "CRP",
-            "82 mg veya L",
-            "<5 mg veya L",
+            "82 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
             "Kreatinin",
-            "0. 8 mg veya dL",
-            "0. 6-1. 2 mg veya dL",
+            "0.8 mg/dL",
+            "0.6-1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 13. 900 veya mm³ (Yüksek).",
+        "summary": "Lökosit: 13.900/mm³ (Yüksek).",
         "findings": [
           "Lökosit: 13."
         ]
@@ -8532,8 +8532,8 @@ export const cases = [
       {
         "title": "Abdominal BT",
         "caption": "Segmental kolon duvar kalınlaşması ve perikolik yağlı plan inflamasyonu divertiküliti destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Diverticulitis. Png",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Diverticulitis. Png",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Diverticulitis. Png",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Diverticulitis. Png",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ct",
@@ -8821,11 +8821,11 @@ export const cases = [
     "chiefComplaint": "Ani sağ göğüs ağrısı ve nefes darlığı.",
     "stem": "Uzun boylu ve zayıf yapılı 23 yaşındaki erkek hasta, istirahat sırasında aniden başlayan batıcı sağ göğüs ağrısı ve nefes darlığı nedeniyle başvuruyor. Travma, ateş veya balgam öyküsü yoktur.",
     "vitals": {
-      "TA": "118 veya 70 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "26 veya dk",
+      "TA": "118/70 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "26/dk",
       "SpO2": "%91",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -8860,21 +8860,21 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "PH",
-            "7. 43",
-            "7. 35-7. 45",
+            "pH",
+            "7.43",
+            "7.35-7.45",
             "Referans içinde"
           ],
           [
             "PaO2",
             "72 mmHg",
-            "80-100 mmHg",
+            "80/100 mmHg",
             "Düşük"
           ],
           [
             "PaCO2",
             "34 mmHg",
-            "35-45 mmHg",
+            "35/45 mmHg",
             "Düşük"
           ]
         ],
@@ -8907,8 +8907,8 @@ export const cases = [
       {
         "title": "Akciğer grafisi",
         "caption": "Plevral çizgi ve periferik akciğer işaretlerinin kaybı pnömotoraksı gösterir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Chest%20X-ray%20of%20pneumothorax. Png",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Chest_X-ray_of_pneumothorax. Png",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Chest%20X-ray%20of%20pneumothorax. Png",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Chest_X-ray_of_pneumothorax. Png",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -9186,11 +9186,11 @@ export const cases = [
     "chiefComplaint": "Ani nefes darlığı ve batıcı göğüs ağrısı.",
     "stem": "Otuz altı yaşındaki kadın hasta, iki gün önce uzun süreli uçuş yaptığını ve oral kontraseptif kullandığını belirtiyor. Ani başlayan nefes darlığına sağ yan ağrısı, çarpıntı ve sağ baldırda ağrı-şişlik eşlik ediyor.",
     "vitals": {
-      "TA": "112 veya 70 mmHg",
-      "Nabız": "124 veya dk",
-      "Solunum": "28 veya dk",
+      "TA": "112/70 mmHg",
+      "Nabız": "124/dk",
+      "Solunum": "28/dk",
       "SpO2": "%89",
-      "Ateş": "37. 2 °C"
+      "Ateş": "37.2 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -9226,14 +9226,14 @@ export const cases = [
         "rows": [
           [
             "D-dimer",
-            "2. 400 ng veya mL FEU",
-            "<500 ng veya mL FEU",
+            "2.400 ng/mL FEU",
+            "<500 ng/mL FEU",
             "Yüksek"
           ],
           [
             "Troponin",
             "Normal",
-            "<34 ng veya L",
+            "<34 ng/L",
             "Referans içinde"
           ],
           [
@@ -9244,7 +9244,7 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "D-dimer: 2. 400 ng veya mL FEU (Yüksek) saptandı.",
+        "summary": "D-dimer: 2.400 ng/mL FEU (Yüksek) saptandı.",
         "findings": [
           "D-dimer: 2."
         ]
@@ -9272,8 +9272,8 @@ export const cases = [
       {
         "title": "BT pulmoner anjiyografi",
         "caption": "Pulmoner arter dallarındaki dolum defektleri akut tromboemboliyi destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Pulmonary%20embolism. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Pulmonary_embolism. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Pulmonary%20embolism. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Pulmonary_embolism. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Ct",
@@ -9558,11 +9558,11 @@ export const cases = [
     "chiefComplaint": "Öksürük, ateş ve nefes almakla artan yan ağrısı.",
     "stem": "KOAH öyküsü olan 67 yaşındaki erkek hasta, üç gündür ateş, titreme, pürülan balgam ve sağ yan ağrısı olduğunu ifade ediyor. Yakın zamanda hastane yatışı veya antibiyotik kullanımı olmadığı öğreniliyor.",
     "vitals": {
-      "TA": "104 veya 64 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "28 veya dk",
+      "TA": "104/64 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "28/dk",
       "SpO2": "%90",
-      "Ateş": "38. 8 °C"
+      "Ateş": "38.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -9600,25 +9600,25 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "16. 700 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "16.700/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
             "CRP",
-            "132 mg veya L",
-            "<5 mg veya L",
+            "132 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
             "Üre",
-            "42 mg veya dL",
-            "17-43 mg veya dL",
+            "42 mg/dL",
+            "17-43 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit 16. 700 veya mm³ ve CRP 132 mg veya L saptanır.",
+        "summary": "Lökosit 16.700/mm³ ve CRP 132 mg/L saptanır.",
         "findings": [
           "Lökositoz ve yüksek CRP.",
           "Böbrek fonksiyonu antibiyotik dozu için değerlendirilir."
@@ -9660,8 +9660,8 @@ export const cases = [
       {
         "title": "Akciğer grafisi",
         "caption": "Lokalize konsolidasyon ve hava bronkogramları bakteriyel pnömoni lehinedir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya X-ray%20of%20lobar%20pneumonia. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: X-ray_of_lobar_pneumonia. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya X-ray%20of%20lobar%20pneumonia. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: X-ray_of_lobar_pneumonia. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -9940,11 +9940,11 @@ export const cases = [
     "chiefComplaint": "Aylar içinde artan efor dispnesi ve kuru öksürük.",
     "stem": "Altmış dokuz yaşındaki erkek hasta, son bir yılda merdiven çıkarken belirginleşen nefes darlığı ve kuru öksürük yakınmaları olduğunu ifade ediyor. Bağ dokusu hastalığını düşündüren eklem şişliği, Raynaud fenomeni veya belirgin çevresel maruziyet ifade etmiyor.",
     "vitals": {
-      "TA": "128 veya 76 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "128/76 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "20/dk",
       "SpO2": "%92 eforla düşüyor",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -10038,8 +10038,8 @@ export const cases = [
       {
         "title": "Akciğer histopatoloji preparatı",
         "caption": "Fibrotik heterojenite ve bal peteği alanları UIP paternini destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya UIP%20(Usual%20interstitial%20pneumonia). Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: UIP_(Usual_interstitial_pneumonia). Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya UIP%20(Usual%20interstitial%20pneumonia). Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: UIP_(Usual_interstitial_pneumonia). Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Pathology",
@@ -10315,11 +10315,11 @@ export const cases = [
     "chiefComplaint": "Artan nefes darlığı ve balgam miktarı.",
     "stem": "Ağır sigara öyküsü ve KOAH tanısı olan hasta, üç gündür dispnesinin arttığını, balgam miktarı ve pürülansında belirgin artış olduğunu ifade ediyor. Evde kullandığı inhaler tedaviyle rahatlamadığı öğreniliyor.",
     "vitals": {
-      "TA": "136 veya 78 mmHg",
-      "Nabız": "118 veya dk",
-      "Solunum": "32 veya dk",
+      "TA": "136/78 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "32/dk",
       "SpO2": "%84 oda havası",
-      "Ateş": "37. 6 °C"
+      "Ateş": "37.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -10336,34 +10336,34 @@ export const cases = [
         "type": "Lab",
         "rows": [
           [
-            "PH",
-            "7. 31",
-            "7. 35-7. 45",
+            "pH",
+            "7.31",
+            "7.35-7.45",
             "Düşük"
           ],
           [
             "PaCO2",
             "58 mmHg",
-            "35-45 mmHg",
+            "35/45 mmHg",
             "Yüksek"
           ],
           [
             "PaO2",
             "55 mmHg",
-            "80-100 mmHg",
+            "80/100 mmHg",
             "Düşük"
           ],
           [
             "HCO3-",
-            "29 mmol veya L",
-            "22-26 mmol veya L",
+            "29 mmol/L",
+            "22-26 mmol/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "PH: 7. 31 (Düşük).",
+        "summary": "pH: 7.31 (Düşük).",
         "findings": [
-          "PH: 7."
+          "pH: 7."
         ]
       },
       {
@@ -10391,14 +10391,14 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "12. 900 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "12.900/mm³",
+            "4.000–10.000/mm³",
             "Yüksek"
           ],
           [
             "CRP",
-            "42 mg veya L",
-            "<5 mg veya L",
+            "42 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
@@ -10409,7 +10409,7 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 12. 900 veya mm³ (Yüksek).",
+        "summary": "Lökosit: 12.900/mm³ (Yüksek).",
         "findings": [
           "Lökosit: 12."
         ]
@@ -10419,8 +10419,8 @@ export const cases = [
       {
         "title": "Akciğer grafisi",
         "caption": "Diyafram düzleşmesi ve artmış akciğer volümü kronik hava hapsini destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Copd%202010. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Copd_2010. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Copd%202010.Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Copd_2010.Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -10439,11 +10439,11 @@ export const cases = [
       "pearls": [
         {
           "label": "Sınav bilgisi",
-          "text": "PH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
+          "text": "pH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
         },
         {
           "label": "Ayırıcı nokta",
-          "text": "Kontrollü oksijen hedefi genellikle SpO2 %88-92 aralığıdır."
+          "text": "Kontrollü oksijen hedefi genellikle SpO₂ %88-92 aralığıdır."
         }
       ],
       "nextStep": "Kısa etkili bronkodilatörler. Sistemik kortikosteroid. Uygun endikasyonda antibiyotik.",
@@ -10475,11 +10475,11 @@ export const cases = [
         "pearls": [
           {
             "label": "Sınav incisi",
-            "text": "PH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
+            "text": "pH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
           },
           {
             "label": "Mekanizma özeti",
-            "text": "Kontrollü oksijen hedefi genellikle SpO2 %88-92 aralığıdır."
+            "text": "Kontrollü oksijen hedefi genellikle SpO₂ %88-92 aralığıdır."
           }
         ],
         "management": [
@@ -10553,11 +10553,11 @@ export const cases = [
         "clinicalPearls": [
           {
             "label": "Sınav incisi",
-            "text": "PH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
+            "text": "pH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür."
           },
           {
             "label": "Mekanizma özeti",
-            "text": "Kontrollü oksijen hedefi genellikle SpO2 %88-92 aralığıdır."
+            "text": "Kontrollü oksijen hedefi genellikle SpO₂ %88-92 aralığıdır."
           }
         ],
         "differentialComparison": {
@@ -10706,11 +10706,11 @@ export const cases = [
     "chiefComplaint": "Üç haftadan uzun süren öksürük ve kilo kaybı.",
     "stem": "Kırk dört yaşındaki erkek hasta, gece terlemesi, iştahsızlık, 6 kg kilo kaybı ve aralıklı hemoptizi yakınmaları olduğunu ifade ediyor. Kalabalık yaşam koşulu ve daha önce tedavi almamış tüberküloz temas öyküsü bulunuyor.",
     "vitals": {
-      "TA": "118 veya 72 mmHg",
-      "Nabız": "96 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "118/72 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "20/dk",
       "SpO2": "%94",
-      "Ateş": "37. 9 °C"
+      "Ateş": "37.9 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -10764,14 +10764,14 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "9. 800 veya mm³",
-            "4. 000-10. 000 veya mm³",
+            "9.800/mm³",
+            "4.000–10.000/mm³",
             "Referans içinde"
           ],
           [
             "Sedimentasyon",
-            "74 mm veya saat",
-            "<20 mm veya saat",
+            "74 mm/saat",
+            "<20 mm/saat",
             "Yüksek"
           ],
           [
@@ -10782,9 +10782,9 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Sedimentasyon: 74 mm veya saat (Yüksek) saptandı.",
+        "summary": "Sedimentasyon: 74 mm/saat (Yüksek) saptandı.",
         "findings": [
-          "Sedimentasyon: 74 mm veya saat (Yüksek) saptandı."
+          "Sedimentasyon: 74 mm/saat (Yüksek) saptandı."
         ]
       }
     ],
@@ -10792,8 +10792,8 @@ export const cases = [
       {
         "title": "Akciğer grafisi",
         "caption": "Üst lob veya apikal kaviter tutulum reaktivasyon tüberkülozu için tipik bir radyolojik ipucudur.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Tuberculosis-x-ray-1. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Tuberculosis-x-ray-1. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Tuberculosis-x-ray-1.Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Tuberculosis-x-ray-1.Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -11069,11 +11069,11 @@ export const cases = [
     "chiefComplaint": "Titreme ile yükselen ateş ve yaygın halsizlik.",
     "stem": "Otuz iki yaşındaki erkek hasta iki hafta önce Batı Afrika'dan döndüğünü ve kemoprofilaksi kullanmadığını belirtiyor. Ateş ataklarına baş ağrısı, miyalji, bulantı ve koyu renkli idrar eşlik ediyor.",
     "vitals": {
-      "TA": "102 veya 64 mmHg",
-      "Nabız": "118 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "102/64 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "22/dk",
       "SpO2": "%97",
-      "Ateş": "39. 5 °C"
+      "Ateş": "39.5 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -11109,31 +11109,31 @@ export const cases = [
         "rows": [
           [
             "Trombosit",
-            "62. 000 veya mm³",
-            "150. 000-400. 000 veya mm³",
+            "62.000/mm³",
+            "150.000–400.000/mm³",
             "Düşük"
           ],
           [
             "Hemoglobin",
-            "10. 9 g veya dL",
-            "13. 5-17. 5 g veya dL",
+            "10.9 g/dL",
+            "13.5-17.5 g/dL",
             "Düşük"
           ],
           [
             "Total bilirubin",
-            "2. 6 mg veya dL",
-            "0. 2-1. 2 mg veya dL",
+            "2.6 mg/dL",
+            "0.2-1.2 mg/dL",
             "Yüksek"
           ],
           [
             "Kreatinin",
-            "1. 1 mg veya dL",
-            "0. 6-1. 2 mg veya dL",
+            "1.1 mg/dL",
+            "0.6-1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Trombosit: 62. 000 veya mm³ (Düşük).",
+        "summary": "Trombosit: 62.000/mm³ (Düşük).",
         "findings": [
           "Trombosit: 62."
         ]
@@ -11168,8 +11168,8 @@ export const cases = [
       {
         "title": "Periferik yayma",
         "caption": "İnce yaymada eritrosit içi ring formları falciparum sıtması klinik yorumu destekler.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Malaria%20falciparum%20ring%20forms. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Malaria_falciparum_ring_forms. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Malaria%20falciparum%20ring%20forms. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Malaria_falciparum_ring_forms. Jpg",
         "sourceName": "",
         "license": "CC BY-SA",
         "modality": "Microscopy",
@@ -11458,11 +11458,11 @@ export const cases = [
     "chiefComplaint": "Yüksek ateş, şiddetli baş ağrısı ve döküntü.",
     "stem": "Yurtta kalan 18 yaşındaki öğrenci ani başlayan yüksek ateş, şiddetli baş ağrısı, kusma ve bacaklarda mor döküntüler nedeniyle acil servise getiriliyor. Yakın temaslıları olduğu öğreniliyor.",
     "vitals": {
-      "TA": "88 veya 52 mmHg",
-      "Nabız": "136 veya dk",
-      "Solunum": "26 veya dk",
+      "TA": "88/52 mmHg",
+      "Nabız": "136/dk",
+      "Solunum": "26/dk",
       "SpO2": "%95",
-      "Ateş": "39. 7 °C"
+      "Ateş": "39.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -11486,20 +11486,20 @@ export const cases = [
           ],
           [
             "Lökosit",
-            "2. 200 veya mm³",
-            "0-5 veya mm³",
+            "2.200/mm³",
+            "0–5/mm³",
             "Yüksek"
           ],
           [
             "Protein",
-            "180 mg veya dL",
-            "15-45 mg veya dL",
+            "180 mg/dL",
+            "15-45 mg/dL",
             "Yüksek"
           ],
           [
             "Glukoz",
-            "24 mg veya dL",
-            ">45 mg veya dL",
+            "24 mg/dL",
+            ">45 mg/dL",
             "Düşük"
           ]
         ],
@@ -11562,8 +11562,8 @@ export const cases = [
       {
         "title": "BOS Gram boyama",
         "caption": "Gram negatif diplokokların görülmesi meningokok menenjiti için güçlü mikrobiyolojik ipucudur.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Neisseria%20meningitidis%20CSF%20Gram%201000. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Neisseria_meningitidis_CSF_Gram_1000. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Neisseria%20meningitidis%20CSF%20Gram%201000.Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Neisseria_meningitidis_CSF_Gram_1000.Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Microscopy",
@@ -11851,11 +11851,11 @@ export const cases = [
     "chiefComplaint": "İki haftadır ateş, halsizlik ve gece terlemesi.",
     "stem": "İntravenöz madde kullanımı öyküsü olan hasta, ateş, gece terlemesi, iştahsızlık ve son günlerde gelişen nefes darlığı yakınmalarıyla başvuruyor. Göğüs ağrısı ve öksürük de ifade ediyor.",
     "vitals": {
-      "TA": "118 veya 70 mmHg",
-      "Nabız": "108 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "118/70 mmHg",
+      "Nabız": "108/dk",
+      "Solunum": "20/dk",
       "SpO2": "%94",
-      "Ateş": "38. 6 °C"
+      "Ateş": "38.6 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -11937,8 +11937,8 @@ export const cases = [
       {
         "title": "Ekokardiyografi görüntüsü",
         "caption": "Kapak üzerindeki vejetasyon bakteriyemi ve embolik komplikasyonların kaynağıdır.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Gross%20pathology%20of%20vegetation%20of%20infective%20endocarditis%2C%20annotated. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Gross_pathology_of_vegetation_of_infective_endocarditis%2C_annotated. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Gross%20pathology%20of%20vegetation%20of%20infective%20endocarditis%2C%20annotated. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Gross_pathology_of_vegetation_of_infective_endocarditis%2C_annotated. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Pathology",
@@ -12228,11 +12228,11 @@ export const cases = [
     "chiefComplaint": "Düşme sonrası el bileğinde ağrı ve şekil bozukluğu.",
     "stem": "Osteoporoz öyküsü olan 67 yaşındaki kadın hasta, avuç içi yere bakacak şekilde açık el üzerine düştükten sonra el bileğinde ağrı, şişlik ve şekil bozukluğu geliştiğini ifade ediyor.",
     "vitals": {
-      "TA": "132 veya 78 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "132/78 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -12290,8 +12290,8 @@ export const cases = [
       {
         "title": "El bileği grafisi",
         "caption": "Distal radius kırığında dorsal angulasyon klasik “dinner fork” deformitesine yol açar.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Colles'%20Fracture%20of%20Radius. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Colles'_Fracture_of_Radius. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Colles'%20Fracture%20of%20Radius. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Colles'_Fracture_of_Radius. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -12576,11 +12576,11 @@ export const cases = [
     "chiefComplaint": "Kalça ağrısı ve yürüyememe.",
     "stem": "Yetmiş sekiz yaşındaki kadın hasta, ev içinde düşük enerjili düşme sonrasında ayağa kalkamadığını ve kalça ağrısının belirgin olduğunu ifade ediyor. Osteoporoz ve hipertansiyon öyküsü mevcut.",
     "vitals": {
-      "TA": "138 veya 80 mmHg",
-      "Nabız": "94 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "138/80 mmHg",
+      "Nabız": "94/dk",
+      "Solunum": "18/dk",
       "SpO2": "%97",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -12616,25 +12616,25 @@ export const cases = [
         "rows": [
           [
             "Hemoglobin",
-            "11. 2 g veya dL",
-            "12-16 g veya dL",
+            "11.2 g/dL",
+            "12-16 g/dL",
             "Düşük"
           ],
           [
             "Kreatinin",
-            "0. 9 mg veya dL",
-            "0. 6-1. 2 mg veya dL",
+            "0.9 mg/dL",
+            "0.6-1.2 mg/dL",
             "Referans içinde"
           ],
           [
             "INR",
-            "1. 0",
-            "0. 8-1. 2",
+            "1.0",
+            "0.8-1.2",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Hemoglobin: 11. 2 g veya dL (Düşük) saptandı.",
+        "summary": "Hemoglobin: 11.2 g/dL (Düşük) saptandı.",
         "findings": [
           "Hemoglobin: 11."
         ]
@@ -12644,8 +12644,8 @@ export const cases = [
       {
         "title": "Kalça grafisi",
         "caption": "Direkt grafide femur boynunda kırık hattı ve impaksiyon yaşlı hastada acil ortopedik değerlendirme gerektirir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya X-ray%20of%20mildly%20compressed%20hip%20fracture. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: X-ray_of_mildly_compressed_hip_fracture. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya X-ray%20of%20mildly%20compressed%20hip%20fracture. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: X-ray_of_mildly_compressed_hip_fracture. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -12931,11 +12931,11 @@ export const cases = [
     "chiefComplaint": "Düşme sonrası radial taraflı el bileği ağrısı.",
     "stem": "Yirmi altı yaşındaki erkek hasta, kaykaydan açık el üzerine düştükten sonra el bileğinin radial tarafında ağrı geliştiğini ifade ediyor. İlk başvuru grafisinde belirgin kırık hattı izlenmediği halde ağrısı devam ediyor.",
     "vitals": {
-      "TA": "122 veya 76 mmHg",
-      "Nabız": "82 veya dk",
-      "Solunum": "14 veya dk",
+      "TA": "122/76 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "14/dk",
       "SpO2": "%99",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -12987,8 +12987,8 @@ export const cases = [
       {
         "title": "El bileği grafisi",
         "caption": "Skafoid belindeki kırık hattı başlangıç grafilerinde silik olabilir. Klinik hassasiyet önemlidir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya X-ray%20of%20scaphoid%20fracture. Png",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: X-ray_of_scaphoid_fracture. Png",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya X-ray%20of%20scaphoid%20fracture. Png",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: X-ray_of_scaphoid_fracture. Png",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -13279,11 +13279,11 @@ export const cases = [
     "chiefComplaint": "Omuzda şiddetli ağrı ve hareket ettirememe.",
     "stem": "Yirmi bir yaşındaki erkek hasta, basketbol oynarken kolu abduksiyon ve dış rotasyondayken düşmesi sonrası omuzunda ani ağrı ve hareket kısıtlılığı geliştiğini ifade ediyor.",
     "vitals": {
-      "TA": "124 veya 78 mmHg",
-      "Nabız": "90 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "124/78 mmHg",
+      "Nabız": "90/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -13335,8 +13335,8 @@ export const cases = [
       {
         "title": "Omuz grafisi",
         "caption": "Humerus başının glenoide göre anterior-inferior yer değiştirmesi en sık omuz çıkığı tipidir.",
-        "imageUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya Special: FilePath veya Shoulder%20dislocation%2C%20anteroposterior%20before%20reduction. Jpg",
-        "sourceUrl": "Https: veya veya commons. Wikimedia. Org veya wiki veya File: Shoulder_dislocation%2C_anteroposterior_before_reduction. Jpg",
+        "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Shoulder%20dislocation%2C%20anteroposterior%20before%20reduction. Jpg",
+        "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Shoulder_dislocation%2C_anteroposterior_before_reduction. Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Xray",
@@ -13633,11 +13633,11 @@ export const cases = [
     "chiefComplaint": "Elektrik kaynağından ayrılamama, kısa süreli bilinç bulanıklığı ve el yanığı.",
     "stem": "Hasta 220 V alternatif akımla çalışan bir cihazı tamir ederken sağ eliyle çıplak kabloya temas etmiş, birkaç saniye elini çekememiş ve iş arkadaşları tarafından güç kesildikten sonra ayrılmıştır. Sağ elde giriş yanığı, göğüste çarpıntı hissi ve kısa süreli konfüzyon tarifler. Nemli zemin öyküsü cilt direncinin azalmasına, el-gövde hattındaki temas ise transtorasik akım geçişi ve ventriküler aritmi riskine işaret eder.",
     "vitals": {
-      "TA": "118 veya 74 mmHg",
-      "Nabız": "124 veya dk, düzensiz",
-      "Solunum": "20 veya dk",
+      "TA": "118/74 mmHg",
+      "Nabız": "124/dk, düzensiz",
+      "Solunum": "20/dk",
       "SpO2": "%98",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -13723,8 +13723,8 @@ export const cases = [
         "rows": [
           [
             "CK",
-            "780 U veya L",
-            "<200 U veya L",
+            "780 U/L",
+            "<200 U/L",
             "Yüksek"
           ],
           [
@@ -13735,8 +13735,8 @@ export const cases = [
           ],
           [
             "Kreatinin",
-            "0. 9 mg veya dL",
-            "0. 6-1. 2 mg veya dL",
+            "0.9 mg/dL",
+            "0.6-1.2 mg/dL",
             "Normal"
           ]
         ]
@@ -13754,8 +13754,8 @@ export const cases = [
         "rows": [
           [
             "Troponin I",
-            "0. 02 ng veya mL",
-            "<0. 04 ng veya mL",
+            "0.02 ng/mL",
+            "<0.04 ng/mL",
             "Normal"
           ],
           [
@@ -14083,11 +14083,11 @@ export const cases = [
     "chiefComplaint": "Bilinç kaybı, geçici solunum durması ve deri lezyonları.",
     "stem": "Fırtına sırasında açık alanda bulunan hasta yıldırım düşmesi sonrası yere yığılmıştır. İlk müdahale ekibi birkaç dakika solunumun yüzeyelleştiğini, ardından spontan solunumun döndüğünü bildirir. Gövdede ağ şeklinde eritematöz Lichtenberg benzeri izler ve yüzeyel yanıklar vardır. Solunum depresyonu ve geçici bilinç kaybı birlikte değerlendirildiğinde yıldırım ilişkili kardiyopulmoner etkilenme düşünülür.",
     "vitals": {
-      "TA": "102 veya 68 mmHg",
-      "Nabız": "58 veya dk",
-      "Solunum": "10 veya dk, düzensiz",
+      "TA": "102/68 mmHg",
+      "Nabız": "58/dk",
+      "Solunum": "10/dk, düzensiz",
       "SpO2": "%91",
-      "Ateş": "36. 2 °C"
+      "Ateş": "36.2 °C"
     },
     "exam": [
       "Genel durum orta-kötü.",
@@ -14145,19 +14145,19 @@ export const cases = [
           [
             "PaO2",
             "62 mmHg",
-            "80-100 mmHg",
+            "80/100 mmHg",
             "Düşük"
           ],
           [
             "Laktat",
-            "2. 8 mmol veya L",
-            "<2 mmol veya L",
+            "2.8 mmol/L",
+            "<2 mmol/L",
             "Hafif yüksek"
           ],
           [
-            "PH",
-            "7. 36",
-            "7. 35-7. 45",
+            "pH",
+            "7.36",
+            "7.35-7.45",
             "Normal"
           ]
         ]
@@ -14175,20 +14175,20 @@ export const cases = [
         "rows": [
           [
             "CK",
-            "620 U veya L",
-            "<200 U veya L",
+            "620 U/L",
+            "<200 U/L",
             "Yüksek"
           ],
           [
             "Troponin I",
-            "0. 01 ng veya mL",
-            "<0. 04 ng veya mL",
+            "0.01 ng/mL",
+            "<0.04 ng/mL",
             "Normal"
           ],
           [
             "Potasyum",
-            "4. 1 mmol veya L",
-            "3. 5-5. 1 mmol veya L",
+            "4.1 mmol/L",
+            "3.5-5.1 mmol/L",
             "Normal"
           ]
         ]
@@ -14509,11 +14509,11 @@ export const cases = [
     "chiefComplaint": "Anne sütü sonrası kusma, sarılık ve emmeme.",
     "stem": "Doğumdan sonra ilk günlerde iyi olan bebek, süt alımı arttıkça kusma, letarji, uzamış sarılık ve kilo alamama ile başvurur. Katarakt şüphesi ve hepatomegali vardır. Klinik zamanlama, galaktoz içeren süt alımı sonrası toksik metabolit birikimini düşündürür.",
     "vitals": {
-      "TA": "74 veya 46 mmHg",
-      "Nabız": "168 veya dk",
-      "Solunum": "44 veya dk",
+      "TA": "74/46 mmHg",
+      "Nabız": "168/dk",
+      "Solunum": "44/dk",
       "SpO2": "%98",
-      "Ateş": "37. 2 °C"
+      "Ateş": "37.2 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -14537,20 +14537,20 @@ export const cases = [
         "rows": [
           [
             "Glukoz",
-            "56 mg veya dL",
-            "70-100 mg veya dL",
+            "56 mg/dL",
+            "70-100 mg/dL",
             "Düşük"
           ],
           [
             "Direkt bilirubin",
-            "2. 4 mg veya dL",
-            "<0. 3 mg veya dL",
+            "2.4 mg/dL",
+            "<0.3 mg/dL",
             "Yüksek"
           ],
           [
             "AST veya ALT",
-            "180 veya 165 U veya L",
-            "<40 U veya L",
+            "180 veya 165 U/L",
+            "<40 U/L",
             "Yüksek"
           ]
         ]
@@ -14568,7 +14568,7 @@ export const cases = [
         "rows": [
           [
             "GALT aktivitesi",
-            "<10%",
+            "<%10",
             "Normal aktivite",
             "Düşük"
           ],
@@ -14670,7 +14670,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar paterni",
-            "text": "Glukoz 56 mg veya dL, direkt bilirubin yüksek, AST veya ALT yüksek."
+            "text": "Glukoz 56 mg/dL, direkt bilirubin yüksek, AST veya ALT yüksek."
           },
           {
             "title": "Laboratuvar paterni",
@@ -14928,11 +14928,11 @@ export const cases = [
     "chiefComplaint": "Meyve püresi sonrası kusma, terleme ve letarji.",
     "stem": "Ek gıdaya geçişten sonra özellikle meyve suyu, meyve püresi ve tatlı gıdalarla kusma, solukluk, terleme ve uykuya meyil gelişmektedir. Anne, çocuğun tatlı gıdalardan kaçındığını fark etmiştir. Bu zamanlama fruktoz veya sükroz veya sorbitol alımıyla tetiklenen metabolik bloğu düşündürür.",
     "vitals": {
-      "TA": "86 veya 52 mmHg",
-      "Nabız": "148 veya dk",
-      "Solunum": "32 veya dk",
+      "TA": "86/52 mmHg",
+      "Nabız": "148/dk",
+      "Solunum": "32/dk",
       "SpO2": "%99",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -14956,14 +14956,14 @@ export const cases = [
         "rows": [
           [
             "Glukoz",
-            "42 mg veya dL",
-            "70-100 mg veya dL",
+            "42 mg/dL",
+            "70-100 mg/dL",
             "Düşük"
           ],
           [
             "Laktat",
-            "3. 1 mmol veya L",
-            "<2 mmol veya L",
+            "3.1 mmol/L",
+            "<2 mmol/L",
             "Yüksek"
           ],
           [
@@ -15018,8 +15018,8 @@ export const cases = [
           ],
           [
             "Bikarbonat",
-            "19 mmol veya L",
-            "22-28 mmol veya L",
+            "19 mmol/L",
+            "22-28 mmol/L",
             "Düşük"
           ]
         ]
@@ -15083,7 +15083,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar paterni",
-            "text": "Glukoz 42 mg veya dL, laktat hafif yüksek, transaminazlar yüksek."
+            "text": "Glukoz 42 mg/dL, laktat hafif yüksek, transaminazlar yüksek."
           },
           {
             "title": "Destekleyen bulgu",
@@ -15342,11 +15342,11 @@ export const cases = [
     "chiefComplaint": "3-4 saat açlık sonrası terleme, nöbet ve karın şişliği.",
     "stem": "Çocuk sabahları beslenme geciktiğinde terleme, irritabilite ve bazen nöbet geçirmektedir. Muayenede hepatomegali ve dolgun yanaklı \"taş bebek yüzü\" görünümü vardır. Açlık hipoglisemisi, hepatomegali, laktik asidoz ve hiperlipemi birlikte karaciğer tipi glikojen depo hastalığını düşündürür.",
     "vitals": {
-      "TA": "88 veya 54 mmHg",
-      "Nabız": "132 veya dk",
-      "Solunum": "28 veya dk",
+      "TA": "88/54 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "28/dk",
       "SpO2": "%98",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -15370,26 +15370,26 @@ export const cases = [
         "rows": [
           [
             "Glukoz",
-            "38 mg veya dL",
-            "70-100 mg veya dL",
+            "38 mg/dL",
+            "70-100 mg/dL",
             "Düşük"
           ],
           [
             "Laktat",
-            "5. 6 mmol veya L",
-            "<2 mmol veya L",
+            "5.6 mmol/L",
+            "<2 mmol/L",
             "Yüksek"
           ],
           [
             "Trigliserid",
-            "420 mg veya dL",
-            "<150 mg veya dL",
+            "420 mg/dL",
+            "<150 mg/dL",
             "Yüksek"
           ],
           [
             "Ürik asit",
-            "8. 2 mg veya dL",
-            "2-5. 5 mg veya dL",
+            "8.2 mg/dL",
+            "2-5.5 mg/dL",
             "Yüksek"
           ]
         ]
@@ -15437,15 +15437,15 @@ export const cases = [
             "Yorum gerektirir"
           ],
           [
-            "PH",
-            "7. 29",
-            "7. 35-7. 45",
+            "pH",
+            "7.29",
+            "7.35-7.45",
             "Düşük"
           ],
           [
             "Bikarbonat",
-            "17 mmol veya L",
-            "22-28 mmol veya L",
+            "17 mmol/L",
+            "22-28 mmol/L",
             "Düşük"
           ]
         ]
@@ -15509,7 +15509,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar paterni",
-            "text": "Glukoz 38 mg veya dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek."
+            "text": "Glukoz 38 mg/dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek."
           },
           {
             "title": "Laboratuvar paterni",
@@ -15768,11 +15768,11 @@ export const cases = [
     "chiefComplaint": "Gelişim geriliği, nöbet ve idrarda küf veya küfemsi koku.",
     "stem": "Aile bebeğin giderek daha huzursuz olduğunu, baş kontrolünün zayıf kaldığını ve bezinde küf benzeri koku fark ettiğini söyler. Açık ten, nöbet öyküsü ve gelişimsel gecikme fenilalanin metabolizması bozukluğu açısından yüksek klinik şüphe oluşturur.",
     "vitals": {
-      "TA": "86 veya 50 mmHg",
-      "Nabız": "124 veya dk",
-      "Solunum": "28 veya dk",
+      "TA": "86/50 mmHg",
+      "Nabız": "124/dk",
+      "Solunum": "28/dk",
       "SpO2": "%99",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -15796,8 +15796,8 @@ export const cases = [
         "rows": [
           [
             "Fenilalanin",
-            "22 mg veya dL",
-            "<2 mg veya dL",
+            "22 mg/dL",
+            "<2 mg/dL",
             "Yüksek"
           ],
           [
@@ -16181,11 +16181,11 @@ export const cases = [
     "chiefComplaint": "Beslenememe, letarji, tiz ağlama ve idrarda tatlı koku.",
     "stem": "Yenidoğan ilk günlerde normal görünmüş, ardından beslenme güçlüğü, kusma, letarji ve nörolojik kötüleşme gelişmiştir. İdrarda akçaağaç şurubu benzeri tatlı koku tariflenir. Erken dönemde nörotoksik dallı zincirli aminoasit birikimi akla gelir.",
     "vitals": {
-      "TA": "68 veya 42 mmHg",
-      "Nabız": "172 veya dk",
-      "Solunum": "46 veya dk",
+      "TA": "68/42 mmHg",
+      "Nabız": "172/dk",
+      "Solunum": "46/dk",
       "SpO2": "%96",
-      "Ateş": "36. 4 °C"
+      "Ateş": "36.4 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -16264,15 +16264,15 @@ export const cases = [
         ],
         "rows": [
           [
-            "PH",
-            "7. 28",
-            "7. 35-7. 45",
+            "pH",
+            "7.28",
+            "7.35-7.45",
             "Düşük"
           ],
           [
             "Glukoz",
-            "58 mg veya dL",
-            "70-100 mg veya dL",
+            "58 mg/dL",
+            "70-100 mg/dL",
             "Düşük"
           ],
           [
@@ -16606,11 +16606,11 @@ export const cases = [
     "chiefComplaint": "Bel ağrısı, büyük eklem ağrısı ve bekleyince siyahlaşan idrar.",
     "stem": "Hasta yıllardır idrarının beklediğinde koyulaştığını, son yıllarda bel ve diz ağrılarının arttığını belirtir. Kulak kıkırdağında koyu pigmentasyon vardır. Bu klinik, tirozin katabolizması ara ürünü homogentisik asit birikimiyle uyumludur.",
     "vitals": {
-      "TA": "126 veya 78 mmHg",
-      "Nabız": "78 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "126/78 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -17007,11 +17007,11 @@ export const cases = [
     "chiefComplaint": "Güneşte yanma, açık renk saç-cilt ve görme sorunları.",
     "stem": "Çocukta doğumdan beri cilt ve saç renginin belirgin açık olduğu, parlak ışıkta gözlerini kıstığı ve okulda tahtayı görmekte zorlandığı belirtilir. Nistagmus ve iris transillüminasyonu saptanır. Melanin sentezindeki bozukluk albinizm lehinedir.",
     "vitals": {
-      "TA": "94 veya 60 mmHg",
-      "Nabız": "98 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "94/60 mmHg",
+      "Nabız": "98/dk",
+      "Solunum": "22/dk",
       "SpO2": "%99",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -17053,14 +17053,14 @@ export const cases = [
         "rows": [
           [
             "Sağ göz görme keskinliği",
-            "0. 3",
-            "Yaşa göre ≥0. 8",
+            "0.3",
+            "Yaşa göre ≥0.8",
             "Düşük"
           ],
           [
             "Sol göz görme keskinliği",
-            "0. 4",
-            "Yaşa göre ≥0. 8",
+            "0.4",
+            "Yaşa göre ≥0.8",
             "Düşük"
           ],
           [
@@ -17084,20 +17084,20 @@ export const cases = [
         "rows": [
           [
             "Trombosit",
-            "285. 000 veya mm³",
-            "150. 000-450. 000 veya mm³",
+            "285.000/mm³",
+            "150.000–450.000/mm³",
             "Normal"
           ],
           [
             "Nötrofil",
-            "3. 200 veya mm³",
-            "1. 500-8. 000 veya mm³",
+            "3.200/mm³",
+            "1.500–8.000/mm³",
             "Normal"
           ],
           [
             "Hemoglobin",
-            "12. 6 g veya dL",
-            "11. 5-15. 5 g veya dL",
+            "12.6 g/dL",
+            "11.5-15.5 g/dL",
             "Normal"
           ]
         ]
@@ -17400,11 +17400,11 @@ export const cases = [
     "chiefComplaint": "Görme bozukluğu, uzun boy-ince yapı ve bacakta şişlik.",
     "stem": "Hasta uzun boylu ve ince yapılıdır. Göz muayenesinde lens subluksasyonu saptanır. Sol bacakta ağrılı şişlik ile derin ven trombozu düşünülür. Bu kombinasyon homosistein artışı ve bağ dokusu veya koagülasyon etkilenimini düşündürür.",
     "vitals": {
-      "TA": "118 veya 74 mmHg",
-      "Nabız": "96 veya dk",
-      "Solunum": "18 veya dk",
-      "SpO2": "98%",
-      "Ateş": "36. 8 °C"
+      "TA": "118/74 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "18/dk",
+      "SpO2": "%98",
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum iyi-orta.",
@@ -17490,8 +17490,8 @@ export const cases = [
           ],
           [
             "Vitamin B12",
-            "520 pg veya mL",
-            "200-900 pg veya mL",
+            "520 pg/mL",
+            "200-900 pg/mL",
             "Normal"
           ]
         ]
@@ -17535,13 +17535,13 @@ export const cases = [
         "rows": [
           [
             "INR",
-            "1. 0",
-            "0. 8-1. 2",
+            "1.0",
+            "0.8-1.2",
             "Normal"
           ],
           [
             "PT",
-            "12. 6 sn",
+            "12.6 sn",
             "11-14 sn",
             "Normal"
           ],
@@ -17851,11 +17851,11 @@ export const cases = [
     "chiefComplaint": "Güneş gören alanlarda dermatit, ishal ve unutkanlık.",
     "stem": "Hasta son aylarda çoğunlukla mısır ve karbonhidrat ağırlıklı beslendiğini. Et, balık, yumurta ve süt ürünlerini çok az tükettiğini belirtir. Kronik ishal atakları nedeniyle kilo kaybı, halsizlik ve iştahsızlık gelişmiştir. Güneş gören alanlarda simetrik dermatit, oral mukozada glossit, kronik diyare ve bilişsel yavaşlama birlikte niasin eksikliğini düşündürür.",
     "vitals": {
-      "TA": "108 veya 68 mmHg",
-      "Nabız": "104 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "108/68 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98",
-      "Ateş": "37. 0 °C"
+      "Ateş": "37.0 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -17878,14 +17878,14 @@ export const cases = [
         "rows": [
           [
             "Albümin",
-            "3. 0 g veya dL",
-            "3. 5-5. 0 g veya dL",
+            "3.0 g/dL",
+            "3.5-5.0 g/dL",
             "Düşük"
           ],
           [
             "Potasyum",
-            "3. 3 mmol veya L",
-            "3. 5-5. 1 mmol veya L",
+            "3.3 mmol/L",
+            "3.5-5.1 mmol/L",
             "Düşük"
           ]
         ]
@@ -17903,20 +17903,20 @@ export const cases = [
         "rows": [
           [
             "N1-metilnikotinamid",
-            "0. 4 mg veya g kreatinin",
-            ">1. 5 mg veya g kreatinin",
+            "0.4 mg/gkreatinin",
+            ">1.5 mg/gkreatinin",
             "Düşük"
           ],
           [
             "Vitamin B12",
-            "410 pg veya mL",
-            "200-900 pg veya mL",
+            "410 pg/mL",
+            "200-900 pg/mL",
             "Normal"
           ],
           [
             "TSH",
-            "2. 1 mIU veya L",
-            "0. 4-4. 0 mIU veya L",
+            "2.1 mIU/L",
+            "0.4-4.0 mIU/L",
             "Normal"
           ]
         ]
@@ -18219,11 +18219,11 @@ export const cases = [
     "chiefComplaint": "Diş eti kanaması, morarma ve halsizlik.",
     "stem": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama paterni C vitamini eksikliğini düşündürür. C vitamini eksikliğiyle uyumlu kısıtlı diyet ve mukokutanöz kanama bulguları saptandı.",
     "vitals": {
-      "TA": "110 veya 70 mmHg",
-      "Nabız": "92 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "110/70 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "18/dk",
       "SpO2": "%99",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -18265,8 +18265,8 @@ export const cases = [
         "rows": [
           [
             "Hemoglobin",
-            "10. 4 g veya dL",
-            "12-16 g veya dL",
+            "10.4 g/dL",
+            "12-16 g/dL",
             "Düşük"
           ],
           [
@@ -18575,11 +18575,11 @@ export const cases = [
     "chiefComplaint": "Halsizlik, ciltte koyulaşma, diyabet ve karaciğer enzim yüksekliği.",
     "stem": "Hastada uzun süredir halsizlik, eklem ağrısı, yeni tanı diyabet ve bronz renkli cilt görünümü vardır. Ferritin ve transferrin satürasyonu yüksek bulunur. Demir metabolizmasında aşırı birikim çoklu organ hasarı yapmaktadır.",
     "vitals": {
-      "TA": "138 veya 86 mmHg",
-      "Nabız": "82 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "138/86 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum iyi-orta.",
@@ -18603,14 +18603,14 @@ export const cases = [
         "rows": [
           [
             "Ferritin",
-            "980 ng veya mL",
-            "30-300 ng veya mL",
+            "980 ng/mL",
+            "30-300 ng/mL",
             "Yüksek"
           ],
           [
             "Transferrin sat.",
-            "72%",
-            "20-45%",
+            "%72",
+            "20-%45",
             "Yüksek"
           ]
         ]
@@ -18628,14 +18628,14 @@ export const cases = [
         "rows": [
           [
             "ALT veya AST",
-            "96 veya 88 U veya L",
-            "<40 U veya L",
+            "96 veya 88 U/L",
+            "<40 U/L",
             "Yüksek"
           ],
           [
             "HbA1c",
-            "8. 1%",
-            "<5. 7%",
+            "%8.1",
+            "<%5.7",
             "Yüksek"
           ]
         ]
@@ -18988,11 +18988,11 @@ export const cases = [
     "chiefComplaint": "Aşil tendonunda şişlik ve ailede erken MI öyküsü.",
     "stem": "Genç hastada Aşil tendon ksantomları, total kolesterol ve LDL'de belirgin yükseklik ve babada 38 yaşında MI öyküsü vardır. Trigliserid normal sınırlardadır. Bu profil LDL temizlenme kusurunu düşündürür. Birinci derece akrabada erken koroner arter hastalığı öyküsü mevcut.",
     "vitals": {
-      "TA": "130 veya 82 mmHg",
-      "Nabız": "76 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "130/82 mmHg",
+      "Nabız": "76/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -19016,20 +19016,20 @@ export const cases = [
         "rows": [
           [
             "LDL-K",
-            "285 mg veya dL",
-            "<100 mg veya dL",
+            "285 mg/dL",
+            "<100 mg/dL",
             "Çok yüksek"
           ],
           [
             "TG",
-            "135 mg veya dL",
-            "<150 mg veya dL",
+            "135 mg/dL",
+            "<150 mg/dL",
             "Normal"
           ],
           [
             "Total kolesterol",
-            "360 mg veya dL",
-            "<200 mg veya dL",
+            "360 mg/dL",
+            "<200 mg/dL",
             "Yüksek"
           ]
         ]
@@ -19118,7 +19118,7 @@ export const cases = [
           },
           {
             "title": "Dışlatıcı bulgu",
-            "text": "Total kolesterol 360 mg veya dL, LDL 285 mg veya dL, TG normal."
+            "text": "Total kolesterol 360 mg/dL, LDL 285 mg/dL, TG normal."
           },
           {
             "title": "Mekanizma özeti",
@@ -19377,11 +19377,11 @@ export const cases = [
     "chiefComplaint": "Büyümüş turuncu tonsiller ve periferik nöropati.",
     "stem": "Çocukta belirgin turuncu tonsiller, hepatosplenomegali ve aralıklı ekstremite uyuşması vardır. Lipid profilinde HDL çok düşük, ApoA-I azalmış bulunur. Kolesterolün hücre dışına taşınmasında görevli ABCA1 defekti düşünülür.",
     "vitals": {
-      "TA": "112 veya 70 mmHg",
-      "Nabız": "86 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "112/70 mmHg",
+      "Nabız": "86/dk",
+      "Solunum": "18/dk",
       "SpO2": "%99",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -19404,20 +19404,20 @@ export const cases = [
         "rows": [
           [
             "HDL-K",
-            "8 mg veya dL",
-            ">40 mg veya dL",
+            "8 mg/dL",
+            ">40 mg/dL",
             "Çok düşük"
           ],
           [
             "LDL-K",
-            "55 mg veya dL",
-            "<100 mg veya dL",
+            "55 mg/dL",
+            "<100 mg/dL",
             "Düşük-normal"
           ],
           [
             "TG",
-            "210 mg veya dL",
-            "<150 mg veya dL",
+            "210 mg/dL",
+            "<150 mg/dL",
             "Yüksek"
           ]
         ]
@@ -19506,7 +19506,7 @@ export const cases = [
           },
           {
             "title": "Dışlatıcı bulgu",
-            "text": "HDL <5 mg veya dL, ApoA-I düşük, LDL düşük veya normal."
+            "text": "HDL <5 mg/dL, ApoA-I düşük, LDL düşük veya normal."
           },
           {
             "title": "Destekleyen bulgu",
@@ -19764,11 +19764,11 @@ export const cases = [
     "chiefComplaint": "Maruziyetten saatler sonra bulantı, kusma, ishal ve ciltte eritem.",
     "stem": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan yaklaşık 2 saat sonra bulantı, kusma, baş ağrısı, halsizlik ve yaygın yanma hissi geliştiğini ifade eder. Olaydan sonra kısa bir iyilik dönemi olsa da sağ elde lokal eritem ortaya çıkmış ve seri tam kan sayımlarında lenfosit düşüşü başlamıştır. Semptomların kısa sürede başlaması ve erken lenfopeni yüksek doz iyonizan radyasyon maruziyetini düşündürür. Maruziyet dakikalar-saatler içinde gelişen prodromal yakınmalarla uyumlu bulundu.",
     "vitals": {
-      "TA": "96 veya 60 mmHg",
-      "Nabız": "118 veya dk",
-      "Solunum": "22 veya dk",
-      "SpO2": "97%",
-      "Ateş": "37. 8 C"
+      "TA": "96/60 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "22/dk",
+      "SpO2": "%97",
+      "Ateş": "37.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -19794,20 +19794,20 @@ export const cases = [
         "rows": [
           [
             "Lenfosit",
-            "650 veya µL",
-            "1000-4800 veya µL",
+            "650/µL",
+            "1000–4800/µL",
             "Düşük"
           ],
           [
             "Trombosit",
-            "130. 000 veya µL",
-            "150. 000-450. 000 veya µL",
+            "130.000/µL",
+            "150.000–450.000/µL",
             "Düşük"
           ],
           [
             "Lökosit",
-            "3. 200 veya µL",
-            "4. 000-10. 000 veya µL",
+            "3.200/µL",
+            "4.000–10.000/µL",
             "Düşük"
           ]
         ]
@@ -19825,20 +19825,20 @@ export const cases = [
         "rows": [
           [
             "Sodyum",
-            "134 mmol veya L",
-            "135-145 mmol veya L",
+            "134 mmol/L",
+            "135-145 mmol/L",
             "Hafif düşük"
           ],
           [
             "Kreatinin",
-            "0. 9 mg veya dL",
-            "0. 6-1. 2 mg veya dL",
+            "0.9 mg/dL",
+            "0.6-1.2 mg/dL",
             "Normal"
           ],
           [
             "ALT veya AST",
             "Hafif yüksek",
-            "<40 U veya L",
+            "<40 U/L",
             "Hafif yüksek"
           ]
         ]
@@ -19848,7 +19848,7 @@ export const cases = [
         "label": "Bireysel dozimetri kaydı",
         "type": "Lab",
         "priority": "Essential",
-        "summary": "Dozimetri kaydında tüm vücut eşdeğer doz yaklaşık 2. 6 Gy olarak hesaplandı.",
+        "summary": "Dozimetri kaydında tüm vücut eşdeğer doz yaklaşık 2.6 Gy olarak hesaplandı.",
         "findings": [
           "Doz düzeyi hematopoetik bu klinik patern paternini gösterir.",
           "Prodromal yakınmaların erken başlaması anlamlı sistemik maruziyeti klinik yorumda önemlidir."
@@ -19856,14 +19856,14 @@ export const cases = [
         "rows": [
           [
             "Tahmini tüm vücut doz",
-            "2. 6 Gy",
-            "<0. 1 Gy",
+            "2.6 Gy",
+            "<0.1 Gy",
             "Yüksek"
           ],
           [
             "Lokal el dozu",
-            "6. 5 Gy",
-            "<0. 1 Gy",
+            "6.5 Gy",
+            "<0.1 Gy",
             "Yüksek"
           ]
         ]
@@ -19881,8 +19881,8 @@ export const cases = [
         "rows": [
           [
             "Vücut yüzeyi sayım hızı",
-            "0. 12 µSv veya saat",
-            "0. 05-0. 20 µSv veya saat",
+            "0.12 µSv veya saat",
+            "0.05-0.20 µSv veya saat",
             "Normal"
           ],
           [
@@ -20188,11 +20188,11 @@ export const cases = [
     "chiefComplaint": "Bakla yedikten sonra koyu idrar, halsizlik ve sararma.",
     "stem": "Daha önce sağlıklı olan hasta, bakla tüketiminden 24 saat sonra halsizlik, bel ağrısı, sarılık ve çay renginde idrar yakınmalarıyla başvurur. Ateşi yoktur. Enfeksiyon odağı saptanmaz. Oksidatif tetikleyici sonrası ani hemoliz ve periferik yayma bulguları G6PD eksikliğiyle uyumludur.",
     "vitals": {
-      "TA": "108 veya 66 mmHg",
-      "Nabız": "118 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "108/66 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "20/dk",
       "SpO2": "%98",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -20216,26 +20216,26 @@ export const cases = [
         "rows": [
           [
             "Hemoglobin",
-            "8. 9 g veya dL",
-            "13. 5-17. 5 g veya dL",
+            "8.9 g/dL",
+            "13.5-17.5 g/dL",
             "Düşük"
           ],
           [
             "İndirekt bilirubin",
-            "4. 2 mg veya dL",
-            "<1. 0 mg veya dL",
+            "4.2 mg/dL",
+            "<1.0 mg/dL",
             "Yüksek"
           ],
           [
             "LDH",
-            "920 U veya L",
-            "120-240 U veya L",
+            "920 U/L",
+            "120-240 U/L",
             "Yüksek"
           ],
           [
             "Haptoglobin",
-            "<10 mg veya dL",
-            "30-200 mg veya dL",
+            "<10 mg/dL",
+            "30-200 mg/dL",
             "Düşük"
           ]
         ]
@@ -20321,8 +20321,8 @@ export const cases = [
           ],
           [
             "Retikülosit",
-            "%7. 8",
-            "%0. 5-2. 5",
+            "%7.8",
+            "%0.5-2.5",
             "Yüksek"
           ]
         ]
@@ -20618,11 +20618,11 @@ export const cases = [
     "chiefComplaint": "1 saattir süren baskı tarzı göğüs ağrısı.",
     "stem": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz paternini düşündüren klasik bir bulgu paterni oluşturur.",
     "vitals": {
-      "TA": "138 veya 86 mmHg",
-      "Nabız": "102 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "138/86 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "20/dk",
       "SpO2": "%96",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -20671,8 +20671,8 @@ export const cases = [
         "rows": [
           [
             "Troponin I",
-            "6. 8 ng veya mL",
-            "<0. 04 ng veya mL",
+            "6.8 ng/mL",
+            "<0.04 ng/mL",
             "Yüksek"
           ],
           [
@@ -21040,11 +21040,11 @@ export const cases = [
     "chiefComplaint": "Ateş, baş ağrısı ve fokal nörolojik defisit.",
     "stem": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir. Beyin MR'ında halka tarzı kontrastlanan lezyon görülür. Beyin dokusunda enfeksiyon veya iskemi sonrası likefaksiyon nekrozu beklenir.",
     "vitals": {
-      "TA": "132 veya 78 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "132/78 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "22/dk",
       "SpO2": "%96",
-      "Ateş": "38. 6 °C"
+      "Ateş": "38.6 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -21093,14 +21093,14 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "15. 800 veya µL",
-            "4. 000-10. 000 veya µL",
+            "15.800/µL",
+            "4.000–10.000/µL",
             "Yüksek"
           ],
           [
             "CRP",
-            "96 mg veya L",
-            "<5 mg veya L",
+            "96 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ]
         ]
@@ -21438,11 +21438,11 @@ export const cases = [
     "chiefComplaint": "Gece terlemesi, kilo kaybı ve kronik öksürük.",
     "stem": "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır. Biyopside epiteloid histiyositler, dev hücreler ve santral kazeifikasyon izlenir. Üst lob kavitesi ve kazeifikasyon birlikte tüberküloz ilişkili granülomatöz inflamasyonu güçlü düşündürür.",
     "vitals": {
-      "TA": "118 veya 72 mmHg",
-      "Nabız": "104 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "118/72 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "22/dk",
       "SpO2": "%94",
-      "Ateş": "38. 1 °C"
+      "Ateş": "38.1 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -21851,11 +21851,11 @@ export const cases = [
     "chiefComplaint": "Ani nefes darlığı ve plöritik göğüs ağrısı.",
     "stem": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, taşikardi ve plöritik ağrı ile gelir. Sol baldırda şişlik vardır. Virchow triadı bağlamında staz ve endotel hasarı sonrası DVT kaynaklı pulmoner emboli düşünülür.",
     "vitals": {
-      "TA": "104 veya 66 mmHg",
-      "Nabız": "124 veya dk",
-      "Solunum": "30 veya dk",
+      "TA": "104/66 mmHg",
+      "Nabız": "124/dk",
+      "Solunum": "30/dk",
       "SpO2": "%88",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -21879,20 +21879,20 @@ export const cases = [
         "rows": [
           [
             "D-dimer",
-            "3200 ng veya mL",
-            "<500 ng veya mL",
+            "3200 ng/mL",
+            "<500 ng/mL",
             "Yüksek"
           ],
           [
             "PaO2",
             "58 mmHg",
-            "80-100 mmHg",
+            "80/100 mmHg",
             "Düşük"
           ],
           [
             "PCO2",
             "30 mmHg",
-            "35-45 mmHg",
+            "35/45 mmHg",
             "Düşük"
           ]
         ]
@@ -22267,11 +22267,11 @@ export const cases = [
     "chiefComplaint": "Ateş, bilinç bulanıklığı ve tansiyon düşüklüğü.",
     "stem": "Pnömoni odağı olan hasta ateş, taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir. Laktat yüksektir. Yakınları son saatlerde idrar miktarının belirgin azaldığını belirtir. Doku hipoperfüzyonu ve sistemik inflamatuvar yanıt şok tablosunu açıklar.",
     "vitals": {
-      "TA": "78 veya 46 mmHg",
-      "Nabız": "132 veya dk",
-      "Solunum": "30 veya dk",
+      "TA": "78/46 mmHg",
+      "Nabız": "132/dk",
+      "Solunum": "30/dk",
       "SpO2": "%93",
-      "Ateş": "39. 2 °C"
+      "Ateş": "39.2 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -22295,20 +22295,20 @@ export const cases = [
         "rows": [
           [
             "Laktat",
-            "5. 1 mmol veya L",
-            "<2 mmol veya L",
+            "5.1 mmol/L",
+            "<2 mmol/L",
             "Yüksek"
           ],
           [
-            "PH",
-            "7. 28",
-            "7. 35-7. 45",
+            "pH",
+            "7.28",
+            "7.35-7.45",
             "Düşük"
           ],
           [
             "Bikarbonat",
-            "16 mmol veya L",
-            "22-28 mmol veya L",
+            "16 mmol/L",
+            "22-28 mmol/L",
             "Düşük"
           ]
         ]
@@ -22351,20 +22351,20 @@ export const cases = [
         "rows": [
           [
             "Lökosit",
-            "19. 500 veya µL",
-            "4. 000-10. 000 veya µL",
+            "19.500/µL",
+            "4.000–10.000/µL",
             "Yüksek"
           ],
           [
             "CRP",
-            "180 mg veya L",
-            "<5 mg veya L",
+            "180 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
             "Prokalsitonin",
-            "18 ng veya mL",
-            "<0. 5 ng veya mL",
+            "18 ng/mL",
+            "<0.5 ng/mL",
             "Yüksek"
           ]
         ]
@@ -22684,11 +22684,11 @@ export const cases = [
     "chiefComplaint": "Deri döküntüsü, fotosensitivite, eklem ağrısı ve köpüklü idrar.",
     "stem": "Genç kadın hastada malar döküntü, oral aft, simetrik artralji ve proteinüri vardır. Anti-dsDNA ve ANA pozitifliği immün kompleks aracılı böbrek tutulumunu destekler. Multisistem tutulum ve böbrek bulgusu sistemik otoimmün hastalık lehinedir.",
     "vitals": {
-      "TA": "148 veya 92 mmHg",
-      "Nabız": "96 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "148/92 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98",
-      "Ateş": "37. 6 °C"
+      "Ateş": "37.6 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -22742,8 +22742,8 @@ export const cases = [
         "rows": [
           [
             "Proteinüri",
-            "1. 8 g veya gün",
-            "<150 mg veya gün",
+            "1.8 g/gün",
+            "<150 mg/gün",
             "Yüksek"
           ],
           [
@@ -22773,14 +22773,14 @@ export const cases = [
         "rows": [
           [
             "Lenfosit",
-            "800 veya µL",
-            "1000-4800 veya µL",
+            "800/µL",
+            "1000–4800/µL",
             "Düşük"
           ],
           [
             "Hemoglobin",
-            "10. 8 g veya dL",
-            "12-16 g veya dL",
+            "10.8 g/dL",
+            "12-16 g/dL",
             "Düşük"
           ]
         ]
@@ -23105,11 +23105,11 @@ export const cases = [
     "chiefComplaint": "Göz kuruluğu, ağız kuruluğu ve tekrarlayan diş çürükleri.",
     "stem": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler. Schirmer testi azalmış, SSA veya SSB pozitif bulunur. Objektif gözyaşı azalması ve otoantikor pozitifliği kuruluk sendromunu otoimmün kökenli düşündürür.",
     "vitals": {
-      "TA": "116 veya 72 mmHg",
-      "Nabız": "82 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "116/72 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -23216,7 +23216,7 @@ export const cases = [
           [
             "Kreatinin",
             "Normal",
-            "0. 6-1. 2 mg veya dL",
+            "0.6-1.2 mg/dL",
             "Normal"
           ]
         ]
@@ -23504,11 +23504,11 @@ export const cases = [
     "chiefComplaint": "El eklemlerinde şişlik, ağrı ve sabah tutukluğu.",
     "stem": "Hasta 2 saati aşan sabah tutukluğu, MCP veya PIP eklem şişliği ve simetrik ağrı ile gelir. RF ve anti-CCP pozitiftir. Kronik inflamatuvar sinovyal proliferasyon pannus oluşumuyla kıkırdak ve kemik hasarı yapar.",
     "vitals": {
-      "TA": "122 veya 76 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "122/76 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99",
-      "Ateş": "37. 1 °C"
+      "Ateş": "37.1 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -23894,11 +23894,11 @@ export const cases = [
     "chiefComplaint": "Tekrarlayan otitis media, sinüzit ve pnömoni.",
     "stem": "Erkek bebek ilk 6 aydan sonra tekrarlayan bakteriyel solunum yolu enfeksiyonları geçirmeye başlamıştır. Serum immünoglobulinleri çok düşük, dolaşımda B hücreleri azdır. T hücre fonksiyonu korunmuştur. Anne kaynaklı antikorların azaldığı dönemde başlayan bakteriyel enfeksiyonlar humoral immün yetmezliği düşündürür.",
     "vitals": {
-      "TA": "84 veya 50 mmHg",
-      "Nabız": "136 veya dk",
-      "Solunum": "32 veya dk",
+      "TA": "84/50 mmHg",
+      "Nabız": "136/dk",
+      "Solunum": "32/dk",
       "SpO2": "%97",
-      "Ateş": "38. 4 °C"
+      "Ateş": "38.4 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -23997,8 +23997,8 @@ export const cases = [
         "rows": [
           [
             "Anti-tetanos IgG",
-            "0. 03 IU veya mL",
-            ">0. 1 IU veya mL",
+            "0.03 IU/mL",
+            ">0.1 IU/mL",
             "Düşük"
           ],
           [
@@ -24305,11 +24305,11 @@ export const cases = [
     "chiefComplaint": "Kilo kaybı, oral kandidiyazis ve kronik ateş.",
     "stem": "Kilo kaybı, gece terlemesi, oral kandidiyazis ve kronik diyareye HIV Ag/Ab pozitifliği, yüksek viral yük ve düşük CD4 düzeyi eşlik eder.",
     "vitals": {
-      "TA": "110 veya 68 mmHg",
-      "Nabız": "108 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "110/68 mmHg",
+      "Nabız": "108/dk",
+      "Solunum": "24/dk",
       "SpO2": "%90",
-      "Ateş": "38. 2 °C"
+      "Ateş": "38.2 °C"
     },
     "exam": [
       "Genel durum stabil.",
@@ -24358,8 +24358,8 @@ export const cases = [
         "rows": [
           [
             "CD4",
-            "120 veya µL",
-            ">500 veya µL",
+            "120/µL",
+            ">500/µL",
             "Düşük"
           ],
           [
@@ -24390,7 +24390,7 @@ export const cases = [
           [
             "Oksijen sat.",
             "Düşük-normal",
-            ">94%",
+            ">%94",
             "İzlem"
           ]
         ]
@@ -24703,11 +24703,11 @@ export const cases = [
     "chiefComplaint": "Nöbet sonrası letarji ve açıklanamayan ekimozlar.",
     "stem": "Bebek acile nöbet ve letarji nedeniyle getirilir. Bakıcı net travma öyküsü vermez. Anlatılan hafif düşme öyküsü muayene bulgularının yaygınlığı ve farklı yaşlardaki morluklarla uyumlu değildir. Hekim aynı anda yaşamı tehdit eden durumu değerlendirmek, güvenliği sağlamak ve çocuk istismarı olasılığını doğru yönetmek zorundadır.",
     "vitals": {
-      "TA": "88 veya 52 mmHg",
-      "Nabız": "154 veya dk",
-      "Solunum": "32 veya dk",
+      "TA": "88/52 mmHg",
+      "Nabız": "154/dk",
+      "Solunum": "32/dk",
       "SpO2": "%97",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum orta-kötü.",
@@ -24937,11 +24937,11 @@ export const cases = [
     "chiefComplaint": "Saldırı sonrası ağrı, yoğun kaygı ve ekimozlar.",
     "stem": "Hasta saldırıdan yaklaşık 8 saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler. Aktif dış kanama veya bilinç kaybı yoktur. Hasta muayene sırasında mahremiyet, güvenlik ve ne yapılacağı konusunda bilgilendirilmek istediğini söyler.",
     "vitals": {
-      "TA": "118 veya 74 mmHg",
-      "Nabız": "104 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "118/74 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "20/dk",
       "SpO2": "%98",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -25190,11 +25190,11 @@ export const cases = [
     "chiefComplaint": "Boyun basısı sonrası bilinç bulanıklığı ve nefes darlığı.",
     "stem": "Hasta boyun basısı sonrası yakınları tarafından yarı bilinçli halde bulunarak acile getiriliyor. Olaydan sonra kısa süreli bilinç kaybı, ses kısıklığı, yutma ağrısı ve nefes darlığı tarifleniyor. Boyunda ligatür izi, konjonktival peteşiler ve hipoksemi. Asfiksiye bağlı havayolu ve nörolojik hasar riskini düşündürür.",
     "vitals": {
-      "TA": "92 veya 58 mmHg",
-      "Nabız": "128 veya dk",
-      "Solunum": "32 veya dk",
+      "TA": "92/58 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "32/dk",
       "SpO2": "%86",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -25219,25 +25219,25 @@ export const cases = [
           [
             "PaO2",
             "54 mmHg",
-            "80-100 mmHg",
+            "80/100 mmHg",
             "Düşük"
           ],
           [
             "PaCO2",
             "50 mmHg",
-            "35-45 mmHg",
+            "35/45 mmHg",
             "Yüksek"
           ],
           [
-            "PH",
-            "7. 28",
-            "7. 35-7. 45",
+            "pH",
+            "7.28",
+            "7.35-7.45",
             "Düşük"
           ],
           [
             "Laktat",
-            "4. 6 mmol veya L",
-            "<2 mmol veya L",
+            "4.6 mmol/L",
+            "<2 mmol/L",
             "Yüksek"
           ]
         ]
@@ -25365,7 +25365,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "SpO2 %86 ve kan gazında hipoksemi."
+            "text": "SpO₂ %86 ve kan gazında hipoksemi."
           },
           {
             "title": "Laboratuvar paterni",
@@ -25421,7 +25421,7 @@ export const cases = [
           "Basit panik atağı": {
             "explanation": "Panik atakta hipoksemi, ligatür izi, peteşi ve laringeal ödem beklenmez.",
             "comparisonPoints": [
-              "Panik atakta SpO2 genellikle normaldir.",
+              "Panik atakta SpO₂ genellikle normaldir.",
               "Objektif boyun travması asfiksi lehinedir."
             ]
           },
@@ -25485,7 +25485,7 @@ export const cases = [
           "Basit panik atağı": {
             "explanation": "Panik atakta hipoksemi, ligatür izi, peteşi ve laringeal ödem beklenmez. Ancak bu vakada Boyun basısı ve kısa bilinç kaybı hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir. Terapötik hipotermi ilk 6 saatte düşünülür.",
             "comparisonPoints": [
-              "Panik atakta SpO2 genellikle normaldir.",
+              "Panik atakta SpO₂ genellikle normaldir.",
               "Objektif boyun travması asfiksi lehinedir.",
               "Basit panik atağı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
@@ -25619,7 +25619,7 @@ export const cases = [
       ],
       "distinctiveClues": [
         "Boyun basısı ve kısa bilinç kaybı.",
-        "SpO2 %86 ve kan gazında hipoksemi.",
+        "SpO₂ %86 ve kan gazında hipoksemi.",
         "Ligatür izi ve konjonktival peteşi.",
         "BT'de laringeal ödem."
       ],
@@ -25638,11 +25638,11 @@ export const cases = [
     "chiefComplaint": "Azatioprin başlandıktan üç hafta sonra ateş, ağız yarası ve halsizlik.",
     "stem": "İnflamatuvar bağırsak hastalığı için standart doz azatioprin başlanan hasta, üç hafta içinde ateş, belirgin halsizlik, oral ülser ve kolay morarma ile başvurur. Dozu önerildiği gibi kullandığını söyler. Ailede benzer ilaç yanıtı öyküsü vardır. Ağır lökopeni ve trombositopeni, tiopürin metabolizmasını etkileyen farmakogenetik yatkınlığı düşündürür.",
     "vitals": {
-      "TA": "96 veya 60 mmHg",
-      "Nabız": "122 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "96/60 mmHg",
+      "Nabız": "122/dk",
+      "Solunum": "22/dk",
       "SpO2": "%98",
-      "Ateş": "38. 7 °C"
+      "Ateş": "38.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -25666,26 +25666,26 @@ export const cases = [
         "rows": [
           [
             "WBC",
-            "1. 100 veya µL",
-            "4. 000-10. 000 veya µL",
+            "1.100/µL",
+            "4.000–10.000/µL",
             "Düşük"
           ],
           [
             "Mutlak nötrofil",
-            "280 veya µL",
-            ">1500 veya µL",
+            "280/µL",
+            ">1500/µL",
             "Çok düşük"
           ],
           [
             "Hemoglobin",
-            "9. 4 g veya dL",
-            "12-16 g veya dL",
+            "9.4 g/dL",
+            "12-16 g/dL",
             "Düşük"
           ],
           [
             "Trombosit",
-            "42. 000 veya µL",
-            "150. 000-450. 000 veya µL",
+            "42.000/µL",
+            "150.000–450.000/µL",
             "Düşük"
           ]
         ]
@@ -25734,8 +25734,8 @@ export const cases = [
         "rows": [
           [
             "CRP",
-            "86 mg veya L",
-            "<5 mg veya L",
+            "86 mg/L",
+            "<5 mg/L",
             "Yüksek"
           ],
           [
@@ -25746,8 +25746,8 @@ export const cases = [
           ],
           [
             "Mutlak nötrofil",
-            "220 veya mm³",
-            ">1500 veya mm³",
+            "220/mm³",
+            ">1500/mm³",
             "Kritik düşük"
           ]
         ]
@@ -25765,20 +25765,20 @@ export const cases = [
         "rows": [
           [
             "Kreatinin",
-            "0. 8 mg veya dL",
-            "0. 6-1. 2 mg veya dL",
+            "0.8 mg/dL",
+            "0.6-1.2 mg/dL",
             "Normal"
           ],
           [
             "ALT",
-            "54 U veya L",
-            "<40 U veya L",
+            "54 U/L",
+            "<40 U/L",
             "Hafif yüksek"
           ],
           [
             "Total bilirubin",
-            "0. 9 mg veya dL",
-            "<1. 2 mg veya dL",
+            "0.9 mg/dL",
+            "<1.2 mg/dL",
             "Normal"
           ]
         ]
@@ -26076,11 +26076,11 @@ export const cases = [
     "chiefComplaint": "Sağ ön kolda kesici-delici alet yaralanması.",
     "stem": "Hasta sağ ön kolda kesici-delici alet yaralanması ile acile başvurur. Yaranın kazara olduğunu söyler. Ancak olay öyküsü kısa, tutarsız ve yara derinliği beyanla tam uyumlu değildir. Bilinci açık, vital bulguları stabildir.",
     "vitals": {
-      "TA": "122 veya 78 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "122/78 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -26276,11 +26276,11 @@ export const cases = [
     "chiefComplaint": "Motosiklet kazası sonrası omuz ve diz ağrısı.",
     "stem": "Hasta motosiklet kazası sonrası acile getirilir. Kask taktığını, kısa süreli sersemlik yaşadığını ve sağ omuz-diz ağrısı olduğunu söyler. Alkol almadığını belirtir. Vital bulguları stabildir ve bilinci açıktır.",
     "vitals": {
-      "TA": "126 veya 82 mmHg",
-      "Nabız": "96 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "126/82 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98",
-      "Ateş": "36. 4 °C"
+      "Ateş": "36.4 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -26476,11 +26476,11 @@ export const cases = [
     "chiefComplaint": "Bilinç kaybı ve solunum sıkıntısı.",
     "stem": "Hasta evde bilinçsiz bulunarak ambulansla getirilir. Yakını henüz hastaneye ulaşmamıştır. Hasta sorulara yanıt vermez, solunumu yüzeyeldir ve hava yolu güvenliği açısından risklidir.",
     "vitals": {
-      "TA": "86 veya 54 mmHg",
-      "Nabız": "128 veya dk",
-      "Solunum": "8 veya dk",
+      "TA": "86/54 mmHg",
+      "Nabız": "128/dk",
+      "Solunum": "8/dk",
       "SpO2": "%84",
-      "Ateş": "36. 2 °C"
+      "Ateş": "36.2 °C"
     },
     "exam": [
       "Genel durum kötü.",
@@ -26676,11 +26676,11 @@ export const cases = [
     "chiefComplaint": "Tekrarlayan düşme öyküsü ve yüz-boyun ekimozları.",
     "stem": "Hasta \"merdivenden düştüğünü\" söyleyerek başvurur. Eşi sürekli yanında durmakta ve hastanın sorulara tek başına yanıt vermesine izin vermemektedir. Hasta kısa süre yalnız kaldığında evde güvende hissetmediğini ima eder.",
     "vitals": {
-      "TA": "132 veya 78 mmHg",
-      "Nabız": "102 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "132/78 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "18/dk",
       "SpO2": "%99",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -26877,11 +26877,11 @@ export const cases = [
     "chiefComplaint": "Ani bilinç bulanıklığı ve kusma.",
     "stem": "Hasta evde bilinç bulanıklığı ve kusma sonrası getirilir. Yakınları, masada etiketsiz bir içecek şişesi ve ilaç blisterleri gördüklerini söyler. Hasta aralıklı uyanık, sorulara tutarsız yanıt verir.",
     "vitals": {
-      "TA": "104 veya 66 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "104/66 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "22/dk",
       "SpO2": "%96",
-      "Ateş": "36. 1 °C"
+      "Ateş": "36.1 °C"
     },
     "exam": [
       "Genel durum orta-kötü.",
@@ -26893,7 +26893,7 @@ export const cases = [
         "id": "tus-spot-poisoning-basic-tox",
         "label": "Hedefe yönelik toksikoloji paneli",
         "type": "Toxicology",
-        "summary": "İdrarda benzodiazepin pozitif. Etanol düzeyi 18 mg veya dL.",
+        "summary": "İdrarda benzodiazepin pozitif. Etanol düzeyi 18 mg/dL.",
         "findings": [
           "İdrarda benzodiazepin pozitif."
         ],
@@ -26907,8 +26907,8 @@ export const cases = [
           },
           {
             "parameter": "Etanol",
-            "value": "18 mg veya dL",
-            "reference": "<10 mg veya dL",
+            "value": "18 mg/dL",
+            "reference": "<10 mg/dL",
             "note": "Hafif yüksek"
           },
           {
@@ -27109,11 +27109,11 @@ export const cases = [
     "chiefComplaint": "El pres makinesinde parmak ezilmesi.",
     "stem": "Hasta fabrikada pres makinesine sağ elini sıkıştırdıktan sonra acile gelir. İşverenin \"basit yaralanma olarak yazılsın\" dediğini belirtir. Hasta ağrılıdır, aktif masif kanama yoktur.",
     "vitals": {
-      "TA": "138 veya 84 mmHg",
-      "Nabız": "94 veya dk",
-      "Solunum": "17 veya dk",
+      "TA": "138/84 mmHg",
+      "Nabız": "94/dk",
+      "Solunum": "17/dk",
       "SpO2": "%99",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -27309,11 +27309,11 @@ export const cases = [
     "chiefComplaint": "Fıstıklı tatlı sonrası kaşıntı ve dudak şişliği.",
     "stem": "Hasta fıstık içeren tatlı yedikten yaklaşık 20 dakika sonra yaygın kaşıntı, dudaklarda hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma, kusma veya göğüste sıkışma tariflemez.",
     "vitals": {
-      "TA": "116 veya 72 mmHg",
-      "Nabız": "92 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "116/72 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -27509,11 +27509,11 @@ export const cases = [
     "chiefComplaint": "Ateş, boğaz ağrısı ve gövdeden başlayan döküntü.",
     "stem": "Çocuk 3 gündür ateş ve boğaz ağrısı sonrası gövdeden başlayıp yayılan ince döküntü nedeniyle getirilir. Aile döküntünün dokununca pütürlü hissedildiğini söyler.",
     "vitals": {
-      "TA": "96 veya 60 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "96/60 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "22/dk",
       "SpO2": "%98",
-      "Ateş": "38. 6 °C"
+      "Ateş": "38.6 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -27705,11 +27705,11 @@ export const cases = [
     "chiefComplaint": "Elinden çekildikten sonra sağ kolunu kullanmama.",
     "stem": "Çocuk kaldırımdan inerken annesi tarafından elinden çekildikten sonra ağlamış ve sağ kolunu kullanmamaya başlamıştır. Düşme, direkt travma veya ateş öyküsü yoktur.",
     "vitals": {
-      "TA": "92 veya 58 mmHg",
-      "Nabız": "108 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "92/58 mmHg",
+      "Nabız": "108/dk",
+      "Solunum": "22/dk",
       "SpO2": "%99",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -27906,11 +27906,11 @@ export const cases = [
     "chiefComplaint": "Ateş, öksürük, göz kızarıklığı ve döküntü.",
     "stem": "Aşıları eksik olan çocuk 4 gündür ateş, öksürük, burun akıntısı ve göz kızarıklığı sonrası yüzden başlayıp gövdeye yayılan döküntü ile getirilir.",
     "vitals": {
-      "TA": "98 veya 62 mmHg",
-      "Nabız": "118 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "98/62 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "24/dk",
       "SpO2": "%97",
-      "Ateş": "39. 0 °C"
+      "Ateş": "39.0 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -28106,11 +28106,11 @@ export const cases = [
     "chiefComplaint": "Ani başlayan burun kanaması.",
     "stem": "Hasta 20 dakikadır devam eden burun kanaması nedeniyle başvurur. Bilinci açık, yutkunmakla hafif kan tadı aldığını söyler. Antikoagülan kullanmaz, travma öyküsü yoktur.",
     "vitals": {
-      "TA": "148 veya 86 mmHg",
-      "Nabız": "92 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "148/86 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -28500,11 +28500,11 @@ export const cases = [
     "chiefComplaint": "Düşme sonrası üst kol ağrısı ve el bileğini kaldıramama.",
     "stem": "Hasta bisikletten düştükten sonra sağ üst kolunda ağrı ve el bileğini yukarı kaldıramama yakınmasıyla başvurur. Travma doğrudan humerus orta şaftına yönelmiştir.",
     "vitals": {
-      "TA": "118 veya 74 mmHg",
-      "Nabız": "84 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "118/74 mmHg",
+      "Nabız": "84/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -28859,14 +28859,14 @@ export const cases = [
     "chiefComplaint": "Ayağa kalkınca kısa süreli baş dönmesi.",
     "stem": "Hasta özellikle sabah yataktan kalkınca birkaç saniye süren sersemlik hissettiğini, oturunca yakınmasının düzeldiğini söyler. Yeni başlanan diüretik tedavi sonrası sıvı alımı azalmıştır.",
     "vitals": {
-      "Yatar TA": "128 veya 76 mmHg",
-      "Ayakta TA": "104 veya 66 mmHg",
-      "Yatar Nabız": "72 veya dk",
-      "Ayakta Nabız": "96 veya dk",
-      "Ateş": "36. 4 °C",
-      "TA": "104 veya 66 mmHg ayakta",
-      "Nabız": "96 veya dk ayakta",
-      "Solunum": "16 veya dk",
+      "Yatar TA": "128/76 mmHg",
+      "Ayakta TA": "104/66 mmHg",
+      "Yatar Nabız": "72/dk",
+      "Ayakta Nabız": "96/dk",
+      "Ateş": "36.4 °C",
+      "TA": "104/66 mmHg",
+      "Nabız": "96/dk ayakta",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında"
     },
     "exam": [
@@ -29125,11 +29125,11 @@ export const cases = [
     "chiefComplaint": "Boyun ön orta hatta şişlik.",
     "stem": "Aile, çocuğun boyun ön orta hattında son aylarda fark edilen, zaman zaman büyüyen ağrısız bir şişlik olduğunu belirtir. Üst solunum yolu enfeksiyonlarından sonra belirginleştiği öğrenilir.",
     "vitals": {
-      "TA": "100 veya 62 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "100/62 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "18/dk",
       "SpO2": "%99",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -29406,11 +29406,11 @@ export const cases = [
     "chiefComplaint": "Altı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme.",
     "stem": "Hasta son adet tarihine göre yaklaşık 6 haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır.",
     "vitals": {
-      "TA": "96 veya 62 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "96/62 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "20/dk",
       "SpO2": "%98",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -29425,15 +29425,15 @@ export const cases = [
         "label": "Gebelik testi ve beta-hCG",
         "type": "Lab",
         "priority": "Useful",
-        "summary": "Serum beta-hCG 2400 mIU veya mL saptandı.",
+        "summary": "Serum beta-hCG 2400 mIU/mL saptandı.",
         "findings": [
           "Pozitif beta-hCG erken gebelik varlığını gösterir ve ultrason bulgusuyla birlikte yorumlanır."
         ],
         "rows": [
           [
             "Serum beta-hCG",
-            "2400 mIU veya mL",
-            "Negatif veya <5 mIU veya mL",
+            "2400 mIU/mL",
+            "Negatif veya <5 mIU/mL",
             "Pozitif"
           ]
         ]
@@ -29714,11 +29714,11 @@ export const cases = [
     "chiefComplaint": "Tarla ilaçlaması sonrası nefes darlığı ve aşırı sekresyon.",
     "stem": "Hasta kapalı alanda pestisit uyguladıktan sonra bulantı, terleme, tükürük artışı ve nefes darlığı gelişmesiyle acile getirilir. Üzerinde yoğun kimyasal koku fark edilir.",
     "vitals": {
-      "TA": "104 veya 68 mmHg",
-      "Nabız": "58 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "104/68 mmHg",
+      "Nabız": "58/dk",
+      "Solunum": "24/dk",
       "SpO2": "%92",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Genel durum orta-kötü.",
@@ -30010,11 +30010,11 @@ export const cases = [
     "chiefComplaint": "Saatler içinde gelişen bol sulu, kansız ishal.",
     "stem": "49 yaşındaki kadın hasta Yemen seyahatinden kısa süre sonra pirinç suyu görünümünde çok sayıda sulu dışkılama, ağır susuzluk, halsizlik ve kas krampları ile başvurur. Dışkıda kan tariflemez ve karın ağrısı belirgin değildir.",
     "vitals": {
-      "TA": "90 veya 58 mmHg",
-      "Nabız": "118 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "90/58 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "22/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Genel durum orta-kötü.",
@@ -30234,11 +30234,11 @@ export const cases = [
     "chiefComplaint": "Bulanık görme ve tedavisiz HIV öyküsü.",
     "stem": "28 yaşındaki erkek hastada tedavisiz HIV enfeksiyonu zemininde CMV retiniti tedavisi başlanır. Antiviral tedavinin ikinci haftasında ateşsiz halsizlik ve ağız içinde aft benzeri lezyonlar gelişir. İlaç yan etkisi sorgulanır.",
     "vitals": {
-      "TA": "116 veya 74 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "116/74 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Genel durum stabil."
@@ -30248,7 +30248,7 @@ export const cases = [
         "id": "tus-spot-cmv-cbc",
         "label": "Tam kan sayımı",
         "type": "Hematology",
-        "summary": "Tedavinin 14. Gününde WBC 900 veya mm³ ve nötrofil 500 veya mm³.",
+        "summary": "Tedavinin 14. Gününde WBC 900/mm³ ve nötrofil 500/mm³.",
         "findings": [
           "Tedavinin 14."
         ],
@@ -30256,7 +30256,7 @@ export const cases = [
         "rows": [
           [
             "Tam kan sayımı",
-            "Tedavinin 14. Gününde WBC 900 veya mm³ ve nötrofil 500 veya mm³, belirgin lökopeni veya nötropeni.",
+            "Tedavinin 14. Gününde WBC 900/mm³ ve nötrofil 500/mm³, belirgin lökopeni veya nötropeni.",
             "Beklenen veya karar eşiği",
             "Karar verdirici"
           ]
@@ -30453,11 +30453,11 @@ export const cases = [
     "chiefComplaint": "Ateş ve bacakta ağrılı sıcak kızarıklık.",
     "stem": "55 yaşındaki erkek hasta, yakın dönemde boğaz enfeksiyonu geçirdikten sonra eski safen ven çıkarım skarı çevresinde hızla yayılan ağrılı ve sıcak deri kızarıklığı fark eder. Lezyon tek taraflıdır ve kısa sürede ateş-halsizlik eşlik etmiştir.",
     "vitals": {
-      "TA": "125 veya 76 mmHg",
-      "Nabız": "104 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "125/76 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "38. 3 °C"
+      "Ateş": "38.3 °C"
     },
     "exam": [
       "Ateşli ve halsiz görünümde.",
@@ -30654,11 +30654,11 @@ export const cases = [
     "chiefComplaint": "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma.",
     "stem": "Ameliyathane sırasında cerrahın eline kontamine enjektör iğnesi batar. Yaralanma hemen yıkanır, olay kayıt altına alınır ve kaynak hastanın HCV RNA pozitif olduğu öğrenilir.",
     "vitals": {
-      "TA": "122 veya 78 mmHg",
-      "Nabız": "84 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "122/78 mmHg",
+      "Nabız": "84/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Yaralanma yüzeyel perkütan giriş yeri şeklinde."
@@ -30854,11 +30854,11 @@ export const cases = [
     "chiefComplaint": "Aktif akciğer tüberkülozu olan aile bireyiyle yakın temas.",
     "stem": "18 yaşındaki erkek hasta, aktif akciğer tüberkülozu tanısı alan aile bireyiyle aynı evde yaşamaktadır. Kendisi asemptomatiktir ve çocukluk döneminde BCG aşısı olduğunu belirtir.",
     "vitals": {
-      "TA": "118 veya 76 mmHg",
-      "Nabız": "76 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "118/76 mmHg",
+      "Nabız": "76/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99 oda havasında",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -31088,11 +31088,11 @@ export const cases = [
     "chiefComplaint": "İşle ilişkili öksürük, hışıltı ve el dorsumunda kaşıntılı lezyonlar.",
     "stem": "Son bir yıldır iş günlerinde nefes darlığı, öksürük ve hışıltı atakları yaşayan hastanın el dorsal yüzlerinde kronik irritan veya alerjik dermatit benzeri lezyonlar bulunuyor.",
     "vitals": {
-      "TA": "128 veya 78 mmHg",
-      "Nabız": "92 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "128/78 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "20/dk",
       "SpO2": "%96 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Solunum eforu istirahatte normal.",
@@ -31288,11 +31288,11 @@ export const cases = [
     "chiefComplaint": "Ateş, öksürük, sarı balgam ve uykuya meyil.",
     "stem": "72 yaşındaki kadın hasta ateş, öksürük, sarı balgam ve uykuya meyil nedeniyle acile getirilir. Pnömoni düşünülen hastada hekim yatış kararını CURB-65 kriterleriyle yapılandırmak ister.",
     "vitals": {
-      "TA": "92 veya 58 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "32 veya dk",
+      "TA": "92/58 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "32/dk",
       "SpO2": "%90 oda havasında",
-      "Ateş": "38. 6 °C"
+      "Ateş": "38.6 °C"
     },
     "exam": [
       "Bilinç bulanık ve uykuya meyilli.",
@@ -31321,7 +31321,7 @@ export const cases = [
         "Bilinç durumunda bozulma",
         "Solunum sayısının artması"
       ],
-      "explanation": "CURB-65 pnömoni ağırlık skorunda ateş yer almaz. Skor. Konfüzyon, üre yüksekliği, solunum sayısı ≥30 veya dk, düşük kan basıncı ve yaş ≥65 maddelerinden oluşur. Bu nedenle en uygun seçim Ateş yüksekliği olur.",
+      "explanation": "CURB-65 pnömoni ağırlık skorunda ateş yer almaz. Skor. Konfüzyon, üre yüksekliği, solunum sayısı ≥30/dk, düşük kan basıncı ve yaş ≥65 maddelerinden oluşur. Bu nedenle en uygun seçim Ateş yüksekliği olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -31341,7 +31341,7 @@ export const cases = [
         "correctDiagnosis": "Ateş yüksekliği",
         "diagnosisMeta": "CURB-65 bileşenleri ve ateşin skorda yer almaması",
         "shortDiagnosisMeta": "TUS spot veya Yönetim",
-        "whyCorrect": "CURB-65 pnömoni ağırlık skorunda ateş yer almaz. Skor. Konfüzyon, üre yüksekliği, solunum sayısı ≥30 veya dk, düşük kan basıncı ve yaş ≥65 maddelerinden oluşur. Bu nedenle en uygun seçim Ateş yüksekliği olur.",
+        "whyCorrect": "CURB-65 pnömoni ağırlık skorunda ateş yer almaz. Skor. Konfüzyon, üre yüksekliği, solunum sayısı ≥30/dk, düşük kan basıncı ve yaş ≥65 maddelerinden oluşur. Bu nedenle en uygun seçim Ateş yüksekliği olur.",
         "whyWrong": {
           "Yaşın 65 ve üzerinde olması": "Yaşın 65 ve üzerinde olması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen temel paternin önceliğini açıklamaz.",
           "Bilinç durumunda bozulma": "Bilinç durumunda bozulma benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen temel paternin önceliğini açıklamaz.",
@@ -31488,11 +31488,11 @@ export const cases = [
     "chiefComplaint": "Fıstıklı tatlıdan sonra boğazda şişme, kaşıntı, karın ağrısı ve baş dönmesi.",
     "stem": "20 yaşındaki erkek hasta, fıstıklı tatlı yedikten kısa süre sonra yaygın kaşıntı, ürtiker, boğazda şişme hissi, karın ağrısı ve baş dönmesi tarif eder. Alerjik rinit ve astım öyküsü vardır.",
     "vitals": {
-      "TA": "88 veya 56 mmHg",
-      "Nabız": "122 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "88/56 mmHg",
+      "Nabız": "122/dk",
+      "Solunum": "24/dk",
       "SpO2": "%94 oda havasında",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Yaygın ürtikeryal lezyonlar ve hafif dudak ödemi izleniyor.",
@@ -31719,11 +31719,11 @@ export const cases = [
     "chiefComplaint": "Son aylarda dirençli hipertansiyon atakları ve tekrarlayan akciğer ödemi.",
     "stem": "62 yaşındaki erkek hastada kısa süre içinde ağır ve dirençli hipertansiyon atakları ile tekrarlayan ani akciğer ödemi gelişmiştir. Diyabet ve uzun süreli sigara öyküsü vardır.",
     "vitals": {
-      "TA": "176 veya 96 mmHg",
-      "Nabız": "94 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "176/96 mmHg",
+      "Nabız": "94/dk",
+      "Solunum": "20/dk",
       "SpO2": "%95 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Kan basıncı yüksek.",
@@ -31734,7 +31734,7 @@ export const cases = [
         "id": "tus-spot-renovascular-k",
         "label": "Temel biyokimya",
         "type": "Lab",
-        "summary": "Serum potasyumu 3. 2 mEq veya L.",
+        "summary": "Serum potasyumu 3.2 mEq/L.",
         "findings": [
           "Serum potasyumu 3."
         ],
@@ -31742,7 +31742,7 @@ export const cases = [
         "rows": [
           [
             "Temel biyokimya",
-            "Serum potasyumu 3. 2 mEq veya L, sekonder hiperaldosteronizm açısından hipokalemi.",
+            "Serum potasyumu 3.2 mEq/L, sekonder hiperaldosteronizm açısından hipokalemi.",
             "Beklenen veya karar eşiği",
             "Karar verdirici"
           ]
@@ -31944,11 +31944,11 @@ export const cases = [
     "chiefComplaint": "Efor dispnesi, periferik ödem ve pulmoner hipertansiyon tanısı.",
     "stem": "Sağ kalp kateterizasyonu ile pulmoner hipertansiyon kesinleşen hastada tedavi seçenekleri gözden geçiriliyor.",
     "vitals": {
-      "TA": "112 veya 70 mmHg",
-      "Nabız": "104 veya dk",
-      "Solunum": "22 veya dk",
+      "TA": "112/70 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "22/dk",
       "SpO2": "%93 oda havasında",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Boyun ven dolgunluğu, hepatomegali ve pretibial ödem mevcut.",
@@ -32144,11 +32144,11 @@ export const cases = [
     "chiefComplaint": "Tedaviye uyumsuz hipertansiyon sonrası ani nefes darlığı.",
     "stem": "70 yaşındaki kadın hasta antihipertansif ilaçlarını düzensiz kullandıktan sonra ani başlayan şiddetli nefes darlığı ile acile başvurur. Önceden bilinen ciddi sistolik kalp yetersizliği öyküsü yoktur.",
     "vitals": {
-      "TA": "205 veya 118 mmHg",
-      "Nabız": "124 veya dk",
-      "Solunum": "32 veya dk",
+      "TA": "205/118 mmHg",
+      "Nabız": "124/dk",
+      "Solunum": "32/dk",
       "SpO2": "%86 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Kan basıncı belirgin yüksek, nabız hızlı ve ritmik.",
@@ -32345,11 +32345,11 @@ export const cases = [
     "chiefComplaint": "Bulantı ve yemekten sonra şişkinlik.",
     "stem": "Daha önce benzer yakınması olmayan hastada kilo kaybı, yutma güçlüğü veya kusma yok. Ancak yakınmalar yeni başlamış ve hasta ileri yaş grubunda.",
     "vitals": {
-      "TA": "124 veya 76 mmHg",
-      "Nabız": "78 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "124/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum iyi."
@@ -32544,11 +32544,11 @@ export const cases = [
     "chiefComplaint": "Reflü yakınmaları nedeniyle yapılan endoskopi.",
     "stem": "Uzun süreli reflü yakınmaları olan erişkin hastada endoskopik değerlendirme yapılır. Soru, distal özofagusta görülen mukozal paternin hangi tanıyı düşündürdüğünü sorgular.",
     "vitals": {
-      "TA": "122 veya 76 mmHg",
-      "Nabız": "80 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "122/76 mmHg",
+      "Nabız": "80/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -32764,11 +32764,11 @@ export const cases = [
     "chiefComplaint": "Yemeklerden sonra sağ üst kadran ağrısı.",
     "stem": "57 yaşındaki erkek hasta yağlı yemeklerden sonra artan sağ üst kadran ağrısı nedeniyle değerlendirilir. Ateş, titreme ve belirgin sarılık tariflemez. Akut kolanjit bulgusu ön planda değildir.",
     "vitals": {
-      "TA": "132 veya 80 mmHg",
-      "Nabız": "86 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "132/80 mmHg",
+      "Nabız": "86/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Batın yumuşak.",
@@ -32988,11 +32988,11 @@ export const cases = [
     "chiefComplaint": "Dalgınlık, uykuya eğilim ve karında hassasiyet.",
     "stem": "Dekompanse sirozu olan hastada son iki günde dikkat azalması ve hafif uykuya eğilim gelişiyor. Muayenede belirgin asit var.",
     "vitals": {
-      "TA": "96 veya 62 mmHg",
-      "Nabız": "104 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "96/62 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "20/dk",
       "SpO2": "%96 oda havasında",
-      "Ateş": "38. 2 °C"
+      "Ateş": "38.2 °C"
     },
     "exam": [
       "Belirgin asit bulguları mevcut.",
@@ -33003,7 +33003,7 @@ export const cases = [
         "id": "tus-spot-ascites-pmn",
         "label": "Tanısal parasentez ve asit sıvısı analizi",
         "type": "Fluid",
-        "summary": "Asit sıvısında PMN 420 veya mm³ saptanır. Kültür sonucu beklemededir.",
+        "summary": "Asit sıvısında PMN 420/mm³ saptanır. Kültür sonucu beklemededir.",
         "findings": [
           "PMN sayısı enfekte asit açısından kritik eşik değerin üzerindedir.",
           "Kültür sonucu tedavi başlangıcını geciktirmemelidir."
@@ -33012,8 +33012,8 @@ export const cases = [
         "rows": [
           [
             "Asit PMN",
-            "420 veya mm³",
-            "<250 veya mm³",
+            "420/mm³",
+            "<250/mm³",
             "Yüksek"
           ],
           [
@@ -33027,7 +33027,7 @@ export const cases = [
     ],
     "images": [],
     "questionType": "Treatment",
-    "question": "Asit sıvısında PMN ≥250 veya mm³ saptanan bu hastada en uygun sonraki adım hangisidir?",
+    "question": "Asit sıvısında PMN ≥250/mm³ saptanan bu hastada en uygun sonraki adım hangisidir?",
     "spotPearl": "Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır.",
     "learningOutcome": "Ana ipucu siroz ve asit ve mental durum değişikliği veya karın hassasiyeti bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "managementSequence": {
@@ -33047,11 +33047,11 @@ export const cases = [
         "Öncelikle elektif üst GİS endoskopisi planlamak",
         "Semptomsuz izlemle parasentezi tekrarlamamak"
       ],
-      "explanation": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250 veya mm³ olması SBP paternini düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun seçim Ampirik üçüncü kuşak sefalosporin tedavisi başlamak olur.",
+      "explanation": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP paternini düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun seçim Ampirik üçüncü kuşak sefalosporin tedavisi başlamak olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
-          "text": "Sirotik asitte PMN ≥250 veya mm³ SBP için kritik eşiktir."
+          "text": "Sirotik asitte PMN ≥250/mm³ SBP için kritik eşiktir."
         },
         {
           "label": "Ayırıcı nokta",
@@ -33067,7 +33067,7 @@ export const cases = [
         "correctDiagnosis": "Ampirik üçüncü kuşak sefalosporin tedavisi başlamak",
         "diagnosisMeta": "Sirotik asitte PMN eşiğini ve ilk tedaviyi yorumlama",
         "shortDiagnosisMeta": "Tetkik veya Yönetim",
-        "whyCorrect": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250 veya mm³ olması SBP paternini düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun seçim Ampirik üçüncü kuşak sefalosporin tedavisi başlamak olur.",
+        "whyCorrect": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP paternini düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun seçim Ampirik üçüncü kuşak sefalosporin tedavisi başlamak olur.",
         "whyWrong": {
           "HCV RNA sonucunu bekleyip tedaviyi ertelemek": "HCV RNA sonucunu bekleyip tedaviyi ertelemek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
           "Öncelikle elektif üst GİS endoskopisi planlamak": "Öncelikle elektif üst GİS endoskopisi planlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
@@ -33098,7 +33098,7 @@ export const cases = [
         "clinicalPearls": [
           {
             "label": "Sınav incisi",
-            "text": "Sirotik asitte PMN ≥250 veya mm³ SBP için kritik eşiktir."
+            "text": "Sirotik asitte PMN ≥250/mm³ SBP için kritik eşiktir."
           },
           {
             "label": "Ayırt ettirici bulgu",
@@ -33116,7 +33116,7 @@ export const cases = [
         "pearls": [
           {
             "label": "Sınav incisi",
-            "text": "Sirotik asitte PMN ≥250 veya mm³ SBP için kritik eşiktir."
+            "text": "Sirotik asitte PMN ≥250/mm³ SBP için kritik eşiktir."
           },
           {
             "label": "Ayırt ettirici bulgu",
@@ -33190,7 +33190,7 @@ export const cases = [
         "trap": "Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP'yi atlamak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
-      "question": "Asit sıvısında PMN ≥250 veya mm³ saptanan bu hastada en uygun sonraki adım hangisidir?"
+      "question": "Asit sıvısında PMN ≥250/mm³ saptanan bu hastada en uygun sonraki adım hangisidir?"
     },
     "title": "Dalgınlık, uykuya eğilim ve karında hassasiyet",
     "patientIntro": {
@@ -33226,11 +33226,11 @@ export const cases = [
     "chiefComplaint": "Genel durum bozukluğu ve hipotansiyon.",
     "stem": "Erişkin erkek hasta belirgin halsizlik, kilo kaybı ve sıvı alımına rağmen devam eden baş dönmesi yakınmalarıyla acile getirilir. Deri ve mukozalarda uzun süredir artan koyulaşma fark edilmektedir.",
     "vitals": {
-      "TA": "78 veya 46 mmHg",
-      "Nabız": "126 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "78/46 mmHg",
+      "Nabız": "126/dk",
+      "Solunum": "24/dk",
       "SpO2": "%97 oda havasında",
-      "Ateş": "37. 2 °C"
+      "Ateş": "37.2 °C"
     },
     "exam": [
       "Hasta zayıf ve bitkin görünümde.",
@@ -33241,27 +33241,27 @@ export const cases = [
         "id": "adrenal-crisis-electrolytes",
         "label": "Elektrolit ve glukoz paneli",
         "type": "Lab",
-        "summary": "Na 126 mEq veya L, K 5. 8 mEq veya L, glukoz 58 mg veya dL.",
+        "summary": "Na 126 mEq/L, K 5.8 mEq/L, glukoz 58 mg/dL.",
         "findings": [
-          "Na 126 mEq veya L, K 5."
+          "Na 126 mEq/L, K 5."
         ],
         "priority": "Essential",
         "rows": [
           [
             "Sodyum",
-            "126 mEq veya L",
+            "126 mEq/L",
             "135–145",
             "Düşük"
           ],
           [
             "Potasyum",
-            "5. 8 mEq veya L",
-            "3. 5–5. 0",
+            "5.8 mEq/L",
+            "3.5–5.0",
             "Yüksek"
           ],
           [
             "Glukoz",
-            "58 mg veya dL",
+            "58 mg/dL",
             "70–100",
             "Düşük"
           ]
@@ -33461,11 +33461,11 @@ export const cases = [
     "chiefComplaint": "Çarpıntı, titreme ve sinirlilik atakları.",
     "stem": "20 yaşındaki kadın hasta çarpıntı, titreme, sinirlilik ve kilo kaybı ataklarıyla başvurur. Tiroid bezi ağrısızdır. Hastanın eksojen tiroid hormonu kullanımı başlangıçta net değildir.",
     "vitals": {
-      "TA": "138 veya 78 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "138/78 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "20/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Canlı bakış ve ellerde ince tremor var.",
@@ -33491,7 +33491,7 @@ export const cases = [
           [
             "TSH",
             "Baskılı",
-            "0. 4–4. 0 mIU veya L",
+            "0.4–4.0 mIU/L",
             "Düşük"
           ],
           [
@@ -33702,11 +33702,11 @@ export const cases = [
     "chiefComplaint": "Baş ağrısı ve libido azalması.",
     "stem": "42 yaşındaki erkek hasta baş ağrısı, libido azalması ve hafif görme alanı yakınmasıyla endokrinolojiye başvurur. Büyük hipofizer lezyon şüphesinde prolaktin düzeyinin beklenenden düşük görünmesi tanısal sorun yaratır.",
     "vitals": {
-      "TA": "126 veya 78 mmHg",
-      "Nabız": "82 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "126/78 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -33733,14 +33733,14 @@ export const cases = [
           ],
           [
             "Bazal prolaktin",
-            "48 ng veya mL",
-            "4. 8–23. 3 ng veya mL",
+            "48 ng/mL",
+            "4.8–23.3 ng/mL",
             "Yüksek"
           ],
           [
             "Dilüsyon sonrası prolaktin",
-            "2. 400 ng veya mL",
-            "4. 8–23. 3 ng veya mL",
+            "2.400 ng/mL",
+            "4.8–23.3 ng/mL",
             "Belirgin yüksek"
           ]
         ]
@@ -33944,11 +33944,11 @@ export const cases = [
     "chiefComplaint": "Metastatik kolon adenokarsinomu.",
     "stem": "Kolonoskopide inen kolonda kitle, karaciğerde metastatik lezyonlar ve biyopside adenokarsinom saptanan hastada sistemik tedavi planlanıyor.",
     "vitals": {
-      "TA": "118 veya 72 mmHg",
-      "Nabız": "96 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "118/72 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "18/dk",
       "SpO2": "%97 oda havasında",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durumda hafif düşkünlük ve anemiye bağlı solukluk izleniyor.",
@@ -34148,11 +34148,11 @@ export const cases = [
     "chiefComplaint": "Boyun ve aksillada uzun süredir lenf nodu şişliği.",
     "stem": "75 yaşındaki erkek hasta boyun ve aksillada uzun süredir devam eden lenf nodu şişlikleriyle başvurur. Rutin kontrollerinde yıllardır süren lenfositoz öyküsü vardır ve hasta belirgin B semptomu tariflemez.",
     "vitals": {
-      "TA": "128 veya 74 mmHg",
-      "Nabız": "82 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "128/74 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Servikal ve aksiller bölgelerde mobil, lastik kıvamlı çok sayıda lenfadenopati palpe ediliyor.",
@@ -34171,8 +34171,8 @@ export const cases = [
         "rows": [
           [
             "Mutlak lenfosit sayısı",
-            "8. 900 veya mm³",
-            "<4. 000 veya mm³",
+            "8.900/mm³",
+            "<4.000/mm³",
             "Yüksek"
           ],
           [
@@ -34214,7 +34214,7 @@ export const cases = [
         },
         {
           "label": "Ayırıcı nokta",
-          "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11. 14) ile ilişkilidir."
+          "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11; 14) ile ilişkilidir."
         },
         {
           "label": "Klinik not",
@@ -34261,7 +34261,7 @@ export const cases = [
           },
           {
             "label": "Mekanizma özeti",
-            "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11. 14) ile ilişkilidir."
+            "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11; 14) ile ilişkilidir."
           },
           {
             "label": "Sınav incisi",
@@ -34279,7 +34279,7 @@ export const cases = [
           },
           {
             "label": "Mekanizma özeti",
-            "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11. 14) ile ilişkilidir."
+            "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11; 14) ile ilişkilidir."
           },
           {
             "label": "Sınav incisi",
@@ -34385,11 +34385,11 @@ export const cases = [
     "chiefComplaint": "Halsizlik, sararma ve çarpıntı.",
     "stem": "58 yaşındaki kadın hasta kısa sürede gelişen halsizlik, sararma ve çarpıntı yakınmalarıyla başvurur. Kanama öyküsü yoktur. Retikülositoz, LDH yüksekliği, indirekt bilirubin artışı ve direkt antiglobulin testi pozitifliği hemolitik süreci destekler.",
     "vitals": {
-      "TA": "110 veya 70 mmHg",
-      "Nabız": "108 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "110/70 mmHg",
+      "Nabız": "108/dk",
+      "Solunum": "20/dk",
       "SpO2": "%97 oda havasında",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Cilt ve skleralarda hafif ikter izleniyor.",
@@ -34630,11 +34630,11 @@ export const cases = [
     "chiefComplaint": "Herediter kanser sendromu-gen eşleşmesi.",
     "stem": "Ailesinde genç yaşta yaygın mide kanseri, meme-over kanseri ve sarkom öyküleri bulunan bir aile için sendrom-gen eşleşmeleri gözden geçirilir. Soru, yanlış eşleşmeyi ayırt etmeye odaklanır.",
     "vitals": {
-      "TA": "120 veya 76 mmHg",
-      "Nabız": "78 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "120/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -34831,11 +34831,11 @@ export const cases = [
     "chiefComplaint": "İV antibiyotik uygulamasından dakikalar sonra fenalık ve kaşıntı.",
     "stem": "Pnömoni nedeniyle başlanan antibiyotik sonrası avuç içi kaşıntısı, fenalık hissi ve yaygın döküntü gelişiyor.",
     "vitals": {
-      "TA": "60 veya 40 mmHg",
-      "Nabız": "115 veya dk",
-      "Solunum": "28 veya dk",
+      "TA": "60/40 mmHg",
+      "Nabız": "115/dk",
+      "Solunum": "28/dk",
       "SpO2": "%91 oda havasında",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Yaygın ürtikeryal döküntü ve dudak çevresinde ödem izleniyor.",
@@ -35033,11 +35033,11 @@ export const cases = [
     "chiefComplaint": "Parmak uçlarında ağrı, morarma ve ülser.",
     "stem": "Uzun süredir Raynaud yakınmaları olan hastada son haftalarda parmak uçlarında ağrılı morarma ve ülser gelişiyor. Aspirin ve kalsiyum kanal blokerinden yeterli fayda görmemiş.",
     "vitals": {
-      "TA": "132 veya 82 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "132/82 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 6 °C",
+      "Ateş": "36.6 °C",
       "Ağrı skoru": "6 veya 10"
     },
     "exam": [
@@ -35239,11 +35239,11 @@ export const cases = [
     "chiefComplaint": "Fotosensitivite, malar döküntü ve eklem ağrısı.",
     "stem": "28 yaşındaki kadın hasta fotosensitivite, malar döküntü, el küçük eklemlerinde ağrı ve son haftalarda bacaklarda hafif şişlik yakınmalarıyla romatoloji kontrolüne gelir. Anti-dsDNA yüksekliği ve C3/C4 düşüklüğü hastalık aktivitesini destekler.",
     "vitals": {
-      "TA": "118 veya 74 mmHg",
-      "Nabız": "92 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "118/74 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "37. 2 °C"
+      "Ateş": "37.2 °C"
     },
     "exam": [
       "Yüzde nazolabial kıvrımları koruyan malar eritem var.",
@@ -35483,11 +35483,11 @@ export const cases = [
     "chiefComplaint": "Nefrotik düzeyde proteinüri.",
     "stem": "Erişkin hasta nefrotik düzeyde proteinüri ve pretibial ödem nedeniyle nefrolojiye başvurur. Klinik tablo primer membranöz nefropati ile sekonder nedenlerin ayırt edilmesini gerektirir.",
     "vitals": {
-      "TA": "146 veya 88 mmHg",
-      "Nabız": "86 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "146/88 mmHg",
+      "Nabız": "86/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Pretibial ödem mevcut.",
@@ -35508,14 +35508,14 @@ export const cases = [
         "rows": [
           [
             "Proteinüri",
-            "6. 2 g veya g kreatinin",
-            "<0. 15 g veya g kreatinin",
+            "6.2 g/gkreatinin",
+            "<0.15 g/gkreatinin",
             "Nefrotik düzey"
           ],
           [
             "Serum albümin",
-            "2. 4 g veya dL",
-            "3. 5–5. 0 g veya dL",
+            "2.4 g/dL",
+            "3.5–5.0 g/dL",
             "Düşük"
           ],
           [
@@ -35734,11 +35734,11 @@ export const cases = [
     "chiefComplaint": "Proteinüriye eşlik eden atipik böbrek bulgusu.",
     "stem": "Uzun süreli diyabeti olan hastada albuminüri ve yavaş ilerleyen böbrek fonksiyon bozukluğu izlenmektedir. Hekim, diyabetik nefropati dışı bir etiyolojiyi düşündürecek kırmızı bayrak bulgusunu ayırt etmek ister.",
     "vitals": {
-      "TA": "142 veya 84 mmHg",
-      "Nabız": "84 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "142/84 mmHg",
+      "Nabız": "84/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Periferik ödem hafif."
@@ -35937,11 +35937,11 @@ export const cases = [
     "chiefComplaint": "Halsizlik, güçsüzlük ve bulantı.",
     "stem": "Kronik böbrek hastalığı olan 54 yaşındaki erkek hasta halsizlik, kas güçsüzlüğü ve bulantı ile acile başvurur. Klinik tablo potasyum yüksekliğine bağlı kardiyak membran instabilitesi açısından acil değerlendirilir.",
     "vitals": {
-      "TA": "138 veya 82 mmHg",
-      "Nabız": "48 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "138/82 mmHg",
+      "Nabız": "48/dk",
+      "Solunum": "18/dk",
       "SpO2": "%97 oda havasında",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Genel durum orta.",
@@ -35952,7 +35952,7 @@ export const cases = [
         "id": "hyperkalemia-ecg-electrolyte",
         "label": "EKG ve elektrolit paneli",
         "type": "Ecg",
-        "summary": "K ve 7. 1 mEq veya L.",
+        "summary": "K⁺ 7.1 mEq/L.",
         "findings": [
           "EKG değişikliği olan hiperpotasemide ilk hedef kardiyak membran stabilizasyonudur."
         ],
@@ -35960,8 +35960,8 @@ export const cases = [
         "rows": [
           [
             "Potasyum",
-            "7. 1 mEq veya L",
-            "3. 5–5. 0",
+            "7.1 mEq/L",
+            "3.5–5.0",
             "Yüksek"
           ],
           [
@@ -35977,7 +35977,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu hastada ilk uygulanması gereken tedavi hangisidir?",
     "spotPearl": "Hiperpotasemi ve EKG değişikliği: ilk tedavi IV kalsiyum glukonat.",
-    "learningOutcome": "Ana ipucu K ve 7. 1 ve sivri T ve QRS genişlemesi bilgisidir. Bu bilgi doğru sınav kararını destekler.",
+    "learningOutcome": "Ana ipucu K⁺ 7.1 ve sivri T ve QRS genişlemesi bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -36075,7 +36075,7 @@ export const cases = [
           "Hemodiyaliz": {
             "explanation": "Hemodiyaliz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
-              "K ve 7.",
+              "K⁺ 7.",
               "Potasyum 7.",
               "Hemodiyaliz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
@@ -36083,7 +36083,7 @@ export const cases = [
           "İnsülin ve dekstroz": {
             "explanation": "İnsülin ve dekstroz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
-              "K ve 7.",
+              "K⁺ 7.",
               "Potasyum 7.",
               "İnsülin ve dekstroz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
@@ -36091,7 +36091,7 @@ export const cases = [
           "Sodyum polistiren sülfonat": {
             "explanation": "Sodyum polistiren sülfonat benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
-              "K ve 7.",
+              "K⁺ 7.",
               "Potasyum 7.",
               "Sodyum polistiren sülfonat yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
@@ -36125,8 +36125,8 @@ export const cases = [
             "text": "Ardından insülin-dekstroz, beta agonist ve potasyum uzaklaştırıcı tedavileri planla."
           }
         ],
-        "learningOutcome": "Ana ipucunu (K ve 7.",
-        "spotClue": "K ve 7.",
+        "learningOutcome": "Ana ipucunu (K⁺ 7.",
+        "spotClue": "K⁺ 7.",
         "trap": "Potasyumu düşüren tedaviyi membran stabilizasyonundan önce seçmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
@@ -36166,11 +36166,11 @@ export const cases = [
     "chiefComplaint": "Unutkanlık yakınması.",
     "stem": "Yakınları unutkanlığın eş kaybından sonra arttığını, hastada iştah azalması, keyifsizlik ve ilgide azalma geliştiğini belirtiyor.",
     "vitals": {
-      "TA": "126 veya 72 mmHg",
-      "Nabız": "74 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "126/72 mmHg",
+      "Nabız": "74/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Psikomotor yavaşlama ve düşük motivasyon izleniyor.",
@@ -36370,11 +36370,11 @@ export const cases = [
     "chiefComplaint": "Gövdede yaygınlaşan skuamlı döküntü.",
     "stem": "20 yaşındaki kadın hasta birkaç gün önce gövdede tek büyük oval skuamlı plak fark ettikten sonra gövde ve proksimal ekstremitelerde çok sayıda benzer döküntü gelişmesi nedeniyle başvurur. Sistemik toksisite veya mukozal erozyon tariflemez.",
     "vitals": {
-      "TA": "112 veya 70 mmHg",
-      "Nabız": "78 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "112/70 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Gövde ve proksimal ekstremitelerde eritemli skuamlı makülopapüller izleniyor.",
@@ -36571,11 +36571,11 @@ export const cases = [
     "chiefComplaint": "Ayakta kaşıntılı skuamlı lezyonlar.",
     "stem": "Ayak parmak aralarında maserasyon ve plantar hiperkeratotik skuam gelişen hastada mantar enfeksiyonu düşünülüyor.",
     "vitals": {
-      "TA": "118 veya 74 mmHg",
-      "Nabız": "76 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "118/74 mmHg",
+      "Nabız": "76/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99 oda havasında",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "İnterdijital aralıklarda masere skuamlı lezyonlar izleniyor.",
@@ -36791,11 +36791,11 @@ export const cases = [
     "chiefComplaint": "Sağ tarafta ani güç kaybı.",
     "stem": "65 yaşındaki erkek hasta ani başlayan sağ taraf güç kaybı ile acile getirilir. Güç kaybı sağ bacakta belirgin, sağ kolda ise daha hafiftir. Konuşma bozukluğu ön planda değildir.",
     "vitals": {
-      "TA": "168 veya 92 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "168/92 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
       "SpO2": "%97 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Sağ alt ekstremite plejik, sağ üst ekstremite 4 veya 5 kuvvetinde.",
@@ -36995,11 +36995,11 @@ export const cases = [
     "chiefComplaint": "Ellerde kuvvetsizlik ve gevşemede güçlük.",
     "stem": "Hasta yumruk yaptıktan sonra parmaklarını açmakta zorlanıyor. Meksiletin ile gevşeme güçlüğünün azaldığını söylüyor.",
     "vitals": {
-      "TA": "122 veya 76 mmHg",
-      "Nabız": "78 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "122/76 mmHg",
+      "Nabız": "78/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Frontal kellik, temporal kas atrofisi ve hafif bilateral pitozis izleniyor.",
@@ -37195,11 +37195,11 @@ export const cases = [
     "chiefComplaint": "Baş ağrısı, yüksek ateş, kişilik değişikliği ve nöbet.",
     "stem": "32 yaşındaki kadın hasta akut başlayan ateş, baş ağrısı, davranış değişikliği, anlamsız konuşma ve fokal motor nöbetlerle acile getirilir. Tablo ensefalit etkeni açısından acil değerlendirme gerektirir.",
     "vitals": {
-      "TA": "118 veya 72 mmHg",
-      "Nabız": "112 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "118/72 mmHg",
+      "Nabız": "112/dk",
+      "Solunum": "20/dk",
       "SpO2": "%96 oda havasında",
-      "Ateş": "39. 1 °C"
+      "Ateş": "39.1 °C"
     },
     "exam": [
       "Uykuya meyilli.",
@@ -37418,11 +37418,11 @@ export const cases = [
     "chiefComplaint": "Yoğun rekabet ve kişilerarası çatışma.",
     "stem": "Kişi kendisindeki kıskançlığı kabul etmiyor. Bunun yerine yakın arkadaşının kendisini kıskandığını ve sürekli onu geçmeye çalıştığını söylüyor.",
     "vitals": {
-      "TA": "118 veya 76 mmHg",
-      "Nabız": "82 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "118/76 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Genel görünüm düzenli.",
@@ -37619,11 +37619,11 @@ export const cases = [
     "chiefComplaint": "Konfabulasyon ve yeni bilgi öğrenmede bozulma.",
     "stem": "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasında anterograd amnezi ve konfabulasyon gelişiyor.",
     "vitals": {
-      "TA": "116 veya 72 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "116/72 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Hasta uyanık ancak yakın dönem belleği belirgin bozuk.",
@@ -37819,11 +37819,11 @@ export const cases = [
     "chiefComplaint": "Kronik diz ağrısı.",
     "stem": "Erişkin hasta merdiven inip çıkarken artan kronik diz ağrısı ve hareketle krepitasyon yakınmasıyla başvurur. Soru, osteoartritte beklenen ve beklenmeyen direkt grafi bulgularını ayırt etmeye odaklanır.",
     "vitals": {
-      "TA": "134 veya 78 mmHg",
-      "Nabız": "82 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "134/78 mmHg",
+      "Nabız": "82/dk",
+      "Solunum": "16/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 6 °C",
+      "Ateş": "36.6 °C",
       "Ağrı skoru": "5 veya 10"
     },
     "exam": [
@@ -38024,11 +38024,11 @@ export const cases = [
     "chiefComplaint": "Omuz ön kısmında ağrı.",
     "stem": "Cirit sporu yapan hastada özellikle dirsek fleksiyonu ve supinasyonla artan anterior omuz ağrısı gelişiyor.",
     "vitals": {
-      "TA": "120 veya 76 mmHg",
-      "Nabız": "80 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "120/76 mmHg",
+      "Nabız": "80/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99 oda havasında",
-      "Ateş": "36. 6 °C",
+      "Ateş": "36.6 °C",
       "Ağrı skoru": "6 veya 10"
     },
     "exam": [
@@ -38230,11 +38230,11 @@ export const cases = [
     "chiefComplaint": "Öksürük, gece terlemesi ve ARB pozitif balgam.",
     "stem": "Öksürük, gece terlemesi ve kilo kaybı olan hastada aktif akciğer tüberkülozu düşünülmektedir. Servis ortamında hasta ile temas sırasında uygulanacak izolasyon önlemi sorgulanır.",
     "vitals": {
-      "TA": "110 veya 70 mmHg",
-      "Nabız": "98 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "110/70 mmHg",
+      "Nabız": "98/dk",
+      "Solunum": "20/dk",
       "SpO2": "%96 oda havasında",
-      "Ateş": "37. 9 °C"
+      "Ateş": "37.9 °C"
     },
     "exam": [
       "Hasta öksürüyor.",
@@ -38434,11 +38434,11 @@ export const cases = [
     "chiefComplaint": "Başına darbe sonrası baş ağrısı, amnezi ve bulanık görme.",
     "stem": "Boks sırasında başına darbe alan hastada kısa süreli dikkat ve konsantrasyon bozukluğu, amnezi ve bulanık görme gelişir. GKS yüksek seyretse de yakınmalar travma sonrası klinik fonksiyon bozukluğunu düşündürür.",
     "vitals": {
-      "TA": "124 veya 78 mmHg",
-      "Nabız": "88 veya dk",
-      "Solunum": "16 veya dk",
+      "TA": "124/78 mmHg",
+      "Nabız": "88/dk",
+      "Solunum": "16/dk",
       "SpO2": "%99 oda havasında",
-      "Ateş": "36. 6 °C",
+      "Ateş": "36.6 °C",
       "GKS": "15"
     },
     "exam": [
@@ -38658,11 +38658,11 @@ export const cases = [
     "chiefComplaint": "Sırtta küçük papülopüstüler lezyonlar.",
     "stem": "Term yenidoğanda doğumdan kısa süre sonra gövde ve sırtta sarı-beyaz küçük papülopüstüller gelişir. Bebek iyi görünür, ateş yoktur ve lezyonlar kısa sürede gerileme eğilimindedir.",
     "vitals": {
-      "TA": "68 veya 42 mmHg",
-      "Nabız": "136 veya dk",
-      "Solunum": "42 veya dk",
+      "TA": "68/42 mmHg",
+      "Nabız": "136/dk",
+      "Solunum": "42/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 9 °C"
+      "Ateş": "36.9 °C"
     },
     "exam": [
       "Genel durum iyi.",
@@ -38890,11 +38890,11 @@ export const cases = [
     "chiefComplaint": "Halsizlik, kusma, koyu idrar ve sarılık.",
     "stem": "Yaz kampından birkaç hafta sonra halsizlik, kusma, koyu idrar ve ikter gelişen çocukta akut hepatit düşünülüyor.",
     "vitals": {
-      "TA": "100 veya 64 mmHg",
-      "Nabız": "102 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "100/64 mmHg",
+      "Nabız": "102/dk",
+      "Solunum": "20/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "37. 7 °C"
+      "Ateş": "37.7 °C"
     },
     "exam": [
       "Skleralarda ikter ve hepatomegali mevcut.",
@@ -39147,11 +39147,11 @@ export const cases = [
     "chiefComplaint": "Gelişme geriliği ve ağır anemi.",
     "stem": "Akraba ebeveynlerin 2 yaşındaki çocuğunda gelişme geriliği, sensorinöral işitme kaybı, diyabet ve belirgin solukluk birlikte izlenir. Kalıtsal vitamin taşıma bozukluğu düşünülür.",
     "vitals": {
-      "TA": "90 veya 55 mmHg",
-      "Nabız": "118 veya dk",
-      "Solunum": "24 veya dk",
+      "TA": "90/55 mmHg",
+      "Nabız": "118/dk",
+      "Solunum": "24/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 8 °C"
+      "Ateş": "36.8 °C"
     },
     "exam": [
       "Yaşıtlarına göre zayıf ve kısa görünümde.",
@@ -39162,15 +39162,15 @@ export const cases = [
         "id": "tus-spot-trma-cbc",
         "label": "Tam kan sayımı",
         "type": "Hematology",
-        "summary": "Hemoglobin 5 g veya dL, MCV 110 fL. Ağır makrositer anemi.",
+        "summary": "Hemoglobin 5 g/dL, MCV 110 fL. Ağır makrositer anemi.",
         "findings": [
-          "Hemoglobin 5 g veya dL, MCV 110 fL."
+          "Hemoglobin 5 g/dL, MCV 110 fL."
         ],
         "priority": "Useful",
         "rows": [
           [
             "Tam kan sayımı",
-            "Hemoglobin 5 g veya dL, MCV 110 fL, ağır makrositer anemi.",
+            "Hemoglobin 5 g/dL, MCV 110 fL, ağır makrositer anemi.",
             "Beklenen veya karar eşiği",
             "Karar verdirici"
           ]
@@ -39372,11 +39372,11 @@ export const cases = [
     "chiefComplaint": "Davranış değişikliği ve okul başarısında gerileme.",
     "stem": "10 yaşındaki erkek çocukta okul başarısında gerileme, davranış değişikliği ve ciltte hiperpigmentasyon gelişir. Ailede erkek bireylerde erken yaş nörolojik kötüleşme öyküsü olduğu öğrenilir.",
     "vitals": {
-      "TA": "96 veya 60 mmHg",
-      "Nabız": "94 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "96/60 mmHg",
+      "Nabız": "94/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Dikkat azalması ve hafif spastisite izleniyor.",
@@ -39577,11 +39577,11 @@ export const cases = [
     "chiefComplaint": "Puberte gecikmesi ve mukokutanöz bulgular.",
     "stem": "Kronik kandidiyal ağız lezyonları, mukozal hiperpigmentasyon, tırnak distrofisi ve gelişimsel gecikme bulguları olan ergende otoimmün endokrinopati düşünülüyor.",
     "vitals": {
-      "TA": "100 veya 62 mmHg",
-      "Nabız": "92 veya dk",
-      "Solunum": "18 veya dk",
+      "TA": "100/62 mmHg",
+      "Nabız": "92/dk",
+      "Solunum": "18/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 6 °C"
+      "Ateş": "36.6 °C"
     },
     "exam": [
       "Deri altı yağ dokusu azalmış, tırnaklarda distrofi var.",
@@ -39782,11 +39782,11 @@ export const cases = [
     "chiefComplaint": "Akut hemiparezi ve marfanoid görünüm.",
     "stem": "Akrabalık öyküsü olan 10 yaşındaki erkek çocuk ani başlayan sol taraf güçsüzlüğü ile acile getirilir. Uzun boy, ince uzun parmaklar ve önceki lens cerrahisi öyküsü dikkat çeker.",
     "vitals": {
-      "TA": "112 veya 70 mmHg",
-      "Nabız": "104 veya dk",
-      "Solunum": "20 veya dk",
+      "TA": "112/70 mmHg",
+      "Nabız": "104/dk",
+      "Solunum": "20/dk",
       "SpO2": "%98 oda havasında",
-      "Ateş": "36. 7 °C"
+      "Ateş": "36.7 °C"
     },
     "exam": [
       "Açık saç rengi, uzun ince parmaklar ve marfanoid görünüm dikkat çekiyor.",
@@ -39986,11 +39986,11 @@ export const cases = [
     "chiefComplaint": "Doğumda solukluk ve ağır anemi.",
     "stem": "Term yenidoğan doğumdan hemen sonra belirgin solukluk, taşikardi ve zayıf perfüzyonla değerlendirilir. Anne veya bebekte belirgin dış kanama öyküsü yoktur. Hemolizsiz fetal kan kaybı olasılığı araştırılır.",
     "vitals": {
-      "TA": "58 veya 35 mmHg",
-      "Nabız": "172 veya dk",
-      "Solunum": "58 veya dk",
+      "TA": "58/35 mmHg",
+      "Nabız": "172/dk",
+      "Solunum": "58/dk",
       "SpO2": "%92 oda havasında",
-      "Ateş": "36. 5 °C"
+      "Ateş": "36.5 °C"
     },
     "exam": [
       "Genel muayene doğumsal anomali veya aktif kanama göstermiyor.",
@@ -40001,7 +40001,7 @@ export const cases = [
         "id": "neonatal-anemia-hemolysis-panel",
         "label": "Yenidoğan anemi ön değerlendirmesi",
         "type": "Lab",
-        "summary": "Hemoglobin 6. 2 g veya dL.",
+        "summary": "Hemoglobin 6.2 g/dL.",
         "findings": [
           "Hemoliz bulgusu olmadan ağır anemi fetal-maternal kan kaybını düşündürür."
         ],
@@ -40009,8 +40009,8 @@ export const cases = [
         "rows": [
           [
             "Hemoglobin",
-            "6. 2 g veya dL",
-            "14–22 g veya dL",
+            "6.2 g/dL",
+            "14–22 g/dL",
             "Düşük"
           ],
           [
@@ -40104,7 +40104,7 @@ export const cases = [
         "whyWrong": {
           "Rh alloimmünizasyonuna bağlı hemolitik hastalık": "Rh alloimmünizasyonunda Coombs pozitifliği ve hemoliz bulguları beklenir. Bu olguda hemoliz kanıtı baskın değildir.",
           "Konjenital aplastik anemi": "Aplastik tabloda kemik iliği üretim yetersizliği ve sıklıkla ek sitopeniler beklenir. Ani doğum sonrası hipoperfüzyon-kan kaybı paterni daha güçlüdür. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
-          "Fizyolojik yenidoğan anemisi": "Fizyolojik anemi doğum anında Hb 6. 2 g veya dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok."
+          "Fizyolojik yenidoğan anemisi": "Fizyolojik anemi doğum anında Hb 6.2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok."
         },
         "evidenceChain": [
           {
@@ -40182,7 +40182,7 @@ export const cases = [
             ]
           },
           "Fizyolojik yenidoğan anemisi": {
-            "explanation": "Fizyolojik anemi doğum anında Hb 6. 2 g veya dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
+            "explanation": "Fizyolojik anemi doğum anında Hb 6.2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
             "comparisonPoints": [
               "Yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
               "Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
@@ -40259,11 +40259,11 @@ export const cases = [
     "chiefComplaint": "Doğumda resüsitasyon ve asidoz.",
     "stem": "Term yenidoğan doğumda resüsitasyon gerektirir ve sonraki saatlerde letarji, tonus azalması ve zayıf emme gelişir. pH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir.",
     "vitals": {
-      "TA": "55 veya 32 mmHg",
-      "Nabız": "96 veya dk",
-      "Solunum": "30 veya dk düzensiz",
+      "TA": "55/32 mmHg",
+      "Nabız": "96/dk",
+      "Solunum": "30/dk düzensiz",
       "SpO2": "%90 destek oksijenle",
-      "Ateş": "36. 1 °C"
+      "Ateş": "36.1 °C"
     },
     "exam": [
       "Letarji, yaygın hipotonisite ve zayıf emme izleniyor.",
@@ -40274,22 +40274,22 @@ export const cases = [
         "id": "cord-gas-hie",
         "label": "Kord kan gazı",
         "type": "Lab",
-        "summary": "pH 6.90 ve baz açığı -15 mmol veya L.",
+        "summary": "pH 6.90 ve baz açığı -15 mmol/L.",
         "findings": [
           "Ağır asidoz ve ensefalopati bulguları nöroprotektif tedavi penceresi açısından kritik eşik oluşturur."
         ],
         "priority": "Essential",
         "rows": [
           [
-            "PH",
-            "6. 90",
-            "7. 25–7. 35",
+            "pH",
+            "6.90",
+            "7.25–7.35",
             "Düşük"
           ],
           [
             "Baz açığı",
-            "-15 mmol veya L",
-            ">-12 mmol veya L",
+            "-15 mmol/L",
+            ">-12 mmol/L",
             "Kritik"
           ]
         ]

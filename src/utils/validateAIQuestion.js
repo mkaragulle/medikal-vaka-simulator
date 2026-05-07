@@ -3,18 +3,20 @@ import { makeQuestionSignature, makeQuestionTopicSignature, normalizeQuestionTex
 import { cases } from '../data/cases.js';
 import { attachQuestionDedupeFields, createAIQuestionId, validateQuestionNovelty } from './questionDeduplication.js';
 import { validateBranchFit } from './aiBranchRules.js';
+import { detectInvalidMeasurementFormat, sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, validateAIQuestionQuality } from './aiQuestionQualityGate.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
 function cleanClinicalSummaryItem(value = '') {
-  return String(value || '')
+  return sanitizeMeasurementText(String(value || ''))
     .replace(/\s+/g, ' ')
     .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
-    .replace(/([,.;:!?])(?=\S)/g, '$1 ')
-    .replace(/\s*\/\s*/g, ' veya ')
+    .replace(/([,;:!?])(?=\S)/g, '$1 ')
+    .replace(/(?<!\d)\.(?=\S)/g, '. ')
+    .replace(/\s*\/\s*/g, '/')
     .replace(/[\s,;:.]+$/u, '')
     .trim();
 }
@@ -109,6 +111,10 @@ export function validateAIQuestionPayload(payload = {}) {
   if (normalizedCorrectText && normalizedInvestigationText.includes(normalizedCorrectText)) {
     warnings.push('tetkik metni doğru cevabı birebir içeriyor; ekranda maskeleme uygulanacak');
   }
+  if (detectInvalidMeasurementFormat(investigationText) || detectInvalidMeasurementFormat(JSON.stringify(payload.findings?.vitals || payload.vitals || {}))) {
+    errors.push('ölçüm/vital formatı tıbbi standarda uygun değil');
+  }
+
   DIRECT_LEAK_PHRASES.forEach((phrase) => {
     if (normalizeQuestionText(investigationText).includes(normalizeQuestionText(phrase))) {
       warnings.push(`tetkik yorumunda direkt tanı dili var: ${phrase}`);
@@ -142,14 +148,14 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
 function normalizeInvestigation(item, index, correctText) {
   const summary = stripAnswerLeak(item?.summary || item?.result || '', correctText);
   const findings = Array.isArray(item?.findings)
-    ? item.findings.map((finding) => stripAnswerLeak(finding, correctText))
+    ? item.findings.map((finding) => sanitizeMeasurementText(stripAnswerLeak(finding, correctText)))
     : [];
   return {
     id: item?.id || `remote-ai-investigation-${index + 1}`,
-    label: item?.label || item?.name || `Tetkik ${index + 1}`,
+    label: sanitizeMeasurementText(item?.label || item?.name || `Tetkik ${index + 1}`),
     type: item?.type || 'lab',
     priority: item?.priority || (index === 0 ? 'essential' : 'useful'),
-    summary,
+    summary: sanitizeMeasurementText(summary),
     findings,
     interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte değerlendirilir.',
   };
@@ -169,7 +175,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
   const rawInvestigations = payload.findings?.investigations || payload.investigations || [];
   const history = Array.isArray(payload.findings?.history) ? payload.findings.history : [];
   const exam = Array.isArray(payload.findings?.exam) ? payload.findings.exam : [];
-  const vitals = payload.findings?.vitals || payload.vitals || {};
+  const vitals = sanitizeVitalsObject(payload.findings?.vitals || payload.vitals || {});
 
   const normalized = {
     id: payload.id || createAIQuestionId('ai-spot-remote'),
@@ -178,23 +184,23 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     caseType: 'ai-spot',
     branchId: 'tus-spot-olgular',
     branchName: payload.relatedBranch || 'AI TUS Spot',
-    title: payload.title,
+    title: sanitizeMeasurementText(payload.title),
     relatedBranch: payload.relatedBranch || 'TUS Spot Olgular',
     spotCategory: `AI Spot • ${payload.relatedBranch || 'TUS'}`,
     difficulty: payload.difficulty || 'Orta-Zor',
-    learningTarget: payload.learningTarget,
-    demographics: payload.demographics || 'TUS adayı için kısa klinik bağlam',
-    setting: payload.setting || 'Kısa klinik pratik',
-    chiefComplaint: payload.chiefComplaint || payload.learningTarget,
-    stem: payload.stem,
-    history,
-    exam,
+    learningTarget: sanitizeMeasurementText(payload.learningTarget),
+    demographics: sanitizeMeasurementText(payload.demographics || 'TUS adayı için kısa klinik bağlam'),
+    setting: sanitizeMeasurementText(payload.setting || 'Kısa klinik pratik'),
+    chiefComplaint: sanitizeMeasurementText(payload.chiefComplaint || payload.learningTarget),
+    stem: sanitizeMeasurementText(payload.stem),
+    history: history.map(sanitizeMeasurementText),
+    exam: exam.map(sanitizeMeasurementText),
     vitals,
     investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)),
-    findings: { history, exam, vitals, investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)) },
+    findings: { history: history.map(sanitizeMeasurementText), exam: exam.map(sanitizeMeasurementText), vitals, investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)) },
     options,
     correctAnswer: correctId,
-    question: payload.question,
+    question: sanitizeMeasurementText(payload.question),
     questionType: payload.questionType || 'spot',
     clinicalFocus: payload.learningTarget,
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
