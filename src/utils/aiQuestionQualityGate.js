@@ -2,7 +2,11 @@ import { normalizeQuestionText } from './aiQuestionHistory.js';
 import { attachQuestionDedupeFields, getQuestionCorrectText, getQuestionOptionTexts, toPlainText } from './questionDeduplication.js';
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { validateBranchFit } from './aiBranchRules.js';
-import { removeInlineFieldLabels, repairMisplacedClinicalData, validateClinicalFieldPlacement } from './clinicalFieldPlacement.js';
+import {
+  removeInlineFieldLabels,
+  repairMisplacedClinicalData,
+  validateClinicalFieldPlacement,
+} from './clinicalFieldClassification.js';
 import {
   detectBrokenSentence,
   detectExcessivePunctuation,
@@ -49,6 +53,10 @@ export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'karar verdiren ipucu',
   'bu nedenle en iyi yanıt',
   'çeldirici',
+  'seçilen alt disiplin',
+  'tanı testleri tedaviyi geciktirmemelidir',
+  'mekanizma özeti',
+  'etken-test ayrımı',
 ];
 
 const HARD_FORBIDDEN_REGEXES = [
@@ -302,18 +310,20 @@ function normalizeSettingForQuestion(question = {}) {
 
 function buildNaturalHistorySummary(question = {}) {
   const profile = safeDemographic(question);
-  const presentation = normalizePediatricPresentation(question);
-  const setting = String(question.setting || '').trim();
-  const clues = deriveBranchSpecificClues(question).slice(0, 2);
+  const presentation = normalizePediatricPresentation(question).replace(/[.]+$/u, '');
+  const settingPhrase = normalizeSettingForQuestion(question);
   const intro = isBasicScience(question)
     ? `${profile}, ${presentation.toLocaleLowerCase('tr')} nedeniyle kısa TUS pratiğinde ele alınır.`
-    : `${profile}, ${presentation.toLocaleLowerCase('tr')} nedeniyle ${setting || 'başvurur'}.`;
-  const clueText = clues.length ? ` ${clues.join('; ')} dikkat çeker.` : '';
-  return cleanSentence(`${intro}${clueText}`)
-    .replace(/\bbaşvurur\./u, 'başvurur.')
+    : `${profile}, ${presentation.toLocaleLowerCase('tr')} nedeniyle ${settingPhrase || 'klinik değerlendirmeye alınır'}.`;
+  const historyPrompt = isBasicScience(question)
+    ? 'Temel mekanizma, verilen kısa bağlam üzerinden sorgulanır.'
+    : 'Semptom süresi, risk faktörleri ve eşlik eden yakınmalar öyküde netleştirilir.';
+  return cleanSentence(`${intro} ${historyPrompt}`)
+    .replace(/başvurur\./u, 'başvurur.')
     .replace(/\s+/g, ' ')
     .trim();
 }
+
 
 function normalizeInvestigationQuality(investigation = {}, index = 0) {
   const label = sanitizeMeasurementText(investigation.label || investigation.name || `Hedefli tetkik ${index + 1}`);
@@ -372,7 +382,7 @@ function repairDifferentialComparison(comparison = {}, question = {}) {
 }
 
 export function repairAIQuestionQuality(question = {}) {
-  const repaired = { ...question };
+  const repaired = repairMisplacedClinicalData({ ...question });
   repaired.demographics = safeDemographic(repaired);
   repaired.learningTarget = cleanSentence(repaired.learningTarget || repaired.clinicalFocus || 'Karar verdirici klinik bilginin yorumlanması');
   if (hasForbiddenPhrase(repaired.learningTarget)) repaired.learningTarget = 'Karar verdirici klinik bulgunun doğru yorumlanması';
@@ -414,6 +424,8 @@ export function repairAIQuestionQuality(question = {}) {
     investigations: repaired.investigations,
   };
 
+  Object.assign(repaired, repairMisplacedClinicalData(repaired));
+
   repaired.explanation = repairFeedbackText(repaired.explanation || repaired.diagnosis?.explanation || repaired.diagnosis?.answerFeedback?.whyCorrect, repaired);
   repaired.wrongOptionFeedback = { ...(repaired.wrongOptionFeedback || {}) };
   (Array.isArray(repaired.options) ? repaired.options : []).forEach((option) => {
@@ -449,9 +461,22 @@ export function repairAIQuestionQuality(question = {}) {
     ];
   }
 
-  const fieldRepaired = repairMisplacedClinicalData(repaired);
-  attachQuestionDedupeFields(fieldRepaired);
-  return fieldRepaired;
+  const semanticRepaired = repairMisplacedClinicalData(repaired);
+  if (isPediatrics(semanticRepaired)) {
+    const pediatricPresentation = normalizePediatricPresentation(semanticRepaired);
+    semanticRepaired.chiefComplaint = pediatricPresentation;
+    semanticRepaired.patientIntro = {
+      ...(semanticRepaired.patientIntro || {}),
+      presentation: pediatricPresentation,
+      historySummary: buildNaturalHistorySummary({ ...semanticRepaired, chiefComplaint: pediatricPresentation }),
+    };
+    semanticRepaired.findings = {
+      ...(semanticRepaired.findings || {}),
+      history: [semanticRepaired.patientIntro.historySummary],
+    };
+  }
+  attachQuestionDedupeFields(semanticRepaired);
+  return semanticRepaired;
 }
 
 function visibleQualityTexts(question = {}) {
@@ -513,6 +538,9 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
     }
   });
   errors.push(...validateAgeSymptomCoherence(question));
+  const fieldPlacement = validateClinicalFieldPlacement(question);
+  if (!fieldPlacement.ok) errors.push(...fieldPlacement.errors.map((error) => `field-placement:${error}`));
+  warnings.push(...fieldPlacement.warnings.map((warning) => `field-placement:${warning}`));
 
   const branchFit = validateBranchFit(question, requestedBranch || question.relatedBranch || question.branchName);
   if (!branchFit.ok) errors.push(...branchFit.errors.map((error) => `branch-fit:${error}`));
@@ -542,10 +570,6 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
   const editorial = validateGeneratedCaseText(question);
   if (!editorial.ok) errors.push(...editorial.errors.map((error) => `editorial:${error}`));
   warnings.push(...editorial.warnings);
-
-  const fieldPlacement = validateClinicalFieldPlacement(question);
-  if (!fieldPlacement.ok) errors.push(...fieldPlacement.errors.map((error) => `field-placement:${error}`));
-  warnings.push(...fieldPlacement.warnings.map((warning) => `field-placement:${warning}`));
 
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), warnings: Array.from(new Set(warnings)) };
 }

@@ -1,3 +1,5 @@
+export const TUS_SPOT_BRANCH_ID = 'tus-spot-olgular';
+
 export const branches = [
   {
     "id": "tus-spot-olgular",

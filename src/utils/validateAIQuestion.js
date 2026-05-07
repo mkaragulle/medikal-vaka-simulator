@@ -6,7 +6,6 @@ import { validateBranchFit } from './aiBranchRules.js';
 import { detectInvalidMeasurementFormat, sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, validateAIQuestionQuality } from './aiQuestionQualityGate.js';
 import { repairEditorialQuality, normalizeMedicalTurkish } from './editorialQuality.js';
-import { repairMisplacedClinicalData, validateClinicalFieldPlacement } from './clinicalFieldPlacement.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -114,21 +113,6 @@ export function validateAIQuestionPayload(payload = {}) {
   if (detectInvalidMeasurementFormat(investigationText) || detectInvalidMeasurementFormat(JSON.stringify(payload.findings?.vitals || payload.vitals || {}))) {
     errors.push('ölçüm/vital formatı tıbbi standarda uygun değil');
   }
-
-  const fieldPlacement = validateClinicalFieldPlacement({
-    chiefComplaint: payload.chiefComplaint,
-    stem: payload.stem,
-    exam: payload.findings?.exam || payload.exam || [],
-    investigations: payload.findings?.investigations || payload.investigations || [],
-    patientIntro: {
-      presentation: payload.chiefComplaint || payload.title,
-      riskContext: payload.patientIntro?.riskContext || [],
-      distinctiveClues: payload.evidenceChain || payload.patientIntro?.distinctiveClues || [],
-      historySummary: payload.stem,
-    },
-    evidenceChain: payload.evidenceChain || [],
-  });
-  if (!fieldPlacement.ok) warnings.push(...fieldPlacement.errors.map((error) => `alan sınıflandırma: ${error}`));
 
   DIRECT_LEAK_PHRASES.forEach((phrase) => {
     if (normalizeQuestionText(investigationText).includes(normalizeQuestionText(phrase))) {
@@ -257,7 +241,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     },
   };
 
-  const repaired = repairAIQuestionQuality(repairMisplacedClinicalData(normalized));
+  const repaired = repairAIQuestionQuality(normalized);
   attachQuestionDedupeFields(repaired);
   repaired.generatedAt = new Date(repaired.aiMeta.generatedAt).toISOString();
   return repaired;
