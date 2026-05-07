@@ -7,21 +7,76 @@ import {
   makeQuestionSignature,
   makeQuestionTopicSignature,
   makeSeedSignature,
+  normalizeQuestionText,
+  stableHash,
 } from './aiQuestionHistory.js';
 import { validateAIQuestionCase } from './validateAIQuestion.js';
+import { createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
 
 const AI_BRANCH_ID = 'tus-spot-olgular';
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const CASE_SEED_LIMIT = 220;
+const CASE_CONCEPT_LIMIT = 220;
+const MAX_GENERATION_ATTEMPTS = 180;
 const BRANCH_NAME_BY_ID = Object.fromEntries((branches || []).map((branch) => [branch.id, branch.name || branch.shortName || branch.id]));
 
-function nowToken() {
-  return `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-}
+const FALLBACK_DISTRACTORS_BY_BRANCH = {
+  'Tıbbi Mikrobiyoloji': ['Geçirilmiş enfeksiyon paterni', 'Aşı sonrası bağışıklık paterni', 'Kronik taşıyıcılık paterni', 'Reaktivasyon paterni', 'Kontaminasyon lehine sonuç'],
+  'Tıbbi Farmakoloji': ['Nalokson', 'Flumazenil', 'N-asetilsistein', 'Fomepizol', 'Dantrolen', 'Metilen mavisi'],
+  'Tıbbi Biyokimya': ['Fenilalanin hidroksilaz defekti', 'Ornitin transkarbamilaz defekti', 'Propionil-CoA karboksilaz defekti', 'Homogentizat oksidaz defekti', 'Pirüvat dehidrogenaz defekti'],
+  'İç Hastalıkları': ['Sekonder endokrin yetmezlik', 'Akut enfeksiyöz tablo', 'Primer hiperaldosteronizm', 'Uygunsuz ADH sendromu', 'Fonksiyonel yakınma paterni'],
+  'Çocuk Sağlığı ve Hastalıkları': ['Epiglotit', 'Yabancı cisim aspirasyonu', 'Bronşiolit', 'Astım atağı', 'Bakteriyel trakeit'],
+  'Kadın Hastalıkları ve Doğum': ['Normal intrauterin gebelik', 'Tam abortus', 'Molar gebelik', 'Korpus luteum kisti rüptürü', 'Pelvik inflamatuvar hastalık'],
+  default: ['Yakın klinik çeldirici', 'Farklı mekanizmalı benzer tablo', 'Geçirilmiş hastalık paterni', 'Akut komplikasyon dışı durum', 'Normal varyant'],
+};
 
-function optionTextById(seed, optionId) {
-  return seed.options.find((option) => option.id === optionId)?.text || seed.options[0]?.text || '';
-}
+const SCENARIO_OPENERS = [
+  'Kısa TUS pratiğinde değerlendirilen hastada',
+  'Acil karar basamağına getirilen olguda',
+  'Poliklinik değerlendirmesinde ayırıcı tanı gerektiren tabloda',
+  'Nöbetçi hekimin hızlı yorumlaması gereken spot olguda',
+  'Temel bilim bilgisinin klinik paternle birleştirildiği soruda',
+  'Klinik karar toplantısında tartışılan kısa olguda',
+];
+
+const QUESTION_ANGLES = [
+  {
+    id: 'pattern',
+    label: 'patern yorumu',
+    question: 'Bu kısa klinik patern ve objektif veriler birlikte düşünüldüğünde en uygun seçenek hangisidir?',
+    stemCue: 'öykü, muayene ve seçilmiş objektif veriler tek bir karar ekseninde birleştirilmelidir',
+  },
+  {
+    id: 'first-step',
+    label: 'ilk yaklaşım',
+    question: 'Bu hasta için TUS mantığında en doğru ilk yaklaşım veya hedef seçenek hangisidir?',
+    stemCue: 'öncelik doğru tanısal/terapötik basamağı geciktirmeden seçmektir',
+  },
+  {
+    id: 'mechanism',
+    label: 'mekanizma bağlantısı',
+    question: 'Bu tablonun temel mekanizmasını veya ayırt ettirici bilgisini en iyi karşılayan seçenek hangisidir?',
+    stemCue: 'soru, ezber isimden çok mekanizma ile klinik ipucunu eşleştirmeyi gerektirir',
+  },
+  {
+    id: 'differential',
+    label: 'çeldirici ayrımı',
+    question: 'Benzer seçenekler arasından bu olguyu en iyi açıklayan yanıt hangisidir?',
+    stemCue: 'çeldiriciler aynı kategori içinde tutulmuştur ve karar tek ayırt ettirici ipucuna dayanır',
+  },
+  {
+    id: 'lab',
+    label: 'tetkik yorumu',
+    question: 'Verilen tetkik ve klinik bağlam birlikte yorumlandığında en güçlü sonuç hangisidir?',
+    stemCue: 'tetkik sonucu tanıyı doğrudan yazmaz; adaydan patern yorumu beklenir',
+  },
+];
+
+const DEMOGRAPHIC_POOL = [
+  '19 yaş kadın', '23 yaş erkek', '31 yaş kadın', '37 yaş erkek', '44 yaş kadın', '52 yaş erkek',
+  '61 yaş kadın', '68 yaş erkek', '2 yaş çocuk', '9 yaş çocuk', '10 günlük yenidoğan', '16 yaş ergen',
+];
+
+const SETTING_POOL = ['Acil servis', 'Dahiliye polikliniği', 'Çocuk acil', 'Aile hekimliği başvurusu', 'Servis konsültasyonu', 'Yoğun bakım ön değerlendirmesi'];
 
 function richItemText(item = '') {
   if (!item) return '';
@@ -32,119 +87,125 @@ function richItemText(item = '') {
 }
 
 function uniqueStrings(items = []) {
-  return Array.from(new Set(items.map((item) => String(richItemText(item) || '').trim()).filter(Boolean)));
-}
-
-function sanitizeOptionText(text = '') {
-  return String(text).replace(/\s+/g, ' ').trim();
+  return Array.from(new Set(items.map((item) => String(richItemText(item) || '').replace(/\s+/g, ' ').trim()).filter(Boolean)));
 }
 
 function branchTextOfSeed(seed) {
   return `${seed.relatedBranch || ''} ${seed.spotCategory || ''} ${seed.branchId || ''}`.toLocaleLowerCase('tr');
 }
 
+function optionTextById(seed, optionId) {
+  return seed.options.find((option) => option.id === optionId)?.text || seed.options[0]?.text || '';
+}
+
 function getCaseAnswerFeedback(clinicalCase = {}) {
   return clinicalCase.diagnosis?.answerFeedback || clinicalCase.answerFeedback || {};
 }
 
-function getCaseEvidenceChain(clinicalCase = {}) {
-  const feedback = getCaseAnswerFeedback(clinicalCase);
-  return uniqueStrings([
-    ...(Array.isArray(feedback.evidenceChain) ? feedback.evidenceChain : []),
-    ...(Array.isArray(clinicalCase.patientIntro?.distinctiveClues) ? clinicalCase.patientIntro.distinctiveClues : []),
-  ]).slice(0, 5);
+function getBranchName(clinicalCase = {}) {
+  return BRANCH_NAME_BY_ID[clinicalCase.branchId] || clinicalCase.branchId || 'TUS Spot Olgular';
 }
 
-function getCasePearl(clinicalCase = {}) {
+function compactLearningTarget(text = '', fallback = '') {
+  const cleaned = String(text || fallback || '')
+    .replace(/\s+/g, ' ')
+    .replace(/\bBu nedenle\b.*$/i, '')
+    .trim();
+  return cleaned || 'Karar verdirici klinik paternin benzer çeldiricilerden ayrılması';
+}
+
+function collectBranchDiagnosisPool(branchId) {
+  return uniqueStrings(
+    cases
+      .filter((item) => item.branchId === branchId)
+      .map((item) => item.diagnosis?.correct)
+      .filter(Boolean),
+  );
+}
+
+function collectGlobalDiagnosisPool() {
+  return uniqueStrings(cases.map((item) => item.diagnosis?.correct).filter(Boolean));
+}
+
+function selectDeterministic(items = [], key = '', count = 1) {
+  if (!items.length) return [];
+  const start = parseInt(stableHash(key).replace(/^q/, ''), 36) % items.length;
+  const selected = [];
+  for (let offset = 0; offset < items.length && selected.length < count; offset += 1) {
+    selected.push(items[(start + offset) % items.length]);
+  }
+  return selected;
+}
+
+function buildCaseDerivedOptions(clinicalCase, relatedBranch) {
+  const correct = clinicalCase.diagnosis?.correct;
+  if (!correct) return null;
+  const branchPool = collectBranchDiagnosisPool(clinicalCase.branchId).filter((item) => normalizeQuestionText(item) !== normalizeQuestionText(correct));
+  const globalPool = collectGlobalDiagnosisPool().filter((item) => normalizeQuestionText(item) !== normalizeQuestionText(correct));
+  const fallbackPool = FALLBACK_DISTRACTORS_BY_BRANCH[relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default;
+  const distractors = uniqueStrings([
+    ...selectDeterministic(branchPool, `${clinicalCase.id}-branch`, 7),
+    ...selectDeterministic(globalPool, `${clinicalCase.id}-global`, 5),
+    ...fallbackPool,
+  ]).filter((item) => normalizeQuestionText(item) !== normalizeQuestionText(correct));
+
+  const finalTexts = uniqueStrings([correct, ...distractors]).slice(0, 5);
+  if (finalTexts.length < 5) return null;
+  return finalTexts.map((text, index) => ({ id: OPTION_IDS[index], text }));
+}
+
+function abstractCaseEvidence(clinicalCase = {}) {
   const feedback = getCaseAnswerFeedback(clinicalCase);
   const pearls = uniqueStrings([
     ...(Array.isArray(feedback.pearls) ? feedback.pearls : []),
     ...(Array.isArray(clinicalCase.diagnosis?.pearls) ? clinicalCase.diagnosis.pearls : []),
-    clinicalCase.spotPearl,
+    feedback.learningOutcome,
+    clinicalCase.clinicalFocus,
     clinicalCase.examNote,
-  ]);
-  return pearls[0] || feedback.learningOutcome || clinicalCase.clinicalFocus || 'TUS’ta karar verdirici ipucu, benzer çeldiricilerden ayrımı sağlayan objektif paterndir.';
-}
-
-function buildExtraDistractors(clinicalCase, existingOptions) {
-  const existing = new Set(existingOptions.map((item) => item.toLocaleLowerCase('tr')));
-  const sameBranchDiagnoses = cases
-    .filter((item) => item.branchId === clinicalCase.branchId && item.id !== clinicalCase.id)
-    .map((item) => item.diagnosis?.correct)
-    .filter(Boolean)
-    .map(sanitizeOptionText)
-    .filter((item) => !existing.has(item.toLocaleLowerCase('tr')));
-  return shuffleArray(uniqueStrings(sameBranchDiagnoses)).slice(0, 5);
-}
-
-function buildOptionObjectsFromCase(clinicalCase) {
-  const diagnosis = clinicalCase.diagnosis || {};
-  const baseOptions = uniqueStrings([diagnosis.correct, ...(Array.isArray(diagnosis.options) ? diagnosis.options : [])])
-    .map(sanitizeOptionText)
-    .filter(Boolean);
-  const expandedOptions = uniqueStrings([...baseOptions, ...buildExtraDistractors(clinicalCase, baseOptions)]).slice(0, 5);
-
-  if (!diagnosis.correct || expandedOptions.length < 4) return null;
-  const correctIndex = expandedOptions.findIndex((option) => option === diagnosis.correct);
-  if (correctIndex < 0) expandedOptions.unshift(diagnosis.correct);
-  const finalOptions = uniqueStrings(expandedOptions).slice(0, 5);
-  if (finalOptions.length < 4) return null;
-
-  return finalOptions.map((text, index) => ({ id: OPTION_IDS[index] || String(index + 1), text }));
-}
-
-function buildWrongFeedbackFromCase(clinicalCase, options) {
-  const diagnosis = clinicalCase.diagnosis || {};
-  const feedback = getCaseAnswerFeedback(clinicalCase);
-  const differentials = feedback.differentials || feedback.differentialComparison || {};
-  const correctText = diagnosis.correct;
-  return options.reduce((accumulator, option) => {
-    if (option.text === correctText) return accumulator;
-    const differential = differentials[option.text];
-    accumulator[option.id] = differential?.explanation
-      || `${option.text} bu klinik bağlama yakın bir çeldirici olabilir; ancak olgudaki karar verdirici patern ${correctText} lehinedir ve bu seçeneği geriye iter.`;
-    return accumulator;
-  }, {});
+    clinicalCase.spotPearl,
+  ]).slice(0, 4);
+  return pearls.length ? pearls : [clinicalCase.clinicalFocus || clinicalCase.title].filter(Boolean);
 }
 
 function buildCaseDerivedSeed(clinicalCase) {
-  const options = buildOptionObjectsFromCase(clinicalCase);
+  const relatedBranch = getBranchName(clinicalCase);
+  const options = buildCaseDerivedOptions(clinicalCase, relatedBranch);
   if (!options) return null;
-  const diagnosis = clinicalCase.diagnosis || {};
-  const correctAnswer = options.find((option) => option.text === diagnosis.correct)?.id || 'A';
-  const feedback = getCaseAnswerFeedback(clinicalCase);
-  const evidenceChain = getCaseEvidenceChain(clinicalCase);
-  if (evidenceChain.length < 3) return null;
 
-  const relatedBranch = BRANCH_NAME_BY_ID[clinicalCase.branchId] || clinicalCase.branchId || 'TUS Spot Olgular';
-  const questionType = clinicalCase.questionType || (clinicalCase.caseType === 'spot' ? 'spot' : 'diagnosis');
+  const feedback = getCaseAnswerFeedback(clinicalCase);
+  const learningTarget = compactLearningTarget(
+    feedback.learningOutcome || clinicalCase.clinicalFocus,
+    clinicalCase.diagnosis?.explanation || clinicalCase.title,
+  );
 
   return {
-    seedId: `case-seed-${clinicalCase.id}`,
-    sourceCaseId: clinicalCase.id,
-    title: clinicalCase.title || 'Klinik patern yorumu',
+    seedId: `ai-concept-${stableHash(`${clinicalCase.id}|${learningTarget}|${clinicalCase.diagnosis?.correct}`)}`,
+    conceptOriginId: clinicalCase.id,
+    source: 'embedded-case-concept-only',
+    title: `${relatedBranch} spot karar sorusu`,
     relatedBranch,
-    branchId: clinicalCase.branchId || AI_BRANCH_ID,
+    branchId: AI_BRANCH_ID,
+    originalBranchId: clinicalCase.branchId,
     spotCategory: `AI Spot • ${relatedBranch}`,
-    difficulty: clinicalCase.difficulty || 'Orta-Zor',
-    learningTarget: feedback.learningOutcome || clinicalCase.clinicalFocus || diagnosis.explanation || clinicalCase.title,
-    demographics: clinicalCase.demographics || clinicalCase.patientIntro?.profile || 'TUS adayı için kısa klinik bağlam',
-    setting: clinicalCase.setting || 'AI spot pratik',
-    chiefComplaint: clinicalCase.chiefComplaint || clinicalCase.patientIntro?.presentation || clinicalCase.title,
-    stem: clinicalCase.stem || clinicalCase.patientIntro?.historySummary || clinicalCase.title,
-    exam: Array.isArray(clinicalCase.exam) ? clinicalCase.exam.slice(0, 5) : [],
-    vitals: clinicalCase.vitals || {},
-    investigations: Array.isArray(clinicalCase.investigations) ? clinicalCase.investigations.slice(0, 3) : [],
-    question: clinicalCase.question || diagnosis.question || 'Bu klinik ve objektif veri paterni en çok hangi seçeneği destekler?',
-    questionType,
+    difficulty: clinicalCase.difficulty?.includes('Acil') ? 'Zor' : (clinicalCase.difficulty || 'Orta-Zor'),
+    learningTarget,
+    correctConcept: clinicalCase.diagnosis?.correct,
+    demographics: null,
+    setting: null,
+    chiefComplaint: null,
+    stem: null,
+    exam: [],
+    vitals: {},
+    investigations: [],
+    question: null,
+    questionType: 'spot',
     options,
-    correctAnswer,
-    explanation: feedback.whyCorrect || diagnosis.explanation || 'Olgudaki karar verdirici ipuçları doğru yanıtı destekler; çeldiriciler ise temel paternle tam uyumlu değildir.',
-    wrongOptionFeedback: buildWrongFeedbackFromCase(clinicalCase, options),
-    evidenceChain,
-    examPearl: getCasePearl(clinicalCase),
-    managementSteps: (feedback.managementSteps || feedback.management || []).map(richItemText).filter(Boolean),
-    nextQuestionSeed: feedback.learningOutcome || clinicalCase.clinicalFocus || clinicalCase.title,
+    correctAnswer: 'A',
+    explanation: clinicalCase.diagnosis?.explanation || feedback.whyCorrect || `${clinicalCase.diagnosis?.correct} seçeneği verilen öğrenme hedefini en doğrudan açıklar; diğer seçenekler aynı başlıkta güçlü çeldirici olsa da karar verdirici paternle tam örtüşmez.`,
+    wrongOptionFeedback: {},
+    evidenceConcepts: abstractCaseEvidence(clinicalCase),
+    examPearl: toPlainText((feedback.pearls || clinicalCase.diagnosis?.pearls || [])[0]) || learningTarget,
+    managementSteps: [],
   };
 }
 
@@ -155,122 +216,8 @@ export function buildCaseDerivedAISeeds() {
   cachedCaseDerivedSeeds = cases
     .map(buildCaseDerivedSeed)
     .filter(Boolean)
-    .slice(0, CASE_SEED_LIMIT);
+    .slice(0, CASE_CONCEPT_LIMIT);
   return cachedCaseDerivedSeeds;
-}
-
-function buildDifferentialComparison(seed, correctText) {
-  return seed.options.reduce((accumulator, option) => {
-    if (option.text === correctText) return accumulator;
-    const feedback = seed.wrongOptionFeedback?.[option.id]
-      || `${option.text} güçlü bir çeldiricidir; ancak olgudaki ana ipuçları ${correctText} lehinedir.`;
-    accumulator[option.text] = {
-      explanation: feedback,
-      comparisonPoints: [
-        `${option.text} belirli klinik koşullarda doğru olabilir; bu olguda karar verdirici patern farklıdır.`,
-        `Bu seçenek, ana ipucu olan “${seed.evidenceChain?.[0] || seed.learningTarget}” bilgisini yeterince açıklamaz.`,
-        `Doğru yanıt ${correctText} çünkü veriler tek bir öğrenme hedefi etrafında birleşir.`,
-      ],
-    };
-    return accumulator;
-  }, {});
-}
-
-function maskCorrectAnswerInText(text = '', correctText = '') {
-  if (!text || !correctText) return text || '';
-  const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
-}
-
-function buildInvestigation(item, index, correctText = '') {
-  return {
-    id: item.id || `ai-investigation-${index + 1}`,
-    label: item.label || `Tetkik ${index + 1}`,
-    type: item.type || 'lab',
-    priority: item.priority || (index === 0 ? 'essential' : 'useful'),
-    rows: Array.isArray(item.rows) ? item.rows : undefined,
-    summary: maskCorrectAnswerInText(item.summary || '', correctText),
-    findings: Array.isArray(item.findings) ? item.findings.map((finding) => maskCorrectAnswerInText(finding, correctText)) : [],
-    interpretation: 'Objektif sonuçlar tanıyı doğrudan söylemeden klinik yorum gerektirir.',
-  };
-}
-
-export function buildAIQuestionCase(seed, { generatedId = nowToken(), source = 'mock-local-generator' } = {}) {
-  const correctText = optionTextById(seed, seed.correctAnswer);
-  const optionTexts = seed.options.map((option) => option.text);
-
-  const question = {
-    id: `ai-generated-${seed.seedId}-${generatedId}`,
-    seedId: seed.seedId,
-    source,
-    sourceCaseId: seed.sourceCaseId || null,
-    caseType: 'ai-spot',
-    branchId: seed.branchId || AI_BRANCH_ID,
-    branchName: seed.relatedBranch || 'TUS Spot Olgular',
-    title: seed.title,
-    relatedBranch: seed.relatedBranch,
-    spotCategory: seed.spotCategory || `AI Spot • ${seed.relatedBranch || 'TUS'}`,
-    difficulty: seed.difficulty || 'Orta-Zor',
-    learningTarget: seed.learningTarget,
-    demographics: seed.demographics || 'TUS adayı için kısa klinik bağlam',
-    setting: seed.setting || 'AI spot pratik',
-    chiefComplaint: seed.chiefComplaint || seed.learningTarget,
-    stem: seed.stem,
-    exam: Array.isArray(seed.exam) ? seed.exam : [],
-    vitals: seed.vitals || {},
-    investigations: (seed.investigations || []).map((item, index) => buildInvestigation(item, index, correctText)),
-    question: seed.question,
-    questionType: seed.questionType || 'spot',
-    clinicalFocus: seed.learningTarget,
-    managementSequence: { enabled: false, showInSpot: false, steps: [] },
-    patientIntro: {
-      profile: [seed.demographics, seed.setting].filter(Boolean).join(' · '),
-      presentation: seed.chiefComplaint || seed.title,
-      riskContext: Array.isArray(seed.evidenceChain) ? seed.evidenceChain.slice(0, 2) : [],
-      distinctiveClues: Array.isArray(seed.evidenceChain) ? seed.evidenceChain.slice(1, 5) : [],
-      historySummary: seed.stem,
-    },
-    diagnosis: {
-      correct: correctText,
-      options: shuffleArray(optionTexts),
-      explanation: seed.explanation,
-      nextStep: seed.nextStep || 'Yanıt sonrası kanıt zincirini tekrar ederek benzer çeldiricileri ayır.',
-      pearls: [seed.examPearl].filter(Boolean),
-      answerFeedback: {
-        whyCorrect: seed.explanation,
-        evidenceChain: seed.evidenceChain || [],
-        pearls: [seed.examPearl].filter(Boolean),
-        clinicalPearls: [seed.examPearl].filter(Boolean),
-        differentialComparison: buildDifferentialComparison(seed, correctText),
-        managementSteps: seed.managementSteps?.length ? seed.managementSteps.map(richItemText).filter(Boolean) : [
-          'Ana ipucunu belirle ve seçenekleri aynı kategori içinde karşılaştır.',
-          'Objektif tetkik sonuçlarını tanı adı okumadan patern olarak yorumla.',
-          'Benzer TUS çeldiricilerinin hangi ipucuyla elendiğini tekrar et.',
-        ],
-        learningOutcome: seed.learningTarget,
-      },
-    },
-    aiMeta: {
-      generatedAt: Date.now(),
-      generator: source,
-      schemaVersion: 'ai-spot-v2',
-      sourceSeedId: seed.seedId,
-      sourceCaseId: seed.sourceCaseId || null,
-      signature: null,
-      topicSignature: null,
-    },
-  };
-
-  question.aiMeta.signature = makeQuestionSignature(question);
-  question.aiMeta.topicSignature = makeQuestionTopicSignature(question);
-  return question;
-}
-
-function previousSeedIdFromQuestionId(questionId = '') {
-  const raw = String(questionId || '').replace(/^ai-generated-/, '');
-  const allSeeds = [...AI_QUESTION_SEEDS, ...buildCaseDerivedAISeeds()];
-  const matchedSeed = allSeeds.find((seed) => raw.startsWith(`${seed.seedId}-`));
-  return matchedSeed?.seedId || null;
 }
 
 function getEligibleSeeds(branchFilter = 'random') {
@@ -281,55 +228,395 @@ function getEligibleSeeds(branchFilter = 'random') {
   return filtered.length ? filtered : allSeeds;
 }
 
-function scoreSeedNovelty(seed, context, previousSeedId) {
+function previousSeedIdFromContext(previousQuestionId = '', context = {}) {
+  const historyItem = (context.recentQuestionSummaries || []).find((item) => item.id === previousQuestionId);
+  return historyItem?.seedId || null;
+}
+
+function scoreSeedNovelty(seed, context, previousQuestionId) {
   const seedSignature = makeSeedSignature(seed);
+  const sourceKey = seed.seedId;
   let score = Math.random();
-  if (seed.seedId === previousSeedId) score -= 100;
-  if (context.recentIds.includes(seed.seedId) || context.recentIds.includes(seed.sourceCaseId)) score -= 50;
-  if (context.recentSignatures.includes(seedSignature)) score -= 50;
-  if (seed.sourceCaseId) score += 0.12; // geniş vaka havuzundan yararlanmayı teşvik eder.
-  if (seed.difficulty?.toLocaleLowerCase('tr').includes('zor')) score += 0.08;
+  if (sourceKey === previousSeedIdFromContext(previousQuestionId, context)) score -= 100;
+  if (context.recentIds?.includes(sourceKey)) score -= 80;
+  if (context.recentSignatures?.includes(seedSignature)) score -= 50;
+  if (seed.source === 'embedded-case-concept-only') score += 0.2;
+  if (seed.difficulty?.toLocaleLowerCase('tr').includes('zor')) score += 0.06;
   return score;
 }
 
 function rankSeedsByNovelty(pool, { previousQuestionId = null, context = buildRecentQuestionContext() } = {}) {
-  const previousSeedId = previousSeedIdFromQuestionId(previousQuestionId);
   return shuffleArray(pool)
-    .sort((a, b) => scoreSeedNovelty(b, context, previousSeedId) - scoreSeedNovelty(a, context, previousSeedId));
+    .sort((a, b) => scoreSeedNovelty(b, context, previousQuestionId) - scoreSeedNovelty(a, context, previousQuestionId));
 }
 
-function pickNonRepeatingSeed(pool, { previousQuestionId = null, context = buildRecentQuestionContext() } = {}) {
-  const previousSeedId = previousSeedIdFromQuestionId(previousQuestionId);
-  const ranked = rankSeedsByNovelty(pool, { previousQuestionId, context });
-  const fresh = ranked.find((seed) => {
-    const signature = makeSeedSignature(seed);
-    return seed.seedId !== previousSeedId
-      && !context.recentIds.includes(seed.seedId)
-      && !context.recentIds.includes(seed.sourceCaseId)
-      && !context.recentSignatures.includes(signature);
+function buildVariantProfile(seed, attempt = 0, context = {}) {
+  const variantKey = `${seed.seedId}|${Date.now()}|${Math.random()}|${attempt}|${context.recentSignatures?.length || 0}`;
+  const numeric = parseInt(stableHash(variantKey).replace(/^q/, ''), 36);
+  return {
+    angle: QUESTION_ANGLES[numeric % QUESTION_ANGLES.length],
+    opener: SCENARIO_OPENERS[(numeric + attempt) % SCENARIO_OPENERS.length],
+    demographic: seed.demographics || DEMOGRAPHIC_POOL[(numeric + 2) % DEMOGRAPHIC_POOL.length],
+    setting: seed.setting || SETTING_POOL[(numeric + 3) % SETTING_POOL.length],
+    variantNo: (numeric % 997) + 1,
+    answerShift: numeric % OPTION_IDS.length,
+  };
+}
+
+function maskCorrectConcept(text = '', correctText = '') {
+  if (!text || !correctText) return text || '';
+  const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
+}
+
+function buildStem(seed, profile, correctText) {
+  if (seed.source === 'embedded-case-concept-only') {
+    const maskedConcept = maskCorrectConcept(seed.evidenceConcepts?.[0] || seed.learningTarget, correctText);
+    const conceptCue = maskedConcept
+      ? `Ana ipucu, ${String(maskedConcept).replace(/\.$/, '').toLocaleLowerCase('tr')} bilgisinin yorumlanmasıdır`
+      : 'Ana ipucu, verilen bulguların aynı karar ekseninde toplanmasıdır';
+    return `${profile.opener} ${profile.demographic.toLocaleLowerCase('tr')} ${profile.setting.toLocaleLowerCase('tr')} ortamında ele alınır. ${conceptCue}; ancak tanı adı veya doğru seçenek metin içinde doğrudan verilmez. ${profile.angle.stemCue.charAt(0).toLocaleUpperCase('tr') + profile.angle.stemCue.slice(1)}.`;
+  }
+
+  const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'karar verdirici patern');
+  return `${profile.opener} ${baseStem} Bu varyantta ${profile.angle.stemCue}.`;
+}
+
+function normalizeOptionObjects(options = []) {
+  return options
+    .map((option, index) => ({ id: OPTION_IDS[index] || option.id || String(index + 1), text: String(option.text || option || '').trim() }))
+    .filter((option) => option.text)
+    .slice(0, 5);
+}
+
+function buildBalancedOptions(seed, profile) {
+  const correctText = seed.correctConcept || optionTextById(seed, seed.correctAnswer);
+  const rawOptions = normalizeOptionObjects(seed.options);
+  const correctOption = rawOptions.find((option) => normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) || rawOptions.find((option) => option.id === seed.correctAnswer) || rawOptions[0];
+  const distractors = rawOptions.filter((option) => normalizeQuestionText(option.text) !== normalizeQuestionText(correctOption?.text));
+  const optionTexts = uniqueStrings([correctOption?.text, ...shuffleArray(distractors.map((item) => item.text))]).slice(0, 5);
+  const completeTexts = optionTexts.length === 5 ? optionTexts : uniqueStrings([...optionTexts, ...(FALLBACK_DISTRACTORS_BY_BRANCH[seed.relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default)]).slice(0, 5);
+
+  const correct = correctOption?.text || completeTexts[0];
+  const remaining = shuffleArray(completeTexts.filter((text) => normalizeQuestionText(text) !== normalizeQuestionText(correct)));
+  const finalTexts = [...remaining.slice(0, profile.answerShift), correct, ...remaining.slice(profile.answerShift)].slice(0, 5);
+  while (finalTexts.length < 5) {
+    const fallback = (FALLBACK_DISTRACTORS_BY_BRANCH[seed.relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default)
+      .find((item) => !finalTexts.some((text) => normalizeQuestionText(text) === normalizeQuestionText(item)));
+    if (!fallback) break;
+    finalTexts.push(fallback);
+  }
+
+  return finalTexts.slice(0, 5).map((text, index) => ({ id: OPTION_IDS[index], text }));
+}
+
+function buildEvidenceChain(seed, profile, correctText) {
+  if (seed.source === 'embedded-case-concept-only') {
+    const concepts = uniqueStrings(seed.evidenceConcepts || [])
+      .map((item) => maskCorrectConcept(item, correctText))
+      .slice(0, 3);
+    const maskedLearningTarget = maskCorrectConcept(seed.learningTarget, correctText);
+    return [
+      `${seed.relatedBranch || 'Bu branş'} sorusunda ana karar, tek öğrenme hedefinin doğru yorumlanmasına dayanır.`,
+      concepts[0] || `${maskedLearningTarget} bilgisi seçenekler arasında ayırıcı rol oynar.`,
+      'Çeldiriciler aynı klinik/temel bilim kategorisinde tutulduğu için yüzeysel anahtar kelimeyle değil paternle karar verilmelidir.',
+      'Doğru seçenek, verilen öğrenme hedefiyle en tutarlı yanıt eksenini oluşturur.',
+    ];
+  }
+  return uniqueStrings(seed.evidenceChain || []).map((item) => maskCorrectConcept(item, correctText)).slice(0, 5);
+}
+
+function cleanClinicalSummaryItem(value = '') {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern)\s*[:：-]\s*/iu, '')
+    .replace(/\s*(\.{3}|…)\s*/g, ' ')
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/([,.;:!?])(?=\S)/g, '$1 ')
+    .replace(/\s*\/\s*/g, ' veya ')
+    .replace(/[\s,;:.]+$/u, '')
+    .trim();
+}
+
+function uniqueSummaryItems(items = [], max = 4) {
+  const seen = new Set();
+  const out = [];
+  items.map(cleanClinicalSummaryItem).filter(Boolean).forEach((item) => {
+    const key = normalizeQuestionText(item);
+    if (!seen.has(key)) {
+      seen.add(key);
+      out.push(item);
+    }
   });
-  return fresh || ranked.find((seed) => seed.seedId !== previousSeedId) || ranked[0] || AI_QUESTION_SEEDS[0];
+  return out.slice(0, max);
+}
+
+function buildAIRiskContext(seed, profile) {
+  const branchText = branchTextOfSeed(seed);
+  const target = String(seed.learningTarget || '').toLocaleLowerCase('tr');
+  const risks = [];
+
+  if (/mikrobiyoloji|enfeksiyon|hiv|hepatit|tüberküloz|sepsis|bakteri|viral/.test(branchText + ' ' + target)) {
+    risks.push('Enfeksiyon, temas veya bağışıklık durumunun karar üzerindeki etkisi');
+  } else if (/farmakoloji|ilaç|toksin|zehir|yan etki|antidot/.test(branchText + ' ' + target)) {
+    risks.push('İlaç veya toksin maruziyetine bağlı klinik risk');
+  } else if (/biyokimya|enzim|metabolizma|genetik|aminoasit|lipid/.test(branchText + ' ' + target)) {
+    risks.push('Metabolik veya genetik zeminle ilişkili klinik bağlam');
+  } else if (/pediatri|çocuk|yenidoğan|bebek/.test(branchText + ' ' + target)) {
+    risks.push('Yaşa özgü pediatrik kırmızı bayraklar');
+  } else if (/kadın|gebelik|doğum|jinekoloji/.test(branchText + ' ' + target)) {
+    risks.push('Gebelik veya jinekolojik aciliyet bağlamı');
+  } else {
+    risks.push('Klinik kararın dayandığı hasta zemini ve risk bağlamı');
+  }
+
+  risks.push(`${profile.demographic} ve ${profile.setting} bağlamında spot karar gereksinimi`);
+  return uniqueSummaryItems(risks, 2);
+}
+
+function buildAIClueItems(evidenceChain = [], seed = {}, correctText = '') {
+  return uniqueSummaryItems([
+    ...(evidenceChain || []),
+    `${correctText} seçeneğini destekleyen ana patern`,
+    seed.examPearl || seed.learningTarget,
+  ], 4);
+}
+
+function buildInvestigation(item, index, correctText = '') {
+  const strip = (text = '') => {
+    if (!text || !correctText) return text || '';
+    const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
+  };
+  return {
+    id: item.id || `ai-investigation-${index + 1}`,
+    label: item.label || `Tetkik ${index + 1}`,
+    type: item.type || 'lab',
+    priority: item.priority || (index === 0 ? 'essential' : 'useful'),
+    rows: Array.isArray(item.rows) ? item.rows : undefined,
+    summary: strip(item.summary || ''),
+    findings: Array.isArray(item.findings) ? item.findings.map(strip) : [],
+    interpretation: 'Objektif sonuçlar tanıyı doğrudan söylemeden klinik yorum gerektirir.',
+  };
+}
+
+function buildSyntheticInvestigation(seed, profile, correctText = '') {
+  return [{
+    id: `ai-synthetic-pattern-${profile.variantNo}`,
+    label: profile.angle.id === 'lab' ? 'Hedefli tetkik paterni' : 'Klinik karar verisi',
+    type: profile.angle.id === 'mechanism' ? 'mechanism' : 'lab',
+    priority: 'essential',
+    summary: 'Sonuçlar tek bir tanı adını yazmaz; patern, mekanizma ve çeldirici ayrımı birlikte yorumlanmalıdır.',
+    findings: [
+      `${seed.relatedBranch || 'TUS'} başlığında karar verdirici eksen: ${maskCorrectConcept(seed.learningTarget, correctText)}.`,
+      'Bulgular seçenekler arasında doğrudan ezber değil klinik akıl yürütme gerektirir.',
+    ],
+    interpretation: 'Yanıtı açık etmeden patern yorumlaması beklenir.',
+  }];
+}
+
+function buildWrongFeedback(options, correctText, seed) {
+  return options.reduce((accumulator, option) => {
+    if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
+    const seeded = seed.wrongOptionFeedback?.[option.id];
+    accumulator[option.id] = seeded || `${option.text} güçlü bir çeldiricidir; ancak ${seed.learningTarget} eksenindeki karar verdirici bilgi bu seçeneği doğru yanıttan ayırır.`;
+    return accumulator;
+  }, {});
+}
+
+function buildDifferentialComparison(options, correctText, wrongOptionFeedback, seed) {
+  return options.reduce((accumulator, option) => {
+    if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
+    accumulator[option.text] = {
+      explanation: wrongOptionFeedback[option.id] || `${option.text} bu klinik bağlamda düşünülebilir; ancak temel patern ${correctText} lehinedir.`,
+      comparisonPoints: [
+        `${option.text} benzer kategori içinde yer alır; fakat ana ipucunu tam açıklamaz.`,
+        `${correctText} seçeneği ${seed.learningTarget} bilgisini doğrudan karşılar.`,
+        'TUS sorusunda doğru ayrım, çeldiricinin değil karar verdirici bulgunun takip edilmesiyle yapılır.',
+      ],
+    };
+    return accumulator;
+  }, {});
+}
+
+function buildManagementSteps(seed, profile) {
+  if (Array.isArray(seed.managementSteps) && seed.managementSteps.length) {
+    return seed.managementSteps.map(richItemText).filter(Boolean).slice(0, 4);
+  }
+  return [
+    'Önce ana klinik/temel bilim paternini belirle.',
+    'Seçenekleri aynı kategori içinde karşılaştır ve direkt tanı adı arama.',
+    `${profile.angle.label} açısından karar verdirici ipucunu doğru yanıtla eşleştir.`,
+  ];
+}
+
+export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), source = 'local-template-generator', attempt = 0, context = {} } = {}) {
+  const profile = buildVariantProfile(seed, attempt, context);
+  const options = buildBalancedOptions(seed, profile);
+  const correctText = seed.correctConcept || optionTextById(seed, seed.correctAnswer) || options[0]?.text;
+  const correctOption = options.find((option) => normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) || options[0];
+  const normalizedCorrectText = correctOption.text;
+  const evidenceChain = buildEvidenceChain(seed, profile, normalizedCorrectText);
+  const wrongOptionFeedback = buildWrongFeedback(options, normalizedCorrectText, seed);
+  const titleBase = seed.source === 'embedded-case-concept-only'
+    ? `${seed.relatedBranch} AI spot: ${profile.angle.label}`
+    : `${seed.title} — ${profile.angle.label}`;
+  const questionPrompt = seed.question && seed.source !== 'embedded-case-concept-only'
+    ? `${profile.angle.question}`
+    : profile.angle.question;
+  const stem = buildStem(seed, profile, normalizedCorrectText);
+  const investigations = seed.source === 'embedded-case-concept-only'
+    ? buildSyntheticInvestigation(seed, profile, normalizedCorrectText)
+    : (seed.investigations || []).map((item, index) => buildInvestigation(item, index, normalizedCorrectText));
+  const diagnosisOptions = options.map((option) => option.text);
+  const optionSet = makeOptionSetSignature(options);
+  const generationSignatureSeed = stableHash([
+    seed.seedId,
+    profile.angle.id,
+    profile.variantNo,
+    titleBase,
+    stem,
+    questionPrompt,
+    normalizedCorrectText,
+    optionSet,
+  ].join(' | '));
+
+  const question = {
+    id: generatedId,
+    seedId: seed.seedId,
+    source,
+    caseType: 'ai-spot',
+    branchId: AI_BRANCH_ID,
+    branchName: seed.relatedBranch || 'TUS Spot Olgular',
+    title: titleBase,
+    relatedBranch: seed.relatedBranch || 'TUS Spot Olgular',
+    spotCategory: seed.spotCategory || `AI Spot • ${seed.relatedBranch || 'TUS'}`,
+    difficulty: seed.difficulty || 'Orta-Zor',
+    learningTarget: seed.learningTarget,
+    demographics: profile.demographic,
+    setting: profile.setting,
+    chiefComplaint: seed.chiefComplaint || `${seed.relatedBranch || 'TUS'} spot karar sorusu`,
+    stem,
+    exam: Array.isArray(seed.exam) && seed.exam.length ? seed.exam : [
+      'Genel durum karar verebilecek düzeyde stabil olarak izlenir.',
+      'Muayene bulguları ana paternle uyumlu, çeldiricileri ayırmaya yardımcı niteliktedir.',
+      'Ek sistem muayenesinde doğru cevabı doğrudan söyleyen bir ifade yer almaz.',
+    ],
+    vitals: Object.keys(seed.vitals || {}).length ? seed.vitals : { TA: '118/74 mmHg', Nabız: '88/dk', Solunum: '18/dk', SpO2: '%98', Ateş: '37.1 °C' },
+    investigations,
+    question: questionPrompt,
+    questionType: profile.angle.id === 'first-step' ? 'treatment' : profile.angle.id === 'lab' ? 'test' : profile.angle.id === 'mechanism' ? 'spot' : 'diagnosis',
+    clinicalFocus: seed.learningTarget,
+    findings: {
+      history: [stem],
+      exam: Array.isArray(seed.exam) ? seed.exam : [],
+      vitals: seed.vitals || {},
+      investigations,
+    },
+    options,
+    correctAnswer: correctOption.id,
+    explanation: seed.source === 'embedded-case-concept-only'
+      ? `${normalizedCorrectText} seçeneği, bu yeni oluşturulan AI spot sorusunda hedeflenen öğrenme çıktısıyla en uyumlu yanıttır. Olguda seçenekler aynı kategori içinde tutulur; karar, gömülü vakadaki metni tekrar etmekten değil ${seed.learningTarget} bilgisini yeni bağlama uygulamaktan gelir.`
+      : seed.explanation,
+    evidenceChain,
+    examPearls: [seed.examPearl || seed.learningTarget],
+    wrongOptionFeedback,
+    generationSignature: generationSignatureSeed,
+    generatedAt: new Date().toISOString(),
+    managementSequence: { enabled: false, showInSpot: false, steps: [] },
+    patientIntro: {
+      profile: [profile.demographic, profile.setting].filter(Boolean).join(' · '),
+      presentation: seed.chiefComplaint || `${profile.angle.label} odaklı TUS spot soru`,
+      riskContext: buildAIRiskContext(seed, profile),
+      distinctiveClues: buildAIClueItems(evidenceChain, seed, normalizedCorrectText),
+      historySummary: stem,
+    },
+    diagnosis: {
+      correct: normalizedCorrectText,
+      options: diagnosisOptions,
+      explanation: seed.explanation,
+      nextStep: seed.nextStep || 'Yanıt sonrası kanıt zincirini tekrar ederek benzer çeldiricileri ayır.',
+      pearls: [seed.examPearl || seed.learningTarget].filter(Boolean),
+      answerFeedback: {
+        whyCorrect: seed.source === 'embedded-case-concept-only'
+          ? `${normalizedCorrectText} doğru yanıttır; çünkü verilen yeni senaryo ${seed.learningTarget} öğrenme hedefini ölçer ve çeldiriciler aynı klinik/temel bilim ailesinde kalsa da ana paternle tam örtüşmez.`
+          : seed.explanation,
+        evidenceChain,
+        pearls: [seed.examPearl || seed.learningTarget].filter(Boolean),
+        clinicalPearls: [seed.examPearl || seed.learningTarget].filter(Boolean),
+        differentialComparison: buildDifferentialComparison(options, normalizedCorrectText, wrongOptionFeedback, seed),
+        whyWrong: Object.fromEntries(options
+          .filter((option) => normalizeQuestionText(option.text) !== normalizeQuestionText(normalizedCorrectText))
+          .map((option) => [option.text, wrongOptionFeedback[option.id]])),
+        managementSteps: buildManagementSteps(seed, profile),
+        learningOutcome: seed.learningTarget,
+      },
+    },
+    aiMeta: {
+      generatedAt: Date.now(),
+      generator: source,
+      schemaVersion: 'ai-spot-v3-independent-generator',
+      sourceSeedId: seed.seedId,
+      sourceConceptOnly: seed.source === 'embedded-case-concept-only',
+      sourceCaseId: null,
+      conceptOriginHash: seed.conceptOriginId ? stableHash(seed.conceptOriginId) : null,
+      signature: null,
+      topicSignature: null,
+      generationSignature: generationSignatureSeed,
+      optionSetSignature: optionSet,
+      variantAngle: profile.angle.id,
+      variantNo: profile.variantNo,
+    },
+  };
+
+  question.aiMeta.signature = makeQuestionSignature(question);
+  question.aiMeta.topicSignature = makeQuestionTopicSignature(question);
+  question.generationSignature = question.aiMeta.signature;
+  return question;
+}
+
+function pickCandidateSeeds(pool, context, previousQuestionId) {
+  const ranked = rankSeedsByNovelty(pool, { previousQuestionId, context });
+  const fresh = ranked.filter((seed) => {
+    const signature = makeSeedSignature(seed);
+    return !context.recentIds?.includes(seed.seedId) && !context.recentSignatures?.includes(signature);
+  });
+  return fresh.length ? fresh : ranked;
 }
 
 export function generateAIQuestion({ previousQuestionId = null, branchFilter = 'random', context = buildRecentQuestionContext() } = {}) {
   const pool = getEligibleSeeds(branchFilter);
-  const firstSeed = pickNonRepeatingSeed(pool, { previousQuestionId, context });
-  const ranked = rankSeedsByNovelty(pool, { previousQuestionId, context });
-  const candidates = [
-    firstSeed,
-    ...ranked.filter((seed) => seed.seedId !== firstSeed.seedId),
-  ].filter(Boolean);
+  const candidates = pickCandidateSeeds(pool, context, previousQuestionId);
+  const errors = [];
 
-  for (const seed of candidates) {
+  for (let attempt = 0; attempt < Math.min(MAX_GENERATION_ATTEMPTS, candidates.length * 4); attempt += 1) {
+    const seed = candidates[attempt % candidates.length] || AI_QUESTION_SEEDS[0];
     const question = buildAIQuestionCase(seed, {
-      source: seed.sourceCaseId ? 'case-derived-local-generator' : 'curated-local-generator',
+      source: seed.source === 'embedded-case-concept-only' ? 'concept-template-local-generator' : 'curated-template-local-generator',
+      attempt,
+      context,
     });
-    const validation = validateAIQuestionCase(question, context.recentSignatures);
+    const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context });
     if (validation.ok) return question;
+    errors.push({ seedId: seed.seedId, errors: validation.errors });
   }
 
-  const exhaustedSeed = candidates.find((seed) => seed.seedId !== previousSeedIdFromQuestionId(previousQuestionId)) || candidates[0] || AI_QUESTION_SEEDS[0];
-  return buildAIQuestionCase(exhaustedSeed, { source: 'local-generator-exhausted-pool-fallback' });
+  const curatedPool = AI_QUESTION_SEEDS.filter((seed) => !context.recentIds?.includes(seed.seedId));
+  for (let attempt = 0; attempt < Math.max(12, curatedPool.length * 3); attempt += 1) {
+    const seed = curatedPool[attempt % curatedPool.length] || AI_QUESTION_SEEDS[attempt % AI_QUESTION_SEEDS.length];
+    const question = buildAIQuestionCase(seed, {
+      source: 'curated-template-safe-fallback',
+      attempt: attempt + 500,
+      context,
+    });
+    const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context });
+    if (validation.ok) return question;
+    errors.push({ seedId: seed.seedId, errors: validation.errors });
+  }
+
+  const error = new Error('AI local generator could not create a non-duplicate question without copying embedded cases.');
+  error.generationErrors = errors.slice(-12);
+  throw error;
 }
 
 export function listAIQuestionBranches() {

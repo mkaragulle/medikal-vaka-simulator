@@ -1,9 +1,9 @@
-const RECENT_AI_QUESTION_IDS_KEY = 'klinikiq-recent-ai-question-ids-v3';
-const RECENT_AI_QUESTION_SIGNATURES_KEY = 'klinikiq-recent-ai-question-signatures-v3';
-const AI_QUESTION_HISTORY_KEY = 'klinikiq-ai-question-history-v3';
-const LEGACY_RECENT_AI_QUESTION_IDS_KEYS = ['klinikiq-recent-ai-question-ids-v2'];
-const LEGACY_RECENT_AI_QUESTION_SIGNATURES_KEYS = ['klinikiq-recent-ai-question-signatures-v2'];
-const LEGACY_AI_QUESTION_HISTORY_KEYS = ['klinikiq-ai-question-history-v2'];
+const RECENT_AI_QUESTION_IDS_KEY = 'klinikiq-recent-ai-question-ids-v4';
+const RECENT_AI_QUESTION_SIGNATURES_KEY = 'klinikiq-recent-ai-question-signatures-v4';
+const AI_QUESTION_HISTORY_KEY = 'klinikiq-ai-question-history-v4';
+const LEGACY_RECENT_AI_QUESTION_IDS_KEYS = ['klinikiq-recent-ai-question-ids-v3', 'klinikiq-recent-ai-question-ids-v2'];
+const LEGACY_RECENT_AI_QUESTION_SIGNATURES_KEYS = ['klinikiq-recent-ai-question-signatures-v3', 'klinikiq-recent-ai-question-signatures-v2'];
+const LEGACY_AI_QUESTION_HISTORY_KEYS = ['klinikiq-ai-question-history-v3', 'klinikiq-ai-question-history-v2'];
 const MAX_RECENT_IDS = 180;
 const MAX_RECENT_SIGNATURES = 360;
 const MAX_HISTORY_ITEMS = 180;
@@ -217,6 +217,8 @@ export function buildRecentQuestionContext(limit = 12) {
     recentIds: getRecentAIQuestionIds(),
     recentSignatures: getRecentAIQuestionSignatures(),
     recentQuestionSummaries: history.map((item) => ({
+      id: item.id,
+      seedId: item.seedId,
       title: item.title,
       branch: item.branch,
       correct: item.correct,

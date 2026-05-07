@@ -1,7 +1,49 @@
 import { shuffleArray } from './randomize.js';
 import { makeQuestionSignature, makeQuestionTopicSignature, normalizeQuestionText } from './aiQuestionHistory.js';
+import { cases } from '../data/cases.js';
+import { createAIQuestionId, validateQuestionNovelty } from './questionDeduplication.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
+
+function cleanClinicalSummaryItem(value = '') {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern)\s*[:：-]\s*/iu, '')
+    .replace(/\s*(\.{3}|…)\s*/g, ' ')
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/([,.;:!?])(?=\S)/g, '$1 ')
+    .replace(/\s*\/\s*/g, ' veya ')
+    .replace(/[\s,;:.]+$/u, '')
+    .trim();
+}
+
+function uniqueSummaryItems(items = [], max = 4) {
+  const seen = new Set();
+  const out = [];
+  items.map(cleanClinicalSummaryItem).filter(Boolean).forEach((item) => {
+    const key = item.toLocaleLowerCase('tr');
+    if (!seen.has(key)) {
+      seen.add(key);
+      out.push(item);
+    }
+  });
+  return out.slice(0, max);
+}
+
+function buildValidatedAIRiskContext(payload = {}, history = []) {
+  const branch = String(payload.relatedBranch || '').toLocaleLowerCase('tr');
+  const target = String(payload.learningTarget || '').toLocaleLowerCase('tr');
+  if (/mikrobiyoloji|enfeksiyon|hiv|hepatit|tüberküloz|sepsis|bakteri|viral/.test(branch + ' ' + target)) {
+    return ['Enfeksiyon, temas veya bağışıklık durumunun karar üzerindeki etkisi'];
+  }
+  if (/farmakoloji|ilaç|toksin|zehir|yan etki|antidot/.test(branch + ' ' + target)) {
+    return ['İlaç veya toksin maruziyetine bağlı klinik risk'];
+  }
+  if (/pediatri|çocuk|yenidoğan|bebek/.test(branch + ' ' + target)) {
+    return ['Yaşa özgü pediatrik kırmızı bayraklar'];
+  }
+  return uniqueSummaryItems([history[0], 'Klinik kararın dayandığı hasta zemini ve risk bağlamı'], 2);
+}
 const DIRECT_LEAK_PHRASES = [
   'tanısını doğrular',
   'tanısını koydurur',
@@ -124,7 +166,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
   const vitals = payload.findings?.vitals || payload.vitals || {};
 
   const normalized = {
-    id: payload.id || `ai-generated-remote-${Date.now()}`,
+    id: payload.id || createAIQuestionId('ai-spot-remote'),
     seedId: payload.seedId || null,
     source: payload.source || 'real-ai',
     caseType: 'ai-spot',
@@ -143,6 +185,9 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     exam,
     vitals,
     investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)),
+    findings: { history, exam, vitals, investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)) },
+    options,
+    correctAnswer: correctId,
     question: payload.question,
     questionType: payload.questionType || 'spot',
     clinicalFocus: payload.learningTarget,
@@ -150,8 +195,8 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     patientIntro: {
       profile: payload.demographics || payload.relatedBranch || 'AI TUS pratik',
       presentation: payload.chiefComplaint || payload.title,
-      riskContext: history.slice(0, 2),
-      distinctiveClues: payload.evidenceChain?.slice(0, 4) || [],
+      riskContext: buildValidatedAIRiskContext(payload, history),
+      distinctiveClues: uniqueSummaryItems(payload.evidenceChain?.slice(0, 4) || [], 4),
       historySummary: payload.stem,
     },
     diagnosis: {
@@ -187,22 +232,33 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
 
   normalized.aiMeta.signature = makeQuestionSignature(normalized);
   normalized.aiMeta.topicSignature = makeQuestionTopicSignature(normalized);
+  normalized.generatedAt = new Date(normalized.aiMeta.generatedAt).toISOString();
+  normalized.generationSignature = normalized.aiMeta.signature;
   return normalized;
 }
 
-export function validateAIQuestionCase(question = {}, recentSignatures = []) {
+export function validateAIQuestionCase(question = {}, recentSignatures = [], options = {}) {
   const errors = [];
+  const embeddedCases = options.embeddedCases || cases;
+  const recentContext = options.context || { recentSignatures, recentIds: [], recentQuestionSummaries: [] };
+
   if (!question?.id) errors.push('id yok');
+  if (!String(question?.id || '').startsWith('ai-spot')) errors.push('AI sorusu için bağımsız ai-spot ID kullanılmalı');
+  if (question?.sourceCaseId || question?.aiMeta?.sourceCaseId) errors.push('AI sorusu mevcut vaka ID bilgisini doğrudan taşımamalı');
   if (!question?.diagnosis?.correct) errors.push('doğru cevap metni yok');
   if (!Array.isArray(question?.diagnosis?.options) || question.diagnosis.options.length < 4) errors.push('en az 4 seçenek gerekli');
   if (!question?.diagnosis?.options?.includes(question?.diagnosis?.correct)) errors.push('doğru cevap seçenekler içinde değil');
   if (!question?.diagnosis?.answerFeedback?.whyCorrect) errors.push('klinik gerekçe yok');
   if (!Array.isArray(question?.diagnosis?.answerFeedback?.evidenceChain) || question.diagnosis.answerFeedback.evidenceChain.length < 3) errors.push('kanıt zinciri yetersiz');
+  if (!question?.generationSignature && !question?.aiMeta?.generationSignature && !question?.aiMeta?.signature) errors.push('generationSignature eksik');
+
+  const novelty = validateQuestionNovelty(question, { context: recentContext, embeddedCases });
+  if (!novelty.ok) errors.push(...novelty.errors);
 
   const signature = makeQuestionSignature(question);
   const topicSignature = makeQuestionTopicSignature(question);
   if (recentSignatures.includes(signature)) errors.push('yakın geçmişte aynı içerik imzası üretildi');
   if (recentSignatures.includes(topicSignature)) errors.push('yakın geçmişte aynı konu/doğru cevap paterni üretildi');
 
-  return { ok: errors.length === 0, errors, signature, topicSignature };
+  return { ok: errors.length === 0, errors: Array.from(new Set(errors)), signature, topicSignature, embeddedOverlap: novelty.embeddedOverlap || null };
 }

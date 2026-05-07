@@ -331,22 +331,42 @@ function compactClinicalText(value = '', maxLength = 170) {
   const text = String(value || '').replace(/\s+/g, ' ').trim();
   if (!text || text.length <= maxLength) return text;
   const cut = text.slice(0, maxLength);
-  const naturalBreak = Math.max(cut.lastIndexOf(';'), cut.lastIndexOf(','), cut.lastIndexOf(' '));
-  return `${cut.slice(0, naturalBreak > 80 ? naturalBreak : maxLength).trim()}…`;
+  const naturalBreak = Math.max(cut.lastIndexOf(';'), cut.lastIndexOf(','), cut.lastIndexOf('.'), cut.lastIndexOf(' '));
+  const safeCut = cut.slice(0, naturalBreak > 90 ? naturalBreak : maxLength).trim();
+  return safeCut.replace(/[\s,;:.-]+$/u, '');
 }
 
 function cleanPatientSummaryBullet(value = '') {
   return String(value || '')
     .replace(/\s+/g, ' ')
-    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|TUS kırmızı bayrağı)\s*[:：-]\s*/iu, '')
+    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|TUS kırmızı bayrağı|Ana kanıt|Kritik ipucu|karar verdirici patern|Destekleyici bulgu)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
+    .replace(/([,.;:!?])(?=\S)/g, '$1 ')
+    .replace(/\s*\/\s*/g, ' veya ')
+    .replace(/\bve\s+ve\b/giu, 've')
+    .replace(/\bve\s+veya\b/giu, 'veya')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/[\s,;:.]+$/u, '')
     .trim();
+}
+
+function splitLongSummaryItem(item = '') {
+  const clean = cleanPatientSummaryBullet(item);
+  if (!clean || clean.length <= 118) return clean ? [clean] : [];
+
+  const parts = clean
+    .split(/;\s+|,\s+(?=[A-ZÇĞİÖŞÜ0-9])/u)
+    .map((part) => cleanPatientSummaryBullet(part))
+    .filter((part) => part.length >= 10);
+
+  if (parts.length >= 2 && parts.every((part) => part.length <= 105)) return parts.slice(0, 2);
+  return [compactClinicalText(clean, 132)];
 }
 
 function limitSummaryItems(items = [], maxItems = 4, maxLength = null) {
   const cleaned = items
-    .map((item) => cleanPatientSummaryBullet(item))
+    .flatMap((item) => splitLongSummaryItem(item))
     .filter(Boolean)
     .map((item) => (maxLength ? compactClinicalText(item, maxLength) : item));
 

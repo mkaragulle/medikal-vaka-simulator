@@ -54,7 +54,7 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
       remoteAttempt: attempt,
     };
 
-    const validation = validateAIQuestionCase(normalized, context.recentSignatures);
+    const validation = validateAIQuestionCase(normalized, context.recentSignatures, { context });
     if (!validation.ok) {
       const error = new Error(`Remote AI validation failed: ${validation.errors.join('; ')}`);
       error.validation = validation;
@@ -93,25 +93,37 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
 }
 
 function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context, reason = null }) {
-  const refreshedContext = buildRecentQuestionContext(18);
-  const question = generateAIQuestion({
-    previousQuestionId,
-    branchFilter,
-    context: refreshedContext.recentSignatures?.length ? refreshedContext : context,
-  });
-  rememberAIQuestion(question);
-  return {
-    ok: true,
-    question,
-    source: question.source || 'mock-local-generator',
-    usedRemoteAI: false,
-    fallback: Boolean(reason),
-    error: reason,
-  };
+  try {
+    const refreshedContext = buildRecentQuestionContext(50);
+    const effectiveContext = refreshedContext.recentSignatures?.length ? refreshedContext : context;
+    const question = generateAIQuestion({
+      previousQuestionId,
+      branchFilter,
+      context: effectiveContext,
+    });
+    rememberAIQuestion(question);
+    return {
+      ok: true,
+      question,
+      source: question.source || 'local-template-generator',
+      usedRemoteAI: false,
+      fallback: Boolean(reason),
+      error: reason,
+    };
+  } catch (localError) {
+    return {
+      ok: false,
+      question: null,
+      source: 'local-template-generator-error',
+      usedRemoteAI: false,
+      fallback: false,
+      error: localError,
+    };
+  }
 }
 
 export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random' } = {}) {
-  const context = buildRecentQuestionContext(18);
+  const context = buildRecentQuestionContext(50);
 
   try {
     const remoteResult = await requestRemoteAIQuestion({ previousQuestionId, branchFilter, context });

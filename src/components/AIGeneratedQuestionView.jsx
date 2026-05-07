@@ -74,7 +74,7 @@ function AIErrorState({ onGenerateQuestion }) {
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
         <h2>Soru üretilemedi.</h2>
-        <p>Gerçek AI yanıtı alınamazsa sistem güvenli şekilde hazır/local spot soru generatorüne döner.</p>
+        <p>Güvenli generator geçerli ve tekrar etmeyen yeni soru üretemedi. Mevcut gömülü vakalar fallback olarak gösterilmez; tekrar deneyebilirsin.</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
         <Icon name="RotateCcw" /> Tekrar dene
@@ -150,7 +150,7 @@ function AIGeneratedQuestionView({
       {loading ? <AILoadingState /> : null}
       {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}
       {!loading && !error && question ? (
-        <div className="ai-case-shell case-route-transition" data-case-id={question.id}>
+        <div key={question.id} className="ai-case-shell case-route-transition" data-case-id={question.id}>
           <CasePlayer
             clinicalCase={question}
             branch={AI_SPOT_BRANCH}
