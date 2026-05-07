@@ -3,29 +3,31 @@ import { attachQuestionDedupeFields, getQuestionCorrectText, getQuestionOptionTe
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { validateBranchFit } from './aiBranchRules.js';
 import {
-  removeInlineFieldLabels,
-  repairMisplacedClinicalData,
-  validateClinicalFieldPlacement,
-} from './clinicalFieldClassification.js';
-import {
   detectBrokenSentence,
   detectExcessivePunctuation,
   detectMetaLanguage,
   detectTemplateLikeFeedback,
   detectInvalidClinicalMeasurementFormat,
   repairFeedbackText as repairEditorialFeedbackText,
-  repairEditorialQuality,
-  normalizeMedicalTurkish,
   validateClinicalMeaning,
   validateGeneratedCaseText,
+  normalizeMedicalTurkish,
 } from './editorialQuality.js';
+
+import {
+  normalizeClinicalDatumText,
+  removeInlineFieldLabels,
+  repairEvidenceChainItems,
+  repairMisplacedClinicalData,
+  validateClinicalFieldPlacement,
+} from './clinicalFieldPlacement.js';
 
 export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'öğrenme hedefi',
   'çeldirici',
   'doğru seçenek',
   'yanıt ekseni',
-  'bulgu ilişkisi ve mekanizma',
+  'patern ve mekanizma',
   'kısa ve hedef odaklı yorumlanmalıdır',
   'klinik değerlendirme için ek veri',
   'klinik bağlamda',
@@ -43,7 +45,7 @@ export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'hedeflenen öğrenme çıktısıyla',
   'gömülü vakadaki metni tekrar etmekten',
   'direkt tanı adı arama',
-  'bulgu yorumu beklenir',
+  'patern yorumlaması beklenir',
   'yanıtı açık etmeden',
   'seçenekler arasında doğrudan ezber',
   'tus sorusunda doğru ayrım',
@@ -53,10 +55,12 @@ export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'karar verdiren ipucu',
   'bu nedenle en iyi yanıt',
   'çeldirici',
-  'seçilen alt disiplin',
-  'tanı testleri tedaviyi geciktirmemelidir',
-  'mekanizma özeti',
-  'etken-test ayrımı',
+  'başvuru yakınması:',
+  'laboratuvar paterni:',
+  'görüntüleme bulgusu:',
+  'fizik muayene bulgusu:',
+  'olgu verisi:',
+  'ek destek:',
 ];
 
 const HARD_FORBIDDEN_REGEXES = [
@@ -85,29 +89,40 @@ function hasForbiddenPhrase(text = '') {
 }
 
 function cleanSentence(text = '') {
-  let value = normalizeMedicalTurkish(removeInlineFieldLabels(String(text || '')))
+  let value = removeInlineFieldLabels(normalizeMedicalTurkish(String(text || '')))
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
     .replace(/(?<!\d)\.(?=\S)/g, '. ')
     .replace(/\s*\/\s*/g, '/')
-    .replace(/çeldiriciler/giu, 'yanlış seçenekler')
-    .replace(/çeldiriciyi/giu, 'yanlış seçeneği')
-    .replace(/çeldirici/giu, 'yanlış seçenek')
-    .replace(/öğrenci/giu, 'hekim adayı')
-    .replace(/yanıt ekseni/giu, 'klinik karar')
+    .replace(/\bAI\s*spot\b/giu, '')
+    .replace(/\bçeldirici\s+ayrımı\b/giu, 'ayırıcı tanı')
+    .replace(/\bçeldiriciler\b/giu, 'alternatifler')
+    .replace(/\bçeldiriciyi\b/giu, 'alternatifi')
+    .replace(/\bçeldirici\b/giu, 'alternatif')
+    .replace(/\böğrenci\b/giu, 'hekim adayı')
+    .replace(/\bverilen öğrenme hedefi\b/giu, 'klinik bilgi')
+    .replace(/\böğrenme hedefi\b/giu, 'klinik bilgi')
+    .replace(/\bdoğru seçenek\b/giu, 'uygun yanıt')
+    .replace(/\byanıt ekseni\b/giu, 'klinik karar')
+    .replace(/\bpatern ve mekanizma\b/giu, 'bulgu ilişkisi')
+    .replace(/\bpatern yorumlaması\b/giu, 'bulgu yorumu')
+    .replace(/\bklinik bağlamda\b/giu, 'bu tabloda')
+    .replace(/\bklinik değerlendirme için ek veri sağlar\b/giu, 'objektif destek sağlar')
+    .replace(/\bsonuçlar tek bir tanı adını yazmaz;?\s*/giu, '')
+    .replace(/\byüzeysel anahtar kelimeyle değil\b/giu, '')
+    .replace(/\bkısa ve hedef odaklı yorumlanmalıdır\b/giu, 'birlikte değerlendirilir')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/^[,.;:!?\-\s]+|[,.;:!?\-\s]+$/g, '')
     .trim();
-  value = value.replace(/([.!?])\s+([a-zçğıöşü])/gu, (_, punct, letter) => `${punct} ${letter.toLocaleUpperCase('tr')}`);
   return value;
 }
 
 function filterQualityItems(items = [], max = 4) {
   const seen = new Set();
   const output = [];
-  items.map(toPlainText).map(cleanSentence).forEach((item) => {
+  items.map(toPlainText).map(cleanSentence).map((item) => normalizeClinicalDatumText(item).replace(/[.]$/u, '')).forEach((item) => {
     if (!item || item.length < 8) return;
     if (/^(ilk adım|sınav incisi|sınav notu|tus notu)\s*:/iu.test(item)) return;
     if (hasForbiddenPhrase(item)) return;
@@ -169,7 +184,7 @@ function deriveBranchSpecificRisk(question = {}) {
     if (/dehidratasyon|ishal|kusma|gastroenterit/.test(bundle)) {
       return ['Süt çocuklarında hızlı sıvı kaybı riski', 'Kusma veya ishalle oral alımın azalması', 'Kapiller dolum ve idrar çıkışının izlenmesi'];
     }
-    if (/hışıltılı solunum|hisi?lti|bronsiolit|oksuruk|solunum/.test(bundle)) {
+    if (/hışıltılı solunum|wheezing|bronsiolit|oksuruk|solunum/.test(bundle)) {
       return ['Süt çocukluğu döneminde küçük hava yolu obstrüksiyonu', 'Beslenme azalması ve solunum eforu riski', 'Hipoksemi gelişimi açısından yakın izlem'];
     }
     if (/nobet|febril/.test(bundle)) {
@@ -187,7 +202,7 @@ function deriveBranchSpecificRisk(question = {}) {
     return ['İlaç veya toksin maruziyeti öyküsü', 'Doz ve zaman ilişkisinin klinik tabloyu belirlemesi', 'Antidot veya destek tedavisi gereksinimi'];
   }
   if (/mikrobiyoloji|seroloji|kultur|viral|bakteri|direnc|temas/.test(bundle)) {
-    return ['Temas öyküsü veya örnek türünün yorumu değiştirmesi', 'Bağışıklık durumunun etken ayrımına etkisi', 'Seroloji, kültür veya direnç sonucunun birlikte değerlendirilmesi'];
+    return ['Temas öyküsü veya örnek türünün yorumu değiştirmesi', 'Bağışıklık durumunun etken ayrımına etkisi', 'Seroloji, kültür veya direnç paterninin birlikte değerlendirilmesi'];
   }
   if (/fizyoloji|baroreseptor|sempatik|vagal|ventilasyon|perfuzyon/.test(bundle)) {
     return ['Temel mekanizmanın klinik bulguyla ilişkilendirilmesi', 'Kompansatuvar yanıtın yönünün ayırt edilmesi', 'Sistem yanıtının kısa süreli değişkenlerle değerlendirilmesi'];
@@ -216,7 +231,7 @@ function deriveBranchSpecificClues(question = {}) {
     if (/dehidratasyon|ishal|kusma|gastroenterit/.test(bundle)) {
       return ['Mukozalarda kuruluk', 'Gözyaşı ve idrar çıkışında azalma', 'Taşikardi veya kapiller dolum uzaması', 'Sıvı kaybının derecesini gösteren vital bulgular'];
     }
-    if (/hışıltılı solunum|hisi?lti|bronsiolit|oksuruk|solunum/.test(bundle)) {
+    if (/hışıltılı solunum|wheezing|bronsiolit|oksuruk|solunum/.test(bundle)) {
       return ['Ekspiratuvar hışıltılı solunum', 'Subkostal çekilme veya takipne', 'Beslenmede azalma', 'Hipoksemi varlığının değerlendirilmesi'];
     }
     if (/nobet|febril/.test(bundle)) {
@@ -237,7 +252,7 @@ function deriveBranchSpecificClues(question = {}) {
   if (mixed.length >= 3) return mixed;
 
   if (/farmakoloji|ilac|toksin|antidot/.test(bundle)) return ['Maruziyet zamanı ve doz ilişkisi', 'Toksidromla uyumlu vital veya muayene bulgusu', 'Antidot gerektiren klinik belirti', 'Benzer toksisitelerin ayrımı'];
-  if (/mikrobiyoloji|seroloji|kultur|viral|bakteri|direnc|temas/.test(bundle)) return ['Örnek türü ve temas öyküsü', 'Seroloji veya kültür sonucunun yönü', 'Bağışıklık durumuyla uyumlu etken olasılığı', 'Tedavi veya izolasyon kararını etkileyen bulgu'];
+  if (/mikrobiyoloji|seroloji|kultur|viral|bakteri|direnc|temas/.test(bundle)) return ['Örnek türü ve temas öyküsü', 'Seroloji veya kültür paterninin yönü', 'Bağışıklık durumuyla uyumlu etken olasılığı', 'Tedavi veya izolasyon kararını etkileyen bulgu'];
   if (/fizyoloji|baroreseptor|sempatik|vagal|ventilasyon|perfuzyon/.test(bundle)) return ['Başlangıç değişkeninin yönü', 'Kompansatuvar yanıtın beklenen sonucu', 'Karşıt fizyolojik yanıtların elenmesi', 'Mekanizmayı destekleyen objektif bulgu'];
   return ['Başvuru yakınmasının ani veya ilerleyici seyri', 'Muayene bulgusunun tanısal yön göstermesi', 'Objektif tetkik sonucunun tabloyla uyumu', 'Alternatif seçenekleri dışlayan temel ipucu'];
 }
@@ -258,7 +273,7 @@ function safeDemographic(question = {}) {
       return /eritema toksikum|papulopustuler/.test(bundle) ? '3 günlük yenidoğan' : '10 günlük yenidoğan';
     }
     if (/bruton|pyojenik|b hucre|immunglobulin|otitis|sinuzit/.test(bundle)) return '8 aylık erkek bebek';
-    if (/hışıltılı solunum|hisi?lti|bronsiolit/.test(bundle)) return '8 aylık erkek bebek';
+    if (/wheezing|bronsiolit/.test(bundle)) return '8 aylık erkek bebek';
     if (/kawasaki|koroner|konjonktivit|mukozal|dudak/.test(bundle)) return '4 yaş kız çocuk';
     if (/emme\s+azalması/i.test([question.stem, question.chiefComplaint, question.patientIntro?.presentation].join(' ')) && !/yenidoğan|bebek|aylık/i.test(raw)) {
       return '3 aylık kız bebek';
@@ -284,7 +299,7 @@ function normalizePediatricPresentation(question = {}) {
   if (/kawasaki|koroner|konjonktivit|mukozal|dudak/.test(bundle)) return 'Beş gündür süren ateş ve döküntü';
   if (/yenidogan|sarilik|bilirubin|emme/.test(bundle)) return 'Sarılık ve emme azalması';
   if (/dehidratasyon|ishal|kusma|gastroenterit/.test(bundle)) return 'Kusma ve dehidratasyon';
-  if (/hışıltılı solunum|hisi?lti|bronsiolit|oksuruk|solunum/.test(bundle)) return 'Hışıltılı solunum ve öksürük';
+  if (/wheezing|bronsiolit|oksuruk|solunum/.test(bundle)) return 'Hışıltılı solunum ve öksürük';
   if (/nobet|febril/.test(bundle)) return 'Ateşle ilişkili nöbet';
   if (/emme\s+azalması/i.test(presentation) && !/yenidoğan|bebek|aylık/i.test(profile)) {
     presentation = presentation.replace(/\s*ve\s*emme\s+azalması/giu, '').replace(/emme\s+azalması/giu, 'halsizlik').trim() || 'Ateş ve halsizlik';
@@ -298,7 +313,7 @@ function normalizeSettingForQuestion(question = {}) {
   const bundle = textBundle(question);
   if (isPediatrics(question)) {
     if (/yenidogan|hie|hipoksik|iskemik|asfiksi|eritema toksikum|sarilik|bilirubin/.test(bundle)) return 'Yenidoğan servisinde değerlendirilir';
-    if (/hışıltılı solunum|hisi?lti|bronsiolit|dehidratasyon|nobet|kawasaki|ates/.test(bundle)) return 'çocuk acile getirilir';
+    if (/wheezing|bronsiolit|dehidratasyon|nobet|kawasaki|ates/.test(bundle)) return 'çocuk acile getirilir';
     return 'pediatri polikliniğine başvurur';
   }
   if (isObgyn(question)) return /acil|kanama|ağrı|agri/.test(bundle) ? 'kadın doğum aciline başvurur' : 'kadın doğum polikliniğine başvurur';
@@ -310,20 +325,18 @@ function normalizeSettingForQuestion(question = {}) {
 
 function buildNaturalHistorySummary(question = {}) {
   const profile = safeDemographic(question);
-  const presentation = normalizePediatricPresentation(question).replace(/[.]+$/u, '');
-  const settingPhrase = normalizeSettingForQuestion(question);
+  const presentation = normalizePediatricPresentation(question);
+  const setting = String(question.setting || '').trim();
+  const clues = deriveBranchSpecificClues(question).slice(0, 2);
   const intro = isBasicScience(question)
     ? `${profile}, ${presentation.toLocaleLowerCase('tr')} nedeniyle kısa TUS pratiğinde ele alınır.`
-    : `${profile}, ${presentation.toLocaleLowerCase('tr')} nedeniyle ${settingPhrase || 'klinik değerlendirmeye alınır'}.`;
-  const historyPrompt = isBasicScience(question)
-    ? 'Temel mekanizma, verilen kısa bağlam üzerinden sorgulanır.'
-    : 'Semptom süresi, risk faktörleri ve eşlik eden yakınmalar öyküde netleştirilir.';
-  return cleanSentence(`${intro} ${historyPrompt}`)
-    .replace(/başvurur\./u, 'başvurur.')
+    : `${profile}, ${presentation.toLocaleLowerCase('tr')} nedeniyle ${setting || 'başvurur'}.`;
+  const clueText = clues.length ? ` ${clues.join('; ')} dikkat çeker.` : '';
+  return cleanSentence(`${intro}${clueText}`)
+    .replace(/\bbaşvurur\./u, 'başvurur.')
     .replace(/\s+/g, ' ')
     .trim();
 }
-
 
 function normalizeInvestigationQuality(investigation = {}, index = 0) {
   const label = sanitizeMeasurementText(investigation.label || investigation.name || `Hedefli tetkik ${index + 1}`);
@@ -360,9 +373,9 @@ function repairFeedbackText(text = '', question = {}) {
 
 function repairWrongFeedback(text = '', optionText = '', question = {}) {
   const cleaned = cleanSentence(text);
-  if (cleaned && cleaned.length >= 25 && !hasForbiddenPhrase(cleaned)) return cleaned;
+  if (cleaned && cleaned.length >= 25 && !hasForbiddenPhrase(cleaned) && !detectTemplateLikeFeedback(cleaned)) return cleaned;
   const correct = getQuestionCorrectText(question);
-  return cleanSentence(`${optionText} uygun klinik koşullarda düşünülebilir. Bu tabloda ana bulgular ${correct || 'uygun yanıt'} lehine daha güçlüdür.`);
+  return cleanSentence(`${optionText} kendi tipik bulguları varsa düşünülür. Bu tabloda ana bulgular ${correct || 'uygun yanıt'} lehine daha güçlüdür.`);
 }
 
 function repairDifferentialComparison(comparison = {}, question = {}) {
@@ -374,7 +387,7 @@ function repairDifferentialComparison(comparison = {}, question = {}) {
       explanation,
       comparisonPoints: points.length ? points : [
         `${optionText} için beklenen temel bulgu bu olguda baskın değildir.`,
-        'Olgudaki somut ipuçları doğru yanıta daha doğrudan yönlendirir.',
+        'Olgudaki somut ipuçları uygun yanıta daha doğrudan yönlendirir.',
       ],
     };
   });
@@ -382,7 +395,7 @@ function repairDifferentialComparison(comparison = {}, question = {}) {
 }
 
 export function repairAIQuestionQuality(question = {}) {
-  const repaired = repairMisplacedClinicalData({ ...question });
+  const repaired = { ...question };
   repaired.demographics = safeDemographic(repaired);
   repaired.learningTarget = cleanSentence(repaired.learningTarget || repaired.clinicalFocus || 'Karar verdirici klinik bilginin yorumlanması');
   if (hasForbiddenPhrase(repaired.learningTarget)) repaired.learningTarget = 'Karar verdirici klinik bulgunun doğru yorumlanması';
@@ -424,8 +437,6 @@ export function repairAIQuestionQuality(question = {}) {
     investigations: repaired.investigations,
   };
 
-  Object.assign(repaired, repairMisplacedClinicalData(repaired));
-
   repaired.explanation = repairFeedbackText(repaired.explanation || repaired.diagnosis?.explanation || repaired.diagnosis?.answerFeedback?.whyCorrect, repaired);
   repaired.wrongOptionFeedback = { ...(repaired.wrongOptionFeedback || {}) };
   (Array.isArray(repaired.options) ? repaired.options : []).forEach((option) => {
@@ -457,26 +468,23 @@ export function repairAIQuestionQuality(question = {}) {
     repaired.diagnosis.answerFeedback.managementSteps = [
       'Önce hastanın yaşına ve başvuru yakınmasına uygun acil bulguları değerlendir.',
       'Muayene ve tetkik verilerini aynı klinik olasılık içinde birleştir.',
-      'Doğru yaklaşımı geciktirecek alternatifleri somut bulgularla ele.',
+      'Yaklaşımı geciktirebilecek seçenekleri somut bulgularla ayır.',
     ];
   }
 
-  const semanticRepaired = repairMisplacedClinicalData(repaired);
-  if (isPediatrics(semanticRepaired)) {
-    const pediatricPresentation = normalizePediatricPresentation(semanticRepaired);
-    semanticRepaired.chiefComplaint = pediatricPresentation;
-    semanticRepaired.patientIntro = {
-      ...(semanticRepaired.patientIntro || {}),
-      presentation: pediatricPresentation,
-      historySummary: buildNaturalHistorySummary({ ...semanticRepaired, chiefComplaint: pediatricPresentation }),
-    };
-    semanticRepaired.findings = {
-      ...(semanticRepaired.findings || {}),
-      history: [semanticRepaired.patientIntro.historySummary],
-    };
+  const fieldRepaired = repairMisplacedClinicalData(repaired);
+  fieldRepaired.patientIntro = {
+    ...(fieldRepaired.patientIntro || {}),
+    riskContext: filterQualityItems(fieldRepaired.patientIntro?.riskContext || [], 3),
+    distinctiveClues: filterQualityItems(fieldRepaired.patientIntro?.distinctiveClues || [], 4),
+  };
+  if (fieldRepaired.diagnosis?.answerFeedback) {
+    fieldRepaired.diagnosis.answerFeedback.evidenceChain = repairEvidenceChainItems(fieldRepaired.diagnosis.answerFeedback.evidenceChain || fieldRepaired.evidenceChain, fieldRepaired, 5);
   }
-  attachQuestionDedupeFields(semanticRepaired);
-  return semanticRepaired;
+  fieldRepaired.evidenceChain = repairEvidenceChainItems(fieldRepaired.evidenceChain || fieldRepaired.patientIntro?.distinctiveClues || [], fieldRepaired, 5);
+
+  attachQuestionDedupeFields(fieldRepaired);
+  return fieldRepaired;
 }
 
 function visibleQualityTexts(question = {}) {

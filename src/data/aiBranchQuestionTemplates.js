@@ -13,11 +13,11 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "demographics": "18 aylık çocuk",
     "setting": "Çocuk acil",
     "chiefComplaint": "Ateş sonrası kısa jeneralize nöbet",
-    "stem": "Ateşi yükselen 18 aylık çocukta 3 dakika süren jeneralize tonik-klonik nöbet sonrası bilinç hızla normale döner. Ense sertliği ve fokal nörolojik bulgu yoktur.",
+    "stem": "Ateşi yükselen 18 aylık çocukta 3 dakika süren jeneralize tonik-klonik nöbet sonrası bilinç hızla normale döner. Ense sertliği ve fokal nörolojik bulgu yoktur",
     "exam": [
-      "Genel durum toparlamış",
-      "Ense sertliği yok",
-      "Fokal nörolojik defisit yok"
+      "Genel durum toparlamış.",
+      "Ense sertliği yok.",
+      "Fokal nörolojik defisit yok."
     ],
     "vitals": {
       "TA": "88/54 mmHg",
@@ -71,13 +71,23 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "İnfantil spazm kümeler halinde fleksör/ekstansör spazmlar ve gelişimsel sorunlarla ilişkilidir."
     },
     "evidenceChain": [
-      "Yaş pediatrik febril nöbet aralığındadır.",
-      "Nöbet kısa ve jeneralizedir.",
-      "Fokal nörolojik bulgu yoktur.",
-      "Meningeal irritasyon bulgusu verilmemiştir."
+      "Yaş pediatrik febril nöbet aralığındadır",
+      "Nöbet kısa ve jeneralizedir",
+      "Fokal nörolojik bulgu yoktur",
+      "Meningeal irritasyon bulgusu verilmemiştir"
     ],
     "examPearl": "Basit febril konvülziyon: 6 ay-5 yaş, jeneralize, 15 dakikadan kısa ve 24 saatte tekrarlamayan nöbettir.",
-    "spotCategory": "AI Spot • Çocuk Sağlığı ve Hastalıkları"
+    "spotCategory": "AI Spot • Çocuk Sağlığı ve Hastalıkları",
+    "patientIntro": {
+      "presentation": "Ateş sonrası kısa jeneralize nöbet",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Ateş sonrası kısa jeneralize nöbet",
+        "Ense sertliği yok",
+        "TA: 88/54 mmHg"
+      ],
+      "historySummary": "Ateşi yükselen 18 aylık çocukta 3 dakika süren jeneralize tonik-klonik nöbet sonrası bilinç hızla normale döner. Ense sertliği ve fokal nörolojik bulgu yoktur."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -88,16 +98,15 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "seedId": "branch-peds-pyloric-stenosis-001",
     "title": "Süt çocuğunda fışkırır kusma",
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "learningTarget": "Hipertrofik pilor stenozunda kusma bulgu örüntüsü ve metabolik alkalozun tanınması",
+    "learningTarget": "Hipertrofik pilor stenozunda kusma paterni ve metabolik alkalozun tanınması",
     "correctConcept": "Hipertrofik pilor stenozu",
     "demographics": "5 haftalık erkek bebek",
     "setting": "Pediatri polikliniği",
     "chiefComplaint": "Beslenme sonrası fışkırır tarzda kusma",
-    "stem": "5 haftalık erkek bebekte beslenme sonrası giderek artan safrasız fışkırır kusma, kilo alamama ve dehidratasyon bulguları vardır.",
+    "stem": "5 haftalık erkek bebekte beslenme sonrası giderek artan safrasız fışkırır kusma, kilo alamama ve dehidratasyon bulguları vardır",
     "exam": [
-      "Üst abdomende zeytin benzeri kitle palpe edilebilir",
-      "Mukozalar kuru",
-      "Safralı kusma tariflenmez"
+      "Mukozalar kuru.",
+      "Safralı kusma tariflenmez."
     ],
     "vitals": {
       "TA": "82/50 mmHg",
@@ -112,11 +121,21 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         "label": "Elektrolit ve kan gazı",
         "type": "lab",
         "priority": "essential",
-        "summary": "Hipokloremik metabolik alkaloz bulgu örüntüsü izlenir.",
+        "summary": "Hipokloremik metabolik alkaloz paterni izlenir.",
         "findings": [
           "Klor düşük",
           "pH yüksek",
           "Bikarbonat yüksek"
+        ]
+      },
+      {
+        "id": "field-placement-repair-movpjoge",
+        "label": "Hedefli görüntüleme/laboratuvar",
+        "type": "Imaging",
+        "priority": "Useful",
+        "summary": "Üst abdomende zeytin benzeri kitle palpe edilebilir.",
+        "findings": [
+          "Üst abdomende zeytin benzeri kitle palpe edilebilir"
         ]
       }
     ],
@@ -152,13 +171,24 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "Gastroenteritte ishal ve enfeksiyöz bulgular ön plandadır. Tipik alkaloz beklenmez."
     },
     "evidenceChain": [
-      "Yaş aralığı pilor stenozu için tipiktir.",
-      "Kusma safrasız ve fışkırır tarzdadır.",
-      "Dehidratasyon ve kilo alamama vardır.",
-      "Hipokloremik metabolik alkaloz ayırt ettiricidir."
+      "Yaş aralığı pilor stenozu için tipiktir",
+      "Kusma safrasız ve fışkırır tarzdadır",
+      "Dehidratasyon ve kilo alamama vardır",
+      "Hipokloremik metabolik alkaloz ayırt ettiricidir"
     ],
     "examPearl": "Hipertrofik pilor stenozu safrasız fışkırır kusma ve hipokloremik metabolik alkalozla TUS’ta klasikleşmiştir.",
-    "spotCategory": "AI Spot • Çocuk Sağlığı ve Hastalıkları"
+    "spotCategory": "AI Spot • Çocuk Sağlığı ve Hastalıkları",
+    "patientIntro": {
+      "presentation": "Beslenme sonrası fışkırır tarzda kusma",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Beslenme sonrası fışkırır tarzda kusma",
+        "Mukozalar kuru",
+        "Üst abdomende zeytin benzeri kitle palpe edilebilir",
+        "Klor düşük"
+      ],
+      "historySummary": "5 haftalık erkek bebekte beslenme sonrası giderek artan safrasız fışkırır kusma, kilo alamama ve dehidratasyon bulguları vardır."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -174,11 +204,11 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "demographics": "31 yaş gebe kadın",
     "setting": "Antenatal değerlendirme",
     "chiefComplaint": "Baş ağrısı ve tansiyon yüksekliği",
-    "stem": "32 haftalık gebe kadın baş ağrısı ve görmede bulanıklık nedeniyle değerlendirilir. Kan basıncı yüksek ve idrarda protein pozitiftir.",
+    "stem": "32 haftalık gebe kadın baş ağrısı ve görmede bulanıklık nedeniyle değerlendirilir. Kan basıncı yüksek ve idrarda protein pozitiftir",
     "exam": [
-      "Pretibial ödem",
-      "Sağ üst kadran hassasiyeti yok",
-      "Bilinç açık"
+      "Pretibial ödem.",
+      "Sağ üst kadran hassasiyeti yok.",
+      "Bilinç açık."
     ],
     "vitals": {
       "TA": "158/98 mmHg",
@@ -232,13 +262,24 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "HELLP için hemoliz, yüksek karaciğer enzimleri ve düşük trombosit gerekir."
     },
     "evidenceChain": [
-      "Gebelik 20. Haftadan sonradır.",
-      "Kan basıncı yüksek ölçülmüştür.",
-      "Proteinüri vardır.",
-      "Nöbet olmaması eklampsiyi dışlar."
+      "Gebelik 20. Haftadan sonradır",
+      "Kan basıncı yüksek ölçülmüştür",
+      "Proteinüri vardır",
+      "Nöbet olmaması eklampsiyi dışlar"
     ],
     "examPearl": "Preeklampsi tanısında 20. Haftadan sonra hipertansiyon + proteinüri veya hedef organ bulgusu aranır.",
-    "spotCategory": "AI Spot • Kadın Hastalıkları ve Doğum"
+    "spotCategory": "AI Spot • Kadın Hastalıkları ve Doğum",
+    "patientIntro": {
+      "presentation": "Baş ağrısı ve tansiyon yüksekliği",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Baş ağrısı ve tansiyon yüksekliği",
+        "Pretibial ödem",
+        "Proteinüri pozitif saptanır",
+        "TA: 158/98 mmHg"
+      ],
+      "historySummary": "32 haftalık gebe kadın baş ağrısı ve görmede bulanıklık nedeniyle değerlendirilir. Kan basıncı yüksek ve idrarda protein pozitiftir."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -249,16 +290,16 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "seedId": "branch-obgyn-endometriosis-001",
     "title": "Dismenore ve infertilite",
     "relatedBranch": "Kadın Hastalıkları ve Doğum",
-    "learningTarget": "Endometrioziste siklik ağrı ve infertilite bulgu örüntüsünün tanınması",
+    "learningTarget": "Endometrioziste siklik ağrı ve infertilite paterninin tanınması",
     "correctConcept": "Endometriozis",
     "demographics": "28 yaş kadın",
     "setting": "Kadın doğum polikliniği",
     "chiefComplaint": "Kronik pelvik ağrı ve infertilite",
-    "stem": "28 yaş kadın giderek artan dismenore, derin disparoni ve bir yıldır gebelik oluşmaması nedeniyle başvurur.",
+    "stem": "28 yaş kadın giderek artan dismenore, derin disparoni ve bir yıldır gebelik oluşmaması nedeniyle başvurur",
     "exam": [
-      "Uterosakral ligamentlerde hassasiyet",
-      "Adneksiyal hassasiyet olabilir",
-      "Ateş veya akut batın bulgusu yok"
+      "Uterosakral ligamentlerde hassasiyet.",
+      "Adneksiyal hassasiyet olabilir.",
+      "Ateş veya akut batın bulgusu yok."
     ],
     "vitals": {
       "TA": "112/70 mmHg",
@@ -280,7 +321,7 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         ]
       }
     ],
-    "question": "Bu jinekolojik bulgu örüntüsü en çok hangi durumu düşündürür?",
+    "question": "Bu jinekolojik patern en çok hangi durumu düşündürür?",
     "options": [
       {
         "id": "A",
@@ -307,18 +348,29 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "explanation": "Siklik pelvik ağrı, progresif dismenore, derin disparoni ve infertilite birlikteliği endometriozis için karakteristiktir.",
     "wrongOptionFeedback": {
       "B": "PID’de ateş, servikal hareket hassasiyeti ve enfeksiyon bulguları ön plandadır.",
-      "C": "Miyom anormal uterin kanama ve bası semptomları yapabilir. Siklik disparoni-infertilite bulgu örüntüsü daha zayıftır.",
+      "C": "Miyom anormal uterin kanama ve bası semptomları yapabilir. Siklik disparoni-infertilite paterni daha zayıftır.",
       "D": "PKOS oligo/anovülasyon ve hiperandrojenizmle beklenir.",
-      "E": "Over torsiyonu ani şiddetli ağrı ve akut batın bulgularıyla seyreder."
+      "E": "Over torsiyonu ani şiddetli ağrı ve akut batın paternindedir."
     },
     "evidenceChain": [
-      "Ağrı siklik ve progresiftir.",
-      "Derin disparoni eşlik eder.",
-      "İnfertilite vardır.",
-      "Akut enfeksiyon veya torsiyon bulgusu yoktur."
+      "Ağrı siklik ve progresiftir",
+      "Derin disparoni eşlik eder",
+      "İnfertilite vardır",
+      "Akut enfeksiyon veya torsiyon bulgusu yoktur"
     ],
     "examPearl": "Endometriozis TUS’ta dismenore + disparoni + infertilite üçlüsüyle sık sorulur.",
-    "spotCategory": "AI Spot • Kadın Hastalıkları ve Doğum"
+    "spotCategory": "AI Spot • Kadın Hastalıkları ve Doğum",
+    "patientIntro": {
+      "presentation": "Kronik pelvik ağrı ve infertilite",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Kronik pelvik ağrı ve infertilite",
+        "Uterosakral ligamentlerde hassasiyet",
+        "Endometrioma ile uyumlu homojen düşük eko içeren kistik görünüm izlenebilir",
+        "TA: 112/70 mmHg"
+      ],
+      "historySummary": "28 yaş kadın giderek artan dismenore, derin disparoni ve bir yıldır gebelik oluşmaması nedeniyle başvurur."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -333,12 +385,13 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "correctConcept": "Sempatik aktivite artışı ve vagal aktivite azalması",
     "demographics": "22 yaş sağlıklı gönüllü",
     "setting": "Fizyoloji laboratuvarı",
-    "chiefComplaint": "Ayağa kalkma sonrası refleks yanıt",
-    "stem": "Sağlıklı gönüllü yatar pozisyondan ayağa kaldırıldığında venöz dönüş kısa süre azalır ve arter basıncı düşme eğilimi gösterir.",
+    "chiefComplaint": "Klinik değerlendirme gerektiren başvuru",
+    "stem": "Sağlıklı gönüllü yatar pozisyondan ayağa kaldırıldığında venöz dönüş kısa süre azalır ve arter basıncı düşme eğilimi gösterir",
     "exam": [
-      "Bilinç açık",
-      "Kardiyak oskültasyon doğal",
-      "Nörolojik defisit yok"
+      "Bilinç açık.",
+      "Kardiyak oskültasyon doğal.",
+      "Nörolojik defisit yok.",
+      "Ayağa kalkma sonrası refleks yanıt."
     ],
     "vitals": {
       "TA": "112/70 mmHg",
@@ -392,13 +445,23 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "Ortostazda kalp hızı refleks olarak artar."
     },
     "evidenceChain": [
-      "Ayağa kalkınca venöz dönüş azalır.",
-      "Arter basıncı düşme eğilimindedir.",
-      "Baroreseptör deşarjı azalır.",
-      "Sempatik aktivite kompansatuvar artar."
+      "Ayağa kalkınca venöz dönüş azalır",
+      "Arter basıncı düşme eğilimindedir",
+      "Baroreseptör deşarjı azalır",
+      "Sempatik aktivite kompansatuvar artar"
     ],
     "examPearl": "Baroreseptör refleksinde basınç düşerse sempatik artar, parasempatik azalır. Basınç artarsa bunun tersi olur.",
-    "spotCategory": "AI Spot • Fizyoloji"
+    "spotCategory": "AI Spot • Fizyoloji",
+    "patientIntro": {
+      "presentation": "Klinik değerlendirme gerektiren başvuru",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Klinik değerlendirme gerektiren başvuru",
+        "Kardiyak oskültasyon doğal",
+        "TA: 112/70 mmHg"
+      ],
+      "historySummary": "Sağlıklı gönüllü yatar pozisyondan ayağa kaldırıldığında venöz dönüş kısa süre azalır ve arter basıncı düşme eğilimi gösterir."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -414,11 +477,11 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "demographics": "Fizyoloji pratiğinde değerlendirilen olgu",
     "setting": "Solunum fizyolojisi pratiği",
     "chiefComplaint": "Ani perfüzyon azalması sonrası gaz değişimi",
-    "stem": "Bir akciğer bölgesinde ventilasyon korunurken perfüzyon belirgin azalır. Gaz değişimi etkinliği düşer.",
+    "stem": "Bir akciğer bölgesinde ventilasyon korunurken perfüzyon belirgin azalır. Gaz değişimi etkinliği düşer",
     "exam": [
-      "Solunum sayısı artmış olabilir",
-      "Oksijen satürasyonu düşme eğilimindedir",
-      "Kardiyak muayene belirleyici değildir"
+      "Solunum sayısı artmış olabilir.",
+      "Oksijen satürasyonu düşme eğilimindedir.",
+      "Kardiyak muayene belirleyici değildir."
     ],
     "vitals": {
       "TA": "116/74 mmHg",
@@ -433,14 +496,14 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         "label": "V/Q değerlendirmesi",
         "type": "physiology",
         "priority": "essential",
-        "summary": "Ventilasyon korunurken perfüzyon azalması yüksek V/Q sonucuna yol açar.",
+        "summary": "Ventilasyon korunurken perfüzyon azalması yüksek V/Q paternine yol açar.",
         "findings": [
           "Perfüzyon azalır",
           "Ölü boşluk etkisi artar"
         ]
       }
     ],
-    "question": "Bu fizyoloji bulgu örüntüsü için en doğru ifade hangisidir?",
+    "question": "Bu fizyoloji paterni için en doğru ifade hangisidir?",
     "options": [
       {
         "id": "A",
@@ -472,13 +535,22 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "Burada temel olay global hipoventilasyon değil bölgesel perfüzyon azalmasıdır."
     },
     "evidenceChain": [
-      "Ventilasyon korunmuştur.",
-      "Perfüzyon azalmıştır.",
-      "Bu nedenle V/Q oranı yükselir.",
-      "Ölü boşluk ventilasyonu artar."
+      "Ventilasyon korunmuştur",
+      "Perfüzyon azalmıştır",
+      "Bu nedenle V/Q oranı yükselir",
+      "Ölü boşluk ventilasyonu artar"
     ],
     "examPearl": "Pulmoner emboli fizyolojisinde perfüzyon azalır. V/Q yükselir ve alveoler ölü boşluk artar.",
-    "spotCategory": "AI Spot • Fizyoloji"
+    "spotCategory": "AI Spot • Fizyoloji",
+    "patientIntro": {
+      "presentation": "Ani perfüzyon azalması sonrası gaz değişimi",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Ani perfüzyon azalması sonrası gaz değişimi",
+        "TA: 116/74 mmHg"
+      ],
+      "historySummary": "Bir akciğer bölgesinde ventilasyon korunurken perfüzyon belirgin azalır. Gaz değişimi etkinliği düşer."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -494,10 +566,10 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "demographics": "Embriyoloji spot pratiğinde değerlendirilen olgu",
     "setting": "Embriyoloji TUS pratiği",
     "chiefComplaint": "Embriyolojik köken yorumu",
-    "stem": "Embriyoloji pratiğinde sempatik zincir ganglionları ve melanositlerle aynı kökenden gelişen endokrin yapı sorulur.",
+    "stem": "Embriyoloji pratiğinde sempatik zincir ganglionları ve melanositlerle aynı kökenden gelişen endokrin yapı sorulur",
     "exam": [
-      "Klinik muayene değil embriyolojik köken bilgisi ölçülür",
-      "Nöral krest ilişkisi vurgulanır"
+      "Klinik muayene değil embriyolojik köken bilgisi ölçülür.",
+      "Nöral krest ilişkisi vurgulanır."
     ],
     "vitals": {
       "TA": "110/70 mmHg",
@@ -550,13 +622,23 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "Tiroid follikül hücreleri endodermal farengeal taban kökenlidir."
     },
     "evidenceChain": [
-      "Soru embriyolojik kökeni ölçer.",
-      "Nöral krest periferik ganglion ve melanositlerle ilişkilidir.",
-      "Adrenal medulla kromaffin hücreleri bu aileye dahildir.",
-      "Adrenal korteks farklı kökenden gelişir."
+      "Soru embriyolojik kökeni ölçer",
+      "Nöral krest periferik ganglion ve melanositlerle ilişkilidir",
+      "Adrenal medulla kromaffin hücreleri bu aileye dahildir",
+      "Adrenal korteks farklı kökenden gelişir"
     ],
     "examPearl": "Nöral krest: Schwann hücreleri, melanositler, adrenal medulla, periferik ganglionlar ve kraniyofasiyal yapılarla ilişkilidir.",
-    "spotCategory": "AI Spot • Histoloji ve Embriyoloji"
+    "spotCategory": "AI Spot • Histoloji ve Embriyoloji",
+    "patientIntro": {
+      "presentation": "Embriyolojik köken yorumu",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Embriyolojik köken yorumu",
+        "Nöral krest ilişkisi vurgulanır",
+        "TA: 110/70 mmHg"
+      ],
+      "historySummary": "Embriyoloji pratiğinde sempatik zincir ganglionları ve melanositlerle aynı kökenden gelişen endokrin yapı sorulur."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -572,11 +654,10 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "demographics": "Konjenital anomali nedeniyle değerlendirilen bebek",
     "setting": "Embriyoloji TUS pratiği",
     "chiefComplaint": "Dil çıkarma ile hareket eden orta hat boyun kitlesi",
-    "stem": "Çocukta boyun orta hattında, yutkunma ve dil çıkarma ile hareket eden kistik lezyon embriyolojik kalıntı açısından değerlendirilir.",
+    "stem": "Lezyon orta hattadır. Klinik kararı yönlendiren ana bulgudur. Bu nedenle Tiroglossal kanal kisti diğer seçeneklere göre daha güçlü açıklama sağlar",
     "exam": [
-      "Orta hatta kistik lezyon",
-      "Dil çıkarma ile hareket belirgin",
-      "Lateral servikal lenfadenopati ön planda değil"
+      "Dil çıkarma ile hareket belirgin.",
+      "Lateral servikal lenfadenopati ön planda değil."
     ],
     "vitals": {
       "TA": "90/55 mmHg",
@@ -596,9 +677,19 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
           "Orta hat lezyonu",
           "Yutkunma ve dil hareketiyle yer değiştirir"
         ]
+      },
+      {
+        "id": "field-placement-repair-movpjoov",
+        "label": "Hedefli görüntüleme/laboratuvar",
+        "type": "Imaging",
+        "priority": "Useful",
+        "summary": "Orta hatta kistik lezyon.",
+        "findings": [
+          "Orta hatta kistik lezyon"
+        ]
       }
     ],
-    "question": "Bu embriyolojik bulgu örüntüsü en çok hangi duruma uyar?",
+    "question": "Bu embriyolojik patern en çok hangi duruma uyar?",
     "options": [
       {
         "id": "A",
@@ -630,13 +721,24 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "Lenfadenit inflamatuvar hassasiyet ve enfeksiyon bulgularıyla beklenir."
     },
     "evidenceChain": [
-      "Lezyon orta hattadır.",
-      "Yutkunma ve dil çıkarma ile hareket eder.",
-      "Tiroid iniş yolu kalıntısı düşünülür.",
-      "Lateral yerleşim olmaması brankial kisti zayıflatır."
+      "Lezyon orta hattadır",
+      "Yutkunma ve dil çıkarma ile hareket eder",
+      "Tiroid iniş yolu kalıntısı düşünülür",
+      "Lateral yerleşim olmaması brankial kisti zayıflatır"
     ],
     "examPearl": "Tiroglossal kanal kisti orta hatta olur ve yutkunma/dil çıkarma ile hareket eder.",
-    "spotCategory": "AI Spot • Histoloji ve Embriyoloji"
+    "spotCategory": "AI Spot • Histoloji ve Embriyoloji",
+    "patientIntro": {
+      "presentation": "Dil çıkarma ile hareket eden orta hat boyun kitlesi",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Dil çıkarma ile hareket eden orta hat boyun kitlesi",
+        "Lateral servikal lenfadenopati ön planda değil",
+        "Orta hatta kistik lezyon",
+        "TA: 90/55 mmHg"
+      ],
+      "historySummary": "Lezyon orta hattadır. Klinik kararı yönlendiren ana bulgudur. Bu nedenle Tiroglossal kanal kisti diğer seçeneklere göre daha güçlü açıklama sağlar."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -652,11 +754,11 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "demographics": "Travma sonrası değerlendirilen hasta",
     "setting": "Travma değerlendirmesi",
     "chiefComplaint": "Humerus kırığı sonrası el bileği ekstansiyon kaybı",
-    "stem": "Humerus cisim kırığı sonrası hastada el bileğini ve parmakları ekstansiyona getirememe gelişir. Dorsal elde duyu azalması vardır.",
+    "stem": "Humerus cisim kırığı sonrası hastada el bileğini ve parmakları ekstansiyona getirememe gelişir. Dorsal elde duyu azalması vardır",
     "exam": [
-      "El bileği ekstansiyonu zayıf",
-      "Parmak ekstansiyonu zayıf",
-      "Dorsal el duyusunda azalma"
+      "El bileği ekstansiyonu zayıf.",
+      "Parmak ekstansiyonu zayıf.",
+      "Dorsal el duyusunda azalma."
     ],
     "vitals": {
       "TA": "118/76 mmHg",
@@ -710,13 +812,22 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "Aksiller sinir deltoid fonksiyonu ve omuz lateral duyusuyla ilişkilidir."
     },
     "evidenceChain": [
-      "Humerus cisim kırığı vardır.",
-      "El bileği ekstansiyonu etkilenmiştir.",
-      "Dorsal el duyusu azalmıştır.",
-      "Radial sinir spiral olukta risk altındadır."
+      "Humerus cisim kırığı vardır",
+      "El bileği ekstansiyonu etkilenmiştir",
+      "Dorsal el duyusu azalmıştır",
+      "Radial sinir spiral olukta risk altındadır"
     ],
     "examPearl": "Humerus shaft kırığı + wrist drop = radial sinir lezyonu klasik TUS eşleşmesidir.",
-    "spotCategory": "AI Spot • Anatomi"
+    "spotCategory": "AI Spot • Anatomi",
+    "patientIntro": {
+      "presentation": "Humerus kırığı sonrası el bileği ekstansiyon kaybı",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Humerus kırığı sonrası el bileği ekstansiyon kaybı",
+        "TA: 118/76 mmHg"
+      ],
+      "historySummary": "Humerus cisim kırığı sonrası hastada el bileğini ve parmakları ekstansiyona getirememe gelişir. Dorsal elde duyu azalması vardır."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -732,11 +843,11 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "demographics": "24 yaş erkek",
     "setting": "Genel cerrahi acil",
     "chiefComplaint": "Göç eden karın ağrısı",
-    "stem": "Önce periumbilikal başlayan ağrı saatler içinde sağ alt kadrana yerleşir. İştahsızlık ve bulantı eşlik eder.",
+    "stem": "Önce periumbilikal başlayan ağrı saatler içinde sağ alt kadrana yerleşir. İştahsızlık ve bulantı eşlik eder",
     "exam": [
-      "McBurney noktasında hassasiyet",
-      "Rebound hafif pozitif",
-      "Yaygın defans yok"
+      "McBurney noktasında hassasiyet.",
+      "Rebound hafif pozitif.",
+      "Yaygın defans yok."
     ],
     "vitals": {
       "TA": "116/72 mmHg",
@@ -751,14 +862,14 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         "label": "Cerrahi akut karın değerlendirmesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Lokalize sağ alt kadran hassasiyeti akut apandisit bulgu örüntüsünü destekler.",
+        "summary": "Lokalize sağ alt kadran hassasiyeti akut apandisit paternini destekler.",
         "findings": [
           "Göç eden ağrı",
           "Lokal periton irritasyonu"
         ]
       }
     ],
-    "question": "Bu cerrahi akut karın bulgu örüntüsü için en olası tanı hangisidir?",
+    "question": "Bu cerrahi akut karın paterni için en olası tanı hangisidir?",
     "options": [
       {
         "id": "A",
@@ -782,7 +893,7 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       }
     ],
     "correctAnswer": "A",
-    "explanation": "Periumbilikal ağrının sağ alt kadrana göçü, iştahsızlık ve McBurney hassasiyeti akut apandisit için klasik bulgu örüntüsü oluşturur.",
+    "explanation": "Periumbilikal ağrının sağ alt kadrana göçü, iştahsızlık ve McBurney hassasiyeti akut apandisit için klasik patern oluşturur.",
     "wrongOptionFeedback": {
       "B": "Kolesistit sağ üst kadran ağrısı ve Murphy bulgusuyla beklenir.",
       "C": "Divertikülit daha çok sol alt kadran ağrısı yapar.",
@@ -790,13 +901,23 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "Pankreatit epigastrik sırta vuran ağrı ve enzim yüksekliğiyle beklenir."
     },
     "evidenceChain": [
-      "Ağrı periumbilikal başlar.",
-      "Sağ alt kadrana göç eder.",
-      "İştahsızlık eşlik eder.",
-      "McBurney hassasiyeti vardır."
+      "Ağrı periumbilikal başlar",
+      "Sağ alt kadrana göç eder",
+      "İştahsızlık eşlik eder",
+      "McBurney hassasiyeti vardır"
     ],
     "examPearl": "Akut apandisitte visseral periumbilikal ağrı parietal periton tutulunca sağ alt kadrana lokalize olur.",
-    "spotCategory": "AI Spot • Genel Cerrahi"
+    "spotCategory": "AI Spot • Genel Cerrahi",
+    "patientIntro": {
+      "presentation": "Göç eden karın ağrısı",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Göç eden karın ağrısı",
+        "McBurney noktasında hassasiyet",
+        "TA: 116/72 mmHg"
+      ],
+      "historySummary": "Önce periumbilikal başlayan ağrı saatler içinde sağ alt kadrana yerleşir. İştahsızlık ve bulantı eşlik eder."
+    }
   },
   {
     "branchId": "tus-spot-olgular",
@@ -812,11 +933,11 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "demographics": "67 yaş kadın",
     "setting": "Acil servis",
     "chiefComplaint": "Ani konuşma bozukluğu ve sağ kol güçsüzlüğü",
-    "stem": "Son 60 dakika içinde başlayan afazi ve sağ kol güçsüzlüğü olan hasta acil servise getirilir.",
+    "stem": "Son 60 dakika içinde başlayan afazi ve sağ kol güçsüzlüğü olan hasta acil servise getirilir",
     "exam": [
-      "Afazi mevcut",
-      "Sağ üst ekstremitede motor güç azalmış",
-      "Hipoglisemi dışlanmış"
+      "Afazi mevcut.",
+      "Sağ üst ekstremitede motor güç azalmış.",
+      "Hipoglisemi dışlanmış."
     ],
     "vitals": {
       "TA": "168/94 mmHg",
@@ -870,12 +991,22 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       "E": "Servikal grafi akut fokal nörolojik defisitin ilk değerlendirmesi değildir."
     },
     "evidenceChain": [
-      "Defisit ani başlamıştır.",
-      "Semptom süresi reperfüzyon penceresine uyabilir.",
-      "Hipoglisemi dışlanmıştır.",
-      "Kanama dışlanmadan trombolitik karar verilmez."
+      "Defisit ani başlamıştır",
+      "Semptom süresi reperfüzyon penceresine uyabilir",
+      "Hipoglisemi dışlanmıştır",
+      "Kanama dışlanmadan trombolitik karar verilmez"
     ],
     "examPearl": "Akut inmede ilk kritik görüntüleme kontrastsız beyin BT’dir. Amaç kanamayı hızlı dışlamaktır.",
-    "spotCategory": "AI Spot • Küçük Stajlar"
+    "spotCategory": "AI Spot • Küçük Stajlar",
+    "patientIntro": {
+      "presentation": "Ani konuşma bozukluğu ve sağ kol güçsüzlüğü",
+      "riskContext": [],
+      "distinctiveClues": [
+        "Ani konuşma bozukluğu ve sağ kol güçsüzlüğü",
+        "Kapiller glukoz normal aralıktadır",
+        "TA: 168/94 mmHg"
+      ],
+      "historySummary": "Son 60 dakika içinde başlayan afazi ve sağ kol güçsüzlüğü olan hasta acil servise getirilir."
+    }
   }
 ];

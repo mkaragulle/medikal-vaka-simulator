@@ -22,7 +22,6 @@ import {
   sanitizeMeasurementText,
   sanitizeVitalsObject,
 } from '../utils/clinicalFormatters.js';
-import { removeInlineFieldLabels, normalizeObjectiveMeasurement } from '../utils/clinicalFieldClassification.js';
 
 const SECTION_NAV_ITEMS = [
   { id: 'case-story', label: 'Öykü', icon: 'ClipboardList' },
@@ -161,7 +160,7 @@ function extractClinicalChips(clinicalCase) {
     ['Kusma', /kusma/],
     ['Dispne', /dispne|nefes darlığı/],
     ['Senkop', /senkop|bayılma/],
-    ['Hışıltı', /hışıltı|hışıltılı solunum/],
+    ['Hışıltılı solunum', /hışıltı|hışıltılı solunum/],
     ['Fokal güç kaybı', /güçsüzlük|kuvvet kaybı|hemiparezi|pleji/],
     ['Konuşma bozukluğu', /afazi|konuşma bozukluğu/],
     ['Hematemez', /hematemez|kanlı kusma/],
@@ -204,7 +203,7 @@ function extractPatientClueChips(clinicalCase) {
     ['Hematemez', /hematemez|kanlı kusma/],
     ['Melena', /melena|siyah dışkı/],
     ['Ateş', /ateş|febril/],
-    ['Hışıltı', /hışıltı|hışıltılı solunum/],
+    ['Hışıltılı solunum', /hışıltı|hışıltılı solunum/],
     ['Sarılık', /sarılık|ikter/],
     ['Peteşi/purpura', /peteşi|purpura/],
   ];
@@ -230,7 +229,7 @@ function buildFocusSentence(clinicalCase) {
 
 
 function normalizePatientSummaryText(value = '') {
-  let text = sanitizeMeasurementText(normalizeObjectiveMeasurement(removeInlineFieldLabels(String(value || '')))).replace(/\s+/g, ' ').trim();
+  let text = sanitizeMeasurementText(String(value || '')).replace(/\s+/g, ' ').trim();
   if (!text) return '';
 
   const letters = text.replace(/[^A-Za-zÇĞİÖŞÜçğıöşü]/g, '');
@@ -278,7 +277,7 @@ function compactClinicalText(value = '', maxLength = 170) {
 function cleanPatientSummaryBullet(value = '') {
   return sanitizeMeasurementText(String(value || ''))
     .replace(/\s+/g, ' ')
-    .replace(/^(Başvuru yakınması|Başvuru|Karar verdirici ipucu|Destekleyici kanıt|Olgu verisi|Ek destek|Laboratuvar paterni|Görüntüleme bulgusu|Fizik muayene bulgusu|Mekanizma özeti|Klinik not|Sık tuzak|Etken-test ayrımı|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|TUS kırmızı bayrağı|Ana kanıt|Kritik ipucu|karar verdirici patern|Destekleyici bulgu)\s*[:：-]\s*/iu, '')
+    .replace(/^(Başvuru yakınması|Laboratuvar paterni|Laboratuvar bulgusu|Görüntüleme bulgusu|Fizik muayene bulgusu|Muayene bulgusu|Olgu verisi|Ek destek|Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|TUS kırmızı bayrağı|Ana kanıt|Kritik ipucu|karar verdirici patern|Destekleyici bulgu)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')

@@ -1,33 +1,53 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
-const INLINE_LABEL_REGEX = /^(başvuru\s+yakınması|başvuru|karar\s+verdirici\s+ipucu|destekleyici\s+kanıt|olgu\s+verisi|ek\s+destek|laboratuvar\s+paterni|görüntüleme\s+bulgusu|fizik\s+muayene\s+bulgusu)\s*[:：\-–—]\s*/iu;
-const LAB_OR_OBJECTIVE_REGEX = /\b(lökosit|lokosit|wbc|crp|prokalsitonin|troponin|ck-mb|kreatinin|glukoz|ast|alt|bilirubin|d-dimer|ph|hco3|laktat|seroloji|igg|igm|hbsag|anti-hcv|pcr|kültür|kan\s+gazı|idrar|bos|mg\/dl|mg\/l|ng\/l|mmol\/l|\/mm³|\/mm3)\b/iu;
-const IMAGING_OR_ECG_REGEX = /\b(akciğer\s+grafisi|grafi|röntgen|bt|mr|mrg|ultrason|usg|tomografi|ekg|st\s*elevasyonu|st\s*depresyonu|konsolidasyon|hava\s+bronkogramı|opasite|infiltrasyon)\b/iu;
-const EXAM_REGEX = /\b(ral|raller|hışıltı|wheezing|stridor|defans|rebound|ense\s+sertliği|döküntü|eklem\s+şişliği|nörolojik\s+defisit|kapiller\s+dolum|deri\s+turgoru|hepatosplenomegali|lenfadenopati|üfürüm|oskültasyon|palpasyon|sağ\s+alt\s+zonda|sol\s+alt\s+zonda)\b/iu;
+const EDITORIAL_FORBIDDEN_PATTERNS = [
+  /Sınav incisi\s*[|:]/iu,
+  /Ayırıcı nokta\s*:/iu,
+  /Mekanizma\s*:/iu,
+  /İlk adım\s*:/iu,
+  /Karar verdirici ipucu\s*:/iu,
+  /Destekleyici kanıt\s*:/iu,
+  /Başvuru yakınması\s*[:|]/iu,
+  /Laboratuvar paterni\s*[:|]/iu,
+  /Görüntüleme bulgusu\s*[:|]/iu,
+  /Fizik muayene bulgusu\s*[:|]/iu,
+  /Olgu verisi\s*[:|]/iu,
+  /Ek destek\s*[:|]/iu,
+  /benzer seçenekleri ayıran ana patern/iu,
+  /doğru seçenek verilen/iu,
+  /soru patern yorumlama/iu,
+  /klinik bağlam içinde/iu,
+  /sonuçlar tek bir tanı adını yazmaz/iu,
+  /verilen öğrenme hedefi/iu,
+  /\bwheezing\b/iu,
+  /\brash\b/iu,
+  /\bairway\b/iu,
+  /\bfollow[- ]?up\b/iu,
+  /\bmanagement\b/iu,
+  /\|/u,
+];
 
-function normalizeInlineLabel(text = '') {
-  return String(text || '').replace(INLINE_LABEL_REGEX, '').trim();
+function collectVisibleStrings(value, output = [], key = '') {
+  const skipKeys = new Set(['id', 'source', 'caseType', 'correctAnswer', 'provider', 'type', 'priority']);
+  if (skipKeys.has(key)) return output;
+  if (typeof value === 'string') output.push(value);
+  else if (Array.isArray(value)) value.forEach((item) => collectVisibleStrings(item, output, key));
+  else if (value && typeof value === 'object') Object.entries(value).forEach(([childKey, item]) => collectVisibleStrings(item, output, childKey));
+  return output;
 }
 
-function validateClinicalPlacement(question = {}) {
-  const errors = [];
-  const checkArray = (label, values, forbidden) => {
-    (Array.isArray(values) ? values : []).forEach((value) => {
-      const text = normalizeInlineLabel(value);
-      if (INLINE_LABEL_REGEX.test(String(value || ''))) errors.push(`${label} contains inline field label`);
-      if (forbidden.some((regex) => regex.test(text))) errors.push(`${label} contains misplaced clinical data: ${text.slice(0, 90)}`);
-    });
-  };
-  const chief = normalizeInlineLabel(question.chiefComplaint || '');
-  if (LAB_OR_OBJECTIVE_REGEX.test(chief) || IMAGING_OR_ECG_REGEX.test(chief) || EXAM_REGEX.test(chief)) {
-    errors.push('chiefComplaint contains lab/imaging/exam data');
-  }
-  checkArray('findings.history', question.findings?.history, [LAB_OR_OBJECTIVE_REGEX, IMAGING_OR_ECG_REGEX, EXAM_REGEX]);
-  checkArray('findings.exam', question.findings?.exam, [LAB_OR_OBJECTIVE_REGEX, IMAGING_OR_ECG_REGEX]);
-  checkArray('evidenceChain', question.evidenceChain, []);
-  return errors;
+const FIELD_INLINE_LABEL_PATTERN = /^(Başvuru yakınması|Laboratuvar paterni|Görüntüleme bulgusu|Fizik muayene bulgusu|Karar verdirici ipucu|Destekleyici kanıt|Olgu verisi|Ek destek)\s*[:：|\-]/iu;
+const LAB_RESULT_PATTERN = /(lökosit|wbc|nötrofil|crp|prokalsitonin|troponin|d-dimer|kreatinin|üre|glukoz|bilirubin|seroloji|kültür|pcr|bos|idrar tahlili|na\+|k\+|ph|hco3|hco₃)|\d+[.,]?\d*\s*(mg\/dl|mg\/l|mmol\/l|\/mm³|u\/l|ng\/ml)/iu;
+const IMAGING_RESULT_PATTERN = /(akciğer grafisi|grafi|bt|mr|mrg|usg|ultrasonografi|ekokardiyografi|radyografi|tomografi|konsolidasyon|hava bronkogram|dolum defekti|lezyon|fraktür|kitle|nodül)/iu;
+const PHYSICAL_EXAM_PATTERN = /(ral|raller|hışıltılı solunum|stridor|defans|rebound|matite|oskültasyon|üfürüm|ödem|eritem|döküntü|ense sertliği|kapiller dolum|hepatomegali|splenomegali|güç kaybı|nörolojik defisit)/iu;
+
+function isLabOrImagingText(text = '') {
+  return LAB_RESULT_PATTERN.test(String(text || '')) || IMAGING_RESULT_PATTERN.test(String(text || ''));
 }
 
+function isPhysicalExamText(text = '') {
+  return PHYSICAL_EXAM_PATTERN.test(String(text || ''));
+}
 
 function sendJson(response, status, payload) {
   response.statusCode = status;
@@ -83,12 +103,30 @@ function validateRawQuestion(question = {}) {
   if (!question.explanation || String(question.explanation).length < 60) errors.push('explanation missing or too short');
   if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length < 3) errors.push('evidenceChain requires at least 3 items');
   if (!question.examPearl) errors.push('examPearl missing');
-  errors.push(...validateClinicalPlacement(question));
 
   const wrong = question.wrongOptionFeedback || {};
   options.forEach((option) => {
     const id = String(option.id || '').toUpperCase();
     if (id !== correctAnswer && !wrong[id]) errors.push(`wrong feedback missing for ${id}`);
+  });
+
+  const visibleText = collectVisibleStrings(question).join(' || ');
+  EDITORIAL_FORBIDDEN_PATTERNS.forEach((pattern) => {
+    if (pattern.test(visibleText)) errors.push(`editorial forbidden pattern: ${pattern}`);
+  });
+
+  if (isLabOrImagingText(question.chiefComplaint)) {
+    errors.push('chiefComplaint must not contain laboratory or imaging data');
+  }
+  (question.findings?.exam || []).forEach((finding) => {
+    if (isLabOrImagingText(finding) && !isPhysicalExamText(finding)) {
+      errors.push(`exam field contains investigation data: ${String(finding).slice(0, 90)}`);
+    }
+  });
+  (question.evidenceChain || []).forEach((item) => {
+    if (FIELD_INLINE_LABEL_PATTERN.test(String(item || '').trim())) {
+      errors.push(`evidenceChain contains inline label: ${String(item).slice(0, 90)}`);
+    }
   });
 
   return { ok: errors.length === 0, errors };
@@ -121,25 +159,30 @@ YASAK konu/doğru cevap listesi:
 ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
-- Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik veya tetkik yorumunu tekrar etme.
-- Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji yorumu, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
+- Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik paternini tekrar etme.
+- Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
 - Deneme 2 veya 3 ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç.
 - Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
 - Tüm seçenekler aynı kategori içinde olsun; tanı sorusunda tanılar, tedavi sorusunda tedaviler, tetkik sorusunda tetkikler.
 - En az iki güçlü, klinik olarak yakın seçenek olsun.
 - Tetkik sonucunda doğru tanı/cevap cümle olarak yazılmasın.
-- Klinik veri alanlarını asla karıştırma: chiefComplaint yalnız hasta/yakını tarafından ifade edilen şikâyet olmalı; lökosit, CRP, EKG, grafi, BT/MR, kültür/seroloji veya muayene bulgusu chiefComplaint içine yazılmamalı.
-- findings.history yalnız öykü/semptom/risk bilgisi içermeli; raller, defans, döküntü morfolojisi gibi muayene bulguları findings.exam alanına; lökosit/CRP/seroloji/kültür/grafi/BT/MR/EKG bulguları findings.investigations alanına yazılmalı.
-- evidenceChain ve ayırt ettirici ipuçlarında “Başvuru yakınması:”, “Laboratuvar paterni:”, “Görüntüleme bulgusu:” gibi inline etiket kullanma; madde doğrudan klinik ipucuyla başlamalı.
-- Laboratuvar değerlerinde birim kullan: “Lökosit 16” yazma; “Lökosit 16.000/mm³, nötrofil baskınlığı” yaz.
 - Tetkik yorumu “... tanısını doğrular”, “... ile uyumludur”, “kesin tanıdır” gibi direkt tanı dili kullanmasın.
 - Doğru cevap, verilen objektif veriler yorumlanarak bulunmalı.
 - Her yanlış seçenek için neden yanlış olduğuna dair kısa ama öğretici feedback yaz; yanlış şık neyi yakalar, neyi kaçırır ve hangi ipucuyla elenir açık olsun.
 - explanation 2-4 cümlelik Klinik Gerekçe kalitesinde olmalı.
 - evidenceChain 3-5 somut olgu ipucundan oluşmalı; meta cümle veya öğrenme çıktısı yazma.
-- examPearl TUS hap bilgisi olmalı; mümkünse kırmızı bayrak, sık tuzak, ilk adım veya ayırt ettirici marker vurgula.
-- managementSteps alanı 2-4 kısa ilk yaklaşım veya yönetim basamağı içermeli. Temel bilim sorusunda mekanizmaya odaklanan kısa bir yaklaşım notu yaz.
+- Klinik veri alanlarını kesin ayır: chiefComplaint yalnızca hastanın şikâyeti olsun; lökosit, CRP, BT, grafi, seroloji veya kültür sonucu bu alana yazılmasın.
+- findings.exam yalnızca fizik muayene bulguları içersin; laboratuvar, seroloji, kültür, EKG veya görüntüleme sonucu bu alana yazılmasın.
+- findings.investigations sayısal laboratuvar, görüntüleme, EKG, mikrobiyoloji ve seroloji sonuçları için kullanılsın.
+- evidenceChain 3-5 kısa karar ipucu içersin; “Başvuru yakınması:”, “Laboratuvar paterni:”, “Görüntüleme bulgusu:” gibi inline etiketler yazma.
+- “Lökosit 16” gibi eksik ifade kullanma; “Lökosit 16.000/mm³” gibi birimli yaz.
+- examPearl TUS hap bilgisi olmalı; mümkünse kırmızı bayrak, sık tuzak, ilk yaklaşım veya ayırt ettirici marker vurgula.
+- Kart başlığını metin içinde tekrar etme. “Sınav incisi | ...”, “Ayırıcı nokta: ...”, “Mekanizma: ...”, “Karar verdirici ipucu: ...” gibi etiketli cümleler yazma.
+- Gereksiz “|”, fazla “:”, noktalı virgül ve yapay şablon cümle kullanma. Metin doğal Türkçe cümleler gibi okunmalı.
+- “wheezing” yerine “hışıltılı solunum”, “rash” yerine “döküntü”, “airway” yerine “hava yolu”, “follow-up” yerine “izlem”, “management” yerine “yönetim” yaz.
+- “benzer seçenekleri ayıran ana patern olarak hatırlanmalıdır”, “doğru seçenek verilen öğrenme hedefiyle uyumludur”, “sonuçlar tek bir tanı adını yazmaz” gibi meta/generator ifadeleri kesinlikle kullanma.
+- managementSteps 2-4 kısa ilk yaklaşım/yönetim basamağı içermeli; temel bilim sorusunda mekanistik yaklaşım notu gibi yaz.
 
 Aşağıdaki JSON şemasını birebir döndür:
 {

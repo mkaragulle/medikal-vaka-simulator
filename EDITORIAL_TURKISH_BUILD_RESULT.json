@@ -1,7 +1,0 @@
-{
-  "generatedAt": "2026-05-07T13:12:22Z",
-  "command": "npm run build",
-  "exitCode": 127,
-  "note": "node_modules klasörü bu çalışma ortamında kurulu olmadığı için vite bulunamadı. npm install tamamlandıktan sonra yerelde yeniden çalıştırılmalıdır.",
-  "outputPreview": "\n> klinikiq@1.0.0 build\n> vite build --minify false\n\nsh: 1: vite: not found\n"
-}
