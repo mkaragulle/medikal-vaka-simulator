@@ -187,6 +187,7 @@ export function buildQuestionFingerprint(question = {}) {
     question: normalizeQuestionText(questionText),
     learningTarget: normalizeQuestionText(learningTarget),
     correct: normalizeQuestionText(correctText),
+    questionType: normalizeQuestionText(question.questionType || question.aiMeta?.variantAngle || ''),
     optionsSignature: optionSetSignature,
     optionTexts: optionTexts.map(normalizeQuestionText).sort((a, b) => a.localeCompare(b, 'tr')),
     evidence: normalizeQuestionText(evidence),
@@ -253,12 +254,12 @@ export function findEmbeddedCaseOverlap(question = {}, embeddedCases = []) {
     const targetSimilarity = similarityScore(fingerprint.learningTarget, embedded.learningTarget);
 
     const conceptOnlySource = question.aiMeta?.sourceConceptOnly || /concept-template|synthetic-template/i.test(String(question.source || ''));
-    if (titleExact && stemSimilarity >= (conceptOnlySource ? 0.88 : 0.55) && (!conceptOnlySource || sameCorrect || sameLearningTarget)) return { caseId: embedded.id, reason: 'title-stem-overlap', score: stemSimilarity };
+    if (titleExact && stemSimilarity >= (conceptOnlySource ? 0.72 : 0.55)) return { caseId: embedded.id, reason: 'title-stem-overlap', score: stemSimilarity };
     if (questionExact && sameCorrect && stemSimilarity >= 0.45) return { caseId: embedded.id, reason: 'question-correct-exact', score: 1 };
-    if (optionSetExact && sameCorrect && (sameLearningTarget || targetSimilarity >= 0.78) && (stemSimilarity >= (conceptOnlySource ? 0.82 : 0.58) || questionSimilarity >= 0.80 || combinedSimilarity >= 0.88)) return { caseId: embedded.id, reason: 'option-target-correct-overlap', score: Math.max(stemSimilarity, questionSimilarity, targetSimilarity) };
-    if (stemSimilarity >= (conceptOnlySource ? 0.90 : 0.76) && (sameCorrect || targetSimilarity >= 0.78)) return { caseId: embedded.id, reason: 'stem-target-too-similar', score: stemSimilarity };
+    if (optionSetExact && sameCorrect && (sameLearningTarget || targetSimilarity >= 0.72) && (stemSimilarity >= 0.58 || questionSimilarity >= 0.74 || combinedSimilarity >= 0.82)) return { caseId: embedded.id, reason: 'option-target-correct-overlap', score: Math.max(stemSimilarity, questionSimilarity, targetSimilarity) };
+    if (stemSimilarity >= (conceptOnlySource ? 0.82 : 0.76) && (sameCorrect || targetSimilarity >= 0.74)) return { caseId: embedded.id, reason: 'stem-target-too-similar', score: stemSimilarity };
     if (questionSimilarity >= 0.86 && sameCorrect && (stemSimilarity >= 0.42 || sameLearningTarget)) return { caseId: embedded.id, reason: 'question-too-similar', score: questionSimilarity };
-    if (combinedSimilarity >= (conceptOnlySource ? 0.97 : 0.90) && (sameCorrect || sameLearningTarget || optionSetExact)) return { caseId: embedded.id, reason: 'combined-too-similar', score: combinedSimilarity };
+    if (combinedSimilarity >= (conceptOnlySource ? 0.92 : 0.88)) return { caseId: embedded.id, reason: 'combined-too-similar', score: combinedSimilarity };
   }
 
   return null;
@@ -274,6 +275,7 @@ function recentSummaryFingerprint(summary = {}) {
     question: normalizeQuestionText(summary.normalizedQuestion || summary.question || ''),
     learningTarget: normalizeQuestionText(summary.normalizedLearningTarget || summary.learningTarget || ''),
     correct: normalizeQuestionText(summary.normalizedCorrect || summary.correct || ''),
+    questionType: normalizeQuestionText(summary.questionType || summary.variantAngle || ''),
     optionsSignature: summary.optionSetSignature,
     combinedText: normalizeQuestionText(summary.combinedText || [summary.branch, summary.title, summary.learningTarget, summary.correct, toPlainText(summary.optionTexts)].filter(Boolean).join(' | ')),
   };
@@ -298,28 +300,29 @@ export function isDuplicateAgainstRecentContext(question = {}, context = {}) {
     const sameCorrect = recent.correct && recent.correct === fingerprint.correct;
     const sameLearningTarget = recent.learningTarget && recent.learningTarget === fingerprint.learningTarget;
     const sameOptions = recent.optionsSignature && recent.optionsSignature === fingerprint.optionsSignature;
+    const sameQuestionType = !recent.questionType || !fingerprint.questionType || recent.questionType === fingerprint.questionType;
     const titleSimilarity = similarityScore(fingerprint.title, recent.title);
     const stemSimilarity = similarityScore(fingerprint.stem, recent.stem);
     const questionSimilarity = similarityScore(fingerprint.question, recent.question);
     const targetSimilarity = similarityScore(fingerprint.learningTarget, recent.learningTarget);
     const combinedSimilarity = similarityScore(fingerprint.combinedText, recent.combinedText);
 
-    if (sameOptions && sameCorrect && (sameLearningTarget || targetSimilarity >= 0.78) && (stemSimilarity >= 0.92 || (questionSimilarity >= 0.92 && combinedSimilarity >= 0.93) || combinedSimilarity >= 0.96)) {
+    if (sameQuestionType && sameOptions && sameCorrect && (sameLearningTarget || targetSimilarity >= 0.78) && (stemSimilarity >= 0.97 || (questionSimilarity >= 0.98 && combinedSimilarity >= 0.98) || combinedSimilarity >= 0.985)) {
       return { reason: 'same-options-correct-target', signature, topicSignature, score: Math.max(stemSimilarity, questionSimilarity, targetSimilarity) };
     }
     if (stemSimilarity >= 0.94 && questionSimilarity >= 0.90) {
       return { reason: 'stem-question-too-similar', signature, topicSignature, score: Math.max(stemSimilarity, questionSimilarity) };
     }
-    if (stemSimilarity >= 0.90 && (sameCorrect || sameLearningTarget || sameOptions)) {
+    if (stemSimilarity >= (sameQuestionType ? 0.97 : 0.98) && (sameCorrect || sameLearningTarget || sameOptions)) {
       return { reason: 'stem-too-similar-with-shared-axis', signature, topicSignature, score: stemSimilarity };
     }
-    if (questionSimilarity >= 0.96 && sameCorrect && (sameLearningTarget || sameOptions) && stemSimilarity >= 0.88) {
+    if (sameQuestionType && questionSimilarity >= 0.96 && sameCorrect && (sameLearningTarget || sameOptions) && stemSimilarity >= 0.88) {
       return { reason: 'question-too-similar-with-same-answer', signature, topicSignature, score: questionSimilarity };
     }
-    if (combinedSimilarity >= 0.92 && (sameCorrect || sameLearningTarget || sameOptions)) {
+    if ((sameQuestionType && combinedSimilarity >= 0.97 && (sameCorrect || sameLearningTarget || sameOptions)) || (!sameQuestionType && combinedSimilarity >= 0.985 && sameCorrect && sameOptions)) {
       return { reason: 'combined-semantic-repeat', signature, topicSignature, score: combinedSimilarity };
     }
-    if (titleSimilarity >= 0.96 && sameCorrect && sameLearningTarget && stemSimilarity >= 0.90) {
+    if (sameQuestionType && titleSimilarity >= 0.96 && sameCorrect && sameLearningTarget && stemSimilarity >= 0.90) {
       return { reason: 'same-title-answer-target', signature, topicSignature, score: titleSimilarity };
     }
   }

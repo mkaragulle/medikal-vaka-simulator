@@ -94,7 +94,7 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
 
 function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context, reason = null }) {
   try {
-    const refreshedContext = buildRecentQuestionContext(50);
+    const refreshedContext = buildRecentQuestionContext(30);
     const effectiveContext = refreshedContext.recentSignatures?.length ? refreshedContext : context;
     const question = generateAIQuestion({
       previousQuestionId,
@@ -123,7 +123,7 @@ function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context
 }
 
 export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random' } = {}) {
-  const context = buildRecentQuestionContext(50);
+  const context = buildRecentQuestionContext(30);
 
   try {
     const remoteResult = await requestRemoteAIQuestion({ previousQuestionId, branchFilter, context });

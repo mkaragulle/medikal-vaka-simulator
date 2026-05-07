@@ -6,7 +6,6 @@ import { branches } from '../data/branches.js';
 import { shuffleArray } from './randomize.js';
 import {
   buildRecentQuestionContext,
-  buildRelaxedRecentQuestionContext,
   makeSeedSignature,
   normalizeQuestionText,
   stableHash,
@@ -31,10 +30,10 @@ import {
 const AI_BRANCH_ID = 'tus-spot-olgular';
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const CASE_CONCEPT_LIMIT = 220;
-const MAX_PRIMARY_ATTEMPTS = 18;
-const MAX_REPAIR_ATTEMPTS = 5;
-const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 48;
-const MAX_GENERATION_ATTEMPTS = 160;
+const MAX_PRIMARY_ATTEMPTS = 8;
+const MAX_REPAIR_ATTEMPTS = 2;
+const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 5;
+const MAX_GENERATION_ATTEMPTS = 96;
 const BRANCH_NAME_BY_ID = Object.fromEntries((branches || []).map((branch) => [branch.id, branch.name || branch.shortName || branch.id]));
 
 const FALLBACK_DISTRACTORS_BY_BRANCH = {
@@ -200,8 +199,11 @@ function abstractCaseEvidence(clinicalCase = {}) {
     clinicalCase.clinicalFocus,
     clinicalCase.examNote,
     clinicalCase.spotPearl,
-  ]).slice(0, 4);
-  return pearls.length ? pearls : [clinicalCase.clinicalFocus || clinicalCase.title].filter(Boolean);
+  ])
+    .map(cleanClinicalSummaryItem)
+    .filter((item) => item && !isForbiddenEditorialText(item) && !isPlaceholderInvestigationText(item))
+    .slice(0, 4);
+  return pearls.length ? pearls : [cleanClinicalSummaryItem(clinicalCase.clinicalFocus || clinicalCase.title)].filter(Boolean);
 }
 
 function buildCaseDerivedSeed(clinicalCase) {
@@ -241,7 +243,7 @@ function buildCaseDerivedSeed(clinicalCase) {
     explanation: clinicalCase.diagnosis?.explanation || feedback.whyCorrect || `${clinicalCase.diagnosis?.correct} olgudaki somut klinik bulgularla en güçlü uyum gösterir; diğer olasılıklar ana bulguları yeterince açıklamaz.`,
     wrongOptionFeedback: {},
     evidenceConcepts: abstractCaseEvidence(clinicalCase),
-    examPearl: toPlainText((feedback.pearls || clinicalCase.diagnosis?.pearls || [])[0]) || learningTarget,
+    examPearl: cleanClinicalSummaryItem(toPlainText((feedback.pearls || clinicalCase.diagnosis?.pearls || [])[0]) || learningTarget),
     managementSteps: [],
   };
 }
@@ -258,12 +260,31 @@ export function buildCaseDerivedAISeeds() {
   return cachedCaseDerivedSeeds;
 }
 
+
+function expandSeedVariants(seeds = [], variantCount = 7) {
+  const expanded = [];
+  seeds.forEach((seed) => {
+    expanded.push(seed);
+    if (seed.source === 'embedded-case-concept-only') return;
+    for (let variant = 1; variant <= variantCount; variant += 1) {
+      expanded.push({
+        ...seed,
+        seedId: `${seed.seedId}-variant-${variant}`,
+        baseSeedId: seed.seedId,
+        virtualVariant: variant,
+      });
+    }
+  });
+  return expanded;
+}
+
 function getEligibleSeeds(branchFilter = 'random') {
   const normalizedFilter = String(branchFilter || 'random').toLocaleLowerCase('tr');
   const allSeeds = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS, ...buildCaseDerivedAISeeds()];
-  if (normalizedFilter === 'random' || normalizedFilter === 'rastgele') return allSeeds;
+  if (normalizedFilter === 'random' || normalizedFilter === 'rastgele') return expandSeedVariants(allSeeds, 7);
   const filtered = allSeeds.filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
-  return filtered.length ? filtered : [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  const fallback = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  return expandSeedVariants(filtered.length ? filtered : fallback, 14);
 }
 
 function previousSeedIdFromContext(previousQuestionId = '', context = {}) {
@@ -278,7 +299,7 @@ function scoreSeedNovelty(seed, context, previousQuestionId) {
   if (sourceKey === previousSeedIdFromContext(previousQuestionId, context)) score -= 100;
   if (context.recentIds?.includes(sourceKey)) score -= 80;
   if (context.recentSignatures?.includes(seedSignature)) score -= 50;
-  if (seed.source === 'embedded-case-concept-only') score += 0.2;
+  if (seed.source === 'embedded-case-concept-only') score -= 0.35;
   if (seed.difficulty?.toLocaleLowerCase('tr').includes('zor')) score += 0.06;
   return score;
 }
@@ -293,7 +314,7 @@ function buildVariantProfile(seed, attempt = 0, context = {}, branchFilter = '')
   const numeric = parseInt(stableHash(variantKey).replace(/^q/, ''), 36);
   const branchProfile = getBranchControlledProfile(seed, attempt, context, branchFilter);
   return {
-    angle: QUESTION_ANGLES[numeric % QUESTION_ANGLES.length],
+    angle: QUESTION_ANGLES[(numeric + attempt) % QUESTION_ANGLES.length],
     opener: SCENARIO_OPENERS[(numeric + attempt) % SCENARIO_OPENERS.length],
     demographic: branchProfile.demographic,
     setting: branchProfile.setting,
@@ -313,18 +334,16 @@ function maskCorrectConcept(text = '', correctText = '') {
 
 function buildStem(seed, profile, correctText) {
   const controlledStem = buildBranchAwareStem(seed, profile, profile.angle, correctText);
-  const variantCue = VARIANT_STEM_MODIFIERS[(profile.variantNo + profile.answerShift) % VARIANT_STEM_MODIFIERS.length] || '';
-  const angleCue = profile.angle?.stemCue ? `${profile.angle.stemCue}.` : '';
-  const variantSentence = repairAIGeneratedText([angleCue, variantCue].filter(Boolean).join(' '), { fallback: '' });
-  const withVariant = (text = '') => repairAIGeneratedText([text, variantSentence].filter(Boolean).join(' '), { fallback: text });
-  if (seed.source === 'embedded-case-concept-only') return withVariant(controlledStem);
+  if (seed.source === 'embedded-case-concept-only') return controlledStem;
 
   const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'karar verdirici patern');
   const branchRule = getBranchRuleForSeed(seed);
-  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return withVariant(controlledStem);
-  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return withVariant(controlledStem);
+  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return repairAIGeneratedText(controlledStem, { fallback: controlledStem });
+  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return repairAIGeneratedText(controlledStem, { fallback: controlledStem });
   const cleanBase = repairAIGeneratedText(baseStem, { fallback: baseStem });
-  return withVariant(cleanBase || controlledStem);
+  const modifier = buildVariantStemModifier(seed, profile);
+  if (profile.variantNo % 5 === 0 || !cleanBase) return repairAIGeneratedText(`${controlledStem} ${modifier}`, { fallback: controlledStem });
+  return repairAIGeneratedText(`${cleanBase} ${modifier}`, { fallback: cleanBase || controlledStem });
 }
 
 function normalizeOptionObjects(options = []) {
@@ -343,14 +362,7 @@ function buildBalancedOptions(seed, profile) {
   const completeTexts = optionTexts.length === 5 ? optionTexts : uniqueStrings([...optionTexts, ...(FALLBACK_DISTRACTORS_BY_BRANCH[seed.relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default)]).slice(0, 5);
 
   const correct = correctOption?.text || completeTexts[0];
-  const fallbackPool = FALLBACK_DISTRACTORS_BY_BRANCH[seed.relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default;
-  let diversifiedTexts = [...completeTexts];
-  const extraDistractor = fallbackPool.find((item) => !diversifiedTexts.some((text) => normalizeQuestionText(text) === normalizeQuestionText(item)));
-  if (extraDistractor && profile.variantNo % 2 === 1) {
-    const wrongTexts = diversifiedTexts.filter((text) => normalizeQuestionText(text) !== normalizeQuestionText(correct));
-    diversifiedTexts = uniqueStrings([correct, ...wrongTexts.slice(0, 3), extraDistractor]).slice(0, 5);
-  }
-  const remaining = shuffleArray(diversifiedTexts.filter((text) => normalizeQuestionText(text) !== normalizeQuestionText(correct)));
+  const remaining = shuffleArray(completeTexts.filter((text) => normalizeQuestionText(text) !== normalizeQuestionText(correct)));
   const finalTexts = [...remaining.slice(0, profile.answerShift), correct, ...remaining.slice(profile.answerShift)].slice(0, 5);
   while (finalTexts.length < 5) {
     const fallback = (FALLBACK_DISTRACTORS_BY_BRANCH[seed.relatedBranch] || FALLBACK_DISTRACTORS_BY_BRANCH.default)
@@ -483,7 +495,7 @@ function buildWrongFeedback(options, correctText, seed) {
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
     const seeded = seed.wrongOptionFeedback?.[option.id];
-    accumulator[option.id] = seeded || `${option.text} bazı benzer tablolarda düşünülebilir. Bu olgudaki somut bulgular ${correctText} lehine daha güçlüdür.`;
+    accumulator[option.id] = seeded || `${option.text} için beklenen ana ipuçları bu tabloda baskın değildir; karar ${correctText} yönünde güçlenir.`;
     return accumulator;
   }, {});
 }
@@ -492,11 +504,11 @@ function buildDifferentialComparison(options, correctText, wrongOptionFeedback, 
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
     accumulator[option.text] = {
-      explanation: wrongOptionFeedback[option.id] || `${option.text} bazı klinik bağlamlarda düşünülebilir. Bu olguda ana bulgular ${correctText} lehine daha güçlüdür.`,
+      explanation: wrongOptionFeedback[option.id] || `${option.text} için beklenen ana ipuçları bu tabloda baskın değildir; karar ${correctText} yönünde güçlenir.`,
       comparisonPoints: [
-        `${option.text} bazı olgularda benzer yakınma oluşturabilir. Bu olgudaki ana bulguları tam açıklamaz.`,
-        `${correctText} olgudaki somut bulgularla daha güçlü uyum gösterir.`,
-        'Ayırıcı tanıda belirleyici olan, öykü ve muayene bulgularının birlikte oluşturduğu klinik tablodur.',
+        `${option.text} için beklenen temel bulgu bu tabloda baskın değildir.`,
+        `${correctText} öykü ve hedef bulgularla daha uyumlu kalır.`,
+        'Ayırıcı tanıda belirleyici nokta bulguların birlikte oluşturduğu örüntüdür.',
       ],
     };
     return accumulator;
@@ -526,7 +538,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     seed,
     profile,
     rule: profile.rule,
-    key: `${seed.seedId}|${profile.variantNo}|${profile.angle.id}`,
+    key: `${seed.seedId}|${profile.variantNo}|${profile.angle.id}|${attempt}`,
   });
   const questionPrompt = seed.question && seed.source !== 'embedded-case-concept-only'
     ? `${profile.angle.question}`
@@ -641,6 +653,8 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
   qualityCheckedQuestion.aiMeta = {
     ...(qualityCheckedQuestion.aiMeta || {}),
     qualityGateErrors: qualityGate.ok ? [] : ['quality-gate-repaired'],
+    qualityGateRawErrors: qualityGate.errors || [],
+    qualityGateOk: qualityGate.ok,
     qualityGateWarnings: qualityGate.warnings?.length ? ['quality-gate-warning'] : [],
   };
   attachQuestionDedupeFields(qualityCheckedQuestion);
@@ -660,7 +674,7 @@ function pickCandidateSeeds(pool, context, previousQuestionId) {
 
 function isHardSeedFailure(errors = []) {
   if (!Array.isArray(errors) || !errors.length) return false;
-  return errors.some((error) => /quality:|branch-fit:|başlık|demografi|pediatri|kadın doğum|schema|contentSignature eksik/i.test(String(error)))
+  return errors.some((error) => /branch-fit:|demografi|pediatri erişkin|kadın doğum|schema|contentSignature eksik/i.test(String(error)))
     && !errors.every((error) => /duplicate:|yakın geçmişte|embedded-case-overlap|id-repeat|content-signature-repeat/i.test(String(error)));
 }
 
@@ -679,30 +693,68 @@ function logAIGenerationDebug(message, payload = {}) {
 }
 
 function validateGeneratedCandidate(question, seed, context, branchFilter, errors, stage, attempt) {
-  const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
+  const normalizedBranchFilter = String(branchFilter || 'random').toLocaleLowerCase('tr');
+  const embeddedScope = ['random', 'rastgele'].includes(normalizedBranchFilter)
+    ? cases
+    : cases.filter((clinicalCase) => branchFilterMatchesSeed({
+      relatedBranch: getBranchName(clinicalCase),
+      branchName: getBranchName(clinicalCase),
+      originalBranchId: clinicalCase.branchId,
+      spotCategory: clinicalCase.spotCategory,
+    }, branchFilter));
+  const validation = validateAIQuestionCase(question, context.recentSignatures, {
+    embeddedCases: embeddedScope.length ? embeddedScope : cases,
+    context,
+    requestedBranch: branchFilter,
+    skipQuality: question.aiMeta?.qualityGateOk === true,
+  });
   if (validation.ok) {
-    const rejectionSummary = errors.reduce((summary, item) => {
-      (item.errors || []).forEach((error) => {
-        const key = String(error).split(':').slice(0, 2).join(':');
-        summary[key] = (summary[key] || 0) + 1;
-      });
-      return summary;
-    }, {});
+    const duplicateRejectedCandidateCount = errors.filter((record) => (
+      record?.duplicateReason || /^duplicate:|^embedded-case-overlap/i.test(String(record?.rejectReason || ''))
+    )).length;
+    const qualityRejectedCandidateCount = errors.filter((record) => (
+      /^quality:/i.test(String(record?.rejectReason || '')) || record?.qualityScore === 0
+    )).length;
     question.aiMeta = {
       ...(question.aiMeta || {}),
       generationStage: stage,
       generationAttempt: attempt,
-      rejectedCandidatesBeforeSuccess: errors.length,
-      rejectionSummary,
-      fallbackUsed: /fallback|relaxed/i.test(stage),
-      repairAttempted: /repair|relaxed/i.test(stage) || errors.some((item) => (item.errors || []).some((error) => /quality|schema|contentSignature/i.test(String(error)))),
       validationErrors: [],
+      rejectedCandidateCount: errors.length,
+      duplicateRejectedCandidateCount,
+      qualityRejectedCandidateCount,
+      fallbackUsed: /fallback/i.test(stage),
     };
     return { ok: true, question };
   }
 
-  if (isHardSeedFailure(validation.errors)) hardRejectedAISeedIds.add(seed.seedId);
-  const record = { stage, attempt, seedId: seed.seedId, source: seed.source, errors: validation.errors.slice(0, 8) };
+  if (isHardSeedFailure(validation.errors) || validation.errors.some((error) => /^quality:/i.test(String(error)))) hardRejectedAISeedIds.add(seed.seedId);
+  const matchedRecent = (context.recentQuestionSummaries || []).find((item) => {
+    const signatures = [item.contentSignature, item.signature, item.generationSignature].filter(Boolean);
+    return signatures.includes(validation.signature) || signatures.includes(question.contentSignature);
+  });
+  const duplicateError = validation.errors.find((error) => /^duplicate:|^embedded-case-overlap:|yakın geçmişte/i.test(String(error)));
+  const qualityErrors = validation.errors.filter((error) => /^quality:/i.test(String(error)));
+  const record = {
+    attempt,
+    branch: branchFilter || seed.relatedBranch || question.relatedBranch,
+    subtopic: seed.spotCategory || question.spotCategory,
+    questionType: question.questionType,
+    rejected: true,
+    rejectReason: validation.errors[0] || 'unknown',
+    qualityScore: qualityErrors.length ? 0 : 1,
+    duplicateScore: validation.embeddedOverlap?.score || null,
+    matchedSignature: validation.signature || question.contentSignature || null,
+    matchedPreviousQuestionId: matchedRecent?.id || null,
+    repairAttempted: true,
+    repairSucceeded: !(question.aiMeta?.qualityGateRawErrors || []).length,
+    fallbackUsed: /fallback/i.test(stage),
+    stage,
+    seedId: seed.seedId,
+    source: seed.source,
+    duplicateReason: duplicateError || null,
+    errors: validation.errors.slice(0, 8),
+  };
   errors.push(record);
   logAIGenerationDebug('candidate rejected', record);
   return { ok: false, validation };
@@ -711,7 +763,7 @@ function validateGeneratedCandidate(question, seed, context, branchFilter, error
 function tryGenerateFromSeeds(seeds, { context, branchFilter, previousQuestionId, errors, stage, maxAttempts, attemptOffset = 0, sourceFactory }) {
   if (!seeds.length) return null;
   const candidates = pickCandidateSeeds(seeds, context, previousQuestionId);
-  const totalAttempts = Math.min(Math.max(maxAttempts, candidates.length), MAX_GENERATION_ATTEMPTS);
+  const totalAttempts = Math.min(Math.max(1, maxAttempts), candidates.length, MAX_GENERATION_ATTEMPTS);
 
   for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
     const seed = candidates[(attempt + attemptOffset) % candidates.length];
@@ -730,8 +782,8 @@ function tryGenerateFromSeeds(seeds, { context, branchFilter, previousQuestionId
 }
 
 function generateFromSyntheticTemplate(branchFilter, context, previousQuestionId, errors = []) {
-  const syntheticPool = [...AI_SYNTHETIC_FALLBACK_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS]
-    .filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  const syntheticPool = expandSeedVariants([...AI_SYNTHETIC_FALLBACK_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS]
+    .filter((seed) => branchFilterMatchesSeed(seed, branchFilter)), 8);
   return tryGenerateFromSeeds(syntheticPool, {
     context,
     branchFilter,
@@ -744,12 +796,44 @@ function generateFromSyntheticTemplate(branchFilter, context, previousQuestionId
   });
 }
 
+
+function buildWindowedNoveltyContext(context = {}, limit = 24) {
+  return {
+    ...context,
+    recentIds: (context.recentIds || []).slice(0, limit * 2),
+    recentSignatures: context.recentSignatures || [],
+    recentQuestionSummaries: (context.recentQuestionSummaries || []).slice(0, limit),
+  };
+}
+
+function buildSignatureOnlyContext(context = {}, limit = 60) {
+  return {
+    ...context,
+    recentIds: (context.recentIds || []).slice(0, limit),
+    recentSignatures: context.recentSignatures || [],
+    recentQuestionSummaries: [],
+  };
+}
+
+function buildEffectiveNoveltyContext(context = {}) {
+  const recentSummaryCount = (context.recentQuestionSummaries || []).length;
+  if (recentSummaryCount < 24) return context;
+  return {
+    ...context,
+    recentIds: (context.recentIds || []).slice(0, 60),
+    recentSignatures: context.recentSignatures || [],
+    recentQuestionSummaries: (context.recentQuestionSummaries || []).slice(0, 10),
+  };
+}
+
 export function generateAIQuestion({ previousQuestionId = null, branchFilter = 'random', context = buildRecentQuestionContext() } = {}) {
   const errors = [];
   const pool = getEligibleSeeds(branchFilter);
+  const recentSummaryCount = (context.recentQuestionSummaries || []).length;
+  const effectiveContext = buildEffectiveNoveltyContext(context);
 
   const primary = tryGenerateFromSeeds(pool, {
-    context,
+    context: effectiveContext,
     branchFilter,
     previousQuestionId,
     errors,
@@ -759,39 +843,53 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
   });
   if (primary) return primary;
 
-  const repairPool = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS, ...buildCaseDerivedAISeeds()]
-    .filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  if (recentSummaryCount >= 24) {
+    const signatureOnlyContext = buildSignatureOnlyContext(context, 60);
+    const signatureOnly = tryGenerateFromSeeds(pool, {
+      context: signatureOnlyContext,
+      branchFilter,
+      previousQuestionId,
+      errors,
+      stage: 'signature-only-novelty-fallback',
+      maxAttempts: MAX_PRIMARY_ATTEMPTS,
+      attemptOffset: 1500,
+      sourceFactory: (seed) => (seed.source === 'embedded-case-concept-only' ? 'concept-template-signature-only-generator' : 'curated-template-signature-only-generator'),
+    });
+    if (signatureOnly) return signatureOnly;
+  }
+
+  const repairPool = getEligibleSeeds(branchFilter);
   const repaired = tryGenerateFromSeeds(repairPool, {
-    context,
+    context: effectiveContext,
     branchFilter,
     previousQuestionId,
     errors,
     stage: 'repair-and-seed-mutation',
-    maxAttempts: MAX_REPAIR_ATTEMPTS * Math.max(1, Math.min(4, repairPool.length)),
+    maxAttempts: MAX_REPAIR_ATTEMPTS * Math.max(1, Math.min(3, repairPool.length)),
     attemptOffset: 300,
     sourceFactory: (seed) => (seed.source === 'embedded-case-concept-only' ? 'concept-template-repair-generator' : 'curated-template-repair-generator'),
   });
   if (repaired) return repaired;
 
-  const fallback = generateFromSyntheticTemplate(branchFilter, context, previousQuestionId, errors);
+  const fallback = generateFromSyntheticTemplate(branchFilter, effectiveContext, previousQuestionId, errors);
   if (fallback) return fallback;
 
-  const relaxedContext = buildRelaxedRecentQuestionContext(24);
-  const relaxed = tryGenerateFromSeeds(pool, {
-    context: relaxedContext,
+  const windowedContext = buildWindowedNoveltyContext(context, 18);
+  const windowed = tryGenerateFromSeeds(getEligibleSeeds(branchFilter), {
+    context: windowedContext,
     branchFilter,
     previousQuestionId,
     errors,
-    stage: 'relaxed-history-seed-mutation',
-    maxAttempts: Math.min(72, Math.max(24, pool.length * 2)),
+    stage: 'history-windowed-fallback',
+    maxAttempts: 8,
     attemptOffset: 1200,
-    sourceFactory: (seed) => (seed.source === 'embedded-case-concept-only' ? 'concept-template-relaxed-generator' : 'curated-template-relaxed-generator'),
+    sourceFactory: (seed) => (seed.source === 'embedded-case-concept-only' ? 'concept-template-windowed-generator' : 'curated-template-windowed-generator'),
   });
-  if (relaxed) return relaxed;
+  if (windowed) return windowed;
 
   const canUseBroadSynthetic = ['random', 'rastgele'].includes(String(branchFilter || 'random').toLocaleLowerCase('tr'));
   if (canUseBroadSynthetic) {
-    const broadSynthetic = generateFromSyntheticTemplate('random', relaxedContext, previousQuestionId, errors);
+    const broadSynthetic = generateFromSyntheticTemplate('random', buildSignatureOnlyContext(context, 80), previousQuestionId, errors);
     if (broadSynthetic) return broadSynthetic;
   }
 

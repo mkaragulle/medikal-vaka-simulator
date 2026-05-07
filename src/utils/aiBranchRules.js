@@ -232,8 +232,7 @@ export function getBranchControlledProfile(seed = {}, attempt = 0, context = {},
     ? candidateDemographic
     : pickByHash(rule.demographics, `${key}|demographic`);
   const setting = seed.setting || pickByHash(rule.settings, `${key}|setting`);
-  const conceptPresentation = seed.source === 'embedded-case-concept-only' && attempt % 3 === 0 ? seed.title : '';
-  const sourcePresentation = seed.chiefComplaint || conceptPresentation;
+  const sourcePresentation = seed.chiefComplaint || (seed.source === 'embedded-case-concept-only' ? seed.title : '');
   const presentation = sourcePresentation || pickByHash(rule.presentations, `${key}|presentation`);
   const titleCue = seed.source === 'embedded-case-concept-only' && seed.title ? seed.title : pickByHash(rule.titles, `${key}|title`);
   return { rule, demographic, setting, presentation, titleCue };

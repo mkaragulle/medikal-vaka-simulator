@@ -280,8 +280,10 @@ export function validateAIQuestionCase(question = {}, recentSignatures = [], opt
   const branchFit = validateBranchFit(question, options.requestedBranch || question.relatedBranch || question.branchName);
   if (!branchFit.ok) errors.push(...branchFit.errors.map((error) => `branch-fit:${error}`));
 
-  const quality = validateAIQuestionQuality(question, { requestedBranch: options.requestedBranch || question.relatedBranch || question.branchName });
-  if (!quality.ok) errors.push(...quality.errors.map((error) => `quality:${error}`));
+  if (!options.skipQuality) {
+    const quality = validateAIQuestionQuality(question, { requestedBranch: options.requestedBranch || question.relatedBranch || question.branchName });
+    if (!quality.ok) errors.push(...quality.errors.map((error) => `quality:${error}`));
+  }
 
   attachQuestionDedupeFields(question);
   const signature = question.contentSignature || makeQuestionSignature(question);

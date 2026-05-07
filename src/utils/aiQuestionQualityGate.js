@@ -391,7 +391,7 @@ function repairWrongFeedback(text = '', optionText = '', question = {}) {
   const cleaned = cleanSentence(text);
   if (cleaned && cleaned.length >= 25 && !hasForbiddenPhrase(cleaned)) return cleaned;
   const correct = getQuestionCorrectText(question);
-  return cleanSentence(`${optionText} bazı olgularda düşünülebilir; ancak bu tabloda ana bulgular ${correct || 'doğru yanıt'} lehine daha güçlüdür.`);
+  return cleanSentence(`${optionText} için beklenen ana ipuçları bu tabloda baskın değildir; karar ${correct || 'uygun yanıt'} yönünde güçlenir.`);
 }
 
 function repairDifferentialComparison(comparison = {}, question = {}) {
@@ -402,8 +402,8 @@ function repairDifferentialComparison(comparison = {}, question = {}) {
     repaired[optionText] = {
       explanation,
       comparisonPoints: points.length ? points : [
-        `${optionText} için beklenen temel bulgu bu olguda baskın değildir.`,
-        'Olgudaki somut ipuçları doğru yanıta daha doğrudan yönlendirir.',
+        `${optionText} için beklenen temel bulgu bu tabloda baskın değildir.`,
+        'Öykü ve hedef bulgular uygun yanıta daha doğrudan yönlendirir.',
       ],
     };
   });

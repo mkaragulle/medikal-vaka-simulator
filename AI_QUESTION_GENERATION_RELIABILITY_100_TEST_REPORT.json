@@ -1,0 +1,179 @@
+{
+  "generatedAt": "2026-05-07T18:20:17.863Z",
+  "methodology": "100 local AI-question generations: 50 in one branch and 50 distributed across branches. Each accepted question had passed the generator quality gate; this script additionally checks exact contentSignature repetition, option-order-only repetition, branch fit, exact embedded-case copy, error state, stage, repair/fallback usage and rejected-candidate counters recorded by the generator.",
+  "sameBranch": {
+    "requested": 50,
+    "generated": 50,
+    "errors": 0,
+    "rejectedCandidates": 17,
+    "duplicateRejectedCandidates": 16,
+    "qualityRejectedCandidates": 1,
+    "repairUsed": 0,
+    "fallbackUsed": 0,
+    "embeddedExactCopies": 0,
+    "branchFailures": 0,
+    "repeatedContentSignatures": 0,
+    "onlyOptionOrderChanges": 0,
+    "maxGenerationMs": 1317,
+    "averageGenerationMs": 318,
+    "stages": {
+      "primary-mutated-seed": 50
+    },
+    "branches": {
+      "Çocuk Sağlığı ve Hastalıkları": 50
+    },
+    "errorDetails": []
+  },
+  "distributed": {
+    "requested": 50,
+    "generated": 50,
+    "errors": 0,
+    "rejectedCandidates": 10,
+    "duplicateRejectedCandidates": 2,
+    "qualityRejectedCandidates": 8,
+    "repairUsed": 0,
+    "fallbackUsed": 0,
+    "embeddedExactCopies": 0,
+    "branchFailures": 0,
+    "repeatedContentSignatures": 0,
+    "onlyOptionOrderChanges": 0,
+    "maxGenerationMs": 3033,
+    "averageGenerationMs": 351,
+    "stages": {
+      "primary-mutated-seed": 50
+    },
+    "branches": {
+      "Tıbbi Mikrobiyoloji": 5,
+      "Tıbbi Farmakoloji": 5,
+      "Tıbbi Biyokimya": 4,
+      "İç Hastalıkları": 4,
+      "Çocuk Sağlığı ve Hastalıkları": 4,
+      "Kadın Hastalıkları ve Doğum": 4,
+      "Fizyoloji": 4,
+      "Histoloji ve Embriyoloji": 4,
+      "Anatomi": 4,
+      "Genel Cerrahi": 4,
+      "Küçük Stajlar": 4,
+      "Tıbbi Patoloji": 4
+    },
+    "errorDetails": []
+  },
+  "total": {
+    "requested": 100,
+    "generated": 100,
+    "errors": 0,
+    "rejectedCandidates": 27,
+    "duplicateRejectedCandidates": 18,
+    "qualityRejectedCandidates": 9,
+    "repairUsed": 0,
+    "fallbackUsed": 0,
+    "embeddedExactCopies": 0,
+    "branchFailures": 0,
+    "repeatedContentSignatures": 0,
+    "onlyOptionOrderChanges": 0,
+    "maxGenerationMs": 3033,
+    "averageGenerationMs": 335
+  },
+  "sample": [
+    {
+      "id": "ai-spot-movt9ecd-1-4fdf088c-a036-4f57-964e-83b10516f7b4",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Süt çocuğunda fışkırır kusma.",
+      "questionType": "spot",
+      "correct": "Hipertrofik pilor stenozu",
+      "signature": "cs-q1uog2qo",
+      "stage": "primary-mutated-seed",
+      "seed": "branch-peds-pyloric-stenosis-001-variant-9"
+    },
+    {
+      "id": "ai-spot-movt9em7-2-6b767a59-b720-4f72-a3fc-0c3a3aebec97",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Havlar tarzda öksürük ve ses kısıklığı.",
+      "questionType": "diagnosis",
+      "correct": "Deksametazon + nebulize epinefrin",
+      "signature": "cs-qmwpmba",
+      "stage": "primary-mutated-seed",
+      "seed": "ai-croup-treatment-001-variant-12"
+    },
+    {
+      "id": "ai-spot-movt9esw-3-fe8d9085-21d0-42ac-a320-7ab183768551",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Ateş sonrası kısa nöbet.",
+      "questionType": "diagnosis",
+      "correct": "Basit febril konvülziyon",
+      "signature": "cs-q1ki9dd8",
+      "stage": "primary-mutated-seed",
+      "seed": "branch-peds-febrile-seizure-001-variant-7"
+    },
+    {
+      "id": "ai-spot-movt9eyv-4-bdb84927-d9ce-46a1-a0ad-11e29b6ed340",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Ateş sonrası kısa nöbet.",
+      "questionType": "diagnosis",
+      "correct": "Basit febril konvülziyon",
+      "signature": "cs-q1hml0cu",
+      "stage": "primary-mutated-seed",
+      "seed": "branch-peds-febrile-seizure-001-variant-3"
+    },
+    {
+      "id": "ai-spot-movt9f5o-5-fc0eb3c9-ce07-4735-8e48-ca5212484e1f",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Ateş sonrası kısa nöbet.",
+      "questionType": "spot",
+      "correct": "Basit febril konvülziyon",
+      "signature": "cs-q923g6f",
+      "stage": "primary-mutated-seed",
+      "seed": "branch-peds-febrile-seizure-001-variant-10"
+    },
+    {
+      "id": "ai-spot-movt9qoi-1y-735ebfdd-dcad-4496-badd-d774ef4ea69f",
+      "branch": "Tıbbi Mikrobiyoloji",
+      "title": "Akut hepatit paneli yorumu.",
+      "questionType": "diagnosis",
+      "correct": "Akut hepatit A enfeksiyonu",
+      "signature": "cs-qtx9ldf",
+      "stage": "primary-mutated-seed",
+      "seed": "synthetic-micro-hav-variant-001-variant-1"
+    },
+    {
+      "id": "ai-spot-movt9qv0-1z-506aad61-ac55-4b42-83ef-6ca6f88f2558",
+      "branch": "Tıbbi Farmakoloji",
+      "title": "Parasetamol doz aşımı.",
+      "questionType": "diagnosis",
+      "correct": "N-asetilsistein",
+      "signature": "cs-qz5orp7",
+      "stage": "primary-mutated-seed",
+      "seed": "synthetic-pharm-acetaminophen-001-variant-4"
+    },
+    {
+      "id": "ai-spot-movt9r14-20-29f2bfc4-d89f-4cf7-93e3-0e51cdd44c84",
+      "branch": "Tıbbi Biyokimya",
+      "title": "Yenidoğanda beslenme sonrası nörolojik kötüleşme.",
+      "questionType": "spot",
+      "correct": "Dallı zincirli alfa-ketoasit dehidrogenaz kompleksi",
+      "signature": "cs-qt8abt3",
+      "stage": "primary-mutated-seed",
+      "seed": "ai-msud-biochemistry-001"
+    },
+    {
+      "id": "ai-spot-movt9rle-22-e63b58d6-75b2-45e1-bb9e-ea5014dded87",
+      "branch": "İç Hastalıkları",
+      "title": "Poliüri ve derin solunum.",
+      "questionType": "spot",
+      "correct": "İzotonik salin ile sıvı resüsitasyonu",
+      "signature": "cs-q1k70om4",
+      "stage": "primary-mutated-seed",
+      "seed": "synthetic-internal-dka-001-variant-1"
+    },
+    {
+      "id": "ai-spot-movt9rth-23-2e5b0384-872b-4d84-be36-e9160d8a4449",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "title": "Süt çocuğunda hışıltılı solunum.",
+      "questionType": "diagnosis",
+      "correct": "Nazal aspirasyon, oksijen ve hidrasyon desteği",
+      "signature": "cs-qvvlnhj",
+      "stage": "primary-mutated-seed",
+      "seed": "synthetic-peds-bronchiolitis-001-variant-13"
+    }
+  ]
+}
