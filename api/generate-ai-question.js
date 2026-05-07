@@ -91,13 +91,13 @@ YASAK konu/doğru cevap listesi:
 ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
-- Yakın listedeki konu, başlık, doğru cevap, öğrenme hedefi veya aynı serolojik/tetkik paternini tekrar etme.
+- Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik paternini tekrar etme.
 - Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
 - Deneme 2 veya 3 ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç.
-- Tek bir ana öğrenme hedefi olsun.
+- Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
 - Tüm seçenekler aynı kategori içinde olsun; tanı sorusunda tanılar, tedavi sorusunda tedaviler, tetkik sorusunda tetkikler.
-- En az iki güçlü TUS çeldiricisi olsun.
+- En az iki güçlü, klinik olarak yakın seçenek olsun.
 - Tetkik sonucunda doğru tanı/cevap cümle olarak yazılmasın.
 - Tetkik yorumu “... tanısını doğrular”, “... ile uyumludur”, “kesin tanıdır” gibi direkt tanı dili kullanmasın.
 - Doğru cevap, verilen objektif veriler yorumlanarak bulunmalı.

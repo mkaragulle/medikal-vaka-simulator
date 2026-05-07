@@ -10,6 +10,7 @@ import {
   stableHash,
 } from './aiQuestionHistory.js';
 import { validateAIQuestionCase } from './validateAIQuestion.js';
+import { repairAIQuestionQuality, runAIQuestionQualityGate } from './aiQuestionQualityGate.js';
 import { attachQuestionDedupeFields, createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
 import {
   branchFilterMatchesSeed,
@@ -36,7 +37,7 @@ const FALLBACK_DISTRACTORS_BY_BRANCH = {
   'İç Hastalıkları': ['Sekonder endokrin yetmezlik', 'Akut enfeksiyöz tablo', 'Primer hiperaldosteronizm', 'Uygunsuz ADH sendromu', 'Fonksiyonel yakınma paterni'],
   'Çocuk Sağlığı ve Hastalıkları': ['Epiglotit', 'Yabancı cisim aspirasyonu', 'Bronşiolit', 'Astım atağı', 'Bakteriyel trakeit'],
   'Kadın Hastalıkları ve Doğum': ['Normal intrauterin gebelik', 'Tam abortus', 'Molar gebelik', 'Korpus luteum kisti rüptürü', 'Pelvik inflamatuvar hastalık'],
-  default: ['Yakın klinik çeldirici', 'Farklı mekanizmalı benzer tablo', 'Geçirilmiş hastalık paterni', 'Akut komplikasyon dışı durum', 'Normal varyant'],
+  default: ['Yakın klinik olasılık', 'Farklı mekanizmalı benzer tablo', 'Geçirilmiş hastalık bulgusu', 'Akut komplikasyon dışı durum', 'Normal varyant'],
 };
 
 const SCENARIO_OPENERS = [
@@ -51,33 +52,33 @@ const SCENARIO_OPENERS = [
 const QUESTION_ANGLES = [
   {
     id: 'pattern',
-    label: 'patern yorumu',
-    question: 'Bu kısa klinik patern ve objektif veriler birlikte düşünüldüğünde en uygun seçenek hangisidir?',
-    stemCue: 'öykü, muayene ve seçilmiş objektif veriler tek bir karar ekseninde birleştirilmelidir',
+    label: 'klinik yorum',
+    question: 'Bu olguda öykü, muayene ve objektif veriler birlikte düşünüldüğünde en uygun seçenek hangisidir?',
+    stemCue: 'öykü, muayene ve seçilmiş objektif veriler birlikte değerlendirilir',
   },
   {
     id: 'first-step',
     label: 'ilk yaklaşım',
-    question: 'Bu hasta için TUS mantığında en doğru ilk yaklaşım veya hedef seçenek hangisidir?',
-    stemCue: 'öncelik doğru tanısal/terapötik basamağı geciktirmeden seçmektir',
+    question: 'Bu hasta için en doğru ilk yaklaşım hangisidir?',
+    stemCue: 'öncelik acil ve etkili basamağı geciktirmeden seçmektir',
   },
   {
     id: 'mechanism',
     label: 'mekanizma bağlantısı',
-    question: 'Bu tablonun temel mekanizmasını veya ayırt ettirici bilgisini en iyi karşılayan seçenek hangisidir?',
-    stemCue: 'soru, ezber isimden çok mekanizma ile klinik ipucunu eşleştirmeyi gerektirir',
+    question: 'Bu tablonun temel mekanizmasını en iyi karşılayan seçenek hangisidir?',
+    stemCue: 'mekanizma ile klinik bulgu ilişkisi birlikte değerlendirilir',
   },
   {
     id: 'differential',
-    label: 'çeldirici ayrımı',
-    question: 'Benzer seçenekler arasından bu olguyu en iyi açıklayan yanıt hangisidir?',
-    stemCue: 'çeldiriciler aynı kategori içinde tutulmuştur ve karar tek ayırt ettirici ipucuna dayanır',
+    label: 'ayırıcı tanı',
+    question: 'Benzer olasılıklar arasından bu olguyu en iyi açıklayan yanıt hangisidir?',
+    stemCue: 'belirleyici klinik bulgu ayırıcı tanıyı daraltır',
   },
   {
     id: 'lab',
     label: 'tetkik yorumu',
-    question: 'Verilen tetkik ve klinik bağlam birlikte yorumlandığında en güçlü sonuç hangisidir?',
-    stemCue: 'tetkik sonucu tanıyı doğrudan yazmaz; adaydan patern yorumu beklenir',
+    question: 'Verilen tetkik ve klinik bulgular birlikte yorumlandığında en güçlü sonuç hangisidir?',
+    stemCue: 'tetkik sonucu öykü ve muayene bulgularıyla birlikte değerlendirilir',
   },
 ];
 
@@ -121,7 +122,7 @@ function compactLearningTarget(text = '', fallback = '') {
     .replace(/\s+/g, ' ')
     .replace(/\bBu nedenle\b.*$/i, '')
     .trim();
-  return cleaned || 'Karar verdirici klinik paternin benzer çeldiricilerden ayrılması';
+  return cleaned || 'Karar verdirici klinik bulgunun doğru yorumlanması';
 }
 
 function collectBranchDiagnosisPool(branchId) {
@@ -211,7 +212,7 @@ function buildCaseDerivedSeed(clinicalCase) {
     questionType: 'spot',
     options,
     correctAnswer: 'A',
-    explanation: clinicalCase.diagnosis?.explanation || feedback.whyCorrect || `${clinicalCase.diagnosis?.correct} seçeneği verilen öğrenme hedefini en doğrudan açıklar; diğer seçenekler aynı başlıkta güçlü çeldirici olsa da karar verdirici paternle tam örtüşmez.`,
+    explanation: clinicalCase.diagnosis?.explanation || feedback.whyCorrect || `${clinicalCase.diagnosis?.correct} olgudaki somut klinik bulgularla en güçlü uyum gösterir; diğer olasılıklar ana bulguları yeterince açıklamaz.`,
     wrongOptionFeedback: {},
     evidenceConcepts: abstractCaseEvidence(clinicalCase),
     examPearl: toPlainText((feedback.pearls || clinicalCase.diagnosis?.pearls || [])[0]) || learningTarget,
@@ -220,6 +221,7 @@ function buildCaseDerivedSeed(clinicalCase) {
 }
 
 let cachedCaseDerivedSeeds = null;
+const hardRejectedAISeedIds = new Set();
 
 export function buildCaseDerivedAISeeds() {
   if (cachedCaseDerivedSeeds) return cachedCaseDerivedSeeds;
@@ -328,12 +330,13 @@ function buildEvidenceChain(seed, profile, correctText) {
       .map((item) => maskCorrectConcept(item, correctText))
       .slice(0, 3);
     const maskedLearningTarget = maskCorrectConcept(seed.learningTarget, correctText);
-    return [
-      `${seed.relatedBranch || 'Bu branş'} sorusunda ana karar, tek öğrenme hedefinin doğru yorumlanmasına dayanır.`,
-      concepts[0] || `${maskedLearningTarget} bilgisi seçenekler arasında ayırıcı rol oynar.`,
-      'Çeldiriciler aynı klinik/temel bilim kategorisinde tutulduğu için yüzeysel anahtar kelimeyle değil paternle karar verilmelidir.',
-      'Doğru seçenek, verilen öğrenme hedefiyle en tutarlı yanıt eksenini oluşturur.',
-    ];
+    const primaryConcepts = concepts.length ? concepts : [maskedLearningTarget];
+    return uniqueStrings([
+      ...primaryConcepts,
+      seed.examPearl || maskedLearningTarget,
+      seed.title || seed.chiefComplaint,
+      seed.correctConcept ? `${maskCorrectConcept(seed.correctConcept, correctText)} ile karışabilecek yakın klinik olasılıklar dışlanır.` : '',
+    ]).filter(Boolean).slice(0, 4);
   }
   return uniqueStrings(seed.evidenceChain || []).map((item) => maskCorrectConcept(item, correctText)).slice(0, 5);
 }
@@ -370,8 +373,8 @@ function buildAIRiskContext(seed, profile) {
 function buildAIClueItems(evidenceChain = [], seed = {}, correctText = '') {
   return uniqueSummaryItems([
     ...(evidenceChain || []),
-    `${correctText} seçeneğini destekleyen ana patern`,
     seed.examPearl || seed.learningTarget,
+    seed.title || seed.chiefComplaint,
   ], 4);
 }
 
@@ -394,17 +397,19 @@ function buildInvestigation(item, index, correctText = '') {
 }
 
 function buildSyntheticInvestigation(seed, profile, correctText = '') {
+  const learningCue = maskCorrectConcept(seed.examPearl || seed.learningTarget || 'Ana klinik bulgu', correctText);
+  const branchLabel = profile.angle.id === 'lab' ? 'Hedefli laboratuvar verisi' : profile.angle.id === 'mechanism' ? 'Mekanizma ipucu' : 'Objektif karar verisi';
   return [{
     id: `ai-synthetic-pattern-${profile.variantNo}`,
-    label: profile.angle.id === 'lab' ? 'Hedefli tetkik paterni' : 'Klinik karar verisi',
+    label: branchLabel,
     type: profile.angle.id === 'mechanism' ? 'mechanism' : 'lab',
     priority: 'essential',
-    summary: 'Sonuçlar tek bir tanı adını yazmaz; patern, mekanizma ve çeldirici ayrımı birlikte yorumlanmalıdır.',
+    summary: learningCue,
     findings: [
-      `${seed.relatedBranch || 'TUS'} başlığında karar verdirici eksen: ${maskCorrectConcept(seed.learningTarget, correctText)}.`,
-      'Bulgular seçenekler arasında doğrudan ezber değil klinik akıl yürütme gerektirir.',
-    ],
-    interpretation: 'Yanıtı açık etmeden patern yorumlaması beklenir.',
+      seed.title || profile.presentation || 'Başvuru bulgusu tanısal ayrımda önemlidir.',
+      learningCue,
+    ].filter(Boolean),
+    interpretation: 'Objektif veri, öykü ve muayene bulgularıyla birlikte değerlendirilir.',
   }];
 }
 
@@ -412,7 +417,7 @@ function buildWrongFeedback(options, correctText, seed) {
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
     const seeded = seed.wrongOptionFeedback?.[option.id];
-    accumulator[option.id] = seeded || `${option.text} güçlü bir çeldiricidir; ancak ${seed.learningTarget} eksenindeki karar verdirici bilgi bu seçeneği doğru yanıttan ayırır.`;
+    accumulator[option.id] = seeded || `${option.text} benzer tabloda düşünülebilir; ancak olgudaki somut bulgular ${correctText} lehine daha güçlüdür.`;
     return accumulator;
   }, {});
 }
@@ -423,9 +428,9 @@ function buildDifferentialComparison(options, correctText, wrongOptionFeedback, 
     accumulator[option.text] = {
       explanation: wrongOptionFeedback[option.id] || `${option.text} bu klinik bağlamda düşünülebilir; ancak temel patern ${correctText} lehinedir.`,
       comparisonPoints: [
-        `${option.text} benzer kategori içinde yer alır; fakat ana ipucunu tam açıklamaz.`,
-        `${correctText} seçeneği ${seed.learningTarget} bilgisini doğrudan karşılar.`,
-        'TUS sorusunda doğru ayrım, çeldiricinin değil karar verdirici bulgunun takip edilmesiyle yapılır.',
+        `${option.text} bazı olgularda benzer yakınma oluşturabilir; ancak bu olgudaki ana bulguları tam açıklamaz.`,
+        `${correctText} olgudaki somut bulgularla daha güçlü uyum gösterir.`,
+        'Ayırıcı tanıda belirleyici olan, öykü ve muayene bulgularının birlikte oluşturduğu klinik tablodur.',
       ],
     };
     return accumulator;
@@ -437,9 +442,9 @@ function buildManagementSteps(seed, profile) {
     return seed.managementSteps.map(richItemText).filter(Boolean).slice(0, 4);
   }
   return [
-    'Önce ana klinik/temel bilim paternini belirle.',
-    'Seçenekleri aynı kategori içinde karşılaştır ve direkt tanı adı arama.',
-    `${profile.angle.label} açısından karar verdirici ipucunu doğru yanıtla eşleştir.`,
+    'Önce yaş, başvuru yakınması ve acil bulguları birlikte değerlendir.',
+    'Objektif verileri muayene ve öyküyle birlikte yorumla.',
+    'Tedavi veya tanı gecikmesine yol açabilecek alternatifleri somut bulgularla ele.',
   ];
 }
 
@@ -510,7 +515,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     options,
     correctAnswer: correctOption.id,
     explanation: seed.source === 'embedded-case-concept-only'
-      ? `${normalizedCorrectText} seçeneği, bu yeni oluşturulan AI spot sorusunda hedeflenen öğrenme çıktısıyla en uyumlu yanıttır. Olguda seçenekler aynı kategori içinde tutulur; karar, gömülü vakadaki metni tekrar etmekten değil ${seed.learningTarget} bilgisini yeni bağlama uygulamaktan gelir.`
+      ? `${normalizedCorrectText} en uygun yanıttır; çünkü olgudaki öykü, muayene ve objektif veriler bu seçeneği diğer olasılıklardan daha güçlü destekler.`
       : seed.explanation,
     evidenceChain,
     examPearls: [seed.examPearl || seed.learningTarget],
@@ -529,11 +534,11 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
       correct: normalizedCorrectText,
       options: diagnosisOptions,
       explanation: seed.explanation,
-      nextStep: seed.nextStep || 'Yanıt sonrası kanıt zincirini tekrar ederek benzer çeldiricileri ayır.',
+      nextStep: seed.nextStep || 'Olgudaki somut ipuçlarını seçeneklerle karşılaştır.',
       pearls: [seed.examPearl || seed.learningTarget].filter(Boolean),
       answerFeedback: {
         whyCorrect: seed.source === 'embedded-case-concept-only'
-          ? `${normalizedCorrectText} doğru yanıttır; çünkü verilen yeni senaryo ${seed.learningTarget} öğrenme hedefini ölçer ve çeldiriciler aynı klinik/temel bilim ailesinde kalsa da ana paternle tam örtüşmez.`
+          ? `${normalizedCorrectText} doğru yanıttır; çünkü olgudaki somut bulgular bu seçeneği destekler ve alternatifler aynı klinik tabloyu yeterince açıklamaz.`
           : seed.explanation,
         evidenceChain,
         pearls: [seed.examPearl || seed.learningTarget].filter(Boolean),
@@ -563,17 +568,32 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     },
   };
 
-  attachQuestionDedupeFields(question);
-  return question;
+  const qualityGate = runAIQuestionQualityGate(question, { repair: true, requestedBranch: branchFilter || seed.relatedBranch });
+  const qualityCheckedQuestion = qualityGate.question || repairAIQuestionQuality(question);
+  qualityCheckedQuestion.aiMeta = {
+    ...(qualityCheckedQuestion.aiMeta || {}),
+    qualityGateErrors: qualityGate.ok ? [] : ['quality-gate-repaired'],
+    qualityGateWarnings: qualityGate.warnings?.length ? ['quality-gate-warning'] : [],
+  };
+  attachQuestionDedupeFields(qualityCheckedQuestion);
+  return qualityCheckedQuestion;
 }
 
 function pickCandidateSeeds(pool, context, previousQuestionId) {
-  const ranked = rankSeedsByNovelty(pool, { previousQuestionId, context });
+  const usablePool = pool.filter((seed) => !hardRejectedAISeedIds.has(seed.seedId));
+  const ranked = rankSeedsByNovelty(usablePool.length ? usablePool : pool, { previousQuestionId, context });
   const fresh = ranked.filter((seed) => {
     const signature = makeSeedSignature(seed);
     return !context.recentIds?.includes(seed.seedId) && !context.recentSignatures?.includes(signature);
   });
   return fresh.length ? fresh : ranked;
+}
+
+
+function isHardSeedFailure(errors = []) {
+  if (!Array.isArray(errors) || !errors.length) return false;
+  return errors.some((error) => /quality:|branch-fit:|başlık|demografi|pediatri|kadın doğum|schema|contentSignature eksik/i.test(String(error)))
+    && !errors.every((error) => /duplicate:|yakın geçmişte|embedded-case-overlap|id-repeat|content-signature-repeat/i.test(String(error)));
 }
 
 export function generateAIQuestion({ previousQuestionId = null, branchFilter = 'random', context = buildRecentQuestionContext() } = {}) {
@@ -591,6 +611,7 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
     });
     const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
     if (validation.ok) return question;
+    if (isHardSeedFailure(validation.errors)) hardRejectedAISeedIds.add(seed.seedId);
     errors.push({ seedId: seed.seedId, errors: validation.errors });
   }
 
@@ -606,6 +627,7 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
     });
     const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
     if (validation.ok) return question;
+    if (isHardSeedFailure(validation.errors)) hardRejectedAISeedIds.add(seed.seedId);
     errors.push({ seedId: seed.seedId, errors: validation.errors });
   }
 

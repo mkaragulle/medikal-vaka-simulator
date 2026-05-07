@@ -103,7 +103,7 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
         label: 'Çalışma odağı',
         title: weakBranch ? `${weakBranch} odağı` : `${primaryDomain.key} odağı`,
         text: weakBranch
-          ? `Yanlış kayıtlarında ${weakBranchCount} kez ${weakBranch} öne çıkıyor. Bu branşta önce olgu ipuçlarını ve çeldirici ayrımını tekrar et.`
+          ? `Yanlış kayıtlarında ${weakBranchCount} kez ${weakBranch} öne çıkıyor. Bu branşta önce olgu ipuçlarını ve seçenek ayrımını tekrar et.`
           : `${primaryDomain.key} alanında karar verdirici bulgu ile doğru yaklaşımı eşleştirme pratiği gerekli görünüyor.`,
       },
       strategy: {
@@ -156,7 +156,7 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
     title: currentStreak >= 3 ? 'Güçlü seri korunuyor, odak daraltılmalı' : 'Güçlü klinik performans',
     description: hasWrongData
       ? `Genel doğruluk güçlü. Kalan kayıplar daha çok ${primaryDomain.key} alanında yoğunlaşıyor; artık geniş tekrar yerine dar hedefli pekiştirme daha uygun.`
-      : `Doğruluk güçlü seyrediyor${bestStreak ? ` ve en iyi seri ${bestStreak}` : ''}. Bu seviyede hız, seçici tetkik ve çeldirici eleme kalitesini birlikte koru.`,
+      : `Doğruluk güçlü seyrediyor${bestStreak ? ` ve en iyi seri ${bestStreak}` : ''}. Bu seviyede hız, seçici tetkik ve seçenek eleme kalitesini birlikte koru.`,
     scoreTone: 'success',
     focus: {
       icon: currentStreak >= 3 ? 'Trophy' : 'Target',
@@ -165,7 +165,7 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
       title: currentStreak >= 3 ? 'Seri performansı' : 'Genel doğruluk',
       text: currentStreak >= 3
         ? `Aktif doğru seri ${currentStreak}; temel patern okuma iyi gidiyor. Şimdi kalan zayıf alanı daraltarak çalış.`
-        : 'Tanısal patern okuma güçlü; küçük puan kayıpları için çeldirici seçenekleri ve ilk yönetim basamaklarını karşılaştır.',
+        : 'Tanısal patern okuma güçlü; küçük puan kayıpları için yakın seçenekleri ve ilk yönetim basamaklarını karşılaştır.',
     },
     strategy: {
       icon: primaryDomain.icon,

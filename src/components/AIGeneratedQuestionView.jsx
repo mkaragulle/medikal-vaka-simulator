@@ -5,7 +5,7 @@ const AI_SPOT_BRANCH = {
   id: 'tus-spot-olgular',
   name: 'AI ile Üretilen TUS Spot Sorusu',
   shortName: 'AI Spot',
-  description: 'Spot bilgileri pekiştirmek için yapay zekâ tarafından oluşturulan kısa klinik soru.',
+  description: 'Spot bilgileri pekiştirmek için kalite kontrolünden geçirilmiş kısa klinik soru.',
 };
 
 function AIStat({ label, value, icon, tone = 'teal' }) {
@@ -62,7 +62,7 @@ function AILoadingState() {
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
       <div>
         <h2>AI soru hazırlanıyor...</h2>
-        <p>Spot bilgiye uygun soru oluşturuluyor; tekrar kontrolü ve TUS odaklı çeldirici dengesi uygulanıyor.</p>
+        <p>Soru hazırlanıyor; branş uyumu, klinik tutarlılık, seçenek kalitesi ve tekrar kontrolü uygulanıyor.</p>
       </div>
     </section>
   );
@@ -109,7 +109,7 @@ function AIGeneratedQuestionView({
         <div className="ai-practice-title-block">
           <span className="ai-practice-kicker"><Icon name="Sparkles" /> AI pratik modu</span>
           <h1>AI ile Üretilen TUS Spot Sorusu</h1>
-          <p>Spot bilgileri pekiştirmek için yapay zekâya hazır mimariyle oluşturulan kısa klinik soru.</p>
+          <p>Spot bilgileri pekiştirmek için branş uyumu ve klinik tutarlılık kontrolünden geçirilen kısa klinik soru.</p>
           <div className="ai-practice-meta-row">
             <AISourceBadge usedRemoteAI={usedRemoteAI} fallback={fallback} generationSource={generationSource} />
           </div>

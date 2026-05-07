@@ -60,7 +60,7 @@ export const AI_BRANCH_RULES = [
     settings: ['Çocuk acil', 'Pediatri polikliniği', 'Yenidoğan servisi', 'Çocuk enfeksiyon değerlendirmesi'],
     presentations: ['Ateş ve döküntü', 'Kusma ve dehidratasyon', 'Wheezing ve öksürük', 'Sarılık ve emme azalması', 'Febril nöbet', 'Büyüme-gelişme gecikmesi'],
     titles: ['Yüksek ateş ve peteşi', 'Süt çocuğunda wheezing', 'Yenidoğanda sarılık paterni', 'İshal sonrası nöbet', 'Kusma ve dehidratasyon', 'Çocukta ense sertliği', 'Döküntü ve ateş', 'Adölesanda kilo kaybı'],
-    riskContexts: ['Yaşa özgü pediatrik kırmızı bayraklar', 'Dehidratasyon ve hızlı klinik kötüleşme riski', 'Aşılanma ve temas öyküsünün ayırıcı tanıya etkisi'],
+    riskContexts: ['Ateş, beslenme ve bilinç değişikliğinin birlikte izlenmesi', 'Süt çocuklarında hızlı sıvı kaybı riski', 'Eksik aşılanma veya yakın temas öyküsü'],
     examDefaults: ['Genel durum yaşına göre değerlendirilir.', 'Kapiller dolum, hidrasyon ve solunum eforu pediatrik bağlamda yorumlanır.', 'Bilinç, beslenme ve irritabilite değişikliği kırmızı bayrak olarak izlenir.'],
     vitals: { TA: '90/55 mmHg', Nabız: '128/dk', Solunum: '30/dk', SpO2: '%97', Ateş: '38.4 °C' },
     forbiddenDemographic: [/\b([2-9][0-9])\s*yaş\b/i, /erişkin/i, /yaşlı/i, /postmenopozal/i],
@@ -73,7 +73,7 @@ export const AI_BRANCH_RULES = [
     settings: ['Jinekoloji acil', 'Kadın doğum polikliniği', 'Doğumhane triyajı', 'Antenatal değerlendirme'],
     presentations: ['Alt karın ağrısı ve vajinal kanama', 'Gebelikte hipertansiyon', 'Pelvik ağrı', 'Amenore ve kanama', 'Lohusalıkta ateş', 'Adet düzensizliği'],
     titles: ['Erken gebelikte ağrı ve kanama', 'Gebelikte hipertansif tablo', 'Pelvik ağrı ve ateş', 'Amenore sonrası kanama', 'Lohusalıkta ateş', 'Adneksiyal ağrı paterni'],
-    riskContexts: ['Gebelik veya jinekolojik aciliyet bağlamı', 'Üreme çağı ve gebelik olasılığı', 'Kanama ve hemodinamik bozulma riski'],
+    riskContexts: ['Üreme çağı ve gebelik olasılığı', 'Vajinal kanama veya pelvik ağrının aciliyet oluşturması', 'Kanama ve hemodinamik bozulma riski'],
     examDefaults: ['Hemodinamik stabilite ve batın hassasiyeti birlikte değerlendirilir.', 'Pelvik muayene bulguları gebelik ve enfeksiyon bağlamında yorumlanır.', 'Vajinal kanama, servikal bulgu ve adneksiyal hassasiyet ayırıcı tanıda kullanılır.'],
     vitals: { TA: '108/68 mmHg', Nabız: '96/dk', Solunum: '18/dk', SpO2: '%99', Ateş: '36.8 °C' },
     forbiddenDemographic: [/\berkek\b/i, /prostat/i],
@@ -86,7 +86,7 @@ export const AI_BRANCH_RULES = [
     settings: ['Dahiliye polikliniği', 'Acil servis', 'Endokrinoloji değerlendirmesi', 'Nefroloji konsültasyonu', 'Hematoloji polikliniği'],
     presentations: ['Halsizlik ve elektrolit bozukluğu', 'Nefes darlığı ve göğüs ağrısı', 'Sarılık ve koyu idrar', 'Anemi bulguları', 'Poliüri ve kilo kaybı', 'Ödem ve proteinüri'],
     titles: ['Makrositik anemi ile başvuru', 'Sarılık ve koyu idrar', 'Akut elektrolit bozukluğu', 'Dispne ve plöritik ağrı', 'Poliüri ve kilo kaybı', 'Ödem ve proteinüri'],
-    riskContexts: ['Erişkin iç hastalıkları zemininde sistemik risk', 'Metabolik, renal veya hematolojik paternin birlikte yorumlanması'],
+    riskContexts: ['Erişkin iç hastalıklarında sistemik komplikasyon riski', 'Metabolik, renal veya hematolojik bulguların birlikte değerlendirilmesi'],
     examDefaults: ['Genel durum ve volüm bulguları sistemik hastalık açısından değerlendirilir.', 'Kardiyopulmoner ve batın muayenesi ayırıcı tanıya göre yönlendirilir.', 'Klinik bulgular laboratuvar paterniyle birlikte yorumlanır.'],
     vitals: { TA: '118/74 mmHg', Nabız: '88/dk', Solunum: '18/dk', SpO2: '%98', Ateş: '37.1 °C' },
     forbiddenDemographic: [],
@@ -99,7 +99,7 @@ export const AI_BRANCH_RULES = [
     settings: ['Acil servis', 'Genel cerrahi acil', 'Postoperatif servis', 'Travma değerlendirmesi'],
     presentations: ['Akut karın ağrısı', 'Postoperatif ateş', 'Travma sonrası ağrı', 'Sağ üst kadran ağrısı', 'Ani başlayan dispne', 'Yara yerinde kızarıklık'],
     titles: ['Akut karın ağrısı', 'Ameliyat sonrası ateş', 'Travma sonrası batın ağrısı', 'Sağ üst kadran ağrısı', 'Postoperatif ani dispne', 'Yara yeri enfeksiyonu'],
-    riskContexts: ['Cerrahi aciliyet ve komplikasyon riski', 'Travma veya postoperatif süreçle ilişkili klinik bağlam'],
+    riskContexts: ['Cerrahi aciliyet ve komplikasyon riski', 'Travma veya postoperatif süreçte hemodinamik izlem gerekliliği'],
     examDefaults: ['Batın muayenesinde periton irritasyonu ve lokal hassasiyet araştırılır.', 'Hemodinamik stabilite cerrahi önceliği belirler.', 'Yara, ekstremite veya vasküler bulgular komplikasyon açısından değerlendirilir.'],
     vitals: { TA: '110/70 mmHg', Nabız: '104/dk', Solunum: '20/dk', SpO2: '%97', Ateş: '37.6 °C' },
     forbiddenDemographic: [],
@@ -112,7 +112,7 @@ export const AI_BRANCH_RULES = [
     settings: ['Mikrobiyoloji laboratuvarı', 'Enfeksiyon hastalıkları değerlendirmesi', 'Acil servis örnek yorumu'],
     presentations: ['Serolojik patern yorumu', 'Kültür ve direnç paterni', 'Temas sonrası tarama', 'Menenjit etkeni ayrımı', 'Viral hepatit paneli', 'Fırsatçı enfeksiyon paterni'],
     titles: ['Serolojik patern yorumu', 'Kültürde direnç paterni', 'Temas sonrası tarama', 'Menenjit etkeni ayrımı', 'Viral hepatit paneli', 'Fırsatçı enfeksiyon bulgusu'],
-    riskContexts: ['Etken, temas ve bağışıklık durumunun karar üzerindeki etkisi', 'Mikrobiyolojik örnek ve laboratuvar paterninin birlikte yorumlanması'],
+    riskContexts: ['Temas öyküsü veya örnek türünün yorumu değiştirmesi', 'Bağışıklık durumunun etken ayrımına etkisi'],
     examDefaults: ['Klinik bulgular örnek türü ve laboratuvar sonucu ile birlikte değerlendirilir.', 'Temas öyküsü, inkübasyon ve immün durum etken ayrımını etkiler.'],
     vitals: { TA: '116/72 mmHg', Nabız: '92/dk', Solunum: '18/dk', SpO2: '%98', Ateş: '38.1 °C' },
     branchKeywords: ['mikrobiyoloji', 'seroloji', 'kültür', 'etken', 'viral', 'bakteri', 'direnç'],
@@ -123,7 +123,7 @@ export const AI_BRANCH_RULES = [
     settings: ['Farmakoloji spot değerlendirmesi', 'Acil toksikoloji değerlendirmesi', 'Poliklinik ilaç yan etkisi yorumu'],
     presentations: ['İlaç yan etkisi düşündüren tablo', 'Antidot seçimi', 'Reseptör mekanizması', 'İlaç etkileşimi', 'Toksisite paterni'],
     titles: ['İlaç sonrası döküntü', 'Antidot seçimi gerektiren tablo', 'Toksisite paterni', 'Reseptör mekanizması', 'İlaç etkileşimi bulgusu', 'Yan etki düşündüren tablo'],
-    riskContexts: ['İlaç veya toksin maruziyetine bağlı klinik risk', 'Doz, mekanizma ve yan etki ilişkisinin birlikte yorumlanması'],
+    riskContexts: ['İlaç veya toksin maruziyeti öyküsü', 'Doz ve zaman ilişkisinin klinik tabloyu belirlemesi'],
     examDefaults: ['Bulgular ilaç maruziyeti, doz ve zaman ilişkisiyle değerlendirilir.', 'Muayene, toksidrom veya yan etki paternini destekleyecek şekilde yorumlanır.'],
     vitals: { TA: '112/70 mmHg', Nabız: '96/dk', Solunum: '18/dk', SpO2: '%98', Ateş: '36.9 °C' },
     branchKeywords: ['ilaç', 'antidot', 'reseptör', 'toksisite', 'yan etki', 'farmakoloji'],
@@ -179,7 +179,7 @@ export const AI_BRANCH_RULES = [
     presentations: ['Embriyolojik köken yorumu', 'Doku tipi ayrımı', 'Konjenital anomali paterni', 'Epitel tipi sorusu'],
     titles: ['Embriyolojik köken yorumu', 'Epitel tipi ayrımı', 'Konjenital anomali paterni', 'Doku kesiti bulgusu', 'Germ yaprağı ilişkisi'],
     riskContexts: ['Gelişimsel veya histolojik paternin temel bilim bağlamı'],
-    examDefaults: ['Mikroskobik veya embriyolojik ipuçları tek öğrenme hedefiyle ilişkilendirilir.'],
+    examDefaults: ['Mikroskobik veya embriyolojik ipuçları ilgili yapı ve köken bilgisiyle ilişkilendirilir.'],
     vitals: { TA: '110/70 mmHg', Nabız: '90/dk', Solunum: '18/dk', SpO2: '%99', Ateş: '36.7 °C' },
     branchKeywords: ['histoloji', 'embriyoloji', 'epitel', 'germ', 'doku', 'konjenital'],
   }),
@@ -200,8 +200,8 @@ export const AI_BRANCH_RULES = [
     settings: ['TUS spot pratiği', 'Acil karar basamağı', 'Poliklinik değerlendirmesi'],
     presentations: ['Kısa klinik patern', 'Tetkik yorumu', 'İlk yaklaşım kararı', 'Mekanizma bilgisi'],
     titles: ['Kısa klinik patern', 'Tetkik yorumu', 'İlk yaklaşım kararı', 'Mekanizma bilgisi', 'Ayırıcı tanı ipucu'],
-    riskContexts: ['Tek öğrenme hedefiyle ilişkili klinik bağlam'],
-    examDefaults: ['Bulgular tek öğrenme hedefini ölçmek için kısa tutulur.'],
+    riskContexts: ['Somut klinik bağlam ve karar riski'],
+    examDefaults: ['Bulgular temel mekanizma veya laboratuvar ilişkisini gösterecek şekilde kısa tutulur.'],
     vitals: { TA: '118/74 mmHg', Nabız: '88/dk', Solunum: '18/dk', SpO2: '%98', Ateş: '37.1 °C' },
     branchKeywords: ['tus', 'spot', 'klinik', 'mekanizma'],
   }),
@@ -301,14 +301,14 @@ export function maskAnswerLeak(text = '', correctText = '') {
 
 export function buildBranchRiskContext(seed = {}, profile = {}) {
   const rule = profile.rule || getBranchRuleForSeed(seed);
-  const base = rule.riskContexts?.length ? [...rule.riskContexts] : ['Tek öğrenme hedefiyle ilişkili klinik bağlam'];
+  const base = rule.riskContexts?.length ? [...rule.riskContexts] : ['Somut klinik bağlam ve karar riski'];
   if (profile.demographic) base.push(`${profile.demographic} profiline uygun karar bağlamı`);
   return Array.from(new Set(base)).slice(0, 3);
 }
 
 export function buildBranchExamDefaults(seed = {}, profile = {}) {
   const rule = profile.rule || getBranchRuleForSeed(seed);
-  return rule.examDefaults?.length ? rule.examDefaults : ['Bulgular tek öğrenme hedefini destekleyecek şekilde değerlendirilir.'];
+  return rule.examDefaults?.length ? rule.examDefaults : ['Bulgular klinik karar veya temel mekanizma ile birlikte değerlendirilir.'];
 }
 
 export function buildBranchVitals(seed = {}, profile = {}) {
@@ -331,7 +331,7 @@ export function validateBranchFit(question = {}, requestedBranch = '') {
 
   const title = String(question.title || '');
   const titleNorm = normalizeQuestionText(title);
-  if (/\bai\b|ai spot|ai soru|celdirici ayrimi|çeldirici ayrımı|vaka analizi|klinik dusunme|klinik düşünme/.test(titleNorm)) {
+  if (/\bai\b|ai spot|ai soru|secenek ayrimi|seçenek ayrımı|vaka analizi|klinik dusunme|klinik düşünme/.test(titleNorm)) {
     errors.push('başlık yapay AI/şablon ifadesi içeriyor');
   }
   const titleWords = title.trim().split(/\s+/).filter(Boolean).length;
@@ -359,8 +359,10 @@ export function validateBranchFit(question = {}, requestedBranch = '') {
   if (rule.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/.test(joined)) {
     errors.push('kadın doğum sorusunda erkek/uygunsuz üreme bağlamı var');
   }
-  const keywordHit = rule.branchKeywords?.some((keyword) => joined.includes(normalizeQuestionText(keyword)));
-  if (!keywordHit && rule.id !== 'tus-spot-olgular') {
+  const joinedBranch = normalizeBranch(joined);
+  const keywordHit = rule.branchKeywords?.some((keyword) => joinedBranch.includes(normalizeBranch(keyword)));
+  const branchNameHit = rule.normalizedNames?.some((name) => joinedBranch.includes(name));
+  if (!keywordHit && !branchNameHit && rule.id !== 'tus-spot-olgular') {
     errors.push('soru metni seçilen branşa ait en az bir kontrollü bağlam ipucu taşımalı');
   }
   return { ok: errors.length === 0, errors, rule };

@@ -3,6 +3,7 @@ import { makeQuestionSignature, makeQuestionTopicSignature, normalizeQuestionTex
 import { cases } from '../data/cases.js';
 import { attachQuestionDedupeFields, createAIQuestionId, validateQuestionNovelty } from './questionDeduplication.js';
 import { validateBranchFit } from './aiBranchRules.js';
+import { repairAIQuestionQuality, validateAIQuestionQuality } from './aiQuestionQualityGate.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -34,16 +35,20 @@ function uniqueSummaryItems(items = [], max = 4) {
 function buildValidatedAIRiskContext(payload = {}, history = []) {
   const branch = String(payload.relatedBranch || '').toLocaleLowerCase('tr');
   const target = String(payload.learningTarget || '').toLocaleLowerCase('tr');
-  if (/mikrobiyoloji|enfeksiyon|hiv|hepatit|tüberküloz|sepsis|bakteri|viral/.test(branch + ' ' + target)) {
-    return ['Enfeksiyon, temas veya bağışıklık durumunun karar üzerindeki etkisi'];
-  }
-  if (/farmakoloji|ilaç|toksin|zehir|yan etki|antidot/.test(branch + ' ' + target)) {
-    return ['İlaç veya toksin maruziyetine bağlı klinik risk'];
+  const allText = `${branch} ${target} ${payload.title || ''} ${payload.stem || ''}`.toLocaleLowerCase('tr');
+  if (/kawasaki|koroner|konjonktivit|mukozal|dudak/.test(allText)) {
+    return ['Beş günden uzun süren ateş', 'Mukokutanöz bulguların eşlik etmesi', 'Koroner arter tutulumu riski'];
   }
   if (/pediatri|çocuk|yenidoğan|bebek/.test(branch + ' ' + target)) {
-    return ['Yaşa özgü pediatrik kırmızı bayraklar'];
+    return ['Ateş, beslenme ve bilinç değişikliğinin birlikte izlenmesi', 'Aşılanma ve temas öyküsünün sorgulanması'];
   }
-  return uniqueSummaryItems([history[0], 'Klinik kararın dayandığı hasta zemini ve risk bağlamı'], 2);
+  if (/mikrobiyoloji|enfeksiyon|hiv|hepatit|tüberküloz|sepsis|bakteri|viral/.test(branch + ' ' + target)) {
+    return ['Temas öyküsü veya örnek türünün yorumu değiştirmesi', 'Bağışıklık durumunun etken ayrımına etkisi'];
+  }
+  if (/farmakoloji|ilaç|toksin|zehir|yan etki|antidot/.test(branch + ' ' + target)) {
+    return ['İlaç veya toksin maruziyeti öyküsü', 'Doz ve zaman ilişkisinin klinik tabloyu belirlemesi'];
+  }
+  return uniqueSummaryItems([history[0], 'Objektif bulguların karar basamağını desteklemesi'], 2);
 }
 const DIRECT_LEAK_PHRASES = [
   'tanısını doğrular',
@@ -123,11 +128,11 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
   return options.reduce((accumulator, option) => {
     if (option.text === correctText) return accumulator;
     accumulator[option.text] = {
-      explanation: feedback[option.id] || `${option.text} güçlü bir çeldiricidir; ancak olgudaki karar verdirici patern ${correctText} lehinedir.`,
+      explanation: feedback[option.id] || `${option.text} bazı olgularda düşünülebilir; ancak bu tablodaki somut bulgular ${correctText} lehine daha güçlüdür.`,
       comparisonPoints: [
-        `${option.text} belirli klinik koşullarda doğru olabilir; bu olguda temel patern farklıdır.`,
-        `Bu seçenek, “${payload.evidenceChain?.[0] || payload.learningTarget || 'ana ipucu'}” bilgisini yeterince açıklamaz.`,
-        `Doğru yanıt ${correctText} çünkü bulgular tek bir öğrenme hedefine bağlanır.`,
+        `${option.text} belirli klinik koşullarda doğru olabilir; bu olgudaki ana bulgular farklıdır.`,
+        `Bu seçenek, olgudaki temel bulguları yeterince açıklamaz.`,
+        `${correctText} öykü, muayene ve objektif verilerle daha güçlü uyum gösterir.`,
       ],
     };
     return accumulator;
@@ -146,7 +151,7 @@ function normalizeInvestigation(item, index, correctText) {
     priority: item?.priority || (index === 0 ? 'essential' : 'useful'),
     summary,
     findings,
-    interpretation: 'Sonuçlar tanıyı doğrudan yazmadan patern yorumlaması gerektirir.',
+    interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte değerlendirilir.',
   };
 }
 
@@ -179,7 +184,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     difficulty: payload.difficulty || 'Orta-Zor',
     learningTarget: payload.learningTarget,
     demographics: payload.demographics || 'TUS adayı için kısa klinik bağlam',
-    setting: payload.setting || 'AI spot pratik',
+    setting: payload.setting || 'Kısa klinik pratik',
     chiefComplaint: payload.chiefComplaint || payload.learningTarget,
     stem: payload.stem,
     history,
@@ -204,7 +209,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
       correct: correctText,
       options: shuffleArray(options.map((option) => option.text)),
       explanation: payload.explanation,
-      nextStep: payload.nextStep || 'Kanıt zincirini tekrar ederek benzer çeldiricileri ayır.',
+      nextStep: payload.nextStep || 'Olgudaki somut ipuçlarını seçeneklerle karşılaştır.',
       pearls: [payload.examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: payload.explanation,
@@ -213,9 +218,9 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
         clinicalPearls: [payload.examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparisonFromPayload(payload, correctText, options),
         managementSteps: payload.managementSteps || [
-          'Ana ipucunu belirle ve seçenekleri aynı kategori içinde karşılaştır.',
-          'Objektif tetkik sonuçlarını tanı adı okumadan patern olarak yorumla.',
-          'Benzer TUS çeldiricilerinin hangi ipucuyla elendiğini tekrar et.',
+          'Öykü, muayene ve vital bulguları birlikte değerlendir.',
+          'Objektif tetkik verilerini klinik tabloyla ilişkilendir.',
+          'Alternatif seçenekleri olgudaki somut bulgularla ele.',
         ],
         learningOutcome: payload.learningTarget,
       },
@@ -231,9 +236,10 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     },
   };
 
-  attachQuestionDedupeFields(normalized);
-  normalized.generatedAt = new Date(normalized.aiMeta.generatedAt).toISOString();
-  return normalized;
+  const repaired = repairAIQuestionQuality(normalized);
+  attachQuestionDedupeFields(repaired);
+  repaired.generatedAt = new Date(repaired.aiMeta.generatedAt).toISOString();
+  return repaired;
 }
 
 export function validateAIQuestionCase(question = {}, recentSignatures = [], options = {}) {
@@ -256,6 +262,9 @@ export function validateAIQuestionCase(question = {}, recentSignatures = [], opt
 
   const branchFit = validateBranchFit(question, options.requestedBranch || question.relatedBranch || question.branchName);
   if (!branchFit.ok) errors.push(...branchFit.errors.map((error) => `branch-fit:${error}`));
+
+  const quality = validateAIQuestionQuality(question, { requestedBranch: options.requestedBranch || question.relatedBranch || question.branchName });
+  if (!quality.ok) errors.push(...quality.errors.map((error) => `quality:${error}`));
 
   attachQuestionDedupeFields(question);
   const signature = question.contentSignature || makeQuestionSignature(question);

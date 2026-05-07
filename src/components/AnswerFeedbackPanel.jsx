@@ -12,7 +12,7 @@ const GENERIC_COMPARISON_PATTERNS = [
   /ilk yönetim doğru tanının aciliyetine göre/i,
   /klinik bağlamda değerlendir/i,
   /ayırıcı tanıda yer alabilir/i,
-  /veriler tek bir öğrenme hedefi etrafında birleşir/i,
+  /veriler tek bir klinik karar etrafında birleşir/i,
 ];
 
 const BASIC_SCIENCE_BRANCHES = new Set([
@@ -305,7 +305,7 @@ function inferPearlLabel(text = '', index = 0) {
   const normalized = normalizeText(text).toLocaleLowerCase('tr');
   if (/kırmızı bayrak|red flag|tutarsız|acil|geciktirmez/.test(normalized)) return 'Karar verdirici ipucu';
   if (/ilk|başla|önce|bekleme|stabilizasyon|reperfüzyon|bildirim/.test(normalized)) return 'Öncelik';
-  if (/değil|kaçır|karışır|tuzak|çeldirici|yanlış/.test(normalized)) return 'Sık tuzak';
+  if (/değil|kaçır|karışır|tuzak|alternatif|yanlış/.test(normalized)) return 'Sık tuzak';
   if (/mekanizma|enzim|reseptör|gen|yolak|inhibe|aktive/.test(normalized)) return 'Mekanizma özeti';
   if (/tanı|test|marker|seroloji|kültür|pcr|histoloji/.test(normalized)) return 'Ayırt ettirici bulgu';
   return index === 0 ? 'Sınav incisi' : 'Hap bilgi';
@@ -316,7 +316,7 @@ function derivePearls(clinicalCase) {
   const pearls = feedback.clinicalPearls || feedback.pearls || clinicalCase.diagnosis?.pearls || [];
   const clue = getMainClue(clinicalCase);
   const rawPearls = Array.isArray(pearls) ? [...pearls] : [];
-  if (rawPearls.length < 2 && clue) rawPearls.push({ label: 'Ayırt ettirici ipucu', text: `${clue} benzer çeldiricileri eleten ana patern olarak hatırlanmalıdır.` });
+  if (rawPearls.length < 2 && clue) rawPearls.push({ label: 'Ayırt ettirici ipucu', text: `${clue} benzer seçenekleri ayıran ana patern olarak hatırlanmalıdır.` });
 
   return unique(rawPearls)
     .slice(0, MAX_PEARL_ITEMS)
@@ -401,7 +401,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
       option,
       status: 'wrong',
       isSelected: selectedOption === option,
-      title: selectedOption === option ? 'Seçtiğin çeldirici' : 'Neden elenir?',
+      title: selectedOption === option ? 'Seçtiğin alternatif' : 'Neden elenir?',
       explanation: truncateSentence(explanation, 260),
       comparisonPoints: (nonGenericPoints.length ? nonGenericPoints : buildNaturalComparisonPoints(clinicalCase, option, evidenceChain)).slice(0, 3),
     };
