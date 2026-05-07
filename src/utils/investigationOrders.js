@@ -607,17 +607,34 @@ function postAnswerExplanationFor(item) {
 
 function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
   const text = String(note || '').toLocaleLowerCase('tr');
-  if (/yüksek|artmış|pozitif|uzamış/.test(text)) return 'Yüksek';
-  if (/düşük|azalmış|negatif/.test(text)) return 'Düşük';
+  const refText = String(reference || '');
+  const normalizedReference = refText.toLocaleLowerCase('tr');
+  const valueText = String(value || '').toLocaleLowerCase('tr');
+  const combined = `${parameter} ${value} ${reference}`.toLocaleLowerCase('tr');
+
+  if (/normalde beklenmeyen patern|mikroorganizma görülmemesi|dominant bakteri görülmemesi|üreme yok|negatif|saptanmaması|olmaması/.test(normalizedReference)) {
+    if (/bekleniyor|sonuç bekleniyor|takip/.test(valueText)) return 'Takip edilecek';
+    const valueShowsAbsence = /saptanmadı|izlenmedi|görülmedi|üreme olmadı|üreme saptanmadı|yok/.test(valueText) || (/\bnegatif\b/.test(valueText) && !/\bgram negatif\b/.test(valueText));
+    if (valueShowsAbsence) return 'Negatif';
+    if (/pozitif|saptandı|izlendi|görüldü|üreme|diplokok|kok|basil|konsolidasyon|elevasyon|depresyon|defekt|flap|anevrizma|vejetasyon|kitle|kalınlaşma|birikim|eozinofil/.test(valueText)) return 'Anormal bulgu';
+  }
+
+  if (/belirgin yüksek|çok yüksek|yüksek|artmış|uzamış/.test(text)) return 'Yüksek';
+  if (/pozitif|anormal|klinik olarak anlamlı|pürülan/.test(text)) return 'Anormal bulgu';
+  if (/düşük|azalmış/.test(text)) return 'Düşük';
+  if (/negatif/.test(text)) return 'Negatif';
   if (/normal|referans|uygun/.test(text)) return 'Referans içinde';
 
   const numericValue = parseFloat(String(value).replace(',', '.').replace(/[^0-9.-]/g, ''));
-  const refText = String(reference || '');
   const upperRef = refText.match(/<\s*([0-9.]+)/);
+  const lowerRef = refText.match(/>\s*([0-9.]+)/);
   const rangeRef = refText.match(/([0-9.]+)\s*[–-]\s*([0-9.]+)/);
 
   if (!Number.isNaN(numericValue) && upperRef) {
     return numericValue > parseFloat(upperRef[1]) ? 'Yüksek' : 'Referans içinde';
+  }
+  if (!Number.isNaN(numericValue) && lowerRef) {
+    return numericValue < parseFloat(lowerRef[1]) ? 'Düşük' : 'Referans içinde';
   }
   if (!Number.isNaN(numericValue) && rangeRef) {
     const low = parseFloat(rangeRef[1]);
@@ -627,9 +644,8 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
     return 'Referans içinde';
   }
 
-  const combined = `${parameter} ${value} ${reference}`.toLocaleLowerCase('tr');
-  if (/izlenmedi|saptanmadı|negatif|normal|patoloji yok/.test(combined)) return 'Normal';
-  if (/pozitif|saptandı|izlendi|uyumlu|destekler|elevasyon|depresyon|konsolidasyon|defekt|yüksek|düşük/.test(combined)) return 'Tanıyı destekler';
+  if (/izlenmedi|saptanmadı|patoloji yok|üreme olmadı|üreme saptanmadı/.test(combined) || (/\bnegatif\b/.test(combined) && !/\bgram negatif\b/.test(combined))) return 'Negatif';
+  if (/pozitif|saptandı|izlendi|görüldü|uyumlu|destekler|elevasyon|depresyon|konsolidasyon|defekt|yüksek|düşük|diplokok|basil|kitle|kalınlaşma/.test(combined)) return 'Anormal bulgu';
   return 'Objektif sonuç';
 }
 

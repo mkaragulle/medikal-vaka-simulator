@@ -487,7 +487,7 @@ function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase 
             {item.comparisonPoints?.length ? (
               <ul className="comparison-point-list">
                 {item.comparisonPoints.slice(0, 3).map((point, pointIndex) => (
-                  <li key={`${point}-${pointIndex}`}><GlossaryText text={ensureSentence(point)} enabled={glossaryEnabled} /></li>
+                  <li key={`${point}-${pointIndex}`}><span className="comparison-point-copy"><GlossaryText text={ensureSentence(point)} enabled={glossaryEnabled} /></span></li>
                 ))}
               </ul>
             ) : null}

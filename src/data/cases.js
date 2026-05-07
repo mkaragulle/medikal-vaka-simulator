@@ -9456,18 +9456,30 @@ export const cases = [
         "id": "culture",
         "label": "Mikrobiyolojik örnekleme",
         "type": "culture",
-        "summary": "Yatış gerektiren tabloda balgam Gram boyamada bol PMNL ve gram pozitif diplokoklar görülür; kan kültüründe erken dönemde üreme saptanmaz.",
+        "summary": "Mikrobiyolojik örnekler antibiyotik öncesi alınır; erken kültür sonucu tedavi kararını geciktirmemelidir.",
         "priority": "situational",
         "findings": [
-          "Ağır/yatan hastada antibiyotik daraltma için değerlidir",
-          "Hafif ayaktan olguda rutin zorunlu değildir"
+          "Gram boyamada pürülan örnek ve baskın morfoloji kaydedilir.",
+          "Kültür sonuçları hedefe yönelik tedavi için izlenir; başlangıç yönetimi klinik ağırlığa göre yapılır."
         ],
         "rows": [
           [
-            "Mikrobiyolojik örnekleme",
-            "Ağır hastalık, yatış gereksinimi veya tedavi başarısızlığı varsa balgam Gram boyama/kültür ve kan kültürleri alınır.",
-            "Normalde beklenmeyen patern",
-            "Klinik olarak anlamlı"
+            "Balgam Gram boyama",
+            "Bol PMNL; gram pozitif diplokoklar",
+            "Dominant bakteri görülmemesi",
+            "Pürülan örnek"
+          ],
+          [
+            "Balgam kültürü",
+            "Sonuç bekleniyor",
+            "Üreme yok",
+            "Takip edilecek"
+          ],
+          [
+            "Kan kültürü",
+            "Erken dönemde üreme saptanmadı",
+            "Üreme yok",
+            "Başlangıç sonucu"
           ]
         ]
       }
@@ -11317,17 +11329,29 @@ export const cases = [
         "id": "culture",
         "label": "Kan kültürü",
         "type": "culture",
-        "summary": "Antibiyotik öncesi alınır; ancak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır.",
+        "summary": "Kültür örneği tedavi öncesi alınır; güçlü klinik şüphede antibiyotik kültür sonucunu beklemeden başlanır.",
         "priority": "useful",
         "findings": [
-          "Antibiyotik öncesi alınır; ancak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır."
+          "Kültür tanısal doğrulama sağlar ancak acil tedaviyi geciktirmemelidir."
         ],
         "rows": [
           [
-            "Kan kültürü",
-            "Antibiyotik öncesi alınır; ancak güçlü şüphede antibiyotik tedavisi kültür sonucu beklenmeden başlanır.",
-            "Normalde beklenmeyen patern",
-            "Klinik olarak anlamlı"
+            "Örnek zamanı",
+            "Antibiyotik öncesi iki set kan kültürü",
+            "Tedavi öncesi örnek",
+            "Uygun"
+          ],
+          [
+            "Gram boyama",
+            "Gram negatif diplokoklar görülebilir",
+            "Mikroorganizma görülmemesi",
+            "Anormal"
+          ],
+          [
+            "Kültür sonucu",
+            "Kesin üreme sonucu bekleniyor",
+            "Üreme yok",
+            "Takip edilecek"
           ]
         ]
       }
@@ -11638,17 +11662,29 @@ export const cases = [
         "id": "blood-culture",
         "label": "Kan kültürleri",
         "type": "culture",
-        "summary": "Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor.",
+        "summary": "Farklı venlerden alınan kan kültürlerinde aynı etkenin üremesi kalıcı bakteriyemi paternini destekler.",
         "priority": "useful",
         "findings": [
-          "Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor."
+          "Birden fazla setin pozitif olması kontaminasyondan çok gerçek bakteriyemi lehinedir."
         ],
         "rows": [
           [
-            "Kan kültürleri",
-            "Farklı venlerden alınan üç kan kültüründe metisiline duyarlı Staphylococcus aureus üremesi saptanıyor.",
-            "Normalde beklenmeyen patern",
-            "Klinik olarak anlamlı"
+            "Kültür seti sayısı",
+            "3/3 set pozitif",
+            "Üreme yok",
+            "Pozitif"
+          ],
+          [
+            "İzole edilen etken",
+            "Staphylococcus aureus",
+            "Üreme yok",
+            "Pozitif"
+          ],
+          [
+            "Metisilin duyarlılığı",
+            "Duyarlı",
+            "Direnç saptanmaması",
+            "MSSA paterni"
           ]
         ]
       },
@@ -24169,7 +24205,15 @@ export const cases = [
         "findings": [
           "Subdural kanama paterninde ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir."
         ],
-        "priority": "targeted"
+        "priority": "targeted",
+        "rows": [
+          [
+            "Kontrastsız beyin BT/MR",
+            "Subdural kanama paterninde ekstraaksiyel kanama alanları izlenir; bulgular kaza dışı travma şüphesini güçlendirir.",
+            "—",
+            "Objektif bulgu"
+          ]
+        ]
       },
       {
         "id": "tus-spot-child-abuse-skeletal-survey",
@@ -24179,7 +24223,15 @@ export const cases = [
         "findings": [
           "Farklı iyileşme evrelerinde posterior kosta ve metafizer lezyonlar saptanır; tekrarlayan travma olasılığı artar."
         ],
-        "priority": "targeted"
+        "priority": "targeted",
+        "rows": [
+          [
+            "İskelet survey grafileri",
+            "Farklı iyileşme evrelerinde posterior kosta ve metafizer lezyonlar saptanır; tekrarlayan travma olasılığı artar.",
+            "—",
+            "Objektif bulgu"
+          ]
+        ]
       }
     ],
     "images": [],
@@ -24391,12 +24443,39 @@ export const cases = [
       {
         "id": "tus-spot-sexual-assault-baseline-sti",
         "label": "Başlangıç CYBE paneli",
-        "type": "microbiology",
-        "summary": "HIV Ag/Ab, HBsAg, anti-HCV ve sifiliz taraması başlangıç kayıt değeri olarak alınır; profilaksi kararı klinik riskle birlikte verilir.",
+        "type": "lab",
+        "summary": "Başlangıç serolojisi maruziyet sonrası takip için kayıt değeri sağlar; akut bulaşı tek başına dışlamaz.",
         "findings": [
-          "HIV Ag/Ab, HBsAg, anti-HCV ve sifiliz taraması başlangıç kayıt değeri olarak alınır; profilaksi kararı klinik riskle birlikte verilir."
+          "Serolojik panel profilaksi ve izlem planının temel kayıt noktasını oluşturur."
         ],
-        "priority": "targeted"
+        "priority": "targeted",
+        "subtype": "Seroloji / başlangıç taraması",
+        "rows": [
+          [
+            "HIV Ag/Ab",
+            "Negatif",
+            "Negatif",
+            "Başlangıç kayıt"
+          ],
+          [
+            "HBsAg",
+            "Negatif",
+            "Negatif",
+            "Başlangıç kayıt"
+          ],
+          [
+            "Anti-HCV",
+            "Negatif",
+            "Negatif",
+            "Başlangıç kayıt"
+          ],
+          [
+            "Sifiliz taraması (RPR/VDRL)",
+            "Negatif",
+            "Negatif",
+            "Başlangıç kayıt"
+          ]
+        ]
       }
     ],
     "images": [],
@@ -30067,12 +30146,33 @@ export const cases = [
         "id": "ppd-cxr-latent-tb",
         "label": "PPD ve akciğer grafisi",
         "type": "clinical",
-        "summary": "PPD önce 8 mm iken 17 mm ölçülür; akciğer grafisinde aktif infiltrasyon veya kavite saptanmaz.",
+        "summary": "Deri testi ölçümü önceki değerle karşılaştırılmalı; grafi aktif hastalık bulgusu açısından değerlendirilmelidir.",
         "findings": [
-          "PPD dönüşümü yakın temas sonrası latent enfeksiyon açısından anlamlıdır.",
-          "Normal akciğer grafisi aktif akciğer tüberkülozu olasılığını azaltır."
+          "PPD ölçümü mutlak değeriyle birlikte önceki ölçüme göre değişim üzerinden yorumlanır.",
+          "Akciğer grafisi aktif parankimal hastalık bulgusu göstermemektedir."
         ],
-        "priority": "essential"
+        "priority": "essential",
+        "subtype": "Deri testi ve görüntüleme",
+        "rows": [
+          [
+            "Önceki PPD endürasyonu",
+            "8 mm",
+            "<10 mm",
+            "Başlangıç değeri"
+          ],
+          [
+            "Yeni PPD endürasyonu",
+            "17 mm",
+            "<10 mm",
+            "Artmış"
+          ],
+          [
+            "Akciğer grafisi",
+            "Aktif infiltrasyon veya kavite saptanmadı",
+            "Aktif lezyon olmaması",
+            "Negatif"
+          ]
+        ]
       }
     ],
     "images": [],
@@ -32806,12 +32906,32 @@ export const cases = [
         "id": "pituitary-mri-prolactin-dilution",
         "label": "Hipofiz MR ve prolaktin ölçüm paterni",
         "type": "lab",
-        "summary": "MR’da 2 cm hipofiz makroadenomu izlenir; bazal prolaktin beklenenden düşük, dilüsyon sonrası belirgin yüksek ölçülür.",
+        "summary": "Kitle boyutu ile bazal hormon düzeyi uyumsuzsa örnek dilüsyonu ile ölçüm tekrarı klinik yorumu değiştirir.",
         "findings": [
-          "Kitle boyutu ile bazal hormon düzeyi arasında uyumsuzluk vardır.",
-          "Dilüsyon sonrası ölçümde belirgin artış izlenir."
+          "Makroadenom boyutu ile bazal prolaktin düzeyi arasındaki uyumsuzluk ölçümün dilüsyonla tekrarlanmasını gerektirir."
         ],
-        "priority": "essential"
+        "priority": "essential",
+        "subtype": "Hormon ölçümü ve MR korelasyonu",
+        "rows": [
+          [
+            "Hipofiz MR kitle boyutu",
+            "20 mm",
+            "<10 mm",
+            "Makroadenom boyutu"
+          ],
+          [
+            "Bazal prolaktin",
+            "48 ng/mL",
+            "4.8–23.3 ng/mL",
+            "Yüksek"
+          ],
+          [
+            "Dilüsyon sonrası prolaktin",
+            "2.400 ng/mL",
+            "4.8–23.3 ng/mL",
+            "Belirgin yüksek"
+          ]
+        ]
       }
     ],
     "images": [],
@@ -34509,11 +34629,39 @@ export const cases = [
         "id": "membranous-biopsy-pla2r",
         "label": "Böbrek biyopsisi ve serum otoantikor paneli",
         "type": "pathology",
-        "summary": "Biyopside diffüz kapiller duvar kalınlaşması ve granüler immün birikim paterni; serum anti-PLA2R pozitifliği saptanır.",
+        "summary": "Objektif veriler proteinüri düzeyi, serum albümini, otoantikor durumu ve biyopsi paterni birlikte değerlendirilerek yorumlanır.",
         "findings": [
-          "Nefrotik proteinüriyle birlikte glomerüler membranöz patern ve ilgili otoantikor pozitifliği izlenir."
+          "Nefrotik düzeyde proteinüri ve hipoalbüminemi klinik şiddeti gösterir.",
+          "Biyopsi ve otoantikor sonucu aynı klinik örüntü içinde yorumlanmalıdır."
         ],
-        "priority": "essential"
+        "priority": "essential",
+        "subtype": "Histopatoloji ve otoantikor",
+        "rows": [
+          [
+            "Proteinüri",
+            "6.2 g/g kreatinin",
+            "<0.15 g/g kreatinin",
+            "Nefrotik düzey"
+          ],
+          [
+            "Serum albümin",
+            "2.4 g/dL",
+            "3.5–5.0 g/dL",
+            "Düşük"
+          ],
+          [
+            "Serum anti-PLA2R",
+            "Pozitif",
+            "Negatif",
+            "Pozitif"
+          ],
+          [
+            "Biyopsi paterni",
+            "Kapiller duvar kalınlaşması ve granüler immün birikim",
+            "Normal glomerül yapısı",
+            "Anormal"
+          ]
+        ]
       }
     ],
     "images": [],
@@ -37331,7 +37479,15 @@ export const cases = [
         "findings": [
           "Normal BT, geçici klinik fonksiyon bozukluğu ile birlikte konküzyonu klinik yorumda önemlidir."
         ],
-        "priority": "useful"
+        "priority": "useful",
+        "rows": [
+          [
+            "Kontrastsız kraniyal BT",
+            "Akut intrakraniyal kanama, kitle etkisi veya kafatası kırığı saptanmaz.",
+            "—",
+            "Objektif bulgu"
+          ]
+        ]
       }
     ],
     "images": [],
@@ -37533,11 +37689,27 @@ export const cases = [
         "id": "erythema-toxicum-wright",
         "label": "Püstül materyali Wright boyası",
         "type": "pathology",
-        "summary": "Püstül içeriğinde bol eozinofil görülür; kültürde üreme olmaz.",
+        "summary": "Püstül içeriği sitolojik hücre baskınlığı ve kültür sonucu birlikte değerlendirilir.",
         "findings": [
-          "Steril püstül ve eozinofil baskınlığı benign yenidoğan döküntüsü paternini klinik yorumda önemlidir."
+          "Eozinofil baskınlığı enfeksiyon dışı neonatal döküntü paternlerinde görülebilir.",
+          "Kültürde üreme olmaması bakteriyel püstüler enfeksiyonu desteklemez."
         ],
-        "priority": "useful"
+        "priority": "useful",
+        "subtype": "Sitolojik inceleme",
+        "rows": [
+          [
+            "Wright boyası",
+            "Bol eozinofil",
+            "Eozinofil baskınlığı beklenmez",
+            "Eozinofilik yanıt"
+          ],
+          [
+            "Bakteriyel kültür",
+            "Üreme olmadı",
+            "Üreme yok",
+            "Negatif"
+          ]
+        ]
       }
     ],
     "images": [],

@@ -197,7 +197,7 @@ function evaluateSemanticStatus(row = {}) {
       : numericStatus;
   }
 
-  const resultShowsAbsence = hasAny(valueText, ABSENCE_RESULT_PATTERNS);
+  const resultShowsAbsence = hasAny(valueText, ABSENCE_RESULT_PATTERNS) && !/\bgram negatif\b/.test(valueText);
   const referenceExpectsAbsence = hasAny(referenceText, ABSENCE_REFERENCE_PATTERNS);
   const resultShowsPresence = hasAny(valueText, PRESENCE_RESULT_PATTERNS);
 
@@ -238,15 +238,77 @@ function normalizeResultRow(row) {
     };
 }
 
+const PARAMETER_TABLE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
+const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasound', 'imaging', 'microscopy', 'pathology', 'endoscopy', 'clinical', 'neurophysiology', 'nuclear']);
+
+function isGenericQualitativeReference(reference = '') {
+  const normalized = normalizeClinicalText(reference);
+  return !normalized || normalized === '—' || /normalde beklenmeyen patern|objektif bulgu|klinik olarak/.test(normalized);
+}
+
+function rowHasQuantitativeSignal(row = {}) {
+  const value = String(row.value || '');
+  const reference = String(row.reference || '');
+  const joined = `${row.parameter || ''} ${value} ${reference}`;
+
+  if (reference && !isGenericQualitativeReference(reference)) return true;
+  if (!/\d/.test(joined)) return false;
+
+  return /(mg\/dL|g\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|uIU\/mL|mmHg|\/mm³|\/mm3|x10\^3\/µL|%|sn|mm|cm|mL|L|IU|titre|titer)/i.test(joined);
+}
+
+function shouldRenderParameterTable(rows = [], itemType = '') {
+  const normalizedRows = rows.map(normalizeResultRow);
+  if (PARAMETER_TABLE_TYPES.has(itemType)) return true;
+  if (QUALITATIVE_RESULT_TYPES.has(itemType) && !normalizedRows.some(rowHasQuantitativeSignal)) return false;
+  return normalizedRows.some(rowHasQuantitativeSignal);
+}
+
 function isLongResultValue(value = '') {
   const text = String(value || '').trim();
   return text.length > 64 || text.split(/\s+/).length > 8;
 }
 
-function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true }) {
+function ResultFindingList({ rows = [], glossaryEnabled = true }) {
+  const normalizedRows = rows.map(normalizeResultRow);
+
+  return (
+    <div className="qualitative-result-list inline-result-finding-list">
+      {normalizedRows.map(({ parameter, value, reference, note }, index) => {
+        const status = evaluateSemanticStatus({ parameter, value, reference, note });
+        const showReference = reference && !isGenericQualitativeReference(reference);
+        const showNote = note && !/klinik olarak anlamli|objektif sonuc/i.test(String(note));
+
+        return (
+          <div key={`${parameter || 'bulgu'}-${index}`} className={`qualitative-result-finding ${status.tone}`}>
+            <div className="qualitative-result-marker" aria-hidden="true" />
+            <div className="qualitative-result-copy">
+              <span className="qualitative-result-label"><GlossaryText text={String(parameter || 'Bulgular')} enabled={glossaryEnabled} /></span>
+              <p><GlossaryText text={String(value || 'Objektif bulgu saptanmadı.')} enabled={glossaryEnabled} /></p>
+              {showReference || showNote ? (
+                <span className="qualitative-result-meta">
+                  {showReference ? <GlossaryText text={`Beklenen: ${reference}`} enabled={glossaryEnabled} /> : null}
+                  {showReference && showNote ? ' · ' : ''}
+                  {showNote ? <GlossaryText text={String(note)} enabled={glossaryEnabled} /> : null}
+                </span>
+              ) : null}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
+function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, itemType = '' }) {
   if (!rows.length) return null;
 
   const normalizedRows = rows.map(normalizeResultRow);
+
+  if (!shouldRenderParameterTable(rows, itemType)) {
+    return <ResultFindingList rows={rows} glossaryEnabled={glossaryEnabled} />;
+  }
+
   const useWideResultLayout = hardMode || normalizedRows.some((row) => isLongResultValue(row.value));
 
   if (useWideResultLayout) {
@@ -342,12 +404,28 @@ function ResultImages({ images = [], glossaryEnabled = true }) {
   );
 }
 
+function normalizeForDuplicateCheck(text = '') {
+  return normalizeClinicalText(text).replace(/[^a-z0-9ığüşöçİĞÜŞÖÇ]+/gi, ' ').trim();
+}
+
+function summaryDuplicatesStructuredRows(summary = '', rows = []) {
+  const summaryText = normalizeForDuplicateCheck(summary);
+  if (!summaryText || !rows.length) return false;
+
+  return rows.some((row) => {
+    const { value } = normalizeResultRow(row);
+    const valueText = normalizeForDuplicateCheck(value);
+    return valueText && valueText.length > 20 && (summaryText.includes(valueText) || valueText.includes(summaryText));
+  });
+}
+
 function InlineOrderResult({ item, mode, hardMode = false }) {
   const result = item.result || {};
   const hasRows = Boolean(result.rows?.length);
   const hasImages = Boolean(result.images?.length);
   const hasSummary = Boolean(result.summary && result.format !== 'empty');
   const feedbackNote = item.inlineFeedback || '';
+  const shouldShowSummary = hasSummary && (!hasRows || !summaryDuplicatesStructuredRows(result.summary, result.rows));
 
   return (
     <div className="inline-order-result requested-result-panel" role="region" aria-label={`${item.label} sonucu`}>
@@ -355,9 +433,14 @@ function InlineOrderResult({ item, mode, hardMode = false }) {
         <div className="inline-result-title-row">
           <span className="inline-result-label"><Icon name="Notes" size={13} /> Sonuç</span>
         </div>
-        {hasSummary ? <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} /></p> : null}
-        {hasRows ? <ResultTable rows={result.rows} hardMode={hardMode} glossaryEnabled={mode !== 'exam' && !hardMode} /> : null}
+        {hasRows ? <ResultTable rows={result.rows} hardMode={hardMode} glossaryEnabled={mode !== 'exam' && !hardMode} itemType={item.type} /> : null}
         {hasImages ? <ResultImages images={result.images} glossaryEnabled={mode !== 'exam' && !hardMode} /> : null}
+        {shouldShowSummary ? (
+          <div className={`ordered-result-comment ${hasRows || hasImages ? 'after-objective-data' : 'standalone'}`}>
+            {(hasRows || hasImages) ? <span>Kısa yorum</span> : null}
+            <p className="ordered-result-summary inline-result-summary"><GlossaryText text={result.summary} enabled={mode !== 'exam' && !hardMode} /></p>
+          </div>
+        ) : null}
         {!hasSummary && !hasRows && !hasImages ? (
           <p className="ordered-result-empty inline-result-empty">Bu istemde ek objektif bulgu saptanmadı.</p>
         ) : null}
