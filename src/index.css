@@ -32209,3 +32209,222 @@ html[data-theme="dark"] .clinical-pearl-item-pro,
     gap: 5px;
   }
 }
+
+/* ===== v60 dashboard personal insight + global feedback refinement ===== */
+.icon-badge,
+.feedback-card-head .icon-badge,
+.home-metric-card .icon-badge,
+.performance-insight-card .icon-badge,
+.performance-next-action-card .icon-badge {
+  display: inline-grid !important;
+  place-items: center !important;
+  flex: 0 0 auto !important;
+  line-height: 0 !important;
+  aspect-ratio: 1 / 1 !important;
+  vertical-align: middle !important;
+}
+
+.icon-badge svg,
+.feedback-card-head .icon-badge svg,
+.home-metric-card .icon-badge svg,
+.performance-insight-card .icon-badge svg,
+.performance-next-action-card .icon-badge svg {
+  display: block !important;
+  margin: auto !important;
+  transform: none !important;
+}
+
+.performance-insight-panel.session-summary-v8 {
+  align-content: start !important;
+  gap: 13px !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.performance-insight-header.summary-v8-header {
+  align-items: flex-start !important;
+}
+
+.performance-insight-header h2 {
+  max-width: 260px !important;
+  letter-spacing: -.035em !important;
+}
+
+.performance-insight-header p {
+  max-width: 350px !important;
+  line-height: 1.55 !important;
+  overflow-wrap: break-word !important;
+}
+
+.summary-v8-score-success {
+  color: var(--success) !important;
+  border-color: color-mix(in srgb, var(--success) 28%, transparent) !important;
+  background: color-mix(in srgb, var(--success) 10%, transparent) !important;
+}
+
+.summary-v8-score-warning {
+  color: var(--warning) !important;
+  border-color: color-mix(in srgb, var(--warning) 28%, transparent) !important;
+  background: color-mix(in srgb, var(--warning) 10%, transparent) !important;
+}
+
+.summary-v8-score-danger {
+  color: var(--danger) !important;
+  border-color: color-mix(in srgb, var(--danger) 28%, transparent) !important;
+  background: color-mix(in srgb, var(--danger) 10%, transparent) !important;
+}
+
+.performance-micro-grid.summary-v8-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.performance-insight-list {
+  display: grid !important;
+  gap: 9px !important;
+}
+
+.performance-insight-card,
+.performance-next-action-card {
+  display: grid !important;
+  grid-template-columns: 38px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 11px !important;
+  padding: 12px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 92%, transparent) !important;
+  border-radius: 17px !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 78%, transparent), color-mix(in srgb, var(--surface-2) 58%, transparent)) !important;
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--text-primary) 4%, transparent) !important;
+  min-width: 0 !important;
+}
+
+.performance-insight-icon.icon-badge,
+.performance-insight-card .icon-badge,
+.performance-next-action-card .icon-badge {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 13px !important;
+  align-self: start !important;
+}
+
+.performance-insight-icon.icon-badge svg,
+.performance-insight-card .icon-badge svg,
+.performance-next-action-card .icon-badge svg {
+  width: 18px !important;
+  height: 18px !important;
+  stroke-width: 1.95 !important;
+}
+
+.performance-insight-card span,
+.performance-next-action-card span {
+  display: block !important;
+  margin: 0 0 3px !important;
+  color: var(--text-muted) !important;
+  font-size: 10.5px !important;
+  font-weight: 860 !important;
+  letter-spacing: .075em !important;
+  text-transform: uppercase !important;
+  line-height: 1.1 !important;
+}
+
+.performance-insight-card strong {
+  display: block !important;
+  color: var(--text-primary) !important;
+  font-size: 14px !important;
+  line-height: 1.25 !important;
+  font-weight: 790 !important;
+  letter-spacing: -.015em !important;
+}
+
+.performance-insight-card p,
+.performance-next-action-card p {
+  margin: 4px 0 0 !important;
+  color: var(--text-secondary) !important;
+  font-size: 12.8px !important;
+  line-height: 1.55 !important;
+  overflow-wrap: break-word !important;
+}
+
+.performance-next-action-card {
+  border-color: color-mix(in srgb, var(--accent) 24%, var(--border-subtle)) !important;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 8%, var(--surface-1)), color-mix(in srgb, var(--surface-1) 90%, transparent)) !important;
+}
+
+.feedback-card-head {
+  grid-template-columns: 38px minmax(0, 1fr) !important;
+  gap: 11px !important;
+}
+
+.feedback-card-head .icon-badge {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 13px !important;
+  align-self: center !important;
+}
+
+.feedback-card-head .icon-badge svg {
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.evidence-chain-list.evidence-chain-list-pro li {
+  grid-template-columns: 32px minmax(0, 1fr) !important;
+  align-items: start !important;
+}
+
+.evidence-chain-list.evidence-chain-list-pro li > b,
+.management-action-item b {
+  display: inline-grid !important;
+  place-items: center !important;
+  line-height: 1 !important;
+}
+
+.clinical-pearl-item p,
+.management-action-item p {
+  display: grid !important;
+  gap: 3px !important;
+}
+
+.clinical-pearl-item p strong,
+.management-action-item p strong {
+  display: block !important;
+  color: var(--text-primary) !important;
+  font-size: 13.3px !important;
+  line-height: 1.25 !important;
+  margin: 0 !important;
+}
+
+.clinical-pearl-item p strong + span,
+.management-action-item p strong + span {
+  display: inline !important;
+}
+
+.option-comparison-head {
+  align-items: center !important;
+}
+
+.comparison-point-list li {
+  padding-inline-start: 2px !important;
+}
+
+@media (max-width: 920px) {
+  .performance-insight-header h2,
+  .performance-insight-header p {
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .performance-insight-card,
+  .performance-next-action-card {
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+    padding: 11px !important;
+  }
+  .performance-micro-grid.summary-v8-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .feedback-card-head {
+    grid-template-columns: 36px minmax(0, 1fr) !important;
+  }
+}

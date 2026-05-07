@@ -60,10 +60,11 @@ function ensureSentence(value = '') {
 }
 
 function truncateSentence(value = '', limit = 230) {
-  const text = normalizeText(value);
+  const text = normalizeText(value).replace(/\.\.\.|…/g, '.');
   if (text.length <= limit) return text;
-  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').trim();
-  return `${cut}…`;
+  const cut = text.slice(0, limit).replace(/\s+\S*$/u, '').replace(/[,:;\-–—]+$/u, '').trim();
+  if (!cut) return text.slice(0, limit).trim();
+  return /[.!?]$/u.test(cut) ? cut : `${cut}.`;
 }
 
 function splitIntoSentences(text = '') {
@@ -91,14 +92,38 @@ function unique(items = []) {
   });
 }
 
-function removeMetaLanguage(value = '') {
+function stripWeakPrefix(value = '') {
   return normalizeText(value)
+    .replace(/^(?:TUS kırmızı bayrağı|İlk adım|Mekanizma|Mekanistik yaklaşım|İlk tedavi|Klinik olasılığı belirle|Pellagra|Olgu verisi|Ek destek)\s*[:：-]\s*/iu, '')
+    .trim();
+}
+
+function refineLabel(value = '', fallback = '') {
+  const raw = trimTrailingPunctuation(stripWeakPrefix(value || fallback));
+  const normalized = raw.toLocaleLowerCase('tr');
+  if (!raw) return fallback || 'Klinik ipucu';
+  if (/^kan[ıi]t\s*\d+$/iu.test(raw)) return fallback || 'Olgu kanıtı';
+  if (/tus k[ıi]rm[ıi]z[ıi] bayra[ğg][ıi]/iu.test(raw)) return 'Karar verdirici ipucu';
+  if (/^ilk ad[ıi]m$/iu.test(raw)) return 'Öncelik';
+  if (/^mekanizma$/iu.test(raw) || /mekanistik yakla[şs][ıi]m/iu.test(raw)) return 'Mekanizma özeti';
+  if (/^ilk tedavi$/iu.test(raw)) return 'Tedavi önceliği';
+  if (/klinik olas[ıi]l[ıi][ğg][ıi] belirle/iu.test(raw)) return 'Klinik patern';
+  if (/^yakla[şs][ıi]m$/iu.test(raw)) return 'Klinik patern';
+  if (/^hap bilgi$/iu.test(raw)) return 'Yüksek verimli bilgi';
+  if (/^s[ıi]nav incisi$/iu.test(raw)) return 'Sınav incisi';
+  return raw;
+}
+
+function removeMetaLanguage(value = '') {
+  return stripWeakPrefix(normalizeText(value)
+    .replace(/\.\.\.|…/g, '.')
     .replace(/Bu spot olguda\s+/giu, '')
     .replace(/öğrenci\s+[^.]*\.?/giu, '')
     .replace(/Bu vaka,?\s*/giu, '')
     .replace(/klinik bağlamda değerlendirilir/giu, 'olgudaki objektif paternle yorumlanır')
-    .replace(/\s+/g, ' ')
-    .trim();
+    .replace(/\bOlgu verisi\s*[:：-]\s*/giu, '')
+    .replace(/\bEk destek\s*[:：-]\s*/giu, '')
+    .replace(/\s+/g, ' '));
 }
 
 function splitActionItems(text = '') {
@@ -225,9 +250,10 @@ function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
   }
 
   if (!title) title = fallbackTitle || inferEvidenceTitle(text, index);
+  const inferredFallback = fallbackTitle || inferEvidenceTitle(text, index);
   return {
-    title: truncateSentence(trimTrailingPunctuation(title), 46),
-    text: truncateSentence(text, maxLength),
+    title: truncateSentence(refineLabel(title, inferredFallback), 46),
+    text: truncateSentence(stripWeakPrefix(text), maxLength),
   };
 }
 
@@ -277,10 +303,10 @@ function deriveEvidenceChain(clinicalCase) {
 
 function inferPearlLabel(text = '', index = 0) {
   const normalized = normalizeText(text).toLocaleLowerCase('tr');
-  if (/kırmızı bayrak|red flag|tutarsız|acil|geciktirmez/.test(normalized)) return 'TUS kırmızı bayrağı';
-  if (/ilk|başla|önce|bekleme|stabilizasyon|reperfüzyon|bildirim/.test(normalized)) return 'İlk adım';
+  if (/kırmızı bayrak|red flag|tutarsız|acil|geciktirmez/.test(normalized)) return 'Karar verdirici ipucu';
+  if (/ilk|başla|önce|bekleme|stabilizasyon|reperfüzyon|bildirim/.test(normalized)) return 'Öncelik';
   if (/değil|kaçır|karışır|tuzak|çeldirici|yanlış/.test(normalized)) return 'Sık tuzak';
-  if (/mekanizma|enzim|reseptör|gen|yolak|inhibe|aktive/.test(normalized)) return 'Mekanizma';
+  if (/mekanizma|enzim|reseptör|gen|yolak|inhibe|aktive/.test(normalized)) return 'Mekanizma özeti';
   if (/tanı|test|marker|seroloji|kültür|pcr|histoloji/.test(normalized)) return 'Ayırt ettirici bulgu';
   return index === 0 ? 'Sınav incisi' : 'Hap bilgi';
 }
@@ -308,7 +334,7 @@ function inferManagementTitle(text = '', index = 0) {
   if (/stabil|abc|hava yolu|solunum|dolaşım|monitör|damar yolu|nöbet/.test(normalized)) return 'Stabilizasyon';
   if (/kaydet|dokümante|objektif|adli|bildirim|güvenlik|koruyucu/.test(normalized)) return /bildirim|güvenlik|koruyucu|adli/.test(normalized) ? 'Güvenlik ve bildirim' : 'Objektif kayıt';
   if (/tetkik|ekg|bt|mr|usg|kültür|seroloji|biyopsi|marker|laboratuvar|doğrula/.test(normalized)) return 'Tanısal doğrulama';
-  if (/tedavi|başla|ver|antibiyotik|antikoagülasyon|aspirin|insülin|antidot|cerrahi|pci|reperfüzyon|hipotermi|sıvı/.test(normalized)) return 'İlk tedavi';
+  if (/tedavi|başla|ver|antibiyotik|antikoagülasyon|aspirin|insülin|antidot|cerrahi|pci|reperfüzyon|hipotermi|sıvı/.test(normalized)) return 'Tedavi önceliği';
   if (/izle|takip|kontrol|komplikasyon|yanıt|daralt|değiştir/.test(normalized)) return 'İzlem';
   return index === 0 ? 'İlk karar' : 'Sonraki adım';
 }
@@ -363,7 +389,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
         explanation: truncateSentence(whyCorrect, 260),
-        comparisonPoints: clue ? [`Ana ipucu: ${trimTrailingPunctuation(clue)}.`] : [],
+        comparisonPoints: clue ? [`${trimTrailingPunctuation(clue)} doğru cevabı destekleyen ana ipucudur.`] : [],
       };
     }
 
@@ -462,7 +488,7 @@ function ClinicalPearlsList({ pearls, glossaryEnabled = true }) {
         {pearls.map((pearl, index) => (
           <div className="clinical-pearl-item clinical-pearl-item-pro" key={`${pearl.label}-${pearl.text}-${index}`}>
             <span aria-hidden="true" />
-            <p><strong><GlossaryText text={pearl.label} enabled={glossaryEnabled} />:</strong> <GlossaryText text={ensureSentence(pearl.text)} enabled={glossaryEnabled} /></p>
+            <p><strong><GlossaryText text={pearl.label} enabled={glossaryEnabled} /></strong><GlossaryText text={ensureSentence(pearl.text)} enabled={glossaryEnabled} /></p>
           </div>
         ))}
       </div>
@@ -505,7 +531,7 @@ function FeedbackManagementCard({ managementSteps, glossaryEnabled = true, clini
         {managementSteps.map((step, index) => (
           <div className="management-action-item management-action-item-pro" key={`${step.title}-${step.text}-${index}`}>
             <b>{index + 1}</b>
-            <p><strong><GlossaryText text={step.title} enabled={glossaryEnabled} />:</strong> <GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} /></p>
+            <p><strong><GlossaryText text={step.title} enabled={glossaryEnabled} /></strong><GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} /></p>
           </div>
         ))}
       </div>

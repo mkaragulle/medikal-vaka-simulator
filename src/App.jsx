@@ -1128,6 +1128,7 @@ function App() {
             onChangeMode={setMode}
             stats={sessionStats}
             leaderboardEntries={leaderboardEntries}
+            wrongAnswers={visibleWrongAnswers}
             onStartExam={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
             onStartAIQuestion={handleStartAIPractice}
             totalCases={accessibleCases.length}

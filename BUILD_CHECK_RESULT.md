@@ -1,30 +1,25 @@
 # Build / Validation Result
 
-## Static content validation
+## Source syntax validation
+- TypeScript transpile-based syntax check over `src/**/*.js` and `src/**/*.jsx`: PASSED.
+- `src/data/cases.js` module import and case count validation: PASSED.
+- Feedback content scan for `...`, `…`, `Klinik olasılığı belirle:`, `Mekanistik yaklaşım:`, `TUS kırmızı bayrağı:`, `İlk adım:`, `İlk tedavi:` inside case data: PASSED.
 
-Passed:
-- `src/data/cases.js` imports successfully with Node ESM.
-- 132 cases are readable.
-- Active management sequences: 70.
-- TUS Spot cases with disabled management panel: 62.
-- Active management steps with repeated full case title: 0.
-- Duplicate active management step sets: 0.
-- Banned template leakage patterns in management/investigation/nextStep fields: 0.
-
-## npm install / build
-
-`npm install --no-audit --no-fund` and `npm install --ignore-scripts --no-audit --no-fund --omit=optional --prefer-offline` both timed out while fetching the dependency tree, before `node_modules` could be created.
-
-`npm run build` was attempted afterward and failed because Vite was not installed in `node_modules`:
-
-```txt
-sh: 1: vite: not found
-```
-
-Recommended local commands:
+## npm install / Vite build
+- `npm install` could not complete in this sandbox because the package registry request timed out and offline cache was missing Firebase transitive dependencies.
+- `npm run build` could not be executed to completion because `vite` was not available in `node_modules` after the failed install.
+- Expected local command sequence remains:
 
 ```bash
 npm install
 npm run build
 npm run dev
+```
+
+## Last build attempt output
+```text
+> klinikiq@1.0.0 build
+> vite build --minify false
+
+sh: 1: vite: not found
 ```
