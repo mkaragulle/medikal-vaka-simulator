@@ -1,3 +1,4 @@
+import { formatLabRows, validateLabResultCompleteness } from '../src/utils/clinicalValueFormatters.js';
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
 const EDITORIAL_FORBIDDEN_PATTERNS = [
@@ -37,9 +38,19 @@ function collectVisibleStrings(value, output = [], key = '') {
 }
 
 const FIELD_INLINE_LABEL_PATTERN = /^(Başvuru yakınması|Laboratuvar paterni|Görüntüleme bulgusu|Fizik muayene bulgusu|Karar verdirici ipucu|Destekleyici kanıt|Olgu verisi|Ek destek)\s*[:：|\-]/iu;
-const LAB_RESULT_PATTERN = /(lökosit|wbc|nötrofil|crp|prokalsitonin|troponin|d-dimer|kreatinin|üre|glukoz|bilirubin|seroloji|kültür|pcr|bos|idrar tahlili|na\+|k\+|ph|hco3|hco₃)|\d+[.,]?\d*\s*(mg\/dl|mg\/l|mmol\/l|\/mm³|u\/l|ng\/ml)/iu;
-const IMAGING_RESULT_PATTERN = /(akciğer grafisi|grafi|bt|mr|mrg|usg|ultrasonografi|ekokardiyografi|radyografi|tomografi|konsolidasyon|hava bronkogram|dolum defekti|lezyon|fraktür|kitle|nodül)/iu;
-const PHYSICAL_EXAM_PATTERN = /(ral|raller|hışıltılı solunum|stridor|defans|rebound|matite|oskültasyon|üfürüm|ödem|eritem|döküntü|ense sertliği|kapiller dolum|hepatomegali|splenomegali|güç kaybı|nörolojik defisit)/iu;
+const LAB_RESULT_PATTERN = /\b(lökosit|wbc|nötrofil|crp|prokalsitonin|troponin|d-dimer|kreatinin|üre|glukoz|bilirubin|seroloji|kültür|pcr|bos|idrar tahlili|na\+|k\+|ph\b|hco3|hco₃)\b|\d+[.,]?\d*\s*(mg\/dl|mg\/l|mmol\/l|\/mm³|u\/l|ng\/ml)/iu;
+const IMAGING_RESULT_PATTERN = /\b(akciğer grafisi|grafi|bt\b|mr\b|mrg\b|usg\b|ultrasonografi|ekokardiyografi|radyografi|tomografi|konsolidasyon|hava bronkogram|dolum defekti|lezyon|fraktür|kitle|nodül)\b/iu;
+const PHYSICAL_EXAM_PATTERN = /\b(ral|raller|hışıltılı solunum|stridor|defans|rebound|matite|oskültasyon|üfürüm|ödem|eritem|döküntü|ense sertliği|kapiller dolum|hepatomegali|splenomegali|güç kaybı|nörolojik defisit)\b/iu;
+
+const RAW_LAB_LIKE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
+const RAW_LAB_KEYWORD_PATTERN = /\b(laboratuvar|hemogram|tam kan|biyokimya|elektrolit|kan gazı|crp|troponin|d[- ]?dimer|seroloji|kültür|idrar|bos|glukoz|kreatinin|lökosit|wbc)\b/iu;
+const RAW_INCOMPLETE_LAB_PATTERN = /\b(l[öo]kosit|wbc|crp|troponin|d[- ]?dimer|sodyum|na\+?|potasyum|k\+?|glukoz|kreatinin|ast|alt|hb|hemoglobin|trombosit|laktat|pH)\s*[:=,]?\s*(?:yüksek|düşük|pozitif|artmış|\d+(?:[.,]\d+)?)(?!\s*(?:\/mm³|\/µL|mg\/dL|mg\/L|g\/dL|mmol\/L|mEq\/L|ng\/mL|ng\/L|U\/L|fL|%))/iu;
+
+function isLabInvestigation(item = {}) {
+  const type = String(item.type || '').toLowerCase();
+  const text = `${item.label || ''} ${item.title || ''} ${item.summary || ''}`;
+  return RAW_LAB_LIKE_TYPES.has(type) || RAW_LAB_KEYWORD_PATTERN.test(text);
+}
 
 function isLabOrImagingText(text = '') {
   return LAB_RESULT_PATTERN.test(String(text || '')) || IMAGING_RESULT_PATTERN.test(String(text || ''));
@@ -129,6 +140,17 @@ function validateRawQuestion(question = {}) {
     }
   });
 
+  (question.findings?.investigations || question.investigations || []).forEach((item, index) => {
+    const rows = formatLabRows(item?.rows || item?.result?.values || [], `${item?.label || ''} ${item?.summary || ''}`);
+    const text = JSON.stringify(item || {});
+    if (isLabInvestigation(item)) {
+      if (!rows.length && RAW_INCOMPLETE_LAB_PATTERN.test(text)) errors.push(`lab rows required for measurable result ${index + 1}`);
+      const completeness = validateLabResultCompleteness(rows);
+      if (!completeness.ok) errors.push(...completeness.errors.map((error) => `lab ${index + 1}: ${error}`));
+    }
+    if (RAW_INCOMPLETE_LAB_PATTERN.test(text)) errors.push(`incomplete lab result ${index + 1}`);
+  });
+
   return { ok: errors.length === 0, errors };
 }
 
@@ -175,8 +197,11 @@ Kesin kurallar:
 - Klinik veri alanlarını kesin ayır: chiefComplaint yalnızca hastanın şikâyeti olsun; lökosit, CRP, BT, grafi, seroloji veya kültür sonucu bu alana yazılmasın.
 - findings.exam yalnızca fizik muayene bulguları içersin; laboratuvar, seroloji, kültür, EKG veya görüntüleme sonucu bu alana yazılmasın.
 - findings.investigations sayısal laboratuvar, görüntüleme, EKG, mikrobiyoloji ve seroloji sonuçları için kullanılsın.
+- Ölçülebilir laboratuvar sonucu varsa mutlaka rows alanı yaz; her satır ["Parametre", "Sonuç + birim", "Referans aralığı", "Durum"] formatında olsun.
+- Laboratuvar başlığı spesifik olsun: Tam kan sayımı, Enflamasyon belirteçleri, Elektrolit paneli, Arter kan gazı, Kardiyak belirteçler gibi.
+- Nitel laboratuvar sonucunda referans "Negatif", "Saptanmamalı" veya "Üreme olmamalı" gibi açık yazılsın.
 - evidenceChain 3-5 kısa karar ipucu içersin; “Başvuru yakınması:”, “Laboratuvar paterni:”, “Görüntüleme bulgusu:” gibi inline etiketler yazma.
-- “Lökosit 16” gibi eksik ifade kullanma; “Lökosit 16.000/mm³” gibi birimli yaz.
+- Eksik lökosit/CRP/potasyum ifadeleri kullanma; sonucu birim, referans aralığı ve durum etiketiyle yapılandır.
 - examPearl TUS hap bilgisi olmalı; mümkünse kırmızı bayrak, sık tuzak, ilk yaklaşım veya ayırt ettirici marker vurgula.
 - Kart başlığını metin içinde tekrar etme. “Sınav incisi | ...”, “Ayırıcı nokta: ...”, “Mekanizma: ...”, “Karar verdirici ipucu: ...” gibi etiketli cümleler yazma.
 - Gereksiz “|”, fazla “:”, noktalı virgül ve yapay şablon cümle kullanma. Metin doğal Türkçe cümleler gibi okunmalı.
@@ -207,8 +232,9 @@ Aşağıdaki JSON şemasını birebir döndür:
         "label": "Tetkik adı",
         "type": "lab",
         "priority": "essential",
-        "summary": "Objektif sonuç; tanı adı yazma.",
-        "findings": ["objektif bulgu 1", "objektif bulgu 2"]
+        "summary": "Lökosit: 15.000/mm³ (referans 4.000–10.000/mm³; yüksek). CRP: 86 mg/L (referans <5 mg/L; yüksek).",
+        "rows": [["Lökosit", "15.000/mm³", "4.000–10.000/mm³", "Yüksek"], ["CRP", "86 mg/L", "<5 mg/L", "Yüksek"]],
+        "findings": ["Lökosit ve CRP sonuçları inflamatuvar yanıtı destekler.", "Sonuçlar klinik tabloyla birlikte yorumlanır."]
       }
     ]
   },

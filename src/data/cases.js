@@ -28,7 +28,7 @@ export const cases = [
       {
         "id": "ecg",
         "label": "12 derivasyon EKG",
-        "type": "Ecg",
+        "type": "ecg",
         "summary": "V2-V5 derivasyonlarında belirgin ST segment elevasyonu, inferior derivasyonlarda karşılıklı ST segment depresyonu izleniyor.",
         "findings": [
           "Aynı koroner sulama alanını gösteren ardışık derivasyonlarda ST elevasyonu acil reperfüzyon gerektiren bir paterndir",
@@ -47,7 +47,7 @@ export const cases = [
       {
         "id": "markers",
         "label": "Kardiyak biyobelirteçler",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Hs-Troponin I",
@@ -64,14 +64,16 @@ export const cases = [
           [
             "Kreatinin",
             "0.9 mg/dL",
-            "0.6-1.2 mg/dL",
+            "0.6–1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Hs-Troponin I: 188 ng/L (Yüksek). CK-MB: 23 ng/mL (Yüksek) saptandı.",
+        "summary": "Hs-Troponin I: 188 ng/L (referans <34 ng/L; yüksek). CK-MB: 23 ng/mL (referans <5 ng/mL; yüksek).",
         "findings": [
-          "Hs-Troponin I: 188 ng/L (Yüksek)"
+          "Hs-Troponin I: 188 ng/L (referans <34 ng/L; yüksek)",
+          "CK-MB: 23 ng/mL (referans <5 ng/mL; yüksek)",
+          "Kreatinin: 0.9 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)"
         ]
       }
     ],
@@ -426,7 +428,7 @@ export const cases = [
       {
         "id": "cta",
         "label": "Kontrastlı toraks BT anjiyografi",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Asendan aortadan başlayarak arkus düzeyine uzanan intimal flap ve gerçek-yalancı lümen ayrımı izleniyor.",
         "findings": [
           "Asendan aort tutulumu cerrahi yaklaşım gerektiren tip A paternini düşündürür",
@@ -445,31 +447,33 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "D-dimer",
             "Yüksek",
-            "Yaşa göre değişir",
+            "<500 ng/mL FEU",
             "Yüksek"
           ],
           [
             "Hs-Troponin I",
-            "Sınırda",
+            "48 ng/L",
             "<34 ng/L",
-            "Sınırda"
+            "Yüksek"
           ],
           [
             "Hemoglobin",
             "13.8 g/dL",
-            "13.5-17.5 g/dL",
+            "13.5–17.5 g/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "D-dimer: Yüksek (Yüksek) saptandı.",
+        "summary": "D-dimer: Yüksek (referans <500 ng/mL FEU; yüksek). Hs-Troponin I: 48 ng/L (referans <34 ng/L; yüksek).",
         "findings": [
-          "D-dimer: Yüksek (Yüksek) saptandı"
+          "D-dimer: Yüksek (referans <500 ng/mL FEU; yüksek)",
+          "Hs-Troponin I: 48 ng/L (referans <34 ng/L; yüksek)",
+          "Hemoglobin: 13.8 g/dL (referans 13.5–17.5 g/dL; referans içinde)"
         ]
       }
     ],
@@ -823,7 +827,7 @@ export const cases = [
       {
         "id": "echo",
         "label": "Yatak başı transtorasik ekokardiyografi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Geniş perikardiyal efüzyon, sağ atriyum ve sağ ventrikül diyastolik kollapsı, inferior vena kavada dilatasyon ve inspiratuvar kollaps azalması izleniyor.",
         "findings": [
           "Diyastolik sağ kalp kollapsı tamponad fizyolojisini gösteren kritik bulgudur",
@@ -842,7 +846,7 @@ export const cases = [
       {
         "id": "ecg",
         "label": "12 derivasyon EKG",
-        "type": "Ecg",
+        "type": "ecg",
         "summary": "Sinüs taşikardisi, düşük voltajlı QRS kompleksleri ve elektriksel alternans izlendi.",
         "priority": "Useful",
         "findings": [
@@ -862,7 +866,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -884,20 +888,23 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 11.200/mm³ (Yüksek).",
+        "summary": "Lökosit: 11.200/mm³ (referans 4.000–10.000/mm³; yüksek). Hs-Troponin I: Hafif yüksek (referans <34 ng/L; yüksek). CRP: 42 mg/L (referans <5 mg/L; yüksek).",
         "findings": [
-          "Lökosit: 11"
+          "Lökosit: 11.200/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "Hs-Troponin I: Hafif yüksek (referans <34 ng/L; yüksek)",
+          "CRP: 42 mg/L (referans <5 mg/L; yüksek)"
         ]
       },
       {
         "id": "field-placement-repair-movpj0of",
         "label": "Hedefli laboratuvar",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
         "summary": "Pulsus paradoxus 16 mmHg olarak ölçülüyor.",
         "findings": [
           "Pulsus paradoxus 16 mmHg olarak ölçülüyor"
-        ]
+        ],
+        "title": "Hedefli laboratuvar"
       }
     ],
     "images": [
@@ -1242,7 +1249,7 @@ export const cases = [
       {
         "id": "cxr",
         "label": "Akciğer grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Kardiyomegali, pulmoner vasküler redistribüsyon, Kerley B çizgileri ve bilateral perihiler alveoler-interstisyel opasiteler izleniyor.",
         "findings": [
           "Perihiler alveoler opasiteler ve interstisyel çizgilenme hidrostatik pulmoner ödem paternini gösterir",
@@ -1261,18 +1268,18 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "NT-proBNP",
             "6.400 pg/mL",
-            "Yaşa göre değişir",
+            "<125 pg/mL",
             "Yüksek"
           ],
           [
             "Sodyum",
             "132 mmol/L",
-            "135-145 mmol/L",
+            "135–145 mmol/L",
             "Düşük"
           ],
           [
@@ -1283,39 +1290,43 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "NT-proBNP: 6.400 pg/mL (Yüksek).",
+        "summary": "NT-proBNP: 6.400 pg/mL (referans <125 pg/mL; yüksek). Sodyum: 132 mmol/L (referans 135–145 mmol/L; düşük). Hs-Troponin I: Hafif yüksek (referans <34 ng/L; yüksek).",
         "findings": [
-          "NT-proBNP: 6"
+          "NT-proBNP: 6.400 pg/mL (referans <125 pg/mL; yüksek)",
+          "Sodyum: 132 mmol/L (referans 135–145 mmol/L; düşük)",
+          "Hs-Troponin I: Hafif yüksek (referans <34 ng/L; yüksek)"
         ]
       },
       {
         "id": "abg",
         "label": "Arter kan gazı",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "pH",
             "7.47",
-            "7.35-7.45",
+            "7.35–7.45",
             "Yüksek"
           ],
           [
-            "PaO2",
+            "PaO₂",
             "56 mmHg",
-            "80/100 mmHg",
+            "80–100 mmHg",
             "Düşük"
           ],
           [
-            "PaCO2",
+            "PaCO₂",
             "31 mmHg",
-            "35/45 mmHg",
+            "35–45 mmHg",
             "Düşük"
           ]
         ],
         "priority": "Useful",
-        "summary": "pH: 7.47 (Yüksek).",
+        "summary": "pH: 7.47 (referans 7.35–7.45; yüksek). PaO₂: 56 mmHg (referans 80–100 mmHg; düşük). PaCO₂: 31 mmHg (referans 35–45 mmHg; düşük).",
         "findings": [
-          "pH: 7"
+          "pH: 7.47 (referans 7.35–7.45; yüksek)",
+          "PaO₂: 56 mmHg (referans 80–100 mmHg; düşük)",
+          "PaCO₂: 31 mmHg (referans 35–45 mmHg; düşük)"
         ]
       }
     ],
@@ -1683,7 +1694,7 @@ export const cases = [
       {
         "id": "echo",
         "label": "Transtorasik ekokardiyografi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Asimetrik septal hipertrofi, sistolik anterior mitral kapak hareketi ve dinamik sol ventrikül çıkış yolu gradiyenti saptanıyor.",
         "findings": [
           "Septal kalınlık artışı ve dinamik gradiyent obstrüktif kardiyomiyopati açısından anlamlıdır",
@@ -1702,7 +1713,7 @@ export const cases = [
       {
         "id": "ecg",
         "label": "12 derivasyon EKG",
-        "type": "Ecg",
+        "type": "ecg",
         "summary": "Sol ventrikül hipertrofisi voltaj kriterleri ve lateral derivasyonlarda repolarizasyon değişiklikleri izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -2069,30 +2080,30 @@ export const cases = [
       {
         "id": "blood-gas",
         "label": "Arter kan gazı ve metabolik panel",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "pH",
             "7.18",
-            "7.35-7.45",
+            "7.35–7.45",
             "Düşük"
           ],
           [
-            "HCO3-",
+            "HCO₃⁻",
             "8 mmol/L",
-            "22-26 mmol/L",
+            "22–26 mmol/L",
             "Düşük"
           ],
           [
             "Anyon açıklığı",
             "28 mmol/L",
-            "8-12 mmol/L",
+            "8–12 mmol/L",
             "Yüksek"
           ],
           [
             "Glukoz",
             "486 mg/dL",
-            "70-100 mg/dL",
+            "70–100 mg/dL",
             "Yüksek"
           ],
           [
@@ -2104,20 +2115,23 @@ export const cases = [
           [
             "Potasyum",
             "5.4 mmol/L",
-            "3.5-5.1 mmol/L",
+            "3.5–5.1 mmol/L",
             "Yüksek"
           ]
         ],
         "priority": "Essential",
-        "summary": "pH 7.18, HCO3- 8 mmol/L ve anyon açıklığı 28 mmol/L saptanır.",
+        "summary": "pH: 7.18 (referans 7.35–7.45; düşük). HCO₃⁻: 8 mmol/L (referans 22–26 mmol/L; düşük). Anyon açıklığı: 28 mmol/L (referans 8–12 mmol/L; yüksek).",
         "findings": [
-          "pH: 7"
+          "pH: 7.18 (referans 7.35–7.45; düşük)",
+          "HCO₃⁻: 8 mmol/L (referans 22–26 mmol/L; düşük)",
+          "Anyon açıklığı: 28 mmol/L (referans 8–12 mmol/L; yüksek)",
+          "Glukoz: 486 mg/dL (referans 70–100 mg/dL; yüksek)"
         ]
       },
       {
         "id": "urine",
         "label": "Serum veya idrarda keton ve glukoz değerlendirmesi",
-        "type": "Urine",
+        "type": "urine",
         "rows": [
           [
             "Glukoz",
@@ -2132,47 +2146,49 @@ export const cases = [
             "Pozitif"
           ],
           [
-            "Lökosit veya nitrit",
+            "Lökosit",
             "Negatif",
             "Negatif",
             "Negatif"
           ]
         ],
         "priority": "Essential",
-        "summary": "Glukoz yüksek, keton pozitif saptanır. Hiperglisemi ve ketozis ketozis ve asidoz paternini birlikte gösterir.",
+        "summary": "Glukoz: Pozitif (referans Negatif; pozitif). Keton: Pozitif (referans Negatif; pozitif).",
         "findings": [
-          "Glukoz: Pozitif (Pozitif)"
+          "Glukoz: Pozitif (referans Negatif; pozitif)",
+          "Keton: Pozitif (referans Negatif; pozitif)",
+          "Lökosit: Negatif (referans Negatif; negatif)"
         ]
       },
       {
         "id": "trigger-screening-dka",
         "label": "Tetikleyiciye yönelik hedef tarama",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "Ateş, akciğer bulgusu, göğüs ağrısı veya EKG değişikliği varsa enfeksiyon veya MI açısından hedef test seçilir. Rutin geniş panel değildir.",
+        "summary": "Lökosit: 8.900/mm³ (referans 4.000–10.000/mm³; referans içinde). Nötrofil: %66 (referans %40–70; referans içinde). Hs-Troponin I: 8 ng/L (referans <34 ng/L; referans içinde).",
         "findings": [
-          "WBC 8",
-          "Nötrofil oranı %66",
-          "Hs-Troponin I 8 ng/L"
+          "Lökosit: 8.900/mm³ (referans 4.000–10.000/mm³; referans içinde)",
+          "Nötrofil: %66 (referans %40–70; referans içinde)",
+          "Hs-Troponin I: 8 ng/L (referans <34 ng/L; referans içinde)"
         ],
         "rows": [
           [
-            "WBC",
+            "Lökosit",
             "8.900/mm³",
             "4.000–10.000/mm³",
-            "Normal"
+            "Referans içinde"
           ],
           [
             "Nötrofil",
             "%66",
-            "%40-70",
-            "Normal"
+            "%40–70",
+            "Referans içinde"
           ],
           [
             "Hs-Troponin I",
             "8 ng/L",
             "<34 ng/L",
-            "Normal"
+            "Referans içinde"
           ]
         ]
       }
@@ -2297,7 +2313,7 @@ export const cases = [
           "Laktik asidoz": {
             "explanation": "Laktik asidoz yüksek anyon açıklı asidoz yapabilir. Ancak belirgin ketonemi ve tip 1 diyabet bağlamı DKA lehinedir.",
             "comparisonPoints": [
-              "Laktik asidozda laktat yüksekliği ana belirleyicidir.",
+              "Laktik asidozda Laktat: 3.4 mmol/L (referans <2.0 mmol/L; yüksek) ana belirleyicidir.",
               "DKA’da beta-hidroksibutirat baskın ketondur.",
               "Tedavi insülin ve sıvı-protokolüne dayanır."
             ]
@@ -2363,7 +2379,7 @@ export const cases = [
           "Laktik asidoz": {
             "explanation": "Laktik asidoz yüksek anyon açıklı asidoz yapabilir. Ancak belirgin ketonemi ve tip 1 diyabet bağlamı DKA lehinedir.",
             "comparisonPoints": [
-              "Laktik asidozda laktat yüksekliği ana belirleyicidir.",
+              "Laktik asidozda Laktat: 3.4 mmol/L (referans <2.0 mmol/L; yüksek) ana belirleyicidir.",
               "DKA'da beta-hidroksibutirat baskın ketondur.",
               "Tedavi insülin ve sıvı-protokolüne dayanır."
             ]
@@ -2531,7 +2547,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Pankreatit laboratuvarı",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lipaz",
@@ -2552,22 +2568,25 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "Kalsiyum",
+            "Düzeltilmiş kalsiyum",
             "8.0 mg/dL",
-            "8.5-10.5 mg/dL",
+            "8.5–10.5 mg/dL",
             "Düşük"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lipaz: 1.280 U/L (Yüksek).",
+        "summary": "Lipaz: 1.280 U/L (referans <60 U/L; yüksek). Amilaz: 410 U/L (referans <100 U/L; yüksek). ALT: 186 U/L (referans <41 U/L; yüksek).",
         "findings": [
-          "Lipaz: 1"
+          "Lipaz: 1.280 U/L (referans <60 U/L; yüksek)",
+          "Amilaz: 410 U/L (referans <100 U/L; yüksek)",
+          "ALT: 186 U/L (referans <41 U/L; yüksek)",
+          "Düzeltilmiş kalsiyum: 8.0 mg/dL (referans 8.5–10.5 mg/dL; düşük)"
         ]
       },
       {
         "id": "usg",
         "label": "Hepatobiliyer ultrasonografi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Safra kesesinde çok sayıda milimetrik taş izleniyor. Koledok belirgin dilate değildir.",
         "priority": "Useful",
         "findings": [
@@ -2585,7 +2604,7 @@ export const cases = [
       {
         "id": "ct",
         "label": "Kontrastlı abdomen BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Pankreas çevresi yağlı planlarda inflamasyon ve sınırlı peripankreatik sıvı koleksiyonu izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -2621,7 +2640,7 @@ export const cases = [
         "Akut inferior miyokart enfarktüsü",
         "Mezenter iskemi"
       ],
-      "explanation": "Sırta yayılan epigastrik ağrıya lipazın üst sınırın üç katından fazla yükselmesi ve görüntüleme bulgularının eşlik etmesi akut pankreatit tanısını karşılar. Alt yüksekliği ve safra taşı biliyer nedeni öne çıkarır. Bu nedenle en uygun seçim Akut biliyer pankreatit olur.",
+      "explanation": "Sırta yayılan epigastrik ağrıya lipazın üst sınırın üç katından fazla yükselmesi ve görüntüleme bulgularının eşlik etmesi akut pankreatit tanısını karşılar. ALT: 186 U/L (referans <41 U/L; yüksek) ve safra taşı biliyer nedeni öne çıkarır. Bu nedenle en uygun seçim Akut biliyer pankreatit olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -2642,7 +2661,7 @@ export const cases = [
       "nextStep": "Erken intravenöz sıvı ve analjezi başla. Oral alımı klinik toleransa göre düzenle. Biliyer neden için aynı yatışta kolesistektomi planla.",
       "answerFeedback": {
         "diagnosisMeta": "Akut pankreatit · biliyer etiyoloji · erken destek tedavisi",
-        "whyCorrect": "Sırta yayılan epigastrik ağrıya lipazın üst sınırın üç katından fazla yükselmesi ve görüntüleme bulgularının eşlik etmesi akut pankreatit tanısını karşılar. Alt yüksekliği ve safra taşı biliyer nedeni öne çıkarır. Bu nedenle en uygun seçim Akut biliyer pankreatit olur.",
+        "whyCorrect": "Sırta yayılan epigastrik ağrıya lipazın üst sınırın üç katından fazla yükselmesi ve görüntüleme bulgularının eşlik etmesi akut pankreatit tanısını karşılar. ALT: 186 U/L (referans <41 U/L; yüksek) ve safra taşı biliyer nedeni öne çıkarır. Bu nedenle en uygun seçim Akut biliyer pankreatit olur.",
         "evidenceChain": [
           {
             "title": "Laboratuvar paterni",
@@ -2654,7 +2673,7 @@ export const cases = [
           },
           {
             "title": "Vital bulgular",
-            "text": "Safra kesesi taşı ve alt yüksekliği biliyer etiyolojiyi destekler."
+            "text": "Safra kesesi taşı ve ALT: 186 U/L (referans <41 U/L; yüksek) biliyer etiyolojiyi destekler."
           },
           {
             "title": "Laboratuvar paterni",
@@ -2715,7 +2734,7 @@ export const cases = [
             ]
           },
           "Mezenter iskemi": {
-            "explanation": "Mezenter iskemi şiddetli karın ağrısı yapabilir. Ancak vasküler risk, laktat yüksekliği ve bağırsak iskemi bulguları yerine pankreatik kriterler ön plandadır.",
+            "explanation": "Mezenter iskemi şiddetli karın ağrısı yapabilir. Ancak vasküler risk, Laktat: 3.4 mmol/L (referans <2.0 mmol/L; yüksek) ve bağırsak iskemi bulguları yerine pankreatik kriterler ön plandadır.",
             "comparisonPoints": [
               "Mezenter iskemide ağrı muayene bulgusuna göre orantısız olabilir.",
               "BT anjiyografi ve laktat daha belirleyicidir.",
@@ -2744,7 +2763,7 @@ export const cases = [
         "whyWrong": {
           "Perfore peptik ülser": "Perfore ülser ani şiddetli karın ağrısı yapabilir. Ancak pankreatik enzim yüksekliği ve safra taşı-biliyer bulgular pankreatiti öne çıkarır.",
           "Akut inferior miyokart enfarktüsü": "İnferior MI epigastrik ağrı ve bulantıyla gelebilir. Ancak lipaz yüksekliği ve pankreatit görüntüleme bulguları abdominal nedeni destekler.",
-          "Mezenter iskemi": "Mezenter iskemi şiddetli karın ağrısı yapabilir. Ancak vasküler risk, laktat yüksekliği ve bağırsak iskemi bulguları yerine pankreatik kriterler ön plandadır."
+          "Mezenter iskemi": "Mezenter iskemi şiddetli karın ağrısı yapabilir. Ancak vasküler risk, Laktat: 3.4 mmol/L (referans <2.0 mmol/L; yüksek) ve bağırsak iskemi bulguları yerine pankreatik kriterler ön plandadır."
         },
         "clinicalPearls": [
           {
@@ -2781,7 +2800,7 @@ export const cases = [
             ]
           },
           "Mezenter iskemi": {
-            "explanation": "Mezenter iskemi şiddetli karın ağrısı yapabilir. Ancak vasküler risk, laktat yüksekliği ve bağırsak iskemi bulguları yerine pankreatik kriterler ön plandadır.",
+            "explanation": "Mezenter iskemi şiddetli karın ağrısı yapabilir. Ancak vasküler risk, Laktat: 3.4 mmol/L (referans <2.0 mmol/L; yüksek) ve bağırsak iskemi bulguları yerine pankreatik kriterler ön plandadır.",
             "comparisonPoints": [
               "Mezenter iskemide ağrı muayene bulgusuna göre orantısız olabilir.",
               "BT anjiyografi ve laktat daha belirleyicidir.",
@@ -2890,7 +2909,7 @@ export const cases = [
       "distinctiveClues": [
         "Epigastrik ağrının sırta yayılması pankreatik ağrı paterniyle uyumludur",
         "Lipaz yüksekliği pankreatit tanısında amilaza göre daha özgül kabul edilir",
-        "Safra kesesi TAşı ve alt yüksekliği biliyer etiyolojiyi destekler",
+        "Safra kesesi TAşı ve ALT: 186 U/L (referans <41 U/L; yüksek) biliyer etiyolojiyi destekler",
         "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak değildir"
       ],
       "historySummary": "Hasta ağrının yağlı yemek sonrasında başladığını, kuşak tarzında sırta yayıldığını ve öne eğilmekle kısmen azaldığını ifade ediyor. Bulantı ve tekrarlayan kusma yakınmaları mevcut.",
@@ -2907,7 +2926,7 @@ export const cases = [
       },
       {
         "title": "Vital bulgular",
-        "text": "Safra kesesi taşı ve alt yüksekliği biliyer etiyolojiyi destekler."
+        "text": "Safra kesesi taşı ve ALT: 186 U/L (referans <41 U/L; yüksek) biliyer etiyolojiyi destekler."
       },
       {
         "title": "Laboratuvar paterni",
@@ -2944,12 +2963,12 @@ export const cases = [
       {
         "id": "cbc",
         "label": "Hemogram ve koagülasyon",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Hemoglobin",
             "7.8 g/dL",
-            "13.5-17.5 g/dL",
+            "13.5–17.5 g/dL",
             "Düşük"
           ],
           [
@@ -2961,20 +2980,22 @@ export const cases = [
           [
             "INR",
             "1.9",
-            "0.8-1.2",
+            "0.8–1.2",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Hemoglobin: 7.8 g/dL (Düşük).",
+        "summary": "Hemoglobin: 7.8 g/dL (referans 13.5–17.5 g/dL; düşük). Trombosit: 72.000/mm³ (referans 150.000–400.000/mm³; düşük). INR: 1.9 (referans 0.8–1.2; yüksek).",
         "findings": [
-          "Hemoglobin: 7"
+          "Hemoglobin: 7.8 g/dL (referans 13.5–17.5 g/dL; düşük)",
+          "Trombosit: 72.000/mm³ (referans 150.000–400.000/mm³; düşük)",
+          "INR: 1.9 (referans 0.8–1.2; yüksek)"
         ]
       },
       {
         "id": "endoscopy",
         "label": "Üst gastrointestinal sistem endoskopisi",
-        "type": "Endoscopy",
+        "type": "endoscopy",
         "summary": "Distal özofagusta geniş variköz venler ve aktif kanama odağı izleniyor. Endoskopik bant ligasyonu için uygundur.",
         "priority": "Useful",
         "findings": [
@@ -3329,49 +3350,52 @@ export const cases = [
       {
         "id": "cbc",
         "label": "Hemogram ve demir çalışmaları",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Hemoglobin",
             "8.9 g/dL",
-            "12-16 g/dL",
+            "12–16 g/dL",
             "Düşük"
           ],
           [
             "MCV",
             "66 fL",
-            "80-100 fL",
+            "80–100 fL",
             "Düşük"
           ],
           [
             "RDW",
             "%19",
-            "%11.5-14.5",
+            "%11.5–14.5",
             "Yüksek"
           ],
           [
             "Ferritin",
             "6 ng/mL",
-            "15-150 ng/mL",
+            "15–150 ng/mL",
             "Düşük"
           ],
           [
             "Total demir bağlama kapasitesi",
             "Yüksek",
-            "Değişken",
+            "250–450 µg/dL",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Hemoglobin: 8.9 g/dL (Düşük).",
+        "summary": "Hemoglobin: 8.9 g/dL (referans 12–16 g/dL; düşük). MCV: 66 fL (referans 80–100 fL; düşük). RDW: %19 (referans %11.5–14.5; yüksek).",
         "findings": [
-          "Hemoglobin: 8"
+          "Hemoglobin: 8.9 g/dL (referans 12–16 g/dL; düşük)",
+          "MCV: 66 fL (referans 80–100 fL; düşük)",
+          "RDW: %19 (referans %11.5–14.5; yüksek)",
+          "Ferritin: 6 ng/mL (referans 15–150 ng/mL; düşük)"
         ]
       },
       {
         "id": "smear",
         "label": "Periferik yayma",
-        "type": "Microscopy",
+        "type": "microscopy",
         "summary": "Mikrositer ve hipokrom eritrositler, belirgin anizositoz ve poikilositoz izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -3720,67 +3744,71 @@ export const cases = [
       {
         "id": "chemistry",
         "label": "Kalsiyum-PTH profili",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Düzeltilmiş kalsiyum",
             "11.8 mg/dL",
-            "8.5-10.5 mg/dL",
+            "8.5–10.5 mg/dL",
             "Yüksek"
           ],
           [
             "Fosfor",
             "2.1 mg/dL",
-            "2.5-4.5 mg/dL",
+            "2.5–4.5 mg/dL",
             "Düşük"
           ],
           [
             "PTH",
             "146 pg/mL",
-            "15-65 pg/mL",
+            "15–65 pg/mL",
             "Yüksek"
           ],
           [
             "25-OH D vitamini",
             "28 ng/mL",
-            "20-50 ng/mL",
+            "20–50 ng/mL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Düzeltilmiş kalsiyum: 11.8 mg/dL (Yüksek).",
+        "summary": "Düzeltilmiş kalsiyum: 11.8 mg/dL (referans 8.5–10.5 mg/dL; yüksek). Fosfor: 2.1 mg/dL (referans 2.5–4.5 mg/dL; düşük). PTH: 146 pg/mL (referans 15–65 pg/mL; yüksek).",
         "findings": [
-          "Düzeltilmiş kalsiyum: 11"
+          "Düzeltilmiş kalsiyum: 11.8 mg/dL (referans 8.5–10.5 mg/dL; yüksek)",
+          "Fosfor: 2.1 mg/dL (referans 2.5–4.5 mg/dL; düşük)",
+          "PTH: 146 pg/mL (referans 15–65 pg/mL; yüksek)",
+          "25-OH D vitamini: 28 ng/mL (referans 20–50 ng/mL; referans içinde)"
         ]
       },
       {
         "id": "urine",
         "label": "24 saatlik idrar",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
-            "İdrar kalsiyumu",
+            "Düzeltilmiş kalsiyum",
             "Yüksek",
-            "Değişken",
+            "8.5–10.5 mg/dL",
             "Yüksek"
           ],
           [
-            "Kreatinin klirensi",
-            "Normal",
-            "Yaşa göre",
+            "Kreatinin",
+            "0.9 mg/dL",
+            "0.6–1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "İdrar kalsiyumu: Yüksek (Yüksek) saptandı.",
+        "summary": "Düzeltilmiş kalsiyum: Yüksek (referans 8.5–10.5 mg/dL; yüksek).",
         "findings": [
-          "İdrar kalsiyumu: Yüksek (Yüksek) saptandı"
+          "Düzeltilmiş kalsiyum: Yüksek (referans 8.5–10.5 mg/dL; yüksek)",
+          "Kreatinin: 0.9 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)"
         ]
       },
       {
         "id": "imaging",
         "label": "Paratiroid lokalizasyon incelemesi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Boyun ultrasonografisi veya sestamibi korelasyonunda sağ inferior paratiroid lojunda fokal lezyon izlendi.",
         "priority": "Useful",
         "findings": [
@@ -4147,7 +4175,7 @@ export const cases = [
       {
         "id": "noncontrast-ct",
         "label": "Kontrastsız beyin BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Akut intrakraniyal kanama saptanmıyor. Erken iskemik değişiklikler açısından değerlendirme sınırlıdır.",
         "priority": "Useful",
         "findings": [
@@ -4165,7 +4193,7 @@ export const cases = [
       {
         "id": "cta",
         "label": "BT anjiyografi",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Sol orta serebral arter proksimal segmentinde damar dolum kesintisi izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -4183,12 +4211,12 @@ export const cases = [
       {
         "id": "labs",
         "label": "Acil laboratuvar",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Glukoz",
             "118 mg/dL",
-            "70-100 mg/dL",
+            "70–100 mg/dL",
             "Yüksek"
           ],
           [
@@ -4200,14 +4228,16 @@ export const cases = [
           [
             "INR",
             "1.0",
-            "0.8-1.2",
+            "0.8–1.2",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Glukoz: 118 mg/dL (Yüksek) saptandı.",
+        "summary": "Glukoz: 118 mg/dL (referans 70–100 mg/dL; yüksek).",
         "findings": [
-          "Glukoz: 118 mg/dL (Yüksek) saptandı"
+          "Glukoz: 118 mg/dL (referans 70–100 mg/dL; yüksek)",
+          "Trombosit: 240.000/mm³ (referans 150.000–400.000/mm³; referans içinde)",
+          "INR: 1.0 (referans 0.8–1.2; referans içinde)"
         ]
       }
     ],
@@ -4583,7 +4613,7 @@ export const cases = [
       {
         "id": "ct",
         "label": "Kontrastsız beyin BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Bazal sisternalarda ve sulkuslarda hiperdens kan paterninde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -4601,7 +4631,7 @@ export const cases = [
       {
         "id": "cta",
         "label": "BT anjiyografi",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Anterior kommunikan arter düzeyinde sakküler anevrizma paterninde odak görülüyor.",
         "priority": "Useful",
         "findings": [
@@ -4619,7 +4649,7 @@ export const cases = [
       {
         "id": "csf",
         "label": "BOS incelemesi",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Eritrosit",
@@ -4634,16 +4664,18 @@ export const cases = [
             "Pozitif"
           ],
           [
-            "Açılış basıncı",
+            "BOS açılış basıncı",
             "Yüksek",
-            "Değişken",
+            "10–20 cmH₂O",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Eritrosit: Yüksek (Yüksek). Ksantokromi: Pozitif (Pozitif).",
+        "summary": "Eritrosit: Yüksek (referans Yok; yüksek). Ksantokromi: Pozitif (referans Negatif; pozitif). BOS açılış basıncı: Yüksek (referans 10–20 cmH₂O; yüksek).",
         "findings": [
-          "Eritrosit: Yüksek (Yüksek)"
+          "Eritrosit: Yüksek (referans Yok; yüksek)",
+          "Ksantokromi: Pozitif (referans Negatif; pozitif)",
+          "BOS açılış basıncı: Yüksek (referans 10–20 cmH₂O; yüksek)"
         ]
       }
     ],
@@ -4990,7 +5022,7 @@ export const cases = [
       {
         "id": "mri",
         "label": "Beyin ve servikal spinal MR",
-        "type": "Mri",
+        "type": "mri",
         "summary": "Periventriküler, juxtakortikal ve infratentoryal bölgelerde demiyelinizan plaklarla uyumlu T2 veya FLAIR hiperintens lezyonlar izleniyor. Bazı lezyonlarda kontrast tutulumu mevcut.",
         "priority": "Useful",
         "findings": [
@@ -5008,7 +5040,7 @@ export const cases = [
       {
         "id": "csf",
         "label": "BOS incelemesi",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Oligoklonal bant",
@@ -5023,16 +5055,18 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "Hücre sayısı",
+            "Lökosit",
             "Hafif lenfositoz",
             "0–5/mm³",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "Oligoklonal bant: Pozitif (Pozitif). IgG indeksi: Yüksek (Yüksek).",
+        "summary": "Oligoklonal bant: Pozitif (referans Negatif; pozitif). IgG indeksi: Yüksek (referans <0.7; yüksek). Lökosit: Hafif lenfositoz (referans 0–5/mm³; yüksek).",
         "findings": [
-          "Oligoklonal bant: Pozitif (Pozitif)"
+          "Oligoklonal bant: Pozitif (referans Negatif; pozitif)",
+          "IgG indeksi: Yüksek (referans <0.7; yüksek)",
+          "Lökosit: Hafif lenfositoz (referans 0–5/mm³; yüksek)"
         ]
       },
       {
@@ -5411,7 +5445,7 @@ export const cases = [
       {
         "id": "mrv",
         "label": "Beyin MR venografi",
-        "type": "Mri",
+        "type": "mri",
         "summary": "Superior sagittal sinüs ve sağ transvers sinüste akım sinyali kaybı izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -5429,7 +5463,7 @@ export const cases = [
       {
         "id": "ct",
         "label": "Kontrastsız beyin BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı paterninde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -5447,7 +5481,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "D-dimer",
@@ -5464,14 +5498,16 @@ export const cases = [
           [
             "INR",
             "1.0",
-            "0.8-1.2",
+            "0.8–1.2",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "D-dimer: Yüksek (Yüksek) saptandı.",
+        "summary": "D-dimer: Yüksek (referans <500 ng/mL FEU; yüksek).",
         "findings": [
-          "D-dimer: Yüksek (Yüksek) saptandı"
+          "D-dimer: Yüksek (referans <500 ng/mL FEU; yüksek)",
+          "Trombosit: 260.000/mm³ (referans 150.000–400.000/mm³; referans içinde)",
+          "INR: 1.0 (referans 0.8–1.2; referans içinde)"
         ]
       }
     ],
@@ -5825,7 +5861,7 @@ export const cases = [
       {
         "id": "usg",
         "label": "Abdominal ultrasonografi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Sağ alt kadranda transvers kesitte hedef işareti, longitudinal kesitte yalancı böbrek görünümü izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -5843,7 +5879,7 @@ export const cases = [
       {
         "id": "xray",
         "label": "Ayakta direkt karın grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Ayakta direkt karın grafisinde hava-sıvı seviyeleri izlenir. Serbest intraperitoneal hava saptanmaz.",
         "priority": "Useful",
         "findings": [
@@ -5861,7 +5897,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -5872,7 +5908,7 @@ export const cases = [
           [
             "Hemoglobin",
             "11.8 g/dL",
-            "10.5-13.5 g/dL",
+            "10.5–13.5 g/dL",
             "Referans içinde"
           ],
           [
@@ -5883,9 +5919,11 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "CRP: 8 mg/L (Yüksek) saptandı.",
+        "summary": "CRP: 8 mg/L (referans <5 mg/L; yüksek).",
         "findings": [
-          "CRP: 8 mg/L (Yüksek) saptandı"
+          "Lökosit: 13.200/mm³ (referans 5.000–15.000/mm³; referans içinde)",
+          "Hemoglobin: 11.8 g/dL (referans 10.5–13.5 g/dL; referans içinde)",
+          "CRP: 8 mg/L (referans <5 mg/L; yüksek)"
         ]
       },
       {
@@ -6252,43 +6290,46 @@ export const cases = [
       {
         "id": "electrolytes",
         "label": "Elektrolit ve kan gazı",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "pH",
             "7.52",
-            "7.35-7.45",
+            "7.35–7.45",
             "Yüksek"
           ],
           [
             "Klor",
             "86 mmol/L",
-            "98-107 mmol/L",
+            "98–107 mmol/L",
             "Düşük"
           ],
           [
             "Potasyum",
             "3.0 mmol/L",
-            "3.5-5.1 mmol/L",
+            "3.5–5.1 mmol/L",
             "Düşük"
           ],
           [
-            "HCO3-",
+            "HCO₃⁻",
             "34 mmol/L",
-            "22-26 mmol/L",
+            "22–26 mmol/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "pH: 7.52 (Yüksek).",
+        "summary": "pH: 7.52 (referans 7.35–7.45; yüksek). Klor: 86 mmol/L (referans 98–107 mmol/L; düşük). Potasyum: 3.0 mmol/L (referans 3.5–5.1 mmol/L; düşük).",
         "findings": [
-          "pH: 7"
+          "pH: 7.52 (referans 7.35–7.45; yüksek)",
+          "Klor: 86 mmol/L (referans 98–107 mmol/L; düşük)",
+          "Potasyum: 3.0 mmol/L (referans 3.5–5.1 mmol/L; düşük)",
+          "HCO₃⁻: 34 mmol/L (referans 22–26 mmol/L; yüksek)"
         ]
       },
       {
         "id": "usg",
         "label": "Pilor ultrasonografisi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Pilor kas kalınlığı ve kanal uzunluğu artmış. Mide çıkışında geçiş kısıtlılığı paterninde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -6682,7 +6723,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "İnflamasyon ve hematolojik değerlendirme",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "CRP",
@@ -6710,15 +6751,18 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "CRP: 96 mg/L (Yüksek). Sedimentasyon: 78 mm/saat (Yüksek).",
+        "summary": "CRP: 96 mg/L (referans <5 mg/L; yüksek). Sedimentasyon: 78 mm/saat (referans <20 mm/saat; yüksek). Trombosit: 520.000/mm³ (referans 150.000–400.000/mm³; yüksek).",
         "findings": [
-          "CRP: 96 mg/L (Yüksek)"
+          "CRP: 96 mg/L (referans <5 mg/L; yüksek)",
+          "Sedimentasyon: 78 mm/saat (referans <20 mm/saat; yüksek)",
+          "Trombosit: 520.000/mm³ (referans 150.000–400.000/mm³; yüksek)",
+          "ALT: Hafif yüksek (referans <41 U/L; yüksek)"
         ]
       },
       {
         "id": "echo",
         "label": "Ekokardiyografi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Koroner arterlerde hafif ektazi izlendi. Belirgin dev anevrizma veya ventrikül disfonksiyonu saptanmadı.",
         "priority": "Useful",
         "findings": [
@@ -6744,7 +6788,7 @@ export const cases = [
       {
         "id": "urine",
         "label": "İdrar tetkiki",
-        "type": "Urine",
+        "type": "urine",
         "rows": [
           [
             "Lökosit",
@@ -6759,16 +6803,18 @@ export const cases = [
             "Negatif"
           ],
           [
-            "Kültür",
+            "Potasyum",
             "Üreme yok",
             "Üreme yok",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: Pozitif (Pozitif) saptandı.",
+        "summary": "Lökosit: Pozitif (referans Negatif; pozitif).",
         "findings": [
-          "Lökosit: Pozitif (Pozitif) saptandı"
+          "Lökosit: Pozitif (referans Negatif; pozitif)",
+          "Nitrit: Negatif (referans Negatif; negatif)",
+          "Potasyum: Üreme yok (referans Üreme yok; referans içinde)"
         ]
       }
     ],
@@ -7121,7 +7167,7 @@ export const cases = [
       {
         "id": "neck-xray",
         "label": "Lateral boyun grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Epiglotta ödem paterninde başparmak bulgusu izlenebilir. İnceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
         "priority": "Useful",
         "findings": [
@@ -7139,7 +7185,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -7154,16 +7200,18 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "Kan kültürü",
+            "Potasyum",
             "Alındı",
-            "—",
+            "3.5–5.1 mEq/L",
             "Kayıt altına alındı"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 18.600/mm³ (Yüksek).",
+        "summary": "Lökosit: 18.600/mm³ (referans 4.000–10.000/mm³; yüksek). CRP: 112 mg/L (referans <5 mg/L; yüksek). Potasyum: Alındı (referans 3.5–5.1 mEq/L; kayıt altına alındı).",
         "findings": [
-          "Lökosit: 18"
+          "Lökosit: 18.600/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "CRP: 112 mg/L (referans <5 mg/L; yüksek)",
+          "Potasyum: Alındı (referans 3.5–5.1 mEq/L; kayıt altına alındı)"
         ]
       }
     ],
@@ -7522,7 +7570,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Hemogram ve inflamasyon belirteçleri",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -7533,7 +7581,7 @@ export const cases = [
           [
             "Nötrofil",
             "%84",
-            "%40-70",
+            "%40–70",
             "Yüksek"
           ],
           [
@@ -7544,15 +7592,17 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 15.400/mm³ (Yüksek).",
+        "summary": "Lökosit: 15.400/mm³ (referans 4.000–10.000/mm³; yüksek). Nötrofil: %84 (referans %40–70; yüksek). CRP: 38 mg/L (referans <5 mg/L; yüksek).",
         "findings": [
-          "Lökosit: 15"
+          "Lökosit: 15.400/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "Nötrofil: %84 (referans %40–70; yüksek)",
+          "CRP: 38 mg/L (referans <5 mg/L; yüksek)"
         ]
       },
       {
         "id": "ct",
         "label": "Kontrastlı abdomen BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor. Apendikolit görülebilir.",
         "priority": "Useful",
         "findings": [
@@ -7570,7 +7620,7 @@ export const cases = [
       {
         "id": "urine",
         "label": "İdrar tetkiki",
-        "type": "Urine",
+        "type": "urine",
         "rows": [
           [
             "Lökosit",
@@ -7592,9 +7642,11 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "İdrar tetkiki sonuçları referans aralığında veya negatif saptandı.",
+        "summary": "Eritrosit: Eser (referans Negatif; sınırda).",
         "findings": [
-          "İdrar tetkiki sonuçları referans aralığında veya negatif saptandı"
+          "Lökosit: Negatif (referans Negatif; negatif)",
+          "Nitrit: Negatif (referans Negatif; negatif)",
+          "Eritrosit: Eser (referans Negatif; sınırda)"
         ]
       }
     ],
@@ -7646,7 +7698,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Lökosit 15.000/mm³."
+            "text": "Lökosit: Negatif (referans Negatif; negatif)."
           },
           {
             "title": "Kontrastlı abdomen BT",
@@ -7875,7 +7927,7 @@ export const cases = [
       "distinctiveClues": [
         "Sağ alt kadran ağrısı ve iştahsızlık",
         "McBurney noktasında hassasiyet saptanıyor",
-        "Lökosit 15.000/mm³",
+        "Lökosit: Negatif (referans Negatif; negatif)",
         "Abdomen BT'de Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokusunda inflamasyonu destekler"
       ],
       "historySummary": "Yirmi dört yaşındaki erkek hasta, 12 saat önce periumbilikal başlayan ağrının giderek sağ alt kadrana lokalize olduğunu ifade ediyor. Bulantı, iştahsızlık ve düşük dereceli ateş yakınmaları mevcut.",
@@ -7892,7 +7944,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Lökosit 15.000/mm³."
+        "text": "Lökosit: Negatif (referans Negatif; negatif)."
       },
       {
         "title": "Kontrastlı abdomen BT",
@@ -7929,7 +7981,7 @@ export const cases = [
       {
         "id": "usg",
         "label": "Sağ üst kadran ultrasonografisi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı artışı izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -7947,7 +7999,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -7964,7 +8016,7 @@ export const cases = [
           [
             "Total bilirubin",
             "1.1 mg/dL",
-            "0.2-1.2 mg/dL",
+            "0.2–1.2 mg/dL",
             "Referans içinde"
           ],
           [
@@ -7975,15 +8027,18 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 14.800/mm³ (Yüksek).",
+        "summary": "Lökosit: 14.800/mm³ (referans 4.000–10.000/mm³; yüksek). CRP: 68 mg/L (referans <5 mg/L; yüksek). ALT: 46 U/L (referans <41 U/L; yüksek).",
         "findings": [
-          "Lökosit: 14"
+          "Lökosit: 14.800/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "CRP: 68 mg/L (referans <5 mg/L; yüksek)",
+          "Total bilirubin: 1.1 mg/dL (referans 0.2–1.2 mg/dL; referans içinde)",
+          "ALT: 46 U/L (referans <41 U/L; yüksek)"
         ]
       },
       {
         "id": "hida-scan-cholecystitis",
         "label": "Hepatobiliyer sintigrafi",
-        "type": "Clinical",
+        "type": "clinical",
         "priority": "Situational",
         "summary": "Safra kesesi dolumu izlenmedi.",
         "findings": [
@@ -8058,7 +8113,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Lökosit 14.000/mm³."
+            "text": "Lökosit: 14.800/mm³ (referans 4.000–10.000/mm³; yüksek)."
           }
         ],
         "pearls": [
@@ -8284,7 +8339,7 @@ export const cases = [
         "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı",
         "Sağ üst kadranda hassasiyet mevcut",
         "Sağ üst kadran USG'de Safra kesesinde TAş, duvar kalınlaşması akut inflamasyonu destekler",
-        "Lökosit 14.000/mm³"
+        "Lökosit: 14.800/mm³ (referans 4.000–10.000/mm³; yüksek)"
       ],
       "historySummary": "Kırk yedi yaşındaki kadın hasta, 18 saattir devam eden sağ üst kadran ağrısı, bulantı ve ateş yakınmalarıyla başvuruyor. Daha önce kendiliğinden düzelen kısa süreli biliyer kolik atakları olduğu öğreniliyor.",
       "priorityFocus": "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı karar verdirici klinik ipucudur."
@@ -8304,7 +8359,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Lökosit 14.000/mm³."
+        "text": "Lökosit: 14.800/mm³ (referans 4.000–10.000/mm³; yüksek)."
       }
     ]
   },
@@ -8335,7 +8390,7 @@ export const cases = [
       {
         "id": "xray",
         "label": "Ayakta direkt karın grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Santral yerleşimli dilate ince bağırsak ansları ve çoklu hava-sıvı seviyeleri izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -8353,7 +8408,7 @@ export const cases = [
       {
         "id": "ct",
         "label": "Kontrastlı abdomen BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "İnce bağırsakta geçiş noktası ve proksimal dilatasyon izleniyor. Kapalı ans veya iskemi bulgusu belirgin değildir.",
         "priority": "Useful",
         "findings": [
@@ -8371,7 +8426,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -8388,14 +8443,16 @@ export const cases = [
           [
             "Kreatinin",
             "1.1 mg/dL",
-            "0.6-1.2 mg/dL",
+            "0.6–1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 11.800/mm³ (Yüksek) saptandı.",
+        "summary": "Lökosit: 11.800/mm³ (referans 4.000–10.000/mm³; yüksek).",
         "findings": [
-          "Lökosit: 11"
+          "Lökosit: 11.800/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "Laktat: 1.6 mmol/L (referans <2.0 mmol/L; referans içinde)",
+          "Kreatinin: 1.1 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)"
         ]
       }
     ],
@@ -8423,7 +8480,7 @@ export const cases = [
       "pearls": [
         {
           "label": "Sınav bilgisi",
-          "text": "Ateş, lökositozun belirgin artması, sürekli ağrı, peritonit veya laktat yüksekliği strangülasyon veya iskemi açısından uyarıcıdır.",
+          "text": "Ateş, lökositozun belirgin artması, sürekli ağrı, peritonit veya Laktat: 1.6 mmol/L (referans <2.0 mmol/L; referans içinde) strangülasyon veya iskemi açısından uyarıcıdır.",
           "title": "Sınav bilgisi"
         },
         {
@@ -8457,7 +8514,7 @@ export const cases = [
         "pearls": [
           {
             "label": "Sınav incisi",
-            "text": "Ateş, lökositozun belirgin artması, sürekli ağrı, peritonit veya laktat yüksekliği strangülasyon veya iskemi açısından uyarıcıdır.",
+            "text": "Ateş, lökositozun belirgin artması, sürekli ağrı, peritonit veya Laktat: 1.6 mmol/L (referans <2.0 mmol/L; referans içinde) strangülasyon veya iskemi açısından uyarıcıdır.",
             "title": "Sınav incisi"
           },
           {
@@ -8537,7 +8594,7 @@ export const cases = [
         "clinicalPearls": [
           {
             "label": "Sınav incisi",
-            "text": "Ateş, lökositozun belirgin artması, sürekli ağrı, peritonit veya laktat yüksekliği strangülasyon veya iskemi açısından uyarıcıdır.",
+            "text": "Ateş, lökositozun belirgin artması, sürekli ağrı, peritonit veya Laktat: 1.6 mmol/L (referans <2.0 mmol/L; referans içinde) strangülasyon veya iskemi açısından uyarıcıdır.",
             "title": "Sınav incisi"
           },
           {
@@ -8621,7 +8678,7 @@ export const cases = [
         },
         {
           "id": "surg-sbo-001-r-5-peritonit-ates-laktat-yuksekligi-veya-kapali-ans-varsa-acil-cerrahi-plan",
-          "label": "Peritonit, ateş, laktat yüksekliği veya kapalı ans varsa acil cerrahi planla",
+          "label": "Peritonit, ateş, Laktat: 1.6 mmol/L (referans <2.0 mmol/L; referans içinde) veya kapalı ans varsa acil cerrahi planla",
           "required": true,
           "correctOrder": 5,
           "unsafe": false,
@@ -8648,7 +8705,7 @@ export const cases = [
         },
         {
           "id": "surg-sbo-001-d-2-peritonit-ve-laktat-yuksekligi-varken-konservatif-izlemde-israr-et",
-          "label": "Peritonit ve laktat yüksekliği varken konservatif izlemde ısrar et",
+          "label": "Peritonit ve Laktat: 1.6 mmol/L (referans <2.0 mmol/L; referans içinde) varken konservatif izlemde ısrar et",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
@@ -8728,7 +8785,7 @@ export const cases = [
       {
         "id": "upright-xray",
         "label": "Ayakta akciğer veya abdomen grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Diyafram altında serbest hava paterninde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -8746,7 +8803,7 @@ export const cases = [
       {
         "id": "ct",
         "label": "Kontrastlı abdomen BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Üst abdomende serbest hava ve sıvı. Mide-duodenum komşuluğunda perforasyon odağı açısından şüpheli görünüm mevcut.",
         "priority": "Useful",
         "findings": [
@@ -8764,7 +8821,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -8786,9 +8843,11 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 16.200/mm³ (Yüksek).",
+        "summary": "Lökosit: 16.200/mm³ (referans 4.000–10.000/mm³; yüksek). CRP: 54 mg/L (referans <5 mg/L; yüksek). Laktat: 2.4 mmol/L (referans <2.0 mmol/L; yüksek).",
         "findings": [
-          "Lökosit: 16"
+          "Lökosit: 16.200/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "CRP: 54 mg/L (referans <5 mg/L; yüksek)",
+          "Laktat: 2.4 mmol/L (referans <2.0 mmol/L; yüksek)"
         ]
       }
     ],
@@ -9122,7 +9181,7 @@ export const cases = [
       {
         "id": "ct",
         "label": "Kontrastlı abdomen BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon izleniyor. Apse veya serbest perforasyon saptanmıyor.",
         "priority": "Useful",
         "findings": [
@@ -9140,7 +9199,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -9157,14 +9216,16 @@ export const cases = [
           [
             "Kreatinin",
             "0.8 mg/dL",
-            "0.6-1.2 mg/dL",
+            "0.6–1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 13.900/mm³ (Yüksek).",
+        "summary": "Lökosit: 13.900/mm³ (referans 4.000–10.000/mm³; yüksek). CRP: 82 mg/L (referans <5 mg/L; yüksek).",
         "findings": [
-          "Lökosit: 13"
+          "Lökosit: 13.900/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "CRP: 82 mg/L (referans <5 mg/L; yüksek)",
+          "Kreatinin: 0.8 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)"
         ]
       },
       {
@@ -9230,7 +9291,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Lökosit 13.000/mm³."
+            "text": "Lökosit: 13.900/mm³ (referans 4.000–10.000/mm³; yüksek)."
           }
         ],
         "pearls": [
@@ -9456,7 +9517,7 @@ export const cases = [
         "Sol alt kadranda ağrı ve ateş",
         "Sol alt kadranda lokalize hassasiyet mevcut",
         "Abdomen BT'de Sigmoid kolonda divertiküller, segmental duvar",
-        "Lökosit 13.000/mm³"
+        "Lökosit: 13.900/mm³ (referans 4.000–10.000/mm³; yüksek)"
       ],
       "historySummary": "Altmış sekiz yaşındaki kadın hasta iki gündür sol alt kadranda giderek artan ağrı, kabızlık ve düşük dereceli ateş olduğunu ifade ediyor. Daha önce kolonoskopide divertikülozis saptandığı öğreniliyor.",
       "priorityFocus": "Sol alt kadranda ağrı ve ateş karar verdirici klinik ipucudur."
@@ -9476,7 +9537,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Lökosit 13.000/mm³."
+        "text": "Lökosit: 13.900/mm³ (referans 4.000–10.000/mm³; yüksek)."
       }
     ]
   },
@@ -9509,7 +9570,7 @@ export const cases = [
       {
         "id": "cxr",
         "label": "Akciğer grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan izleniyor. Mediastinal şift yok.",
         "priority": "Useful",
         "findings": [
@@ -9527,37 +9588,39 @@ export const cases = [
       {
         "id": "abg",
         "label": "Kan gazı",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "pH",
             "7.43",
-            "7.35-7.45",
+            "7.35–7.45",
             "Referans içinde"
           ],
           [
-            "PaO2",
+            "PaO₂",
             "72 mmHg",
-            "80/100 mmHg",
+            "80–100 mmHg",
             "Düşük"
           ],
           [
-            "PaCO2",
+            "PaCO₂",
             "34 mmHg",
-            "35/45 mmHg",
+            "35–45 mmHg",
             "Düşük"
           ]
         ],
         "priority": "Useful",
-        "summary": "PaO2: 72 mmHg (Düşük). PaCO2: 34 mmHg (Düşük) saptandı.",
+        "summary": "PaO₂: 72 mmHg (referans 80–100 mmHg; düşük). PaCO₂: 34 mmHg (referans 35–45 mmHg; düşük).",
         "findings": [
-          "PaO2: 72 mmHg (Düşük)"
+          "pH: 7.43 (referans 7.35–7.45; referans içinde)",
+          "PaO₂: 72 mmHg (referans 80–100 mmHg; düşük)",
+          "PaCO₂: 34 mmHg (referans 35–45 mmHg; düşük)"
         ]
       },
       {
         "id": "ct",
         "label": "Toraks BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Tanı grafiyle konulabiliyorsa rutin gerekli değildir. Altta yatan bül veya sekonder neden araştırılacaksa değerlendirilebilir.",
         "priority": "Useful",
         "findings": [
@@ -9625,7 +9688,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "pH 7.43 saptandı."
+            "text": "pH: 7.43 (referans 7.35–7.45; referans içinde) saptandı."
           }
         ],
         "pearls": [
@@ -9841,7 +9904,7 @@ export const cases = [
         "Ani sağ göğüs ağrısı ve nefes darlığı",
         "Sağ hemitoraksta solunum sesleri belirgin azalmış",
         "Akciğer grafisinde Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde damar izlerinin kaybı pnömotoraksı destekler",
-        "Kan gazı: pH 7.43 saptandı"
+        "Kan gazı: pH: 7.43 (referans 7.35–7.45; referans içinde) saptandı"
       ],
       "historySummary": "Uzun boylu ve zayıf yapılı 23 yaşındaki erkek hasta, istirahat sırasında aniden başlayan batıcı sağ göğüs ağrısı ve nefes darlığı nedeniyle başvuruyor. Travma, ateş veya balgam öyküsü yoktur.",
       "priorityFocus": "Ani sağ göğüs ağrısı ve nefes darlığı aktif tüberküloz olasılığını artırır."
@@ -9861,7 +9924,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "pH 7.43 saptandı."
+        "text": "pH: 7.43 (referans 7.35–7.45; referans içinde) saptandı."
       }
     ]
   },
@@ -9894,7 +9957,7 @@ export const cases = [
       {
         "id": "ctpa",
         "label": "BT pulmoner anjiyografi",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -9912,7 +9975,7 @@ export const cases = [
       {
         "id": "d-dimer",
         "label": "D-dimer",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "D-dimer",
@@ -9921,36 +9984,38 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "Troponin",
-            "Normal",
+            "Hs-Troponin I",
+            "12 ng/L",
             "<34 ng/L",
             "Referans içinde"
           ],
           [
-            "BNP",
-            "Sınırda",
-            "Yaşa göre değişir",
-            "Sınırda"
+            "NT-proBNP",
+            "2.800 pg/mL",
+            "<125 pg/mL",
+            "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "2.400 ng/mL FEU (Yüksek) saptandı.",
+        "summary": "D-dimer: 2.400 ng/mL FEU (referans <500 ng/mL FEU; yüksek).",
         "findings": [
-          "2"
+          "D-dimer: 2.400 ng/mL FEU (referans <500 ng/mL FEU; yüksek)",
+          "Hs-Troponin I: 12 ng/L (referans <34 ng/L; referans içinde)",
+          "NT-proBNP: 2.800 pg/mL (referans <125 pg/mL; referans içinde)"
         ]
       },
       {
         "id": "leg-usg",
         "label": "Alt ekstremite venöz Doppler ultrasonografi",
-        "type": "Ultrasound",
-        "summary": "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor.",
+        "type": "ultrasound",
+        "summary": "ALT: Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor (referans Normalde beklenmeyen patern; klinik olarak anlamlı).",
         "priority": "Useful",
         "findings": [
-          "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor"
+          "ALT: Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor (referans Normalde beklenmeyen patern; klinik olarak anlamlı)"
         ],
         "rows": [
           [
-            "Alt ekstremite venöz Doppler ultrasonografi",
+            "ALT",
             "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor",
             "Normalde beklenmeyen patern",
             "Klinik olarak anlamlı"
@@ -9978,7 +10043,7 @@ export const cases = [
         "Akut koroner sendrom",
         "Panik atak"
       ],
-      "explanation": "Uzun uçuş ve oral kontraseptif kullanımı gibi tromboemboli riskleri, ani dispne, plöritik ağrı, taşikardi, D-dimer yüksekliği ve BT pulmoner anjiyografide dolum defekti pulmoner emboli ile uyumludur. Bu nedenle en uygun seçim Akut pulmoner emboli olur.",
+      "explanation": "Uzun uçuş ve oral kontraseptif kullanımı gibi tromboemboli riskleri, ani dispne, plöritik ağrı, taşikardi, D-dimer: 2.400 ng/mL FEU (referans <500 ng/mL FEU; yüksek) ve BT pulmoner anjiyografide dolum defekti pulmoner emboli ile uyumludur. Bu nedenle en uygun seçim Akut pulmoner emboli olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -9994,7 +10059,7 @@ export const cases = [
       "nextStep": "Risk sınıflaması sonrası antikoagülasyon başlanması. Hipotansiyon veya sağ ventrikül yetmezliği varsa reperfüzyon tedavisinin değerlendirilmesi.",
       "answerFeedback": {
         "diagnosisMeta": "Pulmoner embolide klinik olasılık",
-        "whyCorrect": "Uzun uçuş ve oral kontraseptif kullanımı gibi tromboemboli riskleri, ani dispne, plöritik ağrı, taşikardi, D-dimer yüksekliği ve BT pulmoner anjiyografide dolum defekti pulmoner emboli ile uyumludur. Bu nedenle en uygun seçim Akut pulmoner emboli olur.",
+        "whyCorrect": "Uzun uçuş ve oral kontraseptif kullanımı gibi tromboemboli riskleri, ani dispne, plöritik ağrı, taşikardi, D-dimer: 2.400 ng/mL FEU (referans <500 ng/mL FEU; yüksek) ve BT pulmoner anjiyografide dolum defekti pulmoner emboli ile uyumludur. Bu nedenle en uygun seçim Akut pulmoner emboli olur.",
         "evidenceChain": [
           {
             "title": "Başvuru",
@@ -10286,7 +10351,7 @@ export const cases = [
       {
         "id": "cxr",
         "label": "Akciğer grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Sağ alt lobda hava bronkogramı içeren lobar konsolidasyon izlenir.",
         "priority": "Essential",
         "findings": [
@@ -10306,7 +10371,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -10323,26 +10388,28 @@ export const cases = [
           [
             "Üre",
             "42 mg/dL",
-            "17-43 mg/dL",
+            "17–43 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit 16.700/mm³ ve CRP 132 mg/L saptanır.",
+        "summary": "Lökosit: 16.700/mm³ (referans 4.000–10.000/mm³; yüksek). CRP: 132 mg/L (referans <5 mg/L; yüksek).",
         "findings": [
-          "Lökositoz ve yüksek CRP",
-          "Böbrek fonksiyonu antibiyotik dozu için değerlendirilir"
+          "Lökosit: 16.700/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "CRP: 132 mg/L (referans <5 mg/L; yüksek)",
+          "Üre: 42 mg/dL (referans 17–43 mg/dL; referans içinde)"
         ]
       },
       {
         "id": "culture",
         "label": "Mikrobiyolojik örnekleme",
-        "type": "Culture",
-        "summary": "Mikrobiyolojik örnekler antibiyotik öncesi alınır. Erken kültür sonucu tedavi kararını geciktirmemelidir.",
+        "type": "culture",
+        "summary": "Balgam Gram boyama: Bol PMNL, gram pozitif diplokoklar (referans Dominant bakteri görülmemesi; pürülan örnek). Potasyum: Sonuç bekleniyor (referans Üreme yok; takip edilecek).",
         "priority": "Situational",
         "findings": [
-          "Gram boyamada pürülan örnek ve baskın morfoloji kaydedilir",
-          "Kültür sonuçları hedefe yönelik tedavi için izlenir"
+          "Balgam Gram boyama: Bol PMNL, gram pozitif diplokoklar (referans Dominant bakteri görülmemesi; pürülan örnek)",
+          "Potasyum: Sonuç bekleniyor (referans Üreme yok; takip edilecek)",
+          "Potasyum: Erken dönemde üreme saptanmadı (referans Üreme yok; negatif)"
         ],
         "rows": [
           [
@@ -10352,16 +10419,16 @@ export const cases = [
             "Pürülan örnek"
           ],
           [
-            "Balgam kültürü",
+            "Potasyum",
             "Sonuç bekleniyor",
             "Üreme yok",
             "Takip edilecek"
           ],
           [
-            "Kan kültürü",
+            "Potasyum",
             "Erken dönemde üreme saptanmadı",
             "Üreme yok",
-            "Başlangıç sonucu"
+            "Negatif"
           ]
         ]
       }
@@ -10418,7 +10485,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Lökosit 16.000/mm³."
+            "text": "Lökosit: 16.700/mm³ (referans 4.000–10.000/mm³; yüksek)."
           }
         ],
         "pearls": [
@@ -10635,7 +10702,7 @@ export const cases = [
         "Öksürük, ateş ve nefes almakla artan yan ağrısı",
         "Sağ alt zonda inspiratuvar raller duyuluyor",
         "Akciğer grafisinde Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı",
-        "Lökosit 16.000/mm³"
+        "Lökosit: 16.700/mm³ (referans 4.000–10.000/mm³; yüksek)"
       ],
       "historySummary": "KOAH öyküsü olan 67 yaşındaki erkek hasta, üç gündür ateş, titreme, pürülan balgam ve sağ yan ağrısı olduğunu ifade ediyor. Yakın zamanda hastane yatışı veya antibiyotik kullanımı olmadığı öğreniliyor.",
       "priorityFocus": "Öksürük, ateş ve nefes almakla artan yan ağrısı aktif tüberküloz olasılığını artırır."
@@ -10655,7 +10722,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Lökosit 16.000/mm³."
+        "text": "Lökosit: 16.700/mm³ (referans 4.000–10.000/mm³; yüksek)."
       }
     ]
   },
@@ -10688,7 +10755,7 @@ export const cases = [
       {
         "id": "hrct",
         "label": "Yüksek çözünürlüklü toraks BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği görünümü izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -10706,7 +10773,7 @@ export const cases = [
       {
         "id": "pft",
         "label": "Solunum fonksiyon testi",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "FVC",
@@ -10715,10 +10782,10 @@ export const cases = [
             "Düşük"
           ],
           [
-            "FEV1 veya FVC",
-            "%86",
-            ">70",
-            "Referans içinde"
+            "FEV1/FVC",
+            "Beklenenin <%70’i",
+            ">%70",
+            "Düşük"
           ],
           [
             "DLCO",
@@ -10728,15 +10795,17 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "FVC: %62 beklenen (Düşük). DLCO: %48 beklenen (Düşük) saptandı.",
+        "summary": "FVC: %62 beklenen (referans >80; düşük). FEV1/FVC: Beklenenin <%70’i (referans >%70; düşük). DLCO: %48 beklenen (referans >80; düşük).",
         "findings": [
-          "FVC: %62 beklenen (Düşük)"
+          "FVC: %62 beklenen (referans >80; düşük)",
+          "FEV1/FVC: Beklenenin <%70’i (referans >%70; düşük)",
+          "DLCO: %48 beklenen (referans >80; düşük)"
         ]
       },
       {
         "id": "autoimmune",
         "label": "Sekonder neden taraması",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "ANA",
@@ -10758,9 +10827,11 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Sekonder neden taraması sonuçları referans aralığında veya negatif saptandı.",
+        "summary": "ANA: Negatif (referans Negatif; negatif). RF veya anti-CCP: Negatif (referans Negatif; negatif). Eozinofil: Normal (referans Değişken; referans içinde).",
         "findings": [
-          "Sekonder neden taraması sonuçları referans aralığında veya negatif saptandı"
+          "ANA: Negatif (referans Negatif; negatif)",
+          "RF veya anti-CCP: Negatif (referans Negatif; negatif)",
+          "Eozinofil: Normal (referans Değişken; referans içinde)"
         ]
       }
     ],
@@ -11083,43 +11154,46 @@ export const cases = [
       {
         "id": "abg",
         "label": "Arter kan gazı",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "pH",
             "7.31",
-            "7.35-7.45",
+            "7.35–7.45",
             "Düşük"
           ],
           [
-            "PaCO2",
+            "PaCO₂",
             "58 mmHg",
-            "35/45 mmHg",
+            "35–45 mmHg",
             "Yüksek"
           ],
           [
-            "PaO2",
+            "PaO₂",
             "55 mmHg",
-            "80/100 mmHg",
+            "80–100 mmHg",
             "Düşük"
           ],
           [
-            "HCO3-",
+            "HCO₃⁻",
             "29 mmol/L",
-            "22-26 mmol/L",
+            "22–26 mmol/L",
             "Yüksek"
           ]
         ],
         "priority": "Useful",
-        "summary": "pH: 7.31 (Düşük).",
+        "summary": "pH: 7.31 (referans 7.35–7.45; düşük). PaCO₂: 58 mmHg (referans 35–45 mmHg; yüksek). PaO₂: 55 mmHg (referans 80–100 mmHg; düşük).",
         "findings": [
-          "pH: 7"
+          "pH: 7.31 (referans 7.35–7.45; düşük)",
+          "PaCO₂: 58 mmHg (referans 35–45 mmHg; yüksek)",
+          "PaO₂: 55 mmHg (referans 80–100 mmHg; düşük)",
+          "HCO₃⁻: 29 mmol/L (referans 22–26 mmol/L; yüksek)"
         ]
       },
       {
         "id": "cxr",
         "label": "Akciğer grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Hiperinflasyon bulguları izleniyor. Belirgin yeni lobar konsolidasyon saptanmıyor.",
         "priority": "Useful",
         "findings": [
@@ -11137,7 +11211,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -11154,14 +11228,16 @@ export const cases = [
           [
             "Eozinofil",
             "%2",
-            "%0-5",
+            "%0–5",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Lökosit: 12.900/mm³ (Yüksek).",
+        "summary": "Lökosit: 12.900/mm³ (referans 4.000–10.000/mm³; yüksek). CRP: 42 mg/L (referans <5 mg/L; yüksek).",
         "findings": [
-          "Lökosit: 12"
+          "Lökosit: 12.900/mm³ (referans 4.000–10.000/mm³; yüksek)",
+          "CRP: 42 mg/L (referans <5 mg/L; yüksek)",
+          "Eozinofil: %2 (referans %0–5; referans içinde)"
         ]
       }
     ],
@@ -11189,7 +11265,7 @@ export const cases = [
       "pearls": [
         {
           "label": "Sınav bilgisi",
-          "text": "pH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür.",
+          "text": "pH: 7.31 (referans 7.35–7.45; düşük) ve PaCO₂: 58 mmHg (referans 35–45 mmHg; yüksek) noninvaziv ventilasyon gereksinimini düşündürür.",
           "title": "Sınav bilgisi"
         },
         {
@@ -11213,7 +11289,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "pH 7.31 saptandı."
+            "text": "pH: 7.31 (referans 7.35–7.45; düşük) saptandı."
           },
           {
             "title": "Akciğer grafisi",
@@ -11223,7 +11299,7 @@ export const cases = [
         "pearls": [
           {
             "label": "Sınav incisi",
-            "text": "pH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür.",
+            "text": "pH: 7.31 (referans 7.35–7.45; düşük) ve PaCO₂: 58 mmHg (referans 35–45 mmHg; yüksek) noninvaziv ventilasyon gereksinimini düşündürür.",
             "title": "Sınav incisi"
           },
           {
@@ -11303,7 +11379,7 @@ export const cases = [
         "clinicalPearls": [
           {
             "label": "Sınav incisi",
-            "text": "pH düşüklüğü ve PaCO2 yüksekliği noninvaziv ventilasyon gereksinimini düşündürür.",
+            "text": "pH: 7.31 (referans 7.35–7.45; düşük) ve PaCO₂: 58 mmHg (referans 35–45 mmHg; yüksek) noninvaziv ventilasyon gereksinimini düşündürür.",
             "title": "Sınav incisi"
           },
           {
@@ -11440,7 +11516,7 @@ export const cases = [
       "distinctiveClues": [
         "Artan nefes darlığı ve balgam miktarı",
         "Yaygın ekspiratuvar ronküs ve hışıltılı solunum duyuluyor",
-        "Arter kan gazı: pH 7.31 saptandı",
+        "Arter kan gazı: pH: 7.31 (referans 7.35–7.45; düşük) saptandı",
         "Akciğer grafisinde Hiperinflasyon bulguları izleniyor"
       ],
       "historySummary": "Ağır sigara öyküsü ve KOAH tanısı olan hasta, üç gündür dispnesinin arttığını, balgam miktarı ve pürülansında belirgin artış olduğunu ifade ediyor. Evde kullandığı inhaler tedaviyle rahatlamadığı öğreniliyor.",
@@ -11457,7 +11533,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "pH 7.31 saptandı."
+        "text": "pH: 7.31 (referans 7.35–7.45; düşük) saptandı."
       },
       {
         "title": "Akciğer grafisi",
@@ -11474,7 +11550,7 @@ export const cases = [
     "demographics": "44 yaşında erkek",
     "setting": "Enfeksiyon hastalıkları veya Acil",
     "chiefComplaint": "Üç haftadan uzun süren öksürük ve kilo kaybı",
-    "stem": "Kırk dört yaşındaki erkek hasta, gece terlemesi, iştahsızlık, 6 kg kilo kaybı ve aralıklı hemoptizi yakınmaları olduğunu ifade ediyor. Kalabalık yaşam koşulu ve daha önce tedavi almamış tüberküloz temas öyküsü bulunuyor",
+    "stem": "Kırk dört yaşındaki erkek hasta, gece terlemesi, iştahsızlıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) kg kilo kaybı ve aralıklı hemoptizi yakınmaları olduğunu ifade ediyor. Kalabalık yaşam koşulu ve daha önce tedavi almamış tüberküloz temas öyküsü bulunuyor",
     "vitals": {
       "TA": "118/72 mmHg",
       "Nabız": "96/dk",
@@ -11494,7 +11570,7 @@ export const cases = [
       {
         "id": "cxr",
         "label": "Akciğer grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Üst zon ağırlıklı infiltrasyon ve kavitasyon paterninde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -11512,7 +11588,7 @@ export const cases = [
       {
         "id": "sputum",
         "label": "Balgam ARB ve moleküler inceleme",
-        "type": "Microscopy",
+        "type": "microscopy",
         "summary": "Balgam yaymasında aside dirençli basil görülüyor. Nükleik asit amplifikasyon testi ve kültür ilaç duyarlılığı için gönderiliyor.",
         "priority": "Useful",
         "findings": [
@@ -11530,7 +11606,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Lökosit",
@@ -11552,9 +11628,11 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Sedimentasyon: 74 mm/saat (Yüksek) saptandı.",
+        "summary": "Sedimentasyon: 74 mm/saat (referans <20 mm/saat; yüksek).",
         "findings": [
-          "Sedimentasyon: 74 mm/saat (Yüksek) saptandı"
+          "Lökosit: 9.800/mm³ (referans 4.000–10.000/mm³; referans içinde)",
+          "Sedimentasyon: 74 mm/saat (referans <20 mm/saat; yüksek)",
+          "HIV testi: Negatif (referans Negatif; negatif)"
         ]
       }
     ],
@@ -11826,7 +11904,7 @@ export const cases = [
         "Akciğer grafisinde Üst zon ağırlıklı infiltrasyon ve kavitasyon ile uyumludur",
         "Balgam ARB ve moleküler incelemede Balgam yaymasında aside dirençli basil görülmesi tüberkülozu destekler"
       ],
-      "historySummary": "Kırk dört yaşındaki erkek hasta, gece terlemesi, iştahsızlık, 6 kg kilo kaybı ve aralıklı hemoptizi yakınmaları olduğunu ifade ediyor. Kalabalık yaşam koşulu ve daha önce tedavi almamış tüberküloz temas öyküsü bulunuyor.",
+      "historySummary": "Kırk dört yaşındaki erkek hasta, gece terlemesi, iştahsızlıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) kg kilo kaybı ve aralıklı hemoptizi yakınmaları olduğunu ifade ediyor. Kalabalık yaşam koşulu ve daha önce tedavi almamış tüberküloz temas öyküsü bulunuyor.",
       "priorityFocus": "Üç haftadan uzun süren öksürük ve kilo kaybı aktif tüberküloz olasılığını artırır."
     },
     "evidenceChain": [
@@ -11877,7 +11955,7 @@ export const cases = [
       {
         "id": "smear",
         "label": "Kalın damla ve ince yayma",
-        "type": "Microscopy",
+        "type": "microscopy",
         "summary": "Eritrositler içinde halka formları ve yüksek parazitemi izleniyor. Bazı eritrositlerde birden fazla halka formu dikkati çekiyor.",
         "priority": "Useful",
         "findings": [
@@ -11895,7 +11973,7 @@ export const cases = [
       {
         "id": "labs",
         "label": "Tam kan sayımı ve biyokimya paneli",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Trombosit",
@@ -11906,37 +11984,40 @@ export const cases = [
           [
             "Hemoglobin",
             "10.9 g/dL",
-            "13.5-17.5 g/dL",
+            "13.5–17.5 g/dL",
             "Düşük"
           ],
           [
             "Total bilirubin",
             "2.6 mg/dL",
-            "0.2-1.2 mg/dL",
+            "0.2–1.2 mg/dL",
             "Yüksek"
           ],
           [
             "Kreatinin",
             "1.1 mg/dL",
-            "0.6-1.2 mg/dL",
+            "0.6–1.2 mg/dL",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Trombosit: 62.000/mm³ (Düşük).",
+        "summary": "Trombosit: 62.000/mm³ (referans 150.000–400.000/mm³; düşük). Hemoglobin: 10.9 g/dL (referans 13.5–17.5 g/dL; düşük). Total bilirubin: 2.6 mg/dL (referans 0.2–1.2 mg/dL; yüksek).",
         "findings": [
-          "Trombosit: 62"
+          "Trombosit: 62.000/mm³ (referans 150.000–400.000/mm³; düşük)",
+          "Hemoglobin: 10.9 g/dL (referans 13.5–17.5 g/dL; düşük)",
+          "Total bilirubin: 2.6 mg/dL (referans 0.2–1.2 mg/dL; yüksek)",
+          "Kreatinin: 1.1 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)"
         ]
       },
       {
         "id": "rapid",
         "label": "Hızlı antijen testi",
-        "type": "Lab",
-        "summary": "Plasmodium antijen testi pozitif saptandı. Mikroskopide intraeritrositer parazitler izlendi.",
+        "type": "lab",
+        "summary": "Plasmodium antijeni: Pozitif (referans Negatif; pozitif). Kalın damla mikroskopisi: İntraeritrositer parazit izlendi (referans Parazit izlenmez; pozitif).",
         "priority": "Useful",
         "findings": [
-          "Plasmodium antijeni pozitif",
-          "Mikroskopide intraeritrositer parazitler izlendi"
+          "Plasmodium antijeni: Pozitif (referans Negatif; pozitif)",
+          "Kalın damla mikroskopisi: İntraeritrositer parazit izlendi (referans Parazit izlenmez; pozitif)"
         ],
         "rows": [
           [
@@ -12006,7 +12087,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Trombosit 62."
+            "text": "Trombosit: 62.000/mm³ (referans 150.000–400.000/mm³; düşük)."
           }
         ],
         "pearls": [
@@ -12233,7 +12314,7 @@ export const cases = [
         "Titreme ile yükselen ateş ve yaygın halsizlik",
         "Ateş yüksekliği ve belirgin halsizlik izleniyor",
         "Kalın damla ve ince yayma: Eritrositler içinde halka formları ve yüksek",
-        "Trombosit 62"
+        "Trombosit: 62.000/mm³ (referans 150.000–400.000/mm³; düşük)"
       ],
       "historySummary": "Otuz iki yaşındaki erkek hasta iki hafta önce Batı Afrika'dan döndüğünü ve kemoprofilaksi kullanmadığını belirtiyor. Ateş ataklarına baş ağrısı, miyalji, bulantı ve koyu renkli idrar eşlik ediyor.",
       "priorityFocus": "Titreme ile yükselen ateş ve yaygın halsizlik karar verdirici klinik ipucudur."
@@ -12253,7 +12334,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Trombosit 62."
+        "text": "Trombosit: 62.000/mm³ (referans 150.000–400.000/mm³; düşük)."
       }
     ]
   },
@@ -12286,12 +12367,12 @@ export const cases = [
       {
         "id": "csf",
         "label": "BOS incelemesi",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
-            "Açılış basıncı",
+            "BOS açılış basıncı",
             "Yüksek",
-            "Değişken",
+            "10–20 cmH₂O",
             "Yüksek"
           ],
           [
@@ -12303,7 +12384,7 @@ export const cases = [
           [
             "Protein",
             "180 mg/dL",
-            "15-45 mg/dL",
+            "15–45 mg/dL",
             "Yüksek"
           ],
           [
@@ -12314,19 +12395,22 @@ export const cases = [
           ]
         ],
         "priority": "Useful",
-        "summary": "Açılış basıncı: Yüksek (Yüksek). Lökosit: 2.",
+        "summary": "BOS açılış basıncı: Yüksek (referans 10–20 cmH₂O; yüksek). Lökosit: 2.200/mm³ (referans 0–5/mm³; yüksek). Protein: 180 mg/dL (referans 15–45 mg/dL; yüksek).",
         "findings": [
-          "Açılış basıncı: Yüksek (Yüksek)"
+          "BOS açılış basıncı: Yüksek (referans 10–20 cmH₂O; yüksek)",
+          "Lökosit: 2.200/mm³ (referans 0–5/mm³; yüksek)",
+          "Protein: 180 mg/dL (referans 15–45 mg/dL; yüksek)",
+          "Glukoz: 24 mg/dL (referans >45 mg/dL; düşük)"
         ]
       },
       {
         "id": "gram",
         "label": "BOS Gram boyama",
-        "type": "Microscopy",
-        "summary": "Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor.",
+        "type": "microscopy",
+        "summary": "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor (referans Normalde beklenmeyen patern; klinik olarak anlamlı).",
         "priority": "Useful",
         "findings": [
-          "Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor"
+          "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor (referans Normalde beklenmeyen patern; klinik olarak anlamlı)"
         ],
         "rows": [
           [
@@ -12340,27 +12424,29 @@ export const cases = [
       {
         "id": "culture",
         "label": "Kan kültürü",
-        "type": "Culture",
-        "summary": "Kültür örneği tedavi öncesi alınır. Güçlü klinik şüphede antibiyotik kültür sonucunu beklemeden başlanır.",
+        "type": "culture",
+        "summary": "Gram boyama: Gram negatif diplokoklar görülebilir (referans Mikroorganizma görülmemesi; patolojik). Potasyum: Kesin üreme sonucu bekleniyor (referans Üreme yok; takip edilecek).",
         "priority": "Useful",
         "findings": [
-          "Kültür tanısal doğrulama sağlar ancak acil tedaviyi geciktirmemelidir"
+          "Potasyum: Antibiyotik öncesi iki set kan kültürü (referans Tedavi öncesi örnek; referans içinde)",
+          "Gram boyama: Gram negatif diplokoklar görülebilir (referans Mikroorganizma görülmemesi; patolojik)",
+          "Potasyum: Kesin üreme sonucu bekleniyor (referans Üreme yok; takip edilecek)"
         ],
         "rows": [
           [
-            "Örnek zamanı",
+            "Potasyum",
             "Antibiyotik öncesi iki set kan kültürü",
             "Tedavi öncesi örnek",
-            "Uygun"
+            "Referans içinde"
           ],
           [
             "Gram boyama",
             "Gram negatif diplokoklar görülebilir",
             "Mikroorganizma görülmemesi",
-            "Anormal"
+            "Patolojik"
           ],
           [
-            "Kültür sonucu",
+            "Potasyum",
             "Kesin üreme sonucu bekleniyor",
             "Üreme yok",
             "Takip edilecek"
@@ -12699,17 +12785,19 @@ export const cases = [
       {
         "id": "blood-culture",
         "label": "Kan kültürleri",
-        "type": "Culture",
-        "summary": "Farklı venlerden alınan kan kültürlerinde aynı etkenin üremesi kalıcı bakteriyemi paternini destekler.",
+        "type": "culture",
+        "summary": "Kültür seti sayısı: 3 set pozitif (referans Üreme olmamalı; pozitif). İzole edilen etken: Staphylococcus aureus (referans Üreme yok; pozitif). Metisilin duyarlılığı: Duyarlı (referans Direnç saptanmaması; mssa paterni).",
         "priority": "Useful",
         "findings": [
-          "Birden fazla setin pozitif olması kontaminasyondan çok gerçek bakteriyemi lehinedir"
+          "Kültür seti sayısı: 3 set pozitif (referans Üreme olmamalı; pozitif)",
+          "İzole edilen etken: Staphylococcus aureus (referans Üreme yok; pozitif)",
+          "Metisilin duyarlılığı: Duyarlı (referans Direnç saptanmaması; mssa paterni)"
         ],
         "rows": [
           [
             "Kültür seti sayısı",
-            "3 veya 3 set pozitif",
-            "Üreme yok",
+            "3 set pozitif",
+            "Üreme olmamalı",
             "Pozitif"
           ],
           [
@@ -12729,7 +12817,7 @@ export const cases = [
       {
         "id": "echo",
         "label": "Transtorasik veya Transözofageal ekokardiyografi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "summary": "Triküspit kapakta hareketli vejetasyon paterninde kitle izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -12747,7 +12835,7 @@ export const cases = [
       {
         "id": "ct",
         "label": "Toraks BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli paterninde görünüm oluşturuyor.",
         "priority": "Useful",
         "findings": [
@@ -13093,7 +13181,7 @@ export const cases = [
       {
         "id": "xray",
         "label": "El bileği direkt grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman paterninde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -13111,7 +13199,7 @@ export const cases = [
       {
         "id": "post-reduction-xray",
         "label": "Redüksiyon sonrası kontrol grafisi",
-        "type": "Xray",
+        "type": "xray",
         "priority": "Useful",
         "summary": "Kontrol grafisinde dorsal angülasyon azaldı ve radial yükseklik kısmen düzeldi.",
         "findings": [
@@ -13462,7 +13550,7 @@ export const cases = [
       {
         "id": "xray",
         "label": "Pelvis ve kalça direkt grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman paterninde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
@@ -13480,31 +13568,33 @@ export const cases = [
       {
         "id": "labs",
         "label": "Preoperatif laboratuvar",
-        "type": "Lab",
+        "type": "lab",
         "rows": [
           [
             "Hemoglobin",
             "11.2 g/dL",
-            "12-16 g/dL",
+            "12–16 g/dL",
             "Düşük"
           ],
           [
             "Kreatinin",
             "0.9 mg/dL",
-            "0.6-1.2 mg/dL",
+            "0.6–1.2 mg/dL",
             "Referans içinde"
           ],
           [
             "INR",
             "1.0",
-            "0.8-1.2",
+            "0.8–1.2",
             "Referans içinde"
           ]
         ],
         "priority": "Useful",
-        "summary": "Hemoglobin: 11.2 g/dL (Düşük) saptandı.",
+        "summary": "Hemoglobin: 11.2 g/dL (referans 12–16 g/dL; düşük).",
         "findings": [
-          "Hemoglobin: 11"
+          "Hemoglobin: 11.2 g/dL (referans 12–16 g/dL; düşük)",
+          "Kreatinin: 0.9 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)",
+          "INR: 1.0 (referans 0.8–1.2; referans içinde)"
         ]
       }
     ],
@@ -13560,7 +13650,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Hemoglobin 11."
+            "text": "Hemoglobin: 11.2 g/dL (referans 12–16 g/dL; düşük)."
           }
         ],
         "pearls": [
@@ -13783,7 +13873,7 @@ export const cases = [
         "Kalça ağrısı ve yürüyememe",
         "Etkilenen ekstremite kısa ve dış rotasyonda duruyor",
         "Pelvis ve kalça direkt grafisi: Femur boynu subkapital bölgesinde",
-        "Hemoglobin 11"
+        "Hemoglobin: 11.2 g/dL (referans 12–16 g/dL; düşük)"
       ],
       "historySummary": "Yetmiş sekiz yaşındaki kadın hasta, ev içinde düşük enerjili düşme sonrasında ayağa kalkamadığını ve kalça ağrısının belirgin olduğunu ifade ediyor. Osteoporoz ve hipertansiyon öyküsü mevcut.",
       "priorityFocus": "Kalça ağrısı ve yürüyememe karar verdirici klinik ipucudur."
@@ -13803,7 +13893,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Hemoglobin 11."
+        "text": "Hemoglobin: 11.2 g/dL (referans 12–16 g/dL; düşük)."
       }
     ]
   },
@@ -13836,7 +13926,7 @@ export const cases = [
       {
         "id": "xray",
         "label": "Skafoid grafileri",
-        "type": "Xray",
+        "type": "xray",
         "summary": "İlk grafilerde kırık hattı seçilemeyebilir. Özel skafoid projeksiyonları ve kontrol grafileri gerekebilir.",
         "priority": "Useful",
         "findings": [
@@ -13854,7 +13944,7 @@ export const cases = [
       {
         "id": "mri",
         "label": "El bileği MR",
-        "type": "Mri",
+        "type": "mri",
         "summary": "Klinik şüphe yüksekse erken dönemde okült karpal kırık hattını göstermek için kullanılabilir.",
         "priority": "Useful",
         "findings": [
@@ -14215,7 +14305,7 @@ export const cases = [
       {
         "id": "xray",
         "label": "Omuz direkt grafisi",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Humerus başı glenoid kaviteye göre anterior-inferior yer değiştirmiştir. Belirgin eşlik eden kırık hattı izlenmez.",
         "priority": "Useful",
         "findings": [
@@ -14233,7 +14323,7 @@ export const cases = [
       {
         "id": "post-reduction",
         "label": "Redüksiyon sonrası kontrol",
-        "type": "Xray",
+        "type": "xray",
         "summary": "Başarılı redüksiyonun ve eşlik eden Hill-Sachs veya Bankart lezyonu gibi kemik yaralanmalarının değerlendirilmesi için kontrol grafisi çekilir.",
         "priority": "Useful",
         "findings": [
@@ -14579,7 +14669,7 @@ export const cases = [
     },
     "exam": [
       "Genel durum orta.",
-      "Sağ avuç içinde yaklaşık 1.",
+      "Sağ avuç içinde yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek).",
       "Kardiyovasküler muayenede düzensiz taşikardi duyuluyor.",
       "Solunum sistemi muayenesinde ral, hışıltılı solunum veya belirgin solunum sıkıntısı yok.",
       "Sağ ön kol fleksörlerinde hassasiyet mevcut.",
@@ -14589,7 +14679,7 @@ export const cases = [
       {
         "id": "12-derivasyon-ekg-01",
         "label": "12 derivasyon EKG",
-        "type": "Ecg",
+        "type": "ecg",
         "priority": "Essential",
         "summary": "EKG'de sık ventriküler erken vurular izlendi. ST elevasyonu saptanmadı.",
         "findings": [
@@ -14620,7 +14710,7 @@ export const cases = [
       {
         "id": "kardiyak-monitorizasyon-01",
         "label": "Kardiyak monitörizasyon",
-        "type": "Ecg",
+        "type": "ecg",
         "priority": "Essential",
         "summary": "Monitör izleminin ilk saatlerinde tekrarlayan VEV izlendi. VF veya VT atağı saptanmadı.",
         "findings": [
@@ -14651,12 +14741,13 @@ export const cases = [
       {
         "id": "ck-ve-idrar-miyoglobin-01",
         "label": "CK ve idrar miyoglobin",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Useful",
-        "summary": "CK hafif yüksek bulundu. İdrar miyoglobini negatif izlendi.",
+        "summary": "CK: 780 U/L (referans <200 U/L; yüksek).",
         "findings": [
-          "Kas etkilenimi hafif düzeydedir",
-          "Rabdomiyoliz açısından güçlü idrar bulgusu yoktur"
+          "CK: 780 U/L (referans <200 U/L; yüksek)",
+          "İdrar miyoglobini: Negatif (referans Negatif; referans içinde)",
+          "Kreatinin: 0.9 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)"
         ],
         "rows": [
           [
@@ -14669,38 +14760,38 @@ export const cases = [
             "İdrar miyoglobini",
             "Negatif",
             "Negatif",
-            "Sorun yok"
+            "Referans içinde"
           ],
           [
             "Kreatinin",
             "0.9 mg/dL",
-            "0.6-1.2 mg/dL",
-            "Normal"
+            "0.6–1.2 mg/dL",
+            "Referans içinde"
           ]
         ]
       },
       {
         "id": "troponin-seri-takibi-01",
         "label": "Troponin seri takibi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "Troponin başlangıçta normaldir. Seri ölçümde anlamlı yükselme beklenmemektedir.",
+        "summary": "Hs-Troponin I: 0.02 ng/mL (referans <0.04 ng/mL; referans içinde). Seri değişim: Artış yok (referans Artış beklenmez; referans içinde).",
         "findings": [
-          "Miyokard nekrozu açısından biyobelirteç paterni yoktur",
-          "EKG ve klinikle birlikte izlem yapılır"
+          "Hs-Troponin I: 0.02 ng/mL (referans <0.04 ng/mL; referans içinde)",
+          "Seri değişim: Artış yok (referans Artış beklenmez; referans içinde)"
         ],
         "rows": [
           [
-            "Troponin I",
+            "Hs-Troponin I",
             "0.02 ng/mL",
             "<0.04 ng/mL",
-            "Normal"
+            "Referans içinde"
           ],
           [
             "Seri değişim",
             "Artış yok",
             "Artış beklenmez",
-            "Sorun yok"
+            "Referans içinde"
           ]
         ]
       }
@@ -15074,7 +15165,7 @@ export const cases = [
       {
         "id": "ekg-ve-ritim-monitorizasyonu-02",
         "label": "EKG ve ritim monitörizasyonu",
-        "type": "Ecg",
+        "type": "ecg",
         "priority": "Essential",
         "summary": "EKG'de sinüs bradikardisi izlendi. Malign aritmi ve ST elevasyonu saptanmadı.",
         "findings": [
@@ -15105,43 +15196,45 @@ export const cases = [
       {
         "id": "arter-kan-gazi-02",
         "label": "Arter kan gazı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Kan gazında hafif hipoksemi ve hafif laktat yüksekliği saptandı.",
+        "summary": "PaO₂: 62 mmHg (referans 80–100 mmHg; düşük). Laktat: 2.8 mmol/L (referans <2 mmol/L; yüksek).",
         "findings": [
-          "Hipoventilasyonun fizyolojik etkisi gösterilmiştir",
-          "Ağır metabolik asidoz yoktur"
+          "PaO₂: 62 mmHg (referans 80–100 mmHg; düşük)",
+          "Laktat: 2.8 mmol/L (referans <2 mmol/L; yüksek)",
+          "pH: 7.36 (referans 7.35–7.45; referans içinde)"
         ],
         "rows": [
           [
-            "PaO2",
+            "PaO₂",
             "62 mmHg",
-            "80/100 mmHg",
+            "80–100 mmHg",
             "Düşük"
           ],
           [
             "Laktat",
             "2.8 mmol/L",
             "<2 mmol/L",
-            "Hafif yüksek"
+            "Yüksek"
           ],
           [
             "pH",
             "7.36",
-            "7.35-7.45",
-            "Normal"
+            "7.35–7.45",
+            "Referans içinde"
           ]
         ]
       },
       {
         "id": "lightning-cardiac-muscle-lab",
         "label": "CK, troponin ve elektrolit paneli",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "CK hafif yüksek, troponin ve potasyum normal sınırlarda saptandı.",
+        "summary": "CK: 620 U/L (referans <200 U/L; yüksek).",
         "findings": [
-          "Derin kas hasarı sınırlı görünmektedir",
-          "Hiperkalemi veya miyokard nekrozu açısından erken biyobelirteç yoktur"
+          "CK: 620 U/L (referans <200 U/L; yüksek)",
+          "Hs-Troponin I: 0.01 ng/mL (referans <0.04 ng/mL; referans içinde)",
+          "Potasyum: 4.1 mmol/L (referans 3.5–5.1 mmol/L; referans içinde)"
         ],
         "rows": [
           [
@@ -15151,28 +15244,29 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "Troponin I",
+            "Hs-Troponin I",
             "0.01 ng/mL",
             "<0.04 ng/mL",
-            "Normal"
+            "Referans içinde"
           ],
           [
             "Potasyum",
             "4.1 mmol/L",
-            "3.5-5.1 mmol/L",
-            "Normal"
+            "3.5–5.1 mmol/L",
+            "Referans içinde"
           ]
         ]
       },
       {
         "id": "field-placement-repair-movpj93c",
         "label": "Hedefli laboratuvar",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
         "summary": "Baş-boyun değerlendirmesinde timpan membran rüptürü yok.",
         "findings": [
           "Baş-boyun değerlendirmesinde timpan membran rüptürü yok"
-        ]
+        ],
+        "title": "Hedefli laboratuvar"
       }
     ],
     "images": [],
@@ -15542,18 +15636,19 @@ export const cases = [
       {
         "id": "kan-glukozu-bilirubin-ve-karaciger-enzimleri-03",
         "label": "Kan glukozu, bilirubin ve karaciğer enzimleri",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Hipoglisemi, direkt bilirubin yüksekliği ve transaminaz artışı saptandı.",
+        "summary": "Glukoz: 56 mg/dL (referans 70–100 mg/dL; düşük). Direkt bilirubin: 2.4 mg/dL (referans <0.3 mg/dL; yüksek). AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek).",
         "findings": [
-          "Karaciğer etkilenimi ve metabolik stres bu klinik patern paternini gösterir",
-          "Hipoglisemi acil düzeltilmelidir"
+          "Glukoz: 56 mg/dL (referans 70–100 mg/dL; düşük)",
+          "Direkt bilirubin: 2.4 mg/dL (referans <0.3 mg/dL; yüksek)",
+          "AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)"
         ],
         "rows": [
           [
             "Glukoz",
             "56 mg/dL",
-            "70-100 mg/dL",
+            "70–100 mg/dL",
             "Düşük"
           ],
           [
@@ -15563,9 +15658,9 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "AST veya ALT",
-            "180 veya 165 U/L",
-            "<40 U/L",
+            "AST",
+            "AST 96 U/L; ALT 88 U/L",
+            "AST <40 U/L; ALT <41 U/L",
             "Yüksek"
           ]
         ]
@@ -15573,12 +15668,12 @@ export const cases = [
       {
         "id": "galt-aktivitesi-ve-galaktoz-1-fosfat-03",
         "label": "Galt aktivitesi ve galaktoz-1-fosfat",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Galt aktivitesi belirgin düşük. Galaktoz-1-fosfat yüksek bulundu.",
+        "summary": "Galt aktivitesi: <%10 (referans Normal aktivite; düşük). Fosfor: Yüksek (referans Düşük veya negatif; patolojik).",
         "findings": [
-          "Enzim eksikliği Objektif doğrulama verisi sağlar",
-          "Toksik metabolit birikimi karaciğer ve lens bulgularını açıklar"
+          "Galt aktivitesi: <%10 (referans Normal aktivite; düşük)",
+          "Fosfor: Yüksek (referans Düşük veya negatif; patolojik)"
         ],
         "rows": [
           [
@@ -15588,7 +15683,7 @@ export const cases = [
             "Düşük"
           ],
           [
-            "Galaktoz-1-fosfat",
+            "Fosfor",
             "Yüksek",
             "Düşük veya negatif",
             "Patolojik"
@@ -15598,12 +15693,12 @@ export const cases = [
       {
         "id": "idrarda-reduktan-madde-03",
         "label": "İdrarda redüktan madde",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Useful",
-        "summary": "İdrarda redüktan madde pozitif saptandı.",
+        "summary": "Redüktan madde: Pozitif (referans Negatif; patolojik).",
         "findings": [
-          "Laktoz veya galaktoz alımı sonrası idrarda şeker atılımı mevcuttur",
-          "Glukoz dışı redüktan şeker olasılığı güçlenir"
+          "Redüktan madde: Pozitif (referans Negatif; patolojik)",
+          "Glukoz: Negatif (referans Negatif; negatif)"
         ],
         "rows": [
           [
@@ -15613,22 +15708,22 @@ export const cases = [
             "Patolojik"
           ],
           [
-            "İdrar glukoz stripi",
+            "Glukoz",
             "Negatif",
             "Negatif",
-            "Ayırıcı"
+            "Negatif"
           ]
         ]
       },
       {
         "id": "galt-gen-analizi-ve-aile-taramasi-03",
         "label": "Galt gen analizi ve aile taraması",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "Galt gen analizi istendi. Aile taraması için genetik danışmanlık planlandı.",
+        "summary": "Galt gen analizi: Planlandı (referans Gerektiğinde; beklemede). Aile taraması: Önerildi (referans Risk yoksa gerekmez; gerekli).",
         "findings": [
-          "Kesin moleküler doğrulama ve aile danışmanlığı sağlar",
-          "Acil diyet tedavisi test sonucunu beklememelidir"
+          "Galt gen analizi: Planlandı (referans Gerektiğinde; beklemede)",
+          "Aile taraması: Önerildi (referans Risk yoksa gerekmez; gerekli)"
         ],
         "rows": [
           [
@@ -15689,7 +15784,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Glukoz 56 mg/dL, direkt bilirubin yüksek, AST veya alt yüksek."
+            "text": "Glukoz 56 mg/dL, Direkt bilirubin: 2.4 mg/dL (referans <0.3 mg/dL; yüksek), AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)."
           },
           {
             "title": "Laboratuvar paterni",
@@ -15936,7 +16031,7 @@ export const cases = [
       ],
       "distinctiveClues": [
         "Olgu bulguları ilgili klinik tablo ile uyumludur",
-        "Glukoz 56 mg ve dL, direkt bilirubin yüksek, AST ve alt yüksekliği destekler",
+        "Glukoz: Negatif (referans Negatif; negatif) mg ve dL, Direkt bilirubin: 2.4 mg/dL (referans <0.3 mg/dL; yüksek), AST ve AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek) destekler",
         "Galt aktivitesi düşük",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
@@ -15950,7 +16045,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Glukoz 56 mg/dL, direkt bilirubin yüksek, AST veya alt yüksek."
+        "text": "Glukoz 56 mg/dL, Direkt bilirubin: 2.4 mg/dL (referans <0.3 mg/dL; yüksek), AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)."
       },
       {
         "title": "Laboratuvar paterni",
@@ -15987,7 +16082,7 @@ export const cases = [
       "Genel durum orta.",
       "Meyve püresi alımı sonrasında solukluk, terleme, irritabilite ve uykuya meyil belirginleşiyor.",
       "Abdomen yumuşak.",
-      "Kapiller dolum yaklaşık 3 saniye.",
+      "Kapiller dolum yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saniye.",
       "Nörolojik muayenede atak sırasında uykuya meyil dışında kalıcı fokal defisit yok.",
       "Ateş, boğaz hiperemisi, meningeal irritasyon veya belirgin enfeksiyon odağı saptanmıyor."
     ],
@@ -15995,18 +16090,19 @@ export const cases = [
       {
         "id": "kan-glukozu-ve-elektrolitler-04",
         "label": "Kan glukozu ve elektrolitler",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Fruktoz alımı sonrası hipoglisemi ve hafif laktat yüksekliği saptandı.",
+        "summary": "Glukoz: 42 mg/dL (referans 70–100 mg/dL; düşük). Laktat: 3.1 mmol/L (referans <2 mmol/L; yüksek).",
         "findings": [
-          "Bulgu, fruktoz metabolizması bloğuna bağlı akut enerji yetersizliğiyle uyumludur",
-          "Böbrek fonksiyonlarında belirgin bozulma yoktur"
+          "Glukoz: 42 mg/dL (referans 70–100 mg/dL; düşük)",
+          "Laktat: 3.1 mmol/L (referans <2 mmol/L; yüksek)",
+          "Sodyum: Na⁺ 136 mmol/L; K⁺ 4.2 mEq/L (referans Na⁺ 135–145 mmol/L; K⁺ 3.5–5.1 mEq/L; referans içinde)"
         ],
         "rows": [
           [
             "Glukoz",
             "42 mg/dL",
-            "70-100 mg/dL",
+            "70–100 mg/dL",
             "Düşük"
           ],
           [
@@ -16016,26 +16112,26 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "Na veya K",
-            "Normal",
-            "Normal",
-            "Sorun yok"
+            "Sodyum",
+            "Na⁺ 136 mmol/L; K⁺ 4.2 mEq/L",
+            "Na⁺ 135–145 mmol/L; K⁺ 3.5–5.1 mEq/L",
+            "Referans içinde"
           ]
         ]
       },
       {
         "id": "fruktoz-1-fosfat-aldob-degerlendirmesi-04",
         "label": "Fruktoz-1-fosfat ve ALDOB analizi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "ALDOB ilişkili defekt şüphesi güçlü. Fruktoz-1-fosfat birikimi paterninde sonuç alındı.",
+        "summary": "Fosfor: Yüksek (referans Düşük; patolojik). ALDOB değerlendirmesi: Defektin klinik ve laboratuvar bulgularıyla ilişkisi değerlendirilir (referans Normal; patolojik).",
         "findings": [
-          "Aldolaz B basamağındaki blok Klinik olarak anlamlı",
-          "Esansiyel fruktozüriye göre daha ağır metabolik tablo vardır"
+          "Fosfor: Yüksek (referans Düşük; patolojik)",
+          "ALDOB değerlendirmesi: Defektin klinik ve laboratuvar bulgularıyla ilişkisi değerlendirilir (referans Normal; patolojik)"
         ],
         "rows": [
           [
-            "Fruktoz-1-fosfat",
+            "Fosfor",
             "Yüksek",
             "Düşük",
             "Patolojik"
@@ -16051,12 +16147,12 @@ export const cases = [
       {
         "id": "idrar-ketonu-ve-metabolik-asidoz-taramasi-04",
         "label": "İdrar ketonu ve metabolik asidoz taraması",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Useful",
-        "summary": "İdrarda keton pozitifliği ve hafif metabolik asidoz izlendi.",
+        "summary": "İdrar ketonu: Pozitif (referans Negatif; patolojik). HCO₃⁻: 19 mmol/L (referans 22–28 mmol/L; düşük).",
         "findings": [
-          "Açlık veya hipoglisemi yanıtı ketonüri oluşturabilir",
-          "Ağır ketoasidoz paterni yoktur"
+          "İdrar ketonu: Pozitif (referans Negatif; patolojik)",
+          "HCO₃⁻: 19 mmol/L (referans 22–28 mmol/L; düşük)"
         ],
         "rows": [
           [
@@ -16066,9 +16162,9 @@ export const cases = [
             "Patolojik"
           ],
           [
-            "Bikarbonat",
+            "HCO₃⁻",
             "19 mmol/L",
-            "22-28 mmol/L",
+            "22–28 mmol/L",
             "Düşük"
           ]
         ]
@@ -16076,12 +16172,11 @@ export const cases = [
       {
         "id": "aldob-gen-analizi-04",
         "label": "ALDOB gen analizi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "ALDOB geninde patojenik varyant saptandı.",
+        "summary": "ALDOB varyantı: Patojenik varyant (referans Patojenik varyant yok; pozitif).",
         "findings": [
-          "Moleküler sonuç bu klinik paterni doğrular",
-          "Fruktoz-sükroz-sorbitol kısıtlaması sürdürülür"
+          "ALDOB varyantı: Patojenik varyant (referans Patojenik varyant yok; pozitif)"
         ],
         "rows": [
           [
@@ -16136,7 +16231,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Glukoz 42 mg/dL, laktat hafif yüksek, transaminazlar yüksek."
+            "text": "Glukoz 42 mg/dL, laktat hafif yüksek, AST / ALT: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)."
           },
           {
             "title": "Destekleyen bulgu",
@@ -16384,7 +16479,7 @@ export const cases = [
       ],
       "distinctiveClues": [
         "Olgu bulguları ilgili klinik tablo ile uyumludur",
-        "Glukoz 42 mg ve dL, laktat hafif yüksek, transaminazlar yüksek",
+        "Glukoz: 42 mg/dL (referans 70–100 mg/dL; düşük) mg ve dL, laktat hafif yüksek, AST / ALT: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)",
         "Aldolaz B defekti şüphesi",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
@@ -16398,7 +16493,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Glukoz 42 mg/dL, laktat hafif yüksek, transaminazlar yüksek."
+        "text": "Glukoz 42 mg/dL, laktat hafif yüksek, AST / ALT: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)."
       },
       {
         "title": "Destekleyen bulgu",
@@ -16443,18 +16538,20 @@ export const cases = [
       {
         "id": "glukoz-laktat-trigliserid-ve-urik-asit-05",
         "label": "Glukoz, laktat, trigliserid ve ürik asit",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Açlık hipoglisemisiyle birlikte laktat, trigliserid ve ürik asit yüksekliği saptandı.",
+        "summary": "Glukoz: 38 mg/dL (referans 70–100 mg/dL; düşük). Laktat: 5.6 mmol/L (referans <2 mmol/L; yüksek). Trigliserid: 420 mg/dL (referans <150 mg/dL; yüksek).",
         "findings": [
-          "Laboratuvar paterni glukoz-6-fosfataz defektini klinik yorumda önemlidir",
-          "Hepatik glukoz çıkışı bozulmuştur"
+          "Glukoz: 38 mg/dL (referans 70–100 mg/dL; düşük)",
+          "Laktat: 5.6 mmol/L (referans <2 mmol/L; yüksek)",
+          "Trigliserid: 420 mg/dL (referans <150 mg/dL; yüksek)",
+          "Ürik asit: 8.2 mg/dL (referans 2–5.5 mg/dL; yüksek)"
         ],
         "rows": [
           [
             "Glukoz",
             "38 mg/dL",
-            "70-100 mg/dL",
+            "70–100 mg/dL",
             "Düşük"
           ],
           [
@@ -16472,7 +16569,7 @@ export const cases = [
           [
             "Ürik asit",
             "8.2 mg/dL",
-            "2-5.5 mg/dL",
+            "2–5.5 mg/dL",
             "Yüksek"
           ]
         ]
@@ -16480,37 +16577,38 @@ export const cases = [
       {
         "id": "glukoz-6-fosfataz-aktivitesi-05",
         "label": "Glukoz-6-fosfataz aktivitesi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Glukoz-6-fosfataz aktivitesi düşük bulundu.",
+        "summary": "Potasyum: 3.2 mEq/L (referans Normal; patolojik). Glukoz: Yetersiz glukoz artışı (referans Artış beklenir; patolojik).",
         "findings": [
-          "Son ortak glukoz üretim basamağı etkilenmiştir",
-          "Açlıkta hipoglisemi ve hepatomegali bu defektle açıklanır"
+          "Potasyum: 3.2 mEq/L (referans Normal; patolojik)",
+          "Glukoz: Yetersiz glukoz artışı (referans Artış beklenir; patolojik)"
         ],
         "rows": [
           [
-            "G6Paz aktivitesi",
-            "Düşük",
+            "Potasyum",
+            "3.2 mEq/L",
             "Normal",
             "Patolojik"
           ],
           [
-            "Glukagon yanıtı",
+            "Glukoz",
             "Yetersiz glukoz artışı",
             "Artış beklenir",
-            "Anormal"
+            "Patolojik"
           ]
         ]
       },
       {
         "id": "idrar-ketonu-ve-asidoz-degerlendirmesi-05",
         "label": "İdrar ketonu ve kan gazı",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Useful",
-        "summary": "İdrarda keton değişken. Kan gazında laktik asidoz izlendi.",
+        "summary": "İdrar ketonu: Hafif veya değişken (referans Negatif-hafif; yorum gerektirir). pH: 7.29 (referans 7.35–7.45; düşük). HCO₃⁻: 17 mmol/L (referans 22–28 mmol/L; düşük).",
         "findings": [
-          "Laktik asidoz Von Gierke için ayırt ettiricidir",
-          "Keton düzeyi tek başına tanıyı dışlamaz"
+          "İdrar ketonu: Hafif veya değişken (referans Negatif-hafif; yorum gerektirir)",
+          "pH: 7.29 (referans 7.35–7.45; düşük)",
+          "HCO₃⁻: 17 mmol/L (referans 22–28 mmol/L; düşük)"
         ],
         "rows": [
           [
@@ -16522,13 +16620,13 @@ export const cases = [
           [
             "pH",
             "7.29",
-            "7.35-7.45",
+            "7.35–7.45",
             "Düşük"
           ],
           [
-            "Bikarbonat",
+            "HCO₃⁻",
             "17 mmol/L",
-            "22-28 mmol/L",
+            "22–28 mmol/L",
             "Düşük"
           ]
         ]
@@ -16536,12 +16634,11 @@ export const cases = [
       {
         "id": "g6pc-gen-analizi-05",
         "label": "G6PC gen analizi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "G6PC geninde patojenik varyant saptandı.",
+        "summary": "G6PC varyantı: Patojenik varyant (referans Patojenik varyant yok; pozitif).",
         "findings": [
-          "Moleküler sonuç Von Gierke objektif doğrulama verisi sağlar",
-          "Beslenme tedavisi genetik sonucu beklemeden başlatılır"
+          "G6PC varyantı: Patojenik varyant (referans Patojenik varyant yok; pozitif)"
         ],
         "rows": [
           [
@@ -16596,7 +16693,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Glukoz 38 mg/dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek."
+            "text": "Glukoz 38 mg/dL, Laktat: 5.6 mmol/L (referans <2 mmol/L; yüksek), Trigliserid: 420 mg/dL (referans <150 mg/dL; yüksek), ürik asit yüksek."
           },
           {
             "title": "Laboratuvar",
@@ -16844,7 +16941,7 @@ export const cases = [
       ],
       "distinctiveClues": [
         "Olgu bulguları Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumludur",
-        "Glukoz 38 mg ve dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek",
+        "Glukoz: Yetersiz glukoz artışı (referans Artış beklenir; patolojik) mg ve dL, Laktat: 5.6 mmol/L (referans <2 mmol/L; yüksek), Trigliserid: 420 mg/dL (referans <150 mg/dL; yüksek), ürik asit yüksek",
         "Glukoz-6-fosfataz aktivitesi düşüktür",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
@@ -16858,7 +16955,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Glukoz 38 mg/dL, laktat yüksek, trigliserid yüksek, ürik asit yüksek."
+        "text": "Glukoz 38 mg/dL, Laktat: 5.6 mmol/L (referans <2 mmol/L; yüksek), Trigliserid: 420 mg/dL (referans <150 mg/dL; yüksek), ürik asit yüksek."
       },
       {
         "title": "Laboratuvar",
@@ -16903,12 +17000,12 @@ export const cases = [
       {
         "id": "plazma-fenilalanin-duzeyi-06",
         "label": "Plazma fenilalanin düzeyi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Plazma fenilalanin düzeyi belirgin yüksek bulundu.",
+        "summary": "Fenilalanin: 22 mg/dL (referans <2 mg/dL; yüksek). Potasyum: Küf kokulu idrar (referans Yok; patolojik).",
         "findings": [
-          "Nörogelişimsel etkilenme riski yüksektir",
-          "Diyet tedavisi erken başlanmalıdır"
+          "Fenilalanin: 22 mg/dL (referans <2 mg/dL; yüksek)",
+          "Potasyum: Küf kokulu idrar (referans Yok; patolojik)"
         ],
         "rows": [
           [
@@ -16918,7 +17015,7 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "Klinik",
+            "Potasyum",
             "Küf kokulu idrar",
             "Yok",
             "Patolojik"
@@ -16928,37 +17025,37 @@ export const cases = [
       {
         "id": "tirozin-ve-fenilalanin-tirozin-orani-06",
         "label": "Tirozin ve fenilalanin veya tirozin oranı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Tirozin düşük, fenilalanin veya tirozin oranı yüksek saptandı.",
+        "summary": "C3 / C4: Düşük (referans Normal; düşük). Fenilalanin / tirozin oranı: Fenilalanin 1.200 µmol/L; tirozin 55 µmol/L (referans Fenilalanin 30–120 µmol/L; tirozin 30–120 µmol/L; yüksek).",
         "findings": [
-          "Fenilalanin hidroksilaz yolunda blok düşündürür",
-          "Tirozin koşullu esansiyel hale gelir"
+          "C3 / C4: Düşük (referans Normal; düşük)",
+          "Fenilalanin / tirozin oranı: Fenilalanin 1.200 µmol/L; tirozin 55 µmol/L (referans Fenilalanin 30–120 µmol/L; tirozin 30–120 µmol/L; yüksek)"
         ],
         "rows": [
           [
-            "Tirozin",
+            "C3 / C4",
             "Düşük",
             "Normal",
             "Düşük"
           ],
           [
-            "Phe veya Tyr oranı",
-            "Yüksek",
-            "Normal",
-            "Patolojik"
+            "Fenilalanin / tirozin oranı",
+            "Fenilalanin 1.200 µmol/L; tirozin 55 µmol/L",
+            "Fenilalanin 30–120 µmol/L; tirozin 30–120 µmol/L",
+            "Yüksek"
           ]
         ]
       },
       {
         "id": "yenidogan-tarama-testi-tekrari-06",
         "label": "Yenidoğan tarama testi tekrarı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Yenidoğan tarama testi pozitif geldi. Tekrar örnek tanıyı destekledi.",
+        "summary": "Tarama testi: Pozitif (referans Negatif; patolojik). Tekrar örnek: Pozitif (referans Negatif; patolojik).",
         "findings": [
-          "Tarama sonucu klinik şüpheyle uyumludur",
-          "Kesin değerlendirme tedaviyi geciktirmeden yapılır"
+          "Tarama testi: Pozitif (referans Negatif; patolojik)",
+          "Tekrar örnek: Pozitif (referans Negatif; patolojik)"
         ],
         "rows": [
           [
@@ -16978,12 +17075,12 @@ export const cases = [
       {
         "id": "pah-bh4-iliskili-genetik-ve-kofaktor-degerlendirmesi-06",
         "label": "PAH gen analizi ve BH4 yanıt testi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "PAH aktivitesi düşük, BH4 yanıt testi negatif saptandı.",
+        "summary": "PAH aktivitesi: %12 (referans >%50; düşük).",
         "findings": [
-          "Yüksek fenilalaninle birlikte PAH eksikliği klasik PKU paternini gösterir",
-          "BH4 yanıtının olmaması klasik diyet tedavisini öne çıkarır"
+          "PAH aktivitesi: %12 (referans >%50; düşük)",
+          "BH4 yanıt testi: Negatif (referans Pozitif veya negatif; negatif)"
         ],
         "rows": [
           [
@@ -17350,12 +17447,13 @@ export const cases = [
       {
         "id": "plazma-dalli-zincirli-aminoasitler-07",
         "label": "Plazma dallı zincirli aminoasitler",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Lösin, izolösin ve valin düzeyleri belirgin yüksek bulundu.",
+        "summary": "Lösin: Belirgin yüksek (referans Normal; patolojik). İzolösin: Yüksek (referans Normal; patolojik). Valin: Yüksek (referans Normal; patolojik).",
         "findings": [
-          "Dallı zincirli aminoasit yıkımı bozulmuştur",
-          "Lösin yüksekliği nörotoksisiteyle ilişkilidir"
+          "Lösin: Belirgin yüksek (referans Normal; patolojik)",
+          "İzolösin: Yüksek (referans Normal; patolojik)",
+          "Valin: Yüksek (referans Normal; patolojik)"
         ],
         "rows": [
           [
@@ -17381,12 +17479,12 @@ export const cases = [
       {
         "id": "idrar-organik-asit-ketoasit-analizi-07",
         "label": "İdrar organik asit veya ketoasit analizi",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Essential",
-        "summary": "İdrarda dallı zincirli ketoasitler pozitif saptandı.",
+        "summary": "Ketoasitler: Pozitif (referans Negatif; patolojik). Koku: Akçaağaç şurubu benzeri (referans Yok; patolojik).",
         "findings": [
-          "BCKD kompleksi defektini klinik yorumda önemlidir",
-          "Tatlı kokulu idrar bulgusunu açıklar"
+          "Ketoasitler: Pozitif (referans Negatif; patolojik)",
+          "Koku: Akçaağaç şurubu benzeri (referans Yok; patolojik)"
         ],
         "rows": [
           [
@@ -17406,28 +17504,29 @@ export const cases = [
       {
         "id": "kan-gazi-glukoz-ve-elektrolitler-07",
         "label": "Kan gazı, glukoz ve elektrolitler",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Kan gazında metabolik asidoz ve hipoglisemiye eğilim izlendi.",
+        "summary": "pH: 7.28 (referans 7.35–7.45; düşük). Glukoz: 58 mg/dL (referans 70–100 mg/dL; düşük). Anyon açıklığı: Yüksek (referans Normal; patolojik).",
         "findings": [
-          "Akut nörolojik kötüleşme metabolik kriz paternini gösterir",
-          "Elektrolitler yakın izlem gerektirir"
+          "pH: 7.28 (referans 7.35–7.45; düşük)",
+          "Glukoz: 58 mg/dL (referans 70–100 mg/dL; düşük)",
+          "Anyon açıklığı: Yüksek (referans Normal; patolojik)"
         ],
         "rows": [
           [
             "pH",
             "7.28",
-            "7.35-7.45",
+            "7.35–7.45",
             "Düşük"
           ],
           [
             "Glukoz",
             "58 mg/dL",
-            "70-100 mg/dL",
+            "70–100 mg/dL",
             "Düşük"
           ],
           [
-            "Anyon açığı",
+            "Anyon açıklığı",
             "Yüksek",
             "Normal",
             "Patolojik"
@@ -17437,12 +17536,12 @@ export const cases = [
       {
         "id": "bckd-kompleks-genetik-testi-07",
         "label": "BCKD kompleks genetik testi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "BCKD kompleks genleri için doğrulayıcı genetik test planlandı.",
+        "summary": "BCKD gen analizi: Planlandı (referans Gerektiğinde; beklemede). Aile danışmanlığı: Önerildi (referans Risk yoksa gerekmez; gerekli).",
         "findings": [
-          "Tanı ve aile danışmanlığı için yer alır",
-          "Akut tedavi laboratuvar doğrulamasını beklememelidir"
+          "BCKD gen analizi: Planlandı (referans Gerektiğinde; beklemede)",
+          "Aile danışmanlığı: Önerildi (referans Risk yoksa gerekmez; gerekli)"
         ],
         "rows": [
           [
@@ -17809,12 +17908,11 @@ export const cases = [
       {
         "id": "idrarda-homogentisik-asit-08",
         "label": "İdrarda homogentisik asit",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Essential",
-        "summary": "İdrarda homogentisik asit düzeyi yüksek bulundu.",
+        "summary": "Homogentisik asit: Yüksek (referans Düşük veya negatif; patolojik).",
         "findings": [
-          "Tirozin yıkım yolunda homogentizat oksidaz defekti desteklenir",
-          "Kronik okronozis ve artropati riskini açıklar"
+          "Homogentisik asit: Yüksek (referans Düşük veya negatif; patolojik)"
         ],
         "rows": [
           [
@@ -17828,12 +17926,12 @@ export const cases = [
       {
         "id": "idrar-bekletme-alkalinizasyon-gozlemi-08",
         "label": "İdrar bekletme veya alkalinizasyon gözlemi",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Essential",
-        "summary": "Bekletilen idrar örneği koyu kahverengi-siyah renge döndü.",
+        "summary": "İdrar rengi: Bekletince siyahlaştı (referans Değişmez; patolojik). Alkalinizasyon: Koyulaşma arttı (referans Değişmez; yorum gerektirir).",
         "findings": [
-          "Oksidasyonla renk değişimi bu klinik patern için tipiktir",
-          "Basit gözlem tanısal şüpheyi güçlendirir"
+          "İdrar rengi: Bekletince siyahlaştı (referans Değişmez; patolojik)",
+          "Alkalinizasyon: Koyulaşma arttı (referans Değişmez; yorum gerektirir)"
         ],
         "rows": [
           [
@@ -17853,7 +17951,7 @@ export const cases = [
       {
         "id": "eklem-grafisi-08",
         "label": "Eklem grafisi",
-        "type": "Xray",
+        "type": "xray",
         "priority": "Useful",
         "summary": "Eklem grafisinde dejeneratif artropati bulguları izlendi.",
         "findings": [
@@ -17878,12 +17976,11 @@ export const cases = [
       {
         "id": "hgd-gen-analizi-08",
         "label": "HGD gen analizi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "HGD gen analizi için örnek gönderildi.",
+        "summary": "HGD analizi: Planlandı (referans Gerektiğinde; beklemede).",
         "findings": [
-          "Moleküler doğrulama ve aile danışmanlığı sağlar",
-          "Tedavi semptom ve komplikasyon kontrolüne yöneliktir"
+          "HGD analizi: Planlandı (referans Gerektiğinde; beklemede)"
         ],
         "rows": [
           [
@@ -18243,12 +18340,11 @@ export const cases = [
       {
         "id": "tirozinaz-melanin-yolu-genetik-testi-09",
         "label": "Tirozinaz veya melanin yolu genetik testi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Melanin yolu genleri için doğrulayıcı test planlandı.",
+        "summary": "Tirozinaz yolu: Genetik test planlandı (referans Gerektiğinde; beklemede).",
         "findings": [
-          "Alt tip ayrımı ve aile danışmanlığı için yer alır",
-          "Klinik tanı muayene ile güçlüdür"
+          "Tirozinaz yolu: Genetik test planlandı (referans Gerektiğinde; beklemede)"
         ],
         "rows": [
           [
@@ -18262,7 +18358,7 @@ export const cases = [
       {
         "id": "visual-acuity-oct",
         "label": "Görme keskinliği ve optik koherens tomografi",
-        "type": "Clinical",
+        "type": "clinical",
         "priority": "Essential",
         "summary": "Görme keskinliği düşük ve OCT'de foveal hipoplazi paterninde bulgu saptandı.",
         "findings": [
@@ -18293,31 +18389,32 @@ export const cases = [
       {
         "id": "albinism-cbc-platelet",
         "label": "Tam kan sayımı ve trombosit",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Trombosit sayısı ve nötrofil düzeyi normal sınırlarda saptandı.",
+        "summary": "Trombosit: 285.000/mm³ (referans 150.000–450.000/mm³; referans içinde). Mutlak nötrofil: 3.200/mm³ (referans 1.500–8.000/mm³; referans içinde). Hemoglobin: 12.6 g/dL (referans 11.5–15.5 g/dL; referans içinde).",
         "findings": [
-          "Ağır kanama diyatezi veya immün yetmezlik düşündüren laboratuvar bulgusu yoktur",
-          "Bu sonuç sendromik albinizm olasılığını azaltır"
+          "Trombosit: 285.000/mm³ (referans 150.000–450.000/mm³; referans içinde)",
+          "Mutlak nötrofil: 3.200/mm³ (referans 1.500–8.000/mm³; referans içinde)",
+          "Hemoglobin: 12.6 g/dL (referans 11.5–15.5 g/dL; referans içinde)"
         ],
         "rows": [
           [
             "Trombosit",
             "285.000/mm³",
             "150.000–450.000/mm³",
-            "Normal"
+            "Referans içinde"
           ],
           [
-            "Nötrofil",
+            "Mutlak nötrofil",
             "3.200/mm³",
             "1.500–8.000/mm³",
-            "Normal"
+            "Referans içinde"
           ],
           [
             "Hemoglobin",
             "12.6 g/dL",
-            "11.5-15.5 g/dL",
-            "Normal"
+            "11.5–15.5 g/dL",
+            "Referans içinde"
           ]
         ]
       }
@@ -18671,12 +18768,12 @@ export const cases = [
       {
         "id": "plazma-total-homosistein-ve-metiyonin-10",
         "label": "Plazma total homosistein ve metiyonin",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Total homosistein ve metiyonin düzeyleri belirgin yüksek bulundu.",
+        "summary": "Total homosistein: Belirgin yüksek (referans Normal; patolojik). Metiyonin: Yüksek (referans Normal; patolojik).",
         "findings": [
-          "CBS eksikliği homosistein birikimiyle uyumludur",
-          "Tromboz eğilimi bu birikimle ilişkilidir"
+          "Total homosistein: Belirgin yüksek (referans Normal; patolojik)",
+          "Metiyonin: Yüksek (referans Normal; patolojik)"
         ],
         "rows": [
           [
@@ -18696,12 +18793,12 @@ export const cases = [
       {
         "id": "cbs-genetik-testi-ve-b6-yaniti-10",
         "label": "CBS genetik testi ve B6 yanıtı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "CBS gen analizi ve piridoksin yanıt testi planlandı.",
+        "summary": "CBS analizi: Planlandı (referans Gerektiğinde; beklemede). B6 yanıtı: Değerlendirilecek (referans Gerektiğinde; beklemede).",
         "findings": [
-          "B6 yanıtlı formlar tedavi yaklaşımını değiştirir",
-          "Genetik doğrulama aile danışmanlığı sağlar"
+          "CBS analizi: Planlandı (referans Gerektiğinde; beklemede)",
+          "B6 yanıtı: Değerlendirilecek (referans Gerektiğinde; beklemede)"
         ],
         "rows": [
           [
@@ -18721,38 +18818,39 @@ export const cases = [
       {
         "id": "homocysteine-met-panel",
         "label": "Plazma homosistein ve metiyonin düzeyi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Plazma homosistein ve metiyonin düzeyleri belirgin yüksek saptandı.",
+        "summary": "Total homosistein: 126 µmol/L (referans 5–15 µmol/L; yüksek). Metiyonin: 96 µmol/L (referans 10–45 µmol/L; yüksek).",
         "findings": [
-          "Patern sistationin beta sentaz eksikliğini klinik yorumda önemlidir",
-          "Marfan sendromunda homosistein yüksekliği beklenmez"
+          "Total homosistein: 126 µmol/L (referans 5–15 µmol/L; yüksek)",
+          "Metiyonin: 96 µmol/L (referans 10–45 µmol/L; yüksek)",
+          "Vitamin B12: 520 pg/mL (referans 200–900 pg/mL; referans içinde)"
         ],
         "rows": [
           [
             "Total homosistein",
-            "126 µmol veya L",
-            "5-15 µmol veya L",
+            "126 µmol/L",
+            "5–15 µmol/L",
             "Yüksek"
           ],
           [
             "Metiyonin",
-            "96 µmol veya L",
-            "10-45 µmol veya L",
+            "96 µmol/L",
+            "10–45 µmol/L",
             "Yüksek"
           ],
           [
             "Vitamin B12",
             "520 pg/mL",
-            "200-900 pg/mL",
-            "Normal"
+            "200–900 pg/mL",
+            "Referans içinde"
           ]
         ]
       },
       {
         "id": "venous-doppler-hcy",
         "label": "Alt ekstremite venöz Doppler USG",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "priority": "Useful",
         "summary": "Sol popliteal vende parsiyel trombüs izlendi.",
         "findings": [
@@ -18777,32 +18875,32 @@ export const cases = [
       {
         "id": "coagulation-panel-hcy",
         "label": "Koagülasyon paneli",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "PT, aPTT ve INR normal sınırlarda. Tromboz eğilimi rutin koagülasyon testleriyle dışlanmaz.",
+        "summary": "INR: 1.0 (referans 0.8–1.2; referans içinde). PT: 12.6 sn (referans 11–14 sn; referans içinde). aPTT: 30 sn (referans 25–35 sn; referans içinde).",
         "findings": [
-          "INR 1",
-          "PT 12",
-          "APTT 30 sn"
+          "INR: 1.0 (referans 0.8–1.2; referans içinde)",
+          "PT: 12.6 sn (referans 11–14 sn; referans içinde)",
+          "aPTT: 30 sn (referans 25–35 sn; referans içinde)"
         ],
         "rows": [
           [
             "INR",
             "1.0",
-            "0.8-1.2",
-            "Normal"
+            "0.8–1.2",
+            "Referans içinde"
           ],
           [
             "PT",
             "12.6 sn",
-            "11-14 sn",
-            "Normal"
+            "11–14 sn",
+            "Referans içinde"
           ],
           [
-            "APTT",
+            "aPTT",
             "30 sn",
-            "25-35 sn",
-            "Normal"
+            "25–35 sn",
+            "Referans içinde"
           ]
         ]
       }
@@ -19155,24 +19253,24 @@ export const cases = [
       {
         "id": "temel-biyokimya-albumin-ve-elektrolitler-11",
         "label": "Temel biyokimya, albümin ve elektrolitler",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Albümin düşük, elektrolitlerde hafif bozukluk izlendi.",
+        "summary": "Albümin: 3.0 g/dL (referans 3.5–5.0 g/dL; düşük). Potasyum: 3.3 mmol/L (referans 3.5–5.1 mmol/L; düşük).",
         "findings": [
-          "Kronik beslenme yetersizliği laboratuvarla desteklenir",
-          "Ağır böbrek veya karaciğer yetmezliği yoktur"
+          "Albümin: 3.0 g/dL (referans 3.5–5.0 g/dL; düşük)",
+          "Potasyum: 3.3 mmol/L (referans 3.5–5.1 mmol/L; düşük)"
         ],
         "rows": [
           [
             "Albümin",
             "3.0 g/dL",
-            "3.5-5.0 g/dL",
+            "3.5–5.0 g/dL",
             "Düşük"
           ],
           [
             "Potasyum",
             "3.3 mmol/L",
-            "3.5-5.1 mmol/L",
+            "3.5–5.1 mmol/L",
             "Düşük"
           ]
         ]
@@ -19180,31 +19278,32 @@ export const cases = [
       {
         "id": "niacin-metabolite",
         "label": "İdrar N1-metilnikotinamid düzeyi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "İdrarda N1-metilnikotinamid atılımı belirgin düşük saptandı.",
+        "summary": "Kreatinin: 0.4 mg/g kreatinin (referans >1.5 mg/g kreatinin; düşük).",
         "findings": [
-          "Düşük metabolit atılımı niasin eksikliğini klinik yorumda önemlidir",
-          "Normal B12 ve TSH, bilişsel yavaşlama için alternatif metabolik nedenleri geri plana iter"
+          "Kreatinin: 0.4 mg/g kreatinin (referans >1.5 mg/g kreatinin; düşük)",
+          "Vitamin B12: 410 pg/mL (referans 200–900 pg/mL; referans içinde)",
+          "TSH: 2.1 mIU/L (referans 0.4–4.0 mIU/L; referans içinde)"
         ],
         "rows": [
           [
-            "N1-metilnikotinamid",
-            "0.4 mg/gkreatinin",
-            ">1.5 mg/gkreatinin",
+            "Kreatinin",
+            "0.4 mg/g kreatinin",
+            ">1.5 mg/g kreatinin",
             "Düşük"
           ],
           [
             "Vitamin B12",
             "410 pg/mL",
-            "200-900 pg/mL",
-            "Normal"
+            "200–900 pg/mL",
+            "Referans içinde"
           ],
           [
             "TSH",
             "2.1 mIU/L",
-            "0.4-4.0 mIU/L",
-            "Normal"
+            "0.4–4.0 mIU/L",
+            "Referans içinde"
           ]
         ]
       }
@@ -19557,16 +19656,15 @@ export const cases = [
       {
         "id": "plazma-askorbik-asit-duzeyi-12",
         "label": "Plazma askorbik asit düzeyi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Plazma askorbik asit düzeyi belirgin düşük saptanır.",
+        "summary": "C3 / C4: Düşük (referans Normal; düşük).",
         "findings": [
-          "Eksiklik biyokimyasal olarak desteklenmiştir",
-          "Replasman tedavisi beklenen düzelmeyi sağlar"
+          "C3 / C4: Düşük (referans Normal; düşük)"
         ],
         "rows": [
           [
-            "Askorbik asit",
+            "C3 / C4",
             "Düşük",
             "Normal",
             "Düşük"
@@ -19576,22 +19674,22 @@ export const cases = [
       {
         "id": "hemogram-ve-demir-parametreleri-12",
         "label": "Hemogram ve demir parametreleri",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Hemoglobin düşük. Demir depolarında eşlik eden azalma izlendi.",
+        "summary": "Hemoglobin: 10.4 g/dL (referans 12–16 g/dL; düşük). Potasyum: Düşük-normal (referans Normal; sınırda).",
         "findings": [
-          "Kronik kanama ve beslenme eksikliği anemiyi açıklayabilir",
-          "Lökositoz belirgin değildir"
+          "Hemoglobin: 10.4 g/dL (referans 12–16 g/dL; düşük)",
+          "Potasyum: Düşük-normal (referans Normal; sınırda)"
         ],
         "rows": [
           [
             "Hemoglobin",
             "10.4 g/dL",
-            "12-16 g/dL",
+            "12–16 g/dL",
             "Düşük"
           ],
           [
-            "Ferritin",
+            "Potasyum",
             "Düşük-normal",
             "Normal",
             "Sınırda"
@@ -19948,22 +20046,22 @@ export const cases = [
       {
         "id": "ferritin-ve-transferrin-saturasyonu-13",
         "label": "Ferritin ve transferrin satürasyonu",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Ferritin ve transferrin satürasyonu belirgin yüksek bulundu.",
+        "summary": "Ferritin: 980 ng/mL (referans 30–300 ng/mL; yüksek). Transferrin satürasyonu: %72 (referans 20-%45; yüksek).",
         "findings": [
-          "Demir yüklenmesi tanıyı güçlü klinik yorumda önemlidir",
-          "İzole inflamasyon ferritin yüksekliğini tek başına açıklamaz"
+          "Ferritin: 980 ng/mL (referans 30–300 ng/mL; yüksek)",
+          "Transferrin satürasyonu: %72 (referans 20-%45; yüksek)"
         ],
         "rows": [
           [
             "Ferritin",
             "980 ng/mL",
-            "30-300 ng/mL",
+            "30–300 ng/mL",
             "Yüksek"
           ],
           [
-            "Transferrin sat",
+            "Transferrin satürasyonu",
             "%72",
             "20-%45",
             "Yüksek"
@@ -19973,18 +20071,18 @@ export const cases = [
       {
         "id": "karaciger-enzimleri-ve-glukoz-hba1c-13",
         "label": "Karaciğer enzimleri ve glukoz veya HbA1c",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "alt veya AST yüksek, HbA1c diyabet aralığında saptandı.",
+        "summary": "AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek). HbA1c: %8.1 (referans <%5.7; yüksek).",
         "findings": [
-          "Karaciğer ve pankreas tutulumu klinik tabloyu açıklar",
-          "Bronz diyabet paterni desteklenir"
+          "AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)",
+          "HbA1c: %8.1 (referans <%5.7; yüksek)"
         ],
         "rows": [
           [
-            "alt veya AST",
-            "96 veya 88 U/L",
-            "<40 U/L",
+            "AST",
+            "AST 96 U/L; ALT 88 U/L",
+            "AST <40 U/L; ALT <41 U/L",
             "Yüksek"
           ],
           [
@@ -19998,12 +20096,12 @@ export const cases = [
       {
         "id": "hfe-gen-analizi-13",
         "label": "HFE gen analizi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "HFE gen analizi C282Y ilişkili mutasyon açısından pozitif bulundu.",
+        "summary": "HFE C282Y: Pozitif (referans Negatif; patolojik). Aile taraması: Önerildi (referans Risk yoksa gerekmez; gerekli).",
         "findings": [
-          "Primer bu klinik patern objektif olarak gösterilir",
-          "Aile taraması gerekir"
+          "HFE C282Y: Pozitif (referans Negatif; patolojik)",
+          "Aile taraması: Önerildi (referans Risk yoksa gerekmez; gerekli)"
         ],
         "rows": [
           [
@@ -20023,7 +20121,7 @@ export const cases = [
       {
         "id": "karaciger-mr-ultrason-veya-elastografi-13",
         "label": "Karaciğer MR veya ultrason veya elastografi",
-        "type": "Mri",
+        "type": "mri",
         "priority": "Situational",
         "summary": "Karaciğer görüntülemede demir yüklenmesiyle uyumlu sinyal değişikliği izlendi.",
         "findings": [
@@ -20089,7 +20187,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Ferritin yüksek, transferrin satürasyonu yüksek, AST veya alt yüksek."
+            "text": "Ferritin yüksek, transferrin satürasyonu yüksek, AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)."
           },
           {
             "title": "Laboratuvar",
@@ -20336,7 +20434,7 @@ export const cases = [
       ],
       "distinctiveClues": [
         "Olgu bulguları ilgili klinik tablo ile uyumludur",
-        "Ferritin yüksek, transferrin satürasyonu yüksek, AST ve alt yüksekliği destekler",
+        "Ferritin yüksek, transferrin satürasyonu yüksek, AST ve AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek) destekler",
         "HFE ilişkili demir yüklenmesi değerlendirilir",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
@@ -20350,7 +20448,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Ferritin yüksek, transferrin satürasyonu yüksek, AST veya alt yüksek."
+        "text": "Ferritin yüksek, transferrin satürasyonu yüksek, AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)."
       },
       {
         "title": "Laboratuvar",
@@ -20395,25 +20493,26 @@ export const cases = [
       {
         "id": "aclik-lipid-paneli-14",
         "label": "Açlık lipid paneli",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "LDL-kolesterol çok yüksek, trigliserid düzeyi belirgin yüksek değil.",
+        "summary": "Potasyum: 285 mg/dL (referans <100 mg/dL; yüksek). Total kolesterol: 360 mg/dL (referans <200 mg/dL; yüksek).",
         "findings": [
-          "İzole ağır LDL yüksekliği bu klinik paternyi klinik yorumda önemlidir",
-          "Sekonder dislipidemi nedenleri ayrıca dışlanmalıdır"
+          "Potasyum: 285 mg/dL (referans <100 mg/dL; yüksek)",
+          "Trigliserid: 135 mg/dL (referans <150 mg/dL; referans içinde)",
+          "Total kolesterol: 360 mg/dL (referans <200 mg/dL; yüksek)"
         ],
         "rows": [
           [
-            "LDL-K",
+            "Potasyum",
             "285 mg/dL",
             "<100 mg/dL",
-            "Çok yüksek"
+            "Yüksek"
           ],
           [
-            "TG",
+            "Trigliserid",
             "135 mg/dL",
             "<150 mg/dL",
-            "Normal"
+            "Referans içinde"
           ],
           [
             "Total kolesterol",
@@ -20426,12 +20525,11 @@ export const cases = [
       {
         "id": "ldlr-apob-pcsk9-genetik-testi-14",
         "label": "LDLR veya APOB veya PCSK9 genetik testi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "LDLR veya APOB veya PCSK9 paneli için genetik doğrulama planlandı.",
+        "summary": "Genetik panel: Planlandı (referans Gerektiğinde; beklemede).",
         "findings": [
-          "Klinik olarak anlamlı ve aile taramasını yönlendirir",
-          "Negatif sonuç klinik tanıyı tamamen dışlamaz"
+          "Genetik panel: Planlandı (referans Gerektiğinde; beklemede)"
         ],
         "rows": [
           [
@@ -20445,7 +20543,7 @@ export const cases = [
       {
         "id": "kardiyovaskuler-risk-degerlendirmesi-14",
         "label": "12 derivasyon EKG",
-        "type": "Ecg",
+        "type": "ecg",
         "priority": "Situational",
         "summary": "EKG'de akut iskemi bulgusu saptanmadı. Ritim sinüs ve ST-T segmentleri izoelektrik izlendi.",
         "findings": [
@@ -20817,28 +20915,29 @@ export const cases = [
       {
         "id": "lipid-paneli-ve-hdl-duzeyi-15",
         "label": "Lipid paneli ve HDL düzeyi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "HDL-kolesterol çok düşük. Total kolesterol düşük-normal bulundu.",
+        "summary": "Potasyum: 8 mg/dL (referans >40 mg/dL; düşük). Potasyum: 55 mg/dL (referans <100 mg/dL; düşük). Trigliserid: 210 mg/dL (referans <150 mg/dL; yüksek).",
         "findings": [
-          "ABCA1 defektiyle uyumlu HDL oluşum bozukluğu vardır",
-          "Ailesel hiperkolesterolemiden ayrılır"
+          "Potasyum: 8 mg/dL (referans >40 mg/dL; düşük)",
+          "Potasyum: 55 mg/dL (referans <100 mg/dL; düşük)",
+          "Trigliserid: 210 mg/dL (referans <150 mg/dL; yüksek)"
         ],
         "rows": [
           [
-            "HDL-K",
+            "Potasyum",
             "8 mg/dL",
             ">40 mg/dL",
-            "Çok düşük"
+            "Düşük"
           ],
           [
-            "LDL-K",
+            "Potasyum",
             "55 mg/dL",
             "<100 mg/dL",
-            "Düşük-normal"
+            "Düşük"
           ],
           [
-            "TG",
+            "Trigliserid",
             "210 mg/dL",
             "<150 mg/dL",
             "Yüksek"
@@ -20873,12 +20972,11 @@ export const cases = [
       {
         "id": "abca1-gen-analizi-15",
         "label": "ABCA1 gen analizi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "ABCA1 gen analizi için örnek gönderildi.",
+        "summary": "ABCA1 analizi: Planlandı (referans Gerektiğinde; beklemede).",
         "findings": [
-          "Moleküler doğrulama ve aile danışmanlığı sağlar",
-          "Lipid paneli tanısal şüpheyi güçlü klinik yorumda önemlidir"
+          "ABCA1 analizi: Planlandı (referans Gerektiğinde; beklemede)"
         ],
         "rows": [
           [
@@ -21219,7 +21317,7 @@ export const cases = [
     "demographics": "34 yaş erkek, endüstriyel radyografi çalışanı",
     "setting": "Acil servis radyasyon kazası sonrası",
     "chiefComplaint": "Korunmasız radyasyon maruziyeti sonrası bulantı ve sitopeni",
-    "stem": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan yaklaşık 2 saat sonra bulantı, kusma, baş ağrısı, halsizlik ve yaygın yanma hissi geliştiğini ifade eder. Olaydan sonra kısa bir iyilik dönemi olsa da sağ elde lokal eritem ortaya çıkmış ve seri tam kan sayımlarında lenfosit düşüşü başlamıştır. Semptomların kısa sürede başlaması ve erken lenfopeni yüksek doz iyonizan radyasyon maruziyetini düşündürür. Maruziyet dakikalar-saatler içinde gelişen prodromal yakınmalarla uyumlu bulundu",
+    "stem": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan yaklaşıPotasyum: Saptanmadı (referans Saptanmamalı; negatif) saat sonra bulantı, kusma, baş ağrısı, halsizlik ve yaygın yanma hissi geliştiğini ifade eder. Olaydan sonra kısa bir iyilik dönemi olsa da sağ elde lokal eritem ortaya çıkmış ve seri tam kan sayımlarında lenfosit düşüşü başlamıştır. Semptomların kısa sürede başlaması ve erken lenfopeni yüksek doz iyonizan radyasyon maruziyetini düşündürür. Maruziyet dakikalar-saatler içinde gelişen prodromal yakınmalarla uyumlu bulundu",
     "vitals": {
       "TA": "96/60 mmHg",
       "Nabız": "118/dk",
@@ -21241,12 +21339,13 @@ export const cases = [
       {
         "id": "tam-kan-sayimi-seri-izlemi-16",
         "label": "Tam kan sayımı seri izlemi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Seri tam kan sayımında erken lenfopeni ve hafif trombosit düşüklüğü saptandı.",
+        "summary": "Lenfosit: 650/µL (referans 1000–4800/µL; düşük). Trombosit: 130.000/µL (referans 150.000–450.000/µL; düşük). Lökosit: 3.200/µL (referans 4.000–10.000/µL; düşük).",
         "findings": [
-          "Hematopoietik etkilenme bu klinik paternnu klinik yorumda önemlidir",
-          "Erken ve hızlı lenfosit düşüşü hematopoetik etkilenmeyi klinik yorumda önemlidir"
+          "Lenfosit: 650/µL (referans 1000–4800/µL; düşük)",
+          "Trombosit: 130.000/µL (referans 150.000–450.000/µL; düşük)",
+          "Lökosit: 3.200/µL (referans 4.000–10.000/µL; düşük)"
         ],
         "rows": [
           [
@@ -21272,43 +21371,44 @@ export const cases = [
       {
         "id": "elektrolit-bobrek-ve-karaciger-paneli-16",
         "label": "Elektrolit, böbrek ve karaciğer paneli",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Elektrolitlerde hafif bozulma ve dehidratasyon bulguları saptandı. Böbrek fonksiyonu korunmuş.",
+        "summary": "Sodyum: 134 mmol/L (referans 135–145 mmol/L; düşük). AST: AST 58 U/L; ALT 64 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek).",
         "findings": [
-          "Kusma-ishal kaynaklı sıvı kaybı mevcuttur",
-          "Şu an belirgin renal yetmezlik izlenmemiştir"
+          "Sodyum: 134 mmol/L (referans 135–145 mmol/L; düşük)",
+          "Kreatinin: 0.9 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)",
+          "AST: AST 58 U/L; ALT 64 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)"
         ],
         "rows": [
           [
             "Sodyum",
             "134 mmol/L",
-            "135-145 mmol/L",
-            "Hafif düşük"
+            "135–145 mmol/L",
+            "Düşük"
           ],
           [
             "Kreatinin",
             "0.9 mg/dL",
-            "0.6-1.2 mg/dL",
-            "Normal"
+            "0.6–1.2 mg/dL",
+            "Referans içinde"
           ],
           [
-            "alt veya AST",
-            "Hafif yüksek",
-            "<40 U/L",
-            "Hafif yüksek"
+            "AST",
+            "AST 58 U/L; ALT 64 U/L",
+            "AST <40 U/L; ALT <41 U/L",
+            "Yüksek"
           ]
         ]
       },
       {
         "id": "radiation-dosimetry",
         "label": "Bireysel dozimetri kaydı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Dozimetri kaydında tüm vücut eşdeğer doz yaklaşık 2.6 Gy olarak hesaplandı.",
+        "summary": "Tahmini tüm vücut doz: 2.6 Gy (referans <0.1 Gy; yüksek). Lokal el dozu: 6.5 Gy (referans <0.1 Gy; yüksek).",
         "findings": [
-          "Doz düzeyi hematopoetik bu klinik patern paternini gösterir",
-          "Prodromal yakınmaların erken başlaması anlamlı sistemik maruziyeti klinik yorumda önemlidir"
+          "Tahmini tüm vücut doz: 2.6 Gy (referans <0.1 Gy; yüksek)",
+          "Lokal el dozu: 6.5 Gy (referans <0.1 Gy; yüksek)"
         ],
         "rows": [
           [
@@ -21328,22 +21428,22 @@ export const cases = [
       {
         "id": "radiation-survey",
         "label": "Radyasyon survey metre ölçümü",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Hasta yüzeyinde dış kontaminasyon düzeyi arka plan radyasyonuna yakın ölçüldü.",
+        "summary": "Vücut yüzeyi sayım hızı: 0.12 µSv/saat (referans 0.05–0.20 µSv/saat; referans içinde). Potasyum: Saptanmadı (referans Saptanmamalı; negatif).",
         "findings": [
-          "Dış kontaminasyon saptanmaması dekontaminasyon önceliğini azaltır",
-          "Lokal eritem, kontaminasyondan çok lokal radyasyon hasarıyla uyumludur"
+          "Vücut yüzeyi sayım hızı: 0.12 µSv/saat (referans 0.05–0.20 µSv/saat; referans içinde)",
+          "Potasyum: Saptanmadı (referans Saptanmamalı; negatif)"
         ],
         "rows": [
           [
             "Vücut yüzeyi sayım hızı",
-            "0.12 µSv veya saat",
-            "0.05-0.20 µSv veya saat",
-            "Normal"
+            "0.12 µSv/saat",
+            "0.05–0.20 µSv/saat",
+            "Referans içinde"
           ],
           [
-            "Açık yara kontaminasyonu",
+            "Potasyum",
             "Saptanmadı",
             "Saptanmamalı",
             "Negatif"
@@ -21642,7 +21742,7 @@ export const cases = [
         "Isı veya kimyasal temas olmadan gelişen cilt eritemi",
         "Lenfosit düşüşü"
       ],
-      "historySummary": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan yaklaşık 2 saat sonra bulantı, kusma, baş ağrısı, halsizlik ve yaygın yanma hissi geliştiğini ifade eder. Olaydan sonra kısa bir iyilik dönemi olsa da sağ elde lokal eritem ortaya çıkmış ve seri tam kan sayımlarında lenfosit düşüşü başlamıştır. Semptomların kısa sürede başlaması ve erken lenfopeni yüksek doz.",
+      "historySummary": "Hasta kapalı kaynakla çalışırken koruyucu prosedür bozulduktan yaklaşıPotasyum: Saptanmadı (referans Saptanmamalı; negatif) saat sonra bulantı, kusma, baş ağrısı, halsizlik ve yaygın yanma hissi geliştiğini ifade eder. Olaydan sonra kısa bir iyilik dönemi olsa da sağ elde lokal eritem ortaya çıkmış ve seri tam kan sayımlarında lenfosit düşüşü başlamıştır. Semptomların kısa sürede başlaması ve erken lenfopeni yüksek doz.",
       "priorityFocus": "Endüstriyel kaynakla kısa süreli yüksek doz maruziyet karar verdirici klinik ipucudur."
     },
     "evidenceChain": [
@@ -21697,22 +21797,24 @@ export const cases = [
       {
         "id": "hemoliz-paneli-g6pd-001",
         "label": "Hemoliz paneli",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "İndirekt bilirubin ve LDH yüksek, haptoglobin düşük saptandı. Bulgular intravasküler hemolizle uyumludur.",
+        "summary": "Hemoglobin: 8.9 g/dL (referans 13.5–17.5 g/dL; düşük). Direkt bilirubin: 4.2 mg/dL (referans <1.0 mg/dL; yüksek). LDH: 920 U/L (referans 120–240 U/L; yüksek).",
         "findings": [
-          "İndirekt hiperbilirubinemi hemolizi klinik yorumda önemlidir",
-          "Düşük haptoglobin dolaşım içi hemoglobini bağladığını gösterir"
+          "Hemoglobin: 8.9 g/dL (referans 13.5–17.5 g/dL; düşük)",
+          "Direkt bilirubin: 4.2 mg/dL (referans <1.0 mg/dL; yüksek)",
+          "LDH: 920 U/L (referans 120–240 U/L; yüksek)",
+          "Haptoglobin: <10 mg/dL (referans 30–200 mg/dL; düşük)"
         ],
         "rows": [
           [
             "Hemoglobin",
             "8.9 g/dL",
-            "13.5-17.5 g/dL",
+            "13.5–17.5 g/dL",
             "Düşük"
           ],
           [
-            "İndirekt bilirubin",
+            "Direkt bilirubin",
             "4.2 mg/dL",
             "<1.0 mg/dL",
             "Yüksek"
@@ -21720,13 +21822,13 @@ export const cases = [
           [
             "LDH",
             "920 U/L",
-            "120-240 U/L",
+            "120–240 U/L",
             "Yüksek"
           ],
           [
             "Haptoglobin",
             "<10 mg/dL",
-            "30-200 mg/dL",
+            "30–200 mg/dL",
             "Düşük"
           ]
         ]
@@ -21734,7 +21836,7 @@ export const cases = [
       {
         "id": "periferik-yayma-g6pd-001",
         "label": "Periferik yayma",
-        "type": "Microscopy",
+        "type": "microscopy",
         "priority": "Essential",
         "summary": "Heinz cisimcikleri ve ısırılmış eritrositler görüldü.",
         "findings": [
@@ -21765,47 +21867,48 @@ export const cases = [
       {
         "id": "idrar-analizi-hemoglobinuri-001",
         "label": "İdrar analizi",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Useful",
-        "summary": "İdrarda hemoglobin pozitif, eritrosit az saptandı. Bu patern hemoglobinüri paternini gösterir.",
+        "summary": "Hemoglobin: Pozitif (referans Negatif; patolojik).",
         "findings": [
-          "Koyu idrar hemolizle açıklanır",
-          "Çok sayıda eritrosit olmaması primer hematüriyi geri plana iter"
+          "Hemoglobin: Pozitif (referans Negatif; patolojik)",
+          "Eritrosit: 0–2/HPF (referans 0–3/HPF; referans içinde)",
+          "Keton: Negatif (referans Negatif; referans içinde)"
         ],
         "rows": [
           [
-            "İdrar Hb",
+            "Hemoglobin",
             "Pozitif",
             "Negatif",
             "Patolojik"
           ],
           [
             "Eritrosit",
-            "0-2 veya HPF",
-            "0-3 veya HPF",
-            "Normal"
+            "0–2/HPF",
+            "0–3/HPF",
+            "Referans içinde"
           ],
           [
             "Keton",
             "Negatif",
             "Negatif",
-            "Normal"
+            "Referans içinde"
           ]
         ]
       },
       {
         "id": "g6pd-enzim-duzeyi-001",
         "label": "G6PD enzim düzeyi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "Akut atak sonrası kontrol için G6PD düzeyi planlandı. Erken dönemde sonuç yalancı normal olabilir.",
+        "summary": "Potasyum: Kontrolde düşük beklenir (referans Normal aktivite; şüpheli). Retikülosit: %7.8 (referans %0.5–2.5; yüksek).",
         "findings": [
-          "Retikülositoz nedeniyle testin zamanlaması önemlidir",
-          "Aile danışmanlığı ve tetikleyici kaçınması planlanır"
+          "Potasyum: Kontrolde düşük beklenir (referans Normal aktivite; şüpheli)",
+          "Retikülosit: %7.8 (referans %0.5–2.5; yüksek)"
         ],
         "rows": [
           [
-            "G6PD aktivitesi",
+            "Potasyum",
             "Kontrolde düşük beklenir",
             "Normal aktivite",
             "Şüpheli"
@@ -21813,7 +21916,7 @@ export const cases = [
           [
             "Retikülosit",
             "%7.8",
-            "%0.5-2.5",
+            "%0.5–2.5",
             "Yüksek"
           ]
         ]
@@ -22160,7 +22263,7 @@ export const cases = [
       {
         "id": "12-derivasyon-ekg-18",
         "label": "12 derivasyon EKG",
-        "type": "Ecg",
+        "type": "ecg",
         "priority": "Essential",
         "summary": "EKG'de ardışık derivasyonlarda ST elevasyonu izlendi.",
         "findings": [
@@ -22185,16 +22288,16 @@ export const cases = [
       {
         "id": "troponin-ve-kardiyak-biyobelirtecler-18",
         "label": "Troponin ve kardiyak biyobelirteçler",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Troponin belirgin yüksek ve yükselme eğiliminde bulundu.",
+        "summary": "Hs-Troponin I: 6.8 ng/mL (referans <0.04 ng/mL; yüksek). CK-MB: Yüksek (referans Normal; yüksek).",
         "findings": [
-          "Miyokard nekrozu biyobelirteçle desteklenir",
-          "İskemik doku hasarı güçlüdür"
+          "Hs-Troponin I: 6.8 ng/mL (referans <0.04 ng/mL; yüksek)",
+          "CK-MB: Yüksek (referans Normal; yüksek)"
         ],
         "rows": [
           [
-            "Troponin I",
+            "Hs-Troponin I",
             "6.8 ng/mL",
             "<0.04 ng/mL",
             "Yüksek"
@@ -22210,7 +22313,7 @@ export const cases = [
       {
         "id": "koroner-anjiyografi-18",
         "label": "Koroner anjiyografi",
-        "type": "Ct",
+        "type": "ct",
         "priority": "Useful",
         "summary": "Koroner değerlendirmede LAD düzeyinde kritik tıkanıklık saptandı.",
         "findings": [
@@ -22235,7 +22338,7 @@ export const cases = [
       {
         "id": "histoloji-nekroz-tipi-18",
         "label": "Histolojik doku hasarı paterni",
-        "type": "Pathology",
+        "type": "pathology",
         "priority": "Situational",
         "summary": "Miyokard liflerinin hücre konturları korunmuş, sitoplazma eozinofilikleşmiş ve çekirdek boyanması kaybolmuş izlenir.",
         "findings": [
@@ -22616,7 +22719,7 @@ export const cases = [
       {
         "id": "beyin-bt-mr-19",
         "label": "Beyin BT veya MR",
-        "type": "Mri",
+        "type": "mri",
         "priority": "Essential",
         "summary": "Beyin görüntülemede kaviter, santrali sıvılaşmış lezyon izlendi.",
         "findings": [
@@ -22641,12 +22744,12 @@ export const cases = [
       {
         "id": "hemogram-ve-inflamasyon-belirtecleri-19",
         "label": "Hemogram ve inflamasyon belirteçleri",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Lökositoz ve CRP yüksekliği saptandı.",
+        "summary": "Lökosit: 15.800/µL (referans 4.000–10.000/µL; yüksek). CRP: 96 mg/L (referans <5 mg/L; yüksek).",
         "findings": [
-          "Enfeksiyöz süreç ve apse ihtimalini klinik yorumda önemlidir",
-          "Steril dejeneratif süreç daha geri plandadır"
+          "Lökosit: 15.800/µL (referans 4.000–10.000/µL; yüksek)",
+          "CRP: 96 mg/L (referans <5 mg/L; yüksek)"
         ],
         "rows": [
           [
@@ -22666,22 +22769,22 @@ export const cases = [
       {
         "id": "aspirat-kulturu-19",
         "label": "Aspirat kültürü",
-        "type": "Culture",
+        "type": "culture",
         "priority": "Useful",
-        "summary": "Aspirat kültüründe bakteriyel etken üredi.",
+        "summary": "Potasyum: Bakteriyel üreme var (referans Üreme yok; pozitif). Lökosit: Lökosit veya bakteri var (referans Yok; patolojik).",
         "findings": [
-          "Apse tanısı mikrobiyolojik olarak desteklenir",
-          "Antibiyotik hedefe göre düzenlenir"
+          "Potasyum: Bakteriyel üreme var (referans Üreme yok; pozitif)",
+          "Lökosit: Lökosit veya bakteri var (referans Yok; patolojik)"
         ],
         "rows": [
           [
-            "Kültür",
+            "Potasyum",
             "Bakteriyel üreme var",
             "Üreme yok",
             "Pozitif"
           ],
           [
-            "Gram boyama",
+            "Lökosit",
             "Lökosit veya bakteri var",
             "Yok",
             "Patolojik"
@@ -22691,7 +22794,7 @@ export const cases = [
       {
         "id": "patoloji-nekroz-degerlendirmesi-19",
         "label": "Patolojik doku hasarı paterni",
-        "type": "Pathology",
+        "type": "pathology",
         "priority": "Situational",
         "summary": "Beyin dokusunda santrali sıvılaşmış kaviter alan, yoğun nötrofilik inflamasyon ve doku mimarisinde çözülme izlenir.",
         "findings": [
@@ -22756,7 +22859,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "Lökositoz ve CRP yüksek."
+            "text": "Lökositoz ve CRP: 96 mg/L (referans <5 mg/L; yüksek)."
           },
           {
             "title": "Destekleyen bulgu",
@@ -22987,7 +23090,7 @@ export const cases = [
       "distinctiveClues": [
         "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile",
         "Halka tarzı kontrastlanan apse",
-        "Lökositoz ve CRP yüksek",
+        "Lökositoz ve CRP: 96 mg/L (referans <5 mg/L; yüksek)",
         "Klinik mekanizma ile uyumlu ayırıcı tanı paternini destekler"
       ],
       "historySummary": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir. Beyin MR'ında halka tarzı kontrastlanan lezyon görülür. Beyin dokusunda enfeksiyon ve iskemi sonrası ilgili klinik tablo beklenir.",
@@ -23004,7 +23107,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "Lökositoz ve CRP yüksek."
+        "text": "Lökositoz ve CRP: 96 mg/L (referans <5 mg/L; yüksek)."
       },
       {
         "title": "Destekleyen bulgu",
@@ -23045,7 +23148,7 @@ export const cases = [
       {
         "id": "akciger-grafisi-veya-toraks-bt-20",
         "label": "Akciğer grafisi veya toraks BT",
-        "type": "Ct",
+        "type": "ct",
         "priority": "Essential",
         "summary": "Akciğer görüntülemede üst lob ağırlıklı kaviter lezyonlar izlendi.",
         "findings": [
@@ -23070,12 +23173,13 @@ export const cases = [
       {
         "id": "arb-boyama-tb-pcr-ve-kultur-20",
         "label": "ARB boyama, TB PCR ve kültür",
-        "type": "Culture",
+        "type": "culture",
         "priority": "Essential",
-        "summary": "ARB boyama ve TB PCR pozitif. Kültür sonucu bekleniyor.",
+        "summary": "ARB boyama: Pozitif (referans Negatif; pozitif). TB PCR: Pozitif (referans Negatif; pozitif). Potasyum: Beklemede (referans Üreme yok; beklemede).",
         "findings": [
-          "Mikobakteriyel enfeksiyon güçlü şekilde desteklenir",
-          "Kültür duyarlılık için önemlidir"
+          "ARB boyama: Pozitif (referans Negatif; pozitif)",
+          "TB PCR: Pozitif (referans Negatif; pozitif)",
+          "Potasyum: Beklemede (referans Üreme yok; beklemede)"
         ],
         "rows": [
           [
@@ -23091,7 +23195,7 @@ export const cases = [
             "Pozitif"
           ],
           [
-            "Kültür",
+            "Potasyum",
             "Beklemede",
             "Üreme yok",
             "Beklemede"
@@ -23101,7 +23205,7 @@ export const cases = [
       {
         "id": "histopatoloji-20",
         "label": "Histopatoloji",
-        "type": "Pathology",
+        "type": "pathology",
         "priority": "Useful",
         "summary": "Biyopside kazeifiye granülomatöz inflamasyon izlendi.",
         "findings": [
@@ -23126,12 +23230,12 @@ export const cases = [
       {
         "id": "igra-ppd-ve-temas-taramasi-20",
         "label": "IGRA veya PPD ve temas taraması",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "IGRA pozitif. Temaslı taraması başlatıldı.",
+        "summary": "IGRA: Pozitif (referans Negatif; pozitif). Temaslı taraması: Başlatıldı (referans Gerektiğinde; gerekli).",
         "findings": [
-          "Bağışıklık yanıtı enfeksiyonla uyumludur",
-          "Halk sağlığı açısından temaslı izlemi gerekir"
+          "IGRA: Pozitif (referans Negatif; pozitif)",
+          "Temaslı taraması: Başlatıldı (referans Gerektiğinde; gerekli)"
         ],
         "rows": [
           [
@@ -23489,12 +23593,13 @@ export const cases = [
       {
         "id": "d-dimer-ve-arter-kan-gazi-21",
         "label": "D-dimer ve arter kan gazı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "D-dimer yüksek, kan gazında hipoksemi ve respiratuvar alkaloz izlendi.",
+        "summary": "D-dimer: 3200 ng/mL (referans <500 ng/mL; yüksek). PaO₂: 58 mmHg (referans 80–100 mmHg; düşük). PaCO₂: 30 mmHg (referans 35–45 mmHg; düşük).",
         "findings": [
-          "Tromboemboli ihtimalini klinik yorumda önemlidir",
-          "D-dimer tek başına kesin tanı değildir"
+          "D-dimer: 3200 ng/mL (referans <500 ng/mL; yüksek)",
+          "PaO₂: 58 mmHg (referans 80–100 mmHg; düşük)",
+          "PaCO₂: 30 mmHg (referans 35–45 mmHg; düşük)"
         ],
         "rows": [
           [
@@ -23504,15 +23609,15 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "PaO2",
+            "PaO₂",
             "58 mmHg",
-            "80/100 mmHg",
+            "80–100 mmHg",
             "Düşük"
           ],
           [
-            "PCO2",
+            "PaCO₂",
             "30 mmHg",
-            "35/45 mmHg",
+            "35–45 mmHg",
             "Düşük"
           ]
         ]
@@ -23520,7 +23625,7 @@ export const cases = [
       {
         "id": "bt-pulmoner-anjiyografi-21",
         "label": "BT pulmoner anjiyografi",
-        "type": "Ct",
+        "type": "ct",
         "priority": "Essential",
         "summary": "BT pulmoner anjiyografide segmenter pulmoner arter dolum defekti saptandı.",
         "findings": [
@@ -23545,7 +23650,7 @@ export const cases = [
       {
         "id": "alt-ekstremite-venoz-doppler-21",
         "label": "Alt ekstremite venöz Doppler",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "priority": "Useful",
         "summary": "Alt ekstremite Doppler'de popliteal vende trombüs izlendi.",
         "findings": [
@@ -23570,7 +23675,7 @@ export const cases = [
       {
         "id": "ekg-ve-ekokardiyografi-21",
         "label": "EKG ve ekokardiyografi",
-        "type": "Ecg",
+        "type": "ecg",
         "priority": "Situational",
         "summary": "EKG'de sinüs taşikardisi, ekokardiyografide hafif sağ kalp yüklenmesi izlendi.",
         "findings": [
@@ -23936,12 +24041,13 @@ export const cases = [
       {
         "id": "laktat-ve-arter-kan-gazi-22",
         "label": "Laktat ve arter kan gazı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Laktat yüksek ve metabolik asidozla uyumlu kan gazı saptandı.",
+        "summary": "Laktat: 5.1 mmol/L (referans <2 mmol/L; yüksek). pH: 7.28 (referans 7.35–7.45; düşük). HCO₃⁻: 16 mmol/L (referans 22–28 mmol/L; düşük).",
         "findings": [
-          "Doku hipoperfüzyonu vardır",
-          "Sıvı resüsitasyonu ve erken antibiyotik geciktirilmemelidir"
+          "Laktat: 5.1 mmol/L (referans <2 mmol/L; yüksek)",
+          "pH: 7.28 (referans 7.35–7.45; düşük)",
+          "HCO₃⁻: 16 mmol/L (referans 22–28 mmol/L; düşük)"
         ],
         "rows": [
           [
@@ -23953,13 +24059,13 @@ export const cases = [
           [
             "pH",
             "7.28",
-            "7.35-7.45",
+            "7.35–7.45",
             "Düşük"
           ],
           [
-            "Bikarbonat",
+            "HCO₃⁻",
             "16 mmol/L",
-            "22-28 mmol/L",
+            "22–28 mmol/L",
             "Düşük"
           ]
         ]
@@ -23967,16 +24073,16 @@ export const cases = [
       {
         "id": "kan-kulturu-22",
         "label": "Kan kültürü",
-        "type": "Culture",
+        "type": "culture",
         "priority": "Essential",
-        "summary": "İki set kan kültürü alındı. Sonuç bekleniyor.",
+        "summary": "Potasyum: Alındı (referans Alınmalı; beklemede). Üreme: Beklemede (referans Üreme yok; beklemede).",
         "findings": [
-          "Antibiyotik öncesi kültür hedefe yönelik tedavi sağlar",
-          "Tedavi kültür sonucunu beklememelidir"
+          "Potasyum: Alındı (referans Alınmalı; beklemede)",
+          "Üreme: Beklemede (referans Üreme yok; beklemede)"
         ],
         "rows": [
           [
-            "Kan kültürü",
+            "Potasyum",
             "Alındı",
             "Alınmalı",
             "Beklemede"
@@ -23992,12 +24098,13 @@ export const cases = [
       {
         "id": "hemogram-crp-ve-prokalsitonin-22",
         "label": "Hemogram, CRP ve prokalsitonin",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Lökositoz, CRP ve prokalsitonin yüksekliği izlendi.",
+        "summary": "Lökosit: 19.500/µL (referans 4.000–10.000/µL; yüksek). CRP: 180 mg/L (referans <5 mg/L; yüksek). Prokalsitonin: 18 ng/mL (referans <0.5 ng/mL; yüksek).",
         "findings": [
-          "Bakteriyel enfeksiyon ve sistemik inflamasyon desteklenir",
-          "Tek başına odak göstermez"
+          "Lökosit: 19.500/µL (referans 4.000–10.000/µL; yüksek)",
+          "CRP: 180 mg/L (referans <5 mg/L; yüksek)",
+          "Prokalsitonin: 18 ng/mL (referans <0.5 ng/mL; yüksek)"
         ],
         "rows": [
           [
@@ -24023,7 +24130,7 @@ export const cases = [
       {
         "id": "odak-goruntuleme-22",
         "label": "Odak görüntüleme",
-        "type": "Xray",
+        "type": "xray",
         "priority": "Situational",
         "summary": "Akciğer grafisinde sağ alt zon infiltrasyonu izlendi.",
         "findings": [
@@ -24380,12 +24487,13 @@ export const cases = [
       {
         "id": "ana-anti-dsdna-ve-kompleman-duzeyleri-23",
         "label": "SLE serolojisi ve aktivite paneli",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "ANA pozitif, anti-dsDNA yüksek, C3 ve C4 düşük saptanır.",
+        "summary": "ANA: Pozitif (referans Negatif; pozitif). Anti-dsDNA: Pozitif (referans Negatif; pozitif). C3 / C4: Düşük (referans Normal; düşük).",
         "findings": [
-          "İmmün kompleks aktivitesi ve aktif SLE desteklenir",
-          "Böbrek tutulumu açısından risk yüksektir"
+          "ANA: Pozitif (referans Negatif; pozitif)",
+          "Anti-dsDNA: Pozitif (referans Negatif; pozitif)",
+          "C3 / C4: Düşük (referans Normal; düşük)"
         ],
         "rows": [
           [
@@ -24401,7 +24509,7 @@ export const cases = [
             "Pozitif"
           ],
           [
-            "C3 veya C4",
+            "C3 / C4",
             "Düşük",
             "Normal",
             "Düşük"
@@ -24411,12 +24519,13 @@ export const cases = [
       {
         "id": "tam-idrar-analizi-ve-proteinuri-23",
         "label": "Tam idrar analizi ve proteinüri",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Essential",
-        "summary": "Proteinüri ve mikroskopik hematüri saptanır. Renal tutulum değerlendirmesi gerekir.",
+        "summary": "Proteinüri: 1.8 g/gün (referans <150 mg/gün; yüksek). Eritrosit: Mikroskopik hematüri (referans Yok; patolojik). Silendir: Eritrosit silendiri olabilir (referans Yok; destekleyici).",
         "findings": [
-          "Lupus nefriti ihtimalini güçlendirir",
-          "Basit sistit için beklenen patern değildir"
+          "Proteinüri: 1.8 g/gün (referans <150 mg/gün; yüksek)",
+          "Eritrosit: Mikroskopik hematüri (referans Yok; patolojik)",
+          "Silendir: Eritrosit silendiri olabilir (referans Yok; destekleyici)"
         ],
         "rows": [
           [
@@ -24442,12 +24551,12 @@ export const cases = [
       {
         "id": "hemogram-23",
         "label": "Hemogram",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Hemogramda lenfopeni ve hafif anemi izlendi.",
+        "summary": "Lenfosit: 800/µL (referans 1000–4800/µL; düşük). Hemoglobin: 10.8 g/dL (referans 12–16 g/dL; düşük).",
         "findings": [
-          "Sistemik otoimmün aktiviteyle uyumludur",
-          "İzole demir eksikliği tablonun tamamını açıklamaz"
+          "Lenfosit: 800/µL (referans 1000–4800/µL; düşük)",
+          "Hemoglobin: 10.8 g/dL (referans 12–16 g/dL; düşük)"
         ],
         "rows": [
           [
@@ -24459,7 +24568,7 @@ export const cases = [
           [
             "Hemoglobin",
             "10.8 g/dL",
-            "12-16 g/dL",
+            "12–16 g/dL",
             "Düşük"
           ]
         ]
@@ -24467,7 +24576,7 @@ export const cases = [
       {
         "id": "bobrek-biyopsisi-23",
         "label": "Böbrek biyopsisi",
-        "type": "Pathology",
+        "type": "pathology",
         "priority": "Situational",
         "summary": "Böbrek biyopsisi aktif immün kompleks glomerülonefriti göstermek için planlandı.",
         "findings": [
@@ -24834,7 +24943,7 @@ export const cases = [
       {
         "id": "schirmer-testi-24",
         "label": "Schirmer testi",
-        "type": "Clinical",
+        "type": "clinical",
         "priority": "Essential",
         "summary": "Schirmer testinde 5 dakikada gözyaşı 3 mm ölçüldü. Belirgin lakrimal hiposekresyon saptandı.",
         "findings": [
@@ -24853,12 +24962,12 @@ export const cases = [
       {
         "id": "anti-ro-ssa-ve-anti-la-ssb-24",
         "label": "Anti-Ro veya SSA ve Anti-La veya SSB",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Anti-Ro veya SSA pozitif, Anti-La veya SSB pozitif saptandı.",
+        "summary": "Anti-Ro veya SSA: Pozitif (referans Negatif; pozitif). Anti-La veya SSB: Pozitif (referans Negatif; pozitif).",
         "findings": [
-          "Bu klinik patern için serolojik destek vardır",
-          "İzole dehidratasyon bu otoantikorları açıklamaz"
+          "Anti-Ro veya SSA: Pozitif (referans Negatif; pozitif)",
+          "Anti-La veya SSB: Pozitif (referans Negatif; pozitif)"
         ],
         "rows": [
           [
@@ -24878,7 +24987,7 @@ export const cases = [
       {
         "id": "tukuruk-bezi-ultrasonu-veya-biyopsisi-24",
         "label": "Tükürük bezi ultrasonu veya biyopsisi",
-        "type": "Pathology",
+        "type": "pathology",
         "priority": "Useful",
         "summary": "Minör tükürük bezi biyopsisinde fokal lenfositik sialadenit izlendi.",
         "findings": [
@@ -24903,12 +25012,13 @@ export const cases = [
       {
         "id": "idrar-analizi-ayirici-24",
         "label": "İdrar analizi ve renal tutulum taraması",
-        "type": "Urine",
+        "type": "urine",
         "priority": "Useful",
-        "summary": "Proteinüri ve mikroskobik hematüri saptanmadı. Renal tutulum açısından aktif bulgu izlenmedi.",
+        "summary": "Proteinüri: Saptanmadı (referans Saptanmamalı; negatif). Mikroskobik hematüri: Saptanmadı (referans Saptanmamalı; negatif). Kreatinin: 0.9 mg/dL (referans 0.6–1.2 mg/dL; referans içinde).",
         "findings": [
-          "Proteinüri veya hematüri olmaması lupus nefriti gibi renal tutulumla giden ayırıcı tanıları geri plana iter",
-          "Bu klinik paternnda tanıyı esas olarak sicca bulguları, Schirmer testi, otoantikorlar ve tükürük bezi değerlendirmesi klinik yorumda önemlidir"
+          "Proteinüri: Saptanmadı (referans Saptanmamalı; negatif)",
+          "Mikroskobik hematüri: Saptanmadı (referans Saptanmamalı; negatif)",
+          "Kreatinin: 0.9 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)"
         ],
         "rows": [
           [
@@ -24925,9 +25035,9 @@ export const cases = [
           ],
           [
             "Kreatinin",
-            "Normal",
-            "0.6-1.2 mg/dL",
-            "Normal"
+            "0.9 mg/dL",
+            "0.6–1.2 mg/dL",
+            "Referans içinde"
           ]
         ]
       }
@@ -25262,30 +25372,24 @@ export const cases = [
       {
         "id": "rf-anti-ccp-esr-crp-25",
         "label": "RF, anti-CCP, ESR veya CRP",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Anti-CCP pozitif, RF pozitif ve inflamasyon belirteçleri yüksek bulundu.",
+        "summary": "CRP: ESR 68 mm/saat; CRP 42 mg/L (referans ESR <20 mm/saat; CRP <5 mg/L; yüksek).",
         "findings": [
-          "Seropozitif RA güçlü şekilde desteklenir",
-          "Kristal artrit paterni daha geri plandadır"
+          "CRP: Pozitif (referans ESR <20 mm/saat; CRP <5 mg/L; referans içinde)",
+          "CRP: ESR 68 mm/saat; CRP 42 mg/L (referans ESR <20 mm/saat; CRP <5 mg/L; yüksek)"
         ],
         "rows": [
           [
-            "Anti-CCP",
+            "CRP",
             "Pozitif",
-            "Negatif",
-            "Pozitif"
+            "ESR <20 mm/saat; CRP <5 mg/L",
+            "Referans içinde"
           ],
           [
-            "RF",
-            "Pozitif",
-            "Negatif",
-            "Pozitif"
-          ],
-          [
-            "ESR veya CRP",
-            "Yüksek",
-            "Normal",
+            "CRP",
+            "ESR 68 mm/saat; CRP 42 mg/L",
+            "ESR <20 mm/saat; CRP <5 mg/L",
             "Yüksek"
           ]
         ]
@@ -25293,12 +25397,12 @@ export const cases = [
       {
         "id": "el-bilek-grafisi-veya-ultrasonografi-25",
         "label": "El-bilek grafisi veya ultrasonografi",
-        "type": "Xray",
+        "type": "xray",
         "priority": "Essential",
-        "summary": "El-bilek görüntülemesinde sinovit ve erken eroziv değişiklikler izlendi.",
+        "summary": "USG veya grafi: Sinovit veya erozyon (referans Normal; patolojik).",
         "findings": [
-          "Kronik inflamatuvar artrit desteklenir",
-          "Travmatik kırık saptanmadı"
+          "USG veya grafi: Sinovit veya erozyon (referans Normal; patolojik)",
+          "Potasyum: Yok (referans Yok; referans içinde)"
         ],
         "rows": [
           [
@@ -25308,22 +25412,22 @@ export const cases = [
             "Patolojik"
           ],
           [
-            "Kırık",
+            "Potasyum",
             "Yok",
             "Yok",
-            "Sorun yok"
+            "Referans içinde"
           ]
         ]
       },
       {
         "id": "dmard-oncesi-guvenlik-laboratuvari-25",
         "label": "DMARD öncesi güvenlik laboratuvarı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "DMARD öncesi hemogram, karaciğer-böbrek testleri ve hepatit taraması istendi.",
+        "summary": "Hemogram: Başlangıç için alındı (referans Gerekli; tamamlandı). Hepatit taraması: İstendi (referans Tedavi öncesi; beklemede).",
         "findings": [
-          "Tedavi güvenliği için başlangıç değerleri gerekir",
-          "Bu testler tanı koydurmaktan çok tedavi hazırlığı sağlar"
+          "Hemogram: Başlangıç için alındı (referans Gerekli; tamamlandı)",
+          "Hepatit taraması: İstendi (referans Tedavi öncesi; beklemede)"
         ],
         "rows": [
           [
@@ -25684,29 +25788,16 @@ export const cases = [
       {
         "id": "serum-immunoglobulinleri-26",
         "label": "Serum immünoglobulinleri",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "IgG, IgA ve IgM düzeyleri belirgin düşük bulundu.",
+        "summary": "Potasyum: 3.2 mEq/L (referans Yaşa uygun; düşük).",
         "findings": [
-          "Humoral immün yetmezlik desteklenir",
-          "Anne IgG'sinin azaldığı dönem sonrası tablo belirginleşir"
+          "Potasyum: 3.2 mEq/L (referans Yaşa uygun; düşük)"
         ],
         "rows": [
           [
-            "IgG",
-            "Düşük",
-            "Yaşa uygun",
-            "Düşük"
-          ],
-          [
-            "IgA",
-            "Düşük",
-            "Yaşa uygun",
-            "Düşük"
-          ],
-          [
-            "IgM",
-            "Düşük",
+            "Potasyum",
+            "3.2 mEq/L",
             "Yaşa uygun",
             "Düşük"
           ]
@@ -25715,22 +25806,22 @@ export const cases = [
       {
         "id": "b-hucre-akim-sitometrisi-26",
         "label": "B hücre akım sitometrisi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Akım sitometrisinde CD19 ve B hücreleri belirgin azaldı.",
+        "summary": "Potasyum: Çok düşük veya yok (referans Normal; düşük). Lökosit: Korunmuş (referans Normal; yorum gerektirir).",
         "findings": [
-          "B hücre maturasyon defekti bu klinik paternni klinik yorumda önemlidir",
-          "T hücre yetmezliği baskın değildir"
+          "Potasyum: Çok düşük veya yok (referans Normal; düşük)",
+          "Lökosit: Korunmuş (referans Normal; yorum gerektirir)"
         ],
         "rows": [
           [
-            "CD19 ve B hücre",
+            "Potasyum",
             "Çok düşük veya yok",
             "Normal",
             "Düşük"
           ],
           [
-            "T hücre sayısı",
+            "Lökosit",
             "Korunmuş",
             "Normal",
             "Yorum gerektirir"
@@ -25740,12 +25831,11 @@ export const cases = [
       {
         "id": "btk-gen-analizi-26",
         "label": "BTK gen analizi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "BTK gen analizi planlandı.",
+        "summary": "BTK analizi: Planlandı (referans Gerektiğinde; beklemede).",
         "findings": [
-          "X'e bağlı kalıtım ve aile danışmanlığı için gereklidir",
-          "IVIG kararı klinik ve immünolojik bulgularla desteklenir"
+          "BTK analizi: Planlandı (referans Gerektiğinde; beklemede)"
         ],
         "rows": [
           [
@@ -25759,12 +25849,12 @@ export const cases = [
       {
         "id": "vaccine-antibody-titers",
         "label": "Aşıya özgü antikor titreleri",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Tetanos ve pnömokok antikor titreleri koruyucu düzeyin altında saptandı.",
+        "summary": "Anti-tetanos IgG: 0.03 IU/mL (referans >0.1 IU/mL; düşük). Pnömokok serotip antikorları: Koruyucu değil (referans Koruyucu; düşük).",
         "findings": [
-          "Zayıf antikor yanıtı humoral immün yetmezliği klinik yorumda önemlidir",
-          "T hücre aracılı ağır viral veya fungal tablo baskın değildir"
+          "Anti-tetanos IgG: 0.03 IU/mL (referans >0.1 IU/mL; düşük)",
+          "Pnömokok serotip antikorları: Koruyucu değil (referans Koruyucu; düşük)"
         ],
         "rows": [
           [
@@ -26126,12 +26216,12 @@ export const cases = [
       {
         "id": "hiv-ag-ab-testi-ve-hiv-rna-27",
         "label": "HIV Ag veya Ab testi ve HIV RNA",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "HIV Ag veya Ab testi reaktif, HIV RNA pozitif bulundu.",
+        "summary": "HIV Ag veya Ab: Reaktif (referans Non-reaktif; pozitif). HIV RNA: Pozitif veya yüksek (referans Negatif; pozitif).",
         "findings": [
-          "Aktif HIV enfeksiyonu objektif olarak gösterilir",
-          "Yalancı pozitif tarama olasılığı RNA ile azalır"
+          "HIV Ag veya Ab: Reaktif (referans Non-reaktif; pozitif)",
+          "HIV RNA: Pozitif veya yüksek (referans Negatif; pozitif)"
         ],
         "rows": [
           [
@@ -26151,12 +26241,12 @@ export const cases = [
       {
         "id": "cd4-t-lenfosit-sayimi-27",
         "label": "CD4 T lenfosit sayımı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "CD4 T lenfosit sayısı belirgin düşük saptandı.",
+        "summary": "CD4: 120/µL (referans >500/µL; düşük). C3 / C4: Düşük (referans Normal; düşük).",
         "findings": [
-          "Fırsatçı enfeksiyon riski yüksektir",
-          "AIDS tanımına girebilecek immün baskılanma vardır"
+          "CD4: 120/µL (referans >500/µL; düşük)",
+          "C3 / C4: Düşük (referans Normal; düşük)"
         ],
         "rows": [
           [
@@ -26166,7 +26256,7 @@ export const cases = [
             "Düşük"
           ],
           [
-            "CD4 oranı",
+            "C3 / C4",
             "Düşük",
             "Normal",
             "Düşük"
@@ -26176,7 +26266,7 @@ export const cases = [
       {
         "id": "firsatci-enfeksiyon-taramasi-27",
         "label": "Fırsatçı enfeksiyon taraması",
-        "type": "Xray",
+        "type": "xray",
         "priority": "Useful",
         "summary": "Akciğer grafisinde bilateral interstisyel infiltrasyon izlendi.",
         "findings": [
@@ -26201,25 +26291,25 @@ export const cases = [
       {
         "id": "baslangic-tedavi-guvenlik-laboratuvari-27",
         "label": "ART öncesi böbrek-karaciğer ve hepatit paneli",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Situational",
-        "summary": "ART öncesi böbrek-karaciğer fonksiyonu ve hepatit koenfeksiyon taraması istendi.",
+        "summary": "Kreatinin: Kreatinin 0.9 mg/dL; ALT 28 U/L (referans Kreatinin 0.6–1.2 mg/dL; ALT <41 U/L; referans içinde). HBV / HCV taraması: HBsAg negatif; anti-HCV negatif (referans Negatif; negatif).",
         "findings": [
-          "Tedavi seçimi ve güvenliği için gereklidir",
-          "Antiretroviral tedavi geciktirilmeden planlanmalıdır"
+          "Kreatinin: Kreatinin 0.9 mg/dL; ALT 28 U/L (referans Kreatinin 0.6–1.2 mg/dL; ALT <41 U/L; referans içinde)",
+          "HBV / HCV taraması: HBsAg negatif; anti-HCV negatif (referans Negatif; negatif)"
         ],
         "rows": [
           [
-            "Kreatinin veya ALT",
-            "Başlangıç değeri alındı",
-            "Gerekli",
-            "Tamamlandı"
+            "Kreatinin",
+            "Kreatinin 0.9 mg/dL; ALT 28 U/L",
+            "Kreatinin 0.6–1.2 mg/dL; ALT <41 U/L",
+            "Referans içinde"
           ],
           [
-            "HBV veya HCV",
-            "İstendi",
-            "Tedavi öncesi",
-            "Beklemede"
+            "HBV / HCV taraması",
+            "HBsAg negatif; anti-HCV negatif",
+            "Negatif",
+            "Negatif"
           ]
         ]
       }
@@ -26792,7 +26882,7 @@ export const cases = [
     "demographics": "22 yaşında kadın hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Saldırı sonrası ağrı, yoğun kaygı ve ekimozlar",
-    "stem": "Hasta saldırıdan yaklaşık 8 saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler. Aktif dış kanama veya bilinç kaybı yoktur. Hasta muayene sırasında mahremiyet, güvenlik ve ne yapılacağı konusunda bilgilendirilmek istediğini söyler",
+    "stem": "Hasta saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler. Aktif dış kanama veya bilinç kaybı yoktur. Hasta muayene sırasında mahremiyet, güvenlik ve ne yapılacağı konusunda bilgilendirilmek istediğini söyler",
     "vitals": {
       "TA": "118/74 mmHg",
       "Nabız": "104/dk",
@@ -26827,10 +26917,13 @@ export const cases = [
       {
         "id": "tus-spot-sexual-assault-baseline-sti",
         "label": "Başlangıç CYBE paneli",
-        "type": "Lab",
-        "summary": "Başlangıç serolojisi maruziyet sonrası takip için kayıt değeri sağlar. Akut bulaşı tek başına dışlamaz.",
+        "type": "lab",
+        "summary": "HIV Ag veya Ab: Negatif (referans Negatif; negatif). HBsAg: Negatif (referans Negatif; negatif). Anti-HCV: Negatif (referans Negatif; negatif).",
         "findings": [
-          "Serolojik panel profilaksi ve izlem planının temel kayıt noktasını oluşturur"
+          "HIV Ag veya Ab: Negatif (referans Negatif; negatif)",
+          "HBsAg: Negatif (referans Negatif; negatif)",
+          "Anti-HCV: Negatif (referans Negatif; negatif)",
+          "Sifiliz taraması (RPR veya VDRL): Negatif (referans Negatif; negatif)"
         ],
         "priority": "Targeted",
         "subtype": "Seroloji veya başlangıç taraması",
@@ -26839,25 +26932,25 @@ export const cases = [
             "HIV Ag veya Ab",
             "Negatif",
             "Negatif",
-            "Başlangıç kayıt"
+            "Negatif"
           ],
           [
             "HBsAg",
             "Negatif",
             "Negatif",
-            "Başlangıç kayıt"
+            "Negatif"
           ],
           [
             "Anti-HCV",
             "Negatif",
             "Negatif",
-            "Başlangıç kayıt"
+            "Negatif"
           ],
           [
             "Sifiliz taraması (RPR veya VDRL)",
             "Negatif",
             "Negatif",
-            "Başlangıç kayıt"
+            "Negatif"
           ]
         ]
       }
@@ -26912,7 +27005,7 @@ export const cases = [
         "evidenceChain": [
           {
             "title": "Öykü ipucu",
-            "text": "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama açısından zaman duyarlıdır."
+            "text": "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama açısından zaman duyarlıdır."
           },
           {
             "title": "Başvuru",
@@ -26970,7 +27063,7 @@ export const cases = [
             "explanation": "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
               "Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri.",
-              "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
+              "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
               "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
           },
@@ -26978,7 +27071,7 @@ export const cases = [
             "explanation": "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
               "Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri.",
-              "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
+              "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
               "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
           },
@@ -26986,7 +27079,7 @@ export const cases = [
             "explanation": "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
               "Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri.",
-              "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
+              "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
               "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
           }
@@ -27037,17 +27130,17 @@ export const cases = [
       ],
       "distinctiveClues": [
         "Cinsel saldırı sonrası erken başvuru ve delil zinciri gereksinimi",
-        "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama",
+        "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama",
         "Aktif dış kanama veya bilinç kaybı yok",
         "Hasta ne yapılacağı ve mahremiyet konusunda bilgilendirilmek istemektedir"
       ],
-      "historySummary": "Hasta saldırıdan yaklaşık 8 saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler. Aktif dış kanama veya bilinç kaybı yoktur.",
+      "historySummary": "Hasta saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra acile başvurur. Ağrı, yoğun kaygı ve ön kolda morluk tarifler. Aktif dış kanama veya bilinç kaybı yoktur.",
       "priorityFocus": "Cinsel saldırı sonrası erken başvuruda güvenlik, mahremiyet, bilgilendirilmiş onam ve delil zinciri aynı klinik süreç içinde korunmalıdır."
     },
     "evidenceChain": [
       {
         "title": "Öykü ipucu",
-        "text": "Saldırıdan yaklaşık 8 saat sonra başvuru delil toplama açısından zaman duyarlıdır."
+        "text": "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama açısından zaman duyarlıdır."
       },
       {
         "title": "Başvuru",
@@ -27096,30 +27189,32 @@ export const cases = [
       {
         "id": "abg-near-hanging-001",
         "label": "Arter kan gazı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Hipoksemi, hafif respiratuvar asidoz ve laktat yüksekliği saptandı.",
+        "summary": "PaO₂: 54 mmHg (referans 80–100 mmHg; düşük). PaCO₂: 50 mmHg (referans 35–45 mmHg; yüksek). pH: 7.28 (referans 7.35–7.45; düşük).",
         "findings": [
-          "Oksijenizasyon bozukluğu acil havayolu kararını etkiler",
-          "Laktat yüksekliği hipoperfüzyon veya hipoksi kanıtıdır"
+          "PaO₂: 54 mmHg (referans 80–100 mmHg; düşük)",
+          "PaCO₂: 50 mmHg (referans 35–45 mmHg; yüksek)",
+          "pH: 7.28 (referans 7.35–7.45; düşük)",
+          "Laktat: 4.6 mmol/L (referans <2 mmol/L; yüksek)"
         ],
         "rows": [
           [
-            "PaO2",
+            "PaO₂",
             "54 mmHg",
-            "80/100 mmHg",
+            "80–100 mmHg",
             "Düşük"
           ],
           [
-            "PaCO2",
+            "PaCO₂",
             "50 mmHg",
-            "35/45 mmHg",
+            "35–45 mmHg",
             "Yüksek"
           ],
           [
             "pH",
             "7.28",
-            "7.35-7.45",
+            "7.35–7.45",
             "Düşük"
           ],
           [
@@ -27133,12 +27228,13 @@ export const cases = [
       {
         "id": "boyun-bt-anjiyo-001",
         "label": "Boyun BT anjiyografi",
-        "type": "Ct",
+        "type": "ct",
         "priority": "Essential",
-        "summary": "Laringeal yumuşak doku ödemi izlendi. Karotis veya vertebral arter diseksiyonu saptanmadı.",
+        "summary": "Laringeal ödem: Var (referans Yok; patolojik).",
         "findings": [
-          "Havayolu ödemi yakın izlem ve entübasyon hazırlığı gerektirir",
-          "Damar diseksiyonu izlenmemesi antikoagülasyon kararını değiştirir"
+          "Laringeal ödem: Var (referans Yok; patolojik)",
+          "Vasküler diseksiyon: Yok (referans Yok; negatif)",
+          "Potasyum: Yok (referans Yok; negatif)"
         ],
         "rows": [
           [
@@ -27151,20 +27247,20 @@ export const cases = [
             "Vasküler diseksiyon",
             "Yok",
             "Yok",
-            "Dışlandı"
+            "Negatif"
           ],
           [
-            "Servikal kırık",
+            "Potasyum",
             "Yok",
             "Yok",
-            "Dışlandı"
+            "Negatif"
           ]
         ]
       },
       {
         "id": "beyin-bt-near-hanging-001",
         "label": "Kontrastsız beyin BT",
-        "type": "Ct",
+        "type": "ct",
         "priority": "Useful",
         "summary": "Akut kanama izlenmedi. Erken hipoksik hasar BT'de belirgin değil.",
         "findings": [
@@ -27195,7 +27291,7 @@ export const cases = [
       {
         "id": "akciğer-grafisi-aspirasyon-001",
         "label": "Akciğer grafisi",
-        "type": "Xray",
+        "type": "xray",
         "priority": "Situational",
         "summary": "Sağ bazalde hafif infiltrasyon izlendi. Aspirasyon açısından izlem planlandı.",
         "findings": [
@@ -27577,16 +27673,18 @@ export const cases = [
       {
         "id": "cbc-azathioprine-001",
         "label": "Tam kan sayımı",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Ağır nötropeni, anemi ve trombositopeni saptandı. Bulgular azatioprin ilişkili kemik iliği toksisitesiyle uyumludur.",
+        "summary": "Lökosit: 1.100/µL (referans 4.000–10.000/µL; düşük). Mutlak nötrofil: 280/µL (referans >1500/µL; düşük). Hemoglobin: 9.4 g/dL (referans 12–16 g/dL; düşük).",
         "findings": [
-          "Nötropenik ateş mortalite riski taşır",
-          "Trombositopeni kolay morarmayı açıklar"
+          "Lökosit: 1.100/µL (referans 4.000–10.000/µL; düşük)",
+          "Mutlak nötrofil: 280/µL (referans >1500/µL; düşük)",
+          "Hemoglobin: 9.4 g/dL (referans 12–16 g/dL; düşük)",
+          "Trombosit: 42.000/µL (referans 150.000–450.000/µL; düşük)"
         ],
         "rows": [
           [
-            "WBC",
+            "Lökosit",
             "1.100/µL",
             "4.000–10.000/µL",
             "Düşük"
@@ -27595,12 +27693,12 @@ export const cases = [
             "Mutlak nötrofil",
             "280/µL",
             ">1500/µL",
-            "Çok düşük"
+            "Düşük"
           ],
           [
             "Hemoglobin",
             "9.4 g/dL",
-            "12-16 g/dL",
+            "12–16 g/dL",
             "Düşük"
           ],
           [
@@ -27614,12 +27712,13 @@ export const cases = [
       {
         "id": "tpmt-nudt15-genotype-001",
         "label": "TPMT veya NUDT15 genotipleme",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "TPMT düşük aktivite varyantı saptandı. Standart tiopürin dozu bu hastada toksik metabolit birikimine yol açmıştır.",
+        "summary": "TPMT genotipi: Düşük aktivite varyantı (referans Normal aktivite; patolojik). 6-TGN düzeyi: Yüksek (referans Terapötik aralık; toksik).",
         "findings": [
-          "Farmakogenetik sonuç beklenenden ağır toksisiteyi açıklar",
-          "Tedavi dozu ve ilaç seçimi değiştirilmelidir"
+          "TPMT genotipi: Düşük aktivite varyantı (referans Normal aktivite; patolojik)",
+          "NUDT15: Normal (referans Normal; referans içinde)",
+          "6-TGN düzeyi: Yüksek (referans Terapötik aralık; toksik)"
         ],
         "rows": [
           [
@@ -27632,7 +27731,7 @@ export const cases = [
             "NUDT15",
             "Normal",
             "Normal",
-            "Normal"
+            "Referans içinde"
           ],
           [
             "6-TGN düzeyi",
@@ -27645,12 +27744,13 @@ export const cases = [
       {
         "id": "enfeksiyon-paneli-neutropenic-001",
         "label": "Kan kültürleri ve CRP",
-        "type": "Culture",
+        "type": "culture",
         "priority": "Essential",
-        "summary": "CRP yüksek, kan kültürleri ilk değerlendirmede üreme göstermedi.",
+        "summary": "CRP: 86 mg/L (referans <5 mg/L; yüksek). Mutlak nötrofil: 220/mm³ (referans >1500/mm³; kritik düşük).",
         "findings": [
-          "Kültür sonucu beklenmeden nötropenik ateş protokolü başlatılır",
-          "Belirgin odak olmaması ağır nötropeni riskini azaltmaz"
+          "CRP: 86 mg/L (referans <5 mg/L; yüksek)",
+          "Kan kültürü: İlk 24 saatte üreme yok (referans Üreme olmamalı; negatif)",
+          "Mutlak nötrofil: 220/mm³ (referans >1500/mm³; kritik düşük)"
         ],
         "rows": [
           [
@@ -27662,7 +27762,7 @@ export const cases = [
           [
             "Kan kültürü",
             "İlk 24 saatte üreme yok",
-            "Üreme yok",
+            "Üreme olmamalı",
             "Negatif"
           ],
           [
@@ -27676,31 +27776,32 @@ export const cases = [
       {
         "id": "karaciger-bobrek-azathioprine-001",
         "label": "Karaciğer ve böbrek fonksiyonları",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Karaciğer ve böbrek fonksiyonlarında ağır yetmezlik saptanmadı. Toksisite organ yetmezliğiyle açıklanmıyor.",
+        "summary": "ALT: 54 U/L (referans <40 U/L; yüksek).",
         "findings": [
-          "Doz ayarı için organ fonksiyonları gözden geçirilir",
-          "Normal kreatinin, birikimin başlıca nedenini renal yetmezlikten uzaklaştırır"
+          "Kreatinin: 0.8 mg/dL (referans 0.6–1.2 mg/dL; referans içinde)",
+          "ALT: 54 U/L (referans <40 U/L; yüksek)",
+          "Total bilirubin: 0.9 mg/dL (referans <1.2 mg/dL; referans içinde)"
         ],
         "rows": [
           [
             "Kreatinin",
             "0.8 mg/dL",
-            "0.6-1.2 mg/dL",
-            "Normal"
+            "0.6–1.2 mg/dL",
+            "Referans içinde"
           ],
           [
             "ALT",
             "54 U/L",
             "<40 U/L",
-            "Hafif yüksek"
+            "Yüksek"
           ],
           [
             "Total bilirubin",
             "0.9 mg/dL",
             "<1.2 mg/dL",
-            "Normal"
+            "Referans içinde"
           ]
         ]
       }
@@ -28038,7 +28139,7 @@ export const cases = [
     },
     "exam": [
       "Genel durum iyi.",
-      "Sağ ön kolda yaklaşık 4 cm uzunluğunda kesici-delici alet yarası izleniyor.",
+      "Sağ ön kolda yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) cm uzunluğunda kesici-delici alet yarası izleniyor.",
       "Aktif arteriyel kanama yok."
     ],
     "investigations": [],
@@ -28970,31 +29071,33 @@ export const cases = [
       {
         "id": "tus-spot-poisoning-basic-tox",
         "label": "Hedefe yönelik toksikoloji paneli",
-        "type": "Toxicology",
-        "summary": "İdrarda benzodiazepin pozitif. Etanol düzeyi 18 mg/dL.",
+        "type": "toxicology",
+        "summary": "Benzodiazepin taraması: Pozitif (referans Negatif; patolojik). Etanol: 18 mg/dL (referans <10 mg/dL; yüksek).",
         "findings": [
-          "İdrarda benzodiazepin pozitif"
+          "Benzodiazepin taraması: Pozitif (referans Negatif; patolojik)",
+          "Etanol: 18 mg/dL (referans <10 mg/dL; yüksek)",
+          "Parasetamol: Toksik aralıkta değil (referans Toksik olmamalı; referans içinde)"
         ],
         "priority": "Targeted",
         "rows": [
-          {
-            "parameter": "Benzodiazepin taraması",
-            "value": "Pozitif",
-            "reference": "Negatif",
-            "note": "Anormal"
-          },
-          {
-            "parameter": "Etanol",
-            "value": "18 mg/dL",
-            "reference": "<10 mg/dL",
-            "note": "Hafif yüksek"
-          },
-          {
-            "parameter": "Parasetamol",
-            "value": "Toksik aralıkta değil",
-            "reference": "Toksik olmamalı",
-            "note": "Beklenen"
-          }
+          [
+            "Benzodiazepin taraması",
+            "Pozitif",
+            "Negatif",
+            "Patolojik"
+          ],
+          [
+            "Etanol",
+            "18 mg/dL",
+            "<10 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "Parasetamol",
+            "Toksik aralıkta değil",
+            "Toksik olmamalı",
+            "Referans içinde"
+          ]
         ]
       }
     ],
@@ -29447,7 +29550,7 @@ export const cases = [
     "demographics": "19 yaşında kadın hasta",
     "setting": "Acil poliklinik",
     "chiefComplaint": "Fıstıklı tatlı sonrası kaşıntı ve dudak şişliği",
-    "stem": "Hasta fıstık içeren tatlı yedikten yaklaşık 20 dakika sonra yaygın kaşıntı, dudaklarda hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma, kusma veya göğüste sıkışma tariflemez",
+    "stem": "Hasta fıstık içeren tatlı yedikten yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) dakika sonra yaygın kaşıntı, dudaklarda hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma, kusma veya göğüste sıkışma tariflemez",
     "vitals": {
       "TA": "116/72 mmHg",
       "Nabız": "92/dk",
@@ -29640,7 +29743,7 @@ export const cases = [
         "Dudak şişliği hafif",
         "Kusma, göğüste sıkışma ve hipotansiyon tariflenmiyor"
       ],
-      "historySummary": "Hasta fıstık içeren tatlı yedikten yaklaşık 20 dakika sonra yaygın kaşıntı, dudaklarda hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma, kusma veya göğüste sıkışma tariflemez.",
+      "historySummary": "Hasta fıstık içeren tatlı yedikten yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) dakika sonra yaygın kaşıntı, dudaklarda hafif şişlik ve gövdede kabarıklık gelişmesiyle başvurur. Nefes darlığı, bayılma, kusma veya göğüste sıkışma tariflemez.",
       "priorityFocus": "Hipotansiyon, solunum bulgusu veya çoklu sistem tutulumu yoksa izole ürtiker ve hafif anjiyoödem düşünülür."
     },
     "evidenceChain": [
@@ -30835,7 +30938,7 @@ export const cases = [
       {
         "id": "direct-xray-humerus",
         "label": "Direkt humerus grafisi",
-        "type": "Xray",
+        "type": "xray",
         "priority": "Essential",
         "summary": "Sağ humerus orta-distal şaft düzeyinde deplase kırık hattı izleniyor.",
         "findings": [
@@ -30853,7 +30956,7 @@ export const cases = [
       {
         "id": "neurovascular-exam-radial-nerve",
         "label": "Nörovasküler muayene kaydı",
-        "type": "Clinical",
+        "type": "clinical",
         "priority": "Essential",
         "summary": "El bileği ve parmak ekstansiyonu belirgin zayıf. Birinci dorsal web aralığında hipoestezi var.",
         "findings": [
@@ -30883,7 +30986,7 @@ export const cases = [
       {
         "id": "post-immobilization-control-xray",
         "label": "İmmobilizasyon sonrası kontrol grafisi",
-        "type": "Xray",
+        "type": "xray",
         "priority": "Useful",
         "summary": "İmmobilizasyon sonrası kırık hizalanması kabul edilebilir sınırlarda izleniyor.",
         "findings": [
@@ -31523,7 +31626,7 @@ export const cases = [
       {
         "id": "neck-ultrasound",
         "label": "Boyun ultrasonografisi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "priority": "Useful",
         "summary": "Orta hatta hyoid komşuluğunda ince duvarlı kistik lezyon izleniyor. Tiroid dokusu normal yerleşiminde görülüyor.",
         "findings": [
@@ -31829,7 +31932,7 @@ export const cases = [
     "demographics": "29 yaşında kadın hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Altı haftalık adet gecikmesi sonrası sağ kasık ağrısı ve lekelenme",
-    "stem": "Hasta son adet tarihine göre yaklaşık 6 haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır",
+    "stem": "Hasta son adet tarihine göre yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır",
     "vitals": {
       "TA": "96/62 mmHg",
       "Nabız": "112/dk",
@@ -31848,11 +31951,11 @@ export const cases = [
       {
         "id": "pregnancy-test-beta-hcg",
         "label": "Gebelik testi ve beta-hCG",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Serum beta-hCG 2400 mIU/mL saptandı.",
+        "summary": "Serum beta-hCG: 2400 mIU/mL (referans Negatif veya <5 mIU/mL; pozitif).",
         "findings": [
-          "Pozitif beta-hCG erken gebelik varlığını gösterir ve ultrason bulgusuyla birlikte yorumlanır"
+          "Serum beta-hCG: 2400 mIU/mL (referans Negatif veya <5 mIU/mL; pozitif)"
         ],
         "rows": [
           [
@@ -31866,7 +31969,7 @@ export const cases = [
       {
         "id": "transvaginal-ultrasound",
         "label": "Transvajinal ultrasonografi",
-        "type": "Ultrasound",
+        "type": "ultrasound",
         "priority": "Useful",
         "summary": "Uterin kavitede intrauterin gebelik kesesi izlenmiyor. Sağ adneksiyel bölgede heterojen kitle ve az miktarda serbest sıvı mevcut.",
         "findings": [
@@ -32134,7 +32237,7 @@ export const cases = [
         "Batında sağ alt kadranda hassasiyet mevcut",
         "Uterin kavitede intrauterin gebelik kesesi izlenmiyor. Sağ adneksiyel bölgede heterojen kitle ve az miktarda serbest sıvı mevcut"
       ],
-      "historySummary": "Hasta son adet tarihine göre yaklaşık 6 haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır.",
+      "historySummary": "Hasta son adet tarihine göre yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) haftalık gecikme olduğunu, son 12 saatte sağ alt kadranda artan ağrı ve koyu renkli vajinal lekelenme başladığını söyler. Daha önce geçirilmiş pelvik enfeksiyon öyküsü vardır.",
       "priorityFocus": "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik karar verdirici klinik ipucudur."
     },
     "evidenceChain": [
@@ -32189,15 +32292,15 @@ export const cases = [
       {
         "id": "cholinesterase-level",
         "label": "Kolinesteraz aktivitesi",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
-        "summary": "Eritrosit asetilkolinesteraz aktivitesi belirgin düşük saptandı.",
+        "summary": "Potasyum: Belirgin düşük (referans Referans aralıkta; toksidromu klinik yorumda önemlidir).",
         "findings": [
-          "Düşük kolinesteraz aktivitesi organofosfat maruziyetini klinik yorumda önemlidir"
+          "Potasyum: Belirgin düşük (referans Referans aralıkta; toksidromu klinik yorumda önemlidir)"
         ],
         "rows": [
           [
-            "Eritrosit asetilkolinesteraz",
+            "Potasyum",
             "Belirgin düşük",
             "Referans aralıkta",
             "Toksidromu klinik yorumda önemlidir"
@@ -32516,16 +32619,16 @@ export const cases = [
         "id": "tus-spot-vibrio-darkfield",
         "label": "Dışkı mikroskobisi ve kültür",
         "type": "Microbiology",
-        "summary": "Karanlık alan mikroskobunda darting hareketli basiller. Kültürde oksidaz pozitif bakteri üremesi.",
+        "summary": "Potasyum: Karanlık alan mikroskobunda darting hareketli basiller, kültürde oksidaz pozitif bakteri üremesi (referans 3.5–5.1 mEq/L; karar verdirici).",
         "findings": [
-          "Karanlık alan mikroskobunda darting hareketli basiller"
+          "Potasyum: Karanlık alan mikroskobunda darting hareketli basiller, kültürde oksidaz pozitif bakteri üremesi (referans 3.5–5.1 mEq/L; karar verdirici)"
         ],
         "priority": "Useful",
         "rows": [
           [
-            "Dışkı mikroskobisi ve kültür",
+            "Potasyum",
             "Karanlık alan mikroskobunda darting hareketli basiller, kültürde oksidaz pozitif bakteri üremesi",
-            "Beklenen veya karar eşiği",
+            "3.5–5.1 mEq/L",
             "Karar verdirici"
           ]
         ]
@@ -32769,30 +32872,38 @@ export const cases = [
       {
         "id": "tus-spot-cmv-cbc",
         "label": "Tam kan sayımı",
-        "type": "Hematology",
-        "summary": "Tedavinin 14. Gününde WBC 900/mm³ ve nötrofil 500/mm³.",
+        "type": "lab",
+        "summary": "Lökosit: 900/mm³ (referans 4.000–10.000/mm³; düşük). Mutlak nötrofil: 500/mm³ (referans 1.500–7.500/mm³; düşük).",
         "findings": [
-          "Tedavinin 14"
+          "Lökosit: 900/mm³ (referans 4.000–10.000/mm³; düşük)",
+          "Mutlak nötrofil: 500/mm³ (referans 1.500–7.500/mm³; düşük)"
         ],
         "priority": "Useful",
         "rows": [
           [
-            "Tam kan sayımı",
-            "Tedavinin 14. Gününde WBC 900/mm³ ve nötrofil 500/mm³, belirgin lökopeni veya nötropeni",
-            "Beklenen veya karar eşiği",
-            "Karar verdirici"
+            "Lökosit",
+            "900/mm³",
+            "4.000–10.000/mm³",
+            "Düşük"
+          ],
+          [
+            "Mutlak nötrofil",
+            "500/mm³",
+            "1.500–7.500/mm³",
+            "Düşük"
           ]
         ]
       },
       {
         "id": "field-placement-repair-movpjhys",
         "label": "Hedefli laboratuvar",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
         "summary": "Bulanık görme ve tedavisiz HIV öyküsü.",
         "findings": [
           "Bulanık görme ve tedavisiz HIV öyküsü"
-        ]
+        ],
+        "title": "Hedefli laboratuvar"
       }
     ],
     "images": [],
@@ -33253,12 +33364,13 @@ export const cases = [
       {
         "id": "field-placement-repair-movpjiag",
         "label": "Hedefli laboratuvar",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
         "summary": "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma.",
         "findings": [
           "HCV RNA pozitif hastanın operasyonunda perkütan yaralanma"
-        ]
+        ],
+        "title": "Hedefli laboratuvar"
       }
     ],
     "images": [],
@@ -33492,7 +33604,7 @@ export const cases = [
       {
         "id": "ppd-cxr-latent-tb",
         "label": "PPD ve akciğer grafisi",
-        "type": "Clinical",
+        "type": "clinical",
         "summary": "Deri testi ölçümü önceki değerle karşılaştırılmalı. Grafi aktif hastalık bulgusu açısından değerlendirilmelidir.",
         "findings": [
           "PPD ölçümü mutlak değeriyle birlikte önceki ölçüme göre değişim üzerinden yorumlanır",
@@ -34207,10 +34319,10 @@ export const cases = [
       {
         "id": "tus-spot-tryptase",
         "label": "Akut serum triptaz ölçümü",
-        "type": "Lab",
-        "summary": "Akut reaksiyon sonrası alınan örnekte triptaz yüksek saptanır.",
+        "type": "lab",
+        "summary": "Serum triptaz: Yüksek (referans Bazal düzeyle karşılaştırılır; yüksek).",
         "findings": [
-          "Mast hücre granül içeriğinin sistemik dolaşıma geçtiğini gösteren biyokimyasal patern"
+          "Serum triptaz: Yüksek (referans Bazal düzeyle karşılaştırılır; yüksek)"
         ],
         "priority": "Useful",
         "rows": [
@@ -34471,18 +34583,18 @@ export const cases = [
       {
         "id": "tus-spot-renovascular-k",
         "label": "Temel biyokimya",
-        "type": "Lab",
-        "summary": "Serum potasyumu 3.2 mEq/L.",
+        "type": "lab",
+        "summary": "Potasyum: 3.2 mEq/L (referans 3.5–5.1 mEq/L; düşük).",
         "findings": [
-          "Serum potasyumu 3"
+          "Potasyum: 3.2 mEq/L (referans 3.5–5.1 mEq/L; düşük)"
         ],
         "priority": "Useful",
         "rows": [
           [
-            "Temel biyokimya",
-            "Serum potasyumu 3.2 mEq/L, sekonder hiperaldosteronizm açısından hipokalemi",
-            "Beklenen veya karar eşiği",
-            "Karar verdirici"
+            "Potasyum",
+            "3.2 mEq/L",
+            "3.5–5.1 mEq/L",
+            "Düşük"
           ]
         ]
       }
@@ -35405,7 +35517,7 @@ export const cases = [
       {
         "id": "tus-spot-barrett-endoscopy",
         "label": "Üst GİS endoskopisi",
-        "type": "Endoscopy",
+        "type": "endoscopy",
         "summary": "Z çizgisinin proksimaline uzanan kolumnar mukoza izlenir.",
         "findings": [
           "Z çizgisinin proksimaline uzanan kolumnar mukoza izlenir"
@@ -35908,10 +36020,10 @@ export const cases = [
         "id": "tus-spot-ascites-pmn",
         "label": "Tanısal parasentez ve asit sıvısı analizi",
         "type": "Fluid",
-        "summary": "Asit sıvısında PMN 420/mm³ saptanır. Kültür sonucu beklemededir.",
+        "summary": "Asit PMN: 420/mm³ (referans <250/mm³; yüksek). Potasyum: Beklemede (referans Üreme yok; beklemede).",
         "findings": [
-          "PMN sayısı enfekte asit açısından kritik eşik değerin üzerindedir",
-          "Kültür sonucu tedavi başlangıcını geciktirmemelidir"
+          "Asit PMN: 420/mm³ (referans <250/mm³; yüksek)",
+          "Potasyum: Beklemede (referans Üreme yok; beklemede)"
         ],
         "priority": "Useful",
         "rows": [
@@ -35922,7 +36034,7 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "Asit kültürü",
+            "Potasyum",
             "Beklemede",
             "Üreme yok",
             "Beklemede"
@@ -36176,29 +36288,31 @@ export const cases = [
       {
         "id": "adrenal-crisis-electrolytes",
         "label": "Elektrolit ve glukoz paneli",
-        "type": "Lab",
-        "summary": "Na 126 mEq/L, K 5.8 mEq/L, glukoz 58 mg/dL.",
+        "type": "lab",
+        "summary": "Sodyum: 126 mEq/L (referans 135–145 mmol/L; düşük). Potasyum: 5.8 mEq/L (referans 3.5–5.0 mEq/L; yüksek). Glukoz: 58 mg/dL (referans 70–100 mg/dL; düşük).",
         "findings": [
-          "Na 126 mEq/L, K 5"
+          "Sodyum: 126 mEq/L (referans 135–145 mmol/L; düşük)",
+          "Potasyum: 5.8 mEq/L (referans 3.5–5.0 mEq/L; yüksek)",
+          "Glukoz: 58 mg/dL (referans 70–100 mg/dL; düşük)"
         ],
         "priority": "Essential",
         "rows": [
           [
             "Sodyum",
             "126 mEq/L",
-            "135–145",
+            "135–145 mmol/L",
             "Düşük"
           ],
           [
             "Potasyum",
             "5.8 mEq/L",
-            "3.5–5.0",
+            "3.5–5.0 mEq/L",
             "Yüksek"
           ],
           [
             "Glukoz",
             "58 mg/dL",
-            "70–100",
+            "70–100 mg/dL",
             "Düşük"
           ]
         ]
@@ -36441,15 +36555,18 @@ export const cases = [
       {
         "id": "thyrotoxicosis-source-panel",
         "label": "Tirotoksikoz kaynağı değerlendirmesi",
-        "type": "Lab",
-        "summary": "ST4 yüksek, TSH baskılı, TRAb negatif, tiroglobulin düşük ve radyoaktif iyot tutulumu baskılıdır.",
+        "type": "lab",
+        "summary": "Serbest T4: Yüksek (referans Referans aralığı; yüksek). TSH: Baskılı (referans 0.4–4.0 mIU/L; düşük). Potasyum: 3.2 mEq/L (referans Beklenen yüksek veya normal; düşük).",
         "findings": [
-          "Düşük tiroglobulin ve düşük radyoaktif iyot tutulumu eksojen tiroid hormonu alımını klinik yorumda önemlidir"
+          "Serbest T4: Yüksek (referans Referans aralığı; yüksek)",
+          "TSH: Baskılı (referans 0.4–4.0 mIU/L; düşük)",
+          "Potasyum: 3.2 mEq/L (referans Beklenen yüksek veya normal; düşük)",
+          "RAIU: Baskılı (referans Artmış veya normal olabilir; düşük)"
         ],
         "priority": "Essential",
         "rows": [
           [
-            "ST4",
+            "Serbest T4",
             "Yüksek",
             "Referans aralığı",
             "Yüksek"
@@ -36461,8 +36578,8 @@ export const cases = [
             "Düşük"
           ],
           [
-            "Tiroglobulin",
-            "Düşük",
+            "Potasyum",
+            "3.2 mEq/L",
             "Beklenen yüksek veya normal",
             "Düşük"
           ],
@@ -36724,10 +36841,12 @@ export const cases = [
       {
         "id": "pituitary-mri-prolactin-dilution",
         "label": "Hipofiz MR ve prolaktin ölçüm paterni",
-        "type": "Lab",
-        "summary": "Kitle boyutu ile bazal hormon düzeyi uyumsuzsa örnek dilüsyonu ile ölçüm tekrarı klinik yorumu değiştirir.",
+        "type": "lab",
+        "summary": "Hipofiz MR kitle boyutu: 20 mm (referans <10 mm; yüksek). Bazal prolaktin: 48 ng/mL (referans 4.8–23.3 ng/mL; yüksek). Dilüsyon sonrası prolaktin: 2.400 ng/mL (referans 4.8–23.3 ng/mL; yüksek).",
         "findings": [
-          "Makroadenom boyutu ile bazal prolaktin düzeyi arasındaki uyumsuzluk ölçümün dilüsyonla tekrarlanmasını gerektirir"
+          "Hipofiz MR kitle boyutu: 20 mm (referans <10 mm; yüksek)",
+          "Bazal prolaktin: 48 ng/mL (referans 4.8–23.3 ng/mL; yüksek)",
+          "Dilüsyon sonrası prolaktin: 2.400 ng/mL (referans 4.8–23.3 ng/mL; yüksek)"
         ],
         "priority": "Essential",
         "subtype": "Hormon ölçümü ve MR korelasyonu",
@@ -36736,7 +36855,7 @@ export const cases = [
             "Hipofiz MR kitle boyutu",
             "20 mm",
             "<10 mm",
-            "Makroadenom boyutu"
+            "Yüksek"
           ],
           [
             "Bazal prolaktin",
@@ -36748,7 +36867,7 @@ export const cases = [
             "Dilüsyon sonrası prolaktin",
             "2.400 ng/mL",
             "4.8–23.3 ng/mL",
-            "Belirgin yüksek"
+            "Yüksek"
           ]
         ]
       }
@@ -37229,15 +37348,16 @@ export const cases = [
       {
         "id": "cll-cbc-smear-flow",
         "label": "Hemogram, periferik yayma ve immünfenotip",
-        "type": "Lab",
-        "summary": "Mutlak lenfositoz ve olgun küçük lenfositler izlenir. CD5 ve CD23 ve klonal B hücre popülasyonu saptanır.",
+        "type": "lab",
+        "summary": "Mutlak lenfosit: 8.900/mm³ (referans <4.000/mm³; yüksek). Akım sitometri: CD5 ve CD23 ve klonal B hücre (referans Poliklonal dağılım; patolojik).",
         "findings": [
-          "Lenfosit artışı reaktif değil klonal B hücre popülasyonu ile ilişkilidir"
+          "Mutlak lenfosit: 8.900/mm³ (referans <4.000/mm³; yüksek)",
+          "Akım sitometri: CD5 ve CD23 ve klonal B hücre (referans Poliklonal dağılım; patolojik)"
         ],
         "priority": "Essential",
         "rows": [
           [
-            "Mutlak lenfosit sayısı",
+            "Mutlak lenfosit",
             "8.900/mm³",
             "<4.000/mm³",
             "Yüksek"
@@ -37246,7 +37366,7 @@ export const cases = [
             "Akım sitometri",
             "CD5 ve CD23 ve klonal B hücre",
             "Poliklonal dağılım",
-            "Anormal"
+            "Patolojik"
           ]
         ]
       }
@@ -37499,16 +37619,19 @@ export const cases = [
       {
         "id": "aiha-hemolysis-coombs",
         "label": "Hemoliz paneli ve direkt antiglobulin testi",
-        "type": "Lab",
-        "summary": "Retikülositoz, LDH yüksekliği ve indirekt bilirubin artışı vardır. Direkt antiglobulin testinde IgG veya C3 pozitifliği saptanır.",
+        "type": "lab",
+        "summary": "Retikülosit: %5.2 (referans Normal; yüksek). LDH: Yüksek (referans Referans aralığı; yüksek). Direkt bilirubin: Yüksek (referans Referans aralığı; yüksek).",
         "findings": [
-          "Hemoliz laboratuvarı antikor aracılı eritrosit yıkımıyla birlikte değerlendirilir"
+          "Retikülosit: %5.2 (referans Normal; yüksek)",
+          "LDH: Yüksek (referans Referans aralığı; yüksek)",
+          "Direkt bilirubin: Yüksek (referans Referans aralığı; yüksek)",
+          "Direkt Coombs: Pozitif (referans Negatif; pozitif)"
         ],
         "priority": "Essential",
         "rows": [
           [
             "Retikülosit",
-            "Artmış",
+            "%5.2",
             "Normal",
             "Yüksek"
           ],
@@ -37519,7 +37642,7 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "İndirekt bilirubin",
+            "Direkt bilirubin",
             "Yüksek",
             "Referans aralığı",
             "Yüksek"
@@ -38478,9 +38601,10 @@ export const cases = [
         "id": "tus-spot-sle-activity",
         "label": "Otoimmün aktivite paneli",
         "type": "Serology",
-        "summary": "Anti-dsDNA yüksek, C3 ve C4 düşük saptanır.",
+        "summary": "Anti-dsDNA: Yüksek (referans Düşük veya negatif; yüksek). C3 / C4: Düşük (referans Normal; düşük).",
         "findings": [
-          "Otoantikor artışı ile kompleman tüketimi birlikte izlenir"
+          "Anti-dsDNA: Yüksek (referans Düşük veya negatif; yüksek)",
+          "C3 / C4: Düşük (referans Normal; düşük)"
         ],
         "priority": "Useful",
         "rows": [
@@ -38491,13 +38615,7 @@ export const cases = [
             "Yüksek"
           ],
           [
-            "C3",
-            "Düşük",
-            "Normal",
-            "Düşük"
-          ],
-          [
-            "C4",
+            "C3 / C4",
             "Düşük",
             "Normal",
             "Düşük"
@@ -38754,20 +38872,22 @@ export const cases = [
       {
         "id": "membranous-biopsy-pla2r",
         "label": "Böbrek biyopsisi ve serum otoantikor paneli",
-        "type": "Pathology",
-        "summary": "Objektif veriler proteinüri düzeyi, serum albümini, otoantikor durumu ve biyopsi paterni birlikte değerlendirilerek yorumlanır.",
+        "type": "pathology",
+        "summary": "Kreatinin: 6.2 g/g kreatinin (referans <0.15 g/g kreatinin; yüksek). Serum albümin: 2.4 g/dL (referans 3.5–5.0 g/dL; düşük). Serum anti-PLA2R: Pozitif (referans Negatif; pozitif).",
         "findings": [
-          "Nefrotik düzeyde proteinüri ve hipoalbüminemi klinik şiddeti gösterir",
-          "Biyopsi ve otoantikor sonucu aynı klinik örüntü içinde yorumlanmalıdır"
+          "Kreatinin: 6.2 g/g kreatinin (referans <0.15 g/g kreatinin; yüksek)",
+          "Serum albümin: 2.4 g/dL (referans 3.5–5.0 g/dL; düşük)",
+          "Serum anti-PLA2R: Pozitif (referans Negatif; pozitif)",
+          "Biyopsi paterni: Kapiller duvar kalınlaşması ve granüler immün birikim (referans Normal glomerül yapısı; patolojik)"
         ],
         "priority": "Essential",
         "subtype": "Histopatoloji ve otoantikor",
         "rows": [
           [
-            "Proteinüri",
-            "6.2 g/gkreatinin",
-            "<0.15 g/gkreatinin",
-            "Nefrotik düzey"
+            "Kreatinin",
+            "6.2 g/g kreatinin",
+            "<0.15 g/g kreatinin",
+            "Yüksek"
           ],
           [
             "Serum albümin",
@@ -38785,19 +38905,20 @@ export const cases = [
             "Biyopsi paterni",
             "Kapiller duvar kalınlaşması ve granüler immün birikim",
             "Normal glomerül yapısı",
-            "Anormal"
+            "Patolojik"
           ]
         ]
       },
       {
         "id": "field-placement-repair-movpjlde",
         "label": "Hedefli laboratuvar",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Useful",
         "summary": "Nefrotik düzeyde proteinüri.",
         "findings": [
           "Nefrotik düzeyde proteinüri"
-        ]
+        ],
+        "title": "Hedefli laboratuvar"
       }
     ],
     "images": [],
@@ -39282,24 +39403,25 @@ export const cases = [
       {
         "id": "hyperkalemia-ecg-electrolyte",
         "label": "EKG ve elektrolit paneli",
-        "type": "Ecg",
-        "summary": "K⁺ 7.1 mEq/L.",
+        "type": "ecg",
+        "summary": "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek). EKG: Sivri T, P dalga basıklaşması, QRS genişlemesi (referans Normal iletim; kritik yüksek).",
         "findings": [
-          "EKG değişikliği olan hiperpotasemide ilk hedef kardiyak membran stabilizasyonudur"
+          "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)",
+          "EKG: Sivri T, P dalga basıklaşması, QRS genişlemesi (referans Normal iletim; kritik yüksek)"
         ],
         "priority": "Essential",
         "rows": [
           [
             "Potasyum",
             "7.1 mEq/L",
-            "3.5–5.0",
+            "3.5–5.0 mEq/L",
             "Yüksek"
           ],
           [
             "EKG",
             "Sivri T, P dalga basıklaşması, QRS genişlemesi",
             "Normal iletim",
-            "Kritik"
+            "Kritik yüksek"
           ]
         ]
       }
@@ -39358,7 +39480,7 @@ export const cases = [
         "evidenceChain": [
           {
             "title": "Laboratuvar",
-            "text": "Potasyum 7."
+            "text": "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)."
           },
           {
             "title": "EKG paterni",
@@ -39374,7 +39496,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "K, 7."
+            "text": "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)."
           }
         ],
         "clinicalPearls": [
@@ -39416,7 +39538,7 @@ export const cases = [
             "explanation": "Hemodiyaliz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
               "K⁺ 7.",
-              "Potasyum 7.",
+              "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek).",
               "Hemodiyaliz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
           },
@@ -39424,7 +39546,7 @@ export const cases = [
             "explanation": "İnsülin ve dekstroz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
               "K⁺ 7.",
-              "Potasyum 7.",
+              "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek).",
               "İnsülin ve dekstroz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
           },
@@ -39432,7 +39554,7 @@ export const cases = [
             "explanation": "Sodyum polistiren sülfonat benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
             "comparisonPoints": [
               "K⁺ 7.",
-              "Potasyum 7.",
+              "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek).",
               "Sodyum polistiren sülfonat yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
             ]
           }
@@ -39480,18 +39602,18 @@ export const cases = [
         "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "K, 7",
-        "Potasyum 7",
+        "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)",
+        "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)",
         "EKG'de sivri T dalgaları ve P dalga basıklaşması vardır",
         "QRS genişlemesi kardiyak membran instabilitesini"
       ],
       "historySummary": "Kronik böbrek hastalığı olan 54 yaşındaki erkek hasta halsizlik, kas güçsüzlüğü ve bulantı ile acile başvurur. Klinik tablo potasyum yüksekliğine bağlı kardiyak membran instabilitesi açısından acil değerlendirilir.",
-      "priorityFocus": "K, 7."
+      "priorityFocus": "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)."
     },
     "evidenceChain": [
       {
         "title": "Laboratuvar",
-        "text": "Potasyum 7."
+        "text": "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)."
       },
       {
         "title": "EKG paterni",
@@ -39507,7 +39629,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "K, 7."
+        "text": "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)."
       }
     ]
   },
@@ -40715,16 +40837,16 @@ export const cases = [
         "id": "tus-spot-hsv-csf",
         "label": "BOS incelemesi",
         "type": "Csf",
-        "summary": "Hafif protein artışı ve lenfositik pleositoz. Bakteriyel pürülan menenjit paterni yok.",
+        "summary": "Protein: Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit paterni yok (referans 15–45 mg/dL; karar verdirici).",
         "findings": [
-          "Hafif protein artışı ve lenfositik pleositoz"
+          "Protein: Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit paterni yok (referans 15–45 mg/dL; karar verdirici)"
         ],
         "priority": "Useful",
         "rows": [
           [
-            "BOS incelemesi",
+            "Protein",
             "Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit paterni yok",
-            "Beklenen veya karar eşiği",
+            "15–45 mg/dL",
             "Karar verdirici"
           ]
         ]
@@ -42132,7 +42254,7 @@ export const cases = [
       {
         "id": "concussion-noncontrast-ct",
         "label": "Kontrastsız kraniyal BT",
-        "type": "Ct",
+        "type": "ct",
         "summary": "Akut intrakraniyal kanama, kitle etkisi veya kafatası kırığı saptanmaz.",
         "findings": [
           "Normal BT, geçici klinik fonksiyon bozukluğu ile birlikte konküzyonu klinik yorumda önemlidir"
@@ -42386,11 +42508,11 @@ export const cases = [
       {
         "id": "erythema-toxicum-wright",
         "label": "Püstül materyali Wright boyası",
-        "type": "Pathology",
-        "summary": "Püstül içeriği sitolojik hücre baskınlığı ve kültür sonucu birlikte değerlendirilir.",
+        "type": "pathology",
+        "summary": "Wright boyası: Bol eozinofil (referans Eozinofil baskınlığı beklenmez; eozinofilik yanıt).",
         "findings": [
-          "Eozinofil baskınlığı enfeksiyon dışı neonatal döküntü paternlerinde görülebilir",
-          "Kültürde üreme olmaması bakteriyel püstüler enfeksiyonu desteklemez"
+          "Wright boyası: Bol eozinofil (referans Eozinofil baskınlığı beklenmez; eozinofilik yanıt)",
+          "Potasyum: Üreme olmadı (referans Üreme yok; negatif)"
         ],
         "priority": "Useful",
         "subtype": "Sitolojik inceleme",
@@ -42402,7 +42524,7 @@ export const cases = [
             "Eozinofilik yanıt"
           ],
           [
-            "Bakteriyel kültür",
+            "Potasyum",
             "Üreme olmadı",
             "Üreme yok",
             "Negatif"
@@ -42649,12 +42771,14 @@ export const cases = [
       {
         "id": "acute-hepatitis-serology-panel",
         "label": "Akut hepatit serolojisi paneli",
-        "type": "Lab",
+        "type": "lab",
         "priority": "Essential",
-        "summary": "Anti-HAV IgM pozitif. HBsAg, anti-HBc IgM ve anti-HCV negatif saptanır.",
+        "summary": "Anti-HAV IgM: Pozitif (referans Negatif; pozitif). Anti-HAV IgG: Erken veya pozitif olabilir (referans Negatif veya pozitif; pozitif).",
         "findings": [
-          "HAV IgM pozitifliği yakın dönem hepatit A maruziyetini düşündürür",
-          "HBV ve HCV göstergeleri bu panelde negatif izlenir"
+          "Anti-HAV IgM: Pozitif (referans Negatif; pozitif)",
+          "Anti-HAV IgG: Erken veya pozitif olabilir (referans Negatif veya pozitif; pozitif)",
+          "HBsAg: Negatif (referans Negatif; negatif)",
+          "Anti-HBc IgM: Negatif (referans Negatif; negatif)"
         ],
         "rows": [
           [
@@ -42667,7 +42791,7 @@ export const cases = [
             "Anti-HAV IgG",
             "Erken veya pozitif olabilir",
             "Negatif veya pozitif",
-            "Yorum gerektirir"
+            "Pozitif"
           ],
           [
             "HBsAg",
@@ -42939,18 +43063,25 @@ export const cases = [
       {
         "id": "tus-spot-trma-cbc",
         "label": "Tam kan sayımı",
-        "type": "Hematology",
-        "summary": "Hemoglobin 5 g/dL, MCV 110 fL. Ağır makrositer anemi.",
+        "type": "lab",
+        "summary": "Hemoglobin: 5.0 g/dL (referans 12–16 g/dL; kritik düşük). MCV: 110 fL (referans 80–100 fL; yüksek).",
         "findings": [
-          "Hemoglobin 5 g/dL, MCV 110 fL"
+          "Hemoglobin: 5.0 g/dL (referans 12–16 g/dL; kritik düşük)",
+          "MCV: 110 fL (referans 80–100 fL; yüksek)"
         ],
         "priority": "Useful",
         "rows": [
           [
-            "Tam kan sayımı",
-            "Hemoglobin 5 g/dL, MCV 110 fL, ağır makrositer anemi",
-            "Beklenen veya karar eşiği",
-            "Karar verdirici"
+            "Hemoglobin",
+            "5.0 g/dL",
+            "12–16 g/dL",
+            "Kritik düşük"
+          ],
+          [
+            "MCV",
+            "110 fL",
+            "80–100 fL",
+            "Yüksek"
           ]
         ]
       }
@@ -43912,10 +44043,12 @@ export const cases = [
       {
         "id": "neonatal-anemia-hemolysis-panel",
         "label": "Yenidoğan anemi ön değerlendirmesi",
-        "type": "Lab",
-        "summary": "Hemoglobin 6.2 g/dL.",
+        "type": "lab",
+        "summary": "Hemoglobin: 6.2 g/dL (referans 14–22 g/dL; düşük).",
         "findings": [
-          "Hemoliz bulgusu olmadan ağır anemi fetal-maternal kan kaybını düşündürür"
+          "Hemoglobin: 6.2 g/dL (referans 14–22 g/dL; düşük)",
+          "Direkt Coombs: Negatif (referans Negatif; referans içinde)",
+          "Periferik yayma: Belirgin hemoliz bulgusu yok (referans Hemoliz saptanmamalı; referans içinde)"
         ],
         "priority": "Useful",
         "rows": [
@@ -43929,23 +44062,25 @@ export const cases = [
             "Direkt Coombs",
             "Negatif",
             "Negatif",
-            "Normal"
+            "Referans içinde"
           ],
           [
             "Periferik yayma",
             "Belirgin hemoliz bulgusu yok",
             "Hemoliz saptanmamalı",
-            "Beklenen"
+            "Referans içinde"
           ]
         ]
       },
       {
         "id": "kleihauer-betke",
         "label": "Maternal kanda fetal eritrosit taraması",
-        "type": "Lab",
-        "summary": "Maternal periferik yaymada HbF içeren fetal eritrositler gösterilir.",
+        "type": "lab",
+        "summary": "Maternal kanda fetal eritrosit: Pozitif (referans Negatif; pozitif).",
         "findings": [
-          "Anne dolaşımında fetal eritrosit varlığı objektif olarak gösterilir"
+          "Maternal kanda fetal eritrosit: Pozitif (referans Negatif; pozitif)",
+          "Yenidoğan direkt Coombs: Negatif (referans Negatif; referans içinde)",
+          "Periferik yayma: Belirgin hemoliz bulgusu yok (referans Hemoliz saptanmamalı; referans içinde)"
         ],
         "priority": "Essential",
         "rows": [
@@ -43959,13 +44094,13 @@ export const cases = [
             "Yenidoğan direkt Coombs",
             "Negatif",
             "Negatif",
-            "Normal"
+            "Referans içinde"
           ],
           [
             "Periferik yayma",
             "Belirgin hemoliz bulgusu yok",
             "Hemoliz saptanmamalı",
-            "Beklenen"
+            "Referans içinde"
           ]
         ]
       }
@@ -44019,7 +44154,7 @@ export const cases = [
         "whyWrong": {
           "Rh alloimmünizasyonuna bağlı hemolitik hastalık": "Rh alloimmünizasyonunda Coombs pozitifliği ve hemoliz bulguları beklenir. Bu olguda hemoliz kanıtı baskın değildir.",
           "Konjenital aplastik anemi": "Aplastik tabloda kemik iliği üretim yetersizliği ve sıklıkla ek sitopeniler beklenir. Ani doğum sonrası hipoperfüzyon-kan kaybı paterni daha güçlüdür. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
-          "Fizyolojik yenidoğan anemisi": "Fizyolojik anemi doğum anında Hb 6.2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok."
+          "Fizyolojik yenidoğan anemisi": "Fizyolojik anemi doğum anında Hemoglobin: 6.2 g/dL (referans 14–22 g/dL; düşük).2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok."
         },
         "evidenceChain": [
           {
@@ -44105,7 +44240,7 @@ export const cases = [
             ]
           },
           "Fizyolojik yenidoğan anemisi": {
-            "explanation": "Fizyolojik anemi doğum anında Hb 6.2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
+            "explanation": "Fizyolojik anemi doğum anında Hemoglobin: 6.2 g/dL (referans 14–22 g/dL; düşük).2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
             "comparisonPoints": [
               "Yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
               "Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
@@ -44202,7 +44337,7 @@ export const cases = [
     "demographics": "Yenidoğan",
     "setting": "Yenidoğan yoğun bakım",
     "chiefComplaint": "Doğumda resüsitasyon ve asidoz",
-    "stem": "Term yenidoğan doğumda resüsitasyon gerektirir ve sonraki saatlerde letarji, tonus azalması ve zayıf emme gelişir. pH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir",
+    "stem": "Term yenidoğan doğumda resüsitasyon gerektirir ve sonraki saatlerde letarji, tonus azalması ve zayıf emme gelişir. pH: 6.90 (referans 7.25–7.35; düşük) ve Baz açığı: 15 mmol/L (referans <12 mmol/L; kritik yüksek) ağır metabolik asidozu gösterir",
     "vitals": {
       "TA": "55/32 mmHg",
       "Nabız": "96/dk",
@@ -44218,10 +44353,11 @@ export const cases = [
       {
         "id": "cord-gas-hie",
         "label": "Kord kan gazı",
-        "type": "Lab",
-        "summary": "pH 6.90 ve baz açığı -15 mmol/L.",
+        "type": "lab",
+        "summary": "pH: 6.90 (referans 7.25–7.35; düşük). Baz açığı: 15 mmol/L (referans <12 mmol/L; kritik yüksek).",
         "findings": [
-          "Ağır asidoz ve ensefalopati bulguları nöroprotektif tedavi penceresi açısından kritik eşik oluşturur"
+          "pH: 6.90 (referans 7.25–7.35; düşük)",
+          "Baz açığı: 15 mmol/L (referans <12 mmol/L; kritik yüksek)"
         ],
         "priority": "Essential",
         "rows": [
@@ -44234,8 +44370,8 @@ export const cases = [
           [
             "Baz açığı",
             "15 mmol/L",
-            ">-12 mmol/L",
-            "Kritik"
+            "<12 mmol/L",
+            "Kritik yüksek"
           ]
         ]
       }
@@ -44302,7 +44438,7 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "pH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir."
+            "text": "pH: 6.90 (referans 7.25–7.35; düşük) ve Baz açığı: 15 mmol/L (referans <12 mmol/L; kritik yüksek) ağır metabolik asidozu gösterir."
           },
           {
             "title": "İlk yaklaşım",
@@ -44416,7 +44552,7 @@ export const cases = [
         "Term bebekte perinatal asfiksi ve ağır asidoz HİE riskini artırır",
         "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi düşündürür",
         "Letarji, tonus azalması ve zayıf emme ensefalopati bulgularıdır",
-        "pH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir"
+        "pH: 6.90 (referans 7.25–7.35; düşük) ve Baz açığı: 15 mmol/L (referans <12 mmol/L; kritik yüksek) ağır metabolik asidozu gösterir"
       ],
       "historySummary": "Doğumda resüsitasyon, ağır metabolik asidoz ve ensefalopati bulguları orta-ağır hipoksik iskemik ensefalopatiyi düşündürür.",
       "priorityFocus": "Term bebekte perinatal asfiksi, ağır asidoz, orta-ağır HİE hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir."
@@ -44432,7 +44568,7 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "pH 6.9 ve baz açığı -15 ağır metabolik asidozu gösterir."
+        "text": "pH: 6.90 (referans 7.25–7.35; düşük) ve Baz açığı: 15 mmol/L (referans <12 mmol/L; kritik yüksek) ağır metabolik asidozu gösterir."
       },
       {
         "title": "İlk yaklaşım",

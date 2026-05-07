@@ -4,6 +4,7 @@ import { cases } from '../data/cases.js';
 import { attachQuestionDedupeFields, createAIQuestionId, validateQuestionNovelty } from './questionDeduplication.js';
 import { validateBranchFit } from './aiBranchRules.js';
 import { detectInvalidMeasurementFormat, sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
+import { buildLabFindingItems, buildLabSummary, formatLabRows, validateLabResultCompleteness } from './clinicalValueFormatters.js';
 import { repairAIQuestionQuality, validateAIQuestionQuality } from './aiQuestionQualityGate.js';
 import {
   isChiefComplaint,
@@ -69,6 +70,23 @@ const DIRECT_LEAK_PHRASES = [
   'diagnosis:',
 ];
 
+
+const LAB_LIKE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
+const INCOMPLETE_LAB_PATTERN = /\b(l[öo]kosit|wbc|crp|troponin|d[- ]?dimer|sodyum|na\+?|potasyum|k\+?|glukoz|kreatinin|ast|alt|hb|hemoglobin|trombosit|laktat|pH)\s*[:=,]?\s*(?:yüksek|düşük|pozitif|artmış|\d+(?:[.,]\d+)?)(?!\s*(?:\/mm³|\/µL|mg\/dL|mg\/L|g\/dL|mmol\/L|mEq\/L|ng\/mL|ng\/L|U\/L|fL|%))/iu;
+const LAB_KEYWORD_PATTERN = /\b(laboratuvar|hemogram|tam kan|biyokimya|elektrolit|kan gazı|crp|troponin|d[- ]?dimer|seroloji|kültür|idrar|bos|glukoz|kreatinin|lökosit|wbc)\b/iu;
+
+function isLabInvestigation(item = {}) {
+  const type = String(item?.type || '').toLowerCase();
+  const text = `${item?.label || ''} ${item?.title || ''} ${item?.summary || ''}`;
+  return LAB_LIKE_TYPES.has(type) || LAB_KEYWORD_PATTERN.test(text);
+}
+
+function normalizeLabInvestigationRows(item = {}, correctText = '') {
+  const rawRows = item?.rows || item?.result?.values || [];
+  const rows = Array.isArray(rawRows) ? formatLabRows(rawRows, `${item?.label || ''} ${item?.summary || ''} ${correctText}`) : [];
+  return rows;
+}
+
 function stripAnswerLeak(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
   const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -123,6 +141,19 @@ export function validateAIQuestionPayload(payload = {}) {
     errors.push('ölçüm/vital formatı tıbbi standarda uygun değil');
   }
 
+  (payload.findings?.investigations || payload.investigations || []).forEach((item, index) => {
+    const rows = normalizeLabInvestigationRows(item, correctText);
+    const itemText = JSON.stringify(item || {});
+    if (isLabInvestigation(item)) {
+      if (!rows.length && INCOMPLETE_LAB_PATTERN.test(itemText)) {
+        errors.push(`laboratuvar sonucu rows ile yapılandırılmalı: tetkik ${index + 1}`);
+      }
+      const completeness = validateLabResultCompleteness(rows);
+      if (!completeness.ok) errors.push(...completeness.errors.map((error) => `tetkik ${index + 1}: ${error}`));
+    }
+    if (INCOMPLETE_LAB_PATTERN.test(itemText)) errors.push(`eksik laboratuvar formatı: tetkik ${index + 1}`);
+  });
+
   DIRECT_LEAK_PHRASES.forEach((phrase) => {
     if (normalizeQuestionText(investigationText).includes(normalizeQuestionText(phrase))) {
       warnings.push(`tetkik yorumunda direkt tanı dili var: ${phrase}`);
@@ -166,10 +197,14 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
 }
 
 function normalizeInvestigation(item, index, correctText) {
-  const summary = normalizeClinicalDatumText(stripAnswerLeak(item?.summary || item?.result || '', correctText));
-  const findings = Array.isArray(item?.findings)
-    ? item.findings.map((finding) => normalizeClinicalDatumText(stripAnswerLeak(finding, correctText)).replace(/[.]$/u, ''))
-    : [];
+  const rows = normalizeLabInvestigationRows(item, correctText);
+  const rowSummary = rows.length ? buildLabSummary(rows, 3) : '';
+  const summary = rowSummary || normalizeClinicalDatumText(stripAnswerLeak(item?.summary || item?.result || '', correctText));
+  const findings = rows.length
+    ? buildLabFindingItems(rows, 4)
+    : Array.isArray(item?.findings)
+      ? item.findings.map((finding) => normalizeClinicalDatumText(stripAnswerLeak(finding, correctText)).replace(/[.]$/u, ''))
+      : [];
   return {
     id: item?.id || `remote-ai-investigation-${index + 1}`,
     label: normalizeClinicalDatumText(item?.label || item?.name || `Tetkik ${index + 1}`).replace(/[.]$/u, ''),
@@ -177,6 +212,7 @@ function normalizeInvestigation(item, index, correctText) {
     priority: item?.priority || (index === 0 ? 'essential' : 'useful'),
     summary,
     findings,
+    rows,
     interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte değerlendirilir.',
   };
 }

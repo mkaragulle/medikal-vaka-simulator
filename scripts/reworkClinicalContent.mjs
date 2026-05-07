@@ -372,7 +372,7 @@ if (pneu) {
   })) stats.explicitInvestigationCorrected += 1;
   if (setInvestigation(pneu, 'labs', {
     priority: 'useful',
-    summary: 'Lökosit 16.700/mm³ ve CRP 132 mg/L saptanır; sistemik inflamasyonu ve yatış/şiddet değerlendirmesini destekler.',
+    summary: 'Lökosit ve CRP sonuçları birim ve referans aralığıyla sistemik inflamasyonu destekler.',
     findings: ['Lökositoz ve yüksek CRP', 'Böbrek fonksiyonu antibiyotik dozu için değerlendirilir']
   })) stats.explicitInvestigationCorrected += 1;
   if (setInvestigation(pneu, 'culture', {
@@ -391,7 +391,7 @@ if (dka) {
   if (setInvestigation(dka, 'urine', {
     priority: 'essential',
     label: 'Serum/idrarda keton ve glukoz değerlendirmesi',
-    summary: 'Glukoz yüksek, keton pozitif saptanır; hiperglisemi ve ketozis tanısal üçlüyü tamamlar.'
+    summary: 'Glukoz ve keton sonuçları birim/referans bilgisiyle hiperglisemi ve ketozis paternini tamamlar.'
   })) stats.explicitInvestigationCorrected += 1;
   if (setInvestigation(dka, 'trigger-screening-dka', {
     priority: 'situational',

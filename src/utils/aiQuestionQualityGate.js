@@ -21,6 +21,7 @@ import {
   repairMisplacedClinicalData,
   validateClinicalFieldPlacement,
 } from './clinicalFieldPlacement.js';
+import { buildLabFindingItems, buildLabSummary, formatLabRows, validateLabResultCompleteness } from './clinicalValueFormatters.js';
 
 export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'öğrenme hedefi',
@@ -338,10 +339,32 @@ function buildNaturalHistorySummary(question = {}) {
     .trim();
 }
 
+
+const AI_LAB_LIKE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
+const AI_LAB_KEYWORD_PATTERN = /\b(laboratuvar|hemogram|tam kan|biyokimya|elektrolit|kan gazı|crp|troponin|d[- ]?dimer|seroloji|kültür|idrar|bos|glukoz|kreatinin|lökosit|wbc)\b/iu;
+const AI_INCOMPLETE_LAB_PATTERN = /\b(l[öo]kosit|wbc|crp|troponin|d[- ]?dimer|sodyum|na\+?|potasyum|k\+?|glukoz|kreatinin|ast|alt|hb|hemoglobin|trombosit|laktat|pH)\s*[:=,]?\s*(?:yüksek|düşük|pozitif|artmış|\d+(?:[.,]\d+)?)(?!\s*(?:\/mm³|\/µL|mg\/dL|mg\/L|g\/dL|mmol\/L|mEq\/L|ng\/mL|ng\/L|U\/L|fL|%))/iu;
+
+function isAILabInvestigation(investigation = {}) {
+  const type = String(investigation.type || '').toLowerCase();
+  const text = `${investigation.label || ''} ${investigation.title || ''} ${investigation.summary || ''}`;
+  return AI_LAB_LIKE_TYPES.has(type) || AI_LAB_KEYWORD_PATTERN.test(text);
+}
+
 function normalizeInvestigationQuality(investigation = {}, index = 0) {
   const label = sanitizeMeasurementText(investigation.label || investigation.name || `Hedefli tetkik ${index + 1}`);
+  const rows = formatLabRows(investigation.rows || investigation.result?.values || [], `${label} ${investigation.summary || ''}`);
+  if (rows.length) {
+    return {
+      ...investigation,
+      label,
+      rows,
+      summary: buildLabSummary(rows, 3),
+      findings: buildLabFindingItems(rows, 4),
+      interpretation: cleanSentence(investigation.interpretation || 'Sonuç, öykü ve muayene bulgularıyla birlikte değerlendirilir.'),
+    };
+  }
   const rawSummary = cleanSentence(investigation.summary || investigation.result || investigation.interpretation || '');
-  const rawFindings = filterQualityItems(investigation.findings || investigation.rows || [], 4);
+  const rawFindings = filterQualityItems(investigation.findings || [], 4);
   if (rawSummary && !hasForbiddenPhrase(rawSummary)) {
     return {
       ...investigation,
@@ -575,6 +598,17 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
     if (detectTemplateLikeFeedback(text)) errors.push(`şablon feedback: ${String(text).slice(0, 90)}`);
     if (detectExcessivePunctuation(text)) warnings.push(`noktalama kontrolü: ${String(text).slice(0, 90)}`);
   });
+  (question.investigations || question.findings?.investigations || []).forEach((investigation, index) => {
+    const rows = formatLabRows(investigation.rows || investigation.result?.values || [], `${investigation.label || ''} ${investigation.summary || ''}`);
+    const text = JSON.stringify(investigation || {});
+    if (isAILabInvestigation(investigation)) {
+      if (!rows.length && AI_INCOMPLETE_LAB_PATTERN.test(text)) errors.push(`laboratuvar sonucu rows ile yapılandırılmalı: tetkik ${index + 1}`);
+      const completeness = validateLabResultCompleteness(rows);
+      if (!completeness.ok) errors.push(...completeness.errors.map((error) => `tetkik ${index + 1}: ${error}`));
+    }
+    if (AI_INCOMPLETE_LAB_PATTERN.test(text)) errors.push(`eksik laboratuvar formatı: tetkik ${index + 1}`);
+  });
+
   const editorial = validateGeneratedCaseText(question);
   if (!editorial.ok) errors.push(...editorial.errors.map((error) => `editorial:${error}`));
   warnings.push(...editorial.warnings);

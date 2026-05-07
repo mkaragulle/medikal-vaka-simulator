@@ -262,7 +262,7 @@ function rowHasQuantitativeSignal(row = {}) {
   if (reference && !isGenericQualitativeReference(reference)) return true;
   if (!/\d/.test(joined)) return false;
 
-  return /(mg\/dL|g\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|uIU\/mL|mmHg|\/mm³|\/mm3|x10\^3\/µL|%|sn|mm|cm|mL|L|IU|titre|titer)/i.test(joined);
+  return /(mg\/dL|mg\/L|g\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL(?:\s*FEU)?|ng\/L|pg\/mL|µIU\/mL|uIU\/mL|mmHg|cmH₂O|\/mm³|\/mm3|x10\^3\/µL|%|sn|ms|mm|cm|mL|L|IU|titre|titer)/i.test(joined);
 }
 
 function shouldRenderParameterTable(rows = [], itemType = '') {
@@ -278,7 +278,7 @@ function isLongResultValue(value = '') {
 }
 
 function hasMeasurementUnitSignal(value = '') {
-  return /(mg\/dL|g\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|uIU\/mL|mmHg|\/mm³|\/mm3|x10\^3\/µL|%|sn|mm|cm|mL|L|IU|titre|titer)/i.test(String(value || ''));
+  return /(mg\/dL|mg\/L|g\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL(?:\s*FEU)?|ng\/L|pg\/mL|µIU\/mL|uIU\/mL|mmHg|cmH₂O|\/mm³|\/mm3|x10\^3\/µL|%|sn|ms|mm|cm|mL|L|IU|titre|titer)/i.test(String(value || ''));
 }
 
 function hasMeaningfulReference(row = {}) {
@@ -312,7 +312,7 @@ function getResultTableVariant(rows = [], itemType = '', hardMode = false) {
   const isClassicNumericLab = PARAMETER_TABLE_TYPES.has(itemType) && quantitativeRatio >= 0.5 && textDominantRatio < 0.5 && !hasLongCell;
 
   if (!meaningfulReferenceRows) return 'two-column';
-  if (!isClassicNumericLab || hardMode || textDominantRatio >= 0.4 || hasLongCell) {
+  if (!isClassicNumericLab || textDominantRatio >= 0.4 || hasLongCell) {
     return 'three-column';
   }
   return 'four-column';

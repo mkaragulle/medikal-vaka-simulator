@@ -158,7 +158,7 @@ const seq = {
       ['Glukoz düştüğünde dekstroz ekleyerek insülini ketoasidoz kapanana kadar sürdür', 'Tedavi hedefi yalnız glukoz düşürmek değil anyon açığını kapatmaktır.'],
       ['Enfeksiyon, insülin atlanması veya miyokart iskemisi gibi tetikleyicileri araştır', 'Tetikleyici düzeltilmezse DKA tekrarlayabilir veya dirençli seyreder.'],
     ], [
-      ['Potasyum düşükken insülin infüzyonuna hemen başla', 'Hipokalemi düzeltilmeden insülin verilmesi yaşamı tehdit eden aritmiye yol açabilir.', true],
+      ['Hipokalemi varken insülin infüzyonuna hemen başla', 'Hipokalemi düzeltilmeden insülin verilmesi yaşamı tehdit eden aritmiye yol açabilir.', true],
       ['Asidoz düzelmeden sadece subkutan kısa etkili insülinle taburcu et', 'Orta-ağır DKA yakın izlem ve intravenöz tedavi gerektirir.', true],
       ['Tedavi başarısını yalnız kapiller glukoz normalleşmesiyle değerlendir', 'DKA’da anyon açığı ve ketozisin düzelmesi izlenmelidir.', false],
     ]);

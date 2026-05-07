@@ -183,7 +183,7 @@ const report = {
     'evidenceChain başlığını metne göre Başvuru/Fizik muayene/Laboratuvar/Görüntüleme olarak yeniden sınıflandırma',
     'patientIntro.distinctiveClues içindeki inline etiketleri kaldırma',
     'riskContext içindeki objektif tetkik ve muayene verilerini dışlama',
-    'Lökosit 16 gibi eksik laboratuvar ifadelerini birimli formata çevirme',
+    'Eksik lökosit ifadelerini birimli formata çevirme',
     'tekrarlı/aynı veri içeren ipuçlarını dedupe etme',
     'AI payload validasyonunda alan karışması varsa kullanıcıya göstermeden reddetme veya repair etme',
   ],

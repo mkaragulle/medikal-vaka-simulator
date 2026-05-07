@@ -1,4 +1,5 @@
 import { neutralModalityTitle, stripDiagnosticLeakage, toSentence } from './displayText.js';
+import { formatLabRows } from './clinicalValueFormatters.js';
 
 export const priorityMeta = {
   essential: {
@@ -649,13 +650,21 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
   return 'Objektif sonuç';
 }
 
-function sanitizeRows(rows = []) {
-  return rows.map((row) => {
+function sanitizeRows(rows = [], clinicalCase = {}) {
+  const preparedRows = rows.map((row) => {
     const [parameter, value, reference, note] = Array.isArray(row)
       ? row
       : [row.parameter, row.value, row.reference, row.note || row.interpretation];
-    return [parameter, value, reference || '—', neutralRowNote(note, parameter, value, reference)];
+    return [parameter, value, reference || '—', note || neutralRowNote(note, parameter, value, reference)];
   });
+
+  const repairedRows = formatLabRows(preparedRows, caseContext(clinicalCase));
+  return repairedRows.map(([parameter, value, reference, note]) => [
+    parameter,
+    value,
+    reference || '—',
+    note || neutralRowNote(note, parameter, value, reference),
+  ]);
 }
 
 function normalizeInvestigation(item, clinicalCase, index = 0) {
@@ -688,7 +697,7 @@ function normalizeInvestigation(item, clinicalCase, index = 0) {
       title: item.result?.title || item.label || label,
       summary: item.summary ? sanitizeSummary(item.summary, clinicalCase) : syntheticSummaryFor(item, clinicalCase),
       interpretation: item.clinicalMeaning || item.result?.interpretation || clinicalMeaningFor({ ...item, label, type, priority }, clinicalCase),
-      rows: sanitizeRows(item.result?.values || item.rows || syntheticRowsFor(item, clinicalCase)),
+      rows: sanitizeRows(item.result?.values || item.rows || syntheticRowsFor(item, clinicalCase), clinicalCase),
       images,
       caption: item.result?.caption || '',
     },
@@ -727,7 +736,7 @@ function normalizeSynthetic(item, clinicalCase, index = 0) {
       title: item.label,
       summary: syntheticSummaryFor(item, clinicalCase),
       interpretation: item.clinicalMeaning || clinicalMeaningFor({ ...item, priority }, clinicalCase),
-      rows: sanitizeRows(rows),
+      rows: sanitizeRows(rows, clinicalCase),
       images,
     },
     inlineFeedback: item.inlineFeedback || getOrderFeedback({ ...item, priority }),
