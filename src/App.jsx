@@ -1035,7 +1035,7 @@ function App() {
           onHome={resetExamToHome}
         />
       ) : examState?.active && selectedCase ? (
-        <section className="page-shell exam-active-shell">
+        <section className="page-shell exam-active-shell stable-case-page-shell">
           <section className="exam-banner-card card-surface">
             <div>
               <h2>{examState.title}</h2>
@@ -1065,7 +1065,7 @@ function App() {
           </div>
         </section>
       ) : selectedBranch && selectedCase ? (
-        <section className={`page-shell case-page-shell case-page-bottomrail ${branchRouteTransition?.phase === 'reveal' ? 'branch-route-reveal' : ''}`.trim()}>
+        <section className="page-shell case-page-shell case-page-bottomrail stable-case-page-shell">
           <section className="content-layout full-width-content-layout">
             <section className="branch-header-v8 card-surface">
               <div className="branch-header-v8-main">

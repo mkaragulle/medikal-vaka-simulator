@@ -5,14 +5,12 @@ import { branches } from '../data/branches.js';
 import { shuffleArray } from './randomize.js';
 import {
   buildRecentQuestionContext,
-  makeQuestionSignature,
-  makeQuestionTopicSignature,
   makeSeedSignature,
   normalizeQuestionText,
   stableHash,
 } from './aiQuestionHistory.js';
 import { validateAIQuestionCase } from './validateAIQuestion.js';
-import { createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
+import { attachQuestionDedupeFields, createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
 import {
   branchFilterMatchesSeed,
   buildBranchAwareStem,
@@ -565,9 +563,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     },
   };
 
-  question.aiMeta.signature = makeQuestionSignature(question);
-  question.aiMeta.topicSignature = makeQuestionTopicSignature(question);
-  question.generationSignature = question.aiMeta.signature;
+  attachQuestionDedupeFields(question);
   return question;
 }
 

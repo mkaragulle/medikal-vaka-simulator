@@ -3616,3 +3616,165 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-mode-v10,
   background: rgba(15, 35, 46, .75) !important;
   border-color: rgba(148, 163, 184, .18) !important;
 }
+
+/* --------------------------------------------------------------------------
+   V115 — Stable case viewport layout / first render equals final render
+   --------------------------------------------------------------------------
+   The case page previously inherited several competing page-shell and qbank
+   width rules, then received a temporary branch-route-reveal class during the
+   branch transition. On wide screens this could make the first rendered case
+   frame look wider than the final settled layout. This layer fixes the case
+   viewport geometry with one deterministic shell width, one deterministic
+   qbank grid, stable scrollbar gutter, and no transform/width animation on the
+   case layout itself.
+   -------------------------------------------------------------------------- */
+html:not(.klinikiq-auth-lock) {
+  scrollbar-gutter: stable;
+}
+
+body:not(.klinikiq-auth-lock) {
+  overflow-y: scroll;
+}
+
+body:not(.klinikiq-auth-lock) .page-shell.stable-case-page-shell,
+body:not(.klinikiq-auth-lock) .page-shell.case-page-shell,
+body:not(.klinikiq-auth-lock) .page-shell.exam-active-shell {
+  width: min(calc(100% - clamp(36px, 14vw, 240px)), 1480px) !important;
+  max-width: 1480px !important;
+  min-width: 0 !important;
+  margin-inline: auto !important;
+  padding-inline: 0 !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+  will-change: auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .page-shell.case-page-shell.case-page-bottomrail,
+body:not(.klinikiq-auth-lock) .page-shell.case-page-shell.stable-case-page-shell {
+  display: block !important;
+}
+
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .content-layout,
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .full-width-content-layout,
+body:not(.klinikiq-auth-lock) .case-page-shell .content-layout,
+body:not(.klinikiq-auth-lock) .case-page-shell .full-width-content-layout {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 20px !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .branch-header-v8,
+body:not(.klinikiq-auth-lock) .case-page-shell .branch-header-v8,
+body:not(.klinikiq-auth-lock) .exam-active-shell .exam-banner-card {
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .case-route-transition,
+body:not(.klinikiq-auth-lock) .case-page-shell .case-route-transition,
+body:not(.klinikiq-auth-lock) .exam-active-shell .case-route-transition,
+body:not(.klinikiq-auth-lock) .branch-route-reveal {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  will-change: auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell .professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .exam-active-shell .professional-qbank-shell {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) clamp(390px, 28vw, 430px) !important;
+  gap: clamp(20px, 1.4vw, 24px) !important;
+  align-items: start !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+  will-change: auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .qbank-main-column,
+body:not(.klinikiq-auth-lock) .case-page-shell .qbank-main-column,
+body:not(.klinikiq-auth-lock) .exam-active-shell .qbank-main-column {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .professional-right-column,
+body:not(.klinikiq-auth-lock) .case-page-shell .professional-right-column,
+body:not(.klinikiq-auth-lock) .exam-active-shell .professional-right-column {
+  width: 100% !important;
+  min-width: 0 !important;
+  position: sticky !important;
+  top: calc(var(--kiq-topbar-height, 72px) + 22px) !important;
+  align-self: start !important;
+  transition: none !important;
+  animation: none !important;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+@media (max-width: 1320px) {
+  body:not(.klinikiq-auth-lock) .stable-case-page-shell .professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .case-page-shell .professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .exam-active-shell .professional-qbank-shell {
+    grid-template-columns: minmax(0, 1fr) 390px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .page-shell.stable-case-page-shell,
+  body:not(.klinikiq-auth-lock) .page-shell.case-page-shell,
+  body:not(.klinikiq-auth-lock) .page-shell.exam-active-shell {
+    width: min(calc(100% - 28px), 100%) !important;
+    max-width: none !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .stable-case-page-shell .professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .case-page-shell .professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .exam-active-shell .professional-qbank-shell {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .stable-case-page-shell .professional-right-column,
+  body:not(.klinikiq-auth-lock) .case-page-shell .professional-right-column,
+  body:not(.klinikiq-auth-lock) .exam-active-shell .professional-right-column {
+    position: static !important;
+    top: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body:not(.klinikiq-auth-lock) .page-shell.stable-case-page-shell,
+  body:not(.klinikiq-auth-lock) .page-shell.case-page-shell,
+  body:not(.klinikiq-auth-lock) .page-shell.exam-active-shell {
+    width: min(calc(100% - 20px), 100%) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  body:not(.klinikiq-auth-lock) .page-shell.stable-case-page-shell,
+  body:not(.klinikiq-auth-lock) .page-shell.case-page-shell,
+  body:not(.klinikiq-auth-lock) .page-shell.exam-active-shell {
+    width: min(calc(100% - 14px), 100%) !important;
+  }
+}

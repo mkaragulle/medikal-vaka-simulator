@@ -112,7 +112,6 @@ function AIGeneratedQuestionView({
           <p>Spot bilgileri pekiştirmek için yapay zekâya hazır mimariyle oluşturulan kısa klinik soru.</p>
           <div className="ai-practice-meta-row">
             <AISourceBadge usedRemoteAI={usedRemoteAI} fallback={fallback} generationSource={generationSource} />
-            {question?.aiMeta?.signature ? <span className="ai-signature-chip">Tekrar imzası: {question.aiMeta.signature}</span> : null}
           </div>
         </div>
 

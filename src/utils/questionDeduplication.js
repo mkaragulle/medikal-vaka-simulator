@@ -5,7 +5,7 @@ import {
   stableHash,
 } from './aiQuestionHistory.js';
 
-const MAX_SESSION_ID_TRACK = 500;
+const MAX_SESSION_ID_TRACK = 700;
 const sessionGeneratedQuestionIds = new Set();
 let runtimeSequence = 0;
 
@@ -49,21 +49,32 @@ export function resetSessionGeneratedQuestionIdsForTests() {
 
 export function toPlainText(value = '') {
   if (!value) return '';
-  if (typeof value === 'string') return value;
+  if (typeof value === 'string' || typeof value === 'number') return String(value);
   if (Array.isArray(value)) return value.map(toPlainText).filter(Boolean).join(' | ');
   if (typeof value === 'object') {
-    return [value.title, value.label, value.text, value.summary, value.explanation, value.description]
-      .map(toPlainText)
-      .filter(Boolean)
-      .join(' | ');
+    return [
+      value.title,
+      value.label,
+      value.name,
+      value.text,
+      value.summary,
+      value.explanation,
+      value.description,
+      value.result,
+      value.interpretation,
+      value.value,
+      value.findings,
+      value.rows,
+    ].map(toPlainText).filter(Boolean).join(' | ');
   }
   return String(value);
 }
 
 export function tokenizeContent(value = '') {
   const stopWords = new Set([
-    've', 'veya', 'ile', 'icin', 'olan', 'olarak', 'hasta', 'olguda', 'bu', 'bir', 'en', 'hangi', 'tablo', 'klinik',
-    'patern', 'bulgu', 'veri', 'daha', 'sonra', 'temel', 'uygun', 'secenek', 'destekler', 'gosterir', 'dikkat',
+    've', 'veya', 'ile', 'icin', 'olan', 'olarak', 'hasta', 'olguda', 'olgu', 'bu', 'bir', 'en', 'hangi', 'tablo', 'klinik',
+    'patern', 'bulgu', 'veri', 'daha', 'sonra', 'temel', 'uygun', 'secenek', 'destekler', 'gosterir', 'dikkat', 'spot',
+    'tus', 'kisa', 'karar', 'ayirici', 'dogru', 'yanit', 'soru', 'hedef', 'basvuran', 'degerlendirilen', 'birlikte',
   ]);
   return normalizeQuestionText(value)
     .split(' ')
@@ -81,13 +92,14 @@ export function similarityScore(a = '', b = '') {
   const union = new Set([...tokensA, ...tokensB]).size || 1;
   const jaccard = intersection / union;
   const containment = intersection / Math.min(tokensA.size, tokensB.size);
-  return Math.max(jaccard, containment * 0.82);
+  return Math.max(jaccard, containment * 0.86);
 }
 
 export function getQuestionCorrectText(question = {}) {
   const topLevelOptions = Array.isArray(question.options) ? question.options : [];
-  const topCorrect = topLevelOptions.find((option) => option.id === question.correctAnswer)?.text;
-  return question?.diagnosis?.correct || topCorrect || question?.correctAnswer || '';
+  const correctId = String(question.correctAnswer || '').trim().toUpperCase();
+  const topCorrect = topLevelOptions.find((option) => String(option?.id || '').toUpperCase() === correctId)?.text;
+  return question?.diagnosis?.correct || topCorrect || question?.correctAnswerText || question?.correctAnswer || '';
 }
 
 export function getQuestionOptionTexts(question = {}) {
@@ -102,7 +114,7 @@ export function makeOptionSetSignature(options = []) {
     .filter(Boolean)
     .map(normalizeQuestionText)
     .sort((a, b) => a.localeCompare(b, 'tr'));
-  return stableHash(optionTexts.join(' | '));
+  return `opts-${stableHash(optionTexts.join(' | '))}`;
 }
 
 export function makeGenerationSignature(question = {}) {
@@ -113,49 +125,116 @@ export function makeGenerationTopicSignature(question = {}) {
   return makeQuestionTopicSignature(question);
 }
 
+export function buildQuestionContentSignature(question = {}) {
+  return makeQuestionSignature(question);
+}
+
+export function attachQuestionDedupeFields(question = {}) {
+  const contentSignature = buildQuestionContentSignature(question);
+  const topicSignature = makeGenerationTopicSignature(question);
+  const optionSetSignature = makeOptionSetSignature(getQuestionOptionTexts(question));
+  question.contentSignature = contentSignature;
+  question.dedupeKey = contentSignature;
+  question.semanticFingerprint = contentSignature;
+  question.generationSignature = contentSignature;
+  question.topicSignature = topicSignature;
+  question.aiMeta = {
+    ...(question.aiMeta || {}),
+    signature: contentSignature,
+    contentSignature,
+    generationSignature: contentSignature,
+    semanticFingerprint: contentSignature,
+    dedupeKey: contentSignature,
+    topicSignature,
+    optionSetSignature,
+  };
+  return question;
+}
+
+function getEvidenceText(question = {}) {
+  return toPlainText([
+    question.evidenceChain,
+    question.examPearls,
+    question.examPearl,
+    question?.diagnosis?.answerFeedback?.evidenceChain,
+    question?.diagnosis?.answerFeedback?.pearls,
+    question?.findings,
+    question?.exam,
+    question?.vitals,
+    question?.investigations,
+  ]);
+}
+
 export function buildQuestionFingerprint(question = {}) {
   const optionTexts = getQuestionOptionTexts(question);
   const correctText = getQuestionCorrectText(question);
-  const evidence = question?.diagnosis?.answerFeedback?.evidenceChain || question?.evidenceChain || [];
+  const stem = question.stem || question.patientIntro?.historySummary || '';
+  const questionText = question.question || question.diagnosis?.question || '';
+  const learningTarget = question.learningTarget || question.clinicalFocus || '';
+  const title = question.title || '';
+  const evidence = getEvidenceText(question);
+  const optionSetSignature = makeOptionSetSignature(optionTexts);
+  const contentSignature = question.contentSignature || question.semanticFingerprint || question.dedupeKey || buildQuestionContentSignature(question);
+
   return {
     id: question.id,
-    title: normalizeQuestionText(question.title || ''),
-    stem: normalizeQuestionText(question.stem || question.patientIntro?.historySummary || ''),
-    question: normalizeQuestionText(question.question || ''),
+    contentSignature,
+    generationSignature: question.generationSignature || contentSignature,
+    topicSignature: question.topicSignature || question.aiMeta?.topicSignature || makeGenerationTopicSignature(question),
+    branch: normalizeQuestionText(question.relatedBranch || question.branchName || question.branchId || ''),
+    title: normalizeQuestionText(title),
+    stem: normalizeQuestionText(stem),
+    question: normalizeQuestionText(questionText),
+    learningTarget: normalizeQuestionText(learningTarget),
     correct: normalizeQuestionText(correctText),
-    optionsSignature: makeOptionSetSignature(optionTexts),
+    optionsSignature: optionSetSignature,
+    optionTexts: optionTexts.map(normalizeQuestionText).sort((a, b) => a.localeCompare(b, 'tr')),
+    evidence: normalizeQuestionText(evidence),
     combinedText: normalizeQuestionText([
-      question.title,
-      question.stem || question.patientIntro?.historySummary,
-      question.question,
+      question.relatedBranch || question.branchName || question.branchId,
+      title,
+      learningTarget,
+      stem,
+      questionText,
       correctText,
       optionTexts.join(' | '),
-      toPlainText(evidence),
+      evidence,
     ].filter(Boolean).join(' | ')),
   };
 }
 
+const embeddedFingerprintCache = new WeakMap();
+
 export function buildEmbeddedCaseFingerprints(embeddedCases = []) {
-  return embeddedCases.map((clinicalCase) => {
+  if (embeddedCases && typeof embeddedCases === 'object' && embeddedFingerprintCache.has(embeddedCases)) {
+    return embeddedFingerprintCache.get(embeddedCases);
+  }
+  const fingerprints = embeddedCases.map((clinicalCase) => {
     const options = clinicalCase?.diagnosis?.options || [];
     const evidence = clinicalCase?.diagnosis?.answerFeedback?.evidenceChain || [];
-    return {
+    return buildQuestionFingerprint({
       id: clinicalCase.id,
-      title: normalizeQuestionText(clinicalCase.title || ''),
-      stem: normalizeQuestionText(clinicalCase.stem || clinicalCase.patientIntro?.historySummary || ''),
-      question: normalizeQuestionText(clinicalCase.question || clinicalCase.diagnosis?.question || ''),
-      correct: normalizeQuestionText(clinicalCase.diagnosis?.correct || ''),
-      optionsSignature: makeOptionSetSignature(options),
-      combinedText: normalizeQuestionText([
-        clinicalCase.title,
-        clinicalCase.stem || clinicalCase.patientIntro?.historySummary,
-        clinicalCase.question || clinicalCase.diagnosis?.question,
-        clinicalCase.diagnosis?.correct,
-        options.join(' | '),
-        toPlainText(evidence),
-      ].filter(Boolean).join(' | ')),
-    };
+      branchId: clinicalCase.branchId,
+      relatedBranch: clinicalCase.relatedBranch,
+      title: clinicalCase.title || '',
+      stem: clinicalCase.stem || clinicalCase.patientIntro?.historySummary || '',
+      question: clinicalCase.question || clinicalCase.diagnosis?.question || '',
+      learningTarget: clinicalCase.learningTarget || clinicalCase.clinicalFocus || clinicalCase.diagnosis?.answerFeedback?.learningOutcome || '',
+      options: options.map((text, index) => ({ id: String.fromCharCode(65 + index), text })),
+      correctAnswerText: clinicalCase.diagnosis?.correct || '',
+      correctAnswer: clinicalCase.diagnosis?.correct || '',
+      evidenceChain: evidence,
+      examPearls: clinicalCase.diagnosis?.pearls || clinicalCase.diagnosis?.answerFeedback?.pearls || [],
+      diagnosis: {
+        correct: clinicalCase.diagnosis?.correct || '',
+        options,
+        question: clinicalCase.diagnosis?.question || '',
+        answerFeedback: clinicalCase.diagnosis?.answerFeedback || {},
+      },
+    });
   });
+  if (embeddedCases && typeof embeddedCases === 'object') embeddedFingerprintCache.set(embeddedCases, fingerprints);
+  return fingerprints;
 }
 
 export function findEmbeddedCaseOverlap(question = {}, embeddedCases = []) {
@@ -167,39 +246,88 @@ export function findEmbeddedCaseOverlap(question = {}, embeddedCases = []) {
     const questionExact = fingerprint.question && fingerprint.question === embedded.question;
     const optionSetExact = fingerprint.optionsSignature && fingerprint.optionsSignature === embedded.optionsSignature;
     const sameCorrect = fingerprint.correct && fingerprint.correct === embedded.correct;
+    const sameLearningTarget = fingerprint.learningTarget && fingerprint.learningTarget === embedded.learningTarget;
     const stemSimilarity = similarityScore(fingerprint.stem, embedded.stem);
+    const questionSimilarity = similarityScore(fingerprint.question, embedded.question);
     const combinedSimilarity = similarityScore(fingerprint.combinedText, embedded.combinedText);
+    const targetSimilarity = similarityScore(fingerprint.learningTarget, embedded.learningTarget);
 
-    if (titleExact) return { caseId: embedded.id, reason: 'title-exact', score: 1 };
+    if (titleExact && stemSimilarity >= 0.55) return { caseId: embedded.id, reason: 'title-stem-overlap', score: stemSimilarity };
     if (questionExact && sameCorrect) return { caseId: embedded.id, reason: 'question-correct-exact', score: 1 };
-    if (optionSetExact && sameCorrect) return { caseId: embedded.id, reason: 'option-set-correct-exact', score: 1 };
-    if (stemSimilarity >= 0.72) return { caseId: embedded.id, reason: 'stem-too-similar', score: stemSimilarity };
-    if (combinedSimilarity >= 0.82) return { caseId: embedded.id, reason: 'combined-too-similar', score: combinedSimilarity };
+    if (optionSetExact && sameCorrect && (sameLearningTarget || targetSimilarity >= 0.72)) return { caseId: embedded.id, reason: 'option-target-correct-overlap', score: 1 };
+    if (stemSimilarity >= 0.74 && (sameCorrect || targetSimilarity >= 0.70)) return { caseId: embedded.id, reason: 'stem-target-too-similar', score: stemSimilarity };
+    if (questionSimilarity >= 0.82 && sameCorrect) return { caseId: embedded.id, reason: 'question-too-similar', score: questionSimilarity };
+    if (combinedSimilarity >= 0.86) return { caseId: embedded.id, reason: 'combined-too-similar', score: combinedSimilarity };
   }
 
   return null;
 }
 
+function recentSummaryFingerprint(summary = {}) {
+  return {
+    id: summary.id,
+    contentSignature: summary.contentSignature || summary.signature || summary.generationSignature,
+    topicSignature: summary.topicSignature,
+    title: normalizeQuestionText(summary.normalizedTitle || summary.title || ''),
+    stem: normalizeQuestionText(summary.normalizedStem || summary.stem || ''),
+    question: normalizeQuestionText(summary.normalizedQuestion || summary.question || ''),
+    learningTarget: normalizeQuestionText(summary.normalizedLearningTarget || summary.learningTarget || ''),
+    correct: normalizeQuestionText(summary.normalizedCorrect || summary.correct || ''),
+    optionsSignature: summary.optionSetSignature,
+    combinedText: normalizeQuestionText(summary.combinedText || [summary.branch, summary.title, summary.learningTarget, summary.correct, toPlainText(summary.optionTexts)].filter(Boolean).join(' | ')),
+  };
+}
+
 export function isDuplicateAgainstRecentContext(question = {}, context = {}) {
-  const signature = makeGenerationSignature(question);
-  const topicSignature = makeGenerationTopicSignature(question);
+  const fingerprint = buildQuestionFingerprint(question);
+  const signature = fingerprint.contentSignature;
+  const topicSignature = fingerprint.topicSignature;
   const recentSignatures = context.recentSignatures || [];
   const recentIds = context.recentIds || [];
-  const recentSummaries = context.recentQuestionSummaries || [];
-  const title = normalizeQuestionText(question.title || '');
-  const correct = normalizeQuestionText(getQuestionCorrectText(question));
+  const recentSummaries = (context.recentQuestionSummaries || []).map(recentSummaryFingerprint);
 
   if (question.id && recentIds.includes(question.id)) return { reason: 'id-repeat', signature, topicSignature };
-  if (signature && recentSignatures.includes(signature)) return { reason: 'signature-repeat', signature, topicSignature };
+  if (signature && recentSignatures.includes(signature)) return { reason: 'content-signature-repeat', signature, topicSignature };
+  // Same topic or same correct answer alone is allowed; full content, stem/question and option-set overlap decide duplication.
 
-  // Full content signatures remain the primary duplicate guard.
-  // Same topic/correct answer may reappear only when the clinical title, stem or option set changes.
+  for (const recent of recentSummaries) {
+    if (!recent.contentSignature && !recent.combinedText) continue;
+    if (recent.contentSignature && recent.contentSignature === signature) return { reason: 'history-content-signature-repeat', signature, topicSignature };
 
+    const sameCorrect = recent.correct && recent.correct === fingerprint.correct;
+    const sameLearningTarget = recent.learningTarget && recent.learningTarget === fingerprint.learningTarget;
+    const sameOptions = recent.optionsSignature && recent.optionsSignature === fingerprint.optionsSignature;
+    const titleSimilarity = similarityScore(fingerprint.title, recent.title);
+    const stemSimilarity = similarityScore(fingerprint.stem, recent.stem);
+    const questionSimilarity = similarityScore(fingerprint.question, recent.question);
+    const targetSimilarity = similarityScore(fingerprint.learningTarget, recent.learningTarget);
+    const combinedSimilarity = similarityScore(fingerprint.combinedText, recent.combinedText);
+
+    if (sameOptions && sameCorrect && (sameLearningTarget || targetSimilarity >= 0.62)) {
+      return { reason: 'same-options-correct-target', signature, topicSignature, score: 1 };
+    }
+    if (stemSimilarity >= 0.72 && questionSimilarity >= 0.70) {
+      return { reason: 'stem-question-too-similar', signature, topicSignature, score: Math.max(stemSimilarity, questionSimilarity) };
+    }
+    if (stemSimilarity >= 0.78 && (sameCorrect || sameLearningTarget || sameOptions)) {
+      return { reason: 'stem-too-similar-with-shared-axis', signature, topicSignature, score: stemSimilarity };
+    }
+    if (questionSimilarity >= 0.84 && sameCorrect && (sameLearningTarget || sameOptions)) {
+      return { reason: 'question-too-similar-with-same-answer', signature, topicSignature, score: questionSimilarity };
+    }
+    if (combinedSimilarity >= 0.82 && (sameCorrect || sameLearningTarget || sameOptions)) {
+      return { reason: 'combined-semantic-repeat', signature, topicSignature, score: combinedSimilarity };
+    }
+    if (titleSimilarity >= 0.92 && sameCorrect && sameLearningTarget) {
+      return { reason: 'same-title-answer-target', signature, topicSignature, score: titleSimilarity };
+    }
+  }
 
   return null;
 }
 
 export function validateQuestionNovelty(question = {}, { context = {}, embeddedCases = [] } = {}) {
+  attachQuestionDedupeFields(question);
   const duplicate = isDuplicateAgainstRecentContext(question, context);
   if (duplicate) return { ok: false, errors: [`duplicate:${duplicate.reason}`], ...duplicate };
 
@@ -209,15 +337,15 @@ export function validateQuestionNovelty(question = {}, { context = {}, embeddedC
       ok: false,
       errors: [`embedded-case-overlap:${embeddedOverlap.reason}:${embeddedOverlap.caseId}`],
       embeddedOverlap,
-      signature: makeGenerationSignature(question),
-      topicSignature: makeGenerationTopicSignature(question),
+      signature: question.contentSignature,
+      topicSignature: question.topicSignature || question.aiMeta?.topicSignature,
     };
   }
 
   return {
     ok: true,
     errors: [],
-    signature: makeGenerationSignature(question),
-    topicSignature: makeGenerationTopicSignature(question),
+    signature: question.contentSignature,
+    topicSignature: question.topicSignature || question.aiMeta?.topicSignature,
   };
 }

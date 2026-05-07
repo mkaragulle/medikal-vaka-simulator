@@ -1,7 +1,7 @@
 import { shuffleArray } from './randomize.js';
 import { makeQuestionSignature, makeQuestionTopicSignature, normalizeQuestionText } from './aiQuestionHistory.js';
 import { cases } from '../data/cases.js';
-import { createAIQuestionId, validateQuestionNovelty } from './questionDeduplication.js';
+import { attachQuestionDedupeFields, createAIQuestionId, validateQuestionNovelty } from './questionDeduplication.js';
 import { validateBranchFit } from './aiBranchRules.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
@@ -231,10 +231,8 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     },
   };
 
-  normalized.aiMeta.signature = makeQuestionSignature(normalized);
-  normalized.aiMeta.topicSignature = makeQuestionTopicSignature(normalized);
+  attachQuestionDedupeFields(normalized);
   normalized.generatedAt = new Date(normalized.aiMeta.generatedAt).toISOString();
-  normalized.generationSignature = normalized.aiMeta.signature;
   return normalized;
 }
 
@@ -251,7 +249,7 @@ export function validateAIQuestionCase(question = {}, recentSignatures = [], opt
   if (!question?.diagnosis?.options?.includes(question?.diagnosis?.correct)) errors.push('doğru cevap seçenekler içinde değil');
   if (!question?.diagnosis?.answerFeedback?.whyCorrect) errors.push('klinik gerekçe yok');
   if (!Array.isArray(question?.diagnosis?.answerFeedback?.evidenceChain) || question.diagnosis.answerFeedback.evidenceChain.length < 3) errors.push('kanıt zinciri yetersiz');
-  if (!question?.generationSignature && !question?.aiMeta?.generationSignature && !question?.aiMeta?.signature) errors.push('generationSignature eksik');
+  if (!question?.contentSignature && !question?.generationSignature && !question?.aiMeta?.contentSignature && !question?.aiMeta?.signature) errors.push('contentSignature eksik');
 
   const novelty = validateQuestionNovelty(question, { context: recentContext, embeddedCases });
   if (!novelty.ok) errors.push(...novelty.errors);
@@ -259,9 +257,10 @@ export function validateAIQuestionCase(question = {}, recentSignatures = [], opt
   const branchFit = validateBranchFit(question, options.requestedBranch || question.relatedBranch || question.branchName);
   if (!branchFit.ok) errors.push(...branchFit.errors.map((error) => `branch-fit:${error}`));
 
-  const signature = makeQuestionSignature(question);
-  const topicSignature = makeQuestionTopicSignature(question);
-  if (recentSignatures.includes(signature)) errors.push('yakın geçmişte aynı içerik imzası üretildi');
+  attachQuestionDedupeFields(question);
+  const signature = question.contentSignature || makeQuestionSignature(question);
+  const topicSignature = question.topicSignature || question.aiMeta?.topicSignature || makeQuestionTopicSignature(question);
+  if (recentSignatures.includes(signature)) errors.push('yakın geçmişte aynı contentSignature üretildi');
 
-  return { ok: errors.length === 0, errors: Array.from(new Set(errors)), signature, topicSignature, embeddedOverlap: novelty.embeddedOverlap || null };
+  return { ok: errors.length === 0, errors: Array.from(new Set(errors)), signature, topicSignature, contentSignature: signature, embeddedOverlap: novelty.embeddedOverlap || null };
 }
