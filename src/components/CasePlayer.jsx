@@ -434,9 +434,13 @@ function PatientSummaryItems({ items = [], enabled = true }) {
   if (!items.length) return null;
 
   return (
-    <ul className="summary-clinical-mini-list refined-summary-bullet-list">
+    <ul className="summary-clinical-mini-list refined-summary-bullet-list clinical-readable-list">
       {items.map((item) => (
-        <li key={item}><GlossaryText text={item} enabled={enabled} /></li>
+        <li key={item}>
+          <span className="summary-clinical-mini-copy clinical-readable-copy">
+            <GlossaryText text={item} enabled={enabled} />
+          </span>
+        </li>
       ))}
     </ul>
   );

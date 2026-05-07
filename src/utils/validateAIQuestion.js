@@ -2,6 +2,7 @@ import { shuffleArray } from './randomize.js';
 import { makeQuestionSignature, makeQuestionTopicSignature, normalizeQuestionText } from './aiQuestionHistory.js';
 import { cases } from '../data/cases.js';
 import { createAIQuestionId, validateQuestionNovelty } from './questionDeduplication.js';
+import { validateBranchFit } from './aiBranchRules.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -255,10 +256,12 @@ export function validateAIQuestionCase(question = {}, recentSignatures = [], opt
   const novelty = validateQuestionNovelty(question, { context: recentContext, embeddedCases });
   if (!novelty.ok) errors.push(...novelty.errors);
 
+  const branchFit = validateBranchFit(question, options.requestedBranch || question.relatedBranch || question.branchName);
+  if (!branchFit.ok) errors.push(...branchFit.errors.map((error) => `branch-fit:${error}`));
+
   const signature = makeQuestionSignature(question);
   const topicSignature = makeQuestionTopicSignature(question);
   if (recentSignatures.includes(signature)) errors.push('yakın geçmişte aynı içerik imzası üretildi');
-  if (recentSignatures.includes(topicSignature)) errors.push('yakın geçmişte aynı konu/doğru cevap paterni üretildi');
 
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), signature, topicSignature, embeddedOverlap: novelty.embeddedOverlap || null };
 }

@@ -1,4 +1,5 @@
 import { AI_QUESTION_SEEDS } from '../data/aiQuestionSeeds.js';
+import { AI_BRANCH_TEMPLATE_SEEDS } from '../data/aiBranchQuestionTemplates.js';
 import { cases } from '../data/cases.js';
 import { branches } from '../data/branches.js';
 import { shuffleArray } from './randomize.js';
@@ -12,6 +13,17 @@ import {
 } from './aiQuestionHistory.js';
 import { validateAIQuestionCase } from './validateAIQuestion.js';
 import { createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
+import {
+  branchFilterMatchesSeed,
+  buildBranchAwareStem,
+  buildBranchExamDefaults,
+  buildBranchRiskContext,
+  buildBranchVitals,
+  getAIQuestionBranchOptions,
+  getBranchControlledProfile,
+  getBranchRuleForSeed,
+  sanitizeAIQuestionTitle,
+} from './aiBranchRules.js';
 
 const AI_BRANCH_ID = 'tus-spot-olgular';
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
@@ -103,7 +115,7 @@ function getCaseAnswerFeedback(clinicalCase = {}) {
 }
 
 function getBranchName(clinicalCase = {}) {
-  return BRANCH_NAME_BY_ID[clinicalCase.branchId] || clinicalCase.branchId || 'TUS Spot Olgular';
+  return clinicalCase.relatedBranch || BRANCH_NAME_BY_ID[clinicalCase.branchId] || clinicalCase.branchId || 'TUS Spot Olgular';
 }
 
 function compactLearningTarget(text = '', fallback = '') {
@@ -182,7 +194,7 @@ function buildCaseDerivedSeed(clinicalCase) {
     seedId: `ai-concept-${stableHash(`${clinicalCase.id}|${learningTarget}|${clinicalCase.diagnosis?.correct}`)}`,
     conceptOriginId: clinicalCase.id,
     source: 'embedded-case-concept-only',
-    title: `${relatedBranch} spot karar sorusu`,
+    title: clinicalCase.chiefComplaint || clinicalCase.patientIntro?.presentation || `${relatedBranch} spot karar sorusu`,
     relatedBranch,
     branchId: AI_BRANCH_ID,
     originalBranchId: clinicalCase.branchId,
@@ -222,10 +234,10 @@ export function buildCaseDerivedAISeeds() {
 
 function getEligibleSeeds(branchFilter = 'random') {
   const normalizedFilter = String(branchFilter || 'random').toLocaleLowerCase('tr');
-  const allSeeds = [...AI_QUESTION_SEEDS, ...buildCaseDerivedAISeeds()];
+  const allSeeds = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...buildCaseDerivedAISeeds()];
   if (normalizedFilter === 'random' || normalizedFilter === 'rastgele') return allSeeds;
-  const filtered = allSeeds.filter((seed) => branchTextOfSeed(seed).includes(normalizedFilter));
-  return filtered.length ? filtered : allSeeds;
+  const filtered = allSeeds.filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  return filtered.length ? filtered : [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
 }
 
 function previousSeedIdFromContext(previousQuestionId = '', context = {}) {
@@ -250,14 +262,18 @@ function rankSeedsByNovelty(pool, { previousQuestionId = null, context = buildRe
     .sort((a, b) => scoreSeedNovelty(b, context, previousQuestionId) - scoreSeedNovelty(a, context, previousQuestionId));
 }
 
-function buildVariantProfile(seed, attempt = 0, context = {}) {
+function buildVariantProfile(seed, attempt = 0, context = {}, branchFilter = '') {
   const variantKey = `${seed.seedId}|${Date.now()}|${Math.random()}|${attempt}|${context.recentSignatures?.length || 0}`;
   const numeric = parseInt(stableHash(variantKey).replace(/^q/, ''), 36);
+  const branchProfile = getBranchControlledProfile(seed, attempt, context, branchFilter);
   return {
     angle: QUESTION_ANGLES[numeric % QUESTION_ANGLES.length],
     opener: SCENARIO_OPENERS[(numeric + attempt) % SCENARIO_OPENERS.length],
-    demographic: seed.demographics || DEMOGRAPHIC_POOL[(numeric + 2) % DEMOGRAPHIC_POOL.length],
-    setting: seed.setting || SETTING_POOL[(numeric + 3) % SETTING_POOL.length],
+    demographic: branchProfile.demographic,
+    setting: branchProfile.setting,
+    presentation: branchProfile.presentation,
+    titleCue: branchProfile.titleCue,
+    rule: branchProfile.rule,
     variantNo: (numeric % 997) + 1,
     answerShift: numeric % OPTION_IDS.length,
   };
@@ -270,16 +286,14 @@ function maskCorrectConcept(text = '', correctText = '') {
 }
 
 function buildStem(seed, profile, correctText) {
-  if (seed.source === 'embedded-case-concept-only') {
-    const maskedConcept = maskCorrectConcept(seed.evidenceConcepts?.[0] || seed.learningTarget, correctText);
-    const conceptCue = maskedConcept
-      ? `Ana ipucu, ${String(maskedConcept).replace(/\.$/, '').toLocaleLowerCase('tr')} bilgisinin yorumlanmasıdır`
-      : 'Ana ipucu, verilen bulguların aynı karar ekseninde toplanmasıdır';
-    return `${profile.opener} ${profile.demographic.toLocaleLowerCase('tr')} ${profile.setting.toLocaleLowerCase('tr')} ortamında ele alınır. ${conceptCue}; ancak tanı adı veya doğru seçenek metin içinde doğrudan verilmez. ${profile.angle.stemCue.charAt(0).toLocaleUpperCase('tr') + profile.angle.stemCue.slice(1)}.`;
-  }
+  const controlledStem = buildBranchAwareStem(seed, profile, profile.angle, correctText);
+  if (seed.source === 'embedded-case-concept-only') return controlledStem;
 
   const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'karar verdirici patern');
-  return `${profile.opener} ${baseStem} Bu varyantta ${profile.angle.stemCue}.`;
+  const branchRule = getBranchRuleForSeed(seed);
+  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return controlledStem;
+  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return controlledStem;
+  return `${baseStem} Bu varyantta ${profile.angle.stemCue}.`.replace(/\s+/g, ' ').trim();
 }
 
 function normalizeOptionObjects(options = []) {
@@ -352,26 +366,7 @@ function uniqueSummaryItems(items = [], max = 4) {
 }
 
 function buildAIRiskContext(seed, profile) {
-  const branchText = branchTextOfSeed(seed);
-  const target = String(seed.learningTarget || '').toLocaleLowerCase('tr');
-  const risks = [];
-
-  if (/mikrobiyoloji|enfeksiyon|hiv|hepatit|tüberküloz|sepsis|bakteri|viral/.test(branchText + ' ' + target)) {
-    risks.push('Enfeksiyon, temas veya bağışıklık durumunun karar üzerindeki etkisi');
-  } else if (/farmakoloji|ilaç|toksin|zehir|yan etki|antidot/.test(branchText + ' ' + target)) {
-    risks.push('İlaç veya toksin maruziyetine bağlı klinik risk');
-  } else if (/biyokimya|enzim|metabolizma|genetik|aminoasit|lipid/.test(branchText + ' ' + target)) {
-    risks.push('Metabolik veya genetik zeminle ilişkili klinik bağlam');
-  } else if (/pediatri|çocuk|yenidoğan|bebek/.test(branchText + ' ' + target)) {
-    risks.push('Yaşa özgü pediatrik kırmızı bayraklar');
-  } else if (/kadın|gebelik|doğum|jinekoloji/.test(branchText + ' ' + target)) {
-    risks.push('Gebelik veya jinekolojik aciliyet bağlamı');
-  } else {
-    risks.push('Klinik kararın dayandığı hasta zemini ve risk bağlamı');
-  }
-
-  risks.push(`${profile.demographic} ve ${profile.setting} bağlamında spot karar gereksinimi`);
-  return uniqueSummaryItems(risks, 2);
+  return uniqueSummaryItems(buildBranchRiskContext(seed, profile), 3);
 }
 
 function buildAIClueItems(evidenceChain = [], seed = {}, correctText = '') {
@@ -450,17 +445,20 @@ function buildManagementSteps(seed, profile) {
   ];
 }
 
-export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), source = 'local-template-generator', attempt = 0, context = {} } = {}) {
-  const profile = buildVariantProfile(seed, attempt, context);
+export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), source = 'local-template-generator', attempt = 0, context = {}, branchFilter = '' } = {}) {
+  const profile = buildVariantProfile(seed, attempt, context, branchFilter);
   const options = buildBalancedOptions(seed, profile);
   const correctText = seed.correctConcept || optionTextById(seed, seed.correctAnswer) || options[0]?.text;
   const correctOption = options.find((option) => normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) || options[0];
   const normalizedCorrectText = correctOption.text;
   const evidenceChain = buildEvidenceChain(seed, profile, normalizedCorrectText);
   const wrongOptionFeedback = buildWrongFeedback(options, normalizedCorrectText, seed);
-  const titleBase = seed.source === 'embedded-case-concept-only'
-    ? `${seed.relatedBranch} AI spot: ${profile.angle.label}`
-    : `${seed.title} — ${profile.angle.label}`;
+  const titleBase = sanitizeAIQuestionTitle(seed.title, {
+    seed,
+    profile,
+    rule: profile.rule,
+    key: `${seed.seedId}|${profile.variantNo}|${profile.angle.id}`,
+  });
   const questionPrompt = seed.question && seed.source !== 'embedded-case-concept-only'
     ? `${profile.angle.question}`
     : profile.angle.question;
@@ -495,22 +493,20 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     learningTarget: seed.learningTarget,
     demographics: profile.demographic,
     setting: profile.setting,
-    chiefComplaint: seed.chiefComplaint || `${seed.relatedBranch || 'TUS'} spot karar sorusu`,
+    chiefComplaint: profile.presentation || seed.chiefComplaint || titleBase,
     stem,
     exam: Array.isArray(seed.exam) && seed.exam.length ? seed.exam : [
-      'Genel durum karar verebilecek düzeyde stabil olarak izlenir.',
-      'Muayene bulguları ana paternle uyumlu, çeldiricileri ayırmaya yardımcı niteliktedir.',
-      'Ek sistem muayenesinde doğru cevabı doğrudan söyleyen bir ifade yer almaz.',
+      ...buildBranchExamDefaults(seed, profile),
     ],
-    vitals: Object.keys(seed.vitals || {}).length ? seed.vitals : { TA: '118/74 mmHg', Nabız: '88/dk', Solunum: '18/dk', SpO2: '%98', Ateş: '37.1 °C' },
+    vitals: Object.keys(seed.vitals || {}).length ? seed.vitals : buildBranchVitals(seed, profile),
     investigations,
     question: questionPrompt,
     questionType: profile.angle.id === 'first-step' ? 'treatment' : profile.angle.id === 'lab' ? 'test' : profile.angle.id === 'mechanism' ? 'spot' : 'diagnosis',
     clinicalFocus: seed.learningTarget,
     findings: {
       history: [stem],
-      exam: Array.isArray(seed.exam) ? seed.exam : [],
-      vitals: seed.vitals || {},
+      exam: Array.isArray(seed.exam) && seed.exam.length ? seed.exam : buildBranchExamDefaults(seed, profile),
+      vitals: Object.keys(seed.vitals || {}).length ? seed.vitals : buildBranchVitals(seed, profile),
       investigations,
     },
     options,
@@ -526,7 +522,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
       profile: [profile.demographic, profile.setting].filter(Boolean).join(' · '),
-      presentation: seed.chiefComplaint || `${profile.angle.label} odaklı TUS spot soru`,
+      presentation: profile.presentation || seed.chiefComplaint || titleBase,
       riskContext: buildAIRiskContext(seed, profile),
       distinctiveClues: buildAIClueItems(evidenceChain, seed, normalizedCorrectText),
       historySummary: stem,
@@ -595,21 +591,24 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
       source: seed.source === 'embedded-case-concept-only' ? 'concept-template-local-generator' : 'curated-template-local-generator',
       attempt,
       context,
+      branchFilter,
     });
-    const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context });
+    const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
     if (validation.ok) return question;
     errors.push({ seedId: seed.seedId, errors: validation.errors });
   }
 
-  const curatedPool = AI_QUESTION_SEEDS.filter((seed) => !context.recentIds?.includes(seed.seedId));
+  const curatedPool = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...buildCaseDerivedAISeeds()].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
   for (let attempt = 0; attempt < Math.max(12, curatedPool.length * 3); attempt += 1) {
-    const seed = curatedPool[attempt % curatedPool.length] || AI_QUESTION_SEEDS[attempt % AI_QUESTION_SEEDS.length];
+    const seed = curatedPool[attempt % curatedPool.length];
+    if (!seed) break;
     const question = buildAIQuestionCase(seed, {
       source: 'curated-template-safe-fallback',
       attempt: attempt + 500,
       context,
+      branchFilter,
     });
-    const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context });
+    const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
     if (validation.ok) return question;
     errors.push({ seedId: seed.seedId, errors: validation.errors });
   }
@@ -620,8 +619,5 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
 }
 
 export function listAIQuestionBranches() {
-  const seedBranches = [...AI_QUESTION_SEEDS, ...buildCaseDerivedAISeeds()]
-    .map((seed) => seed.relatedBranch)
-    .filter(Boolean);
-  return ['Rastgele', ...Array.from(new Set(seedBranches)).sort((a, b) => a.localeCompare(b, 'tr'))];
+  return getAIQuestionBranchOptions();
 }

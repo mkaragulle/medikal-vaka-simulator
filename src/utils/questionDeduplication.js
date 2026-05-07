@@ -191,14 +191,10 @@ export function isDuplicateAgainstRecentContext(question = {}, context = {}) {
 
   if (question.id && recentIds.includes(question.id)) return { reason: 'id-repeat', signature, topicSignature };
   if (signature && recentSignatures.includes(signature)) return { reason: 'signature-repeat', signature, topicSignature };
-  if (topicSignature && recentSignatures.includes(topicSignature)) return { reason: 'topic-signature-repeat', signature, topicSignature };
 
-  const nearSummary = recentSummaries.find((item) => {
-    const summaryTitle = normalizeQuestionText(item.title || '');
-    const summaryCorrect = normalizeQuestionText(item.correct || '');
-    return summaryTitle && correct && summaryCorrect === correct && similarityScore(title, summaryTitle) > 0.78;
-  });
-  if (nearSummary) return { reason: 'recent-summary-too-similar', signature, topicSignature };
+  // Full content signatures remain the primary duplicate guard.
+  // Same topic/correct answer may reappear only when the clinical title, stem or option set changes.
+
 
   return null;
 }

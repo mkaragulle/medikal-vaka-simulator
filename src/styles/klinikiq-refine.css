@@ -1391,7 +1391,7 @@ body:not(.klinikiq-auth-lock) .app-shell[data-theme="dark"] .nav-actions .nav-th
   font-weight: 820 !important;
   line-height: 1.24 !important;
   letter-spacing: -.025em !important;
-  overflow-wrap: anywhere !important;
+  overflow-wrap: break-word !important;
   text-wrap: pretty !important;
 }
 
@@ -2188,7 +2188,7 @@ html[data-theme="dark"] .patient-summary-focus-strip.refined-focus-callout.unifi
   line-height: 1.42 !important;
   letter-spacing: -.018em !important;
   word-break: normal !important;
-  overflow-wrap: anywhere !important;
+  overflow-wrap: break-word !important;
   hyphens: none !important;
 }
 
