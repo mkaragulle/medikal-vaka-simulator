@@ -26,6 +26,9 @@ export const INLINE_FIELD_LABELS = [
   'Sınav incisi',
   'Sınav notu',
   'TUS notu',
+  'Morfolojik patern',
+  'Mekanizma',
+  'Mekanizma özeti',
 ];
 
 const LABEL_SOURCE = INLINE_FIELD_LABELS
@@ -136,6 +139,11 @@ export function normalizeClinicalDatumText(text = '') {
     .replace(/\bSol ALT\b/gu, 'Sol alt')
     .replace(/\bsağ ALT\b/gu, 'sağ alt')
     .replace(/\bsol ALT\b/gu, 'sol alt')
+    .replace(/\bMorfolojik patern\s*[:：-]?\s*/giu, '')
+    .replace(/Morfolojik patern\.\s*Morfolojik patern\.?/giu, '')
+    .replace(/\bpaternyla\b/giu, 'paternle')
+    .replace(/\blikefaksiyon\s+nekrozuyla\b/giu, 'likefaksiyon nekrozu ile')
+    .replace(/\blikefaksiyon(?!\s+nekroz)/giu, 'likefaksiyon nekrozu')
     .replace(/\bLökosit\s+(\d{1,2})(?![\d.,]*\s*\/mm)/giu, (_, number) => `Lökosit ${Number(number).toLocaleString('tr-TR')}.000/mm³`)
     .replace(/\bLokosit\s+(\d{1,2})(?![\d.,]*\s*\/mm)/giu, (_, number) => `Lökosit ${Number(number).toLocaleString('tr-TR')}.000/mm³`)
     .replace(/\bCRP\s+(\d{1,3})(?![\d.,]*\s*mg\/L)/giu, 'CRP $1 mg/L')
@@ -264,6 +272,7 @@ export function validateClinicalFieldPlacement(caseItem = {}) {
   const clueItems = asTextArray(caseItem.patientIntro?.distinctiveClues);
   clueItems.forEach((item) => {
     if (isMetaLabel(item)) errors.push(`ayırt ettirici ipuçlarında inline etiket var: ${item.slice(0, 90)}`);
+    if (/Morfolojik patern\.\s*Morfolojik patern|paternyla|Klinik değerlendirme için ek veri/iu.test(item)) errors.push(`ayırt ettirici ipuçlarında yasaklı ifade var: ${item.slice(0, 90)}`);
     if (/\bLökosit\s+\d{1,2}\.?$/iu.test(removeInlineFieldLabels(item))) errors.push(`eksik laboratuvar formatı: ${item.slice(0, 90)}`);
   });
   if (clueItems.length > 5) warnings.push('ayırt ettirici ipuçları 5 maddeden uzun');
@@ -272,6 +281,7 @@ export function validateClinicalFieldPlacement(caseItem = {}) {
   const evidenceItems = Array.isArray(evidenceSource) ? evidenceSource.map(itemBodyText).filter(Boolean) : asTextArray(evidenceSource);
   evidenceItems.forEach((item) => {
     if (isMetaLabel(item)) errors.push(`kanıt zincirinde inline etiket var: ${item.slice(0, 90)}`);
+    if (/Morfolojik patern\.\s*Morfolojik patern|paternyla|Klinik değerlendirme için ek veri/iu.test(item)) errors.push(`kanıt zincirinde yasaklı ifade var: ${item.slice(0, 90)}`);
     if (/\bLökosit\s+\d{1,2}\.?$/iu.test(removeInlineFieldLabels(item))) errors.push(`kanıt zincirinde eksik laboratuvar formatı: ${item.slice(0, 90)}`);
   });
 

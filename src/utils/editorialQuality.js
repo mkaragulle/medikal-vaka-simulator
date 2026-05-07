@@ -14,13 +14,15 @@ export const EDITORIAL_SECTION_LABELS = [
   'Destekleyici kanıt',
   'Destekleyici bulgu',
   'Ana kanıt',
-  'Ana patern',
-  'Klinik patern',
+  'Ana örüntü',
+  'Klinik örüntü',
   'Tanısal ayrım',
   'Klinik gerekçe',
   'Klinik yaklaşım',
   'Mekanizma',
   'Mekanizma özeti',
+  'Morfolojik örüntü',
+  'Morfolojik örüntü',
   'İlk adım',
   'İlk yaklaşım',
   'Yönetim',
@@ -28,7 +30,7 @@ export const EDITORIAL_SECTION_LABELS = [
   'Ek destek',
   'Risk bağlamı',
   'Başvuru yakınması',
-  'Laboratuvar paterni',
+  'Laboratuvar bulgusu',
   'Laboratuvar bulgusu',
   'Görüntüleme bulgusu',
   'Fizik muayene bulgusu',
@@ -36,6 +38,7 @@ export const EDITORIAL_SECTION_LABELS = [
   'Klinik olasılığı belirle',
   'İlk tedavi',
   'TUS kırmızı bayrağı',
+  'TUS tuzağı',
 ];
 
 const LABEL_SOURCE = EDITORIAL_SECTION_LABELS
@@ -47,8 +50,8 @@ const REPEATED_LABEL_BLOCK_PATTERN = new RegExp(`^(?:${LABEL_SOURCE})\\s*(?:[|:�
 const ANY_LABEL_PREFIX_PATTERN = new RegExp(`^(?:${LABEL_SOURCE})\\s*(?:[|:：\\-–—]+)\\s*`, 'iu');
 
 const WEAK_LABEL_PATTERN = LEADING_LABEL_PATTERN;
-const META_LANGUAGE_PATTERN = /(öğrenme hedefi|doğru seçenek verilen|yanıt ekseni|generator|AI spot|gömülü vaka|yüzeysel anahtar kelime|tek öğrenme hedefi|benzer seçenekleri ayıran ana patern|soru patern yorumlama becerisi|klinik bağlam içinde değerlendirilir|sonuçlar tek bir tanı adını yazmaz|öğrenci bu ayrımı|verilen öğrenme hedefi|ana karar tek öğrenme hedefine|hedeflenen öğrenme çıktısı|direkt tanı adı arama|yüzeysel anahtar kelime)/iu;
-const BROKEN_ENDING_PATTERN = /(Bu nedenle en iyi yanıt\.?|Bu nedenle en uygun yanıt\.?|açısından değerlendirilir\.?|ile uyumludur ve\.?|tanısını\.?|en iyi yanıt\.)$/iu;
+const META_LANGUAGE_PATTERN = /(öğrenme hedefi|doğru seçenek verilen|yanıt ekseni|generator|AI spot|gömülü vaka|yüzeysel anahtar kelime|tek öğrenme hedefi|benzer seçenekleri ayıran ana örüntü|soru örüntü yorumlama becerisi|klinik bağlam içinde değerlendirilir|klinik değerlendirme için ek veri|sonuçlar tek bir tanı adını yazmaz|öğrenci bu ayrımı|verilen öğrenme hedefi|ana karar tek öğrenme hedefine|hedeflenen öğrenme çıktısı|direkt tanı adı arama|yüzeysel anahtar kelime|kısa TUS pratiğinde ele alınır|örüntü ve mekanizma birlikte yorumlanmalıdır|doğru seçenek yanıt eksenini oluşturur|öğrenci ayırt eder)/iu;
+const BROKEN_ENDING_PATTERN = /(Bu nedenle en iyi yanıt\.?|Bu nedenle en uygun yanıt\.?|ile uyumludur ve\.?|tanısını\.?|örüntü tanısını\.?|dikkat çeker\.?|en iyi yanıt\.)$/iu;
 const CLINICAL_CONTENT_PATTERN = /(ateş|ağrı|eritem|ödem|dispne|göğüs|karın|kusma|ishal|döküntü|senkop|travma|kanama|hipotansiyon|taşikardi|hipoksemi|muayene|vital|laboratuvar|ekg|bt|mr|usg|grafi|seroloji|kültür|pcr|troponin|lökosit|crp|bilirubin|glukoz|ph|hco3|tanı|tedavi|etken|reseptör|enzim|mutasyon|hormon|histoloji|biyopsi|belirti|bulgu|klinik|risk|hasta|çocuk|yenidoğan|kadın|erkek|menenjit|pnömoni|erizipel|kawasaki|asfiksi|antidot|ilaç|hava yolu|hışıltılı solunum|stridor|tripod|izlem|tarama)/iu;
 
 export const TURKISH_MEDICAL_TERM_REPLACEMENTS = [
@@ -62,20 +65,40 @@ export const TURKISH_MEDICAL_TERM_REPLACEMENTS = [
   [/\bfollow[- ]?up\b/giu, 'izlem'],
   [/\bmanagement\b/giu, 'yönetim'],
   [/\btrigger\b/giu, 'tetikleyici'],
-  [/\bpattern\b/giu, 'patern'],
+  [/\bpattern\b/giu, 'örüntü'],
   [/\bcompliance\b/giu, 'uyum'],
   [/\bred flag\b/giu, 'kırmızı bayrak'],
   [/\bworkup\b/giu, 'değerlendirme'],
   [/\bErysipelas\b/giu, 'Erizipel'],
+  [/\börüntüyla\b/giu, 'örüntüyle'],
+  [/\börüntüsüyle\b/giu, 'örüntüsü ile'],
+  [/\blikefaksiyon\s+nekrozuyla\b/giu, 'likefaksiyon nekrozu ile'],
+  [/\blikefaksiyon(?!\s+nekroz)/giu, 'likefaksiyon nekrozu'],
+  [/\bcoagulative necrosis\b/giu, 'koagülasyon nekrozu'],
+  [/\bliquefactive necrosis\b/giu, 'likefaksiyon nekrozu'],
+  [/\bcaseous necrosis\b/giu, 'kazeöz nekroz'],
+  [/\bfat necrosis\b/giu, 'yağ nekrozu'],
+  [/\bfibrinoid necrosis\b/giu, 'fibrinoid nekroz'],
+  [/\bdokuyu sıvılaştırır\s+dikkat çeker\b/giu, 'dokunun sıvılaşmasına katkı sağlar'],
+  [/\bNötrofil enzimleri dokuyu sıvılaştırır\b/giu, 'Nötrofil kaynaklı enzimler dokunun sıvılaşmasına katkı sağlar'],
+  [/\bSolid organ iskemisi genelde koagülasyon nekrozu yapar\b/giu, 'Kalp, böbrek ve dalak gibi solid organ iskemilerinde genellikle koagülasyon nekrozu görülür'],
   [/\bmyocardial infarction\b/giu, 'miyokart enfarktüsü'],
   [/\bacute coronary syndrome\b/giu, 'akut koroner sendrom'],
   [/\bbronchiolitis\b/giu, 'bronşiolit'],
 ];
 
 const TEMPLATE_LANGUAGE_REPLACEMENTS = [
-  [/\s*benzer seçenekleri ayıran ana patern olarak hatırlanmalıdır\.?/giu, '.'],
+  [/\s*Morfolojik örüntü\.\s*Morfolojik örüntü\.?/giu, '.'],
+  [/\s*Morfolojik örüntü\s*[:：-]\s*/giu, ''],
+  [/\s*Klinik değerlendirme için ek veri\.?/giu, ''],
+  [/\s*Bu veri klinik bağlamda değerlendirilir\.?/giu, ''],
+  [/\s*Patern ve mekanizma birlikte yorumlanmalıdır\.?/giu, ''],
+  [/\s*Doğru seçenek yanıt eksenini oluşturur\.?/giu, ''],
+  [/\s*Öğrenci ayırt eder\.?/giu, ''],
+  [/\s*kısa TUS pratiğinde ele alınır\.?/giu, ''],
+  [/\s*benzer seçenekleri ayıran ana örüntü olarak hatırlanmalıdır\.?/giu, '.'],
   [/\s*doğru seçenek verilen öğrenme hedefiyle uyumludur\.?/giu, '.'],
-  [/\s*soru patern yorumlama becerisini ölçer\.?/giu, '.'],
+  [/\s*soru örüntü yorumlama becerisini ölçer\.?/giu, '.'],
   [/\s*klinik bağlam içinde değerlendirilir\.?/giu, '.'],
   [/\s*sonuçlar tek bir tanı adını yazmaz;?\s*/giu, ''],
   [/\s*öğrenci bu ayrımı yapmalıdır\.?/giu, '.'],
@@ -146,6 +169,7 @@ export function normalizeMedicalTurkish(text = '', { sectionTitle = '' } = {}) {
   value = TEMPLATE_LANGUAGE_REPLACEMENTS.reduce((current, [pattern, replacement]) => current.replace(pattern, replacement), value);
   value = removeUnnecessaryColonUsage(value);
   value = value
+    .replace(/\b([A-ZÇĞİÖŞÜa-zçğıöşü][^.!?]{4,80})\.\s*\1\./giu, '$1.')
     .replace(/\.\s*\./g, '.')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
@@ -202,7 +226,7 @@ export function detectTemplateLanguage(text = '') {
     || /belirli klinik koşullarda doğru olabilir/iu.test(value)
     || /olgudaki ana bulgular doğru yanıta/iu.test(value)
     || /doğru yanıt .* olmalıdır/iu.test(value)
-    || /ana patern olarak hatırlanmalıdır/iu.test(value);
+    || /ana örüntü olarak hatırlanmalıdır/iu.test(value);
 }
 
 export function detectTemplateLikeFeedback(text = '') {

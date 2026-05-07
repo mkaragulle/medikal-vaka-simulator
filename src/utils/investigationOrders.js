@@ -210,7 +210,7 @@ const branchOrderBank = {
   ],
   'medical-pathology': [
     { id: 'pathology-panel', label: 'Histopatolojik inceleme', type: 'pathology', priority: 'essential', synthetic: true },
-    { id: 'morphology-correlation', label: 'Morfolojik patern korelasyonu', type: 'clinical', priority: 'useful', synthetic: true },
+    { id: 'morphology-correlation', label: 'Histopatolojik korelasyon', type: 'clinical', priority: 'useful', synthetic: true },
   ],
   'medical-pharmacology': [
     { id: 'toxidrome-assessment', label: 'Toksidrom değerlendirmesi', type: 'clinical', priority: 'essential', synthetic: true },
@@ -324,7 +324,14 @@ function normalizeId(value = '') {
 }
 
 function sanitizeSummary(text = '', clinicalCase) {
-  return toSentence(stripDiagnosticLeakage(text, clinicalCase) || 'Objektif veri sınırlıdır.');
+  return toSentence(stripDiagnosticLeakage(text, clinicalCase) || 'Bu istemde karar değiştirici objektif bulgu saptanmadı.');
+}
+
+function hasMeaningfulOrderContent(item = {}) {
+  const joined = [item.label, item.title, item.purpose, item.clinicalMeaning, item.result?.summary, item.result?.interpretation, ...(Array.isArray(item.result?.rows) ? item.result.rows.flat() : [])].join(' ');
+  if (/Klinik değerlendirme için ek veri|Objektif karar verisi|Morfolojik örüntü\.\s*Morfolojik örüntü/iu.test(joined)) return false;
+  if (item.result?.rows?.length || item.result?.images?.length) return true;
+  return /(izlenir|izlendi|saptanır|saptandı|saptanmadı|pozitif|negatif|yüksek|düşük|artmış|azalmış|\d|mg\/dL|mg\/L|U\/L|mmHg|%|nekrotik|nötrofil|doku|hücre)/iu.test(joined);
 }
 
 function attachImages(item, clinicalCase) {
@@ -517,7 +524,7 @@ function syntheticSummaryFor(item, clinicalCase) {
   if (category === 'urine') return 'Tam idrar analizinde lökosit esteraz ve nitrit negatif; belirgin hematüri saptanmaz.';
   if (category === 'pregnancy') return 'β-hCG sonucu negatif olarak raporlanır.';
   if (category === 'biochemistry') return 'Kreatinin ve elektrolit değerleri klinik stabilizasyonu değiştirecek belirgin bozukluk göstermez.';
-  if (category === 'pathology') return 'Mikroskopik incelemede örneklenen materyale ait objektif hücresel bulgular raporlanır; kesin yorum histopatolojik rapora bırakılır.';
+  if (category === 'pathology') return 'Mikroskopik incelemede doku mimarisi, hücresel hasar ve inflamasyon örüntüsü objektif olarak raporlanır.';
   return 'Bu istemde acil karar sürecini değiştiren belirgin ek objektif bulgu saptanmaz.';
 }
 
@@ -552,7 +559,7 @@ function orderPurposeFor(item, clinicalCase = {}) {
     return 'Ultrasonografik morfoloji ve sıvı değerlendirmesi.';
   }
 
-  return 'Klinik değerlendirme için ek veri.';
+  return 'Vaka özelinde objektif veri sağlar.';
 }
 
 
@@ -588,7 +595,7 @@ function clinicalMeaningFor(item, clinicalCase = {}) {
   if (category === 'culture') return 'Pozitif kültür sonucu hedefe yönelik antimikrobiyal tedaviye geçişi destekler.';
   if (category === 'mri') return 'İleri görüntüleme ilk görüntüleme belirsizse veya yumuşak doku/parankim ayrıntısı gerekiyorsa değer kazanır.';
   if (category === 'ultrasound') {
-    if (/doppler|venöz|arteriyel|akım/.test(context + ' ' + String(item.label || '').toLocaleLowerCase('tr'))) return 'Doppler inceleme damar açıklığı, kompresyon yanıtı ve akım paternini objektif olarak gösterir.';
+    if (/doppler|venöz|arteriyel|akım/.test(context + ' ' + String(item.label || '').toLocaleLowerCase('tr'))) return 'Doppler inceleme damar açıklığı, kompresyon yanıtı ve akım örüntüsünü objektif olarak gösterir.';
     return 'Ultrasonografi; sıvı, taş, duvar kalınlığı, kitle veya vasküler akım bulgularını objektif olarak gösterir.';
   }
 
@@ -613,7 +620,7 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
   const valueText = String(value || '').toLocaleLowerCase('tr');
   const combined = `${parameter} ${value} ${reference}`.toLocaleLowerCase('tr');
 
-  if (/normalde beklenmeyen patern|mikroorganizma görülmemesi|dominant bakteri görülmemesi|üreme yok|negatif|saptanmaması|olmaması/.test(normalizedReference)) {
+  if (/normalde beklenmeyen bulgu|mikroorganizma görülmemesi|dominant bakteri görülmemesi|üreme yok|negatif|saptanmaması|olmaması/.test(normalizedReference)) {
     if (/bekleniyor|sonuç bekleniyor|takip/.test(valueText)) return 'Takip edilecek';
     const valueShowsAbsence = /saptanmadı|izlenmedi|görülmedi|üreme olmadı|üreme saptanmadı|yok/.test(valueText) || (/\bnegatif\b/.test(valueText) && !/\bgram negatif\b/.test(valueText));
     if (valueShowsAbsence) return 'Negatif';
@@ -775,6 +782,7 @@ export function buildInvestigationOrders(clinicalCase = {}) {
     if (seen.has(key) || seen.has(labelKey)) return;
     seen.add(key);
     seen.add(labelKey);
+    if (!hasMeaningfulOrderContent(item)) return;
     merged.push(item);
   });
 

@@ -98,7 +98,7 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "seedId": "branch-peds-pyloric-stenosis-001",
     "title": "Süt çocuğunda fışkırır kusma",
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
-    "learningTarget": "Hipertrofik pilor stenozunda kusma paterni ve metabolik alkalozun tanınması",
+    "learningTarget": "Hipertrofik pilor stenozunda kusma örüntüsü ve metabolik alkalozun tanınması",
     "correctConcept": "Hipertrofik pilor stenozu",
     "demographics": "5 haftalık erkek bebek",
     "setting": "Pediatri polikliniği",
@@ -121,7 +121,7 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         "label": "Elektrolit ve kan gazı",
         "type": "lab",
         "priority": "essential",
-        "summary": "Hipokloremik metabolik alkaloz paterni izlenir.",
+        "summary": "Hipokloremik metabolik alkaloz örüntüsü izlenir.",
         "findings": [
           "Klor düşük",
           "pH yüksek",
@@ -290,7 +290,7 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "seedId": "branch-obgyn-endometriosis-001",
     "title": "Dismenore ve infertilite",
     "relatedBranch": "Kadın Hastalıkları ve Doğum",
-    "learningTarget": "Endometrioziste siklik ağrı ve infertilite paterninin tanınması",
+    "learningTarget": "Endometrioziste siklik ağrı ve infertilite örüntüsünün tanınması",
     "correctConcept": "Endometriozis",
     "demographics": "28 yaş kadın",
     "setting": "Kadın doğum polikliniği",
@@ -321,7 +321,7 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         ]
       }
     ],
-    "question": "Bu jinekolojik patern en çok hangi durumu düşündürür?",
+    "question": "Bu jinekolojik örüntü en çok hangi durumu düşündürür?",
     "options": [
       {
         "id": "A",
@@ -348,9 +348,9 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
     "explanation": "Siklik pelvik ağrı, progresif dismenore, derin disparoni ve infertilite birlikteliği endometriozis için karakteristiktir.",
     "wrongOptionFeedback": {
       "B": "PID’de ateş, servikal hareket hassasiyeti ve enfeksiyon bulguları ön plandadır.",
-      "C": "Miyom anormal uterin kanama ve bası semptomları yapabilir. Siklik disparoni-infertilite paterni daha zayıftır.",
+      "C": "Miyom anormal uterin kanama ve bası semptomları yapabilir. Siklik disparoni-infertilite örüntüsü daha zayıftır.",
       "D": "PKOS oligo/anovülasyon ve hiperandrojenizmle beklenir.",
-      "E": "Over torsiyonu ani şiddetli ağrı ve akut batın paternindedir."
+      "E": "Over torsiyonu ani şiddetli ağrı ve akut batın örüntüsündedir."
     },
     "evidenceChain": [
       "Ağrı siklik ve progresiftir",
@@ -496,14 +496,14 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         "label": "V/Q değerlendirmesi",
         "type": "physiology",
         "priority": "essential",
-        "summary": "Ventilasyon korunurken perfüzyon azalması yüksek V/Q paternine yol açar.",
+        "summary": "Ventilasyon korunurken perfüzyon azalması yüksek V/Q örüntüsüne yol açar.",
         "findings": [
           "Perfüzyon azalır",
           "Ölü boşluk etkisi artar"
         ]
       }
     ],
-    "question": "Bu fizyoloji paterni için en doğru ifade hangisidir?",
+    "question": "Bu fizyoloji örüntüsü için en doğru ifade hangisidir?",
     "options": [
       {
         "id": "A",
@@ -689,7 +689,7 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         ]
       }
     ],
-    "question": "Bu embriyolojik patern en çok hangi duruma uyar?",
+    "question": "Bu embriyolojik örüntü en çok hangi duruma uyar?",
     "options": [
       {
         "id": "A",
@@ -862,14 +862,14 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
         "label": "Cerrahi akut karın değerlendirmesi",
         "type": "clinical",
         "priority": "essential",
-        "summary": "Lokalize sağ alt kadran hassasiyeti akut apandisit paternini destekler.",
+        "summary": "Lokalize sağ alt kadran hassasiyeti akut apandisit örüntüsünü destekler.",
         "findings": [
           "Göç eden ağrı",
           "Lokal periton irritasyonu"
         ]
       }
     ],
-    "question": "Bu cerrahi akut karın paterni için en olası tanı hangisidir?",
+    "question": "Bu cerrahi akut karın örüntüsü için en olası tanı hangisidir?",
     "options": [
       {
         "id": "A",
@@ -893,7 +893,7 @@ export const AI_BRANCH_TEMPLATE_SEEDS = [
       }
     ],
     "correctAnswer": "A",
-    "explanation": "Periumbilikal ağrının sağ alt kadrana göçü, iştahsızlık ve McBurney hassasiyeti akut apandisit için klasik patern oluşturur.",
+    "explanation": "Periumbilikal ağrının sağ alt kadrana göçü, iştahsızlık ve McBurney hassasiyeti akut apandisit için klasik örüntü oluşturur.",
     "wrongOptionFeedback": {
       "B": "Kolesistit sağ üst kadran ağrısı ve Murphy bulgusuyla beklenir.",
       "C": "Divertikülit daha çok sol alt kadran ağrısı yapar.",

@@ -110,7 +110,7 @@ function DiagnosisQuiz({
     ? (submitted && clinicalCase.clinicalFocus
       ? clinicalCase.clinicalFocus
       : 'Kısa TUS olgusunda öykü, muayene ve objektif verileri yorumlayarak en doğru yanıtı seç.')
-    : 'Olgu paternine en uygun seçeneği işaretle.';
+    : 'Olgu bulgularına en uygun seçeneği işaretle.';
 
   const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;

@@ -20,7 +20,7 @@ const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 function cleanClinicalSummaryItem(value = '') {
   return normalizeClinicalDatumText(removeInlineFieldLabels(sanitizeMeasurementText(String(value || '')))).replace(/[.]$/u, '')
     .replace(/\s+/g, ' ')
-    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern)\s*[:：-]\s*/iu, '')
+    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik örüntü|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|TUS tuzağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|Morfolojik örüntü|Mekanizma|belirleyici bulgu)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
@@ -59,7 +59,7 @@ function buildValidatedAIRiskContext(payload = {}, history = []) {
   if (/farmakoloji|ilaç|toksin|zehir|yan etki|antidot/.test(branch + ' ' + target)) {
     return ['İlaç veya toksin maruziyeti öyküsü', 'Doz ve zaman ilişkisinin klinik tabloyu belirlemesi'];
   }
-  return uniqueSummaryItems([history[0], 'Objektif bulguların karar basamağını desteklemesi'], 2);
+  return uniqueSummaryItems([history[0], 'Somut bulguların karar basamağını desteklemesi'], 2);
 }
 const DIRECT_LEAK_PHRASES = [
   'tanısını doğrular',
@@ -68,6 +68,9 @@ const DIRECT_LEAK_PHRASES = [
   'kesin tanıdır',
   'tanı:',
   'diagnosis:',
+  'klinik değerlendirme için ek veri',
+  'morfolojik örüntü. morfolojik örüntü',
+  'kısa tus pratiğinde ele alınır',
 ];
 
 
@@ -90,7 +93,7 @@ function normalizeLabInvestigationRows(item = {}, correctText = '') {
 function stripAnswerLeak(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
   const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
+  return String(text).replace(new RegExp(escaped, 'gi'), 'belirleyici bulgu');
 }
 
 function toOptionText(option) {
@@ -167,7 +170,7 @@ export function validateAIQuestionPayload(payload = {}) {
     if (isInvestigationResult(finding) && !isPhysicalExamFinding(finding)) errors.push(`exam alanında tetkik verisi var: ${String(finding).slice(0, 80)}`);
   });
   (payload.evidenceChain || []).forEach((item) => {
-    if (/^(Başvuru yakınması|Laboratuvar paterni|Görüntüleme bulgusu|Fizik muayene bulgusu|Karar verdirici ipucu|Destekleyici kanıt)\s*[:：|\-]/iu.test(String(item || '').trim())) {
+    if (/^(Başvuru yakınması|Laboratuvar bulgusu|Görüntüleme bulgusu|Fizik muayene bulgusu|Karar verdirici ipucu|Destekleyici kanıt|Morfolojik örüntü|Mekanizma|Ayırıcı nokta|TUS tuzağı)\s*[:：|\-]/iu.test(String(item || '').trim())) {
       errors.push(`evidenceChain içinde inline etiket var: ${String(item).slice(0, 80)}`);
     }
   });
@@ -213,7 +216,7 @@ function normalizeInvestigation(item, index, correctText) {
     summary,
     findings,
     rows,
-    interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte değerlendirilir.',
+    interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte yorumlanır.',
   };
 }
 

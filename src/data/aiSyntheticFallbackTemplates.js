@@ -68,7 +68,7 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
       "B": "Antibiyotik bakteriyel pnömoni veya sepsis bulgusu varsa düşünülür. Fokal konsolidasyon ve toksik görünüm verilmemiştir.",
       "C": "Kortikosteroid bronşiolitte rutin ilk basamak değildir. Astım atağı düşündüren daha büyük çocukta anlam kazanır.",
       "D": "Entübasyon apne, belirgin solunum yetmezliği veya ağır hipoksemi varsa gerekir. Bu olguda önce destek tedavisi uygundur.",
-      "E": "Tüberküloz kronik temas ve uzun süreli semptomlarla düşünülür. Akut viral bronşiolit paternini açıklamaz."
+      "E": "Tüberküloz kronik temas ve uzun süreli semptomlarla düşünülür. Akut viral bronşiolit örüntüsünü açıklamaz."
     },
     "evidenceChain": [
       "Yaş bronşiolit için tipiktir",
@@ -158,7 +158,7 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "wrongOptionFeedback": {
       "B": "Kızamıkta öksürük, koriza, Koplik lekeleri ve aşı öyküsü daha belirleyicidir. Bu tabloda Kawasaki bulguları baskındır.",
       "C": "Streptokok tonsilliti tonsiller eksüda ve boğaz ağrısıyla beklenir. Mukokutanöz çoklu bulguları açıklamaz.",
-      "D": "Anafilakside ani ürtiker, bronkospazm veya hipotansiyon beklenir. Beş günlük ateş paternine uymaz.",
+      "D": "Anafilakside ani ürtiker, bronkospazm veya hipotansiyon beklenir. Beş günlük ateş örüntüsüne uymaz.",
       "E": "Juvenil idiopatik artrit kronik artrit ve sistemik bulgularla düşünülür. Akut Kawasaki tedavisi geciktirilmemelidir."
     },
     "evidenceChain": [
@@ -461,7 +461,7 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "seedId": "synthetic-micro-hav-variant-001",
     "title": "Akut hepatit paneli yorumu",
     "relatedBranch": "Tıbbi Mikrobiyoloji",
-    "learningTarget": "HAV IgM ve IgG paterninin akut enfeksiyon ile geçirilmiş bağışıklıktan ayrılması",
+    "learningTarget": "HAV IgM ve IgG örüntüsünün akut enfeksiyon ile geçirilmiş bağışıklıktan ayrılması",
     "correctConcept": "Akut hepatit A enfeksiyonu",
     "demographics": "28 yaş erkek",
     "setting": "Enfeksiyon hastalıkları değerlendirmesi",
@@ -493,7 +493,7 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
         ]
       }
     ],
-    "question": "Bu serolojik patern en güçlü olarak hangi sonucu destekler?",
+    "question": "Bu serolojik örüntü en güçlü olarak hangi sonucu destekler?",
     "options": [
       {
         "id": "A",

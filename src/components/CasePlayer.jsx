@@ -277,7 +277,7 @@ function compactClinicalText(value = '', maxLength = 170) {
 function cleanPatientSummaryBullet(value = '') {
   return sanitizeMeasurementText(String(value || ''))
     .replace(/\s+/g, ' ')
-    .replace(/^(Başvuru yakınması|Laboratuvar paterni|Laboratuvar bulgusu|Görüntüleme bulgusu|Fizik muayene bulgusu|Muayene bulgusu|Olgu verisi|Ek destek|Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|TUS kırmızı bayrağı|Ana kanıt|Kritik ipucu|karar verdirici patern|Destekleyici bulgu)\s*[:：-]\s*/iu, '')
+    .replace(/^(Başvuru yakınması|Laboratuvar bulgusu|Laboratuvar bulgusu|Görüntüleme bulgusu|Fizik muayene bulgusu|Muayene bulgusu|Olgu verisi|Ek destek|Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik örüntü|Tanısal ayrım|TUS kırmızı bayrağı|Ana kanıt|Kritik ipucu|karar verdirici örüntü|Destekleyici bulgu)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')

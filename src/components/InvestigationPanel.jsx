@@ -251,7 +251,7 @@ const QUALITATIVE_RESULT_TYPES = new Set(['ecg', 'xray', 'ct', 'mri', 'ultrasoun
 
 function isGenericQualitativeReference(reference = '') {
   const normalized = normalizeClinicalText(reference);
-  return !normalized || normalized === '—' || /normalde beklenmeyen patern|objektif bulgu|klinik olarak/.test(normalized);
+  return !normalized || normalized === '—' || /normalde beklenmeyen bulgu|objektif bulgu|klinik olarak/.test(normalized);
 }
 
 function rowHasQuantitativeSignal(row = {}) {

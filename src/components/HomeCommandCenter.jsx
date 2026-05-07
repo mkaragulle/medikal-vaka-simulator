@@ -77,7 +77,7 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
         tone: 'blue',
         label: 'Çalışma odağı',
         title: 'Başlangıç kalibrasyonu',
-        text: 'İlk blokta farklı branşlardan kısa olgular çözerek sistemin tanısal ayrım, tetkik seçimi ve yönetim paternlerini ölçmesini sağla.',
+        text: 'İlk blokta farklı branşlardan kısa olgular çözerek sistemin tanısal ayrım, tetkik seçimi ve yönetim örüntüylerini ölçmesini sağla.',
       },
       strategy: {
         icon: 'Brain',
@@ -95,7 +95,7 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
       title: primaryDomain.key === 'yönetim sırası' ? 'Yönetim basamaklarında dikkat artmalı' : primaryDomain.key === 'tetkik seçimi' ? 'Tetkik seçimi mantığını güçlendirme zamanı' : 'Hedefli tekrar zamanı',
       description: hasWrongData
         ? `Son yanlışlarda ${weakBranch ? `${weakBranch} ağırlığı` : `${primaryDomain.key} hataları`} öne çıkıyor. Kısa öğrenme bloklarıyla karar verdirici ipuçlarını yeniden kurmak daha verimli olur.`
-        : 'Doğruluk düşük seyrediyor; hızlanmadan önce temel klinik paternleri ve seçenek eleme mantığını kısa bloklarla pekiştir.',
+        : 'Doğruluk düşük seyrediyor; hızlanmadan önce temel klinik örüntüleri ve seçenek eleme mantığını kısa bloklarla pekiştir.',
       scoreTone: 'danger',
       focus: {
         icon: primaryDomain.icon,
@@ -121,9 +121,9 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
 
   if (accuracy < 75) {
     return {
-      title: primaryDomain.key === 'tanısal ayrım' ? 'Tanısal patern tekrarına ihtiyaç var' : `${primaryDomain.key.charAt(0).toLocaleUpperCase('tr') + primaryDomain.key.slice(1)} rafine edilmeli`,
+      title: primaryDomain.key === 'tanısal ayrım' ? 'Tanısal örüntü tekrarına ihtiyaç var' : `${primaryDomain.key.charAt(0).toLocaleUpperCase('tr') + primaryDomain.key.slice(1)} rafine edilmeli`,
       description: hasWrongData
-        ? `Genel performans dengeli; ancak son yanlışlarda ${primaryDomain.key} paterni belirgin. Bu aşamada doğru-yanlış farkını belirleyen küçük ipuçlarına odaklan.`
+        ? `Genel performans dengeli; ancak son yanlışlarda ${primaryDomain.key} örüntüsü belirgin. Bu aşamada doğru-yanlış farkını belirleyen küçük ipuçlarına odaklan.`
         : 'Performans orta bantta; doğru sayısını artırmak için her olguda ana ipucu, dışlatıcı bulgu ve ilk yaklaşımı ayrı ayrı işaretle.',
       scoreTone: 'warning',
       focus: {
@@ -164,8 +164,8 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
       label: 'Güçlü alan',
       title: currentStreak >= 3 ? 'Seri performansı' : 'Genel doğruluk',
       text: currentStreak >= 3
-        ? `Aktif doğru seri ${currentStreak}; temel patern okuma iyi gidiyor. Şimdi kalan zayıf alanı daraltarak çalış.`
-        : 'Tanısal patern okuma güçlü; küçük puan kayıpları için yakın seçenekleri ve ilk yönetim basamaklarını karşılaştır.',
+        ? `Aktif doğru seri ${currentStreak}; belirleyici bulgu okuma iyi gidiyor. Şimdi kalan zayıf alanı daraltarak çalış.`
+        : 'Tanısal örüntü okuma güçlü; küçük puan kayıpları için yakın seçenekleri ve ilk yönetim basamaklarını karşılaştır.',
     },
     strategy: {
       icon: primaryDomain.icon,

@@ -32,17 +32,17 @@ function refineLabel(value = '', fallback = 'Klinik ipucu') {
   if (/^ilk ad[ıi]m$/iu.test(raw)) return 'Öncelik';
   if (/^mekanizma$/iu.test(raw) || /mekanistik yakla[şs][ıi]m/iu.test(raw)) return 'Mekanizma özeti';
   if (/^ilk tedavi$/iu.test(raw)) return 'Tedavi önceliği';
-  if (/klinik olas[ıi]l[ıi][ğg][ıi] belirle/iu.test(raw)) return 'Klinik patern';
-  if (/^yakla[şs][ıi]m$/iu.test(raw)) return 'Klinik patern';
+  if (/klinik olas[ıi]l[ıi][ğg][ıi] belirle/iu.test(raw)) return 'Klinik örüntü';
+  if (/^yakla[şs][ıi]m$/iu.test(raw)) return 'Klinik örüntü';
   if (/^hap bilgi$/iu.test(raw)) return 'Yüksek verimli bilgi';
   return raw;
 }
 
 function inferEvidenceTitle(text = '', index = 0) {
   const normalized = normalize(text).toLocaleLowerCase('tr');
-  if (/ekg|st segment|derivasyon|ritim|qrs|troponin/.test(normalized)) return 'EKG ve iskemi paterni';
+  if (/ekg|st segment|derivasyon|ritim|qrs|troponin/.test(normalized)) return 'EKG ve iskemi örüntüsü';
   if (/bt|mr|mrg|usg|grafi|görüntüleme|radyografi|ultrason|endoskopi/.test(normalized)) return 'Görüntüleme bulgusu';
-  if (/ph\b|baz açığı|glukoz|keton|crp|lökosit|hemoglobin|trombosit|ferritin|enzim|metabolit|kreatinin|ast|alt|bilirubin|seroloji|kültür|pcr|marker|antikor|antijen/.test(normalized)) return 'Laboratuvar paterni';
+  if (/ph\b|baz açığı|glukoz|keton|crp|lökosit|hemoglobin|trombosit|ferritin|enzim|metabolit|kreatinin|ast|alt|bilirubin|seroloji|kültür|pcr|marker|antikor|antijen/.test(normalized)) return 'Laboratuvar örüntüsü';
   if (/muayene|oskültasyon|defans|rebound|döküntü|ekimoz|letarji|ral|üfürüm|ödem|nörolojik|ateş|bulgu/.test(normalized)) return 'Muayene bulgusu';
   if (/öykü|maruziyet|travma|ilaç|sigara|gebelik|doğum|aile|beslenme|seyahat|temas|alkol/.test(normalized)) return 'Öykü ipucu';
   if (/yaş|bebek|çocuk|yenidoğan|erkek|kadın|adölesan|gebede/.test(normalized)) return 'Klinik bağlam';
@@ -91,7 +91,7 @@ function normalizeTitledList(list = [], fallbackTitleFn = (text, index) => `Madd
     const count = used.get(title) || 0;
     used.set(title, count + 1);
     if (count > 0) {
-      const alternatives = ['Klinik patern', 'Tedavi önceliği', 'Tanısal doğrulama', 'İzlem ve güvenlik', 'Çeldirici ayrımı'];
+      const alternatives = ['Klinik örüntü', 'Tedavi önceliği', 'Tanısal doğrulama', 'İzlem ve güvenlik', 'Çeldirici ayrımı'];
       title = alternatives.find((candidate) => !used.has(candidate)) || `${title} ${count + 1}`;
       used.set(title, 1);
     }
@@ -103,8 +103,8 @@ function cleanComparisonPoints(points = [], option = '') {
   if (!Array.isArray(points)) return [];
   return points.map((point) => {
     const clean = stripWeakPrefix(point);
-    if (/kendi tipik paterninde doğru olabilir/i.test(clean)) {
-      return `${option} yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır; bu olguda karar verdirici patern farklıdır.`;
+    if (/kendi tipik örüntüsünde doğru olabilir/i.test(clean)) {
+      return `${option} yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır; bu olguda belirleyici bulgu farklıdır.`;
     }
     return ensureSentence(clean);
   }).filter(Boolean).slice(0, 3);
@@ -144,7 +144,7 @@ function reworkFeedback(clinicalCase) {
         if (/tetkik|ekg|bt|mr|usg|kültür|seroloji|biyopsi|marker|laboratuvar|doğrula/.test(normalized)) return 'Tanısal doğrulama';
         if (/tedavi|başla|ver|antibiyotik|antikoagülasyon|aspirin|insülin|antidot|cerrahi|pci|reperfüzyon|hipotermi|sıvı/.test(normalized)) return 'Tedavi önceliği';
         if (/izle|takip|kontrol|komplikasyon|yanıt/.test(normalized)) return 'İzlem';
-        return index === 0 ? 'Klinik patern' : 'Sonraki adım';
+        return index === 0 ? 'Klinik örüntü' : 'Sonraki adım';
       });
     }
   }
@@ -180,7 +180,7 @@ function reworkFeedback(clinicalCase) {
     ];
     feedback.clinicalPearls = [
       { label: 'Karar verdirici ipucu', text: 'Çocuk istismarında güçlü şüphe güvenlik, kayıt ve bildirim sürecini başlatmak için yeterlidir; kesin tanı beklenmez.' },
-      { label: 'Ayırt ettirici patern', text: 'Tutarsız öykü, farklı yaşta ekimoz, retinal/subdural kanama, posterior kosta-metafiz kırığı ve açıklanamayan nöbet-letarji yüksek değerli ipuçlarıdır.' },
+      { label: 'Ayırt ettirici örüntü', text: 'Tutarsız öykü, farklı yaşta ekimoz, retinal/subdural kanama, posterior kosta-metafiz kırığı ve açıklanamayan nöbet-letarji yüksek değerli ipuçlarıdır.' },
       { label: 'Yönetim önceliği', text: 'Stabilizasyon geciktirilmez; objektif kayıt ve koruyucu bildirim tıbbi tedaviyle eş zamanlı yürütülür.' },
     ];
     feedback.pearls = feedback.clinicalPearls;

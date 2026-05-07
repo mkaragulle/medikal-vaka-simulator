@@ -107,8 +107,8 @@ function refineLabel(value = '', fallback = '') {
   if (/^ilk ad[ıi]m$/iu.test(raw)) return 'Öncelik';
   if (/^mekanizma$/iu.test(raw) || /mekanistik yakla[şs][ıi]m/iu.test(raw)) return 'Mekanizma özeti';
   if (/^ilk tedavi$/iu.test(raw)) return 'Tedavi önceliği';
-  if (/klinik olas[ıi]l[ıi][ğg][ıi] belirle/iu.test(raw)) return 'Klinik patern';
-  if (/^yakla[şs][ıi]m$/iu.test(raw)) return 'Klinik patern';
+  if (/klinik olas[ıi]l[ıi][ğg][ıi] belirle/iu.test(raw)) return 'Klinik örüntü';
+  if (/^yakla[şs][ıi]m$/iu.test(raw)) return 'Klinik örüntü';
   if (/^hap bilgi$/iu.test(raw)) return 'Yüksek verimli bilgi';
   if (/^s[ıi]nav incisi$/iu.test(raw)) return 'Sınav incisi';
   return raw;
@@ -120,9 +120,9 @@ function removeMetaLanguage(value = '') {
     .replace(/Bu spot olguda\s+/giu, '')
     .replace(/öğrenci\s+[^.]*\.?/giu, '')
     .replace(/Bu vaka,?\s*/giu, '')
-    .replace(/klinik bağlamda değerlendirilir/giu, 'olgudaki objektif paternle yorumlanır')
+    .replace(/klinik bağlamda değerlendirilir/giu, 'olgudaki objektif örüntüyle yorumlanır')
     .replace(/\bBaşvuru yakınması\s*[:：|\-]\s*/giu, '')
-    .replace(/\bLaboratuvar paterni\s*[:：|\-]\s*/giu, '')
+    .replace(/\bLaboratuvar bulgusu\s*[:：|\-]\s*/giu, '')
     .replace(/\bGörüntüleme bulgusu\s*[:：|\-]\s*/giu, '')
     .replace(/\bFizik muayene bulgusu\s*[:：|\-]\s*/giu, '')
     .replace(/\bOlgu verisi\s*[:：-]\s*/giu, '')
@@ -184,7 +184,7 @@ function deriveWhyCorrect(clinicalCase) {
 
   const clue = getMainClue(clinicalCase);
   const correct = clinicalCase.diagnosis?.correct || 'doğru seçenek';
-  return `${clue ? `${clue} karar verdirici ana ipucudur. ` : ''}Bu nedenle ${correct} olgudaki öykü, muayene ve objektif veri paternini en iyi açıklar.`;
+  return `${clue ? `${clue} karar verdirici ana ipucudur. ` : ''}Bu nedenle ${correct} olgudaki öykü, muayene ve objektif veri örüntüsünü en iyi açıklar.`;
 }
 
 function normalizeWrongMap(clinicalCase) {
@@ -221,17 +221,17 @@ function deriveWhyWrong(clinicalCase, selectedOption, selectedComparison) {
   const clue = getMainClue(clinicalCase);
   const correctDiagnosis = clinicalCase.diagnosis?.correct || 'doğru seçenek';
   if (selectedOption) {
-    return `${selectedOption} bazı benzer olgularda düşünülebilir; ancak bu vakada ${clue ? `${clue} ` : 'ana klinik patern '}doğru yanıta götüren belirleyici ipucudur. Bu seçim, ${correctDiagnosis} lehine olan kanıt zincirini ve ilk yaklaşımı eksik bırakır.`;
+    return `${selectedOption} bazı benzer olgularda düşünülebilir; ancak bu vakada ${clue ? `${clue} ` : 'ana klinik örüntü '}doğru yanıta götüren belirleyici ipucudur. Bu seçim, ${correctDiagnosis} lehine olan kanıt zincirini ve ilk yaklaşımı eksik bırakır.`;
   }
 
-  return `Seçilen yanıt, olgunun ana klinik ve tetkik paternini ${correctDiagnosis} kadar iyi açıklamaz.`;
+  return `Seçilen yanıt, olgunun ana klinik ve tetkik bulgularıni ${correctDiagnosis} kadar iyi açıklamaz.`;
 }
 
 function inferEvidenceTitle(text = '', index = 0) {
   const title = canonicalEvidenceTitle(text, '');
   if (title && title !== 'Klinik ipucu') return title;
   const normalized = normalizeText(text).toLocaleLowerCase('tr');
-  if (/st |ekg|derivasyon|ritim|qrs|qt|pr\b|segment/.test(normalized)) return 'EKG paterni';
+  if (/st |ekg|derivasyon|ritim|qrs|qt|pr\b|segment/.test(normalized)) return 'EKG örüntüsü';
   if (/öykü|maruziyet|travma|ilaç|sigara|gebelik|doğum|aile|beslenme|seyahat|temas/.test(normalized)) return 'Öykü ipucu';
   if (/reseptör|enzim|gen|mutasyon|yolak|hormon|protein|histolojik|nekroz|inflamasyon|morfoloji/.test(normalized)) return 'Mekanizma';
   if (/negatif|saptanmadı|normal|yok/.test(normalized)) return 'Dışlatıcı bulgu';
@@ -274,7 +274,7 @@ function deriveEvidenceChain(clinicalCase) {
   if (Array.isArray(feedback.evidenceChain)) rawEvidence.push(...feedback.evidenceChain);
 
   if (rawEvidence.length < 3 && clinicalCase.chiefComplaint) {
-    rawEvidence.push({ title: 'Başvuru paterni', text: `${trimTrailingPunctuation(clinicalCase.chiefComplaint)} başvurunun temel klinik problemini oluşturur` });
+    rawEvidence.push({ title: 'Başvuru örüntüsü', text: `${trimTrailingPunctuation(clinicalCase.chiefComplaint)} başvurunun temel klinik problemini oluşturur` });
   }
 
   if (rawEvidence.length < 4 && Array.isArray(clinicalCase.exam) && clinicalCase.exam.length) {
@@ -285,7 +285,7 @@ function deriveEvidenceChain(clinicalCase) {
     .map((investigation) => {
       const finding = investigation.summary || investigation.findings?.[0] || '';
       if (!finding) return null;
-      return { title: investigation.label || 'Tetkik paterni', text: trimTrailingPunctuation(finding) };
+      return { title: investigation.label || 'Tetkik örüntüsü', text: trimTrailingPunctuation(finding) };
     })
     .filter(Boolean);
 

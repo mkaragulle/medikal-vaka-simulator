@@ -1,12 +1,12 @@
 export const AI_QUESTION_SEEDS = [
   {
     "seedId": "ai-hav-serology-pattern-001",
-    "title": "Sarılık ve viral seroloji paterni",
+    "title": "Sarılık ve viral seroloji örüntüsü",
     "relatedBranch": "Tıbbi Mikrobiyoloji",
     "branchId": "tus-spot-olgular",
     "spotCategory": "AI Spot • Mikrobiyoloji",
     "difficulty": "Orta-Zor",
-    "learningTarget": "Akut hepatit A serolojisinin geçirilmiş enfeksiyon ve hepatit B/C paternlerinden ayrılması",
+    "learningTarget": "Akut hepatit A serolojisinin geçirilmiş enfeksiyon ve hepatit B/C örüntülerinden ayrılması",
     "demographics": "22 yaş erkek",
     "setting": "Acil başvuru",
     "chiefComplaint": "Sarılık, halsizlik ve iştahsızlık",
@@ -32,7 +32,7 @@ export const AI_QUESTION_SEEDS = [
         "summary": "alt 1180 U/L, AST 910 U/L, total bilirubin 5.1 mg/dL, ALP hafif yüksek.",
         "findings": [
           "alt ve AST belirgin yüksek",
-          "Bilirubin yüksekliği hepatoselüler paternle birlikte"
+          "Bilirubin yüksekliği hepatoselüler örüntüyle birlikte"
         ]
       },
       {
@@ -48,7 +48,7 @@ export const AI_QUESTION_SEEDS = [
         ]
       }
     ],
-    "question": "Bu serolojik patern en çok hangi tabloyu destekler?",
+    "question": "Bu serolojik örüntü en çok hangi tabloyu destekler?",
     "options": [
       {
         "id": "A",
@@ -72,15 +72,15 @@ export const AI_QUESTION_SEEDS = [
       }
     ],
     "correctAnswer": "A",
-    "explanation": "Anti-HAV IgM pozitifliği yakın dönem hepatit A enfeksiyonunu gösterir. Anti-HAV IgG’nin negatif olması geçirilmiş bağışıklıktan çok erken/akut dönemi destekler. HBV ve HCV göstergelerinin negatifliği diğer viral hepatit paternlerini zayıflatır.",
+    "explanation": "Anti-HAV IgM pozitifliği yakın dönem hepatit A enfeksiyonunu gösterir. Anti-HAV IgG’nin negatif olması geçirilmiş bağışıklıktan çok erken/akut dönemi destekler. HBV ve HCV göstergelerinin negatifliği diğer viral hepatit örüntülerini zayıflatır.",
     "wrongOptionFeedback": {
-      "B": "Geçirilmiş hepatit A bağışıklığında beklenen patern Anti-HAV IgG pozitifliği ve IgM negatifliğidir. Burada IgM pozitiftir.",
+      "B": "Geçirilmiş hepatit A bağışıklığında beklenen örüntü Anti-HAV IgG pozitifliği ve IgM negatifliğidir. Burada IgM pozitiftir.",
       "C": "Akut hepatit B için HBsAg ve özellikle Anti-HBc IgM pozitifliği beklenir. Bu olguda ikisi de negatif verilmiştir.",
       "D": "Kronik hepatit C genellikle Anti-HCV ve/veya HCV RNA pozitifliğiyle desteklenir. Tarama negatif verilmiştir.",
-      "E": "Aşı sonrası hepatit B bağışıklığında Anti-HBs pozitifliği beklenir. Mevcut patern HAV IgM üzerinden yorumlanmalıdır."
+      "E": "Aşı sonrası hepatit B bağışıklığında Anti-HBs pozitifliği beklenir. Mevcut örüntü HAV IgM üzerinden yorumlanmalıdır."
     },
     "evidenceChain": [
-      "Akut hepatoselüler enzim paterni vardır",
+      "Akut hepatoselüler enzim örüntüsü vardır",
       "Anti-HAV IgM pozitifliği yakın dönem HAV enfeksiyonunu destekler",
       "HBsAg ve Anti-HBc IgM negatifliği akut HBV olasılığını azaltır",
       "Anti-HCV negatifliği HCV lehine bir serolojik destek bırakmaz"
@@ -248,7 +248,7 @@ export const AI_QUESTION_SEEDS = [
     "wrongOptionFeedback": {
       "B": "Fenilalanin hidroksilaz eksikliği fenilketonüriye yol açar. Fenilalanin yüksekliği ve küf/fare kokusu beklenir.",
       "C": "Homogentizat oksidaz eksikliği alkaptonüri ile ilişkilidir. Yenidoğanda lösin-valin-izolösin artışı beklenen ana bulgu değildir.",
-      "D": "Propionil-CoA karboksilaz eksikliği organik asidemi yapabilir. Ancak alloisolösin ve belirgin dallı zincirli aminoasit paterni MSUD lehinedir.",
+      "D": "Propionil-CoA karboksilaz eksikliği organik asidemi yapabilir. Ancak alloisolösin ve belirgin dallı zincirli aminoasit örüntüsü MSUD lehinedir.",
       "E": "Ornitin transkarbamilaz eksikliği üre döngüsü bozukluğudur. Ağır hiperamonyemi ön planda beklenir."
     },
     "evidenceChain": [
@@ -270,7 +270,7 @@ export const AI_QUESTION_SEEDS = [
   },
   {
     "seedId": "ai-adrenal-insufficiency-001",
-    "title": "Hiperpigmentasyon ve elektrolit paterni",
+    "title": "Hiperpigmentasyon ve elektrolit örüntüsü",
     "relatedBranch": "İç Hastalıkları",
     "branchId": "tus-spot-olgular",
     "spotCategory": "AI Spot • Dahiliye",
@@ -346,7 +346,7 @@ export const AI_QUESTION_SEEDS = [
       "B": "Sekonder adrenal yetmezlikte ACTH düşük veya uygunsuz normal beklenir. Hiperpigmentasyon ve belirgin hiperkalemi daha az beklenir.",
       "C": "Cushing hastalığında kortizol fazlalığı ve ACTH bağımlı hiperkortizolizm beklenir. Burada kortizol düşüktür.",
       "D": "Primer hiperaldosteronizm hipertansiyon ve hipokalemi yapar. Bu olguda hipotansiyon ve hiperkalemi vardır.",
-      "E": "Uygunsuz ADH sendromu hiponatremi yapabilir ancak hiperkalemi, yüksek ACTH ve düşük kortizol paternini açıklamaz."
+      "E": "Uygunsuz ADH sendromu hiponatremi yapabilir ancak hiperkalemi, yüksek ACTH ve düşük kortizol örüntüsünü açıklamaz."
     },
     "evidenceChain": [
       "Ortostatik hipotansiyon ve tuz isteği mineralokortikoid eksikliğini düşündürür",
@@ -432,10 +432,10 @@ export const AI_QUESTION_SEEDS = [
       "B": "Acil entübasyon ve antibiyotik epiglotit gibi toksik, salya akması olan ciddi tablo için düşünülür. Burada tipik krup bulguları baskındır.",
       "C": "Beta-2 agonistler alt hava yolu bronkospazmında yararlıdır. Krup temel olarak subglottik üst hava yolu ödemidir.",
       "D": "Antitoksin ve eritromisin difteri için düşünülür. Membran ve aşı eksikliği gibi destekleyici ipuçları yoktur.",
-      "E": "Heimlich yabancı cisim aspirasyonunda akut boğulma/ani hava yolu tıkanması için uygundur. Burada viral prodromlu krup paterni vardır."
+      "E": "Heimlich yabancı cisim aspirasyonunda akut boğulma/ani hava yolu tıkanması için uygundur. Burada viral prodromlu krup örüntüsü vardır."
     },
     "evidenceChain": [
-      "Havlar tarzda öksürük ve ses kısıklığı krup paternidir",
+      "Havlar tarzda öksürük ve ses kısıklığı krup örüntüsüdir",
       "Salya akması ve toksik görünüm olmaması epiglotiti zayıflatır",
       "İstirahatte stridor hastalığın hafifin üzerinde olduğunu gösterir",
       "Steroid ödemi azaltır, nebulize epinefrin hızlı geçici rahatlama sağlar"

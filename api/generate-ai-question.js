@@ -4,22 +4,40 @@ const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const EDITORIAL_FORBIDDEN_PATTERNS = [
   /Sınav incisi\s*[|:]/iu,
   /Ayırıcı nokta\s*:/iu,
+  /TUS tuzağı\s*:/iu,
   /Mekanizma\s*:/iu,
   /İlk adım\s*:/iu,
   /Karar verdirici ipucu\s*:/iu,
   /Destekleyici kanıt\s*:/iu,
+  /Morfolojik patern\s*[:.]/iu,
+  /Morfolojik patern\.\s*Morfolojik patern/iu,
   /Başvuru yakınması\s*[:|]/iu,
   /Laboratuvar paterni\s*[:|]/iu,
   /Görüntüleme bulgusu\s*[:|]/iu,
   /Fizik muayene bulgusu\s*[:|]/iu,
   /Olgu verisi\s*[:|]/iu,
   /Ek destek\s*[:|]/iu,
+  /Klinik değerlendirme için ek veri/iu,
+  /Objektif karar verisi/iu,
+  /Bu veri klinik bağlamda değerlendirilir/iu,
+  /Patern ve mekanizma birlikte yorumlanmalıdır/iu,
+  /Doğru seçenek yanıt eksenini oluşturur/iu,
+  /Öğrenci ayırt eder/iu,
+  /kısa TUS pratiğinde ele alınır/iu,
+  /karar verdirici paternyla/iu,
+  /\bpaternyla\b/iu,
+  /\blikefaksiyon\b(?!\s+nekroz)/iu,
+  /dikkat çeker\.?$/iu,
+  /tanısını\.?$/iu,
+  /patern tanısını/iu,
   /benzer seçenekleri ayıran ana patern/iu,
   /doğru seçenek verilen/iu,
   /soru patern yorumlama/iu,
   /klinik bağlam içinde/iu,
   /sonuçlar tek bir tanı adını yazmaz/iu,
   /verilen öğrenme hedefi/iu,
+  /doğru seçenek/iu,
+  /yanıt ekseni/iu,
   /\bwheezing\b/iu,
   /\brash\b/iu,
   /\bairway\b/iu,
@@ -37,7 +55,7 @@ function collectVisibleStrings(value, output = [], key = '') {
   return output;
 }
 
-const FIELD_INLINE_LABEL_PATTERN = /^(Başvuru yakınması|Laboratuvar paterni|Görüntüleme bulgusu|Fizik muayene bulgusu|Karar verdirici ipucu|Destekleyici kanıt|Olgu verisi|Ek destek)\s*[:：|\-]/iu;
+const FIELD_INLINE_LABEL_PATTERN = /^(Başvuru yakınması|Laboratuvar paterni|Görüntüleme bulgusu|Fizik muayene bulgusu|Karar verdirici ipucu|Destekleyici kanıt|Olgu verisi|Ek destek|Morfolojik patern|Mekanizma|Mekanizma özeti|Ayırıcı nokta|TUS tuzağı)\s*[:：|\-]/iu;
 const LAB_RESULT_PATTERN = /\b(lökosit|wbc|nötrofil|crp|prokalsitonin|troponin|d-dimer|kreatinin|üre|glukoz|bilirubin|seroloji|kültür|pcr|bos|idrar tahlili|na\+|k\+|ph\b|hco3|hco₃)\b|\d+[.,]?\d*\s*(mg\/dl|mg\/l|mmol\/l|\/mm³|u\/l|ng\/ml)/iu;
 const IMAGING_RESULT_PATTERN = /\b(akciğer grafisi|grafi|bt\b|mr\b|mrg\b|usg\b|ultrasonografi|ekokardiyografi|radyografi|tomografi|konsolidasyon|hava bronkogram|dolum defekti|lezyon|fraktür|kitle|nodül)\b/iu;
 const PHYSICAL_EXAM_PATTERN = /\b(ral|raller|hışıltılı solunum|stridor|defans|rebound|matite|oskültasyon|üfürüm|ödem|eritem|döküntü|ense sertliği|kapiller dolum|hepatomegali|splenomegali|güç kaybı|nörolojik defisit)\b/iu;
@@ -58,6 +76,34 @@ function isLabOrImagingText(text = '') {
 
 function isPhysicalExamText(text = '') {
   return PHYSICAL_EXAM_PATTERN.test(String(text || ''));
+}
+
+function hasRepeatedSentenceFragment(text = '') {
+  const cleaned = String(text || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  if (!cleaned) return false;
+  const sentences = cleaned
+    .split(/(?<=[.!?])\s+/u)
+    .map((sentence) => sentence.toLocaleLowerCase('tr-TR').replace(/[.!?]+$/u, '').trim())
+    .filter((sentence) => sentence.length > 12);
+  return new Set(sentences).size < sentences.length || /(\b[\p{L}ÇĞİÖŞÜçğıöşü]{4,}(?:\s+[\p{L}ÇĞİÖŞÜçğıöşü]{4,}){0,3})\s+\1\b/iu.test(cleaned);
+}
+
+function hasObjectiveInvestigationSignal(text = '') {
+  const value = String(text || '');
+  return LAB_RESULT_PATTERN.test(value)
+    || IMAGING_RESULT_PATTERN.test(value)
+    || /\b(EKG|QTc|ST elevasyonu|PR uzaması|QRS|histopatoloji|biyopsi|mikroskopi|nekrotik alan|nötrofilik infiltrasyon|Gram|kültür|PCR|seroloji|pozitif|negatif|üreme|kontrastlanan|fraktür|infiltrasyon|debris|doku mimarisi kaybı)\b/iu.test(value);
+}
+
+function isEmptyInvestigationPlaceholder(item = {}) {
+  const text = collectVisibleStrings(item).join(' ');
+  const rows = formatLabRows(item?.rows || item?.result?.values || [], `${item?.label || ''} ${item?.summary || ''}`);
+  if (/Klinik değerlendirme için ek veri|Objektif karar verisi|Bu veri klinik bağlamda değerlendirilir|Morfolojik patern/i.test(text)) return true;
+  if (isLabInvestigation(item) && !rows.length && !hasObjectiveInvestigationSignal(text)) return true;
+  if (!rows.length && !hasObjectiveInvestigationSignal(text) && !item?.image && !item?.imageUrl) return true;
+  return false;
 }
 
 function sendJson(response, status, payload) {
@@ -125,6 +171,7 @@ function validateRawQuestion(question = {}) {
   EDITORIAL_FORBIDDEN_PATTERNS.forEach((pattern) => {
     if (pattern.test(visibleText)) errors.push(`editorial forbidden pattern: ${pattern}`);
   });
+  if (hasRepeatedSentenceFragment(visibleText)) errors.push('repeated sentence or phrase fragment detected');
 
   if (isLabOrImagingText(question.chiefComplaint)) {
     errors.push('chiefComplaint must not contain laboratory or imaging data');
@@ -141,6 +188,7 @@ function validateRawQuestion(question = {}) {
   });
 
   (question.findings?.investigations || question.investigations || []).forEach((item, index) => {
+    if (isEmptyInvestigationPlaceholder(item)) errors.push(`meaningless or placeholder investigation ${index + 1}`);
     const rows = formatLabRows(item?.rows || item?.result?.values || [], `${item?.label || ''} ${item?.summary || ''}`);
     const text = JSON.stringify(item || {});
     if (isLabInvestigation(item)) {
@@ -181,8 +229,8 @@ YASAK konu/doğru cevap listesi:
 ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
-- Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik paternini tekrar etme.
-- Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
+- Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik örüntüsünü tekrar etme.
+- Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji örüntüsü, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
 - Deneme 2 veya 3 ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç.
 - Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
@@ -190,6 +238,8 @@ Kesin kurallar:
 - En az iki güçlü, klinik olarak yakın seçenek olsun.
 - Tetkik sonucunda doğru tanı/cevap cümle olarak yazılmasın.
 - Tetkik yorumu “... tanısını doğrular”, “... ile uyumludur”, “kesin tanıdır” gibi direkt tanı dili kullanmasın.
+- Gerçek objektif veri yoksa findings.investigations alanını boş bırak; “Laboratuvar”, “Objektif karar verisi” veya “Klinik değerlendirme için ek veri” gibi placeholder kart üretme.
+- Temel bilim/mekanizma sorusunda yapay hasta öyküsü veya yapay laboratuvar alanı zorlama; gerekiyorsa kısa bağlam yaz, tetkik alanını yalnızca gerçek histopatoloji/mikroskopi/objektif bulgu varsa kullan.
 - Doğru cevap, verilen objektif veriler yorumlanarak bulunmalı.
 - Her yanlış seçenek için neden yanlış olduğuna dair kısa ama öğretici feedback yaz; yanlış şık neyi yakalar, neyi kaçırır ve hangi ipucuyla elenir açık olsun.
 - explanation 2-4 cümlelik Klinik Gerekçe kalitesinde olmalı.
@@ -200,10 +250,11 @@ Kesin kurallar:
 - Ölçülebilir laboratuvar sonucu varsa mutlaka rows alanı yaz; her satır ["Parametre", "Sonuç + birim", "Referans aralığı", "Durum"] formatında olsun.
 - Laboratuvar başlığı spesifik olsun: Tam kan sayımı, Enflamasyon belirteçleri, Elektrolit paneli, Arter kan gazı, Kardiyak belirteçler gibi.
 - Nitel laboratuvar sonucunda referans "Negatif", "Saptanmamalı" veya "Üreme olmamalı" gibi açık yazılsın.
-- evidenceChain 3-5 kısa karar ipucu içersin; “Başvuru yakınması:”, “Laboratuvar paterni:”, “Görüntüleme bulgusu:” gibi inline etiketler yazma.
+- evidenceChain 3-5 kısa karar ipucu içersin; “Başvuru yakınması:”, “Laboratuvar bulgusu:”, “Görüntüleme bulgusu:” gibi inline etiketler yazma.
 - Eksik lökosit/CRP/potasyum ifadeleri kullanma; sonucu birim, referans aralığı ve durum etiketiyle yapılandır.
 - examPearl TUS hap bilgisi olmalı; mümkünse kırmızı bayrak, sık tuzak, ilk yaklaşım veya ayırt ettirici marker vurgula.
-- Kart başlığını metin içinde tekrar etme. “Sınav incisi | ...”, “Ayırıcı nokta: ...”, “Mekanizma: ...”, “Karar verdirici ipucu: ...” gibi etiketli cümleler yazma.
+- Kart başlığını metin içinde tekrar etme. “Sınav incisi | ...”, “Ayırıcı nokta: ...”, “Mekanizma: ...”, “Morfolojik patern: ...”, “Karar verdirici ipucu: ...” gibi etiketli cümleler yazma.
+- “Morfolojik patern”, “Morfolojik patern. Morfolojik patern.”, “karar verdirici paternyla”, “likefaksiyon” tek başına, “kısa TUS pratiğinde ele alınır”, “dikkat çeker” ile biten cümle, “verilen öğrenme hedefi”, “yanıt ekseni”, “öğrenci ayırt eder” ifadeleri kesinlikle yasaktır.
 - Gereksiz “|”, fazla “:”, noktalı virgül ve yapay şablon cümle kullanma. Metin doğal Türkçe cümleler gibi okunmalı.
 - “wheezing” yerine “hışıltılı solunum”, “rash” yerine “döküntü”, “airway” yerine “hava yolu”, “follow-up” yerine “izlem”, “management” yerine “yönetim” yaz.
 - “benzer seçenekleri ayıran ana patern olarak hatırlanmalıdır”, “doğru seçenek verilen öğrenme hedefiyle uyumludur”, “sonuçlar tek bir tanı adını yazmaz” gibi meta/generator ifadeleri kesinlikle kullanma.

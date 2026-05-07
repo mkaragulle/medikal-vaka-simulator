@@ -4,7 +4,7 @@ export const cases = [
     "branchId": "internal-medicine",
     "title": "Retrosternal baskı tarzında göğüs ağrısı ve acil EKG bulguları",
     "difficulty": "Acil · TUS düzeyi",
-    "clinicalFocus": "Akut koroner sendromda iskemik ağrı paterni, ardışık derivasyon analizi ve reperfüzyon endikasyonu",
+    "clinicalFocus": "Akut koroner sendromda iskemik ağrı örüntüsü, ardışık derivasyon analizi ve reperfüzyon endikasyonu",
     "demographics": "58 yaşında erkek",
     "setting": "Acil servis",
     "chiefComplaint": "Kırk beş dakikadır devam eden retrosternal baskı tarzında göğüs ağrısı",
@@ -31,7 +31,7 @@ export const cases = [
         "type": "ecg",
         "summary": "V2-V5 derivasyonlarında belirgin ST segment elevasyonu, inferior derivasyonlarda karşılıklı ST segment depresyonu izleniyor.",
         "findings": [
-          "Aynı koroner sulama alanını gösteren ardışık derivasyonlarda ST elevasyonu acil reperfüzyon gerektiren bir paterndir",
+          "Aynı koroner sulama alanını gösteren ardışık derivasyonlarda ST elevasyonu acil reperfüzyon gerektiren bir örüntüdir",
           "Resiprokal ST depresyonu akut transmural iskemi açısından ek kanıt sağlar"
         ],
         "priority": "Useful",
@@ -39,7 +39,7 @@ export const cases = [
           [
             "12 derivasyon EKG",
             "V2-V5 derivasyonlarında belirgin ST segment elevasyonu, inferior derivasyonlarda karşılıklı ST segment depresyonu izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -97,7 +97,7 @@ export const cases = [
         "Non-ST elevasyonlu miyokart enfarktüsü",
         "Pulmoner emboli"
       ],
-      "explanation": "İskemik karakterde göğüs ağrısı ile ardışık anterior derivasyonlarda ST elevasyonunun birlikte bulunması akut koroner oklüzyon paternini oluşturur. Bu tabloda tedavi kararı troponin tekrarını beklemeden EKG üzerinden verilir. Bu nedenle en uygun seçim Anterior ST elevasyonlu miyokart enfarktüsü olur.",
+      "explanation": "İskemik karakterde göğüs ağrısı ile ardışık anterior derivasyonlarda ST elevasyonunun birlikte bulunması akut koroner oklüzyon örüntüsünü oluşturur. Bu tabloda tedavi kararı troponin tekrarını beklemeden EKG üzerinden verilir. Bu nedenle en uygun seçim Anterior ST elevasyonlu miyokart enfarktüsü olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -118,7 +118,7 @@ export const cases = [
       "nextStep": "Kateter laboratuvarını primer perkütan koroner girişim için aktive et. Aspirin, P2Y12 inhibitörü ve antikoagülasyonu başla. Ritim, kan basıncı ve oksijenizasyonu sürekli izle.",
       "answerFeedback": {
         "diagnosisMeta": "Akut koroner sendrom · anterior duvar iskemisi · acil reperfüzyon",
-        "whyCorrect": "İskemik karakterde göğüs ağrısı ile ardışık anterior derivasyonlarda ST elevasyonunun birlikte bulunması akut koroner oklüzyon paternini oluşturur. Bu tabloda tedavi kararı troponin tekrarını beklemeden EKG üzerinden verilir. Bu nedenle en uygun seçim Anterior ST elevasyonlu miyokart enfarktüsü olur.",
+        "whyCorrect": "İskemik karakterde göğüs ağrısı ile ardışık anterior derivasyonlarda ST elevasyonunun birlikte bulunması akut koroner oklüzyon örüntüsünü oluşturur. Bu tabloda tedavi kararı troponin tekrarını beklemeden EKG üzerinden verilir. Bu nedenle en uygun seçim Anterior ST elevasyonlu miyokart enfarktüsü olur.",
         "evidenceChain": [
           {
             "title": "Klinik ipucu",
@@ -129,11 +129,11 @@ export const cases = [
             "text": "Soğuk terleme ve bulantı gibi otonom semptomlar akut koroner sendrom ihtimalini artırır."
           },
           {
-            "title": "EKG paterni",
+            "title": "EKG örüntüsü",
             "text": "V2–V5 derivasyonlarında ST segment elevasyonu anterior duvar tutulumunu gösterir."
           },
           {
-            "title": "EKG paterni",
+            "title": "EKG örüntüsü",
             "text": "İnferior derivasyonlardaki resiprokal ST depresyonu akut oklüzyon lehine ek kanıttır."
           },
           {
@@ -161,7 +161,7 @@ export const cases = [
         "management": [
           {
             "title": "İlk karar",
-            "text": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı."
+            "text": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu örüntüsünü hızla tanı."
           },
           {
             "title": "Stabilizasyon",
@@ -176,7 +176,7 @@ export const cases = [
             "text": "Primer perkütan koroner girişim için kateter laboratuvarını aktive et."
           }
         ],
-        "learningOutcome": "Anterior STEMI'de tanı-tedavi zamanını belirleyen veri EKG paternidir.",
+        "learningOutcome": "Anterior STEMI'de tanı-tedavi zamanını belirleyen veri EKG örüntüsüdir.",
         "differentials": {
           "Akut perikardit": {
             "explanation": "Perikardit göğüs ağrısı ve ST değişikliğiyle karışabilir. Ancak bu olguda ağrının iskemik karakteri, lokalize anterior ST elevasyonu ve resiprokal depresyon akut koroner oklüzyonu öne çıkarır.",
@@ -198,7 +198,7 @@ export const cases = [
             "explanation": "Pulmoner emboli akut göğüs ağrısı ve dispne yapabilir. Ancak bu olguda tipik iskemik ağrı ve anterior ST elevasyonu ön plandadır.",
             "comparisonPoints": [
               "Pulmoner embolide plöritik ağrı, hipoksemi ve sağ kalp yüklenmesi bulguları daha beklenir.",
-              "V2–V5 ST elevasyonu pulmoner emboli için tipik başlangıç paterni değildir.",
+              "V2–V5 ST elevasyonu pulmoner emboli için tipik başlangıç örüntüsü değildir.",
               "İlk tedavi antikoagülasyon veya reperfüzyon risk sınıflamasıdır. Burada koroner reperfüzyon önceliklidir."
             ]
           }
@@ -206,7 +206,7 @@ export const cases = [
         "managementSteps": [
           {
             "title": "İlk karar",
-            "text": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı."
+            "text": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu örüntüsünü hızla tanı."
           },
           {
             "title": "Stabilizasyon",
@@ -264,7 +264,7 @@ export const cases = [
             "explanation": "Pulmoner emboli akut göğüs ağrısı ve dispne yapabilir. Ancak bu olguda tipik iskemik ağrı ve anterior ST elevasyonu ön plandadır.",
             "comparisonPoints": [
               "Pulmoner embolide plöritik ağrı, hipoksemi ve sağ kalp yüklenmesi bulguları daha beklenir.",
-              "V2–V5 ST elevasyonu pulmoner emboli için tipik başlangıç paterni değildir.",
+              "V2–V5 ST elevasyonu pulmoner emboli için tipik başlangıç örüntüsü değildir.",
               "İlk tedavi antikoagülasyon veya reperfüzyon risk sınıflamasıdır."
             ]
           }
@@ -282,7 +282,7 @@ export const cases = [
       "steps": [
         {
           "id": "cv-anterior-stemi-001-r-1-iskemik-gogus-agrisi-ve-ardisik-derivasyonlarda-st-e",
-          "label": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı",
+          "label": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu örüntüsünü hızla tanı",
           "required": true,
           "correctOrder": 1,
           "unsafe": false,
@@ -351,8 +351,8 @@ export const cases = [
           "rationale": "Efor testi akut koroner oklüzyon şüphesinde kontrendike veya uygunsuz bir ilk basamaktır"
         },
         {
-          "id": "cv-anterior-stemi-001-d-3-stemi-paternini-yalniz-analjeziyle-izlemeye-al",
-          "label": "STEMI paternini yalnız analjeziyle izlemeye al",
+          "id": "cv-anterior-stemi-001-d-3-stemi-örüntüsünü-yalniz-analjeziyle-izlemeye-al",
+          "label": "STEMI örüntüsünü yalnız analjeziyle izlemeye al",
           "required": false,
           "unsafe": true,
           "score": -2,
@@ -386,11 +386,11 @@ export const cases = [
         "text": "Soğuk terleme ve bulantı gibi otonom semptomlar akut koroner sendrom ihtimalini artırır."
       },
       {
-        "title": "EKG paterni",
+        "title": "EKG örüntüsü",
         "text": "V2–V5 derivasyonlarında ST segment elevasyonu anterior duvar tutulumunu gösterir."
       },
       {
-        "title": "EKG paterni",
+        "title": "EKG örüntüsü",
         "text": "İnferior derivasyonlardaki resiprokal ST depresyonu akut oklüzyon lehine ek kanıttır."
       },
       {
@@ -431,7 +431,7 @@ export const cases = [
         "type": "ct",
         "summary": "Asendan aortadan başlayarak arkus düzeyine uzanan intimal flap ve gerçek-yalancı lümen ayrımı izleniyor.",
         "findings": [
-          "Asendan aort tutulumu cerrahi yaklaşım gerektiren tip A paternini düşündürür",
+          "Asendan aort tutulumu cerrahi yaklaşım gerektiren tip A örüntüsünü düşündürür",
           "Aort kapak yetmezliği veya perikardiyal efüzyon varlığı aciliyeti artırır"
         ],
         "priority": "Useful",
@@ -439,7 +439,7 @@ export const cases = [
           [
             "Kontrastlı toraks BT anjiyografi",
             "Asendan aortadan başlayarak arkus düzeyine uzanan intimal flap ve gerçek-yalancı lümen ayrımı izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -838,7 +838,7 @@ export const cases = [
           [
             "Yatak başı transtorasik ekokardiyografi",
             "Geniş perikardiyal efüzyon, sağ atriyum ve sağ ventrikül diyastolik kollapsı, inferior vena kavada dilatasyon ve inspiratuvar kollaps azalması izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -852,7 +852,7 @@ export const cases = [
         "findings": [
           "Sinüs taşikardisi",
           "Düşük voltajlı QRS kompleksleri",
-          "Elektriksel alternans paterni"
+          "Elektriksel alternans örüntüsü"
         ],
         "rows": [
           [
@@ -956,7 +956,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Juguler venöz dolgunluk ve akciğerlerin görece temiz olması obstrüktif paterni destekler."
+            "text": "Juguler venöz dolgunluk ve akciğerlerin görece temiz olması obstrüktif örüntüsü destekler."
           },
           {
             "title": "Muayene bulgusu",
@@ -1006,7 +1006,7 @@ export const cases = [
             "text": "Hemodinamik bozulma varsa acil perikardiyosentez uygula."
           }
         ],
-        "learningOutcome": "Tamponad tanısında klinik şok paterni ekokardiyografik sağ kalp kollapsı ile birleştirilmelidir.",
+        "learningOutcome": "Tamponad tanısında klinik şok örüntüsü ekokardiyografik sağ kalp kollapsı ile birleştirilmelidir.",
         "differentials": {
           "Akut kardiyojenik pulmoner ödem": {
             "explanation": "Pulmoner ödem dispne yapar. Ancak bu olguda akciğer alanlarının belirgin temiz olması, venöz dolgunluk ve sağ kalp kollapsı tamponadı öne çıkarır.",
@@ -1020,7 +1020,7 @@ export const cases = [
             "explanation": "Tansiyon pnömotoraks da obstrüktif şok yapabilir. Ancak tek taraflı solunum sesi kaybı ve trakeal deviasyon yerine perikardiyal efüzyon bulguları vardır.",
             "comparisonPoints": [
               "Tansiyon pnömotoraksta acil iğne dekompresyonu gerekir.",
-              "Bu olguda akciğer muayenesi belirgin pnömotoraks paterni göstermemektedir.",
+              "Bu olguda akciğer muayenesi belirgin pnömotoraks örüntüsü göstermemektedir.",
               "Ekokardiyografik efüzyon ve sağ kalp kollapsı tamponad lehinedir."
             ]
           },
@@ -1086,7 +1086,7 @@ export const cases = [
             "explanation": "Tansiyon pnömotoraks da obstrüktif şok yapabilir. Ancak tek taraflı solunum sesi kaybı ve trakeal deviasyon yerine perikardiyal efüzyon bulguları vardır.",
             "comparisonPoints": [
               "Tansiyon pnömotoraksta acil iğne dekompresyonu gerekir.",
-              "Bu olguda akciğer muayenesi belirgin pnömotoraks paterni göstermemektedir.",
+              "Bu olguda akciğer muayenesi belirgin pnömotoraks örüntüsü göstermemektedir.",
               "Ekokardiyografik efüzyon ve sağ kalp kollapsı tamponad lehinedir."
             ]
           },
@@ -1195,7 +1195,7 @@ export const cases = [
         "Sağ kalp boşluklarında diyastolik kollaps"
       ],
       "historySummary": "Oturur pozisyonda kısmi rahatlama olduğunu, eforla yakınmalarının belirgin arttığını ifade ediyor.",
-      "priorityFocus": "Progresif dispne ve presenkop ilgili klinik tablo lehine obstrüktif şok paternidir."
+      "priorityFocus": "Progresif dispne ve presenkop ilgili klinik tablo lehine obstrüktif şok örüntüsüdir."
     },
     "evidenceChain": [
       {
@@ -1204,7 +1204,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Juguler venöz dolgunluk ve akciğerlerin görece temiz olması obstrüktif paterni destekler."
+        "text": "Juguler venöz dolgunluk ve akciğerlerin görece temiz olması obstrüktif örüntüsü destekler."
       },
       {
         "title": "Muayene bulgusu",
@@ -1252,7 +1252,7 @@ export const cases = [
         "type": "xray",
         "summary": "Kardiyomegali, pulmoner vasküler redistribüsyon, Kerley B çizgileri ve bilateral perihiler alveoler-interstisyel opasiteler izleniyor.",
         "findings": [
-          "Perihiler alveoler opasiteler ve interstisyel çizgilenme hidrostatik pulmoner ödem paternini gösterir",
+          "Perihiler alveoler opasiteler ve interstisyel çizgilenme hidrostatik pulmoner ödem örüntüsünü gösterir",
           "Plevral efüzyon kardiyojenik ödem tablosuna eşlik edebilir"
         ],
         "priority": "Useful",
@@ -1260,7 +1260,7 @@ export const cases = [
           [
             "Akciğer grafisi",
             "Kardiyomegali, pulmoner vasküler redistribüsyon, Kerley B çizgileri ve bilateral perihiler alveoler-interstisyel opasiteler izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -1387,7 +1387,7 @@ export const cases = [
           },
           {
             "title": "Başvuru",
-            "text": "NT-proBNP yüksekliği ve perihiler ödem paterni kardiyojenik kökeni güçlendirir."
+            "text": "NT-proBNP yüksekliği ve perihiler ödem örüntüsü kardiyojenik kökeni güçlendirir."
           },
           {
             "title": "Başvuru",
@@ -1429,7 +1429,7 @@ export const cases = [
             "text": "Hipertansif tabloda nitrat, konjesyonda intravenöz loop diüretik tedaviyi planla."
           }
         ],
-        "learningOutcome": "Akut kardiyojenik ödemde semptom paterni, S3 veya JVD ve grafi-laboratuvar uyumu birlikte okunmalıdır.",
+        "learningOutcome": "Akut kardiyojenik ödemde semptom örüntüsü, S3 veya JVD ve grafi-laboratuvar uyumu birlikte okunmalıdır.",
         "differentials": {
           "Akut astım atağı": {
             "explanation": "Astım hışıltı ve dispne yapabilir. Ancak ortopne, S3, juguler venöz dolgunluk ve kardiyomegali astımdan çok kardiyojenik ödem lehinedir.",
@@ -1440,7 +1440,7 @@ export const cases = [
             ]
           },
           "Pulmoner emboli": {
-            "explanation": "Pulmoner emboli ani dispne ve plöritik ağrı ile gelir. Bu olguda konjestif semptomlar ve bilateral ödem paterni daha güçlüdür.",
+            "explanation": "Pulmoner emboli ani dispne ve plöritik ağrı ile gelir. Bu olguda konjestif semptomlar ve bilateral ödem örüntüsü daha güçlüdür.",
             "comparisonPoints": [
               "PE’de D-dimer veya BT pulmoner anjiyografi karar verdirici olabilir.",
               "Perihiler ödem ve kardiyomegali PE için tipik değildir.",
@@ -1476,7 +1476,7 @@ export const cases = [
         ],
         "whyWrong": {
           "Akut astım atağı": "Astım hışıltı ve dispne yapabilir. Ancak ortopne, S3, juguler venöz dolgunluk ve kardiyomegali astımdan çok kardiyojenik ödem lehinedir.",
-          "Pulmoner emboli": "Pulmoner emboli ani dispne ve plöritik ağrı ile gelir. Bu olguda konjestif semptomlar ve bilateral ödem paterni daha güçlüdür.",
+          "Pulmoner emboli": "Pulmoner emboli ani dispne ve plöritik ağrı ile gelir. Bu olguda konjestif semptomlar ve bilateral ödem örüntüsü daha güçlüdür.",
           "Toplum kökenli pnömoni": "Pnömoni ateş ve balgamla gelebilir. Ancak fokal konsolidasyon, belirgin ateş ve enfeksiyon odağı yerine konjesyon bulguları ön plandadır."
         },
         "clinicalPearls": [
@@ -1506,7 +1506,7 @@ export const cases = [
             ]
           },
           "Pulmoner emboli": {
-            "explanation": "Pulmoner emboli ani dispne ve plöritik ağrı ile gelir. Bu olguda konjestif semptomlar ve bilateral ödem paterni daha güçlüdür.",
+            "explanation": "Pulmoner emboli ani dispne ve plöritik ağrı ile gelir. Bu olguda konjestif semptomlar ve bilateral ödem örüntüsü daha güçlüdür.",
             "comparisonPoints": [
               "PE'de D-dimer veya BT pulmoner anjiyografi karar verdirici olabilir.",
               "Perihiler ödem ve kardiyomegali PE için tipik değildir.",
@@ -1637,7 +1637,7 @@ export const cases = [
         "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını gösterir",
         "S3 ve Juguler venöz dolgunluk",
         "Bilateral yaygın raller alveoler ve interstisyel ödemle uyumludur",
-        "NT-proBNP yüksekliği ve perihiler ödem paterni kardiyojenik kökeni güçlendirir"
+        "NT-proBNP yüksekliği ve perihiler ödem örüntüsü kardiyojenik kökeni güçlendirir"
       ],
       "historySummary": "Azalmış ejeksiyon fraksiyonlu kalp yetersizliği ve geçirilmiş miyokart enfarktüsü öyküsü olan hasta, üç gündür artan bacak ödemi, ortopne ve paroksismal noktürnal dispne ifade ediyor. Son günlerde tuz alımının arttığı ve diüretik tedavisini düzensiz kullandığı öğreniliyor.",
       "priorityFocus": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını akut koroner oklüzyon açısından karar verdiricidir."
@@ -1657,7 +1657,7 @@ export const cases = [
       },
       {
         "title": "Başvuru",
-        "text": "NT-proBNP yüksekliği ve perihiler ödem paterni kardiyojenik kökeni güçlendirir."
+        "text": "NT-proBNP yüksekliği ve perihiler ödem örüntüsü kardiyojenik kökeni güçlendirir."
       },
       {
         "title": "Başvuru",
@@ -1705,7 +1705,7 @@ export const cases = [
           [
             "Transtorasik ekokardiyografi",
             "Asimetrik septal hipertrofi, sistolik anterior mitral kapak hareketi ve dinamik sol ventrikül çıkış yolu gradiyenti saptanıyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -1723,7 +1723,7 @@ export const cases = [
           [
             "12 derivasyon EKG",
             "Sol ventrikül hipertrofisi voltaj kriterleri ve lateral derivasyonlarda repolarizasyon değişiklikleri izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -2249,7 +2249,7 @@ export const cases = [
             "text": "Düşük pH ve bikarbonat artmış anyon açıklı metabolik asidozla uyumludur."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Mekanizma notu",
             "text": "Serum potasyumu yüksek görünse bile total vücut potasyumu genellikle azalmıştır."
           },
           {
@@ -2493,7 +2493,7 @@ export const cases = [
         "Serum potasyumu yüksek görünse bile total vücut potasyumu genellikle azalmıştır"
       ],
       "historySummary": "Tip 1 diyabet tanısıyla izlenen hasta, son iki gündür insülin dozlarını atladığını ifade ediyor. Poliüri, polidipsi, halsizlik, bulantı-kusma ve yaygın karın ağrısı yakınmaları olduğu öğreniliyor.",
-      "priorityFocus": "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu DKA tanısının temel paternidir."
+      "priorityFocus": "Kussmaul solunumu metabolik asidoza solunumsal kompansasyonu DKA tanısını destekleyen temel bulgudur."
     },
     "evidenceChain": [
       {
@@ -2509,7 +2509,7 @@ export const cases = [
         "text": "Düşük pH ve bikarbonat artmış anyon açıklı metabolik asidozla uyumludur."
       },
       {
-        "title": "Mekanizma özeti",
+        "title": "Mekanizma notu",
         "text": "Serum potasyumu yüksek görünse bile total vücut potasyumu genellikle azalmıştır."
       },
       {
@@ -2596,7 +2596,7 @@ export const cases = [
           [
             "Hepatobiliyer ultrasonografi",
             "Safra kesesinde çok sayıda milimetrik taş izleniyor, koledok belirgin dilate değildir",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -2614,7 +2614,7 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "Pankreas çevresi yağlı planlarda inflamasyon ve sınırlı peripankreatik sıvı koleksiyonu izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -2664,8 +2664,8 @@ export const cases = [
         "whyCorrect": "Sırta yayılan epigastrik ağrıya lipazın üst sınırın üç katından fazla yükselmesi ve görüntüleme bulgularının eşlik etmesi akut pankreatit tanısını karşılar. ALT: 186 U/L (referans <41 U/L; yüksek) ve safra taşı biliyer nedeni öne çıkarır. Bu nedenle en uygun seçim Akut biliyer pankreatit olur.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
-            "text": "Epigastrik ağrının sırta yayılması pankreatik ağrı paterniyle uyumludur."
+            "title": "Görüntüleme",
+            "text": "Epigastrik ağrının sırta yayılması pankreatik ağrı örüntüsüyle uyumludur."
           },
           {
             "title": "Laboratuvar",
@@ -2676,15 +2676,15 @@ export const cases = [
             "text": "Safra kesesi taşı ve ALT: 186 U/L (referans <41 U/L; yüksek) biliyer etiyolojiyi destekler."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak değildir."
           }
         ],
         "pearls": [
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Akut pankreatit tanısı için ağrı, enzim yüksekliği ve görüntülemeden ikisinin bulunması yeterlidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Sınav incisi",
@@ -2767,9 +2767,9 @@ export const cases = [
         },
         "clinicalPearls": [
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Akut pankreatit tanısı için ağrı, enzim yüksekliği ve görüntülemeden ikisinin bulunması yeterlidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Sınav incisi",
@@ -2907,18 +2907,18 @@ export const cases = [
         "Acil başvuru bağlamında stabilite değerlendirmesi"
       ],
       "distinctiveClues": [
-        "Epigastrik ağrının sırta yayılması pankreatik ağrı paterniyle uyumludur",
+        "Epigastrik ağrının sırta yayılması pankreatik ağrı örüntüsüyle uyumludur",
         "Lipaz yüksekliği pankreatit tanısında amilaza göre daha özgül kabul edilir",
         "Safra kesesi TAşı ve ALT: 186 U/L (referans <41 U/L; yüksek) biliyer etiyolojiyi destekler",
         "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak değildir"
       ],
       "historySummary": "Hasta ağrının yağlı yemek sonrasında başladığını, kuşak tarzında sırta yayıldığını ve öne eğilmekle kısmen azaldığını ifade ediyor. Bulantı ve tekrarlayan kusma yakınmaları mevcut.",
-      "priorityFocus": "Epigastrik ağrının sırta yayılması pankreatik ağrı paterniyle uyumludur karar verdirici klinik ipucudur."
+      "priorityFocus": "Epigastrik ağrının sırta yayılması pankreatik ağrı örüntüsüyle uyumludur karar verdirici klinik ipucudur."
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
-        "text": "Epigastrik ağrının sırta yayılması pankreatik ağrı paterniyle uyumludur."
+        "title": "Görüntüleme",
+        "text": "Epigastrik ağrının sırta yayılması pankreatik ağrı örüntüsüyle uyumludur."
       },
       {
         "title": "Laboratuvar",
@@ -2929,7 +2929,7 @@ export const cases = [
         "text": "Safra kesesi taşı ve ALT: 186 U/L (referans <41 U/L; yüksek) biliyer etiyolojiyi destekler."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Kolanjit veya persistan obstrüksiyon yoksa acil ERCP her hastada ilk basamak değildir."
       }
     ]
@@ -3005,7 +3005,7 @@ export const cases = [
           [
             "Üst gastrointestinal sistem endoskopisi",
             "Distal özofagusta geniş variköz venler ve aktif kanama odağı izleniyor, endoskopik bant ligasyonu için uygundur",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -3083,9 +3083,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Aşırı transfüzyon portal basıncı artırabileceği için hedef hemoglobin genellikle kısıtlı tutulur.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "management": [
@@ -3109,7 +3109,7 @@ export const cases = [
         "learningOutcome": "Sirozlu hastada masif hematemez varis kanaması kabul edilerek resüsitasyon ve vazoaktif tedavi ve endoskopi üçlüsü planlanır.",
         "differentials": {
           "Mallory-Weiss yırtığı": {
-            "explanation": "Mallory-Weiss hematemez yapabilir. Ancak genellikle kusma veya öğürme sonrası mukozal yırtık olur, portal hipertansiyon ve büyük varis paterni beklenmez.",
+            "explanation": "Mallory-Weiss hematemez yapabilir. Ancak genellikle kusma veya öğürme sonrası mukozal yırtık olur, portal hipertansiyon ve büyük varis örüntüsü beklenmez.",
             "comparisonPoints": [
               "Bu olguda siroz ve varis doğrudan risk oluşturur.",
               "Endoskopide aktif varis kanaması görülmesi Mallory-Weiss’i dışlar.",
@@ -3152,7 +3152,7 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Mallory-Weiss yırtığı": "Mallory-Weiss hematemez yapabilir. Ancak genellikle kusma veya öğürme sonrası mukozal yırtık olur, portal hipertansiyon ve büyük varis paterni beklenmez.",
+          "Mallory-Weiss yırtığı": "Mallory-Weiss hematemez yapabilir. Ancak genellikle kusma veya öğürme sonrası mukozal yırtık olur, portal hipertansiyon ve büyük varis örüntüsü beklenmez.",
           "Eroziv gastrit": "Eroziv gastrit üst GİS kanaması yapabilir. Ancak masif kanama ve endoskopik varis kaynağı bu seçeneği geri plana iter.",
           "Kolon divertikül kanaması": "Divertikül kanaması alt GİS kanamasıdır ve genellikle hematokezya ile gelir. Hematemez bu tanıya uymaz. Ancak bu vakada Siroz öyküsü varis kanaması için temel risk bağlamını oluşturur varis kanaması olasılığını yükseltir."
         },
@@ -3168,14 +3168,14 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Aşırı transfüzyon portal basıncı artırabileceği için hedef hemoglobin genellikle kısıtlı tutulur.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "differentialComparison": {
           "Mallory-Weiss yırtığı": {
-            "explanation": "Mallory-Weiss hematemez yapabilir. Ancak genellikle kusma veya öğürme sonrası mukozal yırtık olur, portal hipertansiyon ve büyük varis paterni beklenmez.",
+            "explanation": "Mallory-Weiss hematemez yapabilir. Ancak genellikle kusma veya öğürme sonrası mukozal yırtık olur, portal hipertansiyon ve büyük varis örüntüsü beklenmez.",
             "comparisonPoints": [
               "Bu olguda siroz ve varis doğrudan risk oluşturur.",
               "Endoskopide aktif varis kanaması görülmesi Mallory-Weiss'i dışlar.",
@@ -3405,7 +3405,7 @@ export const cases = [
           [
             "Periferik yayma",
             "Mikrositer ve hipokrom eritrositler, belirgin anizositoz ve poikilositoz izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -3506,7 +3506,7 @@ export const cases = [
             "text": "Toleranssızlık, malabsorpsiyon veya ağır eksiklikte intravenöz demir seçeneğini değerlendir."
           }
         ],
-        "learningOutcome": "Demir eksikliği tanısında ferritin ve TDBK paterni, mikrositozdan daha karar verdirici olabilir.",
+        "learningOutcome": "Demir eksikliği tanısında ferritin ve TDBK örüntüsü, mikrositozdan daha karar verdirici olabilir.",
         "differentials": {
           "Beta talasemi taşıyıcılığı": {
             "explanation": "Talasemi mikrositoz yapar. Ancak düşük ferritin, yüksek TDBK ve pika demir eksikliğini daha olası kılar.",
@@ -3525,7 +3525,7 @@ export const cases = [
             ]
           },
           "Megaloblastik anemi": {
-            "explanation": "Megaloblastik anemi makrositozla seyreder. Burada mikrositer-hipokrom patern ve demir çalışmaları farklı bir mekanizma gösterir.",
+            "explanation": "Megaloblastik anemi makrositozla seyreder. Burada mikrositer-hipokrom örüntü ve demir çalışmaları farklı bir mekanizma gösterir.",
             "comparisonPoints": [
               "B12 veya folat eksikliğinde MCV artışı beklenir.",
               "Hipersegmentasyon gibi megaloblastik bulgular ön planda değildir.",
@@ -3554,7 +3554,7 @@ export const cases = [
         "whyWrong": {
           "Beta talasemi taşıyıcılığı": "Talasemi mikrositoz yapar. Ancak düşük ferritin, yüksek TDBK ve pika demir eksikliğini daha olası kılar.",
           "Kronik hastalık anemisi": "Kronik inflamasyon anemisi mikrositer olabilir. Ancak ferritin düşüklüğü ve TDBK yüksekliği klasik demir eksikliği yönündedir.",
-          "Megaloblastik anemi": "Megaloblastik anemi makrositozla seyreder. Burada mikrositer-hipokrom patern ve demir çalışmaları farklı bir mekanizma gösterir. Ancak bu vakada Pika yakınması demir eksikliğinde sık görülen semptomdur SLE aktivitesi için anlamlıdır."
+          "Megaloblastik anemi": "Megaloblastik anemi makrositozla seyreder. Burada mikrositer-hipokrom örüntü ve demir çalışmaları farklı bir mekanizma gösterir. Ancak bu vakada Pika yakınması demir eksikliğinde sık görülen semptomdur SLE aktivitesi için anlamlıdır."
         },
         "clinicalPearls": [
           {
@@ -3591,7 +3591,7 @@ export const cases = [
             ]
           },
           "Megaloblastik anemi": {
-            "explanation": "Megaloblastik anemi makrositozla seyreder. Burada mikrositer-hipokrom patern ve demir çalışmaları farklı bir mekanizma gösterir. Ancak bu vakada Pika yakınması demir eksikliğinde sık görülen semptomdur SLE aktivitesi için anlamlıdır.",
+            "explanation": "Megaloblastik anemi makrositozla seyreder. Burada mikrositer-hipokrom örüntü ve demir çalışmaları farklı bir mekanizma gösterir. Ancak bu vakada Pika yakınması demir eksikliğinde sık görülen semptomdur SLE aktivitesi için anlamlıdır.",
             "comparisonPoints": [
               "B12 veya folat eksikliğinde MCV artışı beklenir.",
               "Hipersegmentasyon gibi megaloblastik bulgular ön planda değildir.",
@@ -3844,7 +3844,7 @@ export const cases = [
     "images": [
       {
         "title": "Histoloji preparatı",
-        "caption": "Primer hiperparatiroidinin sık nedeni paratiroid adenomudur. Tanı öncelikle biyokimyasal paternle konur.",
+        "caption": "Primer hiperparatiroidinin sık nedeni paratiroid adenomudur. Tanı öncelikle biyokimyasal örüntüyle konur.",
         "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya Parathyroid%20adenoma%2C%20mixed%20type%20--%20very%20high%20mag. Jpg",
         "sourceUrl": "https: //commons. wikimedia. org/wiki/File: Parathyroid_adenoma%2C_mixed_type_--_very_high_mag. Jpg",
         "sourceName": "",
@@ -4185,7 +4185,7 @@ export const cases = [
           [
             "Kontrastsız beyin BT",
             "Akut intrakraniyal kanama saptanmıyor, erken iskemik değişiklikler açısından değerlendirme sınırlıdır",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -4203,7 +4203,7 @@ export const cases = [
           [
             "BT anjiyografi",
             "Sol orta serebral arter proksimal segmentinde damar dolum kesintisi izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -4614,16 +4614,16 @@ export const cases = [
         "id": "ct",
         "label": "Kontrastsız beyin BT",
         "type": "ct",
-        "summary": "Bazal sisternalarda ve sulkuslarda hiperdens kan paterninde görünüm izleniyor.",
+        "summary": "Bazal sisternalarda ve sulkuslarda hiperdens kan örüntüsünde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
-          "Bazal sisternalarda ve sulkuslarda hiperdens kan paterninde görünüm izleniyor"
+          "Bazal sisternalarda ve sulkuslarda hiperdens kan örüntüsünde görünüm izleniyor"
         ],
         "rows": [
           [
             "Kontrastsız beyin BT",
-            "Bazal sisternalarda ve sulkuslarda hiperdens kan paterninde görünüm izleniyor",
-            "Normalde beklenmeyen patern",
+            "Bazal sisternalarda ve sulkuslarda hiperdens kan örüntüsünde görünüm izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -4632,16 +4632,16 @@ export const cases = [
         "id": "cta",
         "label": "BT anjiyografi",
         "type": "ct",
-        "summary": "Anterior kommunikan arter düzeyinde sakküler anevrizma paterninde odak görülüyor.",
+        "summary": "Anterior kommunikan arter düzeyinde sakküler anevrizma örüntüsünde odak görülüyor.",
         "priority": "Useful",
         "findings": [
-          "Anterior kommunikan arter düzeyinde sakküler anevrizma paterninde odak görülüyor"
+          "Anterior kommunikan arter düzeyinde sakküler anevrizma örüntüsünde odak görülüyor"
         ],
         "rows": [
           [
             "BT anjiyografi",
-            "Anterior kommunikan arter düzeyinde sakküler anevrizma paterninde odak görülüyor",
-            "Normalde beklenmeyen patern",
+            "Anterior kommunikan arter düzeyinde sakküler anevrizma örüntüsünde odak görülüyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -4699,7 +4699,7 @@ export const cases = [
         "Bakteriyel menenjit",
         "Serebral venöz sinüs trombozu"
       ],
-      "explanation": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan paterninin görülmesi anevrizmal subaraknoid kanama ile uyumludur. Bu nedenle en uygun seçim Anevrizmal subaraknoid kanama olur.",
+      "explanation": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan örüntüsünün görülmesi anevrizmal subaraknoid kanama ile uyumludur. Bu nedenle en uygun seçim Anevrizmal subaraknoid kanama olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -4720,7 +4720,7 @@ export const cases = [
       "nextStep": "Nöroşirürji ve girişimsel nöroradyoloji konsültasyonu iste. Anevrizma için BT anjiyografi veya DSA planla. Kan basıncı, ağrı ve vazospazm profilaksisini yönet.",
       "answerFeedback": {
         "diagnosisMeta": "Subaraknoid kanama · thunderclap baş ağrısı · anevrizma araştırması",
-        "whyCorrect": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan paterninin görülmesi anevrizmal subaraknoid kanama ile uyumludur. Bu nedenle en uygun seçim Anevrizmal subaraknoid kanama olur.",
+        "whyCorrect": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan örüntüsünün görülmesi anevrizmal subaraknoid kanama ile uyumludur. Bu nedenle en uygun seçim Anevrizmal subaraknoid kanama olur.",
         "evidenceChain": [
           {
             "title": "Başvuru",
@@ -4774,12 +4774,12 @@ export const cases = [
             "text": "Anevrizma saptanırsa nöroşirürji veya girişimsel nöroradyoloji ile klipleme veya koilleme planla."
           }
         ],
-        "learningOutcome": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan paterninin görülmesi anevrizmal subaraknoid kanama ile uyumludur.",
+        "learningOutcome": "Saniyeler içinde maksimum şiddete ulaşan baş ağrısı, meningeal irritasyon ve kontrastsız BT'de subaraknoid kan örüntüsünün görülmesi anevrizmal subaraknoid kanama ile uyumludur.",
         "differentials": {
           "Migren atağı": {
             "explanation": "Migren şiddetli baş ağrısı yapabilir. Ancak thunderclap başlangıç ve meningeal bulgular SAH lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -4787,15 +4787,15 @@ export const cases = [
           "Bakteriyel menenjit": {
             "explanation": "Menenjit ateş ve ense sertliği yapar. Fakat ani maksimum baş ağrısı ve BT’de kan SAH lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Serebral venöz sinüs trombozu": {
-            "explanation": "CVST baş ağrısı veya nöbet yapabilir. Ancak subaraknoid kan paterni ve anevrizma şüphesi bu olguda daha güçlüdür.",
+            "explanation": "CVST baş ağrısı veya nöbet yapabilir. Ancak subaraknoid kan örüntüsü ve anevrizma şüphesi bu olguda daha güçlüdür.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -4822,7 +4822,7 @@ export const cases = [
         "whyWrong": {
           "Migren atağı": "Migren şiddetli baş ağrısı yapabilir. Ancak thunderclap başlangıç ve meningeal bulgular SAH lehinedir.",
           "Bakteriyel menenjit": "Menenjit ateş ve ense sertliği yapar. Fakat ani maksimum baş ağrısı ve BT'de kan SAH lehinedir.",
-          "Serebral venöz sinüs trombozu": "CVST baş ağrısı veya nöbet yapabilir. Ancak subaraknoid kan paterni ve anevrizma şüphesi bu olguda daha güçlüdür."
+          "Serebral venöz sinüs trombozu": "CVST baş ağrısı veya nöbet yapabilir. Ancak subaraknoid kan örüntüsü ve anevrizma şüphesi bu olguda daha güçlüdür."
         },
         "clinicalPearls": [
           {
@@ -4845,7 +4845,7 @@ export const cases = [
           "Migren atağı": {
             "explanation": "Migren şiddetli baş ağrısı yapabilir. Ancak thunderclap başlangıç ve meningeal bulgular SAH lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -4853,15 +4853,15 @@ export const cases = [
           "Bakteriyel menenjit": {
             "explanation": "Menenjit ateş ve ense sertliği yapar. Fakat ani maksimum baş ağrısı ve BT'de kan SAH lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Serebral venöz sinüs trombozu": {
-            "explanation": "CVST baş ağrısı veya nöbet yapabilir. Ancak subaraknoid kan paterni ve anevrizma şüphesi bu olguda daha güçlüdür.",
+            "explanation": "CVST baş ağrısı veya nöbet yapabilir. Ancak subaraknoid kan örüntüsü ve anevrizma şüphesi bu olguda daha güçlüdür.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -5032,7 +5032,7 @@ export const cases = [
           [
             "Beyin ve servikal spinal MR",
             "Periventriküler, juxtakortikal ve infratentoryal bölgelerde demiyelinizan plaklarla uyumlu T2 veya FLAIR hiperintens lezyonlar izleniyor, bazı lezyonlarda kontrast tutulumu mevcut",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -5082,7 +5082,7 @@ export const cases = [
           [
             "Görsel uyarılmış potansiyel",
             "P100 latansında uzama saptanıyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -5128,7 +5128,7 @@ export const cases = [
       ],
       "nextStep": "Aktif relaps için yüksek doz intravenöz metilprednizolon değerlendir. MR ve BOS bulgularıyla tanısal ölçütleri tamamla. Hastalık modifiye edici tedavi seçeneklerini planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Santral demiyelinizasyon · zamanda ve mekânda yayılım · relaps paterni",
+        "diagnosisMeta": "Santral demiyelinizasyon · zamanda ve mekânda yayılım · relaps örüntüsü",
         "whyCorrect": "Optik nörit öyküsü, yeni diplopi veya duyu bulguları ve MR'da farklı bölgelerde demiyelinizan plakların bulunması relapsing-remitting multipl sklerozu destekler. Bu nedenle en uygun seçim Relapsing ve remitting multipl skleroz olur.",
         "evidenceChain": [
           {
@@ -5186,9 +5186,9 @@ export const cases = [
         "learningOutcome": "Optik nörit öyküsü, yeni diplopi veya duyu bulguları ve MR'da farklı bölgelerde demiyelinizan plakların bulunması relapsing-remitting multipl sklerozu destekler.",
         "differentials": {
           "Nöromiyelitis optika spektrum bozukluğu": {
-            "explanation": "NMO optik nörit ve miyelit yapabilir. Ancak tipik MS plak dağılımı ve klinik relaps paterni bu olguda MS’i öne çıkarır.",
+            "explanation": "NMO optik nörit ve miyelit yapabilir. Ancak tipik MS plak dağılımı ve klinik relaps örüntüsü bu olguda MS’i öne çıkarır.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -5196,7 +5196,7 @@ export const cases = [
           "Beyin sapı tümörü": {
             "explanation": "Tümör progresif kitle etkisi yapar. Çok odaklı demiyelinizan plaklar ve relaps öyküsü tümörü geri plana iter.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -5204,23 +5204,23 @@ export const cases = [
           "Vitamin B12 eksikliği": {
             "explanation": "B12 eksikliği miyelopati yapabilir. Ancak optik nörit ve çok odaklı MR plakları MS lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Akut dissemine ensefalomiyelit": {
-            "explanation": "Akut dissemine ensefalomiyelit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Relapsing-remitting multipl skleroz lehinedir.",
+            "explanation": "Akut dissemine ensefalomiyelit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Relapsing-remitting multipl skleroz lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           },
           "Miyastenia gravis": {
-            "explanation": "Miyastenia gravis ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Relapsing-remitting multipl skleroz lehinedir.",
+            "explanation": "Miyastenia gravis ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Relapsing-remitting multipl skleroz lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           }
         },
@@ -5243,9 +5243,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Nöromiyelitis optika spektrum bozukluğu": "NMO optik nörit ve miyelit yapabilir. Ancak tipik MS plak dağılımı ve klinik relaps paterni bu olguda MS'i öne çıkarır.",
-          "Akut dissemine ensefalomiyelit": "Akut dissemine ensefalomiyelit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Relapsing-remitting multipl skleroz lehinedir.",
-          "Miyastenia gravis": "Miyastenia gravis ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Relapsing-remitting multipl skleroz lehinedir."
+          "Nöromiyelitis optika spektrum bozukluğu": "NMO optik nörit ve miyelit yapabilir. Ancak tipik MS plak dağılımı ve klinik relaps örüntüsü bu olguda MS'i öne çıkarır.",
+          "Akut dissemine ensefalomiyelit": "Akut dissemine ensefalomiyelit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Relapsing-remitting multipl skleroz lehinedir.",
+          "Miyastenia gravis": "Miyastenia gravis ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Relapsing-remitting multipl skleroz lehinedir."
         },
         "clinicalPearls": [
           {
@@ -5266,27 +5266,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Nöromiyelitis optika spektrum bozukluğu": {
-            "explanation": "NMO optik nörit ve miyelit yapabilir. Ancak tipik MS plak dağılımı ve klinik relaps paterni bu olguda MS'i öne çıkarır.",
+            "explanation": "NMO optik nörit ve miyelit yapabilir. Ancak tipik MS plak dağılımı ve klinik relaps örüntüsü bu olguda MS'i öne çıkarır.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Akut dissemine ensefalomiyelit": {
-            "explanation": "Akut dissemine ensefalomiyelit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Relapsing-remitting multipl skleroz lehinedir.",
+            "explanation": "Akut dissemine ensefalomiyelit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Relapsing-remitting multipl skleroz lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "Akut dissemine ensefalomiyelit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "Akut dissemine ensefalomiyelit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Miyastenia gravis": {
-            "explanation": "Miyastenia gravis ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Relapsing-remitting multipl skleroz lehinedir.",
+            "explanation": "Miyastenia gravis ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Relapsing-remitting multipl skleroz lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "Miyastenia gravis yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "Miyastenia gravis yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -5455,7 +5455,7 @@ export const cases = [
           [
             "Beyin MR venografi",
             "Superior sagittal sinüs ve sağ transvers sinüste akım sinyali kaybı izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -5464,16 +5464,16 @@ export const cases = [
         "id": "ct",
         "label": "Kontrastsız beyin BT",
         "type": "ct",
-        "summary": "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı paterninde görünüm izleniyor.",
+        "summary": "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı örüntüsünde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
-          "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı paterninde görünüm izleniyor"
+          "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı örüntüsünde görünüm izleniyor"
         ],
         "rows": [
           [
             "Kontrastsız beyin BT",
-            "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı paterninde görünüm izleniyor",
-            "Normalde beklenmeyen patern",
+            "Kortikal venöz konjesyon ve küçük hemorajik venöz enfarkt alanı örüntüsünde görünüm izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -5578,9 +5578,9 @@ export const cases = [
             "title": "Sınav bilgisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Genç kadınlarda gebelik veya lohusalık ve trombofili öyküsü mutlaka sorgulanır.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Sınav incisi",
@@ -5611,7 +5611,7 @@ export const cases = [
           "Anevrizmal subaraknoid kanama": {
             "explanation": "SAH thunderclap baş ağrısı yapar. Bu olguda lohusalık, progresif baş ağrısı ve venöz sinüs dolum defekti CVST lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -5619,7 +5619,7 @@ export const cases = [
           "Migren": {
             "explanation": "Migren baş ağrısı yapar. Ancak nöbet ve venöz görüntüleme bulgusu migrenle açıklanmaz.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -5627,16 +5627,16 @@ export const cases = [
           "Eklampsi": {
             "explanation": "Eklampsi nöbet yapabilir. Fakat venöz sinüs trombozu görüntüleme bulgusu tanıyı farklılaştırır.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Bakteriyel menenjit": {
-            "explanation": "Bakteriyel menenjit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Serebral venöz sinüs trombozu lehinedir.",
+            "explanation": "Bakteriyel menenjit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Serebral venöz sinüs trombozu lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           }
         },
@@ -5661,7 +5661,7 @@ export const cases = [
         "whyWrong": {
           "Anevrizmal subaraknoid kanama": "SAH thunderclap baş ağrısı yapar. Bu olguda lohusalık, progresif baş ağrısı ve venöz sinüs dolum defekti CVST lehinedir.",
           "Eklampsi": "Eklampsi nöbet yapabilir. Fakat venöz sinüs trombozu görüntüleme bulgusu tanıyı farklılaştırır.",
-          "Bakteriyel menenjit": "Bakteriyel menenjit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Serebral venöz sinüs trombozu lehinedir."
+          "Bakteriyel menenjit": "Bakteriyel menenjit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Serebral venöz sinüs trombozu lehinedir."
         },
         "clinicalPearls": [
           {
@@ -5670,9 +5670,9 @@ export const cases = [
             "title": "Sınav bilgisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Genç kadınlarda gebelik veya lohusalık ve trombofili öyküsü mutlaka sorgulanır.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Sınav incisi",
@@ -5684,7 +5684,7 @@ export const cases = [
           "Anevrizmal subaraknoid kanama": {
             "explanation": "SAH thunderclap baş ağrısı yapar. Bu olguda lohusalık, progresif baş ağrısı ve venöz sinüs dolum defekti CVST lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -5692,17 +5692,17 @@ export const cases = [
           "Eklampsi": {
             "explanation": "Eklampsi nöbet yapabilir. Fakat venöz sinüs trombozu görüntüleme bulgusu tanıyı farklılaştırır.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Bakteriyel menenjit": {
-            "explanation": "Bakteriyel menenjit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Serebral venöz sinüs trombozu lehinedir.",
+            "explanation": "Bakteriyel menenjit ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Serebral venöz sinüs trombozu lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "Bakteriyel menenjit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "Bakteriyel menenjit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -5871,7 +5871,7 @@ export const cases = [
           [
             "Abdominal ultrasonografi",
             "Sağ alt kadranda transvers kesitte hedef işareti, longitudinal kesitte yalancı böbrek görünümü izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -5889,7 +5889,7 @@ export const cases = [
           [
             "Ayakta direkt karın grafisi",
             "Ayakta direkt karın grafisinde hava-sıvı seviyeleri izlenir, serbest intraperitoneal hava saptanmaz",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -6041,7 +6041,7 @@ export const cases = [
           "Akut gastroenterit": {
             "explanation": "Gastroenterit kusma veya ishal yapabilir. Ancak kolik ağlama atakları ve hedef görünümü invajinasyon lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6049,7 +6049,7 @@ export const cases = [
           "Hipertrofik pilor stenozu": {
             "explanation": "Pilor stenozu safrasız fışkırır kusma yapar. Kanlı dışkı ve target bulgusu beklenmez.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6057,7 +6057,7 @@ export const cases = [
           "Midgut volvulusu": {
             "explanation": "Volvulus safralı kusma ve akut iskemi riskiyle gelir. USG target görünümü invajinasyonu öne çıkarır.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6107,7 +6107,7 @@ export const cases = [
           "Hipertrofik pilor stenozu": {
             "explanation": "Pilor stenozu safrasız fışkırır kusma yapar. Kanlı dışkı ve target bulgusu beklenmez. Ancak bu vakada Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu karar verdirici klinik ipucudur.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6115,7 +6115,7 @@ export const cases = [
           "Akut gastroenterit": {
             "explanation": "Gastroenterit kusma veya ishal yapabilir. Ancak kolik ağlama atakları ve hedef görünümü invajinasyon lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6123,7 +6123,7 @@ export const cases = [
           "Midgut volvulusu": {
             "explanation": "Volvulus safralı kusma ve akut iskemi riskiyle gelir. USG target görünümü invajinasyonu öne çıkarır. Ancak bu vakada Ağlama ataklarının aralıklı olması kolik tarzda obstrüksiyonu karar verdirici klinik ipucudur.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6267,7 +6267,7 @@ export const cases = [
     "branchId": "pediatrics",
     "title": "Beş haftalık bebekte safrasız fışkırır tarzda kusma ve hipokloremik alkaloz",
     "difficulty": "Temel-orta · Pediatrik cerrahi",
-    "clinicalFocus": "Hipertrofik pilor stenozunda kusma paterni, elektrolit bozukluğu ve ultrasonografik ölçütler",
+    "clinicalFocus": "Hipertrofik pilor stenozunda kusma örüntüsü, elektrolit bozukluğu ve ultrasonografik ölçütler",
     "demographics": "5 haftalık erkek bebek",
     "setting": "Çocuk acil",
     "chiefComplaint": "Beslenme sonrası fışkırır tarzda kusma",
@@ -6330,7 +6330,7 @@ export const cases = [
         "id": "usg",
         "label": "Pilor ultrasonografisi",
         "type": "ultrasound",
-        "summary": "Pilor kas kalınlığı ve kanal uzunluğu artmış. Mide çıkışında geçiş kısıtlılığı paterninde görünüm izleniyor.",
+        "summary": "Pilor kas kalınlığı ve kanal uzunluğu artmış. Mide çıkışında geçiş kısıtlılığı örüntüsünde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
           "Pilor kas kalınlığı ve kanal uzunluğu artmış"
@@ -6338,8 +6338,8 @@ export const cases = [
         "rows": [
           [
             "Pilor ultrasonografisi",
-            "Pilor kas kalınlığı ve kanal uzunluğu artmış, mide çıkışında geçiş kısıtlılığı paterninde görünüm izleniyor",
-            "Normalde beklenmeyen patern",
+            "Pilor kas kalınlığı ve kanal uzunluğu artmış, mide çıkışında geçiş kısıtlılığı örüntüsünde görünüm izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -6459,7 +6459,7 @@ export const cases = [
           "Gastroözofageal reflü": {
             "explanation": "Reflü kusma yapabilir. Ancak fışkırır karakter, hipokloremik alkaloz ve USG bulgusu pilor stenozu lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6467,7 +6467,7 @@ export const cases = [
           "Midgut volvulusu": {
             "explanation": "Volvulus çoğunlukla safralı kusma ve acil iskemi riskiyle gelir. Burada safrasız kusma ve pilor kalınlaşması vardır.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6475,23 +6475,23 @@ export const cases = [
           "İnek sütü protein alerjisi": {
             "explanation": "Alerji kusma ve dışkı değişikliği yapabilir. Metabolik alkaloz ve pilor USG bulgusu beklenmez.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "İnvajinasyon": {
-            "explanation": "İnvajinasyon ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Hipertrofik pilor stenozu lehinedir.",
+            "explanation": "İnvajinasyon ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Hipertrofik pilor stenozu lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           },
           "Duodenal atrezi": {
-            "explanation": "Duodenal atrezi ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Hipertrofik pilor stenozu lehinedir.",
+            "explanation": "Duodenal atrezi ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Hipertrofik pilor stenozu lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           }
         },
@@ -6515,8 +6515,8 @@ export const cases = [
         ],
         "whyWrong": {
           "Gastroözofageal reflü": "Reflü kusma yapabilir. Ancak fışkırır karakter, hipokloremik alkaloz ve USG bulgusu pilor stenozu lehinedir.",
-          "İnvajinasyon": "İnvajinasyon ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Hipertrofik pilor stenozu lehinedir.",
-          "Duodenal atrezi": "Duodenal atrezi ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Hipertrofik pilor stenozu lehinedir."
+          "İnvajinasyon": "İnvajinasyon ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Hipertrofik pilor stenozu lehinedir.",
+          "Duodenal atrezi": "Duodenal atrezi ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Hipertrofik pilor stenozu lehinedir."
         },
         "clinicalPearls": [
           {
@@ -6539,25 +6539,25 @@ export const cases = [
           "Gastroözofageal reflü": {
             "explanation": "Reflü kusma yapabilir. Ancak fışkırır karakter, hipokloremik alkaloz ve USG bulgusu pilor stenozu lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "İnvajinasyon": {
-            "explanation": "İnvajinasyon ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Hipertrofik pilor stenozu lehinedir.",
+            "explanation": "İnvajinasyon ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Hipertrofik pilor stenozu lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "İnvajinasyon yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "İnvajinasyon yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Duodenal atrezi": {
-            "explanation": "Duodenal atrezi ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Hipertrofik pilor stenozu lehinedir.",
+            "explanation": "Duodenal atrezi ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Hipertrofik pilor stenozu lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "Duodenal atrezi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "Duodenal atrezi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -6579,7 +6579,7 @@ export const cases = [
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Yaş ve kusma paterni tanı için güçlü ipucudur."
+          "rationale": "Yaş ve kusma örüntüsü tanı için güçlü ipucudur."
         },
         {
           "id": "ped-pyloric-stenosis-001-r-2-dehidratasyon-ve-hipokloremik-metabolik-alkalozu-saptayip-oral-alimi-kes",
@@ -6866,7 +6866,7 @@ export const cases = [
             "text": "Ateşin beş günü aşması Kawasaki için temel koşuldur."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Mekanizma notu",
             "text": "Nonpürülan konjonktivit ve çilek dili mukokutanöz inflamasyonu gösterir."
           },
           {
@@ -6918,7 +6918,7 @@ export const cases = [
           "Kızıl": {
             "explanation": "Kızıl ateş ve döküntü yapar. Ancak nonpürülan konjonktivit, ekstremite değişiklikleri ve koroner risk Kawasaki lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6926,7 +6926,7 @@ export const cases = [
           "Adenovirüs enfeksiyonu": {
             "explanation": "Adenovirüs konjonktivit yapabilir. Fakat beş günden uzun ateş ve çoklu mukokutanöz kriterler Kawasaki’yi öne çıkarır.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -6934,23 +6934,23 @@ export const cases = [
           "Juvenil idiyopatik artrit": {
             "explanation": "Sistemik JIA ateş veya döküntü yapabilir. Ancak oral-ekstremite bulguları ve koroner risk Kawasaki için daha özgüldür.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Adenovirus enfeksiyonu": {
-            "explanation": "Adenovirus enfeksiyonu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Kawasaki hastalığı lehinedir.",
+            "explanation": "Adenovirus enfeksiyonu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Kawasaki hastalığı lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           },
           "Stevens-Johnson sendromu": {
-            "explanation": "Stevens-Johnson sendromu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Kawasaki hastalığı lehinedir.",
+            "explanation": "Stevens-Johnson sendromu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Kawasaki hastalığı lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           }
         },
@@ -6974,8 +6974,8 @@ export const cases = [
         ],
         "whyWrong": {
           "Kızıl": "Kızıl ateş ve döküntü yapar. Ancak nonpürülan konjonktivit, ekstremite değişiklikleri ve koroner risk Kawasaki lehinedir.",
-          "Adenovirus enfeksiyonu": "Adenovirus enfeksiyonu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Kawasaki hastalığı lehinedir.",
-          "Stevens-Johnson sendromu": "Stevens-Johnson sendromu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Kawasaki hastalığı lehinedir."
+          "Adenovirus enfeksiyonu": "Adenovirus enfeksiyonu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Kawasaki hastalığı lehinedir.",
+          "Stevens-Johnson sendromu": "Stevens-Johnson sendromu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Kawasaki hastalığı lehinedir."
         },
         "clinicalPearls": [
           {
@@ -6998,25 +6998,25 @@ export const cases = [
           "Kızıl": {
             "explanation": "Kızıl ateş ve döküntü yapar. Ancak nonpürülan konjonktivit, ekstremite değişiklikleri ve koroner risk Kawasaki lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Adenovirus enfeksiyonu": {
-            "explanation": "Adenovirus enfeksiyonu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Kawasaki hastalığı lehinedir.",
+            "explanation": "Adenovirus enfeksiyonu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Kawasaki hastalığı lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "Adenovirus enfeksiyonu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "Adenovirus enfeksiyonu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Stevens-Johnson sendromu": {
-            "explanation": "Stevens-Johnson sendromu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Kawasaki hastalığı lehinedir.",
+            "explanation": "Stevens-Johnson sendromu ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Kawasaki hastalığı lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "Stevens-Johnson sendromu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "Stevens-Johnson sendromu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -7125,7 +7125,7 @@ export const cases = [
         "text": "Ateşin beş günü aşması Kawasaki için temel koşuldur."
       },
       {
-        "title": "Mekanizma özeti",
+        "title": "Mekanizma notu",
         "text": "Nonpürülan konjonktivit ve çilek dili mukokutanöz inflamasyonu gösterir."
       },
       {
@@ -7168,16 +7168,16 @@ export const cases = [
         "id": "neck-xray",
         "label": "Lateral boyun grafisi",
         "type": "xray",
-        "summary": "Epiglotta ödem paterninde başparmak bulgusu izlenebilir. İnceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
+        "summary": "Epiglotta ödem örüntüsünde başparmak bulgusu izlenebilir. İnceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır.",
         "priority": "Useful",
         "findings": [
-          "Epiglotta ödem paterninde başparmak bulgusu izlenebilir"
+          "Epiglotta ödem örüntüsünde başparmak bulgusu izlenebilir"
         ],
         "rows": [
           [
             "Lateral boyun grafisi",
-            "Epiglotta ödem paterninde başparmak bulgusu izlenebilir, inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır",
-            "Normalde beklenmeyen patern",
+            "Epiglotta ödem örüntüsünde başparmak bulgusu izlenebilir, inceleme hastanın havayolu güvenliği bozulmadan yapılmalıdır",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -7319,7 +7319,7 @@ export const cases = [
           "Krup": {
             "explanation": "Krup stridor yapabilir. Ancak salya akması, toksik görünüm ve tripod pozisyonu epiglottiti öne çıkarır.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -7327,31 +7327,31 @@ export const cases = [
           "Yabancı cisim aspirasyonu": {
             "explanation": "Yabancı cisim ani başlangıçlı öksürük veya boğulma ile gelir. Ateş ve toksik görünüm epiglottit lehinedir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Retrofaringeal apse": {
-            "explanation": "Apse disfaji yapabilir. Ancak hızlı hava yolu tehdidi ve epiglottik klinik patern bu olguda daha belirgindir.",
+            "explanation": "Apse disfaji yapabilir. Ancak hızlı hava yolu tehdidi ve epiglottik klinik örüntü bu olguda daha belirgindir.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
           },
           "Viral krup": {
-            "explanation": "Viral krup ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Akut epiglottit lehinedir.",
+            "explanation": "Viral krup ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Akut epiglottit lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           },
           "Peritonsiller apse": {
-            "explanation": "Peritonsiller apse ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Akut epiglottit lehinedir.",
+            "explanation": "Peritonsiller apse ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Akut epiglottit lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler."
+              "Objektif tetkik bulguları doğru tanıyı destekler."
             ]
           }
         },
@@ -7374,8 +7374,8 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Viral krup": "Viral krup ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Akut epiglottit lehinedir.",
-          "Peritonsiller apse": "Peritonsiller apse ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Akut epiglottit lehinedir.",
+          "Viral krup": "Viral krup ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Akut epiglottit lehinedir.",
+          "Peritonsiller apse": "Peritonsiller apse ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Akut epiglottit lehinedir.",
           "Yabancı cisim aspirasyonu": "Yabancı cisim ani başlangıçlı öksürük veya boğulma ile gelir. Ateş ve toksik görünüm epiglottit lehinedir. Ancak bu vakada Salya akması ve yutamama supraglottik obstrüksiyon karar verdirici klinik ipucudur."
         },
         "clinicalPearls": [
@@ -7397,25 +7397,25 @@ export const cases = [
         ],
         "differentialComparison": {
           "Viral krup": {
-            "explanation": "Viral krup ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Akut epiglottit lehinedir.",
+            "explanation": "Viral krup ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Akut epiglottit lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "Viral krup yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "Viral krup yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Peritonsiller apse": {
-            "explanation": "Peritonsiller apse ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik paterni Akut epiglottit lehinedir.",
+            "explanation": "Peritonsiller apse ayırıcı tanıda düşünülebilir. Ancak mevcut öykü, muayene ve tetkik bulguları Akut epiglottit lehinedir.",
             "comparisonPoints": [
               "Zamanlama ve tetikleyici farklıdır.",
-              "Objektif tetkik paterni doğru tanıyı destekler.",
-              "Peritonsiller apse yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Objektif tetkik bulguları doğru tanıyı destekler.",
+              "Peritonsiller apse yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Yabancı cisim aspirasyonu": {
             "explanation": "Yabancı cisim ani başlangıçlı öksürük veya boğulma ile gelir. Ateş ve toksik görünüm epiglottit lehinedir. Ancak bu vakada Salya akması ve yutamama supraglottik obstrüksiyon karar verdirici klinik ipucudur.",
             "comparisonPoints": [
-              "Belirleyici bulgu paterni doğru tanı lehine daha güçlüdür.",
+              "Belirleyici bulgu örüntüsü doğru tanı lehine daha güçlüdür.",
               "Seçeneğin beklenen tipik bulguları bu olguda baskın değildir.",
               "İlk yönetim doğru tanının aciliyetine göre planlanmalıdır."
             ]
@@ -7612,7 +7612,7 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "Çapı artmış, duvarı kalınlaşmış apendiks ve çevre yağ dokuda inflamasyon izleniyor, apendikolit görülebilir",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -7735,10 +7735,10 @@ export const cases = [
             "text": "USG veya BT ile apendiks inflamasyonu ve komplikasyonu doğrula."
           }
         ],
-        "learningOutcome": "Akut apandisit tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Akut apandisit tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Meckel divertiküliti": {
-            "explanation": "Meckel divertiküliti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır.",
+            "explanation": "Meckel divertiküliti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Meckel divertiküliti için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut apandisit tanısını daha güçlü destekler.",
@@ -7746,7 +7746,7 @@ export const cases = [
             ]
           },
           "Üreter taşı": {
-            "explanation": "Üreter taşı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır.",
+            "explanation": "Üreter taşı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Üreter taşı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut apandisit tanısını daha güçlü destekler.",
@@ -7754,7 +7754,7 @@ export const cases = [
             ]
           },
           "Akut gastroenterit": {
-            "explanation": "Akut gastroenterit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır.",
+            "explanation": "Akut gastroenterit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut gastroenterit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut apandisit tanısını daha güçlü destekler.",
@@ -7781,9 +7781,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Meckel divertiküliti": "Meckel divertiküliti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır.",
-          "Üreter taşı": "Üreter taşı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır.",
-          "Akut gastroenterit": "Akut gastroenterit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır."
+          "Meckel divertiküliti": "Meckel divertiküliti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır.",
+          "Üreter taşı": "Üreter taşı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır.",
+          "Akut gastroenterit": "Akut gastroenterit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -7799,7 +7799,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Meckel divertiküliti": {
-            "explanation": "Meckel divertiküliti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır.",
+            "explanation": "Meckel divertiküliti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Meckel divertiküliti için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut apandisit tanısını daha güçlü destekler.",
@@ -7807,7 +7807,7 @@ export const cases = [
             ]
           },
           "Üreter taşı": {
-            "explanation": "Üreter taşı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır.",
+            "explanation": "Üreter taşı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Üreter taşı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut apandisit tanısını daha güçlü destekler.",
@@ -7815,7 +7815,7 @@ export const cases = [
             ]
           },
           "Akut gastroenterit": {
-            "explanation": "Akut gastroenterit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut apandisit lehine daha tutarlıdır.",
+            "explanation": "Akut gastroenterit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut apandisit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut gastroenterit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut apandisit tanısını daha güçlü destekler.",
@@ -7991,7 +7991,7 @@ export const cases = [
           [
             "Sağ üst kadran ultrasonografisi",
             "Safra kesesinde taş, duvar kalınlaşması, perikolesistik sıvı ve prob basısı ile ağrı artışı izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -8043,7 +8043,7 @@ export const cases = [
         "summary": "Safra kesesi dolumu izlenmedi.",
         "findings": [
           "Safra kesesi dolumu izlenmedi",
-          "Safra yollarında yaygın tıkanıklık paterni saptanmadı"
+          "Safra yollarında yaygın tıkanıklık örüntüsü saptanmadı"
         ],
         "rows": [
           [
@@ -8146,10 +8146,10 @@ export const cases = [
             "text": "Sağ üst kadran ultrasonografisiyle taş, duvar kalınlığı ve perikolesistik sıvıyı doğrula."
           }
         ],
-        "learningOutcome": "Akut taşlı kolesistit tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Akut taşlı kolesistit tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Koledokolitiazis": {
-            "explanation": "Koledokolitiazis ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır.",
+            "explanation": "Koledokolitiazis ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Koledokolitiazis için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut taşlı kolesistit tanısını daha güçlü destekler.",
@@ -8157,7 +8157,7 @@ export const cases = [
             ]
           },
           "Akut pankreatit": {
-            "explanation": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır.",
+            "explanation": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut pankreatit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut taşlı kolesistit tanısını daha güçlü destekler.",
@@ -8165,7 +8165,7 @@ export const cases = [
             ]
           },
           "Peptik ülser hastalığı": {
-            "explanation": "Peptik ülser hastalığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır.",
+            "explanation": "Peptik ülser hastalığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Peptik ülser hastalığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut taşlı kolesistit tanısını daha güçlü destekler.",
@@ -8192,9 +8192,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Koledokolitiazis": "Koledokolitiazis ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır.",
-          "Akut pankreatit": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır.",
-          "Peptik ülser hastalığı": "Peptik ülser hastalığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır."
+          "Koledokolitiazis": "Koledokolitiazis ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır.",
+          "Akut pankreatit": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır.",
+          "Peptik ülser hastalığı": "Peptik ülser hastalığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -8210,7 +8210,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Koledokolitiazis": {
-            "explanation": "Koledokolitiazis ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır.",
+            "explanation": "Koledokolitiazis ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Koledokolitiazis için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut taşlı kolesistit tanısını daha güçlü destekler.",
@@ -8218,7 +8218,7 @@ export const cases = [
             ]
           },
           "Akut pankreatit": {
-            "explanation": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır.",
+            "explanation": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut pankreatit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut taşlı kolesistit tanısını daha güçlü destekler.",
@@ -8226,7 +8226,7 @@ export const cases = [
             ]
           },
           "Peptik ülser hastalığı": {
-            "explanation": "Peptik ülser hastalığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut taşlı kolesistit lehine daha tutarlıdır.",
+            "explanation": "Peptik ülser hastalığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut taşlı kolesistit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Peptik ülser hastalığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut taşlı kolesistit tanısını daha güçlü destekler.",
@@ -8400,7 +8400,7 @@ export const cases = [
           [
             "Ayakta direkt karın grafisi",
             "Santral yerleşimli dilate ince bağırsak ansları ve çoklu hava-sıvı seviyeleri izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -8418,7 +8418,7 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "İnce bağırsakta geçiş noktası ve proksimal dilatasyon izleniyor, kapalı ans veya iskemi bulgusu belirgin değildir",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -8541,10 +8541,10 @@ export const cases = [
             "text": "BT ile geçiş noktası, kapalı ans, iskemi veya perforasyon bulgularını değerlendir."
           }
         ],
-        "learningOutcome": "Adezyona bağlı ince bağırsak obstrüksiyonu tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Adezyona bağlı ince bağırsak obstrüksiyonu tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Paralitik ileus": {
-            "explanation": "Paralitik ileus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
+            "explanation": "Paralitik ileus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Paralitik ileus için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Adezyona bağlı ince bağırsak obstrüksiyonu tanısını daha güçlü destekler.",
@@ -8552,7 +8552,7 @@ export const cases = [
             ]
           },
           "Sigmoid volvulus": {
-            "explanation": "Sigmoid volvulus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
+            "explanation": "Sigmoid volvulus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Sigmoid volvulus için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Adezyona bağlı ince bağırsak obstrüksiyonu tanısını daha güçlü destekler.",
@@ -8560,7 +8560,7 @@ export const cases = [
             ]
           },
           "Akut mezenter iskemi": {
-            "explanation": "Akut mezenter iskemi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
+            "explanation": "Akut mezenter iskemi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut mezenter iskemi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Adezyona bağlı ince bağırsak obstrüksiyonu tanısını daha güçlü destekler.",
@@ -8587,9 +8587,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Paralitik ileus": "Paralitik ileus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
-          "Sigmoid volvulus": "Sigmoid volvulus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
-          "Akut mezenter iskemi": "Akut mezenter iskemi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır."
+          "Paralitik ileus": "Paralitik ileus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
+          "Sigmoid volvulus": "Sigmoid volvulus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
+          "Akut mezenter iskemi": "Akut mezenter iskemi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -8605,7 +8605,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Paralitik ileus": {
-            "explanation": "Paralitik ileus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
+            "explanation": "Paralitik ileus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Paralitik ileus için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Adezyona bağlı ince bağırsak obstrüksiyonu tanısını daha güçlü destekler.",
@@ -8613,7 +8613,7 @@ export const cases = [
             ]
           },
           "Sigmoid volvulus": {
-            "explanation": "Sigmoid volvulus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
+            "explanation": "Sigmoid volvulus ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Sigmoid volvulus için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Adezyona bağlı ince bağırsak obstrüksiyonu tanısını daha güçlü destekler.",
@@ -8621,7 +8621,7 @@ export const cases = [
             ]
           },
           "Akut mezenter iskemi": {
-            "explanation": "Akut mezenter iskemi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
+            "explanation": "Akut mezenter iskemi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Adezyona bağlı ince bağırsak obstrüksiyonu lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut mezenter iskemi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Adezyona bağlı ince bağırsak obstrüksiyonu tanısını daha güçlü destekler.",
@@ -8786,16 +8786,16 @@ export const cases = [
         "id": "upright-xray",
         "label": "Ayakta akciğer veya abdomen grafisi",
         "type": "xray",
-        "summary": "Diyafram altında serbest hava paterninde görünüm izleniyor.",
+        "summary": "Diyafram altında serbest hava örüntüsünde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
-          "Diyafram altında serbest hava paterninde görünüm izleniyor"
+          "Diyafram altında serbest hava örüntüsünde görünüm izleniyor"
         ],
         "rows": [
           [
             "Ayakta akciğer veya abdomen grafisi",
-            "Diyafram altında serbest hava paterninde görünüm izleniyor",
-            "Normalde beklenmeyen patern",
+            "Diyafram altında serbest hava örüntüsünde görünüm izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -8813,7 +8813,7 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "Üst abdomende serbest hava ve sıvı, mide-duodenum komşuluğunda perforasyon odağı açısından şüpheli görünüm mevcut",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -8894,7 +8894,7 @@ export const cases = [
             "text": "Ani başlayan çok şiddetli epigastrik ağrı."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta hareketsiz yatmayı tercih ediyor."
           },
           {
@@ -8936,10 +8936,10 @@ export const cases = [
             "text": "Ayakta grafi veya BT ile serbest hava ve olası perforasyon odağını doğrula."
           }
         ],
-        "learningOutcome": "Perfore peptik ülser tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Perfore peptik ülser tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Akut pankreatit": {
-            "explanation": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır.",
+            "explanation": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut pankreatit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Perfore peptik ülser tanısını daha güçlü destekler.",
@@ -8947,7 +8947,7 @@ export const cases = [
             ]
           },
           "Akut kolesistit": {
-            "explanation": "Akut kolesistit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır.",
+            "explanation": "Akut kolesistit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut kolesistit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Perfore peptik ülser tanısını daha güçlü destekler.",
@@ -8955,7 +8955,7 @@ export const cases = [
             ]
           },
           "Renal kolik": {
-            "explanation": "Renal kolik ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır.",
+            "explanation": "Renal kolik ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Renal kolik için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Perfore peptik ülser tanısını daha güçlü destekler.",
@@ -8982,9 +8982,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Akut pankreatit": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır.",
-          "Akut kolesistit": "Akut kolesistit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır.",
-          "Renal kolik": "Renal kolik ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır."
+          "Akut pankreatit": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır.",
+          "Akut kolesistit": "Akut kolesistit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır.",
+          "Renal kolik": "Renal kolik ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -9000,7 +9000,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Akut pankreatit": {
-            "explanation": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır.",
+            "explanation": "Akut pankreatit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut pankreatit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Perfore peptik ülser tanısını daha güçlü destekler.",
@@ -9008,7 +9008,7 @@ export const cases = [
             ]
           },
           "Akut kolesistit": {
-            "explanation": "Akut kolesistit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır.",
+            "explanation": "Akut kolesistit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut kolesistit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Perfore peptik ülser tanısını daha güçlü destekler.",
@@ -9016,7 +9016,7 @@ export const cases = [
             ]
           },
           "Renal kolik": {
-            "explanation": "Renal kolik ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Perfore peptik ülser lehine daha tutarlıdır.",
+            "explanation": "Renal kolik ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Perfore peptik ülser lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Renal kolik için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Perfore peptik ülser tanısını daha güçlü destekler.",
@@ -9140,7 +9140,7 @@ export const cases = [
         "text": "Ani başlayan çok şiddetli epigastrik ağrı."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta hareketsiz yatmayı tercih ediyor."
       },
       {
@@ -9191,7 +9191,7 @@ export const cases = [
           [
             "Kontrastlı abdomen BT",
             "Sigmoid kolonda divertiküller, segmental duvar kalınlaşması ve perikolik yağ dokuda inflamasyon izleniyor, apse veya serbest perforasyon saptanmıyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -9324,10 +9324,10 @@ export const cases = [
             "text": "Komplike olmayan olguda analjezi, diyet düzenleme ve seçilmiş antibiyotik veya yatış kararını ver."
           }
         ],
-        "learningOutcome": "Komplike olmayan akut sigmoid divertikülit tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Komplike olmayan akut sigmoid divertikülit tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "İskemik kolit": {
-            "explanation": "İskemik kolit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
+            "explanation": "İskemik kolit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "İskemik kolit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Komplike olmayan akut sigmoid divertikülit tanısını daha güçlü destekler.",
@@ -9335,7 +9335,7 @@ export const cases = [
             ]
           },
           "Kolon kanseri perforasyonu": {
-            "explanation": "Kolon kanseri perforasyonu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
+            "explanation": "Kolon kanseri perforasyonu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Kolon kanseri perforasyonu için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Komplike olmayan akut sigmoid divertikülit tanısını daha güçlü destekler.",
@@ -9343,7 +9343,7 @@ export const cases = [
             ]
           },
           "Akut apandisit": {
-            "explanation": "Akut apandisit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
+            "explanation": "Akut apandisit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut apandisit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Komplike olmayan akut sigmoid divertikülit tanısını daha güçlü destekler.",
@@ -9370,9 +9370,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "İskemik kolit": "İskemik kolit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
-          "Kolon kanseri perforasyonu": "Kolon kanseri perforasyonu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
-          "Akut apandisit": "Akut apandisit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır."
+          "İskemik kolit": "İskemik kolit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
+          "Kolon kanseri perforasyonu": "Kolon kanseri perforasyonu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
+          "Akut apandisit": "Akut apandisit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -9388,7 +9388,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "İskemik kolit": {
-            "explanation": "İskemik kolit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
+            "explanation": "İskemik kolit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "İskemik kolit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Komplike olmayan akut sigmoid divertikülit tanısını daha güçlü destekler.",
@@ -9396,7 +9396,7 @@ export const cases = [
             ]
           },
           "Kolon kanseri perforasyonu": {
-            "explanation": "Kolon kanseri perforasyonu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
+            "explanation": "Kolon kanseri perforasyonu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Kolon kanseri perforasyonu için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Komplike olmayan akut sigmoid divertikülit tanısını daha güçlü destekler.",
@@ -9404,7 +9404,7 @@ export const cases = [
             ]
           },
           "Akut apandisit": {
-            "explanation": "Akut apandisit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
+            "explanation": "Akut apandisit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Komplike olmayan akut sigmoid divertikülit lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut apandisit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Komplike olmayan akut sigmoid divertikülit tanısını daha güçlü destekler.",
@@ -9580,7 +9580,7 @@ export const cases = [
           [
             "Akciğer grafisi",
             "Sağ apikal-lateral plevral çizgi ve bu çizginin periferinde akciğer işaretlerinin kaybolduğu alan izleniyor, mediastinal şift yok",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -9630,7 +9630,7 @@ export const cases = [
           [
             "Toraks BT",
             "Tanı grafiyle konulabiliyorsa rutin gerekli değildir, altta yatan bül veya sekonder neden araştırılacaksa değerlendirilebilir",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -9721,10 +9721,10 @@ export const cases = [
             "text": "Küçük ve stabil olguda oksijen veya izlem."
           }
         ],
-        "learningOutcome": "Primer spontan pnömotoraks tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Primer spontan pnömotoraks tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Pulmoner emboli": {
-            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır.",
+            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pulmoner emboli için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Primer spontan pnömotoraks tanısını daha güçlü destekler.",
@@ -9732,7 +9732,7 @@ export const cases = [
             ]
           },
           "Lobar pnömoni": {
-            "explanation": "Lobar pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır.",
+            "explanation": "Lobar pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Lobar pnömoni için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Primer spontan pnömotoraks tanısını daha güçlü destekler.",
@@ -9740,7 +9740,7 @@ export const cases = [
             ]
           },
           "Plevral efüzyon": {
-            "explanation": "Plevral efüzyon ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır.",
+            "explanation": "Plevral efüzyon ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Plevral efüzyon için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Primer spontan pnömotoraks tanısını daha güçlü destekler.",
@@ -9767,9 +9767,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Pulmoner emboli": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır.",
-          "Lobar pnömoni": "Lobar pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır.",
-          "Plevral efüzyon": "Plevral efüzyon ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır."
+          "Pulmoner emboli": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır.",
+          "Lobar pnömoni": "Lobar pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır.",
+          "Plevral efüzyon": "Plevral efüzyon ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -9785,7 +9785,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Pulmoner emboli": {
-            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır.",
+            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pulmoner emboli için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Primer spontan pnömotoraks tanısını daha güçlü destekler.",
@@ -9793,7 +9793,7 @@ export const cases = [
             ]
           },
           "Lobar pnömoni": {
-            "explanation": "Lobar pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır.",
+            "explanation": "Lobar pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Lobar pnömoni için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Primer spontan pnömotoraks tanısını daha güçlü destekler.",
@@ -9801,7 +9801,7 @@ export const cases = [
             ]
           },
           "Plevral efüzyon": {
-            "explanation": "Plevral efüzyon ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Primer spontan pnömotoraks lehine daha tutarlıdır.",
+            "explanation": "Plevral efüzyon ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Primer spontan pnömotoraks lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Plevral efüzyon için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Primer spontan pnömotoraks tanısını daha güçlü destekler.",
@@ -9967,7 +9967,7 @@ export const cases = [
           [
             "BT pulmoner anjiyografi",
             "Sağ alt lob segmental pulmoner arter dalında kontrast dolum defekti izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -10008,16 +10008,16 @@ export const cases = [
         "id": "leg-usg",
         "label": "Alt ekstremite venöz Doppler ultrasonografi",
         "type": "ultrasound",
-        "summary": "ALT: Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor (referans Normalde beklenmeyen patern; klinik olarak anlamlı).",
+        "summary": "ALT: Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs örüntüsünde segment izleniyor (referans Normalde beklenmeyen örüntü; klinik olarak anlamlı).",
         "priority": "Useful",
         "findings": [
-          "ALT: Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor (referans Normalde beklenmeyen patern; klinik olarak anlamlı)"
+          "ALT: Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs örüntüsünde segment izleniyor (referans Normalde beklenmeyen örüntü; klinik olarak anlamlı)"
         ],
         "rows": [
           [
             "ALT",
-            "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs paterninde segment izleniyor",
-            "Normalde beklenmeyen patern",
+            "Sağ popliteal ven düzeyinde kompresyonla kollabe olmayan trombüs örüntüsünde segment izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -10108,10 +10108,10 @@ export const cases = [
             "text": "Kontrendikasyon yoksa antikoagülasyon başla."
           }
         ],
-        "learningOutcome": "Akut pulmoner emboli tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Akut pulmoner emboli tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Primer spontan pnömotoraks": {
-            "explanation": "Primer spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır.",
+            "explanation": "Primer spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Primer spontan pnömotoraks için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut pulmoner emboli tanısını daha güçlü destekler.",
@@ -10119,7 +10119,7 @@ export const cases = [
             ]
           },
           "Akut koroner sendrom": {
-            "explanation": "Akut koroner sendrom ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır.",
+            "explanation": "Akut koroner sendrom ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut koroner sendrom için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut pulmoner emboli tanısını daha güçlü destekler.",
@@ -10127,7 +10127,7 @@ export const cases = [
             ]
           },
           "Panik atak": {
-            "explanation": "Panik atak ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır.",
+            "explanation": "Panik atak ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Panik atak için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut pulmoner emboli tanısını daha güçlü destekler.",
@@ -10154,9 +10154,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Primer spontan pnömotoraks": "Primer spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır.",
-          "Akut koroner sendrom": "Akut koroner sendrom ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır.",
-          "Panik atak": "Panik atak ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır."
+          "Primer spontan pnömotoraks": "Primer spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır.",
+          "Akut koroner sendrom": "Akut koroner sendrom ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır.",
+          "Panik atak": "Panik atak ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -10172,7 +10172,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Primer spontan pnömotoraks": {
-            "explanation": "Primer spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır.",
+            "explanation": "Primer spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Primer spontan pnömotoraks için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut pulmoner emboli tanısını daha güçlü destekler.",
@@ -10180,7 +10180,7 @@ export const cases = [
             ]
           },
           "Akut koroner sendrom": {
-            "explanation": "Akut koroner sendrom ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır.",
+            "explanation": "Akut koroner sendrom ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut koroner sendrom için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut pulmoner emboli tanısını daha güçlü destekler.",
@@ -10188,7 +10188,7 @@ export const cases = [
             ]
           },
           "Panik atak": {
-            "explanation": "Panik atak ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut pulmoner emboli lehine daha tutarlıdır.",
+            "explanation": "Panik atak ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut pulmoner emboli lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Panik atak için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut pulmoner emboli tanısını daha güçlü destekler.",
@@ -10363,7 +10363,7 @@ export const cases = [
           [
             "Akciğer grafisi",
             "Sağ alt lobda hava bronkogramı içeren konsolidasyon alanı izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -10518,10 +10518,10 @@ export const cases = [
             "text": "Ağır hastalık, yatış veya tedavi başarısızlığı varsa kan veya balgam kültürü gibi hedef testleri al."
           }
         ],
-        "learningOutcome": "Toplum kökenli lobar pnömoni tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Toplum kökenli lobar pnömoni tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Pulmoner emboli": {
-            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
+            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pulmoner emboli için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Toplum kökenli lobar pnömoni tanısını daha güçlü destekler.",
@@ -10529,7 +10529,7 @@ export const cases = [
             ]
           },
           "Akut KOAH alevlenmesi": {
-            "explanation": "Akut KOAH alevlenmesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
+            "explanation": "Akut KOAH alevlenmesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut KOAH alevlenmesi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Toplum kökenli lobar pnömoni tanısını daha güçlü destekler.",
@@ -10537,7 +10537,7 @@ export const cases = [
             ]
           },
           "Tüberküloz": {
-            "explanation": "Tüberküloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
+            "explanation": "Tüberküloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Tüberküloz için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Toplum kökenli lobar pnömoni tanısını daha güçlü destekler.",
@@ -10564,9 +10564,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Pulmoner emboli": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
-          "Akut KOAH alevlenmesi": "Akut KOAH alevlenmesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
-          "Tüberküloz": "Tüberküloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır."
+          "Pulmoner emboli": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
+          "Akut KOAH alevlenmesi": "Akut KOAH alevlenmesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
+          "Tüberküloz": "Tüberküloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -10582,7 +10582,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Pulmoner emboli": {
-            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
+            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pulmoner emboli için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Toplum kökenli lobar pnömoni tanısını daha güçlü destekler.",
@@ -10590,7 +10590,7 @@ export const cases = [
             ]
           },
           "Akut KOAH alevlenmesi": {
-            "explanation": "Akut KOAH alevlenmesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
+            "explanation": "Akut KOAH alevlenmesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut KOAH alevlenmesi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Toplum kökenli lobar pnömoni tanısını daha güçlü destekler.",
@@ -10598,7 +10598,7 @@ export const cases = [
             ]
           },
           "Tüberküloz": {
-            "explanation": "Tüberküloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
+            "explanation": "Tüberküloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Toplum kökenli lobar pnömoni lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Tüberküloz için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Toplum kökenli lobar pnömoni tanısını daha güçlü destekler.",
@@ -10731,7 +10731,7 @@ export const cases = [
     "branchId": "internal-medicine",
     "title": "Aylar içinde artan efor dispnesi, kuru öksürük ve bazal ince raller",
     "difficulty": "Orta-zor · İnterstisyel akciğer hastalığı",
-    "clinicalFocus": "Fibrotik interstisyel akciğer hastalığı şüphesinde yüksek çözünürlüklü BT paterni, restriktif fizyoloji ve sekonder nedenlerin dışlanması",
+    "clinicalFocus": "Fibrotik interstisyel akciğer hastalığı şüphesinde yüksek çözünürlüklü BT örüntüsü, restriktif fizyoloji ve sekonder nedenlerin dışlanması",
     "demographics": "69 yaşında erkek",
     "setting": "Göğüs hastalıkları polikliniği",
     "chiefComplaint": "Aylar içinde artan efor dispnesi ve kuru öksürük",
@@ -10765,7 +10765,7 @@ export const cases = [
           [
             "Yüksek çözünürlüklü toraks BT",
             "Bazal ve subplevral ağırlıklı retikülasyon, traksiyon bronşektazisi ve bal peteği görünümü izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -10838,13 +10838,13 @@ export const cases = [
     "images": [
       {
         "title": "Akciğer histopatoloji preparatı",
-        "caption": "Fibrotik heterojenite ve bal peteği alanları UIP paternini destekler.",
+        "caption": "Fibrotik heterojenite ve bal peteği alanları UIP örüntüsünü destekler.",
         "imageUrl": "https: //commons. wikimedia. org/wiki/Special: FilePath veya UIP%20(Usual%20interstitial%20pneumonia). Jpg",
         "sourceUrl": "https: //commons. wikimedia. org/wiki/File: UIP_(Usual_interstitial_pneumonia). Jpg",
         "sourceName": "",
         "license": "Open access veya license review recommended",
         "modality": "Pathology",
-        "relatedFinding": "UIP fibrotik patern"
+        "relatedFinding": "UIP fibrotik örüntü"
       }
     ],
     "diagnosis": {
@@ -10855,11 +10855,11 @@ export const cases = [
         "KOAH",
         "Kronik hipersensitivite pnömonisi"
       ],
-      "explanation": "İleri yaş, progresif kuru öksürük ve dispne, bazal Velcro tipi raller, restriktif solunum fonksiyon paterni, düşük DLCO ve HRCT'de bazal-subplevral UIP paterni idiyopatik pulmoner fibrozisi destekler. Bu nedenle en uygun seçim İdiyopatik pulmoner fibrozis olur.",
+      "explanation": "İleri yaş, progresif kuru öksürük ve dispne, bazal Velcro tipi raller, restriktif solunum fonksiyon örüntüsü, düşük DLCO ve HRCT'de bazal-subplevral UIP örüntüsü idiyopatik pulmoner fibrozisi destekler. Bu nedenle en uygun seçim İdiyopatik pulmoner fibrozis olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
-          "text": "UIP paterni. Subplevral-bazal retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterizedir.",
+          "text": "UIP örüntüsü. Subplevral-bazal retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterizedir.",
           "title": "Sınav bilgisi"
         },
         {
@@ -10870,8 +10870,8 @@ export const cases = [
       ],
       "nextStep": "Multidisipliner değerlendirme. Antifibrotik tedavi seçenekleri. Oksijen gereksinimi ve uygun hastada transplantasyon değerlendirmesi.",
       "answerFeedback": {
-        "diagnosisMeta": "Fibrotik interstisyel akciğer hastalığı şüphesinde yüksek çözünürlüklü BT paterni",
-        "whyCorrect": "İleri yaş, progresif kuru öksürük ve dispne, bazal Velcro tipi raller, restriktif solunum fonksiyon paterni, düşük DLCO ve HRCT'de bazal-subplevral UIP paterni idiyopatik pulmoner fibrozisi destekler. Bu nedenle en uygun seçim İdiyopatik pulmoner fibrozis olur.",
+        "diagnosisMeta": "Fibrotik interstisyel akciğer hastalığı şüphesinde yüksek çözünürlüklü BT örüntüsü",
+        "whyCorrect": "İleri yaş, progresif kuru öksürük ve dispne, bazal Velcro tipi raller, restriktif solunum fonksiyon örüntüsü, düşük DLCO ve HRCT'de bazal-subplevral UIP örüntüsü idiyopatik pulmoner fibrozisi destekler. Bu nedenle en uygun seçim İdiyopatik pulmoner fibrozis olur.",
         "evidenceChain": [
           {
             "title": "Başvuru",
@@ -10893,7 +10893,7 @@ export const cases = [
         "pearls": [
           {
             "label": "Sınav incisi",
-            "text": "UIP paterni. Subplevral-bazal retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterizedir.",
+            "text": "UIP örüntüsü. Subplevral-bazal retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterizedir.",
             "title": "Sınav incisi"
           },
           {
@@ -10909,7 +10909,7 @@ export const cases = [
           },
           {
             "title": "Tanısal doğrulama",
-            "text": "Yüksek çözünürlüklü toraks BT ile UIP paternini değerlendir."
+            "text": "Yüksek çözünürlüklü toraks BT ile UIP örüntüsünü değerlendir."
           },
           {
             "title": "Tedavi önceliği",
@@ -10920,10 +10920,10 @@ export const cases = [
             "text": "Uygun hastada antifibrotik tedavi ve pulmoner rehabilitasyon planla."
           }
         ],
-        "learningOutcome": "İdiyopatik pulmoner fibrozis tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "İdiyopatik pulmoner fibrozis tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Sarkoidoz": {
-            "explanation": "Sarkoidoz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
+            "explanation": "Sarkoidoz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Sarkoidoz için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü İdiyopatik pulmoner fibrozis tanısını daha güçlü destekler.",
@@ -10931,7 +10931,7 @@ export const cases = [
             ]
           },
           "KOAH": {
-            "explanation": "KOAH ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
+            "explanation": "KOAH ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
             "comparisonPoints": [
               "KOAH için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü İdiyopatik pulmoner fibrozis tanısını daha güçlü destekler.",
@@ -10939,7 +10939,7 @@ export const cases = [
             ]
           },
           "Kronik hipersensitivite pnömonisi": {
-            "explanation": "Kronik hipersensitivite pnömonisi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
+            "explanation": "Kronik hipersensitivite pnömonisi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Kronik hipersensitivite pnömonisi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü İdiyopatik pulmoner fibrozis tanısını daha güçlü destekler.",
@@ -10954,7 +10954,7 @@ export const cases = [
           },
           {
             "title": "Tanısal doğrulama",
-            "text": "Yüksek çözünürlüklü toraks BT ile UIP paternini değerlendir."
+            "text": "Yüksek çözünürlüklü toraks BT ile UIP örüntüsünü değerlendir."
           },
           {
             "title": "Tedavi önceliği",
@@ -10966,14 +10966,14 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Sarkoidoz": "Sarkoidoz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
-          "KOAH": "KOAH ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
-          "Kronik hipersensitivite pnömonisi": "Kronik hipersensitivite pnömonisi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır."
+          "Sarkoidoz": "Sarkoidoz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
+          "KOAH": "KOAH ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
+          "Kronik hipersensitivite pnömonisi": "Kronik hipersensitivite pnömonisi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
             "label": "Sınav incisi",
-            "text": "UIP paterni. Subplevral-bazal retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterizedir.",
+            "text": "UIP örüntüsü. Subplevral-bazal retikülasyon, traksiyon bronşektazisi ve bal peteği ile karakterizedir.",
             "title": "Sınav incisi"
           },
           {
@@ -10984,7 +10984,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Sarkoidoz": {
-            "explanation": "Sarkoidoz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
+            "explanation": "Sarkoidoz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Sarkoidoz için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü İdiyopatik pulmoner fibrozis tanısını daha güçlü destekler.",
@@ -10992,7 +10992,7 @@ export const cases = [
             ]
           },
           "KOAH": {
-            "explanation": "KOAH ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
+            "explanation": "KOAH ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
             "comparisonPoints": [
               "KOAH için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü İdiyopatik pulmoner fibrozis tanısını daha güçlü destekler.",
@@ -11000,7 +11000,7 @@ export const cases = [
             ]
           },
           "Kronik hipersensitivite pnömonisi": {
-            "explanation": "Kronik hipersensitivite pnömonisi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
+            "explanation": "Kronik hipersensitivite pnömonisi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları İdiyopatik pulmoner fibrozis lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Kronik hipersensitivite pnömonisi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü İdiyopatik pulmoner fibrozis tanısını daha güçlü destekler.",
@@ -11026,16 +11026,16 @@ export const cases = [
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Klinik patern kronik fibrozis açısından yönlendiricidir"
+          "rationale": "Klinik örüntü kronik fibrozis açısından yönlendiricidir"
         },
         {
-          "id": "pulm-ipf-uip-001-r-2-yuksek-cozunurluklu-toraks-bt-ile-uip-paternini-dege",
-          "label": "Yüksek çözünürlüklü toraks BT ile UIP paternini değerlendir",
+          "id": "pulm-ipf-uip-001-r-2-yuksek-cozunurluklu-toraks-bt-ile-uip-örüntüsünü-dege",
+          "label": "Yüksek çözünürlüklü toraks BT ile UIP örüntüsünü değerlendir",
           "required": true,
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "IPF tanısında HRCT paterni merkezî öneme sahiptir"
+          "rationale": "IPF tanısında HRCT örüntüsü merkezî öneme sahiptir"
         },
         {
           "id": "pulm-ipf-uip-001-r-3-sekonder-interstisyel-akciger-hastaligi-nedenlerini-",
@@ -11065,8 +11065,8 @@ export const cases = [
           "rationale": "IPF progresif ve kötü prognozlu olabilir"
         },
         {
-          "id": "pulm-ipf-uip-001-d-1-tipik-uip-paterninde-rutin-genis-spektrumlu-antibiyo",
-          "label": "Tipik UIP paterninde rutin geniş spektrumlu antibiyotik başla",
+          "id": "pulm-ipf-uip-001-d-1-tipik-uip-örüntüsünde-rutin-genis-spektrumlu-antibiyo",
+          "label": "Tipik UIP örüntüsünde rutin geniş spektrumlu antibiyotik başla",
           "required": false,
           "unsafe": true,
           "score": -2,
@@ -11203,7 +11203,7 @@ export const cases = [
           [
             "Akciğer grafisi",
             "Hiperinflasyon bulguları izleniyor, belirgin yeni lobar konsolidasyon saptanmıyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -11303,9 +11303,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Kontrollü oksijen hedefi genellikle SpO₂ %88-92 aralığıdır.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "management": [
@@ -11326,10 +11326,10 @@ export const cases = [
             "text": "Sistemik kortikosteroid başla ve balgam pürülansı veya şiddete göre antibiyotik değerlendir."
           }
         ],
-        "learningOutcome": "Akut KOAH alevlenmesi tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Akut KOAH alevlenmesi tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Kardiyojenik pulmoner ödem": {
-            "explanation": "Kardiyojenik pulmoner ödem ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır.",
+            "explanation": "Kardiyojenik pulmoner ödem ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Kardiyojenik pulmoner ödem için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut KOAH alevlenmesi tanısını daha güçlü destekler.",
@@ -11337,7 +11337,7 @@ export const cases = [
             ]
           },
           "Pulmoner emboli": {
-            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır.",
+            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pulmoner emboli için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut KOAH alevlenmesi tanısını daha güçlü destekler.",
@@ -11345,7 +11345,7 @@ export const cases = [
             ]
           },
           "Pnömotoraks": {
-            "explanation": "Pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır.",
+            "explanation": "Pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pnömotoraks için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut KOAH alevlenmesi tanısını daha güçlü destekler.",
@@ -11372,9 +11372,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Kardiyojenik pulmoner ödem": "Kardiyojenik pulmoner ödem ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır.",
-          "Pulmoner emboli": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır.",
-          "Pnömotoraks": "Pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır."
+          "Kardiyojenik pulmoner ödem": "Kardiyojenik pulmoner ödem ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır.",
+          "Pulmoner emboli": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır.",
+          "Pnömotoraks": "Pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -11383,14 +11383,14 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Kontrollü oksijen hedefi genellikle SpO₂ %88-92 aralığıdır.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "differentialComparison": {
           "Kardiyojenik pulmoner ödem": {
-            "explanation": "Kardiyojenik pulmoner ödem ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır.",
+            "explanation": "Kardiyojenik pulmoner ödem ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Kardiyojenik pulmoner ödem için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut KOAH alevlenmesi tanısını daha güçlü destekler.",
@@ -11398,7 +11398,7 @@ export const cases = [
             ]
           },
           "Pulmoner emboli": {
-            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır.",
+            "explanation": "Pulmoner emboli ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pulmoner emboli için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut KOAH alevlenmesi tanısını daha güçlü destekler.",
@@ -11406,7 +11406,7 @@ export const cases = [
             ]
           },
           "Pnömotoraks": {
-            "explanation": "Pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Akut KOAH alevlenmesi lehine daha tutarlıdır.",
+            "explanation": "Pnömotoraks ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Akut KOAH alevlenmesi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pnömotoraks için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Akut KOAH alevlenmesi tanısını daha güçlü destekler.",
@@ -11571,16 +11571,16 @@ export const cases = [
         "id": "cxr",
         "label": "Akciğer grafisi",
         "type": "xray",
-        "summary": "Üst zon ağırlıklı infiltrasyon ve kavitasyon paterninde görünüm izleniyor.",
+        "summary": "Üst zon ağırlıklı infiltrasyon ve kavitasyon örüntüsünde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
-          "Üst zon ağırlıklı infiltrasyon ve kavitasyon paterninde görünüm izleniyor"
+          "Üst zon ağırlıklı infiltrasyon ve kavitasyon örüntüsünde görünüm izleniyor"
         ],
         "rows": [
           [
             "Akciğer grafisi",
-            "Üst zon ağırlıklı infiltrasyon ve kavitasyon paterninde görünüm izleniyor",
-            "Normalde beklenmeyen patern",
+            "Üst zon ağırlıklı infiltrasyon ve kavitasyon örüntüsünde görünüm izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -11598,7 +11598,7 @@ export const cases = [
           [
             "Balgam ARB ve moleküler inceleme",
             "Balgam yaymasında aside dirençli basil görülüyor, nükleik asit amplifikasyon testi ve kültür ilaç duyarlılığı için gönderiliyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -11721,10 +11721,10 @@ export const cases = [
             "text": "Aktif hastalık dışlandıktan sonra latent TB enfeksiyonu için izoniyazid profilaksisi başla."
           }
         ],
-        "learningOutcome": "Reaktivasyon pulmoner tüberküloz tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Reaktivasyon pulmoner tüberküloz tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Toplum kökenli pnömoni": {
-            "explanation": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
+            "explanation": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Toplum kökenli pnömoni için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Reaktivasyon pulmoner tüberküloz tanısını daha güçlü destekler.",
@@ -11732,7 +11732,7 @@ export const cases = [
             ]
           },
           "Akciğer absesi": {
-            "explanation": "Akciğer absesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
+            "explanation": "Akciğer absesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akciğer absesi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Reaktivasyon pulmoner tüberküloz tanısını daha güçlü destekler.",
@@ -11740,7 +11740,7 @@ export const cases = [
             ]
           },
           "Pulmoner aspergilloz": {
-            "explanation": "Pulmoner aspergilloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
+            "explanation": "Pulmoner aspergilloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pulmoner aspergilloz için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Reaktivasyon pulmoner tüberküloz tanısını daha güçlü destekler.",
@@ -11767,9 +11767,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Toplum kökenli pnömoni": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
-          "Akciğer absesi": "Akciğer absesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
-          "Pulmoner aspergilloz": "Pulmoner aspergilloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır."
+          "Toplum kökenli pnömoni": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
+          "Akciğer absesi": "Akciğer absesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
+          "Pulmoner aspergilloz": "Pulmoner aspergilloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -11785,7 +11785,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Toplum kökenli pnömoni": {
-            "explanation": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
+            "explanation": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Toplum kökenli pnömoni için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Reaktivasyon pulmoner tüberküloz tanısını daha güçlü destekler.",
@@ -11793,7 +11793,7 @@ export const cases = [
             ]
           },
           "Akciğer absesi": {
-            "explanation": "Akciğer absesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
+            "explanation": "Akciğer absesi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akciğer absesi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Reaktivasyon pulmoner tüberküloz tanısını daha güçlü destekler.",
@@ -11801,7 +11801,7 @@ export const cases = [
             ]
           },
           "Pulmoner aspergilloz": {
-            "explanation": "Pulmoner aspergilloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
+            "explanation": "Pulmoner aspergilloz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Reaktivasyon pulmoner tüberküloz lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pulmoner aspergilloz için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Reaktivasyon pulmoner tüberküloz tanısını daha güçlü destekler.",
@@ -11965,7 +11965,7 @@ export const cases = [
           [
             "Kalın damla ve ince yayma",
             "Eritrositler içinde halka formları ve yüksek parazitemi izleniyor, bazı eritrositlerde birden fazla halka formu dikkati çekiyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -12120,10 +12120,10 @@ export const cases = [
             "text": "Ağır falciparum veya organ tutulumu varsa IV artesunat başla."
           }
         ],
-        "learningOutcome": "Plasmodium falciparum sıtması tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Plasmodium falciparum sıtması tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Dengue ateşi": {
-            "explanation": "Dengue ateşi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır.",
+            "explanation": "Dengue ateşi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Dengue ateşi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Plasmodium falciparum sıtması tanısını daha güçlü destekler.",
@@ -12131,7 +12131,7 @@ export const cases = [
             ]
           },
           "Leptospiroz": {
-            "explanation": "Leptospiroz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır.",
+            "explanation": "Leptospiroz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Leptospiroz için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Plasmodium falciparum sıtması tanısını daha güçlü destekler.",
@@ -12139,7 +12139,7 @@ export const cases = [
             ]
           },
           "Tifo": {
-            "explanation": "Tifo ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır.",
+            "explanation": "Tifo ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Tifo için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Plasmodium falciparum sıtması tanısını daha güçlü destekler.",
@@ -12166,9 +12166,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Dengue ateşi": "Dengue ateşi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır.",
-          "Leptospiroz": "Leptospiroz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır.",
-          "Tifo": "Tifo ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır."
+          "Dengue ateşi": "Dengue ateşi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır.",
+          "Leptospiroz": "Leptospiroz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır.",
+          "Tifo": "Tifo ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -12184,7 +12184,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Dengue ateşi": {
-            "explanation": "Dengue ateşi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır.",
+            "explanation": "Dengue ateşi ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Dengue ateşi için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Plasmodium falciparum sıtması tanısını daha güçlü destekler.",
@@ -12192,7 +12192,7 @@ export const cases = [
             ]
           },
           "Leptospiroz": {
-            "explanation": "Leptospiroz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır.",
+            "explanation": "Leptospiroz ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Leptospiroz için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Plasmodium falciparum sıtması tanısını daha güçlü destekler.",
@@ -12200,7 +12200,7 @@ export const cases = [
             ]
           },
           "Tifo": {
-            "explanation": "Tifo ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Plasmodium falciparum sıtması lehine daha tutarlıdır.",
+            "explanation": "Tifo ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Plasmodium falciparum sıtması lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Tifo için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Plasmodium falciparum sıtması tanısını daha güçlü destekler.",
@@ -12226,7 +12226,7 @@ export const cases = [
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Seyahat öyküsü ve döngüsel ateş paterni tanısal şüpheyi yükseltir."
+          "rationale": "Seyahat öyküsü ve döngüsel ateş örüntüsü tanısal şüpheyi yükseltir."
         },
         {
           "id": "inf-malaria-001-req-2-bilinc-degisikligi-hipoglisemi-anemi-bobrek-yetmezligi-v",
@@ -12407,16 +12407,16 @@ export const cases = [
         "id": "gram",
         "label": "BOS Gram boyama",
         "type": "microscopy",
-        "summary": "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor (referans Normalde beklenmeyen patern; klinik olarak anlamlı).",
+        "summary": "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor (referans Normalde beklenmeyen örüntü; klinik olarak anlamlı).",
         "priority": "Useful",
         "findings": [
-          "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor (referans Normalde beklenmeyen patern; klinik olarak anlamlı)"
+          "BOS Gram boyama: Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor (referans Normalde beklenmeyen örüntü; klinik olarak anlamlı)"
         ],
         "rows": [
           [
             "BOS Gram boyama",
             "Polimorfonükleer lökositler içinde Gram negatif diplokoklar izleniyor",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -12539,10 +12539,10 @@ export const cases = [
             "text": "Ampirik seftriakson veya sefotaksim tedavisini hemen başla."
           }
         ],
-        "learningOutcome": "Meningokok menenjiti ve meningokoksemi tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Meningokok menenjiti ve meningokoksemi tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Viral menenjit": {
-            "explanation": "Viral menenjit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
+            "explanation": "Viral menenjit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Viral menenjit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Meningokok menenjiti ve meningokoksemi tanısını daha güçlü destekler.",
@@ -12550,7 +12550,7 @@ export const cases = [
             ]
           },
           "Pnömokok menenjiti": {
-            "explanation": "Pnömokok menenjiti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
+            "explanation": "Pnömokok menenjiti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pnömokok menenjiti için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Meningokok menenjiti ve meningokoksemi tanısını daha güçlü destekler.",
@@ -12558,7 +12558,7 @@ export const cases = [
             ]
           },
           "Toksik şok sendromu": {
-            "explanation": "Toksik şok sendromu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
+            "explanation": "Toksik şok sendromu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Toksik şok sendromu için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Meningokok menenjiti ve meningokoksemi tanısını daha güçlü destekler.",
@@ -12585,9 +12585,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Viral menenjit": "Viral menenjit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
-          "Pnömokok menenjiti": "Pnömokok menenjiti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
-          "Toksik şok sendromu": "Toksik şok sendromu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır."
+          "Viral menenjit": "Viral menenjit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
+          "Pnömokok menenjiti": "Pnömokok menenjiti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
+          "Toksik şok sendromu": "Toksik şok sendromu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -12603,7 +12603,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Viral menenjit": {
-            "explanation": "Viral menenjit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
+            "explanation": "Viral menenjit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Viral menenjit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Meningokok menenjiti ve meningokoksemi tanısını daha güçlü destekler.",
@@ -12611,7 +12611,7 @@ export const cases = [
             ]
           },
           "Pnömokok menenjiti": {
-            "explanation": "Pnömokok menenjiti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
+            "explanation": "Pnömokok menenjiti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pnömokok menenjiti için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Meningokok menenjiti ve meningokoksemi tanısını daha güçlü destekler.",
@@ -12619,7 +12619,7 @@ export const cases = [
             ]
           },
           "Toksik şok sendromu": {
-            "explanation": "Toksik şok sendromu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
+            "explanation": "Toksik şok sendromu ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Meningokok menenjiti ve meningokoksemi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Toksik şok sendromu için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Meningokok menenjiti ve meningokoksemi tanısını daha güçlü destekler.",
@@ -12786,12 +12786,12 @@ export const cases = [
         "id": "blood-culture",
         "label": "Kan kültürleri",
         "type": "culture",
-        "summary": "Kültür seti sayısı: 3 set pozitif (referans Üreme olmamalı; pozitif). İzole edilen etken: Staphylococcus aureus (referans Üreme yok; pozitif). Metisilin duyarlılığı: Duyarlı (referans Direnç saptanmaması; mssa paterni).",
+        "summary": "Kültür seti sayısı: 3 set pozitif (referans Üreme olmamalı; pozitif). İzole edilen etken: Staphylococcus aureus (referans Üreme yok; pozitif). Metisilin duyarlılığı: Duyarlı (referans Direnç saptanmaması; mssa örüntüsü).",
         "priority": "Useful",
         "findings": [
           "Kültür seti sayısı: 3 set pozitif (referans Üreme olmamalı; pozitif)",
           "İzole edilen etken: Staphylococcus aureus (referans Üreme yok; pozitif)",
-          "Metisilin duyarlılığı: Duyarlı (referans Direnç saptanmaması; mssa paterni)"
+          "Metisilin duyarlılığı: Duyarlı (referans Direnç saptanmaması; mssa örüntüsü)"
         ],
         "rows": [
           [
@@ -12810,7 +12810,7 @@ export const cases = [
             "Metisilin duyarlılığı",
             "Duyarlı",
             "Direnç saptanmaması",
-            "MSSA paterni"
+            "MSSA örüntüsü"
           ]
         ]
       },
@@ -12818,16 +12818,16 @@ export const cases = [
         "id": "echo",
         "label": "Transtorasik veya Transözofageal ekokardiyografi",
         "type": "ultrasound",
-        "summary": "Triküspit kapakta hareketli vejetasyon paterninde kitle izleniyor.",
+        "summary": "Triküspit kapakta hareketli vejetasyon örüntüsünde kitle izleniyor.",
         "priority": "Useful",
         "findings": [
-          "Triküspit kapakta hareketli vejetasyon paterninde kitle izleniyor"
+          "Triküspit kapakta hareketli vejetasyon örüntüsünde kitle izleniyor"
         ],
         "rows": [
           [
             "Transtorasik veya Transözofageal ekokardiyografi",
-            "Triküspit kapakta hareketli vejetasyon paterninde kitle izleniyor",
-            "Normalde beklenmeyen patern",
+            "Triküspit kapakta hareketli vejetasyon örüntüsünde kitle izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -12836,16 +12836,16 @@ export const cases = [
         "id": "ct",
         "label": "Toraks BT",
         "type": "ct",
-        "summary": "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli paterninde görünüm oluşturuyor.",
+        "summary": "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli örüntüsünde görünüm oluşturuyor.",
         "priority": "Useful",
         "findings": [
-          "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli paterninde görünüm oluşturuyor"
+          "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli örüntüsünde görünüm oluşturuyor"
         ],
         "rows": [
           [
             "Toraks BT",
-            "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli paterninde görünüm oluşturuyor",
-            "Normalde beklenmeyen patern",
+            "Periferik yerleşimli, bazıları kaviter nodüler opasiteler septik pulmoner emboli örüntüsünde görünüm oluşturuyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -12931,10 +12931,10 @@ export const cases = [
             "text": "Kültürler alındıktan sonra klinik ağırlığa uygun ampirik IV antibiyotik başla."
           }
         ],
-        "learningOutcome": "Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Akut romatizmal ateş": {
-            "explanation": "Akut romatizmal ateş ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
+            "explanation": "Akut romatizmal ateş ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut romatizmal ateş için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısını daha güçlü destekler.",
@@ -12942,7 +12942,7 @@ export const cases = [
             ]
           },
           "Viral miyokardit": {
-            "explanation": "Viral miyokardit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
+            "explanation": "Viral miyokardit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Viral miyokardit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısını daha güçlü destekler.",
@@ -12950,7 +12950,7 @@ export const cases = [
             ]
           },
           "Toplum kökenli pnömoni": {
-            "explanation": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
+            "explanation": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Toplum kökenli pnömoni için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısını daha güçlü destekler.",
@@ -12977,9 +12977,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Akut romatizmal ateş": "Akut romatizmal ateş ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
-          "Viral miyokardit": "Viral miyokardit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
-          "Toplum kökenli pnömoni": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır."
+          "Akut romatizmal ateş": "Akut romatizmal ateş ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
+          "Viral miyokardit": "Viral miyokardit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
+          "Toplum kökenli pnömoni": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -12990,7 +12990,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Akut romatizmal ateş": {
-            "explanation": "Akut romatizmal ateş ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
+            "explanation": "Akut romatizmal ateş ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akut romatizmal ateş için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısını daha güçlü destekler.",
@@ -12998,7 +12998,7 @@ export const cases = [
             ]
           },
           "Viral miyokardit": {
-            "explanation": "Viral miyokardit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
+            "explanation": "Viral miyokardit ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Viral miyokardit için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısını daha güçlü destekler.",
@@ -13006,7 +13006,7 @@ export const cases = [
             ]
           },
           "Toplum kökenli pnömoni": {
-            "explanation": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
+            "explanation": "Toplum kökenli pnömoni ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Staphylococcus aureus ilişkili sağ kalp infektif endokarditi lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Toplum kökenli pnömoni için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Staphylococcus aureus ilişkili sağ kalp infektif endokarditi tanısını daha güçlü destekler.",
@@ -13182,16 +13182,16 @@ export const cases = [
         "id": "xray",
         "label": "El bileği direkt grafisi",
         "type": "xray",
-        "summary": "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman paterninde görünüm izleniyor.",
+        "summary": "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman örüntüsünde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
-          "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman paterninde görünüm izleniyor"
+          "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman örüntüsünde görünüm izleniyor"
         ],
         "rows": [
           [
             "El bileği direkt grafisi",
-            "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman paterninde görünüm izleniyor",
-            "Normalde beklenmeyen patern",
+            "Distal radius metafizinde kırık hattı, dorsal açılanma ve dorsal deplasman örüntüsünde görünüm izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -13307,10 +13307,10 @@ export const cases = [
             "text": "Deplasman durumuna göre kapalı redüksiyon ve immobilizasyon planla."
           }
         ],
-        "learningOutcome": "Colles tipi distal radius kırığı tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Colles tipi distal radius kırığı tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Smith kırığı": {
-            "explanation": "Smith kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır.",
+            "explanation": "Smith kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Smith kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Colles tipi distal radius kırığı tanısını daha güçlü destekler.",
@@ -13318,7 +13318,7 @@ export const cases = [
             ]
           },
           "Skafoid kırığı": {
-            "explanation": "Skafoid kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır.",
+            "explanation": "Skafoid kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Skafoid kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Colles tipi distal radius kırığı tanısını daha güçlü destekler.",
@@ -13326,7 +13326,7 @@ export const cases = [
             ]
           },
           "Barton kırığı": {
-            "explanation": "Barton kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır.",
+            "explanation": "Barton kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Barton kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Colles tipi distal radius kırığı tanısını daha güçlü destekler.",
@@ -13353,9 +13353,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Smith kırığı": "Smith kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır.",
-          "Skafoid kırığı": "Skafoid kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır.",
-          "Barton kırığı": "Barton kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır."
+          "Smith kırığı": "Smith kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır.",
+          "Skafoid kırığı": "Skafoid kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır.",
+          "Barton kırığı": "Barton kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -13371,7 +13371,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Smith kırığı": {
-            "explanation": "Smith kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır.",
+            "explanation": "Smith kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Smith kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Colles tipi distal radius kırığı tanısını daha güçlü destekler.",
@@ -13379,7 +13379,7 @@ export const cases = [
             ]
           },
           "Skafoid kırığı": {
-            "explanation": "Skafoid kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır.",
+            "explanation": "Skafoid kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Skafoid kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Colles tipi distal radius kırığı tanısını daha güçlü destekler.",
@@ -13387,7 +13387,7 @@ export const cases = [
             ]
           },
           "Barton kırığı": {
-            "explanation": "Barton kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Colles tipi distal radius kırığı lehine daha tutarlıdır.",
+            "explanation": "Barton kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Colles tipi distal radius kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Barton kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Colles tipi distal radius kırığı tanısını daha güçlü destekler.",
@@ -13551,16 +13551,16 @@ export const cases = [
         "id": "xray",
         "label": "Pelvis ve kalça direkt grafisi",
         "type": "xray",
-        "summary": "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman paterninde görünüm izleniyor.",
+        "summary": "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman örüntüsünde görünüm izleniyor.",
         "priority": "Useful",
         "findings": [
-          "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman paterninde görünüm izleniyor"
+          "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman örüntüsünde görünüm izleniyor"
         ],
         "rows": [
           [
             "Pelvis ve kalça direkt grafisi",
-            "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman paterninde görünüm izleniyor",
-            "Normalde beklenmeyen patern",
+            "Femur boynu subkapital bölgesinde intrakapsüler kırık hattı ve deplasman örüntüsünde görünüm izleniyor",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -13683,10 +13683,10 @@ export const cases = [
             "text": "Ağrı kontrolü sağla ve yaralanmaya uygun redüksiyon veya immobilizasyon planla."
           }
         ],
-        "learningOutcome": "Subkapital intrakapsüler femur boyun kırığı tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Subkapital intrakapsüler femur boyun kırığı tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "İntertrokanterik femur kırığı": {
-            "explanation": "İntertrokanterik femur kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
+            "explanation": "İntertrokanterik femur kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "İntertrokanterik femur kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Subkapital intrakapsüler femur boyun kırığı tanısını daha güçlü destekler.",
@@ -13694,7 +13694,7 @@ export const cases = [
             ]
           },
           "Kalça çıkığı": {
-            "explanation": "Kalça çıkığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
+            "explanation": "Kalça çıkığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Kalça çıkığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Subkapital intrakapsüler femur boyun kırığı tanısını daha güçlü destekler.",
@@ -13702,7 +13702,7 @@ export const cases = [
             ]
           },
           "Pubis kolu kırığı": {
-            "explanation": "Pubis kolu kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
+            "explanation": "Pubis kolu kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pubis kolu kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Subkapital intrakapsüler femur boyun kırığı tanısını daha güçlü destekler.",
@@ -13729,9 +13729,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "İntertrokanterik femur kırığı": "İntertrokanterik femur kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
-          "Kalça çıkığı": "Kalça çıkığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
-          "Pubis kolu kırığı": "Pubis kolu kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır."
+          "İntertrokanterik femur kırığı": "İntertrokanterik femur kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
+          "Kalça çıkığı": "Kalça çıkığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
+          "Pubis kolu kırığı": "Pubis kolu kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -13747,7 +13747,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "İntertrokanterik femur kırığı": {
-            "explanation": "İntertrokanterik femur kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
+            "explanation": "İntertrokanterik femur kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "İntertrokanterik femur kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Subkapital intrakapsüler femur boyun kırığı tanısını daha güçlü destekler.",
@@ -13755,7 +13755,7 @@ export const cases = [
             ]
           },
           "Kalça çıkığı": {
-            "explanation": "Kalça çıkığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
+            "explanation": "Kalça çıkığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Kalça çıkığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Subkapital intrakapsüler femur boyun kırığı tanısını daha güçlü destekler.",
@@ -13763,7 +13763,7 @@ export const cases = [
             ]
           },
           "Pubis kolu kırığı": {
-            "explanation": "Pubis kolu kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
+            "explanation": "Pubis kolu kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Subkapital intrakapsüler femur boyun kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Pubis kolu kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Subkapital intrakapsüler femur boyun kırığı tanısını daha güçlü destekler.",
@@ -13936,7 +13936,7 @@ export const cases = [
           [
             "Skafoid grafileri",
             "İlk grafilerde kırık hattı seçilemeyebilir, özel skafoid projeksiyonları ve kontrol grafileri gerekebilir",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -13954,7 +13954,7 @@ export const cases = [
           [
             "El bileği MR",
             "Klinik şüphe yüksekse erken dönemde okült karpal kırık hattını göstermek için kullanılabilir",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -14062,7 +14062,7 @@ export const cases = [
         "learningOutcome": "FOOSH travması sonrası anatomik enfiye çukuru hassasiyeti varsa ilk grafiler negatif olsa bile okült skafoid yaralanma dışlanamaz.",
         "differentials": {
           "Distal radius kırığı": {
-            "explanation": "Distal radius kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Skafoid kırığı lehine daha tutarlıdır.",
+            "explanation": "Distal radius kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Skafoid kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Distal radius kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Skafoid kırığı tanısını daha güçlü destekler.",
@@ -14070,7 +14070,7 @@ export const cases = [
             ]
           },
           "De Quervain tenosinoviti": {
-            "explanation": "De Quervain tenosinoviti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Skafoid kırığı lehine daha tutarlıdır.",
+            "explanation": "De Quervain tenosinoviti ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Skafoid kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "De Quervain tenosinoviti için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Skafoid kırığı tanısını daha güçlü destekler.",
@@ -14078,7 +14078,7 @@ export const cases = [
             ]
           },
           "Triangüler fibrokartilaj kompleks yaralanması": {
-            "explanation": "Triangüler fibrokartilaj kompleks yaralanması ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Skafoid kırığı lehine daha tutarlıdır.",
+            "explanation": "Triangüler fibrokartilaj kompleks yaralanması ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Skafoid kırığı lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Triangüler fibrokartilaj kompleks yaralanması için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Skafoid kırığı tanısını daha güçlü destekler.",
@@ -14107,9 +14107,9 @@ export const cases = [
         "correctDiagnosis": "Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak",
         "shortDiagnosisMeta": "Minor-rotations",
         "whyWrong": {
-          "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek": "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
-          "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak": "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
-          "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak": "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır."
+          "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek": "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
+          "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak": "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
+          "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak": "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır."
         },
         "clinicalPearls": [
           {
@@ -14130,27 +14130,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek": {
-            "explanation": "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
+            "explanation": "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
             "comparisonPoints": [
               "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir.",
               "Açık el üzerine düşme mekanizması vardır.",
-              "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Ağrı azaldığı için immobilizasyon yapmadan taburcu etmek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak": {
-            "explanation": "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
+            "explanation": "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
             "comparisonPoints": [
               "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir.",
               "Açık el üzerine düşme mekanizması vardır.",
-              "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Akut enfeksiyon gibi geniş spektrumlu antibiyotik başlamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak": {
-            "explanation": "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
+            "explanation": "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Başparmak spika ateli ile immobilizasyon ve kontrol görüntüleme planlamak lehine yorumlanır.",
             "comparisonPoints": [
               "Öykü, fizik muayene ve objektif tetkik verileri birlikte yorumlandığında doğru klinik karar verilir.",
               "Açık el üzerine düşme mekanizması vardır.",
-              "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sadece el bileği egzersizi verip yük vermeyi serbest bırakmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -14315,7 +14315,7 @@ export const cases = [
           [
             "Omuz direkt grafisi",
             "Humerus başı glenoid kaviteye göre anterior-inferior yer değiştirmiştir, belirgin eşlik eden kırık hattı izlenmez",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -14333,7 +14333,7 @@ export const cases = [
           [
             "Redüksiyon sonrası kontrol",
             "Başarılı redüksiyonun ve eşlik eden Hill-Sachs veya Bankart lezyonu gibi kemik yaralanmalarının değerlendirilmesi için kontrol grafisi çekilir",
-            "Normalde beklenmeyen patern",
+            "Normalde beklenmeyen örüntü",
             "Klinik olarak anlamlı"
           ]
         ]
@@ -14424,10 +14424,10 @@ export const cases = [
             "text": "Redüksiyon sonrası nörovasküler muayeneyi tekrar et."
           }
         ],
-        "learningOutcome": "Anterior glenohumeral çıkık tanısında kritik nokta, tek bir bulgudan çok paternin bütününü yorumlamaktır.",
+        "learningOutcome": "Anterior glenohumeral çıkık tanısında kritik nokta, tek bir bulgudan çok örüntüsün bütününü yorumlamaktır.",
         "differentials": {
           "Akromioklaviküler ayrışma": {
-            "explanation": "Akromioklaviküler ayrışma ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır.",
+            "explanation": "Akromioklaviküler ayrışma ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akromioklaviküler ayrışma için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Anterior glenohumeral çıkık tanısını daha güçlü destekler.",
@@ -14435,7 +14435,7 @@ export const cases = [
             ]
           },
           "Proksimal humerus kırığı": {
-            "explanation": "Proksimal humerus kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır.",
+            "explanation": "Proksimal humerus kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Proksimal humerus kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Anterior glenohumeral çıkık tanısını daha güçlü destekler.",
@@ -14443,7 +14443,7 @@ export const cases = [
             ]
           },
           "Rotator manşet yırtığı": {
-            "explanation": "Rotator manşet yırtığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır.",
+            "explanation": "Rotator manşet yırtığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Rotator manşet yırtığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Anterior glenohumeral çıkık tanısını daha güçlü destekler.",
@@ -14470,9 +14470,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Akromioklaviküler ayrışma": "Akromioklaviküler ayrışma ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır.",
-          "Proksimal humerus kırığı": "Proksimal humerus kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır.",
-          "Rotator manşet yırtığı": "Rotator manşet yırtığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır."
+          "Akromioklaviküler ayrışma": "Akromioklaviküler ayrışma ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır.",
+          "Proksimal humerus kırığı": "Proksimal humerus kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır.",
+          "Rotator manşet yırtığı": "Rotator manşet yırtığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır."
         },
         "clinicalPearls": [
           {
@@ -14488,7 +14488,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Akromioklaviküler ayrışma": {
-            "explanation": "Akromioklaviküler ayrışma ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır.",
+            "explanation": "Akromioklaviküler ayrışma ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Akromioklaviküler ayrışma için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Anterior glenohumeral çıkık tanısını daha güçlü destekler.",
@@ -14496,7 +14496,7 @@ export const cases = [
             ]
           },
           "Proksimal humerus kırığı": {
-            "explanation": "Proksimal humerus kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır.",
+            "explanation": "Proksimal humerus kırığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Proksimal humerus kırığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Anterior glenohumeral çıkık tanısını daha güçlü destekler.",
@@ -14504,7 +14504,7 @@ export const cases = [
             ]
           },
           "Rotator manşet yırtığı": {
-            "explanation": "Rotator manşet yırtığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik paterni Anterior glenohumeral çıkık lehine daha tutarlıdır.",
+            "explanation": "Rotator manşet yırtığı ayırıcı tanıda düşünülebilir. Ancak bu olguda başvuru zamanı, muayene bulguları ve tetkik bulguları Anterior glenohumeral çıkık lehine daha tutarlıdır.",
             "comparisonPoints": [
               "Rotator manşet yırtığı için beklenen karar verdirici bulgular bu olguda baskın değildir.",
               "Olgunun ana tetkik ve klinik örüntüsü Anterior glenohumeral çıkık tanısını daha güçlü destekler.",
@@ -14834,7 +14834,7 @@ export const cases = [
         "whyCorrect": "Alternatif akım, istemsiz kasılma nedeniyle kişinin kaynaktan ayrılamamasına yol açar. Transtorasik geçiş kalp iletim sistemini etkileyerek ventriküler fibrilasyon riski oluşturur. Bu nedenle sadece cilt yanığına odaklanmak hatalıdır. Bu nedenle en uygun seçim Elektrik çarpmasına bağlı ventriküler aritmi riski olur.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Alternatif akım ile elini kaynaktan ayıramama."
           },
           {
@@ -14846,7 +14846,7 @@ export const cases = [
             "text": "Çarpıntı ve düzensiz taşikardi."
           },
           {
-            "title": "EKG paterni",
+            "title": "EKG örüntüsü",
             "text": "EKG'de ventriküler erken vurular."
           },
           {
@@ -14897,7 +14897,7 @@ export const cases = [
         "learningOutcome": "Elektrik çarpmasında görünür yanığın küçük olması iç organ veya kardiyak riski dışlamaz.",
         "differentials": {
           "Yalnızca yüzeyel termal yanık": {
-            "explanation": "Yalnızca yüzeyel termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "explanation": "Yalnızca yüzeyel termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
             "comparisonPoints": [
               "Yalnızca yüzeyel termal yanık için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
@@ -14905,7 +14905,7 @@ export const cases = [
             ]
           },
           "Spontan pnömotoraks": {
-            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
             "comparisonPoints": [
               "Spontan pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
@@ -14913,7 +14913,7 @@ export const cases = [
             ]
           },
           "Akut miyokard infarktüsü": {
-            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
             "comparisonPoints": [
               "Akut miyokard infarktüsü için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
@@ -14940,9 +14940,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Yalnızca yüzeyel termal yanık": "Yalnızca yüzeyel termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
-          "Spontan pnömotoraks": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
-          "Akut miyokard infarktüsü": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir."
+          "Yalnızca yüzeyel termal yanık": "Yalnızca yüzeyel termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+          "Spontan pnömotoraks": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+          "Akut miyokard infarktüsü": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir."
         },
         "clinicalPearls": [
           {
@@ -14968,7 +14968,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Yalnızca yüzeyel termal yanık": {
-            "explanation": "Yalnızca yüzeyel termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "explanation": "Yalnızca yüzeyel termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
             "comparisonPoints": [
               "Yalnızca yüzeyel termal yanık için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
@@ -14976,7 +14976,7 @@ export const cases = [
             ]
           },
           "Spontan pnömotoraks": {
-            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
             "comparisonPoints": [
               "Spontan pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
@@ -14984,7 +14984,7 @@ export const cases = [
             ]
           },
           "Akut miyokard infarktüsü": {
-            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
+            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Elektrik çarpmasına bağlı ventriküler aritmi riski lehinedir.",
             "comparisonPoints": [
               "Akut miyokard infarktüsü için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Elektrik çarpmasına bağlı ventriküler aritmi riski tanısını daha güçlü destekler.",
@@ -15114,7 +15114,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Alternatif akım ile elini kaynaktan ayıramama."
       },
       {
@@ -15126,7 +15126,7 @@ export const cases = [
         "text": "Çarpıntı ve düzensiz taşikardi."
       },
       {
-        "title": "EKG paterni",
+        "title": "EKG örüntüsü",
         "text": "EKG'de ventriküler erken vurular."
       },
       {
@@ -15170,7 +15170,7 @@ export const cases = [
         "summary": "EKG'de sinüs bradikardisi izlendi. Malign aritmi ve ST elevasyonu saptanmadı.",
         "findings": [
           "Elektriksel etkilenme ritim izlemi gerektirir",
-          "Akut MI açısından EKG paterni yoktur"
+          "Akut MI açısından EKG örüntüsü yoktur"
         ],
         "rows": [
           [
@@ -15344,9 +15344,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Yıldırım sonrası ani ölümde en kritik mekanizma uzamış apnedir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "management": [
@@ -15370,7 +15370,7 @@ export const cases = [
         "learningOutcome": "Yıldırım çarpmasında görünür yanıklar tanıyı desteklese de sınavda ölüm mekanizması kardiyopulmoner durma ve özellikle uzamış apne ile ilişkilidir.",
         "differentials": {
           "Akut miyokard infarktüsü": {
-            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
             "comparisonPoints": [
               "Akut miyokard infarktüsü için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
@@ -15378,7 +15378,7 @@ export const cases = [
             ]
           },
           "Spontan tansiyon pnömotoraks": {
-            "explanation": "Spontan tansiyon pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "explanation": "Spontan tansiyon pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
             "comparisonPoints": [
               "Spontan tansiyon pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
@@ -15386,7 +15386,7 @@ export const cases = [
             ]
           },
           "Hiperpotasemiye bağlı ani ölüm": {
-            "explanation": "Hiperpotasemiye bağlı ani ölüm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "explanation": "Hiperpotasemiye bağlı ani ölüm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
             "comparisonPoints": [
               "Hiperpotasemiye bağlı ani ölüm için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
@@ -15413,9 +15413,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Akut miyokard infarktüsü": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
-          "Spontan tansiyon pnömotoraks": "Spontan tansiyon pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
-          "Hiperpotasemiye bağlı ani ölüm": "Hiperpotasemiye bağlı ani ölüm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir."
+          "Akut miyokard infarktüsü": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+          "Spontan tansiyon pnömotoraks": "Spontan tansiyon pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+          "Hiperpotasemiye bağlı ani ölüm": "Hiperpotasemiye bağlı ani ölüm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir."
         },
         "clinicalPearls": [
           {
@@ -15434,14 +15434,14 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Yıldırım sonrası ani ölümde en kritik mekanizma uzamış apnedir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "differentialComparison": {
           "Akut miyokard infarktüsü": {
-            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "explanation": "Akut miyokard infarktüsü ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
             "comparisonPoints": [
               "Akut miyokard infarktüsü için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
@@ -15449,7 +15449,7 @@ export const cases = [
             ]
           },
           "Spontan tansiyon pnömotoraks": {
-            "explanation": "Spontan tansiyon pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "explanation": "Spontan tansiyon pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
             "comparisonPoints": [
               "Spontan tansiyon pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
@@ -15457,7 +15457,7 @@ export const cases = [
             ]
           },
           "Hiperpotasemiye bağlı ani ölüm": {
-            "explanation": "Hiperpotasemiye bağlı ani ölüm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
+            "explanation": "Hiperpotasemiye bağlı ani ölüm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Uzamış apneye bağlı kardiyopulmoner arrest riski lehinedir.",
             "comparisonPoints": [
               "Hiperpotasemiye bağlı ani ölüm için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Uzamış apneye bağlı kardiyopulmoner arrest riski tanısını daha güçlü destekler.",
@@ -15750,7 +15750,7 @@ export const cases = [
         "Herediter fruktoz intoleransı",
         "Fenilketonüri"
       ],
-      "explanation": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Klasik galaktozemi olur.",
+      "explanation": "Olgu örüntüsü Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Klasik galaktozemi olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -15775,8 +15775,8 @@ export const cases = [
       ],
       "nextStep": "Laktoz veya galaktoz içeren beslenmeyi kes, uygun formülaya geç, karaciğer hasarı ve E. Coli sepsisi bulgularını değerlendir.",
       "answerFeedback": {
-        "diagnosisMeta": "Klasik galaktozemi: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Klasik galaktozemi olur.",
+        "diagnosisMeta": "Klasik galaktozemi: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Klasik galaktozemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Klasik galaktozemi olur.",
         "evidenceChain": [
           {
             "title": "Muayene bulgusu",
@@ -15787,7 +15787,7 @@ export const cases = [
             "text": "Glukoz 56 mg/dL, Direkt bilirubin: 2.4 mg/dL (referans <0.3 mg/dL; yüksek), AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Galt aktivitesi düşük."
           },
           {
@@ -15811,9 +15811,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -15839,10 +15839,10 @@ export const cases = [
             "text": "Galt aktivitesi ve galaktoz-1-fosfat düzeyiyle tanıyı doğrula."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Laktoz intoleransı": {
-            "explanation": "Laktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "explanation": "Laktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir.",
             "comparisonPoints": [
               "Laktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
@@ -15850,7 +15850,7 @@ export const cases = [
             ]
           },
           "Herediter fruktoz intoleransı": {
-            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir.",
             "comparisonPoints": [
               "Herediter fruktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
@@ -15858,7 +15858,7 @@ export const cases = [
             ]
           },
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
@@ -15885,9 +15885,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Laktoz intoleransı": "Laktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
-          "Herediter fruktoz intoleransı": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
-          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir."
+          "Laktoz intoleransı": "Laktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir.",
+          "Herediter fruktoz intoleransı": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir.",
+          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir."
         },
         "clinicalPearls": [
           {
@@ -15901,9 +15901,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -15913,7 +15913,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Laktoz intoleransı": {
-            "explanation": "Laktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "explanation": "Laktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir.",
             "comparisonPoints": [
               "Laktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
@@ -15921,7 +15921,7 @@ export const cases = [
             ]
           },
           "Herediter fruktoz intoleransı": {
-            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir.",
             "comparisonPoints": [
               "Herediter fruktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
@@ -15929,7 +15929,7 @@ export const cases = [
             ]
           },
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Klasik galaktozemi lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Klasik galaktozemi lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Klasik galaktozemi tanısını daha güçlü destekler.",
@@ -16048,7 +16048,7 @@ export const cases = [
         "text": "Glukoz 56 mg/dL, Direkt bilirubin: 2.4 mg/dL (referans <0.3 mg/dL; yüksek), AST: AST 96 U/L; ALT 88 U/L (referans AST <40 U/L; ALT <41 U/L; yüksek)."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Galt aktivitesi düşük."
       },
       {
@@ -16197,7 +16197,7 @@ export const cases = [
         "Galaktozemi",
         "GSD Tip Ia"
       ],
-      "explanation": "Olgu paterni Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Herediter fruktoz intoleransı olur.",
+      "explanation": "Olgu örüntüsü Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Herediter fruktoz intoleransı olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -16222,8 +16222,8 @@ export const cases = [
       ],
       "nextStep": "Fruktoz, sükroz ve sorbitolü diyetten çıkar. Hipoglisemiyi hızla düzelt.",
       "answerFeedback": {
-        "diagnosisMeta": "Herediter fruktoz intoleransı: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Herediter fruktoz intoleransı olur.",
+        "diagnosisMeta": "Herediter fruktoz intoleransı: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Herediter fruktoz intoleransı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Herediter fruktoz intoleransı olur.",
         "evidenceChain": [
           {
             "title": "Muayene bulgusu",
@@ -16258,9 +16258,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -16286,10 +16286,10 @@ export const cases = [
             "text": "Karaciğer fonksiyonları, laktat ve hedef genetik veya enzim değerlendirmesiyle tanıyı destekle."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Esansiyel fruktozüri": {
-            "explanation": "Esansiyel fruktozüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "explanation": "Esansiyel fruktozüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir.",
             "comparisonPoints": [
               "Esansiyel fruktozüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
@@ -16297,7 +16297,7 @@ export const cases = [
             ]
           },
           "Galaktozemi": {
-            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir.",
             "comparisonPoints": [
               "Galaktozemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
@@ -16305,7 +16305,7 @@ export const cases = [
             ]
           },
           "GSD Tip Ia": {
-            "explanation": "GSD Tip Ia ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "explanation": "GSD Tip Ia ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir.",
             "comparisonPoints": [
               "GSD Tip Ia için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
@@ -16332,9 +16332,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Esansiyel fruktozüri": "Esansiyel fruktozüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
-          "Galaktozemi": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
-          "GSD Tip Ia": "GSD Tip Ia ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir."
+          "Esansiyel fruktozüri": "Esansiyel fruktozüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir.",
+          "Galaktozemi": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir.",
+          "GSD Tip Ia": "GSD Tip Ia ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir."
         },
         "clinicalPearls": [
           {
@@ -16348,9 +16348,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -16360,7 +16360,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Esansiyel fruktozüri": {
-            "explanation": "Esansiyel fruktozüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "explanation": "Esansiyel fruktozüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir.",
             "comparisonPoints": [
               "Esansiyel fruktozüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
@@ -16368,7 +16368,7 @@ export const cases = [
             ]
           },
           "Galaktozemi": {
-            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir.",
             "comparisonPoints": [
               "Galaktozemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
@@ -16376,7 +16376,7 @@ export const cases = [
             ]
           },
           "GSD Tip Ia": {
-            "explanation": "GSD Tip Ia ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Herediter fruktoz intoleransı lehinedir.",
+            "explanation": "GSD Tip Ia ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Herediter fruktoz intoleransı lehinedir.",
             "comparisonPoints": [
               "GSD Tip Ia için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Herediter fruktoz intoleransı tanısını daha güçlü destekler.",
@@ -16429,7 +16429,7 @@ export const cases = [
           "correctOrder": 4,
           "unsafe": false,
           "score": 2,
-          "rationale": "Hepatik etkilenim ve biyokimyasal patern yönetimi güçlendirir."
+          "rationale": "Hepatik etkilenim ve biyokimyasal örüntü yönetimi güçlendirir."
         },
         {
           "id": "pediatrics-hereditary-fructose-intolerance-001-req-5-aileye-etiket-okuma-acil-hipoglisemi-plani-ve-genetik-da",
@@ -16659,7 +16659,7 @@ export const cases = [
         "McArdle hastalığı",
         "Herediter fruktoz intoleransı"
       ],
-      "explanation": "Olgu paterni Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim GSD Tip Ia ve Von Gierke olur.",
+      "explanation": "Olgu örüntüsü Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim GSD Tip Ia ve Von Gierke olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -16684,11 +16684,11 @@ export const cases = [
       ],
       "nextStep": "Hipoglisemiyi düzelt, uzun açlığı önle, sık karbonhidrat veya mısır nişastası planla ve metabolizma uzmanına yönlendir.",
       "answerFeedback": {
-        "diagnosisMeta": "Glikojen depo hastalığı Tip Ia. Von Gierke: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim GSD Tip Ia ve Von Gierke olur.",
+        "diagnosisMeta": "Glikojen depo hastalığı Tip Ia. Von Gierke: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim GSD Tip Ia ve Von Gierke olur.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Olgu bulguları Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumlu."
           },
           {
@@ -16720,9 +16720,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -16741,17 +16741,17 @@ export const cases = [
           },
           {
             "title": "Tedavi önceliği",
-            "text": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal paternin parçası olarak yorumla."
+            "text": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal örüntüsün parçası olarak yorumla."
           },
           {
             "title": "Tanısal doğrulama",
             "text": "Sık beslenme ve gece çiğ mısır nişastası planıyla açlık hipoglisemisini önle."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Pompe hastalığı": {
-            "explanation": "Pompe hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir.",
+            "explanation": "Pompe hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir.",
             "comparisonPoints": [
               "Pompe hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri GSD Tip Ia. Von Gierke tanısını daha güçlü destekler.",
@@ -16759,7 +16759,7 @@ export const cases = [
             ]
           },
           "McArdle hastalığı": {
-            "explanation": "McArdle hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir.",
+            "explanation": "McArdle hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir.",
             "comparisonPoints": [
               "McArdle hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri GSD Tip Ia. Von Gierke tanısını daha güçlü destekler.",
@@ -16767,7 +16767,7 @@ export const cases = [
             ]
           },
           "Herediter fruktoz intoleransı": {
-            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir.",
+            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir.",
             "comparisonPoints": [
               "Herediter fruktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri GSD Tip Ia. Von Gierke tanısını daha güçlü destekler.",
@@ -16786,7 +16786,7 @@ export const cases = [
           },
           {
             "title": "Tedavi önceliği",
-            "text": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal paternin parçası olarak yorumla."
+            "text": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal örüntüsün parçası olarak yorumla."
           },
           {
             "title": "Tanısal doğrulama",
@@ -16794,9 +16794,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Pompe hastalığı": "Pompe hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir.",
-          "McArdle hastalığı": "McArdle hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir.",
-          "Herediter fruktoz intoleransı": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir."
+          "Pompe hastalığı": "Pompe hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir.",
+          "McArdle hastalığı": "McArdle hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir.",
+          "Herediter fruktoz intoleransı": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir."
         },
         "clinicalPearls": [
           {
@@ -16810,9 +16810,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -16822,7 +16822,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Pompe hastalığı": {
-            "explanation": "Pompe hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir.",
+            "explanation": "Pompe hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir.",
             "comparisonPoints": [
               "Pompe hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri GSD Tip Ia. Von Gierke tanısını daha güçlü destekler.",
@@ -16830,7 +16830,7 @@ export const cases = [
             ]
           },
           "McArdle hastalığı": {
-            "explanation": "McArdle hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir.",
+            "explanation": "McArdle hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir.",
             "comparisonPoints": [
               "McArdle hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri GSD Tip Ia. Von Gierke tanısını daha güçlü destekler.",
@@ -16838,7 +16838,7 @@ export const cases = [
             ]
           },
           "Herediter fruktoz intoleransı": {
-            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni GSD Tip Ia. Von Gierke lehinedir.",
+            "explanation": "Herediter fruktoz intoleransı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları GSD Tip Ia. Von Gierke lehinedir.",
             "comparisonPoints": [
               "Herediter fruktoz intoleransı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri GSD Tip Ia. Von Gierke tanısını daha güçlü destekler.",
@@ -16877,7 +16877,7 @@ export const cases = [
         },
         {
           "id": "pediatrics-von-gierke-gsd-001-req-3-laktat-trigliserid-ve-urik-asit-yuksekligini-tanisal-pat",
-          "label": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal paternin parçası olarak yorumla",
+          "label": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal örüntüsün parçası olarak yorumla",
           "required": true,
           "correctOrder": 3,
           "unsafe": false,
@@ -16921,13 +16921,13 @@ export const cases = [
           "rationale": "Sürekli açlık önleme uzun dönem kontrolün temelidir."
         },
         {
-          "id": "pediatrics-von-gierke-gsd-001-d-3-laktat-trigliserid-ve-urik-asit-paternini-degerlendirme-disi-birak",
-          "label": "Laktat, trigliserid ve ürik asit paternini değerlendirme dışı bırak",
+          "id": "pediatrics-von-gierke-gsd-001-d-3-laktat-trigliserid-ve-urik-asit-örüntüsünü-degerlendirme-disi-birak",
+          "label": "Laktat, trigliserid ve ürik asit örüntüsünü değerlendirme dışı bırak",
           "required": false,
           "correctOrder": null,
           "unsafe": false,
           "score": -1,
-          "rationale": "Bu metabolik patern tanısal ayrım sağlar."
+          "rationale": "Bu metabolik örüntü tanısal ayrım sağlar."
         }
       ]
     },
@@ -16950,7 +16950,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Olgu bulguları Glikojen depo hastalığı Tip Ia. Von Gierke ile uyumlu."
       },
       {
@@ -17107,7 +17107,7 @@ export const cases = [
         "Alkaptonüri",
         "Albinizm"
       ],
-      "explanation": "Olgu paterni Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Fenilketonüri olur.",
+      "explanation": "Olgu örüntüsü Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Fenilketonüri olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -17132,11 +17132,11 @@ export const cases = [
       ],
       "nextStep": "Fenilalanin kısıtlı diyet başla, tirozin desteğini planla, BH4 yanıtını veya genetik tanıyı değerlendir.",
       "answerFeedback": {
-        "diagnosisMeta": "Fenilketonüri: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Fenilketonüri olur.",
+        "diagnosisMeta": "Fenilketonüri: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Fenilketonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Fenilketonüri olur.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Olgu bulguları Fenilketonüri ile uyumlu."
           },
           {
@@ -17168,9 +17168,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Klinik not",
@@ -17196,10 +17196,10 @@ export const cases = [
             "text": "BH4 yanıtlı olguda sapropterin gibi hedef seçenekleri değerlendir."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Akçaağaç şurubu idrar hastalığı": {
-            "explanation": "Akçaağaç şurubu idrar hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "explanation": "Akçaağaç şurubu idrar hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir.",
             "comparisonPoints": [
               "Akçaağaç şurubu idrar hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
@@ -17207,7 +17207,7 @@ export const cases = [
             ]
           },
           "Alkaptonüri": {
-            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir.",
             "comparisonPoints": [
               "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
@@ -17215,7 +17215,7 @@ export const cases = [
             ]
           },
           "Albinizm": {
-            "explanation": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "explanation": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir.",
             "comparisonPoints": [
               "Albinizm için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
@@ -17242,9 +17242,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Akçaağaç şurubu idrar hastalığı": "Akçaağaç şurubu idrar hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
-          "Alkaptonüri": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
-          "Albinizm": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir."
+          "Akçaağaç şurubu idrar hastalığı": "Akçaağaç şurubu idrar hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir.",
+          "Alkaptonüri": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir.",
+          "Albinizm": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir."
         },
         "clinicalPearls": [
           {
@@ -17258,9 +17258,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Klinik not",
@@ -17270,7 +17270,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Akçaağaç şurubu idrar hastalığı": {
-            "explanation": "Akçaağaç şurubu idrar hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "explanation": "Akçaağaç şurubu idrar hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir.",
             "comparisonPoints": [
               "Akçaağaç şurubu idrar hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
@@ -17278,7 +17278,7 @@ export const cases = [
             ]
           },
           "Alkaptonüri": {
-            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir.",
             "comparisonPoints": [
               "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
@@ -17286,7 +17286,7 @@ export const cases = [
             ]
           },
           "Albinizm": {
-            "explanation": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Fenilketonüri lehinedir.",
+            "explanation": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Fenilketonüri lehinedir.",
             "comparisonPoints": [
               "Albinizm için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Fenilketonüri tanısını daha güçlü destekler.",
@@ -17397,7 +17397,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Olgu bulguları Fenilketonüri ile uyumlu."
       },
       {
@@ -17568,7 +17568,7 @@ export const cases = [
         "Galaktozemi",
         "Homosistinüri"
       ],
-      "explanation": "Olgu paterni Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Akçaağaç şurubu idrar hastalığı olur.",
+      "explanation": "Olgu örüntüsü Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Akçaağaç şurubu idrar hastalığı olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -17593,11 +17593,11 @@ export const cases = [
       ],
       "nextStep": "Acil metabolik stabilizasyon, BCAA kısıtlaması, yüksek lösin varsa yoğun tedavi veya diyaliz değerlendirmesi.",
       "answerFeedback": {
-        "diagnosisMeta": "Akçaağaç şurubu idrar hastalığı: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Akçaağaç şurubu idrar hastalığı olur.",
+        "diagnosisMeta": "Akçaağaç şurubu idrar hastalığı: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Akçaağaç şurubu idrar hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Akçaağaç şurubu idrar hastalığı olur.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu."
           },
           {
@@ -17629,9 +17629,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -17657,10 +17657,10 @@ export const cases = [
             "text": "Lösin çok yüksek veya nörolojik kötüleşme varsa diyaliz veya yoğun bakım desteğini değerlendir."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
@@ -17668,7 +17668,7 @@ export const cases = [
             ]
           },
           "Galaktozemi": {
-            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir.",
             "comparisonPoints": [
               "Galaktozemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
@@ -17676,7 +17676,7 @@ export const cases = [
             ]
           },
           "Homosistinüri": {
-            "explanation": "Homosistinüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "explanation": "Homosistinüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir.",
             "comparisonPoints": [
               "Homosistinüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
@@ -17703,9 +17703,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
-          "Galaktozemi": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
-          "Homosistinüri": "Homosistinüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir."
+          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir.",
+          "Galaktozemi": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir.",
+          "Homosistinüri": "Homosistinüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir."
         },
         "clinicalPearls": [
           {
@@ -17719,9 +17719,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -17731,7 +17731,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
@@ -17739,7 +17739,7 @@ export const cases = [
             ]
           },
           "Galaktozemi": {
-            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "explanation": "Galaktozemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir.",
             "comparisonPoints": [
               "Galaktozemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
@@ -17747,7 +17747,7 @@ export const cases = [
             ]
           },
           "Homosistinüri": {
-            "explanation": "Homosistinüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akçaağaç şurubu idrar hastalığı lehinedir.",
+            "explanation": "Homosistinüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akçaağaç şurubu idrar hastalığı lehinedir.",
             "comparisonPoints": [
               "Homosistinüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akçaağaç şurubu idrar hastalığı tanısını daha güçlü destekler.",
@@ -17858,7 +17858,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Olgu bulguları Akçaağaç şurubu idrar hastalığı ile uyumlu."
       },
       {
@@ -18001,7 +18001,7 @@ export const cases = [
         "Albinizm",
         "Tirozinemi Tip I"
       ],
-      "explanation": "Olgu paterni Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Alkaptonüri olur.",
+      "explanation": "Olgu örüntüsü Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Alkaptonüri olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -18026,19 +18026,19 @@ export const cases = [
       ],
       "nextStep": "Homogentisik asit düzeyini doğrula, eklem veya kalp tutulumunu değerlendir, uzun dönem metabolizma-romatoloji izlemi planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Alkaptonüri: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Alkaptonüri olur.",
+        "diagnosisMeta": "Alkaptonüri: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Alkaptonüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Alkaptonüri olur.",
         "evidenceChain": [
           {
             "title": "Muayene bulgusu",
             "text": "Olgu bulguları Alkaptonüri ile uyumlu."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Mekanizma notu",
             "text": "Rutin biyokimya çoğunlukla stabil."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Mekanizma notu",
             "text": "Homogentisik asit oksidaz defekti."
           },
           {
@@ -18062,9 +18062,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -18090,10 +18090,10 @@ export const cases = [
             "text": "Nitisinon gibi hedef tedavi seçeneklerini uzman değerlendirmesiyle düşün."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
@@ -18101,7 +18101,7 @@ export const cases = [
             ]
           },
           "Albinizm": {
-            "explanation": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "explanation": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir.",
             "comparisonPoints": [
               "Albinizm için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
@@ -18109,7 +18109,7 @@ export const cases = [
             ]
           },
           "Tirozinemi Tip I": {
-            "explanation": "Tirozinemi Tip I ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "explanation": "Tirozinemi Tip I ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir.",
             "comparisonPoints": [
               "Tirozinemi Tip I için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
@@ -18136,9 +18136,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
-          "Albinizm": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
-          "Tirozinemi Tip I": "Tirozinemi Tip I ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir."
+          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir.",
+          "Albinizm": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir.",
+          "Tirozinemi Tip I": "Tirozinemi Tip I ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir."
         },
         "clinicalPearls": [
           {
@@ -18152,9 +18152,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -18164,7 +18164,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
@@ -18172,7 +18172,7 @@ export const cases = [
             ]
           },
           "Albinizm": {
-            "explanation": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "explanation": "Albinizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir.",
             "comparisonPoints": [
               "Albinizm için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
@@ -18180,7 +18180,7 @@ export const cases = [
             ]
           },
           "Tirozinemi Tip I": {
-            "explanation": "Tirozinemi Tip I ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Alkaptonüri lehinedir.",
+            "explanation": "Tirozinemi Tip I ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Alkaptonüri lehinedir.",
             "comparisonPoints": [
               "Tirozinemi Tip I için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Alkaptonüri tanısını daha güçlü destekler.",
@@ -18295,11 +18295,11 @@ export const cases = [
         "text": "Olgu bulguları Alkaptonüri ile uyumlu."
       },
       {
-        "title": "Mekanizma özeti",
+        "title": "Mekanizma notu",
         "text": "Rutin biyokimya çoğunlukla stabil."
       },
       {
-        "title": "Mekanizma özeti",
+        "title": "Mekanizma notu",
         "text": "Homogentisik asit oksidaz defekti."
       },
       {
@@ -18360,9 +18360,9 @@ export const cases = [
         "label": "Görme keskinliği ve optik koherens tomografi",
         "type": "clinical",
         "priority": "Essential",
-        "summary": "Görme keskinliği düşük ve OCT'de foveal hipoplazi paterninde bulgu saptandı.",
+        "summary": "Görme keskinliği düşük ve OCT'de foveal hipoplazi örüntüsünde bulgu saptandı.",
         "findings": [
-          "Foveal hipoplazi ve nistagmus bu klinik paternle uyumludur",
+          "Foveal hipoplazi ve nistagmus bu klinik örüntüle uyumludur",
           "Retinal kitle veya aktif inflamasyon izlenmedi"
         ],
         "rows": [
@@ -18428,7 +18428,7 @@ export const cases = [
         "Alkaptonüri",
         "Vitiligo"
       ],
-      "explanation": "Olgu paterni Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Okülokütanöz albinizm olur.",
+      "explanation": "Olgu örüntüsü Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Okülokütanöz albinizm olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -18453,8 +18453,8 @@ export const cases = [
       ],
       "nextStep": "Güneşten korunma, dermatolojik takip ve oftalmolojik değerlendirme.",
       "answerFeedback": {
-        "diagnosisMeta": "Okülokütanöz albinizm: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Okülokütanöz albinizm olur.",
+        "diagnosisMeta": "Okülokütanöz albinizm: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Okülokütanöz albinizm ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Okülokütanöz albinizm olur.",
         "evidenceChain": [
           {
             "title": "Muayene bulgusu",
@@ -18465,7 +18465,7 @@ export const cases = [
             "text": "Biyokimya çoğunlukla normal."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Tirozinaz aktivitesi veya genetik alt tip değerlendirildi."
           },
           {
@@ -18489,9 +18489,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -18517,10 +18517,10 @@ export const cases = [
             "text": "Kanama, immün yetmezlik veya nörolojik bulgu varsa sendromik albinizm açısından ayırıcı tanı yap."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
@@ -18528,7 +18528,7 @@ export const cases = [
             ]
           },
           "Alkaptonüri": {
-            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir.",
             "comparisonPoints": [
               "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
@@ -18536,7 +18536,7 @@ export const cases = [
             ]
           },
           "Vitiligo": {
-            "explanation": "Vitiligo ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "explanation": "Vitiligo ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir.",
             "comparisonPoints": [
               "Vitiligo için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
@@ -18563,9 +18563,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
-          "Alkaptonüri": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
-          "Vitiligo": "Vitiligo ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir."
+          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir.",
+          "Alkaptonüri": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir.",
+          "Vitiligo": "Vitiligo ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir."
         },
         "clinicalPearls": [
           {
@@ -18579,9 +18579,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -18591,7 +18591,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
@@ -18599,7 +18599,7 @@ export const cases = [
             ]
           },
           "Alkaptonüri": {
-            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir.",
             "comparisonPoints": [
               "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
@@ -18607,7 +18607,7 @@ export const cases = [
             ]
           },
           "Vitiligo": {
-            "explanation": "Vitiligo ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Okülokütanöz albinizm lehinedir.",
+            "explanation": "Vitiligo ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Okülokütanöz albinizm lehinedir.",
             "comparisonPoints": [
               "Vitiligo için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Okülokütanöz albinizm tanısını daha güçlü destekler.",
@@ -18669,7 +18669,7 @@ export const cases = [
           "correctOrder": 5,
           "unsafe": false,
           "score": 2,
-          "rationale": "Kalıtım paterni aile planlaması için önemlidir."
+          "rationale": "Kalıtım örüntüsü aile planlaması için önemlidir."
         },
         {
           "id": "pediatrics-albinism-001-d-1-fotofobi-ve-nistagmus-varken-oftalmoloji-degerlendirmesini-ertele",
@@ -18726,7 +18726,7 @@ export const cases = [
         "text": "Biyokimya çoğunlukla normal."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Tirozinaz aktivitesi veya genetik alt tip değerlendirildi."
       },
       {
@@ -18854,7 +18854,7 @@ export const cases = [
         "priority": "Useful",
         "summary": "Sol popliteal vende parsiyel trombüs izlendi.",
         "findings": [
-          "Tromboz eğilimi bu klinik patern için önemli klinik ipucudur",
+          "Tromboz eğilimi bu klinik örüntü için önemli klinik ipucudur",
           "DVT varlığı akut antikoagülasyon kararını etkiler"
         ],
         "rows": [
@@ -18914,7 +18914,7 @@ export const cases = [
         "Alkaptonüri",
         "Fenilketonüri"
       ],
-      "explanation": "Olgu paterni Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Homosistinüri olur.",
+      "explanation": "Olgu örüntüsü Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Homosistinüri olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -18939,8 +18939,8 @@ export const cases = [
       ],
       "nextStep": "DVT yönetimini başlat, homosistein veya metiyonin doğrula, vitamin yanıtı ve diyet planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Homosistinüri: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Homosistinüri olur.",
+        "diagnosisMeta": "Homosistinüri: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Homosistinüri ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Homosistinüri olur.",
         "evidenceChain": [
           {
             "title": "Muayene bulgusu",
@@ -18975,9 +18975,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -19003,10 +19003,10 @@ export const cases = [
             "text": "Piridoksin yanıtı, folat veya B12, betain ve metiyonin kısıtlı diyet seçeneklerini düzenle."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Marfan sendromu": {
-            "explanation": "Marfan sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "explanation": "Marfan sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir.",
             "comparisonPoints": [
               "Marfan sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
@@ -19014,7 +19014,7 @@ export const cases = [
             ]
           },
           "Alkaptonüri": {
-            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir.",
             "comparisonPoints": [
               "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
@@ -19022,7 +19022,7 @@ export const cases = [
             ]
           },
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
@@ -19049,9 +19049,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Marfan sendromu": "Marfan sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
-          "Alkaptonüri": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
-          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir."
+          "Marfan sendromu": "Marfan sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir.",
+          "Alkaptonüri": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir.",
+          "Fenilketonüri": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir."
         },
         "clinicalPearls": [
           {
@@ -19065,9 +19065,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -19077,7 +19077,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Marfan sendromu": {
-            "explanation": "Marfan sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "explanation": "Marfan sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir.",
             "comparisonPoints": [
               "Marfan sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
@@ -19085,7 +19085,7 @@ export const cases = [
             ]
           },
           "Alkaptonüri": {
-            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "explanation": "Alkaptonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir.",
             "comparisonPoints": [
               "Alkaptonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
@@ -19093,7 +19093,7 @@ export const cases = [
             ]
           },
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Homosistinüri lehinedir.",
+            "explanation": "Fenilketonüri ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Homosistinüri lehinedir.",
             "comparisonPoints": [
               "Fenilketonüri için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Homosistinüri tanısını daha güçlü destekler.",
@@ -19317,7 +19317,7 @@ export const cases = [
         "Beriberi",
         "Raşitizm"
       ],
-      "explanation": "Olgu paterni Niasin eksikliği. Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Pellagra olur.",
+      "explanation": "Olgu örüntüsü Niasin eksikliği. Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Pellagra olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -19342,8 +19342,8 @@ export const cases = [
       ],
       "nextStep": "Niasin replasmanı, sıvı-elektrolit desteği ve beslenme düzenlenmesi.",
       "answerFeedback": {
-        "diagnosisMeta": "Niasin eksikliği ve pellagra paterninde klinik-biyokimyasal ayrım ön plandadır",
-        "whyCorrect": "Olgu paterni Niasin eksikliği. Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Pellagra olur.",
+        "diagnosisMeta": "Niasin eksikliği ve pellagra örüntüsünde klinik-biyokimyasal ayrım ön plandadır",
+        "whyCorrect": "Olgu örüntüsü Niasin eksikliği. Pellagra ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Pellagra olur.",
         "evidenceChain": [
           {
             "title": "Muayene bulgusu",
@@ -19378,9 +19378,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Pellagra",
@@ -19406,10 +19406,10 @@ export const cases = [
             "text": "Eşlik eden diğer B vitaminleri ve genel beslenme eksikliklerini yerine koy."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Skorbüt": {
-            "explanation": "Skorbüt ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "explanation": "Skorbüt ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir.",
             "comparisonPoints": [
               "Skorbüt için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
@@ -19417,7 +19417,7 @@ export const cases = [
             ]
           },
           "Beriberi": {
-            "explanation": "Beriberi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "explanation": "Beriberi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir.",
             "comparisonPoints": [
               "Beriberi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
@@ -19425,7 +19425,7 @@ export const cases = [
             ]
           },
           "Raşitizm": {
-            "explanation": "Raşitizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "explanation": "Raşitizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir.",
             "comparisonPoints": [
               "Raşitizm için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
@@ -19452,9 +19452,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Skorbüt": "Skorbüt ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
-          "Beriberi": "Beriberi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
-          "Raşitizm": "Raşitizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir."
+          "Skorbüt": "Skorbüt ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir.",
+          "Beriberi": "Beriberi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir.",
+          "Raşitizm": "Raşitizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir."
         },
         "clinicalPearls": [
           {
@@ -19468,9 +19468,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Pellagra",
@@ -19480,7 +19480,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Skorbüt": {
-            "explanation": "Skorbüt ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "explanation": "Skorbüt ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir.",
             "comparisonPoints": [
               "Skorbüt için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
@@ -19488,7 +19488,7 @@ export const cases = [
             ]
           },
           "Beriberi": {
-            "explanation": "Beriberi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "explanation": "Beriberi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir.",
             "comparisonPoints": [
               "Beriberi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
@@ -19496,7 +19496,7 @@ export const cases = [
             ]
           },
           "Raşitizm": {
-            "explanation": "Raşitizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pellagra lehinedir.",
+            "explanation": "Raşitizm ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pellagra lehinedir.",
             "comparisonPoints": [
               "Raşitizm için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pellagra tanısını daha güçlü destekler.",
@@ -19637,7 +19637,7 @@ export const cases = [
     "demographics": "62 yaş erkek, yalnız yaşıyor, taze sebze-meyve almıyor",
     "setting": "Pediatri veya metabolizma polikliniği veya acil başvuru",
     "chiefComplaint": "Diş eti kanaması, morarma ve halsizlik",
-    "stem": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama paterni C vitamini eksikliğini düşündürür. C vitamini eksikliğiyle uyumlu kısıtlı diyet ve mukokutanöz kanama bulguları saptandı",
+    "stem": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama örüntüsü C vitamini eksikliğini düşündürür. C vitamini eksikliğiyle uyumlu kısıtlı diyet ve mukokutanöz kanama bulguları saptandı",
     "vitals": {
       "TA": "110/70 mmHg",
       "Nabız": "92/dk",
@@ -19706,7 +19706,7 @@ export const cases = [
         "K vitamini eksikliği",
         "Hemofili A"
       ],
-      "explanation": "Olgu paterni Vitamin C eksikliği. Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Skorbüt olur.",
+      "explanation": "Olgu örüntüsü Vitamin C eksikliği. Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Skorbüt olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -19731,8 +19731,8 @@ export const cases = [
       ],
       "nextStep": "Vitamin C replasmanı, beslenme desteği ve kanama veya anemi değerlendirmesi.",
       "answerFeedback": {
-        "diagnosisMeta": "Vitamin C eksikliği. Skorbüt: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Vitamin C eksikliği. Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Skorbüt olur.",
+        "diagnosisMeta": "Vitamin C eksikliği. Skorbüt: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Vitamin C eksikliği. Skorbüt ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Skorbüt olur.",
         "evidenceChain": [
           {
             "title": "Muayene bulgusu",
@@ -19767,9 +19767,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -19795,10 +19795,10 @@ export const cases = [
             "text": "Oral C vitamini replasmanı ve beslenme düzenlemesini başla."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Pellagra": {
-            "explanation": "Pellagra ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "explanation": "Pellagra ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir.",
             "comparisonPoints": [
               "Pellagra için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
@@ -19806,7 +19806,7 @@ export const cases = [
             ]
           },
           "K vitamini eksikliği": {
-            "explanation": "K vitamini eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "explanation": "K vitamini eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir.",
             "comparisonPoints": [
               "K vitamini eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
@@ -19814,7 +19814,7 @@ export const cases = [
             ]
           },
           "Hemofili A": {
-            "explanation": "Hemofili A ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "explanation": "Hemofili A ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir.",
             "comparisonPoints": [
               "Hemofili A için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
@@ -19841,9 +19841,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Pellagra": "Pellagra ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
-          "K vitamini eksikliği": "K vitamini eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
-          "Hemofili A": "Hemofili A ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir."
+          "Pellagra": "Pellagra ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir.",
+          "K vitamini eksikliği": "K vitamini eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir.",
+          "Hemofili A": "Hemofili A ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir."
         },
         "clinicalPearls": [
           {
@@ -19857,9 +19857,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -19869,7 +19869,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Pellagra": {
-            "explanation": "Pellagra ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "explanation": "Pellagra ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir.",
             "comparisonPoints": [
               "Pellagra için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
@@ -19877,7 +19877,7 @@ export const cases = [
             ]
           },
           "K vitamini eksikliği": {
-            "explanation": "K vitamini eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "explanation": "K vitamini eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir.",
             "comparisonPoints": [
               "K vitamini eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
@@ -19885,7 +19885,7 @@ export const cases = [
             ]
           },
           "Hemofili A": {
-            "explanation": "Hemofili A ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Skorbüt lehinedir.",
+            "explanation": "Hemofili A ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Skorbüt lehinedir.",
             "comparisonPoints": [
               "Hemofili A için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Skorbüt tanısını daha güçlü destekler.",
@@ -19991,7 +19991,7 @@ export const cases = [
         "Askorbik asit eksikliği düşünülür",
         "Hedef mekanizma ve sınav ipuçları tabloyu destekler"
       ],
-      "historySummary": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama paterni C vitamini eksikliğini düşündürür.",
+      "historySummary": "Hasta uzun süredir taze sebze-meyve tüketmediğini, çoğunlukla hazır karbonhidrat ve çayla beslendiğini belirtir. Son haftalarda diş eti kanaması, kolay morarma, bacak ağrısı ve küçük yaraların geç kapanması gelişmiştir. Beslenme kısıtlılığı ile mukokutanöz kanama örüntüsü C vitamini eksikliğini düşündürür.",
       "priorityFocus": "Olgu bulguları Vitamin C eksikliği ilgili klinik tablo ile uyumlu SLE aktivitesi için anlamlıdır."
     },
     "evidenceChain": [
@@ -20153,7 +20153,7 @@ export const cases = [
         "Demir eksikliği anemisi",
         "Menkes hastalığı"
       ],
-      "explanation": "Olgu paterni Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Hemokromatozis olur.",
+      "explanation": "Olgu örüntüsü Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Hemokromatozis olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -20178,8 +20178,8 @@ export const cases = [
       ],
       "nextStep": "Ferritin-transferrin satürasyonu ile doğrula, HFE testi ve flebotomi planla. Siroz veya HCC açısından izle.",
       "answerFeedback": {
-        "diagnosisMeta": "Hemokromatozis: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Hemokromatozis olur.",
+        "diagnosisMeta": "Hemokromatozis: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Hemokromatozis ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Hemokromatozis olur.",
         "evidenceChain": [
           {
             "title": "Muayene bulgusu",
@@ -20214,9 +20214,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -20242,10 +20242,10 @@ export const cases = [
             "text": "Flebotomi tedavisini ferritin hedeflerine göre planla."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Wilson hastalığı": {
-            "explanation": "Wilson hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "explanation": "Wilson hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir.",
             "comparisonPoints": [
               "Wilson hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
@@ -20253,7 +20253,7 @@ export const cases = [
             ]
           },
           "Demir eksikliği anemisi": {
-            "explanation": "Demir eksikliği anemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "explanation": "Demir eksikliği anemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir.",
             "comparisonPoints": [
               "Demir eksikliği anemisi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
@@ -20261,7 +20261,7 @@ export const cases = [
             ]
           },
           "Menkes hastalığı": {
-            "explanation": "Menkes hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "explanation": "Menkes hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir.",
             "comparisonPoints": [
               "Menkes hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
@@ -20288,9 +20288,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Wilson hastalığı": "Wilson hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
-          "Demir eksikliği anemisi": "Demir eksikliği anemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
-          "Menkes hastalığı": "Menkes hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir."
+          "Wilson hastalığı": "Wilson hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir.",
+          "Demir eksikliği anemisi": "Demir eksikliği anemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir.",
+          "Menkes hastalığı": "Menkes hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir."
         },
         "clinicalPearls": [
           {
@@ -20304,9 +20304,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -20316,7 +20316,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Wilson hastalığı": {
-            "explanation": "Wilson hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "explanation": "Wilson hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir.",
             "comparisonPoints": [
               "Wilson hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
@@ -20324,7 +20324,7 @@ export const cases = [
             ]
           },
           "Demir eksikliği anemisi": {
-            "explanation": "Demir eksikliği anemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "explanation": "Demir eksikliği anemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir.",
             "comparisonPoints": [
               "Demir eksikliği anemisi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
@@ -20332,7 +20332,7 @@ export const cases = [
             ]
           },
           "Menkes hastalığı": {
-            "explanation": "Menkes hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Hemokromatozis lehinedir.",
+            "explanation": "Menkes hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Hemokromatozis lehinedir.",
             "comparisonPoints": [
               "Menkes hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Hemokromatozis tanısını daha güçlü destekler.",
@@ -20358,7 +20358,7 @@ export const cases = [
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Klasik bronz diyabet paterni herediter hemokromatozisi düşündürür."
+          "rationale": "Klasik bronz diyabet örüntüsü herediter hemokromatozisi düşündürür."
         },
         {
           "id": "internal-medicine-hemochromatosis-001-req-2-transferrin-saturasyonu-ve-ferritin-duzeyini-ilk-biyokim",
@@ -20548,7 +20548,7 @@ export const cases = [
         "summary": "EKG'de akut iskemi bulgusu saptanmadı. Ritim sinüs ve ST-T segmentleri izoelektrik izlendi.",
         "findings": [
           "Akut koroner sendrom bulgusu yoktur",
-          "Uzun dönem aterosklerotik risk lipid paterniyle belirlenir"
+          "Uzun dönem aterosklerotik risk lipid örüntüsüyle belirlenir"
         ],
         "rows": [
           [
@@ -20575,7 +20575,7 @@ export const cases = [
         "Abetalipoproteinemi",
         "LCAT eksikliği"
       ],
-      "explanation": "Olgu paterni Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Ailesel hiperkolesterolemi olur.",
+      "explanation": "Olgu örüntüsü Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Ailesel hiperkolesterolemi olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -20600,8 +20600,8 @@ export const cases = [
       ],
       "nextStep": "Lipid düşürücü tedavi, aile taraması ve kardiyovasküler risk yönetimi.",
       "answerFeedback": {
-        "diagnosisMeta": "Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Ailesel hiperkolesterolemi olur.",
+        "diagnosisMeta": "Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Ailesel hiperkolesterolemi. Tip IIa hiperlipoproteinemi ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Ailesel hiperkolesterolemi olur.",
         "evidenceChain": [
           {
             "title": "Öykü ipucu",
@@ -20636,9 +20636,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -20664,10 +20664,10 @@ export const cases = [
             "text": "Birinci derece akrabalar için kaskad tarama planla."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Tangier hastalığı": {
-            "explanation": "Tangier hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "explanation": "Tangier hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir.",
             "comparisonPoints": [
               "Tangier hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
@@ -20675,7 +20675,7 @@ export const cases = [
             ]
           },
           "Abetalipoproteinemi": {
-            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir.",
             "comparisonPoints": [
               "Abetalipoproteinemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
@@ -20683,7 +20683,7 @@ export const cases = [
             ]
           },
           "LCAT eksikliği": {
-            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir.",
             "comparisonPoints": [
               "LCAT eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
@@ -20710,9 +20710,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Tangier hastalığı": "Tangier hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
-          "Abetalipoproteinemi": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
-          "LCAT eksikliği": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir."
+          "Tangier hastalığı": "Tangier hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir.",
+          "Abetalipoproteinemi": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir.",
+          "LCAT eksikliği": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir."
         },
         "clinicalPearls": [
           {
@@ -20726,9 +20726,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -20738,7 +20738,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Tangier hastalığı": {
-            "explanation": "Tangier hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "explanation": "Tangier hastalığı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir.",
             "comparisonPoints": [
               "Tangier hastalığı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
@@ -20746,7 +20746,7 @@ export const cases = [
             ]
           },
           "Abetalipoproteinemi": {
-            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir.",
             "comparisonPoints": [
               "Abetalipoproteinemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
@@ -20754,7 +20754,7 @@ export const cases = [
             ]
           },
           "LCAT eksikliği": {
-            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Ailesel hiperkolesterolemi lehinedir.",
+            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Ailesel hiperkolesterolemi lehinedir.",
             "comparisonPoints": [
               "LCAT eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Ailesel hiperkolesterolemi tanısını daha güçlü destekler.",
@@ -20789,7 +20789,7 @@ export const cases = [
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Tip IIa paterni tanısal ayrım sağlar."
+          "rationale": "Tip IIa örüntüsü tanısal ayrım sağlar."
         },
         {
           "id": "internal-medicine-familial-hypercholesterolemia-001-req-3-yuksek-yogunluklu-statin-temelli-lipid-dusurucu-tedaviyi",
@@ -20951,7 +20951,7 @@ export const cases = [
         "priority": "Useful",
         "summary": "Duyu sinir aksiyon potansiyellerinde belirgin amplitüd azalması saptandı.",
         "findings": [
-          "Elektrofizyolojik patern periferik nöropatiyi objektif olarak klinik yorumda önemlidir",
+          "Elektrofizyolojik örüntü periferik nöropatiyi objektif olarak klinik yorumda önemlidir",
           "Motor iletim belirgin korunmuştur"
         ],
         "rows": [
@@ -20997,7 +20997,7 @@ export const cases = [
         "LCAT eksikliği",
         "Abetalipoproteinemi"
       ],
-      "explanation": "Olgu paterni Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Tangier hastalığı olur.",
+      "explanation": "Olgu örüntüsü Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Tangier hastalığı olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -21022,11 +21022,11 @@ export const cases = [
       ],
       "nextStep": "Lipid profilini doğrula, ABCA1 genetik testi ve kardiyometabolik veya nörolojik takip planla.",
       "answerFeedback": {
-        "diagnosisMeta": "Tangier hastalığı: Klinik-biyokimyasal patern, ayırıcı tanı ve sınav vurguları ile uyumlu",
-        "whyCorrect": "Olgu paterni Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Tangier hastalığı olur.",
+        "diagnosisMeta": "Tangier hastalığı: Klinik-biyokimyasal örüntü, ayırıcı tanı ve sınav vurguları ile uyumlu",
+        "whyCorrect": "Olgu örüntüsü Tangier hastalığı ile uyumludur. Klinik zamanlama, hedef laboratuvar bulguları ve biyokimyasal mekanizma birlikte değerlendirildiğinde bu tanı en güçlü seçenektir. Bu nedenle en uygun seçim Tangier hastalığı olur.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Olgu bulguları Tangier hastalığı ile uyumlu."
           },
           {
@@ -21058,9 +21058,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -21086,10 +21086,10 @@ export const cases = [
             "text": "Nöropati, hepatosplenomegali ve kardiyovasküler risk açısından takip düzenle."
           }
         ],
-        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom paterni, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
+        "learningOutcome": "Metabolizma, vitamin, eser element ve lipoprotein tablolarında semptom örüntüsü, sorumlu molekül veya enzim ya da eksik besin ögesi ve temel yönetim birlikte okunmalıdır.",
         "differentials": {
           "Ailesel hiperkolesterolemi": {
-            "explanation": "Ailesel hiperkolesterolemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "explanation": "Ailesel hiperkolesterolemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir.",
             "comparisonPoints": [
               "Ailesel hiperkolesterolemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
@@ -21097,7 +21097,7 @@ export const cases = [
             ]
           },
           "LCAT eksikliği": {
-            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir.",
             "comparisonPoints": [
               "LCAT eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
@@ -21105,7 +21105,7 @@ export const cases = [
             ]
           },
           "Abetalipoproteinemi": {
-            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir.",
             "comparisonPoints": [
               "Abetalipoproteinemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
@@ -21132,9 +21132,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Ailesel hiperkolesterolemi": "Ailesel hiperkolesterolemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
-          "LCAT eksikliği": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
-          "Abetalipoproteinemi": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir."
+          "Ailesel hiperkolesterolemi": "Ailesel hiperkolesterolemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir.",
+          "LCAT eksikliği": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir.",
+          "Abetalipoproteinemi": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir."
         },
         "clinicalPearls": [
           {
@@ -21148,9 +21148,9 @@ export const cases = [
             "title": "Ayırıcı nokta"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Diyet, replasman, substrat kısıtlaması veya hedef moleküler mekanizma yönetimi belirler.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Yolak veya marker ayrımı",
@@ -21160,7 +21160,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Ailesel hiperkolesterolemi": {
-            "explanation": "Ailesel hiperkolesterolemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "explanation": "Ailesel hiperkolesterolemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir.",
             "comparisonPoints": [
               "Ailesel hiperkolesterolemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
@@ -21168,7 +21168,7 @@ export const cases = [
             ]
           },
           "LCAT eksikliği": {
-            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "explanation": "LCAT eksikliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir.",
             "comparisonPoints": [
               "LCAT eksikliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
@@ -21176,7 +21176,7 @@ export const cases = [
             ]
           },
           "Abetalipoproteinemi": {
-            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tangier hastalığı lehinedir.",
+            "explanation": "Abetalipoproteinemi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tangier hastalığı lehinedir.",
             "comparisonPoints": [
               "Abetalipoproteinemi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tangier hastalığı tanısını daha güçlü destekler.",
@@ -21287,7 +21287,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Olgu bulguları Tangier hastalığı ile uyumlu."
       },
       {
@@ -21511,19 +21511,19 @@ export const cases = [
         ],
         "pearls": [
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Geçici iyilik dönemi ARS'yi dışlamaz.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Enfeksiyon ve iç kanama ölüm nedenleri arasındadır.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "ARS için kısa sürede yüksek doz ve büyük vücut bölümü maruziyeti gerekir.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
             "label": "Klinik not",
@@ -21552,7 +21552,7 @@ export const cases = [
         "learningOutcome": "Radyasyon sendromlarında zamanlama ayırıcıdır: ARS kısa sürede yüksek dozla.",
         "differentials": {
           "Kronik radyasyon sendromu": {
-            "explanation": "Kronik radyasyon sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "explanation": "Kronik radyasyon sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir.",
             "comparisonPoints": [
               "Kronik radyasyon sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
@@ -21560,7 +21560,7 @@ export const cases = [
             ]
           },
           "Gıda zehirlenmesi": {
-            "explanation": "Gıda zehirlenmesi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "explanation": "Gıda zehirlenmesi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir.",
             "comparisonPoints": [
               "Gıda zehirlenmesi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
@@ -21568,7 +21568,7 @@ export const cases = [
             ]
           },
           "Termal yanık": {
-            "explanation": "Termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "explanation": "Termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir.",
             "comparisonPoints": [
               "Termal yanık için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
@@ -21595,25 +21595,25 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Kronik radyasyon sendromu": "Kronik radyasyon sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
-          "Gıda zehirlenmesi": "Gıda zehirlenmesi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
-          "Termal yanık": "Termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir."
+          "Kronik radyasyon sendromu": "Kronik radyasyon sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir.",
+          "Gıda zehirlenmesi": "Gıda zehirlenmesi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir.",
+          "Termal yanık": "Termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir."
         },
         "clinicalPearls": [
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Geçici iyilik dönemi ARS'yi dışlamaz.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Enfeksiyon ve iç kanama ölüm nedenleri arasındadır.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "ARS için kısa sürede yüksek doz ve büyük vücut bölümü maruziyeti gerekir.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
             "label": "Klinik not",
@@ -21623,7 +21623,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Kronik radyasyon sendromu": {
-            "explanation": "Kronik radyasyon sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "explanation": "Kronik radyasyon sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir.",
             "comparisonPoints": [
               "Kronik radyasyon sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
@@ -21631,7 +21631,7 @@ export const cases = [
             ]
           },
           "Gıda zehirlenmesi": {
-            "explanation": "Gıda zehirlenmesi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "explanation": "Gıda zehirlenmesi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir.",
             "comparisonPoints": [
               "Gıda zehirlenmesi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
@@ -21639,7 +21639,7 @@ export const cases = [
             ]
           },
           "Termal yanık": {
-            "explanation": "Termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Akut radyasyon sendromu lehinedir.",
+            "explanation": "Termal yanık ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Akut radyasyon sendromu lehinedir.",
             "comparisonPoints": [
               "Termal yanık için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Akut radyasyon sendromu tanısını daha güçlü destekler.",
@@ -21951,8 +21951,8 @@ export const cases = [
       ],
       "nextStep": "Oksidatif tetikleyiciyi kes, hidrasyon ve böbrek izlemi sağla. Ağır anemide eritrosit transfüzyonu değerlendir.",
       "answerFeedback": {
-        "diagnosisMeta": "Oksidatif tetikleyici · intravasküler hemoliz · Heinz cisimciği veya bite cell paterni",
-        "whyCorrect": "Oksidatif maruziyet sonrası hemoliz bulguları ve periferik yayma paterni G6PD eksikliğini en güçlü seçenek yapar. Bu nedenle en uygun seçim G6PD eksikliğine bağlı akut hemolitik kriz olur.",
+        "diagnosisMeta": "Oksidatif tetikleyici · intravasküler hemoliz · Heinz cisimciği veya bite cell örüntüsü",
+        "whyCorrect": "Oksidatif maruziyet sonrası hemoliz bulguları ve periferik yayma örüntüsü G6PD eksikliğini en güçlü seçenek yapar. Bu nedenle en uygun seçim G6PD eksikliğine bağlı akut hemolitik kriz olur.",
         "evidenceChain": [
           {
             "title": "Tedavi önceliği",
@@ -22025,7 +22025,7 @@ export const cases = [
             ]
           },
           "Otoimmün hemolitik anemi": {
-            "explanation": "Direkt Coombs pozitifliği beklenir. Bu vakada oksidatif tetikleyici ve yayma paterni daha belirleyicidir.",
+            "explanation": "Direkt Coombs pozitifliği beklenir. Bu vakada oksidatif tetikleyici ve yayma örüntüsü daha belirleyicidir.",
             "comparisonPoints": [
               "Coombs testi otoimmün hemolizde pozitiftir.",
               "Bite cell oksidatif hasarı destekler."
@@ -22059,7 +22059,7 @@ export const cases = [
         ],
         "whyWrong": {
           "Herediter sferositoz": "Sferosit, aile öyküsü ve kronik ekstravasküler hemoliz beklenir. Da oksidatif tetikleyici ve bite cell baskındır. Ancak bu vakada Bakla tüketiminden sonra semptom başlaması karar verdirici klinik ipucudur.",
-          "Otoimmün hemolitik anemi": "Direkt Coombs pozitifliği beklenir. Da oksidatif tetikleyici ve yayma paterni daha belirleyicidir. Ancak bu vakada Bakla tüketiminden sonra semptom başlaması karar verdirici klinik ipucudur.",
+          "Otoimmün hemolitik anemi": "Direkt Coombs pozitifliği beklenir. Da oksidatif tetikleyici ve yayma örüntüsü daha belirleyicidir. Ancak bu vakada Bakla tüketiminden sonra semptom başlaması karar verdirici klinik ipucudur.",
           "Akut viral hepatit": "AST veya ALT belirgin yüksekliği ve direkt bilirubin baskınlığı beklenir. Da hemoliz biyobelirteçleri ön plandadır. Ancak bu vakada Bakla tüketiminden sonra semptom başlaması karar verdirici klinik ipucudur."
         },
         "clinicalPearls": [
@@ -22090,15 +22090,15 @@ export const cases = [
             "comparisonPoints": [
               "Osmotik frajilite veya EMA testi herediter sferositozda destekleyicidir.",
               "Heinz cisimciği G6PD lehinedir.",
-              "Herediter sferositoz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Herediter sferositoz yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Otoimmün hemolitik anemi": {
-            "explanation": "Direkt Coombs pozitifliği beklenir. Da oksidatif tetikleyici ve yayma paterni daha belirleyicidir. Ancak bu vakada Bakla tüketiminden sonra semptom başlaması karar verdirici klinik ipucudur.",
+            "explanation": "Direkt Coombs pozitifliği beklenir. Da oksidatif tetikleyici ve yayma örüntüsü daha belirleyicidir. Ancak bu vakada Bakla tüketiminden sonra semptom başlaması karar verdirici klinik ipucudur.",
             "comparisonPoints": [
               "Coombs testi otoimmün hemolizde pozitiftir.",
               "Bite cell oksidatif hasarı destekler.",
-              "Otoimmün hemolitik anemi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Otoimmün hemolitik anemi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Akut viral hepatit": {
@@ -22106,7 +22106,7 @@ export const cases = [
             "comparisonPoints": [
               "Hepatit transaminaz baskın gider.",
               "Hemoglobinüri ve düşük haptoglobin hemoliz lehinedir.",
-              "Akut viral hepatit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Akut viral hepatit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -22137,7 +22137,7 @@ export const cases = [
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Laboratuvar paterni intravasküler veya ekstravasküler hemolizi gösterir."
+          "rationale": "Laboratuvar bulgusu intravasküler veya ekstravasküler hemolizi gösterir."
         },
         {
           "id": "internal-medicine-oxidative-stress-injury-001-req-3-periferik-yaymada-heinz-cisimcigi-ve-bite-cell-bulgulari",
@@ -22182,7 +22182,7 @@ export const cases = [
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid paternidir."
+          "rationale": "Bu vakalarda karar verdiren test tanıya özgü enzim, metabolit veya lipid örüntüsüdir."
         },
         {
           "id": "internal-medicine-oxidative-stress-injury-001-dist-3-beslenme-veya-tetikleyici-oykusunu-tanisal-degerlendirme",
@@ -22243,7 +22243,7 @@ export const cases = [
     "demographics": "55 yaş erkek",
     "setting": "Acil servis göğüs ağrısı",
     "chiefComplaint": "1 saattir süren baskı tarzı göğüs ağrısı",
-    "stem": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz paternini düşündüren klasik bir bulgu paterni oluşturur",
+    "stem": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz örüntüsünü düşündüren klasik bir bulgu örüntüsü oluşturur",
     "vitals": {
       "TA": "138/86 mmHg",
       "Nabız": "102/dk",
@@ -22267,8 +22267,8 @@ export const cases = [
         "priority": "Essential",
         "summary": "EKG'de ardışık derivasyonlarda ST elevasyonu izlendi.",
         "findings": [
-          "Akut transmural miyokard hasarı paternini klinik yorumda önemlidir",
-          "Doku düzeyinde bu klinik patern beklenir"
+          "Akut transmural miyokard hasarı örüntüsünü klinik yorumda önemlidir",
+          "Doku düzeyinde bu klinik örüntü beklenir"
         ],
         "rows": [
           [
@@ -22337,13 +22337,13 @@ export const cases = [
       },
       {
         "id": "histoloji-nekroz-tipi-18",
-        "label": "Histolojik doku hasarı paterni",
+        "label": "Histolojik doku hasarı örüntüsü",
         "type": "pathology",
         "priority": "Situational",
         "summary": "Miyokard liflerinin hücre konturları korunmuş, sitoplazma eozinofilikleşmiş ve çekirdek boyanması kaybolmuş izlenir.",
         "findings": [
-          "Protein denatürasyonu baskın morfolojik patern oluşturur",
-          "Beyin dokusundaki sıvılaşma paterni izlenmez"
+          "Protein denatürasyonu baskın nekroz tipi oluşturur",
+          "Beyin dokusundaki sıvılaşma örüntüsü izlenmez"
         ],
         "rows": [
           [
@@ -22384,7 +22384,7 @@ export const cases = [
         },
         {
           "label": "Klinik not",
-          "text": "Beyin infarktı -> likefaksiyon nekrozu.",
+          "text": "Beyin infarktında likefaksiyon nekrozu beklenir.",
           "title": "Klinik not"
         },
         {
@@ -22403,7 +22403,7 @@ export const cases = [
             "text": "Şiddetli göğüs ağrısı."
           },
           {
-            "title": "EKG paterni",
+            "title": "EKG örüntüsü",
             "text": "ST elevasyonu."
           },
           {
@@ -22426,19 +22426,19 @@ export const cases = [
             "title": "Patoloji cevabı tedavi cevabından ayrıdır"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "MI -> koagülasyon nekrozu.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Renal arter tıkanması -> koagülasyon nekrozu.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
-            "text": "Beyin infarktı -> likefaksiyon nekrozu.",
-            "title": "Morfolojik patern"
+            "label": "Klinik not",
+            "text": "Beyin infarktında likefaksiyon nekrozu beklenir.",
+            "title": "Klinik not"
           }
         ],
         "management": [
@@ -22462,7 +22462,7 @@ export const cases = [
         "learningOutcome": "Nekroz tiplerinde organ, iskemi veya enfeksiyon mekanizması ve morfoloji birlikte eşleştirilmelidir.",
         "differentials": {
           "Likefaksiyon nekrozu": {
-            "explanation": "Likefaksiyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "explanation": "Likefaksiyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Likefaksiyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
@@ -22470,7 +22470,7 @@ export const cases = [
             ]
           },
           "Kazeifikasyon nekrozu": {
-            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Kazeifikasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
@@ -22478,7 +22478,7 @@ export const cases = [
             ]
           },
           "Yağ nekrozu": {
-            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Yağ nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
@@ -22505,9 +22505,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Likefaksiyon nekrozu": "Likefaksiyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
-          "Kazeifikasyon nekrozu": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
-          "Yağ nekrozu": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir."
+          "Likefaksiyon nekrozu": "Likefaksiyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir.",
+          "Kazeifikasyon nekrozu": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir.",
+          "Yağ nekrozu": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir."
         },
         "clinicalPearls": [
           {
@@ -22516,24 +22516,24 @@ export const cases = [
             "title": "Patoloji cevabı tedavi cevabından ayrıdır"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "MI -> koagülasyon nekrozu.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Renal arter tıkanması -> koagülasyon nekrozu.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
-            "text": "Beyin infarktı -> likefaksiyon nekrozu.",
-            "title": "Morfolojik patern"
+            "label": "Klinik not",
+            "text": "Beyin infarktında likefaksiyon nekrozu beklenir.",
+            "title": "Klinik not"
           }
         ],
         "differentialComparison": {
           "Likefaksiyon nekrozu": {
-            "explanation": "Likefaksiyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "explanation": "Likefaksiyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Likefaksiyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
@@ -22541,7 +22541,7 @@ export const cases = [
             ]
           },
           "Kazeifikasyon nekrozu": {
-            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Kazeifikasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
@@ -22549,7 +22549,7 @@ export const cases = [
             ]
           },
           "Yağ nekrozu": {
-            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Koagülasyon nekrozu lehinedir.",
+            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Koagülasyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Yağ nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Koagülasyon nekrozu tanısını daha güçlü destekler.",
@@ -22664,7 +22664,7 @@ export const cases = [
         "LAD tam tıkanıklığı",
         "Troponin yüksekliği"
       ],
-      "historySummary": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz paternini düşündüren klasik bir bulgu paterni oluşturur.",
+      "historySummary": "Hasta sol kola yayılan göğüs ağrısı, soğuk terleme ve bulantı ile başvurur. Anjiyografide LAD tam tıkanıklığı saptanır. Akut iskemik miyokard hasarı, katı organlarda beklenen nekroz örüntüsünü düşündüren klasik bir bulgu örüntüsü oluşturur.",
       "priorityFocus": "Şiddetli göğüs ağrısı karar verdirici klinik ipucudur."
     },
     "evidenceChain": [
@@ -22673,7 +22673,7 @@ export const cases = [
         "text": "Şiddetli göğüs ağrısı."
       },
       {
-        "title": "EKG paterni",
+        "title": "EKG örüntüsü",
         "text": "ST elevasyonu."
       },
       {
@@ -22723,7 +22723,7 @@ export const cases = [
         "priority": "Essential",
         "summary": "Beyin görüntülemede kaviter, santrali sıvılaşmış lezyon izlendi.",
         "findings": [
-          "Beyin dokusunda enzimatik sindirim ve likefaksiyon paterni desteklenir",
+          "Beyin dokusunda enzimatik sindirim ve likefaksiyon nekrozu desteklenir",
           "Solid tümör görünümü ön planda değildir"
         ],
         "rows": [
@@ -22771,14 +22771,14 @@ export const cases = [
         "label": "Aspirat kültürü",
         "type": "culture",
         "priority": "Useful",
-        "summary": "Potasyum: Bakteriyel üreme var (referans Üreme yok; pozitif). Lökosit: Lökosit veya bakteri var (referans Yok; patolojik).",
+        "summary": "Kültür sonucu: Bakteriyel üreme var (referans Üreme yok; pozitif). Lökosit: Lökosit veya bakteri var (referans Yok; patolojik).",
         "findings": [
-          "Potasyum: Bakteriyel üreme var (referans Üreme yok; pozitif)",
+          "Kültür sonucu: Bakteriyel üreme var (referans Üreme yok; pozitif)",
           "Lökosit: Lökosit veya bakteri var (referans Yok; patolojik)"
         ],
         "rows": [
           [
-            "Potasyum",
+            "Kültür sonucu",
             "Bakteriyel üreme var",
             "Üreme yok",
             "Pozitif"
@@ -22793,18 +22793,18 @@ export const cases = [
       },
       {
         "id": "patoloji-nekroz-degerlendirmesi-19",
-        "label": "Patolojik doku hasarı paterni",
+        "label": "Patolojik doku hasarı",
         "type": "pathology",
         "priority": "Situational",
         "summary": "Beyin dokusunda santrali sıvılaşmış kaviter alan, yoğun nötrofilik inflamasyon ve doku mimarisinde çözülme izlenir.",
         "findings": [
           "Enzimatik sindirim baskındır",
-          "Hücre konturlarının uzun süre korunduğu solid patern izlenmez"
+          "Hücre konturlarının uzun süre korunduğu koagülasyon nekrozu örüntüsü izlenmez"
         ],
         "rows": [
           [
             "Nekroz tipi",
-            "Likefaksiyon",
+            "Likefaksiyon nekrozu",
             "Yok",
             "Patolojik"
           ],
@@ -22826,35 +22826,35 @@ export const cases = [
         "Kazeifikasyon nekrozu",
         "Yağ nekrozu"
       ],
-      "explanation": "Olgunun klinik paterni Likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Likefaksiyon nekrozu olur.",
+      "explanation": "Olgunun klinik bulguları likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Likefaksiyon nekrozu olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
-          "text": "Beyin infarktı ve apse likefaksiyon nekrozuyla ilişkilidir.",
+          "text": "Beyin infarktı ve apse likefaksiyon nekrozu ile ilişkilidir.",
           "title": "Sınav bilgisi"
         },
         {
           "label": "Ayırıcı nokta",
-          "text": "Nötrofil enzimleri dokuyu sıvılaştırır.",
+          "text": "Nötrofil kaynaklı enzimler dokunun sıvılaşmasına katkı sağlar.",
           "title": "Ayırıcı nokta"
         },
         {
           "label": "Klinik not",
-          "text": "Solid organ iskemisi genelde koagülasyon nekrozu yapar.",
+          "text": "Kalp, böbrek ve dalak gibi solid organ iskemilerinde genellikle koagülasyon nekrozu görülür.",
           "title": "Klinik not"
         }
       ],
       "nextStep": "Acil stabilizasyon gerektiren durum dışlandıktan sonra tanıyı doğrulayan temel test ve hedefe yönelik tedavi veya yönetim başlatılır.",
       "answerFeedback": {
         "diagnosisMeta": "Likefaksiyon nekrozu için belirleyici klinik ve patolojik ipuçları",
-        "whyCorrect": "Olgunun klinik paterni Likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Likefaksiyon nekrozu olur.",
+        "whyCorrect": "Olgunun klinik bulguları likefaksiyon nekrozu ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Likefaksiyon nekrozu olur.",
         "evidenceChain": [
           {
             "title": "Başvuru",
             "text": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Halka tarzı kontrastlanan apse."
           },
           {
@@ -22863,7 +22863,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Klinik mekanizma ile uyumlu ayırıcı tanı paterni."
+            "text": "Bulgular beyin apsesi zemininde sıvılaşma nekrozunu destekler."
           },
           {
             "title": "Başvuru",
@@ -22872,19 +22872,19 @@ export const cases = [
         ],
         "pearls": [
           {
-            "label": "Morfolojik patern",
-            "text": "Beyin infarktı ve apse likefaksiyon nekrozuyla ilişkilidir.",
-            "title": "Morfolojik patern"
+            "label": "Klinik not",
+            "text": "Beyin infarktı ve apse likefaksiyon nekrozu ile ilişkilidir.",
+            "title": "Klinik not"
           },
           {
-            "label": "Mekanizma özeti",
-            "text": "Nötrofil enzimleri dokuyu sıvılaştırır.",
-            "title": "Mekanizma özeti"
+            "label": "Mekanizma notu",
+            "text": "Nötrofil kaynaklı enzimler dokunun sıvılaşmasına katkı sağlar.",
+            "title": "Mekanizma notu"
           },
           {
-            "label": "Mekanizma özeti",
-            "text": "Solid organ iskemisi genelde koagülasyon nekrozu yapar.",
-            "title": "Mekanizma özeti"
+            "label": "Mekanizma notu",
+            "text": "Kalp, böbrek ve dalak gibi solid organ iskemilerinde genellikle koagülasyon nekrozu görülür.",
+            "title": "Mekanizma notu"
           }
         ],
         "management": [
@@ -22905,10 +22905,10 @@ export const cases = [
             "text": "Likefaksiyon nekrozu için ilk basamak tedavi veya yönlendirme kararını ver."
           }
         ],
-        "learningOutcome": "Patoloji başlıklarında organ, etiyoloji ve morfolojik patern birlikte yorumlanmalıdır.",
+        "learningOutcome": "Patoloji sorularında organ, etiyoloji ve nekroz tipi birlikte değerlendirilmelidir.",
         "differentials": {
           "Koagülasyon nekrozu": {
-            "explanation": "Koagülasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "explanation": "Koagülasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Koagülasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
@@ -22916,7 +22916,7 @@ export const cases = [
             ]
           },
           "Kazeifikasyon nekrozu": {
-            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Kazeifikasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
@@ -22924,7 +22924,7 @@ export const cases = [
             ]
           },
           "Yağ nekrozu": {
-            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Yağ nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
@@ -22951,30 +22951,30 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Koagülasyon nekrozu": "Koagülasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
-          "Kazeifikasyon nekrozu": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
-          "Yağ nekrozu": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir."
+          "Koagülasyon nekrozu": "Koagülasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir.",
+          "Kazeifikasyon nekrozu": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir.",
+          "Yağ nekrozu": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir."
         },
         "clinicalPearls": [
           {
-            "label": "Morfolojik patern",
-            "text": "Beyin infarktı ve apse likefaksiyon nekrozuyla ilişkilidir.",
-            "title": "Morfolojik patern"
+            "label": "Klinik not",
+            "text": "Beyin infarktı ve apse likefaksiyon nekrozu ile ilişkilidir.",
+            "title": "Klinik not"
           },
           {
-            "label": "Mekanizma özeti",
-            "text": "Nötrofil enzimleri dokuyu sıvılaştırır.",
-            "title": "Mekanizma özeti"
+            "label": "Mekanizma notu",
+            "text": "Nötrofil kaynaklı enzimler dokunun sıvılaşmasına katkı sağlar.",
+            "title": "Mekanizma notu"
           },
           {
-            "label": "Mekanizma özeti",
-            "text": "Solid organ iskemisi genelde koagülasyon nekrozu yapar.",
-            "title": "Mekanizma özeti"
+            "label": "Mekanizma notu",
+            "text": "Kalp, böbrek ve dalak gibi solid organ iskemilerinde genellikle koagülasyon nekrozu görülür.",
+            "title": "Mekanizma notu"
           }
         ],
         "differentialComparison": {
           "Koagülasyon nekrozu": {
-            "explanation": "Koagülasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "explanation": "Koagülasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Koagülasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
@@ -22982,7 +22982,7 @@ export const cases = [
             ]
           },
           "Kazeifikasyon nekrozu": {
-            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "explanation": "Kazeifikasyon nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Kazeifikasyon nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
@@ -22990,7 +22990,7 @@ export const cases = [
             ]
           },
           "Yağ nekrozu": {
-            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Likefaksiyon nekrozu lehinedir.",
+            "explanation": "Yağ nekrozu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Likefaksiyon nekrozu lehinedir.",
             "comparisonPoints": [
               "Yağ nekrozu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Likefaksiyon nekrozu tanısını daha güçlü destekler.",
@@ -23010,7 +23010,7 @@ export const cases = [
       "minRequiredSteps": 5,
       "steps": [
         {
-          "id": "neurology-liquefactive-necrosis-brain-001-r-1-likefaksiyon-nekrozu-icin-karar-verdirici-oyku-ve-mu",
+          "id": "neurology-liquefactive-necrosis-brain-001-r-1-likefaksiyon nekrozu-nekrozu-icin-karar-verdirici-oyku-ve-mu",
           "label": "Likefaksiyon nekrozu için karar verdirici öykü ve muayene ipuçlarını birlikte tanı",
           "required": true,
           "correctOrder": 1,
@@ -23037,7 +23037,7 @@ export const cases = [
           "rationale": "Benzer tablolar ayırt edici ipuçları üzerinden elenir. Rastgele geniş tedavi başlanmaz"
         },
         {
-          "id": "neurology-liquefactive-necrosis-brain-001-r-4-likefaksiyon-nekrozu-icin-ilk-basamak-tedavi-veya-yo",
+          "id": "neurology-liquefactive-necrosis-brain-001-r-4-likefaksiyon nekrozu-nekrozu-icin-ilk-basamak-tedavi-veya-yo",
           "label": "Likefaksiyon nekrozu için ilk basamak tedavi veya yönlendirme kararını ver",
           "required": true,
           "correctOrder": 4,
@@ -23091,7 +23091,7 @@ export const cases = [
         "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile",
         "Halka tarzı kontrastlanan apse",
         "Lökositoz ve CRP: 96 mg/L (referans <5 mg/L; yüksek)",
-        "Klinik mekanizma ile uyumlu ayırıcı tanı paternini destekler"
+        "Klinik mekanizma ile uyumlu ayırıcı tanı örüntüsünü destekler"
       ],
       "historySummary": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir. Beyin MR'ında halka tarzı kontrastlanan lezyon görülür. Beyin dokusunda enfeksiyon ve iskemi sonrası ilgili klinik tablo beklenir.",
       "priorityFocus": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile karar verdirici klinik ipucudur."
@@ -23102,7 +23102,7 @@ export const cases = [
         "text": "Hasta sinüzit sonrası ateş, baş ağrısı, konfüzyon ve sağ kol güçsüzlüğü ile gelir."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Halka tarzı kontrastlanan apse."
       },
       {
@@ -23111,7 +23111,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Klinik mekanizma ile uyumlu ayırıcı tanı paterni."
+        "text": "Bulgular beyin apsesi zemininde sıvılaşma nekrozunu destekler."
       },
       {
         "title": "Başvuru",
@@ -23152,7 +23152,7 @@ export const cases = [
         "priority": "Essential",
         "summary": "Akciğer görüntülemede üst lob ağırlıklı kaviter lezyonlar izlendi.",
         "findings": [
-          "Reaktivasyon tüberkülozu paternini klinik yorumda önemlidir",
+          "Reaktivasyon tüberkülozu örüntüsünü klinik yorumda önemlidir",
           "Basit viral bronşit görünümü değildir"
         ],
         "rows": [
@@ -23209,7 +23209,7 @@ export const cases = [
         "priority": "Useful",
         "summary": "Biyopside kazeifiye granülomatöz inflamasyon izlendi.",
         "findings": [
-          "Tüberküloz için klasik patoloji paternidir",
+          "Tüberküloz için klasik patoloji örüntüsüdir",
           "Sarkoidozda genellikle non-kazeifiye granülom beklenir"
         ],
         "rows": [
@@ -23262,7 +23262,7 @@ export const cases = [
         "Akut apse",
         "Fibrinoid nekroz"
       ],
-      "explanation": "Olgunun klinik paterni Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Tüberkülozla uyumlu kazeifiye granülom olur.",
+      "explanation": "Olgunun klinik örüntüsü Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Tüberkülozla uyumlu kazeifiye granülom olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -23283,7 +23283,7 @@ export const cases = [
       "nextStep": "Acil stabilizasyon gerektiren durum dışlandıktan sonra tanıyı doğrulayan temel test ve hedefe yönelik tedavi veya yönetim başlatılır.",
       "answerFeedback": {
         "diagnosisMeta": "Kazeifikasyon nekrozlu granülom için belirleyici klinik ve patolojik ipuçları",
-        "whyCorrect": "Olgunun klinik paterni Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Tüberkülozla uyumlu kazeifiye granülom olur.",
+        "whyCorrect": "Olgunun klinik örüntüsü Kazeifikasyon nekrozlu granülom ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Tüberkülozla uyumlu kazeifiye granülom olur.",
         "evidenceChain": [
           {
             "title": "Görüntüleme",
@@ -23299,7 +23299,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Klinik mekanizma ile uyumlu ayırıcı tanı paterni."
+            "text": "Bulgular beyin apsesi zemininde sıvılaşma nekrozunu destekler."
           },
           {
             "title": "Görüntüleme",
@@ -23341,10 +23341,10 @@ export const cases = [
             "text": "Standart dörtlü anti-tüberküloz tedaviyi uygun endikasyonda başla."
           }
         ],
-        "learningOutcome": "Patoloji başlıklarında organ, etiyoloji ve morfolojik patern birlikte yorumlanmalıdır.",
+        "learningOutcome": "Patoloji sorularında organ, etiyoloji ve nekroz tipi birlikte değerlendirilmelidir.",
         "differentials": {
           "Sarkoidoz non-kazeifiye granülom": {
-            "explanation": "Sarkoidoz non-kazeifiye granülom ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "explanation": "Sarkoidoz non-kazeifiye granülom ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
             "comparisonPoints": [
               "Sarkoidoz non-kazeifiye granülom için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
@@ -23352,7 +23352,7 @@ export const cases = [
             ]
           },
           "Akut apse": {
-            "explanation": "Akut apse ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "explanation": "Akut apse ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
             "comparisonPoints": [
               "Akut apse için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
@@ -23360,7 +23360,7 @@ export const cases = [
             ]
           },
           "Fibrinoid nekroz": {
-            "explanation": "Fibrinoid nekroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "explanation": "Fibrinoid nekroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
             "comparisonPoints": [
               "Fibrinoid nekroz için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
@@ -23387,9 +23387,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Sarkoidoz non-kazeifiye granülom": "Sarkoidoz non-kazeifiye granülom ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
-          "Akut apse": "Akut apse ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
-          "Fibrinoid nekroz": "Fibrinoid nekroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir."
+          "Sarkoidoz non-kazeifiye granülom": "Sarkoidoz non-kazeifiye granülom ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+          "Akut apse": "Akut apse ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+          "Fibrinoid nekroz": "Fibrinoid nekroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir."
         },
         "clinicalPearls": [
           {
@@ -23410,7 +23410,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Sarkoidoz non-kazeifiye granülom": {
-            "explanation": "Sarkoidoz non-kazeifiye granülom ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "explanation": "Sarkoidoz non-kazeifiye granülom ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
             "comparisonPoints": [
               "Sarkoidoz non-kazeifiye granülom için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
@@ -23418,7 +23418,7 @@ export const cases = [
             ]
           },
           "Akut apse": {
-            "explanation": "Akut apse ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "explanation": "Akut apse ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
             "comparisonPoints": [
               "Akut apse için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
@@ -23426,7 +23426,7 @@ export const cases = [
             ]
           },
           "Fibrinoid nekroz": {
-            "explanation": "Fibrinoid nekroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
+            "explanation": "Fibrinoid nekroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Tüberkülozla uyumlu kazeifiye granülom lehinedir.",
             "comparisonPoints": [
               "Fibrinoid nekroz için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Tüberkülozla uyumlu kazeifiye granülom tanısını daha güçlü destekler.",
@@ -23452,7 +23452,7 @@ export const cases = [
           "correctOrder": 1,
           "unsafe": false,
           "score": 2,
-          "rationale": "Klinik ve radyolojik patern bulaştırıcı TB açısından uyarıcıdır"
+          "rationale": "Klinik ve radyolojik örüntü bulaştırıcı TB açısından uyarıcıdır"
         },
         {
           "id": "infectious-diseases-caseating-granuloma-tb-001-r-2-hastayi-hava-yolu-izolasyonuna-al-ve-n95-negatif-bas",
@@ -23536,7 +23536,7 @@ export const cases = [
         "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır",
         "Apikal infiltrasyon ve kaviter lezyon",
         "ARB pozitif olabilir",
-        "Klinik mekanizma ile uyumlu ayırıcı tanı paternini destekler"
+        "Klinik mekanizma ile uyumlu ayırıcı tanı örüntüsünü destekler"
       ],
       "historySummary": "Hastada üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır. Biyopside epiteloid histiyositler, dev hücreler ve santral kazeifikasyon izlenir. Üst lob kavitesi ve kazeifikasyon birlikte tüberküloz ilişkili granülomatöz inflamasyonu güçlü düşündürür.",
       "priorityFocus": "Üç aydır öksürük, gece terlemesi, kilo kaybı ve apikal infiltrasyon vardır aktif tüberküloz olasılığını artırır."
@@ -23556,7 +23556,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Klinik mekanizma ile uyumlu ayırıcı tanı paterni."
+        "text": "Bulgular beyin apsesi zemininde sıvılaşma nekrozunu destekler."
       },
       {
         "title": "Görüntüleme",
@@ -23707,7 +23707,7 @@ export const cases = [
         "Spontan pnömotoraks",
         "Astım atağı"
       ],
-      "explanation": "Olgunun klinik paterni Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Pulmoner tromboemboli olur.",
+      "explanation": "Olgunun klinik örüntüsü Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Pulmoner tromboemboli olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -23728,7 +23728,7 @@ export const cases = [
       "nextStep": "Ani dispne, plöritik ağrı, taşikardi ve DVT bulgularını birlikte değerlendir. Hemodinamik stabilite ve sağ ventrikül yüklenmesi bulgularını sınıfla. Pretest olasılığa göre D-dimer ya da BT pulmoner anjiyografi stratejisini seç.",
       "answerFeedback": {
         "diagnosisMeta": "Pulmoner tromboemboli için belirleyici klinik ve patolojik ipuçları",
-        "whyCorrect": "Olgunun klinik paterni Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Pulmoner tromboemboli olur.",
+        "whyCorrect": "Olgunun klinik örüntüsü Pulmoner tromboemboli ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Pulmoner tromboemboli olur.",
         "evidenceChain": [
           {
             "title": "Vital bulgular",
@@ -23744,7 +23744,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Klinik mekanizma ile uyumlu ayırıcı tanı paterni."
+            "text": "Bulgular beyin apsesi zemininde sıvılaşma nekrozunu destekler."
           },
           {
             "title": "Vital bulgular",
@@ -23753,19 +23753,19 @@ export const cases = [
         ],
         "pearls": [
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Cerrahi veya immobilizasyon sonrası ani dispne PE düşündürür.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "DVT en sık emboli kaynağıdır.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Büyük emboli şok ve ani ölüme yol açabilir.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           }
         ],
         "management": [
@@ -23786,10 +23786,10 @@ export const cases = [
             "text": "Kontrendikasyon yoksa antikoagülasyonu başlat ve kanama riskini izle."
           }
         ],
-        "learningOutcome": "Patoloji başlıklarında organ, etiyoloji ve morfolojik patern birlikte yorumlanmalıdır.",
+        "learningOutcome": "Patoloji sorularında organ, etiyoloji ve nekroz tipi birlikte değerlendirilmelidir.",
         "differentials": {
           "Pnömoni": {
-            "explanation": "Pnömoni ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "explanation": "Pnömoni ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir.",
             "comparisonPoints": [
               "Pnömoni için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
@@ -23797,7 +23797,7 @@ export const cases = [
             ]
           },
           "Spontan pnömotoraks": {
-            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir.",
             "comparisonPoints": [
               "Spontan pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
@@ -23805,7 +23805,7 @@ export const cases = [
             ]
           },
           "Astım atağı": {
-            "explanation": "Astım atağı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "explanation": "Astım atağı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir.",
             "comparisonPoints": [
               "Astım atağı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
@@ -23832,30 +23832,30 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Pnömoni": "Pnömoni ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
-          "Spontan pnömotoraks": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
-          "Astım atağı": "Astım atağı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir."
+          "Pnömoni": "Pnömoni ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir.",
+          "Spontan pnömotoraks": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir.",
+          "Astım atağı": "Astım atağı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir."
         },
         "clinicalPearls": [
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Cerrahi veya immobilizasyon sonrası ani dispne PE düşündürür.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "DVT en sık emboli kaynağıdır.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           },
           {
-            "label": "Morfolojik patern",
+            "label": "Klinik not",
             "text": "Büyük emboli şok ve ani ölüme yol açabilir.",
-            "title": "Morfolojik patern"
+            "title": "Klinik not"
           }
         ],
         "differentialComparison": {
           "Pnömoni": {
-            "explanation": "Pnömoni ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "explanation": "Pnömoni ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir.",
             "comparisonPoints": [
               "Pnömoni için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
@@ -23863,7 +23863,7 @@ export const cases = [
             ]
           },
           "Spontan pnömotoraks": {
-            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "explanation": "Spontan pnömotoraks ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir.",
             "comparisonPoints": [
               "Spontan pnömotoraks için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
@@ -23871,7 +23871,7 @@ export const cases = [
             ]
           },
           "Astım atağı": {
-            "explanation": "Astım atağı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Pulmoner tromboemboli lehinedir.",
+            "explanation": "Astım atağı ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Pulmoner tromboemboli lehinedir.",
             "comparisonPoints": [
               "Astım atağı için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Pulmoner tromboemboli tanısını daha güçlü destekler.",
@@ -23887,7 +23887,7 @@ export const cases = [
       "enabled": true,
       "showInSpot": false,
       "title": "Pulmoner emboli ve akciğer enfarktı yönetim sırası",
-      "instruction": "PE klinik kararını DVT kaynağı ve patolojik enfarkt paternleriyle ilişkilendir.",
+      "instruction": "PE klinik kararını DVT kaynağı ve patolojik enfarkt örüntüyleriyle ilişkilendir.",
       "minRequiredSteps": 6,
       "steps": [
         {
@@ -23984,7 +23984,7 @@ export const cases = [
         "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, Taşikardi ve",
         "Yüksek",
         "Sağ pulmoner arter dalında dolum defekti",
-        "Klinik mekanizma ile uyumlu ayırıcı tanı paternini destekler"
+        "Klinik mekanizma ile uyumlu ayırıcı tanı örüntüsünü destekler"
       ],
       "historySummary": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, Taşikardi ve plöritik ağrı ile gelir. Sol baldırda şişlik vardır. Virchow triadı bağlamında staz ve endotel hasarı sonrası DVT kaynaklı pulmoner emboli düşünülür.",
       "priorityFocus": "Kalça protezi ameliyatından 7 gün sonra hasta ani dispne, Taşikardi ve pulmoner emboli olasılığını yükseltir."
@@ -24004,7 +24004,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Klinik mekanizma ile uyumlu ayırıcı tanı paterni."
+        "text": "Bulgular beyin apsesi zemininde sıvılaşma nekrozunu destekler."
       },
       {
         "title": "Vital bulgular",
@@ -24162,7 +24162,7 @@ export const cases = [
         "Anafilaktik şok",
         "Nörojenik şok"
       ],
-      "explanation": "Olgunun klinik paterni Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Septik şok olur.",
+      "explanation": "Olgunun klinik örüntüsü Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Septik şok olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -24183,7 +24183,7 @@ export const cases = [
       "nextStep": "Acil stabilizasyon gerektiren durum dışlandıktan sonra tanıyı doğrulayan temel test ve hedefe yönelik tedavi veya yönetim başlatılır.",
       "answerFeedback": {
         "diagnosisMeta": "Septik şok için belirleyici klinik ve patolojik ipuçları",
-        "whyCorrect": "Olgunun klinik paterni Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Septik şok olur.",
+        "whyCorrect": "Olgunun klinik örüntüsü Septik şok ile en uyumludur. Ayırıcı tanıda benzer tablolar olsa da belirleyici bulgular doğru seçeneği destekler. Bu nedenle en uygun seçim Septik şok olur.",
         "evidenceChain": [
           {
             "title": "Vital bulgular",
@@ -24195,7 +24195,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Klinik mekanizma ile uyumlu ayırıcı tanı paterni."
+            "text": "Bulgular beyin apsesi zemininde sıvılaşma nekrozunu destekler."
           },
           {
             "title": "Vital bulgular",
@@ -24209,9 +24209,9 @@ export const cases = [
             "title": "Etken-test ayrımı"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Sepsis ve vazodilatasyon ve kapiller kaçak septik şok mekanizmasını açıklar.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Klinik not",
@@ -24237,10 +24237,10 @@ export const cases = [
             "text": "İlk saat içinde olası odağı kapsayan geniş spektrumlu antibiyotik başla."
           }
         ],
-        "learningOutcome": "Patoloji başlıklarında organ, etiyoloji ve morfolojik patern birlikte yorumlanmalıdır.",
+        "learningOutcome": "Patoloji sorularında organ, etiyoloji ve nekroz tipi birlikte değerlendirilmelidir.",
         "differentials": {
           "Hipovolemik şok": {
-            "explanation": "Hipovolemik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "explanation": "Hipovolemik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir.",
             "comparisonPoints": [
               "Hipovolemik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
@@ -24248,7 +24248,7 @@ export const cases = [
             ]
           },
           "Anafilaktik şok": {
-            "explanation": "Anafilaktik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "explanation": "Anafilaktik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir.",
             "comparisonPoints": [
               "Anafilaktik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
@@ -24256,7 +24256,7 @@ export const cases = [
             ]
           },
           "Nörojenik şok": {
-            "explanation": "Nörojenik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "explanation": "Nörojenik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir.",
             "comparisonPoints": [
               "Nörojenik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
@@ -24283,9 +24283,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Hipovolemik şok": "Hipovolemik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
-          "Anafilaktik şok": "Anafilaktik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
-          "Nörojenik şok": "Nörojenik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir."
+          "Hipovolemik şok": "Hipovolemik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir.",
+          "Anafilaktik şok": "Anafilaktik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir.",
+          "Nörojenik şok": "Nörojenik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir."
         },
         "clinicalPearls": [
           {
@@ -24294,9 +24294,9 @@ export const cases = [
             "title": "Etken-test ayrımı"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Sepsis ve vazodilatasyon ve kapiller kaçak septik şok mekanizmasını açıklar.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Klinik not",
@@ -24306,7 +24306,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Hipovolemik şok": {
-            "explanation": "Hipovolemik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "explanation": "Hipovolemik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir.",
             "comparisonPoints": [
               "Hipovolemik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
@@ -24314,7 +24314,7 @@ export const cases = [
             ]
           },
           "Anafilaktik şok": {
-            "explanation": "Anafilaktik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "explanation": "Anafilaktik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir.",
             "comparisonPoints": [
               "Anafilaktik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
@@ -24322,7 +24322,7 @@ export const cases = [
             ]
           },
           "Nörojenik şok": {
-            "explanation": "Nörojenik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Septik şok lehinedir.",
+            "explanation": "Nörojenik şok ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Septik şok lehinedir.",
             "comparisonPoints": [
               "Nörojenik şok için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Septik şok tanısını daha güçlü destekler.",
@@ -24434,7 +24434,7 @@ export const cases = [
       "distinctiveClues": [
         "Pnömoni odağı olan hasta ateş, Taşikardi, hipotansiyon, soğuk ekstremite ve",
         "Alındı",
-        "Klinik mekanizma ile uyumlu ayırıcı tanı paternini destekler",
+        "Klinik mekanizma ile uyumlu ayırıcı tanı örüntüsünü destekler",
         "Ateş, bilinç bulanıklığı ve tansiyon düşüklüğü"
       ],
       "historySummary": "Pnömoni odağı olan hasta ateş, Taşikardi, hipotansiyon, soğuk ekstremite ve bilinç bulanıklığıyla gelir. Laktat yüksektir. Yakınları son saatlerde idrar miktarının belirgin azaldığını belirtir.",
@@ -24451,7 +24451,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Klinik mekanizma ile uyumlu ayırıcı tanı paterni."
+        "text": "Bulgular beyin apsesi zemininde sıvılaşma nekrozunu destekler."
       },
       {
         "title": "Vital bulgular",
@@ -24628,7 +24628,7 @@ export const cases = [
       ],
       "nextStep": "Önce güvenlik veya stabilizasyon ve zorunlu klinik-adli veya immünolojik kararlar. Ardından tanı doğrulama ve hedefe yönelik tedavi veya izlem.",
       "answerFeedback": {
-        "diagnosisMeta": "Sistemik lupus eritematozus tanısını destekleyen klinik patern",
+        "diagnosisMeta": "Sistemik lupus eritematozus tanısını destekleyen klinik örüntü",
         "whyCorrect": "Olgu Sistemik lupus eritematozus için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun seçim Sistemik lupus eritematozus olur.",
         "evidenceChain": [
           {
@@ -24690,7 +24690,7 @@ export const cases = [
         "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı veya yönetim kararına ulaşmalıdır.",
         "differentials": {
           "Sjögren sendromu": {
-            "explanation": "Sjögren sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "explanation": "Sjögren sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir.",
             "comparisonPoints": [
               "Sjögren sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
@@ -24698,7 +24698,7 @@ export const cases = [
             ]
           },
           "Romatoid artrit": {
-            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir.",
             "comparisonPoints": [
               "Romatoid artrit için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
@@ -24706,7 +24706,7 @@ export const cases = [
             ]
           },
           "Sistemik skleroz": {
-            "explanation": "Sistemik skleroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "explanation": "Sistemik skleroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir.",
             "comparisonPoints": [
               "Sistemik skleroz için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
@@ -24733,9 +24733,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Sjögren sendromu": "Sjögren sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
-          "Romatoid artrit": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
-          "Sistemik skleroz": "Sistemik skleroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir."
+          "Sjögren sendromu": "Sjögren sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir.",
+          "Romatoid artrit": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir.",
+          "Sistemik skleroz": "Sistemik skleroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir."
         },
         "clinicalPearls": [
           {
@@ -24756,7 +24756,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Sjögren sendromu": {
-            "explanation": "Sjögren sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "explanation": "Sjögren sendromu ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir.",
             "comparisonPoints": [
               "Sjögren sendromu için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
@@ -24764,7 +24764,7 @@ export const cases = [
             ]
           },
           "Romatoid artrit": {
-            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir.",
             "comparisonPoints": [
               "Romatoid artrit için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
@@ -24772,7 +24772,7 @@ export const cases = [
             ]
           },
           "Sistemik skleroz": {
-            "explanation": "Sistemik skleroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sistemik lupus eritematozus lehinedir.",
+            "explanation": "Sistemik skleroz ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sistemik lupus eritematozus lehinedir.",
             "comparisonPoints": [
               "Sistemik skleroz için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sistemik lupus eritematozus tanısını daha güçlü destekler.",
@@ -24947,7 +24947,7 @@ export const cases = [
         "priority": "Essential",
         "summary": "Schirmer testinde 5 dakikada gözyaşı 3 mm ölçüldü. Belirgin lakrimal hiposekresyon saptandı.",
         "findings": [
-          "Objektif göz kuruluğu bu klinik paternnu klinik yorumda önemlidir",
+          "Objektif göz kuruluğu bu klinik örüntünu klinik yorumda önemlidir",
           "Konjonktival enfeksiyon bulgusu baskın değildir"
         ],
         "rows": [
@@ -24992,7 +24992,7 @@ export const cases = [
         "summary": "Minör tükürük bezi biyopsisinde fokal lenfositik sialadenit izlendi.",
         "findings": [
           "Tanısal sınıflamayı klinik yorumda önemlidir",
-          "Akut bakteriyel sialadenit paterni değildir"
+          "Akut bakteriyel sialadenit örüntüsü değildir"
         ],
         "rows": [
           [
@@ -25071,11 +25071,11 @@ export const cases = [
       ],
       "nextStep": "Önce güvenlik veya stabilizasyon ve zorunlu klinik-adli veya immünolojik kararlar. Ardından tanı doğrulama ve hedefe yönelik tedavi veya izlem.",
       "answerFeedback": {
-        "diagnosisMeta": "Sjögren sendromu tanısını destekleyen klinik patern",
+        "diagnosisMeta": "Sjögren sendromu tanısını destekleyen klinik örüntü",
         "whyCorrect": "Olgu Sjögren sendromu için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun seçim Sjögren sendromu olur.",
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler."
           },
           {
@@ -25133,7 +25133,7 @@ export const cases = [
         "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı veya yönetim kararına ulaşmalıdır.",
         "differentials": {
           "SLE": {
-            "explanation": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "explanation": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir.",
             "comparisonPoints": [
               "SLE için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
@@ -25141,7 +25141,7 @@ export const cases = [
             ]
           },
           "Romatoid artrit": {
-            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir.",
             "comparisonPoints": [
               "Romatoid artrit için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
@@ -25149,7 +25149,7 @@ export const cases = [
             ]
           },
           "Hashimoto tiroiditi": {
-            "explanation": "Hashimoto tiroiditi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "explanation": "Hashimoto tiroiditi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir.",
             "comparisonPoints": [
               "Hashimoto tiroiditi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
@@ -25176,9 +25176,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "SLE": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
-          "Romatoid artrit": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
-          "Hashimoto tiroiditi": "Hashimoto tiroiditi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir."
+          "SLE": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir.",
+          "Romatoid artrit": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir.",
+          "Hashimoto tiroiditi": "Hashimoto tiroiditi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir."
         },
         "clinicalPearls": [
           {
@@ -25199,7 +25199,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "SLE": {
-            "explanation": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "explanation": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir.",
             "comparisonPoints": [
               "SLE için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
@@ -25207,7 +25207,7 @@ export const cases = [
             ]
           },
           "Romatoid artrit": {
-            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "explanation": "Romatoid artrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir.",
             "comparisonPoints": [
               "Romatoid artrit için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
@@ -25215,7 +25215,7 @@ export const cases = [
             ]
           },
           "Hashimoto tiroiditi": {
-            "explanation": "Hashimoto tiroiditi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Sjögren sendromu lehinedir.",
+            "explanation": "Hashimoto tiroiditi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Sjögren sendromu lehinedir.",
             "comparisonPoints": [
               "Hashimoto tiroiditi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Sjögren sendromu tanısını daha güçlü destekler.",
@@ -25323,7 +25323,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta gözlerinde kum hissi, su içmeden kuru gıda yutamama ve parotis hassasiyeti tarifler."
       },
       {
@@ -25474,7 +25474,7 @@ export const cases = [
       ],
       "nextStep": "Önce güvenlik veya stabilizasyon ve zorunlu klinik-adli veya immünolojik kararlar. Ardından tanı doğrulama ve hedefe yönelik tedavi veya izlem.",
       "answerFeedback": {
-        "diagnosisMeta": "Romatoid artrit tanısını destekleyen klinik patern",
+        "diagnosisMeta": "Romatoid artrit tanısını destekleyen klinik örüntü",
         "whyCorrect": "Olgu Romatoid artrit için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun seçim Romatoid artrit olur.",
         "evidenceChain": [
           {
@@ -25536,7 +25536,7 @@ export const cases = [
         "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı veya yönetim kararına ulaşmalıdır.",
         "differentials": {
           "Osteoartrit": {
-            "explanation": "Osteoartrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "explanation": "Osteoartrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir.",
             "comparisonPoints": [
               "Osteoartrit için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
@@ -25544,7 +25544,7 @@ export const cases = [
             ]
           },
           "SLE artriti": {
-            "explanation": "SLE artriti ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "explanation": "SLE artriti ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir.",
             "comparisonPoints": [
               "SLE artriti için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
@@ -25552,7 +25552,7 @@ export const cases = [
             ]
           },
           "Gut": {
-            "explanation": "Gut ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "explanation": "Gut ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir.",
             "comparisonPoints": [
               "Gut için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
@@ -25579,9 +25579,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Osteoartrit": "Osteoartrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
-          "SLE artriti": "SLE artriti ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
-          "Gut": "Gut ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir."
+          "Osteoartrit": "Osteoartrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir.",
+          "SLE artriti": "SLE artriti ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir.",
+          "Gut": "Gut ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir."
         },
         "clinicalPearls": [
           {
@@ -25602,7 +25602,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Osteoartrit": {
-            "explanation": "Osteoartrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "explanation": "Osteoartrit ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir.",
             "comparisonPoints": [
               "Osteoartrit için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
@@ -25610,7 +25610,7 @@ export const cases = [
             ]
           },
           "SLE artriti": {
-            "explanation": "SLE artriti ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "explanation": "SLE artriti ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir.",
             "comparisonPoints": [
               "SLE artriti için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
@@ -25618,7 +25618,7 @@ export const cases = [
             ]
           },
           "Gut": {
-            "explanation": "Gut ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Romatoid artrit lehinedir.",
+            "explanation": "Gut ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Romatoid artrit lehinedir.",
             "comparisonPoints": [
               "Gut için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Romatoid artrit tanısını daha güçlü destekler.",
@@ -25710,13 +25710,13 @@ export const cases = [
           "rationale": "Septik artrit dışlanmadan steroid enfeksiyonu kötüleştirebilir."
         },
         {
-          "id": "internal-medicine-rheumatoid-arthritis-001-dist-3-mekanik-agri-paterni-olan-hastada-genis-otoantikor-panel",
-          "label": "Mekanik ağrı paterni olan hastada geniş otoantikor paneliyle başla",
+          "id": "internal-medicine-rheumatoid-arthritis-001-dist-3-mekanik-agri-örüntüsü-olan-hastada-genis-otoantikor-panel",
+          "label": "Mekanik ağrı örüntüsü olan hastada geniş otoantikor paneliyle başla",
           "required": false,
           "correctOrder": null,
           "unsafe": true,
           "score": -2,
-          "rationale": "Tetkik seçimi klinik paternle yönlendirilmelidir."
+          "rationale": "Tetkik seçimi klinik örüntüle yönlendirilmelidir."
         }
       ]
     },
@@ -25901,7 +25901,7 @@ export const cases = [
       ],
       "nextStep": "Önce güvenlik veya stabilizasyon ve zorunlu klinik-adli veya immünolojik kararlar. Ardından tanı doğrulama ve hedefe yönelik tedavi veya izlem.",
       "answerFeedback": {
-        "diagnosisMeta": "X-linked agammaglobulinemi. Bruton tanısını destekleyen klinik patern. Alan Feedback",
+        "diagnosisMeta": "X-linked agammaglobulinemi. Bruton tanısını destekleyen klinik örüntü. Alan Feedback",
         "whyCorrect": "Olgu X-linked agammaglobulinemi. Bruton için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun seçim Bruton agammaglobulinemisi olur.",
         "evidenceChain": [
           {
@@ -25963,7 +25963,7 @@ export const cases = [
         "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı veya yönetim kararına ulaşmalıdır.",
         "differentials": {
           "İzole IgA yetmezliği": {
-            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir.",
             "comparisonPoints": [
               "İzole IgA yetmezliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
@@ -25971,7 +25971,7 @@ export const cases = [
             ]
           },
           "SCID": {
-            "explanation": "SCID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "explanation": "SCID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir.",
             "comparisonPoints": [
               "SCID için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
@@ -25979,7 +25979,7 @@ export const cases = [
             ]
           },
           "CVID": {
-            "explanation": "CVID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "explanation": "CVID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir.",
             "comparisonPoints": [
               "CVID için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
@@ -26006,9 +26006,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "İzole IgA yetmezliği": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
-          "SCID": "SCID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
-          "CVID": "CVID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir."
+          "İzole IgA yetmezliği": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir.",
+          "SCID": "SCID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir.",
+          "CVID": "CVID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir."
         },
         "clinicalPearls": [
           {
@@ -26029,7 +26029,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "İzole IgA yetmezliği": {
-            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir.",
             "comparisonPoints": [
               "İzole IgA yetmezliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
@@ -26037,7 +26037,7 @@ export const cases = [
             ]
           },
           "SCID": {
-            "explanation": "SCID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "explanation": "SCID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir.",
             "comparisonPoints": [
               "SCID için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
@@ -26045,7 +26045,7 @@ export const cases = [
             ]
           },
           "CVID": {
-            "explanation": "CVID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni Bruton agammaglobulinemisi lehinedir.",
+            "explanation": "CVID ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları Bruton agammaglobulinemisi lehinedir.",
             "comparisonPoints": [
               "CVID için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri Bruton agammaglobulinemisi tanısını daha güçlü destekler.",
@@ -26271,7 +26271,7 @@ export const cases = [
         "summary": "Akciğer grafisinde bilateral interstisyel infiltrasyon izlendi.",
         "findings": [
           "Pneumocystis pnömonisi gibi fırsatçı enfeksiyonlar düşünülür",
-          "Lokal lobar pnömoni paterni baskın değildir"
+          "Lokal lobar pnömoni örüntüsü baskın değildir"
         ],
         "rows": [
           [
@@ -26343,7 +26343,7 @@ export const cases = [
       ],
       "nextStep": "Önce güvenlik veya stabilizasyon ve zorunlu klinik-adli veya immünolojik kararlar. Ardından tanı doğrulama ve hedefe yönelik tedavi veya izlem.",
       "answerFeedback": {
-        "diagnosisMeta": "HIV enfeksiyonu veya AIDS tanısını destekleyen klinik patern",
+        "diagnosisMeta": "HIV enfeksiyonu veya AIDS tanısını destekleyen klinik örüntü",
         "whyCorrect": "Olgu HIV enfeksiyonu veya AIDS için klasik olan belirleyici bulguları taşır. Yanlış seçenekler benzer sistem bulguları verebilir. Ancak anahtar ipuçları doğru tanıyı öne çıkarır. Bu nedenle en uygun seçim HIV veya AIDS olur.",
         "evidenceChain": [
           {
@@ -26401,7 +26401,7 @@ export const cases = [
         "learningOutcome": "Öğrenci, öyküdeki risk faktörlerini somut muayene ve objektif tetkik bulgularıyla birleştirerek doğru tanı veya yönetim kararına ulaşmalıdır.",
         "differentials": {
           "Bruton agammaglobulinemisi": {
-            "explanation": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir.",
+            "explanation": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir.",
             "comparisonPoints": [
               "Bruton agammaglobulinemisi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri HIV veya AIDS tanısını daha güçlü destekler.",
@@ -26409,7 +26409,7 @@ export const cases = [
             ]
           },
           "İzole IgA yetmezliği": {
-            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir.",
+            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir.",
             "comparisonPoints": [
               "İzole IgA yetmezliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri HIV veya AIDS tanısını daha güçlü destekler.",
@@ -26417,7 +26417,7 @@ export const cases = [
             ]
           },
           "SLE": {
-            "explanation": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir.",
+            "explanation": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir.",
             "comparisonPoints": [
               "SLE için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri HIV veya AIDS tanısını daha güçlü destekler.",
@@ -26444,9 +26444,9 @@ export const cases = [
           }
         ],
         "whyWrong": {
-          "Bruton agammaglobulinemisi": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir.",
-          "İzole IgA yetmezliği": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir.",
-          "SLE": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir."
+          "Bruton agammaglobulinemisi": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir.",
+          "İzole IgA yetmezliği": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir.",
+          "SLE": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir."
         },
         "clinicalPearls": [
           {
@@ -26467,7 +26467,7 @@ export const cases = [
         ],
         "differentialComparison": {
           "Bruton agammaglobulinemisi": {
-            "explanation": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir.",
+            "explanation": "Bruton agammaglobulinemisi ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir.",
             "comparisonPoints": [
               "Bruton agammaglobulinemisi için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri HIV veya AIDS tanısını daha güçlü destekler.",
@@ -26475,7 +26475,7 @@ export const cases = [
             ]
           },
           "İzole IgA yetmezliği": {
-            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir.",
+            "explanation": "İzole IgA yetmezliği ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir.",
             "comparisonPoints": [
               "İzole IgA yetmezliği için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri HIV veya AIDS tanısını daha güçlü destekler.",
@@ -26483,7 +26483,7 @@ export const cases = [
             ]
           },
           "SLE": {
-            "explanation": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik paterni HIV veya AIDS lehinedir.",
+            "explanation": "SLE ayırıcı tanıda düşünülebilir. Ancak zamanlama, muayene ve tetkik bulguları HIV veya AIDS lehinedir.",
             "comparisonPoints": [
               "SLE için beklenen baskın bulgular bu olguda ön planda değildir.",
               "Kanıt zinciri HIV veya AIDS tanısını daha güçlü destekler.",
@@ -26518,7 +26518,7 @@ export const cases = [
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Pediatrik olguda tanı çoğu zaman yaşa özgü paternlerle konur"
+          "rationale": "Pediatrik olguda tanı çoğu zaman yaşa özgü örüntüylerle konur"
         },
         {
           "id": "infectious-diseases-hiv-aids-001-r-3-gerekiyorsa-yalniz-taniyi-veya-tedavi-kararini-degis",
@@ -26639,15 +26639,15 @@ export const cases = [
         "id": "tus-spot-child-abuse-head-imaging",
         "label": "Kontrastsız beyin BT veya MR",
         "type": "İmaging",
-        "summary": "Subdural kanama paterninde ekstraaksiyel kanama alanları izlenir. Bulgular kaza dışı travma şüphesini güçlendirir.",
+        "summary": "Subdural kanama örüntüsünde ekstraaksiyel kanama alanları izlenir. Bulgular kaza dışı travma şüphesini güçlendirir.",
         "findings": [
-          "Subdural kanama paterninde ekstraaksiyel kanama alanları izlenir"
+          "Subdural kanama örüntüsünde ekstraaksiyel kanama alanları izlenir"
         ],
         "priority": "Targeted",
         "rows": [
           [
             "Kontrastsız beyin BT veya MR",
-            "Subdural kanama paterninde ekstraaksiyel kanama alanları izlenir, bulgular kaza dışı travma şüphesini güçlendirir",
+            "Subdural kanama örüntüsünde ekstraaksiyel kanama alanları izlenir, bulgular kaza dışı travma şüphesini güçlendirir",
             "—",
             "Objektif bulgu"
           ]
@@ -26744,9 +26744,9 @@ export const cases = [
             "title": "Sınav bilgisi"
           },
           {
-            "label": "Ayırt ettirici patern",
+            "label": "Ayırt ettirici örüntü",
             "text": "Tutarsız öykü, farklı yaşta ekimoz, retinal veya subdural kanama, posterior kosta-metafiz kırığı ve açıklanamayan nöbet-letarji yüksek değerli ipuçlarıdır.",
-            "title": "Ayırt ettirici patern"
+            "title": "Ayırt ettirici örüntü"
           },
           {
             "label": "Yönetim önceliği",
@@ -26761,9 +26761,9 @@ export const cases = [
             "title": "Sınav bilgisi"
           },
           {
-            "label": "Ayırt ettirici patern",
+            "label": "Ayırt ettirici örüntü",
             "text": "Tutarsız öykü, farklı yaşta ekimoz, retinal veya subdural kanama, posterior kosta-metafiz kırığı ve açıklanamayan nöbet-letarji yüksek değerli ipuçlarıdır.",
-            "title": "Ayırt ettirici patern"
+            "title": "Ayırt ettirici örüntü"
           },
           {
             "label": "Yönetim önceliği",
@@ -26998,9 +26998,9 @@ export const cases = [
         "shortDiagnosisMeta": "Adli veya Etik",
         "whyCorrect": "Cinsel saldırı başvurusunda doğru ilk yaklaşım hastanın güvenliğini, tıbbi stabilitesini ve mahremiyetini sağlamaktır. Genital muayene, örnek alma, profilaksi ve raporlama bilgilendirilmiş onam ve delil zinciri korunarak yürütülür. Adli gereklilik tedaviyi veya onamı ortadan kaldırmaz. Bu nedenle en uygun seçim Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek olur.",
         "whyWrong": {
-          "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak": "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz.",
-          "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek": "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz.",
-          "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek": "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz."
+          "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak": "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen belirleyici bulguları açıklamaz.",
+          "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek": "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen belirleyici bulguları açıklamaz.",
+          "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek": "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -27012,7 +27012,7 @@ export const cases = [
             "text": "Aktif dış kanama veya bilinç kaybı yok."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta ne yapılacağı ve mahremiyet konusunda bilgilendirilmek istemektedir."
           },
           {
@@ -27060,27 +27060,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak": {
-            "explanation": "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri.",
               "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
-              "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Adli örnek alma öncelikli olduğu için hastanın onamını beklemeden genital muayene yapmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek": {
-            "explanation": "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri.",
               "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
-              "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Yaşamı tehdit eden bulgu yoksa yalnız psikiyatri polikliniğine yönlendirmek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek": {
-            "explanation": "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek benzer başlıklarda düşünülebilir. Ancak Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bu olguda daha belirleyicidir. Bu seçenek Önce güvenlik ve tıbbi stabiliteyi değerlendirip bilgilendirilmiş onamla muayene, profilaksi ve delil zinciri sürecini yürütmek için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri.",
               "Saldırıdan yaklaşıPotasyum: 7.1 mEq/L (referans 3.5–5.1 mEq/L; kritik yüksek) saat sonra başvuru delil toplama açısından zaman duyarlıdır.",
-              "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Delil karışmasını önlemek için tıbbi tedaviyi adli rapor tamamlanana kadar ertelemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -27147,7 +27147,7 @@ export const cases = [
         "text": "Aktif dış kanama veya bilinç kaybı yok."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta ne yapılacağı ve mahremiyet konusunda bilgilendirilmek istemektedir."
       },
       {
@@ -27355,7 +27355,7 @@ export const cases = [
             "text": "SpO₂ %86 ve kan gazında hipoksemi."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Ligatür izi ve konjonktival peteşi."
           },
           {
@@ -27482,7 +27482,7 @@ export const cases = [
             "comparisonPoints": [
               "Panik atakta SpO₂ genellikle normaldir.",
               "Objektif boyun travması asfiksi lehinedir.",
-              "Basit panik atağı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Basit panik atağı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Primer epileptik nöbet": {
@@ -27490,7 +27490,7 @@ export const cases = [
             "comparisonPoints": [
               "Nöbette lateral dil ısırığı veya inkontinans destekleyicidir.",
               "Bu olguda mekanizma boyun basısıdır.",
-              "Primer epileptik nöbet yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Primer epileptik nöbet yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Akut bakteriyel menenjit": {
@@ -27498,7 +27498,7 @@ export const cases = [
             "comparisonPoints": [
               "Menenjitte enfeksiyon bulguları ön plandadır.",
               "BT boyun bulgusu menenjiti açıklamaz.",
-              "Akut bakteriyel menenjit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Akut bakteriyel menenjit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -27631,7 +27631,7 @@ export const cases = [
         "text": "SpO₂ %86 ve kan gazında hipoksemi."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Ligatür izi ve konjonktival peteşi."
       },
       {
@@ -27847,7 +27847,7 @@ export const cases = [
             "text": "Ateş, oral ülser ve ekimoz."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Ağır nötropeni ve trombositopeni."
           },
           {
@@ -27866,9 +27866,9 @@ export const cases = [
             "title": "Ayırt ettirici bulgu"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Farmakogenetik testler bazı ilaçlarda önleyici güvenlik sağlar.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "İlaç mantığı",
@@ -27953,9 +27953,9 @@ export const cases = [
             "title": "Ayırt ettirici bulgu"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Farmakogenetik testler bazı ilaçlarda önleyici güvenlik sağlar.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "İlaç mantığı",
@@ -27974,7 +27974,7 @@ export const cases = [
             "comparisonPoints": [
               "Anafilaksi akut alerjik tablodur.",
               "Pansitopeni farmakogenetik toksisite lehinedir.",
-              "IgE aracılı anafilaksi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "IgE aracılı anafilaksi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İlaç dozunu unutmaya bağlı tedavi başarısızlığı": {
@@ -27982,7 +27982,7 @@ export const cases = [
             "comparisonPoints": [
               "Yüksek metabolit düzeyi toksisiteyi destekler.",
               "Uyum sorunu pansitopeniyi açıklamaz.",
-              "İlaç dozunu unutmaya bağlı tedavi başarısızlığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İlaç dozunu unutmaya bağlı tedavi başarısızlığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Akut viral üst solunum yolu enfeksiyonu": {
@@ -27990,7 +27990,7 @@ export const cases = [
             "comparisonPoints": [
               "Viral tabloda bu düzeyde miyelosupresyon beklenmez.",
               "Azatioprin ilişkili zamanlama belirleyicidir.",
-              "Akut viral üst solunum yolu enfeksiyonu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Akut viral üst solunum yolu enfeksiyonu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -28021,7 +28021,7 @@ export const cases = [
           "correctOrder": 2,
           "unsafe": false,
           "score": 2,
-          "rationale": "Pediatrik olguda tanı çoğu zaman yaşa özgü paternlerle konur"
+          "rationale": "Pediatrik olguda tanı çoğu zaman yaşa özgü örüntüylerle konur"
         },
         {
           "id": "internal-medicine-azathioprine-tpmt-toxicity-001-r-3-gerekiyorsa-yalniz-taniyi-veya-tedavi-kararini-degis",
@@ -28104,7 +28104,7 @@ export const cases = [
         "text": "Ateş, oral ülser ve ekimoz."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Ağır nötropeni ve trombositopeni."
       },
       {
@@ -28186,9 +28186,9 @@ export const cases = [
         "shortDiagnosisMeta": "Adli",
         "whyCorrect": "Kesici-delici alet yaralanması adli olgu niteliği taşır. Olayın kazara olduğu söylenmesi hekimin kayıt ve bildirim yükümlülüğünü kaldırmaz. Tıbbi müdahale geciktirilmeden yapılmalı, yara özellikleri objektif kaydedilmeli ve adli bildirim başlatılmalıdır. Bu nedenle en uygun seçim Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak olur.",
         "whyWrong": {
-          "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek": "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak": "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Adli süreç tamamlanana kadar yara bakımını ertelemek": "Adli süreç tamamlanana kadar yara bakımını ertelemek benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen temel paternin önceliğini açıklamaz."
+          "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek": "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak": "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Adli süreç tamamlanana kadar yara bakımını ertelemek": "Adli süreç tamamlanana kadar yara bakımını ertelemek benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -28200,7 +28200,7 @@ export const cases = [
             "text": "Olay öyküsü kısa ve tutarsızdır."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Yara derinliği hastanın beyanıyla tam uyumlu değildir."
           },
           {
@@ -28248,27 +28248,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek": {
-            "explanation": "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kesici-delici yaralanma ve tutarsız olay öyküsü.",
               "Kesici-delici alet yaralanması acil servise başvuru nedenidir.",
-              "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Yalnız yara bakımını yapıp adli bildirim olmadan taburcu etmek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak": {
-            "explanation": "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kesici-delici yaralanma ve tutarsız olay öyküsü.",
               "Kesici-delici alet yaralanması acil servise başvuru nedenidir.",
-              "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hastanın beyanını esas alarak kayıt tutmadan pansuman yapmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Adli süreç tamamlanana kadar yara bakımını ertelemek": {
-            "explanation": "Adli süreç tamamlanana kadar yara bakımını ertelemek benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Adli süreç tamamlanana kadar yara bakımını ertelemek benzer başlıklarda düşünülebilir. Ancak Kesici-delici yaralanma ve tutarsız olay öyküsü bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yaparken adli olgu bildirimi ve uygun kayıt işlemlerini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kesici-delici yaralanma ve tutarsız olay öyküsü.",
               "Kesici-delici alet yaralanması acil servise başvuru nedenidir.",
-              "Adli süreç tamamlanana kadar yara bakımını ertelemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Adli süreç tamamlanana kadar yara bakımını ertelemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -28335,7 +28335,7 @@ export const cases = [
         "text": "Olay öyküsü kısa ve tutarsızdır."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Yara derinliği hastanın beyanıyla tam uyumlu değildir."
       },
       {
@@ -28417,9 +28417,9 @@ export const cases = [
         "shortDiagnosisMeta": "Adli",
         "whyCorrect": "Trafik kazası sonrası acil başvuru adli olgu kabul edilir. Hastanın alkol almadığını söylemesi veya stabil olması objektif kayıt yükümlülüğünü ortadan kaldırmaz. Doğru yaklaşım travma bulgularını ayrıntılı yazmak, gerekli tıbbi değerlendirmeyi yapmak ve adli rapor veya bildirim sürecini başlatmaktır. Bu nedenle en uygun seçim Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak olur.",
         "whyWrong": {
-          "Hasta alkol almadığını söylediği için adli kayıt açmamak": "Hasta alkol almadığını söylediği için adli kayıt açmamak benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek": "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek": "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz."
+          "Hasta alkol almadığını söylediği için adli kayıt açmamak": "Hasta alkol almadığını söylediği için adli kayıt açmamak benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek": "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek": "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -28479,27 +28479,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Hasta alkol almadığını söylediği için adli kayıt açmamak": {
-            "explanation": "Hasta alkol almadığını söylediği için adli kayıt açmamak benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hasta alkol almadığını söylediği için adli kayıt açmamak benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Trafik kazası ve kısa süreli sersemlik ve travma bulguları.",
               "Motosiklet kazası travmatik olaydır ve adli nitelik taşır.",
-              "Hasta alkol almadığını söylediği için adli kayıt açmamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hasta alkol almadığını söylediği için adli kayıt açmamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek": {
-            "explanation": "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Trafik kazası ve kısa süreli sersemlik ve travma bulguları.",
               "Motosiklet kazası travmatik olaydır ve adli nitelik taşır.",
-              "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sadece ağrı kesici verip muayene bulgularını ayrıntılandırmadan taburcu etmek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek": {
-            "explanation": "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek benzer başlıklarda düşünülebilir. Ancak Trafik kazası ve kısa süreli sersemlik ve travma bulguları bu olguda daha belirleyicidir. Bu seçenek Tüm travma bulgularını objektif kaydedip gerekli tıbbi değerlendirmeyi yaparak adli olgu bildirimi veya rapor sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Trafik kazası ve kısa süreli sersemlik ve travma bulguları.",
               "Motosiklet kazası travmatik olaydır ve adli nitelik taşır.",
-              "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Polis gelene kadar ağrı kontrolü ve yara bakımını ertelemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -28648,13 +28648,13 @@ export const cases = [
         "shortDiagnosisMeta": "Etik",
         "whyCorrect": "Yakınına ulaşılamayan, bilinci kapalı ve hava yolu riski olan hastada acil durum varsayılan onam ilkesini doğurur. Yaşamı tehdit eden tablo varsa gerekli stabilizasyon ve müdahale yapılır. Onam eksikliği acil tedaviyi erteleme gerekçesi değildir. Bu nedenle en uygun seçim Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak olur.",
         "whyWrong": {
-          "Yakını gelene kadar hiçbir girişim yapmadan beklemek": "Yakını gelene kadar hiçbir girişim yapmadan beklemek benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Onam alınamadığı için hastayı başka merkeze sevk etmek": "Onam alınamadığı için hastayı başka merkeze sevk etmek benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak": "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen temel paternin önceliğini açıklamaz."
+          "Yakını gelene kadar hiçbir girişim yapmadan beklemek": "Yakını gelene kadar hiçbir girişim yapmadan beklemek benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen belirleyici bulguları açıklamaz.",
+          "Onam alınamadığı için hastayı başka merkeze sevk etmek": "Onam alınamadığı için hastayı başka merkeze sevk etmek benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen belirleyici bulguları açıklamaz.",
+          "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak": "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta bilinçsiz ve sorulara yanıt vermiyor."
           },
           {
@@ -28662,7 +28662,7 @@ export const cases = [
             "text": "Solunum yüzeyel."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Yakını henüz hastaneye ulaşmamış."
           },
           {
@@ -28710,27 +28710,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Yakını gelene kadar hiçbir girişim yapmadan beklemek": {
-            "explanation": "Yakını gelene kadar hiçbir girişim yapmadan beklemek benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Yakını gelene kadar hiçbir girişim yapmadan beklemek benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması.",
               "Hasta bilinçsiz ve sorulara yanıt vermiyor.",
-              "Yakını gelene kadar hiçbir girişim yapmadan beklemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Yakını gelene kadar hiçbir girişim yapmadan beklemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Onam alınamadığı için hastayı başka merkeze sevk etmek": {
-            "explanation": "Onam alınamadığı için hastayı başka merkeze sevk etmek benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Onam alınamadığı için hastayı başka merkeze sevk etmek benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması.",
               "Hasta bilinçsiz ve sorulara yanıt vermiyor.",
-              "Onam alınamadığı için hastayı başka merkeze sevk etmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Onam alınamadığı için hastayı başka merkeze sevk etmek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak": {
-            "explanation": "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak benzer başlıklarda düşünülebilir. Ancak Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bu olguda daha belirleyicidir. Bu seçenek Yaşamı tehdit eden durumda varsayılan onamla acil stabilizasyon ve gerekli müdahaleyi yapmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması.",
               "Hasta bilinçsiz ve sorulara yanıt vermiyor.",
-              "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sadece gözlem yapıp invaziv müdahaleden kesinlikle kaçınmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -28789,7 +28789,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta bilinçsiz ve sorulara yanıt vermiyor."
       },
       {
@@ -28797,7 +28797,7 @@ export const cases = [
         "text": "Solunum yüzeyel."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Yakını henüz hastaneye ulaşmamış."
       },
       {
@@ -28879,17 +28879,17 @@ export const cases = [
         "shortDiagnosisMeta": "Adli veya Etik",
         "whyCorrect": "Aile içi şiddet şüphesinde hasta güvenli ve mahrem ortamda tek başına değerlendirilmelidir. Kontrol edici eş varlığı, tutarsız düşme öyküsü ve güvenlik iması risk değerlendirmesi, objektif kayıt, destek ve uygun bildirim sürecini gerektirir. Bu nedenle en uygun seçim Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak olur.",
         "whyWrong": {
-          "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek": "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek": "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek": "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz."
+          "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek": "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek": "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek": "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta yalnız kalınca evde güvende hissetmediğini ima ediyor."
           },
           {
@@ -28917,9 +28917,9 @@ export const cases = [
             "title": "Ayırt ettirici bulgu"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Güvenlik planı ve destek mekanizmaları tıbbi bakımın parçasıdır.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "pearls": [
@@ -28934,34 +28934,34 @@ export const cases = [
             "title": "Ayırt ettirici bulgu"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Güvenlik planı ve destek mekanizmaları tıbbi bakımın parçasıdır.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "differentialComparison": {
           "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek": {
-            "explanation": "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme.",
               "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor.",
-              "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Eşi yanında olduğu için ayrıntı sormadan taburcu etmek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek": {
-            "explanation": "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme.",
               "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor.",
-              "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hastanın ilk beyanını kesin kabul edip şiddet olasılığını değerlendirmemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek": {
-            "explanation": "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek benzer başlıklarda düşünülebilir. Ancak Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bu olguda daha belirleyicidir. Bu seçenek Hastayla güvenli ve mahrem ortamda görüşüp risk değerlendirmesi, objektif kayıt ve uygun destek veya bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme.",
               "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor.",
-              "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Yalnızca morluk kremi önerip sosyal destek seçeneklerinden bahsetmemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -29021,11 +29021,11 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta merdivenden düştüğünü söylese de eş sürekli konuşmayı kontrol ediyor."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta yalnız kalınca evde güvende hissetmediğini ima ediyor."
       },
       {
@@ -29144,9 +29144,9 @@ export const cases = [
         "shortDiagnosisMeta": "Adli",
         "whyCorrect": "Şüpheli zehirlenmede ilk öncelik ABC stabilizasyonudur. Eş zamanlı olarak toksikolojik örnekler uygun şekilde alınır, şüpheli materyal korunur ve adli bildirim yapılır. Etiketsiz şişe ve tutarsız yanıtlar örnek saklama ve kayıt zincirini özellikle önemli hale getirir. Bu nedenle en uygun seçim ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak olur.",
         "whyWrong": {
-          "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek": "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Adli örnek alınana kadar hava yolu müdahalesini ertelemek": "Adli örnek alınana kadar hava yolu müdahalesini ertelemek benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak": "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen temel paternin önceliğini açıklamaz."
+          "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek": "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Adli örnek alınana kadar hava yolu müdahalesini ertelemek": "Adli örnek alınana kadar hava yolu müdahalesini ertelemek benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak": "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -29158,7 +29158,7 @@ export const cases = [
             "text": "Masada etiketsiz içecek şişesi ve ilaç blisterleri bulunmuş."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta sorulara tutarsız yanıt veriyor."
           },
           {
@@ -29206,27 +29206,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek": {
-            "explanation": "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme.",
               "Hasta bilinç bulanıklığı ve kusma ile getiriliyor.",
-              "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Şişeyi çöpe atıp yalnız semptomatik tedavi vermek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Adli örnek alınana kadar hava yolu müdahalesini ertelemek": {
-            "explanation": "Adli örnek alınana kadar hava yolu müdahalesini ertelemek benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Adli örnek alınana kadar hava yolu müdahalesini ertelemek benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme.",
               "Hasta bilinç bulanıklığı ve kusma ile getiriliyor.",
-              "Adli örnek alınana kadar hava yolu müdahalesini ertelemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Adli örnek alınana kadar hava yolu müdahalesini ertelemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak": {
-            "explanation": "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak benzer başlıklarda düşünülebilir. Ancak Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bu olguda daha belirleyicidir. Bu seçenek ABC stabilizasyonu ile birlikte toksikolojik örnekleri uygun şekilde almak, şüpheli materyali korumak ve adli bildirimi başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme.",
               "Hasta bilinç bulanıklığı ve kusma ile getiriliyor.",
-              "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hasta tutarsız yanıt verdiği için tıbbi kayıt tutmamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -29294,7 +29294,7 @@ export const cases = [
         "text": "Masada etiketsiz içecek şişesi ve ilaç blisterleri bulunmuş."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta sorulara tutarsız yanıt veriyor."
       },
       {
@@ -29376,9 +29376,9 @@ export const cases = [
         "shortDiagnosisMeta": "Adli veya Yönetim",
         "whyCorrect": "İş kazasında hekimin görevi işverenin isteğine göre kayıt düzenlemek değil, tıbbi bulguları objektif yazmak ve bildirim sürecini başlatmaktır. Tıbbi müdahale geciktirilmeden yapılır. Yaralanmanın iş kazası veya adli niteliği kayda geçirilir. Bu nedenle en uygun seçim Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak olur.",
         "whyWrong": {
-          "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek": "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek": "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak": "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz."
+          "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek": "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek": "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
+          "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak": "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -29390,7 +29390,7 @@ export const cases = [
             "text": "İşveren \"basit yaralanma\" olarak yazılmasını istemiş."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta ağrılı."
           },
           {
@@ -29438,27 +29438,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek": {
-            "explanation": "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi.",
               "Yaralanma fabrikada pres makinesiyle gerçekleşmiş.",
-              "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İşverenin isteğine göre yaralanmayı basit ağrı olarak kaydetmek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek": {
-            "explanation": "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi.",
               "Yaralanma fabrikada pres makinesiyle gerçekleşmiş.",
-              "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Rapor düzenlenene kadar yara temizliği ve ağrı kontrolünü bekletmek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak": {
-            "explanation": "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak benzer başlıklarda düşünülebilir. Ancak İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bu olguda daha belirleyicidir. Bu seçenek Tıbbi müdahaleyi yapıp yaralanmayı objektif kaydederek iş kazası veya adli bildirim sürecini başlatmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi.",
               "Yaralanma fabrikada pres makinesiyle gerçekleşmiş.",
-              "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hasta çalışmaya dönebilmek istediği için muayene detaylarını yazmamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -29525,7 +29525,7 @@ export const cases = [
         "text": "İşveren \"basit yaralanma\" olarak yazılmasını istemiş."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta ağrılı."
       },
       {
@@ -29607,9 +29607,9 @@ export const cases = [
         "shortDiagnosisMeta": "Acil karar",
         "whyCorrect": "Bu tablo izole akut ürtiker-hafif anjiyoödem ile uyumludur. Hipotansiyon, hışıltılı solunum, dispne, senkop, kusma veya çoklu sistem tutulumu yoktur. Bu nedenle ilk yaklaşım antihistaminik, tetikleyiciden kaçınma ve yakın izlem olmalıdır. Bu nedenle en uygun seçim Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma olur.",
         "whyWrong": {
-          "İntramüsküler adrenalin ve acil anafilaksi yönetimi": "İntramüsküler adrenalin ve acil anafilaksi yönetimi benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen temel paternin önceliğini açıklamaz.",
-          "Sistemik kortikosteroidi tek tedavi olarak vermek": "Sistemik kortikosteroidi tek tedavi olarak vermek benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen temel paternin önceliğini açıklamaz.",
-          "Geniş spektrumlu antibiyotik başlamak": "Geniş spektrumlu antibiyotik başlamak benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen temel paternin önceliğini açıklamaz."
+          "İntramüsküler adrenalin ve acil anafilaksi yönetimi": "İntramüsküler adrenalin ve acil anafilaksi yönetimi benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen belirleyici bulguları açıklamaz.",
+          "Sistemik kortikosteroidi tek tedavi olarak vermek": "Sistemik kortikosteroidi tek tedavi olarak vermek benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen belirleyici bulguları açıklamaz.",
+          "Geniş spektrumlu antibiyotik başlamak": "Geniş spektrumlu antibiyotik başlamak benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -29669,27 +29669,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "İntramüsküler adrenalin ve acil anafilaksi yönetimi": {
-            "explanation": "İntramüsküler adrenalin ve acil anafilaksi yönetimi benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İntramüsküler adrenalin ve acil anafilaksi yönetimi benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ürtiker ve hafif anjiyoödem.",
               "Fıstık sonrası 20 dakika içinde kaşıntı ve kabarıklık gelişmiş.",
-              "İntramüsküler adrenalin ve acil anafilaksi yönetimi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İntramüsküler adrenalin ve acil anafilaksi yönetimi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sistemik kortikosteroidi tek tedavi olarak vermek": {
-            "explanation": "Sistemik kortikosteroidi tek tedavi olarak vermek benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sistemik kortikosteroidi tek tedavi olarak vermek benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ürtiker ve hafif anjiyoödem.",
               "Fıstık sonrası 20 dakika içinde kaşıntı ve kabarıklık gelişmiş.",
-              "Sistemik kortikosteroidi tek tedavi olarak vermek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sistemik kortikosteroidi tek tedavi olarak vermek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Geniş spektrumlu antibiyotik başlamak": {
-            "explanation": "Geniş spektrumlu antibiyotik başlamak benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Geniş spektrumlu antibiyotik başlamak benzer başlıklarda düşünülebilir. Ancak Ürtiker ve hafif anjiyoödem bu olguda daha belirleyicidir. Bu seçenek Oral ikinci kuşak H1 antihistaminik ve tetikleyiciden kaçınma için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ürtiker ve hafif anjiyoödem.",
               "Fıstık sonrası 20 dakika içinde kaşıntı ve kabarıklık gelişmiş.",
-              "Geniş spektrumlu antibiyotik başlamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Geniş spektrumlu antibiyotik başlamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -29776,7 +29776,7 @@ export const cases = [
     "questionType": "Spot",
     "title": "Ateşli çocukta zımpara kağıdı döküntüsü",
     "difficulty": "Temel-orta · TUS Spot",
-    "clinicalFocus": "Kızıl hastalığında klinik döküntü paterninden etkeni tanıma",
+    "clinicalFocus": "Kızıl hastalığında klinik döküntü örüntüsünden etkeni tanıma",
     "learningOutcome": "Ana ipucu ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "demographics": "5 yaşında çocuk",
     "setting": "Çocuk acil",
@@ -29834,13 +29834,13 @@ export const cases = [
       "nextStep": "Streptokokal farenjit bulgularını değerlendir. Gerekirse hızlı antijen veya kültür ile doğrula. Klinik yüksekse tedaviyi geciktirme.",
       "answerFeedback": {
         "correctDiagnosis": "Streptococcus pyogenes",
-        "diagnosisMeta": "Kızıl hastalığında klinik döküntü paterninden etkeni tanıma",
+        "diagnosisMeta": "Kızıl hastalığında klinik döküntü örüntüsünden etkeni tanıma",
         "shortDiagnosisMeta": "TUS spot",
         "whyCorrect": "Ateş ve boğaz ağrısını izleyen pütürlü \"zımpara kağıdı\" döküntüsü kızıl için tipiktir ve etken Streptococcus pyogenes'tir. TUS'ta pütürlü döküntü, Pastia çizgileri ve çilek dili streptokokal toksin aracılı tabloyu düşündürür. Bu nedenle en uygun seçim Streptococcus pyogenes olur.",
         "whyWrong": {
-          "Parvovirus B19": "Parvovirus B19 benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen temel paternin önceliğini açıklamaz.",
-          "Varicella-zoster virus": "Varicella-zoster virus benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen temel paternin önceliğini açıklamaz.",
-          "Measles virus": "Measles virus benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen temel paternin önceliğini açıklamaz."
+          "Parvovirus B19": "Parvovirus B19 benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen belirleyici bulguları açıklamaz.",
+          "Varicella-zoster virus": "Varicella-zoster virus benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen belirleyici bulguları açıklamaz.",
+          "Measles virus": "Measles virus benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -29853,7 +29853,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Klinik patern streptokokal farenjit sonrası kızılı destekliyor."
+            "text": "Klinik örüntü streptokokal farenjit sonrası kızılı destekliyor."
           },
           {
             "title": "Başvuru",
@@ -29862,9 +29862,9 @@ export const cases = [
         ],
         "clinicalPearls": [
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Kızıl etkeni Streptococcus pyogenes'tir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Spot ipucu",
@@ -29879,9 +29879,9 @@ export const cases = [
         ],
         "pearls": [
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Kızıl etkeni Streptococcus pyogenes'tir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Spot ipucu",
@@ -29896,27 +29896,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Parvovirus B19": {
-            "explanation": "Parvovirus B19 benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Parvovirus B19 benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü.",
               "Ateş ve boğaz ağrısı döküntüden önce başlamış.",
-              "Parvovirus B19 yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Parvovirus B19 yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Varicella-zoster virus": {
-            "explanation": "Varicella-zoster virus benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Varicella-zoster virus benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü.",
               "Ateş ve boğaz ağrısı döküntüden önce başlamış.",
-              "Varicella-zoster virus yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Varicella-zoster virus yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Measles virus": {
-            "explanation": "Measles virus benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Measles virus benzer başlıklarda düşünülebilir. Ancak Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bu olguda daha belirleyicidir. Bu seçenek Streptococcus pyogenes için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü.",
               "Ateş ve boğaz ağrısı döküntüden önce başlamış.",
-              "Measles virus yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Measles virus yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -29968,7 +29968,7 @@ export const cases = [
         "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü",
         "Ateş ve boğaz ağrısı döküntüden önce başlamış",
         "Döküntü gövdeden yayılıyor ve dokununca pütürlü hissediliyor",
-        "Klinik patern streptokokal farenjit sonrası kızılı destekliyor"
+        "Klinik örüntü streptokokal farenjit sonrası kızılı destekliyor"
       ],
       "historySummary": "Çocuk 3 gündür ateş ve boğaz ağrısı sonrası gövdeden başlayıp yayılan ince döküntü nedeniyle getirilir. Aile döküntünün dokununca pütürlü hissedildiğini söyler.",
       "priorityFocus": "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü kızıl için tipiktir."
@@ -29984,7 +29984,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Klinik patern streptokokal farenjit sonrası kızılı destekliyor."
+        "text": "Klinik örüntü streptokokal farenjit sonrası kızılı destekliyor."
       },
       {
         "title": "Başvuru",
@@ -30061,9 +30061,9 @@ export const cases = [
         "shortDiagnosisMeta": "Muayene odaklı",
         "whyCorrect": "Küçük çocukta elinden çekilme sonrası kolu kullanmama ve direkt travma veya ateş olmaması radius başı subluksasyonu için klasik ipucudur. Suprakondiler kırıkta düşme ve belirgin deformite. Septik artritte ateş ve sistemik bulgu beklenir. Bu nedenle en uygun seçim Radius başı subluksasyonu olur.",
         "whyWrong": {
-          "Suprakondiler humerus kırığı": "Suprakondiler humerus kırığı benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen temel paternin önceliğini açıklamaz.",
-          "Septik artrit": "Septik artrit benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen temel paternin önceliğini açıklamaz.",
-          "Omuz çıkığı": "Omuz çıkığı benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen temel paternin önceliğini açıklamaz."
+          "Suprakondiler humerus kırığı": "Suprakondiler humerus kırığı benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen belirleyici bulguları açıklamaz.",
+          "Septik artrit": "Septik artrit benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen belirleyici bulguları açıklamaz.",
+          "Omuz çıkığı": "Omuz çıkığı benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -30123,27 +30123,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Suprakondiler humerus kırığı": {
-            "explanation": "Suprakondiler humerus kırığı benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Suprakondiler humerus kırığı benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Elinden çekilme sonrası kolu kullanmama.",
               "Yakınma çocuğun elinden çekilmesinden hemen sonra başlamış.",
-              "Suprakondiler humerus kırığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Suprakondiler humerus kırığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Septik artrit": {
-            "explanation": "Septik artrit benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Septik artrit benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Elinden çekilme sonrası kolu kullanmama.",
               "Yakınma çocuğun elinden çekilmesinden hemen sonra başlamış.",
-              "Septik artrit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Septik artrit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Omuz çıkığı": {
-            "explanation": "Omuz çıkığı benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Omuz çıkığı benzer başlıklarda düşünülebilir. Ancak Elinden çekilme sonrası kolu kullanmama bu olguda daha belirleyicidir. Bu seçenek Radius başı subluksasyonu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Elinden çekilme sonrası kolu kullanmama.",
               "Yakınma çocuğun elinden çekilmesinden hemen sonra başlamış.",
-              "Omuz çıkığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Omuz çıkığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -30293,9 +30293,9 @@ export const cases = [
         "shortDiagnosisMeta": "TUS spot",
         "whyCorrect": "Aşısı eksik çocukta ateş, öksürük, burun akıntısı, konjunktivit ve yüzden başlayan döküntü kızamığı düşündürür. Ayırt ettirici mukozal bulgu Koplik lekeleridir. Koplik lekeleri molar hizasında bukkal mukozada beyaz-mavimsi odaklar olarak sorulur. Bu nedenle en uygun seçim Koplik lekeleri olur.",
         "whyWrong": {
-          "Pastia çizgileri": "Pastia çizgileri benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen temel paternin önceliğini açıklamaz.",
-          "Forchheimer lekeleri": "Forchheimer lekeleri benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen temel paternin önceliğini açıklamaz.",
-          "Ağrısız oral ülser": "Ağrısız oral ülser benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen temel paternin önceliğini açıklamaz."
+          "Pastia çizgileri": "Pastia çizgileri benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen belirleyici bulguları açıklamaz.",
+          "Forchheimer lekeleri": "Forchheimer lekeleri benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen belirleyici bulguları açıklamaz.",
+          "Ağrısız oral ülser": "Ağrısız oral ülser benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -30355,27 +30355,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Pastia çizgileri": {
-            "explanation": "Pastia çizgileri benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Pastia çizgileri benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri.",
               "Aşıları eksik çocukta prodromal ateş ve öksürük var.",
-              "Pastia çizgileri yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Pastia çizgileri yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Forchheimer lekeleri": {
-            "explanation": "Forchheimer lekeleri benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Forchheimer lekeleri benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri.",
               "Aşıları eksik çocukta prodromal ateş ve öksürük var.",
-              "Forchheimer lekeleri yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Forchheimer lekeleri yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Ağrısız oral ülser": {
-            "explanation": "Ağrısız oral ülser benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Ağrısız oral ülser benzer başlıklarda düşünülebilir. Ancak Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bu olguda daha belirleyicidir. Bu seçenek Koplik lekeleri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri.",
               "Aşıları eksik çocukta prodromal ateş ve öksürük var.",
-              "Ağrısız oral ülser yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Ağrısız oral ülser yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -30524,9 +30524,9 @@ export const cases = [
         "shortDiagnosisMeta": "Acil karar",
         "whyCorrect": "Stabil anterior epistaksiste ilk işlem hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamaktır. Geriye yatırmak kanın yutulmasına veya aspirasyona yol açabilir. Cerrahi ligasyon veya transfüzyon ilk basamak değildir. Bu nedenle en uygun seçim Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak olur.",
         "whyWrong": {
-          "Hastayı geriye yatırıp kanı yutmasını sağlamak": "Hastayı geriye yatırıp kanı yutmasını sağlamak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen temel paternin önceliğini açıklamaz.",
-          "İlk basamak olarak acil cerrahi ligasyon yapmak": "İlk basamak olarak acil cerrahi ligasyon yapmak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen temel paternin önceliğini açıklamaz.",
-          "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak": "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen temel paternin önceliğini açıklamaz."
+          "Hastayı geriye yatırıp kanı yutmasını sağlamak": "Hastayı geriye yatırıp kanı yutmasını sağlamak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen belirleyici bulguları açıklamaz.",
+          "İlk basamak olarak acil cerrahi ligasyon yapmak": "İlk basamak olarak acil cerrahi ligasyon yapmak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen belirleyici bulguları açıklamaz.",
+          "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak": "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -30538,7 +30538,7 @@ export const cases = [
             "text": "Antikoagülan kullanımı ve travma öyküsü yok."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Kan tadı yutma kanın arkaya akabileceğini gösterir."
           },
           {
@@ -30582,27 +30582,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Hastayı geriye yatırıp kanı yutmasını sağlamak": {
-            "explanation": "Hastayı geriye yatırıp kanı yutmasını sağlamak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hastayı geriye yatırıp kanı yutmasını sağlamak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Stabil anterior epistaksis.",
               "Kanama anterior epistaksis ile uyumlu ve hasta stabil.",
-              "Hastayı geriye yatırıp kanı yutmasını sağlamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hastayı geriye yatırıp kanı yutmasını sağlamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İlk basamak olarak acil cerrahi ligasyon yapmak": {
-            "explanation": "İlk basamak olarak acil cerrahi ligasyon yapmak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İlk basamak olarak acil cerrahi ligasyon yapmak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Stabil anterior epistaksis.",
               "Kanama anterior epistaksis ile uyumlu ve hasta stabil.",
-              "İlk basamak olarak acil cerrahi ligasyon yapmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İlk basamak olarak acil cerrahi ligasyon yapmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak": {
-            "explanation": "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak benzer başlıklarda düşünülebilir. Ancak Stabil anterior epistaksis bu olguda daha belirleyicidir. Bu seçenek Hastayı öne eğip burun kanatlarına sürekli direkt bası uygulamak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Stabil anterior epistaksis.",
               "Kanama anterior epistaksis ile uyumlu ve hasta stabil.",
-              "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Kanama miktarı az olsa da hemen masif transfüzyon başlatmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -30669,7 +30669,7 @@ export const cases = [
         "text": "Antikoagülan kullanımı ve travma öyküsü yok."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Kan tadı yutma kanın arkaya akabileceğini gösterir."
       },
       {
@@ -30747,9 +30747,9 @@ export const cases = [
         "shortDiagnosisMeta": "Adli",
         "whyCorrect": "Şüpheli ölümde hekim ölüm nedenini doğal varsayarak defin ruhsatı düzenlemez. Bulguları kaydeder, olay yerini veya delilleri bozmaz ve yetkili adli makamlara bildirim yapar. TUS'ta \"şüpheli koşul\" varsa adli süreç önceliklidir. Bu nedenle en uygun seçim Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek olur.",
         "whyWrong": {
-          "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek": "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen temel paternin önceliğini açıklamaz.",
-          "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak": "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen temel paternin önceliğini açıklamaz.",
-          "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek": "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen temel paternin önceliğini açıklamaz."
+          "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek": "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen belirleyici bulguları açıklamaz.",
+          "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak": "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen belirleyici bulguları açıklamaz.",
+          "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek": "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -30809,27 +30809,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek": {
-            "explanation": "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Yalnız yaşayan kişide şüpheli ölüm koşulları.",
               "Kişi evinde yalnız bulunmuştur.",
-              "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Doğal ölüm varsayarak defin ruhsatını hemen düzenlemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak": {
-            "explanation": "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Yalnız yaşayan kişide şüpheli ölüm koşulları.",
               "Kişi evinde yalnız bulunmuştur.",
-              "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Odayı temizleyip yakınların rahatlamasını sağladıktan sonra bildirim yapmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek": {
-            "explanation": "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek benzer başlıklarda düşünülebilir. Ancak Yalnız yaşayan kişide şüpheli ölüm koşulları bu olguda daha belirleyicidir. Bu seçenek Şüpheli ölüm kabul ederek bulguları kaydetmek, delilleri bozmadan yetkili adli makamlara bildirmek için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Yalnız yaşayan kişide şüpheli ölüm koşulları.",
               "Kişi evinde yalnız bulunmuştur.",
-              "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sadece yaşlı olduğu için ek değerlendirme yapmadan rapor vermek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -31202,7 +31202,7 @@ export const cases = [
             "comparisonPoints": [
               "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı karar verdirici klinik ipucudur.",
               "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi.",
-              "Median sinir yaralanması yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Median sinir yaralanması yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Ulnar sinir yaralanması": {
@@ -31210,7 +31210,7 @@ export const cases = [
             "comparisonPoints": [
               "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı karar verdirici klinik ipucudur.",
               "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi.",
-              "Ulnar sinir yaralanması yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Ulnar sinir yaralanması yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Aksiller sinir yaralanması": {
@@ -31218,7 +31218,7 @@ export const cases = [
             "comparisonPoints": [
               "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı karar verdirici klinik ipucudur.",
               "Radial sinirin spiral oluk seyri, motor-duyu alanı ve humerus şaft kırığı ilişkisi.",
-              "Aksiller sinir yaralanması yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Aksiller sinir yaralanması yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -31440,7 +31440,7 @@ export const cases = [
         },
         "evidenceChain": [
           {
-            "title": "Mekanizma özeti",
+            "title": "Mekanizma notu",
             "text": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı."
           },
           {
@@ -31462,9 +31462,9 @@ export const cases = [
         ],
         "clinicalPearls": [
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Baroreseptör refleksi saniyeler içinde çalışan hızlı homeostatik mekanizmadır.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Fizyolojik ilişki",
@@ -31501,7 +31501,7 @@ export const cases = [
             "comparisonPoints": [
               "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı karar verdirici klinik ipucudur.",
               "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı.",
-              "Parasempatik aktivitenin belirgin artışı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Parasempatik aktivitenin belirgin artışı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Renin salgısının anlık tamamen baskılanması": {
@@ -31509,7 +31509,7 @@ export const cases = [
             "comparisonPoints": [
               "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı karar verdirici klinik ipucudur.",
               "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı.",
-              "Renin salgısının anlık tamamen baskılanması yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Renin salgısının anlık tamamen baskılanması yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İnsülin aracılı vazodilatasyon": {
@@ -31517,7 +31517,7 @@ export const cases = [
             "comparisonPoints": [
               "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı karar verdirici klinik ipucudur.",
               "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı.",
-              "İnsülin aracılı vazodilatasyon yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İnsülin aracılı vazodilatasyon yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -31541,9 +31541,9 @@ export const cases = [
         ],
         "pearls": [
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Baroreseptör refleksi saniyeler içinde çalışan hızlı homeostatik mekanizmadır.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Fizyolojik ilişki",
@@ -31578,7 +31578,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Mekanizma özeti",
+        "title": "Mekanizma notu",
         "text": "Baroreseptör refleksi, sempatik aktivasyon ve ortostatik kan basıncı yanıtı."
       },
       {
@@ -31789,9 +31789,9 @@ export const cases = [
             "title": "Doku-gelişim ilişkisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Brankial yarık kisti genellikle lateral boyun kitlesidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Klinik not",
@@ -31823,7 +31823,7 @@ export const cases = [
             "comparisonPoints": [
               "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat karar verdirici klinik ipucudur.",
               "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı.",
-              "Brankial yarık kisti yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Brankial yarık kisti yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Dermoid kist": {
@@ -31831,7 +31831,7 @@ export const cases = [
             "comparisonPoints": [
               "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat karar verdirici klinik ipucudur.",
               "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı.",
-              "Dermoid kist yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Dermoid kist yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Reaktif servikal lenfadenit": {
@@ -31839,7 +31839,7 @@ export const cases = [
             "comparisonPoints": [
               "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat karar verdirici klinik ipucudur.",
               "Tiroid bezinin embriyolojik inişi, tiroglossal kanal kalıntısı ve orta hat boyun kitlesi ayrımı.",
-              "Reaktif servikal lenfadenit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Reaktif servikal lenfadenit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -31868,9 +31868,9 @@ export const cases = [
             "title": "Doku-gelişim ilişkisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Brankial yarık kisti genellikle lateral boyun kitlesidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Klinik not",
@@ -31973,7 +31973,7 @@ export const cases = [
         "priority": "Useful",
         "summary": "Uterin kavitede intrauterin gebelik kesesi izlenmiyor. Sağ adneksiyel bölgede heterojen kitle ve az miktarda serbest sıvı mevcut.",
         "findings": [
-          "Beta-hCG pozitifliği ile intrauterin kese yokluğu ve adneksiyel kitle bu klinik patern açısından anlamlıdır"
+          "Beta-hCG pozitifliği ile intrauterin kese yokluğu ve adneksiyel kitle bu klinik örüntü açısından anlamlıdır"
         ],
         "rows": [
           [
@@ -32164,7 +32164,7 @@ export const cases = [
             "comparisonPoints": [
               "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik karar verdirici klinik ipucudur.",
               "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi.",
-              "Basit dismenore yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Basit dismenore yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Akut sistit": {
@@ -32172,7 +32172,7 @@ export const cases = [
             "comparisonPoints": [
               "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik karar verdirici klinik ipucudur.",
               "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi.",
-              "Akut sistit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Akut sistit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Ovulasyon ağrısı": {
@@ -32180,7 +32180,7 @@ export const cases = [
             "comparisonPoints": [
               "İlgili klinik tablote gebelik testi, transvajinal ultrasonografi ve hemodinamik karar verdirici klinik ipucudur.",
               "Ektopik gebelikte gebelik testi, transvajinal ultrasonografi ve hemodinamik risk değerlendirmesi.",
-              "Ovulasyon ağrısı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Ovulasyon ağrısı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -32458,9 +32458,9 @@ export const cases = [
             "title": "İlaç mantığı"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Pralidoksim nikotinik bulgular ve enzim reaktivasyonu için erken dönemde değerlidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "managementSteps": [
@@ -32537,9 +32537,9 @@ export const cases = [
             "title": "İlaç mantığı"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Pralidoksim nikotinik bulgular ve enzim reaktivasyonu için erken dönemde değerlidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "learningOutcome": "",
@@ -32681,9 +32681,9 @@ export const cases = [
         "shortDiagnosisMeta": "Mikrobiyoloji",
         "whyCorrect": "Pirinç suyu tarzında bol sulu kansız ishal, hızlı dehidratasyon ve darting motility Vibrio cholerae için klasik TUS ipuçlarıdır. Kolerada invazyon değil toksin aracılı sekresyon ön plandadır. Bu yüzden kanlı dışkı beklenmez. Bu nedenle en uygun seçim Vibrio cholerae olur.",
         "whyWrong": {
-          "Shigella flexneri": "Shigella flexneri benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen temel paternin önceliğini açıklamaz.",
-          "Yersinia enterocolitica": "Yersinia enterocolitica benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen temel paternin önceliğini açıklamaz.",
-          "Enterotoksijenik Escherichia coli": "Enterotoksijenik Escherichia coli benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen temel paternin önceliğini açıklamaz."
+          "Shigella flexneri": "Shigella flexneri benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen belirleyici bulguları açıklamaz.",
+          "Yersinia enterocolitica": "Yersinia enterocolitica benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen belirleyici bulguları açıklamaz.",
+          "Enterotoksijenik Escherichia coli": "Enterotoksijenik Escherichia coli benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -32743,27 +32743,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Shigella flexneri": {
-            "explanation": "Shigella flexneri benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Shigella flexneri benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility.",
               "Bol sulu ve kansız ishal sekresyonel ishali düşündürür.",
-              "Shigella flexneri yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Shigella flexneri yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Yersinia enterocolitica": {
-            "explanation": "Yersinia enterocolitica benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Yersinia enterocolitica benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility.",
               "Bol sulu ve kansız ishal sekresyonel ishali düşündürür.",
-              "Yersinia enterocolitica yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Yersinia enterocolitica yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Enterotoksijenik Escherichia coli": {
-            "explanation": "Enterotoksijenik Escherichia coli benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Enterotoksijenik Escherichia coli benzer başlıklarda düşünülebilir. Ancak Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bu olguda daha belirleyicidir. Bu seçenek Vibrio cholerae için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility.",
               "Bol sulu ve kansız ishal sekresyonel ishali düşündürür.",
-              "Enterotoksijenik Escherichia coli yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Enterotoksijenik Escherichia coli yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -32797,7 +32797,7 @@ export const cases = [
         ],
         "learningOutcome": "Ana ipucu bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bilgisidir. Bu bilgi doğru sınav kararını destekler.",
         "spotClue": "Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility.",
-        "trap": "Kanlı-invaziv ishal etkenlerine kayıp koleranın sulu sekresyonel paternini kaçırmak.",
+        "trap": "Kanlı-invaziv ishal etkenlerine kayıp koleranın sulu sekresyonel örüntüsünü kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
       "question": "Bu tabloyu en iyi açıklayan etken hangisidir?"
@@ -32953,9 +32953,9 @@ export const cases = [
         "shortDiagnosisMeta": "Farmakoloji veya Enfeksiyon",
         "whyCorrect": "CMV retiniti tedavisinde gansiklovir veya valgansiklovirin tipik doz sınırlayıcı toksisitesi kemik iliği baskılanması ve nötropenidir. Nötropeni belirginleşirse foskarnet alternatif olabilir. Foskarnetin ana toksisitesi nefrotoksisite ve elektrolit bozukluğudur. Bu nedenle en uygun seçim Gansiklovir ve Foskarnet olur.",
         "whyWrong": {
-          "Asiklovir - Ribavirin": "Asiklovir. Ribavirin benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen temel paternin önceliğini açıklamaz.",
-          "Oseltamivir - Tenofovir": "Oseltamivir. Tenofovir benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen temel paternin önceliğini açıklamaz.",
-          "Famsiklovir - Valasiklovir": "Famsiklovir. Valasiklovir benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen temel paternin önceliğini açıklamaz."
+          "Asiklovir - Ribavirin": "Asiklovir. Ribavirin benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen belirleyici bulguları açıklamaz.",
+          "Oseltamivir - Tenofovir": "Oseltamivir. Tenofovir benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen belirleyici bulguları açıklamaz.",
+          "Famsiklovir - Valasiklovir": "Famsiklovir. Valasiklovir benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -33011,27 +33011,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Asiklovir - Ribavirin": {
-            "explanation": "Asiklovir. Ribavirin benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Asiklovir. Ribavirin benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni.",
               "Tedavisiz HIV öyküsü CMV retiniti riskini artırır.",
-              "Asiklovir. Ribavirin yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Asiklovir. Ribavirin yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Oseltamivir - Tenofovir": {
-            "explanation": "Oseltamivir. Tenofovir benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Oseltamivir. Tenofovir benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni.",
               "Tedavisiz HIV öyküsü CMV retiniti riskini artırır.",
-              "Oseltamivir. Tenofovir yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Oseltamivir. Tenofovir yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Famsiklovir - Valasiklovir": {
-            "explanation": "Famsiklovir. Valasiklovir benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Famsiklovir. Valasiklovir benzer başlıklarda düşünülebilir. Ancak AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bu olguda daha belirleyicidir. Bu seçenek Gansiklovir ve Foskarnet için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni.",
               "Tedavisiz HIV öyküsü CMV retiniti riskini artırır.",
-              "Famsiklovir. Valasiklovir yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Famsiklovir. Valasiklovir yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -33181,7 +33181,7 @@ export const cases = [
         "shortDiagnosisMeta": "Tanı veya Tedavi",
         "whyCorrect": "Keskin sınırlı, sıcak, ağrılı ve yüzeyel eritem erizipel için tipiktir. En sık etken beta-hemolitik streptokoklardır. İlk tercih tedavi penisilin hattıdır. Bu nedenle en uygun seçim Erizipel ve Penisilin G olur.",
         "whyWrong": {
-          "Selülit - Meropenem": "Selülitte eritem sınırları genellikle daha belirsiz ve yaygın olur. Bu olgudaki keskin sınırlı, sıcak yüzeyel eritem erizipel paternine daha yakındır.",
+          "Selülit - Meropenem": "Selülitte eritem sınırları genellikle daha belirsiz ve yaygın olur. Bu olgudaki keskin sınırlı, sıcak yüzeyel eritem erizipel örüntüsüne daha yakındır.",
           "Eritrazma - Eritromisin": "Eritrazma genellikle intertriginöz bölgelerde kahverengi-kırmızı plaklarla seyreder ve Wood lambasında mercan kırmızısı floresans verebilir. Bu olgudaki akut, sıcak ve keskin sınırlı eritem erizipel lehinedir.",
           "Fronkül - Ampisilin-sulbaktam": "Fronkül kıl folikülü kaynaklı, lokalize nodül veya apse görünümüyle beklenir. Bu olguda yaygın ve keskin sınırlı yüzeyel eritem ön plandadır."
         },
@@ -33192,7 +33192,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Klinik yüzeyel dermal veya lenfatik enfeksiyon paternindedir."
+            "text": "Klinik yüzeyel dermal veya lenfatik enfeksiyon örüntüsündedir."
           },
           {
             "title": "İlk yaklaşım",
@@ -33239,11 +33239,11 @@ export const cases = [
         ],
         "differentialComparison": {
           "Selülit - Meropenem": {
-            "explanation": "Selülitte eritem sınırları genellikle daha belirsiz ve yaygın olur. Bu olgudaki keskin sınırlı, sıcak yüzeyel eritem erizipel paternine daha yakındır.",
+            "explanation": "Selülitte eritem sınırları genellikle daha belirsiz ve yaygın olur. Bu olgudaki keskin sınırlı, sıcak yüzeyel eritem erizipel örüntüsüne daha yakındır.",
             "comparisonPoints": [
               "Keskin sınırlı sıcak eritem ve lenfatik yüzeyel enfeksiyon.",
               "Eritem keskin sınırlı ve sıcak tarifleniyor.",
-              "Selülit. Meropenem yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Selülit. Meropenem yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Eritrazma - Eritromisin": {
@@ -33251,7 +33251,7 @@ export const cases = [
             "comparisonPoints": [
               "Keskin sınırlı sıcak eritem ve lenfatik yüzeyel enfeksiyon.",
               "Eritem keskin sınırlı ve sıcak tarifleniyor.",
-              "Eritrazma. Eritromisin yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Eritrazma. Eritromisin yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Fronkül - Ampisilin-sulbaktam": {
@@ -33259,7 +33259,7 @@ export const cases = [
             "comparisonPoints": [
               "Keskin sınırlı sıcak eritem ve lenfatik yüzeyel enfeksiyon.",
               "Eritem keskin sınırlı ve sıcak tarifleniyor.",
-              "Fronkül. Ampisilin-sulbaktam yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Fronkül. Ampisilin-sulbaktam yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -33308,7 +33308,7 @@ export const cases = [
       "distinctiveClues": [
         "Keskin sınırlı sıcak eritem, lenfatik yüzeyel enfeksiyon",
         "Eritem keskin sınırlı ve sıcak tarifleniyor",
-        "Klinik yüzeyel dermal ve lenfatik enfeksiyon paternindedir",
+        "Klinik yüzeyel dermal ve lenfatik enfeksiyon örüntüsündedir",
         "Streptokokal etken ve penisilin duyarlılığı TUS spot bilgisidir"
       ],
       "historySummary": "55 yaşındaki erkek hasta, yakın dönemde boğaz enfeksiyonu geçirdikten sonra eski safen ven çıkarım skarı çevresinde hızla yayılan ağrılı ve sıcak deri kızarıklığı fark eder. Lezyon tek taraflıdır ve kısa sürede ateş-halsizlik eşlik etmiştir.",
@@ -33321,7 +33321,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Klinik yüzeyel dermal veya lenfatik enfeksiyon paternindedir."
+        "text": "Klinik yüzeyel dermal veya lenfatik enfeksiyon örüntüsündedir."
       },
       {
         "title": "İlk yaklaşım",
@@ -33420,9 +33420,9 @@ export const cases = [
         "shortDiagnosisMeta": "Yönetim veya Enfeksiyon kontrolü",
         "whyCorrect": "HCV temasında HBV'den farklı olarak aşı veya immünoglobulin profilaksisi yoktur. Doğru yaklaşım başlangıç anti-HCV veya alt değerlendirmesi ve erken dönemde HCV RNA ile serolojik takiptir. Enfeksiyon gelişirse tedavi planlanır. Bu nedenle en uygun seçim Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi olur.",
         "whyWrong": {
-          "Hemen hepatit C aşısı yapmak": "Hemen hepatit C aşısı yapmak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen temel paternin önceliğini açıklamaz.",
-          "Hepatit C immünoglobulini uygulamak": "Hepatit C immünoglobulini uygulamak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen temel paternin önceliğini açıklamaz.",
-          "Rutin profilaktik antiviral tedavi başlamak": "Rutin profilaktik antiviral tedavi başlamak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen temel paternin önceliğini açıklamaz."
+          "Hemen hepatit C aşısı yapmak": "Hemen hepatit C aşısı yapmak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen belirleyici bulguları açıklamaz.",
+          "Hepatit C immünoglobulini uygulamak": "Hepatit C immünoglobulini uygulamak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen belirleyici bulguları açıklamaz.",
+          "Rutin profilaktik antiviral tedavi başlamak": "Rutin profilaktik antiviral tedavi başlamak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -33478,27 +33478,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Hemen hepatit C aşısı yapmak": {
-            "explanation": "Hemen hepatit C aşısı yapmak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hemen hepatit C aşısı yapmak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "HCV RNA pozitif kaynak ve perkütan yaralanma.",
               "Kaynak hasta HCV RNA pozitiftir.",
-              "Hemen hepatit C aşısı yapmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hemen hepatit C aşısı yapmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hepatit C immünoglobulini uygulamak": {
-            "explanation": "Hepatit C immünoglobulini uygulamak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hepatit C immünoglobulini uygulamak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "HCV RNA pozitif kaynak ve perkütan yaralanma.",
               "Kaynak hasta HCV RNA pozitiftir.",
-              "Hepatit C immünoglobulini uygulamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hepatit C immünoglobulini uygulamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Rutin profilaktik antiviral tedavi başlamak": {
-            "explanation": "Rutin profilaktik antiviral tedavi başlamak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Rutin profilaktik antiviral tedavi başlamak benzer başlıklarda düşünülebilir. Ancak HCV RNA pozitif kaynak ve perkütan yaralanma bu olguda daha belirleyicidir. Bu seçenek Başlangıç anti ve HCV kaydı ve 2 ve 4 hafta sonra HCV RNA izlemi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "HCV RNA pozitif kaynak ve perkütan yaralanma.",
               "Kaynak hasta HCV RNA pozitiftir.",
-              "Rutin profilaktik antiviral tedavi başlamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Rutin profilaktik antiviral tedavi başlamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -33681,9 +33681,9 @@ export const cases = [
         "shortDiagnosisMeta": "Yönetim veya Mikrobiyoloji",
         "whyCorrect": "Aktif akciğer tüberkülozu ile yakın temas sonrası PPD veya IGRA pozitifliği veya dönüşümü latent TB enfeksiyonunu düşündürür. Profilaksi öncesi aktif hastalık semptom ve akciğer grafisiyle dışlanmalı. Aktif hastalık yoksa izoniyazid temelli latent TB tedavisi planlanmalıdır. Bu nedenle en uygun seçim İzoniyazid profilaksisi başlamak olur.",
         "whyWrong": {
-          "Aktif TB gibi dörtlü tedavi başlamak": "Aktif TB gibi dörtlü tedavi başlamak benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen temel paternin önceliğini açıklamaz.",
-          "BCG’ye bağlayıp takip etmeden bırakmak": "BCG'ye bağlayıp takip etmeden bırakmak benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen temel paternin önceliğini açıklamaz.",
-          "Aylık balgam yayması ile tedavisiz izlemek": "Aylık balgam yayması ile tedavisiz izlemek benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen temel paternin önceliğini açıklamaz."
+          "Aktif TB gibi dörtlü tedavi başlamak": "Aktif TB gibi dörtlü tedavi başlamak benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen belirleyici bulguları açıklamaz.",
+          "BCG’ye bağlayıp takip etmeden bırakmak": "BCG'ye bağlayıp takip etmeden bırakmak benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen belirleyici bulguları açıklamaz.",
+          "Aylık balgam yayması ile tedavisiz izlemek": "Aylık balgam yayması ile tedavisiz izlemek benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -33739,27 +33739,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Aktif TB gibi dörtlü tedavi başlamak": {
-            "explanation": "Aktif TB gibi dörtlü tedavi başlamak benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Aktif TB gibi dörtlü tedavi başlamak benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama.",
               "Ev içi veya yakın temas yüksek bulaş riski taşır.",
-              "Aktif TB gibi dörtlü tedavi başlamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Aktif TB gibi dörtlü tedavi başlamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "BCG’ye bağlayıp takip etmeden bırakmak": {
-            "explanation": "BCG'ye bağlayıp takip etmeden bırakmak benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "BCG'ye bağlayıp takip etmeden bırakmak benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama.",
               "Ev içi veya yakın temas yüksek bulaş riski taşır.",
-              "BCG'ye bağlayıp takip etmeden bırakmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "BCG'ye bağlayıp takip etmeden bırakmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Aylık balgam yayması ile tedavisiz izlemek": {
-            "explanation": "Aylık balgam yayması ile tedavisiz izlemek benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Aylık balgam yayması ile tedavisiz izlemek benzer başlıklarda düşünülebilir. Ancak Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bu olguda daha belirleyicidir. Bu seçenek İzoniyazid profilaksisi başlamak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama.",
               "Ev içi veya yakın temas yüksek bulaş riski taşır.",
-              "Aylık balgam yayması ile tedavisiz izlemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Aylık balgam yayması ile tedavisiz izlemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -33909,9 +33909,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tetkik veya Mesleki hastalık",
         "whyCorrect": "Semptomların iş ortamında artıp uzaklaşınca azalması mesleki astımı düşündürür. Lateks teması ve elde kaşıntılı lezyonlar lateks duyarlılığını destekler. Tanısal yaklaşım semptom-iş ilişkisini objektifleştiren seri PEF veya spirometri ve mesleki maruziyet değerlendirmesidir. Bu nedenle en uygun seçim Mesleksel astım ve Alerji testi olur.",
         "whyWrong": {
-          "KOAH - Spirometriyle sabit obstrüksiyon": "KOAH. Spirometriyle sabit obstrüksiyon benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen temel paternin önceliğini açıklamaz.",
-          "Behçet hastalığı - Paterji testi": "Behçet hastalığı. Paterji testi benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen temel paternin önceliğini açıklamaz.",
-          "Psöriazis - Cilt biyopsisi": "Psöriazis. Cilt biyopsisi benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen temel paternin önceliğini açıklamaz."
+          "KOAH - Spirometriyle sabit obstrüksiyon": "KOAH. Spirometriyle sabit obstrüksiyon benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen belirleyici bulguları açıklamaz.",
+          "Behçet hastalığı - Paterji testi": "Behçet hastalığı. Paterji testi benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen belirleyici bulguları açıklamaz.",
+          "Psöriazis - Cilt biyopsisi": "Psöriazis. Cilt biyopsisi benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -33919,7 +33919,7 @@ export const cases = [
             "text": "Öksürük ve hışıltı iş ortamıyla ilişkilidir."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hafta sonu veya işten uzaklaşınca düzelme mesleki astım lehinedir."
           },
           {
@@ -33967,27 +33967,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "KOAH - Spirometriyle sabit obstrüksiyon": {
-            "explanation": "KOAH. Spirometriyle sabit obstrüksiyon benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "KOAH. Spirometriyle sabit obstrüksiyon benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit.",
               "Öksürük ve hışıltı iş ortamıyla ilişkilidir.",
-              "KOAH. Spirometriyle sabit obstrüksiyon yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "KOAH. Spirometriyle sabit obstrüksiyon yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Behçet hastalığı - Paterji testi": {
-            "explanation": "Behçet hastalığı. Paterji testi benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Behçet hastalığı. Paterji testi benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit.",
               "Öksürük ve hışıltı iş ortamıyla ilişkilidir.",
-              "Behçet hastalığı. Paterji testi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Behçet hastalığı. Paterji testi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Psöriazis - Cilt biyopsisi": {
-            "explanation": "Psöriazis. Cilt biyopsisi benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Psöriazis. Cilt biyopsisi benzer başlıklarda düşünülebilir. Ancak İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bu olguda daha belirleyicidir. Bu seçenek Mesleksel astım ve Alerji testi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit.",
               "Öksürük ve hışıltı iş ortamıyla ilişkilidir.",
-              "Psöriazis. Cilt biyopsisi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Psöriazis. Cilt biyopsisi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -34048,7 +34048,7 @@ export const cases = [
         "text": "Öksürük ve hışıltı iş ortamıyla ilişkilidir."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hafta sonu veya işten uzaklaşınca düzelme mesleki astım lehinedir."
       },
       {
@@ -34136,9 +34136,9 @@ export const cases = [
         "shortDiagnosisMeta": "TUS spot veya Yönetim",
         "whyCorrect": "CURB-65 pnömoni ağırlık skorunda ateş yer almaz. Skor. Konfüzyon, üre yüksekliği, solunum sayısı ≥30/dk, düşük kan basıncı ve yaş ≥65 maddelerinden oluşur. Bu nedenle en uygun seçim Ateş yüksekliği olur.",
         "whyWrong": {
-          "Yaşın 65 ve üzerinde olması": "Yaşın 65 ve üzerinde olması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen temel paternin önceliğini açıklamaz.",
-          "Bilinç durumunda bozulma": "Bilinç durumunda bozulma benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen temel paternin önceliğini açıklamaz.",
-          "Solunum sayısının artması": "Solunum sayısının artması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen temel paternin önceliğini açıklamaz."
+          "Yaşın 65 ve üzerinde olması": "Yaşın 65 ve üzerinde olması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen belirleyici bulguları açıklamaz.",
+          "Bilinç durumunda bozulma": "Bilinç durumunda bozulma benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen belirleyici bulguları açıklamaz.",
+          "Solunum sayısının artması": "Solunum sayısının artması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -34194,27 +34194,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Yaşın 65 ve üzerinde olması": {
-            "explanation": "Yaşın 65 ve üzerinde olması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Yaşın 65 ve üzerinde olması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "CURB-65 kriterleri.",
               "Soru pnömoni ağırlık skorunun kriterlerini sorguluyor.",
-              "Yaşın 65 ve üzerinde olması yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Yaşın 65 ve üzerinde olması yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Bilinç durumunda bozulma": {
-            "explanation": "Bilinç durumunda bozulma benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Bilinç durumunda bozulma benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "CURB-65 kriterleri.",
               "Soru pnömoni ağırlık skorunun kriterlerini sorguluyor.",
-              "Bilinç durumunda bozulma yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Bilinç durumunda bozulma yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Solunum sayısının artması": {
-            "explanation": "Solunum sayısının artması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Solunum sayısının artması benzer başlıklarda düşünülebilir. Ancak CURB-65 kriterleri bu olguda daha belirleyicidir. Bu seçenek Ateş yüksekliği için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "CURB-65 kriterleri.",
               "Soru pnömoni ağırlık skorunun kriterlerini sorguluyor.",
-              "Solunum sayısının artması yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Solunum sayısının artması yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -34355,7 +34355,7 @@ export const cases = [
         "Mast hücre aracılı sistemik aktivasyon",
         "İzole IgE sensitizasyonu",
         "Kompleman aracılı herediter anjiyoödem",
-        "Miyokardiyal nekroz paterni"
+        "Miyokardiyal nekroz örüntüsü"
       ],
       "explanation": "Akut çoklu sistem alerjik reaksiyondan sonra serum triptazının yükselmesi mast hücre degranülasyonunu destekler. Tek başına total IgE yüksekliği akut sistemik aktivasyonu aynı güçte göstermez. Bu nedenle en uygun seçim Mast hücre aracılı sistemik aktivasyon olur.",
       "pearls": [
@@ -34382,9 +34382,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tetkik veya Alerji",
         "whyCorrect": "Akut çoklu sistem alerjik reaksiyondan sonra serum triptazının yükselmesi mast hücre degranülasyonunu destekler. Tek başına total IgE yüksekliği akut sistemik aktivasyonu aynı güçte göstermez. Bu nedenle en uygun seçim Mast hücre aracılı sistemik aktivasyon olur.",
         "whyWrong": {
-          "İzole IgE sensitizasyonu": "İzole IgE sensitizasyonu ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
-          "Kompleman aracılı herediter anjiyoödem": "Kompleman aracılı herediter anjiyoödem ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
-          "Miyokardiyal nekroz paterni": "Miyokardiyal nekroz paterni ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır."
+          "İzole IgE sensitizasyonu": "İzole IgE sensitizasyonu ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
+          "Kompleman aracılı herediter anjiyoödem": "Kompleman aracılı herediter anjiyoödem ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
+          "Miyokardiyal nekroz örüntüsü": "Miyokardiyal nekroz örüntüsü ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır."
         },
         "evidenceChain": [
           {
@@ -34396,7 +34396,7 @@ export const cases = [
             "text": "Akut dönemde alınan örnekte triptaz yüksek saptanmıştır."
           },
           {
-            "title": "EKG paterni",
+            "title": "EKG örüntüsü",
             "text": "Triptaz mast hücre degranülasyonuyla ilişkilidir."
           },
           {
@@ -34454,27 +34454,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "İzole IgE sensitizasyonu": {
-            "explanation": "İzole IgE sensitizasyonu ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
+            "explanation": "İzole IgE sensitizasyonu ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
             "comparisonPoints": [
               "Besin sonrası çoklu sistem reaksiyon ve mast hücre aktivasyonu.",
               "Besin sonrası çoklu sistem alerjik reaksiyon gelişmiştir.",
-              "İzole IgE sensitizasyonu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İzole IgE sensitizasyonu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Kompleman aracılı herediter anjiyoödem": {
-            "explanation": "Kompleman aracılı herediter anjiyoödem ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
+            "explanation": "Kompleman aracılı herediter anjiyoödem ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
             "comparisonPoints": [
               "Besin sonrası çoklu sistem reaksiyon ve mast hücre aktivasyonu.",
               "Besin sonrası çoklu sistem alerjik reaksiyon gelişmiştir.",
-              "Kompleman aracılı herediter anjiyoödem yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Kompleman aracılı herediter anjiyoödem yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
-          "Miyokardiyal nekroz paterni": {
-            "explanation": "Miyokardiyal nekroz paterni ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
+          "Miyokardiyal nekroz örüntüsü": {
+            "explanation": "Miyokardiyal nekroz örüntüsü ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Mast hücre aracılı sistemik aktivasyon lehine yorumlanır.",
             "comparisonPoints": [
               "Besin sonrası çoklu sistem reaksiyon ve mast hücre aktivasyonu.",
               "Besin sonrası çoklu sistem alerjik reaksiyon gelişmiştir.",
-              "Miyokardiyal nekroz paterni yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Miyokardiyal nekroz örüntüsü yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -34539,7 +34539,7 @@ export const cases = [
         "text": "Akut dönemde alınan örnekte triptaz yüksek saptanmıştır."
       },
       {
-        "title": "EKG paterni",
+        "title": "EKG örüntüsü",
         "text": "Triptaz mast hücre degranülasyonuyla ilişkilidir."
       },
       {
@@ -34646,13 +34646,13 @@ export const cases = [
         "shortDiagnosisMeta": "Tanı",
         "whyCorrect": "Yaşlı aterosklerotik riskli hastada kısa sürede gelişen dirençli hipertansiyon, tekrarlayan ani akciğer ödemi ve hipokalemi renovasküler hipertansiyon veya renal arter stenozu için tipiktir. Flash pulmoner ödem renovasküler hastalıkta çok güçlü sınav ipucudur. Bu nedenle en uygun seçim Renovasküler hipertansiyon olur.",
         "whyWrong": {
-          "Feokromositoma": "Feokromositoma benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen temel paternin önceliğini açıklamaz.",
-          "Aort koarktasyonu": "Aort koarktasyonu benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen temel paternin önceliğini açıklamaz.",
-          "Hipertiroidizm": "Hipertiroidizm benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen temel paternin önceliğini açıklamaz."
+          "Feokromositoma": "Feokromositoma benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen belirleyici bulguları açıklamaz.",
+          "Aort koarktasyonu": "Aort koarktasyonu benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen belirleyici bulguları açıklamaz.",
+          "Hipertiroidizm": "Hipertiroidizm benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır."
           },
           {
@@ -34708,27 +34708,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Feokromositoma": {
-            "explanation": "Feokromositoma benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Feokromositoma benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi.",
               "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır.",
-              "Feokromositoma yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Feokromositoma yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Aort koarktasyonu": {
-            "explanation": "Aort koarktasyonu benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Aort koarktasyonu benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi.",
               "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır.",
-              "Aort koarktasyonu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Aort koarktasyonu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hipertiroidizm": {
-            "explanation": "Hipertiroidizm benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hipertiroidizm benzer başlıklarda düşünülebilir. Ancak Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bu olguda daha belirleyicidir. Bu seçenek Renovasküler hipertansiyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi.",
               "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır.",
-              "Hipertiroidizm yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hipertiroidizm yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -34786,7 +34786,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Diyabet ve sigara aterosklerotik renal arter stenozu riskini artırır."
       },
       {
@@ -34882,9 +34882,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tedavi",
         "whyCorrect": "Pulmoner arteriyel hipertansiyonda verapamil genellikle önerilmez. Negatif inotrop etkisi sağ ventrikül fonksiyonunu kötüleştirebilir. PAH hedef tedavilerinde endotelin reseptör antagonistleri, PDE-5 inhibitörleri ve prostasiklin analogları öne çıkar. Bu nedenle en uygun seçim Verapamil olur.",
         "whyWrong": {
-          "Bosentan": "Bosentan benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen temel paternin önceliğini açıklamaz.",
-          "Tadalafil": "Tadalafil benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen temel paternin önceliğini açıklamaz.",
-          "İnhaler iloprost": "İnhaler iloprost benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen temel paternin önceliğini açıklamaz."
+          "Bosentan": "Bosentan benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen belirleyici bulguları açıklamaz.",
+          "Tadalafil": "Tadalafil benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen belirleyici bulguları açıklamaz.",
+          "İnhaler iloprost": "İnhaler iloprost benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -34911,9 +34911,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Bosentan endotelin reseptör antagonisti. Tadalafil PDE-5 inhibitörüdür.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Sık tuzak",
@@ -34928,9 +34928,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Bosentan endotelin reseptör antagonisti. Tadalafil PDE-5 inhibitörüdür.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Sık tuzak",
@@ -34940,27 +34940,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Bosentan": {
-            "explanation": "Bosentan benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Bosentan benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "PAH tedavisinde verapamilin negatif inotrop etkisi.",
               "PAH sağ kalp kateterizasyonu ile doğrulanmış.",
-              "Bosentan yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Bosentan yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Tadalafil": {
-            "explanation": "Tadalafil benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Tadalafil benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "PAH tedavisinde verapamilin negatif inotrop etkisi.",
               "PAH sağ kalp kateterizasyonu ile doğrulanmış.",
-              "Tadalafil yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Tadalafil yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İnhaler iloprost": {
-            "explanation": "İnhaler iloprost benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İnhaler iloprost benzer başlıklarda düşünülebilir. Ancak PAH tedavisinde verapamilin negatif inotrop etkisi bu olguda daha belirleyicidir. Bu seçenek Verapamil için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "PAH tedavisinde verapamilin negatif inotrop etkisi.",
               "PAH sağ kalp kateterizasyonu ile doğrulanmış.",
-              "İnhaler iloprost yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İnhaler iloprost yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -35107,9 +35107,9 @@ export const cases = [
         "shortDiagnosisMeta": "Acil tedavi",
         "whyCorrect": "Ağır hipertansiyon zemininde gelişen akut pulmoner ödemde afterload yükü baskındır. Uygun başlangıç tedavisi IV vazodilatör tedavi ve oksijenasyon desteğidir. Pozitif inotrop hipotansif düşük debi tablosunda düşünülür. Bu nedenle en uygun seçim İntravenöz vazodilatör tedavi olur.",
         "whyWrong": {
-          "Fibrinolitik tedavi": "Fibrinolitik tedavi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen temel paternin önceliğini açıklamaz.",
-          "İntravenöz pozitif inotrop tedavi": "İntravenöz pozitif inotrop tedavi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen temel paternin önceliğini açıklamaz.",
-          "Oral beta bloker yüklemesi": "Oral beta bloker yüklemesi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen temel paternin önceliğini açıklamaz."
+          "Fibrinolitik tedavi": "Fibrinolitik tedavi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen belirleyici bulguları açıklamaz.",
+          "İntravenöz pozitif inotrop tedavi": "İntravenöz pozitif inotrop tedavi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen belirleyici bulguları açıklamaz.",
+          "Oral beta bloker yüklemesi": "Oral beta bloker yüklemesi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -35122,7 +35122,7 @@ export const cases = [
           },
           {
             "title": "Başvuru",
-            "text": "Klinik patern hipertansif akut pulmoner ödemi düşündürür."
+            "text": "Klinik örüntü hipertansif akut pulmoner ödemi düşündürür."
           },
           {
             "title": "Vital bulgular",
@@ -35165,27 +35165,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Fibrinolitik tedavi": {
-            "explanation": "Fibrinolitik tedavi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Fibrinolitik tedavi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok.",
               "Antihipertansif uyumsuzluğu sonrası ani nefes darlığı gelişmiş.",
-              "Fibrinolitik tedavi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Fibrinolitik tedavi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İntravenöz pozitif inotrop tedavi": {
-            "explanation": "İntravenöz pozitif inotrop tedavi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İntravenöz pozitif inotrop tedavi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok.",
               "Antihipertansif uyumsuzluğu sonrası ani nefes darlığı gelişmiş.",
-              "İntravenöz pozitif inotrop tedavi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İntravenöz pozitif inotrop tedavi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Oral beta bloker yüklemesi": {
-            "explanation": "Oral beta bloker yüklemesi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Oral beta bloker yüklemesi benzer başlıklarda düşünülebilir. Ancak Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bu olguda daha belirleyicidir. Bu seçenek İntravenöz vazodilatör tedavi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok.",
               "Antihipertansif uyumsuzluğu sonrası ani nefes darlığı gelişmiş.",
-              "Oral beta bloker yüklemesi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Oral beta bloker yüklemesi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -35235,7 +35235,7 @@ export const cases = [
         "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok",
         "Antihipertansif uyumsuzluğu sonrası ani nefes darlığı gelişmiş",
         "Önceden ciddi sistolik kalp yetersizliği öyküsü yok",
-        "Klinik patern hipertansif akut pulmoner ödemi"
+        "Klinik örüntü hipertansif akut pulmoner ödemi"
       ],
       "historySummary": "70 yaşındaki kadın hasta antihipertansif ilaçlarını düzensiz kullandıktan sonra ani başlayan şiddetli nefes darlığı ile acile başvurur. Önceden bilinen ciddi sistolik kalp yetersizliği öyküsü yoktur.",
       "priorityFocus": "Ani pulmoner ödem, ağır hipertansiyon, sistolik yetmezlik öyküsü yok klinik muhakemeyi yönlendiren temel bulgudur."
@@ -35251,7 +35251,7 @@ export const cases = [
       },
       {
         "title": "Başvuru",
-        "text": "Klinik patern hipertansif akut pulmoner ödemi düşündürür."
+        "text": "Klinik örüntü hipertansif akut pulmoner ödemi düşündürür."
       },
       {
         "title": "Vital bulgular",
@@ -35333,13 +35333,13 @@ export const cases = [
         "shortDiagnosisMeta": "Yönetim veya Gastroenteroloji",
         "whyCorrect": "İleri yaşta yeni başlayan dispepsi, klasik alarm bulgusu olmasa bile malignite ve organik patoloji açısından endoskopi gerektirir. Genç ve alarmsız dispepside PPI denemesi düşünülebilir. Bu olguda yaş tek başına yaklaşımı değiştirir. Bu nedenle en uygun seçim Üst gastrointestinal endoskopi yapmak olur.",
         "whyWrong": {
-          "Antiasit verip uzun süre izlemek": "Antiasit verip uzun süre izlemek benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen temel paternin önceliğini açıklamaz.",
-          "Sadece dört hafta PPI denemesi yapmak": "Sadece dört hafta PPI denemesi yapmak benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen temel paternin önceliğini açıklamaz.",
-          "H2 bloker ve PPI’ı birlikte başlamak": "H2 bloker ve PPI'ı birlikte başlamak benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen temel paternin önceliğini açıklamaz."
+          "Antiasit verip uzun süre izlemek": "Antiasit verip uzun süre izlemek benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen belirleyici bulguları açıklamaz.",
+          "Sadece dört hafta PPI denemesi yapmak": "Sadece dört hafta PPI denemesi yapmak benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen belirleyici bulguları açıklamaz.",
+          "H2 bloker ve PPI’ı birlikte başlamak": "H2 bloker ve PPI'ı birlikte başlamak benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Hasta ileri yaş grubundadır."
           },
           {
@@ -35362,9 +35362,9 @@ export const cases = [
             "title": "Sınav bilgisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Genç ve alarmsız hastada ampirik PPI veya H.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "TUS tuzağı",
@@ -35379,9 +35379,9 @@ export const cases = [
             "title": "Sınav bilgisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Genç ve alarmsız hastada ampirik PPI veya H.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "TUS tuzağı",
@@ -35391,27 +35391,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Antiasit verip uzun süre izlemek": {
-            "explanation": "Antiasit verip uzun süre izlemek benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Antiasit verip uzun süre izlemek benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İleri yaşta yeni başlayan dispepsi.",
               "Hasta ileri yaş grubundadır.",
-              "Antiasit verip uzun süre izlemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Antiasit verip uzun süre izlemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sadece dört hafta PPI denemesi yapmak": {
-            "explanation": "Sadece dört hafta PPI denemesi yapmak benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sadece dört hafta PPI denemesi yapmak benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İleri yaşta yeni başlayan dispepsi.",
               "Hasta ileri yaş grubundadır.",
-              "Sadece dört hafta PPI denemesi yapmak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sadece dört hafta PPI denemesi yapmak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "H2 bloker ve PPI’ı birlikte başlamak": {
-            "explanation": "H2 bloker ve PPI'ı birlikte başlamak benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "H2 bloker ve PPI'ı birlikte başlamak benzer başlıklarda düşünülebilir. Ancak İleri yaşta yeni başlayan dispepsi bu olguda daha belirleyicidir. Bu seçenek Üst gastrointestinal endoskopi yapmak için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İleri yaşta yeni başlayan dispepsi.",
               "Hasta ileri yaş grubundadır.",
-              "H2 bloker ve PPI'ı birlikte başlamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "H2 bloker ve PPI'ı birlikte başlamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -35468,7 +35468,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Hasta ileri yaş grubundadır."
       },
       {
@@ -35500,7 +35500,7 @@ export const cases = [
     "demographics": "Erişkin hasta",
     "setting": "Endoskopi ünitesi",
     "chiefComplaint": "Reflü yakınmaları nedeniyle yapılan endoskopi",
-    "stem": "Uzun süreli reflü yakınmaları olan erişkin hastada endoskopik değerlendirme yapılır. Soru, distal özofagusta görülen mukozal paternin hangi tanıyı düşündürdüğünü sorgular",
+    "stem": "Uzun süreli reflü yakınmaları olan erişkin hastada endoskopik değerlendirme yapılır. Soru, distal özofagusta görülen mukozal örüntüsün hangi tanıyı düşündürdüğünü sorgular",
     "vitals": {
       "TA": "122/76 mmHg",
       "Nabız": "80/dk",
@@ -35580,9 +35580,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tanı veya Patoloji",
         "whyCorrect": "Kronik reflü hastasında distal özofagusta Z çizgisinin proksimaline uzanan kolumnar mukoza Barrett özofagusunu düşündürür. Tanı intestinal metaplazinin histolojik gösterilmesiyle kesinleşir. Adenokarsinom riski nedeniyle takip önemlidir. Bu nedenle en uygun seçim Barrett özofagusu olur.",
         "whyWrong": {
-          "Kandida özofajiti": "Kandida özofajiti benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen temel paternin önceliğini açıklamaz.",
-          "Leiomiyom": "Leiomiyom benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen temel paternin önceliğini açıklamaz.",
-          "Özofagus adenokarsinomu": "Özofagus adenokarsinomu benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen temel paternin önceliğini açıklamaz."
+          "Kandida özofajiti": "Kandida özofajiti benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen belirleyici bulguları açıklamaz.",
+          "Leiomiyom": "Leiomiyom benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen belirleyici bulguları açıklamaz.",
+          "Özofagus adenokarsinomu": "Özofagus adenokarsinomu benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -35638,27 +35638,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Kandida özofajiti": {
-            "explanation": "Kandida özofajiti benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Kandida özofajiti benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü.",
               "Uzun süreli reflü öyküsü vardır.",
-              "Kandida özofajiti yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Kandida özofajiti yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Leiomiyom": {
-            "explanation": "Leiomiyom benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Leiomiyom benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü.",
               "Uzun süreli reflü öyküsü vardır.",
-              "Leiomiyom yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Leiomiyom yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Özofagus adenokarsinomu": {
-            "explanation": "Özofagus adenokarsinomu benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Özofagus adenokarsinomu benzer başlıklarda düşünülebilir. Ancak Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bu olguda daha belirleyicidir. Bu seçenek Barrett özofagusu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü.",
               "Uzun süreli reflü öyküsü vardır.",
-              "Özofagus adenokarsinomu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Özofagus adenokarsinomu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -35710,7 +35710,7 @@ export const cases = [
         "Endoskopide Z çizgisinin proksimaline uzanan kolumnar mukoza görülür",
         "Patern skuamöz epitelin intestinal tip kolumnar metaplazisini"
       ],
-      "historySummary": "Soru, distal özofagusta görülen mukozal paternin hangi tanıyı düşündürdüğünü sorgular.",
+      "historySummary": "Soru, distal özofagusta görülen mukozal örüntüsün hangi tanıyı düşündürdüğünü sorgular.",
       "priorityFocus": "Z çizgisi proksimalinde kolumnar mukoza, kronik reflü klinik muhakemeyi yönlendiren temel bulgudur."
     },
     "evidenceChain": [
@@ -35826,13 +35826,13 @@ export const cases = [
         "shortDiagnosisMeta": "Tetkik veya Gastroenteroloji",
         "whyCorrect": "Safra taşı öyküsü ve USG'de koledok genişliği koledok taşı şüphesini doğurur. Akut kolanjit bulgusu yoksa sonraki uygun noninvaziv görüntüleme MRCP'dir. ERCP daha çok yüksek olasılık veya terapötik ihtiyaçta öne çıkar. Bu nedenle en uygun seçim Manyetik rezonans kolanjiyopankreatografi olur.",
         "whyWrong": {
-          "Üst GİS endoskopisi": "Üst GİS endoskopisi benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen temel paternin önceliğini açıklamaz.",
-          "Perkütan transhepatik kolanjiyografi": "Perkütan transhepatik kolanjiyografi benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen temel paternin önceliğini açıklamaz.",
-          "Toraks manyetik rezonans görüntüleme": "Toraks manyetik rezonans görüntüleme benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen temel paternin önceliğini açıklamaz."
+          "Üst GİS endoskopisi": "Üst GİS endoskopisi benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen belirleyici bulguları açıklamaz.",
+          "Perkütan transhepatik kolanjiyografi": "Perkütan transhepatik kolanjiyografi benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen belirleyici bulguları açıklamaz.",
+          "Toraks manyetik rezonans görüntüleme": "Toraks manyetik rezonans görüntüleme benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "EKG paterni",
+            "title": "EKG örüntüsü",
             "text": "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni düşündürür."
           },
           {
@@ -35888,27 +35888,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Üst GİS endoskopisi": {
-            "explanation": "Üst GİS endoskopisi benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Üst GİS endoskopisi benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Safra taşı ve geniş koledok.",
               "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni düşündürür.",
-              "Üst GİS endoskopisi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Üst GİS endoskopisi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Perkütan transhepatik kolanjiyografi": {
-            "explanation": "Perkütan transhepatik kolanjiyografi benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Perkütan transhepatik kolanjiyografi benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Safra taşı ve geniş koledok.",
               "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni düşündürür.",
-              "Perkütan transhepatik kolanjiyografi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Perkütan transhepatik kolanjiyografi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Toraks manyetik rezonans görüntüleme": {
-            "explanation": "Toraks manyetik rezonans görüntüleme benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Toraks manyetik rezonans görüntüleme benzer başlıklarda düşünülebilir. Ancak Safra taşı ve geniş koledok bu olguda daha belirleyicidir. Bu seçenek Manyetik rezonans kolanjiyopankreatografi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Safra taşı ve geniş koledok.",
               "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni düşündürür.",
-              "Toraks manyetik rezonans görüntüleme yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Toraks manyetik rezonans görüntüleme yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -35965,7 +35965,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "EKG paterni",
+        "title": "EKG örüntüsü",
         "text": "Yağlı yemek sonrası sağ üst kadran ağrısı biliyer kökeni düşündürür."
       },
       {
@@ -36064,7 +36064,7 @@ export const cases = [
         "Öncelikle elektif üst GİS endoskopisi planlamak",
         "Semptomsuz izlemle parasentezi tekrarlamamak"
       ],
-      "explanation": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP paternini düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun seçim Ampirik üçüncü kuşak sefalosporin tedavisi başlamak olur.",
+      "explanation": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP örüntüsünü düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun seçim Ampirik üçüncü kuşak sefalosporin tedavisi başlamak olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -36087,11 +36087,11 @@ export const cases = [
         "correctDiagnosis": "Ampirik üçüncü kuşak sefalosporin tedavisi başlamak",
         "diagnosisMeta": "Sirotik asitte PMN eşiğini ve ilk tedaviyi yorumlama",
         "shortDiagnosisMeta": "Tetkik veya Yönetim",
-        "whyCorrect": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP paternini düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun seçim Ampirik üçüncü kuşak sefalosporin tedavisi başlamak olur.",
+        "whyCorrect": "Sirozlu asit hastasında karın hassasiyeti veya mental durum değişikliğiyle birlikte asit PMN sayısının ≥250/mm³ olması SBP örüntüsünü düşündürür ve kültür sonucu beklenmeden ampirik antibiyotik başlanmalıdır. Bu nedenle en uygun seçim Ampirik üçüncü kuşak sefalosporin tedavisi başlamak olur.",
         "whyWrong": {
-          "HCV RNA sonucunu bekleyip tedaviyi ertelemek": "HCV RNA sonucunu bekleyip tedaviyi ertelemek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
-          "Öncelikle elektif üst GİS endoskopisi planlamak": "Öncelikle elektif üst GİS endoskopisi planlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
-          "Semptomsuz izlemle parasentezi tekrarlamamak": "Semptomsuz izlemle parasentezi tekrarlamamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır."
+          "HCV RNA sonucunu bekleyip tedaviyi ertelemek": "HCV RNA sonucunu bekleyip tedaviyi ertelemek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
+          "Öncelikle elektif üst GİS endoskopisi planlamak": "Öncelikle elektif üst GİS endoskopisi planlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
+          "Semptomsuz izlemle parasentezi tekrarlamamak": "Semptomsuz izlemle parasentezi tekrarlamamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır."
         },
         "evidenceChain": [
           {
@@ -36161,27 +36161,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "HCV RNA sonucunu bekleyip tedaviyi ertelemek": {
-            "explanation": "HCV RNA sonucunu bekleyip tedaviyi ertelemek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
+            "explanation": "HCV RNA sonucunu bekleyip tedaviyi ertelemek ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
             "comparisonPoints": [
               "Siroz ve asit ve mental durum değişikliği veya karın hassasiyeti.",
               "Siroz veya asit zemininde dalgınlık ve karın hassasiyeti vardır.",
-              "HCV RNA sonucunu bekleyip tedaviyi ertelemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "HCV RNA sonucunu bekleyip tedaviyi ertelemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Öncelikle elektif üst GİS endoskopisi planlamak": {
-            "explanation": "Öncelikle elektif üst GİS endoskopisi planlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
+            "explanation": "Öncelikle elektif üst GİS endoskopisi planlamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
             "comparisonPoints": [
               "Siroz ve asit ve mental durum değişikliği veya karın hassasiyeti.",
               "Siroz veya asit zemininde dalgınlık ve karın hassasiyeti vardır.",
-              "Öncelikle elektif üst GİS endoskopisi planlamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Öncelikle elektif üst GİS endoskopisi planlamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Semptomsuz izlemle parasentezi tekrarlamamak": {
-            "explanation": "Semptomsuz izlemle parasentezi tekrarlamamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
+            "explanation": "Semptomsuz izlemle parasentezi tekrarlamamak ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Ampirik üçüncü kuşak sefalosporin tedavisi başlamak lehine yorumlanır.",
             "comparisonPoints": [
               "Siroz ve asit ve mental durum değişikliği veya karın hassasiyeti.",
               "Siroz veya asit zemininde dalgınlık ve karın hassasiyeti vardır.",
-              "Semptomsuz izlemle parasentezi tekrarlamamak yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Semptomsuz izlemle parasentezi tekrarlamamak yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -36365,9 +36365,9 @@ export const cases = [
         "shortDiagnosisMeta": "Acil tedavi veya Endokrinoloji",
         "whyCorrect": "Hiperpigmentasyon, hipotansif kriz, hiponatremi, hiperpotasemi ve hipoglisemi primer adrenal krizi düşündürür. Acil tedavi hidrokortizon ve izotonik sıvı veya glukoz desteğidir. Laboratuvar doğrulaması tedaviyi geciktirmemelidir. Bu nedenle en uygun seçim Hidrokortizon olur.",
         "whyWrong": {
-          "Nalokson": "Nalokson benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen temel paternin önceliğini açıklamaz.",
-          "Glukagon": "Glukagon benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen temel paternin önceliğini açıklamaz.",
-          "Beta bloker": "Beta bloker benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen temel paternin önceliğini açıklamaz."
+          "Nalokson": "Nalokson benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen belirleyici bulguları açıklamaz.",
+          "Glukagon": "Glukagon benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen belirleyici bulguları açıklamaz.",
+          "Beta bloker": "Beta bloker benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -36384,7 +36384,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Bu elektrolit paterni primer adrenal yetmezlik krizini destekler."
+            "text": "Bu elektrolit örüntüsü primer adrenal yetmezlik krizini destekler."
           },
           {
             "title": "Vital bulgular",
@@ -36427,27 +36427,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Nalokson": {
-            "explanation": "Nalokson benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Nalokson benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi.",
               "Uzun süredir deri ve mukozalarda koyulaşma vardır.",
-              "Nalokson yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Nalokson yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Glukagon": {
-            "explanation": "Glukagon benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Glukagon benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi.",
               "Uzun süredir deri ve mukozalarda koyulaşma vardır.",
-              "Glukagon yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Glukagon yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Beta bloker": {
-            "explanation": "Beta bloker benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Beta bloker benzer başlıklarda düşünülebilir. Ancak Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bu olguda daha belirleyicidir. Bu seçenek Hidrokortizon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi.",
               "Uzun süredir deri ve mukozalarda koyulaşma vardır.",
-              "Beta bloker yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Beta bloker yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -36481,7 +36481,7 @@ export const cases = [
         ],
         "learningOutcome": "Ana ipucu hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bilgisidir. Bu bilgi doğru sınav kararını destekler.",
         "spotClue": "Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi.",
-        "trap": "Şokta özgül endokrin paterni kaçırıp semptomatik antidotlara kaymak.",
+        "trap": "Şokta özgül endokrin örüntüsü kaçırıp semptomatik antidotlara kaymak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
       "question": "Bu klinik durumda en uygun acil tedavi hangisidir?"
@@ -36517,7 +36517,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Bu elektrolit paterni primer adrenal yetmezlik krizini destekler."
+        "text": "Bu elektrolit örüntüsü primer adrenal yetmezlik krizini destekler."
       },
       {
         "title": "Vital bulgular",
@@ -36642,16 +36642,16 @@ export const cases = [
           "title": "Klinik not"
         }
       ],
-      "nextStep": "İlaç veya tiroid hormonu kullanımını güvenli biçimde sorgula. Tiroglobulin, TRAb ve uptake paternini birlikte yorumla. Eksojen kaynak doğrulanırsa hormon alımını kesme ve semptom kontrolü planla.",
+      "nextStep": "İlaç veya tiroid hormonu kullanımını güvenli biçimde sorgula. Tiroglobulin, TRAb ve uptake örüntüsünü birlikte yorumla. Eksojen kaynak doğrulanırsa hormon alımını kesme ve semptom kontrolü planla.",
       "answerFeedback": {
         "correctDiagnosis": "Tirotoksikozis faktitisya",
         "diagnosisMeta": "Tirotoksikozis faktitisyada düşük tiroglobulin ve baskılanmış radyoaktif iyot tutulumu",
         "shortDiagnosisMeta": "Tanı veya Endokrinoloji",
         "whyCorrect": "Tirotoksikozis faktitisyada eksojen tiroid hormonu alımı nedeniyle TSH baskılı ve sT4 yüksektir. Tiroglobulin düşük, radyoaktif iyot tutulumu baskılıdır. Graves'te TRAb pozitifliği ve uptake artışı. Bu nedenle en uygun seçim Tirotoksikozis faktitisya olur.",
         "whyWrong": {
-          "Graves hastalığı": "Graves hastalığı benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen temel paternin önceliğini açıklamaz.",
-          "Subakut tiroidit": "Subakut tiroidit benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen temel paternin önceliğini açıklamaz.",
-          "TSH salgılayan hipofiz adenomu": "TSH salgılayan hipofiz adenomu benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen temel paternin önceliğini açıklamaz."
+          "Graves hastalığı": "Graves hastalığı benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen belirleyici bulguları açıklamaz.",
+          "Subakut tiroidit": "Subakut tiroidit benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen belirleyici bulguları açıklamaz.",
+          "TSH salgılayan hipofiz adenomu": "TSH salgılayan hipofiz adenomu benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -36687,9 +36687,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Tiroiditte hormon salınımı vardır. Uptake düşük ama tiroglobulin genellikle yüksektir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "pearls": [
@@ -36704,34 +36704,34 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Tiroiditte hormon salınımı vardır. Uptake düşük ama tiroglobulin genellikle yüksektir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           }
         ],
         "differentialComparison": {
           "Graves hastalığı": {
-            "explanation": "Graves hastalığı benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Graves hastalığı benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake.",
               "Çarpıntı, titreme ve kilo kaybı tirotoksikoz bulgularıdır.",
-              "Graves hastalığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Graves hastalığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Subakut tiroidit": {
-            "explanation": "Subakut tiroidit benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Subakut tiroidit benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake.",
               "Çarpıntı, titreme ve kilo kaybı tirotoksikoz bulgularıdır.",
-              "Subakut tiroidit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Subakut tiroidit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "TSH salgılayan hipofiz adenomu": {
-            "explanation": "TSH salgılayan hipofiz adenomu benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "TSH salgılayan hipofiz adenomu benzer başlıklarda düşünülebilir. Ancak TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bu olguda daha belirleyicidir. Bu seçenek Tirotoksikozis faktitisya için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake.",
               "Çarpıntı, titreme ve kilo kaybı tirotoksikoz bulgularıdır.",
-              "TSH salgılayan hipofiz adenomu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "TSH salgılayan hipofiz adenomu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -36742,7 +36742,7 @@ export const cases = [
           },
           {
             "title": "Tedavi önceliği",
-            "text": "Tiroglobulin, TRAb ve uptake paternini birlikte yorumla."
+            "text": "Tiroglobulin, TRAb ve uptake örüntüsünü birlikte yorumla."
           },
           {
             "title": "Tanısal doğrulama",
@@ -36756,7 +36756,7 @@ export const cases = [
           },
           {
             "title": "Tedavi önceliği",
-            "text": "Tiroglobulin, TRAb ve uptake paternini birlikte yorumla."
+            "text": "Tiroglobulin, TRAb ve uptake örüntüsünü birlikte yorumla."
           },
           {
             "title": "Tanısal doğrulama",
@@ -36765,7 +36765,7 @@ export const cases = [
         ],
         "learningOutcome": "Ana ipucu TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bilgisidir. Bu bilgi doğru sınav kararını destekler.",
         "spotClue": "TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake.",
-        "trap": "Graves veya tiroidit ayrımında tiroglobulin veya uptake paternini gözden kaçırmak.",
+        "trap": "Graves veya tiroidit ayrımında tiroglobulin veya uptake örüntüsünü gözden kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
       "question": "Bu bulgularla en uyumlu tanı hangisidir?"
@@ -36840,7 +36840,7 @@ export const cases = [
     "investigations": [
       {
         "id": "pituitary-mri-prolactin-dilution",
-        "label": "Hipofiz MR ve prolaktin ölçüm paterni",
+        "label": "Hipofiz MR ve prolaktin ölçüm örüntüsü",
         "type": "lab",
         "summary": "Hipofiz MR kitle boyutu: 20 mm (referans <10 mm; yüksek). Bazal prolaktin: 48 ng/mL (referans 4.8–23.3 ng/mL; yüksek). Dilüsyon sonrası prolaktin: 2.400 ng/mL (referans 4.8–23.3 ng/mL; yüksek).",
         "findings": [
@@ -36919,9 +36919,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tetkik veya Endokrinoloji",
         "whyCorrect": "Büyük hipofiz makroadenomunda beklenenden düşük prolaktin ölçümü, çok yüksek antijen düzeyinin immünoassay sinyalini bozduğu hook effect ile açıklanabilir. Serum dilüsyonu sonrası belirgin yüksek ölçüm bu mekanizmayı destekler. Bu nedenle en uygun seçim Hook effect nedeniyle yalancı düşük immünoassay sonucu olur.",
         "whyWrong": {
-          "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi": "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
-          "Dopamin agonistine bağlı tümör küçülmesi": "Dopamin agonistine bağlı tümör küçülmesi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
-          "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi": "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır."
+          "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi": "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
+          "Dopamin agonistine bağlı tümör küçülmesi": "Dopamin agonistine bağlı tümör küçülmesi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
+          "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi": "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır."
         },
         "evidenceChain": [
           {
@@ -36987,27 +36987,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi": {
-            "explanation": "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
+            "explanation": "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
             "comparisonPoints": [
               "Makroadenom ve beklenenden düşük prolaktin.",
               "MR'da 2 cm hipofiz makroadenomu vardır.",
-              "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Primer hipotiroidiye bağlı gerçek hiperprolaktinemi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Dopamin agonistine bağlı tümör küçülmesi": {
-            "explanation": "Dopamin agonistine bağlı tümör küçülmesi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
+            "explanation": "Dopamin agonistine bağlı tümör küçülmesi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
             "comparisonPoints": [
               "Makroadenom ve beklenenden düşük prolaktin.",
               "MR'da 2 cm hipofiz makroadenomu vardır.",
-              "Dopamin agonistine bağlı tümör küçülmesi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Dopamin agonistine bağlı tümör küçülmesi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi": {
-            "explanation": "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
+            "explanation": "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Hook effect nedeniyle yalancı düşük immünoassay sonucu lehine yorumlanır.",
             "comparisonPoints": [
               "Makroadenom ve beklenenden düşük prolaktin.",
               "MR'da 2 cm hipofiz makroadenomu vardır.",
-              "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Nonfonksiyonel adenomda fizyolojik prolaktin düzeyi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -37157,9 +37157,9 @@ export const cases = [
         "shortDiagnosisMeta": "Patoloji veya Onkoloji",
         "whyCorrect": "Metastatik kolorektal kanserde sistemik tedavi kararında KRAS, NRAS, BRAF ve mikrosatellit instabilite veya MMR durumu önemlidir. CD20 B hücreli lenfomalarda kullanılan bir marker olup kolon adenokarsinomunda rutin karar verdirici marker değildir. Bu nedenle en uygun seçim CD20 olur.",
         "whyWrong": {
-          "KRAS": "KRAS benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen temel paternin önceliğini açıklamaz.",
-          "NRAS": "NRAS benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen temel paternin önceliğini açıklamaz.",
-          "Mikrosatellit instabilite": "Mikrosatellit instabilite benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen temel paternin önceliğini açıklamaz."
+          "KRAS": "KRAS benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen belirleyici bulguları açıklamaz.",
+          "NRAS": "NRAS benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen belirleyici bulguları açıklamaz.",
+          "Mikrosatellit instabilite": "Mikrosatellit instabilite benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -37175,7 +37175,7 @@ export const cases = [
             "text": "KRAS veya NRAS ve MSI tedavi seçimini etkiler."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "CD20 kolon adenokarsinomu için rutin karar markerı değildir."
           },
           {
@@ -37219,27 +37219,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "KRAS": {
-            "explanation": "KRAS benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "KRAS benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Metastatik kolon adenokarsinomu tedavi markerları.",
               "Biyopsi kolon adenokarsinomu göstermektedir.",
-              "KRAS yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "KRAS yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "NRAS": {
-            "explanation": "NRAS benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "NRAS benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Metastatik kolon adenokarsinomu tedavi markerları.",
               "Biyopsi kolon adenokarsinomu göstermektedir.",
-              "NRAS yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "NRAS yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Mikrosatellit instabilite": {
-            "explanation": "Mikrosatellit instabilite benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Mikrosatellit instabilite benzer başlıklarda düşünülebilir. Ancak Metastatik kolon adenokarsinomu tedavi markerları bu olguda daha belirleyicidir. Bu seçenek CD20 için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Metastatik kolon adenokarsinomu tedavi markerları.",
               "Biyopsi kolon adenokarsinomu göstermektedir.",
-              "Mikrosatellit instabilite yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Mikrosatellit instabilite yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -37308,7 +37308,7 @@ export const cases = [
         "text": "KRAS veya NRAS ve MSI tedavi seçimini etkiler."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "CD20 kolon adenokarsinomu için rutin karar markerı değildir."
       },
       {
@@ -37373,7 +37373,7 @@ export const cases = [
     ],
     "images": [],
     "questionType": "Diagnosis",
-    "question": "CD5 ve CD23 ve klonal B hücre popülasyonu ile birlikte bu hematolojik patern en çok hangi tanıyı destekler?",
+    "question": "CD5 ve CD23 ve klonal B hücre popülasyonu ile birlikte bu hematolojik örüntü en çok hangi tanıyı destekler?",
     "spotPearl": "CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir.",
     "learningOutcome": "Ana ipucu yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "managementSequence": {
@@ -37418,9 +37418,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tetkik veya Hematoloji",
         "whyCorrect": "Yaşlı hastada kalıcı lenfositoz, küçük olgun lenfositler ve CD5 ve CD23 ve klonal B hücre popülasyonu kronik lenfositik lösemi için tipik bir immünfenotip oluşturur. Bu nedenle en uygun seçim Kronik lenfositik lösemi olur.",
         "whyWrong": {
-          "Mantle hücreli lenfoma": "Mantle hücreli lenfoma ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
-          "Reaktif viral lenfositoz": "Reaktif viral lenfositoz ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
-          "Kronik miyeloid lösemi": "Kronik miyeloid lösemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır."
+          "Mantle hücreli lenfoma": "Mantle hücreli lenfoma ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
+          "Reaktif viral lenfositoz": "Reaktif viral lenfositoz ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
+          "Kronik miyeloid lösemi": "Kronik miyeloid lösemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır."
         },
         "evidenceChain": [
           {
@@ -37451,9 +37451,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11.14) ile ilişkilidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Sınav incisi",
@@ -37473,9 +37473,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Mantle hücreli lenfoma genellikle cyclin D1 veya SOX11 ve t(11.14) ile ilişkilidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Sınav incisi",
@@ -37490,27 +37490,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Mantle hücreli lenfoma": {
-            "explanation": "Mantle hücreli lenfoma ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
+            "explanation": "Mantle hücreli lenfoma ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
             "comparisonPoints": [
               "Yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre.",
               "Uzun süredir lenfadenopati ve mutlak lenfositoz vardır.",
-              "Mantle hücreli lenfoma yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Mantle hücreli lenfoma yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Reaktif viral lenfositoz": {
-            "explanation": "Reaktif viral lenfositoz ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
+            "explanation": "Reaktif viral lenfositoz ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
             "comparisonPoints": [
               "Yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre.",
               "Uzun süredir lenfadenopati ve mutlak lenfositoz vardır.",
-              "Reaktif viral lenfositoz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Reaktif viral lenfositoz yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Kronik miyeloid lösemi": {
-            "explanation": "Kronik miyeloid lösemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
+            "explanation": "Kronik miyeloid lösemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Kronik lenfositik lösemi lehine yorumlanır.",
             "comparisonPoints": [
               "Yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre.",
               "Uzun süredir lenfadenopati ve mutlak lenfositoz vardır.",
-              "Kronik miyeloid lösemi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Kronik miyeloid lösemi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -37547,7 +37547,7 @@ export const cases = [
         "trap": "Tanıyı evreleme veya prognostik testlerle başlatmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
-      "question": "CD5 ve CD23 ve klonal B hücre popülasyonu ile birlikte bu hematolojik patern en çok hangi tanıyı destekler?"
+      "question": "CD5 ve CD23 ve klonal B hücre popülasyonu ile birlikte bu hematolojik örüntü en çok hangi tanıyı destekler?"
     },
     "title": "Boyun ve aksillada uzun süredir lenf nodu şişliği",
     "patientIntro": {
@@ -37599,7 +37599,7 @@ export const cases = [
       "Direkt Coombs"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Coombs pozitif ekstravasküler hemoliz paternini yorumlama",
+    "clinicalFocus": "Coombs pozitif ekstravasküler hemoliz örüntüsünü yorumlama",
     "demographics": "58 yaşında kadın",
     "setting": "Dahiliye polikliniği",
     "chiefComplaint": "Halsizlik, sararma ve çarpıntı",
@@ -37678,7 +37678,7 @@ export const cases = [
         "Aplastik anemi",
         "Paroksismal nokturnal hemoglobinüri"
       ],
-      "explanation": "Hemoliz laboratuvarı ile birlikte direkt antiglobulin testinde IgG veya C3 pozitifliği, antikor aracılı hemolizi ve özellikle sıcak tip otoimmün hemolitik anemi paternini destekler. Bu nedenle en uygun seçim Sıcak tip otoimmün hemolitik anemi olur.",
+      "explanation": "Hemoliz laboratuvarı ile birlikte direkt antiglobulin testinde IgG veya C3 pozitifliği, antikor aracılı hemolizi ve özellikle sıcak tip otoimmün hemolitik anemi örüntüsünü destekler. Bu nedenle en uygun seçim Sıcak tip otoimmün hemolitik anemi olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -37699,13 +37699,13 @@ export const cases = [
       "nextStep": "Hemodinami ve anemi şiddetini değerlendir. Hemoliz paneliyle birlikte direkt Coombs testini iste. AIHA doğrulanırsa altta yatan neden ve steroid veya immünsüpresyon gereğini planla.",
       "answerFeedback": {
         "correctDiagnosis": "Sıcak tip otoimmün hemolitik anemi",
-        "diagnosisMeta": "Coombs pozitif ekstravasküler hemoliz paternini yorumlama",
+        "diagnosisMeta": "Coombs pozitif ekstravasküler hemoliz örüntüsünü yorumlama",
         "shortDiagnosisMeta": "Tetkik veya Hematoloji",
-        "whyCorrect": "Hemoliz laboratuvarı ile birlikte direkt antiglobulin testinde IgG veya C3 pozitifliği, antikor aracılı hemolizi ve özellikle sıcak tip otoimmün hemolitik anemi paternini destekler. Bu nedenle en uygun seçim Sıcak tip otoimmün hemolitik anemi olur.",
+        "whyCorrect": "Hemoliz laboratuvarı ile birlikte direkt antiglobulin testinde IgG veya C3 pozitifliği, antikor aracılı hemolizi ve özellikle sıcak tip otoimmün hemolitik anemi örüntüsünü destekler. Bu nedenle en uygun seçim Sıcak tip otoimmün hemolitik anemi olur.",
         "whyWrong": {
-          "Megaloblastik anemi": "Megaloblastik anemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
-          "Aplastik anemi": "Aplastik anemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
-          "Paroksismal nokturnal hemoglobinüri": "Paroksismal nokturnal hemoglobinüri ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır."
+          "Megaloblastik anemi": "Megaloblastik anemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
+          "Aplastik anemi": "Aplastik anemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
+          "Paroksismal nokturnal hemoglobinüri": "Paroksismal nokturnal hemoglobinüri ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır."
         },
         "evidenceChain": [
           {
@@ -37771,27 +37771,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Megaloblastik anemi": {
-            "explanation": "Megaloblastik anemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
+            "explanation": "Megaloblastik anemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
             "comparisonPoints": [
               "Hemoliz bulguları ve direkt Coombs IgG veya C3 pozitifliği.",
               "Sarılık ve çarpıntıya hemoliz laboratuvarı eşlik eder.",
-              "Megaloblastik anemi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Megaloblastik anemi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Aplastik anemi": {
-            "explanation": "Aplastik anemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
+            "explanation": "Aplastik anemi ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
             "comparisonPoints": [
               "Hemoliz bulguları ve direkt Coombs IgG veya C3 pozitifliği.",
               "Sarılık ve çarpıntıya hemoliz laboratuvarı eşlik eder.",
-              "Aplastik anemi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Aplastik anemi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Paroksismal nokturnal hemoglobinüri": {
-            "explanation": "Paroksismal nokturnal hemoglobinüri ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
+            "explanation": "Paroksismal nokturnal hemoglobinüri ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Sıcak tip otoimmün hemolitik anemi lehine yorumlanır.",
             "comparisonPoints": [
               "Hemoliz bulguları ve direkt Coombs IgG veya C3 pozitifliği.",
               "Sarılık ve çarpıntıya hemoliz laboratuvarı eşlik eder.",
-              "Paroksismal nokturnal hemoglobinüri yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Paroksismal nokturnal hemoglobinüri yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -37951,17 +37951,17 @@ export const cases = [
         "shortDiagnosisMeta": "TUS spot veya Genetik",
         "whyCorrect": "Herediter difüz mide kanserinin klasik geni CDH1'dir. ATM bu sendromla temel eşleşme değildir. Li-Fraumeni-TP53, Cowden-PTEN ve herediter meme-over kanseri-BRCA1 veya 2 eşleşmeleri doğru yüksek verimli eşleşmelerdir. Bu nedenle en uygun seçim Herediter difüz mide kanseri ve ATM olur.",
         "whyWrong": {
-          "Li-Fraumeni sendromu - TP53": "Li-Fraumeni sendromu. TP53 benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen temel paternin önceliğini açıklamaz.",
-          "Cowden sendromu - PTEN": "Cowden sendromu. PTEN benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen temel paternin önceliğini açıklamaz.",
-          "Herediter meme-over kanseri - BRCA1/2": "Herediter meme-over kanseri. BRCA1 veya 2 benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen temel paternin önceliğini açıklamaz."
+          "Li-Fraumeni sendromu - TP53": "Li-Fraumeni sendromu. TP53 benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen belirleyici bulguları açıklamaz.",
+          "Cowden sendromu - PTEN": "Cowden sendromu. PTEN benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen belirleyici bulguları açıklamaz.",
+          "Herediter meme-over kanseri - BRCA1/2": "Herediter meme-over kanseri. BRCA1 veya 2 benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "Mekanizma özeti",
+            "title": "Mekanizma notu",
             "text": "Soru yanlış sendrom-gen eşleşmesini soruyor."
           },
           {
-            "title": "Mekanizma özeti",
+            "title": "Mekanizma notu",
             "text": "Herediter difüz mide kanserinde beklenen gen CDH1'dir."
           },
           {
@@ -38009,27 +38009,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Li-Fraumeni sendromu - TP53": {
-            "explanation": "Li-Fraumeni sendromu. TP53 benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Li-Fraumeni sendromu. TP53 benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Herediter difüz mide kanseri gen eşleşmesi.",
               "Soru yanlış sendrom-gen eşleşmesini soruyor.",
-              "Li-Fraumeni sendromu. TP53 yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Li-Fraumeni sendromu. TP53 yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Cowden sendromu - PTEN": {
-            "explanation": "Cowden sendromu. PTEN benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Cowden sendromu. PTEN benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Herediter difüz mide kanseri gen eşleşmesi.",
               "Soru yanlış sendrom-gen eşleşmesini soruyor.",
-              "Cowden sendromu. PTEN yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Cowden sendromu. PTEN yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Herediter meme-over kanseri - BRCA1/2": {
-            "explanation": "Herediter meme-over kanseri. BRCA1 veya 2 benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Herediter meme-over kanseri. BRCA1 veya 2 benzer başlıklarda düşünülebilir. Ancak Herediter difüz mide kanseri gen eşleşmesi bu olguda daha belirleyicidir. Bu seçenek Herediter difüz mide kanseri ve ATM için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Herediter difüz mide kanseri gen eşleşmesi.",
               "Soru yanlış sendrom-gen eşleşmesini soruyor.",
-              "Herediter meme-over kanseri. BRCA1 veya 2 yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Herediter meme-over kanseri. BRCA1 veya 2 yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -38086,11 +38086,11 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Mekanizma özeti",
+        "title": "Mekanizma notu",
         "text": "Soru yanlış sendrom-gen eşleşmesini soruyor."
       },
       {
-        "title": "Mekanizma özeti",
+        "title": "Mekanizma notu",
         "text": "Herediter difüz mide kanserinde beklenen gen CDH1'dir."
       },
       {
@@ -38179,9 +38179,9 @@ export const cases = [
         "shortDiagnosisMeta": "Acil tedavi",
         "whyCorrect": "İlaç uygulamasından dakikalar sonra gelişen sistemik alerjik reaksiyon anafilaksi olarak ele alınmalıdır. İlk seçilecek tedavi intramüsküler adrenalindir. Antihistaminik ve steroidler destek tedavidir, hava yolu veya dolaşım riskini adrenalin kadar hızlı düzeltmez. Bu nedenle en uygun seçim İntramüsküler adrenalin olur.",
         "whyWrong": {
-          "İntravenöz H1 antihistaminik tek başına": "İntravenöz H1 antihistaminik tek başına benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen temel paternin önceliğini açıklamaz.",
-          "Nebül salbutamolü tek tedavi olarak vermek": "Nebül salbutamolü tek tedavi olarak vermek benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen temel paternin önceliğini açıklamaz.",
-          "Sistemik kortikosteroid yanıtını beklemek": "Sistemik kortikosteroid yanıtını beklemek benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen temel paternin önceliğini açıklamaz."
+          "İntravenöz H1 antihistaminik tek başına": "İntravenöz H1 antihistaminik tek başına benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen belirleyici bulguları açıklamaz.",
+          "Nebül salbutamolü tek tedavi olarak vermek": "Nebül salbutamolü tek tedavi olarak vermek benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen belirleyici bulguları açıklamaz.",
+          "Sistemik kortikosteroid yanıtını beklemek": "Sistemik kortikosteroid yanıtını beklemek benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -38237,27 +38237,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "İntravenöz H1 antihistaminik tek başına": {
-            "explanation": "İntravenöz H1 antihistaminik tek başına benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İntravenöz H1 antihistaminik tek başına benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı.",
               "Antibiyotik uygulamasından dakikalar sonra reaksiyon gelişmiştir.",
-              "İntravenöz H1 antihistaminik tek başına yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İntravenöz H1 antihistaminik tek başına yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Nebül salbutamolü tek tedavi olarak vermek": {
-            "explanation": "Nebül salbutamolü tek tedavi olarak vermek benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Nebül salbutamolü tek tedavi olarak vermek benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı.",
               "Antibiyotik uygulamasından dakikalar sonra reaksiyon gelişmiştir.",
-              "Nebül salbutamolü tek tedavi olarak vermek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Nebül salbutamolü tek tedavi olarak vermek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sistemik kortikosteroid yanıtını beklemek": {
-            "explanation": "Sistemik kortikosteroid yanıtını beklemek benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sistemik kortikosteroid yanıtını beklemek benzer başlıklarda düşünülebilir. Ancak İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bu olguda daha belirleyicidir. Bu seçenek İntramüsküler adrenalin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı.",
               "Antibiyotik uygulamasından dakikalar sonra reaksiyon gelişmiştir.",
-              "Sistemik kortikosteroid yanıtını beklemek yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sistemik kortikosteroid yanıtını beklemek yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -38408,9 +38408,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tedavi veya Romatoloji",
         "whyCorrect": "Sistemik skleroz veya Raynaud zemininde gelişen ağrılı dijital ülserlerde prostasiklin analoğu iloprost ve endotelin reseptör antagonisti bosentan uygun kombinasyondur. Bosentan özellikle yeni dijital ülser gelişimini azaltmada önemlidir. Bu nedenle en uygun seçim İloprost ve bosentan olur.",
         "whyWrong": {
-          "Nifedipin ve lokal yara bakımı": "Nifedipin ve lokal yara bakımı benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen temel paternin önceliğini açıklamaz.",
-          "Sildenafil ve düşük doz aspirin": "Sildenafil ve düşük doz aspirin benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen temel paternin önceliğini açıklamaz.",
-          "Siklofosfamid ve yüksek doz steroid": "Siklofosfamid ve yüksek doz steroid benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen temel paternin önceliğini açıklamaz."
+          "Nifedipin ve lokal yara bakımı": "Nifedipin ve lokal yara bakımı benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen belirleyici bulguları açıklamaz.",
+          "Sildenafil ve düşük doz aspirin": "Sildenafil ve düşük doz aspirin benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen belirleyici bulguları açıklamaz.",
+          "Siklofosfamid ve yüksek doz steroid": "Siklofosfamid ve yüksek doz steroid benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -38441,9 +38441,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Bosentan endotelin reseptör antagonistidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Klinik not",
@@ -38458,9 +38458,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Bosentan endotelin reseptör antagonistidir.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Klinik not",
@@ -38470,27 +38470,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Nifedipin ve lokal yara bakımı": {
-            "explanation": "Nifedipin ve lokal yara bakımı benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Nifedipin ve lokal yara bakımı benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Raynaud ve ağrılı dijital ülser ve CCB yetersizliği.",
               "Uzun süreli Raynaud yakınmaları vardır.",
-              "Nifedipin ve lokal yara bakımı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Nifedipin ve lokal yara bakımı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sildenafil ve düşük doz aspirin": {
-            "explanation": "Sildenafil ve düşük doz aspirin benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sildenafil ve düşük doz aspirin benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Raynaud ve ağrılı dijital ülser ve CCB yetersizliği.",
               "Uzun süreli Raynaud yakınmaları vardır.",
-              "Sildenafil ve düşük doz aspirin yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sildenafil ve düşük doz aspirin yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Siklofosfamid ve yüksek doz steroid": {
-            "explanation": "Siklofosfamid ve yüksek doz steroid benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Siklofosfamid ve yüksek doz steroid benzer başlıklarda düşünülebilir. Ancak Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bu olguda daha belirleyicidir. Bu seçenek İloprost ve bosentan için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Raynaud ve ağrılı dijital ülser ve CCB yetersizliği.",
               "Uzun süreli Raynaud yakınmaları vardır.",
-              "Siklofosfamid ve yüksek doz steroid yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Siklofosfamid ve yüksek doz steroid yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -38638,14 +38638,14 @@ export const cases = [
     },
     "sourceQuestion": "PDF 2018 KTBT Q25",
     "diagnosis": {
-      "correct": "Aktif SLE alevlenmesini destekleyen serolojik patern",
+      "correct": "Aktif SLE alevlenmesini destekleyen serolojik örüntü",
       "options": [
-        "Aktif SLE alevlenmesini destekleyen serolojik patern",
+        "Aktif SLE alevlenmesini destekleyen serolojik örüntü",
         "İzole ANA pozitifliğiyle sınırlı tarama sonucu",
-        "Sınırlı kutanöz sistemik skleroz paterni",
-        "Romatoid artrit aktivitesini gösteren patern"
+        "Sınırlı kutanöz sistemik skleroz örüntüsü",
+        "Romatoid artrit aktivitesini gösteren örüntü"
       ],
-      "explanation": "SLE bağlamında anti-dsDNA yüksekliği ve C3 veya C4 düşüklüğü immün kompleks aracılı aktiviteyi düşündürür. İzole ANA tanısal taramada duyarlı olsa da aktivite takibinde aynı ayırt ediciliğe sahip değildir. Bu nedenle en uygun seçim Aktif SLE alevlenmesini destekleyen serolojik patern olur.",
+      "explanation": "SLE bağlamında anti-dsDNA yüksekliği ve C3 veya C4 düşüklüğü immün kompleks aracılı aktiviteyi düşündürür. İzole ANA tanısal taramada duyarlı olsa da aktivite takibinde aynı ayırt ediciliğe sahip değildir. Bu nedenle en uygun seçim Aktif SLE alevlenmesini destekleyen serolojik örüntü olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -38665,14 +38665,14 @@ export const cases = [
       ],
       "nextStep": "Klinik aktivite ve renal bulguları değerlendir. Anti-dsDNA, C3 veya C4, idrar proteinüri veya aktif sediment takibini yap. Aktiviteye göre immünsüpresif tedavi ve nefroloji değerlendirmesini planla.",
       "answerFeedback": {
-        "correctDiagnosis": "Aktif SLE alevlenmesini destekleyen serolojik patern",
+        "correctDiagnosis": "Aktif SLE alevlenmesini destekleyen serolojik örüntü",
         "diagnosisMeta": "SLE aktivitesinde anti-dsDNA ve kompleman tüketimini yorumlama",
         "shortDiagnosisMeta": "Tetkik veya Romatoloji",
-        "whyCorrect": "SLE bağlamında anti-dsDNA yüksekliği ve C3 veya C4 düşüklüğü immün kompleks aracılı aktiviteyi düşündürür. İzole ANA tanısal taramada duyarlı olsa da aktivite takibinde aynı ayırt ediciliğe sahip değildir. Bu nedenle en uygun seçim Aktif SLE alevlenmesini destekleyen serolojik patern olur.",
+        "whyCorrect": "SLE bağlamında anti-dsDNA yüksekliği ve C3 veya C4 düşüklüğü immün kompleks aracılı aktiviteyi düşündürür. İzole ANA tanısal taramada duyarlı olsa da aktivite takibinde aynı ayırt ediciliğe sahip değildir. Bu nedenle en uygun seçim Aktif SLE alevlenmesini destekleyen serolojik örüntü olur.",
         "whyWrong": {
-          "İzole ANA pozitifliğiyle sınırlı tarama sonucu": "İzole ANA pozitifliğiyle sınırlı tarama sonucu ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır.",
-          "Sınırlı kutanöz sistemik skleroz paterni": "Sınırlı kutanöz sistemik skleroz paterni ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır.",
-          "Romatoid artrit aktivitesini gösteren patern": "Romatoid artrit aktivitesini gösteren patern ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır."
+          "İzole ANA pozitifliğiyle sınırlı tarama sonucu": "İzole ANA pozitifliğiyle sınırlı tarama sonucu ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik örüntü lehine yorumlanır.",
+          "Sınırlı kutanöz sistemik skleroz örüntüsü": "Sınırlı kutanöz sistemik skleroz örüntüsü ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik örüntü lehine yorumlanır.",
+          "Romatoid artrit aktivitesini gösteren örüntü": "Romatoid artrit aktivitesini gösteren örüntü ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik örüntü lehine yorumlanır."
         },
         "evidenceChain": [
           {
@@ -38693,7 +38693,7 @@ export const cases = [
           },
           {
             "title": "Başvuru",
-            "text": "Fotosensitivite, malar döküntü ve artralji SLE paternini destekler."
+            "text": "Fotosensitivite, malar döküntü ve artralji SLE örüntüsünü destekler."
           }
         ],
         "clinicalPearls": [
@@ -38742,27 +38742,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "İzole ANA pozitifliğiyle sınırlı tarama sonucu": {
-            "explanation": "İzole ANA pozitifliğiyle sınırlı tarama sonucu ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır.",
+            "explanation": "İzole ANA pozitifliğiyle sınırlı tarama sonucu ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik örüntü lehine yorumlanır.",
             "comparisonPoints": [
               "SLE aktivite izlemi ve anti-dsDNA yüksekliği ve kompleman düşüklüğü.",
               "Fotosensitivite, malar döküntü ve eklem ağrısı SLE bağlamı oluşturur.",
-              "İzole ANA pozitifliğiyle sınırlı tarama sonucu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İzole ANA pozitifliğiyle sınırlı tarama sonucu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
-          "Sınırlı kutanöz sistemik skleroz paterni": {
-            "explanation": "Sınırlı kutanöz sistemik skleroz paterni ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır.",
+          "Sınırlı kutanöz sistemik skleroz örüntüsü": {
+            "explanation": "Sınırlı kutanöz sistemik skleroz örüntüsü ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik örüntü lehine yorumlanır.",
             "comparisonPoints": [
               "SLE aktivite izlemi ve anti-dsDNA yüksekliği ve kompleman düşüklüğü.",
               "Fotosensitivite, malar döküntü ve eklem ağrısı SLE bağlamı oluşturur.",
-              "Sınırlı kutanöz sistemik skleroz paterni yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sınırlı kutanöz sistemik skleroz örüntüsü yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
-          "Romatoid artrit aktivitesini gösteren patern": {
-            "explanation": "Romatoid artrit aktivitesini gösteren patern ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik patern lehine yorumlanır.",
+          "Romatoid artrit aktivitesini gösteren örüntü": {
+            "explanation": "Romatoid artrit aktivitesini gösteren örüntü ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Aktif SLE alevlenmesini destekleyen serolojik örüntü lehine yorumlanır.",
             "comparisonPoints": [
               "SLE aktivite izlemi ve anti-dsDNA yüksekliği ve kompleman düşüklüğü.",
               "Fotosensitivite, malar döküntü ve eklem ağrısı SLE bağlamı oluşturur.",
-              "Romatoid artrit aktivitesini gösteren patern yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Romatoid artrit aktivitesini gösteren örüntü yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -38810,7 +38810,7 @@ export const cases = [
         "Fotosensitivite ve malar döküntü sistemik otoimmün alevlenme bağlamı oluşturur"
       ],
       "distinctiveClues": [
-        "Fotosensitivite, malar döküntü ve artralji SLE paternini destekler",
+        "Fotosensitivite, malar döküntü ve artralji SLE örüntüsünü destekler",
         "Bacaklarda hafif şişlik renal aktivite açısından uyarıcıdır",
         "Anti-dsDNA yüksekliği hastalık aktivitesini destekler",
         "C3 ve C4 düşüklüğü kompleman tüketimini gösterir"
@@ -38837,7 +38837,7 @@ export const cases = [
       },
       {
         "title": "Başvuru",
-        "text": "Fotosensitivite, malar döküntü ve artralji SLE paternini destekler."
+        "text": "Fotosensitivite, malar döküntü ve artralji SLE örüntüsünü destekler."
       }
     ]
   },
@@ -38852,7 +38852,7 @@ export const cases = [
       "Anti-PLA2R"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Nefrotik sendromda anti-PLA2R pozitifliğini ve membranöz paterni yorumlama",
+    "clinicalFocus": "Nefrotik sendromda anti-PLA2R pozitifliğini ve membranöz örüntüsü yorumlama",
     "demographics": "Erişkin hasta",
     "setting": "Nefroloji polikliniği",
     "chiefComplaint": "Klinik değerlendirme gerektiren başvuru",
@@ -38878,7 +38878,7 @@ export const cases = [
           "Kreatinin: 6.2 g/g kreatinin (referans <0.15 g/g kreatinin; yüksek)",
           "Serum albümin: 2.4 g/dL (referans 3.5–5.0 g/dL; düşük)",
           "Serum anti-PLA2R: Pozitif (referans Negatif; pozitif)",
-          "Biyopsi paterni: Kapiller duvar kalınlaşması ve granüler immün birikim (referans Normal glomerül yapısı; patolojik)"
+          "Biyopsi örüntüsü: Kapiller duvar kalınlaşması ve granüler immün birikim (referans Normal glomerül yapısı; patolojik)"
         ],
         "priority": "Essential",
         "subtype": "Histopatoloji ve otoantikor",
@@ -38902,7 +38902,7 @@ export const cases = [
             "Pozitif"
           ],
           [
-            "Biyopsi paterni",
+            "Biyopsi örüntüsü",
             "Kapiller duvar kalınlaşması ve granüler immün birikim",
             "Normal glomerül yapısı",
             "Patolojik"
@@ -38923,7 +38923,7 @@ export const cases = [
     ],
     "images": [],
     "questionType": "Diagnosis",
-    "question": "Nefrotik proteinüriyle birlikte bu biyopsi-seroloji paterni en çok hangi tanıyı destekler?",
+    "question": "Nefrotik proteinüriyle birlikte bu biyopsi-seroloji örüntüsü en çok hangi tanıyı destekler?",
     "spotPearl": "Primer membranöz nefropati markerı: anti-PLA2R.",
     "learningOutcome": "Ana ipucu erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "managementSequence": {
@@ -38943,7 +38943,7 @@ export const cases = [
         "Minimal değişiklik hastalığı",
         "Diyabetik nefropati"
       ],
-      "explanation": "Erişkinde nefrotik düzeyde proteinüri, membranöz glomerüler patern ve serum anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler. Bu nedenle en uygun seçim Primer membranöz nefropati olur.",
+      "explanation": "Erişkinde nefrotik düzeyde proteinüri, membranöz glomerüler örüntü ve serum anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler. Bu nedenle en uygun seçim Primer membranöz nefropati olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -38964,13 +38964,13 @@ export const cases = [
       "nextStep": "Nefrotik sendrom şiddetini ve böbrek fonksiyonunu değerlendir. Anti-PLA2R ve sekonder neden taramasını yap. Risk sınıfına göre destek tedavi ve immünsüpresyon gereğini planla.",
       "answerFeedback": {
         "correctDiagnosis": "Primer membranöz nefropati",
-        "diagnosisMeta": "Nefrotik sendromda anti-PLA2R pozitifliğini ve membranöz paterni yorumlama",
+        "diagnosisMeta": "Nefrotik sendromda anti-PLA2R pozitifliğini ve membranöz örüntüsü yorumlama",
         "shortDiagnosisMeta": "Tetkik veya Nefroloji",
-        "whyCorrect": "Erişkinde nefrotik düzeyde proteinüri, membranöz glomerüler patern ve serum anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler. Bu nedenle en uygun seçim Primer membranöz nefropati olur.",
+        "whyCorrect": "Erişkinde nefrotik düzeyde proteinüri, membranöz glomerüler örüntü ve serum anti-PLA2R pozitifliği primer membranöz nefropatiyi güçlü biçimde destekler. Bu nedenle en uygun seçim Primer membranöz nefropati olur.",
         "whyWrong": {
-          "Lupus nefriti": "Lupus nefriti ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
-          "Minimal değişiklik hastalığı": "Minimal değişiklik hastalığı ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
-          "Diyabetik nefropati": "Diyabetik nefropati ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır."
+          "Lupus nefriti": "Lupus nefriti ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
+          "Minimal değişiklik hastalığı": "Minimal değişiklik hastalığı ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
+          "Diyabetik nefropati": "Diyabetik nefropati ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Primer membranöz nefropati lehine yorumlanır."
         },
         "evidenceChain": [
           {
@@ -38979,7 +38979,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Biyopsi membranöz glomerüler patern gösterir."
+            "text": "Biyopsi membranöz glomerüler örüntü gösterir."
           },
           {
             "title": "Laboratuvar",
@@ -39006,9 +39006,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Minimal değişiklik hastalığında ışık mikroskopisi genellikle belirgin membranöz kalınlaşma göstermez.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Primer membranöz nefropati markerı",
@@ -39028,9 +39028,9 @@ export const cases = [
             "title": "Sınav incisi"
           },
           {
-            "label": "Mekanizma özeti",
+            "label": "Mekanizma notu",
             "text": "Minimal değişiklik hastalığında ışık mikroskopisi genellikle belirgin membranöz kalınlaşma göstermez.",
-            "title": "Mekanizma özeti"
+            "title": "Mekanizma notu"
           },
           {
             "label": "Primer membranöz nefropati markerı",
@@ -39040,27 +39040,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Lupus nefriti": {
-            "explanation": "Lupus nefriti ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
+            "explanation": "Lupus nefriti ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
             "comparisonPoints": [
               "Erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği.",
               "Nefrotik düzeyde proteinüri vardır.",
-              "Lupus nefriti yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Lupus nefriti yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Minimal değişiklik hastalığı": {
-            "explanation": "Minimal değişiklik hastalığı ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
+            "explanation": "Minimal değişiklik hastalığı ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
             "comparisonPoints": [
               "Erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği.",
               "Nefrotik düzeyde proteinüri vardır.",
-              "Minimal değişiklik hastalığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Minimal değişiklik hastalığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Diyabetik nefropati": {
-            "explanation": "Diyabetik nefropati ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik paterni bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
+            "explanation": "Diyabetik nefropati ayırıcı seçenek olarak düşünülebilir. Ancak olgudaki karar verdirici öykü, muayene ve objektif tetkik bulguları bu seçenekten çok Primer membranöz nefropati lehine yorumlanır.",
             "comparisonPoints": [
               "Erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği.",
               "Nefrotik düzeyde proteinüri vardır.",
-              "Diyabetik nefropati yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Diyabetik nefropati yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -39097,7 +39097,7 @@ export const cases = [
         "trap": "Diğer otoantikorları primer membranöz nefropati markerı sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
-      "question": "Nefrotik proteinüriyle birlikte bu biyopsi-seroloji paterni en çok hangi tanıyı destekler?"
+      "question": "Nefrotik proteinüriyle birlikte bu biyopsi-seroloji örüntüsü en çok hangi tanıyı destekler?"
     },
     "title": "Nefrotik düzeyde proteinüri",
     "patientIntro": {
@@ -39122,7 +39122,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Biyopsi membranöz glomerüler patern gösterir."
+        "text": "Biyopsi membranöz glomerüler örüntü gösterir."
       },
       {
         "title": "Laboratuvar",
@@ -39169,7 +39169,7 @@ export const cases = [
     "questionType": "Spot",
     "question": "Aşağıdaki bulgulardan hangisi diyabetik nefropati dışı etiyolojiyi daha güçlü düşündürür?",
     "spotPearl": "Diyabetik nefropati dışı ipuçları: aktif idrar sedimenti, makroskopik hematüri, hızlı GFR düşüşü, kısa diyabet süresi.",
-    "learningOutcome": "Ana ipucu diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı bilgisidir. Bu bilgi doğru sınav kararını destekler.",
+    "learningOutcome": "Ana ipucu diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -39205,16 +39205,16 @@ export const cases = [
           "title": "Klinik not"
         }
       ],
-      "nextStep": "İdrar sedimenti ve hematüri paternini değerlendir. Atipik bulgu varsa diyabet dışı böbrek hastalıklarını araştır. Gerektiğinde nefroloji ve böbrek biyopsisi değerlendirmesi planla.",
+      "nextStep": "İdrar sedimenti ve hematüri örüntüsünü değerlendir. Atipik bulgu varsa diyabet dışı böbrek hastalıklarını araştır. Gerektiğinde nefroloji ve böbrek biyopsisi değerlendirmesi planla.",
       "answerFeedback": {
         "correctDiagnosis": "Makroskopik hematüri",
         "diagnosisMeta": "Diyabetik nefropati dışında etiyoloji düşündüren makroskopik hematüri",
         "shortDiagnosisMeta": "TUS spot veya Nefroloji",
         "whyCorrect": "Diyabetik nefropati genellikle albuminüri ve yavaş ilerleyen böbrek fonksiyon kaybı ile seyreder. Makroskopik hematüri atipiktir ve diyabet dışı glomerüler veya ürolojik nedeni düşündürür. Diyabetik retinopati ve uzun süreli mikroalbüminüri diyabetik nefropatiyi destekler. Bu nedenle en uygun seçim Makroskopik hematüri olur.",
         "whyWrong": {
-          "Diyabetik retinopati varlığı": "Diyabetik retinopati varlığı benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen temel paternin önceliğini açıklamaz.",
-          "Önceden bilinen mikroalbüminüri": "Önceden bilinen mikroalbüminüri benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen temel paternin önceliğini açıklamaz.",
-          "Böbrek boyutlarının normal/artmış olması": "Böbrek boyutlarının normal veya artmış olması benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen temel paternin önceliğini açıklamaz."
+          "Diyabetik retinopati varlığı": "Diyabetik retinopati varlığı benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen belirleyici bulguları açıklamaz.",
+          "Önceden bilinen mikroalbüminüri": "Önceden bilinen mikroalbüminüri benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen belirleyici bulguları açıklamaz.",
+          "Böbrek boyutlarının normal/artmış olması": "Böbrek boyutlarının normal veya artmış olması benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -39235,7 +39235,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Diyabetik nefropati paterninde ilgili klinik tablo kırmızı bayrağı."
+            "text": "Diyabetik nefropati örüntüsünde ilgili klinik tablo kırmızı bayrağı."
           }
         ],
         "clinicalPearls": [
@@ -39274,34 +39274,34 @@ export const cases = [
         ],
         "differentialComparison": {
           "Diyabetik retinopati varlığı": {
-            "explanation": "Diyabetik retinopati varlığı benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Diyabetik retinopati varlığı benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
-              "Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı.",
+              "Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı.",
               "Uzun süreli diyabette albuminüri vardır.",
-              "Diyabetik retinopati varlığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Diyabetik retinopati varlığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Önceden bilinen mikroalbüminüri": {
-            "explanation": "Önceden bilinen mikroalbüminüri benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Önceden bilinen mikroalbüminüri benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
-              "Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı.",
+              "Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı.",
               "Uzun süreli diyabette albuminüri vardır.",
-              "Önceden bilinen mikroalbüminüri yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Önceden bilinen mikroalbüminüri yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Böbrek boyutlarının normal/artmış olması": {
-            "explanation": "Böbrek boyutlarının normal veya artmış olması benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Böbrek boyutlarının normal veya artmış olması benzer başlıklarda düşünülebilir. Ancak Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı bu olguda daha belirleyicidir. Bu seçenek Makroskopik hematüri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
-              "Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı.",
+              "Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı.",
               "Uzun süreli diyabette albuminüri vardır.",
-              "Böbrek boyutlarının normal veya artmış olması yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Böbrek boyutlarının normal veya artmış olması yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
         "managementSteps": [
           {
             "title": "İlk karar",
-            "text": "İdrar sedimenti ve hematüri paternini değerlendir."
+            "text": "İdrar sedimenti ve hematüri örüntüsünü değerlendir."
           },
           {
             "title": "Tedavi önceliği",
@@ -39315,7 +39315,7 @@ export const cases = [
         "management": [
           {
             "title": "İlk karar",
-            "text": "İdrar sedimenti ve hematüri paternini değerlendir."
+            "text": "İdrar sedimenti ve hematüri örüntüsünü değerlendir."
           },
           {
             "title": "Tedavi önceliği",
@@ -39326,8 +39326,8 @@ export const cases = [
             "text": "Gerektiğinde nefroloji ve böbrek biyopsisi değerlendirmesi planla."
           }
         ],
-        "learningOutcome": "Ana ipucu diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı bilgisidir. Bu bilgi doğru sınav kararını destekler.",
-        "spotClue": "Diyabetik nefropati paterninde makroskopik hematüri kırmızı bayrağı.",
+        "learningOutcome": "Ana ipucu diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı bilgisidir. Bu bilgi doğru sınav kararını destekler.",
+        "spotClue": "Diyabetik nefropati örüntüsünde makroskopik hematüri kırmızı bayrağı.",
         "trap": "Diyabette her böbrek bulgusunu otomatik diyabetik nefropati kabul etmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
@@ -39341,13 +39341,13 @@ export const cases = [
         "Diyabet veya metabolik dekompansasyon riski"
       ],
       "distinctiveClues": [
-        "Diyabetik nefropati paterninde ilgili klinik tablo kırmızı bayrağı",
+        "Diyabetik nefropati örüntüsünde ilgili klinik tablo kırmızı bayrağı",
         "Uzun süreli diyabette albuminüri vardır",
         "Böbrek fonksiyon bozukluğu yavaş ilerlemektedir",
         "Soru diyabet dışı etiyoloji kırmızı bayrağını sorar"
       ],
       "historySummary": "Uzun süreli diyabeti olan hastada albuminüri ve yavaş ilerleyen böbrek fonksiyon bozukluğu izlenmektedir. Hekim, diyabetik nefropati dışı bir etiyolojiyi düşündürecek kırmızı bayrak bulgusunu ayırt etmek ister.",
-      "priorityFocus": "Diyabetik nefropati paterninde ilgili klinik tablo kırmızı bayrağı klinik muhakemeyi yönlendiren temel bulgudur."
+      "priorityFocus": "Diyabetik nefropati örüntüsünde ilgili klinik tablo kırmızı bayrağı klinik muhakemeyi yönlendiren temel bulgudur."
     },
     "evidenceChain": [
       {
@@ -39368,7 +39368,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Diyabetik nefropati paterninde ilgili klinik tablo kırmızı bayrağı."
+        "text": "Diyabetik nefropati örüntüsünde ilgili klinik tablo kırmızı bayrağı."
       }
     ]
   },
@@ -39473,9 +39473,9 @@ export const cases = [
         "shortDiagnosisMeta": "Acil tedavi veya Nefroloji",
         "whyCorrect": "EKG değişikliği olan ağır hiperpotasemide ilk hedef kardiyak membranı stabilize etmektir. Bunun için IV kalsiyum glukonat verilir. İnsülin-dekstroz potasyumu hücre içine kaydırır ama membran stabilizasyonu sağlamaz. Bu nedenle en uygun seçim İntravenöz kalsiyum glukonat olur.",
         "whyWrong": {
-          "Hemodiyaliz": "Hemodiyaliz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
-          "İnsülin ve dekstroz": "İnsülin ve dekstroz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
-          "Sodyum polistiren sülfonat": "Sodyum polistiren sülfonat benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz."
+          "Hemodiyaliz": "Hemodiyaliz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen belirleyici bulguları açıklamaz.",
+          "İnsülin ve dekstroz": "İnsülin ve dekstroz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen belirleyici bulguları açıklamaz.",
+          "Sodyum polistiren sülfonat": "Sodyum polistiren sülfonat benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -39483,15 +39483,15 @@ export const cases = [
             "text": "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)."
           },
           {
-            "title": "EKG paterni",
+            "title": "EKG örüntüsü",
             "text": "EKG'de sivri T dalgaları ve P dalga basıklaşması vardır."
           },
           {
-            "title": "EKG paterni",
+            "title": "EKG örüntüsü",
             "text": "QRS genişlemesi kardiyak membran instabilitesini gösterir."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Kronik böbrek hastalığı hiperpotasemi riskini artırır."
           },
           {
@@ -39535,27 +39535,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Hemodiyaliz": {
-            "explanation": "Hemodiyaliz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hemodiyaliz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "K⁺ 7.",
               "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek).",
-              "Hemodiyaliz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hemodiyaliz yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İnsülin ve dekstroz": {
-            "explanation": "İnsülin ve dekstroz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İnsülin ve dekstroz benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "K⁺ 7.",
               "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek).",
-              "İnsülin ve dekstroz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İnsülin ve dekstroz yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Sodyum polistiren sülfonat": {
-            "explanation": "Sodyum polistiren sülfonat benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sodyum polistiren sülfonat benzer başlıklarda düşünülebilir. Ancak EKG'de sivri T dalgaları ve P dalga basıklaşması vardır bu olguda daha belirleyicidir. Bu seçenek İntravenöz kalsiyum glukonat için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "K⁺ 7.",
               "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek).",
-              "Sodyum polistiren sülfonat yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sodyum polistiren sülfonat yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -39616,15 +39616,15 @@ export const cases = [
         "text": "Potasyum: 7.1 mEq/L (referans 3.5–5.0 mEq/L; yüksek)."
       },
       {
-        "title": "EKG paterni",
+        "title": "EKG örüntüsü",
         "text": "EKG'de sivri T dalgaları ve P dalga basıklaşması vardır."
       },
       {
-        "title": "EKG paterni",
+        "title": "EKG örüntüsü",
         "text": "QRS genişlemesi kardiyak membran instabilitesini gösterir."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Kronik böbrek hastalığı hiperpotasemi riskini artırır."
       },
       {
@@ -39683,7 +39683,7 @@ export const cases = [
         "Lewy cisimcikli demans",
         "Vasküler demans"
       ],
-      "explanation": "Yaşlı hastada eş kaybı sonrası belirgin keyifsizlik, iştah azalması, ilgi kaybı ve unutkanlık geriatrik depresyon veya pseudodementia paternini düşündürür. Demansta ilerleyici kognitif yıkım baskındır. Depresyonda duygudurum belirtileri ve yakın başlangıç önemli ipuçlarıdır. Bu nedenle en uygun seçim Geriatrik depresyon olur.",
+      "explanation": "Yaşlı hastada eş kaybı sonrası belirgin keyifsizlik, iştah azalması, ilgi kaybı ve unutkanlık geriatrik depresyon veya pseudodementia örüntüsünü düşündürür. Demansta ilerleyici kognitif yıkım baskındır. Depresyonda duygudurum belirtileri ve yakın başlangıç önemli ipuçlarıdır. Bu nedenle en uygun seçim Geriatrik depresyon olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -39706,11 +39706,11 @@ export const cases = [
         "correctDiagnosis": "Geriatrik depresyon",
         "diagnosisMeta": "Geriatrik depresyonda motivasyon kaybı, psikomotor yavaşlama ve ipucuyla hatırlamanın korunması",
         "shortDiagnosisMeta": "Tanı veya Psikiyatri",
-        "whyCorrect": "Yaşlı hastada eş kaybı sonrası belirgin keyifsizlik, iştah azalması, ilgi kaybı ve unutkanlık geriatrik depresyon veya pseudodementia paternini düşündürür. Demansta ilerleyici kognitif yıkım baskındır. Depresyonda duygudurum belirtileri ve yakın başlangıç önemli ipuçlarıdır. Bu nedenle en uygun seçim Geriatrik depresyon olur.",
+        "whyCorrect": "Yaşlı hastada eş kaybı sonrası belirgin keyifsizlik, iştah azalması, ilgi kaybı ve unutkanlık geriatrik depresyon veya pseudodementia örüntüsünü düşündürür. Demansta ilerleyici kognitif yıkım baskındır. Depresyonda duygudurum belirtileri ve yakın başlangıç önemli ipuçlarıdır. Bu nedenle en uygun seçim Geriatrik depresyon olur.",
         "whyWrong": {
-          "Normal basınçlı hidrosefali": "Normal basınçlı hidrosefali benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen temel paternin önceliğini açıklamaz.",
-          "Lewy cisimcikli demans": "Lewy cisimcikli demans benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen temel paternin önceliğini açıklamaz.",
-          "Vasküler demans": "Vasküler demans benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen temel paternin önceliğini açıklamaz."
+          "Normal basınçlı hidrosefali": "Normal basınçlı hidrosefali benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen belirleyici bulguları açıklamaz.",
+          "Lewy cisimcikli demans": "Lewy cisimcikli demans benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen belirleyici bulguları açıklamaz.",
+          "Vasküler demans": "Vasküler demans benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -39770,27 +39770,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Normal basınçlı hidrosefali": {
-            "explanation": "Normal basınçlı hidrosefali benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Normal basınçlı hidrosefali benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık.",
               "Unutkanlık eş kaybından sonra artmıştır.",
-              "Normal basınçlı hidrosefali yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Normal basınçlı hidrosefali yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Lewy cisimcikli demans": {
-            "explanation": "Lewy cisimcikli demans benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Lewy cisimcikli demans benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık.",
               "Unutkanlık eş kaybından sonra artmıştır.",
-              "Lewy cisimcikli demans yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Lewy cisimcikli demans yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Vasküler demans": {
-            "explanation": "Vasküler demans benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Vasküler demans benzer başlıklarda düşünülebilir. Ancak Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bu olguda daha belirleyicidir. Bu seçenek Geriatrik depresyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık.",
               "Unutkanlık eş kaybından sonra artmıştır.",
-              "Vasküler demans yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Vasküler demans yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -39943,9 +39943,9 @@ export const cases = [
         "shortDiagnosisMeta": "Muayene odaklı veya Dermatoloji",
         "whyCorrect": "Önce tek büyük oval skuamlı \"herald patch\" çıkması, ardından gövde ve proksimal ekstremitelerde benzer döküntü gelişmesi pitriazis rozea için tipiktir. Sistemik toksisite ve mukozal erozyon olmaması TEN veya pemfigus gibi ağır tabloları geri plana iter. Bu nedenle en uygun seçim Pitriazis rozea olur.",
         "whyWrong": {
-          "Pemfigus vulgaris": "Pemfigus vulgaris benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen temel paternin önceliğini açıklamaz.",
-          "Toksik epidermal nekroliz": "Toksik epidermal nekroliz benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen temel paternin önceliğini açıklamaz.",
-          "Hidradenitis süpürativa": "Hidradenitis süpürativa benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen temel paternin önceliğini açıklamaz."
+          "Pemfigus vulgaris": "Pemfigus vulgaris benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen belirleyici bulguları açıklamaz.",
+          "Toksik epidermal nekroliz": "Toksik epidermal nekroliz benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen belirleyici bulguları açıklamaz.",
+          "Hidradenitis süpürativa": "Hidradenitis süpürativa benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -40001,27 +40001,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Pemfigus vulgaris": {
-            "explanation": "Pemfigus vulgaris benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Pemfigus vulgaris benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Önce tek madalyon plak, sonra gövde döküntüsü.",
               "İlk olarak gövdede tek büyük oval skuamlı plak çıkmıştır.",
-              "Pemfigus vulgaris yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Pemfigus vulgaris yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Toksik epidermal nekroliz": {
-            "explanation": "Toksik epidermal nekroliz benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Toksik epidermal nekroliz benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Önce tek madalyon plak, sonra gövde döküntüsü.",
               "İlk olarak gövdede tek büyük oval skuamlı plak çıkmıştır.",
-              "Toksik epidermal nekroliz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Toksik epidermal nekroliz yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hidradenitis süpürativa": {
-            "explanation": "Hidradenitis süpürativa benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hidradenitis süpürativa benzer başlıklarda düşünülebilir. Ancak Önce tek madalyon plak, sonra gövde döküntüsü bu olguda daha belirleyicidir. Bu seçenek Pitriazis rozea için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Önce tek madalyon plak, sonra gövde döküntüsü.",
               "İlk olarak gövdede tek büyük oval skuamlı plak çıkmıştır.",
-              "Hidradenitis süpürativa yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hidradenitis süpürativa yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -40128,15 +40128,15 @@ export const cases = [
         "id": "tus-spot-koh-hyphae",
         "label": "KOH mikroskopisi",
         "type": "Microbiology",
-        "summary": "Dallanan paternde septalı hifalar görülür.",
+        "summary": "Dallanan örüntüde septalı hifalar görülür.",
         "findings": [
-          "Dallanan paternde septalı hifalar görülür"
+          "Dallanan örüntüde septalı hifalar görülür"
         ],
         "priority": "Useful",
         "rows": [
           [
             "KOH mikroskopisi",
-            "Dallanan paternde septalı hifalar görülür",
+            "Dallanan örüntüde septalı hifalar görülür",
             "Beklenen veya karar eşiği",
             "Karar verdirici"
           ]
@@ -40190,9 +40190,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tedavi veya Dermatoloji",
         "whyCorrect": "Ayak parmak aralarında maserasyon ve plantar skuam tinea pedis veya dermatofit enfeksiyonu ile uyumludur. Uygun tedavi terbinafin gibi antifungaldir. Asiklovir HSV veya VZV, permetrin skabies veya pediküloz, mupirosin bakteriyel impetigo için düşünülür. Bu nedenle en uygun seçim Terbinafin olur.",
         "whyWrong": {
-          "Topikal asiklovir": "Topikal asiklovir benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen temel paternin önceliğini açıklamaz.",
-          "Topikal permetrin": "Topikal permetrin benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen temel paternin önceliğini açıklamaz.",
-          "Topikal mupirosin": "Topikal mupirosin benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen temel paternin önceliğini açıklamaz."
+          "Topikal asiklovir": "Topikal asiklovir benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen belirleyici bulguları açıklamaz.",
+          "Topikal permetrin": "Topikal permetrin benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen belirleyici bulguları açıklamaz.",
+          "Topikal mupirosin": "Topikal mupirosin benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -40248,27 +40248,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Topikal asiklovir": {
-            "explanation": "Topikal asiklovir benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Topikal asiklovir benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İnterdigital maserasyon ve plantar hiperkeratotik skuam.",
               "Parmak aralarında maserasyon vardır.",
-              "Topikal asiklovir yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Topikal asiklovir yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Topikal permetrin": {
-            "explanation": "Topikal permetrin benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Topikal permetrin benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İnterdigital maserasyon ve plantar hiperkeratotik skuam.",
               "Parmak aralarında maserasyon vardır.",
-              "Topikal permetrin yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Topikal permetrin yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Topikal mupirosin": {
-            "explanation": "Topikal mupirosin benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Topikal mupirosin benzer başlıklarda düşünülebilir. Ancak İnterdigital maserasyon ve plantar hiperkeratotik skuam bu olguda daha belirleyicidir. Bu seçenek Terbinafin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İnterdigital maserasyon ve plantar hiperkeratotik skuam.",
               "Parmak aralarında maserasyon vardır.",
-              "Topikal mupirosin yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Topikal mupirosin yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -40418,9 +40418,9 @@ export const cases = [
         "shortDiagnosisMeta": "Anatomi veya Nöroloji",
         "whyCorrect": "Motor defisitin bacakta koldan belirgin olması medial frontal-parasagittal korteks tutulumu ve anterior serebral arter enfarktını düşündürür. MCA daha çok yüz-kol baskın güçsüzlük ve afazi veya ihmal ile sorulur. Bu nedenle en uygun seçim Anterior serebral arter olur.",
         "whyWrong": {
-          "Orta serebral arter": "Orta serebral arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen temel paternin önceliğini açıklamaz.",
-          "Posterior serebral arter": "Posterior serebral arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen temel paternin önceliğini açıklamaz.",
-          "Baziler arter": "Baziler arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen temel paternin önceliğini açıklamaz."
+          "Orta serebral arter": "Orta serebral arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen belirleyici bulguları açıklamaz.",
+          "Posterior serebral arter": "Posterior serebral arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen belirleyici bulguları açıklamaz.",
+          "Baziler arter": "Baziler arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -40480,27 +40480,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Orta serebral arter": {
-            "explanation": "Orta serebral arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Orta serebral arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bacakta koldan belirgin motor defisit.",
               "Ani başlayan tek taraflı güç kaybı vasküler olayı düşündürür.",
-              "Orta serebral arter yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Orta serebral arter yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Posterior serebral arter": {
-            "explanation": "Posterior serebral arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Posterior serebral arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bacakta koldan belirgin motor defisit.",
               "Ani başlayan tek taraflı güç kaybı vasküler olayı düşündürür.",
-              "Posterior serebral arter yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Posterior serebral arter yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Baziler arter": {
-            "explanation": "Baziler arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Baziler arter benzer başlıklarda düşünülebilir. Ancak Bacakta koldan belirgin motor defisit bu olguda daha belirleyicidir. Bu seçenek Anterior serebral arter için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Bacakta koldan belirgin motor defisit.",
               "Ani başlayan tek taraflı güç kaybı vasküler olayı düşündürür.",
-              "Baziler arter yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Baziler arter yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -40653,9 +40653,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tanı veya Nöromüsküler",
         "whyCorrect": "Yumruk yaptıktan sonra parmakları açmada zorlanma miyotoni için tipiktir ve miyotonik distrofiye işaret eder. Miyotonik distrofi multisistemiktir. Frontal kellik, katarakt, iletim bozukluğu ve endokrin bulgular TUS ipuçlarıdır. Bu nedenle en uygun seçim Miyotonik distrofi olur.",
         "whyWrong": {
-          "Myastenia gravis": "Myastenia gravis benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen temel paternin önceliğini açıklamaz.",
-          "Lambert-Eaton sendromu": "Lambert-Eaton sendromu benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen temel paternin önceliğini açıklamaz.",
-          "Duchenne musküler distrofisi": "Duchenne musküler distrofisi benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen temel paternin önceliğini açıklamaz."
+          "Myastenia gravis": "Myastenia gravis benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen belirleyici bulguları açıklamaz.",
+          "Lambert-Eaton sendromu": "Lambert-Eaton sendromu benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen belirleyici bulguları açıklamaz.",
+          "Duchenne musküler distrofisi": "Duchenne musküler distrofisi benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -40668,7 +40668,7 @@ export const cases = [
           },
           {
             "title": "Başvuru",
-            "text": "Erişkin başlangıçlı distal güçsüzlük veya myotoni paternine uyar."
+            "text": "Erişkin başlangıçlı distal güçsüzlük veya myotoni örüntüsüne uyar."
           },
           {
             "title": "Destekleyen bulgu",
@@ -40711,27 +40711,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Myastenia gravis": {
-            "explanation": "Myastenia gravis benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Myastenia gravis benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı.",
               "Yumruk sonrası gevşeme gecikmesi miyotoni bulgusudur.",
-              "Myastenia gravis yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Myastenia gravis yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Lambert-Eaton sendromu": {
-            "explanation": "Lambert-Eaton sendromu benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Lambert-Eaton sendromu benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı.",
               "Yumruk sonrası gevşeme gecikmesi miyotoni bulgusudur.",
-              "Lambert-Eaton sendromu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Lambert-Eaton sendromu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Duchenne musküler distrofisi": {
-            "explanation": "Duchenne musküler distrofisi benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Duchenne musküler distrofisi benzer başlıklarda düşünülebilir. Ancak Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bu olguda daha belirleyicidir. Bu seçenek Miyotonik distrofi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı.",
               "Yumruk sonrası gevşeme gecikmesi miyotoni bulgusudur.",
-              "Duchenne musküler distrofisi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Duchenne musküler distrofisi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -40781,7 +40781,7 @@ export const cases = [
         "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı",
         "Yumruk sonrası gevşeme gecikmesi miyotoni bulgusudur",
         "Meksiletinle gevşeme güçlüğünün azalması miyotoniyi destekler",
-        "Erişkin başlangıçlı distal güçsüzlük ve myotoni paternine uyar"
+        "Erişkin başlangıçlı distal güçsüzlük ve myotoni örüntüsüne uyar"
       ],
       "historySummary": "Hasta yumruk yaptıktan sonra parmaklarını açmakta zorlanıyor. Meksiletin ile gevşeme güçlüğünün azaldığını söylüyor.",
       "priorityFocus": "Yumruk sonrası gevşemede güçlük, meksiletin yanıtı klinik muhakemeyi yönlendiren temel bulgudur."
@@ -40797,7 +40797,7 @@ export const cases = [
       },
       {
         "title": "Başvuru",
-        "text": "Erişkin başlangıçlı distal güçsüzlük veya myotoni paternine uyar."
+        "text": "Erişkin başlangıçlı distal güçsüzlük veya myotoni örüntüsüne uyar."
       },
       {
         "title": "Destekleyen bulgu",
@@ -40816,7 +40816,7 @@ export const cases = [
       "Asiklovir"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "HSV ensefalitinde ateş, kişilik değişikliği, fokal nöbet ve lenfositik BOS paterni",
+    "clinicalFocus": "HSV ensefalitinde ateş, kişilik değişikliği, fokal nöbet ve lenfositik BOS örüntüsü",
     "demographics": "32 yaşında kadın",
     "setting": "Acil servis",
     "chiefComplaint": "Baş ağrısı, yüksek ateş, kişilik değişikliği ve nöbet",
@@ -40837,15 +40837,15 @@ export const cases = [
         "id": "tus-spot-hsv-csf",
         "label": "BOS incelemesi",
         "type": "Csf",
-        "summary": "Protein: Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit paterni yok (referans 15–45 mg/dL; karar verdirici).",
+        "summary": "Protein: Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit örüntüsü yok (referans 15–45 mg/dL; karar verdirici).",
         "findings": [
-          "Protein: Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit paterni yok (referans 15–45 mg/dL; karar verdirici)"
+          "Protein: Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit örüntüsü yok (referans 15–45 mg/dL; karar verdirici)"
         ],
         "priority": "Useful",
         "rows": [
           [
             "Protein",
-            "Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit paterni yok",
+            "Hafif protein artışı ve lenfositik pleositoz, bakteriyel pürülan menenjit örüntüsü yok",
             "15–45 mg/dL",
             "Karar verdirici"
           ]
@@ -40856,7 +40856,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu hastada en olası etken hangisidir?",
     "spotPearl": "HSV ensefaliti: temporal lob, kişilik değişikliği, fokal nöbet.",
-    "learningOutcome": "Ana ipucu ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni bilgisidir. Bu bilgi doğru sınav kararını destekler.",
+    "learningOutcome": "Ana ipucu ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -40874,7 +40874,7 @@ export const cases = [
         "Polio virus",
         "Borrelia burgdorferi"
       ],
-      "explanation": "Ateş, baş ağrısı, davranış veya kişilik değişikliği, anlamsız konuşma ve fokal nöbet HSV ensefaliti için klasik patern oluşturur. Temporal lob tutulumu özellikle HSV-1 ile ilişkilidir. Tedavi şüphesi varsa asiklovir geciktirilmeden başlanır. Bu nedenle en uygun seçim Herpes simpleks virus olur.",
+      "explanation": "Ateş, baş ağrısı, davranış veya kişilik değişikliği, anlamsız konuşma ve fokal nöbet HSV ensefaliti için klasik örüntü oluşturur. Temporal lob tutulumu özellikle HSV-1 ile ilişkilidir. Tedavi şüphesi varsa asiklovir geciktirilmeden başlanır. Bu nedenle en uygun seçim Herpes simpleks virus olur.",
       "pearls": [
         {
           "label": "Sınav bilgisi",
@@ -40895,13 +40895,13 @@ export const cases = [
       "nextStep": "Acil nörolojik değerlendirme ve beyin görüntüleme veya BOS planla. HSV ensefaliti şüphesinde IV asikloviri geciktirmeden başlat. Nöbet kontrolü ve yoğun bakım gereksinimini değerlendir.",
       "answerFeedback": {
         "correctDiagnosis": "Herpes simpleks virus",
-        "diagnosisMeta": "HSV ensefalitinde ateş, kişilik değişikliği, fokal nöbet ve lenfositik BOS paterni",
+        "diagnosisMeta": "HSV ensefalitinde ateş, kişilik değişikliği, fokal nöbet ve lenfositik BOS örüntüsü",
         "shortDiagnosisMeta": "Mikrobiyoloji veya Nöroloji",
-        "whyCorrect": "Ateş, baş ağrısı, davranış veya kişilik değişikliği, anlamsız konuşma ve fokal nöbet HSV ensefaliti için klasik patern oluşturur. Temporal lob tutulumu özellikle HSV-1 ile ilişkilidir. Tedavi şüphesi varsa asiklovir geciktirilmeden başlanır. Bu nedenle en uygun seçim Herpes simpleks virus olur.",
+        "whyCorrect": "Ateş, baş ağrısı, davranış veya kişilik değişikliği, anlamsız konuşma ve fokal nöbet HSV ensefaliti için klasik örüntü oluşturur. Temporal lob tutulumu özellikle HSV-1 ile ilişkilidir. Tedavi şüphesi varsa asiklovir geciktirilmeden başlanır. Bu nedenle en uygun seçim Herpes simpleks virus olur.",
         "whyWrong": {
-          "Streptococcus pneumoniae": "Streptococcus pneumoniae benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen temel paternin önceliğini açıklamaz.",
-          "Polio virus": "Polio virus benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen temel paternin önceliğini açıklamaz.",
-          "Borrelia burgdorferi": "Borrelia burgdorferi benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen temel paternin önceliğini açıklamaz."
+          "Streptococcus pneumoniae": "Streptococcus pneumoniae benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen belirleyici bulguları açıklamaz.",
+          "Polio virus": "Polio virus benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen belirleyici bulguları açıklamaz.",
+          "Borrelia burgdorferi": "Borrelia burgdorferi benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -40918,11 +40918,11 @@ export const cases = [
           },
           {
             "title": "Laboratuvar",
-            "text": "BOS lenfositik patern bakteriyel pürülan menenjiti geri plana iter."
+            "text": "BOS lenfositik örüntü bakteriyel pürülan menenjiti geri plana iter."
           },
           {
             "title": "Başvuru",
-            "text": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum paterni."
+            "text": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum örüntüsü."
           }
         ],
         "clinicalPearls": [
@@ -40961,27 +40961,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Streptococcus pneumoniae": {
-            "explanation": "Streptococcus pneumoniae benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Streptococcus pneumoniae benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
-              "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni.",
+              "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü.",
               "Akut ateş ve baş ağrısı ensefalit tablosunu düşündürür.",
-              "Streptococcus pneumoniae yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Streptococcus pneumoniae yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Polio virus": {
-            "explanation": "Polio virus benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Polio virus benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
-              "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni.",
+              "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü.",
               "Akut ateş ve baş ağrısı ensefalit tablosunu düşündürür.",
-              "Polio virus yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Polio virus yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Borrelia burgdorferi": {
-            "explanation": "Borrelia burgdorferi benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Borrelia burgdorferi benzer başlıklarda düşünülebilir. Ancak Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü bu olguda daha belirleyicidir. Bu seçenek Herpes simpleks virus için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
-              "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni.",
+              "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü.",
               "Akut ateş ve baş ağrısı ensefalit tablosunu düşündürür.",
-              "Borrelia burgdorferi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Borrelia burgdorferi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -41013,8 +41013,8 @@ export const cases = [
             "text": "Nöbet kontrolü ve yoğun bakım gereksinimini değerlendir."
           }
         ],
-        "learningOutcome": "Ana ipucu ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni bilgisidir. Bu bilgi doğru sınav kararını destekler.",
-        "spotClue": "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum paterni.",
+        "learningOutcome": "Ana ipucu ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü bilgisidir. Bu bilgi doğru sınav kararını destekler.",
+        "spotClue": "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum örüntüsü.",
         "trap": "Bakteriyel menenjit veya diğer nörolojik etkenlere kayıp HSV ensefalitini atlamak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
@@ -41028,13 +41028,13 @@ export const cases = [
         "Enfeksiyon ve temas ve izolasyon bağlamı"
       ],
       "distinctiveClues": [
-        "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum paterni",
+        "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum örüntüsü",
         "Akut ateş ve baş ağrısı ensefalit tablosunu",
         "Davranış değişikliği ve anlamsız konuşma temporal ve frontal tutulum ipucudur",
         "Fokal motor nöbet HSV ensefalitinde sık görülür"
       ],
       "historySummary": "32 yaşındaki kadın hasta akut başlayan ateş, baş ağrısı, davranış değişikliği, anlamsız konuşma ve fokal motor nöbetlerle acile getirilir. Tablo ensefalit etkeni açısından acil değerlendirme gerektirir.",
-      "priorityFocus": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum paterni klinik muhakemeyi yönlendiren temel bulgudur."
+      "priorityFocus": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum örüntüsü klinik muhakemeyi yönlendiren temel bulgudur."
     },
     "evidenceChain": [
       {
@@ -41051,11 +41051,11 @@ export const cases = [
       },
       {
         "title": "Laboratuvar",
-        "text": "BOS lenfositik patern bakteriyel pürülan menenjiti geri plana iter."
+        "text": "BOS lenfositik örüntü bakteriyel pürülan menenjiti geri plana iter."
       },
       {
         "title": "Başvuru",
-        "text": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum paterni."
+        "text": "Ateş, kişilik değişikliği, fokal nöbet, temporal tutulum örüntüsü."
       }
     ]
   },
@@ -41135,9 +41135,9 @@ export const cases = [
         "shortDiagnosisMeta": "Psikiyatri veya Etik",
         "whyCorrect": "Kişinin kabul edemediği kendi kıskançlığını arkadaşının kendisini kıskandığı şeklinde dışarıya atfetmesi yansıtmadır. Yansıtmanın spot ipucu, kişinin kendi duygu veya dürtüsünü başkasına aitmiş gibi anlatmasıdır. Bu nedenle en uygun seçim Yansıtma olur.",
         "whyWrong": {
-          "Bastırma": "Bastırma benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen temel paternin önceliğini açıklamaz.",
-          "Yer değiştirme": "Yer değiştirme benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen temel paternin önceliğini açıklamaz.",
-          "Baskılama": "Baskılama benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen temel paternin önceliğini açıklamaz."
+          "Bastırma": "Bastırma benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen belirleyici bulguları açıklamaz.",
+          "Yer değiştirme": "Yer değiştirme benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen belirleyici bulguları açıklamaz.",
+          "Baskılama": "Baskılama benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -41193,27 +41193,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Bastırma": {
-            "explanation": "Bastırma benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Bastırma benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kendi kıskançlığını başkasına atfetme.",
               "Kişi kendi kıskançlığını kabul etmiyor.",
-              "Bastırma yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Bastırma yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Yer değiştirme": {
-            "explanation": "Yer değiştirme benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Yer değiştirme benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kendi kıskançlığını başkasına atfetme.",
               "Kişi kendi kıskançlığını kabul etmiyor.",
-              "Yer değiştirme yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Yer değiştirme yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Baskılama": {
-            "explanation": "Baskılama benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Baskılama benzer başlıklarda düşünülebilir. Ancak Kendi kıskançlığını başkasına atfetme bu olguda daha belirleyicidir. Bu seçenek Yansıtma için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kendi kıskançlığını başkasına atfetme.",
               "Kişi kendi kıskançlığını kabul etmiyor.",
-              "Baskılama yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Baskılama yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -41362,13 +41362,13 @@ export const cases = [
         "shortDiagnosisMeta": "Anatomi veya Nöropsikiyatri",
         "whyCorrect": "Alkol kullanım bozukluğu ve beslenme bozukluğu zemininde anterograd amnezi ve konfabulasyon Korsakoff sendromunu düşündürür. Tipik lezyon mamiller cisimler ve medial talamik yapılardır. Tiamin eksikliği temel mekanizmadır. Bu nedenle en uygun seçim Mamiller cisimler olur.",
         "whyWrong": {
-          "Oksipital korteks": "Oksipital korteks benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen temel paternin önceliğini açıklamaz.",
-          "İnsüler korteks": "İnsüler korteks benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen temel paternin önceliğini açıklamaz.",
-          "Gyrus angularis": "Gyrus angularis benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen temel paternin önceliğini açıklamaz."
+          "Oksipital korteks": "Oksipital korteks benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen belirleyici bulguları açıklamaz.",
+          "İnsüler korteks": "İnsüler korteks benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen belirleyici bulguları açıklamaz.",
+          "Gyrus angularis": "Gyrus angularis benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır."
           },
           {
@@ -41420,27 +41420,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Oksipital korteks": {
-            "explanation": "Oksipital korteks benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Oksipital korteks benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon.",
               "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır.",
-              "Oksipital korteks yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Oksipital korteks yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İnsüler korteks": {
-            "explanation": "İnsüler korteks benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İnsüler korteks benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon.",
               "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır.",
-              "İnsüler korteks yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İnsüler korteks yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Gyrus angularis": {
-            "explanation": "Gyrus angularis benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Gyrus angularis benzer başlıklarda düşünülebilir. Ancak Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bu olguda daha belirleyicidir. Bu seçenek Mamiller cisimler için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon.",
               "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır.",
-              "Gyrus angularis yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Gyrus angularis yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -41497,7 +41497,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Beslenme bozukluğu olan alkol kullanım bozukluğu hastasıdır."
       },
       {
@@ -41582,16 +41582,16 @@ export const cases = [
           "title": "Klinik not"
         }
       ],
-      "nextStep": "Klinik mekanik ağrı paternini değerlendir. Direkt grafide OA bulgularını beklenen veya beklenmeyen diye ayır. Kilo kontrolü, egzersiz ve analjezik basamaklarını planla.",
+      "nextStep": "Klinik mekanik ağrı örüntüsünü değerlendir. Direkt grafide OA bulgularını beklenen veya beklenmeyen diye ayır. Kilo kontrolü, egzersiz ve analjezik basamaklarını planla.",
       "answerFeedback": {
         "correctDiagnosis": "Periferik erozyon",
         "diagnosisMeta": "Osteoartritte osteofit, subkondral skleroz veya kist ve eklem aralığı daralması. Periferik erozyonun beklenmemesi",
         "shortDiagnosisMeta": "TUS spot veya Ortopedi",
         "whyCorrect": "Diz osteoartritinde beklenen grafi bulguları eklem aralığı daralması, osteofit, subkondral skleroz ve subkondral kisttir. Periferik erozyon inflamatuvar artritleri düşündürür ve OA için tipik değildir. Bu nedenle en uygun seçim Periferik erozyon olur.",
         "whyWrong": {
-          "Osteofit": "Osteofit benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen temel paternin önceliğini açıklamaz.",
-          "Subkondral skleroz": "Subkondral skleroz benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen temel paternin önceliğini açıklamaz.",
-          "Subkondral kist": "Subkondral kist benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen temel paternin önceliğini açıklamaz."
+          "Osteofit": "Osteofit benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen belirleyici bulguları açıklamaz.",
+          "Subkondral skleroz": "Subkondral skleroz benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen belirleyici bulguları açıklamaz.",
+          "Subkondral kist": "Subkondral kist benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -41651,34 +41651,34 @@ export const cases = [
         ],
         "differentialComparison": {
           "Osteofit": {
-            "explanation": "Osteofit benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Osteofit benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Osteoartrit grafi bulguları.",
               "Kronik mekanik diz ağrısı ve krepitasyon OA ile uyumludur.",
-              "Osteofit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Osteofit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Subkondral skleroz": {
-            "explanation": "Subkondral skleroz benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Subkondral skleroz benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Osteoartrit grafi bulguları.",
               "Kronik mekanik diz ağrısı ve krepitasyon OA ile uyumludur.",
-              "Subkondral skleroz yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Subkondral skleroz yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Subkondral kist": {
-            "explanation": "Subkondral kist benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Subkondral kist benzer başlıklarda düşünülebilir. Ancak Osteoartrit grafi bulguları bu olguda daha belirleyicidir. Bu seçenek Periferik erozyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Osteoartrit grafi bulguları.",
               "Kronik mekanik diz ağrısı ve krepitasyon OA ile uyumludur.",
-              "Subkondral kist yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Subkondral kist yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
         "managementSteps": [
           {
             "title": "İlk karar",
-            "text": "Klinik mekanik ağrı paternini değerlendir."
+            "text": "Klinik mekanik ağrı örüntüsünü değerlendir."
           },
           {
             "title": "Tedavi önceliği",
@@ -41692,7 +41692,7 @@ export const cases = [
         "management": [
           {
             "title": "İlk karar",
-            "text": "Klinik mekanik ağrı paternini değerlendir."
+            "text": "Klinik mekanik ağrı örüntüsünü değerlendir."
           },
           {
             "title": "Tedavi önceliği",
@@ -41826,9 +41826,9 @@ export const cases = [
         "shortDiagnosisMeta": "Muayene odaklı veya Ortopedi",
         "whyCorrect": "Anterior omuz ağrısının dirsek fleksiyonu ve supinasyonla artması biseps uzun baş tendiniti için tipiktir. Speed ve Yergason testleri bu tendonu provoke eder. Rotator cuff yırtığında abduksiyon güçsüzlüğü. Bu nedenle en uygun seçim Biseps tendiniti olur.",
         "whyWrong": {
-          "Rotator cuff yırtığı": "Rotator cuff yırtığı benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen temel paternin önceliğini açıklamaz.",
-          "Servikal radikülopati": "Servikal radikülopati benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen temel paternin önceliğini açıklamaz.",
-          "Lateral epikondilit": "Lateral epikondilit benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen temel paternin önceliğini açıklamaz."
+          "Rotator cuff yırtığı": "Rotator cuff yırtığı benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen belirleyici bulguları açıklamaz.",
+          "Servikal radikülopati": "Servikal radikülopati benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen belirleyici bulguları açıklamaz.",
+          "Lateral epikondilit": "Lateral epikondilit benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -41888,27 +41888,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Rotator cuff yırtığı": {
-            "explanation": "Rotator cuff yırtığı benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Rotator cuff yırtığı benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason.",
               "Cirit sporu tekrarlayan omuz yüklenmesi oluşturur.",
-              "Rotator cuff yırtığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Rotator cuff yırtığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Servikal radikülopati": {
-            "explanation": "Servikal radikülopati benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Servikal radikülopati benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason.",
               "Cirit sporu tekrarlayan omuz yüklenmesi oluşturur.",
-              "Servikal radikülopati yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Servikal radikülopati yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Lateral epikondilit": {
-            "explanation": "Lateral epikondilit benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Lateral epikondilit benzer başlıklarda düşünülebilir. Ancak Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bu olguda daha belirleyicidir. Bu seçenek Biseps tendiniti için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason.",
               "Cirit sporu tekrarlayan omuz yüklenmesi oluşturur.",
-              "Lateral epikondilit yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Lateral epikondilit yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -42062,9 +42062,9 @@ export const cases = [
         "shortDiagnosisMeta": "Enfeksiyon kontrolü",
         "whyCorrect": "Aktif akciğer tüberkülozu hava yolu ile bulaşır. Hasta ile temas sırasında N95 maske ve hava yolu izolasyonu gerekir. Cerrahi maske standart veya damlacık önlem için yeterli değildir. Bu nedenle en uygun seçim N95 maske ile hava yolu izolasyonu olur.",
         "whyWrong": {
-          "Sadece standart cerrahi maske": "Sadece standart cerrahi maske benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen temel paternin önceliğini açıklamaz.",
-          "Temas izolasyonu": "Temas izolasyonu benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen temel paternin önceliğini açıklamaz.",
-          "Damlacık izolasyonu": "Damlacık izolasyonu benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen temel paternin önceliğini açıklamaz."
+          "Sadece standart cerrahi maske": "Sadece standart cerrahi maske benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen belirleyici bulguları açıklamaz.",
+          "Temas izolasyonu": "Temas izolasyonu benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen belirleyici bulguları açıklamaz.",
+          "Damlacık izolasyonu": "Damlacık izolasyonu benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -42124,27 +42124,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Sadece standart cerrahi maske": {
-            "explanation": "Sadece standart cerrahi maske benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Sadece standart cerrahi maske benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Aktif akciğer TB şüphesi veya ARB pozitif balgam.",
               "Öksürük, gece terlemesi ve kilo kaybı aktif TB düşündürür.",
-              "Sadece standart cerrahi maske yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Sadece standart cerrahi maske yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Temas izolasyonu": {
-            "explanation": "Temas izolasyonu benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Temas izolasyonu benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Aktif akciğer TB şüphesi veya ARB pozitif balgam.",
               "Öksürük, gece terlemesi ve kilo kaybı aktif TB düşündürür.",
-              "Temas izolasyonu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Temas izolasyonu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Damlacık izolasyonu": {
-            "explanation": "Damlacık izolasyonu benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Damlacık izolasyonu benzer başlıklarda düşünülebilir. Ancak Aktif akciğer TB şüphesi veya ARB pozitif balgam bu olguda daha belirleyicidir. Bu seçenek N95 maske ile hava yolu izolasyonu için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Aktif akciğer TB şüphesi veya ARB pozitif balgam.",
               "Öksürük, gece terlemesi ve kilo kaybı aktif TB düşündürür.",
-              "Damlacık izolasyonu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Damlacık izolasyonu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -42317,9 +42317,9 @@ export const cases = [
         "shortDiagnosisMeta": "Acil karar veya Nöroloji",
         "whyCorrect": "Baş travması sonrası kısa süreli dikkat-konsantrasyon bozukluğu, amnezi, baş ağrısı ve bulanık görme serebral konküzyonla uyumludur. Konküzyonda yapısal lezyon olmayabileceği için BT normal olabilir. Subdural kanama veya kontüzyonda görüntüleme bulgusu beklenir. Bu nedenle en uygun seçim Serebral konküzyon olur.",
         "whyWrong": {
-          "Akut subdural kanama": "Akut subdural kanama benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen temel paternin önceliğini açıklamaz.",
-          "Serebral kontüzyon": "Serebral kontüzyon benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen temel paternin önceliğini açıklamaz.",
-          "Subaraknoid kanama": "Subaraknoid kanama benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen temel paternin önceliğini açıklamaz."
+          "Akut subdural kanama": "Akut subdural kanama benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen belirleyici bulguları açıklamaz.",
+          "Serebral kontüzyon": "Serebral kontüzyon benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen belirleyici bulguları açıklamaz.",
+          "Subaraknoid kanama": "Subaraknoid kanama benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -42379,27 +42379,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Akut subdural kanama": {
-            "explanation": "Akut subdural kanama benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Akut subdural kanama benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir.",
               "Başına darbe sonrası nörolojik yakınmalar başlamıştır.",
-              "Akut subdural kanama yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Akut subdural kanama yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Serebral kontüzyon": {
-            "explanation": "Serebral kontüzyon benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Serebral kontüzyon benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir.",
               "Başına darbe sonrası nörolojik yakınmalar başlamıştır.",
-              "Serebral kontüzyon yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Serebral kontüzyon yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Subaraknoid kanama": {
-            "explanation": "Subaraknoid kanama benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Subaraknoid kanama benzer başlıklarda düşünülebilir. Ancak Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bu olguda daha belirleyicidir. Bu seçenek Serebral konküzyon için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir.",
               "Başına darbe sonrası nörolojik yakınmalar başlamıştır.",
-              "Subaraknoid kanama yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Subaraknoid kanama yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -42579,9 +42579,9 @@ export const cases = [
         "shortDiagnosisMeta": "Pediatri veya Dermatoloji",
         "whyCorrect": "Term ve iyi görünen yenidoğanda doğumdan kısa süre sonra gelişen sarı-beyaz papülopüstüller ve kısa sürede gerileme eritema toksikum için tipiktir. Yaymada eozinofiller görülebilir. Tedavi gerekmez, aileye benign seyir anlatılır. Bu nedenle en uygun seçim Eritema toksikum olur.",
         "whyWrong": {
-          "Neonatal akne": "Neonatal akne benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen temel paternin önceliğini açıklamaz.",
-          "Miliaria rubra": "Miliaria rubra benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen temel paternin önceliğini açıklamaz.",
-          "İnfantil akropüstülozis": "İnfantil akropüstülozis benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen temel paternin önceliğini açıklamaz."
+          "Neonatal akne": "Neonatal akne benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen belirleyici bulguları açıklamaz.",
+          "Miliaria rubra": "Miliaria rubra benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen belirleyici bulguları açıklamaz.",
+          "İnfantil akropüstülozis": "İnfantil akropüstülozis benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -42641,27 +42641,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Neonatal akne": {
-            "explanation": "Neonatal akne benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Neonatal akne benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İyi görünen term yenidoğanda geçici papülopüstüller.",
               "Term yenidoğanda doğumdan kısa süre sonra döküntü başlamıştır.",
-              "Neonatal akne yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Neonatal akne yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Miliaria rubra": {
-            "explanation": "Miliaria rubra benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Miliaria rubra benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İyi görünen term yenidoğanda geçici papülopüstüller.",
               "Term yenidoğanda doğumdan kısa süre sonra döküntü başlamıştır.",
-              "Miliaria rubra yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Miliaria rubra yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İnfantil akropüstülozis": {
-            "explanation": "İnfantil akropüstülozis benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İnfantil akropüstülozis benzer başlıklarda düşünülebilir. Ancak İyi görünen term yenidoğanda geçici papülopüstüller bu olguda daha belirleyicidir. Bu seçenek Eritema toksikum için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "İyi görünen term yenidoğanda geçici papülopüstüller.",
               "Term yenidoğanda doğumdan kısa süre sonra döküntü başlamıştır.",
-              "İnfantil akropüstülozis yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İnfantil akropüstülozis yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -42751,7 +42751,7 @@ export const cases = [
       "Anti-HAV IgM"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Akut hepatit serolojisinde IgM paternini yorumlama",
+    "clinicalFocus": "Akut hepatit serolojisinde IgM örüntüsünü yorumlama",
     "demographics": "10 yaşında kız çocuk",
     "setting": "Çocuk acil",
     "chiefComplaint": "Halsizlik, kusma, koyu idrar ve sarılık",
@@ -42816,7 +42816,7 @@ export const cases = [
     ],
     "images": [],
     "questionType": "Diagnosis",
-    "question": "Bu serolojik paternin en doğru yorumu hangisidir?",
+    "question": "Bu serolojik örüntüsün en doğru yorumu hangisidir?",
     "spotPearl": "Akut HAV tanısı: anti-HAV IgM.",
     "learningOutcome": "Ana ipucu kamp sonrası akut hepatit ve koyu idrar veya sarılık bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "managementSequence": {
@@ -42857,13 +42857,13 @@ export const cases = [
       "nextStep": "Karaciğer enzimleri, bilirubin ve koagülasyon durumunu değerlendir. Anti-HAV IgM ile akut HAV'ı doğrula. Destek tedavisi, hijyen veya bulaş önlemleri ve fulminan hepatit uyarılarını izle.",
       "answerFeedback": {
         "correctDiagnosis": "Akut hepatit A enfeksiyonu",
-        "diagnosisMeta": "Akut hepatit serolojisinde IgM paternini yorumlama",
+        "diagnosisMeta": "Akut hepatit serolojisinde IgM örüntüsünü yorumlama",
         "shortDiagnosisMeta": "Tetkik veya Pediatri",
         "whyCorrect": "Akut hepatit kliniğinde Anti-HAV IgM pozitifliği ve HBV veya HCV göstergelerinin negatif olması en güçlü biçimde akut hepatit A enfeksiyonunu destekler. Yalnız Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı düşündürürdü. Bu nedenle en uygun seçim Akut hepatit A enfeksiyonu olur.",
         "whyWrong": {
           "Geçirilmiş hepatit A bağışıklığı": "Geçirilmiş enfeksiyon veya aşı bağışıklığında Anti-HAV IgG baskındır. IgM pozitifliği akut dönem lehinedir. Ancak bu vakada kamp sonrası akut hepatit ve koyu idrar veya sarılık.",
           "Akut hepatit B enfeksiyonu": "Akut HBV için HBsAg ve anti-HBc IgM pozitifliği beklenir. Bu panelde HBV göstergeleri negatif verilmiştir. Ancak bu vakada kamp sonrası akut hepatit ve koyu idrar veya sarılık.",
-          "Akut hepatit C enfeksiyonu": "Akut HCV değerlendirmesinde HCV RNA veya anti-HCV paterni önemlidir. HAV IgM pozitifliği bu seçenekten daha spesifiktir. Ancak bu vakada kamp sonrası akut hepatit ve koyu idrar veya sarılık."
+          "Akut hepatit C enfeksiyonu": "Akut HCV değerlendirmesinde HCV RNA veya anti-HCV örüntüsü önemlidir. HAV IgM pozitifliği bu seçenekten daha spesifiktir. Ancak bu vakada kamp sonrası akut hepatit ve koyu idrar veya sarılık."
         },
         "evidenceChain": [
           {
@@ -42937,7 +42937,7 @@ export const cases = [
             "comparisonPoints": [
               "Kamp sonrası akut hepatit ve koyu idrar veya sarılık.",
               "Kamp sonrası halsizlik, kusma, koyu idrar ve ikter akut hepatit bağlamı oluşturur.",
-              "Geçirilmiş hepatit A bağışıklığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Geçirilmiş hepatit A bağışıklığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Akut hepatit B enfeksiyonu": {
@@ -42945,15 +42945,15 @@ export const cases = [
             "comparisonPoints": [
               "Kamp sonrası akut hepatit ve koyu idrar veya sarılık.",
               "Kamp sonrası halsizlik, kusma, koyu idrar ve ikter akut hepatit bağlamı oluşturur.",
-              "Akut hepatit B enfeksiyonu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Akut hepatit B enfeksiyonu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Akut hepatit C enfeksiyonu": {
-            "explanation": "Akut HCV değerlendirmesinde HCV RNA veya anti-HCV paterni önemlidir. HAV IgM pozitifliği bu seçenekten daha spesifiktir. Ancak bu vakada kamp sonrası akut hepatit ve koyu idrar veya sarılık.",
+            "explanation": "Akut HCV değerlendirmesinde HCV RNA veya anti-HCV örüntüsü önemlidir. HAV IgM pozitifliği bu seçenekten daha spesifiktir. Ancak bu vakada kamp sonrası akut hepatit ve koyu idrar veya sarılık.",
             "comparisonPoints": [
               "Kamp sonrası akut hepatit ve koyu idrar veya sarılık.",
               "Kamp sonrası halsizlik, kusma, koyu idrar ve ikter akut hepatit bağlamı oluşturur.",
-              "Akut hepatit C enfeksiyonu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Akut hepatit C enfeksiyonu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -42990,7 +42990,7 @@ export const cases = [
         "trap": "Hemoliz testlerini hepatit serolojisi yerine seçmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
-      "question": "Bu serolojik paternin en doğru yorumu hangisidir?"
+      "question": "Bu serolojik örüntüsün en doğru yorumu hangisidir?"
     },
     "title": "Halsizlik, kusma, koyu idrar ve sarılık",
     "patientIntro": {
@@ -43006,7 +43006,7 @@ export const cases = [
         "Kusma ve halsizlik akut viral hepatit prodromuyla uyumludur"
       ],
       "historySummary": "Yaz kampından birkaç hafta sonra halsizlik, kusma, koyu idrar ve ikter gelişen çocukta akut hepatit düşünülüyor.",
-      "priorityFocus": "Kamp sonrası gelişen sarılıkta hepatit serolojisi paneli tanıdan çok patern yorumlaması gerektirir."
+      "priorityFocus": "Kamp sonrası gelişen sarılıkta hepatit serolojisi paneli tanıdan çok örüntü yorumlaması gerektirir."
     },
     "evidenceChain": [
       {
@@ -43133,13 +43133,13 @@ export const cases = [
         "shortDiagnosisMeta": "Temel bilim veya Pediatri",
         "whyCorrect": "Sensorinöral işitme kaybı, diyabet ve ağır makrositer veya megaloblastik anemi triadı tiamin-duyarlı megaloblastik anemi sendromunu düşündürür. Temel sorun tiamin taşıma bozukluğudur. TUS'ta cevap tiamin olarak yakalanır. Bu nedenle en uygun seçim Tiamin olur.",
         "whyWrong": {
-          "Piridoksin": "Piridoksin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen temel paternin önceliğini açıklamaz.",
-          "Riboflavin": "Riboflavin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen temel paternin önceliğini açıklamaz.",
-          "Niasin": "Niasin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen temel paternin önceliğini açıklamaz."
+          "Piridoksin": "Piridoksin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen belirleyici bulguları açıklamaz.",
+          "Riboflavin": "Riboflavin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen belirleyici bulguları açıklamaz.",
+          "Niasin": "Niasin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Akraba ebeveyn öyküsü kalıtsal hastalık olasılığını artırır."
           },
           {
@@ -43147,11 +43147,11 @@ export const cases = [
             "text": "Sensorinöral işitme kaybı ve diyabet birlikte izlenir."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Ağır makrositer anemi megaloblastik süreci düşündürür."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Triad tiamin-duyarlı megaloblastik anemiye uyar."
           },
           {
@@ -43195,27 +43195,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Piridoksin": {
-            "explanation": "Piridoksin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Piridoksin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi.",
               "Akraba ebeveyn öyküsü kalıtsal hastalık olasılığını artırır.",
-              "Piridoksin yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Piridoksin yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Riboflavin": {
-            "explanation": "Riboflavin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Riboflavin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi.",
               "Akraba ebeveyn öyküsü kalıtsal hastalık olasılığını artırır.",
-              "Riboflavin yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Riboflavin yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Niasin": {
-            "explanation": "Niasin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Niasin benzer başlıklarda düşünülebilir. Ancak Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bu olguda daha belirleyicidir. Bu seçenek Tiamin için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi.",
               "Akraba ebeveyn öyküsü kalıtsal hastalık olasılığını artırır.",
-              "Niasin yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Niasin yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -43273,7 +43273,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Akraba ebeveyn öyküsü kalıtsal hastalık olasılığını artırır."
       },
       {
@@ -43281,11 +43281,11 @@ export const cases = [
         "text": "Sensorinöral işitme kaybı ve diyabet birlikte izlenir."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Ağır makrositer anemi megaloblastik süreci düşündürür."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Triad tiamin-duyarlı megaloblastik anemiye uyar."
       },
       {
@@ -43370,9 +43370,9 @@ export const cases = [
         "shortDiagnosisMeta": "Temel bilim veya Nöroloji",
         "whyCorrect": "X'e bağlı adrenolökodistrofi peroksizomal çok uzun zincirli yağ asidi yıkım bozukluğudur. Adrenal yetmezlik ve ilerleyici beyaz cevher hastalığı yapar. Bu nedenle \"ilerleyici gri cevher hastalığıdır\" ifadesi yanlıştır. Bu nedenle en uygun seçim İlerleyici gri cevher hastalığıdır olur.",
         "whyWrong": {
-          "Plazmada çok uzun zincirli yağ asitleri yüksektir": "Plazmada çok uzun zincirli yağ asitleri yüksektir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen temel paternin önceliğini açıklamaz.",
-          "İzole adrenal yetmezlikle seyredebilir": "İzole adrenal yetmezlikle seyredebilir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen temel paternin önceliğini açıklamaz.",
-          "MR lezyonları posterior bölgelerde görülebilir": "MR lezyonları posterior bölgelerde görülebilir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen temel paternin önceliğini açıklamaz."
+          "Plazmada çok uzun zincirli yağ asitleri yüksektir": "Plazmada çok uzun zincirli yağ asitleri yüksektir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen belirleyici bulguları açıklamaz.",
+          "İzole adrenal yetmezlikle seyredebilir": "İzole adrenal yetmezlikle seyredebilir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen belirleyici bulguları açıklamaz.",
+          "MR lezyonları posterior bölgelerde görülebilir": "MR lezyonları posterior bölgelerde görülebilir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -43380,7 +43380,7 @@ export const cases = [
             "text": "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Cilt hiperpigmentasyonu adrenal yetmezliği düşündürür."
           },
           {
@@ -43432,27 +43432,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Plazmada çok uzun zincirli yağ asitleri yüksektir": {
-            "explanation": "Plazmada çok uzun zincirli yağ asitleri yüksektir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Plazmada çok uzun zincirli yağ asitleri yüksektir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu.",
               "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır.",
-              "Plazmada çok uzun zincirli yağ asitleri yüksektir yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Plazmada çok uzun zincirli yağ asitleri yüksektir yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "İzole adrenal yetmezlikle seyredebilir": {
-            "explanation": "İzole adrenal yetmezlikle seyredebilir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "İzole adrenal yetmezlikle seyredebilir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu.",
               "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır.",
-              "İzole adrenal yetmezlikle seyredebilir yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "İzole adrenal yetmezlikle seyredebilir yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "MR lezyonları posterior bölgelerde görülebilir": {
-            "explanation": "MR lezyonları posterior bölgelerde görülebilir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "MR lezyonları posterior bölgelerde görülebilir benzer başlıklarda düşünülebilir. Ancak Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bu olguda daha belirleyicidir. Bu seçenek İlerleyici gri cevher hastalığıdır için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu.",
               "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır.",
-              "MR lezyonları posterior bölgelerde görülebilir yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "MR lezyonları posterior bölgelerde görülebilir yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -43513,7 +43513,7 @@ export const cases = [
         "text": "Erkek çocukta okul başarısında gerileme ve davranış değişikliği vardır."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Cilt hiperpigmentasyonu adrenal yetmezliği düşündürür."
       },
       {
@@ -43616,9 +43616,9 @@ export const cases = [
         "shortDiagnosisMeta": "Tanı veya Endokrinoloji",
         "whyCorrect": "Kronik mukokutanöz kandidiyazis, otoimmün hipoparatiroidi ve Addison hastalığı birlikteliği APECED veya otoimmün poliglandüler sendrom tip 1 için klasiktir. AIRE mutasyonu ile ilişkilidir ve TUS'ta \"tip 1 otoimmün endokrinopati\" olarak sorulabilir. Bu nedenle en uygun seçim Tip 1 otoimmün endokrinopati olur.",
         "whyWrong": {
-          "Turner sendromu": "Turner sendromu benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen temel paternin önceliğini açıklamaz.",
-          "Kallmann sendromu": "Kallmann sendromu benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen temel paternin önceliğini açıklamaz.",
-          "Çölyak hastalığı": "Çölyak hastalığı benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen temel paternin önceliğini açıklamaz."
+          "Turner sendromu": "Turner sendromu benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen belirleyici bulguları açıklamaz.",
+          "Kallmann sendromu": "Kallmann sendromu benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen belirleyici bulguları açıklamaz.",
+          "Çölyak hastalığı": "Çölyak hastalığı benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -43626,7 +43626,7 @@ export const cases = [
             "text": "Kronik kandidiyal ağız lezyonları vardır."
           },
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Mukozal hiperpigmentasyon Addison olasılığını artırır."
           },
           {
@@ -43635,7 +43635,7 @@ export const cases = [
           },
           {
             "title": "Destekleyen bulgu",
-            "text": "Kandidiyazis ve endokrin otoimmünite APECED paternidir."
+            "text": "Kandidiyazis ve endokrin otoimmünite APECED örüntüsüdir."
           },
           {
             "title": "Destekleyen bulgu",
@@ -43678,27 +43678,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Turner sendromu": {
-            "explanation": "Turner sendromu benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Turner sendromu benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları.",
               "Kronik kandidiyal ağız lezyonları vardır.",
-              "Turner sendromu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Turner sendromu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Kallmann sendromu": {
-            "explanation": "Kallmann sendromu benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Kallmann sendromu benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları.",
               "Kronik kandidiyal ağız lezyonları vardır.",
-              "Kallmann sendromu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Kallmann sendromu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Çölyak hastalığı": {
-            "explanation": "Çölyak hastalığı benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Çölyak hastalığı benzer başlıklarda düşünülebilir. Ancak Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bu olguda daha belirleyicidir. Bu seçenek Tip 1 otoimmün endokrinopati için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları.",
               "Kronik kandidiyal ağız lezyonları vardır.",
-              "Çölyak hastalığı yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Çölyak hastalığı yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -43759,7 +43759,7 @@ export const cases = [
         "text": "Kronik kandidiyal ağız lezyonları vardır."
       },
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Mukozal hiperpigmentasyon Addison olasılığını artırır."
       },
       {
@@ -43768,7 +43768,7 @@ export const cases = [
       },
       {
         "title": "Destekleyen bulgu",
-        "text": "Kandidiyazis ve endokrin otoimmünite APECED paternidir."
+        "text": "Kandidiyazis ve endokrin otoimmünite APECED örüntüsüdir."
       },
       {
         "title": "Destekleyen bulgu",
@@ -43852,13 +43852,13 @@ export const cases = [
         "shortDiagnosisMeta": "Tıbbi Biyokimya veya Pediatri",
         "whyCorrect": "Uzun boy-ince parmaklar ve lens patolojisi Marfan'ı düşündürebilir. Ancak çocukta akut hemiparezi veya tromboz eğilimi klasik homosistinüri için güçlü ipucudur. Klasik homosistinüri sistationin beta-sentaz bozukluğu ile ilişkilidir. Bu nedenle en uygun seçim Klasik homosistinüri olur.",
         "whyWrong": {
-          "Fenilketonüri": "Fenilketonüri benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen temel paternin önceliğini açıklamaz.",
-          "Hurler sendromu": "Hurler sendromu benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen temel paternin önceliğini açıklamaz.",
-          "Gaucher sendromu": "Gaucher sendromu benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen temel paternin önceliğini açıklamaz."
+          "Fenilketonüri": "Fenilketonüri benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen belirleyici bulguları açıklamaz.",
+          "Hurler sendromu": "Hurler sendromu benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen belirleyici bulguları açıklamaz.",
+          "Gaucher sendromu": "Gaucher sendromu benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
-            "title": "Laboratuvar paterni",
+            "title": "Görüntüleme",
             "text": "Akrabalık öyküsü otozomal resesif metabolik hastalık olasılığını artırır."
           },
           {
@@ -43914,27 +43914,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Fenilketonüri": {
-            "explanation": "Fenilketonüri benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Fenilketonüri benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme.",
               "Akrabalık öyküsü otozomal resesif metabolik hastalık olasılığını artırır.",
-              "Fenilketonüri yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Fenilketonüri yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hurler sendromu": {
-            "explanation": "Hurler sendromu benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hurler sendromu benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme.",
               "Akrabalık öyküsü otozomal resesif metabolik hastalık olasılığını artırır.",
-              "Hurler sendromu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hurler sendromu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Gaucher sendromu": {
-            "explanation": "Gaucher sendromu benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Gaucher sendromu benzer başlıklarda düşünülebilir. Ancak Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bu olguda daha belirleyicidir. Bu seçenek Klasik homosistinüri için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme.",
               "Akrabalık öyküsü otozomal resesif metabolik hastalık olasılığını artırır.",
-              "Gaucher sendromu yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Gaucher sendromu yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -43991,7 +43991,7 @@ export const cases = [
     },
     "evidenceChain": [
       {
-        "title": "Laboratuvar paterni",
+        "title": "Görüntüleme",
         "text": "Akrabalık öyküsü otozomal resesif metabolik hastalık olasılığını artırır."
       },
       {
@@ -44023,7 +44023,7 @@ export const cases = [
       "Kleihauer-Betke"
     ],
     "difficulty": "TUS Spot · Orta",
-    "clinicalFocus": "Ağır neonatal anemide hemolizsiz kan kaybı paternini yorumlama",
+    "clinicalFocus": "Ağır neonatal anemide hemolizsiz kan kaybı örüntüsünü yorumlama",
     "demographics": "Term yenidoğan",
     "setting": "Yenidoğan servisi",
     "chiefComplaint": "Doğumda solukluk ve ağır anemi",
@@ -44107,7 +44107,7 @@ export const cases = [
     ],
     "images": [],
     "questionType": "Diagnosis",
-    "question": "Bu neonatal anemi paterninin en doğru yorumu hangisidir?",
+    "question": "Bu neonatal anemi örüntüsünün en doğru yorumu hangisidir?",
     "spotPearl": "Fetomaternal hemoraji tanısı: Kleihauer-Betke testi.",
     "learningOutcome": "Ana ipucu yenidoğanda ağır anemi ve dış kanama veya hemoliz yok bilgisidir. Bu bilgi doğru sınav kararını destekler.",
     "managementSequence": {
@@ -44148,12 +44148,12 @@ export const cases = [
       "nextStep": "Yenidoğanın dolaşım ve oksijenasyonunu stabilize et. Hemoglobin, retikülosit ve hemoliz bulgularını değerlendir. Anne kanında Kleihauer-Betke testi ile fetal eritrositleri araştır.",
       "answerFeedback": {
         "correctDiagnosis": "Fetomaternal hemorajiye bağlı akut fetal kan kaybı",
-        "diagnosisMeta": "Ağır neonatal anemide hemolizsiz kan kaybı paternini yorumlama",
+        "diagnosisMeta": "Ağır neonatal anemide hemolizsiz kan kaybı örüntüsünü yorumlama",
         "shortDiagnosisMeta": "Tetkik veya Yenidoğan",
         "whyCorrect": "Doğumda ağır anemi, zayıf perfüzyon, direkt Coombs negatifliği ve hemoliz bulgusu olmaması. Maternal dolaşımda fetal eritrosit gösterilmesiyle birlikte fetomaternal hemorajiye bağlı fetal kan kaybını destekler. Bu nedenle en uygun seçim Fetomaternal hemorajiye bağlı akut fetal kan kaybı olur.",
         "whyWrong": {
           "Rh alloimmünizasyonuna bağlı hemolitik hastalık": "Rh alloimmünizasyonunda Coombs pozitifliği ve hemoliz bulguları beklenir. Bu olguda hemoliz kanıtı baskın değildir.",
-          "Konjenital aplastik anemi": "Aplastik tabloda kemik iliği üretim yetersizliği ve sıklıkla ek sitopeniler beklenir. Ani doğum sonrası hipoperfüzyon-kan kaybı paterni daha güçlüdür. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
+          "Konjenital aplastik anemi": "Aplastik tabloda kemik iliği üretim yetersizliği ve sıklıkla ek sitopeniler beklenir. Ani doğum sonrası hipoperfüzyon-kan kaybı örüntüsü daha güçlüdür. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
           "Fizyolojik yenidoğan anemisi": "Fizyolojik anemi doğum anında Hemoglobin: 6.2 g/dL (referans 14–22 g/dL; düşük).2 g/dL düzeyinde şok bulguları oluşturacak kadar ağır ve akut değildir. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok."
         },
         "evidenceChain": [
@@ -44228,15 +44228,15 @@ export const cases = [
             "comparisonPoints": [
               "Yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
               "Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
-              "Rh alloimmünizasyonuna bağlı hemolitik hastalık yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Rh alloimmünizasyonuna bağlı hemolitik hastalık yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Konjenital aplastik anemi": {
-            "explanation": "Aplastik tabloda kemik iliği üretim yetersizliği ve sıklıkla ek sitopeniler beklenir. Ani doğum sonrası hipoperfüzyon-kan kaybı paterni daha güçlüdür. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
+            "explanation": "Aplastik tabloda kemik iliği üretim yetersizliği ve sıklıkla ek sitopeniler beklenir. Ani doğum sonrası hipoperfüzyon-kan kaybı örüntüsü daha güçlüdür. Ancak bu vakada yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
             "comparisonPoints": [
               "Yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
               "Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
-              "Konjenital aplastik anemi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Konjenital aplastik anemi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Fizyolojik yenidoğan anemisi": {
@@ -44244,7 +44244,7 @@ export const cases = [
             "comparisonPoints": [
               "Yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
               "Term yenidoğanda doğumdan hemen sonra ağır anemi ve hipoperfüzyon vardır.",
-              "Fizyolojik yenidoğan anemisi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Fizyolojik yenidoğan anemisi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
@@ -44281,7 +44281,7 @@ export const cases = [
         "trap": "Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
       },
-      "question": "Bu neonatal anemi paterninin en doğru yorumu hangisidir?"
+      "question": "Bu neonatal anemi örüntüsünün en doğru yorumu hangisidir?"
     },
     "title": "Doğumda solukluk ve ağır anemi",
     "patientIntro": {
@@ -44423,9 +44423,9 @@ export const cases = [
         "shortDiagnosisMeta": "Yenidoğan veya Tedavi",
         "whyCorrect": "Term yenidoğanda doğumda resüsitasyon, ağır metabolik asidoz ve orta-ağır hipoksik iskemik ensefalopati bulguları varsa nörolojik sekel riskini azaltan yaklaşım terapötik hipotermidir. En kritik TUS bilgisi tedavinin ilk 6 saat içinde başlanmasıdır. Bu nedenle en uygun seçim Terapötik hipotermi olur.",
         "whyWrong": {
-          "Profilaktik fenitoin monoterapisi": "Profilaktik fenitoin monoterapisi benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen temel paternin önceliğini açıklamaz.",
-          "Hiperbarik oksijen tedavisi": "Hiperbarik oksijen tedavisi benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen temel paternin önceliğini açıklamaz.",
-          "Rutin profilaktik antibiyotik": "Rutin profilaktik antibiyotik benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen temel paternin önceliğini açıklamaz."
+          "Profilaktik fenitoin monoterapisi": "Profilaktik fenitoin monoterapisi benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen belirleyici bulguları açıklamaz.",
+          "Hiperbarik oksijen tedavisi": "Hiperbarik oksijen tedavisi benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen belirleyici bulguları açıklamaz.",
+          "Rutin profilaktik antibiyotik": "Rutin profilaktik antibiyotik benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen belirleyici bulguları açıklamaz."
         },
         "evidenceChain": [
           {
@@ -44481,27 +44481,27 @@ export const cases = [
         ],
         "differentialComparison": {
           "Profilaktik fenitoin monoterapisi": {
-            "explanation": "Profilaktik fenitoin monoterapisi benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Profilaktik fenitoin monoterapisi benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE.",
               "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi düşündürür.",
-              "Profilaktik fenitoin monoterapisi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Profilaktik fenitoin monoterapisi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Hiperbarik oksijen tedavisi": {
-            "explanation": "Hiperbarik oksijen tedavisi benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Hiperbarik oksijen tedavisi benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE.",
               "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi düşündürür.",
-              "Hiperbarik oksijen tedavisi yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Hiperbarik oksijen tedavisi yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           },
           "Rutin profilaktik antibiyotik": {
-            "explanation": "Rutin profilaktik antibiyotik benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen temel paternin önceliğini açıklamaz.",
+            "explanation": "Rutin profilaktik antibiyotik benzer başlıklarda düşünülebilir. Ancak Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bu olguda daha belirleyicidir. Bu seçenek Terapötik hipotermi için beklenen belirleyici bulguları açıklamaz.",
             "comparisonPoints": [
               "Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE.",
               "Doğumda resüsitasyon gereksinimi perinatal asfiksiyi düşündürür.",
-              "Rutin profilaktik antibiyotik yalnız kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır."
+              "Rutin profilaktik antibiyotik yalnız kendi tipik öykü, muayene veya tetkik bulguları varsa güç kazanır."
             ]
           }
         },
