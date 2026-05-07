@@ -1,0 +1,112 @@
+{
+  "totalBranchesReviewed": 13,
+  "branches": [
+    {
+      "id": "tus-spot-olgular",
+      "icon": "TusSpotFlash",
+      "iconLogic": "Yıldız/flash-card enerjili spot karar ikonu",
+      "transitionAnimation": "Star/spark pulse + iki ışın yayılımı",
+      "transitionTagline": "Kısa sürede yüksek verimli TUS karar pratiği."
+    },
+    {
+      "id": "anatomy",
+      "icon": "AnatomyTorso",
+      "iconLogic": "Torso/iskelet-organizasyon çizgisi",
+      "transitionAnimation": "Yapısal assemble, segment kayması ve nokta pulse",
+      "transitionTagline": "Yapıyı tanı, komşuluğu kur, klinik bağlantıyı gör."
+    },
+    {
+      "id": "physiology",
+      "icon": "PhysiologyWave",
+      "iconLogic": "Homeostaz ve ritmik pulse dalgası",
+      "transitionAnimation": "Ritmik waveform, expanding pulse rings ve travelling dot",
+      "transitionTagline": "Sistem işleyişini ritim, denge ve yanıt üzerinden oku."
+    },
+    {
+      "id": "histology-embryology",
+      "icon": "HistologyCells",
+      "iconLogic": "Hücre kümeleri ve bölünme/gelişim hissi",
+      "transitionAnimation": "Hücre orbitleri, seed bölünme ve yumuşak morph",
+      "transitionTagline": "Mikro yapıdan gelişimsel klinik ipucuna ilerle."
+    },
+    {
+      "id": "medical-biochemistry",
+      "icon": "BiochemFlask",
+      "iconLogic": "Reaksiyon sıvılı erlen/flask",
+      "transitionAnimation": "Flask sway, rising bubbles ve liquid shimmer",
+      "transitionTagline": "Moleküler ipuçlarından klinik yoruma uzanan yol."
+    },
+    {
+      "id": "medical-microbiology",
+      "icon": "Microbe",
+      "iconLogic": "Mikrobiyal form ve çevresel uzantılar",
+      "transitionAnimation": "Microbe pulse, particle orbit ve halo yayılımı",
+      "transitionTagline": "Etkeni tanı, bulaşı düşün, doğru yaklaşımı seç."
+    },
+    {
+      "id": "medical-pathology",
+      "icon": "PathologySlide",
+      "iconLogic": "Preparat/lam üzerinde anormal hücresel patern",
+      "transitionAnimation": "Preparat focus frame, hücresel blink ve fokus geçişi",
+      "transitionTagline": "Doku paternini yorumla, hastalığın temelini kavra."
+    },
+    {
+      "id": "medical-pharmacology",
+      "icon": "PharmacologyCapsule",
+      "iconLogic": "Kapsül ve etki halkası",
+      "transitionAnimation": "Dose/capsule pulse ve etki halkası",
+      "transitionTagline": "İlaç etkisini mekanizma, yan etki ve karar üzerinden çöz."
+    },
+    {
+      "id": "internal-medicine",
+      "icon": "InternalSystems",
+      "iconLogic": "İç sistemler/akciğer-kalp ritmi kompozisyonu",
+      "transitionAnimation": "Organ sistemi nefes/pulse hareketi ve heart-dot beat",
+      "transitionTagline": "Sistemik düşün, önceliği belirle, kliniği bir araya getir."
+    },
+    {
+      "id": "pediatrics",
+      "icon": "PediatricsChild",
+      "iconLogic": "Çocuk figürü ve nazik bakım yıldızı",
+      "transitionAnimation": "Yumuşak bounce, aura ve küçük sparkle etkisi",
+      "transitionTagline": "Yaşa özgü ipuçlarıyla güvenli pediatrik karar ver."
+    },
+    {
+      "id": "general-surgery",
+      "icon": "SurgeryBlade",
+      "iconLogic": "Bistüri/precision blade",
+      "transitionAnimation": "Bistüri precision tilt, glint ve clean cut streak",
+      "transitionTagline": "Hızlı karar, doğru zamanlama, net cerrahi yaklaşım."
+    },
+    {
+      "id": "obstetrics-gynecology",
+      "icon": "ObgynUterus",
+      "iconLogic": "Uterus ve koruyucu maternal-fetal form",
+      "transitionAnimation": "Koruyucu maternal halo ve core glow",
+      "transitionTagline": "Anne-fetal güvenlik, jinekolojik karar ve doğru öncelik."
+    },
+    {
+      "id": "minor-rotations",
+      "icon": "MinorGrid",
+      "iconLogic": "Çoklu modüler staj grid ikonu",
+      "transitionAnimation": "Modül tile assemble ve kompakt grid pulse",
+      "transitionTagline": "Çoklu staj bilgisini kompakt klinik karara dönüştür."
+    }
+  ],
+  "changedFiles": [
+    "src/components/ui.jsx",
+    "src/data/branches.js",
+    "src/App.jsx",
+    "src/index.css"
+  ],
+  "build": {
+    "command": "npm run build",
+    "status": "passed"
+  },
+  "notes": [
+    "All standard TUS branch IDs now use custom branch-specific SVG icons instead of generic icon-library choices.",
+    "Branch transition overlay now renders a reusable animated visual with per-branch particle/effect tokens.",
+    "Transition copy now supports a concise branch-specific tagline.",
+    "Reduced-motion support keeps the experience stable with shortened/non-looped animations."
+  ]
+}

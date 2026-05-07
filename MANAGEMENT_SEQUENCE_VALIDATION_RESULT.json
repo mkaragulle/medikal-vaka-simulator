@@ -1,0 +1,21 @@
+{
+  "totalCases": 132,
+  "duplicateIds": [],
+  "missingManagement": [],
+  "missingRationaleCount": 0,
+  "minMismatch": [],
+  "spotCases": 62,
+  "spotNotShown": [],
+  "forbiddenGenericTemplateHits": [],
+  "casesWithManagementSequence": 132,
+  "requiredStepsRange": {
+    "min": 3,
+    "max": 6
+  },
+  "build": {
+    "npmInstall": "passed",
+    "npmRunBuild": "passed",
+    "viteModulesTransformed": 68
+  },
+  "generatedAt": "2026-05-06T13:46:10.694Z"
+}

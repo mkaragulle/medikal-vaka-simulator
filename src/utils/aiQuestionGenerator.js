@@ -108,13 +108,6 @@ const VARIANT_STEM_MODIFIERS = [
   'Hedefli yaklaşım, gereksiz tedavi veya tetkik yükünü azaltır.',
 ];
 
-
-function normalizeGenerationBranchFilter(branchFilter = 'random') {
-  const normalized = String(branchFilter || 'random').toLocaleLowerCase('tr');
-  if (['tus-spot-olgular', 'tus spot olgular', 'tus spot', 'ai tus spot', 'ai ile soru üret'].includes(normalized)) return 'random';
-  return branchFilter || 'random';
-}
-
 function buildVariantStemModifier(seed = {}, profile = {}) {
   const key = `${seed.seedId || seed.title}|${profile.variantNo || 0}|${profile.angle?.id || ''}`;
   const index = parseInt(stableHash(key).replace(/^q/, ''), 36) % VARIANT_STEM_MODIFIERS.length;
@@ -699,12 +692,11 @@ function generateFromSyntheticTemplate(branchFilter, context, previousQuestionId
 
 export function generateAIQuestion({ previousQuestionId = null, branchFilter = 'random', context = buildRecentQuestionContext() } = {}) {
   const errors = [];
-  const effectiveBranchFilter = normalizeGenerationBranchFilter(branchFilter);
-  const pool = getEligibleSeeds(effectiveBranchFilter);
+  const pool = getEligibleSeeds(branchFilter);
 
   const primary = tryGenerateFromSeeds(pool, {
     context,
-    branchFilter: effectiveBranchFilter,
+    branchFilter,
     previousQuestionId,
     errors,
     stage: 'primary-mutated-seed',
@@ -714,10 +706,10 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
   if (primary) return primary;
 
   const repairPool = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS, ...buildCaseDerivedAISeeds()]
-    .filter((seed) => branchFilterMatchesSeed(seed, effectiveBranchFilter));
+    .filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
   const repaired = tryGenerateFromSeeds(repairPool, {
     context,
-    branchFilter: effectiveBranchFilter,
+    branchFilter,
     previousQuestionId,
     errors,
     stage: 'repair-and-seed-mutation',
@@ -727,10 +719,10 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
   });
   if (repaired) return repaired;
 
-  const fallback = generateFromSyntheticTemplate(effectiveBranchFilter, context, previousQuestionId, errors);
+  const fallback = generateFromSyntheticTemplate(branchFilter, context, previousQuestionId, errors);
   if (fallback) return fallback;
 
-  const canUseBroadSynthetic = ['random', 'rastgele'].includes(String(effectiveBranchFilter || 'random').toLocaleLowerCase('tr'));
+  const canUseBroadSynthetic = ['random', 'rastgele'].includes(String(branchFilter || 'random').toLocaleLowerCase('tr'));
   if (canUseBroadSynthetic) {
     const broadSynthetic = generateFromSyntheticTemplate('random', context, previousQuestionId, errors);
     if (broadSynthetic) return broadSynthetic;
@@ -738,7 +730,7 @@ export function generateAIQuestion({ previousQuestionId = null, branchFilter = '
 
   const error = new Error('AI local generator could not create a non-duplicate question after primary, repair and synthetic fallback attempts.');
   error.generationErrors = errors.slice(-18);
-  logAIGenerationDebug('all generation stages failed', { branchFilter: effectiveBranchFilter, originalBranchFilter: branchFilter, attempts: errors.length, lastErrors: error.generationErrors });
+  logAIGenerationDebug('all generation stages failed', { branchFilter, attempts: errors.length, lastErrors: error.generationErrors });
   throw error;
 }
 

@@ -210,12 +210,7 @@ export const AI_BRANCH_RULES = [
 export function getBranchRule(branchValue = '') {
   const normalized = normalizeBranch(branchValue || '');
   if (!normalized || normalized === 'random' || normalized === 'rastgele') return null;
-  return AI_BRANCH_RULES.find((item) => {
-    const normalizedId = normalizeBranch(item.id);
-    const idHit = normalized === normalizedId || normalized.includes(normalizedId) || normalizedId.includes(normalized);
-    const nameHit = item.normalizedNames.some((name) => normalized.includes(name) || name.includes(normalized));
-    return idHit || nameHit;
-  }) || null;
+  return AI_BRANCH_RULES.find((item) => item.normalizedNames.some((name) => normalized.includes(name) || name.includes(normalized))) || null;
 }
 
 export function getBranchRuleForSeed(seed = {}, fallbackBranch = '') {
@@ -225,7 +220,6 @@ export function getBranchRuleForSeed(seed = {}, fallbackBranch = '') {
 export function branchFilterMatchesSeed(seed = {}, branchFilter = 'random') {
   const targetRule = getBranchRule(branchFilter);
   if (!targetRule) return true;
-  if (targetRule.id === 'tus-spot-olgular') return true;
   const seedText = normalizeBranch(`${seed.relatedBranch || ''} ${seed.branchName || ''} ${seed.spotCategory || ''} ${seed.originalBranchId || ''}`);
   return targetRule.normalizedNames.some((name) => seedText.includes(name) || name.includes(seedText)) || seedText.includes(normalizeBranch(targetRule.id));
 }
@@ -269,7 +263,7 @@ export function sanitizeAIQuestionTitle(rawTitle = '', { seed = {}, profile = {}
       if (item.length < 8 || item.length > 62) return false;
       const normalizedItem = normalizeBranch(item);
       const looksLikeBranchOnly = rule?.normalizedNames?.some((name) => normalizedItem === name || normalizedItem.replace(/\s+/g, '').includes(name.replace(/\s+/g, '')));
-      const looksLikeLearningObjective = /yorumlanmasi|taninmasi|ayirt edilmesi|kullanilmasi|secilmesi|eslestirilmesi|ogrenme|mekanizmasi|bilgisine dayanir|klinik karar icin belirleyicidir|karar .* dayanir/i.test(normalizedItem);
+      const looksLikeLearningObjective = /yorumlanmasi|taninmasi|ayirt edilmesi|kullanilmasi|secilmesi|eslestirilmesi|ogrenme|mekanizmasi/i.test(normalizedItem);
       return !looksLikeBranchOnly && !looksLikeLearningObjective;
     });
   let title = candidates.length ? pickByHash(candidates, key || seed.seedId || rawTitle) : pickByHash(rule?.titles || ['Kısa klinik patern'], key || seed.seedId || rawTitle);
@@ -329,7 +323,7 @@ export function validateBranchFit(question = {}, requestedBranch = '') {
   const rule = getBranchRule(branchLabel) || getBranchRule(question.relatedBranch || question.branchName || '');
   if (!rule) return { ok: true, errors, rule: null };
 
-  if (requestedBranch && !['random', 'rastgele'].includes(String(requestedBranch).toLocaleLowerCase('tr')) && rule.id !== 'tus-spot-olgular') {
+  if (requestedBranch && !['random', 'rastgele'].includes(String(requestedBranch).toLocaleLowerCase('tr'))) {
     const questionRule = getBranchRule(question.relatedBranch || question.branchName || '');
     if (questionRule && questionRule.id !== rule.id) {
       errors.push(`üretilen soru farklı branşa ait: ${question.relatedBranch || question.branchName}`);

@@ -294,9 +294,6 @@ export function isDuplicateAgainstRecentContext(question = {}, context = {}) {
   for (const recent of recentSummaries) {
     if (!recent.contentSignature && !recent.combinedText) continue;
     if (recent.contentSignature && recent.contentSignature === signature) return { reason: 'history-content-signature-repeat', signature, topicSignature };
-    if (fingerprint.title && recent.title && fingerprint.title === recent.title) {
-      return { reason: 'recent-title-repeat', signature, topicSignature, score: 1 };
-    }
 
     const sameCorrect = recent.correct && recent.correct === fingerprint.correct;
     const sameLearningTarget = recent.learningTarget && recent.learningTarget === fingerprint.learningTarget;

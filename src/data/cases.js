@@ -24723,7 +24723,7 @@ export const cases = [
     "title": "Travma öyküsü tutarsız bebekte çocuk istismarı şüphesi",
     "difficulty": "Acil · TUS Spot",
     "clinicalFocus": "Çocuk istismarı şüphesinde tıbbi stabilizasyon, ayrıntılı kayıt, güvenlik ve adli bildirim kararı.",
-    "learningOutcome": "tutarsız öykü ve farklı yaşlarda ekimoz ve letarji klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar tutarsız öykü ve farklı yaşlarda ekimoz ve letarji bilgisine dayanır.",
     "demographics": "8 aylık erkek bebek",
     "setting": "Acil servis",
     "chiefComplaint": "Nöbet sonrası letarji ve açıklanamayan ekimozlar.",
@@ -24922,7 +24922,7 @@ export const cases = [
             "text": "Çocuğun güvenliğini sağlayarak adli veya koruyucu bildirim sürecini kesin tanı beklemeden başlat."
           }
         ],
-        "learningOutcome": "Bu olguda tutarsız öykü ve farklı yaşlarda ekimoz ve letarji klinik karar için belirleyicidir.",
+        "learningOutcome": "Bu olguda Karar tutarsız öykü ve farklı yaşlarda ekimoz ve letarji bilgisine dayanır.",
         "spotClue": "Tutarsız öykü ve farklı yaşlarda ekimoz ve letarji.",
         "trap": "Nöbeti tek problem sanıp alttaki güvenlik riskini ve bildirim sorumluluğunu atlamak."
       },
@@ -24959,7 +24959,7 @@ export const cases = [
     "title": "Cinsel saldırı sonrası acile başvuran hastada ilk yaklaşım",
     "difficulty": "Acil · TUS Spot",
     "clinicalFocus": "Cinsel saldırı sonrası tıbbi stabilite, onam, mahremiyet, profilaksi ve delil zinciri.",
-    "learningOutcome": "cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bilgisine dayanır.",
     "demographics": "22 yaşında kadın hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Saldırı sonrası ağrı, yoğun kaygı ve ekimozlar.",
@@ -25180,7 +25180,7 @@ export const cases = [
             "text": "Bulguları objektif kaydet ve delil zinciri veya adli rapor sürecini başlat."
           }
         ],
-        "learningOutcome": "cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri bilgisine dayanır.",
         "spotClue": "Cinsel saldırı sonrası erken başvuru ve onam veya mahremiyet ve delil zinciri.",
         "trap": "Delil toplamayı hastanın onamı ve tıbbi güvenliğinin önüne koymak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -26101,7 +26101,7 @@ export const cases = [
     "title": "Kesici-delici yaralanmada adli bildirim kararı",
     "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Kesici-delici alet yaralanmasında tıbbi müdahale ile adli bildirim ve kayıt sürecini eş zamanlı yürütme.",
-    "learningOutcome": "kesici-delici yaralanma ve tutarsız olay öyküsü klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar kesici-delici yaralanma ve tutarsız olay öyküsü bilgisine dayanır.",
     "demographics": "24 yaşında erkek hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Sağ ön kolda kesici-delici alet yaralanması.",
@@ -26266,7 +26266,7 @@ export const cases = [
             "text": "Tıbbi bakım sürerken adli olgu bildirimi ve rapor sürecini başlat."
           }
         ],
-        "learningOutcome": "kesici-delici yaralanma ve tutarsız olay öyküsü klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar kesici-delici yaralanma ve tutarsız olay öyküsü bilgisine dayanır.",
         "spotClue": "Kesici-delici yaralanma ve tutarsız olay öyküsü.",
         "trap": "Hastanın \"kazara oldu\" beyanını tek başına yeterli kabul etmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -26302,7 +26302,7 @@ export const cases = [
     "title": "Trafik kazası sonrası acil serviste adli rapor yaklaşımı",
     "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Trafik kazasında objektif muayene kaydı, yaşamsal risk değerlendirmesi ve adli rapor düzenleme.",
-    "learningOutcome": "trafik kazası ve kısa süreli sersemlik ve travma bulguları klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar trafik kazası ve kısa süreli sersemlik ve travma bulguları bilgisine dayanır.",
     "demographics": "31 yaşında erkek hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Motosiklet kazası sonrası omuz ve diz ağrısı.",
@@ -26467,7 +26467,7 @@ export const cases = [
             "text": "Gerekli tetkik veya tedaviyi sürdürürken adli bildirim ve rapor sürecini başlat."
           }
         ],
-        "learningOutcome": "trafik kazası ve kısa süreli sersemlik ve travma bulguları klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar trafik kazası ve kısa süreli sersemlik ve travma bulguları bilgisine dayanır.",
         "spotClue": "Trafik kazası ve kısa süreli sersemlik ve travma bulguları.",
         "trap": "Alkol beyanına veya stabil vital bulgulara bakıp adli kayıt açmamaktır.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -26503,7 +26503,7 @@ export const cases = [
     "title": "Bilinci kapalı hastada onam ve acil müdahale",
     "difficulty": "Acil · TUS Spot",
     "clinicalFocus": "Acil yaşam tehdidinde varsayılan onam ilkesi ve tedaviyi geciktirmeme.",
-    "learningOutcome": "bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bilgisine dayanır.",
     "demographics": "67 yaşında erkek hasta",
     "setting": "Acil servis resüsitasyon alanı",
     "chiefComplaint": "Bilinç kaybı ve solunum sıkıntısı.",
@@ -26668,7 +26668,7 @@ export const cases = [
             "text": "Yakın veya vasiyi arama ve bilgilendirme sürecini tedaviyi geciktirmeden sürdür."
           }
         ],
-        "learningOutcome": "bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması bilgisine dayanır.",
         "spotClue": "Bilinç kapalı hasta ve hava yolu riski ve yakına ulaşılamaması.",
         "trap": "Onam yok diye yaşam kurtarıcı müdahaleyi bekletmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -26704,7 +26704,7 @@ export const cases = [
     "title": "Aile içi şiddet şüphesinde hekim yaklaşımı",
     "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Şiddet şüphesinde güvenlik, mahrem görüşme, objektif kayıt ve uygun yönlendirme veya bildirim.",
-    "learningOutcome": "eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bilgisine dayanır.",
     "demographics": "34 yaşında kadın hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Tekrarlayan düşme öyküsü ve yüz-boyun ekimozları.",
@@ -26869,7 +26869,7 @@ export const cases = [
             "text": "Bulguları objektif kaydet."
           }
         ],
-        "learningOutcome": "eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme bilgisine dayanır.",
         "spotClue": "Eşin kontrol edici varlığı ve yalnız kalınca güvende hissetmediğini ima etme.",
         "trap": "Eşi yanında diye ayrıntı sormadan veya ilk açıklamayı sorgulamadan taburcu etmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -26906,7 +26906,7 @@ export const cases = [
     "title": "Şüpheli zehirlenmede örnek saklama ve bildirim",
     "difficulty": "Acil · TUS Spot",
     "clinicalFocus": "Zehirlenme şüphesinde tıbbi stabilizasyon, toksikolojik örneklerin doğru alınması ve adli kayıt.",
-    "learningOutcome": "bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bilgisine dayanır.",
     "demographics": "40 yaşında erkek hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Ani bilinç bulanıklığı ve kusma.",
@@ -27103,7 +27103,7 @@ export const cases = [
             "text": "Tıbbi kayıt ve adli bildirim sürecini başlat."
           }
         ],
-        "learningOutcome": "bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme bilgisine dayanır.",
         "spotClue": "Bilinç bulanıklığı ve etiketsiz şişe veya ilaç blisterleri ve şüpheli zehirlenme.",
         "trap": "Adli örnek alma veya kayıt nedeniyle ABC stabilizasyonunu ertelemek ya da materyali korumamak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -27140,7 +27140,7 @@ export const cases = [
     "title": "İş kazası sonrası raporlama ve tıbbi öncelik",
     "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "İş kazasında acil tıbbi bakım, yaralanma kaydı ve bildirim veya raporlama yaklaşımı.",
-    "learningOutcome": "işyerinde pres yaralanması ve işverenin kayıt yönlendirmesi klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar işyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bilgisine dayanır.",
     "demographics": "45 yaşında erkek işçi",
     "setting": "Acil servis",
     "chiefComplaint": "El pres makinesinde parmak ezilmesi.",
@@ -27305,7 +27305,7 @@ export const cases = [
             "text": "Bulguları objektif kaydet ve iş kazası veya adli bildirim sürecini yürüt."
           }
         ],
-        "learningOutcome": "işyerinde pres yaralanması ve işverenin kayıt yönlendirmesi klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar işyerinde pres yaralanması ve işverenin kayıt yönlendirmesi bilgisine dayanır.",
         "spotClue": "İşyerinde pres yaralanması ve işverenin kayıt yönlendirmesi.",
         "trap": "İşverenin isteğiyle yaralanmayı olduğundan hafif kaydetmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -27542,7 +27542,7 @@ export const cases = [
     "title": "Ateşli çocukta zımpara kağıdı döküntüsü",
     "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Kızıl hastalığında döküntü özelliklerinden etkeni tanıma.",
-    "learningOutcome": "ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bilgisine dayanır.",
     "demographics": "5 yaşında çocuk",
     "setting": "Çocuk acil",
     "chiefComplaint": "Ateş, boğaz ağrısı ve gövdeden başlayan döküntü.",
@@ -27703,7 +27703,7 @@ export const cases = [
             "text": "Uygun penisilin veya amoksisilin tedavisini ve bulaş veya okul izolasyonu önerilerini ver."
           }
         ],
-        "learningOutcome": "ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü bilgisine dayanır.",
         "spotClue": "Ateş-boğaz ağrısı sonrası zımpara kağıdı döküntüsü.",
         "trap": "Viral döküntüleri ayırt ettiren döküntü dokusunu gözden kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -27941,7 +27941,7 @@ export const cases = [
     "title": "Öksürük, konjunktivit ve Koplik lekeleri",
     "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Kızamıkta prodrom ve enantem bulgusunu tanıma.",
-    "learningOutcome": "öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bilgisine dayanır.",
     "demographics": "7 yaşında aşısız çocuk",
     "setting": "Çocuk polikliniği",
     "chiefComplaint": "Ateş, öksürük, göz kızarıklığı ve döküntü.",
@@ -28106,7 +28106,7 @@ export const cases = [
             "text": "Komplikasyon ve destek tedavisi açısından yakın izle."
           }
         ],
-        "learningOutcome": "öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri bilgisine dayanır.",
         "spotClue": "Öksürük-konjunktivit-koriza ve yüzde başlayan döküntü ve Koplik lekeleri.",
         "trap": "Kızıl veya rubella ağız bulgularını kızamığın mukozal spotuyla karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -28142,7 +28142,7 @@ export const cases = [
     "title": "Ön burun kanamasında ilk müdahale",
     "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Stabil epistaksiste ilk basamak bası ve lokal yaklaşım kararını verme.",
-    "learningOutcome": "stabil anterior epistaksis klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar stabil anterior epistaksis bilgisine dayanır.",
     "demographics": "52 yaşında erkek hasta",
     "setting": "Acil poliklinik",
     "chiefComplaint": "Ani başlayan burun kanaması.",
@@ -28303,7 +28303,7 @@ export const cases = [
             "text": "Devam eden kanamada topikal vazokonstriktör, koter veya tamponu sırayla değerlendir."
           }
         ],
-        "learningOutcome": "stabil anterior epistaksis klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar stabil anterior epistaksis bilgisine dayanır.",
         "spotClue": "Stabil anterior epistaksis.",
         "trap": "Hastayı geriye yatırmak veya ilk basamakta cerrahi veya masif tedaviye atlamak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -28339,7 +28339,7 @@ export const cases = [
     "title": "Şüpheli ölümde hekimin adli süreç yaklaşımı",
     "difficulty": "Temel-orta · TUS Spot",
     "clinicalFocus": "Şüpheli ölümde olay yerini veya delilleri bozmama, tıbbi ölüm değerlendirmesi ve adli bildirim.",
-    "learningOutcome": "yalnız yaşayan kişide şüpheli ölüm koşulları klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar yalnız yaşayan kişide şüpheli ölüm koşulları bilgisine dayanır.",
     "demographics": "70 yaşında erkek hasta",
     "setting": "Acil dışı ev ziyareti veya 112 değerlendirmesi",
     "chiefComplaint": "Evde ölü bulunma.",
@@ -28505,7 +28505,7 @@ export const cases = [
             "text": "Şüpheli ölüm olarak yetkili adli makamlara bildirim yap."
           }
         ],
-        "learningOutcome": "yalnız yaşayan kişide şüpheli ölüm koşulları klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar yalnız yaşayan kişide şüpheli ölüm koşulları bilgisine dayanır.",
         "spotClue": "Yalnız yaşayan kişide şüpheli ölüm koşulları.",
         "trap": "Yaşlılık veya doğal ölüm varsayımıyla defin ruhsatı düzenlemek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -30105,7 +30105,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu tabloyu en iyi açıklayan etken hangisidir?",
     "spotPearl": "Vibrio cholerae: pirinç suyu dışkı, hızlı dehidratasyon, darting motility.",
-    "learningOutcome": "bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -30253,7 +30253,7 @@ export const cases = [
             "text": "Ağır olguda uygun antibiyotik desteğini ve salgın bildirimi veya önlemlerini değerlendir."
           }
         ],
-        "learningOutcome": "bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility bilgisine dayanır.",
         "spotClue": "Bol sulu kansız ishal ve hızlı dehidratasyon ve darting motility.",
         "trap": "Kanlı-invaziv ishal etkenlerine kayıp koleranın sulu sekresyonel bulgu örüntüsünü kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -30330,7 +30330,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu yan etki en çok hangi ilaçla ilişkilidir ve uygun alternatif hangisidir?",
     "spotPearl": "Gansiklovir veya valgansiklovir: CMV tedavisi, nötropeni veya kemik iliği baskılanması.",
-    "learningOutcome": "AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -30474,7 +30474,7 @@ export const cases = [
             "text": "Ciddi nötropenide foskarnet gibi alternatifleri böbrek-elektrolit izlemiyle değerlendir."
           }
         ],
-        "learningOutcome": "AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni bilgisine dayanır.",
         "spotClue": "AIDS veya CMV retiniti tedavisi ve gansiklovir sonrası nötropeni.",
         "trap": "CMV tedavisinde tüm antiviralleri aynı yan etki profiline sahip sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -30533,7 +30533,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu klinik tabloda en olası tanı ve ilk tercih tedavi hangisidir?",
     "spotPearl": "Erizipel: keskin sınırlı, parlak-kırmızı, sıcak plak. Etken çoğunlukla Streptococcus pyogenes.",
-    "learningOutcome": "keskin sınırlı sıcak eritem ve lenfatik yüzeyel enfeksiyon klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar keskin sınırlı sıcak eritem ve lenfatik yüzeyel enfeksiyon bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -30677,7 +30677,7 @@ export const cases = [
             "text": "Giriş kapısı, ödem ve tekrarlama risklerini değerlendir."
           }
         ],
-        "learningOutcome": "keskin sınırlı sıcak eritem ve lenfatik yüzeyel enfeksiyon klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar keskin sınırlı sıcak eritem ve lenfatik yüzeyel enfeksiyon bilgisine dayanır.",
         "spotClue": "Keskin sınırlı sıcak eritem ve lenfatik yüzeyel enfeksiyon.",
         "trap": "Erizipel ile daha derin veya yaygın selüliti veya nekrotizan tabloyu karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -30735,7 +30735,7 @@ export const cases = [
     "questionType": "yönetim",
     "question": "Bu durumda sağlık çalışanı için en uygun izlem yaklaşımı hangisidir?",
     "spotPearl": "HCV iğne batmasında aşı veya immünoglobulin yoktur.",
-    "learningOutcome": "HCV RNA pozitif kaynak ve perkütan yaralanma klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar HCV RNA pozitif kaynak ve perkütan yaralanma bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -30879,7 +30879,7 @@ export const cases = [
             "text": "2-4 hafta civarında HCV RNA ile erken enfeksiyon takibini başlat."
           }
         ],
-        "learningOutcome": "HCV RNA pozitif kaynak ve perkütan yaralanma klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar HCV RNA pozitif kaynak ve perkütan yaralanma bilgisine dayanır.",
         "spotClue": "HCV RNA pozitif kaynak ve perkütan yaralanma.",
         "trap": "HCV için aşı veya immünoglobulin var sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -30970,7 +30970,7 @@ export const cases = [
     "questionType": "yönetim",
     "question": "Bu temaslı için en uygun yaklaşım hangisidir?",
     "spotPearl": "TB temaslısında önce aktif hastalık dışlanır, sonra latent TB tedavisi verilir.",
-    "learningOutcome": "aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -31114,7 +31114,7 @@ export const cases = [
             "text": "Aktif hastalık yoksa latent TB için izoniyazid veya profilaksi planla ve hepatotoksisite izle."
           }
         ],
-        "learningOutcome": "aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama bilgisine dayanır.",
         "spotClue": "Aktif TB ev içi temas ve PPD dönüşümü ve aktif hastalık dışlama.",
         "trap": "BCG öyküsü nedeniyle PPD dönüşümünü tamamen önemsiz saymak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -31173,7 +31173,7 @@ export const cases = [
     "questionType": "Test",
     "question": "Bu olguda en olası tanı ve en uygun doğrulayıcı yaklaşım hangisidir?",
     "spotPearl": "Mesleki astımda en önemli ipucu semptomların işte artıp tatilde azalmasıdır.",
-    "learningOutcome": "işte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar işte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -31317,7 +31317,7 @@ export const cases = [
             "text": "Maruziyet azaltma veya uzaklaştırma ve iş sağlığı bildirimi planla."
           }
         ],
-        "learningOutcome": "işte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar işte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit bilgisine dayanır.",
         "spotClue": "İşte artan hışıltı ve hafta sonu düzelme ve lateksle temas veya dermatit.",
         "trap": "Astımı sadece enfeksiyon veya klasik alerjik rinit gibi düşünmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -31596,7 +31596,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Akut reaksiyon sonrası yüksek triptaz sonucunun en doğru yorumu hangisidir?",
     "spotPearl": "Serum triptaz anafilaksi veya mast hücre aktivasyonunu destekleyen testtir.",
-    "learningOutcome": "besin sonrası çoklu sistem reaksiyon ve mast hücre aktivasyonu klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar besin sonrası çoklu sistem reaksiyon ve mast hücre aktivasyonu bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -31752,7 +31752,7 @@ export const cases = [
             "text": "Tanıyı desteklemek için uygun zamanda serum triptaz örneği al ve izlem planla."
           }
         ],
-        "learningOutcome": "besin sonrası çoklu sistem reaksiyon ve mast hücre aktivasyonu klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar besin sonrası çoklu sistem reaksiyon ve mast hücre aktivasyonu bilgisine dayanır.",
         "spotClue": "Besin sonrası çoklu sistem reaksiyon ve mast hücre aktivasyonu.",
         "trap": "Triptazı tedavi yerine koymak veya anafilakside klinik tanıyı geciktirmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -31829,7 +31829,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu tabloyu en iyi açıklayan tanı hangisidir?",
     "spotPearl": "Renal arter stenozu: dirençli HT ve flash akciğer ödemi ve hipokalemi.",
-    "learningOutcome": "dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -31977,7 +31977,7 @@ export const cases = [
             "text": "Pulmoner ödem ve hipertansif aciliyeti stabil şekilde tedavi et."
           }
         ],
-        "learningOutcome": "dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi bilgisine dayanır.",
         "spotClue": "Dirençli hipertansiyon ve tekrarlayan flash akciğer ödemi ve hipokalemi.",
         "trap": "Feokromositoma veya tirotoksikoz gibi ataklı hipertansiyon alternatiflerine kaymak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -32037,7 +32037,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu hastalık grubunda aşağıdaki ilaçlardan hangisi genellikle önerilmez?",
     "spotPearl": "PAH’da verapamilden kaçınılır. Sağ ventrikül yetmezliğini kötüleştirebilir.",
-    "learningOutcome": "PAH tedavisinde verapamilin negatif inotrop etkisi klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar PAH tedavisinde verapamilin negatif inotrop etkisi bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -32181,7 +32181,7 @@ export const cases = [
             "text": "Negatif inotrop ilaçlardan kaçın ve uzman merkez takibini planla."
           }
         ],
-        "learningOutcome": "PAH tedavisinde verapamilin negatif inotrop etkisi klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar PAH tedavisinde verapamilin negatif inotrop etkisi bilgisine dayanır.",
         "spotClue": "PAH tedavisinde verapamilin negatif inotrop etkisi.",
         "trap": "Kalsiyum kanal blokerlerini tüm PAH hastalarında güvenli sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -32239,7 +32239,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu tabloda en uygun başlangıç tedavisi hangisidir?",
     "spotPearl": "Hipertansif pulmoner ödemde temel hızlı hamle afterload azaltmaktır: IV nitrat veya nitroprussid gibi vazodilatörler.",
-    "learningOutcome": "ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -32383,7 +32383,7 @@ export const cases = [
             "text": "Tetikleyici uyumsuzluk veya iskemi veya renal nedenleri stabilize olduktan sonra araştır."
           }
         ],
-        "learningOutcome": "ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok bilgisine dayanır.",
         "spotClue": "Ani pulmoner ödem ve ağır hipertansiyon ve sistolik yetmezlik öyküsü yok.",
         "trap": "Hipotansif kardiyojenik şok gibi inotrop veya MI gibi fibrinolitik düşünmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -32439,7 +32439,7 @@ export const cases = [
     "questionType": "yönetim",
     "question": "Bu hastada diğer seçeneklere göre en uygun ilk yaklaşım hangisidir?",
     "spotPearl": "Yeni başlayan dispepside ileri yaş endoskopi endikasyonudur.",
-    "learningOutcome": "ileri yaşta yeni başlayan dispepsi klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar ileri yaşta yeni başlayan dispepsi bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -32583,7 +32583,7 @@ export const cases = [
             "text": "Endoskopi sonucuna göre H."
           }
         ],
-        "learningOutcome": "ileri yaşta yeni başlayan dispepsi klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar ileri yaşta yeni başlayan dispepsi bilgisine dayanır.",
         "spotClue": "İleri yaşta yeni başlayan dispepsi.",
         "trap": "Alarm bulgusu yok diye ileri yaş riskini gözden kaçırıp uzun süre ampirik tedavi vermek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -32660,7 +32660,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu endoskopik görünüm öncelikle hangi tanıyı düşündürür?",
     "spotPearl": "Barrett özofagusu: kronik GERD ve distal özofagusta intestinal metaplazi.",
-    "learningOutcome": "Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -32804,7 +32804,7 @@ export const cases = [
             "text": "Displazi varsa endoskopik eradikasyon seçeneklerini değerlendir."
           }
         ],
-        "learningOutcome": "Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü bilgisine dayanır.",
         "spotClue": "Z çizgisi proksimalinde kolumnar mukoza ve kronik reflü.",
         "trap": "Barrett metaplazisini doğrudan invaziv kanser veya kandida ile karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -33114,7 +33114,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Asit sıvısında PMN ≥250/mm³ saptanan bu hastada en uygun sonraki adım hangisidir?",
     "spotPearl": "Asitli siroz hastasında ateş olmasa bile mental değişiklik veya karın ağrısında tanısal parasentez yapılır.",
-    "learningOutcome": "siroz ve asit ve mental durum değişikliği veya karın hassasiyeti klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar siroz ve asit ve mental durum değişikliği veya karın hassasiyeti bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -33270,7 +33270,7 @@ export const cases = [
             "text": "SBP şüphesinde uygun antibiyotik ve albümin desteğini planla."
           }
         ],
-        "learningOutcome": "siroz ve asit ve mental durum değişikliği veya karın hassasiyeti klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar siroz ve asit ve mental durum değişikliği veya karın hassasiyeti bilgisine dayanır.",
         "spotClue": "Siroz ve asit ve mental durum değişikliği veya karın hassasiyeti.",
         "trap": "Ensefalopatiyi yalnız amonyak veya kronik hepatit izlemiyle açıklayıp SBP'yi atlamak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -33359,7 +33359,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu klinik durumda en uygun acil tedavi hangisidir?",
     "spotPearl": "Adrenal kriz tedavisi: IV hidrokortizon ve izotonik salin, gerekirse dekstroz.",
-    "learningOutcome": "hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -33507,7 +33507,7 @@ export const cases = [
             "text": "İzotonik sıvı ve hipoglisemi veya elektrolit düzeltmesini başlat."
           }
         ],
-        "learningOutcome": "hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi bilgisine dayanır.",
         "spotClue": "Hiperpigmentasyon ve hipotansiyon ve hiponatremi veya hiperpotasemi veya hipoglisemi.",
         "trap": "Şokta özgül endokrin bulgu örüntüsü kaçırıp semptomatik antidotlara kaymak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -33602,7 +33602,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu bulgularla en uyumlu tanı hangisidir?",
     "spotPearl": "Düşük tiroglobulin ve düşük uptake = eksojen hormon alımı veya faktitisya düşün.",
-    "learningOutcome": "TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -33750,7 +33750,7 @@ export const cases = [
             "text": "Eksojen kaynak doğrulanırsa hormon alımını kesme ve semptom kontrolü planla."
           }
         ],
-        "learningOutcome": "TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake bilgisine dayanır.",
         "spotClue": "TSH baskılı, sT4 yüksek ve düşük tiroglobulin ve düşük uptake.",
         "trap": "Graves veya tiroidit ayrımında tiroglobulin veya uptake bulgu örüntüsünü gözden kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -33840,7 +33840,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Makroadenom boyutu ile başlangıç prolaktin sonucu arasındaki uyumsuzluğun en doğru açıklaması hangisidir?",
     "spotPearl": "Hook effect: çok yüksek antijen düzeyi immünoassayde yalancı düşük sonuç verebilir.",
-    "learningOutcome": "makroadenom ve beklenenden düşük prolaktin klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar makroadenom ve beklenenden düşük prolaktin bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -33992,7 +33992,7 @@ export const cases = [
             "text": "Gerçek prolaktin düzeyine göre prolaktinoma tedavi planını yap."
           }
         ],
-        "learningOutcome": "makroadenom ve beklenenden düşük prolaktin klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar makroadenom ve beklenenden düşük prolaktin bilgisine dayanır.",
         "spotClue": "Makroadenom ve beklenenden düşük prolaktin.",
         "trap": "Büyük tümörde düşük prolaktini gerçek kabul edip prolaktinomayı dışlamak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -34051,7 +34051,7 @@ export const cases = [
     "questionType": "Spot",
     "question": "Sistemik tedavi planlarken aşağıdakilerden hangisi bu kanser için rutin karar verdirici marker değildir?",
     "spotPearl": "Kolorektal kanserde KRAS veya NRAS mutasyonu anti-EGFR tedavi kararını etkiler.",
-    "learningOutcome": "metastatik kolon adenokarsinomu tedavi markerları klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar metastatik kolon adenokarsinomu tedavi markerları bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -34199,7 +34199,7 @@ export const cases = [
             "text": "Performans durumu ve tümör yüküne göre sistemik tedavi planla."
           }
         ],
-        "learningOutcome": "metastatik kolon adenokarsinomu tedavi markerları klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar metastatik kolon adenokarsinomu tedavi markerları bilgisine dayanır.",
         "spotClue": "Metastatik kolon adenokarsinomu tedavi markerları.",
         "trap": "Lenfoma markerı CD20'yi kolon kanseri hedef markerı sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -34282,7 +34282,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "CD5 ve CD23 ve klonal B hücre popülasyonu ile birlikte bu hematolojik bulgu örüntüsü en çok hangi tanıyı destekler?",
     "spotPearl": "CLL tanısında periferik kan akım sitometri temel doğrulayıcı testtir.",
-    "learningOutcome": "yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -34438,7 +34438,7 @@ export const cases = [
             "text": "Semptom, sitopeni ve genetik risklere göre izlem veya tedavi kararı ver."
           }
         ],
-        "learningOutcome": "yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre bilgisine dayanır.",
         "spotClue": "Yaşlı hasta ve kronik lenfositoz ve CD5 veya CD23 klonal B hücre.",
         "trap": "Tanıyı evreleme veya prognostik testlerle başlatmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -34533,7 +34533,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Retikülositoz, LDH veya indirekt bilirubin yüksekliği ve IgG veya C3 pozitifliği en çok hangi tabloyu destekler?",
     "spotPearl": "Otoimmün hemolitik anemide doğrulayıcı test direkt Coombs’tur.",
-    "learningOutcome": "hemoliz bulguları ve direkt Coombs IgG veya C3 pozitifliği klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar hemoliz bulguları ve direkt Coombs IgG veya C3 pozitifliği bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -34685,7 +34685,7 @@ export const cases = [
             "text": "AIHA doğrulanırsa altta yatan neden ve steroid veya immünsüpresyon gereğini planla."
           }
         ],
-        "learningOutcome": "hemoliz bulguları ve direkt Coombs IgG veya C3 pozitifliği klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar hemoliz bulguları ve direkt Coombs IgG veya C3 pozitifliği bilgisine dayanır.",
         "spotClue": "Hemoliz bulguları ve direkt Coombs IgG veya C3 pozitifliği.",
         "trap": "Hemoliz testlerini yanlış hastalık doğrulama testleriyle eşleştirmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -34743,7 +34743,7 @@ export const cases = [
     "questionType": "Spot",
     "question": "Aşağıdaki eşleşmelerden hangisi yanlıştır?",
     "spotPearl": "Herediter difüz mide kanseri: CDH1.",
-    "learningOutcome": "herediter difüz mide kanseri gen eşleşmesi klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar herediter difüz mide kanseri gen eşleşmesi bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -34887,7 +34887,7 @@ export const cases = [
             "text": "Uygun genetik danışmanlık ve test planını yap."
           }
         ],
-        "learningOutcome": "herediter difüz mide kanseri gen eşleşmesi klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar herediter difüz mide kanseri gen eşleşmesi bilgisine dayanır.",
         "spotClue": "Herediter difüz mide kanseri gen eşleşmesi.",
         "trap": "ATM'yi herediter difüz mide kanserinin temel geni sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -34946,7 +34946,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu klinik tabloda ilk seçilecek tedavi hangisidir?",
     "spotPearl": "Anafilakside ilk ilaç IM adrenalindir.",
-    "learningOutcome": "ilaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar ilaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -35090,7 +35090,7 @@ export const cases = [
             "text": "Oksijen, IV sıvı, antihistaminik veya steroid ve gözlemi destek olarak ekle."
           }
         ],
-        "learningOutcome": "ilaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar ilaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı bilgisine dayanır.",
         "spotClue": "İlaç sonrası dakikalar içinde yaygın döküntü ve fenalık veya kaşıntı.",
         "trap": "Antihistaminik veya steroidleri ilk tedavi sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -35150,7 +35150,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu hastadaki dijital lezyonlar için uygun ilaç kombinasyonu hangisidir?",
     "spotPearl": "Sistemik skleroz dijital ülserlerinde iloprost ve bosentan yüksek verimli ilaçlardır.",
-    "learningOutcome": "Raynaud ve ağrılı dijital ülser ve CCB yetersizliği klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -35298,7 +35298,7 @@ export const cases = [
             "text": "Soğuk maruziyeti, sigara ve travmadan kaçınma eğitimi ver."
           }
         ],
-        "learningOutcome": "Raynaud ve ağrılı dijital ülser ve CCB yetersizliği klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar Raynaud ve ağrılı dijital ülser ve CCB yetersizliği bilgisine dayanır.",
         "spotClue": "Raynaud ve ağrılı dijital ülser ve CCB yetersizliği.",
         "trap": "Onkolojik hedef ilaç isimlerine kayıp sistemik skleroz vaskülopatisini kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -35388,7 +35388,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Anti-dsDNA yüksekliği ve C3 veya C4 düşüklüğü olan bu panelin en doğru yorumu hangisidir?",
     "spotPearl": "SLE aktivite takibi: anti-dsDNA ↑, C3 veya C4 ↓.",
-    "learningOutcome": "SLE aktivite izlemi ve anti-dsDNA yüksekliği ve kompleman düşüklüğü klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar SLE aktivite izlemi ve anti-dsDNA yüksekliği ve kompleman düşüklüğü bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -35544,7 +35544,7 @@ export const cases = [
             "text": "Aktiviteye göre immünsüpresif tedavi ve nefroloji değerlendirmesini planla."
           }
         ],
-        "learningOutcome": "SLE aktivite izlemi ve anti-dsDNA yüksekliği ve kompleman düşüklüğü klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar SLE aktivite izlemi ve anti-dsDNA yüksekliği ve kompleman düşüklüğü bilgisine dayanır.",
         "spotClue": "SLE aktivite izlemi ve anti-dsDNA yüksekliği ve kompleman düşüklüğü.",
         "trap": "ANA'yı aktivite markerı sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -35642,7 +35642,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Nefrotik proteinüriyle birlikte bu biyopsi-seroloji bulgu örüntüsü en çok hangi tanıyı destekler?",
     "spotPearl": "Primer membranöz nefropati markerı: anti-PLA2R.",
-    "learningOutcome": "erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -35798,7 +35798,7 @@ export const cases = [
             "text": "Risk sınıfına göre destek tedavi ve immünsüpresyon gereğini planla."
           }
         ],
-        "learningOutcome": "erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği bilgisine dayanır.",
         "spotClue": "Erişkinde nefrotik proteinüri ve anti-PLA2R pozitifliği.",
         "trap": "Diğer otoantikorları primer membranöz nefropati markerı sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -35855,7 +35855,7 @@ export const cases = [
     "questionType": "Spot",
     "question": "Aşağıdaki bulgulardan hangisi diyabetik nefropati dışı etiyolojiyi daha güçlü düşündürür?",
     "spotPearl": "Diyabetik nefropati dışı ipuçları: aktif idrar sedimenti, makroskopik hematüri, hızlı GFR düşüşü, kısa diyabet süresi.",
-    "learningOutcome": "diyabetik nefropati bulgu örüntüsünde makroskopik hematüri kırmızı bayrağı klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar diyabetik nefropati bulgu örüntüsünde makroskopik hematüri kırmızı bayrağı bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -36003,7 +36003,7 @@ export const cases = [
             "text": "Gerektiğinde nefroloji ve böbrek biyopsisi değerlendirmesi planla."
           }
         ],
-        "learningOutcome": "diyabetik nefropati bulgu örüntüsünde makroskopik hematüri kırmızı bayrağı klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar diyabetik nefropati bulgu örüntüsünde makroskopik hematüri kırmızı bayrağı bilgisine dayanır.",
         "spotClue": "Diyabetik nefropati bulgu örüntüsünde makroskopik hematüri kırmızı bayrağı.",
         "trap": "Diyabette her böbrek bulgusunu otomatik diyabetik nefropati kabul etmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -36291,7 +36291,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu tabloyu en iyi açıklayan tanı hangisidir?",
     "spotPearl": "Geriatrik depresyon unutkanlıkla gelebilir ve demansı taklit edebilir.",
-    "learningOutcome": "eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -36439,7 +36439,7 @@ export const cases = [
             "text": "Depresyon tedavisi ve yakın takip planla."
           }
         ],
-        "learningOutcome": "eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık bilgisine dayanır.",
         "spotClue": "Eş kaybı sonrası isteksizlik ve iştah azalması ve unutkanlık.",
         "trap": "Her unutkanlığı primer demans kabul etmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -36497,7 +36497,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu bulgularla en uyumlu tanı hangisidir?",
     "spotPearl": "Pitriazis rozea: herald patch ve Christmas tree dağılımı.",
-    "learningOutcome": "önce tek madalyon plak, sonra gövde döküntüsü klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar önce tek madalyon plak, sonra gövde döküntüsü bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -36641,7 +36641,7 @@ export const cases = [
             "text": "Kaşıntı için semptomatik tedavi ve atipik veya uzayan olguda yeniden değerlendirme planla."
           }
         ],
-        "learningOutcome": "önce tek madalyon plak, sonra gövde döküntüsü klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar önce tek madalyon plak, sonra gövde döküntüsü bilgisine dayanır.",
         "spotClue": "Önce tek madalyon plak, sonra gövde döküntüsü.",
         "trap": "Mukozal veya şiddetli büllöz dermatozlarla benign pitriazis rozeayı karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -36719,7 +36719,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Bu hastada en uygun tedavi seçeneği hangisidir?",
     "spotPearl": "Tinea pedis tedavisinde topikal terbinafin veya azol antifungaller kullanılır.",
-    "learningOutcome": "interdigital maserasyon ve plantar hiperkeratotik skuam klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar interdigital maserasyon ve plantar hiperkeratotik skuam bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -36863,7 +36863,7 @@ export const cases = [
             "text": "Ayak kuruluğu, ayakkabı veya çorap hijyeni ve nüks önlemlerini anlat."
           }
         ],
-        "learningOutcome": "interdigital maserasyon ve plantar hiperkeratotik skuam klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar interdigital maserasyon ve plantar hiperkeratotik skuam bilgisine dayanır.",
         "spotClue": "İnterdigital maserasyon ve plantar hiperkeratotik skuam.",
         "trap": "Mantar enfeksiyonunu viral, paraziter veya bakteriyel deri tedavileriyle karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -36922,7 +36922,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu nörolojik dağılımda en olası etkilenen arter hangisidir?",
     "spotPearl": "ACA infarktı: karşı bacakta belirgin güç veya kuyu, abuli veya idrar inkontinansı görülebilir.",
-    "learningOutcome": "bacakta koldan belirgin motor defisit klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar bacakta koldan belirgin motor defisit bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -37070,7 +37070,7 @@ export const cases = [
             "text": "Damar sulama alanına göre etiyoloji ve sekonder korunmayı planla."
           }
         ],
-        "learningOutcome": "bacakta koldan belirgin motor defisit klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar bacakta koldan belirgin motor defisit bilgisine dayanır.",
         "spotClue": "Bacakta koldan belirgin motor defisit.",
         "trap": "MCA'yı tüm hemiparezilerin otomatik cevabı sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -37128,7 +37128,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu tablo için en olası tanı hangisidir?",
     "spotPearl": "Miyotonik distrofi: myotoni ve distal güçsüzlük ve frontal kellik ve katarakt ve kalp iletim bozukluğu.",
-    "learningOutcome": "yumruk sonrası gevşemede güçlük ve meksiletin yanıtı klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -37272,7 +37272,7 @@ export const cases = [
             "text": "Genetik doğrulama ve kardiyak izlem gereğini değerlendir."
           }
         ],
-        "learningOutcome": "yumruk sonrası gevşemede güçlük ve meksiletin yanıtı klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar yumruk sonrası gevşemede güçlük ve meksiletin yanıtı bilgisine dayanır.",
         "spotClue": "Yumruk sonrası gevşemede güçlük ve meksiletin yanıtı.",
         "trap": "Kas güçsüzlüğünü nöromüsküler kavşak hastalıklarıyla karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -37349,7 +37349,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu hastada en olası etken hangisidir?",
     "spotPearl": "HSV ensefaliti: temporal lob, kişilik değişikliği, fokal nöbet.",
-    "learningOutcome": "ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum bulgu örüntüsü klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum bulgu örüntüsü bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -37497,7 +37497,7 @@ export const cases = [
             "text": "Nöbet kontrolü ve yoğun bakım gereksinimini değerlendir."
           }
         ],
-        "learningOutcome": "ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum bulgu örüntüsü klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum bulgu örüntüsü bilgisine dayanır.",
         "spotClue": "Ateş ve kişilik değişikliği ve fokal nöbet ve temporal tutulum bulgu örüntüsü.",
         "trap": "Bakteriyel menenjit veya diğer nörolojik etkenlere kayıp HSV ensefalitini atlamak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -37556,7 +37556,7 @@ export const cases = [
     "questionType": "Spot",
     "question": "Bu örüntüde en olası savunma mekanizması hangisidir?",
     "spotPearl": "Yansıtma: kabul edilemeyen duygu veya dürtüyü başkasına atfetme.",
-    "learningOutcome": "kendi kıskançlığını başkasına atfetme klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar kendi kıskançlığını başkasına atfetme bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -37700,7 +37700,7 @@ export const cases = [
             "text": "Savunma mekanizmasını örüntüye göre adlandır."
           }
         ],
-        "learningOutcome": "kendi kıskançlığını başkasına atfetme klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar kendi kıskançlığını başkasına atfetme bilgisine dayanır.",
         "spotClue": "Kendi kıskançlığını başkasına atfetme.",
         "trap": "Bastırma, baskılama ve yer değiştirme savunmalarının yönünü karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -37758,7 +37758,7 @@ export const cases = [
     "questionType": "Spot",
     "question": "Bu tabloya yol açan lezyonun en olası anatomik yeri hangisidir?",
     "spotPearl": "Korsakoff sendromu: mamiller cisimler, tiamin eksikliği, anterograd amnezi ve konfabulasyon.",
-    "learningOutcome": "alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -37902,7 +37902,7 @@ export const cases = [
             "text": "Beslenme, alkol bırakma ve nörokognitif izlem planla."
           }
         ],
-        "learningOutcome": "alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon bilgisine dayanır.",
         "spotClue": "Alkol veya beslenme bozukluğu ve anterograd amnezi ve konfabulasyon.",
         "trap": "Kortikal görsel veya dil alanlarını bellek devresi lezyonuyla karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -38168,7 +38168,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu olguda en olası tanı hangisidir?",
     "spotPearl": "Biseps tendiniti: anterior omuz ağrısı, Speed veya Yergason pozitifliği.",
-    "learningOutcome": "anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -38316,7 +38316,7 @@ export const cases = [
             "text": "Aktivite modifikasyonu, NSAİİ veya fizyoterapi ve dirençli olguda görüntüleme planla."
           }
         ],
-        "learningOutcome": "anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason bilgisine dayanır.",
         "spotClue": "Anterior omuz ağrısı ve dirsek fleksiyonu veya supinasyonla artış ve Speed veya Yergason.",
         "trap": "Rotator cuff veya servikal kaynaklı ağrıyla biseps tendon provokasyonunu karıştırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -38375,7 +38375,7 @@ export const cases = [
     "questionType": "yönetim",
     "question": "Bu hasta ile temas sırasında hangi izolasyon önlemi gerekir?",
     "spotPearl": "Tüberküloz: hava yolu izolasyonu ve N95 veya FFP2 maske.",
-    "learningOutcome": "aktif akciğer TB şüphesi veya ARB pozitif balgam klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar aktif akciğer TB şüphesi veya ARB pozitif balgam bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -38523,7 +38523,7 @@ export const cases = [
             "text": "Balgam incelemesi, bildirim ve temaslı taramasını planla."
           }
         ],
-        "learningOutcome": "aktif akciğer TB şüphesi veya ARB pozitif balgam klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar aktif akciğer TB şüphesi veya ARB pozitif balgam bilgisine dayanır.",
         "spotClue": "Aktif akciğer TB şüphesi veya ARB pozitif balgam.",
         "trap": "TB'yi damlacık veya sadece standart maske izolasyonu ile yönetmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -38601,7 +38601,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu olguda en olası tanı hangisidir?",
     "spotPearl": "Konküzyon klinik tanıdır. BT normal olabilir.",
-    "learningOutcome": "baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -38749,7 +38749,7 @@ export const cases = [
             "text": "Kademeli aktivite veya spora dönüş ve kontrol planla."
           }
         ],
-        "learningOutcome": "baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir bilgisine dayanır.",
         "spotClue": "Baş travması sonrası amnezi veya konsantrasyon bozukluğu ve BT normal olabilir.",
         "trap": "Görüntüleme normal diye beyin sarsıntısını dışlamak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -38833,7 +38833,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu lezyonlar için en olası tanı hangisidir?",
     "spotPearl": "Eritema toksikum: benign, geçici, eozinofilli papülopüstüler yenidoğan döküntüsü.",
-    "learningOutcome": "iyi görünen term yenidoğanda geçici papülopüstüller klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar iyi görünen term yenidoğanda geçici papülopüstüller bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -38981,7 +38981,7 @@ export const cases = [
             "text": "Atipik veya sistemik bulguda enfeksiyon açısından yeniden değerlendir."
           }
         ],
-        "learningOutcome": "iyi görünen term yenidoğanda geçici papülopüstüller klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar iyi görünen term yenidoğanda geçici papülopüstüller bilgisine dayanır.",
         "spotClue": "İyi görünen term yenidoğanda geçici papülopüstüller.",
         "trap": "Benign yenidoğan döküntüsünü enfeksiyon veya kronik dermatoz sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -39084,7 +39084,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu serolojik bulgu örüntüsünün en doğru yorumu hangisidir?",
     "spotPearl": "Akut HAV tanısı: anti-HAV IgM.",
-    "learningOutcome": "kamp sonrası akut hepatit ve koyu idrar veya sarılık klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar kamp sonrası akut hepatit ve koyu idrar veya sarılık bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -39240,7 +39240,7 @@ export const cases = [
             "text": "Destek tedavisi, hijyen veya bulaş önlemleri ve fulminan hepatit uyarılarını izle."
           }
         ],
-        "learningOutcome": "kamp sonrası akut hepatit ve koyu idrar veya sarılık klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar kamp sonrası akut hepatit ve koyu idrar veya sarılık bilgisine dayanır.",
         "spotClue": "Kamp sonrası akut hepatit ve koyu idrar veya sarılık.",
         "trap": "Hemoliz testlerini hepatit serolojisi yerine seçmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -39318,7 +39318,7 @@ export const cases = [
     "questionType": "Spot",
     "question": "Bu tabloya en olası olarak hangi vitamin eksikliği veya taşıma bozukluğu yol açar?",
     "spotPearl": "Thiamine-responsive megaloblastic anemia: diyabet ve sensorinöral işitme kaybı ve megaloblastik anemi.",
-    "learningOutcome": "sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -39466,7 +39466,7 @@ export const cases = [
             "text": "İşitme ve endokrin izlem gereksinimini düzenle."
           }
         ],
-        "learningOutcome": "sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi bilgisine dayanır.",
         "spotClue": "Sensorinöral işitme kaybı ve diyabet ve megaloblastik anemi.",
         "trap": "Makrositer anemiyi yalnız B12 veya folat eksikliği gibi düşünmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -39526,7 +39526,7 @@ export const cases = [
     "questionType": "Spot",
     "question": "X'e bağlı adrenolökodistrofi için aşağıdakilerden hangisi yanlıştır?",
     "spotPearl": "X-ALD: ABCD1, çok uzun zincirli yağ asitleri ↑, adrenal yetmezlik ve beyaz cevher demiyelinizasyonu.",
-    "learningOutcome": "erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -39674,7 +39674,7 @@ export const cases = [
             "text": "Endokrin replasman ve nöroloji veya metabolizma izlemine yönlendir."
           }
         ],
-        "learningOutcome": "erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu bilgisine dayanır.",
         "spotClue": "Erkek çocuk ve adrenal yetmezlik ve posterior beyaz cevher tutulumu.",
         "trap": "Adrenolökodistrofiyi gri cevher hastalığı sanmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -39733,7 +39733,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu tabloyla en uyumlu tanı hangisidir?",
     "spotPearl": "APECED veya APS-1: kronik mukokutanöz kandidiyazis ve hipoparatiroidi ve Addison.",
-    "learningOutcome": "kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -39881,7 +39881,7 @@ export const cases = [
             "text": "Endokrin replasman, antifungal tedavi ve genetik danışmanlığı planla."
           }
         ],
-        "learningOutcome": "kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları bilgisine dayanır.",
         "spotClue": "Kronik kandidiyazis ve hipoparatiroidi veya Addison bulguları.",
         "trap": "Puberte gecikmesini izole Turner veya Kallmann gibi düşünmek.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -39940,7 +39940,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu çocukta en olası doğumsal metabolik hastalık hangisidir?",
     "spotPearl": "Homosistinüri: marfanoid habitus ve lens subluksasyonu ve tromboz veya inme riski.",
-    "learningOutcome": "marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -40088,7 +40088,7 @@ export const cases = [
             "text": "B6 yanıtı, folat veya B12 veya betain ve tromboz önleme stratejisini değerlendir."
           }
         ],
-        "learningOutcome": "marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme bilgisine dayanır.",
         "spotClue": "Marfanoid habitus ve lens öyküsü ve çocukta tromboz veya inme.",
         "trap": "Marfan fenotipine takılıp tromboz ipucunu kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -40207,7 +40207,7 @@ export const cases = [
     "questionType": "Diagnosis",
     "question": "Bu neonatal anemi bulgu örüntüsünün en doğru yorumu hangisidir?",
     "spotPearl": "Fetomaternal hemoraji tanısı: Kleihauer-Betke testi.",
-    "learningOutcome": "yenidoğanda ağır anemi ve dış kanama veya hemoliz yok klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar yenidoğanda ağır anemi ve dış kanama veya hemoliz yok bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -40363,7 +40363,7 @@ export const cases = [
             "text": "Anne kanında Kleihauer-Betke testi ile fetal eritrositleri araştır."
           }
         ],
-        "learningOutcome": "yenidoğanda ağır anemi ve dış kanama veya hemoliz yok klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar yenidoğanda ağır anemi ve dış kanama veya hemoliz yok bilgisine dayanır.",
         "spotClue": "Yenidoğanda ağır anemi ve dış kanama veya hemoliz yok.",
         "trap": "Hemoliz veya alloimmünite testlerine kayıp fetal-maternal kanamayı kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -40446,7 +40446,7 @@ export const cases = [
     "questionType": "Treatment",
     "question": "Nörolojik sekel riskini azaltmak için en uygun yaklaşım hangisidir?",
     "spotPearl": "HİE’de terapötik hipotermi ilk 6 saat içinde başlanırsa nörolojik sekel riskini azaltır.",
-    "learningOutcome": "term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE klinik karar için belirleyicidir.",
+    "learningOutcome": "Karar term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bilgisine dayanır.",
     "managementSequence": {
       "enabled": false,
       "showInSpot": false,
@@ -40590,7 +40590,7 @@ export const cases = [
             "text": "Uygunsa terapötik hipotermiyi ilk 6 saat içinde başlat ve yoğun bakım izlemi planla."
           }
         ],
-        "learningOutcome": "term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE klinik karar için belirleyicidir.",
+        "learningOutcome": "Karar term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE bilgisine dayanır.",
         "spotClue": "Term bebekte perinatal asfiksi ve ağır asidoz ve orta-ağır HİE.",
         "trap": "Genel destek tedavileriyle nöroprotektif zaman penceresini kaçırmak.",
         "feedbackStandardVersion": "Global-answer-feedback-v3"
@@ -40620,10 +40620,12 @@ export const cases = [
 ];
 
 export function getCaseById(caseId) {
-  return cases.find((clinicalCase) => clinicalCase.id === caseId) ?? null;
+  return cases.find((caseItem) => String(caseItem.id) === String(caseId));
 }
 
 export function getCasesByBranch(branchId) {
-  if (!branchId) return cases;
-  return cases.filter((clinicalCase) => clinicalCase.branchId === branchId);
+  return cases.filter((caseItem) => {
+    const caseBranchId = caseItem.branchId ?? caseItem.branch ?? caseItem.categoryId ?? '';
+    return String(caseBranchId) === String(branchId);
+  });
 }

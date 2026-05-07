@@ -17,14 +17,6 @@ const TEMPLATE_LANGUAGE_PATTERN = /(belirli klinik koşullarda doğru olabilir|b
 const BROKEN_ENDING_PATTERN = /(Bu nedenle en iyi yanıt\.?|Bu nedenle en uygun yanıt\.?|açısından değerlendirilir\.?|ile uyumludur ve\.?|tanısını\.?|en iyi yanıt\.|ve|ile|için)$/iu;
 const CLINICAL_CONTENT_PATTERN = /(ateş|ağrı|eritem|ödem|dispne|göğüs|karın|kusma|ishal|döküntü|senkop|travma|kanama|hipotansiyon|taşikardi|hipoksemi|muayene|vital|laboratuvar|ekg|bt|mr|usg|grafi|seroloji|kültür|pcr|troponin|lökosit|crp|bilirubin|glukoz|ph|hco3|tanı|tedavi|etken|reseptör|enzim|mutasyon|hormon|histoloji|biyopsi|belirti|bulgu|klinik|risk|hasta|çocuk|yenidoğan|kadın|erkek|menenjit|pnömoni|erizipel|kawasaki|asfiksi|antidot|ilaç|hava yolu|hışıltılı solunum|stridor|izlem|tarama)/iu;
 
-
-function replaceKararBilgisineDayanir(value = '') {
-  return String(value || '')
-    .replace(/Bu olguda\s+Karar\s+([^.;]+?)\s+bilgisine dayanır\.?/giu, 'Bu olguda $1 klinik karar için belirleyicidir.')
-    .replace(/\bKarar\s+([^.;]+?)\s+bilgisine dayanır\.?/giu, '$1 klinik karar için belirleyicidir.')
-    .replace(/\bKarar\s+([^.;]+?)\s+klinik kararı yönlendirir\.?/giu, '$1 klinik kararı yönlendirir.');
-}
-
 const ENGLISH_TERM_REPLACEMENTS = [
   [/\bwheezing\b/giu, 'hışıltılı solunum'],
   [/\brash\b/giu, 'döküntü'],
@@ -159,7 +151,7 @@ export function validateClinicalMeaning(text = '') {
 }
 
 export function repairEditorialQuality(text = '', context = {}) {
-  let value = replaceKararBilgisineDayanir(normalizeMedicalTurkish(text));
+  let value = normalizeMedicalTurkish(text);
   value = value
     .replace(/\bKrup genellikle havlar tarzda öksürük ve daha yavaş başlangıç gösterir ayırıcı tanıda önemlidir\.?/giu, 'Krup genellikle havlar tarzda öksürük, ses kısıklığı ve daha yavaş başlangıçla seyreder. Epiglottitte toksik görünüm, yüksek ateş, salya akması ve tripod pozisyonu daha belirgindir.')
     .replace(/\bEpiglottitte ajitasyon ve gereksiz manipülasyon obstrüksiyonu artırabilir\.?/giu, 'Epiglottitte boğaz muayenesi için gereksiz manipülasyon yapılması hava yolu obstrüksiyonunu artırabilir. Öncelik hava yolunu güvenceye almaktır.')

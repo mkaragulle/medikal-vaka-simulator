@@ -1,0 +1,21 @@
+{
+  "generatedAt": "2026-05-07T12:52:28.977Z",
+  "stats": {
+    "cases": {
+      "strings": 20475,
+      "changed": 393
+    },
+    "AI_QUESTION_SEEDS": {
+      "strings": 312,
+      "changed": 33
+    },
+    "AI_BRANCH_TEMPLATE_SEEDS": {
+      "strings": 560,
+      "changed": 21
+    },
+    "AI_SYNTHETIC_FALLBACK_SEEDS": {
+      "strings": 665,
+      "changed": 43
+    }
+  }
+}

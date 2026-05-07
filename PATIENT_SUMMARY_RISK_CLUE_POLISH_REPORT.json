@@ -1,0 +1,155 @@
+{
+  "updatedBullets": 680,
+  "samples": [
+    {
+      "id": "cv-anterior-stemi-001",
+      "field": "riskContext",
+      "before": "Kontrolsüz hipertansiyon / vasküler stres",
+      "after": "Kontrolsüz hipertansiyon / vasküler stres."
+    },
+    {
+      "id": "cv-anterior-stemi-001",
+      "field": "riskContext",
+      "before": "Aterosklerotik risk zemini",
+      "after": "Aterosklerotik risk zemini."
+    },
+    {
+      "id": "cv-anterior-stemi-001",
+      "field": "distinctiveClues",
+      "before": "Sol kola/mandibulaya yayılan baskı tarzı ağrı",
+      "after": "Sol kola/mandibulaya yayılan baskı tarzı ağrı."
+    },
+    {
+      "id": "cv-anterior-stemi-001",
+      "field": "distinctiveClues",
+      "before": "Soğuk terleme ve bulantı",
+      "after": "Soğuk terleme ve bulantı."
+    },
+    {
+      "id": "cv-anterior-stemi-001",
+      "field": "distinctiveClues",
+      "before": "V2–V5 ST elevasyonu",
+      "after": "V2–V5 ST elevasyonu."
+    },
+    {
+      "id": "cv-anterior-stemi-001",
+      "field": "distinctiveClues",
+      "before": "Resiprokal ST depresyonu",
+      "after": "Resiprokal ST depresyonu."
+    },
+    {
+      "id": "cv-aortic-dissection-001",
+      "field": "riskContext",
+      "before": "Kontrolsüz hipertansiyon / vasküler stres",
+      "after": "Kontrolsüz hipertansiyon / vasküler stres."
+    },
+    {
+      "id": "cv-aortic-dissection-001",
+      "field": "riskContext",
+      "before": "Aterosklerotik risk zemini",
+      "after": "Aterosklerotik risk zemini."
+    },
+    {
+      "id": "cv-aortic-dissection-001",
+      "field": "distinctiveClues",
+      "before": "Kontrolsüz hipertansiyon öyküsü",
+      "after": "Kontrolsüz hipertansiyon öyküsü."
+    },
+    {
+      "id": "cv-aortic-dissection-001",
+      "field": "distinctiveClues",
+      "before": "Sırta yayılan ani yırtılır ağrı",
+      "after": "Sırta yayılan ani yırtılır ağrı."
+    },
+    {
+      "id": "cv-aortic-dissection-001",
+      "field": "distinctiveClues",
+      "before": "Nabız/TA asimetrisi",
+      "after": "Nabız/TA asimetrisi."
+    },
+    {
+      "id": "cv-aortic-dissection-001",
+      "field": "distinctiveClues",
+      "before": "Asendan aort intimal flap bulgusu",
+      "after": "Asendan aort intimal flap bulgusu."
+    },
+    {
+      "id": "cv-tamponade-001",
+      "field": "riskContext",
+      "before": "Acil başvuru bağlamında stabilite değerlendirmesi",
+      "after": "Acil başvuru bağlamında stabilite değerlendirmesi."
+    },
+    {
+      "id": "cv-tamponade-001",
+      "field": "distinctiveClues",
+      "before": "Progresif dispne ve presenkop",
+      "after": "Progresif dispne ve presenkop."
+    },
+    {
+      "id": "cv-tamponade-001",
+      "field": "distinctiveClues",
+      "before": "Juguler venöz dolgunluk",
+      "after": "Juguler venöz dolgunluk."
+    },
+    {
+      "id": "cv-tamponade-001",
+      "field": "distinctiveClues",
+      "before": "Pulsus paradoxus",
+      "after": "Pulsus paradoxus."
+    },
+    {
+      "id": "cv-tamponade-001",
+      "field": "distinctiveClues",
+      "before": "Sağ kalp boşluklarında diyastolik kollaps",
+      "after": "Sağ kalp boşluklarında diyastolik kollaps."
+    },
+    {
+      "id": "cv-pulmonary-edema-001",
+      "field": "riskContext",
+      "before": "Aterosklerotik risk zemini",
+      "after": "Aterosklerotik risk zemini."
+    },
+    {
+      "id": "cv-pulmonary-edema-001",
+      "field": "riskContext",
+      "before": "Enfeksiyon ve temas/izolasyon bağlamı",
+      "after": "Enfeksiyon ve temas/izolasyon bağlamı."
+    },
+    {
+      "id": "cv-pulmonary-edema-001",
+      "field": "distinctiveClues",
+      "before": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını",
+      "after": "Gece artan dispne ve ortopne sol kalp dolum basıncı artışını gösterir."
+    },
+    {
+      "id": "cv-pulmonary-edema-001",
+      "field": "distinctiveClues",
+      "before": "S3 ve Juguler venöz dolgunluk",
+      "after": "S3 ve Juguler venöz dolgunluk."
+    },
+    {
+      "id": "cv-pulmonary-edema-001",
+      "field": "distinctiveClues",
+      "before": "Bilateral yaygın raller alveoler/interstisyel ödemle uyumludur",
+      "after": "Bilateral yaygın raller alveoler/interstisyel ödemle uyumludur."
+    },
+    {
+      "id": "cv-pulmonary-edema-001",
+      "field": "distinctiveClues",
+      "before": "NT-proBNP yüksekliği ve perihiler ödem paterni kardiyojenik kökeni güçlendirir",
+      "after": "NT-proBNP yüksekliği ve perihiler ödem paterni kardiyojenik kökeni güçlendirir."
+    },
+    {
+      "id": "cv-hocm-001",
+      "field": "riskContext",
+      "before": "Aile öyküsü veya kalıtsal yatkınlık",
+      "after": "Aile öyküsü veya kalıtsal yatkınlık."
+    },
+    {
+      "id": "cv-hocm-001",
+      "field": "distinctiveClues",
+      "before": "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi",
+      "after": "Efor sırasında senkop dinamik obstrüksiyon veya malign aritmi riskini düşündürür."
+    }
+  ]
+}

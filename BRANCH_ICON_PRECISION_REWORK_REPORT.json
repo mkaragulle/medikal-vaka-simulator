@@ -1,0 +1,27 @@
+{
+  "scope": [
+    "tus-spot-olgular",
+    "medical-microbiology",
+    "medical-pharmacology",
+    "pediatrics"
+  ],
+  "changedFiles": [
+    "src/components/ui.jsx",
+    "src/components/BranchSelector.jsx",
+    "src/index.css"
+  ],
+  "removedStaleArtifacts": [
+    "dist/"
+  ],
+  "validation": {
+    "jsxSyntaxTranspileCheck": "passed",
+    "cssBraceParenBracketBalance": "passed",
+    "npmRunBuild": "not_run_due_to_firebase_dependency_install_timeout_in_environment"
+  },
+  "motions": {
+    "tus-spot-olgular": "Main star pulse plus staggered sparkle pop/glow for flash learning feel.",
+    "medical-microbiology": "Microbial core pulse plus spike/dot rhythm and halo-compatible transition motion.",
+    "medical-pharmacology": "Optically centered capsule with subtle swing and dose/effect line emphasis.",
+    "pediatrics": "Warm pediatric breathing pulse with soft care-star sparkle."
+  }
+}
