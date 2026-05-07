@@ -269,6 +269,47 @@ function isLongResultValue(value = '') {
   return text.length > 64 || text.split(/\s+/).length > 8;
 }
 
+function hasMeasurementUnitSignal(value = '') {
+  return /(mg\/dL|g\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|uIU\/mL|mmHg|\/mm³|\/mm3|x10\^3\/µL|%|sn|mm|cm|mL|L|IU|titre|titer)/i.test(String(value || ''));
+}
+
+function hasMeaningfulReference(row = {}) {
+  const reference = String(row.reference || '').trim();
+  return Boolean(reference && !isGenericQualitativeReference(reference));
+}
+
+function isNarrativeCell(value = '') {
+  const text = String(value || '').trim();
+  if (!text || text === '—') return false;
+  const words = text.split(/\s+/).filter(Boolean).length;
+  const hasLetters = /[A-Za-zÇĞİÖŞÜçğıöşü]/.test(text);
+  const hasNumericMeasurement = /\d/.test(text) && hasMeasurementUnitSignal(text);
+  return hasLetters && !hasNumericMeasurement && (words >= 2 || text.length >= 18);
+}
+
+function isTextDominantRow(row = {}) {
+  return isNarrativeCell(row.value) || isNarrativeCell(row.reference) || isNarrativeCell(row.note);
+}
+
+
+function getResultTableVariant(rows = [], itemType = '', hardMode = false) {
+  const normalizedRows = rows.map(normalizeResultRow);
+  const rowCount = normalizedRows.length || 1;
+  const quantitativeRows = normalizedRows.filter(rowHasQuantitativeSignal).length;
+  const textDominantRows = normalizedRows.filter(isTextDominantRow).length;
+  const meaningfulReferenceRows = normalizedRows.filter(hasMeaningfulReference).length;
+  const hasLongCell = normalizedRows.some((row) => isLongResultValue(row.value) || isLongResultValue(row.reference) || isLongResultValue(row.note));
+  const quantitativeRatio = quantitativeRows / rowCount;
+  const textDominantRatio = textDominantRows / rowCount;
+  const isClassicNumericLab = PARAMETER_TABLE_TYPES.has(itemType) && quantitativeRatio >= 0.5 && textDominantRatio < 0.5 && !hasLongCell;
+
+  if (!meaningfulReferenceRows) return 'two-column';
+  if (!isClassicNumericLab || hardMode || textDominantRatio >= 0.4 || hasLongCell) {
+    return 'three-column';
+  }
+  return 'four-column';
+}
+
 function ResultFindingList({ rows = [], glossaryEnabled = true }) {
   const normalizedRows = rows.map(normalizeResultRow);
 
@@ -309,12 +350,12 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
     return <ResultFindingList rows={rows} glossaryEnabled={glossaryEnabled} />;
   }
 
-  const useWideResultLayout = hardMode || normalizedRows.some((row) => isLongResultValue(row.value));
+  const tableVariant = getResultTableVariant(rows, itemType, hardMode);
 
-  if (useWideResultLayout) {
+  if (tableVariant === 'two-column') {
     return (
-      <div className="table-wrap lab-table-wrap ordered-result-table-wrap inline-result-table-wrap compact-result-table-wrap">
-        <table className="lab-table ordered-result-table inline-result-table compact-result-table">
+      <div className="table-wrap lab-table-wrap ordered-result-table-wrap inline-result-table-wrap compact-result-table-wrap adaptive-result-table-wrap">
+        <table className="lab-table ordered-result-table inline-result-table compact-result-table adaptive-result-table adaptive-result-table--two">
           <thead>
             <tr>
               <th>Parametre</th>
@@ -324,6 +365,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
           <tbody>
             {normalizedRows.map(({ parameter, value, reference, note }, index) => {
               const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
+              const secondary = note && !/klinik olarak anlamli|objektif sonuc|yorum gerektirir/i.test(String(note)) ? note : '';
               return (
                 <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
                   <td>
@@ -333,6 +375,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
                   </td>
                   <td>
                     <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} /></span>
+                    {secondary ? <span className="lab-cell-subnote"><GlossaryText text={String(secondary)} enabled={glossaryEnabled} /></span> : null}
                   </td>
                 </tr>
               );
@@ -343,9 +386,45 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
     );
   }
 
+  if (tableVariant === 'three-column') {
+    return (
+      <div className="table-wrap lab-table-wrap ordered-result-table-wrap inline-result-table-wrap adaptive-result-table-wrap">
+        <table className="lab-table ordered-result-table inline-result-table adaptive-result-table adaptive-result-table--three">
+          <thead>
+            <tr>
+              <th>Parametre</th>
+              <th>Sonuç</th>
+              <th>Referans</th>
+            </tr>
+          </thead>
+          <tbody>
+            {normalizedRows.map(({ parameter, value, reference, note }, index) => {
+              const { tone } = evaluateSemanticStatus({ parameter, value, reference, note });
+              const secondary = note && !/klinik olarak anlamli|objektif sonuc|yorum gerektirir/i.test(String(note)) ? note : '';
+              return (
+                <tr key={`${parameter || 'satir'}-${index}`} className={`lab-table-row ${tone}`}>
+                  <td>
+                    <div className="lab-parameter-cell">
+                      <strong><GlossaryText text={String(parameter || '')} enabled={glossaryEnabled} /></strong>
+                    </div>
+                  </td>
+                  <td>
+                    <span className="lab-value-text long-result-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} /></span>
+                    {secondary ? <span className="lab-cell-subnote"><GlossaryText text={String(secondary)} enabled={glossaryEnabled} /></span> : null}
+                  </td>
+                  <td><span className="lab-reference-text long-reference-text"><GlossaryText text={String(reference || '—')} enabled={glossaryEnabled} /></span></td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   return (
-    <div className="table-wrap lab-table-wrap ordered-result-table-wrap inline-result-table-wrap">
-      <table className="lab-table ordered-result-table inline-result-table">
+    <div className="table-wrap lab-table-wrap ordered-result-table-wrap inline-result-table-wrap adaptive-result-table-wrap">
+      <table className="lab-table ordered-result-table inline-result-table adaptive-result-table adaptive-result-table--four">
         <thead>
           <tr>
             <th>Parametre</th>
@@ -368,7 +447,7 @@ function ResultTable({ rows = [], hardMode = false, glossaryEnabled = true, item
                 <td>
                   <span className="lab-value-text"><GlossaryText text={String(value || '')} enabled={glossaryEnabled} /></span>
                 </td>
-                <td><span className="lab-reference-text">{reference || '—'}</span></td>
+                <td><span className="lab-reference-text"><GlossaryText text={String(reference || '—')} enabled={glossaryEnabled} /></span></td>
                 <td>
                   <span className={`lab-status-pill ${tone}`}>
                     <GlossaryText text={String(status.label || '—')} enabled={glossaryEnabled} />

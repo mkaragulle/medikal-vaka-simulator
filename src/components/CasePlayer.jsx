@@ -335,8 +335,22 @@ function compactClinicalText(value = '', maxLength = 170) {
   return `${cut.slice(0, naturalBreak > 80 ? naturalBreak : maxLength).trim()}…`;
 }
 
-function limitSummaryItems(items = [], maxItems = 2, maxLength = 78) {
-  return Array.from(new Set(items.map((item) => compactClinicalText(item, maxLength)).filter(Boolean))).slice(0, maxItems);
+function cleanPatientSummaryBullet(value = '') {
+  return String(value || '')
+    .replace(/\s+/g, ' ')
+    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|TUS kırmızı bayrağı)\s*[:：-]\s*/iu, '')
+    .replace(/\s*(\.{3}|…)\s*/g, ' ')
+    .replace(/\s+([,.;:!?])/g, '$1')
+    .trim();
+}
+
+function limitSummaryItems(items = [], maxItems = 4, maxLength = null) {
+  const cleaned = items
+    .map((item) => cleanPatientSummaryBullet(item))
+    .filter(Boolean)
+    .map((item) => (maxLength ? compactClinicalText(item, maxLength) : item));
+
+  return Array.from(new Set(cleaned)).slice(0, maxItems);
 }
 
 function compactSentence(value = '', maxLength = 220) {
@@ -418,15 +432,15 @@ function buildPatientSummary(clinicalCase) {
     normalizeSummaryItems(intro.riskContext).length
       ? normalizeSummaryItems(intro.riskContext)
       : extractPatientRiskChips(clinicalCase),
-    2,
-    76,
+    4,
+    null,
   );
   const clueItems = limitSummaryItems(
     normalizeSummaryItems(intro.distinctiveClues).length
       ? normalizeSummaryItems(intro.distinctiveClues)
       : extractPatientClueChips(clinicalCase),
-    2,
-    76,
+    4,
+    null,
   );
   const profileText = normalizePatientSummaryText(compactClinicalText(intro.profile || [demographics, setting].filter(Boolean).join(' · '), 92));
   const presentationText = normalizePatientSummaryText(compactSentence(intro.presentation || complaint, 118));
