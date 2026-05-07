@@ -81,7 +81,14 @@ export function repairFeedbackText(text = '', { correct = '', clue = '' } = {}) 
 }
 
 function collectStrings(value, output = [], key = '') {
-  const technicalKeys = new Set(['id', 'branchId', 'caseId', 'source', 'sourceCaseId', 'seedId', 'contentSignature', 'topicSignature', 'generationSignature', 'imageUrl', 'sourceUrl', 'license', 'type', 'priority', 'score']);
+  const technicalKeys = new Set([
+    'id', 'branchId', 'caseId', 'source', 'sourceCaseId', 'seedId', 'contentSignature', 'topicSignature',
+    'generationSignature', 'semanticFingerprint', 'dedupeKey', 'optionSetSignature', 'imageUrl', 'sourceUrl',
+    'license', 'type', 'priority', 'score', 'aiMeta', 'metadata', 'provider', 'generator', 'schemaVersion',
+    'generatedAt', 'sourceSeedId', 'sourceConceptOnly', 'conceptOriginHash', 'variantAngle', 'variantNo',
+    'remoteAttempt', 'validationWarnings', 'qualityGateErrors', 'qualityGateWarnings', 'caseType', 'spotCategory',
+    'branchId', 'originalBranchId', 'conceptOriginId'
+  ]);
   if (technicalKeys.has(key)) return output;
   if (typeof value === 'string') output.push(value);
   else if (Array.isArray(value)) value.forEach((item) => collectStrings(item, output, key));

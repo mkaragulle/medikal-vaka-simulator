@@ -1,5 +1,6 @@
 import { AI_QUESTION_SEEDS } from '../data/aiQuestionSeeds.js';
 import { AI_BRANCH_TEMPLATE_SEEDS } from '../data/aiBranchQuestionTemplates.js';
+import { AI_SYNTHETIC_FALLBACK_SEEDS } from '../data/aiSyntheticFallbackTemplates.js';
 import { cases } from '../data/cases.js';
 import { branches } from '../data/branches.js';
 import { shuffleArray } from './randomize.js';
@@ -27,6 +28,9 @@ import {
 const AI_BRANCH_ID = 'tus-spot-olgular';
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const CASE_CONCEPT_LIMIT = 220;
+const MAX_PRIMARY_ATTEMPTS = 12;
+const MAX_REPAIR_ATTEMPTS = 4;
+const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 60;
 const MAX_GENERATION_ATTEMPTS = 180;
 const BRANCH_NAME_BY_ID = Object.fromEntries((branches || []).map((branch) => [branch.id, branch.name || branch.shortName || branch.id]));
 
@@ -88,6 +92,25 @@ const DEMOGRAPHIC_POOL = [
 ];
 
 const SETTING_POOL = ['Acil servis', 'Dahiliye polikliniği', 'Çocuk acil', 'Aile hekimliği başvurusu', 'Servis konsültasyonu', 'Yoğun bakım ön değerlendirmesi'];
+
+const VARIANT_STEM_MODIFIERS = [
+  'Yakınmaların zamanlaması ayırıcı tanı için ayrıca sorgulanır.',
+  'İlk değerlendirmede hemodinamik stabilite ve kırmızı bayraklar kontrol edilir.',
+  'Ek öyküde temas, ilaç kullanımı veya önceki atak bilgisi netleştirilir.',
+  'Muayene bulguları hedefli objektif verilerle birlikte yorumlanır.',
+  'Klinik öncelik, tedaviyi geciktirebilecek olasılıkları hızla ayırmaktır.',
+  'Başvuru sırasında eşlik eden sistemik bulgular karar basamağını etkiler.',
+  'Acil kötüleşme bulguları dışlandıktan sonra en olası açıklama seçilir.',
+  'Laboratuvar veya görüntüleme bulgusu tek başına değil, öyküyle birlikte değerlendirilir.',
+  'Benzer tabloları ayıran temel nokta, bulguların birlikte oluşturduğu klinik örüntüdür.',
+  'Hedefli yaklaşım, gereksiz tedavi veya tetkik yükünü azaltır.',
+];
+
+function buildVariantStemModifier(seed = {}, profile = {}) {
+  const key = `${seed.seedId || seed.title}|${profile.variantNo || 0}|${profile.angle?.id || ''}`;
+  const index = parseInt(stableHash(key).replace(/^q/, ''), 36) % VARIANT_STEM_MODIFIERS.length;
+  return VARIANT_STEM_MODIFIERS[index];
+}
 
 function richItemText(item = '') {
   if (!item) return '';
@@ -234,10 +257,10 @@ export function buildCaseDerivedAISeeds() {
 
 function getEligibleSeeds(branchFilter = 'random') {
   const normalizedFilter = String(branchFilter || 'random').toLocaleLowerCase('tr');
-  const allSeeds = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...buildCaseDerivedAISeeds()];
+  const allSeeds = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS, ...buildCaseDerivedAISeeds()];
   if (normalizedFilter === 'random' || normalizedFilter === 'rastgele') return allSeeds;
   const filtered = allSeeds.filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
-  return filtered.length ? filtered : [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  return filtered.length ? filtered : [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
 }
 
 function previousSeedIdFromContext(previousQuestionId = '', context = {}) {
@@ -291,9 +314,9 @@ function buildStem(seed, profile, correctText) {
 
   const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'karar verdirici patern');
   const branchRule = getBranchRuleForSeed(seed);
-  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return controlledStem;
-  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return controlledStem;
-  return `${baseStem} Bu varyantta ${profile.angle.stemCue}.`.replace(/\s+/g, ' ').trim();
+  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return `${controlledStem} ${buildVariantStemModifier(seed, profile)}`.replace(/\s+/g, ' ').trim();
+  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return `${controlledStem} ${buildVariantStemModifier(seed, profile)}`.replace(/\s+/g, ' ').trim();
+  return `${baseStem} ${profile.angle.stemCue}. ${buildVariantStemModifier(seed, profile)}`.replace(/\s+/g, ' ').trim();
 }
 
 function normalizeOptionObjects(options = []) {
@@ -596,43 +619,116 @@ function isHardSeedFailure(errors = []) {
     && !errors.every((error) => /duplicate:|yakın geçmişte|embedded-case-overlap|id-repeat|content-signature-repeat/i.test(String(error)));
 }
 
+function shouldLogAIGenerationDebug() {
+  try {
+    return Boolean(import.meta?.env?.DEV) || (typeof window !== 'undefined' && window.localStorage?.getItem('klinikiq-ai-debug') === '1');
+  } catch {
+    return false;
+  }
+}
+
+function logAIGenerationDebug(message, payload = {}) {
+  if (!shouldLogAIGenerationDebug()) return;
+  // eslint-disable-next-line no-console
+  console.debug(`[KlinikIQ AI] ${message}`, payload);
+}
+
+function validateGeneratedCandidate(question, seed, context, branchFilter, errors, stage, attempt) {
+  const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
+  if (validation.ok) {
+    question.aiMeta = {
+      ...(question.aiMeta || {}),
+      generationStage: stage,
+      generationAttempt: attempt,
+      validationErrors: [],
+    };
+    return { ok: true, question };
+  }
+
+  if (isHardSeedFailure(validation.errors)) hardRejectedAISeedIds.add(seed.seedId);
+  const record = { stage, attempt, seedId: seed.seedId, source: seed.source, errors: validation.errors.slice(0, 8) };
+  errors.push(record);
+  logAIGenerationDebug('candidate rejected', record);
+  return { ok: false, validation };
+}
+
+function tryGenerateFromSeeds(seeds, { context, branchFilter, previousQuestionId, errors, stage, maxAttempts, attemptOffset = 0, sourceFactory }) {
+  if (!seeds.length) return null;
+  const candidates = pickCandidateSeeds(seeds, context, previousQuestionId);
+  const totalAttempts = Math.min(Math.max(maxAttempts, candidates.length), MAX_GENERATION_ATTEMPTS);
+
+  for (let attempt = 0; attempt < totalAttempts; attempt += 1) {
+    const seed = candidates[(attempt + attemptOffset) % candidates.length];
+    if (!seed) continue;
+    const source = sourceFactory ? sourceFactory(seed) : 'local-template-generator';
+    const question = buildAIQuestionCase(seed, {
+      source,
+      attempt: attempt + attemptOffset,
+      context,
+      branchFilter,
+    });
+    const result = validateGeneratedCandidate(question, seed, context, branchFilter, errors, stage, attempt + attemptOffset);
+    if (result.ok) return result.question;
+  }
+  return null;
+}
+
+function generateFromSyntheticTemplate(branchFilter, context, previousQuestionId, errors = []) {
+  const syntheticPool = [...AI_SYNTHETIC_FALLBACK_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS]
+    .filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  return tryGenerateFromSeeds(syntheticPool, {
+    context,
+    branchFilter,
+    previousQuestionId,
+    errors,
+    stage: 'local-synthetic-template-fallback',
+    maxAttempts: MAX_TEMPLATE_FALLBACK_ATTEMPTS,
+    attemptOffset: 900,
+    sourceFactory: () => 'local-synthetic-template-fallback',
+  });
+}
+
 export function generateAIQuestion({ previousQuestionId = null, branchFilter = 'random', context = buildRecentQuestionContext() } = {}) {
-  const pool = getEligibleSeeds(branchFilter);
-  const candidates = pickCandidateSeeds(pool, context, previousQuestionId);
   const errors = [];
+  const pool = getEligibleSeeds(branchFilter);
 
-  for (let attempt = 0; attempt < Math.min(MAX_GENERATION_ATTEMPTS, candidates.length * 4); attempt += 1) {
-    const seed = candidates[attempt % candidates.length] || AI_QUESTION_SEEDS[0];
-    const question = buildAIQuestionCase(seed, {
-      source: seed.source === 'embedded-case-concept-only' ? 'concept-template-local-generator' : 'curated-template-local-generator',
-      attempt,
-      context,
-      branchFilter,
-    });
-    const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
-    if (validation.ok) return question;
-    if (isHardSeedFailure(validation.errors)) hardRejectedAISeedIds.add(seed.seedId);
-    errors.push({ seedId: seed.seedId, errors: validation.errors });
+  const primary = tryGenerateFromSeeds(pool, {
+    context,
+    branchFilter,
+    previousQuestionId,
+    errors,
+    stage: 'primary-mutated-seed',
+    maxAttempts: MAX_PRIMARY_ATTEMPTS,
+    sourceFactory: (seed) => (seed.source === 'embedded-case-concept-only' ? 'concept-template-local-generator' : 'curated-template-local-generator'),
+  });
+  if (primary) return primary;
+
+  const repairPool = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS, ...buildCaseDerivedAISeeds()]
+    .filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  const repaired = tryGenerateFromSeeds(repairPool, {
+    context,
+    branchFilter,
+    previousQuestionId,
+    errors,
+    stage: 'repair-and-seed-mutation',
+    maxAttempts: MAX_REPAIR_ATTEMPTS * Math.max(1, Math.min(4, repairPool.length)),
+    attemptOffset: 300,
+    sourceFactory: (seed) => (seed.source === 'embedded-case-concept-only' ? 'concept-template-repair-generator' : 'curated-template-repair-generator'),
+  });
+  if (repaired) return repaired;
+
+  const fallback = generateFromSyntheticTemplate(branchFilter, context, previousQuestionId, errors);
+  if (fallback) return fallback;
+
+  const canUseBroadSynthetic = ['random', 'rastgele'].includes(String(branchFilter || 'random').toLocaleLowerCase('tr'));
+  if (canUseBroadSynthetic) {
+    const broadSynthetic = generateFromSyntheticTemplate('random', context, previousQuestionId, errors);
+    if (broadSynthetic) return broadSynthetic;
   }
 
-  const curatedPool = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...buildCaseDerivedAISeeds()].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
-  for (let attempt = 0; attempt < Math.max(12, curatedPool.length * 3); attempt += 1) {
-    const seed = curatedPool[attempt % curatedPool.length];
-    if (!seed) break;
-    const question = buildAIQuestionCase(seed, {
-      source: 'curated-template-safe-fallback',
-      attempt: attempt + 500,
-      context,
-      branchFilter,
-    });
-    const validation = validateAIQuestionCase(question, context.recentSignatures, { embeddedCases: cases, context, requestedBranch: branchFilter });
-    if (validation.ok) return question;
-    if (isHardSeedFailure(validation.errors)) hardRejectedAISeedIds.add(seed.seedId);
-    errors.push({ seedId: seed.seedId, errors: validation.errors });
-  }
-
-  const error = new Error('AI local generator could not create a non-duplicate question without copying embedded cases.');
-  error.generationErrors = errors.slice(-12);
+  const error = new Error('AI local generator could not create a non-duplicate question after primary, repair and synthetic fallback attempts.');
+  error.generationErrors = errors.slice(-18);
+  logAIGenerationDebug('all generation stages failed', { branchFilter, attempts: errors.length, lastErrors: error.generationErrors });
   throw error;
 }
 

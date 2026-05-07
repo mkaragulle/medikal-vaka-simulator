@@ -272,6 +272,9 @@ function normalizePediatricPresentation(question = {}) {
   const profile = safeDemographic(question);
   const bundle = textBundle(question);
   let presentation = String(question.chiefComplaint || question.patientIntro?.presentation || question.title || '').trim();
+  if (!isPediatrics(question)) {
+    return presentation || question.title || 'Klinik başvuru';
+  }
   if (/hie|hipoksik|iskemik|asfiksi|ensefalopati/.test(bundle)) return 'Doğum sonrası solunum depresyonu ve letarji';
   if (/bruton|pyojenik|b hucre|immunglobulin|otitis|sinuzit/.test(bundle)) return 'Tekrarlayan solunum yolu enfeksiyonları';
   if (/eritema toksikum|papulopustuler|eozinofilli/.test(bundle)) return 'Yenidoğanda döküntü';

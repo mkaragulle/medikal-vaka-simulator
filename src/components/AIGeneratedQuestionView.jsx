@@ -24,8 +24,8 @@ function AISourceBadge({ usedRemoteAI, fallback, generationSource }) {
   const label = usedRemoteAI
     ? 'Gerçek AI aktif'
     : fallback
-      ? 'AI fallback: local generator'
-      : 'Local akıllı generator';
+      ? 'Güvenli yerel üretim'
+      : 'Yerel akıllı üretim';
   const icon = usedRemoteAI ? 'Sparkles' : fallback ? 'ShieldCheck' : 'LayeredCards';
 
   return (
@@ -61,8 +61,8 @@ function AILoadingState() {
     <section className="ai-generation-state card-surface" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
       <div>
-        <h2>AI soru hazırlanıyor...</h2>
-        <p>Soru hazırlanıyor; branş uyumu, klinik tutarlılık, seçenek kalitesi ve tekrar kontrolü uygulanıyor.</p>
+        <h2>Yeni TUS spot sorusu hazırlanıyor...</h2>
+        <p>Branş uyumu, tekrar kontrolü, şık kalitesi ve klinik gerekçe güvenli üretim hattından geçiriliyor.</p>
       </div>
     </section>
   );
@@ -74,7 +74,7 @@ function AIErrorState({ onGenerateQuestion }) {
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
         <h2>Soru üretilemedi.</h2>
-        <p>Güvenli generator geçerli ve tekrar etmeyen yeni soru üretemedi. Mevcut gömülü vakalar fallback olarak gösterilmez; tekrar deneyebilirsin.</p>
+        <p>Bu konuda güvenli ve tekrar etmeyen yeni bir soru oluşturulamadı. Farklı bir branş seçebilir veya tekrar deneyebilirsin.</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
         <Icon name="RotateCcw" /> Tekrar dene

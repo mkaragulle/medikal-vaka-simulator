@@ -232,8 +232,9 @@ export function getBranchControlledProfile(seed = {}, attempt = 0, context = {},
     ? candidateDemographic
     : pickByHash(rule.demographics, `${key}|demographic`);
   const setting = seed.setting || pickByHash(rule.settings, `${key}|setting`);
-  const presentation = seed.chiefComplaint || pickByHash(rule.presentations, `${key}|presentation`);
-  const titleCue = pickByHash(rule.titles, `${key}|title`);
+  const sourcePresentation = seed.chiefComplaint || (seed.source === 'embedded-case-concept-only' ? seed.title : '');
+  const presentation = sourcePresentation || pickByHash(rule.presentations, `${key}|presentation`);
+  const titleCue = seed.source === 'embedded-case-concept-only' && seed.title ? seed.title : pickByHash(rule.titles, `${key}|title`);
   return { rule, demographic, setting, presentation, titleCue };
 }
 
@@ -287,8 +288,8 @@ export function buildBranchAwareStem(seed = {}, profile = {}, angle = {}, correc
     ? `${profile.setting} sırasında ${profile.demographic.toLocaleLowerCase('tr')} için ${presentation.toLocaleLowerCase('tr')} değerlendirilir.`
     : `${profile.demographic} ${profile.setting.toLocaleLowerCase('tr')} başvurusunda ${presentation.toLocaleLowerCase('tr')} nedeniyle değerlendirilir.`;
   const branchCue = rule.category === 'basic-science'
-    ? `Soru, ${maskedTarget} bilgisini klinik bağlamla eşleştirmeyi gerektirir.`
-    : `Öykü ve objektif bulgular ${maskedTarget} ekseninde kısa ve hedef odaklı yorumlanmalıdır.`;
+    ? `Verilen bulgular ${maskedTarget} bilgisinin klinik karşılığını sorgular.`
+    : `Öykü ve objektif bulgular ${maskedTarget} açısından birlikte yorumlanır.`;
   const angleCue = angle?.stemCue ? `${angle.stemCue.charAt(0).toLocaleUpperCase('tr') + angle.stemCue.slice(1)}.` : '';
   return `${opening} ${branchCue} ${angleCue}`.replace(/\s+/g, ' ').trim();
 }
