@@ -14,6 +14,7 @@ import { validateAIQuestionCase } from './validateAIQuestion.js';
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, runAIQuestionQualityGate } from './aiQuestionQualityGate.js';
 import { normalizeMedicalTurkish, repairEditorialQuality } from './editorialQuality.js';
+import { classifyClinicalDatum, removeInlineFieldLabels } from './clinicalFieldPlacement.js';
 import { attachQuestionDedupeFields, createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
 import {
   branchFilterMatchesSeed,
@@ -421,19 +422,35 @@ function buildInvestigation(item, index, correctText = '') {
 }
 
 function buildSyntheticInvestigation(seed, profile, correctText = '') {
-  const learningCue = repairEditorialQuality(maskCorrectConcept(seed.examPearl || seed.learningTarget || 'Ana klinik bulgu', correctText));
-  const branchLabel = profile.angle.id === 'lab' ? 'Hedefli laboratuvar verisi' : profile.angle.id === 'mechanism' ? 'Mekanizma ipucu' : 'Objektif karar verisi';
+  const sourceItems = [
+    ...(Array.isArray(seed.investigations) ? seed.investigations.map((item) => item.summary || item.label || item) : []),
+    ...(Array.isArray(seed.evidenceConcepts) ? seed.evidenceConcepts : []),
+    seed.examPearl,
+    seed.learningTarget,
+  ]
+    .map((item) => removeInlineFieldLabels(maskCorrectConcept(item || '', correctText)))
+    .filter(Boolean);
+
+  const objectiveItems = sourceItems.filter((item) => ['lab', 'imaging', 'ecg', 'vital'].includes(classifyClinicalDatum(item)));
+  if (!objectiveItems.length) return [];
+
+  const primary = repairEditorialQuality(objectiveItems[0]);
+  const datumType = classifyClinicalDatum(primary);
+  const labelByType = {
+    lab: 'Hedefli laboratuvar değerlendirmesi',
+    imaging: /akciğer|grafi|konsolidasyon|bronkogram/iu.test(primary) ? 'Akciğer grafisi' : 'Hedefli görüntüleme',
+    ecg: '12 derivasyon EKG',
+    vital: 'Muayene ve vital bulgular',
+  };
+  const typeByDatum = { lab: 'Lab', imaging: 'Imaging', ecg: 'Ecg', vital: 'Vital' };
   return [{
-    id: `ai-synthetic-clinical-cue-${profile.variantNo}`, 
-    label: branchLabel,
-    type: profile.angle.id === 'mechanism' ? 'mechanism' : 'lab',
+    id: `ai-synthetic-clinical-cue-${profile.variantNo}`,
+    label: labelByType[datumType] || 'Hedefli objektif değerlendirme',
+    type: typeByDatum[datumType] || 'Lab',
     priority: 'essential',
-    summary: learningCue,
-    findings: [
-      seed.title || profile.presentation || 'Başvuru bulgusu tanısal ayrımda önemlidir.',
-      learningCue,
-    ].filter(Boolean),
-    interpretation: 'Objektif veri, öykü ve muayene bulgularıyla birlikte değerlendirilir.',
+    summary: primary,
+    findings: objectiveItems.slice(0, 3).map((item) => repairEditorialQuality(item)),
+    interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte yorumlanır.',
   }];
 }
 

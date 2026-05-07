@@ -232,9 +232,10 @@ export function getBranchControlledProfile(seed = {}, attempt = 0, context = {},
     ? candidateDemographic
     : pickByHash(rule.demographics, `${key}|demographic`);
   const setting = seed.setting || pickByHash(rule.settings, `${key}|setting`);
-  const sourcePresentation = seed.chiefComplaint || (seed.source === 'embedded-case-concept-only' ? seed.title : '');
+  const titleAsPresentation = /ağrı|ateş|öksürük|nefes|kusma|ishal|döküntü|nöbet|sarılık|emme|beslenme|salya|yutamama|hışıltı|solunum|kanama|yanma|şişlik|travma|düşme|letarji|dispne|ağlama|bacak|karın|karnına/i.test(seed.title || '') ? seed.title : '';
+  const sourcePresentation = seed.chiefComplaint || titleAsPresentation || (seed.source === 'embedded-case-concept-only' ? seed.title : '');
   const presentation = sourcePresentation || pickByHash(rule.presentations, `${key}|presentation`);
-  const titleCue = seed.source === 'embedded-case-concept-only' && seed.title ? seed.title : pickByHash(rule.titles, `${key}|title`);
+  const titleCue = seed.title || pickByHash(rule.titles, `${key}|title`);
   return { rule, demographic, setting, presentation, titleCue };
 }
 

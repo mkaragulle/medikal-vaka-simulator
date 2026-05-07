@@ -1,0 +1,14 @@
+{
+  "checkedCases": 132,
+  "changedCases": 0,
+  "visibleStringsScanned": 20523,
+  "validationFailureCount": 0,
+  "validationFailures": [],
+  "fieldRules": [
+    "Başvuru yakınması yalnızca hasta veya yakınının ifade ettiği semptomlardan oluşur.",
+    "Fizik muayene alanında laboratuvar, seroloji, EKG veya görüntüleme sonucu tutulmaz.",
+    "Tetkik alanında laboratuvar ve görüntüleme verileri objektif biçimde saklanır.",
+    "Ayırt ettirici ipuçları inline başlık etiketi içermez ve en fazla 3-5 seçici ipucuna indirgenir.",
+    "Lökosit 16 gibi eksik laboratuvar ifadeleri nötrofil baskın lökositoz veya birimli tetkik verisi olarak normalize edilir."
+  ]
+}
