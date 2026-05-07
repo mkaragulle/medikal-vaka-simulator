@@ -58,8 +58,8 @@ export const STANDARD_BRANCHES = [
     "id": "medical-pathology",
     "name": "Tıbbi Patoloji",
     "shortName": "Tıbbi Patoloji",
-    "description": "Hastalıkların hücresel ve doku düzeyindeki temeli, morfolojik örüntüler ve klinik korelasyon.",
-    "transitionTagline": "Doku örüntüsünü yorumla, hastalığın temelini kavra.",
+    "description": "Hastalıkların hücresel ve doku düzeyindeki temeli, morfolojik paternler ve klinik korelasyon.",
+    "transitionTagline": "Doku paternini yorumla, hastalığın temelini kavra.",
     "accent": "warning",
     "icon": "pathology"
   },

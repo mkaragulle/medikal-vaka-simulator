@@ -13,6 +13,7 @@ import {
 import { validateAIQuestionCase } from './validateAIQuestion.js';
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, runAIQuestionQualityGate } from './aiQuestionQualityGate.js';
+import { repairAIGeneratedText, isPlaceholderInvestigationText, isForbiddenEditorialText } from './editorialQuality.js';
 import { attachQuestionDedupeFields, createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
 import {
   branchFilterMatchesSeed,
@@ -29,28 +30,28 @@ import {
 const AI_BRANCH_ID = 'tus-spot-olgular';
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const CASE_CONCEPT_LIMIT = 220;
-const MAX_PRIMARY_ATTEMPTS = 6;
-const MAX_REPAIR_ATTEMPTS = 2;
-const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 12;
-const MAX_GENERATION_ATTEMPTS = 24;
+const MAX_PRIMARY_ATTEMPTS = 12;
+const MAX_REPAIR_ATTEMPTS = 4;
+const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 60;
+const MAX_GENERATION_ATTEMPTS = 180;
 const BRANCH_NAME_BY_ID = Object.fromEntries((branches || []).map((branch) => [branch.id, branch.name || branch.shortName || branch.id]));
 
 const FALLBACK_DISTRACTORS_BY_BRANCH = {
-  'Tıbbi Mikrobiyoloji': ['Geçirilmiş enfeksiyon örüntüsü', 'Aşı sonrası bağışıklık örüntüsü', 'Kronik taşıyıcılık örüntüsü', 'Reaktivasyon örüntüsü', 'Kontaminasyon lehine sonuç'],
+  'Tıbbi Mikrobiyoloji': ['Geçirilmiş enfeksiyon paterni', 'Aşı sonrası bağışıklık paterni', 'Kronik taşıyıcılık paterni', 'Reaktivasyon paterni', 'Kontaminasyon lehine sonuç'],
   'Tıbbi Farmakoloji': ['Nalokson', 'Flumazenil', 'N-asetilsistein', 'Fomepizol', 'Dantrolen', 'Metilen mavisi'],
   'Tıbbi Biyokimya': ['Fenilalanin hidroksilaz defekti', 'Ornitin transkarbamilaz defekti', 'Propionil-CoA karboksilaz defekti', 'Homogentizat oksidaz defekti', 'Pirüvat dehidrogenaz defekti'],
-  'İç Hastalıkları': ['Sekonder endokrin yetmezlik', 'Akut enfeksiyöz tablo', 'Primer hiperaldosteronizm', 'Uygunsuz ADH sendromu', 'Fonksiyonel yakınma örüntüsü'],
+  'İç Hastalıkları': ['Sekonder endokrin yetmezlik', 'Akut enfeksiyöz tablo', 'Primer hiperaldosteronizm', 'Uygunsuz ADH sendromu', 'Fonksiyonel yakınma paterni'],
   'Çocuk Sağlığı ve Hastalıkları': ['Epiglotit', 'Yabancı cisim aspirasyonu', 'Bronşiolit', 'Astım atağı', 'Bakteriyel trakeit'],
   'Kadın Hastalıkları ve Doğum': ['Normal intrauterin gebelik', 'Tam abortus', 'Molar gebelik', 'Korpus luteum kisti rüptürü', 'Pelvik inflamatuvar hastalık'],
   default: ['Yakın klinik olasılık', 'Farklı mekanizmalı benzer tablo', 'Geçirilmiş hastalık bulgusu', 'Akut komplikasyon dışı durum', 'Normal varyant'],
 };
 
 const SCENARIO_OPENERS = [
-  'Hedefli klinik bağlamda değerlendirilen hastada',
+  'Klinik bağlamda değerlendirilen olguda',
   'Acil karar basamağına getirilen olguda',
   'Poliklinik değerlendirmesinde ayırıcı tanı gerektiren tabloda',
   'Nöbetçi hekimin hızlı yorumlaması gereken spot olguda',
-  'Temel mekanizmanın klinik bulguyla ilişkilendirildiği olguda',
+  'Temel bilim bilgisinin klinik paternle birleştirildiği soruda',
   'Klinik karar toplantısında tartışılan kısa olguda',
 ];
 
@@ -306,18 +307,19 @@ function buildVariantProfile(seed, attempt = 0, context = {}, branchFilter = '')
 function maskCorrectConcept(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
   const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).replace(new RegExp(escaped, 'gi'), 'belirleyici bulgu');
+  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
 }
 
 function buildStem(seed, profile, correctText) {
   const controlledStem = buildBranchAwareStem(seed, profile, profile.angle, correctText);
   if (seed.source === 'embedded-case-concept-only') return controlledStem;
 
-  const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'belirleyici bulgu');
+  const baseStem = String(seed.stem || '').replace(new RegExp(String(correctText || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'), 'karar verdirici patern');
   const branchRule = getBranchRuleForSeed(seed);
-  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return `${controlledStem} ${buildVariantStemModifier(seed, profile)}`.replace(/\s+/g, ' ').trim();
-  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return `${controlledStem} ${buildVariantStemModifier(seed, profile)}`.replace(/\s+/g, ' ').trim();
-  return `${baseStem} ${profile.angle.stemCue}. ${buildVariantStemModifier(seed, profile)}`.replace(/\s+/g, ' ').trim();
+  if (branchRule?.id === 'pediatrics' && /\b([2-9][0-9])\s*yaş\b|erişkin|yaşlı/i.test(baseStem)) return repairAIGeneratedText(controlledStem, { fallback: controlledStem });
+  if (branchRule?.id === 'obstetrics-gynecology' && /\berkek\b|prostat|testis/i.test(baseStem)) return repairAIGeneratedText(controlledStem, { fallback: controlledStem });
+  const cleanBase = repairAIGeneratedText(baseStem, { fallback: baseStem });
+  return cleanBase || repairAIGeneratedText(controlledStem, { fallback: controlledStem });
 }
 
 function normalizeOptionObjects(options = []) {
@@ -366,13 +368,9 @@ function buildEvidenceChain(seed, profile, correctText) {
 }
 
 function cleanClinicalSummaryItem(value = '') {
-  return sanitizeMeasurementText(String(value || ''))
+  return repairAIGeneratedText(sanitizeMeasurementText(String(value || '')), { fallback: '' })
     .replace(/\s+/g, ' ')
-    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik örüntü|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|Morfolojik örüntü|Mekanizma|belirleyici bulgu)\s*[:：-]\s*/iu, '')
-    .replace(/Morfolojik örüntü\.\s*Morfolojik örüntü\.?/giu, '')
-    .replace(/\börüntüyla\b/giu, 'örüntüyle')
-    .replace(/\blikefaksiyon\s+nekrozuyla\b/giu, 'likefaksiyon nekrozu ile')
-    .replace(/\blikefaksiyon(?!\s+nekroz)/giu, 'likefaksiyon nekrozu')
+    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|Sınav incisi|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern|Morfolojik patern|Mekanizma özeti|Mekanizma|Laboratuvar paterni)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
@@ -386,6 +384,7 @@ function uniqueSummaryItems(items = [], max = 4) {
   const seen = new Set();
   const out = [];
   items.map(cleanClinicalSummaryItem).filter(Boolean).forEach((item) => {
+    if (isForbiddenEditorialText(item) || isPlaceholderInvestigationText(item)) return;
     const key = normalizeQuestionText(item);
     if (!seen.has(key)) {
       seen.add(key);
@@ -411,7 +410,7 @@ function buildInvestigation(item, index, correctText = '') {
   const strip = (text = '') => {
     if (!text || !correctText) return text || '';
     const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    return String(text).replace(new RegExp(escaped, 'gi'), 'belirleyici bulgu');
+    return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
   };
   return {
     id: item.id || `ai-investigation-${index + 1}`,
@@ -421,47 +420,58 @@ function buildInvestigation(item, index, correctText = '') {
     rows: Array.isArray(item.rows) ? item.rows.map((row) => Array.isArray(row) ? row.map(sanitizeMeasurementText) : sanitizeMeasurementText(row)) : undefined,
     summary: sanitizeMeasurementText(strip(item.summary || '')),
     findings: Array.isArray(item.findings) ? item.findings.map((finding) => sanitizeMeasurementText(strip(finding))) : [],
-    interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte yorumlanır.',
+    interpretation: repairAIGeneratedText(item.interpretation || '', { fallback: '' }) || undefined,
   };
 }
 
 function buildSyntheticInvestigation(seed, profile, correctText = '') {
-  const bundle = `${seed.relatedBranch || ''} ${seed.spotCategory || ''} ${seed.learningTarget || ''} ${seed.examPearl || ''} ${seed.title || ''}`.toLocaleLowerCase('tr');
-  const isPathologyMechanism = /patoloji|nekroz|infarkt|apse|histopatoloji|biyopsi/.test(bundle);
-  if (!isPathologyMechanism) return [];
-
-  const isLiquefaction = /likefaksiyon|sıvılaşma|beyin|apse/.test(bundle);
-  const rows = isLiquefaction
-    ? [
-      ['Doku mimarisi', 'Santralde sıvılaşma ve yapısal kayıp', 'Korunmuş doku mimarisi', 'Patolojik'],
-      ['İnflamasyon', 'Yoğun nötrofilik debris', 'Yok veya minimal', 'Akut inflamasyon'],
-    ]
-    : [
-      ['Doku mimarisi', 'Hücre konturları gölge şeklinde korunmuş', 'Canlı doku mimarisi', 'Patolojik'],
-      ['Sitoplazma', 'Belirgin eozinofili', 'Normal boyanma', 'Nekrotik değişim'],
-    ];
-
+  const bundle = normalizeQuestionText([
+    seed.relatedBranch,
+    seed.spotCategory,
+    seed.learningTarget,
+    seed.examPearl,
+    seed.title,
+    seed.clinicalFocus,
+    seed.explanation,
+  ].filter(Boolean).join(' '));
+  const learningCue = repairAIGeneratedText(maskCorrectConcept(seed.examPearl || seed.learningTarget || '', correctText), { fallback: '' });
+  const isBasicScience = /patoloji|fizyoloji|biyokimya|farmakoloji|mikrobiyoloji|anatomi|histoloji|embriyoloji/.test(bundle);
+  if (isBasicScience) {
+    if (/nekroz|biyopsi|histoloji|histopatoloji|apse|infarkt|inflamasyon/.test(bundle)) {
+      return [{
+        id: `ai-histopathology-${profile.variantNo}`,
+        label: 'Histopatolojik değerlendirme',
+        type: 'Pathology',
+        priority: 'useful',
+        summary: 'Doku mimarisinde kayıp ve nekrotik alanda enzimatik yıkım izlenir.',
+        findings: [
+          'Beyin dokusunda iskemi veya apse sonrası sıvılaşma nekrozu beklenir.',
+          'Solid organ iskemisinde koagülasyon nekrozu daha tipiktir.',
+        ],
+        rows: [
+          ['Doku paterni', 'Sıvılaşma nekrozu ile uyumlu', 'Normal doku mimarisi korunmalı', 'Patolojik'],
+          ['İnflamatuvar içerik', 'Nötrofilik debris belirgin', 'Belirgin debris beklenmez', 'Patolojik'],
+        ],
+      }];
+    }
+    return [];
+  }
+  const cleanedTitle = repairAIGeneratedText(seed.title || profile.presentation || '', { fallback: 'Klinik veri' });
   return [{
-    id: `ai-histopathology-${profile.variantNo}`,
-    label: 'Histopatolojik değerlendirme',
-    type: 'pathology',
-    priority: 'essential',
-    rows,
-    summary: isLiquefaction
-      ? 'Nekrotik alanda doku mimarisi kaybı, sıvılaşma ve yoğun nötrofilik debris izlenir.'
-      : 'Nekrotik dokuda hücre konturları korunurken çekirdek boyanması kaybolur ve sitoplazma eozinofilikleşir.',
-    findings: isLiquefaction
-      ? ['Doku mimarisi kaybı ve sıvılaşma izlenir', 'Nötrofilik debris akut inflamasyonu destekler']
-      : ['Hücre konturlarının korunması doku iskeletinin sürdüğünü gösterir', 'Çekirdek kaybı ve eozinofili nekrotik değişimi destekler'],
-    interpretation: 'Histopatolojik bulgu, seçenekler arasındaki nekroz tipini yorumlatır.',
-  }];
+    id: `ai-targeted-clinical-data-${profile.variantNo}`,
+    label: profile.angle.id === 'lab' ? 'Hedefli laboratuvar verisi' : 'Hedefli klinik veri',
+    type: profile.angle.id === 'lab' ? 'lab' : 'clinical',
+    priority: 'useful',
+    summary: learningCue || cleanedTitle,
+    findings: [cleanedTitle, learningCue].filter(Boolean).slice(0, 2),
+  }].filter((item) => item.summary && !isPlaceholderInvestigationText(item.summary));
 }
 
 function buildWrongFeedback(options, correctText, seed) {
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
     const seeded = seed.wrongOptionFeedback?.[option.id];
-    accumulator[option.id] = seeded || `${option.text} benzer tabloda düşünülebilir; ancak olgudaki somut bulgular ${correctText} lehine daha güçlüdür.`;
+    accumulator[option.id] = seeded || `${option.text} bazı benzer tablolarda düşünülebilir. Bu olgudaki somut bulgular ${correctText} lehine daha güçlüdür.`;
     return accumulator;
   }, {});
 }
@@ -470,9 +480,9 @@ function buildDifferentialComparison(options, correctText, wrongOptionFeedback, 
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
     accumulator[option.text] = {
-      explanation: wrongOptionFeedback[option.id] || `${option.text} bu klinik bağlamda düşünülebilir; ancak temel bulgu ${correctText} lehinedir.`,
+      explanation: wrongOptionFeedback[option.id] || `${option.text} bazı klinik bağlamlarda düşünülebilir. Bu olguda ana bulgular ${correctText} lehine daha güçlüdür.`,
       comparisonPoints: [
-        `${option.text} bazı olgularda benzer yakınma oluşturabilir; ancak bu olgudaki ana bulguları tam açıklamaz.`,
+        `${option.text} bazı olgularda benzer yakınma oluşturabilir. Bu olgudaki ana bulguları tam açıklamaz.`,
         `${correctText} olgudaki somut bulgularla daha güçlü uyum gösterir.`,
         'Ayırıcı tanıda belirleyici olan, öykü ve muayene bulgularının birlikte oluşturduğu klinik tablodur.',
       ],
@@ -510,9 +520,10 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     ? `${profile.angle.question}`
     : profile.angle.question;
   const stem = buildStem(seed, profile, normalizedCorrectText);
-  const investigations = seed.source === 'embedded-case-concept-only'
+  const investigations = (seed.source === 'embedded-case-concept-only'
     ? buildSyntheticInvestigation(seed, profile, normalizedCorrectText)
-    : (seed.investigations || []).map((item, index) => buildInvestigation(item, index, normalizedCorrectText));
+    : (seed.investigations || []).map((item, index) => buildInvestigation(item, index, normalizedCorrectText)))
+    .filter((item) => item && !isPlaceholderInvestigationText([item.label, item.summary, ...(item.findings || [])].join(' ')) && !isForbiddenEditorialText([item.label, item.summary, ...(item.findings || [])].join(' ')));
   const generatedVitals = sanitizeVitalsObject(Object.keys(seed.vitals || {}).length ? seed.vitals : buildBranchVitals(seed, profile));
   const diagnosisOptions = options.map((option) => option.text);
   const optionSet = makeOptionSetSignature(options);
@@ -560,7 +571,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     options,
     correctAnswer: correctOption.id,
     explanation: seed.source === 'embedded-case-concept-only'
-      ? `${normalizedCorrectText} en uygun yanıttır; çünkü olgudaki öykü, muayene ve varsa objektif veriler bu seçeneği diğer olasılıklardan daha güçlü destekler.`
+      ? `${normalizedCorrectText} en uygun yanıttır; çünkü olgudaki öykü, muayene ve objektif veriler bu seçeneği diğer olasılıklardan daha güçlü destekler.`
       : seed.explanation,
     evidenceChain,
     examPearls: [seed.examPearl || seed.learningTarget],
@@ -583,7 +594,7 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
       pearls: [seed.examPearl || seed.learningTarget].filter(Boolean),
       answerFeedback: {
         whyCorrect: seed.source === 'embedded-case-concept-only'
-          ? `${normalizedCorrectText} en uygun yanıttır; çünkü olgudaki somut bulgular bu seçeneği destekler ve alternatifler aynı klinik tabloyu yeterince açıklamaz.`
+          ? `${normalizedCorrectText} doğru yanıttır; çünkü olgudaki somut bulgular bu seçeneği destekler ve alternatifler aynı klinik tabloyu yeterince açıklamaz.`
           : seed.explanation,
         evidenceChain,
         pearls: [seed.examPearl || seed.learningTarget].filter(Boolean),
@@ -643,7 +654,7 @@ function isHardSeedFailure(errors = []) {
 
 function shouldLogAIGenerationDebug() {
   try {
-    return Boolean(import.meta?.env?.DEV) || (typeof process !== 'undefined' && process.env?.KLINIKIQ_AI_DEBUG === '1') || (typeof window !== 'undefined' && window.localStorage?.getItem('klinikiq-ai-debug') === '1');
+    return Boolean(import.meta?.env?.DEV) || (typeof window !== 'undefined' && window.localStorage?.getItem('klinikiq-ai-debug') === '1');
   } catch {
     return false;
   }

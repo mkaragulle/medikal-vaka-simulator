@@ -6,18 +6,18 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "questionType": "spot",
     "managementSteps": [],
     "seedId": "synthetic-peds-bronchiolitis-001",
-    "title": "Süt çocuğunda hışıltılı solunum",
+    "title": "Süt çocuğunda wheezing",
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "learningTarget": "Bronşiolitte destek tedavisi ve gereksiz bronkodilatör/antibiyotik ayrımı",
     "correctConcept": "Nazal aspirasyon, oksijen ve hidrasyon desteği",
     "demographics": "8 aylık erkek bebek",
     "setting": "Çocuk acil",
     "chiefComplaint": "Öksürük, hışıltı ve beslenmede azalma",
-    "stem": "Üç gündür burun akıntısı ve öksürüğü olan 8 aylık bebekte takipne, subkostal çekilme ve yaygın hışıltılı solunum vardır. Ateş düşük derecelidir ve akciğer grafisinde fokal konsolidasyon saptanmaz",
+    "stem": "Üç gündür burun akıntısı ve öksürüğü olan 8 aylık bebekte takipne, subkostal çekilme ve yaygın hışıltılı solunum vardır. Ateş düşük derecelidir ve akciğer grafisinde fokal konsolidasyon saptanmaz.",
     "exam": [
-      "Yaygın ekspiratuvar hışıltılı solunum.",
-      "Subkostal çekilme.",
-      "Dehidratasyon bulguları hafif."
+      "Yaygın ekspiratuvar hışıltılı solunum",
+      "Subkostal çekilme",
+      "Dehidratasyon bulguları hafif"
     ],
     "vitals": {
       "TA": "86/52 mmHg",
@@ -63,32 +63,21 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
       }
     ],
     "correctAnswer": "A",
-    "explanation": "Süt çocuğunda viral üst solunum yolu bulgularını izleyen hışıltılı solunum ve çekilme bronşiolit lehinedir. İlk yaklaşım destek tedavisidir. Hipoksemi varsa oksijen, beslenme azalmışsa hidrasyon ve sekresyon kontrolü öncelenir.",
+    "explanation": "Süt çocuğunda viral üst solunum yolu bulgularını izleyen hışıltılı solunum ve çekilme bronşiolit lehinedir. İlk yaklaşım destek tedavisidir; hipoksemi varsa oksijen, beslenme azalmışsa hidrasyon ve sekresyon kontrolü öncelenir.",
     "wrongOptionFeedback": {
-      "B": "Antibiyotik bakteriyel pnömoni veya sepsis bulgusu varsa düşünülür. Fokal konsolidasyon ve toksik görünüm verilmemiştir.",
-      "C": "Kortikosteroid bronşiolitte rutin ilk basamak değildir. Astım atağı düşündüren daha büyük çocukta anlam kazanır.",
-      "D": "Entübasyon apne, belirgin solunum yetmezliği veya ağır hipoksemi varsa gerekir. Bu olguda önce destek tedavisi uygundur.",
-      "E": "Tüberküloz kronik temas ve uzun süreli semptomlarla düşünülür. Akut viral bronşiolit örüntüsünü açıklamaz."
+      "B": "Antibiyotik bakteriyel pnömoni veya sepsis bulgusu varsa düşünülür; fokal konsolidasyon ve toksik görünüm verilmemiştir.",
+      "C": "Kortikosteroid bronşiolitte rutin ilk basamak değildir; astım atağı düşündüren daha büyük çocukta anlam kazanır.",
+      "D": "Entübasyon apne, belirgin solunum yetmezliği veya ağır hipoksemi varsa gerekir; bu olguda önce destek tedavisi uygundur.",
+      "E": "Tüberküloz kronik temas ve uzun süreli semptomlarla düşünülür; akut viral bronşiolit paternini açıklamaz."
     },
     "evidenceChain": [
-      "Yaş bronşiolit için tipiktir",
-      "Üst solunum yolu bulgularını hışıltılı solunum izlemiştir",
-      "Subkostal çekilme solunum eforunu gösterir",
-      "Fokal konsolidasyon olmaması bakteriyel pnömoniyi zayıflatır"
+      "Yaş bronşiolit için tipiktir.",
+      "Üst solunum yolu bulgularını hışıltılı solunum izlemiştir.",
+      "Subkostal çekilme solunum eforunu gösterir.",
+      "Fokal konsolidasyon olmaması bakteriyel pnömoniyi zayıflatır."
     ],
-    "examPearl": "Bronşiolitte temel tedavi destek tedavisidir. Oksijen, hidrasyon ve nazal sekresyon kontrolü önceliklidir.",
-    "spotCategory": "AI Spot • Çocuk Sağlığı ve Hastalıkları",
-    "patientIntro": {
-      "presentation": "Öksürük, hışıltı ve beslenmede azalma",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Öksürük, hışıltı ve beslenmede azalma",
-        "Yaygın ekspiratuvar hışıltılı solunum",
-        "Fokal konsolidasyon yok",
-        "TA: 86/52 mmHg"
-      ],
-      "historySummary": "Üç gündür burun akıntısı ve öksürüğü olan 8 aylık bebekte takipne, subkostal çekilme ve yaygın hışıltılı solunum vardır. Ateş düşük derecelidir ve akciğer grafisinde fokal konsolidasyon saptanmaz."
-    }
+    "examPearl": "Bronşiolitte temel tedavi destek tedavisidir; oksijen, hidrasyon ve nazal sekresyon kontrolü önceliklidir.",
+    "spotCategory": "AI Spot • Çocuk Sağlığı ve Hastalıkları"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -104,11 +93,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "4 yaş kız çocuk",
     "setting": "Pediatri polikliniği",
     "chiefComplaint": "Beş gündür ateş ve döküntü",
-    "stem": "Beş gündür yüksek ateşi olan çocukta bilateral nonpürülan konjonktivit, çatlamış dudaklar, yaygın döküntü ve servikal lenfadenopati saptanır. Odak enfeksiyon bulgusu belirgin değildir",
+    "stem": "Beş gündür yüksek ateşi olan çocukta bilateral nonpürülan konjonktivit, çatlamış dudaklar, yaygın döküntü ve servikal lenfadenopati saptanır. Odak enfeksiyon bulgusu belirgin değildir.",
     "exam": [
-      "Nonpürülan konjonktivit.",
-      "Çatlamış dudaklar.",
-      "Servikal lenfadenopati."
+      "Nonpürülan konjonktivit",
+      "Çatlamış dudaklar",
+      "Servikal lenfadenopati"
     ],
     "vitals": {
       "TA": "92/58 mmHg",
@@ -123,10 +112,24 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
         "label": "İnflamasyon belirteçleri",
         "type": "lab",
         "priority": "useful",
-        "summary": "CRP 92 mg/L ve ESR 78 mm/saat ölçülür.",
+        "summary": "CRP: 92 mg/L (referans <5 mg/L; yüksek) mg/L (Yüksek). ESR: 78 mm/saat (Yüksek).",
         "findings": [
-          "Belirgin inflamatuvar yanıt",
-          "Trombosit sayısı izlemde artabilir"
+          "CRP: 92 mg/L (referans <5 mg/L; yüksek) mg/L (referans <5 mg/L) — Yüksek. Akut inflamatuvar yanıtı destekler.",
+          "ESR: 78 mm/saat (referans <20 mm/saat) — Yüksek."
+        ],
+        "rows": [
+          [
+            "CRP",
+            "92 mg/L",
+            "<5 mg/L",
+            "Yüksek"
+          ],
+          [
+            "ESR",
+            "78 mm/saat",
+            "<20 mm/saat",
+            "Yüksek"
+          ]
         ]
       }
     ],
@@ -156,30 +159,19 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Beş günden uzun ateş, nonpürülan konjonktivit, mukozal değişiklik, döküntü ve lenfadenopati Kawasaki hastalığını düşündürür. Koroner arter komplikasyonunu azaltmak için IVIG ve aspirin erken verilmelidir.",
     "wrongOptionFeedback": {
-      "B": "Kızamıkta öksürük, koriza, Koplik lekeleri ve aşı öyküsü daha belirleyicidir. Bu tabloda Kawasaki bulguları baskındır.",
-      "C": "Streptokok tonsilliti tonsiller eksüda ve boğaz ağrısıyla beklenir. Mukokutanöz çoklu bulguları açıklamaz.",
-      "D": "Anafilakside ani ürtiker, bronkospazm veya hipotansiyon beklenir. Beş günlük ateş örüntüsüne uymaz.",
-      "E": "Juvenil idiopatik artrit kronik artrit ve sistemik bulgularla düşünülür. Akut Kawasaki tedavisi geciktirilmemelidir."
+      "B": "Kızamıkta öksürük, koriza, Koplik lekeleri ve aşı öyküsü daha belirleyicidir; bu tabloda Kawasaki bulguları baskındır.",
+      "C": "Streptokok tonsilliti tonsiller eksüda ve boğaz ağrısıyla beklenir; mukokutanöz çoklu bulguları açıklamaz.",
+      "D": "Anafilakside ani ürtiker, bronkospazm veya hipotansiyon beklenir; beş günlük ateş paternine uymaz.",
+      "E": "Juvenil idiopatik artrit kronik artrit ve sistemik bulgularla düşünülür; akut Kawasaki tedavisi geciktirilmemelidir."
     },
     "evidenceChain": [
-      "Ateş beş günden uzun sürmüştür",
-      "Konjonktivit pürülan değildir",
-      "Dudak ve döküntü bulguları mukokutanöz tutulumu gösterir",
-      "Lenfadenopati Kawasaki kriterlerini destekler"
+      "Ateş beş günden uzun sürmüştür.",
+      "Konjonktivit pürülan değildir.",
+      "Dudak ve döküntü bulguları mukokutanöz tutulumu gösterir.",
+      "Lenfadenopati Kawasaki kriterlerini destekler."
     ],
     "examPearl": "Kawasaki hastalığında en kritik sınav noktası koroner arter anevrizmasını önlemek için erken IVIG verilmesidir.",
-    "spotCategory": "AI Spot • Çocuk Sağlığı ve Hastalıkları",
-    "patientIntro": {
-      "presentation": "Beş gündür ateş ve döküntü",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Beş gündür ateş ve döküntü",
-        "Servikal lenfadenopati",
-        "CRP 92 mg/L ve ESR 78 mm/saat ölçülür",
-        "TA: 92/58 mmHg"
-      ],
-      "historySummary": "Beş gündür yüksek ateşi olan çocukta bilateral nonpürülan konjonktivit, çatlamış dudaklar, yaygın döküntü ve servikal lenfadenopati saptanır. Odak enfeksiyon bulgusu belirgin değildir."
-    }
+    "spotCategory": "AI Spot • Çocuk Sağlığı ve Hastalıkları"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -195,11 +187,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "23 yaş kadın",
     "setting": "Acil servis",
     "chiefComplaint": "Poliüri, karın ağrısı ve kusma",
-    "stem": "Tip 1 diyabet öyküsü olan hastada kusma, karın ağrısı, poliüri ve Kussmaul solunumu vardır. Kapiller glukoz yüksektir ve hasta dehidrate görünür",
+    "stem": "Tip 1 diyabet öyküsü olan hastada kusma, karın ağrısı, poliüri ve Kussmaul solunumu vardır. Kapiller glukoz yüksektir ve hasta dehidrate görünür.",
     "exam": [
-      "Mukozalar kuru.",
-      "Kussmaul solunumu.",
-      "Karında yaygın hassasiyet."
+      "Mukozalar kuru",
+      "Kussmaul solunumu",
+      "Karında yaygın hassasiyet"
     ],
     "vitals": {
       "TA": "92/58 mmHg",
@@ -214,10 +206,24 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
         "label": "Kan gazı ve keton",
         "type": "lab",
         "priority": "essential",
-        "summary": "pH 7.18, HCO3 9 mEq/L, glukoz 486 mg/dL, serum ketonu pozitif.",
+        "summary": "Glukoz: 486 mg/dL (referans 70–100 mg/dL; yüksek) mg/dL (Yüksek). pH: 7.18 (referans 7.35–7.45; düşük) (Düşük).",
         "findings": [
-          "Anyon açıklı metabolik asidoz",
-          "Ketozis ve hiperglisemi"
+          "Glukoz: 486 mg/dL (referans 70–100 mg/dL; yüksek) mg/dL (referans 70–100 mg/dL) — Yüksek. Glukoz sapması metabolik bozukluğu destekler.",
+          "pH: 7.18 (referans 7.35–7.45; düşük) (referans 7.35–7.45) — Düşük."
+        ],
+        "rows": [
+          [
+            "Glukoz",
+            "486 mg/dL",
+            "70–100 mg/dL",
+            "Yüksek"
+          ],
+          [
+            "pH",
+            "7.18",
+            "7.35–7.45",
+            "Düşük"
+          ]
         ]
       }
     ],
@@ -237,7 +243,7 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
       },
       {
         "id": "D",
-        "text": "Potasyum sonucunu önemsemeden yüksek doz insülin başlamak."
+        "text": "Potasyum sonucunu önemsemeden yüksek doz insülin başlamak"
       },
       {
         "id": "E",
@@ -245,32 +251,21 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
       }
     ],
     "correctAnswer": "A",
-    "explanation": "DKA’da dehidratasyon ve dolaşım hacmi kaybı ön plandadır. İlk basamak izotonik salinle sıvı resüsitasyonudur. İnsülin ve potasyum yönetimi yakın izlemle devam eder.",
+    "explanation": "DKA’da dehidratasyon ve dolaşım hacmi kaybı ön plandadır. İlk basamak izotonik salinle sıvı resüsitasyonudur; insülin ve potasyum yönetimi yakın izlemle devam eder.",
     "wrongOptionFeedback": {
-      "B": "Bikarbonat çok ağır asidoz dışında rutin ilk basamak değildir. Sıvı ve insülin tedavisi esastır.",
-      "C": "Hafif olgular dışında tek başına subkutan insülin yeterli değildir. Bu hastada dehidratasyon ve asidoz belirgindir.",
-      "D": "İnsülin potasyumu hücre içine sokar. Potasyum değerlendirilmeden başlanması aritmi riskini artırır.",
+      "B": "Bikarbonat çok ağır asidoz dışında rutin ilk basamak değildir; sıvı ve insülin tedavisi esastır.",
+      "C": "Hafif olgular dışında tek başına subkutan insülin yeterli değildir; bu hastada dehidratasyon ve asidoz belirgindir.",
+      "D": "İnsülin potasyumu hücre içine sokar; potasyum değerlendirilmeden başlanması aritmi riskini artırır.",
       "E": "Hipotansiyon, ketozis ve asidoz ayaktan izlem için uygun değildir."
     },
     "evidenceChain": [
-      "Hiperglisemi belirgindir",
-      "Keton pozitifliği vardır",
-      "pH ve bikarbonat metabolik asidozu gösterir",
-      "Dehidratasyon sıvı tedavisini öncelikli kılar"
+      "Hiperglisemi belirgindir.",
+      "Keton pozitifliği vardır.",
+      "pH ve bikarbonat metabolik asidozu gösterir.",
+      "Dehidratasyon sıvı tedavisini öncelikli kılar."
     ],
-    "examPearl": "DKA’da ilk adım sıvıdır. İnsülin başlanmadan önce potasyum mutlaka değerlendirilir.",
-    "spotCategory": "AI Spot • İç Hastalıkları",
-    "patientIntro": {
-      "presentation": "Poliüri, karın ağrısı ve kusma",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Poliüri, karın ağrısı ve kusma",
-        "Mukozalar kuru",
-        "pH 7.18, HCO3 9 mEq/L, glukoz 486 mg/dL, serum ketonu pozitif",
-        "TA: 92/58 mmHg"
-      ],
-      "historySummary": "Tip 1 diyabet öyküsü olan hastada kusma, karın ağrısı, poliüri ve Kussmaul solunumu vardır. Kapiller glukoz yüksektir ve hasta dehidrate görünür."
-    }
+    "examPearl": "DKA’da ilk adım sıvıdır; insülin başlanmadan önce potasyum mutlaka değerlendirilir.",
+    "spotCategory": "AI Spot • İç Hastalıkları"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -286,11 +281,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "19 yaş erkek",
     "setting": "Genel cerrahi acil",
     "chiefComplaint": "Karın ağrısı ve iştahsızlık",
-    "stem": "Periumblikal başlayan ağrı saatler içinde sağ alt kadrana yerleşir. Bulantı, iştahsızlık ve McBurney noktasında hassasiyet vardır",
+    "stem": "Periumblikal başlayan ağrı saatler içinde sağ alt kadrana yerleşir. Bulantı, iştahsızlık ve McBurney noktasında hassasiyet vardır.",
     "exam": [
-      "Sağ alt kadranda lokal hassasiyet.",
-      "Rebound hafif pozitif.",
-      "Murphy bulgusu yok."
+      "Sağ alt kadranda lokal hassasiyet",
+      "Rebound hafif pozitif",
+      "Murphy bulgusu yok"
     ],
     "vitals": {
       "TA": "112/70 mmHg",
@@ -305,10 +300,24 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
         "label": "Tam kan sayımı ve CRP",
         "type": "lab",
         "priority": "useful",
-        "summary": "Lökosit 14.800/mm³ ve CRP 48 mg/L ölçülür.",
+        "summary": "Lökosit: 14.800/mm³ (referans 4.000–10.000/mm³; yüksek)/mm³ (Yüksek). CRP: 48 mg/L (referans <5 mg/L; yüksek) mg/L (Yüksek).",
         "findings": [
-          "Nötrofil baskın lökositoz",
-          "İnflamatuvar yanıt artmış"
+          "Lökosit: 14.800/mm³ (referans 4.000–10.000/mm³; yüksek)/mm³ (referans 4.000–10.000/mm³) — Yüksek. Nötrofil baskınlığı eşlik ediyorsa bakteriyel enfeksiyon lehine destekleyicidir.",
+          "CRP: 48 mg/L (referans <5 mg/L; yüksek) mg/L (referans <5 mg/L) — Yüksek. Akut inflamatuvar yanıtı destekler."
+        ],
+        "rows": [
+          [
+            "Lökosit",
+            "14.800/mm³",
+            "4.000–10.000/mm³",
+            "Yüksek"
+          ],
+          [
+            "CRP",
+            "48 mg/L",
+            "<5 mg/L",
+            "Yüksek"
+          ]
         ]
       }
     ],
@@ -338,30 +347,19 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Periumblikal başlayıp sağ alt kadrana göç eden ağrı ve McBurney hassasiyeti akut apandisit için tipiktir. Lokal periton irritasyonu cerrahi değerlendirmeyi öncelikli kılar.",
     "wrongOptionFeedback": {
-      "B": "Kolesistit sağ üst kadran ağrısı ve Murphy bulgusuyla beklenir. Ağrının sağ alt kadrana göçü apandisiti destekler.",
+      "B": "Kolesistit sağ üst kadran ağrısı ve Murphy bulgusuyla beklenir; ağrının sağ alt kadrana göçü apandisiti destekler.",
       "C": "Pankreatit epigastrik kuşak tarzı ağrı ve lipaz yüksekliğiyle düşünülür.",
       "D": "Renal kolikte kostovertebral açı hassasiyeti ve hematüri daha belirgindir.",
-      "E": "Reflü yanma ve regürjitasyonla seyreder. Lokal periton bulgularını açıklamaz."
+      "E": "Reflü yanma ve regürjitasyonla seyreder; lokal periton bulgularını açıklamaz."
     },
     "evidenceChain": [
-      "Ağrı periumblikal başlayıp sağ alt kadrana göç etmiştir",
-      "McBurney hassasiyeti vardır",
-      "Lökositoz inflamasyonu destekler",
-      "Murphy bulgusunun olmaması kolesistiti zayıflatır"
+      "Ağrı periumblikal başlayıp sağ alt kadrana göç etmiştir.",
+      "McBurney hassasiyeti vardır.",
+      "Lökositoz inflamasyonu destekler.",
+      "Murphy bulgusunun olmaması kolesistiti zayıflatır."
     ],
     "examPearl": "Apandisitte klasik ağrı göçü visseral periumblikal ağrıdan parietal sağ alt kadran ağrısına geçiştir.",
-    "spotCategory": "AI Spot • Genel Cerrahi",
-    "patientIntro": {
-      "presentation": "Karın ağrısı ve iştahsızlık",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Karın ağrısı ve iştahsızlık",
-        "Sağ alt kadranda lokal hassasiyet",
-        "Lökosit 14.800/mm³ ve CRP 48 mg/L ölçülür",
-        "TA: 112/70 mmHg"
-      ],
-      "historySummary": "Periumblikal başlayan ağrı saatler içinde sağ alt kadrana yerleşir. Bulantı, iştahsızlık ve McBurney noktasında hassasiyet vardır."
-    }
+    "spotCategory": "AI Spot • Genel Cerrahi"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -377,11 +375,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "24 yaş kadın",
     "setting": "Acil toksikoloji değerlendirmesi",
     "chiefComplaint": "Çok sayıda ağrı kesici alımı",
-    "stem": "Hasta sekiz saat önce yüksek doz parasetamol aldığını söyler. İlk değerlendirmede bulantı vardır, karaciğer enzimleri henüz belirgin yükselmemiştir",
+    "stem": "Hasta sekiz saat önce yüksek doz parasetamol aldığını söyler. İlk değerlendirmede bulantı vardır, karaciğer enzimleri henüz belirgin yükselmemiştir.",
     "exam": [
-      "Bilinç açık.",
-      "Karında belirgin periton bulgusu yok.",
-      "Vital bulgular stabil."
+      "Bilinç açık",
+      "Karında belirgin periton bulgusu yok",
+      "Vital bulgular stabil"
     ],
     "vitals": {
       "TA": "118/76 mmHg",
@@ -429,28 +427,19 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Parasetamol toksisitesinde N-asetilsistein glutatyon depolarını destekleyerek toksik metabolit NAPQI etkisini azaltır. Sekiz saatlik başvuruda tedavi geciktirilmemelidir.",
     "wrongOptionFeedback": {
-      "B": "Nalokson opioid toksisitesinde solunum depresyonu için kullanılır. Parasetamol metabolitini hedeflemez.",
-      "C": "Flumazenil benzodiazepin etkisini geri çevirir. Bu olgunun toksik mekanizması farklıdır.",
-      "D": "Atropin muskarinik kolinerjik bulgular için kullanılır. Parasetamol hepatotoksisitesinde antidot değildir.",
+      "B": "Nalokson opioid toksisitesinde solunum depresyonu için kullanılır; parasetamol metabolitini hedeflemez.",
+      "C": "Flumazenil benzodiazepin etkisini geri çevirir; bu olgunun toksik mekanizması farklıdır.",
+      "D": "Atropin muskarinik kolinerjik bulgular için kullanılır; parasetamol hepatotoksisitesinde antidot değildir.",
       "E": "Pralidoksim organofosfat zehirlenmesinde enzim reaktivasyonu için verilir."
     },
     "evidenceChain": [
-      "Yüksek doz parasetamol alımı vardır",
-      "Alım zamanı tedavi kararında kullanılabilir",
-      "Düzey tedavi çizgisinin üzerindedir",
-      "Hepatotoksisite riski antidotu gerektirir"
+      "Yüksek doz parasetamol alımı vardır.",
+      "Alım zamanı tedavi kararında kullanılabilir.",
+      "Düzey tedavi çizgisinin üzerindedir.",
+      "Hepatotoksisite riski antidotu gerektirir."
     ],
-    "examPearl": "Parasetamol zehirlenmesinde N-asetilsistein en etkili olarak ilk 8-10 saatte verilir.",
-    "spotCategory": "AI Spot • Tıbbi Farmakoloji",
-    "patientIntro": {
-      "presentation": "Çok sayıda ağrı kesici alımı",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Çok sayıda ağrı kesici alımı",
-        "TA: 118/76 mmHg"
-      ],
-      "historySummary": "Hasta sekiz saat önce yüksek doz parasetamol aldığını söyler. İlk değerlendirmede bulantı vardır, karaciğer enzimleri henüz belirgin yükselmemiştir."
-    }
+    "examPearl": "Parasetamol zehirlenmesinde N-asetilsistein en etkili olarak ilk 8–10 saatte verilir.",
+    "spotCategory": "AI Spot • Tıbbi Farmakoloji"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -461,16 +450,16 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "seedId": "synthetic-micro-hav-variant-001",
     "title": "Akut hepatit paneli yorumu",
     "relatedBranch": "Tıbbi Mikrobiyoloji",
-    "learningTarget": "HAV IgM ve IgG örüntüsünün akut enfeksiyon ile geçirilmiş bağışıklıktan ayrılması",
+    "learningTarget": "HAV IgM ve IgG paterninin akut enfeksiyon ile geçirilmiş bağışıklıktan ayrılması",
     "correctConcept": "Akut hepatit A enfeksiyonu",
     "demographics": "28 yaş erkek",
     "setting": "Enfeksiyon hastalıkları değerlendirmesi",
     "chiefComplaint": "Sarılık ve koyu idrar",
-    "stem": "Kısa süredir halsizlik, bulantı, koyu idrar ve skleral ikter gelişen hastada yakın çevrede benzer gastrointestinal yakınmalar bildirilir",
+    "stem": "Kısa süredir halsizlik, bulantı, koyu idrar ve skleral ikter gelişen hastada yakın çevrede benzer gastrointestinal yakınmalar bildirilir.",
     "exam": [
-      "Skleral ikter.",
-      "Karaciğer hafif hassas.",
-      "Kronik karaciğer hastalığı stigmaları yok."
+      "Skleral ikter",
+      "Karaciğer hafif hassas",
+      "Kronik karaciğer hastalığı stigmaları yok"
     ],
     "vitals": {
       "TA": "116/74 mmHg",
@@ -493,7 +482,7 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
         ]
       }
     ],
-    "question": "Bu serolojik örüntü en güçlü olarak hangi sonucu destekler?",
+    "question": "Bu serolojik patern en güçlü olarak hangi sonucu destekler?",
     "options": [
       {
         "id": "A",
@@ -519,29 +508,19 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Anti-HAV IgM pozitifliği yakın dönem HAV enfeksiyonunu destekler. HBV akut belirteçlerinin ve Anti-HCV’nin negatif olması diğer viral hepatit seçeneklerini zayıflatır.",
     "wrongOptionFeedback": {
-      "B": "Geçirilmiş HAV bağışıklığında IgG pozitif, IgM negatif beklenir. Burada IgM pozitiftir.",
-      "C": "Akut HBV için HBsAg ve Anti-HBc IgM pozitifliği beklenir. İkisi de negatif verilmiştir.",
-      "D": "Kronik HCV için Anti-HCV veya HCV RNA pozitifliği beklenir. Tarama negatiftir.",
-      "E": "HBV aşı bağışıklığı Anti-HBs ile değerlendirilir. Mevcut panel HAV IgM üzerinden yön verir."
+      "B": "Geçirilmiş HAV bağışıklığında IgG pozitif, IgM negatif beklenir; burada IgM pozitiftir.",
+      "C": "Akut HBV için HBsAg ve Anti-HBc IgM pozitifliği beklenir; ikisi de negatif verilmiştir.",
+      "D": "Kronik HCV için Anti-HCV veya HCV RNA pozitifliği beklenir; tarama negatiftir.",
+      "E": "HBV aşı bağışıklığı Anti-HBs ile değerlendirilir; mevcut panel HAV IgM üzerinden yön verir."
     },
     "evidenceChain": [
-      "Akut sarılık ve koyu idrar vardır",
-      "Anti-HAV IgM pozitif bulunmuştur",
-      "HBV akut belirteçleri negatiftir",
-      "Anti-HCV negatifliği HCV olasılığını azaltır"
+      "Akut sarılık ve koyu idrar vardır.",
+      "Anti-HAV IgM pozitif bulunmuştur.",
+      "HBV akut belirteçleri negatiftir.",
+      "Anti-HCV negatifliği HCV olasılığını azaltır."
     ],
     "examPearl": "HAV’da IgM akut enfeksiyon, IgG geçirilmiş enfeksiyon veya bağışıklık göstergesidir.",
-    "spotCategory": "AI Spot • Tıbbi Mikrobiyoloji",
-    "patientIntro": {
-      "presentation": "Sarılık ve koyu idrar",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Sarılık ve koyu idrar",
-        "Anti-HAV IgM pozitif, Anti-HAV IgG negatif, HBsAg negatif, Anti-HBc IgM negatif, Anti-HCV negatif",
-        "TA: 116/74 mmHg"
-      ],
-      "historySummary": "Kısa süredir halsizlik, bulantı, koyu idrar ve skleral ikter gelişen hastada yakın çevrede benzer gastrointestinal yakınmalar bildirilir."
-    }
+    "spotCategory": "AI Spot • Tıbbi Mikrobiyoloji"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -557,11 +536,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "12 günlük yenidoğan",
     "setting": "Metabolik tarama değerlendirmesi",
     "chiefComplaint": "Yenidoğan taramasında aminoasit yüksekliği",
-    "stem": "Yenidoğan taramasında fenilalanin yüksek bulunur. Tedavisiz kalırsa nörogelişimsel gerilik ve açık ten-saç bulguları gelişebileceği anlatılır",
+    "stem": "Yenidoğan taramasında fenilalanin yüksek bulunur. Tedavisiz kalırsa nörogelişimsel gerilik ve açık ten-saç bulguları gelişebileceği anlatılır.",
     "exam": [
-      "Yenidoğan genel durumu stabil.",
-      "Dismorfik belirgin bulgu yok.",
-      "Nörolojik muayene yaşına uygun."
+      "Yenidoğan genel durumu stabil",
+      "Dismorfik belirgin bulgu yok",
+      "Nörolojik muayene yaşına uygun"
     ],
     "vitals": {
       "TA": "72/44 mmHg",
@@ -609,28 +588,19 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Fenilalanin yüksekliği ve erken nörolojik hasar riski fenilketonüriyi düşündürür. Klasik neden fenilalanin hidroksilaz defektidir ve tedavi fenilalanin kısıtlı diyetle yapılır.",
     "wrongOptionFeedback": {
-      "B": "Bu defekt akçaağaç şurubu idrar hastalığına yol açar. Lösin, izolösin ve valin artışı beklenir.",
-      "C": "Homogentizat oksidaz defekti alkaptonüri yapar. İdrarın koyulaşması ve okronozisle ilişkilidir.",
-      "D": "GALT defekti galaktozemiye neden olur. Süt alımı sonrası sarılık, kusma ve katarakt beklenir.",
-      "E": "OTC defekti üre döngüsü bozukluğudur. Hiperamonyemi ön plandadır."
+      "B": "Bu defekt akçaağaç şurubu idrar hastalığına yol açar; lösin, izolösin ve valin artışı beklenir.",
+      "C": "Homogentizat oksidaz defekti alkaptonüri yapar; idrarın koyulaşması ve okronozisle ilişkilidir.",
+      "D": "GALT defekti galaktozemiye neden olur; süt alımı sonrası sarılık, kusma ve katarakt beklenir.",
+      "E": "OTC defekti üre döngüsü bozukluğudur; hiperamonyemi ön plandadır."
     },
     "evidenceChain": [
-      "Taramada fenilalanin yüksektir",
-      "Tirozin göreceli düşük olabilir",
-      "Tedavisiz nörogelişimsel hasar riski vardır",
-      "Diyet tedavisi erken başlanmalıdır"
+      "Taramada fenilalanin yüksektir.",
+      "Tirozin göreceli düşük olabilir.",
+      "Tedavisiz nörogelişimsel hasar riski vardır.",
+      "Diyet tedavisi erken başlanmalıdır."
     ],
     "examPearl": "Fenilketonüride fenilalanin hidroksilaz defekti fenilalanin artışına ve tirozin azalmasına yol açar.",
-    "spotCategory": "AI Spot • Tıbbi Biyokimya",
-    "patientIntro": {
-      "presentation": "Yenidoğan taramasında aminoasit yüksekliği",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Yenidoğan taramasında aminoasit yüksekliği",
-        "TA: 72/44 mmHg"
-      ],
-      "historySummary": "Yenidoğan taramasında fenilalanin yüksek bulunur. Tedavisiz kalırsa nörogelişimsel gerilik ve açık ten-saç bulguları gelişebileceği anlatılır."
-    }
+    "spotCategory": "AI Spot • Tıbbi Biyokimya"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -646,11 +616,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "Fizyoloji pratiğinde değerlendirilen hasta",
     "setting": "Solunum fizyolojisi pratiği",
     "chiefComplaint": "Ani perfüzyon azalması sonrası gaz değişimi",
-    "stem": "Bir akciğer bölgesinde ventilasyon devam ederken perfüzyon belirgin azalır. Bu bölgede gaz değişimine katılım düşer ve alveoler gaz arteriyel kana yeterince geçemez",
+    "stem": "Bir akciğer bölgesinde ventilasyon devam ederken perfüzyon belirgin azalır. Bu bölgede gaz değişimine katılım düşer ve alveoler gaz arteriyel kana yeterince geçemez.",
     "exam": [
-      "Takipne olabilir.",
-      "Oksijen satürasyonu düşebilir.",
-      "Fokal havalanma kaybı şart değildir."
+      "Takipne olabilir",
+      "Oksijen satürasyonu düşebilir",
+      "Fokal havalanma kaybı şart değildir"
     ],
     "vitals": {
       "TA": "118/76 mmHg",
@@ -698,28 +668,19 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Perfüzyon azalırken ventilasyon korunursa V/Q oranı yükselir. Bu durum alveoler ölü boşluk artışı şeklinde yorumlanır.",
     "wrongOptionFeedback": {
-      "B": "Düşük V/Q ventilasyon azalması veya şant benzeri tabloda beklenir. Burada perfüzyon azalması ön plandadır.",
-      "C": "Ventilasyon tamamen kaybolmamıştır. Sorun kan akımının azalmasıdır.",
+      "B": "Düşük V/Q ventilasyon azalması veya şant benzeri tabloda beklenir; burada perfüzyon azalması ön plandadır.",
+      "C": "Ventilasyon tamamen kaybolmamıştır; sorun kan akımının azalmasıdır.",
       "D": "Difüzyon kapasitesi bu olayda izole artmaz.",
-      "E": "Normal V/Q korunmaz. Bölgesel perfüzyon kaybı oranı yükseltir."
+      "E": "Normal V/Q korunmaz; bölgesel perfüzyon kaybı oranı yükseltir."
     },
     "evidenceChain": [
-      "Ventilasyon korunmuştur",
-      "Perfüzyon azalmıştır",
-      "V/Q oranı yükselir",
-      "Alveoler ölü boşluk etkisi artar"
+      "Ventilasyon korunmuştur.",
+      "Perfüzyon azalmıştır.",
+      "V/Q oranı yükselir.",
+      "Alveoler ölü boşluk etkisi artar."
     ],
-    "examPearl": "Pulmoner embolide perfüzyon azalır. Ventilasyon görece korunduğu için V/Q yükselir.",
-    "spotCategory": "AI Spot • Fizyoloji",
-    "patientIntro": {
-      "presentation": "Ani perfüzyon azalması sonrası gaz değişimi",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Ani perfüzyon azalması sonrası gaz değişimi",
-        "TA: 118/76 mmHg"
-      ],
-      "historySummary": "Bir akciğer bölgesinde ventilasyon devam ederken perfüzyon belirgin azalır. Bu bölgede gaz değişimine katılım düşer ve alveoler gaz arteriyel kana yeterince geçemez."
-    }
+    "examPearl": "Pulmoner embolide perfüzyon azalır; ventilasyon görece korunduğu için V/Q yükselir.",
+    "spotCategory": "AI Spot • Fizyoloji"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -735,11 +696,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "Travma sonrası değerlendirilen hasta",
     "setting": "Acil servis",
     "chiefComplaint": "Kol ağrısı ve el bileğini kaldıramama",
-    "stem": "Humerus cisim kırığı sonrası hasta el bileğini ve parmaklarını ekstansiyona getiremez. Duyu kaybı el sırtının radial tarafında belirgindir",
+    "stem": "Humerus cisim kırığı sonrası hasta el bileğini ve parmaklarını ekstansiyona getiremez. Duyu kaybı el sırtının radial tarafında belirgindir.",
     "exam": [
-      "El bileği ekstansiyonu zayıf.",
-      "Parmak ekstansiyonu zayıf.",
-      "El sırtı radial bölgede duyu azalır."
+      "El bileği ekstansiyonu zayıf",
+      "Parmak ekstansiyonu zayıf",
+      "El sırtı radial bölgede duyu azalır"
     ],
     "vitals": {
       "TA": "120/76 mmHg",
@@ -787,28 +748,19 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Humerus cisim kırığı radial siniri spiral oluk düzeyinde etkileyebilir. El bileği ve parmak ekstansiyon kaybı radial sinir hasarı için tipiktir.",
     "wrongOptionFeedback": {
-      "B": "Median sinir lezyonunda tenar fonksiyon ve ilk üç parmak duyusu etkilenir. El bileği düşüklüğü tipik değildir.",
+      "B": "Median sinir lezyonunda tenar fonksiyon ve ilk üç parmak duyusu etkilenir; el bileği düşüklüğü tipik değildir.",
       "C": "Ulnar sinir lezyonu pençe el ve hipotenar/interosseöz zayıflık yapar.",
       "D": "Aksiller sinir deltoid zayıflığı ve lateral omuz duyu kaybıyla ilişkilidir.",
       "E": "Muskülokütan sinir dirsek fleksiyonu ve lateral ön kol duyusuyla ilişkilidir."
     },
     "evidenceChain": [
-      "Humerus cisim kırığı vardır",
-      "El bileği ekstansiyonu kaybolmuştur",
-      "Parmak ekstansiyonu zayıftır",
-      "El sırtı radial duyusu etkilenmiştir"
+      "Humerus cisim kırığı vardır.",
+      "El bileği ekstansiyonu kaybolmuştur.",
+      "Parmak ekstansiyonu zayıftır.",
+      "El sırtı radial duyusu etkilenmiştir."
     ],
-    "examPearl": "Radial sinir humerus spiral oluğunda seyreder. Hasarında wrist drop gelişir.",
-    "spotCategory": "AI Spot • Anatomi",
-    "patientIntro": {
-      "presentation": "Kol ağrısı ve el bileğini kaldıramama",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Kol ağrısı ve el bileğini kaldıramama",
-        "TA: 120/76 mmHg"
-      ],
-      "historySummary": "Humerus cisim kırığı sonrası hasta el bileğini ve parmaklarını ekstansiyona getiremez. Duyu kaybı el sırtının radial tarafında belirgindir."
-    }
+    "examPearl": "Radial sinir humerus spiral oluğunda seyreder; hasarında wrist drop gelişir.",
+    "spotCategory": "AI Spot • Anatomi"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -822,11 +774,13 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "learningTarget": "Tiroglossal kanal kistinde orta hat yerleşim ve dil hareketiyle mobilitenin ayırt edilmesi",
     "correctConcept": "Tiroglossal kanal kisti",
     "demographics": "7 yaş çocuk",
-    "setting": "Embriyoloji TUS pratiği",
-    "chiefComplaint": "Klinik değerlendirme gerektiren başvuru",
-    "stem": "Boyun orta hattında yer alan kitle yutkunma ve dil çıkarma sırasında hareket eder. Lateral boyun yerleşimi veya akut enfeksiyon bulgusu ön planda değildir",
+    "setting": "Embriyoloji değerlendirmesi",
+    "chiefComplaint": "Boyun orta hattında kistik kitle",
+    "stem": "Boyun orta hattında yer alan kitle yutkunma ve dil çıkarma sırasında hareket eder. Lateral boyun yerleşimi veya akut enfeksiyon bulgusu ön planda değildir.",
     "exam": [
-      "Dil çıkarma ile hareket eder."
+      "Orta hatta kistik kitle",
+      "Dil çıkarma ile hareket eder",
+      "Lateral servikal kitle yok"
     ],
     "vitals": {
       "TA": "92/58 mmHg",
@@ -845,18 +799,6 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
         "findings": [
           "Orta hat yerleşim",
           "Dil hareketiyle mobilite"
-        ]
-      },
-      {
-        "id": "field-placement-repair-movpjp8d",
-        "label": "Hedefli görüntüleme/laboratuvar",
-        "type": "Imaging",
-        "priority": "Useful",
-        "summary": "Boyun orta hattında kistik kitle Orta hatta kistik kitle. Lateral servikal kitle yok.",
-        "findings": [
-          "Boyun orta hattında kistik kitle",
-          "Orta hatta kistik kitle",
-          "Lateral servikal kitle yok"
         ]
       }
     ],
@@ -889,26 +831,16 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
       "B": "Brankial yarık kisti genellikle lateral boyunda yerleşir.",
       "C": "Kistik higroma lenfatik malformasyondur ve daha çok lateral/posterior boyunda beklenir.",
       "D": "Lenfadenit ağrı, ateş ve inflamasyon bulgularıyla düşünülür.",
-      "E": "Dermoid kist orta hatta olabilir. Ancak dil hareketiyle hareket etmesi tiroglossal kanal kisti kadar tipik değildir."
+      "E": "Dermoid kist orta hatta olabilir; ancak dil hareketiyle hareket etmesi tiroglossal kanal kisti kadar tipik değildir."
     },
     "evidenceChain": [
-      "Kitle orta hattadır",
-      "Dil çıkarma ile hareket eder",
-      "Yutkunma sırasında mobilite vardır",
-      "Lateral yerleşim olmaması brankial kisti zayıflatır"
+      "Kitle orta hattadır.",
+      "Dil çıkarma ile hareket eder.",
+      "Yutkunma sırasında mobilite vardır.",
+      "Lateral yerleşim olmaması brankial kisti zayıflatır."
     ],
     "examPearl": "Tiroglossal kanal kisti orta hatta olur ve dil çıkarma ya da yutkunma ile hareket eder.",
-    "spotCategory": "AI Spot • Histoloji ve Embriyoloji",
-    "patientIntro": {
-      "presentation": "Klinik değerlendirme gerektiren başvuru",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Klinik değerlendirme gerektiren başvuru",
-        "Boyun orta hattında kistik kitle Orta hatta kistik kitle. Lateral servikal kitle yok",
-        "TA: 92/58 mmHg"
-      ],
-      "historySummary": "Boyun orta hattında yer alan kitle yutkunma ve dil çıkarma sırasında hareket eder. Lateral boyun yerleşimi veya akut enfeksiyon bulgusu ön planda değildir."
-    }
+    "spotCategory": "AI Spot • Histoloji ve Embriyoloji"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -922,13 +854,13 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "learningTarget": "Minimal değişiklik hastalığında çocuk nefrotik sendromu ve ışık mikroskopisinin normal olabilmesi",
     "correctConcept": "Minimal değişiklik hastalığı",
     "demographics": "6 yaş erkek çocuk",
-    "setting": "Patoloji TUS pratiği",
+    "setting": "Patoloji değerlendirmesi",
     "chiefComplaint": "Periorbital ödem ve köpüklü idrar",
-    "stem": "Çocukta periorbital ödem, hipoalbüminemi ve masif proteinüri saptanır. Işık mikroskopisi belirgin değişiklik göstermeyebilir",
+    "stem": "Çocukta periorbital ödem, hipoalbüminemi ve masif proteinüri saptanır. Işık mikroskopisi belirgin değişiklik göstermeyebilir.",
     "exam": [
-      "Periorbital ödem.",
-      "Pretibial ödem.",
-      "Hipertansiyon belirgin değil."
+      "Periorbital ödem",
+      "Pretibial ödem",
+      "Hipertansiyon belirgin değil"
     ],
     "vitals": {
       "TA": "94/60 mmHg",
@@ -943,11 +875,17 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
         "label": "İdrar ve albümin",
         "type": "lab",
         "priority": "essential",
-        "summary": "Proteinüri 4+, serum albümin 2.1 g/dL, hematüri belirgin değil.",
+        "summary": "Proteinüri: 4.000 mg/gün (Yüksek).",
         "findings": [
-          "Masif proteinüri",
-          "Hipoalbüminemi",
-          "Hematüri baskın değil"
+          "Proteinüri: 4.000 mg/gün (referans <150 mg/gün) — Yüksek."
+        ],
+        "rows": [
+          [
+            "Proteinüri",
+            "4.000 mg/gün",
+            "<150 mg/gün",
+            "Yüksek"
+          ]
         ]
       }
     ],
@@ -983,24 +921,13 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
       "E": "Goodpasture akciğer hemorajisi ve hızlı ilerleyen glomerülonefrit bulgularıyla düşünülür."
     },
     "evidenceChain": [
-      "Hasta çocuk yaş grubundadır",
-      "Masif proteinüri ve hipoalbüminemi vardır",
-      "Hematüri baskın değildir",
-      "Işık mikroskopisi normal görünebilir"
+      "Hasta çocuk yaş grubundadır.",
+      "Masif proteinüri ve hipoalbüminemi vardır.",
+      "Hematüri baskın değildir.",
+      "Işık mikroskopisi normal görünebilir."
     ],
-    "examPearl": "Minimal değişiklik hastalığında ışık mikroskopisi normal olabilir. Elektron mikroskopisinde podosit ayaksı çıkıntı silinmesi görülür.",
-    "spotCategory": "AI Spot • Tıbbi Patoloji",
-    "patientIntro": {
-      "presentation": "Periorbital ödem ve köpüklü idrar",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Periorbital ödem ve köpüklü idrar",
-        "Pretibial ödem",
-        "Proteinüri 4+, serum albümin 2.1 g/dL, hematüri belirgin değil",
-        "TA: 94/60 mmHg"
-      ],
-      "historySummary": "Çocukta periorbital ödem, hipoalbüminemi ve masif proteinüri saptanır. Işık mikroskopisi belirgin değişiklik göstermeyebilir."
-    }
+    "examPearl": "Minimal değişiklik hastalığında ışık mikroskopisi normal olabilir; elektron mikroskopisinde podosit ayaksı çıkıntı silinmesi görülür.",
+    "spotCategory": "AI Spot • Tıbbi Patoloji"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -1016,11 +943,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "29 yaş kadın",
     "setting": "Jinekoloji acil",
     "chiefComplaint": "Amenore, vajinal lekelenme ve pelvik ağrı",
-    "stem": "Altı haftalık amenore sonrası tek taraflı pelvik ağrı ve vajinal lekelenme gelişir. Transvajinal ultrasonda uterus içinde gebelik kesesi izlenmez",
+    "stem": "Altı haftalık amenore sonrası tek taraflı pelvik ağrı ve vajinal lekelenme gelişir. Transvajinal ultrasonda uterus içinde gebelik kesesi izlenmez.",
     "exam": [
-      "Adneksiyal hassasiyet.",
-      "Servikal hareket hassasiyeti hafif.",
-      "Hemodinami stabil."
+      "Adneksiyal hassasiyet",
+      "Servikal hareket hassasiyeti hafif",
+      "Hemodinami stabil"
     ],
     "vitals": {
       "TA": "108/68 mmHg",
@@ -1068,29 +995,19 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Amenore, vajinal lekelenme, tek taraflı pelvik ağrı ve diskriminatuvar düzeye yakın beta-hCG’ye rağmen intrauterin kese izlenmemesi ektopik gebeliği düşündürür.",
     "wrongOptionFeedback": {
-      "B": "Normal erken gebelikte beta-hCG düzeyi düşükken kese görülmeyebilir. Burada ağrı ve lekelenme ile risk artmıştır.",
+      "B": "Normal erken gebelikte beta-hCG düzeyi düşükken kese görülmeyebilir; burada ağrı ve lekelenme ile risk artmıştır.",
       "C": "Molar gebelikte çok yüksek beta-hCG ve üzüm salkımı benzeri uterin görünüm beklenir.",
-      "D": "PID ateş, pürülan akıntı ve enfeksiyon bulgularıyla daha olasıdır. Amenore ve beta-hCG pozitifliği yön değiştirir.",
+      "D": "PID ateş, pürülan akıntı ve enfeksiyon bulgularıyla daha olasıdır; amenore ve beta-hCG pozitifliği yön değiştirir.",
       "E": "Torsiyonda ani şiddetli ağrı ve over kanlanma bulguları ön plandadır."
     },
     "evidenceChain": [
-      "Amenore sonrası pelvik ağrı vardır",
-      "Vajinal lekelenme eşlik eder",
-      "β-hCG pozitiftir",
-      "Ultrasonda intrauterin kese izlenmez"
+      "Amenore sonrası pelvik ağrı vardır.",
+      "Vajinal lekelenme eşlik eder.",
+      "β-hCG pozitiftir.",
+      "Ultrasonda intrauterin kese izlenmez."
     ],
     "examPearl": "Ektopik gebelikte stabil hastada beta-hCG trendi ve transvajinal ultrason birlikte yorumlanır.",
-    "spotCategory": "AI Spot • Kadın Hastalıkları ve Doğum",
-    "patientIntro": {
-      "presentation": "Amenore, vajinal lekelenme ve pelvik ağrı",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Amenore, vajinal lekelenme ve pelvik ağrı",
-        "Adneksiyal hassasiyet",
-        "TA: 108/68 mmHg"
-      ],
-      "historySummary": "Altı haftalık amenore sonrası tek taraflı pelvik ağrı ve vajinal lekelenme gelişir. Transvajinal ultrasonda uterus içinde gebelik kesesi izlenmez."
-    }
+    "spotCategory": "AI Spot • Kadın Hastalıkları ve Doğum"
   },
   {
     "branchId": "tus-spot-olgular",
@@ -1106,11 +1023,11 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "demographics": "43 yaş kadın",
     "setting": "Acil servis",
     "chiefComplaint": "Ani ve çok şiddetli baş ağrısı",
-    "stem": "Hasta hayatının en şiddetli baş ağrısının saniyeler içinde başladığını söyler. Ense sertliği ve kusma vardır, travma öyküsü yoktur",
+    "stem": "Hasta hayatının en şiddetli baş ağrısının saniyeler içinde başladığını söyler. Ense sertliği ve kusma vardır, travma öyküsü yoktur.",
     "exam": [
-      "Ense sertliği.",
-      "Fotofobi.",
-      "Fokal defisit belirgin değil."
+      "Ense sertliği",
+      "Fotofobi",
+      "Fokal defisit belirgin değil"
     ],
     "vitals": {
       "TA": "156/92 mmHg",
@@ -1158,28 +1075,18 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "correctAnswer": "A",
     "explanation": "Thunderclap başlangıç, ense sertliği ve kusma subaraknoid kanama açısından kırmızı bayraktır. İlk tanısal yaklaşım acil kontrastsız beyin BT’dir.",
     "wrongOptionFeedback": {
-      "B": "Migren tekrarlayıcı baş ağrısı öyküsüyle düşünülebilir. Ani maksimum şiddet ve ense sertliği güvenli taburculuğa izin vermez.",
-      "C": "EEG nöbet değerlendirmesinde kullanılabilir. Bu olguda kanama dışlanmalıdır.",
-      "D": "Sinüzitte ateş, yüz ağrısı ve nazal bulgular beklenir. Thunderclap başlangıç tipik değildir.",
-      "E": "Gerilim tipi baş ağrısı yavaş başlangıçlı ve hafif-orta şiddetlidir. Meningeal bulgular beklenmez."
+      "B": "Migren tekrarlayıcı baş ağrısı öyküsüyle düşünülebilir; ani maksimum şiddet ve ense sertliği güvenli taburculuğa izin vermez.",
+      "C": "EEG nöbet değerlendirmesinde kullanılabilir; bu olguda kanama dışlanmalıdır.",
+      "D": "Sinüzitte ateş, yüz ağrısı ve nazal bulgular beklenir; thunderclap başlangıç tipik değildir.",
+      "E": "Gerilim tipi baş ağrısı yavaş başlangıçlı ve hafif-orta şiddetlidir; meningeal bulgular beklenmez."
     },
     "evidenceChain": [
-      "Ağrı saniyeler içinde maksimum şiddete ulaşmıştır",
-      "Ense sertliği vardır",
-      "Kusma eşlik eder",
-      "Travma olmaması spontan kanamayı dışlamaz"
+      "Ağrı saniyeler içinde maksimum şiddete ulaşmıştır.",
+      "Ense sertliği vardır.",
+      "Kusma eşlik eder.",
+      "Travma olmaması spontan kanamayı dışlamaz."
     ],
     "examPearl": "Thunderclap baş ağrısında subaraknoid kanama dışlanana kadar benign baş ağrısı tanısı konmamalıdır.",
-    "spotCategory": "AI Spot • Küçük Stajlar",
-    "patientIntro": {
-      "presentation": "Ani ve çok şiddetli baş ağrısı",
-      "riskContext": [],
-      "distinctiveClues": [
-        "Ani ve çok şiddetli baş ağrısı",
-        "Ense sertliği",
-        "TA: 156/92 mmHg"
-      ],
-      "historySummary": "Hasta hayatının en şiddetli baş ağrısının saniyeler içinde başladığını söyler. Ense sertliği ve kusma vardır, travma öyküsü yoktur."
-    }
+    "spotCategory": "AI Spot • Küçük Stajlar"
   }
 ];

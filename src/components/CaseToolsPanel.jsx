@@ -12,9 +12,9 @@ function formatTime(totalSeconds = 0) {
 
 function buildChecklist() {
   return [
-    'Yakınmanın başlangıcı, süresi ve seyrini birlikte değerlendir.',
+    'Yakınmanın başlangıcı, süresi ve paternini birlikte değerlendir.',
     'Önce aciliyet düzeyi ve hemodinamik stabiliteyi netleştir.',
-    'Tanı seçeneklerini olgunun baskın klinik bulgularıyla karşılaştır.',
+    'Tanı seçeneklerini olgunun baskın klinik paterniyle karşılaştır.',
   ];
 }
 

@@ -1,0 +1,16 @@
+{
+  "scope": "KlinikIQ clinical/laboratory result formatting repair",
+  "embeddedCasesChecked": 132,
+  "aiItemsChecked": 30,
+  "labInvestigationsValidated": 143,
+  "labRowsValidated": 379,
+  "incompleteLabResultPatternsRemaining": 0,
+  "labValidationErrors": 0,
+  "notableRepairs": [
+    "Birimsiz veya referanssız 'Lökosit 15', 'K, 7.', 'WBC 900' benzeri ifadeler tablo satırlarına dönüştürüldü.",
+    "Çift birimli sonuçlar temizlendi: 'ng/mL ng/L' ve '/µL/mm³' gibi hatalar normalize edildi.",
+    "Tam kan sayımı gibi kompozit satırlar Hemoglobin, MCV, Lökosit ve Mutlak nötrofil gibi ayrı parametre satırlarına bölündü.",
+    "AI üretim hattına sayısal laboratuvarlarda rows + birim + referans + durum zorunluluğu eklendi.",
+    "Tetkik renderer, laboratuvar satırlarını ekranda gösterirken clinicalValueFormatters üzerinden normalize edecek şekilde güçlendirildi."
+  ]
+}

@@ -4,23 +4,15 @@ import { cases } from '../data/cases.js';
 import { attachQuestionDedupeFields, createAIQuestionId, validateQuestionNovelty } from './questionDeduplication.js';
 import { validateBranchFit } from './aiBranchRules.js';
 import { detectInvalidMeasurementFormat, sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
-import { buildLabFindingItems, buildLabSummary, formatLabRows, validateLabResultCompleteness } from './clinicalValueFormatters.js';
 import { repairAIQuestionQuality, validateAIQuestionQuality } from './aiQuestionQualityGate.js';
-import {
-  isChiefComplaint,
-  isInvestigationResult,
-  isPhysicalExamFinding,
-  removeInlineFieldLabels,
-  normalizeClinicalDatumText,
-  validateClinicalFieldPlacement,
-} from './clinicalFieldPlacement.js';
+import { normalizeInvestigationLabResults, validateInvestigationLabCompleteness, hasIncompleteLabResultText } from './clinicalValueFormatters.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
 function cleanClinicalSummaryItem(value = '') {
-  return normalizeClinicalDatumText(removeInlineFieldLabels(sanitizeMeasurementText(String(value || '')))).replace(/[.]$/u, '')
+  return sanitizeMeasurementText(String(value || ''))
     .replace(/\s+/g, ' ')
-    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik örüntü|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|TUS tuzağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|Morfolojik örüntü|Mekanizma|belirleyici bulgu)\s*[:：-]\s*/iu, '')
+    .replace(/^(Karar verdirici ipucu|Destekleyici kanıt|Ayırt ettirici ipucu|Ayırt ettirici bulgu|Klinik patern|Tanısal ayrım|Sınav notu|TUS kırmızı bayrağı|Destekleyici bulgu|Ana kanıt|Kritik ipucu|karar verdirici patern)\s*[:：-]\s*/iu, '')
     .replace(/\s*(\.{3}|…)\s*/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
@@ -59,7 +51,7 @@ function buildValidatedAIRiskContext(payload = {}, history = []) {
   if (/farmakoloji|ilaç|toksin|zehir|yan etki|antidot/.test(branch + ' ' + target)) {
     return ['İlaç veya toksin maruziyeti öyküsü', 'Doz ve zaman ilişkisinin klinik tabloyu belirlemesi'];
   }
-  return uniqueSummaryItems([history[0], 'Somut bulguların karar basamağını desteklemesi'], 2);
+  return uniqueSummaryItems([history[0], 'Objektif bulguların karar basamağını desteklemesi'], 2);
 }
 const DIRECT_LEAK_PHRASES = [
   'tanısını doğrular',
@@ -68,32 +60,12 @@ const DIRECT_LEAK_PHRASES = [
   'kesin tanıdır',
   'tanı:',
   'diagnosis:',
-  'klinik değerlendirme için ek veri',
-  'morfolojik örüntü. morfolojik örüntü',
-  'kısa tus pratiğinde ele alınır',
 ];
-
-
-const LAB_LIKE_TYPES = new Set(['lab', 'urine', 'culture', 'toxicology']);
-const INCOMPLETE_LAB_PATTERN = /\b(l[öo]kosit|wbc|crp|troponin|d[- ]?dimer|sodyum|na\+?|potasyum|k\+?|glukoz|kreatinin|ast|alt|hb|hemoglobin|trombosit|laktat|pH)\s*[:=,]?\s*(?:yüksek|düşük|pozitif|artmış|\d+(?:[.,]\d+)?)(?!\s*(?:\/mm³|\/µL|mg\/dL|mg\/L|g\/dL|mmol\/L|mEq\/L|ng\/mL|ng\/L|U\/L|fL|%))/iu;
-const LAB_KEYWORD_PATTERN = /\b(laboratuvar|hemogram|tam kan|biyokimya|elektrolit|kan gazı|crp|troponin|d[- ]?dimer|seroloji|kültür|idrar|bos|glukoz|kreatinin|lökosit|wbc)\b/iu;
-
-function isLabInvestigation(item = {}) {
-  const type = String(item?.type || '').toLowerCase();
-  const text = `${item?.label || ''} ${item?.title || ''} ${item?.summary || ''}`;
-  return LAB_LIKE_TYPES.has(type) || LAB_KEYWORD_PATTERN.test(text);
-}
-
-function normalizeLabInvestigationRows(item = {}, correctText = '') {
-  const rawRows = item?.rows || item?.result?.values || [];
-  const rows = Array.isArray(rawRows) ? formatLabRows(rawRows, `${item?.label || ''} ${item?.summary || ''} ${correctText}`) : [];
-  return rows;
-}
 
 function stripAnswerLeak(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
   const escaped = String(correctText).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  return String(text).replace(new RegExp(escaped, 'gi'), 'belirleyici bulgu');
+  return String(text).replace(new RegExp(escaped, 'gi'), 'karar verdirici patern');
 }
 
 function toOptionText(option) {
@@ -144,34 +116,18 @@ export function validateAIQuestionPayload(payload = {}) {
     errors.push('ölçüm/vital formatı tıbbi standarda uygun değil');
   }
 
-  (payload.findings?.investigations || payload.investigations || []).forEach((item, index) => {
-    const rows = normalizeLabInvestigationRows(item, correctText);
-    const itemText = JSON.stringify(item || {});
-    if (isLabInvestigation(item)) {
-      if (!rows.length && INCOMPLETE_LAB_PATTERN.test(itemText)) {
-        errors.push(`laboratuvar sonucu rows ile yapılandırılmalı: tetkik ${index + 1}`);
-      }
-      const completeness = validateLabResultCompleteness(rows);
-      if (!completeness.ok) errors.push(...completeness.errors.map((error) => `tetkik ${index + 1}: ${error}`));
-    }
-    if (INCOMPLETE_LAB_PATTERN.test(itemText)) errors.push(`eksik laboratuvar formatı: tetkik ${index + 1}`);
+  const investigationItems = payload.findings?.investigations || payload.investigations || [];
+  investigationItems.forEach((investigation) => {
+    const labValidation = validateInvestigationLabCompleteness(investigation);
+    if (!labValidation.ok) errors.push(...labValidation.errors.map((error) => `laboratuvar sonucu eksik: ${error}`));
   });
+  if (hasIncompleteLabResultText(investigationText)) {
+    errors.push('tetkik sonucunda birim/referans içermeyen laboratuvar ifadesi var');
+  }
 
   DIRECT_LEAK_PHRASES.forEach((phrase) => {
     if (normalizeQuestionText(investigationText).includes(normalizeQuestionText(phrase))) {
       warnings.push(`tetkik yorumunda direkt tanı dili var: ${phrase}`);
-    }
-  });
-
-  if (payload.chiefComplaint && !isChiefComplaint(payload.chiefComplaint) && isInvestigationResult(payload.chiefComplaint)) {
-    errors.push('chiefComplaint alanında tetkik/laboratuvar verisi var');
-  }
-  (payload.findings?.exam || []).forEach((finding) => {
-    if (isInvestigationResult(finding) && !isPhysicalExamFinding(finding)) errors.push(`exam alanında tetkik verisi var: ${String(finding).slice(0, 80)}`);
-  });
-  (payload.evidenceChain || []).forEach((item) => {
-    if (/^(Başvuru yakınması|Laboratuvar bulgusu|Görüntüleme bulgusu|Fizik muayene bulgusu|Karar verdirici ipucu|Destekleyici kanıt|Morfolojik örüntü|Mekanizma|Ayırıcı nokta|TUS tuzağı)\s*[:：|\-]/iu.test(String(item || '').trim())) {
-      errors.push(`evidenceChain içinde inline etiket var: ${String(item).slice(0, 80)}`);
     }
   });
 
@@ -188,10 +144,10 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
   return options.reduce((accumulator, option) => {
     if (option.text === correctText) return accumulator;
     accumulator[option.text] = {
-      explanation: feedback[option.id] || `${option.text} kendi tipik bulguları varsa düşünülür. Bu tabloda somut bulgular ${correctText} lehine daha güçlüdür.`,
+      explanation: feedback[option.id] || `${option.text} bazı olgularda düşünülebilir; ancak bu tablodaki somut bulgular ${correctText} lehine daha güçlüdür.`,
       comparisonPoints: [
-        `${option.text} için beklenen tipik bulgular bu olguda baskın değildir.`,
-        `Bu seçenek olgudaki temel bulguları yeterince açıklamaz.`,
+        `${option.text} belirli klinik koşullarda doğru olabilir; bu olgudaki ana bulgular farklıdır.`,
+        `Bu seçenek, olgudaki temel bulguları yeterince açıklamaz.`,
         `${correctText} öykü, muayene ve objektif verilerle daha güçlü uyum gösterir.`,
       ],
     };
@@ -200,24 +156,20 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
 }
 
 function normalizeInvestigation(item, index, correctText) {
-  const rows = normalizeLabInvestigationRows(item, correctText);
-  const rowSummary = rows.length ? buildLabSummary(rows, 3) : '';
-  const summary = rowSummary || normalizeClinicalDatumText(stripAnswerLeak(item?.summary || item?.result || '', correctText));
-  const findings = rows.length
-    ? buildLabFindingItems(rows, 4)
-    : Array.isArray(item?.findings)
-      ? item.findings.map((finding) => normalizeClinicalDatumText(stripAnswerLeak(finding, correctText)).replace(/[.]$/u, ''))
-      : [];
-  return {
+  const summary = stripAnswerLeak(item?.summary || item?.result || '', correctText);
+  const findings = Array.isArray(item?.findings)
+    ? item.findings.map((finding) => sanitizeMeasurementText(stripAnswerLeak(finding, correctText)))
+    : [];
+  return normalizeInvestigationLabResults({
     id: item?.id || `remote-ai-investigation-${index + 1}`,
-    label: normalizeClinicalDatumText(item?.label || item?.name || `Tetkik ${index + 1}`).replace(/[.]$/u, ''),
+    label: sanitizeMeasurementText(item?.label || item?.name || `Tetkik ${index + 1}`),
     type: item?.type || 'lab',
     priority: item?.priority || (index === 0 ? 'essential' : 'useful'),
-    summary,
+    summary: sanitizeMeasurementText(summary),
     findings,
-    rows,
-    interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte yorumlanır.',
-  };
+    rows: item?.rows,
+    interpretation: 'Sonuç, öykü ve muayene bulgularıyla birlikte değerlendirilir.',
+  });
 }
 
 export function normalizeGeneratedAIQuestion(payload = {}) {
@@ -250,13 +202,13 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     learningTarget: sanitizeMeasurementText(payload.learningTarget),
     demographics: sanitizeMeasurementText(payload.demographics || 'TUS adayı için kısa klinik bağlam'),
     setting: sanitizeMeasurementText(payload.setting || 'Kısa klinik pratik'),
-    chiefComplaint: normalizeClinicalDatumText(payload.chiefComplaint || payload.learningTarget).replace(/[.]$/u, ''),
+    chiefComplaint: sanitizeMeasurementText(payload.chiefComplaint || payload.learningTarget),
     stem: sanitizeMeasurementText(payload.stem),
-    history: history.map((item) => normalizeClinicalDatumText(item).replace(/[.]$/u, '')),
-    exam: exam.map((item) => normalizeClinicalDatumText(item).replace(/[.]$/u, '')).filter(isPhysicalExamFinding),
+    history: history.map(sanitizeMeasurementText),
+    exam: exam.map(sanitizeMeasurementText),
     vitals,
     investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)),
-    findings: { history: history.map((item) => normalizeClinicalDatumText(item).replace(/[.]$/u, '')), exam: exam.map((item) => normalizeClinicalDatumText(item).replace(/[.]$/u, '')).filter(isPhysicalExamFinding), vitals, investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)) },
+    findings: { history: history.map(sanitizeMeasurementText), exam: exam.map(sanitizeMeasurementText), vitals, investigations: rawInvestigations.map((item, index) => normalizeInvestigation(item, index, correctText)) },
     options,
     correctAnswer: correctId,
     question: sanitizeMeasurementText(payload.question),
@@ -264,7 +216,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     clinicalFocus: payload.learningTarget,
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
-      profile: payload.demographics || payload.relatedBranch || 'AI TUS pratik',
+      profile: payload.demographics || payload.relatedBranch || 'AI AI soru üretimi',
       presentation: payload.chiefComplaint || payload.title,
       riskContext: buildValidatedAIRiskContext(payload, history),
       distinctiveClues: uniqueSummaryItems(payload.evidenceChain?.slice(0, 4) || [], 4),
@@ -285,7 +237,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
         managementSteps: payload.managementSteps || [
           'Öykü, muayene ve vital bulguları birlikte değerlendir.',
           'Objektif tetkik verilerini klinik tabloyla ilişkilendir.',
-          'Diğer seçenekleri olgudaki somut bulgularla karşılaştır.',
+          'Alternatif seçenekleri olgudaki somut bulgularla ele.',
         ],
         learningOutcome: payload.learningTarget,
       },
@@ -330,8 +282,6 @@ export function validateAIQuestionCase(question = {}, recentSignatures = [], opt
 
   const quality = validateAIQuestionQuality(question, { requestedBranch: options.requestedBranch || question.relatedBranch || question.branchName });
   if (!quality.ok) errors.push(...quality.errors.map((error) => `quality:${error}`));
-  const fieldPlacement = validateClinicalFieldPlacement(question);
-  if (!fieldPlacement.ok) errors.push(...fieldPlacement.errors.map((error) => `field-placement:${error}`));
 
   attachQuestionDedupeFields(question);
   const signature = question.contentSignature || makeQuestionSignature(question);

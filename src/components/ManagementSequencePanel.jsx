@@ -77,7 +77,7 @@ const sequenceTemplates = {
   stemi: {
     required: [
       ['monitor', 'Hemodinamik durum ve ritim monitorizasyonunu başlat', 'Akut koroner sendromda ritim ve dolaşım güvenliği erken değerlendirilir.'],
-      ['ecg', '12 derivasyon EKG’yi hızla değerlendir', 'ST elevasyonu görüldüğünde reperfüzyon kararı EKG üzerinden verilir.'],
+      ['ecg', '12 derivasyon EKG’yi hızla değerlendir', 'ST elevasyon paterninde reperfüzyon kararı EKG üzerinden verilir.'],
       ['antithrombotic', 'Antitrombotik tedavi ve analjezi/oksijen gereksinimini değerlendir', 'Başlangıç tedavisi semptom, oksijenizasyon ve kanama riskiyle birlikte planlanır.'],
       ['pci-strategy', 'Primer PCI uygunluğunu ve reperfüzyon stratejisini belirle', 'STEMI’de hedef mümkün olan en hızlı koroner reperfüzyondur.'],
       ['fibrinolysis-if-delay', 'PCI gecikecekse fibrinoliz uygunluğunu değerlendir', 'Merkez gecikmesi varsa fibrinoliz seçeneği kontrendikasyonlarla birlikte değerlendirilir.'],
