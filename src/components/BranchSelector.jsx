@@ -1,7 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
 import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
 import { TUS_SPOT_BRANCH_ID } from '../data/branches.js';
-import TusPearlDeck from './TusPearlDeck.jsx';
 
 function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch, index = 0, variant = 'grid' }) {
   const totalCases = branchStats?.totalCases ?? 0;
@@ -96,7 +95,6 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
         </div>
       </div>
 
-      <TusPearlDeck compact />
 
       {spotBranch ? (
         <div className="tus-spot-olgular-feature-row" aria-label="TUS Spot Olgular özel alanı">

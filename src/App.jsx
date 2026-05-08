@@ -7,7 +7,8 @@ import CaseList from './components/CaseList.jsx';
 import CasePlayer from './components/CasePlayer.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
-import WrongAnswersPanel from './components/WrongAnswersPanel.jsx';
+import StudyReviewHub from './components/StudyReviewHub.jsx';
+import TusPearlStudyScreen from './components/TusPearlStudyScreen.jsx';
 import ExamResults from './components/ExamResults.jsx';
 import AIGeneratedQuestionView from './components/AIGeneratedQuestionView.jsx';
 import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
@@ -168,6 +169,7 @@ function App() {
   const [wrongAnswers, setWrongAnswers] = useState(() => currentUser?.wrongAnswers ?? []);
   const [aiPracticeStats, setAIPracticeStats] = useState(() => loadStoredValue(AI_PRACTICE_STATS_STORAGE_KEY, defaultAIPracticeStats));
   const [aiPracticeState, setAIPracticeState] = useState(defaultAIPracticeState);
+  const [pearlStudyState, setPearlStudyState] = useState({ active: false, filter: 'all', branchFilter: 'all', catalogId: '' });
   const [aiBranchFilter, setAIBranchFilter] = useState(() => loadStoredValue(AI_BRANCH_FILTER_STORAGE_KEY, 'random'));
   const [examState, setExamState] = useState(null);
   const [clockTick, setClockTick] = useState(Date.now());
@@ -284,6 +286,7 @@ function App() {
     setExamHistory([]);
     setWrongAnswers([]);
     setAIPracticeState(defaultAIPracticeState);
+    closePearlStudy();
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -304,6 +307,7 @@ function App() {
     setExamHistory(user.examHistory ?? []);
     setWrongAnswers(user.wrongAnswers ?? []);
     setAIPracticeState(defaultAIPracticeState);
+    closePearlStudy();
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -319,6 +323,7 @@ function App() {
     setExamHistory(user.examHistory ?? []);
     setWrongAnswers(user.wrongAnswers ?? []);
     setAIPracticeState(defaultAIPracticeState);
+    closePearlStudy();
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -389,6 +394,7 @@ function App() {
     if (existingIndex >= 0) nextUsers[existingIndex] = demoUser;
     saveUsers(nextUsers);
     activateUserSession(demoUser);
+    closePearlStudy();
 
     window.setTimeout(() => {
       const demoPool = resolveDemoCases();
@@ -419,6 +425,7 @@ function App() {
     setExamHistory([]);
     setWrongAnswers([]);
     setAIPracticeState(defaultAIPracticeState);
+    closePearlStudy();
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -461,6 +468,7 @@ function App() {
     if (!clinicalCase || !accessibleCaseIds.has(clinicalCase.id)) return;
     clearAIQuestionTimer();
     setAIPracticeState(defaultAIPracticeState);
+    closePearlStudy();
     setMode('study');
     setExamState(null);
     setSelectedBranchId(clinicalCase.branchId);
@@ -593,6 +601,21 @@ function App() {
   const noopRandomCase = useCallback(() => {}, []);
   const handleToggleTutorMode = useCallback(() => setTutorMode((current) => !current), []);
 
+  const closePearlStudy = useCallback(() => {
+    setPearlStudyState({ active: false, filter: 'all', branchFilter: 'all', catalogId: '' });
+  }, []);
+
+  const openPearlStudy = useCallback(({ filter = 'all', branchFilter = 'all', catalogId = '' } = {}) => {
+    clearAIQuestionTimer();
+    setExamState(null);
+    setAIPracticeState(defaultAIPracticeState);
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setMode('study');
+    setPearlStudyState({ active: true, filter, branchFilter, catalogId });
+    scrollToTopSmart({ smooth: false });
+  }, []);
+
   const clearBranchRouteTimers = useCallback(() => {
     branchRouteTimers.current.forEach((timerId) => window.clearTimeout(timerId));
     branchRouteTimers.current = [];
@@ -601,6 +624,7 @@ function App() {
   const handleSelectBranch = useCallback((branchId) => {
     clearAIQuestionTimer();
     setAIPracticeState(defaultAIPracticeState);
+    closePearlStudy();
     if (isDemoUser && !visibleBranches.some((branch) => branch.id === branchId)) return;
     const branchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
     if (!branchPool.length) return;
@@ -630,7 +654,7 @@ function App() {
     }, BRANCH_TRANSITION_MS + BRANCH_TRANSITION_FADE_MS);
 
     branchRouteTimers.current = [selectTimer, finishTimer];
-  }, [accessibleCaseIndex, clearBranchRouteTimers, isDemoUser, visibleBranches]);
+  }, [accessibleCaseIndex, clearBranchRouteTimers, closePearlStudy, isDemoUser, visibleBranches]);
 
   const handleSelectCase = useCallback((caseId) => {
     if (!accessibleCaseIds.has(caseId)) return;
@@ -725,14 +749,15 @@ function App() {
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setIsCaseSidebarOpen(true);
+    closePearlStudy();
     generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter);
     scrollToTopSmart({ smooth: false });
-  }, [aiBranchFilter, aiPracticeState.question?.id, generateNextAIQuestion]);
+  }, [aiBranchFilter, aiPracticeState.question?.id, closePearlStudy, generateNextAIQuestion]);
 
   const handleGenerateNextAIQuestion = useCallback(() => {
     generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter);
     scrollToTopSmart({ smooth: false });
-  }, [aiBranchFilter, aiPracticeState.question?.id, generateNextAIQuestion]);
+  }, [aiBranchFilter, aiPracticeState.question?.id, closePearlStudy, generateNextAIQuestion]);
 
   const handleAIBranchFilterChange = useCallback((nextFilter) => {
     setAIBranchFilter(nextFilter);
@@ -771,6 +796,7 @@ function App() {
     clearAIQuestionTimer();
     setMode('exam');
     setAIPracticeState(defaultAIPracticeState);
+    closePearlStudy();
     setIsCaseSidebarOpen(true);
     setExamState({
       active: true,
@@ -877,6 +903,7 @@ function App() {
     clearAIQuestionTimer();
     setExamState(null);
     setAIPracticeState(defaultAIPracticeState);
+    closePearlStudy();
     setMode('study');
     setSelectedBranchId(null);
     setSelectedCaseId(null);
@@ -946,6 +973,7 @@ function App() {
               setSelectedCaseId(null);
               setExamState(null);
               setAIPracticeState(defaultAIPracticeState);
+              closePearlStudy();
               setMode('study');
               window.setTimeout(() => {
                 const wrongPanel = document.getElementById('wrong-answers-section');
@@ -1009,7 +1037,14 @@ function App() {
         </div>
       ) : null}
 
-      {aiPracticeState.active ? (
+      {pearlStudyState.active ? (
+        <TusPearlStudyScreen
+          initialFilter={pearlStudyState.filter}
+          initialBranchFilter={pearlStudyState.branchFilter}
+          initialCatalogId={pearlStudyState.catalogId}
+          onBack={resetExamToHome}
+        />
+      ) : aiPracticeState.active ? (
         <AIGeneratedQuestionView
           question={aiPracticeState.question}
           loading={aiPracticeState.loading}
@@ -1135,12 +1170,13 @@ function App() {
             totalBranches={visibleBranches.length}
             examCount={examHistory.length}
           />
-          <section id="wrong-answers-section" className="wrong-answers-anchor section-anchor" aria-label="Yanlış çözülen vakalar">
-            <WrongAnswersPanel
+          <section id="wrong-answers-section" className="study-review-anchor section-anchor" aria-label="Yanlışlar ve hap bilgi tekrar merkezi">
+            <StudyReviewHub
               wrongAnswers={visibleWrongAnswers}
               onOpenCase={openWrongCase}
               onRemoveCase={removeWrongAnswer}
               onClearAll={clearWrongAnswers}
+              onOpenPearlStudy={openPearlStudy}
             />
           </section>
           <BranchSelector
