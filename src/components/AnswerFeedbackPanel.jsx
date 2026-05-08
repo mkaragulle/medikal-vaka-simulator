@@ -572,7 +572,7 @@ function AnswerFeedbackPanel({
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">
       <div className="answer-feedback-grid answer-feedback-grid-pro">
         <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />
-        {isSpotCase ? <TusSpotSignalFeedback clinicalCase={clinicalCase} glossaryEnabled={glossaryEnabled} /> : null}
+        <TusSpotSignalFeedback clinicalCase={clinicalCase} glossaryEnabled={glossaryEnabled} />
         <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} />
         <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} />
         <FeedbackManagementCard managementSteps={managementSteps} glossaryEnabled={glossaryEnabled} clinicalCase={clinicalCase} />

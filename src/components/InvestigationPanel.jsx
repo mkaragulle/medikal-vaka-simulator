@@ -513,7 +513,6 @@ function InlineOrderResult({ item, mode, hardMode = false }) {
   const hasRows = Boolean(result.rows?.length);
   const hasImages = Boolean(result.images?.length);
   const hasSummary = Boolean(result.summary && result.format !== 'empty');
-  const feedbackNote = item.inlineFeedback || '';
   const shouldShowSummary = hasSummary && (!hasRows || !summaryDuplicatesStructuredRows(result.summary, result.rows));
 
   return (
@@ -535,12 +534,6 @@ function InlineOrderResult({ item, mode, hardMode = false }) {
         ) : null}
       </div>
 
-      {mode !== 'exam' && !hardMode && feedbackNote ? (
-        <div className="inline-result-block clinical-meaning-block requested-result-note">
-          <span className="inline-result-label">İstem notu</span>
-          <p className="inline-result-meaning"><GlossaryText text={feedbackNote} enabled={mode !== 'exam' && !hardMode} /></p>
-        </div>
-      ) : null}
     </div>
   );
 }

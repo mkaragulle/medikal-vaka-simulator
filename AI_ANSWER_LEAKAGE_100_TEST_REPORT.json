@@ -1,0 +1,1152 @@
+{
+  "generatedAt": "2026-05-08T23:54:59.867Z",
+  "scope": "local-ai-question-candidate-builder-with-quality-gate",
+  "targetCount": 100,
+  "generatedCount": 100,
+  "passedCount": 100,
+  "leakageFailures": 0,
+  "generationErrors": 0,
+  "pass": true,
+  "results": [
+    {
+      "index": 1,
+      "seedId": "ai-hav-serology-pattern-001",
+      "id": "ai-spot-moxknyfc-1-4e56924a-e2d4-466e-b8e6-7dcad2717245",
+      "title": "Sarılık ve viral seroloji paterni",
+      "correct": "Akut hepatit A",
+      "checkedTextCount": 82,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 2,
+      "seedId": "ai-organophosphate-antidote-001",
+      "id": "ai-spot-moxknypx-2-0cd80b99-b6fe-4169-b017-4fbfa76deaf0",
+      "title": "Kolinerjik toksidrom ve antidot seçimi",
+      "correct": "Atropin + pralidoksim",
+      "checkedTextCount": 28,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 3,
+      "seedId": "ai-msud-biochemistry-001",
+      "id": "ai-spot-moxknywn-3-5ea87b29-4dda-4923-8205-06765f3c39f7",
+      "title": "Yenidoğanda beslenme sonrası nörolojik kötüleşme",
+      "correct": "Dallı zincirli alfa-ketoasit dehidrogenaz kompleksi",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 4,
+      "seedId": "ai-adrenal-insufficiency-001",
+      "id": "ai-spot-moxknz27-4-8b2dd397-6ac2-4278-8415-cab481685472",
+      "title": "Hiperpigmentasyon ve elektrolit paterni",
+      "correct": "Primer adrenal yetmezlik",
+      "checkedTextCount": 76,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 5,
+      "seedId": "ai-croup-treatment-001",
+      "id": "ai-spot-moxknz9d-5-ce09f27a-c9d6-4027-954d-6789a0408432",
+      "title": "Havlar tarzda öksürük ve ses kısıklığı",
+      "correct": "Deksametazon + nebulize epinefrin",
+      "checkedTextCount": 28,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 6,
+      "seedId": "ai-ectopic-pregnancy-001",
+      "id": "ai-spot-moxknzea-6-61dc1e54-0264-422b-8d62-0c046f3281fd",
+      "title": "Erken gebelikte ağrı ve kanama",
+      "correct": "Ektopik gebelik",
+      "checkedTextCount": 51,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 7,
+      "seedId": "branch-peds-febrile-seizure-001",
+      "id": "ai-spot-moxknzl5-7-b1268dfe-4454-4cb0-b72f-4639ccd7eee5",
+      "title": "Ateş sonrası kısa nöbet",
+      "correct": "Basit febril konvülziyon",
+      "checkedTextCount": 30,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 8,
+      "seedId": "branch-peds-pyloric-stenosis-001",
+      "id": "ai-spot-moxknzpj-8-358b4580-968c-4d67-9188-4d1c941089b8",
+      "title": "Süt çocuğunda fışkırır kusma",
+      "correct": "Hipertrofik pilor stenozu",
+      "checkedTextCount": 16,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 9,
+      "seedId": "branch-obgyn-preeclampsia-001",
+      "id": "ai-spot-moxknzu3-9-5931c489-f22b-43fd-a7f4-cb0179d7c1e3",
+      "title": "Gebelikte hipertansiyon ve baş ağrısı",
+      "correct": "Preeklampsi",
+      "checkedTextCount": 36,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 10,
+      "seedId": "branch-obgyn-endometriosis-001",
+      "id": "ai-spot-moxknzzr-a-ce3acf3f-bcc0-44d5-ad70-6b3ab244275f",
+      "title": "Dismenore ve infertilite",
+      "correct": "Endometriozis",
+      "checkedTextCount": 26,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 11,
+      "seedId": "branch-physiology-baroreceptor-001",
+      "id": "ai-spot-moxko04u-b-bc66b267-cac9-436b-940a-609f503d69b1",
+      "title": "Ortostatik sempatik yanıt",
+      "correct": "Sempatik aktivite artışı ve vagal aktivite azalması",
+      "checkedTextCount": 29,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 12,
+      "seedId": "branch-physiology-vq-001",
+      "id": "ai-spot-moxko0an-c-529e681d-d502-4e40-b8d4-54a42fad5b91",
+      "title": "Ventilasyon perfüzyon uyumsuzluğu",
+      "correct": "Yüksek V/Q oranı ve alveoler ölü boşluk artışı",
+      "checkedTextCount": 29,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 13,
+      "seedId": "branch-histo-neural-crest-001",
+      "id": "ai-spot-moxko0gc-d-38d82c54-743f-41d5-a1e6-a2cb86c644e3",
+      "title": "Nöral krest kökeni",
+      "correct": "Adrenal medulla kromaffin hücreleri",
+      "checkedTextCount": 26,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 14,
+      "seedId": "branch-histo-thyroglossal-001",
+      "id": "ai-spot-moxko0m7-e-aaff6935-35fa-4d7e-ab61-b2815b35dfd0",
+      "title": "Orta hatta hareketli boyun kitlesi",
+      "correct": "Tiroglossal kanal kisti",
+      "checkedTextCount": 29,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 15,
+      "seedId": "branch-anatomy-radial-nerve-001",
+      "id": "ai-spot-moxko0rt-f-7429a7bb-f096-421c-9392-6dff73a6a83e",
+      "title": "El bileği düşüklüğü",
+      "correct": "Radial sinir hasarı",
+      "checkedTextCount": 29,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 16,
+      "seedId": "branch-surgery-appendicitis-001",
+      "id": "ai-spot-moxko0ww-g-50f50cc5-34a8-4225-a52c-1613f8bd57ad",
+      "title": "Göç eden sağ alt kadran ağrısı",
+      "correct": "Akut apandisit",
+      "checkedTextCount": 28,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 17,
+      "seedId": "branch-minor-stroke-001",
+      "id": "ai-spot-moxko126-h-ce9e8d00-ff51-49c6-bc55-3d379413acb2",
+      "title": "Ani konuşma bozukluğu",
+      "correct": "Kontrastsız beyin BT",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 18,
+      "seedId": "synthetic-peds-bronchiolitis-001",
+      "id": "ai-spot-moxko177-i-e4de317f-864d-45d1-a15b-6a0f5392c884",
+      "title": "Süt çocuğunda hışıltılı solunum",
+      "correct": "Nazal aspirasyon, oksijen ve hidrasyon desteği",
+      "checkedTextCount": 27,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 19,
+      "seedId": "synthetic-peds-kawasaki-001",
+      "id": "ai-spot-moxko1bt-j-7ad4dffa-6929-4773-a8d1-fdb848659d21",
+      "title": "Uzamış ateş ve mukozal bulgular",
+      "correct": "Kawasaki hastalığı için IVIG ve aspirin başlamak",
+      "checkedTextCount": 46,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 20,
+      "seedId": "synthetic-internal-dka-001",
+      "id": "ai-spot-moxko1hd-k-ffa71816-fd64-4c68-9532-da48df805e06",
+      "title": "Poliüri ve derin solunum",
+      "correct": "İzotonik salin ile sıvı resüsitasyonu",
+      "checkedTextCount": 45,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 21,
+      "seedId": "synthetic-surgery-appendicitis-001",
+      "id": "ai-spot-moxko1nb-l-0c333bca-9deb-4a82-9875-8ed5dad64681",
+      "title": "Sağ alt kadran ağrısı",
+      "correct": "Akut apandisit",
+      "checkedTextCount": 45,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 22,
+      "seedId": "synthetic-pharm-acetaminophen-001",
+      "id": "ai-spot-moxko1sr-m-fcaccc00-ab0c-43fb-97d6-784432184906",
+      "title": "Parasetamol doz aşımı",
+      "correct": "N-asetilsistein",
+      "checkedTextCount": 30,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 23,
+      "seedId": "synthetic-micro-hav-variant-001",
+      "id": "ai-spot-moxko1xu-n-fbb72f0b-898d-46dd-b7d0-2f42ca72a5b2",
+      "title": "Sarılık ve koyu idrar",
+      "correct": "Akut hepatit A enfeksiyonu",
+      "checkedTextCount": 32,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 24,
+      "seedId": "synthetic-biochem-pku-001",
+      "id": "ai-spot-moxko23w-o-4c00caef-c596-4062-9e5d-ac5295d2e531",
+      "title": "Yenidoğan taramasında fenilalanin yüksekliği",
+      "correct": "Fenilalanin hidroksilaz defekti",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 25,
+      "seedId": "synthetic-physiology-vq-002",
+      "id": "ai-spot-moxko291-p-15d73870-a0c6-4955-b132-85bbbf6f9302",
+      "title": "Ventilasyon korunurken perfüzyon azalması",
+      "correct": "Yüksek V/Q ve alveoler ölü boşluk artışı",
+      "checkedTextCount": 29,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 26,
+      "seedId": "synthetic-anatomy-radial-001",
+      "id": "ai-spot-moxko2ei-q-6bb9775f-9c01-4a43-acab-bcbca421a448",
+      "title": "Humerus kırığı sonrası el bileği düşüklüğü",
+      "correct": "Radial sinir",
+      "checkedTextCount": 29,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 27,
+      "seedId": "synthetic-histo-thyroglossal-002",
+      "id": "ai-spot-moxko2jj-r-4441a407-d99a-42c0-a0c7-88b2ae639aec",
+      "title": "Dil hareketiyle oynayan orta hat kitle",
+      "correct": "Tiroglossal kanal kisti",
+      "checkedTextCount": 29,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 28,
+      "seedId": "synthetic-path-nephrotic-001",
+      "id": "ai-spot-moxko2oo-s-91bd0862-bd84-40d6-bcf5-6e6fda8c827a",
+      "title": "Çocukta masif proteinüri",
+      "correct": "Minimal değişiklik hastalığı",
+      "checkedTextCount": 36,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 29,
+      "seedId": "synthetic-obgyn-ectopic-001",
+      "id": "ai-spot-moxko2u9-t-2fc7e4e4-8c61-4f93-b464-adaa3ea765c6",
+      "title": "Amenore sonrası tek taraflı ağrı",
+      "correct": "Ektopik gebelik",
+      "checkedTextCount": 30,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 30,
+      "seedId": "synthetic-minor-subarachnoid-001",
+      "id": "ai-spot-moxko2zo-u-75de1d78-fcef-46b9-baee-0e438fef0e66",
+      "title": "Ani başlayan en şiddetli baş ağrısı",
+      "correct": "Kontrastsız beyin BT istemek",
+      "checkedTextCount": 29,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 31,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-001-spot",
+      "id": "ai-spot-moxko34y-v-9abd27bd-7345-4975-9ca7-29c48e04ba64",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "Ulnar sinir lezyonu.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 32,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-001-keywords",
+      "id": "ai-spot-moxko3a3-w-697fbbe4-07d0-4702-9cf4-38f673027453",
+      "title": "Ulnar sinir lezyonu",
+      "correct": "4–5. parmak duyu kaybı · pençe el · interosseöz zayıflık · Froment belirtisi",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 33,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-001-trap",
+      "id": "ai-spot-moxko3fw-x-42a3e05c-4f1b-468c-a7a0-9522361a180c",
+      "title": "Ulnar sinir lezyonu",
+      "correct": "Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 34,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-001-extra",
+      "id": "ai-spot-moxko3lm-y-5a0012ec-728d-4dcf-a425-35f59f297294",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "Ulnar sinir lezyonu.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 35,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-002-spot",
+      "id": "ai-spot-moxko3qo-z-01e6ba79-8060-4340-a735-def9fbb420a9",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "Radial sinir lezyonu.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 36,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-002-keywords",
+      "id": "ai-spot-moxko3vm-10-78b958d6-46c6-4b8a-91ff-2e126e4fe4ce",
+      "title": "Radial sinir lezyonu",
+      "correct": "düşük el · humerus şaft kırığı · ekstansiyon kaybı · posterior kol",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 37,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-002-trap",
+      "id": "ai-spot-moxko416-11-b1094421-426b-440d-a4a3-123d71326c6e",
+      "title": "Radial sinir lezyonu",
+      "correct": "Median sinir lezyonu düşük el değil, thenar atrofi ve ape hand ile karışır.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 38,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-002-extra",
+      "id": "ai-spot-moxko47g-12-5ee57ec2-a291-4261-8996-af359496e0ef",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "Radial sinir.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 39,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-003-spot",
+      "id": "ai-spot-moxko4cd-13-a03130d5-e0a3-4e8b-a8f5-9582a63e9563",
+      "title": "Common peroneal sinir",
+      "correct": "Common peroneal sinir lezyonu.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 40,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-003-keywords",
+      "id": "ai-spot-moxko4gw-14-da302fc3-8466-4121-9038-8e539f3779ed",
+      "title": "Common peroneal sinir",
+      "correct": "düşük ayak · steppage gait · fibula boynu · dorsifleksiyon kaybı",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 41,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-003-trap",
+      "id": "ai-spot-moxko4mi-15-53e65ea6-a0a8-4f8d-a1f4-04986aebddc4",
+      "title": "Common peroneal sinir",
+      "correct": "Tibial sinir lezyonu plantar fleksiyon kaybı ile ayrılır.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 42,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-003-extra",
+      "id": "ai-spot-moxko4rg-16-3577a40e-0b87-4f33-b6ff-116b12284647",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "Common peroneal sinir.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 43,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-004-spot",
+      "id": "ai-spot-moxko4wc-17-aac1031f-d0d7-48ed-9fb9-5e2a5065da48",
+      "title": "Parotis ve fasiyal sinir",
+      "correct": "Nervus facialis.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 44,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-004-keywords",
+      "id": "ai-spot-moxko519-18-0cbcad4c-d8e2-4a35-b816-2a4f09fd04cc",
+      "title": "Parotis ve fasiyal sinir",
+      "correct": "parotis · mimik kasları · fasiyal sinir · cerrahi risk",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 45,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-004-trap",
+      "id": "ai-spot-moxko56k-19-659054de-b36f-4d45-9201-05b99f60a7cb",
+      "title": "Parotis ve fasiyal sinir",
+      "correct": "Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 46,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-004-extra",
+      "id": "ai-spot-moxko5cr-1a-a5239fda-3984-4751-838e-f23a9cb86029",
+      "title": "Parotis ve fasiyal sinir",
+      "correct": "Otic ganglion.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 47,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-005-spot",
+      "id": "ai-spot-moxko5i5-1b-26232b94-100f-44bb-a417-9ca445658a4c",
+      "title": "Kas fonksiyon kaybı",
+      "correct": "N. abducens.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 48,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-005-keywords",
+      "id": "ai-spot-moxko5o1-1c-6074dcf5-166c-4760-aec5-977caeda5ba5",
+      "title": "Sinir lezyonu paterni",
+      "correct": "kavernöz sinüs · abducens · internal karotis · lateral duvar",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 49,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-005-trap",
+      "id": "ai-spot-moxko5u5-1d-6bd5a95d-4e0b-41dc-a56a-6f9cac9d87e1",
+      "title": "Damar yaralanması",
+      "correct": "Okülomotor sinir tutulabilir fakat internal karotisle birlikte sinüs içinde serbest seyreden klasik sinir abducens’tir.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 50,
+      "seedId": "ai-pearl-seed-tus-pearl-anatomy-005-extra",
+      "id": "ai-spot-moxko603-1e-44bbde49-271c-4e2a-8271-468396422b63",
+      "title": "Dermatom dağılımı",
+      "correct": "Abducens siniri.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 51,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-006-spot",
+      "id": "ai-spot-moxko64z-1f-07d2fff9-c40d-46f6-8503-88ce41948112",
+      "title": "Solunum merkezi ve CO₂",
+      "correct": "PaCO₂ artışı.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 52,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-006-keywords",
+      "id": "ai-spot-moxko6an-1g-e3dc028d-878a-4b4f-985d-9da5363c7e5c",
+      "title": "Solunum merkezi ve CO₂",
+      "correct": "PaCO₂ · santral kemoreseptör · BOS pH · ventilasyon",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 53,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-006-trap",
+      "id": "ai-spot-moxko6gi-1h-f4900b54-b1d8-4a6d-9691-84cdbc89bdf6",
+      "title": "Solunum merkezi ve CO₂",
+      "correct": "Hipoksemi önemlidir ancak periferik kemoreseptörleri belirgin olarak PaO₂ çok düştüğünde uyarır.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 54,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-006-extra",
+      "id": "ai-spot-moxko6ms-1i-190e397c-037d-465c-ba63-844d19442d5d",
+      "title": "Solunum merkezi ve CO₂",
+      "correct": "Hipoksemiye bağlı periferik kemoreseptör uyarısı.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 55,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-007-spot",
+      "id": "ai-spot-moxko6sm-1j-b54d2e01-4413-4d02-95ef-c5d456ae4f82",
+      "title": "Böbrek dengesi",
+      "correct": "Na⁺ geri emilimini artırır, K⁺ ve H⁺ atılımını artırır.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 56,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-007-keywords",
+      "id": "ai-spot-moxko6y3-1k-0aa5ed3c-ec66-4be0-8122-70d412adcffa",
+      "title": "Böbrek dengesi",
+      "correct": "aldosteron · Na geri emilim · K atılım · metabolik alkaloz",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 57,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-007-trap",
+      "id": "ai-spot-moxko73o-1l-1952a148-30ef-420a-9c7e-042de2701dfc",
+      "title": "Refleks arkı yorumu",
+      "correct": "ADH su geri emilimini artırır; aldosteronun temel sınav paterni sodyum-potasyum-hidrojen iyonudur.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 58,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-007-extra",
+      "id": "ai-spot-moxko79g-1m-1909a917-89c8-413d-a230-c594366b0e58",
+      "title": "Refleks arkı yorumu",
+      "correct": "Hipokalemi ve metabolik alkaloz.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 59,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-008-spot",
+      "id": "ai-spot-moxko7e3-1n-c4881b5e-2d5b-45a7-a594-9dbd7dbd8706",
+      "title": "ADH ve su dengesi",
+      "correct": "Aquaporin-2.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 60,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-008-keywords",
+      "id": "ai-spot-moxko7k4-1o-c7abec84-c625-496f-95bb-682c68d20efb",
+      "title": "ADH ve su dengesi",
+      "correct": "ADH · V2 · aquaporin-2 · toplayıcı kanal",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 61,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-008-trap",
+      "id": "ai-spot-moxko7q2-1p-c09ef638-2004-4ba9-aa6c-d2885ae11453",
+      "title": "ADH ve su dengesi",
+      "correct": "Aldosteron sodyum-kanal etkisiyle karışır; saf su tutulumu ADH ile ilişkilidir.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 62,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-008-extra",
+      "id": "ai-spot-moxko7wk-1q-a621df53-dc03-4ac2-8ee4-c07c6d2556d3",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "ADH.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 63,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-009-spot",
+      "id": "ai-spot-moxko82e-1r-c69c54ec-6ce7-4803-90b0-9423cc7476b2",
+      "title": "Kardiyak debi değişikliği",
+      "correct": "Frank-Starling mekanizması.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 64,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-009-keywords",
+      "id": "ai-spot-moxko884-1s-6a54f7a0-3d37-4088-b25d-5edfa4e8ce56",
+      "title": "Asit-baz kompansasyonu",
+      "correct": "preload · EDV · atım hacmi · lif uzunluğu",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 65,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-009-trap",
+      "id": "ai-spot-moxko8e0-1t-7d1d27a1-e08d-4fc1-81df-b11d91cb836f",
+      "title": "Asit-baz kompansasyonu",
+      "correct": "Afterload artışı genellikle atım hacmini azaltır; preload artışı Frank-Starling ile sorulur.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 66,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-009-extra",
+      "id": "ai-spot-moxko8kk-1u-c7d839b7-527a-4131-b6e6-948158368f97",
+      "title": "Refleks arkı yorumu",
+      "correct": "Ventrikülün kanı atmak için yenmesi gereken direnç.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 67,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-010-spot",
+      "id": "ai-spot-moxko8qn-1v-0ca25394-5008-479b-8e4a-b1de6a636851",
+      "title": "Böbrek dengesi",
+      "correct": "Ventilasyon korunur, perfüzyon azalır; V/Q artar.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 68,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-010-keywords",
+      "id": "ai-spot-moxko8vs-1w-89428c6e-db64-4e9e-a390-efd2d359d203",
+      "title": "Solunum paterni",
+      "correct": "pulmoner emboli · perfüzyon azalır · V/Q artar · ölü boşluk",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 69,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-010-trap",
+      "id": "ai-spot-moxko911-1x-70c353b7-9877-4a05-9bce-ff08261ff4be",
+      "title": "Solunum paterni",
+      "correct": "Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 70,
+      "seedId": "ai-pearl-seed-tus-pearl-physiology-010-extra",
+      "id": "ai-spot-moxko96b-1y-cab43937-e266-45a0-ab8a-c6472771f31c",
+      "title": "Asit-baz kompansasyonu",
+      "correct": "V/Q azalır; şant benzeri patern oluşur.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 71,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-011-spot",
+      "id": "ai-spot-moxko9bf-1z-fc0aeef2-83a2-4a2c-9ca1-c557464e94e9",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "Nöral krest.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 72,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-011-keywords",
+      "id": "ai-spot-moxko9gc-20-23813f1d-8343-4b0b-a96d-92bd81149a45",
+      "title": "Nöral krest türevleri",
+      "correct": "nöral krest · Schwann · adrenal medulla · melanosit",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 73,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-011-trap",
+      "id": "ai-spot-moxko9m5-21-fbf71a6f-8345-4f4c-9203-cbe784c3fae3",
+      "title": "Nöral krest türevleri",
+      "correct": "Nöral tüp MSS ile ilişkilidir; periferik ganglionlar ve Schwann hücreleri nöral kresttir.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 74,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-011-extra",
+      "id": "ai-spot-moxko9rz-22-6c2e07a3-042f-4997-90df-1207e79da557",
+      "title": "Nöral krest türevleri",
+      "correct": "Nöral krest migrasyonu.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 75,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-012-spot",
+      "id": "ai-spot-moxko9wz-23-e23ab69f-f173-4752-a072-569192281a24",
+      "title": "Epitel tipi ayrımı",
+      "correct": "Vitellin/omfalomezenterik kanal.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 76,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-012-keywords",
+      "id": "ai-spot-moxkoa2c-24-54056275-c4dd-4695-8273-a15acbf93df8",
+      "title": "Doku kesiti bulgusu",
+      "correct": "Meckel · vitellin kanal · ağrısız kanama · ektopik gastrik mukoza",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 77,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-012-trap",
+      "id": "ai-spot-moxkoa7q-25-27ee480e-ad2e-4cd5-a060-ec8b9fc5e291",
+      "title": "Doku kesiti bulgusu",
+      "correct": "Urakus kalıntısı göbekten idrar gelmesiyle karışır; Meckel bağırsakla ilişkilidir.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 78,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-012-extra",
+      "id": "ai-spot-moxkoadd-26-7bfa9692-a4b2-40a2-a8bd-84d02c54030f",
+      "title": "Konjenital anomali paterni",
+      "correct": "Teknesyum-99m perteknetat sintigrafisi.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 79,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-013-spot",
+      "id": "ai-spot-moxkoaid-27-7285a826-d02e-4152-a2e1-3d262c29e372",
+      "title": "Konjenital anomali paterni",
+      "correct": "İnferior paratiroid ve timus.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 80,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-013-keywords",
+      "id": "ai-spot-moxkoanl-28-1167c110-2d23-4bba-a7d7-aa24df88ea15",
+      "title": "Germ yaprağı ilişkisi",
+      "correct": "3. poş · timus · inferior paratiroid · DiGeorge",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 81,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-013-trap",
+      "id": "ai-spot-moxkoath-29-7528c590-4a56-4b3d-b426-48e0c1dd241e",
+      "title": "Doku kesiti bulgusu",
+      "correct": "Superior-inferior paratiroid sıralaması ters gibi geldiği için sık karışır.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 82,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-013-extra",
+      "id": "ai-spot-moxkob06-2a-d7a08d0e-00ad-48f6-8722-9777df35605c",
+      "title": "Embriyolojik köken yorumu",
+      "correct": "3. ve 4. faringeal poş gelişim kusuru.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 83,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-014-spot",
+      "id": "ai-spot-moxkob5o-2b-e78d65fb-39c1-47dc-b69b-0630fb058202",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "Tip II pnömosit.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 84,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-014-keywords",
+      "id": "ai-spot-moxkobag-2c-2d67d3e4-0915-427d-888a-7470de367cd9",
+      "title": "Tip II pnömosit",
+      "correct": "Tip II pnömosit · surfaktan · prematüre · RDS",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 85,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-014-trap",
+      "id": "ai-spot-moxkobfa-2d-5f7e65a1-c249-4d6c-806d-d661a36e4d09",
+      "title": "Tip II pnömosit",
+      "correct": "Tip I pnömosit gaz değişim yüzeyidir; surfaktan üretimi Tip II hücreye aittir.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": [
+        "possible-teaching-text:question:Bu hasta için en doğru ilk yaklaşım hangisidir?"
+      ]
+    },
+    {
+      "index": 86,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-014-extra",
+      "id": "ai-spot-moxkobkv-2e-36f10539-d0ab-4daf-96d7-39550a8a4b9f",
+      "title": "Tip II pnömosit",
+      "correct": "Alveoler yüzey gerilimini azaltmak.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 87,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-015-spot",
+      "id": "ai-spot-moxkobpz-2f-6d63324e-6904-40a5-a9e0-7205c5304ad4",
+      "title": "Kısa klinik karar olgusu",
+      "correct": "hCG.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 88,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-015-keywords",
+      "id": "ai-spot-moxkobui-2g-fc98eedc-1bab-486c-8706-9d9fafdfa09f",
+      "title": "Plasenta ve hCG",
+      "correct": "hCG · trofoblast · korpus luteum · progesteron",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 89,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-015-trap",
+      "id": "ai-spot-moxkobzm-2h-f048b8f1-230e-4bfb-b3a3-d449bd5a8d67",
+      "title": "Plasenta ve hCG",
+      "correct": "Progesteron gebeliği sürdürür; erken dönemde korpus luteumu sürdüren sinyal hCG’dir.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 90,
+      "seedId": "ai-pearl-seed-tus-pearl-histology-embryology-015-extra",
+      "id": "ai-spot-moxkoc5w-2i-198262fe-879b-4671-a930-625702cbdc4d",
+      "title": "Plasenta ve hCG",
+      "correct": "LH.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 91,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-016-spot",
+      "id": "ai-spot-moxkocb1-2j-dafe8a2e-f6de-4ad0-8319-dffc2b9d848a",
+      "title": "Enzim eksikliği yorumu",
+      "correct": "Fenilalanin hidroksilaz.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 92,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-016-keywords",
+      "id": "ai-spot-moxkocgc-2k-607293e8-fe83-4b74-a429-2a62469a90d7",
+      "title": "Yenidoğan tarama paterni",
+      "correct": "fenilalanin · açık ten · küf kokusu · nörolojik gerilik",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 93,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-016-trap",
+      "id": "ai-spot-moxkoclp-2l-07411d95-7700-4b37-8bad-a87c4a196bc4",
+      "title": "Metabolik asidoz paterni",
+      "correct": "Tirozin bu hastada esansiyel hale gelir; tirozinemi ile karıştırma.",
+      "checkedTextCount": 15,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 94,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-016-extra",
+      "id": "ai-spot-moxkocrh-2m-15290e16-41a3-4a68-a94f-c7cfbf0d4d66",
+      "title": "Yenidoğan tarama paterni",
+      "correct": "Fenilalanin.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 95,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-017-spot",
+      "id": "ai-spot-moxkocwa-2n-70b7b68e-64d5-4dcb-b959-1d7f2177e81e",
+      "title": "Yenidoğan tarama paterni",
+      "correct": "Aşağı lens subluksasyonu ve tromboz eğilimi.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 96,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-017-keywords",
+      "id": "ai-spot-moxkod1d-2o-7825c4c0-a743-4eb2-a878-b2f414a950b1",
+      "title": "Yenidoğan tarama paterni",
+      "correct": "marfanoid · tromboz · lens subluksasyonu · CBS",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 97,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-017-trap",
+      "id": "ai-spot-moxkod6i-2p-54f9cc9d-891e-44c8-becd-b166de63cc47",
+      "title": "Yenidoğan tarama paterni",
+      "correct": "Marfan’da lens genellikle yukarı-dışa; homosistinüride aşağı yönde sorulur.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 98,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-017-extra",
+      "id": "ai-spot-moxkodbv-2q-4ff2beb0-e53e-408e-8f5b-7df7b5c86410",
+      "title": "Üre döngüsü bozukluğu",
+      "correct": "Piridoksin/B6 yanıtı bazı olgularda görülebilir.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 99,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-018-spot",
+      "id": "ai-spot-moxkodh2-2r-43071d97-506f-4196-aa85-98726926b733",
+      "title": "Aminoasit yüksekliği",
+      "correct": "Dallı zincirli aminoasitler.",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "index": 100,
+      "seedId": "ai-pearl-seed-tus-pearl-medical-biochemistry-018-keywords",
+      "id": "ai-spot-moxkodlw-2s-846eea82-24f2-4ad7-9dc9-f6222cf68daa",
+      "title": "Aminoasit yüksekliği",
+      "correct": "akçaağaç kokusu · lösin · izolösin · valin",
+      "checkedTextCount": 14,
+      "ok": true,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

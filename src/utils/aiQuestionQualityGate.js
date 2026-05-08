@@ -3,6 +3,7 @@ import { attachQuestionDedupeFields, getQuestionCorrectText, getQuestionOptionTe
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { validateBranchFit } from './aiBranchRules.js';
 import { normalizeInvestigationLabResults, validateInvestigationLabCompleteness, hasIncompleteLabResultText } from './clinicalValueFormatters.js';
+import { repairAnswerLeakage, runAnswerLeakageGate } from './answerLeakageGate.js';
 import {
   detectBrokenSentence,
   detectExcessivePunctuation,
@@ -681,8 +682,9 @@ export function repairAIQuestionQuality(question = {}) {
   }
 
   const contextRepaired = repairContextSensitiveEmergencyQuestion(repaired);
-  attachQuestionDedupeFields(contextRepaired);
-  return contextRepaired;
+  const leakageRepaired = repairAnswerLeakage(contextRepaired);
+  attachQuestionDedupeFields(leakageRepaired);
+  return leakageRepaired;
 }
 
 function visibleQualityTexts(question = {}) {
@@ -795,6 +797,10 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
   errors.push(...validateAgeSymptomCoherence(question));
   errors.push(...validateContextSensitiveClinicalCoherence(question));
   errors.push(...validateFeedbackSpecificity(question));
+
+  const leakageGate = runAnswerLeakageGate(question);
+  if (!leakageGate.ok) errors.push(...leakageGate.errors.map((error) => `answer-leakage:${error}`));
+  warnings.push(...leakageGate.warnings.map((warning) => `answer-leakage:${warning}`));
 
   const branchFit = validateBranchFit(question, requestedBranch || question.relatedBranch || question.branchName);
   if (!branchFit.ok) errors.push(...branchFit.errors.map((error) => `branch-fit:${error}`));

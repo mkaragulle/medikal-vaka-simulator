@@ -1,4 +1,5 @@
 import { neutralModalityTitle, stripDiagnosticLeakage, toSentence } from './displayText.js';
+import { sanitizePreAnswerText } from './answerLeakageGate.js';
 
 export const priorityMeta = {
   essential: {
@@ -323,7 +324,9 @@ function normalizeId(value = '') {
 }
 
 function sanitizeSummary(text = '', clinicalCase) {
-  return toSentence(stripDiagnosticLeakage(text, clinicalCase) || 'Objektif veri sınırlıdır.');
+  const safe = sanitizePreAnswerText(text, clinicalCase, { strict: true, field: 'investigation.result.summary' })
+    || stripDiagnosticLeakage(text, clinicalCase);
+  return toSentence(safe || 'Objektif veri sınırlıdır.');
 }
 
 function attachImages(item, clinicalCase) {

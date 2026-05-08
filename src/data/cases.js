@@ -1,5 +1,6 @@
 import { pediatricArrhythmiaPdfCases } from './pdfPediatricArrhythmiaCases.js';
-export const cases = [
+import { sanitizeEmbeddedCasesForPreAnswer } from '../utils/answerLeakageGate.js';
+export const rawCases = [
   {
     "id": "cv-anterior-stemi-001",
     "branchId": "internal-medicine",
@@ -40957,6 +40958,8 @@ export const cases = [
   }
   , ...pediatricArrhythmiaPdfCases
 ];
+
+export const cases = sanitizeEmbeddedCasesForPreAnswer(rawCases);
 
 export function getCasesByBranch(branchId) {
   return cases.filter((clinicalCase) => clinicalCase.branchId === branchId);

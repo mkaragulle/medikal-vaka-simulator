@@ -54,6 +54,7 @@ const vitalIcons = {
 function ExamSignalBox({ signal, compact = false }) {
   if (!signal?.hasContent) return null;
   const yearsLabel = formatAppearedYears(signal);
+  const hasHiddenTeaching = Boolean(signal.spotPearl || signal.examTrap || signal.keywords?.length);
   return (
     <section className={`exam-signal-box ${compact ? 'compact' : ''}`.trim()} aria-label="TUS belirteç kutusu">
       <div className="exam-signal-top">
@@ -61,16 +62,12 @@ function ExamSignalBox({ signal, compact = false }) {
         <span className="exam-signal-chip-row">
           {yearsLabel ? <span className="exam-signal-chip past">{yearsLabel}</span> : null}
           {signal.appearanceCount > 1 ? <span className="exam-signal-chip">{signal.appearanceCount} kez sorulmuş</span> : null}
-          {signal.spotPearl ? <span className="exam-signal-chip">Spot bilgi</span> : null}
+          {hasHiddenTeaching ? <span className="exam-signal-chip">Yanıt sonrası açılır</span> : null}
         </span>
       </div>
-      {signal.spotPearl ? <p className="exam-signal-pearl"><strong>Spot bilgi:</strong> {signal.spotPearl}</p> : null}
-      {signal.keywords?.length ? (
-        <div className="exam-signal-keywords" aria-label="Anahtar kelimeler">
-          {signal.keywords.slice(0, compact ? 4 : 6).map((keyword) => <span key={keyword}>{keyword}</span>)}
-        </div>
+      {hasHiddenTeaching ? (
+        <p className="exam-signal-pearl">Spot bilgi, anahtar kelimeler ve sınav tuzağı yanıt işaretlendikten sonra feedback panelinde gösterilir.</p>
       ) : null}
-      {signal.examTrap && !compact ? <p className="exam-signal-trap"><strong>Sınav tuzağı:</strong> {signal.examTrap}</p> : null}
     </section>
   );
 }
