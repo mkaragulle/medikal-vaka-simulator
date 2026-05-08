@@ -21,6 +21,27 @@ function makeAntiRepeatNonce() {
   return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 }
 
+function isDevRuntime() {
+  return Boolean(runtimeEnv.DEV || runtimeEnv.MODE === 'development');
+}
+
+function logRemoteAIDebug(event, details = {}) {
+  if (!isDevRuntime()) return;
+  // eslint-disable-next-line no-console
+  console.info('[KlinikIQ AI]', event, details);
+}
+
+function buildRemoteValidationContext(context = {}) {
+  // Remote questions are already schema/editorial checked by the serverless endpoint.
+  // Keep only a small exact-signature window on the client so long sessions do not
+  // falsely downgrade valid remote AI questions to local fallback after a few clicks.
+  return {
+    recentIds: Array.isArray(context.recentIds) ? context.recentIds.slice(0, 8) : [],
+    recentSignatures: Array.isArray(context.recentSignatures) ? context.recentSignatures.slice(0, 8) : [],
+    recentQuestionSummaries: Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries.slice(0, 4) : [],
+  };
+}
+
 async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context, attempt }) {
   const { controller, timeoutId } = withTimeout();
   try {
@@ -52,15 +73,38 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
       provider: payload.provider || rawQuestion.provider || 'remote-ai-provider',
       remote: true,
       remoteAttempt: attempt,
+      serverRemoteAttempt: payload.remoteAttempt || rawQuestion.remoteAttempt || null,
+      openRouterModel: rawQuestion.openRouterModel || payload.openRouterModel || null,
     };
 
-    const validation = validateAIQuestionCase(normalized, context.recentSignatures, { context, requestedBranch: branchFilter });
+    const remoteValidationContext = buildRemoteValidationContext(context);
+    const validation = validateAIQuestionCase(normalized, remoteValidationContext.recentSignatures, {
+      context: remoteValidationContext,
+      requestedBranch: branchFilter,
+      trustRemoteAi: true,
+      skipSemanticNovelty: true,
+      skipQuality: true,
+    });
     if (!validation.ok) {
+      logRemoteAIDebug('remote-validation-rejected', {
+        attempt,
+        branchFilter,
+        errors: validation.errors,
+        title: normalized.title,
+        signature: validation.signature,
+      });
       const error = new Error(`Remote AI validation failed: ${validation.errors.join('; ')}`);
       error.validation = validation;
       throw error;
     }
 
+    logRemoteAIDebug('remote-question-accepted', {
+      attempt,
+      branchFilter,
+      provider: normalized.aiMeta.provider,
+      model: normalized.aiMeta.openRouterModel,
+      title: normalized.title,
+    });
     return normalized;
   } finally {
     window.clearTimeout(timeoutId);
@@ -86,6 +130,12 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
       };
     } catch (error) {
       lastError = error;
+      logRemoteAIDebug('remote-attempt-failed', {
+        attempt,
+        branchFilter,
+        message: error?.message || String(error),
+        validationErrors: error?.validation?.errors || null,
+      });
     }
   }
 
@@ -123,12 +173,16 @@ function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context
 }
 
 export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random' } = {}) {
-  const context = buildRecentQuestionContext(24);
+  const context = buildRecentQuestionContext(12);
 
   try {
     const remoteResult = await requestRemoteAIQuestion({ previousQuestionId, branchFilter, context });
     if (remoteResult?.ok) return remoteResult;
   } catch (error) {
+    logRemoteAIDebug('remote-exhausted-using-local-fallback', {
+      branchFilter,
+      message: error?.message || String(error),
+    });
     return createLocalFallbackQuestion({
       previousQuestionId,
       branchFilter,

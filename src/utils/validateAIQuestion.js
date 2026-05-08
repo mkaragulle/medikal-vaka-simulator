@@ -278,7 +278,10 @@ export function validateAIQuestionCase(question = {}, recentSignatures = [], opt
   if (!Array.isArray(question?.diagnosis?.answerFeedback?.evidenceChain) || question.diagnosis.answerFeedback.evidenceChain.length < 3) errors.push('kanıt zinciri yetersiz');
   if (!question?.contentSignature && !question?.generationSignature && !question?.aiMeta?.contentSignature && !question?.aiMeta?.signature) errors.push('contentSignature eksik');
 
-  const novelty = validateQuestionNovelty(question, { context: recentContext, embeddedCases });
+  const skipSemanticNovelty = Boolean(options.skipSemanticNovelty || options.trustRemoteAi);
+  const novelty = skipSemanticNovelty
+    ? { ok: true, errors: [], embeddedOverlap: null }
+    : validateQuestionNovelty(question, { context: recentContext, embeddedCases });
   if (!novelty.ok) errors.push(...novelty.errors);
 
   const branchFit = validateBranchFit(question, options.requestedBranch || question.relatedBranch || question.branchName);
@@ -292,7 +295,7 @@ export function validateAIQuestionCase(question = {}, recentSignatures = [], opt
   attachQuestionDedupeFields(question);
   const signature = question.contentSignature || makeQuestionSignature(question);
   const topicSignature = question.topicSignature || question.aiMeta?.topicSignature || makeQuestionTopicSignature(question);
-  if (recentSignatures.includes(signature)) errors.push('yakın geçmişte aynı contentSignature üretildi');
+  if (!skipSemanticNovelty && recentSignatures.includes(signature)) errors.push('yakın geçmişte aynı contentSignature üretildi');
 
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), signature, topicSignature, contentSignature: signature, embeddedOverlap: novelty.embeddedOverlap || null };
 }
