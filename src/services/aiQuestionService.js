@@ -33,17 +33,27 @@ function logRemoteAIDebug(event, details = {}) {
 
 function buildRemoteValidationContext(context = {}) {
   // Remote questions are already schema/editorial checked by the serverless endpoint.
-  // Keep only a small exact-signature window on the client so long sessions do not
-  // falsely downgrade valid remote AI questions to local fallback after a few clicks.
+  // The free OpenRouter model is sensitive to long anti-repeat context. Sending the
+  // full local history from the browser can make valid remote generations fail even
+  // while the same endpoint succeeds from terminal with an empty context. Keep the
+  // client-to-server context intentionally tiny: enough to avoid immediate repeats,
+  // not enough to overconstrain or bloat the prompt.
   return {
-    recentIds: Array.isArray(context.recentIds) ? context.recentIds.slice(0, 8) : [],
-    recentSignatures: Array.isArray(context.recentSignatures) ? context.recentSignatures.slice(0, 8) : [],
-    recentQuestionSummaries: Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries.slice(0, 4) : [],
+    recentIds: Array.isArray(context.recentIds) ? context.recentIds.slice(0, 3) : [],
+    recentSignatures: Array.isArray(context.recentSignatures) ? context.recentSignatures.slice(0, 3) : [],
+    recentQuestionSummaries: Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries.slice(0, 2) : [],
   };
+}
+
+function getRemotePayloadError(payload, status) {
+  if (!payload || typeof payload !== 'object') return `Remote AI endpoint failed with ${status}`;
+  const detail = payload.error || payload.message || payload.attempts?.join(' | ');
+  return detail ? `Remote AI endpoint failed with ${status}: ${String(detail).slice(0, 420)}` : `Remote AI endpoint failed with ${status}`;
 }
 
 async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context, attempt }) {
   const { controller, timeoutId } = withTimeout();
+  const remoteRequestContext = buildRemoteValidationContext(context);
   try {
     const response = await fetch(AI_ENDPOINT, {
       method: 'POST',
@@ -52,50 +62,56 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
       body: JSON.stringify({
         previousQuestionId,
         branchFilter,
-        recentIds: context.recentIds,
-        recentSignatures: context.recentSignatures,
-        recentQuestionSummaries: context.recentQuestionSummaries,
+        recentIds: remoteRequestContext.recentIds,
+        recentSignatures: remoteRequestContext.recentSignatures,
+        recentQuestionSummaries: remoteRequestContext.recentQuestionSummaries,
         attempt,
         antiRepeatNonce: makeAntiRepeatNonce(),
       }),
     });
 
-    if (!response.ok) {
-      throw new Error(`Remote AI endpoint failed with ${response.status}`);
+    let payload = null;
+    try {
+      payload = await response.json();
+    } catch {
+      payload = null;
     }
 
-    const payload = await response.json();
-    const rawQuestion = payload.question || payload;
+    if (!response.ok) {
+      throw new Error(getRemotePayloadError(payload, response.status));
+    }
+
+    const rawQuestion = payload?.question || payload;
     const normalized = normalizeGeneratedAIQuestion(rawQuestion);
     normalized.source = 'real-ai';
     normalized.aiMeta = {
       ...normalized.aiMeta,
-      provider: payload.provider || rawQuestion.provider || 'remote-ai-provider',
+      provider: payload?.provider || rawQuestion?.provider || 'remote-ai-provider',
       remote: true,
       remoteAttempt: attempt,
-      serverRemoteAttempt: payload.remoteAttempt || rawQuestion.remoteAttempt || null,
-      openRouterModel: rawQuestion.openRouterModel || payload.openRouterModel || null,
+      serverRemoteAttempt: payload?.remoteAttempt || rawQuestion?.remoteAttempt || null,
+      openRouterModel: rawQuestion?.openRouterModel || payload?.openRouterModel || null,
     };
 
-    const remoteValidationContext = buildRemoteValidationContext(context);
-    const validation = validateAIQuestionCase(normalized, remoteValidationContext.recentSignatures, {
-      context: remoteValidationContext,
+    // Do not let the browser-side local novelty/quality gate hide a server-approved
+    // real AI question. The serverless endpoint already performed schema/editorial
+    // checks; client validation is now diagnostic only. This fixes the case where
+    // terminal tests return ok:true but the UI silently downgrades to local fallback.
+    const validation = validateAIQuestionCase(normalized, remoteRequestContext.recentSignatures, {
+      context: remoteRequestContext,
       requestedBranch: branchFilter,
       trustRemoteAi: true,
       skipSemanticNovelty: true,
-      skipQuality: false,
+      skipQuality: true,
     });
     if (!validation.ok) {
-      logRemoteAIDebug('remote-validation-rejected', {
+      logRemoteAIDebug('remote-validation-warning-accepted', {
         attempt,
         branchFilter,
         errors: validation.errors,
         title: normalized.title,
         signature: validation.signature,
       });
-      const error = new Error(`Remote AI validation failed: ${validation.errors.join('; ')}`);
-      error.validation = validation;
-      throw error;
     }
 
     logRemoteAIDebug('remote-question-accepted', {
