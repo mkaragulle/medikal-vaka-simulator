@@ -67,20 +67,26 @@ Vercel Environment Variables içine şunları ekle:
 
 ```txt
 AI_PROVIDER=openrouter
-OPENROUTER_API_KEY=sk-or-... veya OpenRouter key'in
-OPENROUTER_MODEL=openai/gpt-oss-120b:free
+OPENROUTER_API_KEY=sk-or-... yeni OpenRouter key'in
+OPENROUTER_MODEL=google/gemini-2.5-flash-lite
+OPENROUTER_MODELS=google/gemini-2.5-flash-lite,openai/gpt-oss-120b:free
+OPENROUTER_MAX_MODEL_ATTEMPTS=2
 OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
 OPENROUTER_SITE_URL=https://medikal-vaka-simulator-yl76.vercel.app
 OPENROUTER_APP_TITLE=KlinikIQ
-OPENROUTER_MAX_TOKENS=2800
-OPENROUTER_TEMPERATURE=0.86
-OPENROUTER_TOP_P=0.92
+OPENROUTER_MAX_TOKENS=2200
+OPENROUTER_PER_MODEL_TIMEOUT_MS=24000
+OPENROUTER_REPAIR_JSON_ON_PARSE_ERROR=true
+OPENROUTER_REPAIR_MAX_TOKENS=2600
+OPENROUTER_TEMPERATURE=0.55
+OPENROUTER_TOP_P=0.85
 OPENROUTER_USE_JSON_MODE=true
 OPENROUTER_REASONING_ENABLED=false
 OPENROUTER_REASONING_EXCLUDE=true
+REMOTE_AI_ATTEMPTS=2
 VITE_ENABLE_REAL_AI=true
 VITE_AI_QUESTION_ENDPOINT=/api/generate-ai-question
-VITE_AI_REQUEST_TIMEOUT_MS=30000
+VITE_AI_REQUEST_TIMEOUT_MS=90000
 VITE_AI_REMOTE_RETRY_COUNT=2
 ```
 
@@ -135,4 +141,4 @@ npm run build
 ```
 
 ## OpenRouter JSON parse fix
-If Vercel returns an error such as `Unterminated string in JSON`, keep `OPENROUTER_MAX_TOKENS=3000` and `OPENROUTER_REPAIR_JSON_ON_PARSE_ERROR=true`. The endpoint first asks the selected model for strict JSON; if the model returns malformed JSON, it performs one low-temperature repair call and returns the repaired KlinikIQ question.
+If Vercel returns an error such as `Unterminated string in JSON`, keep `OPENROUTER_REPAIR_JSON_ON_PARSE_ERROR=true`. This version does three things before falling back locally: malformed JSON repair, second server-side remote attempt, and model fallback through `OPENROUTER_MODELS`.

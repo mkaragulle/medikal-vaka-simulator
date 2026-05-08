@@ -455,43 +455,62 @@ async function callOpenAIQuestion(prompt) {
 }
 
 
+function uniqueNonEmpty(items = []) {
+  return Array.from(new Set(items.map((item) => String(item || '').trim()).filter(Boolean)));
+}
+
+function getOpenRouterModelCandidates() {
+  const primary = process.env.OPENROUTER_MODEL || 'google/gemini-2.5-flash-lite';
+  const configured = [
+    ...parseCsvEnv('OPENROUTER_MODELS'),
+    ...parseCsvEnv('OPENROUTER_FALLBACK_MODELS'),
+  ];
+  const conservativeDefaults = [
+    'google/gemini-2.5-flash-lite',
+    'openai/gpt-oss-120b:free',
+  ];
+  const candidates = uniqueNonEmpty([primary, ...configured, ...conservativeDefaults]);
+  const maxAttempts = Math.max(1, Number(process.env.OPENROUTER_MAX_MODEL_ATTEMPTS || 2));
+  return candidates.slice(0, maxAttempts);
+}
+
+function createAbortSignal(timeoutMs) {
+  if (!timeoutMs || timeoutMs <= 0 || typeof AbortController === 'undefined') {
+    return { signal: undefined, cancel: () => {} };
+  }
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
+  return {
+    signal: controller.signal,
+    cancel: () => clearTimeout(timeoutId),
+  };
+}
+
+function summarizeProviderError(error) {
+  const message = String(error?.message || error || 'unknown error').replace(/\s+/g, ' ').trim();
+  return message.slice(0, 420);
+}
+
 async function callOpenRouterQuestion(prompt) {
   const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) return null;
 
-  const model = process.env.OPENROUTER_MODEL || 'openai/gpt-oss-120b:free';
   const baseUrl = (process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, '');
-  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 3000);
-  const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.72);
-  const topP = Number(process.env.OPENROUTER_TOP_P || 0.9);
+  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 2200);
+  const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.55);
+  const topP = Number(process.env.OPENROUTER_TOP_P || 0.85);
   const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.15);
   const presencePenalty = Number(process.env.OPENROUTER_PRESENCE_PENALTY || 0.1);
-  const fallbackModels = parseCsvEnv('OPENROUTER_MODELS');
   const useJsonMode = parseBooleanEnv('OPENROUTER_USE_JSON_MODE', true);
   const enableReasoning = parseBooleanEnv('OPENROUTER_REASONING_ENABLED', false);
   const excludeReasoning = parseBooleanEnv('OPENROUTER_REASONING_EXCLUDE', true);
+  const perModelTimeoutMs = Number(process.env.OPENROUTER_PER_MODEL_TIMEOUT_MS || 24000);
+  const modelCandidates = getOpenRouterModelCandidates();
   const systemPrompt = [
     'You are a senior Turkish medical education question writer for KlinikIQ.',
-    'Return exactly one valid JSON object. Do not use Markdown. Do not include commentary outside JSON.',
-    'Do not reveal chain-of-thought or reasoning. Put only final educational content into JSON fields.',
+    'Return exactly one complete valid JSON object. Do not use Markdown. Do not include commentary outside JSON.',
+    'Keep strings concise. Do not reveal chain-of-thought or reasoning. Put only final educational content into JSON fields.',
   ].join(' ');
-
-  const requestBody = {
-    model,
-    messages: [
-      { role: 'system', content: systemPrompt },
-      { role: 'user', content: `${prompt}\n\n${getJsonContractPrompt()}` },
-    ],
-    temperature,
-    top_p: topP,
-    max_tokens: maxTokens,
-    frequency_penalty: frequencyPenalty,
-    presence_penalty: presencePenalty,
-  };
-
-  if (fallbackModels.length > 0) requestBody.models = fallbackModels;
-  if (useJsonMode) requestBody.response_format = { type: 'json_object' };
-  if (enableReasoning) requestBody.reasoning = { enabled: true, exclude: excludeReasoning };
 
   const headers = {
     'Content-Type': 'application/json',
@@ -503,36 +522,70 @@ async function callOpenRouterQuestion(prompt) {
   if (referer) headers['HTTP-Referer'] = String(referer).startsWith('http') ? String(referer) : `https://${referer}`;
   if (title) headers['X-OpenRouter-Title'] = title;
 
-  async function sendOpenRouterRequest(body) {
-    const openRouterResponse = await fetch(`${baseUrl}/chat/completions`, {
-      method: 'POST',
-      headers,
-      body: JSON.stringify(body),
-    });
+  function buildOpenRouterBody(model, overrides = {}) {
+    const body = {
+      model,
+      messages: [
+        { role: 'system', content: systemPrompt },
+        { role: 'user', content: `${prompt}\n\n${getJsonContractPrompt()}` },
+      ],
+      temperature,
+      top_p: topP,
+      max_tokens: maxTokens,
+      frequency_penalty: frequencyPenalty,
+      presence_penalty: presencePenalty,
+      ...overrides,
+    };
 
-    if (!openRouterResponse.ok) {
-      const errorText = await openRouterResponse.text();
-      const error = new Error(`OpenRouter request failed with ${openRouterResponse.status}: ${errorText.slice(0, 500)}`);
-      error.status = openRouterResponse.status;
-      error.raw = errorText;
-      throw error;
-    }
-
-    return openRouterResponse.json();
+    if (useJsonMode && overrides.response_format !== null) body.response_format = { type: 'json_object' };
+    if (enableReasoning) body.reasoning = { enabled: true, exclude: excludeReasoning };
+    if (overrides.response_format === null) delete body.response_format;
+    return body;
   }
 
-  async function repairMalformedOpenRouterJson(rawText, parseError) {
+  async function sendOpenRouterRequest(body) {
+    const { signal, cancel } = createAbortSignal(perModelTimeoutMs);
+    try {
+      const openRouterResponse = await fetch(`${baseUrl}/chat/completions`, {
+        method: 'POST',
+        headers,
+        body: JSON.stringify(body),
+        signal,
+      });
+
+      if (!openRouterResponse.ok) {
+        const errorText = await openRouterResponse.text();
+        const error = new Error(`OpenRouter request failed with ${openRouterResponse.status}: ${errorText.slice(0, 500)}`);
+        error.status = openRouterResponse.status;
+        error.raw = errorText;
+        throw error;
+      }
+
+      return openRouterResponse.json();
+    } catch (error) {
+      if (error?.name === 'AbortError') {
+        const timeoutError = new Error(`OpenRouter model timed out after ${perModelTimeoutMs} ms`);
+        timeoutError.status = 504;
+        throw timeoutError;
+      }
+      throw error;
+    } finally {
+      cancel();
+    }
+  }
+
+  async function repairMalformedOpenRouterJson(rawText, parseError, repairModel) {
     if (!parseBooleanEnv('OPENROUTER_REPAIR_JSON_ON_PARSE_ERROR', true)) throw parseError;
 
     const candidate = getJsonCandidateFromText(rawText).slice(0, 18000);
-    const repairModel = process.env.OPENROUTER_REPAIR_MODEL || model;
-    const repairMaxTokens = Number(process.env.OPENROUTER_REPAIR_MAX_TOKENS || 3200);
+    const selectedRepairModel = process.env.OPENROUTER_REPAIR_MODEL || repairModel;
+    const repairMaxTokens = Number(process.env.OPENROUTER_REPAIR_MAX_TOKENS || 2600);
     const repairBody = {
-      model: repairModel,
+      model: selectedRepairModel,
       messages: [
         {
           role: 'system',
-          content: 'You repair malformed JSON for a Turkish medical exam app. Return only one valid JSON object. Do not add Markdown or commentary.',
+          content: 'You repair malformed JSON for a Turkish medical exam app. Return only one complete valid JSON object. Do not add Markdown or commentary.',
         },
         {
           role: 'user',
@@ -555,33 +608,48 @@ async function callOpenRouterQuestion(prompt) {
     return extractChatCompletionText(repairData, 'OpenRouter JSON repair');
   }
 
-  let data;
-  try {
-    data = await sendOpenRouterRequest(requestBody);
-  } catch (error) {
-    const couldBeJsonModeIssue = error?.status === 400 && /response_format|json_schema|json_object|structured/i.test(error?.raw || error?.message || '');
-    if (!useJsonMode || !couldBeJsonModeIssue) throw error;
-    const relaxedBody = { ...requestBody };
-    delete relaxedBody.response_format;
-    data = await sendOpenRouterRequest(relaxedBody);
+  const errors = [];
+
+  for (const [index, model] of modelCandidates.entries()) {
+    const modelTemperature = index === 0 ? temperature : Math.min(temperature, 0.45);
+    const primaryBody = buildOpenRouterBody(model, { temperature: modelTemperature });
+
+    const bodiesToTry = [primaryBody];
+    if (useJsonMode) bodiesToTry.push(buildOpenRouterBody(model, { temperature: modelTemperature, response_format: null }));
+
+    for (const body of bodiesToTry) {
+      try {
+        const data = await sendOpenRouterRequest(body);
+        const modelText = extractChatCompletionText(data, 'OpenRouter');
+        let question;
+        let repairedMalformedJson = false;
+        try {
+          question = extractJsonFromText(modelText);
+        } catch (parseError) {
+          const repairedText = await repairMalformedOpenRouterJson(modelText, parseError, model);
+          question = extractJsonFromText(repairedText);
+          repairedMalformedJson = true;
+        }
+        question.id = `ai-spot-real-openrouter-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+        question.source = 'real-ai';
+        question.provider = 'openrouter';
+        question.openRouterModel = data?.model || model;
+        question.openRouterAttempt = index + 1;
+        if (repairedMalformedJson) question.remoteRepairUsed = true;
+        return question;
+      } catch (error) {
+        errors.push(`${model}: ${summarizeProviderError(error)}`);
+        const isJsonModeCompatibilityError = error?.status === 400 && /response_format|json_schema|json_object|structured/i.test(error?.raw || error?.message || '');
+        if (!isJsonModeCompatibilityError && error?.status && [401, 402, 403].includes(Number(error.status))) {
+          break;
+        }
+      }
+    }
   }
 
-  const modelText = extractChatCompletionText(data, 'OpenRouter');
-  let question;
-  let repairedMalformedJson = false;
-  try {
-    question = extractJsonFromText(modelText);
-  } catch (parseError) {
-    const repairedText = await repairMalformedOpenRouterJson(modelText, parseError);
-    question = extractJsonFromText(repairedText);
-    repairedMalformedJson = true;
-  }
-  question.id = `ai-spot-real-openrouter-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  question.source = 'real-ai';
-  question.provider = 'openrouter';
-  question.openRouterModel = data?.model || model;
-  if (repairedMalformedJson) question.remoteRepairUsed = true;
-  return question;
+  const error = new Error(`OpenRouter failed after ${modelCandidates.length} model attempt(s): ${errors.join(' || ')}`);
+  error.status = 502;
+  throw error;
 }
 
 async function callGeminiQuestion(prompt) {
@@ -676,41 +744,53 @@ export default async function handler(request, response) {
     return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
   }
 
+  const attemptErrors = [];
+
   try {
     const body = await parseJsonBody(request);
-    const prompt = buildPrompt(body);
-    const question = await generateWithAvailableProvider(prompt);
+    const remoteAttempts = Math.max(1, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.OPENROUTER_REMOTE_ATTEMPTS || 2));
 
-    const validation = validateRawQuestion(question);
-    const editorialValidation = validateRemoteEditorialQuality(question);
-    if (!editorialValidation.ok) {
-      return sendJson(response, 422, {
-        ok: false,
-        error: 'Model response failed editorial validation',
-        provider: question.provider || 'remote-ai',
-        validationErrors: editorialValidation.errors,
-      });
+    for (let remoteAttempt = 1; remoteAttempt <= remoteAttempts; remoteAttempt += 1) {
+      try {
+        const prompt = buildPrompt({
+          ...body,
+          attempt: Number(body?.attempt || 1) + remoteAttempt - 1,
+          antiRepeatNonce: body?.antiRepeatNonce || `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
+        });
+        const question = await generateWithAvailableProvider(prompt);
+
+        const validation = validateRawQuestion(question);
+        const editorialValidation = validateRemoteEditorialQuality(question);
+        if (!editorialValidation.ok) {
+          attemptErrors.push(`remote attempt ${remoteAttempt}: editorial validation failed: ${editorialValidation.errors.slice(0, 4).join('; ')}`);
+          continue;
+        }
+
+        if (!validation.ok) {
+          attemptErrors.push(`remote attempt ${remoteAttempt}: schema validation failed: ${validation.errors.slice(0, 4).join('; ')}`);
+          continue;
+        }
+
+        return sendJson(response, 200, {
+          ok: true,
+          provider: question.provider || 'remote-ai',
+          remoteAttempt,
+          question,
+        });
+      } catch (error) {
+        attemptErrors.push(`remote attempt ${remoteAttempt}: ${summarizeProviderError(error)}`);
+      }
     }
 
-    if (!validation.ok) {
-      return sendJson(response, 422, {
-        ok: false,
-        error: 'Model response failed schema validation',
-        provider: question.provider || 'remote-ai',
-        validationErrors: validation.errors,
-      });
-    }
-
-    return sendJson(response, 200, {
-      ok: true,
-      provider: question.provider || 'remote-ai',
-      question,
-    });
+    const error = new Error(attemptErrors.join(' | ') || 'Remote AI providers failed');
+    error.status = 502;
+    throw error;
   } catch (error) {
     const status = error?.status && Number(error.status) >= 400 ? Number(error.status) : 500;
     return sendJson(response, status, {
       ok: false,
       error: error?.message || 'AI question generation failed',
+      attempts: attemptErrors.slice(-6),
     });
   }
 }
