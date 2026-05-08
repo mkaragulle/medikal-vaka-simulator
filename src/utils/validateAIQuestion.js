@@ -143,12 +143,12 @@ function buildDifferentialComparisonFromPayload(payload, correctText, options) {
   const feedback = payload.wrongOptionFeedback || {};
   return options.reduce((accumulator, option) => {
     if (option.text === correctText) return accumulator;
+    const explanation = feedback[option.id] || `${option.text}, bu olgudaki karar verdirici ipuçlarını ${correctText} kadar iyi açıklamaz.`;
     accumulator[option.text] = {
-      explanation: feedback[option.id] || `${option.text} bazı olgularda düşünülebilir; ancak bu tablodaki somut bulgular ${correctText} lehine daha güçlüdür.`,
+      explanation,
       comparisonPoints: [
-        `${option.text} belirli klinik koşullarda doğru olabilir; bu olgudaki ana bulgular farklıdır.`,
-        `Bu seçenek, olgudaki temel bulguları yeterince açıklamaz.`,
-        `${correctText} öykü, muayene ve objektif verilerle daha güçlü uyum gösterir.`,
+        explanation,
+        `Olgudaki öykü, muayene ve objektif veri birlikte ${correctText} lehine daha güçlüdür.`,
       ],
     };
     return accumulator;
@@ -188,8 +188,12 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
   const exam = Array.isArray(payload.findings?.exam) ? payload.findings.exam : [];
   const vitals = sanitizeVitalsObject(payload.findings?.vitals || payload.vitals || {});
 
+  const safeRemoteId = String(payload.id || '').startsWith('ai-spot')
+    ? payload.id
+    : createAIQuestionId('ai-spot-remote');
+
   const normalized = {
-    id: payload.id || createAIQuestionId('ai-spot-remote'),
+    id: safeRemoteId,
     seedId: payload.seedId || null,
     source: payload.source || 'real-ai',
     caseType: 'ai-spot',

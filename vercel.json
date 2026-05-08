@@ -1,5 +1,11 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "npm install --package-lock=false --legacy-peer-deps --no-audit --no-fund",
   "buildCommand": "npm run build",
-  "outputDirectory": "dist"
+  "outputDirectory": "dist",
+  "functions": {
+    "api/generate-ai-question.js": {
+      "maxDuration": 60
+    }
+  }
 }

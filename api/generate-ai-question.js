@@ -434,7 +434,7 @@ async function callOpenAIQuestion(prompt) {
   const data = await openAIResponse.json();
   const modelText = extractOpenAIText(data);
   const question = extractJsonFromText(modelText);
-  question.id = `ai-generated-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  question.id = `ai-spot-real-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
   question.source = 'real-ai';
   question.provider = 'openai';
   return question;
@@ -447,11 +447,11 @@ async function callOpenRouterQuestion(prompt) {
 
   const model = process.env.OPENROUTER_MODEL || 'openai/gpt-oss-120b:free';
   const baseUrl = (process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, '');
-  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 2800);
-  const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.86);
-  const topP = Number(process.env.OPENROUTER_TOP_P || 0.92);
-  const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.25);
-  const presencePenalty = Number(process.env.OPENROUTER_PRESENCE_PENALTY || 0.15);
+  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 1600);
+  const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.72);
+  const topP = Number(process.env.OPENROUTER_TOP_P || 0.9);
+  const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.15);
+  const presencePenalty = Number(process.env.OPENROUTER_PRESENCE_PENALTY || 0.1);
   const fallbackModels = parseCsvEnv('OPENROUTER_MODELS');
   const useJsonMode = parseBooleanEnv('OPENROUTER_USE_JSON_MODE', true);
   const enableReasoning = parseBooleanEnv('OPENROUTER_REASONING_ENABLED', false);
@@ -520,7 +520,7 @@ async function callOpenRouterQuestion(prompt) {
 
   const modelText = extractChatCompletionText(data, 'OpenRouter');
   const question = extractJsonFromText(modelText);
-  question.id = `ai-generated-openrouter-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  question.id = `ai-spot-real-openrouter-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
   question.source = 'real-ai';
   question.provider = 'openrouter';
   question.openRouterModel = data?.model || model;
@@ -561,7 +561,7 @@ async function callGeminiQuestion(prompt) {
   const data = await geminiResponse.json();
   const modelText = data?.candidates?.[0]?.content?.parts?.map((part) => part.text || '').join('\n') || '';
   const question = extractJsonFromText(modelText);
-  question.id = `ai-generated-gemini-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  question.id = `ai-spot-real-gemini-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
   question.source = 'real-ai';
   question.provider = 'gemini';
   return question;

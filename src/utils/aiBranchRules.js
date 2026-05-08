@@ -64,7 +64,7 @@ export const AI_BRANCH_RULES = [
     examDefaults: ['Genel durum yaşına göre değerlendirilir.', 'Kapiller dolum, hidrasyon ve solunum eforu pediatrik bağlamda yorumlanır.', 'Bilinç, beslenme ve irritabilite değişikliği kırmızı bayrak olarak izlenir.'],
     vitals: { TA: '90/55 mmHg', Nabız: '128/dk', Solunum: '30/dk', SpO2: '%97', Ateş: '38.4 °C' },
     forbiddenDemographic: [/\b([2-9][0-9])\s*yaş\b/i, /erişkin/i, /yaşlı/i, /postmenopozal/i],
-    requiredDemographic: [/yenidoğan|bebek|çocuk|adölesan|ergen/i],
+    requiredDemographic: [/yenidoğan|bebek|çocuk|çocuğ|çocukta|çocuklarda|adölesan|ergen/i],
     branchKeywords: ['yenidoğan', 'bebek', 'çocuk', 'adölesan', 'pediatrik', 'aşı', 'büyüme', 'gelişme'],
   }),
   rule('obstetrics-gynecology', ['Kadın Hastalıkları ve Doğum', 'Kadın Doğum', 'Jinekoloji', 'Obstetri'], {
