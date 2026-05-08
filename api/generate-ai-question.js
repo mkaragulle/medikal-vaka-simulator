@@ -164,6 +164,98 @@ function extractOpenAIText(payload = {}) {
   return text;
 }
 
+
+function extractChatCompletionText(payload = {}, providerName = 'chat-completion-provider') {
+  const message = payload?.choices?.[0]?.message;
+  const content = message?.content;
+
+  if (typeof content === 'string' && content.trim()) return content;
+
+  if (Array.isArray(content)) {
+    const text = content
+      .map((part) => {
+        if (typeof part === 'string') return part;
+        if (typeof part?.text === 'string') return part.text;
+        if (typeof part?.content === 'string') return part.content;
+        return '';
+      })
+      .join('\n')
+      .trim();
+    if (text) return text;
+  }
+
+  const fallbackText = [message?.reasoning, message?.reasoning_content]
+    .filter((item) => typeof item === 'string' && item.trim())
+    .join('\n')
+    .trim();
+  if (fallbackText) return fallbackText;
+
+  throw new Error(`${providerName} response did not contain message.content`);
+}
+
+function parseBooleanEnv(name, defaultValue = false) {
+  const value = process.env[name];
+  if (value === undefined || value === null || value === '') return defaultValue;
+  return ['1', 'true', 'yes', 'on'].includes(String(value).trim().toLowerCase());
+}
+
+function parseCsvEnv(name) {
+  return String(process.env[name] || '')
+    .split(',')
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function getJsonContractPrompt() {
+  return `
+Zorunlu JSON kontratı:
+{
+  "id": "string",
+  "source": "real-ai",
+  "caseType": "ai-spot",
+  "title": "string",
+  "relatedBranch": "string",
+  "difficulty": "string",
+  "learningTarget": "string",
+  "demographics": "string",
+  "setting": "string",
+  "chiefComplaint": "string",
+  "stem": "string",
+  "findings": {
+    "history": ["string"],
+    "exam": ["string"],
+    "vitals": { "TA": "string", "Nabız": "string", "Solunum": "string", "Ateş": "string", "SpO₂": "string" },
+    "investigations": [
+      {
+        "id": "string",
+        "label": "string",
+        "type": "string",
+        "priority": "karar verdirici|yardımcı|düşük öncelikli|durumsal",
+        "summary": "string",
+        "findings": ["string"],
+        "rows": [["Parametre", "Sonuç + birim", "Referans", "Durum"]]
+      }
+    ]
+  },
+  "question": "string",
+  "options": [
+    { "id": "A", "text": "string" },
+    { "id": "B", "text": "string" },
+    { "id": "C", "text": "string" },
+    { "id": "D", "text": "string" },
+    { "id": "E", "text": "string" }
+  ],
+  "correctAnswer": "A|B|C|D|E",
+  "explanation": "string",
+  "wrongOptionFeedback": { "A": "string", "B": "string", "C": "string", "D": "string", "E": "string" },
+  "evidenceChain": ["string", "string", "string"],
+  "examPearl": "string",
+  "managementSteps": ["string", "string"],
+  "nextQuestionSeed": "string"
+}
+JSON dışında tek karakter bile yazma.`;
+}
+
 const REMOTE_FORBIDDEN_TEXT_PATTERNS = [
   /Morfolojik patern\s*[.:]\s*Morfolojik patern/iu,
   /Morfolojik patern\s*[:：]/iu,
@@ -348,6 +440,93 @@ async function callOpenAIQuestion(prompt) {
   return question;
 }
 
+
+async function callOpenRouterQuestion(prompt) {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) return null;
+
+  const model = process.env.OPENROUTER_MODEL || 'openai/gpt-oss-120b:free';
+  const baseUrl = (process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, '');
+  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 2800);
+  const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.86);
+  const topP = Number(process.env.OPENROUTER_TOP_P || 0.92);
+  const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.25);
+  const presencePenalty = Number(process.env.OPENROUTER_PRESENCE_PENALTY || 0.15);
+  const fallbackModels = parseCsvEnv('OPENROUTER_MODELS');
+  const useJsonMode = parseBooleanEnv('OPENROUTER_USE_JSON_MODE', true);
+  const enableReasoning = parseBooleanEnv('OPENROUTER_REASONING_ENABLED', false);
+  const excludeReasoning = parseBooleanEnv('OPENROUTER_REASONING_EXCLUDE', true);
+  const systemPrompt = [
+    'You are a senior Turkish medical education question writer for KlinikIQ.',
+    'Return exactly one valid JSON object. Do not use Markdown. Do not include commentary outside JSON.',
+    'Do not reveal chain-of-thought or reasoning. Put only final educational content into JSON fields.',
+  ].join(' ');
+
+  const requestBody = {
+    model,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: `${prompt}\n\n${getJsonContractPrompt()}` },
+    ],
+    temperature,
+    top_p: topP,
+    max_tokens: maxTokens,
+    frequency_penalty: frequencyPenalty,
+    presence_penalty: presencePenalty,
+  };
+
+  if (fallbackModels.length > 0) requestBody.models = fallbackModels;
+  if (useJsonMode) requestBody.response_format = { type: 'json_object' };
+  if (enableReasoning) requestBody.reasoning = { enabled: true, exclude: excludeReasoning };
+
+  const headers = {
+    'Content-Type': 'application/json',
+    Authorization: `Bearer ${apiKey}`,
+  };
+
+  const referer = process.env.OPENROUTER_SITE_URL || process.env.SITE_URL || process.env.VERCEL_URL;
+  const title = process.env.OPENROUTER_APP_TITLE || 'KlinikIQ';
+  if (referer) headers['HTTP-Referer'] = String(referer).startsWith('http') ? String(referer) : `https://${referer}`;
+  if (title) headers['X-OpenRouter-Title'] = title;
+
+  async function sendOpenRouterRequest(body) {
+    const openRouterResponse = await fetch(`${baseUrl}/chat/completions`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body),
+    });
+
+    if (!openRouterResponse.ok) {
+      const errorText = await openRouterResponse.text();
+      const error = new Error(`OpenRouter request failed with ${openRouterResponse.status}: ${errorText.slice(0, 500)}`);
+      error.status = openRouterResponse.status;
+      error.raw = errorText;
+      throw error;
+    }
+
+    return openRouterResponse.json();
+  }
+
+  let data;
+  try {
+    data = await sendOpenRouterRequest(requestBody);
+  } catch (error) {
+    const couldBeJsonModeIssue = error?.status === 400 && /response_format|json_schema|json_object|structured/i.test(error?.raw || error?.message || '');
+    if (!useJsonMode || !couldBeJsonModeIssue) throw error;
+    const relaxedBody = { ...requestBody };
+    delete relaxedBody.response_format;
+    data = await sendOpenRouterRequest(relaxedBody);
+  }
+
+  const modelText = extractChatCompletionText(data, 'OpenRouter');
+  const question = extractJsonFromText(modelText);
+  question.id = `ai-generated-openrouter-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  question.source = 'real-ai';
+  question.provider = 'openrouter';
+  question.openRouterModel = data?.model || model;
+  return question;
+}
+
 async function callGeminiQuestion(prompt) {
   const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
   if (!apiKey) return null;
@@ -390,19 +569,27 @@ async function callGeminiQuestion(prompt) {
 
 function selectProviderStatus() {
   return {
+    hasOpenRouter: Boolean(process.env.OPENROUTER_API_KEY),
     hasOpenAI: Boolean(process.env.OPENAI_API_KEY),
     hasGemini: Boolean(process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY),
   };
 }
 
+function buildProviderOrder(preferredProvider) {
+  const preferred = String(preferredProvider || 'openrouter').toLowerCase();
+  const all = ['openrouter', 'openai', 'gemini'];
+  if (!all.includes(preferred)) return all;
+  return [preferred, ...all.filter((provider) => provider !== preferred)];
+}
+
 async function generateWithAvailableProvider(prompt) {
   const providerStatus = selectProviderStatus();
-  const preferred = String(process.env.AI_PROVIDER || 'openai').toLowerCase();
-  const providerOrder = preferred === 'gemini' ? ['gemini', 'openai'] : ['openai', 'gemini'];
+  const providerOrder = buildProviderOrder(process.env.AI_PROVIDER);
   const errors = [];
 
   for (const provider of providerOrder) {
     try {
+      if (provider === 'openrouter' && providerStatus.hasOpenRouter) return await callOpenRouterQuestion(prompt);
       if (provider === 'openai' && providerStatus.hasOpenAI) return await callOpenAIQuestion(prompt);
       if (provider === 'gemini' && providerStatus.hasGemini) return await callGeminiQuestion(prompt);
     } catch (error) {
@@ -410,8 +597,8 @@ async function generateWithAvailableProvider(prompt) {
     }
   }
 
-  if (!providerStatus.hasOpenAI && !providerStatus.hasGemini) {
-    const error = new Error('Missing server-side AI API key. Set OPENAI_API_KEY or GEMINI_API_KEY in the deployment environment.');
+  if (!providerStatus.hasOpenRouter && !providerStatus.hasOpenAI && !providerStatus.hasGemini) {
+    const error = new Error('Missing server-side AI API key. Set OPENROUTER_API_KEY, OPENAI_API_KEY or GEMINI_API_KEY in the deployment environment.');
     error.status = 503;
     throw error;
   }

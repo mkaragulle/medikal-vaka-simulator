@@ -53,23 +53,73 @@ Bu ayarlar ayrıca `vercel.json` içinde de vardır.
 
 `.env.example` dosyasını `.env.local` olarak kopyala ve Firebase değerlerini doldur. Vercel'de aynı değerleri Environment Variables bölümüne ekle.
 
-## AI ile Soru Üret notu
+## AI ile Soru Üret notu — OpenRouter sürümü
 
-Bu sürümde AI soru üretim ekranı iki modlu çalışır:
+Bu sürümde gerçek AI üretimi için varsayılan sağlayıcı **OpenRouter** olacak şekilde hazırlandı. Frontend API key görmez; istekler Vercel serverless endpointi üzerinden `/api/generate-ai-question` adresine gider.
 
-- Ana yol: gerçek AI endpointi (`/api/generate-ai-question`) üzerinden server-side OpenAI Responses API çağrısı yapar. API key frontend bundle içine girmez.
-- Güvenli fallback: OpenAI/Gemini endpointi çalışmazsa uygulama local akıllı generator ile kırılmadan devam eder.
+Çalışma sırası:
 
-Vercel Environment Variables içine en az şunu ekle:
-
-```txt
-OPENAI_API_KEY=sk-...
-OPENAI_MODEL=gpt-4o-mini
-AI_PROVIDER=openai
-VITE_ENABLE_REAL_AI=true
+```text
+Frontend → /api/generate-ai-question → OpenRouter chat/completions → JSON soru → kalite/şema kontrolü → UI
 ```
 
-İstersen alternatif/ikincil sağlayıcı olarak `GEMINI_API_KEY` de tanımlanabilir. `OPENAI_API_KEY` veya `GEMINI_API_KEY` yoksa gerçek AI devreye giremez ve sistem local fallback ile çalışır.
+Vercel Environment Variables içine şunları ekle:
+
+```txt
+AI_PROVIDER=openrouter
+OPENROUTER_API_KEY=sk-or-... veya OpenRouter key'in
+OPENROUTER_MODEL=openai/gpt-oss-120b:free
+OPENROUTER_BASE_URL=https://openrouter.ai/api/v1
+OPENROUTER_SITE_URL=https://medikal-vaka-simulator-yl76.vercel.app
+OPENROUTER_APP_TITLE=KlinikIQ
+OPENROUTER_MAX_TOKENS=2800
+OPENROUTER_TEMPERATURE=0.86
+OPENROUTER_TOP_P=0.92
+OPENROUTER_USE_JSON_MODE=true
+OPENROUTER_REASONING_ENABLED=false
+OPENROUTER_REASONING_EXCLUDE=true
+VITE_ENABLE_REAL_AI=true
+VITE_AI_QUESTION_ENDPOINT=/api/generate-ai-question
+VITE_AI_REQUEST_TIMEOUT_MS=30000
+VITE_AI_REMOTE_RETRY_COUNT=2
+```
+
+Notlar:
+
+- OpenRouter free modellerde günlük/rate limit olabilir. Limit, model doluluğu veya JSON validation hatasında uygulama kırılmaz; local generator fallback olarak çalışır.
+- `OPENROUTER_API_KEY` kesinlikle `VITE_` ile başlamamalı; aksi halde frontend bundle içine sızabilir.
+- Environment variable ekledikten sonra Vercel'de **Redeploy** yap.
+- OpenAI quota hatası yaşamamak için `AI_PROVIDER=openrouter` olduğundan emin ol.
+
+Endpoint kontrolü:
+
+```powershell
+$body = @{
+  branchFilter = "pediatrics"
+  previousQuestionId = $null
+  recentIds = @()
+  recentSignatures = @()
+  recentQuestionSummaries = @()
+  attempt = 1
+  antiRepeatNonce = [guid]::NewGuid().ToString()
+} | ConvertTo-Json -Depth 10
+
+Invoke-RestMethod `
+  -Uri "https://medikal-vaka-simulator-yl76.vercel.app/api/generate-ai-question" `
+  -Method POST `
+  -ContentType "application/json" `
+  -Body $body
+```
+
+Başarılı çıktı içinde şunları görmelisin:
+
+```json
+{
+  "ok": true,
+  "provider": "openrouter",
+  "question": { }
+}
+```
 
 Local çalıştırma:
 
