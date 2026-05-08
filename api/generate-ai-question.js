@@ -501,12 +501,19 @@ function uniqueNonEmpty(items = []) {
   return Array.from(new Set(items.map((item) => String(item || '').trim()).filter(Boolean)));
 }
 
+function isOpenRouterFreeMode() {
+  return parseBooleanEnv('OPENROUTER_FREE_MODEL_MODE', true);
+}
+
 function isBlockedSlowOpenRouterModel(model = '') {
   const value = String(model || '').trim().toLowerCase();
   if (!value) return false;
 
   const allowSlowModels = parseBooleanEnv('OPENROUTER_ALLOW_SLOW_MODELS', false);
   if (allowSlowModels) return false;
+
+  // Free workflow intentionally uses OpenRouter :free models. Do not block them in free mode.
+  if (isOpenRouterFreeMode() && value.includes(':free')) return false;
 
   const explicitBlockList = uniqueNonEmpty([
     ...parseCsvEnv('OPENROUTER_BLOCKED_MODELS'),
@@ -518,17 +525,19 @@ function isBlockedSlowOpenRouterModel(model = '') {
 }
 
 function getOpenRouterModelCandidates() {
-  const fastDefault = 'google/gemini-2.5-flash-lite';
-  const primary = process.env.OPENROUTER_MODEL || fastDefault;
+  const freeDefault = 'openai/gpt-oss-120b:free';
+  const paidFastDefault = 'google/gemini-2.5-flash-lite';
+  const defaultModel = isOpenRouterFreeMode() ? freeDefault : paidFastDefault;
+  const primary = process.env.OPENROUTER_MODEL || defaultModel;
   const configured = [
     ...parseCsvEnv('OPENROUTER_MODELS'),
     ...parseCsvEnv('OPENROUTER_FALLBACK_MODELS'),
   ];
 
-  const candidates = uniqueNonEmpty([primary, ...configured, fastDefault])
+  const candidates = uniqueNonEmpty([primary, ...configured, defaultModel])
     .filter((model) => !isBlockedSlowOpenRouterModel(model));
 
-  const safeCandidates = candidates.length ? candidates : [fastDefault];
+  const safeCandidates = candidates.length ? candidates : [defaultModel];
   const maxAttempts = Math.max(1, Number(process.env.OPENROUTER_MAX_MODEL_ATTEMPTS || 1));
   return safeCandidates.slice(0, maxAttempts);
 }
@@ -676,8 +685,26 @@ function expandCompactQuestion(compact = {}, context = {}, providerMeta = {}) {
   return expanded;
 }
 
-function buildCompactOpenRouterPrompt(originalPrompt = '') {
-  return `${originalPrompt}\n\nDÜŞÜK TOKEN MODU: Tam şema üretme. Yalnızca şu KISA JSON objesini döndür ve her stringi çok kısa tut:\n{"t":"başlık","b":"branş","lt":"hedef","d":"demografi","s":"2 cümle olgu","q":"soru","o":["A metni","B metni","C metni","D metni","E metni"],"c":"A","e":"1 cümle gerekçe","k":["ipucu1","ipucu2","ipucu3"],"p":"1 kısa TUS notu"}\nJSON dışında tek karakter yazma. Çift tırnakları metin içinde kullanma. En fazla 300 token.`;
+function buildCompactOpenRouterPrompt(originalPrompt = '', context = {}) {
+  const branch = context?.branchFilter || 'TUS Spot Olgular';
+  const recent = Array.isArray(context?.recentQuestionSummaries)
+    ? context.recentQuestionSummaries.slice(0, 8).map((item) => [item.title, item.correct].filter(Boolean).join(' / ')).filter(Boolean).join('; ')
+    : '';
+
+  if (isOpenRouterFreeMode()) {
+    return `KlinikIQ için Türkçe, TUS tarzı tek klinik spot soru üret. Branş: ${branch}. Yakın tekrar etme: ${recent || 'yok'}.
+
+Sadece şu kısa JSON objesini döndür:
+{"t":"başlık","b":"branş","lt":"hedef","d":"demografi","s":"2 kısa cümle olgu","q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
+
+Kurallar: JSON dışında yazma. Seçenekler aynı kategoriden olsun. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
+  }
+
+  return `${originalPrompt}
+
+DÜŞÜK TOKEN MODU: Tam şema üretme. Yalnızca şu KISA JSON objesini döndür ve her stringi çok kısa tut:
+{"t":"başlık","b":"branş","lt":"hedef","d":"demografi","s":"2 cümle olgu","q":"soru","o":["A metni","B metni","C metni","D metni","E metni"],"c":"A","e":"1 cümle gerekçe","k":["ipucu1","ipucu2","ipucu3"],"p":"1 kısa TUS notu"}
+JSON dışında tek karakter yazma. Çift tırnakları metin içinde kullanma. En fazla 300 token.`;
 }
 
 async function callOpenRouterQuestion(prompt, context = {}) {
@@ -685,7 +712,7 @@ async function callOpenRouterQuestion(prompt, context = {}) {
   if (!apiKey) return null;
 
   const baseUrl = (process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, '');
-  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 900);
+  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || (isOpenRouterFreeMode() ? 850 : 900));
   const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.55);
   const topP = Number(process.env.OPENROUTER_TOP_P || 0.85);
   const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.15);
@@ -693,7 +720,7 @@ async function callOpenRouterQuestion(prompt, context = {}) {
   const useJsonMode = parseBooleanEnv('OPENROUTER_USE_JSON_MODE', true);
   const enableReasoning = parseBooleanEnv('OPENROUTER_REASONING_ENABLED', false);
   const excludeReasoning = parseBooleanEnv('OPENROUTER_REASONING_EXCLUDE', true);
-  const perModelTimeoutMs = Number(process.env.OPENROUTER_PER_MODEL_TIMEOUT_MS || 16000);
+  const perModelTimeoutMs = Number(process.env.OPENROUTER_PER_MODEL_TIMEOUT_MS || (isOpenRouterFreeMode() ? 52000 : 16000));
   const modelCandidates = getOpenRouterModelCandidates();
   const systemPrompt = [
     'You are a senior Turkish medical education question writer for KlinikIQ.',
@@ -801,12 +828,13 @@ async function callOpenRouterQuestion(prompt, context = {}) {
   async function requestCompactQuestion(model, error) {
     if (!parseBooleanEnv('OPENROUTER_COMPACT_ON_402', true)) throw error;
     const affordable = parseAffordableTokenLimit(error?.raw || error?.message || '');
-    const compactMaxTokens = Math.max(220, Math.min(Number(process.env.OPENROUTER_COMPACT_MAX_TOKENS || 320), affordable || 320));
+    const configuredCompactMaxTokens = Number(process.env.OPENROUTER_COMPACT_MAX_TOKENS || (isOpenRouterFreeMode() ? 750 : 320));
+    const compactMaxTokens = Math.max(220, affordable ? Math.min(configuredCompactMaxTokens, affordable) : configuredCompactMaxTokens);
     const compactBody = {
       model,
       messages: [
-        { role: 'system', content: 'Return only one tiny valid JSON object for a Turkish medical exam question. No Markdown.' },
-        { role: 'user', content: buildCompactOpenRouterPrompt(prompt) },
+        { role: 'system', content: 'Return only one tiny valid JSON object for a Turkish medical exam question. No Markdown. No reasoning text.' },
+        { role: 'user', content: buildCompactOpenRouterPrompt(prompt, context) },
       ],
       temperature: Math.min(temperature, 0.35),
       top_p: Math.min(topP, 0.75),
@@ -828,6 +856,16 @@ async function callOpenRouterQuestion(prompt, context = {}) {
 
   for (const [index, model] of modelCandidates.entries()) {
     const modelTemperature = index === 0 ? temperature : Math.min(temperature, 0.45);
+    const forceCompactForFreeModel = isOpenRouterFreeMode() || String(model || '').includes(':free');
+
+    if (forceCompactForFreeModel) {
+      try {
+        return await requestCompactQuestion(model, {});
+      } catch (compactError) {
+        errors.push(`${model} compact-first: ${summarizeProviderError(compactError)}`);
+      }
+    }
+
     const primaryBody = buildOpenRouterBody(model, { temperature: modelTemperature });
 
     const bodiesToTry = [primaryBody];
