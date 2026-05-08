@@ -133,3 +133,6 @@ Build kontrolü:
 ```bash
 npm run build
 ```
+
+## OpenRouter JSON parse fix
+If Vercel returns an error such as `Unterminated string in JSON`, keep `OPENROUTER_MAX_TOKENS=3000` and `OPENROUTER_REPAIR_JSON_ON_PARSE_ERROR=true`. The endpoint first asks the selected model for strict JSON; if the model returns malformed JSON, it performs one low-temperature repair call and returns the repaired KlinikIQ question.

@@ -139,15 +139,26 @@ function parseJsonBody(request) {
   });
 }
 
-function extractJsonFromText(text = '') {
+function getJsonCandidateFromText(text = '') {
   const trimmed = String(text || '').trim();
-  if (trimmed.startsWith('{')) return JSON.parse(trimmed);
+  if (!trimmed) return '';
   const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/i);
-  if (fenced?.[1]) return JSON.parse(fenced[1].trim());
+  if (fenced?.[1]) return fenced[1].trim();
   const start = trimmed.indexOf('{');
   const end = trimmed.lastIndexOf('}');
-  if (start >= 0 && end > start) return JSON.parse(trimmed.slice(start, end + 1));
-  throw new Error('No JSON object found in model response');
+  if (start >= 0 && end > start) return trimmed.slice(start, end + 1);
+  return trimmed;
+}
+
+function extractJsonFromText(text = '') {
+  const candidate = getJsonCandidateFromText(text);
+  if (!candidate) throw new Error('No JSON object found in model response');
+  return JSON.parse(candidate);
+}
+
+function summarizeJsonParseError(error) {
+  const message = String(error?.message || error || 'JSON parse failed');
+  return message.replace(/\s+/g, ' ').slice(0, 220);
 }
 
 function extractOpenAIText(payload = {}) {
@@ -381,6 +392,9 @@ Kesin kurallar:
 - Patoloji sorularında teori cümlesini laboratuvar sonucu gibi gösterme. Gerekirse yalnız histopatolojik değerlendirme kullan.
 - Ayırt ettirici ipuçları ve evidenceChain madde metinlerinde "Etiket: açıklama" yapısı kullanma; doğrudan doğal cümle yaz.
 - JSON şemasındaki tüm alanları doldur. source her zaman "real-ai", caseType her zaman "ai-spot" olsun.
+- JSON değerlerini kısa tut: stem 2-4 cümle, explanation 2-4 cümle, her feedback en fazla 1-2 cümle, evidenceChain 3-4 madde, managementSteps 2-3 madde.
+- JSON string değerlerinin içinde kaçışsız çift tırnak kullanma. Gerekirse tek tırnak veya parantez kullan.
+- JSON çıktısını yarıda kesme; son karakter mutlaka kapanış süslü parantezi olsun.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı bulunsun; doğru seçenek için de kısa doğru gerekçesi yazabilirsin.`;
 }
 
@@ -447,7 +461,7 @@ async function callOpenRouterQuestion(prompt) {
 
   const model = process.env.OPENROUTER_MODEL || 'openai/gpt-oss-120b:free';
   const baseUrl = (process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, '');
-  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 1600);
+  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 3000);
   const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.72);
   const topP = Number(process.env.OPENROUTER_TOP_P || 0.9);
   const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.15);
@@ -507,6 +521,40 @@ async function callOpenRouterQuestion(prompt) {
     return openRouterResponse.json();
   }
 
+  async function repairMalformedOpenRouterJson(rawText, parseError) {
+    if (!parseBooleanEnv('OPENROUTER_REPAIR_JSON_ON_PARSE_ERROR', true)) throw parseError;
+
+    const candidate = getJsonCandidateFromText(rawText).slice(0, 18000);
+    const repairModel = process.env.OPENROUTER_REPAIR_MODEL || model;
+    const repairMaxTokens = Number(process.env.OPENROUTER_REPAIR_MAX_TOKENS || 3200);
+    const repairBody = {
+      model: repairModel,
+      messages: [
+        {
+          role: 'system',
+          content: 'You repair malformed JSON for a Turkish medical exam app. Return only one valid JSON object. Do not add Markdown or commentary.',
+        },
+        {
+          role: 'user',
+          content: [
+            'Aşağıdaki model çıktısı JSON parse hatası verdi. İçeriği değiştirmeden, eksik kaçışları/kapanışları düzelterek KlinikIQ kontratına uygun tek geçerli JSON objesi döndür.',
+            `Parse hatası: ${summarizeJsonParseError(parseError)}`,
+            getJsonContractPrompt(),
+            'Bozuk JSON metni:',
+            candidate,
+          ].join('\n\n'),
+        },
+      ],
+      temperature: 0,
+      top_p: 0.2,
+      max_tokens: repairMaxTokens,
+    };
+
+    if (useJsonMode) repairBody.response_format = { type: 'json_object' };
+    const repairData = await sendOpenRouterRequest(repairBody);
+    return extractChatCompletionText(repairData, 'OpenRouter JSON repair');
+  }
+
   let data;
   try {
     data = await sendOpenRouterRequest(requestBody);
@@ -519,11 +567,20 @@ async function callOpenRouterQuestion(prompt) {
   }
 
   const modelText = extractChatCompletionText(data, 'OpenRouter');
-  const question = extractJsonFromText(modelText);
+  let question;
+  let repairedMalformedJson = false;
+  try {
+    question = extractJsonFromText(modelText);
+  } catch (parseError) {
+    const repairedText = await repairMalformedOpenRouterJson(modelText, parseError);
+    question = extractJsonFromText(repairedText);
+    repairedMalformedJson = true;
+  }
   question.id = `ai-spot-real-openrouter-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
   question.source = 'real-ai';
   question.provider = 'openrouter';
   question.openRouterModel = data?.model || model;
+  if (repairedMalformedJson) question.remoteRepairUsed = true;
   return question;
 }
 
