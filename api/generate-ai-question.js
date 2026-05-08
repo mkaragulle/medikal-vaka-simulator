@@ -550,12 +550,142 @@ function summarizeProviderError(error) {
   return message.slice(0, 420);
 }
 
-async function callOpenRouterQuestion(prompt) {
+
+function parseAffordableTokenLimit(text = '') {
+  const match = String(text || '').match(/can only afford\s+(\d+)/i);
+  if (!match) return null;
+  const value = Number(match[1]);
+  return Number.isFinite(value) && value > 0 ? value : null;
+}
+
+function shortText(value = '', fallback = '') {
+  const text = String(value || fallback || '').replace(/\s+/g, ' ').trim();
+  return text.length > 180 ? `${text.slice(0, 177).trim()}…` : text;
+}
+
+function inferChiefComplaint(question = {}) {
+  return shortText(question.chiefComplaint || question.chief || question.title || question.learningTarget, 'Klinik karar sorusu');
+}
+
+function normalizeOptionObjects(options = []) {
+  const raw = Array.isArray(options) ? options : [];
+  const optionTexts = raw.map((item) => {
+    if (typeof item === 'string') return item;
+    return item?.text || item?.label || '';
+  });
+  while (optionTexts.length < 5) optionTexts.push(`Seçenek ${OPTION_IDS[optionTexts.length]}`);
+  return OPTION_IDS.map((id, index) => ({ id, text: shortText(optionTexts[index], `Seçenek ${id}`) }));
+}
+
+function ensureEvidenceChain(question = {}) {
+  const existing = Array.isArray(question.evidenceChain) ? question.evidenceChain : [];
+  const clues = [
+    ...existing,
+    ...(Array.isArray(question.keyClues) ? question.keyClues : []),
+    ...(Array.isArray(question?.findings?.history) ? question.findings.history : []),
+    ...(Array.isArray(question?.findings?.exam) ? question.findings.exam : []),
+  ].map((item) => shortText(item)).filter(Boolean);
+
+  const stem = shortText(question.stem, 'Olgu kökü doğru yanıta götüren temel klinik bağlamı verir.');
+  const explanation = shortText(question.explanation, 'Doğru yanıt klinik ipuçlarının birlikte yorumlanmasıyla seçilir.');
+  const fallback = [stem, explanation, shortText(question.learningTarget, 'Soru tek bir TUS öğrenme hedefine odaklanır.')];
+  return uniqueNonEmpty([...clues, ...fallback]).slice(0, 4).concat(fallback).slice(0, 3);
+}
+
+function ensureWrongOptionFeedback(question = {}) {
+  const options = normalizeOptionObjects(question.options);
+  const correctAnswer = OPTION_IDS.includes(String(question.correctAnswer || '').toUpperCase())
+    ? String(question.correctAnswer || '').toUpperCase()
+    : 'A';
+  const existing = question.wrongOptionFeedback && typeof question.wrongOptionFeedback === 'object' ? question.wrongOptionFeedback : {};
+  const correctText = options.find((option) => option.id === correctAnswer)?.text || 'doğru seçenek';
+  return Object.fromEntries(options.map((option) => {
+    const current = shortText(existing[option.id]);
+    if (current) return [option.id, current];
+    if (option.id === correctAnswer) return [option.id, `Doğru. Olgudaki ana ipuçları ${correctText} lehinedir.`];
+    return [option.id, `${option.text} bazı benzer bulgularla karışabilir; ancak olgudaki ayırt ettirici ipuçları doğru seçeneği daha güçlü destekler.`];
+  }));
+}
+
+function completeRemoteQuestion(question = {}, context = {}) {
+  const now = Date.now();
+  const options = normalizeOptionObjects(question.options || question.o);
+  const correctAnswer = OPTION_IDS.includes(String(question.correctAnswer || question.c || '').toUpperCase())
+    ? String(question.correctAnswer || question.c || '').toUpperCase()
+    : 'A';
+  const findings = question.findings && typeof question.findings === 'object' ? question.findings : {};
+  const completed = {
+    ...question,
+    id: question.id || `ai-spot-real-remote-${now}-${Math.random().toString(36).slice(2, 8)}`,
+    source: 'real-ai',
+    caseType: 'ai-spot',
+    title: shortText(question.title || question.t, 'Yeni TUS Spot Olgu'),
+    relatedBranch: shortText(question.relatedBranch || question.b || context.branchFilter || 'TUS Spot Olgular'),
+    difficulty: shortText(question.difficulty, 'medium'),
+    learningTarget: shortText(question.learningTarget || question.lt, question.title || question.t || 'Klinik karar verme'),
+    demographics: shortText(question.demographics || question.d, 'Hasta'),
+    setting: shortText(question.setting, 'Klinik değerlendirme'),
+    chiefComplaint: inferChiefComplaint(question),
+    stem: shortText(question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.'),
+    findings: {
+      history: Array.isArray(findings.history) ? findings.history.map(shortText).filter(Boolean).slice(0, 4) : [],
+      exam: Array.isArray(findings.exam) ? findings.exam.map(shortText).filter(Boolean).slice(0, 3) : [],
+      vitals: {
+        TA: findings?.vitals?.TA || 'Stabil',
+        'Nabız': findings?.vitals?.['Nabız'] || 'Normal aralıkta',
+        Solunum: findings?.vitals?.Solunum || 'Normal aralıkta',
+        'Ateş': findings?.vitals?.['Ateş'] || 'Afebril',
+        'SpO₂': findings?.vitals?.['SpO₂'] || 'Normal',
+      },
+      investigations: Array.isArray(findings.investigations) ? findings.investigations : [],
+    },
+    question: shortText(question.question || question.q, 'Bu olguda en uygun seçenek hangisidir?'),
+    options,
+    correctAnswer,
+    explanation: shortText(question.explanation || question.e, 'Doğru yanıt, olgudaki klinik ipuçlarının birlikte yorumlanmasıyla seçilir.'),
+    evidenceChain: ensureEvidenceChain(question),
+    examPearl: shortText(question.examPearl || question.p, 'TUS sorularında ayırt ettirici ipucu, benzer seçenekler arasından doğru yanıtı seçtirir.'),
+    managementSteps: Array.isArray(question.managementSteps) && question.managementSteps.length
+      ? question.managementSteps.map(shortText).filter(Boolean).slice(0, 3)
+      : ['Klinik öncelik belirlenir.', 'Ayırt ettirici bulgular hedefe yönelik yorumlanır.'],
+    nextQuestionSeed: shortText(question.nextQuestionSeed, `${now}-${Math.random().toString(36).slice(2, 10)}`),
+  };
+  completed.wrongOptionFeedback = ensureWrongOptionFeedback(completed);
+  return completed;
+}
+
+function expandCompactQuestion(compact = {}, context = {}, providerMeta = {}) {
+  const options = Array.isArray(compact.o) ? compact.o : compact.options;
+  const expanded = completeRemoteQuestion({
+    title: compact.t || compact.title,
+    relatedBranch: compact.b || compact.relatedBranch || context.branchFilter,
+    learningTarget: compact.lt || compact.learningTarget,
+    demographics: compact.d || compact.demographics,
+    stem: compact.s || compact.stem,
+    question: compact.q || compact.question,
+    options,
+    correctAnswer: compact.c || compact.correctAnswer,
+    explanation: compact.e || compact.explanation,
+    keyClues: compact.k || compact.keyClues,
+    evidenceChain: compact.k || compact.evidenceChain,
+    examPearl: compact.p || compact.examPearl,
+    chiefComplaint: compact.cc || compact.chiefComplaint,
+  }, context);
+  expanded.remoteCompactMode = true;
+  Object.assign(expanded, providerMeta);
+  return expanded;
+}
+
+function buildCompactOpenRouterPrompt(originalPrompt = '') {
+  return `${originalPrompt}\n\nDÜŞÜK TOKEN MODU: Tam şema üretme. Yalnızca şu KISA JSON objesini döndür ve her stringi çok kısa tut:\n{"t":"başlık","b":"branş","lt":"hedef","d":"demografi","s":"2 cümle olgu","q":"soru","o":["A metni","B metni","C metni","D metni","E metni"],"c":"A","e":"1 cümle gerekçe","k":["ipucu1","ipucu2","ipucu3"],"p":"1 kısa TUS notu"}\nJSON dışında tek karakter yazma. Çift tırnakları metin içinde kullanma. En fazla 300 token.`;
+}
+
+async function callOpenRouterQuestion(prompt, context = {}) {
   const apiKey = process.env.OPENROUTER_API_KEY;
   if (!apiKey) return null;
 
   const baseUrl = (process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, '');
-  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 1700);
+  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 900);
   const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.55);
   const topP = Number(process.env.OPENROUTER_TOP_P || 0.85);
   const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.15);
@@ -667,6 +797,33 @@ async function callOpenRouterQuestion(prompt) {
     return extractChatCompletionText(repairData, 'OpenRouter JSON repair');
   }
 
+
+  async function requestCompactQuestion(model, error) {
+    if (!parseBooleanEnv('OPENROUTER_COMPACT_ON_402', true)) throw error;
+    const affordable = parseAffordableTokenLimit(error?.raw || error?.message || '');
+    const compactMaxTokens = Math.max(220, Math.min(Number(process.env.OPENROUTER_COMPACT_MAX_TOKENS || 320), affordable || 320));
+    const compactBody = {
+      model,
+      messages: [
+        { role: 'system', content: 'Return only one tiny valid JSON object for a Turkish medical exam question. No Markdown.' },
+        { role: 'user', content: buildCompactOpenRouterPrompt(prompt) },
+      ],
+      temperature: Math.min(temperature, 0.35),
+      top_p: Math.min(topP, 0.75),
+      max_tokens: compactMaxTokens,
+    };
+    if (useJsonMode) compactBody.response_format = { type: 'json_object' };
+    const data = await sendOpenRouterRequest(compactBody);
+    const modelText = extractChatCompletionText(data, 'OpenRouter compact');
+    const compactJson = extractJsonFromText(modelText);
+    return expandCompactQuestion(compactJson, context, {
+      id: `ai-spot-real-openrouter-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+      provider: 'openrouter',
+      openRouterModel: data?.model || model,
+      openRouterCompactMaxTokens: compactMaxTokens,
+    });
+  }
+
   const errors = [];
 
   for (const [index, model] of modelCandidates.entries()) {
@@ -697,9 +854,16 @@ async function callOpenRouterQuestion(prompt) {
         if (repairedMalformedJson) question.remoteRepairUsed = true;
         return question;
       } catch (error) {
+        if (Number(error?.status) === 402) {
+          try {
+            return await requestCompactQuestion(model, error);
+          } catch (compactError) {
+            errors.push(`${model} compact: ${summarizeProviderError(compactError)}`);
+          }
+        }
         errors.push(`${model}: ${summarizeProviderError(error)}`);
         const isJsonModeCompatibilityError = error?.status === 400 && /response_format|json_schema|json_object|structured/i.test(error?.raw || error?.message || '');
-        if (!isJsonModeCompatibilityError && error?.status && [401, 402, 403].includes(Number(error.status))) {
+        if (!isJsonModeCompatibilityError && error?.status && [401, 403].includes(Number(error.status))) {
           break;
         }
       }
@@ -766,14 +930,14 @@ function buildProviderOrder(preferredProvider) {
   return [preferred, ...all.filter((provider) => provider !== preferred)];
 }
 
-async function generateWithAvailableProvider(prompt) {
+async function generateWithAvailableProvider(prompt, context = {}) {
   const providerStatus = selectProviderStatus();
   const providerOrder = buildProviderOrder(process.env.AI_PROVIDER);
   const errors = [];
 
   for (const provider of providerOrder) {
     try {
-      if (provider === 'openrouter' && providerStatus.hasOpenRouter) return await callOpenRouterQuestion(prompt);
+      if (provider === 'openrouter' && providerStatus.hasOpenRouter) return await callOpenRouterQuestion(prompt, context);
       if (provider === 'openai' && providerStatus.hasOpenAI) return await callOpenAIQuestion(prompt);
       if (provider === 'gemini' && providerStatus.hasGemini) return await callGeminiQuestion(prompt);
     } catch (error) {
@@ -816,7 +980,8 @@ export default async function handler(request, response) {
           attempt: Number(body?.attempt || 1) + remoteAttempt - 1,
           antiRepeatNonce: body?.antiRepeatNonce || `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
         });
-        const question = await generateWithAvailableProvider(prompt);
+        const rawQuestion = await generateWithAvailableProvider(prompt, body);
+        const question = completeRemoteQuestion(rawQuestion, body);
 
         const validation = validateRawQuestion(question);
         const editorialValidation = validateRemoteEditorialQuality(question);
