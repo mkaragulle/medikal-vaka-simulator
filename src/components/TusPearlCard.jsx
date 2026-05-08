@@ -1,0 +1,78 @@
+import { memo, useState } from 'react';
+import { Icon } from './ui.jsx';
+import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
+
+function TusPearlCard({
+  card,
+  isFavorite = false,
+  isWrong = false,
+  isKnown = false,
+  isReview = false,
+  isInCatalog = false,
+  onToggleFavorite,
+  onMarkWrong,
+  onMarkKnown,
+  onToggleReview,
+  onAddToCatalog,
+  onRemoveFromCatalog,
+}) {
+  const [flipped, setFlipped] = useState(false);
+  const signal = resolveExamSignal(card);
+  const appearedLabel = formatAppearedYears(signal);
+
+  return (
+    <article className={`tus-pearl-card ${flipped ? 'is-flipped' : ''}`.trim()} data-branch={card.branchId}>
+      <button type="button" className="tus-pearl-card-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
+        <span className="tus-pearl-card-face tus-pearl-card-front">
+          <span className="tus-pearl-meta-row">
+            <span className="tus-pearl-chip">{card.subject}</span>
+            <span className="tus-pearl-chip muted">{card.cardType || 'Spot'}</span>
+          </span>
+          <strong>{card.front}</strong>
+          <span className="tus-pearl-hint">Cevabı görmek için tıkla</span>
+        </span>
+        <span className="tus-pearl-card-face tus-pearl-card-back">
+          <span className="tus-pearl-answer-label">Cevap</span>
+          <strong>{card.back}</strong>
+          <p>{card.explanation}</p>
+          {card.keywords?.length ? (
+            <span className="tus-pearl-keyword-row">
+              {card.keywords.slice(0, 4).map((keyword) => <em key={keyword}>{keyword}</em>)}
+            </span>
+          ) : null}
+        </span>
+      </button>
+
+      <div className="tus-pearl-badge-row" aria-label="Kart belirteçleri">
+        {appearedLabel ? <span className="tus-pearl-badge past">{appearedLabel}</span> : null}
+        {card.isHighYield ? <span className="tus-pearl-badge">Yüksek verim</span> : null}
+        {isWrong ? <span className="tus-pearl-badge warn">Yanlış listende</span> : null}
+      </div>
+
+      <div className="tus-pearl-actions" aria-label="Kart aksiyonları">
+        <button type="button" className={isFavorite ? 'active' : ''} onClick={() => onToggleFavorite?.(card.id)} title="Favorilere ekle">
+          <Icon name="Sparkles" size={15} /> Favori
+        </button>
+        <button type="button" className={isWrong ? 'active wrong' : ''} onClick={() => onMarkWrong?.(card.id)} title="Yanlış yaptım">
+          <Icon name="XCircle" size={15} /> Yanlış
+        </button>
+        <button type="button" className={isKnown ? 'active known' : ''} onClick={() => onMarkKnown?.(card.id)} title="Biliyorum">
+          <Icon name="CheckCircle" size={15} /> Biliyorum
+        </button>
+        <button type="button" className={isReview ? 'active review' : ''} onClick={() => onToggleReview?.(card.id)} title="Tekrar listeme al">
+          <Icon name="RotateCcw" size={15} /> Tekrar
+        </button>
+        <button
+          type="button"
+          className={isInCatalog ? 'active review' : ''}
+          onClick={() => (isInCatalog ? onRemoveFromCatalog?.(card.id) : onAddToCatalog?.(card.id))}
+          title={isInCatalog ? 'Katalogdan çıkar' : 'Kataloğa ekle'}
+        >
+          <Icon name="LayeredCards" size={15} /> {isInCatalog ? 'Çıkar' : 'Katalog'}
+        </button>
+      </div>
+    </article>
+  );
+}
+
+export default memo(TusPearlCard);

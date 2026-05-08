@@ -14,6 +14,8 @@ import {
 } from '../utils/displayText.js';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { buildInvestigationOrders } from '../utils/investigationOrders.js';
+import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
+import './tusPearlCards.css';
 import {
   calculateShockIndex,
   formatVitalMeasurement,
@@ -47,6 +49,31 @@ const vitalIcons = {
   Ateş: 'Thermometer',
   'Şok indeksi': 'Target',
 };
+
+
+function ExamSignalBox({ signal, compact = false }) {
+  if (!signal?.hasContent) return null;
+  const yearsLabel = formatAppearedYears(signal);
+  return (
+    <section className={`exam-signal-box ${compact ? 'compact' : ''}`.trim()} aria-label="TUS belirteç kutusu">
+      <div className="exam-signal-top">
+        <span className="exam-signal-label"><Icon name="Sparkles" size={15} /> TUS işareti</span>
+        <span className="exam-signal-chip-row">
+          {yearsLabel ? <span className="exam-signal-chip past">{yearsLabel}</span> : null}
+          {signal.appearanceCount > 1 ? <span className="exam-signal-chip">{signal.appearanceCount} kez sorulmuş</span> : null}
+          {signal.spotPearl ? <span className="exam-signal-chip">Spot bilgi</span> : null}
+        </span>
+      </div>
+      {signal.spotPearl ? <p className="exam-signal-pearl"><strong>Spot bilgi:</strong> {signal.spotPearl}</p> : null}
+      {signal.keywords?.length ? (
+        <div className="exam-signal-keywords" aria-label="Anahtar kelimeler">
+          {signal.keywords.slice(0, compact ? 4 : 6).map((keyword) => <span key={keyword}>{keyword}</span>)}
+        </div>
+      ) : null}
+      {signal.examTrap && !compact ? <p className="exam-signal-trap"><strong>Sınav tuzağı:</strong> {signal.examTrap}</p> : null}
+    </section>
+  );
+}
 
 function buildExamNarrative(exam = []) {
   if (!exam.length) return 'Belirgin anormal fizik muayene bulgusu saptanmamaktadır.';
@@ -540,6 +567,7 @@ function CasePlayer({
   const displayFocus = useMemo(() => buildNonRevealingFocus(clinicalCase), [clinicalCase]);
   const difficultyMeta = useMemo(() => getDifficultyMeta(clinicalCase.difficulty), [clinicalCase.difficulty]);
   const patientSummary = useMemo(() => buildPatientSummary(clinicalCase), [clinicalCase]);
+  const caseExamSignal = useMemo(() => resolveExamSignal(clinicalCase), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase.vitals]);
   const investigationOrders = useMemo(() => buildInvestigationOrders(clinicalCase), [clinicalCase]);
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
@@ -701,6 +729,7 @@ function CasePlayer({
               <div className="case-title-copy">
                 <h1><GlossaryText text={clinicalCase.title} enabled={!hardMode && !examMeta?.active} /></h1>
                 <p><GlossaryText text={displayFocus} enabled={!hardMode && !examMeta?.active} /></p>
+                <ExamSignalBox signal={caseExamSignal} compact={isSpotCase} />
                 <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card">
                   {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
                   <header className="patient-summary-head compact-summary-head premium-summary-head">

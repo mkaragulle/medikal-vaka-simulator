@@ -51,7 +51,7 @@ function buildValidatedAIRiskContext(payload = {}, history = []) {
   if (/farmakoloji|ilaç|toksin|zehir|yan etki|antidot/.test(branch + ' ' + target)) {
     return ['İlaç veya toksin maruziyeti öyküsü', 'Doz ve zaman ilişkisinin klinik tabloyu belirlemesi'];
   }
-  return uniqueSummaryItems([history[0], 'Objektif bulguların karar basamağını desteklemesi'], 2);
+  return uniqueSummaryItems([history[0], 'Öykü ve muayene bulgularının birlikte yorumlanması'], 2);
 }
 const DIRECT_LEAK_PHRASES = [
   'tanısını doğrular',
@@ -61,6 +61,44 @@ const DIRECT_LEAK_PHRASES = [
   'tanı:',
   'diagnosis:',
 ];
+
+
+const RAW_AI_FORBIDDEN_PATTERNS = [
+  /Beklenen ana ipuçları bu tabloda baskın değildir/iu,
+  /Karar .{0,80} yönünde güçlenir/iu,
+  /Ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır/iu,
+  /Laboratuvar paterni\.?/iu,
+  /Kanıt\s*[2-4]/iu,
+  /Objektif bulguların karar basamağını desteklemesi/iu,
+  /Doğru yanıta götüren ana bulgudur/iu,
+  /İlk karar\.?/iu,
+  /Tedavi önceliği\.?/iu,
+  /Bu veri klinik bağlamda değerlendirilir/iu,
+  /Nedeniyle Ameliyathane/iu,
+  /Morfolojik patern\.\s*Morfolojik patern/iu,
+  /sağlayarak\.\s*$/iu,
+];
+
+function collectPayloadStrings(value, output = []) {
+  if (typeof value === 'string') output.push(value);
+  else if (Array.isArray(value)) value.forEach((item) => collectPayloadStrings(item, output));
+  else if (value && typeof value === 'object') Object.values(value).forEach((item) => collectPayloadStrings(item, output));
+  return output;
+}
+
+function hasPerioperativeAnaphylaxisConflict(payload = {}, options = [], correctOption = null) {
+  const bundle = normalizeQuestionText(collectPayloadStrings(payload).join(' '));
+  const correct = normalizeQuestionText(correctOption?.text || '');
+  const isPerioperative = /anestezi|ameliyathane|perioperatif|induksiyon|cerrahi/.test(bundle)
+    && /anafil|bronkospazm|hipotansiyon|urtiker|spo/.test(bundle);
+  if (!isPerioperative) return false;
+  const asksManagement = /ilk|tedavi|yonetim|yaklasim|acil|müdahale|mudahale/.test(normalizeQuestionText(payload.question || payload.learningTarget || ''));
+  if (!asksManagement) return false;
+  const hasBundle = /tetikleyici|ajan.*durdur|oksijen|hava yolu|sivi|kristaloid|adrenalin|epinefrin|iv/.test(correct)
+    && /adrenalin|epinefrin/.test(correct);
+  const isOnlyIm = /\bim\b|intramuskuler|intramüsküler|kas ici/.test(correct) && !/iv|oksijen|sivi|tetikleyici|hava yolu|hemodinamik/.test(correct);
+  return isOnlyIm || !hasBundle;
+}
 
 function stripAnswerLeak(text = '', correctText = '') {
   if (!text || !correctText) return text || '';
@@ -130,6 +168,16 @@ export function validateAIQuestionPayload(payload = {}) {
       warnings.push(`tetkik yorumunda direkt tanı dili var: ${phrase}`);
     }
   });
+
+  collectPayloadStrings(payload).forEach((text) => {
+    RAW_AI_FORBIDDEN_PATTERNS.forEach((pattern) => {
+      if (pattern.test(String(text || ''))) warnings.push(`repair öncesi yasaklı AI metni: ${String(text || '').slice(0, 100)}`);
+    });
+    if (/wheezing/i.test(String(text || ''))) errors.push('gereksiz İngilizce terim: wheezing');
+  });
+  if (hasPerioperativeAnaphylaxisConflict(payload, options, correctOption)) {
+    warnings.push('repair öncesi perioperatif anafilaksi cevabı eksik veya genel IM adrenalin kalıbına indirgenmiş');
+  }
 
   return {
     ok: errors.length === 0,

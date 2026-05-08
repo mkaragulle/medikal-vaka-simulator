@@ -1,3 +1,4 @@
+import { pediatricArrhythmiaPdfCases } from './pdfPediatricArrhythmiaCases.js';
 export const cases = [
   {
     "id": "cv-anterior-stemi-001",
@@ -40954,6 +40955,7 @@ export const cases = [
       "priorityFocus": "Term bebekte perinatal asfiksi, ağır asidoz, orta-ağır HİE hipoksik-iskemik ensefalopatide nöroprotektif zaman penceresini gösterir."
     }
   }
+  , ...pediatricArrhythmiaPdfCases
 ];
 
 export function getCasesByBranch(branchId) {

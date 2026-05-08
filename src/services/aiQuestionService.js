@@ -83,7 +83,7 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
       requestedBranch: branchFilter,
       trustRemoteAi: true,
       skipSemanticNovelty: true,
-      skipQuality: true,
+      skipQuality: false,
     });
     if (!validation.ok) {
       logRemoteAIDebug('remote-validation-rejected', {

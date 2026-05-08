@@ -1,5 +1,7 @@
 import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
+import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
+import './tusPearlCards.css';
 import { repairAIGeneratedText, isForbiddenEditorialText, isPlaceholderInvestigationText } from '../utils/editorialQuality.js';
 
 const MAX_EVIDENCE_ITEMS = 5;
@@ -432,6 +434,29 @@ function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, classN
   );
 }
 
+
+function TusSpotSignalFeedback({ clinicalCase, glossaryEnabled = true }) {
+  const signal = resolveExamSignal(clinicalCase);
+  if (!signal.hasContent) return null;
+  const yearsLabel = formatAppearedYears(signal);
+  return (
+    <FeedbackSection icon="Sparkles" tone="teal" eyebrow="TUS işareti" title="Spot bilgi ve anahtar kelimeler" className="tus-spot-signal-feedback">
+      <div className="exam-signal-chip-row">
+        {yearsLabel ? <span className="exam-signal-chip past">{yearsLabel}</span> : null}
+        {signal.appearanceCount > 1 ? <span className="exam-signal-chip">{signal.appearanceCount} kez sorulmuş</span> : null}
+        {signal.isPastQuestionDerived && !yearsLabel ? <span className="exam-signal-chip past">Çıkmış bilgi</span> : null}
+      </div>
+      {signal.spotPearl ? <p className="exam-signal-pearl"><strong>Spot bilgi:</strong> <GlossaryText text={signal.spotPearl} enabled={glossaryEnabled} /></p> : null}
+      {signal.keywords?.length ? (
+        <div className="exam-signal-keywords">
+          {signal.keywords.slice(0, 6).map((keyword) => <span key={keyword}><GlossaryText text={keyword} enabled={glossaryEnabled} /></span>)}
+        </div>
+      ) : null}
+      {signal.examTrap ? <p className="exam-signal-trap"><strong>Sınav tuzağı:</strong> <GlossaryText text={signal.examTrap} enabled={glossaryEnabled} /></p> : null}
+    </FeedbackSection>
+  );
+}
+
 function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true }) {
   return (
     <FeedbackSection
@@ -547,6 +572,7 @@ function AnswerFeedbackPanel({
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">
       <div className="answer-feedback-grid answer-feedback-grid-pro">
         <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />
+        {isSpotCase ? <TusSpotSignalFeedback clinicalCase={clinicalCase} glossaryEnabled={glossaryEnabled} /> : null}
         <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} />
         <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} />
         <FeedbackManagementCard managementSteps={managementSteps} glossaryEnabled={glossaryEnabled} clinicalCase={clinicalCase} />

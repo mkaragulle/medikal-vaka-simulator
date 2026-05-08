@@ -313,7 +313,44 @@ function validateRemoteEditorialQuality(question = {}) {
       errors.push(`placeholder lab investigation at ${index + 1}`);
     }
   });
+  errors.push(...validateRemoteClinicalCoherence(question));
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
+}
+
+function normalizeRemoteText(text = '') {
+  return String(text || '')
+    .toLocaleLowerCase('tr')
+    .replace(/ç/g, 'c')
+    .replace(/ğ/g, 'g')
+    .replace(/ı/g, 'i')
+    .replace(/ö/g, 'o')
+    .replace(/ş/g, 's')
+    .replace(/ü/g, 'u')
+    .replace(/[^a-z0-9/% ]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function validateRemoteClinicalCoherence(question = {}) {
+  const errors = [];
+  const texts = collectText(question);
+  const bundle = normalizeRemoteText(texts.join(' '));
+  const correctOption = (question.options || []).find((option) => String(option.id || '').toUpperCase() === String(question.correctAnswer || '').toUpperCase());
+  const correct = normalizeRemoteText(correctOption?.text || '');
+  const asksManagement = /ilk|tedavi|yonetim|yaklasim|acil|mudahale|ilac/.test(normalizeRemoteText(`${question.question || ''} ${question.learningTarget || ''}`));
+  const isPerioperativeAnaphylaxis = /anestezi|ameliyathane|perioperatif|induksiyon|cerrahi|monitorize/.test(bundle)
+    && /anafil|bronkospazm|hipotansiyon|urtiker|spo/.test(bundle);
+  if (isPerioperativeAnaphylaxis && asksManagement) {
+    const hasBundle = /tetikleyici|ajan.*durdur|oksijen|hava yolu|sivi|kristaloid|adrenalin|epinefrin|iv/.test(correct)
+      && /adrenalin|epinefrin/.test(correct)
+      && /oksijen|hava yolu/.test(correct)
+      && /sivi|kristaloid|iv/.test(correct);
+    const isOnlyIm = /im|intramuskuler|kas ici/.test(correct) && !/iv|oksijen|sivi|tetikleyici|hava yolu|hemodinamik/.test(correct);
+    if (isOnlyIm || !hasBundle) {
+      errors.push('perioperative anaphylaxis answer is not context-sensitive enough');
+    }
+  }
+  return errors;
 }
 
 function validateRawQuestion(question = {}) {
@@ -387,7 +424,12 @@ Kesin kurallar:
 - evidenceChain 3-5 somut olgu ipucundan oluşmalı; meta cümle veya öğrenme çıktısı yazma.
 - examPearl TUS hap bilgisi olmalı; mümkünse kırmızı bayrak, sık tuzak, ilk adım veya ayırt ettirici marker vurgula.
 - managementSteps 2-4 kısa ilk yaklaşım/yönetim basamağı içermeli; temel bilim sorusunda mekanistik yaklaşım notu gibi yaz.
-- Şu ifadeleri asla yazma: "Morfolojik patern:", "Morfolojik patern. Morfolojik patern", "karar verdirici paternyla", "likefaksiyon nekrozuyla", "kısa TUS pratiğinde ele alınır", "Klinik değerlendirme için ek veri", "Objektif karar verisi", "verilen öğrenme hedefi", "yanıt ekseni".
+- Anafilaksi sorularında bağlamı ayır: toplum/ayaktan genel anafilakside ilk hayat kurtarıcı ilaç IM adrenalin olabilir; genel anestezi altında ameliyathanede ciddi hipotansiyon ve bronkospazm varsa doğru yaklaşım tetikleyici ajanı durdurma, yüzde 100 oksijen/hava yolu güvenliği, hızlı IV kristaloid ve hemodinamik ciddiyete göre adrenalin uygulamasını birlikte içermelidir.
+- Perioperatif anafilaksi yönetim sorusunda doğru cevabı tek başına IM adrenalin olarak yazma; soru tek ilaç soruyorsa kökü açıkça 'hayat kurtarıcı temel ilaç' diye sınırla.
+- Fizik muayeneye laboratuvar, EKG, görüntüleme, seroloji veya kan gazı sonucu yazma; muayene yalnız inspeksiyon, palpasyon, perküsyon ve oskültasyon bulgularından oluşsun.
+- 'wheezing' yerine 'hışıltılı solunum' kullan; 'Adrenalin (Epinefrin)' tekrar etme, ilk kullanımda 'adrenalin/epinefrin' yeterlidir; '1: 1000' yazma, '1:1000' veya '1 mg/mL' yaz.
+- Hasta öyküsü doğal cümle olmalı; 'Nedeniyle Ameliyathane', 'Ameliyathane.' gibi kopuk parçalar yazma.
+- Şu ifadeleri asla yazma: "Beklenen ana ipuçları bu tabloda baskın değildir", "Karar ... yönünde güçlenir", "Ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır", "Laboratuvar paterni", "Kanıt 2", "Kanıt 3", "Kanıt 4", "Objektif bulguların karar basamağını desteklemesi", "Doğru yanıta götüren ana bulgudur", "İlk karar", "Tedavi önceliği", "Bu veri klinik bağlamda değerlendirilir", "Nedeniyle Ameliyathane", "Morfolojik patern:", "Morfolojik patern. Morfolojik patern", "karar verdirici paternyla", "likefaksiyon nekrozuyla", "kısa TUS pratiğinde ele alınır", "Klinik değerlendirme için ek veri", "Objektif karar verisi", "verilen öğrenme hedefi", "yanıt ekseni".
 - Temel bilim/mekanizma sorusunda gerçek objektif veri yoksa findings.investigations boş dizi olsun; "Laboratuvar" placeholder kartı üretme.
 - Patoloji sorularında teori cümlesini laboratuvar sonucu gibi gösterme. Gerekirse yalnız histopatolojik değerlendirme kullan.
 - Ayırt ettirici ipuçları ve evidenceChain madde metinlerinde "Etiket: açıklama" yapısı kullanma; doğrudan doğal cümle yaz.
@@ -459,19 +501,36 @@ function uniqueNonEmpty(items = []) {
   return Array.from(new Set(items.map((item) => String(item || '').trim()).filter(Boolean)));
 }
 
+function isBlockedSlowOpenRouterModel(model = '') {
+  const value = String(model || '').trim().toLowerCase();
+  if (!value) return false;
+
+  const allowSlowModels = parseBooleanEnv('OPENROUTER_ALLOW_SLOW_MODELS', false);
+  if (allowSlowModels) return false;
+
+  const explicitBlockList = uniqueNonEmpty([
+    ...parseCsvEnv('OPENROUTER_BLOCKED_MODELS'),
+    'openai/gpt-oss-120b:free',
+    'gpt-oss-120b',
+  ]).map((item) => item.toLowerCase());
+
+  return explicitBlockList.some((blocked) => value === blocked || value.includes(blocked));
+}
+
 function getOpenRouterModelCandidates() {
-  const primary = process.env.OPENROUTER_MODEL || 'google/gemini-2.5-flash-lite';
+  const fastDefault = 'google/gemini-2.5-flash-lite';
+  const primary = process.env.OPENROUTER_MODEL || fastDefault;
   const configured = [
     ...parseCsvEnv('OPENROUTER_MODELS'),
     ...parseCsvEnv('OPENROUTER_FALLBACK_MODELS'),
   ];
-  const conservativeDefaults = [
-    'google/gemini-2.5-flash-lite',
-    'openai/gpt-oss-120b:free',
-  ];
-  const candidates = uniqueNonEmpty([primary, ...configured, ...conservativeDefaults]);
-  const maxAttempts = Math.max(1, Number(process.env.OPENROUTER_MAX_MODEL_ATTEMPTS || 2));
-  return candidates.slice(0, maxAttempts);
+
+  const candidates = uniqueNonEmpty([primary, ...configured, fastDefault])
+    .filter((model) => !isBlockedSlowOpenRouterModel(model));
+
+  const safeCandidates = candidates.length ? candidates : [fastDefault];
+  const maxAttempts = Math.max(1, Number(process.env.OPENROUTER_MAX_MODEL_ATTEMPTS || 1));
+  return safeCandidates.slice(0, maxAttempts);
 }
 
 function createAbortSignal(timeoutMs) {
@@ -496,7 +555,7 @@ async function callOpenRouterQuestion(prompt) {
   if (!apiKey) return null;
 
   const baseUrl = (process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, '');
-  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 2200);
+  const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || 1700);
   const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.55);
   const topP = Number(process.env.OPENROUTER_TOP_P || 0.85);
   const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.15);
@@ -504,7 +563,7 @@ async function callOpenRouterQuestion(prompt) {
   const useJsonMode = parseBooleanEnv('OPENROUTER_USE_JSON_MODE', true);
   const enableReasoning = parseBooleanEnv('OPENROUTER_REASONING_ENABLED', false);
   const excludeReasoning = parseBooleanEnv('OPENROUTER_REASONING_EXCLUDE', true);
-  const perModelTimeoutMs = Number(process.env.OPENROUTER_PER_MODEL_TIMEOUT_MS || 24000);
+  const perModelTimeoutMs = Number(process.env.OPENROUTER_PER_MODEL_TIMEOUT_MS || 16000);
   const modelCandidates = getOpenRouterModelCandidates();
   const systemPrompt = [
     'You are a senior Turkish medical education question writer for KlinikIQ.',
@@ -748,7 +807,7 @@ export default async function handler(request, response) {
 
   try {
     const body = await parseJsonBody(request);
-    const remoteAttempts = Math.max(1, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.OPENROUTER_REMOTE_ATTEMPTS || 2));
+    const remoteAttempts = Math.max(1, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.OPENROUTER_REMOTE_ATTEMPTS || 1));
 
     for (let remoteAttempt = 1; remoteAttempt <= remoteAttempts; remoteAttempt += 1) {
       try {

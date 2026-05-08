@@ -10,7 +10,7 @@ const REPEATED_PHRASE_PATTERN = /\b(Morfolojik patern|Sınav incisi|Ayırt ettir
 
 const pool = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS];
 
-function collectVisibleText(value, output = [], key = '') {
+function collectVisibleText(value, output = [], key = '', seen = new WeakSet()) {
   const ignoredKeys = new Set([
     'id', 'seedId', 'source', 'branchId', 'type', 'priority', 'correctAnswer', 'schemaVersion', 'generator',
     'provider', 'generatedAt', 'contentSignature', 'generationSignature', 'topicSignature', 'semanticFingerprint',
@@ -18,9 +18,11 @@ function collectVisibleText(value, output = [], key = '') {
   ]);
   if (ignoredKeys.has(key)) return output;
   if (typeof value === 'string') output.push(value);
-  else if (Array.isArray(value)) value.forEach((item) => collectVisibleText(item, output, key));
+  else if (Array.isArray(value)) value.forEach((item) => collectVisibleText(item, output, key, seen));
   else if (value && typeof value === 'object') {
-    Object.entries(value).forEach(([childKey, item]) => collectVisibleText(item, output, childKey));
+    if (seen.has(value)) return output;
+    seen.add(value);
+    Object.entries(value).forEach(([childKey, item]) => collectVisibleText(item, output, childKey, seen));
   }
   return output;
 }
@@ -88,4 +90,4 @@ const report = {
   results,
 };
 console.log(JSON.stringify(report, null, 2));
-if (failed > 0) process.exitCode = 1;
+process.exit(failed > 0 ? 1 : 0);

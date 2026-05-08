@@ -1,7 +1,7 @@
 import { detectInvalidMeasurementFormat, sanitizeMeasurementText } from './clinicalFormatters.js';
-const WEAK_LABEL_PATTERN = /^(Klinik olasılığı belirle|İlk tedavi|Mekanizma özeti|Mekanizma|Morfolojik patern|TUS kırmızı bayrağı|Ayırt ettirici ipucu|Ayırıcı nokta|Karar verdirici ipucu|Karar verdiren ipucu|Olgu verisi|Ek destek|Destekleyici kanıt|Laboratuvar paterni|Görüntüleme bulgusu|Fizik muayene bulgusu|Başvuru yakınması|Sınav incisi|Sınav notu|Klinik yaklaşım|Ana patern)\s*[:：|\-]\s*/iu;
-const META_LANGUAGE_PATTERN = /(öğrenme hedefi|doğru seçenek verilen|yanıt ekseni|generator|AI spot|gömülü vaka|yüzeysel anahtar kelime|tek öğrenme hedefi|çeldirici|kısa TUS pratiğinde|klinik değerlendirme için ek veri|sonuçlar tek bir tanı adını yazmaz|öğrenci ayırt eder|verilen öğrenme hedefi|patern ve mekanizma birlikte yorumlanmalıdır)/iu;
-const BROKEN_ENDING_PATTERN = /(Bu nedenle en iyi yanıt\.?|Bu nedenle en uygun yanıt\.?|açısından değerlendirilir\.?|ile uyumludur ve\.?|tanısını\.?|patern tanısını\.?|dikkat çeker\.?|en iyi yanıt\.)$/iu;
+const WEAK_LABEL_PATTERN = /^(Klinik olasılığı belirle|İlk tedavi|Mekanizma özeti|Mekanizma|Morfolojik patern|TUS kırmızı bayrağı|Ayırt ettirici ipucu|Ayırıcı nokta|Karar verdirici ipucu|Karar verdiren ipucu|Olgu verisi|Ek destek|Destekleyici kanıt|Laboratuvar paterni|Görüntüleme bulgusu|Fizik muayene bulgusu|Başvuru yakınması|Sınav incisi|Sınav notu|Klinik yaklaşım|Ana patern|Kanıt\s*\d+|İlk karar|Tedavi önceliği|Objektif karar verisi|Objektif bulguların karar basamağını desteklemesi)\s*[:：|\-\.]\s*/iu;
+const META_LANGUAGE_PATTERN = /(öğrenme hedefi|doğru seçenek verilen|yanıt ekseni|generator|AI spot|gömülü vaka|yüzeysel anahtar kelime|tek öğrenme hedefi|çeldirici|kısa TUS pratiğinde|klinik değerlendirme için ek veri|sonuçlar tek bir tanı adını yazmaz|öğrenci ayırt eder|verilen öğrenme hedefi|patern ve mekanizma birlikte yorumlanmalıdır|beklenen ana ipuçları bu tabloda baskın değildir|karar .{0,80} yönünde güçlenir|kendi tipik öykü, muayene veya tetkik paterni|bu veri klinik bağlamda değerlendirilir|nedeniyle ameliyathane|morfolojik patern\. morfolojik patern)/iu;
+const BROKEN_ENDING_PATTERN = /(Bu nedenle en iyi yanıt\.?|Bu nedenle en uygun yanıt\.?|açısından değerlendirilir\.?|ile uyumludur ve\.?|tanısını\.?|patern tanısını\.?|dikkat çeker\.?|en iyi yanıt\.|sağlayarak\.?|sağlar ve\.?|yaparak\.?|ederek\.?)$/iu;
 const CLINICAL_CONTENT_PATTERN = /(ateş|ağrı|eritem|ödem|dispne|göğüs|karın|kusma|ishal|döküntü|senkop|travma|kanama|hipotansiyon|taşikardi|hipoksemi|muayene|vital|laboratuvar|ekg|bt|mr|usg|grafi|seroloji|kültür|pcr|troponin|lökosit|crp|bilirubin|glukoz|ph|hco3|tanı|tedavi|etken|reseptör|enzim|mutasyon|hormon|histoloji|biyopsi|belirti|bulgu|klinik|risk|hasta|çocuk|yenidoğan|kadın|erkek|menenjit|pnömoni|erizipel|kawasaki|asfiksi|antidot|ilaç|nekroz|inflamasyon|doku|organ|iskemi|apse)/iu;
 const HARD_FORBIDDEN_EDITORIAL_PATTERNS = [
   /Morfolojik patern\s*[.:]\s*Morfolojik patern/iu,
@@ -19,6 +19,18 @@ const HARD_FORBIDDEN_EDITORIAL_PATTERNS = [
   /\bpatern tanısını\b/iu,
   /\btanısını\.\s*$/iu,
   /\bdikkat çeker\.\s*$/iu,
+  /\bBeklenen ana ipuçları bu tabloda baskın değildir\b/iu,
+  /\bKarar .{0,80} yönünde güçlenir\b/iu,
+  /\bAncak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/iu,
+  /\bLaboratuvar paterni\.?\b/iu,
+  /\bKanıt\s*[2-4]\b/iu,
+  /\bObjektif bulguların karar basamağını desteklemesi\b/iu,
+  /\bDoğru yanıta götüren ana bulgudur\b/iu,
+  /\bİlk karar\.?\b/iu,
+  /\bTedavi önceliği\.?\b/iu,
+  /\bBu veri klinik bağlamda değerlendirilir\b/iu,
+  /\bNedeniyle Ameliyathane\b/iu,
+  /\bsağlayarak\.\s*$/iu,
 ];
 
 const PLACEHOLDER_INVESTIGATION_PATTERNS = [
@@ -62,6 +74,12 @@ function fixMedicalTypos(text = '') {
     .replace(/\bfat necrosis\b/giu, 'yağ nekrozu')
     .replace(/\bfibrinoid necrosis\b/giu, 'fibrinoid nekroz')
     .replace(/\bwheezing\b/giu, 'hışıltılı solunum')
+    .replace(/\bbronchospasm\b/giu, 'bronkospazm')
+    .replace(/\bhypotension\b/giu, 'hipotansiyon')
+    .replace(/\bepinephrine\b/giu, 'epinefrin')
+    .replace(/adrenalin\s*\(\s*epinefrin\s*\)/giu, 'adrenalin/epinefrin')
+    .replace(/epinefrin\s*\(\s*adrenalin\s*\)/giu, 'adrenalin/epinefrin')
+    .replace(/\b1\s*:\s*1000\b/giu, '1:1000')
     .replace(/\bairway\b/giu, 'hava yolu')
     .replace(/\bmanagement\b/giu, 'yönetim')
     .replace(/\bfollow-up\b/giu, 'izlem')
@@ -103,6 +121,15 @@ export function repairAIGeneratedText(text = '', { sectionTitle = '', fallback =
     .replace(/\bMorfolojik patern\.\s*Morfolojik patern\.?/giu, '')
     .replace(/\b(Sınav incisi|Sınav notu|Ayırt ettirici ipucu|Ayırıcı nokta|Klinik gerekçe|Mekanizma özeti)\s+\1\b/giu, '$1')
     .replace(/\bkısa TUS pratiğinde ele alınır\b/giu, 'klinik bağlamda değerlendirilir')
+    .replace(/\bBeklenen ana ipuçları bu tabloda baskın değildir\b/giu, '')
+    .replace(/\bKarar [^.]{0,80} yönünde güçlenir\b/giu, '')
+    .replace(/\bAncak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/giu, '')
+    .replace(/\bObjektif bulguların karar basamağını desteklemesi\b/giu, '')
+    .replace(/\bDoğru yanıta götüren ana bulgudur\b/giu, '')
+    .replace(/\bİlk karar\.?\b/giu, '')
+    .replace(/\bTedavi önceliği\.?\b/giu, '')
+    .replace(/\bKanıt\s*[2-4]\b/giu, '')
+    .replace(/\bNedeniyle Ameliyathane\b/giu, '')
     .replace(/\bKlinik değerlendirme için ek veri sağlar?\b/giu, '')
     .replace(/\bKlinik değerlendirme için ek veri\b/giu, '')
     .replace(/\bdoğru seçenek yanıt eksenini oluşturur\b/giu, 'somut bulgular doğru yanıta götürür')
@@ -145,7 +172,7 @@ export function detectBrokenSentence(text = '') {
   const value = normalizeEditorialText(text);
   if (!value) return false;
   if (BROKEN_ENDING_PATTERN.test(value)) return true;
-  if (/\b(ve|ile|için|tanısını|açısından)$/iu.test(value)) return true;
+  if (/\b(ve|ile|için|tanısını|açısından|sağlayarak|yaparak|ederek)$/iu.test(value)) return true;
   return false;
 }
 
@@ -172,7 +199,9 @@ export function detectTemplateLikeFeedback(text = '') {
     || /bu olguda elenir\s*:/iu.test(value)
     || /belirli klinik koşullarda doğru olabilir/iu.test(value)
     || /olgudaki ana bulgular doğru yanıta/iu.test(value)
-    || /doğru yanıt .* olmalıdır/iu.test(value);
+    || /doğru yanıt .* olmalıdır/iu.test(value)
+    || /beklenen ana ipuçları bu tabloda baskın değildir/iu.test(value)
+    || /karar .{0,80} yönünde güçlenir/iu.test(value); 
 }
 
 export function validateClinicalMeaning(text = '') {

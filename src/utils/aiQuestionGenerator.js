@@ -1,6 +1,7 @@
 import { AI_QUESTION_SEEDS } from '../data/aiQuestionSeeds.js';
 import { AI_BRANCH_TEMPLATE_SEEDS } from '../data/aiBranchQuestionTemplates.js';
 import { AI_SYNTHETIC_FALLBACK_SEEDS } from '../data/aiSyntheticFallbackTemplates.js';
+import { TUS_PEARL_AI_SEEDS } from '../data/tusPearlCards.js';
 import { cases } from '../data/cases.js';
 import { branches } from '../data/branches.js';
 import { shuffleArray } from './randomize.js';
@@ -280,10 +281,10 @@ function expandSeedVariants(seeds = [], variantCount = 7) {
 
 function getEligibleSeeds(branchFilter = 'random') {
   const normalizedFilter = String(branchFilter || 'random').toLocaleLowerCase('tr');
-  const allSeeds = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS, ...buildCaseDerivedAISeeds()];
+  const allSeeds = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS, ...TUS_PEARL_AI_SEEDS, ...buildCaseDerivedAISeeds()];
   if (normalizedFilter === 'random' || normalizedFilter === 'rastgele') return expandSeedVariants(allSeeds, 7);
   const filtered = allSeeds.filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
-  const fallback = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
+  const fallback = [...AI_QUESTION_SEEDS, ...AI_BRANCH_TEMPLATE_SEEDS, ...AI_SYNTHETIC_FALLBACK_SEEDS, ...TUS_PEARL_AI_SEEDS].filter((seed) => branchFilterMatchesSeed(seed, branchFilter));
   return expandSeedVariants(filtered.length ? filtered : fallback, 14);
 }
 
@@ -492,10 +493,13 @@ function buildSyntheticInvestigation(seed, profile, correctText = '') {
 }
 
 function buildWrongFeedback(options, correctText, seed) {
+  const contextualFallback = (optionText) => `${optionText} bazı yakın klinik durumlarda düşünülebilir. Ancak bu olguda soru kökü, öykü ve objektif ipuçları birlikte değerlendirildiğinde ${correctText} seçeneği daha doğrudan ve öncelikli açıklamayı verir.`;
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
-    const seeded = seed.wrongOptionFeedback?.[option.id];
-    accumulator[option.id] = seeded || `${option.text} için beklenen ana ipuçları bu tabloda baskın değildir; karar ${correctText} yönünde güçlenir.`;
+    const seeded = repairAIGeneratedText(seed.wrongOptionFeedback?.[option.id] || '', { fallback: '' });
+    accumulator[option.id] = seeded && seeded.length >= 70
+      ? seeded
+      : contextualFallback(option.text);
     return accumulator;
   }, {});
 }
@@ -504,11 +508,11 @@ function buildDifferentialComparison(options, correctText, wrongOptionFeedback, 
   return options.reduce((accumulator, option) => {
     if (normalizeQuestionText(option.text) === normalizeQuestionText(correctText)) return accumulator;
     accumulator[option.text] = {
-      explanation: wrongOptionFeedback[option.id] || `${option.text} için beklenen ana ipuçları bu tabloda baskın değildir; karar ${correctText} yönünde güçlenir.`,
+      explanation: wrongOptionFeedback[option.id] || `${option.text} bazı yakın klinik durumlarda düşünülebilir; ancak olgudaki somut bulgular ${correctText} seçeneğini daha güçlü destekler.`,
       comparisonPoints: [
-        `${option.text} için beklenen temel bulgu bu tabloda baskın değildir.`,
-        `${correctText} öykü ve hedef bulgularla daha uyumlu kalır.`,
-        'Ayırıcı tanıda belirleyici nokta bulguların birlikte oluşturduğu örüntüdür.',
+        `${option.text} olası bir yakın alternatiftir; fakat olgudaki ana bulguları tek başına açıklamaz.`,
+        `${correctText} öykü, muayene ve hedef verilerle daha tutarlı kalır.`,
+        'Ayırıcı tanıda belirleyici nokta bulguların birlikte oluşturduğu klinik örüntüdür.',
       ],
     };
     return accumulator;

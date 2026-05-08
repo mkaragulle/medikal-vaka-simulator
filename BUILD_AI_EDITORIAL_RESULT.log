@@ -1,5 +1,0 @@
-
-> klinikiq@1.0.0 build
-> vite build --minify false
-
-sh: 1: vite: not found

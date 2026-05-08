@@ -56,6 +56,21 @@ export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'karar verdiren ipucu',
   'bu nedenle en iyi yanıt',
   'çeldirici',
+  'beklenen ana ipuçları bu tabloda baskın değildir',
+  'karar adrenalin yönünde güçlenir',
+  'karar doğru seçenek yönünde güçlenir',
+  'ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır',
+  'laboratuvar paterni',
+  'kanıt 2',
+  'kanıt 3',
+  'kanıt 4',
+  'objektif bulguların karar basamağını desteklemesi',
+  'doğru yanıta götüren ana bulgudur',
+  'ilk karar',
+  'tedavi önceliği',
+  'bu veri klinik bağlamda değerlendirilir',
+  'nedeniyle ameliyathane',
+  'sağlayarak.',
 ];
 
 const HARD_FORBIDDEN_REGEXES = [
@@ -69,6 +84,18 @@ const HARD_FORBIDDEN_REGEXES = [
   /\blikefaksiyon nekrozuyla\b/iu,
   /\bkısa TUS pratiğinde ele alınır\b/iu,
   /\b(adölesan|ergen|çocuk)\b[^.]{0,80}\bemme\s+azalması\b/iu,
+  /\bBeklenen ana ipuçları bu tabloda baskın değildir\b/iu,
+  /\bKarar .{0,80} yönünde güçlenir\b/iu,
+  /\bAncak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/iu,
+  /\bLaboratuvar paterni\.?\b/iu,
+  /\bKanıt\s*[2-4]\b/iu,
+  /\bObjektif bulguların karar basamağını desteklemesi\b/iu,
+  /\bDoğru yanıta götüren ana bulgudur\b/iu,
+  /\bİlk karar\.?\b/iu,
+  /\bTedavi önceliği\.?\b/iu,
+  /\bBu veri klinik bağlamda değerlendirilir\b/iu,
+  /\bNedeniyle Ameliyathane\b/iu,
+  /\bsağlayarak\.\s*$/iu,
 ];
 
 function normalizeForIncludes(text = '') {
@@ -89,7 +116,8 @@ function hasForbiddenPhrase(text = '') {
 }
 
 function cleanSentence(text = '') {
-  let value = repairAIGeneratedText(sanitizeMeasurementText(String(text || '')), { fallback: '' }) || sanitizeMeasurementText(String(text || ''))
+  const initial = repairAIGeneratedText(sanitizeMeasurementText(String(text || '')), { fallback: '' }) || sanitizeMeasurementText(String(text || ''));
+  let value = initial
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/([,;:!?])(?=\S)/g, '$1 ')
@@ -109,18 +137,34 @@ function cleanSentence(text = '') {
     .replace(/\bpatern yorumlaması\b/giu, 'bulgu yorumu')
     .replace(/\bklinik bağlamda\b/giu, 'bu tabloda')
     .replace(/\bklinik değerlendirme için ek veri sağlar\b/giu, '')
+    .replace(/\bBeklenen ana ipuçları bu tabloda baskın değildir\b/giu, '')
+    .replace(/\bKarar [^.]{0,80} yönünde güçlenir\b/giu, '')
+    .replace(/\bAncak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/giu, '')
+    .replace(/\bObjektif bulguların karar basamağını desteklemesi\b/giu, '')
+    .replace(/\bDoğru yanıta götüren ana bulgudur\b/giu, '')
+    .replace(/\bİlk karar\.?\b/giu, '')
+    .replace(/\bTedavi önceliği\.?\b/giu, '')
+    .replace(/\bKanıt\s*[2-4]\b/giu, '')
+    .replace(/\bNedeniyle Ameliyathane\b/giu, '')
     .replace(/\bsonuçlar tek bir tanı adını yazmaz;?\s*/giu, '')
     .replace(/\bMorfolojik patern\.\s*Morfolojik patern\.?/giu, '')
     .replace(/\bMorfolojik patern\s*[:：]\s*/giu, '')
     .replace(/\bkarar verdirici paternyla\b/giu, 'karar verdirici paternle')
     .replace(/\blikefaksiyon nekrozuyla\b/giu, 'sıvılaşma nekrozu ile')
     .replace(/\bwheezing\b/giu, 'hışıltılı solunum')
+    .replace(/\bbronchospasm\b/giu, 'bronkospazm')
+    .replace(/\bhypotension\b/giu, 'hipotansiyon')
+    .replace(/\bepinephrine\b/giu, 'epinefrin')
+    .replace(/adrenalin\s*\(\s*epinefrin\s*\)/giu, 'adrenalin/epinefrin')
+    .replace(/epinefrin\s*\(\s*adrenalin\s*\)/giu, 'adrenalin/epinefrin')
+    .replace(/\b1\s*:\s*1000\b/giu, '1:1000')
     .replace(/\byüzeysel anahtar kelimeyle değil\b/giu, '')
     .replace(/\bkısa ve hedef odaklı yorumlanmalıdır\b/giu, 'birlikte değerlendirilir')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .replace(/^[,.;:!?\-\s]+|[,.;:!?\-\s]+$/g, '')
     .trim();
+  if (/\b(sağlayarak|yaparak|ederek|ile|ve|için)\.?$/iu.test(value)) return '';
   return value;
 }
 
@@ -150,7 +194,7 @@ function textBundle(question = {}) {
     question.chiefComplaint,
     question.learningTarget,
     question.clinicalFocus,
-    question.wrongOptionFeedback,
+    Object.values(question.wrongOptionFeedback || {}),
     question.diagnosis?.correct,
     question.examPearls,
     question.diagnosis?.answerFeedback?.clinicalPearls,
@@ -387,11 +431,51 @@ function repairFeedbackText(text = '', question = {}) {
   return 'Somut klinik bulgular birlikte değerlendirildiğinde en uygun seçenek belirlenir.';
 }
 
+function describeOptionPurpose(optionText = '') {
+  const option = normalizeForIncludes(optionText);
+  if (/salbutamol|bronkodilator|bronko/.test(option)) return 'Bronkodilatörler bronkospazmı azaltmada destek sağlayabilir.';
+  if (/antihistamin|h1|h2/.test(option)) return 'Antihistaminikler ürtiker ve kaşıntı gibi deri bulgularını azaltabilir.';
+  if (/kortikosteroid|steroid|metilpred|predniz/.test(option)) return 'Kortikosteroidlerin etkisi geç başlar ve akut şok tablosunu hemen düzeltmez.';
+  if (/sivi|kristaloid|ringer|serum|resusitasyon/.test(option)) return 'IV kristaloid, vazodilatasyon ve kapiller kaçak nedeniyle gelişen şokta gerekli destek basamağıdır.';
+  if (/adrenalin|epinefrin/.test(option)) return 'Adrenalin bronkospazm, vazodilatasyon ve dolaşım çöküşünü hedefleyen hayat kurtarıcı ilaçtır.';
+  if (/oksijen|hava yolu|entubasyon/.test(option)) return 'Oksijen ve hava yolu güvenliği hipoksemi riski olan hastada temel destek basamağıdır.';
+  if (/gozlem|bekle|izlem/.test(option)) return 'Sadece gözlem, hızla kötüleşebilecek acil tabloda tedaviyi geciktirir.';
+  return `${optionText} bazı klinik durumlarda gündeme gelebilir.`;
+}
+
+function isPerioperativeAnaphylaxis(question = {}) {
+  const bundle = normalizeForIncludes(visibleQualityTexts(question).join(' | '));
+  return /anafil|hipersensitiv|urtiker|bronkospazm|hisiltili/.test(bundle)
+    && /ameliyathane|anestezi|induksiyon|perioperatif|cerrahi|monitorize/.test(bundle)
+    && /hipotansiyon|sok|70\/40|dusuk spo/.test(bundle);
+}
+
+function isGeneralAnaphylaxis(question = {}) {
+  const bundle = normalizeForIncludes(visibleQualityTexts(question).join(' | '));
+  return /anafil|hipersensitiv/.test(bundle) || (/urtiker/.test(bundle) && /bronkospazm|hisiltili|hipotansiyon/.test(bundle));
+}
+
+function buildContextualWrongFeedback(optionText = '', question = {}) {
+  const correct = getQuestionCorrectText(question);
+  const purpose = describeOptionPurpose(optionText);
+  const option = normalizeForIncludes(optionText);
+  if (isPerioperativeAnaphylaxis(question)) {
+    if (/adrenalin|epinefrin/.test(option) && /im|intramuskuler|intramüsküler|kas ici/.test(option)) {
+      return 'IM adrenalin genel anafilaksi bilgisinde hayat kurtarıcıdır. Ancak monitörize ameliyathane hastasında ciddi hipotansiyon ve bronkospazm varsa tetikleyiciyi durdurma, yüzde 100 oksijen, hızlı IV sıvı ve hemodinamik ciddiyete göre adrenalin uygulaması birlikte planlanır.';
+    }
+    return `${purpose} Ancak perioperatif ağır anafilakside tek başına yeterli değildir; tetikleyici ajanı durdurma, yüzde 100 oksijen, hızlı IV sıvı ve adrenalin eş zamanlı düşünülmelidir.`;
+  }
+  if (isGeneralAnaphylaxis(question)) {
+    return `${purpose} Ancak anafilakside hava yolu, bronkospazm veya hipotansiyon varsa destek tedavileri adrenalin temelli acil yaklaşımın yerine geçmez.`;
+  }
+  const clues = deriveBranchSpecificClues(question).slice(0, 2).join(' ve ') || 'olgudaki somut bulgular';
+  return `${purpose} Ancak ${clues} bu seçeneği tek başına yeterli kılmaz; ${correct || 'uygun yanıt'} olguyu daha doğrudan açıklar.`;
+}
+
 function repairWrongFeedback(text = '', optionText = '', question = {}) {
   const cleaned = cleanSentence(text);
-  if (cleaned && cleaned.length >= 25 && !hasForbiddenPhrase(cleaned)) return cleaned;
-  const correct = getQuestionCorrectText(question);
-  return cleanSentence(`${optionText} için beklenen ana ipuçları bu tabloda baskın değildir; karar ${correct || 'uygun yanıt'} yönünde güçlenir.`);
+  if (cleaned && cleaned.length >= 45 && !hasForbiddenPhrase(cleaned) && !detectTemplateLikeFeedback(cleaned) && !detectBrokenSentence(cleaned)) return cleaned;
+  return cleanSentence(buildContextualWrongFeedback(optionText, question));
 }
 
 function repairDifferentialComparison(comparison = {}, question = {}) {
@@ -402,11 +486,109 @@ function repairDifferentialComparison(comparison = {}, question = {}) {
     repaired[optionText] = {
       explanation,
       comparisonPoints: points.length ? points : [
-        `${optionText} için beklenen temel bulgu bu tabloda baskın değildir.`,
-        'Öykü ve hedef bulgular uygun yanıta daha doğrudan yönlendirir.',
-      ],
+        describeOptionPurpose(optionText),
+        repairWrongFeedback('', optionText, question),
+      ].map(cleanSentence).filter(Boolean).slice(0, 2),
     };
   });
+  return repaired;
+}
+
+function repairContextSensitiveEmergencyQuestion(question = {}) {
+  if (!isPerioperativeAnaphylaxis(question)) return question;
+  const correctManagement = 'Tetikleyici ajanı durdurmak, yüzde 100 oksijen vermek, hızlı IV sıvı başlamak ve hemodinamik ciddiyete göre adrenalin uygulamak';
+  const options = [
+    { id: 'A', text: correctManagement },
+    { id: 'B', text: 'Yalnızca IV antihistaminik verip yanıtı beklemek' },
+    { id: 'C', text: 'Yalnızca inhaler bronkodilatör uygulamak' },
+    { id: 'D', text: 'Kortikosteroid verip cerrahiye devam etmek' },
+    { id: 'E', text: 'Sadece hızlı IV kristaloid vererek adrenalin ve hava yolu desteğini ertelemek' },
+  ];
+  const repaired = {
+    ...question,
+    title: 'Anestezi indüksiyonu sonrası ani hipotansiyon',
+    relatedBranch: question.relatedBranch || 'Anesteziyoloji ve Reanimasyon',
+    branchName: question.branchName || 'Anesteziyoloji ve Reanimasyon',
+    difficulty: question.difficulty || 'Zor',
+    learningTarget: 'Perioperatif anafilakside ilk acil yönetim yaklaşımını ayırt etmek',
+    clinicalFocus: 'Perioperatif anafilakside bağlam duyarlı acil yönetim',
+    demographics: question.demographics && !hasForbiddenPhrase(question.demographics) ? question.demographics : '45 yaş erkek',
+    setting: 'Ameliyathane',
+    chiefComplaint: 'Ani hipotansiyon ve bronkospazm',
+    stem: '45 yaşındaki erkek hastada genel anestezi indüksiyonundan kısa süre sonra ani hipotansiyon, bronkospazm ve oksijen satürasyonunda düşme gelişir. Eş zamanlı yaygın ürtiker fark edilir.',
+    exam: [
+      'Yaygın ürtiker izlenir.',
+      'Oskültasyonda belirgin hışıltılı solunum ve bronkospazm bulguları vardır.',
+    ],
+    vitals: { TA: '70/40 mmHg', Nabız: '126/dk', Solunum: '28/dk', Ateş: '36,8 °C', 'SpO₂': '%88' },
+    question: 'Genel anestezi altında gelişen ağır anafilaksi şüphesinde en uygun ilk yönetim yaklaşımı hangisidir?',
+    questionType: 'treatment',
+    options,
+    correctAnswer: 'A',
+    explanation: 'Anestezi indüksiyonundan kısa süre sonra gelişen hipotansiyon, bronkospazm, düşük SpO₂ ve ürtiker perioperatif anafilaksiyi düşündürür. Bu tabloda yalnızca bronkodilatör veya antihistaminik vermek yetersizdir; hava yolu, oksijen, dolaşım desteği ve adrenalin gecikmeden planlanmalıdır.',
+    evidenceChain: [
+      'Zamanlama: Bulgular anestezi indüksiyonundan kısa süre sonra başlar.',
+      'Hemodinamik bulgu: 70/40 mmHg kan basıncı ciddi sistemik reaksiyonu gösterir.',
+      'Solunum bulgusu: Bronkospazm ve düşük SpO₂ hava yolu etkilenimini destekler.',
+      'Deri bulgusu: Yaygın ürtiker mast hücre aracılı reaksiyon lehinedir.',
+    ],
+    examPearls: [
+      'Anafilakside deri bulguları olmasa bile hipotansiyon ve bronkospazm varsa tedavi geciktirilmez. Adrenalin hayat kurtarıcıdır; antihistaminik, bronkodilatör ve steroidler destek tedavisidir.',
+    ],
+    wrongOptionFeedback: {},
+    investigations: [],
+    history: [],
+  };
+  repaired.patientIntro = {
+    profile: `${repaired.demographics} · Ameliyathane`,
+    presentation: 'Ani hipotansiyon ve bronkospazm',
+    riskContext: [
+      'Anestezi indüksiyonu sonrası erken dönem',
+      'Nöromüsküler bloker, antibiyotik veya lateks maruziyeti olasılığı',
+      'Bilinen alerji öyküsünün olmaması anafilaksiyi dışlamaz',
+    ],
+    distinctiveClues: [
+      'Ani hipotansiyon',
+      'Bronkospazm ve düşük SpO₂',
+      'Yaygın ürtiker',
+      'Anestezi indüksiyonundan kısa süre sonra başlaması',
+    ],
+    historySummary: repaired.stem,
+  };
+  repaired.history = [repaired.stem];
+  repaired.findings = {
+    history: [repaired.stem],
+    exam: repaired.exam,
+    vitals: repaired.vitals,
+    investigations: [],
+  };
+  options.forEach((option) => {
+    if (option.id !== 'A') repaired.wrongOptionFeedback[option.id] = repairWrongFeedback('', option.text, repaired);
+  });
+  repaired.diagnosis = {
+    ...(repaired.diagnosis || {}),
+    correct: correctManagement,
+    options: options.map((option) => option.text),
+    explanation: repaired.explanation,
+    nextStep: 'Tetikleyiciyi durdur, oksijen ve dolaşım desteğini başlat, adrenalin uygulamasını hemodinamik ciddiyete göre planla.',
+    pearls: repaired.examPearls,
+    answerFeedback: {
+      ...(repaired.diagnosis?.answerFeedback || {}),
+      whyCorrect: repaired.explanation,
+      evidenceChain: repaired.evidenceChain,
+      pearls: repaired.examPearls,
+      clinicalPearls: repaired.examPearls,
+      differentialComparison: repairDifferentialComparison(Object.fromEntries(options.filter((option) => option.id !== 'A').map((option) => [option.text, { explanation: repaired.wrongOptionFeedback[option.id] }])) || {}, repaired),
+      whyWrong: Object.fromEntries(options.filter((option) => option.id !== 'A').map((option) => [option.text, repaired.wrongOptionFeedback[option.id]])),
+      managementSteps: [
+        'Tetikleyici olabilecek ajanı durdur ve yardım çağır.',
+        'Yüzde 100 oksijen vererek hava yolunu güvenceye al.',
+        'Hızlı IV kristaloid resüsitasyonu başlat.',
+        'Hemodinamik ciddiyete göre adrenalin uygula; ameliyathane koşullarında IV titrasyon gerekebilir.',
+      ],
+      learningOutcome: repaired.learningTarget,
+    },
+  };
   return repaired;
 }
 
@@ -498,13 +680,18 @@ export function repairAIQuestionQuality(question = {}) {
     ];
   }
 
-  attachQuestionDedupeFields(repaired);
-  return repaired;
+  const contextRepaired = repairContextSensitiveEmergencyQuestion(repaired);
+  attachQuestionDedupeFields(contextRepaired);
+  return contextRepaired;
 }
 
 function visibleQualityTexts(question = {}) {
   const texts = [];
   const push = (value) => {
+    if (Array.isArray(value)) {
+      value.forEach(push);
+      return;
+    }
     const text = toPlainText(value);
     if (text) texts.push(text);
   };
@@ -515,7 +702,7 @@ function visibleQualityTexts(question = {}) {
     question.chiefComplaint,
     question.learningTarget,
     question.clinicalFocus,
-    question.wrongOptionFeedback,
+    Object.values(question.wrongOptionFeedback || {}),
     question.patientIntro?.profile,
     question.patientIntro?.presentation,
     question.patientIntro?.riskContext,
@@ -533,9 +720,54 @@ function visibleQualityTexts(question = {}) {
     question.diagnosis?.answerFeedback?.pearls,
     question.diagnosis?.answerFeedback?.clinicalPearls,
     question.diagnosis?.answerFeedback?.managementSteps,
-    Object.values(question.diagnosis?.answerFeedback?.differentialComparison || {}),
+    // Differential comparison reuses wrong-option feedback by design; validate it through whyWrong/feedback maps to avoid false duplicate flags.
   ].forEach(push);
   return texts;
+}
+
+function validateContextSensitiveClinicalCoherence(question = {}) {
+  const errors = [];
+  const bundle = normalizeForIncludes(visibleQualityTexts(question).join(' | '));
+  const correct = normalizeForIncludes(getQuestionCorrectText(question) || '');
+  const questionText = normalizeForIncludes(question.question || question.diagnosis?.nextStep || '');
+  if (isPerioperativeAnaphylaxis(question) && /ilk|yonetim|tedavi|yaklasim|acil/.test(questionText)) {
+    const hasTriggerStop = /tetikleyici|ajan.*durdur|maruziyet.*kes/.test(correct);
+    const hasOxygen = /oksijen|hava yolu/.test(correct);
+    const hasFluid = /sivi|kristaloid|resusitasyon|iv/.test(correct);
+    const hasAdrenaline = /adrenalin|epinefrin/.test(correct);
+    if (!(hasTriggerStop && hasOxygen && hasFluid && hasAdrenaline)) {
+      errors.push('perioperatif anafilaksi yönetimi tetikleyiciyi durdurma, oksijen/hava yolu, IV sıvı ve adrenalin bileşenlerini birlikte içermeli');
+    }
+    if (/\bim\b|intramuskuler|intramüsküler|kas ici/.test(correct) && !/iv|monitorize|hemodinamik/.test(correct)) {
+      errors.push('ameliyathane/perioperatif ağır anafilaksi tek başına IM adrenalin kalıbına indirgenmiş');
+    }
+  }
+  if (!isPerioperativeAnaphylaxis(question) && isGeneralAnaphylaxis(question) && /ilk|tedavi|ilac|yaklasim|acil/.test(questionText)) {
+    if (!/adrenalin|epinefrin/.test(correct)) errors.push('anafilaksi tedavi sorusunda hayat kurtarıcı adrenalin vurgusu yok');
+  }
+  if (/wheezing\b/i.test(visibleQualityTexts(question).join(' | '))) errors.push('gereksiz İngilizce terim: wheezing');
+  if (/Nedeniyle Ameliyathane/i.test(visibleQualityTexts(question).join(' | '))) errors.push('bozuk öykü parçası: Nedeniyle Ameliyathane');
+  return errors;
+}
+
+function validateFeedbackSpecificity(question = {}) {
+  const errors = [];
+  const correctId = String(question.correctAnswer || '').toUpperCase();
+  const feedback = question.wrongOptionFeedback || {};
+  (Array.isArray(question.options) ? question.options : []).forEach((option) => {
+    const id = String(option?.id || '').toUpperCase();
+    if (!id || id === correctId) return;
+    const text = cleanSentence(feedback[option.id] || feedback[id] || question.diagnosis?.answerFeedback?.whyWrong?.[option.text] || '');
+    if (!text || text.length < 55) errors.push(`${id} yanlış seçenek feedbacki seçenek özelinde ve öğretici değil`);
+    if (hasForbiddenPhrase(text) || detectTemplateLikeFeedback(text)) errors.push(`${id} yanlış seçenek feedbacki şablon ifade içeriyor`);
+  });
+  const evidence = question.diagnosis?.answerFeedback?.evidenceChain || question.evidenceChain || [];
+  evidence.forEach((item, index) => {
+    const text = cleanSentence(item);
+    if (/^kanıt\s*\d*$/iu.test(text) || /laboratuvar paterni/i.test(text)) errors.push(`kanıt zinciri mekanik başlık içeriyor: ${index + 1}`);
+    if (text.length < 18) errors.push(`kanıt zinciri çok kısa: ${index + 1}`);
+  });
+  return errors;
 }
 
 function validateAgeSymptomCoherence(question = {}) {
@@ -561,6 +793,8 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
     }
   });
   errors.push(...validateAgeSymptomCoherence(question));
+  errors.push(...validateContextSensitiveClinicalCoherence(question));
+  errors.push(...validateFeedbackSpecificity(question));
 
   const branchFit = validateBranchFit(question, requestedBranch || question.relatedBranch || question.branchName);
   if (!branchFit.ok) errors.push(...branchFit.errors.map((error) => `branch-fit:${error}`));
