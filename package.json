@@ -23,7 +23,8 @@
     "qa:ai-spot-hero-inset": "node scripts/run-ai-spot-hero-inset-test.mjs",
     "qa:ai-ui-generation-resilience": "node scripts/run-ai-ui-generation-resilience-test.mjs",
     "qa:ai-spot-question-stem-inline": "node scripts/run-ai-spot-question-stem-inline-test.mjs",
-    "qa:glossary-inline-flow": "node scripts/run-glossary-inline-flow-test.mjs"
+    "qa:glossary-inline-flow": "node scripts/run-glossary-inline-flow-test.mjs",
+    "qa:ai-scientific-regression": "node scripts/run-ai-scientific-quality-regression-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",
