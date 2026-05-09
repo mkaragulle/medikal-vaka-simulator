@@ -502,6 +502,12 @@ YASAK konu/doğru cevap listesi:
 ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
+- Ön yüzde gösterilecek ana soru kökü yalnız stem alanıdır: stem, kullanıcının gördüğü tek akışlı TUS soru paragrafı gibi yazılmalıdır.
+- stem içine gerekli öykü, muayene, vital, laboratuvar, kültür, görüntüleme veya patoloji verilerini doğal cümle akışıyla ekle; kullanıcı ayrı hasta özeti, risk bağlamı veya tetkik kartı açmayacak.
+- findings alanları yalnız internal kalite kontrol içindir; stem olmadan cevaplanamayacak kritik veri findings içinde yalnız bırakılmamalıdır.
+- stem içinde Profil:, Başvuru:, Risk bağlamı:, Ayırt ettirici ipuçları:, Klinik gerekçe:, Kanıt zinciri:, Sınav notu: gibi başlık kırıntıları kullanma.
+- stem içinde doğru cevabı, doğru tanıyı veya post-answer öğretici cümleyi açık etme; yalnız soru çözmek için gerekli objektif veriyi ver.
+- title kısa ve nötr olmalı; tanıyı, etkeni, doğru tedaviyi veya doğru cevabı başlıkta söyleme.
 - Bu denemede verilen ana konudan şaşma; ama yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik paternini tekrar etme.
 - Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
 - Aynı hastalık kullanılacaksa soru açısı kesin değişsin: tanı yerine ilk tedavi, tetkik yorumu, komplikasyon, mekanizma veya yönetim basamağı sor.
@@ -532,7 +538,7 @@ Kesin kurallar:
 - Patoloji sorularında teori cümlesini laboratuvar sonucu gibi gösterme. Gerekirse yalnız histopatolojik değerlendirme kullan.
 - Ayırt ettirici ipuçları ve evidenceChain madde metinlerinde "Etiket: açıklama" yapısı kullanma; doğrudan doğal cümle yaz.
 - JSON şemasındaki tüm alanları doldur. source her zaman "real-ai", caseType her zaman "ai-spot" olsun.
-- JSON değerlerini kısa tut: stem 2-4 cümle, explanation 2-4 cümle, her feedback en fazla 1-2 cümle, evidenceChain 3-4 madde, managementSteps 2-3 madde.
+- JSON değerlerini kısa tut: stem 2-4 doğal TUS soru cümlesi veya en fazla 2 kısa paragraf hissi veren tek metin olmalı; explanation 2-4 cümle, her feedback en fazla 1-2 cümle, evidenceChain 3-4 madde, managementSteps 2-3 madde.
 - JSON string değerlerinin içinde kaçışsız çift tırnak kullanma. Gerekirse tek tırnak veya parantez kullan.
 - JSON çıktısını yarıda kesme; son karakter mutlaka kapanış süslü parantezi olsun.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı bulunsun; doğru seçenek için de kısa doğru gerekçesi yazabilirsin.`;
@@ -733,7 +739,9 @@ function completeRemoteQuestion(question = {}, context = {}) {
     demographics: shortText(question.demographics || question.d, 'Hasta'),
     setting: shortText(question.setting, 'Klinik değerlendirme'),
     chiefComplaint: inferChiefComplaint(question),
-    stem: shortText(question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.'),
+    stem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.'),
+    narrativeStem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.'),
+    stemMode: 'narrative',
     findings: {
       history: Array.isArray(findings.history) ? findings.history.map(shortText).filter(Boolean).slice(0, 4) : [],
       exam: Array.isArray(findings.exam) ? findings.exam.map(shortText).filter(Boolean).slice(0, 3) : [],
@@ -796,15 +804,15 @@ function buildCompactOpenRouterPrompt(originalPrompt = '', context = {}) {
     return `KlinikIQ için Türkçe, TUS tarzı tek klinik spot soru üret. Branş: ${branch}. Seçilecek konu: ${selectedTopic}. Soru tipi: ${questionType}. Seed: ${seed}. Yakın tekrar etme: ${recent || 'yok'}.
 
 Sadece şu kısa JSON objesini döndür:
-{"t":"başlık","b":"branş","lt":"hedef","d":"demografi","s":"2 kısa cümle olgu","q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
+{"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"tüm gerekli verileri içeren 2-4 cümlelik tek akışlı soru kökü","q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
 
-Kurallar: JSON dışında yazma. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. Seçenekler aynı kategoriden olsun. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
+Kurallar: JSON dışında yazma. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı, ayrı kartlara ihtiyaç bırakmayacak tek paragraf TUS soru kökü olmalı; gerekli lab/kültür/muayene verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kategoriden olsun. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
   }
 
   return `${originalPrompt}
 
 DÜŞÜK TOKEN MODU: Tam şema üretme. Yalnızca şu KISA JSON objesini döndür ve her stringi çok kısa tut:
-{"t":"başlık","b":"branş","lt":"hedef","d":"demografi","s":"2 cümle olgu","q":"soru","o":["A metni","B metni","C metni","D metni","E metni"],"c":"A","e":"1 cümle gerekçe","k":["ipucu1","ipucu2","ipucu3"],"p":"1 kısa TUS notu"}
+{"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"2-4 cümle tek akışlı soru kökü","q":"soru","o":["A metni","B metni","C metni","D metni","E metni"],"c":"A","e":"1 cümle gerekçe","k":["ipucu1","ipucu2","ipucu3"],"p":"1 kısa TUS notu"}
 JSON dışında tek karakter yazma. Çift tırnakları metin içinde kullanma. En fazla 300 token.`;
 }
 

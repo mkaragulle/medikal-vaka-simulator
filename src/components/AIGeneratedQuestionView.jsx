@@ -1,12 +1,6 @@
-import CasePlayer from './CasePlayer.jsx';
+import AISpotQuestionScreen from './AISpotQuestionScreen.jsx';
 import { Icon, IconBadge } from './ui.jsx';
 
-const AI_SPOT_BRANCH = {
-  id: 'tus-spot-olgular',
-  name: 'AI ile Üretilen TUS Spot Sorusu',
-  shortName: 'AI Spot',
-  description: 'Spot bilgileri pekiştirmek için kalite kontrolünden geçirilmiş kısa klinik soru.',
-};
 
 function AIStat({ label, value, icon, tone = 'teal' }) {
   return (
@@ -150,17 +144,14 @@ function AIGeneratedQuestionView({
       {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}
       {!loading && !error && question ? (
         <div key={question.id} className="ai-case-shell case-route-transition" data-case-id={question.id}>
-          <CasePlayer
-            clinicalCase={question}
-            branch={AI_SPOT_BRANCH}
-            mode="study"
-            onRandomCase={onGenerateQuestion}
+          <AISpotQuestionScreen
+            question={question}
+            onGenerateQuestion={onGenerateQuestion}
             onSubmitAnswer={onSubmitAnswer}
             tutorMode={tutorMode}
             onToggleTutorMode={onToggleTutorMode}
             hardMode={hardMode}
             randomActionLabel="Yeni AI sorusu üret"
-            heroActionLabel="Yeni AI sorusu"
           />
         </div>
       ) : null}

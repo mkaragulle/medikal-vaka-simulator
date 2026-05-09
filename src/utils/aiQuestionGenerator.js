@@ -582,6 +582,8 @@ export function buildAIQuestionCase(seed, { generatedId = createAIQuestionId(), 
     setting: sanitizeMeasurementText(profile.setting),
     chiefComplaint: sanitizeMeasurementText(profile.presentation || seed.chiefComplaint || titleBase),
     stem: sanitizeMeasurementText(stem),
+    narrativeStem: sanitizeMeasurementText(stem),
+    stemMode: 'narrative',
     exam: (Array.isArray(seed.exam) && seed.exam.length ? seed.exam : [
       ...buildBranchExamDefaults(seed, profile),
     ]).map(sanitizeMeasurementText),
