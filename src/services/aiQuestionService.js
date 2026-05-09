@@ -133,11 +133,32 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
       context,
       requestedBranch: branchFilter,
       skipQuality: false,
+      trustRemoteAi: true,
+      skipSemanticNovelty: true,
     });
     if (!validation.ok) {
-      const error = new Error(`Remote AI client validation failed: ${validation.errors.join('; ')}`);
-      error.validation = validation;
-      throw error;
+      const structuralValidation = validateAIQuestionCase(normalized, remoteRequestContext.recentSignatures, {
+        context,
+        requestedBranch: branchFilter,
+        skipQuality: true,
+        trustRemoteAi: true,
+        skipSemanticNovelty: true,
+      });
+      if (!structuralValidation.ok) {
+        const error = new Error(`Remote AI client validation failed: ${structuralValidation.errors.join('; ')}`);
+        error.validation = structuralValidation;
+        throw error;
+      }
+      normalized.aiMeta = {
+        ...(normalized.aiMeta || {}),
+        clientQualityWarnings: validation.errors,
+        clientQualityGateMode: 'server-trusted-soft-warning',
+      };
+      logRemoteAIDebug('remote-client-quality-soft-warning', {
+        attempt,
+        branchFilter,
+        warnings: validation.errors,
+      });
     }
 
     const diversityResult = validateQuestionDiversity(normalized, context, cases, {
@@ -154,9 +175,18 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
     }));
 
     if (!diversityResult.passed) {
-      const error = new Error(`Remote AI diversity gate rejected candidate: ${diversityResult.reason}`);
-      error.diversity = diversityResult;
-      throw error;
+      normalized.aiMeta = {
+        ...(normalized.aiMeta || {}),
+        clientDiversityWarning: diversityResult.reason,
+        clientDiversitySimilarityScore: diversityResult.similarityScore || null,
+        clientDiversityGateMode: 'advisory-for-remote-ai',
+      };
+      logRemoteAIDebug('remote-diversity-soft-warning', {
+        attempt,
+        branchFilter,
+        reason: diversityResult.reason,
+        similarityScore: diversityResult.similarityScore || null,
+      });
     }
 
     logRemoteAIDebug('remote-question-accepted', {
@@ -221,6 +251,56 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
   throw finalError;
 }
 
+function createEmergencyLocalQuestion({ previousQuestionId, branchFilter, context, reason = null, errors = [] }) {
+  const emergencyContexts = [
+    { recentIds: [], recentSignatures: [], recentQuestionSummaries: [] },
+    buildSignatureOnlyContext(context || {}, 12),
+    { ...(context || {}), recentQuestionSummaries: [], recentIds: [], recentSignatures: [] },
+  ];
+  const branchAttempts = [branchFilter, 'random'].filter((item, index, list) => item && list.indexOf(item) === index);
+
+  for (const fallbackBranch of branchAttempts) {
+    for (let attempt = 0; attempt < emergencyContexts.length; attempt += 1) {
+      try {
+        const question = generateAIQuestion({
+          previousQuestionId,
+          branchFilter: fallbackBranch,
+          context: emergencyContexts[attempt],
+        });
+        const validation = validateAIQuestionCase(question, [], {
+          context: emergencyContexts[attempt],
+          requestedBranch: fallbackBranch,
+          trustRemoteAi: true,
+          skipSemanticNovelty: true,
+          skipQuality: false,
+        });
+        if (!validation.ok) {
+          errors.push({ attempt: `emergency-${fallbackBranch}-${attempt + 1}`, reason: validation.errors.join('; ') });
+          continue;
+        }
+        rememberAIQuestion(question);
+        question.aiMeta = {
+          ...(question.aiMeta || {}),
+          emergencyFallback: true,
+          localDiversityAttempts: errors,
+          fallbackReason: reason?.message || String(reason || ''),
+        };
+        return {
+          ok: true,
+          question,
+          source: question.source || 'local-emergency-template-generator',
+          usedRemoteAI: false,
+          fallback: true,
+          error: reason,
+        };
+      } catch (emergencyError) {
+        errors.push({ attempt: `emergency-${fallbackBranch}-${attempt + 1}`, reason: emergencyError?.message || String(emergencyError) });
+      }
+    }
+  }
+  return null;
+}
+
 function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context, reason = null }) {
   const errors = [];
   for (let attempt = 1; attempt <= AI_LOCAL_DIVERSITY_RETRY_COUNT; attempt += 1) {
@@ -259,6 +339,10 @@ function createLocalFallbackQuestion({ previousQuestionId, branchFilter, context
       errors.push({ attempt, reason: localError?.message || String(localError) });
     }
   }
+
+  const emergencyFallback = createEmergencyLocalQuestion({ previousQuestionId, branchFilter, context, reason, errors });
+  if (emergencyFallback) return emergencyFallback;
+
   return {
     ok: false,
     question: null,

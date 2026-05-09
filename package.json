@@ -20,7 +20,8 @@
     "qa:ai-feedback-duplication": "node scripts/run-ai-feedback-duplication-gate-test.mjs",
     "qa:highlight-standard": "node scripts/run-highlight-standard-test.mjs",
     "qa:ai-spot-hero-spacing": "node scripts/run-ai-spot-hero-control-spacing-test.mjs",
-    "qa:ai-spot-hero-inset": "node scripts/run-ai-spot-hero-inset-test.mjs"
+    "qa:ai-spot-hero-inset": "node scripts/run-ai-spot-hero-inset-test.mjs",
+    "qa:ai-ui-generation-resilience": "node scripts/run-ai-ui-generation-resilience-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",
