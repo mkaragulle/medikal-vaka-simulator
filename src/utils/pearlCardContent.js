@@ -17,6 +17,32 @@ function titleCaseLabel(value = '') {
   return text.charAt(0).toLocaleUpperCase('tr') + text.slice(1);
 }
 
+function splitLeadSentence(backText = '') {
+  const text = normalizeText(backText);
+  if (!text) {
+    return { leadText: '', mainText: '' };
+  }
+
+  const sentences = text.split(/(?<=[.!?])\s+/).map((item) => normalizeText(item)).filter(Boolean);
+  if (!sentences.length) {
+    return { leadText: '', mainText: text };
+  }
+
+  const firstSentence = sentences[0];
+  const remaining = normalizeText(sentences.slice(1).join(' '));
+  const looksLikeChain = (firstSentence.match(/→/g) || []).length >= 2;
+  const isClueSentence = /doğru cevaba götürür/i.test(firstSentence) || /ayırt ettirici ipucu/i.test(firstSentence);
+
+  if ((looksLikeChain || isClueSentence) && remaining) {
+    return {
+      leadText: firstSentence,
+      mainText: remaining,
+    };
+  }
+
+  return { leadText: '', mainText: text };
+}
+
 export function splitPearlExplanation(explanation = '') {
   const text = normalizeText(explanation);
   if (!text) {
@@ -47,22 +73,28 @@ export function splitPearlExplanation(explanation = '') {
 }
 
 export function getPearlBackContent(card = {}) {
-  const backText = normalizeText(card.back);
+  const rawBackText = normalizeText(card.back);
+  const { leadText, mainText } = splitLeadSentence(rawBackText);
   const { bodyText, noteLabel, noteText } = splitPearlExplanation(card.explanation);
 
   let detailText = bodyText;
   if (detailText) {
-    const comparableBack = normalizeForCompare(backText);
+    const comparableBack = normalizeForCompare(mainText || rawBackText);
     const comparableDetail = normalizeForCompare(detailText);
     if (comparableDetail && comparableBack.includes(comparableDetail)) {
       detailText = '';
     }
   }
 
+  const backText = mainText || rawBackText;
+  const isCompactBack = backText.length > 138;
+
   return {
+    leadText,
     backText,
     detailText,
     noteLabel,
     noteText,
+    isCompactBack,
   };
 }

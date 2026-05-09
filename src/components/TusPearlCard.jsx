@@ -20,7 +20,7 @@ function TusPearlCard({
   const [flipped, setFlipped] = useState(false);
   const signal = resolveExamSignal(card);
   const appearedLabel = formatAppearedYears(signal);
-  const { backText, detailText, noteLabel, noteText } = getPearlBackContent(card);
+  const { leadText, backText, detailText, noteLabel, noteText, isCompactBack } = getPearlBackContent(card);
 
   return (
     <article className={`tus-pearl-card ${flipped ? 'is-flipped' : ''}`.trim()} data-branch={card.branchId}>
@@ -30,7 +30,8 @@ function TusPearlCard({
           <span className="tus-pearl-hint">Cevabı görmek için tıkla</span>
         </span>
         <span className="tus-pearl-card-face tus-pearl-card-back">
-          <strong>{backText}</strong>
+          {leadText ? <span className="tus-pearl-answer-chain">{leadText}</span> : null}
+          <strong className={isCompactBack ? 'compact' : ''}>{backText}</strong>
           {detailText ? <p>{detailText}</p> : null}
           {noteText ? (
             <span className="tus-pearl-note-box" role="note" aria-label={noteLabel || 'Önemli not'}>

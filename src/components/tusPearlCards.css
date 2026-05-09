@@ -3059,6 +3059,43 @@
   text-align: center;
 }
 
+.tus-pearl-answer-chain {
+  max-width: min(92%, 560px);
+  margin: 0 auto 2px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(20, 184, 166, 0.10);
+  color: rgb(15, 118, 110);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  font-weight: 800;
+  text-align: center;
+}
+
+.tus-pearl-answer-chain.focus {
+  max-width: min(560px, 92%);
+  padding: 10px 14px;
+  font-size: clamp(0.9rem, 1.05vw, 0.98rem);
+  line-height: 1.52;
+}
+
+.tus-pearl-card-back > strong.compact {
+  max-width: 92%;
+  font-size: 1rem;
+  line-height: 1.38;
+}
+
+.tus-pearl-focus-back > strong.compact {
+  max-width: min(610px, 92%);
+  font-size: clamp(1.22rem, 1.95vw, 1.72rem);
+  line-height: 1.22;
+}
+
+[data-theme='dark'] .tus-pearl-answer-chain {
+  background: rgba(13, 148, 136, 0.18);
+  color: rgba(153, 246, 228, 0.96);
+}
+
 .tus-pearl-note-box {
   width: min(92%, 560px);
   margin: 2px auto 0;

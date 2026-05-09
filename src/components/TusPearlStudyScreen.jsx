@@ -838,7 +838,8 @@ function TusPearlStudyScreen({
                     <strong>{activeCard.front}</strong>
                   </span>
                   <span className="tus-pearl-focus-face tus-pearl-focus-back">
-                    <strong>{activeCardContent.backText}</strong>
+                    {activeCardContent.leadText ? <span className="tus-pearl-answer-chain focus">{activeCardContent.leadText}</span> : null}
+                    <strong className={activeCardContent.isCompactBack ? 'compact' : ''}>{activeCardContent.backText}</strong>
                     {activeCardContent.detailText ? <p>{activeCardContent.detailText}</p> : null}
                     {activeCardContent.noteText ? (
                       <span className="tus-pearl-note-box focus" role="note" aria-label={activeCardContent.noteLabel || 'Önemli not'}>
