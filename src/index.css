@@ -9995,7 +9995,7 @@ html[data-theme="dark"] .card-surface {
   color: var(--text-secondary);
 }
 .patient-summary-card.professional-patient-summary-card {
-  margin-top: 18px;
+  margin-top: 16px;
   display: grid;
   gap: 14px;
 }
@@ -33705,8 +33705,8 @@ html[data-theme="dark"] .qualitative-result-finding,
 .ai-spot-narrative-heading h1 {
   margin: 0;
   color: #0f172a;
-  font-size: clamp(29px, 4vw, 44px);
-  line-height: 1.04;
+  font-size: clamp(26px, 3.4vw, 38px);
+  line-height: 1.08;
   letter-spacing: -0.055em;
   font-weight: 820;
   max-width: 880px;
@@ -33723,8 +33723,9 @@ html[data-theme="dark"] .qualitative-result-finding,
 
 .ai-spot-narrative-reading-panel {
   position: relative;
-  padding: clamp(22px, 3vw, 34px);
-  border-radius: 26px;
+  padding: clamp(21px, 2.6vw, 30px);
+  border-radius: 24px;
+  max-width: 880px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78)),
     repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.025) 0, rgba(15, 23, 42, 0.025) 1px, transparent 1px, transparent 34px);
@@ -33735,8 +33736,8 @@ html[data-theme="dark"] .qualitative-result-finding,
 .ai-spot-narrative-reading-panel p {
   margin: 0;
   color: #1e293b;
-  font-size: clamp(18px, 2.2vw, 22px);
-  line-height: 1.78;
+  font-size: clamp(17px, 1.45vw, 19px);
+  line-height: 1.68;
   letter-spacing: -0.018em;
   font-weight: 520;
 }
@@ -33759,6 +33760,68 @@ html[data-theme="dark"] .qualitative-result-finding,
   display: inline-flex;
   align-items: center;
   gap: 7px;
+}
+
+
+
+.ai-spot-compact-data-shell {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+  max-width: 880px;
+}
+
+.ai-spot-compact-data-group {
+  padding: 14px;
+  border-radius: 20px;
+  background: rgba(248, 250, 252, 0.78);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.ai-spot-compact-data-title {
+  margin-bottom: 10px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 820;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ai-spot-compact-data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  gap: 8px;
+}
+
+.ai-spot-compact-data-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 36px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(226, 232, 240, 0.86);
+  color: #0f172a;
+}
+
+.ai-spot-compact-data-item span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 760;
+  white-space: nowrap;
+}
+
+.ai-spot-compact-data-item strong {
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 820;
+  text-align: right;
+  white-space: nowrap;
 }
 
 .ai-spot-answer-shell {
@@ -33830,6 +33893,33 @@ html[data-theme="dark"] .ai-spot-narrative-reading-panel,
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04), 0 18px 48px rgba(0, 0, 0, 0.18);
 }
 
+
+html[data-theme="dark"] .ai-spot-compact-data-group,
+.app-shell[data-theme="dark"] .ai-spot-compact-data-group {
+  background: rgba(15, 23, 42, 0.56);
+  border-color: rgba(148, 163, 184, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+html[data-theme="dark"] .ai-spot-compact-data-title,
+.app-shell[data-theme="dark"] .ai-spot-compact-data-title,
+html[data-theme="dark"] .ai-spot-compact-data-item span,
+.app-shell[data-theme="dark"] .ai-spot-compact-data-item span {
+  color: #9aa9bc;
+}
+
+html[data-theme="dark"] .ai-spot-compact-data-item,
+.app-shell[data-theme="dark"] .ai-spot-compact-data-item {
+  background: rgba(2, 6, 23, 0.34);
+  border-color: rgba(148, 163, 184, 0.13);
+  color: #e5edf6;
+}
+
+html[data-theme="dark"] .ai-spot-compact-data-item strong,
+.app-shell[data-theme="dark"] .ai-spot-compact-data-item strong {
+  color: #e5edf6;
+}
+
 html[data-theme="dark"] .ai-spot-narrative-badge,
 .app-shell[data-theme="dark"] .ai-spot-narrative-badge {
   color: #5eead4;
@@ -33889,7 +33979,19 @@ html[data-theme="dark"] .ai-spot-answer-shell .tus-spot-olgular-question-callout
   }
 
   .ai-spot-narrative-reading-panel p {
-    font-size: 17px;
-    line-height: 1.72;
+    font-size: 16.5px;
+    line-height: 1.68;
+  }
+
+  .ai-spot-compact-data-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-spot-compact-data-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-spot-compact-data-item strong {
+    white-space: normal;
   }
 }

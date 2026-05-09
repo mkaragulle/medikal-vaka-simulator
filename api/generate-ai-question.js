@@ -38,6 +38,24 @@ const AI_QUESTION_JSON_SCHEMA = {
     setting: { type: 'string' },
     chiefComplaint: { type: 'string' },
     stem: { type: 'string' },
+    compactVitals: {
+      type: 'array',
+      items: {
+        type: 'object',
+        additionalProperties: false,
+        required: ['label', 'value'],
+        properties: { label: { type: 'string' }, value: { type: 'string' } },
+      },
+    },
+    compactObjectiveData: {
+      type: 'array',
+      items: {
+        type: 'object',
+        additionalProperties: false,
+        required: ['label', 'value'],
+        properties: { label: { type: 'string' }, value: { type: 'string' } },
+      },
+    },
     findings: {
       type: 'object',
       additionalProperties: false,
@@ -232,6 +250,8 @@ Zorunlu JSON kontratı:
   "setting": "string",
   "chiefComplaint": "string",
   "stem": "string",
+  "compactVitals": [{ "label": "TA", "value": "68/42 mmHg" }],
+  "compactObjectiveData": [{ "label": "Lökosit", "value": "16.200/mm³" }],
   "findings": {
     "history": ["string"],
     "exam": ["string"],
@@ -503,7 +523,11 @@ ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
 - Ön yüzde gösterilecek ana soru kökü yalnız stem alanıdır: stem, kullanıcının gördüğü tek akışlı TUS soru paragrafı gibi yazılmalıdır.
-- stem içine gerekli öykü, muayene, vital, laboratuvar, kültür, görüntüleme veya patoloji verilerini doğal cümle akışıyla ekle; kullanıcı ayrı hasta özeti, risk bağlamı veya tetkik kartı açmayacak.
+- stem gerçek TUS soru kökü gibi olmalı: 3-6 cümle, genellikle 80-150 kelime; daha kompleks olguda en fazla 220 kelime. Klinik vaka raporu gibi uzatma.
+- Vital bulgu her soruda zorunlu değildir. Yalnız şok, sepsis, anafilaksi, solunum yetmezliği, DKA, dehidratasyon, neonatal acil, hemodinamik karar veya ateşin kritik olduğu sorularda ver. Gereksiz vital seti üretme.
+- Vital bulgular sayısal olarak önemliyse stem içine uzun liste halinde yığma; compactVitals alanına kısa label/value çiftleri koy. Stem içinde gerekirse 'hipotansif ve taşikardik' gibi kısa ifade kullan.
+- Laboratuvar, kültür, görüntüleme veya patoloji verileri gerekiyorsa stem içinde yalnız karar verdirici sade değerleri ver; referans aralıklarını stem içine yığma. Sayısal verileri ayrıca compactObjectiveData alanına kısa label/value şeklinde koyabilirsin.
+- stem içine gerekli öykü, muayene, kültür, görüntüleme veya patoloji verilerini doğal TUS soru akışıyla ekle; kullanıcı ayrı hasta özeti, risk bağlamı veya tetkik kartı açmayacak.
 - findings alanları yalnız internal kalite kontrol içindir; stem olmadan cevaplanamayacak kritik veri findings içinde yalnız bırakılmamalıdır.
 - stem içinde Profil:, Başvuru:, Risk bağlamı:, Ayırt ettirici ipuçları:, Klinik gerekçe:, Kanıt zinciri:, Sınav notu: gibi başlık kırıntıları kullanma.
 - stem içinde doğru cevabı, doğru tanıyı veya post-answer öğretici cümleyi açık etme; yalnız soru çözmek için gerekli objektif veriyi ver.
@@ -518,9 +542,9 @@ Kesin kurallar:
 - En az iki güçlü, klinik olarak yakın seçenek olsun.
 - Tetkik sonucunda doğru tanı/cevap cümle olarak yazılmasın.
 - Tetkik yorumu “... tanısını doğrular”, “... ile uyumludur”, “kesin tanıdır” gibi direkt tanı dili kullanmasın.
-- Sayısal laboratuvar/tetkik sonucu yazarsan rows alanı zorunludur: ["Parametre", "Sonuç + birim", "Referans", "Durum"].
-- “Lökosit 15”, “CRP yüksek”, “D-dimer yüksek”, “Troponin pozitif”, “pH düşük” gibi birimsiz veya referanssız sonuç yazma.
-- Her sayısal laboratuvar sonucunda birim ve referans aralığı bulunmalıdır. Örnek: Lökosit 15.000/mm³, referans 4.000–10.000/mm³, durum Yüksek.
+- Sayısal laboratuvar/tetkik sonucu internal findings.rows içinde verilecekse şu formatı kullan: ["Parametre", "Sonuç + birim", "Referans", "Durum"].
+- Stem veya compactObjectiveData içinde referans aralığı yazma; yalnız değer + birim ver. Örnek: 'lökosit 16.200/mm³, CRP 12 mg/L ve pH 7.30'.
+- “Lökosit 15”, “CRP yüksek”, “D-dimer yüksek”, “Troponin pozitif”, “pH düşük” gibi birimsiz belirsiz sonuç yazma.
 - Nitel sonuçlarda referans “negatif”, “üreme olmamalı”, “saptanmamalı” veya “normal iletim” gibi beklenen değerle yazılmalıdır.
 - Doğru cevap, verilen objektif veriler yorumlanarak bulunmalı.
 - Her yanlış seçenek için neden yanlış olduğuna dair kısa ama öğretici feedback yaz; yanlış şık neyi yakalar, neyi kaçırır ve hangi ipucuyla elenir açık olsun.
@@ -531,7 +555,7 @@ Kesin kurallar:
 - Anafilaksi sorularında bağlamı ayır: toplum/ayaktan genel anafilakside ilk hayat kurtarıcı ilaç IM adrenalin olabilir; genel anestezi altında ameliyathanede ciddi hipotansiyon ve bronkospazm varsa doğru yaklaşım tetikleyici ajanı durdurma, yüzde 100 oksijen/hava yolu güvenliği, hızlı IV kristaloid ve hemodinamik ciddiyete göre adrenalin uygulamasını birlikte içermelidir.
 - Perioperatif anafilaksi yönetim sorusunda doğru cevabı tek başına IM adrenalin olarak yazma; soru tek ilaç soruyorsa kökü açıkça 'hayat kurtarıcı temel ilaç' diye sınırla.
 - Fizik muayeneye laboratuvar, EKG, görüntüleme, seroloji veya kan gazı sonucu yazma; muayene yalnız inspeksiyon, palpasyon, perküsyon ve oskültasyon bulgularından oluşsun.
-- 'wheezing' yerine 'hışıltılı solunum' kullan; 'Adrenalin (Epinefrin)' tekrar etme, ilk kullanımda 'adrenalin/epinefrin' yeterlidir; '1: 1000' yazma, '1:1000' veya '1 mg/mL' yaz.
+- 'wheezing' yerine 'hışıltılı solunum' kullan; '28 gw' yerine '28. gebelik haftasında', '7 gün yaşındaki' yerine '7 günlük' yaz; 'Adrenalin (Epinefrin)' tekrar etme, ilk kullanımda 'adrenalin/epinefrin' yeterlidir; '1: 1000' yazma, '1:1000' veya '1 mg/mL' yaz.
 - Hasta öyküsü doğal cümle olmalı; 'Nedeniyle Ameliyathane', 'Ameliyathane.' gibi kopuk parçalar yazma.
 - Şu ifadeleri asla yazma: "Beklenen ana ipuçları bu tabloda baskın değildir", "Karar ... yönünde güçlenir", "Ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır", "Laboratuvar paterni", "Kanıt 2", "Kanıt 3", "Kanıt 4", "Objektif bulguların karar basamağını desteklemesi", "Doğru yanıta götüren ana bulgudur", "İlk karar", "Tedavi önceliği", "Bu veri klinik bağlamda değerlendirilir", "Nedeniyle Ameliyathane", "Morfolojik patern:", "Morfolojik patern. Morfolojik patern", "karar verdirici paternyla", "likefaksiyon nekrozuyla", "kısa TUS pratiğinde ele alınır", "Klinik değerlendirme için ek veri", "Objektif karar verisi", "verilen öğrenme hedefi", "yanıt ekseni".
 - Temel bilim/mekanizma sorusunda gerçek objektif veri yoksa findings.investigations boş dizi olsun; "Laboratuvar" placeholder kartı üretme.
@@ -671,9 +695,10 @@ function parseAffordableTokenLimit(text = '') {
   return Number.isFinite(value) && value > 0 ? value : null;
 }
 
-function shortText(value = '', fallback = '') {
+function shortText(value = '', fallback = '', limit = 180) {
+  const maxLength = Math.max(40, Number(limit) || 180);
   const text = String(value || fallback || '').replace(/\s+/g, ' ').trim();
-  return text.length > 180 ? `${text.slice(0, 177).trim()}…` : text;
+  return text.length > maxLength ? `${text.slice(0, maxLength - 1).trim()}…` : text;
 }
 
 function inferChiefComplaint(question = {}) {
@@ -739,8 +764,10 @@ function completeRemoteQuestion(question = {}, context = {}) {
     demographics: shortText(question.demographics || question.d, 'Hasta'),
     setting: shortText(question.setting, 'Klinik değerlendirme'),
     chiefComplaint: inferChiefComplaint(question),
-    stem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.'),
-    narrativeStem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.'),
+    stem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.', 900),
+    narrativeStem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.', 900),
+    compactVitals: Array.isArray(question.compactVitals || question.cv) ? (question.compactVitals || question.cv).slice(0, 5) : [],
+    compactObjectiveData: Array.isArray(question.compactObjectiveData || question.co) ? (question.compactObjectiveData || question.co).slice(0, 6) : [],
     stemMode: 'narrative',
     findings: {
       history: Array.isArray(findings.history) ? findings.history.map(shortText).filter(Boolean).slice(0, 4) : [],
@@ -785,6 +812,8 @@ function expandCompactQuestion(compact = {}, context = {}, providerMeta = {}) {
     evidenceChain: compact.k || compact.evidenceChain,
     examPearl: compact.p || compact.examPearl,
     chiefComplaint: compact.cc || compact.chiefComplaint,
+    compactVitals: compact.cv || compact.compactVitals,
+    compactObjectiveData: compact.co || compact.compactObjectiveData,
   }, context);
   expanded.remoteCompactMode = true;
   Object.assign(expanded, providerMeta);
@@ -804,15 +833,15 @@ function buildCompactOpenRouterPrompt(originalPrompt = '', context = {}) {
     return `KlinikIQ için Türkçe, TUS tarzı tek klinik spot soru üret. Branş: ${branch}. Seçilecek konu: ${selectedTopic}. Soru tipi: ${questionType}. Seed: ${seed}. Yakın tekrar etme: ${recent || 'yok'}.
 
 Sadece şu kısa JSON objesini döndür:
-{"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"tüm gerekli verileri içeren 2-4 cümlelik tek akışlı soru kökü","q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
+{"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"80-150 kelimelik gerçek TUS soru kökü","cv":[{"label":"TA","value":"68/42 mmHg"}],"co":[{"label":"Lökosit","value":"16.200/mm³"}],"q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
 
-Kurallar: JSON dışında yazma. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı, ayrı kartlara ihtiyaç bırakmayacak tek paragraf TUS soru kökü olmalı; gerekli lab/kültür/muayene verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kategoriden olsun. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
+Kurallar: JSON dışında yazma. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı gerçek TUS soru kökü gibi 3-6 cümle olmalı; gereksiz vital seti verme, referans aralıklarını s içine yığma. Vital veya lab sayıları kritikse cv/co alanlarını kısa label/value olarak doldur, ama cv/co boş kalabilir. Gerekli kültür/muayene/görüntüleme verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kategoriden olsun. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
   }
 
   return `${originalPrompt}
 
 DÜŞÜK TOKEN MODU: Tam şema üretme. Yalnızca şu KISA JSON objesini döndür ve her stringi çok kısa tut:
-{"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"2-4 cümle tek akışlı soru kökü","q":"soru","o":["A metni","B metni","C metni","D metni","E metni"],"c":"A","e":"1 cümle gerekçe","k":["ipucu1","ipucu2","ipucu3"],"p":"1 kısa TUS notu"}
+{"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"3-6 cümle TUS soru kökü","cv":[],"co":[],"q":"soru","o":["A metni","B metni","C metni","D metni","E metni"],"c":"A","e":"1 cümle gerekçe","k":["ipucu1","ipucu2","ipucu3"],"p":"1 kısa TUS notu"}
 JSON dışında tek karakter yazma. Çift tırnakları metin içinde kullanma. En fazla 300 token.`;
 }
 

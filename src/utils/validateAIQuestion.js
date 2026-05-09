@@ -135,6 +135,7 @@ export function validateAIQuestionPayload(payload = {}) {
   if (!payload.explanation || String(payload.explanation).trim().length < 60) errors.push('explanation eksik veya çok kısa');
   if (!Array.isArray(payload.evidenceChain) || payload.evidenceChain.length < 3) errors.push('evidenceChain en az 3 madde olmalı');
   if (!payload.examPearl || String(payload.examPearl).trim().length < 20) errors.push('examPearl eksik veya çok kısa');
+  warnings.push(...assessNarrativeReadability(payload));
 
   const wrongFeedback = payload.wrongOptionFeedback || {};
   options.forEach((option) => {
@@ -185,6 +186,40 @@ export function validateAIQuestionPayload(payload = {}) {
     warnings,
     normalizedOptions: options,
   };
+}
+
+
+function normalizeCompactClinicalData(items = [], max = 6) {
+  const seen = new Set();
+  const out = [];
+  (Array.isArray(items) ? items : []).forEach((item) => {
+    const label = sanitizeMeasurementText(String(item?.label || item?.name || item?.parameter || '').trim());
+    const value = sanitizeMeasurementText(String(item?.value || item?.result || item?.text || '').trim())
+      .replace(/,\s*referans\s*[^,.;]+(?:,\s*(?:yüksek|düşük|normal|patolojik|pozitif|negatif))?/giu, '')
+      .trim();
+    if (!label || !value) return;
+    const key = normalizeQuestionText(`${label} ${value}`);
+    if (seen.has(key)) return;
+    seen.add(key);
+    out.push({ label, value });
+  });
+  return out.slice(0, max);
+}
+
+function assessNarrativeReadability(payload = {}) {
+  const warnings = [];
+  const stem = sanitizeMeasurementText(payload.narrativeStem || payload.primaryStem || payload.stem || '');
+  const wordCount = stem.split(/\s+/).filter(Boolean).length;
+  if (wordCount > 240) warnings.push('stem 240 kelimeyi aşıyor; TUS spot için kısaltılacak');
+  if (/\b\d+\s*gw\b|\b\d+\s*g\s*w\b/iu.test(stem)) warnings.push('gebelik haftası kısaltması normalize edilecek');
+  if (/\b\d+\s+gün\s+yaşındaki\b/iu.test(stem)) warnings.push('yaş ifadesi TUS Türkçesine normalize edilecek');
+  const denseVitalLabels = ['kan basıncı', 'nabız', 'solunum', 'ateş', 'spo'].filter((label) => stem.toLocaleLowerCase('tr').includes(label)).length;
+  if (denseVitalLabels >= 4) warnings.push('vital bulgular paragrafta yoğun verilmiş; kompakt kutu sunumu kullanılacak');
+  if (/referans\s+[^.?!]{20,}/iu.test(stem)) warnings.push('referans aralıkları soru metnini boğuyor; ön yüzde sadeleştirilecek');
+  if (/Profil:|Başvuru:|Risk bağlamı:|Ayırt ettirici ipuçları:|Klinik gerekçe:|Kanıt zinciri:/iu.test(stem)) {
+    warnings.push('legacy kart başlığı soru köküne sızmış; temizlenecek');
+  }
+  return warnings;
 }
 
 function buildDifferentialComparisonFromPayload(payload, correctText, options) {
@@ -268,6 +303,8 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     question: sanitizeMeasurementText(payload.question),
     questionType: payload.questionType || 'spot',
     clinicalFocus: payload.learningTarget,
+    compactVitals: normalizeCompactClinicalData(payload.compactVitals || payload.cv || [], 5),
+    compactObjectiveData: normalizeCompactClinicalData(payload.compactObjectiveData || payload.compactObjective || payload.co || [], 6),
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
       profile: payload.demographics || payload.relatedBranch || 'AI AI soru üretimi',

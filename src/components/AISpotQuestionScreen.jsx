@@ -6,6 +6,8 @@ import {
   buildAISpotContextLine,
   buildAISpotNarrativeStem,
   buildSafeAISpotTitle,
+  getAISpotCompactObjectiveData,
+  getAISpotCompactVitals,
   getAISpotPreviewDiagnostics,
 } from '../utils/aiSpotNarrative.js';
 
@@ -25,10 +27,29 @@ function AISpotMetaBadge({ icon, children, tone = 'teal' }) {
   );
 }
 
+function CompactDataGroup({ title, items = [] }) {
+  if (!items.length) return null;
+  return (
+    <div className="ai-spot-compact-data-group" aria-label={title}>
+      <div className="ai-spot-compact-data-title">{title}</div>
+      <div className="ai-spot-compact-data-grid">
+        {items.map((item, index) => (
+          <div className="ai-spot-compact-data-item" key={`${title}-${item.label}-${index}`}>
+            <span>{item.label}</span>
+            <strong>{item.value}</strong>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function AISpotNarrativePanel({ question, hardMode = false }) {
   const title = buildSafeAISpotTitle(question);
   const contextLine = buildAISpotContextLine(question);
   const paragraphs = buildAISpotNarrativeStem(question);
+  const compactVitals = getAISpotCompactVitals(question);
+  const compactObjectiveData = getAISpotCompactObjectiveData(question);
   const difficultyMeta = getDifficultyMeta(question.difficulty);
   const diagnostics = import.meta.env?.DEV ? getAISpotPreviewDiagnostics(question) : null;
 
@@ -59,6 +80,13 @@ function AISpotNarrativePanel({ question, hardMode = false }) {
         ))}
       </div>
 
+      {(compactVitals.length || compactObjectiveData.length) ? (
+        <div className="ai-spot-compact-data-shell">
+          <CompactDataGroup title="Vital bulgular" items={compactVitals} />
+          <CompactDataGroup title="Objektif veriler" items={compactObjectiveData} />
+        </div>
+      ) : null}
+
       <div className="ai-spot-narrative-footer" aria-hidden="true">
         <span><Icon name="ShieldCheck" size={15} /> Cevap öncesi yalnızca soru kökü gösterilir.</span>
       </div>
@@ -66,6 +94,9 @@ function AISpotNarrativePanel({ question, hardMode = false }) {
       {diagnostics ? (
         <div className="ai-spot-dev-diagnostics" aria-hidden="true">
           <span>paragraphs: {diagnostics.paragraphCount}</span>
+          <span>words: {diagnostics.wordCount}</span>
+          <span>vitals: {diagnostics.compactVitalsCount}</span>
+          <span>objective: {diagnostics.compactObjectiveCount}</span>
           <span>legacy labels: {diagnostics.hasLegacyBoxLabels ? 'yes' : 'no'}</span>
           <span>correct in stem: {diagnostics.containsCorrectAnswerText ? 'yes' : 'no'}</span>
         </div>

@@ -607,6 +607,7 @@ export function repairAIQuestionQuality(question = {}) {
   repaired.stem = hasForbiddenPhrase(repaired.stem || '') || String(repaired.stem || '').length < 45
     ? buildNaturalHistorySummary(repaired)
     : cleanSentence(repaired.stem);
+  repaired.narrativeStem = repaired.stem;
 
   const risks = filterQualityItems(repaired.patientIntro?.riskContext || [], 3);
   const clues = filterQualityItems(repaired.patientIntro?.distinctiveClues || repaired.evidenceChain || [], 4);
