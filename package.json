@@ -12,11 +12,11 @@
     "qa:ai-answer-leakage": "node scripts/run-ai-answer-leakage-100-test.mjs"
   },
   "dependencies": {
-    "@vitejs/plugin-react": "5.1.4",
-    "vite": "7.2.7",
-    "react": "19.2.5",
-    "react-dom": "19.2.5",
-    "firebase": "12.12.1"
+    "@vitejs/plugin-react": "^5.1.4",
+    "firebase": "^12.12.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "vite": "^7.2.7"
   },
   "engines": {
     "node": ">=20.19.0"

@@ -255,6 +255,8 @@ function makeHistoryItem(question = {}) {
       getEvidenceText(question),
       getExamPearlText(question),
     ].filter(Boolean).join(' | ')),
+    branchId: question.branchId || question.aiMeta?.branchId || '',
+    source: question.source || question.aiMeta?.generator || '',
     createdAt: Date.now(),
   };
 }
@@ -275,6 +277,8 @@ export function rememberAIQuestion(question = {}) {
     historyItem.contentSignature,
     historyItem.generationSignature,
     historyItem.signature,
+    historyItem.exactSignature,
+    historyItem.semanticFingerprint,
   ].filter(Boolean)));
   if (signatures.length) {
     const recentSignatures = getRecentAIQuestionSignatures();

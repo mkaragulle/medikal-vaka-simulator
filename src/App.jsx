@@ -177,9 +177,11 @@ function App() {
   const [branchRouteTransition, setBranchRouteTransition] = useState(null);
   const branchRouteTimers = useRef([]);
   const aiQuestionTimer = useRef(null);
+  const latestAIQuestionRequestId = useRef(0);
   const isDemoUser = isDemoAccount(currentUser);
 
   function clearAIQuestionTimer() {
+    latestAIQuestionRequestId.current += 1;
     if (aiQuestionTimer.current) {
       window.clearTimeout(aiQuestionTimer.current);
       aiQuestionTimer.current = null;
@@ -716,6 +718,8 @@ function App() {
 
   const generateNextAIQuestion = useCallback((previousQuestionId = null, branchFilterOverride = aiBranchFilter) => {
     clearAIQuestionTimer();
+    const requestId = latestAIQuestionRequestId.current + 1;
+    latestAIQuestionRequestId.current = requestId;
     setAIPracticeState((current) => ({
       ...current,
       active: true,
@@ -728,17 +732,32 @@ function App() {
     }));
 
     aiQuestionTimer.current = window.setTimeout(async () => {
-      const result = await createAIQuestion({ previousQuestionId, branchFilter: branchFilterOverride });
-      setAIPracticeState({
-        active: true,
-        question: result.question,
-        loading: false,
-        error: result.ok ? null : (result.error || new Error('AI question generation failed')),
-        generationSource: result.source || result.question?.source || null,
-        usedRemoteAI: Boolean(result.usedRemoteAI),
-        fallback: Boolean(result.fallback),
-      });
-      aiQuestionTimer.current = null;
+      try {
+        const result = await createAIQuestion({ previousQuestionId, branchFilter: branchFilterOverride });
+        if (latestAIQuestionRequestId.current !== requestId) return;
+        setAIPracticeState({
+          active: true,
+          question: result.question,
+          loading: false,
+          error: result.ok ? null : (result.error || new Error('AI question generation failed')),
+          generationSource: result.source || result.question?.source || null,
+          usedRemoteAI: Boolean(result.usedRemoteAI),
+          fallback: Boolean(result.fallback),
+        });
+      } catch (error) {
+        if (latestAIQuestionRequestId.current !== requestId) return;
+        setAIPracticeState((current) => ({
+          ...current,
+          active: true,
+          loading: false,
+          error,
+          generationSource: null,
+          usedRemoteAI: false,
+          fallback: false,
+        }));
+      } finally {
+        if (latestAIQuestionRequestId.current === requestId) aiQuestionTimer.current = null;
+      }
     }, 420);
   }, [aiBranchFilter]);
 

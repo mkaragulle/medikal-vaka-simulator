@@ -331,6 +331,94 @@ function normalizeRemoteText(text = '') {
     .trim();
 }
 
+
+function getRemoteCorrectText(question = {}) {
+  const correctId = String(question.correctAnswer || question.c || '').trim().toUpperCase();
+  const options = Array.isArray(question.options || question.o) ? (question.options || question.o) : [];
+  const option = options.find((item, index) => {
+    const id = typeof item === 'object' ? item.id : OPTION_IDS[index];
+    return String(id || '').toUpperCase() === correctId;
+  });
+  return typeof option === 'string' ? option : (option?.text || option?.label || question.correctAnswerText || '');
+}
+
+function makeRemoteOptionSetSignature(question = {}) {
+  const options = normalizeOptionObjects(question.options || question.o);
+  const payload = options.map((item) => normalizeRemoteText(item.text)).sort((a, b) => a.localeCompare(b, 'tr')).join(' | ');
+  return payload;
+}
+
+function tokenizeRemoteContent(value = '') {
+  const stopWords = new Set(['ve', 'veya', 'ile', 'icin', 'olan', 'olarak', 'hasta', 'olgu', 'olguda', 'klinik', 'soru', 'yanit', 'dogru', 'secenek', 'tus', 'spot', 'hangi', 'temel', 'uygun', 'degerlendirilir']);
+  return normalizeRemoteText(value).split(' ').filter((token) => token.length > 2 && !stopWords.has(token));
+}
+
+function remoteSimilarity(a = '', b = '') {
+  const setA = new Set(tokenizeRemoteContent(a));
+  const setB = new Set(tokenizeRemoteContent(b));
+  if (!setA.size || !setB.size) return 0;
+  let intersection = 0;
+  setA.forEach((token) => { if (setB.has(token)) intersection += 1; });
+  const union = new Set([...setA, ...setB]).size || 1;
+  const containment = intersection / Math.min(setA.size, setB.size);
+  return Math.max(intersection / union, containment * 0.86);
+}
+
+function buildRemoteCandidateText(question = {}) {
+  return normalizeRemoteText([
+    question.relatedBranch || question.b,
+    question.title || question.t,
+    question.learningTarget || question.lt,
+    question.demographics || question.d,
+    question.chiefComplaint || question.cc,
+    question.stem || question.s,
+    question.question || question.q,
+    getRemoteCorrectText(question),
+    makeRemoteOptionSetSignature(question),
+    collectText(question.findings || {}).join(' '),
+    collectText(question.evidenceChain || question.k || []).join(' '),
+    question.examPearl || question.p,
+  ].filter(Boolean).join(' | '));
+}
+
+function validateRemoteDiversity(question = {}, context = {}) {
+  const recent = Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries.slice(0, 40) : [];
+  if (!recent.length) return { passed: true };
+  const candidateCorrect = normalizeRemoteText(getRemoteCorrectText(question));
+  const candidateOptions = makeRemoteOptionSetSignature(question);
+  const candidateText = buildRemoteCandidateText(question);
+  const candidateTitle = normalizeRemoteText(question.title || question.t || '');
+  const candidateTopic = normalizeRemoteText(context.selectedTopic || question.learningTarget || question.title || question.t || '');
+  const candidateType = normalizeRemoteText(context.questionType || question.questionType || '');
+
+  const immediate = recent[0] || {};
+  if (candidateCorrect && candidateCorrect === normalizeRemoteText(immediate.correct || immediate.normalizedCorrect || '')) {
+    return { passed: false, reason: 'same_correct_answer_back_to_back', similarTo: immediate.id, score: 0.9 };
+  }
+
+  const recentTopics = recent.slice(0, 8).map((item) => normalizeRemoteText(item.topic || item.title || item.learningTarget || '')).filter(Boolean);
+  if (candidateTopic && recentTopics.slice(0, 2).includes(candidateTopic)) {
+    return { passed: false, reason: 'same_topic_recently', similarTo: recent[0]?.id, score: 0.86 };
+  }
+
+  for (const item of recent) {
+    const itemCorrect = normalizeRemoteText(item.correct || item.normalizedCorrect || '');
+    const itemOptions = String(item.optionSetSignature || '').trim();
+    const itemText = normalizeRemoteText(item.combinedText || [item.branch, item.title, item.learningTarget, item.correct, Array.isArray(item.optionTexts) ? item.optionTexts.join(' | ') : ''].filter(Boolean).join(' | '));
+    const itemTitle = normalizeRemoteText(item.title || item.normalizedTitle || '');
+    const itemType = normalizeRemoteText(item.questionType || '');
+    const sameCorrect = candidateCorrect && itemCorrect === candidateCorrect;
+    const sameOptions = candidateOptions && itemOptions && (itemOptions.includes(candidateOptions) || candidateOptions.includes(itemOptions.replace(/^opts-/, '')));
+    const sameType = !candidateType || !itemType || candidateType === itemType;
+    const textSimilarity = remoteSimilarity(candidateText, itemText);
+    const titleSimilarity = remoteSimilarity(candidateTitle, itemTitle);
+    if (sameCorrect && sameOptions) return { passed: false, reason: 'option_set_duplicate', similarTo: item.id, score: Math.max(textSimilarity, 0.96) };
+    if (sameType && sameCorrect && textSimilarity >= 0.86) return { passed: false, reason: 'semantic_near_duplicate', similarTo: item.id, score: textSimilarity };
+    if (sameCorrect && titleSimilarity >= 0.92 && textSimilarity >= 0.72) return { passed: false, reason: 'same_title_answer_target', similarTo: item.id, score: Math.max(titleSimilarity, textSimilarity) };
+  }
+  return { passed: true };
+}
+
 function validateRemoteClinicalCoherence(question = {}) {
   const errors = [];
   const texts = collectText(question);
@@ -377,37 +465,47 @@ function validateRawQuestion(question = {}) {
   return { ok: errors.length === 0, errors };
 }
 
-function buildPrompt({ branchFilter = 'Rastgele', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
+function buildPrompt({ branchFilter = 'Rastgele', recentQuestionSummaries = [], recentTopics = [], recentCorrectAnswers = [], selectedTopic = '', selectedSubtopic = '', questionType = '', seed = '', previousTopicWindow = [], attempt = 1, antiRepeatNonce = '' }) {
   const recentList = recentQuestionSummaries
     .slice(0, 22)
     .map((item, index) => `${index + 1}. ${item.branch || 'TUS'} | başlık: ${item.title || ''} | doğru: ${item.correct || ''}`)
     .join('\n');
 
-  const forbiddenTopics = recentQuestionSummaries
-    .slice(0, 22)
-    .map((item) => [item.title, item.correct].filter(Boolean).join(' / '))
-    .filter(Boolean)
-    .join('; ');
+  const forbiddenTopics = uniqueNonEmpty([
+    ...recentQuestionSummaries.slice(0, 22).map((item) => [item.topic || item.title, item.correct].filter(Boolean).join(' / ')),
+    ...recentTopics,
+    ...recentCorrectAnswers,
+  ]).join('; ');
+
+  const previousWindow = Array.isArray(previousTopicWindow)
+    ? previousTopicWindow.slice(0, 10).map((item, index) => `${index + 1}. ${item.topic || ''} | ${item.questionType || ''} | ${item.correct || ''}`).join('\n')
+    : '';
 
   return `Sen KlinikIQ için çalışan kıdemli TUS soru yazarı ve medikal eğitim içerik denetleyicisisin.
 
 Görev: Tek bir yeni TUS odaklı, kısa klinik spot soru üret. Soru Türkçe olmalı, bilimsel olarak doğru olmalı ve JSON dışında hiçbir açıklama döndürmemelisin.
 
 Branş isteği: ${branchFilter || 'Rastgele'}
+Bu denemede seçilecek ana konu: ${selectedTopic || selectedSubtopic || 'Klinik olarak farklı yeni konu seç'}
+Bu denemede soru tipi: ${questionType || 'tanı/tedavi/tetkik/mekanizma eksenlerinden biri'}
+Çeşitlilik seed: ${seed || antiRepeatNonce || Date.now()}
 Üretim denemesi: ${attempt}
 Çeşitlilik anahtarı: ${antiRepeatNonce || Date.now()}
 
 Yakın zamanda üretilen sorular:
 ${recentList || 'Henüz yok.'}
 
+Son konu penceresi:
+${previousWindow || 'Henüz yok.'}
+
 YASAK konu/doğru cevap listesi:
 ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
-- Yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik paternini tekrar etme.
+- Bu denemede verilen ana konudan şaşma; ama yakın listedeki konu, başlık, doğru cevap, klinik odak veya aynı serolojik/tetkik paternini tekrar etme.
 - Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
 - Aynı hastalık kullanılacaksa soru açısı kesin değişsin: tanı yerine ilk tedavi, tetkik yorumu, komplikasyon, mekanizma veya yönetim basamağı sor.
-- Deneme 2 veya 3 ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç.
+- Deneme 2 veya sonrası ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç; yalnız şık sırasını değiştirmek yeni soru sayılmaz.
 - Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
 - Tüm seçenekler aynı kategori içinde olsun; tanı sorusunda tanılar, tedavi sorusunda tedaviler, tetkik sorusunda tetkikler.
@@ -688,16 +786,19 @@ function expandCompactQuestion(compact = {}, context = {}, providerMeta = {}) {
 function buildCompactOpenRouterPrompt(originalPrompt = '', context = {}) {
   const branch = context?.branchFilter || 'TUS Spot Olgular';
   const recent = Array.isArray(context?.recentQuestionSummaries)
-    ? context.recentQuestionSummaries.slice(0, 8).map((item) => [item.title, item.correct].filter(Boolean).join(' / ')).filter(Boolean).join('; ')
+    ? context.recentQuestionSummaries.slice(0, 10).map((item) => [item.topic || item.title, item.correct, item.questionType].filter(Boolean).join(' / ')).filter(Boolean).join('; ')
     : '';
+  const selectedTopic = context?.selectedTopic || context?.selectedSubtopic || 'farklı yeni klinik konu';
+  const questionType = context?.questionType || 'farklı soru tipi';
+  const seed = context?.seed || Date.now();
 
   if (isOpenRouterFreeMode()) {
-    return `KlinikIQ için Türkçe, TUS tarzı tek klinik spot soru üret. Branş: ${branch}. Yakın tekrar etme: ${recent || 'yok'}.
+    return `KlinikIQ için Türkçe, TUS tarzı tek klinik spot soru üret. Branş: ${branch}. Seçilecek konu: ${selectedTopic}. Soru tipi: ${questionType}. Seed: ${seed}. Yakın tekrar etme: ${recent || 'yok'}.
 
 Sadece şu kısa JSON objesini döndür:
 {"t":"başlık","b":"branş","lt":"hedef","d":"demografi","s":"2 kısa cümle olgu","q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
 
-Kurallar: JSON dışında yazma. Seçenekler aynı kategoriden olsun. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
+Kurallar: JSON dışında yazma. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. Seçenekler aynı kategoriden olsun. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
   }
 
   return `${originalPrompt}
@@ -713,10 +814,10 @@ async function callOpenRouterQuestion(prompt, context = {}) {
 
   const baseUrl = (process.env.OPENROUTER_BASE_URL || 'https://openrouter.ai/api/v1').replace(/\/$/, '');
   const maxTokens = Number(process.env.OPENROUTER_MAX_TOKENS || process.env.OPENROUTER_MAX_OUTPUT_TOKENS || (isOpenRouterFreeMode() ? 850 : 900));
-  const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.55);
-  const topP = Number(process.env.OPENROUTER_TOP_P || 0.85);
-  const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.15);
-  const presencePenalty = Number(process.env.OPENROUTER_PRESENCE_PENALTY || 0.1);
+  const temperature = Number(process.env.OPENROUTER_TEMPERATURE || 0.82);
+  const topP = Number(process.env.OPENROUTER_TOP_P || 0.92);
+  const frequencyPenalty = Number(process.env.OPENROUTER_FREQUENCY_PENALTY || 0.25);
+  const presencePenalty = Number(process.env.OPENROUTER_PRESENCE_PENALTY || 0.2);
   const useJsonMode = parseBooleanEnv('OPENROUTER_USE_JSON_MODE', true);
   const enableReasoning = parseBooleanEnv('OPENROUTER_REASONING_ENABLED', false);
   const excludeReasoning = parseBooleanEnv('OPENROUTER_REASONING_EXCLUDE', true);
@@ -836,8 +937,8 @@ async function callOpenRouterQuestion(prompt, context = {}) {
         { role: 'system', content: 'Return only one tiny valid JSON object for a Turkish medical exam question. No Markdown. No reasoning text.' },
         { role: 'user', content: buildCompactOpenRouterPrompt(prompt, context) },
       ],
-      temperature: Math.min(temperature, 0.35),
-      top_p: Math.min(topP, 0.75),
+      temperature: Math.max(0.72, Math.min(temperature, 0.88)),
+      top_p: Math.max(0.86, Math.min(topP, 0.95)),
       max_tokens: compactMaxTokens,
     };
     if (useJsonMode) compactBody.response_format = { type: 'json_object' };
@@ -1009,7 +1110,9 @@ export default async function handler(request, response) {
 
   try {
     const body = await parseJsonBody(request);
-    const remoteAttempts = Math.max(1, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.OPENROUTER_REMOTE_ATTEMPTS || 1));
+    const remoteAttempts = Math.max(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.OPENROUTER_REMOTE_ATTEMPTS || 3));
+    let diversityRejectedCount = 0;
+    let nearDuplicateRejectedCount = 0;
 
     for (let remoteAttempt = 1; remoteAttempt <= remoteAttempts; remoteAttempt += 1) {
       try {
@@ -1020,6 +1123,14 @@ export default async function handler(request, response) {
         });
         const rawQuestion = await generateWithAvailableProvider(prompt, body);
         const question = completeRemoteQuestion(rawQuestion, body);
+
+        const diversityValidation = validateRemoteDiversity(question, body);
+        if (!diversityValidation.passed) {
+          diversityRejectedCount += 1;
+          if (/near|semantic|option|topic|correct/i.test(diversityValidation.reason || '')) nearDuplicateRejectedCount += 1;
+          attemptErrors.push(`remote attempt ${remoteAttempt}: diversity validation failed: ${diversityValidation.reason} (${diversityValidation.score || 0})`);
+          continue;
+        }
 
         const validation = validateRawQuestion(question);
         const editorialValidation = validateRemoteEditorialQuality(question);
@@ -1037,6 +1148,9 @@ export default async function handler(request, response) {
           ok: true,
           provider: question.provider || 'remote-ai',
           remoteAttempt,
+          diversityRejectedCount,
+          nearDuplicateRejectedCount,
+          temperature: Number(process.env.OPENROUTER_TEMPERATURE || 0.82),
           question,
         });
       } catch (error) {

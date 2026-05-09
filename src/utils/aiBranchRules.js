@@ -210,7 +210,12 @@ export const AI_BRANCH_RULES = [
 export function getBranchRule(branchValue = '') {
   const normalized = normalizeBranch(branchValue || '');
   if (!normalized || normalized === 'random' || normalized === 'rastgele') return null;
-  return AI_BRANCH_RULES.find((item) => item.normalizedNames.some((name) => normalized.includes(name) || name.includes(normalized))) || null;
+  const normalizedDashed = normalized.replace(/\s+/g, '-');
+  return AI_BRANCH_RULES.find((item) => (
+    normalizeBranch(item.id) === normalized
+    || normalizeBranch(item.id) === normalizedDashed
+    || item.normalizedNames.some((name) => normalized.includes(name) || name.includes(normalized))
+  )) || null;
 }
 
 export function getBranchRuleForSeed(seed = {}, fallbackBranch = '') {

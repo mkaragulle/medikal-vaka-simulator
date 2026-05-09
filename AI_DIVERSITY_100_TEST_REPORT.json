@@ -1,0 +1,160 @@
+{
+  "generatedAt": "2026-05-09T09:08:16.441Z",
+  "note": "This local QA run validates generator/history/signature/diversity behavior without calling the remote provider; remote API keys are not available in this environment.",
+  "sameBranch": {
+    "label": "Test A — same branch 50 generated questions",
+    "acceptedCount": 50,
+    "rejectedCandidateCount": 0,
+    "uniqueTopicCount": 1,
+    "uniqueCorrectAnswerCount": 5,
+    "optionSetDuplicates": 45,
+    "backToBackSameTopic": 49,
+    "backToBackSameCorrect": 10,
+    "maxTopicRepeat": 50,
+    "maxCorrectAnswerRepeat": 15,
+    "topRepeatedTopics": [
+      [
+        "Klinik verileri yorumlama.",
+        50
+      ]
+    ],
+    "topRepeatedCorrectAnswers": [
+      [
+        "Hipertrofik pilor stenozu",
+        15
+      ],
+      [
+        "Basit febril konvülziyon",
+        11
+      ],
+      [
+        "Nazal aspirasyon, oksijen ve hidrasyon desteği",
+        10
+      ],
+      [
+        "Kawasaki hastalığı için IVIG ve aspirin başlamak",
+        8
+      ],
+      [
+        "Deksametazon + nebulize epinefrin",
+        6
+      ]
+    ],
+    "rejectedReasons": {},
+    "sampleTitles": [
+      "Süt çocuğunda fışkırır kusma",
+      "Uzamış ateş ve mukozal bulgular",
+      "Süt çocuğunda fışkırır kusma",
+      "Süt çocuğunda fışkırır kusma",
+      "Havlar tarzda öksürük ve ses kısıklığı",
+      "Süt çocuğunda hışıltılı solunum",
+      "Süt çocuğunda fışkırır kusma",
+      "Ateş sonrası kısa nöbet",
+      "Süt çocuğunda fışkırır kusma",
+      "Süt çocuğunda hışıltılı solunum",
+      "Uzamış ateş ve mukozal bulgular",
+      "Süt çocuğunda hışıltılı solunum"
+    ],
+    "branchFilter": "pediatrics"
+  },
+  "mixed": {
+    "label": "Test B — mixed branches 50 generated questions",
+    "acceptedCount": 50,
+    "rejectedCandidateCount": 0,
+    "uniqueTopicCount": 1,
+    "uniqueCorrectAnswerCount": 21,
+    "optionSetDuplicates": 28,
+    "backToBackSameTopic": 49,
+    "backToBackSameCorrect": 0,
+    "maxTopicRepeat": 50,
+    "maxCorrectAnswerRepeat": 5,
+    "topRepeatedTopics": [
+      [
+        "Klinik verileri yorumlama.",
+        50
+      ]
+    ],
+    "topRepeatedCorrectAnswers": [
+      [
+        "N-asetilsistein",
+        5
+      ],
+      [
+        "Akut apandisit",
+        5
+      ],
+      [
+        "Minimal değişiklik hastalığı",
+        5
+      ],
+      [
+        "Kontrastsız beyin BT",
+        4
+      ],
+      [
+        "Akut hepatit A enfeksiyonu",
+        3
+      ],
+      [
+        "Basit febril konvülziyon",
+        3
+      ],
+      [
+        "Fenilalanin hidroksilaz defekti",
+        3
+      ],
+      [
+        "İzotonik salin ile sıvı resüsitasyonu",
+        3
+      ],
+      [
+        "Endometriozis",
+        3
+      ],
+      [
+        "Primer adrenal yetmezlik",
+        2
+      ]
+    ],
+    "rejectedReasons": {},
+    "sampleTitles": [
+      "Sarılık ve koyu idrar",
+      "Parasetamol doz aşımı",
+      "Hiperpigmentasyon ve elektrolit paterni",
+      "Ateş sonrası kısa nöbet",
+      "Sağ alt kadran ağrısı",
+      "Yenidoğan taramasında fenilalanin yüksekliği",
+      "Çocukta masif proteinüri",
+      "Erken gebelikte ağrı ve kanama",
+      "Ani konuşma bozukluğu",
+      "Refleks arkı yorumu",
+      "Sarılık ve koyu idrar",
+      "Parasetamol doz aşımı"
+    ],
+    "branchFilters": [
+      "medical-microbiology",
+      "medical-pharmacology",
+      "internal-medicine",
+      "pediatrics",
+      "general-surgery",
+      "medical-biochemistry",
+      "medical-pathology",
+      "obstetrics-gynecology",
+      "minor-rotations",
+      "physiology"
+    ]
+  },
+  "optionOrderTrap": {
+    "passed": false,
+    "reason": "same_signature",
+    "similarityScore": 1,
+    "originalTitle": "Ateş sonrası kısa nöbet"
+  },
+  "summary": {
+    "totalGeneratedAccepted": 100,
+    "totalRejectedCandidates": 0,
+    "nearDuplicateOrDuplicateRejected": 0,
+    "retriesRedirectedToDifferentTopic": 0,
+    "optionOrderTrapCaught": true
+  }
+}
