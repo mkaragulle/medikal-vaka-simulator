@@ -343,16 +343,16 @@ function GlossaryText({ text = '', enabled = true, terms: extraTerms = [], branc
   const terms = useMemo(() => getGlossaryTerms(extraTerms, { branchId }), [extraTerms, branchId]);
   const parts = useMemo(() => splitByGlossary(text, enabled ? terms : []), [text, enabled, terms]);
 
-  if (!enabled) return <>{text}</>;
+  if (!enabled) return <span className="glossary-text-flow">{text}</span>;
 
   return (
-    <>
+    <span className="glossary-text-flow">
       {parts.map((part, index) => part.type === 'term' ? (
         <GlossaryTerm key={`${part.value}-${index}`} definition={part.entry.definition}>{part.value}</GlossaryTerm>
       ) : (
-        <span key={`${part.value}-${index}`}>{part.value}</span>
+        <span className="glossary-plain-segment" key={`${part.value}-${index}`}>{part.value}</span>
       ))}
-    </>
+    </span>
   );
 }
 

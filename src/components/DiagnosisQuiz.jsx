@@ -117,6 +117,7 @@ function DiagnosisQuiz({
       : 'Kısa TUS olgusunda öykü, muayene ve objektif verileri yorumlayarak en doğru yanıtı seç.')
     : 'Olgu paternine en uygun seçeneği işaretle.';
   const questionSubtext = questionSubtextOverride || defaultQuestionSubtext;
+  const showInlineQuestionStem = isSpotCase && Boolean(questionPrompt) && hideSpotQuestionCallout;
 
   const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;
@@ -154,6 +155,13 @@ function DiagnosisQuiz({
       {!isSpotCase && investigationOrders.length > 0 && !hardMode && !examMeta?.active && !submitted && selected && orderedInvestigationIds.length === 0 ? (
         <div className="preanswer-investigation-nudge">
           Tanı seçmeden önce karar verdirici tetkikleri istemeyi düşünebilirsin.
+        </div>
+      ) : null}
+
+      {showInlineQuestionStem ? (
+        <div className="ai-spot-inline-question-stem" role="note" aria-label="Soru kökü">
+          <span className="ai-spot-inline-question-stem-label">Soru kökü</span>
+          <strong><GlossaryText text={questionPrompt} enabled={!hardMode && !examMeta?.active} /></strong>
         </div>
       ) : null}
 

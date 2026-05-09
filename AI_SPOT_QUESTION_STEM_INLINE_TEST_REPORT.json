@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "total": 6,
+  "failed": [],
+  "checks": [
+    {
+      "name": "inline stem gate exists for AI Spot when callout is hidden",
+      "pass": true
+    },
+    {
+      "name": "AI Spot soru kökü renders before option grid",
+      "pass": true
+    },
+    {
+      "name": "old separate callout remains hidden in AI single-flow mode",
+      "pass": true
+    },
+    {
+      "name": "inline stem has dedicated visible styling",
+      "pass": true
+    },
+    {
+      "name": "inline stem max-width matches answer column rhythm",
+      "pass": true
+    },
+    {
+      "name": "dark mode styling exists",
+      "pass": true
+    }
+  ]
+}
