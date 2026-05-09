@@ -835,11 +835,10 @@ function TusPearlStudyScreen({
               >
                 <button type="button" className="tus-pearl-focus-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
                   <span className="tus-pearl-focus-face tus-pearl-focus-front">
-                    <strong>{activeCard.front}</strong>
+                    <strong>{activeCardContent.frontText || activeCard.front}</strong>
                   </span>
                   <span className="tus-pearl-focus-face tus-pearl-focus-back">
                     <span className="tus-pearl-back-stack focus">
-                      {activeCardContent.leadText ? <span className="tus-pearl-answer-chain focus">{activeCardContent.leadText}</span> : null}
                       <span className="tus-pearl-answer-block focus">
                         <span className="tus-pearl-back-kicker">Yanıt</span>
                         <strong className={activeCardContent.isCompactBack ? 'compact' : ''}>{activeCardContent.backText}</strong>
@@ -848,6 +847,12 @@ function TusPearlStudyScreen({
                         <span className="tus-pearl-detail-block focus">
                           <span className="tus-pearl-back-kicker muted">Kısa gerekçe</span>
                           <span className="tus-pearl-detail-text">{activeCardContent.detailText}</span>
+                        </span>
+                      ) : null}
+                      {activeCardContent.tusTipText ? (
+                        <span className="tus-pearl-answer-chain focus" role="note" aria-label="TUS ipucu">
+                          <span className="tus-pearl-back-kicker muted">TUS ipucu</span>
+                          <span>{activeCardContent.tusTipText}</span>
                         </span>
                       ) : null}
                       {activeCardContent.noteText ? (

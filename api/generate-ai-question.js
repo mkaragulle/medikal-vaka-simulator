@@ -9,7 +9,7 @@ TUS DİL VE MADDE YAZIM STANDARDI:
 - Beş seçenek aynı kavramsal kategoridedir: tanı-tanı, tedavi-tedavi, test-test, mekanizma-mekanizma. Hiçbiri, hepsi, yukarıdakilerin hepsi kullanılmaz.
 - En az iki seçenek yakın ve savunulabilir çeldirici olmalıdır; klinik karar sorularında bir seçenek önce/sonra algoritma basamağı tuzağı olabilir.
 - Yanlış seçenek feedbacki hangi durumda doğru olabileceğini ve bu olguda hangi ipucuyla elendiğini açıklar.
-- Hap bilgi tek bir yüksek verimli karar kuralı taşır: ipucu → karar. Ön yüz aktif hatırlama sorusu, arka yüz net cevap + kısa gerekçe + ayırıcı not mantığıyla kurulur; boş, mekanik veya tekrar eden cümle kullanılmaz.
+- Hap bilgi bağımsız aktif hatırlama kartıdır. Gerçek kaynak soru kökü ve seçenekler kullanıcıya gösterilmiyorsa "sorusunda", "bu soruda", "soru kökünde", "doğru cevaba götüren", "doğru şık", "seçeneklerde" ve "cevap anahtarı" gibi meta-sınav ifadeleri kullanılmaz. Ön yüz doğrudan cevaplanabilir kısa soru; arka yüz Yanıt + Kısa gerekçe + TUS ipucu + Ayırıcı not mantığıyla kurulur; ön yüz cümlesi arka yüzde tekrarlanmaz.
 - High-risk klinik kararlarda model serbest yorum yapmaz: hiperkalemi + EKG değişikliği, anafilaksi, sepsis/septik şok, DKA + düşük potasyum, STEMI, inme, menenjit ve status epileptikus gibi konularda ilk/öncelikli basamak deterministik klinik kurala göre seçilir.
 - Türkçe tıbbi terminoloji tutarlı yazılır; birimler eksiksizdir; yarım cümle, gündelik ifade ve başlık kırıntısı kullanılmaz.`;
 
@@ -679,6 +679,7 @@ Kesin kurallar:
 - explanation 2-4 cümlelik Klinik Gerekçe kalitesinde olmalı; doğru cevabı gereksiz biçimde tekrar tekrar adlandırma.
 - evidenceChain 3-5 somut olgu ipucundan oluşmalı; meta cümle veya öğrenme çıktısı yazma.
 - examPearl tek bir kısa Sınav notu olmalı; Klinik Gerekçe cümlesini kopyalama. Bir kırmızı bayrak, sık tuzak, ilk adım veya ayırt ettirici marker ver; 1-2 cümleyi aşma.
+- AI hap bilgi veya pearl üretiminde normal kart tipinde şu ifadeler kesin yasaktır: "sorusunda", "bu soruda", "soru kökünde", "doğru cevaba götüren", "doğru cevabı destekleyen", "doğru şık", "yanlış şık", "seçeneklerde", "şıklarda", "kaynak soruda", "cevap anahtarı". Kaynak soru gerçekten gösterilmiyorsa bunları aktif hatırlama diline çevir: "TUS’ta", "klinik tabloda", "bu patern için", "ayırt ettirici bulgu".
 - keyWords/keywords en fazla 3 kısa chip değerinde olmalı; aynı kavramı tekrar etme. 'IM önerisi', 'Epinefrin 0.3 mg', '3 mg', uzun cümle veya Klinik Gerekçe ile aynı metni chip olarak yazma.
 - Klinik gerekçe, sınav notu, kanıt zinciri ve seçenek feedbackleri ayrı işlev görmeli; aynı cümle veya aynı bilgi blokları farklı alanlarda tekrar edilmemeli.
 - managementSteps 2-4 kısa ilk yaklaşım/yönetim basamağı içermeli; temel bilim sorusunda mekanistik yaklaşım notu gibi yaz.

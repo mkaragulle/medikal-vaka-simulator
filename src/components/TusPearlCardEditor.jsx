@@ -7,6 +7,8 @@ const EMPTY_FORM = {
   front: '',
   back: '',
   explanation: '',
+  tusTip: '',
+  differentialNote: '',
   branchId: 'tus-spot-olgular',
   subject: '',
   topic: '',
@@ -27,6 +29,8 @@ function buildInitialForm(card, defaultCatalogId = '') {
     front: card.front || '',
     back: card.back || '',
     explanation: card.explanation || '',
+    tusTip: card.tusTip || '',
+    differentialNote: card.differentialNote || '',
     branchId: card.branchId || 'tus-spot-olgular',
     subject: card.subject || '',
     topic: card.topic || '',
@@ -106,6 +110,8 @@ function TusPearlCardEditor({
       front,
       back,
       explanation: form.explanation,
+      tusTip: form.tusTip,
+      differentialNote: form.differentialNote,
       keywords: form.keywords,
       tags: form.tags,
       difficulty: form.difficulty,
@@ -136,17 +142,28 @@ function TusPearlCardEditor({
 
         <form className="pearl-editor-form" onSubmit={handleSubmit}>
           <label>
-            <span>Ön yüz / soru</span>
-            <textarea value={form.front} onChange={(event) => updateField('front', event.target.value)} placeholder="Bu kartta kendine ne sormak istiyorsun?" rows={3} />
+            <span>Ön yüz / aktif hatırlama</span>
+            <textarea value={form.front} onChange={(event) => updateField('front', event.target.value)} placeholder="Örnek: Anafilakside hayat kurtarıcı ilk tedavi nedir?" rows={3} />
           </label>
           <label>
-            <span>Arka yüz / cevap</span>
-            <textarea value={form.back} onChange={(event) => updateField('back', event.target.value)} placeholder="Cevap veya hatırlamak istediğin bilgi" rows={3} />
+            <span>Yanıt</span>
+            <textarea value={form.back} onChange={(event) => updateField('back', event.target.value)} placeholder="Net cevap: İntramüsküler adrenalin." rows={3} />
           </label>
           <label>
-            <span>Kısa açıklama</span>
-            <textarea value={form.explanation} onChange={(event) => updateField('explanation', event.target.value)} placeholder="İstersen 1–2 cümle not ekle" rows={2} />
+            <span>Kısa gerekçe</span>
+            <textarea value={form.explanation} onChange={(event) => updateField('explanation', event.target.value)} placeholder="1–2 cümlelik bilimsel gerekçe ekle. Ön yüz cümlesini tekrar etme." rows={2} />
           </label>
+
+          <div className="pearl-editor-lite-grid">
+            <label>
+              <span>TUS ipucu</span>
+              <textarea value={form.tusTip} onChange={(event) => updateField('tusTip', event.target.value)} placeholder="Sınavda yakalanacak kısa patern" rows={2} />
+            </label>
+            <label>
+              <span>Ayırıcı not</span>
+              <textarea value={form.differentialNote} onChange={(event) => updateField('differentialNote', event.target.value)} placeholder="Benzer kavramla farkı veya çeldirici tuzağı" rows={2} />
+            </label>
+          </div>
 
           <div className="pearl-editor-lite-grid">
             <label>

@@ -1,3 +1,5 @@
+import { normalizePearlCardFields } from './pearlCardContent.js';
+
 export const PEARL_STORAGE_KEY = 'klinikiq-pearl-card-progress-v1';
 
 export const defaultPearlState = {
@@ -50,8 +52,15 @@ function normalizeArrayText(value = []) {
 
 export function normalizeUserPearlCard(card = {}, index = 0) {
   const now = new Date().toISOString();
-  const front = normalizeString(card.front);
-  const back = normalizeString(card.back);
+  const structured = normalizePearlCardFields({
+    ...card,
+    front: normalizeString(card.front),
+    back: normalizeString(card.back || card.answer),
+    answer: normalizeString(card.answer || card.back),
+    explanation: normalizeString(card.explanation),
+    tusTip: normalizeString(card.tusTip),
+    differentialNote: normalizeString(card.differentialNote),
+  });
   return {
     id: card.id || `user-card-migrated-${index}-${Date.now()}`,
     source: 'user',
@@ -60,9 +69,12 @@ export function normalizeUserPearlCard(card = {}, index = 0) {
     branchId: normalizeString(card.branchId, 'tus-spot-olgular') || 'tus-spot-olgular',
     subject: normalizeString(card.subject),
     topic: normalizeString(card.topic),
-    front,
-    back,
-    explanation: normalizeString(card.explanation),
+    front: structured.front,
+    back: structured.back,
+    answer: structured.answer,
+    explanation: structured.explanation,
+    tusTip: structured.tusTip,
+    differentialNote: structured.differentialNote,
     keywords: normalizeArrayText(card.keywords),
     tags: normalizeArrayText(card.tags),
     difficulty: normalizeString(card.difficulty, 'orta') || 'orta',

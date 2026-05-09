@@ -24,7 +24,8 @@
     "qa:ai-ui-generation-resilience": "node scripts/run-ai-ui-generation-resilience-test.mjs",
     "qa:ai-spot-question-stem-inline": "node scripts/run-ai-spot-question-stem-inline-test.mjs",
     "qa:glossary-inline-flow": "node scripts/run-glossary-inline-flow-test.mjs",
-    "qa:ai-scientific-regression": "node scripts/run-ai-scientific-quality-regression-test.mjs"
+    "qa:ai-scientific-regression": "node scripts/run-ai-scientific-quality-regression-test.mjs",
+    "qa:pearl-active-recall-language": "node scripts/run-pearl-active-recall-language-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",

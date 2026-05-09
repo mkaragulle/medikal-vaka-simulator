@@ -20,18 +20,17 @@ function TusPearlCard({
   const [flipped, setFlipped] = useState(false);
   const signal = resolveExamSignal(card);
   const appearedLabel = formatAppearedYears(signal);
-  const { leadText, backText, detailText, noteLabel, noteText, isCompactBack } = getPearlBackContent(card);
+  const { frontText, tusTipText, backText, detailText, noteLabel, noteText, isCompactBack } = getPearlBackContent(card);
 
   return (
     <article className={`tus-pearl-card ${flipped ? 'is-flipped' : ''}`.trim()} data-branch={card.branchId}>
       <button type="button" className="tus-pearl-card-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
         <span className="tus-pearl-card-face tus-pearl-card-front">
-          <strong>{card.front}</strong>
+          <strong>{frontText || card.front}</strong>
           <span className="tus-pearl-hint">Cevabı görmek için tıkla</span>
         </span>
         <span className="tus-pearl-card-face tus-pearl-card-back">
           <span className="tus-pearl-back-stack">
-            {leadText ? <span className="tus-pearl-answer-chain">{leadText}</span> : null}
             <span className="tus-pearl-answer-block">
               <span className="tus-pearl-back-kicker">Yanıt</span>
               <strong className={isCompactBack ? 'compact' : ''}>{backText}</strong>
@@ -40,6 +39,12 @@ function TusPearlCard({
               <span className="tus-pearl-detail-block">
                 <span className="tus-pearl-back-kicker muted">Kısa gerekçe</span>
                 <span className="tus-pearl-detail-text">{detailText}</span>
+              </span>
+            ) : null}
+            {tusTipText ? (
+              <span className="tus-pearl-answer-chain" role="note" aria-label="TUS ipucu">
+                <span className="tus-pearl-back-kicker muted">TUS ipucu</span>
+                <span>{tusTipText}</span>
               </span>
             ) : null}
             {noteText ? (

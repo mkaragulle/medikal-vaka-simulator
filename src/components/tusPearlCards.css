@@ -4198,3 +4198,28 @@
     width: min(94%, 560px);
   }
 }
+
+/* =========================================================
+   V126 — Active-recall pearl back-face normalization
+   ========================================================= */
+.tus-pearl-answer-chain[aria-label='TUS ipucu'] {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  border-radius: 18px;
+  padding: 10px 13px;
+  white-space: normal;
+  text-align: center;
+}
+
+.tus-pearl-answer-chain[aria-label='TUS ipucu'] > span:last-child {
+  display: block;
+  color: inherit;
+  font-weight: 760;
+  line-height: 1.52;
+}
+
+.tus-pearl-answer-chain.focus[aria-label='TUS ipucu'] {
+  border-radius: 22px;
+  padding: 13px 16px;
+}

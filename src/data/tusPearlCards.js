@@ -2375,19 +2375,89 @@ function readableKeywordChain(keywords = []) {
 
 function buildKeywordBack(topic, keywords) {
   const chain = readableKeywordChain(keywords);
-  const explanation = cleanSentence(topic.explanation);
-  if (!chain) return explanation || cleanSentence(topic.mainAnswer);
-  return `${chain} birlikte değerlendirilir. ${explanation}`.trim();
+  if (!chain) return cleanSentence(topic.mainAnswer);
+  return cleanSentence(chain);
+}
+
+const SPECIAL_KEYWORD_CARDS = {
+  'Karbonmonoksit zehirlenmesi': {
+    front: 'Karbonmonoksit zehirlenmesinde PaO₂ normal olsa bile doku hipoksisi neden gelişir?',
+    answer: 'CO, hemoglobine yüksek afiniteyle bağlanarak karboksihemoglobin oluşturur ve oksijenin dokulara bırakılmasını azaltır.',
+    explanation: 'Bu nedenle pulse oksimetre normal görünebilse bile dokular oksijenlenemez.',
+    tusTip: 'CO → karboksihemoglobin → oksijen disosiasyon eğrisinde sola kayma → pulse oksimetre yanıltıcı.',
+    differentialNote: 'PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesindedir.',
+  },
+  'Hiperkalemi + EKG değişikliği': {
+    front: 'EKG değişikliği olan ağır hiperkalemide ilk tedavi basamağı nedir?',
+    answer: 'İntravenöz kalsiyum glukonat.',
+    explanation: 'EKG değişikliği olan ağır hiperkalemide öncelik kardiyak membran stabilizasyonudur.',
+    tusTip: 'K⁺ ≥ 6,5 mEq/L ile sivri T dalgası, P dalgasında silinme veya QRS genişlemesi varsa ilk basamak kalsiyumdur.',
+    differentialNote: 'İnsülin-glukoz potasyumu hücre içine kaydırır; ancak EKG değişikliği varsa membran stabilizasyonunun yerine geçmez.',
+  },
+  'Anafilaksi': {
+    front: 'Anafilakside hayat kurtarıcı ilk tedavi nedir?',
+    answer: 'İntramüsküler adrenalin.',
+    explanation: 'Alerjen maruziyeti sonrası hipotansiyon, ürtiker, bronkospazm veya laringeal ödem varsa ilk ilaç adrenalindir.',
+    tusTip: 'Anafilakside antihistaminik ve steroid destek tedavidir; ilk hayat kurtarıcı basamak adrenalin uygulamasıdır.',
+    differentialNote: 'Astım atağında ürtiker/hipotansiyon beklenmez; herediter anjiyoödemde ürtiker tipik değildir ve adrenalin yanıtı sınırlı olabilir.',
+  },
+  'SLE aktivite': {
+    front: 'SLE hastalık aktivitesinin izleminde hangi laboratuvar paterni kullanılır?',
+    answer: 'Anti-dsDNA artışı ve C3/C4 düşüklüğü.',
+    explanation: 'Bu patern özellikle lupus nefriti veya alevlenme bağlamında hastalık aktivitesini destekler.',
+    tusTip: 'Aktivite izlemi için anti-dsDNA ve kompleman düzeyleri birlikte yorumlanır.',
+    differentialNote: 'ANA tanıda duyarlı olabilir; aktivite izlemi için anti-dsDNA ve C3/C4 paterni daha değerlidir.',
+  },
+  'Sepsis erken yaklaşımı': {
+    front: 'Septik şok şüphesinde ilk yaklaşım hangi iki basamağı içermelidir?',
+    answer: 'Geniş spektrumlu antibiyotik başlanması ve hızlı kristaloid resüsitasyonu.',
+    explanation: 'Hipotansiyon, laktat yüksekliği ve enfeksiyon odağı birlikteyse erken antibiyotik ve sıvı tedavisi önceliklidir.',
+    tusTip: 'Sepsis/şok sorularında ilk yaklaşım yalnız antibiyotik veya yalnız sıvı değildir; erken kombine resüsitasyon düşünülür.',
+    differentialNote: 'Vazopressör, yeterli sıvı resüsitasyonuna rağmen hipotansiyon sürerse gündeme gelir.',
+  },
+  'Hiperkalemi tedavi sırası': {
+    front: 'Hiperkalemide kalsiyum glukonat ile insülin-glukozun temel farkı nedir?',
+    answer: 'Kalsiyum membranı stabilize eder; insülin-glukoz potasyumu hücre içine kaydırır.',
+    explanation: 'EKG bulgusu varsa ilk hedef aritmiyi önlemek için kardiyak membran stabilizasyonudur.',
+    tusTip: 'Ağır hiperkalemi + EKG değişikliği → önce IV kalsiyum; ardından hücre içine kaydırıcı tedaviler.',
+    differentialNote: 'Diyaliz potasyumu vücuttan uzaklaştırır; ancak acil EKG değişikliğinde ilk saniyeler içinde membran stabilizasyonunun yerini tutmaz.',
+  },
+  'Anafilaksi antihistaminik tuzağı': {
+    front: 'Anafilakside antihistaminik neden ilk tedavi değildir?',
+    answer: 'Antihistaminik kaşıntı ve ürtikeri azaltabilir; hava yolu ödemi, bronkospazm ve şoku hızla düzelten temel ilaç değildir.',
+    explanation: 'Anafilakside mortaliteyi azaltan ilk farmakolojik basamak adrenalin uygulamasıdır.',
+    tusTip: 'Ürtiker + bronkospazm/hipotansiyon varsa antihistaminik değil adrenalin önceliklidir.',
+    differentialNote: 'Antihistaminik destek tedavi olarak eklenebilir; adrenalinin yerine geçmez.',
+  },
+};
+
+function buildKeywordFront(topic, keywords = []) {
+  const special = SPECIAL_KEYWORD_CARDS[topic.topic];
+  if (special?.front) return special.front;
+  const chain = readableKeywordChain(keywords);
+  if (chain) return `${topic.topic} için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?`;
+  return `${topic.topic} hangi temel bilgiyle hatırlanmalıdır?`;
+}
+
+function buildTrapFront(topic) {
+  return `${topic.topic} ile karışabilecek temel ayırıcı nokta nedir?`;
+}
+
+function buildTusTip(topic, keywords = []) {
+  const chain = readableKeywordChain(keywords);
+  if (chain) return `${chain}.`;
+  return cleanSentence(topic.explanation);
 }
 
 function buildVariantExplanation(topic, variant, keywords = []) {
   const explanation = cleanSentence(topic.explanation);
   const trap = cleanSentence(topic.trap);
   const answer = cleanSentence(topic.mainAnswer);
-  const chain = readableKeywordChain(keywords);
+  const special = SPECIAL_KEYWORD_CARDS[topic.topic];
 
   if (variant === 'keywords') {
-    return trap ? `${explanation} Ayırıcı not: ${trap}` : explanation;
+    if (special?.explanation) return special.explanation;
+    return explanation;
   }
   if (variant === 'trap') {
     return `${answer} ${explanation}`.trim();
@@ -2395,7 +2465,7 @@ function buildVariantExplanation(topic, variant, keywords = []) {
   if (variant === 'extra') {
     return trap ? `${explanation} Ayırıcı not: ${trap}` : explanation;
   }
-  return trap ? `${explanation} Ayırıcı ipucu: ${trap}` : explanation;
+  return trap ? `${explanation} Ayırıcı not: ${trap}` : explanation;
 }
 
 function buildCard(topic, topicIndex, variantIndex) {
@@ -2420,25 +2490,37 @@ function buildCard(topic, topicIndex, variantIndex) {
       ...base,
       front: topic.mainQuestion,
       back: topic.mainAnswer,
+      answer: topic.mainAnswer,
       explanation: buildVariantExplanation(topic, variant, keywords),
+      tusTip: buildTusTip(topic, keywords),
+      differentialNote: cleanSentence(topic.trap),
       cardType: 'Aktif hatırlama',
     };
   }
   if (variant === 'keywords') {
+    const special = SPECIAL_KEYWORD_CARDS[topic.topic] || {};
+    const answer = special.answer || buildKeywordBack(topic, keywords);
     return {
       ...base,
-      front: `${topic.topic} sorusunda doğru cevaba götüren ayırt ettirici ipuçları hangileridir?`,
-      back: buildKeywordBack(topic, keywords),
+      front: buildKeywordFront(topic, keywords),
+      back: answer,
+      answer,
       explanation: buildVariantExplanation(topic, variant, keywords),
+      tusTip: special.tusTip || cleanSentence(topic.explanation),
+      differentialNote: special.differentialNote || cleanSentence(topic.trap),
       cardType: 'Anahtar kelime',
     };
   }
   if (variant === 'trap') {
+    const answer = cleanSentence(topic.trap);
     return {
       ...base,
-      front: `${topic.topic} sorusunda hangi yanıltıcı seçenek veya algoritma tuzağına dikkat edilmelidir?`,
-      back: topic.trap,
+      front: buildTrapFront(topic),
+      back: answer,
+      answer,
       explanation: buildVariantExplanation(topic, variant, keywords),
+      tusTip: buildTusTip(topic, keywords),
+      differentialNote: '',
       cardType: 'Sınav tuzağı',
     };
   }
@@ -2446,7 +2528,10 @@ function buildCard(topic, topicIndex, variantIndex) {
     ...base,
     front: topic.extraQuestion,
     back: topic.extraAnswer,
+    answer: topic.extraAnswer,
     explanation: buildVariantExplanation(topic, variant, keywords),
+    tusTip: buildTusTip(topic, keywords),
+    differentialNote: cleanSentence(topic.trap),
     cardType: 'Detay spot',
   };
 }
