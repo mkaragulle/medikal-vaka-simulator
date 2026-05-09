@@ -218,6 +218,45 @@ function cleanKeywordList(keywords = [], contextTexts = []) {
   return chips.slice(0, MAX_FEEDBACK_CHIPS);
 }
 
+function isLongKeywordCandidate(value = '') {
+  const text = normalizeText(value);
+  if (!text) return false;
+  if (text.length > 38) return true;
+  if (text.split(/\s+/u).length > 5 && !/[↑↓+/]/u.test(text)) return true;
+  return /[.!?]/u.test(text);
+}
+
+function cleanInsightPoint(value = '') {
+  const text = normalizeText(value)
+    .replace(/^\s*(?:anahtar\s*kelime|ipucu|bulgu|kanıt|spot|tus\s*işareti)\s*[:：-]\s*/iu, '')
+    .replace(/\bIM\s+önerisi\b/giu, 'IM uygulama')
+    .replace(/\bwheezing\b/giu, 'hışıltılı solunum')
+    .replace(/\b([Ii])U\/ml\b/gu, '$1U/mL')
+    .replace(/\bcomplement\s+C([34])\b/giu, 'C$1')
+    .trim();
+  if (!text) return '';
+  return ensureSentence(truncateText(text, 126));
+}
+
+function cleanInsightList(keywords = [], contextTexts = [], chips = []) {
+  const seen = new Set(chips.map(semanticKey).filter(Boolean));
+  const points = [];
+
+  (keywords || []).forEach((keyword) => {
+    const raw = normalizeText(keyword);
+    if (!isLongKeywordCandidate(raw)) return;
+    const point = cleanInsightPoint(raw);
+    if (!point) return;
+    const key = semanticKey(point) || bareKey(point);
+    if (!key || seen.has(key)) return;
+    if (isTooSimilarToAny(point, [...contextTexts, ...points], 0.78)) return;
+    seen.add(key);
+    points.push(point);
+  });
+
+  return points.slice(0, 4);
+}
+
 function cleanTrap(value = '', contextTexts = []) {
   const text = cleanExamNoteText(value, []);
   if (!text || isTooSimilarToAny(text, contextTexts, 0.78)) return '';
@@ -256,11 +295,13 @@ export function feedbackDuplicationGate({
   const spotPearl = cleanExamNoteText(signal.spotPearl || '', contextTexts);
   const signalContext = [...contextTexts, spotPearl].filter(Boolean);
   const keywords = cleanKeywordList(signal.keywords || [], signalContext);
-  const examTrap = cleanTrap(signal.examTrap || '', signalContext);
-  const cleanedPearls = cleanPearls(pearls, signalContext);
+  const keyPoints = cleanInsightList(signal.keywords || [], signalContext, keywords);
+  const examTrap = cleanTrap(signal.examTrap || '', [...signalContext, ...keyPoints]);
+  const cleanedPearls = cleanPearls(pearls, [...signalContext, ...keyPoints]);
 
   const hasSignalContent = Boolean(
     spotPearl
+    || keyPoints.length
     || keywords.length
     || examTrap
     || signal.appearedYears?.length
@@ -272,6 +313,7 @@ export function feedbackDuplicationGate({
     signal: {
       ...signal,
       spotPearl,
+      keyPoints,
       keywords,
       examTrap,
       hasContent: hasSignalContent,

@@ -34568,3 +34568,344 @@ html[data-theme="dark"] .exam-note-keywords span,
     white-space: normal !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Global visual-emphasis reset: no paragraph highlight strips in teaching cards
+   -------------------------------------------------------------------------- */
+.glossary-term,
+.glossary-term:hover,
+.glossary-term:focus,
+.glossary-term:focus-visible,
+.glossary-term:active,
+.answer-feedback-panel .glossary-term,
+.exam-note-feedback-card .glossary-term,
+.tus-spot-signal-feedback .glossary-term,
+.exam-signal-box .glossary-term,
+.clinical-pearls-card .glossary-term,
+.tus-pearl-card .glossary-term,
+.tus-pearl-study-shell .glossary-term {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  box-decoration-break: slice !important;
+  -webkit-box-decoration-break: slice !important;
+}
+
+.answer-feedback-panel .glossary-term,
+.exam-note-feedback-card .glossary-term,
+.tus-spot-signal-feedback .glossary-term,
+.exam-signal-box .glossary-term,
+.clinical-pearls-card .glossary-term {
+  color: inherit !important;
+  font-weight: inherit !important;
+  text-decoration-color: color-mix(in srgb, currentColor 28%, transparent) !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.14em !important;
+}
+
+.spot-note-card.exam-note-feedback-card,
+.answer-feedback-panel-pro .spot-note-card.exam-note-feedback-card,
+.answer-feedback-panel .spot-note-card.exam-note-feedback-card {
+  grid-column: 1 / -1;
+  display: grid !important;
+  gap: 12px !important;
+  border-color: color-mix(in srgb, var(--accent) 16%, var(--border-subtle)) !important;
+  background:
+    radial-gradient(circle at 96% 0%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 36%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 97%, var(--accent) 3%), var(--surface-1)) !important;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.055) !important;
+}
+
+.spot-note-card .feedback-card-head {
+  margin-bottom: 2px !important;
+}
+
+.exam-note-content-stack {
+  display: grid;
+  gap: 10px;
+}
+
+.exam-note-meta-row,
+.keyword-badge-row,
+.exam-note-keywords,
+.exam-signal-keywords {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 7px !important;
+  margin: 0 !important;
+}
+
+.keyword-badge,
+.info-chip,
+.exam-note-keywords span,
+.exam-signal-keywords span,
+.exam-signal-chip,
+.tus-pearl-chip,
+.tus-pearl-badge,
+.tus-pearl-keyword-row em,
+.pearl-card-keywords em {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+  max-width: min(100%, 220px) !important;
+  min-height: 28px !important;
+  padding: 5px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 88%, transparent) !important;
+  background: color-mix(in srgb, var(--surface-2) 88%, transparent) !important;
+  color: var(--text-secondary) !important;
+  box-shadow: none !important;
+  font-size: 12px !important;
+  font-weight: 720 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.004em !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  font-style: normal !important;
+}
+
+.exam-note-keywords .keyword-badge,
+.exam-note-feedback-card .keyword-badge,
+.exam-note-feedback-card .exam-signal-keywords span {
+  border-color: color-mix(in srgb, var(--accent) 18%, var(--border-subtle)) !important;
+  background: color-mix(in srgb, var(--accent) 5%, var(--surface-2)) !important;
+  color: color-mix(in srgb, var(--text-primary) 82%, var(--accent) 18%) !important;
+}
+
+.spot-note-copy,
+.exam-note-pearl.spot-note-copy {
+  margin: 0 !important;
+  max-width: 86ch !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(13.6px, 1.1vw, 14.8px) !important;
+  font-weight: 560 !important;
+  line-height: 1.62 !important;
+  letter-spacing: -0.006em !important;
+}
+
+.spot-note-label {
+  color: color-mix(in srgb, var(--accent) 72%, var(--text-primary)) !important;
+  font-weight: 820 !important;
+}
+
+.spot-note-insight-list {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 78%, transparent);
+  border-radius: 15px;
+  background: color-mix(in srgb, var(--surface-2) 70%, transparent);
+}
+
+.spot-note-list-title {
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 820;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+}
+
+.spot-note-insight-list ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spot-note-insight-list li {
+  position: relative;
+  margin: 0;
+  padding-left: 16px;
+  color: var(--text-secondary);
+  font-size: 13.25px;
+  font-weight: 560;
+  line-height: 1.48;
+}
+
+.spot-note-insight-list li::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  top: 0.66em;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 62%, var(--text-muted) 38%);
+}
+
+.exam-note-trap {
+  border-top: 1px solid color-mix(in srgb, var(--border-subtle) 74%, transparent) !important;
+  color: var(--text-secondary) !important;
+}
+
+html[data-theme="dark"] .spot-note-card.exam-note-feedback-card,
+html[data-theme="dark"] .answer-feedback-panel-pro .spot-note-card.exam-note-feedback-card,
+html[data-theme="dark"] .answer-feedback-panel .spot-note-card.exam-note-feedback-card,
+.app-shell[data-theme="dark"] .spot-note-card.exam-note-feedback-card,
+.app-shell[data-theme="dark"] .answer-feedback-panel-pro .spot-note-card.exam-note-feedback-card,
+.app-shell[data-theme="dark"] .answer-feedback-panel .spot-note-card.exam-note-feedback-card {
+  background:
+    radial-gradient(circle at 96% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 38%),
+    linear-gradient(180deg, color-mix(in srgb, rgba(15, 23, 42, 0.92) 94%, var(--accent) 6%), rgba(15, 23, 42, 0.86)) !important;
+  border-color: color-mix(in srgb, var(--accent) 22%, rgba(148, 163, 184, 0.18)) !important;
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.20) !important;
+}
+
+html[data-theme="dark"] .keyword-badge,
+html[data-theme="dark"] .info-chip,
+html[data-theme="dark"] .exam-note-keywords span,
+html[data-theme="dark"] .exam-signal-keywords span,
+html[data-theme="dark"] .exam-signal-chip,
+.app-shell[data-theme="dark"] .keyword-badge,
+.app-shell[data-theme="dark"] .info-chip,
+.app-shell[data-theme="dark"] .exam-note-keywords span,
+.app-shell[data-theme="dark"] .exam-signal-keywords span,
+.app-shell[data-theme="dark"] .exam-signal-chip {
+  background: rgba(15, 23, 42, 0.78) !important;
+  border-color: rgba(148, 163, 184, 0.20) !important;
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .exam-note-feedback-card .keyword-badge,
+html[data-theme="dark"] .exam-note-feedback-card .exam-signal-keywords span,
+.app-shell[data-theme="dark"] .exam-note-feedback-card .keyword-badge,
+.app-shell[data-theme="dark"] .exam-note-feedback-card .exam-signal-keywords span {
+  background: color-mix(in srgb, var(--accent) 12%, rgba(15, 23, 42, 0.86)) !important;
+  border-color: color-mix(in srgb, var(--accent) 24%, rgba(148, 163, 184, 0.18)) !important;
+  color: color-mix(in srgb, #f8fafc 88%, var(--accent) 12%) !important;
+}
+
+html[data-theme="dark"] .spot-note-insight-list,
+.app-shell[data-theme="dark"] .spot-note-insight-list {
+  background: rgba(15, 23, 42, 0.42);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+
+@media (max-width: 680px) {
+  .spot-note-card.exam-note-feedback-card {
+    gap: 10px !important;
+  }
+
+  .keyword-badge,
+  .info-chip,
+  .exam-note-keywords span,
+  .exam-signal-keywords span,
+  .exam-signal-chip {
+    max-width: 100% !important;
+    min-height: 27px !important;
+    font-size: 11.75px !important;
+  }
+
+  .spot-note-insight-list {
+    padding: 9px 10px;
+    border-radius: 14px;
+  }
+}
+
+/* =========================================================
+   KLINIKIQ V178 — AI Spot hero control cluster spacing tune
+   Removes the optically heavy left gutter in the Konu/Branş
+   control card and keeps select/actions on one compact column.
+   ========================================================= */
+.ai-practice-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 472px) !important;
+  gap: clamp(28px, 4.8vw, 72px) !important;
+}
+
+.ai-practice-actions.ai-practice-actions-pro {
+  justify-self: end !important;
+  align-self: center !important;
+  width: 100% !important;
+  max-width: 472px !important;
+  box-sizing: border-box !important;
+  padding: 12px !important;
+  gap: 11px !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+}
+
+.ai-practice-actions-pro .ai-branch-filter-control {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  gap: 7px !important;
+}
+
+.ai-practice-actions-pro .ai-branch-filter-control span {
+  display: block !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 1.05 !important;
+}
+
+.ai-practice-actions-pro .ai-branch-filter-control select {
+  height: 52px !important;
+  min-height: 52px !important;
+  line-height: 52px !important;
+  padding: 0 46px 0 14px !important;
+  border-radius: 17px !important;
+  background-position:
+    calc(100% - 21px) 22px,
+    calc(100% - 15px) 22px !important;
+}
+
+.ai-practice-actions-pro .ai-practice-button-row {
+  width: 100% !important;
+  margin: 0 !important;
+  gap: 10px !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr) !important;
+}
+
+.ai-practice-actions-pro .ai-practice-button-row .btn {
+  height: 52px !important;
+  min-height: 52px !important;
+  border-radius: 17px !important;
+  padding-inline: 14px !important;
+}
+
+@media (max-width: 1120px) {
+  .ai-practice-hero {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .ai-practice-actions.ai-practice-actions-pro {
+    justify-self: start !important;
+    width: min(100%, 520px) !important;
+    max-width: 520px !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .ai-practice-actions.ai-practice-actions-pro {
+    width: 100% !important;
+    max-width: none !important;
+    padding: 11px !important;
+    gap: 10px !important;
+  }
+
+  .ai-practice-actions-pro .ai-practice-button-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ai-practice-actions-pro .ai-branch-filter-control select,
+  .ai-practice-actions-pro .ai-practice-button-row .btn {
+    height: 50px !important;
+    min-height: 50px !important;
+  }
+
+  .ai-practice-actions-pro .ai-branch-filter-control select {
+    line-height: 50px !important;
+    background-position:
+      calc(100% - 21px) 21px,
+      calc(100% - 15px) 21px !important;
+  }
+}

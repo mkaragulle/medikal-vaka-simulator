@@ -3939,3 +3939,40 @@
     right: -4px;
   }
 }
+
+/* Final global chip/highlight normalization for TUS pearl surfaces. */
+.tus-pearl-keyword-row em,
+.tus-pearl-chip,
+.tus-pearl-badge,
+.exam-signal-chip,
+.exam-signal-keywords span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  max-width: min(100%, 220px) !important;
+  min-height: 28px !important;
+  padding: 5px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid color-mix(in srgb, var(--border-subtle, #e2e8f0) 88%, transparent) !important;
+  background: color-mix(in srgb, var(--surface-2, #f8fafc) 88%, transparent) !important;
+  color: var(--text-secondary, #334155) !important;
+  font-size: 12px !important;
+  font-weight: 720 !important;
+  line-height: 1.15 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  box-shadow: none !important;
+  font-style: normal !important;
+}
+
+.exam-signal-pearl .glossary-term,
+.exam-signal-trap .glossary-term,
+.tus-pearl-card .glossary-term,
+.tus-pearl-study-shell .glossary-term {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}

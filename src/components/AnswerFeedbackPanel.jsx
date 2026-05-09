@@ -444,21 +444,37 @@ function ExamNoteFeedback({ signal, glossaryEnabled = true }) {
     signal.appearanceCount > 1 && !yearsLabel ? `${signal.appearanceCount} kez sorulmuş` : '',
     signal.isPastQuestionDerived && !yearsLabel ? 'Çıkmış bilgi' : '',
   ].filter(Boolean);
+  const keyPoints = Array.isArray(signal.keyPoints) ? signal.keyPoints.slice(0, 4) : [];
+  const keywordChips = Array.isArray(signal.keywords) ? signal.keywords.slice(0, 3) : [];
 
   return (
-    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="Sınav notu" title="Kritik hatırlatma" className="tus-spot-signal-feedback exam-note-feedback-card">
-      {metaChips.length ? (
-        <div className="exam-signal-chip-row exam-note-meta-row" aria-label="Sınav geçmişi">
-          {metaChips.slice(0, 2).map((chip) => <span className="exam-signal-chip past" key={chip}>{chip}</span>)}
-        </div>
-      ) : null}
-      {signal.spotPearl ? <p className="exam-signal-pearl exam-note-pearl"><GlossaryText text={signal.spotPearl} enabled={glossaryEnabled} /></p> : null}
-      {signal.keywords?.length ? (
-        <div className="exam-signal-keywords exam-note-keywords" aria-label="Kısa anahtarlar">
-          {signal.keywords.slice(0, 3).map((keyword) => <span key={keyword}><GlossaryText text={keyword} enabled={glossaryEnabled} /></span>)}
-        </div>
-      ) : null}
-      {signal.examTrap ? <p className="exam-signal-trap exam-note-trap"><strong>Sık tuzak:</strong> <GlossaryText text={signal.examTrap} enabled={glossaryEnabled} /></p> : null}
+    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="TUS işareti" title="Hap bilgi" className="tus-spot-signal-feedback exam-note-feedback-card spot-note-card">
+      <div className="exam-note-content-stack">
+        {metaChips.length ? (
+          <div className="exam-note-meta-row" aria-label="Sınav geçmişi">
+            {metaChips.slice(0, 2).map((chip) => <span className="exam-signal-chip past keyword-badge" key={chip}>{chip}</span>)}
+          </div>
+        ) : null}
+        {signal.spotPearl ? (
+          <p className="exam-signal-pearl exam-note-pearl spot-note-copy">
+            <span className="spot-note-label">Spot bilgi:</span> {signal.spotPearl}
+          </p>
+        ) : null}
+        {keyPoints.length ? (
+          <div className="spot-note-insight-list" aria-label="Kritik ipuçları">
+            <span className="spot-note-list-title">Kritik ipuçları</span>
+            <ul>
+              {keyPoints.map((point, index) => <li key={`${point}-${index}`}>{point}</li>)}
+            </ul>
+          </div>
+        ) : null}
+        {keywordChips.length ? (
+          <div className="exam-signal-keywords exam-note-keywords keyword-badge-row" aria-label="Kısa anahtarlar">
+            {keywordChips.map((keyword) => <span className="keyword-badge" key={keyword}>{keyword}</span>)}
+          </div>
+        ) : null}
+        {signal.examTrap ? <p className="exam-signal-trap exam-note-trap"><strong>Sık tuzak:</strong> {signal.examTrap}</p> : null}
+      </div>
     </FeedbackSection>
   );
 }
