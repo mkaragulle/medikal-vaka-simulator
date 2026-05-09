@@ -467,61 +467,66 @@ function questionsLookSimilar(a = '', b = '') {
   return left.includes(right) || right.includes(left);
 }
 
+function isQuestionSentence(value = '') {
+  const text = asText(value);
+  const comparable = normalizeComparable(text);
+  if (!text) return false;
+  return /\?\s*$/u.test(text)
+    || /aşağıdakilerden hangisidir\??$/iu.test(text)
+    || /\b(?:nedir|hangisidir|hangisi|seçilmelidir|uygundur)\??$/iu.test(text)
+    || /\b(?:en olası|en uygun|ilk yapılması gereken|ilk müdahale|ilk uygulanması gereken|ilk yaklaşım)\b.*\b(?:nedir|hangisidir)\??$/iu.test(text)
+    || /^(?:bu hastada|bu olguda|bu bebekte|bu çocukta|bu tabloda|bu durumda)\b/.test(comparable) && /\b(?:nedir|hangisidir|uygundur|seçilmelidir)\b/.test(comparable);
+}
+
+function extractQuestionFromText(value = '') {
+  const sentences = splitSentences(value);
+  for (let index = sentences.length - 1; index >= 0; index -= 1) {
+    const sentence = sentences[index];
+    if (isQuestionSentence(sentence)) return ensureQuestion(sentence);
+  }
+  return '';
+}
+
+export function buildAISpotQuestionPrompt(question = {}) {
+  const correct = question.diagnosis?.correct || question.correctAnswerText || '';
+  const explicit = stripPreAnswerTeaching(question.question || question.diagnosis?.question || '', correct);
+  if (explicit) return ensureQuestion(explicit);
+  const raw = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
+  const extracted = extractQuestionFromText(raw);
+  if (extracted) return extracted;
+  const type = String(question.questionType || '').toLocaleLowerCase('tr');
+  if (type === 'treatment') return 'Bu hastada ilk yapılması gereken en uygun müdahale aşağıdakilerden hangisidir?';
+  if (type === 'test') return 'Bu tabloda en uygun yorum veya tetkik seçeneği aşağıdakilerden hangisidir?';
+  if (type === 'mechanism') return 'Bu tabloyu açıklayan en olası mekanizma aşağıdakilerden hangisidir?';
+  return 'Bu olguda en olası tanı aşağıdakilerden hangisidir?';
+}
+
 function limitNarrativeLength(sentences = [], questionPrompt = '') {
   const prompt = ensureQuestion(questionPrompt || 'Bu olguda en uygun seçenek aşağıdakilerden hangisidir?');
   const selected = [];
   let words = 0;
   sentences.forEach((sentence) => {
-    const count = sentence.split(/\s+/).filter(Boolean).length;
+    const clean = ensureSentence(sentence);
+    if (!clean || isQuestionSentence(clean) || questionsLookSimilar(clean, prompt)) return;
+    const count = clean.split(/\s+/).filter(Boolean).length;
     if (selected.length < 5 && words + count <= 185) {
-      selected.push(sentence);
+      selected.push(clean);
       words += count;
     }
   });
-
-  const questionIndexes = selected
-    .map((sentence, index) => ({ sentence, index }))
-    .filter(({ sentence }) => /\?\s*$/u.test(sentence) || /aşağıdakilerden hangisidir\??$/iu.test(sentence));
-
-  if (questionIndexes.length > 1) {
-    const keepIndex = questionIndexes[questionIndexes.length - 1].index;
-    for (let index = selected.length - 1; index >= 0; index -= 1) {
-      if (index !== keepIndex && (/\?\s*$/u.test(selected[index]) || /aşağıdakilerden hangisidir\??$/iu.test(selected[index]))) {
-        selected.splice(index, 1);
-      }
-    }
-  }
-
-  const hasExistingQuestion = selected.some((sentence) =>
-    /\?\s*$/u.test(sentence) ||
-    /aşağıdakilerden hangisidir\??$/iu.test(sentence) ||
-    questionsLookSimilar(sentence, prompt)
-  );
-
-  if (!hasExistingQuestion) {
-    selected.push(prompt);
-  }
   return selected;
 }
 
 function splitTusParagraphsFromSentences(sentences = []) {
-  if (!sentences.length) return ['Bu olguda en uygun seçenek aşağıdakilerden hangisidir?'];
-  const last = sentences[sentences.length - 1] || '';
-  const hasQuestion = /\?\s*$/u.test(last) || /aşağıdakilerden hangisidir\??$/iu.test(last);
-  const bodySentences = hasQuestion ? sentences.slice(0, -1) : sentences;
-  const question = hasQuestion ? ensureQuestion(last) : '';
+  const bodySentences = sentences.filter((sentence) => sentence && !isQuestionSentence(sentence));
+  if (!bodySentences.length) return ['Kısa klinik bağlam ve karar verdirici bulgular birlikte değerlendirilir.'];
   const body = bodySentences.join(' ').trim();
-  if (!body) return [question || ensureQuestion(last)];
-
-  if (body.length < 760) {
-    return [question ? `${body} ${question}`.trim() : body];
-  }
+  if (body.length < 760) return [body];
 
   const midpoint = Math.ceil(bodySentences.length / 2);
   const first = bodySentences.slice(0, midpoint).join(' ').trim();
   const second = bodySentences.slice(midpoint).join(' ').trim();
-  const paragraphs = [first, question ? `${second} ${question}`.trim() : second].filter(Boolean);
-  return paragraphs.slice(0, 2);
+  return [first, second].filter(Boolean).slice(0, 2);
 }
 
 export function buildSafeAISpotTitle(question = {}) {

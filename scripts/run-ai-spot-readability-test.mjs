@@ -1,5 +1,6 @@
 import {
   buildAISpotNarrativeStem,
+  buildAISpotQuestionPrompt,
   getAISpotCompactObjectiveData,
   getAISpotCompactVitals,
 } from '../src/utils/aiSpotNarrative.js';
@@ -56,11 +57,14 @@ const cases = [
 const results = cases.map(({ name, question, expectVitals, expectObjective }) => {
   const paragraphs = buildAISpotNarrativeStem(question);
   const text = paragraphs.join(' ');
+  const prompt = buildAISpotQuestionPrompt(question);
   const vitals = getAISpotCompactVitals(question);
   const objective = getAISpotCompactObjectiveData(question);
   const failures = [];
   if (/gw\b|görü\.\.\.|38\.\s+2|16\.\s+200|referans\s+4\.000/i.test(text)) failures.push('bozuk kısaltma/ölçüm/referans temizlenmedi');
   if (/Profil:|Risk bağlamı:|Ayırt ettirici ipuçları:|Objektif değerlendirmede:/i.test(text)) failures.push('legacy/objektif başlık sızıntısı var');
+  if (/\?/.test(text)) failures.push('soru cümlesi sol metinde kalmış');
+  if (!/\?/.test(prompt)) failures.push('şık üstü soru promptu oluşmadı');
   if (expectVitals && vitals.length === 0) failures.push('beklenen vital kutusu oluşmadı');
   if (!expectVitals && vitals.length > 0) failures.push('gereksiz vital kutusu oluştu');
   if (expectObjective && objective.length === 0) failures.push('beklenen objektif veri kutusu oluşmadı');
@@ -73,6 +77,7 @@ const results = cases.map(({ name, question, expectVitals, expectObjective }) =>
     wordCount: text.split(/\s+/).filter(Boolean).length,
     vitalsCount: vitals.length,
     objectiveCount: objective.length,
+    prompt,
     preview: text,
   };
 });

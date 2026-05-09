@@ -5,6 +5,7 @@ import { getDifficultyMeta } from '../utils/scoring.js';
 import {
   buildAISpotContextLine,
   buildAISpotNarrativeStem,
+  buildAISpotQuestionPrompt,
   buildSafeAISpotTitle,
   getAISpotPreviewDiagnostics,
   getAISpotSupportDataGroups,
@@ -110,6 +111,8 @@ function AISpotQuestionScreen({
   hardMode = false,
   randomActionLabel = 'Yeni AI sorusu üret',
 }) {
+  const questionPrompt = buildAISpotQuestionPrompt(question);
+
   return (
     <article className="case-player-shell ai-spot-player-shell">
       <section className="qbank-layout-grid professional-qbank-layout ai-spot-narrative-layout">
@@ -135,7 +138,7 @@ function AISpotQuestionScreen({
               investigationOrders={[]}
               hardMode={hardMode}
               randomActionLabel={randomActionLabel}
-              hideSpotQuestionCallout
+              questionPromptOverride={questionPrompt}
             />
           </div>
         </aside>

@@ -83,6 +83,7 @@ function DiagnosisQuiz({
   hardMode = false,
   randomActionLabel = 'Yeni vaka çöz',
   hideSpotQuestionCallout = false,
+  questionPromptOverride = '',
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
@@ -105,7 +106,7 @@ function DiagnosisQuiz({
     ? `${Math.round(((examMeta.currentIndex + 1) / examMeta.total) * 100)}%`
     : '0%';
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
-  const questionPrompt = clinicalCase.question || clinicalCase.diagnosis?.question || '';
+  const questionPrompt = questionPromptOverride || clinicalCase.question || clinicalCase.diagnosis?.question || '';
   const questionHeading = isSpotCase ? (clinicalCase.questionType === 'diagnosis' ? 'TUS spot tanı sorusu' : clinicalCase.questionType === 'test' ? 'TUS spot tetkik sorusu' : clinicalCase.questionType === 'treatment' ? 'TUS spot tedavi sorusu' : 'TUS spot karar sorusu') : 'En olası tanı';
   const questionSubtext = isSpotCase
     ? (submitted && clinicalCase.clinicalFocus

@@ -522,11 +522,11 @@ YASAK konu/doğru cevap listesi:
 ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
-- Ön yüzde gösterilecek ana soru kökü yalnız stem alanıdır: stem, kullanıcının gördüğü tek akışlı TUS soru paragrafı gibi yazılmalıdır.
+- Ön yüzde sol tarafta gösterilecek klinik metin stem alanıdır; stem yalnız olgu/vaka anlatımı olmalı, son soru cümlesini içermez.
 - stem gerçek TUS soru kökü gibi olmalı: 3-6 cümle, genellikle 80-150 kelime; daha kompleks olguda en fazla 220 kelime. Klinik vaka raporu gibi uzatma.
 - Vital bulgu her soruda zorunlu değildir. Yalnız şok, sepsis, anafilaksi, solunum yetmezliği, DKA, dehidratasyon, neonatal acil, hemodinamik karar veya ateşin kritik olduğu sorularda ver. Gereksiz vital seti üretme.
 - Vital bulgular sayısal olarak önemliyse stem içine uzun liste halinde yığma; compactVitals alanına kısa label/value çiftleri koy. Stem içinde gerekirse 'hipotansif ve taşikardik' gibi kısa ifade kullan.
-- Laboratuvar, seroloji, kültür, görüntüleme veya patoloji verileri gerekiyorsa stem içinde uzun ham panel listesi yazma; çoklu değerleri compactObjectiveData alanına kısa label/value şeklinde koy. Stemte yalnız klinik bağlam ve tek soru cümlesi kalsın. Referans aralıklarını stem içine yığma.
+- Laboratuvar, seroloji, kültür, görüntüleme veya patoloji verileri gerekiyorsa stem içinde uzun ham panel listesi yazma; çoklu değerleri compactObjectiveData alanına kısa label/value şeklinde koy. Stemte yalnız klinik bağlam kalsın; soru cümlesini question alanına yaz. Referans aralıklarını stem içine yığma.
 - stem içine gerekli öykü ve kısa klinik bağlamı doğal TUS soru akışıyla ekle; çoklu vital/lab/seroloji panelini compactVitals veya compactObjectiveData alanına taşı. Kullanıcı ayrı hasta özeti, risk bağlamı veya tetkik kartı açmayacak.
 - findings alanları yalnız internal kalite kontrol içindir; stem olmadan cevaplanamayacak kritik veri findings içinde yalnız bırakılmamalıdır.
 - stem içinde Profil:, Başvuru:, Risk bağlamı:, Ayırt ettirici ipuçları:, Klinik gerekçe:, Kanıt zinciri:, Sınav notu: gibi başlık kırıntıları kullanma.
@@ -536,7 +536,7 @@ Kesin kurallar:
 - Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
 - Aynı hastalık kullanılacaksa soru açısı kesin değişsin: tanı yerine ilk tedavi, tetkik yorumu, komplikasyon, mekanizma veya yönetim basamağı sor.
 - Deneme 2 veya sonrası ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç; yalnız şık sırasını değiştirmek yeni soru sayılmaz.
-- stem tek ve net soru cümlesiyle bitsin; question alanı aynı soru cümlesinin kısa metni olabilir ama stem dışına ikinci bir soru bloku üretme.
+- question alanı şıkların üzerinde gösterilecek tek ve net soru cümlesidir. Stem içinde bu soru cümlesini tekrar etme; aynı soru iki kez görünmemelidir.
 - Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
 - Tüm seçenekler aynı kategori içinde olsun; tanı sorusunda tanılar, tedavi sorusunda tedaviler, tetkik sorusunda tetkikler.

@@ -142,6 +142,9 @@ function TusPearlStudyScreen({
   const isInAnyCatalog = cardCatalogs.length > 0;
   const modeLabel = resolveModeLabel(filter, branchFilter, activeCatalog);
   const repeatListItems = useMemo(() => buildPearlRepeatListItems(pearlState, allCards), [allCards, pearlState]);
+  const primaryRepeatItems = useMemo(() => repeatListItems.filter((item) => ['all', 'favorites', 'wrong', 'review'].includes(item.id)), [repeatListItems]);
+  const secondaryRepeatItems = useMemo(() => repeatListItems.filter((item) => ['known', 'user', 'catalogs'].includes(item.id)), [repeatListItems]);
+  const isSecondaryListActive = viewMode === 'catalogs' || ['known', 'user'].includes(filter);
   const emptyState = useMemo(() => getPearlEmptyState(filter), [filter]);
 
   const catalogCards = useMemo(() => (
@@ -459,26 +462,72 @@ function TusPearlStudyScreen({
           </button>
         </div>
       ) : (
-        <div className="pearl-study-quickbar card-surface" aria-label="Çalışma ekranı hızlı aksiyonları">
-          <span><strong>{modeLabel}</strong><em>{sessionCards.length} kartlık karışık deck</em></span>
-          <div>
-            <button type="button" className="btn btn-secondary compact" onClick={() => rebuildStudySession(filteredCards)}>Yeni sıra</button>
-            <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kendi kartını oluştur</button>
-            <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Kataloglarım</button>
+        <div className="pearl-study-compactbar card-surface" aria-label="Çalışma ekranı üst kontrolleri">
+          <div className="pearl-study-deck-summary">
+            <span className="pearl-study-deck-kicker">Aktif deck</span>
+            <strong>{modeLabel}</strong>
+            <em>{sessionCards.length} kartlık dengeli karışık sıra</em>
           </div>
-          <div className="pearl-study-repeat-shortcuts" aria-label="Tekrar listeleri">
-            {repeatListItems.map((item) => (
+
+          <nav className="pearl-study-tabs" aria-label="Ana tekrar listeleri">
+            {primaryRepeatItems.map((item) => (
               <button
                 key={item.id}
                 type="button"
-                className={(filter === item.filter || (item.id === 'catalogs' && viewMode === 'catalogs')) ? 'active' : ''}
+                className={viewMode === 'study' && filter === item.filter ? 'active' : ''}
                 onClick={() => openRepeatList(item)}
               >
-                <Icon name={item.icon} size={14} />
                 <span>{item.shortLabel}</span>
                 <em>{item.count}</em>
               </button>
             ))}
+          </nav>
+
+          <div className="pearl-study-compact-actions">
+            <button type="button" className="btn btn-secondary compact pearl-reshuffle-button" onClick={() => rebuildStudySession(filteredCards)}>
+              <Icon name="RotateCcw" size={15} />
+              <span>Yeni sıra</span>
+            </button>
+
+            <details className={isSecondaryListActive ? 'pearl-study-more-menu active' : 'pearl-study-more-menu'}>
+              <summary>
+                <span>Diğer</span>
+                <Icon name="ChevronDown" size={14} />
+              </summary>
+              <div className="pearl-study-more-panel" role="menu" aria-label="Diğer tekrar listeleri ve kart işlemleri">
+                {secondaryRepeatItems.map((item) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    className={(viewMode === 'study' && filter === item.filter) || (item.id === 'catalogs' && viewMode === 'catalogs') ? 'active' : ''}
+                    onClick={(event) => {
+                      openRepeatList(item);
+                      event.currentTarget.closest('details')?.removeAttribute('open');
+                    }}
+                  >
+                    <span>
+                      <strong>{item.shortLabel}</strong>
+                      <em>{item.description}</em>
+                    </span>
+                    <b>{item.id === 'catalogs' ? `${item.count} set` : `${item.count} kart`}</b>
+                  </button>
+                ))}
+                <div className="pearl-study-more-divider" />
+                <button
+                  type="button"
+                  onClick={(event) => {
+                    openEditor({ mode: 'create', defaultCatalogId: activeCatalogId });
+                    event.currentTarget.closest('details')?.removeAttribute('open');
+                  }}
+                >
+                  <span>
+                    <strong>Kendi kartını oluştur</strong>
+                    <em>Yeni öğrendiğin bilgiyi kişisel karta dönüştür.</em>
+                  </span>
+                  <Icon name="Notes" size={15} />
+                </button>
+              </div>
+            </details>
           </div>
         </div>
       )}
