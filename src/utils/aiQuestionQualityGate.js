@@ -269,7 +269,7 @@ function deriveBranchSpecificRisk(question = {}) {
   if (/fizyoloji|baroreseptor|sempatik|vagal|ventilasyon|perfuzyon/.test(bundle)) {
     return ['Temel mekanizmanın klinik bulguyla ilişkilendirilmesi', 'Kompansatuvar yanıtın yönünün ayırt edilmesi', 'Sistem yanıtının kısa süreli değişkenlerle değerlendirilmesi'];
   }
-  return ['Başvuru yakınmasının tanısal önceliği belirlemesi', 'Objektif bulguların karar basamağını desteklemesi', 'Komplikasyon veya gecikmiş tedavi riskinin dikkate alınması'];
+  return ['Başvuru yakınmasının zamanı ve seyri', 'Muayene bulgusunun klinik kararı desteklemesi', 'Komplikasyon veya gecikmiş tedavi riskinin dikkate alınması'];
 }
 
 function deriveBranchSpecificClues(question = {}) {

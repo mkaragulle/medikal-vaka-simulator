@@ -1817,7 +1817,7 @@ export const rawCases = [
           "correctOrder": 3,
           "unsafe": false,
           "score": 2,
-          "rationale": "Yüksek riskli hastada ICD kararı gündeme gelebilir"
+          "rationale": "Yüksek riskli hastada ICD kararı düşünülebilir"
         },
         {
           "id": "cv-hocm-001-r-4-semptom-kontrolu-icin-beta-blokor-veya-non-dihidropi",

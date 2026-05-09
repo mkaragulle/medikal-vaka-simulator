@@ -838,15 +838,25 @@ function TusPearlStudyScreen({
                     <strong>{activeCard.front}</strong>
                   </span>
                   <span className="tus-pearl-focus-face tus-pearl-focus-back">
-                    {activeCardContent.leadText ? <span className="tus-pearl-answer-chain focus">{activeCardContent.leadText}</span> : null}
-                    <strong className={activeCardContent.isCompactBack ? 'compact' : ''}>{activeCardContent.backText}</strong>
-                    {activeCardContent.detailText ? <p>{activeCardContent.detailText}</p> : null}
-                    {activeCardContent.noteText ? (
-                      <span className="tus-pearl-note-box focus" role="note" aria-label={activeCardContent.noteLabel || 'Önemli not'}>
-                        <span className="tus-pearl-note-box-label">{activeCardContent.noteLabel || 'Önemli not'}</span>
-                        <span className="tus-pearl-note-box-text">{activeCardContent.noteText}</span>
+                    <span className="tus-pearl-back-stack focus">
+                      {activeCardContent.leadText ? <span className="tus-pearl-answer-chain focus">{activeCardContent.leadText}</span> : null}
+                      <span className="tus-pearl-answer-block focus">
+                        <span className="tus-pearl-back-kicker">Yanıt</span>
+                        <strong className={activeCardContent.isCompactBack ? 'compact' : ''}>{activeCardContent.backText}</strong>
                       </span>
-                    ) : null}
+                      {activeCardContent.detailText ? (
+                        <span className="tus-pearl-detail-block focus">
+                          <span className="tus-pearl-back-kicker muted">Kısa gerekçe</span>
+                          <span className="tus-pearl-detail-text">{activeCardContent.detailText}</span>
+                        </span>
+                      ) : null}
+                      {activeCardContent.noteText ? (
+                        <span className="tus-pearl-note-box focus" role="note" aria-label={activeCardContent.noteLabel || 'Ayırıcı not'}>
+                          <span className="tus-pearl-note-box-label">{activeCardContent.noteLabel || 'Ayırıcı not'}</span>
+                          <span className="tus-pearl-note-box-text">{activeCardContent.noteText}</span>
+                        </span>
+                      ) : null}
+                    </span>
                   </span>
                 </button>
               </article>

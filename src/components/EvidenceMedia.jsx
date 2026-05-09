@@ -50,7 +50,7 @@ function EvidenceImage({ image, mode = 'study', hardMode = false }) {
 
         {mode !== 'exam' && !hardMode ? (
           <details className="spoiler-disclosure media-disclosure">
-            <summary>Objektif bulguları aç</summary>
+            <summary>Bulguları aç</summary>
             <p><GlossaryText text={image.caption} enabled={mode !== 'exam' && !hardMode} /></p>
           </details>
         ) : null}

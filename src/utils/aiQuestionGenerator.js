@@ -48,7 +48,7 @@ const FALLBACK_DISTRACTORS_BY_BRANCH = {
 };
 
 const SCENARIO_OPENERS = [
-  'Klinik bağlamda değerlendirilen olguda',
+  'Kısa klinik olguda',
   'Acil karar basamağına getirilen olguda',
   'Poliklinik değerlendirmesinde ayırıcı tanı gerektiren tabloda',
   'Nöbetçi hekimin hızlı yorumlaması gereken spot olguda',
@@ -106,7 +106,7 @@ const VARIANT_STEM_MODIFIERS = [
   'Acil kötüleşme bulguları dışlandıktan sonra en olası açıklama seçilir.',
   'Laboratuvar veya görüntüleme bulgusu tek başına değil, öyküyle birlikte değerlendirilir.',
   'Benzer tabloları ayıran temel nokta, bulguların birlikte oluşturduğu klinik örüntüdür.',
-  'Hedefli yaklaşım, gereksiz tedavi veya tetkik yükünü azaltır.',
+  'Öncelikli yaklaşım, gereksiz tedavi veya tetkik yükünü azaltır.',
 ];
 
 function buildVariantStemModifier(seed = {}, profile = {}) {

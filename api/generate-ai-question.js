@@ -9,7 +9,8 @@ TUS DİL VE MADDE YAZIM STANDARDI:
 - Beş seçenek aynı kavramsal kategoridedir: tanı-tanı, tedavi-tedavi, test-test, mekanizma-mekanizma. Hiçbiri, hepsi, yukarıdakilerin hepsi kullanılmaz.
 - En az iki seçenek yakın ve savunulabilir çeldirici olmalıdır; klinik karar sorularında bir seçenek önce/sonra algoritma basamağı tuzağı olabilir.
 - Yanlış seçenek feedbacki hangi durumda doğru olabileceğini ve bu olguda hangi ipucuyla elendiğini açıklar.
-- Hap bilgi tek bir yüksek verimli karar kuralı taşır: ipucu → karar. Boş, mekanik veya tekrar eden cümle kullanılmaz.
+- Hap bilgi tek bir yüksek verimli karar kuralı taşır: ipucu → karar. Ön yüz aktif hatırlama sorusu, arka yüz net cevap + kısa gerekçe + ayırıcı not mantığıyla kurulur; boş, mekanik veya tekrar eden cümle kullanılmaz.
+- High-risk klinik kararlarda model serbest yorum yapmaz: hiperkalemi + EKG değişikliği, anafilaksi, sepsis/septik şok, DKA + düşük potasyum, STEMI, inme, menenjit ve status epileptikus gibi konularda ilk/öncelikli basamak deterministik klinik kurala göre seçilir.
 - Türkçe tıbbi terminoloji tutarlı yazılır; birimler eksiksizdir; yarım cümle, gündelik ifade ve başlık kırıntısı kullanılmaz.`;
 
 const TUS_FORBIDDEN_EXPRESSION_LIST = [
@@ -691,6 +692,7 @@ Kesin kurallar:
 - Patoloji sorularında teori cümlesini laboratuvar sonucu gibi gösterme. Gerekirse yalnız histopatolojik değerlendirme kullan.
 - Ayırt ettirici ipuçları ve evidenceChain madde metinlerinde "Etiket: açıklama" yapısı kullanma; doğrudan doğal cümle yaz.
 - JSON şemasındaki tüm alanları doldur. source her zaman "real-ai", caseType her zaman "ai-spot" olsun.
+- High-risk durumlarda doğru cevap algoritmik öncelikle kilitlenmelidir; doğru ama sonraki basamak olan seçenek ilk tedavi yapılamaz.
 - JSON değerlerini kısa tut: stem 2-4 doğal TUS soru cümlesi veya en fazla 2 kısa paragraf hissi veren tek metin olmalı; explanation 2-4 cümle, her feedback en fazla 1-2 cümle, evidenceChain 3-4 madde, managementSteps 2-3 madde.
 - JSON string değerlerinin içinde kaçışsız çift tırnak kullanma. Gerekirse tek tırnak veya parantez kullan.
 - JSON çıktısını yarıda kesme; son karakter mutlaka kapanış süslü parantezi olsun.
@@ -966,7 +968,7 @@ function buildCompactOpenRouterPrompt(originalPrompt = '', context = {}) {
 Sadece şu kısa JSON objesini döndür:
 {"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"80-150 kelimelik gerçek TUS soru kökü","cv":[{"label":"TA","value":"68/42 mmHg"}],"co":[{"label":"Lökosit","value":"16.200/mm³"}],"q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
 
-Kurallar: JSON dışında yazma. Akademik klinik Türkçe kullan; stem demografi→şikâyet/süre→öykü→FM→objektif veri→karar mantığını izlesin. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı gerçek TUS soru kökü gibi 3-6 cümle olmalı; gereksiz vital seti verme, referans aralıklarını s içine yığma. Vital veya lab sayıları kritikse cv/co alanlarını kısa label/value olarak doldur, ama cv/co boş kalabilir. Gerekli kültür/muayene/görüntüleme verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kavramsal kategoriden olsun; hepsi/hiçbiri kullanma. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. e klinik gerekçe, p ise tek kısa sınav notu gibi yazılsın; e ve p aynı cümleyi kopyalamasın. k dizisi en fazla 3 kısa chip değerinde ipucu içersin; 'IM önerisi', uzun cümle veya tekrar chip yazma. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
+Kurallar: JSON dışında yazma. Akademik klinik Türkçe kullan; stem demografi→şikâyet/süre→öykü→FM→objektif veri→karar mantığını izlesin. High-risk ilk tedavi sorularında algoritmik önceliği kilitle. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı gerçek TUS soru kökü gibi 3-6 cümle olmalı; gereksiz vital seti verme, referans aralıklarını s içine yığma. Vital veya lab sayıları kritikse cv/co alanlarını kısa label/value olarak doldur, ama cv/co boş kalabilir. Gerekli kültür/muayene/görüntüleme verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kavramsal kategoriden olsun; hepsi/hiçbiri kullanma. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. e klinik gerekçe, p ise tek kısa sınav notu gibi yazılsın; e ve p aynı cümleyi kopyalamasın. k dizisi en fazla 3 kısa chip değerinde ipucu içersin; 'IM önerisi', uzun cümle veya tekrar chip yazma. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
   }
 
   return `${originalPrompt}

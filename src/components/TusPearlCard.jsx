@@ -30,15 +30,25 @@ function TusPearlCard({
           <span className="tus-pearl-hint">Cevabı görmek için tıkla</span>
         </span>
         <span className="tus-pearl-card-face tus-pearl-card-back">
-          {leadText ? <span className="tus-pearl-answer-chain">{leadText}</span> : null}
-          <strong className={isCompactBack ? 'compact' : ''}>{backText}</strong>
-          {detailText ? <p>{detailText}</p> : null}
-          {noteText ? (
-            <span className="tus-pearl-note-box" role="note" aria-label={noteLabel || 'Önemli not'}>
-              <span className="tus-pearl-note-box-label">{noteLabel || 'Önemli not'}</span>
-              <span className="tus-pearl-note-box-text">{noteText}</span>
+          <span className="tus-pearl-back-stack">
+            {leadText ? <span className="tus-pearl-answer-chain">{leadText}</span> : null}
+            <span className="tus-pearl-answer-block">
+              <span className="tus-pearl-back-kicker">Yanıt</span>
+              <strong className={isCompactBack ? 'compact' : ''}>{backText}</strong>
             </span>
-          ) : null}
+            {detailText ? (
+              <span className="tus-pearl-detail-block">
+                <span className="tus-pearl-back-kicker muted">Kısa gerekçe</span>
+                <span className="tus-pearl-detail-text">{detailText}</span>
+              </span>
+            ) : null}
+            {noteText ? (
+              <span className="tus-pearl-note-box" role="note" aria-label={noteLabel || 'Ayırıcı not'}>
+                <span className="tus-pearl-note-box-label">{noteLabel || 'Ayırıcı not'}</span>
+                <span className="tus-pearl-note-box-text">{noteText}</span>
+              </span>
+            ) : null}
+          </span>
         </span>
       </button>
 

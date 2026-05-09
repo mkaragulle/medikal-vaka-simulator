@@ -1606,7 +1606,7 @@ export const TUS_PEARL_TOPICS = [
     "mainAnswer": "Hayır, HCV için aşı/Ig yoktur; erken HCV RNA takibi yapılır.",
     "explanation": "Maruziyet sonrası HBV’den farklı olarak immünoprofilaksi yoktur.",
     "keywords": "iğne batması; HCV; aşı yok; RNA takibi",
-    "trap": "HBV’de aşı ve HBIG gündeme gelebilir; HCV’de bu seçenek yoktur.",
+    "trap": "HBV’de aşı ve HBIG düşünülebilir; HCV’de bu seçenek yoktur.",
     "extraQuestion": "HCV maruziyeti sonrası erken takipte hangi test değerlidir?",
     "extraAnswer": "HCV RNA.",
     "difficulty": "orta"
@@ -2248,6 +2248,112 @@ export const TUS_PEARL_TOPICS = [
     "extraAnswer": "Fetüse ait kanamadır.",
     "difficulty": "orta"
   }
+  ,
+  {
+    "branchId": "pediatrics",
+    "subject": "Çocuk Sağlığı ve Hastalıkları",
+    "topic": "Bruton agammaglobulinemisi",
+    "mainQuestion": "Altıncı aydan sonra tekrarlayan pyojenik enfeksiyon ve çok düşük immünoglobulin düzeyleri hangi immün yetmezliği düşündürür?",
+    "mainAnswer": "Bruton agammaglobulinemisi.",
+    "explanation": "Maternal IgG etkisi azaldıktan sonra tekrarlayan otitis, sinüzit ve pnömoni gelişir; B hücreleri ve immünoglobulinler belirgin düşüktür.",
+    "keywords": "erkek bebek; altıncı aydan sonra; tekrarlayan pyojenik enfeksiyon; B hücre azlığı",
+    "trap": "SCID daha erken ve ağır viral, fungal, bakteriyel enfeksiyonlarla seyreder; Bruton’da T hücre fonksiyonu görece korunur.",
+    "extraQuestion": "Bruton agammaglobulinemisinde temel genetik kusur hangi molekülle ilişkilidir?",
+    "extraAnswer": "BTK mutasyonu.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "pediatrics",
+    "subject": "Çocuk Sağlığı ve Hastalıkları",
+    "topic": "Hipoksik iskemik ensefalopati ve hipotermi",
+    "mainQuestion": "Term yenidoğanda perinatal asfiksi, ağır metabolik asidoz ve orta-ağır ensefalopati varsa nörolojik sekel riskini azaltan yaklaşım hangisidir?",
+    "mainAnswer": "İlk 6 saat içinde terapötik hipotermi.",
+    "explanation": "Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır.",
+    "keywords": "term yenidoğan; perinatal asfiksi; baz açığı yüksek; ilk 6 saat",
+    "trap": "Rutin antibiyotik veya yalnız destek tedavisi, HİE için nöroprotektif zaman penceresinin yerini tutmaz.",
+    "extraQuestion": "Terapötik hipotermi için kritik başlangıç penceresi kaç saattir?",
+    "extraAnswer": "İlk 6 saat.",
+    "difficulty": "zor"
+  },
+  {
+    "branchId": "pediatrics",
+    "subject": "Çocuk Sağlığı ve Hastalıkları",
+    "topic": "Eritema toksikum neonatorum",
+    "mainQuestion": "Yaşamın ilk günlerinde ateşsiz, iyi görünen yenidoğanda eozinofilli papülopüstüler döküntü hangi benign tabloyu düşündürür?",
+    "mainAnswer": "Eritema toksikum neonatorum.",
+    "explanation": "İyi görünen yenidoğanda ilk günlerde başlayan, kendiliğinden gerileyen papülopüstüler döküntü benign kabul edilir.",
+    "keywords": "ilk günler; iyi görünüm; papülopüstül; eozinofil",
+    "trap": "Veziküler lezyon, toksik görünüm veya ateş varsa HSV ve bakteriyel enfeksiyon gibi ciddi nedenler öncelenir.",
+    "extraQuestion": "Eritema toksikum neonatorumda aileye temel yaklaşım nedir?",
+    "extraAnswer": "Güvence verme ve izlem.",
+    "difficulty": "kolay"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Kolestatik karaciğer enzim paterni",
+    "mainQuestion": "ALP ve GGT belirgin yüksek, aminotransferaz artışı daha sınırlıysa baskın karaciğer biyokimyası paterni nedir?",
+    "mainAnswer": "Kolestatik patern.",
+    "explanation": "Kolestaz sorularında ALP-GGT artışı bilirübin ve görüntüleme bulgularıyla birlikte yorumlanır; yalnız ALT/AST yüksekliği hepatoselüler paterni öne çıkarır.",
+    "keywords": "ALP yüksek; GGT yüksek; direkt bilirübin; kolestaz",
+    "trap": "Hepatoselüler patern ALT/AST artışıyla baskındır; izole GGT artışı alkol veya ilaç etkisiyle de görülebilir.",
+    "extraQuestion": "Kolestaz paterninde safra yolu dilatasyonunu ilk değerlendirmede hangi görüntüleme sık kullanılır?",
+    "extraAnswer": "Abdominal ultrasonografi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "KLL tanı yaklaşımı",
+    "mainQuestion": "Yaşlı hastada olgun lenfositoz ve yaygın lenfadenopati varsa tanıyı desteklemek için hangi test yüksek verimlidir?",
+    "mainAnswer": "Periferik kan akım sitometrisi.",
+    "explanation": "KLL’de kalıcı olgun lenfositoz ve tipik immünfenotip tanısal değerdedir; lenf nodu biyopsisi her olguda ilk basamak değildir.",
+    "keywords": "yaşlı hasta; olgun lenfositoz; lenfadenopati; akım sitometri",
+    "trap": "CML’de miyeloid seri artışı ve BCR-ABL ilişkisi beklenir; izole olgun lenfositoz KLL lehinedir.",
+    "extraQuestion": "KLL’de periferik yaymada klasik olarak görülebilen hücre kırıntısı hangisidir?",
+    "extraAnswer": "Smudge cell.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "pediatrics",
+    "subject": "Çocuk Sağlığı ve Hastalıkları",
+    "topic": "ITP ilk yaklaşım",
+    "mainQuestion": "Çocukta viral enfeksiyon sonrası izole trombositopeni ve peteşi geliştiğinde en olası tanı hangisidir?",
+    "mainAnswer": "İmmün trombositopeni.",
+    "explanation": "ITP’de trombositopeni izoledir; anemi, lökosit bozukluğu veya organomegali varsa lösemi ve kemik iliği hastalıkları dışlanmalıdır.",
+    "keywords": "viral enfeksiyon sonrası; peteşi; izole trombositopeni; çocuk",
+    "trap": "Pansitopeni, hepatosplenomegali veya kemik ağrısı varsa ITP yerine malignite/kök hücre patolojisi düşünülür.",
+    "extraQuestion": "ITP’de tam kan sayımında beklenen temel patern nedir?",
+    "extraAnswer": "İzole trombositopeni.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-pharmacology",
+    "subject": "Tıbbi Farmakoloji",
+    "topic": "Methemoglobinemi antidotu",
+    "mainQuestion": "Siyanotik görünüm, normal PaO₂ ve çikolata rengi kan ile seyreden methemoglobinemide temel antidot hangisidir?",
+    "mainAnswer": "Metilen mavisi.",
+    "explanation": "Methemoglobinemi oksijen satürasyon ölçümünü yanıltabilir; antidot olarak metilen mavisi kullanılır.",
+    "keywords": "çikolata rengi kan; normal PaO₂; satürasyon açığı; metilen mavisi",
+    "trap": "G6PD eksikliğinde metilen mavisi etkisiz veya riskli olabilir; ağır olguda alternatif yaklaşımlar gerekir.",
+    "extraQuestion": "Methemoglobinemide pulse oksimetre ile arter kan gazı arasındaki uyumsuzluk neyi destekler?",
+    "extraAnswer": "Satürasyon açığı.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-pathology",
+    "subject": "Tıbbi Patoloji",
+    "topic": "Kazeifikasyon nekrozu",
+    "mainQuestion": "Granülomatöz inflamasyon içinde amorf, peynirimsi nekroz en çok hangi nekroz tipini düşündürür?",
+    "mainAnswer": "Kazeifikasyon nekrozu.",
+    "explanation": "Tüberkülozla ilişkili granülomlarda merkezde kazeifikasyon nekrozu klasik bir patoloji ipucudur.",
+    "keywords": "granülom; tüberküloz; peynirimsi görünüm; amorf nekroz",
+    "trap": "Sıvılaşma nekrozu beyin enfarktı ve apse ile, koagülasyon nekrozu çoğu solid organ enfarktıyla sorulur.",
+    "extraQuestion": "Beyin enfarktında beklenen nekroz tipi hangisidir?",
+    "extraAnswer": "Sıvılaşma nekrozu.",
+    "difficulty": "orta"
+  }
+
 ];
 
 const VARIANT_LABELS = ['spot', 'keywords', 'trap', 'extra'];
@@ -2271,7 +2377,7 @@ function buildKeywordBack(topic, keywords) {
   const chain = readableKeywordChain(keywords);
   const explanation = cleanSentence(topic.explanation);
   if (!chain) return explanation || cleanSentence(topic.mainAnswer);
-  return `${chain} ilişkisi doğru cevaba götürür. ${explanation}`.trim();
+  return `${chain} birlikte değerlendirilir. ${explanation}`.trim();
 }
 
 function buildVariantExplanation(topic, variant, keywords = []) {
@@ -2330,7 +2436,7 @@ function buildCard(topic, topicIndex, variantIndex) {
   if (variant === 'trap') {
     return {
       ...base,
-      front: `${topic.topic} sorusunda hangi çeldiriciye veya algoritma tuzağına dikkat edilmelidir?`,
+      front: `${topic.topic} sorusunda hangi yanıltıcı seçenek veya algoritma tuzağına dikkat edilmelidir?`,
       back: topic.trap,
       explanation: buildVariantExplanation(topic, variant, keywords),
       cardType: 'Sınav tuzağı',

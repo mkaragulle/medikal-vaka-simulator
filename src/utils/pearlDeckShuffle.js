@@ -193,7 +193,7 @@ function chooseGroup(groups, deck, random, options) {
 
   if (!available.length) return null;
 
-  const strictPool = available.filter(({ candidate }) => !wouldViolate(deck, candidate, groups, options));
+  const strictPool = available.filter(({ candidate }) => !wouldViolateStrict(deck, candidate, options));
   const pool = strictPool.length ? strictPool : available;
 
   const scored = pool.map(({ group, candidate }) => {
@@ -279,10 +279,25 @@ function wouldSwapImprove(cards, index, swapIndex, options) {
   return !hasBadLocalStreak(output, index, options) && !hasBadLocalStreak(output, swapIndex, options);
 }
 
+function buildSwapCandidateIndices(length, index) {
+  const indices = [];
+  const forwardLimit = Math.min(length, index + 36);
+  for (let candidateIndex = index + 1; candidateIndex < forwardLimit; candidateIndex += 1) {
+    indices.push(candidateIndex);
+  }
+
+  const backwardStart = Math.max(0, index - 18);
+  for (let candidateIndex = backwardStart; candidateIndex < index; candidateIndex += 1) {
+    indices.push(candidateIndex);
+  }
+
+  return indices;
+}
+
 function smoothStreaks(deck, options) {
   if (deck.length < 4) return deck;
   const output = [...deck];
-  const passes = 3;
+  const passes = 1;
   for (let pass = 0; pass < passes; pass += 1) {
     let changed = false;
     for (let index = 1; index < output.length; index += 1) {
@@ -290,11 +305,7 @@ function smoothStreaks(deck, options) {
       const currentTopic = normalizeCardTopic(output[index]);
       const currentBranch = normalizeCardBranch(output[index]);
       const currentTag = getPrimaryTag(output[index]);
-      const candidateIndices = [
-        ...output.map((_, candidateIndex) => candidateIndex).filter((candidateIndex) => candidateIndex > index),
-        ...output.map((_, candidateIndex) => candidateIndex).filter((candidateIndex) => candidateIndex < index),
-      ];
-      const swapIndex = candidateIndices.find((candidateIndex) => {
+      const swapIndex = buildSwapCandidateIndices(output.length, index).find((candidateIndex) => {
         const card = output[candidateIndex];
         return (
           normalizeCardTopic(card) !== currentTopic
@@ -315,6 +326,7 @@ function smoothStreaks(deck, options) {
 
 function spreadBranches(deck, random, options) {
   if (deck.length < 4) return deck;
+  if (deck.length > 500) return deck;
   const queues = new Map();
   deck.forEach((card) => {
     const branch = normalizeCardBranch(card);
@@ -324,7 +336,9 @@ function spreadBranches(deck, random, options) {
 
   const output = [];
   const total = deck.length;
-  while (output.length < total) {
+  let guard = 0;
+  while (output.length < total && guard < total + 5) {
+    guard += 1;
     const available = Array.from(queues.entries())
       .filter(([, cards]) => cards.length)
       .map(([branch, cards]) => ({ branch, candidate: cards[0], remaining: cards.length }));
@@ -341,13 +355,67 @@ function spreadBranches(deck, random, options) {
     });
     scored.sort((a, b) => b.score - a.score);
     const selected = scored[0];
-    output.push(queues.get(selected.branch).shift());
+    const queue = queues.get(selected.branch);
+    const nextCard = queue?.shift();
+    if (nextCard) output.push(nextCard);
+    else queues.delete(selected.branch);
   }
+
+  if (output.length < total) {
+    const remainingCards = Array.from(queues.values()).flat().filter(Boolean);
+    output.push(...remainingCards.slice(0, total - output.length));
+  }
+
   return output;
 }
 
 function dedupeCards(cards = []) {
   return Array.from(new Map((cards || []).filter((card) => card?.id).map((card) => [card.id, card])).values());
+}
+
+function buildBalancedDeck(cards, random, options) {
+  const pool = fisherYatesShuffle(cards, random)
+    .map((card) => ({
+      card,
+      score: (getCardWeight(card, options.weightContext) - 1) * 0.18
+        + (options.recentStartsSet?.has(card.id) ? -0.4 : 0)
+        + random(),
+    }))
+    .sort((a, b) => b.score - a.score)
+    .map((entry) => entry.card);
+
+  const deck = [];
+  while (pool.length) {
+    const scanLimit = Math.min(pool.length, Math.max(80, Math.ceil(Math.sqrt(pool.length) * 8)));
+    let selectedIndex = 0;
+    let selectedScore = -Infinity;
+
+    for (let candidateIndex = 0; candidateIndex < scanLimit; candidateIndex += 1) {
+      const candidate = pool[candidateIndex];
+      const strictPenalty = wouldViolateStrict(deck, candidate, options) ? -120 : 0;
+      const earlyRecentPenalty = options.recentStartsSet?.has(candidate.id)
+        && deck.length < Math.min(options.recentStartWindowSize ?? 20, options.nonRecentCount ?? 0)
+        ? -240
+        : 0;
+      const score = random()
+        + ((getCardWeight(candidate, options.weightContext) - 1) * 0.32)
+        + recentStartPenalty(candidate, deck.length, options)
+        + earlyRecentPenalty
+        + strictPenalty
+        + getTopicSpacingPenalty(deck, candidate)
+        + getBranchSpacingPenalty(deck, candidate)
+        - (candidateIndex * 0.003);
+
+      if (score > selectedScore) {
+        selectedScore = score;
+        selectedIndex = candidateIndex;
+      }
+    }
+
+    deck.push(pool.splice(selectedIndex, 1)[0]);
+  }
+
+  return deck;
 }
 
 export function analyzeDeckQuality(cards = [], options = {}) {
@@ -398,29 +466,26 @@ export function buildStudyDeck(cards = [], options = {}) {
     recentStartWindowSize = 20,
   } = options;
 
+  const shouldDebugTiming = typeof process !== 'undefined' && process.env.PEARL_DEBUG_TIMING === '1';
+  if (shouldDebugTiming) console.time(`[pearlDeck] ${seed} total`);
   const uniqueCards = dedupeCards(cards);
   const random = mulberry32(seed);
   const recentStartsSet = new Set(Array.isArray(recentStarts) ? recentStarts : []);
   const nonRecentCount = uniqueCards.filter((card) => !recentStartsSet.has(card.id)).length;
   const weightContext = { wrongIds, reviewIds, knownIds, favoriteIds };
-  const groups = buildGroups(uniqueCards, random, { recentStartsSet, weightContext });
-  const deck = [];
-
-  while (groups.some((group) => group.cards.length)) {
-    const group = chooseGroup(groups, deck, random, {
-      maxSameTopicStreak,
-      maxSameBranchStreak,
-      maxSameTagStreak,
-      recentStartsSet,
-      recentStartWindowSize,
-      nonRecentCount,
-      weightContext,
-    });
-    if (!group) break;
-    deck.push(group.cards.shift());
-    if (maxDeckSize && deck.length >= maxDeckSize) break;
-  }
-
+  if (shouldDebugTiming) console.time(`[pearlDeck] ${seed} balance`);
+  const deck = buildBalancedDeck(uniqueCards, random, {
+    maxSameTopicStreak,
+    maxSameBranchStreak,
+    maxSameTagStreak,
+    recentStartsSet,
+    recentStartWindowSize,
+    nonRecentCount,
+    weightContext,
+  });
+  if (maxDeckSize && deck.length > maxDeckSize) deck.length = maxDeckSize;
+  if (shouldDebugTiming) console.timeEnd(`[pearlDeck] ${seed} balance`);
+  if (shouldDebugTiming) console.time(`[pearlDeck] ${seed} avoid`);
   const polished = avoidRecentStarts(deck, recentStartsSet, {
     maxSameTopicStreak,
     maxSameBranchStreak,
@@ -428,6 +493,8 @@ export function buildStudyDeck(cards = [], options = {}) {
     recentStartWindowSize,
     weightContext,
   });
+  if (shouldDebugTiming) console.timeEnd(`[pearlDeck] ${seed} avoid`);
+  if (shouldDebugTiming) console.time(`[pearlDeck] ${seed} spread`);
   const branchSpread = spreadBranches(polished, random, {
     maxSameTopicStreak,
     maxSameBranchStreak,
@@ -435,11 +502,16 @@ export function buildStudyDeck(cards = [], options = {}) {
     recentStartsSet,
     recentStartWindowSize,
   });
+  if (shouldDebugTiming) console.timeEnd(`[pearlDeck] ${seed} spread`);
+  if (shouldDebugTiming) console.time(`[pearlDeck] ${seed} smooth`);
   const balanced = smoothStreaks(branchSpread, {
     maxSameTopicStreak,
     maxSameBranchStreak,
     maxSameTagStreak,
   });
+
+  if (shouldDebugTiming) console.timeEnd(`[pearlDeck] ${seed} smooth`);
+  if (shouldDebugTiming) console.timeEnd(`[pearlDeck] ${seed} total`);
 
   return {
     id: makeSessionId(),
