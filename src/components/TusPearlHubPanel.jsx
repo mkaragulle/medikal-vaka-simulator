@@ -1,6 +1,6 @@
 import { memo, useMemo, useState } from 'react';
 import { Icon } from './ui.jsx';
-import { TUS_PEARL_CARDS, TUS_PEARL_CARD_STATS } from '../data/tusPearlCards.js';
+import { TUS_PEARL_CARDS } from '../data/tusPearlCards.js';
 import { branches } from '../data/branches.js';
 import {
   addId,
@@ -10,13 +10,11 @@ import {
 } from '../utils/pearlCardStorage.js';
 import './tusPearlCards.css';
 
-const QUICK_FILTERS = [
-  { id: 'all', label: 'Tüm kartlar' },
-  { id: 'favorites', label: 'Favoriler' },
-  { id: 'wrong', label: 'Zorlandıklarım' },
-  { id: 'review', label: 'Bugün tekrar et' },
-  { id: 'known', label: 'Bildiklerim' },
-  { id: 'past', label: 'Çıkmış bilgiler' },
+const DASHBOARD_ACTIONS = [
+  { id: 'review', label: 'Hızlı tekrar başlat', description: 'Bekleyen ve zorlandığın kartlar', icon: 'Zap', primary: true },
+  { id: 'wrong', label: 'Zorlandıklarımı çalış', description: 'Karıştırdığın spotlar', icon: 'Target' },
+  { id: 'favorites', label: 'Favorileri aç', description: 'İşaretlediğin kritik kartlar', icon: 'Sparkles' },
+  { id: 'past', label: 'Çıkmış bilgileri aç', description: 'Sınav sinyali güçlü bilgiler', icon: 'BookOpen' },
 ];
 
 function toSet(ids = []) {
@@ -51,9 +49,9 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
 
   const favoriteSet = useMemo(() => toSet(pearlState.favoritePearlCardIds), [pearlState.favoritePearlCardIds]);
   const wrongSet = useMemo(() => toSet(pearlState.wrongPearlCardIds), [pearlState.wrongPearlCardIds]);
-  const knownSet = useMemo(() => toSet(pearlState.knownPearlCardIds), [pearlState.knownPearlCardIds]);
   const reviewSet = useMemo(() => toSet(pearlState.reviewPearlCardIds), [pearlState.reviewPearlCardIds]);
   const weakBranch = useMemo(() => buildWeakBranchSummary(wrongAnswers), [wrongAnswers]);
+  const dueCount = new Set([...wrongSet, ...reviewSet]).size;
 
   const recommendedCards = useMemo(() => {
     const wrongBranchCards = weakBranch
@@ -61,13 +59,13 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
       : [];
     const reviewCards = TUS_PEARL_CARDS.filter((card) => reviewSet.has(card.id) || wrongSet.has(card.id));
     const highYieldCards = TUS_PEARL_CARDS.filter((card) => card.isHighYield);
-    const pool = [...wrongBranchCards, ...reviewCards, ...highYieldCards];
+    const pool = [...wrongBranchCards, ...reviewCards, ...highYieldCards, ...TUS_PEARL_CARDS];
     const seen = new Set();
     return pool.filter((card) => {
       if (seen.has(card.id)) return false;
       seen.add(card.id);
       return true;
-    }).slice(0, 4);
+    }).slice(0, 3);
   }, [reviewSet, weakBranch, wrongSet]);
 
   function commitState(updater) {
@@ -96,7 +94,12 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
   }
 
   const activeCatalog = pearlState.customCatalogs?.find((catalog) => catalog.id === activeCatalogId);
-  const dueCount = new Set([...wrongSet, ...reviewSet]).size;
+  const stats = [
+    { label: 'Toplam kart', value: TUS_PEARL_CARDS.length },
+    { label: 'Favori', value: favoriteSet.size },
+    { label: 'Zorlandığın', value: wrongSet.size },
+    { label: 'Tekrar bekleyen', value: dueCount },
+  ];
 
   return (
     <section className="tus-pearl-hub-panel card-surface" aria-label="Hap Bilgi Kartları hızlı tekrar paneli">
@@ -105,61 +108,67 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
         <div>
           <p className="auth-eyebrow">Aktif hatırlama</p>
           <h2>Hap Bilgi Kartları</h2>
-          <span>Kısa tekrar, sınav tuzağı ve anahtar kelime kartlarını yanlışlarınla aynı çalışma akışında tut.</span>
+          <span>5 dakikalık spot tekrarlar, favoriler ve kişisel kataloglar tek giriş yüzünde.</span>
         </div>
         <span className="tus-pearl-hub-icon" aria-hidden="true"><Icon name="LayeredCards" /></span>
       </header>
 
       <div className="tus-pearl-hub-stats" aria-label="Hap kart istatistikleri">
-        <span><b>{TUS_PEARL_CARDS.length}</b> toplam kart</span>
-        <span><b>{favoriteSet.size}</b> favori</span>
-        <span><b>{wrongSet.size}</b> zorlandığın</span>
-        <span><b>{dueCount}</b> tekrar bekleyen</span>
+        {stats.map((stat) => <span key={stat.label}><b>{stat.value}</b>{stat.label}</span>)}
       </div>
 
-      {weakBranch ? (
-        <div className="pearl-bridge-callout">
-          <Icon name="Target" />
-          <p><strong>{weakBranch.branchName}</strong> içinde {weakBranch.count} hata öne çıkıyor. İlgili hap kartlarla 5 dakikalık hedefli tekrar başlat.</p>
-        </div>
-      ) : (
-        <div className="pearl-bridge-callout soft">
-          <Icon name="Sparkles" />
+      <div className={`pearl-bridge-callout ${weakBranch ? '' : 'soft'}`.trim()}>
+        <Icon name={weakBranch ? 'Target' : 'Sparkles'} />
+        {weakBranch ? (
+          <p><strong>{weakBranch.branchName}</strong> içinde {weakBranch.count} hata öne çıkıyor. Bu branşa yakın hap kartlarla hedefli tekrar başlat.</p>
+        ) : (
           <p>Yanlışların oluşmadan da yüksek verimli TUS spotlarıyla kısa tekrar yapabilirsin.</p>
-        </div>
-      )}
+        )}
+      </div>
 
-      <div className="tus-pearl-hub-chip-row" aria-label="Hap kart hızlı filtreleri">
-        {QUICK_FILTERS.map((filter) => (
+      <div className="tus-pearl-action-grid" aria-label="Hap bilgi hızlı girişleri">
+        {DASHBOARD_ACTIONS.map((action) => (
           <button
-            key={filter.id}
+            key={action.id}
             type="button"
-            onClick={() => onOpenStudy?.({ filter: filter.id, branchFilter: weakBranch?.branchId || 'all' })}
+            className={action.primary ? 'primary' : ''}
+            onClick={() => onOpenStudy?.({ filter: action.id, branchFilter: action.id === 'review' ? weakBranch?.branchId || 'all' : 'all' })}
           >
-            {filter.label}
+            <Icon name={action.icon} size={18} />
+            <span><strong>{action.label}</strong><em>{action.description}</em></span>
           </button>
         ))}
       </div>
 
-      <div className="tus-pearl-preview-stack" aria-label="Önerilen hap bilgi kartları">
-        {recommendedCards.slice(0, 3).map((card) => (
-          <article key={card.id} className="tus-pearl-preview-card">
+      <div className="tus-pearl-preview-stack compact" aria-label="Önerilen hap bilgi kartları">
+        {recommendedCards.map((card) => (
+          <button
+            key={card.id}
+            type="button"
+            className="tus-pearl-preview-card"
+            onClick={() => onOpenStudy?.({ filter: 'all', branchFilter: card.branchId })}
+          >
             <div>
               <span>{card.subject} · {card.cardType || 'Spot'}</span>
               <strong>{card.front}</strong>
             </div>
             <Icon name="ArrowRight" size={17} />
-          </article>
+          </button>
         ))}
       </div>
 
       <div className="tus-pearl-catalog-mini">
-        <div>
-          <strong>Kendi kataloğunu oluştur</strong>
-          <p>Farmakoloji ezber, son hafta tekrar veya en çok karıştırdıkların gibi kişisel setler kur.</p>
+        <div className="tus-pearl-catalog-mini-head">
+          <div>
+            <strong>Kataloglarım</strong>
+            <p>Kendi tekrar setini oluştur; sonra içine girip kart ekle veya çıkar.</p>
+          </div>
+          <button type="button" className="btn btn-secondary compact" onClick={() => onOpenStudy?.({ filter: 'catalogs', branchFilter: 'all', catalogId: activeCatalogId })}>
+            Yönet
+          </button>
         </div>
         <div className="tus-pearl-catalog-mini-controls">
-          <input value={catalogName} onChange={(event) => setCatalogName(event.target.value)} placeholder="Katalog adı" />
+          <input value={catalogName} onChange={(event) => setCatalogName(event.target.value)} placeholder="Katalog adı: Son hafta tekrar" />
           <button type="button" className="btn btn-secondary compact" onClick={createCatalog}>Oluştur</button>
         </div>
         {pearlState.customCatalogs?.length ? (
@@ -167,20 +176,12 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
             <select value={activeCatalogId} onChange={(event) => setActiveCatalogId(event.target.value)} aria-label="Hap bilgi kataloğu seç">
               {pearlState.customCatalogs.map((catalog) => <option key={catalog.id} value={catalog.id}>{catalog.name} ({catalog.cardIds.length})</option>)}
             </select>
+            <button type="button" className="btn btn-primary compact" onClick={() => onOpenStudy?.({ filter: 'catalog', branchFilter: 'all', catalogId: activeCatalogId })} disabled={!activeCatalog}>Aç</button>
             <button type="button" className="btn btn-secondary compact" onClick={addRecommendedToCatalog} disabled={!activeCatalog}>Önerileri ekle</button>
           </div>
-        ) : null}
-      </div>
-
-      <div className="tus-pearl-hub-actions">
-        <button type="button" className="btn btn-primary" onClick={() => onOpenStudy?.({ filter: dueCount ? 'review' : 'all', branchFilter: weakBranch?.branchId || 'all' })}>
-          <Icon name="LayeredCards" />
-          <span>Hızlı tekrar başlat</span>
-        </button>
-        <button type="button" className="btn btn-secondary" onClick={() => onOpenStudy?.({ filter: 'favorites', branchFilter: 'all' })}>
-          <Icon name="Sparkles" />
-          <span>Favoriler</span>
-        </button>
+        ) : (
+          <span className="tus-pearl-catalog-empty-line">Henüz katalog yok. İlk setini oluşturduğunda burada kalıcı görünür.</span>
+        )}
       </div>
     </section>
   );
