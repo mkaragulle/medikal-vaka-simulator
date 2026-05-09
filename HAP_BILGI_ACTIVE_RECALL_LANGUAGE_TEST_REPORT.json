@@ -4,6 +4,7 @@
   "metaViolations": 0,
   "duplicationViolations": 0,
   "missingFieldViolations": 0,
+  "genericFrontViolations": 0,
   "manualReviewRequired": [],
   "examples": [
     {
@@ -60,53 +61,53 @@
       "id": "tus-pearl-anatomy-001-keywords",
       "topic": "Ulnar sinir lezyonu",
       "cardType": "Anahtar kelime",
-      "front": "Ulnar sinir lezyonu için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?",
+      "front": "Ulnar sinir lezyonu hangi anatomik-muayene paterniyle hatırlanır?",
       "answer": "4–5. parmak duyu kaybı → pençe el → interosseöz zayıflık → Froment belirtisi.",
       "explanation": "Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir.",
-      "tusTip": "Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir.",
+      "tusTip": "",
       "differentialNote": "Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur."
     },
     {
       "id": "tus-pearl-anatomy-002-keywords",
       "topic": "Radial sinir lezyonu",
       "cardType": "Anahtar kelime",
-      "front": "Radial sinir lezyonu için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?",
+      "front": "Radial sinir lezyonu hangi anatomik-muayene paterniyle hatırlanır?",
       "answer": "düşük el → humerus şaft kırığı → ekstansiyon kaybı → posterior kol.",
       "explanation": "Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir.",
-      "tusTip": "Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir.",
+      "tusTip": "",
       "differentialNote": "Median sinir lezyonu düşük el değil, thenar atrofi ve ape hand ile karışır."
     },
     {
       "id": "tus-pearl-physiology-010-keywords",
       "topic": "V/Q uyumsuzluğu",
       "cardType": "Anahtar kelime",
-      "front": "V/Q uyumsuzluğu için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?",
+      "front": "V/Q uyumsuzluğu hangi fizyolojik mekanizma paterninde hatırlanır?",
       "answer": "pulmoner emboli → perfüzyon azalır → V/Q artar → ölü boşluk.",
       "explanation": "Emboli perfüzyonu düşürür ve ölü boşluk ventilasyonunu artırır.",
-      "tusTip": "Emboli perfüzyonu düşürür ve ölü boşluk ventilasyonunu artırır.",
+      "tusTip": "",
       "differentialNote": "Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır."
     },
     {
       "id": "tus-pearl-anatomy-003-keywords",
       "topic": "N. fibularis communis lezyonu",
       "cardType": "Anahtar kelime",
-      "front": "N. fibularis communis lezyonu için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?",
+      "front": "N. fibularis communis lezyonu hangi anatomik-muayene paterniyle hatırlanır?",
       "answer": "düşük ayak → steppage yürüyüş → fibula boynu → dorsifleksiyon kaybı.",
       "explanation": "N. fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
-      "tusTip": "N. fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
+      "tusTip": "",
       "differentialNote": "N. tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur."
     },
     {
       "id": "tus-pearl-anatomy-004-keywords",
       "topic": "Parotis ve fasiyal sinir",
       "cardType": "Anahtar kelime",
-      "front": "Parotis ve fasiyal sinir için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?",
+      "front": "Parotis ve fasiyal sinir hangi anatomik-muayene paterniyle hatırlanır?",
       "answer": "parotis → mimik kasları → fasiyal sinir → cerrahi risk.",
       "explanation": "Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder.",
-      "tusTip": "Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder.",
+      "tusTip": "",
       "differentialNote": "Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir."
     }
   ],
   "status": "passed",
-  "generatedAt": "2026-05-09T19:19:54.319Z"
+  "generatedAt": "2026-05-09T19:54:28.831Z"
 }

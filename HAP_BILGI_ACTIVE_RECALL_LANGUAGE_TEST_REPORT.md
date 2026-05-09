@@ -4,6 +4,7 @@
 - Meta-language violations: 0
 - Front/back duplication violations: 0
 - Missing front/answer violations: 0
+- Generic front violations: 0
 - Manual review required: 0
 - Status: passed
 
@@ -39,32 +40,27 @@
 - TUS tip: Sepsis/şok sorularında ilk yaklaşım yalnız antibiyotik veya yalnız sıvı değildir; erken kombine resüsitasyon düşünülür.
 - Differential note: Vazopressör, yeterli sıvı resüsitasyonuna rağmen hipotansiyon sürerse gündeme gelir.
 ### 6. Ulnar sinir lezyonu
-- Front: Ulnar sinir lezyonu için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?
+- Front: Ulnar sinir lezyonu hangi anatomik-muayene paterniyle hatırlanır?
 - Answer: 4–5. parmak duyu kaybı → pençe el → interosseöz zayıflık → Froment belirtisi.
 - Explanation: Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir.
-- TUS tip: Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir.
 - Differential note: Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.
 ### 7. Radial sinir lezyonu
-- Front: Radial sinir lezyonu için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?
+- Front: Radial sinir lezyonu hangi anatomik-muayene paterniyle hatırlanır?
 - Answer: düşük el → humerus şaft kırığı → ekstansiyon kaybı → posterior kol.
 - Explanation: Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir.
-- TUS tip: Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir.
 - Differential note: Median sinir lezyonu düşük el değil, thenar atrofi ve ape hand ile karışır.
 ### 8. V/Q uyumsuzluğu
-- Front: V/Q uyumsuzluğu için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?
+- Front: V/Q uyumsuzluğu hangi fizyolojik mekanizma paterninde hatırlanır?
 - Answer: pulmoner emboli → perfüzyon azalır → V/Q artar → ölü boşluk.
 - Explanation: Emboli perfüzyonu düşürür ve ölü boşluk ventilasyonunu artırır.
-- TUS tip: Emboli perfüzyonu düşürür ve ölü boşluk ventilasyonunu artırır.
 - Differential note: Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır.
 ### 9. N. fibularis communis lezyonu
-- Front: N. fibularis communis lezyonu için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?
+- Front: N. fibularis communis lezyonu hangi anatomik-muayene paterniyle hatırlanır?
 - Answer: düşük ayak → steppage yürüyüş → fibula boynu → dorsifleksiyon kaybı.
 - Explanation: N. fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.
-- TUS tip: N. fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.
 - Differential note: N. tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.
 ### 10. Parotis ve fasiyal sinir
-- Front: Parotis ve fasiyal sinir için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?
+- Front: Parotis ve fasiyal sinir hangi anatomik-muayene paterniyle hatırlanır?
 - Answer: parotis → mimik kasları → fasiyal sinir → cerrahi risk.
 - Explanation: Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder.
-- TUS tip: Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder.
 - Differential note: Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir.

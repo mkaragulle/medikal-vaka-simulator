@@ -22,10 +22,18 @@ function frontSentenceIsRepeated(front = '', value = '') {
   return valueKey === frontKey || valueKey.startsWith(`${frontKey} `) || valueKey.includes(` ${frontKey} `);
 }
 
+const GENERIC_FRONT_PATTERNS = [
+  /karışabilecek temel ayırıcı/i,
+  /ayırt ettirici TUS paterni/i,
+  /çeldiriciye düşmemeyi sağlayan/i,
+  /yüksek verimli ipucu zinciri/i,
+];
+
 const normalizedCards = TUS_PEARL_CARDS.map((card) => normalizePearlCardFields(card));
 const metaViolations = [];
 const duplicationViolations = [];
 const missingFieldViolations = [];
+const genericFrontViolations = [];
 const examples = [];
 
 for (const card of normalizedCards) {
@@ -36,6 +44,10 @@ for (const card of normalizedCards) {
   }
   if (!card.front || !card.answer) {
     missingFieldViolations.push({ id: card.id, topic: card.topic, front: card.front, answer: card.answer });
+  }
+  const genericPattern = GENERIC_FRONT_PATTERNS.find((item) => item.test(card.front || ''));
+  if (genericPattern) {
+    genericFrontViolations.push({ id: card.id, topic: card.topic, pattern: String(genericPattern), front: card.front });
   }
   const backContent = getPearlBackContent(card);
   for (const [field, value] of Object.entries({
@@ -95,9 +107,10 @@ const report = {
   metaViolations: metaViolations.length,
   duplicationViolations: duplicationViolations.length,
   missingFieldViolations: missingFieldViolations.length,
+  genericFrontViolations: genericFrontViolations.length,
   manualReviewRequired: [],
   examples,
-  status: metaViolations.length || duplicationViolations.length || missingFieldViolations.length ? 'failed' : 'passed',
+  status: metaViolations.length || duplicationViolations.length || missingFieldViolations.length || genericFrontViolations.length ? 'failed' : 'passed',
   generatedAt: new Date().toISOString(),
 };
 
@@ -109,6 +122,7 @@ fs.writeFileSync('HAP_BILGI_ACTIVE_RECALL_LANGUAGE_TEST_REPORT.md', [
   `- Meta-language violations: ${report.metaViolations}`,
   `- Front/back duplication violations: ${report.duplicationViolations}`,
   `- Missing front/answer violations: ${report.missingFieldViolations}`,
+  `- Generic front violations: ${report.genericFrontViolations}`,
   `- Manual review required: ${report.manualReviewRequired.length}`,
   `- Status: ${report.status}`,
   '',

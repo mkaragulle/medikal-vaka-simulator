@@ -2431,16 +2431,178 @@ const SPECIAL_KEYWORD_CARDS = {
   },
 };
 
+function textHasAny(text = '', patterns = []) {
+  const source = String(text || '').toLocaleLowerCase('tr');
+  return patterns.some((pattern) => pattern.test(source));
+}
+
+function normalizeTopicLabel(value = '') {
+  return String(value || '')
+    .toLocaleLowerCase('tr')
+    .replace(/[“”"'’`´]/g, '')
+    .replace(/[^\p{L}\p{N}\s]/gu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function inferKeywordQuestionDomain(topic, keywords = []) {
+  const source = `${topic.topic || ''} ${topic.subject || ''} ${keywords.join(' ')} ${topic.explanation || ''}`.toLocaleLowerCase('tr');
+
+  if (textHasAny(source, [/asit/u, /alkaloz/u, /ph\b/u, /hco/u, /paco/u, /pao/u, /anyon/u, /laktat/u, /keton/u])) {
+    return 'hangi klinik ve asit-baz paterniyle';
+  }
+  if (textHasAny(source, [/ekg/u, /qrs/u, /st /u, /t dalgas/u, /aritmi/u, /torsades/u])) {
+    return 'hangi EKG ve klinik paternle';
+  }
+  if (textHasAny(source, [/anti-/u, /ana\b/u, /c3/u, /c4/u, /hbsag/u, /igm/u, /igg/u, /seroloji/u, /kültür/u, /pcr/u, /gram/u, /oksidaz/u, /toksin/u])) {
+    return 'hangi laboratuvar veya mikrobiyolojik paternle';
+  }
+  if (textHasAny(source, [/bt/u, /mr/u, /grafi/u, /ultrason/u, /usg/u, /görüntüleme/u, /dolum defekti/u])) {
+    return 'hangi görüntüleme bulgusuyla';
+  }
+  if (textHasAny(source, [/sinir/u, /duyu/u, /parmak/u, /\bkas\b/u, /el\b/u, /ayak/u, /yürüyüş/u, /ekstansiyon/u, /fleksiyon/u, /fasiyal/u, /abducens/u, /skapula/u, /saphena/u, /malleol/u, /epizyotomi/u, /perineale/u, /perine/u])) {
+    return 'hangi anatomik-muayene paterniyle';
+  }
+  if (textHasAny(source, [/enzim/u, /reseptör/u, /kanal/u, /aquaporin/u, /siklus/u, /amino/u, /glukoz/u, /lipid/u, /vitamin/u, /koenzim/u, /fenilalanin/u, /homosistin/u, /üre/u, /kolesterol/u, /hipoglisemi/u, /hepatomegali/u, /niasin/u, /pellagra/u, /ürat/u])) {
+    return 'hangi biyokimyasal paternle';
+  }
+  if (textHasAny(source, [/tedavi/u, /ilk/u, /yaklaşım/u, /adrenalin/u, /antibiyotik/u, /kalsiyum/u, /insülin/u, /resüsitasyon/u, /profilaksi/u, /aşı/u, /immünizasyon/u])) {
+    return 'hangi tedavi veya ilk yaklaşım bilgisiyle';
+  }
+  if (textHasAny(source, [/gebelik/u, /doğum/u, /fetal/u, /plasenta/u, /membran/u])) {
+    return 'hangi obstetrik ipucu paterninde';
+  }
+  if (textHasAny(source, [/v\/q/u, /perfüzyon/u, /ventilasyon/u, /şant/u, /compliance/u, /kemoreseptör/u, /bpg/u, /oksijen eğrisi/u])) {
+    return 'hangi fizyolojik mekanizma paterninde';
+  }
+  if (textHasAny(source, [/poş/u, /türev/u, /nöral krest/u, /meckel/u, /urakus/u, /pnömosit/u, /hcg/u])) {
+    return 'hangi embriyolojik veya histolojik paternle';
+  }
+  if (textHasAny(source, [/nekroz/u, /karsinom/u, /kanser/u, /metaplazi/u, /psammoma/u, /orphan annie/u, /granülom/u, /podosit/u])) {
+    return 'hangi patolojik paternle';
+  }
+  if (textHasAny(source, [/pnömoni/u, /bakteri/u, /virüs/u, /s\. /u, /c\. /u, /ebv/u, /hsv/u, /hib/u, /legionella/u, /kızamık/u])) {
+    return 'hangi enfeksiyöz klinik veya mikrobiyolojik paternle';
+  }
+  if (textHasAny(source, [/parasetamol/u, /heparin/u, /vankomisin/u, /makrolid/u, /klozapin/u, /lityum/u, /ace inhibitörü/u, /antidot/u, /yan etki/u, /cyp/u])) {
+    return 'hangi farmakolojik ipucuyla';
+  }
+  if (textHasAny(source, [/ateş/u, /ağrı/u, /öksürük/u, /papül/u, /skuam/u, /herald/u, /purpura/u, /sarılık/u, /hipertermi/u, /hipotoni/u, /tremor/u, /bradikinezi/u, /nöbet/u, /kanama/u, /hipertansiyon/u, /hipokalemi/u, /nefrotik/u, /istismar/u, /ekimoz/u, /hemoliz/u, /anemi/u, /coombs/u, /pesi/u, /hemodinamik/u, /atak/u, /oligoklonal/u, /genç kadın/u])) {
+    return 'hangi klinik bulgu paterniyle';
+  }
+  return 'hangi yüksek verimli ipucu zinciriyle';
+}
+
 function buildKeywordFront(topic, keywords = []) {
   const special = SPECIAL_KEYWORD_CARDS[topic.topic];
   if (special?.front) return special.front;
-  const chain = readableKeywordChain(keywords);
-  if (chain) return `${topic.topic} için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?`;
-  return `${topic.topic} hangi temel bilgiyle hatırlanmalıdır?`;
+  return `${topic.topic} ${inferKeywordQuestionDomain(topic, keywords)} hatırlanır?`;
+}
+
+const SPECIAL_TRAP_FRONTS = {
+  'Salisilat zehirlenmesi': 'Salisilat zehirlenmesi opioid toksidromundan hangi solunum paterniyle ayrılır?',
+  'Anafilaksi antihistaminik tuzağı': 'Anafilakside antihistaminik ve steroid neden adrenalinin yerine geçmez?',
+  'Hiperkalemi tedavi sırası': 'EKG değişikliği olan hiperkalemide insülin-glukoz neden ilk basamak değildir?',
+};
+
+function displayTopicForFront(value = '') {
+  return String(value || '').replace(/\s+tuzağı$/iu, '').trim();
+}
+
+function polishContrastEntity(value = '') {
+  return String(value || '')
+    .replace(/\bOpioid toksidrom$/iu, 'Opioid toksidromu')
+    .replace(/\b([A-ZÇĞİÖŞÜa-zçğıöşü]+) etkisiyle$/u, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function stripContrastEntity(value = '') {
+  const text = String(value || '')
+    .replace(/[“”]/g, '')
+    .replace(/^[;,.\s]+|[;,.\s]+$/g, '')
+    .trim();
+  if (!text) return '';
+
+  const comparisonLead = text.match(/^([A-ZÇĞİÖŞÜa-zçğıöşü]+(?:\s+ve\s+[A-ZÇĞİÖŞÜa-zçğıöşü]+)?)(?:\s+[^.;]*?)\b(?:karışır|karışabilir|ile karışır|ile karışabilir)\b/iu);
+  if (comparisonLead?.[1]) return polishContrastEntity(comparisonLead[1]);
+
+  const explicitEntityPatterns = [
+    /^(.+?\blezyonu)\b/iu,
+    /^(.+?\btoksidrom)(?:u|unda|ünde|ında|inde)?\b/iu,
+    /^(.+?\bzehirlenmesi)\b/iu,
+    /^(.+?\beksikliği)\b/iu,
+    /^(.+?\bhastalığı)\b/iu,
+    /^(.+?\bsendromu)\b/iu,
+    /^(.+?\bkanser)\b/iu,
+    /^(.+?\bkarsinom)\b/iu,
+    /^(.+?\bsinir)\b/iu,
+    /^(.+?\bhormon)\b/iu,
+    /^(.+?\benzim)\b/iu,
+    /^(.+?\breseptör)\b/iu,
+    /^(.+?\bnekrozu)\b/iu,
+    /^(.+?\bkalıntısı)\b/iu,
+  ];
+
+  for (const pattern of explicitEntityPatterns) {
+    const match = text.match(pattern);
+    if (match?.[1]) return polishContrastEntity(match[1]);
+  }
+
+  const locative = text.match(/^(.{3,90}?)(?:['’]?(?:nda|nde|da|de|ta|te|ında|inde|unda|ünde))\b/iu);
+  if (locative?.[1]) return polishContrastEntity(locative[1]);
+
+  const capitalLead = text.match(/^([A-ZÇĞİÖŞÜ][\p{L}0-9.'’+-]+(?:\s+[A-ZÇĞİÖŞÜ][\p{L}0-9.'’+-]+){0,2})\b/u);
+  if (capitalLead?.[1] && !/^(Sadece|Bu|Daha)$/u.test(capitalLead[1])) return polishContrastEntity(capitalLead[1]);
+
+  const beforeCue = text.match(/^(.{3,70}?)(?:\s+daha\s+|\s+ise\s+|\s+genellikle\s+|\s+beklenir\b|\s+karışır\b|\s+karışabilir\b)/iu);
+  if (beforeCue?.[1]) return polishContrastEntity(beforeCue[1]);
+
+  return '';
+}
+
+function inferTrapQuestionDimension(trap = '', topic = {}) {
+  const source = `${trap || ''} ${topic.topic || ''}`.toLocaleLowerCase('tr');
+  if (textHasAny(source, [/solunum/u, /hiperventilasyon/u, /depresyon/u, /takipne/u, /bronkospazm/u])) return 'solunum paterni';
+  if (textHasAny(source, [/asit/u, /alkaloz/u, /ph\b/u, /hco/u, /anyon/u, /laktat/u])) return 'asit-baz paterni';
+  if (textHasAny(source, [/ekg/u, /qrs/u, /st /u, /t dalgas/u, /aritmi/u])) return 'EKG veya ritim bulgusu';
+  if (textHasAny(source, [/pesi/u, /risk/u, /hemodinamik/u, /şok/u, /mortalite/u])) return 'risk sınıflaması';
+  if (textHasAny(source, [/von gierke/u, /mcardle/u, /hipoglisemi/u, /hiperürisemi/u, /laktik asidoz/u, /glikojen/u])) return 'metabolik patern';
+  if (textHasAny(source, [/karsinom/u, /kanser/u, /kapsül/u, /damar invazyon/u, /lenfatik/u, /hematolojik yayılım/u])) return 'patolojik yayılım paterni';
+  if (textHasAny(source, [/lens/u, /duyu/u, /parmak/u, /ekstansiyon/u, /fleksiyon/u, /yürüyüş/u, /motor/u, /\bkas\b/u, /nörolojik/u, /opozisyon/u, /thenar/u, /ino/u, /oligoklonal/u])) return 'muayene bulgusu';
+  if (textHasAny(source, [/tedavi/u, /adrenalin/u, /antihistaminik/u, /steroid/u, /insülin/u, /kalsiyum/u, /vazopressör/u, /antibiyotik/u])) return 'tedavi önceliği';
+  if (textHasAny(source, [/şant/u, /perfüzyon/u, /ventilasyon/u, /v\/q/u])) return 'ventilasyon-perfüzyon ilişkisi';
+  if (textHasAny(source, [/anti-/u, /ana\b/u, /c3/u, /c4/u, /igg/u, /igm/u, /seroloji/u, /kültür/u, /gram/u, /oksidaz/u, /pcr/u])) return 'laboratuvar paterni';
+  if (textHasAny(source, [/bt/u, /mr/u, /grafi/u, /ultrason/u, /usg/u, /görüntüleme/u])) return 'görüntüleme bulgusu';
+  if (textHasAny(source, [/enzim/u, /reseptör/u, /kanal/u, /taşıyıcı/u, /siklus/u, /metabolizma/u, /aquaporin/u, /v2/u])) return 'mekanizma bilgisi';
+  return 'ayırt ettirici ipucu';
 }
 
 function buildTrapFront(topic) {
-  return `${topic.topic} ile karışabilecek temel ayırıcı nokta nedir?`;
+  if (SPECIAL_TRAP_FRONTS[topic.topic]) return SPECIAL_TRAP_FRONTS[topic.topic];
+  const trap = String(topic.trap || '').trim();
+  const [firstClause = '', secondClause = ''] = trap.split(/;|\.(?=\s+[A-ZÇĞİÖŞÜ])/u).map((item) => item.trim()).filter(Boolean);
+  const topicKey = String(topic.topic || '').toLocaleLowerCase('tr').replace(/[.!?]+$/g, '');
+  const mainAnswerKey = String(topic.mainAnswer || '').toLocaleLowerCase('tr').replace(/[.!?]+$/g, '');
+  const firstKey = firstClause.toLocaleLowerCase('tr');
+  const secondKey = secondClause.toLocaleLowerCase('tr');
+  const dimension = inferTrapQuestionDimension(trap, topic);
+
+  let otherEntity = '';
+  if (secondClause && (secondKey.includes(topicKey) || secondKey.includes(mainAnswerKey))) {
+    otherEntity = stripContrastEntity(firstClause);
+  } else if (firstClause && (firstKey.includes(topicKey) || firstKey.includes(mainAnswerKey))) {
+    otherEntity = stripContrastEntity(secondClause);
+  } else {
+    otherEntity = stripContrastEntity(firstClause);
+  }
+
+  const topicTitle = displayTopicForFront(topic.topic);
+  if (otherEntity && normalizeTopicLabel(otherEntity) !== normalizeTopicLabel(topicTitle)) {
+    return `${topicTitle}, ${otherEntity} ile hangi ${dimension} üzerinden ayrılır?`;
+  }
+
+  return `${topicTitle} hangi ${dimension} ile benzer tablolardan ayrılır?`;
 }
 
 function buildTusTip(topic, keywords = []) {
@@ -2460,7 +2622,7 @@ function buildVariantExplanation(topic, variant, keywords = []) {
     return explanation;
   }
   if (variant === 'trap') {
-    return `${answer} ${explanation}`.trim();
+    return explanation;
   }
   if (variant === 'extra') {
     return trap ? `${explanation} Ayırıcı not: ${trap}` : explanation;
@@ -2506,7 +2668,7 @@ function buildCard(topic, topicIndex, variantIndex) {
       back: answer,
       answer,
       explanation: buildVariantExplanation(topic, variant, keywords),
-      tusTip: special.tusTip || cleanSentence(topic.explanation),
+      tusTip: special.tusTip || '',
       differentialNote: special.differentialNote || cleanSentence(topic.trap),
       cardType: 'Anahtar kelime',
     };

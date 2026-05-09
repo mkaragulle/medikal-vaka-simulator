@@ -254,14 +254,14 @@ export function rewritePearlFront(card = {}) {
   const topic = normalizeText(card.topic || rawFront.replace(/\s+sorusunda[\s\S]*$/iu, ''));
 
   const keywordMatch = rawFront.match(/^(.+?)\s+sorusunda\s+doğru\s+cevaba\s+götüren\s+ayırt\s+ettirici\s+ipuçları\s+hangileridir\??$/iu);
-  if (keywordMatch) return `${topic || keywordMatch[1]} için ayırt ettirici TUS paterni hangi ipuçlarından oluşur?`;
+  if (keywordMatch) return `${topic || keywordMatch[1]} hangi anahtar paternle hatırlanır?`;
 
   const trapMatch = rawFront.match(/^(.+?)\s+sorusunda\s+hangi\s+yanıltıcı\s+seçenek\s+veya\s+algoritma\s+tuzağına\s+dikkat\s+edilmelidir\??$/iu);
-  if (trapMatch) return `${topic || trapMatch[1]} ile karışabilecek temel ayırıcı nokta nedir?`;
+  if (trapMatch) return `${topic || trapMatch[1]} hangi ipucuyla benzer tablolardan ayrılır?`;
 
   return rawFront
-    .replace(/\s+sorusunda\s+doğru\s+cevaba\s+götüren\s+/giu, ' için ayırt ettirici ')
-    .replace(/\s+sorusunda\s+doğru\s+cevabı\s+destekleyen\s+/giu, ' için ayırt ettirici ')
+    .replace(/\s+sorusunda\s+doğru\s+cevaba\s+götüren\s+/giu, ' için ')
+    .replace(/\s+sorusunda\s+doğru\s+cevabı\s+destekleyen\s+/giu, ' için ')
     .replace(/\bbu\s+soruda\b/giu, 'bu klinik tabloda')
     .replace(/\bTUS\s+sorusunda\b/giu, 'TUS’ta')
     .replace(/\bkaynak\s+soruda\b/giu, 'kaynak klinik paterninde')
@@ -301,8 +301,11 @@ export function normalizePearlCardFields(card = {}) {
   differentialNote = stripFrontDuplication(front, differentialNote);
 
   const answerKey = normalizePearlTextForCompare(answer);
+  const explanationKey = normalizePearlTextForCompare(explanation);
   if (tusTip && normalizePearlTextForCompare(tusTip) === answerKey) tusTip = '';
+  if (tusTip && explanationKey && normalizePearlTextForCompare(tusTip) === explanationKey) tusTip = '';
   if (differentialNote && normalizePearlTextForCompare(differentialNote) === answerKey) differentialNote = '';
+  if (differentialNote && explanationKey && normalizePearlTextForCompare(differentialNote) === explanationKey) differentialNote = '';
 
   return {
     ...card,
