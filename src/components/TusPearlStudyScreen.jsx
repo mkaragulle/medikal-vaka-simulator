@@ -17,6 +17,7 @@ import {
 } from '../utils/pearlCardStorage.js';
 import { buildStudyDeck } from '../utils/pearlDeckShuffle.js';
 import { buildPearlRepeatListItems, getPearlEmptyState } from '../utils/pearlRepeatLists.js';
+import { getPearlBackContent } from '../utils/pearlCardContent.js';
 import TusPearlCardEditor from './TusPearlCardEditor.jsx';
 import './tusPearlCards.css';
 
@@ -321,6 +322,7 @@ function TusPearlStudyScreen({
   const secondaryRepeatItems = useMemo(() => repeatListItems.filter((item) => ['known', 'user', 'catalogs'].includes(item.id)), [repeatListItems]);
   const isSecondaryListActive = viewMode === 'catalogs' || ['known', 'user'].includes(filter);
   const emptyState = useMemo(() => getPearlEmptyState(filter), [filter]);
+  const activeCardContent = useMemo(() => getPearlBackContent(activeCard || {}), [activeCard]);
 
   const catalogCards = useMemo(() => (
     (activeCatalog?.cardIds || []).map((id) => cardById.get(id)).filter(Boolean)
@@ -836,8 +838,14 @@ function TusPearlStudyScreen({
                     <strong>{activeCard.front}</strong>
                   </span>
                   <span className="tus-pearl-focus-face tus-pearl-focus-back">
-                    <strong>{activeCard.back}</strong>
-                    {activeCard.explanation ? <p>{activeCard.explanation}</p> : null}
+                    <strong>{activeCardContent.backText}</strong>
+                    {activeCardContent.detailText ? <p>{activeCardContent.detailText}</p> : null}
+                    {activeCardContent.noteText ? (
+                      <span className="tus-pearl-note-box focus" role="note" aria-label={activeCardContent.noteLabel || 'Önemli not'}>
+                        <span className="tus-pearl-note-box-label">{activeCardContent.noteLabel || 'Önemli not'}</span>
+                        <span className="tus-pearl-note-box-text">{activeCardContent.noteText}</span>
+                      </span>
+                    ) : null}
                   </span>
                 </button>
               </article>

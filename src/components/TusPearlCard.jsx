@@ -1,6 +1,7 @@
 import { memo, useState } from 'react';
 import { Icon } from './ui.jsx';
 import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
+import { getPearlBackContent } from '../utils/pearlCardContent.js';
 
 function TusPearlCard({
   card,
@@ -19,6 +20,7 @@ function TusPearlCard({
   const [flipped, setFlipped] = useState(false);
   const signal = resolveExamSignal(card);
   const appearedLabel = formatAppearedYears(signal);
+  const { backText, detailText, noteLabel, noteText } = getPearlBackContent(card);
 
   return (
     <article className={`tus-pearl-card ${flipped ? 'is-flipped' : ''}`.trim()} data-branch={card.branchId}>
@@ -28,8 +30,14 @@ function TusPearlCard({
           <span className="tus-pearl-hint">Cevabı görmek için tıkla</span>
         </span>
         <span className="tus-pearl-card-face tus-pearl-card-back">
-          <strong>{card.back}</strong>
-          {card.explanation ? <p>{card.explanation}</p> : null}
+          <strong>{backText}</strong>
+          {detailText ? <p>{detailText}</p> : null}
+          {noteText ? (
+            <span className="tus-pearl-note-box" role="note" aria-label={noteLabel || 'Önemli not'}>
+              <span className="tus-pearl-note-box-label">{noteLabel || 'Önemli not'}</span>
+              <span className="tus-pearl-note-box-text">{noteText}</span>
+            </span>
+          ) : null}
         </span>
       </button>
 
