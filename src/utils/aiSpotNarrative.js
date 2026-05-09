@@ -14,8 +14,8 @@ const GENERIC_PREANSWER_PHRASES = [
   /neden doğru\s*[:：-]?/giu,
   /neden yanlış\s*[:：-]?/giu,
   /hasta özeti\s*[:：-]?/giu,
-  /profil\s*[:：-]?/giu,
-  /başvuru\s*[:：-]?/giu,
+  /\bprofil\b\s*[:：-]?/giu,
+  /\bbaşvuru\b\s*[:：-]?/giu,
 ];
 
 const GENERIC_INVESTIGATION_SENTENCES = [
@@ -69,6 +69,8 @@ export function normalizeAiNarrativeText(value = '') {
     .replace(/peristaltik sesler(?:in)?/giu, 'barsak sesleri')
     .replace(/\bWheezing\b/g, 'hışıltılı solunum')
     .replace(/\bwheezing\b/g, 'hışıltılı solunum')
+    .replace(/\bsürmekte\b/giu, 'sürmektedir')
+    .replace(/\bgörülmekte\b/giu, 'saptanmaktadır')
     .replace(/\bgörü(?:\.{2,}|…)\b/giu, 'görülüyor')
     .replace(/\bgörü\.?(?=\s+(?:Vital|Fizik|Objektif|Laboratuvar|Abdominal)|$)/giu, 'görülüyor.')
     .replace(/\s*(?:\.{3}|…)\s*/g, ' ')
@@ -171,6 +173,10 @@ function normalizeDataLabel(label = '') {
 
 function normalizeDataValue(value = '') {
   const cleaned = normalizeAiNarrativeText(value)
+    .replace(/\bIU\s*\/\s*ml\b/giu, 'IU/mL')
+    .replace(/\bmEq\s*\/\s*l\b/giu, 'mEq/L')
+    .replace(/\bmg\s*\/\s*dl\b/giu, 'mg/dL')
+    .replace(/\bmg\s*\/\s*l\b/giu, 'mg/L')
     .replace(/\s*\((?:referans|normal)[^)]+\)/giu, '')
     .replace(/,\s*(?:referans|normal aralık)\s*[^,.;]+/giu, '')
     .replace(/,\s*(?:yüksek|düşük|normal|patolojik|pozitif|negatif|artmış|azalmış)$/giu, '')
@@ -206,9 +212,10 @@ function uniqueCompactItems(items = [], max = 6) {
 
 
 const SEROLOGY_PARAM_PATTERN = /^(?:HBsAg|Anti-HBs|Anti-HBc(?:\s+IgM)?|HBeAg|Anti-HBe|HBV\s*DNA|Anti-HAV\s*IgM|Anti-HCV|HCV\s*RNA|HIV(?:\s*Ag\/Ab|\s*RNA)?|VDRL|RPR|ANA|Anti-dsDNA|Anti-Sm|C3|C4|IgG|IgM|IgA)$/iu;
-const LAB_PARAM_PATTERN = /^(?:Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|Laktat|Glukoz|Sodyum|Potasyum|Kreatinin|Üre|BUN|Troponin|D-dimer|Platelet|Trombosit|Hemoglobin|ALT|AST|Bilirubin|TSH|Serbest\s*T4|Serbest\s*T3)$/iu;
+const LAB_PARAM_PATTERN = /^(?:Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|Laktat|Glukoz|Sodyum|Na⁺|Potasyum|K⁺|Kreatinin|Üre|BUN|Troponin|D-dimer|Platelet|Trombosit|Hemoglobin|ALT|AST|Bilirubin|TSH|Serbest\s*T4|Serbest\s*T3)$/iu;
 const MICRO_PARAM_PATTERN = /^(?:Oksidaz|DNaz|Gram|Kültür|Duyarlılık|Fermentasyon|Non-fermenter|PCR|Antijen|Boyama)$/iu;
-const IMAGING_PARAM_PATTERN = /(?:grafi|ultrasonografi|usg|bt|mr|tomografi|görüntüleme|ekokardiyografi|eko|radyografi)/iu;
+const ECG_PARAM_PATTERN = /^(?:EKG|Elektrokardiyografi)$/iu;
+const IMAGING_PARAM_PATTERN = /(?:grafi|ultrasonografi|usg|bt|mr|tomografi|görüntüleme|ekokardiyografi|eko|radyografi|anjiyografi)/iu;
 
 function canonicalSupportLabel(label = '') {
   return normalizeDataLabel(label)
@@ -224,7 +231,21 @@ function canonicalSupportLabel(label = '') {
     .replace(/^wbc$/iu, 'WBC')
     .replace(/^ph$/iu, 'pH')
     .replace(/^hco3$/iu, 'HCO₃')
-    .replace(/^d\s*-?\s*dimer$/iu, 'D-dimer');
+    .replace(/^d\s*-?\s*dimer$/iu, 'D-dimer')
+    .replace(/^serum\s+k\+$/iu, 'K⁺')
+    .replace(/^serum\s+k⁺$/iu, 'K⁺')
+    .replace(/^k\+$/iu, 'K⁺')
+    .replace(/^k⁺$/iu, 'K⁺')
+    .replace(/^potasyum$/iu, 'K⁺')
+    .replace(/^sodyum$/iu, 'Na⁺')
+    .replace(/^na\+$/iu, 'Na⁺')
+    .replace(/^na⁺$/iu, 'Na⁺')
+    .replace(/^ekg$/iu, 'EKG')
+    .replace(/^elektrokardiyografi$/iu, 'EKG')
+    .replace(/^complement\s+c([34])$/iu, 'C$1')
+    .replace(/^kompleman\s+c([34])$/iu, 'C$1')
+    .replace(/^c([34])\s+komplemani$/iu, 'C$1')
+    .replace(/^c([34])\s+komplemanı$/iu, 'C$1');
 }
 
 function classifySupportItem(item = {}) {
@@ -232,6 +253,7 @@ function classifySupportItem(item = {}) {
   const value = normalizeDataValue(item.value || '');
   const combined = `${label} ${value}`;
   if (SEROLOGY_PARAM_PATTERN.test(label) || /\b(?:pozitif|negatif)\b/iu.test(value) && /anti|hbs|hbe|hbv|hcv|hav|hiv|ana|anca|igg|igm|iga|c3|c4/iu.test(combined)) return 'serology';
+  if (ECG_PARAM_PATTERN.test(label)) return 'objective';
   if (IMAGING_PARAM_PATTERN.test(label) || IMAGING_PARAM_PATTERN.test(value)) return 'imaging';
   if (MICRO_PARAM_PATTERN.test(label) || /oksidaz|dnaz|gram|kültür|kultur|duyarlı|dirençli|fermenter|basil|kok/iu.test(combined)) return 'microbiology';
   if (LAB_PARAM_PATTERN.test(label) || /mg\/dL|mg\/L|mmol\/L|mEq\/L|mmHg|\/mm³|µL|ng\/mL|pg\/mL|IU\/mL|log IU\/mL/iu.test(value)) return 'labs';
@@ -250,15 +272,32 @@ function compactDataGroupTitle(kind = 'objective') {
 function extractStructuredDataFromText(value = '') {
   const text = normalizeAiNarrativeText(value);
   const items = [];
-  const serologyPattern = /\b(HBsAg|Anti-HBs|Anti-HBc\s*IgM|Anti-HBc|HBeAg|Anti-HBe|HBV\s*DNA|Anti-HAV\s*IgM|Anti-HCV|HCV\s*RNA|HIV\s*Ag\/Ab|HIV\s*RNA|ANA|Anti-dsDNA|C3|C4)\s*(?:[:=]|\s+)\s*(pozitif|negatif|\d+(?:[.,]\d+)?\s*(?:log\s*IU\/mL|IU\/mL|kopya\/mL|mg\/dL|mg\/L)?|düşük|yüksek|normal)/giu;
+  const serologyPattern = /\b(HBsAg|Anti-HBs|Anti-HBc\s*IgM|Anti-HBc|HBeAg|Anti-HBe|HBV\s*DNA|Anti-HAV\s*IgM|Anti-HCV|HCV\s*RNA|HIV\s*Ag\/Ab|HIV\s*RNA|ANA|Anti-dsDNA|Anti-Sm|(?:complement|kompleman)\s*C[34]|C3|C4)\s*(?:[:=]|\s+)\s*(pozitif|negatif|\d+(?:[.,]\d+)?\s*(?:log\s*IU\/mL|IU\/ml|IU\/mL|kopya\/mL|mg\/dL|mg\/L)?|düşük|yüksek|normal)/giu;
   let match;
   while ((match = serologyPattern.exec(text))) {
     items.push({ label: canonicalSupportLabel(match[1]), value: normalizeDataValue(match[2]) });
   }
 
-  const labPattern = /\b(Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|Laktat|Glukoz|Sodyum|Potasyum|Kreatinin|Üre|Troponin|D-dimer|Platelet|Trombosit|Hemoglobin|ALT|AST|Bilirubin|TSH|Serbest\s*T4)\s*(?:[:=]|\s+)\s*([0-9]+(?:[.,][0-9]+)?(?:\.[0-9]{3})?\s*(?:\/mm³|\/µL|x10\^3\/µL|mg\/L|mg\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|g\/dL)?)/giu;
+  const labPattern = /\b(Lökosit|Lokosit|WBC|CRP|pH|HCO₃|HCO3|Laktat|Glukoz|Sodyum|Na\+|Na⁺|Potasyum|K\+|K⁺|Serum\s+K\+|Serum\s+K⁺|Kreatinin|Üre|Troponin|D-dimer|Platelet|Trombosit|Hemoglobin|ALT|AST|Bilirubin|TSH|Serbest\s*T4)\s*(?:[:=]|\s+)\s*([0-9]+(?:[.,][0-9]+)?(?:\.[0-9]{3})?\s*(?:\/mm³|\/µL|x10\^3\/µL|mg\/L|mg\/dL|mmol\/L|mEq\/L|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|g\/dL)?)/giu;
   while ((match = labPattern.exec(text))) {
     items.push({ label: canonicalSupportLabel(match[1]), value: normalizeDataValue(match[2]) });
+  }
+
+  const ecgPattern = /\bEKG(?:'|’)?(?:de|da)?\s*(?:[:：]?|ile)?\s*([^.!?]{8,140}?)(?:\s+(?:görülür|görülüyor|izlenir|saptanır|saptanıyor|vardır))?(?=[.!?]|$)/giu;
+  while ((match = ecgPattern.exec(text))) {
+    const value = normalizeDataValue(match[1])
+      .replace(/^(?:de|da)\s+/iu, '')
+      .replace(/\s+(?:görülür|görülüyor|izlenir|saptanır|saptanıyor|vardır)$/iu, '')
+      .trim();
+    if (value && !/^(?:normal|doğal)$/iu.test(value)) items.push({ label: 'EKG', value });
+  }
+
+  const imagingPattern = /\b(BT\s*anjiyografi|Toraks\s*BT|Akciğer\s*grafisi|PA\s*akciğer\s*grafisi|Abdominal\s*USG|Ultrasonografi|USG|MR|BT|Ekokardiyografi|EKO)(?:'|’)?(?:de|da)?\s*[:：]?\s*([^.!?]{8,160})(?=[.!?]|$)/giu;
+  while ((match = imagingPattern.exec(text))) {
+    const value = normalizeDataValue(match[2])
+      .replace(/\s+(?:görülür|görülüyor|izlenir|saptanır|saptanıyor|vardır)$/iu, '')
+      .trim();
+    if (value) items.push({ label: canonicalSupportLabel(match[1]), value });
   }
 
   const microPattern = /\b(Oksidaz|DNaz)\s+(pozitif|negatif)\b/giu;
@@ -273,20 +312,90 @@ function extractStructuredDataFromText(value = '') {
   return uniqueCompactItems(items, 10);
 }
 
-function removeStructuredDataFragmentsFromText(value = '', hasSupportData = false) {
+
+function normalizeDataComparable(value = '') {
+  return normalizeComparable(value)
+    .replace(/ıu\/ml|iu\/ml|iu ml/g, 'iu ml')
+    .replace(/meq\/l|meq l/g, 'meq l')
+    .replace(/mg\/dl|mg dl/g, 'mg dl')
+    .replace(/mg\/l|mg l/g, 'mg l')
+    .replace(/mmhg/g, 'mmhg')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function supportItemAppearsInSentence(sentence = '', item = {}) {
+  const haystack = normalizeDataComparable(sentence);
+  const label = normalizeDataComparable(item.label || '');
+  const value = normalizeDataComparable(item.value || '');
+  if (!haystack || !label || !value) return false;
+  const numericToken = (value.match(/\d+(?:[.,]\d+)?(?:\.\d{3})?/u) || [])[0];
+  const labelTokens = [label]
+    .concat(label === 'k⁺' ? ['potasyum', 'serum k', 'k'] : [])
+    .concat(label === 'na⁺' ? ['sodyum', 'serum na', 'na'] : [])
+    .concat(label === 'ekg' ? ['elektrokardiyografi'] : [])
+    .filter(Boolean);
+  const hasLabel = labelTokens.some((token) => haystack.includes(normalizeDataComparable(token)));
+  if (!hasLabel) return false;
+  if (value.length <= 7 && /^(pozitif|negatif|düşük|dusuk|yüksek|yuksek|normal)$/u.test(value)) return true;
+  if (haystack.includes(value)) return true;
+  if (numericToken && haystack.includes(normalizeDataComparable(numericToken))) return true;
+  const valueKeywords = value.split(' ').filter((token) => token.length >= 4).slice(0, 4);
+  return valueKeywords.length >= 2 && valueKeywords.every((token) => haystack.includes(token));
+}
+
+function sentenceLooksLikeRawSupportData(sentence = '', supportItems = []) {
+  const clean = normalizeAiNarrativeText(sentence);
+  const comparable = normalizeDataComparable(clean);
+  if (!clean) return false;
+  if (supportItems.some((item) => supportItemAppearsInSentence(clean, item))) return true;
+  if (/^(?:laboratuvar|laboratuvar sonuçları|laboratuvar değerlendirmesinde|seroloji|serolojik|otoimmünite|otoimmunite|kan gazı|kan gazi|elektrolit|vital bulgular|vital bulgularda|ekg|görüntüleme|goruntuleme|bt|mr|usg|ultrasonografi)\b/iu.test(clean)) return true;
+  const hasClinicalUnit = /\b(?:mg\/dL|mg\/L|mEq\/L|mmol\/L|IU\/mL|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|g\/dL|\/mm³|\/µL|mmHg|log\s*IU\/mL)\b/iu.test(clean);
+  const hasObjectiveLabel = /\b(?:ana|anti-dsdna|anti-hbc|hbsag|hbv\s*dna|hcv\s*rna|c3|c4|lökosit|lokosit|wbc|crp|ph|hco₃|hco3|laktat|glukoz|sodyum|na⁺|potasyum|k⁺|kreatinin|troponin|d-dimer|hemoglobin|trombosit|platelet|ast|alt|bilirubin|tsh)\b/iu.test(clean);
+  if (hasClinicalUnit && hasObjectiveLabel) return true;
+  if (/\b(?:pozitif|negatif|düşük|yüksek|normal)\b/iu.test(clean) && /\b(?:ana|anti|hbsag|hbv|hcv|c3|c4|igg|igm|iga)\b/iu.test(clean)) return true;
+  if (/\bekg(?:'|’)?(?:de|da)?\b/iu.test(clean) && /\b(?:st|qrs|t\s*dalg|pr|qt|aritmi|elevasyon|depresyon|sivri)\b/iu.test(clean)) return true;
+  return false;
+}
+
+function cleanSupportDataOrphans(text = '') {
+  return normalizeAiNarrativeText(text)
+    .replace(/\b(?:Laboratuvar|Seroloji|Serolojik veriler|Otoimmünite verileri|Objektif veriler|Vital bulgular)\s*[:：]\s*/giu, ' ')
+    .replace(/\s+[,;]\s+/g, ' ')
+    .replace(/\b(?:Doktor|Hekim),\s*/giu, '')
+    .replace(/\bhangi ölçüt en uygundur\?/giu, 'Bu hastada en uygun ölçüt aşağıdakilerden hangisidir?')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+export function stripDuplicateSupportDataFromStem(value = '', supportItems = []) {
+  const text = normalizeAiNarrativeText(value);
+  if (!text || !supportItems.length) return cleanSupportDataOrphans(text);
+  const sentences = splitSentences(text);
+  const kept = sentences.filter((sentence) => !sentenceLooksLikeRawSupportData(sentence, supportItems));
+  const cleaned = cleanSupportDataOrphans(kept.join(' '));
+  if (cleaned.split(/\s+/).filter(Boolean).length >= 8) return cleaned;
+  return cleanSupportDataOrphans(text)
+    .replace(/\b(?:Laboratuvar|Seroloji|Serolojik incelemede|Otoimmünite verileri|Kan gazı|Elektrolit paneli|Vital bulgularda)\s*[:：]\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    .replace(/\b(?:ANA|Anti-dsDNA|HBsAg|Anti-HBc\s*IgM|HBV\s*DNA|C3|C4|CRP|Lökosit|Lokosit|WBC|K⁺|K\+|Potasyum|Glukoz|pH|HCO₃|HCO3|Kreatinin)\s*(?:[:=]|\s+)\s*[^,.;?!]*(?:[,;]\s*)?/giu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function removeStructuredDataFragmentsFromText(value = '', hasSupportData = false, supportItems = []) {
   if (!hasSupportData) return value;
   let text = normalizeAiNarrativeText(value);
   text = text
-    .replace(/\b(?:Laboratuvar sonuçları|Laboratuvar değerlendirmesinde|Objektif değerlendirmede)\s*[:：]?\s*.*?(?=\s+(?:Abdominal|Toraks|Akciğer|Görüntüleme|Fizik|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
-    .replace(/\b(?:Serolojik inceleme(?:de)?|Serolojide|Serolojik veriler)\s*[:：]?\s*.*?(?=\s+(?:Bu\s|Hangi\s|Aşağıdakiler|Fizik|Görüntüleme)|$)/giu, ' ')
-    .replace(/\b(?:Vital bulgularda|Vital bulgularında)\s+.*?(?=\s+(?:Fizik|Laboratuvar|Abdominal|Toraks|Akciğer|Görüntüleme|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
-    .replace(/\s*(?:Serolojik incelemede|Serolojide)\s+[^.?!]*(?:HBsAg|Anti-HBs|Anti-HBc|HBeAg|Anti-HBe|HBV\s*DNA)[^.?!]*(?:saptanıyor|bildiriliyor|bulunuyor)[.?!]?/giu, ' ')
+    .replace(/\b(?:Laboratuvar|Laboratuvar sonuçları|Laboratuvar değerlendirmesinde|Objektif değerlendirmede|Kan gazı|Elektrolit paneli|Seroloji|Otoimmünite verileri)\s*[:：]?\s*.*?(?=\s+(?:Abdominal|Toraks|Akciğer|Görüntüleme|Fizik|Muayenede|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
+    .replace(/\b(?:Serolojik inceleme(?:de)?|Serolojide|Serolojik veriler)\s*[:：]?\s*.*?(?=\s+(?:Bu\s|Hangi\s|Aşağıdakiler|Fizik|Muayenede|Görüntüleme)|$)/giu, ' ')
+    .replace(/\b(?:Vital bulgularda|Vital bulgularında)\s+.*?(?=\s+(?:Fizik|Muayenede|Laboratuvar|Abdominal|Toraks|Akciğer|Görüntüleme|Bu\s|Hangi\s|Aşağıdakiler)|$)/giu, ' ')
+    .replace(/\s*(?:Serolojik incelemede|Serolojide)\s+[^.?!]*(?:HBsAg|Anti-HBs|Anti-HBc|HBeAg|Anti-HBe|HBV\s*DNA|ANA|Anti-dsDNA|C3|C4)[^.?!]*(?:saptanıyor|bildiriliyor|bulunuyor|saptanır)[.?!]?/giu, ' ')
     .replace(/\bhastada\s*[.]/giu, 'hasta değerlendiriliyor.')
     .replace(/\bbaşvuran hastada\s+(Bu\s)/giu, 'başvuran hasta değerlendiriliyor. $1')
     .replace(/\bhastada\s+(Bu\s)/giu, 'hasta değerlendiriliyor. $1')
     .replace(/\s{2,}/g, ' ')
     .trim();
-  return normalizeAiNarrativeText(text);
+  return stripDuplicateSupportDataFromStem(text, supportItems);
 }
 
 function isMeaningfulVital(value = '') {
@@ -450,7 +559,7 @@ function simplifyInlineObjectiveText(text = '') {
 
 function looksLikeDenseObjectiveSentence(sentence = '') {
   const comparable = normalizeComparable(sentence);
-  const objectiveHits = ['lökosit', 'lokosit', 'crp', 'ph', 'hco', 'laktat', 'glukoz', 'troponin', 'd dimer', 'kreatinin'].reduce((acc, token) => acc + (comparable.includes(token) ? 1 : 0), 0);
+  const objectiveHits = ['lökosit', 'lokosit', 'crp', 'ph', 'hco', 'laktat', 'glukoz', 'troponin', 'd dimer', 'kreatinin', 'ana', 'anti dsdna', 'hbsag', 'hbv dna', 'c3', 'c4', 'potasyum', 'k⁺'].reduce((acc, token) => acc + (comparable.includes(token) ? 1 : 0), 0);
   return objectiveHits >= 2 || /abdominal görüntülemede\s+lökosit/iu.test(sentence) || /^laboratuvar değerlendirmesinde/i.test(sentence) && objectiveHits >= 1;
 }
 
@@ -559,10 +668,12 @@ export function buildAISpotNarrativeStem(question = {}) {
   const correct = question.diagnosis?.correct || question.correctAnswerText || '';
   const vitalsBox = getAISpotCompactVitals(question);
   const objectiveBox = getAISpotCompactObjectiveData(question);
+  const supportItems = [...vitalsBox, ...objectiveBox];
   const baseRaw = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
   let cleanBase = stripPreAnswerTeaching(baseRaw, correct);
   cleanBase = removeDenseVitalSentences(cleanBase, vitalsBox.length > 0);
-  cleanBase = removeStructuredDataFragmentsFromText(cleanBase, Boolean(vitalsBox.length || objectiveBox.length));
+  cleanBase = removeStructuredDataFragmentsFromText(cleanBase, Boolean(vitalsBox.length || objectiveBox.length), supportItems);
+  cleanBase = stripDuplicateSupportDataFromStem(cleanBase, supportItems);
   cleanBase = simplifyInlineObjectiveText(cleanBase);
 
   const baseSentences = [];
@@ -584,6 +695,38 @@ export function buildAISpotNarrativeStem(question = {}) {
     .replace(/^[Bb]u olguda\s*,?\s*/u, 'Bu olguda ');
   const finalSentences = limitNarrativeLength(baseSentences, questionPrompt);
   return splitTusParagraphsFromSentences(finalSentences);
+}
+
+
+function mergeCompactDataItems(...groups) {
+  return uniqueCompactItems(groups.flat().filter(Boolean), 12);
+}
+
+export function applyAISpotDuplicateDataGate(question = {}) {
+  const vitals = getAISpotCompactVitals(question);
+  const objective = getAISpotCompactObjectiveData(question);
+  const supportItems = [...vitals, ...objective];
+  const rawStem = question.narrativeStem || question.primaryStem || question.stem || question.patientIntro?.historySummary || '';
+  const cleanedStem = stripDuplicateSupportDataFromStem(
+    removeStructuredDataFragmentsFromText(removeDenseVitalSentences(stripPreAnswerTeaching(rawStem, question.diagnosis?.correct || question.correctAnswerText || ''), vitals.length > 0), Boolean(supportItems.length), supportItems),
+    supportItems,
+  );
+  const next = {
+    ...question,
+    compactVitals: mergeCompactDataItems(question.compactVitals || question.compactVitalData || [], vitals).slice(0, 5),
+    compactObjectiveData: mergeCompactDataItems(question.compactObjectiveData || question.compactObjective || [], objective).slice(0, 10),
+  };
+  if (cleanedStem && cleanedStem.split(/\s+/).filter(Boolean).length >= 8) {
+    next.stem = cleanedStem;
+    next.narrativeStem = cleanedStem;
+    if (next.patientIntro) {
+      next.patientIntro = {
+        ...next.patientIntro,
+        historySummary: cleanedStem,
+      };
+    }
+  }
+  return next;
 }
 
 export function getAISpotPreviewDiagnostics(question = {}) {

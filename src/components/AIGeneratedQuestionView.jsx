@@ -34,7 +34,7 @@ function AIBranchFilter({ branchFilter, branchOptions = [], onChangeBranchFilter
   const normalizedValue = branchFilter || 'random';
   return (
     <label className="ai-branch-filter-control">
-      <span>Konu / branş</span>
+      <span>KONU / BRANŞ</span>
       <select
         value={normalizedValue}
         onChange={(event) => onChangeBranchFilter?.(event.target.value)}
@@ -117,10 +117,10 @@ function AIGeneratedQuestionView({
             disabled={loading}
           />
           <div className="ai-practice-button-row">
-            <button type="button" className="btn btn-secondary" onClick={onBackHome}>
+            <button type="button" className="btn btn-secondary ai-spot-dashboard-btn" onClick={onBackHome}>
               <span aria-hidden="true">←</span> Dashboard’a dön
             </button>
-            <button type="button" className="btn btn-primary ai-generate-cta" onClick={onGenerateQuestion} disabled={loading}>
+            <button type="button" className="btn btn-primary ai-generate-cta ai-spot-generate-btn" onClick={onGenerateQuestion} disabled={loading}>
               <Icon name="Sparkles" /> Yeni TUS sorusu üret
             </button>
           </div>

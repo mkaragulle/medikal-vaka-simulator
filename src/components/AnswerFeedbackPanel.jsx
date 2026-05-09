@@ -1,6 +1,7 @@
 import { Icon, IconBadge } from './ui.jsx';
 import GlossaryText from './GlossaryTooltip.jsx';
 import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
+import { feedbackDuplicationGate } from '../utils/feedbackDuplicationGate.js';
 import './tusPearlCards.css';
 import { repairAIGeneratedText, isForbiddenEditorialText, isPlaceholderInvestigationText } from '../utils/editorialQuality.js';
 
@@ -435,24 +436,29 @@ function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, classN
 }
 
 
-function TusSpotSignalFeedback({ clinicalCase, glossaryEnabled = true }) {
-  const signal = resolveExamSignal(clinicalCase);
-  if (!signal.hasContent) return null;
+function ExamNoteFeedback({ signal, glossaryEnabled = true }) {
+  if (!signal?.hasContent) return null;
   const yearsLabel = formatAppearedYears(signal);
+  const metaChips = [
+    yearsLabel || '',
+    signal.appearanceCount > 1 && !yearsLabel ? `${signal.appearanceCount} kez sorulmuş` : '',
+    signal.isPastQuestionDerived && !yearsLabel ? 'Çıkmış bilgi' : '',
+  ].filter(Boolean);
+
   return (
-    <FeedbackSection icon="Sparkles" tone="teal" eyebrow="TUS işareti" title="Spot bilgi ve anahtar kelimeler" className="tus-spot-signal-feedback">
-      <div className="exam-signal-chip-row">
-        {yearsLabel ? <span className="exam-signal-chip past">{yearsLabel}</span> : null}
-        {signal.appearanceCount > 1 ? <span className="exam-signal-chip">{signal.appearanceCount} kez sorulmuş</span> : null}
-        {signal.isPastQuestionDerived && !yearsLabel ? <span className="exam-signal-chip past">Çıkmış bilgi</span> : null}
-      </div>
-      {signal.spotPearl ? <p className="exam-signal-pearl"><strong>Spot bilgi:</strong> <GlossaryText text={signal.spotPearl} enabled={glossaryEnabled} /></p> : null}
-      {signal.keywords?.length ? (
-        <div className="exam-signal-keywords">
-          {signal.keywords.slice(0, 6).map((keyword) => <span key={keyword}><GlossaryText text={keyword} enabled={glossaryEnabled} /></span>)}
+    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="Sınav notu" title="Kritik hatırlatma" className="tus-spot-signal-feedback exam-note-feedback-card">
+      {metaChips.length ? (
+        <div className="exam-signal-chip-row exam-note-meta-row" aria-label="Sınav geçmişi">
+          {metaChips.slice(0, 2).map((chip) => <span className="exam-signal-chip past" key={chip}>{chip}</span>)}
         </div>
       ) : null}
-      {signal.examTrap ? <p className="exam-signal-trap"><strong>Sınav tuzağı:</strong> <GlossaryText text={signal.examTrap} enabled={glossaryEnabled} /></p> : null}
+      {signal.spotPearl ? <p className="exam-signal-pearl exam-note-pearl"><GlossaryText text={signal.spotPearl} enabled={glossaryEnabled} /></p> : null}
+      {signal.keywords?.length ? (
+        <div className="exam-signal-keywords exam-note-keywords" aria-label="Kısa anahtarlar">
+          {signal.keywords.slice(0, 3).map((keyword) => <span key={keyword}><GlossaryText text={keyword} enabled={glossaryEnabled} /></span>)}
+        </div>
+      ) : null}
+      {signal.examTrap ? <p className="exam-signal-trap exam-note-trap"><strong>Sık tuzak:</strong> <GlossaryText text={signal.examTrap} enabled={glossaryEnabled} /></p> : null}
     </FeedbackSection>
   );
 }
@@ -563,18 +569,29 @@ function AnswerFeedbackPanel({
   const selectedComparison = optionComparisons.find((item) => item.option === selectedDiagnosis);
   const whyWrong = deriveWhyWrong(clinicalCase, selectedDiagnosis, selectedComparison);
   const reasoningText = isCorrect ? whyCorrect : whyWrong;
-  const pearls = derivePearls(clinicalCase);
+  const rawPearls = derivePearls(clinicalCase);
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
+  const dedupedFeedback = feedbackDuplicationGate({
+    signal: resolveExamSignal(clinicalCase),
+    pearls: rawPearls,
+    reasoningText,
+    evidenceChain,
+    managementSteps,
+    correctAnswer: clinicalCase.diagnosis?.correct || '',
+  });
+  const examSignal = dedupedFeedback.signal;
+  const pearls = dedupedFeedback.pearls;
+  const shouldRenderPearls = pearls.length && (!isSpotCase || !examSignal.hasContent);
 
   return (
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">
       <div className="answer-feedback-grid answer-feedback-grid-pro">
         <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />
-        <TusSpotSignalFeedback clinicalCase={clinicalCase} glossaryEnabled={glossaryEnabled} />
+        <ExamNoteFeedback signal={examSignal} glossaryEnabled={glossaryEnabled} />
         <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} />
-        <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} />
+        {shouldRenderPearls ? <ClinicalPearlsList pearls={pearls} glossaryEnabled={glossaryEnabled} /> : null}
         <FeedbackManagementCard managementSteps={managementSteps} glossaryEnabled={glossaryEnabled} clinicalCase={clinicalCase} />
         <OptionComparisonCard comparisons={optionComparisons} glossaryEnabled={glossaryEnabled} isSpotCase={isSpotCase} />
       </div>

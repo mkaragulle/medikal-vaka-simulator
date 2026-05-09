@@ -14,8 +14,10 @@
     "qa:ai-spot-readability": "node scripts/run-ai-spot-readability-test.mjs",
     "qa:pearl-personal-repeat": "node scripts/run-pearl-personal-repeat-test.mjs",
     "qa:ai-spot-render-layout": "node scripts/run-ai-spot-render-layout-test.mjs",
+    "qa:ai-spot-duplicate-data": "node scripts/run-ai-spot-duplicate-data-gate-test.mjs",
     "qa:pearl-dropdown": "node scripts/run-pearl-dropdown-portal-test.mjs",
-    "qa:ai-scientific-accuracy": "node scripts/run-ai-scientific-accuracy-100-test.mjs"
+    "qa:ai-scientific-accuracy": "node scripts/run-ai-scientific-accuracy-100-test.mjs",
+    "qa:ai-feedback-duplication": "node scripts/run-ai-feedback-duplication-gate-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",

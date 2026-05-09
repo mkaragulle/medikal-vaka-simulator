@@ -7,6 +7,7 @@ import { detectInvalidMeasurementFormat, sanitizeMeasurementText, sanitizeVitals
 import { repairAIQuestionQuality, validateAIQuestionQuality } from './aiQuestionQualityGate.js';
 import { normalizeInvestigationLabResults, validateInvestigationLabCompleteness, hasIncompleteLabResultText } from './clinicalValueFormatters.js';
 import { applyTusLanguageStandardToQuestion, hasWeakTusLanguage } from './tusLanguageStandard.js';
+import { applyAISpotDuplicateDataGate } from './aiSpotNarrative.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -347,7 +348,8 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     },
   };
 
-  const repaired = repairAIQuestionQuality(normalized);
+  const deDuplicatedData = applyAISpotDuplicateDataGate(normalized);
+  const repaired = repairAIQuestionQuality(deDuplicatedData);
   attachQuestionDedupeFields(repaired);
   repaired.generatedAt = new Date(repaired.aiMeta.generatedAt).toISOString();
   return repaired;
