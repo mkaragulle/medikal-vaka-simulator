@@ -6,15 +6,24 @@ import {
   addId,
   defaultPearlState,
   loadPearlState,
+  markCatalogStudied,
+  rememberStudyStart,
   removeId,
+  removeUserPearlCard,
   savePearlState,
   toggleId,
+  upsertUserPearlCard,
 } from '../utils/pearlCardStorage.js';
-import { formatAppearedYears, resolveExamSignal } from '../utils/examMeta.js';
+import { buildStudyDeck } from '../utils/pearlDeckShuffle.js';
+import TusPearlCardEditor from './TusPearlCardEditor.jsx';
 import './tusPearlCards.css';
+
+const SYSTEM_PEARL_CARDS = TUS_PEARL_CARDS.map((card) => ({ ...card, source: 'system' }));
 
 const STUDY_SETS = [
   { id: 'all', label: 'Tüm kartlar' },
+  { id: 'system', label: 'Sistem kartları' },
+  { id: 'user', label: 'Kendi kartlarım' },
   { id: 'review', label: 'Tekrar bekleyen' },
   { id: 'wrong', label: 'Zorlandıklarım' },
   { id: 'favorites', label: 'Favoriler' },
@@ -38,6 +47,8 @@ function cardMatchesFilter(card, filter, stateSets, activeCatalog) {
   if (filter === 'known') return stateSets.knownSet.has(card.id);
   if (filter === 'past') return card.appearedYears?.length || card.isPastQuestionDerived;
   if (filter === 'catalog') return activeCatalog?.cardIds?.includes(card.id);
+  if (filter === 'user') return card.source === 'user';
+  if (filter === 'system') return card.source !== 'user';
   return true;
 }
 
@@ -46,8 +57,26 @@ function getBranchName(branchId) {
   return branch?.shortName || branch?.name || 'TUS';
 }
 
-function getCardById(cardId) {
-  return TUS_PEARL_CARDS.find((card) => card.id === cardId) || null;
+function makeDeckKey(filter, branchFilter, activeCatalogId) {
+  if (filter === 'catalog') return `catalog_${activeCatalogId || 'none'}`;
+  return `${filter || 'all'}_${branchFilter || 'all'}`;
+}
+
+function resolveModeLabel(filter, branchFilter, activeCatalog) {
+  if (filter === 'catalog' && activeCatalog) return activeCatalog.name;
+  const set = STUDY_SETS.find((item) => item.id === filter)?.label || 'Tüm kartlar';
+  if (branchFilter && branchFilter !== 'all') return `${set} · ${getBranchName(branchFilter)}`;
+  return set;
+}
+
+function formatDateLabel(value) {
+  if (!value) return 'Henüz çalışılmadı';
+  const delta = Date.now() - new Date(value).getTime();
+  if (!Number.isFinite(delta)) return 'Henüz çalışılmadı';
+  const days = Math.max(0, Math.floor(delta / 86400000));
+  if (days === 0) return 'Bugün çalışıldı';
+  if (days === 1) return 'Dün çalışıldı';
+  return `${days} gün önce çalışıldı`;
 }
 
 function TusPearlStudyScreen({
@@ -62,13 +91,21 @@ function TusPearlStudyScreen({
   const [activeCatalogId, setActiveCatalogId] = useState(initialCatalogId || '');
   const [viewMode, setViewMode] = useState(initialFilter === 'catalogs' ? 'catalogs' : 'study');
   const [catalogName, setCatalogName] = useState('');
+  const [catalogDescription, setCatalogDescription] = useState('');
   const [renameValue, setRenameValue] = useState('');
   const [librarySearch, setLibrarySearch] = useState('');
+  const [sourceLibraryFilter, setSourceLibraryFilter] = useState('all');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [motion, setMotion] = useState('idle');
+  const [studySession, setStudySession] = useState(null);
+  const [editorState, setEditorState] = useState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
+  const [catalogMenuOpen, setCatalogMenuOpen] = useState(false);
   const pointerStartX = useRef(null);
+  const lastDeckSignature = useRef('');
 
+  const allCards = useMemo(() => [...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])], [pearlState.userPearlCards]);
+  const cardById = useMemo(() => new Map(allCards.map((card) => [card.id, card])), [allCards]);
   const favoriteSet = useMemo(() => toSet(pearlState.favoritePearlCardIds), [pearlState.favoritePearlCardIds]);
   const wrongSet = useMemo(() => toSet(pearlState.wrongPearlCardIds), [pearlState.wrongPearlCardIds]);
   const knownSet = useMemo(() => toSet(pearlState.knownPearlCardIds), [pearlState.knownPearlCardIds]);
@@ -78,63 +115,77 @@ function TusPearlStudyScreen({
     [activeCatalogId, pearlState.customCatalogs],
   );
   const stateSets = useMemo(() => ({ favoriteSet, wrongSet, knownSet, reviewSet }), [favoriteSet, knownSet, reviewSet, wrongSet]);
-  const branchOptions = useMemo(() => branches.filter((branch) => TUS_PEARL_CARD_STATS.byBranch[branch.id]), []);
+  const branchOptions = useMemo(() => branches.filter((branch) => TUS_PEARL_CARD_STATS.byBranch[branch.id] || allCards.some((card) => card.branchId === branch.id)), [allCards]);
 
-  const filteredCards = useMemo(() => TUS_PEARL_CARDS.filter((card) => {
+  const filteredCards = useMemo(() => allCards.filter((card) => {
     if (branchFilter !== 'all' && card.branchId !== branchFilter) return false;
     return cardMatchesFilter(card, filter, stateSets, activeCatalog);
-  }), [activeCatalog, branchFilter, filter, stateSets]);
+  }), [activeCatalog, allCards, branchFilter, filter, stateSets]);
 
-  const activeCard = filteredCards[currentIndex] || null;
-  const progress = filteredCards.length ? Math.round(((currentIndex + 1) / filteredCards.length) * 100) : 0;
-  const signal = activeCard ? resolveExamSignal(activeCard) : null;
-  const appearedLabel = signal ? formatAppearedYears(signal) : '';
+  const sessionCards = useMemo(() => {
+    const ids = studySession?.cardIds || [];
+    const filteredIdSet = new Set(filteredCards.map((card) => card.id));
+    const mapped = ids.map((id) => cardById.get(id)).filter((card) => card && filteredIdSet.has(card.id));
+    if (mapped.length) return mapped;
+    return filteredCards;
+  }, [cardById, filteredCards, studySession]);
+
+  const activeCard = sessionCards[currentIndex] || null;
+  const progress = sessionCards.length ? Math.round(((currentIndex + 1) / sessionCards.length) * 100) : 0;
   const isFavorite = activeCard ? favoriteSet.has(activeCard.id) : false;
   const isWrong = activeCard ? wrongSet.has(activeCard.id) : false;
   const isKnown = activeCard ? knownSet.has(activeCard.id) : false;
   const isReview = activeCard ? reviewSet.has(activeCard.id) : false;
   const isInCatalog = Boolean(activeCard && activeCatalog?.cardIds?.includes(activeCard.id));
+  const cardCatalogs = useMemo(() => pearlState.customCatalogs.filter((catalog) => activeCard && catalog.cardIds?.includes(activeCard.id)), [activeCard, pearlState.customCatalogs]);
+  const isInAnyCatalog = cardCatalogs.length > 0;
+  const modeLabel = resolveModeLabel(filter, branchFilter, activeCatalog);
 
   const catalogCards = useMemo(() => (
-    (activeCatalog?.cardIds || []).map(getCardById).filter(Boolean)
-  ), [activeCatalog]);
+    (activeCatalog?.cardIds || []).map((id) => cardById.get(id)).filter(Boolean)
+  ), [activeCatalog, cardById]);
 
   const searchableCards = useMemo(() => {
     const query = librarySearch.trim().toLocaleLowerCase('tr');
-    const pool = TUS_PEARL_CARDS.filter((card) => !activeCatalog?.cardIds?.includes(card.id));
-    if (!query) return pool.slice(0, 24);
-    return pool.filter((card) => [card.front, card.back, card.subject, card.topic, ...(card.keywords || [])]
+    const pool = allCards.filter((card) => {
+      if (sourceLibraryFilter === 'user' && card.source !== 'user') return false;
+      if (sourceLibraryFilter === 'system' && card.source === 'user') return false;
+      return true;
+    });
+    if (!query) return pool.slice(0, 36);
+    return pool.filter((card) => [card.front, card.back, card.subject, card.topic, card.source, ...(card.keywords || []), ...(card.tags || [])]
       .join(' ')
       .toLocaleLowerCase('tr')
-      .includes(query)).slice(0, 32);
-  }, [activeCatalog, librarySearch]);
+      .includes(query)).slice(0, 48);
+  }, [activeCatalog, allCards, librarySearch, sourceLibraryFilter]);
 
   function commitState(updater) {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
   }
 
-  const moveCard = useCallback((direction) => {
-    if (!filteredCards.length) return;
-    setMotion(direction > 0 ? 'next' : 'prev');
-    setFlipped(false);
-    setCurrentIndex((current) => {
-      const next = direction > 0 ? current + 1 : current - 1;
-      if (next < 0) return filteredCards.length - 1;
-      if (next >= filteredCards.length) return 0;
-      return next;
+  const rebuildStudySession = useCallback((cards = filteredCards) => {
+    const deckKey = makeDeckKey(filter, branchFilter, activeCatalogId);
+    const seed = `${deckKey}-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const deck = buildStudyDeck(cards, {
+      mode: filter,
+      sourceFilter: branchFilter,
+      recentStarts: pearlState.recentStudyStarts?.[deckKey] || [],
+      maxSameTopicStreak: 1,
+      maxSameBranchStreak: 2,
+      seed,
+      wrongIds: wrongSet,
+      reviewIds: reviewSet,
+      knownIds: knownSet,
     });
-    window.setTimeout(() => setMotion('idle'), 180);
-  }, [filteredCards.length]);
-
-  useEffect(() => {
+    setStudySession(deck);
     setCurrentIndex(0);
     setFlipped(false);
-  }, [filter, branchFilter, activeCatalogId]);
-
-  useEffect(() => {
-    if (!filteredCards.length) return;
-    if (currentIndex >= filteredCards.length) setCurrentIndex(0);
-  }, [currentIndex, filteredCards.length]);
+    commitState((current) => ({
+      ...current,
+      recentStudyStarts: rememberStudyStart(current.recentStudyStarts, deckKey, deck.cardIds),
+      customCatalogs: filter === 'catalog' ? markCatalogStudied(current.customCatalogs, activeCatalogId) : current.customCatalogs,
+    }));
+  }, [activeCatalogId, branchFilter, filter, filteredCards, knownSet, pearlState.recentStudyStarts, reviewSet, wrongSet]);
 
   useEffect(() => {
     if (!activeCatalogId && pearlState.customCatalogs.length) setActiveCatalogId(pearlState.customCatalogs[0].id);
@@ -142,7 +193,37 @@ function TusPearlStudyScreen({
 
   useEffect(() => {
     setRenameValue(activeCatalog?.name || '');
-  }, [activeCatalog?.id, activeCatalog?.name]);
+    setCatalogDescription(activeCatalog?.description || '');
+  }, [activeCatalog?.description, activeCatalog?.id, activeCatalog?.name]);
+
+  useEffect(() => {
+    const signature = [filter, branchFilter, activeCatalogId, filteredCards.map((card) => card.id).join('|')].join('::');
+    if (viewMode !== 'study' || lastDeckSignature.current === signature) return;
+    lastDeckSignature.current = signature;
+    rebuildStudySession(filteredCards);
+  }, [activeCatalogId, branchFilter, filter, filteredCards, rebuildStudySession, viewMode]);
+
+  useEffect(() => {
+    if (!sessionCards.length) return;
+    if (currentIndex >= sessionCards.length) setCurrentIndex(0);
+  }, [currentIndex, sessionCards.length]);
+
+  useEffect(() => {
+    setCatalogMenuOpen(false);
+  }, [activeCard?.id, viewMode]);
+
+  const moveCard = useCallback((direction) => {
+    if (!sessionCards.length) return;
+    setMotion(direction > 0 ? 'next' : 'prev');
+    setFlipped(false);
+    setCurrentIndex((current) => {
+      const next = direction > 0 ? current + 1 : current - 1;
+      if (next < 0) return sessionCards.length - 1;
+      if (next >= sessionCards.length) return 0;
+      return next;
+    });
+    window.setTimeout(() => setMotion('idle'), 180);
+  }, [sessionCards.length]);
 
   useEffect(() => {
     function handleKeyDown(event) {
@@ -165,13 +246,17 @@ function TusPearlStudyScreen({
     const catalog = {
       id: buildCatalogId(name),
       name,
+      description: catalogDescription.trim(),
       cardIds: includeActiveCard && activeCard ? [activeCard.id] : [],
       createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString(),
+      lastStudiedAt: '',
     };
     commitState((current) => ({ ...current, customCatalogs: [...(current.customCatalogs || []), catalog] }));
     setActiveCatalogId(catalog.id);
     setFilter('catalog');
     setCatalogName('');
+    setCatalogDescription('');
   }
 
   function renameCatalog() {
@@ -180,7 +265,7 @@ function TusPearlStudyScreen({
     commitState((current) => ({
       ...current,
       customCatalogs: (current.customCatalogs || []).map((catalog) => (
-        catalog.id === activeCatalog.id ? { ...catalog, name } : catalog
+        catalog.id === activeCatalog.id ? { ...catalog, name, description: catalogDescription.trim(), updatedAt: new Date().toISOString() } : catalog
       )),
     }));
   }
@@ -189,6 +274,7 @@ function TusPearlStudyScreen({
     commitState((current) => ({
       ...current,
       customCatalogs: (current.customCatalogs || []).filter((catalog) => catalog.id !== catalogId),
+      userPearlCards: (current.userPearlCards || []).map((card) => ({ ...card, catalogIds: removeId(card.catalogIds, catalogId) })),
     }));
     const fallback = pearlState.customCatalogs.find((catalog) => catalog.id !== catalogId);
     setActiveCatalogId(fallback?.id || '');
@@ -200,7 +286,10 @@ function TusPearlStudyScreen({
     commitState((current) => ({
       ...current,
       customCatalogs: (current.customCatalogs || []).map((catalog) => (
-        catalog.id === catalogId ? { ...catalog, cardIds: addId(catalog.cardIds, cardId) } : catalog
+        catalog.id === catalogId ? { ...catalog, cardIds: addId(catalog.cardIds, cardId), updatedAt: new Date().toISOString() } : catalog
+      )),
+      userPearlCards: (current.userPearlCards || []).map((card) => (
+        card.id === cardId ? { ...card, catalogIds: addId(card.catalogIds, catalogId), updatedAt: new Date().toISOString() } : card
       )),
     }));
   }
@@ -210,7 +299,10 @@ function TusPearlStudyScreen({
     commitState((current) => ({
       ...current,
       customCatalogs: (current.customCatalogs || []).map((catalog) => (
-        catalog.id === catalogId ? { ...catalog, cardIds: removeId(catalog.cardIds, cardId) } : catalog
+        catalog.id === catalogId ? { ...catalog, cardIds: removeId(catalog.cardIds, cardId), updatedAt: new Date().toISOString() } : catalog
+      )),
+      userPearlCards: (current.userPearlCards || []).map((card) => (
+        card.id === cardId ? { ...card, catalogIds: removeId(card.catalogIds, catalogId), updatedAt: new Date().toISOString() } : card
       )),
     }));
   }
@@ -256,6 +348,45 @@ function TusPearlStudyScreen({
     setFilter('catalog');
     setBranchFilter('all');
     setViewMode('study');
+    lastDeckSignature.current = '';
+  }
+
+  function openEditor({ mode = 'create', card = null, defaultCatalogId = activeCatalogId || '' } = {}) {
+    setEditorState({ open: true, mode, card, defaultCatalogId });
+  }
+
+  function closeEditor() {
+    setEditorState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
+  }
+
+  function saveUserCard(card, { catalogId = '' } = {}) {
+    commitState((current) => {
+      const nextCatalogs = (current.customCatalogs || []).map((catalog) => (
+        catalog.id === catalogId ? { ...catalog, cardIds: addId(catalog.cardIds, card.id), updatedAt: new Date().toISOString() } : catalog
+      ));
+      return {
+        ...current,
+        userPearlCards: upsertUserPearlCard(current.userPearlCards, { ...card, catalogIds: catalogId ? addId(card.catalogIds, catalogId) : card.catalogIds }),
+        customCatalogs: nextCatalogs,
+      };
+    });
+    closeEditor();
+    setFilter('user');
+    setBranchFilter('all');
+    lastDeckSignature.current = '';
+  }
+
+  function deleteUserCard(cardId) {
+    commitState((current) => ({
+      ...current,
+      userPearlCards: removeUserPearlCard(current.userPearlCards, cardId),
+      favoritePearlCardIds: removeId(current.favoritePearlCardIds, cardId),
+      wrongPearlCardIds: removeId(current.wrongPearlCardIds, cardId),
+      knownPearlCardIds: removeId(current.knownPearlCardIds, cardId),
+      reviewPearlCardIds: removeId(current.reviewPearlCardIds, cardId),
+      customCatalogs: (current.customCatalogs || []).map((catalog) => ({ ...catalog, cardIds: removeId(catalog.cardIds, cardId) })),
+    }));
+    lastDeckSignature.current = '';
   }
 
   function handlePointerDown(event) {
@@ -280,24 +411,40 @@ function TusPearlStudyScreen({
         <div className="tus-pearl-study-title">
           <p className="auth-eyebrow">Hızlı TUS tekrarı</p>
           <h1>{viewMode === 'catalogs' ? 'Kataloglarım' : 'Hap Bilgi Çalış'}</h1>
-          <span>{viewMode === 'catalogs' ? 'Kişisel setlerini oluştur, düzenle ve kart ekle.' : 'Tek kart, hızlı karar, aktif hatırlama.'}</span>
+          <span>{viewMode === 'catalogs' ? 'Kişisel setlerini oluştur, düzenle ve kart ekle.' : `${modeLabel} · dengeli karışık oturum.`}</span>
         </div>
         <div className="tus-pearl-study-progress" aria-label="Kart ilerlemesi">
-          <strong>{viewMode === 'study' ? `${filteredCards.length ? currentIndex + 1 : 0} / ${filteredCards.length}` : `${pearlState.customCatalogs.length} katalog`}</strong>
+          <strong>{viewMode === 'study' ? `${sessionCards.length ? currentIndex + 1 : 0} / ${sessionCards.length}` : `${pearlState.customCatalogs.length} katalog`}</strong>
           <div><span style={{ width: `${viewMode === 'study' ? progress : 100}%` }} /></div>
         </div>
       </header>
 
-      <div className="tus-pearl-mode-switch card-surface" aria-label="Hap bilgi görünüm seçimi">
-        <button type="button" className={viewMode === 'study' ? 'active' : ''} onClick={() => setViewMode('study')}>
-          <Icon name="LayeredCards" />
-          <span>Kart çalış</span>
-        </button>
-        <button type="button" className={viewMode === 'catalogs' ? 'active' : ''} onClick={() => setViewMode('catalogs')}>
-          <Icon name="ClipboardList" />
-          <span>Katalog yönet</span>
-        </button>
-      </div>
+      {viewMode === 'catalogs' ? (
+        <div className="tus-pearl-mode-switch card-surface compact-mode-switch" aria-label="Katalog yönetimi üst aksiyonları">
+          <button type="button" onClick={() => { setViewMode('study'); setFilter('all'); setBranchFilter('all'); lastDeckSignature.current = ''; }}>
+            <Icon name="LayeredCards" />
+            <span>Hızlı tekrar</span>
+          </button>
+          <button type="button" className="active" onClick={() => setViewMode('catalogs')}>
+            <Icon name="ClipboardList" />
+            <span>Kataloglarım</span>
+          </button>
+          <button type="button" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>
+            <Icon name="Notes" />
+            <span>Kart ekle</span>
+          </button>
+        </div>
+      ) : (
+        <div className="pearl-study-quickbar card-surface" aria-label="Çalışma ekranı hızlı aksiyonları">
+          <span><strong>{modeLabel}</strong><em>{sessionCards.length} kartlık karışık deck</em></span>
+          <div>
+            <button type="button" className="btn btn-secondary compact" onClick={() => rebuildStudySession(filteredCards)}>Yeni sıra</button>
+            <button type="button" className="btn btn-secondary compact" onClick={() => { setFilter('all'); setBranchFilter('all'); lastDeckSignature.current = ''; }}>Tüm kartlar</button>
+            <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kart ekle</button>
+            <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Kataloglarım</button>
+          </div>
+        </div>
+      )}
 
       {viewMode === 'catalogs' ? (
         <main className="tus-pearl-catalog-manager card-surface" aria-label="Katalog yönetimi">
@@ -311,17 +458,25 @@ function TusPearlStudyScreen({
               </div>
             </div>
             <div className="tus-pearl-catalog-list" aria-label="Katalog listesi">
-              {pearlState.customCatalogs.length ? pearlState.customCatalogs.map((catalog) => (
-                <button
-                  key={catalog.id}
-                  type="button"
-                  className={catalog.id === activeCatalogId ? 'active' : ''}
-                  onClick={() => setActiveCatalogId(catalog.id)}
-                >
-                  <span><strong>{catalog.name}</strong><em>{catalog.cardIds.length} kart</em></span>
-                  <Icon name="ArrowRight" size={16} />
-                </button>
-              )) : (
+              {pearlState.customCatalogs.length ? pearlState.customCatalogs.map((catalog) => {
+                const catalogWrongCount = (catalog.cardIds || []).filter((id) => wrongSet.has(id)).length;
+                const userCount = (catalog.cardIds || []).filter((id) => cardById.get(id)?.source === 'user').length;
+                return (
+                  <button
+                    key={catalog.id}
+                    type="button"
+                    className={catalog.id === activeCatalogId ? 'active' : ''}
+                    onClick={() => setActiveCatalogId(catalog.id)}
+                  >
+                    <span>
+                      <strong>{catalog.name}</strong>
+                      <em>{catalog.cardIds.length} kart · {catalogWrongCount} zorlandığın · {userCount} kişisel</em>
+                      <em>{formatDateLabel(catalog.lastStudiedAt)}</em>
+                    </span>
+                    <Icon name="ArrowRight" size={16} />
+                  </button>
+                );
+              }) : (
                 <div className="tus-pearl-catalog-list-empty">
                   <Icon name="LayeredCards" />
                   <p>Henüz katalog yok. İlk setini oluşturunca burada görünecek.</p>
@@ -337,17 +492,19 @@ function TusPearlStudyScreen({
                   <div>
                     <p className="auth-eyebrow">Katalog detayı</p>
                     <h2>{activeCatalog.name}</h2>
-                    <span>{catalogCards.length} kart · Bu seti filtre olarak çalışabilir veya düzenleyebilirsin.</span>
+                    <span>{catalogCards.length} kart · {catalogCards.filter((card) => card.source === 'user').length} kişisel · {formatDateLabel(activeCatalog.lastStudiedAt)}</span>
                   </div>
                   <div className="tus-pearl-catalog-detail-actions">
                     <button type="button" className="btn btn-primary compact" onClick={() => openCatalogForStudy(activeCatalog.id)} disabled={!catalogCards.length}>Bu seti çalış</button>
+                    <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalog.id })}>Kataloğa yeni kart</button>
                     <button type="button" className="btn btn-secondary compact" onClick={() => deleteCatalog(activeCatalog.id)}>Sil</button>
                   </div>
                 </div>
 
-                <div className="tus-pearl-catalog-rename-row">
+                <div className="tus-pearl-catalog-rename-row catalog-rename-extended">
                   <input value={renameValue} onChange={(event) => setRenameValue(event.target.value)} aria-label="Katalog adını düzenle" />
-                  <button type="button" className="btn btn-secondary compact" onClick={renameCatalog}>Yeniden adlandır</button>
+                  <input value={catalogDescription} onChange={(event) => setCatalogDescription(event.target.value)} placeholder="Kısa açıklama" aria-label="Katalog açıklaması" />
+                  <button type="button" className="btn btn-secondary compact" onClick={renameCatalog}>Kaydet</button>
                 </div>
 
                 <div className="tus-pearl-catalog-card-section">
@@ -360,39 +517,61 @@ function TusPearlStudyScreen({
                       {catalogCards.map((card) => (
                         <article key={card.id} className="tus-pearl-library-card in-catalog">
                           <div>
-                            <span>{getBranchName(card.branchId)} · {card.cardType || 'Spot'}</span>
+                            <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'} · {getBranchName(card.branchId)} · {card.cardType || 'Spot'}</span>
                             <strong>{card.front}</strong>
                             <p>{card.back}</p>
                           </div>
-                          <button type="button" className="btn btn-icon quiet" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar">
-                            <Icon name="X" />
-                          </button>
+                          <div className="pearl-card-row-actions">
+                            {card.source === 'user' ? <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
+                            <button type="button" className="btn btn-icon quiet" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar">
+                              <Icon name="X" />
+                            </button>
+                          </div>
                         </article>
                       ))}
                     </div>
                   ) : (
-                    <div className="tus-pearl-study-empty compact">
+                    <div className="tus-pearl-study-empty compact actionable-empty">
                       <Icon name="LayeredCards" />
-                      <strong>Bu katalog boş.</strong>
-                      <p>Aşağıdaki kart kütüphanesinden ekleme yap.</p>
+                      <strong>Bu katalogda henüz kart yok.</strong>
+                      <p>Tüm kart havuzundan hazır kart ekleyebilir veya bu kataloğa özel kendi kartını oluşturabilirsin.</p>
+                      <div className="empty-action-row">
+                        <a href="#catalog-card-library" className="btn btn-primary compact">Tüm kartlardan ekle</a>
+                        <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalog.id })}>Yeni kart oluştur</button>
+                      </div>
                     </div>
                   )}
                 </div>
 
-                <div className="tus-pearl-catalog-card-section">
+                <div id="catalog-card-library" className="tus-pearl-catalog-card-section catalog-card-library">
                   <div className="tus-pearl-catalog-section-head">
-                    <strong>Kart ekle</strong>
-                    <span>Katalog dışında kalan kartlar</span>
+                    <strong>Tüm kartlardan ekle</strong>
+                    <span>Sistem ve kişisel kartlar</span>
                   </div>
-                  <input className="tus-pearl-library-search" value={librarySearch} onChange={(event) => setLibrarySearch(event.target.value)} placeholder="Kart ara: sinir, farmakoloji, tuzak..." />
+                  <div className="pearl-library-toolbar">
+                    <input className="tus-pearl-library-search" value={librarySearch} onChange={(event) => setLibrarySearch(event.target.value)} placeholder="Kart ara: sinir, farmakoloji, tuzak..." />
+                    <select value={sourceLibraryFilter} onChange={(event) => setSourceLibraryFilter(event.target.value)} aria-label="Kart kaynağı filtresi">
+                      <option value="all">Tüm kaynaklar</option>
+                      <option value="system">Sistem kartları</option>
+                      <option value="user">Kendi kartlarım</option>
+                    </select>
+                    <button type="button" className="btn btn-primary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalog.id })}>Yeni kart</button>
+                  </div>
                   <div className="tus-pearl-catalog-card-list addable">
                     {searchableCards.map((card) => (
                       <article key={card.id} className="tus-pearl-library-card">
                         <div>
-                          <span>{getBranchName(card.branchId)} · {card.cardType || 'Spot'}</span>
+                          <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'} · {getBranchName(card.branchId)} · {card.cardType || 'Spot'}</span>
                           <strong>{card.front}</strong>
                         </div>
-                        <button type="button" className="btn btn-secondary compact" onClick={() => addCardToCatalog(card.id)}>Ekle</button>
+                        <div className="pearl-card-row-actions">
+                          {card.source === 'user' ? <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
+                          {activeCatalog?.cardIds?.includes(card.id) ? (
+                            <button type="button" className="btn btn-secondary compact" disabled>Eklendi</button>
+                          ) : (
+                            <button type="button" className="btn btn-secondary compact" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
+                          )}
+                        </div>
                       </article>
                     ))}
                   </div>
@@ -409,37 +588,6 @@ function TusPearlStudyScreen({
         </main>
       ) : (
         <>
-          <div className="tus-pearl-study-controls card-surface">
-            <div className="tus-pearl-study-selects streamlined">
-              <label>
-                <span>Set</span>
-                <select value={filter} onChange={(event) => setFilter(event.target.value)} aria-label="Çalışma seti">
-                  {STUDY_SETS.map((item) => (
-                    <option key={item.id} value={item.id} disabled={item.id === 'catalog' && !pearlState.customCatalogs.length}>{item.label}</option>
-                  ))}
-                </select>
-              </label>
-              <label>
-                <span>Branş</span>
-                <select value={branchFilter} onChange={(event) => setBranchFilter(event.target.value)} aria-label="Branş filtresi">
-                  <option value="all">Tüm branşlar</option>
-                  {branchOptions.map((branch) => <option key={branch.id} value={branch.id}>{branch.shortName || branch.name} ({TUS_PEARL_CARD_STATS.byBranch[branch.id]})</option>)}
-                </select>
-              </label>
-              <label>
-                <span>Katalog</span>
-                <select value={activeCatalogId} onChange={(event) => { setActiveCatalogId(event.target.value); if (event.target.value) setFilter('catalog'); }} aria-label="Katalog seç">
-                  <option value="">Katalog seç</option>
-                  {pearlState.customCatalogs.map((catalog) => <option key={catalog.id} value={catalog.id}>{catalog.name} ({catalog.cardIds.length})</option>)}
-                </select>
-              </label>
-            </div>
-            <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>
-              <Icon name="ClipboardList" />
-              <span>Kataloglarım</span>
-            </button>
-          </div>
-
           <main className="tus-pearl-study-main">
             <button type="button" className="tus-pearl-side-nav" onClick={() => moveCard(-1)} aria-label="Önceki kart">‹</button>
 
@@ -451,28 +599,29 @@ function TusPearlStudyScreen({
               >
                 <button type="button" className="tus-pearl-focus-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
                   <span className="tus-pearl-focus-face tus-pearl-focus-front">
-                    <span className="tus-pearl-focus-meta minimal">
-                      <em>{getBranchName(activeCard.branchId)}</em>
-                      <em>{activeCard.cardType || 'Aktif hatırlama'}</em>
-                      <em>{currentIndex + 1}/{filteredCards.length}</em>
+                    <span className="tus-pearl-focus-meta minimal single">
+                      <em>{activeCard.topic || (activeCard.source === 'user' ? 'Kişisel kart' : getBranchName(activeCard.branchId))}</em>
                     </span>
                     <strong>{activeCard.front}</strong>
-                    <span className="tus-pearl-focus-hint">Space veya karta tıkla</span>
                   </span>
                   <span className="tus-pearl-focus-face tus-pearl-focus-back">
                     <span className="tus-pearl-answer-label">Cevap</span>
                     <strong>{activeCard.back}</strong>
-                    <p>{activeCard.explanation}</p>
-                    {appearedLabel ? <span className="tus-pearl-focus-hint">{appearedLabel}</span> : null}
+                    {activeCard.explanation ? <p>{activeCard.explanation}</p> : null}
+                    {activeCard.keywords?.length ? <small className="pearl-card-keywords">{activeCard.keywords.slice(0, 3).join(' · ')}</small> : null}
                   </span>
                 </button>
               </article>
             ) : (
               <div className="tus-pearl-study-empty card-surface">
                 <Icon name="LayeredCards" />
-                <strong>Bu sette kart yok.</strong>
-                <p>Seti değiştir, tüm kartlara dön veya kataloglarına kart ekle.</p>
-                <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Katalogları yönet</button>
+                <strong>{filter === 'catalog' ? 'Bu katalogda çalışılacak kart yok.' : 'Bu sette kart yok.'}</strong>
+                <p>{filter === 'catalog' ? 'Tüm kart havuzundan ekleme yapabilir veya kendi kartını oluşturabilirsin.' : 'Filtreyi temizleyip tüm kartlara dönebilir veya yeni kart ekleyebilirsin.'}</p>
+                <div className="empty-action-row">
+                  <button type="button" className="btn btn-primary compact" onClick={() => { setFilter('all'); setBranchFilter('all'); lastDeckSignature.current = ''; }}>Tüm kartlara dön</button>
+                  <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>{filter === 'catalog' ? 'Kataloğa kart ekle' : 'Kataloglarım'}</button>
+                  <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Yeni kart oluştur</button>
+                </div>
               </div>
             )}
 
@@ -500,24 +649,63 @@ function TusPearlStudyScreen({
                 <Icon name="Sparkles" size={15} />
                 <span>{isFavorite ? 'Favoride' : 'Favori'}</span>
               </button>
-              <select value={activeCatalogId} onChange={(event) => setActiveCatalogId(event.target.value)} aria-label="Aktif kart için katalog seç">
-                <option value="">Katalog seç</option>
-                {pearlState.customCatalogs.map((catalog) => <option key={catalog.id} value={catalog.id}>{catalog.name}</option>)}
-              </select>
-              <button type="button" className={isInCatalog ? 'active' : ''} onClick={toggleCatalogMembership} disabled={!activeCard}>
-                <Icon name="LayeredCards" size={15} />
-                <span>{isInCatalog ? 'Katalogda' : 'Kataloğa ekle'}</span>
+              <div className="pearl-catalog-popover-wrap">
+                <button type="button" className={isInAnyCatalog ? 'active' : ''} onClick={() => setCatalogMenuOpen((value) => !value)} disabled={!activeCard}>
+                  <Icon name="LayeredCards" size={15} />
+                  <span>{isInAnyCatalog ? 'Katalogda' : 'Kataloğa ekle'}</span>
+                </button>
+                {catalogMenuOpen ? (
+                  <div className="pearl-catalog-popover" role="menu">
+                    {pearlState.customCatalogs.length ? pearlState.customCatalogs.map((catalog) => {
+                      const alreadyAdded = activeCard ? catalog.cardIds?.includes(activeCard.id) : false;
+                      return (
+                        <button key={catalog.id} type="button" className={alreadyAdded ? 'active' : ''} onClick={() => { if (activeCard && !alreadyAdded) addCardToCatalog(activeCard.id, catalog.id); setActiveCatalogId(catalog.id); setCatalogMenuOpen(false); }}>
+                          <span>{catalog.name}</span>
+                          <em>{alreadyAdded ? 'Eklendi' : 'Ekle'}</em>
+                        </button>
+                      );
+                    }) : (
+                      <button type="button" onClick={() => { setViewMode('catalogs'); setCatalogMenuOpen(false); }}>Önce katalog oluştur</button>
+                    )}
+                  </div>
+                ) : null}
+              </div>
+              <button type="button" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>
+                <Icon name="Notes" size={15} />
+                <span>Kart ekle</span>
               </button>
-              {!pearlState.customCatalogs.length ? (
-                <div className="tus-pearl-inline-catalog-create">
-                  <input value={catalogName} onChange={(event) => setCatalogName(event.target.value)} placeholder="İlk katalog adı" />
-                  <button type="button" onClick={() => createCatalog({ includeActiveCard: true })}>Oluştur</button>
-                </div>
+              {activeCard?.source === 'user' ? (
+                <>
+                  <button type="button" onClick={() => openEditor({ mode: 'edit', card: activeCard, defaultCatalogId: activeCatalogId })}>
+                    <Icon name="Notes" size={15} />
+                    <span>Düzenle</span>
+                  </button>
+                  <button type="button" onClick={() => deleteUserCard(activeCard.id)}>
+                    <Icon name="Trash2" size={15} />
+                    <span>Sil</span>
+                  </button>
+                </>
+              ) : activeCard ? (
+                <button type="button" onClick={() => openEditor({ mode: 'copy', card: activeCard, defaultCatalogId: activeCatalogId })}>
+                  <Icon name="User" size={15} />
+                  <span>Kendi kartıma kopyala</span>
+                </button>
               ) : null}
             </div>
           </footer>
         </>
       )}
+
+      <TusPearlCardEditor
+        open={editorState.open}
+        mode={editorState.mode}
+        initialCard={editorState.card}
+        defaultCatalogId={editorState.defaultCatalogId}
+        catalogs={pearlState.customCatalogs}
+        existingCards={allCards}
+        onClose={closeEditor}
+        onSave={saveUserCard}
+      />
     </section>
   );
 }
