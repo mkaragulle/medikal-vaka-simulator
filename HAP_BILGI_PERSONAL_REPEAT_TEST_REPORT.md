@@ -2,7 +2,7 @@
 
 Status: **PASS**
 
-- Visible repeat lists: Tüm kartlar (501), Favoriler (1), Zorlandıklarım (1), Tekrar et (1), Bildiklerim (1), Kendi kartlarım (1), Kataloglarım (1)
+- Visible repeat lists: Tüm kartlar (669), Favoriler (1), Zorlandıklarım (1), Tekrar et (1), Bildiklerim (1), Kendi kartlarım (1), Kataloglarım (1)
 - Favorite deck size: 1
 - Difficult deck size: 1
 - Review deck size: 1

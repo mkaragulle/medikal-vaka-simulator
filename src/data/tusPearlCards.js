@@ -17,7 +17,7 @@ export const TUS_PEARL_TOPICS = [
     ],
     "trap": "Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.",
     "extraQuestion": "Froment belirtisi hangi sinir lezyonunu destekler?",
-    "extraAnswer": "Ulnar sinir lezyonu.",
+    "extraAnswer": "Froment belirtisi ulnar sinir lezyonunu destekler.",
     "difficulty": "orta"
   },
   {
@@ -41,19 +41,19 @@ export const TUS_PEARL_TOPICS = [
   {
     "branchId": "anatomy",
     "subject": "Anatomi",
-    "topic": "Common peroneal sinir",
-    "mainQuestion": "Düşük ayak ve steppage yürüyüş en çok hangi sinir lezyonunda görülür?",
-    "mainAnswer": "Common peroneal sinir lezyonu.",
-    "explanation": "Fibula boynu çevresinde yüzeyel seyrettiği için travma veya bası ile zedelenebilir.",
+    "topic": "N. fibularis communis lezyonu",
+    "mainQuestion": "Düşük ayak ve steppage yürüyüş en çok hangi sinir lezyonunu düşündürür?",
+    "mainAnswer": "N. fibularis communis lezyonu.",
+    "explanation": "N. fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
     "keywords": [
       "düşük ayak",
-      "steppage gait",
+      "steppage yürüyüş",
       "fibula boynu",
       "dorsifleksiyon kaybı"
     ],
-    "trap": "Tibial sinir lezyonu plantar fleksiyon kaybı ile ayrılır.",
-    "extraQuestion": "Fibula boynu kırığında hangi sinir risk altındadır?",
-    "extraAnswer": "Common peroneal sinir.",
+    "trap": "N. tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
+    "extraQuestion": "Fibula boynu kırığında klasik olarak hangi sinir risk altındadır?",
+    "extraAnswer": "N. fibularis communis.",
     "difficulty": "orta"
   },
   {
@@ -407,7 +407,7 @@ export const TUS_PEARL_TOPICS = [
     "subject": "Tıbbi Mikrobiyoloji",
     "topic": "Erizipel",
     "mainQuestion": "Keskin sınırlı parlak kırmızı plak yapan erizipelde en sık etken hangisidir?",
-    "mainAnswer": "Streptococcus pyogenes.",
+    "mainAnswer": "Streptococcus pyogenes, yani A grubu beta-hemolitik streptokok.",
     "explanation": "Erizipel daha yüzeyel dermal lenfatik tutulumla keskin sınırlı ve parlak eritem yapar.",
     "keywords": "keskin sınırlı plak; parlak eritem; ateş; S. pyogenes",
     "trap": "Selülit daha derin ve sınırları daha belirsiz olabilir.",
@@ -555,7 +555,7 @@ export const TUS_PEARL_TOPICS = [
     "keywords": "iskemi; solid organ; miyokard; böbrek",
     "trap": "Beyin infarktı sıvılaşma nekrozu yapar; bu en sık sınav tuzağıdır.",
     "extraQuestion": "Miyokard infarktında nekroz tipi nedir?",
-    "extraAnswer": "Koagülasyon nekrozu.",
+    "extraAnswer": "Miyokard infarktında koagülasyon nekrozu görülür.",
     "difficulty": "orta"
   },
   {
@@ -607,7 +607,7 @@ export const TUS_PEARL_TOPICS = [
     "keywords": "vaskülit; immün kompleks; damar duvarı; fibrinoid",
     "trap": "Fibrinoid nekroz damar duvarına özgü bağlamla ayırt edilir.",
     "extraQuestion": "Malign hipertansiyonda arteriollerde hangi nekroz tipi görülebilir?",
-    "extraAnswer": "Fibrinoid nekroz.",
+    "extraAnswer": "Malign hipertansiyonda fibrinoid nekroz görülebilir.",
     "difficulty": "orta"
   },
   {
@@ -758,8 +758,8 @@ export const TUS_PEARL_TOPICS = [
     "subject": "Tıbbi Farmakoloji",
     "topic": "Warfarin",
     "mainQuestion": "Warfarin hangi vitaminin döngüsünü inhibe eder?",
-    "mainAnswer": "Vitamin K.",
-    "explanation": "II, VII, IX, X ve protein C/S sentezi azalır; teratojenite ve INR izlemi önemlidir.",
+    "mainAnswer": "Vitamin K epoksit redüktaz inhibisyonu.",
+    "explanation": "Faktör II, VII, IX, X ile protein C/S sentezi azalır; INR izlemi ve gebelikte teratojenite sınavda birlikte sorulur.",
     "keywords": "warfarin; vitamin K; INR; teratojen",
     "trap": "Heparin gebelikte kullanılabilirken warfarin plasentayı geçer ve teratojendir.",
     "extraQuestion": "Warfarin tedavisinde izlenen test hangisidir?",
@@ -876,9 +876,9 @@ export const TUS_PEARL_TOPICS = [
     "topic": "DKA",
     "mainQuestion": "Diyabetik ketoasidozda tedavinin ilk temel basamağı nedir?",
     "mainAnswer": "İzotonik sıvı resüsitasyonu.",
-    "explanation": "Sıvıdan sonra insülin ve potasyum takibi planlanır; ağır hipokalemide insülin geciktirilir.",
+    "explanation": "İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir. Belirgin hipokalemide insülin ertelenip potasyum replasmanı öncelenir.",
     "keywords": "hiperglisemi; keton; asidoz; dehidratasyon",
-    "trap": "İnsülin önemli olsa da ilk basamak çoğu soruda sıvı ve potasyum değerlendirmesidir.",
+    "trap": "DKA’da insülin şarttır; ancak sıvı resüsitasyonu ve potasyum güvenliği atlanırsa aritmi riski doğar.",
     "extraQuestion": "DKA’da insülin başlamadan önce mutlaka hangi elektrolit değerlendirilir?",
     "extraAnswer": "Potasyum.",
     "difficulty": "orta"
@@ -899,14 +899,14 @@ export const TUS_PEARL_TOPICS = [
   {
     "branchId": "internal-medicine",
     "subject": "İç Hastalıkları",
-    "topic": "Hiperpotasemi EKG",
-    "mainQuestion": "Hiperpotasemiye bağlı EKG değişikliği varsa ilk tedavi nedir?",
+    "topic": "Hiperkalemi + EKG değişikliği",
+    "mainQuestion": "EKG değişikliği olan hiperkalemide ilk tedavi nedir?",
     "mainAnswer": "IV kalsiyum glukonat.",
-    "explanation": "Kalsiyum potasyumu düşürmez; miyokard membranını stabilize eder.",
-    "keywords": "hiperpotasemi; sivri T; geniş QRS; kalsiyum",
-    "trap": "İnsülin-glukoz potasyumu hücre içine sokar ama EKG değişikliğinde önce kardiyak stabilizasyon gerekir.",
-    "extraQuestion": "Hiperpotasemide potasyumu hücre içine kaydıran tedavilerden biri nedir?",
-    "extraAnswer": "İnsülin + glukoz veya beta-agonist.",
+    "explanation": "Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır.",
+    "keywords": "hiperkalemi; sivri T; geniş QRS; IV kalsiyum glukonat",
+    "trap": "İnsülin + glukoz potasyumu hücre içine kaydırır; EKG değişikliği varsa önce kardiyak membran stabilizasyonu gerekir.",
+    "extraQuestion": "Hiperkalemide insülin + glukoz tedavisinin temel amacı nedir?",
+    "extraAnswer": "Potasyumu hücre içine kaydırmak.",
     "difficulty": "orta"
   },
   {
@@ -980,7 +980,7 @@ export const TUS_PEARL_TOPICS = [
     "topic": "GPA",
     "mainQuestion": "Üst-alt solunum yolu ve böbrek tutulumu olan nekrotizan vaskülitte hangi antikor beklenir?",
     "mainAnswer": "PR3-ANCA/c-ANCA.",
-    "explanation": "Granülomatozis with polyangiitis sinüzit, akciğer nodülü/hemoptizi ve glomerülonefritle sorulur.",
+    "explanation": "Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur.",
     "keywords": "sinüzit; hemoptizi; glomerülonefrit; c-ANCA",
     "trap": "MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir.",
     "extraQuestion": "GPA’da tipik histoloji nedir?",
@@ -1244,7 +1244,7 @@ export const TUS_PEARL_TOPICS = [
     "keywords": "periumbilikal ağrı; sağ alt kadran; rebound; iştahsızlık",
     "trap": "Gastroenteritte yaygın kramp ve diyare öne çıkar; migrasyon apandisit lehinedir.",
     "extraQuestion": "Apandisitte görüntüleme için çocuk/gebede öncelikli yöntem nedir?",
-    "extraAnswer": "Ultrasonografi.",
+    "extraAnswer": "Çocuk ve gebede ultrasonografi önceliklidir.",
     "difficulty": "orta"
   },
   {
@@ -1591,11 +1591,11 @@ export const TUS_PEARL_TOPICS = [
     "topic": "Anafilaksi",
     "mainQuestion": "Anafilakside ilk ve en önemli ilaç nedir?",
     "mainAnswer": "İntramüsküler adrenalin.",
-    "explanation": "Hava yolu, oksijen ve sıvı desteği eklenir; antihistaminik adrenalin yerine geçmez.",
+    "explanation": "İlk tedavi IM adrenalindir; hava yolu, oksijen ve IV sıvı desteği eklenir. Antihistaminik kaşıntı/ürtiker için yardımcıdır ama şok ve bronkospazmı tek başına düzeltmez.",
     "keywords": "ürtiker; hipotansiyon; bronkospazm; IM adrenalin",
     "trap": "Antihistaminik semptomatik yardımcıdır; yaşam kurtarıcı ilk ilaç adrenalinidir.",
     "extraQuestion": "Anafilakside adrenalin hangi yoldan verilir?",
-    "extraAnswer": "İntramüsküler.",
+    "extraAnswer": "Uyluk anterolateralinden intramüsküler.",
     "difficulty": "orta"
   },
   {
@@ -1701,6 +1701,552 @@ export const TUS_PEARL_TOPICS = [
     "extraQuestion": "Adli olguda tıbbi müdahale ne zaman geciktirilir?",
     "extraAnswer": "Yaşamı tehdit eden durumda geciktirilmez; tedavi önceliklidir.",
     "difficulty": "orta"
+  },
+  {
+    "branchId": "anatomy",
+    "subject": "Anatomi",
+    "topic": "N. intercostobrachialis hasarı",
+    "mainQuestion": "Mastektomi ve aksiller diseksiyon sonrası kol medialinde uyuşukluk hangi sinir hasarını düşündürür?",
+    "mainAnswer": "N. intercostobrachialis hasarı.",
+    "explanation": "N. intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir.",
+    "keywords": "mastektomi; aksiller diseksiyon; medial kol uyuşukluğu; n. intercostobrachialis",
+    "trap": "N. axillaris omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
+    "extraQuestion": "N. intercostobrachialis hangi temel fonksiyonu taşır?",
+    "extraAnswer": "Üst medial kolun cilt duyusu.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "anatomy",
+    "subject": "Anatomi",
+    "topic": "A. communicans posterior anevrizması",
+    "mainQuestion": "Ani baş ağrısı sonrası pitozis ve midriyazis hangi anevrizma lokalizasyonunu düşündürür?",
+    "mainAnswer": "A. communicans posterior anevrizması.",
+    "explanation": "Posterior communicating arter anevrizması n. oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir.",
+    "keywords": "subaraknoid kanama; pitozis; midriyazis; n. oculomotorius",
+    "trap": "N. abducens paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
+    "extraQuestion": "N. oculomotorius parasempatik lif hasarında pupilla nasıl etkilenir?",
+    "extraAnswer": "Midriyazis gelişir.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "anatomy",
+    "subject": "Anatomi",
+    "topic": "V. saphena magna lokalizasyonu",
+    "mainQuestion": "V. saphena magna acil damar yolu için ayak bileğinde hangi anatomik noktada aranır?",
+    "mainAnswer": "Malleolus medialisin önünde.",
+    "explanation": "Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
+    "keywords": "v. saphena magna; medial malleol önü; venöz erişim; greft",
+    "trap": "V. saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
+    "extraQuestion": "V. saphena parva ayak bileğinde hangi tarafta seyreder?",
+    "extraAnswer": "Lateral malleol arkasında.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "anatomy",
+    "subject": "Anatomi",
+    "topic": "Tarsal tünel sendromu",
+    "mainQuestion": "Tarsal tünelde sıkışan sinir hangisidir?",
+    "mainAnswer": "N. tibialis.",
+    "explanation": "Retinaculum flexorum altında n. tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar.",
+    "keywords": "tarsal tünel; retinaculum flexorum; n. tibialis; taban parestezisi",
+    "trap": "N. fibularis communis fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
+    "extraQuestion": "Tarsal tünel basısında duyusal yakınma en çok nerede beklenir?",
+    "extraAnswer": "Ayak tabanında.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "anatomy",
+    "subject": "Anatomi",
+    "topic": "Median epizyotomi ve corpus perineale",
+    "mainQuestion": "Median epizyotomide en çok risk altındaki destek yapısı hangisidir?",
+    "mainAnswer": "Corpus perineale.",
+    "explanation": "Corpus perineale pelvik taban kaslarının birleşme noktasıdır; median kesi bu merkezi destek yapıyı zedeleyebilir.",
+    "keywords": "median epizyotomi; corpus perineale; pelvik taban; destek yapısı",
+    "trap": "Mediolateral epizyotomi m. bulbospongiosus ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
+    "extraQuestion": "Corpus perineale neden klinik olarak önemlidir?",
+    "extraAnswer": "Pelvik taban desteğinin merkezi bağlantı noktasıdır.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "physiology",
+    "subject": "Fizyoloji",
+    "topic": "2,3-BPG ve oksijen eğrisi",
+    "mainQuestion": "2,3-BPG artışı hemoglobin-oksijen ayrışma eğrisini hangi yöne kaydırır?",
+    "mainAnswer": "Sağa kaydırır.",
+    "explanation": "Sağa kayma hemoglobinin oksijene afinitesini azaltır ve dokulara oksijen bırakılmasını kolaylaştırır.",
+    "keywords": "2,3-BPG; sağa kayma; düşük afinite; dokuya oksijen bırakma",
+    "trap": "CO zehirlenmesi sola kayma ve doku hipoksisiyle sorulur; 2,3-BPG artışı kompansatuvar oksijen bırakımıdır.",
+    "extraQuestion": "Sağa kaymada P50 nasıl değişir?",
+    "extraAnswer": "P50 artar.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "physiology",
+    "subject": "Fizyoloji",
+    "topic": "Karbonmonoksit zehirlenmesi",
+    "mainQuestion": "Karbonmonoksit zehirlenmesi oksijen satürasyonunu ve doku oksijenlenmesini nasıl etkiler?",
+    "mainAnswer": "Oksijen taşıma kapasitesini azaltır ve eğriyi sola kaydırır.",
+    "explanation": "CO hemoglobine yüksek afiniteyle bağlanır; kalan bağlanma bölgeleri oksijeni daha sıkı tutar, dokulara bırakım azalır.",
+    "keywords": "CO; karboksihemoglobin; sola kayma; pulse oksimetre yanıltıcı",
+    "trap": "PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesidir.",
+    "extraQuestion": "CO zehirlenmesinde ilk tedavi yaklaşımı nedir?",
+    "extraAnswer": "Yüksek akımlı yüzde yüz oksijen.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-biochemistry",
+    "subject": "Tıbbi Biyokimya",
+    "topic": "Kompetitif inhibitör",
+    "mainQuestion": "Kompetitif inhibitör Vmax ve Km üzerinde nasıl etki yapar?",
+    "mainAnswer": "Vmax değişmez, Km artar.",
+    "explanation": "Substrat artırılarak inhibisyon aşılabilir; bu nedenle maksimum hız korunur ama aynı hıza ulaşmak için daha fazla substrat gerekir.",
+    "keywords": "kompetitif inhibitör; Vmax aynı; Km artar; substratla aşılır",
+    "trap": "Nonkompetitif inhibitörde Vmax azalır; Km genellikle değişmez.",
+    "extraQuestion": "Kompetitif inhibisyonda Lineweaver-Burk grafiğinde x-kesişimi nasıl etkilenir?",
+    "extraAnswer": "-1/Km sıfıra yaklaşır.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-biochemistry",
+    "subject": "Tıbbi Biyokimya",
+    "topic": "G6PD eksikliği",
+    "mainQuestion": "Oksidan ilaç sonrası hemoliz ve Heinz cisimcikleri hangi enzim eksikliğini düşündürür?",
+    "mainAnswer": "G6PD eksikliği.",
+    "explanation": "G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir.",
+    "keywords": "bakla; dapson/primaquine; Heinz cisimciği; NADPH",
+    "trap": "Piruvat kinaz eksikliği enerji üretim bozukluğu ile hemoliz yapar; oksidan tetik ve Heinz cismi G6PD lehinedir.",
+    "extraQuestion": "G6PD eksikliğinde eritrositte hangi koruyucu molekülün yenilenmesi bozulur?",
+    "extraAnswer": "Redükte glutatyon.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-biochemistry",
+    "subject": "Tıbbi Biyokimya",
+    "topic": "Üre döngüsü ve orotik asit",
+    "mainQuestion": "Hiperammonemi ile birlikte idrarda orotik asit artışı hangi üre döngüsü bozukluğunu düşündürür?",
+    "mainAnswer": "Ornitin transkarbamilaz eksikliği.",
+    "explanation": "Karbamoil fosfat mitokondride birikir ve pirimidin sentezine kayarak orotik asidi artırır.",
+    "keywords": "hiperammonemi; orotik asit; OTC; X’e bağlı",
+    "trap": "Karbamoil fosfat sentetaz I eksikliğinde orotik asit artışı beklenmez.",
+    "extraQuestion": "OTC eksikliğinin klasik kalıtım tipi nedir?",
+    "extraAnswer": "OTC eksikliği klasik olarak X’e bağlı resesif geçer.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-microbiology",
+    "subject": "Tıbbi Mikrobiyoloji",
+    "topic": "Stenotrophomonas maltophilia",
+    "mainQuestion": "Karbapenemlere dirençli, TMP-SMX duyarlı non-fermenter gram negatif basil hangi etkeni düşündürür?",
+    "mainAnswer": "Stenotrophomonas maltophilia.",
+    "explanation": "Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir.",
+    "keywords": "non-fermenter; karbapenem dirençli; TMP-SMX; hastane enfeksiyonu",
+    "trap": "Pseudomonas antipsödomonal beta-laktamlarla tedavi edilebilir; karbapenem direnci ve TMP-SMX ipucu Stenotrophomonas lehinedir.",
+    "extraQuestion": "Stenotrophomonas maltophilia tedavisinde klasik ilk seçenek nedir?",
+    "extraAnswer": "TMP-SMX, yani ko-trimoksazol.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-microbiology",
+    "subject": "Tıbbi Mikrobiyoloji",
+    "topic": "Nocardia enfeksiyonu",
+    "mainQuestion": "İmmünsüprese hastada kaviter akciğer lezyonu ve beyin apsesi hangi bakteriyi düşündürür?",
+    "mainAnswer": "Nocardia spp.",
+    "explanation": "Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım TUS ipucudur.",
+    "keywords": "immünsüpresyon; kaviter akciğer; beyin apsesi; TMP-SMX",
+    "trap": "Actinomyces anaerobdur ve sülfür granülleriyle sorulur; Nocardia aerob, zayıf aside dirençli ve TMP-SMX duyarlıdır.",
+    "extraQuestion": "Nocardia tedavisinde klasik ilaç nedir?",
+    "extraAnswer": "Uzun süreli TMP-SMX tedavisi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-microbiology",
+    "subject": "Tıbbi Mikrobiyoloji",
+    "topic": "Legionella pnömonisi",
+    "mainQuestion": "Pnömoniyle birlikte hiponatremi, karaciğer enzim yüksekliği ve klima öyküsü hangi etkeni düşündürür?",
+    "mainAnswer": "Legionella pneumophila.",
+    "explanation": "Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir.",
+    "keywords": "klima; hiponatremi; transaminaz yüksekliği; idrar antijeni",
+    "trap": "Mycoplasma genç erişkinde kuru öksürük ve soğuk aglutininle sorulur; hiponatremi-klima paterni Legionella için daha ayırt edicidir.",
+    "extraQuestion": "Legionella tanısında hızlı kullanılan testlerden biri nedir?",
+    "extraAnswer": "İdrar Legionella antijen testi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-microbiology",
+    "subject": "Tıbbi Mikrobiyoloji",
+    "topic": "HIV hastasında CMV retiniti",
+    "mainQuestion": "CD4 düşük HIV hastasında bulanık görme ve retinal nekroz hangi fırsatçı enfeksiyonu düşündürür?",
+    "mainAnswer": "CMV retiniti.",
+    "explanation": "CMV retiniti ileri immünsüpresyonda görme kaybı yapabilir; gansiklovir temel tedavi, miyelosupresyonda foskarnet alternatiftir.",
+    "keywords": "HIV; CD4 düşük; retinal nekroz; gansiklovir",
+    "trap": "Toksoplazma daha çok halka şeklinde beyin lezyonu ile sorulur; retina tutulumu ve görme şikâyeti CMV lehinedir.",
+    "extraQuestion": "Gansiklovir nedeniyle lökopeni gelişirse hangi antiviral alternatif düşünülebilir?",
+    "extraAnswer": "Foskarnet.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-microbiology",
+    "subject": "Tıbbi Mikrobiyoloji",
+    "topic": "Hepatit B serolojisi",
+    "mainQuestion": "Akut HBV enfeksiyonunu pencere döneminde gösteren en yararlı serolojik belirteç hangisidir?",
+    "mainAnswer": "Anti-HBc IgM.",
+    "explanation": "Pencere döneminde HBsAg kaybolmuş, anti-HBs henüz oluşmamış olabilir; anti-HBc IgM akut enfeksiyonu destekler.",
+    "keywords": "HBV; pencere dönemi; anti-HBc IgM; akut enfeksiyon",
+    "trap": "Anti-HBs bağışıklığı gösterir; pencere döneminde akut enfeksiyon kanıtı olarak anti-HBc IgM aranır.",
+    "extraQuestion": "HBV aşısı sonrası beklenen tek pozitif belirteç hangisidir?",
+    "extraAnswer": "Anti-HBs.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-pathology",
+    "subject": "Tıbbi Patoloji",
+    "topic": "Beyin infarktında nekroz",
+    "mainQuestion": "Beyin infarktında diğer solid organlardan farklı olarak hangi nekroz tipi beklenir?",
+    "mainAnswer": "Likefaksiyon nekrozu.",
+    "explanation": "Beyinde iskemik hasar enzimatik sindirim ve yumuşama ile likefaksiyon nekrozu yapar.",
+    "keywords": "beyin; infarkt; likefaksiyon; solid organ ayrımı",
+    "trap": "Miyokard ve böbrek infarktında koagülasyon nekrozu beklenir; beyin bu kuralın klasik istisnasıdır.",
+    "extraQuestion": "Miyokard infarktında beklenen nekroz tipi nedir?",
+    "extraAnswer": "Miyokard infarktında koagülasyon nekrozu beklenir.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-pharmacology",
+    "subject": "Tıbbi Farmakoloji",
+    "topic": "Digoksin toksisitesi",
+    "mainQuestion": "Digoksin toksisitesinde hayatı tehdit eden aritmi veya ağır hiperkalemide antidot nedir?",
+    "mainAnswer": "Digoksin spesifik Fab antikoru.",
+    "explanation": "Bulantı, sarı-yeşil görme, aritmi ve hiperkalemi digoksin toksisitesini düşündürür; ciddi tabloda Fab antidotu kullanılır.",
+    "keywords": "digoksin; aritmi; sarı-yeşil görme; Fab antikoru",
+    "trap": "Atropin bradikardiye geçici destek olabilir; toksinin bağlanması gereken ağır tabloda Fab antikoru esastır.",
+    "extraQuestion": "Digoksin toksisitesi hangi elektrolit bozukluğunda kolaylaşır?",
+    "extraAnswer": "Hipokalemi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-pharmacology",
+    "subject": "Tıbbi Farmakoloji",
+    "topic": "Kalsiyum kanal bloker zehirlenmesi",
+    "mainQuestion": "Kalsiyum kanal bloker zehirlenmesinde dirençli hipotansiyon/bradikardide metabolik destek tedavisi nedir?",
+    "mainAnswer": "Yüksek doz insülin-euglisemi tedavisi.",
+    "explanation": "Yüksek doz insülin miyokardın karbonhidrat kullanımını ve inotropiyi destekler; glukoz ve potasyum yakın izlenir.",
+    "keywords": "CCB zehirlenmesi; bradikardi; hipotansiyon; yüksek doz insülin",
+    "trap": "Glukagon beta bloker zehirlenmesinin klasik antidotudur; CCB toksisitesinde yüksek doz insülin-euglisemi sık sorulur.",
+    "extraQuestion": "Kalsiyum kanal bloker toksisitesinde hangi elektrolit tedavi sırasında yakından izlenir?",
+    "extraAnswer": "Serum potasyumu ve glukoz yakından izlenir.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "medical-pharmacology",
+    "subject": "Tıbbi Farmakoloji",
+    "topic": "Serotonin sendromu",
+    "mainQuestion": "SSRI/MAOI kullanımı sonrası hipertermi, klonus ve hiperrefleksi hangi toksidromu düşündürür?",
+    "mainAnswer": "Serotonin sendromu.",
+    "explanation": "Serotonin fazlalığı nöromüsküler hiperaktivite yapar; klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir.",
+    "keywords": "SSRI/MAOI; hipertermi; klonus; hiperrefleksi",
+    "trap": "Nöroleptik malign sendromda rijidite ve kreatin kinaz yüksekliği baskındır; klonus serotonin sendromunu güçlendirir.",
+    "extraQuestion": "Serotonin sendromunda kullanılan antidotal ajan hangisidir?",
+    "extraAnswer": "Siproheptadin.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Sepsis erken yaklaşımı",
+    "mainQuestion": "Hipotansiyon ve laktat yüksekliği olan sepsis şüphesinde ilk yaklaşımın temel ikilisi nedir?",
+    "mainAnswer": "Geniş spektrumlu antibiyotik ve 30 mL/kg kristaloid sıvı.",
+    "explanation": "Septik şokta tedavi geciktirilmez; kaynak kontrolü planlanırken erken antibiyotik ve kristaloid resüsitasyon mortaliteyi azaltmaya yöneliktir.",
+    "keywords": "sepsis; hipotansiyon; laktat yüksek; antibiyotik + kristaloid",
+    "trap": "Vazopressör sıvıya rağmen MAP hedefi sağlanamazsa eklenir; ilk dakikalarda antibiyotik ve sıvı geciktirilmemelidir.",
+    "extraQuestion": "Sepsiste ilk tercih vazopressör genellikle hangisidir?",
+    "extraAnswer": "Norepinefrin.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Yüksek riskli pulmoner emboli",
+    "mainQuestion": "Pulmoner embolide hemodinamik instabilite risk sınıflamasını nasıl belirler?",
+    "mainAnswer": "Hasta doğrudan yüksek riskli pulmoner emboli kabul edilir.",
+    "explanation": "Ciddi hipotansiyon veya şok varsa PESI sınıfı beklenmeden yüksek risk PE düşünülür; acil reperfüzyon yaklaşımı gündeme gelir.",
+    "keywords": "pulmoner emboli; hipotansiyon; yüksek risk; reperfüzyon",
+    "trap": "PESI mortalite tahmini için kullanılır; hemodinamik instabil hastayı “PESI IV” diye sınırlamak hatalıdır.",
+    "extraQuestion": "Hemodinamik instabil PE’de kontrendikasyon yoksa hangi tedavi düşünülür?",
+    "extraAnswer": "Sistemik trombolitik tedavi.",
+    "difficulty": "zor"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Pulmoner hipertansiyonda verapamil tuzağı",
+    "mainQuestion": "Pulmoner hipertansiyon tedavisinde vazoreaktivite kanıtı yoksa hangi ilaç tuzak seçenektir?",
+    "mainAnswer": "Verapamil gibi non-dihidropiridin kalsiyum kanal blokerleri.",
+    "explanation": "Pulmoner arteriyel hipertansiyonda CCB yalnız vazoreaktivite testi pozitif seçilmiş hastalarda düşünülür; verapamil sağ kalp yetmezliğini kötüleştirebilir.",
+    "keywords": "pulmoner HT; vazoreaktivite; verapamil; kontraendikasyon tuzağı",
+    "trap": "Bosentan, tadalafil veya prostasiklin analogları PAH tedavi seçenekleridir; verapamil her hastaya otomatik verilmez.",
+    "extraQuestion": "Pulmoner arteriyel hipertansiyon tanısını kesinleştiren yöntem nedir?",
+    "extraAnswer": "Sağ kalp kateterizasyonu.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Tirotoksikozis faktitisya",
+    "mainQuestion": "TSH düşük, T4 yüksek, tiroglobulin düşük ve RAI tutulumu düşükse hangi tanı düşünülür?",
+    "mainAnswer": "Tirotoksikozis faktitisya.",
+    "explanation": "Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür.",
+    "keywords": "TSH düşük; T4 yüksek; tiroglobulin düşük; RAI düşük",
+    "trap": "Graves’te TRAb pozitifliği ve artmış RAI tutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
+    "extraQuestion": "Subakut tiroiditi faktitisyadan ayıran tipik klinik bulgu nedir?",
+    "extraAnswer": "Ağrılı tiroid ve yüksek sedimentasyon.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Renovasküler hipertansiyon",
+    "mainQuestion": "Yeni başlayan dirençli hipertansiyon, abdominal üfürüm ve flash akciğer ödemi hangi tanıyı düşündürür?",
+    "mainAnswer": "Renovasküler hipertansiyon.",
+    "explanation": "Renal arter stenozu renin-anjiyotensin sistemini aktive eder; özellikle yaşlı aterosklerotik hastada flash akciğer ödemi ipucu değerlidir.",
+    "keywords": "dirençli HT; abdominal üfürüm; flash akciğer ödemi; renal arter stenozu",
+    "trap": "Primer hiperaldosteronizm hipokalemik hipertansiyon yapar; abdominal üfürüm ve flash ödem renovasküler nedeni güçlendirir.",
+    "extraQuestion": "Renovasküler hipertansiyonda görüntüleme için hangi noninvaziv yöntemler kullanılabilir?",
+    "extraAnswer": "BT veya MR anjiyografi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Akalazya tanısı",
+    "mainQuestion": "Katı ve sıvıya disfaji, regürjitasyon ve kuş gagası görünümü hangi hastalığı düşündürür?",
+    "mainAnswer": "Akalazya.",
+    "explanation": "Alt özofagus sfinkteri gevşeyemez ve peristaltizm kaybolur; manometri tanıyı doğrulayan temel testtir.",
+    "keywords": "katı+sıvı disfaji; regürjitasyon; kuş gagası; manometri",
+    "trap": "Özofagus kanserinde progresif katı disfaji ve kilo kaybı baskındır; akalazyada katı-sıvı birlikte disfaji tipiktir.",
+    "extraQuestion": "Akalazya tanısını kesinleştiren test nedir?",
+    "extraAnswer": "Özofagus manometrisi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Primer sklerozan kolanjit",
+    "mainQuestion": "Ülseratif kolitli hastada kolestatik enzim yüksekliği ve kaşıntı hangi hastalığı düşündürür?",
+    "mainAnswer": "Primer sklerozan kolanjit.",
+    "explanation": "PSK intra/ekstrahepatik safra yollarında multifokal darlıklarla seyreder; ülseratif kolit birlikteliği sınav için ayırt ettiricidir.",
+    "keywords": "ülseratif kolit; ALP yüksek; kaşıntı; MR kolanjiyografi",
+    "trap": "Primer biliyer kolanjit daha çok orta yaş kadın, AMA pozitifliği ve küçük intrahepatik kanallar ile sorulur.",
+    "extraQuestion": "Primer sklerozan kolanjitte tercih edilen tanısal görüntüleme nedir?",
+    "extraAnswer": "MR kolanjiyografi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "internal-medicine",
+    "subject": "İç Hastalıkları",
+    "topic": "Otoimmün hemolitik anemi",
+    "mainQuestion": "Hemoliz bulgularına direkt Coombs pozitifliği eşlik ediyorsa hangi tanı öne çıkar?",
+    "mainAnswer": "Otoimmün hemolitik anemi.",
+    "explanation": "Retikülosit, LDH ve indirekt bilirübin artışı hemolizi; direkt Coombs pozitifliği antikor aracılı yıkımı destekler.",
+    "keywords": "anemi; retikülosit yüksek; direkt Coombs pozitif; indirekt bilirübin",
+    "trap": "Mikroanjiyopatik hemolizde Coombs negatif ve periferik yaymada şistosit beklenir.",
+    "extraQuestion": "Sıcak otoimmün hemolitik anemide en sık antikor tipi hangisidir?",
+    "extraAnswer": "IgG.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "pediatrics",
+    "subject": "Pediatri",
+    "topic": "Bakteriyel menenjit ampirik tedavi",
+    "mainQuestion": "Çocukta ateş, ense sertliği ve bakteriyel BOS paterni varsa ampirik tedavide temel yaklaşım nedir?",
+    "mainAnswer": "Uygun yaşa göre IV üçüncü kuşak sefalosporin temelli ampirik antibiyotik.",
+    "explanation": "Bakteriyel menenjit acildir; BOS kültürü beklenmeden yaş ve risk faktörüne uygun ampirik tedavi başlanır.",
+    "keywords": "ateş; ense sertliği; nötrofilik BOS; erken antibiyotik",
+    "trap": "Viral menenjitte destek tedavi yeterli olabilir; nötrofil baskın düşük glukozlu BOS bakteriyel menenjiti destekler.",
+    "extraQuestion": "Yenidoğan menenjitinde Listeria kapsaması için hangi antibiyotik eklenir?",
+    "extraAnswer": "Ampisilin.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "pediatrics",
+    "subject": "Pediatri",
+    "topic": "Çocuk istismarı kırmızı bayrakları",
+    "mainQuestion": "Retinal kanama ve subdural kanama birlikteliği çocukta hangi durumu düşündürür?",
+    "mainAnswer": "Kaza dışı travma/çocuk istismarı.",
+    "explanation": "Açıklanamayan çoklu yaralanmalar, farklı yaşta kırıklar, retinal kanama ve subdural kanama istismar açısından adli değerlendirme gerektirir.",
+    "keywords": "retinal kanama; subdural kanama; çoklu kırık; adli bildirim",
+    "trap": "Yalnız nöbet veya düşme öyküsüyle açıklamak güvenli değildir; yaralanma paterni öyküyle uyumsuzsa bildirim gerekir.",
+    "extraQuestion": "Çocuk istismarından şüphelenildiğinde hekim açısından temel yükümlülük nedir?",
+    "extraAnswer": "Tıbbi güvenliği sağlayıp adli bildirim yapmak.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "pediatrics",
+    "subject": "Pediatri",
+    "topic": "Bronşiolit ilk yaklaşım",
+    "mainQuestion": "İnfantta viral bronşiolitte temel tedavi yaklaşımı nedir?",
+    "mainAnswer": "Destek tedavisi.",
+    "explanation": "Oksijen ihtiyacı, hidrasyon ve solunum eforu izlenir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir.",
+    "keywords": "infant; RSV; hışıltı; destek tedavisi",
+    "trap": "Pnömonide fokal ral ve bakteriyel bulgular öne çıkar; tipik bronşiolitte antibiyotik refleks değildir.",
+    "extraQuestion": "Bronşiolitte yatış kararında en önemli klinik göstergelerden biri nedir?",
+    "extraAnswer": "Hipoksemi veya belirgin solunum sıkıntısı.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "obstetrics-gynecology",
+    "subject": "Kadın Hastalıkları ve Doğum",
+    "topic": "Ektopik gebelik rüptürü",
+    "mainQuestion": "Gebelik testi pozitif hastada amenore, tek taraflı pelvik ağrı ve şok ne düşündürür?",
+    "mainAnswer": "Rüptüre ektopik gebelik.",
+    "explanation": "Hemodinamik instabilite varsa tanısal süreci uzatmadan acil cerrahi değerlendirme gerekir.",
+    "keywords": "amenore; pozitif β-hCG; pelvik ağrı; şok",
+    "trap": "Stabil hastada seri β-hCG ve transvajinal USG değerlidir; şokta öncelik acil müdahaledir.",
+    "extraQuestion": "Stabil şüpheli ektopik gebelikte ilk değerlendirme kombinasyonu nedir?",
+    "extraAnswer": "Serum β-hCG ve transvajinal ultrasonografi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "obstetrics-gynecology",
+    "subject": "Kadın Hastalıkları ve Doğum",
+    "topic": "Preeklampsi şiddet bulgusu",
+    "mainQuestion": "Preeklampside şiddet bulgusu sayılan nörolojik yakınma hangisidir?",
+    "mainAnswer": "Şiddetli baş ağrısı veya görme bozukluğu.",
+    "explanation": "Nörolojik semptomlar, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ve pulmoner ödem ağır hastalık lehinedir.",
+    "keywords": "20. hafta sonrası; hipertansiyon; baş ağrısı; görme bozukluğu",
+    "trap": "Gebelik öncesi veya 20. haftadan önce hipertansiyon kronik hipertansiyonu düşündürür; zamanlama ayrımı önemlidir.",
+    "extraQuestion": "Eklampsi preeklampsiye hangi bulgunun eklenmesiyle tanımlanır?",
+    "extraAnswer": "Nöbet.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "obstetrics-gynecology",
+    "subject": "Kadın Hastalıkları ve Doğum",
+    "topic": "Postpartum kanama ve uterin atoni",
+    "mainQuestion": "Doğum sonrası yumuşak, gevşek uterusla masif kanama en çok hangi nedeni düşündürür?",
+    "mainAnswer": "Uterin atoni.",
+    "explanation": "Postpartum kanamanın en sık nedeni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir.",
+    "keywords": "postpartum kanama; yumuşak uterus; uterin atoni; oksitosin",
+    "trap": "Travma kaynaklı kanamada uterus sert/toparlanmış olabilir; yumuşak uterus atoni lehinedir.",
+    "extraQuestion": "Uterin atonide ilk uterotonik ilaç genellikle hangisidir?",
+    "extraAnswer": "Oksitosin.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "minor-rotations",
+    "subject": "Küçük Stajlar",
+    "topic": "Akut iskemik inme penceresi",
+    "mainQuestion": "Akut iskemik inmede trombolitik tedavi için klasik zaman penceresi nedir?",
+    "mainAnswer": "Semptom başlangıcından itibaren 4,5 saat içinde uygun hasta.",
+    "explanation": "Kontrendikasyon yoksa erken başvuran seçilmiş hastalarda IV alteplaz düşünülür; kanama dışlanmadan trombolitik verilmez.",
+    "keywords": "iskemik inme; 4,5 saat; BT ile kanama dışla; alteplaz",
+    "trap": "Hemorajik inmede trombolitik kontrendikedir; ilk kritik ayrım görüntüleme ile kanama dışlamaktır.",
+    "extraQuestion": "İnme şüphesinde trombolitik öncesi acil görüntülemenin temel amacı nedir?",
+    "extraAnswer": "İntrakraniyal kanamayı dışlamak.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "minor-rotations",
+    "subject": "Küçük Stajlar",
+    "topic": "Status epileptikus ilk tedavi",
+    "mainQuestion": "Konvülzif status epileptikusta ilk ilaç basamağı nedir?",
+    "mainAnswer": "Benzodiazepin.",
+    "explanation": "Hava yolu ve glukoz değerlendirmesiyle birlikte nöbeti hızla durdurmak için lorazepam/diazepam/midazolam kullanılır.",
+    "keywords": "status epileptikus; benzodiazepin; hava yolu; glukoz",
+    "trap": "Fenitoin veya levetirasetam ikinci basamak yükleme için düşünülür; ilk akut durdurucu benzodiazepindir.",
+    "extraQuestion": "Status epileptikusta hipoglisemi şüphesinde hangi tedavi geciktirilmemelidir?",
+    "extraAnswer": "IV glukoz.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "minor-rotations",
+    "subject": "Küçük Stajlar",
+    "topic": "Açık pnömotoraks ilk yaklaşım",
+    "mainQuestion": "Göğüs duvarında emici açık yara ile gelişen açık pnömotoraksta ilk kapatma nasıl yapılır?",
+    "mainAnswer": "Üç tarafı bantlı oklüzif pansuman.",
+    "explanation": "Üç taraflı kapatma hava girişini azaltırken havanın çıkışına izin vererek tansiyon pnömotoraks riskini azaltır.",
+    "keywords": "açık pnömotoraks; emici yara; üç taraflı pansuman; hava çıkışı",
+    "trap": "Dört tarafı tamamen kapatmak içeride hava hapsine ve tansiyon fizyolojisine yol açabilir.",
+    "extraQuestion": "Tansiyon pnömotoraksta beklenen hemodinamik problem nedir?",
+    "extraAnswer": "Venöz dönüş azalmasına bağlı obstrüktif şok.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "tus-spot-olgular",
+    "subject": "TUS Spot Olgular / Karma",
+    "topic": "Hepatit B profilaksi ayrımı",
+    "mainQuestion": "HBsAg pozitif anneden doğan bebeğe doğumda hangi profilaksi verilir?",
+    "mainAnswer": "HBV aşısı + HBIG.",
+    "explanation": "Yenidoğanda pasif ve aktif immünizasyon birlikte uygulanır; bu bilgi HCV maruziyetinden ayrılır çünkü HCV için aşı/Ig yoktur.",
+    "keywords": "HBsAg pozitif anne; yenidoğan; HBV aşısı; HBIG",
+    "trap": "HCV pozitif annede HBIG veya HCV aşısı yoktur; HBV’de profilaksi doğumda birlikte yapılır.",
+    "extraQuestion": "HBV aşısı aktif mi pasif immünizasyon mu sağlar?",
+    "extraAnswer": "Aktif immünizasyon.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "tus-spot-olgular",
+    "subject": "TUS Spot Olgular / Karma",
+    "topic": "Hiperkalemi tedavi sırası",
+    "mainQuestion": "Hiperkalemide kalsiyum glukonat ile insülin + glukoz arasındaki temel fark nedir?",
+    "mainAnswer": "Kalsiyum kalbi stabilize eder; insülin + glukoz potasyumu hücre içine kaydırır.",
+    "explanation": "EKG değişikliği varsa ilk amaç aritmiyi önlemek için membran stabilizasyonudur; potasyumu düşürücü/kaydırıcı tedaviler ardından eklenir.",
+    "keywords": "EKG değişikliği; kalsiyum; membran stabilizasyonu; insülin-glukoz",
+    "trap": "İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "extraQuestion": "Kalsiyum glukonat serum potasyum düzeyini düşürür mü?",
+    "extraAnswer": "Hayır.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "tus-spot-olgular",
+    "subject": "TUS Spot Olgular / Karma",
+    "topic": "Anafilaksi antihistaminik tuzağı",
+    "mainQuestion": "Anafilakside antihistaminik neden ilk tedavi değildir?",
+    "mainAnswer": "Şok ve bronkospazmı hızla düzeltmez; ilk tedavi IM adrenalindir.",
+    "explanation": "Antihistaminikler ürtiker/kaşıntıyı azaltabilir fakat hava yolu ödemi, hipotansiyon ve bronkospazm için yaşam kurtarıcı tedavi adrenalinidir.",
+    "keywords": "anafilaksi; hipotansiyon; bronkospazm; IM adrenalin",
+    "trap": "Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "extraQuestion": "Anafilakside adrenalin için tercih edilen uygulama bölgesi neresidir?",
+    "extraAnswer": "Uyluk anterolateral bölgesi.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "tus-spot-olgular",
+    "subject": "TUS Spot Olgular / Karma",
+    "topic": "PESI ve yüksek risk PE ayrımı",
+    "mainQuestion": "Pulmoner embolide PESI neyi sınıflar, neyi tek başına tanımlamaz?",
+    "mainAnswer": "PESI mortalite riskini tahmin eder; hemodinamik instabil PE’yi “PESI IV” diye tanımlamaz.",
+    "explanation": "Şok veya ciddi hipotansiyon varsa hasta yüksek risk PE kabul edilir; PESI daha çok stabil hastalarda risk tabakalandırmasına yardım eder.",
+    "keywords": "PESI; mortalite tahmini; hemodinamik instabilite; yüksek risk PE",
+    "trap": "Sadece tansiyon ve satürasyonla PESI sınıfı kesin hesaplanamaz; yaş, komorbidite ve ek klinik veriler gerekir.",
+    "extraQuestion": "PE’de yüksek risk sınıfını doğrudan belirleyen ana klinik bulgu nedir?",
+    "extraAnswer": "Hemodinamik instabilite.",
+    "difficulty": "zor"
+  },
+  {
+    "branchId": "medical-pharmacology",
+    "subject": "Tıbbi Farmakoloji",
+    "topic": "Salisilat zehirlenmesi",
+    "mainQuestion": "Tinnitus, takipne ve karma asit-baz bozukluğu hangi zehirlenmeyi düşündürür?",
+    "mainAnswer": "Salisilat zehirlenmesi.",
+    "explanation": "Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir.",
+    "keywords": "tinnitus; takipne; respiratuvar alkaloz; metabolik asidoz",
+    "trap": "Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "extraQuestion": "Ciddi salisilat zehirlenmesinde eliminasyonu artırmak için hangi yaklaşım kullanılır?",
+    "extraAnswer": "İdrar alkalinizasyonu.",
+    "difficulty": "orta"
+  },
+  {
+    "branchId": "obstetrics-gynecology",
+    "subject": "Kadın Hastalıkları ve Doğum",
+    "topic": "Vasa previa",
+    "mainQuestion": "Membran rüptürü sonrası ağrısız kanama ve fetal bradikardi hangi obstetrik acili düşündürür?",
+    "mainAnswer": "Vasa previa.",
+    "explanation": "Fetal damarların membranlar içinde servikal os üzerinden geçmesi rüptürde fetal kan kaybına yol açabilir.",
+    "keywords": "membran rüptürü; ağrısız kanama; fetal bradikardi; fetal damar",
+    "trap": "Plasenta previa maternal ağrısız kanama yapar; vasa previa membran rüptürü sonrası fetal distresle öne çıkar.",
+    "extraQuestion": "Vasa previada kanama esas olarak kime aittir?",
+    "extraAnswer": "Fetüse ait kanamadır.",
+    "difficulty": "orta"
   }
 ];
 
@@ -1709,6 +2255,41 @@ const VARIANT_LABELS = ['spot', 'keywords', 'trap', 'extra'];
 function compactList(value) {
   if (Array.isArray(value)) return value.map((item) => String(item || '').trim()).filter(Boolean);
   return String(value || '').split(';').map((item) => item.trim()).filter(Boolean);
+}
+
+function cleanSentence(value = '') {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (!text) return '';
+  return /[.!?]$/.test(text) ? text : `${text}.`;
+}
+
+function readableKeywordChain(keywords = []) {
+  return keywords.slice(0, 4).map((item) => String(item || '').trim()).filter(Boolean).join(' → ');
+}
+
+function buildKeywordBack(topic, keywords) {
+  const chain = readableKeywordChain(keywords);
+  const explanation = cleanSentence(topic.explanation);
+  if (!chain) return explanation || cleanSentence(topic.mainAnswer);
+  return `${chain} ilişkisi doğru cevaba götürür. ${explanation}`.trim();
+}
+
+function buildVariantExplanation(topic, variant, keywords = []) {
+  const explanation = cleanSentence(topic.explanation);
+  const trap = cleanSentence(topic.trap);
+  const answer = cleanSentence(topic.mainAnswer);
+  const chain = readableKeywordChain(keywords);
+
+  if (variant === 'keywords') {
+    return trap ? `${explanation} Ayırıcı not: ${trap}` : explanation;
+  }
+  if (variant === 'trap') {
+    return `${answer} ${explanation}`.trim();
+  }
+  if (variant === 'extra') {
+    return trap ? `${explanation} Ayırıcı not: ${trap}` : explanation;
+  }
+  return trap ? `${explanation} Ayırıcı ipucu: ${trap}` : explanation;
 }
 
 function buildCard(topic, topicIndex, variantIndex) {
@@ -1729,23 +2310,29 @@ function buildCard(topic, topicIndex, variantIndex) {
   };
 
   if (variant === 'spot') {
-    return { ...base, front: topic.mainQuestion, back: topic.mainAnswer, explanation: topic.explanation, cardType: 'Aktif hatırlama' };
+    return {
+      ...base,
+      front: topic.mainQuestion,
+      back: topic.mainAnswer,
+      explanation: buildVariantExplanation(topic, variant, keywords),
+      cardType: 'Aktif hatırlama',
+    };
   }
   if (variant === 'keywords') {
     return {
       ...base,
-      front: `${topic.topic} için yakalanacak TUS anahtar kelimeleri nelerdir?`,
-      back: keywords.join(' · '),
-      explanation: topic.explanation,
+      front: `${topic.topic} sorusunda doğru cevaba götüren ayırt ettirici ipuçları hangileridir?`,
+      back: buildKeywordBack(topic, keywords),
+      explanation: buildVariantExplanation(topic, variant, keywords),
       cardType: 'Anahtar kelime',
     };
   }
   if (variant === 'trap') {
     return {
       ...base,
-      front: `${topic.topic} konusunda en sık sınav tuzağı nedir?`,
+      front: `${topic.topic} sorusunda hangi çeldiriciye veya algoritma tuzağına dikkat edilmelidir?`,
       back: topic.trap,
-      explanation: topic.explanation,
+      explanation: buildVariantExplanation(topic, variant, keywords),
       cardType: 'Sınav tuzağı',
     };
   }
@@ -1753,7 +2340,7 @@ function buildCard(topic, topicIndex, variantIndex) {
     ...base,
     front: topic.extraQuestion,
     back: topic.extraAnswer,
-    explanation: topic.explanation,
+    explanation: buildVariantExplanation(topic, variant, keywords),
     cardType: 'Detay spot',
   };
 }
