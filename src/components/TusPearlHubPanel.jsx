@@ -15,10 +15,10 @@ import './tusPearlCards.css';
 const SYSTEM_PEARL_CARDS = TUS_PEARL_CARDS.map((card) => ({ ...card, source: 'system' }));
 
 const DASHBOARD_ACTIONS = [
-  { id: 'review', label: 'Hızlı tekrar başlat', description: '5 dakikalık karışık oturum', icon: 'Zap', primary: true },
-  { id: 'add-card', label: 'Kart ekle', description: 'Kendi notunu karta çevir', icon: 'Notes' },
+  { id: 'quick', label: 'Hızlı tekrar başlat', description: '500 karttan yeni dengeli deck', icon: 'Zap', primary: true },
+  { id: 'wrong', label: 'Zorlandıklarımı çalış', description: 'Tekrar bekleyenleri öne al', icon: 'Target' },
+  { id: 'all', label: 'Tüm kartları gör', description: '500 hazır ve kişisel kart', icon: 'LayeredCards' },
   { id: 'catalogs', label: 'Kataloglarım', description: 'Setlerini aç ve yönet', icon: 'ClipboardList' },
-  { id: 'all', label: 'Tüm kartları gör', description: 'Hazır ve kişisel kartlar', icon: 'LayeredCards' },
 ];
 
 function toSet(ids = []) {
@@ -58,8 +58,8 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
   }
 
   function handleAction(action) {
-    if (action.id === 'add-card') {
-      setEditorOpen(true);
+    if (action.id === 'quick') {
+      onOpenStudy?.({ filter: 'all', branchFilter: 'all' });
       return;
     }
     if (action.id === 'catalogs') {
@@ -129,9 +129,15 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
         ))}
       </div>
 
-      <div className="tus-pearl-hub-footnote">
-        <Icon name="Sparkles" size={16} />
-        <span>Katalog oluşturma ve kart seçimi ayrı ekranda yapılır; çalışma ekranı sadece karta odaklanır.</span>
+      <div className="tus-pearl-own-card-mini" aria-label="Kendi hap bilgi kartların">
+        <div>
+          <strong>Kendi kartların</strong>
+          <span>Yeni öğrendiğin bilgileri kişisel karta dönüştür; çalışma akışını bölmeden sakla.</span>
+        </div>
+        <div>
+          <button type="button" className="btn btn-secondary compact" onClick={() => setEditorOpen(true)}>Oluştur</button>
+          <button type="button" className="btn btn-secondary compact quiet" onClick={() => onOpenStudy?.({ filter: 'user', branchFilter: 'all' })}>Kendi kartlarım</button>
+        </div>
       </div>
 
 

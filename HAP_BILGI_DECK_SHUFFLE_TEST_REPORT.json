@@ -1,0 +1,149 @@
+{
+  "generatedAt": "2026-05-09T09:23:27.248Z",
+  "totalCards": 500,
+  "sessions": [
+    {
+      "index": 1,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 2,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 3,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 4,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 5,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 2,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 6,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 7,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 8,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 9,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    },
+    {
+      "index": 10,
+      "deckSize": 500,
+      "uniqueTopics": 125,
+      "uniqueBranches": 13,
+      "first20UniqueTopics": 20,
+      "maxTopicStreak": 1,
+      "maxBranchStreak": 1,
+      "topicStreakViolations": 0,
+      "branchStreakViolations": 0,
+      "anaphylaxisMaxBlock": 1
+    }
+  ],
+  "recentStartOverlapFirst10BetweenConsecutiveSessions": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "maxRecentStartOverlapFirst10": 0,
+  "first20ExactRepeatPairs": 0,
+  "weightedWrongCheck": {
+    "wrongCardCount": 60,
+    "first50WrongCount": 24,
+    "totalWrongRatio": 0.12,
+    "first50WrongRatio": 0.48,
+    "maxTopicStreak": 1,
+    "maxBranchStreak": 2
+  },
+  "status": "passed",
+  "failures": []
+}

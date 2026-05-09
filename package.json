@@ -9,7 +9,8 @@
     "build": "vite build --minify false",
     "preview": "vite preview",
     "qa:answer-leakage": "node scripts/run-answer-leakage-scan.mjs",
-    "qa:ai-answer-leakage": "node scripts/run-ai-answer-leakage-100-test.mjs"
+    "qa:ai-answer-leakage": "node scripts/run-ai-answer-leakage-100-test.mjs",
+    "qa:pearl-shuffle": "node scripts/run-pearl-deck-shuffle-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",

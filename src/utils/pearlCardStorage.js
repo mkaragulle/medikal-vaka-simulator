@@ -82,7 +82,7 @@ function normalizeUserCards(cards = []) {
 
 function normalizeRecentStudyStarts(value = {}) {
   if (!value || typeof value !== 'object') return {};
-  return Object.fromEntries(Object.entries(value).map(([key, ids]) => [key, normalizeIds(ids).slice(0, 30)]));
+  return Object.fromEntries(Object.entries(value).map(([key, ids]) => [key, normalizeIds(ids).slice(0, 120)]));
 }
 
 export function normalizePearlState(value = {}) {
@@ -146,9 +146,12 @@ export function markCatalogStudied(catalogs = [], catalogId) {
 
 export function rememberStudyStart(recentStudyStarts = {}, key = 'all', cardIds = []) {
   const safeKey = normalizeString(key, 'all') || 'all';
-  const nextIds = normalizeIds(cardIds).slice(0, 12);
+  const normalizedStarts = normalizeRecentStudyStarts(recentStudyStarts);
+  const nextIds = normalizeIds(cardIds).slice(0, 20);
+  const previousIds = normalizedStarts[safeKey] || [];
+  const mergedIds = [...nextIds, ...previousIds.filter((id) => !nextIds.includes(id))].slice(0, 120);
   return {
-    ...normalizeRecentStudyStarts(recentStudyStarts),
-    [safeKey]: nextIds,
+    ...normalizedStarts,
+    [safeKey]: mergedIds,
   };
 }

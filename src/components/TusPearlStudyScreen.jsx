@@ -176,6 +176,8 @@ function TusPearlStudyScreen({
       wrongIds: wrongSet,
       reviewIds: reviewSet,
       knownIds: knownSet,
+      favoriteIds: favoriteSet,
+      recentStartWindowSize: 20,
     });
     setStudySession(deck);
     setCurrentIndex(0);
@@ -185,7 +187,7 @@ function TusPearlStudyScreen({
       recentStudyStarts: rememberStudyStart(current.recentStudyStarts, deckKey, deck.cardIds),
       customCatalogs: filter === 'catalog' ? markCatalogStudied(current.customCatalogs, activeCatalogId) : current.customCatalogs,
     }));
-  }, [activeCatalogId, branchFilter, filter, filteredCards, knownSet, pearlState.recentStudyStarts, reviewSet, wrongSet]);
+  }, [activeCatalogId, branchFilter, favoriteSet, filter, filteredCards, knownSet, pearlState.recentStudyStarts, reviewSet, wrongSet]);
 
   useEffect(() => {
     if (!activeCatalogId && pearlState.customCatalogs.length) setActiveCatalogId(pearlState.customCatalogs[0].id);
@@ -431,7 +433,7 @@ function TusPearlStudyScreen({
           </button>
           <button type="button" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>
             <Icon name="Notes" />
-            <span>Kart ekle</span>
+            <span>Kendi kartını oluştur</span>
           </button>
         </div>
       ) : (
@@ -440,7 +442,7 @@ function TusPearlStudyScreen({
           <div>
             <button type="button" className="btn btn-secondary compact" onClick={() => rebuildStudySession(filteredCards)}>Yeni sıra</button>
             <button type="button" className="btn btn-secondary compact" onClick={() => { setFilter('all'); setBranchFilter('all'); lastDeckSignature.current = ''; }}>Tüm kartlar</button>
-            <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kart ekle</button>
+            <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kendi kartını oluştur</button>
             <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Kataloglarım</button>
           </div>
         </div>
@@ -578,10 +580,14 @@ function TusPearlStudyScreen({
                 </div>
               </>
             ) : (
-              <div className="tus-pearl-study-empty compact">
+              <div className="tus-pearl-study-empty compact actionable-empty">
                 <Icon name="LayeredCards" />
                 <strong>Katalog seç veya oluştur.</strong>
-                <p>Kendi tekrar setlerini oluşturduğunda içeriklerini buradan yönetebilirsin.</p>
+                <p>Kendi tekrar setlerini oluşturabilir, tüm kart havuzuna dönebilir veya kişisel kart oluşturabilirsin.</p>
+                <div className="empty-action-row">
+                  <button type="button" className="btn btn-primary compact" onClick={() => { setViewMode('study'); setFilter('all'); setBranchFilter('all'); lastDeckSignature.current = ''; }}>Tüm kartlara geç</button>
+                  <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kendi kartını oluştur</button>
+                </div>
               </div>
             )}
           </section>
@@ -667,7 +673,7 @@ function TusPearlStudyScreen({
               </div>
               <button type="button" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>
                 <Icon name="Notes" size={15} />
-                <span>Kart ekle</span>
+                <span>Kendi kartını oluştur</span>
               </button>
               {activeCard?.source === 'user' ? (
                 <>
