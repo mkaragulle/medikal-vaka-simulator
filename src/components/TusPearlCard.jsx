@@ -24,22 +24,12 @@ function TusPearlCard({
     <article className={`tus-pearl-card ${flipped ? 'is-flipped' : ''}`.trim()} data-branch={card.branchId}>
       <button type="button" className="tus-pearl-card-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
         <span className="tus-pearl-card-face tus-pearl-card-front">
-          <span className="tus-pearl-meta-row">
-            <span className="tus-pearl-chip">{card.subject}</span>
-            <span className="tus-pearl-chip muted">{card.cardType || 'Spot'}</span>
-          </span>
           <strong>{card.front}</strong>
           <span className="tus-pearl-hint">Cevabı görmek için tıkla</span>
         </span>
         <span className="tus-pearl-card-face tus-pearl-card-back">
-          <span className="tus-pearl-answer-label">Cevap</span>
           <strong>{card.back}</strong>
-          <p>{card.explanation}</p>
-          {card.keywords?.length ? (
-            <span className="tus-pearl-keyword-row">
-              {card.keywords.slice(0, 4).map((keyword) => <em key={keyword}>{keyword}</em>)}
-            </span>
-          ) : null}
+          {card.explanation ? <p>{card.explanation}</p> : null}
         </span>
       </button>
 

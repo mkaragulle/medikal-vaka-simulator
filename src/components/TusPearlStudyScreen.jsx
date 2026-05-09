@@ -599,16 +599,11 @@ function TusPearlStudyScreen({
               >
                 <button type="button" className="tus-pearl-focus-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
                   <span className="tus-pearl-focus-face tus-pearl-focus-front">
-                    <span className="tus-pearl-focus-meta minimal single">
-                      <em>{activeCard.topic || (activeCard.source === 'user' ? 'Kişisel kart' : getBranchName(activeCard.branchId))}</em>
-                    </span>
                     <strong>{activeCard.front}</strong>
                   </span>
                   <span className="tus-pearl-focus-face tus-pearl-focus-back">
-                    <span className="tus-pearl-answer-label">Cevap</span>
                     <strong>{activeCard.back}</strong>
                     {activeCard.explanation ? <p>{activeCard.explanation}</p> : null}
-                    {activeCard.keywords?.length ? <small className="pearl-card-keywords">{activeCard.keywords.slice(0, 3).join(' · ')}</small> : null}
                   </span>
                 </button>
               </article>

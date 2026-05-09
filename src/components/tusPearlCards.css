@@ -2977,3 +2977,210 @@
     transform: none;
   }
 }
+
+/* =========================================================
+   V124 — Focused Hap Bilgi card faces + compact custom card modal
+   ========================================================= */
+.tus-pearl-focus-card {
+  width: min(100%, 720px);
+  min-height: clamp(330px, 45vh, 500px);
+}
+
+.tus-pearl-focus-face {
+  justify-content: center;
+  align-items: center;
+  gap: clamp(14px, 2vw, 22px);
+  padding: clamp(28px, 4.4vw, 48px);
+  text-align: center;
+}
+
+.tus-pearl-focus-front > strong {
+  max-width: min(640px, 92%);
+  margin: 0 auto;
+  font-size: clamp(1.55rem, 2.65vw, 2.45rem);
+  line-height: 1.14;
+  letter-spacing: -0.046em;
+}
+
+.tus-pearl-focus-back > strong {
+  max-width: min(600px, 92%);
+  margin: 0 auto;
+  color: rgb(15, 118, 110);
+  font-size: clamp(1.45rem, 2.35vw, 2.18rem);
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+}
+
+.tus-pearl-focus-back p {
+  max-width: min(580px, 92%);
+  margin: 0 auto;
+  color: var(--text-secondary, #334155);
+  font-size: clamp(0.98rem, 1.25vw, 1.08rem);
+  line-height: 1.62;
+  text-align: center;
+}
+
+.tus-pearl-answer-label,
+.pearl-card-keywords,
+.tus-pearl-focus-meta.minimal.single {
+  display: none !important;
+}
+
+.tus-pearl-card-flip {
+  min-height: 215px;
+}
+
+.tus-pearl-card-face {
+  min-height: 215px;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 18px;
+  text-align: center;
+}
+
+.tus-pearl-card-front .tus-pearl-hint {
+  margin-top: 2px;
+  opacity: 0.62;
+  font-size: 0.77rem;
+}
+
+.tus-pearl-card-face > strong {
+  max-width: 92%;
+  font-size: 1.08rem;
+  line-height: 1.42;
+}
+
+.tus-pearl-card-back p {
+  max-width: 92%;
+  margin: 0 auto;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.pearl-editor-backdrop {
+  padding: clamp(12px, 2vw, 22px);
+  background: rgba(2, 6, 23, 0.38);
+  backdrop-filter: blur(10px);
+}
+
+.pearl-editor-modal {
+  width: min(100%, 660px);
+  max-height: min(88vh, 760px);
+  border-radius: 26px;
+  box-shadow: 0 24px 72px rgba(15, 23, 42, 0.20);
+}
+
+.pearl-editor-head {
+  gap: 12px;
+  padding: 18px 22px 8px;
+}
+
+.pearl-editor-head h2 {
+  margin: 2px 0 3px;
+  font-size: clamp(1.3rem, 1.65vw, 1.62rem);
+  letter-spacing: -0.04em;
+}
+
+.pearl-editor-head span:not(.auth-eyebrow) {
+  max-width: 460px;
+  font-size: 0.84rem;
+  line-height: 1.38;
+}
+
+.pearl-editor-form {
+  gap: 9px;
+  padding: 0 22px 20px;
+}
+
+.pearl-editor-form label {
+  gap: 5px;
+}
+
+.pearl-editor-form label > span,
+.pearl-editor-advanced-toggle {
+  font-size: 0.75rem;
+  font-weight: 740;
+}
+
+.pearl-editor-form input,
+.pearl-editor-form select,
+.pearl-editor-form textarea {
+  border-radius: 13px;
+  padding: 9px 10px;
+  font-size: 0.86rem;
+}
+
+.pearl-editor-form textarea {
+  min-height: 82px;
+  max-height: 150px;
+  resize: vertical;
+}
+
+.pearl-editor-form > label:nth-of-type(3) textarea {
+  min-height: 58px;
+  max-height: 110px;
+}
+
+.pearl-editor-lite-grid,
+.pearl-editor-advanced-grid {
+  gap: 8px;
+}
+
+.pearl-editor-advanced-toggle {
+  padding: 7px 10px;
+  background: rgba(255,255,255,0.54);
+}
+
+.pearl-editor-advanced-grid {
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(240, 253, 250, 0.32);
+}
+
+.pearl-editor-actions {
+  gap: 8px;
+  padding-top: 2px;
+}
+
+.pearl-editor-actions .btn {
+  min-height: 38px;
+  padding-inline: 14px;
+}
+
+@media (max-width: 720px) {
+  .tus-pearl-focus-card {
+    width: 100%;
+    min-height: min(58vh, 460px);
+    border-radius: 28px;
+  }
+
+  .tus-pearl-focus-face {
+    padding: 24px;
+  }
+
+  .tus-pearl-focus-front > strong {
+    font-size: clamp(1.32rem, 7vw, 1.85rem);
+  }
+
+  .tus-pearl-focus-back > strong {
+    font-size: clamp(1.24rem, 6vw, 1.65rem);
+  }
+
+  .pearl-editor-modal {
+    width: min(100%, 560px);
+    max-height: 92vh;
+    border-radius: 22px;
+  }
+
+  .pearl-editor-head,
+  .pearl-editor-form {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .pearl-editor-head {
+    padding-top: 16px;
+  }
+}
