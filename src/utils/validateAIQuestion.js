@@ -6,6 +6,7 @@ import { validateBranchFit } from './aiBranchRules.js';
 import { detectInvalidMeasurementFormat, sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, validateAIQuestionQuality } from './aiQuestionQualityGate.js';
 import { normalizeInvestigationLabResults, validateInvestigationLabCompleteness, hasIncompleteLabResultText } from './clinicalValueFormatters.js';
+import { applyTusLanguageStandardToQuestion, hasWeakTusLanguage } from './tusLanguageStandard.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
@@ -121,23 +122,24 @@ function normalizeOptions(options = []) {
 }
 
 export function validateAIQuestionPayload(payload = {}) {
+  const standardizedPayload = applyTusLanguageStandardToQuestion(payload);
   const errors = [];
   const warnings = [];
-  const options = normalizeOptions(payload.options);
-  const correctAnswer = String(payload.correctAnswer || '').trim().toUpperCase();
+  const options = normalizeOptions(standardizedPayload.options);
+  const correctAnswer = String(standardizedPayload.correctAnswer || '').trim().toUpperCase();
   const correctOption = options.find((option) => option.id.toUpperCase() === correctAnswer);
 
-  if (!payload.title || String(payload.title).trim().length < 6) errors.push('title eksik veya çok kısa');
-  if (!payload.stem || String(payload.stem).trim().length < 40) errors.push('stem eksik veya çok kısa');
-  if (!payload.question || String(payload.question).trim().length < 16) errors.push('question eksik veya çok kısa');
+  if (!standardizedPayload.title || String(standardizedPayload.title).trim().length < 6) errors.push('title eksik veya çok kısa');
+  if (!standardizedPayload.stem || String(standardizedPayload.stem).trim().length < 40) errors.push('stem eksik veya çok kısa');
+  if (!standardizedPayload.question || String(standardizedPayload.question).trim().length < 16) errors.push('question eksik veya çok kısa');
   if (options.length !== 5) errors.push('tam 5 seçenek gerekli');
   if (!correctOption) errors.push('correctAnswer A-E seçenekleriyle eşleşmiyor');
-  if (!payload.explanation || String(payload.explanation).trim().length < 60) errors.push('explanation eksik veya çok kısa');
-  if (!Array.isArray(payload.evidenceChain) || payload.evidenceChain.length < 3) errors.push('evidenceChain en az 3 madde olmalı');
-  if (!payload.examPearl || String(payload.examPearl).trim().length < 20) errors.push('examPearl eksik veya çok kısa');
+  if (!standardizedPayload.explanation || String(standardizedPayload.explanation).trim().length < 60) errors.push('explanation eksik veya çok kısa');
+  if (!Array.isArray(standardizedPayload.evidenceChain) || standardizedPayload.evidenceChain.length < 3) errors.push('evidenceChain en az 3 madde olmalı');
+  if (!standardizedPayload.examPearl || String(standardizedPayload.examPearl).trim().length < 20) errors.push('examPearl eksik veya çok kısa');
   warnings.push(...assessNarrativeReadability(payload));
 
-  const wrongFeedback = payload.wrongOptionFeedback || {};
+  const wrongFeedback = standardizedPayload.wrongOptionFeedback || {};
   options.forEach((option) => {
     if (option.id.toUpperCase() !== correctAnswer && !wrongFeedback[option.id]) {
       errors.push(`${option.id} yanlış seçenek feedbacki eksik`);
@@ -145,17 +147,17 @@ export function validateAIQuestionPayload(payload = {}) {
   });
 
   const correctText = correctOption?.text || '';
-  const investigationText = JSON.stringify(payload.findings?.investigations || payload.investigations || []);
+  const investigationText = JSON.stringify(standardizedPayload.findings?.investigations || standardizedPayload.investigations || []);
   const normalizedInvestigationText = normalizeQuestionText(investigationText);
   const normalizedCorrectText = normalizeQuestionText(correctText);
   if (normalizedCorrectText && normalizedInvestigationText.includes(normalizedCorrectText)) {
     warnings.push('tetkik metni doğru cevabı birebir içeriyor; ekranda maskeleme uygulanacak');
   }
-  if (detectInvalidMeasurementFormat(investigationText) || detectInvalidMeasurementFormat(JSON.stringify(payload.findings?.vitals || payload.vitals || {}))) {
+  if (detectInvalidMeasurementFormat(investigationText) || detectInvalidMeasurementFormat(JSON.stringify(standardizedPayload.findings?.vitals || standardizedPayload.vitals || {}))) {
     errors.push('ölçüm/vital formatı tıbbi standarda uygun değil');
   }
 
-  const investigationItems = payload.findings?.investigations || payload.investigations || [];
+  const investigationItems = standardizedPayload.findings?.investigations || standardizedPayload.investigations || [];
   investigationItems.forEach((investigation) => {
     const labValidation = validateInvestigationLabCompleteness(investigation);
     if (!labValidation.ok) errors.push(...labValidation.errors.map((error) => `laboratuvar sonucu eksik: ${error}`));
@@ -170,7 +172,7 @@ export function validateAIQuestionPayload(payload = {}) {
     }
   });
 
-  collectPayloadStrings(payload).forEach((text) => {
+  collectPayloadStrings(standardizedPayload).forEach((text) => {
     RAW_AI_FORBIDDEN_PATTERNS.forEach((pattern) => {
       if (pattern.test(String(text || ''))) warnings.push(`repair öncesi yasaklı AI metni: ${String(text || '').slice(0, 100)}`);
     });
@@ -256,6 +258,7 @@ function normalizeInvestigation(item, index, correctText) {
 }
 
 export function normalizeGeneratedAIQuestion(payload = {}) {
+  payload = applyTusLanguageStandardToQuestion(payload);
   const validation = validateAIQuestionPayload(payload);
   if (!validation.ok) {
     const error = new Error(`AI question schema invalid: ${validation.errors.join('; ')}`);
@@ -307,7 +310,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     compactObjectiveData: normalizeCompactClinicalData(payload.compactObjectiveData || payload.compactObjective || payload.co || [], 10),
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
-      profile: payload.demographics || payload.relatedBranch || 'AI AI soru üretimi',
+      profile: payload.demographics || payload.relatedBranch || 'AI soru üretimi',
       presentation: payload.chiefComplaint || payload.title,
       riskContext: buildValidatedAIRiskContext(payload, history),
       distinctiveClues: uniqueSummaryItems(payload.evidenceChain?.slice(0, 4) || [], 4),
@@ -317,7 +320,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
       correct: correctText,
       options: shuffleArray(options.map((option) => option.text)),
       explanation: payload.explanation,
-      nextStep: payload.nextStep || 'Olgudaki somut ipuçlarını seçeneklerle karşılaştır.',
+      nextStep: payload.nextStep || 'Olgudaki somut ipuçlarını aynı kategorideki seçeneklerle karşılaştır.',
       pearls: [payload.examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: payload.explanation,
@@ -328,7 +331,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
         managementSteps: payload.managementSteps || [
           'Öykü, muayene ve vital bulguları birlikte değerlendir.',
           'Objektif tetkik verilerini klinik tabloyla ilişkilendir.',
-          'Alternatif seçenekleri olgudaki somut bulgularla ele.',
+          'Alternatifleri olgudaki somut bulgularla ele.',
         ],
         learningOutcome: payload.learningTarget,
       },

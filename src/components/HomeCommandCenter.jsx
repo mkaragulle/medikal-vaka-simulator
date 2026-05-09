@@ -259,7 +259,7 @@ function HomeCommandCenter({
             <h1 className="home-brand-title-v10">KlinikIQ</h1>
             <p>TUS odaklı klinik akıl yürütme, tetkik seçimi ve olgu çözüm pratiği.</p>
             <div className="home-hero-proof-row-v10" aria-label="Klinik öğrenme özellikleri">
-              <span><Icon name="Brain" /> Klinik muhakeme</span>
+              <span><Icon name="Brain" /> Klinik karar</span>
               <span><Icon name="ClipboardCheck" /> Tetkik seçimi</span>
               <span><Icon name="Sparkles" /> AI destekli pratik</span>
             </div>

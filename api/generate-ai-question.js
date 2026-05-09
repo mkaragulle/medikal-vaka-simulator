@@ -1,5 +1,30 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 
+const TUS_LANGUAGE_STANDARD_PROMPT = `
+TUS DİL VE MADDE YAZIM STANDARDI:
+- Soru kökü akademik klinik Türkçe ile yazılır; geniş zaman ve edilgen yapı tercih edilir: başvuruyor, saptanıyor, ölçülüyor, görülüyor.
+- Klinik vaka sırası korunur: demografik veri → şikâyet ve süre → ayırt ettirici öykü → fizik muayene → objektif laboratuvar/görüntüleme/EKG verisi → tek karar sorusu.
+- Soru tek ölçme hedefine odaklanır: en olası tanı, öncelikli yaklaşım, en uygun ilk tedavi, beklenen bulgu, tanıyı destekleyen test, komplikasyon veya mekanizma.
+- Başlık, stem, compactObjectiveData, tetkik summary/findings ve hasta özeti doğru cevabı açıkça söylemez; cevap öncesi alanlarda yorum değil objektif veri verilir.
+- Beş seçenek aynı kavramsal kategoridedir: tanı-tanı, tedavi-tedavi, test-test, mekanizma-mekanizma. Hiçbiri, hepsi, yukarıdakilerin hepsi kullanılmaz.
+- En az iki seçenek yakın ve savunulabilir çeldirici olmalıdır; klinik karar sorularında bir seçenek önce/sonra algoritma basamağı tuzağı olabilir.
+- Yanlış seçenek feedbacki hangi durumda doğru olabileceğini ve bu olguda hangi ipucuyla elendiğini açıklar.
+- Hap bilgi tek bir yüksek verimli karar kuralı taşır: ipucu → karar. Boş, mekanik veya tekrar eden cümle kullanılmaz.
+- Türkçe tıbbi terminoloji tutarlı yazılır; birimler eksiksizdir; yarım cümle, gündelik ifade ve başlık kırıntısı kullanılmaz.`;
+
+const TUS_FORBIDDEN_EXPRESSION_LIST = [
+  'Klinik bağlamda değerlendirilir',
+  'Bu tabloda baskın değildir',
+  'Karar verdirici patern',
+  'Morfolojik patern',
+  'Beklenen ana ipuçları',
+  'İlk karar',
+  'Tedavi önceliği',
+  'Doğru yanıta götüren ana bulgudur',
+  'Ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır',
+  'Hangi tedavi yöntemi ilk sırada uygulanmalıdır',
+];
+
 const AI_QUESTION_JSON_SCHEMA = {
   type: 'object',
   additionalProperties: false,
@@ -288,6 +313,15 @@ JSON dışında tek karakter bile yazma.`;
 }
 
 const REMOTE_FORBIDDEN_TEXT_PATTERNS = [
+  /hastanın durumu değerlendirilir/iu,
+  /Tedavi önceliği\.*/iu,
+  /İlk karar\.*/iu,
+  /hangi tedavi yöntemi ilk sırada uygulanmalıdır/iu,
+  /Ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır/iu,
+  /doğru cevabı destekleyen ana ipucudur/iu,
+  /Doğru yanıta götüren ana bulgudur/iu,
+  /Bu tabloda baskın değildir/iu,
+  /Klinik bağlamda değerlendirilir/iu,
   /Morfolojik patern\s*[.:]\s*Morfolojik patern/iu,
   /Morfolojik patern\s*[:：]/iu,
   /karar verdirici paternyla/iu,
@@ -309,6 +343,92 @@ function collectText(value, out = []) {
   else if (Array.isArray(value)) value.forEach((item) => collectText(item, out));
   else if (value && typeof value === 'object') Object.values(value).forEach((item) => collectText(item, out));
   return out;
+}
+
+
+function normalizeRemoteTusText(text = '') {
+  return String(text || '')
+    .replace(/\bİlk karar\b/giu, 'Öncelikli yaklaşım')
+    .replace(/\bTedavi önceliği\b/giu, 'Tedavi basamağı')
+    .replace(/\bklinik bağlamda değerlendirilir\b/giu, 'öykü ve objektif bulgularla birlikte yorumlanır')
+    .replace(/\bDoğru yanıta götüren ana bulgudur\b/giu, 'Seçenekler arasındaki ayrımı belirginleştirir')
+    .replace(/\bdoğru yanıta götüren ana bulgudur\b/giu, 'seçenekler arasındaki ayrımı belirginleştirir')
+    .replace(/\bAncak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/giu, 'Ancak bu olgudaki ayırt ettirici bulgularla desteklenmemektedir')
+    .replace(/\bwheezing\b/giu, 'hışıltılı solunum')
+    .replace(/\binsulin\s*\+\s*glucose\b/giu, 'intravenöz insülin + glukoz')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function standardizeRemoteQuestionText(value) {
+  if (typeof value === 'string') return normalizeRemoteTusText(value);
+  if (Array.isArray(value)) return value.map(standardizeRemoteQuestionText);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, standardizeRemoteQuestionText(item)]));
+  }
+  return value;
+}
+
+function inferRemoteOptionCategory(text = '') {
+  const value = normalizeRemoteText(text);
+  if (/tanisi|sendromu|hastaligi|enfeksiyonu|embolisi|infarktu|pnomoni|menenjit|sepsis|ketoasidoz|bronshiolit|kawasaki|addison|graves|tiroidit/.test(value)) return 'diagnosis';
+  if (/tedavi|baslamak|uygulamak|vermek|iv|im|oral|adrenalin|insulin|glukoz|antibiyotik|antikoagulasyon|oksijen|sivi|kalsiyum|glukonat|aspirin|pci|tromboliz|debridman/.test(value)) return 'treatment';
+  if (/testi|tetkik|bt|mr|mrg|usg|ekg|kultur|pcr|seroloji|biyopsi|anjiyografi|troponin|manometri|antijen|coombs|kan gazi/.test(value)) return 'test';
+  if (/mekanizma|reseptor|enzim|inhibisyon|aktivasyon|mutasyon|transport|nekroz|apoptoz|yolak|patofizyoloji/.test(value)) return 'mechanism';
+  return 'other';
+}
+
+function validateRemoteOptionHomogeneity(question = {}) {
+  const errors = [];
+  const options = normalizeOptionObjects(question.options || question.o);
+  if (options.length !== 5) return ['option-quality: beş seçenek bulunmalı'];
+  const categories = options.map((option) => inferRemoteOptionCategory(option.text));
+  const meaningful = categories.filter((category) => category !== 'other');
+  const dominant = meaningful.sort((a, b) => meaningful.filter((x) => x === b).length - meaningful.filter((x) => x === a).length)[0];
+  const mixedCount = dominant ? categories.filter((category) => category !== dominant && category !== 'other').length : 0;
+  if (!dominant || mixedCount >= 2) errors.push(`option-quality: seçenekler aynı kavramsal kategoride değil (${categories.join(', ')})`);
+  if (options.some((option) => /hiçbiri|hepsi|yukarıdakilerin hepsi|tümü/iu.test(option.text))) errors.push('option-quality: TUS standardında hepsi/hiçbiri seçeneği kullanılmaz');
+  const lengths = options.map((option) => String(option.text || '').length).filter(Boolean);
+  const min = Math.min(...lengths);
+  const max = Math.max(...lengths);
+  if (min > 0 && max / min > 3.2) errors.push('option-quality: seçenek uzunlukları doğru cevabı ele verecek kadar dengesiz');
+  return errors;
+}
+
+function getVisiblePreAnswerText(question = {}) {
+  return collectText({
+    title: question.title,
+    demographics: question.demographics,
+    setting: question.setting,
+    chiefComplaint: question.chiefComplaint,
+    stem: question.stem,
+    compactVitals: question.compactVitals,
+    compactObjectiveData: question.compactObjectiveData,
+    findings: question.findings,
+  }).join(' | ');
+}
+
+function validateRemoteAnswerLeakage(question = {}) {
+  const errors = [];
+  const visible = normalizeRemoteText(getVisiblePreAnswerText(question));
+  const correct = normalizeRemoteText(getRemoteCorrectText(question));
+  if (correct && correct.length > 5 && visible.includes(correct)) errors.push('answer-leakage: doğru cevap cevap öncesi alanda birebir geçiyor');
+  if (/tanisini dogrular|tanisini koydurur|ile uyumludur|kesin tanidir|tanidir\b|ilk basamak.*olmalidir/.test(visible)) {
+    errors.push('answer-leakage: cevap öncesi alanda yorumlayıcı tanı/tedavi dili var');
+  }
+  return errors;
+}
+
+function validateRemoteTusExamLanguage(question = {}) {
+  const errors = [];
+  const stem = String(question.stem || question.s || '').trim();
+  const questionText = String(question.question || question.q || '').trim();
+  if (/Profil:|Başvuru:|Risk bağlamı:|Ayırt ettirici ipuçları:|Klinik gerekçe:|Kanıt zinciri:/iu.test(stem)) errors.push('exam-language: soru köküne legacy kart başlığı sızmış');
+  if (/hangi\s+tedavi\s+yöntemi\s+ilk\s+sırada\s+uygulanmalıdır\.?$/iu.test(questionText)) errors.push('exam-language: soru cümlesi gündelik/eksik sınav dili taşıyor');
+  if (!/(en olası|en uygun|öncelikle|ilk|beklenen|hangisidir|hangisi|kullanılmaz|beklenmez|değildir)/iu.test(questionText)) errors.push('exam-language: ölçme hedefini belirleyen net TUS yönlendirmesi yok');
+  const words = stem.split(/\s+/).filter(Boolean).length;
+  if (words > 230) errors.push('exam-language: TUS spot kökü gereksiz uzun');
+  return errors;
 }
 
 function validateRemoteEditorialQuality(question = {}) {
@@ -334,6 +454,9 @@ function validateRemoteEditorialQuality(question = {}) {
     }
   });
   errors.push(...validateRemoteClinicalCoherence(question));
+  errors.push(...validateRemoteOptionHomogeneity(question));
+  errors.push(...validateRemoteAnswerLeakage(question));
+  errors.push(...validateRemoteTusExamLanguage(question));
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
 }
 
@@ -501,9 +624,11 @@ function buildPrompt({ branchFilter = 'Rastgele', recentQuestionSummaries = [], 
     ? previousTopicWindow.slice(0, 10).map((item, index) => `${index + 1}. ${item.topic || ''} | ${item.questionType || ''} | ${item.correct || ''}`).join('\n')
     : '';
 
-  return `Sen KlinikIQ için çalışan kıdemli TUS soru yazarı ve medikal eğitim içerik denetleyicisisin.
+  return `${TUS_LANGUAGE_STANDARD_PROMPT}
 
-Görev: Tek bir yeni TUS odaklı, kısa klinik spot soru üret. Soru Türkçe olmalı, bilimsel olarak doğru olmalı ve JSON dışında hiçbir açıklama döndürmemelisin.
+Sen KlinikIQ için çalışan kıdemli TUS soru yazarı, klinik içerik editörü, ölçme-değerlendirme uzmanı ve Türkçe tıbbi terminoloji denetleyicisisin.
+
+Görev: Tek bir yeni TUS odaklı, kısa klinik spot soru üret. Soru Türkçe olmalı, bilimsel olarak doğru olmalı, profesyonel sınav dili taşımalı ve JSON dışında hiçbir açıklama döndürmemelisin.
 
 Branş isteği: ${branchFilter || 'Rastgele'}
 Bu denemede seçilecek ana konu: ${selectedTopic || selectedSubtopic || 'Klinik olarak farklı yeni konu seç'}
@@ -523,7 +648,7 @@ ${forbiddenTopics || 'Henüz yok.'}
 
 Kesin kurallar:
 - Ön yüzde sol tarafta gösterilecek klinik metin stem alanıdır; stem yalnız olgu/vaka anlatımı olmalı, son soru cümlesini içermez.
-- stem gerçek TUS soru kökü gibi olmalı: 3-6 cümle, genellikle 80-150 kelime; daha kompleks olguda en fazla 220 kelime. Klinik vaka raporu gibi uzatma.
+- stem gerçek TUS soru kökü gibi olmalı: demografik veri → şikâyet/süre → ayırt ettirici öykü → fizik muayene → objektif veri sırasını izlesin. 3-6 cümle, genellikle 80-150 kelime; kompleks olguda en fazla 220 kelime. Klinik vaka raporu gibi uzatma.
 - Vital bulgu her soruda zorunlu değildir. Yalnız şok, sepsis, anafilaksi, solunum yetmezliği, DKA, dehidratasyon, neonatal acil, hemodinamik karar veya ateşin kritik olduğu sorularda ver. Gereksiz vital seti üretme.
 - Vital bulgular sayısal olarak önemliyse stem içine uzun liste halinde yığma; compactVitals alanına kısa label/value çiftleri koy. Stem içinde gerekirse 'hipotansif ve taşikardik' gibi kısa ifade kullan.
 - Laboratuvar, seroloji, kültür, görüntüleme veya patoloji verileri gerekiyorsa stem içinde uzun ham panel listesi yazma; çoklu değerleri compactObjectiveData alanına kısa label/value şeklinde koy. Stemte yalnız klinik bağlam kalsın; soru cümlesini question alanına yaz. Referans aralıklarını stem içine yığma.
@@ -539,8 +664,8 @@ Kesin kurallar:
 - question alanı şıkların üzerinde gösterilecek tek ve net soru cümlesidir. Stem içinde bu soru cümlesini tekrar etme; aynı soru iki kez görünmemelidir.
 - Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
-- Tüm seçenekler aynı kategori içinde olsun; tanı sorusunda tanılar, tedavi sorusunda tedaviler, tetkik sorusunda tetkikler.
-- En az iki güçlü, klinik olarak yakın seçenek olsun.
+- Tüm seçenekler aynı kavramsal kategoride olsun; tanı sorusunda yalnız tanılar, tedavi sorusunda yalnız tedaviler, tetkik sorusunda yalnız tetkikler, mekanizma sorusunda yalnız mekanizmalar bulunmalı.
+- En az iki güçlü, klinik olarak yakın seçenek ve klinik karar sorularında mümkünse bir önce/sonra algoritma basamağı tuzağı olsun.
 - Tetkik sonucunda doğru tanı/cevap cümle olarak yazılmasın.
 - Tetkik yorumu “... tanısını doğrular”, “... ile uyumludur”, “kesin tanıdır” gibi direkt tanı dili kullanmasın.
 - Sayısal laboratuvar/tetkik sonucu internal findings.rows içinde verilecekse şu formatı kullan: ["Parametre", "Sonuç + birim", "Referans", "Durum"].
@@ -548,7 +673,7 @@ Kesin kurallar:
 - “Lökosit 15”, “CRP yüksek”, “D-dimer yüksek”, “Troponin pozitif”, “pH düşük” gibi birimsiz belirsiz sonuç yazma.
 - Nitel sonuçlarda referans “negatif”, “üreme olmamalı”, “saptanmamalı” veya “normal iletim” gibi beklenen değerle yazılmalıdır.
 - Doğru cevap, verilen objektif veriler yorumlanarak bulunmalı.
-- Her yanlış seçenek için neden yanlış olduğuna dair kısa ama öğretici feedback yaz; yanlış şık neyi yakalar, neyi kaçırır ve hangi ipucuyla elenir açık olsun.
+- Her yanlış seçenek için kısa ama öğretici feedback yaz; seçenek hangi durumda doğru olabilir, bu olguda hangi ayırt ettirici ipucuyla elenir açık olsun.
 - explanation 2-4 cümlelik Klinik Gerekçe kalitesinde olmalı.
 - evidenceChain 3-5 somut olgu ipucundan oluşmalı; meta cümle veya öğrenme çıktısı yazma.
 - examPearl TUS hap bilgisi olmalı; mümkünse kırmızı bayrak, sık tuzak, ilk adım veya ayırt ettirici marker vurgula.
@@ -566,6 +691,7 @@ Kesin kurallar:
 - JSON değerlerini kısa tut: stem 2-4 doğal TUS soru cümlesi veya en fazla 2 kısa paragraf hissi veren tek metin olmalı; explanation 2-4 cümle, her feedback en fazla 1-2 cümle, evidenceChain 3-4 madde, managementSteps 2-3 madde.
 - JSON string değerlerinin içinde kaçışsız çift tırnak kullanma. Gerekirse tek tırnak veya parantez kullan.
 - JSON çıktısını yarıda kesme; son karakter mutlaka kapanış süslü parantezi olsun.
+- Şu zayıf sınav dili ifadeleri hiçbir alanda kullanılmaz: ${TUS_FORBIDDEN_EXPRESSION_LIST.join(', ')}.
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı bulunsun; doğru seçenek için de kısa doğru gerekçesi yazabilirsin.`;
 }
 
@@ -726,7 +852,7 @@ function ensureEvidenceChain(question = {}) {
   ].map((item) => shortText(item)).filter(Boolean);
 
   const stem = shortText(question.stem, 'Olgu kökü doğru yanıta götüren temel klinik bağlamı verir.');
-  const explanation = shortText(question.explanation, 'Doğru yanıt klinik ipuçlarının birlikte yorumlanmasıyla seçilir.');
+  const explanation = shortText(question.explanation, 'Uygun yanıt, öykü ve objektif bulguların birlikte yorumlanmasıyla seçilir.');
   const fallback = [stem, explanation, shortText(question.learningTarget, 'Soru tek bir TUS öğrenme hedefine odaklanır.')];
   return uniqueNonEmpty([...clues, ...fallback]).slice(0, 4).concat(fallback).slice(0, 3);
 }
@@ -741,12 +867,13 @@ function ensureWrongOptionFeedback(question = {}) {
   return Object.fromEntries(options.map((option) => {
     const current = shortText(existing[option.id]);
     if (current) return [option.id, current];
-    if (option.id === correctAnswer) return [option.id, `Doğru. Olgudaki ana ipuçları ${correctText} lehinedir.`];
-    return [option.id, `${option.text} bazı benzer bulgularla karışabilir; ancak olgudaki ayırt ettirici ipuçları doğru seçeneği daha güçlü destekler.`];
+    if (option.id === correctAnswer) return [option.id, `Doğru. Olgudaki ana ipuçları ${correctText} seçeneğini destekler.`];
+    return [option.id, `${option.text} bazı benzer bulgularla karışabilir; ancak olgudaki ayırt ettirici ipuçları uygun seçeneği daha güçlü destekler.`];
   }));
 }
 
 function completeRemoteQuestion(question = {}, context = {}) {
+  question = standardizeRemoteQuestionText(question);
   const now = Date.now();
   const options = normalizeOptionObjects(question.options || question.o);
   const correctAnswer = OPTION_IDS.includes(String(question.correctAnswer || question.c || '').toUpperCase())
@@ -765,8 +892,8 @@ function completeRemoteQuestion(question = {}, context = {}) {
     demographics: shortText(question.demographics || question.d, 'Hasta'),
     setting: shortText(question.setting, 'Klinik değerlendirme'),
     chiefComplaint: inferChiefComplaint(question),
-    stem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.', 900),
-    narrativeStem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.', 900),
+    stem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri aynı kategorideki seçenekler arasında karar vermeyi gerektirir.', 900),
+    narrativeStem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri aynı kategorideki seçenekler arasında karar vermeyi gerektirir.', 900),
     compactVitals: Array.isArray(question.compactVitals || question.cv) ? (question.compactVitals || question.cv).slice(0, 5) : [],
     compactObjectiveData: Array.isArray(question.compactObjectiveData || question.co) ? (question.compactObjectiveData || question.co).slice(0, 10) : [],
     stemMode: 'narrative',
@@ -785,12 +912,12 @@ function completeRemoteQuestion(question = {}, context = {}) {
     question: shortText(question.question || question.q, 'Bu olguda en uygun seçenek hangisidir?'),
     options,
     correctAnswer,
-    explanation: shortText(question.explanation || question.e, 'Doğru yanıt, olgudaki klinik ipuçlarının birlikte yorumlanmasıyla seçilir.'),
+    explanation: shortText(question.explanation || question.e, 'Uygun yanıt, olgudaki klinik ipuçlarının birlikte yorumlanmasıyla seçilir.'),
     evidenceChain: ensureEvidenceChain(question),
-    examPearl: shortText(question.examPearl || question.p, 'TUS sorularında ayırt ettirici ipucu, benzer seçenekler arasından doğru yanıtı seçtirir.'),
+    examPearl: shortText(question.examPearl || question.p, 'TUS sorularında ayırt ettirici ipucu, benzer seçenekler arasında en uygun yanıtı belirler.'),
     managementSteps: Array.isArray(question.managementSteps) && question.managementSteps.length
       ? question.managementSteps.map(shortText).filter(Boolean).slice(0, 3)
-      : ['Klinik öncelik belirlenir.', 'Ayırt ettirici bulgular hedefe yönelik yorumlanır.'],
+      : ['Acil bulgu varsa önce stabilizasyon sağlanır.', 'Seçenekler olgudaki objektif verilerle karşılaştırılır.'],
     nextQuestionSeed: shortText(question.nextQuestionSeed, `${now}-${Math.random().toString(36).slice(2, 10)}`),
   };
   completed.wrongOptionFeedback = ensureWrongOptionFeedback(completed);
@@ -831,12 +958,12 @@ function buildCompactOpenRouterPrompt(originalPrompt = '', context = {}) {
   const seed = context?.seed || Date.now();
 
   if (isOpenRouterFreeMode()) {
-    return `KlinikIQ için Türkçe, TUS tarzı tek klinik spot soru üret. Branş: ${branch}. Seçilecek konu: ${selectedTopic}. Soru tipi: ${questionType}. Seed: ${seed}. Yakın tekrar etme: ${recent || 'yok'}.
+    return `KlinikIQ için Türkçe, ÖSYM/TUS diline yakın tek klinik spot soru üret. Branş: ${branch}. Seçilecek konu: ${selectedTopic}. Soru tipi: ${questionType}. Seed: ${seed}. Yakın tekrar etme: ${recent || 'yok'}.
 
 Sadece şu kısa JSON objesini döndür:
 {"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"80-150 kelimelik gerçek TUS soru kökü","cv":[{"label":"TA","value":"68/42 mmHg"}],"co":[{"label":"Lökosit","value":"16.200/mm³"}],"q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
 
-Kurallar: JSON dışında yazma. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı gerçek TUS soru kökü gibi 3-6 cümle olmalı; gereksiz vital seti verme, referans aralıklarını s içine yığma. Vital veya lab sayıları kritikse cv/co alanlarını kısa label/value olarak doldur, ama cv/co boş kalabilir. Gerekli kültür/muayene/görüntüleme verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kategoriden olsun. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
+Kurallar: JSON dışında yazma. Akademik klinik Türkçe kullan; stem demografi→şikâyet/süre→öykü→FM→objektif veri→karar mantığını izlesin. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı gerçek TUS soru kökü gibi 3-6 cümle olmalı; gereksiz vital seti verme, referans aralıklarını s içine yığma. Vital veya lab sayıları kritikse cv/co alanlarını kısa label/value olarak doldur, ama cv/co boş kalabilir. Gerekli kültür/muayene/görüntüleme verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kavramsal kategoriden olsun; hepsi/hiçbiri kullanma. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
   }
 
   return `${originalPrompt}
@@ -862,7 +989,7 @@ async function callOpenRouterQuestion(prompt, context = {}) {
   const perModelTimeoutMs = Number(process.env.OPENROUTER_PER_MODEL_TIMEOUT_MS || (isOpenRouterFreeMode() ? 52000 : 16000));
   const modelCandidates = getOpenRouterModelCandidates();
   const systemPrompt = [
-    'You are a senior Turkish medical education question writer for KlinikIQ.',
+    'You are a senior Turkish TUS exam item writer, clinical editor, and medical terminology reviewer for KlinikIQ.',
     'Return exactly one complete valid JSON object. Do not use Markdown. Do not include commentary outside JSON.',
     'Keep strings concise. Do not reveal chain-of-thought or reasoning. Put only final educational content into JSON fields.',
   ].join(' ');

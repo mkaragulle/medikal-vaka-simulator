@@ -44,7 +44,7 @@ function CompactDataGroup({ title, items = [] }) {
   );
 }
 
-function AISpotNarrativePanel({ question, hardMode = false }) {
+function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) {
   const title = buildSafeAISpotTitle(question);
   const contextLine = buildAISpotContextLine(question);
   const paragraphs = buildAISpotNarrativeStem(question);
@@ -53,7 +53,11 @@ function AISpotNarrativePanel({ question, hardMode = false }) {
   const diagnostics = import.meta.env?.DEV ? getAISpotPreviewDiagnostics(question) : null;
 
   return (
-    <section className="ai-spot-narrative-card card-surface" id="ai-spot-narrative" aria-label="AI TUS spot soru metni">
+    <section
+      className={`ai-spot-narrative-card ${embedded ? 'is-embedded' : 'card-surface'}`.trim()}
+      id="ai-spot-narrative"
+      aria-label="AI TUS spot soru metni"
+    >
       <div className="ai-spot-narrative-topline">
         <div className="ai-spot-narrative-badges" aria-label="Soru üst bilgisi">
           <AISpotMetaBadge icon="Sparkles">TUS Spot Olgular · AI Spot</AISpotMetaBadge>
@@ -115,33 +119,27 @@ function AISpotQuestionScreen({
 
   return (
     <article className="case-player-shell ai-spot-player-shell">
-      <section className="qbank-layout-grid professional-qbank-layout ai-spot-narrative-layout">
-        <div className="qbank-main-column ai-spot-main-column">
-          <AISpotNarrativePanel question={question} hardMode={hardMode} />
-        </div>
+      <section className="ai-spot-unified-panel card-surface" aria-label="AI ile üretilen TUS spot soru akışı">
+        <AISpotNarrativePanel question={question} hardMode={hardMode} embedded />
 
-        <aside className="qbank-side-column professional-right-column ai-spot-side-column">
-          <div
-            className="right-workspace-shell card-surface ai-spot-answer-shell"
-            tabIndex={0}
-            role="region"
-            aria-label="AI TUS spot cevap paneli"
-          >
-            <DiagnosisQuiz
-              clinicalCase={question}
-              branch={AI_SPOT_BRANCH}
-              mode="study"
-              onRandomCase={onGenerateQuestion}
-              onSubmitAnswer={onSubmitAnswer}
-              tutorMode={tutorMode}
-              orderedInvestigationIds={[]}
-              investigationOrders={[]}
-              hardMode={hardMode}
-              randomActionLabel={randomActionLabel}
-              questionPromptOverride={questionPrompt}
-            />
-          </div>
-        </aside>
+        <div className="ai-spot-answer-flow" role="region" aria-label="Yanıt seçenekleri ve geri bildirim">
+          <DiagnosisQuiz
+            clinicalCase={question}
+            branch={AI_SPOT_BRANCH}
+            mode="study"
+            onRandomCase={onGenerateQuestion}
+            onSubmitAnswer={onSubmitAnswer}
+            tutorMode={tutorMode}
+            orderedInvestigationIds={[]}
+            investigationOrders={[]}
+            hardMode={hardMode}
+            randomActionLabel={randomActionLabel}
+            hideSpotQuestionCallout
+            questionPromptOverride={questionPrompt}
+            questionHeadingOverride="Yanıt seçenekleri"
+            questionSubtextOverride={questionPrompt || 'En uygun seçeneği işaretle.'}
+          />
+        </div>
       </section>
     </article>
   );

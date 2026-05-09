@@ -34049,3 +34049,209 @@ html[data-theme="dark"] .ai-spot-answer-shell .tus-spot-olgular-question-callout
     white-space: normal;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V176 — AI Spot single-flow layout, no nested scroll
+   The AI generated TUS Spot screen must not inherit the sticky,
+   viewport-bound right workspace from the classic case player.
+   Narrative, options and feedback now live inside one natural-height
+   panel; only the page/body scrolls when feedback expands.
+   ========================================================= */
+.ai-spot-player-shell {
+  width: 100%;
+}
+
+.ai-spot-unified-panel.card-surface {
+  display: grid !important;
+  gap: 0 !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  padding: clamp(22px, 3.2vw, 36px) !important;
+  border-radius: 30px !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(20, 184, 166, 0.10), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 253, 252, 0.94)) !important;
+  border: 1px solid rgba(15, 118, 110, 0.11) !important;
+  box-shadow: 0 24px 62px rgba(15, 23, 42, 0.09) !important;
+}
+
+.ai-spot-unified-panel,
+.ai-spot-unified-panel * {
+  scrollbar-gutter: auto;
+}
+
+.ai-spot-narrative-card.is-embedded {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.ai-spot-narrative-card.is-embedded::after {
+  display: none !important;
+}
+
+.ai-spot-answer-flow {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  margin-top: clamp(22px, 3vw, 32px);
+  padding-top: clamp(20px, 2.4vw, 28px);
+  border-top: 1px solid rgba(20, 184, 166, 0.18);
+  overflow: visible !important;
+}
+
+.ai-spot-answer-flow::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(20, 184, 166, 0.30), transparent);
+  pointer-events: none;
+}
+
+.ai-spot-answer-flow .question-panel.diagnostic-decision-panel {
+  display: grid !important;
+  gap: clamp(14px, 2vw, 18px) !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.ai-spot-answer-flow .question-panel-head.diagnostic-head {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 14px !important;
+  align-items: start !important;
+  max-width: 1040px;
+}
+
+.ai-spot-answer-flow .question-panel-head.diagnostic-head h2 {
+  margin: 0 !important;
+  color: #0f172a !important;
+  font-size: clamp(19px, 2vw, 24px) !important;
+  line-height: 1.16 !important;
+  letter-spacing: -0.04em !important;
+  font-weight: 830 !important;
+}
+
+.ai-spot-answer-flow .question-panel-head.diagnostic-head p {
+  margin: 7px 0 0 !important;
+  max-width: 920px !important;
+  color: #475569 !important;
+  font-size: clamp(14.5px, 1.2vw, 16px) !important;
+  line-height: 1.58 !important;
+  font-weight: 560 !important;
+}
+
+.ai-spot-answer-flow .question-score-chip.compact-meta-pill {
+  align-self: start !important;
+  white-space: nowrap !important;
+}
+
+.ai-spot-answer-flow .tus-spot-olgular-question-callout {
+  display: none !important;
+}
+
+.ai-spot-answer-flow .option-grid {
+  display: grid !important;
+  gap: 10px !important;
+  max-width: 920px !important;
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+.ai-spot-answer-flow .answer-option {
+  min-height: 60px !important;
+  border-radius: 17px !important;
+}
+
+.ai-spot-answer-flow .quiz-actions {
+  max-width: 920px !important;
+}
+
+.ai-spot-answer-flow .answer-feedback-panel,
+.ai-spot-answer-flow .answer-feedback-panel-pro,
+.ai-spot-answer-flow .answer-feedback-summary,
+.ai-spot-answer-flow .answer-feedback-grid,
+.ai-spot-answer-flow .answer-feedback-grid-pro,
+.ai-spot-answer-flow .feedback-card,
+.ai-spot-answer-flow .diagnosis-compare-list,
+.ai-spot-answer-flow .diagnosis-compare-item,
+.ai-spot-answer-flow .option-comparison-item,
+.ai-spot-answer-flow .exam-feedback-compact,
+.ai-spot-answer-flow .feedback {
+  min-height: 0 !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+html[data-theme="dark"] .ai-spot-unified-panel.card-surface,
+.app-shell[data-theme="dark"] .ai-spot-unified-panel.card-surface {
+  background:
+    radial-gradient(circle at 14% 0%, rgba(45, 212, 191, 0.15), transparent 34%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.96), rgba(8, 13, 26, 0.94)) !important;
+  border-color: rgba(94, 234, 212, 0.14) !important;
+  box-shadow: 0 24px 62px rgba(0, 0, 0, 0.24) !important;
+}
+
+html[data-theme="dark"] .ai-spot-answer-flow,
+.app-shell[data-theme="dark"] .ai-spot-answer-flow {
+  border-top-color: rgba(94, 234, 212, 0.16);
+}
+
+html[data-theme="dark"] .ai-spot-answer-flow .question-panel-head.diagnostic-head h2,
+.app-shell[data-theme="dark"] .ai-spot-answer-flow .question-panel-head.diagnostic-head h2 {
+  color: #e5edf6 !important;
+}
+
+html[data-theme="dark"] .ai-spot-answer-flow .question-panel-head.diagnostic-head p,
+.app-shell[data-theme="dark"] .ai-spot-answer-flow .question-panel-head.diagnostic-head p {
+  color: #a8b5c6 !important;
+}
+
+@media (min-width: 1025px) {
+  .ai-spot-unified-panel .ai-spot-answer-flow,
+  .ai-spot-unified-panel .question-panel,
+  .ai-spot-unified-panel .answer-feedback-panel {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .ai-spot-unified-panel.card-surface {
+    padding: 20px !important;
+    border-radius: 24px !important;
+  }
+
+  .ai-spot-answer-flow {
+    margin-top: 20px;
+    padding-top: 18px;
+  }
+
+  .ai-spot-answer-flow .question-panel-head.diagnostic-head {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ai-spot-answer-flow .question-score-chip.compact-meta-pill {
+    width: fit-content !important;
+  }
+}

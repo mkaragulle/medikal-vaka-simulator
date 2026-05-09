@@ -2,8 +2,10 @@ import { normalizeQuestionText } from './aiQuestionHistory.js';
 import { attachQuestionDedupeFields, getQuestionCorrectText, getQuestionOptionTexts, toPlainText } from './questionDeduplication.js';
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { validateBranchFit } from './aiBranchRules.js';
+import { repairScientificAccuracy, scientificAccuracyGate } from './clinicalScientificAccuracyGate.js';
 import { normalizeInvestigationLabResults, validateInvestigationLabCompleteness, hasIncompleteLabResultText } from './clinicalValueFormatters.js';
 import { repairAnswerLeakage, runAnswerLeakageGate } from './answerLeakageGate.js';
+import { applyTusLanguageStandardToQuestion, normalizeTusLanguageText, hasWeakTusLanguage } from './tusLanguageStandard.js';
 import {
   detectBrokenSentence,
   detectExcessivePunctuation,
@@ -20,6 +22,11 @@ import {
 } from './editorialQuality.js';
 
 export const AI_QUALITY_FORBIDDEN_PHRASES = [
+  'objektif veri sağlar',
+  'hastanın durumu değerlendirilir',
+  'hangi tedavi yöntemi ilk sırada uygulanmalıdır',
+  'kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır',
+  'doğru cevabı destekleyen ana ipucudur',
   'öğrenme hedefi',
   'çeldirici',
   'doğru seçenek',
@@ -75,6 +82,9 @@ export const AI_QUALITY_FORBIDDEN_PHRASES = [
 ];
 
 const HARD_FORBIDDEN_REGEXES = [
+  /\bhangi tedavi yöntemi ilk sırada uygulanmalıdır\b/iu,
+  /\bkendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/iu,
+  /\bdoğru yanıta götüren ana bulgudur\b/iu,
   /\b([a-zçğıöşü]+)\s+\1\b/iu,
   /\bçocuk\s+çocuk\b/iu,
   /\b(değerlendirmesi|yorumlanması)\s+başvurusunda\b/iu,
@@ -429,7 +439,7 @@ function repairFeedbackText(text = '', question = {}) {
   if (correct) {
     return cleanSentence(`${correct} en uygun yanıttır; çünkü ${clues.join(' ve ') || 'verilen somut klinik bulgular'} bu seçeneği diğer olasılıklardan ayırır.`);
   }
-  return 'Somut klinik bulgular birlikte değerlendirildiğinde en uygun seçenek belirlenir.';
+  return 'Somut klinik bulgular ve objektif veriler birlikte değerlendirildiğinde en uygun seçenek belirlenir.';
 }
 
 function describeOptionPurpose(optionText = '') {
@@ -441,7 +451,7 @@ function describeOptionPurpose(optionText = '') {
   if (/adrenalin|epinefrin/.test(option)) return 'Adrenalin bronkospazm, vazodilatasyon ve dolaşım çöküşünü hedefleyen hayat kurtarıcı ilaçtır.';
   if (/oksijen|hava yolu|entubasyon/.test(option)) return 'Oksijen ve hava yolu güvenliği hipoksemi riski olan hastada temel destek basamağıdır.';
   if (/gozlem|bekle|izlem/.test(option)) return 'Sadece gözlem, hızla kötüleşebilecek acil tabloda tedaviyi geciktirir.';
-  return `${optionText} bazı klinik durumlarda gündeme gelebilir.`;
+  return `${optionText} farklı klinik tabloda uygun olabilir.`;
 }
 
 function isPerioperativeAnaphylaxis(question = {}) {
@@ -470,7 +480,7 @@ function buildContextualWrongFeedback(optionText = '', question = {}) {
     return `${purpose} Ancak anafilakside hava yolu, bronkospazm veya hipotansiyon varsa destek tedavileri adrenalin temelli acil yaklaşımın yerine geçmez.`;
   }
   const clues = deriveBranchSpecificClues(question).slice(0, 2).join(' ve ') || 'olgudaki somut bulgular';
-  return `${purpose} Ancak ${clues} bu seçeneği tek başına yeterli kılmaz; ${correct || 'uygun yanıt'} olguyu daha doğrudan açıklar.`;
+  return `${purpose} Ancak bu olguda ${clues} ${correct || 'uygun yanıt'} lehine daha güçlü ve öncelikli kanıt oluşturur.`;
 }
 
 function repairWrongFeedback(text = '', optionText = '', question = {}) {
@@ -594,7 +604,7 @@ function repairContextSensitiveEmergencyQuestion(question = {}) {
 }
 
 export function repairAIQuestionQuality(question = {}) {
-  const repaired = { ...question };
+  const repaired = applyTusLanguageStandardToQuestion({ ...question });
   repaired.demographics = safeDemographic(repaired);
   repaired.learningTarget = cleanSentence(repaired.learningTarget || repaired.clinicalFocus || 'Karar verdirici klinik bilginin yorumlanması');
   if (hasForbiddenPhrase(repaired.learningTarget)) repaired.learningTarget = 'Karar verdirici klinik bulgunun doğru yorumlanması';
@@ -658,7 +668,7 @@ export function repairAIQuestionQuality(question = {}) {
   repaired.diagnosis = {
     ...(repaired.diagnosis || {}),
     explanation: repairFeedbackText(repaired.diagnosis?.explanation || repaired.explanation, repaired),
-    nextStep: cleanSentence(repaired.diagnosis?.nextStep || 'Olgudaki somut ipuçlarını seçeneklerle karşılaştır.'),
+    nextStep: cleanSentence(repaired.diagnosis?.nextStep || 'Olgudaki somut ipuçlarını aynı kategorideki seçeneklerle karşılaştır.'),
     pearls: filterQualityItems(repaired.diagnosis?.pearls || repaired.examPearls || [], 3),
     answerFeedback: {
       ...answerFeedback,
@@ -676,14 +686,15 @@ export function repairAIQuestionQuality(question = {}) {
   };
   if (!repaired.diagnosis.answerFeedback.managementSteps.length) {
     repaired.diagnosis.answerFeedback.managementSteps = [
-      'Önce hastanın yaşına ve başvuru yakınmasına uygun acil bulguları değerlendir.',
-      'Muayene ve tetkik verilerini aynı klinik olasılık içinde birleştir.',
-      'Doğru yaklaşımı geciktirecek alternatifleri somut bulgularla ele.',
+      'Önce hastanın yaşına ve başvuru yakınmasına göre acil bulguları değerlendir.',
+      'Muayene ve objektif tetkik verilerini aynı klinik olasılık içinde birleştir.',
+      'Uygun yaklaşımı geciktirecek alternatifleri somut bulgularla ele.',
     ];
   }
 
-  const contextRepaired = repairContextSensitiveEmergencyQuestion(repaired);
-  const leakageRepaired = repairAnswerLeakage(contextRepaired);
+  const scientificRepaired = repairScientificAccuracy(repaired);
+  const contextRepaired = repairContextSensitiveEmergencyQuestion(scientificRepaired);
+  const leakageRepaired = applyTusLanguageStandardToQuestion(repairAnswerLeakage(contextRepaired));
   attachQuestionDedupeFields(leakageRepaired);
   return leakageRepaired;
 }
@@ -797,6 +808,9 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
   });
   errors.push(...validateAgeSymptomCoherence(question));
   errors.push(...validateContextSensitiveClinicalCoherence(question));
+  const scientificGate = scientificAccuracyGate(question);
+  if (!scientificGate.ok) errors.push(...scientificGate.errors.map((error) => `scientific-accuracy:${error}`));
+  warnings.push(...(scientificGate.warnings || []).map((warning) => `scientific-accuracy:${warning}`));
   errors.push(...validateFeedbackSpecificity(question));
 
   const leakageGate = runAnswerLeakageGate(question);
@@ -829,6 +843,7 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
     if (isForbiddenEditorialText(text)) errors.push(`yasaklı editoryal ifade: ${String(text).slice(0, 90)}`);
     if (hasRepeatedShortPhrase(text)) errors.push(`tekrar eden ifade: ${String(text).slice(0, 90)}`);
     if (detectExcessivePunctuation(text)) warnings.push(`noktalama kontrolü: ${String(text).slice(0, 90)}`);
+    if (hasWeakTusLanguage(text)) errors.push(`zayıf TUS dili: ${String(text).slice(0, 90)}`);
   });
   const investigations = [
     ...(Array.isArray(question.investigations) ? question.investigations : []),

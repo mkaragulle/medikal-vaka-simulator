@@ -84,6 +84,8 @@ function DiagnosisQuiz({
   randomActionLabel = 'Yeni vaka çöz',
   hideSpotQuestionCallout = false,
   questionPromptOverride = '',
+  questionHeadingOverride = '',
+  questionSubtextOverride = '',
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
@@ -107,12 +109,14 @@ function DiagnosisQuiz({
     : '0%';
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const questionPrompt = questionPromptOverride || clinicalCase.question || clinicalCase.diagnosis?.question || '';
-  const questionHeading = isSpotCase ? (clinicalCase.questionType === 'diagnosis' ? 'TUS spot tanı sorusu' : clinicalCase.questionType === 'test' ? 'TUS spot tetkik sorusu' : clinicalCase.questionType === 'treatment' ? 'TUS spot tedavi sorusu' : 'TUS spot karar sorusu') : 'En olası tanı';
-  const questionSubtext = isSpotCase
+  const defaultQuestionHeading = isSpotCase ? (clinicalCase.questionType === 'diagnosis' ? 'TUS spot tanı sorusu' : clinicalCase.questionType === 'test' ? 'TUS spot tetkik sorusu' : clinicalCase.questionType === 'treatment' ? 'TUS spot tedavi sorusu' : 'TUS spot karar sorusu') : 'En olası tanı';
+  const questionHeading = questionHeadingOverride || defaultQuestionHeading;
+  const defaultQuestionSubtext = isSpotCase
     ? (submitted && clinicalCase.clinicalFocus
       ? clinicalCase.clinicalFocus
       : 'Kısa TUS olgusunda öykü, muayene ve objektif verileri yorumlayarak en doğru yanıtı seç.')
     : 'Olgu paternine en uygun seçeneği işaretle.';
+  const questionSubtext = questionSubtextOverride || defaultQuestionSubtext;
 
   const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;

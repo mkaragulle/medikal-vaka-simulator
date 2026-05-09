@@ -1,5 +1,6 @@
 import { pediatricArrhythmiaPdfCases } from './pdfPediatricArrhythmiaCases.js';
 import { sanitizeEmbeddedCasesForPreAnswer } from '../utils/answerLeakageGate.js';
+import { applyTusLanguageStandardToCase } from '../utils/tusLanguageStandard.js';
 export const rawCases = [
   {
     "id": "cv-anterior-stemi-001",
@@ -155,7 +156,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı."
           },
           {
@@ -163,7 +164,7 @@ export const rawCases = [
             "text": "Hastayı monitörize et, defibrilatör erişimini ve iki damar yolu hazırlığını sağla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kontrendikasyonları dışlayarak başla."
           },
           {
@@ -200,7 +201,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "İskemik göğüs ağrısı ve ardışık derivasyonlarda ST elevasyonu paternini hızla tanı."
           },
           {
@@ -208,7 +209,7 @@ export const rawCases = [
             "text": "Hastayı monitörize et, defibrilatör erişimini ve iki damar yolu hazırlığını sağla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kontrendikasyonları dışlayarak başla."
           },
           {
@@ -524,7 +525,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yırtılır tarzda ağrı, nabız veya kan basıncı asimetrisi ve nörolojik-periferik iskemi bulgularını birlikte değerlendir."
           },
           {
@@ -532,7 +533,7 @@ export const rawCases = [
             "text": "Kan basıncı ve kalp hızını invaziv veya yoğun monitorizasyonla takip et."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Önce intravenöz beta-blokör ile kalp hızını düşür."
           },
           {
@@ -569,7 +570,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yırtılır tarzda ağrı, nabız veya kan basıncı asimetrisi ve nörolojik-periferik iskemi bulgularını birlikte değerlendir."
           },
           {
@@ -577,7 +578,7 @@ export const rawCases = [
             "text": "Kan basıncı ve kalp hızını invaziv veya yoğun monitorizasyonla takip et."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Önce intravenöz beta-blokör ile kalp hızını düşür."
           },
           {
@@ -914,7 +915,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hipotansiyon, juguler venöz dolgunluk ve kalp seslerinde azalma bulgularını tamponad lehine yorumla."
           },
           {
@@ -922,7 +923,7 @@ export const rawCases = [
             "text": "Hastayı monitörize et ve damar yolu ile dolaşım desteğini hazırla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yatak başı ekokardiyografi ile perikardiyal efüzyon ve sağ kalp basısını değerlendir."
           },
           {
@@ -959,7 +960,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hipotansiyon, juguler venöz dolgunluk ve kalp seslerinde azalma bulgularını tamponad lehine yorumla."
           },
           {
@@ -967,7 +968,7 @@ export const rawCases = [
             "text": "Hastayı monitörize et ve damar yolu ile dolaşım desteğini hazırla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yatak başı ekokardiyografi ile perikardiyal efüzyon ve sağ kalp basısını değerlendir."
           },
           {
@@ -1310,7 +1311,7 @@ export const rawCases = [
             "text": "Solunum eforu, SpO₂, kan basıncı ve bilinç durumuyla aciliyeti belirle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hastayı oturt, oksijen ver."
           },
           {
@@ -1318,7 +1319,7 @@ export const rawCases = [
             "text": "EKG, akciğer grafisi, kan gazı ve natriüretik peptid ile tanıyı ve tetikleyiciyi değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hipertansif tabloda nitrat, konjesyonda intravenöz loop diüretik tedaviyi planla."
           }
         ],
@@ -1355,7 +1356,7 @@ export const rawCases = [
             "text": "Solunum eforu, SpO₂, kan basıncı ve bilinç durumuyla aciliyeti belirle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hastayı oturt, oksijen ver."
           },
           {
@@ -1363,7 +1364,7 @@ export const rawCases = [
             "text": "EKG, akciğer grafisi, kan gazı ve natriüretik peptid ile tanıyı ve tetikleyiciyi değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hipertansif tabloda nitrat, konjesyonda intravenöz loop diüretik tedaviyi planla."
           }
         ],
@@ -1674,7 +1675,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Eforla senkop, aile öyküsü ve manevrayla değişen üfürümü HOKM lehine değerlendir."
           },
           {
@@ -1682,7 +1683,7 @@ export const rawCases = [
             "text": "Ekokardiyografi ile septal hipertrofi ve çıkış yolu gradiyentini doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ani kardiyak ölüm riskini aile öyküsü, senkop, aritmi ve duvar kalınlığı üzerinden sınıfla."
           },
           {
@@ -1719,7 +1720,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Eforla senkop, aile öyküsü ve manevrayla değişen üfürümü HOKM lehine değerlendir."
           },
           {
@@ -1727,7 +1728,7 @@ export const rawCases = [
             "text": "Ekokardiyografi ile septal hipertrofi ve çıkış yolu gradiyentini doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ani kardiyak ölüm riskini aile öyküsü, senkop, aritmi ve duvar kalınlığı üzerinden sınıfla."
           },
           {
@@ -2497,7 +2498,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Sırta yayılan epigastrik ağrı ve lipaz veya amilaz yüksekliği ile akut pankreatiti tanı."
           },
           {
@@ -2509,7 +2510,7 @@ export const rawCases = [
             "text": "Şiddet riskini vital bulgular, organ yetmezliği ve laboratuvar trendleriyle sınıfla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Biliyer neden için karaciğer testleri ve hepatobiliyer ultrason bulgularını değerlendir."
           }
         ],
@@ -2542,7 +2543,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Sırta yayılan epigastrik ağrı ve lipaz veya amilaz yüksekliği ile akut pankreatiti tanı."
           },
           {
@@ -2554,7 +2555,7 @@ export const rawCases = [
             "text": "Şiddet riskini vital bulgular, organ yetmezliği ve laboratuvar trendleriyle sınıfla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Biliyer neden için karaciğer testleri ve hepatobiliyer ultrason bulgularını değerlendir."
           }
         ],
@@ -2869,11 +2870,11 @@ export const rawCases = [
             "text": "Kan grubu, cross-match, hemogram ve koagülasyon değerlendirmesini al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Vazoaktif tedaviyi erken başla ve profilaktik antibiyotik ekle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Stabilizasyon sonrası acil üst endoskopi ile band ligasyonu planla."
           }
         ],
@@ -2914,11 +2915,11 @@ export const rawCases = [
             "text": "Kan grubu, cross-match, hemogram ve koagülasyon değerlendirmesini al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Vazoaktif tedaviyi erken başla ve profilaktik antibiyotik ekle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Stabilizasyon sonrası acil üst endoskopi ile band ligasyonu planla."
           }
         ],
@@ -3244,11 +3245,11 @@ export const rawCases = [
             "text": "Yaş, cinsiyet ve kanama öyküsüne göre gastrointestinal veya jinekolojik kan kaybı kaynağını araştır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Uygun hastada oral demir replasmanı ve kullanım eğitimini başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Toleranssızlık, malabsorpsiyon veya ağır eksiklikte intravenöz demir seçeneğini değerlendir."
           }
         ],
@@ -3289,11 +3290,11 @@ export const rawCases = [
             "text": "Yaş, cinsiyet ve kanama öyküsüne göre gastrointestinal veya jinekolojik kan kaybı kaynağını araştır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Uygun hastada oral demir replasmanı ve kullanım eğitimini başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Toleranssızlık, malabsorpsiyon veya ağır eksiklikte intravenöz demir seçeneğini değerlendir."
           }
         ],
@@ -3628,11 +3629,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hiperkalsemi ile uygunsuz yüksek PTH birlikteliğini primer hiperparatiroidi lehine yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Böbrek taşı, kemik yoğunluğu, böbrek fonksiyonu ve semptomları değerlendir."
           },
           {
@@ -3640,7 +3641,7 @@ export const rawCases = [
             "text": "Serum kalsiyum, fosfor, 25-OH D vitamini ve 24 saatlik idrar kalsiyumunu tamamla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Cerrahi endikasyon varsa paratiroidektomi için lokalizasyon görüntülemesi planla."
           }
         ],
@@ -3673,11 +3674,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hiperkalsemi ile uygunsuz yüksek PTH birlikteliğini primer hiperparatiroidi lehine yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Böbrek taşı, kemik yoğunluğu, böbrek fonksiyonu ve semptomları değerlendir."
           },
           {
@@ -3685,7 +3686,7 @@ export const rawCases = [
             "text": "Serum kalsiyum, fosfor, 25-OH D vitamini ve 24 saatlik idrar kalsiyumunu tamamla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Cerrahi endikasyon varsa paratiroidektomi için lokalizasyon görüntülemesi planla."
           }
         ],
@@ -4007,7 +4008,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani fokal nörolojik defisiti inme alarmı olarak değerlendir ve son sağlıklı görülme zamanını netleştir."
           },
           {
@@ -4019,7 +4020,7 @@ export const rawCases = [
             "text": "Kontrastsız beyin BT ile intrakraniyal kanamayı dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Damar görüntüleme ile büyük damar oklüzyonunu değerlendir."
           }
         ],
@@ -4063,7 +4064,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani fokal nörolojik defisiti inme alarmı olarak değerlendir ve son sağlıklı görülme zamanını netleştir."
           },
           {
@@ -4075,7 +4076,7 @@ export const rawCases = [
             "text": "Kontrastsız beyin BT ile intrakraniyal kanamayı dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Damar görüntüleme ile büyük damar oklüzyonunu değerlendir."
           }
         ],
@@ -4384,7 +4385,7 @@ export const rawCases = [
             "text": "Erken kontrastsız BT subaraknoid kanı gösterebilir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anevrizma odağı kesin tedavi planını belirler."
           }
         ],
@@ -4404,7 +4405,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani en şiddetli baş ağrısı ve meningeal irritasyonu subaraknoid kanama lehine değerlendir."
           },
           {
@@ -4416,7 +4417,7 @@ export const rawCases = [
             "text": "Kan basıncı, ağrı, bulantı ve nörolojik durumu yakın izle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anevrizma saptanırsa nöroşirürji veya girişimsel nöroradyoloji ile klipleme veya koilleme planla."
           }
         ],
@@ -4449,7 +4450,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani en şiddetli baş ağrısı ve meningeal irritasyonu subaraknoid kanama lehine değerlendir."
           },
           {
@@ -4461,7 +4462,7 @@ export const rawCases = [
             "text": "Kan basıncı, ağrı, bulantı ve nörolojik durumu yakın izle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anevrizma saptanırsa nöroşirürji veya girişimsel nöroradyoloji ile klipleme veya koilleme planla."
           }
         ],
@@ -4786,7 +4787,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Nörolojik defisitin zaman içinde yayılım ve mekânda yayılım kriterlerini destekleyip desteklemediğini değerlendir."
           },
           {
@@ -4794,7 +4795,7 @@ export const rawCases = [
             "text": "MR bulgularını BOS oligoklonal bant ve klinik atak öyküsüyle destekle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Fonksiyonel kayıp yaratan akut atakta yüksek doz intravenöz metilprednizolon başla."
           },
           {
@@ -4845,7 +4846,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Nörolojik defisitin zaman içinde yayılım ve mekânda yayılım kriterlerini destekleyip desteklemediğini değerlendir."
           },
           {
@@ -4853,7 +4854,7 @@ export const rawCases = [
             "text": "MR bulgularını BOS oligoklonal bant ve klinik atak öyküsüyle destekle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Fonksiyonel kayıp yaratan akut atakta yüksek doz intravenöz metilprednizolon başla."
           },
           {
@@ -5188,7 +5189,7 @@ export const rawCases = [
             "text": "MR venografi veya BT venografi ile venöz sinüs oklüzyonunu doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İntrakraniyal kanama eşlik etse bile kontrendikasyon yoksa antikoagülasyon başla."
           },
           {
@@ -5240,7 +5241,7 @@ export const rawCases = [
             "text": "MR venografi veya BT venografi ile venöz sinüs oklüzyonunu doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İntrakraniyal kanama eşlik etse bile kontrendikasyon yoksa antikoagülasyon başla."
           },
           {
@@ -5572,11 +5573,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Kolik ağlama atakları, kusma ve kanlı-mukuslu dışkıyı invajinasyon lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Dehidratasyon, şok, peritonit ve perforasyon bulgularını erken dışla."
           },
           {
@@ -5617,11 +5618,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Kolik ağlama atakları, kusma ve kanlı-mukuslu dışkıyı invajinasyon lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Dehidratasyon, şok, peritonit ve perforasyon bulgularını erken dışla."
           },
           {
@@ -5950,11 +5951,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Safrasız fışkırır kusma, açlık ve kilo alamamayı pilor stenozu lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Dehidratasyon ve hipokloremik metabolik alkalozu saptayıp oral alımı kes."
           },
           {
@@ -6009,11 +6010,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Safrasız fışkırır kusma, açlık ve kilo alamamayı pilor stenozu lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Dehidratasyon ve hipokloremik metabolik alkalozu saptayıp oral alımı kes."
           },
           {
@@ -6356,7 +6357,7 @@ export const rawCases = [
             "text": "El-ayak ödemi veya deskuamasyon vaskülitik süreci destekler."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Koroner arter tutulumu erken tedavi gerektirir."
           }
         ],
@@ -6376,15 +6377,15 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Beş günden uzun ateş ve mukokutanöz bulguları Kawasaki lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Koroner tutulum için ekokardiyografi planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İlk 10 gün içinde IVIG ve yüksek doz aspirin tedavisi başla."
           },
           {
@@ -6435,15 +6436,15 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Beş günden uzun ateş ve mukokutanöz bulguları Kawasaki lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Koroner tutulum için ekokardiyografi planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İlk 10 gün içinde IVIG ve yüksek doz aspirin tedavisi başla."
           },
           {
@@ -6748,11 +6749,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Toksik görünüm, salya akması, disfaji ve tripod pozisyonunu epiglottit lehine tanı."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Çocuğu ajite edecek ağız muayenesi ve boğaz manipülasyonundan kaçın."
           },
           {
@@ -6760,7 +6761,7 @@ export const rawCases = [
             "text": "Anestezi veya KBB veya yoğun bakım desteğiyle kontrollü havayolu hazırlığı yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Havayolu güvenceye alındıktan sonra intravenöz antibiyotik başla."
           }
         ],
@@ -6807,11 +6808,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Toksik görünüm, salya akması, disfaji ve tripod pozisyonunu epiglottit lehine tanı."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Çocuğu ajite edecek ağız muayenesi ve boğaz manipülasyonundan kaçın."
           },
           {
@@ -6819,7 +6820,7 @@ export const rawCases = [
             "text": "Anestezi veya KBB veya yoğun bakım desteğiyle kontrollü havayolu hazırlığı yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Havayolu güvenceye alındıktan sonra intravenöz antibiyotik başla."
           }
         ],
@@ -7142,7 +7143,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ağrı migrasyonu, sağ alt kadran hassasiyeti ve periton bulgularını değerlendir."
           },
           {
@@ -7187,7 +7188,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ağrı migrasyonu, sağ alt kadran hassasiyeti ve periton bulgularını değerlendir."
           },
           {
@@ -7516,7 +7517,7 @@ export const rawCases = [
             "text": "Nötrofil baskın lökositoz."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yağlı yemek sonrasında başlayan sağ üst kadran ağrısı."
           }
         ],
@@ -7532,7 +7533,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ateş, sağ üst kadran hassasiyeti ve Murphy bulgusunu akut kolesistit lehine değerlendir."
           },
           {
@@ -7540,7 +7541,7 @@ export const rawCases = [
             "text": "Oral alımı kes."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Lökosit, CRP, bilirubin ve karaciğer enzimleriyle kolanjit veya koledok taşı riskini değerlendir."
           },
           {
@@ -7577,7 +7578,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ateş, sağ üst kadran hassasiyeti ve Murphy bulgusunu akut kolesistit lehine değerlendir."
           },
           {
@@ -7585,7 +7586,7 @@ export const rawCases = [
             "text": "Oral alımı kes."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Lökosit, CRP, bilirubin ve karaciğer enzimleriyle kolanjit veya koledok taşı riskini değerlendir."
           },
           {
@@ -7905,7 +7906,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kusma, distansiyon, obstipasyon ve geçirilmiş cerrahi öyküsünü obstrüksiyon lehine değerlendir."
           },
           {
@@ -7950,7 +7951,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kusma, distansiyon, obstipasyon ve geçirilmiş cerrahi öyküsünü obstrüksiyon lehine değerlendir."
           },
           {
@@ -8264,7 +8265,7 @@ export const rawCases = [
             "text": "Üst abdomende serbest hava ve sıvı."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ani başlayan çok şiddetli epigastrik ağrı."
           }
         ],
@@ -8280,7 +8281,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani yaygın ağrı, tahta karın ve serbest hava bulgusunu perforasyon lehine tanı."
           },
           {
@@ -8288,7 +8289,7 @@ export const rawCases = [
             "text": "Oral alımı kes."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Geniş spektrum antibiyotik ve intravenöz proton pompası inhibitörü başla."
           },
           {
@@ -8325,7 +8326,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani yaygın ağrı, tahta karın ve serbest hava bulgusunu perforasyon lehine tanı."
           },
           {
@@ -8333,7 +8334,7 @@ export const rawCases = [
             "text": "Oral alımı kes."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Geniş spektrum antibiyotik ve intravenöz proton pompası inhibitörü başla."
           },
           {
@@ -8638,7 +8639,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sol alt kadran ağrısı, ateş ve hassasiyeti divertikülit lehine değerlendir."
           },
           {
@@ -8650,7 +8651,7 @@ export const rawCases = [
             "text": "Kontrastlı BT ile perikolik inflamasyon, apse, fistül veya serbest perforasyonu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Komplike olmayan olguda analjezi, diyet düzenleme ve seçilmiş antibiyotik veya yatış kararını ver."
           }
         ],
@@ -8683,7 +8684,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sol alt kadran ağrısı, ateş ve hassasiyeti divertikülit lehine değerlendir."
           },
           {
@@ -8695,7 +8696,7 @@ export const rawCases = [
             "text": "Kontrastlı BT ile perikolik inflamasyon, apse, fistül veya serbest perforasyonu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Komplike olmayan olguda analjezi, diyet düzenleme ve seçilmiş antibiyotik veya yatış kararını ver."
           }
         ],
@@ -9022,7 +9023,7 @@ export const rawCases = [
             "text": "Tansiyon pnömotoraks bulgusu varsa görüntüleme beklemeden iğne dekompresyonu uygula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Stabil hastada akciğer grafisi veya USG ile pnömotoraks boyutunu değerlendir."
           },
           {
@@ -9067,7 +9068,7 @@ export const rawCases = [
             "text": "Tansiyon pnömotoraks bulgusu varsa görüntüleme beklemeden iğne dekompresyonu uygula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Stabil hastada akciğer grafisi veya USG ile pnömotoraks boyutunu değerlendir."
           },
           {
@@ -9379,7 +9380,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani dispne, plöritik ağrı, taşikardi ve DVT ipuçlarıyla pulmoner emboli olasılığını değerlendir."
           },
           {
@@ -9391,7 +9392,7 @@ export const rawCases = [
             "text": "Uygun hastada BT pulmoner anjiyografi veya D-dimer stratejisini pretest olasılığa göre seç."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kontrendikasyon yoksa antikoagülasyon başla."
           }
         ],
@@ -9424,7 +9425,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani dispne, plöritik ağrı, taşikardi ve DVT ipuçlarıyla pulmoner emboli olasılığını değerlendir."
           },
           {
@@ -9436,7 +9437,7 @@ export const rawCases = [
             "text": "Uygun hastada BT pulmoner anjiyografi veya D-dimer stratejisini pretest olasılığa göre seç."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kontrendikasyon yoksa antikoagülasyon başla."
           }
         ],
@@ -9775,7 +9776,7 @@ export const rawCases = [
             "text": "Akciğer grafisindeki lobar konsolidasyonu ateş ve pürülan balgamla birlikte yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ampirik antibiyotiği hastanın yaşı, komorbiditesi ve yatış gereksinimine göre geciktirmeden başla."
           },
           {
@@ -9820,7 +9821,7 @@ export const rawCases = [
             "text": "Akciğer grafisindeki lobar konsolidasyonu ateş ve pürülan balgamla birlikte yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ampirik antibiyotiği hastanın yaşı, komorbiditesi ve yatış gereksinimine göre geciktirmeden başla."
           },
           {
@@ -10147,7 +10148,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Kuru öksürük, ilerleyici efor dispnesi ve bazal ince raller ile fibrotik interstisyel akciğer hastalığını düşün."
           },
           {
@@ -10155,11 +10156,11 @@ export const rawCases = [
             "text": "Yüksek çözünürlüklü toraks BT ile UIP paternini değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sekonder interstisyel akciğer hastalığı nedenlerini dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Uygun hastada antifibrotik tedavi ve pulmoner rehabilitasyon planla."
           }
         ],
@@ -10192,7 +10193,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Kuru öksürük, ilerleyici efor dispnesi ve bazal ince raller ile fibrotik interstisyel akciğer hastalığını düşün."
           },
           {
@@ -10200,11 +10201,11 @@ export const rawCases = [
             "text": "Yüksek çözünürlüklü toraks BT ile UIP paternini değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sekonder interstisyel akciğer hastalığı nedenlerini dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Uygun hastada antifibrotik tedavi ve pulmoner rehabilitasyon planla."
           }
         ],
@@ -10532,11 +10533,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Dispne artışı, balgam pürülansı ve hiperkapniyi KOAH alevlenmesi lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Oksijen hedefini CO2 retansiyon riskiyle uyumlu şekilde ayarla."
           },
           {
@@ -10544,7 +10545,7 @@ export const rawCases = [
             "text": "Kısa etkili bronkodilatörleri sık aralıklarla uygula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sistemik kortikosteroid başla ve balgam pürülansı veya şiddete göre antibiyotik değerlendir."
           }
         ],
@@ -10577,11 +10578,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Dispne artışı, balgam pürülansı ve hiperkapniyi KOAH alevlenmesi lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Oksijen hedefini CO2 retansiyon riskiyle uyumlu şekilde ayarla."
           },
           {
@@ -10589,7 +10590,7 @@ export const rawCases = [
             "text": "Kısa etkili bronkodilatörleri sık aralıklarla uygula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sistemik kortikosteroid başla ve balgam pürülansı veya şiddete göre antibiyotik değerlendir."
           }
         ],
@@ -10913,11 +10914,11 @@ export const rawCases = [
             "text": "Semptom sorgulaması ve akciğer grafisi ile aktif hastalığı dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "PPD veya IGRA sonucunu önceki değer ve BCG öyküsüyle birlikte yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aktif hastalık dışlandıktan sonra latent TB enfeksiyonu için izoniyazid profilaksisi başla."
           }
         ],
@@ -10958,11 +10959,11 @@ export const rawCases = [
             "text": "Semptom sorgulaması ve akciğer grafisi ile aktif hastalığı dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "PPD veya IGRA sonucunu önceki değer ve BCG öyküsüyle birlikte yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aktif hastalık dışlandıktan sonra latent TB enfeksiyonu için izoniyazid profilaksisi başla."
           }
         ],
@@ -11283,11 +11284,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Endemik bölge dönüşü ateş, titreme ve trombositopeniyi sıtma lehine birlikte değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Bilinç değişikliği, hipoglisemi, anemi, böbrek yetmezliği ve parazitemi oranıyla ağır sıtmayı ayır."
           },
           {
@@ -11295,7 +11296,7 @@ export const rawCases = [
             "text": "Kalın damla ve ince yaymayı gecikmeden iste."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ağır falciparum veya organ tutulumu varsa IV artesunat başla."
           }
         ],
@@ -11328,11 +11329,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Endemik bölge dönüşü ateş, titreme ve trombositopeniyi sıtma lehine birlikte değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Bilinç değişikliği, hipoglisemi, anemi, böbrek yetmezliği ve parazitemi oranıyla ağır sıtmayı ayır."
           },
           {
@@ -11340,7 +11341,7 @@ export const rawCases = [
             "text": "Kalın damla ve ince yaymayı gecikmeden iste."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ağır falciparum veya organ tutulumu varsa IV artesunat başla."
           }
         ],
@@ -11680,7 +11681,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ateş, ense sertliği, bilinç değişikliği ve peteşiyal-purpural döküntüyü invaziv meningokok hastalığı lehine tanı."
           },
           {
@@ -11692,7 +11693,7 @@ export const rawCases = [
             "text": "Kan kültürü ve uygun ise BOS örneğini al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ampirik seftriakson veya sefotaksim tedavisini hemen başla."
           }
         ],
@@ -11725,7 +11726,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ateş, ense sertliği, bilinç değişikliği ve peteşiyal-purpural döküntüyü invaziv meningokok hastalığı lehine tanı."
           },
           {
@@ -11737,7 +11738,7 @@ export const rawCases = [
             "text": "Kan kültürü ve uygun ise BOS örneğini al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ampirik seftriakson veya sefotaksim tedavisini hemen başla."
           }
         ],
@@ -12052,7 +12053,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Uzamış ateş, yeni üfürüm, emboli bulgusu ve IV madde kullanımını birlikte değerlendir."
           },
           {
@@ -12060,7 +12061,7 @@ export const rawCases = [
             "text": "Antibiyotik öncesi farklı ven girişlerinden en az üç set kan kültürü al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Transtorasik ekokardiyografi ve yüksek klinik şüphede TEE ile vejetasyon veya kapak hasarını ara."
           },
           {
@@ -12097,7 +12098,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Uzamış ateş, yeni üfürüm, emboli bulgusu ve IV madde kullanımını birlikte değerlendir."
           },
           {
@@ -12105,7 +12106,7 @@ export const rawCases = [
             "text": "Antibiyotik öncesi farklı ven girişlerinden en az üç set kan kültürü al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Transtorasik ekokardiyografi ve yüksek klinik şüphede TEE ile vejetasyon veya kapak hasarını ara."
           },
           {
@@ -12409,7 +12410,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Düşme mekanizması, distal radius hassasiyeti ve çatal sırtı deformitesini kırık lehine değerlendir."
           },
           {
@@ -12421,7 +12422,7 @@ export const rawCases = [
             "text": "Median sinir fonksiyonu, distal dolaşım ve parmak hareketlerini belgeleyerek nörovasküler muayene yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Deplasman durumuna göre kapalı redüksiyon ve immobilizasyon planla."
           }
         ],
@@ -12454,7 +12455,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Düşme mekanizması, distal radius hassasiyeti ve çatal sırtı deformitesini kırık lehine değerlendir."
           },
           {
@@ -12466,7 +12467,7 @@ export const rawCases = [
             "text": "Median sinir fonksiyonu, distal dolaşım ve parmak hareketlerini belgeleyerek nörovasküler muayene yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Deplasman durumuna göre kapalı redüksiyon ve immobilizasyon planla."
           }
         ],
@@ -12763,11 +12764,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Travma mekanizması, deformite, ağrı ve fonksiyon kaybını sistematik değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Nörovasküler muayeneyi redüksiyon veya immobilizasyon öncesi belgeleyip tekrar et."
           },
           {
@@ -12808,11 +12809,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Travma mekanizması, deformite, ağrı ve fonksiyon kaybını sistematik değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Nörovasküler muayeneyi redüksiyon veya immobilizasyon öncesi belgeleyip tekrar et."
           },
           {
@@ -13114,15 +13115,15 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "FOOSH mekanizması ve anatomik enfiye çukuru hassasiyetini skafoid kırığı lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "El bileği veya skafoid grafilerini iste ve başlangıç görüntüsünü yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Klinik şüphe yüksekse başparmak spika atel veya alçı ile immobilize et."
           },
           {
@@ -13159,15 +13160,15 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "FOOSH mekanizması ve anatomik enfiye çukuru hassasiyetini skafoid kırığı lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "El bileği veya skafoid grafilerini iste ve başlangıç görüntüsünü yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Klinik şüphe yüksekse başparmak spika atel veya alçı ile immobilize et."
           },
           {
@@ -13454,7 +13455,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Distal nabız, kapiller dolum ve aksiller sinir duyusunu redüksiyon öncesi değerlendir."
           },
           {
@@ -13462,7 +13463,7 @@ export const rawCases = [
             "text": "Omuz grafisiyle çıkık yönünü ve eşlik eden kırığı kontrol et."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Analjezi veya sedasyon koşullarını hazırlayıp kapalı redüksiyon uygula."
           },
           {
@@ -13499,7 +13500,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Distal nabız, kapiller dolum ve aksiller sinir duyusunu redüksiyon öncesi değerlendir."
           },
           {
@@ -13507,7 +13508,7 @@ export const rawCases = [
             "text": "Omuz grafisiyle çıkık yönünü ve eşlik eden kırığı kontrol et."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Analjezi veya sedasyon koşullarını hazırlayıp kapalı redüksiyon uygula."
           },
           {
@@ -14762,11 +14763,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Süt alımı sonrası kusma, uzamış sarılık, hepatomegali ve kataraktı klasik galaktozemi lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Laktoz veya galaktoz içeren beslenmeyi tanı kesinleşmesini beklemeden kes."
           },
           {
@@ -14807,11 +14808,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Süt alımı sonrası kusma, uzamış sarılık, hepatomegali ve kataraktı klasik galaktozemi lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Laktoz veya galaktoz içeren beslenmeyi tanı kesinleşmesini beklemeden kes."
           },
           {
@@ -14944,11 +14945,11 @@ export const rawCases = [
       },
       "managementSteps": [
         {
-          "title": "İlk karar",
+          "title": "Öncelikli yaklaşım",
           "text": "Süt alımı sonrası kusma, uzamış sarılık, hepatomegali ve kataraktı klasik galaktozemi lehine değerlendir."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Laktoz veya galaktoz içeren beslenmeyi tanı kesinleşmesini beklemeden kes."
         },
         {
@@ -14962,11 +14963,11 @@ export const rawCases = [
       ],
       "management": [
         {
-          "title": "İlk karar",
+          "title": "Öncelikli yaklaşım",
           "text": "Süt alımı sonrası kusma, uzamış sarılık, hepatomegali ve kataraktı klasik galaktozemi lehine değerlendir."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Laktoz veya galaktoz içeren beslenmeyi tanı kesinleşmesini beklemeden kes."
         },
         {
@@ -15276,15 +15277,15 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ek gıda veya meyve suyu sonrası kusma, terleme ve hipoglisemiyi herediter fruktoz intoleransı lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Semptomatik hipoglisemiyi hızla düzelt ve güvenli karbonhidrat desteği ver."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Fruktoz, sükroz ve sorbitolü diyetten tamamen çıkar."
           },
           {
@@ -15321,15 +15322,15 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ek gıda veya meyve suyu sonrası kusma, terleme ve hipoglisemiyi herediter fruktoz intoleransı lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Semptomatik hipoglisemiyi hızla düzelt ve güvenli karbonhidrat desteği ver."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Fruktoz, sükroz ve sorbitolü diyetten tamamen çıkar."
           },
           {
@@ -15711,7 +15712,7 @@ export const rawCases = [
             "text": "Akut hipoglisemiyi IV veya oral glukozla düzelt ve uzun açlığı hemen sonlandır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal paternin parçası olarak yorumla."
           },
           {
@@ -15756,7 +15757,7 @@ export const rawCases = [
             "text": "Akut hipoglisemiyi IV veya oral glukozla düzelt ve uzun açlığı hemen sonlandır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal paternin parçası olarak yorumla."
           },
           {
@@ -15893,7 +15894,7 @@ export const rawCases = [
           "text": "Akut hipoglisemiyi IV veya oral glukozla düzelt ve uzun açlığı hemen sonlandır."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal paternin parçası olarak yorumla."
         },
         {
@@ -15911,7 +15912,7 @@ export const rawCases = [
           "text": "Akut hipoglisemiyi IV veya oral glukozla düzelt ve uzun açlığı hemen sonlandır."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Laktat, trigliserid ve ürik asit yüksekliğini tanısal paternin parçası olarak yorumla."
         },
         {
@@ -16218,7 +16219,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Küf kokulu idrar, gelişim geriliği ve açık ten-saç bulgularını fenilketonüri lehine değerlendir."
           },
           {
@@ -16226,7 +16227,7 @@ export const rawCases = [
             "text": "Plazma fenilalanin düzeyi ve yenidoğan taraması sonucuyla tanıyı doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Fenilalaninden kısıtlı, tirozin destekli diyeti başla."
           },
           {
@@ -16263,7 +16264,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Küf kokulu idrar, gelişim geriliği ve açık ten-saç bulgularını fenilketonüri lehine değerlendir."
           },
           {
@@ -16271,7 +16272,7 @@ export const rawCases = [
             "text": "Plazma fenilalanin düzeyi ve yenidoğan taraması sonucuyla tanıyı doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Fenilalaninden kısıtlı, tirozin destekli diyeti başla."
           },
           {
@@ -16644,11 +16645,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yenidoğanda kötü beslenme, letarji ve tatlı kokulu idrarı MSUD lehine acil değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Katabolizmayı durdurmak için protein alımını geçici kes, yüksek kalorili glukoz veya lipid desteği sağla."
           },
           {
@@ -16689,11 +16690,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yenidoğanda kötü beslenme, letarji ve tatlı kokulu idrarı MSUD lehine acil değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Katabolizmayı durdurmak için protein alımını geçici kes, yüksek kalorili glukoz veya lipid desteği sağla."
           },
           {
@@ -17043,7 +17044,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Bekleyen idrarın koyulaşması, ochronotik pigmentasyon ve erken eklem yakınmalarını alkaptonüri lehine değerlendir."
           },
           {
@@ -17051,11 +17052,11 @@ export const rawCases = [
             "text": "İdrarda homogentisik asit düzeyiyle tanıyı doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Eklem ağrısı ve fonksiyon kaybı için analjezi, fizik tedavi ve ortopedik izlem planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Nitisinon gibi hedef tedavi seçeneklerini uzman değerlendirmesiyle düşün."
           }
         ],
@@ -17088,7 +17089,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Bekleyen idrarın koyulaşması, ochronotik pigmentasyon ve erken eklem yakınmalarını alkaptonüri lehine değerlendir."
           },
           {
@@ -17096,11 +17097,11 @@ export const rawCases = [
             "text": "İdrarda homogentisik asit düzeyiyle tanıyı doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Eklem ağrısı ve fonksiyon kaybı için analjezi, fizik tedavi ve ortopedik izlem planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Nitisinon gibi hedef tedavi seçeneklerini uzman değerlendirmesiyle düşün."
           }
         ],
@@ -17435,15 +17436,15 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yaygın hipopigmentasyon, fotofobi ve nistagmusu okülokutanöz albinizm lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Görme keskinliği, refraksiyon, nistagmus ve foveal hipoplazi için oftalmoloji değerlendirmesi planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Güneşten korunma, düzenli dermatolojik deri taraması ve eğitim ver."
           },
           {
@@ -17480,15 +17481,15 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yaygın hipopigmentasyon, fotofobi ve nistagmusu okülokutanöz albinizm lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Görme keskinliği, refraksiyon, nistagmus ve foveal hipoplazi için oftalmoloji değerlendirmesi planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Güneşten korunma, düzenli dermatolojik deri taraması ve eğitim ver."
           },
           {
@@ -17884,15 +17885,15 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Lens subluksasyonu, marfanoid görünüm ve tromboz eğilimini homosistinüri lehine birlikte değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Plazma total homosistein ve metiyonin düzeylerini ölç."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Akut tromboz varsa standart antikoagülasyon ve organ tutulumuna yönelik tedaviyi başlat."
           },
           {
@@ -17929,15 +17930,15 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Lens subluksasyonu, marfanoid görünüm ve tromboz eğilimini homosistinüri lehine birlikte değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Plazma total homosistein ve metiyonin düzeylerini ölç."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Akut tromboz varsa standart antikoagülasyon ve organ tutulumuna yönelik tedaviyi başlat."
           },
           {
@@ -18251,15 +18252,15 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Fotosensitif dermatit, diyare ve bilişsel değişikliği niasin eksikliği lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Niasin veya niktotinamid replasmanını geciktirmeden başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Malnütrisyon, alkol kullanımı, malabsorpsiyon veya izoniazid gibi nedenleri araştır."
           },
           {
@@ -18296,15 +18297,15 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Fotosensitif dermatit, diyare ve bilişsel değişikliği niasin eksikliği lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Niasin veya niktotinamid replasmanını geciktirmeden başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Malnütrisyon, alkol kullanımı, malabsorpsiyon veya izoniazid gibi nedenleri araştır."
           },
           {
@@ -18606,11 +18607,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Diş eti kanaması, perifoliküler peteşi, morarma ve halsizliği C vitamini eksikliği lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Beslenme öyküsü, kısıtlı diyet, alkol kullanımı veya malabsorpsiyon riskini sorgula."
           },
           {
@@ -18618,7 +18619,7 @@ export const rawCases = [
             "text": "Plazma askorbik asit düşüklüğü ve eşlik eden anemi veya demir eksikliğini yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Oral C vitamini replasmanı ve beslenme düzenlemesini başla."
           }
         ],
@@ -18651,11 +18652,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Diş eti kanaması, perifoliküler peteşi, morarma ve halsizliği C vitamini eksikliği lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Beslenme öyküsü, kısıtlı diyet, alkol kullanımı veya malabsorpsiyon riskini sorgula."
           },
           {
@@ -18663,7 +18664,7 @@ export const rawCases = [
             "text": "Plazma askorbik asit düşüklüğü ve eşlik eden anemi veya demir eksikliğini yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Oral C vitamini replasmanı ve beslenme düzenlemesini başla."
           }
         ],
@@ -19025,11 +19026,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Karaciğer enzim yüksekliği, hiperpigmentasyon, diyabet ve artropatiyi demir yükü lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Transferrin satürasyonu ve ferritin düzeyini ilk biyokimyasal tarama olarak yorumla."
           },
           {
@@ -19037,7 +19038,7 @@ export const rawCases = [
             "text": "HFE genetik testiyle herediter formu doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Flebotomi tedavisini ferritin hedeflerine göre planla."
           }
         ],
@@ -19070,11 +19071,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Karaciğer enzim yüksekliği, hiperpigmentasyon, diyabet ve artropatiyi demir yükü lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Transferrin satürasyonu ve ferritin düzeyini ilk biyokimyasal tarama olarak yorumla."
           },
           {
@@ -19082,7 +19083,7 @@ export const rawCases = [
             "text": "HFE genetik testiyle herediter formu doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Flebotomi tedavisini ferritin hedeflerine göre planla."
           }
         ],
@@ -19207,11 +19208,11 @@ export const rawCases = [
       },
       "managementSteps": [
         {
-          "title": "İlk karar",
+          "title": "Öncelikli yaklaşım",
           "text": "Karaciğer enzim yüksekliği, hiperpigmentasyon, diyabet ve artropatiyi demir yükü lehine değerlendir."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Transferrin satürasyonu ve ferritin düzeyini ilk biyokimyasal tarama olarak yorumla."
         },
         {
@@ -19219,17 +19220,17 @@ export const rawCases = [
           "text": "HFE genetik testiyle herediter formu doğrula."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Flebotomi tedavisini ferritin hedeflerine göre planla."
         }
       ],
       "management": [
         {
-          "title": "İlk karar",
+          "title": "Öncelikli yaklaşım",
           "text": "Karaciğer enzim yüksekliği, hiperpigmentasyon, diyabet ve artropatiyi demir yükü lehine değerlendir."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Transferrin satürasyonu ve ferritin düzeyini ilk biyokimyasal tarama olarak yorumla."
         },
         {
@@ -19237,7 +19238,7 @@ export const rawCases = [
           "text": "HFE genetik testiyle herediter formu doğrula."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Flebotomi tedavisini ferritin hedeflerine göre planla."
         }
       ]
@@ -19515,7 +19516,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Tendon ksantomu, çok yüksek LDL ve erken koroner hastalık aile öyküsünü ailesel hiperkolesterolemi lehine değerlendir."
           },
           {
@@ -19523,11 +19524,11 @@ export const rawCases = [
             "text": "Açlık lipid profiliyle LDL yüksekliğini ve trigliseridlerin genellikle normal olduğunu doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yüksek yoğunluklu statin temelli lipid düşürücü tedaviyi başla ve hedefe göre ek ajan düşün."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Birinci derece akrabalar için kaskad tarama planla."
           }
         ],
@@ -19560,7 +19561,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Tendon ksantomu, çok yüksek LDL ve erken koroner hastalık aile öyküsünü ailesel hiperkolesterolemi lehine değerlendir."
           },
           {
@@ -19568,11 +19569,11 @@ export const rawCases = [
             "text": "Açlık lipid profiliyle LDL yüksekliğini ve trigliseridlerin genellikle normal olduğunu doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yüksek yoğunluklu statin temelli lipid düşürücü tedaviyi başla ve hedefe göre ek ajan düşün."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Birinci derece akrabalar için kaskad tarama planla."
           }
         ],
@@ -19903,11 +19904,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Turuncu tonsiller, çok düşük HDL ve periferik nöropatiyi Tangier hastalığı lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HDL, ApoA-I ve tam lipid profilini birlikte yorumla."
           },
           {
@@ -19948,11 +19949,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Turuncu tonsiller, çok düşük HDL ve periferik nöropatiyi Tangier hastalığı lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HDL, ApoA-I ve tam lipid profilini birlikte yorumla."
           },
           {
@@ -20339,7 +20340,7 @@ export const rawCases = [
             "text": "Kontaminasyon varsa kıyafetleri çıkarıp dekontaminasyon uygula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Mutlak lenfosit sayısı trendi ve dozimetri ile doz tahmini yap."
           },
           {
@@ -20384,7 +20385,7 @@ export const rawCases = [
             "text": "Kontaminasyon varsa kıyafetleri çıkarıp dekontaminasyon uygula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Mutlak lenfosit sayısı trendi ve dozimetri ile doz tahmini yap."
           },
           {
@@ -20722,7 +20723,7 @@ export const rawCases = [
         "whyCorrect": "Oksidatif maruziyet sonrası hemoliz bulguları ve periferik yayma paterni G6PD eksikliğini en güçlü seçenek yapar. Bu nedenle en uygun seçim G6PD eksikliğine bağlı akut hemolitik kriz olur.",
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Bakla tüketiminden sonra semptom başlaması."
           },
           {
@@ -20762,7 +20763,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Bakla veya oksidatif ilaç sonrası ani sarılık, koyu idrar ve halsizliği akut hemoliz lehine değerlendir."
           },
           {
@@ -20770,7 +20771,7 @@ export const rawCases = [
             "text": "Hemoglobin, retikülosit, indirekt bilirubin, LDH, haptoglobin ve idrar bulgularıyla hemolizi doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Periferik yaymada Heinz cisimciği ve bite cell bulgularını ara."
           },
           {
@@ -20804,7 +20805,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Bakla veya oksidatif ilaç sonrası ani sarılık, koyu idrar ve halsizliği akut hemoliz lehine değerlendir."
           },
           {
@@ -20812,7 +20813,7 @@ export const rawCases = [
             "text": "Hemoglobin, retikülosit, indirekt bilirubin, LDH, haptoglobin ve idrar bulgularıyla hemolizi doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Periferik yaymada Heinz cisimciği ve bite cell bulgularını ara."
           },
           {
@@ -21180,11 +21181,11 @@ export const rawCases = [
             "text": "Monitörizasyon, damar yolu ve defibrilatör erişimini hazırla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kanama riskini dışlayarak başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Primer PCI veya uygun reperfüzyon yolunu zaman hedeflerine göre başlat."
           }
         ],
@@ -21225,11 +21226,11 @@ export const rawCases = [
             "text": "Monitörizasyon, damar yolu ve defibrilatör erişimini hazırla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aspirin, P2Y12 inhibitörü ve antikoagülasyonu kanama riskini dışlayarak başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Primer PCI veya uygun reperfüzyon yolunu zaman hedeflerine göre başlat."
           }
         ],
@@ -21586,7 +21587,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Öykü, muayene ve objektif bulguları birlikte değerlendir."
           },
           {
@@ -21598,7 +21599,7 @@ export const rawCases = [
             "text": "Alternatifleri somut bulgularla karşılaştır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Klinik aciliyet varsa uygun yönlendirme ve tedavi kararını ver."
           }
         ],
@@ -21631,7 +21632,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Öykü, muayene ve objektif bulguları birlikte değerlendir."
           },
           {
@@ -21643,7 +21644,7 @@ export const rawCases = [
             "text": "Alternatifleri somut bulgularla karşılaştır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Klinik aciliyet varsa uygun yönlendirme ve tedavi kararını ver."
           }
         ],
@@ -21989,7 +21990,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Uzamış öksürük, gece terlemesi ve apikal veya kaviter bulgularla akciğer TB şüphesini tanı."
           },
           {
@@ -22001,7 +22002,7 @@ export const rawCases = [
             "text": "ARB yayma, kültür ve moleküler direnç testleri için balgam örneği al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Standart dörtlü anti-tüberküloz tedaviyi uygun endikasyonda başla."
           }
         ],
@@ -22034,7 +22035,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Uzamış öksürük, gece terlemesi ve apikal veya kaviter bulgularla akciğer TB şüphesini tanı."
           },
           {
@@ -22046,7 +22047,7 @@ export const rawCases = [
             "text": "ARB yayma, kültür ve moleküler direnç testleri için balgam örneği al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Standart dörtlü anti-tüberküloz tedaviyi uygun endikasyonda başla."
           }
         ],
@@ -22403,7 +22404,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani dispne, plöritik ağrı, taşikardi ve DVT bulgularını birlikte değerlendir."
           },
           {
@@ -22415,7 +22416,7 @@ export const rawCases = [
             "text": "Pretest olasılığa göre D-dimer ya da BT pulmoner anjiyografi stratejisini seç."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kontrendikasyon yoksa antikoagülasyonu başlat ve kanama riskini izle."
           }
         ],
@@ -22448,7 +22449,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Ani dispne, plöritik ağrı, taşikardi ve DVT bulgularını birlikte değerlendir."
           },
           {
@@ -22460,7 +22461,7 @@ export const rawCases = [
             "text": "Pretest olasılığa göre D-dimer ya da BT pulmoner anjiyografi stratejisini seç."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kontrendikasyon yoksa antikoagülasyonu başlat ve kanama riskini izle."
           }
         ],
@@ -22823,7 +22824,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hipotansiyon, bilinç bulanıklığı ve laktat yüksekliğini septik şok lehine acil kabul et."
           },
           {
@@ -22835,7 +22836,7 @@ export const rawCases = [
             "text": "Antibiyotiği geciktirmeden önce iki set kan kültürü ve odak örneklerini al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İlk saat içinde olası odağı kapsayan geniş spektrumlu antibiyotik başla."
           }
         ],
@@ -22868,7 +22869,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hipotansiyon, bilinç bulanıklığı ve laktat yüksekliğini septik şok lehine acil kabul et."
           },
           {
@@ -22880,7 +22881,7 @@ export const rawCases = [
             "text": "Antibiyotiği geciktirmeden önce iki set kan kültürü ve odak örneklerini al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İlk saat içinde olası odağı kapsayan geniş spektrumlu antibiyotik başla."
           }
         ],
@@ -23243,11 +23244,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Döküntü, artrit, serozit, nörolojik bulgu ve renal tutulum belirtilerini sistemik aktivite açısından değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anti-dsDNA ve C3 veya C4 düzeylerini aktivite takibi için kullan."
           },
           {
@@ -23288,11 +23289,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Döküntü, artrit, serozit, nörolojik bulgu ve renal tutulum belirtilerini sistemik aktivite açısından değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anti-dsDNA ve C3 veya C4 düzeylerini aktivite takibi için kullan."
           },
           {
@@ -23654,7 +23655,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Göz-ağız kuruluğu, parotis büyümesi ve ekstraglandüler bulguları birlikte değerlendir."
           },
           {
@@ -23662,11 +23663,11 @@ export const rawCases = [
             "text": "Schirmer testi, oküler boyama ve tükürük bezi değerlendirmesiyle objektif kuruluğu destekle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anti-Ro veya SSA, Anti-La veya SSB ve eşlik eden otoimmün hastalıkları değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Semptomatik kuruluk için yapay gözyaşı, ağız bakımı ve sekretagog tedavi endikasyonunu planla."
           }
         ],
@@ -23699,7 +23700,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Göz-ağız kuruluğu, parotis büyümesi ve ekstraglandüler bulguları birlikte değerlendir."
           },
           {
@@ -23707,11 +23708,11 @@ export const rawCases = [
             "text": "Schirmer testi, oküler boyama ve tükürük bezi değerlendirmesiyle objektif kuruluğu destekle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anti-Ro veya SSA, Anti-La veya SSB ve eşlik eden otoimmün hastalıkları değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Semptomatik kuruluk için yapay gözyaşı, ağız bakımı ve sekretagog tedavi endikasyonunu planla."
           }
         ],
@@ -24033,11 +24034,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Sabah tutukluğu, simetrik küçük eklem şişliği ve hareket kısıtlılığını inflamatuvar artrit olarak değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Septik artrit düşündüren ateş, akut tek eklem şişliği veya şiddetli ağrı bulgularını dışla."
           },
           {
@@ -24045,7 +24046,7 @@ export const rawCases = [
             "text": "RF, anti-CCP, ESR veya CRP ve el-bilek görüntülemesini tanı ve hasar riski için kullan."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Erken dönemde hastalık modifiye edici tedaviyi planla."
           }
         ],
@@ -24078,11 +24079,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Sabah tutukluğu, simetrik küçük eklem şişliği ve hareket kısıtlılığını inflamatuvar artrit olarak değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Septik artrit düşündüren ateş, akut tek eklem şişliği veya şiddetli ağrı bulgularını dışla."
           },
           {
@@ -24090,7 +24091,7 @@ export const rawCases = [
             "text": "RF, anti-CCP, ESR veya CRP ve el-bilek görüntülemesini tanı ve hasar riski için kullan."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Erken dönemde hastalık modifiye edici tedaviyi planla."
           }
         ],
@@ -24442,7 +24443,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Erkek bebekte anne IgG'si azaldıktan sonra başlayan tekrarlayan sinopulmoner enfeksiyonları humoral immün yetmezlik lehine değerlendir."
           },
           {
@@ -24450,7 +24451,7 @@ export const rawCases = [
             "text": "Serum IgG, IgA ve IgM düzeylerini ve periferik B hücre sayısını birlikte yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aktif bakteriyel enfeksiyon varsa uygun antibiyotikle tedavi et."
           },
           {
@@ -24487,7 +24488,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Erkek bebekte anne IgG'si azaldıktan sonra başlayan tekrarlayan sinopulmoner enfeksiyonları humoral immün yetmezlik lehine değerlendir."
           },
           {
@@ -24495,7 +24496,7 @@ export const rawCases = [
             "text": "Serum IgG, IgA ve IgM düzeylerini ve periferik B hücre sayısını birlikte yorumla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aktif bakteriyel enfeksiyon varsa uygun antibiyotikle tedavi et."
           },
           {
@@ -24849,11 +24850,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yaşa göre genel durum, beslenme, hidrasyon ve kırmızı bayrak bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HIV veya AIDS için ayırt ettirici öykü ve muayene ipuçlarını belirle."
           },
           {
@@ -24861,7 +24862,7 @@ export const rawCases = [
             "text": "Gerekiyorsa yalnız tanıyı veya tedavi kararını değiştirecek hedef tetkiki iste."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HIV veya AIDS için yaşa uygun tedavi veya konsültasyon kararını ver."
           }
         ],
@@ -24894,11 +24895,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yaşa göre genel durum, beslenme, hidrasyon ve kırmızı bayrak bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HIV veya AIDS için ayırt ettirici öykü ve muayene ipuçlarını belirle."
           },
           {
@@ -24906,7 +24907,7 @@ export const rawCases = [
             "text": "Gerekiyorsa yalnız tanıyı veya tedavi kararını değiştirecek hedef tetkiki iste."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HIV veya AIDS için yaşa uygun tedavi veya konsültasyon kararını ver."
           }
         ],
@@ -25775,7 +25776,7 @@ export const rawCases = [
             "text": "Servikal omurga güvenliğini koruyarak oksijen veya ventilasyon desteği sağla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Boyun yumuşak doku hasarı, laringeal ödem, stridor ve nörolojik defisitleri ara."
           },
           {
@@ -25817,7 +25818,7 @@ export const rawCases = [
             "text": "Servikal omurga güvenliğini koruyarak oksijen veya ventilasyon desteği sağla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Boyun yumuşak doku hasarı, laringeal ödem, stridor ve nörolojik defisitleri ara."
           },
           {
@@ -26182,7 +26183,7 @@ export const rawCases = [
         "whyCorrect": "Doz uyumu olmasına rağmen standart dozda ağır miyelosupresyon gelişmesi ve TPMT varyantının saptanması farmakogenetik toksisiteyi en güçlü tanı yapar. Bu nedenle en uygun seçim TPMT düşük aktivitesine bağlı azatioprin toksisitesi olur.",
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Azatioprin başlanmasından sonra zaman uyumlu toksisite."
           },
           {
@@ -26222,11 +26223,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yaşa göre genel durum, beslenme, hidrasyon ve kırmızı bayrak bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "TPMT düşük aktivitesine bağlı azatioprin toksisitesi için ayırt ettirici öykü ve muayene ipuçlarını belirle."
           },
           {
@@ -26234,7 +26235,7 @@ export const rawCases = [
             "text": "Gerekiyorsa yalnız tanıyı veya tedavi kararını değiştirecek hedef tetkiki iste."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "TPMT düşük aktivitesine bağlı azatioprin toksisitesi için yaşa uygun tedavi veya konsültasyon kararını ver."
           }
         ],
@@ -26264,11 +26265,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yaşa göre genel durum, beslenme, hidrasyon ve kırmızı bayrak bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "TPMT düşük aktivitesine bağlı azatioprin toksisitesi için ayırt ettirici öykü ve muayene ipuçlarını belirle."
           },
           {
@@ -26276,7 +26277,7 @@ export const rawCases = [
             "text": "Gerekiyorsa yalnız tanıyı veya tedavi kararını değiştirecek hedef tetkiki iste."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "TPMT düşük aktivitesine bağlı azatioprin toksisitesi için yaşa uygun tedavi veya konsültasyon kararını ver."
           }
         ],
@@ -26986,7 +26987,7 @@ export const rawCases = [
             "text": "Gerekli acil müdahaleyi varsayılan onamla yap ve kayda geçir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yakın veya vasiyi arama ve bilgilendirme sürecini tedaviyi geciktirmeden sürdür."
           }
         ],
@@ -27000,7 +27001,7 @@ export const rawCases = [
             "text": "Gerekli acil müdahaleyi varsayılan onamla yap ve kayda geçir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yakın veya vasiyi arama ve bilgilendirme sürecini tedaviyi geciktirmeden sürdür."
           }
         ],
@@ -27178,11 +27179,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hastayı güvenli ve mahrem ortamda eşinden ayrı değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Acil tıbbi gereksinimi ve yeniden zarar görme riskini değerlendir."
           },
           {
@@ -27192,11 +27193,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hastayı güvenli ve mahrem ortamda eşinden ayrı değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Acil tıbbi gereksinimi ve yeniden zarar görme riskini değerlendir."
           },
           {
@@ -27616,7 +27617,7 @@ export const rawCases = [
             "text": "Elin dolaşım, duyu, motor fonksiyon ve yara durumunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ağrı kontrolü, yara bakımı ve gerekli görüntülemeyi başlat."
           },
           {
@@ -27630,7 +27631,7 @@ export const rawCases = [
             "text": "Elin dolaşım, duyu, motor fonksiyon ve yara durumunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ağrı kontrolü, yara bakımı ve gerekli görüntülemeyi başlat."
           },
           {
@@ -27816,7 +27817,7 @@ export const rawCases = [
             "text": "Hava yolu, solunum, dolaşım ve anafilaksi bulgularını hızla dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Oral veya uygun antihistaminik ver ve tetikleyiciden kaçınmayı anlat."
           },
           {
@@ -27830,7 +27831,7 @@ export const rawCases = [
             "text": "Hava yolu, solunum, dolaşım ve anafilaksi bulgularını hızla dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Oral veya uygun antihistaminik ver ve tetikleyiciden kaçınmayı anlat."
           },
           {
@@ -28008,7 +28009,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Streptokokal farenjit bulgularını değerlendir."
           },
           {
@@ -28016,13 +28017,13 @@ export const rawCases = [
             "text": "Gerekirse hızlı antijen veya kültür ile doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Uygun penisilin veya amoksisilin tedavisini ve bulaş veya okul izolasyonu önerilerini ver."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Streptokokal farenjit bulgularını değerlendir."
           },
           {
@@ -28030,7 +28031,7 @@ export const rawCases = [
             "text": "Gerekirse hızlı antijen veya kültür ile doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Uygun penisilin veya amoksisilin tedavisini ve bulaş veya okul izolasyonu önerilerini ver."
           }
         ],
@@ -28132,7 +28133,7 @@ export const rawCases = [
         },
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yakınma çocuğun elinden çekilmesinden hemen sonra başlamış."
           },
           {
@@ -28208,11 +28209,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Nörovasküler muayene ve travma bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tipik olguda uygun redüksiyon manevrasını uygula."
           },
           {
@@ -28222,11 +28223,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Nörovasküler muayene ve travma bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tipik olguda uygun redüksiyon manevrasını uygula."
           },
           {
@@ -28417,7 +28418,7 @@ export const rawCases = [
             "text": "Kızamık bildirimini ve aşı durumu veya temaslı profilaksisini planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Komplikasyon ve destek tedavisi açısından yakın izle."
           }
         ],
@@ -28431,7 +28432,7 @@ export const rawCases = [
             "text": "Kızamık bildirimini ve aşı durumu veya temaslı profilaksisini planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Komplikasyon ve destek tedavisi açısından yakın izle."
           }
         ],
@@ -28605,11 +28606,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hastayı oturtup başını öne eğdir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Burun kanatlarına kesintisiz direkt bası uygula."
           },
           {
@@ -28619,11 +28620,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hastayı oturtup başını öne eğdir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Burun kanatlarına kesintisiz direkt bası uygula."
           },
           {
@@ -29122,7 +29123,7 @@ export const rawCases = [
         ],
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Üst ekstremitenin nörovasküler muayenesini omuzdan ele kadar tamamla."
           },
           {
@@ -29134,7 +29135,7 @@ export const rawCases = [
             "text": "Humerus grafileriyle kırığın seviyesi, deplasmanı ve ekleme uzanımını doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Açık kırık, damar yaralanması, kompartman bulgusu veya ilerleyici defisiti acil dışla."
           }
         ],
@@ -29166,7 +29167,7 @@ export const rawCases = [
         },
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Üst ekstremitenin nörovasküler muayenesini omuzdan ele kadar tamamla."
           },
           {
@@ -29178,7 +29179,7 @@ export const rawCases = [
             "text": "Humerus grafileriyle kırığın seviyesi, deplasmanı ve ekleme uzanımını doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Açık kırık, damar yaralanması, kompartman bulgusu veya ilerleyici defisiti acil dışla."
           }
         ],
@@ -29388,7 +29389,7 @@ export const rawCases = [
         ],
         "managementSteps": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Pozisyon değişimi sonrası venöz dönüş azalmasını başlangıç olay olarak tanı."
           },
           {
@@ -29396,7 +29397,7 @@ export const rawCases = [
             "text": "Karotis sinüs ve aort kavsindeki baroreseptör deşarj azalmasını mekanizmaya yerleştir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sempatik aktivite artışı ve parasempatik tonus azalmasıyla taşikardi veya vasokonstriksiyonu açıkla."
           },
           {
@@ -29432,7 +29433,7 @@ export const rawCases = [
         },
         "management": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Pozisyon değişimi sonrası venöz dönüş azalmasını başlangıç olay olarak tanı."
           },
           {
@@ -29440,7 +29441,7 @@ export const rawCases = [
             "text": "Karotis sinüs ve aort kavsindeki baroreseptör deşarj azalmasını mekanizmaya yerleştir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sempatik aktivite artışı ve parasempatik tonus azalmasıyla taşikardi veya vasokonstriksiyonu açıkla."
           },
           {
@@ -29669,11 +29670,11 @@ export const rawCases = [
         ],
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Dil çıkarma veya yutkunma ile hareket eden orta hat boyun kitlesini tiroglossal kanal kisti lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Enfeksiyon bulgusu ve tiroid dokusunun normal yerleşimini değerlendir."
           },
           {
@@ -29681,7 +29682,7 @@ export const rawCases = [
             "text": "Ultrasonografi ile kistik yapı ve normal tiroid varlığını doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aktif enfeksiyon varsa önce tedavi et."
           }
         ],
@@ -29713,11 +29714,11 @@ export const rawCases = [
         },
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Dil çıkarma veya yutkunma ile hareket eden orta hat boyun kitlesini tiroglossal kanal kisti lehine değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Enfeksiyon bulgusu ve tiroid dokusunun normal yerleşimini değerlendir."
           },
           {
@@ -29725,7 +29726,7 @@ export const rawCases = [
             "text": "Ultrasonografi ile kistik yapı ve normal tiroid varlığını doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aktif enfeksiyon varsa önce tedavi et."
           }
         ],
@@ -29977,7 +29978,7 @@ export const rawCases = [
         ],
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Amenore, tek taraflı pelvik ağrı ve vajinal kanamayı ektopik gebelik açısından değerlendir."
           },
           {
@@ -29985,7 +29986,7 @@ export const rawCases = [
             "text": "Hemodinamik stabilite ve periton irritasyon bulgularını sınıfla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Serum beta-hCG ve transvajinal ultrason ile intrauterin gebelik veya ektopik olasılığını değerlendir."
           },
           {
@@ -30021,7 +30022,7 @@ export const rawCases = [
         },
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Amenore, tek taraflı pelvik ağrı ve vajinal kanamayı ektopik gebelik açısından değerlendir."
           },
           {
@@ -30029,7 +30030,7 @@ export const rawCases = [
             "text": "Hemodinamik stabilite ve periton irritasyon bulgularını sınıfla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Serum beta-hCG ve transvajinal ultrason ile intrauterin gebelik veya ektopik olasılığını değerlendir."
           },
           {
@@ -30275,11 +30276,11 @@ export const rawCases = [
             "text": "Ciddi toksisite veya kontrendike ilacı durdur."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Spesifik antidot, alternatif ilaç veya destek tedaviyi doğru endikasyonla başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hedef organ yan etkilerini laboratuvar ve klinik izle."
           }
         ],
@@ -30319,11 +30320,11 @@ export const rawCases = [
             "text": "Ciddi toksisite veya kontrendike ilacı durdur."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Spesifik antidot, alternatif ilaç veya destek tedaviyi doğru endikasyonla başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hedef organ yan etkilerini laboratuvar ve klinik izle."
           }
         ],
@@ -30535,7 +30536,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Dehidratasyon şiddetini değerlendir ve hızlı sıvı-elektrolit replasmanı başlat."
           },
           {
@@ -30549,7 +30550,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Dehidratasyon şiddetini değerlendir ve hızlı sıvı-elektrolit replasmanı başlat."
           },
           {
@@ -30697,11 +30698,11 @@ export const rawCases = [
             "text": "Bulanık görme ve retinal bulgular CMV retinitiyle uyumludur."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tedavi sonrası nötropeni gelişmesi gansiklovir toksisitesini düşündürür."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "AIDS veya CMV retiniti tedavisi, gansiklovir sonrası nötropeni."
           }
         ],
@@ -30898,7 +30899,7 @@ export const rawCases = [
             "text": "Klinik yüzeyel dermal veya lenfatik enfeksiyon paternindedir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Streptokokal etken ve penisilin duyarlılığı TUS spot bilgisidir."
           },
           {
@@ -30962,29 +30963,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Sistemik toksisite ve nekrotizan enfeksiyon bulgularını dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Streptokok kapsayan uygun beta-laktam tedavi başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Giriş kapısı, ödem ve tekrarlama risklerini değerlendir."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Sistemik toksisite ve nekrotizan enfeksiyon bulgularını dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Streptokok kapsayan uygun beta-laktam tedavi başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Giriş kapısı, ödem ve tekrarlama risklerini değerlendir."
           }
         ],
@@ -31166,11 +31167,11 @@ export const rawCases = [
             "text": "Yarayı temizle ve olayı kayıt altına al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kaynak ve sağlık çalışanı için başlangıç anti-HCV, HCV RNA veya ALT planını yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "2–4 hafta civarında HCV RNA ile erken enfeksiyon takibini başlat."
           }
         ],
@@ -31180,11 +31181,11 @@ export const rawCases = [
             "text": "Yarayı temizle ve olayı kayıt altına al."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kaynak ve sağlık çalışanı için başlangıç anti-HCV, HCV RNA veya ALT planını yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "2–4 hafta civarında HCV RNA ile erken enfeksiyon takibini başlat."
           }
         ],
@@ -31332,7 +31333,7 @@ export const rawCases = [
             "text": "PPD dönüşümü yeni enfeksiyon lehine yorumlanır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Profilaksi başlamadan önce aktif TB dışlanmalıdır."
           },
           {
@@ -31396,11 +31397,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Temas öyküsünü ve semptomları sorgula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Akciğer grafisi ve gerekirse mikrobiyolojik değerlendirmeyle aktif hastalığı dışla."
           },
           {
@@ -31410,11 +31411,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Temas öyküsünü ve semptomları sorgula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Akciğer grafisi ve gerekirse mikrobiyolojik değerlendirmeyle aktif hastalığı dışla."
           },
           {
@@ -31597,7 +31598,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "İş-maruziyet zaman ilişkisini ayrıntılı sorgula."
           },
           {
@@ -31611,7 +31612,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "İş-maruziyet zaman ilişkisini ayrıntılı sorgula."
           },
           {
@@ -31797,29 +31798,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Pnömoni şiddetini CURB-65 bileşenleriyle puanla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hipoksemi, sepsis ve komorbiditeyi ayrıca değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yatış veya ayaktan tedavi kararını skor ve klinik tabloyla birlikte ver."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Pnömoni şiddetini CURB-65 bileşenleriyle puanla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hipoksemi, sepsis ve komorbiditeyi ayrıca değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yatış veya ayaktan tedavi kararını skor ve klinik tabloyla birlikte ver."
           }
         ],
@@ -32251,7 +32252,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Sekonder hipertansiyon kırmızı bayraklarını değerlendir."
           },
           {
@@ -32265,7 +32266,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Sekonder hipertansiyon kırmızı bayraklarını değerlendir."
           },
           {
@@ -32393,7 +32394,7 @@ export const rawCases = [
             "text": "Verapamil negatif inotrop etkisi nedeniyle PAH'da uygun seçenek değildir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "PAH tedavisinde verapamilin negatif inotrop etkisi."
           }
         ],
@@ -32453,29 +32454,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "PAH tipini ve vazoreaktivite durumunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sağ ventrikül fonksiyonu ve risk sınıfına göre hedef tedavi seç."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Negatif inotrop ilaçlardan kaçın ve uzman merkez takibini planla."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "PAH tipini ve vazoreaktivite durumunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sağ ventrikül fonksiyonu ve risk sınıfına göre hedef tedavi seç."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Negatif inotrop ilaçlardan kaçın ve uzman merkez takibini planla."
           }
         ],
@@ -32657,7 +32658,7 @@ export const rawCases = [
             "text": "Oksijenasyon, kan basıncı ve solunum iş yükünü değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Noninvaziv ventilasyon ve IV vazodilatör tedaviyi başlat."
           },
           {
@@ -32671,7 +32672,7 @@ export const rawCases = [
             "text": "Oksijenasyon, kan basıncı ve solunum iş yükünü değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Noninvaziv ventilasyon ve IV vazodilatör tedaviyi başlat."
           },
           {
@@ -32793,7 +32794,7 @@ export const rawCases = [
             "text": "Kilo kaybı veya disfaji yokluğu endoskopi gereğini tamamen ortadan kaldırmaz."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İleri yaşta yeni başlayan dispepsi."
           }
         ],
@@ -32853,11 +32854,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yaş ve alarm bulgularını birlikte değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Üst gastrointestinal endoskopi planla."
           },
           {
@@ -32867,11 +32868,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Yaş ve alarm bulgularını birlikte değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Üst gastrointestinal endoskopi planla."
           },
           {
@@ -33296,7 +33297,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Kolanjit bulgularını ve bilirubin veya kolestaz enzimlerini değerlendir."
           },
           {
@@ -33304,13 +33305,13 @@ export const rawCases = [
             "text": "Orta olasılıklı koledok taşı şüphesinde MRCP veya EUS planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Taş doğrulanırsa ERCP veya cerrahi yaklaşımı planla."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Kolanjit bulgularını ve bilirubin veya kolestaz enzimlerini değerlendir."
           },
           {
@@ -33318,7 +33319,7 @@ export const rawCases = [
             "text": "Orta olasılıklı koledok taşı şüphesinde MRCP veya EUS planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Taş doğrulanırsa ERCP veya cerrahi yaklaşımı planla."
           }
         ],
@@ -33535,7 +33536,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Gecikmeden tanısal parasentez yap."
           },
           {
@@ -33543,13 +33544,13 @@ export const rawCases = [
             "text": "Asit PMN, kültür ve temel analizleri gönder."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "SBP şüphesinde uygun antibiyotik ve albümin desteğini planla."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Gecikmeden tanısal parasentez yap."
           },
           {
@@ -33557,7 +33558,7 @@ export const rawCases = [
             "text": "Asit PMN, kültür ve temel analizleri gönder."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "SBP şüphesinde uygun antibiyotik ve albümin desteğini planla."
           }
         ],
@@ -33776,11 +33777,11 @@ export const rawCases = [
             "text": "ABC, kan basıncı ve glukozu hızla stabilize et."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Mümkünse kortizol veya ACTH örneği alıp IV hidrokortizon ver."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İzotonik sıvı ve hipoglisemi veya elektrolit düzeltmesini başlat."
           }
         ],
@@ -33790,11 +33791,11 @@ export const rawCases = [
             "text": "ABC, kan basıncı ve glukozu hızla stabilize et."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Mümkünse kortizol veya ACTH örneği alıp IV hidrokortizon ver."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İzotonik sıvı ve hipoglisemi veya elektrolit düzeltmesini başlat."
           }
         ],
@@ -34016,11 +34017,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "İlaç veya tiroid hormonu kullanımını güvenli biçimde sorgula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tiroglobulin, TRAb ve uptake paternini birlikte yorumla."
           },
           {
@@ -34030,11 +34031,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "İlaç veya tiroid hormonu kullanımını güvenli biçimde sorgula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tiroglobulin, TRAb ve uptake paternini birlikte yorumla."
           },
           {
@@ -34267,7 +34268,7 @@ export const rawCases = [
             "text": "Hook effect için serum dilüsyonu iste."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Gerçek prolaktin düzeyine göre prolaktinoma tedavi planını yap."
           }
         ],
@@ -34281,7 +34282,7 @@ export const rawCases = [
             "text": "Hook effect için serum dilüsyonu iste."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Gerçek prolaktin düzeyine göre prolaktinoma tedavi planını yap."
           }
         ],
@@ -34396,7 +34397,7 @@ export const rawCases = [
             "text": "Karaciğer metastazı sistemik tedavi planını gerektirir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "KRAS veya NRAS ve MSI tedavi seçimini etkiler."
           },
           {
@@ -34464,7 +34465,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Metastatik hastalıkta moleküler paneli iste."
           },
           {
@@ -34472,13 +34473,13 @@ export const rawCases = [
             "text": "RAS veya BRAF ve MSI veya MMR sonucuna göre hedef veya immünoterapi uygunluğunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Performans durumu ve tümör yüküne göre sistemik tedavi planla."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Metastatik hastalıkta moleküler paneli iste."
           },
           {
@@ -34486,7 +34487,7 @@ export const rawCases = [
             "text": "RAS veya BRAF ve MSI veya MMR sonucuna göre hedef veya immünoterapi uygunluğunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Performans durumu ve tümör yüküne göre sistemik tedavi planla."
           }
         ],
@@ -34702,7 +34703,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hemogram ve periferik yaymayı değerlendir."
           },
           {
@@ -34710,13 +34711,13 @@ export const rawCases = [
             "text": "Periferik kanda akım sitometri ile klonal B hücre immünfenotipini doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Semptom, sitopeni ve genetik risklere göre izlem veya tedavi kararı ver."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hemogram ve periferik yaymayı değerlendir."
           },
           {
@@ -34724,7 +34725,7 @@ export const rawCases = [
             "text": "Periferik kanda akım sitometri ile klonal B hücre immünfenotipini doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Semptom, sitopeni ve genetik risklere göre izlem veya tedavi kararı ver."
           }
         ],
@@ -34950,11 +34951,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hemodinami ve anemi şiddetini değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hemoliz paneliyle birlikte direkt Coombs testini iste."
           },
           {
@@ -34964,11 +34965,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Hemodinami ve anemi şiddetini değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Hemoliz paneliyle birlikte direkt Coombs testini iste."
           },
           {
@@ -35151,11 +35152,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Aile öyküsünü kanser tipi ve yaşına göre sınıflandır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sendrom-gen eşleşmesini doğru kur."
           },
           {
@@ -35165,11 +35166,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Aile öyküsünü kanser tipi ve yaşına göre sınıflandır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sendrom-gen eşleşmesini doğru kur."
           },
           {
@@ -35280,7 +35281,7 @@ export const rawCases = [
         },
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Antibiyotik uygulamasından dakikalar sonra reaksiyon gelişmiştir."
           },
           {
@@ -35494,7 +35495,7 @@ export const rawCases = [
             "text": "Aspirin ve kalsiyum kanal blokerinden yeterli yanıt alınamamıştır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İloprost-bosentan vasküler hedefli tedaviyle uyumludur."
           },
           {
@@ -35558,29 +35559,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Dijital iskemi şiddetini ve enfeksiyon veya nekroz bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Vazodilatör tedaviyi iloprost ve bosentan gibi hedef tedavilerle güçlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Soğuk maruziyeti, sigara ve travmadan kaçınma eğitimi ver."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Dijital iskemi şiddetini ve enfeksiyon veya nekroz bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Vazodilatör tedaviyi iloprost ve bosentan gibi hedef tedavilerle güçlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Soğuk maruziyeti, sigara ve travmadan kaçınma eğitimi ver."
           }
         ],
@@ -35804,29 +35805,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Klinik aktivite ve renal bulguları değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anti-dsDNA, C3 veya C4, idrar proteinüri veya aktif sediment takibini yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aktiviteye göre immünsüpresif tedavi ve nefroloji değerlendirmesini planla."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Klinik aktivite ve renal bulguları değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anti-dsDNA, C3 veya C4, idrar proteinüri veya aktif sediment takibini yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Aktiviteye göre immünsüpresif tedavi ve nefroloji değerlendirmesini planla."
           }
         ],
@@ -36056,29 +36057,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Nefrotik sendrom şiddetini ve böbrek fonksiyonunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anti-PLA2R ve sekonder neden taramasını yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Risk sınıfına göre destek tedavi ve immünsüpresyon gereğini planla."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Nefrotik sendrom şiddetini ve böbrek fonksiyonunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anti-PLA2R ve sekonder neden taramasını yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Risk sınıfına göre destek tedavi ve immünsüpresyon gereğini planla."
           }
         ],
@@ -36259,11 +36260,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "İdrar sedimenti ve hematüri paternini değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Atipik bulgu varsa diyabet dışı böbrek hastalıklarını araştır."
           },
           {
@@ -36273,11 +36274,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "İdrar sedimenti ve hematüri paternini değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Atipik bulgu varsa diyabet dışı böbrek hastalıklarını araştır."
           },
           {
@@ -36497,7 +36498,7 @@ export const rawCases = [
             "text": "EKG değişikliğinde IV kalsiyum glukonat ver."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ardından insülin-dekstroz, beta agonist ve potasyum uzaklaştırıcı tedavileri planla."
           }
         ],
@@ -36511,7 +36512,7 @@ export const rawCases = [
             "text": "EKG değişikliğinde IV kalsiyum glukonat ver."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ardından insülin-dekstroz, beta agonist ve potasyum uzaklaştırıcı tedavileri planla."
           }
         ],
@@ -36594,7 +36595,7 @@ export const rawCases = [
           "text": "EKG değişikliğinde IV kalsiyum glukonat ver."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Ardından insülin-dekstroz, beta agonist ve potasyum uzaklaştırıcı tedavileri planla."
         }
       ],
@@ -36608,7 +36609,7 @@ export const rawCases = [
           "text": "EKG değişikliğinde IV kalsiyum glukonat ver."
         },
         {
-          "title": "Tedavi önceliği",
+          "title": "Tedavi basamağı",
           "text": "Ardından insülin-dekstroz, beta agonist ve potasyum uzaklaştırıcı tedavileri planla."
         }
       ]
@@ -36716,7 +36717,7 @@ export const rawCases = [
             "text": "İştah azalması, keyifsizlik ve ilgide azalma vardır."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Klinik başlangıç duygusal stresörle ilişkilidir."
           },
           {
@@ -36784,29 +36785,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Depresyon, intihar riski ve işlevselliği değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kognitif tarama ve geri döndürülebilir nedenleri dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Depresyon tedavisi ve yakın takip planla."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Depresyon, intihar riski ve işlevselliği değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kognitif tarama ve geri döndürülebilir nedenleri dışla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Depresyon tedavisi ve yakın takip planla."
           }
         ],
@@ -36984,29 +36985,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Döküntü dağılımı, mukozal tutulum ve sistemik toksisiteyi değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tipik olguda hastayı benign seyir konusunda bilgilendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kaşıntı için semptomatik tedavi ve atipik veya uzayan olguda yeniden değerlendirme planla."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Döküntü dağılımı, mukozal tutulum ve sistemik toksisiteyi değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tipik olguda hastayı benign seyir konusunda bilgilendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kaşıntı için semptomatik tedavi ve atipik veya uzayan olguda yeniden değerlendirme planla."
           }
         ],
@@ -37204,29 +37205,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Klinik dağılımı değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Topikal terbinafin gibi antifungal tedavi başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ayak kuruluğu, ayakkabı veya çorap hijyeni ve nüks önlemlerini anlat."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Klinik dağılımı değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Topikal terbinafin gibi antifungal tedavi başla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ayak kuruluğu, ayakkabı veya çorap hijyeni ve nüks önlemlerini anlat."
           }
         ],
@@ -37333,7 +37334,7 @@ export const rawCases = [
         },
         "evidenceChain": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Ani başlayan tek taraflı güç kaybı vasküler olayı düşündürür."
           },
           {
@@ -37409,29 +37410,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İnme başlangıç zamanını ve nörolojik defisiti belirle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Acil beyin görüntüleme ve reperfüzyon uygunluğunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Damar sulama alanına göre etiyoloji ve sekonder korunmayı planla."
           }
         ],
         "management": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "İnme başlangıç zamanını ve nörolojik defisiti belirle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Acil beyin görüntüleme ve reperfüzyon uygunluğunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Damar sulama alanına göre etiyoloji ve sekonder korunmayı planla."
           }
         ],
@@ -37545,7 +37546,7 @@ export const rawCases = [
             "text": "Meksiletinle gevşeme güçlüğünün azalması miyotoniyi destekler."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Erişkin başlangıçlı distal güçsüzlük veya myotoni paternine uyar."
           },
           {
@@ -37609,7 +37610,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Miyotoniyi muayenede perküsyon veya grip ile göster."
           },
           {
@@ -37617,13 +37618,13 @@ export const rawCases = [
             "text": "EKG, katarakt ve endokrin veya metabolik taramaları planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Genetik doğrulama ve kardiyak izlem gereğini değerlendir."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Miyotoniyi muayenede perküsyon veya grip ile göster."
           },
           {
@@ -37631,7 +37632,7 @@ export const rawCases = [
             "text": "EKG, katarakt ve endokrin veya metabolik taramaları planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Genetik doğrulama ve kardiyak izlem gereğini değerlendir."
           }
         ],
@@ -37832,11 +37833,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Acil nörolojik değerlendirme ve beyin görüntüleme veya BOS planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HSV ensefaliti şüphesinde IV asikloviri geciktirmeden başlat."
           },
           {
@@ -37846,11 +37847,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Acil nörolojik değerlendirme ve beyin görüntüleme veya BOS planla."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HSV ensefaliti şüphesinde IV asikloviri geciktirmeden başlat."
           },
           {
@@ -38033,11 +38034,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Duygunun kime ait gösterildiğini belirle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Bilinçli mi bilinçdışı mı olduğuna bak."
           },
           {
@@ -38047,11 +38048,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Duygunun kime ait gösterildiğini belirle."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Bilinçli mi bilinçdışı mı olduğuna bak."
           },
           {
@@ -38233,7 +38234,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Tiamin eksikliğini ve Wernicke bulgularını değerlendir."
           },
           {
@@ -38247,7 +38248,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Tiamin eksikliğini ve Wernicke bulgularını değerlendir."
           },
           {
@@ -38437,11 +38438,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Klinik mekanik ağrı paternini değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Direkt grafide OA bulgularını beklenen veya beklenmeyen diye ayır."
           },
           {
@@ -38451,11 +38452,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Klinik mekanik ağrı paternini değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Direkt grafide OA bulgularını beklenen veya beklenmeyen diye ayır."
           },
           {
@@ -38643,11 +38644,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Omuz muayenesinde biseps provokasyon testlerini yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Rotator cuff ve servikal nörolojik bulguları dışla."
           },
           {
@@ -38657,11 +38658,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Omuz muayenesinde biseps provokasyon testlerini yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Rotator cuff ve servikal nörolojik bulguları dışla."
           },
           {
@@ -39071,11 +39072,11 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Kırmızı bayrak nörolojik bulguları değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Gerekli gözlem ve baş travması uyarılarını ver."
           },
           {
@@ -39085,11 +39086,11 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Kırmızı bayrak nörolojik bulguları değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Gerekli gözlem ve baş travması uyarılarını ver."
           },
           {
@@ -39302,29 +39303,29 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Bebeğin genel durumunu ve ateş veya toksisite bulgusunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tipik benign döküntü ise tedavisiz izlem ve aile eğitimi ver."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Atipik veya sistemik bulguda enfeksiyon açısından yeniden değerlendir."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Bebeğin genel durumunu ve ateş veya toksisite bulgusunu değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Tipik benign döküntü ise tedavisiz izlem ve aile eğitimi ver."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Atipik veya sistemik bulguda enfeksiyon açısından yeniden değerlendir."
           }
         ],
@@ -39491,7 +39492,7 @@ export const rawCases = [
             "text": "Kamp sonrası akut hepatit, koyu idrar veya sarılık."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Yaz kampından birkaç hafta sonra semptomlar başlamıştır."
           }
         ],
@@ -39559,7 +39560,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Karaciğer enzimleri, bilirubin ve koagülasyon durumunu değerlendir."
           },
           {
@@ -39567,13 +39568,13 @@ export const rawCases = [
             "text": "Anti-HAV IgM ile akut HAV'ı doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Destek tedavisi, hijyen veya bulaş önlemleri ve fulminan hepatit uyarılarını izle."
           }
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Karaciğer enzimleri, bilirubin ve koagülasyon durumunu değerlendir."
           },
           {
@@ -39581,7 +39582,7 @@ export const rawCases = [
             "text": "Anti-HAV IgM ile akut HAV'ı doğrula."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Destek tedavisi, hijyen veya bulaş önlemleri ve fulminan hepatit uyarılarını izle."
           }
         ],
@@ -39794,7 +39795,7 @@ export const rawCases = [
             "text": "Tam kan sayımı, MCV ve diyabet kontrolünü değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sendromik triadı tanıyıp tiamin tedavisi veya genetik değerlendirme planla."
           },
           {
@@ -39808,7 +39809,7 @@ export const rawCases = [
             "text": "Tam kan sayımı, MCV ve diyabet kontrolünü değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Sendromik triadı tanıyıp tiamin tedavisi veya genetik değerlendirme planla."
           },
           {
@@ -39996,7 +39997,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Adrenal yetmezlik bulgularını ve nörolojik gidişi değerlendir."
           },
           {
@@ -40010,7 +40011,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "İlk karar",
+            "title": "Öncelikli yaklaşım",
             "text": "Adrenal yetmezlik bulgularını ve nörolojik gidişi değerlendir."
           },
           {
@@ -40205,11 +40206,11 @@ export const rawCases = [
             "text": "Kalsiyum veya PTH, kortizol veya ACTH ve glukoz-elektrolitleri değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kandidiyazis ve otoimmün endokrin eksenleri için tarama yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Endokrin replasman, antifungal tedavi ve genetik danışmanlığı planla."
           }
         ],
@@ -40219,11 +40220,11 @@ export const rawCases = [
             "text": "Kalsiyum veya PTH, kortizol veya ACTH ve glukoz-elektrolitleri değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Kandidiyazis ve otoimmün endokrin eksenleri için tarama yap."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Endokrin replasman, antifungal tedavi ve genetik danışmanlığı planla."
           }
         ],
@@ -40406,7 +40407,7 @@ export const rawCases = [
         },
         "managementSteps": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Akut inme protokolünü başlat ve metabolik etiyolojiyi düşün."
           },
           {
@@ -40420,7 +40421,7 @@ export const rawCases = [
         ],
         "management": [
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Akut inme protokolünü başlat ve metabolik etiyolojiyi düşün."
           },
           {
@@ -40687,7 +40688,7 @@ export const rawCases = [
             "text": "Hemoglobin, retikülosit ve hemoliz bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anne kanında Kleihauer-Betke testi ile fetal eritrositleri araştır."
           }
         ],
@@ -40701,7 +40702,7 @@ export const rawCases = [
             "text": "Hemoglobin, retikülosit ve hemoliz bulgularını değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Anne kanında Kleihauer-Betke testi ile fetal eritrositleri araştır."
           }
         ],
@@ -40909,11 +40910,11 @@ export const rawCases = [
             "text": "Resüsitasyon sonrası solunum, dolaşım, glukoz ve nöbetleri stabilize et."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HİE şiddetini ve hipotermi uygunluğunu ilk saatlerde değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Uygunsa terapötik hipotermiyi ilk 6 saat içinde başlat ve yoğun bakım izlemi planla."
           }
         ],
@@ -40923,11 +40924,11 @@ export const rawCases = [
             "text": "Resüsitasyon sonrası solunum, dolaşım, glukoz ve nöbetleri stabilize et."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "HİE şiddetini ve hipotermi uygunluğunu ilk saatlerde değerlendir."
           },
           {
-            "title": "Tedavi önceliği",
+            "title": "Tedavi basamağı",
             "text": "Uygunsa terapötik hipotermiyi ilk 6 saat içinde başlat ve yoğun bakım izlemi planla."
           }
         ],
@@ -40959,7 +40960,7 @@ export const rawCases = [
   , ...pediatricArrhythmiaPdfCases
 ];
 
-export const cases = sanitizeEmbeddedCasesForPreAnswer(rawCases);
+export const cases = sanitizeEmbeddedCasesForPreAnswer(rawCases).map(applyTusLanguageStandardToCase);
 
 export function getCasesByBranch(branchId) {
   return cases.filter((clinicalCase) => clinicalCase.branchId === branchId);

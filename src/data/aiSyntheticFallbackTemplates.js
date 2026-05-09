@@ -6,7 +6,7 @@ export const AI_SYNTHETIC_FALLBACK_SEEDS = [
     "questionType": "spot",
     "managementSteps": [],
     "seedId": "synthetic-peds-bronchiolitis-001",
-    "title": "Süt çocuğunda wheezing",
+    "title": "Süt çocuğunda hışıltılı solunum",
     "relatedBranch": "Çocuk Sağlığı ve Hastalıkları",
     "learningTarget": "Bronşiolitte destek tedavisi ve gereksiz bronkodilatör/antibiyotik ayrımı",
     "correctConcept": "Nazal aspirasyon, oksijen ve hidrasyon desteği",

@@ -3000,7 +3000,7 @@ function makeCase(definition, index) {
   }));
 
   const management = (definition.management || []).slice(0, 4).map((text, stepIndex) => ({
-    title: ['İlk yaklaşım', 'Tanısal doğrulama', 'Tedavi önceliği', 'İzlem'][stepIndex] || 'Yönetim',
+    title: ['İlk yaklaşım', 'Tanısal doğrulama', 'Tedavi basamağı', 'İzlem'][stepIndex] || 'Yönetim',
     text,
   }));
 

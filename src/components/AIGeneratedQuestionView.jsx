@@ -39,7 +39,7 @@ function AIBranchFilter({ branchFilter, branchOptions = [], onChangeBranchFilter
         value={normalizedValue}
         onChange={(event) => onChangeBranchFilter?.(event.target.value)}
         disabled={disabled}
-        aria-label="AI soru branş filtresi"
+        aria-label="TUS soru branş filtresi"
       >
         {branchOptions.map((branch) => {
           const value = branch === 'Rastgele' ? 'random' : branch;
@@ -67,8 +67,8 @@ function AIErrorState({ onGenerateQuestion }) {
     <section className="ai-generation-state card-surface error" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="AlertTriangle" /></span>
       <div>
-        <h2>Soru üretilemedi.</h2>
-        <p>Bu konuda güvenli ve tekrar etmeyen yeni bir soru oluşturulamadı. Farklı bir branş seçebilir veya tekrar deneyebilirsin.</p>
+        <h2>Uygun soru üretilemedi.</h2>
+        <p>Bu denemede TUS dili, bilimsel doğruluk ve tekrar kontrolünden geçen yeni bir soru oluşturulamadı. Farklı bir branş seçerek yeniden deneyebilirsin.</p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
         <Icon name="RotateCcw" /> Tekrar dene
@@ -101,8 +101,8 @@ function AIGeneratedQuestionView({
     <section className="page-shell ai-practice-page-shell">
       <section className="ai-practice-hero card-surface">
         <div className="ai-practice-title-block">
-          <span className="ai-practice-kicker"><Icon name="Sparkles" /> AI pratik modu</span>
-          <h1>AI ile Üretilen TUS Spot Sorusu</h1>
+          <span className="ai-practice-kicker"><Icon name="Sparkles" /> TUS pratik modu</span>
+          <h1>AI Destekli TUS Spot Sorusu</h1>
           <p>Spot bilgileri pekiştirmek için branş uyumu ve klinik tutarlılık kontrolünden geçirilen kısa klinik soru.</p>
           <div className="ai-practice-meta-row">
             <AISourceBadge usedRemoteAI={usedRemoteAI} fallback={fallback} generationSource={generationSource} />
@@ -121,22 +121,22 @@ function AIGeneratedQuestionView({
               <span aria-hidden="true">←</span> Dashboard’a dön
             </button>
             <button type="button" className="btn btn-primary ai-generate-cta" onClick={onGenerateQuestion} disabled={loading}>
-              <Icon name="Sparkles" /> Yeni AI sorusu üret
+              <Icon name="Sparkles" /> Yeni TUS sorusu üret
             </button>
           </div>
         </div>
       </section>
 
       <section className="ai-practice-stats-grid" aria-label="AI pratik istatistikleri">
-        <AIStat icon="ClipboardList" tone="blue" label="AI soru" value={aiStats?.attempts || 0} />
+        <AIStat icon="ClipboardList" tone="blue" label="TUS soru" value={aiStats?.attempts || 0} />
         <AIStat icon="Target" tone="teal" label="Doğruluk" value={`%${accuracy}`} />
-        <AIStat icon="Trophy" tone="warning" label="AI puan" value={aiStats?.score || 0} />
+        <AIStat icon="Trophy" tone="warning" label="Pratik puanı" value={aiStats?.score || 0} />
       </section>
 
       {fallback && !loading && !error ? (
         <section className="ai-fallback-notice card-surface" aria-live="polite">
           <Icon name="ShieldCheck" />
-          <span>Gerçek AI yanıtı alınamadığında uygulama kırılmasın diye local soru generatorü devreye girdi.</span>
+          <span>Gerçek AI yanıtı alınamadığında uygulama kırılmasın diye yerel soru üretim sistemi devreye girdi.</span>
         </section>
       ) : null}
 
@@ -151,7 +151,7 @@ function AIGeneratedQuestionView({
             tutorMode={tutorMode}
             onToggleTutorMode={onToggleTutorMode}
             hardMode={hardMode}
-            randomActionLabel="Yeni AI sorusu üret"
+            randomActionLabel="Yeni TUS sorusu üret"
           />
         </div>
       ) : null}

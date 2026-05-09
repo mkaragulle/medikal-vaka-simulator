@@ -120,7 +120,7 @@ export function repairAIGeneratedText(text = '', { sectionTitle = '', fallback =
   let value = fixMedicalTypos(normalizeEditorialText(text))
     .replace(/\bMorfolojik patern\.\s*Morfolojik patern\.?/giu, '')
     .replace(/\b(Sınav incisi|Sınav notu|Ayırt ettirici ipucu|Ayırıcı nokta|Klinik gerekçe|Mekanizma özeti)\s+\1\b/giu, '$1')
-    .replace(/\bkısa TUS pratiğinde ele alınır\b/giu, 'klinik bağlamda değerlendirilir')
+    .replace(/\bkısa TUS pratiğinde ele alınır\b/giu, 'sınav odaklı olarak yorumlanır')
     .replace(/\bBeklenen ana ipuçları bu tabloda baskın değildir\b/giu, '')
     .replace(/\bKarar [^.]{0,80} yönünde güçlenir\b/giu, '')
     .replace(/\bAncak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/giu, '')

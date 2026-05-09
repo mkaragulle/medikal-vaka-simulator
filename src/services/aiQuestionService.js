@@ -132,7 +132,7 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
     const validation = validateAIQuestionCase(normalized, remoteRequestContext.recentSignatures, {
       context,
       requestedBranch: branchFilter,
-      skipQuality: true,
+      skipQuality: false,
     });
     if (!validation.ok) {
       const error = new Error(`Remote AI client validation failed: ${validation.errors.join('; ')}`);
