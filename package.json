@@ -13,7 +13,8 @@
     "qa:pearl-shuffle": "node scripts/run-pearl-deck-shuffle-test.mjs",
     "qa:ai-spot-readability": "node scripts/run-ai-spot-readability-test.mjs",
     "qa:pearl-personal-repeat": "node scripts/run-pearl-personal-repeat-test.mjs",
-    "qa:ai-spot-render-layout": "node scripts/run-ai-spot-render-layout-test.mjs"
+    "qa:ai-spot-render-layout": "node scripts/run-ai-spot-render-layout-test.mjs",
+    "qa:pearl-dropdown": "node scripts/run-pearl-dropdown-portal-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",
