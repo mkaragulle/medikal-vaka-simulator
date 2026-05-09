@@ -251,7 +251,7 @@ Zorunlu JSON kontratı:
   "chiefComplaint": "string",
   "stem": "string",
   "compactVitals": [{ "label": "TA", "value": "68/42 mmHg" }],
-  "compactObjectiveData": [{ "label": "Lökosit", "value": "16.200/mm³" }],
+  "compactObjectiveData": [{ "label": "HBsAg", "value": "Pozitif" }, { "label": "Lökosit", "value": "16.200/mm³" }],
   "findings": {
     "history": ["string"],
     "exam": ["string"],
@@ -526,8 +526,8 @@ Kesin kurallar:
 - stem gerçek TUS soru kökü gibi olmalı: 3-6 cümle, genellikle 80-150 kelime; daha kompleks olguda en fazla 220 kelime. Klinik vaka raporu gibi uzatma.
 - Vital bulgu her soruda zorunlu değildir. Yalnız şok, sepsis, anafilaksi, solunum yetmezliği, DKA, dehidratasyon, neonatal acil, hemodinamik karar veya ateşin kritik olduğu sorularda ver. Gereksiz vital seti üretme.
 - Vital bulgular sayısal olarak önemliyse stem içine uzun liste halinde yığma; compactVitals alanına kısa label/value çiftleri koy. Stem içinde gerekirse 'hipotansif ve taşikardik' gibi kısa ifade kullan.
-- Laboratuvar, kültür, görüntüleme veya patoloji verileri gerekiyorsa stem içinde yalnız karar verdirici sade değerleri ver; referans aralıklarını stem içine yığma. Sayısal verileri ayrıca compactObjectiveData alanına kısa label/value şeklinde koyabilirsin.
-- stem içine gerekli öykü, muayene, kültür, görüntüleme veya patoloji verilerini doğal TUS soru akışıyla ekle; kullanıcı ayrı hasta özeti, risk bağlamı veya tetkik kartı açmayacak.
+- Laboratuvar, seroloji, kültür, görüntüleme veya patoloji verileri gerekiyorsa stem içinde uzun ham panel listesi yazma; çoklu değerleri compactObjectiveData alanına kısa label/value şeklinde koy. Stemte yalnız klinik bağlam ve tek soru cümlesi kalsın. Referans aralıklarını stem içine yığma.
+- stem içine gerekli öykü ve kısa klinik bağlamı doğal TUS soru akışıyla ekle; çoklu vital/lab/seroloji panelini compactVitals veya compactObjectiveData alanına taşı. Kullanıcı ayrı hasta özeti, risk bağlamı veya tetkik kartı açmayacak.
 - findings alanları yalnız internal kalite kontrol içindir; stem olmadan cevaplanamayacak kritik veri findings içinde yalnız bırakılmamalıdır.
 - stem içinde Profil:, Başvuru:, Risk bağlamı:, Ayırt ettirici ipuçları:, Klinik gerekçe:, Kanıt zinciri:, Sınav notu: gibi başlık kırıntıları kullanma.
 - stem içinde doğru cevabı, doğru tanıyı veya post-answer öğretici cümleyi açık etme; yalnız soru çözmek için gerekli objektif veriyi ver.
@@ -536,6 +536,7 @@ Kesin kurallar:
 - Yasak listedeki hastalık, mekanizma, antidot, enzim, seroloji paterni, ilaç etki mekanizması veya doğru cevabı yeniden kullanma.
 - Aynı hastalık kullanılacaksa soru açısı kesin değişsin: tanı yerine ilk tedavi, tetkik yorumu, komplikasyon, mekanizma veya yönetim basamağı sor.
 - Deneme 2 veya sonrası ise önceki denemeden tamamen farklı branş alt konusu ve farklı doğru cevap seç; yalnız şık sırasını değiştirmek yeni soru sayılmaz.
+- stem tek ve net soru cümlesiyle bitsin; question alanı aynı soru cümlesinin kısa metni olabilir ama stem dışına ikinci bir soru bloku üretme.
 - Tek bir ana klinik odak olsun.
 - 5 seçenek üret: A, B, C, D, E.
 - Tüm seçenekler aynı kategori içinde olsun; tanı sorusunda tanılar, tedavi sorusunda tedaviler, tetkik sorusunda tetkikler.
@@ -767,7 +768,7 @@ function completeRemoteQuestion(question = {}, context = {}) {
     stem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.', 900),
     narrativeStem: shortText(question.narrativeStem || question.stem || question.s, 'Kısa klinik olgu verileri doğru yanıtın seçilmesini gerektirir.', 900),
     compactVitals: Array.isArray(question.compactVitals || question.cv) ? (question.compactVitals || question.cv).slice(0, 5) : [],
-    compactObjectiveData: Array.isArray(question.compactObjectiveData || question.co) ? (question.compactObjectiveData || question.co).slice(0, 6) : [],
+    compactObjectiveData: Array.isArray(question.compactObjectiveData || question.co) ? (question.compactObjectiveData || question.co).slice(0, 10) : [],
     stemMode: 'narrative',
     findings: {
       history: Array.isArray(findings.history) ? findings.history.map(shortText).filter(Boolean).slice(0, 4) : [],

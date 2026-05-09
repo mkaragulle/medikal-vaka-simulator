@@ -34,7 +34,7 @@ const cases = [
       diagnosis: { correct: 'Stenotrophomonas maltophilia' },
     },
     expectVitals: false,
-    expectObjective: false,
+    expectObjective: true,
   },
   {
     name: 'Acil yönetim vital kutusu',

@@ -1,3 +1,7 @@
+
+> klinikiq@1.0.0 qa:ai-spot-readability
+> node scripts/run-ai-spot-readability-test.mjs
+
 {
   "ok": true,
   "results": [
@@ -5,27 +9,27 @@
       "name": "Prematüre bebek / NEC okunabilirlik",
       "ok": true,
       "failures": [],
-      "paragraphCount": 2,
-      "wordCount": 45,
+      "paragraphCount": 1,
+      "wordCount": 34,
       "vitalsCount": 5,
       "objectiveCount": 3,
-      "preview": "28. gebelik haftasında doğan 7 günlük prematüre bebekte ani karın şişliği, barsak seslerinde azalma, hafif kanlı aspirasyon ve 2 gün önce başlayan formül sütü sonrası kusma görülüyor. Fizik muayenede karın şişliği, barsak seslerinde azalma, hafif rektal kan saptanıyor. Bu bebekte en olası tanı aşağıdakilerden hangisidir?"
+      "preview": "28. gebelik haftasında doğan 7 günlük prematüre bebekte ani karın şişliği, barsak seslerinde azalma, hafif kanlı aspirasyon ve 2 gün önce başlayan formül sütü sonrası kusma görülüyor. Bu bebekte en olası tanı aşağıdakilerden hangisidir?"
     },
     {
       "name": "Mikrobiyoloji etken sorusu",
       "ok": true,
       "failures": [],
-      "paragraphCount": 2,
+      "paragraphCount": 1,
       "wordCount": 60,
       "vitalsCount": 0,
-      "objectiveCount": 0,
+      "objectiveCount": 4,
       "preview": "Daha önce çeşitli enfeksiyonlar nedeniyle çok sayıda antibiyotik tedavisi aldığı öğrenilen 65 yaşındaki kadın hasta, yüksek ateş ve titreme yakınmalarıyla hastaneye yatırılıyor. Hastadan alınan kan kültüründe oksidaz negatif, DNaz pozitif, non-fermenter gram negatif basil izole ediliyor. İn vitro duyarlılık testinde etkenin sefalosporinlere, karbapenemlere, aminoglikozitlere ve florokinolonlara dirençli, trimetoprim-sulfametoksazole duyarlı olduğu bildiriliyor. Bu tabloya yol açması en olası bakteri aşağıdakilerden hangisidir?"
     },
     {
       "name": "Acil yönetim vital kutusu",
       "ok": true,
       "failures": [],
-      "paragraphCount": 2,
+      "paragraphCount": 1,
       "wordCount": 40,
       "vitalsCount": 5,
       "objectiveCount": 0,

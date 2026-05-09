@@ -10,6 +10,7 @@ import {
   upsertUserPearlCard,
 } from '../utils/pearlCardStorage.js';
 import TusPearlCardEditor from './TusPearlCardEditor.jsx';
+import { buildPearlRepeatListItems, getPearlRepeatListCounts } from '../utils/pearlRepeatLists.js';
 import './tusPearlCards.css';
 
 const SYSTEM_PEARL_CARDS = TUS_PEARL_CARDS.map((card) => ({ ...card, source: 'system' }));
@@ -57,6 +58,17 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
   }
 
+  const repeatListItems = useMemo(() => buildPearlRepeatListItems(pearlState, allCards), [allCards, pearlState]);
+  const repeatCounts = useMemo(() => getPearlRepeatListCounts(pearlState, allCards), [allCards, pearlState]);
+
+  function openRepeatList(item) {
+    if (item.id === 'catalogs') {
+      onOpenStudy?.({ filter: 'catalogs', branchFilter: 'all' });
+      return;
+    }
+    onOpenStudy?.({ filter: item.filter, branchFilter: 'all' });
+  }
+
   function handleAction(action) {
     if (action.id === 'quick') {
       onOpenStudy?.({ filter: 'all', branchFilter: 'all' });
@@ -85,10 +97,11 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
   }
 
   const stats = [
-    { label: 'Toplam kart', value: allCards.length },
-    { label: 'Favori', value: favoriteSet.size },
-    { label: 'Zorlandığın', value: wrongSet.size },
-    { label: 'Katalog', value: pearlState.customCatalogs?.length || 0 },
+    { label: 'Toplam kart', value: repeatCounts.all },
+    { label: 'Favori', value: repeatCounts.favorites },
+    { label: 'Tekrar et', value: repeatCounts.review },
+    { label: 'Zorlandığın', value: repeatCounts.wrong },
+    { label: 'Katalog', value: repeatCounts.catalogs },
   ];
 
   return (
@@ -127,6 +140,26 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
             <span><strong>{action.label}</strong><em>{action.description}</em></span>
           </button>
         ))}
+      </div>
+
+      <div className="tus-pearl-repeat-center" aria-label="Kişisel tekrar listelerin">
+        <div className="tus-pearl-repeat-center-head">
+          <div>
+            <strong>Kişisel tekrar</strong>
+            <span>İşaretlediğin kartlara tek tıkla geri dön.</span>
+          </div>
+          <button type="button" className="btn btn-secondary compact" onClick={() => onOpenStudy?.({ filter: 'all', branchFilter: 'all' })}>Tüm kartları aç</button>
+        </div>
+        <div className="tus-pearl-repeat-list">
+          {repeatListItems.filter((item) => item.id !== 'all').map((item) => (
+            <button key={item.id} type="button" onClick={() => openRepeatList(item)}>
+              <span className="repeat-list-icon"><Icon name={item.icon} size={16} /></span>
+              <span className="repeat-list-copy"><strong>{item.label}</strong><em>{item.description}</em></span>
+              <span className="repeat-list-count">{item.countLabel}</span>
+              <span className="repeat-list-action">{item.actionLabel}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className="tus-pearl-own-card-mini" aria-label="Kendi hap bilgi kartların">

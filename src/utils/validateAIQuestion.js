@@ -304,7 +304,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     questionType: payload.questionType || 'spot',
     clinicalFocus: payload.learningTarget,
     compactVitals: normalizeCompactClinicalData(payload.compactVitals || payload.cv || [], 5),
-    compactObjectiveData: normalizeCompactClinicalData(payload.compactObjectiveData || payload.compactObjective || payload.co || [], 6),
+    compactObjectiveData: normalizeCompactClinicalData(payload.compactObjectiveData || payload.compactObjective || payload.co || [], 10),
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
       profile: payload.demographics || payload.relatedBranch || 'AI AI soru üretimi',

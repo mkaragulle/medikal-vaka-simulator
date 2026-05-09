@@ -243,6 +243,109 @@ function avoidRecentStarts(deck, recentStartsSet, options) {
   return output;
 }
 
+function maxLocalStreak(cards, keyGetter, from = 0, to = cards.length - 1) {
+  const start = Math.max(0, from);
+  const end = Math.min(cards.length - 1, to);
+  let maxStreak = 0;
+  let previousKey = null;
+  let streak = 0;
+  for (let index = start; index <= end; index += 1) {
+    const key = keyGetter(cards[index]);
+    if (key === previousKey) streak += 1;
+    else {
+      previousKey = key;
+      streak = 1;
+    }
+    maxStreak = Math.max(maxStreak, streak);
+  }
+  return maxStreak;
+}
+
+function hasBadLocalStreak(cards, index, options) {
+  const radius = Math.max(options.maxSameBranchStreak ?? 2, options.maxSameTopicStreak ?? 1, options.maxSameTagStreak ?? 2) + 3;
+  const from = Math.max(0, index - radius);
+  const to = Math.min(cards.length - 1, index + radius);
+  return (
+    maxLocalStreak(cards, normalizeCardTopic, from, to) > (options.maxSameTopicStreak ?? 1)
+    || maxLocalStreak(cards, normalizeCardBranch, from, to) > (options.maxSameBranchStreak ?? 2)
+    || maxLocalStreak(cards, getPrimaryTag, from, to) > (options.maxSameTagStreak ?? 2)
+  );
+}
+
+function wouldSwapImprove(cards, index, swapIndex, options) {
+  if (index === swapIndex) return false;
+  const output = [...cards];
+  [output[index], output[swapIndex]] = [output[swapIndex], output[index]];
+  return !hasBadLocalStreak(output, index, options) && !hasBadLocalStreak(output, swapIndex, options);
+}
+
+function smoothStreaks(deck, options) {
+  if (deck.length < 4) return deck;
+  const output = [...deck];
+  const passes = 3;
+  for (let pass = 0; pass < passes; pass += 1) {
+    let changed = false;
+    for (let index = 1; index < output.length; index += 1) {
+      if (!hasBadLocalStreak(output, index, options)) continue;
+      const currentTopic = normalizeCardTopic(output[index]);
+      const currentBranch = normalizeCardBranch(output[index]);
+      const currentTag = getPrimaryTag(output[index]);
+      const candidateIndices = [
+        ...output.map((_, candidateIndex) => candidateIndex).filter((candidateIndex) => candidateIndex > index),
+        ...output.map((_, candidateIndex) => candidateIndex).filter((candidateIndex) => candidateIndex < index),
+      ];
+      const swapIndex = candidateIndices.find((candidateIndex) => {
+        const card = output[candidateIndex];
+        return (
+          normalizeCardTopic(card) !== currentTopic
+          && normalizeCardBranch(card) !== currentBranch
+          && getPrimaryTag(card) !== currentTag
+          && wouldSwapImprove(output, index, candidateIndex, options)
+        );
+      });
+      if (swapIndex > -1) {
+        [output[index], output[swapIndex]] = [output[swapIndex], output[index]];
+        changed = true;
+      }
+    }
+    if (!changed) break;
+  }
+  return output;
+}
+
+function spreadBranches(deck, random, options) {
+  if (deck.length < 4) return deck;
+  const queues = new Map();
+  deck.forEach((card) => {
+    const branch = normalizeCardBranch(card);
+    if (!queues.has(branch)) queues.set(branch, []);
+    queues.get(branch).push(card);
+  });
+
+  const output = [];
+  const total = deck.length;
+  while (output.length < total) {
+    const available = Array.from(queues.entries())
+      .filter(([, cards]) => cards.length)
+      .map(([branch, cards]) => ({ branch, candidate: cards[0], remaining: cards.length }));
+    if (!available.length) break;
+
+    const strict = available.filter(({ candidate }) => !wouldViolateStrict(output, candidate, options));
+    const pool = strict.length ? strict : available;
+    const scored = pool.map((entry) => {
+      const recentPenalty = options.recentStartsSet?.has(entry.candidate.id) && output.length < (options.recentStartWindowSize ?? 20) ? -80 : 0;
+      return {
+        ...entry,
+        score: (entry.remaining * 1.15) + (random() * 0.12) + getBranchSpacingPenalty(output, entry.candidate) + getTopicSpacingPenalty(output, entry.candidate) + recentPenalty,
+      };
+    });
+    scored.sort((a, b) => b.score - a.score);
+    const selected = scored[0];
+    output.push(queues.get(selected.branch).shift());
+  }
+  return output;
+}
+
 function dedupeCards(cards = []) {
   return Array.from(new Map((cards || []).filter((card) => card?.id).map((card) => [card.id, card])).values());
 }
@@ -325,6 +428,18 @@ export function buildStudyDeck(cards = [], options = {}) {
     recentStartWindowSize,
     weightContext,
   });
+  const branchSpread = spreadBranches(polished, random, {
+    maxSameTopicStreak,
+    maxSameBranchStreak,
+    maxSameTagStreak,
+    recentStartsSet,
+    recentStartWindowSize,
+  });
+  const balanced = smoothStreaks(branchSpread, {
+    maxSameTopicStreak,
+    maxSameBranchStreak,
+    maxSameTagStreak,
+  });
 
   return {
     id: makeSessionId(),
@@ -332,7 +447,7 @@ export function buildStudyDeck(cards = [], options = {}) {
     mode,
     sourceFilter,
     seed: String(seed),
-    cardIds: polished.map((card) => card.id),
+    cardIds: balanced.map((card) => card.id),
     currentIndex: 0,
   };
 }

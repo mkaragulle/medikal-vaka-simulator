@@ -15,6 +15,7 @@ import {
   upsertUserPearlCard,
 } from '../utils/pearlCardStorage.js';
 import { buildStudyDeck } from '../utils/pearlDeckShuffle.js';
+import { buildPearlRepeatListItems, getPearlEmptyState } from '../utils/pearlRepeatLists.js';
 import TusPearlCardEditor from './TusPearlCardEditor.jsx';
 import './tusPearlCards.css';
 
@@ -43,7 +44,7 @@ function buildCatalogId(name) {
 function cardMatchesFilter(card, filter, stateSets, activeCatalog) {
   if (filter === 'favorites') return stateSets.favoriteSet.has(card.id);
   if (filter === 'wrong') return stateSets.wrongSet.has(card.id);
-  if (filter === 'review') return stateSets.reviewSet.has(card.id) || stateSets.wrongSet.has(card.id);
+  if (filter === 'review') return stateSets.reviewSet.has(card.id);
   if (filter === 'known') return stateSets.knownSet.has(card.id);
   if (filter === 'past') return card.appearedYears?.length || card.isPastQuestionDerived;
   if (filter === 'catalog') return activeCatalog?.cardIds?.includes(card.id);
@@ -140,6 +141,8 @@ function TusPearlStudyScreen({
   const cardCatalogs = useMemo(() => pearlState.customCatalogs.filter((catalog) => activeCard && catalog.cardIds?.includes(activeCard.id)), [activeCard, pearlState.customCatalogs]);
   const isInAnyCatalog = cardCatalogs.length > 0;
   const modeLabel = resolveModeLabel(filter, branchFilter, activeCatalog);
+  const repeatListItems = useMemo(() => buildPearlRepeatListItems(pearlState, allCards), [allCards, pearlState]);
+  const emptyState = useMemo(() => getPearlEmptyState(filter), [filter]);
 
   const catalogCards = useMemo(() => (
     (activeCatalog?.cardIds || []).map((id) => cardById.get(id)).filter(Boolean)
@@ -332,7 +335,11 @@ function TusPearlStudyScreen({
       return;
     }
     if (type === 'review') {
-      commitState((current) => ({ ...current, reviewPearlCardIds: addId(current.reviewPearlCardIds, activeCard.id) }));
+      commitState((current) => ({
+        ...current,
+        reviewPearlCardIds: addId(current.reviewPearlCardIds, activeCard.id),
+        knownPearlCardIds: removeId(current.knownPearlCardIds, activeCard.id),
+      }));
       moveCard(1);
       return;
     }
@@ -340,6 +347,7 @@ function TusPearlStudyScreen({
       ...current,
       wrongPearlCardIds: addId(current.wrongPearlCardIds, activeCard.id),
       reviewPearlCardIds: addId(current.reviewPearlCardIds, activeCard.id),
+      knownPearlCardIds: removeId(current.knownPearlCardIds, activeCard.id),
     }));
     moveCard(1);
   }
@@ -350,6 +358,20 @@ function TusPearlStudyScreen({
     setFilter('catalog');
     setBranchFilter('all');
     setViewMode('study');
+    lastDeckSignature.current = '';
+  }
+
+  function openRepeatList(itemOrFilter) {
+    const nextFilter = typeof itemOrFilter === 'string' ? itemOrFilter : itemOrFilter?.filter;
+    if (!nextFilter) return;
+    if (nextFilter === 'catalogs') {
+      setViewMode('catalogs');
+      return;
+    }
+    setViewMode('study');
+    setFilter(nextFilter);
+    setBranchFilter('all');
+    if (nextFilter !== 'catalog') setActiveCatalogId((current) => current || pearlState.customCatalogs[0]?.id || '');
     lastDeckSignature.current = '';
   }
 
@@ -441,9 +463,22 @@ function TusPearlStudyScreen({
           <span><strong>{modeLabel}</strong><em>{sessionCards.length} kartlık karışık deck</em></span>
           <div>
             <button type="button" className="btn btn-secondary compact" onClick={() => rebuildStudySession(filteredCards)}>Yeni sıra</button>
-            <button type="button" className="btn btn-secondary compact" onClick={() => { setFilter('all'); setBranchFilter('all'); lastDeckSignature.current = ''; }}>Tüm kartlar</button>
             <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kendi kartını oluştur</button>
             <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Kataloglarım</button>
+          </div>
+          <div className="pearl-study-repeat-shortcuts" aria-label="Tekrar listeleri">
+            {repeatListItems.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={(filter === item.filter || (item.id === 'catalogs' && viewMode === 'catalogs')) ? 'active' : ''}
+                onClick={() => openRepeatList(item)}
+              >
+                <Icon name={item.icon} size={14} />
+                <span>{item.shortLabel}</span>
+                <em>{item.count}</em>
+              </button>
+            ))}
           </div>
         </div>
       )}
@@ -614,14 +649,19 @@ function TusPearlStudyScreen({
                 </button>
               </article>
             ) : (
-              <div className="tus-pearl-study-empty card-surface">
-                <Icon name="LayeredCards" />
-                <strong>{filter === 'catalog' ? 'Bu katalogda çalışılacak kart yok.' : 'Bu sette kart yok.'}</strong>
-                <p>{filter === 'catalog' ? 'Tüm kart havuzundan ekleme yapabilir veya kendi kartını oluşturabilirsin.' : 'Filtreyi temizleyip tüm kartlara dönebilir veya yeni kart ekleyebilirsin.'}</p>
+              <div className="tus-pearl-study-empty card-surface personal-empty-state">
+                <Icon name={filter === 'catalog' ? 'ClipboardList' : emptyState.icon || 'LayeredCards'} />
+                <strong>{filter === 'catalog' ? 'Bu katalogda çalışılacak kart yok.' : emptyState.emptyTitle}</strong>
+                <p>{filter === 'catalog' ? 'Tüm kart havuzundan kart seçebilir veya bu kataloğa özel kendi kartını oluşturabilirsin.' : emptyState.emptyDescription}</p>
                 <div className="empty-action-row">
-                  <button type="button" className="btn btn-primary compact" onClick={() => { setFilter('all'); setBranchFilter('all'); lastDeckSignature.current = ''; }}>Tüm kartlara dön</button>
-                  <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>{filter === 'catalog' ? 'Kataloğa kart ekle' : 'Kataloglarım'}</button>
-                  <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Yeni kart oluştur</button>
+                  <button type="button" className="btn btn-primary compact" onClick={() => openRepeatList('all')}>Tüm kartları çalış</button>
+                  {filter === 'catalog' ? (
+                    <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Bu kataloğa kart ekle</button>
+                  ) : null}
+                  {filter !== 'catalog' ? (
+                    <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Katalogları yönet</button>
+                  ) : null}
+                  <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kendi kartını oluştur</button>
                 </div>
               </div>
             )}

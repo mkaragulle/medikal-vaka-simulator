@@ -82,6 +82,7 @@ function DiagnosisQuiz({
   investigationOrders = [],
   hardMode = false,
   randomActionLabel = 'Yeni vaka çöz',
+  hideSpotQuestionCallout = false,
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
@@ -151,7 +152,7 @@ function DiagnosisQuiz({
         </div>
       ) : null}
 
-      {isSpotCase && questionPrompt ? (
+      {isSpotCase && questionPrompt && !hideSpotQuestionCallout ? (
         <div className="tus-spot-olgular-question-callout" role="note">
           <Icon name="Target" size={16} />
           <strong><GlossaryText text={questionPrompt} enabled={!hardMode && !examMeta?.active} /></strong>

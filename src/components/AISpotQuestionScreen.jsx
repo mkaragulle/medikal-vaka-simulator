@@ -6,9 +6,8 @@ import {
   buildAISpotContextLine,
   buildAISpotNarrativeStem,
   buildSafeAISpotTitle,
-  getAISpotCompactObjectiveData,
-  getAISpotCompactVitals,
   getAISpotPreviewDiagnostics,
+  getAISpotSupportDataGroups,
 } from '../utils/aiSpotNarrative.js';
 
 const AI_SPOT_BRANCH = {
@@ -48,8 +47,7 @@ function AISpotNarrativePanel({ question, hardMode = false }) {
   const title = buildSafeAISpotTitle(question);
   const contextLine = buildAISpotContextLine(question);
   const paragraphs = buildAISpotNarrativeStem(question);
-  const compactVitals = getAISpotCompactVitals(question);
-  const compactObjectiveData = getAISpotCompactObjectiveData(question);
+  const supportDataGroups = getAISpotSupportDataGroups(question);
   const difficultyMeta = getDifficultyMeta(question.difficulty);
   const diagnostics = import.meta.env?.DEV ? getAISpotPreviewDiagnostics(question) : null;
 
@@ -72,31 +70,30 @@ function AISpotNarrativePanel({ question, hardMode = false }) {
         </div>
       </div>
 
-      <div className="ai-spot-narrative-reading-panel">
-        {paragraphs.map((paragraph, index) => (
-          <p key={`${question.id}-ai-narrative-${index}`}>
-            <GlossaryText text={paragraph} enabled={!hardMode} />
-          </p>
-        ))}
-      </div>
-
-      {(compactVitals.length || compactObjectiveData.length) ? (
-        <div className="ai-spot-compact-data-shell">
-          <CompactDataGroup title="Vital bulgular" items={compactVitals} />
-          <CompactDataGroup title="Objektif veriler" items={compactObjectiveData} />
+      <div className={`ai-spot-narrative-content-grid ${supportDataGroups.length ? 'has-support-data' : 'no-support-data'}`.trim()}>
+        <div className="ai-spot-narrative-reading-panel">
+          {paragraphs.map((paragraph, index) => (
+            <p key={`${question.id}-ai-narrative-${index}`}>
+              <GlossaryText text={paragraph} enabled={!hardMode} />
+            </p>
+          ))}
         </div>
-      ) : null}
 
-      <div className="ai-spot-narrative-footer" aria-hidden="true">
-        <span><Icon name="ShieldCheck" size={15} /> Cevap öncesi yalnızca soru kökü gösterilir.</span>
+        {supportDataGroups.length ? (
+          <aside className="ai-spot-support-data-panel" aria-label="Soruya ait destek veriler">
+            {supportDataGroups.map((group) => (
+              <CompactDataGroup key={group.title} title={group.title} items={group.items} />
+            ))}
+          </aside>
+        ) : null}
       </div>
 
       {diagnostics ? (
         <div className="ai-spot-dev-diagnostics" aria-hidden="true">
           <span>paragraphs: {diagnostics.paragraphCount}</span>
           <span>words: {diagnostics.wordCount}</span>
-          <span>vitals: {diagnostics.compactVitalsCount}</span>
-          <span>objective: {diagnostics.compactObjectiveCount}</span>
+          <span>support groups: {diagnostics.supportGroupCount}</span>
+          <span>support items: {diagnostics.supportItemCount}</span>
           <span>legacy labels: {diagnostics.hasLegacyBoxLabels ? 'yes' : 'no'}</span>
           <span>correct in stem: {diagnostics.containsCorrectAnswerText ? 'yes' : 'no'}</span>
         </div>
@@ -138,6 +135,7 @@ function AISpotQuestionScreen({
               investigationOrders={[]}
               hardMode={hardMode}
               randomActionLabel={randomActionLabel}
+              hideSpotQuestionCallout
             />
           </div>
         </aside>
