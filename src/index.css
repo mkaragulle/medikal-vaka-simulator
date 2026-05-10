@@ -35203,3 +35203,34 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
   white-space: normal !important;
   text-align: left !important;
 }
+
+/* KlinikIQ AI reset: educational text must remain readable, not truncated. */
+.ai-spot-support-data-panel,
+.ai-spot-compact-data-grid,
+.ai-spot-compact-data-item,
+.ai-spot-compact-data-item span,
+.ai-spot-compact-data-item strong,
+.answer-feedback-panel,
+.feedback-card,
+.feedback-body-copy,
+.option-comparison-item,
+.option-comparison-item p,
+.comparison-point-copy,
+.evidence-chain-copy,
+.evidence-chain-copy p,
+.exam-note-pearl,
+.clinical-pearl-item p,
+.management-action-item p {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+  max-height: none;
+}
+
+.ai-spot-compact-data-item.is-long {
+  grid-column: 1 / -1;
+}
