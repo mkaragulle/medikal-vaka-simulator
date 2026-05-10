@@ -17,6 +17,76 @@ const AI_SPOT_BRANCH = {
   description: 'Tek köklü, paragraf temelli TUS spot sorusu.',
 };
 
+
+function normalizeDisplayNumber(raw = '') {
+  const match = String(raw || '').replace(',', '.').match(/-?\d+(?:\.\d+)?/u);
+  if (!match) return '';
+  const value = Number.parseFloat(match[0]);
+  if (!Number.isFinite(value)) return '';
+  return Number.isInteger(value) ? String(value) : String(value).replace(/\.0$/u, '');
+}
+
+function formatAISpotDataValue(label = '', value = '') {
+  const rawLabel = String(label || '').trim();
+  let rawValue = String(value || '').trim();
+  if (!rawValue) return { value: '—', quality: 'missing' };
+
+  rawValue = rawValue
+    .replace(/\bSpO2\b/giu, 'SpO₂')
+    .replace(/\bPH\b/g, 'pH')
+    .replace(/\bmm\s*hg\b/giu, 'mmHg')
+    .replace(/\bmg\s*\/\s*dl\b/giu, 'mg/dL')
+    .replace(/\bg\s*\/\s*dl\b/giu, 'g/dL')
+    .replace(/\bmeq\s*\/\s*l\b/giu, 'mEq/L')
+    .replace(/\bmmol\s*\/\s*l\b/giu, 'mmol/L')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const key = rawLabel.toLocaleLowerCase('tr');
+  const comparable = rawValue.toLocaleLowerCase('tr');
+  const hasClinicalUnit = /(?:mmHg|°C|\/dk|%|mg\/dL|mg\/L|g\/dL|mEq\/L|mmol\/L|U\/L|IU\/L|ng\/mL|pg\/mL|\/mm³|\/µL|×10³\/µL|x10\^3\/µL)/iu.test(rawValue);
+  const numeric = normalizeDisplayNumber(rawValue);
+
+  if (/^(ta|kan basıncı)$/iu.test(rawLabel) && /^\d{2,3}\s*\/\s*\d{2,3}$/u.test(rawValue)) {
+    return { value: rawValue.replace(/\s*\/\s*/u, '/') + ' mmHg', quality: 'completed' };
+  }
+  if (/nabız|nabiz|kalp hızı|kalp hizi/iu.test(key) && numeric && !hasClinicalUnit) {
+    return { value: `${numeric}/dk`, quality: 'completed' };
+  }
+  if (/solunum/iu.test(key) && numeric && !hasClinicalUnit) {
+    return { value: `${numeric}/dk`, quality: 'completed' };
+  }
+  if (/ateş|ates|sıcaklık|sicaklik/iu.test(key) && numeric && !hasClinicalUnit) {
+    const fever = Number.parseFloat(numeric);
+    const formatted = Number.isFinite(fever) ? fever.toFixed(1).replace(/\.0$/u, '.0') : numeric;
+    return { value: `${formatted} °C`, quality: 'completed' };
+  }
+  if (/spo₂|spo2|satürasyon|saturasyon/iu.test(key) && numeric && !hasClinicalUnit) {
+    return { value: `%${Math.round(Number.parseFloat(numeric))}`, quality: 'completed' };
+  }
+
+  if (hasClinicalUnit || !numeric || /pozitif|negatif|düşük|yüksek|normal|artmış|azalmış|saptan/i.test(comparable)) {
+    return { value: rawValue, quality: 'clean' };
+  }
+
+  if (/lökosit|lokosit|wbc/iu.test(key)) {
+    const n = Number.parseFloat(numeric);
+    return { value: n < 100 ? `${numeric} ×10³/µL` : `${numeric}/mm³`, quality: 'completed' };
+  }
+  if (/trombosit|platelet|plt/iu.test(key)) return { value: `${numeric} ×10³/µL`, quality: 'completed' };
+  if (/hemoglobin|\bhb\b/iu.test(key)) return { value: `${numeric} g/dL`, quality: 'completed' };
+  if (/crp|c-reaktif/iu.test(key)) return { value: `${numeric} mg/L`, quality: 'completed' };
+  if (/glukoz|glucose|kan şekeri|kan sekeri/iu.test(key)) return { value: `${numeric} mg/dL`, quality: 'completed' };
+  if (/kreatinin|üre|ure|bilirubin|kolesterol|trigliserid/iu.test(key)) return { value: `${numeric} mg/dL`, quality: 'completed' };
+  if (/sodyum|na⁺|na\+|potasyum|k⁺|k\+|klor|bikarbonat|hco₃|hco3/iu.test(key)) return { value: `${numeric} mEq/L`, quality: 'completed' };
+  if (/laktat/iu.test(key)) return { value: `${numeric} mmol/L`, quality: 'completed' };
+  if (/ast|alt|alp|ggt|amilaz|lipaz/iu.test(key)) return { value: `${numeric} U/L`, quality: 'completed' };
+  if (/tsh/iu.test(key)) return { value: `${numeric} µIU/mL`, quality: 'completed' };
+  if (/t4|t3/iu.test(key)) return { value: `${numeric} ng/dL`, quality: 'completed' };
+
+  return { value: rawValue, quality: 'clean' };
+}
+
 function AISpotMetaBadge({ icon, children, tone = 'teal' }) {
   return (
     <span className={`ai-spot-narrative-badge ${tone}`.trim()}>
@@ -34,11 +104,13 @@ function CompactDataGroup({ title, items = [] }) {
       <div className="ai-spot-compact-data-grid">
         {items.map((item, index) => {
           const label = String(item.label || '');
-          const value = String(item.value || '');
+          const formatted = formatAISpotDataValue(label, item.value || '');
+          const value = formatted.value;
           const isLong = `${label} ${value}`.length > 34 || /[,;]/u.test(value);
+          const qualityClass = formatted.quality === 'completed' ? 'unit-completed' : '';
           return (
             <div
-              className={`ai-spot-compact-data-item ${isLong ? 'is-long' : ''}`.trim()}
+              className={`ai-spot-compact-data-item ${isLong ? 'is-long' : ''} ${qualityClass}`.trim()}
               key={`${title}-${label}-${index}`}
               title={`${label}: ${value}`}
             >

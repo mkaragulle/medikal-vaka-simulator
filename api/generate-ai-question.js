@@ -1,24 +1,27 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v7-user-prompt';
+const PROMPT_VERSION = 'klinikiq-simple-tus-v9-user-prompt-specific-feedback';
 const SCHEMA_VERSION = 'simple-ai-spot-v1';
 
 const SYSTEM_PROMPT = `You are KlinikIQ’s medical question-generation engine.
 
-Write one concise, medically accurate Turkish TUS-style single-best-answer question. The output language must be professional Turkish with correct medical terminology, spelling, grammar and TUS exam style.
+Write one concise, medically accurate Turkish TUS-style single-best-answer question. The output language must be professional Turkish with correct medical terminology, spelling, grammar and real TUS exam style.
 
-Do not create or expose a visible title. Keep title as an empty string.
+Do not create or expose a visible title. Always keep title as an empty string.
 
 Core rules:
 - One question = one learning target only.
-- The branch, clinical stem, data fields, options, correct answer and feedback must all point to the same target.
+- The branch, stem, data fields, options, correct answer and feedback must all point to the same target.
 - Do not leak the answer in the title, stem or data fields.
-- Do not ask for a result/test/diagnosis/mechanism that is already directly given in the case.
+- Do not ask for a result, test, diagnosis or mechanism that is already directly given in the case.
 - Do not add unnecessary vitals, labs, imaging or microbiology data.
 - Keep data fields clean, complete, correctly labeled and non-repetitive.
 - Use only one clearly correct answer; options must belong to the same category.
+- Never use generic option feedback. Every option explanation must be specific, educational and tied to the option and the case.
+- Evidence chain must contain only concrete clues explicitly present in the stem or data fields. Do not invent or infer extra findings.
+- Evidence chain items must be plain Turkish clue sentences only; do not add labels such as “clinical clue”, “lab finding” or “ECG pattern”.
 - Avoid vague, generic, duplicated, contradictory or unfinished feedback.
-- If the chosen branch/target creates ambiguity, switch to a safer, single-answer TUS target within the requested branch.
-- Return only valid JSON. No markdown, no comments, no extra text.`;
+- If the chosen branch or target creates ambiguity, switch to a safer, single-answer TUS target within the requested branch.
+- Return only valid JSON. No markdown, no comments, no extra text.`
 
 const ALLOWED_BRANCHES = [
   'İç Hastalıkları',
@@ -430,15 +433,15 @@ Task:
 Create one short, professional, single-best-answer Turkish TUS question that feels close to the real TUS style.
 
 Essential item-writing rules:
-1. Use exactly one learning target: diagnosis, test, treatment, mechanism, complication or anatomy/pathology/biochemistry concept. Do not mix targets.
+1. Use exactly one learning target: diagnosis, test, treatment, mechanism, complication or a branch-appropriate basic science concept. Do not mix targets.
 2. Keep the item branch-appropriate. If the requested target does not fit the branch, choose a safer target that fits the branch.
 3. Do not produce a visible question title. Set "title" to "".
 4. The stem and data fields must not repeat the same information. Do not give a test result, diagnosis, mechanism or defining finding and then ask the user to choose that same thing.
-5. Use only necessary data. Remove irrelevant hemogram/vitals/labs/imaging unless they help the reasoning without revealing the answer.
+5. Use only necessary data. Remove irrelevant hemogram, vitals, labs, imaging or microbiology unless they help reasoning without revealing the answer.
 6. Data must be placed in the correct field:
-   - symptoms/history in the stem,
+   - symptoms and history in the stem,
    - vital signs in compactVitals,
-   - labs/imaging/microbiology/pathology/exam findings in compactObjectiveData with clear labels.
+   - labs, imaging, microbiology, pathology and exam findings in compactObjectiveData with clear labels.
    Never label a lab as microbiology, exam as imaging, or non-ECG data as ECG.
 7. All values must be complete and formatted with units when appropriate.
 8. Options must be the same type. Do not mix diagnoses, tests, drugs, mechanisms and procedures in the same option set.
@@ -449,12 +452,12 @@ Essential item-writing rules:
 13. Avoid ethics/legal questions unless explicitly requested.
 
 Feedback rules:
-1. explanation: 2-3 concise Turkish sentences explaining why the correct answer is correct. It must be specific, not generic.
-2. examPearl: one short high-yield decision sentence. Do not write only a raw clue.
-3. evidenceChain: exactly 3 concrete clues from the case. Do not repeat the answer directly and do not invent clues not present in the case.
-4. wrongOptionFeedback: one concise teaching sentence for every option. The correct option feedback must not duplicate explanation word-for-word.
-5. managementSteps: fill only when the question asks first approach, treatment or management. Otherwise return [].
-6. No duplicate sentences. No unfinished sentences. No template remnants. No contradictory mini-notes.
+1. explanation: Write 2-3 concise Turkish sentences explaining the medical reasoning behind the correct answer. It must be case-specific and scientifically clear.
+2. examPearl: Write one short Turkish decision sentence that links the key clue to the correct concept. Do not write isolated data or a raw keyword.
+3. evidenceChain: Write exactly 3 short Turkish sentences. Each sentence must be a concrete clue explicitly present in the stem or data fields. Do not add labels, do not invent new findings, and do not directly repeat the correct answer.
+4. wrongOptionFeedback: Write one specific, educational sentence for every option. The correct option feedback must briefly explain why it fits. Wrong option feedback must briefly explain why that option is eliminated. No option feedback may be generic.
+5. managementSteps: Fill only when the question asks treatment, first step, emergency approach or management. Otherwise return [].
+6. No duplicate sentences, no unfinished sentences, no template remnants and no contradiction with case data.
 
 Before returning, silently check:
 - medically correct
@@ -465,6 +468,8 @@ Before returning, silently check:
 - complete values and units
 - correct field labels
 - no repeated data
+- no invented evidenceChain clue
+- no generic option feedback
 - no duplicated feedback
 - no unfinished or broken Turkish
 - examPearl is a real decision sentence
@@ -499,16 +504,16 @@ JSON schema:
   "correctAnswer": "A",
   "explanation": "2-3 concise Turkish sentences; specific clinical/scientific reasoning only",
   "wrongOptionFeedback": {
-    "A": "one concise teaching sentence",
-    "B": "one concise teaching sentence",
-    "C": "one concise teaching sentence",
-    "D": "one concise teaching sentence",
-    "E": "one concise teaching sentence"
+    "A": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated",
+    "B": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated",
+    "C": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated",
+    "D": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated",
+    "E": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated"
   },
   "evidenceChain": [
-    "case clue 1",
-    "case clue 2",
-    "case clue 3"
+    "plain case clue sentence; no label",
+    "plain case clue sentence; no label",
+    "plain case clue sentence; no label"
   ],
   "examPearl": "one high-yield Turkish decision sentence",
   "managementSteps": [],
