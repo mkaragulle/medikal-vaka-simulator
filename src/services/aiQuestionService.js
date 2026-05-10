@@ -1,108 +1,15 @@
+import { buildRecentQuestionContext, rememberAIQuestion } from '../utils/aiQuestionHistory.js';
+import {
+  createSimpleFallbackQuestion,
+  isTooSimilarToRecent,
+  normalizeSimpleAIQuestion,
+} from '../utils/simpleAIQuestionAdapter.js';
+
 const runtimeEnv = import.meta.env || {};
-const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI || 'true').toLowerCase() !== 'false';
 const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-question';
-const AI_REQUEST_TIMEOUT_MS = Math.max(15000, Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 55000));
-const STORAGE_KEY = 'klinikiq.ai.recentQuestions.v3';
-const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-
-function normalizeText(value = '') {
-  return String(value ?? '')
-    .toLocaleLowerCase('tr')
-    .replace(/[âîû]/g, (match) => ({ â: 'a', î: 'i', û: 'u' }[match] || match))
-    .replace(/ı/g, 'i')
-    .replace(/[^a-z0-9çğıöşü\s]/giu, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function stableHash(value = '') {
-  const text = normalizeText(value);
-  let hash = 2166136261;
-  for (let index = 0; index < text.length; index += 1) {
-    hash ^= text.charCodeAt(index);
-    hash = Math.imul(hash, 16777619);
-  }
-  return (hash >>> 0).toString(36);
-}
-
-function safeReadRecent() {
-  if (typeof window === 'undefined') return [];
-  try {
-    const parsed = JSON.parse(window.localStorage.getItem(STORAGE_KEY) || '[]');
-    return Array.isArray(parsed) ? parsed.slice(0, 20) : [];
-  } catch {
-    return [];
-  }
-}
-
-function safeWriteRecent(items = []) {
-  if (typeof window === 'undefined') return;
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(items.slice(0, 20)));
-  } catch {
-    // localStorage may be unavailable; question generation should still work.
-  }
-}
-
-function extractOptionTexts(question = {}) {
-  if (Array.isArray(question.diagnosis?.options)) return question.diagnosis.options.filter(Boolean);
-  if (Array.isArray(question.options)) return question.options.map((option) => option?.text || option).filter(Boolean);
-  return [];
-}
-
-function extractCorrectText(question = {}) {
-  if (question.diagnosis?.correct) return question.diagnosis.correct;
-  const correctId = String(question.correctAnswer || '').toUpperCase();
-  return (question.options || []).find((option) => String(option?.id || '').toUpperCase() === correctId)?.text || '';
-}
-
-function buildQuestionFingerprint(question = {}) {
-  const options = extractOptionTexts(question).map(normalizeText).sort().join('|');
-  return question.semanticFingerprint
-    || question.contentSignature
-    || `sem-${stableHash([
-      question.relatedBranch || question.branchName || '',
-      question.topic || question.subtopic || '',
-      question.answerTarget || question.questionType || '',
-      question.title || '',
-      question.question || '',
-      extractCorrectText(question),
-      options,
-    ].join('|'))}`;
-}
-
-function summarizeQuestion(question = {}) {
-  const optionSetSignature = stableHash(extractOptionTexts(question).map(normalizeText).sort().join('|'));
-  return {
-    id: question.id || buildQuestionFingerprint(question),
-    title: question.title || '',
-    branch: question.relatedBranch || question.branchName || '',
-    topic: question.topic || question.subtopic || question.learningTarget || '',
-    answerTarget: question.answerTarget || question.questionType || '',
-    correct: extractCorrectText(question),
-    fingerprint: buildQuestionFingerprint(question),
-    optionSetSignature,
-    createdAt: Date.now(),
-  };
-}
-
-function rememberQuestion(question = {}) {
-  const recent = safeReadRecent();
-  const summary = summarizeQuestion(question);
-  const filtered = recent.filter((item) => item.id !== summary.id && item.fingerprint !== summary.fingerprint);
-  safeWriteRecent([summary, ...filtered]);
-  return summary;
-}
-
-function hasRecentDuplicate(question = {}, recent = safeReadRecent()) {
-  const summary = summarizeQuestion(question);
-  return recent.some((item) => {
-    if (item.fingerprint && item.fingerprint === summary.fingerprint) return true;
-    if (normalizeText(item.title) && normalizeText(item.title) === normalizeText(summary.title)) return true;
-    if (item.optionSetSignature && item.optionSetSignature === summary.optionSetSignature) return true;
-    return false;
-  });
-}
+const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI ?? 'true').toLowerCase() !== 'false';
+const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 45000);
+const AI_REMOTE_RETRY_COUNT = Math.max(1, Math.min(2, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 1)));
 
 function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -110,15 +17,33 @@ function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
   return { controller, timeoutId };
 }
 
-function makeRequestId() {
+function makeAntiRepeatNonce() {
   if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
-  return `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 }
 
-async function requestRemoteQuestion({ previousQuestionId, branchFilter }) {
-  if (!ENABLE_REAL_AI || typeof window === 'undefined') throw new Error('Real AI is disabled');
-  const recent = safeReadRecent();
+function canUseRemote() {
+  return ENABLE_REAL_AI && typeof window !== 'undefined' && typeof fetch === 'function';
+}
+
+function getPayloadError(payload, status) {
+  if (!payload || typeof payload !== 'object') return `AI endpoint failed with ${status}`;
+  return payload.error || payload.message || payload.attempts?.join(' | ') || `AI endpoint failed with ${status}`;
+}
+
+function buildRequestContext(context = {}) {
+  return {
+    recentIds: Array.isArray(context.recentIds) ? context.recentIds.slice(0, 20) : [],
+    recentSignatures: Array.isArray(context.recentSignatures) ? context.recentSignatures.slice(0, 40) : [],
+    recentQuestionSummaries: Array.isArray(context.recentQuestionSummaries)
+      ? context.recentQuestionSummaries.slice(0, 10)
+      : [],
+  };
+}
+
+async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, context, attempt }) {
   const { controller, timeoutId } = withTimeout();
+  const requestContext = buildRequestContext(context);
   try {
     const response = await fetch(AI_ENDPOINT, {
       method: 'POST',
@@ -127,151 +52,106 @@ async function requestRemoteQuestion({ previousQuestionId, branchFilter }) {
       body: JSON.stringify({
         previousQuestionId,
         branchFilter,
-        recentQuestionSummaries: recent.slice(0, 10),
-        requestId: makeRequestId(),
+        ...requestContext,
+        requestId: `klinikiq-ai-${Date.now()}-${attempt}`,
+        attempt,
+        antiRepeatNonce: makeAntiRepeatNonce(),
       }),
     });
-    const payload = await response.json().catch(() => null);
-    if (!response.ok || !payload?.ok || !payload?.question) {
-      const message = payload?.error || payload?.detail || response.statusText || 'AI endpoint failed';
-      throw new Error(message);
-    }
-    const question = payload.question;
-    question.aiMeta = {
-      ...(question.aiMeta || {}),
-      provider: payload.provider || question.aiMeta?.provider || 'openai',
-      fallback: Boolean(payload.fallback),
-      usedRemoteAI: Boolean(payload.usedRemoteAI),
-      serviceVersion: 'klinikiq-client-ai-reset-v1.0',
+
+    let payload = null;
+    try { payload = await response.json(); } catch { payload = null; }
+    if (!response.ok || !payload?.ok) throw new Error(getPayloadError(payload, response.status));
+
+    const rawQuestion = payload.question || payload;
+    const isFallback = Boolean(payload.fallback || payload.safeFallback || rawQuestion.fallback || String(payload.provider || rawQuestion.provider || '').toLowerCase().includes('fallback'));
+    const normalized = normalizeSimpleAIQuestion(rawQuestion, {
+      provider: payload.provider || rawQuestion.provider || 'openai',
+      model: rawQuestion.openAIModel || payload.model || null,
+      remote: !isFallback,
+      fallback: isFallback,
+      branchFilter,
+    });
+
+    normalized.aiMeta = {
+      ...(normalized.aiMeta || {}),
+      provider: payload.provider || rawQuestion.provider || normalized.aiMeta?.provider || 'openai',
+      remote: !isFallback,
+      fallback: isFallback,
+      remoteAttempt: attempt,
+      serverError: payload.error || null,
     };
-    question.source = payload.fallback ? 'local-safe-fallback' : 'real-ai';
-    if (hasRecentDuplicate(question, recent) && !payload.fallback) {
-      throw new Error('AI returned a near-duplicate question');
+
+    if (isTooSimilarToRecent(normalized, context.recentQuestionSummaries || [])) {
+      throw new Error('Yakın geçmişteki sorulara çok benzer üretim reddedildi.');
     }
-    rememberQuestion(question);
+
     return {
       ok: true,
-      question,
-      source: payload.provider || question.source || 'real-ai',
-      usedRemoteAI: !payload.fallback,
-      fallback: Boolean(payload.fallback),
+      question: normalized,
+      source: normalized.aiMeta.provider,
+      usedRemoteAI: !isFallback,
+      fallback: isFallback,
     };
   } finally {
     window.clearTimeout(timeoutId);
   }
 }
 
-const CLIENT_FALLBACKS = [
-  {
-    branch: 'Tıbbi Farmakoloji',
-    title: 'İlaç yan etkisi tanıma',
-    topic: 'Farmakoloji',
-    correct: 'Sorumlu ilacı kesmek ve destek tedavisi planlamak',
-    options: [
-      'Sorumlu ilacı kesmek ve destek tedavisi planlamak',
-      'Aynı ilacı daha yüksek dozda sürdürmek',
-      'Yakınmayı yalnız psikojenik kabul etmek',
-      'Rutin yıllık kontrol önermek',
-      'Tedaviyi hiçbir değerlendirme yapmadan değiştirmemek',
-    ],
-    stem: 'Yeni başlanan bir tedaviden kısa süre sonra beklenmeyen sistemik yakınmaları gelişen hasta değerlendirilir. Bulgular ilaç zamanı ile uyumludur ve başka bir akut neden öyküde öne çıkmamaktadır. Klinik karar, olası ilaç ilişkisini güvenli biçimde yönetmeye yöneliktir.',
-    question: 'Bu hastada en uygun güvenli yaklaşım hangisidir?',
-    explanation: 'Yeni yakınmaların ilaçla zamansal ilişkisi öncelikle ilaç güvenliği açısından değerlendirilmelidir. Sorumlu olabilecek ilacı kesmek ve destek tedavisi planlamak, gereksiz doz artırımı veya gecikmiş değerlendirmeden daha güvenlidir.',
-    pearl: 'İlaç güvenliği sorularında zaman ilişkisi, doz değişikliği ve alternatif nedenler birlikte değerlendirilir.',
-  },
-  {
-    branch: 'Tıbbi Mikrobiyoloji',
-    title: 'Test yorumu',
-    topic: 'Mikrobiyoloji',
-    correct: 'Test sonucunu klinik zamanlama ile birlikte yorumlamak',
-    options: [
-      'Test sonucunu klinik zamanlama ile birlikte yorumlamak',
-      'Tek negatif sonucu tüm olasılıkları dışlamak için yeterli görmek',
-      'Pozitifliği her durumda aktif hastalık kabul etmek',
-      'Örnek türünü değerlendirmeden sonuç vermek',
-      'Klinik bulguları tamamen yok saymak',
-    ],
-    stem: 'Enfeksiyon şüphesiyle değerlendirilen hastada tanısal test sonucu elde edilmiştir. Sonucun anlamı, örneğin alındığı dönem ve klinik bulgularla birlikte değişebilmektedir. Hekim test sonucunu tek başına değil, klinik bağlam içinde yorumlamak istemektedir.',
-    question: 'Bu test sonucunu değerlendirirken en doğru yaklaşım hangisidir?',
-    explanation: 'Mikrobiyolojik testler örnek türü, zamanlama ve klinik olasılıkla birlikte anlam kazanır. Tek bir sonucu bağlamdan koparmak yanlış dışlama veya yanlış tanı riskini artırır.',
-    pearl: 'Test yorumunda klinik olasılık, örnek zamanı ve testin neyi gösterdiği birlikte düşünülür.',
-  },
-];
+async function requestRemoteQuestion({ previousQuestionId, branchFilter, context }) {
+  if (!canUseRemote()) return null;
+  let lastError = null;
+  for (let attempt = 1; attempt <= AI_REMOTE_RETRY_COUNT; attempt += 1) {
+    try {
+      const result = await fetchOneRemoteQuestion({ previousQuestionId, branchFilter, context, attempt });
+      if (result?.ok) {
+        const historyItem = rememberAIQuestion(result.question);
+        result.question.aiMeta = { ...(result.question.aiMeta || {}), historyItemId: historyItem.id };
+        return result;
+      }
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError || new Error('AI üretimi başarısız oldu.');
+}
 
-function makeClientFallbackQuestion({ branchFilter = 'random' } = {}) {
-  const recent = safeReadRecent();
-  const requested = String(branchFilter || 'random');
-  const pool = CLIENT_FALLBACKS.filter((item) => requested === 'random' || requested === 'Rastgele' || normalizeText(item.branch).includes(normalizeText(requested).split(' ')[0]));
-  const selected = (pool.length ? pool : CLIENT_FALLBACKS).find((item) => !recent.some((recentItem) => normalizeText(recentItem.title) === normalizeText(item.title))) || CLIENT_FALLBACKS[Math.floor(Math.random() * CLIENT_FALLBACKS.length)];
-  const id = `ai-spot-client-fallback-${Date.now()}-${stableHash(selected.title)}`;
-  const question = {
-    id,
-    source: 'client-safe-fallback',
-    caseType: 'ai-spot',
-    branchId: 'tus-spot-olgular',
-    branchName: selected.branch,
-    relatedBranch: selected.branch,
-    spotCategory: `AI Spot • ${selected.branch}`,
-    title: selected.title,
-    topic: selected.topic,
-    difficulty: 'Orta',
-    learningTarget: selected.topic,
-    answerTarget: 'next_step',
-    questionType: 'next_step',
-    demographics: 'Kısa TUS klinik bağlamı',
-    setting: 'Klinik değerlendirme',
-    chiefComplaint: selected.title,
-    stem: selected.stem,
-    narrativeStem: selected.stem,
-    stemMode: 'narrative',
-    history: [],
-    exam: [],
-    vitals: {},
-    investigations: [],
-    findings: { history: [], exam: [], vitals: {}, investigations: [] },
-    compactVitals: [],
-    compactObjectiveData: [],
-    question: selected.question,
-    diagnosis: {
-      correct: selected.correct,
-      options: selected.options,
-      explanation: selected.explanation,
-      nextStep: selected.correct,
-      pearls: [selected.pearl],
-      answerFeedback: {
-        whyCorrect: selected.explanation,
-        evidenceChain: [{ title: 'Klinik bağlam', text: 'Soru tek bir karar hedefini ölçer.' }, { title: 'Güvenlik', text: 'Yanıt klinik güvenliği önceleyen seçenektir.' }, { title: 'Sınav mantığı', text: 'Bağlamdan kopuk seçenekler elenir.' }],
-        pearls: [selected.pearl],
-        clinicalPearls: [selected.pearl],
-        differentialComparison: Object.fromEntries(selected.options.map((option) => [option, { explanation: option === selected.correct ? selected.explanation : `${option} bu soruda ölçülen güvenli karar hedefini doğrudan karşılamaz.`, comparisonPoints: [] }])),
-        managementSteps: [],
-      },
-    },
-    semanticFingerprint: `sem-${stableHash(`${selected.branch}|${selected.title}|${selected.correct}`)}`,
-    contentSignature: `cs-${stableHash(`${selected.title}|${selected.options.join('|')}`)}`,
-    aiMeta: { provider: 'client-safe-fallback', fallback: true, generatedAt: Date.now() },
-    generatedAt: new Date().toISOString(),
+function createClientFallback({ branchFilter, context, reason }) {
+  const question = createSimpleFallbackQuestion({
+    branchFilter,
+    recentQuestionSummaries: context?.recentQuestionSummaries || [],
+  });
+  question.aiMeta = {
+    ...(question.aiMeta || {}),
+    fallback: true,
+    remote: false,
+    fallbackReason: reason?.message || String(reason || ''),
   };
-  rememberQuestion(question);
-  return question;
+  rememberAIQuestion(question);
+  return {
+    ok: true,
+    question,
+    source: 'local-safe-fallback',
+    usedRemoteAI: false,
+    fallback: true,
+    error: reason || null,
+  };
 }
 
 export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random' } = {}) {
+  const context = buildRecentQuestionContext(30);
   try {
-    return await requestRemoteQuestion({ previousQuestionId, branchFilter });
+    const remote = await requestRemoteQuestion({ previousQuestionId, branchFilter, context });
+    if (remote?.ok) return remote;
   } catch (error) {
-    const question = makeClientFallbackQuestion({ branchFilter });
-    return {
-      ok: true,
-      question,
-      source: 'client-safe-fallback',
-      usedRemoteAI: false,
-      fallback: true,
-      error,
-    };
+    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'true').toLowerCase() === 'false') {
+      return { ok: false, question: null, source: 'openai-error', usedRemoteAI: false, fallback: false, error };
+    }
+    return createClientFallback({ branchFilter, context, reason: error });
   }
+  return createClientFallback({ branchFilter, context, reason: null });
 }
 
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'simple-openai-single-call-with-safe-fallback' : 'client-safe-fallback-only';
+  return ENABLE_REAL_AI ? 'simple-openai-one-call-with-safe-fallback' : 'safe-local-fallback-only';
 }
