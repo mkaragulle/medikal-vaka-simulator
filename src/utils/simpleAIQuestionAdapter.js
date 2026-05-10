@@ -22,6 +22,25 @@ function ensureSentence(value = '') {
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
+
+function stripFeedbackLabel(value = '') {
+  return cleanText(value)
+    .replace(/^(?:TUS\s*ipucu|Spot\s*bilgi|Hap\s*bilgi|Sınav\s*notu)\s*[:：-]\s*/iu, '')
+    .trim();
+}
+
+function hasBrokenSentence(value = '') {
+  const text = cleanText(value);
+  if (!text) return false;
+  if (/\.{3}|…/u.test(text)) return true;
+  if (/\b(?:ve|veya|ile|çünkü|ancak|fakat|bu nedenle|olarak|için)$/iu.test(text)) return true;
+  return text.split(/(?<=[.!?])\s+/u).some((sentence) => {
+    const part = sentence.replace(/[.!?]+$/u, '').trim();
+    return /^(?:bu nedenle|ekokardiyografi|sistemik tedavi bu|bu tedavi|bu seçenek)$/iu.test(part)
+      || /\b(?:bu nedenle|ekokardiyografi|sistemik tedavi bu|bu tedavi)\s*$/iu.test(part);
+  });
+}
+
 function ensureQuestion(value = '') {
   const text = cleanText(value).replace(/[\s,;:.]+$/u, '');
   if (!text) return 'Bu olguda en uygun seçenek hangisidir?';
@@ -80,6 +99,35 @@ function normalizeOptions(rawOptions = []) {
 function getCorrectOption(options = [], correctAnswer = '') {
   const correctId = String(correctAnswer || '').trim().toUpperCase();
   return options.find((option) => option.id === correctId) || options[0] || null;
+}
+
+
+function titleWords(value = '') {
+  const stop = new Set(['klinik', 'olgu', 'soru', 'tus', 'spot', 'yorum', 'yorumu', 'karar', 'degerlendirme', 'paterni', 'yaklasim', 'hasta', 'hastada']);
+  return normalizeForCompare(value).split(/\s+/u).filter((word) => word.length >= 4 && !stop.has(word));
+}
+
+function titleLooksDetached(payload = {}, title = '') {
+  const tWords = titleWords(title);
+  if (tWords.length < 2) return false;
+  const context = normalizeForCompare([
+    payload.chiefComplaint || payload.cc,
+    payload.setting,
+    payload.stem || payload.s,
+    ...compactItems(payload.compactVitals || payload.vitals || [], 5).flatMap((item) => [item.label, item.value]),
+    ...compactItems(payload.compactObjectiveData || payload.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
+  ].filter(Boolean).join(' '));
+  if (!context) return false;
+  if (tWords.some((word) => context.includes(word))) return false;
+  return !/(laboratuvar|objektif|vital|elektrolit|mekanizma|anatomik|patolojik|farmakolojik|mikrobiyolojik)/iu.test(title);
+}
+
+function makeSafeTitle(payload = {}, correctText = '') {
+  const complaint = cleanText(payload.chiefComplaint || payload.cc || '');
+  if (complaint && complaint.length >= 4 && !containsAnswerLeak(complaint, correctText)) return complaint.replace(/[.!?]+$/u, '');
+  if (compactItems(payload.compactObjectiveData || payload.objectiveData || [], 8).length) return 'Objektif veri yorumu';
+  if (compactItems(payload.compactVitals || payload.vitals || [], 5).length) return 'Vital bulgularla klinik değerlendirme';
+  return 'Klinik karar sorusu';
 }
 
 
@@ -204,16 +252,18 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
   const stem = ensureSentence(payload.stem || payload.s || 'Kısa klinik olgu verileri birlikte değerlendirilir.');
   const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
-    .filter((item) => !containsAnswerLeak(item, correctText))
+    .filter((item) => !containsAnswerLeak(item, correctText) && !hasBrokenSentence(item))
     .slice(0, 3);
   const answerTarget = cleanText(payload.answerTarget || payload.questionIntent || payload.intent || 'single_best_answer');
   const managementSteps = isManagementTarget(answerTarget)
     ? asArray(payload.managementSteps || payload.management || []).map((item) => ensureSentence(item)).filter(Boolean).slice(0, 3)
     : [];
-  const examPearl = ensureSentence(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || 'Benzer TUS sorularında karar verdirici ipucu, soru kökünün sorduğu hedefe göre yorumlanır.');
-  const explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || 'Olgudaki klinik veriler birlikte değerlendirildiğinde doğru seçenek diğerlerinden ayrılır.');
+  const examPearl = ensureSentence(stripFeedbackLabel(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || 'Benzer TUS sorularında karar verdirici ipucu, soru kökünün sorduğu hedefe göre yorumlanır.'));
+  let explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || 'Olgudaki klinik veriler birlikte değerlendirildiğinde doğru seçenek diğerlerinden ayrılır.');
+  if (hasBrokenSentence(explanation)) explanation = 'Olgudaki klinik veriler birlikte değerlendirildiğinde doğru seçenek diğerlerinden ayrılır.';
   const optionRationales = payload.optionRationales || payload.wrongOptionFeedback || payload.rationales || {};
-  const title = cleanText(payload.title || payload.t || 'TUS spot klinik karar');
+  const rawTitle = cleanText(payload.title || payload.t || 'TUS spot klinik karar');
+  const title = titleLooksDetached(payload, rawTitle) ? makeSafeTitle(payload, correctText) : rawTitle;
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -293,6 +343,72 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
 }
 
 const FALLBACK_BANK = [
+
+  {
+    relatedBranch: 'Anatomi',
+    title: 'El bileğinde duyu ve motor kayıp',
+    learningTarget: 'Sinir, kas ve duyu alanı ilişkisini yorumlama.',
+    demographics: 'Erişkin hasta',
+    chiefComplaint: 'El bileğinde duyu ve motor kayıp',
+    stem: 'Erişkin hasta el bileği düzeyinde kesici travma sonrası başvurur. Başparmak opozisyonunda belirgin zayıflık vardır. İlk üç parmak palmar yüzde duyu azalması saptanır. Ön kol proksimal kas gücü korunmuştur.',
+    question: 'Bu bulgular en çok hangi anatomik yapının hasarı ile uyumludur?',
+    answerTarget: 'mechanism',
+    options: [
+      { id: 'A', text: 'Median sinir' },
+      { id: 'B', text: 'Ulnar sinir' },
+      { id: 'C', text: 'Radial sinir' },
+      { id: 'D', text: 'Musculocutaneous sinir' },
+      { id: 'E', text: 'Aksiller sinir' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Başparmak opozisyon zayıflığı ve ilk üç parmak palmar yüzde duyu azalması median sinirin el bileği düzeyindeki dağılımıyla uyumludur. Proksimal ön kol kaslarının korunması lezyonun daha distal yerleşimli olduğunu düşündürür.',
+    evidenceChain: ['Motor — Başparmak opozisyonu zayıftır.', 'Duyu — İlk üç parmak palmar duyusu azalmıştır.', 'Lokalizasyon — Proksimal ön kol kas gücü korunmuştur.'],
+    examPearl: 'Median sinir el bileğinde thenar motor fonksiyon ve lateral palmar duyu ile ayırt edilir.',
+  },
+  {
+    relatedBranch: 'Tıbbi Patoloji',
+    title: 'Morfolojik tümör paterni',
+    learningTarget: 'Morfolojik patern üzerinden patolojik antiteyi tanıma.',
+    demographics: 'Erişkin hasta',
+    chiefComplaint: 'Tiroid nodülü',
+    stem: 'Erişkin hastada tiroid nodülü nedeniyle ince iğne aspirasyonu yapılır. Preparatta nükleer çentiklenme, optik berrak nükleuslar ve psammoma cisimcikleri tariflenir. Kapsül invazyonu bilgisi verilmemiştir.',
+    compactObjectiveData: [{ label: 'Sitoloji', value: 'Nükleer çentiklenme, optik berrak nükleuslar ve psammoma cisimcikleri' }],
+    question: 'Bu morfolojik patern en çok hangi patolojik antiteyi destekler?',
+    answerTarget: 'diagnosis',
+    options: [
+      { id: 'A', text: 'Papiller tiroid karsinomu' },
+      { id: 'B', text: 'Foliküler adenom' },
+      { id: 'C', text: 'Medüller tiroid karsinomu' },
+      { id: 'D', text: 'Anaplastik tiroid karsinomu' },
+      { id: 'E', text: 'Hashimoto tiroiditi' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Optik berrak nükleus, nükleer çentiklenme ve psammoma cisimcikleri papiller tiroid karsinomu için klasik morfolojik ipuçlarıdır. Kapsül veya damar invazyonu daha çok foliküler lezyon ayrımında belirleyicidir.',
+    evidenceChain: ['Morfoloji — Optik berrak nükleuslar tariflenmiştir.', 'Morfoloji — Nükleer çentiklenme vardır.', 'Morfoloji — Psammoma cisimcikleri belirtilmiştir.'],
+    examPearl: 'Papiller tiroid karsinomunda tanı nükleer özelliklerle kurulur; psammoma cisimcikleri destekleyicidir.',
+  },
+  {
+    relatedBranch: 'Tıbbi Biyokimya',
+    title: 'Vitamin eksikliğinde biyokimyasal ipucu',
+    learningTarget: 'Klasik biyokimyasal kofaktör bilgisini tanıma.',
+    demographics: 'Erişkin hasta',
+    chiefComplaint: 'Makrositik anemi bulguları',
+    stem: 'Erişkin hastada yorgunluk ve makrositik anemi saptanır. Nörolojik bulgu tariflenmez. Diyette yeşil yapraklı sebze alımının belirgin az olduğu öğrenilir.',
+    compactObjectiveData: [{ label: 'Hemoglobin', value: '10.2 g/dL' }, { label: 'MCV', value: '112 fL' }],
+    question: 'Bu tabloyla ilişkili temel biyokimyasal işlev hangisidir?',
+    answerTarget: 'mechanism',
+    options: [
+      { id: 'A', text: 'Tek karbon transfer reaksiyonları' },
+      { id: 'B', text: 'Gamma-karboksilasyon reaksiyonları' },
+      { id: 'C', text: 'Oksidatif fosforilasyonun ayrılması' },
+      { id: 'D', text: 'Heme demirinin indirgenmesi' },
+      { id: 'E', text: 'Steroid hormon sentezinin inhibisyonu' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Folat tek karbon transfer reaksiyonlarında görev alır ve DNA sentezi için gereklidir. Eksikliğinde makrositik anemi gelişebilir; nörolojik bulgu olmaması B12 eksikliğinden ayırmada destekleyicidir.',
+    evidenceChain: ['Laboratuvar — Makrositik anemi vardır.', 'Öykü — Yeşil yapraklı sebze alımı düşüktür.', 'Klinik — Nörolojik bulgu tariflenmemiştir.'],
+    examPearl: 'Folat tek karbon metabolizması ve DNA sentezi için gereklidir; eksikliği makrositik anemi yapar.',
+  },
   {
     relatedBranch: 'İç Hastalıkları',
     title: 'Sıvı-elektrolit yorumu',
