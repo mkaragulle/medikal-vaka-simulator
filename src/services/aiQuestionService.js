@@ -144,14 +144,18 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
     const remote = await requestRemoteQuestion({ previousQuestionId, branchFilter, context });
     if (remote?.ok) return remote;
   } catch (error) {
-    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'true').toLowerCase() === 'false') {
+    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() !== 'true') {
       return { ok: false, question: null, source: 'openai-error', usedRemoteAI: false, fallback: false, error };
     }
     return createClientFallback({ branchFilter, context, reason: error });
   }
-  return createClientFallback({ branchFilter, context, reason: null });
+  if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() === 'true') {
+    return createClientFallback({ branchFilter, context, reason: null });
+  }
+  return { ok: false, question: null, source: 'openai-unavailable', usedRemoteAI: false, fallback: false, error: new Error('AI servisi kullanılamıyor.') };
 }
 
+
 export function getAIServiceMode() {
-  return ENABLE_REAL_AI ? 'simple-openai-one-call-with-safe-fallback' : 'safe-local-fallback-only';
+  return ENABLE_REAL_AI ? 'simple-openai-one-call' : 'real-ai-disabled';
 }

@@ -47,95 +47,6 @@ function normalizeText(value = '') {
     .trim();
 }
 
-
-function normalizeForSafety(value = '') {
-  return normalizeText(value)
-    .toLocaleLowerCase('tr')
-    .replace(/ı/g, 'i')
-    .replace(/[âîû]/g, (match) => ({ â: 'a', î: 'i', û: 'u' }[match] || match))
-    .replace(/[^a-z0-9çğıöşü\s/+]/giu, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function numericValue(value = '') {
-  const match = String(value || '').replace(',', '.').match(/-?\d+(?:\.\d+)?/u);
-  return match ? Number(match[0]) : null;
-}
-
-function hasBrokenFeedbackText(value = '') {
-  const text = normalizeText(value);
-  if (!text) return true;
-  if (/\.{3}|…/u.test(text)) return true;
-  if (/\b(?:ve|veya|ile|çünkü|ancak|fakat|bu nedenle|olarak|için)$/iu.test(text)) return true;
-  return text.split(/(?<=[.!?])\s+/u).some((sentence) => {
-    const part = sentence.replace(/[.!?]+$/u, '').trim();
-    return /^(?:bu nedenle|ekokardiyografi|sistemik tedavi bu|bu tedavi|bu seçenek)$/iu.test(part)
-      || /\b(?:bu nedenle|ekokardiyografi|sistemik tedavi bu|bu tedavi)\s*$/iu.test(part);
-  });
-}
-
-function collectCaseDataItems(clinicalCase = {}) {
-  const items = [];
-  const pushItem = (label, value) => {
-    if (label || value) items.push({ label: normalizeText(label), value: normalizeText(value) });
-  };
-  (clinicalCase.compactVitals || []).forEach((item) => pushItem(item?.label, item?.value));
-  (clinicalCase.compactObjectiveData || []).forEach((item) => pushItem(item?.label, item?.value));
-  Object.entries(clinicalCase.vitals || {}).forEach(([label, value]) => pushItem(label, value));
-  return items;
-}
-
-function detectCaseFacts(clinicalCase = {}) {
-  const facts = { lowK: false, highK: false, lowBP: false, highBP: false, fever: false, afebrile: false };
-  collectCaseDataItems(clinicalCase).forEach((item) => {
-    const label = normalizeForSafety(item.label);
-    const value = normalizeForSafety(item.value);
-    const n = numericValue(item.value);
-    if (/\b(k|potasyum|potassium)\b/.test(label) || /hipokalemi|hiperkalemi/.test(value)) {
-      if (n !== null && n < 3.5) facts.lowK = true;
-      if (n !== null && n > 5.5) facts.highK = true;
-      if (/hipokalemi|potasyum dusuk|k dusuk/.test(value)) facts.lowK = true;
-      if (/hiperkalemi|potasyum yuksek|k yuksek/.test(value)) facts.highK = true;
-    }
-    if (/^ta$|kan basinci|tansiyon/.test(label)) {
-      const bp = String(item.value || '').match(/(\d{2,3})\s*\/\s*(\d{2,3})/u);
-      if (bp) {
-        const sys = Number(bp[1]);
-        const dia = Number(bp[2]);
-        if (sys < 90 || dia < 60) facts.lowBP = true;
-        if (sys >= 140 || dia >= 90) facts.highBP = true;
-      }
-    }
-    if (/ates|ateş|sicaklik|sıcaklık/.test(label)) {
-      if (n !== null && n >= 38) facts.fever = true;
-      if (/afebril|ates yok|ateş yok/.test(value)) facts.afebrile = true;
-    }
-  });
-  return facts;
-}
-
-function contradictsCaseFacts(value = '', clinicalCase = {}) {
-  const text = normalizeForSafety(value);
-  if (!text) return false;
-  const facts = detectCaseFacts(clinicalCase);
-  if (facts.lowK && /(k\s*yuksek|potasyum\s*yuksek|hiperkalemi)/.test(text)) return true;
-  if (facts.highK && /(k\s*dusuk|potasyum\s*dusuk|hipokalemi)/.test(text)) return true;
-  if (facts.highBP && /(hipotansiyon|ta\s*dusuk|kan basinci\s*dusuk)/.test(text)) return true;
-  if (facts.lowBP && /(hipertansiyon|ta\s*yuksek|kan basinci\s*yuksek)/.test(text)) return true;
-  if (facts.fever && /(afebril|ates\s*yok|ateş\s*yok)/.test(text)) return true;
-  if (facts.afebrile && /(yuksek\s*ates|yüksek\s*ateş|febril|atesi\s*yuksek|ateşi\s*yüksek)/.test(text)) return true;
-  return false;
-}
-
-function isUnsafeFeedbackText(value = '', clinicalCase = {}) {
-  return hasBrokenFeedbackText(value) || contradictsCaseFacts(value, clinicalCase);
-}
-
-function stripFeedbackHeading(value = '') {
-  return normalizeText(value).replace(/^(?:TUS\s*ipucu|Spot\s*bilgi|Hap\s*bilgi|Sınav\s*notu)\s*[:：-]\s*/iu, '').trim();
-}
-
 function itemText(value) {
   if (!value) return '';
   if (typeof value === 'string') return normalizeText(value);
@@ -410,7 +321,7 @@ function deriveEvidenceChain(clinicalCase) {
   return unique(rawEvidence)
     .slice(0, MAX_EVIDENCE_ITEMS)
     .map(cleanEvidenceText)
-    .filter((item) => item && !isUnsafeFeedbackText(item.text, clinicalCase));
+    .filter(Boolean);
 }
 
 function inferPearlLabel(text = '', index = 0) {
@@ -435,11 +346,10 @@ function derivePearls(clinicalCase) {
     .map((item, index) => {
       const normalized = normalizeTitledItem(item, index, item?.label || inferPearlLabel(itemText(item), index), 170);
       if (!normalized) return null;
-      normalized.text = stripFeedbackHeading(normalized.text);
       normalized.label = normalized.title;
       return normalized;
     })
-    .filter((item) => item && !isUnsafeFeedbackText(item.text, clinicalCase));
+    .filter(Boolean);
 }
 
 function inferManagementTitle(text = '', index = 0) {
@@ -508,8 +418,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
     }
 
     const explicit = wrongMap[option] || {};
-    let explanation = removeMetaLanguage(explicit.explanation || `${option} ilk bakışta aynı karar alanında düşünülebilir; ancak bu olguda ${clue ? `${clue} ` : 'kanıt zinciri '}bu alternatifi öncelikli yanıt yapacak yeterli desteği sağlamaz. Bu seçenek ana ipucunu eksik açıklar.`);
-    if (isUnsafeFeedbackText(explanation, clinicalCase)) explanation = `${option} bu soru hedefi için tek en iyi yanıt değildir.`;
+    const explanation = removeMetaLanguage(explicit.explanation || `${option} ilk bakışta aynı karar alanında düşünülebilir; ancak bu olguda ${clue ? `${clue} ` : 'kanıt zinciri '}bu alternatifi öncelikli yanıt yapacak yeterli desteği sağlamaz. Bu seçenek ana ipucunu eksik açıklar.`);
     const nonGenericPoints = unique(explicit.comparisonPoints || []).filter((point) => !isGenericComparisonPoint(point));
 
     return {
@@ -687,8 +596,7 @@ function AnswerFeedbackPanel({
   const optionComparisons = buildOptionComparisons(clinicalCase, selectedDiagnosis, evidenceChain);
   const selectedComparison = optionComparisons.find((item) => item.option === selectedDiagnosis);
   const whyWrong = deriveWhyWrong(clinicalCase, selectedDiagnosis, selectedComparison);
-  let reasoningText = isCorrect ? whyCorrect : whyWrong;
-  if (isUnsafeFeedbackText(reasoningText, clinicalCase)) reasoningText = 'Olgudaki veriler birlikte değerlendirildiğinde seçeneğin uygunluğu aynı kategorideki alternatiflerle karşılaştırılarak belirlenir.';
+  const reasoningText = isCorrect ? whyCorrect : whyWrong;
   const rawPearls = derivePearls(clinicalCase);
   const managementSteps = deriveManagementSteps(clinicalCase);
   const glossaryEnabled = !hardMode;
@@ -701,12 +609,8 @@ function AnswerFeedbackPanel({
     managementSteps,
     correctAnswer: clinicalCase.diagnosis?.correct || '',
   });
-  const rawExamSignal = dedupedFeedback.signal;
-  const examSignal = rawExamSignal?.hasContent ? {
-    ...rawExamSignal,
-    spotPearl: isUnsafeFeedbackText(rawExamSignal.spotPearl || '', clinicalCase) ? '' : stripFeedbackHeading(rawExamSignal.spotPearl || ''),
-  } : rawExamSignal;
-  const pearls = dedupedFeedback.pearls.filter((item) => !isUnsafeFeedbackText(item.text || item, clinicalCase));
+  const examSignal = dedupedFeedback.signal;
+  const pearls = dedupedFeedback.pearls;
   const shouldRenderPearls = pearls.length && (!isSpotCase || !examSignal.hasContent);
 
   return (

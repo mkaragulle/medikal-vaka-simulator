@@ -1,5 +1,5 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v3-feedback-tight';
+const PROMPT_VERSION = 'klinikiq-simple-tus-v4-prompt-only';
 const SCHEMA_VERSION = 'simple-ai-spot-v1';
 
 const ALLOWED_BRANCHES = [
@@ -204,6 +204,15 @@ function isManagementTarget(answerTarget = '') {
   return /^(first_step|next_step|treatment|prevention)$/iu.test(cleanText(answerTarget));
 }
 
+function selectPromptTarget(branch = '') {
+  const value = normalize(branch);
+  if (/anatomi/.test(value)) return 'mechanism';
+  if (/histoloji|embriyoloji/.test(value)) return 'mechanism';
+  if (/biyokimya/.test(value)) return Math.random() < 0.5 ? 'mechanism' : 'lab_interpretation';
+  if (/patoloji/.test(value)) return 'diagnosis';
+  return ANSWER_TARGETS[Math.floor(Math.random() * ANSWER_TARGETS.length)];
+}
+
 function collectStrings(value, output = []) {
   if (typeof value === 'string') output.push(value);
   else if (Array.isArray(value)) value.forEach((item) => collectStrings(item, output));
@@ -211,170 +220,10 @@ function collectStrings(value, output = []) {
   return output;
 }
 
-
 function stripFeedbackLabel(value = '') {
   return cleanText(value)
     .replace(/^(?:TUS\s*ipucu|Spot\s*bilgi|Hap\s*bilgi|Sınav\s*notu)\s*[:：-]\s*/iu, '')
     .trim();
-}
-
-function words(value = '') {
-  return normalize(value).split(/\s+/u).filter((word) => word.length >= 4);
-}
-
-const TITLE_STOP_WORDS = new Set(['klinik', 'olgu', 'oluda', 'soru', 'tus', 'spot', 'yorum', 'yorumu', 'karar', 'degerlendirme', 'paterni', 'yaklasim', 'uygun', 'hasta', 'hastada', 'verisi']);
-
-function titleLooksDetached(question = {}, title = '') {
-  const titleWords = words(title).filter((word) => !TITLE_STOP_WORDS.has(word));
-  if (!titleWords.length) return false;
-  const context = normalize([
-    question.chiefComplaint,
-    question.setting,
-    question.stem,
-    ...compactItems(question.compactVitals || question.vitals || [], 5).flatMap((item) => [item.label, item.value]),
-    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
-  ].filter(Boolean).join(' '));
-  if (!context) return false;
-  const overlap = titleWords.filter((word) => context.includes(word)).length;
-  if (overlap > 0) return false;
-  // Very broad non-spoiler titles may not share exact words, but stale titles usually contain a specific unrelated clinical object.
-  return titleWords.length >= 2 && !/(laboratuvar|objektif|vital|elektrolit|mekanizma|anatomik|patolojik|farmakolojik|mikrobiyolojik)/iu.test(title);
-}
-
-function makeSafeTitle(question = {}, correctText = '') {
-  const complaint = cleanText(question.chiefComplaint || '');
-  if (complaint && complaint.length >= 4 && !containsAnswerLeak(complaint, correctText)) return complaint.replace(/[.!?]+$/u, '');
-  const stemFirst = cleanText(question.stem || '').split(/(?<=[.!?])\s+/u)[0] || '';
-  const match = stemFirst.match(/(?:nedeniyle|ile)\s+başvur/iu) ? stemFirst.replace(/^(?:\d+\s*yaşında|erişkin|çocuk|kadın|erkek|hasta)[^,]*,?\s*/iu, '') : '';
-  if (match && match.length >= 8 && !containsAnswerLeak(match, correctText)) return truncateTitle(match);
-  if (compactItems(question.compactObjectiveData || [], 8).length) return 'Objektif veri yorumu';
-  if (compactItems(question.compactVitals || [], 5).length) return 'Vital bulgularla klinik değerlendirme';
-  return 'Klinik karar sorusu';
-}
-
-function truncateTitle(value = '') {
-  const text = cleanText(value).replace(/\s+nedeniyle.*$/iu, '').replace(/\s+ile\s+başvur.*$/iu, '').replace(/[.!?]+$/u, '');
-  return text.length > 64 ? `${text.slice(0, 61).replace(/\s+\S*$/u, '')}` : text;
-}
-
-function isBasicScienceBranch(branch = '') {
-  return /anatomi|histoloji|embriyoloji|biyokimya|patoloji|farmakoloji|mikrobiyoloji|temel bilim/iu.test(cleanText(branch));
-}
-
-function selectAnswerTarget(branch = '') {
-  const value = normalize(branch);
-  if (/anatomi/.test(value)) return Math.random() < 0.75 ? 'mechanism' : 'complication';
-  if (/histoloji|embriyoloji/.test(value)) return Math.random() < 0.7 ? 'mechanism' : 'diagnosis';
-  if (/biyokimya/.test(value)) return Math.random() < 0.65 ? 'mechanism' : 'lab_interpretation';
-  if (/patoloji/.test(value)) return Math.random() < 0.75 ? 'diagnosis' : 'mechanism';
-  if (/farmakoloji/.test(value)) return Math.random() < 0.6 ? 'mechanism' : 'treatment';
-  return ANSWER_TARGETS[Math.floor(Math.random() * ANSWER_TARGETS.length)];
-}
-
-function isBranchTargetMismatch(branch = '', target = '') {
-  const b = normalize(branch);
-  const t = normalize(target);
-  if (/anatomi/.test(b) && /(diagnostic_test|lab_interpretation|treatment|first_step|next_step|prevention)/i.test(target)) return true;
-  if (/(histoloji|embriyoloji|biyokimya|patoloji)/.test(b) && /(first_step|next_step|treatment|prevention)/i.test(target)) return true;
-  return false;
-}
-
-function numericValue(value = '') {
-  const match = String(value || '').replace(',', '.').match(/-?\d+(?:\.\d+)?/u);
-  return match ? Number(match[0]) : null;
-}
-
-function detectCaseFacts(question = {}) {
-  const facts = { lowK: false, highK: false, lowBP: false, highBP: false, fever: false, afebrile: false };
-  const items = [...compactItems(question.compactVitals || question.vitals || [], 8), ...compactItems(question.compactObjectiveData || question.objectiveData || [], 12)];
-  items.forEach((item) => {
-    const label = normalize(item.label);
-    const value = normalize(item.value);
-    const raw = `${item.label} ${item.value}`;
-    const n = numericValue(item.value);
-    if (/\b(k|potasyum|potassium)\b/.test(label) || /hipo(?:k|potas)|hiper(?:k|potas)/.test(value)) {
-      if (n !== null && n < 3.5) facts.lowK = true;
-      if (n !== null && n > 5.5) facts.highK = true;
-      if (/hipokalemi|potasyum dusuk|k dusuk/.test(value)) facts.lowK = true;
-      if (/hiperkalemi|potasyum yuksek|k yuksek/.test(value)) facts.highK = true;
-    }
-    if (/^ta$|kan basinci|tansiyon/.test(label)) {
-      const bp = String(item.value || '').match(/(\d{2,3})\s*\/\s*(\d{2,3})/u);
-      if (bp) {
-        const sys = Number(bp[1]);
-        const dia = Number(bp[2]);
-        if (sys < 90 || dia < 60) facts.lowBP = true;
-        if (sys >= 140 || dia >= 90) facts.highBP = true;
-      }
-    }
-    if (/ates|ateş|sicaklik|sıcaklık/.test(label)) {
-      if (n !== null && n >= 38) facts.fever = true;
-      if (/afebril|ates yok|ateş yok/.test(value)) facts.afebrile = true;
-    }
-    if (/afebril|ateşsiz/.test(normalize(raw))) facts.afebrile = true;
-  });
-  return facts;
-}
-
-function hasFeedbackContradiction(question = {}) {
-  const facts = detectCaseFacts(question);
-  const feedbackText = normalize([
-    question.explanation,
-    question.examPearl,
-    ...asArray(question.evidenceChain),
-    ...Object.values(question.wrongOptionFeedback || {}),
-    ...asArray(question.managementSteps),
-  ].filter(Boolean).join(' '));
-  if (!feedbackText) return false;
-  if (facts.lowK && /(k\s*yuksek|potasyum\s*yuksek|hiperkalemi)/.test(feedbackText)) return true;
-  if (facts.highK && /(k\s*dusuk|potasyum\s*dusuk|hipokalemi)/.test(feedbackText)) return true;
-  if (facts.highBP && /(hipotansiyon|ta\s*dusuk|kan basinci\s*dusuk)/.test(feedbackText)) return true;
-  if (facts.lowBP && /(hipertansiyon|ta\s*yuksek|kan basinci\s*yuksek)/.test(feedbackText)) return true;
-  if (facts.fever && /(afebril|ates\s*yok|ateş\s*yok)/.test(feedbackText)) return true;
-  if (facts.afebrile && /(yuksek\s*ates|yüksek\s*ateş|febril|atesi\s*yuksek|ateşi\s*yüksek)/.test(feedbackText)) return true;
-  return false;
-}
-
-function hasBrokenSentence(text = '') {
-  const value = cleanText(text);
-  if (!value) return false;
-  if (hasTruncatedText(value)) return true;
-  const fragments = value.split(/(?<=[.!?])\s+/u).filter(Boolean);
-  return fragments.some((fragment) => {
-    const f = fragment.replace(/[.!?]+$/u, '').trim();
-    if (/^(?:bu nedenle|ekokardiyografi|sistemik tedavi bu|bu tedavi|bu seçenek)$/iu.test(f)) return true;
-    if (/\b(?:bu nedenle|ekokardiyografi|sistemik tedavi bu|bu tedavi)\s*$/iu.test(f)) return true;
-    return false;
-  });
-}
-
-function hasMissingUnit(item = {}) {
-  const label = normalize(item.label);
-  const value = cleanText(item.value);
-  const n = numericValue(value);
-  if (n === null) return false;
-  if (/hemoglobin|\bhb\b/.test(label)) return !/g\s*\/\s*dL|g\/dl/iu.test(value);
-  if (/trombosit|platelet/.test(label)) return !/(\/mm|\/µL|\/uL|x\s*10|bin\/µL|bin\/uL)/iu.test(value);
-  if (/lokosit|lökosit|wbc/.test(label)) return !/(\/mm|\/µL|\/uL|x\s*10|bin\/µL|bin\/uL)/iu.test(value);
-  if (/ates|ateş|sicaklik|sıcaklık/.test(label)) return !/°\s*C|C\b|santigrat/iu.test(value);
-  if (/^ta$|kan basinci|tansiyon/.test(label)) return !/mm\s*Hg/iu.test(value);
-  if (/nabiz|nabız|kalp hizi|kalp hızı/.test(label)) return !/(\/dk|dk|bpm)/iu.test(value);
-  if (/solunum/.test(label)) return !/(\/dk|dk|bpm)/iu.test(value);
-  if (/spo2|spo₂|saturasyon|satürasyon/.test(label)) return !/%/u.test(value);
-  if (/kreatinin|glukoz|glucose|üre|ure|crp|bilirubin|ast|alt|troponin/.test(label)) return !/(mg\/dL|mg\/dl|mg\/L|U\/L|ng\/L|ng\/mL|µmol\/L|umol\/L)/u.test(value);
-  if (/laktat|lactate|sodyum|na|potasyum|k\+|klor|bikarbonat/.test(label)) return !/(mmol\/L|mEq\/L|mmol\/l|mEq\/l)/u.test(value);
-  return false;
-}
-
-function hasPathologyTargetProblem(question = {}) {
-  const branch = normalize(question.relatedBranch || '');
-  if (!/patoloji/.test(branch)) return false;
-  const context = normalize([question.stem, question.question, ...compactItems(question.compactObjectiveData || [], 8).flatMap((item) => [item.label, item.value])].join(' '));
-  const correct = normalize(getCorrectText(question));
-  if (/^(tumor|tümör|kitle|lokal nuks egilimi|lokal nüks eğilimi)$/iu.test(cleanText(getCorrectText(question)))) return true;
-  const mentionsGeneric = /(tumor|tümör|kitle|neoplazi|nuks|nüks)/.test(context);
-  const hasMorphology = /(morfoloji|histoloji|mikroskop|nekroz|pleomorf|mitoz|gland|keratin|granulom|granülom|atipi|invazyon|kapsul|kapsül|stromal|hücre|hucre|boyanma|immünohistokimya|immunohistokimya)/.test(context);
-  return mentionsGeneric && !hasMorphology && correct.length < 8;
 }
 
 const FORBIDDEN_PHRASES = [
@@ -428,22 +277,16 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!question.explanation || cleanText(question.explanation).length < 45) errors.push('explanation yetersiz');
   if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length < 3) errors.push('evidenceChain yetersiz');
   if (!question.examPearl || cleanText(question.examPearl).length < 20) errors.push('examPearl yetersiz');
-  if (hasBrokenSentence(allText)) errors.push('kesik veya tamamlanmamış cümle var');
+  if (hasTruncatedText(allText)) errors.push('kesik veya üç noktalı metin var');
   FORBIDDEN_PHRASES.forEach((pattern) => {
     if (pattern.test(allText)) errors.push('jenerik/yasak feedback kalıbı var');
   });
 
   if (correctText && containsAnswerLeak(question.title, correctText)) errors.push('başlık doğru cevabı ele veriyor');
-  if (titleLooksDetached(question, question.title)) errors.push('başlık vaka verisiyle uyumsuz görünüyor');
   if (correctText && containsAnswerLeak(getPreAnswerDataText({ ...question, title: '' }), correctText)) errors.push('soru kökü/veri paneli doğru cevabı ele veriyor');
   if (asArray(question.evidenceChain).some((item) => containsAnswerLeak(item, correctText))) errors.push('kanıt zinciri doğru cevabı doğrudan söylüyor');
   if (hasDuplicateFeedbackSentences(question)) errors.push('feedback içinde tekrar eden cümle var');
   if (!isManagementTarget(question.answerTarget) && asArray(question.managementSteps).length) errors.push('bu soru tipinde yönetim basamağı gereksiz');
-  if (isBranchTargetMismatch(question.relatedBranch, question.answerTarget)) errors.push('branş ile soru hedefi uyumsuz');
-  if (hasFeedbackContradiction(question)) errors.push('feedback vaka verisiyle çelişiyor');
-  if ([...compactItems(question.compactVitals || question.vitals || [], 6), ...compactItems(question.compactObjectiveData || question.objectiveData || [], 10)].some(hasMissingUnit)) errors.push('laboratuvar/vital değerlerinde birim eksik');
-  if (hasPathologyTargetProblem(question)) errors.push('patoloji sorusunda tanısal hedef veya morfoloji belirsiz');
-  if (/^(?:TUS\s*ipucu|Spot\s*bilgi|Hap\s*bilgi|Sınav\s*notu)\s*[:：-]/iu.test(cleanText(question.examPearl || ''))) errors.push('TUS ipucu alanında çift başlık var');
 
   const categories = options.map((option) => optionCategory(option.text)).filter((category) => category !== 'other');
   const dominant = categories.sort((a, b) => categories.filter((x) => x === b).length - categories.filter((x) => x === a).length)[0];
@@ -502,22 +345,12 @@ function sanitizeQuestion(question = {}, branch) {
     managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean).slice(0, 3) : [],
     quality: question.quality || question.selfCheck || {},
   };
-  if (titleLooksDetached(sanitized, sanitized.title)) sanitized.title = makeSafeTitle(sanitized, correctText);
-  sanitized.examPearl = ensureSentence(stripFeedbackLabel(sanitized.examPearl));
-  sanitized.evidenceChain = sanitized.evidenceChain.filter((item) => !hasBrokenSentence(item)).slice(0, 3);
   sanitized.correctAnswerText = correctText;
   sanitized.semanticFingerprint = makeSignature(sanitized);
   return sanitized;
 }
 
 const FALLBACK_BANK = [
-
-  {
-    title: 'El bileğinde duyu ve motor kayıp', relatedBranch: 'Anatomi', difficulty: 'Orta', learningTarget: 'Sinir, kas ve duyu alanı ilişkisini yorumlama.', answerTarget: 'mechanism', demographics: 'Erişkin hasta', setting: 'Travma sonrası değerlendirme', chiefComplaint: 'El bileğinde duyu ve motor kayıp', stem: 'Erişkin hasta el bileği düzeyinde kesici travma sonrası başvurur. Başparmak opozisyonunda belirgin zayıflık vardır. İlk üç parmak palmar yüzde duyu azalması saptanır. Ön kol proksimal kas gücü korunmuştur.', compactVitals: [], compactObjectiveData: [], question: 'Bu bulgular en çok hangi anatomik yapının hasarı ile uyumludur?', options: [{ id: 'A', text: 'Median sinir' }, { id: 'B', text: 'Ulnar sinir' }, { id: 'C', text: 'Radial sinir' }, { id: 'D', text: 'Musculocutaneous sinir' }, { id: 'E', text: 'Aksiller sinir' }], correctAnswer: 'A', explanation: 'Başparmak opozisyon zayıflığı ve ilk üç parmak palmar yüzde duyu azalması median sinirin el bileği düzeyindeki dağılımıyla uyumludur. Proksimal ön kol kaslarının korunması lezyonun daha distal yerleşimli olduğunu düşündürür.', wrongOptionFeedback: { A: 'Bu seçenek motor ve duyu dağılımını birlikte açıklar.', B: 'Ulnar sinir daha çok interosseöz kaslar ve beşinci parmak duyusu ile ilişkilidir.', C: 'Radial sinir el bileği ekstansiyonu ve dorsal duyu alanıyla öne çıkar.', D: 'Musculocutaneous sinir ön kol fleksiyonu ve lateral ön kol duyusuyla ilişkilidir.', E: 'Aksiller sinir deltoid fonksiyonu ve omuz lateral duyusuyla ilişkilidir.' }, evidenceChain: ['Başparmak opozisyonu zayıftır.', 'İlk üç parmak palmar duyusu azalmıştır.', 'Proksimal ön kol kas gücü korunmuştur.'], examPearl: 'Median sinir el bileğinde thenar motor fonksiyon ve lateral palmar duyu ile ayırt edilir.', managementSteps: [] },
-  {
-    title: 'Morfolojik tümör paterni', relatedBranch: 'Tıbbi Patoloji', difficulty: 'Orta', learningTarget: 'Morfolojik patern üzerinden patolojik antiteyi tanıma.', answerTarget: 'diagnosis', demographics: 'Erişkin hasta', setting: 'Patoloji değerlendirmesi', chiefComplaint: 'Tiroid nodülü', stem: 'Erişkin hastada tiroid nodülü nedeniyle ince iğne aspirasyonu yapılır. Preparatta nükleer çentiklenme, optik berrak nükleuslar ve psammoma cisimcikleri tariflenir. Kapsül invazyonu bilgisi verilmemiştir.', compactVitals: [], compactObjectiveData: [{ label: 'Sitoloji', value: 'Nükleer çentiklenme, optik berrak nükleuslar ve psammoma cisimcikleri' }], question: 'Bu morfolojik patern en çok hangi patolojik antiteyi destekler?', options: [{ id: 'A', text: 'Papiller tiroid karsinomu' }, { id: 'B', text: 'Foliküler adenom' }, { id: 'C', text: 'Medüller tiroid karsinomu' }, { id: 'D', text: 'Anaplastik tiroid karsinomu' }, { id: 'E', text: 'Hashimoto tiroiditi' }], correctAnswer: 'A', explanation: 'Optik berrak nükleus, nükleer çentiklenme ve psammoma cisimcikleri papiller tiroid karsinomu için klasik morfolojik ipuçlarıdır. Kapsül veya damar invazyonu daha çok foliküler lezyon ayrımında belirleyicidir.', wrongOptionFeedback: { A: 'Bu seçenek verilen nükleer morfoloji ve psammoma cisimcikleriyle uyumludur.', B: 'Foliküler adenomda tanı kapsül ve damar invazyonunun yokluğuyla ilişkilidir; burada papiller nükleer özellikler baskındır.', C: 'Medüller karsinomda C hücre kökeni ve amiloid stroma beklenir.', D: 'Anaplastik karsinom belirgin pleomorfizm ve agresif klinikle öne çıkar.', E: 'Hashimoto tiroiditi lenfoid infiltrasyon ve germinal merkezlerle ilişkilidir.' }, evidenceChain: ['Optik berrak nükleuslar tariflenmiştir.', 'Nükleer çentiklenme vardır.', 'Psammoma cisimcikleri belirtilmiştir.'], examPearl: 'Papiller tiroid karsinomunda tanı nükleer özelliklerle kurulur; psammoma cisimcikleri destekleyicidir.', managementSteps: [] },
-  {
-    title: 'Vitamin eksikliğinde biyokimyasal ipucu', relatedBranch: 'Tıbbi Biyokimya', difficulty: 'Kolay', learningTarget: 'Klasik biyokimyasal kofaktör bilgisini tanıma.', answerTarget: 'mechanism', demographics: 'Erişkin hasta', setting: 'Poliklinik', chiefComplaint: 'Makrositik anemi bulguları', stem: 'Erişkin hastada yorgunluk ve makrositik anemi saptanır. Nörolojik bulgu tariflenmez. Diyette yeşil yapraklı sebze alımının belirgin az olduğu öğrenilir.', compactObjectiveData: [{ label: 'Hemoglobin', value: '10.2 g/dL' }, { label: 'MCV', value: '112 fL' }], question: 'Bu tabloyla ilişkili temel biyokimyasal işlev hangisidir?', options: [{ id: 'A', text: 'Tek karbon transfer reaksiyonları' }, { id: 'B', text: 'Gamma-karboksilasyon reaksiyonları' }, { id: 'C', text: 'Oksidatif fosforilasyonun ayrılması' }, { id: 'D', text: 'Heme demirinin indirgenmesi' }, { id: 'E', text: 'Steroid hormon sentezinin inhibisyonu' }], correctAnswer: 'A', explanation: 'Folat tek karbon transfer reaksiyonlarında görev alır ve DNA sentezi için gereklidir. Eksikliğinde makrositik anemi gelişebilir; nörolojik bulgu olmaması B12 eksikliğinden ayırmada destekleyicidir.', wrongOptionFeedback: { A: 'Bu seçenek folatın temel biyokimyasal rolünü açıklar.', B: 'Gamma-karboksilasyon K vitamini ile ilişkilidir.', C: 'Oksidatif fosforilasyon ayrılması bu klinik paternin temel açıklaması değildir.', D: 'Heme demiri indirgenmesi C vitamini ve demir metabolizması bağlamında düşünülür.', E: 'Steroid sentezi inhibisyonu folat eksikliğini açıklamaz.' }, evidenceChain: ['Makrositik anemi vardır.', 'Yeşil yapraklı sebze alımı düşüktür.', 'Nörolojik bulgu tariflenmemiştir.'], examPearl: 'Folat tek karbon metabolizması ve DNA sentezi için gereklidir; eksikliği makrositik anemi yapar.', managementSteps: [] },
   {
     title: 'Laboratuvar paterni yorumu', relatedBranch: 'İç Hastalıkları', difficulty: 'Orta', learningTarget: 'Laboratuvar verisini klinik bağlamla birlikte yorumlama.', answerTarget: 'lab_interpretation', demographics: 'Erişkin hasta', setting: 'Acil servis', chiefComplaint: 'Halsizlik', stem: 'Erişkin hasta son günlerde artan halsizlik ve dikkat azalması nedeniyle değerlendirilir. Öyküde sıvı alımında azalma vardır. Muayenede belirgin fokal nörolojik defisit saptanmaz.', compactObjectiveData: [{ label: 'Serum sodyum', value: '122 mEq/L' }, { label: 'Serum osmolalitesi', value: 'Düşük' }], question: 'Bu olgudaki laboratuvar paternini en iyi açıklayan seçenek hangisidir?', options: [{ id: 'A', text: 'Hipotonik hiponatremi' }, { id: 'B', text: 'Hipertonik hiponatremi' }, { id: 'C', text: 'İzotonik psödohiponatremi' }, { id: 'D', text: 'Hipernatremik dehidratasyon' }, { id: 'E', text: 'Primer hiperkalemi' }], correctAnswer: 'A', explanation: 'Düşük sodyum düzeyine düşük serum osmolalitesinin eşlik etmesi hipotonik hiponatremiyi destekler. Sonraki ayrım volüm durumu ve idrar elektrolitleriyle yapılır.', wrongOptionFeedback: { A: 'Bu seçenek düşük osmolalite ile birlikte gerçek hipotonik tabloyu açıklar.', B: 'Bu seçenek osmotik olarak aktif ek solüt varlığında düşünülür; burada düşük osmolalite verilmiştir.', C: 'Psödohiponatremide serum osmolalitesi genellikle normaldir; bu veri burada desteklenmez.', D: 'Hipernatremik tabloda serum sodyumu yüksek beklenir; burada düşük sodyum vardır.', E: 'Potasyum bozukluğu bu panelin ana açıklaması değildir.' }, evidenceChain: ['Serum sodyumu düşüktür.', 'Serum osmolalitesi düşüktür.', 'Bilinç değişikliği semptomatik tabloyu destekler.'], examPearl: 'Hiponatremi yorumunda ilk ayrım serum osmolalitesidir; düşük osmolalite gerçek hipotonik hiponatremiyi gösterir.', managementSteps: [] },
   {
@@ -566,7 +399,7 @@ function extractResponsesText(payload = {}) {
 
 function buildPrompt({ branch, recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
   const recent = asArray(recentQuestionSummaries).slice(0, 8).map((item, index) => `${index + 1}) ${item.branch || ''} | ${item.title || ''} | ${item.correct || ''}`).join('\n') || 'Yok';
-  const target = selectAnswerTarget(branch);
+  const target = selectPromptTarget(branch);
   return `KlinikIQ için tek bir Türkçe TUS spot sorusu üret.
 Rolün: deneyimli hekim, TUS soru yazarı ve tıbbi dil editörü.
 
@@ -580,19 +413,23 @@ ${recent}
 Kurallar:
 - Tek köklü, tek doğru cevaplı, TUS tarzında kısa klinik soru yaz.
 - Her soruda yalnız tek öğrenme hedefi olsun: tanı, test, tedavi, mekanizma veya komplikasyon hedeflerini karıştırma.
-- Başlık vaka ile birebir uyumlu olsun; eski/başka sorudan kalmış gibi duran başlık yazma. Başlık ana klinik durumu yansıtsın ama tanı, etken, komplikasyon, mekanizma veya doğru laboratuvar bulgusunu doğrudan ele vermesin.
+- Başlık, vaka ve soru kökü aynı hedefe hizmet etsin. Başlık vaka metninde desteklenen ana klinik durumu yansıtsın; vaka dışı bilgi, doğru tanı, etken, komplikasyon, mekanizma veya doğru laboratuvar bulgusu yazmasın.
 - Soru kökü veya veri paneli doğru cevabı aynen tekrar etmesin; verilen bulgu sorulacaksa yorumu sorulsun.
-- “İlk yaklaşım”, “ilk ilaç”, “tanıyı destekleyen test”, “doğrulama testi” ve “tarama testi” ifadelerini bilimsel anlamına uygun kullan. Acil tedavide laboratuvar sonucu bekletme. “En uygun” birden fazla doğru seçenek doğuruyorsa kökü uzun etkili, antibiyotik öncesi, doğrulama testi, ilk ilaç gibi ifadelerle daralt.
-- Seçenekler aynı kategoride olsun; tanı sorusunda tanılar, test sorusunda testler, tedavi sorusunda tedaviler, mekanizma sorusunda mekanizmalar ver.
-- Fizik muayene, vital, laboratuvar, EKG ve görüntüleme verilerini birbirine karıştırma. Hemoglobin, trombosit, lökosit, pH, ateş, TA, SpO₂, elektrolit ve biyokimya değerlerinde klinik birim yaz.
+- “İlk yaklaşım”, “ilk ilaç”, “tanıyı destekleyen test”, “doğrulama testi” ve “tarama testi” ifadelerini bilimsel anlamına uygun kullan. Profilaksi, replasman, tedavi ve tarama dilini karıştırma; mevcut eksiklik/hastalık varsa profilaksi değil tedavi veya replasman dili kullan.
+- “En uygun” birden fazla doğru seçenek doğuracaksa kökü uzun etkili, antibiyotik öncesi, doğrulama testi, ilk ilaç, tanısal ilk test gibi ifadelerle daralt. Yakın çeldiriciler varsa tek doğru cevabı belirginleştiren ayırıcı bulguyu köke ekle.
+- Seçenekler aynı kategoride olsun; tanı sorusunda tanılar, test sorusunda testler, tedavi sorusunda tedaviler, mekanizma sorusunda mekanizmalar ver. Kısmen doğru çeldiriciyi açıklamayla kurtarma; kökü veya seçenekleri baştan netleştir.
+- Fizik muayene, vital, laboratuvar, mikrobiyoloji, patoloji, EKG, görüntüleme ve objektif veri alanlarını birbirine karıştırma. Tüm veri satırları tamamlanmış olsun; hemoglobin, trombosit, lökosit, pH, ateş, TA, SpO₂ ve elektrolit gibi değerlerde uygun birim yaz.
+- Tanısal yöntem ile hedef tanı uyumlu olsun: patoloji, biyokimya, mikrobiyoloji ve görüntüleme sorularında test/örnek tipi hedeflenen tanıyı gerçekten desteklesin. Patoloji sorusunda antite net olsun; “tümör/kitle/nüks eğilimi” gibi genel ifadeler yerine morfoloji veya klinik bağlamla desteklenen belirli antite sorulsun.
+- Komplikasyon sorularında “nadir”, “ciddi”, “korkulan”, “en sık” ve “en önemli” ifadelerini birbirinin yerine kullanma; sıklık ve klinik önem ayrımını doğru yaz.
 - EKG yoksa EKG paterni, laboratuvar yoksa laboratuvar bulgusu, tedavi sorusu değilse tedavi adımı/yönetim dili kullanma.
-- Etik-hukuki soru üretme; zorunluysa hasta rızası, karar verme kapasitesi, anonimleştirme, etik kurul ve kişisel sağlık verisi kavramlarını karıştırma.
-- Branş ve hedef uyumlu olsun: Anatomi çoğunlukla sinir-kas-yapı ilişkisini sorar; test seçimi/elektrofizyoloji yorumu gerekiyorsa uygun klinik branş seç. Patoloji sorusunda antite net olmalı; morfoloji veya klinik bağlam antiteyi desteklemeli. Klasik bilgi sorularında gereksiz uzun vaka yazma.
-- Feedback formatı kısa olsun: klinik/bilimsel gerekçe 2-4 cümle, TUS ipucu tek satır, kanıt zinciri 3 kısa vaka ipucu, seçenek karşılaştırması kısa ve özgül. TUS ipucu alanına “TUS ipucu:” veya “Spot bilgi:” gibi ikinci başlık yazma.
-- Kanıt zinciri doğru cevabı doğrudan tekrar etmesin; yalnız vakadaki ipuçlarını göstersin.
-- “Yanlıştır” diye başlayan tekrarlı cümleler ve jenerik kalıplar kullanma.
-- Feedbackte otomatik kısa notlar vaka verisiyle çelişmesin; hipokalemide K yüksek, hipertansiyonda hipotansiyon gibi ters ifadeler kullanma. Yarım cümle, eksik değer, tekrar eden veri satırı veya bozuk Türkçe bırakma.
-- Eğer bilimsel doğruluktan emin değilsen daha temel ve güvenli bir TUS konusu seç.
+- Etik-hukuki soru üretme; zorunluysa hasta rızası, karar verme kapasitesi, yazılı onam, anonimleştirme, etik kurul ve kişisel sağlık verisi kavramlarını karıştırma; seçenekleri daha nüanslı ve aynı kategoride tut.
+- Branş ve soru hedefi uyumlu olsun: Anatomi sorusu çoğunlukla sinir-kas-yapı ilişkisini sorsun; test seçimi/elektrofizyoloji yorumu gerekiyorsa daha uygun branş seç. Folat, K vitamini, anti-CCP gibi klasik bilgi sorularında gereksiz uzun vaka yazma.
+- Feedback formatı kısa olsun: klinik/bilimsel gerekçe 2-4 cümle, TUS ipucu tek satır karar cümlesi, kanıt zinciri 3 kısa vaka ipucu, seçenek karşılaştırması kısa ve özgül.
+- TUS ipucu tek başına veri yazmasın; verinin hangi tanı, mekanizma, test veya yaklaşımı düşündürdüğünü net söylesin. “TUS ipucu: Spot bilgi:” gibi çift başlık kullanma.
+- Kanıt zinciri doğru cevabı doğrudan tekrar etmesin; yalnız vakadaki gerçek ipuçlarını göstersin. Feedback kısa notları vaka verisiyle çelişmesin; hipokalemide 'K yüksek', hipertansiyonda 'hipotansiyon' gibi ters ifade kullanma.
+- “Yanlıştır” diye başlayan tekrarlı cümleler, şablon kalıntıları ve jenerik kalıplar kullanma. Aynı açıklamayı iki kez yazma.
+- Yarım cümle, eksik değer, tekrar eden veri satırı veya bozuk Türkçe bırakma.
+- Eğer bilimsel doğruluktan emin değilsen daha temel, tek doğru cevaplı ve güvenli bir TUS konusu seç.
 
 Sadece geçerli JSON döndür. Markdown yok.
 JSON alanları:
@@ -614,7 +451,7 @@ JSON alanları:
   "explanation":"Klinik/Bilimsel gerekçe: doğru cevabı 2-4 cümleyle açıkla; tekrar yapma",
   "wrongOptionFeedback":{"A":"...","B":"...","C":"...","D":"...","E":"..."},
   "evidenceChain":["vakadaki somut ipucu","vakadaki somut ipucu","vakadaki somut ipucu"],
-  "examPearl":"tek satırlık yüksek verimli karar ipucu; başlık etiketi yazma",
+  "examPearl":"tek satırlık yüksek verimli karar cümlesi; veri tek başına kalmasın, başlık etiketi yazma",
   "managementSteps":["yalnız ilk yaklaşım/tedavi sorularında gerekli kısa basamak"],
   "quality":{"scientificallySound":true,"singleBestAnswer":true,"optionsSameCategory":true,"noAnswerLeakage":true,"completeSentences":true}
 }`;
@@ -640,7 +477,7 @@ async function callOpenAI(prompt) {
       ? {
           model,
           input: [
-            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Return only valid JSON.' },
+            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Keep title, stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
             { role: 'user', content: prompt },
           ],
           text: { format: { type: 'json_object' } },
@@ -650,7 +487,7 @@ async function callOpenAI(prompt) {
       : {
           model,
           messages: [
-            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Return only valid JSON.' },
+            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Keep title, stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
@@ -680,7 +517,7 @@ async function callOpenAI(prompt) {
 async function generateRemote({ branch, recentQuestionSummaries, attempt, antiRepeatNonce }) {
   const prompt = buildPrompt({ branch, recentQuestionSummaries, attempt, antiRepeatNonce });
   const result = await callOpenAI(prompt);
-  if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; güvenli yerel fallback kullanılacak.');
+  if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch);
   sanitized.provider = 'openai';
   sanitized.openAIModel = result.model;
@@ -689,10 +526,16 @@ async function generateRemote({ branch, recentQuestionSummaries, attempt, antiRe
   sanitized.schemaVersion = SCHEMA_VERSION;
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
-    const error = new Error(validation.errors.join('; '));
-    error.validationErrors = validation.errors;
-    error.question = sanitized;
-    throw error;
+    const criticalErrors = validation.errors.filter((message) =>
+      /title eksik|branch eksik|stem çok kısa|question net|tam 5 seçenek|correctAnswer|başlık doğru cevabı ele veriyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor/iu.test(message)
+    );
+    if (criticalErrors.length) {
+      const error = new Error(criticalErrors.join('; '));
+      error.validationErrors = criticalErrors;
+      error.question = sanitized;
+      throw error;
+    }
+    sanitized.qualityNotes = validation.errors;
   }
   return sanitized;
 }
@@ -721,7 +564,7 @@ export default async function handler(request, response) {
     }
   }
 
-  if (String(process.env.AI_ENABLE_SAFE_FALLBACK || 'true').toLowerCase() !== 'false') {
+  if (String(process.env.AI_ENABLE_SAFE_FALLBACK || 'false').toLowerCase() === 'true') {
     const question = fallbackQuestion({ branchFilter: branch, recentQuestionSummaries });
     question.provider = 'local-safe-fallback';
     question.fallback = true;
