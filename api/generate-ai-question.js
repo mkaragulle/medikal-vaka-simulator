@@ -1,5 +1,5 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v1';
+const PROMPT_VERSION = 'klinikiq-simple-tus-v2-feedback-lite';
 const SCHEMA_VERSION = 'simple-ai-spot-v1';
 
 const ALLOWED_BRANCHES = [
@@ -27,7 +27,6 @@ const ANSWER_TARGETS = [
   'mechanism',
   'complication',
   'prevention',
-  'ethics_legal',
 ];
 
 function sendJson(response, status, payload) {
@@ -155,6 +154,52 @@ function getCorrectText(question = {}) {
   return options.find((item) => item.id === correctId)?.text || '';
 }
 
+
+function containsAnswerLeak(text = '', correct = '') {
+  const value = normalize(text);
+  const answer = normalize(correct);
+  if (!value || !answer || answer.length < 5) return false;
+  if (value.includes(answer)) return true;
+  const answerWords = answer.split(/\s+/u).filter((word) => word.length >= 4);
+  if (answerWords.length >= 2) {
+    const hits = answerWords.filter((word) => value.includes(word)).length;
+    return hits >= Math.ceil(answerWords.length * 0.8);
+  }
+  return false;
+}
+
+function getPreAnswerDataText(question = {}) {
+  return [
+    question.title,
+    question.stem,
+    question.question,
+    ...compactItems(question.compactVitals || question.vitals || [], 5).flatMap((item) => [item.label, item.value]),
+    ...compactItems(question.compactObjectiveData || question.objectiveData || [], 8).flatMap((item) => [item.label, item.value]),
+  ].filter(Boolean).join(' | ');
+}
+
+function hasDuplicateFeedbackSentences(question = {}) {
+  const pieces = [
+    question.explanation,
+    question.examPearl,
+    ...asArray(question.evidenceChain),
+    ...Object.values(question.wrongOptionFeedback || {}),
+  ].filter(Boolean);
+  const seen = new Set();
+  for (const piece of pieces) {
+    const sentences = cleanText(piece).split(/(?<=[.!?])\s+/u).map(normalize).filter((sentence) => sentence.length > 24);
+    for (const sentence of sentences) {
+      if (seen.has(sentence)) return true;
+      seen.add(sentence);
+    }
+  }
+  return false;
+}
+
+function isManagementTarget(answerTarget = '') {
+  return /^(first_step|next_step|treatment|prevention)$/iu.test(cleanText(answerTarget));
+}
+
 function collectStrings(value, output = []) {
   if (typeof value === 'string') output.push(value);
   else if (Array.isArray(value)) value.forEach((item) => collectStrings(item, output));
@@ -172,6 +217,10 @@ const FORBIDDEN_PHRASES = [
   /yanıt ekseni/iu,
   /bu alternatifin eksik kaldığı karar noktas/i,
   /seçenekler arasındaki karar düzeyini daraltır/iu,
+  /^\s*yanlıştır\b/iu,
+  /doğru cevaba götür/iu,
+  /doğru yanıta götür/iu,
+  /cevap .* içinde yer al/iu,
 ];
 
 function hasTruncatedText(text = '') {
@@ -207,12 +256,18 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!OPTION_IDS.includes(correctId)) errors.push('correctAnswer A-E değil');
   if (!correctText) errors.push('correctAnswer seçeneklerle eşleşmiyor');
   if (!question.explanation || cleanText(question.explanation).length < 45) errors.push('explanation yetersiz');
-  if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length < 2) errors.push('evidenceChain yetersiz');
+  if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length < 3) errors.push('evidenceChain yetersiz');
   if (!question.examPearl || cleanText(question.examPearl).length < 20) errors.push('examPearl yetersiz');
   if (hasTruncatedText(allText)) errors.push('kesik veya üç noktalı metin var');
   FORBIDDEN_PHRASES.forEach((pattern) => {
     if (pattern.test(allText)) errors.push('jenerik/yasak feedback kalıbı var');
   });
+
+  if (correctText && containsAnswerLeak(question.title, correctText)) errors.push('başlık doğru cevabı ele veriyor');
+  if (correctText && containsAnswerLeak(getPreAnswerDataText({ ...question, title: '' }), correctText)) errors.push('soru kökü/veri paneli doğru cevabı ele veriyor');
+  if (asArray(question.evidenceChain).some((item) => containsAnswerLeak(item, correctText))) errors.push('kanıt zinciri doğru cevabı doğrudan söylüyor');
+  if (hasDuplicateFeedbackSentences(question)) errors.push('feedback içinde tekrar eden cümle var');
+  if (!isManagementTarget(question.answerTarget) && asArray(question.managementSteps).length) errors.push('bu soru tipinde yönetim basamağı gereksiz');
 
   const categories = options.map((option) => optionCategory(option.text)).filter((category) => category !== 'other');
   const dominant = categories.sort((a, b) => categories.filter((x) => x === b).length - categories.filter((x) => x === a).length)[0];
@@ -241,6 +296,8 @@ function sanitizeQuestion(question = {}, branch) {
   const options = normalizeOptions(question.options);
   const correctId = String(question.correctAnswer || '').trim().toUpperCase();
   const correctText = options.find((item) => item.id === correctId)?.text || options[0]?.text || '';
+  const answerTarget = cleanText(question.answerTarget || question.questionIntent || 'single_best_answer');
+  const allowManagementSteps = isManagementTarget(answerTarget);
   const sanitized = {
     id: cleanText(question.id) || `ai-spot-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     source: 'real-ai',
@@ -249,7 +306,7 @@ function sanitizeQuestion(question = {}, branch) {
     relatedBranch: cleanText(question.relatedBranch || branch),
     difficulty: cleanText(question.difficulty || 'Orta'),
     learningTarget: cleanText(question.learningTarget || 'TUS düzeyinde tek karar noktasını yorumlama.'),
-    answerTarget: cleanText(question.answerTarget || question.questionIntent || 'single_best_answer'),
+    answerTarget,
     demographics: cleanText(question.demographics || ''),
     setting: cleanText(question.setting || 'Klinik değerlendirme'),
     chiefComplaint: cleanText(question.chiefComplaint || question.title || ''),
@@ -266,7 +323,7 @@ function sanitizeQuestion(question = {}, branch) {
     }, {}),
     evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean).slice(0, 4),
     examPearl: ensureSentence(question.examPearl || question.teachingPoint),
-    managementSteps: asArray(question.managementSteps).map(ensureSentence).filter(Boolean).slice(0, 4),
+    managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean).slice(0, 3) : [],
     quality: question.quality || question.selfCheck || {},
   };
   sanitized.correctAnswerText = correctText;
@@ -336,12 +393,18 @@ ${recent}
 
 Kurallar:
 - Tek köklü, tek doğru cevaplı, TUS tarzında kısa klinik soru yaz.
-- Soru bilimsel olarak doğru ve tek-best-answer mantığına uygun olsun.
-- Soru kökü doğru cevabı başlıkta veya veri panelinde ele vermesin.
-- Seçenekler aynı kategoride olsun; 5 seçenek ve A-E id kullan.
-- Gereksiz laboratuvar/vital verme; yalnız karar için gerekli veriyi ekle.
-- Feedback kısa, öğretici, tekrarsız ve tamamlanmış cümlelerden oluşsun.
-- Jenerik kalıplar kullanma: farklı klinik tabloda uygun olabilir, klinik bağlamda değerlendirilir, ana ipuçlarını tek başına açıklamaz.
+- Her soruda yalnız tek öğrenme hedefi olsun: tanı, test, tedavi, mekanizma veya komplikasyon hedeflerini karıştırma.
+- Başlıkta tanı, etken, komplikasyon, mekanizma veya doğru laboratuvar bulgusunu doğrudan yazma.
+- Soru kökü veya veri paneli doğru cevabı aynen tekrar etmesin; verilen bulgu sorulacaksa yorumu sorulsun.
+- “İlk yaklaşım”, “ilk ilaç”, “tanıyı destekleyen test”, “doğrulama testi” ve “tarama testi” ifadelerini bilimsel anlamına uygun kullan. Acil tedavide laboratuvar sonucu bekletme.
+- Seçenekler aynı kategoride olsun; tanı sorusunda tanılar, test sorusunda testler, tedavi sorusunda tedaviler, mekanizma sorusunda mekanizmalar ver.
+- Fizik muayene, vital, laboratuvar, EKG ve görüntüleme verilerini birbirine karıştırma.
+- EKG yoksa EKG paterni, laboratuvar yoksa laboratuvar bulgusu, tedavi sorusu değilse tedavi adımı/yönetim dili kullanma.
+- Etik-hukuki soru üretme; zorunluysa hasta rızası, karar verme kapasitesi, anonimleştirme, etik kurul ve kişisel sağlık verisi kavramlarını karıştırma.
+- Feedback formatı kısa olsun: klinik/bilimsel gerekçe 2-4 cümle, TUS ipucu tek satır, kanıt zinciri 3 kısa vaka ipucu, seçenek karşılaştırması kısa ve özgül.
+- Kanıt zinciri doğru cevabı doğrudan tekrar etmesin; yalnız vakadaki ipuçlarını göstersin.
+- “Yanlıştır” diye başlayan tekrarlı cümleler ve jenerik kalıplar kullanma.
+- Yarım cümle, eksik değer, tekrar eden veri satırı veya bozuk Türkçe bırakma.
 - Eğer bilimsel doğruluktan emin değilsen daha temel ve güvenli bir TUS konusu seç.
 
 Sadece geçerli JSON döndür. Markdown yok.
@@ -361,11 +424,11 @@ JSON alanları:
   "question":"tek ve net soru cümlesi",
   "options":[{"id":"A","text":"..."},{"id":"B","text":"..."},{"id":"C","text":"..."},{"id":"D","text":"..."},{"id":"E","text":"..."}],
   "correctAnswer":"A",
-  "explanation":"2-3 cümle klinik gerekçe",
+  "explanation":"Klinik/Bilimsel gerekçe: doğru cevabı 2-4 cümleyle açıkla; tekrar yapma",
   "wrongOptionFeedback":{"A":"...","B":"...","C":"...","D":"...","E":"..."},
-  "evidenceChain":["somut ipucu ve anlamı","somut ipucu ve anlamı","somut ipucu ve anlamı"],
-  "examPearl":"1-2 cümle TUS notu",
-  "managementSteps":["gerekiyorsa kısa basamak"],
+  "evidenceChain":["vakadaki somut ipucu","vakadaki somut ipucu","vakadaki somut ipucu"],
+  "examPearl":"TUS ipucu: tek satırlık yüksek verimli karar ipucu",
+  "managementSteps":["yalnız ilk yaklaşım/tedavi sorularında gerekli kısa basamak"],
   "quality":{"scientificallySound":true,"singleBestAnswer":true,"optionsSameCategory":true,"noAnswerLeakage":true,"completeSentences":true}
 }`;
 }
@@ -430,7 +493,7 @@ async function callOpenAI(prompt) {
 async function generateRemote({ branch, recentQuestionSummaries, attempt, antiRepeatNonce }) {
   const prompt = buildPrompt({ branch, recentQuestionSummaries, attempt, antiRepeatNonce });
   const result = await callOpenAI(prompt);
-  if (!result) return null;
+  if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; güvenli yerel fallback kullanılacak.');
   const sanitized = sanitizeQuestion(result.question, branch);
   sanitized.provider = 'openai';
   sanitized.openAIModel = result.model;

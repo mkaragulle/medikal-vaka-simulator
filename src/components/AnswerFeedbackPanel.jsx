@@ -29,6 +29,17 @@ const BASIC_SCIENCE_BRANCHES = new Set([
   'medical-microbiology',
 ]);
 
+
+function allowsManagementFeedback(clinicalCase = {}) {
+  const target = normalizeText(clinicalCase.answerTarget || clinicalCase.questionType || '').toLocaleLowerCase('tr');
+  const branchText = normalizeText(`${clinicalCase.branchId || ''} ${clinicalCase.relatedBranch || ''} ${clinicalCase.branchName || ''}`).toLocaleLowerCase('tr');
+  const isAISpot = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
+  const managementTarget = /^(first_step|next_step|treatment|prevention)$/iu.test(target);
+  if (isAISpot && !managementTarget) return false;
+  if (/mechanism|lab_interpretation|diagnostic_test|complication|diagnosis/iu.test(target) && /biyokimya|mikrobiyoloji|farmakoloji|anatomi|histoloji|embriyoloji|temel bilim|medical-biochemistry|medical-microbiology|medical-pharmacology|histology-embryology|anatomy/iu.test(branchText)) return false;
+  return true;
+}
+
 function normalizeText(value = '') {
   return repairAIGeneratedText(String(value ?? ''), { fallback: String(value ?? '') })
     .replace(/\s+/g, ' ')
@@ -352,6 +363,7 @@ function inferManagementTitle(text = '', index = 0) {
 }
 
 function deriveManagementSteps(clinicalCase) {
+  if (!allowsManagementFeedback(clinicalCase)) return [];
   const feedback = getFeedback(clinicalCase);
   const management = feedback.managementSteps || feedback.management;
   let steps = [];
@@ -448,7 +460,7 @@ function ExamNoteFeedback({ signal, glossaryEnabled = true }) {
   const keywordChips = Array.isArray(signal.keywords) ? signal.keywords.slice(0, 3) : [];
 
   return (
-    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="TUS işareti" title="Hap bilgi" className="tus-spot-signal-feedback exam-note-feedback-card spot-note-card">
+    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="TUS ipucu" title="Kısa sınav notu" className="tus-spot-signal-feedback exam-note-feedback-card spot-note-card">
       <div className="exam-note-content-stack">
         {metaChips.length ? (
           <div className="exam-note-meta-row" aria-label="Sınav geçmişi">
@@ -484,8 +496,8 @@ function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true
     <FeedbackSection
       icon={isCorrect ? 'Brain' : 'AlertTriangle'}
       tone={isCorrect ? 'blue' : 'warning'}
-      eyebrow="Klinik gerekçe"
-      title={isCorrect ? 'Neden doğru?' : 'Neden yanlış?'}
+      eyebrow="Klinik/Bilimsel gerekçe"
+      title={isCorrect ? 'Gerekçe' : 'Seçim değerlendirmesi'}
       className="reasoning-evidence-card clinical-reasoning-card"
     >
       <p className="feedback-body-copy"><GlossaryText text={ensureSentence(reasoningText)} enabled={glossaryEnabled} /></p>
@@ -496,7 +508,7 @@ function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true
 function EvidenceChainCard({ evidenceChain, glossaryEnabled = true }) {
   if (!evidenceChain.length) return null;
   return (
-    <FeedbackSection icon="ClipboardList" tone="teal" eyebrow="Kanıt zinciri" title="Hangi ipuçları çözdürür?" className="evidence-chain-card">
+    <FeedbackSection icon="ClipboardList" tone="teal" eyebrow="Kanıt zinciri" title="Vakadaki ipuçları" className="evidence-chain-card">
       <ol className="evidence-chain-list evidence-chain-list-pro">
         {evidenceChain.map((item, index) => (
           <li key={`${item.title}-${item.text}-${index}`}>

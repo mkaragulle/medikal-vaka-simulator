@@ -82,6 +82,21 @@ function getCorrectOption(options = [], correctAnswer = '') {
   return options.find((option) => option.id === correctId) || options[0] || null;
 }
 
+
+function containsAnswerLeak(text = '', correct = '') {
+  const value = normalizeForCompare(text);
+  const answer = normalizeForCompare(correct);
+  if (!value || !answer || answer.length < 5) return false;
+  if (value.includes(answer)) return true;
+  const words = answer.split(/\s+/u).filter((word) => word.length >= 4);
+  if (words.length < 2) return false;
+  return words.filter((word) => value.includes(word)).length >= Math.ceil(words.length * 0.8);
+}
+
+function isManagementTarget(answerTarget = '') {
+  return /^(first_step|next_step|treatment|prevention)$/iu.test(cleanText(answerTarget));
+}
+
 function buildDifferentialComparison({ options = [], correctOption, optionRationales = {}, wrongOptionFeedback = {} }) {
   return options.reduce((acc, option) => {
     if (!option?.text) return acc;
@@ -188,11 +203,13 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const branch = cleanText(payload.relatedBranch || payload.branch || payload.b || meta.branchFilter || 'TUS');
   const normalizedBranch = BRANCH_ALIASES.get(normalizeForCompare(branch)) || branch;
   const stem = ensureSentence(payload.stem || payload.s || 'Kısa klinik olgu verileri birlikte değerlendirilir.');
-  const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k);
-  const managementSteps = asArray(payload.managementSteps || payload.management || [])
-    .map((item) => ensureSentence(item))
-    .filter(Boolean)
-    .slice(0, 4);
+  const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
+    .filter((item) => !containsAnswerLeak(item, correctText))
+    .slice(0, 3);
+  const answerTarget = cleanText(payload.answerTarget || payload.questionIntent || payload.intent || 'single_best_answer');
+  const managementSteps = isManagementTarget(answerTarget)
+    ? asArray(payload.managementSteps || payload.management || []).map((item) => ensureSentence(item)).filter(Boolean).slice(0, 3)
+    : [];
   const examPearl = ensureSentence(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || 'Benzer TUS sorularında karar verdirici ipucu, soru kökünün sorduğu hedefe göre yorumlanır.');
   const explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || 'Olgudaki klinik veriler birlikte değerlendirildiğinde doğru seçenek diğerlerinden ayrılır.');
   const optionRationales = payload.optionRationales || payload.wrongOptionFeedback || payload.rationales || {};
@@ -209,7 +226,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     spotCategory: `AI Spot • ${normalizedBranch}`,
     difficulty: cleanText(payload.difficulty || 'Orta'),
     learningTarget: cleanText(payload.learningTarget || payload.target || payload.lt || 'TUS düzeyinde tek karar noktasını yorumlama.'),
-    answerTarget: cleanText(payload.answerTarget || payload.questionIntent || payload.intent || 'single_best_answer'),
+    answerTarget,
     demographics: cleanText(payload.demographics || payload.d || ''),
     setting: cleanText(payload.setting || 'Klinik değerlendirme'),
     chiefComplaint: cleanText(payload.chiefComplaint || payload.cc || title),
@@ -249,7 +266,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       pearls: [examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: explanation,
-        evidenceChain: evidenceChain.length ? evidenceChain : [stem, ensureSentence(`Doğru yanıt ${correctText} seçeneğidir.`)].filter(Boolean).slice(0, 3),
+        evidenceChain: evidenceChain.length ? evidenceChain : [stem, cleanText(payload.chiefComplaint || title)].filter(Boolean).map(ensureSentence).slice(0, 3),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparison({ options, correctOption, optionRationales, wrongOptionFeedback: payload.wrongOptionFeedback || {} }),
