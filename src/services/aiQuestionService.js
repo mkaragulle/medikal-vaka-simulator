@@ -116,15 +116,23 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
     }
 
     const rawQuestion = payload?.question || payload;
+    const isServerSafeFallback = Boolean(
+      payload?.safeFallback
+      || payload?.fallback
+      || rawQuestion?.aiMeta?.safeFallback
+      || String(payload?.provider || rawQuestion?.provider || '').toLowerCase().includes('fallback')
+      || String(payload?.provider || rawQuestion?.provider || '').toLowerCase().includes('local')
+    );
     const normalized = annotateQuestionWithDiversityPlan(normalizeGeneratedAIQuestion(rawQuestion), diversityPlan);
-    normalized.source = 'real-ai';
+    normalized.source = isServerSafeFallback ? (rawQuestion?.provider || payload?.provider || 'local-safe-fallback') : 'real-ai';
     normalized.aiMeta = {
       ...normalized.aiMeta,
       provider: payload?.provider || rawQuestion?.provider || 'remote-ai-provider',
-      remote: true,
+      remote: !isServerSafeFallback,
+      serverSafeFallback: isServerSafeFallback,
       remoteAttempt: attempt,
       serverRemoteAttempt: payload?.remoteAttempt || rawQuestion?.remoteAttempt || null,
-      openRouterModel: rawQuestion?.openRouterModel || payload?.openRouterModel || null,
+      openRouterModel: rawQuestion?.openRouterModel || rawQuestion?.openAIModel || payload?.openRouterModel || null,
       serverDiversityRejectedCount: payload?.diversityRejectedCount || 0,
       serverNearDuplicateRejectedCount: payload?.nearDuplicateRejectedCount || 0,
     };
@@ -211,9 +219,9 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
       return {
         ok: true,
         question: normalized,
-        source: normalized.aiMeta.provider || 'real-ai',
-        usedRemoteAI: true,
-        fallback: false,
+        source: normalized.aiMeta.provider || (normalized.aiMeta.serverSafeFallback ? 'local-safe-fallback' : 'real-ai'),
+        usedRemoteAI: !normalized.aiMeta.serverSafeFallback,
+        fallback: Boolean(normalized.aiMeta.serverSafeFallback),
       };
     } catch (error) {
       lastError = error;

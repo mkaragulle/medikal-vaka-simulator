@@ -340,7 +340,65 @@ function buildAIUsageLog({ provider, model, prompt, question, startedAt, validat
 }
 
 function runServerMedicalQualityGate(question = {}) {
+  if (parseBooleanEnv('AI_SIMPLE_TUS_PIPELINE', true)) {
+    const cleaned = standardizeRemoteQuestionText(question);
+    const hardCoherence = validateClinicalCoherenceHardGate(cleaned);
+    const scientific = scientificAccuracyGate(cleaned);
+    const finalSafety = validateFinalAIQuestionSafetyGate(cleaned);
+    const feedbackQuality = validateFeedbackQualityStandard(cleaned);
+    const singleBest = validateSingleBestAnswerGate(cleaned);
+
+    const fatalScientificErrors = (scientific.errors || []).filter((error) => (
+      /hyperkalemia|hiperkalemi|pulmonary|embol|anafil|sepsis|dka|stroke|inme|menenjit|status|self-consistency|score-gate|fatal|wrong-correct|option-gate/i.test(error)
+    ));
+    const finalBlockingErrors = (finalSafety.errors || []).filter((error) => (
+      /truncation|ellipsis|generic|spoiler|double|option|label|evidence|forbidden|clinical-contamination|cross-topic/i.test(error)
+    ));
+
+    const errors = Array.from(new Set([
+      ...fatalScientificErrors,
+      ...(hardCoherence.errors || []).map((error) => `hard-coherence:${error}`),
+      ...finalBlockingErrors.map((error) => `final-safety:${error}`),
+    ]));
+
+    return {
+      ok: errors.length === 0,
+      question: cleaned,
+      repairCount: 0,
+      errors,
+      warnings: Array.from(new Set([
+        ...(scientific.warnings || []),
+        ...(feedbackQuality.ok ? [] : (feedbackQuality.errors || []).map((error) => `feedback-quality:${error}`)),
+        ...(singleBest.ok ? [] : (singleBest.errors || []).map((error) => `single-best-answer:${error}`)),
+        ...(finalSafety.warnings || []).map((warning) => `final-safety:${warning}`),
+      ])).slice(0, 12),
+      matchedRules: [...(scientific.matchedRules || []), ...(hardCoherence.ok ? [] : ['clinical-coherence-hard-gate'])],
+      scoreSystems: scientific.scoreSystems || [],
+      feedbackStandardVersion: FEEDBACK_QUALITY_STANDARD_VERSION,
+      singleBestAnswerVersion: SINGLE_BEST_ANSWER_GATE_VERSION,
+      finalSafetyVersion: FINAL_AI_QUESTION_SAFETY_VERSION,
+      answerTarget: cleaned.answerTarget || inferAnswerTarget(cleaned),
+      optionClinicalRoles: cleaned.optionClinicalRoles || deriveOptionClinicalRoles(cleaned),
+      semanticFingerprint: cleaned.semanticFingerprint,
+    };
+  }
+
   const before = JSON.stringify(question);
+  const hardBefore = validateClinicalCoherenceHardGate(question);
+  if (!hardBefore.ok) {
+    return {
+      ok: false,
+      question,
+      repairCount: 0,
+      errors: (hardBefore.errors || []).map((error) => `hard-coherence:${error}`),
+      warnings: [],
+      matchedRules: ['clinical-coherence-hard-gate'],
+      scoreSystems: [],
+      feedbackStandardVersion: FEEDBACK_QUALITY_STANDARD_VERSION,
+      singleBestAnswerVersion: SINGLE_BEST_ANSWER_GATE_VERSION,
+      finalSafetyVersion: FINAL_AI_QUESTION_SAFETY_VERSION,
+    };
+  }
   const clinicallyRepaired = applyTusLanguageStandardToQuestion(repairScientificAccuracy(question));
   const feedbackRepaired = applyFeedbackQualityStandardToQuestion(clinicallyRepaired);
   const singleBestRepaired = applySingleBestAnswerStandard(feedbackRepaired);
@@ -372,7 +430,6 @@ function runServerMedicalQualityGate(question = {}) {
     semanticFingerprint: finalSafety.semanticFingerprint || repaired.semanticFingerprint,
   };
 }
-
 function getJsonContractPrompt() {
   return `
 Zorunlu JSON kontratı:
@@ -555,6 +612,23 @@ function validateRemoteTusExamLanguage(question = {}) {
 function validateRemoteEditorialQuality(question = {}) {
   const errors = [];
   const texts = collectText(question);
+  if (parseBooleanEnv('AI_SIMPLE_TUS_PIPELINE', true)) {
+    texts.forEach((text) => {
+      const normalized = String(text || '').replace(/\s+/g, ' ').trim();
+      if (!normalized) return;
+      REMOTE_FORBIDDEN_TEXT_PATTERNS.forEach((pattern) => {
+        if (pattern.test(normalized)) errors.push(`forbidden editorial text: ${normalized.slice(0, 120)}`);
+      });
+      if (/\.\.\.|…/u.test(normalized)) errors.push(`truncated text: ${normalized.slice(0, 120)}`);
+    });
+    errors.push(...validateRemoteClinicalCoherence(question));
+    errors.push(...validateRemoteOptionHomogeneity(question));
+    errors.push(...validateRemoteAnswerLeakage(question));
+    errors.push(...validateRemoteTusExamLanguage(question));
+    const hardCoherence = validateClinicalCoherenceHardGate(question);
+    if (!hardCoherence.ok) errors.push(...hardCoherence.errors.map((error) => `hard-coherence:${error}`));
+    return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
+  }
   texts.forEach((text) => {
     const normalized = String(text || '').replace(/\s+/g, ' ').trim();
     if (!normalized) return;
@@ -803,7 +877,79 @@ function validateRawQuestion(question = {}) {
   return { ok: errors.length === 0, errors };
 }
 
+
+function buildSimpleTusPrompt({ branchFilter = 'Rastgele', recentQuestionSummaries = [], recentTopics = [], recentCorrectAnswers = [], selectedTopic = '', selectedSubtopic = '', questionType = '', seed = '', previousTopicWindow = [], attempt = 1, antiRepeatNonce = '' }) {
+  const recentList = recentQuestionSummaries
+    .slice(0, 12)
+    .map((item, index) => {
+      const target = item.answerTarget || item.questionType || '';
+      return `${index + 1}. ${[item.branch || 'TUS', item.title, item.correct, target].filter(Boolean).join(' | ')}`;
+    })
+    .join('\n');
+
+  const forbiddenConcepts = uniqueNonEmpty([
+    ...recentQuestionSummaries.slice(0, 12).flatMap((item) => [item.title, item.correct, item.learningTarget, item.topic, item.subtopic]),
+    ...recentTopics,
+    ...recentCorrectAnswers,
+  ]).slice(0, 24).join('; ');
+
+  const requestedBranch = branchFilter && branchFilter !== 'random' ? branchFilter : 'Rastgele TUS branşı';
+  const requestedFocus = selectedSubtopic || selectedTopic || questionType || 'yeni ve farklı bir TUS karar noktası';
+
+  return `KlinikIQ için tek bir yeni Türkçe TUS spot sorusu üret.
+
+AMAÇ
+- Kısa, bilimsel, öğretici, tek doğru cevaplı bir TUS maddesi yaz.
+- Klinik örnek kopyalama; son üretimleri yalnız tekrar yasağı olarak kullan.
+- JSON dışında hiçbir metin yazma.
+
+İSTEK
+- Branş: ${requestedBranch}
+- Odak: ${requestedFocus}
+- Deneme: ${attempt}
+- Çeşitlilik anahtarı: ${seed || antiRepeatNonce || Date.now()}
+
+YAKIN ÜRETİMLER - KOPYALAMA / PARAFRAZLAMA YASAK
+${recentList || 'Yok.'}
+
+YASAK KAVRAMLAR
+${forbiddenConcepts || 'Yok.'}
+
+ZORUNLU MADDE STANDARDI
+1. Tek ölçme hedefi seç ve answerTarget alanına yaz: first_life_saving_step, symptom_control, mechanism_targeted_treatment, definitive_treatment, diagnostic_first_test, confirmatory_test, long_term_management, complication_management, prevention_or_prophylaxis veya mechanism_explanation.
+2. Stem yalnız olgu anlatımıdır; soru cümlesini stem içine yazma. 4-7 kısa cümle yeterlidir.
+3. Question alanı tek ve net cümle olmalı; hedefi açıkça daraltmalı. Belirsiz 'en uygun yaklaşım' dilini tek başına kullanma.
+4. Beş seçenek aynı kavramsal kategoride olmalı. Tanı, tedavi, test ve mekanizma seçeneklerini aynı soruda karıştırma.
+5. Doğru cevap gerçekten tek en iyi cevap olmalı. Aynı olguda birlikte uygulanabilecek iki seçeneği yarıştırma.
+6. compactVitals ve compactObjectiveData yalnız gerekliyse doldur. Tek satır tek veri olsun; aynı veriyi tekrar etme, yorum veya tanı cümlesi yazma.
+7. findings alanı kalite kontrol içindir; kritik veri stem veya destek panelinde de anlaşılır olmalı.
+8. explanation 2-3 tamamlanmış cümle olsun; doğru cevabı tekrar etmek yerine klinik mantığı açıkla.
+9. evidenceChain 3 madde olsun. Her madde şu biçime yakın yazılsın: 'Etiket — kısa ipucu. Anlamı: kısa klinik anlam.' Olguda olmayan veri ekleme.
+10. examPearl 1 kısa TUS ipucu olsun; explanation cümlesini kopyalama.
+11. managementSteps yalnız yönetim değeri varsa 2-3 somut basamak içersin; mekanizma/tanı sorusunda boş yönetim listesi olabilir.
+12. wrongOptionFeedback içinde A-E bulunmalı. Her açıklama seçenek özelinde ve 1-2 kısa cümle olmalı.
+
+YASAK DİL
+- 'farklı klinik tabloda uygun olabilir'
+- 'olgudaki ana ipuçlarını tek başına açıklamaz'
+- 'ilişkili bir alternatif gibi görünse de'
+- 'tek en iyi yanıt yapacak düzeyde desteklemez'
+- 'bu karar düzeyinde öncelikli yanıtı karşılamadığı için'
+- 'klinik bağlamda değerlendirilir'
+- 'seçenekler arasındaki temel ayrımı gösterir'
+- 'Kanıt 1', 'Kanıt 2'
+- üç nokta, yarım cümle, kesik kelime
+
+ÇIKTI
+- Yalnız geçerli JSON döndür.
+- Tüm alanlar Türkçe kullanıcı metni içersin.
+- source='real-ai', caseType='ai-spot' olsun.`;
+}
+
 function buildPrompt({ branchFilter = 'Rastgele', recentQuestionSummaries = [], recentTopics = [], recentCorrectAnswers = [], selectedTopic = '', selectedSubtopic = '', questionType = '', seed = '', previousTopicWindow = [], attempt = 1, antiRepeatNonce = '' }) {
+  if (parseBooleanEnv('AI_SIMPLE_TUS_PROMPT', true)) {
+    return buildSimpleTusPrompt({ branchFilter, recentQuestionSummaries, recentTopics, recentCorrectAnswers, selectedTopic, selectedSubtopic, questionType, seed, previousTopicWindow, attempt, antiRepeatNonce });
+  }
   const recentList = recentQuestionSummaries
     .slice(0, 22)
     .map((item, index) => `${index + 1}. ${item.branch || 'TUS'} | başlık: ${item.title || ''} | doğru: ${item.correct || ''}`)
@@ -1987,6 +2133,7 @@ function buildSafeFallbackResponsePayload({ body = {}, attemptErrors = [], start
   return {
     ok: true,
     provider: 'local-safe-fallback',
+    fallback: true,
     remoteAttempt: 0,
     safeFallback: true,
     fallbackNotice: 'Remote model veya kalite kapıları uygun soru döndürmediği için doğrulanmış yerel TUS spot soru havuzundan güvenli soru üretildi.',
@@ -2098,6 +2245,8 @@ export default async function handler(request, response) {
         return sendJson(response, 200, {
           ok: true,
           provider: question.provider || 'remote-ai',
+          fallback: false,
+          safeFallback: false,
           remoteAttempt,
           diversityRejectedCount,
           nearDuplicateRejectedCount,
