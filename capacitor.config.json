@@ -1,0 +1,13 @@
+{
+  "appId": "com.klinikiq.app",
+  "appName": "KlinikIQ",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#f8fffd",
+    "allowMixedContent": true
+  }
+}

@@ -35128,3 +35128,39 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
   display: inline !important;
   grid-column: 1 / -1 !important;
 }
+
+
+/* --------------------------------------------------------------------------
+   Mobile native shell polish — Capacitor Android
+   -------------------------------------------------------------------------- */
+html,
+body,
+#root {
+  min-height: 100%;
+  min-height: 100dvh;
+  overscroll-behavior-y: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-left: env(safe-area-inset-left, 0px);
+  touch-action: manipulation;
+}
+
+button,
+[role="button"],
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 760px) {
+  body {
+    font-size: 15px;
+  }
+}

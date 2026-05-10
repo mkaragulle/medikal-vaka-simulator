@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">KlinikIQ</string>
+    <string name="title_activity_main">KlinikIQ</string>
+    <string name="package_name">com.klinikiq.app</string>
+    <string name="custom_url_scheme">com.klinikiq.app</string>
+</resources>
