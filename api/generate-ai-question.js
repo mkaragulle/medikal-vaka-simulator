@@ -1,6 +1,24 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v6-repeat-safe-compact';
+const PROMPT_VERSION = 'klinikiq-simple-tus-v7-user-prompt';
 const SCHEMA_VERSION = 'simple-ai-spot-v1';
+
+const SYSTEM_PROMPT = `You are KlinikIQ’s medical question-generation engine.
+
+Write one concise, medically accurate Turkish TUS-style single-best-answer question. The output language must be professional Turkish with correct medical terminology, spelling, grammar and TUS exam style.
+
+Do not create or expose a visible title. Keep title as an empty string.
+
+Core rules:
+- One question = one learning target only.
+- The branch, clinical stem, data fields, options, correct answer and feedback must all point to the same target.
+- Do not leak the answer in the title, stem or data fields.
+- Do not ask for a result/test/diagnosis/mechanism that is already directly given in the case.
+- Do not add unnecessary vitals, labs, imaging or microbiology data.
+- Keep data fields clean, complete, correctly labeled and non-repetitive.
+- Use only one clearly correct answer; options must belong to the same category.
+- Avoid vague, generic, duplicated, contradictory or unfinished feedback.
+- If the chosen branch/target creates ambiguity, switch to a safer, single-answer TUS target within the requested branch.
+- Return only valid JSON. No markdown, no comments, no extra text.`;
 
 const ALLOWED_BRANCHES = [
   'İç Hastalıkları',
@@ -397,67 +415,112 @@ function extractResponsesText(payload = {}) {
 function buildPrompt({ branch, recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
   const recent = asArray(recentQuestionSummaries).slice(0, 8).map((item, index) => `${index + 1}) ${item.branch || ''} | ${item.title || ''} | ${item.correct || ''}`).join('\n') || 'Yok';
   const target = selectPromptTarget(branch);
-  return `KlinikIQ için tek bir Türkçe TUS spot sorusu üret.
-Rolün: deneyimli hekim, TUS soru yazarı ve tıbbi dil editörü.
+  return `Generate one Turkish TUS spot question for KlinikIQ.
 
-Branş: ${branch}
-Bu denemedeki soru hedefi: ${target}
-Çeşitlilik anahtarı: ${antiRepeatNonce || Date.now()}-${attempt}
+Role: senior physician, TUS item writer, medical editor and quality controller.
 
-Yakın geçmişte üretilenler yalnızca tekrar etmemen için veriliyor; örnek alma, kopyalama, parafrazlama yapma:
+Branch: ${branch}
+Target type: ${target}
+Anti-repeat key: ${antiRepeatNonce || Date.now()}-${attempt}
+
+Recent generations are provided only to prevent repetition. Do not copy, imitate, paraphrase or use them as examples:
 ${recent}
 
-Kurallar:
-- Tek köklü, tek doğru cevaplı, TUS tarzında kısa klinik soru yaz.
-- Her soruda yalnız tek öğrenme hedefi olsun: tanı, test, tedavi, mekanizma veya komplikasyon hedeflerini karıştırma. Soru hedefi seçilen branşla uyumlu değilse farklı hedef seç.
-- AI sorusu için başlık üretme; title alanını boş string döndür. Kullanıcı arayüzünde başlık gösterilmeyecek, bu yüzden klinik hedefi stem ve question içinde net kur.
-- Soru kökü ve veri alanları aynı şeyi tekrar ettirmesin. Bir test sonucu, tanı, mekanizma veya belirgin bulgu zaten verildiyse bunu 'ilk istenecek test', 'en olası tanı' veya 'mekanizma' olarak yeniden sorma; bunun yerine sonucu yorumlat veya soruyu yeniden kur.
-- Gereksiz laboratuvar, vital, görüntüleme veya mikrobiyoloji verisi ekleme. Yalnız cevaba götüren ama cevabı doğrudan vermeyen, branş ve hedefle uyumlu verileri kullan.
-- “İlk yaklaşım”, “ilk ilaç”, “tanıyı destekleyen test”, “doğrulama testi” ve “tarama testi” ifadelerini bilimsel anlamına uygun kullan. Profilaksi, replasman, tedavi ve tarama dilini karıştırma; mevcut eksiklik/hastalık varsa profilaksi değil tedavi veya replasman dili kullan.
-- “En uygun” birden fazla doğru seçenek doğuracaksa kökü uzun etkili, antibiyotik öncesi, doğrulama testi, ilk ilaç, tanısal ilk test gibi ifadelerle daralt. Yakın çeldiriciler varsa tek doğru cevabı belirginleştiren ayırıcı bulguyu köke ekle; birden fazla seçenek makulse soruyu kullanıcıya göndermeden yeniden düzenle.
-- Seçenekler aynı kategoride olsun; tanı sorusunda tanılar, test sorusunda testler, tedavi sorusunda tedaviler, mekanizma sorusunda mekanizmalar ver. Kısmen doğru çeldiriciyi açıklamayla kurtarma; kökü veya seçenekleri baştan netleştir.
-- Fizik muayene, vital, laboratuvar, mikrobiyoloji, patoloji, EKG, görüntüleme ve objektif veri alanlarını birbirine karıştırma. Tüm veri satırları tamamlanmış olsun; hemoglobin, trombosit, lökosit, pH, ateş, TA, SpO₂ ve elektrolit gibi değerlerde uygun birim ve temiz format yaz.
-- Tanısal yöntem ile hedef tanı uyumlu olsun: patoloji, biyokimya, mikrobiyoloji ve görüntüleme sorularında test/örnek tipi hedeflenen tanıyı gerçekten desteklesin. Patoloji sorusunda antite net olsun; “tümör/kitle/nüks eğilimi” gibi genel ifadeler yerine morfoloji veya klinik bağlamla desteklenen belirli antite sorulsun.
-- Komplikasyon sorularında “nadir”, “ciddi”, “korkulan”, “en sık” ve “en önemli” ifadelerini birbirinin yerine kullanma; sıklık ve klinik önem ayrımını doğru yaz.
-- EKG yoksa EKG paterni, laboratuvar yoksa laboratuvar bulgusu, tedavi sorusu değilse tedavi adımı/yönetim dili kullanma.
-- Etik-hukuki soru üretme; zorunluysa hasta rızası, karar verme kapasitesi, yazılı onam, anonimleştirme, etik kurul ve kişisel sağlık verisi kavramlarını karıştırma; seçenekleri daha nüanslı ve aynı kategoride tut.
-- Branş ve soru hedefi uyumlu olsun: Anatomi sorusu çoğunlukla sinir-kas-yapı ilişkisini sorsun; test seçimi/elektrofizyoloji yorumu gerekiyorsa daha uygun branş seç. Folat, K vitamini, anti-CCP gibi klasik bilgi sorularında gereksiz uzun vaka yazma.
-- Feedback formatı kompakt olsun: önce klinik/bilimsel gerekçe 2-3 cümle, sonra TUS ipucu tek satır, sonra kanıt zinciri 3 kısa vaka ipucu, en sonda seçenek karşılaştırması.
-- Feedback kısa, tek paragraflı ve tekrarsız olsun. Doğru seçenek açıklaması jenerik olmasın; neden doğru olduğunu mekanizma, tanı mantığı veya klinik karar mantığıyla açıkla.
-- TUS ipucu tek satır karar cümlesi olsun; tek başına veri yazma, ikinci başlık veya tekrar kullanma.
-- Kanıt zinciri doğru cevabı doğrudan tekrar etmesin; yalnız vakadaki gerçek ipuçlarını göstersin. Kanıt maddeleri 'D-dimer yardımcıdır' gibi seçenek cümlesi değil, vaka verisi cümlesi olmalıdır. Feedback kısa notları vaka verisiyle çelişmesin; hipokalemide 'K yüksek', hipertansiyonda 'hipotansiyon' gibi ters ifade kullanma.
-- Doğru seçenek açıklaması klinik gerekçenin aynısı olmasın; doğru seçenek kartı bir cümlelik öğretici özet, yanlış seçenekler ise her biri tek cümlelik özgül eleme gerekçesi olsun.
-- Boş, şablon kalan veya yarım cümle görünen feedback alanı üretme; içerik yoksa alanı boş bırak.
-- “Yanlıştır” diye başlayan tekrarlı cümleler, şablon kalıntıları ve jenerik kalıplar kullanma. Aynı açıklamayı iki kez yazma.
-- Yarım cümle, eksik değer, tekrar eden veri satırı veya bozuk Türkçe bırakma.
-- Eğer bilimsel doğruluktan emin değilsen daha temel, tek doğru cevaplı ve güvenli bir TUS konusu seç.
+Task:
+Create one short, professional, single-best-answer Turkish TUS question that feels close to the real TUS style.
 
-Sadece geçerli JSON döndür. Markdown yok.
-JSON alanları:
+Essential item-writing rules:
+1. Use exactly one learning target: diagnosis, test, treatment, mechanism, complication or anatomy/pathology/biochemistry concept. Do not mix targets.
+2. Keep the item branch-appropriate. If the requested target does not fit the branch, choose a safer target that fits the branch.
+3. Do not produce a visible question title. Set "title" to "".
+4. The stem and data fields must not repeat the same information. Do not give a test result, diagnosis, mechanism or defining finding and then ask the user to choose that same thing.
+5. Use only necessary data. Remove irrelevant hemogram/vitals/labs/imaging unless they help the reasoning without revealing the answer.
+6. Data must be placed in the correct field:
+   - symptoms/history in the stem,
+   - vital signs in compactVitals,
+   - labs/imaging/microbiology/pathology/exam findings in compactObjectiveData with clear labels.
+   Never label a lab as microbiology, exam as imaging, or non-ECG data as ECG.
+7. All values must be complete and formatted with units when appropriate.
+8. Options must be the same type. Do not mix diagnoses, tests, drugs, mechanisms and procedures in the same option set.
+9. If more than one option could be clinically reasonable, narrow the question wording or change the options before returning JSON.
+10. Use “first step”, “first drug”, “screening test”, “confirmatory test”, “supportive test”, “replacement”, “prophylaxis”, “treatment”, “most common”, “most serious” and “most feared” only when scientifically correct.
+11. For pathology questions, the entity must be specific and supported by morphology or relevant clinical context. Avoid vague “tumor/mass/recurrence-prone lesion” wording.
+12. For anatomy questions, prefer structure–nerve–muscle–function relationships. Avoid diagnostic test interpretation unless the branch really fits.
+13. Avoid ethics/legal questions unless explicitly requested.
+
+Feedback rules:
+1. explanation: 2-3 concise Turkish sentences explaining why the correct answer is correct. It must be specific, not generic.
+2. examPearl: one short high-yield decision sentence. Do not write only a raw clue.
+3. evidenceChain: exactly 3 concrete clues from the case. Do not repeat the answer directly and do not invent clues not present in the case.
+4. wrongOptionFeedback: one concise teaching sentence for every option. The correct option feedback must not duplicate explanation word-for-word.
+5. managementSteps: fill only when the question asks first approach, treatment or management. Otherwise return [].
+6. No duplicate sentences. No unfinished sentences. No template remnants. No contradictory mini-notes.
+
+Before returning, silently check:
+- medically correct
+- one best answer
+- no answer leakage
+- branch-target alignment
+- options same category
+- complete values and units
+- correct field labels
+- no repeated data
+- no duplicated feedback
+- no unfinished or broken Turkish
+- examPearl is a real decision sentence
+
+Return only valid JSON. No markdown.
+
+JSON schema:
 {
-  "title":"",
-  "relatedBranch":"${branch}",
-  "difficulty":"Kolay|Orta|Zor",
-  "learningTarget":"tek öğrenme hedefi",
-  "answerTarget":"${target}",
-  "demographics":"yaş-cinsiyet kısa ifade",
-  "setting":"klinik ortam",
-  "chiefComplaint":"başvuru nedeni",
-  "stem":"3-6 cümlelik klinik olgu; soru cümlesi ve veri panelinde tekrar edilecek test sonucu burada yok",
-  "compactVitals":[{"label":"TA","value":"..."}],
-  "compactObjectiveData":[{"label":"test adı","value":"sonuç; stem içinde aynen tekrar etme"}],
-  "question":"tek ve net soru cümlesi",
-  "options":[{"id":"A","text":"..."},{"id":"B","text":"..."},{"id":"C","text":"..."},{"id":"D","text":"..."},{"id":"E","text":"..."}],
-  "correctAnswer":"A",
-  "explanation":"doğru cevabı 2-3 cümleyle açıklayan klinik/bilimsel gerekçe; başlık etiketi yazma",
-  "wrongOptionFeedback":{"A":"her seçenek için tek cümlelik öğretici açıklama; doğru seçenek açıklaması explanation ile aynı olmasın","B":"...","C":"...","D":"...","E":"..."},
-  "evidenceChain":["vakadaki somut ipucu","vakadaki somut ipucu","vakadaki somut ipucu"],
-  "examPearl":"tek satırlık yüksek verimli karar cümlesi; veri tek başına kalmasın, başlık etiketi yazma",
-  "managementSteps":["yalnız ilk yaklaşım/tedavi sorularında gerekli kısa basamak"],
-  "quality":{"scientificallySound":true,"singleBestAnswer":true,"optionsSameCategory":true,"noAnswerLeakage":true,"completeSentences":true}
+  "title": "",
+  "relatedBranch": "${branch}",
+  "difficulty": "Kolay|Orta|Zor",
+  "learningTarget": "single precise learning target in Turkish",
+  "answerTarget": "${target}",
+  "demographics": "short age-sex phrase in Turkish",
+  "setting": "clinical setting in Turkish",
+  "chiefComplaint": "main presentation in Turkish",
+  "stem": "3-6 sentence Turkish clinical stem; do not repeat data panel results verbatim",
+  "compactVitals": [
+    {"label": "TA", "value": "..."}
+  ],
+  "compactObjectiveData": [
+    {"label": "clean test/exam/imaging/microbiology/pathology label", "value": "complete result with unit if needed"}
+  ],
+  "question": "one clear Turkish question sentence",
+  "options": [
+    {"id": "A", "text": "..."},
+    {"id": "B", "text": "..."},
+    {"id": "C", "text": "..."},
+    {"id": "D", "text": "..."},
+    {"id": "E", "text": "..."}
+  ],
+  "correctAnswer": "A",
+  "explanation": "2-3 concise Turkish sentences; specific clinical/scientific reasoning only",
+  "wrongOptionFeedback": {
+    "A": "one concise teaching sentence",
+    "B": "one concise teaching sentence",
+    "C": "one concise teaching sentence",
+    "D": "one concise teaching sentence",
+    "E": "one concise teaching sentence"
+  },
+  "evidenceChain": [
+    "case clue 1",
+    "case clue 2",
+    "case clue 3"
+  ],
+  "examPearl": "one high-yield Turkish decision sentence",
+  "managementSteps": [],
+  "quality": {
+    "scientificallySound": true,
+    "singleBestAnswer": true,
+    "optionsSameCategory": true,
+    "noAnswerLeakage": true,
+    "completeSentences": true
+  }
 }`;
 }
-
 function createAbortSignal(timeoutMs) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -478,7 +541,7 @@ async function callOpenAI(prompt) {
       ? {
           model,
           input: [
-            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Do not create a visible question title. Do not repeat the same data in stem and data fields. Keep branch, stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
+            { role: 'system', content: SYSTEM_PROMPT },
             { role: 'user', content: prompt },
           ],
           text: { format: { type: 'json_object' } },
@@ -488,7 +551,7 @@ async function callOpenAI(prompt) {
       : {
           model,
           messages: [
-            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Do not create a visible question title. Do not repeat the same data in stem and data fields. Keep branch, stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
+            { role: 'system', content: SYSTEM_PROMPT },
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
