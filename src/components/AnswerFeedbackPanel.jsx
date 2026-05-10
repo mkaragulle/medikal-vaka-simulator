@@ -190,7 +190,7 @@ function deriveWhyCorrect(clinicalCase) {
 
   const clue = getMainClue(clinicalCase);
   const correct = clinicalCase.diagnosis?.correct || 'doğru seçenek';
-  return `${clue ? `${clue} karar verdirici ana ipucudur. ` : ''}Bu nedenle ${correct} olgudaki öykü, muayene ve objektif veri paternini en iyi açıklar.`;
+  return `${clue ? `${clue} klinik kararı yönlendiren temel ipucudur. ` : ''}${correct} öykü, muayene ve objektif veriler birlikte ele alındığında en tutarlı seçenektir.`;
 }
 
 function normalizeWrongMap(clinicalCase) {
@@ -227,7 +227,7 @@ function deriveWhyWrong(clinicalCase, selectedOption, selectedComparison) {
   const clue = getMainClue(clinicalCase);
   const correctDiagnosis = clinicalCase.diagnosis?.correct || 'doğru seçenek';
   if (selectedOption) {
-    return `${selectedOption} farklı klinik tabloda uygun olabilir; ancak bu vakada ${clue ? `${clue} ` : 'ana klinik patern '}seçenekler arasındaki ayrımı belirler. Bu seçim, ${correctDiagnosis} lehine olan kanıt zincirini ve ilk yaklaşımı eksik bırakır.`;
+    return `${selectedOption} ilk bakışta düşünülebilir; ancak bu vakada ${clue ? `${clue} ` : 'ana klinik patern '}bu alternatifi öncelikli yanıt yapacak yeterli desteği sağlamaz. Olgudaki ipuçları ${correctDiagnosis} ile daha tutarlı ilerler.`;
   }
 
   return `Seçilen yanıt, olgunun ana klinik ve tetkik paternini ${correctDiagnosis} kadar iyi açıklamaz.`;
@@ -243,7 +243,7 @@ function inferEvidenceTitle(text = '', index = 0) {
   if (/yaş|bebek|çocuk|yenidoğan|erkek|kadın|adölesan|gebede/.test(normalized)) return 'Klinik bağlam';
   if (/reseptör|enzim|gen|mutasyon|yolak|hormon|protein|histolojik|nekroz|inflamasyon|morfoloji/.test(normalized)) return 'Mekanizma';
   if (/negatif|saptanmadı|normal|yok/.test(normalized)) return 'Dışlatıcı bulgu';
-  return `Kanıt ${index + 1}`;
+  return 'Klinik ipucu';
 }
 
 function normalizeTitledItem(item, index, fallbackTitle, maxLength = 190) {
@@ -376,9 +376,9 @@ function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) 
   const keyEvidence = evidenceChain[0]?.text || itemText(evidenceChain[0]);
   const keyInvestigation = (clinicalCase.investigations || []).find((item) => item.summary || item.findings?.length);
   const points = [
-    keyEvidence ? `${trimTrailingPunctuation(keyEvidence)} seçenekler arasındaki ayrımı belirginleştirir.` : null,
-    keyInvestigation ? `${keyInvestigation.label} bulgusu klinik kararı destekleyen objektif veridir.` : null,
-    `${option} ancak bu olgudaki ayırt ettirici bulgularla desteklenmemektedir.`,
+    keyEvidence ? `${trimTrailingPunctuation(keyEvidence)} bu alternatifin eksik kaldığı karar noktasını gösterir.` : null,
+    keyInvestigation ? `${keyInvestigation.label} bulgusu seçenekler arasındaki ayrımı objektif veriye taşır.` : null,
+    `${option} olgudaki ana ipuçlarını tek başına açıklamaz.`,
   ];
 
   return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(item, 155));
@@ -401,12 +401,12 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
         explanation: truncateSentence(whyCorrect, 260),
-        comparisonPoints: clue ? [`${trimTrailingPunctuation(clue)} doğru cevabı destekleyen ana ipucudur.`] : [],
+        comparisonPoints: clue ? [`${trimTrailingPunctuation(clue)} seçenekler arasındaki temel ayrımı gösterir.`] : [],
       };
     }
 
     const explicit = wrongMap[option] || {};
-    const explanation = removeMetaLanguage(explicit.explanation || `${option} benzer bir klinik başlık gibi görünebilir; ancak bu olguda ${clue ? `${clue} ` : 'karar verdirici kanıt zinciri '}doğru seçenek lehinedir. Bu şık, olgunun ana ipucunu ve ilk yaklaşımını eksik açıklar.`);
+    const explanation = removeMetaLanguage(explicit.explanation || `${option} ilk bakışta aynı karar alanında düşünülebilir; ancak bu olguda ${clue ? `${clue} ` : 'kanıt zinciri '}bu alternatifi öncelikli yanıt yapacak yeterli desteği sağlamaz. Bu seçenek ana ipucunu eksik açıklar.`);
     const nonGenericPoints = unique(explicit.comparisonPoints || []).filter((point) => !isGenericComparisonPoint(point));
 
     return {
@@ -536,7 +536,7 @@ function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase 
         {comparisons.map((item, index) => (
           <article className={`option-comparison-item ${item.status} ${item.isSelected ? 'selected-option' : ''}`.trim()} key={`${item.option}-${index}`}>
             <div className="option-comparison-head">
-              <span className={`option-comparison-status ${item.status}`}>{item.status === 'correct' ? 'Doğru' : item.isSelected ? 'Seçimin' : 'Çeldirici'}</span>
+              <span className={`option-comparison-status ${item.status}`}>{item.status === 'correct' ? 'Doğru' : item.isSelected ? 'Seçimin' : 'Alternatif'}</span>
               <strong><GlossaryText text={item.option} enabled={glossaryEnabled} /></strong>
             </div>
             <p><GlossaryText text={ensureSentence(item.explanation)} enabled={glossaryEnabled} /></p>

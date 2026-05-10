@@ -1,24 +1,25 @@
 import { repairScientificAccuracy, scientificAccuracyGate } from '../src/utils/clinicalScientificAccuracyGate.js';
 import { applyTusLanguageStandardToQuestion } from '../src/utils/tusLanguageStandard.js';
+import { applyFeedbackQualityStandardToQuestion, validateFeedbackQualityStandard, FEEDBACK_QUALITY_STANDARD_VERSION } from '../src/utils/feedbackQualityStandard.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const PROMPT_VERSION = 'klinikiq-tus-hybrid-v4.3';
 const SCHEMA_VERSION = 'ai-spot-json-schema-v3.2';
-const RULE_VERSION = 'clinical-gate-v3.3';
+const RULE_VERSION = 'clinical-gate-v3.4-feedback-standard';
 
 
 const TUS_LANGUAGE_STANDARD_PROMPT = `
 TUS DİL VE MADDE YAZIM STANDARDI:
-- Soru kökü akademik klinik Türkçe ile yazılır; geniş zaman ve edilgen yapı tercih edilir: başvuruyor, saptanıyor, ölçülüyor, görülüyor.
-- Klinik vaka sırası korunur: demografik veri → şikâyet ve süre → ayırt ettirici öykü → fizik muayene → objektif laboratuvar/görüntüleme/EKG verisi → tek karar sorusu.
-- Soru tek ölçme hedefine odaklanır: en olası tanı, öncelikli yaklaşım, en uygun ilk tedavi, beklenen bulgu, tanıyı destekleyen test, komplikasyon veya mekanizma.
+- Soru kökü akademik klinik Türkçe ile yazılır; demografik bağlam, başvuru yakınması, süre, ayırt ettirici öykü, muayene ve gerekiyorsa objektif veri doğal sırayla verilir.
+- Tek soru tek ölçme hedefine odaklanır: tanı, tedavi, tetkik, mekanizma, risk sınıflaması, komplikasyon veya yönetim basamağı karıştırılmaz.
 - Başlık, stem, compactObjectiveData, tetkik summary/findings ve hasta özeti doğru cevabı açıkça söylemez; cevap öncesi alanlarda yorum değil objektif veri verilir.
-- Beş seçenek aynı kavramsal kategoridedir: tanı-tanı, tedavi-tedavi, test-test, mekanizma-mekanizma. Hiçbiri, hepsi, yukarıdakilerin hepsi kullanılmaz.
-- En az iki seçenek yakın ve savunulabilir çeldirici olmalıdır; klinik karar sorularında bir seçenek önce/sonra algoritma basamağı tuzağı olabilir.
-- Yanlış seçenek feedbacki hangi durumda doğru olabileceğini ve bu olguda hangi ipucuyla elendiğini açıklar.
-- Hap bilgi bağımsız aktif hatırlama kartıdır. Gerçek kaynak soru kökü ve seçenekler kullanıcıya gösterilmiyorsa "sorusunda", "bu soruda", "soru kökünde", "doğru cevaba götüren", "doğru şık", "seçeneklerde" ve "cevap anahtarı" gibi meta-sınav ifadeleri kullanılmaz. Ön yüz doğrudan cevaplanabilir kısa soru; arka yüz Yanıt + Kısa gerekçe + TUS ipucu + Ayırıcı not mantığıyla kurulur; ön yüz cümlesi arka yüzde tekrarlanmaz.
-- High-risk klinik kararlarda model serbest yorum yapmaz: hiperkalemi + EKG değişikliği, anafilaksi, sepsis/septik şok, DKA + düşük potasyum, STEMI, inme, menenjit ve status epileptikus gibi konularda ilk/öncelikli basamak deterministik klinik kurala göre seçilir.
-- Türkçe tıbbi terminoloji tutarlı yazılır; birimler eksiksizdir; yarım cümle, gündelik ifade ve başlık kırıntısı kullanılmaz.`;
+- Beş seçenek aynı kavramsal kategoridedir; seçenekler arası uzunluk ve ayrıntı dengeli tutulur. Hiçbiri, hepsi veya yukarıdakilerin hepsi kullanılmaz.
+- En az iki seçenek yakın ve savunulabilir alternatif olmalıdır; klinik karar sorularında ilk basamak, sonraki basamak ve destek yaklaşımı ayrımı doğru kurulmalıdır.
+- Yanlış seçenek feedbacki boş genelleme yapmaz; seçeneğin neden cazip görünebileceğini ve bu olguda hangi somut ipucuyla elendiğini kısa açıklar.
+- Klinik gerekçe, kanıt zinciri, TUS işareti, yönetim ve seçenek karşılaştırması farklı işlev görür; aynı cümle farklı alanlarda tekrar edilmez.
+- Hap bilgi bağımsız aktif hatırlama kartıdır. Kaynak soru kullanıcıya gösterilmiyorsa meta-sınav ifadeleri kullanılmaz; ön yüz doğrudan cevaplanabilir kısa soru, arka yüz kısa yanıt ve sınav mantığıyla kurulur.
+- High-risk klinik kararlarda model serbest yorum yapmaz; ilk/öncelikli basamak deterministik klinik kural ve bilimsel kalite kapısına göre seçilir.
+- Türkçe tıbbi terminoloji tutarlı yazılır; birimler eksiksizdir; yarım cümle, gündelik ifade, mekanik başlık kırıntısı ve şablon feedback kullanılmaz.`;
 
 const TUS_FORBIDDEN_EXPRESSION_LIST = [
   'Klinik bağlamda değerlendirilir',
@@ -324,18 +325,22 @@ function buildAIUsageLog({ provider, model, prompt, question, startedAt, validat
 
 function runServerMedicalQualityGate(question = {}) {
   const before = JSON.stringify(question);
-  const repaired = applyTusLanguageStandardToQuestion(repairScientificAccuracy(question));
+  const clinicallyRepaired = applyTusLanguageStandardToQuestion(repairScientificAccuracy(question));
+  const repaired = applyFeedbackQualityStandardToQuestion(clinicallyRepaired);
   const repairCount = before === JSON.stringify(repaired) ? 0 : 1;
   const scientific = scientificAccuracyGate(repaired);
+  const feedbackQuality = validateFeedbackQualityStandard(repaired);
   const fatalErrors = scientific.errors.filter((error) => /hyperkalemia|hiperkalemi|pulmonary|embol|anafil|sepsis|dka|stroke|inme|menenjit|status|self-consistency|score-gate|option-gate/i.test(error));
+  const feedbackErrors = feedbackQuality.ok ? [] : feedbackQuality.errors.map((error) => `feedback-quality:${error}`);
   return {
-    ok: scientific.ok && fatalErrors.length === 0,
+    ok: scientific.ok && feedbackQuality.ok && fatalErrors.length === 0,
     question: repaired,
     repairCount,
-    errors: Array.from(new Set(scientific.errors || [])),
+    errors: Array.from(new Set([...(scientific.errors || []), ...feedbackErrors])),
     warnings: Array.from(new Set(scientific.warnings || [])),
     matchedRules: scientific.matchedRules || [],
     scoreSystems: scientific.scoreSystems || [],
+    feedbackStandardVersion: FEEDBACK_QUALITY_STANDARD_VERSION,
   };
 }
 
@@ -354,8 +359,8 @@ Zorunlu JSON kontratı:
   "setting": "string",
   "chiefComplaint": "string",
   "stem": "string",
-  "compactVitals": [{ "label": "TA", "value": "68/42 mmHg" }],
-  "compactObjectiveData": [{ "label": "HBsAg", "value": "Pozitif" }, { "label": "Lökosit", "value": "16.200/mm³" }],
+  "compactVitals": [{ "label": "string", "value": "string" }],
+  "compactObjectiveData": [{ "label": "string", "value": "string" }],
   "findings": {
     "history": ["string"],
     "exam": ["string"],
@@ -536,6 +541,8 @@ function validateRemoteEditorialQuality(question = {}) {
   errors.push(...validateRemoteOptionHomogeneity(question));
   errors.push(...validateRemoteAnswerLeakage(question));
   errors.push(...validateRemoteTusExamLanguage(question));
+  const feedbackQuality = validateFeedbackQualityStandard(question);
+  if (!feedbackQuality.ok) errors.push(...feedbackQuality.errors.map((error) => `feedback-quality:${error}`));
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
 }
 
@@ -709,6 +716,14 @@ Sen KlinikIQ için çalışan kıdemli TUS soru yazarı, klinik içerik editör�
 
 Görev: Tek bir yeni TUS odaklı, kısa klinik spot soru üret. Soru Türkçe olmalı, bilimsel olarak doğru olmalı, profesyonel sınav dili taşımalı ve JSON dışında hiçbir açıklama döndürmemelisin.
 
+FEEDBACK KALİTE STANDARDI:
+- explanation alanı 2-4 cümlelik Klinik Gerekçe gibi yazılır; doğru yanıtı tekrar etmek yerine olgudaki ipuçlarını neden-sonuç ilişkisiyle bağlar.
+- evidenceChain 3-5 somut ipucu içerir; her madde yalnız bulguyu kopyalamaz, klinik anlamını kısa gösterir. Kanıt 1/Kanıt 2 gibi mekanik metin yazma.
+- examPearl kısa TUS işareti olmalıdır; klinik gerekçeyi kopyalamaz, benzer sorularda işe yarayan ayırt ettirici karar mantığını verir.
+- managementSteps yalnız yönetim gerektiren sorularda klinik öncelik sırasını verir; tanısal doğrulama, stabilizasyon, ilk tedavi ve sonraki basamak karıştırılmaz.
+- wrongOptionFeedback seçenek özelinde yazılır; boş genelleme yapmaz, aynı cümleyi farklı seçeneklerde tekrar etmez ve uygun yanıt adını gereksiz yinelemez.
+- Cevap sonrası açıklamalar kısa, doğal, tamamlanmış cümlelerden oluşur; yarım cümle, otomatik şablon, meta-soru dili ve mekanik etiket kullanılmaz.
+
 Branş isteği: ${branchFilter || 'Rastgele'}
 Bu denemede seçilecek ana konu: ${selectedTopic || selectedSubtopic || 'Klinik olarak farklı yeni konu seç'}
 Bu denemede soru tipi: ${questionType || 'tanı/tedavi/tetkik/mekanizma eksenlerinden biri'}
@@ -728,10 +743,11 @@ ${forbiddenTopics || 'Henüz yok.'}
 Kesin kurallar:
 - Ön yüzde sol tarafta gösterilecek klinik metin stem alanıdır; stem yalnız olgu/vaka anlatımı olmalı, son soru cümlesini içermez.
 - stem gerçek TUS soru kökü gibi olmalı: demografik veri → şikâyet/süre → ayırt ettirici öykü → fizik muayene → objektif veri sırasını izlesin. 3-6 cümle, genellikle 80-150 kelime; kompleks olguda en fazla 220 kelime. Klinik vaka raporu gibi uzatma.
-- Vital bulgu her soruda zorunlu değildir. Yalnız şok, sepsis, anafilaksi, solunum yetmezliği, DKA, dehidratasyon, neonatal acil, hemodinamik karar veya ateşin kritik olduğu sorularda ver. Gereksiz vital seti üretme.
+- Vital bulgu her soruda zorunlu değildir. Yalnız klinik karar için gerekli olduğunda ver; gereksiz vital seti üretme.
 - Vital bulgular sayısal olarak önemliyse stem içine uzun liste halinde yığma; compactVitals alanına kısa label/value çiftleri koy. Stem içinde gerekirse 'hipotansif ve taşikardik' gibi kısa ifade kullan.
 - Laboratuvar, seroloji, kültür, EKG, görüntüleme veya patoloji verileri gerekiyorsa stem içinde uzun ham panel listesi yazma; çoklu değerleri compactObjectiveData alanına kısa label/value şeklinde koy. Stemte yalnız klinik bağlam kalsın; soru cümlesini question alanına yaz. Referans aralıklarını stem içine yığma.
-- Aynı veri iki yerde tekrar edilmez: compactVitals veya compactObjectiveData içine koyduğun TA, nabız, ateş, K⁺, ANA, anti-dsDNA, C3, HBsAg, HBV DNA, CRP, lökosit, EKG, BT/USG/MR gibi değerleri stem içinde sayı/değer listesi olarak yeniden yazma. Stem içinde gerekiyorsa yalnız nitel klinik vurgu kullan: 'hipotansif ve taşikardik görünümde' gibi.
+- compactObjectiveData maddeleri tek parametre = tek değer mantığında olmalı. Aynı parametreyi veya aynı sonucu farklı satırlarda tekrar etme; birleşik değer yazma, gerekiyorsa ayrı kısa satırlara böl. Label ve value okunabilir uzunlukta olmalı; üç nokta, kısaltılmış kırpıntı, “Anormal/Normal” statü eki veya yorum cümlesi ekleme.
+- Aynı veri iki yerde tekrar edilmez: compactVitals veya compactObjectiveData içine koyduğun sayısal/objektif değeri stem içinde liste halinde yeniden yazma. Stem içinde gerekiyorsa yalnız kısa nitel klinik vurgu kullan.
 - stem içine gerekli öykü ve kısa klinik bağlamı doğal TUS soru akışıyla ekle; çoklu vital/lab/seroloji/EKG panelini compactVitals veya compactObjectiveData alanına taşı. Kullanıcı ayrı hasta özeti, risk bağlamı veya tetkik kartı açmayacak.
 - findings alanları yalnız internal kalite kontrol içindir; stem olmadan cevaplanamayacak kritik veri findings içinde yalnız bırakılmamalıdır.
 - stem içinde Profil:, Başvuru:, Risk bağlamı:, Ayırt ettirici ipuçları:, Klinik gerekçe:, Kanıt zinciri:, Sınav notu: gibi başlık kırıntıları kullanma.
@@ -749,8 +765,9 @@ Kesin kurallar:
 - Tetkik sonucunda doğru tanı/cevap cümle olarak yazılmasın.
 - Tetkik yorumu “... tanısını doğrular”, “... ile uyumludur”, “kesin tanıdır” gibi direkt tanı dili kullanmasın.
 - Sayısal laboratuvar/tetkik sonucu internal findings.rows içinde verilecekse şu formatı kullan: ["Parametre", "Sonuç + birim", "Referans", "Durum"].
-- Stem veya compactObjectiveData içinde referans aralığı yazma; yalnız değer + birim ver. Örnek: 'lökosit 16.200/mm³, CRP 12 mg/L ve pH 7.30'.
-- “Lökosit 15”, “CRP yüksek”, “D-dimer yüksek”, “Troponin pozitif”, “pH düşük” gibi birimsiz belirsiz sonuç yazma.
+- Stem veya compactObjectiveData içinde referans aralığı yazma; yalnız klinik karar için gerekli olan değer ve birimi ver.
+- compactObjectiveData içinde doğru cevabı açıkça adlandıran etken/tanı/tedavi etiketi kullanma; cevap öncesi panel objektif veri verir, yorumu feedbacke bırakır.
+- Birimsiz, belirsiz veya yalnız 'yüksek/düşük/pozitif' biçiminde kalan sonuç yazma; objektif veri gerekiyorsa değer, birim ve nitelik net olsun. Nitel sonuç kaçınılmazsa label belirsiz kalmayacak kadar açıklayıcı, value ise kısa olmalıdır.
 - Nitel sonuçlarda referans “negatif”, “üreme olmamalı”, “saptanmamalı” veya “normal iletim” gibi beklenen değerle yazılmalıdır.
 - Doğru cevap, verilen objektif veriler yorumlanarak bulunmalı.
 - Her yanlış seçenek için kısa ama öğretici feedback yaz; seçenek hangi durumda doğru olabilir, bu olguda hangi ayırt ettirici ipucuyla elenir açık olsun.
@@ -761,10 +778,10 @@ Kesin kurallar:
 - keyWords/keywords en fazla 3 kısa chip değerinde olmalı; aynı kavramı tekrar etme. 'IM önerisi', 'Epinefrin 0.3 mg', '3 mg', uzun cümle veya Klinik Gerekçe ile aynı metni chip olarak yazma.
 - Klinik gerekçe, sınav notu, kanıt zinciri ve seçenek feedbackleri ayrı işlev görmeli; aynı cümle veya aynı bilgi blokları farklı alanlarda tekrar edilmemeli.
 - managementSteps 2-4 kısa ilk yaklaşım/yönetim basamağı içermeli; temel bilim sorusunda mekanistik yaklaşım notu gibi yaz.
-- Anafilaksi sorularında bağlamı ayır: toplum/ayaktan genel anafilakside ilk hayat kurtarıcı ilaç IM adrenalin olabilir; genel anestezi altında ameliyathanede ciddi hipotansiyon ve bronkospazm varsa doğru yaklaşım tetikleyici ajanı durdurma, yüzde 100 oksijen/hava yolu güvenliği, hızlı IV kristaloid ve hemodinamik ciddiyete göre adrenalin uygulamasını birlikte içermelidir.
-- Perioperatif anafilaksi yönetim sorusunda doğru cevabı tek başına IM adrenalin olarak yazma; soru tek ilaç soruyorsa kökü açıkça 'hayat kurtarıcı temel ilaç' diye sınırla.
+- Acil yönetim sorularında bağlamı ayır; tek ilaç, ilk yaklaşım, stabilizasyon, destek tedavisi ve sonraki basamak aynı şeymiş gibi yazılmamalıdır.
+- Yönetim sorusunda doğru cevap tek bir müdahale değilse seçenek, gerçek ilk yaklaşım paketini kapsamalıdır; soru tek müdahaleyi soruyorsa kök bunu açıkça sınırlandırmalıdır.
 - Fizik muayeneye laboratuvar, EKG, görüntüleme, seroloji veya kan gazı sonucu yazma; muayene yalnız inspeksiyon, palpasyon, perküsyon ve oskültasyon bulgularından oluşsun.
-- 'wheezing' yerine 'hışıltılı solunum' kullan; '28 gw' yerine '28. gebelik haftasında', '7 gün yaşındaki' yerine '7 günlük' yaz; 'Adrenalin (Epinefrin)' tekrar etme, ilk kullanımda 'adrenalin/epinefrin' yeterlidir; '1: 1000' yazma, '1:1000' veya '1 mg/mL' yaz.
+- Gereksiz İngilizce, bozuk kısaltma, yanlış birim boşluğu veya tekrarlı eş anlamlı kullanım yazma; Türkçe tıbbi terminoloji ve ölçüm formatı standart olmalıdır.
 - Hasta öyküsü doğal cümle olmalı; 'Nedeniyle Ameliyathane', 'Ameliyathane.' gibi kopuk parçalar yazma.
 - Şu ifadeleri asla yazma: "Beklenen ana ipuçları bu tabloda baskın değildir", "Karar ... yönünde güçlenir", "Ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır", "Laboratuvar paterni", "Kanıt 2", "Kanıt 3", "Kanıt 4", "Objektif bulguların karar basamağını desteklemesi", "Doğru yanıta götüren ana bulgudur", "İlk karar", "Tedavi önceliği", "Bu veri klinik bağlamda değerlendirilir", "Nedeniyle Ameliyathane", "Morfolojik patern:", "Morfolojik patern. Morfolojik patern", "karar verdirici paternyla", "likefaksiyon nekrozuyla", "kısa TUS pratiğinde ele alınır", "Klinik değerlendirme için ek veri", "Objektif karar verisi", "verilen öğrenme hedefi", "yanıt ekseni".
 - Temel bilim/mekanizma sorusunda gerçek objektif veri yoksa findings.investigations boş dizi olsun; "Laboratuvar" placeholder kartı üretme.

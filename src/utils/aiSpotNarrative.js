@@ -163,13 +163,21 @@ function addUniqueSentence(sentences, sentence, correct = '') {
 }
 
 function normalizeDataLabel(label = '') {
-  const raw = String(label || '').trim();
+  const raw = String(label || '')
+    .replace(/(?:\.{3}|…)+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
   if (/^spo2$/iu.test(raw)) return 'SpO₂';
   if (/^kan basıncı$/iu.test(raw)) return 'TA';
   if (/^ateş|ates$/iu.test(raw)) return 'Ateş';
   if (/^solunum sayısı$/iu.test(raw)) return 'Solunum';
+  if (/^özgül\s+(Ig[GM])$/iu.test(raw)) return raw.replace(/^özgül\s+/iu, '');
   return raw;
 }
+
+const GENERIC_SUPPORT_LABEL = /^(?:seroloji(?:k)?(?:\s+veriler?)?|laboratuvar(?:\s+veriler?)?|objektif(?:\s+veriler?)?|tetkik|bulgu|sonuç|değer|veri)$/iu;
+const SUPPORT_PAIR_PATTERN = /([^,.;:：]{2,34})[:：=]\s*([^,.;]+(?:\s*(?:mg\/dL|mg\/L|mmol\/L|mEq\/L|IU\/mL|IU\/L|U\/L|ng\/mL|pg\/mL|µIU\/mL|g\/dL|\/mm³|\/µL|mmHg|%))?)/giu;
+const SUPPORT_STATUS_PAIR_PATTERN = /([^,.;:：]{2,34})\s+(pozitif|negatif|düşük|yüksek)(?=\s*(?:[,.;]|$))/giu;
 
 function normalizeDataValue(value = '') {
   const cleaned = normalizeAiNarrativeText(value)
@@ -179,10 +187,15 @@ function normalizeDataValue(value = '') {
     .replace(/\bmg\s*\/\s*l\b/giu, 'mg/L')
     .replace(/\s*\((?:referans|normal)[^)]+\)/giu, '')
     .replace(/,\s*(?:referans|normal aralık)\s*[^,.;]+/giu, '')
+    .replace(/(?:\s*[—–-]\s*)?(?:anormal|normal|patolojik)\.?$/giu, '')
     .replace(/,\s*(?:yüksek|düşük|normal|patolojik|pozitif|negatif|artmış|azalmış)$/giu, '')
+    .replace(/(?:\.{3}|…)+/g, ' ')
+    .replace(/\s+/g, ' ')
     .trim();
   if (/^pozitif$/iu.test(cleaned)) return 'Pozitif';
   if (/^negatif$/iu.test(cleaned)) return 'Negatif';
+  if (/^düşük$/iu.test(cleaned)) return 'Düşük';
+  if (/^yüksek$/iu.test(cleaned)) return 'Yüksek';
   return cleaned;
 }
 
@@ -197,15 +210,98 @@ function normalizeCompactDataItem(item = {}) {
   return { label, value };
 }
 
+function normalizeCompactKey(value = '') {
+  return normalizeComparable(value)
+    .replace(/\b(?:anormal|normal|yüksek|yuksek|düşük|dusuk|patolojik|artmış|artmis|azalmış|azalmis)\b/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function resetSupportPairPattern() {
+  SUPPORT_PAIR_PATTERN.lastIndex = 0;
+}
+
+function splitCompoundCompactItem(item = {}) {
+  if (!item?.label || !item?.value) return [];
+  const label = normalizeDataLabel(item.label);
+  const value = normalizeDataValue(item.value);
+  if (!label || !value) return [];
+
+  const extracted = [];
+  let match;
+  const pairSource = value.replace(/[.。]/g, ';');
+  resetSupportPairPattern();
+  while ((match = SUPPORT_PAIR_PATTERN.exec(pairSource))) {
+    const pairLabel = normalizeDataLabel(match[1]);
+    const pairValue = normalizeDataValue(match[2]);
+    if (pairLabel && pairValue && !GENERIC_SUPPORT_LABEL.test(pairLabel)) {
+      extracted.push({ label: pairLabel, value: pairValue });
+    }
+  }
+  resetSupportPairPattern();
+
+  let statusMatch;
+  SUPPORT_STATUS_PAIR_PATTERN.lastIndex = 0;
+  while ((statusMatch = SUPPORT_STATUS_PAIR_PATTERN.exec(value))) {
+    const pairLabel = normalizeDataLabel(statusMatch[1]);
+    const pairValue = normalizeDataValue(statusMatch[2]);
+    if (pairLabel && pairValue && !GENERIC_SUPPORT_LABEL.test(pairLabel)) {
+      extracted.push({ label: pairLabel, value: pairValue });
+    }
+  }
+  SUPPORT_STATUS_PAIR_PATTERN.lastIndex = 0;
+
+  const primaryValue = normalizeDataValue(value.split(/[.;]/u)[0]);
+  const hasEmbeddedPairs = extracted.length > 0;
+  resetSupportPairPattern();
+  const valueHasPair = SUPPORT_PAIR_PATTERN.test(value);
+  resetSupportPairPattern();
+
+  const includePrimary = primaryValue
+    && !GENERIC_SUPPORT_LABEL.test(label)
+    && normalizeCompactKey(primaryValue).length >= 2;
+
+  if (includePrimary && hasEmbeddedPairs) return [{ label, value: primaryValue }, ...extracted];
+  if (includePrimary && !valueHasPair) return [{ label, value: primaryValue }];
+  if (!hasEmbeddedPairs && !GENERIC_SUPPORT_LABEL.test(label)) return [{ label, value }];
+  if (!hasEmbeddedPairs && GENERIC_SUPPORT_LABEL.test(label) && normalizeCompactKey(value).length <= 90) return [{ label, value }];
+  return extracted;
+}
+
+function compactItemContains(left = {}, right = {}) {
+  if (!left?.label || !right?.label) return false;
+  const leftText = normalizeCompactKey(`${left.label} ${left.value}`);
+  const rightLabel = normalizeCompactKey(right.label);
+  const rightValue = normalizeCompactKey(right.value);
+  return Boolean(leftText && rightLabel && rightValue && leftText.includes(rightLabel) && leftText.includes(rightValue));
+}
+
 function uniqueCompactItems(items = [], max = 6) {
   const seen = new Set();
+  const candidates = items
+    .map(normalizeCompactDataItem)
+    .filter(Boolean)
+    .flatMap(splitCompoundCompactItem)
+    .filter((item) => item?.label && item?.value);
   const out = [];
-  items.map(normalizeCompactDataItem).filter(Boolean).forEach((item) => {
-    const key = normalizeComparable(`${item.label} ${item.value}`);
-    if (!seen.has(key)) {
-      seen.add(key);
-      out.push(item);
+
+  candidates.forEach((item) => {
+    const key = `${normalizeCompactKey(item.label)}|${normalizeCompactKey(item.value)}`;
+    if (!key.replace('|', '').trim() || seen.has(key)) return;
+
+    const containedByExisting = out.some((existing) => compactItemContains(existing, item));
+    if (containedByExisting) return;
+
+    for (let index = out.length - 1; index >= 0; index -= 1) {
+      if (compactItemContains(item, out[index])) {
+        const staleKey = `${normalizeCompactKey(out[index].label)}|${normalizeCompactKey(out[index].value)}`;
+        seen.delete(staleKey);
+        out.splice(index, 1);
+      }
     }
+
+    seen.add(key);
+    out.push(item);
   });
   return out.slice(0, max);
 }

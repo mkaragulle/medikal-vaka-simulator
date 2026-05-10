@@ -35128,3 +35128,47 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
   display: inline !important;
   grid-column: 1 / -1 !important;
 }
+
+/* =========================================================
+   KLINIKIQ V183 — AI Spot support data readability guard
+   Keeps right-side objective data fully readable without changing
+   the page hierarchy: long labels/values wrap inside the same pills
+   instead of being hidden with ellipsis.
+   ========================================================= */
+.ai-spot-support-data-panel .ai-spot-compact-data-item {
+  align-items: flex-start !important;
+  gap: 8px !important;
+  min-width: 0 !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item span,
+.ai-spot-support-data-panel .ai-spot-compact-data-item strong {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item strong {
+  flex: 1 1 58% !important;
+  line-height: 1.35 !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item span {
+  flex: 0 1 38% !important;
+  line-height: 1.35 !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long {
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long span,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long strong {
+  flex: 1 1 auto !important;
+  text-align: left !important;
+}

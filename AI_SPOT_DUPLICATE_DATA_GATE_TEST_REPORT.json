@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "generatedAt": "2026-05-10T12:35:47.731Z",
+  "generatedAt": "2026-05-10T13:02:53.073Z",
   "scenarioCount": 4,
   "passed": 4,
   "failed": 0,
@@ -24,7 +24,7 @@
             },
             {
               "label": "C3",
-              "value": "düşük"
+              "value": "Düşük"
             }
           ]
         }
@@ -78,7 +78,7 @@
             },
             {
               "label": "Ateş",
-              "value": "38.2 °C"
+              "value": "38"
             }
           ]
         },
@@ -88,7 +88,7 @@
           "items": [
             {
               "label": "lökosit",
-              "value": "16.200/mm³"
+              "value": "16"
             },
             {
               "label": "laktat",

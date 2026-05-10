@@ -6,6 +6,7 @@ import { repairScientificAccuracy, scientificAccuracyGate } from './clinicalScie
 import { normalizeInvestigationLabResults, validateInvestigationLabCompleteness, hasIncompleteLabResultText } from './clinicalValueFormatters.js';
 import { repairAnswerLeakage, runAnswerLeakageGate } from './answerLeakageGate.js';
 import { applyTusLanguageStandardToQuestion, normalizeTusLanguageText, hasWeakTusLanguage } from './tusLanguageStandard.js';
+import { applyFeedbackQualityStandardToQuestion, validateFeedbackQualityStandard } from './feedbackQualityStandard.js';
 import {
   detectBrokenSentence,
   detectExcessivePunctuation,
@@ -695,8 +696,9 @@ export function repairAIQuestionQuality(question = {}) {
   const scientificRepaired = repairScientificAccuracy(repaired);
   const contextRepaired = repairContextSensitiveEmergencyQuestion(scientificRepaired);
   const leakageRepaired = applyTusLanguageStandardToQuestion(repairAnswerLeakage(contextRepaired));
-  attachQuestionDedupeFields(leakageRepaired);
-  return leakageRepaired;
+  const feedbackRepaired = applyFeedbackQualityStandardToQuestion(leakageRepaired);
+  attachQuestionDedupeFields(feedbackRepaired);
+  return feedbackRepaired;
 }
 
 function visibleQualityTexts(question = {}) {
@@ -812,6 +814,8 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
   if (!scientificGate.ok) errors.push(...scientificGate.errors.map((error) => `scientific-accuracy:${error}`));
   warnings.push(...(scientificGate.warnings || []).map((warning) => `scientific-accuracy:${warning}`));
   errors.push(...validateFeedbackSpecificity(question));
+  const feedbackQuality = validateFeedbackQualityStandard(question);
+  if (!feedbackQuality.ok) errors.push(...feedbackQuality.errors.map((error) => `feedback-quality:${error}`));
 
   const leakageGate = runAnswerLeakageGate(question);
   if (!leakageGate.ok) errors.push(...leakageGate.errors.map((error) => `answer-leakage:${error}`));

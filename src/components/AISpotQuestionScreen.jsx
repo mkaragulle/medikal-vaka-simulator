@@ -33,12 +33,21 @@ function CompactDataGroup({ title, items = [] }) {
     <div className="ai-spot-compact-data-group" aria-label={title}>
       <div className="ai-spot-compact-data-title">{title}</div>
       <div className="ai-spot-compact-data-grid">
-        {items.map((item, index) => (
-          <div className="ai-spot-compact-data-item" key={`${title}-${item.label}-${index}`}>
-            <span>{item.label}</span>
-            <strong>{item.value}</strong>
-          </div>
-        ))}
+        {items.map((item, index) => {
+          const label = String(item.label || '');
+          const value = String(item.value || '');
+          const isLong = `${label} ${value}`.length > 34 || /[,;]/u.test(value);
+          return (
+            <div
+              className={`ai-spot-compact-data-item ${isLong ? 'is-long' : ''}`.trim()}
+              key={`${title}-${label}-${index}`}
+              title={`${label}: ${value}`}
+            >
+              <span>{label}</span>
+              <strong>{value}</strong>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
