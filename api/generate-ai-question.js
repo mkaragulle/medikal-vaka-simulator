@@ -3,6 +3,8 @@ import { applyTusLanguageStandardToQuestion } from '../src/utils/tusLanguageStan
 import { applyFeedbackQualityStandardToQuestion, validateFeedbackQualityStandard, FEEDBACK_QUALITY_STANDARD_VERSION } from '../src/utils/feedbackQualityStandard.js';
 import { applySingleBestAnswerStandard, validateSingleBestAnswerGate, inferAnswerTarget, deriveOptionClinicalRoles, SINGLE_BEST_ANSWER_GATE_VERSION, ANSWER_TARGETS } from '../src/utils/singleBestAnswerGate.js';
 import { applyFinalAIQuestionSafetyStandard, validateFinalAIQuestionSafetyGate, FINAL_AI_QUESTION_SAFETY_VERSION } from '../src/utils/finalAIQuestionSafetyGate.js';
+import { validateClinicalCoherenceHardGate } from '../src/utils/clinicalCoherenceHardGate.js';
+import { generateAIQuestion } from '../src/utils/aiQuestionGenerator.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const PROMPT_VERSION = 'klinikiq-tus-hybrid-v4.5-final-safety-gate';
@@ -348,17 +350,19 @@ function runServerMedicalQualityGate(question = {}) {
   const feedbackQuality = validateFeedbackQualityStandard(repaired);
   const singleBest = validateSingleBestAnswerGate(repaired);
   const finalSafety = validateFinalAIQuestionSafetyGate(repaired);
+  const hardCoherence = validateClinicalCoherenceHardGate(repaired);
   const fatalErrors = scientific.errors.filter((error) => /hyperkalemia|hiperkalemi|pulmonary|embol|anafil|sepsis|dka|stroke|inme|menenjit|status|self-consistency|score-gate|option-gate/i.test(error));
   const feedbackErrors = feedbackQuality.ok ? [] : feedbackQuality.errors.map((error) => `feedback-quality:${error}`);
   const singleBestErrors = singleBest.ok ? [] : singleBest.errors.map((error) => `single-best-answer:${error}`);
   const finalSafetyErrors = finalSafety.ok ? [] : finalSafety.errors.map((error) => `final-safety:${error}`);
+  const hardCoherenceErrors = hardCoherence.ok ? [] : hardCoherence.errors.map((error) => `hard-coherence:${error}`);
   return {
-    ok: scientific.ok && feedbackQuality.ok && singleBest.ok && finalSafety.ok && fatalErrors.length === 0,
+    ok: scientific.ok && feedbackQuality.ok && singleBest.ok && finalSafety.ok && hardCoherence.ok && fatalErrors.length === 0,
     question: repaired,
     repairCount,
-    errors: Array.from(new Set([...(scientific.errors || []), ...feedbackErrors, ...singleBestErrors, ...finalSafetyErrors])),
+    errors: Array.from(new Set([...(scientific.errors || []), ...feedbackErrors, ...singleBestErrors, ...finalSafetyErrors, ...hardCoherenceErrors])),
     warnings: Array.from(new Set([...(scientific.warnings || []), ...(singleBest.warnings || []).map((warning) => `single-best-answer:${warning}`), ...(finalSafety.warnings || []).map((warning) => `final-safety:${warning}`)])),
-    matchedRules: [...(scientific.matchedRules || []), ...(singleBest.ok ? [] : ['single-best-answer-gate']), ...(finalSafety.ok ? [] : ['final-ai-question-safety-gate'])],
+    matchedRules: [...(scientific.matchedRules || []), ...(singleBest.ok ? [] : ['single-best-answer-gate']), ...(finalSafety.ok ? [] : ['final-ai-question-safety-gate']), ...(hardCoherence.ok ? [] : ['clinical-coherence-hard-gate'])],
     scoreSystems: scientific.scoreSystems || [],
     feedbackStandardVersion: FEEDBACK_QUALITY_STANDARD_VERSION,
     singleBestAnswerVersion: SINGLE_BEST_ANSWER_GATE_VERSION,
@@ -385,12 +389,12 @@ Zorunlu JSON kontratı:
   "setting": "string",
   "chiefComplaint": "string",
   "stem": "string",
-  "compactVitals": [{ "label": "string", "value": "string" }],
-  "compactObjectiveData": [{ "label": "string", "value": "string" }],
+  "compactVitals": [{ "label": "vital_label", "value": "vital_value" }],
+  "compactObjectiveData": [{ "label": "data_label", "value": "data_value" }],
   "findings": {
     "history": ["string"],
     "exam": ["string"],
-    "vitals": { "TA": "string", "Nabız": "string", "Solunum": "string", "Ateş": "string", "SpO₂": "string" },
+    "vitals": { "TA": "", "Nabız": "", "Solunum": "", "Ateş": "", "SpO₂": "" },
     "investigations": [
       {
         "id": "string",
@@ -399,7 +403,7 @@ Zorunlu JSON kontratı:
         "priority": "karar verdirici|yardımcı|düşük öncelikli|durumsal",
         "summary": "string",
         "findings": ["string"],
-        "rows": [["Parametre", "Sonuç + birim", "Referans", "Durum"]]
+        "rows": [["parameter_label", "result_with_unit", "reference_or_expected", "status"]]
       }
     ]
   },
@@ -580,6 +584,8 @@ function validateRemoteEditorialQuality(question = {}) {
   if (!singleBest.ok) errors.push(...singleBest.errors.map((error) => `single-best-answer:${error}`));
   const finalSafety = validateFinalAIQuestionSafetyGate(question);
   if (!finalSafety.ok) errors.push(...finalSafety.errors.map((error) => `final-safety:${error}`));
+  const hardCoherence = validateClinicalCoherenceHardGate(question);
+  if (!hardCoherence.ok) errors.push(...hardCoherence.errors.map((error) => `hard-coherence:${error}`));
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
 }
 
@@ -879,7 +885,7 @@ Kesin kurallar:
 - En az iki güçlü, klinik olarak yakın seçenek ve klinik karar sorularında mümkünse bir önce/sonra algoritma basamağı tuzağı olsun.
 - Tetkik sonucunda doğru tanı/cevap cümle olarak yazılmasın.
 - Tetkik yorumu “... tanısını doğrular”, “... ile uyumludur”, “kesin tanıdır” gibi direkt tanı dili kullanmasın.
-- Sayısal laboratuvar/tetkik sonucu internal findings.rows içinde verilecekse şu formatı kullan: ["Parametre", "Sonuç + birim", "Referans", "Durum"].
+- Sayısal laboratuvar/tetkik sonucu internal findings.rows içinde verilecekse şu formatı kullan: ["parameter_label", "result_with_unit", "reference_or_expected", "status"].
 - Stem veya compactObjectiveData içinde referans aralığı yazma; yalnız klinik karar için gerekli olan değer ve birimi ver.
 - compactObjectiveData içinde doğru cevabı açıkça adlandıran etken/tanı/tedavi etiketi kullanma; cevap öncesi panel objektif veri verir, yorumu feedbacke bırakır.
 - Birimsiz, belirsiz veya yalnız 'yüksek/düşük/pozitif' biçiminde kalan sonuç yazma; objektif veri gerekiyorsa değer, birim ve nitelik net olsun. Nitel sonuç kaçınılmazsa label belirsiz kalmayacak kadar açıklayıcı, value ise kısa olmalıdır.
@@ -1131,7 +1137,9 @@ function parseAffordableTokenLimit(text = '') {
 function shortText(value = '', fallback = '', limit = 180) {
   const maxLength = Math.max(40, Number(limit) || 180);
   const text = String(value || fallback || '').replace(/\s+/g, ' ').trim();
-  return text.length > maxLength ? `${text.slice(0, maxLength - 1).trim()}…` : text;
+  if (text.length <= maxLength) return text;
+  const cut = text.slice(0, maxLength).replace(/\s+\S*$/u, '').replace(/[,:;–—\-\s]+$/u, '').trim();
+  return /[.!?]$/u.test(cut) ? cut : `${cut}.`;
 }
 
 function inferChiefComplaint(question = {}) {
@@ -1271,15 +1279,29 @@ function buildCompactOpenRouterPrompt(originalPrompt = '', context = {}) {
     return `KlinikIQ için Türkçe, ÖSYM/TUS diline yakın tek klinik spot soru üret. Branş: ${branch}. Seçilecek konu: ${selectedTopic}. Soru tipi: ${questionType}. Seed: ${seed}. Yakın tekrar etme: ${recent || 'yok'}.
 
 Sadece şu kısa JSON objesini döndür:
-{"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"80-150 kelimelik gerçek TUS soru kökü","cv":[{"label":"TA","value":"68/42 mmHg"}],"co":[{"label":"Lökosit","value":"16.200/mm³"}],"q":"soru","o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],"c":"A","e":"1-2 cümle gerekçe","k":["somut ipucu 1","somut ipucu 2","somut ipucu 3"],"p":"kısa TUS hap bilgisi"}
+{
+  "t":"cevabı ele vermeyen nötr başlık",
+  "b":"istenen branş",
+  "lt":"tek ölçme hedefi",
+  "d":"yaş-cinsiyet bağlamı",
+  "s":"3-6 cümlelik gerçek TUS soru kökü; soru cümlesi burada tekrar edilmez",
+  "cv":[{"label":"vital_label","value":"vital_value"}],
+  "co":[{"label":"objective_data_label","value":"objective_data_value"}],
+  "q":"tek ve daraltılmış soru cümlesi",
+  "o":["A seçeneği","B seçeneği","C seçeneği","D seçeneği","E seçeneği"],
+  "c":"A",
+  "e":"2-3 cümle klinik gerekçe",
+  "k":["somut ipucu","somut ipucu","somut ipucu"],
+  "p":"1 kısa TUS notu"
+}
 
-Kurallar: JSON dışında yazma. Akademik klinik Türkçe kullan; stem demografi→şikâyet/süre→öykü→FM→objektif veri→karar mantığını izlesin. High-risk ilk tedavi sorularında algoritmik önceliği kilitle. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı gerçek TUS soru kökü gibi 3-6 cümle olmalı; gereksiz vital seti verme, referans aralıklarını s içine yığma. Vital veya lab sayıları kritikse cv/co alanlarını kısa label/value olarak doldur, ama cv/co boş kalabilir. Gerekli kültür/muayene/görüntüleme verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kavramsal kategoriden olsun; hepsi/hiçbiri kullanma. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. e klinik gerekçe, p ise tek kısa sınav notu gibi yazılsın; e ve p aynı cümleyi kopyalamasın. k dizisi en fazla 3 kısa chip değerinde ipucu içersin; 'IM önerisi', uzun cümle veya tekrar chip yazma. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
+Bu iskelet örnek klinik içerik değildir; hiçbir değerini kopyalama. Kurallar: JSON dışında yazma. Akademik klinik Türkçe kullan; stem demografi→şikâyet/süre→öykü→FM→objektif veri→karar mantığını izlesin. High-risk ilk tedavi sorularında algoritmik önceliği kilitle. Verilen seçilecek konuya uy. Yakındaki konu/doğru cevap/şık setini tekrar etme. Yalnız şık sırası değişikliği yapma. s alanı gerçek TUS soru kökü gibi 3-6 cümle olmalı; gereksiz vital seti verme, referans aralıklarını s içine yığma. Vital veya lab sayıları kritikse cv/co alanlarını kısa label/value olarak doldur, ama cv/co boş kalabilir. Gerekli kültür/muayene/görüntüleme verilerini doğal metne yedir. Başlıkta ve s içinde doğru cevabı açık etme. Profil/Risk bağlamı/Ayırt ettirici ipuçları gibi başlıklar yazma. Seçenekler aynı kavramsal kategoriden olsun; hepsi/hiçbiri kullanma. Doğru yanıt c alanındaki A-E harfiyle eşleşsin. e klinik gerekçe, p ise tek kısa sınav notu gibi yazılsın; e ve p aynı cümleyi kopyalamasın. k dizisi en fazla 3 kısa chip değerinde ipucu içersin; 'IM önerisi', uzun cümle veya tekrar chip yazma. Tıbbi olarak hatalı bilgi yazma. Çift tırnakları metin içinde kullanma. Maksimum 650 token.`;
   }
 
   return `${originalPrompt}
 
 DÜŞÜK TOKEN MODU: Tam şema üretme. Yalnızca şu KISA JSON objesini döndür ve her stringi çok kısa tut:
-{"t":"nötr başlık","b":"branş","lt":"hedef","d":"demografi","s":"3-6 cümle TUS soru kökü","cv":[],"co":[],"q":"soru","o":["A metni","B metni","C metni","D metni","E metni"],"c":"A","e":"1 cümle gerekçe","k":["ipucu1","ipucu2","ipucu3"],"p":"1 kısa TUS notu"}
+{"t":"nötr başlık","b":"branş","lt":"tek hedef","d":"demografi","s":"3-6 cümle TUS kökü","cv":[],"co":[],"q":"daraltılmış soru","o":["A","B","C","D","E"],"c":"A","e":"gerekçe","k":["ipucu","ipucu","ipucu"],"p":"not"}
 JSON dışında tek karakter yazma. Çift tırnakları metin içinde kullanma. En fazla 300 token.`;
 }
 
@@ -1576,6 +1598,99 @@ async function generateWithAvailableProvider(prompt, context = {}) {
 }
 
 
+
+function buildServerLocalContext(context = {}, attempt = 0) {
+  const recentQuestionSummaries = Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries : [];
+  const recentSignatures = Array.isArray(context.recentSignatures) ? context.recentSignatures : [];
+  const recentIds = Array.isArray(context.recentIds) ? context.recentIds : [];
+  return {
+    ...context,
+    recentIds: recentIds.slice(0, 120),
+    recentSignatures: recentSignatures.slice(0, 220),
+    recentQuestionSummaries: recentQuestionSummaries.slice(0, Math.max(10, 50 - attempt * 6)),
+  };
+}
+
+function pickLocalGeneratedFallbackQuestion(context = {}, attemptErrors = []) {
+  const branch = context.branchFilter || context.relatedBranch || context.branch || 'random';
+  const attempts = Math.max(10, Number(process.env.AI_LOCAL_SERVER_FALLBACK_ATTEMPTS || 14));
+  const errors = [];
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    try {
+      const localContext = buildServerLocalContext(context, attempt);
+      const branchForAttempt = attempt >= Math.ceil(attempts * 0.7) ? 'random' : branch;
+      const candidate = generateAIQuestion({
+        previousQuestionId: context.previousQuestionId || null,
+        branchFilter: branchForAttempt,
+        context: localContext,
+      });
+      const question = completeRemoteQuestion({ ...candidate, id: candidate.id || `ai-spot-local-server-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, context);
+      const medicalGate = runServerMedicalQualityGate(question);
+      const repaired = medicalGate.question;
+      const rawValidation = validateRawQuestion(repaired);
+      const editorialValidation = validateRemoteEditorialQuality(repaired);
+      const diversityValidation = validateRemoteDiversity(repaired, context);
+      if (medicalGate.ok && rawValidation.ok && editorialValidation.ok && diversityValidation.passed) {
+        return {
+          question: repaired,
+          medicalGate,
+          rawValidation,
+          editorialValidation,
+          diversityValidation,
+          bypassedDiversity: false,
+          localGeneratedFallback: true,
+          attemptErrors: [...attemptErrors, ...errors].slice(-8),
+        };
+      }
+      errors.push(`local fallback ${attempt + 1}: ${[
+        medicalGate.ok ? '' : medicalGate.errors.slice(0, 2).join('; '),
+        rawValidation.ok ? '' : rawValidation.errors.slice(0, 2).join('; '),
+        editorialValidation.ok ? '' : editorialValidation.errors.slice(0, 2).join('; '),
+        diversityValidation.passed ? '' : diversityValidation.reason,
+      ].filter(Boolean).join(' | ')}`);
+    } catch (error) {
+      errors.push(`local fallback ${attempt + 1}: ${summarizeProviderError(error)}`);
+    }
+  }
+
+  // Last-resort local generation must never reuse the static examples that were only intended as
+  // emergency data. It deliberately uses a clean history window and then still runs the medical,
+  // raw and editorial gates so cross-topic contamination cannot be rendered.
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    try {
+      const relaxedContext = { recentIds: [], recentSignatures: [], recentQuestionSummaries: [] };
+      const relaxedBranch = attempt < 3 ? branch : 'random';
+      const candidate = generateAIQuestion({
+        previousQuestionId: null,
+        branchFilter: relaxedBranch,
+        context: relaxedContext,
+      });
+      const question = completeRemoteQuestion({ ...candidate, id: candidate.id || `ai-spot-local-relaxed-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, context);
+      const medicalGate = runServerMedicalQualityGate(question);
+      const repaired = medicalGate.question;
+      const rawValidation = validateRawQuestion(repaired);
+      const editorialValidation = validateRemoteEditorialQuality(repaired);
+      if (medicalGate.ok && rawValidation.ok && editorialValidation.ok) {
+        return {
+          question: repaired,
+          medicalGate,
+          rawValidation,
+          editorialValidation,
+          diversityValidation: { passed: true, reason: 'relaxed-local-last-resort' },
+          bypassedDiversity: false,
+          localGeneratedFallback: true,
+          relaxedLocalFallback: true,
+          attemptErrors: [...attemptErrors, ...errors].slice(-8),
+        };
+      }
+    } catch (error) {
+      errors.push(`relaxed local fallback ${attempt + 1}: ${summarizeProviderError(error)}`);
+    }
+  }
+
+  return null;
+}
+
 const SAFE_FALLBACK_QUESTION_POOL = [
   {
     title: 'EKG bulgusu olan elektrolit bozukluğu',
@@ -1766,6 +1881,13 @@ const SAFE_FALLBACK_QUESTION_POOL = [
 ];
 
 function pickSafeFallbackQuestion(context = {}, attemptErrors = []) {
+  const localGenerated = pickLocalGeneratedFallbackQuestion(context, attemptErrors);
+  if (localGenerated) return localGenerated;
+  const localFallbackError = new Error('Local generated fallback rejected all candidates before static example pool was used');
+  localFallbackError.status = 409;
+  localFallbackError.attemptErrors = attemptErrors;
+  throw localFallbackError;
+
   const branch = normalizeRemoteText(context.branchFilter || context.relatedBranch || context.branch || '');
   const selectedTopic = normalizeRemoteText(context.selectedTopic || context.selectedSubtopic || context.learningTarget || '');
   const seedText = `${context.seed || ''} ${context.antiRepeatNonce || ''} ${Date.now()}`;
@@ -1805,13 +1927,15 @@ function pickSafeFallbackQuestion(context = {}, attemptErrors = []) {
     const question = completeRemoteQuestion({ ...candidate, id: `ai-spot-safe-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, context);
     const medicalGate = runServerMedicalQualityGate(question);
     const repaired = medicalGate.question;
+    const rawValidation = validateRawQuestion(repaired);
+    const editorialValidation = validateRemoteEditorialQuality(repaired);
     const diversityValidation = validateRemoteDiversity(repaired, context);
-    if (diversityValidation.passed) {
+    if (medicalGate.ok && rawValidation.ok && editorialValidation.ok && diversityValidation.passed) {
       return {
         question: repaired,
         medicalGate,
-        rawValidation: validateRawQuestion(repaired),
-        editorialValidation: validateRemoteEditorialQuality(repaired),
+        rawValidation,
+        editorialValidation,
         diversityValidation,
         bypassedDiversity: false,
         relaxedFallback: true,
@@ -1889,7 +2013,7 @@ export default async function handler(request, response) {
 
   try {
     const body = await parseJsonBody(request);
-    const remoteAttempts = Math.max(2, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.OPENROUTER_REMOTE_ATTEMPTS || 3));
+    const remoteAttempts = Math.max(4, Number(process.env.REMOTE_AI_ATTEMPTS || process.env.OPENROUTER_REMOTE_ATTEMPTS || 5));
     let diversityRejectedCount = 0;
     let nearDuplicateRejectedCount = 0;
 

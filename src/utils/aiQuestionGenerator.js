@@ -14,6 +14,7 @@ import {
 import { validateAIQuestionCase } from './validateAIQuestion.js';
 import { sanitizeMeasurementText, sanitizeVitalsObject } from './clinicalFormatters.js';
 import { repairAIQuestionQuality, runAIQuestionQualityGate } from './aiQuestionQualityGate.js';
+import { validateQuestionDiversity } from './aiQuestionDiversity.js';
 import { repairAIGeneratedText, isPlaceholderInvestigationText, isForbiddenEditorialText } from './editorialQuality.js';
 import { attachQuestionDedupeFields, createAIQuestionId, makeOptionSetSignature, toPlainText } from './questionDeduplication.js';
 import {
@@ -31,10 +32,10 @@ import {
 const AI_BRANCH_ID = 'tus-spot-olgular';
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
 const CASE_CONCEPT_LIMIT = 220;
-const MAX_PRIMARY_ATTEMPTS = 8;
-const MAX_REPAIR_ATTEMPTS = 2;
-const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 5;
-const MAX_GENERATION_ATTEMPTS = 96;
+const MAX_PRIMARY_ATTEMPTS = 6;
+const MAX_REPAIR_ATTEMPTS = 1;
+const MAX_TEMPLATE_FALLBACK_ATTEMPTS = 3;
+const MAX_GENERATION_ATTEMPTS = 24;
 const BRANCH_NAME_BY_ID = Object.fromEntries((branches || []).map((branch) => [branch.id, branch.name || branch.shortName || branch.id]));
 
 const FALLBACK_DISTRACTORS_BY_BRANCH = {
@@ -715,6 +716,32 @@ function validateGeneratedCandidate(question, seed, context, branchFilter, error
     skipQuality: question.aiMeta?.qualityGateOk === true,
   });
   if (validation.ok) {
+    const diversity = validateQuestionDiversity(question, context, embeddedScope.length ? embeddedScope : cases, { branchFilter });
+    if (!diversity.passed) {
+      const record = {
+        attempt,
+        branch: branchFilter || seed.relatedBranch || question.relatedBranch,
+        subtopic: seed.spotCategory || question.spotCategory,
+        questionType: question.questionType,
+        rejected: true,
+        rejectReason: `diversity:${diversity.reason || 'near_duplicate'}`,
+        qualityScore: 1,
+        duplicateScore: diversity.similarityScore || null,
+        matchedSignature: validation.signature || question.contentSignature || null,
+        matchedPreviousQuestionId: diversity.similarTo || null,
+        repairAttempted: false,
+        repairSucceeded: false,
+        fallbackUsed: /fallback/i.test(stage),
+        stage,
+        seedId: seed.seedId,
+        source: seed.source,
+        duplicateReason: diversity.reason || 'near_duplicate',
+        errors: [`diversity:${diversity.reason || 'near_duplicate'}`],
+      };
+      errors.push(record);
+      logAIGenerationDebug('candidate rejected by hard diversity', record);
+      return { ok: false, validation: { ...validation, errors: record.errors } };
+    }
     const duplicateRejectedCandidateCount = errors.filter((record) => (
       record?.duplicateReason || /^duplicate:|^embedded-case-overlap/i.test(String(record?.rejectReason || ''))
     )).length;
@@ -812,7 +839,7 @@ function buildWindowedNoveltyContext(context = {}, limit = 24) {
   };
 }
 
-function buildSignatureOnlyContext(context = {}, limit = 60) {
+export function buildSignatureOnlyContext(context = {}, limit = 60) {
   return {
     ...context,
     recentIds: (context.recentIds || []).slice(0, limit),

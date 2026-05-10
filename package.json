@@ -30,7 +30,8 @@
     "qa:ai-spot-support-data-readability": "node scripts/run-ai-spot-support-data-readability-test.mjs",
     "qa:single-best-answer-gate": "node scripts/run-single-best-answer-gate-test.mjs",
     "qa:final-ai-question-safety": "node scripts/run-final-ai-question-safety-gate-test.mjs",
-    "qa:ai-hard-diversity-repeat": "node scripts/run-ai-hard-diversity-repeat-test.mjs"
+    "qa:ai-hard-diversity-repeat": "node scripts/run-ai-hard-diversity-repeat-test.mjs",
+    "qa:ai-generation-stall-guard": "node scripts/run-ai-generation-stall-and-contamination-test.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",

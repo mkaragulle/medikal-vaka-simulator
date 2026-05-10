@@ -1,5 +1,5 @@
 import { cases } from '../data/cases.js';
-import { generateAIQuestion } from '../utils/aiQuestionGenerator.js';
+import { generateAIQuestion, buildSignatureOnlyContext } from '../utils/aiQuestionGenerator.js';
 import { buildRecentQuestionContext, rememberAIQuestion } from '../utils/aiQuestionHistory.js';
 import { normalizeGeneratedAIQuestion, validateAIQuestionCase } from '../utils/validateAIQuestion.js';
 import {
@@ -13,8 +13,8 @@ const runtimeEnv = import.meta.env || {};
 const AI_ENDPOINT = runtimeEnv.VITE_AI_QUESTION_ENDPOINT || '/api/generate-ai-question';
 const ENABLE_REAL_AI = String(runtimeEnv.VITE_ENABLE_REAL_AI ?? 'true').toLowerCase() !== 'false';
 const AI_REQUEST_TIMEOUT_MS = Number(runtimeEnv.VITE_AI_REQUEST_TIMEOUT_MS || 90000);
-const AI_REMOTE_RETRY_COUNT = Math.max(3, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 4));
-const AI_LOCAL_DIVERSITY_RETRY_COUNT = Math.max(2, Number(runtimeEnv.VITE_AI_LOCAL_DIVERSITY_RETRY_COUNT || 4));
+const AI_REMOTE_RETRY_COUNT = Math.min(8, Math.max(4, Number(runtimeEnv.VITE_AI_REMOTE_RETRY_COUNT || 5)));
+const AI_LOCAL_DIVERSITY_RETRY_COUNT = Math.min(10, Math.max(5, Number(runtimeEnv.VITE_AI_LOCAL_DIVERSITY_RETRY_COUNT || 7)));
 
 function withTimeout(ms = AI_REQUEST_TIMEOUT_MS) {
   const controller = new AbortController();
@@ -137,28 +137,10 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
       skipSemanticNovelty: true,
     });
     if (!validation.ok) {
-      const structuralValidation = validateAIQuestionCase(normalized, remoteRequestContext.recentSignatures, {
-        context,
-        requestedBranch: branchFilter,
-        skipQuality: true,
-        trustRemoteAi: true,
-        skipSemanticNovelty: true,
-      });
-      if (!structuralValidation.ok) {
-        const error = new Error(`Remote AI client validation failed: ${structuralValidation.errors.join('; ')}`);
-        error.validation = structuralValidation;
-        throw error;
-      }
-      normalized.aiMeta = {
-        ...(normalized.aiMeta || {}),
-        clientQualityWarnings: validation.errors,
-        clientQualityGateMode: 'server-trusted-soft-warning',
-      };
-      logRemoteAIDebug('remote-client-quality-soft-warning', {
-        attempt,
-        branchFilter,
-        warnings: validation.errors,
-      });
+      const error = new Error(`Remote AI client quality validation failed: ${validation.errors.join('; ')}`);
+      error.validation = validation;
+      error.question = normalized;
+      throw error;
     }
 
     const diversityResult = validateQuestionDiversity(normalized, context, cases, {

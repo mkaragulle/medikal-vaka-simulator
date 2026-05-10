@@ -527,9 +527,12 @@ export function repairAnswerLeakage(caseItem = {}) {
   return postAnswerRepaired;
 }
 
-export function collectPreAnswerTexts(caseItem = {}) {
+export function collectPreAnswerTexts(caseItem = {}, options = {}) {
   const rows = [];
+  const ignorePostAnswerTeachingFields = Boolean(options.ignorePostAnswerTeachingFields);
   PREANSWER_TEXT_PATHS.forEach((path) => {
+    const pathKey = path.join('.');
+    if (ignorePostAnswerTeachingFields && /^(?:spotPearl|spotPearlText|examPearl|examTrap|tusSign|keyWords|keywords|examMeta)/i.test(pathKey)) return;
     const value = getPathValue(caseItem, path);
     const collect = (entry, suffix = '') => {
       if (entry === undefined || entry === null) return;
@@ -555,7 +558,7 @@ export function collectPreAnswerTexts(caseItem = {}) {
 export function runAnswerLeakageGate(caseItem = {}, options = {}) {
   const errors = [];
   const warnings = [];
-  const texts = collectPreAnswerTexts(caseItem);
+  const texts = collectPreAnswerTexts(caseItem, options);
   texts.forEach(({ path, text }) => {
     const isQuestionPath = /(^|\.)question$/.test(path);
     const strictPath = isStrictPreAnswerPath(path);

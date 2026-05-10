@@ -9,6 +9,7 @@ import { applyTusLanguageStandardToQuestion, normalizeTusLanguageText, hasWeakTu
 import { applyFeedbackQualityStandardToQuestion, validateFeedbackQualityStandard } from './feedbackQualityStandard.js';
 import { applySingleBestAnswerStandard, validateSingleBestAnswerGate } from './singleBestAnswerGate.js';
 import { applyFinalAIQuestionSafetyStandard, validateFinalAIQuestionSafetyGate } from './finalAIQuestionSafetyGate.js';
+import { validateClinicalCoherenceHardGate } from './clinicalCoherenceHardGate.js';
 import {
   detectBrokenSentence,
   detectExcessivePunctuation,
@@ -483,7 +484,8 @@ function buildContextualWrongFeedback(optionText = '', question = {}) {
     return `${purpose} Ancak anafilakside hava yolu, bronkospazm veya hipotansiyon varsa destek tedavileri adrenalin temelli acil yaklaşımın yerine geçmez.`;
   }
   const clues = deriveBranchSpecificClues(question).slice(0, 2).join(' ve ') || 'olgudaki somut bulgular';
-  return `${purpose} Ancak bu olguda ${clues} ${correct || 'uygun yanıt'} lehine daha güçlü ve öncelikli kanıt oluşturur.`;
+  const correctTarget = correct ? `ölçülen karar hedefi ${correct} seçeneğine yönelir` : 'ölçülen karar hedefi bu seçeneğe yönelmez';
+  return `${purpose} Bu olguda ${clues} dikkate alındığında ${correctTarget}; bu seçenek aynı hedefi doğrudan karşılamadığı için tek en iyi yanıt olmaz.`;
 }
 
 function repairWrongFeedback(text = '', optionText = '', question = {}) {
@@ -824,9 +826,11 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
   if (!singleBest.ok) errors.push(...singleBest.errors.map((error) => `single-best-answer:${error}`));
   const finalSafety = validateFinalAIQuestionSafetyGate(question);
   if (!finalSafety.ok) errors.push(...finalSafety.errors.map((error) => `final-safety:${error}`));
+  const hardCoherence = validateClinicalCoherenceHardGate(question);
+  if (!hardCoherence.ok) errors.push(...hardCoherence.errors.map((error) => `hard-coherence:${error}`));
   warnings.push(...(finalSafety.warnings || []).map((warning) => `final-safety:${warning}`));
 
-  const leakageGate = runAnswerLeakageGate(question);
+  const leakageGate = runAnswerLeakageGate(question, { ignorePostAnswerTeachingFields: true });
   if (!leakageGate.ok) errors.push(...leakageGate.errors.map((error) => `answer-leakage:${error}`));
   warnings.push(...leakageGate.warnings.map((warning) => `answer-leakage:${warning}`));
 

@@ -36,11 +36,11 @@ const BRANCH_HISTORY_ALIASES = {
   'medical-microbiology': ['mikrobiyoloji', 'tibbi mikrobiyoloji', 'medical microbiology'],
   'medical-pathology': ['patoloji', 'tibbi patoloji', 'medical pathology'],
   'medical-pharmacology': ['farmakoloji', 'tibbi farmakoloji', 'medical pharmacology'],
-  'internal-medicine': ['ic hastaliklari', 'dahiliye', 'internal medicine'],
-  pediatrics: ['cocuk sagligi ve hastaliklari', 'pediatri', 'cocuk hastaliklari', 'pediatrics'],
-  'general-surgery': ['genel cerrahi', 'surgery'],
-  'obstetrics-gynecology': ['kadin hastaliklari ve dogum', 'obstetri', 'jinekoloji', 'gynecology'],
-  'minor-rotations': ['kucuk stajlar', 'minor rotations'],
+  'internal-medicine': ['iç hastalıkları', 'ic hastaliklari', 'dahiliye', 'internal medicine'],
+  pediatrics: ['çocuk sağlığı ve hastalıkları', 'cocuk sagligi ve hastaliklari', 'pediatri', 'çocuk hastalıkları', 'cocuk hastaliklari', 'pediatrics'],
+  'general-surgery': ['genel cerrahi', 'cerrahi', 'surgery'],
+  'obstetrics-gynecology': ['kadın hastalıkları ve doğum', 'kadin hastaliklari ve dogum', 'obstetri', 'jinekoloji', 'gynecology'],
+  'minor-rotations': ['küçük stajlar', 'kucuk stajlar', 'nöroloji', 'noroloji', 'neurology', 'acil', 'minor rotations'],
 };
 
 function historyBranchMatches(item = {}, branchKey = 'tus-spot-olgular') {
@@ -252,10 +252,13 @@ export function validateQuestionDiversity(candidate = {}, context = {}, embedded
   const sameTopicFirstTwo = recentTopics.slice(0, 2).filter((item) => item === topic).length;
   if (topic && (sameTopicFirstTwo >= 1 || sameTopicCount >= 2)) {
     const sameTopicRecent = branchHistory.find((item) => item.topic === topic);
-    const sameType = sameTopicRecent?.questionType && normalizeQuestionText(candidate.questionType) === normalizeQuestionText(sameTopicRecent.questionType);
-    if (sameType || sameTopicFirstTwo >= 1) {
-      return { passed: false, reason: 'same_topic_recently', similarTo: sameTopicRecent?.id, similarityScore: 0.86 };
-    }
+    candidate.aiMeta = {
+      ...(candidate.aiMeta || {}),
+      diversityWarnings: [
+        ...((candidate.aiMeta || {}).diversityWarnings || []),
+        { reason: 'same_topic_recently', similarTo: sameTopicRecent?.id || null, count: sameTopicCount },
+      ],
+    };
   }
 
   const recentCorrect = branchHistory.slice(0, CORRECT_RECENT_WINDOW).map((item) => item.correct).filter(Boolean);
@@ -264,6 +267,9 @@ export function validateQuestionDiversity(candidate = {}, context = {}, embedded
   }
 
   for (const recent of branchHistory) {
+    if (recent === branchHistory[0] && fingerprint.title && recent.title && fingerprint.title === recent.title) {
+      return { passed: false, reason: 'same_title_back_to_back', similarTo: recent.id, similarityScore: 0.9 };
+    }
     const sameCorrect = correct && recent.correct === correct;
     const sameOptions = optionSetSignature && recent.optionSetSignature === optionSetSignature;
     const sameQuestionType = !recent.questionType || !fingerprint.questionType || normalizeQuestionText(recent.questionType) === normalizeQuestionText(fingerprint.questionType);

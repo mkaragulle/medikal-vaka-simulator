@@ -183,7 +183,7 @@ export const AI_BRANCH_RULES = [
     vitals: { TA: '110/70 mmHg', Nabız: '90/dk', Solunum: '18/dk', SpO2: '%99', Ateş: '36.7 °C' },
     branchKeywords: ['histoloji', 'embriyoloji', 'epitel', 'germ', 'doku', 'konjenital'],
   }),
-  rule('minor-rotations', ['Küçük Stajlar', 'Nöroloji', 'Psikiyatri', 'Dermatoloji', 'Göz', 'KBB', 'FTR', 'Üroloji', 'Acil'], {
+  rule('minor-rotations', ['Küçük Stajlar', 'Nöroloji', 'Neurology', 'Psikiyatri', 'Psychiatry', 'Dermatoloji', 'Dermatology', 'Göz', 'KBB', 'FTR', 'Üroloji', 'Urology', 'Acil', 'Emergency'], {
     category: 'clinical',
     demographics: ['18 yaş kadın', '24 yaş erkek', '37 yaş kadın', '49 yaş erkek', '67 yaş kadın'],
     settings: ['Acil servis', 'Konsültasyon değerlendirmesi', 'Poliklinik başvurusu', 'Küçük staj spot pratiği'],

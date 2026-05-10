@@ -23,6 +23,10 @@ const GENERIC_BAD_PATTERNS = [
   /beklenen\s+ana\s+ipu[çc]lar[ıi]/iu,
   /yan[ıi]t\s+ekseni/iu,
   /verilen\s+[öo][ğg]renme\s+hedefi/iu,
+  /ili[şs]kili\s+bir\s+alternatif\s+gibi\s+g[öo]r[üu]nse/iu,
+  /tek\s+en\s+iyi\s+yan[ıi]t\s+yapacak\s+d[üu]zeyde\s+desteklemez/iu,
+  /bu\s+karar\s+d[üu]zeyinde\s+[öo]ncelikli\s+yan[ıi]t[ıi]\s+kar[şs][ıi]lamad[ıi][ğg][ıi]/iu,
+  /se[çc]enekler\s+aras[ıi]ndaki\s+temel\s+ayr[ıi]m[ıi]\s+g[öo]sterir/iu,
 ];
 
 const PREANSWER_SPOILER_PATTERNS = [
@@ -34,7 +38,7 @@ const PREANSWER_SPOILER_PATTERNS = [
   /bu\s+bulgular\s+[^.?!]{0,70}\s+d[üu][şs][üu]nd[üu]r[üu]r/iu,
 ];
 
-const STOPWORDS = new Set(['ve', 'veya', 'ile', 'icin', 'için', 'olan', 'olarak', 'hasta', 'hastada', 'olgu', 'olguda', 'klinik', 'soru', 'yanit', 'yanıt', 'dogru', 'doğru', 'cevap', 'secenek', 'seçenek', 'en', 'uygun', 'ilk', 'hangi', 'hangisidir', 'nedir', 'tus', 'spot', 'bu']);
+const STOPWORDS = new Set(['ve', 'veya', 'ile', 'icin', 'için', 'olan', 'olarak', 'hasta', 'hastada', 'olgu', 'olguda', 'klinik', 'soru', 'yanit', 'yanıt', 'dogru', 'doğru', 'cevap', 'secenek', 'seçenek', 'en', 'uygun', 'ilk', 'hangi', 'hangisidir', 'nedir', 'tus', 'spot', 'bu', 'veri', 'anlamı', 'anlami', 'öykü', 'oyku', 'muayene', 'bulgu', 'vital', 'laboratuvar', 'çocuk', 'cocuk', 'erkek', 'kadın', 'kadin', 'yaş', 'yas']);
 
 function normalizeSpaces(value = '') {
   return String(value ?? '')
@@ -122,10 +126,13 @@ export function detectTruncatedText(text = '') {
   if (!clean) return { truncated: true, reason: 'empty' };
   const terminal = clean.replace(/[.!?]$/u, '').trim();
   if (/\.{2,}|…/u.test(clean)) return { truncated: true, reason: 'ellipsis' };
-  if (!TERMINAL_PUNCTUATION.test(clean) && clean.length > 24) return { truncated: true, reason: 'missing-terminal-punctuation' };
   if (BROKEN_END.test(terminal)) return { truncated: true, reason: 'broken-ending' };
   if (TRUNCATED_WORD.test(clean)) return { truncated: true, reason: 'cut-word' };
-  if (/\b[a-zçğıöşü]\.?$/iu.test(terminal) && clean.length > 30) return { truncated: true, reason: 'single-letter-ending' };
+  // Turkish words can end with a single Latin letter when Unicode word-boundary handling is imperfect.
+  // Treat only a standalone final one-letter token as suspicious.
+  if (/\s[a-zçğıöşü]\.?$/iu.test(terminal) && clean.length > 30) return { truncated: true, reason: 'single-letter-ending' };
+  // Missing final punctuation is repaired by ensureSentence(); it is only fatal when the ending itself looks clipped.
+  if (!TERMINAL_PUNCTUATION.test(clean) && clean.length > 180 && /[,;:–—-]\s*\S{0,24}$/u.test(clean)) return { truncated: true, reason: 'missing-terminal-punctuation' };
   return { truncated: false, reason: null };
 }
 
@@ -172,6 +179,7 @@ function inferOptionCategory(text = '') {
 function inferQuestionIntent(question = {}) {
   const q = asciiKey([question.question, question.learningTarget, question.title, question.questionIntent, question.answerTarget].filter(Boolean).join(' '));
   if (/ilk hayat|hayati tehdit|oncelikle|ilk basamak|ilk mudahale|acil|stabilizasyon/.test(q)) return 'first_life_saving_step';
+  if (/laboratuvar.*(test|kombinasyon|belirtec|marker)|testi.*kombinasyon|seroloji.*yorum|tetkik.*yorum|marker.*izlem/.test(q)) return 'diagnostic_first_test';
   if (/mekanizmaya yonelik|altta yatan|nedene yonelik|ozgul tedavi|antidot/.test(q)) return 'mechanism_targeted_treatment';
   if (/semptom|kontrol/.test(q)) return 'symptom_control';
   if (/kesin|definitif/.test(q)) return 'definitive_treatment';
@@ -208,6 +216,24 @@ function targetQuestionText(target = 'diagnosis') {
     case 'diagnosis':
     default: return 'Bu olguda en olası tanı veya etken hangisidir?';
   }
+}
+
+
+function coerceAnswerTarget(question = {}) {
+  const inferred = inferQuestionIntent({ ...question, answerTarget: '' });
+  const explicit = String(question.answerTarget || '').trim();
+  if (!explicit) return inferred;
+  const q = asciiKey([question.question, question.learningTarget, question.title].filter(Boolean).join(' '));
+  const explicitKey = asciiKey(explicit);
+  const questionAsksTest = /laboratuvar|test|tetkik|seroloji|marker|belirtec|kombinasyon/.test(q);
+  const questionAsksMechanism = /mekanizma|patofizyoloji|aciklayan|transport|reseptor|enzim/.test(q);
+  const questionAsksTreatment = /tedavi|ilac|antidot|mudahale|yaklasim|basamak|uygulama/.test(q);
+  const incompatibleLongTerm = explicitKey.includes('long_term') && (questionAsksTest || questionAsksMechanism || questionAsksTreatment);
+  if (incompatibleLongTerm) return inferred;
+  if (questionAsksTest && !/test|diagnostic|confirmatory/.test(explicitKey)) return inferred;
+  if (questionAsksMechanism && !/mechanism/.test(explicitKey)) return inferred;
+  if (questionAsksTreatment && /diagnosis|long_term/.test(explicitKey)) return inferred;
+  return explicit;
 }
 
 function isGenericQuestionText(value = '') {
@@ -248,14 +274,14 @@ function roleAwareFeedback(optionText = '', role = 'wrong_condition', target = '
   if (role === 'later_step') return ensureSentence(`${optionText} sonraki basamakta veya seçilmiş koşullarda değerlendirilebilir; bu soruda istenen karar düzeyi için öncelikli seçenek değildir`);
   if (role === 'contraindicated_or_harmful') return ensureSentence(`${optionText} bu karar düzeyinde uygun değildir; olgudaki öncelik güvenli ve doğrudan hedefe yönelik yaklaşımı gerektirir`);
   if (role === 'unrelated') return ensureSentence(`${optionText} farklı bir kavramsal düzleme aittir; soru kökü aynı kategoride tek bir klinik yanıt seçmeyi gerektirir`);
-  return ensureSentence(`${optionText} ilişkili bir alternatif gibi görünse de olguda verilen ayırt ettirici veriler bu seçeneği tek en iyi yanıt yapacak düzeyde desteklemez`);
+  return ensureSentence(`${optionText} aynı karar hedefini doğrudan karşılamaz; olgudaki belirleyici veriler bu seçeneğin beklenen kullanım alanını desteklemez`);
 }
 
 function classifyEvidenceType(text = '') {
   const value = normalizeSpaces(text);
   if (/\b(?:TA|kan bas[ıi]nc[ıi]|nab[ıi]z|solunum say[ıi]s[ıi]|ate[şs]|SpO₂|spo2|GKS|bilin[çc])\b/iu.test(value)) return 'Vital';
-  if (/\b(?:inspeksiyon|palpasyon|perküsyon|oskültasyon|hassasiyet|raller|wheezing|hışıltılı|defans|rebound|üfürüm|matite|ekspansiyon|solunum sesleri)\b/iu.test(value)) return 'Muayene';
-  if (/\b(?:lökosit|wbc|crp|ph|hco₃|laktat|glukoz|kreatinin|troponin|d-dimer|hemoglobin|platelet|trombosit|alt|ast|bilirubin|na⁺|k⁺|mg\/dL|mEq\/L|mmol\/L|\/mm³|\/µL)\b/iu.test(value)) return 'Laboratuvar';
+  if (/\b(?:inspeksiyon|palpasyon|perküsyon|oskültasyon|hassasiyet|raller|wheezing|hışıltılı|defans|rebound|üfürüm|matite|ekspansiyon|solunum sesleri|kapiller dolum|mukoza|gözyaşı|gozyaşı|ödem|huzursuz)\b/iu.test(value)) return 'Muayene';
+  if (/\b(?:lökosit|wbc|crp|ph|hco₃|laktat|glukoz|kreatinin|troponin|d-dimer|hemoglobin|platelet|trombosit|alt|ast|bilirubin|na⁺|k⁺|idrar|proteinüri|hematüri|mg\/dL|mEq\/L|mmol\/L|\/mm³|\/µL)\b/iu.test(value)) return 'Laboratuvar';
   if (/\b(?:IgM|IgG|HBsAg|anti-|avidite|ANA|Anti-dsDNA|C3|C4|kompleman|antikor|antijen)\b/iu.test(value)) return 'Seroloji';
   if (/\b(?:kültür|kultur|gram|PCR|oksidaz|DNaz|duyarl[ıi]l[ıi]k|diren[çc])\b/iu.test(value)) return 'Mikrobiyoloji';
   if (/\b(?:grafi|USG|ultrasonografi|BT|MR|tomografi|anjiyografi|radyografi|ekokardiyografi|görüntüleme)\b/iu.test(value)) return 'Görüntüleme';
@@ -280,9 +306,11 @@ function extractEvidenceText(item = '') {
   const raw = typeof item === 'string' ? item : `${item?.type || item?.label || item?.title || ''} ${item?.clue || item?.text || item?.meaning || item?.summary || ''}`;
   let text = normalizeSpaces(raw)
     .replace(/^kan[ıi]t\s*\d+\s*[:：.-]?\s*/iu, '')
-    .replace(/^veri\s*[:：]\s*/iu, '')
+    .replace(/^veri\s*[.:：-]\s*/iu, '')
     .replace(/\s*anlam[ıi]\s*[:：].*$/iu, '')
     .replace(/^(?:Öykü|Muayene|Vital|Laboratuvar|Seroloji|Görüntüleme|EKG|Mikrobiyoloji|Mekanizma)\s*[:：|-]\s*/iu, '')
+    .replace(/^(?:Öykü|Muayene|Vital|Laboratuvar|Seroloji|Görüntüleme|EKG|Mikrobiyoloji|Mekanizma)\s*[—-]\s*/iu, '')
+    .replace(/^(?:Öykü|Muayene|Vital|Laboratuvar|Seroloji|Görüntüleme|EKG|Mikrobiyoloji|Mekanizma)\s+/iu, '')
     .trim();
   return removeDuplicateSentences(text, { maxSentences: 1, limit: 145 });
 }
@@ -297,11 +325,20 @@ function makeEvidenceMeaning(type = 'Öykü', target = 'diagnosis') {
 function sourceBound(item = '', source = '') {
   const clue = extractEvidenceText(item);
   if (!clue || !source) return false;
-  if (/olgu k[öo]k[üu]ndeki|objektif bulgular|klinik veriler/iu.test(clue)) return false;
-  if (similarity(clue, source) >= 0.10) return true;
-  const clueTokens = tokens(clue).slice(0, 5);
+  if (/olgu k[öo]k[üu]ndeki|objektif bulgular|klinik veriler|hangi .* hangisidir|se[çc]enekler aras[ıi]/iu.test(clue)) return false;
+  const clueKey = asciiKey(clue);
   const sourceKey = asciiKey(source);
-  return clueTokens.length > 0 && clueTokens.some((token) => sourceKey.includes(token));
+  const numericTokens = (clue.match(/\b\d+(?:[.,]\d+)?\b/gu) || []).map(asciiKey).filter(Boolean);
+  if (numericTokens.length && numericTokens.some((token) => !sourceKey.includes(token))) return false;
+  if (numericTokens.length && /\b(ta|spo|spo2|nabiz|ate[sş]|solunum|gks|laktat|ph|hco3|glukoz|kreatinin|sodyum|potasyum)\b/i.test(clueKey)) return true;
+  const clueTokens = tokens(clue)
+    .filter((token) => token.length > 3 && !STOPWORDS.has(token))
+    .slice(0, 8);
+  if (!clueTokens.length) return false;
+  const hits = clueTokens.filter((token) => sourceKey.includes(token));
+  if (hits.length >= 2) return true;
+  if (hits.length === 1 && (numericTokens.length || clueTokens.length <= 2) && similarity(clueKey, sourceKey) >= 0.18) return true;
+  return false;
 }
 
 function buildEvidenceFallback(question = {}, target = 'diagnosis') {
@@ -434,7 +471,9 @@ export function buildSemanticFingerprint(question = {}) {
 
 export function validateOptionCategoryConsistency(options = []) {
   const categories = optionList({ options }).map((option) => inferOptionCategory(option.text)).filter((item) => item !== 'other');
-  if (categories.length < 3) return { ok: false, categories, reason: 'option-category-underdetermined' };
+  // Diagnosis/etiology-style options are often proper nouns and may not match keyword categories.
+  // Unknown categories are therefore not a fatal issue; explicit mixed categories are.
+  if (categories.length < 3) return { ok: true, categories, dominant: categories[0] || 'undetermined', reason: null, underdetermined: true };
   const counts = categories.reduce((acc, category) => ({ ...acc, [category]: (acc[category] || 0) + 1 }), {});
   const dominant = Object.entries(counts).sort((a, b) => b[1] - a[1])[0]?.[0];
   const mismatchCount = categories.filter((category) => category !== dominant).length;
@@ -450,11 +489,13 @@ export function detectDoubleCorrectOptions(question = {}) {
 }
 
 export function validateQuestionIntent(question = {}) {
-  const target = question.answerTarget || inferQuestionIntent(question);
+  const target = coerceAnswerTarget(question);
+  const inferred = inferQuestionIntent({ ...question, answerTarget: '' });
   const optionCategory = validateOptionCategoryConsistency(question.options || []);
   const q = question.question || '';
   const errors = [];
   if (isGenericQuestionText(q) && String(target || '').match(/treatment|step|test|management|prophylaxis|control/iu)) errors.push('question-intent-generic');
+  if (question.answerTarget && target !== question.answerTarget && inferred !== question.answerTarget) errors.push('answer-target-question-mismatch');
   if (!optionCategory.ok) errors.push(optionCategory.reason || 'option-category-mismatch');
   return { ok: errors.length === 0, errors, target, optionCategory };
 }
@@ -499,7 +540,7 @@ function shouldKeepManagement(question = {}) {
 }
 
 export function applyFinalAIQuestionSafetyStandard(question = {}) {
-  const target = question.answerTarget || inferQuestionIntent(question);
+  const target = coerceAnswerTarget(question);
   let repaired = normalizeDataPanels({ ...question, answerTarget: target });
   const roles = deriveRoles(repaired);
   repaired.optionClinicalRoles = { ...(repaired.optionClinicalRoles || {}), ...roles };
@@ -602,7 +643,7 @@ export function validateFinalAIQuestionSafetyGate(question = {}, { soft = false 
     if (!/^Veri:\s*(?:Öykü|Muayene|Vital|Laboratuvar|Seroloji|Görüntüleme|EKG|Mikrobiyoloji|Mekanizma)\s*—\s*/u.test(String(item || '')) || !/Anlam[ıi]:/u.test(String(item || ''))) {
       errors.push(`evidence-label-format:${index + 1}`);
     }
-    if (!soft && !sourceBound(item, sourceBundle(question))) warnings.push(`evidence-source-weak:${index + 1}`);
+    if (!soft && !sourceBound(item, sourceBundle(question))) errors.push(`evidence-source-weak:${index + 1}`);
   });
 
   const wrong = question.wrongOptionFeedback || {};
