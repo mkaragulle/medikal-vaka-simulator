@@ -7,6 +7,8 @@ import { normalizeInvestigationLabResults, validateInvestigationLabCompleteness,
 import { repairAnswerLeakage, runAnswerLeakageGate } from './answerLeakageGate.js';
 import { applyTusLanguageStandardToQuestion, normalizeTusLanguageText, hasWeakTusLanguage } from './tusLanguageStandard.js';
 import { applyFeedbackQualityStandardToQuestion, validateFeedbackQualityStandard } from './feedbackQualityStandard.js';
+import { applySingleBestAnswerStandard, validateSingleBestAnswerGate } from './singleBestAnswerGate.js';
+import { applyFinalAIQuestionSafetyStandard, validateFinalAIQuestionSafetyGate } from './finalAIQuestionSafetyGate.js';
 import {
   detectBrokenSentence,
   detectExcessivePunctuation,
@@ -452,7 +454,7 @@ function describeOptionPurpose(optionText = '') {
   if (/adrenalin|epinefrin/.test(option)) return 'Adrenalin bronkospazm, vazodilatasyon ve dolaşım çöküşünü hedefleyen hayat kurtarıcı ilaçtır.';
   if (/oksijen|hava yolu|entubasyon/.test(option)) return 'Oksijen ve hava yolu güvenliği hipoksemi riski olan hastada temel destek basamağıdır.';
   if (/gozlem|bekle|izlem/.test(option)) return 'Sadece gözlem, hızla kötüleşebilecek acil tabloda tedaviyi geciktirir.';
-  return `${optionText} farklı klinik tabloda uygun olabilir.`;
+  return `${optionText} ilişkili bir alternatif gibi görünse de bu soruda hedeflenen karar düzeyi için tek en iyi yanıt değildir.`;
 }
 
 function isPerioperativeAnaphylaxis(question = {}) {
@@ -697,8 +699,10 @@ export function repairAIQuestionQuality(question = {}) {
   const contextRepaired = repairContextSensitiveEmergencyQuestion(scientificRepaired);
   const leakageRepaired = applyTusLanguageStandardToQuestion(repairAnswerLeakage(contextRepaired));
   const feedbackRepaired = applyFeedbackQualityStandardToQuestion(leakageRepaired);
-  attachQuestionDedupeFields(feedbackRepaired);
-  return feedbackRepaired;
+  const singleBestRepaired = applySingleBestAnswerStandard(feedbackRepaired);
+  const finalSafetyRepaired = applyFinalAIQuestionSafetyStandard(singleBestRepaired);
+  attachQuestionDedupeFields(finalSafetyRepaired);
+  return finalSafetyRepaired;
 }
 
 function visibleQualityTexts(question = {}) {
@@ -816,6 +820,11 @@ export function validateAIQuestionQuality(question = {}, { requestedBranch = nul
   errors.push(...validateFeedbackSpecificity(question));
   const feedbackQuality = validateFeedbackQualityStandard(question);
   if (!feedbackQuality.ok) errors.push(...feedbackQuality.errors.map((error) => `feedback-quality:${error}`));
+  const singleBest = validateSingleBestAnswerGate(question);
+  if (!singleBest.ok) errors.push(...singleBest.errors.map((error) => `single-best-answer:${error}`));
+  const finalSafety = validateFinalAIQuestionSafetyGate(question);
+  if (!finalSafety.ok) errors.push(...finalSafety.errors.map((error) => `final-safety:${error}`));
+  warnings.push(...(finalSafety.warnings || []).map((warning) => `final-safety:${warning}`));
 
   const leakageGate = runAnswerLeakageGate(question);
   if (!leakageGate.ok) errors.push(...leakageGate.errors.map((error) => `answer-leakage:${error}`));

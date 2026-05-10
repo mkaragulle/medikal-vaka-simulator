@@ -378,7 +378,7 @@ function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) 
   const points = [
     keyEvidence ? `${trimTrailingPunctuation(keyEvidence)} bu alternatifin eksik kaldığı karar noktasını gösterir.` : null,
     keyInvestigation ? `${keyInvestigation.label} bulgusu seçenekler arasındaki ayrımı objektif veriye taşır.` : null,
-    `${option} olgudaki ana ipuçlarını tek başına açıklamaz.`,
+    `${option} bu karar düzeyinde öncelikli yanıtı karşılamadığı için geri planda kalır.`,
   ];
 
   return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(item, 155));

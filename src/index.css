@@ -35172,3 +35172,34 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
   flex: 1 1 auto !important;
   text-align: left !important;
 }
+
+/* =========================================================
+   KLINIKIQ V184 — AI Spot final readability guard
+   Critical educational text must wrap inside existing cards instead of
+   being hidden with ellipsis. This keeps the current visual hierarchy and
+   only removes information loss from generated support/feedback text.
+   ========================================================= */
+.ai-spot-support-data-panel,
+.ai-spot-support-data-panel * {
+  min-width: 0 !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-grid {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item,
+.ai-spot-support-data-panel .ai-spot-compact-data-item span,
+.ai-spot-support-data-panel .ai-spot-compact-data-item strong,
+.answer-feedback-panel :where(.feedback-card, .feedback-card *, .option-comparison-card, .option-comparison-card *, .evidence-chain-item, .evidence-chain-item *, .clinical-pearl-item, .clinical-pearl-item *, .management-action-item, .management-action-item *),
+.answer-feedback-panel-pro :where(.feedback-card, .feedback-card *, .option-comparison-card, .option-comparison-card *, .evidence-chain-item, .evidence-chain-item *, .clinical-pearl-item, .clinical-pearl-item *, .management-action-item, .management-action-item *) {
+  text-overflow: clip !important;
+  -webkit-line-clamp: unset !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item strong {
+  white-space: normal !important;
+  text-align: left !important;
+}

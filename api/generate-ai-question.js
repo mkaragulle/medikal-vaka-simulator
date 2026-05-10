@@ -1,11 +1,13 @@
 import { repairScientificAccuracy, scientificAccuracyGate } from '../src/utils/clinicalScientificAccuracyGate.js';
 import { applyTusLanguageStandardToQuestion } from '../src/utils/tusLanguageStandard.js';
 import { applyFeedbackQualityStandardToQuestion, validateFeedbackQualityStandard, FEEDBACK_QUALITY_STANDARD_VERSION } from '../src/utils/feedbackQualityStandard.js';
+import { applySingleBestAnswerStandard, validateSingleBestAnswerGate, inferAnswerTarget, deriveOptionClinicalRoles, SINGLE_BEST_ANSWER_GATE_VERSION, ANSWER_TARGETS } from '../src/utils/singleBestAnswerGate.js';
+import { applyFinalAIQuestionSafetyStandard, validateFinalAIQuestionSafetyGate, FINAL_AI_QUESTION_SAFETY_VERSION } from '../src/utils/finalAIQuestionSafetyGate.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-hybrid-v4.3';
-const SCHEMA_VERSION = 'ai-spot-json-schema-v3.2';
-const RULE_VERSION = 'clinical-gate-v3.4-feedback-standard';
+const PROMPT_VERSION = 'klinikiq-tus-hybrid-v4.5-final-safety-gate';
+const SCHEMA_VERSION = 'ai-spot-json-schema-v3.4-final-safety';
+const RULE_VERSION = 'clinical-gate-v3.6-final-safety';
 
 
 const TUS_LANGUAGE_STANDARD_PROMPT = `
@@ -32,6 +34,9 @@ const TUS_FORBIDDEN_EXPRESSION_LIST = [
   'Doğru yanıta götüren ana bulgudur',
   'Ancak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır',
   'Hangi tedavi yöntemi ilk sırada uygulanmalıdır',
+  'Farklı klinik tabloda uygun olabilir',
+  'Olgudaki ana ipuçlarını tek başına açıklamaz',
+  'Bazı klinik durumlarda gündeme gelebilir',
 ];
 
 const AI_QUESTION_JSON_SCHEMA = {
@@ -45,6 +50,7 @@ const AI_QUESTION_JSON_SCHEMA = {
     'relatedBranch',
     'difficulty',
     'learningTarget',
+    'answerTarget',
     'demographics',
     'setting',
     'chiefComplaint',
@@ -55,6 +61,7 @@ const AI_QUESTION_JSON_SCHEMA = {
     'question',
     'options',
     'correctAnswer',
+    'optionClinicalRoles',
     'explanation',
     'wrongOptionFeedback',
     'evidenceChain',
@@ -70,6 +77,7 @@ const AI_QUESTION_JSON_SCHEMA = {
     relatedBranch: { type: 'string' },
     difficulty: { type: 'string' },
     learningTarget: { type: 'string' },
+    answerTarget: { type: 'string', enum: ANSWER_TARGETS },
     demographics: { type: 'string' },
     setting: { type: 'string' },
     chiefComplaint: { type: 'string' },
@@ -150,6 +158,12 @@ const AI_QUESTION_JSON_SCHEMA = {
       },
     },
     correctAnswer: { type: 'string', enum: OPTION_IDS },
+    optionClinicalRoles: {
+      type: 'object',
+      additionalProperties: false,
+      required: OPTION_IDS,
+      properties: Object.fromEntries(OPTION_IDS.map((id) => [id, { type: 'string', enum: ['primary_correct', 'adjunct_correct_but_not_asked', 'later_step', 'wrong_condition', 'unrelated', 'contraindicated_or_harmful'] }])),
+    },
     explanation: { type: 'string' },
     wrongOptionFeedback: {
       type: 'object',
@@ -326,21 +340,32 @@ function buildAIUsageLog({ provider, model, prompt, question, startedAt, validat
 function runServerMedicalQualityGate(question = {}) {
   const before = JSON.stringify(question);
   const clinicallyRepaired = applyTusLanguageStandardToQuestion(repairScientificAccuracy(question));
-  const repaired = applyFeedbackQualityStandardToQuestion(clinicallyRepaired);
+  const feedbackRepaired = applyFeedbackQualityStandardToQuestion(clinicallyRepaired);
+  const singleBestRepaired = applySingleBestAnswerStandard(feedbackRepaired);
+  const repaired = applyFinalAIQuestionSafetyStandard(singleBestRepaired);
   const repairCount = before === JSON.stringify(repaired) ? 0 : 1;
   const scientific = scientificAccuracyGate(repaired);
   const feedbackQuality = validateFeedbackQualityStandard(repaired);
+  const singleBest = validateSingleBestAnswerGate(repaired);
+  const finalSafety = validateFinalAIQuestionSafetyGate(repaired);
   const fatalErrors = scientific.errors.filter((error) => /hyperkalemia|hiperkalemi|pulmonary|embol|anafil|sepsis|dka|stroke|inme|menenjit|status|self-consistency|score-gate|option-gate/i.test(error));
   const feedbackErrors = feedbackQuality.ok ? [] : feedbackQuality.errors.map((error) => `feedback-quality:${error}`);
+  const singleBestErrors = singleBest.ok ? [] : singleBest.errors.map((error) => `single-best-answer:${error}`);
+  const finalSafetyErrors = finalSafety.ok ? [] : finalSafety.errors.map((error) => `final-safety:${error}`);
   return {
-    ok: scientific.ok && feedbackQuality.ok && fatalErrors.length === 0,
+    ok: scientific.ok && feedbackQuality.ok && singleBest.ok && finalSafety.ok && fatalErrors.length === 0,
     question: repaired,
     repairCount,
-    errors: Array.from(new Set([...(scientific.errors || []), ...feedbackErrors])),
-    warnings: Array.from(new Set(scientific.warnings || [])),
-    matchedRules: scientific.matchedRules || [],
+    errors: Array.from(new Set([...(scientific.errors || []), ...feedbackErrors, ...singleBestErrors, ...finalSafetyErrors])),
+    warnings: Array.from(new Set([...(scientific.warnings || []), ...(singleBest.warnings || []).map((warning) => `single-best-answer:${warning}`), ...(finalSafety.warnings || []).map((warning) => `final-safety:${warning}`)])),
+    matchedRules: [...(scientific.matchedRules || []), ...(singleBest.ok ? [] : ['single-best-answer-gate']), ...(finalSafety.ok ? [] : ['final-ai-question-safety-gate'])],
     scoreSystems: scientific.scoreSystems || [],
     feedbackStandardVersion: FEEDBACK_QUALITY_STANDARD_VERSION,
+    singleBestAnswerVersion: SINGLE_BEST_ANSWER_GATE_VERSION,
+    finalSafetyVersion: FINAL_AI_QUESTION_SAFETY_VERSION,
+    answerTarget: finalSafety.answerTarget || singleBest.answerTarget,
+    optionClinicalRoles: finalSafety.optionClinicalRoles || singleBest.optionClinicalRoles,
+    semanticFingerprint: finalSafety.semanticFingerprint || repaired.semanticFingerprint,
   };
 }
 
@@ -355,6 +380,7 @@ Zorunlu JSON kontratı:
   "relatedBranch": "string",
   "difficulty": "string",
   "learningTarget": "string",
+  "answerTarget": "first_life_saving_step|symptom_control|mechanism_targeted_treatment|definitive_treatment|diagnostic_first_test|confirmatory_test|long_term_management|complication_management|prevention_or_prophylaxis|mechanism_explanation",
   "demographics": "string",
   "setting": "string",
   "chiefComplaint": "string",
@@ -386,6 +412,7 @@ Zorunlu JSON kontratı:
     { "id": "E", "text": "string" }
   ],
   "correctAnswer": "A|B|C|D|E",
+  "optionClinicalRoles": { "A": "primary_correct|adjunct_correct_but_not_asked|later_step|wrong_condition|unrelated|contraindicated_or_harmful", "B": "...", "C": "...", "D": "...", "E": "..." },
   "explanation": "string",
   "wrongOptionFeedback": { "A": "string", "B": "string", "C": "string", "D": "string", "E": "string" },
   "evidenceChain": ["string", "string", "string"],
@@ -420,6 +447,9 @@ const REMOTE_FORBIDDEN_TEXT_PATTERNS = [
   /Patern ve mekanizma birlikte yorumlanmalıdır/iu,
   /dikkat çeker\.\s*$/iu,
   /tanısını\.\s*$/iu,
+  /farkl[ıi]\s+klinik\s+tabloda\s+uygun\s+olabilir/iu,
+  /olgudaki\s+ana\s+ipu[çc]lar[ıi]n[ıi]\s+tek\s+ba[şs][ıi]na\s+a[çc][ıi]klamaz/iu,
+  /baz[ıi]\s+klinik\s+durumlarda\s+g[üu]ndeme\s+gelebilir/iu,
 ];
 
 function collectText(value, out = []) {
@@ -435,6 +465,9 @@ function normalizeRemoteTusText(text = '') {
     .replace(/\bİlk karar\b/giu, 'Öncelikli yaklaşım')
     .replace(/\bTedavi önceliği\b/giu, 'Tedavi basamağı')
     .replace(/\bklinik bağlamda değerlendirilir\b/giu, 'öykü ve objektif bulgularla birlikte yorumlanır')
+    .replace(/\bfarklı klinik tabloda uygun olabilir\b/giu, 'bu karar düzeyi için tek en iyi yanıt değildir')
+    .replace(/\bolgudaki ana ipuçlarını tek başına açıklamaz\b/giu, 'bu karar düzeyini tek başına karşılamaz')
+    .replace(/\bbazı klinik durumlarda gündeme gelebilir\b/giu, 'seçilmiş koşullarda değerlendirilebilir')
     .replace(/\bDoğru yanıta götüren ana bulgudur\b/giu, 'Seçenekler arasındaki ayrımı belirginleştirir')
     .replace(/\bdoğru yanıta götüren ana bulgudur\b/giu, 'seçenekler arasındaki ayrımı belirginleştirir')
     .replace(/\bAncak kendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/giu, 'Ancak bu olgudaki ayırt ettirici bulgularla desteklenmemektedir')
@@ -543,6 +576,10 @@ function validateRemoteEditorialQuality(question = {}) {
   errors.push(...validateRemoteTusExamLanguage(question));
   const feedbackQuality = validateFeedbackQualityStandard(question);
   if (!feedbackQuality.ok) errors.push(...feedbackQuality.errors.map((error) => `feedback-quality:${error}`));
+  const singleBest = validateSingleBestAnswerGate(question);
+  if (!singleBest.ok) errors.push(...singleBest.errors.map((error) => `single-best-answer:${error}`));
+  const finalSafety = validateFinalAIQuestionSafetyGate(question);
+  if (!finalSafety.ok) errors.push(...finalSafety.errors.map((error) => `final-safety:${error}`));
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)) };
 }
 
@@ -684,6 +721,8 @@ function validateRawQuestion(question = {}) {
   if (!question.explanation || String(question.explanation).length < 60) errors.push('explanation missing or too short');
   if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length < 3) errors.push('evidenceChain requires at least 3 items');
   if (!question.examPearl) errors.push('examPearl missing');
+  if (!ANSWER_TARGETS.includes(String(question.answerTarget || ''))) errors.push('answerTarget missing or invalid');
+  if (!question.optionClinicalRoles || typeof question.optionClinicalRoles !== 'object') errors.push('optionClinicalRoles missing');
 
   const wrong = question.wrongOptionFeedback || {};
   options.forEach((option) => {
@@ -723,6 +762,17 @@ FEEDBACK KALİTE STANDARDI:
 - managementSteps yalnız yönetim gerektiren sorularda klinik öncelik sırasını verir; tanısal doğrulama, stabilizasyon, ilk tedavi ve sonraki basamak karıştırılmaz.
 - wrongOptionFeedback seçenek özelinde yazılır; boş genelleme yapmaz, aynı cümleyi farklı seçeneklerde tekrar etmez ve uygun yanıt adını gereksiz yinelemez.
 - Cevap sonrası açıklamalar kısa, doğal, tamamlanmış cümlelerden oluşur; yarım cümle, otomatik şablon, meta-soru dili ve mekanik etiket kullanılmaz.
+
+TEK-EN-İYİ-YANIT STANDARDI:
+- answerTarget alanını mutlaka doldur: first_life_saving_step, symptom_control, mechanism_targeted_treatment, definitive_treatment, diagnostic_first_test, confirmatory_test, long_term_management, complication_management, prevention_or_prophylaxis veya mechanism_explanation.
+- Soru kökü doğru cevabı bu answerTarget düzeyinde tekilleştirmelidir. Yalnız “en uygun tedavi/yaklaşım/antidot” veya “hangi seçenek doğrudur” gibi geniş ifade kullanma.
+- Aynı olguda birlikte veya ardışık kullanılabilecek seçenekleri tek doğruymuş gibi yarıştırma. Gerekirse question alanını hedefe göre daralt, seçenekleri aynı karar düzlemine çek veya doğru seçeneği gerçek kombinasyon olarak yaz.
+- optionClinicalRoles alanında her şık için rol ver: primary_correct, adjunct_correct_but_not_asked, later_step, wrong_condition, unrelated veya contraindicated_or_harmful.
+- Klinik olarak kısmen uygun olan yanlış seçenekleri “farklı klinik tabloda uygun olabilir” diye yanlışlama. Bu seçenek yardımcı, ek veya sonraki basamaksa bunu dürüstçe belirt; ancak neden bu soru düzeyinde tek en iyi yanıt olmadığını açıkla.
+- evidenceChain maddeleri “Veri: [gerçek veri tipi] — [kısa ipucu]. Anlamı: [klinik karar anlamı].” formatına uygun olmalı; olguda yazmayan bulgu, laboratuvar, görüntüleme veya semptom uydurma.
+- Cevap sonrası feedbackte “farklı klinik tabloda uygun olabilir”, “ana ipuçlarını tek başına açıklamaz”, “klinik bağlamda değerlendirilir” gibi jenerik cümleler kullanma. Her yanlış seçenek için tıbbi rolünü ve bu karar düzeyinde neden elendiğini açıkla.
+- Açıklama, seçenek feedbacki, hap bilgi, kanıt zinciri ve yönetim alanlarında aynı cümleyi tekrar etme. Cümleler tamamlanmış olmalı; kelime kırpıntısı, üç nokta, bağlaçla biten metin veya yarım ifade yazma.
+- Soru kullanıcıya gösterilmeden final kalite kapısından geçecektir: double-correct risk, option category mismatch, source-bound evidence, spoiler, generic feedback ve truncation hatası olan çıktı reddedilir.
 
 Branş isteği: ${branchFilter || 'Rastgele'}
 Bu denemede seçilecek ana konu: ${selectedTopic || selectedSubtopic || 'Klinik olarak farklı yeni konu seç'}
@@ -1080,6 +1130,7 @@ function completeRemoteQuestion(question = {}, context = {}) {
     relatedBranch: shortText(question.relatedBranch || question.b || context.branchFilter || 'TUS Spot Olgular'),
     difficulty: shortText(question.difficulty, 'medium'),
     learningTarget: shortText(question.learningTarget || question.lt, question.title || question.t || 'Klinik karar verme'),
+    answerTarget: ANSWER_TARGETS.includes(String(question.answerTarget || '').trim()) ? String(question.answerTarget).trim() : inferAnswerTarget({ ...question, options, correctAnswer, question: question.question || question.q }),
     demographics: shortText(question.demographics || question.d, 'Hasta'),
     setting: shortText(question.setting, 'Klinik değerlendirme'),
     chiefComplaint: inferChiefComplaint(question),
@@ -1111,6 +1162,7 @@ function completeRemoteQuestion(question = {}, context = {}) {
       : ['Acil bulgu varsa önce stabilizasyon sağlanır.', 'Seçenekler olgudaki objektif verilerle karşılaştırılır.'],
     nextQuestionSeed: shortText(question.nextQuestionSeed, `${now}-${Math.random().toString(36).slice(2, 10)}`),
   };
+  completed.optionClinicalRoles = { ...deriveOptionClinicalRoles(completed), ...(question.optionClinicalRoles || {}) };
   completed.wrongOptionFeedback = ensureWrongOptionFeedback(completed);
   return completed;
 }
@@ -1130,6 +1182,8 @@ function expandCompactQuestion(compact = {}, context = {}, providerMeta = {}) {
     keyClues: compact.k || compact.keyClues,
     evidenceChain: compact.k || compact.evidenceChain,
     examPearl: compact.p || compact.examPearl,
+    answerTarget: compact.answerTarget,
+    optionClinicalRoles: compact.optionClinicalRoles,
     chiefComplaint: compact.cc || compact.chiefComplaint,
     compactVitals: compact.cv || compact.compactVitals,
     compactObjectiveData: compact.co || compact.compactObjectiveData,
