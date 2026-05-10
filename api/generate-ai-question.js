@@ -1,5 +1,5 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v5-compact-feedback';
+const PROMPT_VERSION = 'klinikiq-simple-tus-v6-repeat-safe-compact';
 const SCHEMA_VERSION = 'simple-ai-spot-v1';
 
 const ALLOWED_BRANCHES = [
@@ -318,7 +318,7 @@ function sanitizeQuestion(question = {}, branch) {
     id: cleanText(question.id) || `ai-spot-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     source: 'real-ai',
     caseType: 'ai-spot',
-    title: cleanText(question.title || ''),
+    title: '',
     relatedBranch: cleanText(question.relatedBranch || branch),
     difficulty: cleanText(question.difficulty || 'Orta'),
     learningTarget: cleanText(question.learningTarget || 'TUS düzeyinde tek karar noktasını yorumlama.'),
@@ -409,21 +409,23 @@ ${recent}
 
 Kurallar:
 - Tek köklü, tek doğru cevaplı, TUS tarzında kısa klinik soru yaz.
-- Her soruda yalnız tek öğrenme hedefi olsun: tanı, test, tedavi, mekanizma veya komplikasyon hedeflerini karıştırma.
+- Her soruda yalnız tek öğrenme hedefi olsun: tanı, test, tedavi, mekanizma veya komplikasyon hedeflerini karıştırma. Soru hedefi seçilen branşla uyumlu değilse farklı hedef seç.
 - AI sorusu için başlık üretme; title alanını boş string döndür. Kullanıcı arayüzünde başlık gösterilmeyecek, bu yüzden klinik hedefi stem ve question içinde net kur.
-- Soru kökü veya veri paneli doğru cevabı aynen tekrar etmesin; verilen bulgu sorulacaksa yorumu sorulsun.
+- Soru kökü ve veri alanları aynı şeyi tekrar ettirmesin. Bir test sonucu, tanı, mekanizma veya belirgin bulgu zaten verildiyse bunu 'ilk istenecek test', 'en olası tanı' veya 'mekanizma' olarak yeniden sorma; bunun yerine sonucu yorumlat veya soruyu yeniden kur.
+- Gereksiz laboratuvar, vital, görüntüleme veya mikrobiyoloji verisi ekleme. Yalnız cevaba götüren ama cevabı doğrudan vermeyen, branş ve hedefle uyumlu verileri kullan.
 - “İlk yaklaşım”, “ilk ilaç”, “tanıyı destekleyen test”, “doğrulama testi” ve “tarama testi” ifadelerini bilimsel anlamına uygun kullan. Profilaksi, replasman, tedavi ve tarama dilini karıştırma; mevcut eksiklik/hastalık varsa profilaksi değil tedavi veya replasman dili kullan.
-- “En uygun” birden fazla doğru seçenek doğuracaksa kökü uzun etkili, antibiyotik öncesi, doğrulama testi, ilk ilaç, tanısal ilk test gibi ifadelerle daralt. Yakın çeldiriciler varsa tek doğru cevabı belirginleştiren ayırıcı bulguyu köke ekle.
+- “En uygun” birden fazla doğru seçenek doğuracaksa kökü uzun etkili, antibiyotik öncesi, doğrulama testi, ilk ilaç, tanısal ilk test gibi ifadelerle daralt. Yakın çeldiriciler varsa tek doğru cevabı belirginleştiren ayırıcı bulguyu köke ekle; birden fazla seçenek makulse soruyu kullanıcıya göndermeden yeniden düzenle.
 - Seçenekler aynı kategoride olsun; tanı sorusunda tanılar, test sorusunda testler, tedavi sorusunda tedaviler, mekanizma sorusunda mekanizmalar ver. Kısmen doğru çeldiriciyi açıklamayla kurtarma; kökü veya seçenekleri baştan netleştir.
-- Fizik muayene, vital, laboratuvar, mikrobiyoloji, patoloji, EKG, görüntüleme ve objektif veri alanlarını birbirine karıştırma. Tüm veri satırları tamamlanmış olsun; hemoglobin, trombosit, lökosit, pH, ateş, TA, SpO₂ ve elektrolit gibi değerlerde uygun birim yaz.
+- Fizik muayene, vital, laboratuvar, mikrobiyoloji, patoloji, EKG, görüntüleme ve objektif veri alanlarını birbirine karıştırma. Tüm veri satırları tamamlanmış olsun; hemoglobin, trombosit, lökosit, pH, ateş, TA, SpO₂ ve elektrolit gibi değerlerde uygun birim ve temiz format yaz.
 - Tanısal yöntem ile hedef tanı uyumlu olsun: patoloji, biyokimya, mikrobiyoloji ve görüntüleme sorularında test/örnek tipi hedeflenen tanıyı gerçekten desteklesin. Patoloji sorusunda antite net olsun; “tümör/kitle/nüks eğilimi” gibi genel ifadeler yerine morfoloji veya klinik bağlamla desteklenen belirli antite sorulsun.
 - Komplikasyon sorularında “nadir”, “ciddi”, “korkulan”, “en sık” ve “en önemli” ifadelerini birbirinin yerine kullanma; sıklık ve klinik önem ayrımını doğru yaz.
 - EKG yoksa EKG paterni, laboratuvar yoksa laboratuvar bulgusu, tedavi sorusu değilse tedavi adımı/yönetim dili kullanma.
 - Etik-hukuki soru üretme; zorunluysa hasta rızası, karar verme kapasitesi, yazılı onam, anonimleştirme, etik kurul ve kişisel sağlık verisi kavramlarını karıştırma; seçenekleri daha nüanslı ve aynı kategoride tut.
 - Branş ve soru hedefi uyumlu olsun: Anatomi sorusu çoğunlukla sinir-kas-yapı ilişkisini sorsun; test seçimi/elektrofizyoloji yorumu gerekiyorsa daha uygun branş seç. Folat, K vitamini, anti-CCP gibi klasik bilgi sorularında gereksiz uzun vaka yazma.
 - Feedback formatı kompakt olsun: önce klinik/bilimsel gerekçe 2-3 cümle, sonra TUS ipucu tek satır, sonra kanıt zinciri 3 kısa vaka ipucu, en sonda seçenek karşılaştırması.
+- Feedback kısa, tek paragraflı ve tekrarsız olsun. Doğru seçenek açıklaması jenerik olmasın; neden doğru olduğunu mekanizma, tanı mantığı veya klinik karar mantığıyla açıkla.
 - TUS ipucu tek satır karar cümlesi olsun; tek başına veri yazma, ikinci başlık veya tekrar kullanma.
-- Kanıt zinciri doğru cevabı doğrudan tekrar etmesin; yalnız vakadaki gerçek ipuçlarını göstersin. Feedback kısa notları vaka verisiyle çelişmesin; hipokalemide 'K yüksek', hipertansiyonda 'hipotansiyon' gibi ters ifade kullanma.
+- Kanıt zinciri doğru cevabı doğrudan tekrar etmesin; yalnız vakadaki gerçek ipuçlarını göstersin. Kanıt maddeleri 'D-dimer yardımcıdır' gibi seçenek cümlesi değil, vaka verisi cümlesi olmalıdır. Feedback kısa notları vaka verisiyle çelişmesin; hipokalemide 'K yüksek', hipertansiyonda 'hipotansiyon' gibi ters ifade kullanma.
 - Doğru seçenek açıklaması klinik gerekçenin aynısı olmasın; doğru seçenek kartı bir cümlelik öğretici özet, yanlış seçenekler ise her biri tek cümlelik özgül eleme gerekçesi olsun.
 - Boş, şablon kalan veya yarım cümle görünen feedback alanı üretme; içerik yoksa alanı boş bırak.
 - “Yanlıştır” diye başlayan tekrarlı cümleler, şablon kalıntıları ve jenerik kalıplar kullanma. Aynı açıklamayı iki kez yazma.
@@ -441,9 +443,9 @@ JSON alanları:
   "demographics":"yaş-cinsiyet kısa ifade",
   "setting":"klinik ortam",
   "chiefComplaint":"başvuru nedeni",
-  "stem":"4-7 cümlelik klinik olgu; soru cümlesi burada yok",
+  "stem":"3-6 cümlelik klinik olgu; soru cümlesi ve veri panelinde tekrar edilecek test sonucu burada yok",
   "compactVitals":[{"label":"TA","value":"..."}],
-  "compactObjectiveData":[{"label":"test adı","value":"sonuç"}],
+  "compactObjectiveData":[{"label":"test adı","value":"sonuç; stem içinde aynen tekrar etme"}],
   "question":"tek ve net soru cümlesi",
   "options":[{"id":"A","text":"..."},{"id":"B","text":"..."},{"id":"C","text":"..."},{"id":"D","text":"..."},{"id":"E","text":"..."}],
   "correctAnswer":"A",
@@ -476,7 +478,7 @@ async function callOpenAI(prompt) {
       ? {
           model,
           input: [
-            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Do not create a visible question title. Keep stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
+            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Do not create a visible question title. Do not repeat the same data in stem and data fields. Keep branch, stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
             { role: 'user', content: prompt },
           ],
           text: { format: { type: 'json_object' } },
@@ -486,7 +488,7 @@ async function callOpenAI(prompt) {
       : {
           model,
           messages: [
-            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Do not create a visible question title. Keep stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
+            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Do not create a visible question title. Do not repeat the same data in stem and data fields. Keep branch, stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
