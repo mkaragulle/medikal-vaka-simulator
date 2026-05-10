@@ -2,9 +2,9 @@ import { repairScientificAccuracy, scientificAccuracyGate } from '../src/utils/c
 import { applyTusLanguageStandardToQuestion } from '../src/utils/tusLanguageStandard.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-tus-hybrid-v4.2';
-const SCHEMA_VERSION = 'ai-spot-json-schema-v3.1';
-const RULE_VERSION = 'clinical-gate-v3.2';
+const PROMPT_VERSION = 'klinikiq-tus-hybrid-v4.3';
+const SCHEMA_VERSION = 'ai-spot-json-schema-v3.2';
+const RULE_VERSION = 'clinical-gate-v3.3';
 
 
 const TUS_LANGUAGE_STANDARD_PROMPT = `
@@ -48,6 +48,8 @@ const AI_QUESTION_JSON_SCHEMA = {
     'setting',
     'chiefComplaint',
     'stem',
+    'compactVitals',
+    'compactObjectiveData',
     'findings',
     'question',
     'options',
@@ -777,6 +779,41 @@ Kesin kurallar:
 - wrongOptionFeedback içinde A, B, C, D, E anahtarlarının tamamı bulunsun; doğru seçenek için de kısa doğru gerekçesi yazabilirsin.`;
 }
 
+async function sendOpenAIRequest({ baseUrl, apiKey, path, body }) {
+  const timeoutMs = Number(process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 28000);
+  const { signal, cancel } = createAbortSignal(timeoutMs);
+  try {
+    const openAIResponse = await fetch(`${baseUrl}${path}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify(body),
+      signal,
+    });
+
+    if (!openAIResponse.ok) {
+      const errorText = await openAIResponse.text();
+      const error = new Error(`OpenAI request failed with ${openAIResponse.status}: ${errorText.slice(0, 800)}`);
+      error.status = openAIResponse.status;
+      error.raw = errorText;
+      throw error;
+    }
+
+    return openAIResponse.json();
+  } catch (error) {
+    if (error?.name === 'AbortError') {
+      const timeoutError = new Error(`OpenAI request timed out after ${timeoutMs} ms`);
+      timeoutError.status = 504;
+      throw timeoutError;
+    }
+    throw error;
+  } finally {
+    cancel();
+  }
+}
+
 async function callOpenAIQuestion(prompt) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
@@ -784,13 +821,13 @@ async function callOpenAIQuestion(prompt) {
   const model = getEnvModel('OPENAI_MODEL', 'DEFAULT_GENERATOR_MODEL') || 'gpt-4o-mini';
   const baseUrl = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const maxOutputTokens = Number(process.env.OPENAI_MAX_OUTPUT_TOKENS || 2600);
-  const requestBody = {
+  const systemPrompt = 'You are a senior Turkish TUS exam item writer and clinical editor for KlinikIQ. Return exactly one medically accurate Turkish question as valid JSON. Do not include Markdown or commentary outside JSON.';
+  const errors = [];
+
+  const responsesStrictBody = {
     model,
     input: [
-      {
-        role: 'system',
-        content: 'You produce medically accurate Turkish TUS-style exam questions as strict JSON. Never include explanations outside JSON.',
-      },
+      { role: 'system', content: systemPrompt },
       { role: 'user', content: prompt },
     ],
     text: {
@@ -805,32 +842,87 @@ async function callOpenAIQuestion(prompt) {
     store: false,
   };
 
-  if (process.env.OPENAI_TEMPERATURE) requestBody.temperature = Number(process.env.OPENAI_TEMPERATURE);
-  if (process.env.OPENAI_TOP_P) requestBody.top_p = Number(process.env.OPENAI_TOP_P);
+  const responsesJsonObjectBody = {
+    model,
+    input: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: `${prompt}\n\n${getJsonContractPrompt()}` },
+    ],
+    text: { format: { type: 'json_object' } },
+    max_output_tokens: maxOutputTokens,
+    store: false,
+  };
 
-  const openAIResponse = await fetch(`${baseUrl}/responses`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
+  const chatStrictBody = {
+    model,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: prompt },
+    ],
+    response_format: {
+      type: 'json_schema',
+      json_schema: {
+        name: 'klinikiq_ai_spot_question',
+        strict: true,
+        schema: AI_QUESTION_JSON_SCHEMA,
+      },
     },
-    body: JSON.stringify(requestBody),
-  });
+    max_completion_tokens: maxOutputTokens,
+  };
 
-  if (!openAIResponse.ok) {
-    const errorText = await openAIResponse.text();
-    const error = new Error(`OpenAI request failed with ${openAIResponse.status}: ${errorText.slice(0, 500)}`);
-    error.status = openAIResponse.status;
-    throw error;
+  const chatJsonObjectBody = {
+    model,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: `${prompt}\n\n${getJsonContractPrompt()}` },
+    ],
+    response_format: { type: 'json_object' },
+    max_completion_tokens: maxOutputTokens,
+  };
+
+  if (process.env.OPENAI_TEMPERATURE) {
+    const temperature = Number(process.env.OPENAI_TEMPERATURE);
+    responsesStrictBody.temperature = temperature;
+    responsesJsonObjectBody.temperature = temperature;
+    chatStrictBody.temperature = temperature;
+    chatJsonObjectBody.temperature = temperature;
+  }
+  if (process.env.OPENAI_TOP_P) {
+    const topP = Number(process.env.OPENAI_TOP_P);
+    responsesStrictBody.top_p = topP;
+    responsesJsonObjectBody.top_p = topP;
+    chatStrictBody.top_p = topP;
+    chatJsonObjectBody.top_p = topP;
   }
 
-  const data = await openAIResponse.json();
-  const modelText = extractOpenAIText(data);
-  const question = extractJsonFromText(modelText);
-  question.id = `ai-spot-real-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-  question.source = 'real-ai';
-  question.provider = 'openai';
-  return question;
+  const attempts = [
+    { label: 'responses-json-schema', path: '/responses', body: responsesStrictBody, extractor: extractOpenAIText },
+    { label: 'responses-json-object', path: '/responses', body: responsesJsonObjectBody, extractor: extractOpenAIText },
+    { label: 'chat-json-schema', path: '/chat/completions', body: chatStrictBody, extractor: (data) => extractChatCompletionText(data, 'OpenAI chat completions') },
+    { label: 'chat-json-object', path: '/chat/completions', body: chatJsonObjectBody, extractor: (data) => extractChatCompletionText(data, 'OpenAI chat completions') },
+  ];
+
+  for (const attempt of attempts) {
+    try {
+      const data = await sendOpenAIRequest({ baseUrl, apiKey, path: attempt.path, body: attempt.body });
+      const modelText = attempt.extractor(data);
+      const question = extractJsonFromText(modelText);
+      question.id = `ai-spot-real-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+      question.source = 'real-ai';
+      question.provider = 'openai';
+      question.openAIModel = data?.model || model;
+      question.openAIMode = attempt.label;
+      return question;
+    } catch (error) {
+      errors.push(`${attempt.label}: ${summarizeProviderError(error)}`);
+      const status = Number(error?.status || 0);
+      if ([401, 403, 404, 429, 504].includes(status)) break;
+    }
+  }
+
+  const error = new Error(`OpenAI failed after ${attempts.length} attempt(s): ${errors.join(' || ')}`);
+  error.status = 502;
+  throw error;
 }
 
 
@@ -1310,8 +1402,13 @@ function selectProviderStatus() {
 }
 
 function buildProviderOrder(preferredProvider) {
-  const preferred = String(preferredProvider || process.env.AI_PROVIDER || 'openrouter').toLowerCase();
-  const all = ['openrouter', 'openai', 'gemini'];
+  const explicitProvider = String(preferredProvider || process.env.AI_PROVIDER || '').trim().toLowerCase();
+  const inferredProvider = process.env.OPENAI_API_KEY ? 'openai'
+    : process.env.OPENROUTER_API_KEY ? 'openrouter'
+      : (process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY) ? 'gemini'
+        : 'openai';
+  const preferred = explicitProvider || inferredProvider;
+  const all = ['openai', 'openrouter', 'gemini'];
   if (!all.includes(preferred)) return all;
   return [preferred, ...all.filter((provider) => provider !== preferred)];
 }
@@ -1340,6 +1437,294 @@ async function generateWithAvailableProvider(prompt, context = {}) {
   const error = new Error(errors.join(' | ') || 'Remote AI providers failed');
   error.status = 502;
   throw error;
+}
+
+
+const SAFE_FALLBACK_QUESTION_POOL = [
+  {
+    title: 'EKG bulgusu olan elektrolit bozukluğu',
+    relatedBranch: 'İç Hastalıkları',
+    learningTarget: 'EKG bulgulu hiperkalemide ilk tedavi basamağı',
+    demographics: '67 yaşında erkek hasta',
+    setting: 'Acil servis',
+    chiefComplaint: 'Halsizlik ve çarpıntı',
+    stem: 'Kronik böbrek hastalığı olan 67 yaşında erkek hasta halsizlik, çarpıntı ve kas güçsüzlüğü nedeniyle acil servise başvuruyor. Son haftalarda potasyum tutucu diüretik kullandığı öğreniliyor. Monitörizasyon sırasında geniş QRS kompleksleri ve sivri T dalgaları izleniyor. Bilinci açık ancak belirgin kas güçsüzlüğü mevcut.',
+    compactVitals: [{ label: 'TA', value: '108/64 mmHg' }, { label: 'Nabız', value: '104/dk' }],
+    compactObjectiveData: [{ label: 'Serum K⁺', value: '6.8 mEq/L' }, { label: 'EKG', value: 'Sivri T dalgaları ve QRS genişlemesi' }],
+    question: 'Bu hastada en uygun ilk tedavi seçeneği hangisidir?',
+    options: [
+      { id: 'A', text: 'İntravenöz kalsiyum glukonat uygulamak' },
+      { id: 'B', text: 'İntravenöz insülin + glukoz başlamak' },
+      { id: 'C', text: 'Nebül salbutamol uygulamak' },
+      { id: 'D', text: 'Sodyum bikarbonat infüzyonu vermek' },
+      { id: 'E', text: 'Acil hemodiyaliz planlamak' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'EKG değişikliği olan ciddi hiperkalemide ilk hedef kardiyak membranı stabilize etmektir. Bu nedenle ilk basamak intravenöz kalsiyum glukonattır; potasyumu hücre içine kaydıran tedaviler bundan sonra eklenir.',
+    wrongOptionFeedback: {
+      A: 'Doğru. EKG bulgulu ciddi hiperkalemide ilk basamak kardiyak membran stabilizasyonudur.',
+      B: 'İntravenöz insülin + glukoz potasyumu hücre içine kaydırır; ancak EKG değişikliği varken kalsiyumdan sonra uygulanır.',
+      C: 'Beta-agonist tedavi yardımcı olabilir; kardiyak membran stabilizasyonunun yerine geçmez.',
+      D: 'Sodyum bikarbonat belirgin asidoz varsa yardımcıdır; bu tabloda ilk basamak değildir.',
+      E: 'Hemodiyaliz potasyumu uzaklaştırır; fakat akut EKG değişikliğinde önce membran stabilize edilir.',
+    },
+    evidenceChain: ['Serum K⁺ düzeyinin 6.8 mEq/L olması', 'Sivri T dalgaları ve QRS genişlemesi', 'Potasyum tutucu diüretik kullanımı ve böbrek hastalığı öyküsü'],
+    examPearl: 'Hiperkalemi + EKG değişikliği varsa ilk işlem intravenöz kalsiyumdur; insülin + glukoz sonraki potasyum kaydırıcı basamaktır.',
+    managementSteps: ['Monitörizasyon ve damar yolu sağlanır.', 'İntravenöz kalsiyum glukonat uygulanır.', 'Ardından potasyumu düşüren ve uzaklaştıran tedaviler planlanır.'],
+  },
+  {
+    title: 'Akut sistemik alerjik reaksiyon',
+    relatedBranch: 'Acil Tıp',
+    learningTarget: 'Anafilakside ilk hayat kurtarıcı tedavi',
+    demographics: '24 yaşında kadın hasta',
+    setting: 'Acil servis',
+    chiefComplaint: 'Nefes darlığı ve yaygın döküntü',
+    stem: 'Yirmi dört yaşında kadın hasta, arı sokmasından kısa süre sonra gelişen yaygın kaşıntılı döküntü ve nefes darlığı nedeniyle acil servise getiriliyor. Muayenede dudaklarda hafif şişlik, yaygın ürtiker ve hışıltılı solunum saptanıyor. Hasta huzursuz görünümde ve konuşurken zorlanıyor.',
+    compactVitals: [{ label: 'TA', value: '82/48 mmHg' }, { label: 'SpO₂', value: '%91' }],
+    compactObjectiveData: [],
+    question: 'Bu hastada öncelikli hayat kurtarıcı tedavi hangisidir?',
+    options: [
+      { id: 'A', text: 'İntramüsküler adrenalin uygulamak' },
+      { id: 'B', text: 'Oral antihistaminik vermek' },
+      { id: 'C', text: 'İnhale kısa etkili bronkodilatör uygulamak' },
+      { id: 'D', text: 'İntravenöz kortikosteroid başlamak' },
+      { id: 'E', text: 'Gözlem altında yalnız oksijen vermek' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Hipotansiyon, mukozal tutulum, ürtiker ve solunum bulguları sistemik ciddi alerjik reaksiyonu gösterir. Bu tabloda hayat kurtarıcı ilk tedavi intramüsküler adrenalindir; antihistaminik ve steroid destek tedavidir.',
+    wrongOptionFeedback: {
+      A: 'Doğru. Solunum bulgusu ve hipotansiyon varsa ilk ilaç intramüsküler adrenalindir.',
+      B: 'Antihistaminikler kaşıntı ve ürtikeri azaltabilir; hipotansiyon ve bronkospazmı tek başına düzelten ilk tedavi değildir.',
+      C: 'Bronkodilatör hışıltılı solunuma yardımcı olabilir; sistemik reaksiyonda adrenalin yerine geçmez.',
+      D: 'Kortikosteroid geç faz bulgular için destek sağlar; akut hayat kurtarıcı ilk ilaç değildir.',
+      E: 'Oksijen destekleyicidir; hipotansiyon ve hava yolu riski olan hastada tek başına yeterli değildir.',
+    },
+    evidenceChain: ['Arı sokması sonrası kısa sürede sistemik bulgu gelişmesi', 'Yaygın ürtiker ve dudak şişliği', 'Hipotansiyon ve hışıltılı solunum'],
+    examPearl: 'Anafilakside ilk hayat kurtarıcı ilaç adrenalindir; antihistaminik ve steroid adrenalin yerine kullanılmaz.',
+    managementSteps: ['İntramüsküler adrenalin uygulanır.', 'Hava yolu, oksijen ve damar yolu desteği sağlanır.', 'Kristaloid sıvı ve destek tedaviler klinik yanıta göre eklenir.'],
+  },
+  {
+    title: 'Devam eden jeneralize nöbet',
+    relatedBranch: 'Nöroloji',
+    learningTarget: 'Status epileptikusta ilk ilaç basamağı',
+    demographics: '36 yaşında erkek hasta',
+    setting: 'Acil servis',
+    chiefComplaint: 'Uzamış nöbet',
+    stem: 'Otuz altı yaşında erkek hasta, yaklaşık 8 dakikadır süren jeneralize tonik-klonik nöbet nedeniyle acil servise getiriliyor. Yakınları bilinen epilepsi öyküsü olduğunu ve son günlerde ilaçlarını aksattığını belirtiyor. Hava yolu açıklığı değerlendirilirken nöbet aktivitesi devam ediyor.',
+    compactVitals: [{ label: 'SpO₂', value: '%94' }, { label: 'Nabız', value: '118/dk' }],
+    compactObjectiveData: [{ label: 'Kapiller glukoz', value: '96 mg/dL' }],
+    question: 'Bu hastada en uygun ilk ilaç tedavisi hangisidir?',
+    options: [
+      { id: 'A', text: 'İntravenöz benzodiazepin uygulamak' },
+      { id: 'B', text: 'Fenitoin yüklemesi yapmak' },
+      { id: 'C', text: 'Levetirasetam yüklemesi yapmak' },
+      { id: 'D', text: 'Valproat infüzyonu başlamak' },
+      { id: 'E', text: 'Profilaktik antibiyotik başlamak' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Beş dakikadan uzun süren jeneralize nöbet status epileptikus kabul edilir. İlk ilaç basamağı benzodiazepindir; ikinci basamak antiepileptik yükleme nöbet kontrolünden sonra gündeme gelir.',
+    wrongOptionFeedback: {
+      A: 'Doğru. Devam eden status epileptikusta ilk ilaç benzodiazepindir.',
+      B: 'Fenitoin ikinci basamak yükleme seçeneklerinden biridir; benzodiazepinden önce verilmez.',
+      C: 'Levetirasetam ikinci basamakta kullanılabilir; akut ilk basamak değildir.',
+      D: 'Valproat bazı hastalarda yükleme için seçilebilir; ilk müdahale benzodiazepindir.',
+      E: 'Antibiyotik yalnız enfeksiyon şüphesi varsa gerekir; devam eden nöbeti durdurmaz.',
+    },
+    evidenceChain: ['Nöbetin 8 dakikadır sürmesi', 'Jeneralize tonik-klonik nöbet aktivitesinin devam etmesi', 'Hipogliseminin dışlanmış olması'],
+    examPearl: 'Status epileptikusta ilaç sırası benzodiazepin, ardından ikinci basamak antiepileptik yüklemedir.',
+    managementSteps: ['ABC ve glukoz değerlendirilir.', 'İntravenöz benzodiazepin uygulanır.', 'Devam ederse ikinci basamak antiepileptik yükleme yapılır.'],
+  },
+  {
+    title: 'Septik şokla başvuran hasta',
+    relatedBranch: 'İç Hastalıkları',
+    learningTarget: 'Septik şokta erken yaklaşım',
+    demographics: '72 yaşında erkek hasta',
+    setting: 'Acil servis',
+    chiefComplaint: 'Ateş ve bilinç bulanıklığı',
+    stem: 'Yetmiş iki yaşında erkek hasta, iki gündür süren ateş, öksürük ve giderek artan halsizlik nedeniyle acil servise getiriliyor. Muayenede konfüzyon, soğuk ekstremiteler ve sağ bazalde belirgin raller saptanıyor. Hasta son saatlerde belirgin olarak daha letarjik hale gelmiş.',
+    compactVitals: [{ label: 'TA', value: '78/46 mmHg' }, { label: 'Ateş', value: '38.8 °C' }, { label: 'SpO₂', value: '%90' }],
+    compactObjectiveData: [{ label: 'Laktat', value: '4.3 mmol/L' }, { label: 'Lökosit', value: '18.400/mm³' }],
+    question: 'Bu hastada en uygun ilk yaklaşım hangisidir?',
+    options: [
+      { id: 'A', text: 'Geniş spektrumlu antibiyotik ve 30 mL/kg kristaloid başlamak' },
+      { id: 'B', text: 'Yalnız ateş kontrolü ve oral sıvı önermek' },
+      { id: 'C', text: 'Antibiyotik öncesi kesin kültür sonucunu beklemek' },
+      { id: 'D', text: 'Sadece düşük doz steroid tedavisi başlamak' },
+      { id: 'E', text: 'Rutin poliklinik kontrolü planlamak' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Hipotansiyon, yüksek laktat ve enfeksiyon odağı septik şoku düşündürür. Erken yaklaşımda kültürler geciktirmeden alınır, geniş spektrumlu antibiyotik başlanır ve kristaloid sıvı resüsitasyonu yapılır.',
+    wrongOptionFeedback: {
+      A: 'Doğru. Septik şokta antibiyotik ve kristaloid sıvı geciktirilmeden başlanır.',
+      B: 'Bu yaklaşım stabil hafif enfeksiyon için düşünülebilir; hipotansiyon ve yüksek laktat olan hastada yetersizdir.',
+      C: 'Kültür alınır ancak sonuç beklenerek antibiyotik geciktirilmez.',
+      D: 'Steroid dirençli şokta düşünülebilir; ilk basamak antibiyotik ve sıvı resüsitasyonudur.',
+      E: 'Hipotansiyon ve organ hipoperfüzyonu acil tedavi gerektirir.',
+    },
+    evidenceChain: ['TA değerinin 78/46 mmHg olması', 'Laktat düzeyinin 4.3 mmol/L ölçülmesi', 'Ateş, raller ve lökositozla enfeksiyon odağı bulunması'],
+    examPearl: 'Septik şokta erken antibiyotik ve 30 mL/kg kristaloid birlikte düşünülür; kültür sonucu beklenerek tedavi geciktirilmez.',
+    managementSteps: ['Kan kültürleri geciktirmeden alınır.', 'Geniş spektrumlu antibiyotik ve kristaloid sıvı başlanır.', 'Hipotansiyon sürerse vazopressör değerlendirilir.'],
+  },
+  {
+    title: 'SLE izleminde alevlenme şüphesi',
+    relatedBranch: 'Romatoloji',
+    learningTarget: 'SLE aktivite belirteçleri',
+    demographics: '29 yaşında kadın hasta',
+    setting: 'Poliklinik',
+    chiefComplaint: 'Eklem ağrısı ve köpüklü idrar',
+    stem: 'Sistemik lupus eritematozus tanısıyla izlenen 29 yaşında kadın hasta, son haftalarda artan halsizlik, eklem ağrısı ve köpüklü idrar yakınmasıyla başvuruyor. Muayenede hafif pretibial ödem ve el küçük eklemlerinde hassasiyet saptanıyor. Hekim hastalık aktivitesini destekleyecek laboratuvar paternini değerlendirmek istiyor.',
+    compactVitals: [],
+    compactObjectiveData: [{ label: 'Tam idrar tetkiki', value: 'Proteinüri ve mikroskopik hematüri' }],
+    question: 'SLE aktivitesini destekleyen en uygun laboratuvar testi kombinasyonu hangisidir?',
+    options: [
+      { id: 'A', text: 'Anti-dsDNA testi ve C3/C4 ölçümü' },
+      { id: 'B', text: 'ANA tarama testi ve eritrosit sedimentasyon hızı' },
+      { id: 'C', text: 'Romatoid faktör testi ve anti-CCP ölçümü' },
+      { id: 'D', text: 'HLA-B27 testi ve sakroiliak görüntüleme' },
+      { id: 'E', text: 'Anti-mitokondriyal antikor testi ve ALP ölçümü' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'SLE aktivitesi özellikle anti-dsDNA artışı ve kompleman tüketimiyle desteklenir. Proteinüri ve hematüri varlığında bu patern lupus nefriti alevlenmesi açısından değerlidir.',
+    wrongOptionFeedback: {
+      A: 'Doğru. Anti-dsDNA artışı ve C3/C4 düşüklüğü SLE aktivitesini destekler.',
+      B: 'ANA tarama için duyarlıdır; aktivite takibinde anti-dsDNA ve kompleman kadar belirleyici değildir.',
+      C: 'Bu testler romatoid artrit eksenindedir; lupus aktivitesini izlemek için temel kombinasyon değildir.',
+      D: 'HLA-B27 spondiloartritlerde kullanılır; SLE alevlenmesini göstermez.',
+      E: 'Anti-mitokondriyal antikor primer biliyer kolanjit ile ilişkilidir; lupus aktivite takibi için uygun değildir.',
+    },
+    evidenceChain: ['Bilinen SLE öyküsü olması', 'Proteinüri ve mikroskopik hematüri bulunması', 'Eklem yakınmaları ve ödemle alevlenme şüphesi gelişmesi'],
+    examPearl: 'SLE aktivite takibinde anti-dsDNA artışı ve C3/C4 düşüklüğü birlikte değerlidir; ANA daha çok tarama duyarlılığı ile öne çıkar.',
+    managementSteps: ['İdrar ve böbrek fonksiyonları birlikte değerlendirilir.', 'Anti-dsDNA ve kompleman düzeyleri istenir.', 'Nefrit şüphesinde uzman değerlendirmesi planlanır.'],
+  },
+  {
+    title: 'Kolinjik toksidrom bulguları',
+    relatedBranch: 'Acil Tıp',
+    learningTarget: 'Organofosfat zehirlenmesinde antidot yaklaşımı',
+    demographics: '41 yaşında erkek hasta',
+    setting: 'Acil servis',
+    chiefComplaint: 'Terleme ve nefes darlığı',
+    stem: 'Kırk bir yaşında erkek hasta, tarım ilacı temasından sonra gelişen aşırı terleme, salivasyon, karın krampları ve nefes darlığı nedeniyle acil servise getiriliyor. Muayenede miyozis, bronkore ve yaygın sekresyon artışı saptanıyor. Hasta yoğun kimyasal koku ile getirilmiş ve giysilerinde sıvı kalıntıları görülüyor.',
+    compactVitals: [{ label: 'Nabız', value: '52/dk' }, { label: 'SpO₂', value: '%89' }],
+    compactObjectiveData: [],
+    question: 'Bu hastada en uygun antidot yaklaşımı hangisidir?',
+    options: [
+      { id: 'A', text: 'Atropin ve pralidoksim uygulamak' },
+      { id: 'B', text: 'Nalokson uygulamak' },
+      { id: 'C', text: 'N-asetilsistein başlamak' },
+      { id: 'D', text: 'Flumazenil uygulamak' },
+      { id: 'E', text: 'Fomepizol başlamak' },
+    ],
+    correctAnswer: 'A',
+    explanation: 'Miyozis, bronkore, bradikardi ve sekresyon artışı kolinerjik toksidromu düşündürür. Organofosfat temasında atropin muskarinik bulguları kontrol eder, pralidoksim asetilkolinesteraz reaktivasyonu için kullanılır.',
+    wrongOptionFeedback: {
+      A: 'Doğru. Organofosfat zehirlenmesinde atropin ve pralidoksim birlikte düşünülür.',
+      B: 'Nalokson opioid toksidromunda solunum depresyonu ve miyozis için kullanılır; belirgin bronkore ve salivasyon bu tabloya uymaz.',
+      C: 'N-asetilsistein asetaminofen toksisitesinde kullanılır; kolinerjik toksidrom antidotu değildir.',
+      D: 'Flumazenil benzodiazepin etkisini geri çevirebilir; organofosfat temasında uygun değildir.',
+      E: 'Fomepizol metanol veya etilen glikol zehirlenmesinde kullanılır; bu bulgularla öncelikli değildir.',
+    },
+    evidenceChain: ['Tarım ilacı teması öyküsü', 'Miyozis, bronkore ve salivasyon artışı', 'Bradikardi ve hipoksemi eşlik etmesi'],
+    examPearl: 'Organofosfat zehirlenmesinde DUMBBELSS tipi kolinerjik bulgular atropin + pralidoksim yaklaşımını düşündürür.',
+    managementSteps: ['Kontamine giysiler çıkarılır ve dekontaminasyon yapılır.', 'Hava yolu ve oksijen desteği sağlanır.', 'Atropin ve pralidoksim klinik yanıta göre uygulanır.'],
+  },
+];
+
+function pickSafeFallbackQuestion(context = {}, attemptErrors = []) {
+  const branch = normalizeRemoteText(context.branchFilter || context.relatedBranch || context.branch || '');
+  const selectedTopic = normalizeRemoteText(context.selectedTopic || context.selectedSubtopic || context.learningTarget || '');
+  const seedText = `${context.seed || ''} ${context.antiRepeatNonce || ''} ${Date.now()}`;
+  const seedNumber = seedText.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0);
+
+  const scored = SAFE_FALLBACK_QUESTION_POOL.map((item, index) => {
+    const itemBundle = normalizeRemoteText(`${item.relatedBranch} ${item.learningTarget} ${item.title}`);
+    let score = 0;
+    if (branch && itemBundle.includes(branch)) score += 8;
+    if (/pediatri|cocuk|çocuk/.test(branch) && /status|nobet|nöbet/.test(itemBundle)) score += 4;
+    if (/noroloji|nöroloji/.test(branch) && /status|nobet|nöbet/.test(itemBundle)) score += 6;
+    if (/acil/.test(branch) && /anafil|toksidrom|septik/.test(itemBundle)) score += 5;
+    if (/enfeksiyon/.test(branch) && /septik/.test(itemBundle)) score += 5;
+    if (/romatoloji|ic hastaliklari|iç hastalıkları/.test(branch) && /sle|hiperkalemi|septik/.test(itemBundle)) score += 3;
+    if (selectedTopic && remoteSimilarity(selectedTopic, itemBundle) > 0.22) score += 4;
+    return { item, score, index };
+  }).sort((a, b) => (b.score - a.score) || (((a.index + seedNumber) % SAFE_FALLBACK_QUESTION_POOL.length) - ((b.index + seedNumber) % SAFE_FALLBACK_QUESTION_POOL.length)));
+
+  const topScore = scored[0]?.score || 0;
+  const ordered = topScore > 0
+    ? scored
+    : [...scored.slice(seedNumber % scored.length), ...scored.slice(0, seedNumber % scored.length)];
+  for (const candidate of ordered.map((entry) => entry.item)) {
+    const question = completeRemoteQuestion({ ...candidate, id: `ai-spot-safe-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, context);
+    const medicalGate = runServerMedicalQualityGate(question);
+    const repaired = medicalGate.question;
+    const rawValidation = validateRawQuestion(repaired);
+    const editorialValidation = validateRemoteEditorialQuality(repaired);
+    const diversityValidation = validateRemoteDiversity(repaired, context);
+    if (medicalGate.ok && rawValidation.ok && editorialValidation.ok && diversityValidation.passed) {
+      return { question: repaired, medicalGate, rawValidation, editorialValidation, diversityValidation, bypassedDiversity: false };
+    }
+  }
+
+  const candidate = ordered[0]?.item || SAFE_FALLBACK_QUESTION_POOL[0];
+  const question = completeRemoteQuestion({ ...candidate, id: `ai-spot-safe-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, context);
+  const medicalGate = runServerMedicalQualityGate(question);
+  const repaired = medicalGate.question;
+  return {
+    question: repaired,
+    medicalGate,
+    rawValidation: validateRawQuestion(repaired),
+    editorialValidation: validateRemoteEditorialQuality(repaired),
+    diversityValidation: validateRemoteDiversity(repaired, context),
+    bypassedDiversity: true,
+    attemptErrors,
+  };
+}
+
+function buildSafeFallbackResponsePayload({ body = {}, attemptErrors = [], startedAt = Date.now() } = {}) {
+  const fallback = pickSafeFallbackQuestion(body, attemptErrors);
+  const question = fallback.question;
+  question.provider = 'local-safe-fallback';
+  question.aiMeta = {
+    ...(question.aiMeta || {}),
+    promptVersion: PROMPT_VERSION,
+    schemaVersion: SCHEMA_VERSION,
+    ruleVersion: RULE_VERSION,
+    safeFallback: true,
+    fallbackReason: attemptErrors.slice(-3),
+    serverMedicalGate: {
+      ok: fallback.medicalGate?.ok !== false,
+      repaired: Boolean(fallback.medicalGate?.repairCount),
+      matchedRules: fallback.medicalGate?.matchedRules || [],
+      warnings: (fallback.medicalGate?.warnings || []).slice(0, 6),
+    },
+    diversityBypassed: Boolean(fallback.bypassedDiversity),
+  };
+
+  const usageLog = buildAIUsageLog({
+    provider: 'local-safe-fallback',
+    model: 'deterministic-curated-pool',
+    prompt: JSON.stringify({ branchFilter: body.branchFilter, selectedTopic: body.selectedTopic, selectedSubtopic: body.selectedSubtopic }),
+    question,
+    startedAt,
+    validatorVerdict: 'accepted',
+    repairCount: fallback.medicalGate?.repairCount || 0,
+    duplicateScore: fallback.diversityValidation?.score || null,
+    leakageDetected: false,
+    highRiskRuleTriggered: fallback.medicalGate?.matchedRules || [],
+    turkishQualityIssue: false,
+  });
+
+  return {
+    ok: true,
+    provider: 'local-safe-fallback',
+    remoteAttempt: 0,
+    safeFallback: true,
+    fallbackNotice: 'Remote model veya kalite kapıları uygun soru döndürmediği için doğrulanmış yerel TUS spot soru havuzundan güvenli soru üretildi.',
+    promptVersion: PROMPT_VERSION,
+    schemaVersion: SCHEMA_VERSION,
+    ruleVersion: RULE_VERSION,
+    usageLog,
+    question,
+  };
 }
 
 export default async function handler(request, response) {
@@ -1455,6 +1840,12 @@ export default async function handler(request, response) {
       } catch (error) {
         attemptErrors.push(`remote attempt ${remoteAttempt}: ${summarizeProviderError(error)}`);
       }
+    }
+
+    if (parseBooleanEnv('AI_ENABLE_SAFE_FALLBACK', true)) {
+      const fallbackPayload = buildSafeFallbackResponsePayload({ body, attemptErrors, startedAt: Date.now() });
+      if (parseBooleanEnv('AI_DEBUG_USAGE_LOGS', false)) console.info('[KlinikIQ AI safe fallback]', fallbackPayload.usageLog);
+      return sendJson(response, 200, fallbackPayload);
     }
 
     const error = new Error(attemptErrors.join(' | ') || 'Remote AI providers failed');
