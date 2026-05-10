@@ -106,6 +106,9 @@ function AIGeneratedQuestionView({
           <p>Spot bilgileri pekiştirmek için branş uyumu ve klinik tutarlılık kontrolünden geçirilen kısa klinik soru.</p>
           <div className="ai-practice-meta-row">
             <AISourceBadge usedRemoteAI={usedRemoteAI} fallback={fallback} generationSource={generationSource} />
+            <span className="ai-demo-notice-badge" title="AI soru üretimi demo sürecindedir; içerikler yayın öncesi gözden geçirilmelidir.">
+              <Icon name="AlertTriangle" /> Demo sürecinde
+            </span>
           </div>
         </div>
 
