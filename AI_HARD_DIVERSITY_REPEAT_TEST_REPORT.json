@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "diversity": {
+    "passed": false,
+    "reason": "same_signature",
+    "signature": "cs-qfas8p7",
+    "similarityScore": 1
+  },
+  "checks": {
+    "duplicateRejected": true,
+    "duplicateReason": "same_signature",
+    "clientHardRejectsRemoteDiversity": true,
+    "clientNoAdvisoryRemoteDiversity": true,
+    "emergencyFallbackKeepsHistory": true,
+    "serverDoesNotBypassFallbackDiversity": true,
+    "promptStatesRecentListIsNotExample": true
+  },
+  "failed": []
+}

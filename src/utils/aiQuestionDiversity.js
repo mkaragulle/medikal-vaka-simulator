@@ -199,6 +199,7 @@ export function buildAntiRepeatPromptContext(context = {}, diversityPlan = {}) {
     questionType: item.questionType,
     correct: getCorrectFromSummary(item),
     optionSetSignature: item.optionSetSignature,
+    optionTexts: safeArray(item.optionTexts),
     contentSignature: item.contentSignature || item.signature,
     combinedText: item.combinedText,
   }));

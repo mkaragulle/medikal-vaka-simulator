@@ -179,14 +179,18 @@ async function fetchRemoteAIQuestion({ previousQuestionId, branchFilter, context
         ...(normalized.aiMeta || {}),
         clientDiversityWarning: diversityResult.reason,
         clientDiversitySimilarityScore: diversityResult.similarityScore || null,
-        clientDiversityGateMode: 'advisory-for-remote-ai',
+        clientDiversityGateMode: 'hard-reject-for-remote-ai',
       };
-      logRemoteAIDebug('remote-diversity-soft-warning', {
+      logRemoteAIDebug('remote-diversity-hard-reject', {
         attempt,
         branchFilter,
         reason: diversityResult.reason,
         similarityScore: diversityResult.similarityScore || null,
       });
+      const error = new Error(`Remote AI diversity gate rejected candidate: ${diversityResult.reason || 'semantic_duplicate'}`);
+      error.diversity = diversityResult;
+      error.question = normalized;
+      throw error;
     }
 
     logRemoteAIDebug('remote-question-accepted', {
@@ -253,9 +257,8 @@ async function requestRemoteAIQuestion({ previousQuestionId, branchFilter, conte
 
 function createEmergencyLocalQuestion({ previousQuestionId, branchFilter, context, reason = null, errors = [] }) {
   const emergencyContexts = [
-    { recentIds: [], recentSignatures: [], recentQuestionSummaries: [] },
-    buildSignatureOnlyContext(context || {}, 12),
-    { ...(context || {}), recentQuestionSummaries: [], recentIds: [], recentSignatures: [] },
+    context || {},
+    buildSignatureOnlyContext(context || {}, 18),
   ];
   const branchAttempts = [branchFilter, 'random'].filter((item, index, list) => item && list.indexOf(item) === index);
 
@@ -271,7 +274,7 @@ function createEmergencyLocalQuestion({ previousQuestionId, branchFilter, contex
           context: emergencyContexts[attempt],
           requestedBranch: fallbackBranch,
           trustRemoteAi: true,
-          skipSemanticNovelty: true,
+          skipSemanticNovelty: false,
           skipQuality: false,
         });
         if (!validation.ok) {

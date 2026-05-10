@@ -630,6 +630,51 @@ function remoteSimilarity(a = '', b = '') {
   return Math.max(intersection / union, containment * 0.86);
 }
 
+function normalizeClientQuestionText(value = '') {
+  return String(value ?? '')
+    .toLocaleLowerCase('tr')
+    .replace(/ı/g, 'i')
+    .replace(/[âîû]/g, (match) => ({ â: 'a', î: 'i', û: 'u' }[match] || match))
+    .replace(/[^a-z0-9çğıöşü\s]/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function remoteStableHash(value = '') {
+  const text = normalizeClientQuestionText(value);
+  let hash = 2166136261;
+  for (let index = 0; index < text.length; index += 1) {
+    hash ^= text.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
+  }
+  return `q${(hash >>> 0).toString(36)}`;
+}
+
+function makeRemoteOptionSetHash(question = {}) {
+  const optionTexts = normalizeOptionObjects(question.options || question.o)
+    .map((item) => normalizeClientQuestionText(item.text))
+    .filter(Boolean)
+    .sort((a, b) => a.localeCompare(b, 'tr'));
+  return optionTexts.length ? remoteStableHash(optionTexts.join(' | ')) : '';
+}
+
+function makeRemoteContentSignature(question = {}) {
+  return `cs-${remoteStableHash([
+    question.relatedBranch || question.b,
+    question.learningTarget || question.topic || question.title,
+    question.answerTarget || question.questionType,
+    question.title,
+    question.demographics,
+    question.chiefComplaint,
+    question.stem,
+    question.question,
+    getRemoteCorrectText(question),
+    makeRemoteOptionSetSignature(question),
+    collectText(question.evidenceChain || []).join(' '),
+    question.examPearl,
+  ].filter(Boolean).join(' :: '))}`;
+}
+
 function buildRemoteCandidateText(question = {}) {
   return normalizeRemoteText([
     question.relatedBranch || question.b,
@@ -648,39 +693,58 @@ function buildRemoteCandidateText(question = {}) {
 }
 
 function validateRemoteDiversity(question = {}, context = {}) {
-  const recent = Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries.slice(0, 40) : [];
-  if (!recent.length) return { passed: true };
+  const recent = Array.isArray(context.recentQuestionSummaries) ? context.recentQuestionSummaries.slice(0, 50) : [];
+  const recentSignatures = Array.isArray(context.recentSignatures) ? context.recentSignatures.map(String) : [];
+  const forbiddenOptionSets = Array.isArray(context.forbiddenOptionSets) ? context.forbiddenOptionSets.map(String) : [];
   const candidateCorrect = normalizeRemoteText(getRemoteCorrectText(question));
   const candidateOptions = makeRemoteOptionSetSignature(question);
+  const candidateOptionSetHash = makeRemoteOptionSetHash(question);
+  const candidateContentSignature = question.contentSignature || makeRemoteContentSignature(question);
+  const candidateSemantic = question.semanticFingerprint || `sem-${remoteStableHash(buildRemoteCandidateText(question))}`;
   const candidateText = buildRemoteCandidateText(question);
   const candidateTitle = normalizeRemoteText(question.title || question.t || '');
   const candidateTopic = normalizeRemoteText(context.selectedTopic || question.learningTarget || question.title || question.t || '');
-  const candidateType = normalizeRemoteText(context.questionType || question.questionType || '');
+  const candidateType = normalizeRemoteText(context.questionType || question.questionType || question.answerTarget || '');
+
+  if (candidateContentSignature && recentSignatures.includes(candidateContentSignature)) {
+    return { passed: false, reason: 'same_signature', similarTo: candidateContentSignature, score: 1 };
+  }
+  if (candidateSemantic && recentSignatures.includes(candidateSemantic)) {
+    return { passed: false, reason: 'same_semantic_fingerprint', similarTo: candidateSemantic, score: 1 };
+  }
+  if (candidateOptionSetHash && forbiddenOptionSets.includes(candidateOptionSetHash)) {
+    return { passed: false, reason: 'forbidden_option_set_duplicate', similarTo: candidateOptionSetHash, score: 0.97 };
+  }
+
+  if (!recent.length) return { passed: true };
 
   const immediate = recent[0] || {};
   if (candidateCorrect && candidateCorrect === normalizeRemoteText(immediate.correct || immediate.normalizedCorrect || '')) {
     return { passed: false, reason: 'same_correct_answer_back_to_back', similarTo: immediate.id, score: 0.9 };
   }
 
-  const recentTopics = recent.slice(0, 8).map((item) => normalizeRemoteText(item.topic || item.title || item.learningTarget || '')).filter(Boolean);
-  if (candidateTopic && recentTopics.slice(0, 2).includes(candidateTopic)) {
-    return { passed: false, reason: 'same_topic_recently', similarTo: recent[0]?.id, score: 0.86 };
+  const recentTopics = recent.slice(0, 10).map((item) => normalizeRemoteText(item.topic || item.title || item.learningTarget || '')).filter(Boolean);
+  if (candidateTopic && recentTopics.slice(0, 3).includes(candidateTopic)) {
+    return { passed: false, reason: 'same_topic_recently', similarTo: recent[0]?.id, score: 0.88 };
   }
 
   for (const item of recent) {
     const itemCorrect = normalizeRemoteText(item.correct || item.normalizedCorrect || '');
-    const itemOptions = String(item.optionSetSignature || '').trim();
-    const itemText = normalizeRemoteText(item.combinedText || [item.branch, item.title, item.learningTarget, item.correct, Array.isArray(item.optionTexts) ? item.optionTexts.join(' | ') : ''].filter(Boolean).join(' | '));
+    const itemOptionHash = String(item.optionSetSignature || '').trim();
+    const itemOptionTexts = Array.isArray(item.optionTexts) ? item.optionTexts.map(normalizeRemoteText).sort((a, b) => a.localeCompare(b, 'tr')).join(' | ') : '';
+    const itemOptions = itemOptionTexts || itemOptionHash;
+    const itemText = normalizeRemoteText(item.combinedText || [item.branch, item.title, item.learningTarget, item.correct, itemOptionTexts].filter(Boolean).join(' | '));
     const itemTitle = normalizeRemoteText(item.title || item.normalizedTitle || '');
-    const itemType = normalizeRemoteText(item.questionType || '');
+    const itemType = normalizeRemoteText(item.questionType || item.answerTarget || '');
     const sameCorrect = candidateCorrect && itemCorrect === candidateCorrect;
-    const sameOptions = candidateOptions && itemOptions && (itemOptions.includes(candidateOptions) || candidateOptions.includes(itemOptions.replace(/^opts-/, '')));
+    const sameOptions = Boolean(candidateOptions && itemOptions && (itemOptions.includes(candidateOptions) || candidateOptions.includes(itemOptions) || (candidateOptionSetHash && itemOptionHash === candidateOptionSetHash)));
     const sameType = !candidateType || !itemType || candidateType === itemType;
     const textSimilarity = remoteSimilarity(candidateText, itemText);
     const titleSimilarity = remoteSimilarity(candidateTitle, itemTitle);
-    if (sameCorrect && sameOptions) return { passed: false, reason: 'option_set_duplicate', similarTo: item.id, score: Math.max(textSimilarity, 0.96) };
-    if (sameType && sameCorrect && textSimilarity >= 0.86) return { passed: false, reason: 'semantic_near_duplicate', similarTo: item.id, score: textSimilarity };
-    if (sameCorrect && titleSimilarity >= 0.92 && textSimilarity >= 0.72) return { passed: false, reason: 'same_title_answer_target', similarTo: item.id, score: Math.max(titleSimilarity, textSimilarity) };
+    if (sameCorrect && sameOptions) return { passed: false, reason: 'option_set_duplicate', similarTo: item.id, score: Math.max(textSimilarity, 0.98) };
+    if (sameCorrect && textSimilarity >= 0.78) return { passed: false, reason: 'same_answer_semantic_repeat', similarTo: item.id, score: textSimilarity };
+    if (sameType && textSimilarity >= 0.86) return { passed: false, reason: 'semantic_near_duplicate', similarTo: item.id, score: textSimilarity };
+    if (titleSimilarity >= 0.9 && (sameCorrect || textSimilarity >= 0.7)) return { passed: false, reason: 'same_title_answer_target', similarTo: item.id, score: Math.max(titleSimilarity, textSimilarity) };
   }
   return { passed: true };
 }
@@ -783,6 +847,7 @@ Bu denemede soru tipi: ${questionType || 'tanı/tedavi/tetkik/mekanizma eksenler
 
 Yakın zamanda üretilen sorular:
 ${recentList || 'Henüz yok.'}
+Bu liste örnek değildir; listedeki soru kökü, başlık, yaş-cinsiyet, seçenek seti, doğru cevap veya klinik karar noktasını kopyalama/parafrazlama. Liste yalnızca yasak tekrar penceresidir.
 
 Son konu penceresi:
 ${previousWindow || 'Henüz yok.'}
@@ -1735,19 +1800,30 @@ function pickSafeFallbackQuestion(context = {}, attemptErrors = []) {
     }
   }
 
-  const candidate = ordered[0]?.item || SAFE_FALLBACK_QUESTION_POOL[0];
-  const question = completeRemoteQuestion({ ...candidate, id: `ai-spot-safe-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, context);
-  const medicalGate = runServerMedicalQualityGate(question);
-  const repaired = medicalGate.question;
-  return {
-    question: repaired,
-    medicalGate,
-    rawValidation: validateRawQuestion(repaired),
-    editorialValidation: validateRemoteEditorialQuality(repaired),
-    diversityValidation: validateRemoteDiversity(repaired, context),
-    bypassedDiversity: true,
-    attemptErrors,
-  };
+  const relaxedPool = ordered.map((entry) => entry.item);
+  for (const candidate of relaxedPool) {
+    const question = completeRemoteQuestion({ ...candidate, id: `ai-spot-safe-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, context);
+    const medicalGate = runServerMedicalQualityGate(question);
+    const repaired = medicalGate.question;
+    const diversityValidation = validateRemoteDiversity(repaired, context);
+    if (diversityValidation.passed) {
+      return {
+        question: repaired,
+        medicalGate,
+        rawValidation: validateRawQuestion(repaired),
+        editorialValidation: validateRemoteEditorialQuality(repaired),
+        diversityValidation,
+        bypassedDiversity: false,
+        relaxedFallback: true,
+        attemptErrors,
+      };
+    }
+  }
+
+  const error = new Error('Safe fallback pool rejected all candidates by diversity gate');
+  error.status = 409;
+  error.attemptErrors = attemptErrors;
+  throw error;
 }
 
 function buildSafeFallbackResponsePayload({ body = {}, attemptErrors = [], startedAt = Date.now() } = {}) {
