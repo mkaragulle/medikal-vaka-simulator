@@ -1,5 +1,5 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v10-natural-stem-feedback';
+const PROMPT_VERSION = 'klinikiq-simple-tus-v11-complete-meaningful-feedback';
 const SCHEMA_VERSION = 'simple-ai-spot-v1';
 
 const SYSTEM_PROMPT = `You are KlinikIQ’s medical question-generation engine.
@@ -17,10 +17,11 @@ Core rules:
 - Use only necessary clinical data; remove irrelevant vitals, labs, imaging, microbiology and hemogram values.
 - Keep data fields clean, complete, correctly labeled and non-repetitive.
 - Use only one clearly correct answer; options must belong to the same category.
-- Never use generic option feedback. Every option explanation must be specific, educational and tied to the option and the case.
+- Every option explanation must be specific, educational, medically meaningful and tied to the option and the case.
 - Evidence chain must contain only concrete clues explicitly present in the stem or data fields. Do not invent, infer or add absent findings.
-- Evidence chain items must be plain Turkish clue sentences only; do not add labels.
-- Avoid vague, generic, duplicated, contradictory or unfinished feedback.
+- Evidence chain items must be plain Turkish clue sentences only; do not add category labels or section-like prefixes.
+- All feedback fields must be complete, meaningful Turkish sentences with clear medical reasoning.
+- Avoid vague, generic, duplicated, contradictory, fragmentary or unfinished feedback.
 - If the chosen branch or target creates ambiguity, switch to a safer, single-answer TUS target within the requested branch.
 - Return only valid JSON. No markdown, no comments, no extra text.`
 
@@ -458,9 +459,10 @@ Feedback rules:
 1. explanation: Write 2-3 concise Turkish sentences explaining the medical reasoning behind the correct answer. It must be case-specific and scientifically clear.
 2. examPearl: Write one short Turkish decision sentence that links the key clue to the correct concept. Do not write isolated data or a raw keyword.
 3. evidenceChain: Write exactly 3 short Turkish sentences. Each sentence must be a concrete clue explicitly present in the stem or data fields. Do not add labels, do not invent new findings, and do not directly repeat the correct answer.
-4. wrongOptionFeedback: Write one specific, educational sentence for every option. The correct option feedback must explain why it fits the case. Wrong option feedback must explain why that option is eliminated in this case. No option feedback may be generic or template-like.
+4. wrongOptionFeedback: Write one specific, educational and medically meaningful sentence for every option. The correct option feedback must explain why it fits the case. Wrong option feedback must explain why that option is eliminated in this case. Each feedback sentence must contain a clear medical reason, not a template-style judgment.
 5. managementSteps: Fill only when the question asks treatment, first step, emergency approach or management. Otherwise return [].
-6. No duplicate sentences, no unfinished sentences, no template remnants and no contradiction with case data.
+6. All feedback fields must be complete Turkish sentences. Do not return sentence fragments, isolated abbreviations, isolated numbers, empty explanations or incomplete reasoning.
+7. No duplicate sentences, no unfinished sentences, no template remnants and no contradiction with case data.
 
 Hard final checks before returning:
 - medically correct
@@ -474,8 +476,11 @@ Hard final checks before returning:
 - no repeated data
 - no question asking for a pattern already shown
 - no invented evidenceChain clue
+- evidenceChain contains only plain clue sentences without labels
 - no generic correct-option feedback
 - no vague wrong-option feedback
+- every feedback value is a meaningful complete sentence
+- no isolated abbreviations, numbers or incomplete reasoning in feedback
 - no duplicated feedback
 - no unfinished or broken Turkish
 - examPearl is a real decision sentence
@@ -510,11 +515,11 @@ JSON schema:
   "correctAnswer": "A",
   "explanation": "2-3 concise Turkish sentences; specific clinical/scientific reasoning only",
   "wrongOptionFeedback": {
-    "A": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated",
-    "B": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated",
-    "C": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated",
-    "D": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated",
-    "E": "one specific, educational sentence tied to this option and the case; state why it fits or why it is eliminated"
+    "A": "one complete, specific and educational Turkish sentence tied to this option and the case; state why it fits or why it is eliminated",
+    "B": "one complete, specific and educational Turkish sentence tied to this option and the case; state why it fits or why it is eliminated",
+    "C": "one complete, specific and educational Turkish sentence tied to this option and the case; state why it fits or why it is eliminated",
+    "D": "one complete, specific and educational Turkish sentence tied to this option and the case; state why it fits or why it is eliminated",
+    "E": "one complete, specific and educational Turkish sentence tied to this option and the case; state why it fits or why it is eliminated"
   },
   "evidenceChain": [
     "plain case clue sentence; no label; must be explicitly present in stem or data fields",

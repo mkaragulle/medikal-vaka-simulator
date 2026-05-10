@@ -519,16 +519,19 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
   });
 }
 
-function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, className = '' }) {
+function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, className = '', minimal = false }) {
+  const shouldRenderHead = !minimal && (icon || eyebrow || title);
   return (
-    <section className={`feedback-card ${className}`.trim()}>
-      <header className="feedback-card-head">
-        <IconBadge icon={icon} tone={tone} size="sm" />
-        <div>
-          {eyebrow ? <span>{eyebrow}</span> : null}
-          <h4>{title}</h4>
-        </div>
-      </header>
+    <section className={`feedback-card ${minimal ? 'feedback-card-minimal' : ''} ${className}`.trim()}>
+      {shouldRenderHead ? (
+        <header className="feedback-card-head">
+          {icon ? <IconBadge icon={icon} tone={tone} size="sm" /> : null}
+          <div>
+            {eyebrow ? <span>{eyebrow}</span> : null}
+            {title ? <h4>{title}</h4> : null}
+          </div>
+        </header>
+      ) : null}
       {children}
     </section>
   );
@@ -578,14 +581,15 @@ function ExamNoteFeedback({ signal, glossaryEnabled = true }) {
   );
 }
 
-function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true }) {
+function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true, minimal = false }) {
   return (
     <FeedbackSection
-      icon={isCorrect ? 'Brain' : 'AlertTriangle'}
+      icon={minimal ? null : (isCorrect ? 'Brain' : 'AlertTriangle')}
       tone={isCorrect ? 'blue' : 'warning'}
-      eyebrow="Klinik/Bilimsel gerekçe"
-      title={isCorrect ? 'Gerekçe' : 'Seçim değerlendirmesi'}
-      className="reasoning-evidence-card clinical-reasoning-card"
+      eyebrow={minimal ? '' : 'Klinik/Bilimsel gerekçe'}
+      title={minimal ? '' : (isCorrect ? 'Gerekçe' : 'Seçim değerlendirmesi')}
+      className={`reasoning-evidence-card clinical-reasoning-card ${minimal ? 'minimal-reasoning-card' : ''}`.trim()}
+      minimal={minimal}
     >
       <p className="feedback-body-copy"><GlossaryText text={ensureSentence(reasoningText)} enabled={glossaryEnabled} /></p>
     </FeedbackSection>
@@ -593,25 +597,39 @@ function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true
 }
 
 
-function TusTipCard({ pearl, glossaryEnabled = true }) {
+function TusTipCard({ pearl, glossaryEnabled = true, minimal = false }) {
   if (!pearl) return null;
   return (
-    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="TUS ipucu" title="Karar cümlesi" className="tus-single-line-tip-card">
+    <FeedbackSection
+      icon={minimal ? null : 'Sparkles'}
+      tone="accent"
+      eyebrow={minimal ? '' : 'TUS ipucu'}
+      title={minimal ? '' : 'Karar cümlesi'}
+      className={`tus-single-line-tip-card ${minimal ? 'minimal-tip-card' : ''}`.trim()}
+      minimal={minimal}
+    >
       <p className="feedback-body-copy tus-single-line-tip"><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} /></p>
     </FeedbackSection>
   );
 }
 
-function EvidenceChainCard({ evidenceChain, glossaryEnabled = true }) {
+function EvidenceChainCard({ evidenceChain, glossaryEnabled = true, minimal = false }) {
   if (!evidenceChain.length) return null;
   return (
-    <FeedbackSection icon="ClipboardList" tone="teal" eyebrow="Kanıt zinciri" title="Vakadaki ipuçları" className="evidence-chain-card">
-      <ol className="evidence-chain-list evidence-chain-list-pro">
+    <FeedbackSection
+      icon={minimal ? null : 'ClipboardList'}
+      tone="teal"
+      eyebrow={minimal ? '' : 'Kanıt zinciri'}
+      title={minimal ? '' : 'Vakadaki ipuçları'}
+      className={`evidence-chain-card ${minimal ? 'minimal-evidence-card' : ''}`.trim()}
+      minimal={minimal}
+    >
+      <ol className={`evidence-chain-list evidence-chain-list-pro ${minimal ? 'minimal-evidence-list' : ''}`.trim()}>
         {evidenceChain.map((item, index) => (
           <li key={`${item.title}-${item.text}-${index}`}>
             <b>{index + 1}</b>
             <div className="evidence-chain-copy">
-              <strong><GlossaryText text={item.title} enabled={glossaryEnabled} /></strong>
+              {!minimal && item.title ? <strong><GlossaryText text={item.title} enabled={glossaryEnabled} /></strong> : null}
               <p><GlossaryText text={ensureSentence(item.text)} enabled={glossaryEnabled} /></p>
             </div>
           </li>
@@ -637,15 +655,22 @@ function ClinicalPearlsList({ pearls, glossaryEnabled = true }) {
   );
 }
 
-function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase = false }) {
+function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase = false, minimal = false }) {
   if (!comparisons.length) return null;
   return (
-    <FeedbackSection icon="Target" tone="warning" eyebrow="Seçenek karşılaştırması" title={isSpotCase ? 'Şıklar nasıl elenir?' : 'Ayırıcı karar'} className="option-comparison-card differential-comparison-card">
-      <div className="option-comparison-list">
+    <FeedbackSection
+      icon={minimal ? null : 'Target'}
+      tone="warning"
+      eyebrow={minimal ? '' : 'Seçenek karşılaştırması'}
+      title={minimal ? '' : (isSpotCase ? 'Şıklar nasıl elenir?' : 'Ayırıcı karar')}
+      className={`option-comparison-card differential-comparison-card ${minimal ? 'minimal-option-comparison-card' : ''}`.trim()}
+      minimal={minimal}
+    >
+      <div className={`option-comparison-list ${minimal ? 'minimal-option-comparison-list' : ''}`.trim()}>
         {comparisons.map((item, index) => (
-          <article className={`option-comparison-item ${item.status} ${item.isSelected ? 'selected-option' : ''}`.trim()} key={`${item.option}-${index}`}>
-            <div className="option-comparison-head">
-              <span className={`option-comparison-status ${item.status}`}>{item.status === 'correct' ? 'Doğru' : item.isSelected ? 'Seçimin' : 'Alternatif'}</span>
+          <article className={`option-comparison-item ${item.status} ${item.isSelected ? 'selected-option' : ''} ${minimal ? 'minimal-option-card' : ''}`.trim()} key={`${item.option}-${index}`}>
+            <div className={`option-comparison-head ${minimal ? 'minimal' : ''}`.trim()}>
+              {minimal ? (item.status === 'correct' ? <div className="option-comparison-kicker">Doğru cevap</div> : item.isSelected ? <div className="option-comparison-kicker">Seçimin</div> : null) : <span className={`option-comparison-status ${item.status}`}>{item.status === 'correct' ? 'Doğru' : item.isSelected ? 'Seçimin' : 'Alternatif'}</span>}
               <strong><GlossaryText text={item.option} enabled={glossaryEnabled} /></strong>
             </div>
             <p><GlossaryText text={ensureSentence(item.explanation)} enabled={glossaryEnabled} /></p>
@@ -709,10 +734,10 @@ function AnswerFeedbackPanel({
     return (
       <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">
         <div className="answer-feedback-grid answer-feedback-grid-pro ai-spot-compact-feedback-grid">
-          <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />
-          <TusTipCard pearl={singleLinePearl} glossaryEnabled={glossaryEnabled} />
-          <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} />
-          <OptionComparisonCard comparisons={optionComparisons} glossaryEnabled={glossaryEnabled} isSpotCase />
+          <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} minimal />
+          <TusTipCard pearl={singleLinePearl} glossaryEnabled={glossaryEnabled} minimal />
+          <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} minimal />
+          <OptionComparisonCard comparisons={optionComparisons} glossaryEnabled={glossaryEnabled} isSpotCase minimal />
         </div>
 
         {children ? <div className="answer-feedback-actions">{children}</div> : null}
