@@ -1,5 +1,5 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v4-prompt-only';
+const PROMPT_VERSION = 'klinikiq-simple-tus-v5-compact-feedback';
 const SCHEMA_VERSION = 'simple-ai-spot-v1';
 
 const ALLOWED_BRANCHES = [
@@ -267,7 +267,6 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const correctText = getCorrectText({ ...question, options });
   const allText = collectStrings(question).join(' | ');
 
-  if (!question.title || cleanText(question.title).length < 4) errors.push('title eksik');
   if (!question.relatedBranch || cleanText(question.relatedBranch).length < 3) errors.push('branch eksik');
   if (!question.stem || cleanText(question.stem).split(/\s+/).length < 25) errors.push('stem çok kısa');
   if (!question.question || !/\?$/u.test(ensureQuestion(question.question))) errors.push('question net soru cümlesi değil');
@@ -282,7 +281,6 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
     if (pattern.test(allText)) errors.push('jenerik/yasak feedback kalıbı var');
   });
 
-  if (correctText && containsAnswerLeak(question.title, correctText)) errors.push('başlık doğru cevabı ele veriyor');
   if (correctText && containsAnswerLeak(getPreAnswerDataText({ ...question, title: '' }), correctText)) errors.push('soru kökü/veri paneli doğru cevabı ele veriyor');
   if (asArray(question.evidenceChain).some((item) => containsAnswerLeak(item, correctText))) errors.push('kanıt zinciri doğru cevabı doğrudan söylüyor');
   if (hasDuplicateFeedbackSentences(question)) errors.push('feedback içinde tekrar eden cümle var');
@@ -292,12 +290,11 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const dominant = categories.sort((a, b) => categories.filter((x) => x === b).length - categories.filter((x) => x === a).length)[0];
   if (dominant && categories.filter((category) => category !== dominant).length >= 2) errors.push('seçenekler aynı kavramsal kategoride değil');
 
-  const titleNorm = normalize(question.title);
+  const titleNorm = normalize(question.title || '');
   const correctNorm = normalize(correctText);
   const optionSetNorm = normalize(options.map((item) => item.text).sort().join(' | '));
   const stemNorm = normalize(question.stem);
   asArray(recentQuestionSummaries).slice(0, 12).forEach((recent) => {
-    if (titleNorm && normalize(recent.title) === titleNorm) errors.push('yakın geçmişte aynı başlık var');
     if (correctNorm && normalize(recent.correct || recent.correctAnswer) === correctNorm && optionSetNorm && normalize(asArray(recent.optionTexts).slice().sort().join(' | ') || recent.optionSetSignature) === optionSetNorm) errors.push('yakın geçmişte aynı doğru cevap ve seçenek seti var');
     const recentStem = normalize(recent.stem || recent.normalizedStem || '');
     if (stemNorm.length > 100 && recentStem.length > 100 && (stemNorm.includes(recentStem.slice(0, 100)) || recentStem.includes(stemNorm.slice(0, 100)))) errors.push('yakın geçmişte aynı soru kökü var');
@@ -321,14 +318,14 @@ function sanitizeQuestion(question = {}, branch) {
     id: cleanText(question.id) || `ai-spot-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     source: 'real-ai',
     caseType: 'ai-spot',
-    title: cleanText(question.title),
+    title: cleanText(question.title || ''),
     relatedBranch: cleanText(question.relatedBranch || branch),
     difficulty: cleanText(question.difficulty || 'Orta'),
     learningTarget: cleanText(question.learningTarget || 'TUS düzeyinde tek karar noktasını yorumlama.'),
     answerTarget,
     demographics: cleanText(question.demographics || ''),
     setting: cleanText(question.setting || 'Klinik değerlendirme'),
-    chiefComplaint: cleanText(question.chiefComplaint || question.title || ''),
+    chiefComplaint: cleanText(question.chiefComplaint || ''),
     stem: ensureSentence(question.stem),
     compactVitals: compactItems(question.compactVitals || question.vitals || [], 5),
     compactObjectiveData: compactItems(question.compactObjectiveData || question.objectiveData || [], 8),
@@ -413,7 +410,7 @@ ${recent}
 Kurallar:
 - Tek köklü, tek doğru cevaplı, TUS tarzında kısa klinik soru yaz.
 - Her soruda yalnız tek öğrenme hedefi olsun: tanı, test, tedavi, mekanizma veya komplikasyon hedeflerini karıştırma.
-- Başlık, vaka ve soru kökü aynı hedefe hizmet etsin. Başlık vaka metninde desteklenen ana klinik durumu yansıtsın; vaka dışı bilgi, doğru tanı, etken, komplikasyon, mekanizma veya doğru laboratuvar bulgusu yazmasın.
+- AI sorusu için başlık üretme; title alanını boş string döndür. Kullanıcı arayüzünde başlık gösterilmeyecek, bu yüzden klinik hedefi stem ve question içinde net kur.
 - Soru kökü veya veri paneli doğru cevabı aynen tekrar etmesin; verilen bulgu sorulacaksa yorumu sorulsun.
 - “İlk yaklaşım”, “ilk ilaç”, “tanıyı destekleyen test”, “doğrulama testi” ve “tarama testi” ifadelerini bilimsel anlamına uygun kullan. Profilaksi, replasman, tedavi ve tarama dilini karıştırma; mevcut eksiklik/hastalık varsa profilaksi değil tedavi veya replasman dili kullan.
 - “En uygun” birden fazla doğru seçenek doğuracaksa kökü uzun etkili, antibiyotik öncesi, doğrulama testi, ilk ilaç, tanısal ilk test gibi ifadelerle daralt. Yakın çeldiriciler varsa tek doğru cevabı belirginleştiren ayırıcı bulguyu köke ekle.
@@ -424,9 +421,11 @@ Kurallar:
 - EKG yoksa EKG paterni, laboratuvar yoksa laboratuvar bulgusu, tedavi sorusu değilse tedavi adımı/yönetim dili kullanma.
 - Etik-hukuki soru üretme; zorunluysa hasta rızası, karar verme kapasitesi, yazılı onam, anonimleştirme, etik kurul ve kişisel sağlık verisi kavramlarını karıştırma; seçenekleri daha nüanslı ve aynı kategoride tut.
 - Branş ve soru hedefi uyumlu olsun: Anatomi sorusu çoğunlukla sinir-kas-yapı ilişkisini sorsun; test seçimi/elektrofizyoloji yorumu gerekiyorsa daha uygun branş seç. Folat, K vitamini, anti-CCP gibi klasik bilgi sorularında gereksiz uzun vaka yazma.
-- Feedback formatı kısa olsun: klinik/bilimsel gerekçe 2-4 cümle, TUS ipucu tek satır karar cümlesi, kanıt zinciri 3 kısa vaka ipucu, seçenek karşılaştırması kısa ve özgül.
-- TUS ipucu tek başına veri yazmasın; verinin hangi tanı, mekanizma, test veya yaklaşımı düşündürdüğünü net söylesin. “TUS ipucu: Spot bilgi:” gibi çift başlık kullanma.
+- Feedback formatı kompakt olsun: önce klinik/bilimsel gerekçe 2-3 cümle, sonra TUS ipucu tek satır, sonra kanıt zinciri 3 kısa vaka ipucu, en sonda seçenek karşılaştırması.
+- TUS ipucu tek satır karar cümlesi olsun; tek başına veri yazma, ikinci başlık veya tekrar kullanma.
 - Kanıt zinciri doğru cevabı doğrudan tekrar etmesin; yalnız vakadaki gerçek ipuçlarını göstersin. Feedback kısa notları vaka verisiyle çelişmesin; hipokalemide 'K yüksek', hipertansiyonda 'hipotansiyon' gibi ters ifade kullanma.
+- Doğru seçenek açıklaması klinik gerekçenin aynısı olmasın; doğru seçenek kartı bir cümlelik öğretici özet, yanlış seçenekler ise her biri tek cümlelik özgül eleme gerekçesi olsun.
+- Boş, şablon kalan veya yarım cümle görünen feedback alanı üretme; içerik yoksa alanı boş bırak.
 - “Yanlıştır” diye başlayan tekrarlı cümleler, şablon kalıntıları ve jenerik kalıplar kullanma. Aynı açıklamayı iki kez yazma.
 - Yarım cümle, eksik değer, tekrar eden veri satırı veya bozuk Türkçe bırakma.
 - Eğer bilimsel doğruluktan emin değilsen daha temel, tek doğru cevaplı ve güvenli bir TUS konusu seç.
@@ -434,7 +433,7 @@ Kurallar:
 Sadece geçerli JSON döndür. Markdown yok.
 JSON alanları:
 {
-  "title":"cevabı ele vermeyen kısa başlık",
+  "title":"",
   "relatedBranch":"${branch}",
   "difficulty":"Kolay|Orta|Zor",
   "learningTarget":"tek öğrenme hedefi",
@@ -448,8 +447,8 @@ JSON alanları:
   "question":"tek ve net soru cümlesi",
   "options":[{"id":"A","text":"..."},{"id":"B","text":"..."},{"id":"C","text":"..."},{"id":"D","text":"..."},{"id":"E","text":"..."}],
   "correctAnswer":"A",
-  "explanation":"Klinik/Bilimsel gerekçe: doğru cevabı 2-4 cümleyle açıkla; tekrar yapma",
-  "wrongOptionFeedback":{"A":"...","B":"...","C":"...","D":"...","E":"..."},
+  "explanation":"doğru cevabı 2-3 cümleyle açıklayan klinik/bilimsel gerekçe; başlık etiketi yazma",
+  "wrongOptionFeedback":{"A":"her seçenek için tek cümlelik öğretici açıklama; doğru seçenek açıklaması explanation ile aynı olmasın","B":"...","C":"...","D":"...","E":"..."},
   "evidenceChain":["vakadaki somut ipucu","vakadaki somut ipucu","vakadaki somut ipucu"],
   "examPearl":"tek satırlık yüksek verimli karar cümlesi; veri tek başına kalmasın, başlık etiketi yazma",
   "managementSteps":["yalnız ilk yaklaşım/tedavi sorularında gerekli kısa basamak"],
@@ -477,7 +476,7 @@ async function callOpenAI(prompt) {
       ? {
           model,
           input: [
-            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Keep title, stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
+            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Do not create a visible question title. Keep stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
             { role: 'user', content: prompt },
           ],
           text: { format: { type: 'json_object' } },
@@ -487,7 +486,7 @@ async function callOpenAI(prompt) {
       : {
           model,
           messages: [
-            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Keep title, stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
+            { role: 'system', content: 'You write concise, medically accurate Turkish TUS questions. Do not create a visible question title. Keep stem, options, data fields and feedback aligned to one target. Return only valid JSON.' },
             { role: 'user', content: prompt },
           ],
           response_format: { type: 'json_object' },
@@ -527,7 +526,7 @@ async function generateRemote({ branch, recentQuestionSummaries, attempt, antiRe
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
     const criticalErrors = validation.errors.filter((message) =>
-      /title eksik|branch eksik|stem çok kısa|question net|tam 5 seçenek|correctAnswer|başlık doğru cevabı ele veriyor|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor/iu.test(message)
+      /branch eksik|stem çok kısa|question net|tam 5 seçenek|correctAnswer|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor/iu.test(message)
     );
     if (criticalErrors.length) {
       const error = new Error(criticalErrors.join('; '));

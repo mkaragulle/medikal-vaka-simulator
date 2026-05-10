@@ -35203,3 +35203,40 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
   white-space: normal !important;
   text-align: left !important;
 }
+
+
+/* AI spot compact feedback/title refinements */
+.ai-spot-narrative-heading.no-title {
+  margin-bottom: 18px;
+}
+
+.ai-spot-narrative-heading.no-title p {
+  margin-top: 4px;
+  max-width: 680px;
+}
+
+.ai-spot-compact-feedback-grid {
+  gap: 10px;
+}
+
+.tus-single-line-tip {
+  margin: 0;
+  font-size: clamp(13.5px, 1.2vw, 15px);
+  line-height: 1.62;
+}
+
+.ai-spot-compact-feedback-grid .feedback-card {
+  padding: clamp(13px, 1.45vw, 18px);
+}
+
+.ai-spot-compact-feedback-grid .option-comparison-list {
+  gap: 8px;
+}
+
+.ai-spot-compact-feedback-grid .option-comparison-item {
+  padding: 10px 11px;
+}
+
+.ai-spot-compact-feedback-grid .option-comparison-item p {
+  margin-bottom: 0;
+}

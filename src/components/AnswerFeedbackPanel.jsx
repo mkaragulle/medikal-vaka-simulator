@@ -47,6 +47,73 @@ function normalizeText(value = '') {
     .trim();
 }
 
+
+function normalizeForCompare(value = '') {
+  return normalizeText(value)
+    .toLocaleLowerCase('tr')
+    .replace(/[ıİ]/g, 'i')
+    .replace(/[ğĞ]/g, 'g')
+    .replace(/[üÜ]/g, 'u')
+    .replace(/[şŞ]/g, 's')
+    .replace(/[öÖ]/g, 'o')
+    .replace(/[çÇ]/g, 'c')
+    .replace(/[^a-z0-9+\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function containsAnswerLeak(text = '', correct = '') {
+  const value = normalizeForCompare(text);
+  const answer = normalizeForCompare(correct);
+  if (!value || !answer || answer.length < 5) return false;
+  if (value.includes(answer)) return true;
+  const words = answer.split(/\s+/u).filter((word) => word.length >= 4);
+  if (words.length < 2) return false;
+  return words.filter((word) => value.includes(word)).length >= Math.ceil(words.length * 0.8);
+}
+
+function singleSentence(value = '', limit = 220) {
+  const first = splitIntoSentences(value)[0] || normalizeText(value);
+  return truncateSentence(first, limit);
+}
+
+function stripFeedbackHeading(value = '') {
+  return normalizeText(value)
+    .replace(/^\s*(?:TUS\s*ipucu|Spot\s*bilgi|Hap\s*bilgi|Sınav\s*notu|Klinik\/Bilimsel\s*gerekçe|Klinik\s*gerekçe|Kanıt\s*zinciri)\s*[:：-]\s*/iu, '')
+    .replace(/^\s*(?:TUS\s*ipucu|Spot\s*bilgi)\s*[:：-]\s*/iu, '')
+    .trim();
+}
+
+function textLooksSame(a = '', b = '', threshold = 0.9) {
+  const left = normalizeForCompare(a);
+  const right = normalizeForCompare(b);
+  if (!left || !right) return false;
+  if (left === right) return true;
+  const leftWords = new Set(left.split(/\s+/u).filter((word) => word.length > 2));
+  const rightWords = new Set(right.split(/\s+/u).filter((word) => word.length > 2));
+  if (!leftWords.size || !rightWords.size) return false;
+  let overlap = 0;
+  leftWords.forEach((word) => { if (rightWords.has(word)) overlap += 1; });
+  return overlap / Math.min(leftWords.size, rightWords.size) >= threshold;
+}
+
+function deriveSingleLinePearl(clinicalCase = {}, reasoningText = '') {
+  const feedback = getFeedback(clinicalCase);
+  const raw = feedback.spotPearl
+    || feedback.examPearl
+    || feedback.pearls?.[0]?.text
+    || feedback.pearls?.[0]
+    || feedback.clinicalPearls?.[0]?.text
+    || feedback.clinicalPearls?.[0]
+    || clinicalCase.examPearl
+    || clinicalCase.examPearls?.[0]
+    || clinicalCase.diagnosis?.pearls?.[0]
+    || '';
+  const pearl = singleSentence(stripFeedbackHeading(raw), 230);
+  if (!pearl || textLooksSame(pearl, reasoningText, 0.86)) return '';
+  return pearl;
+}
+
 function itemText(value) {
   if (!value) return '';
   if (typeof value === 'string') return normalizeText(value);
@@ -318,10 +385,13 @@ function deriveEvidenceChain(clinicalCase) {
     explanationSentences.slice(0, 2).forEach((sentence) => rawEvidence.push({ title: 'Gerekçe ipucu', text: trimTrailingPunctuation(sentence) }));
   }
 
+  const correct = clinicalCase.diagnosis?.correct || '';
   return unique(rawEvidence)
     .slice(0, MAX_EVIDENCE_ITEMS)
     .map(cleanEvidenceText)
-    .filter(Boolean);
+    .filter(Boolean)
+    .filter((item) => !containsAnswerLeak(`${item.title} ${item.text}`, correct))
+    .slice(0, 3);
 }
 
 function inferPearlLabel(text = '', index = 0) {
@@ -396,6 +466,25 @@ function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) 
   return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(item, 155));
 }
 
+
+function deriveCorrectOptionSummary(clinicalCase, option, evidenceChain = []) {
+  const feedback = getFeedback(clinicalCase);
+  const explicit = feedback.correctOptionFeedback
+    || feedback.correctChoiceFeedback
+    || feedback.optionRationales?.[option]
+    || feedback.differentialComparison?.[option]?.explanation
+    || '';
+  if (explicit && !textLooksSame(explicit, feedback.whyCorrect || clinicalCase.diagnosis?.explanation || '', 0.86)) {
+    return singleSentence(removeMetaLanguage(explicit), 210);
+  }
+  const clue = evidenceChain[0]?.text || getMainClue(clinicalCase);
+  const target = normalizeText(clinicalCase.answerTarget || clinicalCase.questionType || '').toLocaleLowerCase('tr');
+  if (/mechanism|mekanizma/iu.test(target)) return `${option} verilen bulguyu en doğrudan açıklayan mekanizmayı temsil eder.`;
+  if (/diagnostic_test|test|laboratuvar|lab/iu.test(target)) return `${option} bu klinik hedef için en uygun tanısal yönü öne çıkarır.`;
+  if (/first_step|next_step|treatment|tedavi/iu.test(target)) return `${option} bu tabloda öncelik sırasını en doğru karşılayan yaklaşımdır.`;
+  return `${option} ${clue ? `${trimTrailingPunctuation(clue)} ile birlikte değerlendirildiğinde` : 'vaka ipuçlarıyla'} diğer seçeneklerden ayrılır.`;
+}
+
 function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []) {
   const feedback = getFeedback(clinicalCase);
   const correct = clinicalCase.diagnosis?.correct;
@@ -412,22 +501,20 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         status: 'correct',
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
-        explanation: truncateSentence(whyCorrect, 260),
-        comparisonPoints: clue ? [`${trimTrailingPunctuation(clue)} seçenekler arasındaki temel ayrımı gösterir.`] : [],
+        explanation: singleSentence(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain), 210),
+        comparisonPoints: [],
       };
     }
 
     const explicit = wrongMap[option] || {};
-    const explanation = removeMetaLanguage(explicit.explanation || `${option} ilk bakışta aynı karar alanında düşünülebilir; ancak bu olguda ${clue ? `${clue} ` : 'kanıt zinciri '}bu alternatifi öncelikli yanıt yapacak yeterli desteği sağlamaz. Bu seçenek ana ipucunu eksik açıklar.`);
-    const nonGenericPoints = unique(explicit.comparisonPoints || []).filter((point) => !isGenericComparisonPoint(point));
-
+    const explanation = singleSentence(removeMetaLanguage(explicit.explanation || `${option} ilk bakışta aynı karar alanında düşünülebilir; ancak bu olguda ${clue ? `${clue} ` : 'kanıt zinciri '}bu alternatifi öncelikli yanıt yapacak yeterli desteği sağlamaz.`), 190);
     return {
       option,
       status: 'wrong',
       isSelected: selectedOption === option,
       title: selectedOption === option ? 'Seçtiğin alternatif' : 'Neden elenir?',
-      explanation: truncateSentence(explanation, 260),
-      comparisonPoints: (nonGenericPoints.length ? nonGenericPoints : buildNaturalComparisonPoints(clinicalCase, option, evidenceChain)).slice(0, 3),
+      explanation,
+      comparisonPoints: [],
     };
   });
 }
@@ -505,6 +592,16 @@ function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true
   );
 }
 
+
+function TusTipCard({ pearl, glossaryEnabled = true }) {
+  if (!pearl) return null;
+  return (
+    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="TUS ipucu" title="Karar cümlesi" className="tus-single-line-tip-card">
+      <p className="feedback-body-copy tus-single-line-tip"><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} /></p>
+    </FeedbackSection>
+  );
+}
+
 function EvidenceChainCard({ evidenceChain, glossaryEnabled = true }) {
   if (!evidenceChain.length) return null;
   return (
@@ -552,13 +649,6 @@ function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase 
               <strong><GlossaryText text={item.option} enabled={glossaryEnabled} /></strong>
             </div>
             <p><GlossaryText text={ensureSentence(item.explanation)} enabled={glossaryEnabled} /></p>
-            {item.comparisonPoints?.length ? (
-              <ul className="comparison-point-list">
-                {item.comparisonPoints.slice(0, 3).map((point, pointIndex) => (
-                  <li key={`${point}-${pointIndex}`}><span className="comparison-point-copy"><GlossaryText text={ensureSentence(point)} enabled={glossaryEnabled} /></span></li>
-                ))}
-              </ul>
-            ) : null}
           </article>
         ))}
       </div>
@@ -612,6 +702,23 @@ function AnswerFeedbackPanel({
   const examSignal = dedupedFeedback.signal;
   const pearls = dedupedFeedback.pearls;
   const shouldRenderPearls = pearls.length && (!isSpotCase || !examSignal.hasContent);
+  const isAISpot = clinicalCase.caseType === 'ai-spot';
+  const singleLinePearl = deriveSingleLinePearl(clinicalCase, reasoningText);
+
+  if (isAISpot) {
+    return (
+      <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">
+        <div className="answer-feedback-grid answer-feedback-grid-pro ai-spot-compact-feedback-grid">
+          <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} />
+          <TusTipCard pearl={singleLinePearl} glossaryEnabled={glossaryEnabled} />
+          <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} />
+          <OptionComparisonCard comparisons={optionComparisons} glossaryEnabled={glossaryEnabled} isSpotCase />
+        </div>
+
+        {children ? <div className="answer-feedback-actions">{children}</div> : null}
+      </div>
+    );
+  }
 
   return (
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">

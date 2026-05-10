@@ -213,7 +213,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const examPearl = ensureSentence(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || 'Benzer TUS sorularında karar verdirici ipucu, soru kökünün sorduğu hedefe göre yorumlanır.');
   const explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || 'Olgudaki klinik veriler birlikte değerlendirildiğinde doğru seçenek diğerlerinden ayrılır.');
   const optionRationales = payload.optionRationales || payload.wrongOptionFeedback || payload.rationales || {};
-  const title = cleanText(payload.title || payload.t || 'TUS spot klinik karar');
+  const title = cleanText(payload.title || payload.t || '');
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -229,7 +229,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     answerTarget,
     demographics: cleanText(payload.demographics || payload.d || ''),
     setting: cleanText(payload.setting || 'Klinik değerlendirme'),
-    chiefComplaint: cleanText(payload.chiefComplaint || payload.cc || title),
+    chiefComplaint: cleanText(payload.chiefComplaint || payload.cc || ''),
     stem,
     narrativeStem: stem,
     stemMode: 'narrative',
@@ -253,7 +253,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
       profile: cleanText(payload.demographics || normalizedBranch),
-      presentation: cleanText(payload.chiefComplaint || title),
+      presentation: cleanText(payload.chiefComplaint || payload.cc || ''),
       riskContext: '',
       distinctiveClues: evidenceChain.slice(0, 4),
       historySummary: stem,
@@ -266,7 +266,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       pearls: [examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: explanation,
-        evidenceChain: evidenceChain.length ? evidenceChain : [stem, cleanText(payload.chiefComplaint || title)].filter(Boolean).map(ensureSentence).slice(0, 3),
+        evidenceChain: evidenceChain.length ? evidenceChain : [stem, cleanText(payload.chiefComplaint || payload.cc || '')].filter(Boolean).map(ensureSentence).slice(0, 3),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),
         differentialComparison: buildDifferentialComparison({ options, correctOption, optionRationales, wrongOptionFeedback: payload.wrongOptionFeedback || {} }),

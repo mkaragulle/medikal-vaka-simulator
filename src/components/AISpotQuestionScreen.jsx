@@ -6,7 +6,6 @@ import {
   buildAISpotContextLine,
   buildAISpotNarrativeStem,
   buildAISpotQuestionPrompt,
-  buildSafeAISpotTitle,
   getAISpotPreviewDiagnostics,
   getAISpotSupportDataGroups,
 } from '../utils/aiSpotNarrative.js';
@@ -54,7 +53,6 @@ function CompactDataGroup({ title, items = [] }) {
 }
 
 function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) {
-  const title = buildSafeAISpotTitle(question);
   const contextLine = buildAISpotContextLine(question);
   const paragraphs = buildAISpotNarrativeStem(question);
   const supportDataGroups = getAISpotSupportDataGroups(question);
@@ -69,17 +67,15 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
     >
       <div className="ai-spot-narrative-topline">
         <div className="ai-spot-narrative-badges" aria-label="Soru üst bilgisi">
-          <AISpotMetaBadge icon="Sparkles">TUS Spot Olgular · AI Spot</AISpotMetaBadge>
           <AISpotMetaBadge icon="Stethoscope" tone="blue">{question.relatedBranch || question.branchName || 'TUS'}</AISpotMetaBadge>
           <AISpotMetaBadge icon="Trophy" tone="amber">{difficultyMeta.label} · {difficultyMeta.points}p</AISpotMetaBadge>
         </div>
       </div>
 
-      <div className="ai-spot-narrative-heading">
+      <div className="ai-spot-narrative-heading no-title">
         <IconBadge icon="ClipboardList" tone="teal" size="lg" />
         <div>
-          <span className="ai-spot-narrative-eyebrow">Tek akışlı soru kökü</span>
-          <h1><GlossaryText text={title} enabled={!hardMode} /></h1>
+          <span className="ai-spot-narrative-eyebrow">Klinik olgu</span>
           <p><GlossaryText text={contextLine} enabled={!hardMode} /></p>
         </div>
       </div>
