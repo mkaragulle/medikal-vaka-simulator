@@ -25,16 +25,9 @@
     "qa:ai-spot-question-stem-inline": "node scripts/run-ai-spot-question-stem-inline-test.mjs",
     "qa:glossary-inline-flow": "node scripts/run-glossary-inline-flow-test.mjs",
     "qa:ai-scientific-regression": "node scripts/run-ai-scientific-quality-regression-test.mjs",
-    "qa:pearl-active-recall-language": "node scripts/run-pearl-active-recall-language-test.mjs",
-    "mobile:build": "vite build --mode mobile --minify false && npx cap sync android",
-    "mobile:open:android": "npx cap open android",
-    "mobile:build:remote": "vite build --minify false && npx cap sync android",
-    "mobile:apk:debug": "npm run mobile:build && cd android && ./gradlew assembleDebug"
+    "qa:pearl-active-recall-language": "node scripts/run-pearl-active-recall-language-test.mjs"
   },
   "dependencies": {
-    "@capacitor/android": "^8.3.3",
-    "@capacitor/cli": "^8.3.3",
-    "@capacitor/core": "^8.3.3",
     "@vitejs/plugin-react": "^5.1.4",
     "firebase": "^12.12.1",
     "react": "^19.2.5",

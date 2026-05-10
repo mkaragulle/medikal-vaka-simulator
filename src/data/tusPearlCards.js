@@ -2717,19 +2717,46 @@ function normalizeOption(value = '') {
   return String(value || '').replace(/\s+/g, ' ').trim();
 }
 
+function normalizeOptionKey(value = '') {
+  return normalizeOption(value)
+    .toLocaleLowerCase('tr')
+    .replace(/intravenöz|intravenoz/giu, 'iv')
+    .replace(/(^|\s)[ıi]v(?=\s|$)/giu, '$1iv')
+    .replace(/adrenalin|epinefrin/giu, 'adrenalin')
+    .replace(/insülin|insulin/giu, 'insulin')
+    .replace(/glukoz|dekstroz|glucose/giu, 'glukoz')
+    .replace(/k\+|k⁺/giu, 'potasyum')
+    .replace(/[.;:!?()]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function uniqueOptionsBySemanticKey(items = [], forbiddenKey = '') {
+  const seen = new Set([forbiddenKey].filter(Boolean));
+  const out = [];
+  items.forEach((item) => {
+    const text = normalizeOption(item);
+    const key = normalizeOptionKey(text);
+    if (!text || !key || seen.has(key)) return;
+    seen.add(key);
+    out.push(text);
+  });
+  return out;
+}
+
 function buildDistractors(card, index) {
+  const correctKey = normalizeOptionKey(card.back);
   const sameBranch = TUS_PEARL_CARDS
     .filter((item) => item.branchId === card.branchId && item.id !== card.id)
-    .map((item) => normalizeOption(item.back))
-    .filter((item) => item && item !== normalizeOption(card.back));
+    .map((item) => normalizeOption(item.back));
   const global = TUS_PEARL_CARDS
     .filter((item) => item.branchId !== card.branchId)
-    .map((item) => normalizeOption(item.back))
-    .filter((item) => item && item !== normalizeOption(card.back));
-  const pool = [...new Set([...sameBranch, ...global])];
+    .map((item) => normalizeOption(item.back));
+  const pool = uniqueOptionsBySemanticKey([...sameBranch, ...global], correctKey);
   if (!pool.length) return ['Yakın ama eksik seçenek', 'Farklı mekanizma', 'Geç dönem komplikasyon', 'Destekleyici bulgu'];
   const start = (index * 7) % pool.length;
-  return [0, 1, 2, 3].map((offset) => pool[(start + offset) % pool.length]).filter(Boolean);
+  const rotated = [...pool.slice(start), ...pool.slice(0, start)];
+  return uniqueOptionsBySemanticKey(rotated, correctKey).slice(0, 4);
 }
 
 export const TUS_PEARL_AI_SEEDS = TUS_PEARL_CARDS.slice(0, 220).map((card, index) => {

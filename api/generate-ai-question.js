@@ -1,4 +1,11 @@
+import { repairScientificAccuracy, scientificAccuracyGate } from '../src/utils/clinicalScientificAccuracyGate.js';
+import { applyTusLanguageStandardToQuestion } from '../src/utils/tusLanguageStandard.js';
+
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
+const PROMPT_VERSION = 'klinikiq-tus-hybrid-v4.2';
+const SCHEMA_VERSION = 'ai-spot-json-schema-v3.1';
+const RULE_VERSION = 'clinical-gate-v3.2';
+
 
 const TUS_LANGUAGE_STANDARD_PROMPT = `
 TUS DİL VE MADDE YAZIM STANDARDI:
@@ -259,6 +266,75 @@ function parseCsvEnv(name) {
     .split(',')
     .map((item) => item.trim())
     .filter(Boolean);
+}
+
+function getEnvModel(...names) {
+  for (const name of names) {
+    const value = String(process.env[name] || '').trim();
+    if (value) return value;
+  }
+  return '';
+}
+
+function estimateTokenCount(value = '') {
+  const text = typeof value === 'string' ? value : JSON.stringify(value || {});
+  if (!text) return 0;
+  // Turkish medical text averages roughly 3.5-4.5 chars/token. This is a logging estimate,
+  // not billing truth; provider usage fields should override it when available.
+  return Math.ceil(String(text).length / 4);
+}
+
+function estimateCostUsd({ provider = '', model = '', inputTokens = 0, outputTokens = 0 } = {}) {
+  const key = `${provider}:${model}`.toLowerCase();
+  const configured = Number(process.env.AI_ESTIMATED_COST_PER_1K_TOKENS_USD || 0);
+  if (Number.isFinite(configured) && configured > 0) return Number((((inputTokens + outputTokens) / 1000) * configured).toFixed(6));
+  if (key.includes(':free')) return 0;
+  return null;
+}
+
+function buildAIUsageLog({ provider, model, prompt, question, startedAt, validatorVerdict, repairCount = 0, rejectionReason = null, duplicateScore = null, leakageDetected = false, highRiskRuleTriggered = [], turkishQualityIssue = false } = {}) {
+  const inputTokens = estimateTokenCount(prompt);
+  const outputTokens = estimateTokenCount(question);
+  return {
+    requestId: question?.nextQuestionSeed || question?.id || `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+    provider: provider || question?.provider || 'remote-ai',
+    model: model || question?.openRouterModel || question?.model || null,
+    promptVersion: PROMPT_VERSION,
+    schemaVersion: SCHEMA_VERSION,
+    ruleVersion: RULE_VERSION,
+    branch: question?.relatedBranch || null,
+    topic: question?.learningTarget || null,
+    questionType: question?.questionType || null,
+    inputTokens,
+    outputTokens,
+    estimatedCost: estimateCostUsd({ provider: provider || question?.provider, model: model || question?.openRouterModel, inputTokens, outputTokens }),
+    latencyMs: startedAt ? Date.now() - startedAt : null,
+    validatorVerdict,
+    repairCount,
+    rejectionReason,
+    duplicateScore,
+    leakageDetected: Boolean(leakageDetected),
+    highRiskRuleTriggered,
+    turkishQualityIssue: Boolean(turkishQualityIssue),
+    finalAccepted: validatorVerdict === 'accepted',
+  };
+}
+
+function runServerMedicalQualityGate(question = {}) {
+  const before = JSON.stringify(question);
+  const repaired = applyTusLanguageStandardToQuestion(repairScientificAccuracy(question));
+  const repairCount = before === JSON.stringify(repaired) ? 0 : 1;
+  const scientific = scientificAccuracyGate(repaired);
+  const fatalErrors = scientific.errors.filter((error) => /hyperkalemia|hiperkalemi|pulmonary|embol|anafil|sepsis|dka|stroke|inme|menenjit|status|self-consistency|score-gate|option-gate/i.test(error));
+  return {
+    ok: scientific.ok && fatalErrors.length === 0,
+    question: repaired,
+    repairCount,
+    errors: Array.from(new Set(scientific.errors || [])),
+    warnings: Array.from(new Set(scientific.warnings || [])),
+    matchedRules: scientific.matchedRules || [],
+    scoreSystems: scientific.scoreSystems || [],
+  };
 }
 
 function getJsonContractPrompt() {
@@ -705,7 +781,7 @@ async function callOpenAIQuestion(prompt) {
   const apiKey = process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
 
-  const model = process.env.OPENAI_MODEL || 'gpt-4o-mini';
+  const model = getEnvModel('OPENAI_MODEL', 'DEFAULT_GENERATOR_MODEL') || 'gpt-4o-mini';
   const baseUrl = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const maxOutputTokens = Number(process.env.OPENAI_MAX_OUTPUT_TOKENS || 2600);
   const requestBody = {
@@ -787,9 +863,9 @@ function isBlockedSlowOpenRouterModel(model = '') {
 
 function getOpenRouterModelCandidates() {
   const freeDefault = 'openai/gpt-oss-120b:free';
-  const paidFastDefault = 'google/gemini-2.5-flash-lite';
-  const defaultModel = isOpenRouterFreeMode() ? freeDefault : paidFastDefault;
-  const primary = process.env.OPENROUTER_MODEL || defaultModel;
+  const paidFastDefault = getEnvModel('DEFAULT_GENERATOR_MODEL', 'CHEAP_DRAFT_MODEL') || 'google/gemini-2.5-flash-lite';
+  const defaultModel = isOpenRouterFreeMode() ? (getEnvModel('CHEAP_DRAFT_MODEL') || freeDefault) : paidFastDefault;
+  const primary = getEnvModel('OPENROUTER_MODEL', 'DEFAULT_GENERATOR_MODEL', 'CHEAP_DRAFT_MODEL') || defaultModel;
   const configured = [
     ...parseCsvEnv('OPENROUTER_MODELS'),
     ...parseCsvEnv('OPENROUTER_FALLBACK_MODELS'),
@@ -1066,7 +1142,7 @@ async function callOpenRouterQuestion(prompt, context = {}) {
     if (!parseBooleanEnv('OPENROUTER_REPAIR_JSON_ON_PARSE_ERROR', true)) throw parseError;
 
     const candidate = getJsonCandidateFromText(rawText).slice(0, 18000);
-    const selectedRepairModel = process.env.OPENROUTER_REPAIR_MODEL || repairModel;
+    const selectedRepairModel = getEnvModel('JSON_REPAIR_MODEL', 'OPENROUTER_REPAIR_MODEL') || repairModel;
     const repairMaxTokens = Number(process.env.OPENROUTER_REPAIR_MAX_TOKENS || 2600);
     const repairBody = {
       model: selectedRepairModel,
@@ -1189,7 +1265,7 @@ async function callGeminiQuestion(prompt) {
   const apiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_GENERATIVE_AI_API_KEY;
   if (!apiKey) return null;
 
-  const model = process.env.GEMINI_MODEL || 'gemini-1.5-flash';
+  const model = getEnvModel('GEMINI_MODEL', 'DEFAULT_GENERATOR_MODEL', 'CHEAP_DRAFT_MODEL') || 'gemini-1.5-flash';
   const geminiResponse = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -1234,7 +1310,7 @@ function selectProviderStatus() {
 }
 
 function buildProviderOrder(preferredProvider) {
-  const preferred = String(preferredProvider || 'openrouter').toLowerCase();
+  const preferred = String(preferredProvider || process.env.AI_PROVIDER || 'openrouter').toLowerCase();
   const all = ['openrouter', 'openai', 'gemini'];
   if (!all.includes(preferred)) return all;
   return [preferred, ...all.filter((provider) => provider !== preferred)];
@@ -1292,8 +1368,41 @@ export default async function handler(request, response) {
           attempt: Number(body?.attempt || 1) + remoteAttempt - 1,
           antiRepeatNonce: body?.antiRepeatNonce || `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
         });
+        const startedAt = Date.now();
         const rawQuestion = await generateWithAvailableProvider(prompt, body);
-        const question = completeRemoteQuestion(rawQuestion, body);
+        let question = completeRemoteQuestion(rawQuestion, body);
+
+        const medicalGate = runServerMedicalQualityGate(question);
+        question = medicalGate.question;
+        if (!medicalGate.ok) {
+          const usageLog = buildAIUsageLog({
+            provider: question.provider || rawQuestion?.provider,
+            model: question.openRouterModel || rawQuestion?.openRouterModel,
+            prompt,
+            question,
+            startedAt,
+            validatorVerdict: 'rejected-medical-gate',
+            repairCount: medicalGate.repairCount,
+            rejectionReason: medicalGate.errors.slice(0, 3).join('; '),
+            highRiskRuleTriggered: medicalGate.matchedRules,
+            turkishQualityIssue: medicalGate.errors.some((error) => /turkish|türkçe|dil/i.test(error)),
+          });
+          attemptErrors.push(`remote attempt ${remoteAttempt}: medical gate failed: ${medicalGate.errors.slice(0, 4).join('; ')}`);
+          if (parseBooleanEnv('AI_DEBUG_USAGE_LOGS', false)) console.info('[KlinikIQ AI usage]', usageLog);
+          continue;
+        }
+        question.aiMeta = {
+          ...(question.aiMeta || {}),
+          promptVersion: PROMPT_VERSION,
+          schemaVersion: SCHEMA_VERSION,
+          ruleVersion: RULE_VERSION,
+          serverMedicalGate: {
+            ok: medicalGate.ok,
+            repaired: medicalGate.repairCount > 0,
+            matchedRules: medicalGate.matchedRules,
+            warnings: medicalGate.warnings.slice(0, 6),
+          },
+        };
 
         const diversityValidation = validateRemoteDiversity(question, body);
         if (!diversityValidation.passed) {
@@ -1315,6 +1424,21 @@ export default async function handler(request, response) {
           continue;
         }
 
+        const usageLog = buildAIUsageLog({
+          provider: question.provider || rawQuestion?.provider || 'remote-ai',
+          model: question.openRouterModel || rawQuestion?.openRouterModel || null,
+          prompt,
+          question,
+          startedAt,
+          validatorVerdict: 'accepted',
+          repairCount: medicalGate.repairCount,
+          duplicateScore: diversityValidation.score || null,
+          leakageDetected: editorialValidation.errors?.some((error) => /answer-leakage/i.test(error)),
+          highRiskRuleTriggered: medicalGate.matchedRules,
+          turkishQualityIssue: editorialValidation.errors?.some((error) => /exam-language|forbidden editorial|türkçe|turkish/i.test(error)),
+        });
+        if (parseBooleanEnv('AI_DEBUG_USAGE_LOGS', false)) console.info('[KlinikIQ AI usage]', usageLog);
+
         return sendJson(response, 200, {
           ok: true,
           provider: question.provider || 'remote-ai',
@@ -1322,6 +1446,10 @@ export default async function handler(request, response) {
           diversityRejectedCount,
           nearDuplicateRejectedCount,
           temperature: Number(process.env.OPENROUTER_TEMPERATURE || 0.82),
+          promptVersion: PROMPT_VERSION,
+          schemaVersion: SCHEMA_VERSION,
+          ruleVersion: RULE_VERSION,
+          usageLog,
           question,
         });
       } catch (error) {
