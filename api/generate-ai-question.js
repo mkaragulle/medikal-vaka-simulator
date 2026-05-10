@@ -1,5 +1,5 @@
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v11-complete-meaningful-feedback';
+const PROMPT_VERSION = 'klinikiq-simple-tus-v14-lab-target-clarity';
 const SCHEMA_VERSION = 'simple-ai-spot-v1';
 
 const SYSTEM_PROMPT = `You are KlinikIQ’s medical question-generation engine.
@@ -14,6 +14,8 @@ Core rules:
 - The clinical stem must start naturally with a patient presentation and must not begin abruptly with an isolated test, biopsy, histology result or data point.
 - Do not leak the answer in the title, stem or data fields.
 - Do not give a defining result/pattern and then ask the learner to choose the same result/pattern.
+- If organ/system involvement is already shown in the case data, do not ask which finding supports that same involvement; ask for the diagnosis, etiology, activity marker, mechanism, severity marker or next step instead.
+- For laboratory-support questions, clearly distinguish whether the target is diagnosis support, organ involvement, disease activity, etiologic evidence, severity or treatment monitoring.
 - Use only necessary clinical data; remove irrelevant vitals, labs, imaging, microbiology and hemogram values.
 - Keep data fields clean, complete, correctly labeled and non-repetitive.
 - Use only one clearly correct answer; options must belong to the same category.
@@ -440,20 +442,22 @@ Item-writing rules:
 3. Do not produce a visible question title. Set "title" to "".
 4. The stem must start with a natural clinical beginning: age/sex when relevant, main presentation, short relevant history and focused context. Do not start with a biopsy, histology report, isolated lab value or disconnected data.
 5. The stem and data fields must not repeat the same information. Do not give a test result, diagnosis, mechanism, defining finding or full laboratory pattern and then ask the user to choose that same item. If a defining result is already shown, ask for interpretation, mechanism, diagnosis or next step instead.
-6. Use only necessary data. Remove irrelevant hemogram, vitals, labs, imaging or microbiology unless they help reasoning without revealing the answer.
-7. Data must be placed in the correct field:
+6. The question must ask for the missing reasoning target, not for what the data panel already proves. If the data already proves organ involvement, phrase the question around the underlying diagnosis, etiologic support, activity marker, mechanism, severity or management decision.
+7. For lab-focused questions, explicitly align the wording with the intended role of the lab: diagnostic support, disease activity, etiologic evidence, severity assessment, screening, confirmation or monitoring. Do not use broad wording that points to a finding already present in the case.
+8. Use only necessary data. Remove irrelevant hemogram, vitals, labs, imaging or microbiology unless they help reasoning without revealing the answer.
+9. Data must be placed in the correct field:
    - symptoms and history in the stem,
    - vital signs in compactVitals,
    - labs, imaging, microbiology, pathology and exam findings in compactObjectiveData with clear labels.
    Never label a lab as microbiology, exam as imaging, or non-ECG data as ECG.
-8. All values must be complete and formatted with units when appropriate. If a value is not needed, omit it.
-9. Options must be the same type. Do not mix diagnoses, tests, drugs, mechanisms and procedures in the same option set.
-10. If more than one option could be clinically reasonable, narrow the question wording or change the options before returning JSON.
-11. Use “first step”, “first drug”, “screening test”, “confirmatory test”, “supportive test”, “replacement”, “prophylaxis”, “treatment”, “most common”, “most serious” and “most feared” only when scientifically correct.
-12. For pathology questions, the entity must be specific and supported by morphology or relevant clinical context. Avoid vague lesion wording.
-13. For anatomy questions, prefer structure–nerve–muscle–function relationships. Avoid diagnostic test interpretation unless the branch really fits.
-14. Avoid artificial distractors that are not plausible TUS-level alternatives.
-15. Avoid ethics/legal questions unless explicitly requested.
+10. All values must be complete and formatted with units when appropriate. If a value is not needed, omit it.
+11. Options must be the same type. Do not mix diagnoses, tests, drugs, mechanisms and procedures in the same option set.
+12. If more than one option could be clinically reasonable, narrow the question wording or change the options before returning JSON.
+13. Use “first step”, “first drug”, “screening test”, “confirmatory test”, “supportive test”, “replacement”, “prophylaxis”, “treatment”, “most common”, “most serious” and “most feared” only when scientifically correct.
+14. For pathology questions, the entity must be specific and supported by morphology or relevant clinical context. Avoid vague lesion wording.
+15. For anatomy questions, prefer structure–nerve–muscle–function relationships. Avoid diagnostic test interpretation unless the branch really fits.
+16. Avoid artificial distractors that are not plausible TUS-level alternatives.
+17. Avoid ethics/legal questions unless explicitly requested.
 
 Feedback rules:
 1. explanation: Write 2-3 concise Turkish sentences explaining the medical reasoning behind the correct answer. It must be case-specific and scientifically clear.
@@ -475,6 +479,8 @@ Hard final checks before returning:
 - correct field labels
 - no repeated data
 - no question asking for a pattern already shown
+- no broad wording that asks for involvement already demonstrated by the data
+- lab question wording matches the exact role of the lab finding
 - no invented evidenceChain clue
 - evidenceChain contains only plain clue sentences without labels
 - no generic correct-option feedback
@@ -504,7 +510,7 @@ JSON schema:
   "compactObjectiveData": [
     {"label": "clean test/exam/imaging/microbiology/pathology label", "value": "complete result with unit if needed"}
   ],
-  "question": "one clear Turkish question sentence",
+  "question": "one clear Turkish question sentence that asks the missing reasoning target, not a finding already proven by the data",
   "options": [
     {"id": "A", "text": "..."},
     {"id": "B", "text": "..."},
