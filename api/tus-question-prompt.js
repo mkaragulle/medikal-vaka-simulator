@@ -46,8 +46,8 @@ Core standard:
 - Do not place answer-equivalent conclusions in compactObjectiveData. Data panels must show raw supportive findings only, not the final physiologic direction, mechanism, diagnosis or interpretation that the question asks for.
 - Avoid simple direction-only questions such as “increases/decreases” or “artar/azalır/değişmez” unless the reasoning mechanism is the actual target. Prefer mechanism, interpretation or decision-rule questions.
 - Do not return incomplete objective data values. If a data item is not clinically necessary or cannot be written completely with units or a complete qualitative result, omit it.
-- Feedback must teach: explain why the correct answer is correct and why each wrong option is not the best answer in this case.
-- Every feedback sentence must be case-specific, highly educational, medically explanatory and complete. Avoid generic, template-like, vague or unfinished wording.
+- Feedback must teach with concise sentences: explain why the correct answer is correct and why each wrong option is not the best answer in this case.
+- Every feedback sentence must be case-specific, medically explanatory, complete and concise. Avoid generic, template-like, vague or unfinished wording.
 - evidenceChain must contain exactly 3 short scientific reasons based only on clues present in the stem, vitals or objective data. Do not invent findings or include the answer name.
 - If the output is medically uncertain, ambiguous, repetitive, poorly phrased or not educational, rewrite it before returning JSON.`;
 
@@ -92,7 +92,7 @@ Question quality:
 Write a compact but well-framed clinical vignette. Use correct Turkish medical terminology, spelling and grammar. Make the item challenging, scientific and highly educational for TUS preparation at the requested difficulty level. The question must have one clearly best scientific answer and plausible same-category options. The learner must still have a real reasoning step.
 
 Feedback quality:
-The explanation must teach the reasoning. For each option, write one useful, highly educational, case-specific and medically explanatory sentence showing why it fits or why it is eliminated in this case. Do not use generic, template-like, half or vague feedback.
+The explanation must teach the reasoning. For each option, write one concise, useful, case-specific and medically explanatory sentence showing why it fits or why it is eliminated in this case. Do not use generic, template-like, half or vague feedback.
 
 Output rules:
 - difficulty must be exactly: ${selectedDifficulty}.
@@ -104,7 +104,7 @@ Output rules:
 - Do not return incomplete objective data values. If a data item is not clinically necessary or cannot be written completely with units or a complete qualitative result, omit it.
 - explanation must be educational, case-specific and medically explanatory. It should clearly explain why the correct answer is correct using mechanism, pathophysiology, diagnostic reasoning, treatment order or clinical decision logic; it must not merely restate the correct option.
 - evidenceChain must provide exactly 3 short scientific reasons that connect the given case clues to the correct answer. Each reason must be based only on information present in the stem, vitals or objective data; do not invent findings or include the answer name.
-- wrongOptionFeedback must include one scientific and educational sentence for every option, including the correct answer. For the correct option, explain why it is correct. For wrong options, explain why they are eliminated in this case.
+- wrongOptionFeedback must include one concise scientific sentence for every option, including the correct answer. For the correct option, explain why it is correct. For wrong options, explain why they are eliminated in this case. The UI will only display the selected wrong option and the correct option after an incorrect answer.
 - managementSteps: use only for treatment, first-step, next-step, emergency or management questions. Include 2-4 concise clinical steps in correct order. For diagnosis, mechanism, etiology, lab interpretation, anatomy or pathology questions, return [].
 
 Return JSON in this exact schema:

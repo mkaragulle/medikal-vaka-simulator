@@ -490,7 +490,6 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
   const correct = clinicalCase.diagnosis?.correct;
   const options = Array.isArray(clinicalCase.diagnosis?.options) ? clinicalCase.diagnosis.options : [];
   const wrongMap = normalizeWrongMap(clinicalCase);
-  const whyCorrect = deriveWhyCorrect(clinicalCase);
   const clue = getMainClue(clinicalCase);
 
   return options.slice(0, MAX_COMPARISON_ITEMS).map((option) => {
@@ -517,6 +516,16 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
       comparisonPoints: [],
     };
   });
+}
+
+function buildAISpotFocusedComparisons(optionComparisons = [], selectedOption = '', isCorrect = false) {
+  if (isCorrect) return [];
+  const selectedCard = optionComparisons.find((item) => item.isSelected || item.option === selectedOption);
+  const correctCard = optionComparisons.find((item) => item.status === 'correct');
+  return [selectedCard, correctCard]
+    .filter(Boolean)
+    .filter((item, index, list) => list.findIndex((entry) => entry.option === item.option) === index)
+    .slice(0, 2);
 }
 
 function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, className = '', minimal = false }) {
@@ -657,6 +666,7 @@ function ClinicalPearlsList({ pearls, glossaryEnabled = true }) {
 
 function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase = false, minimal = false }) {
   if (!comparisons.length) return null;
+  const comparisonCountClass = `option-comparison-count-${Math.min(comparisons.length, 6)}`;
   return (
     <FeedbackSection
       icon={minimal ? null : 'Target'}
@@ -666,7 +676,7 @@ function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase 
       className={`option-comparison-card differential-comparison-card ${minimal ? 'minimal-option-comparison-card' : ''}`.trim()}
       minimal={minimal}
     >
-      <div className={`option-comparison-list ${minimal ? 'minimal-option-comparison-list' : ''}`.trim()}>
+      <div className={`option-comparison-list ${comparisonCountClass} ${minimal ? 'minimal-option-comparison-list' : ''}`.trim()}>
         {comparisons.map((item, index) => (
           <article className={`option-comparison-item ${item.status} ${item.isSelected ? 'selected-option' : ''} ${minimal ? 'minimal-option-card' : ''}`.trim()} key={`${item.option}-${index}`}>
             <div className={`option-comparison-head ${minimal ? 'minimal' : ''}`.trim()}>
@@ -729,6 +739,7 @@ function AnswerFeedbackPanel({
   const shouldRenderPearls = pearls.length && (!isSpotCase || !examSignal.hasContent);
   const isAISpot = clinicalCase.caseType === 'ai-spot';
   const singleLinePearl = deriveSingleLinePearl(clinicalCase, reasoningText);
+  const aiSpotFocusedComparisons = buildAISpotFocusedComparisons(optionComparisons, selectedDiagnosis, isCorrect);
 
   if (isAISpot) {
     return (
@@ -737,7 +748,7 @@ function AnswerFeedbackPanel({
           <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} minimal />
           <TusTipCard pearl={singleLinePearl} glossaryEnabled={glossaryEnabled} minimal />
           <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} minimal />
-          <OptionComparisonCard comparisons={optionComparisons} glossaryEnabled={glossaryEnabled} isSpotCase minimal />
+          <OptionComparisonCard comparisons={aiSpotFocusedComparisons} glossaryEnabled={glossaryEnabled} isSpotCase minimal />
         </div>
 
         {children ? <div className="answer-feedback-actions">{children}</div> : null}

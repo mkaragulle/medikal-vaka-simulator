@@ -35662,3 +35662,19 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
     grid-template-columns: 1fr !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V28 — AI Spot focused option feedback
+   Incorrect AI spot answers now show only two option cards:
+   the user's selected wrong answer and the correct answer.
+   Correct answers hide the option-comparison block completely.
+   ========================================================= */
+.ai-spot-compact-feedback-grid .minimal-option-comparison-list.option-comparison-count-2 > .minimal-option-card {
+  grid-column: span 3;
+}
+
+@media (max-width: 1024px) {
+  .ai-spot-compact-feedback-grid .minimal-option-comparison-list.option-comparison-count-2 > .minimal-option-card {
+    grid-column: span 1;
+  }
+}
