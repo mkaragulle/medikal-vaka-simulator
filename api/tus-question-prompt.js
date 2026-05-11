@@ -44,6 +44,8 @@ Core standards:
 - compactObjectiveData must contain only short, readable supportive findings. Do not place answer-equivalent results, final interpretations, decisive diagnostic labels or repeated stem text there. If objective data is not needed, return an empty array.
 - Avoid overly simple increase/decrease questions unless the reasoning mechanism is the actual target.
 - If a treatment decision depends on a threshold, severity level, timing, risk factor, contraindication or clinical stability, include the necessary context in the stem; otherwise choose a safer question target.
+- Make the question target clinically narrow enough to produce one clearly best answer. If another option could be part of initial management, supportive care, diagnostic workup or the standard treatment sequence, do not treat it as simply wrong; narrow the question to the definitive treatment, specific antidote, supportive step, first emergency action, diagnostic confirmation or mechanism.
+- The stem must include the exact clinical context needed for the requested decision, such as stability, severity, timing, contraindications, pregnancy status, oral intake, systemic signs, risk factors or whether supportive care has already been initiated.
 
 Final clinical-quality pass:
 - Before returning JSON, perform a strict final clinical-quality pass.
@@ -54,8 +56,8 @@ Final clinical-quality pass:
 - Feedback must be clinically useful and never generic.
 - Every option feedback must be a complete, scientific, educational Turkish sentence.
 - For the correct option, explain the specific pathophysiologic, diagnostic, therapeutic or mechanistic reason why it is correct in this exact case.
-- For wrong options, explain the key discriminating medical reason why they are not the best answer here.
-- evidenceChain must contain exactly three short scientific reasons that connect the given case clues to the correct answer. Each reason must be based only on information explicitly present in the stem, vitals or objective data. Do not invent new clues, add hidden assumptions or include the answer name.
+- For wrong options, explain the key discriminating medical reason why they are not the best answer here. Do not label a partially correct or supportive option as simply wrong; explain whether it is supportive but insufficient, correct in a different stage, unsafe in this patient or not specific to the exact target asked.
+- evidenceChain must contain exactly three short scientific reasons that connect the given case clues to the correct answer. Each reason must be anchored to visible case data from the stem, vitals or objective data. It may interpret given findings scientifically, but it must not introduce hidden assumptions such as poor oral intake, severe instability, treatment already given, diagnostic certainty or systemic involvement unless these are explicitly written. Do not include the answer name.
 - In physiology, pharmacology, biochemistry, emergency care and mechanism questions, verify the exact direction of the mechanism, receptor, enzyme, transporter, electrolyte change, antidote indication and treatment sequence.
 - If the output is medically ambiguous, weakly educational, repetitive, incomplete or unsafe, rewrite the question before returning JSON.`;
 export function buildRecentCompact(recentQuestionSummaries = []) {
@@ -107,10 +109,11 @@ Output rules:
 - answerTarget should briefly name the actual focus, such as diagnosis, mechanism, treatment, diagnostic_test, first_step, complication or lab_interpretation.
 - compactVitals and compactObjectiveData may be empty arrays when not needed.
 - compactObjectiveData must contain only short, readable objective findings that support reasoning without revealing the answer. Do not include answer-equivalent results, final interpretations, decisive diagnostic labels, repeated stem text or incomplete values. If objective data is not needed, return an empty array.
-- explanation must clearly explain why the correct answer is correct in this exact case using pathophysiology, diagnostic reasoning, treatment order, mechanism or clinical decision logic. It must be educational and must not merely restate the selected option.
-- wrongOptionFeedback must include one complete, scientific and educational Turkish sentence for every option, including the correct answer. For the correct option, explain why it is correct in this case. For wrong options, state the specific discriminating reason they are eliminated here.
-- evidenceChain must provide exactly 3 short scientific reasons that connect the given case clues to the correct answer. Each reason must be based only on information explicitly present in the stem, vitals or objective data. Do not invent findings, add hidden assumptions or include the answer name.
+- explanation must clearly explain why the correct answer is the best answer for the exact wording of the question using pathophysiology, diagnostic reasoning, treatment order, mechanism or clinical decision logic. It must be educational and must not merely restate the selected option.
+- wrongOptionFeedback must include one complete, scientific and educational Turkish sentence for every option, including the correct answer. For the correct option, explain why it is the best answer for the exact wording of the question. For wrong options, state the specific discriminating reason they are eliminated here; if an option is supportive or partially correct, explain why it is insufficient or belongs to a different clinical stage.
+- evidenceChain must provide exactly 3 short scientific reasons that connect the given case clues to the correct answer. Each reason must be anchored to information explicitly present in the stem, vitals or objective data. Do not invent findings, add hidden assumptions, mention treatment already given or include the answer name.
 - In physiology, pharmacology, biochemistry, emergency care and mechanism questions, verify the exact scientific direction, receptor, enzyme, transporter, electrolyte change, antidote indication and treatment sequence.
+- If the distinction between the correct option and supportive/partially correct alternatives cannot be made clearly, rewrite the stem, options or answerTarget before returning JSON.
 - managementSteps: use only for treatment, first-step, next-step, emergency or management questions. Include 2-4 concise clinical steps in correct order. For diagnosis, mechanism, etiology, lab interpretation, anatomy or pathology questions, return [].
 
 Return JSON in this exact schema:

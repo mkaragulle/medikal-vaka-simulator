@@ -6,7 +6,7 @@ import {
 } from './tus-question-prompt.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v31-final-clinical-quality-pass';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v32-narrow-target-supportive-options';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -313,6 +313,8 @@ const FORBIDDEN_PHRASES = [
   /^\s*nonspesifiktir\.?\s*$/iu,
   /^\s*spesifik değildir\.?\s*$/iu,
   /doğru seçenek/iu,
+  /hedeflenen karar/iu,
+  /klinik hedef/iu,
 ];
 
 function hasTruncatedText(text = '') {
