@@ -49,8 +49,46 @@ export const PEARL_AI_CARD_OUTPUT_SCHEMA = Object.freeze({
   sourceType: 'embedded | ai_generated | user_created',
 });
 
+function polishPearlMedicalTerminology(value = '') {
+  return String(value || '')
+    .replace(/\bN\.\s*fibularis\s+communis\b/giu, 'nervus fibularis communis')
+    .replace(/\bn\.\s*fibularis\s+communis\b/giu, 'nervus fibularis communis')
+    .replace(/\bN\.\s*intercostobrachialis\b/giu, 'nervus intercostobrachialis')
+    .replace(/\bn\.\s*intercostobrachialis\b/giu, 'nervus intercostobrachialis')
+    .replace(/\bN\.\s*oculomotorius\b/giu, 'nervus oculomotorius')
+    .replace(/\bn\.\s*oculomotorius\b/giu, 'nervus oculomotorius')
+    .replace(/\bN\.\s*abducens\b/giu, 'nervus abducens')
+    .replace(/\bn\.\s*abducens\b/giu, 'nervus abducens')
+    .replace(/\bN\.\s*axillaris\b/giu, 'nervus axillaris')
+    .replace(/\bn\.\s*axillaris\b/giu, 'nervus axillaris')
+    .replace(/\bN\.\s*tibialis\b/giu, 'nervus tibialis')
+    .replace(/\bn\.\s*tibialis\b/giu, 'nervus tibialis')
+    .replace(/\bV\.\s*saphena\s+magna\b/giu, 'vena saphena magna')
+    .replace(/\bv\.\s*saphena\s+magna\b/giu, 'vena saphena magna')
+    .replace(/\bV\.\s*saphena\s+parva\b/giu, 'vena saphena parva')
+    .replace(/\bv\.\s*saphena\s+parva\b/giu, 'vena saphena parva')
+    .replace(/\bA\.\s*communicans\s+posterior\b/giu, 'arteria communicans posterior')
+    .replace(/\ba\.\s*communicans\s+posterior\b/giu, 'arteria communicans posterior')
+    .replace(/\bS\.\s*pneumoniae\b/gu, 'Streptococcus pneumoniae')
+    .replace(/\bS\.\s*aureus\b/gu, 'Staphylococcus aureus')
+    .replace(/\bH\.\s*influenzae\b/gu, 'Haemophilus influenzae')
+    .replace(/\bM\.\s*catarrhalis\b/gu, 'Moraxella catarrhalis')
+    .replace(/\bN\.\s*meningitidis\b/gu, 'Neisseria meningitidis')
+    .replace(/\bC\.\s*difficile\b/gu, 'Clostridioides difficile')
+    .replace(/\bC\.\s*tetani\b/gu, 'Clostridium tetani')
+    .replace(/\bV\.\s*cholerae\b/gu, 'Vibrio cholerae')
+    .replace(/\bLikefaksiyon\s+nekrozu\b/giu, 'Sıvılaşma nekrozu')
+    .replace(/\bRed\s+man\/sendromu\b/giu, 'kızarma (red man) sendromu')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function capitalizeTerminologyLead(value = '') {
+  return String(value || '').replace(/^(nervus|arteria|vena|intravenöz|kızarma)/u, (match) => match.charAt(0).toLocaleUpperCase('tr') + match.slice(1));
+}
+
 function normalizeText(value = '') {
-  return String(value || '').replace(/\s+/g, ' ').trim();
+  return capitalizeTerminologyLead(polishPearlMedicalTerminology(value).replace(/\s+/g, ' ').trim());
 }
 
 export function normalizePearlTextForCompare(value = '') {
@@ -304,8 +342,10 @@ export function normalizePearlCardFields(card = {}) {
   const explanationKey = normalizePearlTextForCompare(explanation);
   if (tusTip && normalizePearlTextForCompare(tusTip) === answerKey) tusTip = '';
   if (tusTip && explanationKey && normalizePearlTextForCompare(tusTip) === explanationKey) tusTip = '';
+  if (tusTip && answer.includes('→') && tusTip.includes('→') && tokenOverlapRatio(tusTip, answer) > 0.72) tusTip = '';
   if (differentialNote && normalizePearlTextForCompare(differentialNote) === answerKey) differentialNote = '';
   if (differentialNote && explanationKey && normalizePearlTextForCompare(differentialNote) === explanationKey) differentialNote = '';
+  if (differentialNote && explanation && tokenOverlapRatio(differentialNote, explanation) > 0.84) differentialNote = '';
 
   return {
     ...card,

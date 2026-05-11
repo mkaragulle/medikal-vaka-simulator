@@ -888,7 +888,7 @@ export const TUS_PEARL_TOPICS = [
     "subject": "İç Hastalıkları",
     "topic": "Adrenal kriz",
     "mainQuestion": "Hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemide acil tedavi nedir?",
-    "mainAnswer": "IV hidrokortizon ve izotonik salin.",
+    "mainAnswer": "intravenöz hidrokortizon ve izotonik salin.",
     "explanation": "Adrenal kriz yaşamı tehdit eder; tedavi tanısal doğrulamayı beklememelidir.",
     "keywords": "hipotansiyon; hiponatremi; hiperkalemi; hipoglisemi",
     "trap": "Sepsis benzer görünebilir; hiperkalemi ve steroid yanıtı adrenal krizi öne çıkarır.",
@@ -901,9 +901,9 @@ export const TUS_PEARL_TOPICS = [
     "subject": "İç Hastalıkları",
     "topic": "Hiperkalemi + EKG değişikliği",
     "mainQuestion": "EKG değişikliği olan hiperkalemide ilk tedavi nedir?",
-    "mainAnswer": "IV kalsiyum glukonat.",
+    "mainAnswer": "intravenöz kalsiyum glukonat.",
     "explanation": "Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır.",
-    "keywords": "hiperkalemi; sivri T; geniş QRS; IV kalsiyum glukonat",
+    "keywords": "hiperkalemi; sivri T; geniş QRS; intravenöz kalsiyum glukonat",
     "trap": "İnsülin + glukoz potasyumu hücre içine kaydırır; EKG değişikliği varsa önce kardiyak membran stabilizasyonu gerekir.",
     "extraQuestion": "Hiperkalemide insülin + glukoz tedavisinin temel amacı nedir?",
     "extraAnswer": "Potasyumu hücre içine kaydırmak.",
@@ -1465,7 +1465,7 @@ export const TUS_PEARL_TOPICS = [
     "keywords": "ateş; davranış değişikliği; temporal lob; nöbet",
     "trap": "Bakteriyel menenjitte ense sertliği ve BOS paterni farklıdır; temporal lob HSV için yüksek verimdir.",
     "extraQuestion": "HSV ensefalitinde ilk tedavi nedir?",
-    "extraAnswer": "IV asiklovir.",
+    "extraAnswer": "intravenöz asiklovir.",
     "difficulty": "orta"
   },
   {
@@ -1591,7 +1591,7 @@ export const TUS_PEARL_TOPICS = [
     "topic": "Anafilaksi",
     "mainQuestion": "Anafilakside ilk ve en önemli ilaç nedir?",
     "mainAnswer": "İntramüsküler adrenalin.",
-    "explanation": "İlk tedavi IM adrenalindir; hava yolu, oksijen ve IV sıvı desteği eklenir. Antihistaminik kaşıntı/ürtiker için yardımcıdır ama şok ve bronkospazmı tek başına düzeltmez.",
+    "explanation": "İlk tedavi IM adrenalindir; hava yolu, oksijen ve intravenöz sıvı desteği eklenir. Antihistaminik kaşıntı/ürtiker için yardımcıdır ama şok ve bronkospazmı tek başına düzeltmez.",
     "keywords": "ürtiker; hipotansiyon; bronkospazm; IM adrenalin",
     "trap": "Antihistaminik semptomatik yardımcıdır; yaşam kurtarıcı ilk ilaç adrenalinidir.",
     "extraQuestion": "Anafilakside adrenalin hangi yoldan verilir?",
@@ -1673,7 +1673,7 @@ export const TUS_PEARL_TOPICS = [
     "keywords": "bilinç değişikliği; diyabet; terleme; glukoz",
     "trap": "BT görüntüleme önemli olabilir ama hızlı dışlanması gereken geri döndürülebilir neden hipoglisemidir.",
     "extraQuestion": "Ağır hipoglisemide bilinç kapalıysa hangi tedavi verilir?",
-    "extraAnswer": "IV dekstroz veya glukagon.",
+    "extraAnswer": "intravenöz dekstroz veya glukagon.",
     "difficulty": "orta"
   },
   {
@@ -2058,7 +2058,7 @@ export const TUS_PEARL_TOPICS = [
     "subject": "Pediatri",
     "topic": "Bakteriyel menenjit ampirik tedavi",
     "mainQuestion": "Çocukta ateş, ense sertliği ve bakteriyel BOS paterni varsa ampirik tedavide temel yaklaşım nedir?",
-    "mainAnswer": "Uygun yaşa göre IV üçüncü kuşak sefalosporin temelli ampirik antibiyotik.",
+    "mainAnswer": "Uygun yaşa göre intravenöz üçüncü kuşak sefalosporin temelli ampirik antibiyotik.",
     "explanation": "Bakteriyel menenjit acildir; BOS kültürü beklenmeden yaş ve risk faktörüne uygun ampirik tedavi başlanır.",
     "keywords": "ateş; ense sertliği; nötrofilik BOS; erken antibiyotik",
     "trap": "Viral menenjitte destek tedavi yeterli olabilir; nötrofil baskın düşük glukozlu BOS bakteriyel menenjiti destekler.",
@@ -2137,7 +2137,7 @@ export const TUS_PEARL_TOPICS = [
     "topic": "Akut iskemik inme penceresi",
     "mainQuestion": "Akut iskemik inmede trombolitik tedavi için klasik zaman penceresi nedir?",
     "mainAnswer": "Semptom başlangıcından itibaren 4,5 saat içinde uygun hasta.",
-    "explanation": "Kontrendikasyon yoksa erken başvuran seçilmiş hastalarda IV alteplaz düşünülür; kanama dışlanmadan trombolitik verilmez.",
+    "explanation": "Kontrendikasyon yoksa erken başvuran seçilmiş hastalarda intravenöz alteplaz düşünülür; kanama dışlanmadan trombolitik verilmez.",
     "keywords": "iskemik inme; 4,5 saat; BT ile kanama dışla; alteplaz",
     "trap": "Hemorajik inmede trombolitik kontrendikedir; ilk kritik ayrım görüntüleme ile kanama dışlamaktır.",
     "extraQuestion": "İnme şüphesinde trombolitik öncesi acil görüntülemenin temel amacı nedir?",
@@ -2154,7 +2154,7 @@ export const TUS_PEARL_TOPICS = [
     "keywords": "status epileptikus; benzodiazepin; hava yolu; glukoz",
     "trap": "Fenitoin veya levetirasetam ikinci basamak yükleme için düşünülür; ilk akut durdurucu benzodiazepindir.",
     "extraQuestion": "Status epileptikusta hipoglisemi şüphesinde hangi tedavi geciktirilmemelidir?",
-    "extraAnswer": "IV glukoz.",
+    "extraAnswer": "intravenöz glukoz.",
     "difficulty": "orta"
   },
   {
@@ -2363,14 +2363,62 @@ function compactList(value) {
   return String(value || '').split(';').map((item) => item.trim()).filter(Boolean);
 }
 
+function polishMedicalTerminology(value = '') {
+  return String(value || '')
+    .replace(/\bN\.\s*fibularis\s+communis\b/giu, 'nervus fibularis communis')
+    .replace(/\bn\.\s*fibularis\s+communis\b/giu, 'nervus fibularis communis')
+    .replace(/\bN\.\s*intercostobrachialis\b/giu, 'nervus intercostobrachialis')
+    .replace(/\bn\.\s*intercostobrachialis\b/giu, 'nervus intercostobrachialis')
+    .replace(/\bN\.\s*oculomotorius\b/giu, 'nervus oculomotorius')
+    .replace(/\bn\.\s*oculomotorius\b/giu, 'nervus oculomotorius')
+    .replace(/\bN\.\s*abducens\b/giu, 'nervus abducens')
+    .replace(/\bn\.\s*abducens\b/giu, 'nervus abducens')
+    .replace(/\bN\.\s*axillaris\b/giu, 'nervus axillaris')
+    .replace(/\bn\.\s*axillaris\b/giu, 'nervus axillaris')
+    .replace(/\bN\.\s*tibialis\b/giu, 'nervus tibialis')
+    .replace(/\bn\.\s*tibialis\b/giu, 'nervus tibialis')
+    .replace(/\bV\.\s*saphena\s+magna\b/giu, 'vena saphena magna')
+    .replace(/\bv\.\s*saphena\s+magna\b/giu, 'vena saphena magna')
+    .replace(/\bV\.\s*saphena\s+parva\b/giu, 'vena saphena parva')
+    .replace(/\bv\.\s*saphena\s+parva\b/giu, 'vena saphena parva')
+    .replace(/\bA\.\s*communicans\s+posterior\b/giu, 'arteria communicans posterior')
+    .replace(/\ba\.\s*communicans\s+posterior\b/giu, 'arteria communicans posterior')
+    .replace(/\bS\.\s*pneumoniae\b/gu, 'Streptococcus pneumoniae')
+    .replace(/\bS\.\s*aureus\b/gu, 'Staphylococcus aureus')
+    .replace(/\bH\.\s*influenzae\b/gu, 'Haemophilus influenzae')
+    .replace(/\bM\.\s*catarrhalis\b/gu, 'Moraxella catarrhalis')
+    .replace(/\bN\.\s*meningitidis\b/gu, 'Neisseria meningitidis')
+    .replace(/\bC\.\s*difficile\b/gu, 'Clostridioides difficile')
+    .replace(/\bC\.\s*tetani\b/gu, 'Clostridium tetani')
+    .replace(/\bV\.\s*cholerae\b/gu, 'Vibrio cholerae')
+    .replace(/\bLikefaksiyon\s+nekrozu\b/giu, 'Sıvılaşma nekrozu')
+    .replace(/\bRed\s+man\/sendromu\b/giu, 'kızarma (red man) sendromu')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function capitalizeTerminologyLead(value = '') {
+  return String(value || '').replace(/^(nervus|arteria|vena|intravenöz|kızarma)\b/u, (match) => match.charAt(0).toLocaleUpperCase('tr') + match.slice(1));
+}
+
+function cleanText(value = '') {
+  return capitalizeTerminologyLead(polishMedicalTerminology(value).replace(/\s+/g, ' ').trim());
+}
+
 function cleanSentence(value = '') {
-  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  const text = cleanText(value);
   if (!text) return '';
-  return /[.!?]$/.test(text) ? text : `${text}.`;
+  return /[.!?]$/u.test(text) ? text : `${text}.`;
+}
+
+function cleanQuestion(value = '') {
+  const text = cleanText(value);
+  if (!text) return '';
+  return /[?]$/u.test(text) ? text : `${text.replace(/[.!]+$/u, '')}?`;
 }
 
 function readableKeywordChain(keywords = []) {
-  return keywords.slice(0, 4).map((item) => String(item || '').trim()).filter(Boolean).join(' → ');
+  return keywords.slice(0, 4).map((item) => cleanText(item)).filter(Boolean).join(' → ');
 }
 
 function buildKeywordBack(topic, keywords) {
@@ -2419,7 +2467,7 @@ const SPECIAL_KEYWORD_CARDS = {
     front: 'Hiperkalemide kalsiyum glukonat ile insülin-glukozun temel farkı nedir?',
     answer: 'Kalsiyum membranı stabilize eder; insülin-glukoz potasyumu hücre içine kaydırır.',
     explanation: 'EKG bulgusu varsa ilk hedef aritmiyi önlemek için kardiyak membran stabilizasyonudur.',
-    tusTip: 'Ağır hiperkalemi + EKG değişikliği → önce IV kalsiyum; ardından hücre içine kaydırıcı tedaviler.',
+    tusTip: 'Ağır hiperkalemi + EKG değişikliği → önce intravenöz kalsiyum; ardından hücre içine kaydırıcı tedaviler.',
     differentialNote: 'Diyaliz potasyumu vücuttan uzaklaştırır; ancak acil EKG değişikliğinde ilk saniyeler içinde membran stabilizasyonunun yerini tutmaz.',
   },
   'Anafilaksi antihistaminik tuzağı': {
@@ -2495,8 +2543,8 @@ function inferKeywordQuestionDomain(topic, keywords = []) {
 
 function buildKeywordFront(topic, keywords = []) {
   const special = SPECIAL_KEYWORD_CARDS[topic.topic];
-  if (special?.front) return special.front;
-  return `${topic.topic} ${inferKeywordQuestionDomain(topic, keywords)} hatırlanır?`;
+  if (special?.front) return cleanQuestion(special.front);
+  return cleanQuestion(`TUS’ta ${cleanText(topic.topic)} için anahtar patern nedir?`);
 }
 
 const SPECIAL_TRAP_FRONTS = {
@@ -2579,35 +2627,14 @@ function inferTrapQuestionDimension(trap = '', topic = {}) {
 }
 
 function buildTrapFront(topic) {
-  if (SPECIAL_TRAP_FRONTS[topic.topic]) return SPECIAL_TRAP_FRONTS[topic.topic];
-  const trap = String(topic.trap || '').trim();
-  const [firstClause = '', secondClause = ''] = trap.split(/;|\.(?=\s+[A-ZÇĞİÖŞÜ])/u).map((item) => item.trim()).filter(Boolean);
-  const topicKey = String(topic.topic || '').toLocaleLowerCase('tr').replace(/[.!?]+$/g, '');
-  const mainAnswerKey = String(topic.mainAnswer || '').toLocaleLowerCase('tr').replace(/[.!?]+$/g, '');
-  const firstKey = firstClause.toLocaleLowerCase('tr');
-  const secondKey = secondClause.toLocaleLowerCase('tr');
-  const dimension = inferTrapQuestionDimension(trap, topic);
-
-  let otherEntity = '';
-  if (secondClause && (secondKey.includes(topicKey) || secondKey.includes(mainAnswerKey))) {
-    otherEntity = stripContrastEntity(firstClause);
-  } else if (firstClause && (firstKey.includes(topicKey) || firstKey.includes(mainAnswerKey))) {
-    otherEntity = stripContrastEntity(secondClause);
-  } else {
-    otherEntity = stripContrastEntity(firstClause);
-  }
-
-  const topicTitle = displayTopicForFront(topic.topic);
-  if (otherEntity && normalizeTopicLabel(otherEntity) !== normalizeTopicLabel(topicTitle)) {
-    return `${topicTitle}, ${otherEntity} ile hangi ${dimension} üzerinden ayrılır?`;
-  }
-
-  return `${topicTitle} hangi ${dimension} ile benzer tablolardan ayrılır?`;
+  if (SPECIAL_TRAP_FRONTS[topic.topic]) return cleanQuestion(SPECIAL_TRAP_FRONTS[topic.topic]);
+  return cleanQuestion(`TUS’ta ${displayTopicForFront(cleanText(topic.topic))} için kritik ayırıcı nokta nedir?`);
 }
+
 
 function buildTusTip(topic, keywords = []) {
   const chain = readableKeywordChain(keywords);
-  if (chain) return `${chain}.`;
+  if (chain) return cleanSentence(`TUS’ta ${cleanText(topic.topic)} için ${chain} birlikteliğini yakala`);
   return cleanSentence(topic.explanation);
 }
 
@@ -2636,9 +2663,9 @@ function buildCard(topic, topicIndex, variantIndex) {
   const base = {
     id: `tus-pearl-${topic.branchId}-${String(topicIndex + 1).padStart(3, '0')}-${variant}`,
     branchId: topic.branchId,
-    subject: topic.subject,
-    topic: topic.topic,
-    keywords,
+    subject: cleanText(topic.subject),
+    topic: cleanText(topic.topic),
+    keywords: keywords.map((keyword) => cleanText(keyword)).filter(Boolean),
     appearedYears: [],
     appearanceCount: 0,
     difficulty: topic.difficulty || 'orta',
@@ -2650,9 +2677,9 @@ function buildCard(topic, topicIndex, variantIndex) {
   if (variant === 'spot') {
     return {
       ...base,
-      front: topic.mainQuestion,
-      back: topic.mainAnswer,
-      answer: topic.mainAnswer,
+      front: cleanQuestion(topic.mainQuestion),
+      back: cleanSentence(topic.mainAnswer),
+      answer: cleanSentence(topic.mainAnswer),
       explanation: buildVariantExplanation(topic, variant, keywords),
       tusTip: buildTusTip(topic, keywords),
       differentialNote: cleanSentence(topic.trap),
@@ -2665,11 +2692,11 @@ function buildCard(topic, topicIndex, variantIndex) {
     return {
       ...base,
       front: buildKeywordFront(topic, keywords),
-      back: answer,
-      answer,
+      back: cleanSentence(answer),
+      answer: cleanSentence(answer),
       explanation: buildVariantExplanation(topic, variant, keywords),
-      tusTip: special.tusTip || '',
-      differentialNote: special.differentialNote || cleanSentence(topic.trap),
+      tusTip: special.tusTip ? cleanSentence(special.tusTip) : '',
+      differentialNote: special.differentialNote ? cleanSentence(special.differentialNote) : cleanSentence(topic.trap),
       cardType: 'Anahtar kelime',
     };
   }
@@ -2678,8 +2705,8 @@ function buildCard(topic, topicIndex, variantIndex) {
     return {
       ...base,
       front: buildTrapFront(topic),
-      back: answer,
-      answer,
+      back: cleanSentence(answer),
+      answer: cleanSentence(answer),
       explanation: buildVariantExplanation(topic, variant, keywords),
       tusTip: buildTusTip(topic, keywords),
       differentialNote: '',
@@ -2688,9 +2715,9 @@ function buildCard(topic, topicIndex, variantIndex) {
   }
   return {
     ...base,
-    front: topic.extraQuestion,
-    back: topic.extraAnswer,
-    answer: topic.extraAnswer,
+    front: cleanQuestion(topic.extraQuestion),
+    back: cleanSentence(topic.extraAnswer),
+    answer: cleanSentence(topic.extraAnswer),
     explanation: buildVariantExplanation(topic, variant, keywords),
     tusTip: buildTusTip(topic, keywords),
     differentialNote: cleanSentence(topic.trap),

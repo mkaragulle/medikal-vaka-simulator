@@ -35678,3 +35678,144 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
     grid-column: span 1;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V36 — Home AI action emphasis
+   Makes the existing "AI ile Soru Üret" CTA more noticeable
+   without changing its size, position, or layout rhythm.
+   ========================================================= */
+body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action {
+  isolation: isolate !important;
+  overflow: hidden !important;
+  color: #0f766e !important;
+  background:
+    linear-gradient(135deg, rgba(240, 253, 250, .98) 0%, rgba(204, 251, 241, .92) 50%, rgba(224, 242, 254, .86) 100%) !important;
+  border-color: rgba(20, 184, 166, .36) !important;
+  box-shadow:
+    0 0 0 1px rgba(45, 212, 191, .12),
+    0 14px 30px rgba(20, 184, 166, .16),
+    0 0 30px rgba(45, 212, 191, .18) !important;
+  animation: klinikiq-ai-cta-glow 2.35s ease-in-out infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action::before,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(94, 234, 212, .46), transparent 38%),
+    radial-gradient(circle at 86% 18%, rgba(56, 189, 248, .30), transparent 42%);
+  opacity: .72;
+  animation: klinikiq-ai-cta-breathe 2.35s ease-in-out infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action::after,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action::after {
+  content: "";
+  position: absolute;
+  top: -45%;
+  bottom: -45%;
+  left: -38%;
+  width: 34%;
+  z-index: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, .66) 48%, transparent 100%);
+  filter: blur(.5px);
+  opacity: .62;
+  transform: translateX(-135%) rotate(10deg);
+  animation: klinikiq-ai-cta-shimmer 3.1s ease-in-out infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action > *,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action > * {
+  position: relative;
+  z-index: 1;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action svg,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action svg {
+  color: #0f766e !important;
+  filter: drop-shadow(0 0 7px rgba(20, 184, 166, .28));
+  animation: klinikiq-ai-cta-icon-spark 1.75s ease-in-out infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action:hover:not(:disabled),
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action:hover:not(:disabled) {
+  border-color: rgba(20, 184, 166, .54) !important;
+  box-shadow:
+    0 0 0 1px rgba(45, 212, 191, .18),
+    0 18px 36px rgba(20, 184, 166, .22),
+    0 0 42px rgba(45, 212, 191, .28) !important;
+}
+
+@keyframes klinikiq-ai-cta-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(45, 212, 191, .10),
+      0 14px 30px rgba(20, 184, 166, .14),
+      0 0 22px rgba(45, 212, 191, .14);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(45, 212, 191, .22),
+      0 18px 38px rgba(20, 184, 166, .22),
+      0 0 42px rgba(45, 212, 191, .30);
+  }
+}
+
+@keyframes klinikiq-ai-cta-breathe {
+  0%, 100% { opacity: .58; transform: scale(1); }
+  50% { opacity: .94; transform: scale(1.018); }
+}
+
+@keyframes klinikiq-ai-cta-shimmer {
+  0% { transform: translateX(-145%) rotate(10deg); opacity: 0; }
+  18% { opacity: .62; }
+  46% { opacity: .58; }
+  64%, 100% { transform: translateX(430%) rotate(10deg); opacity: 0; }
+}
+
+@keyframes klinikiq-ai-cta-icon-spark {
+  0%, 100% { transform: translateZ(0) scale(1); opacity: .92; }
+  50% { transform: translateZ(0) scale(1.08); opacity: 1; }
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action,
+.app-shell[data-theme="dark"] .home-actions-v10 .ai-hero-action,
+.app-shell[data-theme="dark"] .home-actions-v8.home-actions-v10 .ai-hero-action {
+  color: #dffdfa !important;
+  background:
+    linear-gradient(135deg, rgba(19, 78, 74, .96) 0%, rgba(13, 148, 136, .58) 58%, rgba(8, 47, 73, .78) 100%) !important;
+  border-color: rgba(94, 234, 212, .34) !important;
+  box-shadow:
+    0 0 0 1px rgba(94, 234, 212, .12),
+    0 14px 30px rgba(8, 47, 73, .28),
+    0 0 36px rgba(45, 212, 191, .22) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action svg,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action svg,
+.app-shell[data-theme="dark"] .home-actions-v10 .ai-hero-action svg,
+.app-shell[data-theme="dark"] .home-actions-v8.home-actions-v10 .ai-hero-action svg {
+  color: #99f6e4 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action,
+  body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action,
+  body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action::before,
+  body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action::before,
+  body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action::after,
+  body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action::after,
+  body:not(.klinikiq-auth-lock) .home-actions-v10 .ai-hero-action svg,
+  body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .ai-hero-action svg {
+    animation: none !important;
+  }
+}
