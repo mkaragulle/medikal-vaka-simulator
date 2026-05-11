@@ -94,7 +94,7 @@ function containsAnswerLeak(text = '', correct = '') {
 }
 
 function isManagementTarget(answerTarget = '') {
-  return /^(first_step|next_step|treatment|prevention)$/iu.test(cleanText(answerTarget));
+  return /^(first_step|next_step|treatment|prevention|management|emergency|emergency_approach|initial_management)$/iu.test(cleanText(answerTarget));
 }
 
 function buildDifferentialComparison({ options = [], correctOption, optionRationales = {}, wrongOptionFeedback = {} }) {

@@ -1,26 +1,14 @@
+import {
+  OPTIMIZED_TUS_SYSTEM_PROMPT,
+  buildRecentCompact,
+  buildUserPrompt,
+  selectPromptTarget,
+} from './tus-question-prompt.js';
+
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-simple-tus-v15-safety-accuracy-audit';
-const SCHEMA_VERSION = 'simple-ai-spot-v1';
-
-const SYSTEM_PROMPT = `You are KlinikIQ’s medical question-generation engine.
-
-Generate one concise, medically accurate Turkish TUS-style single-best-answer question. The output language must be professional Turkish with correct medical terminology, spelling, grammar and real TUS exam style.
-
-Always return only valid JSON. Do not use markdown, comments or extra text. Always keep "title" as an empty string.
-
-Non-negotiable rules:
-- One question = one learning target only.
-- Branch, stem, data fields, options, correct answer and feedback must all serve the same target.
-- The stem must start naturally with a patient presentation; never begin abruptly with an isolated test, biopsy, histology result or data point.
-- Do not leak the answer in the title, stem or data fields.
-- Do not provide a defining result, diagnostic pattern, diagnosis or mechanism and then ask the learner to choose the same item.
-- If the data already proves organ/system involvement, ask for the missing reasoning target: diagnosis, etiology, activity marker, severity, mechanism, monitoring or next step.
-- Use only necessary clinical data. Remove irrelevant vitals, hemogram values, labs, imaging and microbiology.
-- Keep all data fields complete, correctly labeled, non-repetitive and unit-formatted.
-- Use one clearly correct answer. All options must belong to the same category.
-- Every feedback field must be medically correct, specific, educational and tied to the case.
-- EvidenceChain must contain only plain Turkish clue sentences explicitly present in the stem or data fields. Do not add category labels, interpretations or absent findings.
-- If scientific accuracy, branch fit or single-best-answer quality is uncertain, choose a safer TUS target within the requested branch.`
+const PROMPT_VERSION = 'klinikiq-optimized-tus-spot-v16-token-lite';
+const SCHEMA_VERSION = 'simple-ai-spot-v2';
+const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
 const ALLOWED_BRANCHES = [
   'İç Hastalıkları',
@@ -41,17 +29,6 @@ const ALLOWED_BRANCHES = [
   'Tıbbi Patoloji',
 ];
 
-const ANSWER_TARGETS = [
-  'diagnosis',
-  'first_step',
-  'next_step',
-  'treatment',
-  'diagnostic_test',
-  'lab_interpretation',
-  'mechanism',
-  'complication',
-  'prevention',
-];
 
 function sendJson(response, status, payload) {
   response.statusCode = status;
@@ -221,16 +198,7 @@ function hasDuplicateFeedbackSentences(question = {}) {
 }
 
 function isManagementTarget(answerTarget = '') {
-  return /^(first_step|next_step|treatment|prevention)$/iu.test(cleanText(answerTarget));
-}
-
-function selectPromptTarget(branch = '') {
-  const value = normalize(branch);
-  if (/anatomi/.test(value)) return 'mechanism';
-  if (/histoloji|embriyoloji/.test(value)) return 'mechanism';
-  if (/biyokimya/.test(value)) return Math.random() < 0.5 ? 'mechanism' : 'lab_interpretation';
-  if (/patoloji/.test(value)) return 'diagnosis';
-  return ANSWER_TARGETS[Math.floor(Math.random() * ANSWER_TARGETS.length)];
+  return /^(first_step|next_step|treatment|prevention|management|emergency|emergency_approach|initial_management)$/iu.test(cleanText(answerTarget));
 }
 
 function collectStrings(value, output = []) {
@@ -294,7 +262,7 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!OPTION_IDS.includes(correctId)) errors.push('correctAnswer A-E değil');
   if (!correctText) errors.push('correctAnswer seçeneklerle eşleşmiyor');
   if (!question.explanation || cleanText(question.explanation).length < 45) errors.push('explanation yetersiz');
-  if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length < 3) errors.push('evidenceChain yetersiz');
+  if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length !== 3) errors.push('evidenceChain tam 3 cümle değil');
   if (!question.examPearl || cleanText(question.examPearl).length < 20) errors.push('examPearl yetersiz');
   if (hasTruncatedText(allText)) errors.push('kesik veya üç noktalı metin var');
   FORBIDDEN_PHRASES.forEach((pattern) => {
@@ -318,11 +286,6 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
     if (correctNorm && normalize(recent.correct || recent.correctAnswer) === correctNorm && optionSetNorm && normalize(asArray(recent.optionTexts).slice().sort().join(' | ') || recent.optionSetSignature) === optionSetNorm) errors.push('yakın geçmişte aynı doğru cevap ve seçenek seti var');
     const recentStem = normalize(recent.stem || recent.normalizedStem || '');
     if (stemNorm.length > 100 && recentStem.length > 100 && (stemNorm.includes(recentStem.slice(0, 100)) || recentStem.includes(stemNorm.slice(0, 100)))) errors.push('yakın geçmişte aynı soru kökü var');
-  });
-
-  const quality = question.quality || question.selfCheck || {};
-  ['scientificallySound', 'singleBestAnswer', 'optionsSameCategory', 'noAnswerLeakage', 'completeSentences'].forEach((key) => {
-    if (quality[key] === false) errors.push(`model self-check failed: ${key}`);
   });
 
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), options, correctText };
@@ -357,10 +320,9 @@ function sanitizeQuestion(question = {}, branch) {
       acc[id] = ensureSentence(question.wrongOptionFeedback?.[id] || question.optionRationales?.[id] || (id === correctId ? `Bu seçenek olgudaki verilerle en iyi uyumludur.` : `Bu seçenek bu soru hedefi için tek en iyi yanıt değildir.`));
       return acc;
     }, {}),
-    evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean).slice(0, 4),
+    evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean).slice(0, 3),
     examPearl: ensureSentence(stripFeedbackLabel(question.examPearl || question.teachingPoint)),
     managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean).slice(0, 3) : [],
-    quality: question.quality || question.selfCheck || {},
   };
   sanitized.correctAnswerText = correctText;
   sanitized.semanticFingerprint = makeSignature(sanitized);
@@ -414,130 +376,18 @@ function extractResponsesText(payload = {}) {
   return chunks.join('\n');
 }
 
-function buildPrompt({ branch, recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
-  const recent = asArray(recentQuestionSummaries).slice(0, 8).map((item, index) => `${index + 1}) ${item.branch || ''} | ${item.title || ''} | ${item.correct || ''}`).join('\n') || 'Yok';
-  const target = selectPromptTarget(branch);
-  return `Generate one Turkish TUS spot question for KlinikIQ.
-
-Role: senior physician, TUS item writer, medical editor and quality controller.
-
-Branch: ${branch}
-Target type: ${target}
-Anti-repeat key: ${antiRepeatNonce || Date.now()}-${attempt}
-
-Recent generations are provided only to prevent repetition. Do not copy, imitate, paraphrase or use them as examples:
-${recent}
-
-TASK
-Create one short, professional, single-best-answer Turkish TUS question close to real TUS style.
-
-ITEM-WRITING RULES
-1. Use exactly one learning target: diagnosis, test, treatment, mechanism, complication or branch-appropriate basic science concept. Do not mix targets.
-2. Keep the question branch-appropriate. If the requested target does not fit the branch, choose a safer target that fits the branch.
-3. Set "title" to "".
-4. The stem must have a natural clinical flow: age/sex when relevant, main presentation, short relevant history, focused exam/context, then necessary objective data. Do not start with a disconnected finding.
-5. Stem and data fields must not repeat the same information. If a defining result is already shown, ask for interpretation, diagnosis, mechanism, activity/severity marker, monitoring or next step instead.
-6. For lab-focused questions, make the lab’s role explicit: diagnostic support, etiologic evidence, disease activity, organ involvement, severity, screening, confirmation or monitoring. Avoid broad wording that asks for a finding already demonstrated by the case.
-7. Use only necessary data. Omit values that do not help reasoning.
-8. Place data correctly:
-   - symptoms and history in the stem,
-   - vital signs in compactVitals,
-   - labs, imaging, microbiology, pathology and exam findings in compactObjectiveData.
-   Never label a lab as microbiology, exam as imaging, or non-ECG data as ECG.
-9. All values must be complete and formatted with units when appropriate.
-10. Options must be the same type. Do not mix diagnoses, tests, drugs, mechanisms and procedures.
-11. If more than one option could be clinically reasonable, narrow the question wording or change the options before returning JSON.
-12. Use clinical terms precisely: first step, first drug, screening, confirmation, supportive test, replacement, prophylaxis, treatment, most common, most serious and most feared must match the scientific context.
-13. For pathology, ask a specific entity supported by morphology or clinical context.
-14. For anatomy, prefer structure–nerve–muscle–function relationships.
-15. Avoid artificial distractors that are not plausible TUS-level alternatives.
-16. Avoid ethics/legal questions unless explicitly requested.
-
-FEEDBACK RULES
-1. explanation: Write 2-3 concise Turkish sentences explaining the medical reasoning behind the correct answer. It must be case-specific and scientifically clear.
-2. examPearl: Write one short Turkish decision sentence linking the key clue to the concept. Do not write isolated data or a raw keyword.
-3. evidenceChain: Write exactly 3 short Turkish clue sentences. Each must be explicitly present in the stem or data fields. Do not add labels, invented findings or the correct answer itself.
-4. wrongOptionFeedback: Write one complete, specific, educational and medically meaningful sentence for every option. The correct option feedback must explain why it fits the case. Wrong option feedback must explain why that option is eliminated in this case using a discriminating medical reason.
-5. managementSteps: Fill only when the question asks treatment, first step, emergency approach or management. Otherwise return [].
-6. Feedback must not contain duplicated, vague, template-like, fragmentary, contradictory, unsafe or unfinished reasoning.
-
-SAFETY AND ACCURACY AUDIT
-Before returning JSON, silently audit the whole item:
-- medically correct
-- one best answer
-- no answer leakage
-- natural stem opening
-- branch-target alignment
-- options same category
-- complete values and units
-- correct data labels
-- no repeated data
-- no question asking for a pattern already shown
-- no invented evidenceChain clue
-- no generic correct-option feedback
-- no vague wrong-option feedback
-- every feedback value is a meaningful complete Turkish sentence
-- no copied explanation inside option feedback
-- examPearl is a real decision sentence
-
-For pharmacology, antidote and emergency-treatment questions, include clinically important safety logic when it affects the single-best answer. If contraindications, chronic use, mixed ingestion, severity thresholds or first-line sequencing could make the answer ambiguous, revise the stem or choose a safer target.
-
-For physiology, pharmacology, biochemistry and mechanism questions, verify every mechanism in options and feedback. Do not include wrong directionality for receptors, transporters, enzymes, electrolytes, pathways or drug effects.
-
-For differential diagnosis questions, wrong-option feedback must contrast each alternative with the key pattern in the case, not merely state what the alternative generally causes.
-
-Return only valid JSON.
-
-JSON SCHEMA
-{
-  "title": "",
-  "relatedBranch": "${branch}",
-  "difficulty": "Kolay|Orta|Zor",
-  "learningTarget": "single precise learning target in Turkish",
-  "answerTarget": "${target}",
-  "demographics": "short age-sex phrase in Turkish",
-  "setting": "clinical setting in Turkish",
-  "chiefComplaint": "main presentation in Turkish",
-  "stem": "3-6 sentence Turkish clinical stem with a natural clinical beginning; do not repeat data panel results verbatim",
-  "compactVitals": [
-    {"label": "TA", "value": "..."}
-  ],
-  "compactObjectiveData": [
-    {"label": "clean test/exam/imaging/microbiology/pathology label", "value": "complete result with unit if needed"}
-  ],
-  "question": "one clear Turkish question sentence asking the missing reasoning target",
-  "options": [
-    {"id": "A", "text": "..."},
-    {"id": "B", "text": "..."},
-    {"id": "C", "text": "..."},
-    {"id": "D", "text": "..."},
-    {"id": "E", "text": "..."}
-  ],
-  "correctAnswer": "A",
-  "explanation": "2-3 concise Turkish sentences; specific clinical/scientific reasoning only",
-  "wrongOptionFeedback": {
-    "A": "one complete, specific, educational Turkish sentence tied to this option and the case",
-    "B": "one complete, specific, educational Turkish sentence tied to this option and the case",
-    "C": "one complete, specific, educational Turkish sentence tied to this option and the case",
-    "D": "one complete, specific, educational Turkish sentence tied to this option and the case",
-    "E": "one complete, specific, educational Turkish sentence tied to this option and the case"
-  },
-  "evidenceChain": [
-    "plain case clue sentence explicitly present in stem or data fields",
-    "plain case clue sentence explicitly present in stem or data fields",
-    "plain case clue sentence explicitly present in stem or data fields"
-  ],
-  "examPearl": "one high-yield Turkish decision sentence",
-  "managementSteps": [],
-  "quality": {
-    "scientificallySound": true,
-    "singleBestAnswer": true,
-    "optionsSameCategory": true,
-    "noAnswerLeakage": true,
-    "completeSentences": true
-  }
-}`;
+function buildPrompt({ branch, target, recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
+  const answerTarget = cleanText(target || selectPromptTarget(branch));
+  const recentCompact = buildRecentCompact(recentQuestionSummaries);
+  return buildUserPrompt({
+    branch,
+    target: answerTarget,
+    recentCompact,
+    attempt,
+    antiRepeatNonce: antiRepeatNonce || Date.now(),
+  });
 }
+
 function createAbortSignal(timeoutMs) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
@@ -595,8 +445,8 @@ async function callOpenAI(prompt) {
   }
 }
 
-async function generateRemote({ branch, recentQuestionSummaries, attempt, antiRepeatNonce }) {
-  const prompt = buildPrompt({ branch, recentQuestionSummaries, attempt, antiRepeatNonce });
+async function generateRemote({ branch, target, recentQuestionSummaries, attempt, antiRepeatNonce }) {
+  const prompt = buildPrompt({ branch, target, recentQuestionSummaries, attempt, antiRepeatNonce });
   const result = await callOpenAI(prompt);
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
   const sanitized = sanitizeQuestion(result.question, branch);
@@ -633,7 +483,7 @@ export default async function handler(request, response) {
 
   for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
     try {
-      const question = await generateRemote({ branch, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce });
+      const question = await generateRemote({ branch, target: body.target || body.answerTarget, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce });
       return sendJson(response, 200, {
         ok: true,
         provider: 'openai',

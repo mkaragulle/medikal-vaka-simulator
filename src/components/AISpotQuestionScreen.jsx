@@ -106,11 +106,10 @@ function CompactDataGroup({ title, items = [] }) {
           const label = String(item.label || '');
           const formatted = formatAISpotDataValue(label, item.value || '');
           const value = formatted.value;
-          const isLong = `${label} ${value}`.length > 34 || /[,;]/u.test(value);
           const qualityClass = formatted.quality === 'completed' ? 'unit-completed' : '';
           return (
             <div
-              className={`ai-spot-compact-data-item ${isLong ? 'is-long' : ''} ${qualityClass}`.trim()}
+              className={`ai-spot-compact-data-item ${qualityClass}`.trim()}
               key={`${title}-${label}-${index}`}
               title={`${label}: ${value}`}
             >

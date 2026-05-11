@@ -35571,3 +35571,75 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.i
   background: transparent !important;
   color: #e5edf6 !important;
 }
+
+
+/* =========================================================
+   KLINIKIQ V186 — AI Spot right-panel label/value alignment fix
+   Standardizes every support-data card item as stacked label above value.
+   This removes the inconsistent inline/pill rendering seen on short vitals
+   such as TA while keeping long objective findings readable.
+   ========================================================= */
+.ai-spot-support-data-panel .ai-spot-compact-data-item,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  grid-template-columns: none !important;
+  gap: 8px !important;
+  min-height: 0 !important;
+  padding: 13px 16px !important;
+  overflow: hidden !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item span,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long span {
+  display: block !important;
+  flex: none !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  color: #64748b !important;
+  font-size: 12px !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.01em !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item strong,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long strong,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed strong {
+  display: block !important;
+  flex: none !important;
+  justify-self: start !important;
+  align-self: stretch !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #0f172a !important;
+  font-size: 17px !important;
+  line-height: 1.45 !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.02em !important;
+  text-align: left !important;
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item strong,
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.is-long strong,
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed strong,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item strong,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.is-long strong,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed strong {
+  background: transparent !important;
+  color: #e5edf6 !important;
+}
