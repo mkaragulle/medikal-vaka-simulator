@@ -177,7 +177,7 @@ function inferOptionCategory(text = '') {
 }
 
 function inferQuestionIntent(question = {}) {
-  const q = asciiKey([question.question, question.learningTarget, question.title, question.questionIntent, question.answerTarget].filter(Boolean).join(' '));
+  const q = asciiKey([question.question, question.learningTarget, question.questionIntent, question.answerTarget].filter(Boolean).join(' '));
   if (/ilk hayat|hayati tehdit|oncelikle|ilk basamak|ilk mudahale|acil|stabilizasyon/.test(q)) return 'first_life_saving_step';
   if (/laboratuvar.*(test|kombinasyon|belirtec|marker)|testi.*kombinasyon|seroloji.*yorum|tetkik.*yorum|marker.*izlem/.test(q)) return 'diagnostic_first_test';
   if (/mekanizmaya yonelik|altta yatan|nedene yonelik|ozgul tedavi|antidot/.test(q)) return 'mechanism_targeted_treatment';
@@ -223,7 +223,7 @@ function coerceAnswerTarget(question = {}) {
   const inferred = inferQuestionIntent({ ...question, answerTarget: '' });
   const explicit = String(question.answerTarget || '').trim();
   if (!explicit) return inferred;
-  const q = asciiKey([question.question, question.learningTarget, question.title].filter(Boolean).join(' '));
+  const q = asciiKey([question.question, question.learningTarget].filter(Boolean).join(' '));
   const explicitKey = asciiKey(explicit);
   const questionAsksTest = /laboratuvar|test|tetkik|seroloji|marker|belirtec|kombinasyon/.test(q);
   const questionAsksMechanism = /mekanizma|patofizyoloji|aciklayan|transport|reseptor|enzim/.test(q);
@@ -502,7 +502,6 @@ export function validateQuestionIntent(question = {}) {
 
 function preAnswerText(question = {}) {
   return normalizeSpaces([
-    question.title,
     question.stem,
     question.narrativeStem,
     question.demographics,

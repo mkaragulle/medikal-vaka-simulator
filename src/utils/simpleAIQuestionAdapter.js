@@ -155,7 +155,6 @@ export function makeSimpleSignature(question = {}) {
     : '';
   return `simple-${stableHash([
     question.relatedBranch || question.branchName,
-    question.title,
     question.stem,
     question.question,
     correct,
@@ -164,20 +163,17 @@ export function makeSimpleSignature(question = {}) {
 }
 
 export function isTooSimilarToRecent(question = {}, recent = []) {
-  const title = normalizeForCompare(question.title);
   const correct = normalizeForCompare(question.diagnosis?.correct || question.correctAnswerText || '');
   const stem = normalizeForCompare(question.stem || '');
   const optionSet = normalizeForCompare((question.diagnosis?.options || []).slice().sort().join(' | '));
   const signature = question.contentSignature || makeSimpleSignature(question);
 
   return asArray(recent).some((item) => {
-    const itemTitle = normalizeForCompare(item.title || '');
     const itemCorrect = normalizeForCompare(item.correct || item.correctAnswer || '');
     const itemStem = normalizeForCompare(item.stem || item.normalizedStem || '');
     const itemOptions = normalizeForCompare(asArray(item.optionTexts).slice().sort().join(' | ') || item.optionSetSignature || '');
     const itemSignature = item.contentSignature || item.semanticFingerprint || item.signature || '';
     if (itemSignature && signature && itemSignature === signature) return true;
-    if (title && itemTitle && title === itemTitle) return true;
     if (correct && itemCorrect && correct === itemCorrect && optionSet && itemOptions && (optionSet === itemOptions || optionSet.includes(itemOptions) || itemOptions.includes(optionSet))) return true;
     if (stem && itemStem && stem.length > 80 && itemStem.length > 80 && (stem.includes(itemStem.slice(0, 120)) || itemStem.includes(stem.slice(0, 120)))) return true;
     return false;
@@ -213,7 +209,6 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const examPearl = ensureSentence(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || 'Benzer TUS sorularında karar verdirici ipucu, soru kökünün sorduğu hedefe göre yorumlanır.');
   const explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || 'Olgudaki klinik veriler birlikte değerlendirildiğinde doğru seçenek diğerlerinden ayrılır.');
   const optionRationales = payload.optionRationales || payload.wrongOptionFeedback || payload.rationales || {};
-  const title = cleanText(payload.title || payload.t || '');
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -221,7 +216,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     caseType: 'ai-spot',
     branchId: 'tus-spot-olgular',
     branchName: normalizedBranch,
-    title,
+    title: '',
     relatedBranch: normalizedBranch,
     spotCategory: `AI Spot • ${normalizedBranch}`,
     difficulty: cleanText(payload.difficulty || 'Orta'),
@@ -295,7 +290,6 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
 const FALLBACK_BANK = [
   {
     relatedBranch: 'İç Hastalıkları',
-    title: 'Sıvı-elektrolit yorumu',
     learningTarget: 'Laboratuvar paterni ve klinik bağlamı birlikte yorumlama.',
     demographics: 'Erişkin hasta',
     chiefComplaint: 'Halsizlik ve bilinç bulanıklığı',
@@ -316,7 +310,6 @@ const FALLBACK_BANK = [
   },
   {
     relatedBranch: 'Çocuk Sağlığı ve Hastalıkları',
-    title: 'Ateşli çocukta ilk değerlendirme',
     learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.',
     demographics: 'Küçük çocuk',
     chiefComplaint: 'Ateş ve halsizlik',
@@ -337,7 +330,6 @@ const FALLBACK_BANK = [
   },
   {
     relatedBranch: 'Tıbbi Farmakoloji',
-    title: 'İlaç yan etkisi tanıma',
     learningTarget: 'İlaç-mekanizma-yan etki ilişkisini kurma.',
     demographics: 'Erişkin hasta',
     chiefComplaint: 'Yeni başlayan yakınma',
@@ -361,7 +353,7 @@ export function createSimpleFallbackQuestion({ branchFilter = 'random', recentQu
   const normalizedBranch = normalizeForCompare(branchFilter);
   const candidates = FALLBACK_BANK.filter((item) => normalizedBranch === 'random' || normalizedBranch === 'rastgele' || normalizeForCompare(item.relatedBranch).includes(normalizedBranch) || normalizedBranch.includes(normalizeForCompare(item.relatedBranch)));
   const pool = candidates.length ? candidates : FALLBACK_BANK;
-  const recentTitles = new Set(asArray(recentQuestionSummaries).map((item) => normalizeForCompare(item.title || '')));
-  const selected = pool.find((item) => !recentTitles.has(normalizeForCompare(item.title))) || pool[Math.floor(Math.random() * pool.length)];
+  const recentCorrectAnswers = new Set(asArray(recentQuestionSummaries).map((item) => normalizeForCompare(item.correct || item.correctAnswer || item.correctAnswerText || '')));
+  const selected = pool.find((item) => !recentCorrectAnswers.has(normalizeForCompare(item.options?.find?.((option) => option.id === item.correctAnswer)?.text || item.correctAnswer || ''))) || pool[Math.floor(Math.random() * pool.length)];
   return normalizeSimpleAIQuestion({ ...selected, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, { source: 'local-safe-fallback', provider: 'local-safe-fallback', remote: false, fallback: true, branchFilter });
 }

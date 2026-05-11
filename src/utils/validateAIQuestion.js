@@ -40,7 +40,7 @@ function uniqueSummaryItems(items = [], max = 4) {
 function buildValidatedAIRiskContext(payload = {}, history = []) {
   const branch = String(payload.relatedBranch || '').toLocaleLowerCase('tr');
   const target = String(payload.learningTarget || '').toLocaleLowerCase('tr');
-  const allText = `${branch} ${target} ${payload.title || ''} ${payload.stem || ''}`.toLocaleLowerCase('tr');
+  const allText = `${branch} ${target} ${payload.stem || ''}`.toLocaleLowerCase('tr');
   if (/kawasaki|koroner|konjonktivit|mukozal|dudak/.test(allText)) {
     return ['Beş günden uzun süren ateş', 'Mukokutanöz bulguların eşlik etmesi', 'Koroner arter tutulumu riski'];
   }
@@ -130,7 +130,6 @@ export function validateAIQuestionPayload(payload = {}) {
   const correctAnswer = String(standardizedPayload.correctAnswer || '').trim().toUpperCase();
   const correctOption = options.find((option) => option.id.toUpperCase() === correctAnswer);
 
-  if (!standardizedPayload.title || String(standardizedPayload.title).trim().length < 6) errors.push('title eksik veya çok kısa');
   if (!standardizedPayload.stem || String(standardizedPayload.stem).trim().length < 40) errors.push('stem eksik veya çok kısa');
   if (!standardizedPayload.question || String(standardizedPayload.question).trim().length < 16) errors.push('question eksik veya çok kısa');
   if (options.length !== 5) errors.push('tam 5 seçenek gerekli');
@@ -286,7 +285,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     caseType: 'ai-spot',
     branchId: 'tus-spot-olgular',
     branchName: payload.relatedBranch || 'AI TUS Spot',
-    title: sanitizeMeasurementText(payload.title),
+    title: '',
     relatedBranch: payload.relatedBranch || 'TUS Spot Olgular',
     spotCategory: `AI Spot • ${payload.relatedBranch || 'TUS'}`,
     difficulty: payload.difficulty || 'Orta-Zor',
@@ -312,7 +311,7 @@ export function normalizeGeneratedAIQuestion(payload = {}) {
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
     patientIntro: {
       profile: payload.demographics || payload.relatedBranch || 'AI soru üretimi',
-      presentation: payload.chiefComplaint || payload.title,
+      presentation: payload.chiefComplaint || payload.demographics || payload.relatedBranch || 'AI soru üretimi',
       riskContext: buildValidatedAIRiskContext(payload, history),
       distinctiveClues: uniqueSummaryItems(payload.evidenceChain?.slice(0, 4) || [], 4),
       historySummary: sanitizeMeasurementText(payload.narrativeStem || payload.primaryStem || payload.stem),
