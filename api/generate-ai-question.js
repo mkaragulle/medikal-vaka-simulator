@@ -6,7 +6,7 @@ import {
 } from './tus-question-prompt.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v29-reset-prompt';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v30-clinical-rewrite-pass';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -280,6 +280,14 @@ function stripFeedbackLabel(value = '') {
 }
 
 const FORBIDDEN_PHRASES = [
+  /hedeflenen karar/iu,
+  /hedeflenen klinik karar/iu,
+  /klinik hedef/iu,
+  /hedefi(?:ni)? .*karşılar/iu,
+  /tanısal yönü öne çıkarır/iu,
+  /ile birlikte değerlendirildiğinde .*hedef/iu,
+  /destekler ile birlikte değerlendirildiğinde/iu,
+  /^\s*(?:yanlış|doğru|uygun|uygun değildir)\.?\s*$/iu,
   /farklı klinik tabloda uygun olabilir/iu,
   /olgudaki ana ipuçlarını tek başına açıklamaz/iu,
   /klinik bağlamda değerlendirilir/iu,
