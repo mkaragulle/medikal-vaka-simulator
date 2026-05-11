@@ -4,9 +4,10 @@ import {
   buildUserPrompt,
   selectPromptTarget,
 } from './tus-question-prompt.js';
+import { cleanMedicalFeedback, runMedicalQualityFilter } from './medical-quality-filter.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-optimized-tus-spot-v16-token-lite';
+const PROMPT_VERSION = 'klinikiq-optimized-tus-spot-v20-quality-gated-token-lite';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -219,6 +220,9 @@ const FORBIDDEN_PHRASES = [
   /olgudaki ana ipuçlarını tek başına açıklamaz/iu,
   /klinik bağlamda değerlendirilir/iu,
   /bu nedenle doğru cevap budur/iu,
+  /bu tabloda en uygun yaklaşım/iu,
+  /olgudaki verilerle en iyi uyumludur/iu,
+  /tek en iyi yanıt değildir/iu,
   /kanıt\s*[1-9]/iu,
   /verilen öğrenme hedefi/iu,
   /yanıt ekseni/iu,
@@ -331,9 +335,9 @@ function sanitizeQuestion(question = {}, branch) {
 
 const FALLBACK_BANK = [
   {
-    title: 'Laboratuvar paterni yorumu', relatedBranch: 'İç Hastalıkları', difficulty: 'Orta', learningTarget: 'Laboratuvar verisini klinik bağlamla birlikte yorumlama.', answerTarget: 'lab_interpretation', demographics: 'Erişkin hasta', setting: 'Acil servis', chiefComplaint: 'Halsizlik', stem: 'Erişkin hasta son günlerde artan halsizlik ve dikkat azalması nedeniyle değerlendirilir. Öyküde sıvı alımında azalma vardır. Muayenede belirgin fokal nörolojik defisit saptanmaz.', compactObjectiveData: [{ label: 'Serum sodyum', value: '122 mEq/L' }, { label: 'Serum osmolalitesi', value: 'Düşük' }], question: 'Bu olgudaki laboratuvar paternini en iyi açıklayan seçenek hangisidir?', options: [{ id: 'A', text: 'Hipotonik hiponatremi' }, { id: 'B', text: 'Hipertonik hiponatremi' }, { id: 'C', text: 'İzotonik psödohiponatremi' }, { id: 'D', text: 'Hipernatremik dehidratasyon' }, { id: 'E', text: 'Primer hiperkalemi' }], correctAnswer: 'A', explanation: 'Düşük sodyum düzeyine düşük serum osmolalitesinin eşlik etmesi hipotonik hiponatremiyi destekler. Sonraki ayrım volüm durumu ve idrar elektrolitleriyle yapılır.', wrongOptionFeedback: { A: 'Bu seçenek düşük osmolalite ile birlikte gerçek hipotonik tabloyu açıklar.', B: 'Bu seçenek osmotik olarak aktif ek solüt varlığında düşünülür; burada düşük osmolalite verilmiştir.', C: 'Psödohiponatremide serum osmolalitesi genellikle normaldir; bu veri burada desteklenmez.', D: 'Hipernatremik tabloda serum sodyumu yüksek beklenir; burada düşük sodyum vardır.', E: 'Potasyum bozukluğu bu panelin ana açıklaması değildir.' }, evidenceChain: ['Serum sodyumu düşüktür.', 'Serum osmolalitesi düşüktür.', 'Bilinç değişikliği semptomatik tabloyu destekler.'], examPearl: 'Hiponatremi yorumunda ilk ayrım serum osmolalitesidir; düşük osmolalite gerçek hipotonik hiponatremiyi gösterir.', managementSteps: [] },
+    title: 'Laboratuvar paterni yorumu', relatedBranch: 'İç Hastalıkları', difficulty: 'Orta', learningTarget: 'Laboratuvar verisini klinik bağlamla birlikte yorumlama.', answerTarget: 'lab_interpretation', demographics: 'Erişkin hasta', setting: 'Acil servis', chiefComplaint: 'Halsizlik', stem: 'Erişkin hasta son günlerde artan halsizlik ve dikkat azalması nedeniyle değerlendirilir. Öyküde sıvı alımında azalma vardır. Muayenede belirgin fokal nörolojik defisit saptanmaz.', compactObjectiveData: [{ label: 'Serum sodyum', value: '122 mEq/L' }, { label: 'Serum osmolalitesi', value: 'Düşük' }], question: 'Bu olgudaki laboratuvar paternini en iyi açıklayan seçenek hangisidir?', options: [{ id: 'A', text: 'Hipotonik hiponatremi' }, { id: 'B', text: 'Hipertonik hiponatremi' }, { id: 'C', text: 'İzotonik psödohiponatremi' }, { id: 'D', text: 'Hipernatremik dehidratasyon' }, { id: 'E', text: 'Primer hiperkalemi' }], correctAnswer: 'A', explanation: 'Düşük sodyum düzeyine düşük serum osmolalitesinin eşlik etmesi hipotonik hiponatremiyi destekler. Sonraki ayrım volüm durumu ve idrar elektrolitleriyle yapılır.', wrongOptionFeedback: { A: 'Bu seçenek düşük sodyuma düşük serum osmolalitesinin eşlik ettiği gerçek hipotonik tabloyu açıkladığı için uygundur.', B: 'Bu seçenek osmotik olarak aktif ek solüt varlığında düşünülür; burada düşük osmolalite verilmiştir.', C: 'Psödohiponatremide serum osmolalitesi genellikle normaldir; bu veri burada desteklenmez.', D: 'Hipernatremik tabloda serum sodyumu yüksek beklenir; burada düşük sodyum vardır.', E: 'Primer potasyum bozukluğu sodyum ve osmolalite paternini açıklamaz; bu vakada ana karar elektrolit-osmolalite ilişkisidir.' }, evidenceChain: ['Serum sodyumu 122 mEq/L olarak verilmiştir.', 'Serum osmolalitesi düşük olarak verilmiştir.', 'Hastada dikkat azalması vardır.'], examPearl: 'Hiponatremi yorumunda ilk ayrım serum osmolalitesidir; düşük osmolalite gerçek hipotonik hiponatremiyi gösterir.', managementSteps: [] },
   {
-    title: 'Pediatrik perfüzyon değerlendirmesi', relatedBranch: 'Çocuk Sağlığı ve Hastalıkları', difficulty: 'Orta', learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.', answerTarget: 'first_step', demographics: 'Küçük çocuk', setting: 'Çocuk acil', chiefComplaint: 'Ateş ve halsizlik', stem: 'Küçük çocuk ateş ve beslenmede azalma nedeniyle acile getirilir. Aile çocuğun son saatlerde daha halsiz olduğunu belirtir. Muayenede kapiller dolum süresi uzamış ve cilt turgoru azalmıştır.', compactVitals: [{ label: 'Ateş', value: '39 °C' }, { label: 'Nabız', value: 'Taşikardik' }], question: 'Bu olguda öncelikle değerlendirilmesi gereken klinik öncelik hangisidir?', options: [{ id: 'A', text: 'Perfüzyon ve hidrasyon durumu' }, { id: 'B', text: 'Uzun dönem büyüme izlemi' }, { id: 'C', text: 'Rutin aşı takvimi planı' }, { id: 'D', text: 'Elektif dermatoloji değerlendirmesi' }, { id: 'E', text: 'Okul çağı psikososyal taraması' }], correctAnswer: 'A', explanation: 'Ateşli çocukta halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım ve hidrasyon değerlendirmesini öncelikli kılar. Diğer seçenekler akut acil karar düzeyini karşılamaz.', wrongOptionFeedback: { A: 'Bu seçenek akut risk değerlendirmesinin merkezindedir.', B: 'Büyüme izlemi önemlidir; ancak akut perfüzyon bulguları varken ilk öncelik değildir.', C: 'Aşı takvimi koruyucu sağlık başlığıdır; bu acil başvurunun ilk kararını açıklamaz.', D: 'Elektif değerlendirme akut sistemik bulguların önüne geçmez.', E: 'Psikososyal tarama bu akut perfüzyon sorununu yanıtlamaz.' }, evidenceChain: ['Beslenme azalmıştır.', 'Kapiller dolum süresi uzamıştır.', 'Cilt turgoru azalmıştır.'], examPearl: 'Pediatrik acilde genel durum ve perfüzyon bulguları tanısal ayrıntılardan önce değerlendirilir.', managementSteps: ['Hava yolu, solunum ve dolaşım hızlıca değerlendirilir.', 'Perfüzyon ve hidrasyon bulgularına göre sıvı planı yapılır.'] },
+    title: 'Pediatrik perfüzyon değerlendirmesi', relatedBranch: 'Çocuk Sağlığı ve Hastalıkları', difficulty: 'Orta', learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.', answerTarget: 'first_step', demographics: 'Küçük çocuk', setting: 'Çocuk acil', chiefComplaint: 'Ateş ve halsizlik', stem: 'Küçük çocuk ateş ve beslenmede azalma nedeniyle acile getirilir. Aile çocuğun son saatlerde daha halsiz olduğunu belirtir. Muayenede kapiller dolum süresi uzamış ve cilt turgoru azalmıştır.', compactVitals: [{ label: 'Ateş', value: '39 °C' }, { label: 'Nabız', value: 'Taşikardik' }], question: 'Bu olguda öncelikle değerlendirilmesi gereken klinik öncelik hangisidir?', options: [{ id: 'A', text: 'Perfüzyon ve hidrasyon durumu' }, { id: 'B', text: 'Uzun dönem büyüme izlemi' }, { id: 'C', text: 'Rutin aşı takvimi planı' }, { id: 'D', text: 'Elektif dermatoloji değerlendirmesi' }, { id: 'E', text: 'Okul çağı psikososyal taraması' }], correctAnswer: 'A', explanation: 'Ateşli çocukta halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım ve hidrasyon değerlendirmesini öncelikli kılar. Diğer seçenekler akut acil karar düzeyini karşılamaz.', wrongOptionFeedback: { A: 'Bu seçenek uzamış kapiller dolum ve turgor azalmasıyla belirginleşen akut dolaşım-hidrasyon önceliğini karşıladığı için uygundur.', B: 'Büyüme izlemi önemlidir; ancak akut perfüzyon bulguları varken ilk öncelik değildir.', C: 'Aşı takvimi koruyucu sağlık başlığıdır; bu acil başvurunun ilk kararını açıklamaz.', D: 'Elektif değerlendirme akut sistemik bulguların önüne geçmez.', E: 'Psikososyal tarama bu akut perfüzyon sorununu yanıtlamaz.' }, evidenceChain: ['Beslenmede azalma vardır.', 'Kapiller dolum süresi uzamıştır.', 'Cilt turgoru azalmıştır.'], examPearl: 'Pediatrik acilde genel durum ve perfüzyon bulguları tanısal ayrıntılardan önce değerlendirilir.', managementSteps: ['Hava yolu, solunum ve dolaşım hızlıca değerlendirilir.', 'Perfüzyon ve hidrasyon bulgularına göre sıvı planı yapılır.'] },
 ];
 
 function fallbackQuestion({ branchFilter, recentQuestionSummaries }) {
@@ -342,7 +346,9 @@ function fallbackQuestion({ branchFilter, recentQuestionSummaries }) {
   const candidates = FALLBACK_BANK.filter((item) => normalize(branchFilter).includes(normalize(item.relatedBranch)) || normalize(item.relatedBranch).includes(normalize(branchFilter)) || ['random', 'rastgele', ''].includes(normalize(branchFilter)));
   const pool = candidates.length ? candidates : FALLBACK_BANK;
   const selected = pool.find((item) => !recentTitles.has(normalize(item.title))) || pool[Math.floor(Math.random() * pool.length)];
-  return sanitizeQuestion({ ...selected, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch);
+  const question = cleanMedicalFeedback(sanitizeQuestion({ ...selected, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch));
+  const medicalQuality = runMedicalQualityFilter(question, recentQuestionSummaries);
+  return { ...medicalQuality.question, qualityNotes: medicalQuality.errors };
 }
 
 function getJsonCandidate(text = '') {
@@ -449,24 +455,31 @@ async function generateRemote({ branch, target, recentQuestionSummaries, attempt
   const prompt = buildPrompt({ branch, target, recentQuestionSummaries, attempt, antiRepeatNonce });
   const result = await callOpenAI(prompt);
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
-  const sanitized = sanitizeQuestion(result.question, branch);
+  let sanitized = sanitizeQuestion(result.question, branch);
+  sanitized = cleanMedicalFeedback(sanitized);
   sanitized.provider = 'openai';
   sanitized.openAIModel = result.model;
   sanitized.openAIMode = result.mode;
   sanitized.promptVersion = PROMPT_VERSION;
   sanitized.schemaVersion = SCHEMA_VERSION;
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
-  if (!validation.ok) {
-    const criticalErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|question net|tam 5 seçenek|correctAnswer|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor/iu.test(message)
+  const medicalQuality = runMedicalQualityFilter(sanitized, recentQuestionSummaries);
+  sanitized = medicalQuality.question;
+  const allErrors = Array.from(new Set([
+    ...validation.errors,
+    ...medicalQuality.errors.map((message) => `quality: ${message}`),
+  ]));
+  if (allErrors.length) {
+    const blockingErrors = allErrors.filter((message) =>
+      /branch eksik|stem çok kısa|question net|tam 5 seçenek|correctAnswer|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri|feedback|seçenek açıklaması|açıklama|TUS ipucu|mekanizma|hiperkalemi|anafilaksi|septik şok|opioid|organofosfat|HCV|SLE|yakın geçmiş|soru hedefi/iu.test(message)
     );
-    if (criticalErrors.length) {
-      const error = new Error(criticalErrors.join('; '));
-      error.validationErrors = criticalErrors;
+    if (blockingErrors.length) {
+      const error = new Error(blockingErrors.slice(0, 5).join('; '));
+      error.validationErrors = blockingErrors;
       error.question = sanitized;
       throw error;
     }
-    sanitized.qualityNotes = validation.errors;
+    sanitized.qualityNotes = allErrors;
   }
   return sanitized;
 }
