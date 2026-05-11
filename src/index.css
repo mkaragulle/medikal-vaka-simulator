@@ -35297,8 +35297,22 @@ html[data-theme="dark"] .ai-spot-answer-flow .ai-spot-inline-question-stem stron
 }
 
 .ai-spot-compact-feedback-grid .minimal-option-comparison-list {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 12px;
+}
+
+.ai-spot-compact-feedback-grid .minimal-option-comparison-list > .minimal-option-card {
+  grid-column: span 2;
+}
+
+/*
+  Desktop balance for 5 choices:
+  first row = 3 cards, second row = 2 wider cards
+*/
+.ai-spot-compact-feedback-grid .minimal-option-comparison-list > .minimal-option-card:nth-child(4):nth-last-child(2),
+.ai-spot-compact-feedback-grid .minimal-option-comparison-list > .minimal-option-card:nth-child(5):last-child {
+  grid-column: span 3;
 }
 
 .ai-spot-compact-feedback-grid .minimal-option-card {
@@ -35368,6 +35382,18 @@ html[data-theme="dark"] .ai-spot-compact-feedback-grid .minimal-option-card,
 .app-shell[data-theme="dark"] .ai-spot-compact-feedback-grid .minimal-option-card {
   background: rgba(15, 23, 42, 0.72);
   border-color: rgba(148, 163, 184, 0.16);
+}
+
+@media (max-width: 1024px) {
+  .ai-spot-compact-feedback-grid .minimal-option-comparison-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ai-spot-compact-feedback-grid .minimal-option-comparison-list > .minimal-option-card,
+  .ai-spot-compact-feedback-grid .minimal-option-comparison-list > .minimal-option-card:nth-child(4):nth-last-child(2),
+  .ai-spot-compact-feedback-grid .minimal-option-comparison-list > .minimal-option-card:nth-child(5):last-child {
+    grid-column: span 1;
+  }
 }
 
 @media (max-width: 760px) {
