@@ -35819,3 +35819,168 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8.home-acti
     animation: none !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V37 — Desktop-visible AI CTA attention motion
+   V36 glow was visually too subtle on desktop and could be
+   neutralized by later motion rules. This final override keeps
+   the existing size and position but makes the AI CTA visibly alive.
+   ========================================================= */
+body:not(.klinikiq-auth-lock) .home-actions-v10 .home-ai-attention-cta,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .home-ai-attention-cta {
+  position: relative !important;
+  isolation: isolate !important;
+  overflow: hidden !important;
+  transform: translateZ(0) !important;
+  will-change: box-shadow, background-position, filter !important;
+  background:
+    linear-gradient(110deg,
+      rgba(240, 253, 250, .98) 0%,
+      rgba(204, 251, 241, .96) 28%,
+      rgba(153, 246, 228, .92) 48%,
+      rgba(224, 242, 254, .92) 70%,
+      rgba(240, 253, 250, .98) 100%) !important;
+  background-size: 240% 100% !important;
+  border-color: rgba(20, 184, 166, .46) !important;
+  color: #0f766e !important;
+  box-shadow:
+    0 0 0 1px rgba(20, 184, 166, .18),
+    0 12px 28px rgba(20, 184, 166, .16),
+    0 0 34px rgba(45, 212, 191, .26) !important;
+  animation:
+    klinikiq-ai-cta-bg-sweep 2.8s linear infinite,
+    klinikiq-ai-cta-desktop-halo 1.65s ease-in-out infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .home-ai-attention-cta::before,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .home-ai-attention-cta::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  border-radius: inherit !important;
+  background:
+    radial-gradient(circle at 12% 50%, rgba(20, 184, 166, .28), transparent 28%),
+    radial-gradient(circle at 92% 18%, rgba(56, 189, 248, .22), transparent 34%) !important;
+  opacity: .72 !important;
+  animation: klinikiq-ai-cta-inner-breathe 1.65s ease-in-out infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .home-ai-attention-cta::after,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .home-ai-attention-cta::after {
+  content: "" !important;
+  position: absolute !important;
+  top: -60% !important;
+  bottom: -60% !important;
+  left: -42% !important;
+  width: 30% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, .84) 48%, transparent 100%) !important;
+  filter: blur(.6px) !important;
+  transform: translate3d(-160%, 0, 0) rotate(10deg) !important;
+  animation: klinikiq-ai-cta-strong-shimmer 2.15s ease-in-out infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .home-ai-attention-cta > *,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .home-ai-attention-cta > * {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .home-ai-attention-cta svg,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .home-ai-attention-cta svg {
+  color: #0f766e !important;
+  filter: drop-shadow(0 0 8px rgba(20, 184, 166, .50)) !important;
+  transform-origin: center !important;
+  animation: klinikiq-ai-cta-icon-twinkle 1.25s ease-in-out infinite !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-ai-attention-cta .home-ai-cta-orb {
+  position: absolute !important;
+  z-index: 1 !important;
+  width: 8px !important;
+  height: 8px !important;
+  right: 18px !important;
+  top: 50% !important;
+  border-radius: 999px !important;
+  background: #14b8a6 !important;
+  box-shadow: 0 0 0 0 rgba(20, 184, 166, .46), 0 0 14px rgba(20, 184, 166, .60) !important;
+  transform: translate3d(0, -50%, 0) !important;
+  pointer-events: none !important;
+  animation: klinikiq-ai-cta-orb-ping 1.35s ease-out infinite !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v10 .home-ai-attention-cta,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .home-ai-attention-cta,
+.app-shell[data-theme="dark"] .home-actions-v10 .home-ai-attention-cta,
+.app-shell[data-theme="dark"] .home-actions-v8.home-actions-v10 .home-ai-attention-cta {
+  color: #dffdfa !important;
+  background:
+    linear-gradient(110deg,
+      rgba(19, 78, 74, .98) 0%,
+      rgba(13, 148, 136, .78) 34%,
+      rgba(20, 184, 166, .62) 50%,
+      rgba(8, 47, 73, .88) 78%,
+      rgba(19, 78, 74, .98) 100%) !important;
+  background-size: 240% 100% !important;
+  border-color: rgba(94, 234, 212, .48) !important;
+  box-shadow:
+    0 0 0 1px rgba(94, 234, 212, .18),
+    0 14px 30px rgba(8, 47, 73, .34),
+    0 0 40px rgba(45, 212, 191, .34) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v10 .home-ai-attention-cta svg,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .home-ai-attention-cta svg,
+.app-shell[data-theme="dark"] .home-actions-v10 .home-ai-attention-cta svg,
+.app-shell[data-theme="dark"] .home-actions-v8.home-actions-v10 .home-ai-attention-cta svg {
+  color: #99f6e4 !important;
+}
+
+@keyframes klinikiq-ai-cta-bg-sweep {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes klinikiq-ai-cta-desktop-halo {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(20, 184, 166, .16),
+      0 12px 28px rgba(20, 184, 166, .15),
+      0 0 26px rgba(45, 212, 191, .22);
+    filter: saturate(1);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(20, 184, 166, .34),
+      0 16px 34px rgba(20, 184, 166, .24),
+      0 0 54px rgba(45, 212, 191, .42);
+    filter: saturate(1.16);
+  }
+}
+
+@keyframes klinikiq-ai-cta-inner-breathe {
+  0%, 100% { opacity: .52; transform: scale(1); }
+  50% { opacity: .96; transform: scale(1.02); }
+}
+
+@keyframes klinikiq-ai-cta-strong-shimmer {
+  0% { transform: translate3d(-170%, 0, 0) rotate(10deg); opacity: 0; }
+  18% { opacity: .82; }
+  52% { opacity: .76; }
+  72%, 100% { transform: translate3d(560%, 0, 0) rotate(10deg); opacity: 0; }
+}
+
+@keyframes klinikiq-ai-cta-icon-twinkle {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); opacity: .9; }
+  42% { transform: translate3d(0, -1px, 0) scale(1.13) rotate(-3deg); opacity: 1; }
+  66% { transform: translate3d(0, 0, 0) scale(1.03) rotate(2deg); opacity: .98; }
+}
+
+@keyframes klinikiq-ai-cta-orb-ping {
+  0% { opacity: .98; box-shadow: 0 0 0 0 rgba(20, 184, 166, .52), 0 0 14px rgba(20, 184, 166, .62); }
+  72% { opacity: .78; box-shadow: 0 0 0 8px rgba(20, 184, 166, 0), 0 0 18px rgba(20, 184, 166, .44); }
+  100% { opacity: .98; box-shadow: 0 0 0 0 rgba(20, 184, 166, 0), 0 0 14px rgba(20, 184, 166, .62); }
+}

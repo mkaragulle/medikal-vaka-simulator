@@ -279,7 +279,8 @@ function HomeCommandCenter({
                 <Icon name="Timer" />
                 <span>Zamanlı blok oluştur</span>
               </button>
-              <button type="button" className="btn btn-secondary ai-hero-action" onClick={onStartAIQuestion}>
+              <button type="button" className="btn btn-secondary ai-hero-action home-ai-attention-cta" onClick={onStartAIQuestion}>
+                <span className="home-ai-cta-orb" aria-hidden="true" />
                 <Icon name="Sparkles" />
                 <span>AI ile Soru Üret</span>
               </button>
