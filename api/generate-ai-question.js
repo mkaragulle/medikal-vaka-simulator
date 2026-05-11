@@ -6,7 +6,7 @@ import {
 } from './tus-question-prompt.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-optimized-tus-spot-v17-feedback-gate';
+const PROMPT_VERSION = 'klinikiq-optimized-tus-spot-v18-balanced-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -281,16 +281,18 @@ function hasClinicalContext(question = {}) {
 
 function isGenericFeedback(text = '') {
   const value = cleanText(text);
-  if (!value || value.length < 45) return true;
+  if (!value || value.length < 28) return true;
   if (hasTruncatedText(value)) return true;
   return FORBIDDEN_PHRASES.some((pattern) => pattern.test(value));
 }
 
 function hasWrongOptionContrast(text = '') {
   const value = cleanText(text);
-  const whenRight = /düşünülür|dusunulur|beklenir|uygundur|seçilir|secilir|kullanılır|kullanilir|önceliklidir|endikedir|doğru olur|dogru olur|tipiktir|görülür|gorulur/iu.test(value);
-  const whyNotHere = /burada|bu olguda|bu vakada|oysa|ancak|fakat|verilen|eşlik etmez|eslik etmez|desteklenmez|uymaz|yoktur|değildir|degildir/iu.test(value);
-  return whenRight && whyNotHere;
+  // Keep this as a quality signal, not a hard blocker. Good Turkish feedback may be
+  // concise and still useful without using a fixed phrase such as "bu olguda".
+  const hasContrastConnector = /burada|bu olguda|bu vakada|oysa|ancak|fakat|ama|verilen|eşlik etmez|eslik etmez|desteklenmez|uymaz|yoktur|değildir|degildir|öncelik değildir|oncelik degildir/iu.test(value);
+  const hasUseCaseOrClinicalCue = /düşünülür|dusunulur|beklenir|uygundur|seçilir|secilir|kullanılır|kullanilir|önceliklidir|endikedir|doğru olur|dogru olur|tipiktir|görülür|gorulur|tanıda|tedavide|izlemde|tarama|profilaksi|acilde|stabil|şok|sok|hipotansiyon|ateş|ates|ağrı|agri|laboratuvar|ekg|grafi|seroloji|kültür|kultur/iu.test(value);
+  return value.length >= 45 && (hasContrastConnector || hasUseCaseOrClinicalCue);
 }
 
 function hasFeedbackQuality(question = {}, options = [], correctId = '') {
@@ -307,9 +309,10 @@ function hasFeedbackQuality(question = {}, options = [], correctId = '') {
 
 function hasPearlQuality(text = '') {
   const value = cleanText(text);
-  if (value.length < 35 || value.length > 220) return false;
+  if (value.length < 25 || value.length > 240) return false;
   if (isGenericFeedback(value)) return false;
-  return hasMechanismLanguage(value) || hasDecisionLanguage(value) || /→|=|:/u.test(value);
+  // A pearl should be memorable, but lack of a specific keyword must not kill generation.
+  return hasMechanismLanguage(value) || hasDecisionLanguage(value) || /→|=|:|ise|daima|önce|sonra|en çok|tipik/iu.test(value);
 }
 
 function hasExplanationQuality(question = {}, correctText = '') {
@@ -549,16 +552,22 @@ async function generateRemote({ branch, target, recentQuestionSummaries, attempt
   sanitized.schemaVersion = SCHEMA_VERSION;
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
   if (!validation.ok) {
-    const criticalErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|question net|tam 5 seçenek|correctAnswer|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik|şablon|feedback|mekanizma hassasiyeti|doğru cevap açıklaması|TUS ipucu|soru hedefi geniş|yakın geçmişte aynı öğrenme hedefi/iu.test(message)
+    // Balanced gate: block only unsafe/structural failures. Pedagogic improvements
+    // such as non-ideal feedback, weak pearl, broad wording, or near-repeat are kept
+    // as quality notes so the UI still receives a usable question instead of failing.
+    const blockingErrors = validation.errors.filter((message) =>
+      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|explanation yetersiz|evidenceChain tam 3|examPearl yetersiz|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var/iu.test(message)
     );
-    if (criticalErrors.length) {
-      const error = new Error(criticalErrors.join('; '));
-      error.validationErrors = criticalErrors;
+    if (blockingErrors.length) {
+      const error = new Error(blockingErrors.join('; '));
+      error.validationErrors = blockingErrors;
       error.question = sanitized;
       throw error;
     }
     sanitized.qualityNotes = validation.errors;
+    sanitized.qualityGate = 'passed-with-notes';
+  } else {
+    sanitized.qualityGate = 'passed';
   }
   return sanitized;
 }
@@ -570,7 +579,7 @@ export default async function handler(request, response) {
 
   const branch = chooseBranch(body.branchFilter);
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
-  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || 1)));
+  const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || 2)));
   const errors = [];
 
   for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
@@ -587,7 +596,7 @@ export default async function handler(request, response) {
     }
   }
 
-  if (String(process.env.AI_ENABLE_SAFE_FALLBACK || 'false').toLowerCase() === 'true') {
+  if (String(process.env.AI_ENABLE_SAFE_FALLBACK || 'true').toLowerCase() === 'true') {
     const question = fallbackQuestion({ branchFilter: branch, recentQuestionSummaries });
     question.provider = 'local-safe-fallback';
     question.fallback = true;
