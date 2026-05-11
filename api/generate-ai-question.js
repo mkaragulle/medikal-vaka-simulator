@@ -6,7 +6,7 @@ import {
 } from './tus-question-prompt.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-minimal-tus-spot-v26-difficulty-selector';
+const PROMPT_VERSION = 'klinikiq-minimal-tus-spot-v27-educational-explanation-data-guard';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -215,6 +215,35 @@ function hasPhysiologyDeterminantPanel(question = {}) {
   return determinant && interpretive && isDirectionChangeQuestion(question);
 }
 
+function isMechanismDirectionTarget(question = {}) {
+  const text = normalize([
+    question.learningTarget,
+    question.answerTarget,
+    question.question,
+  ].filter(Boolean).join(' '));
+  return /mekanizma|mechanism|neden|patofizyoloji|prensip|principle|yorum|interpretation|yorumlama/.test(text);
+}
+
+function hasUnwantedDirectionOnlyQuestion(question = {}, correctText = '') {
+  if (!isDirectionalAnswer(correctText) || !isDirectionChangeQuestion(question)) return false;
+  return !isMechanismDirectionTarget(question);
+}
+
+function hasIncompleteObjectiveData(question = {}) {
+  const items = compactItems(question.compactObjectiveData || question.objectiveData || [], 8);
+  return items.some((item) => {
+    const label = cleanText(item.label);
+    const value = cleanText(item.value);
+    if (!label || !value) return true;
+    if (hasTruncatedText(`${label} ${value}`)) return true;
+    if (normalize(label) === normalize(value)) return true;
+    if (value.length < 3) return true;
+    if (/^[<>~≈]?\d+(?:[.,]\d+)?$/u.test(value)) return true;
+    if (/^[-–—:;,/]+$/u.test(value)) return true;
+    return false;
+  });
+}
+
 function hasDuplicateFeedbackSentences(question = {}) {
   const pieces = [
     question.explanation,
@@ -397,6 +426,8 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (correctText && containsAnswerLeak(getPreAnswerDataText(question), correctText)) errors.push('soru kökü/veri paneli doğru cevabı ele veriyor');
   if (hasObjectiveDirectionLeak(question, correctText)) errors.push('veri paneli yön/değişim cevabını fazla ele veriyor');
   if (hasPhysiologyDeterminantPanel(question)) errors.push('fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor');
+  if (hasUnwantedDirectionOnlyQuestion(question, correctText)) errors.push('basit artar/azalır/değişmez sorusu mekanizma hedefi olmadan üretilmiş');
+  if (hasIncompleteObjectiveData(question)) errors.push('eksik veya tamamlanmamış objektif veri değeri var');
   if (asArray(question.evidenceChain).some((item) => containsAnswerLeak(item, correctText))) errors.push('kanıt zinciri doğru cevabı doğrudan söylüyor');
   if (hasDuplicateFeedbackSentences(question)) errors.push('feedback içinde tekrar eden cümle var');
   if (!isManagementTarget(question.answerTarget) && asArray(question.managementSteps).length) errors.push('bu soru tipinde yönetim basamağı gereksiz');
@@ -595,7 +626,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     // such as non-ideal feedback, weak pearl, broad wording, or near-repeat are kept
     // as quality notes so the UI still receives a usable question instead of failing.
     const blockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|explanation yetersiz|evidenceChain tam 3|examPearl yetersiz|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var/iu.test(message)
+      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|explanation yetersiz|evidenceChain tam 3|examPearl yetersiz|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|basit artar\/azalır\/değişmez sorusu mekanizma hedefi olmadan üretilmiş/iu.test(message)
     );
     if (blockingErrors.length) {
       const error = new Error(blockingErrors.join('; '));
