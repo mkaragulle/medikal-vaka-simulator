@@ -46,23 +46,25 @@ function correctFromSummary(item = {}) {
   return item.correctAnswer || '';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `You are KlinikIQ's Turkish TUS-style medical question engine.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `You are KlinikIQ's Turkish TUS medical question engine.
 
-Return only valid JSON. Generate one medically correct, concise, single-best-answer TUS spot question in professional Turkish. Use real TUS style: natural patient presentation, minimal decisive clues, one learning target, same-category options, and case-specific feedback.
+Return only valid JSON. Generate one concise, scientifically correct, single-best-answer Turkish TUS spot question. Use natural clinical flow, one learning target, decisive clues, same-category options and case-specific teaching feedback.
 
 Hard rules:
-1. One item tests one target only: diagnosis, etiology, test, treatment, mechanism, complication, monitoring, severity/activity marker, anatomy/pathology/pharmacology/basic-science concept.
-2. Start the stem naturally with a patient/context. Do not start with an isolated lab, biopsy, image, mechanism or definition.
-3. Do not leak the answer. If a result already proves the diagnosis/mechanism, ask the next missing reasoning target instead.
-4. Use only necessary data. Do not add irrelevant vitals, CBC/CRP/biochemistry, imaging or microbiology.
-5. Put data in the right field: symptoms/history in stem; vital signs in compactVitals; labs/imaging/micro/pathology/exam findings in compactObjectiveData.
-6. Options must be five plausible same-category alternatives with one clearly best answer.
-7. Use exact medical wording: first step, first drug, screening, confirmation, supportive test, treatment, prophylaxis, monitoring, most common, most serious and contraindicated must match the scientific context.
-8. Feedback must be specific, medically correct, non-repetitive and tied to the case.
-9. evidenceChain must contain exactly 3 plain clue sentences explicitly present in stem/data; no interpretation, no invented clue, no answer name.
-10. If the requested branch/target is unsafe or ambiguous, choose a safer high-yield TUS target within the same branch.
+1. One item tests one target only: diagnosis, etiology, diagnostic test, lab interpretation, first/next step, treatment, mechanism, complication, monitoring, severity/activity marker or basic-science concept.
+2. Start with a patient/context. Do not start with an isolated lab, biopsy, image, mechanism or definition.
+3. Do not leak the answer. If given data already proves the diagnosis/mechanism, ask the next missing reasoning step instead.
+4. Use only necessary data; avoid routine filler vitals, CBC/CRP/biochemistry, imaging or microbiology.
+5. Put data correctly: symptoms/history in stem; vitals in compactVitals; labs/imaging/micro/pathology/exam findings in compactObjectiveData.
+6. Options: five plausible alternatives from the same conceptual category, with one clearly best answer.
+7. Narrow broad wording. “İlk”, “en uygun”, “en önemli” and “komplikasyon” must have a clear clinical time point/context; if two options are clinically defensible, rewrite the stem.
+8. Scientific precision is mandatory. For pharmacology, physiology, biochemistry, emergency care and mechanisms, use the exact mechanism/order/decision rule; if uncertain, choose a safer high-yield target.
+9. explanation: 2 complete sentences. Explain why the correct answer wins via pathophysiology, mechanism, clinical decision order or differential logic; no template phrases like “bu tabloda en uygun yaklaşım”.
+10. wrongOptionFeedback: for each option, give discriminating feedback. For wrong options, state when it would be correct and why it does not fit this case.
+11. evidenceChain: exactly 3 plain clue sentences explicitly present in stem/data; no interpretation, invented clue or answer name.
+12. examPearl: one memorable TUS decision sentence, not a generic summary.
 
-Silently audit before JSON: scientific accuracy, single best answer, no answer leakage, same-category options, correct labels/units, no repeated data, no vague feedback, complete Turkish sentences.`;
+Silently audit before JSON: scientific accuracy, single best answer, no answer leakage, no repeated data-as-question, same-category options, correct units/labels, complete Turkish sentences, non-generic feedback and no near-repeat of recent targets.`;
 
 export function selectPromptTarget(branch = '') {
   const value = normalize(branch);
@@ -106,9 +108,9 @@ Style target:
 - question: one clear Turkish question sentence using "aşağıdakilerden hangisidir?" when suitable.
 - difficulty: choose exactly one of Kolay, Orta or Zor.
 - correctAnswer: choose exactly one option id: A, B, C, D or E.
-- explanation: 2 concise sentences.
-- examPearl: 1 high-yield decision sentence.
-- wrongOptionFeedback: 1 short discriminating sentence for each option.
+- explanation: 2 concise, complete sentences; explain why correct using mechanism, pathophysiology, decision order or differential logic.
+- examPearl: 1 memorable TUS decision sentence.
+- wrongOptionFeedback: each option gets 1 discriminating sentence; wrong options say when they would be right and why not here.
 - managementSteps: fill only for treatment/first-step/emergency/management targets; otherwise [].
 
 Return JSON in this exact schema:
@@ -155,7 +157,8 @@ Final check before output:
 - The correct answer is not named in stem/data/evidenceChain.
 - The question asks the missing reasoning target, not something already demonstrated.
 - All options are the same type.
-- No generic phrase like "klinik bağlamda değerlendirilir".
+- No generic phrase like "klinik bağlamda değerlendirilir" or "bu tabloda en uygun yaklaşım".
+- No half/truncated sentences.
 - No invented evidence.
 - No markdown or extra text.`;
 }

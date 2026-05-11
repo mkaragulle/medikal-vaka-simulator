@@ -458,9 +458,9 @@ function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) 
   const keyEvidence = evidenceChain[0]?.text || itemText(evidenceChain[0]);
   const keyInvestigation = (clinicalCase.investigations || []).find((item) => item.summary || item.findings?.length);
   const points = [
-    keyEvidence ? `${trimTrailingPunctuation(keyEvidence)} bu alternatifin eksik kaldığı karar noktasını gösterir.` : null,
+    keyEvidence ? `${trimTrailingPunctuation(keyEvidence)} verilen olguda bu alternatifin neden geri planda kaldığını gösterir.` : null,
     keyInvestigation ? `${keyInvestigation.label} bulgusu seçenekler arasındaki ayrımı objektif veriye taşır.` : null,
-    `${option} bu karar düzeyinde öncelikli yanıtı karşılamadığı için geri planda kalır.`,
+    `${option} ancak farklı bir klinik öncelikte düşünülebilir; verilen olguda beklenen karar noktasını karşılamaz.`,
   ];
 
   return unique(points.filter(Boolean)).slice(0, 3).map((item) => truncateSentence(item, 155));
@@ -481,8 +481,8 @@ function deriveCorrectOptionSummary(clinicalCase, option, evidenceChain = []) {
   const target = normalizeText(clinicalCase.answerTarget || clinicalCase.questionType || '').toLocaleLowerCase('tr');
   if (/mechanism|mekanizma/iu.test(target)) return `${option} verilen bulguyu en doğrudan açıklayan mekanizmayı temsil eder.`;
   if (/diagnostic_test|test|laboratuvar|lab/iu.test(target)) return `${option} bu klinik hedef için en uygun tanısal yönü öne çıkarır.`;
-  if (/first_step|next_step|treatment|tedavi/iu.test(target)) return `${option} bu tabloda öncelik sırasını en doğru karşılayan yaklaşımdır.`;
-  return `${option} ${clue ? `${trimTrailingPunctuation(clue)} ile birlikte değerlendirildiğinde` : 'vaka ipuçlarıyla'} diğer seçeneklerden ayrılır.`;
+  if (/first_step|next_step|treatment|tedavi/iu.test(target)) return `${option} olgudaki klinik önceliği en doğrudan karşılayan yaklaşımdır.`;
+  return `${option} ${clue ? `${trimTrailingPunctuation(clue)} ile birlikte değerlendirildiğinde` : 'vaka ipuçlarıyla'} hedeflenen karar noktasını karşılar.`;
 }
 
 function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []) {

@@ -455,7 +455,7 @@ function describeOptionPurpose(optionText = '') {
   if (/adrenalin|epinefrin/.test(option)) return 'Adrenalin bronkospazm, vazodilatasyon ve dolaşım çöküşünü hedefleyen hayat kurtarıcı ilaçtır.';
   if (/oksijen|hava yolu|entubasyon/.test(option)) return 'Oksijen ve hava yolu güvenliği hipoksemi riski olan hastada temel destek basamağıdır.';
   if (/gozlem|bekle|izlem/.test(option)) return 'Sadece gözlem, hızla kötüleşebilecek acil tabloda tedaviyi geciktirir.';
-  return `${optionText} ilişkili bir alternatif gibi görünse de bu soruda hedeflenen karar düzeyi için tek en iyi yanıt değildir.`;
+  return `${optionText} ilişkili bir alternatif gibi görünse de verilen olguda hedeflenen karar düzeyi için öncelikli yanıt değildir.`;
 }
 
 function isPerioperativeAnaphylaxis(question = {}) {

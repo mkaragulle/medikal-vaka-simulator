@@ -102,8 +102,8 @@ function buildDifferentialComparison({ options = [], correctOption, optionRation
     if (!option?.text) return acc;
     const raw = optionRationales?.[option.id] || wrongOptionFeedback?.[option.id] || '';
     const explanation = ensureSentence(raw || (option.id === correctOption?.id
-      ? 'Bu seçenek olgudaki karar verdirici ipuçlarını en iyi açıklar.'
-      : 'Bu seçenek bu karar düzeyi için tek en iyi yanıt değildir.'));
+      ? 'Bu seçenek olgudaki karar verdirici ipuçlarını en doğrudan açıklar.'
+      : 'Bu seçenek farklı bir klinik durumda düşünülebilir; verilen olguda karar verdirici ipuçlarını karşılamaz.'));
     if (option.id !== correctOption?.id) {
       acc[option.text] = { explanation, comparisonPoints: [explanation] };
     }

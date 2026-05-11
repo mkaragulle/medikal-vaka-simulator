@@ -204,7 +204,7 @@ function makeRoleAwareWrongFeedback({ optionText, role, target, existing = '' })
   if (text && !generic && text.length >= 55) return compactSentence(text, '', 320);
   const targetText = targetToQuestionPrefix(target).replace(/\?$/, '').replace(/^Bu olguda\s*/iu, '').toLocaleLowerCase('tr');
   if (role === 'adjunct_correct_but_not_asked') {
-    return compactSentence(`${optionText} bu klinik tabloda yardımcı veya ek rol oynayabilir; ancak soru ${targetText} düzeyini sorduğu için tek en iyi yanıt değildir.`, '', 320);
+    return compactSentence(`${optionText} bazı olgularda yardımcı rol oynayabilir; ancak verilen olguda soru ${targetText} düzeyini sorduğu için öncelikli yanıt değildir.`, '', 320);
   }
   if (role === 'later_step') {
     return compactSentence(`${optionText} sonraki basamakta veya seçilmiş koşullarda değerlendirilebilir; bu soruda istenen karar düzeyi için öncelikli seçenek değildir.`, '', 320);

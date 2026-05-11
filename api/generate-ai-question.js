@@ -4,10 +4,9 @@ import {
   buildUserPrompt,
   selectPromptTarget,
 } from './tus-question-prompt.js';
-import { cleanMedicalFeedback, runMedicalQualityFilter } from './medical-quality-filter.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-optimized-tus-spot-v20-quality-gated-token-lite';
+const PROMPT_VERSION = 'klinikiq-optimized-tus-spot-v17-feedback-gate';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -220,9 +219,6 @@ const FORBIDDEN_PHRASES = [
   /olgudaki ana ipuçlarını tek başına açıklamaz/iu,
   /klinik bağlamda değerlendirilir/iu,
   /bu nedenle doğru cevap budur/iu,
-  /bu tabloda en uygun yaklaşım/iu,
-  /olgudaki verilerle en iyi uyumludur/iu,
-  /tek en iyi yanıt değildir/iu,
   /kanıt\s*[1-9]/iu,
   /verilen öğrenme hedefi/iu,
   /yanıt ekseni/iu,
@@ -232,6 +228,12 @@ const FORBIDDEN_PHRASES = [
   /doğru cevaba götür/iu,
   /doğru yanıta götür/iu,
   /cevap .* içinde yer al/iu,
+  /bu tabloda/iu,
+  /verilerle en iyi uyumludur/iu,
+  /tek en iyi yanıt değildir/iu,
+  /diğer seçeneklerden ayrılır/iu,
+  /olgudaki veriler birlikte değerlendirildiğinde/iu,
+  /bu seçenek bu soru hedefi/iu,
 ];
 
 function hasTruncatedText(text = '') {
@@ -241,6 +243,80 @@ function hasTruncatedText(text = '') {
   if (/\b(?:ve|veya|ile|çünkü|ancak|fakat|bu nedenle|olarak|için)$/iu.test(value)) return true;
   if (/\b[a-zçğıöşü]{1,2}\.$/iu.test(value) && value.length > 40) return true;
   return false;
+}
+
+function sentenceCount(text = '') {
+  return cleanText(text).split(/(?<=[.!?])\s+/u).map((item) => item.trim()).filter(Boolean).length;
+}
+
+function getFeedbackText(question = {}, id = '') {
+  return cleanText(question.wrongOptionFeedback?.[id] || question.optionRationales?.[id] || '');
+}
+
+function hasMechanismLanguage(text = '') {
+  return /patofizyoloji|mekanizma|reseptör|reseptor|agonist|antagonist|enzim|kanal|pompa|transport|kotransport|inhib|aktiv|blok|sentez|metabolizma|feedback|hormon|kompleman|koagülasyon|koagulasyon|membran|iyon|affinite|afinite|farmakolojik|fizyolojik|biyokimyasal/iu.test(cleanText(text));
+}
+
+function isMechanismSensitive(question = {}) {
+  return /mechanism|mekanizma|farmakoloji|fizyoloji|biyokimya|ilaç|ilac|enzim|reseptör|reseptor/iu.test([
+    question.answerTarget,
+    question.relatedBranch,
+    question.learningTarget,
+    question.question,
+  ].filter(Boolean).join(' '));
+}
+
+function hasDecisionLanguage(text = '') {
+  return /ilk|öncel|acil|stabil|hava yolu|solunum|dolaşım|hemodinami|kültür|kultur|beklenmeden|geciktirilmez|kontrendike|endike|ayırıcı|ayirici|dışlanır|dislanir|doğrular|dogrular|destekler|gösterir|gosterir|beklenir|düşündürür|dusundurur|açıklar|aciklar/iu.test(cleanText(text));
+}
+
+function isBroadQuestionWording(questionText = '') {
+  return /en önemli|en uygun|ilk yaklaşım|ilk müdahale|öncelikli|komplikasyon|ciddi seyir|risk göstergesi|marker|belirteç/iu.test(cleanText(questionText));
+}
+
+function hasClinicalContext(question = {}) {
+  const text = cleanText([question.stem, question.question, question.setting].filter(Boolean).join(' '));
+  return /acil|ilk|başlangıç|baslangic|stabil|hemodinami|tanı|tani|tedavi|izlem|tarama|profilaksi|gebelik|çocuk|erişkin|postop|travma|zehirlenme|saat|gün|hafta|akut|kronik/iu.test(text);
+}
+
+function isGenericFeedback(text = '') {
+  const value = cleanText(text);
+  if (!value || value.length < 45) return true;
+  if (hasTruncatedText(value)) return true;
+  return FORBIDDEN_PHRASES.some((pattern) => pattern.test(value));
+}
+
+function hasWrongOptionContrast(text = '') {
+  const value = cleanText(text);
+  const whenRight = /düşünülür|dusunulur|beklenir|uygundur|seçilir|secilir|kullanılır|kullanilir|önceliklidir|endikedir|doğru olur|dogru olur|tipiktir|görülür|gorulur/iu.test(value);
+  const whyNotHere = /burada|bu olguda|bu vakada|oysa|ancak|fakat|verilen|eşlik etmez|eslik etmez|desteklenmez|uymaz|yoktur|değildir|degildir/iu.test(value);
+  return whenRight && whyNotHere;
+}
+
+function hasFeedbackQuality(question = {}, options = [], correctId = '') {
+  const errors = [];
+  const correctFeedback = getFeedbackText(question, correctId);
+  if (isGenericFeedback(correctFeedback) || !hasDecisionLanguage(correctFeedback)) errors.push('doğru seçenek açıklaması şablon/zayıf');
+  options.forEach((option) => {
+    const feedback = getFeedbackText(question, option.id);
+    if (!feedback) errors.push(`seçenek ${option.id} feedback eksik`);
+    else if (option.id !== correctId && (isGenericFeedback(feedback) || !hasWrongOptionContrast(feedback))) errors.push(`seçenek ${option.id} feedback ayırt ettirici değil`);
+  });
+  return { ok: errors.length === 0, errors };
+}
+
+function hasPearlQuality(text = '') {
+  const value = cleanText(text);
+  if (value.length < 35 || value.length > 220) return false;
+  if (isGenericFeedback(value)) return false;
+  return hasMechanismLanguage(value) || hasDecisionLanguage(value) || /→|=|:/u.test(value);
+}
+
+function hasExplanationQuality(question = {}, correctText = '') {
+  const explanation = cleanText(question.explanation);
+  if (explanation.length < 70 || sentenceCount(explanation) < 2 || isGenericFeedback(explanation)) return false;
+  if (isMechanismSensitive(question)) return hasMechanismLanguage(explanation) || hasMechanismLanguage(question.examPearl);
+  return hasDecisionLanguage(explanation) || normalize(explanation).includes(normalize(correctText));
 }
 
 function optionCategory(text = '') {
@@ -269,6 +345,12 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!Array.isArray(question.evidenceChain) || question.evidenceChain.length !== 3) errors.push('evidenceChain tam 3 cümle değil');
   if (!question.examPearl || cleanText(question.examPearl).length < 20) errors.push('examPearl yetersiz');
   if (hasTruncatedText(allText)) errors.push('kesik veya üç noktalı metin var');
+  if (!hasExplanationQuality(question, correctText)) errors.push('doğru cevap açıklaması klinik/mekanistik gerekçe içermiyor');
+  if (!hasPearlQuality(question.examPearl)) errors.push('TUS ipucu karar cümlesi değil');
+  const feedbackQuality = hasFeedbackQuality(question, options, correctId);
+  if (!feedbackQuality.ok) errors.push(...feedbackQuality.errors);
+  if (isMechanismSensitive(question) && !hasMechanismLanguage([question.explanation, question.examPearl, question.wrongOptionFeedback?.[correctId]].filter(Boolean).join(' '))) errors.push('mekanizma hassasiyeti zayıf');
+  if (isBroadQuestionWording(question.question) && !hasClinicalContext(question)) errors.push('soru hedefi geniş, klinik bağlam daraltılmamış');
   FORBIDDEN_PHRASES.forEach((pattern) => {
     if (pattern.test(allText)) errors.push('jenerik/yasak feedback kalıbı var');
   });
@@ -286,10 +368,16 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   const correctNorm = normalize(correctText);
   const optionSetNorm = normalize(options.map((item) => item.text).sort().join(' | '));
   const stemNorm = normalize(question.stem);
+  const currentTargetNorm = normalize([question.relatedBranch, question.answerTarget, question.learningTarget, correctText].filter(Boolean).join(' | '));
   asArray(recentQuestionSummaries).slice(0, 12).forEach((recent) => {
-    if (correctNorm && normalize(recent.correct || recent.correctAnswer) === correctNorm && optionSetNorm && normalize(asArray(recent.optionTexts).slice().sort().join(' | ') || recent.optionSetSignature) === optionSetNorm) errors.push('yakın geçmişte aynı doğru cevap ve seçenek seti var');
+    const recentBranch = normalize(recent.branch || recent.relatedBranch || recent.branchName || '');
+    const sameBranch = !recentBranch || !normalize(question.relatedBranch) || recentBranch === normalize(question.relatedBranch);
+    const recentCorrect = normalize(recent.correct || recent.correctAnswer || recent.correctAnswerText || '');
+    if (correctNorm && recentCorrect === correctNorm && optionSetNorm && normalize(asArray(recent.optionTexts).slice().sort().join(' | ') || recent.optionSetSignature) === optionSetNorm) errors.push('yakın geçmişte aynı doğru cevap ve seçenek seti var');
     const recentStem = normalize(recent.stem || recent.normalizedStem || '');
     if (stemNorm.length > 100 && recentStem.length > 100 && (stemNorm.includes(recentStem.slice(0, 100)) || recentStem.includes(stemNorm.slice(0, 100)))) errors.push('yakın geçmişte aynı soru kökü var');
+    const recentTargetNorm = normalize([recent.branch || recent.relatedBranch, recent.answerTarget || recent.questionType, recent.learningTarget, recent.correct || recent.correctAnswer || recent.correctAnswerText].filter(Boolean).join(' | '));
+    if (sameBranch && correctNorm && recentCorrect === correctNorm && currentTargetNorm && recentTargetNorm && (currentTargetNorm.includes(recentTargetNorm) || recentTargetNorm.includes(currentTargetNorm))) errors.push('yakın geçmişte aynı öğrenme hedefi var');
   });
 
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), options, correctText };
@@ -321,7 +409,7 @@ function sanitizeQuestion(question = {}, branch) {
     correctAnswer: OPTION_IDS.includes(correctId) ? correctId : (options[0]?.id || 'A'),
     explanation: ensureSentence(question.explanation),
     wrongOptionFeedback: OPTION_IDS.reduce((acc, id) => {
-      acc[id] = ensureSentence(question.wrongOptionFeedback?.[id] || question.optionRationales?.[id] || (id === correctId ? `Bu seçenek olgudaki verilerle en iyi uyumludur.` : `Bu seçenek bu soru hedefi için tek en iyi yanıt değildir.`));
+      acc[id] = ensureSentence(question.wrongOptionFeedback?.[id] || question.optionRationales?.[id] || (id === correctId ? `${correctText} seçeneği, verilen karar noktasını diğer seçeneklerden daha doğrudan açıklar.` : `Bu seçenek ancak farklı bir klinik öncelikte düşünülebilir; verilen olguda karar verdirici ipuçlarını karşılamaz.`));
       return acc;
     }, {}),
     evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean).slice(0, 3),
@@ -335,9 +423,9 @@ function sanitizeQuestion(question = {}, branch) {
 
 const FALLBACK_BANK = [
   {
-    title: 'Laboratuvar paterni yorumu', relatedBranch: 'İç Hastalıkları', difficulty: 'Orta', learningTarget: 'Laboratuvar verisini klinik bağlamla birlikte yorumlama.', answerTarget: 'lab_interpretation', demographics: 'Erişkin hasta', setting: 'Acil servis', chiefComplaint: 'Halsizlik', stem: 'Erişkin hasta son günlerde artan halsizlik ve dikkat azalması nedeniyle değerlendirilir. Öyküde sıvı alımında azalma vardır. Muayenede belirgin fokal nörolojik defisit saptanmaz.', compactObjectiveData: [{ label: 'Serum sodyum', value: '122 mEq/L' }, { label: 'Serum osmolalitesi', value: 'Düşük' }], question: 'Bu olgudaki laboratuvar paternini en iyi açıklayan seçenek hangisidir?', options: [{ id: 'A', text: 'Hipotonik hiponatremi' }, { id: 'B', text: 'Hipertonik hiponatremi' }, { id: 'C', text: 'İzotonik psödohiponatremi' }, { id: 'D', text: 'Hipernatremik dehidratasyon' }, { id: 'E', text: 'Primer hiperkalemi' }], correctAnswer: 'A', explanation: 'Düşük sodyum düzeyine düşük serum osmolalitesinin eşlik etmesi hipotonik hiponatremiyi destekler. Sonraki ayrım volüm durumu ve idrar elektrolitleriyle yapılır.', wrongOptionFeedback: { A: 'Bu seçenek düşük sodyuma düşük serum osmolalitesinin eşlik ettiği gerçek hipotonik tabloyu açıkladığı için uygundur.', B: 'Bu seçenek osmotik olarak aktif ek solüt varlığında düşünülür; burada düşük osmolalite verilmiştir.', C: 'Psödohiponatremide serum osmolalitesi genellikle normaldir; bu veri burada desteklenmez.', D: 'Hipernatremik tabloda serum sodyumu yüksek beklenir; burada düşük sodyum vardır.', E: 'Primer potasyum bozukluğu sodyum ve osmolalite paternini açıklamaz; bu vakada ana karar elektrolit-osmolalite ilişkisidir.' }, evidenceChain: ['Serum sodyumu 122 mEq/L olarak verilmiştir.', 'Serum osmolalitesi düşük olarak verilmiştir.', 'Hastada dikkat azalması vardır.'], examPearl: 'Hiponatremi yorumunda ilk ayrım serum osmolalitesidir; düşük osmolalite gerçek hipotonik hiponatremiyi gösterir.', managementSteps: [] },
+    title: 'Laboratuvar paterni yorumu', relatedBranch: 'İç Hastalıkları', difficulty: 'Orta', learningTarget: 'Laboratuvar verisini klinik bağlamla birlikte yorumlama.', answerTarget: 'lab_interpretation', demographics: 'Erişkin hasta', setting: 'Acil servis', chiefComplaint: 'Halsizlik', stem: 'Erişkin hasta son günlerde artan halsizlik ve dikkat azalması nedeniyle değerlendirilir. Öyküde sıvı alımında azalma vardır. Muayenede belirgin fokal nörolojik defisit saptanmaz.', compactObjectiveData: [{ label: 'Serum sodyum', value: '122 mEq/L' }, { label: 'Serum osmolalitesi', value: 'Düşük' }], question: 'Bu olgudaki laboratuvar paternini en iyi açıklayan seçenek hangisidir?', options: [{ id: 'A', text: 'Hipotonik hiponatremi' }, { id: 'B', text: 'Hipertonik hiponatremi' }, { id: 'C', text: 'İzotonik psödohiponatremi' }, { id: 'D', text: 'Hipernatremik dehidratasyon' }, { id: 'E', text: 'Primer hiperkalemi' }], correctAnswer: 'A', explanation: 'Düşük sodyum düzeyine düşük serum osmolalitesinin eşlik etmesi hipotonik hiponatremiyi destekler. Sonraki ayrım volüm durumu ve idrar elektrolitleriyle yapılır.', wrongOptionFeedback: { A: 'Bu seçenek düşük osmolalite ile birlikte gerçek hipotonik tabloyu açıklar.', B: 'Bu seçenek osmotik olarak aktif ek solüt varlığında düşünülür; burada düşük osmolalite verilmiştir.', C: 'Psödohiponatremide serum osmolalitesi genellikle normaldir; bu veri burada desteklenmez.', D: 'Hipernatremik tabloda serum sodyumu yüksek beklenir; burada düşük sodyum vardır.', E: 'Potasyum bozukluğu bu panelin ana açıklaması değildir.' }, evidenceChain: ['Serum sodyumu düşüktür.', 'Serum osmolalitesi düşüktür.', 'Bilinç değişikliği semptomatik tabloyu destekler.'], examPearl: 'Hiponatremi yorumunda ilk ayrım serum osmolalitesidir; düşük osmolalite gerçek hipotonik hiponatremiyi gösterir.', managementSteps: [] },
   {
-    title: 'Pediatrik perfüzyon değerlendirmesi', relatedBranch: 'Çocuk Sağlığı ve Hastalıkları', difficulty: 'Orta', learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.', answerTarget: 'first_step', demographics: 'Küçük çocuk', setting: 'Çocuk acil', chiefComplaint: 'Ateş ve halsizlik', stem: 'Küçük çocuk ateş ve beslenmede azalma nedeniyle acile getirilir. Aile çocuğun son saatlerde daha halsiz olduğunu belirtir. Muayenede kapiller dolum süresi uzamış ve cilt turgoru azalmıştır.', compactVitals: [{ label: 'Ateş', value: '39 °C' }, { label: 'Nabız', value: 'Taşikardik' }], question: 'Bu olguda öncelikle değerlendirilmesi gereken klinik öncelik hangisidir?', options: [{ id: 'A', text: 'Perfüzyon ve hidrasyon durumu' }, { id: 'B', text: 'Uzun dönem büyüme izlemi' }, { id: 'C', text: 'Rutin aşı takvimi planı' }, { id: 'D', text: 'Elektif dermatoloji değerlendirmesi' }, { id: 'E', text: 'Okul çağı psikososyal taraması' }], correctAnswer: 'A', explanation: 'Ateşli çocukta halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım ve hidrasyon değerlendirmesini öncelikli kılar. Diğer seçenekler akut acil karar düzeyini karşılamaz.', wrongOptionFeedback: { A: 'Bu seçenek uzamış kapiller dolum ve turgor azalmasıyla belirginleşen akut dolaşım-hidrasyon önceliğini karşıladığı için uygundur.', B: 'Büyüme izlemi önemlidir; ancak akut perfüzyon bulguları varken ilk öncelik değildir.', C: 'Aşı takvimi koruyucu sağlık başlığıdır; bu acil başvurunun ilk kararını açıklamaz.', D: 'Elektif değerlendirme akut sistemik bulguların önüne geçmez.', E: 'Psikososyal tarama bu akut perfüzyon sorununu yanıtlamaz.' }, evidenceChain: ['Beslenmede azalma vardır.', 'Kapiller dolum süresi uzamıştır.', 'Cilt turgoru azalmıştır.'], examPearl: 'Pediatrik acilde genel durum ve perfüzyon bulguları tanısal ayrıntılardan önce değerlendirilir.', managementSteps: ['Hava yolu, solunum ve dolaşım hızlıca değerlendirilir.', 'Perfüzyon ve hidrasyon bulgularına göre sıvı planı yapılır.'] },
+    title: 'Pediatrik perfüzyon değerlendirmesi', relatedBranch: 'Çocuk Sağlığı ve Hastalıkları', difficulty: 'Orta', learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.', answerTarget: 'first_step', demographics: 'Küçük çocuk', setting: 'Çocuk acil', chiefComplaint: 'Ateş ve halsizlik', stem: 'Küçük çocuk ateş ve beslenmede azalma nedeniyle acile getirilir. Aile çocuğun son saatlerde daha halsiz olduğunu belirtir. Muayenede kapiller dolum süresi uzamış ve cilt turgoru azalmıştır.', compactVitals: [{ label: 'Ateş', value: '39 °C' }, { label: 'Nabız', value: 'Taşikardik' }], question: 'Bu olguda öncelikle değerlendirilmesi gereken klinik öncelik hangisidir?', options: [{ id: 'A', text: 'Perfüzyon ve hidrasyon durumu' }, { id: 'B', text: 'Uzun dönem büyüme izlemi' }, { id: 'C', text: 'Rutin aşı takvimi planı' }, { id: 'D', text: 'Elektif dermatoloji değerlendirmesi' }, { id: 'E', text: 'Okul çağı psikososyal taraması' }], correctAnswer: 'A', explanation: 'Ateşli çocukta halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım ve hidrasyon değerlendirmesini öncelikli kılar. Diğer seçenekler akut acil karar düzeyini karşılamaz.', wrongOptionFeedback: { A: 'Bu seçenek akut risk değerlendirmesinin merkezindedir.', B: 'Büyüme izlemi önemlidir; ancak akut perfüzyon bulguları varken ilk öncelik değildir.', C: 'Aşı takvimi koruyucu sağlık başlığıdır; bu acil başvurunun ilk kararını açıklamaz.', D: 'Elektif değerlendirme akut sistemik bulguların önüne geçmez.', E: 'Psikososyal tarama bu akut perfüzyon sorununu yanıtlamaz.' }, evidenceChain: ['Beslenme azalmıştır.', 'Kapiller dolum süresi uzamıştır.', 'Cilt turgoru azalmıştır.'], examPearl: 'Pediatrik acilde genel durum ve perfüzyon bulguları tanısal ayrıntılardan önce değerlendirilir.', managementSteps: ['Hava yolu, solunum ve dolaşım hızlıca değerlendirilir.', 'Perfüzyon ve hidrasyon bulgularına göre sıvı planı yapılır.'] },
 ];
 
 function fallbackQuestion({ branchFilter, recentQuestionSummaries }) {
@@ -346,9 +434,7 @@ function fallbackQuestion({ branchFilter, recentQuestionSummaries }) {
   const candidates = FALLBACK_BANK.filter((item) => normalize(branchFilter).includes(normalize(item.relatedBranch)) || normalize(item.relatedBranch).includes(normalize(branchFilter)) || ['random', 'rastgele', ''].includes(normalize(branchFilter)));
   const pool = candidates.length ? candidates : FALLBACK_BANK;
   const selected = pool.find((item) => !recentTitles.has(normalize(item.title))) || pool[Math.floor(Math.random() * pool.length)];
-  const question = cleanMedicalFeedback(sanitizeQuestion({ ...selected, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch));
-  const medicalQuality = runMedicalQualityFilter(question, recentQuestionSummaries);
-  return { ...medicalQuality.question, qualityNotes: medicalQuality.errors };
+  return sanitizeQuestion({ ...selected, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch);
 }
 
 function getJsonCandidate(text = '') {
@@ -455,31 +541,24 @@ async function generateRemote({ branch, target, recentQuestionSummaries, attempt
   const prompt = buildPrompt({ branch, target, recentQuestionSummaries, attempt, antiRepeatNonce });
   const result = await callOpenAI(prompt);
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
-  let sanitized = sanitizeQuestion(result.question, branch);
-  sanitized = cleanMedicalFeedback(sanitized);
+  const sanitized = sanitizeQuestion(result.question, branch);
   sanitized.provider = 'openai';
   sanitized.openAIModel = result.model;
   sanitized.openAIMode = result.mode;
   sanitized.promptVersion = PROMPT_VERSION;
   sanitized.schemaVersion = SCHEMA_VERSION;
   const validation = validateQuestion(sanitized, recentQuestionSummaries);
-  const medicalQuality = runMedicalQualityFilter(sanitized, recentQuestionSummaries);
-  sanitized = medicalQuality.question;
-  const allErrors = Array.from(new Set([
-    ...validation.errors,
-    ...medicalQuality.errors.map((message) => `quality: ${message}`),
-  ]));
-  if (allErrors.length) {
-    const blockingErrors = allErrors.filter((message) =>
-      /branch eksik|stem çok kısa|question net|tam 5 seçenek|correctAnswer|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri|feedback|seçenek açıklaması|açıklama|TUS ipucu|mekanizma|hiperkalemi|anafilaksi|septik şok|opioid|organofosfat|HCV|SLE|yakın geçmiş|soru hedefi/iu.test(message)
+  if (!validation.ok) {
+    const criticalErrors = validation.errors.filter((message) =>
+      /branch eksik|stem çok kısa|question net|tam 5 seçenek|correctAnswer|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik|şablon|feedback|mekanizma hassasiyeti|doğru cevap açıklaması|TUS ipucu|soru hedefi geniş|yakın geçmişte aynı öğrenme hedefi/iu.test(message)
     );
-    if (blockingErrors.length) {
-      const error = new Error(blockingErrors.slice(0, 5).join('; '));
-      error.validationErrors = blockingErrors;
+    if (criticalErrors.length) {
+      const error = new Error(criticalErrors.join('; '));
+      error.validationErrors = criticalErrors;
       error.question = sanitized;
       throw error;
     }
-    sanitized.qualityNotes = allErrors;
+    sanitized.qualityNotes = validation.errors;
   }
   return sanitized;
 }

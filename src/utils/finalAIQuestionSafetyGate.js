@@ -269,12 +269,12 @@ function roleAwareFeedback(optionText = '', role = 'wrong_condition', target = '
   const cleanedExisting = removeDuplicateSentences(stripGenericPhrases(existing), { maxSentences: 2, limit: 300 });
   if (cleanedExisting && cleanedExisting.length >= 58 && !hasGenericFeedback(cleanedExisting) && !detectTruncatedText(cleanedExisting).truncated) return cleanedExisting;
   const targetPhrase = targetQuestionText(target).replace(/\?$/u, '').replace(/^Bu olguda\s*/iu, '').replace(/^Bu bulguları\s*/iu, 'bulguları ').toLocaleLowerCase(TR_LOCALE);
-  if (role === 'primary_correct') return ensureSentence(`${optionText} olgudaki verilerle aynı karar düzleminde örtüşür ve ${targetPhrase} hedefini karşılar`);
-  if (role === 'adjunct_correct_but_not_asked') return ensureSentence(`${optionText} bu tabloda yardımcı veya ek rol oynayabilir; ancak soru ${targetPhrase} düzeyini sorduğu için tek en iyi yanıt değildir`);
+  if (role === 'primary_correct') return ensureSentence(`${optionText} belirleyici ipuçlarını en doğrudan açıklar ve ${targetPhrase} hedefini karşılar`);
+  if (role === 'adjunct_correct_but_not_asked') return ensureSentence(`${optionText} bazı olgularda yardımcı rol oynayabilir; ancak verilen olguda soru ${targetPhrase} düzeyini sorduğu için öncelikli yanıt değildir`);
   if (role === 'later_step') return ensureSentence(`${optionText} sonraki basamakta veya seçilmiş koşullarda değerlendirilebilir; bu soruda istenen karar düzeyi için öncelikli seçenek değildir`);
   if (role === 'contraindicated_or_harmful') return ensureSentence(`${optionText} bu karar düzeyinde uygun değildir; olgudaki öncelik güvenli ve doğrudan hedefe yönelik yaklaşımı gerektirir`);
   if (role === 'unrelated') return ensureSentence(`${optionText} farklı bir kavramsal düzleme aittir; soru kökü aynı kategoride tek bir klinik yanıt seçmeyi gerektirir`);
-  return ensureSentence(`${optionText} aynı karar hedefini doğrudan karşılamaz; olgudaki belirleyici veriler bu seçeneğin beklenen kullanım alanını desteklemez`);
+  return ensureSentence(`${optionText} bazı klinik durumlarda düşünülebilir; ancak olgudaki belirleyici veriler bu seçeneğin beklenen kullanım alanını desteklemez`);
 }
 
 function classifyEvidenceType(text = '') {
