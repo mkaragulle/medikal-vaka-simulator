@@ -6,7 +6,7 @@ import {
 } from './tus-question-prompt.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v33-strict-final-clinical-pass';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v34-feedback-completeness-anatomy-guard';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -372,6 +372,28 @@ function isGenericFeedback(text = '') {
   return FORBIDDEN_PHRASES.some((pattern) => pattern.test(value));
 }
 
+function isAnatomyFeedbackContext(question = {}) {
+  const text = normalize([
+    question.relatedBranch,
+    question.learningTarget,
+    question.answerTarget,
+    question.question,
+    question.stem,
+  ].filter(Boolean).join(' '));
+  return /anatomi|sinir|nervus|nerve|pleksus|pleksusu|kanal|foramen|innervasyon|duyu kaybi|motor defisit|kas gucsuzlugu/.test(text);
+}
+
+function hasIsolatedFeedbackAbbreviation(text = '', question = {}) {
+  const value = cleanText(text);
+  if (!value) return true;
+  if (/^\s*(?:n|h|m)\.?\s*$/iu.test(value)) return true;
+  if (/^\s*[A-ZÇĞİÖŞÜa-zçğıöşü]\.?\s*$/u.test(value)) return true;
+  if (/^\s*(?:N|n)\.\s*[A-ZÇĞİÖŞÜa-zçğıöşü-]*\.?\s*$/u.test(value)) return true;
+  if (isAnatomyFeedbackContext(question) && /\b(?:N|n)\.\s*[A-ZÇĞİÖŞÜa-zçğıöşü-]+/u.test(value)) return true;
+  if (isAnatomyFeedbackContext(question) && /\b(?:m|M)\.\s*[A-ZÇĞİÖŞÜa-zçğıöşü-]+/u.test(value)) return true;
+  return false;
+}
+
 function hasWrongOptionContrast(text = '') {
   const value = cleanText(text);
   // Keep this as a quality signal, not a hard blocker. Good Turkish feedback may be
@@ -384,11 +406,11 @@ function hasWrongOptionContrast(text = '') {
 function hasFeedbackQuality(question = {}, options = [], correctId = '') {
   const errors = [];
   const correctFeedback = getFeedbackText(question, correctId);
-  if (!correctFeedback || isGenericFeedback(correctFeedback)) errors.push('doğru seçenek açıklaması eksik veya zayıf');
+  if (!correctFeedback || isGenericFeedback(correctFeedback) || hasIsolatedFeedbackAbbreviation(correctFeedback, question)) errors.push('doğru seçenek açıklaması eksik veya zayıf');
   options.forEach((option) => {
     const feedback = getFeedbackText(question, option.id);
     if (!feedback) errors.push(`seçenek ${option.id} feedback eksik`);
-    else if (option.id !== correctId && isGenericFeedback(feedback)) errors.push(`seçenek ${option.id} feedback eksik veya zayıf`);
+    else if (isGenericFeedback(feedback) || hasIsolatedFeedbackAbbreviation(feedback, question)) errors.push(`seçenek ${option.id} feedback eksik veya zayıf`);
   });
   return { ok: errors.length === 0, errors };
 }
