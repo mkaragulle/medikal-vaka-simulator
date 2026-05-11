@@ -28,6 +28,13 @@ function ensureQuestion(value = '') {
   return /\?$/u.test(text) ? text : `${text}?`;
 }
 
+function normalizeDifficulty(value = 'Orta') {
+  const text = cleanText(value).toLocaleLowerCase('tr');
+  if (/kolay|easy/.test(text)) return 'Kolay';
+  if (/zor|hard/.test(text)) return 'Zor';
+  return 'Orta';
+}
+
 export function normalizeForCompare(value = '') {
   return cleanText(value)
     .toLocaleLowerCase('tr')
@@ -202,13 +209,13 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const evidenceChain = buildEvidence(payload.evidenceChain || payload.evidence || payload.k)
     .filter((item) => !containsAnswerLeak(item, correctText))
     .slice(0, 3);
-  const answerTarget = cleanText(payload.answerTarget || payload.questionIntent || payload.intent || 'single_best_answer');
+  const answerTarget = cleanText(payload.answerTarget || payload.questionIntent || payload.intent || '');
   const managementSteps = isManagementTarget(answerTarget)
     ? asArray(payload.managementSteps || payload.management || []).map((item) => ensureSentence(item)).filter(Boolean).slice(0, 3)
     : [];
   const examPearl = ensureSentence(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || 'Benzer TUS sorularında karar verdirici ipucu, soru kökünün sorduğu hedefe göre yorumlanır.');
   const explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || 'Olgudaki klinik veriler birlikte değerlendirildiğinde doğru seçenek diğerlerinden ayrılır.');
-  const optionRationales = payload.optionRationales || payload.wrongOptionFeedback || payload.rationales || {};
+  const optionRationales = payload.optionRationales || payload.wrongOptionFeedback || payload.optionFeedback || payload.rationales || {};
 
   const question = {
     id: cleanText(payload.id) || `ai-spot-simple-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
@@ -219,7 +226,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     title: '',
     relatedBranch: normalizedBranch,
     spotCategory: `AI Spot • ${normalizedBranch}`,
-    difficulty: cleanText(payload.difficulty || 'Orta'),
+    difficulty: normalizeDifficulty(payload.difficulty || meta.difficulty || 'Orta'),
     learningTarget: cleanText(payload.learningTarget || payload.target || payload.lt || 'TUS düzeyinde tek karar noktasını yorumlama.'),
     answerTarget,
     demographics: cleanText(payload.demographics || payload.d || ''),
@@ -264,7 +271,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
         evidenceChain: evidenceChain.length ? evidenceChain : [stem, cleanText(payload.chiefComplaint || payload.cc || '')].filter(Boolean).map(ensureSentence).slice(0, 3),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),
-        differentialComparison: buildDifferentialComparison({ options, correctOption, optionRationales, wrongOptionFeedback: payload.wrongOptionFeedback || {} }),
+        differentialComparison: buildDifferentialComparison({ options, correctOption, optionRationales, wrongOptionFeedback: payload.wrongOptionFeedback || payload.optionFeedback || {} }),
         managementSteps,
         learningOutcome: cleanText(payload.learningTarget || payload.target || ''),
       },
@@ -349,11 +356,12 @@ const FALLBACK_BANK = [
   },
 ];
 
-export function createSimpleFallbackQuestion({ branchFilter = 'random', recentQuestionSummaries = [] } = {}) {
+export function createSimpleFallbackQuestion({ branchFilter = 'random', difficulty = 'Orta', recentQuestionSummaries = [] } = {}) {
   const normalizedBranch = normalizeForCompare(branchFilter);
   const candidates = FALLBACK_BANK.filter((item) => normalizedBranch === 'random' || normalizedBranch === 'rastgele' || normalizeForCompare(item.relatedBranch).includes(normalizedBranch) || normalizedBranch.includes(normalizeForCompare(item.relatedBranch)));
   const pool = candidates.length ? candidates : FALLBACK_BANK;
   const recentCorrectAnswers = new Set(asArray(recentQuestionSummaries).map((item) => normalizeForCompare(item.correct || item.correctAnswer || item.correctAnswerText || '')));
   const selected = pool.find((item) => !recentCorrectAnswers.has(normalizeForCompare(item.options?.find?.((option) => option.id === item.correctAnswer)?.text || item.correctAnswer || ''))) || pool[Math.floor(Math.random() * pool.length)];
-  return normalizeSimpleAIQuestion({ ...selected, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, { source: 'local-safe-fallback', provider: 'local-safe-fallback', remote: false, fallback: true, branchFilter });
+  const selectedDifficulty = normalizeDifficulty(difficulty);
+  return normalizeSimpleAIQuestion({ ...selected, difficulty: selectedDifficulty, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, { source: 'local-safe-fallback', provider: 'local-safe-fallback', remote: false, fallback: true, branchFilter, difficulty: selectedDifficulty });
 }

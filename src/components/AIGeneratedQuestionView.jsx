@@ -50,6 +50,26 @@ function AIBranchFilter({ branchFilter, branchOptions = [], onChangeBranchFilter
   );
 }
 
+
+function AIDifficultyFilter({ difficulty = 'Orta', onChangeDifficulty, disabled = false }) {
+  const normalizedValue = ['Kolay', 'Orta', 'Zor'].includes(difficulty) ? difficulty : 'Orta';
+  return (
+    <label className="ai-branch-filter-control ai-difficulty-filter-control">
+      <span>ZORLUK</span>
+      <select
+        value={normalizedValue}
+        onChange={(event) => onChangeDifficulty?.(event.target.value)}
+        disabled={disabled}
+        aria-label="AI TUS soru zorluğu"
+      >
+        <option value="Kolay">Kolay</option>
+        <option value="Orta">Orta</option>
+        <option value="Zor">Zor</option>
+      </select>
+    </label>
+  );
+}
+
 function AILoadingState() {
   return (
     <section className="ai-generation-state card-surface" aria-live="polite">
@@ -87,6 +107,8 @@ function AIGeneratedQuestionView({
   fallback = false,
   branchFilter = 'random',
   branchOptions = [],
+  difficulty = 'Orta',
+  onChangeDifficulty,
   onChangeBranchFilter,
   onGenerateQuestion,
   onSubmitAnswer,
@@ -113,12 +135,19 @@ function AIGeneratedQuestionView({
         </div>
 
         <div className="ai-practice-actions ai-practice-actions-pro">
-          <AIBranchFilter
-            branchFilter={branchFilter}
-            branchOptions={branchOptions}
-            onChangeBranchFilter={onChangeBranchFilter}
-            disabled={loading}
-          />
+          <div className="ai-practice-filter-grid">
+            <AIBranchFilter
+              branchFilter={branchFilter}
+              branchOptions={branchOptions}
+              onChangeBranchFilter={onChangeBranchFilter}
+              disabled={loading}
+            />
+            <AIDifficultyFilter
+              difficulty={difficulty}
+              onChangeDifficulty={onChangeDifficulty}
+              disabled={loading}
+            />
+          </div>
           <div className="ai-practice-button-row">
             <button type="button" className="btn btn-secondary ai-spot-dashboard-btn" onClick={onBackHome}>
               <span aria-hidden="true">←</span> Dashboard’a dön

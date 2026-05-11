@@ -2,10 +2,11 @@ import {
   OPTIMIZED_TUS_SYSTEM_PROMPT,
   buildRecentCompact,
   buildUserPrompt,
+  normalizeDifficulty,
 } from './tus-question-prompt.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-minimal-tus-spot-v23-clean-prompt';
+const PROMPT_VERSION = 'klinikiq-minimal-tus-spot-v26-difficulty-selector';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -176,12 +177,50 @@ function getPreAnswerDataText(question = {}) {
   ].filter(Boolean).join(' | ');
 }
 
+function isDirectionalAnswer(text = '') {
+  const value = normalize(text);
+  if (!value || value.length > 40) return false;
+  return /^(artar|artis olur|artmistir|azalir|azalis olur|azalmistir|degismez|degisiklik olmaz|normal kalir)$/iu.test(value);
+}
+
+function isDirectionChangeQuestion(question = {}) {
+  const text = normalize([question.question, question.learningTarget, question.answerTarget].filter(Boolean).join(' '));
+  return /nasil degisir|beklenen degisiklik|ne olur|artar mi|azalir mi|degismez mi|artim hacmi|kalp debisi|debi|filtrasyon|sekresyon|emilim|rezorpsiyon|basinc|hacim|konsantrasyon/.test(text);
+}
+
+function hasObjectiveDirectionLeak(question = {}, correctText = '') {
+  if (!isDirectionalAnswer(correctText) || !isDirectionChangeQuestion(question)) return false;
+  const objectiveItems = compactItems(question.compactObjectiveData || question.objectiveData || [], 8);
+  if (!objectiveItems.length) return false;
+  const objectiveText = normalize(objectiveItems.map((item) => `${item.label} ${item.value}`).join(' | '));
+  const correct = normalize(correctText);
+  if (/^artar|^artis|^artmis/.test(correct) && /arttigi|artmis|artar|artis|yukselmis|yuksek|fazla|artmi/.test(objectiveText)) return true;
+  if (/^azalir|^azalis|^azalmis/.test(correct) && /azaldigi|azalmis|azalir|azalis|dusmus|dusuk|azalmi/.test(objectiveText)) return true;
+  if (/^degismez|^degisiklik olmaz|^normal kalir/.test(correct) && /normal|korunmus|degismez|degisiklik yok/.test(objectiveText)) return true;
+  return false;
+}
+
+function hasPhysiologyDeterminantPanel(question = {}) {
+  const text = normalize([
+    question.relatedBranch,
+    question.learningTarget,
+    question.answerTarget,
+    question.question,
+  ].filter(Boolean).join(' '));
+  if (!/fizyoloji|physiology|mekanizma|mechanism|artim hacmi|stroke volume|kalp debisi|frank starling|preload|afterload|venoz donus/.test(text)) return false;
+  const objectiveText = normalize(compactItems(question.compactObjectiveData || question.objectiveData || [], 8).map((item) => `${item.label} ${item.value}`).join(' | '));
+  if (!objectiveText) return false;
+  const determinant = /dolum|preload|afterload|kontraktilite|venoz donus|miyokard|ejeksiyon|komplians|basinc|hacim/.test(objectiveText);
+  const interpretive = /arttigi|azaldigi|artmis|azalmis|normal oldugu|korundugu|yuksek|dusuk|artis|azalis/.test(objectiveText);
+  return determinant && interpretive && isDirectionChangeQuestion(question);
+}
+
 function hasDuplicateFeedbackSentences(question = {}) {
   const pieces = [
     question.explanation,
     question.examPearl,
     ...asArray(question.evidenceChain),
-    ...Object.values(question.wrongOptionFeedback || {}),
+    ...Object.values(question.wrongOptionFeedback || question.optionFeedback || {}),
   ].filter(Boolean);
   const seen = new Set();
   for (const piece of pieces) {
@@ -247,7 +286,7 @@ function sentenceCount(text = '') {
 }
 
 function getFeedbackText(question = {}, id = '') {
-  return cleanText(question.wrongOptionFeedback?.[id] || question.optionRationales?.[id] || '');
+  return cleanText(question.wrongOptionFeedback?.[id] || question.optionFeedback?.[id] || question.optionRationales?.[id] || '');
 }
 
 function hasMechanismLanguage(text = '') {
@@ -349,13 +388,15 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   if (!hasPearlQuality(question.examPearl)) errors.push('TUS ipucu karar cümlesi değil');
   const feedbackQuality = hasFeedbackQuality(question, options, correctId);
   if (!feedbackQuality.ok) errors.push(...feedbackQuality.errors);
-  if (isMechanismSensitive(question) && !hasMechanismLanguage([question.explanation, question.examPearl, question.wrongOptionFeedback?.[correctId]].filter(Boolean).join(' '))) errors.push('mekanizma hassasiyeti zayıf');
+  if (isMechanismSensitive(question) && !hasMechanismLanguage([question.explanation, question.examPearl, question.wrongOptionFeedback?.[correctId], question.optionFeedback?.[correctId]].filter(Boolean).join(' '))) errors.push('mekanizma hassasiyeti zayıf');
   if (isBroadQuestionWording(question.question) && !hasClinicalContext(question)) errors.push('soru hedefi geniş, klinik bağlam daraltılmamış');
   FORBIDDEN_PHRASES.forEach((pattern) => {
     if (pattern.test(allText)) errors.push('jenerik/yasak feedback kalıbı var');
   });
 
   if (correctText && containsAnswerLeak(getPreAnswerDataText(question), correctText)) errors.push('soru kökü/veri paneli doğru cevabı ele veriyor');
+  if (hasObjectiveDirectionLeak(question, correctText)) errors.push('veri paneli yön/değişim cevabını fazla ele veriyor');
+  if (hasPhysiologyDeterminantPanel(question)) errors.push('fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor');
   if (asArray(question.evidenceChain).some((item) => containsAnswerLeak(item, correctText))) errors.push('kanıt zinciri doğru cevabı doğrudan söylüyor');
   if (hasDuplicateFeedbackSentences(question)) errors.push('feedback içinde tekrar eden cümle var');
   if (!isManagementTarget(question.answerTarget) && asArray(question.managementSteps).length) errors.push('bu soru tipinde yönetim basamağı gereksiz');
@@ -382,18 +423,18 @@ function validateQuestion(question = {}, recentQuestionSummaries = []) {
   return { ok: errors.length === 0, errors: Array.from(new Set(errors)), options, correctText };
 }
 
-function sanitizeQuestion(question = {}, branch) {
+function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
   const options = normalizeOptions(question.options);
   const correctId = String(question.correctAnswer || '').trim().toUpperCase();
   const correctText = options.find((item) => item.id === correctId)?.text || options[0]?.text || '';
-  const answerTarget = cleanText(question.answerTarget || question.questionIntent || 'single_best_answer');
+  const answerTarget = cleanText(question.answerTarget || question.questionIntent || '');
   const allowManagementSteps = isManagementTarget(answerTarget);
   const sanitized = {
     id: cleanText(question.id) || `ai-spot-openai-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
     source: 'real-ai',
     caseType: 'ai-spot',
     relatedBranch: cleanText(question.relatedBranch || branch),
-    difficulty: cleanText(question.difficulty || 'Orta'),
+    difficulty: normalizeDifficulty(requestedDifficulty || question.difficulty || 'Orta'),
     learningTarget: cleanText(question.learningTarget || 'TUS düzeyinde tek karar noktasını yorumlama.'),
     answerTarget,
     demographics: cleanText(question.demographics || ''),
@@ -407,7 +448,7 @@ function sanitizeQuestion(question = {}, branch) {
     correctAnswer: OPTION_IDS.includes(correctId) ? correctId : (options[0]?.id || 'A'),
     explanation: ensureSentence(question.explanation),
     wrongOptionFeedback: OPTION_IDS.reduce((acc, id) => {
-      acc[id] = ensureSentence(question.wrongOptionFeedback?.[id] || question.optionRationales?.[id] || (id === correctId ? `${correctText} seçeneği, verilen karar noktasını diğer seçeneklerden daha doğrudan açıklar.` : `Bu seçenek ancak farklı bir klinik öncelikte düşünülebilir; verilen olguda karar verdirici ipuçlarını karşılamaz.`));
+      acc[id] = ensureSentence(question.wrongOptionFeedback?.[id] || question.optionFeedback?.[id] || question.optionRationales?.[id] || (id === correctId ? `${correctText} seçeneği, verilen karar noktasını diğer seçeneklerden daha doğrudan açıklar.` : `Bu seçenek ancak farklı bir klinik öncelikte düşünülebilir; verilen olguda karar verdirici ipuçlarını karşılamaz.`));
       return acc;
     }, {}),
     evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean).slice(0, 3),
@@ -426,13 +467,14 @@ const FALLBACK_BANK = [
     relatedBranch: 'Çocuk Sağlığı ve Hastalıkları', difficulty: 'Orta', learningTarget: 'Pediatrik acilde risk bulgularını ayırt etme.', answerTarget: 'first_step', demographics: 'Küçük çocuk', setting: 'Çocuk acil', chiefComplaint: 'Ateş ve halsizlik', stem: 'Küçük çocuk ateş ve beslenmede azalma nedeniyle acile getirilir. Aile çocuğun son saatlerde daha halsiz olduğunu belirtir. Muayenede kapiller dolum süresi uzamış ve cilt turgoru azalmıştır.', compactVitals: [{ label: 'Ateş', value: '39 °C' }, { label: 'Nabız', value: 'Taşikardik' }], question: 'Bu olguda öncelikle değerlendirilmesi gereken klinik öncelik hangisidir?', options: [{ id: 'A', text: 'Perfüzyon ve hidrasyon durumu' }, { id: 'B', text: 'Uzun dönem büyüme izlemi' }, { id: 'C', text: 'Rutin aşı takvimi planı' }, { id: 'D', text: 'Elektif dermatoloji değerlendirmesi' }, { id: 'E', text: 'Okul çağı psikososyal taraması' }], correctAnswer: 'A', explanation: 'Ateşli çocukta halsizlik, uzamış kapiller dolum ve turgor azalması dolaşım ve hidrasyon değerlendirmesini öncelikli kılar. Diğer seçenekler akut acil karar düzeyini karşılamaz.', wrongOptionFeedback: { A: 'Bu seçenek akut risk değerlendirmesinin merkezindedir.', B: 'Büyüme izlemi önemlidir; ancak akut perfüzyon bulguları varken ilk öncelik değildir.', C: 'Aşı takvimi koruyucu sağlık başlığıdır; bu acil başvurunun ilk kararını açıklamaz.', D: 'Elektif değerlendirme akut sistemik bulguların önüne geçmez.', E: 'Psikososyal tarama bu akut perfüzyon sorununu yanıtlamaz.' }, evidenceChain: ['Beslenme azalmıştır.', 'Kapiller dolum süresi uzamıştır.', 'Cilt turgoru azalmıştır.'], examPearl: 'Pediatrik acilde genel durum ve perfüzyon bulguları tanısal ayrıntılardan önce değerlendirilir.', managementSteps: ['Hava yolu, solunum ve dolaşım hızlıca değerlendirilir.', 'Perfüzyon ve hidrasyon bulgularına göre sıvı planı yapılır.'] },
 ];
 
-function fallbackQuestion({ branchFilter, recentQuestionSummaries }) {
+function fallbackQuestion({ branchFilter, difficulty = 'Orta', recentQuestionSummaries }) {
   const branch = chooseBranch(branchFilter);
+  const selectedDifficulty = normalizeDifficulty(difficulty);
   const recentCorrectAnswers = new Set(asArray(recentQuestionSummaries).map((item) => normalize(item.correct || item.correctAnswer || item.correctAnswerText || '')));
   const candidates = FALLBACK_BANK.filter((item) => normalize(branchFilter).includes(normalize(item.relatedBranch)) || normalize(item.relatedBranch).includes(normalize(branchFilter)) || ['random', 'rastgele', ''].includes(normalize(branchFilter)));
   const pool = candidates.length ? candidates : FALLBACK_BANK;
   const selected = pool.find((item) => !recentCorrectAnswers.has(normalize(getCorrectText(item)))) || pool[Math.floor(Math.random() * pool.length)];
-  return sanitizeQuestion({ ...selected, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch);
+  return sanitizeQuestion({ ...selected, difficulty: selectedDifficulty, id: `ai-spot-fallback-${Date.now()}-${Math.random().toString(36).slice(2, 8)}` }, branch, selectedDifficulty);
 }
 
 function getJsonCandidate(text = '') {
@@ -466,12 +508,14 @@ function extractResponsesText(payload = {}) {
   return chunks.join('\n');
 }
 
-function buildPrompt({ branch, target, recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
+function buildPrompt({ branch, target, difficulty = 'Orta', recentQuestionSummaries = [], attempt = 1, antiRepeatNonce = '' }) {
   const answerTarget = cleanText(target || '');
+  const selectedDifficulty = normalizeDifficulty(difficulty);
   const recentCompact = buildRecentCompact(recentQuestionSummaries);
   return buildUserPrompt({
     branch,
     target: answerTarget,
+    difficulty: selectedDifficulty,
     recentCompact,
     attempt,
     antiRepeatNonce: antiRepeatNonce || Date.now(),
@@ -535,11 +579,11 @@ async function callOpenAI(prompt) {
   }
 }
 
-async function generateRemote({ branch, target, recentQuestionSummaries, attempt, antiRepeatNonce }) {
-  const prompt = buildPrompt({ branch, target, recentQuestionSummaries, attempt, antiRepeatNonce });
+async function generateRemote({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce }) {
+  const prompt = buildPrompt({ branch, target, difficulty, recentQuestionSummaries, attempt, antiRepeatNonce });
   const result = await callOpenAI(prompt);
   if (!result) throw new Error('OPENAI_API_KEY tanımlı değil; AI üretim yapılamadı.');
-  const sanitized = sanitizeQuestion(result.question, branch);
+  const sanitized = sanitizeQuestion(result.question, branch, difficulty);
   sanitized.provider = 'openai';
   sanitized.openAIModel = result.model;
   sanitized.openAIMode = result.mode;
@@ -551,7 +595,7 @@ async function generateRemote({ branch, target, recentQuestionSummaries, attempt
     // such as non-ideal feedback, weak pearl, broad wording, or near-repeat are kept
     // as quality notes so the UI still receives a usable question instead of failing.
     const blockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|explanation yetersiz|evidenceChain tam 3|examPearl yetersiz|soru kökü\/veri paneli doğru cevabı ele veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var/iu.test(message)
+      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|explanation yetersiz|evidenceChain tam 3|examPearl yetersiz|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var/iu.test(message)
     );
     if (blockingErrors.length) {
       const error = new Error(blockingErrors.join('; '));
@@ -573,13 +617,14 @@ export default async function handler(request, response) {
   try { body = await parseJsonBody(request); } catch { return sendJson(response, 400, { ok: false, error: 'Invalid JSON body' }); }
 
   const branch = chooseBranch(body.branchFilter);
+  const requestedDifficulty = normalizeDifficulty(body.difficulty || body.requestedDifficulty || body.aiDifficulty || 'Orta');
   const recentQuestionSummaries = asArray(body.recentQuestionSummaries).slice(0, 12);
   const remoteAttempts = Math.max(1, Math.min(2, Number(process.env.REMOTE_AI_ATTEMPTS || 2)));
   const errors = [];
 
   for (let attempt = 1; attempt <= remoteAttempts; attempt += 1) {
     try {
-      const question = await generateRemote({ branch, target: body.target || body.answerTarget, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce });
+      const question = await generateRemote({ branch, target: body.target || body.answerTarget, difficulty: requestedDifficulty, recentQuestionSummaries, attempt, antiRepeatNonce: body.antiRepeatNonce });
       return sendJson(response, 200, {
         ok: true,
         provider: 'openai',
@@ -592,7 +637,7 @@ export default async function handler(request, response) {
   }
 
   if (String(process.env.AI_ENABLE_SAFE_FALLBACK || 'true').toLowerCase() === 'true') {
-    const question = fallbackQuestion({ branchFilter: branch, recentQuestionSummaries });
+    const question = fallbackQuestion({ branchFilter: branch, difficulty: requestedDifficulty, recentQuestionSummaries });
     question.provider = 'local-safe-fallback';
     question.fallback = true;
     return sendJson(response, 200, {

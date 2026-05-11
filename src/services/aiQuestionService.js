@@ -41,7 +41,7 @@ function buildRequestContext(context = {}) {
   };
 }
 
-async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, context, attempt }) {
+async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, difficulty = 'Orta', context, attempt }) {
   const { controller, timeoutId } = withTimeout();
   const requestContext = buildRequestContext(context);
   try {
@@ -52,6 +52,7 @@ async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, contex
       body: JSON.stringify({
         previousQuestionId,
         branchFilter,
+        difficulty,
         ...requestContext,
         requestId: `klinikiq-ai-${Date.now()}-${attempt}`,
         attempt,
@@ -98,12 +99,12 @@ async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, contex
   }
 }
 
-async function requestRemoteQuestion({ previousQuestionId, branchFilter, context }) {
+async function requestRemoteQuestion({ previousQuestionId, branchFilter, difficulty = 'Orta', context }) {
   if (!canUseRemote()) return null;
   let lastError = null;
   for (let attempt = 1; attempt <= AI_REMOTE_RETRY_COUNT; attempt += 1) {
     try {
-      const result = await fetchOneRemoteQuestion({ previousQuestionId, branchFilter, context, attempt });
+      const result = await fetchOneRemoteQuestion({ previousQuestionId, branchFilter, difficulty, context, attempt });
       if (result?.ok) {
         const historyItem = rememberAIQuestion(result.question);
         result.question.aiMeta = { ...(result.question.aiMeta || {}), historyItemId: historyItem.id };
@@ -116,9 +117,10 @@ async function requestRemoteQuestion({ previousQuestionId, branchFilter, context
   throw lastError || new Error('AI üretimi başarısız oldu.');
 }
 
-function createClientFallback({ branchFilter, context, reason }) {
+function createClientFallback({ branchFilter, difficulty = 'Orta', context, reason }) {
   const question = createSimpleFallbackQuestion({
     branchFilter,
+    difficulty,
     recentQuestionSummaries: context?.recentQuestionSummaries || [],
   });
   question.aiMeta = {
@@ -138,19 +140,19 @@ function createClientFallback({ branchFilter, context, reason }) {
   };
 }
 
-export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random' } = {}) {
+export async function createAIQuestion({ previousQuestionId = null, branchFilter = 'random', difficulty = 'Orta' } = {}) {
   const context = buildRecentQuestionContext(30);
   try {
-    const remote = await requestRemoteQuestion({ previousQuestionId, branchFilter, context });
+    const remote = await requestRemoteQuestion({ previousQuestionId, branchFilter, difficulty, context });
     if (remote?.ok) return remote;
   } catch (error) {
     if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() !== 'true') {
       return { ok: false, question: null, source: 'openai-error', usedRemoteAI: false, fallback: false, error };
     }
-    return createClientFallback({ branchFilter, context, reason: error });
+    return createClientFallback({ branchFilter, difficulty, context, reason: error });
   }
   if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() === 'true') {
-    return createClientFallback({ branchFilter, context, reason: null });
+    return createClientFallback({ branchFilter, difficulty, context, reason: null });
   }
   return { ok: false, question: null, source: 'openai-unavailable', usedRemoteAI: false, fallback: false, error: new Error('AI servisi kullanılamıyor.') };
 }

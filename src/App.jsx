@@ -26,6 +26,7 @@ const EXAM_HISTORY_STORAGE_KEY = 'klinikiq-exam-history-v2';
 const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
 const AI_PRACTICE_STATS_STORAGE_KEY = 'klinikiq-ai-practice-stats-v1';
 const AI_BRANCH_FILTER_STORAGE_KEY = 'klinikiq-ai-branch-filter-v1';
+const AI_DIFFICULTY_STORAGE_KEY = 'klinikiq-ai-difficulty-v1';
 const BRANCH_TRANSITION_MS = 920;
 const BRANCH_TRANSITION_FADE_MS = 180;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
@@ -171,6 +172,7 @@ function App() {
   const [aiPracticeState, setAIPracticeState] = useState(defaultAIPracticeState);
   const [pearlStudyState, setPearlStudyState] = useState({ active: false, filter: 'all', branchFilter: 'all', catalogId: '' });
   const [aiBranchFilter, setAIBranchFilter] = useState(() => loadStoredValue(AI_BRANCH_FILTER_STORAGE_KEY, 'random'));
+  const [aiDifficulty, setAIDifficulty] = useState(() => loadStoredValue(AI_DIFFICULTY_STORAGE_KEY, 'Orta'));
   const [examState, setExamState] = useState(null);
   const [clockTick, setClockTick] = useState(Date.now());
   const [isCaseSidebarOpen, setIsCaseSidebarOpen] = useState(true);
@@ -256,6 +258,10 @@ function App() {
   useEffect(() => {
     localBackend.write(AI_BRANCH_FILTER_STORAGE_KEY, aiBranchFilter);
   }, [aiBranchFilter]);
+
+  useEffect(() => {
+    localBackend.write(AI_DIFFICULTY_STORAGE_KEY, aiDifficulty);
+  }, [aiDifficulty]);
 
   const handleRegister = ({ name, email, password, confirmPassword }) => {
     const normalizedEmail = normalizeEmail(email);
@@ -716,7 +722,7 @@ function App() {
   }, [addWrongAnswer, examState, sessionStats.streak]);
 
 
-  const generateNextAIQuestion = useCallback((previousQuestionId = null, branchFilterOverride = aiBranchFilter) => {
+  const generateNextAIQuestion = useCallback((previousQuestionId = null, branchFilterOverride = aiBranchFilter, difficultyOverride = aiDifficulty) => {
     clearAIQuestionTimer();
     const requestId = latestAIQuestionRequestId.current + 1;
     latestAIQuestionRequestId.current = requestId;
@@ -733,7 +739,7 @@ function App() {
 
     aiQuestionTimer.current = window.setTimeout(async () => {
       try {
-        const result = await createAIQuestion({ previousQuestionId, branchFilter: branchFilterOverride });
+        const result = await createAIQuestion({ previousQuestionId, branchFilter: branchFilterOverride, difficulty: difficultyOverride });
         if (latestAIQuestionRequestId.current !== requestId) return;
         setAIPracticeState({
           active: true,
@@ -759,7 +765,7 @@ function App() {
         if (latestAIQuestionRequestId.current === requestId) aiQuestionTimer.current = null;
       }
     }, 420);
-  }, [aiBranchFilter]);
+  }, [aiBranchFilter, aiDifficulty]);
 
   const handleStartAIPractice = useCallback(() => {
     clearAIQuestionTimer();
@@ -769,20 +775,29 @@ function App() {
     setSelectedCaseId(null);
     setIsCaseSidebarOpen(true);
     closePearlStudy();
-    generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter);
+    generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter, aiDifficulty);
     scrollToTopSmart({ smooth: false });
-  }, [aiBranchFilter, aiPracticeState.question?.id, closePearlStudy, generateNextAIQuestion]);
+  }, [aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, closePearlStudy, generateNextAIQuestion]);
 
   const handleGenerateNextAIQuestion = useCallback(() => {
-    generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter);
+    generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter, aiDifficulty);
     scrollToTopSmart({ smooth: false });
-  }, [aiBranchFilter, aiPracticeState.question?.id, closePearlStudy, generateNextAIQuestion]);
+  }, [aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, closePearlStudy, generateNextAIQuestion]);
 
   const handleAIBranchFilterChange = useCallback((nextFilter) => {
     setAIBranchFilter(nextFilter);
-    generateNextAIQuestion(null, nextFilter);
+    generateNextAIQuestion(null, nextFilter, aiDifficulty);
     scrollToTopSmart({ smooth: false });
-  }, [generateNextAIQuestion]);
+  }, [aiDifficulty, generateNextAIQuestion]);
+
+
+  const handleAIDifficultyChange = useCallback((nextDifficulty) => {
+    const normalizedDifficulty = ['Kolay', 'Orta', 'Zor'].includes(nextDifficulty) ? nextDifficulty : 'Orta';
+    setAIDifficulty(normalizedDifficulty);
+    localBackend.write(AI_DIFFICULTY_STORAGE_KEY, normalizedDifficulty);
+    generateNextAIQuestion(null, aiBranchFilter, normalizedDifficulty);
+    scrollToTopSmart({ smooth: false });
+  }, [aiBranchFilter, generateNextAIQuestion]);
 
   const handleSubmitAIAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, aiPracticeStats.streak);
@@ -1074,6 +1089,8 @@ function App() {
           fallback={aiPracticeState.fallback}
           branchFilter={aiBranchFilter}
           branchOptions={aiQuestionBranches}
+          difficulty={aiDifficulty}
+          onChangeDifficulty={handleAIDifficultyChange}
           onChangeBranchFilter={handleAIBranchFilterChange}
           onGenerateQuestion={handleGenerateNextAIQuestion}
           onSubmitAnswer={handleSubmitAIAnswer}

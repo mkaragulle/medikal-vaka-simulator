@@ -35643,3 +35643,22 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
   background: transparent !important;
   color: #e5edf6 !important;
 }
+
+/* KlinikIQ v26 — AI difficulty selector */
+.ai-practice-actions-pro .ai-practice-filter-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.35fr) minmax(118px, .65fr) !important;
+  gap: 10px !important;
+  width: 100% !important;
+  align-items: end !important;
+}
+
+.ai-practice-actions-pro .ai-difficulty-filter-control select {
+  font-weight: 820 !important;
+}
+
+@media (max-width: 720px) {
+  .ai-practice-actions-pro .ai-practice-filter-grid {
+    grid-template-columns: 1fr !important;
+  }
+}

@@ -19,8 +19,15 @@ export function getDifficultyMeta(difficulty = '') {
   if (normalized.startsWith('temel')) {
     return { label: 'Temel', points: 10, tone: 'foundation' };
   }
-  if (normalized.includes('orta')) {
+  if (normalized.includes('kolay') || normalized.includes('easy')) {
+    return { label: 'Kolay', points: 10, tone: 'foundation' };
+  }
+  if (normalized.includes('orta') || normalized.includes('medium')) {
     return { label: 'Orta', points: 15, tone: 'intermediate' };
+  }
+
+  if (normalized.includes('zor') || normalized.includes('hard')) {
+    return { label: 'Zor', points: 19, tone: 'advanced' };
   }
 
   return { label: 'Standart', points: 14, tone: 'intermediate' };
