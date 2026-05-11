@@ -6,7 +6,7 @@ import {
 } from './tus-question-prompt.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v32-narrow-target-supportive-options';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v33-strict-final-clinical-pass';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -312,7 +312,12 @@ const FORBIDDEN_PHRASES = [
   /^\s*tanıyı destekler\.?\s*$/iu,
   /^\s*nonspesifiktir\.?\s*$/iu,
   /^\s*spesifik değildir\.?\s*$/iu,
+  /^\s*destekleyicidir\.?\s*$/iu,
+  /^\s*yetersizdir\.?\s*$/iu,
   /doğru seçenek/iu,
+  /doğru cevap/iu,
+  /bu seçenek doğrudur/iu,
+  /bu seçenek doğrudur çünkü/iu,
   /hedeflenen karar/iu,
   /klinik hedef/iu,
 ];
