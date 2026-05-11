@@ -6,7 +6,7 @@ import {
 } from './tus-question-prompt.js';
 
 const OPTION_IDS = ['A', 'B', 'C', 'D', 'E'];
-const PROMPT_VERSION = 'klinikiq-minimal-tus-spot-v28-focused-feedback-ui';
+const PROMPT_VERSION = 'klinikiq-clean-tus-spot-v29-reset-prompt';
 const SCHEMA_VERSION = 'simple-ai-spot-v2';
 const SYSTEM_PROMPT = OPTIMIZED_TUS_SYSTEM_PROMPT;
 
@@ -363,11 +363,11 @@ function hasWrongOptionContrast(text = '') {
 function hasFeedbackQuality(question = {}, options = [], correctId = '') {
   const errors = [];
   const correctFeedback = getFeedbackText(question, correctId);
-  if (isGenericFeedback(correctFeedback) || !hasDecisionLanguage(correctFeedback)) errors.push('doğru seçenek açıklaması şablon/zayıf');
+  if (!correctFeedback || isGenericFeedback(correctFeedback)) errors.push('doğru seçenek açıklaması eksik veya zayıf');
   options.forEach((option) => {
     const feedback = getFeedbackText(question, option.id);
     if (!feedback) errors.push(`seçenek ${option.id} feedback eksik`);
-    else if (option.id !== correctId && (isGenericFeedback(feedback) || !hasWrongOptionContrast(feedback))) errors.push(`seçenek ${option.id} feedback ayırt ettirici değil`);
+    else if (option.id !== correctId && isGenericFeedback(feedback)) errors.push(`seçenek ${option.id} feedback eksik veya zayıf`);
   });
   return { ok: errors.length === 0, errors };
 }
@@ -382,9 +382,10 @@ function hasPearlQuality(text = '') {
 
 function hasExplanationQuality(question = {}, correctText = '') {
   const explanation = cleanText(question.explanation);
-  if (explanation.length < 70 || sentenceCount(explanation) < 2 || isGenericFeedback(explanation)) return false;
+  if (explanation.length < 60 || sentenceCount(explanation) < 1 || isGenericFeedback(explanation)) return false;
+  if (hasTruncatedText(explanation)) return false;
   if (isMechanismSensitive(question)) return hasMechanismLanguage(explanation) || hasMechanismLanguage(question.examPearl);
-  return hasDecisionLanguage(explanation) || normalize(explanation).includes(normalize(correctText));
+  return true;
 }
 
 function optionCategory(text = '') {
@@ -466,10 +467,10 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     caseType: 'ai-spot',
     relatedBranch: cleanText(question.relatedBranch || branch),
     difficulty: normalizeDifficulty(requestedDifficulty || question.difficulty || 'Orta'),
-    learningTarget: cleanText(question.learningTarget || 'TUS düzeyinde tek karar noktasını yorumlama.'),
+    learningTarget: cleanText(question.learningTarget || ''),
     answerTarget,
     demographics: cleanText(question.demographics || ''),
-    setting: cleanText(question.setting || 'Klinik değerlendirme'),
+    setting: cleanText(question.setting || ''),
     chiefComplaint: cleanText(question.chiefComplaint || ''),
     stem: ensureSentence(question.stem),
     compactVitals: compactItems(question.compactVitals || question.vitals || [], 5),
@@ -477,9 +478,11 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     question: ensureQuestion(question.question),
     options,
     correctAnswer: OPTION_IDS.includes(correctId) ? correctId : (options[0]?.id || 'A'),
-    explanation: ensureSentence(question.explanation),
+    explanation: ensureSentence(question.explanation || question.whyCorrect || ''),
     wrongOptionFeedback: OPTION_IDS.reduce((acc, id) => {
-      acc[id] = ensureSentence(question.wrongOptionFeedback?.[id] || question.optionFeedback?.[id] || question.optionRationales?.[id] || (id === correctId ? `${correctText} seçeneği, verilen karar noktasını diğer seçeneklerden daha doğrudan açıklar.` : `Bu seçenek ancak farklı bir klinik öncelikte düşünülebilir; verilen olguda karar verdirici ipuçlarını karşılamaz.`));
+      const rawFeedback = question.wrongOptionFeedback?.[id] || question.optionFeedback?.[id] || question.optionRationales?.[id] || '';
+      const fallbackFeedback = id === correctId ? (question.explanation || question.whyCorrect || '') : '';
+      acc[id] = ensureSentence(rawFeedback || fallbackFeedback);
       return acc;
     }, {}),
     evidenceChain: asArray(question.evidenceChain).map(ensureSentence).filter(Boolean).slice(0, 3),
@@ -626,7 +629,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     // such as non-ideal feedback, weak pearl, broad wording, or near-repeat are kept
     // as quality notes so the UI still receives a usable question instead of failing.
     const blockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|explanation yetersiz|evidenceChain tam 3|examPearl yetersiz|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|basit artar\/azalır\/değişmez sorusu mekanizma hedefi olmadan üretilmiş/iu.test(message)
+      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|explanation yetersiz|doğru cevap açıklaması eksik veya zayıf|feedback eksik|feedback eksik veya zayıf|evidenceChain tam 3|examPearl yetersiz|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|basit artar\/azalır\/değişmez sorusu mekanizma hedefi olmadan üretilmiş/iu.test(message)
     );
     if (blockingErrors.length) {
       const error = new Error(blockingErrors.join('; '));

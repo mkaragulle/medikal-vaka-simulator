@@ -109,8 +109,8 @@ function buildDifferentialComparison({ options = [], correctOption, optionRation
     if (!option?.text) return acc;
     const raw = optionRationales?.[option.id] || wrongOptionFeedback?.[option.id] || '';
     const explanation = ensureSentence(raw || (option.id === correctOption?.id
-      ? 'Bu seçenek olgudaki karar verdirici ipuçlarını en doğrudan açıklar.'
-      : 'Bu seçenek farklı bir klinik durumda düşünülebilir; verilen olguda karar verdirici ipuçlarını karşılamaz.'));
+      ? ''
+      : ''));
     if (option.id !== correctOption?.id) {
       acc[option.text] = { explanation, comparisonPoints: [explanation] };
     }
@@ -213,8 +213,8 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
   const managementSteps = isManagementTarget(answerTarget)
     ? asArray(payload.managementSteps || payload.management || []).map((item) => ensureSentence(item)).filter(Boolean).slice(0, 3)
     : [];
-  const examPearl = ensureSentence(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || 'Benzer TUS sorularında karar verdirici ipucu, soru kökünün sorduğu hedefe göre yorumlanır.');
-  const explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || 'Olgudaki klinik veriler birlikte değerlendirildiğinde doğru seçenek diğerlerinden ayrılır.');
+  const examPearl = ensureSentence(payload.examPearl || payload.teachingPoint || payload.pearl || payload.p || '');
+  const explanation = ensureSentence(payload.explanation || payload.whyCorrect || payload.e || '');
   const optionRationales = payload.optionRationales || payload.wrongOptionFeedback || payload.optionFeedback || payload.rationales || {};
 
   const question = {
@@ -227,10 +227,10 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     relatedBranch: normalizedBranch,
     spotCategory: `AI Spot • ${normalizedBranch}`,
     difficulty: normalizeDifficulty(payload.difficulty || meta.difficulty || 'Orta'),
-    learningTarget: cleanText(payload.learningTarget || payload.target || payload.lt || 'TUS düzeyinde tek karar noktasını yorumlama.'),
+    learningTarget: cleanText(payload.learningTarget || payload.target || payload.lt || ''),
     answerTarget,
     demographics: cleanText(payload.demographics || payload.d || ''),
-    setting: cleanText(payload.setting || 'Klinik değerlendirme'),
+    setting: cleanText(payload.setting || ''),
     chiefComplaint: cleanText(payload.chiefComplaint || payload.cc || ''),
     stem,
     narrativeStem: stem,
@@ -249,7 +249,7 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
     },
     question: ensureQuestion(payload.question || payload.q || 'Bu olguda en uygun seçenek hangisidir?'),
     questionType: cleanText(payload.questionType || payload.questionIntent || 'spot'),
-    clinicalFocus: cleanText(payload.learningTarget || payload.target || 'Tek doğru cevaba yönelik TUS spot akıl yürütme.'),
+    clinicalFocus: cleanText(payload.learningTarget || payload.target || ''),
     options,
     correctAnswer: correctOption?.id || 'A',
     managementSequence: { enabled: false, showInSpot: false, steps: [] },
@@ -264,10 +264,12 @@ export function normalizeSimpleAIQuestion(payload = {}, meta = {}) {
       correct: correctText,
       options: options.map((option) => option.text),
       explanation,
-      nextStep: cleanText(payload.nextStep || 'Olgudaki verileri aynı kategorideki seçeneklerle karşılaştır.'),
+      nextStep: cleanText(payload.nextStep || ''),
       pearls: [examPearl].filter(Boolean),
       answerFeedback: {
         whyCorrect: explanation,
+        correctOptionFeedback: ensureSentence(optionRationales?.[correctOption?.id] || explanation),
+        optionRationales,
         evidenceChain: evidenceChain.length ? evidenceChain : [stem, cleanText(payload.chiefComplaint || payload.cc || '')].filter(Boolean).map(ensureSentence).slice(0, 3),
         pearls: [examPearl].filter(Boolean),
         clinicalPearls: [examPearl].filter(Boolean),

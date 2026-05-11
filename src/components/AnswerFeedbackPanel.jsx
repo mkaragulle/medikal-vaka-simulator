@@ -305,10 +305,10 @@ function deriveWhyWrong(clinicalCase, selectedOption, selectedComparison) {
   const clue = getMainClue(clinicalCase);
   const correctDiagnosis = clinicalCase.diagnosis?.correct || 'doğru seçenek';
   if (selectedOption) {
-    return `${selectedOption} ilk bakışta düşünülebilir; ancak bu vakada ${clue ? `${clue} ` : 'ana klinik patern '}bu alternatifi öncelikli yanıt yapacak yeterli desteği sağlamaz. Olgudaki ipuçları ${correctDiagnosis} ile daha tutarlı ilerler.`;
+    return 'Seçilen seçenek için ayırt ettirici açıklama üretilemedi.';
   }
 
-  return `Seçilen yanıt, olgunun ana klinik ve tetkik paternini ${correctDiagnosis} kadar iyi açıklamaz.`;
+  return 'Seçilen seçenek için ayırt ettirici açıklama üretilemedi.';
 }
 
 function inferEvidenceTitle(text = '', index = 0) {
@@ -474,15 +474,16 @@ function deriveCorrectOptionSummary(clinicalCase, option, evidenceChain = []) {
     || feedback.optionRationales?.[option]
     || feedback.differentialComparison?.[option]?.explanation
     || '';
-  if (explicit && !textLooksSame(explicit, feedback.whyCorrect || clinicalCase.diagnosis?.explanation || '', 0.86)) {
-    return singleSentence(removeMetaLanguage(explicit), 210);
+  if (explicit) {
+    return singleSentence(removeMetaLanguage(explicit), 240);
   }
-  const clue = evidenceChain[0]?.text || getMainClue(clinicalCase);
-  const target = normalizeText(clinicalCase.answerTarget || clinicalCase.questionType || '').toLocaleLowerCase('tr');
-  if (/mechanism|mekanizma/iu.test(target)) return `${option} verilen bulguyu en doğrudan açıklayan mekanizmayı temsil eder.`;
-  if (/diagnostic_test|test|laboratuvar|lab/iu.test(target)) return `${option} bu klinik hedef için en uygun tanısal yönü öne çıkarır.`;
-  if (/first_step|next_step|treatment|tedavi/iu.test(target)) return `${option} olgudaki klinik önceliği en doğrudan karşılayan yaklaşımdır.`;
-  return `${option} ${clue ? `${trimTrailingPunctuation(clue)} ile birlikte değerlendirildiğinde` : 'vaka ipuçlarıyla'} hedeflenen karar noktasını karşılar.`;
+
+  const whyCorrect = feedback.whyCorrect || clinicalCase.diagnosis?.explanation || '';
+  if (whyCorrect) {
+    return singleSentence(removeMetaLanguage(whyCorrect), 240);
+  }
+
+  return 'Doğru seçenek için ayrıntılı açıklama üretilemedi.';
 }
 
 function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []) {
@@ -506,7 +507,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
     }
 
     const explicit = wrongMap[option] || {};
-    const explanation = singleSentence(removeMetaLanguage(explicit.explanation || `${option} ilk bakışta aynı karar alanında düşünülebilir; ancak bu olguda ${clue ? `${clue} ` : 'kanıt zinciri '}bu alternatifi öncelikli yanıt yapacak yeterli desteği sağlamaz.`), 190);
+    const explanation = singleSentence(removeMetaLanguage(explicit.explanation || 'Bu seçenek için ayırt ettirici açıklama üretilemedi.'), 190);
     return {
       option,
       status: 'wrong',

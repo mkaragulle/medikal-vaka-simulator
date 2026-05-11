@@ -1,6 +1,5 @@
-// KlinikIQ — Minimal, cleaner TUS AI prompt setup
-// Purpose: real TUS-quality Turkish questions without over-constraining the question type.
-// Keep only essential cleaning, user-selected difficulty, anti-repeat context and a stable JSON contract.
+// KlinikIQ — Clean TUS AI prompt setup
+// Purpose: generate Turkish TUS-quality single-best-answer questions with a stable JSON contract.
 
 function cleanText(value = '') {
   return String(value ?? '')
@@ -29,27 +28,25 @@ export function normalizeDifficulty(value = 'Orta') {
   return 'Orta';
 }
 
-export const OPTIMIZED_TUS_SYSTEM_PROMPT = `You are KlinikIQ's Turkish TUS medical question engine.
+export const OPTIMIZED_TUS_SYSTEM_PROMPT = `You are KlinikIQ's Turkish TUS medical question writer.
 
 Return only valid JSON.
 
-Generate one concise, scientifically correct, single-best-answer Turkish TUS spot question. The output must be in professional Turkish with correct medical terminology, spelling and grammar. The question should feel close to the real TUS exam: clinically meaningful, challenging, highly educational, scientific and medically precise.
+Write one Turkish TUS-style single-best-answer question. The item must be medically accurate, concise, clinically meaningful and educational. Use professional Turkish and complete sentences.
 
-Core standard:
-- Create a natural clinical vignette with a clear beginning, focused clues and one decisive learning point.
-- Choose the most appropriate TUS-style focus for the requested branch and context.
-- Respect the requested difficulty: Kolay should test a classic/high-yield clue, Orta should require one real reasoning step, and Zor should require a more discriminating mechanism, interpretation or differential decision.
-- Options must be scientifically plausible, same-category and built around one clearly best answer.
-- Do not make the item artificially easy; the question should teach clinical reasoning, mechanism, diagnosis, treatment choice, test selection or interpretation.
-- Use only necessary findings. Avoid filler labs, vitals, imaging and repeated data.
-- Do not ask the learner to choose information that is already directly given in the stem or data panel.
-- Do not place answer-equivalent conclusions in compactObjectiveData. Data panels must show raw supportive findings only, not the final physiologic direction, mechanism, diagnosis or interpretation that the question asks for.
-- Avoid simple direction-only questions such as “increases/decreases” or “artar/azalır/değişmez” unless the reasoning mechanism is the actual target. Prefer mechanism, interpretation or decision-rule questions.
-- Do not return incomplete objective data values. If a data item is not clinically necessary or cannot be written completely with units or a complete qualitative result, omit it.
-- Feedback must teach with concise sentences: explain why the correct answer is correct and why each wrong option is not the best answer in this case.
-- Every feedback sentence must be case-specific, medically explanatory, complete and concise. Avoid generic, template-like, vague or unfinished wording.
-- evidenceChain must contain exactly 3 short scientific reasons based only on clues present in the stem, vitals or objective data. Do not invent findings or include the answer name.
-- If the output is medically uncertain, ambiguous, repetitive, poorly phrased or not educational, rewrite it before returning JSON.`;
+Standards:
+- Build one focused clinical vignette around one learning point.
+- Keep the stem, data, question, options and feedback aligned with the same learning point.
+- Make the options plausible, same-category and single-best-answer.
+- Use only data that is necessary for reasoning.
+- Do not reveal the answer in the stem or data panels.
+- Do not ask for a fact already stated in the stem or data panels.
+- Objective data must be complete and readable; omit unnecessary or incomplete data.
+- Prefer questions that test reasoning, interpretation, mechanism, diagnosis, treatment choice, test selection or next step.
+- The explanation must clearly teach why the correct answer is correct in this case.
+- Option feedback must be complete, medically meaningful and specific to this case.
+- The evidence chain must use only information already present in the stem, vitals or objective data.
+- Before returning JSON, revise the item if it is ambiguous, medically uncertain, repetitive, poorly written or not educational.`;
 
 export function buildRecentCompact(recentQuestionSummaries = []) {
   const rows = Array.isArray(recentQuestionSummaries) ? recentQuestionSummaries : [];
@@ -76,36 +73,17 @@ export function buildUserPrompt({
   const branchText = cleanText(branch);
   const targetText = cleanText(target);
   const selectedDifficulty = normalizeDifficulty(difficulty);
-  const preferredFocus = targetText || 'Choose the most suitable TUS-style focus for this branch.';
+  const preferredFocus = targetText || 'Choose the most suitable focus for this branch.';
 
-  return `Generate one educational-scientific Turkish TUS spot question for KlinikIQ.
+  return `Generate one Turkish TUS spot question for KlinikIQ.
 
 Branch: ${branchText}
-Requested difficulty: ${selectedDifficulty}
-Preferred focus: ${preferredFocus}
+Difficulty: ${selectedDifficulty}
+Focus: ${preferredFocus}
 Anti-repeat key: ${cleanText(antiRepeatNonce)}-${attempt}
 
-Recent outputs are listed only to avoid repetition. Do not copy their topic, case structure, wording or answer:
+Avoid repeating these recent outputs:
 ${recentCompact}
-
-Question quality:
-Write a compact but well-framed clinical vignette. Use correct Turkish medical terminology, spelling and grammar. Make the item challenging, scientific and highly educational for TUS preparation at the requested difficulty level. The question must have one clearly best scientific answer and plausible same-category options. The learner must still have a real reasoning step.
-
-Feedback quality:
-The explanation must teach the reasoning. For each option, write one concise, useful, case-specific and medically explanatory sentence showing why it fits or why it is eliminated in this case. Do not use generic, template-like, half or vague feedback.
-
-Output rules:
-- difficulty must be exactly: ${selectedDifficulty}.
-- correctAnswer must be exactly one of: A, B, C, D, E. Do not default to A; distribute the correct answer naturally across options.
-- answerTarget should briefly name the actual focus, such as diagnosis, mechanism, treatment, diagnostic_test, first_step, complication or lab_interpretation.
-- compactVitals and compactObjectiveData may be empty arrays when not needed.
-- compactObjectiveData should contain only concise, easy-to-read objective findings that support the vignette without revealing the answer. Do not place answer-equivalent conclusions, decisive diagnostic interpretations, repeated stem text or the exact result being asked in this field. If no safe supportive data is needed, return an empty array.
-- Avoid simple direction-only questions such as “increases/decreases” or “artar/azalır/değişmez” unless the reasoning mechanism is the actual target. Prefer mechanism, interpretation or decision-rule questions.
-- Do not return incomplete objective data values. If a data item is not clinically necessary or cannot be written completely with units or a complete qualitative result, omit it.
-- explanation must be educational, case-specific and medically explanatory. It should clearly explain why the correct answer is correct using mechanism, pathophysiology, diagnostic reasoning, treatment order or clinical decision logic; it must not merely restate the correct option.
-- evidenceChain must provide exactly 3 short scientific reasons that connect the given case clues to the correct answer. Each reason must be based only on information present in the stem, vitals or objective data; do not invent findings or include the answer name.
-- wrongOptionFeedback must include one concise scientific sentence for every option, including the correct answer. For the correct option, explain why it is correct. For wrong options, explain why they are eliminated in this case. The UI will only display the selected wrong option and the correct option after an incorrect answer.
-- managementSteps: use only for treatment, first-step, next-step, emergency or management questions. Include 2-4 concise clinical steps in correct order. For diagnosis, mechanism, etiology, lab interpretation, anatomy or pathology questions, return [].
 
 Return JSON in this exact schema:
 
