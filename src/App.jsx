@@ -6,8 +6,6 @@ import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
 import CasePlayer from './components/CasePlayer.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
-import OnboardingScreen from './components/OnboardingScreen.jsx';
-import LearningWorkspace from './components/LearningWorkspace.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
 import StudyReviewHub from './components/StudyReviewHub.jsx';
 import TusPearlStudyScreen from './components/TusPearlStudyScreen.jsx';
@@ -440,16 +438,6 @@ function App() {
     setSelectedCaseId(null);
     setExamState(null);
     setMode('study');
-  };
-
-  const handleCompleteOnboarding = (learningProfile) => {
-    persistCurrentUser({
-      name: learningProfile.fullName || currentUser?.name,
-      learningProfile: {
-        ...learningProfile,
-        updatedAt: new Date().toISOString(),
-      },
-    });
   };
 
   const addWrongAnswer = useCallback((clinicalCase, selected) => {
@@ -972,18 +960,6 @@ function App() {
     );
   }
 
-  if (!currentUser.learningProfile) {
-    return (
-      <OnboardingScreen
-        currentUser={currentUser}
-        theme={theme}
-        onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')}
-        onComplete={handleCompleteOnboarding}
-        onLogout={handleLogout}
-      />
-    );
-  }
-
   return (
     <main className="app-shell premium-shell" data-theme={theme}>
       <nav className="top-shell-nav" aria-label="KlinikIQ üst gezinme">
@@ -1218,12 +1194,6 @@ function App() {
               </button>
             </section>
           ) : null}
-          <LearningWorkspace
-            currentUser={currentUser}
-            profile={currentUser.learningProfile}
-            onStartAIQuestion={handleStartAIPractice}
-            onOpenTusSpot={() => openPearlStudy({ filter: 'all', branchFilter: 'all' })}
-          />
           <HomeCommandCenter
             mode={mode}
             onChangeMode={setMode}

@@ -75,9 +75,3 @@ Vercel'de aynı değişkenleri Project Settings → Environment Variables alanı
 - Vaka verileri `src/data/cases.js` içinde tutulur.
 - Branş verileri `src/data/branches.js` içinde tutulur.
 - UI/component yapısı vaka ekleme işlemi için değiştirilmemelidir.
-
-## KlinikIQ v37 platform pivot
-
-This build adds a broader medical learning workspace on top of the existing TUS case simulator. New users complete onboarding, then the dashboard adapts to medical-school or TUS preparation needs. Users can add PDF/PPTX material metadata, generate a structured lesson workspace, answer a 10-question carousel, create/review flashcards, and use a material-specific review center. Existing TUS Spot and AI TUS question modules remain available.
-
-AI provider keys must stay server-side. Use `OPENAI_API_KEY`, `OPENAI_MODEL`, and `AI_PROVIDER` in Vercel environment variables. Do not add `VITE_OPENAI_API_KEY`.
