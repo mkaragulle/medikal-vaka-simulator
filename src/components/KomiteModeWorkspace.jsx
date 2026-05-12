@@ -42,6 +42,14 @@ function truncate(text = '', max = 72) {
   return `${value.slice(0, max - 1).trim()}…`;
 }
 
+function formatLessonListItem(item) {
+  if (typeof item === 'string') return item;
+  if (!item || typeof item !== 'object') return '';
+  return item.correctDistinction || item.memoryClarification
+    ? `${item.confusion || 'Sık karıştırılan nokta'}: ${item.correctDistinction || ''}${item.whyConfused ? ` ${item.whyConfused}` : ''}${item.memoryClarification ? ` ${item.memoryClarification}` : ''}`.trim()
+    : Object.values(item).filter(Boolean).join(' ');
+}
+
 function normalizeSourceText(material = {}) {
   return [material.extractedText, material.pastedText]
     .filter(Boolean)
@@ -655,6 +663,23 @@ function InlineStatus({ status = 'idle', message = '' }) {
   return <div className={`komite-inline-status tone-${tone}`}>{status === 'loading' ? <span className="komite-spinner" aria-hidden="true" /> : null}<span>{message}</span></div>;
 }
 
+
+function LoadingPrimaryButton({ status = 'idle', idleLabel, loadingLabel, onClick, icon = 'Sparkles' }) {
+  const isLoading = status === 'loading';
+  return (
+    <button
+      type="button"
+      className={`btn btn-primary komite-loading-primary ${isLoading ? 'is-loading' : ''}`}
+      onClick={onClick}
+      disabled={isLoading}
+      aria-busy={isLoading ? 'true' : 'false'}
+    >
+      {isLoading ? <span className="komite-spinner komite-spinner-light" aria-hidden="true" /> : <Icon name={icon} size={17} />}
+      <span>{isLoading ? loadingLabel : idleLabel}</span>
+    </button>
+  );
+}
+
 function AsyncActionButton({ status = 'idle', idleLabel, loadingLabel, successLabel, errorLabel, icon = 'Sparkles', onClick }) {
   const isLoading = status === 'loading';
   const label = status === 'loading' ? loadingLabel : status === 'success' ? successLabel : status === 'error' ? errorLabel : idleLabel;
@@ -927,11 +952,11 @@ function StartFlow({ onCreate, onCancel }) {
   );
 }
 
-function LessonView({ material, onGenerate }) {
+function LessonView({ material, onGenerate, status = 'idle' }) {
   const lesson = material.lesson;
   if (!lesson) {
     const hasExtractedText = normalizeSourceText(material).length > 120;
-    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Dosya metni ayrıştırıldı. AI rotası varsa gerçek materyal analizi yapılır; API yoksa ayrıştırılan metne dayalı lokal ders taslağı oluşturulur." : "Bu dosyadan yeterli metin çıkarılamadı. Metin yapıştırırsan içerik odaklı ders, soru ve kart üretilebilir."} action={<button type="button" className="btn btn-primary" onClick={onGenerate}>AI Ders Anlatımı oluştur</button>} />;
+    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Dosya metni ayrıştırıldı. KlinikIQ AI tek bir konu anlatımı oluşturmak için materyali analiz eder." : "Bu dosyadan yeterli metin çıkarılamadı. Metin yapıştırırsan içerik odaklı ders, soru ve kart üretilebilir."} action={<LoadingPrimaryButton status={status} idleLabel="AI Ders Anlatımı oluştur" loadingLabel="AI Ders Anlatımı oluşturuyor…" onClick={onGenerate} />} />;
   }
   return (
     <div className="komite-lesson-view">
@@ -946,6 +971,13 @@ function LessonView({ material, onGenerate }) {
       </div>
       {(lesson.bigPicture || lesson.overview) ? <article className="komite-lesson-section"><h3>Büyük resim</h3><p>{lesson.bigPicture || lesson.overview}</p></article> : null}
       {Array.isArray(lesson.mainConcepts) && lesson.mainConcepts.length ? <div className="komite-objectives"><strong>Ana kavramlar</strong><ul>{lesson.mainConcepts.map((item) => <li key={item}>{item}</li>)}</ul></div> : null}
+      {lesson.clinicalExamRelevance ? <article className="komite-lesson-section"><h3>Klinik / sınav bağlantısı</h3><p>{lesson.clinicalExamRelevance}</p></article> : null}
+      {Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length ? (
+        <article className="komite-lesson-section">
+          <h3>Sık karıştırılan noktalar</h3>
+          <ul>{lesson.commonConfusions.map((item, index) => <li key={`${formatLessonListItem(item)}-${index}`}>{formatLessonListItem(item)}</li>)}</ul>
+        </article>
+      ) : null}
       {(lesson.sections || []).map((section) => (
         <article className="komite-lesson-section" key={section.heading}>
           <h3>{section.heading}</h3>
@@ -1311,7 +1343,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
         {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}><Icon name={item.icon} /> {item.label}</button>)}
       </div>
       <div className="komite-tab-panel">
-        {tab === 'lesson' ? <LessonView material={material} onGenerate={() => runWithLocalFallback('lesson')} /> : null}
+        {tab === 'lesson' ? <LessonView material={material} status={aiStatus.lesson} onGenerate={() => runWithLocalFallback('lesson')} /> : null}
         {tab === 'figures' ? <FiguresView material={material} /> : null}
         {tab === 'questions' ? <QuestionsView material={material} onGenerate={() => runWithLocalFallback('questions')} onAnswer={answerQuestion} onToggleQuestionFlag={toggleQuestionFlag} /> : null}
         {tab === 'cards' ? <FlashcardsView material={material} onGenerate={() => runWithLocalFallback('cards')} onUpdateCard={updateCard} /> : null}

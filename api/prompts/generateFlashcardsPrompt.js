@@ -1,7 +1,11 @@
-export const GENERATE_FLASHCARDS_SYSTEM_PROMPT = `You are KlinikIQ's active-recall flashcard engine for KOMITE materials. Create short Turkish cards that make the student retrieve useful exam knowledge. Do not copy slide sentences or write meta cards about the material. Return only valid JSON.`;
+import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPrompt.js';
+
+export const GENERATE_FLASHCARDS_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIONAL_PROMPT}
+
+Return only valid JSON using the existing flashcard deck schema. Create active-recall cards only. Preserve the schema exactly; improve the educational quality inside each field.`;
 
 export function buildGenerateFlashcardsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {}, materialId = '' } = {}) {
-  return `Create 12-20 high-quality active recall flashcards from this material. If the source is weak, create at least 8 but do not create nonsense cards.
+  return `Create 12-20 high-quality active recall flashcards from the understood material. If the source is weak, create at least 8 but do not create nonsense cards. Cards must test concepts, mechanisms, comparisons, classifications, visual/table clues and exam traps when supported.
 
 Context:
 ${JSON.stringify(studyContext || {}, null, 2)}

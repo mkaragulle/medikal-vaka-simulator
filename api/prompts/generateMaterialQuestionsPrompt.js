@@ -1,7 +1,11 @@
-export const GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT = `You are KlinikIQ's KOMITE exam question engine. Generate exactly 10 Turkish medical school committee questions from uploaded material. Questions must be material-grounded, single-best-answer, exam-like, and educational. Avoid low-value definition recall, duplicated stem/question/supportingData, obvious distractors, and generic feedback. Return only valid JSON.`;
+import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPrompt.js';
+
+export const GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIONAL_PROMPT}
+
+Return only valid JSON using the existing question schema. Generate exactly 10 KOMİTE exam-style questions. Preserve the schema exactly; improve the educational quality inside each field.`;
 
 export function buildGenerateMaterialQuestionsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {} } = {}) {
-  return `Generate exactly 10 KOMITE questions from the material.
+  return `Generate exactly 10 KOMITE questions from the understood material. Questions must be derived from the conceptual lesson, not random extracted words.
 
 Context:
 ${JSON.stringify(studyContext || {}, null, 2)}

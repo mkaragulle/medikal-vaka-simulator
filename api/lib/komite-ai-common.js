@@ -98,12 +98,39 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
   }
 }
 
+
+function flattenText(value) {
+  try { return JSON.stringify(value || {}); } catch { return String(value || ''); }
+}
+
+function findGlobalQualityErrors(output = {}) {
+  const text = flattenText(output);
+  const errors = [];
+  const bannedPatterns = [
+    [/materyaldeki ilişkili kavram/iu, 'Anlamsız “materyaldeki ilişkili kavram” etiketi var.'],
+    [/slayt\s*→/iu, 'Slayt ok işaretli ham içerik var.'],
+    [/sayfa\s*→/iu, 'Sayfa ok işaretli ham içerik var.'],
+    [/\b\w+\.(pdf|pptx|ppt|docx)\b/iu, 'Ham dosya adı öğretim içeriğine girmiş.'],
+    [/prof\.?\s*dr\.?|doç\.?\s*dr\.?|öğr\.?\s*gör\.?/iu, 'Öğretim üyesi adı/unvanı içerik alanına girmiş olabilir.'],
+  ];
+  bannedPatterns.forEach(([pattern, message]) => { if (pattern.test(text)) errors.push(message); });
+  const genericCount = (text.match(/klinik bağlamda değerlendirilir|materyal kapsamında önemlidir|bu konu sınavlarda sorulabilir|öğrenciler için önemlidir/giu) || []).length;
+  if (genericCount >= 3) errors.push('Tekrarlayan jenerik dolgu ifadeler var.');
+  return errors;
+}
+
+function hasDateLikeText(value = '') {
+  return /\b(19|20)\d{2}\b|\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b/u.test(String(value || ''));
+}
+
 export function validateQuestionsShape(output = {}) {
   const questions = Array.isArray(output.questions) ? output.questions : [];
-  const errors = [];
+  const errors = findGlobalQualityErrors(output);
   if (questions.length !== 10) errors.push('Tam 10 soru yok.');
   questions.forEach((question, index) => {
     if (!Array.isArray(question.options) || question.options.length !== 5) errors.push(`${index + 1}. soruda 5 seçenek yok.`);
+    const optionIds = (question.options || []).map((option) => String(option.id || '').trim()).sort().join('');
+    if (optionIds && optionIds !== 'ABCDE') errors.push(`${index + 1}. soruda A-E seçenek kimlikleri eksik veya hatalı.`);
     if (!['A', 'B', 'C', 'D', 'E'].includes(String(question.correctOptionId || ''))) errors.push(`${index + 1}. soruda correctOptionId geçersiz.`);
     ['A', 'B', 'C', 'D', 'E'].forEach((id) => {
       const feedback = String(question.optionFeedback?.[id] || '').trim();
@@ -117,25 +144,37 @@ export function validateQuestionsShape(output = {}) {
 export function validateFlashcardsShape(output = {}) {
   const deck = output.deck?.cards ? output.deck : output;
   const cards = Array.isArray(deck.cards) ? deck.cards : [];
-  const errors = [];
+  const errors = findGlobalQualityErrors(output);
   if (cards.length < 8) errors.push('Yeterli kart yok.');
   cards.forEach((card, index) => {
     const front = String(card.front || '').trim();
     const explanation = String(card.explanation || '').trim();
     if (!front.endsWith('?')) errors.push(`${index + 1}. kart önü aktif soru değil.`);
     if (/Materyalde geçen|Bu kart|slaytta geçen|ayrıştırılan gerçek metne dayanır/iu.test(`${front} ${explanation}`)) errors.push(`${index + 1}. kart meta veya kopya ifade içeriyor.`);
-    if (!String(card.back || '').trim()) errors.push(`${index + 1}. kart arkası boş.`);
+    const back = String(card.back || '').trim();
+    if (!back) errors.push(`${index + 1}. kart arkası boş.`);
+    if (back.split(/\s+/).length < 3) errors.push(`${index + 1}. kart arkası keyword-only görünüyor.`);
     if (!explanation) errors.push(`${index + 1}. kart açıklaması boş.`);
   });
   return { ok: errors.length === 0, errors };
 }
 
 export function validateLessonShape(output = {}) {
-  const errors = [];
+  const errors = findGlobalQualityErrors(output);
   const sections = Array.isArray(output.sections) ? output.sections : output.coreExplanation;
-  if (!String(output.title || '').trim()) errors.push('Ders başlığı yok.');
+  const title = String(output.title || '').trim();
+  if (!title) errors.push('Ders başlığı yok.');
+  if (/\.(pdf|pptx|ppt|docx)$/iu.test(title) || /(^|[\s_-])\d{4}([\s_-]|$)/u.test(title)) errors.push('Ders başlığı ham dosya adı/tarih gibi görünüyor.');
   if (!Array.isArray(sections) || sections.length === 0) errors.push('Ders bölümleri yok.');
   if (String(output.shortIntro || output.overview || '').length < 30) errors.push('Genel bakış çok kısa.');
+  const objectives = Array.isArray(output.learningObjectives) ? output.learningObjectives : [];
+  if (objectives.length < 4 || objectives.length > 8) errors.push('Öğrenme hedefleri 4-8 aralığında değil.');
+  objectives.forEach((objective, index) => {
+    const objectiveText = String(objective || '');
+    if (hasDateLikeText(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde tarih var.`);
+    if (/prof\.?|doç\.?|öğr\.?|\.(pdf|pptx|ppt|docx)/iu.test(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde metadata var.`);
+  });
+  if (!String(output.bigPicture || '').trim()) errors.push('Büyük resim alanı yok veya boş.');
   const text = JSON.stringify(output || {});
   if ((text.match(/Klinik bağlantı|Sınav bağlantısı/g) || []).length > 14) errors.push('Ders şablon tekrarı içeriyor.');
   return { ok: errors.length === 0, errors };

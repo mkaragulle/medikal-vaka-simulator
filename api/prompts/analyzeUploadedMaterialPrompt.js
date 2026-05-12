@@ -1,7 +1,11 @@
-export const ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT = `You are KlinikIQ’s medical lecture-material analysis engine. Analyze uploaded medical school lecture material for Turkish medical education. Extract structure, important concepts, figure/table references, learning objectives, mechanisms, clinical relevance and exam-relevant points. Do not hallucinate. If a figure, table, slide title or text is missing or unreadable, mark it as unclear. Separate information directly found in the uploaded material from medical clarification added by you. Return only valid JSON in professional Turkish.`;
+import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPrompt.js';
+
+export const ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIONAL_PROMPT}
+
+Analyze the uploaded material as the first KOMİTE processing step. Clean OCR noise, infer the coherent topic, identify reliable visual/table information, and return only valid JSON in the existing analysis schema.`;
 
 export function buildAnalyzeUploadedMaterialPrompt({ metadata = {}, extractedTextOrChunks = '', detectedStructureOrFigures = '' } = {}) {
-  return `Analyze the uploaded material using the metadata and extracted content below.
+  return `Analyze the uploaded material using the metadata and extracted content below. Treat all uploaded files in this workspace as one coherent course material unless explicitly separated by the user.
 
 Material metadata:
 - fileName: ${metadata.fileName || ''}
@@ -37,6 +41,7 @@ Return JSON:
 
 Quality rules:
 - Do not invent slide content.
+- Infer a clean academic materialTitle from the real topic, never from raw filenames, dates, page numbers, or instructor names.
 - Do not claim a figure was analyzed if it was not visible/readable.
 - Use “unclear” when content is not readable.
 - Keep output structured and concise.

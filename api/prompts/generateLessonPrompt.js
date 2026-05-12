@@ -1,7 +1,11 @@
-export const GENERATE_LESSON_SYSTEM_PROMPT = `You are KlinikIQ's KOMITE lesson engine. Produce a natural Turkish medical lecture based primarily on uploaded material. Teach like a clear professor: big idea first, mechanism/cause-effect second, exam angle third. Do not write a mechanical report, do not repeat empty headings, and do not claim visual/figure interpretation unless the text explicitly supports it. Return only valid JSON.`;
+import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPrompt.js';
+
+export const GENERATE_LESSON_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIONAL_PROMPT}
+
+Return only valid JSON using the existing lesson schema. Preserve the schema exactly; improve the educational quality inside each field.`;
 
 export function buildGenerateLessonPrompt({ studyContext = {}, materialAnalysisJson = {}, sourceTextChunks = '' } = {}) {
-  return `Create a concise but high-yield Turkish KOMITE lesson from this material.
+  return `Create a professional, coherent, memorable Turkish KOMITE lesson from this material. Synthesize the whole uploaded workspace as one connected course material, not as slide-by-slide notes.
 
 Context:
 - classYear: ${studyContext.classYear || ''}
@@ -18,6 +22,9 @@ Return only this JSON shape:
 {
   "title": "",
   "shortIntro": "",
+  "bigPicture": "",
+  "clinicalExamRelevance": "",
+  "commonConfusions": [{ "confusion": "", "correctDistinction": "", "whyConfused": "", "memoryClarification": "" }],
   "learningObjectives": [],
   "coreExplanation": [
     { "heading": "", "teachingText": "", "mechanismFlow": [], "examAngle": "", "commonTrap": "" }
@@ -36,6 +43,7 @@ Return only this JSON shape:
 }
 
 Rules:
+- Map Academic title → title, Short overview → shortIntro, Big picture → bigPicture, Main lesson → sections/coreExplanation, Figure/table explanations → figureExplanations/visualNotes, Clinical/exam relevance → clinicalExamRelevance, Common confusions → commonConfusions, High-yield summary → highYieldPoints, Must remember → mustKnow.
 - Explain the topic from zero in a logical order; do not merely summarize slides.
 - Avoid repeated “klinik bağlantı/sınav bağlantısı” formula. Use examAngle/commonTrap only when useful.
 - Each section should contain short dense paragraphs, not long flat text.

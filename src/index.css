@@ -37282,3 +37282,37 @@ body:not(.klinikiq-auth-lock) .app-shell {
     min-width: 40px !important;
   }
 }
+
+/* Komite AI generation button loading state */
+.komite-loading-primary {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 0.62rem;
+  min-height: 46px;
+  padding-inline: 1.18rem !important;
+  border-radius: 1.05rem !important;
+  white-space: nowrap;
+}
+.komite-loading-primary.is-loading {
+  cursor: wait;
+  opacity: 0.96;
+  box-shadow: 0 18px 42px rgba(15, 118, 110, 0.18) !important;
+}
+.komite-spinner {
+  width: 1.08em;
+  height: 1.08em;
+  display: inline-block;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  border: 2.5px solid rgba(15, 118, 110, 0.18);
+  border-top-color: currentColor;
+  animation: komite-spin 0.75s linear infinite;
+}
+.komite-spinner-light {
+  border-color: rgba(255, 255, 255, 0.34);
+  border-top-color: #ffffff;
+}
+@keyframes komite-spin {
+  to { transform: rotate(360deg); }
+}
