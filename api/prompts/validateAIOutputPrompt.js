@@ -1,39 +1,20 @@
-export const VALIDATE_AI_OUTPUT_SYSTEM_PROMPT = `You are KlinikIQ’s medical AI output validator. Review generated Turkish medical education content for medical accuracy, source grounding, completeness, Turkish quality and educational value. Return a strict validation result. Do not rewrite unless asked; only identify whether the content should be accepted or regenerated. Return only valid JSON.`;
+export const VALIDATE_AI_OUTPUT_SYSTEM_PROMPT = `You are KlinikIQ's strict output validator. Reject unsafe, generic, duplicated, hallucinated, or low-educational-value KOMITE outputs. Return only valid JSON.`;
 
-export function buildValidateAIOutputPrompt({ outputType = '', studyContext = {}, materialAnalysisJson = {}, generatedOutputJson = {} } = {}) {
-  return `Validate this AI output.
+export function buildValidateAIOutputPrompt({ outputType = '', outputJson = {}, sourceSummary = '' } = {}) {
+  return `Validate this ${outputType} output against KlinikIQ KOMITE quality rules.
 
-Output type:
-${outputType}
+Source summary:
+${sourceSummary || ''}
 
-Study context:
-${JSON.stringify(studyContext || {}, null, 2)}
+Output:
+${JSON.stringify(outputJson || {}, null, 2)}
 
-Source material / analysis:
-${JSON.stringify(materialAnalysisJson || {}, null, 2)}
-
-Generated output:
-${JSON.stringify(generatedOutputJson || {}, null, 2)}
-
-Return JSON:
-{
-  "ok": true,
-  "severity": "pass|minor|major|reject",
-  "errors": [],
-  "warnings": [],
-  "retryInstruction": ""
-}
+Return:
+{ "status": "pass|warn|reject", "reasons": [], "fixInstruction": "" }
 
 Reject if:
-- JSON is invalid,
-- medical recommendation is unsafe,
-- content invents unsupported slide/PDF information,
-- question has more than one defensible answer,
-- options are mixed category,
-- feedback is missing, generic, fragmented or medically weak,
-- anatomical names are abbreviated as “N.” or similar fragments,
-- evidence/learning points invent findings,
-- Turkish is broken or unfinished,
-- treatment decisions lack required timing/severity/stability/contraindication data,
-- figure/table explanations pretend to analyze unavailable visuals.`;
+- lesson is a flat summary, repetitive template, empty clinical/exam blocks, visual hallucination, or unreadably long text.
+- questions are not exactly 10, lack 5 options/correctOptionId, repeat stem/question/supportingData, include too many basic definition questions, obvious distractors, missing/generic feedback, bad anatomy abbreviations, or treatment questions without context.
+- flashcards contain “Materyalde geçen...”, “Bu kart...”, raw slide copies, meaningless deck titles, generic explanations, or non-active-recall fronts.
+Warn when minor style cleanup is enough; reject when user-facing quality would be poor.`;
 }

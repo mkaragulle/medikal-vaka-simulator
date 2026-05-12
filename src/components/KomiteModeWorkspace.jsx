@@ -52,9 +52,68 @@ function normalizeSourceText(material = {}) {
 }
 
 
+function cleanMaterialTitle(material = {}) {
+  const rawName = String(material.fileName || '').replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
+  const fallback = material.materialAnalysis?.detectedCourseOrTopic || material.course || material.committee || 'Ders Materyali';
+  const meaningless = /^(das|test|pdf\s*\d*|slayt\s*\d*|ppt\s*\d*|doc\s*\d*|file\s*\d*|untitled|adsız)$/iu;
+  if (!rawName || rawName.length < 4 || meaningless.test(rawName)) return fallback;
+  return rawName.charAt(0).toLocaleUpperCase('tr') + rawName.slice(1);
+}
+
 function deriveTopic(material = {}) {
-  const fileTopic = String(material.fileName || '').replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').trim();
-  return material.course || material.committee || fileTopic || 'yüklenen materyal';
+  return material.course || material.committee || cleanMaterialTitle(material) || 'yüklenen materyal';
+}
+
+function stripGenericMeta(text = '') {
+  return String(text || '')
+    .replace(/Bu kart[^.?!]*(materyal|slayt|dosya)[^.?!]*[.?!]?/giu, '')
+    .replace(/Materyalde geçen şu bilginin ana hatırlatma değeri nedir:?/giu, '')
+    .replace(/Bu bilgi neyi hatırlatır\??/giu, '')
+    .replace(/slaytta geçen/giu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function isMeaningfullyDifferent(a = '', b = '') {
+  const x = String(a || '').replace(/\s+/g, ' ').trim().toLocaleLowerCase('tr');
+  const y = String(b || '').replace(/\s+/g, ' ').trim().toLocaleLowerCase('tr');
+  if (!x || !y) return true;
+  if (x === y) return false;
+  return !(x.length > 40 && y.includes(x)) && !(y.length > 40 && x.includes(y));
+}
+
+function normalizeQuestionForDisplay(question = {}) {
+  const stem = String(question.stem || '').trim();
+  const q = String(question.question || '').trim();
+  const supportingData = Array.isArray(question.supportingData)
+    ? question.supportingData.filter((item) => item && isMeaningfullyDifferent(item, stem) && isMeaningfullyDifferent(item, q))
+    : [];
+  return { ...question, stem, question: isMeaningfullyDifferent(q, stem) ? q : '', supportingData };
+}
+
+function qualityGateLesson(lesson = {}) {
+  const text = JSON.stringify(lesson || {}).toLocaleLowerCase('tr');
+  const badRepeats = (text.match(/klinik bağlantı|sınav bağlantısı|bu ders materyalde/g) || []).length;
+  if (!lesson || !Array.isArray(lesson.sections) || !lesson.sections.length) return { ok: false, reason: 'Ders yapısı eksik.' };
+  if (badRepeats > 14) return { ok: false, reason: 'Ders anlatımı fazla şablon ve tekrar içeriyor.' };
+  return { ok: true };
+}
+
+function qualityGateQuestions(questions = []) {
+  if (!Array.isArray(questions) || questions.length !== 10) return { ok: false, reason: '10 soru üretilemedi.' };
+  const bad = questions.find((question) => !Array.isArray(question.options) || question.options.length !== 5 || !question.correctOptionId || !question.optionFeedback?.[question.correctOptionId]);
+  if (bad) return { ok: false, reason: 'Soru seçenekleri veya feedback eksik.' };
+  const lowValue = questions.filter((question) => /en uygun tanımı|nedir\??$/iu.test(question.question || '') && String(question.stem || '').length < 120);
+  if (lowValue.length > 1) return { ok: false, reason: 'Tanım düzeyinde düşük kaliteli soru fazla.' };
+  return { ok: true };
+}
+
+function qualityGateDeck(deck = {}) {
+  const cards = deck?.cards || [];
+  if (!Array.isArray(cards) || cards.length < 8) return { ok: false, reason: 'Yeterli kaliteli hap kart üretilemedi.' };
+  const metaCard = cards.find((card) => /Materyalde geçen|Bu kart|slaytta geçen|ayrıştırılan gerçek metne dayanır/iu.test(`${card.front} ${card.explanation}`));
+  if (metaCard) return { ok: false, reason: 'Meta veya kopya kart üretildi.' };
+  return { ok: true };
 }
 
 function extractKeywords(text = '', topic = '') {
@@ -107,8 +166,8 @@ function sourceDrivenSections(material, topic) {
       heading: truncate(heading, 80),
       content,
       mechanismFlow: keywords.length ? keywords.map((keyword) => `${keyword} → materyalde ilişkili kavram`) : [],
-      clinicalConnection: 'Bu bölümdeki bilgi, materyaldeki bağlamı bozmadan temel mekanizma veya klinik yorumla ilişkilendirilmelidir.',
-      examConnection: 'Komite sorusunda bu bölümden genellikle tanım, mekanizma, ayırıcı özellik veya yorumlama basamağı sorulur.',
+      examAngle: 'Bu bölümdeki bilgi, materyaldeki bağlamı bozmadan temel mekanizma veya klinik yorumla ilişkilendirilmelidir.',
+      commonTrap: 'Komite sorusunda bu bölümden genellikle tanım, mekanizma, ayırıcı özellik veya yorumlama basamağı sorulur.',
       sourceReferences: [sourceLabel],
     };
   });
@@ -142,10 +201,10 @@ function buildLocalLesson(material) {
     ? [
       {
         heading: 'Materyalden çıkarılan büyük resim',
-        content: `Bu ders anlatımı, dosya içinden gerçekten ayrıştırılan metne göre hazırlandı. Ana tekrar hedefleri: ${keywords.slice(0, 6).join(', ') || topic}.`,
+        teachingText: `Bu ders anlatımı, dosya içinden gerçekten ayrıştırılan metne göre hazırlandı. Ana tekrar hedefleri: ${keywords.slice(0, 6).join(', ') || topic}.`,
         mechanismFlow: keywords.slice(0, 5).map((keyword) => `${keyword} → materyaldeki ilişkili kavram`),
-        clinicalConnection: 'Klinik bağlantı yalnızca metinde geçen konu ve kavramlardan hareketle kurulmalıdır; görsel içeriği okunamadıysa görsel hakkında kesin yorum yapılmaz.',
-        examConnection: `${material.learningTarget || 'Komite sınavı'} için bu materyalde tekrar edilmesi gereken başlıklar, doğrudan ayrıştırılan metindeki kavramlardan seçilmiştir.`,
+        examAngle: 'Klinik bağlantı yalnızca metinde geçen konu ve kavramlardan hareketle kurulmalıdır; görsel içeriği okunamadıysa görsel hakkında kesin yorum yapılmaz.',
+        commonTrap: `${material.learningTarget || 'Komite sınavı'} için bu materyalde tekrar edilmesi gereken başlıklar, doğrudan ayrıştırılan metindeki kavramlardan seçilmiştir.`,
         sourceReferences: [sourceReference],
       },
       ...extractedSections,
@@ -153,10 +212,10 @@ function buildLocalLesson(material) {
     : [
       {
         heading: 'Dosya içeriği okunamadı',
-        content: 'Bu materyal için otomatik metin ayrıştırma yeterli sonuç vermedi. Gerçek ders anlatımı üretmek için PDF/PPTX/DOCX içeriğinin okunabilir metin katmanı içermesi veya metnin elle yapıştırılması gerekir.',
+        teachingText: 'Bu materyal için otomatik metin ayrıştırma yeterli sonuç vermedi. Gerçek ders anlatımı üretmek için PDF/PPTX/DOCX içeriğinin okunabilir metin katmanı içermesi veya metnin elle yapıştırılması gerekir.',
         mechanismFlow: [],
-        clinicalConnection: 'İçerik okunmadan klinik veya biyokimyasal mekanizma anlatımı kesin bilgi gibi sunulmaz.',
-        examConnection: 'Sınav hedefi oluşturulabilir; ancak materyal temelli soru ve kart kalitesi için kaynak metin gerekir.',
+        examAngle: 'İçerik okunmadan klinik veya biyokimyasal mekanizma anlatımı kesin bilgi gibi sunulmaz.',
+        commonTrap: 'Sınav hedefi oluşturulabilir; ancak materyal temelli soru ve kart kalitesi için kaynak metin gerekir.',
         sourceReferences: [sourceReference],
       },
     ];
@@ -164,8 +223,8 @@ function buildLocalLesson(material) {
   return {
     id: createId('lesson'),
     materialId: material.id,
-    title: `${topic} — Komite Ders Anlatımı`,
-    overview: hasReadableText
+    title: `${cleanMaterialTitle(material)} — Komite Ders Anlatımı`,
+    shortIntro: hasReadableText
       ? `Bu çalışma alanı dosya içeriğinden ayrıştırılan metne göre hazırlandı. ${material.extractionNotice || ''}`.trim()
       : 'Bu çalışma alanı dosya metni ayrıştırılamadığı için gerçek materyal analizi yapılamadı; metin yapıştırılırsa içerik odaklı ders, soru ve kart üretilebilir.',
     learningObjectives: sourceObjectives.length
@@ -197,10 +256,10 @@ function buildLocalLesson(material) {
       'Materyalde geçen ifade ile dış tıbbi yorum ayrı düşünülmelidir.',
       'Tanım, mekanizma, klinik bulgu ve sınav ipucu aynı şey değildir.',
     ],
-    highYieldSummary: hasReadableText
+    highYieldPoints: hasReadableText
       ? getImportantSentences(sourceText, 6).map((sentence) => truncate(sentence, 180))
       : [`${topic}: içerik okunamadığı için yüksek verimli özet güvenilir biçimde çıkarılamadı.`],
-    mustRemember: hasReadableText
+    mustKnow: hasReadableText
       ? keywords.slice(0, 6).map((keyword) => `${keyword}: bu materyalde tekrar edilmesi gereken ana kavramlardan biridir.`)
       : ['Okunamayan veya materyalde bulunmayan içerik, kesin bilgi gibi sunulmamalıdır.'],
     limitations: extractionLimitations,
@@ -307,7 +366,7 @@ function buildLocalFlashcards(material, lesson) {
 
   return {
     id: createId('deck'),
-    deckTitle: `${topic} Hap Kartları`,
+    deckTitle: `${cleanMaterialTitle(material)} Hap Kartları`,
     materialId: material.id,
     cards: targets.map((target, index) => {
       const keyword = keywords[index % Math.max(keywords.length, 1)] || topic;
@@ -322,14 +381,14 @@ function buildLocalFlashcards(material, lesson) {
         type: hasReadableText ? (index % 3 === 0 ? 'clinical_clue' : index % 3 === 1 ? 'mechanism' : 'must_remember') : 'must_remember',
         difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard',
         front: hasReadableText
-          ? `Materyalde geçen şu bilginin ana hatırlatma değeri nedir: “${truncate(target, 120)}”?`
-          : `${target} ifadesi KOMİTE modunda neden önemlidir?`,
+          ? `${truncate(target.replace(/[:.;]$/u, ''), 115)} bilgisinden sınavda hangi temel sonuç çıkarılır?`
+          : `${target} durumunda güvenilir içerik üretimi için ilk yapılması gereken nedir?`,
         back: hasReadableText
-          ? `${truncate(target, 220)}`
-          : 'Kaynak metin okunmadan materyal temelli ayrıntılı ders, soru veya kart üretimi güvenilir olmaz.',
+          ? `${truncate(stripGenericMeta(target), 180)}`
+          : 'Okunabilir kaynak metin sağlanmalı veya ilgili slayt metni elle yapıştırılmalıdır.',
         explanation: hasReadableText
-          ? `Bu kart, ${topic} materyalinden ayrıştırılan gerçek metne dayanır ve ${keyword} kavramını aktif geri çağırma ile pekiştirir.`
-          : 'Bu kart, dosya ayrıştırma eksikliğini gösteren güvenli bir uyarı kartıdır; metin yapıştırıldığında içerik odaklı kartlar üretilebilir.',
+          ? `${keyword} bilgisini ezber cümlesi olarak değil, kaynak ipucundan çıkarılan karar noktası olarak geri çağır.`
+          : 'Kaynak okunmadan ayrıntılı ders, soru veya kart üretmek uydurma riskini artırır.',
         sourceReference: lesson?.sourceReferences?.[0] || (hasReadableText ? 'Ayrıştırılan materyal metni' : 'Dosya içeriği okunamadı'),
         tags: [topic, keyword, material.learningTarget || 'Komite'].filter(Boolean),
         isUserCreated: false,
@@ -342,6 +401,35 @@ function buildLocalFlashcards(material, lesson) {
   };
 }
 
+
+function normalizeGeneratedLessonShape(lesson = {}) {
+  const sections = Array.isArray(lesson.sections) && lesson.sections.length ? lesson.sections : (lesson.coreExplanation || []);
+  return {
+    ...lesson,
+    overview: lesson.overview || lesson.shortIntro || '',
+    shortIntro: lesson.shortIntro || lesson.overview || '',
+    sections: sections.map((section) => ({
+      ...section,
+      content: section.content || section.teachingText || '',
+      teachingText: section.teachingText || section.content || '',
+      examAngle: section.examAngle || section.clinicalConnection || '',
+      commonTrap: section.commonTrap || section.examConnection || '',
+    })),
+    highYieldPoints: lesson.highYieldPoints || lesson.highYieldSummary || [],
+    mustKnow: lesson.mustKnow || lesson.mustRemember || [],
+    figureExplanations: lesson.figureExplanations || lesson.visualNotes || [],
+  };
+}
+
+function normalizeGeneratedDeckShape(deck = {}, material = {}) {
+  const cleanTitle = `${cleanMaterialTitle(material)} Hap Kartları`;
+  const cards = (deck.cards || []).map((card) => ({
+    ...card,
+    front: stripGenericMeta(card.front),
+    explanation: stripGenericMeta(card.explanation),
+  })).filter((card) => card.front && card.back);
+  return { ...deck, deckTitle: cleanTitle, cards };
+}
 
 async function postKomiteAI(endpoint, payload) {
   if (typeof fetch !== 'function') throw new Error('Fetch is not available');
@@ -376,8 +464,8 @@ function buildMaterialAnalysisFallback(material) {
     lectureStructure: sections.length ? sections.map((section) => ({
       sectionTitle: section.heading,
       sourcePages: section.sourceReferences || [],
-      mainIdeas: extractKeywords(section.content, topic).slice(0, 5),
-      importantDetails: getImportantSentences(section.content, 3),
+      mainIdeas: extractKeywords(section.teachingText || section.content, topic).slice(0, 5),
+      importantDetails: getImportantSentences(section.teachingText || section.content, 3),
     })) : [{ sectionTitle: topic, sourcePages: [], mainIdeas: keywords.slice(0, 5), importantDetails: [] }],
     keyConcepts: keywords,
     mechanisms: keywords.slice(0, 5).map((keyword) => `${keyword} ile ilişkili mekanizma materyal metninden ayrıca doğrulanmalıdır.`),
@@ -413,6 +501,23 @@ function EmptyState({ title, text, action }) {
       <p>{text}</p>
       {action}
     </div>
+  );
+}
+
+function InlineStatus({ status = 'idle', message = '' }) {
+  if (status === 'idle' && !message) return null;
+  const tone = status === 'error' ? 'danger' : status === 'success' ? 'success' : status === 'loading' ? 'warning' : 'neutral';
+  return <div className={`komite-inline-status tone-${tone}`}>{status === 'loading' ? <span className="komite-spinner" aria-hidden="true" /> : null}<span>{message}</span></div>;
+}
+
+function AsyncActionButton({ status = 'idle', idleLabel, loadingLabel, successLabel, errorLabel, icon = 'Sparkles', onClick }) {
+  const isLoading = status === 'loading';
+  const label = status === 'loading' ? loadingLabel : status === 'success' ? successLabel : status === 'error' ? errorLabel : idleLabel;
+  return (
+    <button type="button" className={`btn btn-secondary async-action-btn status-${status}`} onClick={onClick} disabled={isLoading}>
+      {isLoading ? <span className="komite-spinner" aria-hidden="true" /> : <Icon name={icon} size={16} />}
+      <span>{label}</span>
+    </button>
   );
 }
 
@@ -619,7 +724,7 @@ function LessonView({ material, onGenerate }) {
       <div className="komite-lesson-hero">
         <span className="komite-kicker">AI Ders Anlatımı</span>
         <h2>{lesson.title}</h2>
-        <p>{lesson.overview}</p>
+        <p>{lesson.shortIntro || lesson.overview}</p>
       </div>
       <div className="komite-objectives">
         <strong>Öğrenme hedefleri</strong>
@@ -628,22 +733,22 @@ function LessonView({ material, onGenerate }) {
       {(lesson.sections || []).map((section) => (
         <article className="komite-lesson-section" key={section.heading}>
           <h3>{section.heading}</h3>
-          <p>{section.content}</p>
+          <p>{section.teachingText || section.content}</p>
           {section.mechanismFlow?.length ? <div className="komite-flow-line">{section.mechanismFlow.map((step) => <span key={step}>{step}</span>)}</div> : null}
           <div className="komite-two-note-grid">
-            <div><strong>Klinik bağlantı</strong><p>{section.clinicalConnection}</p></div>
-            <div><strong>Sınav bağlantısı</strong><p>{section.examConnection}</p></div>
+            <div><strong>Klinik bağlantı</strong><p>{section.examAngle || section.clinicalConnection}</p></div>
+            <div><strong>Sınav bağlantısı</strong><p>{section.commonTrap || section.examConnection}</p></div>
           </div>
         </article>
       ))}
       <div className="komite-summary-grid">
         <div>
           <strong>Can alıcı noktalar</strong>
-          <ul>{(lesson.highYieldSummary || []).map((item) => <li key={item}>{item}</li>)}</ul>
+          <ul>{(lesson.highYieldPoints || lesson.highYieldSummary || []).map((item) => <li key={item}>{item}</li>)}</ul>
         </div>
         <div>
           <strong>Mutlaka hatırla</strong>
-          <ul>{(lesson.mustRemember || []).map((item) => <li key={item}>{item}</li>)}</ul>
+          <ul>{(lesson.mustKnow || lesson.mustRemember || []).map((item) => <li key={item}>{item}</li>)}</ul>
         </div>
       </div>
     </div>
@@ -651,22 +756,36 @@ function LessonView({ material, onGenerate }) {
 }
 
 function FiguresView({ material }) {
-  const figures = material.lesson?.figureExplanations || [];
-  if (!figures.length) return <EmptyState title="Görsel/şekil açıklaması yok" text="Bu materyalde okunabilir görsel bilgisi bulunamadı veya henüz analiz edilmedi." />;
+  const rawFigures = material.lesson?.figureExplanations || material.materialAnalysis?.figureTableNotes || [];
+  const figures = rawFigures.length ? rawFigures : [{
+    sourcePageOrSlide: 'Materyal geneli',
+    analysisStatus: normalizeSourceText(material).length > 120 ? 'partial' : 'unavailable',
+    type: 'unknown',
+    visibleTextAroundFigure: '',
+    whatCanBeSaidSafely: normalizeSourceText(material).length > 120
+      ? 'Bu sürümde görselin kendisi değil, slayt/PDF içindeki okunabilir metin analiz edildi.'
+      : 'Dosyadan yeterli metin çıkarılamadığı için görsel hakkında güvenilir yorum yapılamaz.',
+    limitations: 'OCR/vision desteği olmadan şekil, tablo veya diyagram piksel içeriği yorumlanmaz.',
+    examRelevance: 'Görsel sorusu üretmek için görselin okunabilir metni veya ayrı ekran görüntüsü gerekir.',
+  }];
+  const statusLabel = { analyzed: 'Analiz edildi', partial: 'Kısmen analiz edildi', unavailable: 'Analiz edilemedi' };
   return (
     <div className="komite-figure-grid">
-      {figures.map((figure, index) => (
-        <article className="komite-figure-card" key={`${figure.title}-${index}`}>
-          <span>{figure.sourcePageOrSlide}</span>
-          <h3>{figure.title}</h3>
-          <p>{figure.whatItShows}</p>
-          <dl>
-            <dt>Yorum</dt><dd>{figure.stepByStepInterpretation}</dd>
-            <dt>Neden önemli?</dt><dd>{figure.whyItMatters}</dd>
-            <dt>Sınav bağlantısı</dt><dd>{figure.examRelevance}</dd>
-          </dl>
-        </article>
-      ))}
+      {figures.map((figure, index) => {
+        const status = figure.analysisStatus || (figure.whatItShows || figure.interpretation ? 'partial' : 'unavailable');
+        return (
+          <article className="komite-figure-card" key={`${figure.title || figure.type}-${index}`}>
+            <div className="komite-figure-card-head"><span>{figure.sourcePageOrSlide || 'Kaynak belirtilmedi'}</span><StatusPill tone={status === 'analyzed' ? 'success' : status === 'partial' ? 'warning' : 'neutral'}>{statusLabel[status] || statusLabel.partial}</StatusPill></div>
+            <h3>{figure.title || figure.type || 'Görsel / şekil notu'}</h3>
+            <p>{figure.whatCanBeSaidSafely || figure.whatItShows || figure.interpretation || 'Bu görsel güvenilir biçimde analiz edilemedi.'}</p>
+            <dl>
+              {figure.visibleTextAroundFigure ? <><dt>Okunabilen çevre metni</dt><dd>{figure.visibleTextAroundFigure}</dd></> : null}
+              <dt>Sınır</dt><dd>{figure.limitations || figure.commonMistake || 'Görsel içeriği uydurulmaz; yalnızca okunabilir metin kullanılabilir.'}</dd>
+              <dt>Sınav değeri</dt><dd>{figure.examRelevance || 'Görsel tabanlı soru için ek OCR/görsel analiz gerekir.'}</dd>
+            </dl>
+          </article>
+        );
+      })}
     </div>
   );
 }
@@ -674,7 +793,7 @@ function FiguresView({ material }) {
 function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag }) {
   const questions = material.questions || [];
   const [index, setIndex] = useState(0);
-  const active = questions[index];
+  const active = normalizeQuestionForDisplay(questions[index]);
 
   useEffect(() => { if (index > questions.length - 1) setIndex(0); }, [questions.length, index]);
 
@@ -703,7 +822,7 @@ function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag })
           </div>
           <p className="komite-question-stem">{active.stem}</p>
           {active.supportingData?.length ? <div className="komite-supporting-data">{active.supportingData.map((item) => <span key={item}>{item}</span>)}</div> : null}
-          <h3>{active.question}</h3>
+          {active.question ? <h3>{active.question}</h3> : null}
           <div className="komite-option-list">
             {active.options.map((option) => {
               const stateClass = isAnswered && option.id === correctId ? 'correct' : isAnswered && option.id === selected ? 'wrong' : '';
@@ -720,7 +839,7 @@ function QuestionsView({ material, onGenerate, onAnswer, onToggleQuestionFlag })
                 <>
                   <strong>Doğru yanıt</strong>
                   <p>{active.explanation}</p>
-                  <p className="komite-memory-note">{active.learningPoint}</p>
+                  {active.learningPoint ? <p className="komite-memory-note">{active.learningPoint}</p> : null}{active.memoryNote ? <p className="komite-memory-note">{active.memoryNote}</p> : null}
                 </>
               ) : (
                 <>
@@ -765,9 +884,8 @@ function FlashcardsView({ material, onGenerate, onUpdateCard }) {
         </div>
       </div>
       <button type="button" className={`komite-flashcard ${flipped ? 'flipped' : ''}`} onClick={() => setFlipped((current) => !current)}>
-        <span>{flipped ? 'Yanıt' : 'Soru'}</span>
-        <strong>{flipped ? active.back : active.front}</strong>
-        {flipped ? <p>{active.explanation}</p> : <small>Yanıtı görmek için karta tıkla.</small>}
+        <span className="komite-card-chip-row"><StatusPill tone="neutral">{active.type || 'must_know'}</StatusPill><StatusPill tone={active.difficulty === 'hard' ? 'danger' : active.difficulty === 'medium' ? 'warning' : 'success'}>{active.difficulty || 'medium'}</StatusPill></span>
+        {flipped ? <><small>Yanıt</small><strong>{active.back}</strong>{active.explanation ? <p><b>Mantık: </b>{active.explanation}</p> : null}{active.examTrap ? <p className="komite-memory-note">{active.examTrap}</p> : null}</> : <><small>Soru</small><strong>{active.front}</strong><small>Yanıtı görmek için karta tıkla.</small></>}
       </button>
       <div className="komite-card-actions">
         <button type="button" className="btn btn-secondary" onClick={() => onUpdateCard(active.id, { repeatStatus: 'known', isDifficult: false })}>Biliyorum</button>
@@ -820,10 +938,17 @@ function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
 
 function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMaterial }) {
   const [tab, setTab] = useState('lesson');
-  const [busy, setBusy] = useState('');
+  const [aiStatus, setAiStatus] = useState({ lesson: 'idle', questions: 'idle', cards: 'idle' });
+  const [aiError, setAiError] = useState({});
+  const busy = Object.values(aiStatus).find((status) => status === 'loading') ? 'loading' : '';
+  const setKindStatus = (kind, status, message = '') => {
+    setAiStatus((current) => ({ ...current, [kind]: status }));
+    setAiError((current) => ({ ...current, [kind]: message }));
+  };
 
   const runWithLocalFallback = async (kind) => {
-    setBusy(kind);
+    if (aiStatus[kind] === 'loading') return;
+    setKindStatus(kind, 'loading', '');
     const sourceText = normalizeSourceText(material);
     const studyContext = {
       classYear: material.classYear,
@@ -854,7 +979,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             materialAnalysisJson: analysis,
             sourceTextChunks: sourceText.slice(0, 12000),
           }) : null;
-          nextPatch = { materialAnalysis: analysis, lesson: generated?.lesson || buildLocalLesson(material), processingStatus: 'lesson-ready' };
+          nextPatch = { materialAnalysis: analysis, lesson: generated?.lesson ? normalizeGeneratedLessonShape(generated.lesson) : buildLocalLesson(material), processingStatus: 'lesson-ready' };
         } catch {
           nextPatch = { materialAnalysis: analysis, lesson: buildLocalLesson(material), processingStatus: 'lesson-ready' };
         }
@@ -891,7 +1016,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             generatedLessonJson: lesson,
             materialId: material.id,
           }) : null;
-          const deck = generated?.deck?.cards?.length ? {
+          const deck = generated?.deck?.cards?.length ? normalizeGeneratedDeckShape({
             ...generated.deck,
             id: generated.deck.id || createId('deck'),
             materialId: material.id,
@@ -910,15 +1035,19 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
               repeatStatus: card.repeatStatus || 'new',
               createdAt: Date.now(),
             })),
-          } : buildLocalFlashcards(material, lesson);
+          }, material) : buildLocalFlashcards(material, lesson);
           nextPatch = { materialAnalysis: analysis, lesson, flashcardDeck: deck, processingStatus: 'cards-ready' };
         } catch {
           nextPatch = { materialAnalysis: analysis, lesson, flashcardDeck: buildLocalFlashcards(material, lesson), processingStatus: 'cards-ready' };
         }
       }
+      const gate = kind === 'lesson' ? qualityGateLesson(nextPatch.lesson) : kind === 'questions' ? qualityGateQuestions(nextPatch.questions) : qualityGateDeck(nextPatch.flashcardDeck);
+      if (!gate.ok) throw new Error(gate.reason);
       onPatchMaterial(material.id, nextPatch);
-    } finally {
-      window.setTimeout(() => setBusy(''), 220);
+      setKindStatus(kind, 'success', kind === 'lesson' ? 'Ders hazır' : kind === 'questions' ? '10 soru oluşturuldu' : 'Hap kartlar hazır');
+      window.setTimeout(() => setKindStatus(kind, 'idle', ''), 1800);
+    } catch (error) {
+      setKindStatus(kind, 'error', error?.message || 'AI servisinden yanıt alınamadı. Lütfen tekrar deneyin.');
     }
   };
 
@@ -957,12 +1086,13 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
           <p>{material.learningTarget} · {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</p>
         </div>
         <div className="komite-workspace-actions">
-          <StatusPill tone={material.processingStatus?.includes('ready') ? 'success' : 'neutral'}>{busy ? 'Hazırlanıyor' : material.processingStatus || 'metadata-ready'}</StatusPill>
-          <button type="button" className="btn btn-secondary" onClick={() => runWithLocalFallback('lesson')}>Ders</button>
-          <button type="button" className="btn btn-secondary" onClick={() => runWithLocalFallback('questions')}>10 Soru</button>
-          <button type="button" className="btn btn-secondary" onClick={() => runWithLocalFallback('cards')}>Kart</button>
+          <StatusPill tone={material.processingStatus?.includes('ready') ? 'success' : 'neutral'}>{busy ? 'AI işlemi sürüyor' : material.processingStatus || 'metadata-ready'}</StatusPill>
+          <AsyncActionButton status={aiStatus.lesson} idleLabel="Ders" loadingLabel="Ders hazırlanıyor…" successLabel="Ders hazır" errorLabel="Tekrar dene" icon="BookOpen" onClick={() => runWithLocalFallback('lesson')} />
+          <AsyncActionButton status={aiStatus.questions} idleLabel="10 Soru" loadingLabel="Sorular oluşturuluyor…" successLabel="10 soru oluşturuldu" errorLabel="Tekrar dene" icon="ClipboardList" onClick={() => runWithLocalFallback('questions')} />
+          <AsyncActionButton status={aiStatus.cards} idleLabel="Kart" loadingLabel="Kartlar hazırlanıyor…" successLabel="Kartlar hazır" errorLabel="Tekrar dene" icon="LayeredCards" onClick={() => runWithLocalFallback('cards')} />
         </div>
       </div>
+      <InlineStatus status={Object.values(aiStatus).includes('error') ? 'error' : Object.values(aiStatus).includes('loading') ? 'loading' : 'idle'} message={Object.values(aiError).find(Boolean) || (Object.values(aiStatus).includes('loading') ? 'AI servisi yanıtı bekleniyor; bu sırada sayfa kullanılabilir.' : '')} />
       <div className="komite-tabbar" role="tablist" aria-label="Materyal çalışma alanı sekmeleri">
         {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}>{item.label}</button>)}
       </div>

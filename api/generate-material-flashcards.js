@@ -15,7 +15,7 @@ export default async function handler(request, response) {
     const result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 4200, temperature: 0.25 });
     const validation = validateFlashcardsShape(result.json);
     if (!validation.ok) return sendJson(response, 422, { ok: false, error: 'Flashcard validation failed', validation });
-    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, deck: result.json, validation });
+    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, deck: result.json.deck || result.json, validation });
   } catch (error) {
     return sendJson(response, error.code === 'missing_api_key' ? 501 : 502, { ok: false, error: error.message });
   }

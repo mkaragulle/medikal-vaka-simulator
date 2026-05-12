@@ -1,38 +1,47 @@
-export const GENERATE_LESSON_SYSTEM_PROMPT = `You are KlinikIQ’s Turkish medical lesson-generation engine. Create a structured medical lesson from uploaded lecture material. The lesson must be in professional Turkish, medically accurate, student-friendly and aligned with the uploaded material. Teach like a good professor: start with the big picture, explain mechanisms step by step, then connect to clinical and exam relevance. Do not hallucinate uploaded content. Clearly separate “materyalde geçen bilgi” from “ek tıbbi açıklama” when adding clarification. Return only valid JSON.`;
+export const GENERATE_LESSON_SYSTEM_PROMPT = `You are KlinikIQ's KOMITE lesson engine. Produce a natural Turkish medical lecture based primarily on uploaded material. Teach like a clear professor: big idea first, mechanism/cause-effect second, exam angle third. Do not write a mechanical report, do not repeat empty headings, and do not claim visual/figure interpretation unless the text explicitly supports it. Return only valid JSON.`;
 
 export function buildGenerateLessonPrompt({ studyContext = {}, materialAnalysisJson = {}, sourceTextChunks = '' } = {}) {
-  return `Generate a structured Turkish lesson from the analyzed material below.
+  return `Create a concise but high-yield Turkish KOMITE lesson from this material.
 
-Study context:
+Context:
 - classYear: ${studyContext.classYear || ''}
 - committeeOrCourse: ${studyContext.committeeOrCourse || studyContext.committee || studyContext.course || ''}
 - learningTarget: ${studyContext.learningTarget || ''}
-- studyMode: ${studyContext.studyMode || 'komite'}
 
-Analyzed material:
+Material analysis compact JSON:
 ${JSON.stringify(materialAnalysisJson || {}, null, 2)}
 
-Source text excerpts if needed:
+Source excerpts:
 ${sourceTextChunks || ''}
 
-Return JSON:
+Return only this JSON shape:
 {
   "title": "",
-  "overview": "",
+  "shortIntro": "",
   "learningObjectives": [],
-  "sections": [{ "heading": "", "content": "", "mechanismFlow": [], "clinicalConnection": "", "examConnection": "", "sourceReferences": [] }],
-  "figureExplanations": [{ "sourcePageOrSlide": "", "title": "", "whatItShows": "", "importantLabels": [], "stepByStepInterpretation": "", "whyItMatters": "", "examRelevance": "", "commonMistake": "", "memoryNote": "" }],
-  "commonConfusions": [],
-  "highYieldSummary": [],
-  "mustRemember": [],
+  "coreExplanation": [
+    { "heading": "", "teachingText": "", "mechanismFlow": [], "examAngle": "", "commonTrap": "" }
+  ],
+  "sections": [
+    { "heading": "", "teachingText": "", "mechanismFlow": [], "examAngle": "", "commonTrap": "", "sourceReferences": [] }
+  ],
+  "visualNotes": [],
+  "figureExplanations": [
+    { "sourcePageOrSlide": "", "analysisStatus": "analyzed|partial|unavailable", "type": "figure|table|diagram|graph|image|unknown", "visibleTextAroundFigure": "", "whatCanBeSaidSafely": "", "limitations": "", "examRelevance": "" }
+  ],
+  "highYieldPoints": [],
+  "mustKnow": [],
   "limitations": [],
   "sourceReferences": []
 }
 
-Quality rules:
-- Do not produce a flat summary.
-- Do not invent figures, tables or labels.
-- Use short paragraphs and clear headings.
-- Mention unreadable/unclear visuals honestly.
-- External clarification must support the uploaded material, not replace it.`;
+Rules:
+- Explain the topic from zero in a logical order; do not merely summarize slides.
+- Avoid repeated “klinik bağlantı/sınav bağlantısı” formula. Use examAngle/commonTrap only when useful.
+- Each section should contain short dense paragraphs, not long flat text.
+- Mechanisms should be written as cause → intermediate step → consequence.
+- Learning objectives: 4-6 items max.
+- High-yield/must-know items must be decision-level exam points, not generic definitions.
+- If information is not in the material but needed for clarification, mark it as “Ek açıklama”. Use sparingly.
+- If visual pixels were not analyzed, say only that readable text around the figure was analyzed. Never invent figure content.`;
 }

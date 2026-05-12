@@ -115,21 +115,28 @@ export function validateQuestionsShape(output = {}) {
 }
 
 export function validateFlashcardsShape(output = {}) {
-  const cards = Array.isArray(output.cards) ? output.cards : [];
+  const deck = output.deck?.cards ? output.deck : output;
+  const cards = Array.isArray(deck.cards) ? deck.cards : [];
   const errors = [];
-  if (!cards.length) errors.push('Kart listesi boş.');
+  if (cards.length < 8) errors.push('Yeterli kart yok.');
   cards.forEach((card, index) => {
-    if (!String(card.front || '').trim().endsWith('?')) errors.push(`${index + 1}. kart önü aktif soru değil.`);
+    const front = String(card.front || '').trim();
+    const explanation = String(card.explanation || '').trim();
+    if (!front.endsWith('?')) errors.push(`${index + 1}. kart önü aktif soru değil.`);
+    if (/Materyalde geçen|Bu kart|slaytta geçen|ayrıştırılan gerçek metne dayanır/iu.test(`${front} ${explanation}`)) errors.push(`${index + 1}. kart meta veya kopya ifade içeriyor.`);
     if (!String(card.back || '').trim()) errors.push(`${index + 1}. kart arkası boş.`);
-    if (!String(card.explanation || '').trim()) errors.push(`${index + 1}. kart açıklaması boş.`);
+    if (!explanation) errors.push(`${index + 1}. kart açıklaması boş.`);
   });
   return { ok: errors.length === 0, errors };
 }
 
 export function validateLessonShape(output = {}) {
   const errors = [];
+  const sections = Array.isArray(output.sections) ? output.sections : output.coreExplanation;
   if (!String(output.title || '').trim()) errors.push('Ders başlığı yok.');
-  if (!Array.isArray(output.sections) || output.sections.length === 0) errors.push('Ders bölümleri yok.');
-  if (String(output.overview || '').length < 30) errors.push('Genel bakış çok kısa.');
+  if (!Array.isArray(sections) || sections.length === 0) errors.push('Ders bölümleri yok.');
+  if (String(output.shortIntro || output.overview || '').length < 30) errors.push('Genel bakış çok kısa.');
+  const text = JSON.stringify(output || {});
+  if ((text.match(/Klinik bağlantı|Sınav bağlantısı/g) || []).length > 14) errors.push('Ders şablon tekrarı içeriyor.');
   return { ok: errors.length === 0, errors };
 }
