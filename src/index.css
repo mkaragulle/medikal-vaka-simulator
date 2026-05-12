@@ -36651,3 +36651,402 @@ html[data-theme='dark'] .komite-flashcard small {
   .async-action-btn span:not(.komite-spinner) { font-size: .78rem; }
   .komite-flashcard strong { font-size: 1.45rem !important; }
 }
+
+/* --------------------------------------------------------------------------
+   KLINIKIQ V42 — unified TUS/KOMITE top navigation
+   Same three-zone structure in both modes: left brand+product switch, center
+   mode/context switch, right compact session actions. Prevents KOMITE/TUS
+   visual drift and keeps the bar one-line on desktop.
+   -------------------------------------------------------------------------- */
+body:not(.klinikiq-auth-lock) .top-shell-nav {
+  width: min(1680px, calc(100% - 32px)) !important;
+  min-height: 72px !important;
+  display: grid !important;
+  grid-template-columns: minmax(300px, 360px) minmax(330px, 480px) minmax(300px, 1fr) !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 10px 14px !important;
+  border-radius: 24px !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster {
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand {
+  flex: 0 0 56px !important;
+  width: 56px !important;
+  min-width: 56px !important;
+  max-width: 56px !important;
+  height: 56px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand-mark {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 16px !important;
+}
+
+body:not(.klinikiq-auth-lock) .product-mode-switch {
+  flex: 1 1 auto !important;
+  width: min(250px, 100%) !important;
+  min-width: 210px !important;
+  height: 52px !important;
+  margin: 0 !important;
+  padding: 5px !important;
+  border-radius: 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+body:not(.klinikiq-auth-lock) .product-mode-switch button {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  height: 42px !important;
+  border-radius: 15px !important;
+  padding: 0 14px !important;
+  font-size: 13.5px !important;
+  letter-spacing: 0.055em !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch,
+body:not(.klinikiq-auth-lock) .komite-context-switch {
+  justify-self: center !important;
+  width: min(100%, 470px) !important;
+  min-width: 0 !important;
+  height: 52px !important;
+  padding: 5px !important;
+  border-radius: 20px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button,
+body:not(.klinikiq-auth-lock) .komite-context-switch button {
+  min-height: 42px !important;
+  height: 42px !important;
+  border-radius: 15px !important;
+  font-size: 13.5px !important;
+  font-weight: 780 !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-context-switch button:disabled {
+  opacity: .66 !important;
+  cursor: default !important;
+  color: var(--text-secondary) !important;
+  -webkit-text-fill-color: var(--text-secondary) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions {
+  justify-self: end !important;
+  width: auto !important;
+  min-width: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex-wrap: nowrap !important;
+  gap: 7px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-wrong-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-score-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .btn,
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle {
+  height: 48px !important;
+  min-height: 48px !important;
+  border-radius: 16px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-chip {
+  width: 48px !important;
+  min-width: 48px !important;
+  padding: 0 !important;
+  justify-content: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-name,
+body:not(.klinikiq-auth-lock) .nav-stat-chip span,
+body:not(.klinikiq-auth-lock) .nav-cta span {
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip {
+  width: auto !important;
+  min-width: 64px !important;
+  padding: 0 8px !important;
+  gap: 6px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip strong {
+  min-width: 24px !important;
+  padding: 5px 8px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-cta,
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-logout-btn {
+  width: 48px !important;
+  min-width: 48px !important;
+  padding: 0 !important;
+  display: inline-grid !important;
+  place-items: center !important;
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    grid-template-columns: minmax(250px, 330px) minmax(250px, 1fr) auto !important;
+    gap: 8px !important;
+  }
+  body:not(.klinikiq-auth-lock) .product-mode-switch {
+    min-width: 190px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-mode-switch,
+  body:not(.klinikiq-auth-lock) .komite-context-switch {
+    width: min(100%, 360px) !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-actions .nav-user-chip,
+  body:not(.klinikiq-auth-lock) .nav-score-chip {
+    display: none !important;
+  }
+}
+
+@media (max-width: 820px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    width: calc(100% - 16px) !important;
+    grid-template-columns: 1fr auto !important;
+    min-height: auto !important;
+    padding: 9px !important;
+    border-radius: 20px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-left-cluster {
+    gap: 8px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand {
+    width: 48px !important;
+    min-width: 48px !important;
+    height: 48px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand-mark {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  body:not(.klinikiq-auth-lock) .product-mode-switch {
+    min-width: 164px !important;
+    height: 48px !important;
+  }
+  body:not(.klinikiq-auth-lock) .product-mode-switch button {
+    height: 38px !important;
+    padding: 0 10px !important;
+    font-size: 12.5px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-mode-switch,
+  body:not(.klinikiq-auth-lock) .komite-context-switch {
+    grid-column: 1 / -1 !important;
+    grid-row: 2 !important;
+    width: 100% !important;
+    margin-top: 6px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-actions {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    gap: 5px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-actions .nav-wrong-chip,
+  body:not(.klinikiq-auth-lock) .nav-cta {
+    display: none !important;
+  }
+}
+
+/* Komite UX refresh v43: scoped to Komite mode only */
+.komite-page-shell {
+  width: min(1040px, calc(100vw - 2.5rem));
+  gap: 1rem;
+  padding: 1.35rem 0 2.5rem;
+}
+.komite-hero {
+  grid-template-columns: 1fr;
+  padding: clamp(1.35rem, 3vw, 2rem);
+}
+.komite-hero h1 {
+  max-width: 820px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.02;
+}
+.komite-hero p { max-width: 780px; }
+.komite-hero-stats { display: none !important; }
+.komite-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  flex-wrap: wrap;
+  margin-top: 1.1rem;
+}
+.komite-hero-actions small {
+  color: #64748b;
+  font-weight: 650;
+}
+.komite-dashboard-grid {
+  grid-template-columns: 1fr;
+  gap: .85rem;
+}
+.komite-dashboard-card {
+  min-height: 0;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.05rem 1.1rem;
+  border-radius: 1.35rem;
+}
+.komite-dashboard-card.primary {
+  background: linear-gradient(135deg, rgba(240, 253, 250, .98), rgba(255, 255, 255, .92));
+}
+.komite-dashboard-card-copy { display: grid; gap: .25rem; min-width: 0; }
+.komite-dashboard-card strong { font-size: 1.08rem; }
+.komite-dashboard-card p { font-size: .92rem; margin: 0; }
+.komite-dashboard-card small,
+.komite-card-kicker { display: none !important; }
+.komite-card-action {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  color: #0f766e;
+  font-weight: 850;
+  font-size: .88rem;
+  white-space: nowrap;
+}
+.komite-latest-material {
+  grid-template-columns: minmax(0,1fr) auto;
+  align-items: center;
+  gap: .9rem;
+  padding: 1rem 1.1rem;
+  background: rgba(255,255,255,.84);
+}
+.komite-latest-copy { display: grid; gap: .18rem; min-width: 0; }
+.komite-latest-copy small {
+  color: #0f766e;
+  font-size: .75rem;
+  font-weight: 850;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.komite-latest-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.komite-latest-copy em {
+  color: #64748b;
+  font-size: .84rem;
+  font-style: normal;
+}
+.komite-start-flow,
+.komite-subpage,
+.komite-workspace { padding: clamp(1rem, 2vw, 1.45rem); }
+.komite-section-head { margin-bottom: 1rem; }
+.komite-section-head h2 { font-size: clamp(1.45rem, 2.8vw, 2rem); }
+.komite-start-form { gap: .85rem; }
+.komite-file-drop {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: .55rem;
+  padding: 1.2rem;
+  border-radius: 1.3rem;
+  background: linear-gradient(135deg, rgba(240,253,250,.76), rgba(255,255,255,.88));
+}
+.komite-file-drop.drag-over {
+  border-color: rgba(20,184,166,.68);
+  background: rgba(204,251,241,.38);
+}
+.komite-file-drop input[type='file'] {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.komite-file-picker {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto !important;
+  margin-top: .15rem;
+  padding: .62rem .9rem;
+  border-radius: 999px;
+  background: #0f766e;
+  color: white !important;
+  font-weight: 850;
+  cursor: pointer;
+}
+.komite-upload-status {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  color: #0f766e;
+  font-weight: 750;
+  font-size: .84rem;
+}
+.komite-selected-files {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: .5rem;
+}
+.komite-selected-file {
+  display: grid;
+  grid-template-columns: auto minmax(0,1fr) auto;
+  align-items: center;
+  gap: .65rem;
+  padding: .68rem .75rem;
+  border: 1px solid rgba(15,23,42,.08);
+  border-radius: 1rem;
+  background: rgba(255,255,255,.84);
+}
+.komite-selected-file span { display: grid; gap: .1rem; min-width: 0; }
+.komite-selected-file strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #0f172a; font-size: .9rem; }
+.komite-selected-file small { color: #64748b; font-size: .76rem; }
+.komite-selected-file button,
+.komite-tree-delete {
+  border: 0;
+  background: rgba(241,245,249,.9);
+  color: #64748b;
+  border-radius: .75rem;
+  width: 34px;
+  height: 34px;
+  display: inline-grid;
+  place-items: center;
+  cursor: pointer;
+}
+.komite-textarea-label small { color: #64748b; font-weight: 550; }
+.komite-form-actions { justify-content: flex-start; gap: .65rem; }
+.komite-form-actions p { display: none; }
+.komite-material-tree { gap: .75rem; }
+.komite-tree-class { padding: .85rem; border-radius: 1.1rem; }
+.komite-tree-course-title { color: #334155; font-weight: 850; }
+.komite-tree-file {
+  grid-template-columns: auto minmax(0,1fr) auto auto;
+  padding: .68rem .75rem;
+}
+.komite-tree-file-copy { display: grid; gap: .1rem; min-width: 0; }
+.komite-tree-file-copy strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #0f172a; }
+.komite-tree-file-copy em { color: #64748b; font-style: normal; font-size: .76rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.komite-deck-grid { display: grid; grid-template-columns: 1fr; gap: .65rem; }
+.komite-deck-grid button {
+  display: grid;
+  gap: .2rem;
+  padding: .85rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(15,23,42,.08);
+  background: rgba(255,255,255,.86);
+}
+.komite-deck-grid button small { color: #0f766e; font-weight: 800; }
+@media (max-width: 720px) {
+  .komite-page-shell { width: min(100% - 1rem, 1040px); padding-top: .75rem; }
+  .komite-dashboard-card,
+  .komite-latest-material { grid-template-columns: auto minmax(0, 1fr); }
+  .komite-dashboard-card .komite-card-action,
+  .komite-latest-material .komite-card-action { grid-column: 2; justify-self: start; }
+  .komite-start-form { grid-template-columns: 1fr; }
+  .komite-section-head { flex-direction: column; }
+}

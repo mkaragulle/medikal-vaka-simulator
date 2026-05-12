@@ -984,26 +984,28 @@ function App() {
   return (
     <main className="app-shell premium-shell" data-theme={theme}>
       <nav className="top-shell-nav" aria-label="KlinikIQ üst gezinme">
-        <button className="nav-brand nav-brand-icon-only" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">
-          <span className="nav-brand-mark nav-brand-mark-pulse" aria-hidden="true"><BrandMark title="" /></span>
-        </button>
-        <div className="segmented-control product-mode-switch" aria-label="Ürün modu seçimi">
-          <button
-            type="button"
-            className={productMode === 'komite' ? 'active' : ''}
-            onClick={() => switchProductMode('komite')}
-            aria-pressed={productMode === 'komite'}
-          >
-            KOMİTE
+        <div className="nav-left-cluster">
+          <button className="nav-brand nav-brand-icon-only" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">
+            <span className="nav-brand-mark nav-brand-mark-pulse" aria-hidden="true"><BrandMark title="" /></span>
           </button>
-          <button
-            type="button"
-            className={productMode === 'tus' ? 'active' : ''}
-            onClick={() => switchProductMode('tus')}
-            aria-pressed={productMode === 'tus'}
-          >
-            TUS
-          </button>
+          <div className="segmented-control product-mode-switch" aria-label="Ürün modu seçimi">
+            <button
+              type="button"
+              className={productMode === 'komite' ? 'active' : ''}
+              onClick={() => switchProductMode('komite')}
+              aria-pressed={productMode === 'komite'}
+            >
+              KOMİTE
+            </button>
+            <button
+              type="button"
+              className={productMode === 'tus' ? 'active' : ''}
+              onClick={() => switchProductMode('tus')}
+              aria-pressed={productMode === 'tus'}
+            >
+              TUS
+            </button>
+          </div>
         </div>
         {productMode === 'tus' ? (
           <div className="segmented-control nav-mode-switch" aria-label="Öğrenme modu seçimi">
@@ -1034,7 +1036,11 @@ function App() {
             </button>
           </div>
         ) : (
-          <span className="komite-nav-chip">Komite çalışma alanı</span>
+          <div className="segmented-control nav-mode-switch komite-context-switch" aria-label="Komite çalışma bağlamı">
+            <button type="button" className="active" aria-pressed="true">Materyal</button>
+            <button type="button" aria-pressed="false" disabled>Ders</button>
+            <button type="button" aria-pressed="false" disabled>Kartlar</button>
+          </div>
         )}
         <div className="nav-actions" aria-label="Oturum eylemleri">
           <span className="nav-user-chip nav-user-card" aria-label={`Kullanıcı ${currentUser.name}`} title={currentUser.name}>

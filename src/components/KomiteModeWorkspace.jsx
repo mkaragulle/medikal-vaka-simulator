@@ -592,7 +592,7 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
   }, {}), [materials]);
 
   if (!materials.length) {
-    return <EmptyState title="Henüz materyal yok" text="Çalışmaya Başla kartından ilk komite materyalini ekleyebilirsin." />;
+    return <EmptyState title="Henüz materyal yüklemedin." text="Komite slaytlarını yükleyerek ders anlatımı, soru ve hap kart oluşturabilirsin." />;
   }
 
   return (
@@ -602,7 +602,7 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
           <span className="komite-tree-class-title">{className}</span>
           {Object.entries(courses).map(([courseName, courseMaterials]) => (
             <div className="komite-tree-course" key={courseName}>
-              <span>{courseName}</span>
+              <span className="komite-tree-course-title">{courseName}</span>
               <div className="komite-tree-files">
                 {courseMaterials.map((material) => (
                   <button
@@ -612,8 +612,8 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
                     onClick={() => onOpenMaterial(material.id)}
                   >
                     <Icon name="Notes" size={16} />
-                    <span>{material.fileName}</span>
-                    <small>{material.lesson ? 'Ders hazır' : 'Taslak'}</small>
+                    <span className="komite-tree-file-copy"><strong>{material.fileName}</strong><em>{material.course || material.committee || 'Ders belirtilmedi'} · {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</em></span>
+                    <small>{material.lesson ? 'Ders hazır' : 'Hazırlanıyor'}</small>
                     {onDeleteMaterial ? (
                       <span
                         role="button"
@@ -638,45 +638,53 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
   );
 }
 
-function KomiteDashboard({ materials, stats, onStart, onOpenMyMaterials, onOpenCards, onOpenReview, onOpenMaterial }) {
+function formatFileSize(bytes = 0) {
+  if (!bytes) return '';
+  if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+}
+
+function KomiteDashboard({ materials, onStart, onOpenMyMaterials, onOpenCards, onOpenReview, onOpenMaterial }) {
   const latest = materials[0];
+  const cards = [
+    { title: 'Çalışmaya Başla', description: 'Komite slaytlarını ve ders notlarını yükle; AI destekli ders anlatımı, soru seti ve hap kart oluştur.', action: 'Materyal yükle', icon: 'Sparkles', onClick: onStart, primary: true },
+    { title: 'Çalıştıklarım', description: 'Daha önce yüklediğin komite materyallerini sınıf, komite ve ders düzeninde görüntüle.', action: 'Kütüphaneyi aç', icon: 'ClipboardList', onClick: onOpenMyMaterials },
+    { title: 'Hap Kartlar', description: 'Yüklediğin materyallerden oluşturulan kartlarla kısa ve hedefli tekrar yap.', action: 'Kartları aç', icon: 'LayeredCards', onClick: onOpenCards },
+    { title: 'Tekrar Merkezi', description: 'Yanlış yaptığın sorulara, zorlandığın kartlara ve tekrar listene tek yerden dön.', action: 'Tekrarları gör', icon: 'RotateCcw', onClick: onOpenReview },
+  ];
+
   return (
     <section className="komite-dashboard-grid" aria-label="Komite çalışma alanı">
-      <button type="button" className="komite-dashboard-card" onClick={onOpenMyMaterials}>
-        <span className="komite-card-icon"><Icon name="ClipboardList" /></span>
-        <span className="komite-card-kicker">Arşiv</span>
-        <strong>Çalıştıklarım</strong>
-        <p>{latest ? `Son: ${truncate(latest.fileName, 38)}` : 'Sınıf, komite ve materyal bazlı çalışma ağacını aç.'}</p>
-        <small>{materials.length} materyal · {stats.readyMaterials} hazır çalışma alanı</small>
-      </button>
-      <button type="button" className="komite-dashboard-card primary" onClick={onStart}>
-        <span className="komite-card-icon"><Icon name="Sparkles" /></span>
-        <span className="komite-card-kicker">Yeni materyal</span>
-        <strong>Çalışmaya Başla</strong>
-        <p>Komite dosyalarını yükle; ders, soru ve kart üretimini aynı çalışma alanında başlat.</p>
-        <small>PDF/PPTX/DOCX/TXT</small>
-      </button>
-      <button type="button" className="komite-dashboard-card" onClick={onOpenCards}>
-        <span className="komite-card-icon"><Icon name="LayeredCards" /></span>
-        <span className="komite-card-kicker">Aktif tekrar</span>
-        <strong>Hap Kartlar</strong>
-        <p>Kartları çalış, zor ve favori olarak işaretle.</p>
-        <small>{stats.cardCount} kart · {stats.difficultCards} zor kart</small>
-      </button>
-      <button type="button" className="komite-dashboard-card" onClick={onOpenReview}>
-        <span className="komite-card-icon"><Icon name="RotateCcw" /></span>
-        <span className="komite-card-kicker">Hedefli geri dönüş</span>
-        <strong>Tekrar Merkezi</strong>
-        <p>Yanlış soru ve zor kartlara hızlı dön.</p>
-        <small>{stats.wrongQuestions} yanlış soru · {stats.favoriteItems} favori</small>
-      </button>
+      {cards.map((card) => (
+        <button type="button" key={card.title} className={`komite-dashboard-card ${card.primary ? 'primary' : ''}`} onClick={card.onClick}>
+          <span className="komite-card-icon"><Icon name={card.icon} /></span>
+          <span className="komite-dashboard-card-copy">
+            <strong>{card.title}</strong>
+            <p>{card.description}</p>
+          </span>
+          <span className="komite-card-action">{card.action}<Icon name="ArrowRight" size={16} /></span>
+        </button>
+      ))}
+
       {latest ? (
         <button type="button" className="komite-latest-material card-surface" onClick={() => onOpenMaterial(latest.id)}>
-          <span>Son çalışılan materyale dön</span>
-          <strong>{latest.fileName}</strong>
-          <small>{latest.classYear}. sınıf · {latest.committee || latest.course || 'Komite/Ders'} · {new Date(latest.uploadDate).toLocaleDateString('tr-TR')}</small>
+          <span className="komite-latest-copy">
+            <small>Kaldığın yerden devam et</small>
+            <strong>{latest.fileName}</strong>
+            <em>{latest.classYear}. sınıf · {latest.course || latest.committee || 'Biyokimya'} · Son çalışma: {new Date(latest.updatedAt || latest.uploadDate).toLocaleDateString('tr-TR')}</em>
+          </span>
+          <span className="komite-card-action">Materyali aç<Icon name="ArrowRight" size={16} /></span>
         </button>
-      ) : null}
+      ) : (
+        <button type="button" className="komite-latest-material is-empty card-surface" onClick={onStart}>
+          <span className="komite-latest-copy">
+            <small>Kaldığın yerden devam et</small>
+            <strong>Henüz çalışılmış materyal yok.</strong>
+            <em>İlk komite dosyanı yükleyerek başlayabilirsin.</em>
+          </span>
+          <span className="komite-card-action">İlk materyali yükle<Icon name="ArrowRight" size={16} /></span>
+        </button>
+      )}
     </section>
   );
 }
@@ -690,37 +698,64 @@ function StartFlow({ onCreate, onCancel }) {
     university: '',
     pastedText: '',
   });
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [selectedFiles, setSelectedFiles] = useState([]);
   const [fileText, setFileText] = useState('');
   const [fileNotice, setFileNotice] = useState('');
   const [fileExtraction, setFileExtraction] = useState(null);
   const [isExtracting, setIsExtracting] = useState(false);
+  const [isDragOver, setIsDragOver] = useState(false);
 
   const update = (field, value) => setForm((current) => ({ ...current, [field]: value }));
 
-  const handleFile = async (file) => {
-    setSelectedFile(file || null);
+  const processFiles = async (files) => {
+    const unique = Array.from(files || []).filter(Boolean).filter((file, index, arr) => arr.findIndex((item) => `${item.name}-${item.size}` === `${file.name}-${file.size}`) === index);
+    setSelectedFiles(unique);
     setFileText('');
     setFileNotice('');
     setFileExtraction(null);
-    if (!file) return;
+    if (!unique.length) return;
     setIsExtracting(true);
     try {
-      const extraction = await extractKomiteFile(file);
-      setFileExtraction(extraction);
-      setFileText(extraction.text || '');
-      setFileNotice(extraction.notice || (extraction.ok ? 'Dosya metni çalışma alanına eklendi.' : 'Dosya otomatik okunamadı; metni elle yapıştırabilirsin.'));
+      const extractions = await Promise.all(unique.map(async (file) => {
+        try { return { file, extraction: await extractKomiteFile(file) }; }
+        catch { return { file, extraction: { ok: false, text: '', notice: `${file.name} otomatik okunamadı.` } }; }
+      }));
+      const mergedText = extractions.map(({ file, extraction }) => extraction.text ? `\n\n--- ${file.name} ---\n${extraction.text}` : '').join('').trim();
+      const detectedStructure = extractions.flatMap(({ extraction }) => extraction.detectedStructure || []);
+      const limitations = extractions.flatMap(({ extraction }) => extraction.limitations || []);
+      setFileText(mergedText);
+      setFileExtraction({
+        ok: extractions.some(({ extraction }) => extraction.ok),
+        text: mergedText,
+        detectedStructure,
+        figures: extractions.flatMap(({ extraction }) => extraction.figures || []),
+        notice: mergedText ? `${unique.length} dosya çalışma alanına eklendi.` : 'Dosyalar otomatik okunamadı; ek ders notu alanına metin ekleyebilirsin.',
+        limitations,
+      });
+      setFileNotice(mergedText ? `${unique.length} dosya çalışma alanına eklendi.` : 'Dosyalar otomatik okunamadı; ek ders notu alanına metin ekleyebilirsin.');
     } finally {
       setIsExtracting(false);
     }
   };
 
+  const handleFiles = async (fileList) => {
+    const incoming = Array.from(fileList || []).filter(Boolean);
+    if (!incoming.length) return;
+    await processFiles([...selectedFiles, ...incoming]);
+  };
+
+  const removeFile = async (fileToRemove) => {
+    const nextFiles = selectedFiles.filter((file) => `${file.name}-${file.size}` !== `${fileToRemove.name}-${fileToRemove.size}`);
+    await processFiles(nextFiles);
+  };
+
   const submit = (event) => {
     event.preventDefault();
-    if (!selectedFile && !form.pastedText.trim()) return;
+    if (!selectedFiles.length && !form.pastedText.trim()) return;
     onCreate({
       ...form,
-      file: selectedFile,
+      files: selectedFiles,
+      file: selectedFiles[0] || null,
       extractedText: fileText,
       pastedText: form.pastedText.trim(),
       extraction: fileExtraction,
@@ -733,7 +768,7 @@ function StartFlow({ onCreate, onCancel }) {
         <div>
           <span className="komite-kicker">Çalışmaya Başla</span>
           <h2>Materyal yükle</h2>
-          <p>İlgili komitenin tüm slaytlarını/dosyalarını yüklemek ders anlatımı, soru ve hap kart kalitesini belirgin artırır.</p>
+          <p>Komite slaytlarını ve ders notlarını yükle. KlinikIQ AI bu dosyalardan ders anlatımı, soru seti ve hap kartlar oluşturur.</p>
         </div>
         <button type="button" className="btn btn-secondary" onClick={onCancel}>Vazgeç</button>
       </div>
@@ -763,26 +798,44 @@ function StartFlow({ onCreate, onCancel }) {
           <span>Üniversite (opsiyonel)</span>
           <input value={form.university} onChange={(event) => update('university', event.target.value)} placeholder="Örn. İstanbul Üniversitesi" />
         </label>
-        <label className="komite-file-drop">
-          <span>Materyal dosyası</span>
-          <div className="komite-upload-line">
-            <input type="file" accept=".pdf,.pptx,.docx,.txt,.md" onChange={(event) => handleFile(event.target.files?.[0])} />
-            {isExtracting ? <span className="komite-spinner" aria-hidden="true" /> : null}
+
+        <div
+          className={`komite-file-drop ${isDragOver ? 'drag-over' : ''}`}
+          onDragOver={(event) => { event.preventDefault(); setIsDragOver(true); }}
+          onDragLeave={() => setIsDragOver(false)}
+          onDrop={(event) => { event.preventDefault(); setIsDragOver(false); handleFiles(event.dataTransfer.files); }}
+        >
+          <input id="komite-file-input" type="file" multiple accept=".pdf,.pptx,.docx,.txt" onChange={(event) => handleFiles(event.target.files)} />
+          <Icon name="Notes" size={24} />
+          <strong>Dosyalarını buraya sürükle veya seç</strong>
+          <small>PDF, PPTX, DOCX ve TXT dosyaları desteklenir. Aynı komiteye ait birden fazla dosya yükleyebilirsin.</small>
+          <label htmlFor="komite-file-input" className="komite-file-picker">Dosya seç</label>
+          {isExtracting ? <span className="komite-upload-status"><span className="komite-spinner" aria-hidden="true" /> Dosyalar okunuyor…</span> : null}
+          {!isExtracting && fileNotice ? <span className="komite-upload-status">{fileNotice}</span> : null}
+        </div>
+
+        {selectedFiles.length ? (
+          <div className="komite-selected-files" aria-label="Seçilen dosyalar">
+            {selectedFiles.map((file) => (
+              <div className="komite-selected-file" key={`${file.name}-${file.size}`}>
+                <Icon name="Notes" size={16} />
+                <span><strong>{file.name}</strong><small>{getFileType(file.name).toUpperCase()} {formatFileSize(file.size) ? `· ${formatFileSize(file.size)}` : ''}</small></span>
+                <button type="button" aria-label={`${file.name} dosyasını kaldır`} onClick={() => removeFile(file)}><Icon name="X" size={15} /></button>
+              </div>
+            ))}
           </div>
-          <strong>{selectedFile ? selectedFile.name : 'PDF, PPTX, DOCX veya TXT seç'}</strong>
-          <small>{isExtracting ? 'Dosya okunuyor…' : (fileNotice || 'En iyi sonuç için aynı komiteye ait tüm ilgili dosyaları ekleyip okunabilir metin katmanını koru. Taranmış slaytlarda metni aşağıya yapıştırabilirsin.')}</small>
-          {fileExtraction?.detectedStructure?.length ? <small>{fileExtraction.detectedStructure.length} bölüm/sayfa/slayt algılandı · {fileText.length.toLocaleString('tr-TR')} karakter metin çıkarıldı.</small> : null}
-          {fileExtraction?.limitations?.length ? <small>{fileExtraction.limitations.join(' ')}</small> : null}
-        </label>
+        ) : null}
+
         <label className="komite-textarea-label">
-          <span>Okunabilir ders metni / slayt notu (opsiyonel ama önerilir)</span>
-          <textarea value={form.pastedText} onChange={(event) => update('pastedText', event.target.value)} rows={7} placeholder="Slayttaki metni veya hocanın notunu buraya yapıştır. Görseli okunmayan slaytlarda bu alan kaliteyi ciddi artırır." />
+          <span>Ek ders notu</span>
+          <small>Slaytta okunmayan veya hocanın özellikle vurguladığı notları buraya ekleyebilirsin.</small>
+          <textarea value={form.pastedText} onChange={(event) => update('pastedText', event.target.value)} rows={5} placeholder="Örneğin hocanın vurguladığı noktalar, eksik kalan slayt metinleri veya sınavda sorulabilir dediği başlıklar…" />
         </label>
         <div className="komite-form-actions">
-          <button type="submit" className="btn btn-primary" disabled={isExtracting || (!selectedFile && !form.pastedText.trim())}>
-            <Icon name="Sparkles" /> Materyal çalışma alanı oluştur
+          <button type="submit" className="btn btn-primary" disabled={isExtracting || (!selectedFiles.length && !form.pastedText.trim())}>
+            <Icon name="Sparkles" /> Ders çalışma alanı oluştur
           </button>
-          <p>Yükleme sonrası materyali açıp ders, 10 soru ve hap kart üretimini ayrı ayrı başlatabilirsin.</p>
+          <button type="button" className="btn btn-secondary" onClick={onCancel}>Vazgeç</button>
         </div>
       </form>
     </section>
@@ -1190,10 +1243,10 @@ function CardsHub({ materials, onOpenMaterial, onBack }) {
   return (
     <section className="komite-subpage card-surface">
       <div className="komite-section-head">
-        <div><span className="komite-kicker">Hap Kartlar</span><h2>Materyal bazlı kart desteleri</h2><p>Kartlar sınıf, komite ve materyal ağacına bağlı kalır.</p></div>
+        <div><span className="komite-kicker">Hap Kartlar</span><h2>Materyal Bazlı Hap Kartlar</h2><p>Kartlar sınıf, komite ve materyal ağacına bağlı olarak düzenlenir.</p></div>
         <button type="button" className="btn btn-secondary" onClick={onBack}>Ana ekrana dön</button>
       </div>
-      {decks.length ? <div className="komite-deck-grid">{decks.map((material) => <button type="button" key={material.id} onClick={() => onOpenMaterial(material.id)}><strong>{material.flashcardDeck.deckTitle}</strong><span>{material.fileName}</span><small>{material.flashcardDeck.cards.length} kart</small></button>)}</div> : <EmptyState title="Henüz kart destesi yok" text="Bir materyal açıp Hap Kartlar sekmesinden kart oluşturabilirsin." />}
+      {decks.length ? <div className="komite-deck-grid">{decks.map((material) => <button type="button" key={material.id} onClick={() => onOpenMaterial(material.id)}><strong>{material.flashcardDeck.deckTitle}</strong><span>{material.fileName}</span><small>{material.flashcardDeck.cards.length} kart</small></button>)}</div> : <EmptyState title="Henüz kart destesi yok." text="Bir materyal açıp ‘Hap Kartlar ile Tekrar Et’ seçeneğinden kart oluşturabilirsin." action={<button type="button" className="btn btn-primary" onClick={onBack}>Materyal seç</button>} />}
     </section>
   );
 }
@@ -1202,7 +1255,7 @@ function MyMaterialsPage({ materials, activeMaterialId, onOpenMaterial, onBack, 
   return (
     <section className="komite-subpage card-surface">
       <div className="komite-section-head">
-        <div><span className="komite-kicker">Çalıştıklarım</span><h2>Materyal kütüphanesi</h2><p>Sınıf, komite ve ders adına göre düzenlenmiş dosyalar.</p></div>
+        <div><span className="komite-kicker">Çalıştıklarım</span><h2>Materyal Kütüphanesi</h2><p>Yüklediğin komite dosyalarını sınıf, komite ve ders düzeninde görüntüle.</p></div>
         <button type="button" className="btn btn-secondary" onClick={onBack}>Ana ekrana dön</button>
       </div>
       <MaterialTree materials={materials} activeMaterialId={activeMaterialId} onOpenMaterial={onOpenMaterial} onDeleteMaterial={onDeleteMaterial} />
@@ -1235,13 +1288,14 @@ export default function KomiteModeWorkspace({ currentUser }) {
     favoriteItems: materials.reduce((sum, material) => sum + (material.questions || []).filter((question) => question.isFavorite).length + (material.flashcardDeck?.cards || []).filter((card) => card.isFavorite).length, 0),
   }), [materials]);
 
-  const createMaterial = ({ file, extractedText, pastedText, extraction, ...form }) => {
+  const createMaterial = ({ file, files = [], extractedText, pastedText, extraction, ...form }) => {
     const fileName = file?.name || `${form.course || form.committee || 'Komite materyali'}.txt`;
     const newMaterial = {
       id: createId('material'),
       userId,
       fileName,
       fileType: getFileType(fileName),
+      files: files.map((item) => ({ name: item.name, size: item.size, type: getFileType(item.name) })),
       uploadDate: Date.now(),
       studyMode: 'komite',
       classYear: form.classYear,
@@ -1284,14 +1338,13 @@ export default function KomiteModeWorkspace({ currentUser }) {
     <section className="page-shell komite-page-shell">
       <section className="komite-hero card-surface">
         <div>
-          <span className="komite-kicker"><Icon name="ShieldCheck" size={16} /> KOMİTE</span>
-          <h1>Komite materyallerini tek yerde çalış.</h1>
-          <p>Dosyalarını yükle, ders anlatımı, soru ve hap kartları aynı materyal üzerinden oluştur. TUS modu ayrı kalır.</p>
-        </div>
-        <div className="komite-hero-stats">
-          <span><strong>{materials.length}</strong> materyal</span>
-          <span><strong>{stats.cardCount}</strong> kart</span>
-          <span><strong>{stats.wrongQuestions}</strong> yanlış</span>
+          <span className="komite-kicker"><Icon name="ShieldCheck" size={16} /> KOMİTE MODU</span>
+          <h1>Komite materyallerini akıllı çalışma alanına dönüştür.</h1>
+          <p>Slaytlarını ve ders notlarını yükle; KlinikIQ AI aynı materyalden ders anlatımı, soru seti, hap kart ve tekrar listesi oluştursun.</p>
+          <div className="komite-hero-actions">
+            <button type="button" className="btn btn-primary" onClick={() => setView('start')}><Icon name="Sparkles" /> Şimdi KlinikIQ AI ile çalış</button>
+            <small>TUS modu ayrı kalır; komite materyallerin kendi çalışma alanında düzenlenir.</small>
+          </div>
         </div>
       </section>
 
