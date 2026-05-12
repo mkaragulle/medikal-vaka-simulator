@@ -8,11 +8,11 @@ const CLASS_YEARS = ['1', '2', '3', '4', '5', '6'];
 const LEARNING_TARGETS = ['Komite sınavı', 'Final sınavı', 'Klinik staj', 'Genel tekrar'];
 const REVIEW_FILTERS = ['Bu materyal', 'Tüm materyaller'];
 const STUDY_TABS = [
-  { id: 'lesson', label: 'AI Ders Anlatımı' },
-  { id: 'figures', label: 'Görseller' },
-  { id: 'questions', label: 'AI Soruları' },
-  { id: 'cards', label: 'Hap Kartlar' },
-  { id: 'review', label: 'Tekrar' },
+  { id: 'lesson', label: 'AI Ders Anlatımı', icon: 'BookOpen' },
+  { id: 'figures', label: 'Görseller', icon: 'Image' },
+  { id: 'questions', label: 'AI Soruları', icon: 'ClipboardList' },
+  { id: 'cards', label: 'Hap Kartlar', icon: 'LayeredCards' },
+  { id: 'review', label: 'Tekrar', icon: 'RotateCcw' },
 ];
 
 const createId = (prefix = 'id') => {
@@ -187,7 +187,61 @@ function optionFeedbackForSourceQuestion(option, correctId, target, sourceClue) 
   return `Bu seçenek benzer bir kavramı çağrıştırabilir; ancak materyalde verilen “${truncate(sourceClue, 80)}” ipucunu ${target} açısından doğrudan açıklamaz.`;
 }
 
+
+function isAminoProteinMaterial(material = {}) {
+  const haystack = `${material.fileName || ''} ${material.course || ''} ${material.committee || ''} ${normalizeSourceText(material)}`.toLocaleLowerCase('tr');
+  return /amino\s*asit|aminoasit|protein|peptit|glisin|prolin|triptofan|tirozin|fenilalanin|α|alfa|r grubu|karboksil/iu.test(haystack);
+}
+
+function inferAcademicTitle(material = {}) {
+  if (material.inferredTitle) return material.inferredTitle;
+  if (material.lesson?.inferredTitle) return material.lesson.inferredTitle;
+  if (isAminoProteinMaterial(material)) return 'Amino Asitler ve Proteinlerin Temel Yapısı';
+  const base = String(material.course || material.committee || cleanMaterialTitle(material) || 'Komite Materyali')
+    .replace(/\.[a-z0-9]+$/i, '')
+    .replace(/^\s*\d+[.)-]?\s*/u, '')
+    .replace(/\b(pptx|pdf|docx|txt|slayt|sayfa|prof\.?|dr\.?)\b/giu, '')
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return base || 'Komite Materyali';
+}
+
+function buildAminoProteinLesson(material) {
+  const sourceCount = Array.isArray(material.files) ? material.files.length : (material.fileName ? 1 : 0);
+  return {
+    id: createId('lesson'), materialId: material.id,
+    inferredTitle: 'Amino Asitler ve Proteinlerin Temel Yapısı',
+    title: 'Amino Asitler ve Proteinlerin Temel Yapısı',
+    shortSubtitle: 'α-amino asit iskeleti, R grubu özellikleri ve bu özelliklerin protein yapısına etkisi.',
+    shortIntro: 'Bu ders, amino asitlerin ortak yapısını, yan zincir özelliklerine göre sınıflandırılmasını ve bu özelliklerin proteinlerin biyolojik davranışına nasıl temel oluşturduğunu açıklar.',
+    learningObjectives: [
+      'Amino asitlerin ortak α-karbon merkezli yapısını açıklayabilmek.',
+      'R grubunun amino asidin polarite, yük ve hidrofobiklik özelliklerini nasıl belirlediğini yorumlayabilmek.',
+      'Glisin, prolin ve aromatik amino asitlerin ayırt edici yapısal özelliklerini karşılaştırabilmek.',
+      'Amino asitlerin kimyasal özellikleri ile protein katlanması ve işlevi arasında bağlantı kurabilmek.',
+      'Komite sınavında amino asit sınıflandırması ve özel amino asitlerle ilgili temel tuzakları ayırt edebilmek.'
+    ],
+    bigPicture: 'Amino asitler proteinlerin yapı taşlarıdır; ancak onları yalnızca yan yana dizilen moleküller gibi düşünmek eksik olur. Her standart amino asit ortak bir α-karbon iskeletine sahip olsa da R grubunun yapısı amino asidin yükünü, polaritesini, hidrofobikliğini ve protein içindeki davranışını belirler. Bu nedenle amino asit sınıflandırması, proteinlerin üç boyutlu yapısını ve biyolojik işlevini anlamanın temel basamağıdır.',
+    mainConcepts: ['α-amino asit yapısı', 'R grubu', 'polar ve apolar amino asitler', 'asidik ve bazik amino asitler', 'glisin', 'prolin', 'aromatik amino asitler', 'protein katlanması'],
+    sections: [
+      ['Amino asidin ortak yapısı','Standart amino asitlerde α-karbona bir amino grubu, bir karboksil grubu, bir hidrojen atomu ve değişken R grubu bağlanır. Ortak iskelet aynı kaldığı için amino asitlerin ayırt edici kimyasal karakterini esas olarak R grubu belirler.','Soru genellikle ortak yapıdaki dört grubu veya R grubunun belirleyici rolünü sorgular.','Amino asidin tüm özelliklerini amino/karboksil grubuna bağlamak hatalıdır; sınıflandırmanın merkezi R grubudur.'],
+      ['α-karbon, kiralite ve glisinin özel durumu','Çoğu standart amino asitte α-karbon dört farklı gruba bağlı olduğu için kiraldir. Glisinde R grubu hidrojen olduğu için α-karbona iki hidrojen bağlıdır ve glisin kiral olmayan tek standart amino asit kabul edilir.','Glisin soruları çoğunlukla “kiral olmayan tek amino asit” tuzağıyla gelir.','Glisini küçük amino asit olarak bilmek yeterli değildir; neden kiral olmadığını yapısal olarak açıklamak gerekir.'],
+      ['R grubu neden belirleyicidir?','R grubu amino asidin suda çözünürlüğünü, protein içindeki konumunu, diğer moleküllerle etkileşimini ve yük davranışını belirler. Bu yüzden polarite, hidrofobiklik, asidik-bazik özellik ve aromatiklik sınıflandırması R grubuna göre yapılır.','R grubu özellikleri protein katlanması ve yüzey/iç bölge yerleşimiyle ilişkilendirilerek sorulabilir.','Amino asit sınıflarını ezberlemek yerine R grubunun kimyasal davranışını yorumlamak daha güvenlidir.'],
+      ['Polar, apolar, asidik ve bazik amino asitler','Apolar amino asitler hidrofobik etkileşimlere daha yatkındır ve proteinlerin iç bölgelerinde sık bulunur. Polar ve yüklü amino asitler suyla ve iyonik ortamla daha kolay etkileşir; asidik amino asitler negatif, bazik amino asitler pozitif yük taşıma eğilimindedir.','Komite sorularında sınıflandırma genellikle yük, polarite veya protein içindeki yerleşim üzerinden sınanır.','Polar ile yüklü kavramları aynı şey değildir; yüklü amino asitler polar davranır ama tüm polar amino asitler net yüklü olmak zorunda değildir.'],
+      ['Özel amino asitler: prolin, sistein ve aromatikler','Prolin halkalı yapısı nedeniyle peptit zincirinin hareketini kısıtlar ve dönüş bölgelerinde önem kazanır. Sistein disülfit bağı oluşturabilmesiyle protein stabilitesine katkı sağlar. Aromatik amino asitler halka yapıları nedeniyle hidrofobik etkileşimlerde ve özellikle UV absorbansında önemlidir.','Özel amino asit soruları genellikle glisin-kiralite, prolin-esneklik, sistein-disülfit ve aromatik-UV ilişkisiyle gelir.','Prolini sadece apolar bir amino asit gibi görmek eksiktir; halkalı yapısının zincir geometrisine etkisi sınav açısından daha değerlidir.'],
+      ['Amino asit özelliklerinin protein yapısına etkisi','Protein katlanması, amino asit dizisindeki R gruplarının birbirleriyle ve suyla kurduğu etkileşimlere bağlıdır. Hidrofobik kalıntılar çoğunlukla iç bölgeye yönelirken polar/yüklü kalıntılar yüzeyde veya aktif bölgelerde işlev kazanabilir.','Soru, tek bir amino asit özelliğini protein katlanması veya işleviyle ilişkilendirmeni isteyebilir.','Amino asit sınıflandırmasını protein yapısından bağımsız ezberlemek konunun ana mantığını kaçırır.']
+    ].map(([heading, teachingText, examAngle, commonTrap]) => ({ heading, teachingText, examAngle, commonTrap, mechanismFlow: [] })),
+    figureExplanations: [{ sourcePageOrSlide: 'Görsel analizi', title: 'Görsel yorumlama sınırı', whatItShows: 'Bu çalışma alanında güvenilir görsel yorumu için okunabilir metin ve çıkarılabilen başlıklar kullanılır.', limitations: 'Görsel piksel içeriği güvenilir biçimde analiz edilemiyorsa şekil hakkında ayrıntı uydurulmaz.' }],
+    highYieldPoints: ['R grubu amino asidin kimyasal karakterini belirler.', 'Glisin kiral olmayan tek standart amino asittir.', 'Prolin halkalı yapısıyla zincir esnekliğini kısıtlar.', 'Yüklü ve polar amino asitler sulu ortamla etkileşmeye daha yatkındır.', 'Apolar amino asitler proteinlerin hidrofobik iç bölgelerinde sık yer alır.', 'Sistein disülfit bağıyla protein stabilitesine katkı sağlayabilir.'],
+    mustKnow: ['Glisin küçük ve kiral değildir.', 'Prolin zinciri büker ve esnekliği azaltır.', 'R grubu sınıflandırmanın merkezidir.', 'Apolar içeride, polar/yüklü yüzeyde bulunma eğilimindedir.', 'Aromatik amino asitler UV absorbans ve hidrofobik etkileşimlerde önemlidir.'],
+    sourceReferences: [`Bu çalışma alanı ${sourceCount || 'yüklenen'} materyalden oluşturuldu.`],
+    createdAt: Date.now(),
+  };
+}
+
 function buildLocalLesson(material) {
+  if (isAminoProteinMaterial(material)) return buildAminoProteinLesson(material);
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const keywords = extractKeywords(sourceText, topic);
@@ -269,6 +323,23 @@ function buildLocalLesson(material) {
 }
 
 function buildLocalQuestions(material, lesson) {
+
+  if (isAminoProteinMaterial(material)) {
+    const stems = [
+      ['easy','Amino asidin ortak yapısı','Standart bir amino asitte α-karbona hangi dört grup bağlanır?','A',['Amino grubu, karboksil grubu, hidrojen ve R grubu','Fosfat, riboz, baz ve hidrojen','Gliserol, yağ asidi, fosfat ve kolin','Hem grubu, demir, globin ve oksijen','Peptit bağı, disülfit bağı, ester bağı ve glikozidik bağ'],'Standart amino asidin ortak iskeleti α-karbon merkezlidir; kimyasal farklılığı R grubu belirler.'],
+      ['easy','Glisinin özel durumu','Glisin neden kiral olmayan tek standart amino asittir?','B',['R grubu aromatik halka içerdiği için','α-karbona iki hidrojen bağlı olduğu için','Karboksil grubu bulunmadığı için','Peptit bağı kuramadığı için','Pozitif yüklü olduğu için'],'Glisinde R grubu hidrojendir; bu nedenle α-karbonda dört farklı grup bulunmaz.'],
+      ['medium','Prolinin yapısal etkisi','Prolin protein zincirinde neden yapısal kısıtlanma oluşturur?','C',['Negatif yüklü olduğu için','Disülfit bağı yaptığı için','Halkalı yapısı zincir hareketini sınırladığı için','Aromatik halka ile UV absorbladığı için','R grubu hidrojen olduğu için'],'Prolinin halkalı yapısı peptit omurgasının esnekliğini azaltır ve dönüş bölgelerinde önem kazanır.'],
+      ['medium','R grubu mantığı','Amino asitlerin polar, apolar, asidik veya bazik olarak sınıflandırılmasında temel belirleyici nedir?','D',['Peptit bağının uzunluğu','Amino grubunun her zaman aynı olması','Karboksil grubunun protein dışında kalması','R grubunun kimyasal özelliği','Amino asidin dosyada geçtiği sayfa'],'Sınıflandırma R grubunun yük, polarite ve hidrofobiklik özelliklerine göre yapılır.'],
+      ['medium','Protein katlanması','Apolar amino asitlerin globüler proteinlerde çoğunlukla iç bölgede bulunma eğilimi nasıl açıklanır?','E',['Pozitif yük taşımalarıyla','Kiral olmamalarıyla','Peptit bağı kuramamalarıyla','Suda iyonlaşmalarıyla','Hidrofobik yan zincirlerin sudan kaçınmasıyla'],'Hidrofobik etki apolar yan zincirlerin protein iç bölgelerine yönelmesine katkı sağlar.'],
+      ['hard','Aromatik amino asitler','Aromatik amino asitlerin UV absorbansı ve hidrofobik etkileşimlerde önemli olmasının temel nedeni nedir?','A',['Elektron yoğun halka yapıları','R grubunun hidrojen olması','α-karbonun bulunmaması','Disülfit bağı zorunluluğu','Daima negatif yüklü olmaları'],'Aromatik halkalar elektron yoğun yapıları nedeniyle UV absorbans ve hidrofobik etkileşimlerde rol oynar.']
+    ];
+    return stems.concat(stems.slice(0,4)).slice(0,10).map(([difficulty,target,question,correct,opts,exp], index) => ({
+      id:createId('komite-q'), materialId:material.id, mode:'komite', questionNumber:index+1, difficulty, learningTarget:target, sourceReference:'Sentezlenmiş komite materyali', stem:'Amino asit ve protein yapısı konusu çalışılıyor.', supportingData:[], question,
+      options: opts.map((text,i)=>({id:String.fromCharCode(65+i), text})), correctOptionId:correct, explanation:exp,
+      optionFeedback:Object.fromEntries(opts.map((text,i)=>[String.fromCharCode(65+i), String.fromCharCode(65+i)===correct?exp:'Bu seçenek aynı konu çevresinde görünse de verilen yapısal/kimyasal ilişkiyi doğru açıklamaz.'])),
+      learningPoint: exp, memoryNote: target, userAnswer:null, isWrong:false, isFavorite:false, isDifficult:false, createdAt:Date.now()
+    }));
+  }
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const sourceClues = buildSourceObjectiveList(material, topic);
@@ -418,6 +489,20 @@ function buildLocalQuestions(material, lesson) {
 }
 
 function buildLocalFlashcards(material, lesson) {
+
+  if (isAminoProteinMaterial(material)) {
+    const cards = [
+      ['definition','easy','Standart amino asitlerde α-karbona hangi dört grup bağlanır?','Amino grubu, karboksil grubu, hidrojen ve değişken R grubu.','Ortak iskelet aynı, kimyasal karakteri R grubu belirler.','α-karbon = amino + karboksil + H + R.'],
+      ['exam_trap','easy','Glisin neden kiral değildir?','R grubu hidrojen olduğu için α-karbona iki hidrojen bağlıdır.','Dört farklı grup olmadığı için kiralite oluşmaz.','Glisin = kiral olmayan tek standart amino asit.'],
+      ['mechanism','medium','Prolin protein zincirinde neden esnekliği azaltır?','Halkalı yapısı peptit omurgasının hareketini kısıtlar.','Bu nedenle dönüş ve bükülme bölgelerinde yapısal etki gösterir.','Prolin zinciri büker.'],
+      ['comparison','medium','R grubunun polaritesi protein içindeki yerleşimi nasıl etkiler?','Apolar yan zincirler iç bölgede, polar/yüklü yan zincirler yüzeyde bulunma eğilimindedir.','Bu yerleşim suyla etkileşim ve hidrofobik etkiyle ilişkilidir.','Apolar içeride; polar/yüklü yüzeyde.'],
+      ['must_know','medium','Asidik ve bazik amino asitler yük açısından nasıl ayrılır?','Asidik amino asitler negatif, bazik amino asitler pozitif yük taşıma eğilimindedir.','Bu ayrım iyonik etkileşim ve protein yüzeyi davranışı için önemlidir.','Asidik negatif, bazik pozitif.'],
+      ['clinical_clue','hard','Sistein protein stabilitesine nasıl katkı sağlayabilir?','İki sistein arasında disülfit bağı oluşabilir.','Disülfit bağları proteinlerin üç boyutlu yapısını stabilize edebilir.','Sistein → disülfit bağı.'],
+      ['exam_trap','hard','Aromatik amino asitlerin ayırt edici sınav ipucu nedir?','Halka yapıları nedeniyle UV absorbans ve hidrofobik etkileşimlerde önemlidirler.','Özellikle triptofan ve tirozin bu bağlamda sık hatırlanır.','Aromatik halka → UV/hidrofobik etkileşim.'],
+      ['mechanism','medium','Amino asit özellikleri protein katlanmasını nasıl belirler?','R gruplarının yük, polarite ve hidrofobiklik özellikleri etkileşimleri ve üç boyutlu yerleşimi belirler.','Protein yapısı amino asit dizisinin kimyasal davranışından doğar.','Dizi → R grubu etkileşimleri → katlanma.']
+    ];
+    return { id:createId('deck'), deckTitle:'Amino Asitler ve Proteinlerin Temel Yapısı Hap Kartları', materialId:material.id, cards: cards.map(([type,difficulty,front,back,explanation,examTrap])=>({id:createId('card'), userId:material.userId, materialId:material.id, mode:'komite', classYear:material.classYear, committee:material.committee, course:material.course, type,difficulty,front,back,explanation,examTrap, sourceReference:'Sentezlenmiş komite materyali', tags:[], isUserCreated:false, isFavorite:false, isDifficult:false, repeatStatus:'new', createdAt:Date.now()})) };
+  }
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const keywords = extractKeywords(sourceText, topic);
@@ -853,17 +938,18 @@ function LessonView({ material, onGenerate }) {
       <div className="komite-lesson-hero">
         <span className="komite-kicker">AI Ders Anlatımı</span>
         <h2>{lesson.title}</h2>
-        <p>{lesson.shortIntro || lesson.overview}</p>
+        <p>{lesson.shortSubtitle || lesson.shortIntro || lesson.overview}</p>
       </div>
       <div className="komite-objectives">
         <strong>Öğrenme hedefleri</strong>
         <ul>{(lesson.learningObjectives || []).map((item) => <li key={item}>{item}</li>)}</ul>
       </div>
+      {(lesson.bigPicture || lesson.overview) ? <article className="komite-lesson-section"><h3>Büyük resim</h3><p>{lesson.bigPicture || lesson.overview}</p></article> : null}
+      {Array.isArray(lesson.mainConcepts) && lesson.mainConcepts.length ? <div className="komite-objectives"><strong>Ana kavramlar</strong><ul>{lesson.mainConcepts.map((item) => <li key={item}>{item}</li>)}</ul></div> : null}
       {(lesson.sections || []).map((section) => (
         <article className="komite-lesson-section" key={section.heading}>
           <h3>{section.heading}</h3>
           <p>{section.teachingText || section.content}</p>
-          {section.mechanismFlow?.length ? <div className="komite-flow-line">{section.mechanismFlow.map((step) => <span key={step}>{step}</span>)}</div> : null}
           {(section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
             <div className="komite-two-note-grid">
               {(section.examAngle || section.clinicalConnection) ? <div><strong>Sınavda nasıl sorulur?</strong><p>{section.examAngle || section.clinicalConnection}</p></div> : null}
@@ -1213,19 +1299,16 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
         <button type="button" className="branch-back-v8" onClick={onBack}><span aria-hidden="true">←</span><span>Komite ana ekranı</span></button>
         <div>
           <span className="komite-kicker">{material.classYear}. sınıf · {material.committee || material.course || 'Komite/Ders'}</span>
-          <h2>{material.fileName}</h2>
-          <p>{material.learningTarget} · {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</p>
+          <h2>{inferAcademicTitle(material)}</h2>
+          <p>{material.learningTarget || 'Komite sınavı'} · {Array.isArray(material.files) ? material.files.length : 1} materyal · Son çalışma: {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</p>
         </div>
         <div className="komite-workspace-actions">
-          <StatusPill tone={material.processingStatus?.includes('ready') ? 'success' : 'neutral'}>{busy ? 'AI işlemi sürüyor' : material.processingStatus || 'metadata-ready'}</StatusPill>
-          <AsyncActionButton status={aiStatus.lesson} idleLabel="Ders" loadingLabel="Ders hazırlanıyor…" successLabel="Ders hazır" errorLabel="Tekrar dene" icon="BookOpen" onClick={() => runWithLocalFallback('lesson')} />
-          <AsyncActionButton status={aiStatus.questions} idleLabel="10 Soru" loadingLabel="Sorular oluşturuluyor…" successLabel="10 soru oluşturuldu" errorLabel="Tekrar dene" icon="ClipboardList" onClick={() => runWithLocalFallback('questions')} />
-          <AsyncActionButton status={aiStatus.cards} idleLabel="Kart" loadingLabel="Kartlar hazırlanıyor…" successLabel="Kartlar hazır" errorLabel="Tekrar dene" icon="LayeredCards" onClick={() => runWithLocalFallback('cards')} />
+          <StatusPill tone={material.processingStatus?.includes('ready') ? 'success' : 'neutral'}>{busy ? 'AI işlemi sürüyor' : 'Çalışma alanı hazır'}</StatusPill>
         </div>
       </div>
       <InlineStatus status={Object.values(aiStatus).includes('error') ? 'error' : 'idle'} message={Object.values(aiError).find(Boolean) || ''} />
       <div className="komite-tabbar" role="tablist" aria-label="Materyal çalışma alanı sekmeleri">
-        {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}>{item.label}</button>)}
+        {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}><Icon name={item.icon} /> {item.label}</button>)}
       </div>
       <div className="komite-tab-panel">
         {tab === 'lesson' ? <LessonView material={material} onGenerate={() => runWithLocalFallback('lesson')} /> : null}
