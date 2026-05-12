@@ -6,6 +6,7 @@ import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
 import CasePlayer from './components/CasePlayer.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
+import KomiteModeWorkspace from './components/KomiteModeWorkspace.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
 import StudyReviewHub from './components/StudyReviewHub.jsx';
 import TusPearlStudyScreen from './components/TusPearlStudyScreen.jsx';
@@ -31,6 +32,7 @@ const BRANCH_TRANSITION_MS = 920;
 const BRANCH_TRANSITION_FADE_MS = 180;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
+const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
 
 const DEMO_CASE_IDS = [
   'tus-spot-forensic-stab-wound-001',
@@ -174,6 +176,7 @@ function App() {
   const [aiBranchFilter, setAIBranchFilter] = useState(() => loadStoredValue(AI_BRANCH_FILTER_STORAGE_KEY, 'random'));
   const [aiDifficulty, setAIDifficulty] = useState(() => loadStoredValue(AI_DIFFICULTY_STORAGE_KEY, 'Orta'));
   const [examState, setExamState] = useState(null);
+  const [productMode, setProductMode] = useState(() => loadStoredValue(PRODUCT_MODE_STORAGE_KEY, 'tus'));
   const [clockTick, setClockTick] = useState(Date.now());
   const [isCaseSidebarOpen, setIsCaseSidebarOpen] = useState(true);
   const [branchRouteTransition, setBranchRouteTransition] = useState(null);
@@ -262,6 +265,10 @@ function App() {
   useEffect(() => {
     localBackend.write(AI_DIFFICULTY_STORAGE_KEY, aiDifficulty);
   }, [aiDifficulty]);
+
+  useEffect(() => {
+    localBackend.write(PRODUCT_MODE_STORAGE_KEY, productMode);
+  }, [productMode]);
 
   const handleRegister = ({ name, email, password, confirmPassword }) => {
     const normalizedEmail = normalizeEmail(email);
@@ -934,6 +941,7 @@ function App() {
   }, [examState?.active, remainingSeconds, finalizeExam]);
 
   const resetExamToHome = () => {
+    setProductMode('tus');
     clearAIQuestionTimer();
     setExamState(null);
     setAIPracticeState(defaultAIPracticeState);
@@ -942,6 +950,19 @@ function App() {
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setIsCaseSidebarOpen(true);
+    scrollToTopSmart({ smooth: false });
+  };
+
+  const switchProductMode = (nextMode) => {
+    if (nextMode === productMode) return;
+    clearAIQuestionTimer();
+    setProductMode(nextMode);
+    setAIPracticeState(defaultAIPracticeState);
+    setExamState(null);
+    closePearlStudy();
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setMode('study');
     scrollToTopSmart({ smooth: false });
   };
 
@@ -966,33 +987,55 @@ function App() {
         <button className="nav-brand nav-brand-icon-only" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">
           <span className="nav-brand-mark nav-brand-mark-pulse" aria-hidden="true"><BrandMark title="" /></span>
         </button>
-        <div className="segmented-control nav-mode-switch" aria-label="Öğrenme modu seçimi">
+        <div className="segmented-control product-mode-switch" aria-label="Ürün modu seçimi">
           <button
             type="button"
-            className={mode === 'study' && !examState?.active ? 'active' : ''}
-            onClick={resetExamToHome}
-            aria-pressed={mode === 'study' && !examState?.active}
+            className={productMode === 'komite' ? 'active' : ''}
+            onClick={() => switchProductMode('komite')}
+            aria-pressed={productMode === 'komite'}
           >
-            Öğrenme modu
+            KOMİTE
           </button>
           <button
             type="button"
-            className={mode === 'exam' || examState?.active ? 'active' : ''}
-            onClick={() => setMode('exam')}
-            aria-pressed={mode === 'exam' || examState?.active}
+            className={productMode === 'tus' ? 'active' : ''}
+            onClick={() => switchProductMode('tus')}
+            aria-pressed={productMode === 'tus'}
           >
-            Sınav modu
-          </button>
-          <button
-            type="button"
-            className={hardMode ? 'active hard-mode-active' : ''}
-            onClick={() => setHardMode((current) => !current)}
-            aria-pressed={hardMode}
-            title="Referans değerleri ve ipuçları azaltılır"
-          >
-            Zor mod
+            TUS
           </button>
         </div>
+        {productMode === 'tus' ? (
+          <div className="segmented-control nav-mode-switch" aria-label="Öğrenme modu seçimi">
+            <button
+              type="button"
+              className={mode === 'study' && !examState?.active ? 'active' : ''}
+              onClick={resetExamToHome}
+              aria-pressed={mode === 'study' && !examState?.active}
+            >
+              Öğrenme modu
+            </button>
+            <button
+              type="button"
+              className={mode === 'exam' || examState?.active ? 'active' : ''}
+              onClick={() => setMode('exam')}
+              aria-pressed={mode === 'exam' || examState?.active}
+            >
+              Sınav modu
+            </button>
+            <button
+              type="button"
+              className={hardMode ? 'active hard-mode-active' : ''}
+              onClick={() => setHardMode((current) => !current)}
+              aria-pressed={hardMode}
+              title="Referans değerleri ve ipuçları azaltılır"
+            >
+              Zor mod
+            </button>
+          </div>
+        ) : (
+          <span className="komite-nav-chip">Komite çalışma alanı</span>
+        )}
         <div className="nav-actions" aria-label="Oturum eylemleri">
           <span className="nav-user-chip nav-user-card" aria-label={`Kullanıcı ${currentUser.name}`} title={currentUser.name}>
             <Icon name="User" />
@@ -1071,7 +1114,9 @@ function App() {
         </div>
       ) : null}
 
-      {pearlStudyState.active ? (
+      {productMode === 'komite' ? (
+        <KomiteModeWorkspace currentUser={currentUser} />
+      ) : pearlStudyState.active ? (
         <TusPearlStudyScreen
           initialFilter={pearlStudyState.filter}
           initialBranchFilter={pearlStudyState.branchFilter}
