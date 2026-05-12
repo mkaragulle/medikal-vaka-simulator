@@ -4,8 +4,8 @@ export const ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIO
 
 Analyze the uploaded material as the first KOMİTE processing step. Clean OCR noise, infer the coherent topic, identify reliable visual/table information, and return only valid JSON in the existing analysis schema.`;
 
-export function buildAnalyzeUploadedMaterialPrompt({ metadata = {}, extractedTextOrChunks = '', detectedStructureOrFigures = '' } = {}) {
-  return `Analyze the uploaded material using the metadata and extracted content below. Treat all uploaded files in this workspace as one coherent course material unless explicitly separated by the user.
+export function buildAnalyzeUploadedMaterialPrompt({ metadata = {}, extractedTextOrChunks = '', detectedStructureOrFigures = '', materialPacket = {} } = {}) {
+  return `Analyze the uploaded material using the metadata and extracted content below. Treat all uploaded files in this workspace as one coherent course material unless explicitly separated by the user. Do not infer the topic from only the last file.
 
 Material metadata:
 - fileName: ${metadata.fileName || ''}
@@ -15,7 +15,10 @@ Material metadata:
 - learningTarget: ${metadata.learningTarget || ''}
 - studyMode: ${metadata.studyMode || 'komite'}
 
-Extracted content:
+Combined material packet:
+${JSON.stringify(materialPacket || {}, null, 2)}
+
+Extracted content from all files:
 ${extractedTextOrChunks || 'No readable text was provided.'}
 
 Detected pages/slides/figures if available:

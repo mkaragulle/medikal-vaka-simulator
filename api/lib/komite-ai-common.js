@@ -159,7 +159,7 @@ export function validateFlashcardsShape(output = {}) {
   return { ok: errors.length === 0, errors };
 }
 
-export function validateLessonShape(output = {}) {
+export function validateLessonShape(output = {}, context = {}) {
   const errors = findGlobalQualityErrors(output);
   const sections = Array.isArray(output.sections) ? output.sections : output.coreExplanation;
   const title = String(output.title || '').trim();
@@ -174,7 +174,16 @@ export function validateLessonShape(output = {}) {
     if (hasDateLikeText(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde tarih var.`);
     if (/prof\.?|doç\.?|öğr\.?|\.(pdf|pptx|ppt|docx)/iu.test(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde metadata var.`);
   });
-  if (!String(output.bigPicture || '').trim()) errors.push('Büyük resim alanı yok veya boş.');
+  const bigPicture = String(output.bigPicture || '').replace(/\s+/g, ' ').trim();
+  if (!bigPicture) errors.push('Büyük resim alanı yok veya boş.');
+  if (bigPicture.length < 260) errors.push('Büyük resim çok kısa veya jenerik.');
+  const filesUploadedCount = Number(context.filesUploadedCount || 0);
+  const filesAnalyzedCount = Number(output.sourceCoverage?.filesAnalyzedCount || output.sourceCoverage?.filesAnalyzed || 0);
+  if (filesUploadedCount > 1 && filesAnalyzedCount <= 1) errors.push('Çoklu dosya yüklendiği halde çıktı tek dosya kapsamı gösteriyor.');
+  const shallowSections = (sections || []).filter((section) => String(section.teachingText || section.content || '').trim().split(/\s+/).length < 45);
+  if ((sections || []).length && shallowSections.length / (sections || []).length > 0.35) errors.push('Ders bölümlerinin çoğu yeterince derin değil.');
+  const qualityCheck = output.qualityCheck || {};
+  if (filesUploadedCount > 1 && qualityCheck.usesAllFiles === false) errors.push('qualityCheck usesAllFiles=false döndü.');
   const text = JSON.stringify(output || {});
   if ((text.match(/Klinik bağlantı|Sınav bağlantısı/g) || []).length > 14) errors.push('Ders şablon tekrarı içeriyor.');
   return { ok: errors.length === 0, errors };

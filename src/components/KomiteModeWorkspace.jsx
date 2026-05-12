@@ -60,6 +60,72 @@ function normalizeSourceText(material = {}) {
 }
 
 
+
+function cleanExtractedTextForAI(text = '') {
+  const seen = new Set();
+  return String(text || '')
+    .split(/\n+/u)
+    .map((line) => line.replace(/\s+/g, ' ').trim())
+    .filter((line) => line.length >= 3)
+    .filter((line) => !/^(\d+|sayfa\s*\d+|slayt\s*\d+)$/iu.test(line))
+    .filter((line) => !/\.(pdf|pptx|ppt|docx)$/iu.test(line))
+    .filter((line) => !/^(prof\.?\s*dr\.?|doç\.?\s*dr\.?|öğr\.?\s*gör\.?)/iu.test(line))
+    .filter((line) => !/\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b|\b20\d{2}\b/u.test(line))
+    .filter((line) => {
+      const key = line.toLocaleLowerCase('tr');
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trim();
+}
+
+function detectTopicsFromText(text = '', max = 10) {
+  return extractKeywords(text, '').filter((word) => !/^(slayt|sayfa|dosya|pptx|giriş)$/iu.test(word)).slice(0, max);
+}
+
+function buildCombinedMaterialPacket(material = {}) {
+  const files = Array.isArray(material.filePackets) && material.filePackets.length
+    ? material.filePackets
+    : (Array.isArray(material.files) && material.files.length
+      ? material.files.map((file, index) => ({
+        fileName: file.name || material.fileName || `Materyal ${index + 1}`,
+        fileType: file.type || getFileType(file.name || material.fileName || ''),
+        cleanedExtractedText: index === 0 ? cleanExtractedTextForAI(material.extractedText || '') : '',
+        detectedTopics: [],
+      }))
+      : [{ fileName: material.fileName || 'Ek metin', fileType: material.fileType || 'text', cleanedExtractedText: cleanExtractedTextForAI(material.extractedText || material.pastedText || ''), detectedTopics: [] }]);
+  const normalizedFiles = files.map((file) => {
+    const cleaned = cleanExtractedTextForAI(file.cleanedExtractedText || file.text || '');
+    return {
+      fileName: file.fileName || file.name || 'Materyal',
+      fileType: file.fileType || file.type || getFileType(file.fileName || file.name || ''),
+      cleanedExtractedText: cleaned,
+      detectedTopics: Array.isArray(file.detectedTopics) && file.detectedTopics.length ? file.detectedTopics : detectTopicsFromText(cleaned),
+    };
+  });
+  const pasted = cleanExtractedTextForAI(material.pastedText || '');
+  if (pasted) {
+    normalizedFiles.push({ fileName: 'Ek ders notu', fileType: 'text', cleanedExtractedText: pasted, detectedTopics: detectTopicsFromText(pasted) });
+  }
+  return {
+    workspaceId: material.id || '',
+    classYear: material.classYear || '',
+    committeeName: material.committee || '',
+    courseName: material.course || '',
+    studyGoal: material.learningTarget || '',
+    files: normalizedFiles,
+  };
+}
+
+function combinedPacketToSourceText(packet = {}) {
+  return (packet.files || [])
+    .map((file, index) => `[[FILE ${index + 1}]]\nfileName: ${file.fileName}\nfileType: ${file.fileType}\ndetectedTopics: ${(file.detectedTopics || []).join(', ')}\ncleanedExtractedText:\n${file.cleanedExtractedText || ''}`)
+    .join('\n\n');
+}
+
 function cleanMaterialTitle(material = {}) {
   const rawName = String(material.fileName || '').replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
   const fallback = material.materialAnalysis?.detectedCourseOrTopic || material.course || material.committee || 'Ders Materyali';
@@ -99,11 +165,19 @@ function normalizeQuestionForDisplay(question = {}) {
   return { ...question, stem, question: isMeaningfullyDifferent(q, stem) ? q : '', supportingData };
 }
 
-function qualityGateLesson(lesson = {}) {
+function qualityGateLesson(lesson = {}, material = {}) {
   const text = JSON.stringify(lesson || {}).toLocaleLowerCase('tr');
-  const badRepeats = (text.match(/klinik bağlantı|sınav bağlantısı|bu ders materyalde/g) || []).length;
-  if (!lesson || !Array.isArray(lesson.sections) || !lesson.sections.length) return { ok: false, reason: 'Ders yapısı eksik.' };
-  if (badRepeats > 14) return { ok: false, reason: 'Ders anlatımı fazla şablon ve tekrar içeriyor.' };
+  const filesUploadedCount = Array.isArray(material.files) ? material.files.length : 0;
+  const analyzedCount = Number(lesson.sourceCoverage?.filesAnalyzedCount || lesson.sourceCoverage?.filesAnalyzed || 0);
+  const badRepeats = (text.match(/klinik bağlantı|sınav bağlantısı|bu ders materyalde|bu bölüm temel mekanizma ile ilişkilendirilmelidir/g) || []).length;
+  const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
+  if (!lesson || !sections.length) return { ok: false, reason: 'Ders yapısı eksik.' };
+  if (filesUploadedCount > 1 && analyzedCount <= 1) return { ok: false, reason: 'Çoklu dosya yüklenmesine rağmen AI çıktısı tek materyal kapsamı gösteriyor.' };
+  if (/materyaldeki ilişkili kavram|slayt\s*→|sayfa\s*→/iu.test(text)) return { ok: false, reason: 'Ham/meaningless kaynak etiketi üretildi.' };
+  if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 260) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
+  const shallow = sections.filter((section) => String(section.teachingText || section.content || '').split(/\s+/).length < 45);
+  if (sections.length && shallow.length / sections.length > 0.35) return { ok: false, reason: 'Ders bölümleri yüzeysel kalıyor.' };
+  if (badRepeats > 10) return { ok: false, reason: 'Ders anlatımı fazla şablon ve tekrar içeriyor.' };
   return { ok: true };
 }
 
@@ -173,7 +247,7 @@ function sourceDrivenSections(material, topic) {
     return {
       heading: truncate(heading, 80),
       content,
-      mechanismFlow: keywords.length ? keywords.map((keyword) => `${keyword} → materyalde ilişkili kavram`) : [],
+      mechanismFlow: keywords.length ? keywords.map((keyword) => `${keyword} → temel kavram bağlantısı`) : [],
       examAngle: 'Bu bölümdeki bilgi, materyaldeki bağlamı bozmadan temel mekanizma veya klinik yorumla ilişkilendirilmelidir.',
       commonTrap: 'Komite sorusunda bu bölümden genellikle tanım, mekanizma, ayırıcı özellik veya yorumlama basamağı sorulur.',
       sourceReferences: [sourceLabel],
@@ -254,7 +328,7 @@ function buildLocalLesson(material) {
   const sourceText = normalizeSourceText(material);
   const keywords = extractKeywords(sourceText, topic);
   const hasReadableText = sourceText.length > 120;
-  const sourceReference = hasReadableText ? 'Ayrıştırılan/yapıştırılan materyal metni' : 'Dosya adı ve kullanıcı tarafından girilen ders bilgileri';
+  const sourceReference = hasReadableText ? 'Çalışma alanındaki okunabilir materyal metni' : 'Kullanıcı tarafından girilen ders bilgileri';
   const extractedSections = sourceDrivenSections(material, topic);
   const sourceObjectives = buildSourceObjectiveList(material, topic);
   const extractionLimitations = material.extractionLimitations || material.materialAnalysis?.sourceQuality?.limitations || [];
@@ -263,8 +337,8 @@ function buildLocalLesson(material) {
     ? [
       {
         heading: 'Materyalden çıkarılan büyük resim',
-        teachingText: `Bu ders anlatımı, dosya içinden gerçekten ayrıştırılan metne göre hazırlandı. Ana tekrar hedefleri: ${keywords.slice(0, 6).join(', ') || topic}.`,
-        mechanismFlow: keywords.slice(0, 5).map((keyword) => `${keyword} → materyaldeki ilişkili kavram`),
+        teachingText: `Bu ders anlatımı, çalışma alanındaki okunabilir kaynak metinler birlikte değerlendirilerek kavramsal bir tekrar akışına dönüştürüldü. Ana tekrar hedefleri: ${keywords.slice(0, 6).join(', ') || topic}.`,
+        mechanismFlow: keywords.slice(0, 5).map((keyword) => `${keyword} → temel kavram bağlantısı`),
         examAngle: 'Klinik bağlantı yalnızca metinde geçen konu ve kavramlardan hareketle kurulmalıdır; görsel içeriği okunamadıysa görsel hakkında kesin yorum yapılmaz.',
         commonTrap: `${material.learningTarget || 'Komite sınavı'} için bu materyalde tekrar edilmesi gereken başlıklar, doğrudan ayrıştırılan metindeki kavramlardan seçilmiştir.`,
         sourceReferences: [sourceReference],
@@ -571,6 +645,7 @@ function normalizeGeneratedLessonShape(lesson = {}) {
     highYieldPoints: lesson.highYieldPoints || lesson.highYieldSummary || [],
     mustKnow: lesson.mustKnow || lesson.mustRemember || [],
     figureExplanations: lesson.figureExplanations || lesson.visualNotes || [],
+    sourceCoverage: lesson.sourceCoverage || {},
   };
 }
 
@@ -830,13 +905,34 @@ function StartFlow({ onCreate, onCancel }) {
         try { return { file, extraction: await extractKomiteFile(file) }; }
         catch { return { file, extraction: { ok: false, text: '', notice: `${file.name} otomatik okunamadı.` } }; }
       }));
-      const mergedText = extractions.map(({ file, extraction }) => extraction.text ? `\n\n--- ${file.name} ---\n${extraction.text}` : '').join('').trim();
+      const filePackets = extractions.map(({ file, extraction }) => {
+        const cleanedExtractedText = cleanExtractedTextForAI(extraction.text || '');
+        return {
+          fileName: file.name,
+          fileType: getFileType(file.name),
+          cleanedExtractedText,
+          detectedTopics: detectTopicsFromText(cleanedExtractedText),
+          charCount: cleanedExtractedText.length,
+          extractionOk: Boolean(extraction.ok && cleanedExtractedText),
+        };
+      });
+      const mergedText = filePackets.map((item, index) => item.cleanedExtractedText ? `\n\n[[FILE ${index + 1}: ${item.fileName}]]\n${item.cleanedExtractedText}` : '').join('').trim();
       const detectedStructure = extractions.flatMap(({ extraction }) => extraction.detectedStructure || []);
       const limitations = extractions.flatMap(({ extraction }) => extraction.limitations || []);
+      if (import.meta.env.DEV) {
+        console.debug('[KOMITE upload]', {
+          uploadedFiles: unique.length,
+          extractedFiles: filePackets.filter((item) => item.extractionOk).length,
+          charCounts: filePackets.map((item) => ({ fileName: item.fileName, chars: item.charCount })),
+          totalChars: filePackets.reduce((sum, item) => sum + item.charCount, 0),
+          fileNames: filePackets.map((item) => item.fileName),
+        });
+      }
       setFileText(mergedText);
       setFileExtraction({
         ok: extractions.some(({ extraction }) => extraction.ok),
         text: mergedText,
+        files: filePackets,
         detectedStructure,
         figures: extractions.flatMap(({ extraction }) => extraction.figures || []),
         notice: mergedText ? `${unique.length} dosya çalışma alanına eklendi.` : 'Dosyalar otomatik okunamadı; ek ders notu alanına metin ekleyebilirsin.',
@@ -964,13 +1060,14 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
         <span className="komite-kicker">AI Ders Anlatımı</span>
         <h2>{lesson.title}</h2>
         <p>{lesson.shortSubtitle || lesson.shortIntro || lesson.overview}</p>
+        {lesson.sourceCoverage?.filesAnalyzedCount > 1 ? <small className="komite-source-note">Bu çalışma alanı {lesson.sourceCoverage.filesAnalyzedCount} materyal birlikte analiz edilerek hazırlandı.</small> : null}
       </div>
       <div className="komite-objectives">
         <strong>Öğrenme hedefleri</strong>
         <ul>{(lesson.learningObjectives || []).map((item) => <li key={item}>{item}</li>)}</ul>
       </div>
       {(lesson.bigPicture || lesson.overview) ? <article className="komite-lesson-section"><h3>Büyük resim</h3><p>{lesson.bigPicture || lesson.overview}</p></article> : null}
-      {Array.isArray(lesson.mainConcepts) && lesson.mainConcepts.length ? <div className="komite-objectives"><strong>Ana kavramlar</strong><ul>{lesson.mainConcepts.map((item) => <li key={item}>{item}</li>)}</ul></div> : null}
+      {Array.isArray(lesson.mainConcepts) && lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item))).length ? <div className="komite-objectives"><strong>Ana kavramlar</strong><ul>{lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item))).map((item) => <li key={item}>{item}</li>)}</ul></div> : null}
       {lesson.clinicalExamRelevance ? <article className="komite-lesson-section"><h3>Klinik / sınav bağlantısı</h3><p>{lesson.clinicalExamRelevance}</p></article> : null}
       {Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length ? (
         <article className="komite-lesson-section">
@@ -1198,7 +1295,17 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
   const runWithLocalFallback = async (kind) => {
     if (aiStatus[kind] === 'loading') return;
     setKindStatus(kind, 'loading', '');
-    const sourceText = normalizeSourceText(material);
+    const materialPacket = buildCombinedMaterialPacket(material);
+    const sourceText = combinedPacketToSourceText(materialPacket) || normalizeSourceText(material);
+    if (import.meta.env.DEV) {
+      console.debug('[KOMITE AI request]', {
+        filesUploaded: Array.isArray(material.files) ? material.files.length : 0,
+        filesIncluded: materialPacket.files.length,
+        charCounts: materialPacket.files.map((file) => ({ fileName: file.fileName, chars: (file.cleanedExtractedText || '').length })),
+        totalChars: sourceText.length,
+        fileNames: materialPacket.files.map((file) => file.fileName),
+      });
+    }
     const studyContext = {
       classYear: material.classYear,
       committeeOrCourse: material.committee || material.course,
@@ -1213,7 +1320,8 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
         try {
           const analyzed = await postKomiteAI('/api/analyze-uploaded-material', {
             metadata: { ...material, committeeOrCourse: material.committee || material.course },
-            extractedTextOrChunks: sourceText.slice(0, 16000),
+            materialPacket,
+            extractedTextOrChunks: sourceText.slice(0, 36000),
           });
           analysis = analyzed.analysis || analysis;
         } catch {
@@ -1226,7 +1334,9 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
           const generated = sourceText.length > 120 ? await postKomiteAI('/api/generate-lesson', {
             studyContext,
             materialAnalysisJson: analysis,
-            sourceTextChunks: sourceText.slice(0, 12000),
+            materialPacket,
+            sourceTextChunks: sourceText.slice(0, 36000),
+            filesUploadedCount: materialPacket.files.length,
           }) : null;
           nextPatch = { materialAnalysis: analysis, lesson: generated?.lesson ? normalizeGeneratedLessonShape(generated.lesson) : buildLocalLesson(material), processingStatus: 'lesson-ready' };
         } catch {
@@ -1290,7 +1400,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
           nextPatch = { materialAnalysis: analysis, lesson, flashcardDeck: buildLocalFlashcards(material, lesson), processingStatus: 'cards-ready' };
         }
       }
-      const gate = kind === 'lesson' ? qualityGateLesson(nextPatch.lesson) : kind === 'questions' ? qualityGateQuestions(nextPatch.questions) : qualityGateDeck(nextPatch.flashcardDeck);
+      const gate = kind === 'lesson' ? qualityGateLesson(nextPatch.lesson, material) : kind === 'questions' ? qualityGateQuestions(nextPatch.questions) : qualityGateDeck(nextPatch.flashcardDeck);
       if (!gate.ok) throw new Error(gate.reason);
       onPatchMaterial(material.id, nextPatch);
       setKindStatus(kind, 'success', kind === 'lesson' ? 'Ders hazır' : kind === 'questions' ? '10 soru oluşturuldu' : 'Hap kartlar hazır');
@@ -1411,6 +1521,8 @@ export default function KomiteModeWorkspace({ currentUser }) {
       fileName,
       fileType: getFileType(fileName),
       files: files.map((item) => ({ name: item.name, size: item.size, type: getFileType(item.name) })),
+      filePackets: extraction?.files || [],
+      sourceCoverage: { filesUploadedCount: files.length || (file ? 1 : 0), filesAnalyzedCount: (extraction?.files || []).filter((item) => item.cleanedExtractedText).length, usedFiles: (extraction?.files || []).map((item) => item.fileName) },
       uploadDate: Date.now(),
       studyMode: 'komite',
       classYear: form.classYear,

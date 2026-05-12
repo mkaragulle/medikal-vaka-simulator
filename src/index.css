@@ -37316,3 +37316,15 @@ body:not(.klinikiq-auth-lock) .app-shell {
 @keyframes komite-spin {
   to { transform: rotate(360deg); }
 }
+
+.komite-source-note {
+  display: inline-flex;
+  margin-top: 0.65rem;
+  padding: 0.42rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(20, 184, 166, 0.22);
+  background: rgba(20, 184, 166, 0.08);
+  color: var(--text-muted, #475569);
+  font-size: 0.82rem;
+  font-weight: 650;
+}

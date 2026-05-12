@@ -10,6 +10,7 @@ export default async function handler(request, response) {
       metadata: body.metadata || body,
       extractedTextOrChunks: body.extractedTextOrChunks || body.extractedText || body.text || '',
       detectedStructureOrFigures: body.detectedStructureOrFigures || body.figures || '',
+      materialPacket: body.materialPacket || {},
     });
     const result = await callOpenAIJson({ systemPrompt: ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 2800, temperature: 0.15 });
     return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, analysis: result.json });
