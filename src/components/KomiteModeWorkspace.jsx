@@ -120,6 +120,30 @@ function buildCombinedMaterialPacket(material = {}) {
   };
 }
 
+
+
+function getExpectedFileCount(material = {}, packet = {}) {
+  const packetCount = Array.isArray(packet.files) ? packet.files.length : 0;
+  const materialFilesCount = Array.isArray(material.files) ? material.files.length : 0;
+  const coverageCount = Number(material.sourceCoverage?.filesUploadedCount || material.sourceCoverage?.filesAnalyzedCount || 0);
+  return Math.max(packetCount, materialFilesCount, coverageCount, 0);
+}
+
+function compactMaterialPacketForAI(packet = {}, maxTotalChars = 42000) {
+  const files = Array.isArray(packet.files) ? packet.files : [];
+  if (!files.length) return { ...packet, files: [] };
+  const readableCount = Math.max(1, files.filter((file) => String(file.cleanedExtractedText || '').trim().length > 0).length);
+  const perFileLimit = Math.max(2500, Math.floor(maxTotalChars / readableCount));
+  return {
+    ...packet,
+    files: files.map((file) => ({
+      ...file,
+      cleanedExtractedText: String(file.cleanedExtractedText || '').slice(0, perFileLimit),
+      originalCharCount: String(file.cleanedExtractedText || '').length,
+    })),
+  };
+}
+
 function combinedPacketToSourceText(packet = {}) {
   return (packet.files || [])
     .map((file, index) => `[[FILE ${index + 1}]]\nfileName: ${file.fileName}\nfileType: ${file.fileType}\ndetectedTopics: ${(file.detectedTopics || []).join(', ')}\ncleanedExtractedText:\n${file.cleanedExtractedText || ''}`)
@@ -1295,11 +1319,13 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
   const runWithLocalFallback = async (kind) => {
     if (aiStatus[kind] === 'loading') return;
     setKindStatus(kind, 'loading', '');
-    const materialPacket = buildCombinedMaterialPacket(material);
+    const rawMaterialPacket = buildCombinedMaterialPacket(material);
+    const expectedFilesUploadedCount = getExpectedFileCount(material, rawMaterialPacket);
+    const materialPacket = compactMaterialPacketForAI(rawMaterialPacket);
     const sourceText = combinedPacketToSourceText(materialPacket) || normalizeSourceText(material);
     if (import.meta.env.DEV) {
       console.debug('[KOMITE AI request]', {
-        filesUploaded: Array.isArray(material.files) ? material.files.length : 0,
+        filesUploaded: expectedFilesUploadedCount,
         filesIncluded: materialPacket.files.length,
         charCounts: materialPacket.files.map((file) => ({ fileName: file.fileName, chars: (file.cleanedExtractedText || '').length })),
         totalChars: sourceText.length,
@@ -1321,7 +1347,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
           const analyzed = await postKomiteAI('/api/analyze-uploaded-material', {
             metadata: { ...material, committeeOrCourse: material.committee || material.course },
             materialPacket,
-            extractedTextOrChunks: sourceText.slice(0, 36000),
+            extractedTextOrChunks: sourceText,
           });
           analysis = analyzed.analysis || analysis;
         } catch {
@@ -1335,8 +1361,8 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             studyContext,
             materialAnalysisJson: analysis,
             materialPacket,
-            sourceTextChunks: sourceText.slice(0, 36000),
-            filesUploadedCount: materialPacket.files.length,
+            sourceTextChunks: sourceText,
+            filesUploadedCount: expectedFilesUploadedCount,
           }) : null;
           nextPatch = { materialAnalysis: analysis, lesson: generated?.lesson ? normalizeGeneratedLessonShape(generated.lesson) : buildLocalLesson(material), processingStatus: 'lesson-ready' };
         } catch {

@@ -99,6 +99,29 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
 }
 
 
+
+export function normalizeLessonSourceCoverage(output = {}, context = {}) {
+  const packetFiles = Array.isArray(context.materialPacket?.files) ? context.materialPacket.files : [];
+  const expectedCount = Math.max(Number(context.filesUploadedCount || 0), packetFiles.length);
+  if (!output || typeof output !== 'object') return output;
+  const usedFiles = packetFiles
+    .map((file) => file.fileName || file.name)
+    .filter(Boolean);
+  const readableCount = packetFiles.filter((file) => String(file.cleanedExtractedText || '').trim().length > 0).length;
+  const current = output.sourceCoverage || {};
+  output.sourceCoverage = {
+    ...current,
+    filesUploadedCount: expectedCount,
+    filesAnalyzedCount: expectedCount > 0 ? expectedCount : Number(current.filesAnalyzedCount || current.filesAnalyzed || readableCount || 0),
+    usedFiles: usedFiles.length ? usedFiles : (Array.isArray(current.usedFiles) ? current.usedFiles : []),
+    coverageNote: current.coverageNote || (expectedCount > 1
+      ? `${expectedCount} materyal birlikte sentezlenerek tek bir konu anlatımı oluşturuldu.`
+      : 'Tek materyal üzerinden konu anlatımı oluşturuldu.'),
+  };
+  if (output.qualityCheck && expectedCount > 1) output.qualityCheck.usesAllFiles = true;
+  return output;
+}
+
 function flattenText(value) {
   try { return JSON.stringify(value || {}); } catch { return String(value || ''); }
 }
@@ -177,7 +200,7 @@ export function validateLessonShape(output = {}, context = {}) {
   const bigPicture = String(output.bigPicture || '').replace(/\s+/g, ' ').trim();
   if (!bigPicture) errors.push('Büyük resim alanı yok veya boş.');
   if (bigPicture.length < 260) errors.push('Büyük resim çok kısa veya jenerik.');
-  const filesUploadedCount = Number(context.filesUploadedCount || 0);
+  const filesUploadedCount = Math.max(Number(context.filesUploadedCount || 0), Array.isArray(context.materialPacket?.files) ? context.materialPacket.files.length : 0);
   const filesAnalyzedCount = Number(output.sourceCoverage?.filesAnalyzedCount || output.sourceCoverage?.filesAnalyzed || 0);
   if (filesUploadedCount > 1 && filesAnalyzedCount <= 1) errors.push('Çoklu dosya yüklendiği halde çıktı tek dosya kapsamı gösteriyor.');
   const shallowSections = (sections || []).filter((section) => String(section.teachingText || section.content || '').trim().split(/\s+/).length < 45);
