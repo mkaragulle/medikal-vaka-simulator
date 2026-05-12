@@ -1013,7 +1013,7 @@ function App() {
               onClick={resetExamToHome}
               aria-pressed={mode === 'study' && !examState?.active}
             >
-              Öğrenme modu
+              Öğrenme
             </button>
             <button
               type="button"
@@ -1021,7 +1021,7 @@ function App() {
               onClick={() => setMode('exam')}
               aria-pressed={mode === 'exam' || examState?.active}
             >
-              Sınav modu
+              Sınav
             </button>
             <button
               type="button"
@@ -1030,7 +1030,7 @@ function App() {
               aria-pressed={hardMode}
               title="Referans değerleri ve ipuçları azaltılır"
             >
-              Zor mod
+              Zor
             </button>
           </div>
         ) : (

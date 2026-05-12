@@ -273,81 +273,146 @@ function buildLocalQuestions(material, lesson) {
   const sourceText = normalizeSourceText(material);
   const sourceClues = buildSourceObjectiveList(material, topic);
   const keywords = extractKeywords(sourceText, topic);
+  const lowerTopic = `${topic} ${sourceText}`.toLocaleLowerCase('tr');
+  const isBiochemIntro = /biyokimya|biochemistry|canlı kimyası|organik|inorganik|element/iu.test(lowerTopic);
   const hasReadableText = sourceText.length > 120 && sourceClues.length >= 3;
+
+  if (isBiochemIntro) {
+    const items = [
+      {
+        difficulty: 'easy', target: 'Biyokimyanın kapsamını ayırt etmek',
+        stem: 'Bir öğrenci biyokimyanın yalnızca proteinleri veya yalnızca hücre çekirdeğini inceleyen dar bir alan olduğunu düşünüyor.',
+        question: 'Bu yanılgıyı düzeltmek için en doğru ifade hangisidir?', correct: 'A',
+        options: ['Biyokimya, canlı sistemlerdeki kimyasal olayları moleküler düzeyde inceler.', 'Biyokimya yalnızca proteinlerin üç boyutlu yapısını inceler.', 'Biyokimya sadece hücre çekirdeğinde gerçekleşen reaksiyonlarla ilgilenir.', 'Biyokimya organizmaların makroskopik anatomisini inceler.', 'Biyokimya yalnızca hastalık etkenlerinin tanısını yapan bir laboratuvar dalıdır.'],
+        exp: 'Biyokimya hücre içi ve hücre dışı kimyasal olayları moleküler düzeyde açıklar; bu nedenle tek bir molekül grubu ya da tek bir organel ile sınırlı değildir.',
+        note: 'Kapsam sorularında ana ayrım: moleküler kimyasal olaylar, makroskopik anatomi değil.'
+      },
+      {
+        difficulty: 'easy', target: 'Organik-inorganik ayrımını yorumlamak',
+        stem: 'Bir slaytta karbon içeren bazı bileşiklerin organik, karbonat ve bikarbonat gibi bazı bileşiklerin ise inorganik kabul edildiği belirtiliyor.',
+        question: 'Bu bilgi hangi temel sınav tuzağını gösterir?', correct: 'B',
+        options: ['Karbon içeren her bileşik otomatik olarak organiktir.', 'Karbon içermek tek başına organik sınıflandırma için yeterli değildir.', 'İnorganik bileşikler canlılarda bulunmaz.', 'Organik bileşikler yalnızca suda çözünmeyen maddelerdir.', 'Karbonat bileşikleri proteinlerin yapı taşıdır.'],
+        exp: 'Organik-inorganik ayrımında karbon varlığı tek başına yeterli değildir; karbonatlar gibi istisnalar inorganik grupta değerlendirilir.',
+        note: 'Karbon varlığı ≠ her zaman organik.'
+      },
+      {
+        difficulty: 'easy', target: 'Canlıların kimyasal bileşimini sınıflamak',
+        stem: 'Hücrenin yapısı anlatılırken su, mineraller, karbonhidratlar, lipitler, proteinler ve nükleik asitler birlikte ele alınıyor.',
+        question: 'Bu gruplama en doğru şekilde nasıl yorumlanır?', correct: 'C',
+        options: ['Bunların tümü organik makromoleküldür.', 'Su ve mineraller yalnızca patolojik durumda hücrede bulunur.', 'Canlı yapı hem inorganik hem organik bileşenlerden oluşur.', 'Nükleik asitler enerji depolayan lipitlerdir.', 'Proteinler genetik bilginin doğrudan depolandığı ana moleküldür.'],
+        exp: 'Su ve mineraller inorganik; karbonhidrat, lipit, protein ve nükleik asitler organik bileşenlerdir. Canlı kimyası bu iki grubu birlikte değerlendirir.',
+        note: 'Hücre kimyası = inorganik + organik bileşenlerin işlevsel birlikteliği.'
+      },
+      {
+        difficulty: 'medium', target: 'Moleküler düzey ile klinik sonuç ilişkisi kurmak',
+        stem: 'Bir enzim aktivitesindeki bozukluk, hücrede ara ürün birikimine ve klinik belirti ortaya çıkmasına yol açıyor.',
+        question: 'Bu örnek biyokimyanın tıp eğitimindeki hangi rolünü en iyi açıklar?', correct: 'D',
+        options: ['Anatomik yapıların makroskopik yerleşimini öğretmesi', 'Hastalıkları yalnızca mikroskop görüntüsüyle sınıflaması', 'Sadece mikroorganizmaların çoğalmasını incelemesi', 'Moleküler olayları fizyolojik ve patolojik sonuçlarla ilişkilendirmesi', 'Tedaviyi klinik bulgu olmadan ezberletmesi'],
+        exp: 'Biyokimya moleküler mekanizma ile fizyolojik/klinik sonuç arasındaki bağı kurar. Enzim defekti → metabolit birikimi → klinik bulgu bu mantığın tipik örneğidir.',
+        note: 'Mekanizma sorularında akış: molekül değişir → yolak etkilenir → hücresel/klinik sonuç oluşur.'
+      },
+      {
+        difficulty: 'medium', target: 'Makromolekül işlevlerini ayırt etmek',
+        stem: 'Bir tabloda karbonhidrat, lipit, protein ve nükleik asitlerin hücrede farklı görevler üstlendiği gösteriliyor.',
+        question: 'Aşağıdaki eşleştirmelerden hangisi en uygundur?', correct: 'E',
+        options: ['Karbonhidratlar genetik bilginin ana depolayıcısıdır.', 'Lipitler ribozomda aminoasit dizisini doğrudan belirler.', 'Nükleik asitler membranın temel hidrofobik bariyeridir.', 'Proteinler yalnızca enerji deposu olarak görev yapar.', 'Proteinler enzimatik/katalitik işlevlerde, nükleik asitler genetik bilgide önemlidir.'],
+        exp: 'Proteinler enzim ve yapısal/taşıyıcı işlevlerde; DNA/RNA ise genetik bilgi ve ifade süreçlerinde temel rol oynar. Çeldiriciler molekül sınıflarının görevlerini karıştırır.',
+        note: 'Makromolekül sorularında görev karıştırmaları sık çeldiricidir.'
+      },
+      {
+        difficulty: 'medium', target: 'Su ve minerallerin biyokimyasal önemini açıklamak',
+        stem: 'Ders materyalinde su ve mineraller organik moleküller kadar vurgulanıyor.',
+        question: 'Bunun temel nedeni aşağıdakilerden hangisidir?', correct: 'A',
+        options: ['Hücre içi reaksiyon ortamı, iyon dengesi ve enzim fonksiyonu için gerekli olmaları', 'Tüm genetik bilgiyi doğrudan depolamaları', 'Peptid bağlarıyla protein zinciri oluşturmaları', 'Karbon iskeletleriyle tüm organik molekülleri oluşturmaları', 'Yalnızca hastalık durumunda hücreye girmeleri'],
+        exp: 'Su çözücü/reaksiyon ortamı sağlar; mineraller iyon dengesi, kofaktörlük ve elektriksel süreçlerde rol alır. Bu yüzden inorganik bileşenler de biyokimyanın temel parçasıdır.',
+        note: 'İnorganik bileşenler “pasif dolgu” değil, hücresel işlev için gereklidir.'
+      },
+      {
+        difficulty: 'medium', target: 'Tanım yerine uygulama üzerinden kapsam seçmek',
+        stem: 'Bir araştırmacı glukoz yıkımı sırasında ATP üretimini ve bu sürecin hücre metabolizmasına etkisini inceliyor.',
+        question: 'Bu çalışma hangi alanın kapsamına en doğrudan girer?', correct: 'B',
+        options: ['Makroskopik anatomi', 'Biyokimya', 'Davranış bilimleri', 'Topografik anatomi', 'Klasik histoloji boyama tekniği'],
+        exp: 'Glukoz yıkımı, ATP üretimi ve metabolik yolaklar canlı kimyasal süreçlerinin moleküler açıklamasıdır; bu doğrudan biyokimyanın kapsamına girer.',
+        note: 'Soru tanım sormasa bile metabolizma + ATP + moleküler yolak biyokimya ipucudur.'
+      },
+      {
+        difficulty: 'medium', target: 'Hücre içi ve hücre dışı kimyasal olayları birlikte düşünmek',
+        stem: 'Bir hormon hücre dışından reseptöre bağlanıyor ve hücre içinde enzim aktivitesini değiştiriyor.',
+        question: 'Bu olay biyokimyasal açıdan en iyi nasıl yorumlanır?', correct: 'C',
+        options: ['Sadece anatomik yerleşim değişikliğidir.', 'Yalnızca mikrobiyolojik çoğalma örneğidir.', 'Hücre dışı sinyalin hücre içi kimyasal yanıtı düzenlemesidir.', 'Organik moleküllerin canlıda bulunmadığını gösterir.', 'Sadece çekirdekte gerçekleşen bir olaydır.'],
+        exp: 'Biyokimya hücre dışı sinyal ile hücre içi kimyasal yanıt arasındaki bağlantıyı inceler. Reseptör aktivasyonu → enzim aktivitesi değişimi bu akışa örnektir.',
+        note: 'Hücre dışı uyaran + hücre içi yanıt = moleküler düzenleme mantığı.'
+      },
+      {
+        difficulty: 'hard', target: 'Basit tanımı mekanizma mantığına çevirmek',
+        stem: 'Bir öğrenci “biyokimya canlı kimyasıdır” ifadesini ezberliyor ancak bunun sınavda nasıl kullanılacağını ayırt edemiyor.',
+        question: 'Bu ifadeyi sınav açısından en iyi genişleten yorum hangisidir?', correct: 'D',
+        options: ['Canlılarda yalnızca tek bir molekül tipi incelenir.', 'Biyokimya klinik sonuçlarla ilişki kurmaz.', 'Biyokimya yalnızca isimlendirme ve etimoloji bilgisidir.', 'Canlı sistemlerde molekül, reaksiyon, enerji ve düzenleme ilişkisi neden-sonuç içinde incelenir.', 'Biyokimya sadece hastane laboratuvarında test çalışmaktır.'],
+        exp: '“Canlı kimyası” sınavda yüzeysel bir tanım değil; molekül → reaksiyon → enerji/düzenleme → hücresel sonuç ilişkisini kurma becerisidir.',
+        note: 'Ezber tanımı mekanizma zincirine çevirmek komite sorularında ayırt ettiricidir.'
+      },
+      {
+        difficulty: 'hard', target: 'Çeldirici ayrımı yapmak',
+        stem: 'Bir soruda biyokimya, moleküler biyoloji, anatomi ve mikrobiyoloji seçenekleri birlikte veriliyor.',
+        question: 'Biyokimyayı diğerlerinden ayıran en güçlü ipucu hangisidir?', correct: 'A',
+        options: ['Canlı sistemlerdeki kimyasal reaksiyonların ve moleküler dönüşümlerin açıklanması', 'Organların makroskopik komşuluklarının gösterilmesi', 'Mikroorganizmaların tür düzeyinde sınıflandırılması', 'Dokuların yalnızca ışık mikroskobunda boyanması', 'Davranışın sosyal çevre ile açıklanması'],
+        exp: 'Biyokimyanın ayırt ettirici odağı kimyasal reaksiyonlar, metabolik dönüşümler ve moleküler işlevlerdir. Diğer seçenekler farklı temel bilim alanlarına aittir.',
+        note: 'Ayırt ettirici kelimeler: reaksiyon, metabolizma, moleküler dönüşüm, enzim, enerji.'
+      }
+    ];
+    return items.map((item, index) => {
+      const ids = ['A','B','C','D','E'];
+      const options = ids.map((id, i) => ({ id, text: item.options[i] }));
+      return {
+        id: createId('komite-q'), materialId: material.id, mode: 'komite', questionNumber: index + 1,
+        difficulty: item.difficulty, learningTarget: item.target, sourceReference: lesson?.sourceReferences?.[0] || 'Ayrıştırılan materyal metni',
+        stem: item.stem, supportingData: [], question: item.question, options, correctOptionId: item.correct,
+        explanation: item.exp,
+        optionFeedback: Object.fromEntries(options.map((option) => [option.id, option.id === item.correct ? item.exp : `Bu seçenek aynı konu ailesinden bir çeldiricidir; ancak bu soruda ${item.target.toLocaleLowerCase('tr')} hedefini karşılamaz.`])),
+        learningPoint: item.note, memoryNote: item.note,
+        userAnswer: null, isWrong: false, isFavorite: false, isDifficult: false, createdAt: Date.now(),
+      };
+    });
+  }
 
   if (!hasReadableText) {
     return Array.from({ length: 10 }, (_, index) => ({
-      id: createId('komite-q'),
-      materialId: material.id,
-      mode: 'komite',
-      questionNumber: index + 1,
-      difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard',
-      learningTarget: 'Materyal metni eksikliği farkındalığı',
-      sourceReference: 'Dosya içeriği okunamadı',
-      stem: `${material.fileName} adlı materyal yüklendi ancak dosyadan yeterli okunabilir metin çıkarılamadı. Bu nedenle materyale dayalı gerçek soru üretimi için kaynak metnin okunabilir olması gerekir.`,
-      supportingData: [`Çalışma hedefi: ${material.learningTarget || 'Komite sınavı'}`],
-      question: 'Bu materyalden güvenilir soru üretmek için öncelikle aşağıdakilerden hangisi gereklidir?',
+      id: createId('komite-q'), materialId: material.id, mode: 'komite', questionNumber: index + 1,
+      difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard', learningTarget: 'Okunabilir kaynak gerekliliği', sourceReference: 'Dosya içeriği okunamadı',
+      stem: `${cleanMaterialTitle(material)} için yeterli okunabilir metin çıkarılamadı.`, supportingData: [],
+      question: 'Materyale bağlı güvenilir soru üretimi için en doğru ilk adım hangisidir?',
       options: [
-        { id: 'A', text: 'Okunabilir ders metni veya slayt içeriği sağlamak' },
-        { id: 'B', text: 'Yalnızca dosya adına göre ayrıntılı biyokimya sorusu üretmek' },
-        { id: 'C', text: 'Görseller analiz edilmeden şekil yorum sorusu hazırlamak' },
-        { id: 'D', text: 'Kaynakta bulunmayan mekanizmaları kesin bilgi gibi eklemek' },
-        { id: 'E', text: 'Komite ve sınıf bilgisini tek başına yeterli kabul etmek' },
+        { id: 'A', text: 'Okunabilir slayt metni veya ders notu sağlamak' },
+        { id: 'B', text: 'Dosya adına göre ayrıntılı klinik soru uydurmak' },
+        { id: 'C', text: 'Görseller analiz edilmeden şekil yorumu yapmak' },
+        { id: 'D', text: 'Kaynakta olmayan tedavi eşiklerini kesin bilgi gibi eklemek' },
+        { id: 'E', text: 'Sadece sınıf bilgisini bilimsel kaynak kabul etmek' },
       ],
-      correctOptionId: 'A',
-      explanation: 'Materyal temelli soru üretiminde kaynak metin okunabilir olmalıdır. Dosya adı ve komite bilgisi tek başına bilimsel, kaynak bağlı soru üretmek için yeterli değildir.',
-      optionFeedback: {
-        A: 'Okunabilir metin sağlamak, sorunun materyale dayanmasını ve uydurma bilgi içermemesini sağlar.',
-        B: 'Yalnızca dosya adına göre ayrıntılı soru üretmek kaynak bağlılık açısından güvenilir değildir.',
-        C: 'Görsel analiz edilmeden şekil yorum sorusu üretmek öğrenciye hatalı bilgi verebilir.',
-        D: 'Kaynakta bulunmayan mekanizmaları kesin bilgi gibi eklemek tıbbi güvenilirliği düşürür.',
-        E: 'Komite ve sınıf bilgisi bağlam sağlar; ancak gerçek içerik yerine geçmez.',
-      },
-      learningPoint: 'KOMİTE modunda güvenilir AI üretimi, okunabilir kaynak metin veya doğru dosya ayrıştırması gerektirir.',
-      memoryNote: 'Kaynak yoksa ayrıntılı soru yok; önce materyali okut.',
-      userAnswer: null,
-      isWrong: false,
-      isFavorite: false,
-      isDifficult: false,
-      createdAt: Date.now(),
+      correctOptionId: 'A', explanation: 'Kaynak metin okunabilir değilse gerçek materyal temelli soru üretimi güvenilir olmaz.',
+      optionFeedback: { A: 'Okunabilir metin materyal bağlılığı sağlar.', B: 'Dosya adına göre soru uydurmak güvenilir değildir.', C: 'Görsel analiz edilmeden görsel yorumu yapılamaz.', D: 'Kaynak dışı eşik eklemek hatalıdır.', E: 'Sınıf bilgisi bağlamdır, kaynak değildir.' },
+      learningPoint: 'Kaynak okunmadan kaliteli komite sorusu üretilemez.', memoryNote: 'Önce metin, sonra soru.', userAnswer: null, isWrong: false, isFavorite: false, isDifficult: false, createdAt: Date.now(),
     }));
   }
 
-  const targets = keywords.length ? keywords : [topic];
+  const ids = ['A', 'B', 'C', 'D', 'E'];
   return Array.from({ length: 10 }, (_, index) => {
-    const target = targets[index % targets.length];
-    const sourceClue = sourceClues[index % sourceClues.length];
-    const correct = ['A', 'B', 'C', 'D', 'E'][index % 5];
-    const options = [
-      { id: 'A', text: `${target} kavramını kaynak metindeki ipucuyla ilişkilendirmek` },
-      { id: 'B', text: `${target} başlığını kaynak dışı ezber bilgiyle açıklamak` },
-      { id: 'C', text: `${target} yerine yalnızca dosya adından çıkarım yapmak` },
-      { id: 'D', text: `${target} konusunu görsel analiz edilmiş gibi yorumlamak` },
-      { id: 'E', text: `${target} için kaynakta olmayan kesin bir klinik sonuç eklemek` },
-    ];
-    const correctText = options.find((option) => option.id === correct)?.text || options[0].text;
+    const clue = sourceClues[index % sourceClues.length];
+    const target = keywords[index % Math.max(keywords.length, 1)] || topic;
+    const correct = ids[index % 5];
+    const distractors = keywords.filter((k) => k !== target).slice(0, 4);
+    const optionTexts = ids.map((id, i) => id === correct
+      ? `Kaynak cümledeki ana ilişkiyi ${target} kavramı üzerinden açıklamak`
+      : `${distractors[i % Math.max(distractors.length, 1)] || 'başka bir kavram'} ile ilgisiz veya eksik bir yorum yapmak`);
+    const options = ids.map((id, i) => ({ id, text: optionTexts[i] }));
     return {
-      id: createId('komite-q'),
-      materialId: material.id,
-      mode: 'komite',
-      questionNumber: index + 1,
-      difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard',
-      learningTarget: `${target} bilgisini kaynak metinle ilişkilendirme`,
-      sourceReference: lesson?.sourceReferences?.[0] || 'Ayrıştırılan materyal metni',
-      stem: `${material.classYear}. sınıf ${material.committee || material.course || 'komite'} çalışmasında ${topic} materyalinden şu ifade öne çıkmaktadır: “${sourceClue}”. Öğrencinin bu bilgiyi kaynak metne bağlı kalarak yorumlaması beklenmektedir.`,
-      supportingData: [`Kaynak ipucu: ${sourceClue}`, `Çalışma hedefi: ${material.learningTarget || 'Komite sınavı'}`],
-      question: 'Bu bilgiye göre en uygun çalışma ve yorumlama yaklaşımı aşağıdakilerden hangisidir?',
-      options,
-      correctOptionId: correct,
-      explanation: `${correctText}, kaynak metindeki ipucunu doğrudan kullanır ve materyal dışı varsayım eklemez. Bu nedenle komite materyaline bağlı güvenli öğrenme için en uygun seçenektir.`,
-      optionFeedback: Object.fromEntries(options.map((option) => [option.id, optionFeedbackForSourceQuestion(option, correct, target, sourceClue)])),
-      learningPoint: 'Materyal temelli soruda ana hedef, kaynakta yazan bilgiyi uydurma ek yapmadan doğru kavrama bağlamaktır.',
-      memoryNote: `${target}: önce kaynak ipucunu bul, sonra mekanizma/klinik bağlantıyı kur.`,
-      userAnswer: null,
-      isWrong: false,
-      isFavorite: false,
-      isDifficult: false,
-      createdAt: Date.now(),
+      id: createId('komite-q'), materialId: material.id, mode: 'komite', questionNumber: index + 1,
+      difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard', learningTarget: `${target} ilişkisini yorumlamak`, sourceReference: lesson?.sourceReferences?.[0] || 'Ayrıştırılan materyal metni',
+      stem: `Materyalde şu bilgi vurgulanıyor: “${clue}”`, supportingData: [],
+      question: 'Bu bilgi sınav mantığıyla en doğru nasıl yorumlanır?', options, correctOptionId: correct,
+      explanation: `Doğru seçenek, kaynak cümledeki ana fikri ${target} kavramına bağlar; kaynak dışı veya görselden uydurulmuş yorum eklemez.`,
+      optionFeedback: Object.fromEntries(options.map((option) => [option.id, option.id === correct ? `Bu yorum kaynak ipucunu doğrudan ${target} kavramına bağladığı için uygundur.` : 'Bu seçenek aynı konu çevresinde görünse de kaynak cümledeki ana ilişkiyi doğrudan açıklamaz.'])),
+      learningPoint: `Kaynak cümleyi ezberlemek yerine ${target} ile kurduğu ilişkiyi yakala.`, memoryNote: `${target}: kaynak ipucu → kavram → sonuç`,
+      userAnswer: null, isWrong: false, isFavorite: false, isDifficult: false, createdAt: Date.now(),
     };
   });
 }
@@ -356,48 +421,43 @@ function buildLocalFlashcards(material, lesson) {
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const keywords = extractKeywords(sourceText, topic);
+  const lowerTopic = `${topic} ${sourceText}`.toLocaleLowerCase('tr');
+  const isBiochemIntro = /biyokimya|biochemistry|canlı kimyası|organik|inorganik|element/iu.test(lowerTopic);
   const sourceClues = buildSourceObjectiveList(material, topic);
   const hasReadableText = sourceText.length > 120 && sourceClues.length;
-  const targets = hasReadableText ? sourceClues.slice(0, 12) : [
-    'Okunabilir kaynak metin gerekir',
-    'Dosya adı tek başına yeterli değildir',
-    'Görsel analiz edilmeden yorum yapılmaz',
+
+  const biochemCards = [
+    ['definition', 'easy', 'Biyokimyanın sınavlık kapsamı en kısa nasıl ifade edilir?', 'Canlı sistemlerdeki kimyasal olayları moleküler düzeyde inceler.', 'Ana vurgu molekül, reaksiyon, enerji ve düzenlemedir; anatomi veya mikrobiyoloji kapsamıyla karıştırılmamalıdır.', 'Reaksiyon/metabolizma/enzim/enerji kelimeleri biyokimya ipucudur.'],
+    ['exam_trap', 'easy', 'Karbon içeren her bileşik organik midir?', 'Hayır. Karbonatlar ve bikarbonatlar gibi bazı karbonlu bileşikler inorganik kabul edilir.', 'Organik-inorganik ayrımında karbon varlığı tek başına yeterli değildir.', 'Karbon varlığı ≠ otomatik organik.'],
+    ['comparison', 'easy', 'Su ve mineraller hangi gruptadır; neden önemlidir?', 'İnorganik gruptadır; reaksiyon ortamı, iyon dengesi ve enzim fonksiyonu için gereklidir.', 'Biyokimya yalnızca organik makromolekülleri değil, hücresel kimyasal ortamı da inceler.', 'Su/mineral pasif dolgu değildir.'],
+    ['comparison', 'medium', 'Protein ve nükleik asitlerin temel işlev farkı nedir?', 'Proteinler çoğunlukla kataliz/yapı/taşıma; nükleik asitler genetik bilgi ve ifade süreçleriyle ilişkilidir.', 'Çeldiriciler genellikle makromolekül işlevlerini birbirine karıştırır.', 'Enzim denince protein; genetik bilgi denince DNA/RNA düşün.'],
+    ['mechanism', 'medium', 'Enzim defekti klinik bulguya nasıl bağlanır?', 'Enzim aktivitesi bozulur → metabolik yolak aksar → ara ürün birikir/ürün azalır → hücresel veya klinik sonuç oluşur.', 'Biyokimya moleküler bozukluğu klinik fenotipe bağlayan neden-sonuç dilini kullanır.', 'Akış kur: molekül → yolak → sonuç.'],
+    ['must_know', 'medium', '“Biyokimya canlı kimyasıdır” ifadesi neden tek başına yeterli değildir?', 'Çünkü sınavda bu ifade molekül, reaksiyon, enerji ve düzenleme ilişkisini yorumlama becerisine çevrilmelidir.', 'Salt tanım ezberi yerine mekanizma ve sonuç ilişkisi beklenir.', 'Tanımı mekanizmaya çevir.'],
+    ['clinical_clue', 'medium', 'Hormonun reseptöre bağlanıp hücre içi enzimleri değiştirmesi neyi gösterir?', 'Hücre dışı sinyalin hücre içi kimyasal yanıtı düzenlediğini gösterir.', 'Bu örnek biyokimyanın hücre içi/hücre dışı kimyasal olayları birlikte ele aldığını gösterir.', 'Sinyal → reseptör → hücre içi kimyasal yanıt.'],
+    ['exam_trap', 'hard', 'Biyokimyayı anatomiden ayıran en güçlü ipucu nedir?', 'Makroskopik yerleşim değil, moleküler reaksiyon ve metabolik dönüşüm anlatılmasıdır.', 'Anatomi organ/komşuluk; biyokimya molekül/reaksiyon/enerji odağıyla ayrılır.', 'Makroskopik yapı değil moleküler süreç.'],
+    ['comparison', 'hard', 'Karbonhidrat, lipit, protein ve nükleik asit çeldiricileri nasıl ayrılır?', 'Enerji/ yapı, membran/enerji deposu, kataliz/yapı ve genetik bilgi rolleri ayrı düşünülür.', 'Sınavda yanlış seçenekler genellikle bu işlevleri birbiriyle değiştirir.', 'Molekül sınıfı → ana işlev eşleştirmesi yap.'],
+    ['must_know', 'medium', 'Biyokimyada “moleküler düzey” ne anlama gelir?', 'Olayların atom/molekül, bağ, reaksiyon, enzim ve yolak düzeyinde açıklanmasıdır.', 'Bu ifade, hücresel veya klinik sonucu kimyasal mekanizmaya bağlamayı gerektirir.', 'Moleküler düzey = neden-sonuç kimyası.'],
+    ['definition', 'easy', 'Organik ve inorganik bileşenleri birlikte düşünmek neden gerekir?', 'Çünkü canlı hücrenin işlevi organik makromoleküller kadar su, iyon ve mineral dengesine de bağlıdır.', 'Hücre kimyası tek grup molekülle açıklanamaz.', 'Hücre kimyası = organik + inorganik işbirliği.'],
+    ['clinical_clue', 'hard', 'ATP üretimi ve metabolik yolak sorusu hangi alanı çağrıştırır?', 'Biyokimya; çünkü enerji üretimi ve metabolizma moleküler kimyasal süreçlerdir.', 'Metabolizma/ATP/enzim/yolak ifadeleri biyokimya kapsamına yönlendirir.', 'ATP + metabolizma = biyokimya ipucu.']
   ];
 
+  const baseCards = isBiochemIntro ? biochemCards : (hasReadableText ? sourceClues.slice(0, 14).map((clue, index) => {
+    const keyword = keywords[index % Math.max(keywords.length, 1)] || topic;
+    return ['must_know', index < 4 ? 'easy' : index < 10 ? 'medium' : 'hard', `${keyword} bilgisini sınavda hangi karar cümlesiyle hatırlamalısın?`, truncate(stripGenericMeta(clue), 180), `Bu kart kaynak cümleyi kopyalamak için değil, ${keyword} ile ilişkili ana sonucu geri çağırmak için tasarlandı.`, `${keyword}: kaynak ipucu → sınav kararı`];
+  }) : [
+    ['must_know', 'easy', 'Dosyadan metin okunamadığında ilk yapılacak şey nedir?', 'Okunabilir slayt metni veya ders notunu yapıştırmak.', 'Kaynak okunmadan ayrıntılı soru ve kart üretmek uydurma riskini artırır.', 'Önce kaynak metin, sonra üretim.'],
+    ['exam_trap', 'medium', 'Görsel analiz edilmeden görsel hakkında ne yapılmamalıdır?', 'Şekilde varmış gibi ayrıntılı yorum yapılmamalıdır.', 'Sistem yalnızca okunabilir metin veya açıkça analiz edilen görsel hakkında konuşmalıdır.', 'Okunmayan görsel uydurulmaz.'],
+    ['must_know', 'medium', 'Dosya adı tek başına neden yeterli kaynak değildir?', 'Çünkü öğrenme hedefini gösterir ama bilimsel içerik ve ayrıntı sağlamaz.', 'Materyal bağlı içerik için dosyanın metni veya kullanıcının yapıştırdığı not gerekir.', 'Başlık kaynak değildir.']
+  ]);
+
   return {
-    id: createId('deck'),
-    deckTitle: `${cleanMaterialTitle(material)} Hap Kartları`,
-    materialId: material.id,
-    cards: targets.map((target, index) => {
-      const keyword = keywords[index % Math.max(keywords.length, 1)] || topic;
-      return {
-        id: createId('card'),
-        userId: material.userId,
-        materialId: material.id,
-        mode: 'komite',
-        classYear: material.classYear,
-        committee: material.committee,
-        course: material.course,
-        type: hasReadableText ? (index % 3 === 0 ? 'clinical_clue' : index % 3 === 1 ? 'mechanism' : 'must_remember') : 'must_remember',
-        difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard',
-        front: hasReadableText
-          ? `${truncate(target.replace(/[:.;]$/u, ''), 115)} bilgisinden sınavda hangi temel sonuç çıkarılır?`
-          : `${target} durumunda güvenilir içerik üretimi için ilk yapılması gereken nedir?`,
-        back: hasReadableText
-          ? `${truncate(stripGenericMeta(target), 180)}`
-          : 'Okunabilir kaynak metin sağlanmalı veya ilgili slayt metni elle yapıştırılmalıdır.',
-        explanation: hasReadableText
-          ? `${keyword} bilgisini ezber cümlesi olarak değil, kaynak ipucundan çıkarılan karar noktası olarak geri çağır.`
-          : 'Kaynak okunmadan ayrıntılı ders, soru veya kart üretmek uydurma riskini artırır.',
-        sourceReference: lesson?.sourceReferences?.[0] || (hasReadableText ? 'Ayrıştırılan materyal metni' : 'Dosya içeriği okunamadı'),
-        tags: [topic, keyword, material.learningTarget || 'Komite'].filter(Boolean),
-        isUserCreated: false,
-        isFavorite: false,
-        isDifficult: false,
-        repeatStatus: 'new',
-        createdAt: Date.now(),
-      };
-    }),
+    id: createId('deck'), deckTitle: `${cleanMaterialTitle(material)} Hap Kartları`, materialId: material.id,
+    cards: baseCards.slice(0, 20).map(([type, difficulty, front, back, explanation, examTrap], index) => ({
+      id: createId('card'), userId: material.userId, materialId: material.id, mode: 'komite', classYear: material.classYear, committee: material.committee, course: material.course,
+      type, difficulty, front, back, explanation, examTrap,
+      sourceReference: lesson?.sourceReferences?.[0] || (hasReadableText ? 'Ayrıştırılan materyal metni' : 'Dosya içeriği okunamadı'),
+      tags: [topic, type, material.learningTarget || 'Komite'].filter(Boolean), isUserCreated: false, isFavorite: false, isDifficult: false, repeatStatus: 'new', createdAt: Date.now(),
+    })),
   };
 }
 
@@ -521,9 +581,9 @@ function AsyncActionButton({ status = 'idle', idleLabel, loadingLabel, successLa
   );
 }
 
-function MaterialTree({ materials, activeMaterialId, onOpenMaterial }) {
+function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMaterial }) {
   const grouped = useMemo(() => materials.reduce((acc, material) => {
-    const classKey = `${material.classYear || '?'} . Sınıf`;
+    const classKey = `${material.classYear || '?'}. Sınıf`;
     const courseKey = material.committee || material.course || 'Komite / Ders belirtilmedi';
     if (!acc[classKey]) acc[classKey] = {};
     if (!acc[classKey][courseKey]) acc[classKey][courseKey] = [];
@@ -554,6 +614,19 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial }) {
                     <Icon name="Notes" size={16} />
                     <span>{material.fileName}</span>
                     <small>{material.lesson ? 'Ders hazır' : 'Taslak'}</small>
+                    {onDeleteMaterial ? (
+                      <span
+                        role="button"
+                        tabIndex={0}
+                        className="komite-tree-delete"
+                        aria-label={`${material.fileName} materyalini sil`}
+                        title="Sil"
+                        onClick={(event) => { event.stopPropagation(); onDeleteMaterial(material.id); }}
+                        onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); onDeleteMaterial(material.id); } }}
+                      >
+                        <Icon name="Trash2" size={15} />
+                      </span>
+                    ) : null}
                   </button>
                 ))}
               </div>
@@ -573,28 +646,28 @@ function KomiteDashboard({ materials, stats, onStart, onOpenMyMaterials, onOpenC
         <span className="komite-card-icon"><Icon name="ClipboardList" /></span>
         <span className="komite-card-kicker">Arşiv</span>
         <strong>Çalıştıklarım</strong>
-        <p>{latest ? `Son materyal: ${truncate(latest.fileName, 44)}` : 'Sınıf, komite ve materyal bazlı çalışma ağacını aç.'}</p>
+        <p>{latest ? `Son: ${truncate(latest.fileName, 38)}` : 'Sınıf, komite ve materyal bazlı çalışma ağacını aç.'}</p>
         <small>{materials.length} materyal · {stats.readyMaterials} hazır çalışma alanı</small>
       </button>
       <button type="button" className="komite-dashboard-card primary" onClick={onStart}>
         <span className="komite-card-icon"><Icon name="Sparkles" /></span>
         <span className="komite-card-kicker">Yeni materyal</span>
         <strong>Çalışmaya Başla</strong>
-        <p>Sınıf/komite seç, dosya ekle ve materyal için ders, soru, kart ve tekrar alanı oluştur.</p>
-        <small>PDF öncelikli · PPTX/DOCX metadata destekli</small>
+        <p>Komite dosyalarını yükle; ders, soru ve kart üretimini aynı çalışma alanında başlat.</p>
+        <small>PDF/PPTX/DOCX/TXT</small>
       </button>
       <button type="button" className="komite-dashboard-card" onClick={onOpenCards}>
         <span className="komite-card-icon"><Icon name="LayeredCards" /></span>
         <span className="komite-card-kicker">Aktif tekrar</span>
         <strong>Hap Kartlar</strong>
-        <p>Materyal bazlı kartları çalış; zor, favori ve tekrar işaretleriyle filtrele.</p>
+        <p>Kartları çalış, zor ve favori olarak işaretle.</p>
         <small>{stats.cardCount} kart · {stats.difficultCards} zor kart</small>
       </button>
       <button type="button" className="komite-dashboard-card" onClick={onOpenReview}>
         <span className="komite-card-icon"><Icon name="RotateCcw" /></span>
         <span className="komite-card-kicker">Hedefli geri dönüş</span>
         <strong>Tekrar Merkezi</strong>
-        <p>Yanlış sorular, zor kartlar, favoriler ve zayıf konuları materyal bazlı gör.</p>
+        <p>Yanlış soru ve zor kartlara hızlı dön.</p>
         <small>{stats.wrongQuestions} yanlış soru · {stats.favoriteItems} favori</small>
       </button>
       {latest ? (
@@ -659,8 +732,8 @@ function StartFlow({ onCreate, onCancel }) {
       <div className="komite-section-head">
         <div>
           <span className="komite-kicker">Çalışmaya Başla</span>
-          <h2>Yeni komite materyali ekle</h2>
-          <p>Sınıf ve komite bilgisini kaydet; dosya metni okunabilirse ders, soru ve kart üretimi daha materyal odaklı olur.</p>
+          <h2>Materyal yükle</h2>
+          <p>İlgili komitenin tüm slaytlarını/dosyalarını yüklemek ders anlatımı, soru ve hap kart kalitesini belirgin artırır.</p>
         </div>
         <button type="button" className="btn btn-secondary" onClick={onCancel}>Vazgeç</button>
       </div>
@@ -691,22 +764,25 @@ function StartFlow({ onCreate, onCancel }) {
           <input value={form.university} onChange={(event) => update('university', event.target.value)} placeholder="Örn. İstanbul Üniversitesi" />
         </label>
         <label className="komite-file-drop">
-          <span>PDF / PPTX / DOCX / TXT yükle</span>
-          <input type="file" accept=".pdf,.pptx,.docx,.txt,.md" onChange={(event) => handleFile(event.target.files?.[0])} />
-          <strong>{selectedFile ? selectedFile.name : 'Dosya seç veya metin yapıştır'}</strong>
-          <small>{isExtracting ? 'Dosya metni ayrıştırılıyor…' : (fileNotice || 'PDF/PPTX/DOCX/TXT metin katmanı otomatik okunur; taranmış görseller için metin yapıştırabilirsin.')}</small>
+          <span>Materyal dosyası</span>
+          <div className="komite-upload-line">
+            <input type="file" accept=".pdf,.pptx,.docx,.txt,.md" onChange={(event) => handleFile(event.target.files?.[0])} />
+            {isExtracting ? <span className="komite-spinner" aria-hidden="true" /> : null}
+          </div>
+          <strong>{selectedFile ? selectedFile.name : 'PDF, PPTX, DOCX veya TXT seç'}</strong>
+          <small>{isExtracting ? 'Dosya okunuyor…' : (fileNotice || 'En iyi sonuç için aynı komiteye ait tüm ilgili dosyaları ekleyip okunabilir metin katmanını koru. Taranmış slaytlarda metni aşağıya yapıştırabilirsin.')}</small>
           {fileExtraction?.detectedStructure?.length ? <small>{fileExtraction.detectedStructure.length} bölüm/sayfa/slayt algılandı · {fileText.length.toLocaleString('tr-TR')} karakter metin çıkarıldı.</small> : null}
           {fileExtraction?.limitations?.length ? <small>{fileExtraction.limitations.join(' ')}</small> : null}
         </label>
         <label className="komite-textarea-label">
           <span>Okunabilir ders metni / slayt notu (opsiyonel ama önerilir)</span>
-          <textarea value={form.pastedText} onChange={(event) => update('pastedText', event.target.value)} rows={7} placeholder="Slayttan kopyaladığın metni buraya yapıştırırsan AI ders, soru ve kartları daha materyal odaklı üretir." />
+          <textarea value={form.pastedText} onChange={(event) => update('pastedText', event.target.value)} rows={7} placeholder="Slayttaki metni veya hocanın notunu buraya yapıştır. Görseli okunmayan slaytlarda bu alan kaliteyi ciddi artırır." />
         </label>
         <div className="komite-form-actions">
           <button type="submit" className="btn btn-primary" disabled={isExtracting || (!selectedFile && !form.pastedText.trim())}>
             <Icon name="Sparkles" /> Materyal çalışma alanı oluştur
           </button>
-          <p>Dosya içeriği otomatik okunamıyorsa sistem bunu açıkça belirtir; uydurma görsel/şekil açıklaması yapmaz.</p>
+          <p>Yükleme sonrası materyali açıp ders, 10 soru ve hap kart üretimini ayrı ayrı başlatabilirsin.</p>
         </div>
       </form>
     </section>
@@ -735,10 +811,12 @@ function LessonView({ material, onGenerate }) {
           <h3>{section.heading}</h3>
           <p>{section.teachingText || section.content}</p>
           {section.mechanismFlow?.length ? <div className="komite-flow-line">{section.mechanismFlow.map((step) => <span key={step}>{step}</span>)}</div> : null}
-          <div className="komite-two-note-grid">
-            <div><strong>Klinik bağlantı</strong><p>{section.examAngle || section.clinicalConnection}</p></div>
-            <div><strong>Sınav bağlantısı</strong><p>{section.commonTrap || section.examConnection}</p></div>
-          </div>
+          {(section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
+            <div className="komite-two-note-grid">
+              {(section.examAngle || section.clinicalConnection) ? <div><strong>Sınavda nasıl sorulur?</strong><p>{section.examAngle || section.clinicalConnection}</p></div> : null}
+              {(section.commonTrap || section.examConnection) ? <div><strong>Sık hata</strong><p>{section.commonTrap || section.examConnection}</p></div> : null}
+            </div>
+          ) : null}
         </article>
       ))}
       <div className="komite-summary-grid">
@@ -1092,7 +1170,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
           <AsyncActionButton status={aiStatus.cards} idleLabel="Kart" loadingLabel="Kartlar hazırlanıyor…" successLabel="Kartlar hazır" errorLabel="Tekrar dene" icon="LayeredCards" onClick={() => runWithLocalFallback('cards')} />
         </div>
       </div>
-      <InlineStatus status={Object.values(aiStatus).includes('error') ? 'error' : Object.values(aiStatus).includes('loading') ? 'loading' : 'idle'} message={Object.values(aiError).find(Boolean) || (Object.values(aiStatus).includes('loading') ? 'AI servisi yanıtı bekleniyor; bu sırada sayfa kullanılabilir.' : '')} />
+      <InlineStatus status={Object.values(aiStatus).includes('error') ? 'error' : 'idle'} message={Object.values(aiError).find(Boolean) || ''} />
       <div className="komite-tabbar" role="tablist" aria-label="Materyal çalışma alanı sekmeleri">
         {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}>{item.label}</button>)}
       </div>
@@ -1120,14 +1198,14 @@ function CardsHub({ materials, onOpenMaterial, onBack }) {
   );
 }
 
-function MyMaterialsPage({ materials, activeMaterialId, onOpenMaterial, onBack }) {
+function MyMaterialsPage({ materials, activeMaterialId, onOpenMaterial, onBack, onDeleteMaterial }) {
   return (
     <section className="komite-subpage card-surface">
       <div className="komite-section-head">
-        <div><span className="komite-kicker">Çalıştıklarım</span><h2>Sınıf → komite → materyal ağacı</h2><p>KOMİTE materyalleri TUS olgu havuzundan ayrı tutulur.</p></div>
+        <div><span className="komite-kicker">Çalıştıklarım</span><h2>Materyal kütüphanesi</h2><p>Sınıf, komite ve ders adına göre düzenlenmiş dosyalar.</p></div>
         <button type="button" className="btn btn-secondary" onClick={onBack}>Ana ekrana dön</button>
       </div>
-      <MaterialTree materials={materials} activeMaterialId={activeMaterialId} onOpenMaterial={onOpenMaterial} />
+      <MaterialTree materials={materials} activeMaterialId={activeMaterialId} onOpenMaterial={onOpenMaterial} onDeleteMaterial={onDeleteMaterial} />
     </section>
   );
 }
@@ -1192,6 +1270,11 @@ export default function KomiteModeWorkspace({ currentUser }) {
     setMaterials((current) => current.map((material) => material.id === materialId ? { ...material, ...patch, updatedAt: Date.now() } : material));
   };
 
+  const deleteMaterial = (materialId) => {
+    setMaterials((current) => current.filter((material) => material.id !== materialId));
+    setActiveMaterialId((current) => current === materialId ? null : current);
+  };
+
   const openMaterial = (materialId) => {
     setActiveMaterialId(materialId);
     setView('workspace');
@@ -1201,9 +1284,9 @@ export default function KomiteModeWorkspace({ currentUser }) {
     <section className="page-shell komite-page-shell">
       <section className="komite-hero card-surface">
         <div>
-          <span className="komite-kicker"><Icon name="ShieldCheck" size={16} /> KOMİTE öğrenme modu</span>
-          <h1>Slayttan derse, dersten soruya giden çalışma alanı.</h1>
-          <p>Bu alan TUS modundan ayrıdır. Öğrenci sınıf/komite seçer, materyal ekler ve o materyale bağlı ders, soru, kart ve tekrar akışı oluşturur.</p>
+          <span className="komite-kicker"><Icon name="ShieldCheck" size={16} /> KOMİTE</span>
+          <h1>Komite materyallerini tek yerde çalış.</h1>
+          <p>Dosyalarını yükle, ders anlatımı, soru ve hap kartları aynı materyal üzerinden oluştur. TUS modu ayrı kalır.</p>
         </div>
         <div className="komite-hero-stats">
           <span><strong>{materials.length}</strong> materyal</span>
@@ -1225,7 +1308,7 @@ export default function KomiteModeWorkspace({ currentUser }) {
       ) : null}
 
       {view === 'start' ? <StartFlow onCreate={createMaterial} onCancel={() => setView('dashboard')} /> : null}
-      {view === 'materials' ? <MyMaterialsPage materials={materials} activeMaterialId={activeMaterialId} onOpenMaterial={openMaterial} onBack={() => setView('dashboard')} /> : null}
+      {view === 'materials' ? <MyMaterialsPage materials={materials} activeMaterialId={activeMaterialId} onOpenMaterial={openMaterial} onDeleteMaterial={deleteMaterial} onBack={() => setView('dashboard')} /> : null}
       {view === 'cards' ? <CardsHub materials={materials} onOpenMaterial={openMaterial} onBack={() => setView('dashboard')} /> : null}
       {view === 'review' ? <section className="komite-subpage card-surface"><div className="komite-section-head"><div><span className="komite-kicker">Tekrar Merkezi</span><h2>Materyal odaklı tekrar</h2><p>Varsayılan kapsam aktif materyaldir; tüm materyallere geçiş kontrollüdür.</p></div><button type="button" className="btn btn-secondary" onClick={() => setView('dashboard')}>Ana ekrana dön</button></div><ReviewCenter materials={materials} activeMaterial={activeMaterial} onOpenMaterial={openMaterial} /></section> : null}
       {view === 'workspace' && activeMaterial ? <StudyWorkspace material={activeMaterial} materials={materials} onBack={() => setView('dashboard')} onPatchMaterial={patchMaterial} onOpenMaterial={openMaterial} /> : null}
