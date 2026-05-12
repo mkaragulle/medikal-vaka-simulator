@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { Icon } from './ui.jsx';
 import { localBackend } from '../services/localBackend.js';
+import { extractKomiteFile, getKomiteFileExtension } from '../utils/komiteFileExtraction.js';
 
 const KOMITE_MATERIALS_STORAGE_KEY = 'komite-materials-v1';
 const CLASS_YEARS = ['1', '2', '3', '4', '5', '6'];
@@ -32,8 +33,7 @@ function writeUserMaterials(userId, nextMaterials) {
 }
 
 function getFileType(fileName = '') {
-  const ext = String(fileName).split('.').pop()?.toLowerCase() || 'file';
-  return ext === fileName ? 'file' : ext;
+  return getKomiteFileExtension(fileName) || 'file';
 }
 
 function truncate(text = '', max = 72) {
@@ -46,9 +46,11 @@ function normalizeSourceText(material = {}) {
   return [material.extractedText, material.pastedText]
     .filter(Boolean)
     .join('\n\n')
-    .replace(/\s+/g, ' ')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
     .trim();
 }
+
 
 function deriveTopic(material = {}) {
   const fileTopic = String(material.fileName || '').replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').trim();
@@ -71,66 +73,137 @@ function extractKeywords(text = '', topic = '') {
   return [...new Set([...fromTopic, ...fromText])].slice(0, 10);
 }
 
+function splitSourceBlocks(text = '') {
+  return String(text || '')
+    .split(/\n\s*\n|(?=\[(?:Sayfa|Slayt|Ana belge)[^\]]*\])/iu)
+    .map((block) => block.replace(/\s+/g, ' ').trim())
+    .filter((block) => block.length >= 80)
+    .slice(0, 12);
+}
+
+function getImportantSentences(text = '', max = 8) {
+  const clean = String(text || '').replace(/\[[^\]]+\]/g, ' ').replace(/\s+/g, ' ').trim();
+  const sentences = clean
+    .split(/(?<=[.!?])\s+|\n+/u)
+    .map((sentence) => sentence.trim())
+    .filter((sentence) => sentence.length >= 45 && sentence.length <= 320);
+  if (sentences.length) return sentences.slice(0, max);
+  return splitSourceBlocks(text).map((block) => truncate(block, 260)).slice(0, max);
+}
+
+function sourceDrivenSections(material, topic) {
+  const text = normalizeSourceText(material);
+  const blocks = splitSourceBlocks(text);
+  if (!blocks.length) return [];
+  return blocks.slice(0, 5).map((block, index) => {
+    const headingMatch = block.match(/^\[(.*?)\]\s*(.{0,90})/u);
+    const sourceLabel = headingMatch?.[1] || `Materyal bölümü ${index + 1}`;
+    const firstLine = block.replace(/^\[[^\]]+\]\s*/u, '').split(/[.!?]\s|\n/u)[0]?.trim();
+    const heading = firstLine && firstLine.length >= 8 && firstLine.length <= 72 ? firstLine : sourceLabel;
+    const sentences = getImportantSentences(block, 3);
+    const content = sentences.length ? sentences.join(' ') : truncate(block.replace(/^\[[^\]]+\]\s*/u, ''), 520);
+    const keywords = extractKeywords(block, topic).slice(0, 4);
+    return {
+      heading: truncate(heading, 80),
+      content,
+      mechanismFlow: keywords.length ? keywords.map((keyword) => `${keyword} → materyalde ilişkili kavram`) : [],
+      clinicalConnection: 'Bu bölümdeki bilgi, materyaldeki bağlamı bozmadan temel mekanizma veya klinik yorumla ilişkilendirilmelidir.',
+      examConnection: 'Komite sorusunda bu bölümden genellikle tanım, mekanizma, ayırıcı özellik veya yorumlama basamağı sorulur.',
+      sourceReferences: [sourceLabel],
+    };
+  });
+}
+
+function buildSourceObjectiveList(material, topic) {
+  const text = normalizeSourceText(material);
+  const sentences = getImportantSentences(text, 6);
+  if (!sentences.length) return [];
+  return sentences.map((sentence) => truncate(sentence, 170));
+}
+
+function optionFeedbackForSourceQuestion(option, correctId, target, sourceClue) {
+  if (option.id === correctId) {
+    return `Bu seçenek materyaldeki “${truncate(sourceClue, 80)}” ipucuyla doğrudan ilişkilidir ve ${target} hedefini en iyi karşılar.`;
+  }
+  return `Bu seçenek benzer bir kavramı çağrıştırabilir; ancak materyalde verilen “${truncate(sourceClue, 80)}” ipucunu ${target} açısından doğrudan açıklamaz.`;
+}
+
 function buildLocalLesson(material) {
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const keywords = extractKeywords(sourceText, topic);
   const hasReadableText = sourceText.length > 120;
-  const sourceReference = hasReadableText ? 'Yapıştırılan/okunabilen materyal metni' : 'Dosya adı ve kullanıcı tarafından girilen ders bilgileri';
+  const sourceReference = hasReadableText ? 'Ayrıştırılan/yapıştırılan materyal metni' : 'Dosya adı ve kullanıcı tarafından girilen ders bilgileri';
+  const extractedSections = sourceDrivenSections(material, topic);
+  const sourceObjectives = buildSourceObjectiveList(material, topic);
+  const extractionLimitations = material.extractionLimitations || material.materialAnalysis?.sourceQuality?.limitations || [];
+
+  const sections = hasReadableText && extractedSections.length
+    ? [
+      {
+        heading: 'Materyalden çıkarılan büyük resim',
+        content: `Bu ders anlatımı, dosya içinden gerçekten ayrıştırılan metne göre hazırlandı. Ana tekrar hedefleri: ${keywords.slice(0, 6).join(', ') || topic}.`,
+        mechanismFlow: keywords.slice(0, 5).map((keyword) => `${keyword} → materyaldeki ilişkili kavram`),
+        clinicalConnection: 'Klinik bağlantı yalnızca metinde geçen konu ve kavramlardan hareketle kurulmalıdır; görsel içeriği okunamadıysa görsel hakkında kesin yorum yapılmaz.',
+        examConnection: `${material.learningTarget || 'Komite sınavı'} için bu materyalde tekrar edilmesi gereken başlıklar, doğrudan ayrıştırılan metindeki kavramlardan seçilmiştir.`,
+        sourceReferences: [sourceReference],
+      },
+      ...extractedSections,
+    ]
+    : [
+      {
+        heading: 'Dosya içeriği okunamadı',
+        content: 'Bu materyal için otomatik metin ayrıştırma yeterli sonuç vermedi. Gerçek ders anlatımı üretmek için PDF/PPTX/DOCX içeriğinin okunabilir metin katmanı içermesi veya metnin elle yapıştırılması gerekir.',
+        mechanismFlow: [],
+        clinicalConnection: 'İçerik okunmadan klinik veya biyokimyasal mekanizma anlatımı kesin bilgi gibi sunulmaz.',
+        examConnection: 'Sınav hedefi oluşturulabilir; ancak materyal temelli soru ve kart kalitesi için kaynak metin gerekir.',
+        sourceReferences: [sourceReference],
+      },
+    ];
 
   return {
     id: createId('lesson'),
     materialId: material.id,
     title: `${topic} — Komite Ders Anlatımı`,
     overview: hasReadableText
-      ? 'Bu çalışma alanı, yüklenen materyalden okunabilen metin ve kullanıcı tarafından girilen ders bağlamı temel alınarak yapılandırıldı.'
-      : 'Bu çalışma alanı dosya metni ayrıştırılamadığı için şimdilik materyal adı, sınıf ve komite bilgileri üzerinden güvenli bir iskelet olarak hazırlandı. Tam içerik için metin yapıştırma veya sunucu tarafı dosya ayrıştırma gerekir.',
-    learningObjectives: [
-      `${topic} başlığındaki temel kavramları sıralamak.`,
-      'Mekanizma, klinik bağlantı ve sınav ipuçlarını ayrı ayrı ayırt etmek.',
-      'Yanlış yapılan soru ve zorlanılan kartları materyal bazlı tekrar etmek.',
-    ],
-    sections: [
-      {
-        heading: 'Büyük resim',
-        content: `${topic} konusu önce temel tanım ve ana kavramlarla, ardından mekanizma ve klinik bağlantı üzerinden çalışılmalıdır. Komite düzeyinde amaç yalnızca ezberlemek değil, kavramlar arasındaki neden-sonuç ilişkisini kurmaktır.`,
-        mechanismFlow: keywords.slice(0, 4).length ? keywords.slice(0, 4).map((keyword) => `${keyword} → ilişkili mekanizma/klinik sonuç`) : [`${topic} → temel kavram → mekanizma → klinik sonuç`],
-        clinicalConnection: 'Klinik bağlantı, temel bilginin hasta bulgusu, tanısal test veya tedavi kararıyla nasıl ilişkilendiğini gösterir.',
-        examConnection: `${material.learningTarget || 'Komite sınavı'} için yüksek değerli kısım; tanım, mekanizma, ayırıcı nokta ve klinik ipuçlarının birlikte öğrenilmesidir.`,
-        sourceReferences: [sourceReference],
-      },
-      {
-        heading: 'Adım adım çalışma planı',
-        content: 'Önce terminoloji ve ana başlıklar okunmalı, sonra mekanizmalar oklarla takip edilmeli, en son klinik örnekler ve soru çözümüyle bilgi test edilmelidir.',
-        mechanismFlow: ['Tanım → temel yapı → mekanizma → klinik bulgu → sınav sorusu'],
-        clinicalConnection: 'Bu sıra, öğrencinin materyali pasif okumak yerine aktif geri çağırma ile öğrenmesini sağlar.',
-        examConnection: 'Soru çözerken kökteki ana ipucu, mekanizma ve en güçlü ayırıcı bulgu birlikte aranmalıdır.',
-        sourceReferences: [sourceReference],
-      },
-    ],
+      ? `Bu çalışma alanı dosya içeriğinden ayrıştırılan metne göre hazırlandı. ${material.extractionNotice || ''}`.trim()
+      : 'Bu çalışma alanı dosya metni ayrıştırılamadığı için gerçek materyal analizi yapılamadı; metin yapıştırılırsa içerik odaklı ders, soru ve kart üretilebilir.',
+    learningObjectives: sourceObjectives.length
+      ? sourceObjectives.slice(0, 4).map((item) => `${item}`)
+      : [
+        `${topic} başlığındaki temel kavramları sıralamak.`,
+        'Mekanizma, klinik bağlantı ve sınav ipuçlarını ayrı ayrı ayırt etmek.',
+        'Yanlış yapılan soru ve zorlanılan kartları materyal bazlı tekrar etmek.',
+      ],
+    sections,
     figureExplanations: [
       {
-        sourcePageOrSlide: 'Belirlenemedi',
-        title: 'Görsel/şekil analizi durumu',
-        whatItShows: 'Bu MVP sürümünde PDF/PPTX içindeki görseller doğrudan ayrıştırılmıyor.',
+        sourcePageOrSlide: 'Metin ayrıştırma katmanı',
+        title: hasReadableText ? 'Görsel/şekil analizi durumu' : 'Görsel/şekil analizi yapılamadı',
+        whatItShows: hasReadableText
+          ? 'Bu sürüm dosyadaki okunabilir metin katmanını analiz eder; görsel piksel içeriğini yorumlamaz.'
+          : 'Dosyada okunabilir metin bulunamadığı için görsel, tablo veya şekil içeriği hakkında güvenilir yorum üretilemez.',
         importantLabels: [],
-        stepByStepInterpretation: 'Görsel analizi için ileride sunucu tarafı PDF/PPTX ayrıştırma ve görsel okuma katmanı eklenmelidir.',
-        whyItMatters: 'Şekil ve tablolar komite sınavlarında mekanizma ve karşılaştırma sorularını güçlendirir.',
-        examRelevance: 'Şimdilik görseller hakkında iddia üretilmez; yalnızca okunabilir metin ve kullanıcı girdisi kullanılır.',
-        commonMistake: 'Görsel ayrıştırılmadan şekil içeriği varmış gibi anlatım yapmak hatalıdır.',
-        memoryNote: 'Okunamayan görsel için “belirsiz” demek, uydurma açıklamadan daha güvenlidir.',
+        stepByStepInterpretation: hasReadableText
+          ? 'Slayt/PDF metni üzerinden başlıklar ve kavramlar çıkarıldı. Görsel etiketleri metin katmanında varsa dolaylı olarak yakalanabilir; görselin kendisi analiz edilmiş sayılmaz.'
+          : 'Görsel analizi için OCR/vision veya sunucu tarafı gelişmiş ayrıştırma gerekir.',
+        whyItMatters: 'Komite materyallerinde şekil ve tablolar yüksek değerli olabilir; bu nedenle okunmayan görsel hakkında uydurma açıklama yapılmamalıdır.',
+        examRelevance: 'Soru ve kart üretimi, yalnızca çıkarılan metne ve açık kullanıcı girdisine dayandırılır.',
+        commonMistake: 'Okunamayan görseli analiz edilmiş gibi anlatmak hatalıdır.',
+        memoryNote: 'Kaynakta okunabilen bilgi ile yorum ayrılmalıdır.',
       },
     ],
     commonConfusions: [
-      'Tanım ile mekanizma aynı şey değildir; soru hangi hedefi soruyorsa cevap ona göre seçilmelidir.',
-      'Klinik bulgu ile tanı koyduran test birbirine karıştırılmamalıdır.',
+      'Materyalde geçen ifade ile dış tıbbi yorum ayrı düşünülmelidir.',
+      'Tanım, mekanizma, klinik bulgu ve sınav ipucu aynı şey değildir.',
     ],
-    highYieldSummary: keywords.length ? keywords.slice(0, 6).map((keyword) => `${keyword}: materyalde öne çıkan tekrar hedefi.`) : [`${topic}: temel kavram, mekanizma ve klinik bağlantı birlikte çalışılmalıdır.`],
-    mustRemember: [
-      'Komite çalışmasında her başlık için “tanım → mekanizma → klinik karşılık → sınav ipucu” zinciri kurulmalıdır.',
-      'Okunamayan veya materyalde bulunmayan içerik, kesin bilgi gibi sunulmamalıdır.',
-    ],
-    limitations: hasReadableText ? [] : ['Dosyanın iç metni otomatik ayrıştırılmadı; ders anlatımı güvenli MVP iskeleti olarak üretildi.'],
+    highYieldSummary: hasReadableText
+      ? getImportantSentences(sourceText, 6).map((sentence) => truncate(sentence, 180))
+      : [`${topic}: içerik okunamadığı için yüksek verimli özet güvenilir biçimde çıkarılamadı.`],
+    mustRemember: hasReadableText
+      ? keywords.slice(0, 6).map((keyword) => `${keyword}: bu materyalde tekrar edilmesi gereken ana kavramlardan biridir.`)
+      : ['Okunamayan veya materyalde bulunmayan içerik, kesin bilgi gibi sunulmamalıdır.'],
+    limitations: extractionLimitations,
     sourceReferences: [sourceReference],
     createdAt: Date.now(),
   };
@@ -138,28 +211,60 @@ function buildLocalLesson(material) {
 
 function buildLocalQuestions(material, lesson) {
   const topic = deriveTopic(material);
-  const keywords = extractKeywords(normalizeSourceText(material), topic);
-  const baseTargets = keywords.length >= 5 ? keywords.slice(0, 10) : [
-    topic,
-    'temel mekanizma',
-    'klinik bağlantı',
-    'tanısal yaklaşım',
-    'ayırıcı nokta',
-    'sınav tuzağı',
-    'yüksek verimli bilgi',
-    'neden-sonuç ilişkisi',
-    'laboratuvar yorumu',
-    'tekrar hedefi',
-  ];
+  const sourceText = normalizeSourceText(material);
+  const sourceClues = buildSourceObjectiveList(material, topic);
+  const keywords = extractKeywords(sourceText, topic);
+  const hasReadableText = sourceText.length > 120 && sourceClues.length >= 3;
+
+  if (!hasReadableText) {
+    return Array.from({ length: 10 }, (_, index) => ({
+      id: createId('komite-q'),
+      materialId: material.id,
+      mode: 'komite',
+      questionNumber: index + 1,
+      difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard',
+      learningTarget: 'Materyal metni eksikliği farkındalığı',
+      sourceReference: 'Dosya içeriği okunamadı',
+      stem: `${material.fileName} adlı materyal yüklendi ancak dosyadan yeterli okunabilir metin çıkarılamadı. Bu nedenle materyale dayalı gerçek soru üretimi için kaynak metnin okunabilir olması gerekir.`,
+      supportingData: [`Çalışma hedefi: ${material.learningTarget || 'Komite sınavı'}`],
+      question: 'Bu materyalden güvenilir soru üretmek için öncelikle aşağıdakilerden hangisi gereklidir?',
+      options: [
+        { id: 'A', text: 'Okunabilir ders metni veya slayt içeriği sağlamak' },
+        { id: 'B', text: 'Yalnızca dosya adına göre ayrıntılı biyokimya sorusu üretmek' },
+        { id: 'C', text: 'Görseller analiz edilmeden şekil yorum sorusu hazırlamak' },
+        { id: 'D', text: 'Kaynakta bulunmayan mekanizmaları kesin bilgi gibi eklemek' },
+        { id: 'E', text: 'Komite ve sınıf bilgisini tek başına yeterli kabul etmek' },
+      ],
+      correctOptionId: 'A',
+      explanation: 'Materyal temelli soru üretiminde kaynak metin okunabilir olmalıdır. Dosya adı ve komite bilgisi tek başına bilimsel, kaynak bağlı soru üretmek için yeterli değildir.',
+      optionFeedback: {
+        A: 'Okunabilir metin sağlamak, sorunun materyale dayanmasını ve uydurma bilgi içermemesini sağlar.',
+        B: 'Yalnızca dosya adına göre ayrıntılı soru üretmek kaynak bağlılık açısından güvenilir değildir.',
+        C: 'Görsel analiz edilmeden şekil yorum sorusu üretmek öğrenciye hatalı bilgi verebilir.',
+        D: 'Kaynakta bulunmayan mekanizmaları kesin bilgi gibi eklemek tıbbi güvenilirliği düşürür.',
+        E: 'Komite ve sınıf bilgisi bağlam sağlar; ancak gerçek içerik yerine geçmez.',
+      },
+      learningPoint: 'KOMİTE modunda güvenilir AI üretimi, okunabilir kaynak metin veya doğru dosya ayrıştırması gerektirir.',
+      memoryNote: 'Kaynak yoksa ayrıntılı soru yok; önce materyali okut.',
+      userAnswer: null,
+      isWrong: false,
+      isFavorite: false,
+      isDifficult: false,
+      createdAt: Date.now(),
+    }));
+  }
+
+  const targets = keywords.length ? keywords : [topic];
   return Array.from({ length: 10 }, (_, index) => {
-    const target = baseTargets[index % baseTargets.length];
+    const target = targets[index % targets.length];
+    const sourceClue = sourceClues[index % sourceClues.length];
     const correct = ['A', 'B', 'C', 'D', 'E'][index % 5];
     const options = [
-      { id: 'A', text: `${target} ile ilişkili temel mekanizma` },
-      { id: 'B', text: `${target} için rastgele ve ilişkisiz ezber bilgisi` },
-      { id: 'C', text: `${target} ile karışabilen ancak bu materyalde öncelikli olmayan nokta` },
-      { id: 'D', text: `${target} yerine yalnızca semptom ezberi yapmak` },
-      { id: 'E', text: `${target} için kaynakta desteklenmeyen genelleme` },
+      { id: 'A', text: `${target} kavramını kaynak metindeki ipucuyla ilişkilendirmek` },
+      { id: 'B', text: `${target} başlığını kaynak dışı ezber bilgiyle açıklamak` },
+      { id: 'C', text: `${target} yerine yalnızca dosya adından çıkarım yapmak` },
+      { id: 'D', text: `${target} konusunu görsel analiz edilmiş gibi yorumlamak` },
+      { id: 'E', text: `${target} için kaynakta olmayan kesin bir klinik sonuç eklemek` },
     ];
     const correctText = options.find((option) => option.id === correct)?.text || options[0].text;
     return {
@@ -168,23 +273,17 @@ function buildLocalQuestions(material, lesson) {
       mode: 'komite',
       questionNumber: index + 1,
       difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard',
-      learningTarget: `${target} bilgisini materyal bağlamında yorumlama`,
-      sourceReference: lesson?.sourceReferences?.[0] || 'Materyal çalışma alanı',
-      stem: `${material.classYear}. sınıf ${material.committee || material.course || 'komite'} çalışmasında ${topic} başlığı incelenmektedir. Öğrencinin bu materyali yalnızca ezberlemeden, kavram ve mekanizma ilişkisiyle çalışması hedeflenmektedir.`,
-      supportingData: [`Çalışma hedefi: ${material.learningTarget || 'Komite sınavı'}`, `Materyal: ${material.fileName}`],
-      question: `${target} için bu materyalde öncelikle hangi çalışma yaklaşımı en uygundur?`,
+      learningTarget: `${target} bilgisini kaynak metinle ilişkilendirme`,
+      sourceReference: lesson?.sourceReferences?.[0] || 'Ayrıştırılan materyal metni',
+      stem: `${material.classYear}. sınıf ${material.committee || material.course || 'komite'} çalışmasında ${topic} materyalinden şu ifade öne çıkmaktadır: “${sourceClue}”. Öğrencinin bu bilgiyi kaynak metne bağlı kalarak yorumlaması beklenmektedir.`,
+      supportingData: [`Kaynak ipucu: ${sourceClue}`, `Çalışma hedefi: ${material.learningTarget || 'Komite sınavı'}`],
+      question: 'Bu bilgiye göre en uygun çalışma ve yorumlama yaklaşımı aşağıdakilerden hangisidir?',
       options,
       correctOptionId: correct,
-      explanation: `${correctText}, bu kartın ölçtüğü hedefle en doğrudan ilişkilidir. Bu yaklaşım ezber yerine materyaldeki kavram, mekanizma ve sınav bağlantısını birlikte çalıştırır.`,
-      optionFeedback: {
-        A: correct === 'A' ? 'Bu seçenek hedef kavramı mekanizma ve sınav bağlantısıyla birlikte çalıştırdığı için uygundur.' : 'Bu seçenek bazı durumlarda yararlı olabilir; ancak bu soruda ölçülen hedef için en doğrudan ve öncelikli seçenek değildir.',
-        B: correct === 'B' ? 'Bu seçenek hedef kavramı mekanizma ve sınav bağlantısıyla birlikte çalıştırdığı için uygundur.' : 'Rastgele ezber bilgisi, materyaldeki ana öğrenme hedefini sistematik biçimde güçlendirmez.',
-        C: correct === 'C' ? 'Bu seçenek hedef kavramı mekanizma ve sınav bağlantısıyla birlikte çalıştırdığı için uygundur.' : 'Karışabilen nokta ayırıcı tanıda değerlidir; ancak bu vakada öncelik ana hedefin doğru kurulmasıdır.',
-        D: correct === 'D' ? 'Bu seçenek hedef kavramı mekanizma ve sınav bağlantısıyla birlikte çalıştırdığı için uygundur.' : 'Yalnızca semptom ezberi, mekanizma ve klinik karar basamağını açıklamadığı için yetersiz kalır.',
-        E: correct === 'E' ? 'Bu seçenek hedef kavramı mekanizma ve sınav bağlantısıyla birlikte çalıştırdığı için uygundur.' : 'Kaynakta desteklenmeyen genelleme, materyal temelli komite çalışması için güvenilir bir yaklaşım değildir.',
-      },
-      learningPoint: 'Materyal temelli sorularda ana hedef, kaynakta geçen bilgiyi mekanizma ve klinik karşılığıyla ilişkilendirmektir.',
-      memoryNote: `${topic} çalışırken “kavram → mekanizma → sınav ipucu” zincirini kur.`,
+      explanation: `${correctText}, kaynak metindeki ipucunu doğrudan kullanır ve materyal dışı varsayım eklemez. Bu nedenle komite materyaline bağlı güvenli öğrenme için en uygun seçenektir.`,
+      optionFeedback: Object.fromEntries(options.map((option) => [option.id, optionFeedbackForSourceQuestion(option, correct, target, sourceClue)])),
+      learningPoint: 'Materyal temelli soruda ana hedef, kaynakta yazan bilgiyi uydurma ek yapmadan doğru kavrama bağlamaktır.',
+      memoryNote: `${target}: önce kaynak ipucunu bul, sonra mekanizma/klinik bağlantıyı kur.`,
       userAnswer: null,
       isWrong: false,
       isFavorite: false,
@@ -196,33 +295,50 @@ function buildLocalQuestions(material, lesson) {
 
 function buildLocalFlashcards(material, lesson) {
   const topic = deriveTopic(material);
-  const keywords = extractKeywords(normalizeSourceText(material), topic);
-  const targets = keywords.length ? keywords.slice(0, 12) : ['büyük resim', 'mekanizma', 'klinik bağlantı', 'sınav ipucu', 'sık karışan nokta', 'tekrar hedefi'];
+  const sourceText = normalizeSourceText(material);
+  const keywords = extractKeywords(sourceText, topic);
+  const sourceClues = buildSourceObjectiveList(material, topic);
+  const hasReadableText = sourceText.length > 120 && sourceClues.length;
+  const targets = hasReadableText ? sourceClues.slice(0, 12) : [
+    'Okunabilir kaynak metin gerekir',
+    'Dosya adı tek başına yeterli değildir',
+    'Görsel analiz edilmeden yorum yapılmaz',
+  ];
+
   return {
     id: createId('deck'),
     deckTitle: `${topic} Hap Kartları`,
     materialId: material.id,
-    cards: targets.map((target, index) => ({
-      id: createId('card'),
-      userId: material.userId,
-      materialId: material.id,
-      mode: 'komite',
-      classYear: material.classYear,
-      committee: material.committee,
-      course: material.course,
-      type: index % 3 === 0 ? 'mechanism' : index % 3 === 1 ? 'clinical_clue' : 'must_remember',
-      difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard',
-      front: `${target} için komite düzeyinde hatırlanması gereken ana nokta nedir?`,
-      back: `${target}, ${topic} başlığında tanım, mekanizma ve sınav bağlantısı birlikte düşünülerek çalışılmalıdır.`,
-      explanation: 'Bu kart, pasif okuma yerine aktif geri çağırma yapman için kısa ve hedefli hazırlanmıştır.',
-      sourceReference: lesson?.sourceReferences?.[0] || 'Materyal çalışma alanı',
-      tags: [topic, material.learningTarget || 'Komite'],
-      isUserCreated: false,
-      isFavorite: false,
-      isDifficult: false,
-      repeatStatus: 'new',
-      createdAt: Date.now(),
-    })),
+    cards: targets.map((target, index) => {
+      const keyword = keywords[index % Math.max(keywords.length, 1)] || topic;
+      return {
+        id: createId('card'),
+        userId: material.userId,
+        materialId: material.id,
+        mode: 'komite',
+        classYear: material.classYear,
+        committee: material.committee,
+        course: material.course,
+        type: hasReadableText ? (index % 3 === 0 ? 'clinical_clue' : index % 3 === 1 ? 'mechanism' : 'must_remember') : 'must_remember',
+        difficulty: index < 3 ? 'easy' : index < 8 ? 'medium' : 'hard',
+        front: hasReadableText
+          ? `Materyalde geçen şu bilginin ana hatırlatma değeri nedir: “${truncate(target, 120)}”?`
+          : `${target} ifadesi KOMİTE modunda neden önemlidir?`,
+        back: hasReadableText
+          ? `${truncate(target, 220)}`
+          : 'Kaynak metin okunmadan materyal temelli ayrıntılı ders, soru veya kart üretimi güvenilir olmaz.',
+        explanation: hasReadableText
+          ? `Bu kart, ${topic} materyalinden ayrıştırılan gerçek metne dayanır ve ${keyword} kavramını aktif geri çağırma ile pekiştirir.`
+          : 'Bu kart, dosya ayrıştırma eksikliğini gösteren güvenli bir uyarı kartıdır; metin yapıştırıldığında içerik odaklı kartlar üretilebilir.',
+        sourceReference: lesson?.sourceReferences?.[0] || (hasReadableText ? 'Ayrıştırılan materyal metni' : 'Dosya içeriği okunamadı'),
+        tags: [topic, keyword, material.learningTarget || 'Komite'].filter(Boolean),
+        isUserCreated: false,
+        isFavorite: false,
+        isDifficult: false,
+        repeatStatus: 'new',
+        createdAt: Date.now(),
+      };
+    }),
   };
 }
 
@@ -244,28 +360,47 @@ function buildMaterialAnalysisFallback(material) {
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const keywords = extractKeywords(sourceText, topic);
+  const sections = sourceDrivenSections(material, topic);
+  const hasReadableText = sourceText.length > 120;
   return {
     materialTitle: topic,
     detectedCourseOrTopic: material.course || material.committee || topic,
     sourceQuality: {
-      readableText: sourceText.length > 120,
-      figuresDetected: false,
+      readableText: hasReadableText,
+      figuresDetected: Boolean(material.extractedFigures?.length),
       tablesDetected: false,
-      limitations: sourceText.length > 120 ? [] : ['Dosya içeriği otomatik ayrıştırılamadı; yalnızca metadata/pasted text kullanıldı.'],
+      limitations: hasReadableText
+        ? ['Bu lokal analiz okunabilir metin katmanına dayanır; görsel/piksel içeriği ayrıca analiz edilmedi.', ...(material.extractionLimitations || [])]
+        : ['Dosya içeriği otomatik ayrıştırılamadı; yalnızca metadata/pasted text kullanıldı.', ...(material.extractionLimitations || [])],
     },
-    lectureStructure: [{ sectionTitle: topic, sourcePages: [], mainIdeas: keywords.slice(0, 5), importantDetails: [] }],
+    lectureStructure: sections.length ? sections.map((section) => ({
+      sectionTitle: section.heading,
+      sourcePages: section.sourceReferences || [],
+      mainIdeas: extractKeywords(section.content, topic).slice(0, 5),
+      importantDetails: getImportantSentences(section.content, 3),
+    })) : [{ sectionTitle: topic, sourcePages: [], mainIdeas: keywords.slice(0, 5), importantDetails: [] }],
     keyConcepts: keywords,
-    mechanisms: [],
-    clinicalRelevance: [],
-    examRelevance: [`${material.learningTarget || 'Komite sınavı'} için temel kavram ve mekanizma bağlantısı.`],
-    figureTableNotes: [{ sourcePageOrSlide: 'Belirlenemedi', type: 'unclear', visibleContent: '', importantLabels: [], interpretation: '', limitations: 'Bu MVP sürümünde görsel ayrıştırma yapılmadı.' }],
-    commonConfusions: [],
-    recommendedLessonPlan: ['Büyük resim', 'Adım adım mekanizma', 'Klinik bağlantı', 'Sınav bağlantısı'],
+    mechanisms: keywords.slice(0, 5).map((keyword) => `${keyword} ile ilişkili mekanizma materyal metninden ayrıca doğrulanmalıdır.`),
+    clinicalRelevance: hasReadableText ? getImportantSentences(sourceText, 4) : [],
+    examRelevance: hasReadableText
+      ? getImportantSentences(sourceText, 5).map((sentence) => `${truncate(sentence, 150)} bilgisi komite düzeyinde sorgulanabilir.`)
+      : [`${material.learningTarget || 'Komite sınavı'} için temel kavram ve mekanizma bağlantısı.`],
+    figureTableNotes: [{
+      sourcePageOrSlide: 'Metin ayrıştırma katmanı',
+      type: 'unclear',
+      visibleContent: '',
+      importantLabels: [],
+      interpretation: hasReadableText ? 'Metin katmanı okundu; görsel içeriği doğrudan analiz edilmedi.' : '',
+      limitations: 'Görsel, tablo veya diyagram piksel düzeyinde yorumlanmadı.',
+    }],
+    commonConfusions: ['Kaynakta geçen ifade ile ek tıbbi yorum karıştırılmamalıdır.'],
+    recommendedLessonPlan: ['Materyalden çıkarılan büyük resim', 'Kaynak bölümleri', 'Mekanizma/klinik bağlantı', 'Sınav ve tekrar noktaları'],
     questionGenerationTargets: keywords.slice(0, 10),
     flashcardGenerationTargets: keywords.slice(0, 12),
-    sourceReferences: [sourceText.length > 120 ? 'Okunabilir/yapıştırılmış metin' : 'Materyal metadata bilgisi'],
+    sourceReferences: [hasReadableText ? 'Ayrıştırılan/yapıştırılan metin' : 'Materyal metadata bilgisi'],
   };
 }
+
 
 function StatusPill({ children, tone = 'neutral' }) {
   return <span className={`komite-status-pill tone-${tone}`}>{children}</span>;
@@ -380,6 +515,8 @@ function StartFlow({ onCreate, onCancel }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [fileText, setFileText] = useState('');
   const [fileNotice, setFileNotice] = useState('');
+  const [fileExtraction, setFileExtraction] = useState(null);
+  const [isExtracting, setIsExtracting] = useState(false);
 
   const update = (field, value) => setForm((current) => ({ ...current, [field]: value }));
 
@@ -387,19 +524,17 @@ function StartFlow({ onCreate, onCancel }) {
     setSelectedFile(file || null);
     setFileText('');
     setFileNotice('');
+    setFileExtraction(null);
     if (!file) return;
-    const type = getFileType(file.name);
-    if (['txt', 'md'].includes(type)) {
-      try {
-        const text = await file.text();
-        setFileText(text.slice(0, 12000));
-        setFileNotice('Metin dosyası okundu ve çalışma alanına eklenecek.');
-      } catch {
-        setFileNotice('Dosya metni okunamadı; yalnızca metadata kaydedilecek.');
-      }
-      return;
+    setIsExtracting(true);
+    try {
+      const extraction = await extractKomiteFile(file);
+      setFileExtraction(extraction);
+      setFileText(extraction.text || '');
+      setFileNotice(extraction.notice || (extraction.ok ? 'Dosya metni çalışma alanına eklendi.' : 'Dosya otomatik okunamadı; metni elle yapıştırabilirsin.'));
+    } finally {
+      setIsExtracting(false);
     }
-    setFileNotice('PDF/PPTX/DOCX dosyası metadata olarak kaydedilir. Tam içerik analizi için sunucu tarafı dosya ayrıştırma katmanı gerekir; istersen ana metni aşağıya yapıştırabilirsin.');
   };
 
   const submit = (event) => {
@@ -410,6 +545,7 @@ function StartFlow({ onCreate, onCancel }) {
       file: selectedFile,
       extractedText: fileText,
       pastedText: form.pastedText.trim(),
+      extraction: fileExtraction,
     });
   };
 
@@ -453,14 +589,16 @@ function StartFlow({ onCreate, onCancel }) {
           <span>PDF / PPTX / DOCX / TXT yükle</span>
           <input type="file" accept=".pdf,.pptx,.docx,.txt,.md" onChange={(event) => handleFile(event.target.files?.[0])} />
           <strong>{selectedFile ? selectedFile.name : 'Dosya seç veya metin yapıştır'}</strong>
-          <small>{fileNotice || 'PDF tercih edilir. Bu MVP, dosyayı güvenli metadata akışına alır.'}</small>
+          <small>{isExtracting ? 'Dosya metni ayrıştırılıyor…' : (fileNotice || 'PDF/PPTX/DOCX/TXT metin katmanı otomatik okunur; taranmış görseller için metin yapıştırabilirsin.')}</small>
+          {fileExtraction?.detectedStructure?.length ? <small>{fileExtraction.detectedStructure.length} bölüm/sayfa/slayt algılandı · {fileText.length.toLocaleString('tr-TR')} karakter metin çıkarıldı.</small> : null}
+          {fileExtraction?.limitations?.length ? <small>{fileExtraction.limitations.join(' ')}</small> : null}
         </label>
         <label className="komite-textarea-label">
           <span>Okunabilir ders metni / slayt notu (opsiyonel ama önerilir)</span>
           <textarea value={form.pastedText} onChange={(event) => update('pastedText', event.target.value)} rows={7} placeholder="Slayttan kopyaladığın metni buraya yapıştırırsan AI ders, soru ve kartları daha materyal odaklı üretir." />
         </label>
         <div className="komite-form-actions">
-          <button type="submit" className="btn btn-primary" disabled={!selectedFile && !form.pastedText.trim()}>
+          <button type="submit" className="btn btn-primary" disabled={isExtracting || (!selectedFile && !form.pastedText.trim())}>
             <Icon name="Sparkles" /> Materyal çalışma alanı oluştur
           </button>
           <p>Dosya içeriği otomatik okunamıyorsa sistem bunu açıkça belirtir; uydurma görsel/şekil açıklaması yapmaz.</p>
@@ -473,7 +611,8 @@ function StartFlow({ onCreate, onCancel }) {
 function LessonView({ material, onGenerate }) {
   const lesson = material.lesson;
   if (!lesson) {
-    return <EmptyState title="Ders anlatımı henüz hazır değil" text="Materyal için güvenli ders iskeleti oluşturabilirsin. API anahtarı varsa sunucu tarafı AI rotası kullanılabilir." action={<button type="button" className="btn btn-primary" onClick={onGenerate}>AI Ders Anlatımı oluştur</button>} />;
+    const hasExtractedText = normalizeSourceText(material).length > 120;
+    return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Dosya metni ayrıştırıldı. AI rotası varsa gerçek materyal analizi yapılır; API yoksa ayrıştırılan metne dayalı lokal ders taslağı oluşturulur." : "Bu dosyadan yeterli metin çıkarılamadı. Metin yapıştırırsan içerik odaklı ders, soru ve kart üretilebilir."} action={<button type="button" className="btn btn-primary" onClick={onGenerate}>AI Ders Anlatımı oluştur</button>} />;
   }
   return (
     <div className="komite-lesson-view">
@@ -888,7 +1027,7 @@ export default function KomiteModeWorkspace({ currentUser }) {
     favoriteItems: materials.reduce((sum, material) => sum + (material.questions || []).filter((question) => question.isFavorite).length + (material.flashcardDeck?.cards || []).filter((card) => card.isFavorite).length, 0),
   }), [materials]);
 
-  const createMaterial = ({ file, extractedText, pastedText, ...form }) => {
+  const createMaterial = ({ file, extractedText, pastedText, extraction, ...form }) => {
     const fileName = file?.name || `${form.course || form.committee || 'Komite materyali'}.txt`;
     const newMaterial = {
       id: createId('material'),
@@ -902,9 +1041,12 @@ export default function KomiteModeWorkspace({ currentUser }) {
       committee: form.committee,
       course: form.course,
       learningTarget: form.learningTarget,
-      processingStatus: 'metadata-ready',
+      processingStatus: extractedText ? 'text-extracted' : 'metadata-ready',
       extractedText: extractedText || '',
-      extractedFigures: [],
+      extractedFigures: extraction?.figures || [],
+      detectedStructure: extraction?.detectedStructure || [],
+      extractionNotice: extraction?.notice || '',
+      extractionLimitations: extraction?.limitations || [],
       pastedText: pastedText || '',
       lesson: null,
       questions: [],
