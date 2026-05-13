@@ -109,6 +109,17 @@ function sanitizeTeachingTextForDisplay(text = '') {
     .trim();
 }
 
+function formatMechanismSteps(flow = []) {
+  if (!Array.isArray(flow)) return [];
+  return flow.map((step) => String(step || '').replace(/^[\s→\-–—>]+|[\s→\-–—>]+$/g, '').trim()).filter(Boolean);
+}
+
+function improveLessonIntro(text = '', title = '') {
+  const clean = String(text || '').replace(/yüklenen komite materyallerindeki/giu, 'bu dersteki').replace(/tek tek ezberlenecek başlıklar olarak değil,?/giu, '').replace(/\s+/g, ' ').trim();
+  if (clean && clean.length >= 80) return clean;
+  return `${title || 'Bu ders'}, konuyu yalnızca başlıklar halinde özetlemek yerine temel mekanizmalar, doku düzeyindeki metabolik yön değişimleri ve klinik-biyokimyasal sonuç ilişkileri üzerinden sistematik biçimde açıklar.`;
+}
+
 function normalizeSourceText(material = {}) {
   return [material.extractedText, material.pastedText]
     .filter(Boolean)
@@ -299,7 +310,7 @@ function wordCount(text = '') {
 function buildSectionDepthText(section = {}, material = {}) {
   const parts = [section.teachingText, section.content].filter(Boolean).map((value) => String(value).trim());
   if (section.whyItMatters) parts.push(`Bu başlığın öğrenme değeri şudur: ${String(section.whyItMatters).trim()}`);
-  if (Array.isArray(section.mechanismFlow) && section.mechanismFlow.length) parts.push(`Mekanizma akışı: ${section.mechanismFlow.filter(Boolean).join(' → ')}.`);
+  // Mechanism flow is rendered as a clean numbered row, not merged into the main paragraph.
   // Keep exam and common-mistake notes in their own visual fields; merging them into teachingText creates repetition in the lesson UI.
   let merged = [...new Set(parts.filter(Boolean))].join(' ')
     .replace(/\s+/g, ' ')
@@ -1402,15 +1413,8 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
     <div className="komite-lesson-view komite-lesson-view-pro">
       <div className="komite-lesson-hero komite-lesson-hero-pro">
         <div>
-          <span className="komite-kicker">AI Ders Anlatımı</span>
           <h2>{lesson.title}</h2>
-          <p>{lesson.shortSubtitle || lesson.shortIntro || lesson.overview}</p>
-          {lesson.sourceCoverage?.filesAnalyzedCount > 1 ? <small className="komite-source-note">Bu çalışma alanı {lesson.sourceCoverage.filesAnalyzedCount} materyal birlikte analiz edilerek hazırlandı.</small> : null}
-        </div>
-        <div className="komite-lesson-hero-metrics" aria-label="Ders özeti">
-          <span><strong>{sections.length}</strong> bölüm</span>
-          <span><strong>{objectives.length}</strong> hedef</span>
-          <span><strong>{highYield.length}</strong> can alıcı nokta</span>
+          <p>{improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)}</p>
         </div>
       </div>
 
@@ -1423,12 +1427,6 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
             {sectionAnchors.map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
             <a href="#komite-high-yield">Can alıcı noktalar</a>
           </div>
-          {concepts.length ? (
-            <div className="komite-sidebar-card komite-concept-card">
-              <strong>Ana kavramlar</strong>
-              <div className="komite-concept-list">{concepts.map((item) => <span key={item}>{item}</span>)}</div>
-            </div>
-          ) : null}
         </aside>
 
         <main className="komite-lesson-main-flow">
@@ -1462,11 +1460,16 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                 <div className="komite-section-body">
                   <h3>{section.heading}</h3>
                   {splitReadableParagraphs(teachingText).map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}
-                  {(section.mechanismFlow?.length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
-                    <div className="komite-two-note-grid komite-note-grid-pro">
-                      {Array.isArray(section.mechanismFlow) && section.mechanismFlow.length ? <div><strong>Mekanizma akışı</strong><p>{section.mechanismFlow.join(' → ')}</p></div> : null}
-                      {(section.examAngle || section.clinicalConnection) ? <div><strong>Sınavda nasıl sorulur?</strong><p>{section.examAngle || section.clinicalConnection}</p></div> : null}
-                      {(section.commonTrap || section.examConnection) ? <div><strong>Sık hata</strong><p>{section.commonTrap || section.examConnection}</p></div> : null}
+                  {(formatMechanismSteps(section.mechanismFlow).length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
+                    <div className="komite-note-lines">
+                      {formatMechanismSteps(section.mechanismFlow).length ? (
+                        <div className="komite-note-line komite-flow-line">
+                          <strong>Mekanizma akışı</strong>
+                          <ol>{formatMechanismSteps(section.mechanismFlow).map((step, stepIndex) => <li key={`${step}-${stepIndex}`}>{step}</li>)}</ol>
+                        </div>
+                      ) : null}
+                      {(section.examAngle || section.clinicalConnection) ? <div className="komite-note-line"><strong>Sınavda nasıl sorulur?</strong><p>{section.examAngle || section.clinicalConnection}</p></div> : null}
+                      {(section.commonTrap || section.examConnection) ? <div className="komite-note-line"><strong>Sık hata</strong><p>{section.commonTrap || section.examConnection}</p></div> : null}
                     </div>
                   ) : null}
                 </div>
@@ -1474,7 +1477,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
             );
           })}
 
-          <div id="komite-high-yield" className="komite-summary-grid komite-summary-grid-pro">
+          <div id="komite-high-yield" className="komite-summary-lines komite-summary-grid-pro">
             <div>
               <strong>Can alıcı noktalar</strong>
               <ul>{highYield.map((item) => <li key={item}>{item}</li>)}</ul>
