@@ -168,7 +168,7 @@ export function validateLessonShape(output = {}, context = {}) {
   if (!Array.isArray(sections) || sections.length === 0) errors.push('Ders bölümleri yok.');
   if (String(output.shortIntro || output.overview || output.shortOverview || '').length < 30) errors.push('Genel bakış çok kısa.');
   const objectives = Array.isArray(output.learningObjectives) ? output.learningObjectives : [];
-  if (objectives.length < 4 || objectives.length > 8) errors.push('Öğrenme hedefleri 4-8 aralığında değil.');
+  if (objectives.length < 4) errors.push('Öğrenme hedefleri yetersiz.');
   objectives.forEach((objective, index) => {
     const objectiveText = String(objective || '');
     if (hasDateLikeText(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde tarih var.`);
@@ -181,8 +181,8 @@ export function validateLessonShape(output = {}, context = {}) {
   const filesAnalyzedCount = Number(output.sourceCoverage?.filesAnalyzedCount || output.sourceCoverage?.filesAnalyzed || 0);
   if (filesUploadedCount > 1 && filesAnalyzedCount <= 1) errors.push('Çoklu dosya yüklendiği halde çıktı tek dosya kapsamı gösteriyor.');
   const sectionDepthText = (section = {}) => [section.teachingText, section.content, section.whyItMatters, section.examAngle, section.examConnection, section.commonTrap, section.commonMistake, Array.isArray(section.mechanismFlow) ? section.mechanismFlow.join(' ') : ''].filter(Boolean).join(' ');
-  const expectedFiles = filesUploadedCount;
-  if (expectedFiles > 1 && (sections || []).length < 8) errors.push('Ders bölümü sayısı çoklu materyal için yetersiz.');
+  // Do not enforce an artificial minimum section count for multi-file material.
+  // A valid lesson may have fewer broad integrated sections or many detailed sections depending on the source structure.
   const shallowSections = (sections || []).filter((section) => sectionDepthText(section).trim().split(/\s+/).filter(Boolean).length < 90);
   if ((sections || []).length && shallowSections.length / (sections || []).length > 0.35) errors.push('Ders bölümlerinin çoğu yeterince derin değil.');
   const qualityCheck = output.qualityCheck || {};

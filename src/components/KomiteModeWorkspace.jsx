@@ -366,7 +366,8 @@ function qualityGateLesson(lesson = {}, material = {}) {
   if (outputContradictsSourceTopic(lesson, material)) return { ok: false, reason: 'Ders anlatımı yüklenen kaynakların ana konusuyla uyuşmuyor.' };
   if (/materyaldeki ilişkili kavram|slayt\s*→|sayfa\s*→/iu.test(text)) return { ok: false, reason: 'Ham/meaningless kaynak etiketi üretildi.' };
   if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 520) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
-  if (filesUploadedCount > 1 && sections.length < 8) return { ok: false, reason: 'Çoklu materyal için ders bölümü sayısı yetersiz.' };
+  // Do not reject a lesson only because the number of sections is below a fixed threshold.
+  // Multi-file quality is checked by source coverage, topic grounding, big-picture depth and section depth instead.
   const shallow = sections.filter((section) => String(section.teachingText || section.content || '').split(/\s+/).length < 80);
   if (sections.length && shallow.length / sections.length > 0.35) return { ok: false, reason: 'Ders bölümleri yüzeysel kalıyor.' };
   if (badRepeats > 2) return { ok: false, reason: 'Ders anlatımı fazla şablon ve tekrar içeriyor.' };
