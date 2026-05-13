@@ -23,6 +23,8 @@ Core rules:
 - Do not generate meaningless concept tags.
 - Do not write “X → materyaldeki ilişkili kavram”.
 - Do not use generic filler.
+- Avoid repetitive filler, broken phrases, raw OCR fragments, and sentences that merely restate a heading.
+- Do not repeat the main title inside shortIntro, overview, or section paragraphs. Each paragraph should add new information.
 - Do not create a section unless it teaches something specific.
 
 Return only valid JSON in the exact schema requested by the user prompt.`;
@@ -73,13 +75,13 @@ Mandatory quality rules:
 - sourceCoverage.filesAnalyzedCount must reflect how many uploaded files were actually included from the material packet.
 - If multiple files are present, synthesize their shared conceptual map instead of writing separate file summaries.
 - learningObjectives must be real student capabilities using verbs such as açıklayabilir, karşılaştırabilir, yorumlayabilir, sınıflandırabilir, ilişkilendirebilir, ayırt edebilir, uygulayabilir.
-- shortIntro must be a polished scientific orientation paragraph, not a generic sentence. It should state the conceptual scope of the lesson and why the topics belong together. Avoid phrases such as 'yüklenen materyaller', 'bu çalışma alanı', 'tek tek ezberlenecek başlıklar', 'dosyalar analiz edildi'.
-- Write teachingText with readable sentence rhythm. Avoid overloaded sentences with multiple semicolons. When a concept has several effects, break it into separate sentences rather than one long sentence.
+- shortIntro must be a polished scientific orientation paragraph, not a generic sentence. It should state the conceptual scope of the lesson and why the topics belong together. Avoid phrases such as 'yüklenen materyaller', 'bu çalışma alanı', 'tek tek ezberlenecek başlıklar', 'dosyalar analiz edildi'. Do not repeat the exact lesson title in shortIntro.
+- Write teachingText with readable sentence rhythm. Avoid overloaded sentences with multiple semicolons. When a concept has several effects, break it into separate sentences rather than one long sentence. Do not paste labels such as "Mekanizma akışı", "Sınav bağlantısı", or "Sık hata" into the prose itself.
 - mechanismFlow should be an array of short step labels. Each item should be readable by itself. Do not include arrows inside any item.
 
 - bigPicture must be detailed, conceptual and useful. Avoid keywords, metadata, filenames, and implementation language.
 - Create as many conceptual sections as the material genuinely requires. There is no fixed upper or lower section limit. Do not compress distinct concepts just to keep the lesson short, and do not split artificially just to increase section count. For large multi-file material, cover every major domain, subdomain, mechanism, classification, clinically important distinction, and exam-relevant integration point with its own section when that improves learning. Each teachingText must be a substantial explanatory paragraph or multi-paragraph explanation, not one sentence. Include definition, mechanism/logic, relation to the broader topic, and why it matters inside teachingText itself; do not put all useful content only in examAngle or whyItMatters. It is acceptable and preferred for the full lesson to be long when the uploaded material is long.
-- Each section should define the concept, explain how it works, connect it to the broader topic and include why it matters. Put the main explanation in teachingText. Add examAngle/commonTrap only when genuinely specific; otherwise return an empty string. Do not duplicate examAngle/commonTrap sentences inside teachingText. Do not repeat identical sentence openings across sections. Do not return sectionDepthAdequate=true unless at least 80% of sections have detailed teachingText.
+- Each section should define the concept, explain how it works, connect it to the broader topic and include why it matters. Put the main explanation in teachingText. Add examAngle/commonTrap only when genuinely specific; otherwise return an empty string. Do not duplicate examAngle/commonTrap sentences inside teachingText. Do not repeat identical sentence openings across sections. Write with a professional teaching tone suitable for a strong medical student. Do not return sectionDepthAdequate=true unless at least 80% of sections have detailed teachingText.
 - mainConcepts must be real medical/biochemical/physiological concepts, not file words such as slayt, sayfa, dosya, pptx, giriş.
 - highYieldPoints and mustKnow must be specific, memorable and scientifically meaningful. Their count should be determined by the material. Do not cap them artificially; include enough items to cover the core exam-useful distinctions without padding.
 - Never fill examAngle, commonTrap, whyItMatters, or clinicalExamRelevance with boilerplate. Empty is better than a generic repeated sentence.

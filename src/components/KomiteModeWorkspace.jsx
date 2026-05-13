@@ -139,6 +139,16 @@ function improveLessonIntro(text = '', title = '') {
   return `${title || 'Bu ders'}, metabolik yolları ve biyokimyasal süreçleri izole başlıklar halinde değil; düzenleyici sinyaller, dokuya özgü yakıt seçimi, ara ürün birikimi ve klinik sonuç ilişkisi içinde bütünlüklü biçimde açıklar.`;
 }
 
+function scrollToLessonAnchor(anchorId) {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+  const element = document.getElementById(anchorId);
+  if (!element) return;
+  const offset = window.innerWidth <= 760 ? 96 : 152;
+  const top = element.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
+  if (window.history?.replaceState) window.history.replaceState(null, '', `#${anchorId}`);
+}
+
 function normalizeSourceText(material = {}) {
   return [material.extractedText, material.pastedText]
     .filter(Boolean)
@@ -648,16 +658,18 @@ function buildProfileDrivenLesson(material = {}) {
     id: createId('lesson'),
     materialId: material.id,
     title,
-    shortIntro: 'Bu ders, yüklenen komite materyallerindeki metabolik yolakları tek tek ezberlenecek başlıklar olarak değil, hormonal durum, doku yakıt seçimi, ara ürün birikimi ve klinik-biyokimyasal sonuç ilişkisi içinde bütünleştirerek açıklar.',
+    shortIntro: 'Bu ders, açlık-tokluk metabolizması, keton cisimleri ve hem sentezini ayrı ayrı ezberlenecek başlıklar olarak değil; hormonal düzenleme, dokuya özgü yakıt seçimi, yolak akışı ve klinik sonuçlar arasındaki neden-sonuç ilişkisi üzerinden öğretir.',
     learningObjectives: [
-      hasFed ? 'Açlık ve toklukta insülin/glukagon oranının doku metabolizmasını nasıl değiştirdiğini açıklayabilmek.' : null,
+      hasFed ? 'Açlık ve tokluk durumunda insülin/glukagon oranındaki değişimin karaciğer, yağ dokusu, kas ve beyindeki metabolik akışı nasıl yönlendirdiğini açıklayabilmek.' : null,
       hasKetone ? 'Yağ asidi oksidasyonu, asetil-KoA birikimi ve ketogenez arasındaki neden-sonuç ilişkisini kurabilmek.' : null,
       hasKetone ? 'Keton cisimlerinin sentez, taşınma, kullanım ve ketoasidozla ilişkisini yorumlayabilmek.' : null,
-      hasHeme ? 'Hem sentez basamaklarını, dokuya özgü düzenlenmeyi ve kritik enzimleri sıralı şekilde açıklayabilmek.' : null,
+      hasHeme ? 'Hem sentez basamaklarını, hız kısıtlayıcı düzenlemeyi ve karaciğer-eritroid doku farklarını mantıksal sırayla açıklayabilmek.' : null,
       hasHeme ? 'Porfiriyalarda biriken ara ürün ile nörovisseral veya fotosensitif klinik tabloyu ilişkilendirebilmek.' : null,
-      'Komite sınavında benzer metabolik kavramları mekanizma ve ayırt ettirici ipuçlarıyla karşılaştırabilmek.',
+      'Komite sınavında benzer metabolik kavramları mekanizma, doku farkı ve ayırt ettirici ipuçları üzerinden karşılaştırabilmek.',
     ].filter(Boolean).slice(0, 6),
-    bigPicture: 'Bu materyal setinin ana mantığı, organizmanın enerji ve biyosentez dengesini koşula göre yeniden düzenlemesidir. Toklukta besin bolluğu insülin baskınlığıyla depolama ve sentez yönüne çevrilirken, açlıkta glukagon ve stres hormonlarının etkisiyle depolar mobilize edilir. Yağ asitlerinin karaciğerde oksidasyonu asetil-KoA üretir; sitrik asit döngüsünün kapasitesi ve oksaloasetat durumu keton cismi sentezini belirler. Böylece açlıkta beyin dahil bazı dokular için alternatif yakıt sağlanırken, kontrolsüz diyabette aynı mekanizma patolojik ketoasidoza dönüşebilir.\n\nHem ve porfirin metabolizması ise enerji metabolizmasından bağımsız bir ezber başlığı değil, hücrenin oksijen taşıma, elektron transferi ve detoksifikasyon kapasitesini mümkün kılan kimyasal altyapıdır. Hem sentezindeki enzim kusurları, hangi ara ürünün biriktiğine göre nörovisseral atak veya fotosensitivite oluşturur. Bu nedenle dersin bütününde temel sınav mantığı şudur: hormonal durum veya enzim basamağı değişir, metabolik akış yön değiştirir, belirli ara ürünler artar veya azalır ve bu değişim doku yakıt seçimi ya da klinik tablo olarak görünür.',
+    bigPicture: 'Bu konu grubunun ortak mantığı, metabolik akışın fizyolojik koşula göre yeniden programlanmasıdır. Toklukta insülin baskınlığı glukoz kullanımını, glikojen ve yağ sentezini destekler; açlıkta ise glukagon ve karşı düzenleyici hormonlar depoları mobilize eder, glukoneogenezi artırır ve yağ asitlerini başlıca enerji kaynağı hâline getirir. Karaciğerde oluşan fazla asetil-KoA, oksaloasetatın glukoneogeneze çekildiği durumlarda keton cismi sentezine yönelir. Böylece uzamış açlıkta periferik dokular ve beyin için alternatif yakıt sağlanır; ancak aynı biyokimyasal mantık kontrolsüz diyabette ketoasidoza dönüşebilir.
+
+Hem sentezi ve porfiriyalar da bu bütünün dışında değildir. Hem; hemoglobin, miyoglobin, sitokromlar ve bazı detoksifikasyon enzimleri için zorunlu bir prostetik gruptur. Bu nedenle hem sentezindeki herhangi bir enzim kusuru yalnızca bir ara ürün birikimi yaratmaz; aynı zamanda klinik tabloyu da belirler. Sınav mantığı açısından temel yaklaşım şudur: hangi basamak veya düzenleyici sinyal bozulursa, o bozukluğun metabolik akışa, biriken ürüne ve klinik sonuca nasıl yansıdığı birlikte düşünülmelidir.',
     mainConcepts: [
       hasFed ? 'insülin/glukagon oranı' : null,
       hasFed ? 'dokuya göre yakıt seçimi' : null,
@@ -675,7 +687,7 @@ function buildProfileDrivenLesson(material = {}) {
       limitations: 'Görselin kendisi analiz edilmediyse yalnızca metne yansıyan etiketler ve açıklamalar güvenilir kabul edildi.',
       examRelevance: 'Yolakların yönü, hız kısıtlayıcı basamaklar, doku farkları ve biriken metabolit-klinik bulgu ilişkisi sınav açısından önceliklidir.'
     }],
-    clinicalExamRelevance: 'Bu başlıklar komite sınavında çoğunlukla “hangi durumda hangi yolak artar?”, “hangi enzim/ara ürün hangi klinik tabloyu açıklar?” ve “hangi doku hangi yakıtı üretir ya da kullanır?” mantığıyla sorulur.',
+    clinicalExamRelevance: 'Komite sorularında bu başlıklar genellikle üç eksende test edilir: belirli bir hormonal durumda hangi yolakların aktive veya inhibe olduğu, belirli bir enzim ya da ara ürün değişikliğinin hangi klinik tabloyu açıkladığı ve dokuların farklı fizyolojik koşullarda hangi yakıtı kullandığı ya da ürettiği.',
     commonConfusions: [
       hasKetone ? { confusion: 'Ketozis ve ketoasidoz', correctDistinction: 'Ketozis keton cisimlerinin artmasıdır; ketoasidoz bu artışın tampon kapasitesini aşarak asidoz oluşturmasıdır.', whyConfused: 'İkisi de keton artışıyla ilişkilidir.', memoryClarification: 'Keton artışı adaptasyon olabilir; asidoz patolojidir.' } : null,
       hasKetone ? { confusion: 'Karaciğerde keton üretimi ve kullanımı', correctDistinction: 'Karaciğer keton cismi üretir ama tioforaz eksikliği nedeniyle kullanamaz.', whyConfused: 'Üreten dokunun kullandığı varsayılır.', memoryClarification: 'Üretim karaciğer, kullanım periferik dokular.' } : null,
@@ -1426,12 +1438,21 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
     : [];
   const highYield = lesson.highYieldPoints || lesson.highYieldSummary || [];
   const mustKnow = lesson.mustKnow || lesson.mustRemember || [];
+  const commonConfusionItems = Array.isArray(lesson.commonConfusions)
+    ? lesson.commonConfusions.map((item) => formatLessonListItem(item)).filter(Boolean)
+    : [];
+  const quickLinks = [
+    { id: 'komite-objectives', label: 'Öğrenme hedefleri' },
+    ...(lesson.bigPicture || lesson.overview ? [{ id: 'komite-big-picture', label: 'Büyük resim' }] : []),
+    ...sectionAnchors,
+    { id: 'komite-high-yield', label: 'Can alıcı noktalar' },
+  ];
 
   return (
     <div className="komite-lesson-view komite-lesson-view-pro">
       <div className="komite-lesson-hero komite-lesson-hero-pro">
-        <div>
-          <h2>{lesson.title}</h2>
+        <div className="komite-lesson-hero-copy">
+          <span className="komite-inline-kicker">Ders özeti</span>
           <p>{improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)}</p>
         </div>
       </div>
@@ -1440,10 +1461,9 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
         <aside className="komite-lesson-sidebar" aria-label="Ders navigasyonu">
           <div className="komite-sidebar-card">
             <strong>Hızlı erişim</strong>
-            <a href="#komite-objectives">Öğrenme hedefleri</a>
-            <a href="#komite-big-picture">Büyük resim</a>
-            {sectionAnchors.map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
-            <a href="#komite-high-yield">Can alıcı noktalar</a>
+            {quickLinks.map((item) => (
+              <button type="button" key={item.id} className="komite-quick-link" onClick={() => scrollToLessonAnchor(item.id)}>{item.title || item.label}</button>
+            ))}
           </div>
         </aside>
 
@@ -1460,15 +1480,27 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
             </article>
           ) : null}
 
-          <div className="komite-context-grid">
-            {lesson.clinicalExamRelevance ? <article className="komite-lesson-section"><h3>Klinik / sınav bağlantısı</h3><p>{lesson.clinicalExamRelevance}</p></article> : null}
-            {Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length ? (
-              <article className="komite-lesson-section">
-                <h3>Sık karıştırılan noktalar</h3>
-                <ul>{lesson.commonConfusions.map((item, index) => <li key={`${formatLessonListItem(item)}-${index}`}>{formatLessonListItem(item)}</li>)}</ul>
-              </article>
-            ) : null}
-          </div>
+          {(lesson.clinicalExamRelevance || commonConfusionItems.length) ? (
+            <section className="komite-lesson-section komite-insight-lines-section">
+              <h3>Klinik odak ve sık karıştırılan noktalar</h3>
+              <div className="komite-note-lines komite-insight-lines">
+                {lesson.clinicalExamRelevance ? (
+                  <div className="komite-note-line">
+                    <strong>Klinik / sınav bağlantısı</strong>
+                    <p>{lesson.clinicalExamRelevance}</p>
+                  </div>
+                ) : null}
+                {commonConfusionItems.length ? (
+                  <div className="komite-note-line">
+                    <strong>Sık karıştırılan noktalar</strong>
+                    <div className="komite-bullet-lines">
+                      <ul>{commonConfusionItems.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ul>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            </section>
+          ) : null}
 
           {sections.map((section, index) => {
             const teachingText = sanitizeTeachingTextForDisplay(section.teachingText || section.content);
@@ -1873,7 +1905,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       </div>
       <InlineStatus status={Object.values(aiStatus).includes('error') ? 'error' : 'idle'} message={Object.values(aiError).find(Boolean) || ''} />
       <div className="komite-tabbar" role="tablist" aria-label="Materyal çalışma alanı sekmeleri">
-        {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}><Icon name={item.icon} /> {item.label}</button>)}
+        {STUDY_TABS.map((item) => (<button key={item.id} type="button" role="tab" aria-selected={tab === item.id} className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}><Icon name={item.icon} size={18} /><span>{item.label}</span></button>))}
       </div>
       <div className="komite-tab-panel">
         {tab === 'lesson' ? <LessonView material={material} status={aiStatus.lesson} onGenerate={() => runWithLocalFallback('lesson')} /> : null}
