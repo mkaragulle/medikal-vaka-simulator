@@ -86,17 +86,39 @@ function detectTopicsFromText(text = '', max = 10) {
   return extractKeywords(text, '').filter((word) => !/^(slayt|sayfa|dosya|pptx|giriş)$/iu.test(word)).slice(0, max);
 }
 
+function splitMergedExtractedTextIntoFiles(text = '', material = {}) {
+  const raw = String(text || '');
+  const matches = [...raw.matchAll(/\[\[FILE\s+(\d+)\s*:?\s*([^\]]*)\]\]/giu)];
+  if (!matches.length) return [];
+  return matches.map((match, index) => {
+    const start = match.index + match[0].length;
+    const end = index + 1 < matches.length ? matches[index + 1].index : raw.length;
+    const fallbackFile = Array.isArray(material.files) ? material.files[index] : null;
+    const fileName = String(match[2] || fallbackFile?.name || `Materyal ${index + 1}`).trim();
+    const cleanedExtractedText = cleanExtractedTextForAI(raw.slice(start, end));
+    return {
+      fileName,
+      fileType: fallbackFile?.type || getFileType(fileName),
+      cleanedExtractedText,
+      detectedTopics: detectTopicsFromText(cleanedExtractedText),
+    };
+  }).filter((item) => item.cleanedExtractedText);
+}
+
 function buildCombinedMaterialPacket(material = {}) {
-  const files = Array.isArray(material.filePackets) && material.filePackets.length
+  const splitPackets = splitMergedExtractedTextIntoFiles(material.extractedText || '', material);
+  const files = Array.isArray(material.filePackets) && material.filePackets.length >= Math.max(1, Array.isArray(material.files) ? material.files.length : 0)
     ? material.filePackets
-    : (Array.isArray(material.files) && material.files.length
-      ? material.files.map((file, index) => ({
-        fileName: file.name || material.fileName || `Materyal ${index + 1}`,
-        fileType: file.type || getFileType(file.name || material.fileName || ''),
-        cleanedExtractedText: index === 0 ? cleanExtractedTextForAI(material.extractedText || '') : '',
-        detectedTopics: [],
-      }))
-      : [{ fileName: material.fileName || 'Ek metin', fileType: material.fileType || 'text', cleanedExtractedText: cleanExtractedTextForAI(material.extractedText || material.pastedText || ''), detectedTopics: [] }]);
+    : (splitPackets.length > 1
+      ? splitPackets
+      : (Array.isArray(material.files) && material.files.length
+        ? material.files.map((file, index) => ({
+          fileName: file.name || material.fileName || `Materyal ${index + 1}`,
+          fileType: file.type || getFileType(file.name || material.fileName || ''),
+          cleanedExtractedText: splitPackets[index]?.cleanedExtractedText || (index === 0 ? cleanExtractedTextForAI(material.extractedText || '') : ''),
+          detectedTopics: splitPackets[index]?.detectedTopics || [],
+        }))
+        : [{ fileName: material.fileName || 'Ek metin', fileType: material.fileType || 'text', cleanedExtractedText: cleanExtractedTextForAI(material.extractedText || material.pastedText || ''), detectedTopics: [] }]));
   const normalizedFiles = files.map((file) => {
     const cleaned = cleanExtractedTextForAI(file.cleanedExtractedText || file.text || '');
     return {
@@ -117,30 +139,6 @@ function buildCombinedMaterialPacket(material = {}) {
     courseName: material.course || '',
     studyGoal: material.learningTarget || '',
     files: normalizedFiles,
-  };
-}
-
-
-
-function getExpectedFileCount(material = {}, packet = {}) {
-  const packetCount = Array.isArray(packet.files) ? packet.files.length : 0;
-  const materialFilesCount = Array.isArray(material.files) ? material.files.length : 0;
-  const coverageCount = Number(material.sourceCoverage?.filesUploadedCount || material.sourceCoverage?.filesAnalyzedCount || 0);
-  return Math.max(packetCount, materialFilesCount, coverageCount, 0);
-}
-
-function compactMaterialPacketForAI(packet = {}, maxTotalChars = 42000) {
-  const files = Array.isArray(packet.files) ? packet.files : [];
-  if (!files.length) return { ...packet, files: [] };
-  const readableCount = Math.max(1, files.filter((file) => String(file.cleanedExtractedText || '').trim().length > 0).length);
-  const perFileLimit = Math.max(2500, Math.floor(maxTotalChars / readableCount));
-  return {
-    ...packet,
-    files: files.map((file) => ({
-      ...file,
-      cleanedExtractedText: String(file.cleanedExtractedText || '').slice(0, perFileLimit),
-      originalCharCount: String(file.cleanedExtractedText || '').length,
-    })),
   };
 }
 
@@ -1319,13 +1317,11 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
   const runWithLocalFallback = async (kind) => {
     if (aiStatus[kind] === 'loading') return;
     setKindStatus(kind, 'loading', '');
-    const rawMaterialPacket = buildCombinedMaterialPacket(material);
-    const expectedFilesUploadedCount = getExpectedFileCount(material, rawMaterialPacket);
-    const materialPacket = compactMaterialPacketForAI(rawMaterialPacket);
+    const materialPacket = buildCombinedMaterialPacket(material);
     const sourceText = combinedPacketToSourceText(materialPacket) || normalizeSourceText(material);
     if (import.meta.env.DEV) {
       console.debug('[KOMITE AI request]', {
-        filesUploaded: expectedFilesUploadedCount,
+        filesUploaded: Array.isArray(material.files) ? material.files.length : 0,
         filesIncluded: materialPacket.files.length,
         charCounts: materialPacket.files.map((file) => ({ fileName: file.fileName, chars: (file.cleanedExtractedText || '').length })),
         totalChars: sourceText.length,
@@ -1347,7 +1343,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
           const analyzed = await postKomiteAI('/api/analyze-uploaded-material', {
             metadata: { ...material, committeeOrCourse: material.committee || material.course },
             materialPacket,
-            extractedTextOrChunks: sourceText,
+            extractedTextOrChunks: sourceText.slice(0, 36000),
           });
           analysis = analyzed.analysis || analysis;
         } catch {
@@ -1361,8 +1357,8 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             studyContext,
             materialAnalysisJson: analysis,
             materialPacket,
-            sourceTextChunks: sourceText,
-            filesUploadedCount: expectedFilesUploadedCount,
+            sourceTextChunks: sourceText.slice(0, 36000),
+            filesUploadedCount: materialPacket.files.length,
           }) : null;
           nextPatch = { materialAnalysis: analysis, lesson: generated?.lesson ? normalizeGeneratedLessonShape(generated.lesson) : buildLocalLesson(material), processingStatus: 'lesson-ready' };
         } catch {

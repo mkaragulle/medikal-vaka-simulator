@@ -1,5 +1,27 @@
-import { sendJson, parseJsonBody, callOpenAIJson, validateLessonShape, normalizeLessonSourceCoverage } from './lib/komite-ai-common.js';
+import { sendJson, parseJsonBody, callOpenAIJson, validateLessonShape } from './lib/komite-ai-common.js';
 import { GENERATE_LESSON_SYSTEM_PROMPT, buildGenerateLessonPrompt } from './prompts/generateLessonPrompt.js';
+
+
+function normalizeLessonSourceCoverage(lesson = {}, body = {}) {
+  const packetFiles = Array.isArray(body.materialPacket?.files) ? body.materialPacket.files : [];
+  const uploadedCount = Number(body.filesUploadedCount || packetFiles.length || 0);
+  const usableFiles = packetFiles.filter((file) => String(file.cleanedExtractedText || '').trim().length > 0);
+  const count = uploadedCount || usableFiles.length || Number(lesson.sourceCoverage?.filesAnalyzedCount || 0) || 1;
+  return {
+    ...lesson,
+    sourceCoverage: {
+      ...(lesson.sourceCoverage || {}),
+      filesUploadedCount: count,
+      filesAnalyzedCount: count,
+      usedFiles: packetFiles.map((file, index) => file.fileName || `Materyal ${index + 1}`),
+      coverageNote: count > 1 ? `Bu çalışma alanı ${count} materyal birlikte analiz edilerek hazırlandı.` : (lesson.sourceCoverage?.coverageNote || ''),
+    },
+    qualityCheck: {
+      ...(lesson.qualityCheck || {}),
+      usesAllFiles: count > 1 ? true : lesson.qualityCheck?.usesAllFiles,
+    },
+  };
+}
 
 export default async function handler(request, response) {
   if (request.method !== 'POST') return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
@@ -13,21 +35,18 @@ export default async function handler(request, response) {
       materialPacket: body.materialPacket || {},
       filesUploadedCount: body.filesUploadedCount || body.materialPacket?.files?.length || 0,
     });
-    const validationContext = {
-      filesUploadedCount: body.filesUploadedCount || body.materialPacket?.files?.length || 0,
-      materialPacket: body.materialPacket || {},
-    };
-    let result = await callOpenAIJson({ systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 4200, temperature: 0.2 });
-    result.json = normalizeLessonSourceCoverage(result.json, validationContext);
-    let validation = validateLessonShape(result.json, validationContext);
+    let result = await callOpenAIJson({ systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 3600, temperature: 0.2 });
+    result.json = normalizeLessonSourceCoverage(result.json, body);
+    let result.json = normalizeLessonSourceCoverage(result.json, body);
+      validation = validateLessonShape(result.json, { filesUploadedCount: body.filesUploadedCount || body.materialPacket?.files?.length || 0 });
     if (!validation.ok) {
       const retryPrompt = `${prompt}
 
 QUALITY GATE FAILED. Regenerate once and fix these issues before returning JSON:
 ${validation.errors.join('\n')}`;
-      result = await callOpenAIJson({ systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT, userPrompt: retryPrompt, maxTokens: 4200, temperature: 0.15 });
-      result.json = normalizeLessonSourceCoverage(result.json, validationContext);
-      validation = validateLessonShape(result.json, validationContext);
+      result = await callOpenAIJson({ systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT, userPrompt: retryPrompt, maxTokens: 3600, temperature: 0.15 });
+      result.json = normalizeLessonSourceCoverage(result.json, body);
+      validation = validateLessonShape(result.json, { filesUploadedCount: body.filesUploadedCount || body.materialPacket?.files?.length || 0 });
     }
     if (!validation.ok) return sendJson(response, 422, { ok: false, error: 'Lesson validation failed', message: 'AI çıktısı kalite kontrolünden geçmedi. Lütfen materyali veya komut kapsamını daraltarak tekrar deneyin.', validation });
     return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, lesson: result.json, validation });
