@@ -35,8 +35,6 @@ Do not:
 - generate tags like “X → related concept”
 - fill sections with generic sentences
 - repeat the same explanation under different headings
-- repeat the main title inside the lesson overview or first paragraph
-- start headings with manual numbering such as 01, 02 or Bölüm 1
 - invent content that is not supported by the uploaded material
 - claim that a figure/table says something if it is unreadable
 - write broken Turkish or awkward translation
@@ -150,7 +148,7 @@ Do not produce meaningless concept chips or “related concept” statements.
 7) MAIN LESSON STANDARD
 ==================================================
 
-The main lesson must be concept-based and sequential. Clinical/exam relevance and common confusions should remain compact, high-yield supporting notes rather than turning into bulky side sections.
+The main lesson must be concept-based and sequential.
 
 Use clear headings. Each section must:
 - explain one major idea

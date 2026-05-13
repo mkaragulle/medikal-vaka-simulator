@@ -58,11 +58,12 @@ function truncate(text = '', max = 72) {
 }
 
 function formatLessonListItem(item) {
-  if (typeof item === 'string') return item;
+  if (typeof item === 'string') return sanitizeTeachingTextForDisplay(item);
   if (!item || typeof item !== 'object') return '';
-  return item.correctDistinction || item.memoryClarification
-    ? `${item.confusion || 'Sık karıştırılan nokta'}: ${item.correctDistinction || ''}${item.whyConfused ? ` ${item.whyConfused}` : ''}${item.memoryClarification ? ` ${item.memoryClarification}` : ''}`.trim()
+  const text = item.correctDistinction || item.memoryClarification
+    ? `${item.confusion || 'Sık karıştırılan nokta'}: ${item.correctDistinction || ''}${item.whyConfused ? ` Karışma nedeni: ${item.whyConfused}` : ''}${item.memoryClarification ? ` Net ayrım: ${item.memoryClarification}` : ''}`.trim()
     : Object.values(item).filter(Boolean).join(' ');
+  return sanitizeTeachingTextForDisplay(text);
 }
 
 
@@ -102,16 +103,16 @@ function splitReadableParagraphs(text = '') {
 
 function sanitizeTeachingTextForDisplay(text = '') {
   return String(text || '')
-    // Remove field labels that should be rendered in separate teaching-note rows, not repeated inside paragraphs.
-    .replace(/\s*Mekanizma akışı:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
-    .replace(/\s*Sınav bağlantısı:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
-    .replace(/\s*Sınavda nasıl sorulur\??\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
-    .replace(/\s*Sık hata:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
-    // Defensive cleanup for OCR fragments that can leak from unrelated slide captions.
-    .replace(/\b\d+\s+Pirol halkası\b[\s\S]*?fonksiyonel özellik kazanır\.?/giu, ' ')
-    .replace(/\b\d+\s+Pirol halkası\b[^.?!]*Serbest porfirinlerin biyolojik önemi yok\.?/giu, ' ')
-    .replace(/Serbest porfirinlerin biyolojik önemi yok\.?/giu, ' ')
-    .replace(/\bP\s+orfinlere\b[\s\S]*?fonksiyonel özellik kazanır\.?/giu, ' ')
+    // Remove field labels that are rendered as separate rows, not repeated inside paragraphs.
+    .replace(/\s*(?:Mekanizma akışı|Süreç mantığı):\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    .replace(/\s*(?:Klinik bağlantı|Sınav bağlantısı|Sınavda nasıl sorulur\??):\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    .replace(/\s*(?:Sık hata|Sık karıştırılan nokta):\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    // Defensive cleanup for OCR fragments that leak from slide captions and make the lesson look copy-pasted.
+    .replace(/\b\d+\s+Pirol halkası\s+Serbest porfirinlerin biyolojik önemi yok\.?/giu, ' ')
+    .replace(/\bSerbest porfirinlerin biyolojik önemi yok\.?/giu, ' ')
+    .replace(/\b\d+\s+Pirol halkası\b[\s\S]{0,180}?fonksiyonel özellik kazanır\.?/giu, ' ')
+    .replace(/\bP\s+orfinlere\b[\s\S]{0,180}?fonksiyonel özellik kazanır\.?/giu, ' ')
+    .replace(/\b(?:slayt|sayfa)\s*\d+\b/giu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -122,8 +123,8 @@ function sentenceFromFlowStep(step = '') {
   if (!/[→>]/u.test(raw)) return raw.replace(/\s+/g, ' ');
   const parts = raw.split(/\s*(?:→|>)\s*/u).map((part) => part.trim()).filter(Boolean);
   if (parts.length <= 1) return raw.replace(/[→>]/gu, ' ardından ').replace(/\s+/g, ' ');
-  if (parts.length === 2) return `${parts[0]} ile başlayan süreç ${parts[1]} ile sonuçlanır.`;
-  return `${parts[0]} ile başlayan süreç; ${parts.slice(1, -1).join(', ')} basamaklarından geçerek ${parts[parts.length - 1]} ile sonuçlanır.`;
+  if (parts.length === 2) return `${parts[0]} sonucunda ${parts[1]} öne çıkar.`;
+  return `${parts[0]} durumunda ${parts.slice(1, -1).join(', ')} gelişir; sonuçta ${parts[parts.length - 1]} öne çıkar.`;
 }
 
 function formatMechanismSteps(flow = []) {
@@ -132,45 +133,13 @@ function formatMechanismSteps(flow = []) {
 }
 
 function improveLessonIntro(text = '', title = '') {
-  const titleText = String(title || '').trim();
-  const titlePattern = titleText ? new RegExp(`^${titleText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[—–:,-]*\\s*`, 'iu') : null;
   const clean = String(text || '')
     .replace(/yüklenen komite materyallerindeki/giu, 'bu çalışma alanındaki')
     .replace(/tek tek ezberlenecek başlıklar olarak değil,?/giu, '')
-    .replace(/\b(öğrenme hedefleri|büyük resim)\b\s*[:.-]?/giu, '')
     .replace(/\s+/g, ' ')
     .trim();
-  const normalized = titlePattern ? clean.replace(titlePattern, '').trim() : clean;
-  if (normalized && normalized.length >= 80) return normalized;
+  if (clean && clean.length >= 80) return clean;
   return `${title || 'Bu ders'}, metabolik yolları ve biyokimyasal süreçleri izole başlıklar halinde değil; düzenleyici sinyaller, dokuya özgü yakıt seçimi, ara ürün birikimi ve klinik sonuç ilişkisi içinde bütünlüklü biçimde açıklar.`;
-}
-
-function cleanSectionHeadingText(value = '') {
-  return String(value || '')
-    .replace(/^\s*\d{1,2}\s*[.)-:]?\s*/u, '')
-    .replace(/^\s*(bölüm|section)\s*\d+\s*[:.-]?\s*/iu, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-}
-
-function cleanLessonTextBlock(text = '', title = '') {
-  const titleText = String(title || '').trim();
-  const titlePattern = titleText ? new RegExp(`^${titleText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[—–:,-]*\\s*`, 'iu') : null;
-  const cleaned = sanitizeTeachingTextForDisplay(String(text || ''))
-    .replace(/\b(öğrenme hedefleri|büyük resim|klinik\s*\/\s*sınav bağlantısı|sık karıştırılan noktalar)\b\s*[:.-]?/giu, '')
-    .replace(/\s+/g, ' ')
-    .trim();
-  return titlePattern ? cleaned.replace(titlePattern, '').trim() : cleaned;
-}
-
-function scrollToLessonAnchor(anchorId) {
-  if (typeof window === 'undefined' || typeof document === 'undefined') return;
-  const element = document.getElementById(anchorId);
-  if (!element) return;
-  const offset = window.innerWidth <= 760 ? 96 : 152;
-  const top = element.getBoundingClientRect().top + window.scrollY - offset;
-  window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
-  if (window.history?.replaceState) window.history.replaceState(null, '', `#${anchorId}`);
 }
 
 function normalizeSourceText(material = {}) {
@@ -191,6 +160,8 @@ function cleanExtractedTextForAI(text = '') {
     .map((line) => line.replace(/\s+/g, ' ').trim())
     .filter((line) => line.length >= 3)
     .filter((line) => !/^(\d+|sayfa\s*\d+|slayt\s*\d+)$/iu.test(line))
+    .filter((line) => !/\b\d+\s+Pirol halkası\s+Serbest porfirinlerin biyolojik önemi yok\b/iu.test(line))
+    .filter((line) => !/^Serbest porfirinlerin biyolojik önemi yok\.?$/iu.test(line))
     .filter((line) => !/\.(pdf|pptx|ppt|docx)$/iu.test(line))
     .filter((line) => !/^(prof\.?\s*dr\.?|doç\.?\s*dr\.?|öğr\.?\s*gör\.?)/iu.test(line))
     .filter((line) => !/\b\d{1,2}[./-]\d{1,2}[./-]\d{2,4}\b|\b20\d{2}\b/u.test(line))
@@ -615,14 +586,14 @@ function buildProfileDrivenLesson(material = {}) {
   if (hasFed) {
     sectionTemplates.push({
       heading: 'Açlık ve toklukta metabolik yön değişimi',
-      teachingText: 'Toklukta insülin/glukagon oranının artması, besinlerin depolanmasını ve anabolik reaksiyonları öne çıkarır; karaciğerde glikojen sentezi, glikoliz, yağ asidi ve triaçilgliserol sentezi desteklenirken yağ dokusunda trigliserid depolanması artar. Açlıkta ise insülin azalır, glukagon ve katekolamin etkisi belirginleşir; amaç kan glukozunu korumak, yağ asitlerini mobilize etmek ve uzun süreli durumda keton cisimlerini alternatif yakıt olarak kullanıma sunmaktır. Böylece aynı dokular farklı hormonal ortamda ters metabolik programlara geçer.',
+      teachingText: 'Açlık-tokluk geçişinde belirleyici değişken insülin/glukagon oranıdır. Toklukta insülin artışı karaciğerde glikojen sentezini, glikolizi ve yağ asidi sentezini; yağ dokusunda trigliserid depolanmasını; kas dokusunda ise glukoz ve amino asit alımını destekler. Açlıkta insülin azalır, glukagon ve katekolamin etkisi belirginleşir. Karaciğer önce glikojenolizle, glikojen depoları azaldıkça glukoneogenezle kan glukozunu korur; yağ dokusunda hormona duyarlı lipaz aktivasyonu serbest yağ asidi sağlar. Uzamış açlıkta bu yağ asitlerinin karaciğerde oksidasyonu keton cismi üretimini artırır. Bu nedenle aynı metabolik yolaklar sabit değildir; hormonal bağlama göre depolama, mobilizasyon veya alternatif yakıt üretimi yönüne kayar.',
       examAngle: 'Komite soruları genellikle insülin/glukagon oranı değişince karaciğer, yağ dokusu, kas ve beyindeki yakıt tercihinin nasıl değiştiğini sorgular.',
       commonTrap: 'Toklukta depolama, açlıkta mobilizasyon mantığı unutulursa glikoliz, glukoneogenez, lipoliz ve ketogenez yönleri karıştırılır.',
       mechanismFlow: ['Tokluk → insülin artışı → glukoz kullanımı ve depolama', 'Açlık → glukagon/katekolamin etkisi → glikojenoliz, glukoneogenez, lipoliz']
     });
     sectionTemplates.push({
       heading: 'Dokular arası yakıt paylaşımı',
-      teachingText: 'Karaciğer, yağ dokusu, iskelet kası ve beyin açlık-tokluk geçişinde farklı görevler üstlenir. Karaciğer plazma glukozunu tamponlar, glikojen depolarını kullanır ve uzun açlıkta glukoneogenez ile ketogenez yapar. Yağ dokusu toklukta trigliserid depolar, açlıkta hormona duyarlı lipaz aktivasyonu ile yağ asitlerini dolaşıma verir. Kas, toklukta glukoz ve amino asit alımını artırırken açlıkta yağ asitleri ve keton cisimlerine yönelir. Beyin normalde glukoza bağımlıdır; uzamış açlıkta keton cisimlerini kullanarak protein yıkımını azaltan adaptasyona katkı sağlar.',
+      teachingText: 'Doku metabolizması, her dokunun görevine ve enzim repertuvarına göre ayrılır. Karaciğer kan glukozunu tamponlayan merkezdir; toklukta glikojen ve yağ sentezine yönelir, açlıkta glukoz üretir ve uzun açlıkta keton cismi sentezler. Yağ dokusu enerji deposudur; toklukta lipoprotein lipaz aracılığıyla yağ asidi alımı ve trigliserid depolanması artar, açlıkta hormona duyarlı lipaz trigliseridleri parçalayarak serbest yağ asidi sağlar. İskelet kası toklukta glukozu kullanıp glikojen depolayabilir; açlıkta kan glukozunu korumak için daha çok yağ asidi ve keton cisimlerine yönelir. Beyin kısa açlıkta glukoza bağımlıdır, ancak uzamış açlıkta keton cisimlerini önemli ölçüde kullanarak glukoneogenez için gereken protein yıkımını azaltır.',
       examAngle: 'Doku bazlı sorularda “hangi doku hangi yakıtı kullanır/üretir?” ayrımı yüksek verimlidir.',
       commonTrap: 'Karaciğerin keton cismi ürettiği halde kendi ketonunu kullanamaması, doku görevlerinin ayrı düşünülmesini gerektirir.',
       mechanismFlow: ['Karaciğer → glukoz/keton üretimi', 'Yağ dokusu → yağ asidi mobilizasyonu', 'Kas/beyin → yakıt tüketimi']
@@ -656,21 +627,21 @@ function buildProfileDrivenLesson(material = {}) {
   if (hasHeme) {
     sectionTemplates.push({
       heading: 'Porfirin halkası, hem ve hemoproteinlerin işlevi',
-      teachingText: 'Hem, porfirin iskeletine demir bağlanmasıyla işlev kazanan bir metalloporfirindir. Porfirin çekirdeği dört pirol halkasının metenil köprüleriyle birleşmesinden oluşur; yan zincirlerin dizilişi ve metal iyonu bağlanması moleküle biyolojik fonksiyon kazandırır. Hemoglobin ve miyoglobin oksijen taşıma/depolama, sitokromlar elektron taşıma ve ksenobiyotik metabolizması, katalaz ise hidrojen peroksit yıkımı gibi görevlerde hem grubuna bağımlıdır. Bu nedenle hem sentezi yalnızca bir biyosentez yolu değil, oksijen taşınması, enerji üretimi ve detoksifikasyon süreçlerinin ortak kimyasal temelidir.',
+      teachingText: 'Hem, porfirin halkasının merkezine Fe²⁺ bağlanmasıyla oluşan işlevsel bir metalloporfirindir. Porfirin çekirdeği dört pirol halkasından oluşur; ancak biyolojik işlevi belirleyen yalnızca halka yapısı değil, demirin bağlanması ve bu grubun protein çevresi içinde doğru konumlanmasıdır. Hemoglobin ve miyoglobin oksijen bağlama, sitokromlar elektron transferi ve ilaç metabolizması, katalaz ve peroksidazlar ise reaktif oksijen türlerinin detoksifikasyonu için hem grubuna bağımlıdır. Bu yüzden hem sentezi yalnızca “bir yolak” olarak değil, solunum zinciri, oksijen taşınması ve karaciğer detoksifikasyon kapasitesinin ortak kimyasal temeli olarak öğrenilmelidir.',
       examAngle: 'Hemoprotein-fonksiyon eşleştirmeleri ve porfirin/porfirinojen farkı komite düzeyinde sık sorgulanır.',
       commonTrap: 'Serbest porfirinleri doğrudan işlevsel sanmak hatalıdır; metalloporfirin oluşumu fonksiyon kazandırır.',
       mechanismFlow: ['Porfin çekirdeği → porfirin yan zincirleri → metal bağlanması → hemoprotein fonksiyonu']
     });
     sectionTemplates.push({
       heading: 'Hem sentez basamakları ve düzenlenmesi',
-      teachingText: 'Hem sentezi mitokondride başlar, sitozolde devam eder ve son basamaklar için yeniden mitokondriye döner. İlk basamakta glisin ve süksinil-KoA, piridoksal fosfat gerektiren ALA sentaz reaksiyonu ile δ-aminolevülinata yönelir; bu basamak hız kısıtlayıcıdır. Sonraki basamaklarda porfobilinojen, üroporfirinojen, koproporfirinojen, protoporfirin ve sonunda ferroşelataz aracılığıyla hem oluşur. Karaciğerde ALAS1 hem/hemin ve glukozla baskılanır; sitokrom P450 indükleyen ilaçlar hem tüketimini artırarak ALAS1’i dereprese edebilir. Eritroid dokuda ALAS2 daha çok demir sağlanımıyla ilişkilidir.',
+      teachingText: 'Hem sentezi hücresel yerleşim açısından iyi organize edilmiş bir yoldur: mitokondride başlar, sitozolde devam eder ve son basamaklar için tekrar mitokondriye döner. İlk ve hız kısıtlayıcı basamakta glisin ile süksinil-KoA, piridoksal fosfat bağımlı ALA sentaz aracılığıyla δ-aminolevülinata dönüştürülür. Ardından porfobilinojen, üroporfirinojen, koproporfirinojen ve protoporfirin ara ürünleri oluşur; son basamakta ferroşelataz Fe²⁺ ekleyerek hem sentezini tamamlar. Düzenleme dokuya göre farklıdır: karaciğerde ALAS1 hem/hemin ve glukozla baskılanır, sitokrom P450 indüksiyonu hem tüketimini artırarak yolu aktive edebilir; eritroid dokuda ALAS2 daha çok demir sağlanımı ve hemoglobin sentezi ihtiyacına göre kontrol edilir.',
       examAngle: 'ALAS1-ALAS2 ayrımı, kurşunun ALA dehidrataz/ferroşelataz inhibisyonu ve hız kısıtlayıcı basamak yüksek verimlidir.',
       commonTrap: 'Tüm hem sentez düzenlenmesini tek tip sanmak hatalıdır; karaciğer ve eritroid doku farklı kontrol mantığına sahiptir.',
       mechanismFlow: ['Glisin + süksinil-KoA → ALA', 'PBG/porfirinojen ara ürünleri → protoporfirin', 'Fe2+ eklenmesi → hem']
     });
     sectionTemplates.push({
       heading: 'Porfiriyalar: biriken ara ürün klinik bulguyu belirler',
-      teachingText: 'Porfiriyalar hem biyosentez yolundaki enzim kusurları sonucunda ara ürünlerin birikmesiyle ortaya çıkar. Erken basamaklarda ALA ve PBG birikimi daha çok abdominal ağrı, otonom bulgular ve nöropsikiyatrik belirtilerle ilişkilidir; çünkü bu küçük ve suda çözünen prekürsörler nörotoksik etki gösterebilir. Daha geç basamaklarda porfirinojenlerin oksidasyon ürünü olan porfirinler ışığa duyarlılık, cilt lezyonları ve floresans özellikleriyle öne çıkar. Bu yüzden akut hepatik porfiriyalar ve eritropoetik/kutanöz porfiriyalar, sadece isim olarak değil, biriken metabolit ve klinik tablo üzerinden ayrılmalıdır.',
+      teachingText: 'Porfiriyalarda temel mekanizma, hem sentez yolunda bir enzim basamağının yavaşlaması ve o basamağın öncesindeki ara ürünlerin birikmesidir. Erken basamak defektlerinde ALA ve porfobilinojen gibi küçük, suda çözünebilen prekürsörler artar; bu durum abdominal ağrı, otonom instabilite, nöropsikiyatrik bulgular ve periferik nöropati gibi nörovisseral belirtilerle ilişkilidir. Geç basamaklarda porfirinojenlerin okside olarak porfirinlere dönüşmesi ışık absorpsiyonunu artırır ve fotosensitivite, büllöz deri lezyonları veya idrarda renk değişikliği gibi bulgular öne çıkar. Bu nedenle porfiriyalar tek bir klinik grup gibi ezberlenmemelidir; biriken metabolitin türü, çözünürlüğü ve fotoreaktivitesi klinik fenotipi belirler.',
       examAngle: 'Akut intermitant porfiriya: PBG deaminaz eksikliği, ALA/PBG artışı, fotosensitivite yokluğu ve nörovisseral bulgular klasik ayrımdır.',
       commonTrap: 'Her porfiriyada fotosensitivite beklemek yanlıştır; prekürsör birikimi olan erken basamak defektlerinde cilt bulgusu olmayabilir.',
       mechanismFlow: ['Enzim defekti → önceki ara ürün birikir', 'ALA/PBG → nörovisseral bulgu', 'Porfirinler → fotosensitivite']
@@ -682,18 +653,20 @@ function buildProfileDrivenLesson(material = {}) {
     id: createId('lesson'),
     materialId: material.id,
     title,
-    shortIntro: 'Bu materyal, enerji metabolizması ile hem biyosentezini ortak bir biyokimyasal mantık içinde ele alır. Amaç; açlık ve toklukta hormonal değişimin doku yakıt kullanımını nasıl yeniden programladığını, keton cismi oluşumunun hangi koşullarda fizyolojik ya da patolojik hale geldiğini ve hem sentezindeki enzim kusurlarının neden farklı porfiriya tabloları oluşturduğunu neden-sonuç ilişkisiyle açıklamaktır.',
+    shortIntro: 'Bu ders, açlık-tokluk metabolizması, keton cismi üretimi, hem sentezi ve porfiriyaları ortak bir biyokimyasal mantıkla ele alır: hormonal sinyal veya enzim basamağı değiştiğinde metabolik akış yön değiştirir; bu değişim doku yakıt seçimi, ara ürün birikimi ve klinik tablo olarak görünür.',
     learningObjectives: [
-      hasFed ? 'Açlık ve tokluk durumunda insülin/glukagon oranındaki değişimin karaciğer, yağ dokusu, kas ve beyindeki metabolik akışı nasıl yönlendirdiğini açıklayabilmek.' : null,
+      hasFed ? 'Açlık ve toklukta insülin/glukagon oranının doku metabolizmasını nasıl değiştirdiğini açıklayabilmek.' : null,
       hasKetone ? 'Yağ asidi oksidasyonu, asetil-KoA birikimi ve ketogenez arasındaki neden-sonuç ilişkisini kurabilmek.' : null,
       hasKetone ? 'Keton cisimlerinin sentez, taşınma, kullanım ve ketoasidozla ilişkisini yorumlayabilmek.' : null,
-      hasHeme ? 'Hem sentez basamaklarını, hız kısıtlayıcı düzenlemeyi ve karaciğer-eritroid doku farklarını mantıksal sırayla açıklayabilmek.' : null,
+      hasHeme ? 'Hem sentez basamaklarını, dokuya özgü düzenlenmeyi ve kritik enzimleri sıralı şekilde açıklayabilmek.' : null,
       hasHeme ? 'Porfiriyalarda biriken ara ürün ile nörovisseral veya fotosensitif klinik tabloyu ilişkilendirebilmek.' : null,
-      'Komite sınavında benzer metabolik kavramları mekanizma, doku farkı ve ayırt ettirici ipuçları üzerinden karşılaştırabilmek.',
+      'Komite sınavında benzer metabolik kavramları mekanizma ve ayırt ettirici ipuçlarıyla karşılaştırabilmek.',
     ].filter(Boolean).slice(0, 6),
-    bigPicture: 'Bu konu grubunun ortak mantığı, metabolik akışın fizyolojik koşula göre yeniden programlanmasıdır. Toklukta insülin baskınlığı glukoz kullanımını, glikojen ve yağ sentezini destekler; açlıkta ise glukagon ve karşı düzenleyici hormonlar depoları mobilize eder, glukoneogenezi artırır ve yağ asitlerini başlıca enerji kaynağı hâline getirir. Karaciğerde oluşan fazla asetil-KoA, oksaloasetatın glukoneogeneze çekildiği durumlarda keton cismi sentezine yönelir. Böylece uzamış açlıkta periferik dokular ve beyin için alternatif yakıt sağlanır; ancak aynı biyokimyasal mantık kontrolsüz diyabette ketoasidoza dönüşebilir.
+    bigPicture: `Bu konuların ortak büyük resmi, hücrenin enerji üretimi, biyosentez ve detoksifikasyon kapasitesini koşula göre yeniden ayarlamasıdır. Toklukta insülin baskınlığı glukoz kullanımını, glikojen sentezini ve lipogenezi destekler; açlıkta glukagon ve katekolamin etkisi glikojenoliz, glukoneogenez, lipoliz ve uzun sürede ketogenezi öne çıkarır. Bu nedenle sınavda tek bir yolak ezberi değil, “hormonal ortam değişirse hangi doku hangi yakıtı üretir veya tüketir?” mantığı sorgulanır.
 
-Hem sentezi ve porfiriyalar da bu bütünün dışında değildir. Hem; hemoglobin, miyoglobin, sitokromlar ve bazı detoksifikasyon enzimleri için zorunlu bir prostetik gruptur. Bu nedenle hem sentezindeki herhangi bir enzim kusuru yalnızca bir ara ürün birikimi yaratmaz; aynı zamanda klinik tabloyu da belirler. Sınav mantığı açısından temel yaklaşım şudur: hangi basamak veya düzenleyici sinyal bozulursa, o bozukluğun metabolik akışa, biriken ürüne ve klinik sonuca nasıl yansıdığı birlikte düşünülmelidir.',
+Keton cisimleri bu adaptasyonun klinik olarak en görünür sonucudur. Karaciğerde yağ asidi oksidasyonu asetil-KoA üretir; oksaloasetat glukoneogeneze kaydığında asetil-KoA sitrik asit döngüsüne yeterince giremez ve ketogeneze yönelir. Kontrollü açlıkta bu, beyin ve kas için yararlı bir alternatif yakıt sağlar; insülin eksikliği veya kontrolsüz diyabette ise aynı akış aşırı keton üretimi ve metabolik asidoz riski oluşturur.
+
+Hem ve porfirin metabolizması, enerji metabolizmasından kopuk bir ezber başlığı değildir. Hem; oksijen taşıma, elektron transferi, ilaç metabolizması ve peroksit yıkımı için gerekli hemoproteinlerin prostetik grubudur. Hem sentezindeki enzim defektlerinde biriken ara ürünün kimyasal özelliği klinik tabloyu belirler: erken prekürsörler daha çok nörovisseral atakla, geç porfirin türevleri ise ışığa duyarlılıkla ilişkilidir.`,
     mainConcepts: [
       hasFed ? 'insülin/glukagon oranı' : null,
       hasFed ? 'dokuya göre yakıt seçimi' : null,
@@ -711,7 +684,7 @@ Hem sentezi ve porfiriyalar da bu bütünün dışında değildir. Hem; hemoglob
       limitations: 'Görselin kendisi analiz edilmediyse yalnızca metne yansıyan etiketler ve açıklamalar güvenilir kabul edildi.',
       examRelevance: 'Yolakların yönü, hız kısıtlayıcı basamaklar, doku farkları ve biriken metabolit-klinik bulgu ilişkisi sınav açısından önceliklidir.'
     }],
-    clinicalExamRelevance: 'Komite sınavında bu konu başlıkları çoğunlukla üç mantık üzerinden sorulur: hormonal duruma göre hangi yolakların yön değiştirdiği, belirli bir enzim veya ara ürün bozukluğunun hangi klinik sonucu açıkladığı ve dokuya göre hangi yakıtın üretildiği ya da kullanıldığı. Bu nedenle yalnızca yolak isimlerini ezberlemek değil, her yolun hangi fizyolojik durumda neden öne çıktığını ve klinik karşılığını birlikte düşünmek gerekir.',
+    clinicalExamRelevance: 'Komite sorularında ana yaklaşım, verilen hormonal durumun veya enzim defektinin metabolik akışı nasıl değiştirdiğini izlemektir. Tipik soru, dokuya göre yakıt üretimi/kullanımı, hız kısıtlayıcı basamak, biriken ara ürün veya bu birikimin klinik karşılığı üzerinden çözülür.',
     commonConfusions: [
       hasKetone ? { confusion: 'Ketozis ve ketoasidoz', correctDistinction: 'Ketozis keton cisimlerinin artmasıdır; ketoasidoz bu artışın tampon kapasitesini aşarak asidoz oluşturmasıdır.', whyConfused: 'İkisi de keton artışıyla ilişkilidir.', memoryClarification: 'Keton artışı adaptasyon olabilir; asidoz patolojidir.' } : null,
       hasKetone ? { confusion: 'Karaciğerde keton üretimi ve kullanımı', correctDistinction: 'Karaciğer keton cismi üretir ama tioforaz eksikliği nedeniyle kullanamaz.', whyConfused: 'Üreten dokunun kullandığı varsayılır.', memoryClarification: 'Üretim karaciğer, kullanım periferik dokular.' } : null,
@@ -1020,7 +993,6 @@ function buildLocalFlashcards(material, lesson) {
 
 
 function normalizeGeneratedLessonShape(lesson = {}) {
-  const resolvedTitle = cleanSectionHeadingText(lesson.title || lesson.academicTitle || 'Komite Ders Anlatımı');
   const rawSections = Array.isArray(lesson.sections) && lesson.sections.length
     ? lesson.sections
     : (Array.isArray(lesson.lessonSections) && lesson.lessonSections.length
@@ -1028,38 +1000,24 @@ function normalizeGeneratedLessonShape(lesson = {}) {
       : (lesson.coreExplanation || []));
   return {
     ...lesson,
-    title: resolvedTitle,
-    overview: cleanLessonTextBlock(lesson.overview || lesson.shortOverview || lesson.shortIntro || '', resolvedTitle),
-    shortIntro: cleanLessonTextBlock(lesson.shortIntro || lesson.shortOverview || lesson.overview || '', resolvedTitle),
-    bigPicture: cleanLessonTextBlock(lesson.bigPicture || '', resolvedTitle),
+    title: lesson.title || lesson.academicTitle || 'Komite Ders Anlatımı',
+    overview: lesson.overview || lesson.shortOverview || lesson.shortIntro || '',
+    shortIntro: lesson.shortIntro || lesson.shortOverview || lesson.overview || '',
+    bigPicture: lesson.bigPicture || '',
     sections: rawSections.map((section) => ({
       ...section,
-      heading: cleanSectionHeadingText(section.heading || section.title || 'Kavram'),
-      content: cleanLessonTextBlock(section.content || section.teachingText || '', resolvedTitle),
-      teachingText: cleanLessonTextBlock(section.teachingText || section.content || '', resolvedTitle),
-      whyItMatters: cleanLessonTextBlock(section.whyItMatters || '', resolvedTitle),
-      examAngle: cleanLessonTextBlock(section.examAngle || section.examConnection || section.clinicalConnection || '', resolvedTitle),
-      commonTrap: cleanLessonTextBlock(section.commonTrap || section.commonMistake || '', resolvedTitle),
-      mechanismFlow: Array.isArray(section.mechanismFlow)
-        ? section.mechanismFlow.map((item) => cleanLessonTextBlock(item, resolvedTitle)).filter(Boolean)
-        : [],
+      heading: section.heading || section.title || 'Kavram',
+      content: section.content || section.teachingText || '',
+      teachingText: section.teachingText || section.content || '',
+      whyItMatters: section.whyItMatters || '',
+      examAngle: section.examAngle || section.examConnection || section.clinicalConnection || '',
+      commonTrap: section.commonTrap || section.commonMistake || '',
     })),
-    clinicalExamRelevance: cleanLessonTextBlock(lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance || '', resolvedTitle),
-    highYieldPoints: (lesson.highYieldPoints || lesson.highYieldSummary || []).map((item) => cleanLessonTextBlock(item, resolvedTitle)).filter(Boolean),
-    mustKnow: (lesson.mustKnow || lesson.mustRemember || []).map((item) => cleanLessonTextBlock(item, resolvedTitle)).filter(Boolean),
+    clinicalExamRelevance: lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance || '',
+    highYieldPoints: lesson.highYieldPoints || lesson.highYieldSummary || [],
+    mustKnow: lesson.mustKnow || lesson.mustRemember || [],
     figureExplanations: lesson.figureExplanations || lesson.figureTableExplanations || lesson.visualNotes || [],
     sourceCoverage: lesson.sourceCoverage || {},
-    commonConfusions: Array.isArray(lesson.commonConfusions)
-      ? lesson.commonConfusions.map((item) => typeof item === 'string'
-        ? cleanLessonTextBlock(item, resolvedTitle)
-        : ({
-            ...item,
-            confusion: cleanLessonTextBlock(item.confusion || '', resolvedTitle),
-            correctDistinction: cleanLessonTextBlock(item.correctDistinction || '', resolvedTitle),
-            whyConfused: cleanLessonTextBlock(item.whyConfused || '', resolvedTitle),
-            memoryClarification: cleanLessonTextBlock(item.memoryClarification || '', resolvedTitle),
-          }))
-      : [],
   };
 }
 
@@ -1470,29 +1428,20 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   }
 
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
-  const sectionAnchors = sections.map((section, index) => ({ id: createLessonAnchorId(cleanSectionHeadingText(section.heading), index), title: cleanSectionHeadingText(section.heading) || `Bölüm ${index + 1}` }));
+  const sectionAnchors = sections.map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }));
   const objectives = lesson.learningObjectives || [];
   const concepts = Array.isArray(lesson.mainConcepts)
     ? lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item)))
     : [];
   const highYield = lesson.highYieldPoints || lesson.highYieldSummary || [];
   const mustKnow = lesson.mustKnow || lesson.mustRemember || [];
-  const commonConfusionItems = Array.isArray(lesson.commonConfusions)
-    ? lesson.commonConfusions.map((item) => formatLessonListItem(item)).filter(Boolean)
-    : [];
-  const quickLinks = [
-    { id: 'komite-objectives', label: 'Öğrenme hedefleri' },
-    ...(lesson.bigPicture || lesson.overview ? [{ id: 'komite-big-picture', label: 'Büyük resim' }] : []),
-    ...sectionAnchors,
-    { id: 'komite-high-yield', label: 'Can alıcı noktalar' },
-  ];
 
   return (
     <div className="komite-lesson-view komite-lesson-view-pro">
-      <div className="komite-lesson-hero komite-lesson-hero-pro">
-        <div className="komite-lesson-hero-copy">
-          <span className="komite-inline-kicker">Ders özeti</span>
-          <p>{improveLessonIntro(cleanLessonTextBlock(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title), lesson.title)}</p>
+      <div className="komite-lesson-hero komite-lesson-hero-pro komite-lesson-brief-card">
+        <div className="komite-lesson-brief">
+          <span className="komite-kicker"><Icon name="BookOpen" size={16} /> AI Ders Anlatımı</span>
+          <p>{improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)}</p>
         </div>
       </div>
 
@@ -1500,53 +1449,50 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
         <aside className="komite-lesson-sidebar" aria-label="Ders navigasyonu">
           <div className="komite-sidebar-card">
             <strong>Hızlı erişim</strong>
-            {quickLinks.map((item) => (
-              <button type="button" key={item.id} className="komite-quick-link" onClick={() => scrollToLessonAnchor(item.id)}>{item.title || item.label}</button>
-            ))}
+            <a href="#komite-objectives">Öğrenme hedefleri</a>
+            <a href="#komite-big-picture">Büyük resim</a>
+            {sectionAnchors.map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
+            <a href="#komite-high-yield">Can alıcı noktalar</a>
           </div>
         </aside>
 
         <main className="komite-lesson-main-flow">
           <section id="komite-objectives" className="komite-objectives komite-objectives-pro">
             <strong>Öğrenme hedefleri</strong>
-            <ul>{objectives.map((item) => <li key={item}>{item}</li>)}</ul>
+            <ul>{objectives.map((item, index) => <li key={`${item}-${index}`}>{sanitizeTeachingTextForDisplay(item)}</li>)}</ul>
           </section>
 
           {(lesson.bigPicture || lesson.overview) ? (
             <article id="komite-big-picture" className="komite-lesson-section komite-big-picture-section">
               <h3>Büyük resim</h3>
-              {splitReadableParagraphs(lesson.bigPicture || lesson.overview).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+              {splitReadableParagraphs(sanitizeTeachingTextForDisplay(lesson.bigPicture || lesson.overview)).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
             </article>
           ) : null}
 
-          {(lesson.clinicalExamRelevance || commonConfusionItems.length) ? (
-            <section className="komite-inline-insight-block" aria-label="Klinik ve sınav notları">
+          {(lesson.clinicalExamRelevance || (Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length)) ? (
+            <div className="komite-context-lines" aria-label="Klinik ve sınav bağlantıları">
               {lesson.clinicalExamRelevance ? (
-                <div className="komite-inline-insight-row">
-                  <div className="komite-inline-insight-title">Klinik / sınav bağlantısı</div>
-                  <div className="komite-inline-insight-body">
-                    <p>{lesson.clinicalExamRelevance}</p>
-                  </div>
+                <div className="komite-context-line">
+                  <strong>Klinik / sınav bağlantısı</strong>
+                  <p>{sanitizeTeachingTextForDisplay(lesson.clinicalExamRelevance)}</p>
                 </div>
               ) : null}
-              {commonConfusionItems.length ? (
-                <div className="komite-inline-insight-row">
-                  <div className="komite-inline-insight-title">Sık karıştırılan noktalar</div>
-                  <div className="komite-inline-insight-body">
-                    <ul>{commonConfusionItems.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ul>
-                  </div>
+              {Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length ? (
+                <div className="komite-context-line">
+                  <strong>Sık karıştırılan noktalar</strong>
+                  <ul>{lesson.commonConfusions.map((item, index) => <li key={`${formatLessonListItem(item)}-${index}`}>{formatLessonListItem(item)}</li>)}</ul>
                 </div>
               ) : null}
-            </section>
+            </div>
           ) : null}
 
           {sections.map((section, index) => {
-            const teachingText = cleanLessonTextBlock(section.teachingText || section.content, lesson.title);
+            const teachingText = sanitizeTeachingTextForDisplay(section.teachingText || section.content);
             return (
               <article id={sectionAnchors[index]?.id} className="komite-lesson-section komite-lesson-section-pro" key={`${section.heading}-${index}`}>
                 <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
                 <div className="komite-section-body">
-                  <h3>{cleanSectionHeadingText(section.heading)}</h3>
+                  <h3>{section.heading}</h3>
                   {splitReadableParagraphs(teachingText).map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}
                   {(formatMechanismSteps(section.mechanismFlow).length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
                     <div className="komite-note-lines">
@@ -1556,8 +1502,8 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                           <ol>{formatMechanismSteps(section.mechanismFlow).map((step, stepIndex) => <li key={`${step}-${stepIndex}`}>{step}</li>)}</ol>
                         </div>
                       ) : null}
-                      {(section.examAngle || section.clinicalConnection) ? <div className="komite-note-line"><strong>Sınavda nasıl sorulur?</strong><p>{section.examAngle || section.clinicalConnection}</p></div> : null}
-                      {(section.commonTrap || section.examConnection) ? <div className="komite-note-line"><strong>Sık hata</strong><p>{section.commonTrap || section.examConnection}</p></div> : null}
+                      {(section.examAngle || section.clinicalConnection) ? <div className="komite-note-line"><strong>Sınavda nasıl sorulur?</strong><p>{sanitizeTeachingTextForDisplay(section.examAngle || section.clinicalConnection)}</p></div> : null}
+                      {(section.commonTrap || section.examConnection) ? <div className="komite-note-line"><strong>Sık hata</strong><p>{sanitizeTeachingTextForDisplay(section.commonTrap || section.examConnection)}</p></div> : null}
                     </div>
                   ) : null}
                 </div>
@@ -1568,11 +1514,11 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
           <div id="komite-high-yield" className="komite-summary-lines komite-summary-grid-pro">
             <div>
               <strong>Can alıcı noktalar</strong>
-              <ul>{highYield.map((item) => <li key={item}>{item}</li>)}</ul>
+              <ul>{highYield.map((item, index) => <li key={`${item}-${index}`}>{sanitizeTeachingTextForDisplay(item)}</li>)}</ul>
             </div>
             <div>
               <strong>Mutlaka hatırla</strong>
-              <ul>{mustKnow.map((item) => <li key={item}>{item}</li>)}</ul>
+              <ul>{mustKnow.map((item, index) => <li key={`${item}-${index}`}>{sanitizeTeachingTextForDisplay(item)}</li>)}</ul>
             </div>
           </div>
         </main>
@@ -1943,7 +1889,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       </div>
       <InlineStatus status={Object.values(aiStatus).includes('error') ? 'error' : 'idle'} message={Object.values(aiError).find(Boolean) || ''} />
       <div className="komite-tabbar" role="tablist" aria-label="Materyal çalışma alanı sekmeleri">
-        {STUDY_TABS.map((item) => (<button key={item.id} type="button" role="tab" aria-selected={tab === item.id} className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}><Icon name={item.icon} size={18} /><span>{item.label}</span></button>))}
+        {STUDY_TABS.map((item) => <button key={item.id} type="button" className={tab === item.id ? 'active' : ''} onClick={() => setTab(item.id)}><Icon name={item.icon} /> {item.label}</button>)}
       </div>
       <div className="komite-tab-panel">
         {tab === 'lesson' ? <LessonView material={material} status={aiStatus.lesson} onGenerate={() => runWithLocalFallback('lesson')} /> : null}

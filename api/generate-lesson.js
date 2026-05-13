@@ -7,6 +7,25 @@ function countPattern(text = '', pattern) {
   return (String(text || '').match(pattern) || []).length;
 }
 
+function cleanLessonString(value = '') {
+  return String(value || '')
+    .replace(/\b\d+\s+Pirol halkası\s+Serbest porfirinlerin biyolojik önemi yok\.?/giu, ' ')
+    .replace(/\bSerbest porfirinlerin biyolojik önemi yok\.?/giu, ' ')
+    .replace(/\b(?:slayt|sayfa)\s*\d+\b/giu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function sanitizeLessonOutput(value) {
+  if (Array.isArray(value)) return value.map(sanitizeLessonOutput);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, sanitizeLessonOutput(item)]));
+  }
+  if (typeof value === 'string') return cleanLessonString(value);
+  return value;
+}
+
+
 function getPacketTopicProfile(body = {}) {
   const files = getPacketFiles(body);
   const text = files.map((file) => `${file.fileName || ''}\n${file.cleanedExtractedText || ''}`).join('\n\n').toLocaleLowerCase('tr');
@@ -118,7 +137,7 @@ export default async function handler(request, response) {
       temperature: 0.2,
     });
 
-    result.json = deepenLessonForValidation(normalizeLessonSourceCoverage(result.json, body));
+    result.json = sanitizeLessonOutput(deepenLessonForValidation(normalizeLessonSourceCoverage(result.json, body)));
     let validation = validateLessonShape(result.json, { filesUploadedCount });
     if (lessonContradictsPacket(result.json, body)) validation = { ok: false, errors: [...(validation.errors || []), 'Ders çıktısı kaynak paketinin ana konusuyla uyuşmuyor.'] };
 
@@ -130,7 +149,7 @@ export default async function handler(request, response) {
         maxTokens: 16000,
         temperature: 0.15,
       });
-      result.json = deepenLessonForValidation(normalizeLessonSourceCoverage(result.json, body));
+      result.json = sanitizeLessonOutput(deepenLessonForValidation(normalizeLessonSourceCoverage(result.json, body)));
       validation = validateLessonShape(result.json, { filesUploadedCount });
       if (lessonContradictsPacket(result.json, body)) validation = { ok: false, errors: [...(validation.errors || []), 'Ders çıktısı kaynak paketinin ana konusuyla uyuşmuyor.'] };
     }
