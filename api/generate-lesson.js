@@ -36,18 +36,13 @@ function deepenLessonForValidation(lesson = {}) {
   if (!rawSections.length) return lesson;
   const sections = rawSections.map((section, index) => {
     const base = String(section.teachingText || section.content || '').replace(/\s+/g, ' ').trim();
-    const additions = [
-      section.whyItMatters ? `Bu nedenle önemlidir: ${section.whyItMatters}` : '',
-      Array.isArray(section.mechanismFlow) && section.mechanismFlow.length ? `Mekanizma akışı: ${section.mechanismFlow.join(' → ')}.` : '',
-      section.examAngle || section.examConnection ? `Sınav bağlantısı: ${section.examAngle || section.examConnection}` : '',
-      section.commonTrap || section.commonMistake ? `Sık hata: ${section.commonTrap || section.commonMistake}` : '',
-    ].filter(Boolean).join(' ');
-    const merged = `${base} ${additions}`.replace(/\s+/g, ' ').trim();
+    // Do not merge mechanismFlow, examAngle or commonTrap into teachingText. The frontend renders
+    // those fields separately; merging them here creates duplicated labels and arrow-heavy paragraphs.
     return {
       ...section,
       heading: section.heading || section.title || `Kavram ${index + 1}`,
-      teachingText: merged,
-      content: merged,
+      teachingText: base,
+      content: base,
     };
   });
   return {

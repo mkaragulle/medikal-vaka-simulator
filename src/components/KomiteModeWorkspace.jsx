@@ -102,22 +102,41 @@ function splitReadableParagraphs(text = '') {
 
 function sanitizeTeachingTextForDisplay(text = '') {
   return String(text || '')
+    // Remove field labels that should be rendered in separate teaching-note rows, not repeated inside paragraphs.
+    .replace(/\s*Mekanizma akışı:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
     .replace(/\s*Sınav bağlantısı:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
     .replace(/\s*Sınavda nasıl sorulur\??\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
     .replace(/\s*Sık hata:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    // Defensive cleanup for OCR fragments that can leak from unrelated slide captions.
+    .replace(/\b\d+\s+Pirol halkası\b[\s\S]*?fonksiyonel özellik kazanır\.?/giu, ' ')
+    .replace(/\bP\s+orfinlere\b[\s\S]*?fonksiyonel özellik kazanır\.?/giu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
 
+function sentenceFromFlowStep(step = '') {
+  const raw = String(step || '').replace(/^[\s→\-–—>]+|[\s→\-–—>]+$/g, '').trim();
+  if (!raw) return '';
+  if (!/[→>]/u.test(raw)) return raw.replace(/\s+/g, ' ');
+  const parts = raw.split(/\s*(?:→|>)\s*/u).map((part) => part.trim()).filter(Boolean);
+  if (parts.length <= 1) return raw.replace(/[→>]/gu, ' ardından ').replace(/\s+/g, ' ');
+  if (parts.length === 2) return `${parts[0]} ile başlayan süreç ${parts[1]} ile sonuçlanır.`;
+  return `${parts[0]} ile başlayan süreç; ${parts.slice(1, -1).join(', ')} basamaklarından geçerek ${parts[parts.length - 1]} ile sonuçlanır.`;
+}
+
 function formatMechanismSteps(flow = []) {
   if (!Array.isArray(flow)) return [];
-  return flow.map((step) => String(step || '').replace(/^[\s→\-–—>]+|[\s→\-–—>]+$/g, '').trim()).filter(Boolean);
+  return flow.map(sentenceFromFlowStep).filter(Boolean);
 }
 
 function improveLessonIntro(text = '', title = '') {
-  const clean = String(text || '').replace(/yüklenen komite materyallerindeki/giu, 'bu dersteki').replace(/tek tek ezberlenecek başlıklar olarak değil,?/giu, '').replace(/\s+/g, ' ').trim();
+  const clean = String(text || '')
+    .replace(/yüklenen komite materyallerindeki/giu, 'bu çalışma alanındaki')
+    .replace(/tek tek ezberlenecek başlıklar olarak değil,?/giu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
   if (clean && clean.length >= 80) return clean;
-  return `${title || 'Bu ders'}, konuyu yalnızca başlıklar halinde özetlemek yerine temel mekanizmalar, doku düzeyindeki metabolik yön değişimleri ve klinik-biyokimyasal sonuç ilişkileri üzerinden sistematik biçimde açıklar.`;
+  return `${title || 'Bu ders'}, metabolik yolları ve biyokimyasal süreçleri izole başlıklar halinde değil; düzenleyici sinyaller, dokuya özgü yakıt seçimi, ara ürün birikimi ve klinik sonuç ilişkisi içinde bütünlüklü biçimde açıklar.`;
 }
 
 function normalizeSourceText(material = {}) {
@@ -308,24 +327,23 @@ function wordCount(text = '') {
 }
 
 function buildSectionDepthText(section = {}, material = {}) {
-  const parts = [section.teachingText, section.content].filter(Boolean).map((value) => String(value).trim());
-  if (section.whyItMatters) parts.push(`Bu başlığın öğrenme değeri şudur: ${String(section.whyItMatters).trim()}`);
-  // Mechanism flow is rendered as a clean numbered row, not merged into the main paragraph.
-  // Keep exam and common-mistake notes in their own visual fields; merging them into teachingText creates repetition in the lesson UI.
-  let merged = [...new Set(parts.filter(Boolean))].join(' ')
+  const parts = [section.teachingText, section.content]
+    .filter(Boolean)
+    .map((value) => sanitizeTeachingTextForDisplay(String(value).trim()))
+    .filter(Boolean);
+  if (section.whyItMatters && !parts.join(' ').includes(section.whyItMatters)) {
+    parts.push(`Öğrenme değeri: ${sanitizeTeachingTextForDisplay(section.whyItMatters)}`);
+  }
+  const merged = [...new Set(parts)]
+    .join(' ')
     .replace(/\s+/g, ' ')
     .trim();
-  if (wordCount(merged) >= 90) return sanitizeTeachingTextForDisplay(merged);
+
+  // Never pad weak AI output with unrelated global source sentences. That caused OCR fragments from
+  // another slide/topic to leak into otherwise correct sections. Empty sections are handled honestly.
+  if (merged) return merged;
   const heading = section.heading || section.title || 'Bu kavram';
-  const topic = deriveTopic(material);
-  const sourceText = normalizeSourceText(material);
-  const support = getImportantSentences(sourceText, 4)
-    .filter((sentence) => !merged.includes(sentence))
-    .slice(0, 2)
-    .join(' ');
-  if (merged && support) return sanitizeTeachingTextForDisplay(`${merged} ${support}`.replace(/\s+/g, ' ').trim());
-  if (merged) return sanitizeTeachingTextForDisplay(merged);
-  return support || `${heading} başlığı için kaynak metinden yeterli güvenilir açıklama çıkarılamadı.`;
+  return `${heading} başlığı için kaynak metinden yeterli güvenilir açıklama çıkarılamadı.`;
 }
 
 function deepenLessonSections(lesson = {}, material = {}) {
@@ -1464,7 +1482,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                     <div className="komite-note-lines">
                       {formatMechanismSteps(section.mechanismFlow).length ? (
                         <div className="komite-note-line komite-flow-line">
-                          <strong>Mekanizma akışı</strong>
+                          <strong>Süreç mantığı</strong>
                           <ol>{formatMechanismSteps(section.mechanismFlow).map((step, stepIndex) => <li key={`${step}-${stepIndex}`}>{step}</li>)}</ol>
                         </div>
                       ) : null}
@@ -1843,15 +1861,14 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
 
   return (
     <section className="komite-workspace card-surface">
-      <div className="komite-workspace-header">
-        <button type="button" className="branch-back-v8" onClick={onBack}><span aria-hidden="true">←</span><span>Komite ana ekranı</span></button>
-        <div>
-          <span className="komite-kicker">{material.classYear}. sınıf · {material.committee || material.course || 'Komite/Ders'}</span>
+      <div className="komite-workspace-header komite-workspace-header-clean">
+        <button type="button" className="komite-back-link" onClick={onBack} aria-label="Komite ana ekranına dön">
+          <span aria-hidden="true">←</span>
+          <span>Geri dön</span>
+        </button>
+        <div className="komite-workspace-title-block">
+          <span className="komite-kicker">{material.classYear}. sınıf · {material.committee || material.course || 'Komite'}</span>
           <h2>{inferAcademicTitle(material)}</h2>
-          <p>{material.learningTarget || 'Komite sınavı'} · {Array.isArray(material.files) ? material.files.length : 1} materyal · Son çalışma: {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</p>
-        </div>
-        <div className="komite-workspace-actions">
-          <StatusPill tone={material.processingStatus?.includes('ready') ? 'success' : 'neutral'}>{busy ? 'AI işlemi sürüyor' : 'Çalışma alanı hazır'}</StatusPill>
         </div>
       </div>
       <InlineStatus status={Object.values(aiStatus).includes('error') ? 'error' : 'idle'} message={Object.values(aiError).find(Boolean) || ''} />
@@ -1969,17 +1986,18 @@ export default function KomiteModeWorkspace({ currentUser }) {
 
   return (
     <section className="page-shell komite-page-shell">
-      <section className="komite-hero card-surface">
-        <div>
-          <span className="komite-kicker"><Icon name="ShieldCheck" size={16} /> KOMİTE MODU</span>
-          <h1>Komite materyallerini akıllı çalışma alanına dönüştür.</h1>
-          <p>Slaytlarını ve ders notlarını yükle; KlinikIQ AI aynı materyalden ders anlatımı, soru seti, hap kart ve tekrar listesi oluştursun.</p>
-          <div className="komite-hero-actions">
-            <button type="button" className="btn btn-primary" onClick={() => setView('start')}><Icon name="Sparkles" /> Şimdi KlinikIQ AI ile çalış</button>
-            <small>TUS modu ayrı kalır; komite materyallerin kendi çalışma alanında düzenlenir.</small>
+      {(view === 'dashboard' || view === 'start') ? (
+        <section className="komite-hero card-surface">
+          <div>
+            <span className="komite-kicker"><Icon name="ShieldCheck" size={16} /> KOMİTE MODU</span>
+            <h1>Komite materyallerini akıllı çalışma alanına dönüştür.</h1>
+            <p>Slaytlarını ve ders notlarını yükle; KlinikIQ AI aynı materyalden ders anlatımı, soru seti, hap kart ve tekrar listesi oluştursun.</p>
+            <div className="komite-hero-actions">
+              <button type="button" className="btn btn-primary" onClick={() => setView('start')}><Icon name="Sparkles" /> Şimdi KlinikIQ AI ile çalış</button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
 
       {view === 'dashboard' ? (
         <KomiteDashboard

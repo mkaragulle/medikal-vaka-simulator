@@ -37684,3 +37684,103 @@ html[data-theme='dark'] .komite-flow-line li { color: #cbd5e1; }
 html[data-theme='dark'] .komite-note-line,
 html[data-theme='dark'] .komite-note-lines,
 html[data-theme='dark'] .komite-summary-lines > div { border-color: rgba(148, 163, 184, 0.16); }
+
+/* KOMITE workspace simplification + reliable quick navigation offset */
+.komite-workspace-header-clean {
+  display: grid !important;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center !important;
+  gap: 1rem !important;
+  padding-bottom: 0.85rem !important;
+  margin-bottom: 0.85rem !important;
+}
+.komite-back-link {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 38px;
+  padding: 0.48rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  background: rgba(255, 255, 255, 0.76);
+  color: #475569;
+  font: inherit;
+  font-weight: 760;
+  cursor: pointer;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.045);
+  transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+.komite-back-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(20, 184, 166, 0.25);
+  background: rgba(240, 253, 250, 0.92);
+  color: #0f766e;
+}
+.komite-workspace-title-block h2 {
+  margin: 0.24rem 0 0 !important;
+  max-width: 900px;
+  font-size: clamp(1.55rem, 2.4vw, 2.15rem) !important;
+  line-height: 1.08 !important;
+}
+.komite-workspace-title-block .komite-kicker {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+}
+.komite-workspace-header-clean .komite-workspace-actions,
+.komite-workspace-header-clean p,
+.komite-workspace-header-clean .komite-status-pill { display: none !important; }
+
+.komite-lesson-main-flow :where(#komite-objectives, #komite-big-picture, .komite-lesson-section-pro, #komite-high-yield) {
+  scroll-margin-top: 132px;
+}
+.komite-sidebar-card {
+  position: sticky;
+  top: 96px;
+  max-height: calc(100vh - 124px);
+  overflow: auto;
+  scrollbar-width: thin;
+}
+.komite-sidebar-card a {
+  font-size: 0.93rem;
+  line-height: 1.25;
+}
+.komite-flow-line li {
+  padding-left: 2.15rem;
+}
+.komite-flow-line li::before {
+  content: counter(komiteFlow);
+}
+.komite-note-line {
+  align-items: start;
+}
+.komite-note-line strong {
+  text-transform: none;
+}
+.komite-lesson-section-pro p {
+  max-width: 86ch;
+  line-height: 1.72;
+}
+.komite-objectives-pro li,
+.komite-summary-lines li {
+  max-width: 88ch;
+}
+@media (max-width: 760px) {
+  .komite-workspace-header-clean {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+  .komite-back-link { width: max-content; }
+  .komite-lesson-main-flow :where(#komite-objectives, #komite-big-picture, .komite-lesson-section-pro, #komite-high-yield) {
+    scroll-margin-top: 88px;
+  }
+}
+html[data-theme='dark'] .komite-back-link {
+  background: rgba(15, 23, 42, 0.72);
+  border-color: rgba(148, 163, 184, 0.18);
+  color: #cbd5e1;
+}
+html[data-theme='dark'] .komite-back-link:hover {
+  background: rgba(20, 184, 166, 0.16);
+  color: #99f6e4;
+}
