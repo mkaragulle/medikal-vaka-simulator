@@ -16,7 +16,8 @@ Core rules:
 - Büyük resim must explain the central conceptual logic in detail and should be at least two substantial paragraphs for substantial source material.
 - Explain mechanisms using cause-effect logic.
 - Explain classifications by comparing categories and why they matter.
-- Explain clinical or exam relevance when appropriate.
+- Explain clinical or exam relevance when appropriate, but do not start every section with the same phrase and do not force exam relevance when the source does not support it.
+- Use varied, natural paragraph structure. Avoid repeated formulaic openings such as 'Bu bölüm...', 'Bu nedenle...', 'Klinik bağlantı...', 'Sınav bağlantısı...'.
 - If figures or tables are readable, explain what they show and why they matter.
 - If figures are not readable, state the limitation briefly and do not invent details.
 - Do not generate meaningless concept tags.
@@ -74,8 +75,9 @@ Mandatory quality rules:
 - learningObjectives must be real student capabilities using verbs such as açıklayabilir, karşılaştırabilir, yorumlayabilir, sınıflandırabilir, ilişkilendirebilir, ayırt edebilir, uygulayabilir.
 - bigPicture must be detailed, conceptual and useful. Avoid keywords, metadata, filenames, and implementation language.
 - sections should usually be 5-10 conceptual sections. Each teachingText must be a substantial explanatory paragraph, not one sentence. Write each teachingText as 90-160 words when source text is sufficient. Include definition, mechanism/logic, relation to the broader topic, and why it matters inside teachingText itself; do not put all useful content only in examAngle or whyItMatters.
-- Each section should define the concept, explain how it works, connect it to the broader topic and include why it matters. Add examAngle/commonTrap only when useful. Do not return sectionDepthAdequate=true unless at least 70% of sections have detailed teachingText.
+- Each section should define the concept, explain how it works, connect it to the broader topic and include why it matters. Put the main explanation in teachingText. Add examAngle/commonTrap only when genuinely specific; otherwise return an empty string. Do not repeat identical sentence openings across sections. Do not return sectionDepthAdequate=true unless at least 70% of sections have detailed teachingText.
 - mainConcepts must be real medical/biochemical/physiological concepts, not file words such as slayt, sayfa, dosya, pptx, giriş.
 - highYieldPoints and mustKnow must be specific, memorable and scientifically meaningful.
+- Never fill examAngle, commonTrap, whyItMatters, or clinicalExamRelevance with boilerplate. Empty is better than a generic repeated sentence.
 - Never include raw filename as title. Never include professor names, dates, page numbers, file extensions, OCR fragments, “materyaldeki ilişkili kavram”, “slayt →”, or “sayfa →”.`;
 }

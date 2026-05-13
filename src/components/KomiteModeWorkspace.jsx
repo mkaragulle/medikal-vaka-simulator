@@ -268,7 +268,16 @@ function qualityGateLesson(lesson = {}, material = {}) {
   const text = JSON.stringify(lesson || {}).toLocaleLowerCase('tr');
   const filesUploadedCount = getMaterialFileCount(material);
   const analyzedCount = Math.max(Number(lesson.sourceCoverage?.filesAnalyzedCount || lesson.sourceCoverage?.filesAnalyzed || 0), Number(lesson.sourceCoverage?.filesUploadedCount || 0));
-  const badRepeats = (text.match(/klinik bağlantı|sınav bağlantısı|bu ders materyalde|bu bölüm temel mekanizma ile ilişkilendirilmelidir/g) || []).length;
+  const repeatedTemplatePhrases = [
+    'bu ders materyalde',
+    'bu bölüm temel mekanizma ile ilişkilendirilmelidir',
+    'materyaldeki bağlamı bozmadan temel mekanizma',
+    'komite sorusunda bu bölümden genellikle',
+    'temel kavram bağlantısı',
+    'öğrenciler için önemlidir',
+    'bu konu sınavlarda sorulabilir'
+  ];
+  const badRepeats = repeatedTemplatePhrases.reduce((count, phrase) => count + (text.match(new RegExp(phrase, 'g')) || []).length, 0);
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
   if (!lesson || !sections.length) return { ok: false, reason: 'Ders yapısı eksik.' };
   if (filesUploadedCount > 1 && analyzedCount <= 1) return { ok: false, reason: 'Çoklu dosya yüklenmesine rağmen AI çıktısı tek materyal kapsamı gösteriyor.' };
@@ -276,7 +285,7 @@ function qualityGateLesson(lesson = {}, material = {}) {
   if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 260) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
   const shallow = sections.filter((section) => String(section.teachingText || section.content || '').split(/\s+/).length < 45);
   if (sections.length && shallow.length / sections.length > 0.35) return { ok: false, reason: 'Ders bölümleri yüzeysel kalıyor.' };
-  if (badRepeats > 10) return { ok: false, reason: 'Ders anlatımı fazla şablon ve tekrar içeriyor.' };
+  if (badRepeats > 2) return { ok: false, reason: 'Ders anlatımı fazla şablon ve tekrar içeriyor.' };
   return { ok: true };
 }
 
@@ -346,9 +355,9 @@ function sourceDrivenSections(material, topic) {
     return {
       heading: truncate(heading, 80),
       content,
-      mechanismFlow: keywords.length ? keywords.map((keyword) => `${keyword} → temel kavram bağlantısı`) : [],
-      examAngle: 'Bu bölümdeki bilgi, materyaldeki bağlamı bozmadan temel mekanizma veya klinik yorumla ilişkilendirilmelidir.',
-      commonTrap: 'Komite sorusunda bu bölümden genellikle tanım, mekanizma, ayırıcı özellik veya yorumlama basamağı sorulur.',
+      mechanismFlow: keywords.length ? keywords.slice(0, 4) : [],
+      examAngle: '',
+      commonTrap: '',
       sourceReferences: [sourceLabel],
     };
   });

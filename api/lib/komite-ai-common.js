@@ -114,8 +114,8 @@ function findGlobalQualityErrors(output = {}) {
     [/prof\.?\s*dr\.?|doç\.?\s*dr\.?|öğr\.?\s*gör\.?/iu, 'Öğretim üyesi adı/unvanı içerik alanına girmiş olabilir.'],
   ];
   bannedPatterns.forEach(([pattern, message]) => { if (pattern.test(text)) errors.push(message); });
-  const genericCount = (text.match(/klinik bağlamda değerlendirilir|materyal kapsamında önemlidir|bu konu sınavlarda sorulabilir|öğrenciler için önemlidir/giu) || []).length;
-  if (genericCount >= 3) errors.push('Tekrarlayan jenerik dolgu ifadeler var.');
+  const genericCount = (text.match(/klinik bağlamda değerlendirilir|materyal kapsamında önemlidir|bu konu sınavlarda sorulabilir|öğrenciler için önemlidir|temel mekanizma ile ilişkilendirilmelidir|temel kavram bağlantısı/giu) || []).length;
+  if (genericCount >= 2) errors.push('Tekrarlayan jenerik dolgu ifadeler var.');
   return errors;
 }
 
@@ -186,6 +186,7 @@ export function validateLessonShape(output = {}, context = {}) {
   const qualityCheck = output.qualityCheck || {};
   if (filesUploadedCount > 1 && qualityCheck.usesAllFiles === false) errors.push('qualityCheck usesAllFiles=false döndü.');
   const text = JSON.stringify(output || {});
-  if ((text.match(/Klinik bağlantı|Sınav bağlantısı/g) || []).length > 14) errors.push('Ders şablon tekrarı içeriyor.');
+  const templatePhraseCount = (text.match(/bu ders materyalde|bu bölüm temel mekanizma ile ilişkilendirilmelidir|materyaldeki bağlamı bozmadan|komite sorusunda bu bölümden genellikle|temel kavram bağlantısı/giu) || []).length;
+  if (templatePhraseCount > 2) errors.push('Ders şablon tekrarı içeriyor.');
   return { ok: errors.length === 0, errors };
 }
