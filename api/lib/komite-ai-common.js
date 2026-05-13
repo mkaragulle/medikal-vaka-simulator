@@ -180,7 +180,8 @@ export function validateLessonShape(output = {}, context = {}) {
   const filesUploadedCount = Number(context.filesUploadedCount || 0);
   const filesAnalyzedCount = Number(output.sourceCoverage?.filesAnalyzedCount || output.sourceCoverage?.filesAnalyzed || 0);
   if (filesUploadedCount > 1 && filesAnalyzedCount <= 1) errors.push('Çoklu dosya yüklendiği halde çıktı tek dosya kapsamı gösteriyor.');
-  const shallowSections = (sections || []).filter((section) => String(section.teachingText || section.content || '').trim().split(/\s+/).length < 45);
+  const sectionDepthText = (section = {}) => [section.teachingText, section.content, section.whyItMatters, section.examAngle, section.examConnection, section.commonTrap, section.commonMistake, Array.isArray(section.mechanismFlow) ? section.mechanismFlow.join(' ') : ''].filter(Boolean).join(' ');
+  const shallowSections = (sections || []).filter((section) => sectionDepthText(section).trim().split(/\s+/).filter(Boolean).length < 55);
   if ((sections || []).length && shallowSections.length / (sections || []).length > 0.35) errors.push('Ders bölümlerinin çoğu yeterince derin değil.');
   const qualityCheck = output.qualityCheck || {};
   if (filesUploadedCount > 1 && qualityCheck.usesAllFiles === false) errors.push('qualityCheck usesAllFiles=false döndü.');

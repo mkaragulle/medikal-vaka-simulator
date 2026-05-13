@@ -12,7 +12,7 @@ Core rules:
 - Remove file names, slide numbers, dates, professor names, and OCR noise from teaching sections.
 - Do not copy raw slide text.
 - Do not produce shallow headings.
-- Every heading must contain a detailed, explanatory, useful teaching paragraph.
+- Every heading must contain a detailed, explanatory, useful teaching paragraph. For each section, teachingText must usually be 90-160 words and must not be a one-sentence summary.
 - Büyük resim must explain the central conceptual logic in detail and should be at least two substantial paragraphs for substantial source material.
 - Explain mechanisms using cause-effect logic.
 - Explain classifications by comparing categories and why they matter.
@@ -73,8 +73,8 @@ Mandatory quality rules:
 - If multiple files are present, synthesize their shared conceptual map instead of writing separate file summaries.
 - learningObjectives must be real student capabilities using verbs such as açıklayabilir, karşılaştırabilir, yorumlayabilir, sınıflandırabilir, ilişkilendirebilir, ayırt edebilir, uygulayabilir.
 - bigPicture must be detailed, conceptual and useful. Avoid keywords, metadata, filenames, and implementation language.
-- sections should usually be 5-10 conceptual sections. Each teachingText must be a substantial explanatory paragraph, not one sentence.
-- Each section should define the concept, explain how it works, connect it to the broader topic and include why it matters. Add examAngle/commonTrap only when useful.
+- sections should usually be 5-10 conceptual sections. Each teachingText must be a substantial explanatory paragraph, not one sentence. Write each teachingText as 90-160 words when source text is sufficient. Include definition, mechanism/logic, relation to the broader topic, and why it matters inside teachingText itself; do not put all useful content only in examAngle or whyItMatters.
+- Each section should define the concept, explain how it works, connect it to the broader topic and include why it matters. Add examAngle/commonTrap only when useful. Do not return sectionDepthAdequate=true unless at least 70% of sections have detailed teachingText.
 - mainConcepts must be real medical/biochemical/physiological concepts, not file words such as slayt, sayfa, dosya, pptx, giriş.
 - highYieldPoints and mustKnow must be specific, memorable and scientifically meaningful.
 - Never include raw filename as title. Never include professor names, dates, page numbers, file extensions, OCR fragments, “materyaldeki ilişkili kavram”, “slayt →”, or “sayfa →”.`;
