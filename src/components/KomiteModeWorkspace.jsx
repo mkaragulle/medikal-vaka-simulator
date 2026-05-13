@@ -109,6 +109,8 @@ function sanitizeTeachingTextForDisplay(text = '') {
     .replace(/\s*Sık hata:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
     // Defensive cleanup for OCR fragments that can leak from unrelated slide captions.
     .replace(/\b\d+\s+Pirol halkası\b[\s\S]*?fonksiyonel özellik kazanır\.?/giu, ' ')
+    .replace(/\b\d+\s+Pirol halkası\b[^.?!]*Serbest porfirinlerin biyolojik önemi yok\.?/giu, ' ')
+    .replace(/Serbest porfirinlerin biyolojik önemi yok\.?/giu, ' ')
     .replace(/\bP\s+orfinlere\b[\s\S]*?fonksiyonel özellik kazanır\.?/giu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -130,13 +132,35 @@ function formatMechanismSteps(flow = []) {
 }
 
 function improveLessonIntro(text = '', title = '') {
+  const titleText = String(title || '').trim();
+  const titlePattern = titleText ? new RegExp(`^${titleText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[—–:,-]*\\s*`, 'iu') : null;
   const clean = String(text || '')
     .replace(/yüklenen komite materyallerindeki/giu, 'bu çalışma alanındaki')
     .replace(/tek tek ezberlenecek başlıklar olarak değil,?/giu, '')
+    .replace(/\b(öğrenme hedefleri|büyük resim)\b\s*[:.-]?/giu, '')
     .replace(/\s+/g, ' ')
     .trim();
-  if (clean && clean.length >= 80) return clean;
+  const normalized = titlePattern ? clean.replace(titlePattern, '').trim() : clean;
+  if (normalized && normalized.length >= 80) return normalized;
   return `${title || 'Bu ders'}, metabolik yolları ve biyokimyasal süreçleri izole başlıklar halinde değil; düzenleyici sinyaller, dokuya özgü yakıt seçimi, ara ürün birikimi ve klinik sonuç ilişkisi içinde bütünlüklü biçimde açıklar.`;
+}
+
+function cleanSectionHeadingText(value = '') {
+  return String(value || '')
+    .replace(/^\s*\d{1,2}\s*[.)-:]?\s*/u, '')
+    .replace(/^\s*(bölüm|section)\s*\d+\s*[:.-]?\s*/iu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function cleanLessonTextBlock(text = '', title = '') {
+  const titleText = String(title || '').trim();
+  const titlePattern = titleText ? new RegExp(`^${titleText.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s*[—–:,-]*\\s*`, 'iu') : null;
+  const cleaned = sanitizeTeachingTextForDisplay(String(text || ''))
+    .replace(/\b(öğrenme hedefleri|büyük resim|klinik\s*\/\s*sınav bağlantısı|sık karıştırılan noktalar)\b\s*[:.-]?/giu, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return titlePattern ? cleaned.replace(titlePattern, '').trim() : cleaned;
 }
 
 function scrollToLessonAnchor(anchorId) {
@@ -658,7 +682,7 @@ function buildProfileDrivenLesson(material = {}) {
     id: createId('lesson'),
     materialId: material.id,
     title,
-    shortIntro: 'Bu ders, açlık-tokluk metabolizması, keton cisimleri ve hem sentezini ayrı ayrı ezberlenecek başlıklar olarak değil; hormonal düzenleme, dokuya özgü yakıt seçimi, yolak akışı ve klinik sonuçlar arasındaki neden-sonuç ilişkisi üzerinden öğretir.',
+    shortIntro: 'Bu materyal, enerji metabolizması ile hem biyosentezini ortak bir biyokimyasal mantık içinde ele alır. Amaç; açlık ve toklukta hormonal değişimin doku yakıt kullanımını nasıl yeniden programladığını, keton cismi oluşumunun hangi koşullarda fizyolojik ya da patolojik hale geldiğini ve hem sentezindeki enzim kusurlarının neden farklı porfiriya tabloları oluşturduğunu neden-sonuç ilişkisiyle açıklamaktır.',
     learningObjectives: [
       hasFed ? 'Açlık ve tokluk durumunda insülin/glukagon oranındaki değişimin karaciğer, yağ dokusu, kas ve beyindeki metabolik akışı nasıl yönlendirdiğini açıklayabilmek.' : null,
       hasKetone ? 'Yağ asidi oksidasyonu, asetil-KoA birikimi ve ketogenez arasındaki neden-sonuç ilişkisini kurabilmek.' : null,
@@ -687,7 +711,7 @@ Hem sentezi ve porfiriyalar da bu bütünün dışında değildir. Hem; hemoglob
       limitations: 'Görselin kendisi analiz edilmediyse yalnızca metne yansıyan etiketler ve açıklamalar güvenilir kabul edildi.',
       examRelevance: 'Yolakların yönü, hız kısıtlayıcı basamaklar, doku farkları ve biriken metabolit-klinik bulgu ilişkisi sınav açısından önceliklidir.'
     }],
-    clinicalExamRelevance: 'Komite sorularında bu başlıklar genellikle üç eksende test edilir: belirli bir hormonal durumda hangi yolakların aktive veya inhibe olduğu, belirli bir enzim ya da ara ürün değişikliğinin hangi klinik tabloyu açıkladığı ve dokuların farklı fizyolojik koşullarda hangi yakıtı kullandığı ya da ürettiği.',
+    clinicalExamRelevance: 'Komite sınavında bu konu başlıkları çoğunlukla üç mantık üzerinden sorulur: hormonal duruma göre hangi yolakların yön değiştirdiği, belirli bir enzim veya ara ürün bozukluğunun hangi klinik sonucu açıkladığı ve dokuya göre hangi yakıtın üretildiği ya da kullanıldığı. Bu nedenle yalnızca yolak isimlerini ezberlemek değil, her yolun hangi fizyolojik durumda neden öne çıktığını ve klinik karşılığını birlikte düşünmek gerekir.',
     commonConfusions: [
       hasKetone ? { confusion: 'Ketozis ve ketoasidoz', correctDistinction: 'Ketozis keton cisimlerinin artmasıdır; ketoasidoz bu artışın tampon kapasitesini aşarak asidoz oluşturmasıdır.', whyConfused: 'İkisi de keton artışıyla ilişkilidir.', memoryClarification: 'Keton artışı adaptasyon olabilir; asidoz patolojidir.' } : null,
       hasKetone ? { confusion: 'Karaciğerde keton üretimi ve kullanımı', correctDistinction: 'Karaciğer keton cismi üretir ama tioforaz eksikliği nedeniyle kullanamaz.', whyConfused: 'Üreten dokunun kullandığı varsayılır.', memoryClarification: 'Üretim karaciğer, kullanım periferik dokular.' } : null,
@@ -996,6 +1020,7 @@ function buildLocalFlashcards(material, lesson) {
 
 
 function normalizeGeneratedLessonShape(lesson = {}) {
+  const resolvedTitle = cleanSectionHeadingText(lesson.title || lesson.academicTitle || 'Komite Ders Anlatımı');
   const rawSections = Array.isArray(lesson.sections) && lesson.sections.length
     ? lesson.sections
     : (Array.isArray(lesson.lessonSections) && lesson.lessonSections.length
@@ -1003,24 +1028,38 @@ function normalizeGeneratedLessonShape(lesson = {}) {
       : (lesson.coreExplanation || []));
   return {
     ...lesson,
-    title: lesson.title || lesson.academicTitle || 'Komite Ders Anlatımı',
-    overview: lesson.overview || lesson.shortOverview || lesson.shortIntro || '',
-    shortIntro: lesson.shortIntro || lesson.shortOverview || lesson.overview || '',
-    bigPicture: lesson.bigPicture || '',
+    title: resolvedTitle,
+    overview: cleanLessonTextBlock(lesson.overview || lesson.shortOverview || lesson.shortIntro || '', resolvedTitle),
+    shortIntro: cleanLessonTextBlock(lesson.shortIntro || lesson.shortOverview || lesson.overview || '', resolvedTitle),
+    bigPicture: cleanLessonTextBlock(lesson.bigPicture || '', resolvedTitle),
     sections: rawSections.map((section) => ({
       ...section,
-      heading: section.heading || section.title || 'Kavram',
-      content: section.content || section.teachingText || '',
-      teachingText: section.teachingText || section.content || '',
-      whyItMatters: section.whyItMatters || '',
-      examAngle: section.examAngle || section.examConnection || section.clinicalConnection || '',
-      commonTrap: section.commonTrap || section.commonMistake || '',
+      heading: cleanSectionHeadingText(section.heading || section.title || 'Kavram'),
+      content: cleanLessonTextBlock(section.content || section.teachingText || '', resolvedTitle),
+      teachingText: cleanLessonTextBlock(section.teachingText || section.content || '', resolvedTitle),
+      whyItMatters: cleanLessonTextBlock(section.whyItMatters || '', resolvedTitle),
+      examAngle: cleanLessonTextBlock(section.examAngle || section.examConnection || section.clinicalConnection || '', resolvedTitle),
+      commonTrap: cleanLessonTextBlock(section.commonTrap || section.commonMistake || '', resolvedTitle),
+      mechanismFlow: Array.isArray(section.mechanismFlow)
+        ? section.mechanismFlow.map((item) => cleanLessonTextBlock(item, resolvedTitle)).filter(Boolean)
+        : [],
     })),
-    clinicalExamRelevance: lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance || '',
-    highYieldPoints: lesson.highYieldPoints || lesson.highYieldSummary || [],
-    mustKnow: lesson.mustKnow || lesson.mustRemember || [],
+    clinicalExamRelevance: cleanLessonTextBlock(lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance || '', resolvedTitle),
+    highYieldPoints: (lesson.highYieldPoints || lesson.highYieldSummary || []).map((item) => cleanLessonTextBlock(item, resolvedTitle)).filter(Boolean),
+    mustKnow: (lesson.mustKnow || lesson.mustRemember || []).map((item) => cleanLessonTextBlock(item, resolvedTitle)).filter(Boolean),
     figureExplanations: lesson.figureExplanations || lesson.figureTableExplanations || lesson.visualNotes || [],
     sourceCoverage: lesson.sourceCoverage || {},
+    commonConfusions: Array.isArray(lesson.commonConfusions)
+      ? lesson.commonConfusions.map((item) => typeof item === 'string'
+        ? cleanLessonTextBlock(item, resolvedTitle)
+        : ({
+            ...item,
+            confusion: cleanLessonTextBlock(item.confusion || '', resolvedTitle),
+            correctDistinction: cleanLessonTextBlock(item.correctDistinction || '', resolvedTitle),
+            whyConfused: cleanLessonTextBlock(item.whyConfused || '', resolvedTitle),
+            memoryClarification: cleanLessonTextBlock(item.memoryClarification || '', resolvedTitle),
+          }))
+      : [],
   };
 }
 
@@ -1431,7 +1470,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   }
 
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
-  const sectionAnchors = sections.map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }));
+  const sectionAnchors = sections.map((section, index) => ({ id: createLessonAnchorId(cleanSectionHeadingText(section.heading), index), title: cleanSectionHeadingText(section.heading) || `Bölüm ${index + 1}` }));
   const objectives = lesson.learningObjectives || [];
   const concepts = Array.isArray(lesson.mainConcepts)
     ? lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item)))
@@ -1453,7 +1492,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
       <div className="komite-lesson-hero komite-lesson-hero-pro">
         <div className="komite-lesson-hero-copy">
           <span className="komite-inline-kicker">Ders özeti</span>
-          <p>{improveLessonIntro(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title)}</p>
+          <p>{improveLessonIntro(cleanLessonTextBlock(lesson.shortSubtitle || lesson.shortIntro || lesson.overview, lesson.title), lesson.title)}</p>
         </div>
       </div>
 
@@ -1481,34 +1520,33 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
           ) : null}
 
           {(lesson.clinicalExamRelevance || commonConfusionItems.length) ? (
-            <section className="komite-lesson-section komite-insight-lines-section">
-              <h3>Klinik odak ve sık karıştırılan noktalar</h3>
-              <div className="komite-note-lines komite-insight-lines">
-                {lesson.clinicalExamRelevance ? (
-                  <div className="komite-note-line">
-                    <strong>Klinik / sınav bağlantısı</strong>
+            <section className="komite-inline-insight-block" aria-label="Klinik ve sınav notları">
+              {lesson.clinicalExamRelevance ? (
+                <div className="komite-inline-insight-row">
+                  <div className="komite-inline-insight-title">Klinik / sınav bağlantısı</div>
+                  <div className="komite-inline-insight-body">
                     <p>{lesson.clinicalExamRelevance}</p>
                   </div>
-                ) : null}
-                {commonConfusionItems.length ? (
-                  <div className="komite-note-line">
-                    <strong>Sık karıştırılan noktalar</strong>
-                    <div className="komite-bullet-lines">
-                      <ul>{commonConfusionItems.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ul>
-                    </div>
+                </div>
+              ) : null}
+              {commonConfusionItems.length ? (
+                <div className="komite-inline-insight-row">
+                  <div className="komite-inline-insight-title">Sık karıştırılan noktalar</div>
+                  <div className="komite-inline-insight-body">
+                    <ul>{commonConfusionItems.map((item, index) => <li key={`${item}-${index}`}>{item}</li>)}</ul>
                   </div>
-                ) : null}
-              </div>
+                </div>
+              ) : null}
             </section>
           ) : null}
 
           {sections.map((section, index) => {
-            const teachingText = sanitizeTeachingTextForDisplay(section.teachingText || section.content);
+            const teachingText = cleanLessonTextBlock(section.teachingText || section.content, lesson.title);
             return (
               <article id={sectionAnchors[index]?.id} className="komite-lesson-section komite-lesson-section-pro" key={`${section.heading}-${index}`}>
                 <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
                 <div className="komite-section-body">
-                  <h3>{section.heading}</h3>
+                  <h3>{cleanSectionHeadingText(section.heading)}</h3>
                   {splitReadableParagraphs(teachingText).map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}
                   {(formatMechanismSteps(section.mechanismFlow).length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
                     <div className="komite-note-lines">
