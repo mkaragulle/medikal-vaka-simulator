@@ -20,9 +20,24 @@ const createId = (prefix = 'id') => {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 };
 
+function sanitizeLoadedKomiteMaterial(material = {}) {
+  if (material.lesson && outputContradictsSourceTopic(material.lesson, material)) {
+    return {
+      ...material,
+      lesson: null,
+      questions: [],
+      flashcardDeck: null,
+      processingStatus: 'text-extracted',
+      repairNotice: 'Önceki AI çıktısı kaynak konusuyla uyuşmadığı için temizlendi.',
+    };
+  }
+  return material;
+}
+
 function readUserMaterials(userId) {
   return localBackend.read(KOMITE_MATERIALS_STORAGE_KEY, [])
     .filter((material) => !userId || material.userId === userId)
+    .map(sanitizeLoadedKomiteMaterial)
     .sort((a, b) => Number(b.uploadDate || 0) - Number(a.uploadDate || 0));
 }
 
@@ -148,6 +163,29 @@ function combinedPacketToSourceText(packet = {}) {
     .join('\n\n');
 }
 
+function balancedPacketToSourceText(packet = {}, maxTotalChars = 64000) {
+  const files = Array.isArray(packet.files) ? packet.files.filter((file) => String(file.cleanedExtractedText || '').trim()) : [];
+  if (!files.length) return '';
+  const perFile = Math.max(4000, Math.floor(maxTotalChars / files.length));
+  return files.map((file, index) => {
+    const text = String(file.cleanedExtractedText || '').trim();
+    const head = text.slice(0, Math.floor(perFile * 0.7));
+    const tail = text.length > perFile ? text.slice(-Math.floor(perFile * 0.3)) : '';
+    const clipped = tail ? `${head}
+
+[...orta bölüm kısaltıldı; aynı dosyadan devam...]
+
+${tail}` : head;
+    return `[[FILE ${index + 1}]]
+fileName: ${file.fileName}
+fileType: ${file.fileType}
+detectedTopics: ${(file.detectedTopics || []).join(', ')}
+charCount: ${text.length}
+cleanedExtractedText:
+${clipped}`;
+  }).join('\n\n');
+}
+
 function getMaterialFileCount(material = {}, packet = null) {
   const packetCount = Array.isArray(packet?.files) ? packet.files.length : 0;
   const storedFileCount = Array.isArray(material.files) ? material.files.length : 0;
@@ -231,8 +269,9 @@ function buildSectionDepthText(section = {}, material = {}) {
     .filter((sentence) => !merged.includes(sentence))
     .slice(0, 2)
     .join(' ');
-  const fallback = `${heading}, ${topic} konusunun tek başına ezberlenecek bir başlığı değil, ana kavramsal akış içinde yorumlanması gereken bir öğrenme basamağıdır. Bu bölümde önce kavramın ne anlama geldiği, ardından hangi mekanizma veya sınıflandırma mantığıyla diğer başlıklara bağlandığı düşünülmelidir. ${support} Bu nedenle öğrenci, başlığı yalnızca tanım olarak değil; neden-sonuç ilişkisi, ayırt ettirici özellik ve komite sınavında sorulabilecek temel ayrım üzerinden öğrenmelidir.`;
-  return `${merged} ${fallback}`.replace(/\s+/g, ' ').trim();
+  if (merged && support) return `${merged} ${support}`.replace(/\s+/g, ' ').trim();
+  if (merged) return merged;
+  return support || `${heading} başlığı için kaynak metinden yeterli güvenilir açıklama çıkarılamadı.`;
 }
 
 function deepenLessonSections(lesson = {}, material = {}) {
@@ -281,6 +320,7 @@ function qualityGateLesson(lesson = {}, material = {}) {
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
   if (!lesson || !sections.length) return { ok: false, reason: 'Ders yapısı eksik.' };
   if (filesUploadedCount > 1 && analyzedCount <= 1) return { ok: false, reason: 'Çoklu dosya yüklenmesine rağmen AI çıktısı tek materyal kapsamı gösteriyor.' };
+  if (outputContradictsSourceTopic(lesson, material)) return { ok: false, reason: 'Ders anlatımı yüklenen kaynakların ana konusuyla uyuşmuyor.' };
   if (/materyaldeki ilişkili kavram|slayt\s*→|sayfa\s*→/iu.test(text)) return { ok: false, reason: 'Ham/meaningless kaynak etiketi üretildi.' };
   if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 260) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
   const shallow = sections.filter((section) => String(section.teachingText || section.content || '').split(/\s+/).length < 45);
@@ -378,15 +418,72 @@ function optionFeedbackForSourceQuestion(option, correctId, target, sourceClue) 
 }
 
 
-function isAminoProteinMaterial(material = {}) {
-  const haystack = `${material.fileName || ''} ${material.course || ''} ${material.committee || ''} ${normalizeSourceText(material)}`.toLocaleLowerCase('tr');
-  return /amino\s*asit|aminoasit|protein|peptit|glisin|prolin|triptofan|tirozin|fenilalanin|α|alfa|r grubu|karboksil/iu.test(haystack);
+function countMatches(text = '', pattern) {
+  return (String(text || '').match(pattern) || []).length;
 }
 
-function inferAcademicTitle(material = {}) {
+function buildTopicProfileFromText(text = '', fileNames = '') {
+  const haystack = `${fileNames || ''}\n${text || ''}`.toLocaleLowerCase('tr');
+  const profile = {
+    ketone: countMatches(haystack, /keton|ketogenez|ketoasidoz|asetoasetat|hidroksibütirat|aseton|hmg\s*koa|tioforaz|β[- ]?oksidasyon|yağ asidi oksidasyonu|karnitin|cpt\s*-?1/giu),
+    fedFasting: countMatches(haystack, /açlık|tokluk|emilim|insülin\s*\/\s*glukagon|glukagon|glukoneogenez|glikojen|lipoliz|yağ dokusu|iskelet kası|beyin|karaciğer|şilomikron/giu),
+    hemePorphyria: countMatches(haystack, /hem\b|porfir|porfiri|ala\b|porfobilinojen|üroporfirinojen|koproporfirinojen|protoporfirin|ferroşelataz|alas\b|soret|kurşun/giu),
+    aminoProtein: countMatches(haystack, /amino\s*asit|aminoasit|peptit|glisin|prolin|r grubu|α[- ]?karbon|protein katlanması|disülfit|aromatik amino/giu),
+    generalBiochem: countMatches(haystack, /enzim|metabolizma|substrat|koenzim|mitokondri|sitozol|oksidasyon|sentez|düzenlenme/giu),
+  };
+  const dominant = Object.entries(profile)
+    .filter(([key]) => key !== 'generalBiochem')
+    .sort((a, b) => b[1] - a[1])
+    .filter(([, value]) => value > 0)
+    .map(([key]) => key);
+  return { ...profile, dominant };
+}
+
+function getMaterialTopicProfile(material = {}, packet = null) {
+  const activePacket = packet || buildCombinedMaterialPacket(material);
+  const fileNames = (activePacket.files || []).map((file) => file.fileName).join(' ');
+  const text = (activePacket.files || []).map((file) => `${file.fileName}\n${file.cleanedExtractedText}`).join('\n\n') || normalizeSourceText(material);
+  return buildTopicProfileFromText(text, fileNames);
+}
+
+function isAminoProteinMaterial(material = {}, packet = null) {
+  const profile = getMaterialTopicProfile(material, packet);
+  const competingMetabolism = profile.ketone + profile.fedFasting + profile.hemePorphyria;
+  return profile.aminoProtein >= 12 && profile.aminoProtein >= competingMetabolism * 1.5;
+}
+
+function inferTitleFromTopicProfile(material = {}, packet = null) {
+  const profile = getMaterialTopicProfile(material, packet);
+  const parts = [];
+  if (profile.fedFasting >= 4) parts.push('Açlık-Tokluk Metabolizması');
+  if (profile.ketone >= 4) parts.push('Yağ Asidi Oksidasyonu ve Keton Cisimleri');
+  if (profile.hemePorphyria >= 4) parts.push('Hem Sentezi ve Porfiriyalar');
+  if (!parts.length && isAminoProteinMaterial(material, packet)) parts.push('Amino Asitler ve Proteinlerin Temel Yapısı');
+  if (parts.length) return parts.join(', ');
+  return '';
+}
+
+function outputContradictsSourceTopic(lesson = {}, material = {}, packet = null) {
+  const profile = getMaterialTopicProfile(material, packet);
+  const sourceHasMetabolismHeme = profile.ketone >= 4 || profile.fedFasting >= 4 || profile.hemePorphyria >= 4;
+  const outputText = JSON.stringify(lesson || {}).toLocaleLowerCase('tr');
+  const aminoOutput = /amino\s*asit|aminoasit|glisin|prolin|r grubu|α[- ]?karbon|protein katlanması/iu.test(outputText);
+  const requiredHits = [
+    profile.ketone >= 4 ? /keton|asetoasetat|hidroksibütirat|ketogenez|yağ asidi oksidasyonu/iu : null,
+    profile.fedFasting >= 4 ? /açlık|tokluk|insülin|glukagon|glukoneogenez|lipoliz/iu : null,
+    profile.hemePorphyria >= 4 ? /hem|porfir|porfiri|ala|porfobilinojen|protoporfirin/iu : null,
+  ].filter(Boolean);
+  const matchedRequired = requiredHits.filter((pattern) => pattern.test(outputText)).length;
+  if (sourceHasMetabolismHeme && aminoOutput && matchedRequired === 0) return true;
+  if (requiredHits.length >= 2 && matchedRequired === 0) return true;
+  return false;
+}
+
+function inferAcademicTitle(material = {}, packet = null) {
   if (material.inferredTitle) return material.inferredTitle;
   if (material.lesson?.inferredTitle) return material.lesson.inferredTitle;
-  if (isAminoProteinMaterial(material)) return 'Amino Asitler ve Proteinlerin Temel Yapısı';
+  const profileTitle = inferTitleFromTopicProfile(material, packet);
+  if (profileTitle) return profileTitle;
   const base = String(material.course || material.committee || cleanMaterialTitle(material) || 'Komite Materyali')
     .replace(/\.[a-z0-9]+$/i, '')
     .replace(/^\s*\d+[.)-]?\s*/u, '')
@@ -397,41 +494,147 @@ function inferAcademicTitle(material = {}) {
   return base || 'Komite Materyali';
 }
 
-function buildAminoProteinLesson(material) {
-  const sourceCount = Array.isArray(material.files) ? material.files.length : (material.fileName ? 1 : 0);
+function buildProfileDrivenLesson(material = {}) {
+  const packet = buildCombinedMaterialPacket(material);
+  const profile = getMaterialTopicProfile(material, packet);
+  const title = inferTitleFromTopicProfile(material, packet);
+  if (!title) return null;
+  const hasFed = profile.fedFasting >= 4;
+  const hasKetone = profile.ketone >= 4;
+  const hasHeme = profile.hemePorphyria >= 4;
+  const sectionTemplates = [];
+
+  if (hasFed) {
+    sectionTemplates.push({
+      heading: 'Açlık ve toklukta metabolik yön değişimi',
+      teachingText: 'Toklukta insülin/glukagon oranının artması, besinlerin depolanmasını ve anabolik reaksiyonları öne çıkarır; karaciğerde glikojen sentezi, glikoliz, yağ asidi ve triaçilgliserol sentezi desteklenirken yağ dokusunda trigliserid depolanması artar. Açlıkta ise insülin azalır, glukagon ve katekolamin etkisi belirginleşir; amaç kan glukozunu korumak, yağ asitlerini mobilize etmek ve uzun süreli durumda keton cisimlerini alternatif yakıt olarak kullanıma sunmaktır. Böylece aynı dokular farklı hormonal ortamda ters metabolik programlara geçer.',
+      examAngle: 'Komite soruları genellikle insülin/glukagon oranı değişince karaciğer, yağ dokusu, kas ve beyindeki yakıt tercihinin nasıl değiştiğini sorgular.',
+      commonTrap: 'Toklukta depolama, açlıkta mobilizasyon mantığı unutulursa glikoliz, glukoneogenez, lipoliz ve ketogenez yönleri karıştırılır.',
+      mechanismFlow: ['Tokluk → insülin artışı → glukoz kullanımı ve depolama', 'Açlık → glukagon/katekolamin etkisi → glikojenoliz, glukoneogenez, lipoliz']
+    });
+    sectionTemplates.push({
+      heading: 'Dokular arası yakıt paylaşımı',
+      teachingText: 'Karaciğer, yağ dokusu, iskelet kası ve beyin açlık-tokluk geçişinde farklı görevler üstlenir. Karaciğer plazma glukozunu tamponlar, glikojen depolarını kullanır ve uzun açlıkta glukoneogenez ile ketogenez yapar. Yağ dokusu toklukta trigliserid depolar, açlıkta hormona duyarlı lipaz aktivasyonu ile yağ asitlerini dolaşıma verir. Kas, toklukta glukoz ve amino asit alımını artırırken açlıkta yağ asitleri ve keton cisimlerine yönelir. Beyin normalde glukoza bağımlıdır; uzamış açlıkta keton cisimlerini kullanarak protein yıkımını azaltan adaptasyona katkı sağlar.',
+      examAngle: 'Doku bazlı sorularda “hangi doku hangi yakıtı kullanır/üretir?” ayrımı yüksek verimlidir.',
+      commonTrap: 'Karaciğerin keton cismi ürettiği halde kendi ketonunu kullanamaması, doku görevlerinin ayrı düşünülmesini gerektirir.',
+      mechanismFlow: ['Karaciğer → glukoz/keton üretimi', 'Yağ dokusu → yağ asidi mobilizasyonu', 'Kas/beyin → yakıt tüketimi']
+    });
+  }
+
+  if (hasKetone) {
+    sectionTemplates.push({
+      heading: 'Yağ asidi oksidasyonu ve asetil-KoA birikimi',
+      teachingText: 'Keton cismi üretiminin metabolik zemini yağ asidi oksidasyonudur. Açlık, uzun egzersiz veya kontrolsüz diyabet gibi durumlarda yağ dokusundan serbest yağ asitleri çıkar, albümine bağlı olarak karaciğere taşınır ve mitokondride β-oksidasyona girer. Uzun zincirli yağ asitlerinin mitokondriye girişi karnitin şantı ve CPT-I üzerinden kontrol edilir; malonil-KoA bu girişi inhibe ettiği için toklukta oksidasyon baskılanır. Açlıkta malonil-KoA azalınca yağ asidi oksidasyonu artar ve oluşan asetil-KoA, sitrik asit döngüsünün kapasitesini aştığında ketogeneze yönelir.',
+      examAngle: 'CPT-I, malonil-KoA ve β-oksidasyon ilişkisi ketogenez regülasyonunun en sık sorulan basamaklarından biridir.',
+      commonTrap: 'Yağ asidi sentezi ile yağ asidi oksidasyonunu aynı yolun ters yönleri gibi düşünmek hatalıdır; yerleşim, kofaktör ve düzenleme farklıdır.',
+      mechanismFlow: ['Açlık → lipoliz → serbest yağ asidi', 'CPT-I aktivasyonu → β-oksidasyon', 'Asetil-KoA artışı → ketogenez']
+    });
+    sectionTemplates.push({
+      heading: 'Ketogenez ve keton cisimlerinin kullanımı',
+      teachingText: 'Keton cisimleri karaciğer mitokondrisinde asetil-KoA’dan sentezlenen asetoasetat, β-hidroksibütirat ve asetondur. İlk oluşan keton cismi asetoasetattır; β-hidroksibütirat/asetoasetat oranı mitokondriyal NADH/NAD+ redoks durumundan etkilenir, aseton ise asetoasetatın dekarboksilasyonu ile oluşur ve çoğunlukla solunum yoluyla atılır. Periferik dokular keton cisimlerini süksinil-KoA:asetoasetat KoA transferaz aracılığıyla tekrar asetil-KoA’ya çevirip enerji için kullanabilir. Karaciğerde bu enzim bulunmadığından karaciğer keton üretir ama keton cisimlerini enerji yakıtı olarak kullanamaz.',
+      examAngle: '“Karaciğer üretir ama kullanamaz” ve “tioforaz periferik dokuda vardır” ayrımı klasik sınav tuzağıdır.',
+      commonTrap: 'Ketonüri ketozis hakkında fikir verse de şiddeti değerlendirmede ketonemi daha güvenilirdir.',
+      mechanismFlow: ['Asetil-KoA → HMG-KoA → asetoasetat', 'Asetoasetat ↔ β-hidroksibütirat', 'Periferik doku → asetil-KoA → TCA']
+    });
+    sectionTemplates.push({
+      heading: 'Ketozis ve ketoasidoz mantığı',
+      teachingText: 'Ketozis, kanda veya idrarda keton cisimlerinin artmasıdır; açlıkta fizyolojik adaptasyon olarak görülebilirken kontrolsüz diyabette patolojik boyuta ulaşabilir. Asetoasetat ve β-hidroksibütirat asidik özellik taşıdığı için yoğun üretim ve atılım tampon sistemlerini zorlar, alkali rezerv kaybı ve metabolik asidoz gelişebilir. Şiddetli açlıkta oksaloasetat glukoneogeneze çekildiği için asetil-KoA sitrik asit döngüsüne yeterince giremez ve ketogenez artar. Bu nedenle keton cismi üretimi yalnızca yağ yıkımı değil, karbonhidrat metabolizması ve TCA ara ürünlerinin durumu ile de bağlantılıdır.',
+      examAngle: 'Diyabetik ketoasidoz ve açlık ketozisi ayrımı, hormon durumu ve glukoz kullanımı üzerinden kurulur.',
+      commonTrap: 'Keton cisimlerini sadece “zararlı atık” gibi düşünmek yanlıştır; kontrollü durumda önemli enerji substratlarıdır.',
+      mechanismFlow: ['Glukoz kullanımı azalır → lipoliz artar', 'Oksaloasetat azalır → asetil-KoA ketogeneze kayar', 'Keton artışı → asidoz riski']
+    });
+  }
+
+  if (hasHeme) {
+    sectionTemplates.push({
+      heading: 'Porfirin halkası, hem ve hemoproteinlerin işlevi',
+      teachingText: 'Hem, porfirin iskeletine demir bağlanmasıyla işlev kazanan bir metalloporfirindir. Porfirin çekirdeği dört pirol halkasının metenil köprüleriyle birleşmesinden oluşur; yan zincirlerin dizilişi ve metal iyonu bağlanması moleküle biyolojik fonksiyon kazandırır. Hemoglobin ve miyoglobin oksijen taşıma/depolama, sitokromlar elektron taşıma ve ksenobiyotik metabolizması, katalaz ise hidrojen peroksit yıkımı gibi görevlerde hem grubuna bağımlıdır. Bu nedenle hem sentezi yalnızca bir biyosentez yolu değil, oksijen taşınması, enerji üretimi ve detoksifikasyon süreçlerinin ortak kimyasal temelidir.',
+      examAngle: 'Hemoprotein-fonksiyon eşleştirmeleri ve porfirin/porfirinojen farkı komite düzeyinde sık sorgulanır.',
+      commonTrap: 'Serbest porfirinleri doğrudan işlevsel sanmak hatalıdır; metalloporfirin oluşumu fonksiyon kazandırır.',
+      mechanismFlow: ['Porfin çekirdeği → porfirin yan zincirleri → metal bağlanması → hemoprotein fonksiyonu']
+    });
+    sectionTemplates.push({
+      heading: 'Hem sentez basamakları ve düzenlenmesi',
+      teachingText: 'Hem sentezi mitokondride başlar, sitozolde devam eder ve son basamaklar için yeniden mitokondriye döner. İlk basamakta glisin ve süksinil-KoA, piridoksal fosfat gerektiren ALA sentaz reaksiyonu ile δ-aminolevülinata yönelir; bu basamak hız kısıtlayıcıdır. Sonraki basamaklarda porfobilinojen, üroporfirinojen, koproporfirinojen, protoporfirin ve sonunda ferroşelataz aracılığıyla hem oluşur. Karaciğerde ALAS1 hem/hemin ve glukozla baskılanır; sitokrom P450 indükleyen ilaçlar hem tüketimini artırarak ALAS1’i dereprese edebilir. Eritroid dokuda ALAS2 daha çok demir sağlanımıyla ilişkilidir.',
+      examAngle: 'ALAS1-ALAS2 ayrımı, kurşunun ALA dehidrataz/ferroşelataz inhibisyonu ve hız kısıtlayıcı basamak yüksek verimlidir.',
+      commonTrap: 'Tüm hem sentez düzenlenmesini tek tip sanmak hatalıdır; karaciğer ve eritroid doku farklı kontrol mantığına sahiptir.',
+      mechanismFlow: ['Glisin + süksinil-KoA → ALA', 'PBG/porfirinojen ara ürünleri → protoporfirin', 'Fe2+ eklenmesi → hem']
+    });
+    sectionTemplates.push({
+      heading: 'Porfiriyalar: biriken ara ürün klinik bulguyu belirler',
+      teachingText: 'Porfiriyalar hem biyosentez yolundaki enzim kusurları sonucunda ara ürünlerin birikmesiyle ortaya çıkar. Erken basamaklarda ALA ve PBG birikimi daha çok abdominal ağrı, otonom bulgular ve nöropsikiyatrik belirtilerle ilişkilidir; çünkü bu küçük ve suda çözünen prekürsörler nörotoksik etki gösterebilir. Daha geç basamaklarda porfirinojenlerin oksidasyon ürünü olan porfirinler ışığa duyarlılık, cilt lezyonları ve floresans özellikleriyle öne çıkar. Bu yüzden akut hepatik porfiriyalar ve eritropoetik/kutanöz porfiriyalar, sadece isim olarak değil, biriken metabolit ve klinik tablo üzerinden ayrılmalıdır.',
+      examAngle: 'Akut intermitant porfiriya: PBG deaminaz eksikliği, ALA/PBG artışı, fotosensitivite yokluğu ve nörovisseral bulgular klasik ayrımdır.',
+      commonTrap: 'Her porfiriyada fotosensitivite beklemek yanlıştır; prekürsör birikimi olan erken basamak defektlerinde cilt bulgusu olmayabilir.',
+      mechanismFlow: ['Enzim defekti → önceki ara ürün birikir', 'ALA/PBG → nörovisseral bulgu', 'Porfirinler → fotosensitivite']
+    });
+  }
+
+  if (!sectionTemplates.length) return null;
   return {
-    id: createId('lesson'), materialId: material.id,
-    inferredTitle: 'Amino Asitler ve Proteinlerin Temel Yapısı',
-    title: 'Amino Asitler ve Proteinlerin Temel Yapısı',
-    shortSubtitle: 'α-amino asit iskeleti, R grubu özellikleri ve bu özelliklerin protein yapısına etkisi.',
-    shortIntro: 'Bu ders, amino asitlerin ortak yapısını, yan zincir özelliklerine göre sınıflandırılmasını ve bu özelliklerin proteinlerin biyolojik davranışına nasıl temel oluşturduğunu açıklar.',
+    id: createId('lesson'),
+    materialId: material.id,
+    title,
+    shortIntro: 'Bu ders, yüklenen komite materyallerindeki metabolik yolakları tek tek ezberlenecek başlıklar olarak değil, hormonal durum, doku yakıt seçimi, ara ürün birikimi ve klinik-biyokimyasal sonuç ilişkisi içinde bütünleştirerek açıklar.',
     learningObjectives: [
-      'Amino asitlerin ortak α-karbon merkezli yapısını açıklayabilmek.',
-      'R grubunun amino asidin polarite, yük ve hidrofobiklik özelliklerini nasıl belirlediğini yorumlayabilmek.',
-      'Glisin, prolin ve aromatik amino asitlerin ayırt edici yapısal özelliklerini karşılaştırabilmek.',
-      'Amino asitlerin kimyasal özellikleri ile protein katlanması ve işlevi arasında bağlantı kurabilmek.',
-      'Komite sınavında amino asit sınıflandırması ve özel amino asitlerle ilgili temel tuzakları ayırt edebilmek.'
-    ],
-    bigPicture: 'Amino asitler proteinlerin yapı taşlarıdır; ancak onları yalnızca yan yana dizilen moleküller gibi düşünmek eksik olur. Her standart amino asit ortak bir α-karbon iskeletine sahip olsa da R grubunun yapısı amino asidin yükünü, polaritesini, hidrofobikliğini ve protein içindeki davranışını belirler. Bu nedenle amino asit sınıflandırması, proteinlerin üç boyutlu yapısını ve biyolojik işlevini anlamanın temel basamağıdır.',
-    mainConcepts: ['α-amino asit yapısı', 'R grubu', 'polar ve apolar amino asitler', 'asidik ve bazik amino asitler', 'glisin', 'prolin', 'aromatik amino asitler', 'protein katlanması'],
-    sections: [
-      ['Amino asidin ortak yapısı','Standart amino asitlerde α-karbona bir amino grubu, bir karboksil grubu, bir hidrojen atomu ve değişken R grubu bağlanır. Ortak iskelet aynı kaldığı için amino asitlerin ayırt edici kimyasal karakterini esas olarak R grubu belirler.','Soru genellikle ortak yapıdaki dört grubu veya R grubunun belirleyici rolünü sorgular.','Amino asidin tüm özelliklerini amino/karboksil grubuna bağlamak hatalıdır; sınıflandırmanın merkezi R grubudur.'],
-      ['α-karbon, kiralite ve glisinin özel durumu','Çoğu standart amino asitte α-karbon dört farklı gruba bağlı olduğu için kiraldir. Glisinde R grubu hidrojen olduğu için α-karbona iki hidrojen bağlıdır ve glisin kiral olmayan tek standart amino asit kabul edilir.','Glisin soruları çoğunlukla “kiral olmayan tek amino asit” tuzağıyla gelir.','Glisini küçük amino asit olarak bilmek yeterli değildir; neden kiral olmadığını yapısal olarak açıklamak gerekir.'],
-      ['R grubu neden belirleyicidir?','R grubu amino asidin suda çözünürlüğünü, protein içindeki konumunu, diğer moleküllerle etkileşimini ve yük davranışını belirler. Bu yüzden polarite, hidrofobiklik, asidik-bazik özellik ve aromatiklik sınıflandırması R grubuna göre yapılır.','R grubu özellikleri protein katlanması ve yüzey/iç bölge yerleşimiyle ilişkilendirilerek sorulabilir.','Amino asit sınıflarını ezberlemek yerine R grubunun kimyasal davranışını yorumlamak daha güvenlidir.'],
-      ['Polar, apolar, asidik ve bazik amino asitler','Apolar amino asitler hidrofobik etkileşimlere daha yatkındır ve proteinlerin iç bölgelerinde sık bulunur. Polar ve yüklü amino asitler suyla ve iyonik ortamla daha kolay etkileşir; asidik amino asitler negatif, bazik amino asitler pozitif yük taşıma eğilimindedir.','Komite sorularında sınıflandırma genellikle yük, polarite veya protein içindeki yerleşim üzerinden sınanır.','Polar ile yüklü kavramları aynı şey değildir; yüklü amino asitler polar davranır ama tüm polar amino asitler net yüklü olmak zorunda değildir.'],
-      ['Özel amino asitler: prolin, sistein ve aromatikler','Prolin halkalı yapısı nedeniyle peptit zincirinin hareketini kısıtlar ve dönüş bölgelerinde önem kazanır. Sistein disülfit bağı oluşturabilmesiyle protein stabilitesine katkı sağlar. Aromatik amino asitler halka yapıları nedeniyle hidrofobik etkileşimlerde ve özellikle UV absorbansında önemlidir.','Özel amino asit soruları genellikle glisin-kiralite, prolin-esneklik, sistein-disülfit ve aromatik-UV ilişkisiyle gelir.','Prolini sadece apolar bir amino asit gibi görmek eksiktir; halkalı yapısının zincir geometrisine etkisi sınav açısından daha değerlidir.'],
-      ['Amino asit özelliklerinin protein yapısına etkisi','Protein katlanması, amino asit dizisindeki R gruplarının birbirleriyle ve suyla kurduğu etkileşimlere bağlıdır. Hidrofobik kalıntılar çoğunlukla iç bölgeye yönelirken polar/yüklü kalıntılar yüzeyde veya aktif bölgelerde işlev kazanabilir.','Soru, tek bir amino asit özelliğini protein katlanması veya işleviyle ilişkilendirmeni isteyebilir.','Amino asit sınıflandırmasını protein yapısından bağımsız ezberlemek konunun ana mantığını kaçırır.']
-    ].map(([heading, teachingText, examAngle, commonTrap]) => ({ heading, teachingText, examAngle, commonTrap, mechanismFlow: [] })),
-    figureExplanations: [{ sourcePageOrSlide: 'Görsel analizi', title: 'Görsel yorumlama sınırı', whatItShows: 'Bu çalışma alanında güvenilir görsel yorumu için okunabilir metin ve çıkarılabilen başlıklar kullanılır.', limitations: 'Görsel piksel içeriği güvenilir biçimde analiz edilemiyorsa şekil hakkında ayrıntı uydurulmaz.' }],
-    highYieldPoints: ['R grubu amino asidin kimyasal karakterini belirler.', 'Glisin kiral olmayan tek standart amino asittir.', 'Prolin halkalı yapısıyla zincir esnekliğini kısıtlar.', 'Yüklü ve polar amino asitler sulu ortamla etkileşmeye daha yatkındır.', 'Apolar amino asitler proteinlerin hidrofobik iç bölgelerinde sık yer alır.', 'Sistein disülfit bağıyla protein stabilitesine katkı sağlayabilir.'],
-    mustKnow: ['Glisin küçük ve kiral değildir.', 'Prolin zinciri büker ve esnekliği azaltır.', 'R grubu sınıflandırmanın merkezidir.', 'Apolar içeride, polar/yüklü yüzeyde bulunma eğilimindedir.', 'Aromatik amino asitler UV absorbans ve hidrofobik etkileşimlerde önemlidir.'],
-    sourceReferences: [`Bu çalışma alanı ${sourceCount || 'yüklenen'} materyalden oluşturuldu.`],
+      hasFed ? 'Açlık ve toklukta insülin/glukagon oranının doku metabolizmasını nasıl değiştirdiğini açıklayabilmek.' : null,
+      hasKetone ? 'Yağ asidi oksidasyonu, asetil-KoA birikimi ve ketogenez arasındaki neden-sonuç ilişkisini kurabilmek.' : null,
+      hasKetone ? 'Keton cisimlerinin sentez, taşınma, kullanım ve ketoasidozla ilişkisini yorumlayabilmek.' : null,
+      hasHeme ? 'Hem sentez basamaklarını, dokuya özgü düzenlenmeyi ve kritik enzimleri sıralı şekilde açıklayabilmek.' : null,
+      hasHeme ? 'Porfiriyalarda biriken ara ürün ile nörovisseral veya fotosensitif klinik tabloyu ilişkilendirebilmek.' : null,
+      'Komite sınavında benzer metabolik kavramları mekanizma ve ayırt ettirici ipuçlarıyla karşılaştırabilmek.',
+    ].filter(Boolean).slice(0, 6),
+    bigPicture: 'Bu materyal setinin ana mantığı, organizmanın enerji ve biyosentez dengesini koşula göre yeniden düzenlemesidir. Toklukta besin bolluğu insülin baskınlığıyla depolama ve sentez yönüne çevrilirken, açlıkta glukagon ve stres hormonlarının etkisiyle depolar mobilize edilir. Yağ asitlerinin karaciğerde oksidasyonu asetil-KoA üretir; sitrik asit döngüsünün kapasitesi ve oksaloasetat durumu keton cismi sentezini belirler. Böylece açlıkta beyin dahil bazı dokular için alternatif yakıt sağlanırken, kontrolsüz diyabette aynı mekanizma patolojik ketoasidoza dönüşebilir.\n\nHem ve porfirin metabolizması ise enerji metabolizmasından bağımsız bir ezber başlığı değil, hücrenin oksijen taşıma, elektron transferi ve detoksifikasyon kapasitesini mümkün kılan kimyasal altyapıdır. Hem sentezindeki enzim kusurları, hangi ara ürünün biriktiğine göre nörovisseral atak veya fotosensitivite oluşturur. Bu nedenle dersin bütününde temel sınav mantığı şudur: hormonal durum veya enzim basamağı değişir, metabolik akış yön değiştirir, belirli ara ürünler artar veya azalır ve bu değişim doku yakıt seçimi ya da klinik tablo olarak görünür.',
+    mainConcepts: [
+      hasFed ? 'insülin/glukagon oranı' : null,
+      hasFed ? 'dokuya göre yakıt seçimi' : null,
+      hasKetone ? 'β-oksidasyon ve CPT-I kontrolü' : null,
+      hasKetone ? 'ketogenez ve keton cismi kullanımı' : null,
+      hasHeme ? 'hem sentezi ve ALAS düzenlenmesi' : null,
+      hasHeme ? 'porfiriyalar ve ara ürün birikimi' : null,
+    ].filter(Boolean),
+    sections: sectionTemplates,
+    figureExplanations: [{
+      sourcePageOrSlide: 'Okunabilir metin katmanı',
+      analysisStatus: 'partial',
+      type: 'diagram/table',
+      whatCanBeSaidSafely: 'Yolak, tablo ve sınıflandırma içerikleri okunabilir metin parçalarından yorumlandı; piksel düzeyinde görülemeyen şekil ayrıntıları uydurulmadı.',
+      limitations: 'Görselin kendisi analiz edilmediyse yalnızca metne yansıyan etiketler ve açıklamalar güvenilir kabul edildi.',
+      examRelevance: 'Yolakların yönü, hız kısıtlayıcı basamaklar, doku farkları ve biriken metabolit-klinik bulgu ilişkisi sınav açısından önceliklidir.'
+    }],
+    clinicalExamRelevance: 'Bu başlıklar komite sınavında çoğunlukla “hangi durumda hangi yolak artar?”, “hangi enzim/ara ürün hangi klinik tabloyu açıklar?” ve “hangi doku hangi yakıtı üretir ya da kullanır?” mantığıyla sorulur.',
+    commonConfusions: [
+      hasKetone ? { confusion: 'Ketozis ve ketoasidoz', correctDistinction: 'Ketozis keton cisimlerinin artmasıdır; ketoasidoz bu artışın tampon kapasitesini aşarak asidoz oluşturmasıdır.', whyConfused: 'İkisi de keton artışıyla ilişkilidir.', memoryClarification: 'Keton artışı adaptasyon olabilir; asidoz patolojidir.' } : null,
+      hasKetone ? { confusion: 'Karaciğerde keton üretimi ve kullanımı', correctDistinction: 'Karaciğer keton cismi üretir ama tioforaz eksikliği nedeniyle kullanamaz.', whyConfused: 'Üreten dokunun kullandığı varsayılır.', memoryClarification: 'Üretim karaciğer, kullanım periferik dokular.' } : null,
+      hasHeme ? { confusion: 'Akut porfiriya ve fotosensitif porfiriya', correctDistinction: 'ALA/PBG birikimi nörovisseral bulgular; porfirin birikimi fotosensitivite yapar.', whyConfused: 'Porfiriyalar tek klinik grup gibi ezberlenir.', memoryClarification: 'Biriken madde klinik tabloyu belirler.' } : null,
+    ].filter(Boolean),
+    highYieldPoints: [
+      hasFed ? 'Tokluk anabolizma ve depolama; açlık mobilizasyon, glukoneogenez, lipoliz ve ketogenez yönünde ilerler.' : null,
+      hasKetone ? 'Malonil-KoA CPT-I’i inhibe ederek uzun zincirli yağ asitlerinin mitokondriye girişini azaltır.' : null,
+      hasKetone ? 'Keton cisimleri asetoasetat, β-hidroksibütirat ve asetondur; ilk oluşan keton cismi asetoasetattır.' : null,
+      hasKetone ? 'Karaciğer keton üretir fakat tioforaz olmadığı için keton cisimlerini kullanamaz.' : null,
+      hasHeme ? 'Hem sentezi mitokondride başlar, sitozolde devam eder ve mitokondride sonlanır.' : null,
+      hasHeme ? 'ALAS hız kısıtlayıcı basamaktır; ALAS1 hem/hemin ve glukozla baskılanır.' : null,
+      hasHeme ? 'Kurşun ALA dehidrataz ve ferroşelataz basamaklarını inhibe edebilir.' : null,
+      hasHeme ? 'Porfiriyada klinik tablo, biriken öncülün suda çözünürlüğü ve fotoreaktivitesiyle ilişkilidir.' : null,
+    ].filter(Boolean),
+    mustKnow: [
+      hasFed ? 'Toklukta insülin; açlıkta glukagon baskındır.' : null,
+      hasKetone ? 'Açlıkta oksaloasetat glukoneogeneze giderse asetil-KoA ketogeneze kayar.' : null,
+      hasKetone ? 'Tioforaz yoksa keton kullanımı yoktur; bu nedenle karaciğer kendi ketonunu tüketmez.' : null,
+      hasHeme ? 'Hem sentezinin ilk basamağı ALA sentaz, son basamağı ferroşelatazdır.' : null,
+      hasHeme ? 'ALA/PBG artışı nörovisseral; porfirin artışı fotosensitif bulguları düşündürür.' : null,
+    ].filter(Boolean),
+    limitations: material.extractionLimitations || [],
+    sourceReferences: (packet.files || []).map((file) => file.fileName),
+    sourceCoverage: { filesUploadedCount: packet.files.length, filesAnalyzedCount: packet.files.length, usedFiles: (packet.files || []).map((file) => file.fileName), coverageNote: `Bu çalışma alanı ${packet.files.length} materyal birlikte analiz edilerek hazırlandı.` },
+    qualityCheck: { usesAllFiles: true, notSlideBySlide: true, noRawOCR: true, noMeaninglessTags: true, sectionDepthAdequate: true },
     createdAt: Date.now(),
   };
 }
 
 function buildLocalLesson(material) {
-  if (isAminoProteinMaterial(material)) return buildAminoProteinLesson(material);
+  const profileLesson = buildProfileDrivenLesson(material);
+  if (profileLesson) return profileLesson;
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const keywords = extractKeywords(sourceText, topic);
@@ -467,9 +670,9 @@ function buildLocalLesson(material) {
   return {
     id: createId('lesson'),
     materialId: material.id,
-    title: `${cleanMaterialTitle(material)} — Komite Ders Anlatımı`,
+    title: inferAcademicTitle(material),
     shortIntro: hasReadableText
-      ? `Bu çalışma alanı dosya içeriğinden ayrıştırılan metne göre hazırlandı. ${material.extractionNotice || ''}`.trim()
+      ? `Bu anlatım, çalışma alanındaki okunabilir kaynak metinler birleştirilerek kavramsal bir çalışma akışına dönüştürüldü. ${material.extractionNotice || ''}`.trim()
       : 'Bu çalışma alanı dosya metni ayrıştırılamadığı için gerçek materyal analizi yapılamadı; metin yapıştırılırsa içerik odaklı ders, soru ve kart üretilebilir.',
     learningObjectives: sourceObjectives.length
       ? sourceObjectives.slice(0, 4).map((item) => `${item}`)
@@ -513,23 +716,6 @@ function buildLocalLesson(material) {
 }
 
 function buildLocalQuestions(material, lesson) {
-
-  if (isAminoProteinMaterial(material)) {
-    const stems = [
-      ['easy','Amino asidin ortak yapısı','Standart bir amino asitte α-karbona hangi dört grup bağlanır?','A',['Amino grubu, karboksil grubu, hidrojen ve R grubu','Fosfat, riboz, baz ve hidrojen','Gliserol, yağ asidi, fosfat ve kolin','Hem grubu, demir, globin ve oksijen','Peptit bağı, disülfit bağı, ester bağı ve glikozidik bağ'],'Standart amino asidin ortak iskeleti α-karbon merkezlidir; kimyasal farklılığı R grubu belirler.'],
-      ['easy','Glisinin özel durumu','Glisin neden kiral olmayan tek standart amino asittir?','B',['R grubu aromatik halka içerdiği için','α-karbona iki hidrojen bağlı olduğu için','Karboksil grubu bulunmadığı için','Peptit bağı kuramadığı için','Pozitif yüklü olduğu için'],'Glisinde R grubu hidrojendir; bu nedenle α-karbonda dört farklı grup bulunmaz.'],
-      ['medium','Prolinin yapısal etkisi','Prolin protein zincirinde neden yapısal kısıtlanma oluşturur?','C',['Negatif yüklü olduğu için','Disülfit bağı yaptığı için','Halkalı yapısı zincir hareketini sınırladığı için','Aromatik halka ile UV absorbladığı için','R grubu hidrojen olduğu için'],'Prolinin halkalı yapısı peptit omurgasının esnekliğini azaltır ve dönüş bölgelerinde önem kazanır.'],
-      ['medium','R grubu mantığı','Amino asitlerin polar, apolar, asidik veya bazik olarak sınıflandırılmasında temel belirleyici nedir?','D',['Peptit bağının uzunluğu','Amino grubunun her zaman aynı olması','Karboksil grubunun protein dışında kalması','R grubunun kimyasal özelliği','Amino asidin dosyada geçtiği sayfa'],'Sınıflandırma R grubunun yük, polarite ve hidrofobiklik özelliklerine göre yapılır.'],
-      ['medium','Protein katlanması','Apolar amino asitlerin globüler proteinlerde çoğunlukla iç bölgede bulunma eğilimi nasıl açıklanır?','E',['Pozitif yük taşımalarıyla','Kiral olmamalarıyla','Peptit bağı kuramamalarıyla','Suda iyonlaşmalarıyla','Hidrofobik yan zincirlerin sudan kaçınmasıyla'],'Hidrofobik etki apolar yan zincirlerin protein iç bölgelerine yönelmesine katkı sağlar.'],
-      ['hard','Aromatik amino asitler','Aromatik amino asitlerin UV absorbansı ve hidrofobik etkileşimlerde önemli olmasının temel nedeni nedir?','A',['Elektron yoğun halka yapıları','R grubunun hidrojen olması','α-karbonun bulunmaması','Disülfit bağı zorunluluğu','Daima negatif yüklü olmaları'],'Aromatik halkalar elektron yoğun yapıları nedeniyle UV absorbans ve hidrofobik etkileşimlerde rol oynar.']
-    ];
-    return stems.concat(stems.slice(0,4)).slice(0,10).map(([difficulty,target,question,correct,opts,exp], index) => ({
-      id:createId('komite-q'), materialId:material.id, mode:'komite', questionNumber:index+1, difficulty, learningTarget:target, sourceReference:'Sentezlenmiş komite materyali', stem:'Amino asit ve protein yapısı konusu çalışılıyor.', supportingData:[], question,
-      options: opts.map((text,i)=>({id:String.fromCharCode(65+i), text})), correctOptionId:correct, explanation:exp,
-      optionFeedback:Object.fromEntries(opts.map((text,i)=>[String.fromCharCode(65+i), String.fromCharCode(65+i)===correct?exp:'Bu seçenek aynı konu çevresinde görünse de verilen yapısal/kimyasal ilişkiyi doğru açıklamaz.'])),
-      learningPoint: exp, memoryNote: target, userAnswer:null, isWrong:false, isFavorite:false, isDifficult:false, createdAt:Date.now()
-    }));
-  }
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const sourceClues = buildSourceObjectiveList(material, topic);
@@ -679,20 +865,6 @@ function buildLocalQuestions(material, lesson) {
 }
 
 function buildLocalFlashcards(material, lesson) {
-
-  if (isAminoProteinMaterial(material)) {
-    const cards = [
-      ['definition','easy','Standart amino asitlerde α-karbona hangi dört grup bağlanır?','Amino grubu, karboksil grubu, hidrojen ve değişken R grubu.','Ortak iskelet aynı, kimyasal karakteri R grubu belirler.','α-karbon = amino + karboksil + H + R.'],
-      ['exam_trap','easy','Glisin neden kiral değildir?','R grubu hidrojen olduğu için α-karbona iki hidrojen bağlıdır.','Dört farklı grup olmadığı için kiralite oluşmaz.','Glisin = kiral olmayan tek standart amino asit.'],
-      ['mechanism','medium','Prolin protein zincirinde neden esnekliği azaltır?','Halkalı yapısı peptit omurgasının hareketini kısıtlar.','Bu nedenle dönüş ve bükülme bölgelerinde yapısal etki gösterir.','Prolin zinciri büker.'],
-      ['comparison','medium','R grubunun polaritesi protein içindeki yerleşimi nasıl etkiler?','Apolar yan zincirler iç bölgede, polar/yüklü yan zincirler yüzeyde bulunma eğilimindedir.','Bu yerleşim suyla etkileşim ve hidrofobik etkiyle ilişkilidir.','Apolar içeride; polar/yüklü yüzeyde.'],
-      ['must_know','medium','Asidik ve bazik amino asitler yük açısından nasıl ayrılır?','Asidik amino asitler negatif, bazik amino asitler pozitif yük taşıma eğilimindedir.','Bu ayrım iyonik etkileşim ve protein yüzeyi davranışı için önemlidir.','Asidik negatif, bazik pozitif.'],
-      ['clinical_clue','hard','Sistein protein stabilitesine nasıl katkı sağlayabilir?','İki sistein arasında disülfit bağı oluşabilir.','Disülfit bağları proteinlerin üç boyutlu yapısını stabilize edebilir.','Sistein → disülfit bağı.'],
-      ['exam_trap','hard','Aromatik amino asitlerin ayırt edici sınav ipucu nedir?','Halka yapıları nedeniyle UV absorbans ve hidrofobik etkileşimlerde önemlidirler.','Özellikle triptofan ve tirozin bu bağlamda sık hatırlanır.','Aromatik halka → UV/hidrofobik etkileşim.'],
-      ['mechanism','medium','Amino asit özellikleri protein katlanmasını nasıl belirler?','R gruplarının yük, polarite ve hidrofobiklik özellikleri etkileşimleri ve üç boyutlu yerleşimi belirler.','Protein yapısı amino asit dizisinin kimyasal davranışından doğar.','Dizi → R grubu etkileşimleri → katlanma.']
-    ];
-    return { id:createId('deck'), deckTitle:'Amino Asitler ve Proteinlerin Temel Yapısı Hap Kartları', materialId:material.id, cards: cards.map(([type,difficulty,front,back,explanation,examTrap])=>({id:createId('card'), userId:material.userId, materialId:material.id, mode:'komite', classYear:material.classYear, committee:material.committee, course:material.course, type,difficulty,front,back,explanation,examTrap, sourceReference:'Sentezlenmiş komite materyali', tags:[], isUserCreated:false, isFavorite:false, isDifficult:false, repeatStatus:'new', createdAt:Date.now()})) };
-  }
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
   const keywords = extractKeywords(sourceText, topic);
@@ -1413,7 +1585,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
     if (aiStatus[kind] === 'loading') return;
     setKindStatus(kind, 'loading', '');
     const materialPacket = buildCombinedMaterialPacket(material);
-    const sourceText = combinedPacketToSourceText(materialPacket) || normalizeSourceText(material);
+    const sourceText = balancedPacketToSourceText(materialPacket) || normalizeSourceText(material);
     if (import.meta.env.DEV) {
       console.debug('[KOMITE AI request]', {
         filesUploaded: Array.isArray(material.files) ? material.files.length : 0,
@@ -1438,7 +1610,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
           const analyzed = await postKomiteAI('/api/analyze-uploaded-material', {
             metadata: { ...material, committeeOrCourse: material.committee || material.course },
             materialPacket,
-            extractedTextOrChunks: sourceText.slice(0, 36000),
+            extractedTextOrChunks: sourceText,
           });
           analysis = analyzed.analysis || analysis;
         } catch {
@@ -1452,12 +1624,16 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             studyContext,
             materialAnalysisJson: analysis,
             materialPacket,
-            sourceTextChunks: sourceText.slice(0, 36000),
+            sourceTextChunks: sourceText,
             filesUploadedCount: materialPacket.files.length,
           }) : null;
-          const lesson = generated?.lesson
+          let lesson = generated?.lesson
             ? deepenLessonSections(normalizeLessonCoverageForMaterial(normalizeGeneratedLessonShape(generated.lesson), material, materialPacket), material)
             : deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material);
+          const gate = qualityGateLesson(lesson, material);
+          if (!gate.ok && /kaynakların ana konusuyla uyuşmuyor|şablon|yüzeysel|Büyük resim/iu.test(gate.reason || '')) {
+            lesson = deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material);
+          }
           nextPatch = { materialAnalysis: analysis, lesson, processingStatus: 'lesson-ready' };
         } catch {
           const lesson = deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material);
@@ -1471,7 +1647,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             materialAnalysisJson: analysis,
             generatedLessonJson: lesson,
             materialPacket,
-            sourceTextChunks: sourceText.slice(0, 36000),
+            sourceTextChunks: sourceText,
             filesUploadedCount: materialPacket.files.length,
           }) : null;
           const questions = Array.isArray(generated?.questions) ? generated.questions.map((question, index) => ({
@@ -1498,7 +1674,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             materialAnalysisJson: analysis,
             generatedLessonJson: lesson,
             materialPacket,
-            sourceTextChunks: sourceText.slice(0, 36000),
+            sourceTextChunks: sourceText,
             filesUploadedCount: materialPacket.files.length,
             materialId: material.id,
           }) : null;

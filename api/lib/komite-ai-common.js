@@ -5,7 +5,7 @@ export function sendJson(response, status, payload) {
   response.end(JSON.stringify(payload));
 }
 
-export function parseJsonBody(request, maxBytes = 700_000) {
+export function parseJsonBody(request, maxBytes = 5_000_000) {
   return new Promise((resolve, reject) => {
     let body = '';
     request.on('data', (chunk) => {

@@ -2,6 +2,35 @@ import { sendJson, parseJsonBody, callOpenAIJson, validateLessonShape } from './
 import { GENERATE_LESSON_SYSTEM_PROMPT, buildGenerateLessonPrompt } from './prompts/generateLessonPrompt.js';
 
 
+
+function countPattern(text = '', pattern) {
+  return (String(text || '').match(pattern) || []).length;
+}
+
+function getPacketTopicProfile(body = {}) {
+  const files = getPacketFiles(body);
+  const text = files.map((file) => `${file.fileName || ''}\n${file.cleanedExtractedText || ''}`).join('\n\n').toLocaleLowerCase('tr');
+  return {
+    ketone: countPattern(text, /keton|ketogenez|ketoasidoz|asetoasetat|hidroksibütirat|hmg\s*koa|tioforaz|β[- ]?oksidasyon|karnitin|cpt\s*-?1/giu),
+    fedFasting: countPattern(text, /açlık|tokluk|insülin|glukagon|glukoneogenez|glikojen|lipoliz|yağ dokusu|iskelet kası|beyin|karaciğer/giu),
+    hemePorphyria: countPattern(text, /hem\b|porfir|porfiri|ala\b|porfobilinojen|üroporfirinojen|koproporfirinojen|protoporfirin|ferroşelataz|alas\b|soret/giu),
+  };
+}
+
+function lessonContradictsPacket(lesson = {}, body = {}) {
+  const profile = getPacketTopicProfile(body);
+  const required = [
+    profile.ketone >= 4 ? /keton|asetoasetat|hidroksibütirat|ketogenez|yağ asidi/iu : null,
+    profile.fedFasting >= 4 ? /açlık|tokluk|insülin|glukagon|glukoneogenez|lipoliz/iu : null,
+    profile.hemePorphyria >= 4 ? /hem|porfir|porfiri|ala|porfobilinojen|protoporfirin/iu : null,
+  ].filter(Boolean);
+  if (!required.length) return false;
+  const output = JSON.stringify(lesson || {}).toLocaleLowerCase('tr');
+  const aminoOutput = /amino\s*asit|aminoasit|glisin|prolin|r grubu|α[- ]?karbon|protein katlanması/iu.test(output);
+  const hits = required.filter((pattern) => pattern.test(output)).length;
+  return (aminoOutput && hits === 0) || (required.length >= 2 && hits === 0);
+}
+
 function deepenLessonForValidation(lesson = {}) {
   const rawSections = Array.isArray(lesson.sections) && lesson.sections.length ? lesson.sections : (Array.isArray(lesson.lessonSections) ? lesson.lessonSections : []);
   if (!rawSections.length) return lesson;
@@ -96,6 +125,7 @@ export default async function handler(request, response) {
 
     result.json = deepenLessonForValidation(normalizeLessonSourceCoverage(result.json, body));
     let validation = validateLessonShape(result.json, { filesUploadedCount });
+    if (lessonContradictsPacket(result.json, body)) validation = { ok: false, errors: [...(validation.errors || []), 'Ders çıktısı kaynak paketinin ana konusuyla uyuşmuyor.'] };
 
     if (!validation.ok) {
       const retryPrompt = `${prompt}\n\nQUALITY GATE FAILED. Regenerate once and fix these issues before returning JSON. If the issue is shallow lesson sections, rewrite every section with detailed 90-160 word teachingText paragraphs that include definition, mechanism/logic, relation to the broader topic and why it matters:\n${validation.errors.join('\n')}`;
@@ -107,6 +137,7 @@ export default async function handler(request, response) {
       });
       result.json = deepenLessonForValidation(normalizeLessonSourceCoverage(result.json, body));
       validation = validateLessonShape(result.json, { filesUploadedCount });
+      if (lessonContradictsPacket(result.json, body)) validation = { ok: false, errors: [...(validation.errors || []), 'Ders çıktısı kaynak paketinin ana konusuyla uyuşmuyor.'] };
     }
 
     if (!validation.ok) {
