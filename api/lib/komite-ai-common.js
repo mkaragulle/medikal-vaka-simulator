@@ -161,12 +161,12 @@ export function validateFlashcardsShape(output = {}) {
 
 export function validateLessonShape(output = {}, context = {}) {
   const errors = findGlobalQualityErrors(output);
-  const sections = Array.isArray(output.sections) ? output.sections : output.coreExplanation;
-  const title = String(output.title || '').trim();
+  const sections = Array.isArray(output.sections) && output.sections.length ? output.sections : (Array.isArray(output.lessonSections) ? output.lessonSections : output.coreExplanation);
+  const title = String(output.title || output.academicTitle || '').trim();
   if (!title) errors.push('Ders başlığı yok.');
   if (/\.(pdf|pptx|ppt|docx)$/iu.test(title) || /(^|[\s_-])\d{4}([\s_-]|$)/u.test(title)) errors.push('Ders başlığı ham dosya adı/tarih gibi görünüyor.');
   if (!Array.isArray(sections) || sections.length === 0) errors.push('Ders bölümleri yok.');
-  if (String(output.shortIntro || output.overview || '').length < 30) errors.push('Genel bakış çok kısa.');
+  if (String(output.shortIntro || output.overview || output.shortOverview || '').length < 30) errors.push('Genel bakış çok kısa.');
   const objectives = Array.isArray(output.learningObjectives) ? output.learningObjectives : [];
   if (objectives.length < 4 || objectives.length > 8) errors.push('Öğrenme hedefleri 4-8 aralığında değil.');
   objectives.forEach((objective, index) => {

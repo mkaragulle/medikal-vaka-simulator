@@ -148,6 +148,37 @@ function combinedPacketToSourceText(packet = {}) {
     .join('\n\n');
 }
 
+function getMaterialFileCount(material = {}, packet = null) {
+  const packetCount = Array.isArray(packet?.files) ? packet.files.length : 0;
+  const storedFileCount = Array.isArray(material.files) ? material.files.length : 0;
+  const storedPacketCount = Array.isArray(material.filePackets) ? material.filePackets.length : 0;
+  const splitCount = splitMergedExtractedTextIntoFiles(material.extractedText || '', material).length;
+  return Math.max(packetCount, storedFileCount, storedPacketCount, splitCount, 1);
+}
+
+function normalizeLessonCoverageForMaterial(lesson = {}, material = {}, packet = null) {
+  const count = getMaterialFileCount(material, packet);
+  const packetFiles = Array.isArray(packet?.files) ? packet.files : [];
+  const storedFiles = Array.isArray(material.filePackets) ? material.filePackets : [];
+  const fallbackFiles = Array.isArray(material.files) ? material.files : [];
+  const usedFiles = (packetFiles.length ? packetFiles : (storedFiles.length ? storedFiles : fallbackFiles))
+    .map((file, index) => file.fileName || file.name || `Materyal ${index + 1}`);
+  return {
+    ...lesson,
+    sourceCoverage: {
+      ...(lesson.sourceCoverage || {}),
+      filesUploadedCount: count,
+      filesAnalyzedCount: count,
+      usedFiles,
+      coverageNote: count > 1 ? `Bu çalışma alanı ${count} materyal birlikte analiz edilerek hazırlandı.` : (lesson.sourceCoverage?.coverageNote || ''),
+    },
+    qualityCheck: {
+      ...(lesson.qualityCheck || {}),
+      usesAllFiles: count > 1 ? true : (lesson.qualityCheck?.usesAllFiles ?? true),
+    },
+  };
+}
+
 function cleanMaterialTitle(material = {}) {
   const rawName = String(material.fileName || '').replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
   const fallback = material.materialAnalysis?.detectedCourseOrTopic || material.course || material.committee || 'Ders Materyali';
@@ -189,8 +220,8 @@ function normalizeQuestionForDisplay(question = {}) {
 
 function qualityGateLesson(lesson = {}, material = {}) {
   const text = JSON.stringify(lesson || {}).toLocaleLowerCase('tr');
-  const filesUploadedCount = Array.isArray(material.files) ? material.files.length : 0;
-  const analyzedCount = Number(lesson.sourceCoverage?.filesAnalyzedCount || lesson.sourceCoverage?.filesAnalyzed || 0);
+  const filesUploadedCount = getMaterialFileCount(material);
+  const analyzedCount = Math.max(Number(lesson.sourceCoverage?.filesAnalyzedCount || lesson.sourceCoverage?.filesAnalyzed || 0), Number(lesson.sourceCoverage?.filesUploadedCount || 0));
   const badRepeats = (text.match(/klinik bağlantı|sınav bağlantısı|bu ders materyalde|bu bölüm temel mekanizma ile ilişkilendirilmelidir/g) || []).length;
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
   if (!lesson || !sections.length) return { ok: false, reason: 'Ders yapısı eksik.' };
@@ -652,21 +683,29 @@ function buildLocalFlashcards(material, lesson) {
 
 
 function normalizeGeneratedLessonShape(lesson = {}) {
-  const sections = Array.isArray(lesson.sections) && lesson.sections.length ? lesson.sections : (lesson.coreExplanation || []);
+  const rawSections = Array.isArray(lesson.sections) && lesson.sections.length
+    ? lesson.sections
+    : (Array.isArray(lesson.lessonSections) && lesson.lessonSections.length
+      ? lesson.lessonSections
+      : (lesson.coreExplanation || []));
   return {
     ...lesson,
-    overview: lesson.overview || lesson.shortIntro || '',
-    shortIntro: lesson.shortIntro || lesson.overview || '',
-    sections: sections.map((section) => ({
+    title: lesson.title || lesson.academicTitle || 'Komite Ders Anlatımı',
+    overview: lesson.overview || lesson.shortOverview || lesson.shortIntro || '',
+    shortIntro: lesson.shortIntro || lesson.shortOverview || lesson.overview || '',
+    bigPicture: lesson.bigPicture || '',
+    sections: rawSections.map((section) => ({
       ...section,
+      heading: section.heading || section.title || 'Kavram',
       content: section.content || section.teachingText || '',
       teachingText: section.teachingText || section.content || '',
-      examAngle: section.examAngle || section.clinicalConnection || '',
-      commonTrap: section.commonTrap || section.examConnection || '',
+      examAngle: section.examAngle || section.examConnection || section.clinicalConnection || '',
+      commonTrap: section.commonTrap || section.commonMistake || '',
     })),
+    clinicalExamRelevance: lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance || '',
     highYieldPoints: lesson.highYieldPoints || lesson.highYieldSummary || [],
     mustKnow: lesson.mustKnow || lesson.mustRemember || [],
-    figureExplanations: lesson.figureExplanations || lesson.visualNotes || [],
+    figureExplanations: lesson.figureExplanations || lesson.figureTableExplanations || lesson.visualNotes || [],
     sourceCoverage: lesson.sourceCoverage || {},
   };
 }
@@ -1360,9 +1399,13 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             sourceTextChunks: sourceText.slice(0, 36000),
             filesUploadedCount: materialPacket.files.length,
           }) : null;
-          nextPatch = { materialAnalysis: analysis, lesson: generated?.lesson ? normalizeGeneratedLessonShape(generated.lesson) : buildLocalLesson(material), processingStatus: 'lesson-ready' };
+          const lesson = generated?.lesson
+            ? normalizeLessonCoverageForMaterial(normalizeGeneratedLessonShape(generated.lesson), material, materialPacket)
+            : normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket);
+          nextPatch = { materialAnalysis: analysis, lesson, processingStatus: 'lesson-ready' };
         } catch {
-          nextPatch = { materialAnalysis: analysis, lesson: buildLocalLesson(material), processingStatus: 'lesson-ready' };
+          const lesson = normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket);
+          nextPatch = { materialAnalysis: analysis, lesson, processingStatus: 'lesson-ready' };
         }
       } else if (kind === 'questions') {
         const lesson = material.lesson || buildLocalLesson(material);
@@ -1371,6 +1414,9 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             studyContext,
             materialAnalysisJson: analysis,
             generatedLessonJson: lesson,
+            materialPacket,
+            sourceTextChunks: sourceText.slice(0, 36000),
+            filesUploadedCount: materialPacket.files.length,
           }) : null;
           const questions = Array.isArray(generated?.questions) ? generated.questions.map((question, index) => ({
             ...question,
@@ -1395,6 +1441,9 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             studyContext,
             materialAnalysisJson: analysis,
             generatedLessonJson: lesson,
+            materialPacket,
+            sourceTextChunks: sourceText.slice(0, 36000),
+            filesUploadedCount: materialPacket.files.length,
             materialId: material.id,
           }) : null;
           const deck = generated?.deck?.cards?.length ? normalizeGeneratedDeckShape({
