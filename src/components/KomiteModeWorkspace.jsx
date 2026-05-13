@@ -65,6 +65,50 @@ function formatLessonListItem(item) {
     : Object.values(item).filter(Boolean).join(' ');
 }
 
+
+function createLessonAnchorId(text = '', index = 0) {
+  const base = String(text || `bolum-${index + 1}`)
+    .toLocaleLowerCase('tr')
+    .replace(/[ğ]/g, 'g')
+    .replace(/[ü]/g, 'u')
+    .replace(/[ş]/g, 's')
+    .replace(/[ı]/g, 'i')
+    .replace(/[ö]/g, 'o')
+    .replace(/[ç]/g, 'c')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 64);
+  return `komite-lesson-${index + 1}-${base || 'bolum'}`;
+}
+
+function splitReadableParagraphs(text = '') {
+  const clean = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!clean) return [];
+  if (clean.length < 900) return [clean];
+  const sentences = clean.match(/[^.!?]+[.!?]+(?:\s|$)|[^.!?]+$/g)?.map((item) => item.trim()).filter(Boolean) || [clean];
+  const paragraphs = [];
+  let current = '';
+  sentences.forEach((sentence) => {
+    if ((current + ' ' + sentence).trim().length > 620 && current.length > 240) {
+      paragraphs.push(current.trim());
+      current = sentence;
+    } else {
+      current = `${current} ${sentence}`.trim();
+    }
+  });
+  if (current) paragraphs.push(current.trim());
+  return paragraphs;
+}
+
+function sanitizeTeachingTextForDisplay(text = '') {
+  return String(text || '')
+    .replace(/\s*Sınav bağlantısı:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    .replace(/\s*Sınavda nasıl sorulur\??\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    .replace(/\s*Sık hata:\s*[^.?!]*(?:[.?!]|$)/giu, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function normalizeSourceText(material = {}) {
   return [material.extractedText, material.pastedText]
     .filter(Boolean)
@@ -256,12 +300,11 @@ function buildSectionDepthText(section = {}, material = {}) {
   const parts = [section.teachingText, section.content].filter(Boolean).map((value) => String(value).trim());
   if (section.whyItMatters) parts.push(`Bu başlığın öğrenme değeri şudur: ${String(section.whyItMatters).trim()}`);
   if (Array.isArray(section.mechanismFlow) && section.mechanismFlow.length) parts.push(`Mekanizma akışı: ${section.mechanismFlow.filter(Boolean).join(' → ')}.`);
-  if (section.examAngle || section.examConnection) parts.push(`Sınav bağlantısı: ${String(section.examAngle || section.examConnection).trim()}`);
-  if (section.commonTrap || section.commonMistake) parts.push(`Sık hata: ${String(section.commonTrap || section.commonMistake).trim()}`);
+  // Keep exam and common-mistake notes in their own visual fields; merging them into teachingText creates repetition in the lesson UI.
   let merged = [...new Set(parts.filter(Boolean))].join(' ')
     .replace(/\s+/g, ' ')
     .trim();
-  if (wordCount(merged) >= 55) return merged;
+  if (wordCount(merged) >= 90) return sanitizeTeachingTextForDisplay(merged);
   const heading = section.heading || section.title || 'Bu kavram';
   const topic = deriveTopic(material);
   const sourceText = normalizeSourceText(material);
@@ -269,8 +312,8 @@ function buildSectionDepthText(section = {}, material = {}) {
     .filter((sentence) => !merged.includes(sentence))
     .slice(0, 2)
     .join(' ');
-  if (merged && support) return `${merged} ${support}`.replace(/\s+/g, ' ').trim();
-  if (merged) return merged;
+  if (merged && support) return sanitizeTeachingTextForDisplay(`${merged} ${support}`.replace(/\s+/g, ' ').trim());
+  if (merged) return sanitizeTeachingTextForDisplay(merged);
   return support || `${heading} başlığı için kaynak metinden yeterli güvenilir açıklama çıkarılamadı.`;
 }
 
@@ -322,8 +365,9 @@ function qualityGateLesson(lesson = {}, material = {}) {
   if (filesUploadedCount > 1 && analyzedCount <= 1) return { ok: false, reason: 'Çoklu dosya yüklenmesine rağmen AI çıktısı tek materyal kapsamı gösteriyor.' };
   if (outputContradictsSourceTopic(lesson, material)) return { ok: false, reason: 'Ders anlatımı yüklenen kaynakların ana konusuyla uyuşmuyor.' };
   if (/materyaldeki ilişkili kavram|slayt\s*→|sayfa\s*→/iu.test(text)) return { ok: false, reason: 'Ham/meaningless kaynak etiketi üretildi.' };
-  if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 260) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
-  const shallow = sections.filter((section) => String(section.teachingText || section.content || '').split(/\s+/).length < 45);
+  if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 520) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
+  if (filesUploadedCount > 1 && sections.length < 8) return { ok: false, reason: 'Çoklu materyal için ders bölümü sayısı yetersiz.' };
+  const shallow = sections.filter((section) => String(section.teachingText || section.content || '').split(/\s+/).length < 80);
   if (sections.length && shallow.length / sections.length > 0.35) return { ok: false, reason: 'Ders bölümleri yüzeysel kalıyor.' };
   if (badRepeats > 2) return { ok: false, reason: 'Ders anlatımı fazla şablon ve tekrar içeriyor.' };
   return { ok: true };
@@ -1343,48 +1387,103 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
     const hasExtractedText = normalizeSourceText(material).length > 120;
     return <EmptyState title="Ders anlatımı henüz hazır değil" text={hasExtractedText ? "Dosya metni ayrıştırıldı. KlinikIQ AI tek bir konu anlatımı oluşturmak için materyali analiz eder." : "Bu dosyadan yeterli metin çıkarılamadı. Metin yapıştırırsan içerik odaklı ders, soru ve kart üretilebilir."} action={<LoadingPrimaryButton status={status} idleLabel="AI Ders Anlatımı oluştur" loadingLabel="AI Ders Anlatımı oluşturuyor…" onClick={onGenerate} />} />;
   }
+
+  const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
+  const sectionAnchors = sections.map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }));
+  const objectives = lesson.learningObjectives || [];
+  const concepts = Array.isArray(lesson.mainConcepts)
+    ? lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item)))
+    : [];
+  const highYield = lesson.highYieldPoints || lesson.highYieldSummary || [];
+  const mustKnow = lesson.mustKnow || lesson.mustRemember || [];
+
   return (
-    <div className="komite-lesson-view">
-      <div className="komite-lesson-hero">
-        <span className="komite-kicker">AI Ders Anlatımı</span>
-        <h2>{lesson.title}</h2>
-        <p>{lesson.shortSubtitle || lesson.shortIntro || lesson.overview}</p>
-        {lesson.sourceCoverage?.filesAnalyzedCount > 1 ? <small className="komite-source-note">Bu çalışma alanı {lesson.sourceCoverage.filesAnalyzedCount} materyal birlikte analiz edilerek hazırlandı.</small> : null}
+    <div className="komite-lesson-view komite-lesson-view-pro">
+      <div className="komite-lesson-hero komite-lesson-hero-pro">
+        <div>
+          <span className="komite-kicker">AI Ders Anlatımı</span>
+          <h2>{lesson.title}</h2>
+          <p>{lesson.shortSubtitle || lesson.shortIntro || lesson.overview}</p>
+          {lesson.sourceCoverage?.filesAnalyzedCount > 1 ? <small className="komite-source-note">Bu çalışma alanı {lesson.sourceCoverage.filesAnalyzedCount} materyal birlikte analiz edilerek hazırlandı.</small> : null}
+        </div>
+        <div className="komite-lesson-hero-metrics" aria-label="Ders özeti">
+          <span><strong>{sections.length}</strong> bölüm</span>
+          <span><strong>{objectives.length}</strong> hedef</span>
+          <span><strong>{highYield.length}</strong> can alıcı nokta</span>
+        </div>
       </div>
-      <div className="komite-objectives">
-        <strong>Öğrenme hedefleri</strong>
-        <ul>{(lesson.learningObjectives || []).map((item) => <li key={item}>{item}</li>)}</ul>
-      </div>
-      {(lesson.bigPicture || lesson.overview) ? <article className="komite-lesson-section"><h3>Büyük resim</h3><p>{lesson.bigPicture || lesson.overview}</p></article> : null}
-      {Array.isArray(lesson.mainConcepts) && lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item))).length ? <div className="komite-objectives"><strong>Ana kavramlar</strong><ul>{lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item))).map((item) => <li key={item}>{item}</li>)}</ul></div> : null}
-      {lesson.clinicalExamRelevance ? <article className="komite-lesson-section"><h3>Klinik / sınav bağlantısı</h3><p>{lesson.clinicalExamRelevance}</p></article> : null}
-      {Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length ? (
-        <article className="komite-lesson-section">
-          <h3>Sık karıştırılan noktalar</h3>
-          <ul>{lesson.commonConfusions.map((item, index) => <li key={`${formatLessonListItem(item)}-${index}`}>{formatLessonListItem(item)}</li>)}</ul>
-        </article>
-      ) : null}
-      {(lesson.sections || []).map((section) => (
-        <article className="komite-lesson-section" key={section.heading}>
-          <h3>{section.heading}</h3>
-          <p>{section.teachingText || section.content}</p>
-          {(section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
-            <div className="komite-two-note-grid">
-              {(section.examAngle || section.clinicalConnection) ? <div><strong>Sınavda nasıl sorulur?</strong><p>{section.examAngle || section.clinicalConnection}</p></div> : null}
-              {(section.commonTrap || section.examConnection) ? <div><strong>Sık hata</strong><p>{section.commonTrap || section.examConnection}</p></div> : null}
+
+      <div className="komite-lesson-pro-layout">
+        <aside className="komite-lesson-sidebar" aria-label="Ders navigasyonu">
+          <div className="komite-sidebar-card">
+            <strong>Hızlı erişim</strong>
+            <a href="#komite-objectives">Öğrenme hedefleri</a>
+            <a href="#komite-big-picture">Büyük resim</a>
+            {sectionAnchors.map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
+            <a href="#komite-high-yield">Can alıcı noktalar</a>
+          </div>
+          {concepts.length ? (
+            <div className="komite-sidebar-card komite-concept-card">
+              <strong>Ana kavramlar</strong>
+              <div className="komite-concept-list">{concepts.map((item) => <span key={item}>{item}</span>)}</div>
             </div>
           ) : null}
-        </article>
-      ))}
-      <div className="komite-summary-grid">
-        <div>
-          <strong>Can alıcı noktalar</strong>
-          <ul>{(lesson.highYieldPoints || lesson.highYieldSummary || []).map((item) => <li key={item}>{item}</li>)}</ul>
-        </div>
-        <div>
-          <strong>Mutlaka hatırla</strong>
-          <ul>{(lesson.mustKnow || lesson.mustRemember || []).map((item) => <li key={item}>{item}</li>)}</ul>
-        </div>
+        </aside>
+
+        <main className="komite-lesson-main-flow">
+          <section id="komite-objectives" className="komite-objectives komite-objectives-pro">
+            <strong>Öğrenme hedefleri</strong>
+            <ul>{objectives.map((item) => <li key={item}>{item}</li>)}</ul>
+          </section>
+
+          {(lesson.bigPicture || lesson.overview) ? (
+            <article id="komite-big-picture" className="komite-lesson-section komite-big-picture-section">
+              <h3>Büyük resim</h3>
+              {splitReadableParagraphs(lesson.bigPicture || lesson.overview).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+            </article>
+          ) : null}
+
+          <div className="komite-context-grid">
+            {lesson.clinicalExamRelevance ? <article className="komite-lesson-section"><h3>Klinik / sınav bağlantısı</h3><p>{lesson.clinicalExamRelevance}</p></article> : null}
+            {Array.isArray(lesson.commonConfusions) && lesson.commonConfusions.length ? (
+              <article className="komite-lesson-section">
+                <h3>Sık karıştırılan noktalar</h3>
+                <ul>{lesson.commonConfusions.map((item, index) => <li key={`${formatLessonListItem(item)}-${index}`}>{formatLessonListItem(item)}</li>)}</ul>
+              </article>
+            ) : null}
+          </div>
+
+          {sections.map((section, index) => {
+            const teachingText = sanitizeTeachingTextForDisplay(section.teachingText || section.content);
+            return (
+              <article id={sectionAnchors[index]?.id} className="komite-lesson-section komite-lesson-section-pro" key={`${section.heading}-${index}`}>
+                <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
+                <div className="komite-section-body">
+                  <h3>{section.heading}</h3>
+                  {splitReadableParagraphs(teachingText).map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}
+                  {(section.mechanismFlow?.length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
+                    <div className="komite-two-note-grid komite-note-grid-pro">
+                      {Array.isArray(section.mechanismFlow) && section.mechanismFlow.length ? <div><strong>Mekanizma akışı</strong><p>{section.mechanismFlow.join(' → ')}</p></div> : null}
+                      {(section.examAngle || section.clinicalConnection) ? <div><strong>Sınavda nasıl sorulur?</strong><p>{section.examAngle || section.clinicalConnection}</p></div> : null}
+                      {(section.commonTrap || section.examConnection) ? <div><strong>Sık hata</strong><p>{section.commonTrap || section.examConnection}</p></div> : null}
+                    </div>
+                  ) : null}
+                </div>
+              </article>
+            );
+          })}
+
+          <div id="komite-high-yield" className="komite-summary-grid komite-summary-grid-pro">
+            <div>
+              <strong>Can alıcı noktalar</strong>
+              <ul>{highYield.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+            <div>
+              <strong>Mutlaka hatırla</strong>
+              <ul>{mustKnow.map((item) => <li key={item}>{item}</li>)}</ul>
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   );

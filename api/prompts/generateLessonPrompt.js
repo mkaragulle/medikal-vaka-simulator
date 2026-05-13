@@ -12,11 +12,11 @@ Core rules:
 - Remove file names, slide numbers, dates, professor names, and OCR noise from teaching sections.
 - Do not copy raw slide text.
 - Do not produce shallow headings.
-- Every heading must contain a detailed, explanatory, useful teaching paragraph. For each section, teachingText must usually be 90-160 words and must not be a one-sentence summary.
-- Büyük resim must explain the central conceptual logic in detail and should be at least two substantial paragraphs for substantial source material.
+- Every heading must contain a detailed, explanatory, useful teaching explanation. Do not follow a fixed section count or fixed word-count ceiling. Decide the number of sections from the conceptual structure and density of the uploaded material. For substantial source material, teachingText may be long when needed; do not artificially shorten the lesson.
+- Büyük resim must explain the central conceptual logic in detail and should be at least 2-3 substantial paragraphs for substantial source material. It must connect the separate uploaded topics into one study map.
 - Explain mechanisms using cause-effect logic.
 - Explain classifications by comparing categories and why they matter.
-- Explain clinical or exam relevance when appropriate, but do not start every section with the same phrase and do not force exam relevance when the source does not support it.
+- Explain clinical or exam relevance when appropriate, but keep it in examAngle/commonTrap fields rather than repeating the same labels inside teachingText. Do not start every section with the same phrase and do not force exam relevance when the source does not support it.
 - Use varied, natural paragraph structure. Avoid repeated formulaic openings such as 'Bu bölüm...', 'Bu nedenle...', 'Klinik bağlantı...', 'Sınav bağlantısı...'.
 - If figures or tables are readable, explain what they show and why they matter.
 - If figures are not readable, state the limitation briefly and do not invent details.
@@ -74,10 +74,12 @@ Mandatory quality rules:
 - If multiple files are present, synthesize their shared conceptual map instead of writing separate file summaries.
 - learningObjectives must be real student capabilities using verbs such as açıklayabilir, karşılaştırabilir, yorumlayabilir, sınıflandırabilir, ilişkilendirebilir, ayırt edebilir, uygulayabilir.
 - bigPicture must be detailed, conceptual and useful. Avoid keywords, metadata, filenames, and implementation language.
-- sections should usually be 5-10 conceptual sections. Each teachingText must be a substantial explanatory paragraph, not one sentence. Write each teachingText as 90-160 words when source text is sufficient. Include definition, mechanism/logic, relation to the broader topic, and why it matters inside teachingText itself; do not put all useful content only in examAngle or whyItMatters.
-- Each section should define the concept, explain how it works, connect it to the broader topic and include why it matters. Put the main explanation in teachingText. Add examAngle/commonTrap only when genuinely specific; otherwise return an empty string. Do not repeat identical sentence openings across sections. Do not return sectionDepthAdequate=true unless at least 70% of sections have detailed teachingText.
+- Create as many conceptual sections as the material genuinely requires. There is no fixed upper or lower section limit. Do not compress distinct concepts just to keep the lesson short, and do not split artificially just to increase section count. For large multi-file material, cover every major domain, subdomain, mechanism, classification, clinically important distinction, and exam-relevant integration point with its own section when that improves learning. Each teachingText must be a substantial explanatory paragraph or multi-paragraph explanation, not one sentence. Include definition, mechanism/logic, relation to the broader topic, and why it matters inside teachingText itself; do not put all useful content only in examAngle or whyItMatters. It is acceptable and preferred for the full lesson to be long when the uploaded material is long.
+- Each section should define the concept, explain how it works, connect it to the broader topic and include why it matters. Put the main explanation in teachingText. Add examAngle/commonTrap only when genuinely specific; otherwise return an empty string. Do not duplicate examAngle/commonTrap sentences inside teachingText. Do not repeat identical sentence openings across sections. Do not return sectionDepthAdequate=true unless at least 80% of sections have detailed teachingText.
 - mainConcepts must be real medical/biochemical/physiological concepts, not file words such as slayt, sayfa, dosya, pptx, giriş.
-- highYieldPoints and mustKnow must be specific, memorable and scientifically meaningful.
+- highYieldPoints and mustKnow must be specific, memorable and scientifically meaningful. Their count should be determined by the material. Do not cap them artificially; include enough items to cover the core exam-useful distinctions without padding.
 - Never fill examAngle, commonTrap, whyItMatters, or clinicalExamRelevance with boilerplate. Empty is better than a generic repeated sentence.
-- Never include raw filename as title. Never include professor names, dates, page numbers, file extensions, OCR fragments, “materyaldeki ilişkili kavram”, “slayt →”, or “sayfa →”.`;
+- Never include raw filename as title. Never include professor names, dates, page numbers, file extensions, OCR fragments, “materyaldeki ilişkili kavram”, “slayt →”, or “sayfa →”.
+- If the source packet contains clearly different but related domains (for example açlık-tokluk metabolism, ketone bodies, and heme/porphyria), do not drop any major domain. Give each major domain enough dedicated sections and then connect them with integrative sections.
+- Prefer detailed medical-school teaching over compact summary. The learner should be able to study from this output without reopening the slides for the core narrative.`;
 }

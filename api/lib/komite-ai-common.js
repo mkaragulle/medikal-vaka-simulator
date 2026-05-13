@@ -176,12 +176,14 @@ export function validateLessonShape(output = {}, context = {}) {
   });
   const bigPicture = String(output.bigPicture || '').replace(/\s+/g, ' ').trim();
   if (!bigPicture) errors.push('Büyük resim alanı yok veya boş.');
-  if (bigPicture.length < 260) errors.push('Büyük resim çok kısa veya jenerik.');
+  if (bigPicture.length < 520) errors.push('Büyük resim çok kısa veya jenerik.');
   const filesUploadedCount = Number(context.filesUploadedCount || 0);
   const filesAnalyzedCount = Number(output.sourceCoverage?.filesAnalyzedCount || output.sourceCoverage?.filesAnalyzed || 0);
   if (filesUploadedCount > 1 && filesAnalyzedCount <= 1) errors.push('Çoklu dosya yüklendiği halde çıktı tek dosya kapsamı gösteriyor.');
   const sectionDepthText = (section = {}) => [section.teachingText, section.content, section.whyItMatters, section.examAngle, section.examConnection, section.commonTrap, section.commonMistake, Array.isArray(section.mechanismFlow) ? section.mechanismFlow.join(' ') : ''].filter(Boolean).join(' ');
-  const shallowSections = (sections || []).filter((section) => sectionDepthText(section).trim().split(/\s+/).filter(Boolean).length < 55);
+  const expectedFiles = filesUploadedCount;
+  if (expectedFiles > 1 && (sections || []).length < 8) errors.push('Ders bölümü sayısı çoklu materyal için yetersiz.');
+  const shallowSections = (sections || []).filter((section) => sectionDepthText(section).trim().split(/\s+/).filter(Boolean).length < 90);
   if ((sections || []).length && shallowSections.length / (sections || []).length > 0.35) errors.push('Ders bölümlerinin çoğu yeterince derin değil.');
   const qualityCheck = output.qualityCheck || {};
   if (filesUploadedCount > 1 && qualityCheck.usesAllFiles === false) errors.push('qualityCheck usesAllFiles=false döndü.');

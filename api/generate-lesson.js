@@ -119,7 +119,7 @@ export default async function handler(request, response) {
     let result = await callOpenAIJson({
       systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT,
       userPrompt: prompt,
-      maxTokens: 7200,
+      maxTokens: 16000,
       temperature: 0.2,
     });
 
@@ -128,11 +128,11 @@ export default async function handler(request, response) {
     if (lessonContradictsPacket(result.json, body)) validation = { ok: false, errors: [...(validation.errors || []), 'Ders çıktısı kaynak paketinin ana konusuyla uyuşmuyor.'] };
 
     if (!validation.ok) {
-      const retryPrompt = `${prompt}\n\nQUALITY GATE FAILED. Regenerate once and fix these issues before returning JSON. If the issue is shallow lesson sections, rewrite every section with detailed 90-160 word teachingText paragraphs that include definition, mechanism/logic, relation to the broader topic and why it matters:\n${validation.errors.join('\n')}`;
+      const retryPrompt = `${prompt}\n\nQUALITY GATE FAILED. Regenerate once and fix these issues before returning JSON. If the issue is shallow lesson sections, rewrite every section with detailed teachingText paragraphs without artificial word-count ceilings that include definition, mechanism/logic, relation to the broader topic and why it matters:\n${validation.errors.join('\n')}`;
       result = await callOpenAIJson({
         systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT,
         userPrompt: retryPrompt,
-        maxTokens: 7200,
+        maxTokens: 16000,
         temperature: 0.15,
       });
       result.json = deepenLessonForValidation(normalizeLessonSourceCoverage(result.json, body));

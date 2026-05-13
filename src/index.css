@@ -37328,3 +37328,214 @@ body:not(.klinikiq-auth-lock) .app-shell {
   font-size: 0.82rem;
   font-weight: 650;
 }
+
+/* KOMITE professional long-form lesson reading experience */
+.komite-lesson-view-pro {
+  gap: 1.15rem;
+}
+.komite-lesson-hero-pro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(240,253,250,0.76));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+.komite-lesson-hero-pro h2 {
+  font-size: clamp(1.45rem, 2vw, 2.2rem);
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+}
+.komite-lesson-hero-pro p {
+  max-width: 82ch;
+  font-size: 1rem;
+}
+.komite-lesson-hero-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(92px, 1fr));
+  gap: 0.55rem;
+  min-width: 310px;
+}
+.komite-lesson-hero-metrics span {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.7rem 0.78rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: #64748b;
+  font-size: 0.78rem;
+  font-weight: 760;
+}
+.komite-lesson-hero-metrics strong {
+  color: #0f172a;
+  font-size: 1.16rem;
+}
+.komite-lesson-pro-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 290px) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.komite-lesson-sidebar {
+  position: sticky;
+  top: 92px;
+  display: grid;
+  gap: 0.85rem;
+  max-height: calc(100vh - 110px);
+  overflow: auto;
+  padding-right: 0.15rem;
+}
+.komite-sidebar-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 0.95rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.05);
+}
+.komite-sidebar-card strong {
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+.komite-sidebar-card a {
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.88rem;
+  line-height: 1.35;
+  padding: 0.42rem 0.5rem;
+  border-radius: 0.75rem;
+}
+.komite-sidebar-card a:hover {
+  color: #0f766e;
+  background: rgba(240, 253, 250, 0.9);
+}
+.komite-concept-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.komite-concept-list span {
+  display: inline-flex;
+  padding: 0.38rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(240, 253, 250, 0.9);
+  color: #0f766e;
+  font-size: 0.78rem;
+  font-weight: 760;
+}
+.komite-lesson-main-flow {
+  display: grid;
+  gap: 1rem;
+  min-width: 0;
+}
+.komite-objectives-pro,
+.komite-big-picture-section,
+.komite-lesson-section-pro,
+.komite-summary-grid-pro > div {
+  padding: 1.15rem;
+}
+.komite-context-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.komite-big-picture-section {
+  background: linear-gradient(135deg, rgba(240, 253, 250, 0.88), rgba(255, 255, 255, 0.9));
+}
+.komite-big-picture-section p,
+.komite-lesson-section-pro p {
+  font-size: 0.98rem;
+  line-height: 1.82;
+  margin: 0.65rem 0 0;
+}
+.komite-lesson-section-pro {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 0.95rem;
+  scroll-margin-top: 96px;
+}
+.komite-section-index {
+  width: 38px;
+  height: 38px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 0.95rem;
+  background: rgba(20, 184, 166, 0.12);
+  color: #0f766e;
+  font-weight: 850;
+  font-size: 0.85rem;
+}
+.komite-section-body h3 {
+  font-size: 1.18rem;
+  letter-spacing: -0.018em;
+  margin-top: 0.1rem;
+}
+.komite-note-grid-pro {
+  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.komite-note-grid-pro > div {
+  margin-top: 0;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: rgba(248, 250, 252, 0.9);
+}
+.komite-note-grid-pro strong {
+  color: #0f172a;
+  font-size: 0.86rem;
+}
+.komite-note-grid-pro p {
+  margin-top: 0.35rem;
+  line-height: 1.58;
+  font-size: 0.9rem;
+}
+.komite-summary-grid-pro li,
+.komite-objectives-pro li {
+  margin: 0.45rem 0;
+}
+html[data-theme='dark'] .komite-lesson-hero-pro,
+html[data-theme='dark'] .komite-sidebar-card,
+html[data-theme='dark'] .komite-big-picture-section {
+  background: rgba(15, 23, 42, 0.72);
+  border-color: rgba(148, 163, 184, 0.18);
+}
+html[data-theme='dark'] .komite-lesson-hero-metrics span,
+html[data-theme='dark'] .komite-note-grid-pro > div {
+  background: rgba(15, 23, 42, 0.62);
+  border-color: rgba(148, 163, 184, 0.16);
+}
+html[data-theme='dark'] .komite-sidebar-card a,
+html[data-theme='dark'] .komite-lesson-hero-metrics span { color: #cbd5e1; }
+html[data-theme='dark'] .komite-sidebar-card strong,
+html[data-theme='dark'] .komite-lesson-hero-metrics strong,
+html[data-theme='dark'] .komite-note-grid-pro strong { color: #f8fafc; }
+@media (max-width: 980px) {
+  .komite-lesson-hero-pro,
+  .komite-lesson-pro-layout,
+  .komite-context-grid {
+    grid-template-columns: 1fr;
+  }
+  .komite-lesson-hero-metrics {
+    min-width: 0;
+  }
+  .komite-lesson-sidebar {
+    position: static;
+    max-height: none;
+  }
+}
+@media (max-width: 640px) {
+  .komite-lesson-hero-metrics,
+  .komite-summary-grid-pro {
+    grid-template-columns: 1fr;
+  }
+  .komite-lesson-section-pro {
+    grid-template-columns: 1fr;
+  }
+  .komite-section-index {
+    width: 34px;
+    height: 34px;
+  }
+}
