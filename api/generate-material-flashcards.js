@@ -45,7 +45,23 @@ const FLASHCARD_JSON_SCHEMA = {
   },
 };
 
-function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = 24000) {
+function envNumber(name, fallback) {
+  const value = Number(process.env[name]);
+  return Number.isFinite(value) && value > 0 ? value : fallback;
+}
+
+function compactTextWindow(text = '', maxChars = 12000) {
+  const clean = String(text || '').replace(/\s+/g, ' ').trim();
+  if (clean.length <= maxChars) return clean;
+  const part = Math.floor(maxChars / 3);
+  const start = clean.slice(0, part);
+  const middleStart = Math.max(0, Math.floor(clean.length / 2) - Math.floor(part / 2));
+  const middle = clean.slice(middleStart, middleStart + part);
+  const end = clean.slice(Math.max(0, clean.length - part));
+  return [start, middle, end].join('\n\n');
+}
+
+function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = envNumber('KOMITE_FLASHCARDS_MAX_SOURCE_CHARS', 12000)) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
@@ -53,7 +69,7 @@ function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = 24000) {
   const perFile = Math.max(4000, Math.floor(maxTotalChars / files.length));
   return files.map((file) => {
     const text = String(file.cleanedExtractedText || file.text || '').trim();
-    return text.length > perFile ? text.slice(0, perFile) : text;
+    return compactTextWindow(text, perFile);
   }).join('\n\n').trim();
 }
 
@@ -67,7 +83,7 @@ export default async function handler(request, response) {
     const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {});
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
     const prompt = buildGenerateFlashcardsPrompt({ sourceTextChunks: currentSourceText });
-    const result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 4200, temperature: 0.2, jsonSchema: FLASHCARD_JSON_SCHEMA });
+    const result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_FLASHCARDS_MAX_OUTPUT_TOKENS', 3200), temperature: 0.2, jsonSchema: FLASHCARD_JSON_SCHEMA, scope: 'KOMITE' });
     const deck = result.json.deck || result.json;
     const validation = validateFlashcardsShape(deck);
     const responseValidation = validation.ok ? validation : { ok: true, warnings: validation.errors || [], note: 'Non-blocking flashcard normalization warnings.' };

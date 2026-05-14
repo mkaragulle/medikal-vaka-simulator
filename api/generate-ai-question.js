@@ -606,13 +606,13 @@ function createAbortSignal(timeoutMs) {
 }
 
 async function callOpenAI(prompt) {
-  const apiKey = process.env.OPENAI_API_KEY;
+  const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
-  const model = process.env.OPENAI_MODEL || process.env.DEFAULT_GENERATOR_MODEL || 'gpt-4o-mini';
-  const baseUrl = (process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
-  const timeoutMs = Number(process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 25000);
-  const maxTokens = Number(process.env.OPENAI_MAX_OUTPUT_TOKENS || 1800);
-  const style = String(process.env.OPENAI_API_STYLE || 'chat').toLowerCase();
+  const model = process.env.TUS_OPENAI_MODEL || process.env.OPENAI_MODEL || process.env.DEFAULT_GENERATOR_MODEL || 'gpt-4o-mini';
+  const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
+  const timeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 25000);
+  const maxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 1800);
+  const style = String(process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || 'chat').toLowerCase();
   const { signal, cancel } = createAbortSignal(timeoutMs);
   try {
     const body = style === 'responses'

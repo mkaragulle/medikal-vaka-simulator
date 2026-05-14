@@ -136,26 +136,50 @@ function extractResponsesText(data) {
   return parts.join('\n');
 }
 
-export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, temperature = 0.2, jsonSchema = null } = {}) {
-  const apiKey = process.env.OPENAI_API_KEY;
+function firstEnv(...keys) {
+  for (const key of keys) {
+    const value = process.env[key];
+    if (value !== undefined && String(value).trim() !== '') return String(value).trim();
+  }
+  return '';
+}
+
+function firstNumber(defaultValue, ...keys) {
+  for (const key of keys) {
+    const raw = process.env[key];
+    if (raw !== undefined && String(raw).trim() !== '') {
+      const value = Number(raw);
+      if (Number.isFinite(value) && value > 0) return value;
+    }
+  }
+  return defaultValue;
+}
+
+export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, temperature = 0.2, jsonSchema = null, scope = 'KOMITE' } = {}) {
+  const envPrefix = String(scope || 'KOMITE').toUpperCase();
+  const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
   if (!apiKey) {
-    const error = new Error('OPENAI_API_KEY is not configured');
+    const error = new Error(`${envPrefix}_OPENAI_API_KEY or OPENAI_API_KEY is not configured`);
     error.code = 'missing_api_key';
     throw error;
   }
-  const model = process.env.OPENAI_MODEL || 'gpt-4.1-mini';
-  const provider = process.env.AI_PROVIDER || 'openai';
+
+  const provider = firstEnv(`${envPrefix}_AI_PROVIDER`, 'AI_PROVIDER') || 'openai';
   if (provider !== 'openai') {
-    const error = new Error(`Unsupported AI_PROVIDER: ${provider}`);
+    const error = new Error(`Unsupported AI provider for ${envPrefix}: ${provider}`);
     error.code = 'unsupported_provider';
     throw error;
   }
 
-  const timeoutMs = Number(process.env.AI_TIMEOUT_MS || 55_000);
+  const model = firstEnv(`${envPrefix}_OPENAI_MODEL`, 'OPENAI_MODEL') || 'gpt-4.1-mini';
+  const baseUrl = (firstEnv(`${envPrefix}_OPENAI_BASE_URL`, 'OPENAI_BASE_URL') || 'https://api.openai.com/v1').replace(/\/$/, '');
+  const timeoutMs = firstNumber(240_000, `${envPrefix}_AI_TIMEOUT_MS`, `${envPrefix}_OPENAI_TIMEOUT_MS`, 'AI_TIMEOUT_MS');
+  const effectiveMaxTokens = firstNumber(maxTokens, `${envPrefix}_OPENAI_MAX_OUTPUT_TOKENS`);
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    const response = await fetch(`${baseUrl}/chat/completions`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       signal: controller.signal,
@@ -167,7 +191,7 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
         ],
         temperature,
         response_format: jsonSchema ? { type: 'json_schema', json_schema: jsonSchema } : { type: 'json_object' },
-        max_completion_tokens: maxTokens,
+        max_completion_tokens: effectiveMaxTokens,
       }),
     });
     if (!response.ok) {
@@ -181,7 +205,7 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
     return { json: parseModelJson(text), model: data.model || model };
   } catch (error) {
     if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
-      const timeoutError = new Error('AI yanıtı zaman aşımına uğradı. Kaynak metin korundu; tekrar deneyin veya çok büyük dosyalarda dosyayı birkaç parçaya bölün.');
+      const timeoutError = new Error('AI yanıtı belirtilen süre içinde tamamlanamadı. Dosya metni korunuyor; daha hızlı bir KOMITE modeli seçin, KOMITE zaman aşımı değerini artırın veya çok büyük dosyada kaynak uzunluğu limitini düşürün.');
       timeoutError.code = 'ai_timeout';
       timeoutError.status = 504;
       throw timeoutError;

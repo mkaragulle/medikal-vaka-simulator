@@ -67,7 +67,23 @@ function getTrueFileCount(body = {}) {
   return Math.max(explicitCount, packetFiles.length, readableCount, 1);
 }
 
-function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = 26000) {
+function envNumber(name, fallback) {
+  const value = Number(process.env[name]);
+  return Number.isFinite(value) && value > 0 ? value : fallback;
+}
+
+function compactTextWindow(text = '', maxChars = 12000) {
+  const clean = String(text || '').replace(/\s+/g, ' ').trim();
+  if (clean.length <= maxChars) return clean;
+  const part = Math.floor(maxChars / 3);
+  const start = clean.slice(0, part);
+  const middleStart = Math.max(0, Math.floor(clean.length / 2) - Math.floor(part / 2));
+  const middle = clean.slice(middleStart, middleStart + part);
+  const end = clean.slice(Math.max(0, clean.length - part));
+  return [start, middle, end].join('\n\n');
+}
+
+function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = envNumber('KOMITE_MAX_SOURCE_CHARS', 16000)) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
@@ -76,7 +92,7 @@ function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = 26000) {
   return files
     .map((file) => {
       const text = String(file.cleanedExtractedText || file.text || '').trim();
-      return text.length > perFile ? text.slice(0, perFile) : text;
+      return compactTextWindow(text, perFile);
     })
     .join('\n\n')
     .trim();
@@ -189,9 +205,10 @@ export default async function handler(request, response) {
     const result = await callOpenAIJson({
       systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT,
       userPrompt: prompt,
-      maxTokens: 9000,
+      maxTokens: envNumber('KOMITE_LESSON_MAX_OUTPUT_TOKENS', 4800),
       temperature: 0.15,
       jsonSchema: LESSON_JSON_SCHEMA,
+      scope: 'KOMITE',
     });
 
     const lesson = sanitizeLessonOutput(result.json, body);
