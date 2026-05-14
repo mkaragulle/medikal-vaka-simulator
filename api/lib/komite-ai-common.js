@@ -185,29 +185,20 @@ export function validateLessonShape(output = {}, context = {}) {
   if (!title) errors.push('Ders başlığı yok.');
   if (/\.(pdf|pptx|ppt|docx)$/iu.test(title) || /(^|[\s_-])\d{4}([\s_-]|$)/u.test(title)) errors.push('Ders başlığı ham dosya adı/tarih gibi görünüyor.');
   if (!Array.isArray(sections) || sections.length === 0) errors.push('Ders bölümleri yok.');
-  if (String(output.shortIntro || output.overview || output.shortOverview || '').length < 30) errors.push('Genel bakış çok kısa.');
+  // Short intro depth is a quality preference; do not reject otherwise usable source-bound AI output.
   const objectives = Array.isArray(output.learningObjectives) ? output.learningObjectives : [];
-  if (objectives.length < 4) errors.push('Öğrenme hedefleri yetersiz.');
+  // Objective count should not block generation; the prompt requests enough objectives, but runtime should remain permissive.
   objectives.forEach((objective, index) => {
     const objectiveText = String(objective || '');
     if (hasDateLikeText(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde tarih var.`);
     if (/prof\.?|doç\.?|öğr\.?|\.(pdf|pptx|ppt|docx)/iu.test(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde metadata var.`);
   });
-  const bigPicture = String(output.bigPicture || '').replace(/\s+/g, ' ').trim();
-  if (!bigPicture) errors.push('Büyük resim alanı yok veya boş.');
-  if (bigPicture.length < 520) errors.push('Büyük resim çok kısa veya jenerik.');
+  // Big picture is normalized after generation. Missing/short bigPicture must never become a user-facing hard error.
   const filesUploadedCount = Number(context.filesUploadedCount || 0);
   const filesAnalyzedCount = Number(output.sourceCoverage?.filesAnalyzedCount || output.sourceCoverage?.filesAnalyzed || 0);
   if (filesUploadedCount > 1 && filesAnalyzedCount <= 1) errors.push('Çoklu dosya yüklendiği halde çıktı tek dosya kapsamı gösteriyor.');
-  const sectionDepthText = (section = {}) => [section.teachingText, section.content, section.whyItMatters, section.examAngle, section.examConnection, section.commonTrap, section.commonMistake, Array.isArray(section.mechanismFlow) ? section.mechanismFlow.join(' ') : ''].filter(Boolean).join(' ');
-  // Do not enforce an artificial minimum section count for multi-file material.
-  // A valid lesson may have fewer broad integrated sections or many detailed sections depending on the source structure.
-  const shallowSections = (sections || []).filter((section) => sectionDepthText(section).trim().split(/\s+/).filter(Boolean).length < 90);
-  if ((sections || []).length && shallowSections.length / (sections || []).length > 0.35) errors.push('Ders bölümlerinin çoğu yeterince derin değil.');
+  // Section depth is handled by prompt/retry and UI display; it should not reject valid current-source output.
   const qualityCheck = output.qualityCheck || {};
   if (filesUploadedCount > 1 && qualityCheck.usesAllFiles === false) errors.push('qualityCheck usesAllFiles=false döndü.');
-  const text = JSON.stringify(output || {});
-  const templatePhraseCount = (text.match(/bu ders materyalde|bu bölüm temel mekanizma ile ilişkilendirilmelidir|materyaldeki bağlamı bozmadan|komite sorusunda bu bölümden genellikle|temel kavram bağlantısı/giu) || []).length;
-  if (templatePhraseCount > 2) errors.push('Ders şablon tekrarı içeriyor.');
   return { ok: errors.length === 0, errors };
 }

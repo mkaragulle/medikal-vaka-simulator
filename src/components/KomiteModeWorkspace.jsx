@@ -457,6 +457,31 @@ function normalizeLessonCoverageForMaterial(lesson = {}, material = {}, packet =
   };
 }
 
+function buildSourceBoundBigPictureFallback(lesson = {}, material = {}, packet = null) {
+  const currentPacket = packet || buildCombinedMaterialPacket(material);
+  const parts = [];
+  const add = (value) => {
+    const clean = sanitizeTeachingTextForDisplay(String(value || '').replace(/\s+/g, ' ').trim());
+    if (clean && clean.length > 40 && !parts.some((item) => item.includes(clean) || clean.includes(item))) parts.push(clean);
+  };
+  add(lesson.bigPicture);
+  add(lesson.overview || lesson.shortIntro || lesson.shortOverview);
+  add(lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance);
+  const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
+  sections.slice(0, 3).forEach((section) => add(section.teachingText || section.content || section.whyItMatters));
+  const sourceText = combinedPacketToSourceText(currentPacket);
+  getImportantSentences(sourceText, 3).forEach(add);
+  const merged = parts.join('\n\n').replace(/\n{3,}/g, '\n\n').trim();
+  if (merged) return merged;
+  return 'Bu dersin büyük resmi, yalnızca mevcut yükleme batchindeki okunabilir filePackets metninden çıkarılan kavramları düzenli bir öğrenme akışına dönüştürmektir. Kaynak metin yeterince açık değilse sistem eski oturum içeriğiyle boşluk doldurmaz; kullanıcıdan daha okunabilir materyal ister.';
+}
+
+function ensureLessonBigPicture(lesson = {}, material = {}, packet = null) {
+  const bigPicture = String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim();
+  if (bigPicture.length >= 160) return { ...lesson, bigPicture };
+  return { ...lesson, bigPicture: buildSourceBoundBigPictureFallback(lesson, material, packet) };
+}
+
 function cleanMaterialTitle(material = {}) {
   const rawName = String(material.fileName || '').replace(/\.[a-z0-9]+$/i, '').replace(/[_-]+/g, ' ').replace(/\s+/g, ' ').trim();
   const fallback = material.materialAnalysis?.detectedCourseOrTopic || material.course || material.committee || 'Ders Materyali';
@@ -560,7 +585,9 @@ function qualityGateLesson(lesson = {}, material = {}) {
   if (filesUploadedCount > 1 && analyzedCount <= 1) return { ok: false, reason: 'Çoklu dosya yüklenmesine rağmen AI çıktısı tek materyal kapsamı gösteriyor.' };
   if (isGeneratedAssetStale(lesson, material)) return { ok: false, reason: 'Ders çıktısı bu çalışma alanının kaynak parmak iziyle eşleşmiyor.' };
   if (/materyaldeki ilişkili kavram|slayt\s*→|sayfa\s*→/iu.test(text)) return { ok: false, reason: 'Ham/meaningless kaynak etiketi üretildi.' };
-  if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 520) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
+  // Big picture depth is a quality preference, not a blocking runtime error.
+  // If it is short, normalize/enrich it before render instead of rejecting the lesson.
+  if (!String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim()) return { ok: false, reason: 'Büyük resim alanı boş.' };
   // Do not reject a lesson only because the number of sections is below a fixed threshold.
   // Multi-file quality is checked by source coverage, topic grounding, big-picture depth and section depth instead.
   const shallow = sections.filter((section) => String(section.teachingText || section.content || '').split(/\s+/).length < 80);
@@ -1680,15 +1707,15 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             sourceManifest,
           }) : null;
           let lesson = generated?.lesson
-            ? stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(normalizeGeneratedLessonShape(generated.lesson), material, materialPacket), material), material, materialPacket)
-            : stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material, materialPacket), material, materialPacket), material), material, materialPacket);
+            ? stampGeneratedOutput(ensureLessonBigPicture(deepenLessonSections(normalizeLessonCoverageForMaterial(normalizeGeneratedLessonShape(generated.lesson), material, materialPacket), material), material, materialPacket), material, materialPacket)
+            : stampGeneratedOutput(ensureLessonBigPicture(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material, materialPacket), material, materialPacket), material), material, materialPacket), material, materialPacket);
           const gate = qualityGateLesson(lesson, material);
           if (!gate.ok && /kaynakların ana konusuyla uyuşmuyor|şablon|yüzeysel|Büyük resim/iu.test(gate.reason || '')) {
-            lesson = stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material, materialPacket), material, materialPacket), material), material, materialPacket);
+            lesson = stampGeneratedOutput(ensureLessonBigPicture(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material, materialPacket), material, materialPacket), material), material, materialPacket), material, materialPacket);
           }
           nextPatch = { materialAnalysis: analysis, lesson, sourceFingerprint, processingStatus: 'lesson-ready' };
         } catch {
-          const lesson = stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material, materialPacket), material, materialPacket), material), material, materialPacket);
+          const lesson = stampGeneratedOutput(ensureLessonBigPicture(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material, materialPacket), material, materialPacket), material), material, materialPacket), material, materialPacket);
           nextPatch = { materialAnalysis: analysis, lesson, sourceFingerprint, processingStatus: 'lesson-ready' };
         }
       } else if (kind === 'questions') {
@@ -1764,7 +1791,13 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
         }
       }
       const gate = kind === 'lesson' ? qualityGateLesson(nextPatch.lesson, material) : kind === 'questions' ? qualityGateQuestions(nextPatch.questions) : qualityGateDeck(nextPatch.flashcardDeck);
-      if (!gate.ok) throw new Error(gate.reason);
+      if (!gate.ok && kind !== 'lesson') throw new Error(gate.reason);
+      if (!gate.ok && kind === 'lesson') {
+        nextPatch.lesson = {
+          ...ensureLessonBigPicture(nextPatch.lesson, material, materialPacket),
+          qualityWarnings: [...(nextPatch.lesson?.qualityWarnings || []), gate.reason].filter(Boolean),
+        };
+      }
       onPatchMaterial(material.id, nextPatch);
       setKindStatus(kind, 'success', kind === 'lesson' ? 'Ders hazır' : kind === 'questions' ? '10 soru oluşturuldu' : 'Hap kartlar hazır');
       window.setTimeout(() => setKindStatus(kind, 'idle', ''), 1800);

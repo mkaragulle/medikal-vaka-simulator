@@ -74,6 +74,54 @@ function normalizeLessonSourceCoverage(lesson = {}, body = {}) {
   };
 }
 
+function asCleanText(value = '') {
+  return String(value || '').replace(/\s+/g, ' ').trim();
+}
+
+function buildLessonBigPictureFallback(lesson = {}) {
+  const parts = [];
+  const add = (value) => {
+    const clean = asCleanText(value);
+    if (clean && clean.length > 40 && !parts.some((item) => item.includes(clean) || clean.includes(item))) parts.push(clean);
+  };
+  add(lesson.bigPicture);
+  add(lesson.shortIntro || lesson.overview || lesson.shortOverview);
+  add(lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance);
+  const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
+  sections.slice(0, 3).forEach((section) => add(section.teachingText || section.content || section.whyItMatters));
+  return parts.join('\n\n').trim() || 'Bu ders, mevcut yükleme batchindeki okunabilir dosya metinlerinden çıkarılan ana kavramları bütünlüklü bir öğrenme akışı içinde açıklar. Sistem eski oturum, cache veya önceki AI çıktılarından içerik almaz; yalnızca aktif materialPacket.files içeriğini kaynak kabul eder.';
+}
+
+function sanitizeLessonOutput(lesson = {}) {
+  const rawSections = Array.isArray(lesson.sections) && lesson.sections.length
+    ? lesson.sections
+    : (Array.isArray(lesson.lessonSections) && lesson.lessonSections.length ? lesson.lessonSections : []);
+  const sections = rawSections.map((section, index) => {
+    const teachingText = asCleanText(section.teachingText || section.content || section.explanation || '');
+    return {
+      ...section,
+      heading: asCleanText(section.heading || section.title || `Kavram ${index + 1}`),
+      teachingText,
+      content: teachingText,
+      mechanismFlow: Array.isArray(section.mechanismFlow) ? section.mechanismFlow.map(asCleanText).filter(Boolean) : [],
+      examAngle: asCleanText(section.examAngle || section.examConnection || ''),
+      commonTrap: asCleanText(section.commonTrap || section.commonMistake || ''),
+      whyItMatters: asCleanText(section.whyItMatters || ''),
+      sourceReferences: Array.isArray(section.sourceReferences) ? section.sourceReferences : [],
+    };
+  });
+  const normalized = {
+    ...lesson,
+    title: asCleanText(lesson.title || lesson.academicTitle || 'Komite Ders Anlatımı'),
+    shortIntro: asCleanText(lesson.shortIntro || lesson.overview || lesson.shortOverview || ''),
+    sections,
+    lessonSections: undefined,
+  };
+  const bigPicture = asCleanText(lesson.bigPicture);
+  normalized.bigPicture = bigPicture.length >= 160 ? bigPicture : buildLessonBigPictureFallback(normalized);
+  return normalized;
+}
+
 export default async function handler(request, response) {
   if (request.method !== 'POST') return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
 
