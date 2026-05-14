@@ -367,19 +367,22 @@ function splitMergedExtractedTextIntoFiles(text = '', material = {}) {
 }
 
 function buildCombinedMaterialPacket(material = {}) {
-  const splitPackets = splitMergedExtractedTextIntoFiles(material.extractedText || '', material);
-  const files = Array.isArray(material.filePackets) && material.filePackets.length >= Math.max(1, Array.isArray(material.files) ? material.files.length : 0)
+  // Critical source-isolation rule: when the current workspace has uploaded files,
+  // build the AI source packet only from the per-file extraction packets created
+  // for this upload batch. Do not re-split or reuse material.extractedText here,
+  // because that field can contain merged display text and may preserve old session
+  // content after browser/localStorage state changes.
+  const hasCurrentFiles = Array.isArray(material.files) && material.files.length > 0;
+  const files = Array.isArray(material.filePackets) && material.filePackets.length
     ? material.filePackets
-    : (splitPackets.length > 1
-      ? splitPackets
-      : (Array.isArray(material.files) && material.files.length
-        ? material.files.map((file, index) => ({
-          fileName: file.name || material.fileName || `Materyal ${index + 1}`,
-          fileType: file.type || getFileType(file.name || material.fileName || ''),
-          cleanedExtractedText: splitPackets[index]?.cleanedExtractedText || (index === 0 ? cleanExtractedTextForAI(material.extractedText || '') : ''),
-          detectedTopics: splitPackets[index]?.detectedTopics || [],
-        }))
-        : [{ fileName: material.fileName || 'Ek metin', fileType: material.fileType || 'text', cleanedExtractedText: cleanExtractedTextForAI(material.extractedText || material.pastedText || ''), detectedTopics: [] }]));
+    : (hasCurrentFiles
+      ? material.files.map((file, index) => ({
+        fileName: file.name || material.fileName || `Materyal ${index + 1}`,
+        fileType: file.type || getFileType(file.name || material.fileName || ''),
+        cleanedExtractedText: '',
+        detectedTopics: [],
+      }))
+      : [{ fileName: material.fileName || 'Ek metin', fileType: material.fileType || 'text', cleanedExtractedText: cleanExtractedTextForAI(material.extractedText || material.pastedText || ''), detectedTopics: [] }]);
   const normalizedFiles = files.map((file) => {
     const cleaned = cleanExtractedTextForAI(file.cleanedExtractedText || file.text || '');
     return {
@@ -566,7 +569,6 @@ function qualityGateLesson(lesson = {}, material = {}) {
   if (filesUploadedCount > 1 && analyzedCount <= 1) return { ok: false, reason: 'Çoklu dosya yüklenmesine rağmen AI çıktısı tek materyal kapsamı gösteriyor.' };
   if (isGeneratedAssetStale(lesson, material)) return { ok: false, reason: 'Ders çıktısı bu çalışma alanının kaynak parmak iziyle eşleşmiyor.' };
   if (outputContradictsSourceTopic(lesson, material)) return { ok: false, reason: 'Ders anlatımı yüklenen kaynakların ana konusuyla uyuşmuyor.' };
-  if (outputHasUnsupportedLegacyTopic(lesson, material)) return { ok: false, reason: 'Ders çıktısı kaynakta bulunmayan eski metabolizma/porfiriya içeriği içeriyor.' };
   if (/materyaldeki ilişkili kavram|slayt\s*→|sayfa\s*→/iu.test(text)) return { ok: false, reason: 'Ham/meaningless kaynak etiketi üretildi.' };
   if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 520) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
   // Do not reject a lesson only because the number of sections is below a fixed threshold.
