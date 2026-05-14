@@ -1,4 +1,4 @@
-import { sendJson, parseJsonBody, callOpenAIJson } from './lib/komite-ai-common.js';
+import { sendJson, parseJsonBody, callOpenAIJson, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, buildAnalyzeUploadedMaterialPrompt } from './prompts/analyzeUploadedMaterialPrompt.js';
 
 export default async function handler(request, response) {
@@ -6,11 +6,14 @@ export default async function handler(request, response) {
   let body;
   try { body = await parseJsonBody(request); } catch { return sendJson(response, 400, { ok: false, error: 'Invalid JSON body' }); }
   try {
+    const sourceCheck = verifyCurrentSourceManifest(body);
+    if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const prompt = buildAnalyzeUploadedMaterialPrompt({
       metadata: body.metadata || body,
       extractedTextOrChunks: body.extractedTextOrChunks || body.extractedText || body.text || '',
       detectedStructureOrFigures: body.detectedStructureOrFigures || body.figures || '',
       materialPacket: body.materialPacket || {},
+      sourceManifest: body.sourceManifest || {},
     });
     const result = await callOpenAIJson({ systemPrompt: ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 2800, temperature: 0.15 });
     return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, analysis: result.json });

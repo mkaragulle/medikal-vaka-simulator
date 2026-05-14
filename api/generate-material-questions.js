@@ -1,4 +1,4 @@
-import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape } from './lib/komite-ai-common.js';
+import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestionsPrompt } from './prompts/generateMaterialQuestionsPrompt.js';
 
 export default async function handler(request, response) {
@@ -6,12 +6,15 @@ export default async function handler(request, response) {
   let body;
   try { body = await parseJsonBody(request); } catch { return sendJson(response, 400, { ok: false, error: 'Invalid JSON body' }); }
   try {
+    const sourceCheck = verifyCurrentSourceManifest(body);
+    if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const prompt = buildGenerateMaterialQuestionsPrompt({
       studyContext: body.studyContext || body.context || {},
       materialAnalysisJson: body.materialAnalysisJson || body.analysis || {},
       generatedLessonJson: body.generatedLessonJson || body.lesson || {},
       materialPacket: body.materialPacket || {},
       sourceTextChunks: body.sourceTextChunks || body.extractedText || '',
+      sourceManifest: body.sourceManifest || body.studyContext?.sourceManifest || {},
     });
     let result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 5200, temperature: 0.25 });
     let validation = validateQuestionsShape(result.json);

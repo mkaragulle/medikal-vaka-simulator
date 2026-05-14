@@ -4,7 +4,7 @@ export const ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIO
 
 Analyze the uploaded material as the first KOMİTE processing step. Clean OCR noise, infer the coherent topic, identify reliable visual/table information, and return only valid JSON in the existing analysis schema.`;
 
-export function buildAnalyzeUploadedMaterialPrompt({ metadata = {}, extractedTextOrChunks = '', detectedStructureOrFigures = '', materialPacket = {} } = {}) {
+export function buildAnalyzeUploadedMaterialPrompt({ metadata = {}, extractedTextOrChunks = '', detectedStructureOrFigures = '', materialPacket = {}, sourceManifest = {} } = {}) {
   return `Analyze the uploaded material using the metadata and extracted content below. Treat all uploaded files in this workspace as one coherent course material unless explicitly separated by the user. Do not infer the topic from only the last file.
 
 Material metadata:
@@ -14,6 +14,9 @@ Material metadata:
 - committeeOrCourse: ${metadata.committeeOrCourse || metadata.committee || metadata.course || ''}
 - learningTarget: ${metadata.learningTarget || ''}
 - studyMode: ${metadata.studyMode || 'komite'}
+
+Current active sourceManifest:
+${JSON.stringify(sourceManifest || {}, null, 2)}
 
 Combined material packet:
 ${JSON.stringify(materialPacket || {}, null, 2)}
@@ -43,6 +46,7 @@ Return JSON:
 }
 
 Quality rules:
+- First verify that the sourceManifest and materialPacket describe the same current upload session. If they do not match, return a limitation instead of using old content.
 - Do not invent slide content.
 - Infer a clean academic materialTitle from the real topic, never from raw filenames, dates, page numbers, or instructor names.
 - Do not claim a figure was analyzed if it was not visible/readable.

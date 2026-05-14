@@ -4,7 +4,7 @@ export const GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCAT
 
 Return only valid JSON using the existing question schema. Generate exactly 10 KOMİTE exam-style questions. Preserve the schema exactly; improve the educational quality inside each field. The current material packet is the only source of truth; never reuse prior workspace content.`;
 
-export function buildGenerateMaterialQuestionsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {}, materialPacket = {}, sourceTextChunks = '' } = {}) {
+export function buildGenerateMaterialQuestionsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {}, materialPacket = {}, sourceTextChunks = '', sourceManifest = {} } = {}) {
   return `Generate exactly 10 KOMITE questions from the understood material. Questions must be derived from the conceptual lesson, not random extracted words.
 
 Context:
@@ -12,6 +12,9 @@ ${JSON.stringify(studyContext || {}, null, 2)}
 
 Material analysis:
 ${JSON.stringify(materialAnalysisJson || {}, null, 2)}
+
+Current active sourceManifest:
+${JSON.stringify(sourceManifest || {}, null, 2)}
 
 Current material packet and source excerpts for source isolation:
 ${JSON.stringify(materialPacket || {}, null, 2)}
@@ -43,7 +46,7 @@ Return only:
 
 Quality rules:
 - Exactly 10 questions: target distribution 3 easy, 5 medium, 2 hard.
-- Each question must come from a real learning target in the current material packet and generated lesson.
+- Each question must come from a real learning target in the current material packet, current sourceManifest, and generated lesson.
 - If a concept is not present in the current source packet or lesson, do not ask about it. Do not reuse questions from another workspace.
 - Prefer mechanism, cause-effect, table/figure-text interpretation, clinical connection, comparison, application, and common traps.
 - “En uygun tanım hangisidir?” type questions are allowed at most once and only if the material is introductory.

@@ -4,7 +4,7 @@ export const GENERATE_FLASHCARDS_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIONAL_PR
 
 Return only valid JSON using the existing flashcard deck schema. Create active-recall cards only. Preserve the schema exactly; improve the educational quality inside each field. The current material packet is the only source of truth; never reuse prior workspace content.`;
 
-export function buildGenerateFlashcardsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {}, materialPacket = {}, sourceTextChunks = '', materialId = '' } = {}) {
+export function buildGenerateFlashcardsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {}, materialPacket = {}, sourceTextChunks = '', materialId = '', sourceManifest = {} } = {}) {
   return `Create 12-20 high-quality active recall flashcards from the understood material. If the source is weak, create at least 8 but do not create nonsense cards. Cards must test concepts, mechanisms, comparisons, classifications, visual/table clues and exam traps when supported.
 
 Context:
@@ -12,6 +12,9 @@ ${JSON.stringify(studyContext || {}, null, 2)}
 
 Material analysis:
 ${JSON.stringify(materialAnalysisJson || {}, null, 2)}
+
+Current active sourceManifest:
+${JSON.stringify(sourceManifest || {}, null, 2)}
 
 Current material packet and source excerpts for source isolation:
 ${JSON.stringify(materialPacket || {}, null, 2)}
@@ -35,7 +38,7 @@ Return only:
 
 Rules:
 - Front must be a real active recall question, not “Materyalde geçen...” or “Bu bilgi neyi hatırlatır?”.
-- Cards must be grounded in the current material packet and generated lesson only; remove any concept that belongs to a previous workspace.
+- Cards must be grounded in the current sourceManifest, current material packet and generated lesson only; remove any concept that belongs to a previous workspace.
 - Back must be short and direct.
 - Explanation teaches the logic in 1-3 concise sentences.
 - Transform slide information into exam retrieval; do not paste long quoted sentences.

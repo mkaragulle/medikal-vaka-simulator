@@ -1,4 +1,4 @@
-import { sendJson, parseJsonBody, callOpenAIJson, validateLessonShape } from './lib/komite-ai-common.js';
+import { sendJson, parseJsonBody, callOpenAIJson, validateLessonShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { GENERATE_LESSON_SYSTEM_PROMPT, buildGenerateLessonPrompt } from './prompts/generateLessonPrompt.js';
 
 
@@ -135,12 +135,15 @@ export default async function handler(request, response) {
   const filesUploadedCount = getTrueFileCount(body);
 
   try {
+    const sourceCheck = verifyCurrentSourceManifest(body);
+    if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const prompt = buildGenerateLessonPrompt({
       studyContext: body.studyContext || body.context || {},
       materialAnalysisJson: body.materialAnalysisJson || body.analysis || {},
       sourceTextChunks: body.sourceTextChunks || body.extractedText || '',
       materialPacket: body.materialPacket || {},
       filesUploadedCount,
+      sourceManifest: body.sourceManifest || body.studyContext?.sourceManifest || {},
     });
 
     let result = await callOpenAIJson({

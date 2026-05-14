@@ -1,4 +1,4 @@
-import { sendJson, parseJsonBody, callOpenAIJson, validateFlashcardsShape } from './lib/komite-ai-common.js';
+import { sendJson, parseJsonBody, callOpenAIJson, validateFlashcardsShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { GENERATE_FLASHCARDS_SYSTEM_PROMPT, buildGenerateFlashcardsPrompt } from './prompts/generateFlashcardsPrompt.js';
 
 export default async function handler(request, response) {
@@ -6,6 +6,8 @@ export default async function handler(request, response) {
   let body;
   try { body = await parseJsonBody(request); } catch { return sendJson(response, 400, { ok: false, error: 'Invalid JSON body' }); }
   try {
+    const sourceCheck = verifyCurrentSourceManifest(body);
+    if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const prompt = buildGenerateFlashcardsPrompt({
       studyContext: body.studyContext || body.context || {},
       materialAnalysisJson: body.materialAnalysisJson || body.analysis || {},
@@ -13,6 +15,7 @@ export default async function handler(request, response) {
       materialPacket: body.materialPacket || {},
       sourceTextChunks: body.sourceTextChunks || body.extractedText || '',
       materialId: body.materialId || '',
+      sourceManifest: body.sourceManifest || body.studyContext?.sourceManifest || {},
     });
     let result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 4200, temperature: 0.25 });
     let validation = validateFlashcardsShape(result.json);

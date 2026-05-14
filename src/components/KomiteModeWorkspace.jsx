@@ -57,6 +57,40 @@ function buildSourceFingerprint(material = {}, packet = null) {
   return stableSourceHash(`${KOMITE_SOURCE_SCHEMA_VERSION}::${meta}::${filePart}::pasted:${pasted.length}:${stableSourceHash(pasted)}`);
 }
 
+
+function buildSourceManifest(material = {}, packet = null, sourceFingerprint = '') {
+  const activePacket = packet || buildCombinedMaterialPacket(material);
+  const files = Array.isArray(activePacket?.files) ? activePacket.files : [];
+  return {
+    sourceSchemaVersion: KOMITE_SOURCE_SCHEMA_VERSION,
+    activeMaterialId: material.id || '',
+    sourceSessionId: material.sourceSessionId || material.id || '',
+    uploadBatchId: material.uploadBatchId || material.id || '',
+    uploadTimestamp: material.uploadDate || material.createdAt || Date.now(),
+    sourceFingerprint: sourceFingerprint || buildSourceFingerprint(material, activePacket),
+    fileCount: files.length,
+    files: files.map((file, index) => ({
+      index: index + 1,
+      fileId: file.fileId || file.id || `${material.id || 'material'}-file-${index + 1}`,
+      fileName: file.fileName || file.name || `Materyal ${index + 1}`,
+      fileType: file.fileType || file.type || '',
+      charCount: String(file.cleanedExtractedText || file.text || '').length,
+      textFingerprint: stableSourceHash(normalizeForFingerprint(file.cleanedExtractedText || file.text || '')),
+    })),
+  };
+}
+
+function sourceManifestMatches(material = {}, manifest = {}, packet = null) {
+  if (!manifest || typeof manifest !== 'object') return false;
+  const activePacket = packet || buildCombinedMaterialPacket(material);
+  const expected = buildSourceFingerprint(material, activePacket);
+  const expectedFiles = Array.isArray(activePacket?.files) ? activePacket.files : [];
+  return manifest.sourceSchemaVersion === KOMITE_SOURCE_SCHEMA_VERSION
+    && manifest.activeMaterialId === (material.id || '')
+    && manifest.sourceFingerprint === expected
+    && Number(manifest.fileCount || 0) === expectedFiles.length;
+}
+
 function getOutputSourceFingerprint(output = {}) {
   return output?.sourceFingerprint || output?.generatedFrom?.sourceFingerprint || output?.qualityCheck?.sourceFingerprint || '';
 }
@@ -64,7 +98,9 @@ function getOutputSourceFingerprint(output = {}) {
 function stampGeneratedOutput(output, material = {}, packet = null) {
   if (!output || typeof output !== 'object') return output;
   const sourceFingerprint = buildSourceFingerprint(material, packet);
-  const files = Array.isArray((packet || buildCombinedMaterialPacket(material))?.files) ? (packet || buildCombinedMaterialPacket(material)).files : [];
+  const activePacket = packet || buildCombinedMaterialPacket(material);
+  const files = Array.isArray(activePacket?.files) ? activePacket.files : [];
+  const sourceManifest = buildSourceManifest(material, activePacket, sourceFingerprint);
   return {
     ...output,
     sourceFingerprint,
@@ -72,6 +108,7 @@ function stampGeneratedOutput(output, material = {}, packet = null) {
       ...(output.generatedFrom || {}),
       sourceFingerprint,
       sourceSchemaVersion: KOMITE_SOURCE_SCHEMA_VERSION,
+      sourceManifest,
       materialId: material.id || '',
       fileNames: files.map((file) => file.fileName || file.name || 'Materyal'),
       generatedAt: Date.now(),
@@ -85,6 +122,7 @@ function stampGeneratedOutput(output, material = {}, packet = null) {
 
 function stampGeneratedQuestions(questions = [], material = {}, packet = null) {
   const sourceFingerprint = buildSourceFingerprint(material, packet);
+  const sourceManifest = buildSourceManifest(material, packet || buildCombinedMaterialPacket(material), sourceFingerprint);
   return questions.map((question) => ({
     ...question,
     sourceFingerprint,
@@ -92,6 +130,7 @@ function stampGeneratedQuestions(questions = [], material = {}, packet = null) {
       ...(question.generatedFrom || {}),
       sourceFingerprint,
       sourceSchemaVersion: KOMITE_SOURCE_SCHEMA_VERSION,
+      sourceManifest,
       materialId: material.id || '',
       generatedAt: Date.now(),
     },
@@ -1336,7 +1375,12 @@ async function postKomiteAI(endpoint, payload) {
   if (typeof fetch !== 'function') throw new Error('Fetch is not available');
   const response = await fetch(endpoint, {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Content-Type': 'application/json',
+      'Cache-Control': 'no-store',
+      'X-KlinikIQ-Source-Fingerprint': payload?.sourceFingerprint || payload?.studyContext?.sourceFingerprint || '',
+    },
+    cache: 'no-store',
     body: JSON.stringify(payload),
   });
   let json = null;
@@ -2024,6 +2068,11 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
     setKindStatus(kind, 'loading', '');
     const materialPacket = buildCombinedMaterialPacket(material);
     const sourceFingerprint = buildSourceFingerprint(material, materialPacket);
+    const sourceManifest = buildSourceManifest(material, materialPacket, sourceFingerprint);
+    if (!sourceManifestMatches(material, sourceManifest, materialPacket)) {
+      setKindStatus(kind, 'error', 'Aktif kaynak oturumu doğrulanamadı. Lütfen materyali yeniden açıp tekrar deneyin.');
+      return;
+    }
     const sourceText = balancedPacketToSourceText(materialPacket) || normalizeSourceText(material);
     if (import.meta.env.DEV) {
       console.debug('[KOMITE AI request]', {
@@ -2031,6 +2080,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
         filesIncluded: materialPacket.files.length,
         charCounts: materialPacket.files.map((file) => ({ fileName: file.fileName, chars: (file.cleanedExtractedText || '').length })),
         totalChars: sourceText.length,
+        sourceManifest,
         fileNames: materialPacket.files.map((file) => file.fileName),
       });
     }
@@ -2040,6 +2090,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       learningTarget: material.learningTarget,
       studyMode: 'komite',
       sourceFingerprint,
+      sourceManifest,
     };
     try {
       let nextPatch = {};
@@ -2052,6 +2103,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             materialPacket,
             extractedTextOrChunks: sourceText,
             sourceFingerprint,
+            sourceManifest,
           });
           analysis = analyzed.analysis || analysis;
         } catch {
@@ -2068,6 +2120,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             sourceTextChunks: sourceText,
             filesUploadedCount: materialPacket.files.length,
             sourceFingerprint,
+            sourceManifest,
           }) : null;
           let lesson = generated?.lesson
             ? stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(normalizeGeneratedLessonShape(generated.lesson), material, materialPacket), material), material, materialPacket)
@@ -2094,6 +2147,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             sourceTextChunks: sourceText,
             filesUploadedCount: materialPacket.files.length,
             sourceFingerprint,
+            sourceManifest,
           }) : null;
           const questions = Array.isArray(generated?.questions) ? stampGeneratedQuestions(generated.questions.map((question, index) => ({
             ...question,
@@ -2125,6 +2179,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             filesUploadedCount: materialPacket.files.length,
             materialId: material.id,
             sourceFingerprint,
+            sourceManifest,
           }) : null;
           const deck = generated?.deck?.cards?.length ? stampGeneratedOutput(normalizeGeneratedDeckShape({
             ...generated.deck,
@@ -2267,15 +2322,19 @@ export default function KomiteModeWorkspace({ currentUser }) {
 
   const createMaterial = ({ file, files = [], extractedText, pastedText, extraction, ...form }) => {
     const fileName = file?.name || `${form.course || form.committee || 'Komite materyali'}.txt`;
+    const materialId = createId('material');
+    const uploadBatchId = createId('komite-upload');
     const newMaterial = {
-      id: createId('material'),
+      id: materialId,
       userId,
       fileName,
       fileType: getFileType(fileName),
-      files: files.map((item) => ({ name: item.name, size: item.size, type: getFileType(item.name) })),
-      filePackets: extraction?.files || [],
+      files: files.map((item, index) => ({ id: `${materialId}-file-${index + 1}`, name: item.name, size: item.size, type: getFileType(item.name), uploadBatchId })),
+      filePackets: (extraction?.files || []).map((item, index) => ({ ...item, fileId: item.fileId || `${materialId}-file-${index + 1}`, uploadBatchId })),
       sourceCoverage: { filesUploadedCount: files.length || (file ? 1 : 0), filesAnalyzedCount: (extraction?.files || []).filter((item) => item.cleanedExtractedText).length, usedFiles: (extraction?.files || []).map((item) => item.fileName) },
       uploadDate: Date.now(),
+      sourceSessionId: materialId,
+      uploadBatchId,
       studyMode: 'komite',
       classYear: form.classYear,
       university: form.university,

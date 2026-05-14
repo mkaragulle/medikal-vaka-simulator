@@ -5,6 +5,23 @@ export function sendJson(response, status, payload) {
   response.end(JSON.stringify(payload));
 }
 
+
+export function getPacketFiles(body = {}) {
+  return Array.isArray(body.materialPacket?.files) ? body.materialPacket.files : [];
+}
+
+export function verifyCurrentSourceManifest(body = {}) {
+  const manifest = body.sourceManifest || body.studyContext?.sourceManifest || body.context?.sourceManifest || null;
+  const fingerprint = body.sourceFingerprint || body.studyContext?.sourceFingerprint || body.context?.sourceFingerprint || '';
+  const files = getPacketFiles(body);
+  const errors = [];
+  if (!manifest || typeof manifest !== 'object') errors.push('sourceManifest missing');
+  if (manifest && fingerprint && manifest.sourceFingerprint !== fingerprint) errors.push('sourceManifest fingerprint mismatch');
+  if (manifest && Number(manifest.fileCount || 0) !== files.length) errors.push('sourceManifest file count mismatch');
+  if (!files.length && !String(body.sourceTextChunks || body.extractedText || body.extractedTextOrChunks || '').trim()) errors.push('No active source content');
+  return { ok: errors.length === 0, errors, manifest, fingerprint };
+}
+
 export function parseJsonBody(request, maxBytes = 5_000_000) {
   return new Promise((resolve, reject) => {
     let body = '';
