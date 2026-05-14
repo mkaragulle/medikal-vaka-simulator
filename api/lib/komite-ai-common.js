@@ -168,7 +168,8 @@ function firstNumber(defaultValue, ...keys) {
 }
 
 function supportsReasoningEffort(model = '') {
-  return supportsReasoningEffort(model);
+  const normalized = String(model || '').trim().toLowerCase().replace(/^openai\//u, '');
+  return normalized.startsWith('gpt-5') || /^o\d/u.test(normalized) || normalized.startsWith('o-');
 }
 
 function normalizeReasoningEffort(value = '', defaultValue = 'low') {
