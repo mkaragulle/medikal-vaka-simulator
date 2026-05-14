@@ -605,6 +605,21 @@ function createAbortSignal(timeoutMs) {
   return { signal: controller.signal, cancel: () => clearTimeout(timeout) };
 }
 
+function shouldUseResponsesApi(model = '', explicitStyle = '') {
+  const style = String(explicitStyle || '').toLowerCase();
+  if (style === 'responses' || style === 'response') return true;
+  if (style === 'chat' || style === 'chat_completions') return false;
+  return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
+}
+
+function safeReasoningEffort(value = '') {
+  return /^(minimal|low|medium|high|xhigh)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'minimal';
+}
+
+function safeVerbosity(value = '') {
+  return /^(low|medium|high)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'medium';
+}
+
 async function callOpenAI(prompt) {
   const apiKey = process.env.TUS_OPENAI_API_KEY || process.env.OPENAI_API_KEY;
   if (!apiKey) return null;
@@ -612,19 +627,23 @@ async function callOpenAI(prompt) {
   const baseUrl = (process.env.TUS_OPENAI_BASE_URL || process.env.OPENAI_BASE_URL || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = Number(process.env.TUS_OPENAI_PER_REQUEST_TIMEOUT_MS || process.env.OPENAI_PER_REQUEST_TIMEOUT_MS || 25000);
   const maxTokens = Number(process.env.TUS_OPENAI_MAX_OUTPUT_TOKENS || process.env.OPENAI_MAX_OUTPUT_TOKENS || 1800);
-  const style = String(process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || 'chat').toLowerCase();
+  const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
+  const useResponses = shouldUseResponsesApi(model, explicitStyle);
+  const style = useResponses ? 'responses' : 'chat';
+  const reasoningEffort = safeReasoningEffort(process.env.TUS_OPENAI_REASONING_EFFORT || process.env.OPENAI_REASONING_EFFORT || 'minimal');
+  const verbosity = safeVerbosity(process.env.TUS_OPENAI_VERBOSITY || process.env.OPENAI_VERBOSITY || 'medium');
   const { signal, cancel } = createAbortSignal(timeoutMs);
   try {
-    const body = style === 'responses'
+    const body = useResponses
       ? {
           model,
-          input: [
-            { role: 'system', content: SYSTEM_PROMPT },
-            { role: 'user', content: prompt },
-          ],
-          text: { format: { type: 'json_object' } },
+          instructions: SYSTEM_PROMPT,
+          input: prompt,
+          text: { format: { type: 'json_object' }, verbosity },
+          reasoning: { effort: reasoningEffort },
           max_output_tokens: maxTokens,
           store: false,
+          truncation: 'auto',
         }
       : {
           model,
@@ -635,7 +654,10 @@ async function callOpenAI(prompt) {
           response_format: { type: 'json_object' },
           max_completion_tokens: maxTokens,
         };
-    const response = await fetch(`${baseUrl}${style === 'responses' ? '/responses' : '/chat/completions'}`, {
+    if (!useResponses && (/^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || '')))) {
+      body.reasoning_effort = reasoningEffort;
+    }
+    const response = await fetch(`${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       body: JSON.stringify(body),
@@ -648,7 +670,11 @@ async function callOpenAI(prompt) {
       throw error;
     }
     const data = await response.json();
-    const text = style === 'responses' ? extractResponsesText(data) : extractChatText(data);
+    const text = useResponses ? extractResponsesText(data) : extractChatText(data);
+    if (!String(text || '').trim()) {
+      const reason = data?.incomplete_details?.reason || data?.status || 'empty_output';
+      throw new Error(`OpenAI boş çıktı döndürdü (${reason}). Output token limitini artırın veya reasoning effort değerini minimal kullanın.`);
+    }
     const question = parseModelJson(text);
     return { question, model: data.model || model, mode: style };
   } finally {

@@ -121,7 +121,19 @@ export function parseModelJson(text = '') {
 }
 
 function extractChatText(data) {
-  return data?.choices?.[0]?.message?.content || data?.choices?.[0]?.text || '';
+  const choice = data?.choices?.[0] || {};
+  const content = choice?.message?.content ?? choice?.text ?? '';
+  if (typeof content === 'string') return content;
+  if (Array.isArray(content)) {
+    return content.map((part) => {
+      if (typeof part === 'string') return part;
+      if (part?.type === 'text' && typeof part?.text === 'string') return part.text;
+      if (part?.type === 'output_text' && typeof part?.text === 'string') return part.text;
+      if (typeof part?.content === 'string') return part.content;
+      return '';
+    }).filter(Boolean).join('\n');
+  }
+  return '';
 }
 
 function extractResponsesText(data) {
@@ -155,8 +167,8 @@ function firstNumber(defaultValue, ...keys) {
   return defaultValue;
 }
 
-function buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens }) {
-  return {
+function buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort }) {
+  const body = {
     model,
     messages: [
       { role: 'system', content: systemPrompt },
@@ -165,6 +177,68 @@ function buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, 
     response_format: jsonSchema ? { type: 'json_schema', json_schema: jsonSchema } : { type: 'json_object' },
     max_completion_tokens: effectiveMaxTokens,
   };
+  if ((/^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''))) && reasoningEffort && /^(minimal|low|medium|high|xhigh)$/i.test(reasoningEffort)) {
+    body.reasoning_effort = reasoningEffort.toLowerCase();
+  }
+  return body;
+}
+
+function toResponsesTextFormat(jsonSchema = null) {
+  if (!jsonSchema) return { type: 'json_object' };
+  return {
+    type: 'json_schema',
+    name: jsonSchema.name || 'komite_json_response',
+    strict: jsonSchema.strict !== false,
+    schema: jsonSchema.schema || jsonSchema,
+  };
+}
+
+function buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity }) {
+  const body = {
+    model,
+    instructions: systemPrompt,
+    input: userPrompt,
+    max_output_tokens: effectiveMaxTokens,
+    text: {
+      format: toResponsesTextFormat(jsonSchema),
+      verbosity: /^(low|medium|high)$/i.test(verbosity || '') ? verbosity.toLowerCase() : 'medium',
+    },
+    truncation: 'auto',
+  };
+  if (reasoningEffort && /^(minimal|low|medium|high|xhigh)$/i.test(reasoningEffort)) {
+    body.reasoning = { effort: reasoningEffort.toLowerCase() };
+  }
+  return body;
+}
+
+function wantsResponsesApi(model = '', explicitStyle = '') {
+  const style = String(explicitStyle || '').toLowerCase();
+  if (style === 'responses' || style === 'response') return true;
+  if (style === 'chat' || style === 'chat_completions') return false;
+  return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
+}
+
+function describeIncompleteResponse(data = {}) {
+  const reason = data?.incomplete_details?.reason || data?.status || '';
+  if (reason === 'max_output_tokens') {
+    return 'AI yanıtı çıktı token limitine takıldı. KOMITE_LESSON_MAX_OUTPUT_TOKENS değerini artırın veya KOMITE_MAX_SOURCE_CHARS değerini düşürün.';
+  }
+  if (reason === 'content_filter') return 'AI yanıtı güvenlik filtresi nedeniyle tamamlanamadı.';
+  return 'AI geçerli metin üretmeden yanıtı tamamladı.';
+}
+
+function parseOpenAIJsonOrThrow(text = '', data = {}) {
+  if (String(text || '').trim()) return parseModelJson(text);
+  const error = new Error(describeIncompleteResponse(data));
+  error.code = 'ai_empty_output';
+  error.status = 502;
+  error.details = {
+    status: data?.status || '',
+    incompleteReason: data?.incomplete_details?.reason || '',
+    outputTypes: Array.isArray(data?.output) ? data.output.map((item) => item?.type).filter(Boolean) : [],
+    usage: data?.usage || null,
+  };
+  throw error;
 }
 
 export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, jsonSchema = null, scope = 'KOMITE' } = {}) {
@@ -187,25 +261,33 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
   const baseUrl = (firstEnv(`${envPrefix}_OPENAI_BASE_URL`, 'OPENAI_BASE_URL') || 'https://api.openai.com/v1').replace(/\/$/, '');
   const timeoutMs = firstNumber(240_000, `${envPrefix}_AI_TIMEOUT_MS`, `${envPrefix}_OPENAI_TIMEOUT_MS`, 'AI_TIMEOUT_MS');
   const effectiveMaxTokens = firstNumber(maxTokens, `${envPrefix}_OPENAI_MAX_OUTPUT_TOKENS`);
+  const apiStyle = firstEnv(`${envPrefix}_OPENAI_API_STYLE`, 'OPENAI_API_STYLE');
+  const useResponses = wantsResponsesApi(model, apiStyle);
+  const reasoningEffort = firstEnv(`${envPrefix}_OPENAI_REASONING_EFFORT`, `${envPrefix}_REASONING_EFFORT`, 'OPENAI_REASONING_EFFORT') || (useResponses ? 'minimal' : '');
+  const verbosity = firstEnv(`${envPrefix}_OPENAI_VERBOSITY`, `${envPrefix}_AI_VERBOSITY`, 'OPENAI_VERBOSITY') || 'medium';
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    const response = await fetch(`${baseUrl}/chat/completions`, {
+    const url = useResponses ? `${baseUrl}/responses` : `${baseUrl}/chat/completions`;
+    const requestBody = useResponses
+      ? buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort, verbosity })
+      : buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort });
+    const response = await fetch(url, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       signal: controller.signal,
-      body: JSON.stringify(buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens })),
+      body: JSON.stringify(requestBody),
     });
     if (!response.ok) {
       const details = await response.text();
-      const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 300)}`);
+      const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 500)}`);
       error.status = response.status;
       throw error;
     }
     const data = await response.json();
-    const text = extractChatText(data) || extractResponsesText(data);
-    return { json: parseModelJson(text), model: data.model || model };
+    const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
+    return { json: parseOpenAIJsonOrThrow(text, data), model: data.model || model, apiStyle: useResponses ? 'responses' : 'chat_completions' };
   } catch (error) {
     if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
       const timeoutError = new Error('AI yanıtı belirtilen süre içinde tamamlanamadı. Dosya metni korunuyor; daha hızlı bir KOMITE modeli seçin, KOMITE zaman aşımı değerini artırın veya çok büyük dosyada kaynak uzunluğu limitini düşürün.');
