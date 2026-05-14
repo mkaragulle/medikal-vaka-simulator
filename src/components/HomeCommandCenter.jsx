@@ -69,82 +69,82 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
 
   if (!attempts) {
     return {
-      title: 'İlk performans verisi bekleniyor',
-      description: 'Birkaç olgu çözüldüğünde bu panel zayıf branşları, hata tiplerini ve sonraki çalışma adımını otomatik olarak kişiselleştirir.',
+      title: 'İlk bloktan sonra yön belirginleşir',
+      description: 'Birkaç olgu çözdükten sonra burada yanlışların hangi branşta ve hangi karar adımında toplandığı netleşir.',
       scoreTone: 'teal',
       focus: {
         icon: 'ClipboardList',
         tone: 'blue',
         label: 'Çalışma odağı',
-        title: 'Başlangıç kalibrasyonu',
-        text: 'İlk blokta farklı branşlardan kısa olgular çözerek sistemin tanısal ayrım, tetkik seçimi ve yönetim paternlerini ölçmesini sağla.',
+        title: 'Başlangıç turu',
+        text: 'İlk turda farklı branşlardan kısa olgular çöz; amaç hız yapmak değil, hangi tip ipuçlarını kaçırdığını görmek.',
       },
       strategy: {
         icon: 'Brain',
         tone: 'teal',
         label: 'Aktif strateji',
-        title: 'Öğrenme modu daha uygun',
-        text: 'Feedback kartlarını okuyarak kanıt zinciri ve seçenek eleme mantığını yakalamaya odaklan; erken aşamada hızdan çok gerekçe kalitesi önemlidir.',
+        title: 'Gerekçeyi yakala',
+        text: 'Cevaptan sonra doğru seçeneği belirleyen bulguyu ve elediğin şıkkın neden yanlış olduğunu bir cümleyle not et.',
       },
-      nextAction: 'İlk adım olarak 5–10 olguluk kısa bir öğrenme bloğu çöz.',
+      nextAction: '5–10 olguluk kısa bir öğrenme bloğu çöz; ilk yanlışlardan sonra tekrar planı netleşsin.',
     };
   }
 
   if (accuracy < 50) {
     return {
-      title: primaryDomain.key === 'yönetim sırası' ? 'Yönetim basamaklarında dikkat artmalı' : primaryDomain.key === 'tetkik seçimi' ? 'Tetkik seçimi mantığını güçlendirme zamanı' : 'Hedefli tekrar zamanı',
+      title: weakBranch ? `${weakBranch}: kaçan ipuçlarını toparla` : `${primaryDomain.key.charAt(0).toLocaleUpperCase('tr') + primaryDomain.key.slice(1)} hatalarını toparla`,
       description: hasWrongData
-        ? `Son yanlışlarda ${weakBranch ? `${weakBranch} ağırlığı` : `${primaryDomain.key} hataları`} öne çıkıyor. Kısa öğrenme bloklarıyla karar verdirici ipuçlarını yeniden kurmak daha verimli olur.`
-        : 'Doğruluk düşük seyrediyor; hızlanmadan önce temel klinik paternleri ve seçenek eleme mantığını kısa bloklarla pekiştir.',
+        ? `Son yanlışlar tek bir yere dağılmadan birikmiş görünüyor. Yeni bloktan önce yanlış sorularda cevabı değiştiren bulguyu ve elediğin yakın şıkkı tekrar kontrol et.`
+        : 'Şu an hızdan çok okuma düzeni önemli. Her olguda ana yakınma, ayırt ettiren bulgu ve ilk karar adımını ayrı ayrı işaretleyerek ilerle.',
       scoreTone: 'danger',
       focus: {
         icon: primaryDomain.icon,
         tone: primaryDomain.tone,
         label: 'Çalışma odağı',
-        title: weakBranch ? `${weakBranch} odağı` : `${primaryDomain.key} odağı`,
+        title: weakBranch ? weakBranch : 'Karar adımı',
         text: weakBranch
-          ? `Yanlış kayıtlarında ${weakBranchCount} kez ${weakBranch} öne çıkıyor. Bu branşta önce olgu ipuçlarını ve seçenek ayrımını tekrar et.`
-          : `${primaryDomain.key} alanında karar verdirici bulgu ile doğru yaklaşımı eşleştirme pratiği gerekli görünüyor.`,
+          ? `${weakBranchCount} yanlış aynı branşta toplanmış. Bu, konuyu baştan okumaktan çok olgudaki ayırt ettirici ipucunu yakalama çalışması gerektirir.`
+          : `Yanlışların ortak noktası ${primaryDomain.key}. Soruyu çözerken önce cevabı değiştiren tek bulguyu bulmaya çalış.`,
       },
       strategy: {
         icon: 'BookOpen',
         tone: 'blue',
         label: 'Aktif strateji',
-        title: 'Kısa öğrenme bloğu',
-        text: 'Zaman baskısını azalt; her sorudan sonra Klinik Gerekçe, Kanıt Zinciri ve Şık Karşılaştırması kartlarını okuyarak aynı hatayı tekrar etmeyecek notu çıkar.',
+        title: 'Yavaş ve kontrollü çöz',
+        text: 'Zamanlı moda geçmeden 6–8 soruluk kısa blok çöz. Her yanlışta yalnızca üç şeyi yaz: kaçan bulgu, neden yanlış şık, bir sonraki soruda bakılacak ipucu.',
       },
       nextAction: weakBranch
-        ? `${weakBranch} içinde 10 olguluk öğrenme bloğu çöz; yanlış çıkanları aynı gün tekrar et.`
-        : 'Önce 10 olguluk öğrenme bloğu çöz; ardından aynı hata tipinden AI pekiştirme sorusu üret.',
+        ? `${weakBranch} için kısa bir öğrenme bloğu aç; yanlış çıkanları aynı gün yeniden çöz.`
+        : 'Kısa bir öğrenme bloğu çöz; aynı hata tipi tekrarlarsa AI ile tek hedefli pekiştirme sorusu üret.',
     };
   }
 
   if (accuracy < 75) {
     return {
-      title: primaryDomain.key === 'tanısal ayrım' ? 'Tanısal patern tekrarına ihtiyaç var' : `${primaryDomain.key.charAt(0).toLocaleUpperCase('tr') + primaryDomain.key.slice(1)} rafine edilmeli`,
+      title: `${primaryDomain.key.charAt(0).toLocaleUpperCase('tr') + primaryDomain.key.slice(1)} daha netleşmeli`,
       description: hasWrongData
-        ? `Genel performans dengeli; ancak son yanlışlarda ${primaryDomain.key} paterni belirgin. Bu aşamada doğru-yanlış farkını belirleyen küçük ipuçlarına odaklan.`
-        : 'Performans orta bantta; doğru sayısını artırmak için her olguda ana ipucu, dışlatıcı bulgu ve ilk yaklaşımı ayrı ayrı işaretle.',
+        ? `Doğru sayısı fena değil; kayıp daha çok sorunun son ayrımında geliyor. Yakın seçeneklerde cevabı değiştiren küçük bulguyu görünür hale getir.`
+        : 'Performans orta bantta. Her olguda ana ipucunu, dışlatıcı bulguyu ve ilk yaklaşımı ayrı ayrı işaretlemek doğruluğu artırır.',
       scoreTone: 'warning',
       focus: {
         icon: primaryDomain.icon,
         tone: primaryDomain.tone,
         label: 'Çalışma odağı',
-        title: primaryDomain.key === 'tetkik seçimi' ? 'Hedefli tetkik mantığı' : primaryDomain.key === 'yönetim sırası' ? 'Öncelik sırası' : 'Ayırıcı tanı ayrımı',
+        title: primaryDomain.key === 'tetkik seçimi' ? 'Hedefli seçim' : primaryDomain.key === 'yönetim sırası' ? 'Öncelik sırası' : 'Ayırıcı ayrım',
         text: primaryDomain.key === 'tetkik seçimi'
-          ? 'Gereksiz geniş tetkik yerine, olgudaki karar verdirici bulguyu doğrulayan en hedefli testi seçmeye çalış.'
+          ? 'Önce hangi testin kararı değiştireceğini belirle; sadece merak edilen değil, sonucu yönetimi etkileyen tetkiki seç.'
           : primaryDomain.key === 'yönetim sırası'
-            ? 'Stabilizasyon, tanı doğrulama ve ilk tedavi sırasını olgunun aciliyetine göre ayırarak ilerle.'
-            : 'Benzer klinik tablolar arasında kırmızı bayrak, negatif bulgu ve risk bağlamını birlikte kullan.',
+            ? 'Acil stabilizasyon, tanı doğrulama ve ilk tedaviyi aynı sıraya koyma; olgunun aciliyetine göre ayır.'
+            : 'Yakın tanılar arasında pozitif bulgu kadar beklenen ama olmayan bulguyu da kullan.',
       },
       strategy: {
         icon: mode === 'exam' ? 'Timer' : 'Brain',
         tone: mode === 'exam' ? 'warning' : 'teal',
         label: 'Aktif strateji',
-        title: mode === 'exam' ? 'Sınav sonrası geri bildirim turu' : 'Öğrenme modu devam',
+        title: mode === 'exam' ? 'Blok sonrası kontrol' : 'Gerekçe odaklı tekrar',
         text: mode === 'exam'
-          ? 'Zamanlı blok sonrası yanlışları hemen aç; seçtiğin şıkkın hangi bulguyu kaçırdığını seçenek karşılaştırmasında kontrol et.'
-          : 'Öğrenme modu şu aşamada verimli; her feedbackte kanıt zincirini kendi cümlelerinle özetleyerek ilerle.',
+          ? 'Zamanlı bloktan sonra yalnızca yanlışları değil, tereddüt ettiğin doğruları da aç; kararın hangi bulguya dayandığını kontrol et.'
+          : 'Feedbackten sonra cevabı ezberleme; olgunun seni doğru seçeneğe götüren iki bulgusunu kendi cümlenle yaz.',
       },
       nextAction: hasWrongData
         ? `Son yanlış yaptığın ${weakBranch || 'branş'} olgularından kısa tekrar turu başlat.`
@@ -153,10 +153,10 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
   }
 
   return {
-    title: currentStreak >= 3 ? 'Güçlü seri korunuyor, odak daraltılmalı' : 'Güçlü klinik performans',
+    title: currentStreak >= 3 ? 'Seri iyi, şimdi kaybı daralt' : 'Performans iyi gidiyor',
     description: hasWrongData
-      ? `Genel doğruluk güçlü. Kalan kayıplar daha çok ${primaryDomain.key} alanında yoğunlaşıyor; artık geniş tekrar yerine dar hedefli pekiştirme daha uygun.`
-      : `Doğruluk güçlü seyrediyor${bestStreak ? ` ve en iyi seri ${bestStreak}` : ''}. Bu seviyede hız, seçici tetkik ve seçenek eleme kalitesini birlikte koru.`,
+      ? `Genel doğruluk iyi. Kalan kayıplar aynı karar adımına yaklaşıyorsa geniş tekrar yerine kısa hedefli blok daha verimli olur.`
+      : `Doğruluk iyi seyrediyor${bestStreak ? `; en iyi seri ${bestStreak}` : ''}. Bu noktada amaç yalnızca hızlanmak değil, yakın seçeneklerde gerekçeyi korumak.`,
     scoreTone: 'success',
     focus: {
       icon: currentStreak >= 3 ? 'Trophy' : 'Target',
@@ -164,17 +164,17 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
       label: 'Güçlü alan',
       title: currentStreak >= 3 ? 'Seri performansı' : 'Genel doğruluk',
       text: currentStreak >= 3
-        ? `Aktif doğru seri ${currentStreak}; temel patern okuma iyi gidiyor. Şimdi kalan zayıf alanı daraltarak çalış.`
-        : 'Tanısal patern okuma güçlü; küçük puan kayıpları için yakın seçenekleri ve ilk yönetim basamaklarını karşılaştır.',
+        ? `Aktif doğru seri ${currentStreak}. Temel okuma iyi; şimdi yalnızca puan kaybettiren karar adımını daralt.`
+        : 'Temel patern okuma iyi. Küçük kayıplar için yakın seçenekleri ve ilk karar basamağını karşılaştır.',
     },
     strategy: {
       icon: primaryDomain.icon,
       tone: primaryDomain.tone,
       label: 'Aktif strateji',
-      title: `${primaryDomain.key} rafinasyonu`,
+      title: `${primaryDomain.key} kontrolü`,
       text: hasWrongData
-        ? `Yanlış geçmişinde ${primaryDomain.key} izleniyor. Bu alanda 5–8 soruluk hedefli mini bloklar geniş tekrar yerine daha verimli olur.`
-        : 'Zamanlı blok çözerek hızını test et; sonrasında yalnızca tereddüt ettiğin soruların feedback kartlarını tekrar oku.',
+        ? `${primaryDomain.key} tarafında küçük açık kalmış. Bu başlıkta 5–8 soruluk kısa blok, geniş tekrar yapmaktan daha isabetli olur.`
+        : 'Zamanlı blokla hızını test et; sonra sadece tereddüt ettiğin soruların gerekçesine geri dön.',
     },
     nextAction: examCount > 0
       ? 'Bir sonraki blokta yalnızca tereddüt ettiğin soruları işaretleyip feedback üzerinden tekrar et.'
@@ -203,7 +203,6 @@ function SessionSummaryCard({ stats, mode, examCount, wrongAnswers }) {
     <aside className="session-summary-v8 performance-insight-panel card-surface" aria-label="Oturum performansı ve kişisel çalışma önerileri">
       <header className="summary-v8-header performance-insight-header">
         <div>
-          <span>Oturum performansı</span>
           <h2>{insight.title}</h2>
           <p>{insight.description}</p>
         </div>
@@ -238,13 +237,7 @@ function HomeCommandCenter({
   onStartExam,
   onStartAIQuestion,
   examCount,
-  totalCases = 0,
-  totalBranches = 0,
 }) {
-  const actionMeta = totalCases > 0 && totalBranches > 0
-    ? `${totalCases} olgu · ${totalBranches} branş`
-    : 'Klinik pratik akışı';
-
   return (
     <section className="home-dashboard-v8" id="dashboard">
       <section className="home-hero-v8 home-hero-premium-v10 card-surface">
@@ -252,12 +245,8 @@ function HomeCommandCenter({
 
         <div className="home-hero-v10-main">
           <div className="home-hero-copy-v8 home-hero-copy-v10">
-            <span className="home-hero-eyebrow-v10">
-              <Icon name="ShieldCheck" />
-              TUS odaklı klinik komuta merkezi
-            </span>
             <h1 className="home-brand-title-v10">KlinikIQ</h1>
-            <p>TUS odaklı klinik akıl yürütme, tetkik seçimi ve olgu çözüm pratiği.</p>
+            <p>Olgu üzerinden düşün, gerekli tetkiki seç, cevabının klinik gerekçesini net gör.</p>
             <div className="home-hero-proof-row-v10" aria-label="Klinik öğrenme özellikleri">
               <span><Icon name="Brain" /> Klinik karar</span>
               <span><Icon name="ClipboardCheck" /> Tetkik seçimi</span>
@@ -265,11 +254,7 @@ function HomeCommandCenter({
             </div>
           </div>
 
-          <aside className="home-action-panel-v10" aria-label="Hızlı başlangıç aksiyonları">
-            <div className="home-action-panel-head-v10">
-              <span>Hızlı başlangıç</span>
-              <small>{actionMeta}</small>
-            </div>
+          <aside className="home-action-panel-v10" aria-label="Ana çalışma aksiyonları">
             <div className="home-actions-v8 home-actions-v10">
               <a href="#branches" className="btn btn-primary">
                 <span>Olgu çözmeye başla</span>

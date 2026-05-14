@@ -1,10 +1,5 @@
 import { Icon } from './ui.jsx';
 
-function formatDifficulty(value = '') {
-  if (!value) return 'seviye belirtilmedi';
-  return String(value).replace(/-/g, ' ');
-}
-
 function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy }) {
   const hasItems = wrongAnswers.length > 0;
   const visibleItems = wrongAnswers.slice(0, 6);
@@ -14,13 +9,7 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
     <section className="wrong-answers-panel card-surface" aria-label="Yanlış çözülenler listesi">
       <header className="wrong-answers-head">
         <div>
-          <p className="auth-eyebrow">Hafıza bankası</p>
           <h2>Yanlış çözülenler</h2>
-          <span>
-            {hasItems
-              ? `${wrongAnswers.length} kayıt tekrar için hazır.`
-              : 'Yanlış yaptığın vakalar burada düzenli bir tekrar listesine dönüşür.'}
-          </span>
         </div>
         {hasItems ? (
           <button className="wrong-clear-btn" type="button" onClick={onClearAll}>
@@ -37,11 +26,7 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
               <div className="wrong-answer-main">
                 <span className="wrong-answer-branch">{item.branchName || 'Klinik branş'}</span>
                 <h3>{item.title}</h3>
-                <p className="wrong-answer-result">
-                  <span>Seçtiğin: <strong>{item.selected}</strong></span>
-                  <span>Doğru: <strong>{item.correctAnswer}</strong></span>
-                </p>
-                <small>{item.attempts || 1} kez yanlış · {formatDifficulty(item.difficulty)} · TUS Spot</small>
+                <small>{item.attempts || 1} kez yanlış</small>
               </div>
               <div className="wrong-answer-actions">
                 <button className="btn btn-primary compact" type="button" onClick={() => onOpenCase(item.caseId)}>

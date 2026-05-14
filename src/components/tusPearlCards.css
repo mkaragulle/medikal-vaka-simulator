@@ -4416,3 +4416,159 @@
     line-height: 1.34;
   }
 }
+
+
+/* =========================================================
+   V124 — Study review hub simplification and compact stats
+   ========================================================= */
+.study-review-hub-intro {
+  align-items: baseline;
+  gap: 16px;
+}
+
+.study-review-hub-intro h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.25vw, 2.2rem);
+}
+
+.study-review-hub-intro span {
+  max-width: 540px;
+  color: var(--text-muted, #64748b);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+
+.wrong-answers-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.wrong-answers-head > div {
+  min-width: 0;
+}
+
+.wrong-answers-head h2 {
+  margin: 0;
+}
+
+.wrong-answers-list {
+  display: grid;
+  gap: 12px;
+}
+
+.wrong-answer-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 22px;
+}
+
+.wrong-answer-main {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.wrong-answer-branch {
+  padding: 6px 10px;
+  font-size: 0.73rem;
+  font-weight: 780;
+  background: rgba(244, 63, 94, 0.1);
+}
+
+.wrong-answer-card h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.34;
+}
+
+.wrong-answer-main small {
+  color: var(--text-muted, #64748b);
+  font-size: 0.82rem;
+  font-weight: 650;
+}
+
+.wrong-answer-result {
+  display: none;
+}
+
+.wrong-answer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.wrong-answer-actions .btn.btn-primary.compact {
+  min-height: 42px;
+  padding-inline: 15px;
+  border-radius: 14px;
+}
+
+.tus-pearl-hub-head {
+  align-items: center;
+}
+
+.tus-pearl-hub-head h2 {
+  margin: 0;
+}
+
+.tus-pearl-hub-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.tus-pearl-hub-stats > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 10px 12px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.66);
+  border: 1px solid rgba(15, 118, 110, 0.08);
+  white-space: nowrap;
+}
+
+.tus-pearl-hub-stats > span b {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+@media (max-width: 1100px) {
+  .wrong-answer-card {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .wrong-answer-actions {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 920px) {
+  .study-review-hub-intro {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .study-review-hub-intro span {
+    text-align: left;
+    max-width: none;
+  }
+
+  .tus-pearl-hub-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .tus-pearl-hub-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

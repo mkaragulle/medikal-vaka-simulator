@@ -109,9 +109,7 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
       <div className="tus-pearl-hub-ambient" aria-hidden="true" />
       <header className="tus-pearl-hub-head">
         <div>
-          <p className="auth-eyebrow">TUS tekrarı</p>
           <h2>Hap Bilgi Kartları</h2>
-          <span>5 dakikalık TUS tekrarları, kişisel kartlar ve kataloglar.</span>
         </div>
         <span className="tus-pearl-hub-icon" aria-hidden="true"><Icon name="LayeredCards" /></span>
       </header>

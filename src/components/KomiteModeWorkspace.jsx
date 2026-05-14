@@ -269,12 +269,36 @@ function sanitizeTeachingTextForDisplay(text = '') {
 function splitInlineListMarkers(text = '') {
   return String(text || '')
     .replace(/:\s+-\s+/gu, ':\n- ')
-    .replace(/\s+-\s+(?=[A-ZÇĞİÖŞÜ0-9])/gu, '\n- ')
+    .replace(/\s+-\s+(?=(?:\*\*)?[A-ZÇĞİÖŞÜ0-9])/gu, '\n- ')
     .replace(/\s+•\s+/gu, '\n- ');
 }
 
+function normalizeInlineDefinitionBreaks(text = '') {
+  return String(text || '')
+    .replace(/([^\n.!?:;])\s+(?=\*\*[^*]{2,80}:\*\*)/gu, '$1.\n')
+    .replace(/([.!?])\s+(?=\*\*[^*]{2,80}:\*\*)/gu, '$1\n')
+    .replace(/([^\n.!?:;])\s+(?=\*\*[^*]{2,80}\*\*\s+(?:ise|de|da)\b)/giu, '$1.\n')
+    .replace(/([.!?])\s+(?=\*\*[^*]{2,80}\*\*\s+(?:ise|de|da)\b)/giu, '$1\n');
+}
+
+function extractBulletTail(text = '') {
+  const clean = String(text || '').trim();
+  const match = clean.match(/^(.{12,120}?)(\s+(?:Bu|Bunun|Böylece|Dolayısıyla|Bu nedenle|Buna karşılık|Ancak|Örneğin|Ayrıca)\s+.+)$/u);
+  if (!match) return { item: clean, tail: '' };
+  const item = match[1].replace(/[.;:,]$/u, '').trim();
+  const tail = match[2].trim();
+  if (!item || item.split(/\s+/u).length > 9) return { item: clean, tail: '' };
+  return { item, tail };
+}
+
+function isContinuationBullet(text = '', listLength = 0) {
+  const clean = String(text || '').trim();
+  if (listLength < 2) return false;
+  return /^(?:Bu|Bunun|Böylece|Dolayısıyla|Bu nedenle|Buna karşılık|Ancak|Örneğin|Ayrıca)\b/u.test(clean);
+}
+
 function lessonTextBlocks(text = '') {
-  const prepared = splitInlineListMarkers(sanitizeTeachingTextForDisplay(text));
+  const prepared = normalizeInlineDefinitionBreaks(splitInlineListMarkers(sanitizeTeachingTextForDisplay(text)));
   const lines = prepared.split(/\n+/u).map((line) => line.trim()).filter(Boolean);
   const blocks = [];
   let paragraph = [];
@@ -294,7 +318,18 @@ function lessonTextBlocks(text = '') {
     if (bullet) {
       flushParagraph();
       const clean = sanitizeTeachingTextForDisplay(bullet).replace(/[.;:]?$/u, '').trim();
-      if (clean) list.push(clean);
+      if (!clean) return;
+      if (isContinuationBullet(clean, list.length)) {
+        flushList();
+        paragraph.push(clean);
+        return;
+      }
+      const { item, tail } = extractBulletTail(clean);
+      if (item) list.push(item);
+      if (tail) {
+        flushList();
+        paragraph.push(tail);
+      }
       return;
     }
     flushList();
@@ -305,12 +340,21 @@ function lessonTextBlocks(text = '') {
   return blocks;
 }
 
+function InlineLessonText({ text }) {
+  const parts = String(text || '').split(/(\*\*[^*]+\*\*)/u).filter(Boolean);
+  return parts.map((part, index) => {
+    const bold = part.match(/^\*\*([^*]+)\*\*$/u)?.[1];
+    if (bold) return <strong key={`${bold}-${index}`}>{bold}</strong>;
+    return <span key={`${part}-${index}`}>{part}</span>;
+  });
+}
+
 function LessonText({ text }) {
   return lessonTextBlocks(text).map((block, index) => {
     if (block.type === 'ul') {
-      return <ul key={`list-${index}`}>{block.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}>{item}</li>)}</ul>;
+      return <ul key={`list-${index}`}>{block.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}><InlineLessonText text={item} /></li>)}</ul>;
     }
-    return <p key={`p-${index}`}>{block.text}</p>;
+    return <p key={`p-${index}`}><InlineLessonText text={block.text} /></p>;
   });
 }
 
@@ -977,13 +1021,37 @@ function formatFileSize(bytes = 0) {
   return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-function KomiteDashboard({ materials, onStart, onOpenMyMaterials, onOpenCards, onOpenReview, onOpenMaterial }) {
-  const latest = materials[0];
+function KomiteDashboard({ onStart, onOpenMyMaterials, onOpenCards, onOpenReview }) {
   const cards = [
-    { title: 'Çalışmaya Başla', description: 'Komite slaytlarını ve ders notlarını yükle; AI destekli ders anlatımı, soru seti ve hap kart oluştur.', action: 'Materyal yükle', icon: 'Sparkles', onClick: onStart, primary: true },
-    { title: 'Çalıştıklarım', description: 'Daha önce yüklediğin komite materyallerini sınıf, komite ve ders düzeninde görüntüle.', action: 'Kütüphaneyi aç', icon: 'ClipboardList', onClick: onOpenMyMaterials },
-    { title: 'Hap Kartlar', description: 'Yüklediğin materyallerden oluşturulan kartlarla kısa ve hedefli tekrar yap.', action: 'Kartları aç', icon: 'LayeredCards', onClick: onOpenCards },
-    { title: 'Tekrar Merkezi', description: 'Yanlış yaptığın sorulara, zorlandığın kartlara ve tekrar listene tek yerden dön.', action: 'Tekrarları gör', icon: 'RotateCcw', onClick: onOpenReview },
+    {
+      title: 'Çalışmaya Başla',
+      description: 'Yeni bir komite materyali yükleyip çalışma alanını oluştur.',
+      action: 'Materyal yükle',
+      icon: 'Sparkles',
+      onClick: onStart,
+      primary: true,
+    },
+    {
+      title: 'Çalıştıklarım',
+      description: 'Yüklediğin dosyaları sınıf, komite ve ders düzeninde görüntüle.',
+      action: 'Kütüphaneyi aç',
+      icon: 'ClipboardList',
+      onClick: onOpenMyMaterials,
+    },
+    {
+      title: 'Hap Kartlar',
+      description: 'Oluşturulan kartlarla kısa ve hedefli tekrar yap.',
+      action: 'Kartları aç',
+      icon: 'LayeredCards',
+      onClick: onOpenCards,
+    },
+    {
+      title: 'Tekrar Merkezi',
+      description: 'Yanlış sorularını, zorlandığın kartları ve tekrar listesini tek yerde gör.',
+      action: 'Tekrarları gör',
+      icon: 'RotateCcw',
+      onClick: onOpenReview,
+    },
   ];
 
   return (
@@ -998,26 +1066,6 @@ function KomiteDashboard({ materials, onStart, onOpenMyMaterials, onOpenCards, o
           <span className="komite-card-action">{card.action}<Icon name="ArrowRight" size={16} /></span>
         </button>
       ))}
-
-      {latest ? (
-        <button type="button" className="komite-latest-material card-surface" onClick={() => onOpenMaterial(latest.id)}>
-          <span className="komite-latest-copy">
-            <small>Kaldığın yerden devam et</small>
-            <strong>{latest.fileName}</strong>
-            <em>{latest.classYear}. sınıf · {latest.course || latest.committee || 'Ders belirtilmedi'} · Son çalışma: {new Date(latest.updatedAt || latest.uploadDate).toLocaleDateString('tr-TR')}</em>
-          </span>
-          <span className="komite-card-action">Materyali aç<Icon name="ArrowRight" size={16} /></span>
-        </button>
-      ) : (
-        <button type="button" className="komite-latest-material is-empty card-surface" onClick={onStart}>
-          <span className="komite-latest-copy">
-            <small>Kaldığın yerden devam et</small>
-            <strong>Henüz çalışılmış materyal yok.</strong>
-            <em>İlk komite dosyanı yükleyerek başlayabilirsin.</em>
-          </span>
-          <span className="komite-card-action">İlk materyali yükle<Icon name="ArrowRight" size={16} /></span>
-        </button>
-      )}
     </section>
   );
 }
@@ -1207,7 +1255,11 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   const sectionAnchors = sections
     .map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }))
     .filter((item) => item.title && !/^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)$/iu.test(item.title));
-  const objectives = lesson.learningObjectives || [];
+  const rawObjectives = Array.isArray(lesson.learningObjectives) ? lesson.learningObjectives : [];
+  const objectiveIntro = rawObjectives.length && /(:|：)$|^Bu konunun sonunda\b/iu.test(String(rawObjectives[0] || '').trim())
+    ? sanitizeTeachingTextForDisplay(rawObjectives[0])
+    : '';
+  const objectives = objectiveIntro ? rawObjectives.slice(1) : rawObjectives;
   const concepts = Array.isArray(lesson.mainConcepts)
     ? lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item)))
     : [];
@@ -1234,7 +1286,8 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
         <main className="komite-lesson-main-flow">
           <section id="komite-objectives" className="komite-objectives komite-objectives-pro">
             <strong>Öğrenme hedefleri</strong>
-            <ul>{objectives.map((item, index) => <li key={`${item}-${index}`}>{sanitizeTeachingTextForDisplay(item)}</li>)}</ul>
+            {objectiveIntro ? <p className="komite-objective-intro"><InlineLessonText text={objectiveIntro} /></p> : null}
+            <ul>{objectives.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
           </section>
 
           {(lesson.bigPicture || lesson.overview) ? (
@@ -1289,11 +1342,11 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
           <div id="komite-high-yield" className="komite-summary-lines komite-summary-grid-pro">
             <div>
               <strong>Can alıcı noktalar</strong>
-              <ul>{highYield.map((item, index) => <li key={`${item}-${index}`}>{sanitizeTeachingTextForDisplay(item)}</li>)}</ul>
+              <ul>{highYield.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
             </div>
             <div>
               <strong>Mutlaka hatırla</strong>
-              <ul>{mustKnow.map((item, index) => <li key={`${item}-${index}`}>{sanitizeTeachingTextForDisplay(item)}</li>)}</ul>
+              <ul>{mustKnow.map((item, index) => <li key={`${item}-${index}`}><InlineLessonText text={sanitizeTeachingTextForDisplay(item)} /></li>)}</ul>
             </div>
           </div>
         </main>
@@ -1778,11 +1831,10 @@ export default function KomiteModeWorkspace({ currentUser }) {
       {(view === 'dashboard' || view === 'start') ? (
         <section className="komite-hero card-surface">
           <div>
-            <span className="komite-kicker"><Icon name="ShieldCheck" size={16} /> KOMİTE MODU</span>
-            <h1>Komite materyallerini akıllı çalışma alanına dönüştür.</h1>
-            <p>Slaytlarını ve ders notlarını yükle; KlinikIQ AI aynı materyalden ders anlatımı, soru seti, hap kart ve tekrar listesi oluştursun.</p>
+            <h1>Komite materyallerini tek yerde düzenle ve çalış.</h1>
+            <p>Slaytlarını ve notlarını yükle; ders anlatımı, soru, hap kart ve tekrar içeriklerine aynı çalışma alanından ulaş.</p>
             <div className="komite-hero-actions">
-              <button type="button" className="btn btn-primary" onClick={() => setView('start')}><Icon name="Sparkles" /> Şimdi KlinikIQ AI ile çalış</button>
+              <button type="button" className="btn btn-primary" onClick={() => setView('start')}><Icon name="Sparkles" /> Materyal yükle</button>
             </div>
           </div>
         </section>

@@ -37990,3 +37990,591 @@ html[data-theme='dark'] .komite-context-lines,
 html[data-theme='dark'] .komite-context-line {
   border-color: rgba(148, 163, 184, 0.16) !important;
 }
+
+/* KOMITE lesson readability pass: neutral UI-only rendering fixes */
+.komite-lesson-view-pro {
+  --komite-copy: #334155;
+  --komite-copy-strong: #0f172a;
+  --komite-muted-copy: #64748b;
+}
+.komite-objectives-pro,
+.komite-big-picture-section,
+.komite-lesson-section-pro,
+.komite-summary-grid-pro > div {
+  border-radius: 1.45rem !important;
+  border: 1px solid rgba(15, 23, 42, 0.07) !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.045) !important;
+}
+.komite-objectives-pro,
+.komite-big-picture-section {
+  padding: clamp(1.15rem, 2vw, 1.45rem) clamp(1.2rem, 2.4vw, 1.65rem) !important;
+}
+.komite-lesson-section-pro {
+  grid-template-columns: 42px minmax(0, 1fr) !important;
+  gap: 1.1rem !important;
+  padding: clamp(1.2rem, 2.2vw, 1.65rem) clamp(1.2rem, 2.5vw, 1.85rem) !important;
+}
+.komite-section-index {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 1rem !important;
+  background: rgba(20, 184, 166, 0.11) !important;
+  color: #0f766e !important;
+  box-shadow: inset 0 0 0 1px rgba(20, 184, 166, 0.10);
+}
+.komite-section-body h3,
+.komite-big-picture-section h3 {
+  margin: 0 0 0.72rem !important;
+  color: var(--komite-copy-strong) !important;
+  font-size: clamp(1.12rem, 1.45vw, 1.34rem) !important;
+  line-height: 1.25 !important;
+  letter-spacing: -0.025em !important;
+}
+.komite-big-picture-section p,
+.komite-lesson-section-pro p,
+.komite-objectives-pro p,
+.komite-summary-lines li,
+.komite-objectives-pro li,
+.komite-lesson-section-pro li {
+  color: var(--komite-copy) !important;
+  font-size: clamp(0.98rem, 1.05vw, 1.045rem) !important;
+  line-height: 1.72 !important;
+  letter-spacing: -0.006em;
+}
+.komite-lesson-section-pro p,
+.komite-big-picture-section p {
+  margin: 0.78rem 0 0 !important;
+  max-width: 82ch !important;
+}
+.komite-lesson-section-pro p:first-of-type,
+.komite-big-picture-section p:first-of-type {
+  margin-top: 0 !important;
+}
+.komite-lesson-section-pro ul,
+.komite-big-picture-section ul,
+.komite-objectives-pro ul,
+.komite-summary-lines ul {
+  margin: 0.85rem 0 0 !important;
+  padding-left: 1.15rem !important;
+  display: grid;
+  gap: 0.34rem;
+  max-width: 82ch;
+}
+.komite-lesson-section-pro li,
+.komite-big-picture-section li,
+.komite-objectives-pro li,
+.komite-summary-lines li {
+  margin: 0 !important;
+  padding-left: 0.22rem;
+}
+.komite-lesson-section-pro li::marker,
+.komite-big-picture-section li::marker,
+.komite-objectives-pro li::marker,
+.komite-summary-lines li::marker {
+  color: #0f766e;
+  font-size: 0.8em;
+}
+.komite-lesson-section-pro strong,
+.komite-big-picture-section strong,
+.komite-objectives-pro strong,
+.komite-summary-lines strong {
+  color: var(--komite-copy-strong);
+  font-weight: 820;
+}
+.komite-objectives-pro > strong,
+.komite-summary-lines > div > strong {
+  display: block;
+  margin-bottom: 0.7rem !important;
+  color: var(--komite-copy-strong) !important;
+  font-size: 1.05rem !important;
+  letter-spacing: -0.015em;
+}
+.komite-objective-intro {
+  margin: 0 0 0.55rem !important;
+  color: var(--komite-muted-copy) !important;
+  font-weight: 650;
+}
+.komite-objectives-pro ul {
+  margin-top: 0.5rem !important;
+}
+.komite-sidebar-card {
+  border-radius: 1.25rem !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+.komite-sidebar-card a {
+  margin: 0.02rem 0;
+}
+.komite-summary-lines {
+  gap: 1rem !important;
+}
+.komite-summary-lines > div {
+  padding: clamp(1.05rem, 2vw, 1.35rem) clamp(1.1rem, 2.3vw, 1.55rem) !important;
+  border-top: 0 !important;
+  border-radius: 1.35rem !important;
+}
+@media (max-width: 720px) {
+  .komite-lesson-section-pro {
+    grid-template-columns: 1fr !important;
+  }
+  .komite-section-index {
+    width: max-content !important;
+    min-width: 40px;
+  }
+}
+html[data-theme='dark'] .komite-lesson-view-pro {
+  --komite-copy: #cbd5e1;
+  --komite-copy-strong: #f8fafc;
+  --komite-muted-copy: #94a3b8;
+}
+html[data-theme='dark'] .komite-objectives-pro,
+html[data-theme='dark'] .komite-big-picture-section,
+html[data-theme='dark'] .komite-lesson-section-pro,
+html[data-theme='dark'] .komite-summary-grid-pro > div,
+html[data-theme='dark'] .komite-sidebar-card {
+  background: rgba(15, 23, 42, 0.74) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.18) !important;
+}
+
+/* --------------------------------------------------------------------------
+   KlinikIQ TUS dashboard refinement v45
+   Neutral UI-only cleanup: top bar alignment, softer labels, lighter hero copy,
+   and cleaner session insight cards. No AI prompt/source behavior changes.
+   -------------------------------------------------------------------------- */
+body:not(.klinikiq-auth-lock) .top-shell-nav {
+  width: min(1780px, calc(100% - 36px)) !important;
+  min-height: 72px !important;
+  grid-template-columns: minmax(300px, auto) minmax(420px, 600px) minmax(360px, 1fr) !important;
+  align-items: center !important;
+  column-gap: clamp(18px, 2.2vw, 44px) !important;
+  padding: 10px 18px !important;
+  border-radius: 26px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.84), rgba(248,253,252,.74)) !important;
+  border-color: rgba(15, 118, 110, .12) !important;
+  box-shadow: 0 16px 42px rgba(15, 23, 42, .075), inset 0 1px 0 rgba(255,255,255,.72) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster {
+  min-width: 0 !important;
+  max-width: none !important;
+  width: auto !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-self: start !important;
+  gap: 12px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand {
+  flex: 0 0 54px !important;
+  width: 54px !important;
+  min-width: 54px !important;
+  height: 54px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand::before {
+  inset: -5px !important;
+  opacity: .18 !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand-mark {
+  width: 46px !important;
+  height: 46px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  padding: 6px !important;
+  transform: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand-mark svg {
+  display: block !important;
+  width: 28px !important;
+  height: 28px !important;
+}
+
+body:not(.klinikiq-auth-lock) .product-mode-switch {
+  flex: 0 0 232px !important;
+  width: 232px !important;
+  min-width: 232px !important;
+  max-width: 232px !important;
+  height: 50px !important;
+  padding: 4px !important;
+  border-radius: 18px !important;
+  align-items: center !important;
+  background: rgba(240, 253, 250, .78) !important;
+  border-color: rgba(15,118,110,.18) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.68), 0 8px 18px rgba(15,118,110,.045) !important;
+}
+
+body:not(.klinikiq-auth-lock) .product-mode-switch button {
+  height: 40px !important;
+  min-height: 40px !important;
+  border-radius: 14px !important;
+  font-size: 14px !important;
+  font-weight: 780 !important;
+  letter-spacing: -.01em !important;
+  text-transform: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .product-mode-switch button.active {
+  background: linear-gradient(135deg, #0f8f84 0%, #13b8aa 100%) !important;
+  box-shadow: 0 10px 22px rgba(15, 118, 110, .20), inset 0 1px 0 rgba(255,255,255,.26) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch,
+body:not(.klinikiq-auth-lock) .komite-context-switch {
+  justify-self: center !important;
+  width: min(100%, 560px) !important;
+  min-width: 420px !important;
+  height: 50px !important;
+  padding: 4px !important;
+  border-radius: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button,
+body:not(.klinikiq-auth-lock) .komite-context-switch button {
+  height: 40px !important;
+  min-height: 40px !important;
+  border-radius: 14px !important;
+  font-size: 14px !important;
+  font-weight: 760 !important;
+  letter-spacing: -.015em !important;
+  text-transform: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions {
+  justify-self: end !important;
+  height: auto !important;
+  padding: 0 !important;
+  gap: 10px !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-wrong-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-score-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .btn,
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-logout-btn {
+  height: 46px !important;
+  min-height: 46px !important;
+  border-radius: 16px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-logout-btn,
+body:not(.klinikiq-auth-lock) .nav-cta {
+  width: 46px !important;
+  min-width: 46px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip {
+  min-width: 66px !important;
+  padding: 0 9px !important;
+  gap: 7px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip strong {
+  min-width: 28px !important;
+  padding: 6px 8px !important;
+  font-size: 13.5px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-premium-v10 {
+  padding: clamp(28px, 4vw, 58px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-v10-main {
+  align-items: center !important;
+  gap: clamp(28px, 4vw, 72px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-copy-v10 {
+  gap: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-brand-title-v10 {
+  margin: 0 !important;
+  line-height: .92 !important;
+  letter-spacing: -.075em !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-copy-v10 > p {
+  max-width: 620px !important;
+  font-size: clamp(1.12rem, 1.55vw, 1.48rem) !important;
+  line-height: 1.55 !important;
+  color: #475569 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-action-panel-v10 {
+  padding: 28px !important;
+  align-self: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-action-panel-head-v10,
+body:not(.klinikiq-auth-lock) .home-hero-eyebrow-v10 {
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-panel {
+  padding: clamp(24px, 2.5vw, 34px) !important;
+  border-radius: 32px !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-header {
+  align-items: flex-start !important;
+  gap: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-header h2 {
+  max-width: 580px !important;
+  font-size: clamp(1.45rem, 1.8vw, 2rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.045em !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-header p {
+  max-width: 620px !important;
+  margin-top: 10px !important;
+  font-size: .98rem !important;
+  line-height: 1.58 !important;
+  color: #475569 !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-list {
+  gap: 12px !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-card,
+body:not(.klinikiq-auth-lock) .performance-next-action-card {
+  border-radius: 22px !important;
+  padding: 16px !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-card p,
+body:not(.klinikiq-auth-lock) .performance-next-action-card p {
+  color: #475569 !important;
+  line-height: 1.55 !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .top-shell-nav,
+.app-shell[data-theme="dark"] .top-shell-nav {
+  background:
+    radial-gradient(circle at 12% 15%, rgba(45,212,191,.10), transparent 26%),
+    linear-gradient(180deg, rgba(8, 25, 32, .94), rgba(6, 18, 25, .90)) !important;
+  border-color: rgba(94, 234, 212, .16) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .product-mode-switch,
+.app-shell[data-theme="dark"] .product-mode-switch,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-mode-switch,
+.app-shell[data-theme="dark"] .nav-mode-switch {
+  background: rgba(8, 22, 29, .86) !important;
+  border-color: rgba(148,163,184,.18) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .home-hero-copy-v10 > p,
+.app-shell[data-theme="dark"] .home-hero-copy-v10 > p,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .performance-insight-header p,
+.app-shell[data-theme="dark"] .performance-insight-header p,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .performance-insight-card p,
+.app-shell[data-theme="dark"] .performance-insight-card p,
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .performance-next-action-card p,
+.app-shell[data-theme="dark"] .performance-next-action-card p {
+  color: #cbd5e1 !important;
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    width: calc(100% - 20px) !important;
+    grid-template-columns: minmax(260px, auto) minmax(300px, 1fr) auto !important;
+    column-gap: 10px !important;
+  }
+  body:not(.klinikiq-auth-lock) .product-mode-switch {
+    flex-basis: 200px !important;
+    width: 200px !important;
+    min-width: 200px !important;
+    max-width: 200px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-mode-switch,
+  body:not(.klinikiq-auth-lock) .komite-context-switch {
+    min-width: 300px !important;
+    width: min(100%, 420px) !important;
+  }
+}
+
+@media (max-width: 820px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    grid-template-columns: 1fr auto !important;
+    row-gap: 8px !important;
+    padding: 8px !important;
+  }
+  body:not(.klinikiq-auth-lock) .product-mode-switch {
+    flex-basis: 160px !important;
+    width: 160px !important;
+    min-width: 160px !important;
+    max-width: 160px !important;
+  }
+  body:not(.klinikiq-auth-lock) .nav-mode-switch,
+  body:not(.klinikiq-auth-lock) .komite-context-switch {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+
+
+/* Komite dashboard refinement v45 */
+.komite-hero {
+  padding: clamp(1.5rem, 3vw, 2.15rem);
+  border-radius: 1.9rem;
+  background:
+    radial-gradient(circle at top right, rgba(153, 246, 228, 0.16), transparent 38%),
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.94));
+}
+
+.komite-hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(2.1rem, 4.4vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.komite-hero p {
+  max-width: 760px;
+  margin: .9rem 0 0;
+  color: #475569;
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  line-height: 1.6;
+}
+
+.komite-hero-actions {
+  margin-top: 1.35rem;
+}
+
+.komite-hero-actions .btn.btn-primary {
+  min-height: 50px;
+  padding-inline: 1rem 1.1rem;
+  border-radius: 1rem;
+  font-weight: 850;
+}
+
+.komite-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.komite-dashboard-card {
+  min-height: 168px;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr auto;
+  align-items: start;
+  gap: .9rem 1rem;
+  padding: 1.15rem 1.15rem 1.05rem;
+  border-radius: 1.45rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92));
+  border: 1px solid rgba(15, 118, 110, 0.08);
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.06);
+}
+
+.komite-dashboard-card.primary {
+  background: linear-gradient(135deg, rgba(236, 253, 245, 0.98), rgba(255,255,255,0.95));
+  border-color: rgba(20, 184, 166, 0.16);
+}
+
+.komite-card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: inline-grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(204, 251, 241, 0.95), rgba(240, 253, 250, 0.95));
+  color: #0f766e;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.72);
+}
+
+.komite-dashboard-card-copy {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: stretch;
+  display: grid;
+  gap: .4rem;
+}
+
+.komite-dashboard-card strong {
+  display: block;
+  color: #0f172a;
+  font-size: 1.18rem;
+  line-height: 1.2;
+}
+
+.komite-dashboard-card p {
+  margin: 0;
+  color: #475569;
+  font-size: .95rem;
+  line-height: 1.58;
+}
+
+.komite-card-action {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: .15rem;
+  padding: .68rem .9rem;
+  border-radius: 999px;
+  background: rgba(240, 253, 250, 0.9);
+  border: 1px solid rgba(20, 184, 166, 0.14);
+  font-size: .88rem;
+  font-weight: 850;
+}
+
+@media (max-width: 780px) {
+  .komite-dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .komite-dashboard-card {
+    min-height: 0;
+  }
+}
+
+html[data-theme='dark'] .komite-hero {
+  background:
+    radial-gradient(circle at top right, rgba(45, 212, 191, 0.12), transparent 40%),
+    linear-gradient(180deg, rgba(15,23,42,0.92), rgba(15,23,42,0.88));
+}
+
+html[data-theme='dark'] .komite-hero p,
+html[data-theme='dark'] .komite-dashboard-card p {
+  color: #94a3b8;
+}
+
+html[data-theme='dark'] .komite-dashboard-card {
+  background: linear-gradient(180deg, rgba(15,23,42,0.92), rgba(15,23,42,0.88));
+  border-color: rgba(148, 163, 184, 0.12);
+  box-shadow: none;
+}
+
+html[data-theme='dark'] .komite-dashboard-card.primary {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.95), rgba(17, 94, 89, 0.28));
+}
+
+html[data-theme='dark'] .komite-card-icon {
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.24), rgba(15, 23, 42, 0.9));
+}
+
+html[data-theme='dark'] .komite-card-action {
+  background: rgba(15, 118, 110, 0.16);
+  border-color: rgba(45, 212, 191, 0.14);
+}

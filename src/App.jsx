@@ -995,7 +995,7 @@ function App() {
               onClick={() => switchProductMode('komite')}
               aria-pressed={productMode === 'komite'}
             >
-              KOMİTE
+              Komite
             </button>
             <button
               type="button"
