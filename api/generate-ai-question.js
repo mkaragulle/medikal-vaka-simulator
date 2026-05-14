@@ -612,8 +612,15 @@ function shouldUseResponsesApi(model = '', explicitStyle = '') {
   return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
 }
 
+function modelSupportsReasoningEffort(model = '') {
+  return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
+}
+
 function safeReasoningEffort(value = '') {
-  return /^(minimal|low|medium|high|xhigh)$/i.test(String(value || '')) ? String(value).toLowerCase() : 'minimal';
+  const normalized = String(value || '').trim().toLowerCase();
+  if (normalized === 'minimal') return 'low';
+  if (/^(none|low|medium|high|xhigh)$/.test(normalized)) return normalized;
+  return 'low';
 }
 
 function safeVerbosity(value = '') {
@@ -630,7 +637,7 @@ async function callOpenAI(prompt) {
   const explicitStyle = process.env.TUS_OPENAI_API_STYLE || process.env.OPENAI_API_STYLE || '';
   const useResponses = shouldUseResponsesApi(model, explicitStyle);
   const style = useResponses ? 'responses' : 'chat';
-  const reasoningEffort = safeReasoningEffort(process.env.TUS_OPENAI_REASONING_EFFORT || process.env.OPENAI_REASONING_EFFORT || 'minimal');
+  const reasoningEffort = safeReasoningEffort(process.env.TUS_OPENAI_REASONING_EFFORT || process.env.OPENAI_REASONING_EFFORT || 'low');
   const verbosity = safeVerbosity(process.env.TUS_OPENAI_VERBOSITY || process.env.OPENAI_VERBOSITY || 'medium');
   const { signal, cancel } = createAbortSignal(timeoutMs);
   try {
@@ -640,7 +647,7 @@ async function callOpenAI(prompt) {
           instructions: SYSTEM_PROMPT,
           input: prompt,
           text: { format: { type: 'json_object' }, verbosity },
-          reasoning: { effort: reasoningEffort },
+          ...(modelSupportsReasoningEffort(model) ? { reasoning: { effort: reasoningEffort } } : {}),
           max_output_tokens: maxTokens,
           store: false,
           truncation: 'auto',
@@ -654,7 +661,7 @@ async function callOpenAI(prompt) {
           response_format: { type: 'json_object' },
           max_completion_tokens: maxTokens,
         };
-    if (!useResponses && (/^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || '')))) {
+    if (!useResponses && modelSupportsReasoningEffort(model)) {
       body.reasoning_effort = reasoningEffort;
     }
     const response = await fetch(`${baseUrl}${useResponses ? '/responses' : '/chat/completions'}`, {
@@ -673,7 +680,7 @@ async function callOpenAI(prompt) {
     const text = useResponses ? extractResponsesText(data) : extractChatText(data);
     if (!String(text || '').trim()) {
       const reason = data?.incomplete_details?.reason || data?.status || 'empty_output';
-      throw new Error(`OpenAI boş çıktı döndürdü (${reason}). Output token limitini artırın veya reasoning effort değerini minimal kullanın.`);
+      throw new Error(`OpenAI boş çıktı döndürdü (${reason}). Output token limitini artırın veya reasoning effort değerini low/none kullanın.`);
     }
     const question = parseModelJson(text);
     return { question, model: data.model || model, mode: style };

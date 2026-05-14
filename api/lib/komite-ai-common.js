@@ -167,6 +167,17 @@ function firstNumber(defaultValue, ...keys) {
   return defaultValue;
 }
 
+function supportsReasoningEffort(model = '') {
+  return supportsReasoningEffort(model);
+}
+
+function normalizeReasoningEffort(value = '', defaultValue = 'low') {
+  const normalized = String(value || '').trim().toLowerCase();
+  if (normalized === 'minimal') return 'low';
+  if (/^(none|low|medium|high|xhigh)$/.test(normalized)) return normalized;
+  return defaultValue;
+}
+
 function buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens, reasoningEffort }) {
   const body = {
     model,
@@ -177,8 +188,8 @@ function buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, 
     response_format: jsonSchema ? { type: 'json_schema', json_schema: jsonSchema } : { type: 'json_object' },
     max_completion_tokens: effectiveMaxTokens,
   };
-  if ((/^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''))) && reasoningEffort && /^(minimal|low|medium|high|xhigh)$/i.test(reasoningEffort)) {
-    body.reasoning_effort = reasoningEffort.toLowerCase();
+  if (supportsReasoningEffort(model) && reasoningEffort) {
+    body.reasoning_effort = normalizeReasoningEffort(reasoningEffort);
   }
   return body;
 }
@@ -205,8 +216,8 @@ function buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effec
     },
     truncation: 'auto',
   };
-  if (reasoningEffort && /^(minimal|low|medium|high|xhigh)$/i.test(reasoningEffort)) {
-    body.reasoning = { effort: reasoningEffort.toLowerCase() };
+  if (supportsReasoningEffort(model) && reasoningEffort) {
+    body.reasoning = { effort: normalizeReasoningEffort(reasoningEffort) };
   }
   return body;
 }
@@ -215,7 +226,7 @@ function wantsResponsesApi(model = '', explicitStyle = '') {
   const style = String(explicitStyle || '').toLowerCase();
   if (style === 'responses' || style === 'response') return true;
   if (style === 'chat' || style === 'chat_completions') return false;
-  return /^gpt-5/i.test(String(model || '')) || /^o\d/i.test(String(model || ''));
+  return supportsReasoningEffort(model);
 }
 
 function describeIncompleteResponse(data = {}) {
@@ -263,7 +274,8 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
   const effectiveMaxTokens = firstNumber(maxTokens, `${envPrefix}_OPENAI_MAX_OUTPUT_TOKENS`);
   const apiStyle = firstEnv(`${envPrefix}_OPENAI_API_STYLE`, 'OPENAI_API_STYLE');
   const useResponses = wantsResponsesApi(model, apiStyle);
-  const reasoningEffort = firstEnv(`${envPrefix}_OPENAI_REASONING_EFFORT`, `${envPrefix}_REASONING_EFFORT`, 'OPENAI_REASONING_EFFORT') || (useResponses ? 'minimal' : '');
+  const rawReasoningEffort = firstEnv(`${envPrefix}_OPENAI_REASONING_EFFORT`, `${envPrefix}_REASONING_EFFORT`, 'OPENAI_REASONING_EFFORT') || (useResponses ? 'low' : '');
+  const reasoningEffort = rawReasoningEffort ? normalizeReasoningEffort(rawReasoningEffort) : '';
   const verbosity = firstEnv(`${envPrefix}_OPENAI_VERBOSITY`, `${envPrefix}_AI_VERBOSITY`, 'OPENAI_VERBOSITY') || 'medium';
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), timeoutMs);
