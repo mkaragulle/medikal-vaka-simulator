@@ -115,7 +115,9 @@ function splitPlainLessonIntoBlocks(rawText = '') {
     if (current && (current.heading || current.text.length)) blocks.push(current);
     current = null;
   };
-  const isHeading = (line) => /^#{1,4}\s+/.test(line) || /^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)\b/i.test(line) || (/^\d{1,2}[.)]\s+/.test(line) && line.length < 90);
+  // Only explicit Markdown headings and structural labels are treated as sections.
+  // Numbered/list-style lines remain inside the current section, preventing tiny one-line cards.
+  const isHeading = (line) => /^#{1,4}\s+/.test(line) || /^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)\b/i.test(line);
   for (const line of lines) {
     if (isHeading(line)) {
       pushCurrent();
@@ -143,6 +145,77 @@ function firstSentences(value = '', limit = 2) {
   return (sentences.length ? sentences.slice(0, limit).join(' ') : clean).trim();
 }
 
+function normalizeComparableText(value = '') {
+  return cleanText(value).toLocaleLowerCase('tr').replace(/[^a-z0-9çğıöşü\s]/giu, ' ').replace(/\s+/g, ' ').trim();
+}
+
+function uniqueStringList(items = [], limit = 12) {
+  const seen = new Set();
+  const output = [];
+  items.forEach((item) => {
+    const clean = cleanText(item);
+    if (!clean) return;
+    const key = normalizeComparableText(clean);
+    if (!key || seen.has(key)) return;
+    seen.add(key);
+    output.push(clean);
+  });
+  return output.slice(0, limit);
+}
+
+function normalizeLessonTitle(value = '') {
+  const clean = cleanText(value)
+    .replace(/\b\S+\.(?:pdf|pptx|ppt|docx|txt)\b/giu, ' ')
+    .replace(/\s*\(\s*\d+\s*\)\s*$/u, '')
+    .replace(/[_-]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return clean || 'Komite Ders Anlatımı';
+}
+
+function normalizeSectionText(value = '') {
+  const pieces = String(value || '')
+    .split(/\n+/u)
+    .map((item) => cleanText(item))
+    .filter(Boolean);
+  return uniqueStringList(pieces, 40).join('\n');
+}
+
+function shouldMergeIntoPrevious(section = {}, previous = null) {
+  if (!previous) return false;
+  const heading = cleanText(section.heading);
+  const body = cleanText(section.teachingText);
+  if (!heading) return false;
+  const same = normalizeComparableText(heading) === normalizeComparableText(body);
+  if (same) return true;
+  if (body.length < 90 && heading.length >= 18) return true;
+  if (/^[•\-*]\s*/u.test(heading)) return true;
+  return false;
+}
+
+function mergeCompactSections(sections = []) {
+  const output = [];
+  sections.forEach((section) => {
+    const normalized = {
+      ...section,
+      heading: cleanText(section.heading),
+      teachingText: normalizeSectionText(section.teachingText || section.content),
+      content: normalizeSectionText(section.teachingText || section.content),
+    };
+    const previous = output[output.length - 1];
+    if (shouldMergeIntoPrevious(normalized, previous)) {
+      const line = normalized.teachingText && normalizeComparableText(normalized.teachingText) !== normalizeComparableText(normalized.heading)
+        ? `${normalized.heading}: ${normalized.teachingText}`
+        : normalized.heading;
+      previous.teachingText = normalizeSectionText(`${previous.teachingText}\n- ${line}`);
+      previous.content = previous.teachingText;
+      return;
+    }
+    output.push(normalized);
+  });
+  return output.slice(0, 9);
+}
+
 function buildLessonFromPlainText(rawText = '', body = {}, sourceText = '') {
   const blocks = splitPlainLessonIntoBlocks(rawText);
   const sourcePreview = firstSentences(sourceText, 3);
@@ -156,21 +229,21 @@ function buildLessonFromPlainText(rawText = '', body = {}, sourceText = '') {
 
   for (const block of blocks) {
     const heading = stripMarkdownMarks(block.heading);
-    const text = cleanText(block.text.join('\n'));
+    const text = normalizeSectionText(block.text.join('\n'));
     if (!heading && !shortIntro && text) { shortIntro = firstSentences(text, 2); continue; }
     if (!title && heading && !/öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla/i.test(heading)) {
-      title = heading;
+      title = normalizeLessonTitle(heading);
       if (text && !shortIntro) shortIntro = firstSentences(text, 2);
       continue;
     }
     if (/öğrenme hedefleri/i.test(heading)) {
-      learningObjectives = listItemsFromBlockText(block.text.join('\n'));
+      learningObjectives = uniqueStringList(listItemsFromBlockText(block.text.join('\n')), 10);
       if (!learningObjectives.length && text) learningObjectives = [firstSentences(text, 1)];
       continue;
     }
     if (/büyük resim/i.test(heading)) { bigPicture = text; continue; }
-    if (/can alıcı noktalar/i.test(heading)) { highYieldPoints = listItemsFromBlockText(block.text.join('\n')); continue; }
-    if (/mutlaka hatırla/i.test(heading)) { mustKnow = listItemsFromBlockText(block.text.join('\n')); continue; }
+    if (/can alıcı noktalar/i.test(heading)) { highYieldPoints = uniqueStringList(listItemsFromBlockText(block.text.join('\n')), 10); continue; }
+    if (/mutlaka hatırla/i.test(heading)) { mustKnow = uniqueStringList(listItemsFromBlockText(block.text.join('\n')), 8); continue; }
     if (heading || text) {
       sections.push({
         heading: heading || `Ana bölüm ${sections.length + 1}`,
@@ -184,29 +257,31 @@ function buildLessonFromPlainText(rawText = '', body = {}, sourceText = '') {
     }
   }
 
+  const cleanedSections = mergeCompactSections(sections);
   if (!title) title = 'Komite Ders Anlatımı';
+  title = normalizeLessonTitle(title);
   if (!shortIntro) shortIntro = firstSentences(rawText, 2) || sourcePreview || 'Bu ders anlatımı, yüklenen kaynak metinden hazırlanmıştır.';
   if (!bigPicture) {
-    const firstUseful = sections.map((section) => section.teachingText).find((text) => text && text.length > 80);
+    const firstUseful = cleanedSections.map((section) => section.teachingText).find((text) => text && text.length > 80);
     bigPicture = firstSentences(firstUseful || rawText || sourcePreview, 4);
   }
   if (!learningObjectives.length) {
     learningObjectives = ['Kaynak metindeki ana kavramları mantıklı bir sırayla açıklayabilmek.', 'Temel ilişkileri ve ayırt edici noktaları çalışma sırasında kullanabilmek.'];
   }
-  if (!sections.length) {
-    sections.push({ heading: 'Kaynak metnin ana anlatımı', teachingText: cleanText(rawText) || sourcePreview, mechanismFlow: [], examAngle: '', commonTrap: '', whyItMatters: '', sourceReferences: [] });
+  if (!cleanedSections.length) {
+    cleanedSections.push({ heading: 'Kaynak metnin ana anlatımı', teachingText: cleanText(rawText) || sourcePreview, mechanismFlow: [], examAngle: '', commonTrap: '', whyItMatters: '', sourceReferences: [] });
   }
-  if (!highYieldPoints.length) highYieldPoints = sections.slice(0, 5).map((section) => firstSentences(section.teachingText, 1)).filter(Boolean);
+  if (!highYieldPoints.length) highYieldPoints = uniqueStringList(cleanedSections.slice(0, 5).map((section) => firstSentences(section.teachingText, 1)), 8);
   if (!mustKnow.length) mustKnow = highYieldPoints.slice(0, 6);
 
   return sanitizeLessonOutput({
     title,
     shortIntro,
     overview: shortIntro,
-    learningObjectives,
+    learningObjectives: uniqueStringList(learningObjectives, 10),
     bigPicture,
-    mainConcepts: sections.slice(0, 8).map((section) => section.heading).filter(Boolean),
-    sections,
+    mainConcepts: cleanedSections.slice(0, 7).map((section) => section.heading).filter(Boolean),
+    sections: cleanedSections,
     visualNotes: [],
     figureExplanations: [],
     clinicalExamRelevance: '',
@@ -216,6 +291,7 @@ function buildLessonFromPlainText(rawText = '', body = {}, sourceText = '') {
     limitations: [],
   }, body);
 }
+
 
 function sanitizeLessonOutput(lesson = {}, body = {}) {
   const rawSections = Array.isArray(lesson.sections) && lesson.sections.length

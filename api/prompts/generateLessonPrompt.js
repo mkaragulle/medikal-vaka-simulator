@@ -6,12 +6,14 @@ export function buildGenerateLessonPrompt({ sourceTextChunks = '' } = {}) {
   return `Aşağıdaki kaynak metni okuyup profesyonel, açık ve çalışılabilir bir Türkçe konu anlatımına dönüştür.
 
 İstenen çıktı:
-- Kısa ve akademik bir başlık yaz.
+- Markdown kullan.
+- En üstte tek bir kısa akademik başlık yaz.
 - Ardından 1 kısa giriş paragrafı yaz.
-- "Öğrenme hedefleri" başlığı altında gerçek çalışma hedefleri yaz.
-- "Büyük resim" başlığı altında konunun ana mantığını açıkla.
-- Sonra ana konuları mantıklı sırayla başlıklandırarak anlat.
-- En sonda "Can alıcı noktalar" ve "Mutlaka hatırla" bölümlerini ekle.
+- "## Öğrenme hedefleri" başlığı altında gerçek çalışma hedefleri yaz.
+- "## Büyük resim" başlığı altında konunun ana mantığını açıkla.
+- Sonra yalnızca 5-8 ana başlığı "##" ile ver ve her başlığı açıklayıcı paragraflarla anlat.
+- İşlem adımları, alt maddeler ve kısa cümleler ayrı başlık yapılmamalı; ilgili ana başlığın içinde madde işareti olarak kalmalı.
+- En sonda "## Can alıcı noktalar" ve "## Mutlaka hatırla" bölümlerini ekle.
 
 Kurallar:
 - Sadece aşağıdaki kaynak metni kullan.

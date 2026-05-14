@@ -1170,7 +1170,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
             <strong>Hızlı erişim</strong>
             <a href="#komite-objectives">Öğrenme hedefleri</a>
             <a href="#komite-big-picture">Büyük resim</a>
-            {sectionAnchors.map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
+            {sectionAnchors.slice(0, 7).map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
             <a href="#komite-high-yield">Can alıcı noktalar</a>
           </div>
         </aside>

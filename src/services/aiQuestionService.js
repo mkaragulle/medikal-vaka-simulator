@@ -83,7 +83,7 @@ async function fetchOneRemoteQuestion({ previousQuestionId, branchFilter, diffic
       serverError: payload.error || null,
     };
 
-    if (isTooSimilarToRecent(normalized, context.recentQuestionSummaries || [])) {
+    if (!isFallback && isTooSimilarToRecent(normalized, context.recentQuestionSummaries || [])) {
       throw new Error('Yakın geçmişteki sorulara çok benzer üretim reddedildi.');
     }
 
@@ -146,12 +146,12 @@ export async function createAIQuestion({ previousQuestionId = null, branchFilter
     const remote = await requestRemoteQuestion({ previousQuestionId, branchFilter, difficulty, context });
     if (remote?.ok) return remote;
   } catch (error) {
-    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() !== 'true') {
+    if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'true').toLowerCase() !== 'true') {
       return { ok: false, question: null, source: 'openai-error', usedRemoteAI: false, fallback: false, error };
     }
     return createClientFallback({ branchFilter, difficulty, context, reason: error });
   }
-  if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'false').toLowerCase() === 'true') {
+  if (String(runtimeEnv.VITE_AI_ENABLE_CLIENT_FALLBACK ?? 'true').toLowerCase() === 'true') {
     return createClientFallback({ branchFilter, difficulty, context, reason: null });
   }
   return { ok: false, question: null, source: 'openai-unavailable', usedRemoteAI: false, fallback: false, error: new Error('AI servisi kullanılamıyor.') };

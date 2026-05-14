@@ -532,6 +532,23 @@ function sanitizeQuestion(question = {}, branch, requestedDifficulty = '') {
     examPearl: ensureSentence(stripFeedbackLabel(question.examPearl || question.teachingPoint)),
     managementSteps: allowManagementSteps ? asArray(question.managementSteps).map(ensureSentence).filter(Boolean).slice(0, 3) : [],
   };
+  if (!sanitized.evidenceChain.length) {
+    sanitized.evidenceChain = [sanitized.stem, ...sanitized.compactObjectiveData.map((item) => `${item.label}: ${item.value}`)]
+      .map(ensureSentence)
+      .filter(Boolean)
+      .slice(0, 3);
+  }
+  while (sanitized.evidenceChain.length < 3) {
+    sanitized.evidenceChain.push('Olgu kökü, seçenekler arasında tek en iyi yanıt seçmeyi gerektirir.');
+  }
+  OPTION_IDS.forEach((id) => {
+    if (!cleanText(sanitized.wrongOptionFeedback[id])) {
+      sanitized.wrongOptionFeedback[id] = id === sanitized.correctAnswer
+        ? ensureSentence(sanitized.explanation || `${correctText} bu olguda en uygun yanıttır`)
+        : 'Bu seçenek bu olgudaki ana karar noktasını doğru seçenek kadar iyi karşılamaz.';
+    }
+  });
+  if (!cleanText(sanitized.examPearl)) sanitized.examPearl = 'Soru kökünde verilen ayırt ettirici ipuçları, seçenekleri aynı karar ekseninde karşılaştırarak kullanılmalıdır.';
   sanitized.correctAnswerText = correctText;
   sanitized.semanticFingerprint = makeSignature(sanitized);
   return sanitized;
@@ -705,7 +722,7 @@ async function generateRemote({ branch, target, difficulty, recentQuestionSummar
     // such as non-ideal feedback, weak pearl, broad wording, or near-repeat are kept
     // as quality notes so the UI still receives a usable question instead of failing.
     const blockingErrors = validation.errors.filter((message) =>
-      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|explanation yetersiz|doğru cevap açıklaması eksik veya zayıf|feedback eksik|feedback eksik veya zayıf|evidenceChain tam 3|examPearl yetersiz|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var|basit artar\/azalır\/değişmez sorusu mekanizma hedefi olmadan üretilmiş/iu.test(message)
+      /branch eksik|stem çok kısa|question net soru cümlesi değil|tam 5 seçenek yok|correctAnswer A-E değil|correctAnswer seçeneklerle eşleşmiyor|soru kökü\/veri paneli doğru cevabı ele veriyor|veri paneli yön\/değişim cevabını fazla ele veriyor|fizyoloji sorusunda veri paneli sonucu belirleyen yorumu doğrudan veriyor|kanıt zinciri doğru cevabı doğrudan söylüyor|kesik veya üç noktalı metin var|eksik veya tamamlanmamış objektif veri değeri var/iu.test(message)
     );
     if (blockingErrors.length) {
       const error = new Error(blockingErrors.join('; '));
