@@ -3,10 +3,12 @@ import { ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, buildAnalyzeUploadedMaterialPr
 
 
 function sourceTextFromMaterialPacket(packet = {}) {
-  const files = Array.isArray(packet.files) ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim()) : [];
+  const files = Array.isArray(packet.files)
+    ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    : [];
   return files.map((file, index) => {
     const text = String(file.cleanedExtractedText || file.text || '').trim();
-    return `[[FILE ${index + 1}]]\nfileName: ${file.fileName || file.name || 'Materyal'}\nfileType: ${file.fileType || file.type || ''}\ncleanedExtractedText:\n${text}`;
+    return `=== DOSYA ${index + 1} METNİ ===\n${text}`;
   }).join('\n\n').trim();
 }
 

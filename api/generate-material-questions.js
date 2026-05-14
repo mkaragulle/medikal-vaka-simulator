@@ -3,10 +3,12 @@ import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestio
 
 
 function sourceTextFromMaterialPacket(packet = {}) {
-  const files = Array.isArray(packet.files) ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim()) : [];
+  const files = Array.isArray(packet.files)
+    ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    : [];
   return files.map((file, index) => {
     const text = String(file.cleanedExtractedText || file.text || '').trim();
-    return `[[FILE ${index + 1}]]\nfileName: ${file.fileName || file.name || 'Materyal'}\nfileType: ${file.fileType || file.type || ''}\ncleanedExtractedText:\n${text}`;
+    return `=== DOSYA ${index + 1} METNİ ===\n${text}`;
   }).join('\n\n').trim();
 }
 
@@ -32,7 +34,7 @@ export default async function handler(request, response) {
     if (!validation.ok) {
       const retryPrompt = `${prompt}
 
-QUALITY GATE FAILED. Regenerate once and fix these issues before returning JSON:
+The previous JSON did not match the required schema. Return valid JSON using only the same provided source text. Issues:
 ${validation.errors.join('\n')}`;
       result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: retryPrompt, maxTokens: 5200, temperature: 0.15 });
       validation = validateQuestionsShape(result.json);

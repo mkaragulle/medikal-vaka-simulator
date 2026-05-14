@@ -1,30 +1,17 @@
 import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPrompt.js';
 
-export const GENERATE_FLASHCARDS_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIONAL_PROMPT}
+export const GENERATE_FLASHCARDS_SYSTEM_PROMPT = KOMITE_GLOBAL_EDUCATIONAL_PROMPT;
 
-Return only valid JSON using the existing flashcard deck schema. Create active-recall cards only. Preserve the schema exactly; improve the educational quality inside each field. The current material packet is the only source of truth; never reuse prior workspace content.`;
+export function buildGenerateFlashcardsPrompt({ sourceTextChunks = '', materialId = '', generatedLessonJson = {} } = {}) {
+  return `Aşağıdaki mevcut kaynak metinden kaliteli aktif hatırlama kartları üret. Sadece kaynak metni kullan; eski oturum, metadata, örnek konu veya dosya adı kullanma.
 
-export function buildGenerateFlashcardsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {}, materialPacket = {}, sourceTextChunks = '', materialId = '', sourceManifest = {} } = {}) {
-  return `Create 12-20 high-quality active recall flashcards from the understood material. If the source is weak, create at least 8 but do not create nonsense cards. Cards must test concepts, mechanisms, comparisons, classifications, visual/table clues and exam traps when supported.
+Kaynak metin:
+${sourceTextChunks || 'Okunabilir kaynak metin yok.'}
 
-Context:
-${JSON.stringify(studyContext || {}, null, 2)}
-
-Material analysis:
-${JSON.stringify(materialAnalysisJson || {}, null, 2)}
-
-Current active sourceManifest:
-${JSON.stringify(sourceManifest || {}, null, 2)}
-
-Current material packet and source excerpts for source isolation:
-${JSON.stringify(materialPacket || {}, null, 2)}
-
-${sourceTextChunks || 'No readable source text was provided.'}
-
-Lesson compact JSON:
+Varsa mevcut ders özeti:
 ${JSON.stringify(generatedLessonJson || {}, null, 2)}
 
-Return only:
+JSON şeması:
 {
   "deck": {
     "id": "",
@@ -36,14 +23,10 @@ Return only:
   }
 }
 
-Rules:
-- Front must be a real active recall question, not “Materyalde geçen...” or “Bu bilgi neyi hatırlatır?”.
-- Cards must be grounded in the current sourceManifest, current material packet and generated lesson only; remove any concept that belongs to a previous workspace.
-- Back must be short and direct.
-- Explanation teaches the logic in 1-3 concise sentences.
-- Transform slide information into exam retrieval; do not paste long quoted sentences.
-- Avoid low-value etymology or empty definition cards.
-- Include card types across definition, mechanism, comparison, clinical clue, exam trap, visual/table clue if supported, treatment/approach if supported.
-- Clean deckTitle; never use raw meaningless filenames such as “das Hap Kartları”.
-- Do not write “Bu kart materyalden...” or any self-referential/meta explanation.`;
+Kurallar:
+- front gerçek bir aktif hatırlama sorusu olsun.
+- back kısa ama tam cevap olsun.
+- explanation 1-3 cümlelik öğretici açıklama olsun.
+- Ham kaynak etiketi, dosya adı, JSON alan adı veya OCR kırıntısı yazma.
+- Sadece JSON döndür.`;
 }

@@ -5,10 +5,12 @@ import { GENERATE_LESSON_SYSTEM_PROMPT, buildGenerateLessonPrompt } from './prom
 
 
 function sourceTextFromMaterialPacket(packet = {}) {
-  const files = Array.isArray(packet.files) ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim()) : [];
+  const files = Array.isArray(packet.files)
+    ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    : [];
   return files.map((file, index) => {
     const text = String(file.cleanedExtractedText || file.text || '').trim();
-    return `[[FILE ${index + 1}]]\nfileName: ${file.fileName || file.name || 'Materyal'}\nfileType: ${file.fileType || file.type || ''}\ncleanedExtractedText:\n${text}`;
+    return `=== DOSYA ${index + 1} METNİ ===\n${text}`;
   }).join('\n\n').trim();
 }
 
@@ -89,7 +91,7 @@ function buildLessonBigPictureFallback(lesson = {}) {
   add(lesson.clinicalExamRelevance || lesson.clinicalOrExamRelevance || lesson.examRelevance);
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
   sections.slice(0, 3).forEach((section) => add(section.teachingText || section.content || section.whyItMatters));
-  return parts.join('\n\n').trim() || 'Bu ders, mevcut yükleme batchindeki okunabilir dosya metinlerinden çıkarılan ana kavramları bütünlüklü bir öğrenme akışı içinde açıklar. Sistem eski oturum, cache veya önceki AI çıktılarından içerik almaz; yalnızca aktif materialPacket.files içeriğini kaynak kabul eder.';
+  return parts.join('\n\n').trim() || 'Bu ders, verilen metindeki ana kavramları bütünlüklü bir öğrenme akışı içinde açıklar. Eksik veya okunamayan alanlar kesin bilgi gibi tamamlanmaz.';
 }
 
 function sanitizeLessonOutput(lesson = {}) {
@@ -159,7 +161,7 @@ export default async function handler(request, response) {
     let validation = validateLessonShape(result.json, { filesUploadedCount });
 
     if (!validation.ok) {
-      const retryPrompt = `${prompt}\n\nQUALITY GATE FAILED. Regenerate once and fix these issues before returning JSON. If the issue is shallow lesson sections, rewrite every section with detailed teachingText paragraphs without artificial word-count ceilings that include definition, mechanism/logic, relation to the broader topic and why it matters:\n${validation.errors.join('\n')}`;
+      const retryPrompt = `${prompt}\n\nThe previous JSON did not match the required schema. Return the same output again as valid JSON, using only the same provided source text. Issues:\n${validation.errors.join('\n')}`;
       result = await callOpenAIJson({
         systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT,
         userPrompt: retryPrompt,
