@@ -7,12 +7,12 @@ export function buildGenerateLessonPrompt({ sourceTextChunks = '' } = {}) {
 
 İstenen çıktı:
 - Markdown kullan.
-- En üstte tek bir kısa akademik başlık yaz.
+- En üstte dosya adından bağımsız, kısa ve akademik bir başlık yaz.
 - Ardından 1 kısa giriş paragrafı yaz.
 - "## Öğrenme hedefleri" başlığı altında gerçek çalışma hedefleri yaz.
 - "## Büyük resim" başlığı altında konunun ana mantığını açıkla.
 - Sonra yalnızca 5-8 ana başlığı "##" ile ver ve her başlığı açıklayıcı paragraflarla anlat.
-- İşlem adımları, alt maddeler ve kısa cümleler ayrı başlık yapılmamalı; ilgili ana başlığın içinde madde işareti olarak kalmalı.
+- İşlem adımları, alt maddeler, örnekler ve kısa cümleler ayrı ana başlık yapılmamalı; ilgili ana başlığın içinde madde işareti olarak kalmalı.
 - En sonda "## Can alıcı noktalar" ve "## Mutlaka hatırla" bölümlerini ekle.
 
 Kurallar:
@@ -22,6 +22,7 @@ Kurallar:
 - Metni aynen kopyalama; anlamı koruyarak açık ve öğretici biçimde yeniden anlat.
 - Gereksiz uzatma; fakat ana kavramları, ilişkileri, ayrımları ve sınav için önemli noktaları eksik bırakma.
 - Kaynakta açıkça desteklenmeyen ayrıntıları kesin bilgi gibi ekleme.
+- Başlık ve ara başlıklar kavramsal olmalı; dosya adı, sayfa bilgisi, metin türü veya yükleme bilgisi başlık olarak kullanılmamalı.
 
 Kaynak metin:
 ${sourceTextChunks || 'Okunabilir metin yok.'}`;

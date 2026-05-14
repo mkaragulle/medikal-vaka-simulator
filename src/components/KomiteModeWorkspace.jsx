@@ -229,21 +229,27 @@ function createLessonAnchorId(text = '', index = 0) {
 }
 
 function splitReadableParagraphs(text = '') {
-  const clean = String(text || '').replace(/\s+/g, ' ').trim();
+  const clean = String(text || '').replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
   if (!clean) return [];
-  if (clean.length < 900) return [clean];
-  const sentences = clean.match(/[^.!?]+[.!?]+(?:\s|$)|[^.!?]+$/g)?.map((item) => item.trim()).filter(Boolean) || [clean];
+  const chunks = clean.split(/\n\s*\n/u).map((item) => item.trim()).filter(Boolean);
   const paragraphs = [];
-  let current = '';
-  sentences.forEach((sentence) => {
-    if ((current + ' ' + sentence).trim().length > 620 && current.length > 240) {
-      paragraphs.push(current.trim());
-      current = sentence;
-    } else {
-      current = `${current} ${sentence}`.trim();
+  chunks.forEach((chunk) => {
+    if (chunk.length < 900) {
+      paragraphs.push(chunk);
+      return;
     }
+    const sentences = chunk.match(/[^.!?]+[.!?]+(?:\s|$)|[^.!?]+$/g)?.map((item) => item.trim()).filter(Boolean) || [chunk];
+    let current = '';
+    sentences.forEach((sentence) => {
+      if ((current + ' ' + sentence).trim().length > 620 && current.length > 240) {
+        paragraphs.push(current.trim());
+        current = sentence;
+      } else {
+        current = `${current} ${sentence}`.trim();
+      }
+    });
+    if (current) paragraphs.push(current.trim());
   });
-  if (current) paragraphs.push(current.trim());
   return paragraphs;
 }
 
@@ -255,8 +261,57 @@ function sanitizeTeachingTextForDisplay(text = '') {
     .replace(/\b(?:fileName|fileType|charCount|cleanedExtractedText|sourceManifest|sourceFingerprint|materialPacket|sourceTextChunks|extractedTextOrChunks|uploadBatchId)\s*:?/giu, ' ')
     .replace(/\b\S+\.(?:pdf|pptx|ppt|docx|txt)\b/giu, ' ')
     .replace(/\b(?:slayt|sayfa)\s*\d+\b/giu, ' ')
-    .replace(/\s+/g, ' ')
+    .replace(/[ \t]+/g, ' ')
+    .replace(/\n{3,}/g, '\n\n')
     .trim();
+}
+
+function splitInlineListMarkers(text = '') {
+  return String(text || '')
+    .replace(/:\s+-\s+/gu, ':\n- ')
+    .replace(/\s+-\s+(?=[A-ZÇĞİÖŞÜ0-9])/gu, '\n- ')
+    .replace(/\s+•\s+/gu, '\n- ');
+}
+
+function lessonTextBlocks(text = '') {
+  const prepared = splitInlineListMarkers(sanitizeTeachingTextForDisplay(text));
+  const lines = prepared.split(/\n+/u).map((line) => line.trim()).filter(Boolean);
+  const blocks = [];
+  let paragraph = [];
+  let list = [];
+  const flushParagraph = () => {
+    if (!paragraph.length) return;
+    splitReadableParagraphs(paragraph.join(' ')).forEach((item) => blocks.push({ type: 'p', text: item }));
+    paragraph = [];
+  };
+  const flushList = () => {
+    if (!list.length) return;
+    blocks.push({ type: 'ul', items: list });
+    list = [];
+  };
+  lines.forEach((line) => {
+    const bullet = line.match(/^(?:[-*•]|\d+[.)])\s+(.+)$/u)?.[1];
+    if (bullet) {
+      flushParagraph();
+      const clean = sanitizeTeachingTextForDisplay(bullet).replace(/[.;:]?$/u, '').trim();
+      if (clean) list.push(clean);
+      return;
+    }
+    flushList();
+    paragraph.push(line);
+  });
+  flushParagraph();
+  flushList();
+  return blocks;
+}
+
+function LessonText({ text }) {
+  return lessonTextBlocks(text).map((block, index) => {
+    if (block.type === 'ul') {
+      return <ul key={`list-${index}`}>{block.items.map((item, itemIndex) => <li key={`${item}-${itemIndex}`}>{item}</li>)}</ul>;
+    }
+    return <p key={`p-${index}`}>{block.text}</p>;
+  });
 }
 
 function sentenceFromFlowStep(step = '') {
@@ -670,10 +725,12 @@ function inferTitleFromTopicProfile() {
 function inferAcademicTitle(material = {}, packet = null) {
   if (material.inferredTitle) return material.inferredTitle;
   if (material.lesson?.inferredTitle) return material.lesson.inferredTitle;
-  const base = String(material.course || material.committee || cleanMaterialTitle(material) || 'Komite Materyali')
+  const lessonTitle = String(material.lesson?.title || material.lesson?.academicTitle || '').trim();
+  const base = String(lessonTitle || material.course || material.committee || cleanMaterialTitle(material) || 'Komite Materyali')
     .replace(/\.[a-z0-9]+$/i, '')
     .replace(/^\s*\d+[.)-]?\s*/u, '')
-    .replace(/\b(pptx|pdf|docx|txt|slayt|sayfa|prof\.?|dr\.?)\b/giu, '')
+    .replace(/\b(pptx|pdf|docx|txt|slayt|sayfa|prof\.?|dr\.?|file|document|manual|pure\s+text|text\s+only|one\s+page|two\s+page|three\s+page|\d+\s*page)\b/giu, '')
+    .replace(/\s*\(\s*\d+\s*\)\s*$/u, '')
     .replace(/[_-]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
@@ -1147,7 +1204,9 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
   }
 
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
-  const sectionAnchors = sections.map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }));
+  const sectionAnchors = sections
+    .map((section, index) => ({ id: createLessonAnchorId(section.heading, index), title: section.heading || `Bölüm ${index + 1}` }))
+    .filter((item) => item.title && !/^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)$/iu.test(item.title));
   const objectives = lesson.learningObjectives || [];
   const concepts = Array.isArray(lesson.mainConcepts)
     ? lesson.mainConcepts.filter((item) => !/materyaldeki ilişkili kavram|slayt|sayfa|dosya|pptx/iu.test(String(item)))
@@ -1168,10 +1227,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
         <aside className="komite-lesson-sidebar" aria-label="Ders navigasyonu">
           <div className="komite-sidebar-card">
             <strong>Hızlı erişim</strong>
-            <a href="#komite-objectives">Öğrenme hedefleri</a>
-            <a href="#komite-big-picture">Büyük resim</a>
-            {sectionAnchors.slice(0, 7).map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
-            <a href="#komite-high-yield">Can alıcı noktalar</a>
+            {sectionAnchors.slice(0, 8).map((item) => <a href={`#${item.id}`} key={item.id}>{item.title}</a>)}
           </div>
         </aside>
 
@@ -1184,7 +1240,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
           {(lesson.bigPicture || lesson.overview) ? (
             <article id="komite-big-picture" className="komite-lesson-section komite-big-picture-section">
               <h3>Büyük resim</h3>
-              {splitReadableParagraphs(sanitizeTeachingTextForDisplay(lesson.bigPicture || lesson.overview)).map((paragraph, index) => <p key={index}>{paragraph}</p>)}
+              <LessonText text={lesson.bigPicture || lesson.overview} />
             </article>
           ) : null}
 
@@ -1212,7 +1268,7 @@ function LessonView({ material, onGenerate, status = 'idle' }) {
                 <div className="komite-section-index">{String(index + 1).padStart(2, '0')}</div>
                 <div className="komite-section-body">
                   <h3>{section.heading}</h3>
-                  {splitReadableParagraphs(teachingText).map((paragraph, paragraphIndex) => <p key={paragraphIndex}>{paragraph}</p>)}
+                  <LessonText text={teachingText} />
                   {(formatMechanismSteps(section.mechanismFlow).length || section.examAngle || section.commonTrap || section.clinicalConnection || section.examConnection) ? (
                     <div className="komite-note-lines">
                       {formatMechanismSteps(section.mechanismFlow).length ? (
