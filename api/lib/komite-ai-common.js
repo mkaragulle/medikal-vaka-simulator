@@ -136,16 +136,31 @@ function extractChatText(data) {
   return '';
 }
 
+function extractTextValue(value) {
+  if (!value) return '';
+  if (typeof value === 'string') return value;
+  if (typeof value?.text === 'string') return value.text;
+  if (typeof value?.value === 'string') return value.value;
+  if (typeof value?.content === 'string') return value.content;
+  if (Array.isArray(value)) return value.map(extractTextValue).filter(Boolean).join('\n');
+  if (typeof value === 'object') {
+    const nested = [value.output_text, value.text, value.value, value.content, value.message];
+    return nested.map(extractTextValue).filter(Boolean).join('\n');
+  }
+  return '';
+}
+
 function extractResponsesText(data) {
-  if (typeof data?.output_text === 'string') return data.output_text;
+  const direct = extractTextValue(data?.output_text);
+  if (direct) return direct;
   const parts = [];
   for (const item of data?.output || []) {
-    for (const content of item?.content || []) {
-      if (content?.type === 'output_text' && content?.text) parts.push(content.text);
-      if (content?.type === 'text' && content?.text) parts.push(content.text);
-    }
+    const itemText = extractTextValue(item?.content);
+    if (itemText) parts.push(itemText);
+    const messageText = extractTextValue(item?.message);
+    if (messageText) parts.push(messageText);
   }
-  return parts.join('\n');
+  return parts.filter(Boolean).join('\n');
 }
 
 function firstEnv(...keys) {
@@ -213,6 +228,39 @@ function buildResponsesBody({ model, systemPrompt, userPrompt, jsonSchema, effec
     max_output_tokens: effectiveMaxTokens,
     text: {
       format: toResponsesTextFormat(jsonSchema),
+      verbosity: /^(low|medium|high)$/i.test(verbosity || '') ? verbosity.toLowerCase() : 'medium',
+    },
+    truncation: 'auto',
+  };
+  if (supportsReasoningEffort(model) && reasoningEffort) {
+    body.reasoning = { effort: normalizeReasoningEffort(reasoningEffort) };
+  }
+  return body;
+}
+
+
+function buildChatTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort }) {
+  const body = {
+    model,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ],
+    max_completion_tokens: effectiveMaxTokens,
+  };
+  if (supportsReasoningEffort(model) && reasoningEffort) {
+    body.reasoning_effort = normalizeReasoningEffort(reasoningEffort);
+  }
+  return body;
+}
+
+function buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity }) {
+  const body = {
+    model,
+    instructions: systemPrompt,
+    input: userPrompt,
+    max_output_tokens: effectiveMaxTokens,
+    text: {
       verbosity: /^(low|medium|high)$/i.test(verbosity || '') ? verbosity.toLowerCase() : 'medium',
     },
     truncation: 'auto',
@@ -301,6 +349,76 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
     const data = await response.json();
     const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
     return { json: parseOpenAIJsonOrThrow(text, data), model: data.model || model, apiStyle: useResponses ? 'responses' : 'chat_completions' };
+  } catch (error) {
+    if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
+      const timeoutError = new Error('AI yanıtı belirtilen süre içinde tamamlanamadı. Dosya metni korunuyor; daha hızlı bir KOMITE modeli seçin, KOMITE zaman aşımı değerini artırın veya çok büyük dosyada kaynak uzunluğu limitini düşürün.');
+      timeoutError.code = 'ai_timeout';
+      timeoutError.status = 504;
+      throw timeoutError;
+    }
+    throw error;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+
+export async function callOpenAIText({ systemPrompt, userPrompt, maxTokens = 3000, scope = 'KOMITE' } = {}) {
+  const envPrefix = String(scope || 'KOMITE').toUpperCase();
+  const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
+  if (!apiKey) {
+    const error = new Error(`${envPrefix}_OPENAI_API_KEY or OPENAI_API_KEY is not configured`);
+    error.code = 'missing_api_key';
+    throw error;
+  }
+
+  const provider = firstEnv(`${envPrefix}_AI_PROVIDER`, 'AI_PROVIDER') || 'openai';
+  if (provider !== 'openai') {
+    const error = new Error(`Unsupported AI provider for ${envPrefix}: ${provider}`);
+    error.code = 'unsupported_provider';
+    throw error;
+  }
+
+  const model = firstEnv(`${envPrefix}_OPENAI_MODEL`, 'OPENAI_MODEL') || 'gpt-4.1-mini';
+  const baseUrl = (firstEnv(`${envPrefix}_OPENAI_BASE_URL`, 'OPENAI_BASE_URL') || 'https://api.openai.com/v1').replace(/\/$/, '');
+  const timeoutMs = firstNumber(240_000, `${envPrefix}_AI_TIMEOUT_MS`, `${envPrefix}_OPENAI_TIMEOUT_MS`, 'AI_TIMEOUT_MS');
+  const effectiveMaxTokens = firstNumber(maxTokens, `${envPrefix}_OPENAI_MAX_OUTPUT_TOKENS`);
+  const apiStyle = firstEnv(`${envPrefix}_OPENAI_API_STYLE`, 'OPENAI_API_STYLE');
+  const useResponses = wantsResponsesApi(model, apiStyle);
+  const rawReasoningEffort = firstEnv(`${envPrefix}_OPENAI_REASONING_EFFORT`, `${envPrefix}_REASONING_EFFORT`, 'OPENAI_REASONING_EFFORT') || (useResponses ? 'low' : '');
+  const reasoningEffort = rawReasoningEffort ? normalizeReasoningEffort(rawReasoningEffort) : '';
+  const verbosity = firstEnv(`${envPrefix}_OPENAI_VERBOSITY`, `${envPrefix}_AI_VERBOSITY`, 'OPENAI_VERBOSITY') || 'medium';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
+
+  try {
+    const url = useResponses ? `${baseUrl}/responses` : `${baseUrl}/chat/completions`;
+    const requestBody = useResponses
+      ? buildResponsesTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort, verbosity })
+      : buildChatTextBody({ model, systemPrompt, userPrompt, effectiveMaxTokens, reasoningEffort });
+    const response = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
+      signal: controller.signal,
+      body: JSON.stringify(requestBody),
+    });
+    if (!response.ok) {
+      const details = await response.text();
+      const error = new Error(`OpenAI ${response.status}: ${details.slice(0, 500)}`);
+      error.status = response.status;
+      throw error;
+    }
+    const data = await response.json();
+    const text = useResponses ? extractResponsesText(data) : (extractChatText(data) || extractResponsesText(data));
+    const cleanText = String(text || '').trim();
+    if (cleanText) {
+      return { text: cleanText, model: data.model || model, apiStyle: useResponses ? 'responses' : 'chat_completions', usage: data.usage || null, status: data.status || '' };
+    }
+    const error = new Error(describeIncompleteResponse(data));
+    error.code = 'ai_empty_output';
+    error.status = 502;
+    error.details = { status: data?.status || '', incompleteReason: data?.incomplete_details?.reason || '', usage: data?.usage || null };
+    throw error;
   } catch (error) {
     if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
       const timeoutError = new Error('AI yanıtı belirtilen süre içinde tamamlanamadı. Dosya metni korunuyor; daha hızlı bir KOMITE modeli seçin, KOMITE zaman aşımı değerini artırın veya çok büyük dosyada kaynak uzunluğu limitini düşürün.');

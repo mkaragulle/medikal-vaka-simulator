@@ -1,60 +1,7 @@
-import { sendJson, parseJsonBody, callOpenAIJson, validateLessonShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
+import { sendJson, parseJsonBody, callOpenAIText, validateLessonShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { GENERATE_LESSON_SYSTEM_PROMPT, buildGenerateLessonPrompt } from './prompts/generateLessonPrompt.js';
 
 
-const LESSON_JSON_SCHEMA = {
-  name: 'komite_lesson_response',
-  strict: true,
-  schema: {
-    type: 'object',
-    additionalProperties: false,
-    required: [
-      'title',
-      'shortIntro',
-      'learningObjectives',
-      'bigPicture',
-      'mainConcepts',
-      'sections',
-      'visualNotes',
-      'figureExplanations',
-      'clinicalExamRelevance',
-      'commonConfusions',
-      'highYieldPoints',
-      'mustKnow',
-      'limitations',
-    ],
-    properties: {
-      title: { type: 'string' },
-      shortIntro: { type: 'string' },
-      learningObjectives: { type: 'array', items: { type: 'string' } },
-      bigPicture: { type: 'string' },
-      mainConcepts: { type: 'array', items: { type: 'string' } },
-      sections: {
-        type: 'array',
-        items: {
-          type: 'object',
-          additionalProperties: false,
-          required: ['heading', 'teachingText', 'mechanismFlow', 'examAngle', 'commonTrap', 'whyItMatters'],
-          properties: {
-            heading: { type: 'string' },
-            teachingText: { type: 'string' },
-            mechanismFlow: { type: 'array', items: { type: 'string' } },
-            examAngle: { type: 'string' },
-            commonTrap: { type: 'string' },
-            whyItMatters: { type: 'string' },
-          },
-        },
-      },
-      visualNotes: { type: 'array', items: { type: 'string' } },
-      figureExplanations: { type: 'array', items: { type: 'string' } },
-      clinicalExamRelevance: { type: 'string' },
-      commonConfusions: { type: 'array', items: { type: 'string' } },
-      highYieldPoints: { type: 'array', items: { type: 'string' } },
-      mustKnow: { type: 'array', items: { type: 'string' } },
-      limitations: { type: 'array', items: { type: 'string' } },
-    },
-  },
-};
 
 function getPacketFiles(body = {}) {
   return Array.isArray(body.materialPacket?.files) ? body.materialPacket.files : [];
@@ -146,6 +93,130 @@ function buildBigPictureFallback(lesson = {}) {
   return parts.join('\n\n').trim() || 'Bu ders, verilen metindeki ana kavramları düzenli ve anlaşılır bir çalışma anlatımına dönüştürür.';
 }
 
+
+function stripMarkdownMarks(value = '') {
+  return cleanText(String(value || '')
+    .replace(/^#{1,6}\s*/u, '')
+    .replace(/^[-*+]\s+/u, '')
+    .replace(/^\d+[.)]\s+/u, '')
+    .replace(/\*\*/gu, '')
+    .trim());
+}
+
+function splitPlainLessonIntoBlocks(rawText = '') {
+  const text = String(rawText || '')
+    .replace(/```[\s\S]*?```/gu, (block) => block.replace(/```(?:markdown|md|text)?/giu, '').replace(/```/gu, ''))
+    .replace(/\r/g, '')
+    .trim();
+  const lines = text.split('\n').map((line) => line.trim()).filter(Boolean);
+  const blocks = [];
+  let current = null;
+  const pushCurrent = () => {
+    if (current && (current.heading || current.text.length)) blocks.push(current);
+    current = null;
+  };
+  const isHeading = (line) => /^#{1,4}\s+/.test(line) || /^(öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla)\b/i.test(line) || (/^\d{1,2}[.)]\s+/.test(line) && line.length < 90);
+  for (const line of lines) {
+    if (isHeading(line)) {
+      pushCurrent();
+      current = { heading: stripMarkdownMarks(line), text: [] };
+    } else {
+      if (!current) current = { heading: '', text: [] };
+      current.text.push(line);
+    }
+  }
+  pushCurrent();
+  return blocks;
+}
+
+function listItemsFromBlockText(value = '') {
+  return String(value || '')
+    .split(/\n|(?:^|\s)[•-]\s+/u)
+    .map((item) => stripMarkdownMarks(item))
+    .filter((item) => item.length > 8)
+    .slice(0, 12);
+}
+
+function firstSentences(value = '', limit = 2) {
+  const clean = cleanText(value);
+  const sentences = clean.split(/(?<=[.!?])\s+/u).filter(Boolean);
+  return (sentences.length ? sentences.slice(0, limit).join(' ') : clean).trim();
+}
+
+function buildLessonFromPlainText(rawText = '', body = {}, sourceText = '') {
+  const blocks = splitPlainLessonIntoBlocks(rawText);
+  const sourcePreview = firstSentences(sourceText, 3);
+  let title = '';
+  let shortIntro = '';
+  let bigPicture = '';
+  let learningObjectives = [];
+  let highYieldPoints = [];
+  let mustKnow = [];
+  const sections = [];
+
+  for (const block of blocks) {
+    const heading = stripMarkdownMarks(block.heading);
+    const text = cleanText(block.text.join('\n'));
+    if (!heading && !shortIntro && text) { shortIntro = firstSentences(text, 2); continue; }
+    if (!title && heading && !/öğrenme hedefleri|büyük resim|can alıcı noktalar|mutlaka hatırla/i.test(heading)) {
+      title = heading;
+      if (text && !shortIntro) shortIntro = firstSentences(text, 2);
+      continue;
+    }
+    if (/öğrenme hedefleri/i.test(heading)) {
+      learningObjectives = listItemsFromBlockText(block.text.join('\n'));
+      if (!learningObjectives.length && text) learningObjectives = [firstSentences(text, 1)];
+      continue;
+    }
+    if (/büyük resim/i.test(heading)) { bigPicture = text; continue; }
+    if (/can alıcı noktalar/i.test(heading)) { highYieldPoints = listItemsFromBlockText(block.text.join('\n')); continue; }
+    if (/mutlaka hatırla/i.test(heading)) { mustKnow = listItemsFromBlockText(block.text.join('\n')); continue; }
+    if (heading || text) {
+      sections.push({
+        heading: heading || `Ana bölüm ${sections.length + 1}`,
+        teachingText: text || heading,
+        mechanismFlow: [],
+        examAngle: '',
+        commonTrap: '',
+        whyItMatters: '',
+        sourceReferences: [],
+      });
+    }
+  }
+
+  if (!title) title = 'Komite Ders Anlatımı';
+  if (!shortIntro) shortIntro = firstSentences(rawText, 2) || sourcePreview || 'Bu ders anlatımı, yüklenen kaynak metinden hazırlanmıştır.';
+  if (!bigPicture) {
+    const firstUseful = sections.map((section) => section.teachingText).find((text) => text && text.length > 80);
+    bigPicture = firstSentences(firstUseful || rawText || sourcePreview, 4);
+  }
+  if (!learningObjectives.length) {
+    learningObjectives = ['Kaynak metindeki ana kavramları mantıklı bir sırayla açıklayabilmek.', 'Temel ilişkileri ve ayırt edici noktaları çalışma sırasında kullanabilmek.'];
+  }
+  if (!sections.length) {
+    sections.push({ heading: 'Kaynak metnin ana anlatımı', teachingText: cleanText(rawText) || sourcePreview, mechanismFlow: [], examAngle: '', commonTrap: '', whyItMatters: '', sourceReferences: [] });
+  }
+  if (!highYieldPoints.length) highYieldPoints = sections.slice(0, 5).map((section) => firstSentences(section.teachingText, 1)).filter(Boolean);
+  if (!mustKnow.length) mustKnow = highYieldPoints.slice(0, 6);
+
+  return sanitizeLessonOutput({
+    title,
+    shortIntro,
+    overview: shortIntro,
+    learningObjectives,
+    bigPicture,
+    mainConcepts: sections.slice(0, 8).map((section) => section.heading).filter(Boolean),
+    sections,
+    visualNotes: [],
+    figureExplanations: [],
+    clinicalExamRelevance: '',
+    commonConfusions: [],
+    highYieldPoints,
+    mustKnow,
+    limitations: [],
+  }, body);
+}
+
 function sanitizeLessonOutput(lesson = {}, body = {}) {
   const rawSections = Array.isArray(lesson.sections) && lesson.sections.length
     ? lesson.sections
@@ -202,15 +273,14 @@ export default async function handler(request, response) {
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
 
     const prompt = buildGenerateLessonPrompt({ sourceTextChunks: currentSourceText });
-    const result = await callOpenAIJson({
+    const result = await callOpenAIText({
       systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT,
       userPrompt: prompt,
       maxTokens: envNumber('KOMITE_LESSON_MAX_OUTPUT_TOKENS', 4800),
-      jsonSchema: LESSON_JSON_SCHEMA,
       scope: 'KOMITE',
     });
 
-    const lesson = sanitizeLessonOutput(result.json, body);
+    const lesson = buildLessonFromPlainText(result.text, body, currentSourceText);
     const validation = validateLessonShape(lesson, { filesUploadedCount: getTrueFileCount(body) });
     const responseValidation = validation.ok
       ? validation
