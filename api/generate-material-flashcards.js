@@ -1,15 +1,16 @@
 import { sendJson, parseJsonBody, callOpenAIJson, validateFlashcardsShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { GENERATE_FLASHCARDS_SYSTEM_PROMPT, buildGenerateFlashcardsPrompt } from './prompts/generateFlashcardsPrompt.js';
 
-
-function sourceTextFromMaterialPacket(packet = {}) {
+function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = 32000) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
-  return files
-    .map((file) => String(file.cleanedExtractedText || file.text || '').trim())
-    .join('\n\n')
-    .trim();
+  if (!files.length) return '';
+  const perFile = Math.max(4000, Math.floor(maxTotalChars / files.length));
+  return files.map((file) => {
+    const text = String(file.cleanedExtractedText || file.text || '').trim();
+    return text.length > perFile ? text.slice(0, perFile) : text;
+  }).join('\n\n').trim();
 }
 
 export default async function handler(request, response) {
@@ -21,30 +22,13 @@ export default async function handler(request, response) {
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {});
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
-    const prompt = buildGenerateFlashcardsPrompt({
-      studyContext: body.studyContext || body.context || {},
-      materialAnalysisJson: body.materialAnalysisJson || body.analysis || {},
-      generatedLessonJson: body.generatedLessonJson || body.lesson || {},
-      materialPacket: body.materialPacket || {},
-      sourceTextChunks: currentSourceText,
-      materialId: body.materialId || '',
-      sourceManifest: body.sourceManifest || body.studyContext?.sourceManifest || {},
-    });
-    let result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 4200, temperature: 0.25 });
-    let validation = validateFlashcardsShape(result.json);
-    if (!validation.ok) {
-      const retryPrompt = `${prompt}
-
-The previous JSON did not match the required schema. Return valid JSON using only the same provided source text. Issues:
-${validation.errors.join('\n')}`;
-      result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: retryPrompt, maxTokens: 4200, temperature: 0.15 });
-      validation = validateFlashcardsShape(result.json);
-    }
-    const responseValidation = validation.ok
-      ? validation
-      : { ok: true, warnings: validation.errors || [], note: 'Non-blocking flashcard normalization warnings.' };
-    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, deck: result.json.deck || result.json, validation: responseValidation });
+    const prompt = buildGenerateFlashcardsPrompt({ sourceTextChunks: currentSourceText, materialId: body.materialId || '' });
+    const result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 3000, temperature: 0.25 });
+    const deck = result.json.deck || result.json;
+    const validation = validateFlashcardsShape(deck);
+    const responseValidation = validation.ok ? validation : { ok: true, warnings: validation.errors || [], note: 'Non-blocking flashcard normalization warnings.' };
+    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, deck, validation: responseValidation });
   } catch (error) {
-    return sendJson(response, error.code === 'missing_api_key' ? 501 : 502, { ok: false, error: error.message });
+    return sendJson(response, error.code === 'missing_api_key' ? 501 : (error.status || 502), { ok: false, error: error.message });
   }
 }

@@ -1,15 +1,16 @@
 import { sendJson, parseJsonBody, callOpenAIJson, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, buildAnalyzeUploadedMaterialPrompt } from './prompts/analyzeUploadedMaterialPrompt.js';
 
-
-function sourceTextFromMaterialPacket(packet = {}) {
+function sourceTextFromMaterialPacket(packet = {}, maxTotalChars = 24000) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
-  return files
-    .map((file) => String(file.cleanedExtractedText || file.text || '').trim())
-    .join('\n\n')
-    .trim();
+  if (!files.length) return '';
+  const perFile = Math.max(3000, Math.floor(maxTotalChars / files.length));
+  return files.map((file) => {
+    const text = String(file.cleanedExtractedText || file.text || '').trim();
+    return text.length > perFile ? text.slice(0, perFile) : text;
+  }).join('\n\n').trim();
 }
 
 export default async function handler(request, response) {
@@ -21,16 +22,10 @@ export default async function handler(request, response) {
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
     const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {});
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
-    const prompt = buildAnalyzeUploadedMaterialPrompt({
-      metadata: body.metadata || body,
-      extractedTextOrChunks: currentSourceText,
-      detectedStructureOrFigures: body.detectedStructureOrFigures || body.figures || '',
-      materialPacket: body.materialPacket || {},
-      sourceManifest: body.sourceManifest || {},
-    });
-    const result = await callOpenAIJson({ systemPrompt: ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 2800, temperature: 0.15 });
+    const prompt = buildAnalyzeUploadedMaterialPrompt({ extractedTextOrChunks: currentSourceText });
+    const result = await callOpenAIJson({ systemPrompt: ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 1800, temperature: 0.15 });
     return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, analysis: result.json });
   } catch (error) {
-    return sendJson(response, error.code === 'missing_api_key' ? 501 : 502, { ok: false, error: error.message });
+    return sendJson(response, error.code === 'missing_api_key' ? 501 : (error.status || 502), { ok: false, error: error.message });
   }
 }

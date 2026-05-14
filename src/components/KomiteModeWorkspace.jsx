@@ -403,7 +403,7 @@ function combinedPacketToSourceText(packet = {}) {
     .trim();
 }
 
-function balancedPacketToSourceText(packet = {}, maxTotalChars = 64000) {
+function balancedPacketToSourceText(packet = {}, maxTotalChars = 36000) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
@@ -754,16 +754,24 @@ function normalizeGeneratedDeckShape(deck = {}, material = {}) {
 
 async function postKomiteAI(endpoint, payload) {
   if (typeof fetch !== 'function') throw new Error('Fetch is not available');
-  const response = await fetch(endpoint, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Cache-Control': 'no-store',
-      'X-KlinikIQ-Source-Fingerprint': payload?.sourceFingerprint || payload?.studyContext?.sourceFingerprint || '',
-    },
-    cache: 'no-store',
-    body: JSON.stringify(payload),
-  });
+  let response;
+  try {
+    response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Cache-Control': 'no-store',
+        'X-KlinikIQ-Source-Fingerprint': payload?.sourceFingerprint || payload?.studyContext?.sourceFingerprint || '',
+      },
+      cache: 'no-store',
+      body: JSON.stringify(payload),
+    });
+  } catch (error) {
+    if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
+      throw new Error('AI isteği zaman aşımına uğradı. Bu eski içerik kullanıldığı anlamına gelmez; istek tamamlanmadan kesildi. Lütfen tekrar deneyin.');
+    }
+    throw error;
+  }
   let json = null;
   try { json = await response.json(); } catch { json = null; }
   if (!response.ok || !json?.ok) throw new Error(json?.message || json?.error || `AI route failed: ${endpoint}`);
@@ -1453,22 +1461,11 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
 
     try {
       let nextPatch = {};
-      let analysis = material.materialAnalysis || {};
-
-      if (!material.materialAnalysis) {
-        try {
-          const analyzed = await postKomiteAI('/api/analyze-uploaded-material', {
-            metadata: { classYear: material.classYear, committeeOrCourse: material.committee || material.course, learningTarget: material.learningTarget, sourceFingerprint },
-            materialPacket,
-            extractedTextOrChunks: sourceText,
-            sourceFingerprint,
-            sourceManifest,
-          });
-          analysis = analyzed.analysis || {};
-        } catch {
-          analysis = {};
-        }
-      }
+      // Keep KOMITE generation fast and source-only. Do not make a separate
+      // analysis AI call before lesson/questions/cards; that extra network call
+      // can time out and surface as "This operation was aborted". The actual
+      // generation endpoints receive the current materialPacket directly.
+      const analysis = {};
 
       if (kind === 'lesson') {
         const generated = await postKomiteAI('/api/generate-lesson', {

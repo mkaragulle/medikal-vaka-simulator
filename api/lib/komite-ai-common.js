@@ -84,8 +84,9 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
     throw error;
   }
 
+  const timeoutMs = Number(process.env.AI_TIMEOUT_MS || 55_000);
   const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), Number(process.env.AI_TIMEOUT_MS || 45_000));
+  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -111,6 +112,14 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
     const data = await response.json();
     const text = extractChatText(data) || extractResponsesText(data);
     return { json: parseModelJson(text), model: data.model || model };
+  } catch (error) {
+    if (error?.name === 'AbortError' || /aborted/i.test(String(error?.message || ''))) {
+      const timeoutError = new Error('AI yanıtı zaman aşımına uğradı. Kaynak metin korundu; tekrar deneyin veya çok büyük dosyalarda dosyayı birkaç parçaya bölün.');
+      timeoutError.code = 'ai_timeout';
+      timeoutError.status = 504;
+      throw timeoutError;
+    }
+    throw error;
   } finally {
     clearTimeout(timeout);
   }
