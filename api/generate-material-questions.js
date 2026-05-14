@@ -10,6 +10,8 @@ export default async function handler(request, response) {
       studyContext: body.studyContext || body.context || {},
       materialAnalysisJson: body.materialAnalysisJson || body.analysis || {},
       generatedLessonJson: body.generatedLessonJson || body.lesson || {},
+      materialPacket: body.materialPacket || {},
+      sourceTextChunks: body.sourceTextChunks || body.extractedText || '',
     });
     let result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 5200, temperature: 0.25 });
     let validation = validateQuestionsShape(result.json);

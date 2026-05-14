@@ -10,6 +10,8 @@ export default async function handler(request, response) {
       studyContext: body.studyContext || body.context || {},
       materialAnalysisJson: body.materialAnalysisJson || body.analysis || {},
       generatedLessonJson: body.generatedLessonJson || body.lesson || {},
+      materialPacket: body.materialPacket || {},
+      sourceTextChunks: body.sourceTextChunks || body.extractedText || '',
       materialId: body.materialId || '',
     });
     let result = await callOpenAIJson({ systemPrompt: GENERATE_FLASHCARDS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 4200, temperature: 0.25 });

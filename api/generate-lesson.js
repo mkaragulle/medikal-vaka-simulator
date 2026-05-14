@@ -32,7 +32,8 @@ function getPacketTopicProfile(body = {}) {
   return {
     ketone: countPattern(text, /keton|ketogenez|ketoasidoz|asetoasetat|hidroksibütirat|hmg\s*koa|tioforaz|β[- ]?oksidasyon|karnitin|cpt\s*-?1/giu),
     fedFasting: countPattern(text, /açlık|tokluk|insülin|glukagon|glukoneogenez|glikojen|lipoliz|yağ dokusu|iskelet kası|beyin|karaciğer/giu),
-    hemePorphyria: countPattern(text, /hem\b|porfir|porfiri|ala\b|porfobilinojen|üroporfirinojen|koproporfirinojen|protoporfirin|ferroşelataz|alas\b|soret/giu),
+    hemePorphyria: countPattern(text, /porfir|porfiri|porphyr|porphyria|δ?\s*aminolevülin|aminolevulin|porfobilinojen|porphobilinogen|üroporfirinojen|uroporphyrinogen|koproporfirinojen|coproporphyrinogen|protoporfirin|protoporphyrin|ferroşelataz|ferrochelatase|ala\s+sentaz|alas\b|hem\s+sentez|heme\s+synthesis/giu),
+    proteinDetection: countPattern(text, /sds\s*-?page|western\s+blot|coomassie|silver\s+stain|glycoprotein\s+stain|heme\s+protein\s+staining|ponceau|chemiluminescent|fluorescence\s+detection|membrane|nitrocellulose|pvdf|antibody|secondary\s+antibody/giu),
   };
 }
 
@@ -48,6 +49,15 @@ function lessonContradictsPacket(lesson = {}, body = {}) {
   const aminoOutput = /amino\s*asit|aminoasit|glisin|prolin|r grubu|α[- ]?karbon|protein katlanması/iu.test(output);
   const hits = required.filter((pattern) => pattern.test(output)).length;
   return (aminoOutput && hits === 0) || (required.length >= 2 && hits === 0);
+}
+
+
+function lessonContainsUnsupportedLegacyTopic(lesson = {}, body = {}) {
+  const profile = getPacketTopicProfile(body);
+  const output = JSON.stringify(lesson || {}).toLocaleLowerCase('tr');
+  const mentionsFedKetone = /(açlık|tokluk|insülin\s*\/\s*glukagon|glukagon|glukoneogenez|lipoliz|ketogenez|keton cisim|ketoasidoz|asetoasetat|hidroksibütirat)/iu.test(output);
+  const mentionsHemePorphyria = /(porfiri|porfiria|porphyria|porfirin halkası|hem sentez|heme synthesis|ala sentaz|porfobilinojen|ferroşelataz|protoporfirin|nörovisseral|fotosensitivite)/iu.test(output);
+  return (mentionsFedKetone && profile.ketone + profile.fedFasting < 3) || (mentionsHemePorphyria && profile.hemePorphyria < 2);
 }
 
 function deepenLessonForValidation(lesson = {}) {
@@ -98,8 +108,11 @@ function normalizeLessonSourceCoverage(lesson = {}, body = {}) {
         ? `Bu çalışma alanı ${trueCount} materyal birlikte analiz edilerek hazırlandı.`
         : (lesson.sourceCoverage?.coverageNote || 'Bu çalışma alanı 1 materyal analiz edilerek hazırlandı.'),
     },
+    sourceFingerprint: body.sourceFingerprint || lesson.sourceFingerprint || '',
+    generatedFrom: { ...(lesson.generatedFrom || {}), sourceFingerprint: body.sourceFingerprint || lesson.sourceFingerprint || '', sourceSchemaVersion: 3 },
     qualityCheck: {
       ...(lesson.qualityCheck || {}),
+      sourceFingerprint: body.sourceFingerprint || lesson.qualityCheck?.sourceFingerprint || '',
       usesAllFiles: trueCount > 1 ? true : (lesson.qualityCheck?.usesAllFiles ?? true),
       notSlideBySlide: lesson.qualityCheck?.notSlideBySlide ?? true,
       noRawOCR: lesson.qualityCheck?.noRawOCR ?? true,

@@ -4,6 +4,7 @@ import { localBackend } from '../services/localBackend.js';
 import { extractKomiteFile, getKomiteFileExtension } from '../utils/komiteFileExtraction.js';
 
 const KOMITE_MATERIALS_STORAGE_KEY = 'komite-materials-v1';
+const KOMITE_SOURCE_SCHEMA_VERSION = 3;
 const CLASS_YEARS = ['1', '2', '3', '4', '5', '6'];
 const LEARNING_TARGETS = ['Komite sınavı', 'Final sınavı', 'Klinik staj', 'Genel tekrar'];
 const REVIEW_FILTERS = ['Bu materyal', 'Tüm materyaller'];
@@ -20,18 +21,145 @@ const createId = (prefix = 'id') => {
   return `${prefix}-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 };
 
-function sanitizeLoadedKomiteMaterial(material = {}) {
-  if (material.lesson && outputContradictsSourceTopic(material.lesson, material)) {
-    return {
-      ...material,
-      lesson: null,
-      questions: [],
-      flashcardDeck: null,
-      processingStatus: 'text-extracted',
-      repairNotice: 'Önceki AI çıktısı kaynak konusuyla uyuşmadığı için temizlendi.',
-    };
+
+function stableSourceHash(value = '') {
+  const input = String(value || '');
+  let hash = 2166136261;
+  for (let index = 0; index < input.length; index += 1) {
+    hash ^= input.charCodeAt(index);
+    hash = Math.imul(hash, 16777619);
   }
-  return material;
+  return (hash >>> 0).toString(36);
+}
+
+function normalizeForFingerprint(text = '') {
+  return String(text || '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 120_000);
+}
+
+function buildSourceFingerprint(material = {}, packet = null) {
+  const activePacket = packet || buildCombinedMaterialPacket(material);
+  const files = Array.isArray(activePacket?.files) ? activePacket.files : [];
+  const filePart = files.map((file) => {
+    const clean = normalizeForFingerprint(file.cleanedExtractedText || file.text || '');
+    return [
+      file.fileName || file.name || 'Materyal',
+      file.fileType || file.type || '',
+      Number(file.size || 0),
+      clean.length,
+      stableSourceHash(`${clean.slice(0, 12_000)}::${clean.slice(-12_000)}`),
+    ].join('|');
+  }).join('||');
+  const pasted = normalizeForFingerprint(material.pastedText || '');
+  const meta = [material.classYear || '', material.committee || '', material.course || '', material.learningTarget || ''].join('|');
+  return stableSourceHash(`${KOMITE_SOURCE_SCHEMA_VERSION}::${meta}::${filePart}::pasted:${pasted.length}:${stableSourceHash(pasted)}`);
+}
+
+function getOutputSourceFingerprint(output = {}) {
+  return output?.sourceFingerprint || output?.generatedFrom?.sourceFingerprint || output?.qualityCheck?.sourceFingerprint || '';
+}
+
+function stampGeneratedOutput(output, material = {}, packet = null) {
+  if (!output || typeof output !== 'object') return output;
+  const sourceFingerprint = buildSourceFingerprint(material, packet);
+  const files = Array.isArray((packet || buildCombinedMaterialPacket(material))?.files) ? (packet || buildCombinedMaterialPacket(material)).files : [];
+  return {
+    ...output,
+    sourceFingerprint,
+    generatedFrom: {
+      ...(output.generatedFrom || {}),
+      sourceFingerprint,
+      sourceSchemaVersion: KOMITE_SOURCE_SCHEMA_VERSION,
+      materialId: material.id || '',
+      fileNames: files.map((file) => file.fileName || file.name || 'Materyal'),
+      generatedAt: Date.now(),
+    },
+    qualityCheck: {
+      ...(output.qualityCheck || {}),
+      sourceFingerprint,
+    },
+  };
+}
+
+function stampGeneratedQuestions(questions = [], material = {}, packet = null) {
+  const sourceFingerprint = buildSourceFingerprint(material, packet);
+  return questions.map((question) => ({
+    ...question,
+    sourceFingerprint,
+    generatedFrom: {
+      ...(question.generatedFrom || {}),
+      sourceFingerprint,
+      sourceSchemaVersion: KOMITE_SOURCE_SCHEMA_VERSION,
+      materialId: material.id || '',
+      generatedAt: Date.now(),
+    },
+  }));
+}
+
+function isGeneratedAssetStale(asset, material = {}, packet = null) {
+  if (!asset) return false;
+  const expected = buildSourceFingerprint(material, packet);
+  const actual = getOutputSourceFingerprint(asset);
+  return !actual || actual !== expected;
+}
+
+function areGeneratedQuestionsStale(material = {}, packet = null) {
+  const questions = Array.isArray(material.questions) ? material.questions : [];
+  if (!questions.length) return false;
+  const expected = buildSourceFingerprint(material, packet);
+  const actual = material.questionsSourceFingerprint || questions[0]?.sourceFingerprint || questions[0]?.generatedFrom?.sourceFingerprint || '';
+  return !actual || actual !== expected;
+}
+
+function sourceTextSupportsLegacyMetabolismTopic(material = {}, packet = null) {
+  const activePacket = packet || buildCombinedMaterialPacket(material);
+  const sourceText = normalizeForFingerprint((activePacket.files || []).map((file) => `${file.fileName || ''}\n${file.cleanedExtractedText || ''}`).join('\n\n') || normalizeSourceText(material)).toLocaleLowerCase('tr');
+  return {
+    fedFasting: /(açlık|tokluk|insülin\s*\/\s*glukagon|glukagon|glukoneogenez|lipoliz|ketogenez|keton)/iu.test(sourceText),
+    hemePorphyria: /(porfir|porfiri|porphyr|porphyria|δ?\s*aminolevülin|aminolevulin|porfobilinojen|porphobilinogen|üroporfirinojen|uroporphyrinogen|koproporfirinojen|coproporphyrinogen|protoporfirin|protoporphyrin|ferroşelataz|ferrochelatase|ala\s+sentaz|alas\b|hem\s+sentez|heme\s+synthesis)/iu.test(sourceText),
+  };
+}
+
+function outputHasUnsupportedLegacyTopic(output = {}, material = {}, packet = null) {
+  const sourceSupport = sourceTextSupportsLegacyMetabolismTopic(material, packet);
+  const outputText = JSON.stringify(output || {}).toLocaleLowerCase('tr');
+  const mentionsFedKetone = /(açlık|tokluk|insülin\s*\/\s*glukagon|glukagon|glukoneogenez|lipoliz|ketogenez|keton cisim|ketoasidoz|asetoasetat|hidroksibütirat)/iu.test(outputText);
+  const mentionsHemePorphyria = /(porfiri|porfiria|porphyria|porfirin halkası|hem sentez|heme synthesis|ala sentaz|porfobilinojen|ferroşelataz|protoporfirin|nörovisseral|fotosensitivite)/iu.test(outputText);
+  return (mentionsFedKetone && !sourceSupport.fedFasting) || (mentionsHemePorphyria && !sourceSupport.hemePorphyria);
+}
+
+function resetGeneratedAssetsForSourceChange(material = {}, reason = 'Kaynak materyal değiştiği için eski AI çıktıları temizlendi.') {
+  return {
+    ...material,
+    sourceFingerprint: buildSourceFingerprint(material),
+    lesson: null,
+    questions: [],
+    questionsSourceFingerprint: '',
+    flashcardDeck: null,
+    processingStatus: material.extractedText || material.pastedText ? 'text-extracted' : 'metadata-ready',
+    repairNotice: reason,
+  };
+}
+
+function sanitizeLoadedKomiteMaterial(material = {}) {
+  const packet = buildCombinedMaterialPacket(material);
+  const sourceFingerprint = buildSourceFingerprint(material, packet);
+  const staleLesson = isGeneratedAssetStale(material.lesson, material, packet);
+  const staleQuestions = areGeneratedQuestionsStale(material, packet);
+  const staleDeck = isGeneratedAssetStale(material.flashcardDeck, material, packet);
+  const contradictoryLesson = material.lesson && (outputContradictsSourceTopic(material.lesson, material, packet) || outputHasUnsupportedLegacyTopic(material.lesson, material, packet));
+
+  if (staleLesson || staleQuestions || staleDeck || contradictoryLesson) {
+    return resetGeneratedAssetsForSourceChange(
+      { ...material, sourceFingerprint },
+      contradictoryLesson
+        ? 'Önceki AI çıktısı kaynak konusuyla uyuşmadığı için temizlendi.'
+        : 'Eski AI çıktıları kaynak parmak iziyle eşleşmediği için temizlendi.'
+    );
+  }
+  return { ...material, sourceFingerprint };
 }
 
 function readUserMaterials(userId) {
@@ -397,7 +525,9 @@ function qualityGateLesson(lesson = {}, material = {}) {
   const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
   if (!lesson || !sections.length) return { ok: false, reason: 'Ders yapısı eksik.' };
   if (filesUploadedCount > 1 && analyzedCount <= 1) return { ok: false, reason: 'Çoklu dosya yüklenmesine rağmen AI çıktısı tek materyal kapsamı gösteriyor.' };
+  if (isGeneratedAssetStale(lesson, material)) return { ok: false, reason: 'Ders çıktısı bu çalışma alanının kaynak parmak iziyle eşleşmiyor.' };
   if (outputContradictsSourceTopic(lesson, material)) return { ok: false, reason: 'Ders anlatımı yüklenen kaynakların ana konusuyla uyuşmuyor.' };
+  if (outputHasUnsupportedLegacyTopic(lesson, material)) return { ok: false, reason: 'Ders çıktısı kaynakta bulunmayan eski metabolizma/porfiriya içeriği içeriyor.' };
   if (/materyaldeki ilişkili kavram|slayt\s*→|sayfa\s*→/iu.test(text)) return { ok: false, reason: 'Ham/meaningless kaynak etiketi üretildi.' };
   if (String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim().length < 520) return { ok: false, reason: 'Büyük resim yeterince açıklayıcı değil.' };
   // Do not reject a lesson only because the number of sections is below a fixed threshold.
@@ -503,10 +633,18 @@ function countMatches(text = '', pattern) {
 
 function buildTopicProfileFromText(text = '', fileNames = '') {
   const haystack = `${fileNames || ''}\n${text || ''}`.toLocaleLowerCase('tr');
+  const strictHemePorphyria = countMatches(haystack, /porfir|porfiri|porphyr|porphyria|δ?\s*aminolevülin|aminolevulin|porfobilinojen|porphobilinogen|üroporfirinojen|uroporphyrinogen|koproporfirinojen|coproporphyrinogen|protoporfirin|protoporphyrin|ferroşelataz|ferrochelatase|ala\s+sentaz|alas\b|hem\s+sentez|heme\s+synthesis|kurşun\s+zehirlenmesi/giu);
   const profile = {
     ketone: countMatches(haystack, /keton|ketogenez|ketoasidoz|asetoasetat|hidroksibütirat|aseton|hmg\s*koa|tioforaz|β[- ]?oksidasyon|yağ asidi oksidasyonu|karnitin|cpt\s*-?1/giu),
     fedFasting: countMatches(haystack, /açlık|tokluk|emilim|insülin\s*\/\s*glukagon|glukagon|glukoneogenez|glikojen|lipoliz|yağ dokusu|iskelet kası|beyin|karaciğer|şilomikron/giu),
-    hemePorphyria: countMatches(haystack, /hem\b|porfir|porfiri|ala\b|porfobilinojen|üroporfirinojen|koproporfirinojen|protoporfirin|ferroşelataz|alas\b|soret|kurşun/giu),
+    hemePorphyria: strictHemePorphyria,
+    hemeProteinStaining: countMatches(haystack, /heme\s+protein\s+stain|heme\s+protein\s+staining|heme-containing|heme\s+containing|tmbh|tetramethyl|cytochrome\s*-?c|sitokrom\s*-?c/giu),
+    proteinDetection: countMatches(haystack, /sds\s*-?page|western\s+blot|coomassie|silver\s+stain|zinc\s+stain|glycoprotein\s+stain|ponceau|chemiluminescent|fluorescence\s+detection|membrane|nitrocellulose|pvdf|antibody|secondary\s+antibody/giu),
+    elisa: countMatches(haystack, /elisa|enzyme-linked|immuno-sorbent|antigen|antibody|hrp|tmb|optical\s+density|standard\s+curve|amylase/giu),
+    enzymeKinetics: countMatches(haystack, /enzyme\s+kinetics|michaelis|menten|km\b|vmax|lineweaver|burk|competitive|non-competitive|uncompetitive|alkaline\s+phosphatase|pnpp|inhibitor/giu),
+    buffersSolutions: countMatches(haystack, /buffer|henderson|hasselbalch|ph\b|pka\b|molarity|normality|molality|dilution|pbs|tbs|tris|acetate/giu),
+    pyruvateMetabolism: countMatches(haystack, /pyruvate|warburg|u2os|hek293|oxidative\s+phosphorylation|anaerobic\s+glycolysis|lactate|ripa/giu),
+    proteinDegradation: countMatches(haystack, /protein\s+degradation|protease\s+k|ubiquitin|proteasome|n-end|pest|bradford|coomassie\s+blue\s+g-250/giu),
     aminoProtein: countMatches(haystack, /amino\s*asit|aminoasit|peptit|glisin|prolin|r grubu|α[- ]?karbon|protein katlanması|disülfit|aromatik amino/giu),
     generalBiochem: countMatches(haystack, /enzim|metabolizma|substrat|koenzim|mitokondri|sitozol|oksidasyon|sentez|düzenlenme/giu),
   };
@@ -533,6 +671,14 @@ function isAminoProteinMaterial(material = {}, packet = null) {
 
 function inferTitleFromTopicProfile(material = {}, packet = null) {
   const profile = getMaterialTopicProfile(material, packet);
+  const labScore = profile.proteinDetection + profile.elisa + profile.enzymeKinetics + profile.buffersSolutions + profile.pyruvateMetabolism + profile.proteinDegradation;
+  if (labScore >= 12 && profile.proteinDetection >= 5) return 'Biyokimya Laboratuvarı: Protein Analizi, Tespit Yöntemleri ve Deneysel Ölçümler';
+  if (profile.proteinDetection >= 5) return 'Protein Analiz Yöntemleri: SDS-PAGE, Western Blot ve Tespit Teknikleri';
+  if (profile.elisa >= 5) return 'ELISA Prensibi, Standart Eğri ve Antijen Ölçümü';
+  if (profile.enzymeKinetics >= 5) return 'Enzim Kinetiği, Michaelis-Menten Analizi ve İnhibisyon';
+  if (profile.buffersSolutions >= 5) return 'Tamponlar, pH Hesaplamaları ve Çözelti Hazırlama';
+  if (profile.pyruvateMetabolism >= 5) return 'Pirüvat Metabolizması, Warburg Etkisi ve Kolorimetrik Ölçüm';
+  if (profile.proteinDegradation >= 5) return 'Protein Yıkımı, Proteaz Aktivitesi ve Bradford Analizi';
   const parts = [];
   if (profile.fedFasting >= 4) parts.push('Açlık-Tokluk Metabolizması');
   if (profile.ketone >= 4) parts.push('Yağ Asidi Oksidasyonu ve Keton Cisimleri');
@@ -573,9 +719,164 @@ function inferAcademicTitle(material = {}, packet = null) {
   return base || 'Komite Materyali';
 }
 
+
+function buildLabMethodsLesson(material = {}, profile = null, packet = null) {
+  const activePacket = packet || buildCombinedMaterialPacket(material);
+  const activeProfile = profile || getMaterialTopicProfile(material, activePacket);
+  const sections = [];
+
+  if (activeProfile.proteinDetection >= 5) {
+    sections.push({
+      heading: 'SDS-PAGE ile proteinlerin moleküler ağırlığa göre ayrılması',
+      teachingText: 'SDS-PAGE, proteinleri temelde moleküler ağırlık farkına göre ayıran elektroforetik bir yöntemdir. SDS proteinin hidrofobik bölgelerine bağlanarak proteini açar ve proteine yaklaşık orantılı negatif yük kazandırır; DTT veya beta-merkaptoetanol gibi indirgeme ajanları disülfit bağlarını kırarak daha tam denatürasyon sağlar. Stacking gel proteinleri dar bir bantta toplar, resolving gel ise por büyüklüğü ve pH koşulları sayesinde proteinlerin ayrılmasını sağlar. Küçük proteinler jelde daha hızlı ilerlerken moleküler ağırlık markerları bantların yaklaşık büyüklüğünü yorumlamak için kullanılır.',
+      mechanismFlow: ['SDS proteinleri denatüre eder ve negatif yük verir', 'İndirgeme ajanları disülfit bağlarını kırar', 'Stacking gel bantları toplar', 'Resolving gel boyuta göre ayırır'],
+      examAngle: 'SDS-PAGE soruları genellikle SDS’nin yük/denatürasyon etkisini, indirgeme ajanlarının disülfit bağlarına etkisini ve küçük proteinlerin jelde daha hızlı ilerlemesini sorgular.',
+      commonTrap: 'SDS-PAGE sonucunu doğal protein yükü veya izoelektrik nokta üzerinden yorumlamak hatalıdır; SDS varlığında temel ayrım moleküler ağırlıktır.',
+      sourceReferences: ['SDS-PAGE ve protein ayrımı slaytları'],
+    });
+    sections.push({
+      heading: 'Jel ve membranda protein tespit yöntemleri',
+      teachingText: 'Ayrılan proteinlerin görünür hale getirilmesi için yöntemin amacı ve duyarlılığına göre farklı boyamalar kullanılır. Coomassie Blue kolay, hızlı ve pratik bir jel boyasıdır; ancak düşük miktardaki proteinleri göstermede silver staining kadar duyarlı değildir. Silver staining düşük ekspresyonlu proteinleri daha iyi gösterebilir fakat arka plan, yüzey artefaktları ve temiz çalışma gereksinimi daha fazladır. Glikoprotein boyaması karbonhidrat yan zincirleri nedeniyle klasik protein boyalarında zayıf görülebilen glikoproteinleri Periodic acid-Schiff mantığıyla saptar. Heme protein staining ise hem içeren proteinleri, örneğin sitokrom-C gibi hedefleri, uygun substrat reaksiyonu ile gösterir; bu başlık hem biyosentezi veya porfiriya değil, protein tespit tekniğidir.',
+      mechanismFlow: ['Coomassie pratik genel protein boyasıdır', 'Silver staining daha yüksek duyarlılık sağlar', 'PAS glikoproteinleri karbonhidrat üzerinden saptar', 'Heme protein staining hem içeren proteinleri gösterir'],
+      examAngle: 'Coomassie kolay ama daha az duyarlı, silver staining daha duyarlı ama artefakta açık; Ponceau S ise membran transfer verimini kontrol etmek için geri dönüşümlü kullanılır.',
+      commonTrap: '“Heme protein staining” ifadesini hem sentezi veya porfiriyalarla karıştırmak yanlıştır; burada konu hem içeren proteinlerin laboratuvar tespitidir.',
+      sourceReferences: ['Detection methods slaytları'],
+    });
+    sections.push({
+      heading: 'Western blot transferi ve antikor temelli saptama',
+      teachingText: 'Western blot, önce SDS-PAGE ile ayrılan proteinlerin nitroselüloz veya PVDF membrana aktarılması, ardından hedef proteinin primer ve sekonder antikorlarla saptanması prensibine dayanır. Transferin başarısı Ponceau S gibi geri dönüşümlü membran boyalarıyla değerlendirilebilir. Tespit aşamasında sekonder antikora bağlı enzim veya fluorofor sinyal üretir. Bu nedenle Western blot hem ayrım hem transfer hem de özgül antikor tanıma basamaklarının birlikte doğru çalışmasına bağlıdır.',
+      mechanismFlow: ['SDS-PAGE proteinleri ayırır', 'Transfer proteini membrana taşır', 'Primer antikor hedefi tanır', 'Sekonder antikor sinyal üretir'],
+      examAngle: 'Western blot soruları genellikle toplam transfer kontrolü ile hedef protein saptamasını, primer/sekonder antikor rollerini ve membran boyalarının geri dönüşümlü kullanımını ayırmayı ister.',
+      commonTrap: 'Ponceau S hedef proteine özgül bir antikor testi değildir; membrana aktarılan toplam proteinleri ve transfer verimini gösterir.',
+      sourceReferences: ['Western blot ve Ponceau S slaytları'],
+    });
+    sections.push({
+      heading: 'Kolorimetrik, kemilüminesans ve floresan tespit mantığı',
+      teachingText: 'Western blot sinyali farklı fiziksel/kimyasal prensiplerle okunabilir. Kolorimetrik tespitte HRP veya alkalen fosfataz gibi enzimler görünür renkli ve görece stabil ürün oluşturur; yöntem ucuz ve pratiktir, fakat kantifikasyon ve duyarlılık sınırlı olabilir. Kemilüminesans tespitte uygun substratla düşük enerjili foton oluşur ve sinyal film veya CCD kamera ile yakalanır; duyarlılığı yüksektir ve kantifikasyona daha uygundur, ancak sinyal geçici ve multiplex kapasitesi sınırlıdır. Floresan tespitte sekonder antikor fluorofor taşır, substrat gerekmez ve farklı emisyon spektrumları sayesinde birden fazla hedef aynı membranda izlenebilir; buna karşılık özel ekipman gerekir ve duyarlılık kemilüminesansa göre daha düşük olabilir.',
+      mechanismFlow: ['Kolorimetrik tespit renkli ürün oluşturur', 'Kemilüminesans foton sinyali üretir', 'Floresan tespit fluorofor uyarımıyla okunur', 'Multiplex en güçlü olarak floresanda yapılır'],
+      examAngle: 'Avantaj-dezavantaj sorularında kemilüminesans yüksek duyarlılık ve geçici sinyal; floresans multiplex ve stabilite; kolorimetrik ucuzluk ve düşük kantifikasyon üzerinden ayrılır.',
+      commonTrap: 'Kemilüminesans ürünleri çıplak gözle görülür sanılmamalıdır; sinyal film veya dijital kamera ile yakalanır.',
+      sourceReferences: ['Western blot detection methods slaytları'],
+    });
+  }
+
+  if (activeProfile.elisa >= 5) {
+    sections.push({
+      heading: 'ELISA prensibi ve standart eğriyle kantifikasyon',
+      teachingText: 'ELISA, antijen-antikor özgüllüğünü enzim aracılı ölçülebilir renk reaksiyonu ile birleştirir. Plaka yüzeyine bağlanan antijen veya yakalama antikoru, yıkama ve blocking adımlarıyla nonspesifik bağlanmadan ayrılır. HRP veya alkalen fosfataz gibi enzimle konjuge antikor substratı renkli ürüne dönüştürür; optik dansite standart eğriyle karşılaştırılarak bilinmeyen örnek konsantrasyonu hesaplanır. Bu nedenle ELISA’da doğru sonuç; uygun standart seri, yeterli washing/blocking ve lineer aralıkta ölçüm gerektirir.',
+      mechanismFlow: ['Antijen veya antikor yüzeye bağlanır', 'Blocking nonspesifik alanları kapatır', 'Enzimli antikor sinyal üretir', 'Standart eğri bilinmeyeni hesaplatır'],
+      examAngle: 'ELISA soruları genellikle blank, standart eğri, OD değeri, antikor/antijen rolü ve yıkama-blocking adımlarının amacını sorgular.',
+      commonTrap: 'Renk şiddetini doğrudan konsantrasyon sanmak eksiktir; bilinmeyen örnek standart eğri ve uygun dilüsyon mantığıyla hesaplanmalıdır.',
+      sourceReferences: ['ELISA slaytları'],
+    });
+  }
+
+  if (activeProfile.enzymeKinetics >= 5) {
+    sections.push({
+      heading: 'Enzim kinetiği, Km/Vmax ve inhibisyon tipleri',
+      teachingText: 'Enzim kinetiği, substrat konsantrasyonu arttıkça reaksiyon hızının nasıl değiştiğini inceler. Michaelis-Menten yaklaşımında Vmax, enzim aktif bölgeleri doyduğunda ulaşılan maksimum hızı; Km ise hızın Vmax/2 olduğu substrat konsantrasyonunu ifade eder ve substrat afinitesi hakkında yorum sağlar. Rekabetçi inhibitör aktif bölge için substratla yarışırken, nonkompetitif inhibitör enzim fonksiyonunu allosterik veya konformasyonel etkiyle azaltır; unkompetitif inhibitör ise enzim-substrat kompleksine bağlanarak katalizi bozar. Bu ayrımlar grafik yorumunda ve ilaç/enzim ilişkisi sorularında önemlidir.',
+      mechanismFlow: ['Substrat artışı hızı artırır', 'Aktif bölgeler doyunca Vmax oluşur', 'Km afinitenin yorumlanmasına yardım eder', 'İnhibitör tipi Km/Vmax etkisini değiştirir'],
+      examAngle: 'Km, Vmax, Michaelis-Menten eğrisi ve Lineweaver-Burk grafiği inhibition sorularında birlikte değerlendirilir.',
+      commonTrap: 'Km’yi doğrudan hız sanmak hatalıdır; Km substrat konsantrasyonudur ve afinitenin dolaylı göstergesidir.',
+      sourceReferences: ['Enzyme kinetics slaytları'],
+    });
+  }
+
+  if (activeProfile.buffersSolutions >= 5) {
+    sections.push({
+      heading: 'Tamponlar, Henderson-Hasselbalch ve çözelti hazırlama',
+      teachingText: 'Tampon sistemleri zayıf asit-konjuge baz veya zayıf baz-konjuge asit çiftleriyle pH değişimine direnç gösterir. Henderson-Hasselbalch denklemi pH, pKa ve baz/asit oranı arasındaki ilişkiyi verir; bu nedenle istenen pH’a yakın pKa değerine sahip tampon seçimi gerekir. Çözelti hazırlamada molarite, dilüsyon ve yüzde konsantrasyon hesapları hacim ve madde miktarı ilişkisini doğru kurmaya dayanır. Laboratuvar güvenilirliği için pH ayarı, uygun hacme tamamlama, kontaminasyon kontrolü ve stoktan doğru dilüsyon kritik basamaklardır.',
+      mechanismFlow: ['pKa hedef pH’a yakın seçilir', 'Baz/asit oranı pH’ı belirler', 'C1V1 = C2V2 dilüsyonu kurar', 'pH ayarı son hacimden önce dikkatle yapılır'],
+      examAngle: 'Tampon soruları pKa ±1 aralığı, Henderson-Hasselbalch oranı, stoktan dilüsyon ve son hacme tamamlama mantığını sorgular.',
+      commonTrap: 'Stoktan alınacak hacmi hesapladıktan sonra toplam hacme tamamlamayı unutmak derişimi hatalı yapar.',
+      sourceReferences: ['Buffers and solutions slaytları'],
+    });
+  }
+
+  if (activeProfile.pyruvateMetabolism >= 5) {
+    sections.push({
+      heading: 'Pirüvat ölçümü, oksidatif metabolizma ve Warburg etkisi',
+      teachingText: 'Pirüvat glikolizin son ürünü olarak mitokondriyal oksidatif metabolizma, laktat oluşumu ve biyosentetik yollar arasında merkezi bir kavşaktır. Oksijen yeterliyken pirüvat mitokondriye yönelerek sitrik asit döngüsü ve oksidatif fosforilasyonla enerji üretimini destekler; oksijen sınırlı olduğunda laktata indirgenerek glikolizin devamı için NAD+ yenilenmesine katkı sağlar. Warburg etkisinde kanser hücreleri oksijen varken bile glikozu daha fazla laktata yönlendirebilir; bu durum düşük ATP verimine rağmen biyosentetik ihtiyaçlar için metabolik ara ürün sağlamayı kolaylaştırır. Kolorimetrik pirüvat assayinde oluşan renkli ürünün absorbansı standart eğriyle karşılaştırılarak örnek konsantrasyonu hesaplanır.',
+      mechanismFlow: ['Glikoliz pirüvat üretir', 'Oksijen varsa mitokondriyal oksidasyon artar', 'Oksijen sınırlıysa laktat oluşur', 'Standart eğri bilinmeyen pirüvatı hesaplatır'],
+      examAngle: 'Warburg etkisi, anaerobik glikoliz ve standart eğri hesaplaması birlikte sorulabilir.',
+      commonTrap: 'Warburg etkisini yalnızca oksijen yokluğu sanmak yanlıştır; temel özellik oksijen varlığında bile glikolize/laktata yönelimdir.',
+      sourceReferences: ['Pyruvate assay slaytları'],
+    });
+  }
+
+  if (activeProfile.proteinDegradation >= 5) {
+    sections.push({
+      heading: 'Protein yıkımı, ubiquitin-proteazom sistemi ve Bradford analizi',
+      teachingText: 'Protein yaşam süresi sentez, katlanma ve kontrollü yıkım dengesine bağlıdır. N-end rule ve PEST bölgeleri bazı proteinlerin daha hızlı yıkıma yönlenmesini açıklayabilir. Ubiquitin-proteazom sisteminde E1 ubiquitini ATP bağımlı aktive eder, E2 taşır ve E3 ligaz hedef proteine özgüllük kazandırarak ubiquitin transferini kolaylaştırır; işaretlenen protein proteazomda kısa peptitlere parçalanır. Bradford assay ise Coomassie Blue G-250 boyasının proteinlere bağlanınca renk formunu değiştirmesi ve 595 nm absorbans üzerinden standart eğriyle protein konsantrasyonu hesaplanması mantığına dayanır.',
+      mechanismFlow: ['E1 ubiquitini aktive eder', 'E2 ubiquitini taşır', 'E3 hedef seçiciliği sağlar', 'Proteazom işaretli proteini parçalar', 'Bradford 595 nm absorbansla protein miktarını hesaplatır'],
+      examAngle: 'E1-E2-E3 rollerinin sırası, ATP bağımlılığı, proteazomun işlevi ve Bradford standart eğrisi yüksek verimli ayrımlardır.',
+      commonTrap: 'Bradford sonucu doğrudan “protein tamamen yıkıldı” anlamına gelmez; ölçüm toplam protein miktarı/renk yanıtı üzerinden yorumlanır.',
+      sourceReferences: ['Protein degradation ve Bradford assay slaytları'],
+    });
+  }
+
+  if (!sections.length) return null;
+  const title = inferTitleFromTopicProfile(material, activePacket) || inferAcademicTitle(material, activePacket);
+  return {
+    id: createId('lesson'),
+    materialId: material.id,
+    title,
+    shortIntro: 'Bu ders, biyokimya laboratuvarında kullanılan ayırma, boyama, antikor-temelli tespit, kolorimetrik ölçüm ve kantifikasyon yöntemlerini tek bir deneysel mantık içinde açıklar. Amaç yalnızca protokol adımlarını ezberlemek değil; her basamağın hangi biyokimyasal özelliği ölçtüğünü, hangi hata kaynağına açık olduğunu ve sonuçların nasıl yorumlanacağını öğrenmektir.',
+    learningObjectives: [
+      activeProfile.proteinDetection >= 5 ? 'SDS-PAGE, jel boyama, membran transferi ve Western blot tespit basamaklarını amaçlarıyla açıklayabilmek.' : null,
+      activeProfile.proteinDetection >= 5 ? 'Coomassie, silver staining, glycoprotein staining, heme protein staining, Ponceau S, kemilüminesans ve floresans tespit yöntemlerini avantaj-dezavantajlarıyla karşılaştırabilmek.' : null,
+      activeProfile.elisa >= 5 ? 'ELISA’da antijen-antikor bağlanması, blocking, washing, enzim-substrat reaksiyonu ve standart eğri mantığını yorumlayabilmek.' : null,
+      activeProfile.enzymeKinetics >= 5 ? 'Km, Vmax, Michaelis-Menten ilişkisi ve inhibisyon tiplerini deneysel veriyle ilişkilendirebilmek.' : null,
+      activeProfile.buffersSolutions >= 5 ? 'Tampon seçimi, pH ayarı, molarite ve dilüsyon hesaplarını laboratuvar hazırlığına uygulayabilmek.' : null,
+      activeProfile.pyruvateMetabolism >= 5 ? 'Pirüvat assay sonuçlarını metabolik bağlam ve standart eğri üzerinden yorumlayabilmek.' : null,
+      activeProfile.proteinDegradation >= 5 ? 'Ubiquitin-proteazom sistemi, proteaz aktivitesi ve Bradford protein ölçümünü neden-sonuç ilişkisiyle açıklayabilmek.' : null,
+    ].filter(Boolean),
+    bigPicture: 'Bu materyalin büyük resmi, biyokimyasal moleküllerin yalnızca varlığını değil, miktarını, büyüklüğünü, özgüllüğünü ve deneysel davranışını ölçmektir. SDS-PAGE proteinleri ayırır; boyama yöntemleri ayrılan proteinleri görünür kılar; Western blot hedef proteini antikor özgüllüğüyle doğrular; kolorimetrik, kemilüminesans ve floresan sistemler aynı antikor bağlanmasını farklı sinyal türlerine çevirir. Bu basamaklar birlikte düşünüldüğünde laboratuvar sonucu, tek bir cihaz okuması değil, örnek hazırlığı, ayrım, transfer, sinyal üretimi ve kantifikasyon zincirinin toplamıdır.\n\nKomite düzeyinde asıl kazanım, yöntemleri isim olarak ezberlemekten çok hangi yöntemin hangi soruya cevap verdiğini ayırmaktır. Coomassie pratik genel protein görüntüleme sağlar; silver staining daha düşük miktarları gösterebilir; Ponceau S transfer kontrolü yapar; kemilüminesans duyarlılık ve kantifikasyon avantajı sunar; floresans multiplex çalışmaya izin verir. ELISA ve kolorimetrik assaylerde ise standart eğri, blank düzeltmesi ve lineer aralık mantığı sonucu güvenilir kılan temel basamaklardır.',
+    mainConcepts: ['SDS-PAGE', 'protein boyama', 'Western blot', 'antikor-temelli tespit', 'kemilüminesans', 'floresans', 'standart eğri', 'blank düzeltmesi'].filter((item, index, arr) => arr.indexOf(item) === index),
+    sections,
+    figureExplanations: [{
+      sourcePageOrSlide: 'Okunabilir slayt metni',
+      analysisStatus: 'partial',
+      type: 'diagram/table',
+      whatCanBeSaidSafely: 'Slayt metnindeki yöntem adları, protokol adımları, avantaj-dezavantaj ifadeleri ve deneysel ölçüm mantığı güvenilir biçimde kullanılabilir.',
+      limitations: 'Görseller piksel düzeyinde ayrıca analiz edilmediyse yalnızca metne yansıyan etiketler yorumlandı.',
+      examRelevance: 'Yöntem seçimi, avantaj-dezavantaj karşılaştırması, standart eğri ve deneysel hata kaynakları sınav açısından önceliklidir.'
+    }],
+    clinicalExamRelevance: 'Komite soruları bu tür materyallerde genellikle “hangi yöntem hangi amaçla kullanılır?”, “hangi tespit yöntemi daha duyarlıdır?”, “hangi basamak nonspesifik bağlanmayı azaltır?”, “hangi ölçüm standart eğri gerektirir?” ve “hangi hata sonucu güvenilmez yapar?” mantığıyla sorulur.',
+    commonConfusions: [
+      activeProfile.proteinDetection >= 5 ? { confusion: 'Coomassie ve silver staining', correctDistinction: 'Coomassie pratik ve hızlıdır; silver staining daha duyarlıdır fakat arka plan ve artefakta daha açıktır.', whyConfused: 'İkisi de SDS-PAGE jelinde protein gösterir.', memoryClarification: 'Pratiklik Coomassie; duyarlılık silver staining.' } : null,
+      activeProfile.proteinDetection >= 5 ? { confusion: 'Ponceau S ve hedef protein Western blot sinyali', correctDistinction: 'Ponceau S toplam transfer kontrolüdür; hedef protein primer/sekonder antikor sistemiyle saptanır.', whyConfused: 'İkisi de membranda bant görünümü oluşturabilir.', memoryClarification: 'Ponceau transferi, antikor hedefi gösterir.' } : null,
+      activeProfile.proteinDetection >= 5 ? { confusion: 'Kemilüminesans ve floresans', correctDistinction: 'Kemilüminesans enzim-substrat reaksiyonuyla geçici foton sinyali üretir; floresans fluorofor uyarımıyla daha stabil ve multiplex sinyal sağlar.', whyConfused: 'İkisinde de ışık tabanlı okuma vardır.', memoryClarification: 'Chemi duyarlı/geçici; fluorescence multiplex/stabil.' } : null,
+      activeProfile.elisa >= 5 ? { confusion: 'Blank ve standart', correctDistinction: 'Blank arka planı düzeltir; standartlar bilinmeyen konsantrasyonu hesaplatan eğriyi kurar.', whyConfused: 'İkisi de hesaplamada kullanılır.', memoryClarification: 'Blank çıkarılır, standart eğri kurulur.' } : null,
+    ].filter(Boolean),
+    highYieldPoints: [
+      activeProfile.proteinDetection >= 5 ? 'SDS-PAGE’de SDS proteinleri denatüre eder ve negatif yük kazandırır; ayrım çoğunlukla moleküler ağırlığa dayanır.' : null,
+      activeProfile.proteinDetection >= 5 ? 'Coomassie kolay ve hızlıdır; silver staining daha duyarlıdır ama artefakta açıktır.' : null,
+      activeProfile.proteinDetection >= 5 ? 'Ponceau S membran transfer verimini gösteren geri dönüşümlü toplam protein boyasıdır.' : null,
+      activeProfile.proteinDetection >= 5 ? 'Kemilüminesans yüksek duyarlıdır fakat sinyal geçicidir; floresans multiplex avantajı sağlar.' : null,
+      activeProfile.elisa >= 5 ? 'ELISA’da blocking nonspesifik bağlanmayı azaltır, washing bağlanmayan materyali uzaklaştırır.' : null,
+      activeProfile.enzymeKinetics >= 5 ? 'Km, Vmax/2 hızındaki substrat konsantrasyonudur; düşük Km genellikle daha yüksek afiniteyle ilişkilendirilir.' : null,
+      activeProfile.buffersSolutions >= 5 ? 'Tampon en iyi pKa ±1 aralığında çalışır; stoktan dilüsyon C1V1 = C2V2 ile kurulur.' : null,
+    ].filter(Boolean),
+    mustKnow: [
+      activeProfile.proteinDetection >= 5 ? 'Heme protein staining, hem sentezi/porfiriya konusu değil; hem içeren proteinlerin tespit yöntemidir.' : null,
+      activeProfile.proteinDetection >= 5 ? 'Western blot özgüllüğü antikor tanımadan, toplam transfer kontrolü ise Ponceau S gibi boyalardan gelir.' : null,
+      activeProfile.elisa >= 5 ? 'Bilinmeyen konsantrasyon doğrudan renkten değil, standart eğri denkleminden hesaplanır.' : null,
+      activeProfile.enzymeKinetics >= 5 ? 'Vmax enzim doygunluğu, Km ise Vmax/2’ye karşılık gelen substrat konsantrasyonudur.' : null,
+    ].filter(Boolean),
+    limitations: material.extractionLimitations || [],
+    sourceReferences: (activePacket.files || []).map((file) => file.fileName),
+    sourceCoverage: { filesUploadedCount: activePacket.files.length, filesAnalyzedCount: activePacket.files.length, usedFiles: (activePacket.files || []).map((file) => file.fileName), coverageNote: `Bu çalışma alanı ${activePacket.files.length} materyal birlikte analiz edilerek hazırlandı.` },
+    qualityCheck: { usesAllFiles: true, notSlideBySlide: true, noRawOCR: true, noMeaninglessTags: true, sectionDepthAdequate: true },
+    createdAt: Date.now(),
+  };
+}
+
 function buildProfileDrivenLesson(material = {}) {
   const packet = buildCombinedMaterialPacket(material);
   const profile = getMaterialTopicProfile(material, packet);
+  const labLesson = buildLabMethodsLesson(material, profile, packet);
+  if (labLesson) return labLesson;
   const title = inferTitleFromTopicProfile(material, packet);
   if (!title) return null;
   const hasFed = profile.fedFasting >= 4;
@@ -1722,6 +2023,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
     if (aiStatus[kind] === 'loading') return;
     setKindStatus(kind, 'loading', '');
     const materialPacket = buildCombinedMaterialPacket(material);
+    const sourceFingerprint = buildSourceFingerprint(material, materialPacket);
     const sourceText = balancedPacketToSourceText(materialPacket) || normalizeSourceText(material);
     if (import.meta.env.DEV) {
       console.debug('[KOMITE AI request]', {
@@ -1737,6 +2039,7 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       committeeOrCourse: material.committee || material.course,
       learningTarget: material.learningTarget,
       studyMode: 'komite',
+      sourceFingerprint,
     };
     try {
       let nextPatch = {};
@@ -1745,9 +2048,10 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
       if (sourceText.length > 120 && !material.materialAnalysis) {
         try {
           const analyzed = await postKomiteAI('/api/analyze-uploaded-material', {
-            metadata: { ...material, committeeOrCourse: material.committee || material.course },
+            metadata: { ...material, committeeOrCourse: material.committee || material.course, sourceFingerprint },
             materialPacket,
             extractedTextOrChunks: sourceText,
+            sourceFingerprint,
           });
           analysis = analyzed.analysis || analysis;
         } catch {
@@ -1763,21 +2067,24 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             materialPacket,
             sourceTextChunks: sourceText,
             filesUploadedCount: materialPacket.files.length,
+            sourceFingerprint,
           }) : null;
           let lesson = generated?.lesson
-            ? deepenLessonSections(normalizeLessonCoverageForMaterial(normalizeGeneratedLessonShape(generated.lesson), material, materialPacket), material)
-            : deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material);
+            ? stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(normalizeGeneratedLessonShape(generated.lesson), material, materialPacket), material), material, materialPacket)
+            : stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material), material, materialPacket);
           const gate = qualityGateLesson(lesson, material);
           if (!gate.ok && /kaynakların ana konusuyla uyuşmuyor|şablon|yüzeysel|Büyük resim/iu.test(gate.reason || '')) {
-            lesson = deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material);
+            lesson = stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material), material, materialPacket);
           }
-          nextPatch = { materialAnalysis: analysis, lesson, processingStatus: 'lesson-ready' };
+          nextPatch = { materialAnalysis: analysis, lesson, sourceFingerprint, processingStatus: 'lesson-ready' };
         } catch {
-          const lesson = deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material);
-          nextPatch = { materialAnalysis: analysis, lesson, processingStatus: 'lesson-ready' };
+          const lesson = stampGeneratedOutput(deepenLessonSections(normalizeLessonCoverageForMaterial(buildLocalLesson(material), material, materialPacket), material), material, materialPacket);
+          nextPatch = { materialAnalysis: analysis, lesson, sourceFingerprint, processingStatus: 'lesson-ready' };
         }
       } else if (kind === 'questions') {
-        const lesson = material.lesson || buildLocalLesson(material);
+        const lesson = material.lesson && !isGeneratedAssetStale(material.lesson, material, materialPacket)
+          ? material.lesson
+          : stampGeneratedOutput(buildLocalLesson(material), material, materialPacket);
         try {
           const generated = sourceText.length > 120 ? await postKomiteAI('/api/generate-material-questions', {
             studyContext,
@@ -1786,8 +2093,9 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             materialPacket,
             sourceTextChunks: sourceText,
             filesUploadedCount: materialPacket.files.length,
+            sourceFingerprint,
           }) : null;
-          const questions = Array.isArray(generated?.questions) ? generated.questions.map((question, index) => ({
+          const questions = Array.isArray(generated?.questions) ? stampGeneratedQuestions(generated.questions.map((question, index) => ({
             ...question,
             id: question.id || createId('komite-q'),
             materialId: material.id,
@@ -1798,13 +2106,15 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             isFavorite: false,
             isDifficult: false,
             createdAt: Date.now(),
-          })) : buildLocalQuestions(material, lesson);
-          nextPatch = { materialAnalysis: analysis, lesson, questions, processingStatus: 'questions-ready' };
+          })), material, materialPacket) : stampGeneratedQuestions(buildLocalQuestions(material, lesson), material, materialPacket);
+          nextPatch = { materialAnalysis: analysis, lesson, questions, questionsSourceFingerprint: sourceFingerprint, sourceFingerprint, processingStatus: 'questions-ready' };
         } catch {
-          nextPatch = { materialAnalysis: analysis, lesson, questions: buildLocalQuestions(material, lesson), processingStatus: 'questions-ready' };
+          nextPatch = { materialAnalysis: analysis, lesson, questions: stampGeneratedQuestions(buildLocalQuestions(material, lesson), material, materialPacket), questionsSourceFingerprint: sourceFingerprint, sourceFingerprint, processingStatus: 'questions-ready' };
         }
       } else if (kind === 'cards') {
-        const lesson = material.lesson || buildLocalLesson(material);
+        const lesson = material.lesson && !isGeneratedAssetStale(material.lesson, material, materialPacket)
+          ? material.lesson
+          : stampGeneratedOutput(buildLocalLesson(material), material, materialPacket);
         try {
           const generated = sourceText.length > 120 ? await postKomiteAI('/api/generate-material-flashcards', {
             studyContext,
@@ -1814,8 +2124,9 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
             sourceTextChunks: sourceText,
             filesUploadedCount: materialPacket.files.length,
             materialId: material.id,
+            sourceFingerprint,
           }) : null;
-          const deck = generated?.deck?.cards?.length ? normalizeGeneratedDeckShape({
+          const deck = generated?.deck?.cards?.length ? stampGeneratedOutput(normalizeGeneratedDeckShape({
             ...generated.deck,
             id: generated.deck.id || createId('deck'),
             materialId: material.id,
@@ -1834,14 +2145,16 @@ function StudyWorkspace({ material, materials, onBack, onPatchMaterial, onOpenMa
               repeatStatus: card.repeatStatus || 'new',
               createdAt: Date.now(),
             })),
-          }, material) : buildLocalFlashcards(material, lesson);
-          nextPatch = { materialAnalysis: analysis, lesson, flashcardDeck: deck, processingStatus: 'cards-ready' };
+          }, material), material, materialPacket) : stampGeneratedOutput(buildLocalFlashcards(material, lesson), material, materialPacket);
+          nextPatch = { materialAnalysis: analysis, lesson, flashcardDeck: deck, sourceFingerprint, processingStatus: 'cards-ready' };
         } catch {
-          nextPatch = { materialAnalysis: analysis, lesson, flashcardDeck: buildLocalFlashcards(material, lesson), processingStatus: 'cards-ready' };
+          nextPatch = { materialAnalysis: analysis, lesson, flashcardDeck: stampGeneratedOutput(buildLocalFlashcards(material, lesson), material, materialPacket), sourceFingerprint, processingStatus: 'cards-ready' };
         }
       }
       const gate = kind === 'lesson' ? qualityGateLesson(nextPatch.lesson, material) : kind === 'questions' ? qualityGateQuestions(nextPatch.questions) : qualityGateDeck(nextPatch.flashcardDeck);
       if (!gate.ok) throw new Error(gate.reason);
+      if (kind === 'questions' && outputHasUnsupportedLegacyTopic(nextPatch.questions, material, materialPacket)) throw new Error('Soru çıktısı kaynakta bulunmayan eski metabolizma/porfiriya içeriği içeriyor.');
+      if (kind === 'cards' && outputHasUnsupportedLegacyTopic(nextPatch.flashcardDeck, material, materialPacket)) throw new Error('Kart çıktısı kaynakta bulunmayan eski metabolizma/porfiriya içeriği içeriyor.');
       onPatchMaterial(material.id, nextPatch);
       setKindStatus(kind, 'success', kind === 'lesson' ? 'Ders hazır' : kind === 'questions' ? '10 soru oluşturuldu' : 'Hap kartlar hazır');
       window.setTimeout(() => setKindStatus(kind, 'idle', ''), 1800);
@@ -1981,6 +2294,8 @@ export default function KomiteModeWorkspace({ currentUser }) {
       flashcardDeck: null,
       reviewItems: [],
     };
+    newMaterial.sourceFingerprint = buildSourceFingerprint(newMaterial);
+    newMaterial.sourceSchemaVersion = KOMITE_SOURCE_SCHEMA_VERSION;
     setMaterials((current) => [newMaterial, ...current]);
     setActiveMaterialId(newMaterial.id);
     setView('workspace');

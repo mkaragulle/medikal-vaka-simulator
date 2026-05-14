@@ -2,9 +2,9 @@ import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPromp
 
 export const GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT = `${KOMITE_GLOBAL_EDUCATIONAL_PROMPT}
 
-Return only valid JSON using the existing question schema. Generate exactly 10 KOMİTE exam-style questions. Preserve the schema exactly; improve the educational quality inside each field.`;
+Return only valid JSON using the existing question schema. Generate exactly 10 KOMİTE exam-style questions. Preserve the schema exactly; improve the educational quality inside each field. The current material packet is the only source of truth; never reuse prior workspace content.`;
 
-export function buildGenerateMaterialQuestionsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {} } = {}) {
+export function buildGenerateMaterialQuestionsPrompt({ studyContext = {}, materialAnalysisJson = {}, generatedLessonJson = {}, materialPacket = {}, sourceTextChunks = '' } = {}) {
   return `Generate exactly 10 KOMITE questions from the understood material. Questions must be derived from the conceptual lesson, not random extracted words.
 
 Context:
@@ -12,6 +12,11 @@ ${JSON.stringify(studyContext || {}, null, 2)}
 
 Material analysis:
 ${JSON.stringify(materialAnalysisJson || {}, null, 2)}
+
+Current material packet and source excerpts for source isolation:
+${JSON.stringify(materialPacket || {}, null, 2)}
+
+${sourceTextChunks || 'No readable source text was provided.'}
 
 Lesson compact JSON:
 ${JSON.stringify(generatedLessonJson || {}, null, 2)}
@@ -38,7 +43,8 @@ Return only:
 
 Quality rules:
 - Exactly 10 questions: target distribution 3 easy, 5 medium, 2 hard.
-- Each question must come from a real learning target in the material.
+- Each question must come from a real learning target in the current material packet and generated lesson.
+- If a concept is not present in the current source packet or lesson, do not ask about it. Do not reuse questions from another workspace.
 - Prefer mechanism, cause-effect, table/figure-text interpretation, clinical connection, comparison, application, and common traps.
 - “En uygun tanım hangisidir?” type questions are allowed at most once and only if the material is introductory.
 - Options must be from the same conceptual category and plausible; avoid obviously absurd distractors.

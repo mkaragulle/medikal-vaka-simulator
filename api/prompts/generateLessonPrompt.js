@@ -27,6 +27,9 @@ Core rules:
 - Do not write “X → materyaldeki ilişkili kavram”.
 - Do not use generic filler.
 - Do not create a section unless it teaches something specific.
+- Never reuse a previous workspace's lesson, examples, generated title, or cached topic. Each request is source-isolated; the current material packet is the only source of truth.
+- A single phrase such as “heme protein staining” or “cytochrome-C” in a detection-methods lecture does not authorize a hem synthesis or porphyria lesson. Only discuss hem synthesis/porphyrias when those pathways are explicitly present in the source packet.
+- If the current packet is about lab methods such as SDS-PAGE, Western blot, Coomassie, silver staining, chemiluminescence, fluorescence, Ponceau S, ELISA, buffers, pyruvate assay, enzyme kinetics, protein degradation, or Bradford assay, the lesson must stay on those experimental methods and measurements.
 
 Return only valid JSON in the exact schema requested by the user prompt.`;
 
@@ -41,6 +44,7 @@ Combined material packet:
 ${JSON.stringify(packet || {}, null, 2)}
 
 Expected uploaded file count: ${filesUploadedCount || packet?.files?.length || 0}
+Source fingerprint: ${studyContext?.sourceFingerprint || materialPacket?.sourceFingerprint || ''}
 
 Material analysis compact JSON:
 ${JSON.stringify(materialAnalysisJson || {}, null, 2)}
@@ -89,7 +93,9 @@ Mandatory quality rules:
 - mainConcepts must be real medical/biochemical/physiological concepts, not file words such as slayt, sayfa, dosya, pptx, giriş.
 - highYieldPoints and mustKnow must be specific, memorable and scientifically meaningful. Their count should be determined by the material. Do not cap them artificially; include enough items to cover the core exam-useful distinctions without padding.
 - Never fill examAngle, commonTrap, whyItMatters, or clinicalExamRelevance with boilerplate. Empty is better than a generic repeated sentence.
+- Before returning, compare the title, shortIntro, bigPicture, sections, highYieldPoints and mustKnow against the current source packet. If a topic is not present in the current packet, remove it completely.
+- Do not let prior requests, previous examples, fallback content or old workspace output influence the current JSON.
 - Never include raw filename as title. Never include professor names, dates, page numbers, file extensions, OCR fragments, “materyaldeki ilişkili kavram”, “slayt →”, or “sayfa →”.
-- If the source packet contains clearly different but related domains (for example açlık-tokluk metabolism, ketone bodies, and heme/porphyria), do not drop any major domain. Give each major domain enough dedicated sections and then connect them with integrative sections.
+- If the source packet contains clearly different but related domains, do not drop any major domain. Give each major domain enough dedicated sections and then connect them with integrative sections.
 - Prefer detailed medical-school teaching over compact summary. The learner should be able to study from this output without reopening the slides for the core narrative.`;
 }
