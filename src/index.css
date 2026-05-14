@@ -38578,3 +38578,284 @@ html[data-theme='dark'] .komite-card-action {
   background: rgba(15, 118, 110, 0.16);
   border-color: rgba(45, 212, 191, 0.14);
 }
+
+
+/* --------------------------------------------------------------------------
+   KlinikIQ TUS dashboard refinement v46
+   Rebalances top navigation and dashboard column proportions.
+   -------------------------------------------------------------------------- */
+body:not(.klinikiq-auth-lock) .top-shell-nav {
+  width: min(1780px, calc(100% - 28px)) !important;
+  min-height: 74px !important;
+  grid-template-columns: auto minmax(340px, 560px) auto !important;
+  align-items: center !important;
+  column-gap: clamp(12px, 1.6vw, 24px) !important;
+  padding: 8px 14px !important;
+  border-radius: 24px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster {
+  gap: 10px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand {
+  flex: 0 0 52px !important;
+  width: 52px !important;
+  min-width: 52px !important;
+  height: 52px !important;
+  align-self: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-left-cluster .nav-brand-mark {
+  width: 44px !important;
+  height: 44px !important;
+}
+
+body:not(.klinikiq-auth-lock) .product-mode-switch {
+  flex: 0 0 248px !important;
+  width: 248px !important;
+  min-width: 248px !important;
+  max-width: 248px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch,
+body:not(.klinikiq-auth-lock) .komite-context-switch {
+  justify-self: center !important;
+  width: min(100%, 500px) !important;
+  min-width: 0 !important;
+  max-width: 500px !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button,
+body:not(.klinikiq-auth-lock) .komite-context-switch button {
+  width: 100% !important;
+  justify-content: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions {
+  justify-self: end !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  gap: 8px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions > * {
+  flex: 0 0 auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-wrong-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-score-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .btn,
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-logout-btn {
+  height: 44px !important;
+  min-height: 44px !important;
+  border-radius: 15px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-actions .nav-user-chip,
+body:not(.klinikiq-auth-lock) .nav-actions .btn-icon,
+body:not(.klinikiq-auth-lock) .nav-actions .klinikiq-theme-toggle,
+body:not(.klinikiq-auth-lock) .nav-actions .nav-logout-btn,
+body:not(.klinikiq-auth-lock) .nav-cta {
+  width: 44px !important;
+  min-width: 44px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-user-name {
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip {
+  min-width: 58px !important;
+  padding: 0 8px !important;
+  gap: 6px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip span {
+  font-size: 12px !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip strong {
+  min-width: 24px !important;
+  padding: 5px 7px !important;
+  font-size: 13px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-dashboard-v8 {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.58fr) minmax(350px, 430px) !important;
+  gap: 28px !important;
+  align-items: start !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-v8 {
+  min-height: 0 !important;
+  padding: clamp(28px, 2.7vw, 38px) !important;
+  gap: 18px !important;
+  align-content: start !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-v10-main {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 410px) !important;
+  align-items: start !important;
+  gap: clamp(22px, 2.5vw, 34px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-copy-v10 {
+  justify-content: start !important;
+  gap: 14px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-brand-title-v10,
+body:not(.klinikiq-auth-lock) .home-hero-copy-v8 h1.home-brand-title-v10 {
+  margin-top: 6px !important;
+  font-size: clamp(3rem, 5vw, 5rem) !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-copy-v10 > p,
+body:not(.klinikiq-auth-lock) .home-hero-copy-v8.home-hero-copy-v10 p {
+  max-width: 640px !important;
+  margin-top: 8px !important;
+  font-size: clamp(1.05rem, 1.45vw, 1.34rem) !important;
+  line-height: 1.52 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10 {
+  margin-top: 8px !important;
+  gap: 8px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-action-panel-v10 {
+  width: min(100%, 410px) !important;
+  padding: 16px !important;
+  gap: 10px !important;
+  border-radius: 22px !important;
+  align-self: start !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-actions-v10 .btn,
+body:not(.klinikiq-auth-lock) .home-actions-v8.home-actions-v10 .btn {
+  min-height: 52px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-mode-v10,
+body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10 {
+  width: fit-content !important;
+  margin-top: 4px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-metrics-v10,
+body:not(.klinikiq-auth-lock) .home-metrics-v8.home-metrics-v10 {
+  gap: 12px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-metrics-v10 .home-metric-card,
+body:not(.klinikiq-auth-lock) .home-metric-card {
+  min-height: 98px !important;
+  padding: 14px !important;
+}
+
+body:not(.klinikiq-auth-lock) .session-summary-v8,
+body:not(.klinikiq-auth-lock) .performance-insight-panel.session-summary-v8 {
+  align-self: start !important;
+  min-height: 100% !important;
+  padding: clamp(22px, 2.2vw, 30px) !important;
+  gap: 12px !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-header h2 {
+  max-width: none !important;
+  font-size: clamp(1.6rem, 1.95vw, 2.3rem) !important;
+  line-height: 1.02 !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-header p {
+  max-width: none !important;
+  margin-top: 8px !important;
+  font-size: .98rem !important;
+  line-height: 1.52 !important;
+}
+
+body:not(.klinikiq-auth-lock) .performance-insight-card,
+body:not(.klinikiq-auth-lock) .performance-next-action-card {
+  padding: 14px !important;
+  border-radius: 18px !important;
+}
+
+@media (max-width: 1280px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    grid-template-columns: auto minmax(260px, 1fr) auto !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .product-mode-switch {
+    flex: 0 0 220px !important;
+    width: 220px !important;
+    min-width: 220px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-mode-switch,
+  body:not(.klinikiq-auth-lock) .komite-context-switch {
+    max-width: 440px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .home-dashboard-v8 {
+    grid-template-columns: minmax(0, 1fr) 390px !important;
+    gap: 22px !important;
+  }
+}
+
+@media (max-width: 1160px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav {
+    grid-template-columns: 1fr !important;
+    row-gap: 10px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-left-cluster,
+  body:not(.klinikiq-auth-lock) .nav-actions {
+    justify-self: start !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-mode-switch,
+  body:not(.klinikiq-auth-lock) .komite-context-switch {
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .home-dashboard-v8 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 820px) {
+  body:not(.klinikiq-auth-lock) .nav-actions .nav-score-chip,
+  body:not(.klinikiq-auth-lock) .nav-actions .nav-user-chip {
+    display: none !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .nav-left-cluster {
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .product-mode-switch {
+    width: 210px !important;
+    min-width: 210px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .home-hero-v10-main {
+    grid-template-columns: 1fr !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .home-action-panel-v10 {
+    width: 100% !important;
+  }
+}

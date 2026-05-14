@@ -92,9 +92,9 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
 
   if (accuracy < 50) {
     return {
-      title: weakBranch ? `${weakBranch}: kaçan ipuçlarını toparla` : `${primaryDomain.key.charAt(0).toLocaleUpperCase('tr') + primaryDomain.key.slice(1)} hatalarını toparla`,
+      title: weakBranch ? `${weakBranch}: ayırt ettiren ipuçlarını toparla` : `${primaryDomain.key.charAt(0).toLocaleUpperCase('tr') + primaryDomain.key.slice(1)} kararlarını toparla`,
       description: hasWrongData
-        ? `Son yanlışlar tek bir yere dağılmadan birikmiş görünüyor. Yeni bloktan önce yanlış sorularda cevabı değiştiren bulguyu ve elediğin yakın şıkkı tekrar kontrol et.`
+        ? `Yanlışların son bloklarda benzer ipuçlarında toplandığı görülüyor. Yeni bloğa geçmeden önce doğruyu değiştiren bulguyu ve en yakın yanlış seçeneği kısa bir tekrar ile gözden geçir.`
         : 'Şu an hızdan çok okuma düzeni önemli. Her olguda ana yakınma, ayırt ettiren bulgu ve ilk karar adımını ayrı ayrı işaretleyerek ilerle.',
       scoreTone: 'danger',
       focus: {
@@ -103,18 +103,18 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
         label: 'Çalışma odağı',
         title: weakBranch ? weakBranch : 'Karar adımı',
         text: weakBranch
-          ? `${weakBranchCount} yanlış aynı branşta toplanmış. Bu, konuyu baştan okumaktan çok olgudaki ayırt ettirici ipucunu yakalama çalışması gerektirir.`
-          : `Yanlışların ortak noktası ${primaryDomain.key}. Soruyu çözerken önce cevabı değiştiren tek bulguyu bulmaya çalış.`,
+          ? `${weakBranchCount} yanlış bu branşta kümelenmiş. Baştan konu okumaktan çok, olguda tanıyı değiştiren iki ipucunu ayırmayı çalış.`
+          : `Yanlışların ortak noktası ${primaryDomain.key}. Soruyu çözerken önce kararı değiştiren temel bulguyu ayır.`,
       },
       strategy: {
         icon: 'BookOpen',
         tone: 'blue',
         label: 'Aktif strateji',
         title: 'Yavaş ve kontrollü çöz',
-        text: 'Zamanlı moda geçmeden 6–8 soruluk kısa blok çöz. Her yanlışta yalnızca üç şeyi yaz: kaçan bulgu, neden yanlış şık, bir sonraki soruda bakılacak ipucu.',
+        text: 'Zamanlı moda geçmeden 6–8 soruluk kısa bir blok çöz. Her yanlışta yalnızca üç not çıkar: kaçan bulgu, yakın yanlış şık ve bir sonraki soruda bakılacak ipucu.',
       },
       nextAction: weakBranch
-        ? `${weakBranch} için kısa bir öğrenme bloğu aç; yanlış çıkanları aynı gün yeniden çöz.`
+        ? `${weakBranch} için 6–8 soruluk kısa bir blok aç; yanlış çıkanları aynı gün yeniden çöz.`
         : 'Kısa bir öğrenme bloğu çöz; aynı hata tipi tekrarlarsa AI ile tek hedefli pekiştirme sorusu üret.',
     };
   }
@@ -246,7 +246,7 @@ function HomeCommandCenter({
         <div className="home-hero-v10-main">
           <div className="home-hero-copy-v8 home-hero-copy-v10">
             <h1 className="home-brand-title-v10">KlinikIQ</h1>
-            <p>Olgu üzerinden düşün, gerekli tetkiki seç, cevabının klinik gerekçesini net gör.</p>
+            <p>Olgunun ayırt ettiren bulgusunu yakala, doğru tetkiki seç ve karar gerekçeni netleştir.</p>
             <div className="home-hero-proof-row-v10" aria-label="Klinik öğrenme özellikleri">
               <span><Icon name="Brain" /> Klinik karar</span>
               <span><Icon name="ClipboardCheck" /> Tetkik seçimi</span>
