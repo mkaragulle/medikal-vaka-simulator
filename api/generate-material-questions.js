@@ -1,6 +1,15 @@
 import { sendJson, parseJsonBody, callOpenAIJson, validateQuestionsShape, verifyCurrentSourceManifest } from './lib/komite-ai-common.js';
 import { GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, buildGenerateMaterialQuestionsPrompt } from './prompts/generateMaterialQuestionsPrompt.js';
 
+
+function sourceTextFromMaterialPacket(packet = {}) {
+  const files = Array.isArray(packet.files) ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim()) : [];
+  return files.map((file, index) => {
+    const text = String(file.cleanedExtractedText || file.text || '').trim();
+    return `[[FILE ${index + 1}]]\nfileName: ${file.fileName || file.name || 'Materyal'}\nfileType: ${file.fileType || file.type || ''}\ncleanedExtractedText:\n${text}`;
+  }).join('\n\n').trim();
+}
+
 export default async function handler(request, response) {
   if (request.method !== 'POST') return sendJson(response, 405, { ok: false, error: 'Method not allowed' });
   let body;
@@ -8,12 +17,14 @@ export default async function handler(request, response) {
   try {
     const sourceCheck = verifyCurrentSourceManifest(body);
     if (!sourceCheck.ok) return sendJson(response, 409, { ok: false, error: 'Current source session validation failed', validation: sourceCheck });
+    const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {});
+    if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
     const prompt = buildGenerateMaterialQuestionsPrompt({
       studyContext: body.studyContext || body.context || {},
       materialAnalysisJson: body.materialAnalysisJson || body.analysis || {},
       generatedLessonJson: body.generatedLessonJson || body.lesson || {},
       materialPacket: body.materialPacket || {},
-      sourceTextChunks: body.sourceTextChunks || body.extractedText || '',
+      sourceTextChunks: currentSourceText,
       sourceManifest: body.sourceManifest || body.studyContext?.sourceManifest || {},
     });
     let result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 5200, temperature: 0.25 });

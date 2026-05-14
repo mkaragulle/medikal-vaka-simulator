@@ -18,7 +18,8 @@ export function verifyCurrentSourceManifest(body = {}) {
   if (!manifest || typeof manifest !== 'object') errors.push('sourceManifest missing');
   if (manifest && fingerprint && manifest.sourceFingerprint !== fingerprint) errors.push('sourceManifest fingerprint mismatch');
   if (manifest && Number(manifest.fileCount || 0) !== files.length) errors.push('sourceManifest file count mismatch');
-  if (!files.length && !String(body.sourceTextChunks || body.extractedText || body.extractedTextOrChunks || '').trim()) errors.push('No active source content');
+  const hasReadablePacketText = files.some((file) => String(file.cleanedExtractedText || file.text || '').trim());
+  if (!hasReadablePacketText) errors.push('No active source content in current material packet');
   return { ok: errors.length === 0, errors, manifest, fingerprint };
 }
 
@@ -127,7 +128,6 @@ function findGlobalQualityErrors(output = {}) {
     [/materyaldeki ilişkili kavram/iu, 'Anlamsız “materyaldeki ilişkili kavram” etiketi var.'],
     [/slayt\s*→/iu, 'Slayt ok işaretli ham içerik var.'],
     [/sayfa\s*→/iu, 'Sayfa ok işaretli ham içerik var.'],
-    [/\b\d+\s+Pirol halkası\s+Serbest porfirinlerin biyolojik önemi yok\b/iu, 'Ham OCR/figür metni öğretim içeriğine girmiş.'],
     [/\b(?:slayt|sayfa)\s*\d+\b/iu, 'Slayt/sayfa numarası öğretim içeriğine girmiş.'],
     [/\b\w+\.(pdf|pptx|ppt|docx)\b/iu, 'Ham dosya adı öğretim içeriğine girmiş.'],
     [/prof\.?\s*dr\.?|doç\.?\s*dr\.?|öğr\.?\s*gör\.?/iu, 'Öğretim üyesi adı/unvanı içerik alanına girmiş olabilir.'],
