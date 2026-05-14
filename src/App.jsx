@@ -1015,7 +1015,8 @@ function App() {
               onClick={resetExamToHome}
               aria-pressed={mode === 'study' && !examState?.active}
             >
-              Öğrenme
+              <Icon name="BookOpen" size={17} />
+              <span>Öğrenme</span>
             </button>
             <button
               type="button"
@@ -1023,7 +1024,8 @@ function App() {
               onClick={() => setMode('exam')}
               aria-pressed={mode === 'exam' || examState?.active}
             >
-              Sınav
+              <Icon name="ClipboardList" size={17} />
+              <span>Sınav</span>
             </button>
             <button
               type="button"
@@ -1032,7 +1034,8 @@ function App() {
               aria-pressed={hardMode}
               title="Referans değerleri ve ipuçları azaltılır"
             >
-              Zor
+              <Icon name="Activity" size={17} />
+              <span>Zor</span>
             </button>
           </div>
         ) : (
@@ -1070,7 +1073,7 @@ function App() {
             aria-label="Yanlış çözülenler"
             title="Yanlış çözülenler"
           >
-            <Icon name="RotateCcw" />
+            <Icon name="XCircle" />
             <span>Yanlış</span>
             <strong>{visibleWrongAnswers.length}</strong>
           </button>

@@ -121,10 +121,10 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
 
   if (accuracy < 75) {
     return {
-      title: `${primaryDomain.key.charAt(0).toLocaleUpperCase('tr') + primaryDomain.key.slice(1)} daha netleşmeli`,
+      title: 'Karar akışını güçlendir',
       description: hasWrongData
-        ? `Doğru sayısı fena değil; kayıp daha çok sorunun son ayrımında geliyor. Yakın seçeneklerde cevabı değiştiren küçük bulguyu görünür hale getir.`
-        : 'Performans orta bantta. Her olguda ana ipucunu, dışlatıcı bulguyu ve ilk yaklaşımı ayrı ayrı işaretlemek doğruluğu artırır.',
+        ? `Doğru sayın iyi gidiyor; hata daha çok yönetim sırası ve yakın seçenek ayrımında oluşuyor. Bir sonraki blokta karar basamaklarını daha net ayır.`
+        : 'Doğru sayın iyi gidiyor. Bir sonraki blokta ayırt ettiren veri, doğru tetkik ve karar sırasını daha net ayır.',
       scoreTone: 'warning',
       focus: {
         icon: primaryDomain.icon,
@@ -144,11 +144,11 @@ function buildPerformanceInsight(stats = {}, wrongAnswers = [], mode = 'study', 
         title: mode === 'exam' ? 'Blok sonrası kontrol' : 'Gerekçe odaklı tekrar',
         text: mode === 'exam'
           ? 'Zamanlı bloktan sonra yalnızca yanlışları değil, tereddüt ettiğin doğruları da aç; kararın hangi bulguya dayandığını kontrol et.'
-          : 'Feedbackten sonra cevabı ezberleme; olgunun seni doğru seçeneğe götüren iki bulgusunu kendi cümlenle yaz.',
+          : 'Doğru seçeneğe götüren iki ana bulguyu kendi cümlelerinle yaz.',
       },
       nextAction: hasWrongData
-        ? `Son yanlış yaptığın ${weakBranch || 'branş'} olgularından kısa tekrar turu başlat.`
-        : 'Bir mini blok daha çöz; doğruluk %75 üstüne çıkınca zamanlı moda geç.',
+        ? `Kısa bir TUS Spot mini blok aç ve bugün yanlış yaptığın olguları tekrar et.`
+        : 'Kısa bir mini blok çöz; doğruluk yükselince zamanlı moda geç.',
     };
   }
 
@@ -246,7 +246,7 @@ function HomeCommandCenter({
         <div className="home-hero-v10-main">
           <div className="home-hero-copy-v8 home-hero-copy-v10">
             <h1 className="home-brand-title-v10">KlinikIQ</h1>
-            <p>Olgunun ayırt ettiren bulgusunu yakala, doğru tetkiki seç ve karar gerekçeni netleştir.</p>
+            <p>Olgunun ayırt ettiren verisini yakala, doğru tetkiki seç ve klinik kararını netleştir.</p>
             <div className="home-hero-proof-row-v10" aria-label="Klinik öğrenme özellikleri">
               <span><Icon name="Brain" /> Klinik karar</span>
               <span><Icon name="ClipboardCheck" /> Tetkik seçimi</span>
