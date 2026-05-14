@@ -6,10 +6,10 @@ function sourceTextFromMaterialPacket(packet = {}) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
-  return files.map((file, index) => {
-    const text = String(file.cleanedExtractedText || file.text || '').trim();
-    return `=== DOSYA ${index + 1} METNİ ===\n${text}`;
-  }).join('\n\n').trim();
+  return files
+    .map((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    .join('\n\n')
+    .trim();
 }
 
 export default async function handler(request, response) {

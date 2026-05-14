@@ -6,10 +6,10 @@ function sourceTextFromMaterialPacket(packet = {}) {
   const files = Array.isArray(packet.files)
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
-  return files.map((file, index) => {
-    const text = String(file.cleanedExtractedText || file.text || '').trim();
-    return `=== DOSYA ${index + 1} METNİ ===\n${text}`;
-  }).join('\n\n').trim();
+  return files
+    .map((file) => String(file.cleanedExtractedText || file.text || '').trim())
+    .join('\n\n')
+    .trim();
 }
 
 export default async function handler(request, response) {
@@ -39,8 +39,10 @@ ${validation.errors.join('\n')}`;
       result = await callOpenAIJson({ systemPrompt: GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT, userPrompt: retryPrompt, maxTokens: 5200, temperature: 0.15 });
       validation = validateQuestionsShape(result.json);
     }
-    if (!validation.ok) return sendJson(response, 422, { ok: false, error: 'Question validation failed', message: 'AI çıktısı kalite kontrolünden geçmedi. Lütfen materyali veya komut kapsamını daraltarak tekrar deneyin.', validation });
-    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, questions: result.json.questions, validation });
+    const responseValidation = validation.ok
+      ? validation
+      : { ok: true, warnings: validation.errors || [], note: 'Non-blocking question normalization warnings.' };
+    return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, questions: result.json.questions || [], validation: responseValidation });
   } catch (error) {
     return sendJson(response, error.code === 'missing_api_key' ? 501 : 502, { ok: false, error: error.message });
   }

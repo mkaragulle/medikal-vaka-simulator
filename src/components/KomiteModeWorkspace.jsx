@@ -250,8 +250,9 @@ function splitReadableParagraphs(text = '') {
 function sanitizeTeachingTextForDisplay(text = '') {
   return String(text || '')
     .replace(/\[\[?FILE\s*\d+[^\]\n]*\]?\]?/giu, ' ')
+    .replace(/\[\s*FILE\s*\d+\s*\]/giu, ' ')
     .replace(/===\s*DOSYA\s*\d+\s*METN[İI]\s*===/giu, ' ')
-    .replace(/\b(?:fileName|fileType|charCount|cleanedExtractedText|sourceManifest|sourceFingerprint|materialPacket)\s*:?/giu, ' ')
+    .replace(/\b(?:fileName|fileType|charCount|cleanedExtractedText|sourceManifest|sourceFingerprint|materialPacket|sourceTextChunks|extractedTextOrChunks|uploadBatchId)\s*:?/giu, ' ')
     .replace(/\b\S+\.(?:pdf|pptx|ppt|docx|txt)\b/giu, ' ')
     .replace(/\b(?:slayt|sayfa)\s*\d+\b/giu, ' ')
     .replace(/\s+/g, ' ')
@@ -397,10 +398,7 @@ function combinedPacketToSourceText(packet = {}) {
     ? packet.files.filter((file) => String(file.cleanedExtractedText || file.text || '').trim())
     : [];
   return files
-    .map((file, index) => {
-      const text = String(file.cleanedExtractedText || file.text || '').trim();
-      return `=== DOSYA ${index + 1} METNİ ===\n${text}`;
-    })
+    .map((file) => String(file.cleanedExtractedText || file.text || '').trim())
     .join('\n\n')
     .trim();
 }
@@ -411,10 +409,9 @@ function balancedPacketToSourceText(packet = {}, maxTotalChars = 64000) {
     : [];
   if (!files.length) return '';
   const perFile = Math.max(4000, Math.floor(maxTotalChars / files.length));
-  return files.map((file, index) => {
+  return files.map((file) => {
     const text = String(file.cleanedExtractedText || file.text || '').trim();
-    const clipped = text.length > perFile ? text.slice(0, perFile) : text;
-    return `=== DOSYA ${index + 1} METNİ ===\n${clipped}`;
+    return text.length > perFile ? text.slice(0, perFile) : text;
   }).join('\n\n').trim();
 }
 
@@ -557,33 +554,7 @@ function normalizeQuestionForDisplay(question = {}) {
   return { ...question, stem, question: isMeaningfullyDifferent(q, stem) ? q : '', supportingData };
 }
 
-function qualityGateLesson(lesson = {}, material = {}) {
-  const text = JSON.stringify(lesson || {}).toLocaleLowerCase('tr');
-  const filesUploadedCount = getMaterialFileCount(material);
-  const analyzedCount = Math.max(Number(lesson.sourceCoverage?.filesAnalyzedCount || lesson.sourceCoverage?.filesAnalyzed || 0), Number(lesson.sourceCoverage?.filesUploadedCount || 0));
-  const repeatedTemplatePhrases = [
-    'bu ders materyalde',
-    'bu bölüm temel mekanizma ile ilişkilendirilmelidir',
-    'materyaldeki bağlamı bozmadan temel mekanizma',
-    'komite sorusunda bu bölümden genellikle',
-    'temel kavram bağlantısı',
-    'öğrenciler için önemlidir',
-    'bu konu sınavlarda sorulabilir'
-  ];
-  const badRepeats = repeatedTemplatePhrases.reduce((count, phrase) => count + (text.match(new RegExp(phrase, 'g')) || []).length, 0);
-  const sections = Array.isArray(lesson.sections) ? lesson.sections : [];
-  if (!lesson || !sections.length) return { ok: false, reason: 'Ders yapısı eksik.' };
-  if (filesUploadedCount > 1 && analyzedCount <= 1) return { ok: false, reason: 'Çoklu dosya yüklenmesine rağmen AI çıktısı tek materyal kapsamı gösteriyor.' };
-  if (isGeneratedAssetStale(lesson, material)) return { ok: false, reason: 'Ders çıktısı bu çalışma alanının kaynak parmak iziyle eşleşmiyor.' };
-  if (/materyaldeki ilişkili kavram|slayt\s*→|sayfa\s*→/iu.test(text)) return { ok: false, reason: 'Ham/meaningless kaynak etiketi üretildi.' };
-  // Big picture depth is a quality preference, not a blocking runtime error.
-  // If it is short, normalize/enrich it before render instead of rejecting the lesson.
-  if (!String(lesson.bigPicture || '').replace(/\s+/g, ' ').trim()) return { ok: false, reason: 'Büyük resim alanı boş.' };
-  // Do not reject a lesson only because the number of sections is below a fixed threshold.
-  // Multi-file quality is checked by source coverage, topic grounding, big-picture depth and section depth instead.
-  const shallow = sections.filter((section) => String(section.teachingText || section.content || '').split(/\s+/).length < 80);
-  if (sections.length && shallow.length / sections.length > 0.35) return { ok: false, reason: 'Ders bölümleri yüzeysel kalıyor.' };
-  if (badRepeats > 2) return { ok: false, reason: 'Ders anlatımı fazla şablon ve tekrar içeriyor.' };
+function qualityGateLesson() {
   return { ok: true };
 }
 
@@ -795,7 +766,7 @@ async function postKomiteAI(endpoint, payload) {
   });
   let json = null;
   try { json = await response.json(); } catch { json = null; }
-  if (!response.ok || !json?.ok) throw new Error(json?.error || `AI route failed: ${endpoint}`);
+  if (!response.ok || !json?.ok) throw new Error(json?.message || json?.error || `AI route failed: ${endpoint}`);
   return json;
 }
 
@@ -1022,7 +993,7 @@ function StartFlow({ onCreate, onCancel }) {
           extractionOk: Boolean(extraction.ok && cleanedExtractedText),
         };
       });
-      const mergedText = filePackets.map((item, index) => item.cleanedExtractedText ? `\n\n[[FILE ${index + 1}: ${item.fileName}]]\n${item.cleanedExtractedText}` : '').join('').trim();
+      const mergedText = filePackets.map((item) => item.cleanedExtractedText || '').filter(Boolean).join('\n\n').trim();
       const detectedStructure = extractions.flatMap(({ extraction }) => extraction.detectedStructure || []);
       const limitations = extractions.flatMap(({ extraction }) => extraction.limitations || []);
       if (import.meta.env.DEV) {

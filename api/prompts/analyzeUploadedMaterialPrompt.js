@@ -2,25 +2,18 @@ import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPromp
 
 export const ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT = KOMITE_GLOBAL_EDUCATIONAL_PROMPT;
 
-export function buildAnalyzeUploadedMaterialPrompt({ metadata = {}, extractedTextOrChunks = '' } = {}) {
-  return `Aşağıdaki mevcut kaynak metni kısaca analiz et ve sadece JSON döndür. Eski oturum, metadata veya dosya adından konu üretme.
+export function buildAnalyzeUploadedMaterialPrompt({ extractedTextOrChunks = '' } = {}) {
+  return `Aşağıdaki metni kısaca analiz et. Sadece bu metni kullan. Eski oturum, dosya adı, metadata veya örnek konu kullanma.
 
-Bağlam:
-${JSON.stringify({
-  classYear: metadata.classYear || '',
-  committeeOrCourse: metadata.committeeOrCourse || metadata.committee || metadata.course || '',
-  learningTarget: metadata.learningTarget || '',
-}, null, 2)}
+Metin:
+${extractedTextOrChunks || 'Okunabilir metin yok.'}
 
-Kaynak metin:
-${extractedTextOrChunks || 'Okunabilir kaynak metin yok.'}
-
-JSON şeması:
+Sadece şu JSON yapısıyla dön:
 {
   "materialTitle": "",
   "detectedCourseOrTopic": "",
   "sourceQuality": { "readableText": true, "figuresDetected": false, "tablesDetected": false, "limitations": [] },
-  "lectureStructure": [{ "sectionTitle": "", "sourcePages": [], "mainIdeas": [], "importantDetails": [] }],
+  "lectureStructure": [],
   "keyConcepts": [],
   "mechanisms": [],
   "clinicalRelevance": [],
@@ -31,10 +24,5 @@ JSON şeması:
   "questionGenerationTargets": [],
   "flashcardGenerationTargets": [],
   "sourceReferences": []
-}
-
-Kurallar:
-- Kullanıcıya görünecek hiçbir alanda ham OCR, dosya adı, JSON anahtarı veya metadata yazma.
-- Kaynakta olmayan konu ekleme.
-- Kısa, temiz ve Türkçe yaz.`;
+}`;
 }

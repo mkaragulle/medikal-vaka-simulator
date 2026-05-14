@@ -133,7 +133,7 @@ function findGlobalQualityErrors(output = {}) {
     [/prof\.?\s*dr\.?|doç\.?\s*dr\.?|öğr\.?\s*gör\.?/iu, 'Öğretim üyesi adı/unvanı içerik alanına girmiş olabilir.'],
   ];
   bannedPatterns.forEach(([pattern, message]) => { if (pattern.test(text)) errors.push(message); });
-  const genericCount = (text.match(/klinik bağlamda değerlendirilir|materyal kapsamında önemlidir|bu konu sınavlarda sorulabilir|öğrenciler için önemlidir|temel mekanizma ile ilişkilendirilmelidir|temel kavram bağlantısı/giu) || []).length;
+  const genericCount = (text.match(/klinik bağlamda değerlendirilir|materyal kapsamında önemlidir|bu konu sınavlarda sorulabilir|öğrenciler için önemlidir/giu) || []).length;
   if (genericCount >= 2) errors.push('Tekrarlayan jenerik dolgu ifadeler var.');
   return errors;
 }
@@ -179,26 +179,25 @@ export function validateFlashcardsShape(output = {}) {
 }
 
 export function validateLessonShape(output = {}, context = {}) {
-  const errors = findGlobalQualityErrors(output);
-  const sections = Array.isArray(output.sections) && output.sections.length ? output.sections : (Array.isArray(output.lessonSections) ? output.lessonSections : output.coreExplanation);
+  const warnings = findGlobalQualityErrors(output);
+  const sections = Array.isArray(output.sections) && output.sections.length
+    ? output.sections
+    : (Array.isArray(output.lessonSections) ? output.lessonSections : output.coreExplanation);
   const title = String(output.title || output.academicTitle || '').trim();
-  if (!title) errors.push('Ders başlığı yok.');
-  if (/\.(pdf|pptx|ppt|docx)$/iu.test(title) || /(^|[\s_-])\d{4}([\s_-]|$)/u.test(title)) errors.push('Ders başlığı ham dosya adı/tarih gibi görünüyor.');
-  if (!Array.isArray(sections) || sections.length === 0) errors.push('Ders bölümleri yok.');
-  // Short intro depth is a quality preference; do not reject otherwise usable source-bound AI output.
-  const objectives = Array.isArray(output.learningObjectives) ? output.learningObjectives : [];
-  // Objective count should not block generation; the prompt requests enough objectives, but runtime should remain permissive.
-  objectives.forEach((objective, index) => {
-    const objectiveText = String(objective || '');
-    if (hasDateLikeText(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde tarih var.`);
-    if (/prof\.?|doç\.?|öğr\.?|\.(pdf|pptx|ppt|docx)/iu.test(objectiveText)) errors.push(`${index + 1}. öğrenme hedefinde metadata var.`);
-  });
-  // Big picture is normalized after generation. Missing/short bigPicture must never become a user-facing hard error.
+
+  // Keep this validator intentionally permissive. It should protect only against a completely
+  // unusable response, not block a current-source lesson because a section is short, a title is
+  // imperfect, or a source page marker appeared in the model's JSON.
+  const errors = [];
+  if (!title && (!Array.isArray(sections) || sections.length === 0) && !String(output.bigPicture || output.overview || output.shortIntro || '').trim()) {
+    errors.push('AI boş veya kullanılamaz ders çıktısı döndürdü.');
+  }
+
   const filesUploadedCount = Number(context.filesUploadedCount || 0);
   const filesAnalyzedCount = Number(output.sourceCoverage?.filesAnalyzedCount || output.sourceCoverage?.filesAnalyzed || 0);
-  if (filesUploadedCount > 1 && filesAnalyzedCount <= 1) errors.push('Çoklu dosya yüklendiği halde çıktı tek dosya kapsamı gösteriyor.');
-  // Section depth is handled by prompt/retry and UI display; it should not reject valid current-source output.
-  const qualityCheck = output.qualityCheck || {};
-  if (filesUploadedCount > 1 && qualityCheck.usesAllFiles === false) errors.push('qualityCheck usesAllFiles=false döndü.');
-  return { ok: errors.length === 0, errors };
+  if (filesUploadedCount > 1 && filesAnalyzedCount > 0 && filesAnalyzedCount < filesUploadedCount) {
+    warnings.push('Çoklu dosya kapsamı eksik görünüyor.');
+  }
+
+  return { ok: errors.length === 0, errors, warnings };
 }

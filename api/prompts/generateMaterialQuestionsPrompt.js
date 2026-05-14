@@ -2,16 +2,13 @@ import { KOMITE_GLOBAL_EDUCATIONAL_PROMPT } from './komiteGlobalEducationalPromp
 
 export const GENERATE_MATERIAL_QUESTIONS_SYSTEM_PROMPT = KOMITE_GLOBAL_EDUCATIONAL_PROMPT;
 
-export function buildGenerateMaterialQuestionsPrompt({ sourceTextChunks = '', generatedLessonJson = {} } = {}) {
-  return `Aşağıdaki mevcut kaynak metinden 10 adet kaliteli KOMITE çalışma sorusu üret. Sadece kaynak metni kullan; eski oturum, metadata, örnek konu veya dosya adı kullanma.
+export function buildGenerateMaterialQuestionsPrompt({ sourceTextChunks = '' } = {}) {
+  return `Aşağıdaki metinden 10 adet kaliteli KOMITE çalışma sorusu üret. Sadece bu metni kullan. Eski oturum, metadata, dosya adı veya örnek konu kullanma.
 
-Kaynak metin:
-${sourceTextChunks || 'Okunabilir kaynak metin yok.'}
+Metin:
+${sourceTextChunks || 'Okunabilir metin yok.'}
 
-Varsa mevcut ders özeti:
-${JSON.stringify(generatedLessonJson || {}, null, 2)}
-
-JSON şeması:
+Sadece şu JSON yapısıyla dön:
 {
   "questions": [
     {
@@ -30,12 +27,5 @@ JSON şeması:
       "memoryNote": ""
     }
   ]
-}
-
-Kurallar:
-- Her soru tek öğrenme hedefini ölçsün.
-- Beş seçenek aynı kategoriden ve makul çeldiricilerden oluşsun.
-- Açıklamalar öğretici olsun, "Doğru/Yanlış" gibi kısa kalmasın.
-- Ham kaynak etiketi, dosya adı, JSON alan adı veya OCR kırıntısı yazma.
-- Sadece JSON döndür.`;
+}`;
 }
