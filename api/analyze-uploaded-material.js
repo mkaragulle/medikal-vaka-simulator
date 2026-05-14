@@ -76,7 +76,7 @@ export default async function handler(request, response) {
     const currentSourceText = sourceTextFromMaterialPacket(body.materialPacket || {});
     if (!currentSourceText) return sendJson(response, 422, { ok: false, error: 'Current material packet has no readable text.' });
     const prompt = buildAnalyzeUploadedMaterialPrompt({ extractedTextOrChunks: currentSourceText });
-    const result = await callOpenAIJson({ systemPrompt: ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_ANALYSIS_MAX_OUTPUT_TOKENS', 1800), temperature: 0.1, jsonSchema: ANALYSIS_JSON_SCHEMA, scope: 'KOMITE' });
+    const result = await callOpenAIJson({ systemPrompt: ANALYZE_UPLOADED_MATERIAL_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: envNumber('KOMITE_ANALYSIS_MAX_OUTPUT_TOKENS', 1800), jsonSchema: ANALYSIS_JSON_SCHEMA, scope: 'KOMITE' });
     return sendJson(response, 200, { ok: true, provider: 'openai', model: result.model, analysis: result.json });
   } catch (error) {
     return sendJson(response, error.code === 'missing_api_key' ? 501 : (error.status || 502), { ok: false, error: error.message });

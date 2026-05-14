@@ -31,7 +31,7 @@ export default async function handler(request, response) {
       materialAnalysisJson: body.materialAnalysisJson || {},
       generatedOutputJson,
     });
-    const result = await callOpenAIJson({ systemPrompt: VALIDATE_AI_OUTPUT_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 1200, temperature: 0.1, scope: 'KOMITE' });
+    const result = await callOpenAIJson({ systemPrompt: VALIDATE_AI_OUTPUT_SYSTEM_PROMPT, userPrompt: prompt, maxTokens: 1200, scope: 'KOMITE' });
     return sendJson(response, 200, { ok: Boolean(result.json.ok) && local.ok, provider: 'openai', model: result.model, validation: { ...result.json, localErrors: local.errors } });
   } catch (error) {
     return sendJson(response, 200, {

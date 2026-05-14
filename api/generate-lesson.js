@@ -206,7 +206,6 @@ export default async function handler(request, response) {
       systemPrompt: GENERATE_LESSON_SYSTEM_PROMPT,
       userPrompt: prompt,
       maxTokens: envNumber('KOMITE_LESSON_MAX_OUTPUT_TOKENS', 4800),
-      temperature: 0.15,
       jsonSchema: LESSON_JSON_SCHEMA,
       scope: 'KOMITE',
     });

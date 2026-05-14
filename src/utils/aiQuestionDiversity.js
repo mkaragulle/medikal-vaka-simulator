@@ -311,7 +311,6 @@ export function summarizeDiversityDebug(candidate = {}, diversityResult = {}, di
     selectedSubtopic: diversityPlan.selectedSubtopic,
     questionType: diversityPlan.questionType,
     seed: diversityPlan.seed,
-    temperature: extra.temperature,
     previousTopicWindow: diversityPlan.previousTopicWindow || [],
     generatedTitle: candidate.title,
     generatedCorrectAnswer: getQuestionCorrectText(candidate),

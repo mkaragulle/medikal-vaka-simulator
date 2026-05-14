@@ -155,7 +155,19 @@ function firstNumber(defaultValue, ...keys) {
   return defaultValue;
 }
 
-export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, temperature = 0.2, jsonSchema = null, scope = 'KOMITE' } = {}) {
+function buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens }) {
+  return {
+    model,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt },
+    ],
+    response_format: jsonSchema ? { type: 'json_schema', json_schema: jsonSchema } : { type: 'json_object' },
+    max_completion_tokens: effectiveMaxTokens,
+  };
+}
+
+export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 2500, jsonSchema = null, scope = 'KOMITE' } = {}) {
   const envPrefix = String(scope || 'KOMITE').toUpperCase();
   const apiKey = firstEnv(`${envPrefix}_OPENAI_API_KEY`, 'OPENAI_API_KEY');
   if (!apiKey) {
@@ -183,16 +195,7 @@ export async function callOpenAIJson({ systemPrompt, userPrompt, maxTokens = 250
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${apiKey}` },
       signal: controller.signal,
-      body: JSON.stringify({
-        model,
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt },
-        ],
-        temperature,
-        response_format: jsonSchema ? { type: 'json_schema', json_schema: jsonSchema } : { type: 'json_object' },
-        max_completion_tokens: effectiveMaxTokens,
-      }),
+      body: JSON.stringify(buildChatCompletionBody({ model, systemPrompt, userPrompt, jsonSchema, effectiveMaxTokens })),
     });
     if (!response.ok) {
       const details = await response.text();
