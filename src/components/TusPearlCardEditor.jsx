@@ -127,52 +127,54 @@ function TusPearlCardEditor({
   if (!open) return null;
 
   return (
-    <div className="pearl-editor-backdrop" role="presentation">
-      <section className="pearl-editor-modal card-surface" role="dialog" aria-modal="true" aria-label={title}>
-        <header className="pearl-editor-head">
-          <div>
-            <p className="auth-eyebrow">Kişisel hap kart</p>
+    <div className="pearl-editor-backdrop" role="presentation" onClick={onClose}>
+      <section className="pearl-editor-modal card-surface" role="dialog" aria-modal="true" aria-label={title} onClick={(event) => event.stopPropagation()}>
+        <header className="pearl-editor-head pearl-editor-premium-head">
+          <div className="pearl-editor-head-copy">
+            <p className="auth-eyebrow pearl-editor-eyebrow">Kişisel hap kart</p>
             <h2>{title}</h2>
-            <span>Öğrendiğin bilgiyi kısa bir aktif hatırlama kartına dönüştür.</span>
+            <span>Bilgiyi kısa, net ve tekrar etmeye uygun bir aktif hatırlama kartına dönüştür.</span>
           </div>
-          <button type="button" className="btn btn-icon quiet" onClick={onClose} aria-label="Kart editörünü kapat">
+          <button type="button" className="btn btn-icon quiet pearl-editor-close" onClick={onClose} aria-label="Kart editörünü kapat">
             <Icon name="X" />
           </button>
         </header>
 
-        <form className="pearl-editor-form" onSubmit={handleSubmit}>
-          <label>
-            <span>Ön yüz / aktif hatırlama</span>
-            <textarea value={form.front} onChange={(event) => updateField('front', event.target.value)} placeholder="Örnek: Anafilakside hayat kurtarıcı ilk tedavi nedir?" rows={3} />
-          </label>
-          <label>
-            <span>Yanıt</span>
-            <textarea value={form.back} onChange={(event) => updateField('back', event.target.value)} placeholder="Net cevap: İntramüsküler adrenalin." rows={3} />
-          </label>
-          <label>
-            <span>Kısa gerekçe</span>
-            <textarea value={form.explanation} onChange={(event) => updateField('explanation', event.target.value)} placeholder="1–2 cümlelik bilimsel gerekçe ekle. Ön yüz cümlesini tekrar etme." rows={2} />
-          </label>
+        <form className="pearl-editor-form pearl-editor-premium-form" onSubmit={handleSubmit}>
+          <div className="pearl-editor-primary-grid">
+            <label className="pearl-editor-panel pearl-editor-panel-lg">
+              <span>Ön yüz / aktif hatırlama</span>
+              <textarea value={form.front} onChange={(event) => updateField('front', event.target.value)} placeholder="Örnek: Anafilakside hayat kurtarıcı ilk tedavi nedir?" rows={5} />
+            </label>
 
-          <div className="pearl-editor-lite-grid">
-            <label>
+            <div className="pearl-editor-primary-stack">
+              <label className="pearl-editor-panel">
+                <span>Yanıt</span>
+                <textarea value={form.back} onChange={(event) => updateField('back', event.target.value)} placeholder="Net cevap: İntramüsküler adrenalin." rows={3} />
+              </label>
+              <label className="pearl-editor-panel pearl-editor-panel-compact">
+                <span>Kısa gerekçe</span>
+                <textarea value={form.explanation} onChange={(event) => updateField('explanation', event.target.value)} placeholder="1–2 cümlelik bilimsel gerekçe ekle. Ön yüz cümlesini tekrar etme." rows={2} />
+              </label>
+            </div>
+          </div>
+
+          <div className="pearl-editor-support-grid pearl-editor-support-grid-2x2">
+            <label className="pearl-editor-panel pearl-editor-panel-compact">
               <span>TUS ipucu</span>
               <textarea value={form.tusTip} onChange={(event) => updateField('tusTip', event.target.value)} placeholder="Sınavda yakalanacak kısa patern" rows={2} />
             </label>
-            <label>
+            <label className="pearl-editor-panel pearl-editor-panel-compact">
               <span>Ayırıcı not</span>
               <textarea value={form.differentialNote} onChange={(event) => updateField('differentialNote', event.target.value)} placeholder="Benzer kavramla farkı veya çeldirici tuzağı" rows={2} />
             </label>
-          </div>
-
-          <div className="pearl-editor-lite-grid">
-            <label>
+            <label className="pearl-editor-panel pearl-editor-panel-inline">
               <span>Branş</span>
               <select value={form.branchId} onChange={(event) => updateField('branchId', event.target.value)}>
                 {branches.map((branch) => <option key={branch.id} value={branch.id}>{branch.shortName || branch.name}</option>)}
               </select>
             </label>
-            <label>
+            <label className="pearl-editor-panel pearl-editor-panel-inline">
               <span>Katalog</span>
               <select value={form.catalogId} onChange={(event) => updateField('catalogId', event.target.value)}>
                 <option value="">Kendi kartlarım</option>
@@ -181,47 +183,49 @@ function TusPearlCardEditor({
             </label>
           </div>
 
-          <button type="button" className="pearl-editor-advanced-toggle" onClick={() => setAdvancedOpen((current) => !current)}>
-            <Icon name={advancedOpen ? 'ChevronUp' : 'ChevronDown'} size={16} />
-            <span>Gelişmiş alanlar</span>
-          </button>
+          <div className="pearl-editor-advanced-wrap">
+            <button type="button" className="pearl-editor-advanced-toggle" onClick={() => setAdvancedOpen((current) => !current)}>
+              <Icon name={advancedOpen ? 'ChevronUp' : 'ChevronDown'} size={16} />
+              <span>Gelişmiş alanlar</span>
+            </button>
 
-          {advancedOpen ? (
-            <div className="pearl-editor-advanced-grid">
-              <label>
-                <span>Konu</span>
-                <input value={form.topic} onChange={(event) => updateField('topic', event.target.value)} placeholder="Beta blokerler, anafilaksi..." />
-              </label>
-              <label>
-                <span>Ders / başlık</span>
-                <input value={form.subject} onChange={(event) => updateField('subject', event.target.value)} placeholder="Tıbbi Farmakoloji" />
-              </label>
-              <label>
-                <span>Etiketler</span>
-                <input value={form.tags} onChange={(event) => updateField('tags', event.target.value)} placeholder="farmakoloji, kontrendikasyon" />
-              </label>
-              <label>
-                <span>Anahtar kelimeler</span>
-                <input value={form.keywords} onChange={(event) => updateField('keywords', event.target.value)} placeholder="beta-2 blokajı, bronkospazm" />
-              </label>
-              <label>
-                <span>Zorluk</span>
-                <select value={form.difficulty} onChange={(event) => updateField('difficulty', event.target.value)}>
-                  <option value="kolay">Kolay</option>
-                  <option value="orta">Orta</option>
-                  <option value="zor">Zor</option>
-                </select>
-              </label>
-              <label>
-                <span>Çıkmış yıl</span>
-                <input value={form.appearedYears} onChange={(event) => updateField('appearedYears', event.target.value)} placeholder="2021, 2023" />
-              </label>
-            </div>
-          ) : null}
+            {advancedOpen ? (
+              <div className="pearl-editor-advanced-grid pearl-editor-advanced-grid-premium">
+                <label>
+                  <span>Konu</span>
+                  <input value={form.topic} onChange={(event) => updateField('topic', event.target.value)} placeholder="Adrenal kriz, astım, anafilaksi..." />
+                </label>
+                <label>
+                  <span>Ders / başlık</span>
+                  <input value={form.subject} onChange={(event) => updateField('subject', event.target.value)} placeholder="İç Hastalıkları" />
+                </label>
+                <label>
+                  <span>Zorluk</span>
+                  <select value={form.difficulty} onChange={(event) => updateField('difficulty', event.target.value)}>
+                    <option value="kolay">Kolay</option>
+                    <option value="orta">Orta</option>
+                    <option value="zor">Zor</option>
+                  </select>
+                </label>
+                <label>
+                  <span>Etiketler</span>
+                  <input value={form.tags} onChange={(event) => updateField('tags', event.target.value)} placeholder="farmakoloji, kontrendikasyon" />
+                </label>
+                <label>
+                  <span>Anahtar kelimeler</span>
+                  <input value={form.keywords} onChange={(event) => updateField('keywords', event.target.value)} placeholder="hipotansiyon, hiperkalemi, adrenalin" />
+                </label>
+                <label>
+                  <span>Çıkmış yıl</span>
+                  <input value={form.appearedYears} onChange={(event) => updateField('appearedYears', event.target.value)} placeholder="2021, 2023" />
+                </label>
+              </div>
+            ) : null}
+          </div>
 
           {error ? <p className="pearl-editor-error">{error}</p> : null}
 
-          <footer className="pearl-editor-actions">
+          <footer className="pearl-editor-actions pearl-editor-actions-premium">
             <button type="button" className="btn btn-secondary" onClick={onClose}>Vazgeç</button>
             <button type="submit" className="btn btn-primary">
               <Icon name="LayeredCards" />
