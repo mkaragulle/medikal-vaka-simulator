@@ -124,7 +124,6 @@ function PearlStudyMoreMenu({
   viewMode,
   items = [],
   onOpenRepeatList,
-  onCreateCard,
 }) {
   const [open, setOpen] = useState(false);
   const [position, setPosition] = useState({ placement: 'popover', top: 0, left: 0, width: 280 });
@@ -188,49 +187,61 @@ function PearlStudyMoreMenu({
     action?.();
   }
 
+  const moreMenuDisplayMap = {
+    known: {
+      title: 'Bildiğim Kartlar',
+      icon: 'CheckCircle',
+    },
+    user: {
+      title: 'Kendi Oluşturduğum Kartlarım',
+      icon: 'NotebookPen',
+    },
+  };
+
   const menu = open ? createPortal(
     <div
       ref={menuRef}
       id="pearl-study-more-menu"
       className={`pearl-study-more-panel pearl-study-more-popover ${position.placement === 'sheet' ? 'mobile-sheet' : ''}`}
       role="menu"
-      aria-label="Diğer tekrar listeleri ve kart işlemleri"
+      aria-label="Diğer tekrar listeleri"
       style={position.placement === 'sheet'
         ? { left: position.left, right: position.right, bottom: position.bottom, width: 'auto' }
         : { top: position.top, left: position.left, width: position.width }}
     >
       <button type="button" role="menuitem" onClick={() => runAndClose(() => onOpenRepeatList('all'))}>
-        <span>
-          <strong>Tüm kartları gör</strong>
-          <em>500 kartlık ana tekrar havuzuna dön.</em>
-        </span>
-        <Icon name="LayeredCards" size={15} />
-      </button>
-
-      {items.map((item) => (
-        <button
-          key={item.id}
-          type="button"
-          role="menuitem"
-          className={(viewMode === 'study' && filter === item.filter) || (item.id === 'catalogs' && viewMode === 'catalogs') ? 'active' : ''}
-          onClick={() => runAndClose(() => onOpenRepeatList(item))}
-        >
-          <span>
-            <strong>{item.shortLabel}</strong>
-            <em>{item.description}</em>
+        <span className="pearl-study-more-entry">
+          <span className="pearl-study-more-icon" aria-hidden="true">
+            <Icon name="LayeredCards" size={15} />
           </span>
-          <b>{item.id === 'catalogs' ? `${item.count} set` : `${item.count} kart`}</b>
-        </button>
-      ))}
-
-      <div className="pearl-study-more-divider" />
-      <button type="button" role="menuitem" onClick={() => runAndClose(onCreateCard)}>
-        <span>
-          <strong>Kendi kartını oluştur</strong>
-          <em>Yeni öğrendiğin bilgiyi kişisel karta dönüştür.</em>
+          <span className="pearl-study-more-copy">
+            <strong>Tüm Kartları Gör</strong>
+          </span>
         </span>
-        <Icon name="Notes" size={15} />
       </button>
+
+      {items.map((item) => {
+        const display = moreMenuDisplayMap[item.id] || {};
+        return (
+          <button
+            key={item.id}
+            type="button"
+            role="menuitem"
+            className={viewMode === 'study' && filter === item.filter ? 'active' : ''}
+            onClick={() => runAndClose(() => onOpenRepeatList(item))}
+          >
+            <span className="pearl-study-more-entry">
+              <span className="pearl-study-more-icon" aria-hidden="true">
+                <Icon name={display.icon || item.icon || 'Sparkles'} size={15} />
+              </span>
+              <span className="pearl-study-more-copy">
+                <strong>{display.title || item.shortLabel}</strong>
+              </span>
+            </span>
+            <b>{`${item.count} kart`}</b>
+          </button>
+        );
+      })}
     </div>,
     document.body,
   ) : null;
@@ -249,6 +260,150 @@ function PearlStudyMoreMenu({
         onClick={() => setOpen((current) => !current)}
       >
         <span>Diğer</span>
+        <Icon name="ChevronDown" size={14} />
+      </button>
+      {menu}
+    </div>
+  );
+}
+
+function PearlStudyCatalogsMenu({
+  catalogs = [],
+  activeCatalogId = '',
+  viewMode = 'study',
+  onManageCatalogs,
+  onOpenCatalog,
+}) {
+  const [open, setOpen] = useState(false);
+  const [position, setPosition] = useState({ placement: 'popover', top: 0, left: 0, width: 300 });
+  const triggerRef = useRef(null);
+  const menuRef = useRef(null);
+
+  const updatePosition = useCallback(() => {
+    setPosition(getMoreMenuPosition(triggerRef.current));
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!open) return undefined;
+    updatePosition();
+    const frame = window.requestAnimationFrame(() => {
+      updatePosition();
+      const menuNode = menuRef.current;
+      const triggerNode = triggerRef.current;
+      if (!menuNode || !triggerNode || window.innerWidth <= 640) return;
+      const margin = 12;
+      const menuRect = menuNode.getBoundingClientRect();
+      if (menuRect.bottom > window.innerHeight - margin) {
+        const triggerRect = triggerNode.getBoundingClientRect();
+        setPosition((current) => ({
+          ...current,
+          top: Math.max(margin, triggerRect.top - menuRect.height - 8),
+        }));
+      }
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [open, updatePosition]);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const handlePointerDown = (event) => {
+      const target = event.target;
+      if (triggerRef.current?.contains(target) || menuRef.current?.contains(target)) return;
+      setOpen(false);
+    };
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+    const handleReposition = () => updatePosition();
+
+    document.addEventListener('pointerdown', handlePointerDown, true);
+    document.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('resize', handleReposition);
+    window.addEventListener('scroll', handleReposition, true);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown, true);
+      document.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleReposition);
+      window.removeEventListener('scroll', handleReposition, true);
+    };
+  }, [open, updatePosition]);
+
+  function runAndClose(action) {
+    setOpen(false);
+    action?.();
+  }
+
+  const menu = open ? createPortal(
+    <div
+      ref={menuRef}
+      id="pearl-study-catalogs-menu"
+      className={`pearl-study-more-panel pearl-study-more-popover ${position.placement === 'sheet' ? 'mobile-sheet' : ''}`}
+      role="menu"
+      aria-label="Kataloglarım"
+      style={position.placement === 'sheet'
+        ? { left: position.left, right: position.right, bottom: position.bottom, width: 'auto' }
+        : { top: position.top, left: position.left, width: position.width }}
+    >
+      <button
+        type="button"
+        role="menuitem"
+        className={viewMode === 'catalogs' ? 'active' : ''}
+        onClick={() => runAndClose(onManageCatalogs)}
+      >
+        <span>
+          <strong>Katalogları yönet</strong>
+          <em>Setlerini düzenle, kart ekle ve katalog bazlı çalış.</em>
+        </span>
+        <b>{`${catalogs.length} set`}</b>
+      </button>
+
+      <div className="pearl-study-more-divider" />
+
+      {catalogs.length ? catalogs.map((catalog) => (
+        <button
+          key={catalog.id}
+          type="button"
+          role="menuitem"
+          className={viewMode === 'study' && activeCatalogId === catalog.id ? 'active' : ''}
+          onClick={() => runAndClose(() => onOpenCatalog(catalog.id))}
+        >
+          <span>
+            <strong>{catalog.name}</strong>
+            <em>{catalog.description?.trim() || 'Katalog bazlı çalışma seti'}</em>
+          </span>
+          <b>{`${(catalog.cardIds || []).length} kart`}</b>
+        </button>
+      )) : (
+        <button type="button" role="menuitem" onClick={() => runAndClose(onManageCatalogs)}>
+          <span>
+            <strong>Henüz katalog yok</strong>
+            <em>İlk katalog setini oluşturmak için yönetim ekranını aç.</em>
+          </span>
+          <Icon name="ArrowRight" size={15} />
+        </button>
+      )}
+    </div>,
+    document.body,
+  ) : null;
+
+  const active = viewMode === 'catalogs' || (viewMode === 'study' && Boolean(activeCatalogId));
+  const menuClassName = ['pearl-study-more-menu', 'pearl-study-catalogs-menu', active ? 'active' : '', open ? 'open' : ''].filter(Boolean).join(' ');
+
+  return (
+    <div className={menuClassName}>
+      <button
+        ref={triggerRef}
+        type="button"
+        className="pearl-study-more-trigger"
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-controls="pearl-study-catalogs-menu"
+        onClick={() => setOpen((current) => !current)}
+      >
+        <span>Kataloglarım</span>
         <Icon name="ChevronDown" size={14} />
       </button>
       {menu}
@@ -319,8 +474,8 @@ function TusPearlStudyScreen({
   const modeLabel = resolveModeLabel(filter, branchFilter, activeCatalog);
   const repeatListItems = useMemo(() => buildPearlRepeatListItems(pearlState, allCards), [allCards, pearlState]);
   const primaryRepeatItems = useMemo(() => repeatListItems.filter((item) => ['all', 'favorites', 'wrong', 'review'].includes(item.id)), [repeatListItems]);
-  const secondaryRepeatItems = useMemo(() => repeatListItems.filter((item) => ['known', 'user', 'catalogs'].includes(item.id)), [repeatListItems]);
-  const isSecondaryListActive = viewMode === 'catalogs' || ['known', 'user'].includes(filter);
+  const secondaryRepeatItems = useMemo(() => repeatListItems.filter((item) => ['known', 'user'].includes(item.id)), [repeatListItems]);
+  const isSecondaryListActive = ['known', 'user'].includes(filter);
   const emptyState = useMemo(() => getPearlEmptyState(filter), [filter]);
   const activeCardContent = useMemo(() => getPearlBackContent(activeCard || {}), [activeCard]);
   const activeCardBranchName = activeCard ? getBranchName(activeCard.branchId) : 'TUS';
@@ -665,6 +820,14 @@ function TusPearlStudyScreen({
           </nav>
 
           <div className="pearl-study-compact-actions">
+            <PearlStudyCatalogsMenu
+              catalogs={pearlState.customCatalogs}
+              activeCatalogId={activeCatalogId}
+              viewMode={viewMode}
+              onManageCatalogs={() => setViewMode('catalogs')}
+              onOpenCatalog={openCatalogForStudy}
+            />
+
             <button type="button" className="btn btn-secondary compact pearl-reshuffle-button" onClick={() => rebuildStudySession(filteredCards)}>
               <Icon name="RotateCcw" size={15} />
               <span>Yeni sıra</span>
@@ -676,7 +839,6 @@ function TusPearlStudyScreen({
               viewMode={viewMode}
               items={secondaryRepeatItems}
               onOpenRepeatList={openRepeatList}
-              onCreateCard={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}
             />
           </div>
         </div>
