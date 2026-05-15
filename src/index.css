@@ -42367,3 +42367,46 @@ body:not(.klinikiq-auth-lock) .tus-mode-redesign button small {
     padding: 0 12px !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ v73 — exact vertical centering for Öğrenme/Sınav pill
+   Purpose: keep inner colored tabs perfectly inset inside the
+   outer white capsule with equal top/bottom spacing.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign {
+  align-items: stretch !important;
+  justify-items: stretch !important;
+  padding: 4px !important;
+  gap: 4px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign button,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button {
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  align-self: stretch !important;
+  justify-self: stretch !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign button.active,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button.active {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+@media (max-width: 720px) {
+  body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign,
+  body:not(.klinikiq-auth-lock) .tus-mode-redesign {
+    padding: 4px !important;
+    gap: 4px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign button,
+  body:not(.klinikiq-auth-lock) .tus-mode-redesign button {
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+}
