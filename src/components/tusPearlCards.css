@@ -6718,3 +6718,172 @@
     width: 100%;
   }
 }
+
+
+/* =========================================================
+   V84 — Pearl editor compact quick-save modal
+   Smaller, minimal, no-scroll-first desktop layout.
+   ========================================================= */
+.pearl-editor-modal-compact {
+  width: min(100%, 980px);
+  max-height: min(86vh, 760px);
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+.pearl-editor-head-compact {
+  align-items: center;
+  padding: 18px 22px 14px;
+}
+
+.pearl-editor-head-compact .pearl-editor-head-copy {
+  gap: 2px;
+}
+
+.pearl-editor-head-compact h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 2vw, 1.95rem);
+  line-height: 1.04;
+}
+
+.pearl-editor-head-compact span {
+  font-size: 0.92rem;
+}
+
+.pearl-editor-close-compact {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+}
+
+.pearl-editor-form-compact {
+  gap: 12px;
+  padding: 12px 22px 18px;
+}
+
+.pearl-editor-primary-grid-compact {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 12px;
+}
+
+.pearl-editor-primary-stack-compact {
+  gap: 12px;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.pearl-editor-panel-compact-xl,
+.pearl-editor-panel-sm,
+.pearl-editor-select-panel {
+  padding: 12px;
+  border-radius: 18px;
+}
+
+.pearl-editor-panel-compact-xl {
+  min-height: 210px;
+}
+
+.pearl-editor-panel-sm {
+  min-height: 98px;
+}
+
+.pearl-editor-panel-compact-xl textarea {
+  min-height: 132px;
+}
+
+.pearl-editor-panel-sm textarea {
+  min-height: 62px;
+}
+
+.pearl-editor-form-compact input,
+.pearl-editor-form-compact select,
+.pearl-editor-form-compact textarea {
+  border-radius: 14px;
+  padding: 11px 12px;
+  font-size: 0.95rem;
+}
+
+.pearl-editor-meta-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.pearl-editor-advanced-toggle-compact {
+  justify-content: center;
+  align-self: stretch;
+  min-height: 74px;
+  padding: 0 16px;
+  border-radius: 18px;
+  white-space: nowrap;
+}
+
+.pearl-editor-advanced-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.pearl-editor-advanced-grid-compact label {
+  gap: 6px;
+}
+
+.pearl-editor-advanced-grid-compact input,
+.pearl-editor-advanced-grid-compact select {
+  min-height: 44px;
+}
+
+.pearl-editor-actions-compact {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 2px;
+}
+
+.pearl-editor-actions-compact .btn {
+  min-height: 44px;
+  border-radius: 14px;
+}
+
+@media (max-width: 1100px) {
+  .pearl-editor-modal-compact {
+    width: min(100%, 900px);
+  }
+
+  .pearl-editor-advanced-grid-compact {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .pearl-editor-modal-compact {
+    width: min(100%, 720px);
+    max-height: 90vh;
+    overflow: auto;
+  }
+
+  .pearl-editor-primary-grid-compact,
+  .pearl-editor-meta-row,
+  .pearl-editor-advanced-grid-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .pearl-editor-advanced-toggle-compact {
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pearl-editor-modal-compact {
+    width: 100%;
+    max-height: none;
+  }
+
+  .pearl-editor-head-compact,
+  .pearl-editor-form-compact {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
