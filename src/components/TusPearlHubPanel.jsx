@@ -97,10 +97,10 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
   }
 
   const stats = [
-    { label: 'Toplam kart', value: repeatCounts.all },
+    { label: 'Toplam', value: repeatCounts.all },
     { label: 'Favori', value: repeatCounts.favorites },
-    { label: 'Tekrar et', value: repeatCounts.review },
-    { label: 'Zorlandığın', value: repeatCounts.wrong },
+    { label: 'Tekrar', value: repeatCounts.review },
+    { label: 'Zor', value: repeatCounts.wrong },
     { label: 'Katalog', value: repeatCounts.catalogs },
   ];
 
@@ -115,7 +115,12 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
       </header>
 
       <div className="tus-pearl-hub-stats" aria-label="Hap kart istatistikleri">
-        {stats.map((stat) => <span key={stat.label}><b>{stat.value}</b>{stat.label}</span>)}
+        {stats.map((stat) => (
+          <span key={stat.label}>
+            <b>{stat.value}</b>
+            <em>{stat.label}</em>
+          </span>
+        ))}
       </div>
 
       <div className={`pearl-bridge-callout compact ${weakBranch ? '' : 'soft'}`.trim()}>

@@ -8,7 +8,6 @@ function StudyReviewHub({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAl
     <section className="study-review-hub" aria-label="Yanlışlar ve hap bilgi çalışma paneli">
       <div className="study-review-hub-intro">
         <h2>Kişisel tekrar</h2>
-        <span>Yanlışlarını hedefli çöz veya hap kartlarla kısa bir tekrar oturumu başlat.</span>
       </div>
       <div className="study-review-hub-grid">
         <WrongAnswersPanel

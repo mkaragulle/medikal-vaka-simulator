@@ -67,20 +67,14 @@ function HomeCommandCenter({
         </div>
       </section>
 
-      <div className="home-mode-v8 home-mode-v10 tus-mode-redesign" aria-label="Öğrenme modu seçimi">
+      <div className="home-mode-v8 home-mode-v10 tus-mode-redesign" aria-label="Çalışma modu seçimi">
         <button type="button" className={mode === 'study' ? 'active' : ''} onClick={() => onChangeMode('study')} aria-pressed={mode === 'study'}>
           <Icon name="BookOpen" />
-          <span>
-            <strong>Öğrenme</strong>
-            <small>Adım adım pratik</small>
-          </span>
+          <span><strong>Öğrenme modu</strong></span>
         </button>
         <button type="button" className={mode === 'exam' ? 'active' : ''} onClick={() => onChangeMode('exam')} aria-pressed={mode === 'exam'}>
           <Icon name="ClipboardList" />
-          <span>
-            <strong>Sınav</strong>
-            <small>Gerçek tempo</small>
-          </span>
+          <span><strong>Sınav modu</strong></span>
         </button>
       </div>
 

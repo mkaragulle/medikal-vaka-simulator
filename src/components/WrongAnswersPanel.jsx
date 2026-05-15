@@ -26,7 +26,6 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
               <div className="wrong-answer-main">
                 <span className="wrong-answer-branch">{item.branchName || 'Klinik branş'}</span>
                 <h3>{item.title}</h3>
-                <small>{item.attempts || 1} kez yanlış</small>
               </div>
               <div className="wrong-answer-actions">
                 <button className="btn btn-primary compact" type="button" onClick={() => onOpenCase(item.caseId)}>

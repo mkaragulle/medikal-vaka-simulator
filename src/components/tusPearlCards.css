@@ -4572,3 +4572,94 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* =========================================================
+   V125 — Personal review hub text cleanup and stat readability
+   ========================================================= */
+.study-review-hub-intro {
+  display: block;
+  padding: 0 2px 2px;
+}
+
+.study-review-hub-intro h2 {
+  margin: 0;
+  max-width: none;
+}
+
+.study-review-hub-intro span,
+.wrong-answer-main small {
+  display: none !important;
+}
+
+.wrong-answer-main {
+  gap: 10px;
+}
+
+.wrong-answer-card {
+  min-height: 112px;
+}
+
+.tus-pearl-hub-stats {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(88px, 1fr));
+  gap: 10px;
+}
+
+.tus-pearl-hub-stats > span {
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  min-width: 0;
+  min-height: 64px;
+  padding: 10px 8px;
+  border-radius: 18px;
+  text-align: center;
+  white-space: normal;
+  overflow: hidden;
+}
+
+.tus-pearl-hub-stats > span b {
+  display: block;
+  color: var(--text-primary, #0f172a);
+  font-size: clamp(1.05rem, 1.25vw, 1.28rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.tus-pearl-hub-stats > span em {
+  display: block;
+  max-width: 100%;
+  color: var(--text-muted, #64748b);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 780;
+  line-height: 1.1;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme='dark'] .tus-pearl-hub-stats > span b {
+  color: rgba(248, 250, 252, 0.96);
+}
+
+[data-theme='dark'] .tus-pearl-hub-stats > span em {
+  color: rgba(203, 213, 225, 0.72);
+}
+
+@media (max-width: 1180px) {
+  .tus-pearl-hub-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .tus-pearl-hub-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .wrong-answer-card {
+    min-height: 0;
+  }
+}
