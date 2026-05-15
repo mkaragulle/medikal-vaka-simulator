@@ -41947,3 +41947,105 @@ body:not(.klinikiq-auth-lock) .komite-page-shell > .home-hero-v8:first-child {
     padding-top: 0 !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ v69 — Turkish text clipping safety patch
+   Purpose: prevent Turkish characters/accents from being cut in
+   top bar buttons, segmented controls, hero CTAs and compact tabs.
+   UI-only; no application logic changed.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .top-shell-nav,
+body:not(.klinikiq-auth-lock) .top-shell-nav.global-topbar-v55 {
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .top-shell-nav button,
+body:not(.klinikiq-auth-lock) .top-shell-nav a,
+body:not(.klinikiq-auth-lock) .top-shell-nav span,
+body:not(.klinikiq-auth-lock) .top-shell-nav strong,
+body:not(.klinikiq-auth-lock) .product-mode-switch button,
+body:not(.klinikiq-auth-lock) .nav-mode-switch button,
+body:not(.klinikiq-auth-lock) .komite-context-switch button,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button,
+body:not(.klinikiq-auth-lock) .tus-actions-redesign .btn,
+body:not(.klinikiq-auth-lock) .komite-actions-v62 .btn,
+body:not(.klinikiq-auth-lock) .komite-actions-v63 .btn,
+body:not(.klinikiq-auth-lock) .tus-hero-proof-redesign span,
+body:not(.klinikiq-auth-lock) .komite-hero-tags-v60 span,
+body:not(.klinikiq-auth-lock) .komite-hero-tags-v63 span {
+  line-height: 1.24 !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+body:not(.klinikiq-auth-lock) .product-mode-switch button,
+body:not(.klinikiq-auth-lock) .nav-mode-switch button,
+body:not(.klinikiq-auth-lock) .komite-context-switch button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+}
+
+body:not(.klinikiq-auth-lock) .product-mode-switch button > span,
+body:not(.klinikiq-auth-lock) .nav-mode-switch button > span,
+body:not(.klinikiq-auth-lock) .komite-context-switch button > span,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button span,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button strong {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 1.35em !important;
+  line-height: 1.24 !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button svg,
+body:not(.klinikiq-auth-lock) .komite-context-switch button svg,
+body:not(.klinikiq-auth-lock) .product-mode-switch button svg,
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button svg,
+body:not(.klinikiq-auth-lock) .tus-actions-redesign .btn svg,
+body:not(.klinikiq-auth-lock) .komite-actions-v62 .btn svg,
+body:not(.klinikiq-auth-lock) .komite-actions-v63 .btn svg {
+  flex: 0 0 auto !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-brand-wordmark {
+  line-height: 1.18 !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-hero-title-redesign,
+body:not(.klinikiq-auth-lock) .home-brand-title-v10,
+body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60 h1,
+body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62 h1 {
+  line-height: 1.04 !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-hero-kicker,
+body:not(.klinikiq-auth-lock) .komite-hero-kicker-v60,
+body:not(.klinikiq-auth-lock) .tus-hero-proof-redesign span strong,
+body:not(.klinikiq-auth-lock) .komite-hero-tags-v60 span strong,
+body:not(.klinikiq-auth-lock) .komite-hero-tags-v63 span strong,
+body:not(.klinikiq-auth-lock) .tus-actions-redesign .btn > span,
+body:not(.klinikiq-auth-lock) .komite-actions-v62 .btn > span,
+body:not(.klinikiq-auth-lock) .komite-actions-v63 .btn > span {
+  line-height: 1.24 !important;
+  min-height: 1.35em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-stat-chip strong,
+body:not(.klinikiq-auth-lock) .tus-stat-card-redesign strong,
+body:not(.klinikiq-auth-lock) .tus-pearl-hub-stats strong,
+body:not(.klinikiq-auth-lock) .summary-v8-score strong {
+  line-height: 1.12 !important;
+  overflow: visible !important;
+}
