@@ -8,8 +8,12 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
   return (
     <section className="wrong-answers-panel card-surface" aria-label="Yanlış çözülenler listesi">
       <header className="wrong-answers-head">
-        <div>
-          <h2>Yanlış çözülenler</h2>
+        <div className="review-panel-title">
+          <span className="review-panel-icon danger" aria-hidden="true"><Icon name="RotateCcw" /></span>
+          <div>
+            <h2>Yanlış çözülenler</h2>
+            <p>Kaçırdığın olguları kısa ve hedefli tekrar et.</p>
+          </div>
         </div>
         {hasItems ? (
           <button className="wrong-clear-btn" type="button" onClick={onClearAll}>

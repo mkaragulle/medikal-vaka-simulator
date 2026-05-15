@@ -983,33 +983,33 @@ function App() {
 
   return (
     <main className="app-shell premium-shell" data-theme={theme}>
-      <nav className="top-shell-nav" aria-label="KlinikIQ üst gezinme">
-        <div className="nav-left-cluster">
-          <button className="nav-brand nav-brand-icon-only" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">
-            <span className="nav-brand-mark nav-brand-mark-pulse" aria-hidden="true"><BrandMark title="" /></span>
-            <strong className="nav-brand-wordmark">KlinikIQ</strong>
+      <nav className="top-shell-nav global-topbar-v55" aria-label="KlinikIQ üst gezinme">
+        <button className="nav-brand nav-brand-icon-only global-nav-brand-v55" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">
+          <span className="nav-brand-mark nav-brand-mark-pulse" aria-hidden="true"><BrandMark title="" /></span>
+          <strong className="nav-brand-wordmark">KlinikIQ</strong>
+        </button>
+
+        <div className="segmented-control product-mode-switch global-product-switch-v55" aria-label="Ürün modu seçimi">
+          <button
+            type="button"
+            className={productMode === 'komite' ? 'active' : ''}
+            onClick={() => switchProductMode('komite')}
+            aria-pressed={productMode === 'komite'}
+          >
+            <span>Komite</span>
           </button>
-          <div className="segmented-control product-mode-switch" aria-label="Ürün modu seçimi">
-            <button
-              type="button"
-              className={productMode === 'komite' ? 'active' : ''}
-              onClick={() => switchProductMode('komite')}
-              aria-pressed={productMode === 'komite'}
-            >
-              <span>Komite</span>
-            </button>
-            <button
-              type="button"
-              className={productMode === 'tus' ? 'active' : ''}
-              onClick={() => switchProductMode('tus')}
-              aria-pressed={productMode === 'tus'}
-            >
-              <span>TUS</span>
-            </button>
-          </div>
+          <button
+            type="button"
+            className={productMode === 'tus' ? 'active' : ''}
+            onClick={() => switchProductMode('tus')}
+            aria-pressed={productMode === 'tus'}
+          >
+            <span>TUS</span>
+          </button>
         </div>
+
         {productMode === 'tus' ? (
-          <div className="segmented-control nav-mode-switch" aria-label="Öğrenme modu seçimi">
+          <div className="segmented-control nav-mode-switch global-context-switch-v55" aria-label="TUS çalışma modu seçimi">
             <button
               type="button"
               className={mode === 'study' && !examState?.active ? 'active' : ''}
@@ -1040,13 +1040,14 @@ function App() {
             </button>
           </div>
         ) : (
-          <div className="segmented-control nav-mode-switch komite-context-switch" aria-label="Komite çalışma bağlamı">
-            <button type="button" className="active" aria-pressed="true">Materyal</button>
-            <button type="button" aria-pressed="false" disabled>Ders</button>
-            <button type="button" aria-pressed="false" disabled>Kartlar</button>
+          <div className="segmented-control nav-mode-switch global-context-switch-v55 komite-context-switch" aria-label="Komite çalışma bağlamı">
+            <button type="button" className="active" aria-pressed="true"><Icon name="Notes" /><span>Materyal</span></button>
+            <button type="button" aria-pressed="false" disabled><Icon name="BookOpen" /><span>Ders</span></button>
+            <button type="button" aria-pressed="false" disabled><Icon name="LayeredCards" /><span>Kartlar</span></button>
           </div>
         )}
-        <div className="nav-actions" aria-label="Oturum eylemleri">
+
+        <div className="nav-actions global-nav-actions-v55" aria-label="Oturum eylemleri">
           <span className="nav-user-chip nav-user-card" aria-label={`Kullanıcı ${currentUser.name}`} title={currentUser.name}>
             <Icon name="User" />
             <span className="nav-user-name">{currentUser.name}</span>
@@ -1083,7 +1084,7 @@ function App() {
             <span>Puan</span>
             <strong>{sessionStats.score}</strong>
           </span>
-          <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}>
+          <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')} title={isDemoUser ? 'Demo blok başlat' : 'Blok sınav başlat'} aria-label={isDemoUser ? 'Demo blok başlat' : 'Blok sınav başlat'}>
             <Icon name="Timer" />
             <span>{isDemoUser ? 'Demo blok' : 'Blok sınav'}</span>
           </button>

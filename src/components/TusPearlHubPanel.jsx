@@ -16,10 +16,10 @@ import './tusPearlCards.css';
 const SYSTEM_PEARL_CARDS = TUS_PEARL_CARDS.map((card) => ({ ...card, source: 'system' }));
 
 const DASHBOARD_ACTIONS = [
-  { id: 'quick', label: 'Hızlı tekrar başlat', description: '500 karttan yeni dengeli deck', icon: 'Zap', primary: true },
-  { id: 'wrong', label: 'Zorlandıklarımı çalış', description: 'Tekrar bekleyenleri öne al', icon: 'Target' },
-  { id: 'all', label: 'Tüm kartları gör', description: '500 hazır ve kişisel kart', icon: 'LayeredCards' },
-  { id: 'catalogs', label: 'Kataloglarım', description: 'Setlerini aç ve yönet', icon: 'ClipboardList' },
+  { id: 'quick', label: 'Hızlı tekrar', description: 'Dengeli kart oturumu', icon: 'Zap', primary: true },
+  { id: 'wrong', label: 'Zorlandıklarım', description: 'Eksikleri öne al', icon: 'Target' },
+  { id: 'all', label: 'Tüm kartlar', description: 'Kart arşivini aç', icon: 'LayeredCards' },
+  { id: 'catalogs', label: 'Kataloglar', description: 'Setleri yönet', icon: 'ClipboardList' },
 ];
 
 function toSet(ids = []) {
@@ -108,10 +108,16 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
     <section className="tus-pearl-hub-panel card-surface" aria-label="Hap Bilgi Kartları hızlı tekrar paneli">
       <div className="tus-pearl-hub-ambient" aria-hidden="true" />
       <header className="tus-pearl-hub-head">
-        <div>
-          <h2>Hap Bilgi Kartları</h2>
+        <div className="review-panel-title">
+          <span className="review-panel-icon" aria-hidden="true"><Icon name="LayeredCards" /></span>
+          <div>
+            <h2>Hap Bilgi Kartları</h2>
+            <p>Hızlı tekrar, zorlandığın kartlar ve kataloglar tek yerde.</p>
+          </div>
         </div>
-        <span className="tus-pearl-hub-icon" aria-hidden="true"><Icon name="LayeredCards" /></span>
+        <button type="button" className="btn btn-secondary compact" onClick={() => onOpenStudy?.({ filter: 'all', branchFilter: 'all' })}>
+          Tüm kartlar
+        </button>
       </header>
 
       <div className="tus-pearl-hub-stats" aria-label="Hap kart istatistikleri">
@@ -125,9 +131,9 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
 
       <div className={`pearl-bridge-callout compact ${weakBranch ? '' : 'soft'}`.trim()}>
         <Icon name={weakBranch ? 'Target' : 'Sparkles'} />
-        <p>{weakBranch ? <><strong>{weakBranch.branchName}</strong> hatalarını hap kartlarla güçlendir.</> : 'Zorlandığın kartlarla kısa bir tekrar başlat.'}</p>
+        <p>{weakBranch ? <><strong>{weakBranch.branchName}</strong> için kaçırdığın noktaları hap kartlarla pekiştir.</> : 'Zorlandığın kartları kısa ve hedefli bir oturumda çalış.'}</p>
         <button type="button" className="btn btn-secondary compact" onClick={() => onOpenStudy?.({ filter: 'wrong', branchFilter: weakBranch?.branchId || 'all' })} disabled={!dueCount && !weakBranch}>
-          Zorlandıklarımı çalış
+          Çalış
         </button>
       </div>
 
@@ -148,10 +154,10 @@ function TusPearlHubPanel({ wrongAnswers = [], onOpenStudy }) {
       <div className="tus-pearl-repeat-center" aria-label="Kişisel tekrar listelerin">
         <div className="tus-pearl-repeat-center-head">
           <div>
-            <strong>Kişisel tekrar</strong>
+            <strong>Kişisel listeler</strong>
             <span>İşaretlediğin kartlara tek tıkla geri dön.</span>
           </div>
-          <button type="button" className="btn btn-secondary compact" onClick={() => onOpenStudy?.({ filter: 'all', branchFilter: 'all' })}>Tüm kartları aç</button>
+          <button type="button" className="btn btn-secondary compact" onClick={() => onOpenStudy?.({ filter: 'all', branchFilter: 'all' })}>Tümünü aç</button>
         </div>
         <div className="tus-pearl-repeat-list">
           {repeatListItems.filter((item) => item.id !== 'all').map((item) => (
