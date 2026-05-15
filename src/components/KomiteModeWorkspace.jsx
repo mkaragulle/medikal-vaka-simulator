@@ -1024,14 +1024,16 @@ function formatFileSize(bytes = 0) {
 function KomiteDashboard({ onStart, onOpenMyMaterials, onOpenCards, onOpenReview }) {
   const cards = [
     {
+      eyebrow: 'Yeni alan',
       title: 'Çalışmaya Başla',
-      description: 'Yeni bir komite materyali yükleyip çalışma alanını oluştur.',
+      description: 'Slayt veya not yükle; KlinikIQ aynı materyalden çalışma ekranı oluştursun.',
       action: 'Materyal yükle',
       icon: 'Sparkles',
       onClick: onStart,
       primary: true,
     },
     {
+      eyebrow: 'Kütüphane',
       title: 'Çalıştıklarım',
       description: 'Yüklediğin dosyaları sınıf, komite ve ders düzeninde görüntüle.',
       action: 'Kütüphaneyi aç',
@@ -1039,15 +1041,17 @@ function KomiteDashboard({ onStart, onOpenMyMaterials, onOpenCards, onOpenReview
       onClick: onOpenMyMaterials,
     },
     {
+      eyebrow: 'Hızlı tekrar',
       title: 'Hap Kartlar',
-      description: 'Oluşturulan kartlarla kısa ve hedefli tekrar yap.',
+      description: 'Oluşturulan kartları kısa, hedefli ve dengeli tekrar oturumlarına dönüştür.',
       action: 'Kartları aç',
       icon: 'LayeredCards',
       onClick: onOpenCards,
     },
     {
+      eyebrow: 'Takip',
       title: 'Tekrar Merkezi',
-      description: 'Yanlış sorularını, zorlandığın kartları ve tekrar listesini tek yerde gör.',
+      description: 'Yanlışların, zorlandığın kartlar ve tekrar listen tek yerde toplansın.',
       action: 'Tekrarları gör',
       icon: 'RotateCcw',
       onClick: onOpenReview,
@@ -1055,15 +1059,16 @@ function KomiteDashboard({ onStart, onOpenMyMaterials, onOpenCards, onOpenReview
   ];
 
   return (
-    <section className="komite-dashboard-grid" aria-label="Komite çalışma alanı">
+    <section className="komite-dashboard-grid komite-dashboard-grid-v60" aria-label="Komite çalışma alanı">
       {cards.map((card) => (
-        <button type="button" key={card.title} className={`komite-dashboard-card ${card.primary ? 'primary' : ''}`} onClick={card.onClick}>
-          <span className="komite-card-icon"><Icon name={card.icon} /></span>
-          <span className="komite-dashboard-card-copy">
+        <button type="button" key={card.title} className={`komite-dashboard-card komite-dashboard-card-v60 ${card.primary ? 'primary' : ''}`} onClick={card.onClick}>
+          <span className="komite-card-icon komite-card-icon-v60"><Icon name={card.icon} size={22} /></span>
+          <span className="komite-dashboard-card-copy komite-dashboard-card-copy-v60">
+            <span className="komite-card-eyebrow-v60">{card.eyebrow}</span>
             <strong>{card.title}</strong>
             <p>{card.description}</p>
           </span>
-          <span className="komite-card-action">{card.action}<Icon name="ArrowRight" size={16} /></span>
+          <span className="komite-card-action komite-card-action-v60">{card.action}<Icon name="ArrowRight" size={16} /></span>
         </button>
       ))}
     </section>
@@ -1829,14 +1834,32 @@ export default function KomiteModeWorkspace({ currentUser }) {
   return (
     <section className="page-shell komite-page-shell">
       {(view === 'dashboard' || view === 'start') ? (
-        <section className="komite-hero card-surface">
-          <div>
+        <section className="komite-hero komite-hero-v60 card-surface">
+          <div className="komite-hero-copy-v60">
+            <span className="komite-hero-kicker-v60"><Icon name="BookOpen" size={17} /> Komite çalışma alanı</span>
             <h1>Komite materyallerini tek yerde düzenle ve çalış.</h1>
             <p>Slaytlarını ve notlarını yükle; ders anlatımı, soru, hap kart ve tekrar içeriklerine aynı çalışma alanından ulaş.</p>
-            <div className="komite-hero-actions">
+            <div className="komite-hero-tags-v60" aria-label="Komite özellikleri">
+              <span><Icon name="BookOpen" size={15} /> Ders anlatımı</span>
+              <span><Icon name="ClipboardList" size={15} /> Soru üretimi</span>
+              <span><Icon name="LayeredCards" size={15} /> Hap kart</span>
+              <span><Icon name="RotateCcw" size={15} /> Kişisel tekrar</span>
+            </div>
+            <div className="komite-hero-actions komite-hero-actions-v60">
               <button type="button" className="btn btn-primary" onClick={() => setView('start')}><Icon name="Sparkles" /> Materyal yükle</button>
             </div>
           </div>
+          <aside className="komite-hero-panel-v60" aria-label="Komite akışı">
+            <span className="komite-hero-panel-label-v60">Akıllı çalışma akışı</span>
+            <div className="komite-flow-list-v60">
+              <span><i>1</i><strong>Materyal yükle</strong><em>PDF, slayt veya ders notu</em></span>
+              <span><i>2</i><strong>İçeriği oluştur</strong><em>Ders anlatımı, soru ve kart</em></span>
+              <span><i>3</i><strong>Tekrar et</strong><em>Yanlış ve zor kartları hedefle</em></span>
+            </div>
+            <button type="button" className="komite-hero-panel-button-v60" onClick={() => setView('start')}>
+              Yeni çalışma başlat <Icon name="ArrowRight" size={16} />
+            </button>
+          </aside>
         </section>
       ) : null}
 
