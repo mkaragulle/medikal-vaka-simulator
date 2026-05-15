@@ -987,6 +987,7 @@ function App() {
         <div className="nav-left-cluster">
           <button className="nav-brand nav-brand-icon-only" type="button" onClick={resetExamToHome} aria-label="KlinikIQ ana ekrana dön" title="KlinikIQ">
             <span className="nav-brand-mark nav-brand-mark-pulse" aria-hidden="true"><BrandMark title="" /></span>
+            <strong className="nav-brand-wordmark">KlinikIQ</strong>
           </button>
           <div className="segmented-control product-mode-switch" aria-label="Ürün modu seçimi">
             <button
@@ -995,7 +996,7 @@ function App() {
               onClick={() => switchProductMode('komite')}
               aria-pressed={productMode === 'komite'}
             >
-              Komite
+              <span>Komite</span>
             </button>
             <button
               type="button"
@@ -1003,7 +1004,7 @@ function App() {
               onClick={() => switchProductMode('tus')}
               aria-pressed={productMode === 'tus'}
             >
-              TUS
+              <span>TUS</span>
             </button>
           </div>
         </div>
@@ -1015,7 +1016,8 @@ function App() {
               onClick={resetExamToHome}
               aria-pressed={mode === 'study' && !examState?.active}
             >
-              Öğrenme
+              <Icon name="BookOpen" />
+              <span>Öğrenme</span>
             </button>
             <button
               type="button"
@@ -1023,7 +1025,8 @@ function App() {
               onClick={() => setMode('exam')}
               aria-pressed={mode === 'exam' || examState?.active}
             >
-              Sınav
+              <Icon name="ClipboardList" />
+              <span>Sınav</span>
             </button>
             <button
               type="button"
@@ -1032,7 +1035,8 @@ function App() {
               aria-pressed={hardMode}
               title="Referans değerleri ve ipuçları azaltılır"
             >
-              Zor
+              <Icon name="TrendUp" />
+              <span>Zor</span>
             </button>
           </div>
         ) : (
