@@ -41896,3 +41896,54 @@ body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-action-panel-v63 
     max-width: 620px !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ v66 — unified topbar-to-hero spacing
+   Purpose: make Komite, TUS, clinical case, AI and exam screens
+   start from the same authenticated frame distance. The TUS
+   dashboard spacing is treated as the source of truth.
+   UI-only; no routes, handlers or data logic changed.
+   ========================================================== */
+:root {
+  --kiq-auth-content-top-gap: 0px;
+}
+
+body:not(.klinikiq-auth-lock) .home-page-shell,
+body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell,
+body:not(.klinikiq-auth-lock) .minimal-home-shell,
+body:not(.klinikiq-auth-lock) .komite-page-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell,
+body:not(.klinikiq-auth-lock) .stable-case-page-shell,
+body:not(.klinikiq-auth-lock) .ai-practice-page-shell,
+body:not(.klinikiq-auth-lock) .exam-active-shell {
+  margin-top: var(--kiq-auth-content-top-gap) !important;
+  padding-top: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-dashboard-v8.tus-dashboard-redesign,
+body:not(.klinikiq-auth-lock) .komite-page-shell > .home-hero-v8.home-hero-premium-v10.tus-hero-redesign,
+body:not(.klinikiq-auth-lock) .case-page-shell > .content-layout,
+body:not(.klinikiq-auth-lock) .ai-practice-page-shell > :first-child,
+body:not(.klinikiq-auth-lock) .exam-active-shell > :first-child {
+  margin-top: 0 !important;
+}
+
+/* Keep the cloned Komite hero visually aligned with the TUS hero at the top. */
+body:not(.klinikiq-auth-lock) .komite-page-shell > .tus-hero-redesign:first-child,
+body:not(.klinikiq-auth-lock) .komite-page-shell > .home-hero-v8:first-child {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 920px) {
+  body:not(.klinikiq-auth-lock) .home-page-shell,
+  body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell,
+  body:not(.klinikiq-auth-lock) .minimal-home-shell,
+  body:not(.klinikiq-auth-lock) .komite-page-shell,
+  body:not(.klinikiq-auth-lock) .case-page-shell,
+  body:not(.klinikiq-auth-lock) .stable-case-page-shell,
+  body:not(.klinikiq-auth-lock) .ai-practice-page-shell,
+  body:not(.klinikiq-auth-lock) .exam-active-shell {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+}
