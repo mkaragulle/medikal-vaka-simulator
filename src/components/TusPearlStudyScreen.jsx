@@ -118,6 +118,12 @@ function getMoreMenuPosition(triggerNode) {
   return { placement: 'popover', top, left, width };
 }
 
+function getMoreMenuItemTitle(item) {
+  if (item?.id === 'known') return 'Bildiğim Kartlar';
+  if (item?.id === 'user') return 'Kendi Oluşturduğum Kartlarım';
+  return item?.shortLabel || item?.label || '';
+}
+
 function PearlStudyMoreMenu({
   active = false,
   filter,
@@ -187,17 +193,6 @@ function PearlStudyMoreMenu({
     action?.();
   }
 
-  const moreMenuDisplayMap = {
-    known: {
-      title: 'Bildiğim Kartlar',
-      icon: 'CheckCircle',
-    },
-    user: {
-      title: 'Kendi Oluşturduğum Kartlarım',
-      icon: 'NotebookPen',
-    },
-  };
-
   const menu = open ? createPortal(
     <div
       ref={menuRef}
@@ -210,38 +205,28 @@ function PearlStudyMoreMenu({
         : { top: position.top, left: position.left, width: position.width }}
     >
       <button type="button" role="menuitem" onClick={() => runAndClose(() => onOpenRepeatList('all'))}>
-        <span className="pearl-study-more-entry">
-          <span className="pearl-study-more-icon" aria-hidden="true">
-            <Icon name="LayeredCards" size={15} />
-          </span>
-          <span className="pearl-study-more-copy">
-            <strong>Tüm Kartları Gör</strong>
-          </span>
+        <span>
+          <strong>Tüm Kartları Gör</strong>
+          <em>Hazır ve kişisel tüm kart havuzuna dön.</em>
         </span>
+        <Icon name="LayeredCards" size={15} />
       </button>
 
-      {items.map((item) => {
-        const display = moreMenuDisplayMap[item.id] || {};
-        return (
-          <button
-            key={item.id}
-            type="button"
-            role="menuitem"
-            className={viewMode === 'study' && filter === item.filter ? 'active' : ''}
-            onClick={() => runAndClose(() => onOpenRepeatList(item))}
-          >
-            <span className="pearl-study-more-entry">
-              <span className="pearl-study-more-icon" aria-hidden="true">
-                <Icon name={display.icon || item.icon || 'Sparkles'} size={15} />
-              </span>
-              <span className="pearl-study-more-copy">
-                <strong>{display.title || item.shortLabel}</strong>
-              </span>
-            </span>
-            <b>{`${item.count} kart`}</b>
-          </button>
-        );
-      })}
+      {items.map((item) => (
+        <button
+          key={item.id}
+          type="button"
+          role="menuitem"
+          className={viewMode === 'study' && filter === item.filter ? 'active' : ''}
+          onClick={() => runAndClose(() => onOpenRepeatList(item))}
+        >
+          <span>
+            <strong>{getMoreMenuItemTitle(item)}</strong>
+            <em>{item.description}</em>
+          </span>
+          <Icon name={item.icon || 'LayeredCards'} size={15} />
+        </button>
+      ))}
     </div>,
     document.body,
   ) : null;
@@ -354,10 +339,9 @@ function PearlStudyCatalogsMenu({
         onClick={() => runAndClose(onManageCatalogs)}
       >
         <span>
-          <strong>Katalogları yönet</strong>
-          <em>Setlerini düzenle, kart ekle ve katalog bazlı çalış.</em>
+          <strong>Katalogları Yönet</strong>
         </span>
-        <b>{`${catalogs.length} set`}</b>
+        <Icon name="ClipboardList" size={15} />
       </button>
 
       <div className="pearl-study-more-divider" />
@@ -372,9 +356,8 @@ function PearlStudyCatalogsMenu({
         >
           <span>
             <strong>{catalog.name}</strong>
-            <em>{catalog.description?.trim() || 'Katalog bazlı çalışma seti'}</em>
           </span>
-          <b>{`${(catalog.cardIds || []).length} kart`}</b>
+          <Icon name="ArrowRight" size={15} />
         </button>
       )) : (
         <button type="button" role="menuitem" onClick={() => runAndClose(onManageCatalogs)}>

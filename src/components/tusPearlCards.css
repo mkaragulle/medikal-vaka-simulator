@@ -3816,29 +3816,6 @@
 
 .pearl-study-more-panel > button span {
   min-width: 0;
-}
-
-.pearl-study-more-entry {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  align-items: center;
-  gap: 10px;
-}
-
-.pearl-study-more-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 11px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(15, 118, 110, 0.10);
-  color: #0f766e;
-  flex-shrink: 0;
-}
-
-.pearl-study-more-copy {
-  min-width: 0;
   display: grid;
   gap: 2px;
 }
@@ -7127,5 +7104,296 @@
   .pearl-editor-secondary-actions {
     padding-left: 16px;
     padding-right: 16px;
+  }
+}
+
+/* ==========================================================
+   V89 — Flashcard top bar rebalance + simplified menus
+   ========================================================== */
+.pearl-study-compactbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+}
+
+.pearl-study-tabs {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+}
+
+.pearl-study-tabs > button {
+  width: 100%;
+  min-width: 0;
+  justify-content: space-between;
+  padding-inline: 18px;
+}
+
+.pearl-study-tabs > button > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pearl-study-compact-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.pearl-study-more-trigger,
+.pearl-reshuffle-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.pearl-study-more-panel {
+  padding: 10px;
+}
+
+.pearl-study-more-panel > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 14px 16px;
+}
+
+.pearl-study-more-panel > button span {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  text-align: left;
+}
+
+.pearl-study-more-panel > button strong {
+  color: var(--text-primary, #0f172a);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+.pearl-study-more-panel > button em {
+  color: var(--text-muted, #64748b);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.pearl-study-catalogs-menu .pearl-study-more-panel > button strong {
+  font-size: 0.96rem;
+}
+
+.pearl-study-catalogs-menu .pearl-study-more-panel > button em {
+  display: none;
+}
+
+[data-theme='dark'] .pearl-study-more-panel > button strong {
+  color: #f8fafc;
+}
+
+[data-theme='dark'] .pearl-study-more-panel > button em {
+  color: #94a3b8;
+}
+
+@media (max-width: 1120px) {
+  .pearl-study-tabs > button {
+    padding-inline: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .pearl-study-compactbar {
+    grid-template-columns: 1fr;
+  }
+
+  .pearl-study-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pearl-study-compact-actions {
+    width: 100%;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 640px) {
+  .pearl-study-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .pearl-study-tabs > button {
+    padding-inline: 14px;
+  }
+
+  .pearl-study-compact-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .pearl-study-more-trigger,
+  .pearl-reshuffle-button,
+  .pearl-study-more-menu {
+    width: 100%;
+  }
+}
+
+/* ==========================================================
+   V90 — Pearl editor overlay + balanced field proportions fix
+   ========================================================== */
+.pearl-editor-backdrop-balanced {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-modal, 2147483200) - 40);
+  min-height: 100dvh;
+  align-items: flex-start;
+  justify-content: center;
+  padding: calc(var(--kiq-page-pad-top, 92px) + 14px) 24px 24px;
+  overflow-y: auto;
+  background: rgba(2, 6, 23, 0.52);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  isolation: isolate;
+}
+
+.pearl-editor-modal-balanced {
+  width: min(100%, 1180px);
+  max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 38px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
+.pearl-editor-form-compact {
+  gap: 16px;
+}
+
+.pearl-editor-primary-grid-compact {
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: 16px;
+  align-items: stretch;
+}
+
+.pearl-editor-primary-stack-compact {
+  gap: 16px;
+}
+
+.pearl-editor-panel-compact-xl,
+.pearl-editor-panel-sm {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.pearl-editor-panel-compact-xl {
+  min-height: 344px;
+}
+
+.pearl-editor-panel-sm {
+  min-height: 164px;
+}
+
+.pearl-editor-panel-compact-xl textarea,
+.pearl-editor-panel-sm textarea {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+}
+
+.pearl-editor-panel-compact-xl textarea {
+  min-height: 228px;
+}
+
+.pearl-editor-panel-sm textarea {
+  min-height: 110px;
+}
+
+.pearl-editor-form textarea {
+  line-height: 1.45;
+}
+
+.pearl-editor-secondary-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-modal, 2147483200) - 20);
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  padding: calc(var(--kiq-page-pad-top, 92px) + 14px) 24px 24px;
+  overflow-y: auto;
+  background: rgba(2, 6, 23, 0.58);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.pearl-editor-secondary-modal {
+  max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 38px);
+}
+
+[data-theme='dark'] .pearl-editor-backdrop-balanced {
+  background: rgba(2, 6, 23, 0.68);
+}
+
+[data-theme='dark'] .pearl-editor-secondary-backdrop {
+  background: rgba(2, 6, 23, 0.74);
+}
+
+@media (max-width: 980px) {
+  .pearl-editor-panel-compact-xl {
+    min-height: 304px;
+  }
+
+  .pearl-editor-panel-compact-xl textarea {
+    min-height: 194px;
+  }
+
+  .pearl-editor-panel-sm {
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 860px) {
+  .pearl-editor-backdrop-balanced,
+  .pearl-editor-secondary-backdrop {
+    padding-top: calc(var(--kiq-page-pad-top, 92px) + 12px);
+  }
+
+  .pearl-editor-modal-balanced {
+    max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 28px);
+    overflow: auto;
+  }
+
+  .pearl-editor-panel-compact-xl,
+  .pearl-editor-panel-sm {
+    min-height: unset;
+  }
+
+  .pearl-editor-panel-compact-xl textarea {
+    min-height: 180px;
+  }
+
+  .pearl-editor-panel-sm textarea {
+    min-height: 96px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pearl-editor-backdrop-balanced,
+  .pearl-editor-secondary-backdrop {
+    padding: calc(var(--kiq-page-pad-top, 92px) + 10px) 12px 12px;
+  }
+
+  .pearl-editor-panel-compact-xl,
+  .pearl-editor-panel-sm,
+  .pearl-editor-select-panel,
+  .pearl-editor-advanced-launch {
+    padding: 14px;
+    border-radius: 18px;
   }
 }
