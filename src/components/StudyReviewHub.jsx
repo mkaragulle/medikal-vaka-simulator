@@ -5,15 +5,12 @@ import './tusPearlCards.css';
 
 function StudyReviewHub({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy }) {
   return (
-    <section className="study-review-hub" aria-label="Kişisel tekrar merkezi">
-      <div className="study-review-hub-intro review-intro-refined">
-        <div>
-          <span className="review-intro-eyebrow">Kişisel tekrar merkezi</span>
-          <h2>Yanlışlarını toparla, kartlarla pekiştir.</h2>
-        </div>
-        <p>Bir tarafta tekrar çözmen gereken olgular, diğer tarafta kısa ve hedefli hap kart akışı.</p>
+    <section className="study-review-hub" aria-label="Yanlışlar ve hap bilgi çalışma paneli">
+      <div className="study-review-hub-intro">
+        <h2>Kişisel tekrar</h2>
+        <span>Yanlışlarını hedefli çöz veya hap kartlarla kısa bir tekrar oturumu başlat.</span>
       </div>
-      <div className="study-review-hub-grid review-hub-refined-grid">
+      <div className="study-review-hub-grid">
         <WrongAnswersPanel
           wrongAnswers={wrongAnswers}
           onOpenCase={onOpenCase}
