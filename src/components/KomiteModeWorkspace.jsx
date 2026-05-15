@@ -1834,23 +1834,23 @@ export default function KomiteModeWorkspace({ currentUser }) {
   return (
     <section className="page-shell komite-page-shell">
       {(view === 'dashboard' || view === 'start') ? (
-        <section className="home-hero-v8 home-hero-premium-v10 tus-hero-redesign card-surface" aria-label="KlinikIQ TUS çalışma alanı">
+        <section className="home-hero-v8 home-hero-premium-v10 tus-hero-redesign card-surface" aria-label="KlinikIQ Komite çalışma alanı">
           <div className="tus-hero-soft-grid" aria-hidden="true" />
           <div className="tus-hero-dot-field" aria-hidden="true" />
 
           <div className="home-hero-v10-main tus-hero-main-redesign">
             <div className="home-hero-copy-v8 home-hero-copy-v10 tus-hero-copy-redesign">
-              <span className="tus-hero-kicker"><Icon name="Trophy" /> TUS pratiği</span>
+              <span className="tus-hero-kicker"><Icon name="Trophy" /> Komite Çalışma Alanı</span>
               <h1 className="home-brand-title-v10 tus-hero-title-redesign">
-                KlinikIQ <span>TUS Pratiği</span>
+                KlinikIQ <span>Komite</span>
               </h1>
               <p>
-                Odaklanmış klinik olgularla çalış, ayırt ettiren bulguyu yakala ve karar verme becerini adım adım güçlendir.
+                Komite materyallerini tek yerde topla; AI destekli ders anlatımı, soru, hap kart ve tekrar akışını aynı panelden öğren.
               </p>
               <div className="home-hero-proof-row-v10 tus-hero-proof-redesign" aria-label="Klinik öğrenme özellikleri">
-                <span><Icon name="Brain" /><strong>Klinik akıl yürütme</strong></span>
-                <span><Icon name="ClipboardCheck" /><strong>Tetkik seçimi</strong></span>
-                <span><Icon name="Sparkles" /><strong>AI destekli pratik</strong></span>
+                <span><Icon name="Brain" /><strong>AI Ders Anlatımı</strong></span>
+                <span><Icon name="ClipboardCheck" /><strong>Öğretici Soru Üretimi</strong></span>
+                <span><Icon name="Sparkles" /><strong>Akılda Kalıcı Hap Kartlar</strong></span>
               </div>
             </div>
 
@@ -1858,17 +1858,17 @@ export default function KomiteModeWorkspace({ currentUser }) {
               <div className="home-actions-v8 home-actions-v10 tus-actions-redesign">
                 <button type="button" className="btn btn-primary tus-primary-action-redesign" onClick={() => setView('start')}>
                   <span className="tus-action-icon"><Icon name="ArrowRight" /></span>
-                  <span>Olgu çözmeye başla</span>
+                  <span>Ders Materyali Yükle</span>
                   <Icon name="ArrowRight" />
                 </button>
                 <button type="button" className="btn btn-secondary tus-secondary-action-redesign" onClick={() => setView('materials')}>
                   <span className="tus-action-icon"><Icon name="Timer" /></span>
-                  <span>Zamanlı blok oluştur</span>
+                  <span>Tüm Çalıştıklarım</span>
                   <Icon name="ArrowRight" />
                 </button>
                 <button type="button" className="btn btn-secondary ai-hero-action tus-ai-action-redesign" onClick={() => setView('review')}>
                   <span className="tus-action-icon"><Icon name="Sparkles" /></span>
-                  <span>AI ile soru üret</span>
+                  <span>Tekrar Merkezine Git</span>
                   <Icon name="ArrowRight" />
                 </button>
               </div>

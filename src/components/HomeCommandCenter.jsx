@@ -97,17 +97,17 @@ function HomeCommandCenter({
 
         <div className="home-hero-v10-main tus-hero-main-redesign">
           <div className="home-hero-copy-v8 home-hero-copy-v10 tus-hero-copy-redesign">
-            <span className="tus-hero-kicker"><Icon name="Trophy" /> TUS pratiği</span>
+            <span className="tus-hero-kicker"><Icon name="Trophy" /> TUS Pratiği</span>
             <h1 className="home-brand-title-v10 tus-hero-title-redesign">
-              KlinikIQ <span>TUS Pratiği</span>
+              KlinikIQ <span>TUS</span>
             </h1>
             <p>
-              Odaklanmış klinik olgularla çalış, ayırt ettiren bulguyu yakala ve karar verme becerini adım adım güçlendir.
+              Bilimsel ve gerçekçi klinik vakalarla çalış, ayırt ettiren bulguyu yakala ve karar verme becerini adım adım güçlendir.
             </p>
             <div className="home-hero-proof-row-v10 tus-hero-proof-redesign" aria-label="Klinik öğrenme özellikleri">
-              <span><Icon name="Brain" /><strong>Klinik akıl yürütme</strong></span>
-              <span><Icon name="ClipboardCheck" /><strong>Tetkik seçimi</strong></span>
-              <span><Icon name="Sparkles" /><strong>AI destekli pratik</strong></span>
+              <span><Icon name="Brain" /><strong>Klinik Akıl Yürütme</strong></span>
+              <span><Icon name="ClipboardCheck" /><strong>Tetkik Seçimi</strong></span>
+              <span><Icon name="Sparkles" /><strong>AI Destekli Pratik</strong></span>
             </div>
           </div>
 
@@ -115,17 +115,17 @@ function HomeCommandCenter({
             <div className="home-actions-v8 home-actions-v10 tus-actions-redesign">
               <a href="#branches" className="btn btn-primary tus-primary-action-redesign">
                 <span className="tus-action-icon"><Icon name="ArrowRight" /></span>
-                <span>Olgu çözmeye başla</span>
+                <span>Vaka Çözmeye Başla</span>
                 <Icon name="ArrowRight" />
               </a>
               <button type="button" className="btn btn-secondary tus-secondary-action-redesign" onClick={onStartExam}>
                 <span className="tus-action-icon"><Icon name="Timer" /></span>
-                <span>Zamanlı blok oluştur</span>
+                <span>Zamanlı sınav oluştur</span>
                 <Icon name="ArrowRight" />
               </button>
               <button type="button" className="btn btn-secondary ai-hero-action tus-ai-action-redesign" onClick={onStartAIQuestion}>
                 <span className="tus-action-icon"><Icon name="Sparkles" /></span>
-                <span>AI ile soru üret</span>
+                <span>AI İle Soru Üret</span>
                 <Icon name="ArrowRight" />
               </button>
             </div>
