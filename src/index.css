@@ -40620,3 +40620,136 @@ body:not(.klinikiq-auth-lock) .home-metrics-v8.home-metrics-v10.tus-metrics-rede
     min-height: 38px !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ v58 — functional compact TUS metric cards
+   Charts now render from sessionStats.trend instead of a static background.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .tus-metrics-redesign {
+  align-items: stretch !important;
+  gap: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-card-redesign {
+  min-height: 118px !important;
+  padding: 24px 26px !important;
+  display: grid !important;
+  grid-template-columns: 58px minmax(0, 1fr) 132px !important;
+  align-items: center !important;
+  column-gap: 22px !important;
+  overflow: hidden !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-card-redesign::after {
+  opacity: 0.45 !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-icon-wrap {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 24px !important;
+  position: static !important;
+  flex: 0 0 auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-icon-wrap svg {
+  width: 25px !important;
+  height: 25px !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-copy {
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-label {
+  margin: 0 !important;
+  color: #64748b !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-card-redesign strong {
+  margin: 0 !important;
+  color: #0f172a !important;
+  font-size: clamp(32px, 2.35vw, 42px) !important;
+  line-height: 0.95 !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.055em !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-card-redesign small {
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-sparkline.tus-stat-svg {
+  position: static !important;
+  right: auto !important;
+  bottom: auto !important;
+  display: block !important;
+  width: 132px !important;
+  height: 42px !important;
+  opacity: 0.86 !important;
+  background: none !important;
+  z-index: 2 !important;
+  justify-self: end !important;
+  overflow: visible !important;
+  color: #0f766e !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-metric-card-blue .tus-stat-svg {
+  color: #2563eb !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-metric-card-accent .tus-stat-svg,
+body:not(.klinikiq-auth-lock) .home-metric-card-danger .tus-stat-svg {
+  color: #8b5cf6 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-metric-card-warning .tus-stat-svg {
+  color: #b7791f !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-sparkline-line {
+  filter: drop-shadow(0 6px 10px rgba(15, 118, 110, 0.18)) !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-stat-sparkline-dot {
+  filter: drop-shadow(0 3px 6px rgba(15, 118, 110, 0.2)) !important;
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .tus-stat-card-redesign {
+    grid-template-columns: 52px minmax(0, 1fr) 104px !important;
+    padding: 22px !important;
+    column-gap: 16px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .tus-stat-icon-wrap {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .tus-stat-sparkline.tus-stat-svg {
+    width: 104px !important;
+  }
+}
+
+@media (max-width: 780px) {
+  body:not(.klinikiq-auth-lock) .tus-stat-card-redesign {
+    grid-template-columns: 52px minmax(0, 1fr) 96px !important;
+    min-height: 104px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .tus-stat-sparkline.tus-stat-svg {
+    width: 96px !important;
+    height: 36px !important;
+  }
+}

@@ -52,6 +52,7 @@ const defaultStats = {
   streak: 0,
   bestStreak: 0,
   accuracy: 0,
+  trend: [],
 };
 
 const defaultAIPracticeStats = {
@@ -700,13 +701,30 @@ function App() {
       const score = current.score + scored.earnedPoints;
       const streak = scored.nextStreak;
       const bestStreak = Math.max(current.bestStreak, streak);
+      const accuracy = calculateAccuracy(correct, attempts);
+      const trend = [
+        ...(Array.isArray(current.trend) ? current.trend : []),
+        {
+          attempts,
+          correct,
+          score,
+          streak,
+          bestStreak,
+          accuracy,
+          earnedPoints: scored.earnedPoints,
+          isCorrect,
+          timestamp: Date.now(),
+        },
+      ].slice(-12);
+
       return {
         attempts,
         correct,
         score,
         streak,
         bestStreak,
-        accuracy: calculateAccuracy(correct, attempts),
+        accuracy,
+        trend,
       };
     });
 
