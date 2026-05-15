@@ -1834,41 +1834,41 @@ export default function KomiteModeWorkspace({ currentUser }) {
   return (
     <section className="page-shell komite-page-shell">
       {(view === 'dashboard' || view === 'start') ? (
-        <section className="home-hero-v8 home-hero-premium-v10 tus-hero-redesign card-surface" aria-label="KlinikIQ Komite çalışma alanı">
+        <section className="home-hero-v8 home-hero-premium-v10 tus-hero-redesign card-surface" aria-label="KlinikIQ TUS çalışma alanı">
           <div className="tus-hero-soft-grid" aria-hidden="true" />
           <div className="tus-hero-dot-field" aria-hidden="true" />
 
           <div className="home-hero-v10-main tus-hero-main-redesign">
             <div className="home-hero-copy-v8 home-hero-copy-v10 tus-hero-copy-redesign">
-              <span className="tus-hero-kicker"><Icon name="Trophy" /> Komite çalışma alanı</span>
+              <span className="tus-hero-kicker"><Icon name="Trophy" /> TUS pratiği</span>
               <h1 className="home-brand-title-v10 tus-hero-title-redesign">
-                KlinikIQ <span>Komite</span>
+                KlinikIQ <span>TUS Pratiği</span>
               </h1>
               <p>
-                Komite materyallerini tek yerde düzenle, ayırt ettiren konuları yakala ve çalışma akışını adım adım güçlendir.
+                Odaklanmış klinik olgularla çalış, ayırt ettiren bulguyu yakala ve karar verme becerini adım adım güçlendir.
               </p>
-              <div className="home-hero-proof-row-v10 tus-hero-proof-redesign" aria-label="Komite öğrenme özellikleri">
-                <span><Icon name="Brain" /><strong>Ders anlatımı</strong></span>
-                <span><Icon name="ClipboardCheck" /><strong>Soru üretimi</strong></span>
-                <span><Icon name="Sparkles" /><strong>Hap kartlar</strong></span>
+              <div className="home-hero-proof-row-v10 tus-hero-proof-redesign" aria-label="Klinik öğrenme özellikleri">
+                <span><Icon name="Brain" /><strong>Klinik akıl yürütme</strong></span>
+                <span><Icon name="ClipboardCheck" /><strong>Tetkik seçimi</strong></span>
+                <span><Icon name="Sparkles" /><strong>AI destekli pratik</strong></span>
               </div>
             </div>
 
-            <aside className="home-action-panel-v10 tus-action-panel-redesign" aria-label="Komite ana aksiyonları">
+            <aside className="home-action-panel-v10 tus-action-panel-redesign" aria-label="Ana çalışma aksiyonları">
               <div className="home-actions-v8 home-actions-v10 tus-actions-redesign">
                 <button type="button" className="btn btn-primary tus-primary-action-redesign" onClick={() => setView('start')}>
                   <span className="tus-action-icon"><Icon name="ArrowRight" /></span>
-                  <span>Materyal yükle</span>
+                  <span>Olgu çözmeye başla</span>
                   <Icon name="ArrowRight" />
                 </button>
                 <button type="button" className="btn btn-secondary tus-secondary-action-redesign" onClick={() => setView('materials')}>
                   <span className="tus-action-icon"><Icon name="Timer" /></span>
-                  <span>Çalıştıklarım</span>
+                  <span>Zamanlı blok oluştur</span>
                   <Icon name="ArrowRight" />
                 </button>
                 <button type="button" className="btn btn-secondary ai-hero-action tus-ai-action-redesign" onClick={() => setView('review')}>
                   <span className="tus-action-icon"><Icon name="Sparkles" /></span>
-                  <span>Tekrar merkezine git</span>
+                  <span>AI ile soru üret</span>
                   <Icon name="ArrowRight" />
                 </button>
               </div>
