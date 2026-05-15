@@ -5718,3 +5718,130 @@
     width: 100%;
   }
 }
+
+
+/* ==========================================================
+   KlinikIQ v79 — Hap Bilgi Çalış tab count overlap fix
+   Makes the top repeat-list tabs roomier and prevents
+   label/count collisions on all widths.
+   ========================================================== */
+.pearl-study-tabs {
+  gap: 6px;
+  padding: 6px;
+  border-radius: 20px;
+}
+
+.pearl-study-tabs > button {
+  position: relative;
+  flex: 0 0 auto;
+  gap: 10px;
+  padding: 9px 14px;
+  min-height: 38px;
+  overflow: visible;
+}
+
+.pearl-study-tabs > button > span {
+  display: inline-block;
+  line-height: 1.15;
+  white-space: nowrap;
+  flex: 0 1 auto;
+}
+
+.pearl-study-tabs > button > em {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 22px;
+  padding: 0 7px;
+  line-height: 1;
+  margin-left: 0;
+}
+
+@media (max-width: 640px) {
+  .pearl-study-tabs {
+    gap: 5px;
+    padding: 4px;
+  }
+
+  .pearl-study-tabs > button {
+    gap: 8px;
+    padding: 7px 11px;
+    min-height: 34px;
+  }
+
+  .pearl-study-tabs > button > em {
+    min-width: 22px;
+    height: 20px;
+    padding: 0 6px;
+  }
+}
+
+
+/* ==========================================================
+   KlinikIQ v80 — Hap Bilgi Çalış navigation stability +
+   front/back typography alignment
+   ========================================================== */
+.pearl-study-stage {
+  position: relative;
+}
+
+.tus-pearl-side-nav.pearl-study-nav-button {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+}
+
+.tus-pearl-side-nav.pearl-study-nav-button.pearl-study-nav-prev {
+  left: clamp(12px, 1.8vw, 28px);
+}
+
+.tus-pearl-side-nav.pearl-study-nav-button.pearl-study-nav-next {
+  right: clamp(12px, 1.8vw, 28px);
+}
+
+.pearl-card-question-block > strong,
+.tus-pearl-focus-back .tus-pearl-answer-block.focus > strong,
+.tus-pearl-focus-back .tus-pearl-answer-block > strong.compact {
+  font-family: inherit;
+  font-size: clamp(1.72rem, 2.9vw, 2.84rem);
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.pearl-card-question-block > strong {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tus-pearl-focus-back .tus-pearl-answer-block.focus > strong,
+.tus-pearl-focus-back .tus-pearl-answer-block > strong.compact {
+  text-align: center;
+}
+
+@media (max-width: 820px) {
+  .tus-pearl-side-nav.pearl-study-nav-button.pearl-study-nav-prev {
+    left: 10px;
+  }
+
+  .tus-pearl-side-nav.pearl-study-nav-button.pearl-study-nav-next {
+    right: 10px;
+  }
+
+  .pearl-card-question-block > strong,
+  .tus-pearl-focus-back .tus-pearl-answer-block.focus > strong,
+  .tus-pearl-focus-back .tus-pearl-answer-block > strong.compact {
+    font-size: clamp(1.5rem, 5.8vw, 2.2rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .tus-pearl-side-nav.pearl-study-nav-button {
+    position: static;
+    transform: none;
+  }
+}

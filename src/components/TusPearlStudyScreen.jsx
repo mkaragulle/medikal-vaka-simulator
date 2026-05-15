@@ -829,7 +829,7 @@ function TusPearlStudyScreen({
       ) : (
         <>
           <main className="tus-pearl-study-main pearl-study-stage">
-            <button type="button" className="tus-pearl-side-nav pearl-study-nav-button" onClick={() => moveCard(-1)} aria-label="Önceki kart">‹</button>
+            <button type="button" className="tus-pearl-side-nav pearl-study-nav-button pearl-study-nav-prev" onClick={() => moveCard(-1)} aria-label="Önceki kart">‹</button>
 
             <div className="pearl-study-spotlight">
               {activeCard ? (
@@ -896,7 +896,7 @@ function TusPearlStudyScreen({
               )}
             </div>
 
-            <button type="button" className="tus-pearl-side-nav pearl-study-nav-button" onClick={() => moveCard(1)} aria-label="Sonraki kart">›</button>
+            <button type="button" className="tus-pearl-side-nav pearl-study-nav-button pearl-study-nav-next" onClick={() => moveCard(1)} aria-label="Sonraki kart">›</button>
           </main>
 
           <footer className="tus-pearl-study-bottom card-surface pearl-study-decision-dock">
