@@ -1834,36 +1834,40 @@ export default function KomiteModeWorkspace({ currentUser }) {
   return (
     <section className="page-shell komite-page-shell">
       {(view === 'dashboard' || view === 'start') ? (
-        <section className="home-hero-v8 home-hero-premium-v10 tus-hero-redesign komite-hero komite-hero-v60 komite-hero-unified-v62 komite-hero-unified-v63 card-surface" aria-label="KlinikIQ Komite çalışma alanı">
+        <section className="home-hero-v8 home-hero-premium-v10 tus-hero-redesign card-surface" aria-label="KlinikIQ Komite çalışma alanı">
           <div className="tus-hero-soft-grid" aria-hidden="true" />
           <div className="tus-hero-dot-field" aria-hidden="true" />
 
-          <div className="home-hero-v10-main tus-hero-main-redesign komite-hero-main-v63">
-            <div className="home-hero-copy-v8 home-hero-copy-v10 tus-hero-copy-redesign komite-hero-copy-v60 komite-hero-copy-v63">
-              <span className="tus-hero-kicker komite-hero-kicker-v60"><Icon name="BookOpen" /> Komite çalışma alanı</span>
-              <h1 className="home-brand-title-v10 tus-hero-title-redesign">KlinikIQ <span>Komite</span></h1>
-              <p>Komite materyallerini tek yerde düzenle; ders anlatımı, soru, hap kart ve tekrar akışını aynı panelden yönet.</p>
-              <div className="home-hero-proof-row-v10 tus-hero-proof-redesign komite-hero-tags-v60 komite-hero-tags-v63" aria-label="Komite özellikleri">
-                <span><Icon name="BookOpen" /><strong>Ders anlatımı</strong></span>
-                <span><Icon name="ClipboardList" /><strong>Soru üretimi</strong></span>
-                <span><Icon name="LayeredCards" /><strong>Hap kartlar</strong></span>
+          <div className="home-hero-v10-main tus-hero-main-redesign">
+            <div className="home-hero-copy-v8 home-hero-copy-v10 tus-hero-copy-redesign">
+              <span className="tus-hero-kicker"><Icon name="Trophy" /> Komite çalışma alanı</span>
+              <h1 className="home-brand-title-v10 tus-hero-title-redesign">
+                KlinikIQ <span>Komite</span>
+              </h1>
+              <p>
+                Komite materyallerini tek yerde düzenle, ayırt ettiren konuları yakala ve çalışma akışını adım adım güçlendir.
+              </p>
+              <div className="home-hero-proof-row-v10 tus-hero-proof-redesign" aria-label="Komite öğrenme özellikleri">
+                <span><Icon name="Brain" /><strong>Ders anlatımı</strong></span>
+                <span><Icon name="ClipboardCheck" /><strong>Soru üretimi</strong></span>
+                <span><Icon name="Sparkles" /><strong>Hap kartlar</strong></span>
               </div>
             </div>
 
-            <aside className="home-action-panel-v10 tus-action-panel-redesign komite-hero-panel-v60 komite-action-panel-v62 komite-action-panel-v63" aria-label="Komite ana aksiyonları">
-              <div className="home-actions-v8 home-actions-v10 tus-actions-redesign komite-actions-v62 komite-actions-v63">
-                <button type="button" className="btn btn-primary tus-primary-action-redesign komite-primary-action-v62" onClick={() => setView('start')}>
-                  <span className="tus-action-icon komite-action-icon-v62"><Icon name="Sparkles" /></span>
+            <aside className="home-action-panel-v10 tus-action-panel-redesign" aria-label="Komite ana aksiyonları">
+              <div className="home-actions-v8 home-actions-v10 tus-actions-redesign">
+                <button type="button" className="btn btn-primary tus-primary-action-redesign" onClick={() => setView('start')}>
+                  <span className="tus-action-icon"><Icon name="ArrowRight" /></span>
                   <span>Materyal yükle</span>
                   <Icon name="ArrowRight" />
                 </button>
-                <button type="button" className="btn btn-secondary tus-secondary-action-redesign komite-secondary-action-v62" onClick={() => setView('materials')}>
-                  <span className="tus-action-icon komite-action-icon-v62"><Icon name="ClipboardList" /></span>
+                <button type="button" className="btn btn-secondary tus-secondary-action-redesign" onClick={() => setView('materials')}>
+                  <span className="tus-action-icon"><Icon name="Timer" /></span>
                   <span>Çalıştıklarım</span>
                   <Icon name="ArrowRight" />
                 </button>
-                <button type="button" className="btn btn-secondary ai-hero-action tus-ai-action-redesign komite-ai-action-v62" onClick={() => setView('review')}>
-                  <span className="tus-action-icon komite-action-icon-v62"><Icon name="RotateCcw" /></span>
+                <button type="button" className="btn btn-secondary ai-hero-action tus-ai-action-redesign" onClick={() => setView('review')}>
+                  <span className="tus-action-icon"><Icon name="Sparkles" /></span>
                   <span>Tekrar merkezine git</span>
                   <Icon name="ArrowRight" />
                 </button>
