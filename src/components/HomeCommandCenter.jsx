@@ -39,21 +39,9 @@ function HomeCommandCenter({
               Odaklanmış klinik olgularla çalış, ayırt ettiren bulguyu yakala ve karar verme becerini adım adım güçlendir.
             </p>
             <div className="home-hero-proof-row-v10 tus-hero-proof-redesign" aria-label="Klinik öğrenme özellikleri">
-              <span>
-                <Icon name="Brain" />
-                <strong>Klinik akıl yürütme</strong>
-                <small>Düşünme sistemini güçlendir</small>
-              </span>
-              <span>
-                <Icon name="ClipboardCheck" />
-                <strong>Tetkik seçimi</strong>
-                <small>Doğru ipucunu seç</small>
-              </span>
-              <span>
-                <Icon name="Sparkles" />
-                <strong>AI destekli pratik</strong>
-                <small>Akıllı soru üretimi</small>
-              </span>
+              <span><Icon name="Brain" /><strong>Klinik akıl yürütme</strong></span>
+              <span><Icon name="ClipboardCheck" /><strong>Tetkik seçimi</strong></span>
+              <span><Icon name="Sparkles" /><strong>AI destekli pratik</strong></span>
             </div>
           </div>
 
@@ -83,15 +71,15 @@ function HomeCommandCenter({
         <button type="button" className={mode === 'study' ? 'active' : ''} onClick={() => onChangeMode('study')} aria-pressed={mode === 'study'}>
           <Icon name="BookOpen" />
           <span>
-            <strong>Öğrenme modu</strong>
-            <small>Pratik yap ve güçlen</small>
+            <strong>Öğrenme</strong>
+            <small>Adım adım pratik</small>
           </span>
         </button>
         <button type="button" className={mode === 'exam' ? 'active' : ''} onClick={() => onChangeMode('exam')} aria-pressed={mode === 'exam'}>
           <Icon name="ClipboardList" />
           <span>
-            <strong>Sınav modu</strong>
-            <small>Gerçek sınav temposu</small>
+            <strong>Sınav</strong>
+            <small>Gerçek tempo</small>
           </span>
         </button>
       </div>
