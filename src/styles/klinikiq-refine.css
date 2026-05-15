@@ -4406,3 +4406,45 @@ html[data-theme="dark"] body:not(.klinikiq-auth-lock) .global-topbar-v55 {
     display: none !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ v67 — final unified topbar-to-first-card rhythm
+   Purpose: keep Komite, TUS, clinical case, AI question and exam
+   pages at the same visual distance from the global top bar.
+   TUS dashboard spacing is the source of truth. UI-only.
+   ========================================================== */
+:root {
+  --kiq-unified-first-card-gap: 8px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-page-shell,
+body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell,
+body:not(.klinikiq-auth-lock) .minimal-home-shell,
+body:not(.klinikiq-auth-lock) .komite-page-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell,
+body:not(.klinikiq-auth-lock) .stable-case-page-shell,
+body:not(.klinikiq-auth-lock) .ai-practice-page-shell,
+body:not(.klinikiq-auth-lock) .exam-active-shell,
+body:not(.klinikiq-auth-lock) .exam-results-shell,
+body:not(.klinikiq-auth-lock) .tus-pearl-study-shell {
+  margin-top: var(--kiq-unified-first-card-gap) !important;
+  padding-top: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-dashboard-v8.tus-dashboard-redesign,
+body:not(.klinikiq-auth-lock) .komite-page-shell > .home-hero-v8:first-child,
+body:not(.klinikiq-auth-lock) .komite-page-shell > .tus-hero-redesign:first-child,
+body:not(.klinikiq-auth-lock) .case-page-shell > :first-child,
+body:not(.klinikiq-auth-lock) .stable-case-page-shell > :first-child,
+body:not(.klinikiq-auth-lock) .ai-practice-page-shell > :first-child,
+body:not(.klinikiq-auth-lock) .exam-active-shell > :first-child,
+body:not(.klinikiq-auth-lock) .exam-results-shell > :first-child,
+body:not(.klinikiq-auth-lock) .tus-pearl-study-shell > :first-child {
+  margin-top: 0 !important;
+}
+
+@media (max-width: 920px) {
+  :root {
+    --kiq-unified-first-card-gap: 6px !important;
+  }
+}
