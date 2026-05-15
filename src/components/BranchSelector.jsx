@@ -3,10 +3,8 @@ import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
 import { TUS_SPOT_BRANCH_ID } from '../data/branches.js';
 
 function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch, index = 0, variant = 'grid' }) {
-  const totalCases = branchStats?.totalCases ?? 0;
   const isSpotBranch = branch.id === TUS_SPOT_BRANCH_ID;
   const priorityCases = branchStats?.priorityCases ?? 0;
-  const avgPoints = branchStats?.avgPoints ?? 0;
   const progress = Math.min(100, 28 + priorityCases * 14);
   const tone = branchToneById[branch.id] ?? 'accent';
   const isFeatured = variant === 'featured';
@@ -31,7 +29,6 @@ function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch
       <span className="branch-launch-wave" aria-hidden="true" />
       <div className="branch-card-head">
         <IconBadge icon={branchIconById[branch.id] ?? 'Stethoscope'} tone={tone} branchId={branch.id} />
-        <span className="branch-count">{isLaunching ? 'Açılıyor' : `${totalCases} ${isSpotBranch ? 'spot olgu' : 'olgu'}`}</span>
       </div>
 
       <div className="branch-card-body">
@@ -40,11 +37,6 @@ function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch
       </div>
 
       <div className="branch-progress" aria-hidden="true"><span style={{ width: `${progress}%` }} /></div>
-
-      <div className="branch-card-meta">
-        <span>{isSpotBranch ? `${priorityCases} spot karar` : `${priorityCases} acil-kritik olgu`}</span>
-        <span>{avgPoints} ortalama puan</span>
-      </div>
 
       <div className="branch-card-footer" aria-hidden="true">
         <span>{isLaunching ? 'Olgu ekranına geçiliyor' : isSpotBranch ? 'Spot çöz' : 'Branşa gir'}</span>
@@ -62,17 +54,11 @@ function BranchSelector({ branches, cases, onSelectBranch, launchingBranchId = n
 
     cases.forEach((clinicalCase) => {
       const branchId = clinicalCase.branchId;
-      const current = stats.get(branchId) ?? { totalCases: 0, priorityCases: 0, pointsTotal: 0, avgPoints: 0 };
-      current.totalCases += 1;
+      const current = stats.get(branchId) ?? { priorityCases: 0 };
       current.priorityCases += branchId === TUS_SPOT_BRANCH_ID
         ? clinicalCase.caseType === 'spot' ? 1 : 0
         : /acil|kritik/i.test(clinicalCase.difficulty) ? 1 : 0;
-      current.pointsTotal += /zor|kritik/i.test(clinicalCase.difficulty) ? 22 : /acil/i.test(clinicalCase.difficulty) ? 18 : 14;
       stats.set(branchId, current);
-    });
-
-    stats.forEach((value) => {
-      value.avgPoints = value.totalCases ? Math.round(value.pointsTotal / value.totalCases) : 0;
     });
 
     return stats;

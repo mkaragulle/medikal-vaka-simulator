@@ -40486,3 +40486,137 @@ body:not(.klinikiq-auth-lock) .tus-metrics-redesign {
     width: 100% !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ TUS vertical spacing hotfix v53
+   Purpose: remove the excessive empty band under the fixed top bar
+   and replace the middle mode selector with a compact in-product tab.
+   UI-only. No functional logic is changed.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .app-shell.premium-shell {
+  padding-top: 86px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell,
+body:not(.klinikiq-auth-lock) .minimal-home-shell,
+body:not(.klinikiq-auth-lock) .home-page-shell {
+  margin-top: 10px !important;
+  padding-top: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-dashboard-v8.tus-dashboard-redesign {
+  gap: 16px !important;
+  margin-top: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-hero-redesign,
+body:not(.klinikiq-auth-lock) .home-hero-v8.home-hero-premium-v10.tus-hero-redesign {
+  min-height: 330px !important;
+  padding-top: clamp(36px, 3.2vw, 48px) !important;
+  padding-bottom: clamp(36px, 3.2vw, 48px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-hero-main-redesign {
+  min-height: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-mode-redesign,
+body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign {
+  width: min(100%, 420px) !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  margin: 2px auto 0 !important;
+  padding: 4px !important;
+  gap: 4px !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.84) !important;
+  border: 1px solid rgba(15, 118, 110, 0.14) !important;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.045), inset 0 1px 0 rgba(255,255,255,0.92) !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button,
+body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign button {
+  height: 40px !important;
+  min-height: 40px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  gap: 8px !important;
+  color: #475569 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button svg {
+  width: 17px !important;
+  height: 17px !important;
+  color: currentColor !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button strong {
+  font-size: 14px !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+  color: inherit !important;
+  white-space: nowrap !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button small,
+body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign button small {
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-mode-redesign button.active,
+body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign button.active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #0f766e 0%, #14b8a6 100%) !important;
+  box-shadow: 0 10px 24px rgba(13, 148, 136, 0.18), inset 0 1px 0 rgba(255,255,255,0.28) !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-metrics-redesign,
+body:not(.klinikiq-auth-lock) .home-metrics-v8.home-metrics-v10.tus-metrics-redesign {
+  margin-top: 2px !important;
+}
+
+@media (min-width: 1280px) {
+  body:not(.klinikiq-auth-lock) .app-shell.premium-shell {
+    padding-top: 84px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell,
+  body:not(.klinikiq-auth-lock) .minimal-home-shell,
+  body:not(.klinikiq-auth-lock) .home-page-shell {
+    margin-top: 8px !important;
+  }
+}
+
+@media (max-width: 1120px) {
+  body:not(.klinikiq-auth-lock) .app-shell.premium-shell {
+    padding-top: 132px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .home-page-shell.minimal-home-shell,
+  body:not(.klinikiq-auth-lock) .minimal-home-shell,
+  body:not(.klinikiq-auth-lock) .home-page-shell {
+    margin-top: 10px !important;
+  }
+}
+
+@media (max-width: 780px) {
+  body:not(.klinikiq-auth-lock) .app-shell.premium-shell {
+    padding-top: 184px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .tus-mode-redesign,
+  body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign {
+    width: 100% !important;
+    height: 46px !important;
+    min-height: 46px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .tus-mode-redesign button,
+  body:not(.klinikiq-auth-lock) .home-mode-v8.home-mode-v10.tus-mode-redesign button {
+    height: 38px !important;
+    min-height: 38px !important;
+  }
+}
