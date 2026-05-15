@@ -19,6 +19,17 @@ const EMPTY_FORM = {
   appearedYears: '',
 };
 
+const ADVANCED_FIELDS = [
+  'tusTip',
+  'differentialNote',
+  'subject',
+  'topic',
+  'tags',
+  'keywords',
+  'difficulty',
+  'appearedYears',
+];
+
 function arrayToText(value = []) {
   return Array.isArray(value) ? value.join(', ') : String(value || '');
 }
@@ -42,6 +53,17 @@ function buildInitialForm(card, defaultCatalogId = '') {
   };
 }
 
+function pickAdvancedFields(source) {
+  return ADVANCED_FIELDS.reduce((acc, key) => {
+    acc[key] = source?.[key] ?? EMPTY_FORM[key] ?? '';
+    return acc;
+  }, {});
+}
+
+function countFilledAdvancedFields(source) {
+  return ADVANCED_FIELDS.filter((key) => String(source?.[key] || '').trim()).length;
+}
+
 function TusPearlCardEditor({
   open = false,
   mode = 'create',
@@ -53,13 +75,16 @@ function TusPearlCardEditor({
   onSave,
 }) {
   const [form, setForm] = useState(() => buildInitialForm(initialCard, defaultCatalogId));
-  const [advancedOpen, setAdvancedOpen] = useState(false);
+  const [advancedDialogOpen, setAdvancedDialogOpen] = useState(false);
+  const [advancedDraft, setAdvancedDraft] = useState(() => pickAdvancedFields(EMPTY_FORM));
   const [error, setError] = useState('');
 
   useEffect(() => {
     if (!open) return;
-    setForm(buildInitialForm(initialCard, defaultCatalogId));
-    setAdvancedOpen(false);
+    const nextForm = buildInitialForm(initialCard, defaultCatalogId);
+    setForm(nextForm);
+    setAdvancedDraft(pickAdvancedFields(nextForm));
+    setAdvancedDialogOpen(false);
     setError('');
   }, [defaultCatalogId, initialCard, open]);
 
@@ -69,8 +94,28 @@ function TusPearlCardEditor({
     return 'Kendi kartını oluştur';
   }, [mode]);
 
+  const filledAdvancedCount = useMemo(() => countFilledAdvancedFields(form), [form]);
+
   function updateField(field, value) {
     setForm((current) => ({ ...current, [field]: value }));
+  }
+
+  function openAdvancedDialog() {
+    setAdvancedDraft(pickAdvancedFields(form));
+    setAdvancedDialogOpen(true);
+  }
+
+  function closeAdvancedDialog() {
+    setAdvancedDialogOpen(false);
+  }
+
+  function updateAdvancedDraft(field, value) {
+    setAdvancedDraft((current) => ({ ...current, [field]: value }));
+  }
+
+  function saveAdvancedDraft() {
+    setForm((current) => ({ ...current, ...advancedDraft }));
+    setAdvancedDialogOpen(false);
   }
 
   function handleSubmit(event) {
@@ -127,9 +172,9 @@ function TusPearlCardEditor({
   if (!open) return null;
 
   return (
-    <div className="pearl-editor-backdrop" role="presentation" onClick={onClose}>
+    <div className="pearl-editor-backdrop pearl-editor-backdrop-balanced" role="presentation" onClick={onClose}>
       <section
-        className="pearl-editor-modal pearl-editor-modal-compact card-surface"
+        className="pearl-editor-modal pearl-editor-modal-compact pearl-editor-modal-balanced card-surface"
         role="dialog"
         aria-modal="true"
         aria-label={title}
@@ -180,7 +225,7 @@ function TusPearlCardEditor({
             </div>
           </div>
 
-          <div className="pearl-editor-meta-row">
+          <div className="pearl-editor-meta-row pearl-editor-meta-row-balanced">
             <label className="pearl-editor-panel pearl-editor-panel-inline pearl-editor-select-panel">
               <span>Branş</span>
               <select value={form.branchId} onChange={(event) => updateField('branchId', event.target.value)}>
@@ -196,56 +241,16 @@ function TusPearlCardEditor({
               </select>
             </label>
 
-            <button type="button" className="pearl-editor-advanced-toggle pearl-editor-advanced-toggle-compact" onClick={() => setAdvancedOpen((current) => !current)}>
-              <Icon name={advancedOpen ? 'ChevronUp' : 'ChevronDown'} size={16} />
+            <button type="button" className="pearl-editor-advanced-toggle pearl-editor-advanced-toggle-compact pearl-editor-advanced-launch" onClick={openAdvancedDialog}>
+              <Icon name="Sparkles" size={16} />
               <span>Opsiyonel alanlar</span>
+              {filledAdvancedCount ? <b>{filledAdvancedCount}</b> : null}
             </button>
           </div>
 
-          {advancedOpen ? (
-            <div className="pearl-editor-advanced-grid pearl-editor-advanced-grid-compact">
-              <label>
-                <span>TUS ipucu</span>
-                <input value={form.tusTip} onChange={(event) => updateField('tusTip', event.target.value)} placeholder="Kısa patern" />
-              </label>
-              <label>
-                <span>Ayırıcı not</span>
-                <input value={form.differentialNote} onChange={(event) => updateField('differentialNote', event.target.value)} placeholder="Benzer kavram farkı" />
-              </label>
-              <label>
-                <span>Konu</span>
-                <input value={form.topic} onChange={(event) => updateField('topic', event.target.value)} placeholder="Adrenal kriz" />
-              </label>
-              <label>
-                <span>Ders / başlık</span>
-                <input value={form.subject} onChange={(event) => updateField('subject', event.target.value)} placeholder="İç Hastalıkları" />
-              </label>
-              <label>
-                <span>Zorluk</span>
-                <select value={form.difficulty} onChange={(event) => updateField('difficulty', event.target.value)}>
-                  <option value="kolay">Kolay</option>
-                  <option value="orta">Orta</option>
-                  <option value="zor">Zor</option>
-                </select>
-              </label>
-              <label>
-                <span>Etiketler</span>
-                <input value={form.tags} onChange={(event) => updateField('tags', event.target.value)} placeholder="farmakoloji, kontrendikasyon" />
-              </label>
-              <label>
-                <span>Anahtar kelimeler</span>
-                <input value={form.keywords} onChange={(event) => updateField('keywords', event.target.value)} placeholder="hipotansiyon, hiperkalemi" />
-              </label>
-              <label>
-                <span>Çıkmış yıl</span>
-                <input value={form.appearedYears} onChange={(event) => updateField('appearedYears', event.target.value)} placeholder="2021, 2023" />
-              </label>
-            </div>
-          ) : null}
-
           {error ? <p className="pearl-editor-error">{error}</p> : null}
 
-          <footer className="pearl-editor-actions pearl-editor-actions-compact">
+          <footer className="pearl-editor-actions pearl-editor-actions-compact pearl-editor-actions-balanced">
             <button type="button" className="btn btn-secondary" onClick={onClose}>Vazgeç</button>
             <button type="submit" className="btn btn-primary">
               <Icon name="LayeredCards" />
@@ -254,6 +259,69 @@ function TusPearlCardEditor({
           </footer>
         </form>
       </section>
+
+      {advancedDialogOpen ? (
+        <div className="pearl-editor-secondary-backdrop" role="presentation" onClick={closeAdvancedDialog}>
+          <section className="pearl-editor-secondary-modal card-surface" role="dialog" aria-modal="true" aria-label="Opsiyonel alanlar" onClick={(event) => event.stopPropagation()}>
+            <header className="pearl-editor-secondary-head">
+              <div>
+                <h3>Opsiyonel alanlar</h3>
+                <p>İstersen kartı daha zengin hale getir; boş bırakman da sorun değil.</p>
+              </div>
+              <button type="button" className="btn btn-icon quiet pearl-editor-close pearl-editor-close-compact" onClick={closeAdvancedDialog} aria-label="Opsiyonel alanları kapat">
+                <Icon name="X" />
+              </button>
+            </header>
+
+            <div className="pearl-editor-advanced-grid pearl-editor-advanced-grid-popup">
+              <label>
+                <span>TUS ipucu</span>
+                <input value={advancedDraft.tusTip} onChange={(event) => updateAdvancedDraft('tusTip', event.target.value)} placeholder="Kısa patern" />
+              </label>
+              <label>
+                <span>Ayırıcı not</span>
+                <input value={advancedDraft.differentialNote} onChange={(event) => updateAdvancedDraft('differentialNote', event.target.value)} placeholder="Benzer kavram farkı" />
+              </label>
+              <label>
+                <span>Konu</span>
+                <input value={advancedDraft.topic} onChange={(event) => updateAdvancedDraft('topic', event.target.value)} placeholder="Adrenal kriz" />
+              </label>
+              <label>
+                <span>Ders / başlık</span>
+                <input value={advancedDraft.subject} onChange={(event) => updateAdvancedDraft('subject', event.target.value)} placeholder="İç Hastalıkları" />
+              </label>
+              <label>
+                <span>Zorluk</span>
+                <select value={advancedDraft.difficulty} onChange={(event) => updateAdvancedDraft('difficulty', event.target.value)}>
+                  <option value="kolay">Kolay</option>
+                  <option value="orta">Orta</option>
+                  <option value="zor">Zor</option>
+                </select>
+              </label>
+              <label>
+                <span>Etiketler</span>
+                <input value={advancedDraft.tags} onChange={(event) => updateAdvancedDraft('tags', event.target.value)} placeholder="farmakoloji, kontrendikasyon" />
+              </label>
+              <label>
+                <span>Anahtar kelimeler</span>
+                <input value={advancedDraft.keywords} onChange={(event) => updateAdvancedDraft('keywords', event.target.value)} placeholder="hipotansiyon, hiperkalemi" />
+              </label>
+              <label>
+                <span>Çıkmış yıl</span>
+                <input value={advancedDraft.appearedYears} onChange={(event) => updateAdvancedDraft('appearedYears', event.target.value)} placeholder="2021, 2023" />
+              </label>
+            </div>
+
+            <footer className="pearl-editor-secondary-actions">
+              <button type="button" className="btn btn-secondary" onClick={closeAdvancedDialog}>Vazgeç</button>
+              <button type="button" className="btn btn-primary" onClick={saveAdvancedDraft}>
+                <Icon name="CheckCircle" />
+                <span>Kaydet</span>
+              </button>
+            </footer>
+          </section>
+        </div>
+      ) : null}
     </div>
   );
 }

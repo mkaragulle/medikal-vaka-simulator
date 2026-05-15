@@ -6887,3 +6887,215 @@
     padding-right: 16px;
   }
 }
+
+
+/* =========================================================
+   V85 — balanced quick-save modal + optional-fields popup
+   ========================================================= */
+.pearl-editor-backdrop-balanced {
+  padding: 24px;
+}
+
+.pearl-editor-modal-balanced {
+  width: min(100%, 1180px);
+  max-height: calc(100vh - 48px);
+  overflow: hidden;
+}
+
+.pearl-editor-head-compact {
+  padding: 20px 28px 14px;
+}
+
+.pearl-editor-form-compact {
+  gap: 14px;
+  padding: 12px 28px 20px;
+}
+
+.pearl-editor-primary-grid-compact {
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: 14px;
+}
+
+.pearl-editor-panel-compact-xl,
+.pearl-editor-panel-sm,
+.pearl-editor-select-panel,
+.pearl-editor-advanced-launch {
+  padding: 16px;
+  border-radius: 20px;
+}
+
+.pearl-editor-panel-compact-xl {
+  min-height: 392px;
+}
+
+.pearl-editor-panel-sm {
+  min-height: 189px;
+}
+
+.pearl-editor-panel-compact-xl textarea {
+  min-height: 165px;
+}
+
+.pearl-editor-panel-sm textarea {
+  min-height: 108px;
+}
+
+.pearl-editor-meta-row-balanced {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 220px;
+  gap: 14px;
+}
+
+.pearl-editor-select-panel select {
+  min-height: 62px;
+}
+
+.pearl-editor-advanced-launch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 100%;
+  border: 1px solid rgba(15,118,110,0.12);
+  background: linear-gradient(180deg, rgba(240,253,250,0.78), rgba(236,253,245,0.6));
+  color: rgb(15, 118, 110);
+}
+
+.pearl-editor-advanced-launch b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: rgba(20,184,166,0.12);
+  color: rgb(15,118,110);
+  font-size: 0.8rem;
+}
+
+.pearl-editor-actions-balanced {
+  padding-top: 4px;
+}
+
+.pearl-editor-secondary-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1001;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(2, 6, 23, 0.30);
+  backdrop-filter: blur(8px);
+}
+
+.pearl-editor-secondary-modal {
+  width: min(100%, 860px);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  border-radius: 26px;
+  border: 1px solid rgba(15,118,110,0.12);
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20,184,166,0.12), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,250,252,0.96));
+  box-shadow: 0 28px 78px rgba(15, 23, 42, 0.22);
+}
+
+.pearl-editor-secondary-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 18px 20px 10px;
+}
+
+.pearl-editor-secondary-head h3 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  letter-spacing: -0.03em;
+}
+
+.pearl-editor-secondary-head p {
+  margin: 0;
+  color: var(--text-muted, #64748b);
+  font-size: 0.92rem;
+}
+
+.pearl-editor-advanced-grid-popup {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 10px 20px 18px;
+}
+
+.pearl-editor-advanced-grid-popup label {
+  display: grid;
+  gap: 7px;
+}
+
+.pearl-editor-advanced-grid-popup label > span {
+  color: var(--text-muted, #64748b);
+  font-size: 0.82rem;
+  font-weight: 740;
+}
+
+.pearl-editor-advanced-grid-popup input,
+.pearl-editor-advanced-grid-popup select {
+  min-height: 50px;
+  border: 1px solid rgba(15,118,110,0.10);
+  border-radius: 16px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.84);
+}
+
+.pearl-editor-secondary-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+
+@media (max-width: 980px) {
+  .pearl-editor-modal-balanced {
+    width: min(100%, 940px);
+  }
+
+  .pearl-editor-panel-compact-xl {
+    min-height: 320px;
+  }
+
+  .pearl-editor-panel-sm {
+    min-height: 154px;
+  }
+}
+
+@media (max-width: 860px) {
+  .pearl-editor-modal-balanced {
+    overflow: auto;
+  }
+
+  .pearl-editor-primary-grid-compact,
+  .pearl-editor-meta-row-balanced,
+  .pearl-editor-advanced-grid-popup {
+    grid-template-columns: 1fr;
+  }
+
+  .pearl-editor-advanced-launch {
+    min-height: 62px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pearl-editor-backdrop-balanced,
+  .pearl-editor-secondary-backdrop {
+    padding: 12px;
+  }
+
+  .pearl-editor-head-compact,
+  .pearl-editor-form-compact,
+  .pearl-editor-secondary-head,
+  .pearl-editor-advanced-grid-popup,
+  .pearl-editor-secondary-actions {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
