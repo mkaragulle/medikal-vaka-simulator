@@ -1034,7 +1034,7 @@ function App() {
               onClick={resetExamToHome}
               aria-pressed={mode === 'study' && !examState?.active}
             >
-              <Icon name="BookOpen" />
+              <Icon name="Lightbulb" />
               <span>Öğrenme</span>
             </button>
             <button

@@ -135,7 +135,7 @@ function HomeCommandCenter({
 
       <div className="home-mode-v8 home-mode-v10 tus-mode-redesign" aria-label="Çalışma modu seçimi">
         <button type="button" className={mode === 'study' ? 'active' : ''} onClick={() => onChangeMode('study')} aria-pressed={mode === 'study'}>
-          <Icon name="BookOpen" />
+          <Icon name="Lightbulb" />
           <span><strong>Öğrenme</strong></span>
         </button>
         <button type="button" className={mode === 'exam' ? 'active' : ''} onClick={() => onChangeMode('exam')} aria-pressed={mode === 'exam'}>
