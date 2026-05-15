@@ -42410,3 +42410,21 @@ body:not(.klinikiq-auth-lock) .tus-mode-redesign button.active {
     min-height: 0 !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ v74 — Zor tab red accent refresh
+   Purpose: make the global active "Zor" topbar tab feel more
+   reddish while preserving the existing layout and behavior.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-active {
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #c2415d 0%, #dc2626 55%, #f97316 100%) !important;
+  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.18), inset 0 1px 0 rgba(255,255,255,0.18) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-active,
+.app-shell[data-theme="dark"] .nav-mode-switch button.hard-mode-active {
+  color: #fff7f7 !important;
+  background: linear-gradient(135deg, #be123c 0%, #dc2626 58%, #ea580c 100%) !important;
+  box-shadow: 0 10px 24px rgba(239, 68, 68, 0.22), inset 0 1px 0 rgba(255,255,255,0.12) !important;
+}

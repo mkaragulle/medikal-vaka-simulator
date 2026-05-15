@@ -323,6 +323,18 @@ function TusPearlStudyScreen({
   const isSecondaryListActive = viewMode === 'catalogs' || ['known', 'user'].includes(filter);
   const emptyState = useMemo(() => getPearlEmptyState(filter), [filter]);
   const activeCardContent = useMemo(() => getPearlBackContent(activeCard || {}), [activeCard]);
+  const activeCardBranchName = activeCard ? getBranchName(activeCard.branchId) : 'TUS';
+  const activeCardTopicLabel = activeCard?.subject || activeCard?.topic || 'Hap bilgi kartı';
+  const activeCardTypeLabel = activeCard?.cardType || 'Spot kart';
+  const activeCardSourceLabel = activeCard?.source === 'user' ? 'Kişisel kart' : 'Sistem kartı';
+  const activeCardTagList = useMemo(() => {
+    if (!activeCard) return [];
+    return [...new Set([
+      ...(activeCard.tags || []),
+      ...(activeCard.keywords || []),
+      ...(activeCard.appearedYears?.length ? ['Çıkmış bilgi'] : []),
+    ])].slice(0, 3);
+  }, [activeCard]);
 
   const catalogCards = useMemo(() => (
     (activeCatalog?.cardIds || []).map((id) => cardById.get(id)).filter(Boolean)
@@ -824,69 +836,115 @@ function TusPearlStudyScreen({
         </main>
       ) : (
         <>
-          <main className="tus-pearl-study-main">
-            <button type="button" className="tus-pearl-side-nav" onClick={() => moveCard(-1)} aria-label="Önceki kart">‹</button>
+          <main className="tus-pearl-study-main pearl-study-stage">
+            <button type="button" className="tus-pearl-side-nav pearl-study-nav-button" onClick={() => moveCard(-1)} aria-label="Önceki kart">‹</button>
 
-            {activeCard ? (
-              <article
-                className={`tus-pearl-focus-card card-surface ${flipped ? 'is-flipped' : ''} motion-${motion}`.trim()}
-                onPointerDown={handlePointerDown}
-                onPointerUp={handlePointerUp}
-              >
-                <button type="button" className="tus-pearl-focus-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
-                  <span className="tus-pearl-focus-face tus-pearl-focus-front">
-                    <strong>{activeCardContent.frontText || activeCard.front}</strong>
-                  </span>
-                  <span className="tus-pearl-focus-face tus-pearl-focus-back">
-                    <span className="tus-pearl-back-stack focus">
-                      <span className="tus-pearl-answer-block focus">
-                        <span className="tus-pearl-back-kicker">Yanıt</span>
-                        <strong className={activeCardContent.isCompactBack ? 'compact' : ''}>{activeCardContent.backText}</strong>
+            <div className="pearl-study-spotlight">
+              {activeCard ? (
+                <article
+                  className={`tus-pearl-focus-card card-surface pearl-study-premium-card ${flipped ? 'is-flipped' : ''} motion-${motion}`.trim()}
+                  onPointerDown={handlePointerDown}
+                  onPointerUp={handlePointerUp}
+                >
+                  <button type="button" className="tus-pearl-focus-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
+                    <span className="tus-pearl-focus-face tus-pearl-focus-front pearl-card-face">
+                      <span className="pearl-card-face-header">
+                        <span className="pearl-card-face-badges">
+                          <em>{activeCardBranchName}</em>
+                          <em>{activeCardTypeLabel}</em>
+                          <em>{activeCardSourceLabel}</em>
+                        </span>
+                        <span className="pearl-card-flip-hint">
+                          <Icon name="RotateCcw" size={14} />
+                          <span>Kartı çevirmek için tıkla</span>
+                        </span>
                       </span>
-                      {activeCardContent.detailText ? (
-                        <span className="tus-pearl-detail-block focus">
-                          <span className="tus-pearl-back-kicker muted">Kısa gerekçe</span>
-                          <span className="tus-pearl-detail-text">{activeCardContent.detailText}</span>
-                        </span>
-                      ) : null}
-                      {activeCardContent.tusTipText ? (
-                        <span className="tus-pearl-answer-chain focus" role="note" aria-label="TUS ipucu">
-                          <span className="tus-pearl-back-kicker muted">TUS ipucu</span>
-                          <span>{activeCardContent.tusTipText}</span>
-                        </span>
-                      ) : null}
-                      {activeCardContent.noteText ? (
-                        <span className="tus-pearl-note-box focus" role="note" aria-label={activeCardContent.noteLabel || 'Ayırıcı not'}>
-                          <span className="tus-pearl-note-box-label">{activeCardContent.noteLabel || 'Ayırıcı not'}</span>
-                          <span className="tus-pearl-note-box-text">{activeCardContent.noteText}</span>
-                        </span>
-                      ) : null}
-                    </span>
-                  </span>
-                </button>
-              </article>
-            ) : (
-              <div className="tus-pearl-study-empty card-surface personal-empty-state">
-                <Icon name={filter === 'catalog' ? 'ClipboardList' : emptyState.icon || 'LayeredCards'} />
-                <strong>{filter === 'catalog' ? 'Bu katalogda çalışılacak kart yok.' : emptyState.emptyTitle}</strong>
-                <p>{filter === 'catalog' ? 'Tüm kart havuzundan kart seçebilir veya bu kataloğa özel kendi kartını oluşturabilirsin.' : emptyState.emptyDescription}</p>
-                <div className="empty-action-row">
-                  <button type="button" className="btn btn-primary compact" onClick={() => openRepeatList('all')}>Tüm kartları çalış</button>
-                  {filter === 'catalog' ? (
-                    <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Bu kataloğa kart ekle</button>
-                  ) : null}
-                  {filter !== 'catalog' ? (
-                    <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Katalogları yönet</button>
-                  ) : null}
-                  <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kendi kartını oluştur</button>
-                </div>
-              </div>
-            )}
 
-            <button type="button" className="tus-pearl-side-nav" onClick={() => moveCard(1)} aria-label="Sonraki kart">›</button>
+                      <span className="pearl-card-question-block">
+                        <span className="pearl-card-question-kicker">{activeCardTopicLabel}</span>
+                        <strong>{activeCardContent.frontText || activeCard.front}</strong>
+                      </span>
+
+                      <span className="pearl-card-face-footer">
+                        <span className="pearl-card-progress-pill">{sessionCards.length ? `${currentIndex + 1} / ${sessionCards.length}` : '0 / 0'}</span>
+                        <span className="pearl-card-keyword-row">
+                          {activeCardTagList.length ? activeCardTagList.map((tag) => (
+                            <span key={tag}>{tag}</span>
+                          )) : <span>Hızlı tekrar kartı</span>}
+                        </span>
+                      </span>
+                    </span>
+
+                    <span className="tus-pearl-focus-face tus-pearl-focus-back pearl-card-face">
+                      <span className="pearl-card-face-header">
+                        <span className="pearl-card-face-badges">
+                          <em>Yanıt kartı</em>
+                          <em>{activeCardBranchName}</em>
+                        </span>
+                        <span className="pearl-card-flip-hint">
+                          <Icon name="RotateCcw" size={14} />
+                          <span>Ön yüze dön</span>
+                        </span>
+                      </span>
+
+                      <span className="tus-pearl-back-stack focus pearl-back-premium-stack">
+                        <span className="tus-pearl-answer-block focus pearl-answer-panel">
+                          <span className="tus-pearl-back-kicker">Yanıt</span>
+                          <strong className={activeCardContent.isCompactBack ? 'compact' : ''}>{activeCardContent.backText}</strong>
+                        </span>
+                        {activeCardContent.detailText ? (
+                          <span className="tus-pearl-detail-block focus pearl-detail-panel">
+                            <span className="tus-pearl-back-kicker muted">Kısa gerekçe</span>
+                            <span className="tus-pearl-detail-text">{activeCardContent.detailText}</span>
+                          </span>
+                        ) : null}
+                        {activeCardContent.tusTipText ? (
+                          <span className="tus-pearl-answer-chain focus pearl-tip-panel" role="note" aria-label="TUS ipucu">
+                            <span className="tus-pearl-back-kicker muted">TUS ipucu</span>
+                            <span>{activeCardContent.tusTipText}</span>
+                          </span>
+                        ) : null}
+                        {activeCardContent.noteText ? (
+                          <span className="tus-pearl-note-box focus pearl-note-panel" role="note" aria-label={activeCardContent.noteLabel || 'Ayırıcı not'}>
+                            <span className="tus-pearl-note-box-label">{activeCardContent.noteLabel || 'Ayırıcı not'}</span>
+                            <span className="tus-pearl-note-box-text">{activeCardContent.noteText}</span>
+                          </span>
+                        ) : null}
+                      </span>
+                    </span>
+                  </button>
+                </article>
+              ) : (
+                <div className="tus-pearl-study-empty card-surface personal-empty-state">
+                  <Icon name={filter === 'catalog' ? 'ClipboardList' : emptyState.icon || 'LayeredCards'} />
+                  <strong>{filter === 'catalog' ? 'Bu katalogda çalışılacak kart yok.' : emptyState.emptyTitle}</strong>
+                  <p>{filter === 'catalog' ? 'Tüm kart havuzundan kart seçebilir veya bu kataloğa özel kendi kartını oluşturabilirsin.' : emptyState.emptyDescription}</p>
+                  <div className="empty-action-row">
+                    <button type="button" className="btn btn-primary compact" onClick={() => openRepeatList('all')}>Tüm kartları çalış</button>
+                    {filter === 'catalog' ? (
+                      <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Bu kataloğa kart ekle</button>
+                    ) : null}
+                    {filter !== 'catalog' ? (
+                      <button type="button" className="btn btn-secondary compact" onClick={() => setViewMode('catalogs')}>Katalogları yönet</button>
+                    ) : null}
+                    <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kendi kartını oluştur</button>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <button type="button" className="tus-pearl-side-nav pearl-study-nav-button" onClick={() => moveCard(1)} aria-label="Sonraki kart">›</button>
           </main>
 
-          <footer className="tus-pearl-study-bottom card-surface">
+          <footer className="tus-pearl-study-bottom card-surface pearl-study-decision-dock">
+            <div className="pearl-study-dock-head">
+              <div>
+                <span className="pearl-study-dock-kicker">Öğrenme kararı</span>
+                <strong>Bu kartı nasıl işaretlemek istersin?</strong>
+              </div>
+              <span className="pearl-study-dock-shortcut">Boşluk: çevir · ← →: kart değiştir</span>
+            </div>
+
             <div className="tus-pearl-study-primary-actions decision-actions">
               <button type="button" className={isKnown ? 'btn decision-btn known active' : 'btn decision-btn known'} onClick={() => handleLearningDecision('known')} disabled={!activeCard}>
                 <Icon name="CheckCircle" />
@@ -902,53 +960,55 @@ function TusPearlStudyScreen({
               </button>
             </div>
 
-            <div className="tus-pearl-study-secondary-actions" aria-label="Kart organizasyon aksiyonları">
-              <button type="button" className={isFavorite ? 'active' : ''} onClick={() => activeCard && commitState((current) => ({ ...current, favoritePearlCardIds: toggleId(current.favoritePearlCardIds, activeCard.id) }))} disabled={!activeCard}>
-                <Icon name="Sparkles" size={15} />
-                <span>{isFavorite ? 'Favoride' : 'Favori'}</span>
-              </button>
-              <div className="pearl-catalog-popover-wrap">
-                <button type="button" className={isInAnyCatalog ? 'active' : ''} onClick={() => setCatalogMenuOpen((value) => !value)} disabled={!activeCard}>
-                  <Icon name="LayeredCards" size={15} />
-                  <span>{isInAnyCatalog ? 'Katalogda' : 'Kataloğa ekle'}</span>
+            <div className="pearl-study-secondary-wrap">
+              <div className="tus-pearl-study-secondary-actions pearl-study-secondary-grid" aria-label="Kart organizasyon aksiyonları">
+                <button type="button" className={isFavorite ? 'active' : ''} onClick={() => activeCard && commitState((current) => ({ ...current, favoritePearlCardIds: toggleId(current.favoritePearlCardIds, activeCard.id) }))} disabled={!activeCard}>
+                  <Icon name="Sparkles" size={15} />
+                  <span>{isFavorite ? 'Favoride' : 'Favori'}</span>
                 </button>
-                {catalogMenuOpen ? (
-                  <div className="pearl-catalog-popover" role="menu">
-                    {pearlState.customCatalogs.length ? pearlState.customCatalogs.map((catalog) => {
-                      const alreadyAdded = activeCard ? catalog.cardIds?.includes(activeCard.id) : false;
-                      return (
-                        <button key={catalog.id} type="button" className={alreadyAdded ? 'active' : ''} onClick={() => { if (activeCard && !alreadyAdded) addCardToCatalog(activeCard.id, catalog.id); setActiveCatalogId(catalog.id); setCatalogMenuOpen(false); }}>
-                          <span>{catalog.name}</span>
-                          <em>{alreadyAdded ? 'Eklendi' : 'Ekle'}</em>
-                        </button>
-                      );
-                    }) : (
-                      <button type="button" onClick={() => { setViewMode('catalogs'); setCatalogMenuOpen(false); }}>Önce katalog oluştur</button>
-                    )}
-                  </div>
+                <div className="pearl-catalog-popover-wrap">
+                  <button type="button" className={isInAnyCatalog ? 'active' : ''} onClick={() => setCatalogMenuOpen((value) => !value)} disabled={!activeCard}>
+                    <Icon name="LayeredCards" size={15} />
+                    <span>{isInAnyCatalog ? 'Katalogda' : 'Kataloğa ekle'}</span>
+                  </button>
+                  {catalogMenuOpen ? (
+                    <div className="pearl-catalog-popover" role="menu">
+                      {pearlState.customCatalogs.length ? pearlState.customCatalogs.map((catalog) => {
+                        const alreadyAdded = activeCard ? catalog.cardIds?.includes(activeCard.id) : false;
+                        return (
+                          <button key={catalog.id} type="button" className={alreadyAdded ? 'active' : ''} onClick={() => { if (activeCard && !alreadyAdded) addCardToCatalog(activeCard.id, catalog.id); setActiveCatalogId(catalog.id); setCatalogMenuOpen(false); }}>
+                            <span>{catalog.name}</span>
+                            <em>{alreadyAdded ? 'Eklendi' : 'Ekle'}</em>
+                          </button>
+                        );
+                      }) : (
+                        <button type="button" onClick={() => { setViewMode('catalogs'); setCatalogMenuOpen(false); }}>Önce katalog oluştur</button>
+                      )}
+                    </div>
+                  ) : null}
+                </div>
+                <button type="button" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>
+                  <Icon name="Notes" size={15} />
+                  <span>Kendi kartını oluştur</span>
+                </button>
+                {activeCard?.source === 'user' ? (
+                  <>
+                    <button type="button" onClick={() => openEditor({ mode: 'edit', card: activeCard, defaultCatalogId: activeCatalogId })}>
+                      <Icon name="Notes" size={15} />
+                      <span>Düzenle</span>
+                    </button>
+                    <button type="button" onClick={() => deleteUserCard(activeCard.id)}>
+                      <Icon name="Trash2" size={15} />
+                      <span>Sil</span>
+                    </button>
+                  </>
+                ) : activeCard ? (
+                  <button type="button" onClick={() => openEditor({ mode: 'copy', card: activeCard, defaultCatalogId: activeCatalogId })}>
+                    <Icon name="User" size={15} />
+                    <span>Kendi kartıma kopyala</span>
+                  </button>
                 ) : null}
               </div>
-              <button type="button" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>
-                <Icon name="Notes" size={15} />
-                <span>Kendi kartını oluştur</span>
-              </button>
-              {activeCard?.source === 'user' ? (
-                <>
-                  <button type="button" onClick={() => openEditor({ mode: 'edit', card: activeCard, defaultCatalogId: activeCatalogId })}>
-                    <Icon name="Notes" size={15} />
-                    <span>Düzenle</span>
-                  </button>
-                  <button type="button" onClick={() => deleteUserCard(activeCard.id)}>
-                    <Icon name="Trash2" size={15} />
-                    <span>Sil</span>
-                  </button>
-                </>
-              ) : activeCard ? (
-                <button type="button" onClick={() => openEditor({ mode: 'copy', card: activeCard, defaultCatalogId: activeCatalogId })}>
-                  <Icon name="User" size={15} />
-                  <span>Kendi kartıma kopyala</span>
-                </button>
-              ) : null}
             </div>
           </footer>
         </>
