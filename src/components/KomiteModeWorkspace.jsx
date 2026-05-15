@@ -1834,36 +1834,42 @@ export default function KomiteModeWorkspace({ currentUser }) {
   return (
     <section className="page-shell komite-page-shell">
       {(view === 'dashboard' || view === 'start') ? (
-        <section className="komite-hero komite-hero-v60 komite-hero-unified-v62 card-surface" aria-label="KlinikIQ Komite çalışma alanı">
-          <div className="komite-hero-copy-v60">
-            <span className="komite-hero-kicker-v60"><Icon name="BookOpen" size={17} /> Komite çalışma alanı</span>
-            <h1>KlinikIQ <span>Komite</span></h1>
-            <p>Komite materyallerini tek yerde düzenle; ders anlatımı, soru, hap kart ve tekrar akışını aynı panelden yönet.</p>
-            <div className="komite-hero-tags-v60" aria-label="Komite özellikleri">
-              <span><Icon name="BookOpen" size={15} /><strong>Ders anlatımı</strong></span>
-              <span><Icon name="ClipboardList" size={15} /><strong>Soru üretimi</strong></span>
-              <span><Icon name="LayeredCards" size={15} /><strong>Hap kartlar</strong></span>
+        <section className="home-hero-v8 home-hero-premium-v10 tus-hero-redesign komite-hero komite-hero-v60 komite-hero-unified-v62 komite-hero-unified-v63 card-surface" aria-label="KlinikIQ Komite çalışma alanı">
+          <div className="tus-hero-soft-grid" aria-hidden="true" />
+          <div className="tus-hero-dot-field" aria-hidden="true" />
+
+          <div className="home-hero-v10-main tus-hero-main-redesign komite-hero-main-v63">
+            <div className="home-hero-copy-v8 home-hero-copy-v10 tus-hero-copy-redesign komite-hero-copy-v60 komite-hero-copy-v63">
+              <span className="tus-hero-kicker komite-hero-kicker-v60"><Icon name="BookOpen" /> Komite çalışma alanı</span>
+              <h1 className="home-brand-title-v10 tus-hero-title-redesign">KlinikIQ <span>Komite</span></h1>
+              <p>Komite materyallerini tek yerde düzenle; ders anlatımı, soru, hap kart ve tekrar akışını aynı panelden yönet.</p>
+              <div className="home-hero-proof-row-v10 tus-hero-proof-redesign komite-hero-tags-v60 komite-hero-tags-v63" aria-label="Komite özellikleri">
+                <span><Icon name="BookOpen" /><strong>Ders anlatımı</strong></span>
+                <span><Icon name="ClipboardList" /><strong>Soru üretimi</strong></span>
+                <span><Icon name="LayeredCards" /><strong>Hap kartlar</strong></span>
+              </div>
             </div>
+
+            <aside className="home-action-panel-v10 tus-action-panel-redesign komite-hero-panel-v60 komite-action-panel-v62 komite-action-panel-v63" aria-label="Komite ana aksiyonları">
+              <div className="home-actions-v8 home-actions-v10 tus-actions-redesign komite-actions-v62 komite-actions-v63">
+                <button type="button" className="btn btn-primary tus-primary-action-redesign komite-primary-action-v62" onClick={() => setView('start')}>
+                  <span className="tus-action-icon komite-action-icon-v62"><Icon name="Sparkles" /></span>
+                  <span>Materyal yükle</span>
+                  <Icon name="ArrowRight" />
+                </button>
+                <button type="button" className="btn btn-secondary tus-secondary-action-redesign komite-secondary-action-v62" onClick={() => setView('materials')}>
+                  <span className="tus-action-icon komite-action-icon-v62"><Icon name="ClipboardList" /></span>
+                  <span>Çalıştıklarım</span>
+                  <Icon name="ArrowRight" />
+                </button>
+                <button type="button" className="btn btn-secondary ai-hero-action tus-ai-action-redesign komite-ai-action-v62" onClick={() => setView('review')}>
+                  <span className="tus-action-icon komite-action-icon-v62"><Icon name="RotateCcw" /></span>
+                  <span>Tekrar merkezine git</span>
+                  <Icon name="ArrowRight" />
+                </button>
+              </div>
+            </aside>
           </div>
-          <aside className="komite-hero-panel-v60 komite-action-panel-v62" aria-label="Komite ana aksiyonları">
-            <div className="komite-actions-v62">
-              <button type="button" className="btn btn-primary komite-primary-action-v62" onClick={() => setView('start')}>
-                <span className="komite-action-icon-v62"><Icon name="Sparkles" /></span>
-                <span>Materyal yükle</span>
-                <Icon name="ArrowRight" />
-              </button>
-              <button type="button" className="btn btn-secondary komite-secondary-action-v62" onClick={() => setView('materials')}>
-                <span className="komite-action-icon-v62"><Icon name="ClipboardList" /></span>
-                <span>Çalıştıklarım</span>
-                <Icon name="ArrowRight" />
-              </button>
-              <button type="button" className="btn btn-secondary komite-ai-action-v62" onClick={() => setView('review')}>
-                <span className="komite-action-icon-v62"><Icon name="RotateCcw" /></span>
-                <span>Tekrar merkezine git</span>
-                <Icon name="ArrowRight" />
-              </button>
-            </div>
-          </aside>
         </section>
       ) : null}
 

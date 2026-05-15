@@ -41815,3 +41815,84 @@ html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v
 .app-shell[data-theme='dark'] .komite-hero.komite-hero-v60.komite-hero-unified-v62 p {
   color: #cbd5e1 !important;
 }
+
+/* =========================================================
+   V63 — Komite hero pixel-alignment with TUS hero
+   Uses the exact same inner layout, text positions, tag row and
+   right-side action panel rhythm as the TUS practice hero.
+   ========================================================= */
+body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v62.komite-hero-unified-v63 {
+  display: block !important;
+  grid-template-columns: none !important;
+  align-items: initial !important;
+  gap: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v63::before,
+body:not(.klinikiq-auth-lock) .komite-hero.komite-hero-v60.komite-hero-unified-v63::after {
+  content: none !important;
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-hero-main-v63 {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(420px, 520px) !important;
+  align-items: center !important;
+  gap: clamp(42px, 6vw, 82px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-hero-main-v63::after {
+  content: "" !important;
+  position: absolute !important;
+  left: auto !important;
+  right: 580px !important;
+  top: 8px !important;
+  bottom: 8px !important;
+  width: 1px !important;
+  background: linear-gradient(180deg, transparent, rgba(15,23,42,0.11), transparent) !important;
+  opacity: 0.9 !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-hero-copy-v63 {
+  max-width: 780px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 22px !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-hero-tags-v63 {
+  width: 100% !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-top: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-action-panel-v63 {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  max-width: none !important;
+  justify-self: stretch !important;
+}
+
+@media (max-width: 1320px) {
+  body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-hero-main-v63 {
+    grid-template-columns: 1fr !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-hero-main-v63::after {
+    display: none !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .komite-hero-unified-v63 .komite-action-panel-v63 {
+    max-width: 620px !important;
+  }
+}
