@@ -289,7 +289,6 @@ function HomeCommandCenter({
         </div>
       </section>
 
-      <SessionSummaryCard entries={leaderboardEntries} stats={stats} mode={mode} examCount={examCount} wrongAnswers={wrongAnswers} />
     </section>
   );
 }

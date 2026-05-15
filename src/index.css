@@ -38859,3 +38859,25 @@ body:not(.klinikiq-auth-lock) .performance-next-action-card {
     width: 100% !important;
   }
 }
+
+
+/* V47 dashboard cleanup: remove the right-side performance insight column and let the main hero own the full dashboard width. */
+body:not(.klinikiq-auth-lock) .home-dashboard-v8 {
+  grid-template-columns: minmax(0, 1fr) !important;
+  max-width: 100% !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-dashboard-v8 > .session-summary-v8,
+body:not(.klinikiq-auth-lock) .home-dashboard-v8 > .performance-insight-panel {
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-v8 {
+  width: 100% !important;
+}
+
+@media (min-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .home-hero-v10-main {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 430px) !important;
+  }
+}
