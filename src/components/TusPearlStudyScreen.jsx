@@ -625,9 +625,7 @@ function TusPearlStudyScreen({
           <span>Tekrar merkezine dön</span>
         </button>
         <div className="tus-pearl-study-title">
-          <p className="auth-eyebrow">Hızlı TUS tekrarı</p>
           <h1>{viewMode === 'catalogs' ? 'Kataloglarım' : 'Hap Bilgi Çalış'}</h1>
-          <span>{viewMode === 'catalogs' ? 'Kişisel setlerini oluştur, düzenle ve kart ekle.' : `${modeLabel} · dengeli karışık oturum.`}</span>
         </div>
         <div className="tus-pearl-study-progress" aria-label="Kart ilerlemesi">
           <strong>{viewMode === 'study' ? `${sessionCards.length ? currentIndex + 1 : 0} / ${sessionCards.length}` : `${pearlState.customCatalogs.length} katalog`}</strong>
@@ -652,12 +650,6 @@ function TusPearlStudyScreen({
         </div>
       ) : (
         <div className="pearl-study-compactbar card-surface" aria-label="Çalışma ekranı üst kontrolleri">
-          <div className="pearl-study-deck-summary">
-            <span className="pearl-study-deck-kicker">Aktif deck</span>
-            <strong>{modeLabel}</strong>
-            <em>{sessionCards.length} kartlık dengeli karışık sıra</em>
-          </div>
-
           <nav className="pearl-study-tabs" aria-label="Ana tekrar listeleri">
             {primaryRepeatItems.map((item) => (
               <button
@@ -848,45 +840,16 @@ function TusPearlStudyScreen({
                 >
                   <button type="button" className="tus-pearl-focus-flip" onClick={() => setFlipped((current) => !current)} aria-pressed={flipped}>
                     <span className="tus-pearl-focus-face tus-pearl-focus-front pearl-card-face">
-                      <span className="pearl-card-face-header">
-                        <span className="pearl-card-face-badges">
-                          <em>{activeCardBranchName}</em>
-                          <em>{activeCardTypeLabel}</em>
-                          <em>{activeCardSourceLabel}</em>
-                        </span>
-                        <span className="pearl-card-flip-hint">
-                          <Icon name="RotateCcw" size={14} />
-                          <span>Kartı çevirmek için tıkla</span>
-                        </span>
-                      </span>
-
                       <span className="pearl-card-question-block">
-                        <span className="pearl-card-question-kicker">{activeCardTopicLabel}</span>
                         <strong>{activeCardContent.frontText || activeCard.front}</strong>
                       </span>
 
-                      <span className="pearl-card-face-footer">
+                      <span className="pearl-card-face-footer minimal">
                         <span className="pearl-card-progress-pill">{sessionCards.length ? `${currentIndex + 1} / ${sessionCards.length}` : '0 / 0'}</span>
-                        <span className="pearl-card-keyword-row">
-                          {activeCardTagList.length ? activeCardTagList.map((tag) => (
-                            <span key={tag}>{tag}</span>
-                          )) : <span>Hızlı tekrar kartı</span>}
-                        </span>
                       </span>
                     </span>
 
                     <span className="tus-pearl-focus-face tus-pearl-focus-back pearl-card-face">
-                      <span className="pearl-card-face-header">
-                        <span className="pearl-card-face-badges">
-                          <em>Yanıt kartı</em>
-                          <em>{activeCardBranchName}</em>
-                        </span>
-                        <span className="pearl-card-flip-hint">
-                          <Icon name="RotateCcw" size={14} />
-                          <span>Ön yüze dön</span>
-                        </span>
-                      </span>
-
                       <span className="tus-pearl-back-stack focus pearl-back-premium-stack">
                         <span className="tus-pearl-answer-block focus pearl-answer-panel">
                           <span className="tus-pearl-back-kicker">Yanıt</span>
@@ -937,14 +900,6 @@ function TusPearlStudyScreen({
           </main>
 
           <footer className="tus-pearl-study-bottom card-surface pearl-study-decision-dock">
-            <div className="pearl-study-dock-head">
-              <div>
-                <span className="pearl-study-dock-kicker">Öğrenme kararı</span>
-                <strong>Bu kartı nasıl işaretlemek istersin?</strong>
-              </div>
-              <span className="pearl-study-dock-shortcut">Boşluk: çevir · ← →: kart değiştir</span>
-            </div>
-
             <div className="tus-pearl-study-primary-actions decision-actions">
               <button type="button" className={isKnown ? 'btn decision-btn known active' : 'btn decision-btn known'} onClick={() => handleLearningDecision('known')} disabled={!activeCard}>
                 <Icon name="CheckCircle" />

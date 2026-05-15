@@ -1048,7 +1048,7 @@ function App() {
             </button>
             <button
               type="button"
-              className={hardMode ? 'active hard-mode-active' : ''}
+              className={hardMode ? 'active hard-mode-tab hard-mode-active' : 'hard-mode-tab'}
               onClick={() => setHardMode((current) => !current)}
               aria-pressed={hardMode}
               title="Referans değerleri ve ipuçları azaltılır"

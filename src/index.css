@@ -42412,19 +42412,43 @@ body:not(.klinikiq-auth-lock) .tus-mode-redesign button.active {
 }
 
 /* ==========================================================
-   KlinikIQ v74 — Zor tab red accent refresh
-   Purpose: make the global active "Zor" topbar tab feel more
-   reddish while preserving the existing layout and behavior.
+   KlinikIQ v76 — Zor tab red background polish
+   Purpose: give the global topbar "Zor" button a distinct
+   red identity while keeping the layout consistent.
    ========================================================== */
+body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-tab {
+  color: #7f1d1d !important;
+  background: linear-gradient(135deg, rgba(254, 226, 226, 0.92) 0%, rgba(254, 205, 211, 0.92) 100%) !important;
+  border-color: rgba(239, 68, 68, 0.18) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-tab svg,
+body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-tab .icon {
+  color: currentColor !important;
+}
+
 body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-active {
   color: #ffffff !important;
-  background: linear-gradient(135deg, #c2415d 0%, #dc2626 55%, #f97316 100%) !important;
-  box-shadow: 0 10px 22px rgba(220, 38, 38, 0.18), inset 0 1px 0 rgba(255,255,255,0.18) !important;
+  background: linear-gradient(135deg, #dc2626 0%, #e11d48 52%, #fb7185 100%) !important;
+  border-color: rgba(225, 29, 72, 0.22) !important;
+  box-shadow: 0 10px 22px rgba(225, 29, 72, 0.22), inset 0 1px 0 rgba(255,255,255,0.18) !important;
+}
+
+body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-active:hover,
+body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-active:focus-visible {
+  background: linear-gradient(135deg, #ef4444 0%, #e11d48 52%, #fb7185 100%) !important;
+}
+
+html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-tab,
+.app-shell[data-theme="dark"] .nav-mode-switch button.hard-mode-tab {
+  color: #fecaca !important;
+  background: linear-gradient(135deg, rgba(69, 10, 10, 0.88) 0%, rgba(127, 29, 29, 0.88) 100%) !important;
+  border-color: rgba(248, 113, 113, 0.22) !important;
 }
 
 html[data-theme="dark"] body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-active,
 .app-shell[data-theme="dark"] .nav-mode-switch button.hard-mode-active {
   color: #fff7f7 !important;
-  background: linear-gradient(135deg, #be123c 0%, #dc2626 58%, #ea580c 100%) !important;
-  box-shadow: 0 10px 24px rgba(239, 68, 68, 0.22), inset 0 1px 0 rgba(255,255,255,0.12) !important;
+  background: linear-gradient(135deg, #be123c 0%, #dc2626 56%, #fb7185 100%) !important;
+  box-shadow: 0 10px 24px rgba(239, 68, 68, 0.24), inset 0 1px 0 rgba(255,255,255,0.12) !important;
 }
