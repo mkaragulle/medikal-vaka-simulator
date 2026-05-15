@@ -1834,31 +1834,35 @@ export default function KomiteModeWorkspace({ currentUser }) {
   return (
     <section className="page-shell komite-page-shell">
       {(view === 'dashboard' || view === 'start') ? (
-        <section className="komite-hero komite-hero-v60 card-surface">
+        <section className="komite-hero komite-hero-v60 komite-hero-unified-v62 card-surface" aria-label="KlinikIQ Komite çalışma alanı">
           <div className="komite-hero-copy-v60">
             <span className="komite-hero-kicker-v60"><Icon name="BookOpen" size={17} /> Komite çalışma alanı</span>
-            <h1>Komite materyallerini tek yerde düzenle ve çalış.</h1>
-            <p>Slaytlarını ve notlarını yükle; ders anlatımı, soru, hap kart ve tekrar içeriklerine aynı çalışma alanından ulaş.</p>
+            <h1>KlinikIQ <span>Komite</span></h1>
+            <p>Komite materyallerini tek yerde düzenle; ders anlatımı, soru, hap kart ve tekrar akışını aynı panelden yönet.</p>
             <div className="komite-hero-tags-v60" aria-label="Komite özellikleri">
-              <span><Icon name="BookOpen" size={15} /> Ders anlatımı</span>
-              <span><Icon name="ClipboardList" size={15} /> Soru üretimi</span>
-              <span><Icon name="LayeredCards" size={15} /> Hap kart</span>
-              <span><Icon name="RotateCcw" size={15} /> Kişisel tekrar</span>
-            </div>
-            <div className="komite-hero-actions komite-hero-actions-v60">
-              <button type="button" className="btn btn-primary" onClick={() => setView('start')}><Icon name="Sparkles" /> Materyal yükle</button>
+              <span><Icon name="BookOpen" size={15} /><strong>Ders anlatımı</strong></span>
+              <span><Icon name="ClipboardList" size={15} /><strong>Soru üretimi</strong></span>
+              <span><Icon name="LayeredCards" size={15} /><strong>Hap kartlar</strong></span>
             </div>
           </div>
-          <aside className="komite-hero-panel-v60" aria-label="Komite akışı">
-            <span className="komite-hero-panel-label-v60">Akıllı çalışma akışı</span>
-            <div className="komite-flow-list-v60">
-              <span><i>1</i><strong>Materyal yükle</strong><em>PDF, slayt veya ders notu</em></span>
-              <span><i>2</i><strong>İçeriği oluştur</strong><em>Ders anlatımı, soru ve kart</em></span>
-              <span><i>3</i><strong>Tekrar et</strong><em>Yanlış ve zor kartları hedefle</em></span>
+          <aside className="komite-hero-panel-v60 komite-action-panel-v62" aria-label="Komite ana aksiyonları">
+            <div className="komite-actions-v62">
+              <button type="button" className="btn btn-primary komite-primary-action-v62" onClick={() => setView('start')}>
+                <span className="komite-action-icon-v62"><Icon name="Sparkles" /></span>
+                <span>Materyal yükle</span>
+                <Icon name="ArrowRight" />
+              </button>
+              <button type="button" className="btn btn-secondary komite-secondary-action-v62" onClick={() => setView('materials')}>
+                <span className="komite-action-icon-v62"><Icon name="ClipboardList" /></span>
+                <span>Çalıştıklarım</span>
+                <Icon name="ArrowRight" />
+              </button>
+              <button type="button" className="btn btn-secondary komite-ai-action-v62" onClick={() => setView('review')}>
+                <span className="komite-action-icon-v62"><Icon name="RotateCcw" /></span>
+                <span>Tekrar merkezine git</span>
+                <Icon name="ArrowRight" />
+              </button>
             </div>
-            <button type="button" className="komite-hero-panel-button-v60" onClick={() => setView('start')}>
-              Yeni çalışma başlat <Icon name="ArrowRight" size={16} />
-            </button>
           </aside>
         </section>
       ) : null}
