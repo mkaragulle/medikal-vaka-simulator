@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import AISpotQuestionScreen from './AISpotQuestionScreen.jsx';
 import { Icon, IconBadge } from './ui.jsx';
 
@@ -70,14 +71,37 @@ function AIDifficultyFilter({ difficulty = 'Orta', onChangeDifficulty, disabled 
   );
 }
 
-function AILoadingState() {
+function AILoadingState({ countdown = 9 }) {
+  const normalizedCountdown = Math.max(0, Number(countdown) || 0);
+  const countdownLabel = normalizedCountdown > 0 ? `${normalizedCountdown} sn` : 'son kontroller';
+
   return (
-    <section className="ai-generation-state card-surface" aria-live="polite">
+    <section className="ai-generation-state ai-generation-state-countdown card-surface" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
       <div>
         <h2>Yeni TUS spot sorusu hazırlanıyor...</h2>
-        <p>Branş uyumu, tekrar kontrolü, şık kalitesi ve klinik gerekçe güvenli üretim hattından geçiriliyor.</p>
+        <p>Branş, zorluk, klinik tutarlılık ve şık kalitesi kontrol ediliyor.</p>
       </div>
+      <div className="ai-generation-countdown" aria-label={`Tahmini sonuç ${countdownLabel}`}>
+        <span>Tahmini sonuç</span>
+        <strong>{countdownLabel}</strong>
+      </div>
+    </section>
+  );
+}
+
+function AIReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
+  const branchLabel = !branchFilter || branchFilter === 'random' ? 'Rastgele branş' : branchFilter;
+  return (
+    <section className="ai-generation-state ai-generation-ready card-surface" aria-live="polite">
+      <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
+      <div>
+        <h2>Branş ve zorluğu seç, sonra soru üret.</h2>
+        <p>Seçili ayar: <strong>{branchLabel}</strong> · <strong>{difficulty}</strong>. Soru üretimi yalnızca butona bastığında başlar.</p>
+      </div>
+      <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
+        <Icon name="Sparkles" /> Soru üretimini başlat
+      </button>
     </section>
   );
 }
@@ -118,6 +142,22 @@ function AIGeneratedQuestionView({
   hardMode = false,
 }) {
   const accuracy = aiStats?.attempts ? Math.round((aiStats.correct / aiStats.attempts) * 100) : 0;
+  const [countdown, setCountdown] = useState(0);
+
+  useEffect(() => {
+    if (!loading) {
+      setCountdown(0);
+      return undefined;
+    }
+
+    setCountdown(9);
+    const timer = window.setInterval(() => {
+      setCountdown((current) => Math.max(0, current - 1));
+    }, 1000);
+
+    return () => window.clearInterval(timer);
+  }, [loading]);
+
 
   return (
     <section className="page-shell ai-practice-page-shell">
@@ -172,8 +212,11 @@ function AIGeneratedQuestionView({
         </section>
       ) : null}
 
-      {loading ? <AILoadingState /> : null}
+      {loading ? <AILoadingState countdown={countdown} /> : null}
       {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}
+      {!loading && !error && !question ? (
+        <AIReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={onGenerateQuestion} />
+      ) : null}
       {!loading && !error && question ? (
         <div key={question.id} className="ai-case-shell case-route-transition" data-case-id={question.id}>
           <AISpotQuestionScreen

@@ -794,35 +794,60 @@ function App() {
 
   const handleStartAIPractice = useCallback(() => {
     clearAIQuestionTimer();
+    latestAIQuestionRequestId.current += 1;
     setMode('study');
     setExamState(null);
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setIsCaseSidebarOpen(true);
     closePearlStudy();
-    generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter, aiDifficulty);
+    setAIPracticeState({
+      ...defaultAIPracticeState,
+      active: true,
+    });
     scrollToTopSmart({ smooth: false });
-  }, [aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, closePearlStudy, generateNextAIQuestion]);
+  }, [closePearlStudy]);
 
   const handleGenerateNextAIQuestion = useCallback(() => {
     generateNextAIQuestion(aiPracticeState.question?.id ?? null, aiBranchFilter, aiDifficulty);
     scrollToTopSmart({ smooth: false });
-  }, [aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, closePearlStudy, generateNextAIQuestion]);
+  }, [aiBranchFilter, aiDifficulty, aiPracticeState.question?.id, generateNextAIQuestion]);
 
   const handleAIBranchFilterChange = useCallback((nextFilter) => {
     setAIBranchFilter(nextFilter);
-    generateNextAIQuestion(null, nextFilter, aiDifficulty);
-    scrollToTopSmart({ smooth: false });
-  }, [aiDifficulty, generateNextAIQuestion]);
+    localBackend.write(AI_BRANCH_FILTER_STORAGE_KEY, nextFilter);
+    clearAIQuestionTimer();
+    latestAIQuestionRequestId.current += 1;
+    setAIPracticeState((current) => ({
+      ...current,
+      active: true,
+      question: null,
+      loading: false,
+      error: null,
+      generationSource: null,
+      usedRemoteAI: false,
+      fallback: false,
+    }));
+  }, []);
 
 
   const handleAIDifficultyChange = useCallback((nextDifficulty) => {
     const normalizedDifficulty = ['Kolay', 'Orta', 'Zor'].includes(nextDifficulty) ? nextDifficulty : 'Orta';
     setAIDifficulty(normalizedDifficulty);
     localBackend.write(AI_DIFFICULTY_STORAGE_KEY, normalizedDifficulty);
-    generateNextAIQuestion(null, aiBranchFilter, normalizedDifficulty);
-    scrollToTopSmart({ smooth: false });
-  }, [aiBranchFilter, generateNextAIQuestion]);
+    clearAIQuestionTimer();
+    latestAIQuestionRequestId.current += 1;
+    setAIPracticeState((current) => ({
+      ...current,
+      active: true,
+      question: null,
+      loading: false,
+      error: null,
+      generationSource: null,
+      usedRemoteAI: false,
+      fallback: false,
+    }));
+  }, []);
 
   const handleSubmitAIAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, aiPracticeStats.streak);

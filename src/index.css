@@ -42809,23 +42809,16 @@ html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.kom
   font-weight: 550;
 }
 
-.komite-file-drop-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
-  margin-top: .15rem;
-}
-
-.komite-file-drop-meta span {
-  display: inline-flex;
-  align-items: center;
-  padding: .38rem .68rem;
-  border-radius: 999px;
+.komite-file-drop-note {
+  margin-top: .2rem;
+  padding: .72rem .88rem;
+  border-radius: .95rem;
   background: rgba(255,255,255,.88);
-  color: #0f766e;
-  font-size: .77rem;
-  font-weight: 800;
-  border: 1px solid rgba(15, 118, 110, .10);
+  border: 1px solid rgba(20, 184, 166, .16);
+  color: #476072;
+  font-size: .84rem;
+  line-height: 1.55;
+  font-weight: 650;
 }
 
 .komite-file-drop-actions {
@@ -42935,7 +42928,7 @@ html[data-theme='dark'] .komite-file-drop.komite-file-drop-redesign {
   border-color: rgba(45, 212, 191, .35);
 }
 html[data-theme='dark'] .komite-file-drop-icon,
-html[data-theme='dark'] .komite-file-drop-meta span {
+html[data-theme='dark'] .komite-file-drop-note {
   background: rgba(15,23,42,.88);
   border-color: rgba(45,212,191,.14);
 }
@@ -42983,6 +42976,82 @@ html[data-theme='dark'] .komite-file-drop-meta span {
 
   .komite-form-actions.komite-upload-footer .btn,
   .komite-upload-cancel-top {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* === V104 — Manual AI question generation + countdown === */
+.ai-generation-state-countdown,
+.ai-generation-ready {
+  justify-content: space-between;
+}
+
+.ai-generation-countdown {
+  margin-left: auto;
+  min-width: 136px;
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 10%, white), color-mix(in srgb, var(--surface-1) 94%, transparent));
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border-subtle));
+  color: var(--accent-strong, #0f766e);
+  box-shadow: 0 16px 34px color-mix(in srgb, var(--accent) 9%, transparent);
+}
+
+.ai-generation-countdown span {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.ai-generation-countdown strong {
+  color: var(--accent-strong, #0f766e);
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+
+.ai-generation-ready {
+  min-height: 164px;
+  background:
+    radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 34%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 96%, transparent), color-mix(in srgb, var(--surface-2) 68%, transparent));
+}
+
+.ai-generation-ready .btn {
+  white-space: nowrap;
+}
+
+.ai-generation-ready p strong {
+  color: var(--text-primary);
+  font-weight: 850;
+}
+
+.ai-generate-cta[disabled],
+.ai-spot-generate-btn[disabled] {
+  opacity: .76;
+  cursor: wait;
+}
+
+@media (max-width: 860px) {
+  .ai-generation-state-countdown,
+  .ai-generation-ready {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ai-generation-countdown {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .ai-generation-ready .btn {
     width: 100%;
     justify-content: center;
   }

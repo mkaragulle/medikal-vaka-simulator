@@ -1218,10 +1218,8 @@ function StartFlow({ onCreate, onCancel }) {
             <div className="komite-file-drop-copy">
               <strong>Dosyalarını ekle</strong>
               <p>PDF, PPTX, DOCX ve TXT dosyalarını sürükle-bırak yapabilir veya dosya seçerek yükleyebilirsin.</p>
-              <div className="komite-file-drop-meta" aria-hidden="true">
-                <span>Çoklu dosya</span>
-                <span>Aynı komite altında toplanır</span>
-                <span>Otomatik metin çıkarımı</span>
+              <div className="komite-file-drop-note" role="note">
+                Aynı komite veya aynı konu başlıklarına ait dokümanları birlikte yüklemen, daha tutarlı ve daha yüksek kaliteli çıktı alınmasını sağlar.
               </div>
             </div>
             <div className="komite-file-drop-actions">
