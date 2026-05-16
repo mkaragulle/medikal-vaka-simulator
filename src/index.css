@@ -45438,3 +45438,189 @@ html[data-theme="dark"] .ai-generation-countdown.ai-generation-countdown-live,
     padding-right: 10px !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V128 — Komite material upload themed dropdowns
+   Replaces native browser select popups in the material upload form.
+   ========================================================= */
+.komite-start-form-redesign .komite-select-field {
+  position: relative !important;
+  overflow: visible !important;
+  z-index: 1 !important;
+}
+
+.komite-start-form-redesign .komite-select-field:has(.komite-custom-select-trigger.open) {
+  z-index: 80 !important;
+}
+
+.komite-custom-select-trigger {
+  width: 100% !important;
+  min-height: 52px !important;
+  border: 0 !important;
+  border-radius: 16px !important;
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, .96), rgba(241, 245, 249, .92)) !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, .16) !important;
+  color: #0f172a !important;
+  padding: .76rem .82rem .76rem 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: .8rem !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  transition: box-shadow .18s ease, background .18s ease, transform .18s ease !important;
+}
+
+.komite-custom-select-trigger:hover,
+.komite-custom-select-trigger.open,
+.komite-custom-select-trigger:focus-visible {
+  background: #fff !important;
+  box-shadow:
+    inset 0 0 0 1.5px rgba(20, 184, 166, .50),
+    0 0 0 4px rgba(20, 184, 166, .08),
+    0 14px 30px rgba(15, 118, 110, .08) !important;
+  outline: none !important;
+}
+
+.komite-custom-select-trigger strong {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: .98rem !important;
+  line-height: 1.2 !important;
+  font-weight: 850 !important;
+  letter-spacing: -.01em !important;
+}
+
+.komite-custom-select-icon {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #0f766e !important;
+  background: rgba(20, 184, 166, .10) !important;
+  transition: transform .18s ease, background-color .18s ease !important;
+}
+
+.komite-custom-select-trigger.open .komite-custom-select-icon {
+  transform: rotate(180deg) !important;
+  background: rgba(20, 184, 166, .16) !important;
+}
+
+.komite-custom-select-menu {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 120 !important;
+  padding: .48rem !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(20, 184, 166, .20) !important;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .98), rgba(248, 250, 252, .96)) !important;
+  box-shadow:
+    0 22px 44px rgba(15, 23, 42, .12),
+    0 1px 0 rgba(255, 255, 255, .76) inset !important;
+  display: grid !important;
+  gap: .32rem !important;
+  max-height: 280px !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+}
+
+.komite-custom-select-option {
+  min-height: 42px !important;
+  width: 100% !important;
+  border: 1px solid transparent !important;
+  border-radius: 14px !important;
+  background: transparent !important;
+  color: #0f172a !important;
+  padding: .66rem .72rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: .75rem !important;
+  font-size: .94rem !important;
+  font-weight: 750 !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  transition: background-color .16s ease, border-color .16s ease, color .16s ease !important;
+}
+
+.komite-custom-select-option span {
+  min-width: 0 !important;
+}
+
+.komite-custom-select-option:hover {
+  border-color: rgba(20, 184, 166, .20) !important;
+  background: rgba(240, 253, 250, .82) !important;
+}
+
+.komite-custom-select-option.selected {
+  border-color: rgba(20, 184, 166, .34) !important;
+  background:
+    linear-gradient(135deg, rgba(204, 251, 241, .74), rgba(236, 253, 245, .92)) !important;
+  color: #0f766e !important;
+}
+
+.komite-custom-select-option svg {
+  flex: 0 0 auto !important;
+  color: #0f766e !important;
+}
+
+html[data-theme='dark'] .komite-custom-select-trigger,
+.app-shell[data-theme='dark'] .komite-custom-select-trigger {
+  background: linear-gradient(180deg, rgba(15, 23, 42, .92), rgba(15, 23, 42, .82)) !important;
+  color: #f8fafc !important;
+  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, .22) !important;
+}
+
+html[data-theme='dark'] .komite-custom-select-trigger:hover,
+html[data-theme='dark'] .komite-custom-select-trigger.open,
+html[data-theme='dark'] .komite-custom-select-trigger:focus-visible,
+.app-shell[data-theme='dark'] .komite-custom-select-trigger:hover,
+.app-shell[data-theme='dark'] .komite-custom-select-trigger.open,
+.app-shell[data-theme='dark'] .komite-custom-select-trigger:focus-visible {
+  background: rgba(15, 23, 42, .96) !important;
+  box-shadow:
+    inset 0 0 0 1.5px rgba(45, 212, 191, .42),
+    0 0 0 4px rgba(45, 212, 191, .10),
+    0 18px 36px rgba(0, 0, 0, .22) !important;
+}
+
+html[data-theme='dark'] .komite-custom-select-icon,
+.app-shell[data-theme='dark'] .komite-custom-select-icon {
+  color: #5eead4 !important;
+  background: rgba(45, 212, 191, .12) !important;
+}
+
+html[data-theme='dark'] .komite-custom-select-menu,
+.app-shell[data-theme='dark'] .komite-custom-select-menu {
+  background: linear-gradient(180deg, rgba(15, 23, 42, .98), rgba(15, 23, 42, .94)) !important;
+  border-color: rgba(45, 212, 191, .22) !important;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, .35), 0 1px 0 rgba(255,255,255,.04) inset !important;
+}
+
+html[data-theme='dark'] .komite-custom-select-option,
+.app-shell[data-theme='dark'] .komite-custom-select-option {
+  color: #f8fafc !important;
+}
+
+html[data-theme='dark'] .komite-custom-select-option:hover,
+.app-shell[data-theme='dark'] .komite-custom-select-option:hover {
+  background: rgba(45, 212, 191, .10) !important;
+  border-color: rgba(45, 212, 191, .18) !important;
+}
+
+html[data-theme='dark'] .komite-custom-select-option.selected,
+.app-shell[data-theme='dark'] .komite-custom-select-option.selected {
+  color: #99f6e4 !important;
+  background: linear-gradient(135deg, rgba(20, 184, 166, .16), rgba(15, 118, 110, .18)) !important;
+  border-color: rgba(45, 212, 191, .30) !important;
+}

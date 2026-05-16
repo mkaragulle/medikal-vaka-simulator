@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Icon } from './ui.jsx';
 import { localBackend } from '../services/localBackend.js';
 import { extractKomiteFile, getKomiteFileExtension } from '../utils/komiteFileExtraction.js';
@@ -15,6 +15,74 @@ const STUDY_TABS = [
   { id: 'cards', label: 'Hap Kartlar', icon: 'LayeredCards' },
   { id: 'review', label: 'Tekrar', icon: 'RotateCcw' },
 ];
+
+
+
+function KomiteInlineSelect({ label, value, options = [], onChange, ariaLabel }) {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef(null);
+  const activeOption = options.find((option) => option.value === value) || options[0] || { value: '', label: '' };
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const handlePointerDown = (event) => {
+      if (!rootRef.current?.contains(event.target)) setOpen(false);
+    };
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+
+    window.addEventListener('pointerdown', handlePointerDown);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open]);
+
+  return (
+    <div className="komite-field-card komite-select-field" ref={rootRef}>
+      <span>{label}</span>
+      <button
+        type="button"
+        className={`komite-custom-select-trigger ${open ? 'open' : ''}`.trim()}
+        onClick={() => setOpen((current) => !current)}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        aria-label={ariaLabel || label}
+      >
+        <strong>{activeOption.label}</strong>
+        <span className="komite-custom-select-icon" aria-hidden="true"><Icon name="ChevronDown" size={16} /></span>
+      </button>
+
+      {open ? (
+        <div className="komite-custom-select-menu" role="listbox" aria-label={ariaLabel || label}>
+          {options.map((option) => {
+            const selected = option.value === value;
+            return (
+              <button
+                key={option.value}
+                type="button"
+                className={`komite-custom-select-option ${selected ? 'selected' : ''}`.trim()}
+                role="option"
+                aria-selected={selected}
+                onClick={() => {
+                  onChange(option.value);
+                  setOpen(false);
+                }}
+              >
+                <span>{option.label}</span>
+                {selected ? <Icon name="CheckCircle" size={16} /> : null}
+              </button>
+            );
+          })}
+        </div>
+      ) : null}
+    </div>
+  );
+}
+
 
 const createId = (prefix = 'id') => {
   if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return `${prefix}-${crypto.randomUUID()}`;
@@ -1176,12 +1244,13 @@ function StartFlow({ onCreate, onCancel }) {
 
       <form className="komite-start-form komite-start-form-redesign" onSubmit={submit}>
         <div className="komite-upload-grid">
-          <label className="komite-field-card">
-            <span>Sınıf</span>
-            <select value={form.classYear} onChange={(event) => update('classYear', event.target.value)}>
-              {CLASS_YEARS.map((year) => <option key={year} value={year}>{year}. sınıf</option>)}
-            </select>
-          </label>
+          <KomiteInlineSelect
+            label="Sınıf"
+            value={form.classYear}
+            options={CLASS_YEARS.map((year) => ({ value: year, label: `${year}. sınıf` }))}
+            onChange={(nextValue) => update('classYear', nextValue)}
+            ariaLabel="Sınıf seçimi"
+          />
 
           <label className="komite-field-card">
             <span>Komite adı</span>
@@ -1193,12 +1262,13 @@ function StartFlow({ onCreate, onCancel }) {
             <input value={form.course} onChange={(event) => update('course', event.target.value)} placeholder="Örn. Epilepsi, Kardiyak fizyoloji" />
           </label>
 
-          <label className="komite-field-card">
-            <span>Çalışma hedefi</span>
-            <select value={form.learningTarget} onChange={(event) => update('learningTarget', event.target.value)}>
-              {LEARNING_TARGETS.map((target) => <option key={target} value={target}>{target}</option>)}
-            </select>
-          </label>
+          <KomiteInlineSelect
+            label="Çalışma hedefi"
+            value={form.learningTarget}
+            options={LEARNING_TARGETS.map((target) => ({ value: target, label: target }))}
+            onChange={(nextValue) => update('learningTarget', nextValue)}
+            ariaLabel="Çalışma hedefi seçimi"
+          />
 
           <label className="komite-field-card komite-span-2">
             <span>Üniversite (opsiyonel)</span>
