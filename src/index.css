@@ -45370,3 +45370,71 @@ html[data-theme="dark"] .ai-generation-countdown.ai-generation-countdown-live,
     font-size: 14.5px !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V125 — AI TUS option edge-safe layout
+   Ensures every answer option is visually inset from the right
+   boundary, so borders/backgrounds never look clipped even when
+   the answer grid is rendered close to the viewport edge.
+   ========================================================= */
+.ai-spot-answer-flow .diagnostic-decision-panel,
+.ai-spot-answer-flow .question-panel,
+.ai-spot-answer-flow #case-quiz {
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+}
+
+.ai-spot-answer-flow .option-grid {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  padding: 0 22px 0 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  contain: none !important;
+}
+
+.ai-spot-answer-flow .option-grid > .answer-option {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+  contain: none !important;
+  transform: translateZ(0) !important;
+  clip-path: inset(-2px -2px -2px -2px round 18px) !important;
+}
+
+.ai-spot-answer-flow .option-grid > .answer-option::before,
+.ai-spot-answer-flow .option-grid > .answer-option::after {
+  box-sizing: border-box !important;
+  inset: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.ai-spot-answer-flow .answer-option.correct,
+.ai-spot-answer-flow .answer-option.wrong,
+.ai-spot-answer-flow .answer-option.selected,
+.ai-spot-answer-flow .answer-option.answered-neutral {
+  outline: none !important;
+  background-clip: padding-box !important;
+}
+
+@media (max-width: 1100px) {
+  .ai-spot-answer-flow .option-grid {
+    grid-template-columns: 1fr !important;
+    padding-right: 18px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-spot-answer-flow .option-grid {
+    padding-right: 10px !important;
+  }
+}
