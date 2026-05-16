@@ -198,7 +198,7 @@ function AISpotNarrativePanel({ question, hardMode = false, embedded = false }) 
       <div className="ai-spot-narrative-topline">
         <div className="ai-spot-narrative-badges" aria-label="Soru üst bilgisi">
           <AISpotMetaBadge icon="Stethoscope" tone="blue">{question.relatedBranch || question.branchName || 'TUS'}</AISpotMetaBadge>
-          <AISpotMetaBadge icon="Trophy" tone="amber">{difficultyMeta.label} · {difficultyMeta.points}p</AISpotMetaBadge>
+          <AISpotMetaBadge icon="Trophy" tone="amber">{difficultyMeta.label} · {difficultyMeta.points} Puan</AISpotMetaBadge>
         </div>
       </div>
 
@@ -273,6 +273,7 @@ function AISpotQuestionScreen({
             questionPromptOverride={questionPrompt}
             questionHeadingOverride="Yanıt seçenekleri"
             questionSubtextOverride={questionPrompt || 'En uygun seçeneği işaretle.'}
+            hideQuestionScoreChip
           />
         </div>
       </section>

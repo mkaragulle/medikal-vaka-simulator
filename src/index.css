@@ -44473,3 +44473,84 @@ html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.u
     text-align: left !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V118 — TUS AI üretim paneli sağ boşluk düzeltmesi
+   Sağ seçim/aksiyon kartındaki kontrol satırlarını panelin tamamına yayar.
+   ========================================================= */
+.ai-practice-hero .ai-practice-actions.ai-practice-actions-pro {
+  justify-self: end !important;
+  align-self: center !important;
+  width: min(100%, 780px) !important;
+  max-width: 780px !important;
+  min-width: 0 !important;
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  align-items: stretch !important;
+  gap: 14px !important;
+  box-sizing: border-box !important;
+}
+
+.ai-practice-actions-pro .ai-practice-filter-grid,
+.ai-practice-actions-pro .ai-practice-button-row {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  align-items: stretch !important;
+  box-sizing: border-box !important;
+}
+
+.ai-practice-actions-pro .ai-practice-filter-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.45fr) minmax(180px, .72fr) !important;
+  gap: 12px !important;
+}
+
+.ai-practice-actions-pro .ai-practice-button-row {
+  display: grid !important;
+  grid-template-columns: minmax(230px, .95fr) minmax(300px, 1.22fr) !important;
+  gap: 12px !important;
+}
+
+.ai-practice-actions-pro .ai-branch-filter-control,
+.ai-practice-actions-pro .ai-compact-dropdown,
+.ai-practice-actions-pro .ai-compact-dropdown-shell,
+.ai-practice-actions-pro .ai-compact-dropdown-trigger,
+.ai-practice-actions-pro .ai-spot-dashboard-btn,
+.ai-practice-actions-pro .ai-spot-generate-btn,
+.ai-practice-actions-pro .ai-generate-cta {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ai-practice-actions-pro .ai-spot-dashboard-btn,
+.ai-practice-actions-pro .ai-spot-generate-btn,
+.ai-practice-actions-pro .ai-generate-cta {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+@media (min-width: 1180px) {
+  .ai-practice-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(650px, 780px) !important;
+    align-items: center !important;
+    gap: clamp(2rem, 4vw, 5rem) !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .ai-practice-hero .ai-practice-actions.ai-practice-actions-pro {
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .ai-practice-actions-pro .ai-practice-filter-grid,
+  .ai-practice-actions-pro .ai-practice-button-row {
+    grid-template-columns: 1fr !important;
+  }
+}

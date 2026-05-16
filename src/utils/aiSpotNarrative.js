@@ -757,7 +757,7 @@ export function buildAISpotContextLine(question = {}) {
   if (type === 'treatment') return `${branch} bağlamında ilk yaklaşım kararı.`;
   if (type === 'mechanism') return `${branch} bağlamında mekanizma sorusu.`;
   if (type === 'diagnosis') return `${branch} bağlamında kısa klinik olgu yorumu.`;
-  return `${branch} bağlamında tek köklü TUS spot sorusu.`;
+  return `${branch} branşında bilimsel ve TUS uyumlu spot sorusu.`;
 }
 
 export function buildAISpotNarrativeStem(question = {}) {

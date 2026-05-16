@@ -86,6 +86,7 @@ function DiagnosisQuiz({
   questionPromptOverride = '',
   questionHeadingOverride = '',
   questionSubtextOverride = '',
+  hideQuestionScoreChip = false,
 }) {
   const [selected, setSelected] = useState(existingAnswer?.selected ?? null);
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
@@ -133,10 +134,12 @@ function DiagnosisQuiz({
           <p><GlossaryText text={questionSubtext} enabled={!hardMode && !examMeta?.active} /></p>
         </div>
 
-        <div className="question-score-chip compact-meta-pill">
-          <span>{examMeta?.active ? `${examMeta.currentIndex + 1}/${examMeta.total}` : '1 soru'}</span>
-          <strong>{difficultyMeta.points} p</strong>
-        </div>
+        {!hideQuestionScoreChip ? (
+          <div className="question-score-chip compact-meta-pill">
+            <span>{examMeta?.active ? `${examMeta.currentIndex + 1}/${examMeta.total}` : '1 soru'}</span>
+            <strong>{difficultyMeta.points} p</strong>
+          </div>
+        ) : null}
       </div>
 
       {examMeta?.active ? (
