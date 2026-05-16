@@ -43397,3 +43397,545 @@ html[data-theme="dark"] .ai-compact-dropdown-menu-floating .ai-compact-dropdown-
   background: linear-gradient(135deg, rgba(45, 212, 191, .14), rgba(14, 116, 144, .18)) !important;
   border-color: rgba(94, 234, 212, .30) !important;
 }
+
+
+/* =========================================================
+   KLINIKIQ V108 — AI Spot dropdown chevron optical alignment
+   Generic label span rules previously leaked into the chevron
+   wrapper and made the arrow look vertically off-center.
+   ========================================================= */
+.ai-practice-actions-pro .ai-branch-filter-control > .ai-compact-dropdown-label {
+  display: block !important;
+  padding: 0 0 0 1px !important;
+  margin: 0 !important;
+  line-height: 1.05 !important;
+  text-align: left !important;
+}
+
+.ai-practice-actions-pro .ai-branch-filter-control .ai-compact-dropdown-trigger .ai-compact-dropdown-trigger-icon {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  min-height: 28px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 28px !important;
+  line-height: 0 !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  color: color-mix(in srgb, var(--accent) 74%, var(--text-muted)) !important;
+  background: color-mix(in srgb, var(--accent) 10%, transparent) !important;
+}
+
+.ai-practice-actions-pro .ai-branch-filter-control .ai-compact-dropdown-trigger .ai-compact-dropdown-trigger-icon svg {
+  display: block !important;
+  width: 16px !important;
+  height: 16px !important;
+  flex: 0 0 16px !important;
+  margin: 0 !important;
+  transform: translateY(0) !important;
+}
+
+.ai-practice-actions-pro .ai-compact-dropdown-shell.open .ai-compact-dropdown-trigger .ai-compact-dropdown-trigger-icon {
+  transform: rotate(180deg) !important;
+  background: color-mix(in srgb, var(--accent) 16%, transparent) !important;
+}
+
+html[data-theme="dark"] .ai-practice-actions-pro .ai-branch-filter-control .ai-compact-dropdown-trigger .ai-compact-dropdown-trigger-icon,
+.app-shell[data-theme="dark"] .ai-practice-actions-pro .ai-branch-filter-control .ai-compact-dropdown-trigger .ai-compact-dropdown-trigger-icon {
+  color: #7dd3fc !important;
+  background: rgba(45, 212, 191, .10) !important;
+}
+
+html[data-theme="dark"] .ai-practice-actions-pro .ai-compact-dropdown-shell.open .ai-compact-dropdown-trigger .ai-compact-dropdown-trigger-icon,
+.app-shell[data-theme="dark"] .ai-practice-actions-pro .ai-compact-dropdown-shell.open .ai-compact-dropdown-trigger .ai-compact-dropdown-trigger-icon {
+  background: rgba(45, 212, 191, .16) !important;
+}
+
+/* =========================================================
+   KLINIKIQ V109 — AI ready-state text alignment refinement
+   Balances the ready card copy with icon and CTA, and turns
+   selected branch/difficulty into a clean compact line.
+   ========================================================= */
+.ai-generation-ready {
+  display: grid !important;
+  grid-template-columns: 76px minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  gap: 22px !important;
+  min-height: 154px !important;
+  padding: 26px 34px !important;
+}
+
+.ai-generation-ready .ai-generation-orb {
+  justify-self: start !important;
+  align-self: center !important;
+}
+
+.ai-ready-copy {
+  display: flex !important;
+  min-width: 0 !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  text-align: left !important;
+}
+
+.ai-generation-ready .ai-ready-copy h2 {
+  margin: 0 !important;
+  max-width: 720px !important;
+  color: var(--text-primary) !important;
+  font-size: clamp(22px, 2vw, 29px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -.035em !important;
+  font-weight: 850 !important;
+}
+
+.ai-generation-ready .ai-ready-selection {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  max-width: 100% !important;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 7px 12px !important;
+  gap: 8px !important;
+  border-radius: 999px !important;
+  color: color-mix(in srgb, var(--text-primary) 88%, var(--accent) 12%) !important;
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface-1)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 14%, var(--border-subtle)) !important;
+  line-height: 1.1 !important;
+  box-shadow: 0 10px 24px color-mix(in srgb, var(--accent) 5%, transparent) !important;
+}
+
+.ai-generation-ready .ai-ready-selection strong {
+  min-width: 0 !important;
+  color: inherit !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  letter-spacing: -.01em !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ai-generation-ready .ai-ready-selection span {
+  color: color-mix(in srgb, var(--accent) 58%, var(--text-muted)) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+}
+
+.ai-generation-ready .ai-ready-cta {
+  justify-self: end !important;
+  min-width: 230px !important;
+  height: 56px !important;
+  padding-inline: 22px !important;
+  border-radius: 17px !important;
+  white-space: nowrap !important;
+}
+
+html[data-theme="dark"] .ai-generation-ready .ai-ready-selection,
+.app-shell[data-theme="dark"] .ai-generation-ready .ai-ready-selection {
+  color: #e5edf6 !important;
+  background: rgba(45, 212, 191, .10) !important;
+  border-color: rgba(94, 234, 212, .20) !important;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, .14) !important;
+}
+
+html[data-theme="dark"] .ai-generation-ready .ai-ready-selection span,
+.app-shell[data-theme="dark"] .ai-generation-ready .ai-ready-selection span {
+  color: #5eead4 !important;
+}
+
+@media (max-width: 920px) {
+  .ai-generation-ready {
+    grid-template-columns: 60px minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .ai-generation-ready .ai-ready-cta {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    justify-self: stretch !important;
+    justify-content: center !important;
+    min-width: 0 !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-generation-ready {
+    grid-template-columns: 1fr !important;
+    justify-items: stretch !important;
+    padding: 22px !important;
+  }
+
+  .ai-generation-ready .ai-generation-orb {
+    justify-self: start !important;
+  }
+
+  .ai-ready-copy {
+    width: 100% !important;
+  }
+
+  .ai-generation-ready .ai-ready-selection {
+    max-width: 100% !important;
+  }
+}
+
+/* =========================================================
+   KLINIKIQ V110 — AI TUS hero alignment polish
+   Removes the visual dependency on the old kicker badge and
+   balances the title/copy block against the filter action card.
+   ========================================================= */
+.ai-practice-hero.card-surface {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(470px, 590px) !important;
+  align-items: center !important;
+  gap: clamp(34px, 5vw, 82px) !important;
+  min-height: 276px !important;
+  padding: clamp(34px, 4.5vw, 54px) clamp(34px, 5vw, 62px) !important;
+}
+
+.ai-practice-title-block {
+  align-self: center !important;
+  justify-self: start !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  gap: 16px !important;
+  max-width: 760px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+}
+
+.ai-practice-title-block .ai-practice-kicker {
+  display: none !important;
+}
+
+.ai-practice-title-block h1 {
+  margin: 0 !important;
+  max-width: 820px !important;
+  font-size: clamp(42px, 5vw, 72px) !important;
+  line-height: .96 !important;
+  letter-spacing: -.055em !important;
+}
+
+.ai-practice-title-block > p {
+  margin: 0 !important;
+  max-width: 720px !important;
+  font-size: clamp(16px, 1.25vw, 20px) !important;
+  line-height: 1.55 !important;
+  color: color-mix(in srgb, var(--text-secondary) 88%, var(--text-primary) 12%) !important;
+  font-weight: 560 !important;
+}
+
+.ai-practice-title-block .ai-practice-meta-row {
+  margin-top: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+}
+
+.ai-practice-actions.ai-practice-actions-pro {
+  align-self: center !important;
+  justify-self: end !important;
+  width: 100% !important;
+  max-width: 600px !important;
+  margin: 0 !important;
+  padding: 18px !important;
+  border-radius: 28px !important;
+  background:
+    linear-gradient(145deg,
+      color-mix(in srgb, var(--surface-1) 92%, transparent),
+      color-mix(in srgb, var(--surface-2) 78%, transparent)) !important;
+  border: 1px solid color-mix(in srgb, var(--accent) 16%, var(--border-subtle)) !important;
+  box-shadow:
+    0 24px 58px color-mix(in srgb, var(--accent) 9%, transparent),
+    0 1px 0 rgba(255,255,255,.72) inset !important;
+  display: grid !important;
+  gap: 14px !important;
+}
+
+.ai-practice-actions-pro .ai-practice-filter-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.55fr) minmax(168px, .85fr) !important;
+  align-items: end !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.ai-practice-actions-pro .ai-practice-button-row {
+  display: grid !important;
+  grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
+
+.ai-practice-actions-pro .ai-practice-button-row .btn {
+  min-height: 56px !important;
+  height: 56px !important;
+  border-radius: 18px !important;
+  justify-content: center !important;
+  padding-inline: 18px !important;
+}
+
+html[data-theme="dark"] .ai-practice-actions.ai-practice-actions-pro,
+.app-shell[data-theme="dark"] .ai-practice-actions.ai-practice-actions-pro {
+  background: linear-gradient(145deg, rgba(15, 42, 54, .86), rgba(9, 29, 40, .82)) !important;
+  border-color: rgba(94, 234, 212, .17) !important;
+  box-shadow: 0 26px 64px rgba(0, 0, 0, .24), 0 1px 0 rgba(255,255,255,.04) inset !important;
+}
+
+@media (max-width: 1180px) {
+  .ai-practice-hero.card-surface {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    min-height: auto !important;
+  }
+
+  .ai-practice-title-block,
+  .ai-practice-actions.ai-practice-actions-pro {
+    justify-self: stretch !important;
+    max-width: none !important;
+  }
+
+  .ai-practice-title-block h1 {
+    font-size: clamp(36px, 7vw, 58px) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .ai-practice-hero.card-surface {
+    padding: 24px !important;
+    border-radius: 24px !important;
+  }
+
+  .ai-practice-title-block {
+    gap: 12px !important;
+  }
+
+  .ai-practice-title-block h1 {
+    font-size: clamp(32px, 10vw, 44px) !important;
+    line-height: 1 !important;
+  }
+
+  .ai-practice-actions.ai-practice-actions-pro {
+    padding: 14px !important;
+    border-radius: 22px !important;
+  }
+
+  .ai-practice-actions-pro .ai-practice-filter-grid,
+  .ai-practice-actions-pro .ai-practice-button-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   KlinikIQ V111 — Global topbar capsule alignment patch
+   Purpose: keep every topbar label/icon perfectly centered
+   inside its own capsule. Especially fixes the red "Zor" tab
+   so it is optically centered inside the white segmented pill.
+   ========================================================= */
+body:not(.klinikiq-auth-lock) .top-shell-nav.global-topbar-v55 {
+  box-sizing: border-box !important;
+  height: 64px !important;
+  min-height: 64px !important;
+  max-height: 64px !important;
+  padding: 7px 10px !important;
+  align-items: center !important;
+  justify-items: stretch !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 :where(
+  .global-nav-brand-v55,
+  .global-product-switch-v55,
+  .global-context-switch-v55,
+  .global-nav-actions-v55
+) {
+  box-sizing: border-box !important;
+  align-self: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-nav-brand-v55,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-product-switch-v55,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-context-switch-v55 {
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
+  display: grid !important;
+  align-items: stretch !important;
+  justify-items: stretch !important;
+  overflow: hidden !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-nav-brand-v55 {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-product-switch-v55,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-context-switch-v55 {
+  padding: 4px !important;
+  gap: 4px !important;
+  place-items: stretch !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-product-switch-v55 > button,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-context-switch-v55 > button,
+body:not(.klinikiq-auth-lock) .nav-mode-switch.global-context-switch-v55 > button,
+body:not(.klinikiq-auth-lock) .segmented-control.global-context-switch-v55 > button {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 14px !important;
+  align-self: stretch !important;
+  justify-self: stretch !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  border-radius: 16px !important;
+  line-height: 1 !important;
+  transform: none !important;
+  vertical-align: middle !important;
+  overflow: hidden !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-product-switch-v55 > button > span,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-context-switch-v55 > button > span,
+body:not(.klinikiq-auth-lock) .nav-mode-switch.global-context-switch-v55 > button > span {
+  box-sizing: border-box !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 1em !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  color: currentColor !important;
+  font-weight: 850 !important;
+  transform: translateY(0) !important;
+  white-space: nowrap !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-product-switch-v55 > button svg,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-context-switch-v55 > button svg,
+body:not(.klinikiq-auth-lock) .nav-mode-switch.global-context-switch-v55 > button svg {
+  width: 17px !important;
+  height: 17px !important;
+  min-width: 17px !important;
+  flex: 0 0 17px !important;
+  display: block !important;
+  margin: 0 !important;
+  align-self: center !important;
+  color: currentColor !important;
+  stroke-width: 2.1 !important;
+  transform: translateY(0) !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-context-switch-v55 > button.hard-mode-tab,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-context-switch-v55 > button.hard-mode-active,
+body:not(.klinikiq-auth-lock) .nav-mode-switch.global-context-switch-v55 > button.hard-mode-tab,
+body:not(.klinikiq-auth-lock) .nav-mode-switch.global-context-switch-v55 > button.hard-mode-active {
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  align-self: stretch !important;
+  justify-self: stretch !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 16px !important;
+  line-height: 1 !important;
+  transform: none !important;
+  inset: auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-nav-actions-v55,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions {
+  height: 50px !important;
+  min-height: 50px !important;
+  max-height: 50px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-user-chip,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-stat-chip,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .btn,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .klinikiq-theme-toggle.nav-theme-toggle,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .nav-logout-btn {
+  box-sizing: border-box !important;
+  height: 46px !important;
+  min-height: 46px !important;
+  max-height: 46px !important;
+  margin: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  line-height: 1 !important;
+  vertical-align: middle !important;
+  transform: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-user-chip svg,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-stat-chip svg,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .btn svg,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .klinikiq-theme-toggle.nav-theme-toggle svg {
+  width: 17px !important;
+  height: 17px !important;
+  min-width: 17px !important;
+  flex: 0 0 17px !important;
+  display: block !important;
+  margin: 0 !important;
+  align-self: center !important;
+  color: currentColor !important;
+}
+
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-user-chip span,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-stat-chip span,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-stat-chip strong,
+body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .btn span {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .top-shell-nav.global-topbar-v55 {
+    height: auto !important;
+    min-height: 68px !important;
+    max-height: none !important;
+    align-items: center !important;
+  }
+}
+
+@media (max-width: 720px) {
+  body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-product-switch-v55 > button,
+  body:not(.klinikiq-auth-lock) .global-topbar-v55 .global-context-switch-v55 > button {
+    padding-inline: 10px !important;
+    gap: 6px !important;
+  }
+}

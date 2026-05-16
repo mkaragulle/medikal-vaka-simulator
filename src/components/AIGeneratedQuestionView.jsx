@@ -158,7 +158,7 @@ function CompactDropdown({
 
   return (
     <div className="ai-branch-filter-control ai-compact-dropdown" ref={rootRef}>
-      <span>{label}</span>
+      <span className="ai-compact-dropdown-label">{label}</span>
       <div className={`ai-compact-dropdown-shell ${open ? 'open' : ''} ${disabled ? 'disabled' : ''}`.trim()}>
         <button
           type="button"
@@ -254,11 +254,11 @@ function AIReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
   return (
     <section className="ai-generation-state ai-generation-ready card-surface" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
-      <div>
+      <div className="ai-ready-copy">
         <h2>Branş ve zorluğu seç, AI senin için soru üretsin.</h2>
-        <p><strong>{branchLabel}</strong> · <strong>{difficulty}</strong></p>
+        <p className="ai-ready-selection"><strong>{branchLabel}</strong><span aria-hidden="true">·</span><strong>{difficulty}</strong></p>
       </div>
-      <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
+      <button type="button" className="btn btn-primary ai-ready-cta" onClick={onGenerateQuestion}>
         <Icon name="Sparkles" /> Yeni TUS Sorusu Üret
       </button>
     </section>
@@ -321,7 +321,6 @@ function AIGeneratedQuestionView({
     <section className="page-shell ai-practice-page-shell">
       <section className="ai-practice-hero card-surface">
         <div className="ai-practice-title-block">
-          <span className="ai-practice-kicker"><Icon name="Sparkles" /> TUS pratik modu</span>
           <h1>Yeni TUS Sorusu Üret</h1>
           <p>Spot bilgileri pekiştirmek için branş uyumu ve klinik tutarlılık kontrolünden geçirilen kısa klinik soru.</p>
           <div className="ai-practice-meta-row">
