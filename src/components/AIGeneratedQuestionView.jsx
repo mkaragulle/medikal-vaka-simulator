@@ -3,6 +3,108 @@ import { createPortal } from 'react-dom';
 import AISpotQuestionScreen from './AISpotQuestionScreen.jsx';
 import { Icon, IconBadge } from './ui.jsx';
 
+
+const AI_DURATION_STORAGE_GLOBAL_KEY = 'klinikiq.aiQuestion.duration.global.v1';
+const AI_DURATION_STORAGE_PREFIX = 'klinikiq.aiQuestion.duration.v1';
+const AI_DEFAULT_ESTIMATE_BY_DIFFICULTY = {
+  Kolay: 9,
+  Orta: 12,
+  Zor: 15,
+};
+
+const AI_LOADING_STAGES = [
+  {
+    min: 0,
+    title: 'Sunucuya istek gönderiliyor...',
+    detail: 'Seçtiğin branş ve zorluk ayarları üretim isteğine ekleniyor.',
+  },
+  {
+    min: 2,
+    title: 'Klinik senaryo kuruluyor...',
+    detail: 'Olgunun tek köklü ve TUS mantığına uygun olması sağlanıyor.',
+  },
+  {
+    min: 5,
+    title: 'TUS dili ve klinik tutarlılık kontrol ediliyor...',
+    detail: 'Kök, ipuçları ve öğrenme hedefi aynı eksende tutuluyor.',
+  },
+  {
+    min: 8,
+    title: 'Son kontroller yapılıyor...',
+    detail: 'Cevap sızıntısı, gereksiz veri ve belirsizlikler eleniyor.',
+  },
+  {
+    min: 10,
+    title: 'Soru kalitesi denetleniyor...',
+    detail: 'Bilimsel doğruluk ve tek doğru cevap ilkesi yeniden kontrol ediliyor.',
+  },
+  {
+    min: 12,
+    title: 'Seçenekler düzenleniyor...',
+    detail: 'Şıkların aynı kategoride, ayırt ettirici ve dengeli olması sağlanıyor.',
+  },
+  {
+    min: 14,
+    title: 'Açıklama ve yanıt uyumu son kez kontrol ediliyor...',
+    detail: 'Gerekçe, doğru seçenek ve klinik ipuçları birbiriyle eşleştiriliyor.',
+  },
+];
+
+function clampNumber(value, min, max) {
+  const numeric = Number(value);
+  if (!Number.isFinite(numeric)) return min;
+  return Math.max(min, Math.min(max, numeric));
+}
+
+function makeDurationStorageKey(branchFilter = 'random', difficulty = 'Orta') {
+  const branch = String(branchFilter || 'random').trim().toLocaleLowerCase('tr').replace(/[^a-z0-9ığüşöçİĞÜŞÖÇ]+/gi, '-').replace(/^-|-$/g, '') || 'random';
+  const level = ['Kolay', 'Orta', 'Zor'].includes(difficulty) ? difficulty : 'Orta';
+  return `${AI_DURATION_STORAGE_PREFIX}.${branch}.${level}`;
+}
+
+function readStoredDuration(key) {
+  if (typeof window === 'undefined' || !window.localStorage) return null;
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    const seconds = Number(parsed?.seconds);
+    return Number.isFinite(seconds) ? seconds : null;
+  } catch {
+    return null;
+  }
+}
+
+function writeStoredDuration(key, seconds) {
+  if (typeof window === 'undefined' || !window.localStorage) return;
+  const normalized = clampNumber(seconds, 3, 45);
+  const previous = readStoredDuration(key);
+  const blended = previous ? (previous * 0.62) + (normalized * 0.38) : normalized;
+  try {
+    window.localStorage.setItem(key, JSON.stringify({ seconds: Math.round(blended * 10) / 10, updatedAt: Date.now() }));
+  } catch {
+    // Storage may be unavailable in private browsing; the UI still works with defaults.
+  }
+}
+
+function readEstimatedGenerationSeconds(branchFilter = 'random', difficulty = 'Orta') {
+  const exact = readStoredDuration(makeDurationStorageKey(branchFilter, difficulty));
+  if (exact) return clampNumber(Math.ceil(exact), 6, 45);
+  const global = readStoredDuration(AI_DURATION_STORAGE_GLOBAL_KEY);
+  if (global) return clampNumber(Math.ceil(global), 6, 45);
+  return AI_DEFAULT_ESTIMATE_BY_DIFFICULTY[difficulty] || AI_DEFAULT_ESTIMATE_BY_DIFFICULTY.Orta;
+}
+
+function rememberGenerationDuration(branchFilter = 'random', difficulty = 'Orta', seconds = 0) {
+  const normalized = clampNumber(seconds, 3, 45);
+  writeStoredDuration(makeDurationStorageKey(branchFilter, difficulty), normalized);
+  writeStoredDuration(AI_DURATION_STORAGE_GLOBAL_KEY, normalized);
+}
+
+function getGenerationStage(elapsedSeconds = 0) {
+  return AI_LOADING_STAGES.reduce((active, stage) => (elapsedSeconds >= stage.min ? stage : active), AI_LOADING_STAGES[0]);
+}
+
 function AIStat({ label, value, icon, tone = 'teal' }) {
   return (
     <article className="ai-practice-stat-card">
@@ -230,20 +332,40 @@ function AIDifficultyFilter({ difficulty = 'Orta', onChangeDifficulty, disabled 
   );
 }
 
-function AILoadingState({ countdown = 9 }) {
-  const normalizedCountdown = Math.max(0, Number(countdown) || 0);
-  const countdownLabel = normalizedCountdown > 0 ? `${normalizedCountdown} sn` : 'son kontroller';
+function AILoadingState({ progress }) {
+  const elapsedSeconds = Math.max(0, Number(progress?.elapsedSeconds) || 0);
+  const estimatedTotalSeconds = clampNumber(progress?.estimatedTotalSeconds || 12, 6, 45);
+  const remainingSeconds = Math.max(0, Number(progress?.remainingSeconds) || 0);
+  const progressPercent = Math.min(96, Math.max(8, (elapsedSeconds / estimatedTotalSeconds) * 100));
+  const stage = getGenerationStage(elapsedSeconds);
+  const etaLabel = remainingSeconds > 0 ? `${remainingSeconds} sn` : 'Son kontroller';
 
   return (
-    <section className="ai-generation-state ai-generation-state-countdown card-surface" aria-live="polite">
-      <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
-      <div>
-        <h2>Yeni TUS spot sorusu hazırlanıyor...</h2>
-        <p>Branş, zorluk, klinik tutarlılık ve şık kalitesi kontrol ediliyor.</p>
+    <section className="ai-generation-state ai-generation-state-countdown ai-generation-state-live card-surface" aria-live="polite">
+      <div className="ai-generation-live-main">
+        <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
+        <div className="ai-generation-live-copy">
+          <span className="ai-generation-live-kicker">AI üretim süreci</span>
+          <h2>Yeni TUS spot sorusu hazırlanıyor...</h2>
+          <p>{stage.title}</p>
+          <small>{stage.detail}</small>
+          <div className="ai-generation-progress-track" aria-hidden="true">
+            <span style={{ width: `${progressPercent}%` }} />
+          </div>
+        </div>
       </div>
-      <div className="ai-generation-countdown" aria-label={`Tahmini sonuç ${countdownLabel}`}>
-        <span>Tahmini sonuç</span>
-        <strong>{countdownLabel}</strong>
+
+      <div className="ai-generation-live-side">
+        <div className="ai-generation-countdown ai-generation-countdown-live" aria-label={`Tahmini kalan süre ${etaLabel}`}>
+          <span>Tahmini kalan</span>
+          <strong>{etaLabel}</strong>
+          <small>Önceki üretim sürelerine göre</small>
+        </div>
+        <div className="ai-generation-stage-list" aria-label="Üretim adımları">
+          {AI_LOADING_STAGES.slice(3).map((item) => (
+            <span key={item.min} className={elapsedSeconds >= item.min ? 'active' : ''}>{item.title.replace(/\.\.\.$/u, '')}</span>
+          ))}
+        </div>
       </div>
     </section>
   );
@@ -301,21 +423,45 @@ function AIGeneratedQuestionView({
   hardMode = false,
 }) {
   const accuracy = aiStats?.attempts ? Math.round((aiStats.correct / aiStats.attempts) * 100) : 0;
-  const [countdown, setCountdown] = useState(0);
+  const loadingStartedAtRef = useRef(null);
+  const [generationProgress, setGenerationProgress] = useState(() => ({
+    elapsedSeconds: 0,
+    estimatedTotalSeconds: readEstimatedGenerationSeconds(branchFilter, difficulty),
+    remainingSeconds: readEstimatedGenerationSeconds(branchFilter, difficulty),
+  }));
 
   useEffect(() => {
     if (!loading) {
-      setCountdown(0);
+      if (loadingStartedAtRef.current) {
+        const elapsed = (performance.now() - loadingStartedAtRef.current) / 1000;
+        rememberGenerationDuration(branchFilter, difficulty, elapsed);
+        loadingStartedAtRef.current = null;
+      }
+      setGenerationProgress((current) => ({ ...current, elapsedSeconds: 0, remainingSeconds: 0 }));
       return undefined;
     }
 
-    setCountdown(9);
+    const startedAt = performance.now();
+    const estimatedTotalSeconds = readEstimatedGenerationSeconds(branchFilter, difficulty);
+    loadingStartedAtRef.current = startedAt;
+    setGenerationProgress({
+      elapsedSeconds: 0,
+      estimatedTotalSeconds,
+      remainingSeconds: estimatedTotalSeconds,
+    });
+
     const timer = window.setInterval(() => {
-      setCountdown((current) => Math.max(0, current - 1));
-    }, 1000);
+      const elapsedSeconds = Math.max(0, (performance.now() - startedAt) / 1000);
+      const remainingSeconds = Math.max(0, Math.ceil(estimatedTotalSeconds - elapsedSeconds));
+      setGenerationProgress({
+        elapsedSeconds,
+        estimatedTotalSeconds,
+        remainingSeconds,
+      });
+    }, 350);
 
     return () => window.clearInterval(timer);
-  }, [loading]);
+  }, [loading, branchFilter, difficulty]);
 
   return (
     <section className="page-shell ai-practice-page-shell">
@@ -369,7 +515,7 @@ function AIGeneratedQuestionView({
         </section>
       ) : null}
 
-      {loading ? <AILoadingState countdown={countdown} /> : null}
+      {loading ? <AILoadingState progress={generationProgress} /> : null}
       {!loading && error ? <AIErrorState onGenerateQuestion={onGenerateQuestion} /> : null}
       {!loading && !error && !question ? (
         <AIReadyState branchFilter={branchFilter} difficulty={difficulty} onGenerateQuestion={onGenerateQuestion} />
