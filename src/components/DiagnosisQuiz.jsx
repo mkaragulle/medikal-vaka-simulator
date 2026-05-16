@@ -58,7 +58,6 @@ const AnswerOption = memo(function AnswerOption({ option, index, selected, submi
       <span className="answer-letter">{OPTION_LETTERS[index] ?? index + 1}</span>
       <span className="answer-content">
         <span className="answer-title"><GlossaryText text={option} enabled={glossaryEnabled} /></span>
-        {statusLabel ? <span className="answer-state-label">{statusLabel}</span> : null}
       </span>
       <span className="answer-status-icon" aria-hidden="true">
         {statusIcon ? <Icon name={statusIcon} /> : <span className="answer-radio-dot" />}

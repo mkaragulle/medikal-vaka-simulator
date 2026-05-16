@@ -503,7 +503,7 @@ function AIGeneratedQuestionView({
       {fallback && !loading && !error ? (
         <section className="ai-fallback-notice card-surface" aria-live="polite">
           <Icon name="ShieldCheck" />
-          <span>Gerçek AI yanıtı alınamadığında uygulama kırılmasın diye yerel soru üretim sistemi devreye girdi.</span>
+          <span>AI yanıtı alınamadığından dolayı KlinikIQ soru üretim sistemi devreye girdi.</span>
         </section>
       ) : null}
 
