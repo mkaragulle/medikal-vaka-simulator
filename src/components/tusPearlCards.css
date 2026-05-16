@@ -8827,3 +8827,47 @@
     overflow: visible !important;
   }
 }
+
+/* ==========================================================
+   V96 — Hap Bilgi Çalış card vertical expansion
+   User request: grow the flashcard upward into the marked area
+   while keeping Biliyorum / Tekrar et / Zorlandım visible.
+   ========================================================== */
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+  --pearl-card-expanded-height: clamp(420px, calc(100dvh - 260px), 540px);
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) {
+  justify-content: flex-start !important;
+  padding-top: 12px !important;
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-study-premium-card,
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .tus-pearl-focus-card,
+.tus-pearl-focus-card.pearl-study-premium-card {
+  height: var(--pearl-card-expanded-height) !important;
+  min-height: 420px !important;
+  max-height: 540px !important;
+}
+
+.pearl-study-answer-dock-v93 {
+  margin-top: 0 !important;
+}
+
+@media (max-height: 820px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    --pearl-card-expanded-height: clamp(405px, calc(100dvh - 268px), 500px);
+  }
+
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) {
+    padding-top: 12px !important;
+  }
+
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-study-premium-card,
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .tus-pearl-focus-card,
+  .tus-pearl-focus-card.pearl-study-premium-card {
+    height: var(--pearl-card-expanded-height) !important;
+    min-height: 405px !important;
+    max-height: 500px !important;
+  }
+}
