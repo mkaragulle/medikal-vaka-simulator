@@ -31,9 +31,9 @@ function toTurkishTitleCase(text = '') {
   if (!lower) return '';
 
   return lower
-    .split(/(\s+|\/|\-|\(|\))/u)
+    .split(/(\s+|[\/()-])/u)
     .map((token) => {
-      if (!token || /^(\s+|\/|\-|\(|\))$/u.test(token)) return token;
+      if (!token || /^(\s+|[\/()-])$/u.test(token)) return token;
       return token.charAt(0).toLocaleUpperCase('tr') + token.slice(1);
     })
     .join('');
