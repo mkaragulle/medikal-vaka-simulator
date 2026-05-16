@@ -43291,3 +43291,109 @@ html[data-theme="dark"] .ai-practice-actions-pro .ai-compact-dropdown-option.act
     max-height: min(280px, 42vh) !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V107 — AI Spot dropdown portal / clipping fix
+   The branch and difficulty menus now render above every card,
+   independent of parent overflow and stacking contexts.
+   ========================================================= */
+.ai-practice-hero,
+.ai-practice-actions.ai-practice-actions-pro,
+.ai-practice-actions-pro .ai-compact-dropdown,
+.ai-practice-actions-pro .ai-compact-dropdown-shell {
+  overflow: visible !important;
+}
+
+.ai-compact-dropdown-menu-floating {
+  position: fixed !important;
+  right: auto !important;
+  z-index: 2147483400 !important;
+  display: grid !important;
+  gap: 4px !important;
+  padding: 8px !important;
+  border-radius: 18px !important;
+  border: 1px solid color-mix(in srgb, var(--accent, #0f766e) 16%, var(--border-subtle, #d7e4e2)) !important;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--surface-1, #fff) 98%, white 2%),
+      color-mix(in srgb, var(--surface-2, #f8fafc) 92%, transparent)) !important;
+  box-shadow:
+    0 24px 56px color-mix(in srgb, var(--shadow-color, #0f172a) 16%, transparent),
+    0 1px 0 rgba(255, 255, 255, .72) inset !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  overscroll-behavior: contain !important;
+  scrollbar-width: thin !important;
+}
+
+.ai-compact-dropdown-menu-floating .ai-compact-dropdown-option {
+  width: 100% !important;
+  min-height: 42px !important;
+  border: 1px solid transparent !important;
+  border-radius: 14px !important;
+  background: transparent !important;
+  color: var(--text-primary, #0f172a) !important;
+  padding: 10px 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  text-align: left !important;
+  font-size: 14px !important;
+  font-weight: 680 !important;
+  line-height: 1.32 !important;
+  transition: background-color .16s ease, border-color .16s ease, transform .16s ease !important;
+}
+
+.ai-compact-dropdown-menu-floating .ai-compact-dropdown-option:hover {
+  border-color: color-mix(in srgb, var(--accent, #0f766e) 18%, var(--border-subtle, #d7e4e2)) !important;
+  background: color-mix(in srgb, var(--accent, #0f766e) 7%, var(--surface-1, #fff)) !important;
+}
+
+.ai-compact-dropdown-menu-floating .ai-compact-dropdown-option.active {
+  border-color: color-mix(in srgb, var(--accent, #0f766e) 26%, var(--border-subtle, #d7e4e2)) !important;
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--accent, #0f766e) 12%, var(--surface-1, #fff)),
+      color-mix(in srgb, #2dd4bf 10%, var(--surface-1, #fff))) !important;
+  color: color-mix(in srgb, var(--text-primary, #0f172a) 94%, var(--accent, #0f766e) 6%) !important;
+}
+
+.ai-compact-dropdown-menu-floating .ai-compact-dropdown-option-copy {
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ai-compact-dropdown-menu-floating .ai-compact-dropdown-option-check {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 auto !important;
+  color: color-mix(in srgb, var(--accent, #0f766e) 88%, #0f766e 12%) !important;
+}
+
+html[data-theme="dark"] .ai-compact-dropdown-menu-floating,
+.app-shell[data-theme="dark"] .ai-compact-dropdown-menu-floating {
+  background:
+    linear-gradient(180deg, rgba(8, 24, 33, .98), rgba(10, 31, 42, .96)) !important;
+  border-color: rgba(94, 234, 212, .18) !important;
+  box-shadow: 0 24px 56px rgba(0, 0, 0, .38), 0 1px 0 rgba(255, 255, 255, .05) inset !important;
+}
+
+html[data-theme="dark"] .ai-compact-dropdown-menu-floating .ai-compact-dropdown-option,
+.app-shell[data-theme="dark"] .ai-compact-dropdown-menu-floating .ai-compact-dropdown-option {
+  color: #e5edf6 !important;
+}
+
+html[data-theme="dark"] .ai-compact-dropdown-menu-floating .ai-compact-dropdown-option:hover,
+.app-shell[data-theme="dark"] .ai-compact-dropdown-menu-floating .ai-compact-dropdown-option:hover {
+  background: rgba(45, 212, 191, .08) !important;
+  border-color: rgba(94, 234, 212, .20) !important;
+}
+
+html[data-theme="dark"] .ai-compact-dropdown-menu-floating .ai-compact-dropdown-option.active,
+.app-shell[data-theme="dark"] .ai-compact-dropdown-menu-floating .ai-compact-dropdown-option.active {
+  background: linear-gradient(135deg, rgba(45, 212, 191, .14), rgba(14, 116, 144, .18)) !important;
+  border-color: rgba(94, 234, 212, .30) !important;
+}

@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import AISpotQuestionScreen from './AISpotQuestionScreen.jsx';
 import { Icon, IconBadge } from './ui.jsx';
 
@@ -40,17 +41,55 @@ function CompactDropdown({
   ariaLabel,
 }) {
   const [open, setOpen] = useState(false);
+  const [menuStyle, setMenuStyle] = useState(null);
   const rootRef = useRef(null);
+  const triggerRef = useRef(null);
+  const menuRef = useRef(null);
   const selectedOption = useMemo(
     () => options.find((option) => option.value === value) ?? options[0] ?? null,
     [options, value],
   );
 
+  const updateMenuPosition = useCallback(() => {
+    const trigger = triggerRef.current;
+    if (!trigger) return;
+
+    const rect = trigger.getBoundingClientRect();
+    const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+    const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    const horizontalMargin = 14;
+    const verticalGap = 8;
+    const minMenuHeight = 164;
+    const maxMenuHeight = 318;
+    const width = Math.min(rect.width, viewportWidth - horizontalMargin * 2);
+    const left = Math.max(horizontalMargin, Math.min(rect.left, viewportWidth - width - horizontalMargin));
+    const spaceBelow = viewportHeight - rect.bottom - horizontalMargin;
+    const spaceAbove = rect.top - horizontalMargin;
+    const shouldOpenUp = spaceBelow < 220 && spaceAbove > spaceBelow;
+    const availableHeight = shouldOpenUp ? spaceAbove - verticalGap : spaceBelow - verticalGap;
+    const maxHeight = Math.max(minMenuHeight, Math.min(maxMenuHeight, availableHeight));
+
+    setMenuStyle({
+      left: `${left}px`,
+      width: `${width}px`,
+      maxHeight: `${maxHeight}px`,
+      ...(shouldOpenUp
+        ? { top: 'auto', bottom: `${Math.max(horizontalMargin, viewportHeight - rect.top + verticalGap)}px` }
+        : { top: `${rect.bottom + verticalGap}px`, bottom: 'auto' }),
+    });
+  }, []);
+
   useEffect(() => {
-    if (!open) return undefined;
+    if (!open) {
+      setMenuStyle(null);
+      return undefined;
+    }
+
+    updateMenuPosition();
 
     const handlePointerDown = (event) => {
-      if (!rootRef.current?.contains(event.target)) {
+      const target = event.target;
+      if (!rootRef.current?.contains(target) && !menuRef.current?.contains(target)) {
         setOpen(false);
       }
     };
@@ -61,18 +100,61 @@ function CompactDropdown({
       }
     };
 
+    const handleViewportChange = () => {
+      updateMenuPosition();
+    };
+
     window.addEventListener('pointerdown', handlePointerDown);
     window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('resize', handleViewportChange);
+    window.addEventListener('scroll', handleViewportChange, true);
 
     return () => {
       window.removeEventListener('pointerdown', handlePointerDown);
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleViewportChange);
+      window.removeEventListener('scroll', handleViewportChange, true);
     };
-  }, [open]);
+  }, [open, updateMenuPosition]);
 
   useEffect(() => {
     if (disabled) setOpen(false);
   }, [disabled]);
+
+  const menu = open && menuStyle ? createPortal(
+    <div
+      className="ai-compact-dropdown-menu ai-compact-dropdown-menu-floating"
+      role="listbox"
+      aria-label={ariaLabel || label}
+      ref={menuRef}
+      style={menuStyle}
+    >
+      {options.map((option) => {
+        const isActive = option.value === value;
+        return (
+          <button
+            key={option.value}
+            type="button"
+            className={`ai-compact-dropdown-option ${isActive ? 'active' : ''}`.trim()}
+            role="option"
+            aria-selected={isActive}
+            onClick={() => {
+              onChange?.(option.value);
+              setOpen(false);
+            }}
+          >
+            <span className="ai-compact-dropdown-option-copy">{option.label}</span>
+            {isActive ? (
+              <span className="ai-compact-dropdown-option-check" aria-hidden="true">
+                <Icon name="CheckCircle" size={16} />
+              </span>
+            ) : null}
+          </button>
+        );
+      })}
+    </div>,
+    document.body,
+  ) : null;
 
   return (
     <div className="ai-branch-filter-control ai-compact-dropdown" ref={rootRef}>
@@ -86,6 +168,7 @@ function CompactDropdown({
           aria-expanded={open}
           aria-label={ariaLabel || label}
           disabled={disabled}
+          ref={triggerRef}
         >
           <div className="ai-compact-dropdown-trigger-copy">
             <strong>{selectedOption?.label || 'Seçiniz'}</strong>
@@ -94,34 +177,7 @@ function CompactDropdown({
             <Icon name={icon} size={16} />
           </span>
         </button>
-
-        {open ? (
-          <div className="ai-compact-dropdown-menu" role="listbox" aria-label={ariaLabel || label}>
-            {options.map((option) => {
-              const isActive = option.value === value;
-              return (
-                <button
-                  key={option.value}
-                  type="button"
-                  className={`ai-compact-dropdown-option ${isActive ? 'active' : ''}`.trim()}
-                  role="option"
-                  aria-selected={isActive}
-                  onClick={() => {
-                    onChange?.(option.value);
-                    setOpen(false);
-                  }}
-                >
-                  <span className="ai-compact-dropdown-option-copy">{option.label}</span>
-                  {isActive ? (
-                    <span className="ai-compact-dropdown-option-check" aria-hidden="true">
-                      <Icon name="CheckCircle" size={16} />
-                    </span>
-                  ) : null}
-                </button>
-              );
-            })}
-          </div>
-        ) : null}
+        {menu}
       </div>
     </div>
   );
