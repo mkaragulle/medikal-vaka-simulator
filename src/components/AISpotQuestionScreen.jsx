@@ -49,12 +49,12 @@ function formatAISpotDataLabel(label = '') {
     .trim();
   const key = normalized.toLocaleLowerCase('tr');
 
-  if (/^(ta|tansiyon|kan basıncı|kan basinçi|kan basinci)$/iu.test(normalized)) return 'TA';
+  if (/^(ta|tansiyon|kan basıncı|kan basinçi|kan basinci|arteriyel tansiyon|kan basinci)$/iu.test(normalized)) return 'Kan Basıncı';
   if (/^(spo2|spo₂|oksijen satürasyonu|satürasyon)$/iu.test(normalized)) return 'SpO₂';
   if (/^(ph)$/iu.test(normalized)) return 'pH';
   if (/^(wbc)$/iu.test(normalized)) return 'WBC';
   if (/^(crp)$/iu.test(normalized)) return 'CRP';
-  if (/^(alt|ast|alp|ggt|tsh|bt|pt|inr|hb)$/iu.test(normalized)) return normalized.toLocaleUpperCase('tr');
+  if (/^(alt|ast|alp|ggt|tsh|bt|pt|inr|hb|ekg|ecg|usg|mr|mri|ct|bt)$/iu.test(normalized)) return normalized.toLocaleUpperCase('tr').replace('ECG', 'EKG').replace('MRI', 'MR').replace('CT', 'BT');
   if (/^(gks)$/iu.test(normalized)) return 'GKS';
   if (/^(glaskow|glasgow)$/iu.test(key)) return 'Glasgow';
   if (/^(yaşına göre|yasina gore)$/iu.test(key)) return 'Yaşına Göre';
@@ -103,7 +103,7 @@ function formatAISpotDataValue(label = '', value = '') {
   const hasClinicalUnit = /(?:mmHg|°C|\/dk|%|mg\/dL|mg\/L|g\/dL|mEq\/L|mmol\/L|U\/L|IU\/L|ng\/mL|pg\/mL|\/mm³|\/µL|×10³\/µL|x10\^3\/µL)/iu.test(rawValue);
   const numeric = normalizeDisplayNumber(rawValue);
 
-  if (/^(ta|kan basıncı)$/iu.test(rawLabel) && /^\d{2,3}\s*\/\s*\d{2,3}$/u.test(rawValue)) {
+  if (/^(ta|tansiyon|kan basıncı|arteriyel tansiyon)$/iu.test(rawLabel) && /^\d{2,3}\s*\/\s*\d{2,3}$/u.test(rawValue)) {
     return { value: rawValue.replace(/\s*\/\s*/u, '/') + ' mmHg', quality: 'completed' };
   }
   if (/nabız|nabiz|kalp hızı|kalp hizi/iu.test(key) && numeric && !hasClinicalUnit) {
