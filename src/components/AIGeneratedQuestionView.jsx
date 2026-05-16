@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import AISpotQuestionScreen from './AISpotQuestionScreen.jsx';
 import { Icon, IconBadge } from './ui.jsx';
-
 
 function AIStat({ label, value, icon, tone = 'teal' }) {
   return (
@@ -31,43 +30,147 @@ function AISourceBadge({ usedRemoteAI, fallback, generationSource }) {
   );
 }
 
-function AIBranchFilter({ branchFilter, branchOptions = [], onChangeBranchFilter, disabled = false }) {
-  const normalizedValue = branchFilter || 'random';
+function CompactDropdown({
+  label,
+  value,
+  options = [],
+  onChange,
+  disabled = false,
+  icon = 'ChevronDown',
+  ariaLabel,
+}) {
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef(null);
+  const selectedOption = useMemo(
+    () => options.find((option) => option.value === value) ?? options[0] ?? null,
+    [options, value],
+  );
+
+  useEffect(() => {
+    if (!open) return undefined;
+
+    const handlePointerDown = (event) => {
+      if (!rootRef.current?.contains(event.target)) {
+        setOpen(false);
+      }
+    };
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener('pointerdown', handlePointerDown);
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('pointerdown', handlePointerDown);
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [open]);
+
+  useEffect(() => {
+    if (disabled) setOpen(false);
+  }, [disabled]);
+
   return (
-    <label className="ai-branch-filter-control">
-      <span>KONU / BRANŞ</span>
-      <select
-        value={normalizedValue}
-        onChange={(event) => onChangeBranchFilter?.(event.target.value)}
-        disabled={disabled}
-        aria-label="TUS soru branş filtresi"
-      >
-        {branchOptions.map((branch) => {
-          const value = branch === 'Rastgele' ? 'random' : branch;
-          return <option key={branch} value={value}>{branch}</option>;
-        })}
-      </select>
-    </label>
+    <div className="ai-branch-filter-control ai-compact-dropdown" ref={rootRef}>
+      <span>{label}</span>
+      <div className={`ai-compact-dropdown-shell ${open ? 'open' : ''} ${disabled ? 'disabled' : ''}`.trim()}>
+        <button
+          type="button"
+          className="ai-compact-dropdown-trigger"
+          onClick={() => !disabled && setOpen((current) => !current)}
+          aria-haspopup="listbox"
+          aria-expanded={open}
+          aria-label={ariaLabel || label}
+          disabled={disabled}
+        >
+          <div className="ai-compact-dropdown-trigger-copy">
+            <strong>{selectedOption?.label || 'Seçiniz'}</strong>
+          </div>
+          <span className="ai-compact-dropdown-trigger-icon" aria-hidden="true">
+            <Icon name={icon} size={16} />
+          </span>
+        </button>
+
+        {open ? (
+          <div className="ai-compact-dropdown-menu" role="listbox" aria-label={ariaLabel || label}>
+            {options.map((option) => {
+              const isActive = option.value === value;
+              return (
+                <button
+                  key={option.value}
+                  type="button"
+                  className={`ai-compact-dropdown-option ${isActive ? 'active' : ''}`.trim()}
+                  role="option"
+                  aria-selected={isActive}
+                  onClick={() => {
+                    onChange?.(option.value);
+                    setOpen(false);
+                  }}
+                >
+                  <span className="ai-compact-dropdown-option-copy">{option.label}</span>
+                  {isActive ? (
+                    <span className="ai-compact-dropdown-option-check" aria-hidden="true">
+                      <Icon name="CheckCircle" size={16} />
+                    </span>
+                  ) : null}
+                </button>
+              );
+            })}
+          </div>
+        ) : null}
+      </div>
+    </div>
   );
 }
 
+function AIBranchFilter({ branchFilter, branchOptions = [], onChangeBranchFilter, disabled = false }) {
+  const normalizedValue = branchFilter || 'random';
+  const options = useMemo(
+    () => branchOptions.map((branch) => ({
+      value: branch === 'Rastgele' ? 'random' : branch,
+      label: branch,
+    })),
+    [branchOptions],
+  );
+
+  return (
+    <CompactDropdown
+      label="KONU / BRANŞ"
+      value={normalizedValue}
+      options={options}
+      onChange={onChangeBranchFilter}
+      disabled={disabled}
+      icon="ChevronDown"
+      ariaLabel="TUS soru branş filtresi"
+    />
+  );
+}
 
 function AIDifficultyFilter({ difficulty = 'Orta', onChangeDifficulty, disabled = false }) {
   const normalizedValue = ['Kolay', 'Orta', 'Zor'].includes(difficulty) ? difficulty : 'Orta';
+  const options = useMemo(
+    () => [
+      { value: 'Kolay', label: 'Kolay' },
+      { value: 'Orta', label: 'Orta' },
+      { value: 'Zor', label: 'Zor' },
+    ],
+    [],
+  );
+
   return (
-    <label className="ai-branch-filter-control ai-difficulty-filter-control">
-      <span>ZORLUK</span>
-      <select
-        value={normalizedValue}
-        onChange={(event) => onChangeDifficulty?.(event.target.value)}
-        disabled={disabled}
-        aria-label="AI TUS soru zorluğu"
-      >
-        <option value="Kolay">Kolay</option>
-        <option value="Orta">Orta</option>
-        <option value="Zor">Zor</option>
-      </select>
-    </label>
+    <CompactDropdown
+      label="ZORLUK"
+      value={normalizedValue}
+      options={options}
+      onChange={onChangeDifficulty}
+      disabled={disabled}
+      icon="ChevronDown"
+      ariaLabel="AI TUS soru zorluğu"
+    />
   );
 }
 
@@ -96,11 +199,11 @@ function AIReadyState({ branchFilter, difficulty, onGenerateQuestion }) {
     <section className="ai-generation-state ai-generation-ready card-surface" aria-live="polite">
       <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
       <div>
-        <h2>Branş ve zorluğu seç, sonra soru üret.</h2>
-        <p>Seçili ayar: <strong>{branchLabel}</strong> · <strong>{difficulty}</strong>. Soru üretimi yalnızca butona bastığında başlar.</p>
+        <h2>Branş ve zorluğu seç, AI senin için soru üretsin.</h2>
+        <p><strong>{branchLabel}</strong> · <strong>{difficulty}</strong></p>
       </div>
       <button type="button" className="btn btn-primary" onClick={onGenerateQuestion}>
-        <Icon name="Sparkles" /> Soru üretimini başlat
+        <Icon name="Sparkles" /> Yeni TUS Sorusu Üret
       </button>
     </section>
   );
@@ -158,13 +261,12 @@ function AIGeneratedQuestionView({
     return () => window.clearInterval(timer);
   }, [loading]);
 
-
   return (
     <section className="page-shell ai-practice-page-shell">
       <section className="ai-practice-hero card-surface">
         <div className="ai-practice-title-block">
           <span className="ai-practice-kicker"><Icon name="Sparkles" /> TUS pratik modu</span>
-          <h1>AI Destekli TUS Spot Sorusu</h1>
+          <h1>Yeni TUS Sorusu Üret</h1>
           <p>Spot bilgileri pekiştirmek için branş uyumu ve klinik tutarlılık kontrolünden geçirilen kısa klinik soru.</p>
           <div className="ai-practice-meta-row">
             <AISourceBadge usedRemoteAI={usedRemoteAI} fallback={fallback} generationSource={generationSource} />
@@ -193,7 +295,7 @@ function AIGeneratedQuestionView({
               <span aria-hidden="true">←</span> Dashboard’a dön
             </button>
             <button type="button" className="btn btn-primary ai-generate-cta ai-spot-generate-btn" onClick={onGenerateQuestion} disabled={loading}>
-              <Icon name="Sparkles" /> Yeni TUS sorusu üret
+              <Icon name="Sparkles" /> Yeni TUS Sorusu Üret
             </button>
           </div>
         </div>
@@ -226,7 +328,7 @@ function AIGeneratedQuestionView({
             tutorMode={tutorMode}
             onToggleTutorMode={onToggleTutorMode}
             hardMode={hardMode}
-            randomActionLabel="Yeni TUS sorusu üret"
+            randomActionLabel="Yeni TUS Sorusu Üret"
           />
         </div>
       ) : null}
