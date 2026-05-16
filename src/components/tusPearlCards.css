@@ -8293,3 +8293,346 @@
     min-height: 58px;
   }
 }
+
+/* ==========================================================
+   V94 — Hap Bilgi Çalış single-viewport compact cockpit
+   Goal: no page scrollbar, card + all controls visible in one screen.
+   ========================================================== */
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+  width: 100%;
+  max-width: none;
+  height: 100dvh;
+  box-sizing: border-box;
+  padding: calc(var(--kiq-page-pad-top, 92px) + 8px) clamp(18px, 1.75vw, 32px) 14px;
+  display: grid;
+  grid-template-rows: 64px minmax(0, 1fr);
+  gap: 12px;
+  overflow: hidden;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top {
+  min-height: 0;
+  height: 64px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(170px, 260px);
+  align-items: center;
+  gap: 16px;
+  padding: 8px 18px;
+  border-radius: 24px;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-title h1 {
+  margin: 0;
+  font-size: clamp(1.85rem, 2.35vw, 2.55rem);
+  line-height: 0.95;
+  letter-spacing: -0.055em;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-title span {
+  display: none;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-progress {
+  gap: 6px;
+  align-self: center;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-progress strong {
+  font-size: 0.98rem;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-progress div {
+  height: 6px;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-back {
+  min-height: 42px;
+  padding: 0 14px;
+  border-radius: 15px;
+}
+
+.pearl-study-workspace-v92:has(.pearl-study-control-panel-v93) {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(338px, 390px);
+  gap: 14px;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+.pearl-study-left-v92:has(.pearl-study-answer-dock-v93),
+.pearl-study-control-panel-v93 {
+  height: 100%;
+  min-height: 0 !important;
+  max-height: 100%;
+}
+
+.pearl-study-left-v92:has(.pearl-study-answer-dock-v93) {
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+.tus-pearl-study-main.pearl-study-stage-v92:has(.pearl-study-answer-dock-v93) {
+  height: 100%;
+  min-height: 0;
+  padding: 14px;
+  grid-template-columns: 48px minmax(0, 1fr) 48px;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) {
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  gap: 10px;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93)::before {
+  display: none;
+}
+
+.pearl-study-stage-v92 .tus-pearl-side-nav.pearl-study-nav-button {
+  width: 50px;
+  height: 50px;
+  font-size: 2rem;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-study-premium-card {
+  width: min(100%, 780px);
+  flex: 1 1 auto;
+  min-height: 0;
+  max-height: calc(100% - 72px);
+  border-radius: 30px;
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-card-face {
+  padding: clamp(18px, 2.6vw, 34px);
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-card-question-block > strong,
+.pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .tus-pearl-focus-face.pearl-card-face > strong {
+  max-width: 700px;
+  font-size: clamp(1.55rem, 2.25vw, 2.55rem);
+  line-height: 1.13;
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+
+.pearl-study-answer-dock-v93 {
+  flex: 0 0 auto;
+  width: min(100%, 780px);
+  min-height: 0;
+  padding: 8px;
+  gap: 8px;
+  border-radius: 22px;
+}
+
+.pearl-study-answer-dock-v93 .decision-btn {
+  min-height: 50px;
+  border-radius: 16px;
+  font-size: 0.9rem;
+  gap: 7px;
+}
+
+.pearl-study-control-panel-v93 {
+  display: grid;
+  grid-template-rows: auto auto auto minmax(0, 1fr);
+  gap: 9px;
+  padding: 12px;
+  border-radius: 28px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.06), transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,0.97), rgba(248,251,251,0.94));
+}
+
+.pearl-study-panel-head-v93,
+.pearl-study-control-section-v93 {
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255,255,255,0.75);
+}
+
+.pearl-study-panel-head-v93 {
+  min-height: 48px;
+  padding: 10px 12px;
+  gap: 10px;
+}
+
+.pearl-study-panel-kicker-v93,
+.pearl-study-panel-head-v93 em {
+  display: none;
+}
+
+.pearl-study-panel-head-v93 strong {
+  font-size: 1rem;
+  line-height: 1.1;
+}
+
+.pearl-study-panel-progress-v93 {
+  min-width: 50px;
+  height: 34px;
+  font-size: 0.82rem;
+}
+
+.pearl-study-control-section-v93 {
+  padding: 10px;
+}
+
+.pearl-study-section-title-v93 {
+  margin-bottom: 8px;
+  gap: 7px;
+  font-size: 0.84rem;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-list-grid-v93 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-list-grid-v93 > button {
+  min-height: 48px;
+  padding: 9px 10px;
+  border-radius: 16px;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-list-grid-v93 > button > span strong {
+  font-size: 0.86rem;
+  line-height: 1.1;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-list-grid-v93 > button > span small {
+  display: none;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-list-grid-v93 > button > em {
+  min-width: 29px;
+  height: 28px;
+  font-size: 0.76rem;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-session-actions-v93 {
+  display: grid;
+  grid-template-columns: 1fr 0.8fr 0.7fr;
+  gap: 8px;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger,
+.pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button {
+  min-height: 44px;
+  border-radius: 15px;
+  padding-inline: 10px;
+  font-size: 0.86rem;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-tools-section-v93 {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+.pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button {
+  min-height: 48px;
+  padding: 9px 10px;
+  border-radius: 16px;
+  gap: 8px;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 strong {
+  font-size: 0.78rem;
+  line-height: 1.05;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 small {
+  display: none;
+}
+
+.pearl-study-control-panel-v93 .pearl-catalog-popover-wrap {
+  min-width: 0;
+}
+
+.pearl-study-more-panel.pearl-study-more-popover {
+  z-index: 2147483000;
+}
+
+[data-theme='dark'] .pearl-study-control-panel-v93 {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.92), rgba(8, 14, 24, 0.92));
+}
+
+@media (max-height: 820px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    grid-template-rows: 56px minmax(0, 1fr);
+    gap: 9px;
+    padding-bottom: 10px;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top {
+    height: 56px;
+    padding-block: 6px;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-title h1 {
+    font-size: clamp(1.65rem, 2vw, 2.2rem);
+  }
+
+  .pearl-study-control-panel-v93 {
+    gap: 7px;
+    padding: 10px;
+  }
+
+  .pearl-study-control-section-v93 {
+    padding: 8px;
+  }
+
+  .pearl-study-section-title-v93 {
+    margin-bottom: 6px;
+  }
+
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-card-question-block > strong,
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .tus-pearl-focus-face.pearl-card-face > strong {
+    font-size: clamp(1.35rem, 2vw, 2.25rem);
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button {
+    min-height: 42px;
+  }
+
+  .pearl-study-answer-dock-v93 .decision-btn {
+    min-height: 46px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    height: auto;
+    min-height: 100dvh;
+    overflow: visible;
+  }
+
+  .pearl-study-workspace-v92:has(.pearl-study-control-panel-v93) {
+    height: auto;
+    overflow: visible;
+    grid-template-columns: 1fr;
+  }
+
+  .pearl-study-control-panel-v93 {
+    height: auto;
+    overflow: visible;
+  }
+}
