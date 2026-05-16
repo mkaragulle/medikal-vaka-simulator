@@ -45161,3 +45161,212 @@ html[data-theme="dark"] .ai-generation-countdown.ai-generation-countdown-live,
     height: 20px !important;
   }
 }
+
+/* =========================================================
+   KLINIKIQ V124 — AI TUS answer options redesign
+   Removes the problematic far-right status/radio icon column in
+   AI-generated TUS questions. Feedback is now carried by the
+   option card state, the option letter and the status chip, so
+   cards never visually overflow on the right edge.
+   ========================================================= */
+.ai-spot-answer-flow .option-grid {
+  box-sizing: border-box !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+
+.ai-spot-answer-flow .option-grid > .answer-option {
+  position: relative !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  display: grid !important;
+  grid-template-columns: 48px minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: 14px !important;
+  min-height: 72px !important;
+  padding: 14px 18px !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  contain: paint !important;
+  isolation: isolate !important;
+}
+
+.ai-spot-answer-flow .option-grid > .answer-option::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: inherit !important;
+  pointer-events: none !important;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, .035) !important;
+}
+
+.ai-spot-answer-flow .option-grid > .answer-option:hover:not(:disabled)::after {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 24%, transparent) !important;
+}
+
+.ai-spot-answer-flow .option-grid > .answer-option:last-child:nth-child(odd) {
+  grid-column: 1 / -1 !important;
+}
+
+.ai-spot-answer-flow .answer-letter {
+  box-sizing: border-box !important;
+  width: 46px !important;
+  height: 46px !important;
+  min-width: 46px !important;
+  border-radius: 15px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  align-self: center !important;
+  justify-self: start !important;
+  z-index: 1 !important;
+}
+
+.ai-spot-answer-flow .answer-content {
+  box-sizing: border-box !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  overflow: hidden !important;
+  z-index: 1 !important;
+}
+
+.ai-spot-answer-flow .answer-title {
+  box-sizing: border-box !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  color: #111827 !important;
+  font-size: 15.5px !important;
+  font-weight: 760 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -.012em !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  hyphens: auto !important;
+}
+
+.ai-spot-answer-flow .answer-state-label {
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  min-height: 24px !important;
+  padding: 3px 10px !important;
+  border-radius: 999px !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.ai-spot-answer-flow .answer-status-icon {
+  display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  max-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  pointer-events: none !important;
+}
+
+.ai-spot-answer-flow .answer-option.selected {
+  border-color: color-mix(in srgb, var(--accent) 60%, transparent) !important;
+  background: linear-gradient(135deg, rgba(20, 184, 166, .10), rgba(255,255,255,.92)) !important;
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 24%, transparent) !important;
+}
+
+.ai-spot-answer-flow .answer-option.correct {
+  border-color: #22a06b !important;
+  background: linear-gradient(135deg, rgba(34, 160, 107, .12), rgba(255,255,255,.93)) !important;
+  box-shadow: inset 0 0 0 1px rgba(34, 160, 107, .24) !important;
+}
+
+.ai-spot-answer-flow .answer-option.wrong {
+  border-color: #ef6461 !important;
+  background: linear-gradient(135deg, rgba(239, 100, 97, .12), rgba(255,255,255,.93)) !important;
+  box-shadow: inset 0 0 0 1px rgba(239, 100, 97, .24) !important;
+}
+
+.ai-spot-answer-flow .answer-option.answered-neutral {
+  background: rgba(255, 255, 255, .72) !important;
+  border-color: rgba(148, 163, 184, .18) !important;
+}
+
+.ai-spot-answer-flow .answer-option.correct .answer-letter {
+  color: #0f7a4f !important;
+  background: rgba(34, 160, 107, .10) !important;
+  border-color: rgba(34, 160, 107, .28) !important;
+}
+
+.ai-spot-answer-flow .answer-option.wrong .answer-letter {
+  color: #b44242 !important;
+  background: rgba(239, 100, 97, .10) !important;
+  border-color: rgba(239, 100, 97, .28) !important;
+}
+
+.ai-spot-answer-flow .answer-option.correct .answer-state-label {
+  color: #0f7a4f !important;
+  background: rgba(34, 160, 107, .10) !important;
+  border: 1px solid rgba(34, 160, 107, .22) !important;
+}
+
+.ai-spot-answer-flow .answer-option.wrong .answer-state-label {
+  color: #a63f3d !important;
+  background: rgba(239, 100, 97, .10) !important;
+  border: 1px solid rgba(239, 100, 97, .22) !important;
+}
+
+.ai-spot-answer-flow .answer-option.answered-neutral .answer-title {
+  color: #667885 !important;
+}
+
+@media (max-width: 1100px) {
+  .ai-spot-answer-flow .option-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-spot-answer-flow .option-grid {
+    gap: 10px !important;
+  }
+
+  .ai-spot-answer-flow .option-grid > .answer-option {
+    grid-template-columns: 42px minmax(0, 1fr) !important;
+    column-gap: 11px !important;
+    min-height: 66px !important;
+    padding: 12px 14px !important;
+    border-radius: 16px !important;
+  }
+
+  .ai-spot-answer-flow .answer-letter {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    border-radius: 13px !important;
+  }
+
+  .ai-spot-answer-flow .answer-title {
+    font-size: 14.5px !important;
+  }
+}
