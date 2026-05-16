@@ -42483,3 +42483,188 @@ body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-active:hover,
 body:not(.klinikiq-auth-lock) .nav-mode-switch button.hard-mode-active:focus-visible {
   background: linear-gradient(135deg, #f05252 0%, #f43f5e 58%, #fb7185 100%) !important;
 }
+
+/* ==========================================================
+   V100 — Komite dashboard text cleanup + premium action cards
+   Removes category eyebrows (Yeni alan / Kütüphane / Hızlı tekrar / Takip)
+   and gives the remaining copy, icons and buttons a cleaner unified design.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10.tus-hero-proof-redesign {
+  gap: 10px !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10.tus-hero-proof-redesign span {
+  min-height: 46px !important;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(15, 118, 110, 0.13) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(241,252,250,0.82)) !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.045), inset 0 1px 0 rgba(255,255,255,.82) !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10.tus-hero-proof-redesign span svg {
+  color: #0f8f84 !important;
+}
+
+body:not(.klinikiq-auth-lock) .home-action-panel-v10.tus-action-panel-redesign {
+  border-radius: 30px !important;
+  padding: 22px !important;
+  border: 1px solid rgba(15, 118, 110, 0.10) !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, .12), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(247,252,251,0.94)) !important;
+  box-shadow: 0 26px 70px rgba(15, 23, 42, 0.09), inset 0 1px 0 rgba(255,255,255,.88) !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-actions-redesign .btn {
+  min-height: 66px !important;
+  border-radius: 22px !important;
+  padding: 0 20px !important;
+  font-weight: 880 !important;
+  letter-spacing: -0.018em !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-actions-redesign .btn .tus-action-icon {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-grid.komite-dashboard-grid-v60 {
+  gap: clamp(16px, 1.15vw, 22px) !important;
+  align-items: stretch !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 18px !important;
+  min-height: 246px !important;
+  padding: 24px !important;
+  border-radius: 28px !important;
+  border: 1px solid rgba(15, 118, 110, 0.10) !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.10), transparent 34%),
+    linear-gradient(145deg, rgba(255,255,255,0.98), rgba(249,252,252,0.93)) !important;
+  box-shadow: 0 22px 58px rgba(15, 23, 42, 0.065), inset 0 1px 0 rgba(255,255,255,0.9) !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60.primary {
+  border-color: rgba(20, 184, 166, 0.26) !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(240, 253, 250, 0.98), rgba(255,255,255,0.95)) !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(20, 184, 166, 0.26) !important;
+  box-shadow: 0 30px 76px rgba(15, 78, 74, 0.12), inset 0 1px 0 rgba(255,255,255,0.92) !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-card-icon.komite-card-icon-v60 {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 22px !important;
+  flex: 0 0 auto !important;
+  color: #0f8f84 !important;
+  background: linear-gradient(135deg, rgba(204, 251, 241, 0.72), rgba(240, 253, 250, 0.90)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.88), 0 16px 34px rgba(15, 118, 110, .10) !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card-copy.komite-dashboard-card-copy-v60 {
+  display: grid !important;
+  gap: 10px !important;
+  min-width: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-card-eyebrow-v60 {
+  display: none !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 strong {
+  color: #101827 !important;
+  font-size: clamp(20px, 1.26vw, 24px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.036em !important;
+  font-weight: 920 !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 p {
+  max-width: 36ch !important;
+  margin: 0 !important;
+  color: #526173 !important;
+  font-size: .97rem !important;
+  line-height: 1.52 !important;
+  letter-spacing: -0.012em !important;
+  font-weight: 630 !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-card-action.komite-card-action-v60 {
+  margin-top: auto !important;
+  min-height: 44px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(15, 118, 110, 0.16) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(236,253,245,0.82)) !important;
+  color: #0f766e !important;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, 0.08), inset 0 1px 0 rgba(255,255,255,0.84) !important;
+  font-size: .93rem !important;
+  font-weight: 880 !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60.primary .komite-card-action-v60 {
+  background: linear-gradient(135deg, #0f8f84, #20c4bd) !important;
+  color: white !important;
+  border-color: rgba(15, 118, 110, 0.06) !important;
+  box-shadow: 0 14px 32px rgba(15, 118, 110, 0.18) !important;
+}
+
+body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60::after {
+  inset: auto -20px -26px auto !important;
+  width: 132px !important;
+  height: 132px !important;
+  background: radial-gradient(circle, rgba(20, 184, 166, .11), transparent 66%) !important;
+}
+
+@media (max-width: 1320px) {
+  body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 {
+    min-height: 222px !important;
+  }
+}
+
+@media (max-width: 860px) {
+  body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 {
+    min-height: 190px !important;
+    padding: 22px !important;
+    border-radius: 24px !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .komite-card-icon.komite-card-icon-v60 {
+    width: 56px !important;
+    height: 56px !important;
+    border-radius: 19px !important;
+  }
+}
+
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .home-hero-proof-row-v10.tus-hero-proof-redesign span,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .home-action-panel-v10.tus-action-panel-redesign,
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 {
+  border-color: rgba(94, 234, 212, 0.14) !important;
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(8, 18, 28, 0.82)) !important;
+}
+
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60.primary {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.18), transparent 34%),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.94), rgba(10, 38, 38, 0.84)) !important;
+}
+
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 strong {
+  color: #f8fafc !important;
+}
+
+html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.komite-dashboard-card-v60 p {
+  color: #b6c4d2 !important;
+}

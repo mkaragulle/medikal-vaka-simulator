@@ -1024,35 +1024,31 @@ function formatFileSize(bytes = 0) {
 function KomiteDashboard({ onStart, onOpenMyMaterials, onOpenCards, onOpenReview }) {
   const cards = [
     {
-      eyebrow: 'Yeni alan',
       title: 'Çalışmaya Başla',
-      description: 'Slayt veya not yükle; KlinikIQ aynı materyalden çalışma ekranı oluştursun.',
-      action: 'Materyal yükle',
+      description: 'Slayt veya not yükle; KlinikIQ aynı materyalden ders anlatımı, soru, hap kart ve tekrar ekranı oluştursun.',
+      action: 'Materyal Yükle',
       icon: 'Sparkles',
       onClick: onStart,
       primary: true,
     },
     {
-      eyebrow: 'Kütüphane',
       title: 'Çalıştıklarım',
-      description: 'Yüklediğin dosyaları sınıf, komite ve ders düzeninde görüntüle.',
-      action: 'Kütüphaneyi aç',
+      description: 'Yüklediğin dosyaları sınıf, komite ve ders düzeninde daha düzenli şekilde görüntüle.',
+      action: 'Dosyaları Aç',
       icon: 'ClipboardList',
       onClick: onOpenMyMaterials,
     },
     {
-      eyebrow: 'Hızlı tekrar',
       title: 'Hap Kartlar',
-      description: 'Oluşturulan kartları kısa, hedefli ve dengeli tekrar oturumlarına dönüştür.',
-      action: 'Kartları aç',
+      description: 'Oluşturulan kartlarla kısa, hedefli ve dengeli tekrar oturumları başlat.',
+      action: 'Kartları Aç',
       icon: 'LayeredCards',
       onClick: onOpenCards,
     },
     {
-      eyebrow: 'Takip',
       title: 'Tekrar Merkezi',
-      description: 'Yanlışların, zorlandığın kartlar ve tekrar listen tek yerde toplansın.',
-      action: 'Tekrarları gör',
+      description: 'Yanlışlarını, zorlandığın kartları ve tekrar listeni tek ekranda takip et.',
+      action: 'Tekrarları Gör',
       icon: 'RotateCcw',
       onClick: onOpenReview,
     },
@@ -1064,7 +1060,6 @@ function KomiteDashboard({ onStart, onOpenMyMaterials, onOpenCards, onOpenReview
         <button type="button" key={card.title} className={`komite-dashboard-card komite-dashboard-card-v60 ${card.primary ? 'primary' : ''}`} onClick={card.onClick}>
           <span className="komite-card-icon komite-card-icon-v60"><Icon name={card.icon} size={22} /></span>
           <span className="komite-dashboard-card-copy komite-dashboard-card-copy-v60">
-            <span className="komite-card-eyebrow-v60">{card.eyebrow}</span>
             <strong>{card.title}</strong>
             <p>{card.description}</p>
           </span>
@@ -1857,17 +1852,17 @@ export default function KomiteModeWorkspace({ currentUser }) {
             <aside className="home-action-panel-v10 tus-action-panel-redesign" aria-label="Ana çalışma aksiyonları">
               <div className="home-actions-v8 home-actions-v10 tus-actions-redesign">
                 <button type="button" className="btn btn-primary tus-primary-action-redesign" onClick={() => setView('start')}>
-                  <span className="tus-action-icon"><Icon name="ArrowRight" /></span>
+                  <span className="tus-action-icon"><Icon name="Sparkles" /></span>
                   <span>Ders Materyali Yükle</span>
                   <Icon name="ArrowRight" />
                 </button>
                 <button type="button" className="btn btn-secondary tus-secondary-action-redesign" onClick={() => setView('materials')}>
-                  <span className="tus-action-icon"><Icon name="Timer" /></span>
+                  <span className="tus-action-icon"><Icon name="ClipboardList" /></span>
                   <span>Tüm Çalıştıklarım</span>
                   <Icon name="ArrowRight" />
                 </button>
                 <button type="button" className="btn btn-secondary ai-hero-action tus-ai-action-redesign" onClick={() => setView('review')}>
-                  <span className="tus-action-icon"><Icon name="Sparkles" /></span>
+                  <span className="tus-action-icon"><Icon name="RotateCcw" /></span>
                   <span>Tekrar Merkezine Git</span>
                   <Icon name="ArrowRight" />
                 </button>

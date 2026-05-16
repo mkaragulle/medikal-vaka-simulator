@@ -87,11 +87,12 @@ function clampNumber(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
-function getMoreMenuPosition(triggerNode) {
+function getMoreMenuPosition(triggerNode, options = {}) {
   if (typeof window === 'undefined' || !triggerNode) {
-    return { placement: 'popover', top: 0, left: 0, width: 280 };
+    return { placement: 'popover', top: 0, left: 0, width: options.width || 280 };
   }
   const margin = 12;
+  const gap = options.gap ?? 8;
   const rect = triggerNode.getBoundingClientRect();
   const viewportWidth = window.innerWidth || document.documentElement.clientWidth || 1024;
   const viewportHeight = window.innerHeight || document.documentElement.clientHeight || 768;
@@ -106,13 +107,18 @@ function getMoreMenuPosition(triggerNode) {
     };
   }
 
-  const width = Math.min(300, Math.max(236, viewportWidth - margin * 2));
-  const left = clampNumber(rect.right - width, margin, Math.max(margin, viewportWidth - width - margin));
-  const estimatedHeight = 306;
-  const openBelowTop = rect.bottom + 8;
-  const openAboveTop = rect.top - estimatedHeight - 8;
-  const top = openBelowTop + estimatedHeight > viewportHeight - margin && openAboveTop > margin
-    ? openAboveTop
+  const maxAllowedWidth = Math.max(236, viewportWidth - margin * 2);
+  const preferredWidth = options.width || 300;
+  const width = Math.min(preferredWidth, maxAllowedWidth);
+  const align = options.align || 'end';
+  const preferredLeft = align === 'start' ? rect.left : rect.right - width;
+  const left = clampNumber(preferredLeft, margin, Math.max(margin, viewportWidth - width - margin));
+  const estimatedHeight = options.estimatedHeight || 236;
+  const openBelowTop = rect.bottom + gap;
+  const openAboveTop = rect.top - estimatedHeight - gap;
+  const shouldOpenAbove = !options.preferBelow && openBelowTop + estimatedHeight > viewportHeight - margin && openAboveTop > margin;
+  const top = shouldOpenAbove
+    ? clampNumber(openAboveTop, margin, viewportHeight - margin - 80)
     : clampNumber(openBelowTop, margin, viewportHeight - margin - 80);
 
   return { placement: 'popover', top, left, width };
@@ -147,7 +153,7 @@ function PearlStudyMoreMenu({
   const menuRef = useRef(null);
 
   const updatePosition = useCallback(() => {
-    setPosition(getMoreMenuPosition(triggerRef.current));
+    setPosition(getMoreMenuPosition(triggerRef.current, { align: 'start', width: 288, estimatedHeight: 184, preferBelow: true }));
   }, []);
 
   useLayoutEffect(() => {
@@ -161,10 +167,9 @@ function PearlStudyMoreMenu({
       const margin = 12;
       const menuRect = menuNode.getBoundingClientRect();
       if (menuRect.bottom > window.innerHeight - margin) {
-        const triggerRect = triggerNode.getBoundingClientRect();
         setPosition((current) => ({
           ...current,
-          top: Math.max(margin, triggerRect.top - menuRect.height - 8),
+          top: Math.max(margin, window.innerHeight - margin - menuRect.height),
         }));
       }
     });
@@ -275,8 +280,13 @@ function PearlStudyCatalogsMenu({
   const menuRef = useRef(null);
 
   const updatePosition = useCallback(() => {
-    setPosition(getMoreMenuPosition(triggerRef.current));
-  }, []);
+    setPosition(getMoreMenuPosition(triggerRef.current, {
+      align: 'start',
+      width: 288,
+      estimatedHeight: catalogs.length ? 172 + Math.min(catalogs.length, 4) * 54 : 172,
+      preferBelow: true,
+    }));
+  }, [catalogs.length]);
 
   useLayoutEffect(() => {
     if (!open) return undefined;
@@ -289,10 +299,9 @@ function PearlStudyCatalogsMenu({
       const margin = 12;
       const menuRect = menuNode.getBoundingClientRect();
       if (menuRect.bottom > window.innerHeight - margin) {
-        const triggerRect = triggerNode.getBoundingClientRect();
         setPosition((current) => ({
           ...current,
-          top: Math.max(margin, triggerRect.top - menuRect.height - 8),
+          top: Math.max(margin, window.innerHeight - margin - menuRect.height),
         }));
       }
     });

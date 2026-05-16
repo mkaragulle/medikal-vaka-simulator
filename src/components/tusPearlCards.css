@@ -9140,3 +9140,26 @@
     font-size: clamp(1.24rem, 1.8vw, 1.72rem) !important;
   }
 }
+
+
+/* V99 — Keep Hap Bilgi session popovers anchored to their buttons */
+.pearl-study-control-panel-v93 .pearl-study-more-panel.pearl-study-more-popover,
+.pearl-study-control-panel-v93 .pearl-study-more-popover {
+  position: fixed !important;
+  transform: none !important;
+  max-height: min(320px, calc(100dvh - 24px));
+  overflow-y: auto;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-more-panel > button {
+  min-height: 48px;
+  padding: 10px 12px;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-more-panel > button em {
+  display: none !important;
+}
+
+.pearl-study-control-panel-v93 .pearl-study-more-panel > button span {
+  gap: 0;
+}
