@@ -345,10 +345,8 @@ function AILoadingState({ progress }) {
       <div className="ai-generation-live-main">
         <span className="ai-generation-orb" aria-hidden="true"><Icon name="Sparkles" /></span>
         <div className="ai-generation-live-copy">
-          <span className="ai-generation-live-kicker">AI üretim süreci</span>
           <h2>Yeni TUS spot sorusu hazırlanıyor...</h2>
           <p>{stage.title}</p>
-          <small>{stage.detail}</small>
           <div className="ai-generation-progress-track" aria-hidden="true">
             <span style={{ width: `${progressPercent}%` }} />
           </div>
@@ -356,15 +354,9 @@ function AILoadingState({ progress }) {
       </div>
 
       <div className="ai-generation-live-side">
-        <div className="ai-generation-countdown ai-generation-countdown-live" aria-label={`Tahmini kalan süre ${etaLabel}`}>
-          <span>Tahmini kalan</span>
+        <div className="ai-generation-countdown ai-generation-countdown-live" aria-label={`Tahmini süre ${etaLabel}`}>
+          <span>Tahmini süre</span>
           <strong>{etaLabel}</strong>
-          <small>Önceki üretim sürelerine göre</small>
-        </div>
-        <div className="ai-generation-stage-list" aria-label="Üretim adımları">
-          {AI_LOADING_STAGES.slice(3).map((item) => (
-            <span key={item.min} className={elapsedSeconds >= item.min ? 'active' : ''}>{item.title.replace(/\.\.\.$/u, '')}</span>
-          ))}
         </div>
       </div>
     </section>
