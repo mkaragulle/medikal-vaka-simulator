@@ -1165,55 +1165,71 @@ function StartFlow({ onCreate, onCancel }) {
   };
 
   return (
-    <section className="komite-start-flow card-surface">
-      <div className="komite-section-head">
-        <div>
-          <span className="komite-kicker">Çalışmaya Başla</span>
+    <section className="komite-start-flow card-surface komite-upload-redesign">
+      <div className="komite-upload-hero">
+        <div className="komite-upload-hero-copy">
           <h2>Materyal yükle</h2>
-          <p>Komite slaytlarını ve ders notlarını yükle. KlinikIQ AI bu dosyalardan ders anlatımı, soru seti ve hap kartlar oluşturur.</p>
+          <p>Komite materyallerini ekle; KlinikIQ aynı içerikten ders anlatımı, soru seti ve hap kartlar oluştursun.</p>
         </div>
-        <button type="button" className="btn btn-secondary" onClick={onCancel}>Vazgeç</button>
+        <button type="button" className="btn btn-secondary komite-upload-cancel-top" onClick={onCancel}>Vazgeç</button>
       </div>
 
-      <form className="komite-start-form" onSubmit={submit}>
-        <label>
-          <span>Sınıf</span>
-          <select value={form.classYear} onChange={(event) => update('classYear', event.target.value)}>
-            {CLASS_YEARS.map((year) => <option key={year} value={year}>{year}. sınıf</option>)}
-          </select>
-        </label>
-        <label>
-          <span>Komite adı</span>
-          <input value={form.committee} onChange={(event) => update('committee', event.target.value)} placeholder="Örn. Nöroloji Komitesi" />
-        </label>
-        <label>
-          <span>Ders / konu</span>
-          <input value={form.course} onChange={(event) => update('course', event.target.value)} placeholder="Örn. Epilepsi, Kardiyak fizyoloji" />
-        </label>
-        <label>
-          <span>Çalışma hedefi</span>
-          <select value={form.learningTarget} onChange={(event) => update('learningTarget', event.target.value)}>
-            {LEARNING_TARGETS.map((target) => <option key={target} value={target}>{target}</option>)}
-          </select>
-        </label>
-        <label>
-          <span>Üniversite (opsiyonel)</span>
-          <input value={form.university} onChange={(event) => update('university', event.target.value)} placeholder="Örn. İstanbul Üniversitesi" />
-        </label>
+      <form className="komite-start-form komite-start-form-redesign" onSubmit={submit}>
+        <div className="komite-upload-grid">
+          <label className="komite-field-card">
+            <span>Sınıf</span>
+            <select value={form.classYear} onChange={(event) => update('classYear', event.target.value)}>
+              {CLASS_YEARS.map((year) => <option key={year} value={year}>{year}. sınıf</option>)}
+            </select>
+          </label>
+
+          <label className="komite-field-card">
+            <span>Komite adı</span>
+            <input value={form.committee} onChange={(event) => update('committee', event.target.value)} placeholder="Örn. Nöroloji Komitesi" />
+          </label>
+
+          <label className="komite-field-card">
+            <span>Ders / konu</span>
+            <input value={form.course} onChange={(event) => update('course', event.target.value)} placeholder="Örn. Epilepsi, Kardiyak fizyoloji" />
+          </label>
+
+          <label className="komite-field-card">
+            <span>Çalışma hedefi</span>
+            <select value={form.learningTarget} onChange={(event) => update('learningTarget', event.target.value)}>
+              {LEARNING_TARGETS.map((target) => <option key={target} value={target}>{target}</option>)}
+            </select>
+          </label>
+
+          <label className="komite-field-card komite-span-2">
+            <span>Üniversite (opsiyonel)</span>
+            <input value={form.university} onChange={(event) => update('university', event.target.value)} placeholder="Örn. İstanbul Üniversitesi" />
+          </label>
+        </div>
 
         <div
-          className={`komite-file-drop ${isDragOver ? 'drag-over' : ''}`}
+          className={`komite-file-drop komite-file-drop-redesign ${isDragOver ? 'drag-over' : ''}`}
           onDragOver={(event) => { event.preventDefault(); setIsDragOver(true); }}
           onDragLeave={() => setIsDragOver(false)}
           onDrop={(event) => { event.preventDefault(); setIsDragOver(false); handleFiles(event.dataTransfer.files); }}
         >
           <input id="komite-file-input" type="file" multiple accept=".pdf,.pptx,.docx,.txt" onChange={(event) => handleFiles(event.target.files)} />
-          <Icon name="Notes" size={24} />
-          <strong>Dosyalarını buraya sürükle veya seç</strong>
-          <small>PDF, PPTX, DOCX ve TXT dosyaları desteklenir. Aynı komiteye ait birden fazla dosya yükleyebilirsin.</small>
-          <label htmlFor="komite-file-input" className="komite-file-picker">Dosya seç</label>
-          {isExtracting ? <span className="komite-upload-status"><span className="komite-spinner" aria-hidden="true" /> Dosyalar okunuyor…</span> : null}
-          {!isExtracting && fileNotice ? <span className="komite-upload-status">{fileNotice}</span> : null}
+          <div className="komite-file-drop-content">
+            <div className="komite-file-drop-icon"><Icon name="Notes" size={26} /></div>
+            <div className="komite-file-drop-copy">
+              <strong>Dosyalarını ekle</strong>
+              <p>PDF, PPTX, DOCX ve TXT dosyalarını sürükle-bırak yapabilir veya dosya seçerek yükleyebilirsin.</p>
+              <div className="komite-file-drop-meta" aria-hidden="true">
+                <span>Çoklu dosya</span>
+                <span>Aynı komite altında toplanır</span>
+                <span>Otomatik metin çıkarımı</span>
+              </div>
+            </div>
+            <div className="komite-file-drop-actions">
+              <label htmlFor="komite-file-input" className="komite-file-picker">Dosya seç</label>
+              {isExtracting ? <span className="komite-upload-status"><span className="komite-spinner" aria-hidden="true" /> Dosyalar okunuyor…</span> : null}
+              {!isExtracting && fileNotice ? <span className="komite-upload-status">{fileNotice}</span> : <span className="komite-upload-status komite-upload-muted">Henüz dosya seçilmedi.</span>}
+            </div>
+          </div>
         </div>
 
         {selectedFiles.length ? (
@@ -1228,16 +1244,16 @@ function StartFlow({ onCreate, onCancel }) {
           </div>
         ) : null}
 
-        <label className="komite-textarea-label">
+        <label className="komite-textarea-label komite-notes-panel">
           <span>Ek ders notu</span>
-          <small>Slaytta okunmayan veya hocanın özellikle vurguladığı notları buraya ekleyebilirsin.</small>
-          <textarea value={form.pastedText} onChange={(event) => update('pastedText', event.target.value)} rows={5} placeholder="Örneğin hocanın vurguladığı noktalar, eksik kalan slayt metinleri veya sınavda sorulabilir dediği başlıklar…" />
+          <textarea value={form.pastedText} onChange={(event) => update('pastedText', event.target.value)} rows={5} placeholder="Örneğin hocanın vurguladığı noktalar, eksik kalan slayt içerikleri veya sınavda özellikle önemli olduğunu düşündüğün başlıklar…" />
         </label>
-        <div className="komite-form-actions">
+
+        <div className="komite-form-actions komite-upload-footer">
+          <button type="button" className="btn btn-secondary" onClick={onCancel}>Vazgeç</button>
           <button type="submit" className="btn btn-primary" disabled={isExtracting || (!selectedFiles.length && !form.pastedText.trim())}>
             <Icon name="Sparkles" /> Ders çalışma alanı oluştur
           </button>
-          <button type="button" className="btn btn-secondary" onClick={onCancel}>Vazgeç</button>
         </div>
       </form>
     </section>

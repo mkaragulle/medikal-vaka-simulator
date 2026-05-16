@@ -9163,3 +9163,65 @@
 .pearl-study-control-panel-v93 .pearl-study-more-panel > button span {
   gap: 0;
 }
+
+/* V101 — Simplify Hap Bilgi session popovers */
+.pearl-study-more-popover.pearl-study-other-panel,
+.pearl-study-more-popover.pearl-study-catalogs-panel {
+  position: fixed !important;
+  transform: none !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(15, 118, 110, 0.12) !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.14) !important;
+  backdrop-filter: blur(12px);
+}
+
+.pearl-study-more-popover.pearl-study-other-panel {
+  width: min(264px, calc(100vw - 24px)) !important;
+  padding: 8px !important;
+  max-height: min(220px, calc(100dvh - 24px)) !important;
+  overflow-y: auto !important;
+}
+
+.pearl-study-more-popover.pearl-study-catalogs-panel {
+  width: min(248px, calc(100vw - 24px)) !important;
+  padding: 8px !important;
+  max-height: min(190px, calc(100dvh - 24px)) !important;
+  overflow-y: auto !important;
+}
+
+.pearl-study-more-popover.pearl-study-other-panel > button,
+.pearl-study-more-popover.pearl-study-catalogs-panel > button {
+  min-height: 44px !important;
+  padding: 9px 10px !important;
+  border-radius: 15px !important;
+}
+
+.pearl-study-more-popover.pearl-study-other-panel > button span,
+.pearl-study-more-popover.pearl-study-catalogs-panel > button span {
+  gap: 0 !important;
+}
+
+.pearl-study-more-popover.pearl-study-other-panel > button strong,
+.pearl-study-more-popover.pearl-study-catalogs-panel > button strong {
+  font-size: 0.92rem !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.012em !important;
+}
+
+.pearl-study-more-popover.pearl-study-other-panel > button em,
+.pearl-study-more-popover.pearl-study-catalogs-panel > button em {
+  display: none !important;
+}
+
+.pearl-study-more-popover.pearl-study-other-panel .pearl-study-more-divider,
+.pearl-study-more-popover.pearl-study-catalogs-panel .pearl-study-more-divider {
+  margin: 3px 6px !important;
+}
+
+[data-theme='dark'] .pearl-study-more-popover.pearl-study-other-panel,
+[data-theme='dark'] .pearl-study-more-popover.pearl-study-catalogs-panel {
+  background: rgba(15, 23, 42, 0.96) !important;
+  border-color: rgba(94, 234, 212, 0.14) !important;
+  box-shadow: 0 18px 46px rgba(2, 6, 23, 0.36) !important;
+}

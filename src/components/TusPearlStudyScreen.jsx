@@ -153,7 +153,7 @@ function PearlStudyMoreMenu({
   const menuRef = useRef(null);
 
   const updatePosition = useCallback(() => {
-    setPosition(getMoreMenuPosition(triggerRef.current, { align: 'start', width: 288, estimatedHeight: 184, preferBelow: true }));
+    setPosition(getMoreMenuPosition(triggerRef.current, { align: 'start', width: 264, estimatedHeight: 156, preferBelow: true }));
   }, []);
 
   useLayoutEffect(() => {
@@ -212,7 +212,7 @@ function PearlStudyMoreMenu({
     <div
       ref={menuRef}
       id="pearl-study-more-menu"
-      className={`pearl-study-more-panel pearl-study-more-popover ${position.placement === 'sheet' ? 'mobile-sheet' : ''}`}
+      className={`pearl-study-more-panel pearl-study-more-popover pearl-study-other-panel ${position.placement === 'sheet' ? 'mobile-sheet' : ''}`}
       role="menu"
       aria-label="Diğer tekrar listeleri"
       style={position.placement === 'sheet'
@@ -222,7 +222,6 @@ function PearlStudyMoreMenu({
       <button type="button" role="menuitem" onClick={() => runAndClose(() => onOpenRepeatList('all'))}>
         <span>
           <strong>Tüm Kartları Gör</strong>
-          <em>Hazır ve kişisel tüm kart havuzuna dön.</em>
         </span>
         <Icon name="LayeredCards" size={15} />
       </button>
@@ -237,7 +236,6 @@ function PearlStudyMoreMenu({
         >
           <span>
             <strong>{getMoreMenuItemTitle(item)}</strong>
-            <em>{item.description}</em>
           </span>
           <Icon name={item.icon || 'LayeredCards'} size={15} />
         </button>
@@ -282,8 +280,8 @@ function PearlStudyCatalogsMenu({
   const updatePosition = useCallback(() => {
     setPosition(getMoreMenuPosition(triggerRef.current, {
       align: 'start',
-      width: 288,
-      estimatedHeight: catalogs.length ? 172 + Math.min(catalogs.length, 4) * 54 : 172,
+      width: 248,
+      estimatedHeight: catalogs.length ? 92 + Math.min(catalogs.length, 4) * 46 : 120,
       preferBelow: true,
     }));
   }, [catalogs.length]);
@@ -344,7 +342,7 @@ function PearlStudyCatalogsMenu({
     <div
       ref={menuRef}
       id="pearl-study-catalogs-menu"
-      className={`pearl-study-more-panel pearl-study-more-popover ${position.placement === 'sheet' ? 'mobile-sheet' : ''}`}
+      className={`pearl-study-more-panel pearl-study-more-popover pearl-study-catalogs-panel ${position.placement === 'sheet' ? 'mobile-sheet' : ''}`}
       role="menu"
       aria-label="Kataloglarım"
       style={position.placement === 'sheet'
