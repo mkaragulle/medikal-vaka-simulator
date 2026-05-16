@@ -183,7 +183,6 @@ function TusPearlCardEditor({
         <header className="pearl-editor-head pearl-editor-head-compact">
           <div className="pearl-editor-head-copy">
             <h2>{title}</h2>
-            <span>Hızlıca doldur, kaydet ve çalışmaya devam et.</span>
           </div>
           <button type="button" className="btn btn-icon quiet pearl-editor-close pearl-editor-close-compact" onClick={onClose} aria-label="Kart editörünü kapat">
             <Icon name="X" />

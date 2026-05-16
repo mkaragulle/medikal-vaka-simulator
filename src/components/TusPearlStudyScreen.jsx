@@ -787,44 +787,7 @@ function TusPearlStudyScreen({
           </button>
         </div>
       ) : (
-        <div className="pearl-study-compactbar card-surface" aria-label="Çalışma ekranı üst kontrolleri">
-          <nav className="pearl-study-tabs" aria-label="Ana tekrar listeleri">
-            {primaryRepeatItems.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={viewMode === 'study' && filter === item.filter ? 'active' : ''}
-                onClick={() => openRepeatList(item)}
-              >
-                <span>{item.shortLabel}</span>
-                <em>{item.count}</em>
-              </button>
-            ))}
-          </nav>
-
-          <div className="pearl-study-compact-actions">
-            <PearlStudyCatalogsMenu
-              catalogs={pearlState.customCatalogs}
-              activeCatalogId={activeCatalogId}
-              viewMode={viewMode}
-              onManageCatalogs={() => setViewMode('catalogs')}
-              onOpenCatalog={openCatalogForStudy}
-            />
-
-            <button type="button" className="btn btn-secondary compact pearl-reshuffle-button" onClick={() => rebuildStudySession(filteredCards)}>
-              <Icon name="RotateCcw" size={15} />
-              <span>Yeni sıra</span>
-            </button>
-
-            <PearlStudyMoreMenu
-              active={isSecondaryListActive}
-              filter={filter}
-              viewMode={viewMode}
-              items={secondaryRepeatItems}
-              onOpenRepeatList={openRepeatList}
-            />
-          </div>
-        </div>
+        null
       )}
 
       {viewMode === 'catalogs' ? (
@@ -972,8 +935,9 @@ function TusPearlStudyScreen({
           </section>
         </main>
       ) : (
-        <>
-          <main className="tus-pearl-study-main pearl-study-stage">
+        <div className="pearl-study-workspace-v92">
+          <section className="pearl-study-left-v92" aria-label="Kart çalışma alanı">
+            <main className="tus-pearl-study-main pearl-study-stage pearl-study-stage-v92">
             <button type="button" className="tus-pearl-side-nav pearl-study-nav-button" onClick={() => moveCard(-1)} aria-label="Önceki kart">‹</button>
 
             <div className="pearl-study-spotlight">
@@ -1042,9 +1006,50 @@ function TusPearlStudyScreen({
             </div>
 
             <button type="button" className="tus-pearl-side-nav pearl-study-nav-button" onClick={() => moveCard(1)} aria-label="Sonraki kart">›</button>
-          </main>
+            </main>
+          </section>
 
-          <footer className="tus-pearl-study-bottom card-surface pearl-study-decision-dock">
+          <aside className="pearl-study-right-v92 card-surface" aria-label="Hap kart çalışma paneli">
+            <div className="pearl-study-compactbar pearl-study-compactbar-v92" aria-label="Çalışma ekranı üst kontrolleri">
+          <nav className="pearl-study-tabs" aria-label="Ana tekrar listeleri">
+            {primaryRepeatItems.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={viewMode === 'study' && filter === item.filter ? 'active' : ''}
+                onClick={() => openRepeatList(item)}
+              >
+                <span>{item.shortLabel}</span>
+                <em>{item.count}</em>
+              </button>
+            ))}
+          </nav>
+
+              <div className="pearl-study-compact-actions">
+            <PearlStudyCatalogsMenu
+              catalogs={pearlState.customCatalogs}
+              activeCatalogId={activeCatalogId}
+              viewMode={viewMode}
+              onManageCatalogs={() => setViewMode('catalogs')}
+              onOpenCatalog={openCatalogForStudy}
+            />
+
+            <button type="button" className="btn btn-secondary compact pearl-reshuffle-button" onClick={() => rebuildStudySession(filteredCards)}>
+              <Icon name="RotateCcw" size={15} />
+              <span>Yeni sıra</span>
+            </button>
+
+            <PearlStudyMoreMenu
+              active={isSecondaryListActive}
+              filter={filter}
+              viewMode={viewMode}
+              items={secondaryRepeatItems}
+              onOpenRepeatList={openRepeatList}
+            />
+          </div>
+        </div>
+
+            <footer className="tus-pearl-study-bottom pearl-study-decision-dock pearl-study-decision-dock-v92">
             <div className="tus-pearl-study-primary-actions decision-actions">
               <button type="button" className={isKnown ? 'btn decision-btn known active' : 'btn decision-btn known'} onClick={() => handleLearningDecision('known')} disabled={!activeCard}>
                 <Icon name="CheckCircle" />
@@ -1110,8 +1115,9 @@ function TusPearlStudyScreen({
                 ) : null}
               </div>
             </div>
-          </footer>
-        </>
+            </footer>
+          </aside>
+        </div>
       )}
 
       <TusPearlCardEditor

@@ -7397,3 +7397,561 @@
     border-radius: 18px;
   }
 }
+
+/* ==========================================================
+   V91 — Pearl editor visibility, overlay, and footer fixes
+   ========================================================== */
+.pearl-editor-backdrop-balanced {
+  z-index: 2147483600 !important;
+  padding: calc(var(--kiq-page-pad-top, 92px) + 10px) 24px 18px;
+  background: rgba(2, 6, 23, 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.pearl-editor-modal-balanced {
+  display: flex;
+  flex-direction: column;
+  width: min(100%, 1120px);
+  max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 28px);
+  border-radius: 28px;
+}
+
+.pearl-editor-head-compact {
+  padding: 16px 20px 10px;
+}
+
+.pearl-editor-head-compact .pearl-editor-head-copy {
+  min-width: 0;
+}
+
+.pearl-editor-form-compact {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 10px 20px 18px;
+}
+
+.pearl-editor-primary-grid-compact {
+  grid-template-columns: minmax(0, 1.03fr) minmax(0, 0.97fr);
+  gap: 14px;
+}
+
+.pearl-editor-primary-stack-compact {
+  gap: 14px;
+}
+
+.pearl-editor-panel-compact-xl,
+.pearl-editor-panel-sm,
+.pearl-editor-select-panel,
+.pearl-editor-advanced-launch {
+  padding: 12px;
+  border-radius: 20px;
+}
+
+.pearl-editor-panel-compact-xl {
+  min-height: 286px;
+}
+
+.pearl-editor-panel-sm {
+  min-height: 132px;
+}
+
+.pearl-editor-panel-compact-xl textarea {
+  min-height: 178px;
+}
+
+.pearl-editor-panel-sm textarea {
+  min-height: 84px;
+}
+
+.pearl-editor-meta-row-balanced {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 230px;
+  gap: 12px;
+}
+
+.pearl-editor-select-panel select {
+  min-height: 58px;
+}
+
+.pearl-editor-advanced-launch {
+  min-height: 100%;
+}
+
+.pearl-editor-actions-balanced {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 12px 0 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.14);
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.96) 28%);
+}
+
+.pearl-editor-actions-balanced .btn {
+  min-height: 46px;
+  padding-inline: 18px;
+  border-radius: 16px;
+}
+
+.pearl-editor-secondary-backdrop {
+  inset: 0;
+  z-index: 2147483650 !important;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: calc(var(--kiq-page-pad-top, 92px) + 18px) 24px 18px;
+  background: rgba(2, 6, 23, 0.66);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.pearl-editor-secondary-modal {
+  width: min(100%, 988px);
+  max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 36px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border-radius: 26px;
+}
+
+.pearl-editor-secondary-head {
+  padding: 18px 22px 12px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.pearl-editor-secondary-head p {
+  margin-top: 4px;
+}
+
+.pearl-editor-advanced-grid-popup {
+  gap: 12px 14px;
+  padding: 14px 22px 14px;
+}
+
+.pearl-editor-secondary-actions {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 14px 22px 18px;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.98) 30%);
+}
+
+.pearl-editor-secondary-actions .btn {
+  min-height: 46px;
+  padding-inline: 18px;
+  border-radius: 16px;
+}
+
+[data-theme='dark'] .pearl-editor-backdrop-balanced {
+  background: rgba(2, 6, 23, 0.76);
+}
+
+[data-theme='dark'] .pearl-editor-secondary-backdrop {
+  background: rgba(2, 6, 23, 0.8);
+}
+
+@media (max-width: 980px) {
+  .pearl-editor-modal-balanced {
+    width: min(100%, 980px);
+  }
+
+  .pearl-editor-panel-compact-xl {
+    min-height: 250px;
+  }
+
+  .pearl-editor-panel-compact-xl textarea {
+    min-height: 152px;
+  }
+
+  .pearl-editor-panel-sm {
+    min-height: 122px;
+  }
+}
+
+@media (max-width: 860px) {
+  .pearl-editor-modal-balanced,
+  .pearl-editor-secondary-modal {
+    max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 22px);
+    overflow: auto;
+  }
+
+  .pearl-editor-form-compact {
+    overflow: visible;
+  }
+
+  .pearl-editor-meta-row-balanced,
+  .pearl-editor-advanced-grid-popup {
+    grid-template-columns: 1fr;
+  }
+
+  .pearl-editor-advanced-launch {
+    min-height: 72px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pearl-editor-backdrop-balanced,
+  .pearl-editor-secondary-backdrop {
+    padding: calc(var(--kiq-page-pad-top, 92px) + 8px) 10px 10px;
+  }
+
+  .pearl-editor-head-compact,
+  .pearl-editor-secondary-head {
+    padding-inline: 14px;
+  }
+
+  .pearl-editor-form-compact,
+  .pearl-editor-advanced-grid-popup,
+  .pearl-editor-secondary-actions {
+    padding-inline: 14px;
+  }
+
+  .pearl-editor-panel-compact-xl,
+  .pearl-editor-panel-sm,
+  .pearl-editor-select-panel,
+  .pearl-editor-advanced-launch {
+    padding: 12px;
+    border-radius: 18px;
+  }
+}
+
+/* ==========================================================
+   V92 — Hap Bilgi Çalış two-panel workspace redesign
+   Purpose: match the new mockup with left flashcard stage and
+   right no-scroll control cockpit.
+   ========================================================== */
+.tus-pearl-study-shell:has(.pearl-study-workspace-v92) {
+  padding-bottom: 28px;
+}
+
+.pearl-study-workspace-v92 {
+  width: min(100%, 1540px);
+  margin: clamp(18px, 2.2vw, 28px) auto 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1.48fr) minmax(420px, 0.92fr);
+  gap: clamp(18px, 2vw, 26px);
+  align-items: stretch;
+}
+
+.pearl-study-left-v92,
+.pearl-study-right-v92 {
+  min-height: clamp(560px, calc(100dvh - var(--kiq-page-pad-top, 92px) - 250px), 720px);
+}
+
+.pearl-study-left-v92 {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  overflow: visible;
+  border-radius: 34px;
+  border: 1px solid rgba(15, 118, 110, 0.08);
+  background:
+    radial-gradient(circle at 50% 4%, rgba(20, 184, 166, 0.08), transparent 36%),
+    linear-gradient(180deg, rgba(255,255,255,0.54), rgba(248,251,251,0.30));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.62);
+}
+
+.tus-pearl-study-main.pearl-study-stage-v92 {
+  width: 100%;
+  height: 100%;
+  min-height: unset;
+  margin: 0;
+  padding: clamp(18px, 2.2vw, 28px);
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr) 64px;
+  gap: clamp(14px, 1.5vw, 22px);
+  align-items: center;
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight {
+  min-height: 100%;
+  padding: 0;
+}
+
+.pearl-study-stage-v92 .pearl-study-spotlight::before {
+  display: none;
+}
+
+.pearl-study-stage-v92 .tus-pearl-side-nav.pearl-study-nav-button {
+  position: static !important;
+  transform: none !important;
+  align-self: center;
+  justify-self: center;
+  z-index: 4;
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(245,250,249,0.94));
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.10);
+}
+
+.pearl-study-stage-v92 .pearl-study-premium-card {
+  width: min(100%, 760px);
+  min-height: clamp(430px, 53vh, 560px);
+  border-radius: 36px;
+}
+
+.pearl-study-stage-v92 .pearl-card-face {
+  padding: clamp(26px, 4vw, 44px);
+}
+
+.pearl-study-stage-v92 .pearl-card-question-block > strong,
+.pearl-study-stage-v92 .tus-pearl-focus-face.pearl-card-face > strong {
+  font-size: clamp(1.85rem, 3vw, 2.95rem);
+  line-height: 1.15;
+  letter-spacing: -0.04em;
+}
+
+.pearl-study-right-v92 {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(16px, 1.8vw, 22px);
+  border-radius: 34px;
+  overflow: visible;
+  background:
+    radial-gradient(circle at top right, rgba(20, 184, 166, 0.08), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(249,251,251,0.94));
+  border-color: rgba(15, 118, 110, 0.08);
+  box-shadow: 0 24px 72px rgba(15, 23, 42, 0.10);
+}
+
+.pearl-study-right-v92 .pearl-study-compactbar-v92 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pearl-study-right-v92 .pearl-study-tabs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.pearl-study-right-v92 .pearl-study-tabs > button {
+  width: 100%;
+  min-height: 78px;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(15, 118, 110, 0.10);
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(248,251,251,0.88));
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.045), inset 0 1px 0 rgba(255,255,255,0.70);
+}
+
+.pearl-study-right-v92 .pearl-study-tabs > button.active {
+  background: linear-gradient(135deg, rgba(15, 118, 110, 0.10), rgba(20,184,166,0.10));
+  border-color: rgba(15, 118, 110, 0.18);
+}
+
+.pearl-study-right-v92 .pearl-study-tabs > button > span {
+  font-size: 0.98rem;
+  font-weight: 850;
+  color: var(--text-primary, #0f172a);
+}
+
+.pearl-study-right-v92 .pearl-study-tabs > button > em {
+  min-width: 38px;
+  height: 34px;
+  border-radius: 999px;
+  font-size: 0.86rem;
+  background: rgba(15, 118, 110, 0.10);
+  color: #0f766e;
+}
+
+.pearl-study-right-v92 .pearl-study-compact-actions {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 0.9fr;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.pearl-study-right-v92 .pearl-study-compact-actions::before {
+  display: none;
+}
+
+.pearl-study-right-v92 .pearl-study-more-menu,
+.pearl-study-right-v92 .pearl-study-more-trigger,
+.pearl-study-right-v92 .pearl-reshuffle-button {
+  width: 100%;
+}
+
+.pearl-study-right-v92 .pearl-study-more-trigger,
+.pearl-study-right-v92 .pearl-reshuffle-button {
+  min-height: 58px;
+  padding-inline: 14px;
+  border-radius: 18px;
+  font-size: 0.94rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92));
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.045);
+}
+
+.pearl-study-right-v92 .pearl-study-decision-dock-v92 {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pearl-study-right-v92 .pearl-study-secondary-wrap {
+  order: 1;
+  width: 100%;
+}
+
+.pearl-study-right-v92 .tus-pearl-study-secondary-actions.pearl-study-secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pearl-study-right-v92 .tus-pearl-study-secondary-actions.pearl-study-secondary-grid > button,
+.pearl-study-right-v92 .tus-pearl-study-secondary-actions.pearl-study-secondary-grid .pearl-catalog-popover-wrap > button {
+  width: 100%;
+  min-height: 74px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(15, 118, 110, 0.09);
+  background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(248,251,251,0.90));
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.045);
+}
+
+.pearl-study-right-v92 .pearl-catalog-popover-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+.pearl-study-right-v92 .decision-actions {
+  order: 2;
+  width: 100%;
+  margin-top: auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.pearl-study-right-v92 .decision-actions .decision-btn {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  min-height: 92px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 22px;
+  padding: 14px 10px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(248,250,252,0.92));
+}
+
+.pearl-study-right-v92 .decision-actions .decision-btn.known.active,
+.pearl-study-right-v92 .decision-actions .decision-btn.known:hover {
+  background: linear-gradient(180deg, rgba(236, 253, 245, 0.98), rgba(220, 252, 231, 0.92));
+  border-color: rgba(20, 184, 166, 0.18);
+}
+
+.pearl-study-right-v92 .decision-actions .decision-btn.review.active,
+.pearl-study-right-v92 .decision-actions .decision-btn.review:hover {
+  background: linear-gradient(180deg, rgba(239,246,255,0.98), rgba(219,234,254,0.92));
+  border-color: rgba(59, 130, 246, 0.16);
+}
+
+.pearl-study-right-v92 .decision-actions .decision-btn.wrong.active,
+.pearl-study-right-v92 .decision-actions .decision-btn.wrong:hover {
+  background: linear-gradient(180deg, rgba(254,242,242,0.98), rgba(254,226,226,0.92));
+  border-color: rgba(239, 68, 68, 0.18);
+}
+
+[data-theme='dark'] .pearl-study-left-v92,
+[data-theme='dark'] .pearl-study-right-v92 {
+  background: linear-gradient(180deg, rgba(15,23,42,0.96), rgba(8,15,26,0.94));
+  border-color: rgba(94, 234, 212, 0.12);
+}
+
+[data-theme='dark'] .pearl-study-right-v92 .pearl-study-tabs > button,
+[data-theme='dark'] .pearl-study-right-v92 .pearl-study-more-trigger,
+[data-theme='dark'] .pearl-study-right-v92 .pearl-reshuffle-button,
+[data-theme='dark'] .pearl-study-right-v92 .tus-pearl-study-secondary-actions.pearl-study-secondary-grid > button,
+[data-theme='dark'] .pearl-study-right-v92 .tus-pearl-study-secondary-actions.pearl-study-secondary-grid .pearl-catalog-popover-wrap > button,
+[data-theme='dark'] .pearl-study-right-v92 .decision-actions .decision-btn {
+  background: rgba(15,23,42,0.70);
+  border-color: rgba(94, 234, 212, 0.12);
+  color: #f8fafc;
+}
+
+@media (max-width: 1220px) {
+  .pearl-study-workspace-v92 {
+    grid-template-columns: 1fr;
+    max-height: none;
+  }
+
+  .pearl-study-left-v92,
+  .pearl-study-right-v92 {
+    min-height: unset;
+  }
+
+  .pearl-study-stage-v92 .pearl-study-premium-card {
+    min-height: 430px;
+  }
+
+  .pearl-study-right-v92 .pearl-study-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .tus-pearl-study-main.pearl-study-stage-v92 {
+    grid-template-columns: 1fr;
+    padding: 14px;
+  }
+
+  .pearl-study-stage-v92 .tus-pearl-side-nav.pearl-study-nav-button {
+    display: none;
+  }
+
+  .pearl-study-right-v92 .pearl-study-tabs,
+  .pearl-study-right-v92 .pearl-study-compact-actions,
+  .pearl-study-right-v92 .tus-pearl-study-secondary-actions.pearl-study-secondary-grid,
+  .pearl-study-right-v92 .decision-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .pearl-study-right-v92 .decision-actions .decision-btn {
+    min-height: 64px;
+    flex-direction: row;
+  }
+}
