@@ -1091,9 +1091,8 @@ function App() {
         )}
 
         <div className="nav-actions global-nav-actions-v55" aria-label="Oturum eylemleri">
-          <span className="nav-user-chip nav-user-card" aria-label={`Kullanıcı ${currentUser.name}`} title={currentUser.name}>
+          <span className="nav-user-chip nav-user-card nav-user-icon-only" aria-label={`Kullanıcı ${currentUser.name}`} title={currentUser.name}>
             <Icon name="User" />
-            <span className="nav-user-name">{currentUser.name}</span>
           </span>
           <button
             type="button"
@@ -1127,9 +1126,8 @@ function App() {
             <span>Puan</span>
             <strong>{sessionStats.score}</strong>
           </span>
-          <button type="button" className="btn btn-primary nav-cta" onClick={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')} title={isDemoUser ? 'Demo blok başlat' : 'Blok sınav başlat'} aria-label={isDemoUser ? 'Demo blok başlat' : 'Blok sınav başlat'}>
+          <button type="button" className="btn btn-primary btn-icon nav-cta nav-cta-icon-only" onClick={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')} title={isDemoUser ? 'Demo blok başlat' : 'Blok sınav başlat'} aria-label={isDemoUser ? 'Demo blok başlat' : 'Blok sınav başlat'}>
             <Icon name="Timer" />
-            <span>{isDemoUser ? 'Demo blok' : 'Blok sınav'}</span>
           </button>
           <ThemeToggle
             theme={theme}

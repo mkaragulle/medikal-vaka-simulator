@@ -26,6 +26,62 @@ function normalizeDisplayNumber(raw = '') {
   return Number.isInteger(value) ? String(value) : String(value).replace(/\.0$/u, '');
 }
 
+function toTurkishTitleCase(text = '') {
+  const lower = String(text || '').trim().toLocaleLowerCase('tr');
+  if (!lower) return '';
+
+  return lower
+    .split(/(\s+|\/|\-|\(|\))/u)
+    .map((token) => {
+      if (!token || /^(\s+|\/|\-|\(|\))$/u.test(token)) return token;
+      return token.charAt(0).toLocaleUpperCase('tr') + token.slice(1);
+    })
+    .join('');
+}
+
+function formatAISpotDataLabel(label = '') {
+  const rawLabel = String(label || '').trim();
+  if (!rawLabel) return 'Veri';
+
+  const normalized = rawLabel
+    .replace(/_/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const key = normalized.toLocaleLowerCase('tr');
+
+  if (/^(ta|tansiyon|kan basıncı|kan basinçi|kan basinci)$/iu.test(normalized)) return 'TA';
+  if (/^(spo2|spo₂|oksijen satürasyonu|satürasyon)$/iu.test(normalized)) return 'SpO₂';
+  if (/^(ph)$/iu.test(normalized)) return 'pH';
+  if (/^(wbc)$/iu.test(normalized)) return 'WBC';
+  if (/^(crp)$/iu.test(normalized)) return 'CRP';
+  if (/^(alt|ast|alp|ggt|tsh|bt|pt|inr|hb)$/iu.test(normalized)) return normalized.toLocaleUpperCase('tr');
+  if (/^(gks)$/iu.test(normalized)) return 'GKS';
+  if (/^(glaskow|glasgow)$/iu.test(key)) return 'Glasgow';
+  if (/^(yaşına göre|yasina gore)$/iu.test(key)) return 'Yaşına Göre';
+  if (/^(kalp hızı)$/iu.test(key)) return 'Kalp Hızı';
+
+  return toTurkishTitleCase(normalized);
+}
+
+function formatAISpotGroupTitle(title = '') {
+  const normalized = String(title || '')
+    .replace(/_/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const key = normalized.toLocaleLowerCase('tr');
+
+  if (/vital/iu.test(normalized)) return 'Vital Bulgular';
+  if (/laboratuvar/iu.test(normalized) || /lab\b/iu.test(normalized)) return 'Laboratuvar Verileri';
+  if (/muayene/iu.test(normalized)) return 'Fizik Muayene';
+  if (/görüntüleme|goruntuleme|radyoloji/iu.test(normalized)) return 'Görüntüleme';
+  if (/mikrobiyoloji/iu.test(normalized)) return 'Mikrobiyoloji';
+  if (/patoloji/iu.test(normalized)) return 'Patoloji';
+  if (/ek veri|objektif|destek/iu.test(normalized)) return 'Destekleyici Veriler';
+  if (/yaşına göre|yasina gore/iu.test(key)) return 'Yaşına Göre';
+
+  return toTurkishTitleCase(normalized);
+}
+
 function formatAISpotDataValue(label = '', value = '') {
   const rawLabel = String(label || '').trim();
   let rawValue = String(value || '').trim();
@@ -98,19 +154,22 @@ function AISpotMetaBadge({ icon, children, tone = 'teal' }) {
 
 function CompactDataGroup({ title, items = [] }) {
   if (!items.length) return null;
+  const displayTitle = formatAISpotGroupTitle(title);
+
   return (
-    <div className="ai-spot-compact-data-group" aria-label={title}>
-      <div className="ai-spot-compact-data-title">{title}</div>
+    <div className="ai-spot-compact-data-group" aria-label={displayTitle}>
+      <div className="ai-spot-compact-data-title">{displayTitle}</div>
       <div className="ai-spot-compact-data-grid">
         {items.map((item, index) => {
-          const label = String(item.label || '');
+          const label = formatAISpotDataLabel(item.label || '');
           const formatted = formatAISpotDataValue(label, item.value || '');
           const value = formatted.value;
-          const qualityClass = formatted.quality === 'completed' ? 'unit-completed' : '';
+          const isLong = value.length > 32 || label.length > 18;
+          const qualityClass = [formatted.quality === 'completed' ? 'unit-completed' : '', isLong ? 'is-long' : ''].filter(Boolean).join(' ');
           return (
             <div
               className={`ai-spot-compact-data-item ${qualityClass}`.trim()}
-              key={`${title}-${label}-${index}`}
+              key={`${displayTitle}-${label}-${index}`}
               title={`${label}: ${value}`}
             >
               <span>{label}</span>

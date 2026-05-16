@@ -43939,3 +43939,282 @@ body:not(.klinikiq-auth-lock) .global-topbar-v55 .nav-actions .btn span {
     gap: 6px !important;
   }
 }
+
+/* V112 — Remove visible user name and block exam text from global topbar */
+.global-nav-actions-v55 .nav-user-chip.nav-user-icon-only,
+.global-nav-actions-v55 .nav-cta.nav-cta-icon-only {
+  width: 48px !important;
+  min-width: 48px !important;
+  max-width: 48px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0 !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+}
+
+.global-nav-actions-v55 .nav-user-chip.nav-user-icon-only > svg,
+.global-nav-actions-v55 .nav-cta.nav-cta-icon-only > svg {
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 18px !important;
+  display: block !important;
+  margin: 0 !important;
+}
+
+.global-nav-actions-v55 .nav-user-chip.nav-user-icon-only .nav-user-name,
+.global-nav-actions-v55 .nav-cta.nav-cta-icon-only span {
+  display: none !important;
+}
+
+/* =========================================================
+   KlinikIQ V113 — TUS AI right control panel alignment
+   Purpose: remove the unnecessary empty area on the right side
+   of the Yeni TUS Sorusu Üret control card and make all controls
+   fill the panel edge-to-edge in a balanced way.
+   ========================================================= */
+.ai-practice-hero.card-surface {
+  grid-template-columns: minmax(0, 1fr) minmax(500px, 560px) !important;
+  gap: clamp(30px, 4.5vw, 72px) !important;
+}
+
+.ai-practice-hero.card-surface .ai-practice-actions.ai-practice-actions-pro {
+  justify-self: end !important;
+  align-self: center !important;
+  width: min(560px, 100%) !important;
+  max-width: 560px !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  padding: 16px !important;
+  gap: 12px !important;
+}
+
+.ai-practice-hero.card-surface .ai-practice-actions-pro .ai-practice-filter-grid {
+  width: 100% !important;
+  grid-template-columns: minmax(0, 1.42fr) minmax(150px, .78fr) !important;
+  gap: 10px !important;
+}
+
+.ai-practice-hero.card-surface .ai-practice-actions-pro .ai-practice-button-row {
+  width: 100% !important;
+  grid-template-columns: minmax(0, .92fr) minmax(0, 1.18fr) !important;
+  gap: 10px !important;
+}
+
+.ai-practice-hero.card-surface .ai-practice-actions-pro .ai-practice-button-row .btn,
+.ai-practice-hero.card-surface .ai-practice-actions-pro .ai-compact-dropdown-trigger {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.ai-practice-hero.card-surface .ai-practice-actions-pro .ai-spot-dashboard-btn,
+.ai-practice-hero.card-surface .ai-practice-actions-pro .ai-spot-generate-btn,
+.ai-practice-hero.card-surface .ai-practice-actions-pro .ai-generate-cta {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+@media (min-width: 1440px) {
+  .ai-practice-hero.card-surface {
+    grid-template-columns: minmax(0, 1fr) 560px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  .ai-practice-hero.card-surface {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ai-practice-hero.card-surface .ai-practice-actions.ai-practice-actions-pro {
+    justify-self: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .ai-practice-hero.card-surface .ai-practice-actions-pro .ai-practice-filter-grid,
+  .ai-practice-hero.card-surface .ai-practice-actions-pro .ai-practice-button-row {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* =========================================================
+   KLINIKIQ V114 — AI generated question layout and right-rail cleanup
+   - Uses the empty right side by widening the answer area
+   - Converts options into a compact 2-column desktop grid
+   - Simplifies the support-data rail and normalizes label/title rhythm
+   ========================================================= */
+.ai-spot-narrative-content-grid.has-support-data {
+  grid-template-columns: minmax(0, 1.72fr) minmax(280px, 0.92fr) !important;
+  gap: clamp(16px, 2.2vw, 24px) !important;
+  align-items: start !important;
+}
+
+.ai-spot-support-data-panel {
+  display: grid !important;
+  gap: 12px !important;
+  align-self: start !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-group {
+  padding: 16px !important;
+  border-radius: 22px !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(248,250,252,0.82)) !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.035) !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-title {
+  margin-bottom: 10px !important;
+  color: #0f766e !important;
+  font-size: 12px !important;
+  line-height: 1.2 !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+  text-transform: none !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-title::before {
+  width: 8px !important;
+  height: 8px !important;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--accent, #14b8a6) 10%, transparent) !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-grid {
+  gap: 9px !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed {
+  padding: 12px 14px !important;
+  border-radius: 15px !important;
+  background: rgba(248, 250, 252, 0.95) !important;
+  border: 1px solid rgba(226, 232, 240, 0.92) !important;
+  box-shadow: none !important;
+  gap: 6px !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item span,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long span {
+  color: #64748b !important;
+  font-size: 11px !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+}
+
+.ai-spot-support-data-panel .ai-spot-compact-data-item strong,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.is-long strong,
+.ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed strong {
+  color: #0f172a !important;
+  font-size: 15.5px !important;
+  line-height: 1.35 !important;
+  font-weight: 830 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.ai-spot-answer-flow .question-panel.diagnostic-decision-panel,
+.ai-spot-answer-flow .question-panel-head.diagnostic-head,
+.ai-spot-answer-flow .ai-spot-inline-question-stem,
+.ai-spot-answer-flow .quiz-actions,
+.ai-spot-answer-flow .answer-feedback-panel,
+.ai-spot-answer-flow .answer-feedback-panel-pro,
+.ai-spot-answer-flow .answer-feedback-summary,
+.ai-spot-answer-flow .answer-feedback-grid,
+.ai-spot-answer-flow .answer-feedback-grid-pro,
+.ai-spot-answer-flow .feedback-card,
+.ai-spot-answer-flow .diagnosis-compare-list,
+.ai-spot-answer-flow .diagnosis-compare-item,
+.ai-spot-answer-flow .option-comparison-item,
+.ai-spot-answer-flow .exam-feedback-compact,
+.ai-spot-answer-flow .feedback {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.ai-spot-answer-flow .option-grid {
+  width: 100% !important;
+  max-width: none !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+
+.ai-spot-answer-flow .option-grid > .answer-option:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+.ai-spot-answer-flow .answer-option {
+  min-height: 72px !important;
+  padding: 14px 16px !important;
+  border-radius: 18px !important;
+}
+
+.ai-spot-answer-flow .answer-option .answer-title {
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+}
+
+.ai-spot-answer-flow .quiz-actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+
+.ai-spot-answer-flow .quiz-actions .btn {
+  width: 100% !important;
+  min-height: 50px !important;
+}
+
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-group,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-group {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.76), rgba(8, 13, 26, 0.7)) !important;
+  border-color: rgba(148, 163, 184, 0.15) !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18) !important;
+}
+
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-title,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-title {
+  color: #5eead4 !important;
+}
+
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item,
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.is-long,
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.is-long,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed {
+  background: rgba(2, 6, 23, 0.38) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+}
+
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item strong,
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.is-long strong,
+html[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed strong,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item strong,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.is-long strong,
+.app-shell[data-theme="dark"] .ai-spot-support-data-panel .ai-spot-compact-data-item.unit-completed strong {
+  color: #e5edf6 !important;
+}
+
+@media (max-width: 1024px) {
+  .ai-spot-answer-flow .option-grid,
+  .ai-spot-answer-flow .quiz-actions {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .ai-spot-narrative-content-grid.has-support-data {
+    grid-template-columns: 1fr !important;
+  }
+}
