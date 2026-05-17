@@ -79,6 +79,7 @@ function polishPearlMedicalTerminology(value = '') {
     .replace(/\bV\.\s*cholerae\b/gu, 'Vibrio cholerae')
     .replace(/\bLikefaksiyon\s+nekrozu\b/giu, 'Sıvılaşma nekrozu')
     .replace(/\bRed\s+man\/sendromu\b/giu, 'kızarma (red man) sendromu')
+    .replace(/\s*→\s*/g, ', ')
     .replace(/\s+/g, ' ')
     .trim();
 }
