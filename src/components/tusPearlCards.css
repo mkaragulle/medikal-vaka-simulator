@@ -9533,3 +9533,219 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   background: rgba(15, 23, 42, 0.58);
   color: rgba(226, 232, 240, 0.72);
 }
+
+/* ==========================================================
+   V132 — Hap Bilgi Çalış viewport fit refinement
+   Goal: keep Biliyorum / Tekrar et / Zorlandım visible while
+   restoring comfortable right-panel row height.
+   ========================================================== */
+@media (min-width: 981px) {
+  body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
+    overflow-y: hidden !important;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    grid-template-rows: 52px minmax(0, 1fr) !important;
+    gap: 7px !important;
+    padding-top: calc(var(--kiq-page-pad-top, 92px) + 5px) !important;
+    padding-bottom: 8px !important;
+    overflow: hidden !important;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top {
+    height: 52px !important;
+    min-height: 52px !important;
+    padding-block: 5px !important;
+  }
+
+  .pearl-study-workspace-v92:has(.pearl-study-control-panel-v93) {
+    height: 100% !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    align-items: stretch !important;
+  }
+
+  .tus-pearl-study-main.pearl-study-stage-v92:has(.pearl-study-answer-dock-v93) {
+    padding: 8px !important;
+    grid-template-columns: 44px minmax(0, 1fr) 44px !important;
+    gap: 8px !important;
+    overflow: hidden !important;
+  }
+
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) {
+    height: 100% !important;
+    min-height: 0 !important;
+    justify-content: flex-start !important;
+    padding-top: 0 !important;
+    gap: 9px !important;
+    overflow: hidden !important;
+  }
+
+  .tus-pearl-focus-card.pearl-study-premium-card,
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .tus-pearl-focus-card,
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-study-premium-card {
+    flex: 1 1 auto !important;
+    height: min(500px, calc(100% - 68px)) !important;
+    min-height: 0 !important;
+    max-height: min(500px, calc(100% - 68px)) !important;
+    border-radius: 28px !important;
+  }
+
+  .tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-focus-flip,
+  .tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-focus-face,
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .tus-pearl-focus-flip,
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .tus-pearl-focus-face {
+    min-height: 0 !important;
+    height: 100% !important;
+  }
+
+  .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-card-face {
+    padding: clamp(14px, 2vw, 24px) !important;
+  }
+
+  .pearl-study-answer-dock-v93 {
+    flex: 0 0 56px !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    padding: 7px !important;
+    gap: 8px !important;
+    margin-top: 0 !important;
+    border-radius: 20px !important;
+    overflow: visible !important;
+  }
+
+  .pearl-study-answer-dock-v93 .decision-btn {
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 0 12px !important;
+    border-radius: 14px !important;
+    font-size: 0.86rem !important;
+  }
+
+  .pearl-study-right-v92.pearl-study-control-panel-v93 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    padding: 10px !important;
+    overflow: hidden !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-control-section-v93 {
+    flex: 0 0 auto !important;
+    padding: 8px !important;
+    border-radius: 19px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-section-v93 {
+    flex: 0 0 auto !important;
+    min-height: 0 !important;
+  }
+
+  .pearl-study-section-title-v93 {
+    min-height: 19px !important;
+    margin-bottom: 6px !important;
+    gap: 7px !important;
+    font-size: 0.83rem !important;
+    line-height: 1 !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 {
+    gap: 6px !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button {
+    min-height: 46px !important;
+    grid-template-columns: 32px minmax(0, 1fr) auto !important;
+    gap: 10px !important;
+    padding: 7px 10px !important;
+    border-radius: 16px !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button > svg,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button > svg,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button > svg,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button > svg {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 8px !important;
+    border-radius: 12px !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button strong,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button strong {
+    font-size: 0.91rem !important;
+    line-height: 1.1 !important;
+  }
+
+  .pearl-study-row-list-v97.pearl-study-tabs > button > em,
+  .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button > em {
+    min-width: 36px !important;
+    height: 27px !important;
+    padding-inline: 8px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 {
+    grid-template-columns: minmax(0, 1fr) minmax(106px, 0.82fr) minmax(92px, 0.72fr) !important;
+    gap: 7px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-more-trigger,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-reshuffle-button,
+  .pearl-study-control-panel-v93 .pearl-study-session-actions-v93 .pearl-study-catalogs-trigger {
+    min-height: 42px !important;
+    height: 42px !important;
+    border-radius: 15px !important;
+    padding-inline: 10px !important;
+    font-size: 0.84rem !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button {
+    min-height: 46px !important;
+    grid-template-columns: 32px minmax(0, 1fr) !important;
+    gap: 10px !important;
+    padding: 7px 10px !important;
+    border-radius: 16px !important;
+  }
+
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button strong,
+  .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button strong {
+    font-size: 0.9rem !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  @media (max-height: 820px) {
+    .tus-pearl-focus-card.pearl-study-premium-card,
+    .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .tus-pearl-focus-card,
+    .pearl-study-stage-v92 .pearl-study-spotlight:has(.pearl-study-answer-dock-v93) .pearl-study-premium-card {
+      height: min(470px, calc(100% - 66px)) !important;
+      max-height: min(470px, calc(100% - 66px)) !important;
+      min-height: 0 !important;
+    }
+
+    .pearl-study-row-list-v97.pearl-study-tabs > button,
+    .pearl-study-control-panel-v93 .pearl-study-list-grid-v93.pearl-study-row-list-v97 > button,
+    .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 > button,
+    .pearl-study-control-panel-v93 .pearl-study-tools-grid-v93 .pearl-catalog-popover-wrap > button {
+      min-height: 44px !important;
+    }
+
+    .pearl-study-answer-dock-v93 {
+      height: 54px !important;
+      min-height: 54px !important;
+    }
+
+    .pearl-study-answer-dock-v93 .decision-btn {
+      height: 40px !important;
+      min-height: 40px !important;
+    }
+  }
+}

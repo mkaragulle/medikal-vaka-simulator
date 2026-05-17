@@ -21,13 +21,13 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
           <span className="review-panel-icon danger" aria-hidden="true"><Icon name="RotateCcw" /></span>
           <div>
             <h2>Yanlış çözülenler</h2>
-            <p>Kaçırdığın olguları ve AI sorularını kısa, hedefli şekilde tekrar et.</p>
+            <p>Yanlış çözdüğün olguları tekrar et.</p>
           </div>
         </div>
         {hasItems ? (
           <button className="wrong-clear-btn" type="button" onClick={onClearAll}>
             <Icon name="Trash2" size={15} />
-            <span>Listemi temizle</span>
+            <span>Temizle</span>
           </button>
         ) : null}
       </header>
@@ -37,12 +37,6 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
           {visibleItems.map((item) => {
             const isAI = isAIWrongAnswer(item);
             const displayTitle = item.title || item.questionPreview || 'Kayıtlı yanlış soru';
-            const metaText = isAI
-              ? `${item.optionCount || 5} seçenek · feedback kayıtlı`
-              : item.correctAnswer
-                ? `Doğru yanıt: ${item.correctAnswer}`
-                : '';
-
             return (
               <article className={`wrong-answer-card ${isAI ? 'is-ai-generated' : ''}`.trim()} key={item.caseId}>
                 <div className="wrong-answer-main">
@@ -54,7 +48,6 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
                   {isAI && item.questionPreview && item.questionPreview !== displayTitle ? (
                     <small>{item.questionPreview}</small>
                   ) : null}
-                  {metaText ? <span className="wrong-answer-mini-meta">{metaText}</span> : null}
                 </div>
                 <div className="wrong-answer-actions">
                   <button className="btn btn-primary compact" type="button" onClick={() => onOpenCase(item)}>
