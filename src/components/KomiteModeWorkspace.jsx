@@ -1161,6 +1161,134 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
   );
 }
 
+
+function CardDeckTree({ materials, onOpenMaterial }) {
+  const grouped = useMemo(() => {
+    const classMap = materials.reduce((acc, material) => {
+      const classYear = String(material.classYear || '?');
+      const classKey = `${classYear}. Sınıf`;
+      const committeeKey = material.committee || material.course || 'Komite / Ders belirtilmedi';
+      if (!acc[classKey]) acc[classKey] = { classYear, committees: {} };
+      if (!acc[classKey].committees[committeeKey]) acc[classKey].committees[committeeKey] = [];
+      acc[classKey].committees[committeeKey].push(material);
+      return acc;
+    }, {});
+
+    return Object.entries(classMap)
+      .sort(([, a], [, b]) => {
+        const aYear = Number(a.classYear);
+        const bYear = Number(b.classYear);
+        if (Number.isFinite(aYear) && Number.isFinite(bYear)) return aYear - bYear;
+        return String(a.classYear).localeCompare(String(b.classYear), 'tr');
+      })
+      .map(([className, classData]) => ({
+        className,
+        classYear: classData.classYear,
+        committees: Object.entries(classData.committees)
+          .sort(([a], [b]) => a.localeCompare(b, 'tr'))
+          .map(([committeeName, committeeMaterials]) => ({
+            committeeName,
+            materials: [...committeeMaterials].sort((a, b) => (b.uploadDate || 0) - (a.uploadDate || 0)),
+          })),
+      }));
+  }, [materials]);
+
+  const [expandedClasses, setExpandedClasses] = useState(() => grouped.reduce((acc, item) => ({ ...acc, [item.className]: true }), {}));
+  const [expandedCommittees, setExpandedCommittees] = useState(() => {
+    const initial = {};
+    grouped.forEach((item) => item.committees.forEach((committee) => {
+      initial[`${item.className}::${committee.committeeName}`] = true;
+    }));
+    return initial;
+  });
+
+  useEffect(() => {
+    setExpandedClasses((current) => {
+      const next = { ...current };
+      grouped.forEach((item) => {
+        if (next[item.className] === undefined) next[item.className] = true;
+      });
+      return next;
+    });
+    setExpandedCommittees((current) => {
+      const next = { ...current };
+      grouped.forEach((item) => item.committees.forEach((committee) => {
+        const key = `${item.className}::${committee.committeeName}`;
+        if (next[key] === undefined) next[key] = true;
+      }));
+      return next;
+    });
+  }, [grouped]);
+
+  return (
+    <div className="komite-card-library" aria-label="Hap kart kütüphanesi">
+      <div className="komite-card-tree">
+        {grouped.map(({ className, committees }) => {
+          const classOpen = expandedClasses[className] ?? true;
+          return (
+            <section className={`komite-card-class ${classOpen ? 'open' : ''}`.trim()} key={className}>
+              <button
+                type="button"
+                className="komite-card-class-trigger"
+                onClick={() => setExpandedClasses((current) => ({ ...current, [className]: !classOpen }))}
+                aria-expanded={classOpen}
+              >
+                <span className="komite-card-class-icon"><Icon name="LayeredCards" size={18} /></span>
+                <span className="komite-card-class-copy"><strong>{className}</strong></span>
+                <Icon name={classOpen ? 'ChevronUp' : 'ChevronDown'} size={17} />
+              </button>
+
+              {classOpen ? (
+                <div className="komite-card-committee-list">
+                  {committees.map(({ committeeName, materials: committeeMaterials }, index) => {
+                    const committeeKey = `${className}::${committeeName}`;
+                    const committeeOpen = expandedCommittees[committeeKey] ?? true;
+                    const displayedCommitteeName = committeeName || `${index + 1}. Komite`;
+                    return (
+                      <div className={`komite-card-course ${committeeOpen ? 'open' : ''}`.trim()} key={committeeKey}>
+                        <button
+                          type="button"
+                          className="komite-card-course-trigger"
+                          onClick={() => setExpandedCommittees((current) => ({ ...current, [committeeKey]: !committeeOpen }))}
+                          aria-expanded={committeeOpen}
+                        >
+                          <span className="komite-card-course-badge">{String(index + 1).padStart(2, '0')}</span>
+                          <span className="komite-card-course-copy"><strong>{displayedCommitteeName}</strong></span>
+                          <Icon name={committeeOpen ? 'ChevronUp' : 'ChevronDown'} size={16} />
+                        </button>
+
+                        {committeeOpen ? (
+                          <div className="komite-card-decks">
+                            {committeeMaterials.map((material) => (
+                              <button
+                                type="button"
+                                key={material.id}
+                                className="komite-card-deck-row"
+                                onClick={() => onOpenMaterial(material.id)}
+                              >
+                                <span className="komite-card-deck-icon"><Icon name="LayeredCards" size={16} /></span>
+                                <span className="komite-card-deck-copy">
+                                  <strong>{material.flashcardDeck?.deckTitle || `${inferAcademicTitle(material)} Hap Kartları`}</strong>
+                                  <em>{inferAcademicTitle(material) || material.fileName}</em>
+                                </span>
+                                <span className="komite-card-deck-action">Çalış <Icon name="ArrowRight" size={15} /></span>
+                              </button>
+                            ))}
+                          </div>
+                        ) : null}
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
+            </section>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 function formatFileSize(bytes = 0) {
   if (!bytes) return '';
   if (bytes < 1024 * 1024) return `${Math.max(1, Math.round(bytes / 1024))} KB`;
@@ -1890,10 +2018,10 @@ function CardsHub({ materials, onOpenMaterial, onBack }) {
   return (
     <section className="komite-subpage card-surface">
       <div className="komite-section-head">
-        <div><span className="komite-kicker">Hap Kartlar</span><h2>Materyal Bazlı Hap Kartlar</h2><p>Kartlar sınıf, komite ve materyal ağacına bağlı olarak düzenlenir.</p></div>
+        <div><h2>Hap Kart Kütüphanesi</h2><p>Oluşturduğun kartları sınıf, komite ve materyal düzeyinde düzenli şekilde bul ve çalış.</p></div>
         <button type="button" className="btn btn-secondary" onClick={onBack}>Ana ekrana dön</button>
       </div>
-      {decks.length ? <div className="komite-deck-grid">{decks.map((material) => <button type="button" key={material.id} onClick={() => onOpenMaterial(material.id)}><strong>{material.flashcardDeck.deckTitle}</strong><span>{material.fileName}</span><small>{material.flashcardDeck.cards.length} kart</small></button>)}</div> : <EmptyState title="Henüz kart destesi yok." text="Bir materyal açıp ‘Hap Kartlar ile Tekrar Et’ seçeneğinden kart oluşturabilirsin." action={<button type="button" className="btn btn-primary" onClick={onBack}>Materyal seç</button>} />}
+      {decks.length ? <CardDeckTree materials={decks} onOpenMaterial={onOpenMaterial} /> : <EmptyState title="Henüz kart destesi yok." text="Bir materyal açıp ‘Hap Kartlar ile Tekrar Et’ seçeneğinden kart oluşturabilirsin." action={<button type="button" className="btn btn-primary" onClick={onBack}>Materyal seç</button>} />}
     </section>
   );
 }

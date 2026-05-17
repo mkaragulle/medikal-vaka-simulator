@@ -46105,3 +46105,263 @@ html[data-theme='dark'] .komite-material-library .komite-tree-committee-list {
 html[data-theme='dark'] .komite-material-library .komite-tree-files {
   border-left-color: rgba(148, 163, 184, .18);
 }
+
+/* --------------------------------------------------------------------------
+   KLINIKIQ V140 — hierarchical flashcard library
+   Aligns the Hap Kartlar archive with the material library: class → committee → deck.
+   -------------------------------------------------------------------------- */
+.komite-card-library {
+  display: grid;
+  gap: .65rem;
+}
+
+.komite-card-tree {
+  display: grid;
+  gap: .62rem;
+}
+
+.komite-card-class {
+  display: grid;
+  gap: .5rem;
+  padding: .48rem .58rem .58rem;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(20, 184, 166, .18);
+  background:
+    radial-gradient(circle at 96% 0%, rgba(20, 184, 166, .08), transparent 34%),
+    rgba(255, 255, 255, .76);
+  box-shadow: 0 16px 42px rgba(15, 23, 42, .055);
+}
+
+.komite-card-class-trigger,
+.komite-card-course-trigger,
+.komite-card-deck-row {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  color: #0f172a;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.komite-card-class-trigger {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .72rem;
+  min-height: 54px;
+  padding: .62rem .72rem;
+  border-radius: 1rem;
+  background: transparent;
+  transition: background-color .16s ease, box-shadow .16s ease;
+}
+
+.komite-card-class.open .komite-card-class-trigger,
+.komite-card-class-trigger:hover {
+  background: linear-gradient(135deg, rgba(240, 253, 250, .88), rgba(255, 255, 255, .9));
+  box-shadow: inset 0 0 0 1px rgba(20, 184, 166, .13);
+}
+
+.komite-card-class-icon,
+.komite-card-deck-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: .95rem;
+  background: rgba(204, 251, 241, .62);
+  color: #0f766e;
+  flex: 0 0 auto;
+}
+
+.komite-card-class-copy,
+.komite-card-course-copy,
+.komite-card-deck-copy {
+  min-width: 0;
+  display: grid;
+  gap: .12rem;
+}
+
+.komite-card-class-copy strong,
+.komite-card-course-copy strong,
+.komite-card-deck-copy strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #0f172a;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.komite-card-class-copy strong {
+  font-size: 1.02rem;
+  letter-spacing: -.015em;
+}
+
+.komite-card-committee-list {
+  position: relative;
+  display: grid;
+  gap: .48rem;
+  margin-left: 2.15rem;
+  padding: .08rem 0 .12rem 1.05rem;
+  border-left: 1px solid rgba(20, 184, 166, .22);
+}
+
+.komite-card-course {
+  display: grid;
+  gap: .36rem;
+  padding: .32rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, .07);
+  background: rgba(248, 250, 252, .58);
+}
+
+.komite-card-course-trigger {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .65rem;
+  min-height: 46px;
+  padding: .5rem .58rem;
+  border-radius: .86rem;
+  background: transparent;
+}
+
+.komite-card-course.open .komite-card-course-trigger,
+.komite-card-course-trigger:hover {
+  background: rgba(255, 255, 255, .9);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, .045);
+}
+
+.komite-card-course-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: .72rem;
+  background: rgba(15, 118, 110, .08);
+  color: #0f766e;
+  font-size: .7rem;
+  font-weight: 950;
+  letter-spacing: .04em;
+}
+
+.komite-card-course-copy strong {
+  font-size: .96rem;
+}
+
+.komite-card-decks {
+  position: relative;
+  display: grid;
+  gap: .38rem;
+  margin-left: 2.1rem;
+  padding: .08rem 0 .1rem 1rem;
+  border-left: 1px solid rgba(148, 163, 184, .22);
+}
+
+.komite-card-deck-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .66rem;
+  min-height: 56px;
+  padding: .56rem .6rem;
+  border-radius: .95rem;
+  background: rgba(255, 255, 255, .86);
+  border: 1px solid rgba(15, 23, 42, .075);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, .035);
+  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease, background-color .16s ease;
+}
+
+.komite-card-deck-row:hover {
+  transform: translateY(-1px);
+  border-color: rgba(20, 184, 166, .24);
+  box-shadow: 0 16px 34px rgba(15, 118, 110, .09);
+}
+
+.komite-card-deck-copy strong {
+  font-size: .95rem;
+}
+
+.komite-card-deck-copy em {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #64748b;
+  font-style: normal;
+  font-size: .76rem;
+  font-weight: 700;
+}
+
+.komite-card-deck-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  min-height: 32px;
+  padding: .42rem .72rem;
+  border-radius: 999px;
+  background: rgba(240, 253, 250, .9);
+  border: 1px solid rgba(20, 184, 166, .2);
+  color: #0f766e;
+  font-size: .78rem;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+html[data-theme='dark'] .komite-card-class,
+html[data-theme='dark'] .komite-card-course,
+html[data-theme='dark'] .komite-card-deck-row,
+html[data-theme='dark'] .komite-card-course.open .komite-card-course-trigger,
+html[data-theme='dark'] .komite-card-course-trigger:hover,
+html[data-theme='dark'] .komite-card-class.open .komite-card-class-trigger,
+html[data-theme='dark'] .komite-card-class-trigger:hover {
+  background: rgba(15, 23, 42, .72);
+  border-color: rgba(148, 163, 184, .16);
+}
+
+html[data-theme='dark'] .komite-card-class-copy strong,
+html[data-theme='dark'] .komite-card-course-copy strong,
+html[data-theme='dark'] .komite-card-deck-copy strong,
+html[data-theme='dark'] .komite-card-class-trigger,
+html[data-theme='dark'] .komite-card-course-trigger,
+html[data-theme='dark'] .komite-card-deck-row {
+  color: #f8fafc;
+}
+
+html[data-theme='dark'] .komite-card-deck-copy em {
+  color: #94a3b8;
+}
+
+html[data-theme='dark'] .komite-card-committee-list {
+  border-left-color: rgba(45, 212, 191, .22);
+}
+
+html[data-theme='dark'] .komite-card-decks {
+  border-left-color: rgba(148, 163, 184, .18);
+}
+
+@media (max-width: 860px) {
+  .komite-card-committee-list,
+  .komite-card-decks {
+    margin-left: 1rem;
+    padding-left: .8rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .komite-card-class-trigger,
+  .komite-card-course-trigger {
+    gap: .52rem;
+    padding-inline: .55rem;
+  }
+
+  .komite-card-deck-row {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .komite-card-deck-action {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
