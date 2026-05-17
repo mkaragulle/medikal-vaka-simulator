@@ -114,7 +114,7 @@ export const TUS_PEARL_TOPICS = [
     "branchId": "physiology",
     "subject": "Fizyoloji",
     "topic": "Aldosteron etkisi",
-    "mainQuestion": "Aldosteron distal nefronda hangi temel etkiyi yapar?",
+    "mainQuestion": "Aldosteronun distal nefrondaki temel etkisi nedir?",
     "mainAnswer": "Na⁺ geri emilimini artırır, K⁺ ve H⁺ atılımını artırır.",
     "explanation": "Toplayıcı kanal principal ve interkale hücre etkileri hipokalemik metabolik alkaloz paternini açıklar.",
     "keywords": [
@@ -476,7 +476,7 @@ export const TUS_PEARL_TOPICS = [
     "explanation": "Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir.",
     "keywords": "antibiyotik sonrası; psödomembran; toksin A/B; sulu diyare",
     "trap": "İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; C. difficile antibiyotik öyküsüyle sorulur.",
-    "extraQuestion": "C. difficile için ilk basamak oral tedavi seçeneklerinden biri nedir?",
+    "extraQuestion": "Clostridioides difficile enfeksiyonunda ilk basamak oral tedavi seçeneklerinden biri hangisidir?",
     "extraAnswer": "Oral vankomisin veya fidaksomisin.",
     "difficulty": "orta"
   },
@@ -874,7 +874,7 @@ export const TUS_PEARL_TOPICS = [
     "branchId": "internal-medicine",
     "subject": "İç Hastalıkları",
     "topic": "DKA",
-    "mainQuestion": "Diyabetik ketoasidozda tedavinin ilk temel basamağı nedir?",
+    "mainQuestion": "Diyabetik ketoasidoz tedavisinde ilk temel basamak nedir?",
     "mainAnswer": "İzotonik sıvı resüsitasyonu.",
     "explanation": "İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir. Belirgin hipokalemide insülin ertelenip potasyum replasmanı öncelenir.",
     "keywords": "hiperglisemi; keton; asidoz; dehidratasyon",
@@ -983,7 +983,7 @@ export const TUS_PEARL_TOPICS = [
     "explanation": "Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur.",
     "keywords": "sinüzit; hemoptizi; glomerülonefrit; c-ANCA",
     "trap": "MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir.",
-    "extraQuestion": "GPA’da tipik histoloji nedir?",
+    "extraQuestion": "GPA’da tipik histolojik bulgu nedir?",
     "extraAnswer": "Nekrotizan granülomatöz inflamasyon ve vaskülit.",
     "difficulty": "orta"
   },
@@ -1152,7 +1152,7 @@ export const TUS_PEARL_TOPICS = [
     "explanation": "Kızıl eritrojenik toksin ile gelişir; farenjit sonrası döküntü klasik ipucudur.",
     "keywords": "zımpara döküntü; çilek dili; Pastia çizgileri; S. pyogenes",
     "trap": "Kawasaki çilek dili yapabilir ama uzamış ateş ve konjonktivit/ekstremite bulguları ayrımı sağlar.",
-    "extraQuestion": "Kızıl tedavisinde temel antibiyotik grubu nedir?",
+    "extraQuestion": "Kızıl tedavisinde tercih edilen antibiyotik grubu hangisidir?",
     "extraAnswer": "Penisilin grubu.",
     "difficulty": "orta"
   },
@@ -1165,7 +1165,7 @@ export const TUS_PEARL_TOPICS = [
     "explanation": "Erken tanı ve levotiroksin nörogelişim için kritiktir.",
     "keywords": "uzamış sarılık; makroglossi; kabızlık; hipotoni",
     "trap": "Down sendromu hipotoni yapabilir; metabolik/endokrin tarama hipotiroidiyi yakalar.",
-    "extraQuestion": "Konjenital hipotiroidide tedavi nedir?",
+    "extraQuestion": "Konjenital hipotiroidide temel tedavi nedir?",
     "extraAnswer": "Levotiroksin.",
     "difficulty": "orta"
   },
@@ -1230,7 +1230,7 @@ export const TUS_PEARL_TOPICS = [
     "explanation": "Prematürite ve enteral beslenme sonrası intestinal iskemi/enflamasyon ile sorulur.",
     "keywords": "prematüre; karın distansiyonu; kanlı dışkı; pnömatozis",
     "trap": "İnvajinasyon daha büyük bebekte kolik ağrı ve target sign ile gelir.",
-    "extraQuestion": "NEK’te tipik grafi bulgusu nedir?",
+    "extraQuestion": "NEK’te tipik grafi bulgusu hangisidir?",
     "extraAnswer": "Pnömatozis intestinalis.",
     "difficulty": "orta"
   },
@@ -1568,7 +1568,7 @@ export const TUS_PEARL_TOPICS = [
     "explanation": "En sık etkenler S. pneumoniae, H. influenzae ve M. catarrhalis’tir.",
     "keywords": "kulak ağrısı; ateş; bombeleşmiş zar; çocuk",
     "trap": "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
-    "extraQuestion": "Akut otitis mediada ilk seçenek antibiyotik sıklıkla nedir?",
+    "extraQuestion": "Akut otitis mediada ilk tercih edilen antibiyotik nedir?",
     "extraAnswer": "Amoksisilin.",
     "difficulty": "orta"
   },
@@ -1667,7 +1667,7 @@ export const TUS_PEARL_TOPICS = [
     "branchId": "tus-spot-olgular",
     "subject": "TUS Spot Olgular / Karma",
     "topic": "Hipoglisemi acili",
-    "mainQuestion": "Bilinç değişikliği olan diyabet hastasında yatak başı ilk kontrol nedir?",
+    "mainQuestion": "Bilinç değişikliği olan diyabet hastasında yatak başında ilk ne kontrol edilmelidir?",
     "mainAnswer": "Kapiller kan şekeri.",
     "explanation": "Hipoglisemi hızlı geri döndürülebilir ve nörolojik tabloyu taklit edebilir.",
     "keywords": "bilinç değişikliği; diyabet; terleme; glukoz",
@@ -1841,7 +1841,7 @@ export const TUS_PEARL_TOPICS = [
     "explanation": "Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir.",
     "keywords": "non-fermenter; karbapenem dirençli; TMP-SMX; hastane enfeksiyonu",
     "trap": "Pseudomonas antipsödomonal beta-laktamlarla tedavi edilebilir; karbapenem direnci ve TMP-SMX ipucu Stenotrophomonas lehinedir.",
-    "extraQuestion": "Stenotrophomonas maltophilia tedavisinde klasik ilk seçenek nedir?",
+    "extraQuestion": "Stenotrophomonas maltophilia tedavisinde klasik ilk tercih nedir?",
     "extraAnswer": "TMP-SMX, yani ko-trimoksazol.",
     "difficulty": "orta"
   },
@@ -1854,7 +1854,7 @@ export const TUS_PEARL_TOPICS = [
     "explanation": "Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım TUS ipucudur.",
     "keywords": "immünsüpresyon; kaviter akciğer; beyin apsesi; TMP-SMX",
     "trap": "Actinomyces anaerobdur ve sülfür granülleriyle sorulur; Nocardia aerob, zayıf aside dirençli ve TMP-SMX duyarlıdır.",
-    "extraQuestion": "Nocardia tedavisinde klasik ilaç nedir?",
+    "extraQuestion": "Nocardia tedavisinde klasik tedavi ilacı hangisidir?",
     "extraAnswer": "Uzun süreli TMP-SMX tedavisi.",
     "difficulty": "orta"
   },
@@ -2416,8 +2416,43 @@ function cleanSentence(value = '') {
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
+function polishQuestionPhrasing(value = '') {
+  return cleanText(value)
+    .replace(/\bilk seçenek antibiyotik sıklıkla nedir\b/giu, 'ilk tercih edilen antibiyotik nedir')
+    .replace(/\bilk seçenek tedavi sıklıkla nedir\b/giu, 'ilk tercih edilen tedavi nedir')
+    .replace(/\bilk seçenek\s+(.+?)\s+sıklıkla nedir\b/giu, 'ilk tercih edilen $1 nedir')
+    .replace(/\bilk seçenek\b/giu, 'ilk tercih edilen')
+    .replace(/\bsıklıkla nedir\b/giu, 'nedir')
+    .replace(/\bhangi temel etkiyi yapar\b/giu, 'temel etkisi nedir')
+    .replace(/\bhangi başlık öncelikle düşünülür\b/giu, 'hangi kavram öncelikle düşünülür')
+    .replace(/\bhangi cevabı destekler\b/giu, 'hangi yanıta götürür')
+    .replace(/\bhangi kavrama yönlendirir:\s*/giu, 'hangi kavramı düşündürür: ')
+    .replace(/\bpaterni en çok hangi kavramı düşündürür\b/giu, 'birlikteliği hangi kavramı düşündürür')
+    .replace(/\bseçeneğini dışlatan\b/giu, 'seçeneğini dışlayan')
+    .replace(/\bhangi ayrım belirleyicidir\b/giu, 'hangi ayırıcı nokta belirleyicidir')
+    .replace(/\btedavinin ilk temel basamağı\b/giu, 'tedavide ilk temel basamak')
+    .replace(/\btemel antibiyotik grubu nedir\b/giu, 'tercih edilen antibiyotik grubu hangisidir')
+    .replace(/\btedavi seçeneklerinden biri nedir\b/giu, 'tedavi seçeneklerinden biri hangisidir')
+    .replace(/\btipik grafi bulgusu nedir\b/giu, 'tipik grafi bulgusu hangisidir')
+    .replace(/\btipik histoloji nedir\b/giu, 'tipik histolojik bulgu nedir')
+    .replace(/\bklasik ilk seçenek nedir\b/giu, 'klasik ilk tercih nedir')
+    .replace(/\bklasik ilaç nedir\b/giu, 'klasik tedavi ilacı hangisidir')
+    .replace(/\bilk tercih görüntüleme nedir\b/giu, 'ilk tercih edilen görüntüleme yöntemi hangisidir')
+    .replace(/\bilk tedavi nedir\b/giu, 'ilk tedavi basamağı nedir')
+    .replace(/\bilk tedavi yaklaşımı nedir\b/giu, 'ilk tedavi yaklaşımı nasıl olmalıdır')
+    .replace(/\btedavisinde ilk yaklaşım nedir\b/giu, 'tedavisinde ilk yaklaşım nasıl olmalıdır')
+    .replace(/\bantidotal yaklaşım nedir\b/giu, 'antidotal yaklaşım nasıl olmalıdır')
+    .replace(/\bacil tedavi nedir\b/giu, 'acil tedavi basamağı nedir')
+    .replace(/\bkesin tedavi nedir\b/giu, 'kesin tedavi basamağı nedir')
+    .replace(/\bmedikal tedavi nedir\b/giu, 'medikal tedavi seçeneği nedir')
+    .replace(/\bbeklenen nekroz tipi nedir\b/giu, 'beklenen nekroz tipi hangisidir')
+    .replace(/\bnekroz tipi nedir\b/giu, 'beklenen nekroz tipi hangisidir')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function cleanQuestion(value = '') {
-  const text = polishGeneratedLead(value);
+  const text = polishGeneratedLead(polishQuestionPhrasing(value));
   if (!text) return '';
   return /[?]$/u.test(text) ? text : `${text.replace(/[.!]+$/u, '')}?`;
 }
@@ -2482,10 +2517,10 @@ function buildKeywordBack(topic, keywords, topicIndex = 0) {
   if (!answer) return cleanSentence(polishGeneratedLead(`Belirleyici patern: ${cues}`));
 
   const variants = [
-    `${answer}. Paterni kuran ipuçları: ${cues}`,
-    `${answer}; bu yanıta götüren çekirdek bulgular ${cues}`,
-    `${answer}. ${cueLead} aynı klinik veya mekanistik çerçevede birleşir`,
-    `${answer}. Ayırıcı patern ${cues} üzerinden okunur`,
+    `${answer}. Bu sonuca özellikle ${cues} birlikteliğiyle ulaşılır`,
+    `${answer}. Temel ipuçları ${cues} olarak özetlenir`,
+    `${answer}. ${cueLead} birlikte değerlendirildiğinde bu kavram öncelik kazanır`,
+    `${answer}. Ayırıcı ipuçları ${cues} üzerinden okunur`,
   ];
   return cleanSentence(polishGeneratedLead(variants[topicIndex % variants.length]));
 }
@@ -2562,7 +2597,7 @@ function inferKeywordQuestionDomain(topic, keywords = []) {
   if (textHasAny(source, [/asit/u, /alkaloz/u, /ph\b/u, /hco/u, /paco/u, /pao/u, /anyon/u, /laktat/u, /keton/u])) {
     return 'hangi klinik ve asit-baz paterniyle';
   }
-  if (textHasAny(source, [/ekg/u, /qrs/u, /st /u, /t dalgas/u, /aritmi/u, /torsades/u])) {
+  if (textHasAny(source, [/ekg/u, /qrs/u, /st elevasyon/u, /t dalgas/u, /aritmi/u, /torsades/u])) {
     return 'hangi EKG ve klinik paternle';
   }
   if (textHasAny(source, [/anti-/u, /ana\b/u, /c3/u, /c4/u, /hbsag/u, /igm/u, /igg/u, /seroloji/u, /kültür/u, /pcr/u, /gram/u, /oksidaz/u, /toksin/u])) {
@@ -2577,7 +2612,7 @@ function inferKeywordQuestionDomain(topic, keywords = []) {
   if (textHasAny(source, [/enzim/u, /reseptör/u, /kanal/u, /aquaporin/u, /siklus/u, /amino/u, /glukoz/u, /lipid/u, /vitamin/u, /koenzim/u, /fenilalanin/u, /homosistin/u, /üre/u, /kolesterol/u, /hipoglisemi/u, /hepatomegali/u, /niasin/u, /pellagra/u, /ürat/u])) {
     return 'hangi biyokimyasal paternle';
   }
-  if (textHasAny(source, [/tedavi/u, /ilk/u, /yaklaşım/u, /adrenalin/u, /antibiyotik/u, /kalsiyum/u, /insülin/u, /resüsitasyon/u, /profilaksi/u, /aşı/u, /immünizasyon/u])) {
+  if (textHasAny(source, [/tedavi/u, /\bilk\b/u, /yaklaşım/u, /adrenalin/u, /antibiyotik/u, /kalsiyum/u, /insülin/u, /resüsitasyon/u, /profilaksi/u, /(?:aşı\b|aşılama)/u, /immünizasyon/u])) {
     return 'hangi tedavi veya ilk yaklaşım bilgisiyle';
   }
   if (textHasAny(source, [/gebelik/u, /doğum/u, /fetal/u, /plasenta/u, /membran/u])) {
@@ -2609,7 +2644,7 @@ function inferPearlPatternLabel(topic = {}, keywords = []) {
   if (textHasAny(source, [/anti-/u, /ana\b/u, /c3/u, /c4/u, /hbsag/u, /igm/u, /igg/u, /seroloji/u, /kültür/u, /pcr/u, /gram/u, /oksidaz/u, /toksin/u, /alp/u, /ggt/u, /bilirübin/u, /trombosit/u, /lenfositoz/u])) return 'laboratuvar veya mikrobiyolojik paternle';
   if (textHasAny(source, [/bt/u, /mr/u, /grafi/u, /ultrason/u, /usg/u, /görüntüleme/u, /sintigrafi/u, /dolum defekti/u])) return 'görüntüleme bulgusuyla';
   if (textHasAny(source, [/sinir/u, /duyu/u, /parmak/u, /kas/u, /el\b/u, /ayak/u, /yürüyüş/u, /ekstansiyon/u, /fleksiyon/u, /fasiyal/u, /abducens/u, /malleol/u, /perine/u])) return 'anatomik veya muayene paterniyle';
-  if (textHasAny(source, [/tedavi/u, /ilk/u, /yaklaşım/u, /adrenalin/u, /antibiyotik/u, /kalsiyum/u, /insülin/u, /resüsitasyon/u, /profilaksi/u, /aşı/u, /antidot/u, /pci/u, /fibrinoliz/u, /reperfüzyon/u, /primer perkütan/u])) return 'tedavi önceliğiyle';
+  if (textHasAny(source, [/tedavi/u, /\bilk\b/u, /yaklaşım/u, /adrenalin/u, /antibiyotik/u, /kalsiyum/u, /insülin/u, /resüsitasyon/u, /profilaksi/u, /(?:aşı\b|aşılama)/u, /antidot/u, /pci/u, /pcı/u, /fibrinoliz/u, /reperfüzyon/u, /primer perkütan/u])) return 'tedavi önceliğiyle';
   if (textHasAny(source, [/v\/q/u, /perfüzyon/u, /ventilasyon/u, /şant/u, /compliance/u, /kemoreseptör/u, /oksijen/u, /paco₂/u, /paco2/u, /co₂/u, /co2/u, /bos ph/u])) return 'fizyolojik mekanizmayla';
   if (textHasAny(source, [/enzim/u, /reseptör/u, /kanal/u, /aquaporin/u, /taşıyıcı/u, /siklus/u, /amino/u, /glukoz/u, /lipid/u, /vitamin/u, /koenzim/u, /üre/u, /kolesterol/u, /hipoglisemi/u, /hiperürisemi/u])) return 'biyokimyasal mekanizmayla';
   if (textHasAny(source, [/poş/u, /türev/u, /nöral krest/u, /meckel/u, /urakus/u, /pnömosit/u, /hcg/u])) return 'embriyolojik veya histolojik paternle';
@@ -2619,6 +2654,34 @@ function inferPearlPatternLabel(topic = {}, keywords = []) {
   return 'anahtar klinik paternle';
 }
 
+function inferKeywordQuestionTarget(topic = {}, keywords = []) {
+  const branchId = String(topic.branchId || '');
+  const source = `${topic.topic || ''} ${topic.subject || ''} ${topic.explanation || ''} ${keywordItems(keywords).join(' ')}`.toLocaleLowerCase('tr');
+  const answerSource = `${topic.mainAnswer || ''}`.toLocaleLowerCase('tr');
+  const treatmentTarget = { acc: 'tedavi önceliğini', nom: 'tedavi önceliği', dat: 'tedavi önceliğine' };
+  const clinicalTarget = { acc: 'klinik tanıyı veya yaklaşımı', nom: 'klinik tanı veya yaklaşım', dat: 'klinik tanıya veya yaklaşıma' };
+  const answerIsTreatment = textHasAny(answerSource, [/tedavi/u, /resüsitasyon/u, /adrenalin/u, /antibiyotik/u, /amoksisilin/u, /vankomisin/u, /fidaksomisin/u, /kalsiyum/u, /insülin/u, /oksijen/u, /nalokson/u, /asetilsistein/u, /soğutma/u, /fasiotomi/u, /ercp/u, /pci/u, /pcı/u, /fibrinoliz/u, /aşı/u, /hbig/u, /immünizasyon/u, /metotreksat/u, /magnezyum/u, /heparin/u, /pansuman/u, /dekompresyon/u]);
+  const answerIsImaging = textHasAny(answerSource, [/bt/u, /mr/u, /grafi/u, /ultrason/u, /usg/u, /sintigrafi/u, /kolanjiyografi/u]);
+  const answerIsLab = textHasAny(answerSource, [/anti-/u, /ana\b/u, /c3/u, /c4/u, /hbsag/u, /igm/u, /igg/u, /seroloji/u, /kültür/u, /pcr/u, /gram/u, /oksidaz/u, /coombs/u, /antikor/u, /troponin/u]);
+  const hasEkgCue = textHasAny(source, [/ekg/u, /qrs/u, /st elevasyon/u, /st segment/u, /t dalgas/u, /aritmi/u, /torsades/u]);
+
+  if (branchId === 'anatomy') return { acc: 'anatomik lezyonu veya yapıyı', nom: 'anatomik lezyon veya yapı', dat: 'anatomik lezyona veya yapıya' };
+  if (branchId === 'physiology') return { acc: 'fizyolojik mekanizmayı', nom: 'fizyolojik mekanizma', dat: 'fizyolojik mekanizmaya' };
+  if (branchId === 'histology-embryology') return { acc: 'embriyolojik veya histolojik yapıyı', nom: 'embriyolojik veya histolojik yapı', dat: 'embriyolojik veya histolojik yapıya' };
+  if (branchId === 'medical-biochemistry') return { acc: 'biyokimyasal mekanizmayı', nom: 'biyokimyasal mekanizma', dat: 'biyokimyasal mekanizmaya' };
+  if (branchId === 'medical-microbiology') return { acc: 'enfeksiyöz tanıyı veya etkeni', nom: 'enfeksiyöz tanı veya etken', dat: 'enfeksiyöz tanıya veya etkene' };
+  if (branchId === 'medical-pathology') return { acc: 'patolojik paterni', nom: 'patolojik patern', dat: 'patolojik paterne' };
+  if (branchId === 'medical-pharmacology') return { acc: 'farmakolojik yanıtı veya mekanizmayı', nom: 'farmakolojik yanıt veya mekanizma', dat: 'farmakolojik yanıta veya mekanizmaya' };
+
+  if (answerIsTreatment) return treatmentTarget;
+  if (answerIsImaging) return { acc: 'görüntüleme bulgusunu veya yöntemini', nom: 'görüntüleme bulgusu veya yöntemi', dat: 'görüntüleme bulgusuna veya yöntemine' };
+  if (answerIsLab) return { acc: 'laboratuvar paternini veya belirtecini', nom: 'laboratuvar paterni veya belirteci', dat: 'laboratuvar paternine veya belirtecine' };
+  if (hasEkgCue) return { acc: 'EKG paternini', nom: 'EKG paterni', dat: 'EKG paternine' };
+  if (branchId === 'obstetrics-gynecology') return { acc: 'obstetrik tanıyı veya yaklaşımı', nom: 'obstetrik tanı veya yaklaşım', dat: 'obstetrik tanıya veya yaklaşıma' };
+  return clinicalTarget;
+}
+
+
 function buildKeywordFront(topic, keywords = [], topicIndex = 0) {
   const special = SPECIAL_KEYWORD_CARDS[topic.topic];
   if (special?.front) return cleanQuestion(special.front);
@@ -2626,15 +2689,16 @@ function buildKeywordFront(topic, keywords = [], topicIndex = 0) {
   const compactCues = cues.length >= 3 ? joinTurkishList(cues.slice(0, 3)) : joinTurkishList(cues);
 
   if (cues.length >= 2) {
+    const target = inferKeywordQuestionTarget(topic, cues);
     const variants = [
-      `${compactCues} paterni en çok hangi kavramı düşündürür`,
-      `${compactCues} birlikte görüldüğünde hangi başlık öncelikle düşünülür`,
-      `${compactCues} ipuçları hangi cevabı destekler`,
-      `Bu ipuçları hangi kavrama yönlendirir: ${compactCues}`,
+      `${compactCues} birlikteliği hangi ${target.acc} düşündürür`,
+      `${compactCues} birlikte değerlendirildiğinde en olası ${target.nom} nedir`,
+      `${compactCues} hangi ${target.dat} işaret eder`,
+      `Aşağıdaki ipuçları hangi ${target.acc} destekler: ${compactCues}`,
     ];
     return cleanQuestion(polishGeneratedLead(variants[topicIndex % variants.length]));
   }
-  return cleanQuestion(`${cleanText(topic.topic)} için belirleyici ipucu nedir`);
+  return cleanQuestion(`${cleanText(topic.topic)} için en ayırt edici ipucu nedir`);
 }
 
 const SPECIAL_TRAP_FRONTS = {
@@ -2704,7 +2768,7 @@ function inferTrapQuestionDimension(trap = '', topic = {}) {
   const source = `${trap || ''} ${topic.topic || ''}`.toLocaleLowerCase('tr');
   if (textHasAny(source, [/solunum/u, /hiperventilasyon/u, /depresyon/u, /takipne/u, /bronkospazm/u])) return 'solunum paterni';
   if (textHasAny(source, [/asit/u, /alkaloz/u, /ph\b/u, /hco/u, /anyon/u, /laktat/u])) return 'asit-baz paterni';
-  if (textHasAny(source, [/ekg/u, /qrs/u, /st /u, /t dalgas/u, /aritmi/u])) return 'EKG veya ritim bulgusu';
+  if (textHasAny(source, [/ekg/u, /qrs/u, /st elevasyon/u, /t dalgas/u, /aritmi/u])) return 'EKG veya ritim bulgusu';
   if (textHasAny(source, [/pesi/u, /risk/u, /hemodinamik/u, /şok/u, /mortalite/u])) return 'risk sınıflaması';
   if (textHasAny(source, [/von gierke/u, /mcardle/u, /hipoglisemi/u, /hiperürisemi/u, /laktik asidoz/u, /glikojen/u])) return 'metabolik patern';
   if (textHasAny(source, [/karsinom/u, /kanser/u, /kapsül/u, /damar invazyon/u, /lenfatik/u, /hematolojik yayılım/u])) return 'patolojik yayılım paterni';
@@ -2721,34 +2785,26 @@ function isCompactContrastEntity(value = '') {
   const text = cleanText(value);
   if (!text || text.length > 52) return false;
   if (/[.;:]/u.test(text)) return false;
-  if (/(ancak|fakat|çünkü|beklenir|görülür|düşündürür|öncelenir|uyarır)/iu.test(text)) return false;
+  if (/\b(ancak|fakat|çünkü|beklenir|görülür|düşündürür|öncelenir|uyarır)\b/iu.test(text)) return false;
   return true;
 }
 
 function buildTrapFront(topic, topicIndex = 0) {
   if (SPECIAL_TRAP_FRONTS[topic.topic]) return cleanQuestion(SPECIAL_TRAP_FRONTS[topic.topic]);
   const topicName = displayTopicForFront(cleanText(topic.topic));
-  const contrast = stripContrastEntity(topic.trap);
-  if (isCompactContrastEntity(contrast)) {
-    const variants = [
-      `${topicName} ile ${contrast} ayrımında kritik fark nedir`,
-      `${topicName} ${contrast} ile karıştığında hangi ayrım belirleyicidir`,
-      `${topicName} için ${contrast} seçeneğini dışlatan temel nokta nedir`,
-    ];
-    return cleanQuestion(variants[topicIndex % variants.length]);
-  }
-  const generic = [
-    `${topicName} değerlendirilirken hangi ayırıcı noktaya dikkat edilmelidir`,
-    `${topicName} sorusunda yanlış seçeneğe götüren temel karışıklık nedir`,
-    `${topicName} için en önemli ayırıcı not nedir`,
+  const variants = [
+    `${topicName} değerlendirilirken hangi bilgi yanlış seçeneği dışlar`,
+    `${topicName} sorusunda en sık karıştırılan nokta nedir`,
+    `${topicName} için belirleyici ayırıcı ipucu nedir`,
+    `${topicName} benzer seçeneklerden hangi ipucuyla ayrılır`,
   ];
-  return cleanQuestion(generic[topicIndex % generic.length]);
+  return cleanQuestion(variants[topicIndex % variants.length]);
 }
 
 function stripTusBoilerplate(value = '') {
   return cleanText(value)
     .replace(/^TUS[’']ta\s+/iu, '')
-    .replace(/TUS[’']ta\s+/giu, '')
+    .replace(/\bTUS[’']ta\s+/giu, '')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -2759,10 +2815,10 @@ function buildTusTip(topic, keywords = [], topicIndex = 0) {
     const mainCue = cues[0];
     const support = supportCuePhrase(cues);
     const variants = [
-      `Ana ipucu: ${mainCue}; ${support} aynı paterni güçlendirir`,
-      `Önce ${mainCue} ipucunu yakala; ${support} ile birlikte düşün`,
-      `${polishGeneratedLead(mainCue)} yön verir; ${support} tabloyu tamamlar`,
-      `Bu kartta belirleyici ipucu ${mainCue}; ${support} ayrımı netleştirir`,
+      `${mainCue} ana ipucudur; ${support} aynı yanıtı destekler`,
+      `Önce ${mainCue} aranır; ${support} ayrımı güçlendirir`,
+      `${polishGeneratedLead(mainCue)} belirleyici ipucudur; ${support} birlikte değerlendirilir`,
+      `${mainCue} cevabı yönlendirir; ${support} klinik bağlamı tamamlar`,
     ];
     return cleanSentence(polishGeneratedLead(variants[topicIndex % variants.length]));
   }

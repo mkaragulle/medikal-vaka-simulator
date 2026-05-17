@@ -1100,7 +1100,7 @@ function TusPearlStudyScreen({
               <div className="tus-pearl-study-secondary-actions pearl-study-secondary-grid pearl-study-tools-grid-v93" aria-label="Kart organizasyon aksiyonları">
                 <button type="button" className={isFavorite ? 'active' : ''} onClick={() => activeCard && commitState((current) => ({ ...current, favoritePearlCardIds: toggleId(current.favoritePearlCardIds, activeCard.id) }))} disabled={!activeCard}>
                   <Icon name="Sparkles" size={15} />
-                  <span><strong>Favoriye Ekle</strong></span>
+                  <span><strong>{isFavorite ? 'Favoriden Çıkart' : 'Favoriye Ekle'}</strong></span>
                 </button>
                 <div className="pearl-catalog-popover-wrap">
                   <button type="button" className={isInAnyCatalog ? 'active' : ''} onClick={() => setCatalogMenuOpen((value) => !value)} disabled={!activeCard}>
