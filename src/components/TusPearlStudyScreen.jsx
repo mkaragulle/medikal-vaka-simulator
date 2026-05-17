@@ -219,13 +219,6 @@ function PearlStudyMoreMenu({
         ? { left: position.left, right: position.right, bottom: position.bottom, width: 'auto' }
         : { top: position.top, left: position.left, width: position.width }}
     >
-      <button type="button" role="menuitem" onClick={() => runAndClose(() => onOpenRepeatList('all'))}>
-        <span>
-          <strong>Tüm Kartları Gör</strong>
-        </span>
-        <Icon name="LayeredCards" size={15} />
-      </button>
-
       {items.map((item) => (
         <button
           key={item.id}
