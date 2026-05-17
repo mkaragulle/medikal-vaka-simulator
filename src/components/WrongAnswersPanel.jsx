@@ -1,5 +1,14 @@
 import { Icon } from './ui.jsx';
 
+function isAIWrongAnswer(item) {
+  return Boolean(
+    item?.sourceType === 'ai-generated-question'
+      || item?.questionSnapshot
+      || String(item?.caseId || '').startsWith('ai-spot')
+      || item?.branchId === 'tus-spot-olgular',
+  );
+}
+
 function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy }) {
   const hasItems = wrongAnswers.length > 0;
   const visibleItems = wrongAnswers.slice(0, 6);
@@ -12,7 +21,7 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
           <span className="review-panel-icon danger" aria-hidden="true"><Icon name="RotateCcw" /></span>
           <div>
             <h2>Yanlış çözülenler</h2>
-            <p>Kaçırdığın olguları kısa ve hedefli tekrar et.</p>
+            <p>Kaçırdığın olguları ve AI sorularını kısa, hedefli şekilde tekrar et.</p>
           </div>
         </div>
         {hasItems ? (
@@ -25,23 +34,40 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
 
       {hasItems ? (
         <div className="wrong-answers-list">
-          {visibleItems.map((item) => (
-            <article className="wrong-answer-card" key={item.caseId}>
-              <div className="wrong-answer-main">
-                <span className="wrong-answer-branch">{item.branchName || 'Klinik branş'}</span>
-                <h3>{item.title}</h3>
-              </div>
-              <div className="wrong-answer-actions">
-                <button className="btn btn-primary compact" type="button" onClick={() => onOpenCase(item.caseId)}>
-                  <Icon name="RotateCcw" />
-                  <span>Tekrar çöz</span>
-                </button>
-                <button className="btn btn-icon quiet" type="button" onClick={() => onRemoveCase(item.caseId)} aria-label="Listeden çıkar">
-                  <Icon name="X" />
-                </button>
-              </div>
-            </article>
-          ))}
+          {visibleItems.map((item) => {
+            const isAI = isAIWrongAnswer(item);
+            const displayTitle = item.title || item.questionPreview || 'Kayıtlı yanlış soru';
+            const metaText = isAI
+              ? `${item.optionCount || 5} seçenek · feedback kayıtlı`
+              : item.correctAnswer
+                ? `Doğru yanıt: ${item.correctAnswer}`
+                : '';
+
+            return (
+              <article className={`wrong-answer-card ${isAI ? 'is-ai-generated' : ''}`.trim()} key={item.caseId}>
+                <div className="wrong-answer-main">
+                  <span className={`wrong-answer-branch ${isAI ? 'ai-generated' : ''}`.trim()}>
+                    {isAI ? <Icon name="Sparkles" size={13} /> : null}
+                    {item.branchName || (isAI ? 'AI üretim' : 'Klinik branş')}
+                  </span>
+                  <h3>{displayTitle}</h3>
+                  {isAI && item.questionPreview && item.questionPreview !== displayTitle ? (
+                    <small>{item.questionPreview}</small>
+                  ) : null}
+                  {metaText ? <span className="wrong-answer-mini-meta">{metaText}</span> : null}
+                </div>
+                <div className="wrong-answer-actions">
+                  <button className="btn btn-primary compact" type="button" onClick={() => onOpenCase(item)}>
+                    <Icon name="RotateCcw" />
+                    <span>Tekrar çöz</span>
+                  </button>
+                  <button className="btn btn-icon quiet" type="button" onClick={() => onRemoveCase(item)} aria-label="Listeden çıkar">
+                    <Icon name="X" />
+                  </button>
+                </div>
+              </article>
+            );
+          })}
           {hiddenCount ? <span className="wrong-answer-more">+{hiddenCount} kayıt daha listende saklanıyor.</span> : null}
         </div>
       ) : (
@@ -49,7 +75,7 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
           <span className="wrong-answers-empty-icon"><Icon name="CheckCircle" /></span>
           <div>
             <strong>Şimdilik temiz.</strong>
-            <p>Yeni yanlışlar otomatik eklenir. Şimdi hap kartlarla kısa tekrar başlatabilirsin.</p>
+            <p>Gömülü olgularda ve AI tarafından üretilen TUS sorularında yaptığın yanlışlar otomatik eklenir.</p>
             <button type="button" className="btn btn-secondary compact" onClick={() => onOpenPearlStudy?.({ filter: 'all', branchFilter: 'all' })}>
               <Icon name="LayeredCards" />
               <span>Hap kartlarla tekrar başlat</span>

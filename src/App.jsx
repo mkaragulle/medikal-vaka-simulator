@@ -159,6 +159,50 @@ function buildAccessibleCaseIndex(accessibleCases = []) {
   return { byId, byBranchId, ids: new Set(byId.keys()) };
 }
 
+const AI_WRONG_ANSWER_SOURCE = 'ai-generated-question';
+
+function isAIWrongAnswerEntry(entry) {
+  return Boolean(
+    entry?.sourceType === AI_WRONG_ANSWER_SOURCE
+      || entry?.questionSnapshot
+      || String(entry?.caseId || '').startsWith('ai-spot')
+      || entry?.branchId === 'tus-spot-olgular',
+  );
+}
+
+function toPlainStoredQuestion(clinicalCase) {
+  try {
+    return JSON.parse(JSON.stringify(clinicalCase));
+  } catch {
+    return null;
+  }
+}
+
+function compactText(value = '', limit = 150) {
+  const text = String(value || '').replace(/\s+/g, ' ').trim();
+  if (!text) return '';
+  if (text.length <= limit) return text;
+  return `${text.slice(0, limit).replace(/\s+\S*$/u, '').trim()}…`;
+}
+
+function buildAIWrongQuestionPreview(clinicalCase = {}) {
+  return compactText(
+    clinicalCase.question
+      || clinicalCase.clinicalFocus
+      || clinicalCase.stem
+      || clinicalCase.narrativeStem
+      || clinicalCase.patientIntro?.historySummary
+      || 'AI tarafından üretilen TUS spot sorusu.',
+    160,
+  );
+}
+
+function buildAIWrongTitle(clinicalCase = {}) {
+  const branch = clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS';
+  const target = compactText(clinicalCase.learningTarget || clinicalCase.clinicalFocus || clinicalCase.question || '', 86);
+  return target || `${branch} · AI TUS spot sorusu`;
+}
+
 
 function App() {
   const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
@@ -449,16 +493,28 @@ function App() {
   };
 
   const addWrongAnswer = useCallback((clinicalCase, selected) => {
-    const branch = resolveBranchById(clinicalCase.branchId);
+    if (!clinicalCase?.id) return;
+    const isAIQuestion = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
+    const branch = isAIQuestion ? null : resolveBranchById(clinicalCase.branchId);
+    const questionSnapshot = isAIQuestion ? toPlainStoredQuestion(clinicalCase) : null;
     const item = {
       caseId: clinicalCase.id,
-      title: clinicalCase.title,
+      title: isAIQuestion ? buildAIWrongTitle(clinicalCase) : clinicalCase.title,
       branchId: clinicalCase.branchId,
-      branchName: branch?.name ?? 'Klinik branş',
+      branchName: isAIQuestion
+        ? `AI üretim · ${clinicalCase.relatedBranch || clinicalCase.branchName || 'TUS'}`
+        : branch?.name ?? 'Klinik branş',
+      sourceType: isAIQuestion ? AI_WRONG_ANSWER_SOURCE : 'embedded-case',
       selected,
-      correctAnswer: clinicalCase.diagnosis.correct,
+      correctAnswer: clinicalCase.diagnosis?.correct,
       difficulty: clinicalCase.difficulty,
       lastWrongAt: Date.now(),
+      ...(isAIQuestion ? {
+        questionSnapshot,
+        questionPreview: buildAIWrongQuestionPreview(clinicalCase),
+        optionCount: Array.isArray(clinicalCase.diagnosis?.options) ? clinicalCase.diagnosis.options.length : 0,
+        feedbackPreserved: Boolean(clinicalCase.diagnosis?.answerFeedback || clinicalCase.answerFeedback || clinicalCase.diagnosis?.explanation),
+      } : {}),
     };
 
     setWrongAnswers((current) => {
@@ -473,13 +529,42 @@ function App() {
     });
   }, []);
 
-  const removeWrongAnswer = (caseId) => {
+  const removeWrongAnswer = (caseIdOrEntry) => {
+    const caseId = typeof caseIdOrEntry === 'object' ? caseIdOrEntry?.caseId : caseIdOrEntry;
     setWrongAnswers((current) => current.filter((entry) => entry.caseId !== caseId));
   };
 
   const clearWrongAnswers = () => setWrongAnswers([]);
 
-  const openWrongCase = (caseId) => {
+  const openWrongCase = (caseIdOrEntry) => {
+    const wrongAnswerEntry = typeof caseIdOrEntry === 'object'
+      ? caseIdOrEntry
+      : wrongAnswers.find((entry) => entry.caseId === caseIdOrEntry);
+
+    if (isAIWrongAnswerEntry(wrongAnswerEntry)) {
+      const restoredQuestion = wrongAnswerEntry?.questionSnapshot;
+      if (!restoredQuestion?.diagnosis?.options?.length || !restoredQuestion?.diagnosis?.correct) return;
+      clearAIQuestionTimer();
+      closePearlStudy();
+      setMode('study');
+      setExamState(null);
+      setSelectedBranchId(null);
+      setSelectedCaseId(null);
+      setIsCaseSidebarOpen(true);
+      setAIPracticeState({
+        active: true,
+        question: { ...restoredQuestion, id: restoredQuestion.id || wrongAnswerEntry.caseId },
+        loading: false,
+        error: null,
+        generationSource: 'Kişisel tekrar arşivi',
+        usedRemoteAI: Boolean(restoredQuestion.aiMeta?.remote),
+        fallback: Boolean(restoredQuestion.aiMeta?.fallback),
+      });
+      scrollToTopSmart({ smooth: false });
+      return;
+    }
+
+    const caseId = typeof caseIdOrEntry === 'object' ? caseIdOrEntry?.caseId : caseIdOrEntry;
     const clinicalCase = getCaseById(caseId);
     if (!clinicalCase || !accessibleCaseIds.has(clinicalCase.id)) return;
     clearAIQuestionTimer();
@@ -601,7 +686,9 @@ function App() {
   }, [examHistory, sessionStats]);
 
   const visibleWrongAnswers = useMemo(() => (
-    isDemoUser ? wrongAnswers.filter((entry) => accessibleCaseIds.has(entry.caseId)) : wrongAnswers
+    isDemoUser
+      ? wrongAnswers.filter((entry) => isAIWrongAnswerEntry(entry) || accessibleCaseIds.has(entry.caseId))
+      : wrongAnswers
   ), [wrongAnswers, isDemoUser, accessibleCaseIds]);
 
   const aiQuestionBranches = useMemo(() => listAIQuestionBranches(), []);
@@ -853,6 +940,10 @@ function App() {
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, aiPracticeStats.streak);
     const earnedPoints = isCorrect ? 5 : 0;
 
+    if (!isCorrect) {
+      addWrongAnswer(clinicalCase, selected);
+    }
+
     setAIPracticeStats((current) => {
       const attempts = current.attempts + 1;
       const correct = current.correct + (isCorrect ? 1 : 0);
@@ -868,7 +959,7 @@ function App() {
     });
 
     return { ...scored, earnedPoints, nextStreak: isCorrect ? aiPracticeStats.streak + 1 : 0 };
-  }, [aiPracticeStats.streak]);
+  }, [addWrongAnswer, aiPracticeStats.streak]);
 
   function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
     const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)
