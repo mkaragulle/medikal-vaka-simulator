@@ -9962,3 +9962,66 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
     font-size: 0.82rem !important;
   }
 }
+
+/* ==========================================================
+   V136 — Hap Bilgi return arrow true-center polish
+   Goal: replace the text arrow's font-baseline drift with an SVG icon
+   and center it optically inside the circular icon capsule.
+   ========================================================== */
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
+  grid-template-columns: 28px auto !important;
+  gap: 8px !important;
+  padding: 0 15px 0 7px !important;
+  align-items: center !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  background: rgba(15, 118, 110, 0.075) !important;
+  color: #0f766e !important;
+  line-height: 0 !important;
+  transform: none !important;
+  overflow: hidden !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 .pearl-study-back-arrow {
+  display: block !important;
+  flex: 0 0 auto !important;
+  width: 18px !important;
+  height: 18px !important;
+  transform: rotate(180deg) translateX(0.25px) !important;
+  transform-origin: center !important;
+  vertical-align: middle !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > span:not([aria-hidden="true"]) {
+  transform: none !important;
+  align-self: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+[data-theme='dark'] .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon,
+.app-shell[data-theme='dark'] .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon {
+  background: rgba(45, 212, 191, 0.12) !important;
+  color: rgba(94, 234, 212, 0.94) !important;
+}
+
+@media (max-width: 760px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
+    grid-template-columns: 26px auto !important;
+    padding-inline: 6px 11px !important;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+  }
+}

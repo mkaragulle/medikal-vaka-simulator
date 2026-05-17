@@ -768,8 +768,10 @@ function TusPearlStudyScreen({
   return (
     <section className="page-shell tus-pearl-study-shell" aria-label="Hap Bilgi Kartları çalışma ekranı">
       <header className="tus-pearl-study-top card-surface">
-        <button type="button" className="branch-back-v8" onClick={onBack}>
-          <span aria-hidden="true">←</span>
+        <button type="button" className="branch-back-v8 pearl-study-return-v136" onClick={onBack}>
+          <span className="pearl-study-back-icon" aria-hidden="true">
+            <Icon name="ArrowRight" className="pearl-study-back-arrow" size={18} strokeWidth={2.35} />
+          </span>
           <span>Tekrar merkezine dön</span>
         </button>
         <div className="tus-pearl-study-title">

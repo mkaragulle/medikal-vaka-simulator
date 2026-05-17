@@ -42810,34 +42810,61 @@ html[data-theme='dark'] body:not(.klinikiq-auth-lock) .komite-dashboard-card.kom
 }
 
 .komite-file-drop-note {
-  margin-top: .2rem;
-  padding: .72rem .88rem;
-  border-radius: .95rem;
-  background: rgba(255,255,255,.88);
-  border: 1px solid rgba(20, 184, 166, .16);
-  color: #476072;
-  font-size: .84rem;
-  line-height: 1.55;
-  font-weight: 650;
+  margin-top: .28rem;
+  display: flex;
+  align-items: center;
+  gap: .68rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: .68rem .9rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,255,255,.95), rgba(236,253,245,.78));
+  border: 1px solid rgba(20, 184, 166, .20);
+  color: #315366;
+  font-size: .85rem;
+  line-height: 1.42;
+  font-weight: 750;
+  box-shadow: 0 10px 24px rgba(15, 118, 110, .055);
+}
+
+.komite-file-drop-note-icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #0f766e;
+  background: rgba(20, 184, 166, .10);
+}
+
+.komite-file-drop-note span:last-child {
+  min-width: 0;
 }
 
 .komite-file-drop-actions {
-  display: grid;
-  justify-items: end;
-  gap: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: .82rem;
+  min-width: 310px;
 }
 
 .komite-file-picker {
   min-height: 46px;
   padding: .72rem 1rem;
   box-shadow: 0 10px 22px rgba(15, 118, 110, .18);
+  flex: 0 0 auto;
 }
 
 .komite-upload-status {
-  justify-content: flex-end;
-  text-align: right;
-  max-width: 280px;
-  line-height: 1.45;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 46px;
+  text-align: left;
+  max-width: 230px;
+  line-height: 1.35;
 }
 
 .komite-upload-muted {
@@ -42927,10 +42954,20 @@ html[data-theme='dark'] .komite-file-drop.komite-file-drop-redesign {
   background: linear-gradient(135deg, rgba(15, 23, 42, .72), rgba(15, 23, 42, .92));
   border-color: rgba(45, 212, 191, .35);
 }
-html[data-theme='dark'] .komite-file-drop-icon,
-html[data-theme='dark'] .komite-file-drop-note {
+html[data-theme='dark'] .komite-file-drop-icon {
   background: rgba(15,23,42,.88);
   border-color: rgba(45,212,191,.14);
+}
+
+html[data-theme='dark'] .komite-file-drop-note {
+  background: linear-gradient(135deg, rgba(15,23,42,.92), rgba(20,83,75,.40));
+  border-color: rgba(45,212,191,.16);
+  color: #cbd5e1;
+}
+
+html[data-theme='dark'] .komite-file-drop-note-icon {
+  color: #5eead4;
+  background: rgba(45,212,191,.12);
 }
 
 @media (max-width: 980px) {
@@ -42944,10 +42981,22 @@ html[data-theme='dark'] .komite-file-drop-note {
     justify-items: start;
   }
 
-  .komite-file-drop-actions,
+  .komite-file-drop-actions {
+    justify-content: flex-start;
+    align-items: center;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
   .komite-upload-status {
-    justify-items: start;
+    justify-content: flex-start;
+    min-height: auto;
     text-align: left;
+  }
+
+  .komite-file-drop-note {
+    width: 100%;
+    border-radius: 1rem;
   }
 
   .komite-upload-hero {
@@ -45605,3 +45654,340 @@ html[data-theme='dark'] .komite-upload-redesign .komite-custom-select-option.act
   }
 }
 .komite-upload-redesign .komite-custom-select-field.open { z-index: 110; }
+
+/* --------------------------------------------------------------------------
+   KLINIKIQ V138 — compact longitudinal material library
+   Makes the KOMITE material archive usable across multi-year medical training:
+   class → committee/topic → material hierarchy, with compact accordions.
+   -------------------------------------------------------------------------- */
+.komite-subpage.card-surface .komite-section-head {
+  align-items: center;
+  margin-bottom: .95rem;
+}
+
+.komite-subpage.card-surface .komite-section-head h2 {
+  margin: 0 0 .24rem;
+  letter-spacing: -.045em;
+}
+
+.komite-subpage.card-surface .komite-section-head p {
+  max-width: 720px;
+  font-size: .98rem;
+}
+
+.komite-material-library {
+  display: grid;
+  gap: .85rem;
+}
+
+.komite-library-toolbar {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  flex-wrap: wrap;
+  padding: .42rem;
+  border: 1px solid rgba(20, 184, 166, .16);
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(240, 253, 250, .78), rgba(255, 255, 255, .84));
+}
+
+.komite-library-toolbar span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .42rem;
+  min-height: 34px;
+  padding: .48rem .72rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .86);
+  border: 1px solid rgba(15, 23, 42, .06);
+  color: #0f766e;
+  font-size: .82rem;
+  font-weight: 850;
+  box-shadow: 0 8px 22px rgba(15, 118, 110, .07);
+}
+
+.komite-material-library .komite-material-tree {
+  gap: .72rem !important;
+}
+
+.komite-material-library .komite-tree-class {
+  display: grid;
+  gap: .6rem;
+  padding: .62rem !important;
+  border-radius: 1.35rem !important;
+  border: 1px solid rgba(20, 184, 166, .18) !important;
+  background:
+    radial-gradient(circle at 96% 0%, rgba(20, 184, 166, .08), transparent 34%),
+    rgba(255, 255, 255, .76) !important;
+  box-shadow: 0 16px 42px rgba(15, 23, 42, .055);
+}
+
+.komite-tree-class-trigger,
+.komite-tree-course-trigger {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: #0f172a;
+  font: inherit;
+  cursor: pointer;
+}
+
+.komite-tree-class-trigger {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: .72rem;
+  min-height: 62px;
+  padding: .72rem .82rem;
+  border-radius: 1.05rem;
+  text-align: left;
+  transition: background-color .16s ease, box-shadow .16s ease;
+}
+
+.komite-tree-class.open .komite-tree-class-trigger,
+.komite-tree-class-trigger:hover {
+  background: linear-gradient(135deg, rgba(240, 253, 250, .88), rgba(255, 255, 255, .9));
+  box-shadow: inset 0 0 0 1px rgba(20, 184, 166, .13);
+}
+
+.komite-tree-class-icon,
+.komite-tree-file-icon {
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: .95rem;
+  background: rgba(204, 251, 241, .62);
+  color: #0f766e;
+  flex: 0 0 auto;
+}
+
+.komite-tree-class-copy,
+.komite-tree-course-copy,
+.komite-tree-file-copy {
+  min-width: 0;
+  display: grid;
+  gap: .13rem;
+}
+
+.komite-tree-class-copy strong,
+.komite-tree-course-copy strong,
+.komite-tree-file-copy strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #0f172a;
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.komite-tree-class-copy strong { font-size: 1.08rem; }
+.komite-tree-class-copy em,
+.komite-tree-course-copy em,
+.komite-tree-file-copy em {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #64748b;
+  font-style: normal;
+  font-size: .78rem;
+  font-weight: 700;
+}
+
+.komite-tree-class-metrics {
+  display: inline-flex;
+  align-items: center;
+  gap: .38rem;
+  white-space: nowrap;
+}
+
+.komite-tree-class-metrics small,
+.komite-tree-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 28px;
+  padding: .28rem .55rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, .06);
+  background: rgba(241, 245, 249, .9);
+  color: #475569;
+  font-size: .72rem !important;
+  font-weight: 850;
+}
+
+.komite-tree-status.status-ready {
+  color: #0f766e;
+  background: rgba(204, 251, 241, .7);
+  border-color: rgba(20, 184, 166, .16);
+}
+
+.komite-tree-status.status-pending {
+  color: #92400e;
+  background: rgba(254, 243, 199, .72);
+  border-color: rgba(245, 158, 11, .18);
+}
+
+.komite-tree-committee-list {
+  display: grid;
+  gap: .48rem;
+  padding: 0 .18rem .16rem;
+}
+
+.komite-material-library .komite-tree-course {
+  display: grid;
+  gap: .42rem !important;
+  padding: .38rem;
+  border-radius: 1.05rem;
+  border: 1px solid rgba(15, 23, 42, .07);
+  background: rgba(248, 250, 252, .66);
+}
+
+.komite-tree-course-trigger {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .65rem;
+  min-height: 48px;
+  padding: .52rem .62rem;
+  border-radius: .86rem;
+  text-align: left;
+}
+
+.komite-tree-course.open .komite-tree-course-trigger,
+.komite-tree-course-trigger:hover {
+  background: rgba(255, 255, 255, .9);
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, .045);
+}
+
+.komite-tree-course-badge {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: .78rem;
+  background: rgba(15, 118, 110, .08);
+  color: #0f766e;
+  font-size: .76rem;
+  font-weight: 950;
+  letter-spacing: .04em;
+}
+
+.komite-material-library .komite-tree-files {
+  display: grid;
+  gap: .38rem !important;
+  padding: 0 .12rem .12rem;
+}
+
+.komite-material-library .komite-tree-file {
+  grid-template-columns: auto minmax(0, 1fr) auto auto !important;
+  min-height: 58px;
+  gap: .66rem;
+  padding: .58rem .64rem !important;
+  border-radius: .95rem !important;
+  background: rgba(255, 255, 255, .86) !important;
+  border-color: rgba(15, 23, 42, .075) !important;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, .035);
+  transition: transform .16s ease, border-color .16s ease, box-shadow .16s ease, background-color .16s ease;
+}
+
+.komite-material-library .komite-tree-file:hover {
+  transform: translateY(-1px);
+  border-color: rgba(20, 184, 166, .24) !important;
+  box-shadow: 0 16px 34px rgba(15, 118, 110, .09);
+}
+
+.komite-material-library .komite-tree-file.active {
+  background: linear-gradient(135deg, rgba(240, 253, 250, .96), rgba(255, 255, 255, .9)) !important;
+  border-color: rgba(20, 184, 166, .34) !important;
+}
+
+.komite-material-library .komite-tree-file-copy strong {
+  font-size: .95rem;
+}
+
+.komite-material-library .komite-tree-delete {
+  width: 32px;
+  height: 32px;
+  border-radius: .82rem;
+  color: #64748b;
+  background: rgba(241, 245, 249, .9);
+  border: 1px solid rgba(15, 23, 42, .07);
+}
+
+.komite-material-library .komite-tree-delete:hover {
+  color: #b91c1c;
+  background: #fff1f2;
+  border-color: rgba(244, 63, 94, .22);
+}
+
+html[data-theme='dark'] .komite-library-toolbar,
+html[data-theme='dark'] .komite-material-library .komite-tree-class,
+html[data-theme='dark'] .komite-material-library .komite-tree-course,
+html[data-theme='dark'] .komite-material-library .komite-tree-file,
+html[data-theme='dark'] .komite-tree-course.open .komite-tree-course-trigger,
+html[data-theme='dark'] .komite-tree-course-trigger:hover,
+html[data-theme='dark'] .komite-tree-class.open .komite-tree-class-trigger,
+html[data-theme='dark'] .komite-tree-class-trigger:hover {
+  background: rgba(15, 23, 42, .72) !important;
+  border-color: rgba(148, 163, 184, .16) !important;
+}
+
+html[data-theme='dark'] .komite-tree-class-copy strong,
+html[data-theme='dark'] .komite-tree-course-copy strong,
+html[data-theme='dark'] .komite-tree-file-copy strong,
+html[data-theme='dark'] .komite-tree-class-trigger,
+html[data-theme='dark'] .komite-tree-course-trigger {
+  color: #f8fafc;
+}
+
+html[data-theme='dark'] .komite-tree-class-copy em,
+html[data-theme='dark'] .komite-tree-course-copy em,
+html[data-theme='dark'] .komite-tree-file-copy em {
+  color: #94a3b8;
+}
+
+@media (max-width: 860px) {
+  .komite-tree-class-trigger {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+  }
+
+  .komite-tree-class-metrics {
+    grid-column: 2 / -1;
+    justify-self: start;
+  }
+
+  .komite-material-library .komite-tree-file {
+    grid-template-columns: auto minmax(0, 1fr) auto !important;
+  }
+
+  .komite-tree-status {
+    grid-column: 2;
+    justify-self: start;
+  }
+
+  .komite-tree-delete {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .komite-library-toolbar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .komite-library-toolbar span {
+    padding-inline: .45rem;
+    font-size: .72rem;
+  }
+
+  .komite-tree-class-trigger,
+  .komite-tree-course-trigger {
+    gap: .52rem;
+    padding-inline: .55rem;
+  }
+}

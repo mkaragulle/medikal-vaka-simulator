@@ -1022,58 +1022,161 @@ function AsyncActionButton({ status = 'idle', idleLabel, loadingLabel, successLa
 }
 
 function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMaterial }) {
-  const grouped = useMemo(() => materials.reduce((acc, material) => {
-    const classKey = `${material.classYear || '?'}. Sınıf`;
-    const courseKey = material.committee || material.course || 'Komite / Ders belirtilmedi';
-    if (!acc[classKey]) acc[classKey] = {};
-    if (!acc[classKey][courseKey]) acc[classKey][courseKey] = [];
-    acc[classKey][courseKey].push(material);
-    return acc;
-  }, {}), [materials]);
+  const grouped = useMemo(() => {
+    const classMap = materials.reduce((acc, material) => {
+      const classYear = String(material.classYear || '?');
+      const classKey = `${classYear}. Sınıf`;
+      const committeeKey = material.committee || material.course || 'Komite / Ders belirtilmedi';
+      if (!acc[classKey]) acc[classKey] = { classYear, committees: {} };
+      if (!acc[classKey].committees[committeeKey]) acc[classKey].committees[committeeKey] = [];
+      acc[classKey].committees[committeeKey].push(material);
+      return acc;
+    }, {});
+
+    return Object.entries(classMap)
+      .sort(([, a], [, b]) => {
+        const aYear = Number(a.classYear);
+        const bYear = Number(b.classYear);
+        if (Number.isFinite(aYear) && Number.isFinite(bYear)) return aYear - bYear;
+        return String(a.classYear).localeCompare(String(b.classYear), 'tr');
+      })
+      .map(([className, classData]) => ({
+        className,
+        classYear: classData.classYear,
+        committees: Object.entries(classData.committees)
+          .sort(([a], [b]) => a.localeCompare(b, 'tr'))
+          .map(([committeeName, committeeMaterials]) => ({
+            committeeName,
+            materials: [...committeeMaterials].sort((a, b) => (b.uploadDate || 0) - (a.uploadDate || 0)),
+          })),
+      }));
+  }, [materials]);
+
+  const activePath = useMemo(() => {
+    const active = materials.find((material) => material.id === activeMaterialId) || materials[0] || null;
+    if (!active) return null;
+    return {
+      className: `${active.classYear || '?'}. Sınıf`,
+      committeeName: active.committee || active.course || 'Komite / Ders belirtilmedi',
+    };
+  }, [activeMaterialId, materials]);
+
+  const [expandedClasses, setExpandedClasses] = useState(() => activePath?.className ? { [activePath.className]: true } : {});
+  const [expandedCommittees, setExpandedCommittees] = useState(() => activePath ? { [`${activePath.className}::${activePath.committeeName}`]: true } : {});
+
+  useEffect(() => {
+    if (!activePath) return;
+    setExpandedClasses((current) => ({ ...current, [activePath.className]: true }));
+    setExpandedCommittees((current) => ({ ...current, [`${activePath.className}::${activePath.committeeName}`]: true }));
+  }, [activePath]);
 
   if (!materials.length) {
     return <EmptyState title="Henüz materyal yüklemedin." text="Komite slaytlarını yükleyerek ders anlatımı, soru ve hap kart oluşturabilirsin." />;
   }
 
   return (
-    <div className="komite-material-tree">
-      {Object.entries(grouped).map(([className, courses]) => (
-        <div className="komite-tree-class" key={className}>
-          <span className="komite-tree-class-title">{className}</span>
-          {Object.entries(courses).map(([courseName, courseMaterials]) => (
-            <div className="komite-tree-course" key={courseName}>
-              <span className="komite-tree-course-title">{courseName}</span>
-              <div className="komite-tree-files">
-                {courseMaterials.map((material) => (
-                  <button
-                    key={material.id}
-                    type="button"
-                    className={`komite-tree-file ${activeMaterialId === material.id ? 'active' : ''}`}
-                    onClick={() => onOpenMaterial(material.id)}
-                  >
-                    <Icon name="Notes" size={16} />
-                    <span className="komite-tree-file-copy"><strong>{material.fileName}</strong><em>{material.course || material.committee || 'Ders belirtilmedi'} · {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</em></span>
-                    <small>{material.lesson ? 'Ders hazır' : 'Hazırlanıyor'}</small>
-                    {onDeleteMaterial ? (
-                      <span
-                        role="button"
-                        tabIndex={0}
-                        className="komite-tree-delete"
-                        aria-label={`${material.fileName} materyalini sil`}
-                        title="Sil"
-                        onClick={(event) => { event.stopPropagation(); onDeleteMaterial(material.id); }}
-                        onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); onDeleteMaterial(material.id); } }}
-                      >
-                        <Icon name="Trash2" size={15} />
-                      </span>
-                    ) : null}
-                  </button>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      ))}
+    <div className="komite-material-library" aria-label="Materyal kütüphanesi">
+      <div className="komite-library-toolbar" aria-hidden="true">
+        <span><Icon name="BookOpen" size={16} /> {grouped.length} sınıf</span>
+        <span><Icon name="ClipboardList" size={16} /> {materials.length} materyal</span>
+        <span><Icon name="LayeredCards" size={16} /> {materials.reduce((sum, material) => sum + (material.flashcardDeck?.cards?.length || 0), 0)} kart</span>
+      </div>
+      <div className="komite-material-tree">
+        {grouped.map(({ className, committees }) => {
+          const classOpen = expandedClasses[className] ?? className === activePath?.className;
+          const classMaterialCount = committees.reduce((sum, committee) => sum + committee.materials.length, 0);
+          const classLessonCount = committees.reduce((sum, committee) => sum + committee.materials.filter((material) => material.lesson).length, 0);
+          const classCardCount = committees.reduce((sum, committee) => sum + committee.materials.reduce((innerSum, material) => innerSum + (material.flashcardDeck?.cards?.length || 0), 0), 0);
+
+          return (
+            <section className={`komite-tree-class ${classOpen ? 'open' : ''}`.trim()} key={className}>
+              <button
+                type="button"
+                className="komite-tree-class-trigger"
+                onClick={() => setExpandedClasses((current) => ({ ...current, [className]: !classOpen }))}
+                aria-expanded={classOpen}
+              >
+                <span className="komite-tree-class-icon"><Icon name="BookOpen" size={18} /></span>
+                <span className="komite-tree-class-copy">
+                  <strong>{className}</strong>
+                  <em>{committees.length} komite / başlık · {classMaterialCount} materyal</em>
+                </span>
+                <span className="komite-tree-class-metrics">
+                  <small>{classLessonCount} ders</small>
+                  <small>{classCardCount} kart</small>
+                </span>
+                <Icon name={classOpen ? 'ChevronUp' : 'ChevronDown'} size={17} />
+              </button>
+
+              {classOpen ? (
+                <div className="komite-tree-committee-list">
+                  {committees.map(({ committeeName, materials: committeeMaterials }, index) => {
+                    const committeeKey = `${className}::${committeeName}`;
+                    const committeeOpen = expandedCommittees[committeeKey] ?? committeeKey === `${activePath?.className}::${activePath?.committeeName}`;
+                    const readyCount = committeeMaterials.filter((material) => material.lesson || material.questions?.length || material.flashcardDeck?.cards?.length).length;
+                    const displayedCommitteeName = committeeName || `${index + 1}. Komite`;
+
+                    return (
+                      <div className={`komite-tree-course ${committeeOpen ? 'open' : ''}`.trim()} key={committeeKey}>
+                        <button
+                          type="button"
+                          className="komite-tree-course-trigger"
+                          onClick={() => setExpandedCommittees((current) => ({ ...current, [committeeKey]: !committeeOpen }))}
+                          aria-expanded={committeeOpen}
+                        >
+                          <span className="komite-tree-course-badge">{String(index + 1).padStart(2, '0')}</span>
+                          <span className="komite-tree-course-copy">
+                            <strong>{displayedCommitteeName}</strong>
+                            <em>{committeeMaterials.length} materyal · {readyCount} hazır çalışma</em>
+                          </span>
+                          <Icon name={committeeOpen ? 'ChevronUp' : 'ChevronDown'} size={16} />
+                        </button>
+
+                        {committeeOpen ? (
+                          <div className="komite-tree-files">
+                            {committeeMaterials.map((material) => {
+                              const statusLabel = material.lesson ? 'Ders hazır' : material.questions?.length ? 'Sorular hazır' : material.flashcardDeck?.cards?.length ? 'Kartlar hazır' : 'Hazırlanıyor';
+                              const statusTone = material.lesson || material.questions?.length || material.flashcardDeck?.cards?.length ? 'ready' : 'pending';
+                              return (
+                                <button
+                                  key={material.id}
+                                  type="button"
+                                  className={`komite-tree-file ${activeMaterialId === material.id ? 'active' : ''}`}
+                                  onClick={() => onOpenMaterial(material.id)}
+                                >
+                                  <span className="komite-tree-file-icon"><Icon name="Notes" size={16} /></span>
+                                  <span className="komite-tree-file-copy">
+                                    <strong>{inferAcademicTitle(material) || material.fileName}</strong>
+                                    <em>{material.course || material.fileName} · {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</em>
+                                  </span>
+                                  <small className={`komite-tree-status status-${statusTone}`}>{statusLabel}</small>
+                                  {onDeleteMaterial ? (
+                                    <span
+                                      role="button"
+                                      tabIndex={0}
+                                      className="komite-tree-delete"
+                                      aria-label={`${material.fileName} materyalini sil`}
+                                      title="Sil"
+                                      onClick={(event) => { event.stopPropagation(); onDeleteMaterial(material.id); }}
+                                      onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); onDeleteMaterial(material.id); } }}
+                                    >
+                                      <Icon name="Trash2" size={15} />
+                                    </span>
+                                  ) : null}
+                                </button>
+                              );
+                            })}
+                          </div>
+                        ) : null}
+                      </div>
+                    );
+                  })}
+                </div>
+              ) : null}
+            </section>
+          );
+        })}
+      </div>
     </div>
   );
 }
@@ -1284,13 +1387,14 @@ function StartFlow({ onCreate, onCancel }) {
               <strong>Dosyalarını ekle</strong>
               <p>PDF, PPTX, DOCX ve TXT dosyalarını sürükle-bırak yapabilir veya dosya seçerek yükleyebilirsin.</p>
               <div className="komite-file-drop-note" role="note">
-                Aynı komite veya aynı konu başlıklarına ait dokümanları birlikte yüklemen, daha tutarlı ve daha yüksek kaliteli çıktı alınmasını sağlar.
+                <span className="komite-file-drop-note-icon"><Icon name="Sparkles" size={16} /></span>
+                <span>Aynı komite veya aynı konu başlığındaki dokümanları birlikte yüklemek, KlinikIQ'nun bağlantıları daha doğru kurmasını ve daha tutarlı çıktılar üretmesini sağlar.</span>
               </div>
             </div>
             <div className="komite-file-drop-actions">
               <label htmlFor="komite-file-input" className="komite-file-picker">Dosya seç</label>
               {isExtracting ? <span className="komite-upload-status"><span className="komite-spinner" aria-hidden="true" /> Dosyalar okunuyor…</span> : null}
-              {!isExtracting && fileNotice ? <span className="komite-upload-status">{fileNotice}</span> : <span className="komite-upload-status komite-upload-muted">Henüz dosya seçilmedi.</span>}
+              {!isExtracting ? (fileNotice ? <span className="komite-upload-status">{fileNotice}</span> : <span className="komite-upload-status komite-upload-muted">Henüz dosya seçilmedi.</span>) : null}
             </div>
           </div>
         </div>
@@ -1818,7 +1922,7 @@ function MyMaterialsPage({ materials, activeMaterialId, onOpenMaterial, onBack, 
   return (
     <section className="komite-subpage card-surface">
       <div className="komite-section-head">
-        <div><span className="komite-kicker">Çalıştıklarım</span><h2>Materyal Kütüphanesi</h2><p>Yüklediğin komite dosyalarını sınıf, komite ve ders düzeninde görüntüle.</p></div>
+        <div><h2>Materyal Kütüphanesi</h2><p>Tıp eğitimin boyunca oluşturduğun dersleri sınıf, komite ve konu başlığı düzeyinde hızlıca bul.</p></div>
         <button type="button" className="btn btn-secondary" onClick={onBack}>Ana ekrana dön</button>
       </div>
       <MaterialTree materials={materials} activeMaterialId={activeMaterialId} onOpenMaterial={onOpenMaterial} onDeleteMaterial={onDeleteMaterial} />
