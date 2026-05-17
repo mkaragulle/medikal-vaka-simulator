@@ -2392,7 +2392,10 @@ function polishMedicalTerminology(value = '') {
     .replace(/\bC\.\s*difficile\b/gu, 'Clostridioides difficile')
     .replace(/\bC\.\s*tetani\b/gu, 'Clostridium tetani')
     .replace(/\bV\.\s*cholerae\b/gu, 'Vibrio cholerae')
-    .replace(/\bLikefaksiyon\s+nekrozu\b/giu, 'Sıvılaşma nekrozu')
+    .replace(/\bLikefaksiyon\s+nekrozu\b/giu, 'sıvılaşma nekrozu')
+    .replace(/\bLikefaksiyon\b/giu, 'sıvılaşma')
+    .replace(/\bSurfactan(?=\b|[ıiuü]n|[ıiuü]nda|[ıiuü]nde)/giu, 'surfaktan')
+    .replace(/\bApe\s+hand\b/giu, 'maymun eli')
     .replace(/\bRed\s+man\/sendromu\b/giu, 'kızarma (red man) sendromu')
     .replace(/\s*→\s*/g, ', ')
     .replace(/\s+/g, ' ')
@@ -2408,13 +2411,13 @@ function cleanText(value = '') {
 }
 
 function cleanSentence(value = '') {
-  const text = cleanText(value);
+  const text = polishGeneratedLead(value);
   if (!text) return '';
   return /[.!?]$/u.test(text) ? text : `${text}.`;
 }
 
 function cleanQuestion(value = '') {
-  const text = cleanText(value);
+  const text = polishGeneratedLead(value);
   if (!text) return '';
   return /[?]$/u.test(text) ? text : `${text.replace(/[.!]+$/u, '')}?`;
 }
@@ -2449,12 +2452,42 @@ function capitalizeSentenceLead(value = '') {
   return text.charAt(0).toLocaleUpperCase('tr') + text.slice(1);
 }
 
-function buildKeywordBack(topic, keywords) {
-  const phrase = capitalizeSentenceLead(readableKeywordPhrase(keywords));
-  const topicText = trimSentenceEnd(topic.topic || topic.mainAnswer);
-  if (!phrase) return cleanSentence(topic.mainAnswer);
-  if (!topicText) return cleanSentence(`${phrase} birlikteliği temel paterni oluşturur`);
-  return cleanSentence(`${phrase} birlikteliği ${topicText} için temel ipucu setidir`);
+function polishGeneratedLead(value = '') {
+  const text = cleanText(value);
+  if (!text) return '';
+  if (/^(hCG|pH|PaO|PaCO|PaO₂|PaCO₂|Na\+|Na⁺|K\+|K⁺|HCO|Ig|anti-|Anti-|β|α|\d)/u.test(text)) return text;
+  return text.charAt(0).toLocaleUpperCase('tr') + text.slice(1);
+}
+
+function answerLabel(topic = {}) {
+  return trimSentenceEnd(topic.mainAnswer || topic.topic || '');
+}
+
+function cuePhraseFromKeywords(keywords = [], limit = 4) {
+  return joinTurkishList(keywordItems(keywords).slice(0, limit));
+}
+
+function supportCuePhrase(keywords = []) {
+  const items = keywordItems(keywords);
+  if (items.length <= 1) return '';
+  return joinTurkishList(items.slice(1, 4));
+}
+
+function buildKeywordBack(topic, keywords, topicIndex = 0) {
+  const answer = answerLabel(topic);
+  const cues = cuePhraseFromKeywords(keywords);
+  const cueLead = polishGeneratedLead(cues);
+  if (!answer && !cues) return '';
+  if (!cues) return cleanSentence(answer);
+  if (!answer) return cleanSentence(polishGeneratedLead(`Belirleyici patern: ${cues}`));
+
+  const variants = [
+    `${answer}. Paterni kuran ipuçları: ${cues}`,
+    `${answer}; bu yanıta götüren çekirdek bulgular ${cues}`,
+    `${answer}. ${cueLead} aynı klinik veya mekanistik çerçevede birleşir`,
+    `${answer}. Ayırıcı patern ${cues} üzerinden okunur`,
+  ];
+  return cleanSentence(polishGeneratedLead(variants[topicIndex % variants.length]));
 }
 
 const SPECIAL_KEYWORD_CARDS = {
@@ -2586,10 +2619,22 @@ function inferPearlPatternLabel(topic = {}, keywords = []) {
   return 'anahtar klinik paternle';
 }
 
-function buildKeywordFront(topic, keywords = []) {
+function buildKeywordFront(topic, keywords = [], topicIndex = 0) {
   const special = SPECIAL_KEYWORD_CARDS[topic.topic];
   if (special?.front) return cleanQuestion(special.front);
-  return cleanQuestion(`${cleanText(topic.topic)} hangi ${inferPearlPatternLabel(topic, keywords)} hatırlanır`);
+  const cues = keywordItems(keywords);
+  const compactCues = cues.length >= 3 ? joinTurkishList(cues.slice(0, 3)) : joinTurkishList(cues);
+
+  if (cues.length >= 2) {
+    const variants = [
+      `${compactCues} paterni en çok hangi kavramı düşündürür`,
+      `${compactCues} birlikte görüldüğünde hangi başlık öncelikle düşünülür`,
+      `${compactCues} ipuçları hangi cevabı destekler`,
+      `Bu ipuçları hangi kavrama yönlendirir: ${compactCues}`,
+    ];
+    return cleanQuestion(polishGeneratedLead(variants[topicIndex % variants.length]));
+  }
+  return cleanQuestion(`${cleanText(topic.topic)} için belirleyici ipucu nedir`);
 }
 
 const SPECIAL_TRAP_FRONTS = {
@@ -2605,6 +2650,7 @@ function displayTopicForFront(value = '') {
 function polishContrastEntity(value = '') {
   return String(value || '')
     .replace(/\bOpioid toksidrom$/iu, 'Opioid toksidromu')
+    .replace(/^Median$/iu, 'Median sinir')
     .replace(/\b([A-ZÇĞİÖŞÜa-zçğıöşü]+) etkisiyle$/u, '$1')
     .replace(/\s+/g, ' ')
     .trim();
@@ -2679,11 +2725,24 @@ function isCompactContrastEntity(value = '') {
   return true;
 }
 
-function buildTrapFront(topic) {
+function buildTrapFront(topic, topicIndex = 0) {
   if (SPECIAL_TRAP_FRONTS[topic.topic]) return cleanQuestion(SPECIAL_TRAP_FRONTS[topic.topic]);
+  const topicName = displayTopicForFront(cleanText(topic.topic));
   const contrast = stripContrastEntity(topic.trap);
-  if (isCompactContrastEntity(contrast)) return cleanQuestion(`${displayTopicForFront(cleanText(topic.topic))} ${contrast} ile hangi noktada ayrılır`);
-  return cleanQuestion(`${displayTopicForFront(cleanText(topic.topic))} için karıştırılmaması gereken temel ayırıcı nokta nedir`);
+  if (isCompactContrastEntity(contrast)) {
+    const variants = [
+      `${topicName} ile ${contrast} ayrımında kritik fark nedir`,
+      `${topicName} ${contrast} ile karıştığında hangi ayrım belirleyicidir`,
+      `${topicName} için ${contrast} seçeneğini dışlatan temel nokta nedir`,
+    ];
+    return cleanQuestion(variants[topicIndex % variants.length]);
+  }
+  const generic = [
+    `${topicName} değerlendirilirken hangi ayırıcı noktaya dikkat edilmelidir`,
+    `${topicName} sorusunda yanlış seçeneğe götüren temel karışıklık nedir`,
+    `${topicName} için en önemli ayırıcı not nedir`,
+  ];
+  return cleanQuestion(generic[topicIndex % generic.length]);
 }
 
 function stripTusBoilerplate(value = '') {
@@ -2694,9 +2753,20 @@ function stripTusBoilerplate(value = '') {
     .trim();
 }
 
-function buildTusTip(topic, keywords = []) {
-  const phrase = readableKeywordPhrase(keywords);
-  if (phrase) return cleanSentence(`Yanıta giderken ${phrase} ilişkisini birlikte değerlendir`);
+function buildTusTip(topic, keywords = [], topicIndex = 0) {
+  const cues = keywordItems(keywords);
+  if (cues.length >= 2) {
+    const mainCue = cues[0];
+    const support = supportCuePhrase(cues);
+    const variants = [
+      `Ana ipucu: ${mainCue}; ${support} aynı paterni güçlendirir`,
+      `Önce ${mainCue} ipucunu yakala; ${support} ile birlikte düşün`,
+      `${polishGeneratedLead(mainCue)} yön verir; ${support} tabloyu tamamlar`,
+      `Bu kartta belirleyici ipucu ${mainCue}; ${support} ayrımı netleştirir`,
+    ];
+    return cleanSentence(polishGeneratedLead(variants[topicIndex % variants.length]));
+  }
+  if (cues.length === 1) return cleanSentence(polishGeneratedLead(`${cues[0]} bu kartın belirleyici ipucudur`));
   return cleanSentence(stripTusBoilerplate(topic.explanation));
 }
 
@@ -2742,17 +2812,17 @@ function buildCard(topic, topicIndex, variantIndex) {
       back: cleanSentence(topic.mainAnswer),
       answer: cleanSentence(topic.mainAnswer),
       explanation: buildVariantExplanation(topic, variant, keywords),
-      tusTip: buildTusTip(topic, keywords),
+      tusTip: buildTusTip(topic, keywords, topicIndex),
       differentialNote: cleanSentence(topic.trap),
       cardType: 'Aktif hatırlama',
     };
   }
   if (variant === 'keywords') {
     const special = SPECIAL_KEYWORD_CARDS[topic.topic] || {};
-    const answer = special.answer || buildKeywordBack(topic, keywords);
+    const answer = special.answer || buildKeywordBack(topic, keywords, topicIndex);
     return {
       ...base,
-      front: buildKeywordFront(topic, keywords),
+      front: buildKeywordFront(topic, keywords, topicIndex),
       back: cleanSentence(answer),
       answer: cleanSentence(answer),
       explanation: buildVariantExplanation(topic, variant, keywords),
@@ -2765,7 +2835,7 @@ function buildCard(topic, topicIndex, variantIndex) {
     const answer = cleanSentence(topic.trap);
     return {
       ...base,
-      front: buildTrapFront(topic),
+      front: buildTrapFront(topic, topicIndex),
       back: cleanSentence(answer),
       answer: cleanSentence(answer),
       explanation: buildVariantExplanation(topic, variant, keywords),
