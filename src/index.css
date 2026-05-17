@@ -46728,3 +46728,26 @@ html[data-theme='dark'] .komite-review-scope button.active {
     display: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   KLINIKIQ V142 — repeat center tag cleanup
+   Removes scope/count badges from the material repeat center for a cleaner UI.
+   -------------------------------------------------------------------------- */
+.komite-review-page .komite-section-head .komite-kicker {
+  display: none !important;
+}
+
+.komite-review-center-v141 .komite-review-hero-clean {
+  grid-template-columns: minmax(0, 1fr);
+  padding: .78rem .82rem;
+}
+
+.komite-review-center-v141 .komite-review-scope,
+.komite-review-center-v141 .komite-review-summary-strip,
+.komite-review-center-v141 .komite-review-count {
+  display: none !important;
+}
+
+.komite-review-center-v141 .komite-review-panel-head {
+  grid-template-columns: auto minmax(0, 1fr);
+}

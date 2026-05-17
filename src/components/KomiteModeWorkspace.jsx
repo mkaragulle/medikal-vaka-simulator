@@ -1811,7 +1811,6 @@ function ReviewPanel({ icon, title, description, count, emptyText, children }) {
           <strong>{title}</strong>
           <small>{description}</small>
         </span>
-        <span className="komite-review-count">{count}</span>
       </div>
       <div className="komite-review-panel-body">
         {count ? children : <p className="komite-review-empty">{emptyText}</p>}
@@ -1821,8 +1820,7 @@ function ReviewPanel({ icon, title, description, count, emptyText, children }) {
 }
 
 function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
-  const [filter, setFilter] = useState('Bu materyal');
-  const scopeMaterials = filter === 'Bu materyal' && activeMaterial ? [activeMaterial] : materials;
+  const scopeMaterials = activeMaterial ? [activeMaterial] : materials;
   const wrongQuestions = scopeMaterials.flatMap((material) => (material.questions || []).filter((question) => question.isWrong).map((question) => ({ ...question, material })));
   const difficultCards = scopeMaterials.flatMap((material) => (material.flashcardDeck?.cards || []).filter((card) => card.isDifficult || card.repeatStatus === 'repeat').map((card) => ({ ...card, material })));
   const favorites = scopeMaterials.flatMap((material) => [
@@ -1834,38 +1832,16 @@ function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
     ...difficultCards.map((card) => card.tags?.[0] || card.type || card.material.course || card.material.committee || inferAcademicTitle(card.material)),
   ].filter(Boolean);
   const weakFocus = [...new Set(weakFocusItems.map((item) => String(item).replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 4);
-  const scopedTitle = filter === 'Bu materyal' && activeMaterial ? inferAcademicTitle(activeMaterial) : 'Tüm materyaller';
-  const totalItems = wrongQuestions.length + difficultCards.length + favorites.length;
-  const filterCounts = {
-    'Bu materyal': activeMaterial ? ((activeMaterial.questions || []).filter((question) => question.isWrong).length + (activeMaterial.flashcardDeck?.cards || []).filter((card) => card.isDifficult || card.repeatStatus === 'repeat' || card.isFavorite).length + (activeMaterial.questions || []).filter((question) => question.isFavorite).length) : 0,
-    'Tüm materyaller': materials.reduce((sum, material) => sum + (material.questions || []).filter((question) => question.isWrong || question.isFavorite).length + (material.flashcardDeck?.cards || []).filter((card) => card.isDifficult || card.repeatStatus === 'repeat' || card.isFavorite).length, 0),
-  };
-
   return (
     <div className="komite-review-center komite-review-center-v141">
-      <div className="komite-review-hero">
+      <div className="komite-review-hero komite-review-hero-clean">
         <div className="komite-review-hero-copy">
           <span className="komite-review-hero-icon"><Icon name="RotateCcw" size={18} /></span>
           <div>
-            <strong>{scopedTitle}</strong>
-            <p>Yanlış sorularını, zor kartlarını ve favorilerini tek ekranda kısa tekrar akışına dönüştür.</p>
+            <strong>Hedefli tekrar akışı</strong>
+            <p>Yanlış sorularını, zor kartlarını ve favorilerini sade bir çalışma akışında tekrar et.</p>
           </div>
         </div>
-        <div className="komite-review-scope" role="tablist" aria-label="Tekrar kapsamı">
-          {REVIEW_FILTERS.map((item) => (
-            <button key={item} type="button" className={filter === item ? 'active' : ''} onClick={() => setFilter(item)}>
-              <span>{item}</span>
-              <em>{filterCounts[item] || 0}</em>
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <div className="komite-review-summary-strip" aria-label="Tekrar özeti">
-        <span><strong>{wrongQuestions.length}</strong> yanlış soru</span>
-        <span><strong>{difficultCards.length}</strong> tekrar kartı</span>
-        <span><strong>{favorites.length}</strong> favori</span>
-        <span><strong>{totalItems}</strong> toplam öğe</span>
       </div>
 
       <div className="komite-review-grid komite-review-grid-v141">
@@ -1915,7 +1891,6 @@ function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
               <strong>Zayıf Odak</strong>
               <small>Çalışma verisine göre önceliklendir.</small>
             </span>
-            <span className="komite-review-count">{weakFocus.length}</span>
           </div>
           {weakFocus.length ? (
             <div className="komite-review-focus-list">
@@ -2281,7 +2256,7 @@ export default function KomiteModeWorkspace({ currentUser }) {
       {view === 'start' ? <StartFlow onCreate={createMaterial} onCancel={() => setView('dashboard')} /> : null}
       {view === 'materials' ? <MyMaterialsPage materials={materials} activeMaterialId={activeMaterialId} onOpenMaterial={openMaterial} onDeleteMaterial={deleteMaterial} onBack={() => setView('dashboard')} /> : null}
       {view === 'cards' ? <CardsHub materials={materials} onOpenMaterial={openMaterial} onBack={() => setView('dashboard')} /> : null}
-      {view === 'review' ? <section className="komite-subpage card-surface komite-review-page"><div className="komite-section-head"><div><span className="komite-kicker">Tekrar Merkezi</span><h2>Materyal odaklı tekrar</h2><p>Yanlış sorularını, zor kartlarını ve favorilerini materyal ağacına bağlı şekilde tekrar et.</p></div><button type="button" className="btn btn-secondary" onClick={() => setView('dashboard')}>Ana ekrana dön</button></div><ReviewCenter materials={materials} activeMaterial={activeMaterial} onOpenMaterial={openMaterial} /></section> : null}
+      {view === 'review' ? <section className="komite-subpage card-surface komite-review-page"><div className="komite-section-head"><div><h2>Materyal odaklı tekrar</h2><p>Yanlış sorularını, zor kartlarını ve favorilerini materyal ağacına bağlı şekilde tekrar et.</p></div><button type="button" className="btn btn-secondary" onClick={() => setView('dashboard')}>Ana ekrana dön</button></div><ReviewCenter materials={materials} activeMaterial={activeMaterial} onOpenMaterial={openMaterial} /></section> : null}
       {view === 'workspace' && activeMaterial ? <StudyWorkspace material={activeMaterial} materials={materials} onBack={() => setView('dashboard')} onPatchMaterial={patchMaterial} onOpenMaterial={openMaterial} /> : null}
     </section>
   );
