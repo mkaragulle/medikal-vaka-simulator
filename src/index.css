@@ -46365,3 +46365,366 @@ html[data-theme='dark'] .komite-card-decks {
     justify-self: start;
   }
 }
+
+/* --------------------------------------------------------------------------
+   KLINIKIQ V141 — repeat center redesign
+   Cleaner scope switch, compact study summary, and premium review panels.
+   -------------------------------------------------------------------------- */
+.komite-review-page .komite-section-head {
+  margin-bottom: 1rem;
+}
+
+.komite-review-center-v141 {
+  gap: .82rem;
+}
+
+.komite-review-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .85rem;
+  padding: .82rem;
+  border-radius: 1.28rem;
+  border: 1px solid rgba(20, 184, 166, .18);
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, .12), transparent 32%),
+    linear-gradient(135deg, rgba(240, 253, 250, .78), rgba(255, 255, 255, .82));
+  box-shadow: 0 16px 38px rgba(15, 23, 42, .045);
+}
+
+.komite-review-hero-copy {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: .72rem;
+  min-width: 0;
+}
+
+.komite-review-hero-icon,
+.komite-review-panel-icon,
+.komite-review-item-icon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  color: #0f766e;
+  background: rgba(204, 251, 241, .74);
+}
+
+.komite-review-hero-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 1rem;
+}
+
+.komite-review-hero-copy strong {
+  display: block;
+  color: #0f172a;
+  font-size: 1.02rem;
+  font-weight: 950;
+  letter-spacing: -.02em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.komite-review-hero-copy p {
+  margin: .16rem 0 0;
+  color: #64748b;
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+.komite-review-scope {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  padding: .3rem;
+  border-radius: 1rem;
+  background: rgba(241, 245, 249, .82);
+  border: 1px solid rgba(15, 23, 42, .055);
+}
+
+.komite-review-scope button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .42rem;
+  min-height: 40px;
+  border: 0;
+  border-radius: .82rem;
+  padding: .52rem .72rem;
+  background: transparent;
+  color: #64748b;
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.komite-review-scope button.active {
+  background: #fff;
+  color: #0f172a;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .08);
+}
+
+.komite-review-scope button em {
+  display: inline-grid;
+  place-items: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 .35rem;
+  border-radius: 999px;
+  background: rgba(226, 232, 240, .78);
+  color: #0f766e;
+  font-style: normal;
+  font-size: .74rem;
+  font-weight: 950;
+}
+
+.komite-review-scope button.active em {
+  background: rgba(204, 251, 241, .84);
+}
+
+.komite-review-summary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .5rem;
+}
+
+.komite-review-summary-strip span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  min-height: 44px;
+  padding: .55rem .65rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, .07);
+  background: rgba(255, 255, 255, .74);
+  color: #64748b;
+  font-size: .82rem;
+  font-weight: 850;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, .032);
+}
+
+.komite-review-summary-strip strong {
+  color: #0f766e;
+  font-size: 1rem;
+}
+
+.komite-review-grid-v141 {
+  gap: .78rem;
+}
+
+.komite-review-grid-v141 .komite-review-panel {
+  display: grid;
+  align-content: start;
+  gap: .7rem;
+  min-height: 190px;
+  padding: .82rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, .075);
+  background: rgba(255, 255, 255, .78);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, .04);
+}
+
+.komite-review-panel-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .62rem;
+}
+
+.komite-review-panel-icon,
+.komite-review-item-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: .86rem;
+}
+
+.komite-review-panel-title {
+  display: grid;
+  gap: .1rem;
+  min-width: 0;
+}
+
+.komite-review-panel-title strong {
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 950;
+  letter-spacing: -.02em;
+}
+
+.komite-review-panel-title small {
+  color: #64748b;
+  font-size: .8rem;
+  line-height: 1.35;
+}
+
+.komite-review-count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 .5rem;
+  border-radius: 999px;
+  background: rgba(241, 245, 249, .9);
+  color: #0f766e;
+  font-size: .82rem;
+  font-weight: 950;
+}
+
+.komite-review-panel-body {
+  display: grid;
+  gap: .42rem;
+}
+
+.komite-review-empty {
+  margin: 0;
+  padding: .85rem .9rem;
+  border-radius: 1rem;
+  background: rgba(248, 250, 252, .82);
+  color: #64748b;
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+.komite-review-grid-v141 .komite-review-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: .62rem;
+  width: 100%;
+  min-height: 58px;
+  padding: .6rem .66rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, .07);
+  background: rgba(248, 250, 252, .78);
+  color: #0f172a;
+  box-shadow: none;
+  transition: transform .16s ease, border-color .16s ease, background-color .16s ease, box-shadow .16s ease;
+}
+
+.komite-review-grid-v141 .komite-review-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(20, 184, 166, .24);
+  background: rgba(240, 253, 250, .76);
+  box-shadow: 0 14px 30px rgba(15, 118, 110, .08);
+}
+
+.komite-review-item-copy {
+  display: grid;
+  gap: .1rem;
+  min-width: 0;
+}
+
+.komite-review-item-copy em,
+.komite-review-item-copy small {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #64748b;
+  font-style: normal;
+  font-size: .74rem;
+  font-weight: 750;
+}
+
+.komite-review-item-copy strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #0f172a;
+  font-size: .9rem;
+  font-weight: 900;
+}
+
+.komite-review-focus-panel {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, .09), transparent 36%),
+    rgba(255, 255, 255, .78) !important;
+}
+
+.komite-review-focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .42rem;
+}
+
+.komite-review-focus-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  max-width: 100%;
+  padding: .45rem .66rem;
+  border-radius: 999px;
+  background: rgba(240, 253, 250, .9);
+  color: #0f766e;
+  border: 1px solid rgba(20, 184, 166, .2);
+  font-size: .8rem;
+  font-weight: 850;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html[data-theme='dark'] .komite-review-hero,
+html[data-theme='dark'] .komite-review-summary-strip span,
+html[data-theme='dark'] .komite-review-grid-v141 .komite-review-panel,
+html[data-theme='dark'] .komite-review-grid-v141 .komite-review-item,
+html[data-theme='dark'] .komite-review-empty,
+html[data-theme='dark'] .komite-review-scope {
+  background: rgba(15, 23, 42, .72) !important;
+  border-color: rgba(148, 163, 184, .16) !important;
+}
+
+html[data-theme='dark'] .komite-review-hero-copy strong,
+html[data-theme='dark'] .komite-review-panel-title strong,
+html[data-theme='dark'] .komite-review-item-copy strong,
+html[data-theme='dark'] .komite-review-scope button.active {
+  color: #f8fafc;
+}
+
+html[data-theme='dark'] .komite-review-hero-copy p,
+html[data-theme='dark'] .komite-review-panel-title small,
+html[data-theme='dark'] .komite-review-item-copy em,
+html[data-theme='dark'] .komite-review-item-copy small,
+html[data-theme='dark'] .komite-review-empty {
+  color: #cbd5e1;
+}
+
+html[data-theme='dark'] .komite-review-scope button.active {
+  background: rgba(30, 41, 59, .9);
+}
+
+@media (max-width: 860px) {
+  .komite-review-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .komite-review-scope {
+    width: 100%;
+  }
+
+  .komite-review-scope button {
+    flex: 1;
+  }
+
+  .komite-review-summary-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .komite-review-summary-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .komite-review-hero-copy {
+    grid-template-columns: 1fr;
+  }
+
+  .komite-review-hero-icon {
+    display: none;
+  }
+}

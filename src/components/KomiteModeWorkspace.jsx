@@ -1788,6 +1788,38 @@ function FlashcardsView({ material, onGenerate, onUpdateCard }) {
   );
 }
 
+function ReviewItemButton({ icon = 'Activity', eyebrow = '', title = '', meta = '', onClick }) {
+  return (
+    <button type="button" className="komite-review-item" onClick={onClick}>
+      <span className="komite-review-item-icon"><Icon name={icon} size={16} /></span>
+      <span className="komite-review-item-copy">
+        {eyebrow ? <em>{eyebrow}</em> : null}
+        <strong>{title || 'Tekrar öğesi'}</strong>
+        {meta ? <small>{meta}</small> : null}
+      </span>
+      <Icon name="ArrowRight" size={15} />
+    </button>
+  );
+}
+
+function ReviewPanel({ icon, title, description, count, emptyText, children }) {
+  return (
+    <section className="komite-review-panel">
+      <div className="komite-review-panel-head">
+        <span className="komite-review-panel-icon"><Icon name={icon} size={17} /></span>
+        <span className="komite-review-panel-title">
+          <strong>{title}</strong>
+          <small>{description}</small>
+        </span>
+        <span className="komite-review-count">{count}</span>
+      </div>
+      <div className="komite-review-panel-body">
+        {count ? children : <p className="komite-review-empty">{emptyText}</p>}
+      </div>
+    </section>
+  );
+}
+
 function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
   const [filter, setFilter] = useState('Bu materyal');
   const scopeMaterials = filter === 'Bu materyal' && activeMaterial ? [activeMaterial] : materials;
@@ -1797,30 +1829,101 @@ function ReviewCenter({ materials, activeMaterial, onOpenMaterial }) {
     ...(material.questions || []).filter((question) => question.isFavorite).map((question) => ({ ...question, itemKind: 'Soru', material })),
     ...(material.flashcardDeck?.cards || []).filter((card) => card.isFavorite).map((card) => ({ ...card, itemKind: 'Kart', material })),
   ]);
+  const weakFocusItems = [
+    ...wrongQuestions.map((question) => question.learningTarget || question.topic || question.material.course || question.material.committee || inferAcademicTitle(question.material)),
+    ...difficultCards.map((card) => card.tags?.[0] || card.type || card.material.course || card.material.committee || inferAcademicTitle(card.material)),
+  ].filter(Boolean);
+  const weakFocus = [...new Set(weakFocusItems.map((item) => String(item).replace(/\s+/g, ' ').trim()).filter(Boolean))].slice(0, 4);
+  const scopedTitle = filter === 'Bu materyal' && activeMaterial ? inferAcademicTitle(activeMaterial) : 'Tüm materyaller';
+  const totalItems = wrongQuestions.length + difficultCards.length + favorites.length;
+  const filterCounts = {
+    'Bu materyal': activeMaterial ? ((activeMaterial.questions || []).filter((question) => question.isWrong).length + (activeMaterial.flashcardDeck?.cards || []).filter((card) => card.isDifficult || card.repeatStatus === 'repeat' || card.isFavorite).length + (activeMaterial.questions || []).filter((question) => question.isFavorite).length) : 0,
+    'Tüm materyaller': materials.reduce((sum, material) => sum + (material.questions || []).filter((question) => question.isWrong || question.isFavorite).length + (material.flashcardDeck?.cards || []).filter((card) => card.isDifficult || card.repeatStatus === 'repeat' || card.isFavorite).length, 0),
+  };
 
   return (
-    <div className="komite-review-center">
-      <div className="komite-review-toolbar">
-        {REVIEW_FILTERS.map((item) => (
-          <button key={item} type="button" className={filter === item ? 'active' : ''} onClick={() => setFilter(item)}>{item}</button>
-        ))}
+    <div className="komite-review-center komite-review-center-v141">
+      <div className="komite-review-hero">
+        <div className="komite-review-hero-copy">
+          <span className="komite-review-hero-icon"><Icon name="RotateCcw" size={18} /></span>
+          <div>
+            <strong>{scopedTitle}</strong>
+            <p>Yanlış sorularını, zor kartlarını ve favorilerini tek ekranda kısa tekrar akışına dönüştür.</p>
+          </div>
+        </div>
+        <div className="komite-review-scope" role="tablist" aria-label="Tekrar kapsamı">
+          {REVIEW_FILTERS.map((item) => (
+            <button key={item} type="button" className={filter === item ? 'active' : ''} onClick={() => setFilter(item)}>
+              <span>{item}</span>
+              <em>{filterCounts[item] || 0}</em>
+            </button>
+          ))}
+        </div>
       </div>
-      <div className="komite-review-grid">
-        <section>
-          <h3>Yanlış Sorular</h3>
-          {wrongQuestions.length ? wrongQuestions.map((question) => <button type="button" key={question.id} onClick={() => onOpenMaterial(question.material.id)}>{question.material.fileName}<span>{question.question}</span></button>) : <p>Bu kapsamda yanlış soru yok.</p>}
-        </section>
-        <section>
-          <h3>Zor Kartlar / Tekrar Et</h3>
-          {difficultCards.length ? difficultCards.map((card) => <button type="button" key={card.id} onClick={() => onOpenMaterial(card.material.id)}>{card.material.fileName}<span>{card.front}</span></button>) : <p>Tekrar kuyruğu boş.</p>}
-        </section>
-        <section>
-          <h3>Favoriler</h3>
-          {favorites.length ? favorites.map((item) => <button type="button" key={item.id} onClick={() => onOpenMaterial(item.material.id)}>{item.itemKind}<span>{item.front || item.question}</span></button>) : <p>Henüz favori işaretlenmedi.</p>}
-        </section>
-        <section>
-          <h3>Zayıf Konular</h3>
-          {wrongQuestions.length || difficultCards.length ? <p>Öncelik: {wrongQuestions[0]?.learningTarget || difficultCards[0]?.tags?.[0] || 'materyal tekrarı'}.</p> : <p>Çalışma verisi biriktikçe zayıf konu listesi oluşur.</p>}
+
+      <div className="komite-review-summary-strip" aria-label="Tekrar özeti">
+        <span><strong>{wrongQuestions.length}</strong> yanlış soru</span>
+        <span><strong>{difficultCards.length}</strong> tekrar kartı</span>
+        <span><strong>{favorites.length}</strong> favori</span>
+        <span><strong>{totalItems}</strong> toplam öğe</span>
+      </div>
+
+      <div className="komite-review-grid komite-review-grid-v141">
+        <ReviewPanel icon="AlertTriangle" title="Yanlış Sorular" description="Kaçırdığın soruları hedefli tekrar et." count={wrongQuestions.length} emptyText="Bu kapsamda yanlış soru yok.">
+          {wrongQuestions.slice(0, 4).map((question) => (
+            <ReviewItemButton
+              key={question.id}
+              icon="ClipboardList"
+              eyebrow={inferAcademicTitle(question.material)}
+              title={question.question}
+              meta={question.learningTarget || 'Soru tekrarı'}
+              onClick={() => onOpenMaterial(question.material.id)}
+            />
+          ))}
+        </ReviewPanel>
+
+        <ReviewPanel icon="RotateCcw" title="Zor Kartlar / Tekrar Et" description="Zorlandığın kartları tekrar kuyruğunda tut." count={difficultCards.length} emptyText="Tekrar kuyruğu boş.">
+          {difficultCards.slice(0, 4).map((card) => (
+            <ReviewItemButton
+              key={card.id}
+              icon="LayeredCards"
+              eyebrow={inferAcademicTitle(card.material)}
+              title={card.front}
+              meta={card.type || card.tags?.[0] || 'Hap kart'}
+              onClick={() => onOpenMaterial(card.material.id)}
+            />
+          ))}
+        </ReviewPanel>
+
+        <ReviewPanel icon="CheckCircle" title="Favoriler" description="İşaretlediğin soru ve kartlara hızlı eriş." count={favorites.length} emptyText="Henüz favori işaretlenmedi.">
+          {favorites.slice(0, 4).map((item) => (
+            <ReviewItemButton
+              key={item.id}
+              icon={item.itemKind === 'Kart' ? 'LayeredCards' : 'ClipboardList'}
+              eyebrow={`${item.itemKind} · ${inferAcademicTitle(item.material)}`}
+              title={item.front || item.question}
+              meta="Favori tekrar öğesi"
+              onClick={() => onOpenMaterial(item.material.id)}
+            />
+          ))}
+        </ReviewPanel>
+
+        <section className="komite-review-panel komite-review-focus-panel">
+          <div className="komite-review-panel-head">
+            <span className="komite-review-panel-icon"><Icon name="Target" size={17} /></span>
+            <span className="komite-review-panel-title">
+              <strong>Zayıf Odak</strong>
+              <small>Çalışma verisine göre önceliklendir.</small>
+            </span>
+            <span className="komite-review-count">{weakFocus.length}</span>
+          </div>
+          {weakFocus.length ? (
+            <div className="komite-review-focus-list">
+              {weakFocus.map((item) => <span key={item}>{item}</span>)}
+            </div>
+          ) : (
+            <p className="komite-review-empty">Çalışma verisi biriktikçe zayıf odak listesi oluşur.</p>
+          )}
         </section>
       </div>
     </div>
@@ -2178,7 +2281,7 @@ export default function KomiteModeWorkspace({ currentUser }) {
       {view === 'start' ? <StartFlow onCreate={createMaterial} onCancel={() => setView('dashboard')} /> : null}
       {view === 'materials' ? <MyMaterialsPage materials={materials} activeMaterialId={activeMaterialId} onOpenMaterial={openMaterial} onDeleteMaterial={deleteMaterial} onBack={() => setView('dashboard')} /> : null}
       {view === 'cards' ? <CardsHub materials={materials} onOpenMaterial={openMaterial} onBack={() => setView('dashboard')} /> : null}
-      {view === 'review' ? <section className="komite-subpage card-surface"><div className="komite-section-head"><div><span className="komite-kicker">Tekrar Merkezi</span><h2>Materyal odaklı tekrar</h2><p>Varsayılan kapsam aktif materyaldir; tüm materyallere geçiş kontrollüdür.</p></div><button type="button" className="btn btn-secondary" onClick={() => setView('dashboard')}>Ana ekrana dön</button></div><ReviewCenter materials={materials} activeMaterial={activeMaterial} onOpenMaterial={openMaterial} /></section> : null}
+      {view === 'review' ? <section className="komite-subpage card-surface komite-review-page"><div className="komite-section-head"><div><span className="komite-kicker">Tekrar Merkezi</span><h2>Materyal odaklı tekrar</h2><p>Yanlış sorularını, zor kartlarını ve favorilerini materyal ağacına bağlı şekilde tekrar et.</p></div><button type="button" className="btn btn-secondary" onClick={() => setView('dashboard')}>Ana ekrana dön</button></div><ReviewCenter materials={materials} activeMaterial={activeMaterial} onOpenMaterial={openMaterial} /></section> : null}
       {view === 'workspace' && activeMaterial ? <StudyWorkspace material={activeMaterial} materials={materials} onBack={() => setView('dashboard')} onPatchMaterial={patchMaterial} onOpenMaterial={openMaterial} /> : null}
     </section>
   );
