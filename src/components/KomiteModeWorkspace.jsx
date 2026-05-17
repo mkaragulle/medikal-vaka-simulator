@@ -1076,17 +1076,9 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
 
   return (
     <div className="komite-material-library" aria-label="Materyal kütüphanesi">
-      <div className="komite-library-toolbar" aria-hidden="true">
-        <span><Icon name="BookOpen" size={16} /> {grouped.length} sınıf</span>
-        <span><Icon name="ClipboardList" size={16} /> {materials.length} materyal</span>
-        <span><Icon name="LayeredCards" size={16} /> {materials.reduce((sum, material) => sum + (material.flashcardDeck?.cards?.length || 0), 0)} kart</span>
-      </div>
       <div className="komite-material-tree">
         {grouped.map(({ className, committees }) => {
           const classOpen = expandedClasses[className] ?? className === activePath?.className;
-          const classMaterialCount = committees.reduce((sum, committee) => sum + committee.materials.length, 0);
-          const classLessonCount = committees.reduce((sum, committee) => sum + committee.materials.filter((material) => material.lesson).length, 0);
-          const classCardCount = committees.reduce((sum, committee) => sum + committee.materials.reduce((innerSum, material) => innerSum + (material.flashcardDeck?.cards?.length || 0), 0), 0);
 
           return (
             <section className={`komite-tree-class ${classOpen ? 'open' : ''}`.trim()} key={className}>
@@ -1099,11 +1091,6 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
                 <span className="komite-tree-class-icon"><Icon name="BookOpen" size={18} /></span>
                 <span className="komite-tree-class-copy">
                   <strong>{className}</strong>
-                  <em>{committees.length} komite / başlık · {classMaterialCount} materyal</em>
-                </span>
-                <span className="komite-tree-class-metrics">
-                  <small>{classLessonCount} ders</small>
-                  <small>{classCardCount} kart</small>
                 </span>
                 <Icon name={classOpen ? 'ChevronUp' : 'ChevronDown'} size={17} />
               </button>
@@ -1113,7 +1100,6 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
                   {committees.map(({ committeeName, materials: committeeMaterials }, index) => {
                     const committeeKey = `${className}::${committeeName}`;
                     const committeeOpen = expandedCommittees[committeeKey] ?? committeeKey === `${activePath?.className}::${activePath?.committeeName}`;
-                    const readyCount = committeeMaterials.filter((material) => material.lesson || material.questions?.length || material.flashcardDeck?.cards?.length).length;
                     const displayedCommitteeName = committeeName || `${index + 1}. Komite`;
 
                     return (
@@ -1127,45 +1113,39 @@ function MaterialTree({ materials, activeMaterialId, onOpenMaterial, onDeleteMat
                           <span className="komite-tree-course-badge">{String(index + 1).padStart(2, '0')}</span>
                           <span className="komite-tree-course-copy">
                             <strong>{displayedCommitteeName}</strong>
-                            <em>{committeeMaterials.length} materyal · {readyCount} hazır çalışma</em>
                           </span>
                           <Icon name={committeeOpen ? 'ChevronUp' : 'ChevronDown'} size={16} />
                         </button>
 
                         {committeeOpen ? (
                           <div className="komite-tree-files">
-                            {committeeMaterials.map((material) => {
-                              const statusLabel = material.lesson ? 'Ders hazır' : material.questions?.length ? 'Sorular hazır' : material.flashcardDeck?.cards?.length ? 'Kartlar hazır' : 'Hazırlanıyor';
-                              const statusTone = material.lesson || material.questions?.length || material.flashcardDeck?.cards?.length ? 'ready' : 'pending';
-                              return (
-                                <button
-                                  key={material.id}
-                                  type="button"
-                                  className={`komite-tree-file ${activeMaterialId === material.id ? 'active' : ''}`}
-                                  onClick={() => onOpenMaterial(material.id)}
-                                >
-                                  <span className="komite-tree-file-icon"><Icon name="Notes" size={16} /></span>
-                                  <span className="komite-tree-file-copy">
-                                    <strong>{inferAcademicTitle(material) || material.fileName}</strong>
-                                    <em>{material.course || material.fileName} · {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</em>
+                            {committeeMaterials.map((material) => (
+                              <button
+                                key={material.id}
+                                type="button"
+                                className={`komite-tree-file ${activeMaterialId === material.id ? 'active' : ''}`}
+                                onClick={() => onOpenMaterial(material.id)}
+                              >
+                                <span className="komite-tree-file-icon"><Icon name="Notes" size={16} /></span>
+                                <span className="komite-tree-file-copy">
+                                  <strong>{inferAcademicTitle(material) || material.fileName}</strong>
+                                  <em>{material.course || material.fileName} · {new Date(material.uploadDate).toLocaleDateString('tr-TR')}</em>
+                                </span>
+                                {onDeleteMaterial ? (
+                                  <span
+                                    role="button"
+                                    tabIndex={0}
+                                    className="komite-tree-delete"
+                                    aria-label={`${material.fileName} materyalini sil`}
+                                    title="Sil"
+                                    onClick={(event) => { event.stopPropagation(); onDeleteMaterial(material.id); }}
+                                    onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); onDeleteMaterial(material.id); } }}
+                                  >
+                                    <Icon name="Trash2" size={15} />
                                   </span>
-                                  <small className={`komite-tree-status status-${statusTone}`}>{statusLabel}</small>
-                                  {onDeleteMaterial ? (
-                                    <span
-                                      role="button"
-                                      tabIndex={0}
-                                      className="komite-tree-delete"
-                                      aria-label={`${material.fileName} materyalini sil`}
-                                      title="Sil"
-                                      onClick={(event) => { event.stopPropagation(); onDeleteMaterial(material.id); }}
-                                      onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); event.stopPropagation(); onDeleteMaterial(material.id); } }}
-                                    >
-                                      <Icon name="Trash2" size={15} />
-                                    </span>
-                                  ) : null}
-                                </button>
-                              );
-                            })}
+                                ) : null}
+                              </button>
+                            ))}
                           </div>
                         ) : null}
                       </div>

@@ -45991,3 +45991,117 @@ html[data-theme='dark'] .komite-tree-file-copy em {
     padding-inline: .55rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   KLINIKIQ V139 — material library hierarchy cleanup
+   Removes counter chips/tags and adds clearer class → committee → material indents.
+   -------------------------------------------------------------------------- */
+.komite-material-library {
+  gap: .65rem;
+}
+
+.komite-material-library .komite-material-tree {
+  display: grid;
+  gap: .62rem !important;
+}
+
+.komite-material-library .komite-tree-class {
+  gap: .5rem;
+  padding: .48rem .58rem .58rem !important;
+}
+
+.komite-material-library .komite-tree-class-trigger {
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-height: 54px;
+  padding: .62rem .72rem;
+  border-radius: 1rem;
+}
+
+.komite-material-library .komite-tree-class-copy,
+.komite-material-library .komite-tree-course-copy {
+  gap: 0;
+}
+
+.komite-material-library .komite-tree-class-copy strong {
+  font-size: 1.02rem;
+  letter-spacing: -.015em;
+}
+
+.komite-material-library .komite-tree-committee-list {
+  position: relative;
+  margin-left: 2.15rem;
+  padding: .08rem 0 .12rem 1.05rem;
+  border-left: 1px solid rgba(20, 184, 166, .22);
+}
+
+.komite-material-library .komite-tree-course {
+  gap: .36rem !important;
+  padding: .32rem !important;
+  border-radius: 1rem;
+  background: rgba(248, 250, 252, .58);
+}
+
+.komite-material-library .komite-tree-course-trigger {
+  min-height: 46px;
+  padding: .5rem .58rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+}
+
+.komite-material-library .komite-tree-course-copy strong {
+  font-size: .96rem;
+}
+
+.komite-material-library .komite-tree-course-badge {
+  width: 30px;
+  height: 30px;
+  border-radius: .72rem;
+  font-size: .7rem;
+}
+
+.komite-material-library .komite-tree-files {
+  position: relative;
+  margin-left: 2.1rem;
+  padding: .08rem 0 .1rem 1rem !important;
+  border-left: 1px solid rgba(148, 163, 184, .22);
+}
+
+.komite-material-library .komite-tree-file {
+  grid-template-columns: auto minmax(0, 1fr) auto !important;
+  min-height: 56px;
+  padding: .56rem .6rem !important;
+}
+
+.komite-material-library .komite-tree-file-copy em {
+  font-size: .76rem;
+}
+
+.komite-material-library .komite-tree-status,
+.komite-material-library .komite-tree-class-metrics,
+.komite-material-library .komite-library-toolbar {
+  display: none !important;
+}
+
+@media (max-width: 860px) {
+  .komite-material-library .komite-tree-committee-list {
+    margin-left: 1rem;
+    padding-left: .8rem;
+  }
+
+  .komite-material-library .komite-tree-files {
+    margin-left: 1rem;
+    padding-left: .8rem !important;
+  }
+
+  .komite-material-library .komite-tree-delete {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+html[data-theme='dark'] .komite-material-library .komite-tree-committee-list {
+  border-left-color: rgba(45, 212, 191, .22);
+}
+
+html[data-theme='dark'] .komite-material-library .komite-tree-files {
+  border-left-color: rgba(148, 163, 184, .18);
+}
