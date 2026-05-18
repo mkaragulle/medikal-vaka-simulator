@@ -40960,7 +40960,148 @@ export const rawCases = [
   , ...pediatricArrhythmiaPdfCases
 ];
 
-export const cases = sanitizeEmbeddedCasesForPreAnswer(rawCases).map(applyTusLanguageStandardToCase);
+function normalizeOptionText(value = '') {
+  return String(value || '')
+    .toLocaleLowerCase('tr')
+    .replace(/[ıİ]/g, 'i')
+    .replace(/[ğĞ]/g, 'g')
+    .replace(/[üÜ]/g, 'u')
+    .replace(/[şŞ]/g, 's')
+    .replace(/[öÖ]/g, 'o')
+    .replace(/[çÇ]/g, 'c')
+    .replace(/[^a-z0-9+\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function deterministicIndex(seed = '', length = 1) {
+  if (length <= 0) return 0;
+  let hash = 0;
+  const text = String(seed || 'klinikiq');
+  for (let index = 0; index < text.length; index += 1) {
+    hash = ((hash << 5) - hash + text.charCodeAt(index)) | 0;
+  }
+  return Math.abs(hash) % length;
+}
+
+function buildDiagnosisOptionBank(sourceCases = []) {
+  const byBranch = new Map();
+  const global = [];
+  sourceCases.forEach((clinicalCase) => {
+    const correct = clinicalCase?.diagnosis?.correct;
+    if (!correct) return;
+    const branchId = clinicalCase.branchId || 'global';
+    if (!byBranch.has(branchId)) byBranch.set(branchId, []);
+    byBranch.get(branchId).push(correct);
+    global.push(correct);
+  });
+  return { byBranch, global };
+}
+
+function buildGeneratedDistractorReason(clinicalCase = {}, option = '') {
+  const correct = clinicalCase?.diagnosis?.correct || 'doğru seçenek';
+  const focus = clinicalCase?.clinicalFocus || clinicalCase?.patientIntro?.priorityFocus || clinicalCase?.chiefComplaint || '';
+  const focusSentence = focus
+    ? `${String(focus).replace(/[.;]+$/u, '')} bulguları bu seçeneği değil, ${correct} seçeneğini destekler.`
+    : `Verilen öykü ve objektif bulgular ${option} yerine ${correct} seçeneğiyle daha tutarlıdır.`;
+  return focusSentence;
+}
+
+function ensureFiveDiagnosisOptions(clinicalCase = {}, optionBank) {
+  const diagnosis = clinicalCase.diagnosis || {};
+  const correct = diagnosis.correct;
+  const rawOptions = Array.isArray(diagnosis.options) ? diagnosis.options : [];
+  const options = [];
+  const seen = new Set();
+
+  [correct, ...rawOptions].forEach((option) => {
+    const text = String(option || '').trim();
+    const key = normalizeOptionText(text);
+    if (!text || seen.has(key)) return;
+    options.push(text);
+    seen.add(key);
+  });
+
+  if (options.length >= 5 || !correct) {
+    return {
+      ...clinicalCase,
+      diagnosis: {
+        ...diagnosis,
+        options: options.slice(0, 5),
+      },
+    };
+  }
+
+  const branchCandidates = optionBank.byBranch.get(clinicalCase.branchId || '') || [];
+  const generalCandidates = optionBank.global || [];
+  const fallbackCandidates = [
+    'Akut koroner sendrom dışı göğüs ağrısı',
+    'Sepsis ilişkili sistemik inflamatuvar yanıt',
+    'İlaç yan etkisine bağlı klinik tablo',
+    'Elektrolit bozukluğuna bağlı klinik kötüleşme',
+    'Fonksiyonel yakınma ile ilişkili tablo',
+    'Primer enfeksiyöz süreç',
+    'Otoimmün inflamatuvar hastalık',
+    'Metabolik dekompansasyon',
+    'Vasküler oklüzyon dışı klinik tablo',
+    'Benign ve kendini sınırlayan klinik durum',
+  ];
+
+  const rotateCandidates = (candidates = [], salt = '') => {
+    const cleanCandidates = candidates.map((candidate) => String(candidate || '').trim()).filter(Boolean);
+    const startIndex = deterministicIndex(`${clinicalCase.id || ''}-${correct}-${salt}`, cleanCandidates.length);
+    return [...cleanCandidates.slice(startIndex), ...cleanCandidates.slice(0, startIndex)];
+  };
+
+  const orderedCandidates = [
+    ...rotateCandidates(branchCandidates, 'branch'),
+    ...rotateCandidates(generalCandidates, 'global'),
+    ...rotateCandidates(fallbackCandidates, 'fallback'),
+  ];
+
+  orderedCandidates.forEach((candidate) => {
+    if (options.length >= 5) return;
+    const key = normalizeOptionText(candidate);
+    if (!key || seen.has(key) || key === normalizeOptionText(correct)) return;
+    options.push(candidate);
+    seen.add(key);
+  });
+
+  const addedOptions = options.filter((option) => !rawOptions.some((rawOption) => normalizeOptionText(rawOption) === normalizeOptionText(option)) && normalizeOptionText(option) !== normalizeOptionText(correct));
+  const answerFeedback = diagnosis.answerFeedback || clinicalCase.answerFeedback || {};
+  const whyWrong = {
+    ...(answerFeedback.whyWrong && typeof answerFeedback.whyWrong === 'object' && !Array.isArray(answerFeedback.whyWrong) ? answerFeedback.whyWrong : {}),
+  };
+  const differentialComparison = {
+    ...(answerFeedback.differentialComparison && typeof answerFeedback.differentialComparison === 'object' && !Array.isArray(answerFeedback.differentialComparison) ? answerFeedback.differentialComparison : {}),
+  };
+
+  addedOptions.forEach((option) => {
+    if (!whyWrong[option]) whyWrong[option] = buildGeneratedDistractorReason(clinicalCase, option);
+    if (!differentialComparison[option]) differentialComparison[option] = {
+      explanation: buildGeneratedDistractorReason(clinicalCase, option),
+      comparisonPoints: [],
+    };
+  });
+
+  return {
+    ...clinicalCase,
+    diagnosis: {
+      ...diagnosis,
+      options: options.slice(0, 5),
+      answerFeedback: {
+        ...answerFeedback,
+        whyWrong,
+        differentialComparison,
+      },
+    },
+  };
+}
+
+const sanitizedCases = sanitizeEmbeddedCasesForPreAnswer(rawCases).map(applyTusLanguageStandardToCase);
+const diagnosisOptionBank = buildDiagnosisOptionBank(sanitizedCases);
+
+export const cases = sanitizedCases.map((clinicalCase) => ensureFiveDiagnosisOptions(clinicalCase, diagnosisOptionBank));
 
 export function getCasesByBranch(branchId) {
   return cases.filter((clinicalCase) => clinicalCase.branchId === branchId);
