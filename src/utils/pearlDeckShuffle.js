@@ -36,27 +36,46 @@ function normalizeKey(value, fallback = 'genel') {
     .replace(/\s+/g, ' ') || fallback;
 }
 
+const cardMetaCache = new WeakMap();
+
+function buildCardMeta(card = {}) {
+  const topic = normalizeKey(card.topic || card.subject || card.cardType || card.front, 'genel');
+  const branch = normalizeKey(card.branchId || card.subject, 'genel');
+  const subject = normalizeKey(card.subject || card.topic || card.cardType || card.branchId, 'genel');
+  const tagList = [...(card.tags || []), ...(card.keywords || [])]
+    .map((item) => normalizeKey(item))
+    .filter(Boolean);
+  const tags = tagList.length ? Array.from(new Set(tagList)).slice(0, 4) : [topic];
+  return { topic, branch, subject, tags, primaryTag: tags[0] || topic };
+}
+
+function getCardMeta(card = {}) {
+  if (!card || typeof card !== 'object') return buildCardMeta(card);
+  const cached = cardMetaCache.get(card);
+  if (cached) return cached;
+  const meta = buildCardMeta(card);
+  cardMetaCache.set(card, meta);
+  return meta;
+}
+
 export function normalizeCardTopic(card = {}) {
-  return normalizeKey(card.topic || card.subject || card.cardType || card.front, 'genel');
+  return getCardMeta(card).topic;
 }
 
 export function normalizeCardBranch(card = {}) {
-  return normalizeKey(card.branchId || card.subject, 'genel');
+  return getCardMeta(card).branch;
 }
 
 function normalizeCardSubject(card = {}) {
-  return normalizeKey(card.subject || card.topic || card.cardType || card.branchId, 'genel');
+  return getCardMeta(card).subject;
 }
 
 function getTagKeys(card = {}) {
-  const tags = [...(card.tags || []), ...(card.keywords || [])]
-    .map((item) => normalizeKey(item))
-    .filter(Boolean);
-  return tags.length ? Array.from(new Set(tags)).slice(0, 4) : [normalizeCardTopic(card)];
+  return getCardMeta(card).tags;
 }
 
 function getPrimaryTag(card = {}) {
-  return getTagKeys(card)[0] || normalizeCardTopic(card);
+  return getCardMeta(card).primaryTag;
 }
 
 function toSet(value) {

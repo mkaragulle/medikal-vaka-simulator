@@ -8757,19 +8757,46 @@ function uniqueOptionsBySemanticKey(items = [], forbiddenKey = '') {
   return out;
 }
 
+function uniqueOptionEntriesBySemanticKey(entries = [], forbiddenKey = '') {
+  const seen = new Set([forbiddenKey].filter(Boolean));
+  const out = [];
+  entries.forEach((entry) => {
+    if (!entry?.text || !entry.key || seen.has(entry.key)) return;
+    seen.add(entry.key);
+    out.push(entry);
+  });
+  return out;
+}
+
+const TUS_PEARL_OPTION_ENTRIES = TUS_PEARL_CARDS.map((card) => {
+  const text = normalizeOption(card.back);
+  return { branchId: card.branchId, text, key: normalizeOptionKey(text) };
+}).filter((entry) => entry.text && entry.key);
+
+const TUS_PEARL_BRANCH_OPTION_ENTRIES = TUS_PEARL_OPTION_ENTRIES.reduce((acc, entry) => {
+  if (!acc.has(entry.branchId)) acc.set(entry.branchId, []);
+  acc.get(entry.branchId).push(entry);
+  return acc;
+}, new Map());
+
+const TUS_PEARL_OTHER_BRANCH_OPTION_CACHE = new Map();
+
+function getOtherBranchOptionEntries(branchId) {
+  if (TUS_PEARL_OTHER_BRANCH_OPTION_CACHE.has(branchId)) return TUS_PEARL_OTHER_BRANCH_OPTION_CACHE.get(branchId);
+  const entries = TUS_PEARL_OPTION_ENTRIES.filter((entry) => entry.branchId !== branchId);
+  TUS_PEARL_OTHER_BRANCH_OPTION_CACHE.set(branchId, entries);
+  return entries;
+}
+
 function buildDistractors(card, index) {
   const correctKey = normalizeOptionKey(card.back);
-  const sameBranch = TUS_PEARL_CARDS
-    .filter((item) => item.branchId === card.branchId && item.id !== card.id)
-    .map((item) => normalizeOption(item.back));
-  const global = TUS_PEARL_CARDS
-    .filter((item) => item.branchId !== card.branchId)
-    .map((item) => normalizeOption(item.back));
-  const pool = uniqueOptionsBySemanticKey([...sameBranch, ...global], correctKey);
+  const sameBranch = TUS_PEARL_BRANCH_OPTION_ENTRIES.get(card.branchId) || [];
+  const global = getOtherBranchOptionEntries(card.branchId);
+  const pool = uniqueOptionEntriesBySemanticKey([...sameBranch, ...global], correctKey);
   if (!pool.length) return ['Yakın ama eksik seçenek', 'Farklı mekanizma', 'Geç dönem komplikasyon', 'Destekleyici bulgu'];
   const start = (index * 7) % pool.length;
   const rotated = [...pool.slice(start), ...pool.slice(0, start)];
-  return uniqueOptionsBySemanticKey(rotated, correctKey).slice(0, 4);
+  return uniqueOptionEntriesBySemanticKey(rotated, correctKey).slice(0, 4).map((entry) => entry.text);
 }
 
 export const TUS_PEARL_AI_SEEDS = TUS_PEARL_CARDS.slice(0, 220).map((card, index) => {
