@@ -11,6 +11,19 @@ function normalizeYears(value) {
 }
 
 export function resolveExamSignal(item = {}) {
+  if (item.hideExamSignal === true) {
+    return {
+      appearedYears: [],
+      appearanceCount: 0,
+      isPastQuestionDerived: false,
+      sourceExamLabel: '',
+      keywords: [],
+      spotPearl: '',
+      examTrap: '',
+      hasContent: false,
+    };
+  }
+
   const feedback = item.diagnosis?.answerFeedback || item.answerFeedback || {};
   const examMeta = item.examMeta || {};
   const appearedYears = normalizeYears(item.appearedYears || examMeta.appearedYears || []);
