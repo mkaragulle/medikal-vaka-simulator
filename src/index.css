@@ -46829,3 +46829,43 @@ body:not(.klinikiq-auth-lock) .case-page-shell .right-workspace-shell .answer-ti
     max-width: none !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ V153 — Branch case frame width parity with AI question screen
+   Purpose: selected clinical branch case screens should use the same
+   authenticated content frame as "Yeni TUS Sorusu Üret" instead of the
+   wider V151 experimental frame. Five-option normalization and embedded
+   case content are preserved.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .page-shell.case-page-shell.stable-case-page-shell,
+body:not(.klinikiq-auth-lock) .page-shell.case-page-shell.case-page-bottomrail {
+  width: min(calc(100vw - (var(--kiq-global-gutter) * 2)), var(--kiq-global-max-width)) !important;
+  max-width: var(--kiq-global-max-width) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell > .content-layout,
+body:not(.klinikiq-auth-lock) .case-page-shell > .full-width-content-layout,
+body:not(.klinikiq-auth-lock) .case-page-shell .case-route-transition,
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser,
+body:not(.klinikiq-auth-lock) .case-page-shell .branch-header-v8 {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+@media (min-width: 1181px) {
+  body:not(.klinikiq-auth-lock) .case-page-shell .professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .stable-case-page-shell .professional-qbank-shell {
+    grid-template-columns: minmax(0, 1fr) minmax(380px, 430px) !important;
+    gap: clamp(20px, 1.4vw, 28px) !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .page-shell.case-page-shell.stable-case-page-shell,
+  body:not(.klinikiq-auth-lock) .page-shell.case-page-shell.case-page-bottomrail {
+    width: min(calc(100vw - 24px), 100%) !important;
+    max-width: none !important;
+  }
+}
