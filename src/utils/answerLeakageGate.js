@@ -475,8 +475,8 @@ export function repairAnswerLeakage(caseItem = {}) {
     ...intro,
     profile: sanitizePreAnswerText(intro.profile || [repaired.demographics, repaired.setting].filter(Boolean).join(' · '), repaired, { strict: false }) || [repaired.demographics, repaired.setting].filter(Boolean).join(' · '),
     presentation: sanitizePreAnswerText(intro.presentation || repaired.chiefComplaint || repaired.title, repaired, { strict: false }) || repaired.title || 'Klinik başvuru',
-    riskContext: sanitizePreAnswerArray(intro.riskContext || [], repaired, fallback, 2),
-    distinctiveClues: sanitizePreAnswerArray(intro.distinctiveClues || [], repaired, fallback, 3),
+    riskContext: sanitizePreAnswerArray(intro.riskContext || [], repaired, fallback, 1),
+    distinctiveClues: sanitizePreAnswerArray(intro.distinctiveClues || [], repaired, fallback, 2),
     historySummary: sanitizePreAnswerText(intro.historySummary || repaired.stem || fallback[0], repaired, { strict: true }) || fallback.slice(0, 2).filter((item) => !hasInterpretiveLeak(item, { strict: true })).join(' '),
     priorityFocus: undefined,
   };
