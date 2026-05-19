@@ -94,43 +94,43 @@ export const orderCategoryMeta = {
   },
   laboratory: {
     label: 'Laboratuvar',
-    description: 'Kan örneği ile ölçülen veriler.',
+    description: 'Kan örneği sonuçları.',
   },
   imaging: {
     label: 'Görüntüleme',
-    description: 'Radyolojik değerlendirmeler.',
+    description: 'Radyolojik görüntüleme sonuçları.',
   },
   respiratory: {
     label: 'Solunum değerlendirmesi',
-    description: 'Solunumla ilişkili ölçümler.',
+    description: 'Solunum sistemi ölçümleri.',
   },
   neurologic: {
     label: 'Nörolojik değerlendirme',
-    description: 'Nörolojik incelemeler.',
+    description: 'Nörolojik teknik inceleme sonuçları.',
   },
   gastrointestinal: {
     label: 'Gastrointestinal değerlendirme',
-    description: 'Gastrointestinal incelemeler.',
+    description: 'Gastrointestinal sistem incelemeleri.',
   },
   microbiology: {
     label: 'Mikrobiyoloji',
-    description: 'Etken araştırması.',
+    description: 'Etken saptamaya yönelik sonuçlar.',
   },
   urine: {
     label: 'İdrar tetkikleri',
-    description: 'İdrar örneği değerlendirmesi.',
+    description: 'İdrar örneği sonuçları.',
   },
   urogenital: {
     label: 'Ürogenital değerlendirme',
-    description: 'Gebelik, üriner sistem ve genital sistem değerlendirmeleri.',
+    description: 'Gebelik ve ürogenital sistem sonuçları.',
   },
   pathology: {
     label: 'Patoloji',
-    description: 'Mikroskopi, sitoloji ve histopatolojik incelemeler.',
+    description: 'Mikroskopi, sitoloji ve histopatoloji sonuçları.',
   },
   metabolic: {
     label: 'Metabolik değerlendirme',
-    description: 'Glukoz, elektrolit ve metabolik ölçümler.',
+    description: 'Glukoz, elektrolit ve metabolik ölçüm sonuçları.',
   },
   invasive: {
     label: 'Girişimsel tetkikler',
@@ -138,15 +138,15 @@ export const orderCategoryMeta = {
   },
   bloodBank: {
     label: 'Kan hazırlığı',
-    description: 'Transfüzyon hazırlığı.',
+    description: 'Kan grubu ve uyumluluk sonuçları.',
   },
   toxicology: {
     label: 'Toksikoloji',
-    description: 'Toksik madde ve ilaç maruziyeti değerlendirmesi.',
+    description: 'Toksik madde ve ilaç düzeyi sonuçları.',
   },
   other: {
     label: 'Diğer tetkikler',
-    description: 'Ek tetkikler.',
+    description: 'Ek objektif sonuçlar.',
   },
 };
 
@@ -554,7 +554,7 @@ function orderPurposeFor(item, clinicalCase = {}) {
     return 'Ultrasonografik morfoloji ve sıvı değerlendirmesi.';
   }
 
-  return 'Bu istem yalnızca klinik kararı değiştirecek objektif bulgu bekleniyorsa anlamlıdır.';
+  return '';
 }
 
 
@@ -596,7 +596,7 @@ function clinicalMeaningFor(item, clinicalCase = {}) {
 
   if (priority === 'lowPriority') return 'Bu istem mevcut tabloda ilk karar basamağını genellikle değiştirmez.';
   if (priority === 'situational') return 'Klinik koşullar değişirse değer kazanabilir; rutin ilk basamak istemi değildir.';
-  return 'Ön tanı ve güvenlik kararına ek objektif veri sağlar.';
+  return '';
 }
 
 function postAnswerExplanationFor(item) {
@@ -649,7 +649,7 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
 
   if (/izlenmedi|saptanmadı|patoloji yok|üreme olmadı|üreme saptanmadı/.test(combined) || (/\bnegatif\b/.test(combined) && !/\bgram negatif\b/.test(combined))) return 'Negatif';
   if (/pozitif|saptandı|izlendi|görüldü|uyumlu|destekler|elevasyon|depresyon|konsolidasyon|defekt|yüksek|düşük|diplokok|basil|kitle|kalınlaşma/.test(combined)) return 'Anormal bulgu';
-  return 'Objektif sonuç';
+  return '';
 }
 
 function sanitizeRows(rows = []) {
@@ -806,9 +806,9 @@ export function buildInvestigationReview(orders = [], orderedIds = []) {
 export function getOrderFeedback(item) {
   const priority = normalizePriority(item.priority);
   if (priority === 'essential') return 'Bu istem mevcut tabloda yüksek tanısal değer taşır.';
-  if (priority === 'useful') return 'Bu istem ayırıcı tanıyı daraltan objektif sonuç sağlar.';
-  if (priority === 'situational') return 'Bu istem yalnızca seçilmiş hastalarda ek objektif bulgu sağlar.';
+  if (priority === 'useful') return 'Sonuç ayırıcı tanıyı daraltır.';
+  if (priority === 'situational') return 'Sonuç seçilmiş hastalarda ek bilgi verir.';
   if (priority === 'lowPriority') return 'Bu istem mevcut ilk değerlendirme aşamasında sınırlı katkı sağlar.';
   if (priority === 'inappropriateEarly') return 'Bu istem ileri aşamada düşünülebilir; önce temel klinik veriler tamamlanmalıdır.';
-  return 'Bu istem ek objektif sonuç sağlar.';
+  return 'Sonuç ek klinik bilgi verir.';
 }

@@ -285,7 +285,7 @@ function hasMeasurementUnitSignal(value = '') {
 
 function hasMeaningfulReference(row = {}) {
   const reference = String(row.reference || '').trim();
-  return Boolean(reference && !isGenericQualitativeReference(reference));
+  return Boolean(reference && !isGenericQualitativeReference(reference) && rowHasQuantitativeSignal(row));
 }
 
 function isNarrativeCell(value = '') {
@@ -327,7 +327,7 @@ function ResultFindingList({ rows = [], glossaryEnabled = true }) {
     <div className="qualitative-result-list inline-result-finding-list">
       {normalizedRows.map(({ parameter, value, reference, note }, index) => {
         const status = evaluateSemanticStatus({ parameter, value, reference, note });
-        const showReference = reference && !isGenericQualitativeReference(reference);
+        const showReference = reference && !isGenericQualitativeReference(reference) && rowHasQuantitativeSignal({ parameter, value, reference, note });
         const showNote = note && !/klinik olarak anlamli|objektif sonuc/i.test(String(note));
 
         return (
@@ -540,8 +540,6 @@ function InlineOrderResult({ item, mode, hardMode = false }) {
 
 function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false }) {
   const subtype = item.subtype || typeLabels[item.type] || 'Tetkik';
-  const purpose = item.purpose || '';
-
   return (
     <article className={`order-card-shell requested-test-card ${selected ? 'selected requested' : ''} ${expanded ? 'expanded' : ''}`.trim()}>
       <button
@@ -556,7 +554,6 @@ function OrderCard({ item, selected, expanded, onToggle, mode, hardMode = false 
         <span className="investigation-option-copy smart-order-copy requested-test-copy">
           <strong><GlossaryText text={item.title || item.label} enabled={mode !== 'exam' && !hardMode} /></strong>
           <span className="order-card-subline neutral-order-subline"><em><GlossaryText text={subtype} enabled={mode !== 'exam' && !hardMode} /></em></span>
-          {purpose ? <span className="order-card-purpose"><GlossaryText text={purpose} enabled={mode !== 'exam' && !hardMode} /></span> : null}
         </span>
         <span className="smart-order-actions requested-test-actions">
           <span className={`investigation-option-state smart-order-state order-status-chip ${selected ? 'requested' : 'idle'}`}>
@@ -666,7 +663,7 @@ function InvestigationPanel({
       <div className="panel-title-row compact investigation-order-head refined-investigation-order-head smart-investigation-order-head">
         <div>
           <h2>Objektif Veri / Tetkik</h2>
-          <p><GlossaryText text="Öykü ve fizik muayeneden sonra tanı veya tedavi kararını değiştirecek objektif verileri değerlendir." enabled={mode !== 'exam' && !hardMode} /></p>
+          <p><GlossaryText text="Laboratuvar, EKG, görüntüleme, kültür, patoloji ve diğer teknik inceleme sonuçları." enabled={mode !== 'exam' && !hardMode} /></p>
         </div>
         <span className="ordered-count-chip refined-count-chip smart-count-chip">{orderedInvestigationIds.length} istem seçildi</span>
       </div>

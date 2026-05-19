@@ -732,8 +732,8 @@ function CasePlayer({
                       <Icon name="ClipboardList" size={29} strokeWidth={1.95} />
                     </span>
                     <div className="patient-summary-head-copy">
-                      <strong>Hasta özeti</strong>
-                      <p>Öykü, muayene ve objektif veri akışı</p>
+                      <strong>Olgu sunumu</strong>
+                      <p>Hasta öyküsü, fizik muayene ve objektif veri</p>
                     </div>
                   </header>
 
@@ -805,7 +805,7 @@ function CasePlayer({
             {showExamPanel ? (
               <section className="clinical-data-card card-surface section-anchor" id="case-exam" ref={examRef} data-section="case-exam">
                 <div className="panel-title-row compact refined-section-heading">
-                  <div><h2>Fizik Muayene ve Vital Bulgular</h2></div>
+                  <div><h2>Fizik Muayene ve Vital Bulgular</h2><p>Hastada doğrudan gözlenen ve muayenede saptanan bulgular.</p></div>
                 </div>
 
                 {hasVitalData ? (
