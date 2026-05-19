@@ -110,9 +110,15 @@ export function removeExactDiagnosisLead(text = '', diagnosis = '') {
 }
 
 export function buildNonRevealingFocus(clinicalCase) {
+  const explicitFocus = stripDiagnosticLeakage(
+    clinicalCase?.clinicalFocus || clinicalCase?.learningTarget || '',
+    clinicalCase,
+  );
+  if (explicitFocus) return toSentence(explicitFocus);
+
   const branchLabel = clinicalCase.branchName || clinicalCase.branchTitle || '';
   const branchPrefix = branchLabel ? `${toDisplayPhrase(branchLabel)} bağlamında ` : '';
-  return toSentence(`${branchPrefix}klinik verileri önceliklendirerek tanısal karar verme pratiği`);
+  return toSentence(`${branchPrefix}ayırt ettirici verileri gereksiz ayrıntıdan ayırarak karar verme`);
 }
 
 export function buildAcademicFocusSentence(clinicalCase) {
