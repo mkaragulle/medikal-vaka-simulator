@@ -437,8 +437,6 @@ function buildPatientSummary(clinicalCase) {
     rows: [
       { kind: 'profile', label: 'Profil', value: profileText },
       { kind: 'presentation', label: 'Başvuru', value: presentationText },
-      { kind: 'risk', label: 'Risk bağlamı', items: riskItems, fallback: 'Risk bağlamı vaka öyküsüyle birlikte değerlendirilmelidir.' },
-      { kind: 'clues', label: 'Ayırt ettirici ipuçları', items: clueItems, fallback: 'Öykü, muayene ve tetkik verilerinden ayrım yapılmalıdır.' },
     ],
     history: historyParts.length ? historyParts : [normalizePatientSummaryText(compactSentence(fallbackStory, 190))],
   };
@@ -735,7 +733,7 @@ function CasePlayer({
                     </span>
                     <div className="patient-summary-head-copy">
                       <strong>Hasta özeti</strong>
-                      <p>Olgunun temel klinik çerçevesi</p>
+                      <p>Öykü, muayene ve objektif veri akışı</p>
                     </div>
                   </header>
 
@@ -768,13 +766,13 @@ function CasePlayer({
                     })}
                   </div>
 
-                  <section className="patient-summary-story-block unified-history-block" aria-label="Kısa klinik öykü özeti">
+                  <section className="patient-summary-story-block unified-history-block" aria-label="Hasta öyküsü">
                     <span className="summary-wide-icon summary-wide-icon--history" aria-hidden="true">
                       <Icon name="Notes" size={28} strokeWidth={1.92} />
                     </span>
                     <div className="summary-wide-content">
                       <div className="summary-story-label">
-                        <span>KISA KLİNİK ÖYKÜ ÖZETİ</span>
+                        <span>HASTA ÖYKÜSÜ</span>
                       </div>
                       <div className="summary-story-text">
                         {patientSummary.history.map((part, index) => (
@@ -807,7 +805,7 @@ function CasePlayer({
             {showExamPanel ? (
               <section className="clinical-data-card card-surface section-anchor" id="case-exam" ref={examRef} data-section="case-exam">
                 <div className="panel-title-row compact refined-section-heading">
-                  <div><h2>Muayene ve vital bulgular</h2></div>
+                  <div><h2>Fizik Muayene ve Vital Bulgular</h2></div>
                 </div>
 
                 {hasVitalData ? (

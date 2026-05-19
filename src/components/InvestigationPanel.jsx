@@ -662,11 +662,11 @@ function InvestigationPanel({
   const orders = useMemo(() => providedOrders ?? buildInvestigationOrders(clinicalCase), [clinicalCase, providedOrders]);
 
   return (
-    <section className="card-surface investigation-order-section refined-investigation-order-section smart-investigation-order-section" aria-label="Tetkik istemi">
+    <section className="card-surface investigation-order-section refined-investigation-order-section smart-investigation-order-section" aria-label="Objektif Veri / Tetkik">
       <div className="panel-title-row compact investigation-order-head refined-investigation-order-head smart-investigation-order-head">
         <div>
-          <h2>Tetkik istemi</h2>
-          <p><GlossaryText text="Öykü ve fizik muayeneye göre gerekli gördüğün tetkikleri seç." enabled={mode !== 'exam' && !hardMode} /></p>
+          <h2>Objektif Veri / Tetkik</h2>
+          <p><GlossaryText text="Öykü ve fizik muayeneden sonra tanı veya tedavi kararını değiştirecek objektif verileri değerlendir." enabled={mode !== 'exam' && !hardMode} /></p>
         </div>
         <span className="ordered-count-chip refined-count-chip smart-count-chip">{orderedInvestigationIds.length} istem seçildi</span>
       </div>
