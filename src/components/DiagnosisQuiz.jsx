@@ -7,8 +7,9 @@ import GlossaryText from './GlossaryTooltip.jsx';
 
 const OPTION_LETTERS = ['A', 'B', 'C', 'D', 'E', 'F'];
 
-function buildOptions(options, correct) {
+function buildOptions(options, correct, shouldShuffle = false) {
   const unique = Array.from(new Set(options));
+  if (!shouldShuffle) return unique;
   const shuffled = shuffleArray(unique);
   if (shuffled[0] === correct && shuffled.length > 1) {
     [shuffled[0], shuffled[1]] = [shuffled[1], shuffled[0]];
@@ -91,7 +92,11 @@ function DiagnosisQuiz({
   const [submitted, setSubmitted] = useState(Boolean(existingAnswer));
 
   const options = useMemo(
-    () => buildOptions(clinicalCase.diagnosis.options, clinicalCase.diagnosis.correct),
+    () => buildOptions(
+      clinicalCase.diagnosis.options,
+      clinicalCase.diagnosis.correct,
+      clinicalCase.shuffleOptions === true,
+    ),
     [clinicalCase.id],
   );
 

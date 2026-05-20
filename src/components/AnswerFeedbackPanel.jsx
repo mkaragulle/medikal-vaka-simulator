@@ -109,7 +109,7 @@ function deriveSingleLinePearl(clinicalCase = {}, reasoningText = '') {
     || clinicalCase.examPearls?.[0]
     || clinicalCase.diagnosis?.pearls?.[0]
     || '';
-  const pearl = singleSentence(stripFeedbackHeading(raw), 230);
+  const pearl = singleSentence(stripFeedbackHeading(itemText(raw)), 230);
   if (!pearl || textLooksSame(pearl, reasoningText, 0.86)) return '';
   return pearl;
 }
@@ -255,7 +255,8 @@ function getMainClue(clinicalCase) {
     clinicalCase.clinicalFocus,
     clinicalCase.chiefComplaint,
   ];
-  return truncateSentence(removeMetaLanguage(candidates.find((item) => normalizeText(itemText(item))) || ''), 190);
+  const selected = candidates.find((item) => normalizeText(itemText(item)));
+  return truncateSentence(removeMetaLanguage(itemText(selected)), 190);
 }
 
 function deriveWhyCorrect(clinicalCase) {
@@ -273,21 +274,39 @@ function deriveWhyCorrect(clinicalCase) {
 
 function normalizeWrongMap(clinicalCase) {
   const feedback = getFeedback(clinicalCase);
+  const optionTexts = Array.isArray(clinicalCase.diagnosis?.options) ? clinicalCase.diagnosis.options : [];
+  const letterToOption = optionTexts.reduce((accumulator, option, index) => {
+    const letter = String.fromCharCode(65 + index);
+    accumulator[letter] = option;
+    return accumulator;
+  }, {});
+
   const maps = [
     feedback.whyWrong,
     feedback.differentialComparison,
     feedback.differentials,
     feedback.differentialExplanations,
+    feedback.optionComparison,
+    feedback.optionFeedback,
+    feedback.feedbackByOption,
+    feedback.answerFeedbackByOption,
+    feedback.optionRationales,
     clinicalCase.diagnosis?.differentials,
+    clinicalCase.diagnosis?.optionComparison,
+    clinicalCase.diagnosis?.optionFeedback,
+    clinicalCase.diagnosis?.feedbackByOption,
+    clinicalCase.diagnosis?.answerFeedbackByOption,
+    clinicalCase.diagnosis?.optionRationales,
   ].filter((map) => map && typeof map === 'object' && !Array.isArray(map));
 
   return maps.reduce((accumulator, map) => {
-    Object.entries(map).forEach(([key, value]) => {
+    Object.entries(map).forEach(([rawKey, value]) => {
+      const key = letterToOption[rawKey] || rawKey;
       if (!key || accumulator[key]) return;
       if (typeof value === 'string') accumulator[key] = { explanation: value, comparisonPoints: [] };
       else accumulator[key] = {
-        explanation: value?.explanation || value?.summary || '',
-        comparisonPoints: value?.comparisonPoints || value?.points || [],
+        explanation: value?.explanation || value?.summary || value?.text || '',
+        comparisonPoints: value?.comparisonPoints || value?.points || value?.keyClues || [],
       };
     });
     return accumulator;
@@ -469,16 +488,31 @@ function buildNaturalComparisonPoints(clinicalCase, option, evidenceChain = []) 
 
 function deriveCorrectOptionSummary(clinicalCase, option, evidenceChain = []) {
   const feedback = getFeedback(clinicalCase);
+  const optionTexts = Array.isArray(clinicalCase.diagnosis?.options) ? clinicalCase.diagnosis.options : [];
+  const correctIndex = optionTexts.findIndex((item) => item === option);
+  const correctLetter = correctIndex >= 0 ? String.fromCharCode(65 + correctIndex) : '';
   const explicit = feedback.correctOptionFeedback
     || feedback.correctChoiceFeedback
     || feedback.optionRationales?.[option]
+    || feedback.optionRationales?.[correctLetter]
     || feedback.differentialComparison?.[option]?.explanation
+    || feedback.differentialComparison?.[correctLetter]?.explanation
+    || feedback.optionFeedback?.[option]?.explanation
+    || feedback.feedbackByOption?.[option]?.explanation
+    || feedback.answerFeedbackByOption?.[option]?.explanation
+    || clinicalCase.diagnosis?.optionFeedback?.[option]?.explanation
+    || clinicalCase.diagnosis?.feedbackByOption?.[option]?.explanation
+    || clinicalCase.diagnosis?.answerFeedbackByOption?.[option]?.explanation
+    || feedback.optionComparison?.[option]
+    || feedback.optionComparison?.[correctLetter]
+    || clinicalCase.diagnosis?.optionComparison?.[option]
+    || clinicalCase.diagnosis?.optionComparison?.[correctLetter]
     || '';
   if (explicit) {
     return singleSentence(removeMetaLanguage(explicit), 240);
   }
 
-  const whyCorrect = feedback.whyCorrect || clinicalCase.diagnosis?.explanation || '';
+  const whyCorrect = feedback.whyCorrect || feedback.rationale || clinicalCase.diagnosis?.whyCorrect || clinicalCase.diagnosis?.explanation || '';
   if (whyCorrect) {
     return singleSentence(removeMetaLanguage(whyCorrect), 240);
   }
