@@ -109,15 +109,30 @@ function DiagnosisQuiz({
     : '0%';
   const isSpotCase = clinicalCase.caseType === 'spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const questionPrompt = questionPromptOverride || clinicalCase.question || clinicalCase.diagnosis?.question || '';
-  const defaultQuestionHeading = isSpotCase ? (clinicalCase.questionType === 'diagnosis' ? 'TUS spot tanı sorusu' : clinicalCase.questionType === 'test' ? 'TUS spot tetkik sorusu' : clinicalCase.questionType === 'treatment' ? 'TUS spot tedavi sorusu' : 'TUS spot karar sorusu') : 'En olası tanı';
+  const normalizedQuestionType = String(clinicalCase.questionType || clinicalCase.answerTarget || '').toLocaleLowerCase('tr');
+  const defaultQuestionHeading = normalizedQuestionType === 'test' || normalizedQuestionType === 'diagnostic_test'
+    ? (isSpotCase ? 'TUS spot tetkik sorusu' : 'Tetkik / tanı testi')
+    : normalizedQuestionType === 'treatment' || normalizedQuestionType === 'first_step' || normalizedQuestionType === 'next_step'
+      ? (isSpotCase ? 'TUS spot tedavi sorusu' : 'Klinik yaklaşım')
+      : normalizedQuestionType === 'mechanism'
+        ? 'Mekanizma sorusu'
+        : normalizedQuestionType === 'pathology'
+          ? 'Patoloji sorusu'
+          : normalizedQuestionType === 'anatomy'
+            ? 'Anatomi sorusu'
+            : normalizedQuestionType === 'pathogen'
+              ? 'Etken sorusu'
+              : isSpotCase
+                ? 'TUS spot tanı sorusu'
+                : 'Klinik karar';
   const questionHeading = questionHeadingOverride || defaultQuestionHeading;
   const defaultQuestionSubtext = isSpotCase
     ? (submitted && clinicalCase.clinicalFocus
       ? clinicalCase.clinicalFocus
       : 'Kısa TUS olgusunda öykü, muayene ve objektif verileri yorumlayarak en doğru yanıtı seç.')
-    : 'Olgu paternine en uygun seçeneği işaretle.';
+    : 'Öykü, muayene ve objektif verileri birlikte değerlendirerek en uygun seçeneği işaretle.';
   const questionSubtext = questionSubtextOverride || defaultQuestionSubtext;
-  const showInlineQuestionStem = isSpotCase && Boolean(questionPrompt) && hideSpotQuestionCallout;
+  const showInlineQuestionStem = Boolean(questionPrompt) && hideSpotQuestionCallout;
 
   const handleSubmit = useCallback(() => {
     if (!selected || submitted) return;
@@ -167,7 +182,7 @@ function DiagnosisQuiz({
         </div>
       ) : null}
 
-      {isSpotCase && questionPrompt && !hideSpotQuestionCallout ? (
+      {questionPrompt && !hideSpotQuestionCallout ? (
         <div className="tus-spot-olgular-question-callout" role="note">
           <Icon name="Target" size={16} />
           <strong><GlossaryText text={questionPrompt} enabled={!hardMode && !examMeta?.active} /></strong>

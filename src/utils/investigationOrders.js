@@ -619,12 +619,11 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
     if (/bekleniyor|sonuç bekleniyor|takip/.test(valueText)) return 'Takip edilecek';
     const valueShowsAbsence = /saptanmadı|izlenmedi|görülmedi|üreme olmadı|üreme saptanmadı|yok/.test(valueText) || (/\bnegatif\b/.test(valueText) && !/\bgram negatif\b/.test(valueText));
     if (valueShowsAbsence) return 'Negatif';
-    if (/pozitif|saptandı|izlendi|görüldü|üreme|diplokok|kok|basil|konsolidasyon|elevasyon|depresyon|defekt|flap|anevrizma|vejetasyon|kitle|kalınlaşma|birikim|eozinofil/.test(valueText)) return '';
+    if (/pozitif|saptandı|izlendi|görüldü|üreme|diplokok|kok|basil|konsolidasyon|elevasyon|depresyon|defekt|flap|anevrizma|vejetasyon|kitle|kalınlaşma|birikim|eozinofil/.test(valueText)) return 'Anormal bulgu';
   }
 
   if (/belirgin yüksek|çok yüksek|yüksek|artmış|uzamış/.test(text)) return 'Yüksek';
-  if (/pozitif/.test(text)) return 'Pozitif';
-  if (/pürülan|klinik olarak anlamlı/.test(text)) return '';
+  if (/pozitif|anormal|klinik olarak anlamlı|pürülan/.test(text)) return 'Anormal bulgu';
   if (/düşük|azalmış/.test(text)) return 'Düşük';
   if (/negatif/.test(text)) return 'Negatif';
   if (/normal|referans|uygun/.test(text)) return 'Referans içinde';
@@ -649,8 +648,7 @@ function neutralRowNote(note = '', parameter = '', value = '', reference = '') {
   }
 
   if (/izlenmedi|saptanmadı|patoloji yok|üreme olmadı|üreme saptanmadı/.test(combined) || (/\bnegatif\b/.test(combined) && !/\bgram negatif\b/.test(combined))) return 'Negatif';
-  if (/pozitif/.test(combined)) return 'Pozitif';
-  if (/saptandı|izlendi|görüldü|elevasyon|depresyon|konsolidasyon|defekt|yüksek|düşük|diplokok|basil|kitle|kalınlaşma/.test(combined)) return '';
+  if (/pozitif|saptandı|izlendi|görüldü|uyumlu|destekler|elevasyon|depresyon|konsolidasyon|defekt|yüksek|düşük|diplokok|basil|kitle|kalınlaşma/.test(combined)) return 'Anormal bulgu';
   return '';
 }
 
@@ -659,7 +657,7 @@ function sanitizeRows(rows = []) {
     const [parameter, value, reference, note] = Array.isArray(row)
       ? row
       : [row.parameter, row.value, row.reference, row.note || row.interpretation];
-    return [parameter, value, reference || '', neutralRowNote(note, parameter, value, reference)];
+    return [parameter, value, reference || '—', neutralRowNote(note, parameter, value, reference)];
   });
 }
 

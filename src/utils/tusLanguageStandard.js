@@ -26,20 +26,10 @@ const WEAK_TEXT_REPLACEMENTS = [
   [/\bverilen öğrenme hedefi\b/giu, 'ölçülen klinik bilgi'],
   [/\byanıt ekseni\b/giu, 'klinik karar noktası'],
   [/\bNedeniyle Ameliyathane\b/giu, 'Ameliyathane izlemi'],
-  [/\bdeğerlendirilir\b/giu, 'raporlanır'],
-  [/\bdeğerlendirilmiştir\b/giu, 'raporlanmıştır'],
   [/\bwheezing\b/giu, 'hışıltılı solunum'],
   [/\binsulin\s*\+\s*glucose\b/giu, 'intravenöz insülin + glukoz'],
   [/\bwidened\s*QRS\b/giu, 'QRS genişlemesi'],
   [/\btall\s*T\s*waves?\b/giu, 'sivri T dalgaları'],
-  [/\btanısal\s+patern\b/giu, 'karar verdirici objektif bulgu'],
-  [/\bpaternle\s+uyumlu\b/giu, 'objektif bulguyla desteklenen'],
-  [/\bmetabolik\s+örüntü\b/giu, 'metabolik bulgu kümesi'],
-  [/\bkarakteristik\s+metabolit\b/giu, 'ilgili metabolit'],
-  [/\bobjektif\s+sonuç\b/giu, 'tetkik sonucu'],
-  [/\bnormal\s+doku\b/giu, 'örneklenen dokuda ek patoloji izlenmez'],
-  [/\banormal\s+bulgu\b/giu, 'patolojik bulgu'],
-  [/\bAnormal\s+bulgu\b/gu, 'Patolojik bulgu'],
 ];
 
 const TITLE_REPLACEMENTS = new Map([
@@ -54,8 +44,7 @@ const TITLE_REPLACEMENTS = new Map([
 function compactSpaces(text = '') {
   return String(text || '')
     .replace(/\s+([,.;:!?])/gu, '$1')
-    .replace(/,(?!\d)(?=\S)/gu, ', ')
-    .replace(/([;:!?])(?=\S)/gu, '$1 ')
+    .replace(/([,;:!?])(?=\S)/gu, '$1 ')
     .replace(/\s{2,}/gu, ' ')
     .trim();
 }
@@ -73,7 +62,6 @@ export function normalizeTusLanguageText(value = '') {
     .replace(/\bçeldirici\b/giu, 'alternatif')
     .replace(/\bÇeldirici\b/giu, 'Alternatif')
     .replace(/\bAI\s*Spot\b/gu, 'TUS Spot')
-    .replace(/(?<=\d)\.\s+(?=\d)/gu, ',')
     .replace(/\s+\.\s*/gu, '. ')
     .replace(/\s+;\s*/gu, '; ');
   return compactSpaces(text);
