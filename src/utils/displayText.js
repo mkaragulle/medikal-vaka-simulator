@@ -109,16 +109,33 @@ export function removeExactDiagnosisLead(text = '', diagnosis = '') {
   return cleaned;
 }
 
+function isGenericClinicalFocus(text = '') {
+  const normalized = normalizeInlineText(String(text || '')).toLocaleLowerCase('tr');
+  return !normalized
+    || /hasta öyküsü,? fizik muayene ve objektif veriler birlikte değerlendirilerek en uygun klinik karar seçilir/.test(normalized)
+    || /öykü,? muayene ve objektif veriler.*klinik karar/.test(normalized);
+}
+
+function neutralFocusByTarget(clinicalCase = {}) {
+  const target = String(clinicalCase.answerTarget || clinicalCase.questionType || '').toLocaleLowerCase('tr');
+  const branchText = String(`${clinicalCase.relatedBranch || ''} ${clinicalCase.branchId || ''}`).toLocaleLowerCase('tr');
+  if (/anatomy|anatomi/.test(target) || /anatomi/.test(branchText)) return 'Muayene bulgusunu anatomik yapı ve sinir-yapı ilişkisiyle eşleştir.';
+  if (/pathology|patoloji/.test(target) || /patoloji/.test(branchText)) return 'Klinik tabloyu morfolojik veya histopatolojik paternle ilişkilendir.';
+  if (/pathogen|etiology|etken/.test(target)) return 'Klinik bağlam ve mikrobiyolojik ipuçlarıyla olası etkeni belirle.';
+  if (/mechanism|mekanizma/.test(target)) return 'Bulguların altında yatan mekanizmayı neden-sonuç ilişkisiyle ayırt et.';
+  if (/lab_interpretation|diagnostic_test|test|tetkik/.test(target)) return 'Objektif verileri doğru yorumlayarak karar verdirici bulguyu seç.';
+  if (/first_step|next_step|treatment|tedavi/.test(target)) return 'Acil öncelik ve tedavi güvenliğini birlikte değerlendir.';
+  if (/diagnosis|tanı/.test(target)) return 'Öykü, muayene ve objektif verilerden en olası tanıya ulaş.';
+  return 'Vakadaki ayırt ettirici verileri gereksiz ayrıntıdan ayırarak karar ver.';
+}
+
 export function buildNonRevealingFocus(clinicalCase) {
-  const explicitFocus = stripDiagnosticLeakage(
-    clinicalCase?.clinicalFocus || clinicalCase?.learningTarget || '',
-    clinicalCase,
-  );
+  const rawFocus = clinicalCase?.clinicalFocus || '';
+  const explicitSource = isGenericClinicalFocus(rawFocus) ? '' : rawFocus;
+  const explicitFocus = stripDiagnosticLeakage(explicitSource, clinicalCase);
   if (explicitFocus) return toSentence(explicitFocus);
 
-  const branchLabel = clinicalCase.branchName || clinicalCase.branchTitle || '';
-  const branchPrefix = branchLabel ? `${toDisplayPhrase(branchLabel)} bağlamında ` : '';
-  return toSentence(`${branchPrefix}ayırt ettirici verileri gereksiz ayrıntıdan ayırarak karar verme`);
+  return toSentence(neutralFocusByTarget(clinicalCase));
 }
 
 export function buildAcademicFocusSentence(clinicalCase) {

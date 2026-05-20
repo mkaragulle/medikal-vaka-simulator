@@ -429,9 +429,11 @@ function buildPatientSummary(clinicalCase) {
     4,
     null,
   );
-  const profileText = normalizePatientSummaryText(compactClinicalText(intro.profile || [demographics, setting].filter(Boolean).join(' · '), 92));
-  const presentationText = normalizePatientSummaryText(compactSentence(intro.presentation || complaint, 118));
-  const historyParts = splitSentences(intro.historySummary || fallbackStory).slice(0, 3).map((part) => normalizePatientSummaryText(compactClinicalText(part, 190)));
+  const profileText = normalizePatientSummaryText(intro.profile || [demographics, setting].filter(Boolean).join(' · '));
+  const presentationText = normalizePatientSummaryText(intro.presentation || complaint);
+  const historyParts = splitSentences(intro.historySummary || fallbackStory)
+    .slice(0, 4)
+    .map((part) => normalizePatientSummaryText(part));
 
   return {
     rows: [
@@ -733,7 +735,7 @@ function CasePlayer({
                     </span>
                     <div className="patient-summary-head-copy">
                       <strong>Olgu sunumu</strong>
-                      <p>Hasta öyküsü, fizik muayene ve objektif veri</p>
+                      <p>Profil, başvuru ve öykü</p>
                     </div>
                   </header>
 

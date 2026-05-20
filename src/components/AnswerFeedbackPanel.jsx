@@ -30,14 +30,24 @@ const BASIC_SCIENCE_BRANCHES = new Set([
 ]);
 
 
-function allowsManagementFeedback(clinicalCase = {}) {
+function isGenericNextStep(value = '') {
+  const text = normalizeText(value).toLocaleLowerCase('tr');
+  return !text
+    || /öykü,? muayene ve objektif veriyi birlikte yorumlayarak klinik kararını doğrula/.test(text)
+    || /öykü,? fizik muayene ve objektif veriler.*klinik karar/.test(text);
+}
+
+function isManagementTarget(clinicalCase = {}) {
   const target = normalizeText(clinicalCase.answerTarget || clinicalCase.questionType || '').toLocaleLowerCase('tr');
-  const branchText = normalizeText(`${clinicalCase.branchId || ''} ${clinicalCase.relatedBranch || ''} ${clinicalCase.branchName || ''}`).toLocaleLowerCase('tr');
-  const isAISpot = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
-  const managementTarget = /^(first_step|next_step|treatment|prevention)$/iu.test(target);
-  if (isAISpot && !managementTarget) return false;
-  if (/mechanism|lab_interpretation|diagnostic_test|complication|diagnosis/iu.test(target) && /biyokimya|mikrobiyoloji|farmakoloji|anatomi|histoloji|embriyoloji|temel bilim|medical-biochemistry|medical-microbiology|medical-pharmacology|histology-embryology|anatomy/iu.test(branchText)) return false;
-  return true;
+  return /^(first_step|next_step|treatment|prevention|management)$/iu.test(target);
+}
+
+function allowsManagementFeedback(clinicalCase = {}) {
+  if (!isManagementTarget(clinicalCase)) return false;
+  const feedback = getFeedback(clinicalCase);
+  const explicitSteps = feedback.managementSteps || feedback.management;
+  if (Array.isArray(explicitSteps) && explicitSteps.some((step) => normalizeText(itemText(step)))) return true;
+  return !isGenericNextStep(clinicalCase.diagnosis?.nextStep || '');
 }
 
 function normalizeText(value = '') {
@@ -425,15 +435,20 @@ function inferPearlLabel(text = '', index = 0) {
 
 function derivePearls(clinicalCase) {
   const feedback = getFeedback(clinicalCase);
-  const pearls = feedback.clinicalPearls || feedback.pearls || clinicalCase.diagnosis?.pearls || [];
-  const clue = getMainClue(clinicalCase);
-  const rawPearls = Array.isArray(pearls) ? [...pearls] : [];
-  if (rawPearls.length < 2 && clue) rawPearls.push({ label: 'Ayırt ettirici bulgu', text: `${clue} seçenekler arasındaki ayrımı belirginleştirir.` });
+  const rawPearls = [];
+
+  if (feedback.examPearl) rawPearls.push({ label: 'Sınav notu', text: feedback.examPearl });
+
+  const pearlSources = [feedback.clinicalPearls, feedback.pearls, clinicalCase.diagnosis?.pearls];
+  pearlSources.forEach((pearls) => {
+    if (Array.isArray(pearls)) rawPearls.push(...pearls);
+  });
 
   return unique(rawPearls)
     .slice(0, MAX_PEARL_ITEMS)
     .map((item, index) => {
-      const normalized = normalizeTitledItem(item, index, item?.label || inferPearlLabel(itemText(item), index), 170);
+      const fallbackLabel = typeof item === 'object' && item?.label ? item.label : inferPearlLabel(itemText(item), index);
+      const normalized = normalizeTitledItem(item, index, fallbackLabel, 190);
       if (!normalized) return null;
       normalized.label = normalized.title;
       return normalized;
@@ -460,12 +475,13 @@ function deriveManagementSteps(clinicalCase) {
     steps = management;
   } else {
     const nextStep = clinicalCase.diagnosis?.nextStep || '';
+    if (isGenericNextStep(nextStep)) return [];
     steps = splitActionItems(nextStep);
   }
 
   return unique(steps)
     .slice(0, MAX_MANAGEMENT_ITEMS)
-    .map((step, index) => normalizeTitledItem(step, index, inferManagementTitle(itemText(step), index), 170))
+    .map((step, index) => normalizeTitledItem(step, index, inferManagementTitle(itemText(step), index), 190))
     .filter(Boolean);
 }
 
@@ -525,6 +541,10 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
   const correct = clinicalCase.diagnosis?.correct;
   const options = Array.isArray(clinicalCase.diagnosis?.options) ? clinicalCase.diagnosis.options : [];
   const wrongMap = normalizeWrongMap(clinicalCase);
+  const normalizedWrongMap = Object.entries(wrongMap).reduce((accumulator, [key, value]) => {
+    accumulator[normalizeForCompare(key)] = value;
+    return accumulator;
+  }, {});
   const clue = getMainClue(clinicalCase);
 
   return options.slice(0, MAX_COMPARISON_ITEMS).map((option) => {
@@ -540,7 +560,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
       };
     }
 
-    const explicit = wrongMap[option] || {};
+    const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
     const explanation = singleSentence(removeMetaLanguage(explicit.explanation || 'Bu seçenek için ayırt ettirici açıklama üretilemedi.'), 190);
     return {
       option,
@@ -691,7 +711,7 @@ function ClinicalPearlsList({ pearls, glossaryEnabled = true }) {
         {pearls.map((pearl, index) => (
           <div className="clinical-pearl-item clinical-pearl-item-pro" key={`${pearl.label}-${pearl.text}-${index}`}>
             <span aria-hidden="true" />
-            <p><strong><GlossaryText text={pearl.label} enabled={glossaryEnabled} /></strong><GlossaryText text={ensureSentence(pearl.text)} enabled={glossaryEnabled} /></p>
+            <p><strong><GlossaryText text={pearl.label} enabled={glossaryEnabled} /></strong>{' '}<GlossaryText text={ensureSentence(pearl.text)} enabled={glossaryEnabled} /></p>
           </div>
         ))}
       </div>
@@ -735,7 +755,7 @@ function FeedbackManagementCard({ managementSteps, glossaryEnabled = true, clini
         {managementSteps.map((step, index) => (
           <div className="management-action-item management-action-item-pro" key={`${step.title}-${step.text}-${index}`}>
             <b>{index + 1}</b>
-            <p><strong><GlossaryText text={step.title} enabled={glossaryEnabled} /></strong><GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} /></p>
+            <p><strong><GlossaryText text={step.title} enabled={glossaryEnabled} /></strong>{' '}<GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} /></p>
           </div>
         ))}
       </div>
