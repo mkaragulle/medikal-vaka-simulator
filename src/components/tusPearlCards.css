@@ -11477,123 +11477,221 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   }
 }
 
-
-/* ==========================================================
-   V218 — Hap Bilgi Çalış return button final hard reset
-   Goal: prevent the “Tekrar merkezine dön” label from sticking
-   to the top edge of the pill by isolating the label from old
-   generic .branch-back-v8 span rules and centering it with flex.
-   ========================================================== */
-.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136,
-.tus-pearl-study-shell .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136,
-.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
-  position: relative !important;
-  display: inline-flex !important;
-  flex-direction: row !important;
+/* V219 — Hap Bilgi Çalış title optical positioning + Turkish glyph clipping fix */
+.tus-pearl-study-top .tus-pearl-study-title,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title {
+  height: 100% !important;
+  min-height: 0 !important;
+  display: flex !important;
   align-items: center !important;
-  align-content: center !important;
+  justify-content: flex-start !important;
+  align-self: stretch !important;
+  overflow: visible !important;
+  padding: 0 8px 0 2px !important;
+  box-sizing: border-box !important;
+  transform: translateY(1px) !important;
+}
+
+.tus-pearl-study-top .tus-pearl-study-title h1,
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title h1 {
+  display: inline-block !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0.08em 0.18em 0.18em 0.02em !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.038em !important;
+  font-size: clamp(26px, 2.2vw, 36px) !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: geometricPrecision !important;
+  box-sizing: content-box !important;
+  transform: none !important;
+}
+
+@media (max-width: 1180px) {
+  .tus-pearl-study-top .tus-pearl-study-title h1,
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title h1 {
+    font-size: clamp(24px, 2.35vw, 32px) !important;
+    letter-spacing: -0.034em !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .tus-pearl-study-top .tus-pearl-study-title,
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title {
+    padding-inline: 0 !important;
+    transform: none !important;
+  }
+
+  .tus-pearl-study-top .tus-pearl-study-title h1,
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    line-height: 1.2 !important;
+    padding: 0.06em 0.12em 0.16em 0 !important;
+  }
+}
+
+/* V220 — Final Hap Bilgi header cascade fix
+   The previous title glyph fix was correct, but older high-specificity header rules
+   could still win over the compact return-button rules. This block intentionally
+   repeats both the base selector and the :has(...) selector at the end of the file
+   so the return button and the title are controlled from the same final override. */
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top,
+.tus-pearl-study-top {
+  grid-template-columns: max-content minmax(260px, 1fr) minmax(270px, 360px) minmax(128px, 180px) !important;
+  align-items: center !important;
+  gap: 16px !important;
+  overflow: visible !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136,
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  inline-size: max-content !important;
+  block-size: 40px !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center !important;
   justify-content: flex-start !important;
   justify-self: start !important;
   align-self: center !important;
-  width: max-content !important;
-  min-width: 0 !important;
-  max-width: 232px !important;
-  height: 44px !important;
-  min-height: 44px !important;
-  max-height: 44px !important;
-  padding: 0 15px 0 8px !important;
-  gap: 9px !important;
-  border-radius: 999px !important;
-  line-height: normal !important;
+  gap: 8px !important;
+  padding: 0 14px 0 7px !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
   white-space: nowrap !important;
-  overflow: hidden !important;
-  box-sizing: border-box !important;
-  vertical-align: middle !important;
+  line-height: 1 !important;
 }
 
-.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon,
-.tus-pearl-study-shell .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon,
-.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon {
-  position: static !important;
-  inset: auto !important;
-  display: grid !important;
-  place-items: center !important;
-  flex: 0 0 32px !important;
-  width: 32px !important;
-  min-width: 32px !important;
-  max-width: 32px !important;
-  height: 32px !important;
-  min-height: 32px !important;
-  max-height: 32px !important;
-  padding: 0 !important;
-  margin: 0 !important;
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon,
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon {
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  flex: 0 0 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   align-self: center !important;
-  justify-self: center !important;
-  line-height: 0 !important;
+  margin: 0 !important;
   transform: none !important;
-  box-sizing: border-box !important;
 }
 
-.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 .pearl-study-back-arrow,
-.tus-pearl-study-shell .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 .pearl-study-back-arrow,
-.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 .pearl-study-back-arrow {
-  display: block !important;
-  width: 18px !important;
-  height: 18px !important;
-  flex: 0 0 auto !important;
-  margin: 0 !important;
-  line-height: 0 !important;
-  transform: rotate(180deg) !important;
-  transform-origin: center !important;
-}
-
-.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-return-label,
-.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > span.pearl-study-return-label,
-.tus-pearl-study-shell .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-return-label,
-.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-return-label {
-  position: static !important;
-  inset: auto !important;
-  top: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  left: auto !important;
-  display: block !important;
-  flex: 0 1 auto !important;
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > span:not([aria-hidden='true']),
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > span:not([aria-hidden='true']) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   align-self: center !important;
-  width: auto !important;
-  min-width: 0 !important;
-  max-width: 168px !important;
   height: auto !important;
   min-height: 0 !important;
   max-height: none !important;
   padding: 0 !important;
   margin: 0 !important;
-  border: 0 !important;
-  font-size: 14px !important;
-  font-weight: 850 !important;
-  letter-spacing: -0.015em !important;
-  line-height: 1 !important;
-  text-align: left !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
   white-space: nowrap !important;
-  overflow: hidden !important;
-  text-overflow: ellipsis !important;
-  transform: none !important;
-  translate: none !important;
-  vertical-align: baseline !important;
+  line-height: 1 !important;
+  font-size: 13.5px !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+  transform: translateY(1px) !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title,
+.tus-pearl-study-top .tus-pearl-study-title {
+  min-width: 0 !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  align-self: stretch !important;
+  overflow: visible !important;
+  padding: 0 10px 0 2px !important;
   box-sizing: border-box !important;
+  transform: translateY(1px) !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title h1,
+.tus-pearl-study-top .tus-pearl-study-title h1 {
+  display: inline-block !important;
+  width: auto !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0.10em 0.30em 0.24em 0.02em !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.026em !important;
+  font-size: clamp(26px, 2.2vw, 36px) !important;
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: geometricPrecision !important;
+  box-sizing: content-box !important;
+  transform: none !important;
+}
+
+@media (max-width: 1180px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top,
+  .tus-pearl-study-top {
+    grid-template-columns: max-content minmax(220px, 1fr) minmax(230px, 310px) minmax(110px, 150px) !important;
+    gap: 10px !important;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title h1,
+  .tus-pearl-study-top .tus-pearl-study-title h1 {
+    font-size: clamp(24px, 2.35vw, 32px) !important;
+    letter-spacing: -0.022em !important;
+    padding-right: 0.28em !important;
+    padding-bottom: 0.22em !important;
+  }
 }
 
 @media (max-width: 900px) {
-  .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136,
-  .tus-pearl-study-shell .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136,
-  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
-    width: max-content !important;
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top,
+  .tus-pearl-study-top {
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    gap: 9px !important;
+    overflow: visible !important;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136,
+  .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
+    inline-size: max-content !important;
     max-width: 100% !important;
   }
 
-  .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-return-label,
-  .tus-pearl-study-shell .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-return-label,
-  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-return-label {
-    max-width: calc(100vw - 120px) !important;
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title,
+  .tus-pearl-study-top .tus-pearl-study-title {
+    height: auto !important;
+    min-height: 0 !important;
+    align-self: start !important;
+    padding-inline: 0 !important;
+    transform: none !important;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .tus-pearl-study-title h1,
+  .tus-pearl-study-top .tus-pearl-study-title h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    line-height: 1.22 !important;
+    padding: 0.08em 0.24em 0.22em 0 !important;
   }
 }

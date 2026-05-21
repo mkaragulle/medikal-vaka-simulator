@@ -16,17 +16,18 @@ export const BRANCH_ANIMATED_ICON_IDS = new Set([
 function AnatomyIcon() {
   return (
     <>
-      <g className="kq-branch-core anatomy-core">
-        <path className="kq-outline" d="M16 6.1v19.2" />
-        <path className="kq-detail" d="M12.2 8.2c1.3 1.12 2.57 1.68 3.8 1.68s2.5-.56 3.8-1.68" />
-        <path className="kq-detail" d="M11.1 11.2c1.35 1.1 2.98 1.68 4.9 1.68s3.55-.58 4.9-1.68" />
-        <path className="kq-detail" d="M10.5 14.4c1.72 1.12 3.55 1.68 5.5 1.68s3.78-.56 5.5-1.68" />
-        <path className="kq-detail" d="M11.05 17.65c1.55.9 3.2 1.35 4.95 1.35s3.4-.45 4.95-1.35" />
-        <path className="kq-detail" d="M12.2 20.72c1.18.62 2.45.93 3.8.93s2.62-.31 3.8-.93" />
-        <path className="kq-outline" d="M12.7 9.35c-2.52 1.1-4.05 3.25-4.35 5.95-.23 2.08.58 4.2 2.18 5.77" />
-        <path className="kq-outline" d="M19.3 9.35c2.52 1.1 4.05 3.25 4.35 5.95.23 2.08-.58 4.2-2.18 5.77" />
+      <g className="branch-svg-main anatomy-frame">
+        <path className="anatomy-spine" d="M24 10.5v27" />
+        <path className="branch-svg-secondary" d="M20.8 13.8h6.4" />
+        <path className="anatomy-rib anatomy-rib-left" d="M23.6 15.6c-4.7.4-8.3 2.6-9.6 6" />
+        <path className="anatomy-rib anatomy-rib-right" d="M24.4 15.6c4.7.4 8.3 2.6 9.6 6" />
+        <path className="anatomy-rib anatomy-rib-left" d="M23.5 21.1c-4.2.25-7.4 1.9-8.75 4.55" />
+        <path className="anatomy-rib anatomy-rib-right" d="M24.5 21.1c4.2.25 7.4 1.9 8.75 4.55" />
+        <path className="anatomy-rib anatomy-rib-left" d="M23.3 26.6c-3.2.25-5.65 1.38-6.9 3.25" />
+        <path className="anatomy-rib anatomy-rib-right" d="M24.7 26.6c3.2.25 5.65 1.38 6.9 3.25" />
+        <path className="branch-svg-secondary" d="M19.3 34.6c1.35.82 2.9 1.22 4.7 1.22s3.35-.4 4.7-1.22" />
       </g>
-      <path className="kq-scan anatomy-scan" d="M8.35 15.98h15.3" />
+      <path className="branch-svg-scan anatomy-scan" d="M12.8 24h22.4" />
     </>
   );
 }
@@ -34,12 +35,12 @@ function AnatomyIcon() {
 function PhysiologyIcon() {
   return (
     <>
-      <g className="kq-branch-core physiology-core">
-        <path className="kq-outline physiology-heart" d="M16 25.15c-5.72-4.1-9.35-7.55-9.35-11.7 0-2.62 1.92-4.58 4.36-4.58 1.86 0 3.45.97 4.99 2.74 1.54-1.77 3.13-2.74 4.99-2.74 2.44 0 4.36 1.96 4.36 4.58 0 4.15-3.63 7.6-9.35 11.7Z" />
-        <path className="kq-active-line physiology-ecg" d="M6.7 16.1h4.55l1.22-2.85 3.06 6.78 2.3-5.12 1.48 2.68h5.99" />
+      <g className="branch-svg-main physiology-heart">
+        <path d="M24 36c-7.55-5.18-11.45-9.22-11.45-14.18 0-3.42 2.45-5.9 5.55-5.9 2.12 0 4 1.1 5.9 3.28 1.9-2.18 3.78-3.28 5.9-3.28 3.1 0 5.55 2.48 5.55 5.9C35.45 26.78 31.55 30.82 24 36Z" />
+        <path className="physiology-ecg branch-svg-detail" d="M14.45 24.35h5.2l1.3-2.92 3.12 6.02 2.43-4.72 1.5 1.62h5.55" />
       </g>
-      <circle className="kq-pulse-ring physiology-ring physiology-ring-one" cx="16" cy="16" r="9.8" />
-      <circle className="kq-pulse-ring physiology-ring physiology-ring-two" cx="16" cy="16" r="12" />
+      <circle className="physiology-ring physiology-ring-one" cx="24" cy="24" r="14.1" />
+      <circle className="physiology-ring physiology-ring-two" cx="24" cy="24" r="17" />
     </>
   );
 }
@@ -47,13 +48,12 @@ function PhysiologyIcon() {
 function HistologyIcon() {
   return (
     <>
-      <g className="kq-branch-core histology-core">
-        <path className="kq-outline" d="M8.2 10.15c2.15-3.18 6.48-4.38 10.15-2.8 3.82 1.65 5.82 5.95 4.62 9.9-1.14 3.78-4.92 6.3-8.82 5.88-4.12-.45-7.25-3.75-7.28-7.72-.02-1.9.45-3.68 1.33-5.26Z" />
-        <path className="kq-detail histology-nucleus" d="M13.05 12.1c1.48-1.22 3.82-.98 5.02.55 1.18 1.5.85 3.8-.72 4.9-1.55 1.1-3.83.68-4.86-.9-.95-1.45-.72-3.42.56-4.55Z" />
-        <circle className="kq-node histology-organelle histology-organelle-one" cx="10.95" cy="16.95" r=".72" />
-        <circle className="kq-node histology-organelle histology-organelle-two" cx="20.15" cy="12.95" r=".64" />
+      <g className="branch-svg-main histology-cell">
+        <path d="M14.5 16.35c2.25-3.15 6.85-4.35 11.05-2.9 5.8 2 8.25 8.4 5.25 13.65-2.82 4.95-9.42 6.4-14.05 3.15-4.35-3.05-4.9-8.85-2.25-13.9Z" />
+        <path className="histology-nucleus branch-svg-secondary" d="M20.1 19.45c1.65-1.48 4.28-1.55 5.9-.05 1.62 1.5 1.62 4.12.02 5.65-1.65 1.58-4.35 1.58-5.95-.02-1.52-1.52-1.55-4.08.03-5.58Z" />
+        <circle className="histology-organelle organelle-one branch-svg-detail" cx="28.55" cy="18.1" r="1" />
+        <circle className="histology-organelle organelle-two branch-svg-detail" cx="17.2" cy="27.35" r=".9" />
       </g>
-      <path className="kq-subtle-line histology-division" d="M15.9 8.2c2.6 2.12 3.48 5.7 2.12 8.75" />
     </>
   );
 }
@@ -61,15 +61,15 @@ function HistologyIcon() {
 function BiochemistryIcon() {
   return (
     <>
-      <g className="kq-branch-core biochem-core">
-        <path className="kq-outline" d="M12.25 5.25h7.5" />
-        <path className="kq-outline biochem-flask-body" d="M13.7 5.35v5.78L8.6 21.55a3.88 3.88 0 0 0 3.5 5.58h7.8a3.88 3.88 0 0 0 3.5-5.58l-5.1-10.42V5.35" />
-        <path className="kq-active-line biochem-liquid" d="M11.15 20.8c1.62-.78 3.1-.92 4.43-.42 1.6.6 3.1.58 4.62-.08" />
+      <g className="branch-svg-main biochem-flask">
+        <path d="M19.1 9.6h9.8" />
+        <path d="M21.15 9.6v8.05L13.9 32.15A4.45 4.45 0 0 0 17.88 38.6h12.24a4.45 4.45 0 0 0 3.98-6.45l-7.25-14.5V9.6" />
+        <path className="biochem-liquid branch-svg-secondary" d="M16.55 31.05c1.95-.95 3.95-1.08 6-.38 2.38.8 4.55.78 6.9-.32" />
       </g>
-      <g className="biochem-bubbles">
-        <circle className="kq-bubble bubble-one" cx="14.15" cy="17.25" r=".66" />
-        <circle className="kq-bubble bubble-two" cx="18.65" cy="22.55" r=".72" />
-        <circle className="kq-bubble bubble-three" cx="19.25" cy="15.55" r=".54" />
+      <g className="biochem-bubbles branch-svg-particles">
+        <circle className="bubble bubble-one" cx="21.1" cy="27.1" r=".95" />
+        <circle className="bubble bubble-two" cx="27.2" cy="24.65" r=".78" />
+        <circle className="bubble bubble-three" cx="24.1" cy="21.8" r=".62" />
       </g>
     </>
   );
@@ -78,48 +78,48 @@ function BiochemistryIcon() {
 function MicrobiologyIcon() {
   return (
     <>
-      <g className="kq-branch-core microbiology-core">
-        <circle className="kq-outline" cx="16" cy="16" r="10.15" />
-        <path className="kq-subtle-line" d="M9.45 12.4c3.25-1.65 6.9-1.82 10.95-.52" />
-        <path className="kq-subtle-line" d="M10.25 21.15c3.35 1.2 7.02 1.02 11-.55" />
-        <circle className="kq-colony colony-one" cx="12.35" cy="16.2" r="1.3" />
-        <circle className="kq-colony colony-two" cx="18.75" cy="14.05" r="1.02" />
-        <circle className="kq-colony colony-three" cx="17.2" cy="20.25" r=".92" />
-        <path className="kq-detail micro-symbol" d="M20.8 17.35c-.52.48-1.05.48-1.57 0M20.02 16.58v1.55" />
+      <g className="branch-svg-main microbiology-petri">
+        <circle cx="24" cy="24" r="14.1" />
+        <path className="branch-svg-secondary" d="M14.8 18.9c5.95-2 12.25-2 18.4 0" />
+        <path className="micro-colony colony-one branch-svg-detail" d="M18.5 25.7c1.7-1.18 3.6-.42 4.1 1.12" />
+        <path className="micro-colony colony-two branch-svg-detail" d="M27.8 22.05c1.45-.85 3.15-.18 3.62 1.18" />
+        <circle className="micro-colony colony-three branch-svg-detail" cx="25.1" cy="30.75" r="1.55" />
+        <circle className="micro-colony colony-four branch-svg-detail" cx="18.1" cy="20.7" r="1.22" />
       </g>
     </>
   );
 }
+
 
 function PathologyIcon() {
   return (
     <>
-      <g className="kq-branch-core pathology-core">
-        <rect className="kq-outline" x="8.15" y="5.7" width="15.7" height="20.6" rx="3.2" />
-        <path className="kq-subtle-line" d="M11.2 10.15h9.6" />
-        <path className="kq-stain pathology-stain" d="M12.05 17.95c.06-2.05 1.82-3.55 3.88-3.32 1.5.17 2.38 1.02 3.32 1.98 1.08 1.08 1.48 2.7.55 3.92-1.12 1.48-3.18 1.42-4.82.72-1.7-.72-2.98-1.82-2.93-3.3Z" />
+      <g className="branch-svg-main pathology-slide">
+        <rect x="10.7" y="15.1" width="26.6" height="17.8" rx="4" />
+        <path className="branch-svg-secondary" d="M14.85 19.25h5.9M27.25 28.75h5.9" />
+        <path className="pathology-tissue branch-svg-detail" d="M20.05 24.5c.18-2.18 2.2-3.62 4.35-3.1 1.58.38 2.25 1.25 3.1 2.05.98.92 1.12 2.25.25 3.25-1.12 1.28-3.1 1.15-4.42.58-1.88-.8-3.38-1.48-3.28-2.78Z" />
       </g>
-      <path className="kq-scan pathology-scan" d="M10.15 16h11.7" />
+      <path className="branch-svg-scan pathology-scan" d="M14 24h20" />
     </>
   );
 }
 
+
 function PharmacologyIcon() {
   return (
     <>
-      <g className="kq-branch-core pharmacology-core">
-        <g className="pharma-capsule">
-          <path className="kq-outline" d="M8.1 21.9 20.9 9.1a4.04 4.04 0 0 1 5.72 5.72l-12.8 12.8A4.04 4.04 0 0 1 8.1 21.9Z" />
-          <path className="kq-active-line" d="m13.15 16.85 4 4" />
-        </g>
-        <g className="pharma-target">
-          <circle className="kq-outline" cx="23" cy="22.95" r="2.25" />
-          <circle className="kq-node" cx="23" cy="22.95" r=".55" />
-        </g>
+      <g className="branch-svg-main pharma-capsule">
+        <path d="M12.35 32.25 27.2 17.4a5.25 5.25 0 0 1 7.42 7.42L19.75 39.65a5.24 5.24 0 0 1-7.4-7.4Z" />
+        <path className="branch-svg-secondary" d="M20.8 23.8 28.2 31.2" />
       </g>
-      <g className="pharma-binding-particles">
-        <circle className="kq-binding-particle particle-one" cx="16.2" cy="15.9" r=".45" />
-        <circle className="kq-binding-particle particle-two" cx="18.05" cy="17.85" r=".42" />
+      <g className="pharma-receptor branch-svg-detail">
+        <circle cx="34.25" cy="13.75" r="3.55" />
+        <path d="M34.25 11.95v3.6M32.45 13.75h3.6" />
+      </g>
+      <g className="pharma-particles branch-svg-particles">
+        <circle className="dose dose-one" cx="29" cy="20.8" r=".72" />
+        <circle className="dose dose-two" cx="31.2" cy="18.35" r=".66" />
+        <circle className="dose dose-three" cx="26.9" cy="23.2" r=".58" />
       </g>
     </>
   );
@@ -128,31 +128,33 @@ function PharmacologyIcon() {
 function InternalMedicineIcon() {
   return (
     <>
-      <g className="kq-branch-core internal-core">
-        <path className="kq-outline" d="M16 5.25c-2.7 0-4.65 1.78-4.65 4.2 0 1.05.36 1.95.98 2.65l-1.72 10.02a2.6 2.6 0 0 0 2.56 3.04h5.66a2.6 2.6 0 0 0 2.56-3.04L19.67 12.1c.62-.7.98-1.6.98-2.65 0-2.42-1.95-4.2-4.65-4.2Z" />
-        <path className="kq-subtle-line" d="M16 9.3v15.05" />
-        <path className="kq-detail internal-lung" d="M15.85 13.05c-1.82-2.18-4.52-2.05-5.45.28v3.12a3.28 3.28 0 0 0 3.28 3.28c1.27 0 2.12-1.38 2.17-3.72" />
-        <path className="kq-detail internal-lung" d="M16.15 13.05c1.82-2.18 4.52-2.05 5.45.28v3.12a3.28 3.28 0 0 1-3.28 3.28c-1.27 0-2.12-1.38-2.17-3.72" />
-        <path className="kq-active-line internal-wave" d="M11.55 22.08h2.45l.72-1.45 1.4 2.85.98-2.12.68 1.24h2.67" />
+      <g className="branch-svg-main internal-torso">
+        <path d="M24 10.8v24.4" />
+        <path className="internal-lungs branch-svg-secondary" d="M23.55 18.3c-3-2.8-6.55-1.55-6.85 2.65v5.55c0 2.65 1.62 4.55 3.72 4.55 2.25 0 3.13-2.95 3.13-7.1" />
+        <path className="internal-lungs branch-svg-secondary" d="M24.45 18.3c3-2.8 6.55-1.55 6.85 2.65v5.55c0 2.65-1.62 4.55-3.72 4.55-2.25 0-3.13-2.95-3.13-7.1" />
+        <path className="branch-svg-main" d="M15.65 15.1c1.98-3.08 5.08-4.62 8.35-4.62s6.37 1.54 8.35 4.62" />
+        <path className="internal-wave branch-svg-detail" d="M17.9 35.5h3.85l.82-1.6 1.42 3.05 1.2-2.28.85.83h4.06" />
       </g>
-      <path className="kq-scan internal-scan" d="M10.65 15.9h10.7" />
+      <path className="branch-svg-scan internal-scan" d="M16.4 24h15.2" />
     </>
   );
 }
 
+
 function PediatricsIcon() {
   return (
     <>
-      <g className="kq-branch-core pediatrics-core">
-        <circle className="kq-outline" cx="10.25" cy="9.75" r="2.3" />
-        <circle className="kq-outline" cx="21.75" cy="9.75" r="2.3" />
-        <circle className="kq-outline peds-face" cx="16" cy="15.55" r="6.75" />
-        <circle className="kq-node" cx="13.55" cy="14.85" r=".5" />
-        <circle className="kq-node" cx="18.45" cy="14.85" r=".5" />
-        <path className="kq-detail" d="M13.9 17.8c1.38.92 2.82.92 4.2 0" />
-        <path className="kq-active-line peds-cross" d="M16 10.75v3.32M14.34 12.41h3.32" />
+      <g className="branch-svg-main peds-bear">
+        <circle cx="18" cy="17.4" r="3.2" />
+        <circle cx="30" cy="17.4" r="3.2" />
+        <path d="M16.3 26.1c0-4.55 3.42-7.8 7.7-7.8s7.7 3.25 7.7 7.8c0 4.25-3.15 7.42-7.7 7.42s-7.7-3.17-7.7-7.42Z" />
+        <path className="peds-cross branch-svg-detail" d="M24 22.6v6.4M20.8 25.8h6.4" />
+        <path className="branch-svg-secondary" d="M20.65 31.3c2.18 1.28 4.52 1.28 6.7 0" />
       </g>
-      <path className="kq-spark peds-spark" d="M24.3 7.75l.48 1.2 1.2.48-1.2.48-.48 1.2-.48-1.2-1.2-.48 1.2-.48.48-1.2Z" />
+      <g className="peds-sparkles branch-svg-particles">
+        <path className="spark spark-one" d="M35.4 11.5l.6 1.42 1.42.6-1.42.6-.6 1.42-.6-1.42-1.42-.6 1.42-.6.6-1.42Z" />
+        <path className="spark spark-two" d="M13.1 33.1l.46 1.1 1.1.46-1.1.46-.46 1.1-.46-1.1-1.1-.46 1.1-.46.46-1.1Z" />
+      </g>
     </>
   );
 }
@@ -160,30 +162,31 @@ function PediatricsIcon() {
 function SurgeryIcon() {
   return (
     <>
-      <g className="kq-branch-core surgery-core">
-        <path className="kq-outline surgery-scalpel" d="M6.1 25.9 22.8 9.2a2.15 2.15 0 0 1 3.04 0l.96.96a2.15 2.15 0 0 1 0 3.04L10.1 29.9 6.1 25.9Z" />
-        <path className="kq-detail" d="m18.2 13.8 3.2 3.2" />
-        <path className="kq-detail" d="M22 6.35 26.65 11" />
+      <g className="branch-svg-main surgery-scalpel">
+        <path d="M12.9 36.7 30.8 18.8" />
+        <path d="M16.1 39.9 34 22" />
+        <path className="branch-svg-secondary" d="M12.9 36.7l3.2 3.2" />
+        <path className="branch-svg-secondary" d="M30.8 18.8l6.1-6.1c.9-.9 2.45-.25 2.45 1.05v2.7c0 1.05-.42 2.05-1.16 2.78L34 23.4" />
       </g>
-      <path className="kq-active-line surgery-incision" d="M8.6 25.95c3.72-1.06 6.8-2.5 9.22-4.32" />
-      <path className="kq-spark surgery-glint" d="M25.5 5.05l.5 1.22 1.22.5-1.22.5-.5 1.22-.5-1.22-1.22-.5 1.22-.5.5-1.22Z" />
+      <path className="surgery-incision branch-svg-detail" d="M12.7 40.6c4.78-1.36 9.15-3.42 13.05-6.18" />
+      <path className="surgery-glint branch-svg-particles" d="M37.7 9.3l.56 1.36 1.36.56-1.36.56-.56 1.36-.56-1.36-1.36-.56 1.36-.56.56-1.36Z" />
     </>
   );
 }
 
+
 function ObgynIcon() {
   return (
     <>
-      <g className="kq-branch-core obgyn-core">
-        <path className="kq-outline" d="M12.35 6.65v6.8a3.65 3.65 0 0 0 7.3 0v-6.8" />
-        <path className="kq-outline" d="M12.35 6.65C9.82 6.88 7.92 8.65 7.55 11.2" />
-        <path className="kq-outline" d="M19.65 6.65c2.53.23 4.43 2 4.8 4.55" />
-        <circle className="kq-outline" cx="8.35" cy="12.82" r="1.66" />
-        <circle className="kq-outline" cx="23.65" cy="12.82" r="1.66" />
-        <path className="kq-subtle-line" d="M16 17.68v7.2M13.35 24.88h5.3" />
-        <path className="kq-active-line obgyn-heart" d="M16 16.02c-1.18-.82-1.88-1.5-1.88-2.4 0-.58.42-1.02.98-1.02.36 0 .66.18.9.5.24-.32.54-.5.9-.5.56 0 .98.44.98 1.02 0 .9-.7 1.58-1.88 2.4Z" />
+      <g className="branch-svg-main obgyn-uterus">
+        <path d="M18.35 11.85v9.05a5.65 5.65 0 0 0 11.3 0v-9.05" />
+        <path className="branch-svg-secondary" d="M18.35 11.85c-4.05.6-6.85 3.2-7.35 6.55M29.65 11.85c4.05.6 6.85 3.2 7.35 6.55" />
+        <circle className="branch-svg-secondary" cx="11.85" cy="20.3" r="1.95" />
+        <circle className="branch-svg-secondary" cx="36.15" cy="20.3" r="1.95" />
+        <path d="M24 27.1v9.6M20.1 36.7h7.8" />
+        <circle className="obgyn-center branch-svg-detail" cx="24" cy="22.4" r="1.55" />
       </g>
-      <circle className="kq-pulse-ring obgyn-ring" cx="16" cy="15.8" r="8.8" />
+      <circle className="obgyn-protect-ring" cx="24" cy="22.4" r="11.4" />
     </>
   );
 }
@@ -191,13 +194,14 @@ function ObgynIcon() {
 function MinorRotationsIcon() {
   return (
     <>
-      <g className="kq-branch-core minor-core">
-        <rect className="kq-outline minor-tile tile-one" x="7" y="7" width="6.05" height="6.05" rx="1.65" />
-        <rect className="kq-outline minor-tile tile-two" x="18.95" y="7" width="6.05" height="6.05" rx="1.65" />
-        <rect className="kq-outline minor-tile tile-three" x="7" y="18.95" width="6.05" height="6.05" rx="1.65" />
-        <rect className="kq-outline minor-tile tile-four" x="18.95" y="18.95" width="6.05" height="6.05" rx="1.65" />
-        <path className="kq-active-line minor-arrow" d="M14.45 16h3.1M16.22 14.26 17.96 16l-1.74 1.74" />
+      <g className="branch-svg-main minor-grid">
+        <rect className="minor-tile tile-one" x="12.6" y="12.6" width="9" height="9" rx="2.2" />
+        <rect className="minor-tile tile-two" x="26.4" y="12.6" width="9" height="9" rx="2.2" />
+        <rect className="minor-tile tile-three" x="12.6" y="26.4" width="9" height="9" rx="2.2" />
+        <rect className="minor-tile tile-four" x="26.4" y="26.4" width="9" height="9" rx="2.2" />
+        <path className="minor-connector branch-svg-secondary" d="M21.6 17.1h4.8M30.9 21.6v4.8M26.4 30.9h-4.8M17.1 26.4v-4.8" />
       </g>
+      <path className="minor-arrow branch-svg-detail" d="M22.2 24h4.1M24.2 21.95 26.3 24l-2.1 2.05" />
     </>
   );
 }
@@ -217,7 +221,7 @@ const branchIconRenderers = {
   'minor-rotations': MinorRotationsIcon,
 };
 
-export function BranchIconSvg({ branchId, className = '', mode = 'card', size = 32, strokeWidth = 1.88 }) {
+export function BranchIconSvg({ branchId, className = '', mode = 'card', size = 36, strokeWidth = 2.15 }) {
   const IconContent = branchIconRenderers[branchId];
   if (!IconContent) return null;
 
@@ -231,7 +235,7 @@ export function BranchIconSvg({ branchId, className = '', mode = 'card', size = 
   return (
     <svg
       className={svgClassName}
-      viewBox="0 0 32 32"
+      viewBox="0 0 48 48"
       width={size}
       height={size}
       aria-hidden="true"
@@ -261,7 +265,7 @@ export function BranchAnimatedIcon({ branchId, isLaunching = false, className = 
       data-branch-icon={branchId}
       aria-hidden="true"
     >
-      <span className="branch-icon-soft-light" />
+      <span className="branch-icon-ambient" />
       <BranchIconSvg branchId={branchId} mode="card" />
     </span>
   );
