@@ -11349,3 +11349,61 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
     padding: 12px !important;
   }
 }
+
+/* V216 — Hap Bilgi Çalış header text clipping + return button optical alignment fix */
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
+  display: grid !important;
+  grid-template-columns: 34px minmax(0, 1fr) !important;
+  align-items: center !important;
+  align-content: center !important;
+  justify-items: start !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  padding: 0 16px 0 8px !important;
+  line-height: 1 !important;
+  overflow: hidden !important;
+}
+
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  justify-self: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  margin: 0 !important;
+}
+
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > span:not([aria-hidden='true']) {
+  display: flex !important;
+  align-items: center !important;
+  align-self: center !important;
+  min-height: 32px !important;
+  padding: 0 0 1px 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 13.5px !important;
+  line-height: 1.22 !important;
+  font-weight: 850 !important;
+}
+
+.tus-pearl-study-title {
+  align-self: center !important;
+  overflow: visible !important;
+  min-height: 0 !important;
+}
+
+.tus-pearl-study-title h1 {
+  display: block !important;
+  overflow: visible !important;
+  margin: 0 !important;
+  padding: 2px 0 4px !important;
+  line-height: 1.14 !important;
+  transform: none !important;
+  text-rendering: geometricPrecision;
+}
