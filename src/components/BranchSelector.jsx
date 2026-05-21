@@ -1,5 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
 import { IconBadge, Icon, branchIconById, branchToneById } from './ui.jsx';
+import { BranchAnimatedIcon } from './BranchAnimatedIcon.jsx';
 import { TUS_SPOT_BRANCH_ID } from '../data/branches.js';
 
 function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch, index = 0, variant = 'grid' }) {
@@ -28,7 +29,11 @@ function BranchCard({ branch, branchStats, isLaunching, isLocked, onLaunchBranch
     >
       <span className="branch-launch-wave" aria-hidden="true" />
       <div className="branch-card-head">
-        <IconBadge icon={branchIconById[branch.id] ?? 'Stethoscope'} tone={tone} branchId={branch.id} />
+        {isSpotBranch ? (
+          <IconBadge icon={branchIconById[branch.id] ?? 'Stethoscope'} tone={tone} branchId={branch.id} />
+        ) : (
+          <BranchAnimatedIcon branchId={branch.id} isLaunching={isLaunching} />
+        )}
       </div>
 
       <div className="branch-card-body">

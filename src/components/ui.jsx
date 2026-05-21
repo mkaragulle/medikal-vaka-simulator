@@ -1,3 +1,4 @@
+import { BranchIconSvg, BRANCH_ANIMATED_ICON_IDS } from './BranchAnimatedIcon.jsx';
 const iconPaths = {
   HeartPulse: <><path d="M19.5 12.5c1.5-2 1.3-5.1-.7-6.7-1.9-1.6-4.7-1.1-6.8 1.2-2.1-2.3-4.9-2.8-6.8-1.2-2.2 1.8-2.2 5.2-.2 7.5 1.7 2.1 4.2 4 7 6.2 1.8-1.4 3.5-2.7 4.9-4.1"/><path d="M3.8 12h4l1.1-2.4 2.6 5.8 2-4.3 1.4 2.9h5.3"/></>,
   Stethoscope: <><path d="M6 4v4.5a4 4 0 0 0 8 0V4"/><path d="M4.7 4h2.6M12.7 4h2.6"/><path d="M10 13v2.8a3.7 3.7 0 0 0 7.4 0v-.6"/><circle cx="18" cy="13.4" r="1.6"/></>,
@@ -84,94 +85,24 @@ export function Icon({ name, className = '', size = 20, strokeWidth = 1.9 }) {
   );
 }
 
-const precisionBranchIconIds = new Set([]);
+const precisionBranchIconIds = BRANCH_ANIMATED_ICON_IDS;
 
-export function PrecisionBranchIcon({ branchId, className = '', mode = 'card', size = 32, strokeWidth = 1.78 }) {
+export function PrecisionBranchIcon({ branchId, className = '', mode = 'card', size = 32, strokeWidth = 1.72 }) {
   if (!precisionBranchIconIds.has(branchId)) return null;
 
-  const svgClassName = [
-    'branch-icon-glyph',
-    `branch-icon-glyph-${branchId}`,
-    `branch-icon-glyph-${mode}`,
-    className,
-  ].filter(Boolean).join(' ');
-
-  const commonProps = {
-    className: svgClassName,
-    viewBox: '0 0 32 32',
-    width: size,
-    height: size,
-    'aria-hidden': 'true',
-    fill: 'none',
-    stroke: 'currentColor',
-    strokeWidth,
-    strokeLinecap: 'round',
-    strokeLinejoin: 'round',
-  };
-
-  if (branchId === 'tus-spot-olgular') {
-    return (
-      <svg {...commonProps}>
-        <g className="spot-star-main">
-          <path d="M16 5.9l2.25 6.15 6.55 2.05-5.28 3.96.12 6.82L16 20.96l-3.64 3.92.12-6.82-5.28-3.96 6.55-2.05L16 5.9Z" />
-          <path className="spot-star-inner" d="M16 10.2l1.06 2.9 3.06.96-2.48 1.86.06 3.2L16 17.28l-1.7 1.84.06-3.2-2.48-1.86 3.06-.96L16 10.2Z" />
-        </g>
-        <g className="spot-sparkle spot-sparkle-one">
-          <path d="M25.1 7.4l.7 1.85 1.85.7-1.85.7-.7 1.85-.7-1.85-1.85-.7 1.85-.7.7-1.85Z" />
-        </g>
-        <g className="spot-sparkle spot-sparkle-two">
-          <path d="M6.7 21.1l.58 1.48 1.48.58-1.48.58-.58 1.48-.58-1.48-1.48-.58 1.48-.58.58-1.48Z" />
-        </g>
-      </svg>
-    );
-  }
-
-  if (branchId === 'medical-microbiology') {
-    return (
-      <svg {...commonProps}>
-        <g className="microbe-spikes">
-          <path d="M16 5.6V3.9M16 28.1v-1.7M8.7 8.7 7.5 7.5M24.5 24.5l-1.2-1.2M23.3 8.7l1.2-1.2M7.5 24.5l1.2-1.2M5.6 16H3.9M28.1 16h-1.7" />
-          <path d="M11.6 6.7 10.9 5.1M20.4 25.3l.7 1.6M25.3 11.6l1.6-.7M5.1 21.1l1.6-.7" />
-        </g>
-        <g className="microbe-core">
-          <ellipse cx="16" cy="16" rx="6.25" ry="7.35" />
-          <path d="M12.25 11.65c1.95 2.15 4.05 4.25 7.4 6.95" />
-          <path d="M19.55 11.8c-2.05 2.05-4.15 4.1-7.1 6.35" />
-          <circle className="microbe-dot microbe-dot-one" cx="14.2" cy="15.2" r=".62" />
-          <circle className="microbe-dot microbe-dot-two" cx="18.35" cy="17.15" r=".62" />
-        </g>
-      </svg>
-    );
-  }
-
-  if (branchId === 'medical-pharmacology') {
-    return (
-      <svg {...commonProps}>
-        <g className="pharma-effect-lines">
-          <path d="M8.15 8.65c1.95-2.35 4.52-3.65 7.75-3.9" />
-          <path d="M23.85 23.35c-1.95 2.35-4.52 3.65-7.75 3.9" />
-        </g>
-        <g className="pharma-capsule-core">
-          <path d="M9.25 23.15 23.15 9.25a4.18 4.18 0 0 0-5.9-5.9L3.35 17.25a4.18 4.18 0 0 0 5.9 5.9Z" />
-          <path d="m12.35 14.15 5.5 5.5" />
-          <path className="pharma-capsule-highlight" d="M6.2 17.55 17.55 6.2" />
-        </g>
-      </svg>
-    );
-  }
-
   return (
-    <svg {...commonProps}>
-      <g className="peds-child-core">
-        <circle cx="16" cy="9.55" r="4.08" />
-        <path d="M9.45 26.15c.86-6.15 3.05-9.85 6.55-9.85s5.69 3.7 6.55 9.85" />
-        <path d="M10.95 17.45 7.1 20.85M21.05 17.45l3.85 3.4" />
-        <path d="M13.8 11.65c1.35.82 3.05.82 4.4 0" />
-      </g>
-      <g className="peds-care-star">
-        <path d="M24.4 6.45l.75 1.78 1.78.75-1.78.75-.75 1.78-.75-1.78-1.78-.75 1.78-.75.75-1.78Z" />
-      </g>
-    </svg>
+    <BranchIconSvg
+      branchId={branchId}
+      mode={mode}
+      className={[
+        'branch-icon-glyph',
+        `branch-icon-glyph-${branchId}`,
+        `branch-icon-glyph-${mode}`,
+        className,
+      ].filter(Boolean).join(' ')}
+      size={size}
+      strokeWidth={strokeWidth}
+    />
   );
 }
 

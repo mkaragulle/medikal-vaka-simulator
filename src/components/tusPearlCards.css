@@ -11407,3 +11407,72 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   transform: none !important;
   text-rendering: geometricPrecision;
 }
+
+/* V217 — Hap Bilgi Çalış return button compact width + true vertical centering */
+.tus-pearl-study-top {
+  grid-template-columns: max-content minmax(260px, 1fr) minmax(270px, 360px) minmax(130px, 180px) !important;
+}
+
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
+  width: max-content !important;
+  max-width: 214px !important;
+  min-width: 0 !important;
+  height: 40px !important;
+  min-height: 40px !important;
+  max-height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  justify-self: start !important;
+  align-self: center !important;
+  gap: 8px !important;
+  padding: 0 14px 0 7px !important;
+  line-height: 1 !important;
+  box-sizing: border-box !important;
+}
+
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon {
+  width: 30px !important;
+  height: 30px !important;
+  min-width: 30px !important;
+  flex: 0 0 30px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  margin: 0 !important;
+}
+
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > span:not([aria-hidden='true']) {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  align-self: center !important;
+  height: 40px !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  line-height: 40px !important;
+  font-size: 13.5px !important;
+  font-weight: 850 !important;
+  letter-spacing: -.01em !important;
+  white-space: nowrap !important;
+  transform: translateY(1px) !important;
+}
+
+@media (max-width: 1180px) {
+  .tus-pearl-study-top {
+    grid-template-columns: max-content minmax(220px, 1fr) minmax(230px, 310px) minmax(110px, 150px) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .tus-pearl-study-top {
+    grid-template-columns: 1fr !important;
+  }
+
+  .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
+    width: fit-content !important;
+    max-width: 100% !important;
+  }
+}
