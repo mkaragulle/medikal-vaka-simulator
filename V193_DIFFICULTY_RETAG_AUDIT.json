@@ -1,0 +1,990 @@
+{
+  "version": "V193",
+  "purpose": "Clinical-urgency-aware difficulty retagging. Acil now requires actual acute emergency/instability/time-critical intervention, not only a difficult topic.",
+  "totalCases": 305,
+  "difficultyCounts": {
+    "Acil": 96,
+    "Orta": 61,
+    "Kolay": 59,
+    "Zor": 89
+  },
+  "branchCounts": {
+    "Acil Tıp / İmmünoloji": 1,
+    "Dahiliye / Kardiyoloji": 1,
+    "Pediatri / Enfeksiyon Hastalıkları": 1,
+    "Kadın Hastalıkları ve Doğum": 22,
+    "Nöroloji": 3,
+    "Genel Cerrahi": 21,
+    "Farmakoloji": 1,
+    "Patoloji / Gastroenteroloji": 1,
+    "Anatomi / Ortopedi": 1,
+    "Biyokimya / Metabolizma": 1,
+    "Dahiliye / Endokrinoloji": 6,
+    "Pediatri / Çocuk Cerrahisi": 1,
+    "Ortopedi / Enfeksiyon Hastalıkları": 1,
+    "Dahiliye / Hematoloji": 1,
+    "Üroloji": 1,
+    "Dahiliye / Romatoloji": 1,
+    "Dahiliye / Nefroloji": 1,
+    "Psikiyatri / Farmakoloji": 1,
+    "Enfeksiyon Hastalıkları / Gastroenteroloji": 1,
+    "Pediatri / Neonatoloji": 2,
+    "Enfeksiyon Hastalıkları / Kardiyoloji": 2,
+    "Farmakoloji / Acil Tıp": 2,
+    "Pediatri / Nefroloji / Patoloji": 1,
+    "Anatomi / Genel Cerrahi": 1,
+    "Kardiyoloji / Acil Tıp": 1,
+    "Pediatri / Nefroloji": 1,
+    "Nöroloji / İmmünoloji": 1,
+    "Pediatri / Acil Tıp": 1,
+    "Anatomi / Kadın Hastalıkları ve Doğum": 1,
+    "Hematoloji": 2,
+    "Acil Tıp / Toksikoloji": 1,
+    "Enfeksiyon Hastalıkları": 1,
+    "Genel Cerrahi / Gastroenteroloji": 1,
+    "Üroloji / Nefroloji": 1,
+    "Kardiyoloji": 1,
+    "Anatomi": 20,
+    "Fizyoloji": 24,
+    "Histoloji ve Embriyoloji": 23,
+    "Tıbbi Biyokimya": 23,
+    "Tıbbi Mikrobiyoloji": 24,
+    "Tıbbi Patoloji": 21,
+    "Tıbbi Farmakoloji": 19,
+    "İç Hastalıkları": 7,
+    "Küçük Stajlar / Dermatoloji": 1,
+    "Çocuk Sağlığı ve Hastalıkları": 44,
+    "Küçük Stajlar / Göz Hastalıkları": 1,
+    "Küçük Stajlar": 11
+  },
+  "changedCount": 103,
+  "changedCases": [
+    {
+      "id": "v163-new-003-atesli-dokuntulu-cocuk",
+      "title": "Ateşli döküntülü çocuk",
+      "branch": "Pediatri / Enfeksiyon Hastalıkları",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "6 yaşında erkek çocuk, acil serviste değerlendiriliyor.",
+      "presentation": "Çocuk, yüksek ateş, bilinç bulanıklığı ve bacaklarda hızla artan döküntü nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v163-new-006-sag-alt-kadran-agrisi",
+      "title": "Sağ alt kadran ağrısı",
+      "branch": "Genel Cerrahi",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "19 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, karın ağrısı ve bulantı nedeniyle acil servise başvuruyor."
+    },
+    {
+      "id": "v163-new-010-aclikla-belirginlesen-metabolik-tablo",
+      "title": "Açlıkla belirginleşen metabolik tablo",
+      "branch": "Biyokimya / Metabolizma",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "8 aylık kız bebek, çocuk metabolizma polikliniğinde değerlendiriliyor.",
+      "presentation": "Bebek, beslenme aralarında terleme, huzursuzluk ve nöbet benzeri ataklar nedeniyle getiriliyor."
+    },
+    {
+      "id": "v164-new-011-aclik-ve-kusma-sonrasi-metabolik-bozulma",
+      "title": "Açlık ve kusma sonrası metabolik bozulma",
+      "branch": "Dahiliye / Endokrinoloji",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "17 yaşında erkek hasta, tip 1 diyabet öyküsüyle acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, kusma, karın ağrısı ve derin solunum nedeniyle acil servise getiriliyor."
+    },
+    {
+      "id": "v164-new-015-dogum-sonrasi-izlem",
+      "title": "Doğum sonrası izlem",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "26 yaşında kadın hasta, doğum sonrası serviste değerlendiriliyor.",
+      "presentation": "Hasta, sorunsuz vajinal doğum sonrası kan grubu uyumsuzluğu açısından değerlendiriliyor."
+    },
+    {
+      "id": "v164-new-017-yeni-baslayan-temporal-bas-agrisi",
+      "title": "Yeni başlayan temporal baş ağrısı",
+      "branch": "Dahiliye / Romatoloji",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "72 yaşında kadın hasta, acil poliklinikte değerlendiriliyor.",
+      "presentation": "Hasta, yeni başlayan şiddetli baş ağrısı ve çiğneme sırasında çene ağrısı nedeniyle başvuruyor."
+    },
+    {
+      "id": "v164-new-020-antibiyotik-sonrasi-ishal",
+      "title": "Antibiyotik sonrası ishal",
+      "branch": "Enfeksiyon Hastalıkları / Gastroenteroloji",
+      "from": "Orta",
+      "to": "Zor",
+      "profile": "67 yaşında erkek hasta, dahiliye servisinde değerlendiriliyor.",
+      "presentation": "Hasta, hastanede yatarken gelişen sulu ishal ve karın ağrısı nedeniyle değerlendiriliyor."
+    },
+    {
+      "id": "v165-new-029-gogus-agrisi-ve-hipotansiyon",
+      "title": "Göğüs ağrısı ve hipotansiyon",
+      "branch": "Kardiyoloji / Acil Tıp",
+      "from": "Acil",
+      "to": "Kolay",
+      "profile": "63 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, 45 dakikadır süren baskı tarzında göğüs ağrısı nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v166-new-031-gebelikte-kanama-sonrasi-degerlendirme",
+      "title": "Gebelikte kanama sonrası değerlendirme",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "26 yaşında kadın hasta, 28 haftalık gebelik nedeniyle kadın doğum acilinde değerlendiriliyor.",
+      "presentation": "Hasta, hafif vajinal kanama ve karın alt bölgesinde kramp tarzı ağrı nedeniyle başvuruyor."
+    },
+    {
+      "id": "v166-new-037-pelvik-cerrahide-riskli-yapi",
+      "title": "Pelvik cerrahide riskli yapı",
+      "branch": "Anatomi / Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "48 yaşında kadın hasta, semptomatik miyom nedeniyle elektif histerektomi planıyla değerlendiriliyor.",
+      "presentation": "Hasta, uzun süredir devam eden yoğun adet kanaması ve pelvik bası hissi nedeniyle kadın doğum polikliniğine başvuruyor."
+    },
+    {
+      "id": "v166-new-040-kronik-halsizlik-ve-hipotansiyon",
+      "title": "Kronik halsizlik ve hipotansiyon",
+      "branch": "Dahiliye / Endokrinoloji",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "41 yaşında kadın hasta, dahiliye polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, giderek artan halsizlik, kilo kaybı ve ayağa kalkınca baş dönmesi nedeniyle başvuruyor."
+    },
+    {
+      "id": "v167-new-047-ates-ve-sag-ust-kadran-agrisi",
+      "title": "Ateş ve sağ üst kadran ağrısı",
+      "branch": "Genel Cerrahi / Gastroenteroloji",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "72 yaşında kadın hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, ateş, titreme ve sağ üst kadran ağrısı nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v167-new-048-hemoliz-ve-norolojik-bulgular",
+      "title": "Hemoliz ve nörolojik bulgular",
+      "branch": "Hematoloji",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "38 yaşında kadın hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, baş ağrısı, dalgınlık ve yaygın morarma nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v167-new-050-akut-gogus-agrisi-ve-hipotansiyon",
+      "title": "Akut göğüs ağrısı ve hipotansiyon",
+      "branch": "Kardiyoloji",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "61 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, ani başlayan baskı tarzında göğüs ağrısı ve soğuk terleme nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v168-new-053-yenidoganda-santral-siyanoz",
+      "title": "Yenidoğanda santral siyanoz",
+      "branch": "Histoloji ve Embriyoloji",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "2 günlük erkek yenidoğan, yenidoğan yoğun bakım ünitesinde değerlendiriliyor.",
+      "presentation": "Bebek, doğumdan kısa süre sonra belirginleşen morarma ve beslenme sırasında çabuk yorulma nedeniyle izleniyor."
+    },
+    {
+      "id": "v168-new-057-yeni-baslayan-kuru-oksuruk",
+      "title": "Yeni başlayan kuru öksürük",
+      "branch": "Tıbbi Farmakoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "55 yaşında kadın hasta, aile hekimliği polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, son haftalarda başlayan inatçı kuru öksürük nedeniyle başvuruyor."
+    },
+    {
+      "id": "v169-new-064-antibiyotik-sonrasi-ishal",
+      "title": "Antibiyotik sonrası ishal",
+      "branch": "Tıbbi Mikrobiyoloji",
+      "from": "Kolay",
+      "to": "Zor",
+      "profile": "67 yaşında kadın hasta, dahiliye servisinde değerlendiriliyor.",
+      "presentation": "Hasta, son iki gündür başlayan sulu ishal ve karın ağrısı nedeniyle değerlendiriliyor."
+    },
+    {
+      "id": "v172-new-071-cocukta-agrisiz-alt-gastrointestinal-kanama",
+      "title": "Çocukta ağrısız alt gastrointestinal kanama",
+      "branch": "Histoloji ve Embriyoloji",
+      "from": "Acil",
+      "to": "Kolay",
+      "profile": "5 yaşında erkek çocuk, çocuk cerrahisi polikliniğinde değerlendiriliyor.",
+      "presentation": "Çocuk, tekrarlayan ağrısız koyu kırmızı rektal kanama nedeniyle başvuruyor."
+    },
+    {
+      "id": "v172-new-074-siddetli-karin-agrisi-ve-atriyal-fibrilasyon",
+      "title": "Şiddetli karın ağrısı ve atriyal fibrilasyon",
+      "branch": "Genel Cerrahi",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "76 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, ani başlayan çok şiddetli karın ağrısı nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v172-new-075-servikal-lenf-nodu-ile-saptanan-tiroid-nodulu",
+      "title": "Servikal lenf nodu ile saptanan tiroid nodülü",
+      "branch": "Tıbbi Patoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "34 yaşında kadın hasta, endokrin cerrahi polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, boyunda yavaş büyüyen şişlik ve ultrasonografide saptanan tiroid nodülü nedeniyle başvuruyor."
+    },
+    {
+      "id": "v172-new-077-antikoagulan-tedavi-sirasinda-yeni-tromboz",
+      "title": "Antikoagülan tedavi sırasında yeni tromboz",
+      "branch": "Tıbbi Farmakoloji",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "63 yaşında erkek hasta, ortopedi servisi yatışı sırasında değerlendiriliyor.",
+      "presentation": "Hasta, kalça ameliyatı sonrası profilaktik antikoagülan kullanırken bacakta ağrı ve şişlik gelişmesi nedeniyle konsülte ediliyor."
+    },
+    {
+      "id": "v172-new-078-yenidoganda-hipokalsemik-nobet",
+      "title": "Yenidoğanda hipokalsemik nöbet",
+      "branch": "Histoloji ve Embriyoloji",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "12 günlük erkek bebek, yenidoğan servisinde değerlendiriliyor.",
+      "presentation": "Bebek, tekrarlayan kasılma atakları ve beslenme güçlüğü nedeniyle değerlendirmeye alınıyor."
+    },
+    {
+      "id": "v173-new-081-yenidoganda-mekonyum-cikaramama",
+      "title": "Yenidoğanda mekonyum çıkaramama",
+      "branch": "Histoloji ve Embriyoloji",
+      "from": "Orta",
+      "to": "Zor",
+      "profile": "3 günlük erkek yenidoğan, çocuk cerrahisi tarafından değerlendiriliyor.",
+      "presentation": "Bebek, doğumdan sonra mekonyum çıkaramama ve giderek artan karın şişliği nedeniyle değerlendirmeye alınıyor."
+    },
+    {
+      "id": "v173-new-082-beslenmeyle-artan-solunum-sikintisi",
+      "title": "Beslenmeyle artan solunum sıkıntısı",
+      "branch": "Histoloji ve Embriyoloji",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "1 günlük kız yenidoğan, yenidoğan yoğun bakım ünitesinde değerlendiriliyor.",
+      "presentation": "Bebek, ilk beslenme denemelerinde öksürük, morarma ve ağızda köpüklü sekresyon nedeniyle izleniyor."
+    },
+    {
+      "id": "v173-new-083-atipik-pnomoni-ve-hiponatremi",
+      "title": "Atipik pnömoni ve hiponatremi",
+      "branch": "Tıbbi Mikrobiyoloji",
+      "from": "Kolay",
+      "to": "Zor",
+      "profile": "61 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, yüksek ateş, kuru öksürük ve nefes darlığı nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v174-new-094-sag-ust-kadran-agrisi",
+      "title": "Sağ üst kadran ağrısı",
+      "branch": "Genel Cerrahi",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "46 yaşında kadın hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, sağ üst kadranda başlayan ve sırta yayılan karın ağrısı nedeniyle başvuruyor."
+    },
+    {
+      "id": "v174-new-095-aclik-sonrasi-hipoglisemik-atak",
+      "title": "Açlık sonrası hipoglisemik atak",
+      "branch": "Tıbbi Biyokimya",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "18 aylık erkek çocuk, çocuk metabolizma acilinde değerlendiriliyor.",
+      "presentation": "Çocuk, üst solunum yolu enfeksiyonu sırasında beslenememe sonrası bilinç bulanıklığı nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v174-new-096-agrisiz-servikal-lenfadenopati",
+      "title": "Ağrısız servikal lenfadenopati",
+      "branch": "Tıbbi Patoloji",
+      "from": "Orta",
+      "to": "Zor",
+      "profile": "24 yaşında erkek hasta, hematoloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, boyunda ağrısız şişlik ve gece terlemeleri nedeniyle başvuruyor."
+    },
+    {
+      "id": "v174-new-099-kasik-altinda-agrili-sislik",
+      "title": "Kasık altında ağrılı şişlik",
+      "branch": "Anatomi",
+      "from": "Kolay",
+      "to": "Acil",
+      "profile": "72 yaşında kadın hasta, genel cerrahi acilinde değerlendiriliyor.",
+      "presentation": "Hasta, sağ kasık altında ağrılı şişlik ve bulantı nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v174-new-100-gebeligin-gec-doneminde-agrisiz-kanama",
+      "title": "Gebeliğin geç döneminde ağrısız kanama",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "35 yaşında gebe hasta, gebeliğinin 32. haftasında doğum acil ünitesinde değerlendiriliyor.",
+      "presentation": "Hasta, ani başlayan parlak kırmızı vajinal kanama nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v175-new-103-hipotansiyon-ve-hiperpigmentasyon",
+      "title": "Hipotansiyon ve hiperpigmentasyon",
+      "branch": "Fizyoloji",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "36 yaşında kadın hasta, endokrinoloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, kronik halsizlik, kilo kaybı ve ayağa kalkınca baş dönmesi nedeniyle başvuruyor."
+    },
+    {
+      "id": "v175-new-108-gebelikte-asiri-bulanti-ve-kanama",
+      "title": "Gebelikte aşırı bulantı ve kanama",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "22 yaşında kadın hasta, gebeliğinin 10. haftasında kadın doğum acilinde değerlendiriliyor.",
+      "presentation": "Hasta, vajinal kanama ve aşırı bulantı-kusma nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v176-new-111-akut-kan-kaybi-sonrasi-tasikardi",
+      "title": "Akut kan kaybı sonrası taşikardi",
+      "branch": "Fizyoloji",
+      "from": "Zor",
+      "to": "Kolay",
+      "profile": "28 yaşında erkek hasta, kesici alet yaralanması sonrası acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, bacak kesisi sonrası baş dönmesi, soğuk terleme ve halsizlik nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v176-new-116-gogus-agrisi-sonrasi-ani-kotulesme",
+      "title": "Göğüs ağrısı sonrası ani kötüleşme",
+      "branch": "Tıbbi Patoloji",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "60 yaşında erkek hasta, acil serviste kardiyak arrest sonrası değerlendiriliyor.",
+      "presentation": "Hasta, uzun süren göğüs ağrısı sonrası bilinç kaybı gelişmesi nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v176-new-118-ilac-sonrasi-koyu-idrar-ve-sarilik",
+      "title": "İlaç sonrası koyu idrar ve sarılık",
+      "branch": "Tıbbi Biyokimya",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "22 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, koyu renkli idrar, halsizlik ve gözlerde sararma nedeniyle başvuruyor."
+    },
+    {
+      "id": "v176-new-120-diskilama-sonrasi-anal-agri",
+      "title": "Dışkılama sonrası anal ağrı",
+      "branch": "Genel Cerrahi",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "31 yaşında kadın hasta, genel cerrahi polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, dışkılama sırasında başlayan şiddetli anal ağrı ve tuvalet kâğıdında parlak kırmızı kan nedeniyle başvuruyor."
+    },
+    {
+      "id": "v177-new-121-dogum-sonrasi-ates-ve-uterin-hassasiyet",
+      "title": "Doğum sonrası ateş ve uterin hassasiyet",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "30 yaşında kadın hasta, sezaryen doğumdan üç gün sonra doğum servisinde değerlendiriliyor.",
+      "presentation": "Hasta, ateş, kötü kokulu vajinal akıntı ve alt karın ağrısı nedeniyle değerlendiriliyor."
+    },
+    {
+      "id": "v177-new-124-parotis-ameliyati-sonrasi-yuz-asimetrisi",
+      "title": "Parotis ameliyatı sonrası yüz asimetrisi",
+      "branch": "Anatomi",
+      "from": "Zor",
+      "to": "Kolay",
+      "profile": "56 yaşında kadın hasta, parotis kitle eksizyonu sonrası kontrol muayenesinde değerlendiriliyor.",
+      "presentation": "Hasta, ameliyat sonrası yüzün sağ tarafında hareket kaybı ve ağız köşesinde düşme nedeniyle başvuruyor."
+    },
+    {
+      "id": "v177-new-125-cocukta-purpura-ve-karin-agrisi",
+      "title": "Çocukta purpura ve karın ağrısı",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "7 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, bacaklarda döküntü, karın ağrısı ve eklem ağrısı nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v177-new-126-yenidoganda-agir-solunum-sikintisi",
+      "title": "Yenidoğanda ağır solunum sıkıntısı",
+      "branch": "Histoloji ve Embriyoloji",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "1 saatlik erkek yenidoğan, doğum salonundan yenidoğan yoğun bakıma alınıyor.",
+      "presentation": "Bebek, doğumdan hemen sonra ağır solunum sıkıntısı ve siyanoz nedeniyle değerlendiriliyor."
+    },
+    {
+      "id": "v177-new-127-ani-bacak-agrisi-ve-sogukluk",
+      "title": "Ani bacak ağrısı ve soğukluk",
+      "branch": "Genel Cerrahi",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "72 yaşında kadın hasta, acil serviste damar cerrahisi tarafından değerlendiriliyor.",
+      "presentation": "Hasta, sağ bacakta ani başlayan şiddetli ağrı, soğukluk ve uyuşma nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v177-new-129-diskilama-aliskanliginda-degisiklik",
+      "title": "Dışkılama alışkanlığında değişiklik",
+      "branch": "Tıbbi Patoloji",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "66 yaşında erkek hasta, gastroenteroloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, son aylarda dışkı çapında incelme, kabızlık ve aralıklı rektal kanama nedeniyle başvuruyor."
+    },
+    {
+      "id": "v178-new-131-efor-dispnesi-ve-periferik-odem",
+      "title": "Efor dispnesi ve periferik ödem",
+      "branch": "Fizyoloji",
+      "from": "Zor",
+      "to": "Kolay",
+      "profile": "67 yaşında erkek hasta, kardiyoloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, son aylarda artan efor dispnesi, gece nefes darlığı ve ayak bileklerinde şişlik nedeniyle başvuruyor."
+    },
+    {
+      "id": "v178-new-134-postmenopozal-vajinal-kanama",
+      "title": "Postmenopozal vajinal kanama",
+      "branch": "Tıbbi Patoloji",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "61 yaşında kadın hasta, kadın hastalıkları polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, menopozdan yıllar sonra başlayan vajinal kanama nedeniyle başvuruyor."
+    },
+    {
+      "id": "v178-new-137-epigastrik-agri-ve-kusma",
+      "title": "Epigastrik ağrı ve kusma",
+      "branch": "Genel Cerrahi",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "48 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, sırta yayılan şiddetli epigastrik ağrı ve tekrarlayan kusma nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v178-new-139-erken-gebelik-haftasinda-su-gelisi",
+      "title": "Erken gebelik haftasında su gelişi",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "29 yaşında gebe hasta, gebeliğinin 31. haftasında doğum acil ünitesinde değerlendiriliyor.",
+      "presentation": "Hasta, vajenden ani sıvı gelişi nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v179-new-144-hisilti-ve-solunum-sikintisi",
+      "title": "Hışıltı ve solunum sıkıntısı",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "8 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, giderek artan nefes darlığı, öksürük ve hışıltı nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v179-new-148-ani-baslayan-tek-tarafli-hisilti",
+      "title": "Ani başlayan tek taraflı hışıltı",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "2 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, oyun sırasında ani öksürük atağı ve sonrasında devam eden hışıltı nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v180-new-152-ani-baslayan-carpinti",
+      "title": "Ani başlayan çarpıntı",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "10 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, ani başlayan çarpıntı ve göğüste rahatsızlık hissi nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v180-new-153-ates-ve-ense-sertligi",
+      "title": "Ateş ve ense sertliği",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "6 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, yüksek ateş, baş ağrısı ve kusma nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v180-new-156-kafa-travmasi-sonrasi-yeniden-bilinc-kaybi",
+      "title": "Kafa travması sonrası yeniden bilinç kaybı",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "12 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, bisikletten düşme sonrası baş ağrısı ve bilinçte kötüleşme nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v180-new-157-yenidoganda-kasilma-ve-jitteriness",
+      "title": "Yenidoğanda kasılma ve jitteriness",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "5 günlük erkek yenidoğan, yenidoğan acilinde değerlendiriliyor.",
+      "presentation": "Bebek, tekrarlayan kasılma benzeri hareketler ve beslenmede azalma nedeniyle getiriliyor."
+    },
+    {
+      "id": "v180-new-158-bas-agrisi-ve-yuksek-tansiyon",
+      "title": "Baş ağrısı ve yüksek tansiyon",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "14 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, şiddetli baş ağrısı, bulanık görme ve kusma nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v180-new-159-kulak-agrisi-sonrasi-kulak-arkasinda-sislik",
+      "title": "Kulak ağrısı sonrası kulak arkasında şişlik",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "4 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, ateş, kulak ağrısı ve kulak arkasında şişlik nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v180-new-160-kapali-ortam-sonrasi-bas-agrisi",
+      "title": "Kapalı ortam sonrası baş ağrısı",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "9 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, baş ağrısı, bulantı ve uykuya eğilim nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v181-new-165-kulak-cinlamasi-ve-hiperventilasyon",
+      "title": "Kulak çınlaması ve hiperventilasyon",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "16 yaşında erkek hasta, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Hasta, çok sayıda ağrı kesici aldıktan sonra bulantı, kulak çınlaması ve hızlı soluma nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v181-new-170-sag-alt-kadran-agrisi",
+      "title": "Sağ alt kadran ağrısı",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "10 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, karın ağrısı, iştahsızlık ve kusma nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v182-new-174-gaz-yagi-icme-sonrasi-oksuruk",
+      "title": "Gaz yağı içme sonrası öksürük",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "2 yaşında kız çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, gaz yağı içtiği fark edildikten sonra öksürük ve hırıltı nedeniyle getiriliyor."
+    },
+    {
+      "id": "v182-new-178-havuzdan-cikarilma-sonrasi-oksuruk",
+      "title": "Havuzdan çıkarılma sonrası öksürük",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "6 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, havuzda kısa süre su altında kaldıktan sonra öksürük ve solunum sıkıntısı nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v182-new-180-alci-sonrasi-artan-ekstremite-agrisi",
+      "title": "Alçı sonrası artan ekstremite ağrısı",
+      "branch": "Çocuk Sağlığı ve Hastalıkları",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "11 yaşında erkek çocuk, çocuk acil servisinde değerlendiriliyor.",
+      "presentation": "Çocuk, ön kol kırığı nedeniyle alçılandıktan sonra giderek artan şiddetli ağrı ve parmaklarda uyuşma nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v183-new-188-antihipertansif-sonrasi-kuru-oksuruk",
+      "title": "Antihipertansif sonrası kuru öksürük",
+      "branch": "Tıbbi Farmakoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "59 yaşında kadın hasta, aile hekimliği polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, yeni başlanan tansiyon ilacından sonra gelişen inatçı kuru öksürük nedeniyle başvuruyor."
+    },
+    {
+      "id": "v184-new-192-ani-goz-agrisi-ve-gorme-bulanikligi",
+      "title": "Ani göz ağrısı ve görme bulanıklığı",
+      "branch": "Küçük Stajlar",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "64 yaşında kadın hasta, acil serviste göz hastalıkları tarafından değerlendiriliyor.",
+      "presentation": "Hasta, sol gözde ani başlayan şiddetli ağrı, görme bulanıklığı ve bulantı nedeniyle başvuruyor."
+    },
+    {
+      "id": "v184-new-194-sag-ust-kadran-agrisi",
+      "title": "Sağ üst kadran ağrısı",
+      "branch": "Genel Cerrahi",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "47 yaşında kadın hasta, acil serviste genel cerrahi tarafından değerlendiriliyor.",
+      "presentation": "Hasta, yağlı yemek sonrası başlayan sağ üst kadran ağrısı, bulantı ve ateş nedeniyle başvuruyor."
+    },
+    {
+      "id": "v184-new-197-apendektomi-materyalinde-inflamasyon",
+      "title": "Apendektomi materyalinde inflamasyon",
+      "branch": "Tıbbi Patoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "23 yaşında erkek hasta, apendektomi sonrası patoloji raporuyla değerlendiriliyor.",
+      "presentation": "Hasta, sağ alt kadran ağrısı nedeniyle opere edilmiş ve çıkarılan apendiks histopatolojik incelemeye gönderilmiştir."
+    },
+    {
+      "id": "v184-new-198-aclikta-hipoglisemi-ve-hepatomegali",
+      "title": "Açlıkta hipoglisemi ve hepatomegali",
+      "branch": "Tıbbi Biyokimya",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "8 aylık erkek bebek, çocuk metabolizma polikliniğinde değerlendiriliyor.",
+      "presentation": "Bebek, açlık dönemlerinde terleme, huzursuzluk ve nöbet benzeri ataklar nedeniyle getiriliyor."
+    },
+    {
+      "id": "v185-new-207-agrisiz-alt-gastrointestinal-kanama",
+      "title": "Ağrısız alt gastrointestinal kanama",
+      "branch": "Histoloji ve Embriyoloji",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "6 yaşında erkek çocuk, çocuk cerrahisi polikliniğinde değerlendiriliyor.",
+      "presentation": "Çocuk, tekrarlayan ağrısız parlak kırmızı rektal kanama nedeniyle getiriliyor."
+    },
+    {
+      "id": "v185-new-211-bebekte-gelisim-geriligi-ve-kuf-kokusu",
+      "title": "Bebekte gelişim geriliği ve küf kokusu",
+      "branch": "Tıbbi Biyokimya",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "7 aylık kız bebek, çocuk metabolizma polikliniğinde değerlendiriliyor.",
+      "presentation": "Bebek, gelişim geriliği, açık ten rengi ve idrarda farklı koku nedeniyle getiriliyor."
+    },
+    {
+      "id": "v185-new-218-tiroid-nodulunde-sitoloji-bulgusu",
+      "title": "Tiroid nodülünde sitoloji bulgusu",
+      "branch": "Tıbbi Patoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "42 yaşında kadın hasta, endokrinoloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, boyunda ele gelen tiroid nodülü nedeniyle başvuruyor."
+    },
+    {
+      "id": "v185-new-219-tansiyon-ilaci-sonrasi-hisilti",
+      "title": "Tansiyon ilacı sonrası hışıltı",
+      "branch": "Tıbbi Farmakoloji",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "45 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, yeni başlanan tansiyon ilacından sonra gelişen nefes darlığı ve hışıltı nedeniyle başvuruyor."
+    },
+    {
+      "id": "v185-new-224-ani-epigastrik-agri-ve-tahta-karin",
+      "title": "Ani epigastrik ağrı ve tahta karın",
+      "branch": "Genel Cerrahi",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "58 yaşında erkek hasta, acil serviste genel cerrahi tarafından değerlendiriliyor.",
+      "presentation": "Hasta, ani başlayan şiddetli epigastrik ağrı nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v185-new-225-gebelikte-agrili-kanama",
+      "title": "Gebelikte ağrılı kanama",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "34 yaşında gebe hasta, gebeliğinin 35. haftasında doğum acilde değerlendiriliyor.",
+      "presentation": "Hasta, ani başlayan karın ağrısı ve vajinal kanama nedeniyle başvuruyor."
+    },
+    {
+      "id": "v185-new-229-antidepresan-sonrasi-ajitasyon-ve-klonus",
+      "title": "Antidepresan sonrası ajitasyon ve klonus",
+      "branch": "Küçük Stajlar",
+      "from": "Orta",
+      "to": "Zor",
+      "profile": "28 yaşında kadın hasta, acil serviste psikiyatri konsültasyonu ile değerlendiriliyor.",
+      "presentation": "Hasta, ajitasyon, terleme, ishal ve titreme nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v185-new-230-atesli-agrili-diz-sisligi",
+      "title": "Ateşli ağrılı diz şişliği",
+      "branch": "Küçük Stajlar",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "39 yaşında erkek hasta, acil serviste ortopedi tarafından değerlendiriliyor.",
+      "presentation": "Hasta, sağ dizde ani başlayan şiddetli ağrı, şişlik ve ateş nedeniyle başvuruyor."
+    },
+    {
+      "id": "v186-new-231-gebeligin-son-doneminde-agrisiz-kanama",
+      "title": "Gebeliğin son döneminde ağrısız kanama",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "32 yaşında gebe hasta, gebeliğinin 34. haftasında doğum acil ünitesinde değerlendiriliyor.",
+      "presentation": "Hasta, ani başlayan parlak kırmızı vajinal kanama nedeniyle başvuruyor."
+    },
+    {
+      "id": "v186-new-233-ani-gorme-alani-kaybi",
+      "title": "Ani görme alanı kaybı",
+      "branch": "Küçük Stajlar",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "59 yaşında erkek hasta, acil serviste göz hastalıkları açısından değerlendiriliyor.",
+      "presentation": "Hasta, sağ gözde ışık çakmaları ve görme alanında perde inmesi hissi nedeniyle başvuruyor."
+    },
+    {
+      "id": "v186-new-235-uzayan-bogulur-tarzda-oksuruk",
+      "title": "Uzayan boğulur tarzda öksürük",
+      "branch": "Tıbbi Mikrobiyoloji",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "5 yaşında kız çocuk, çocuk enfeksiyon polikliniğinde değerlendiriliyor.",
+      "presentation": "Çocuk, haftalardır süren nöbetler halinde öksürük ve öksürük sonrası kusma nedeniyle getiriliyor."
+    },
+    {
+      "id": "v186-new-237-gogus-agrisinda-dil-alti-ilac",
+      "title": "Göğüs ağrısında dil altı ilaç",
+      "branch": "Tıbbi Farmakoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "56 yaşında erkek hasta, kardiyoloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, eforla gelen göğüs ağrısı için verilen dil altı ilacın etkisini öğrenmek istemektedir."
+    },
+    {
+      "id": "v186-new-238-bakla-sonrasi-sarilik-ve-koyu-idrar",
+      "title": "Bakla sonrası sarılık ve koyu idrar",
+      "branch": "Tıbbi Biyokimya",
+      "from": "Zor",
+      "to": "Kolay",
+      "profile": "19 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, halsizlik, sarılık ve koyu renkli idrar nedeniyle başvuruyor."
+    },
+    {
+      "id": "v186-new-239-diskilama-sirasinda-siddetli-agri",
+      "title": "Dışkılama sırasında şiddetli ağrı",
+      "branch": "Genel Cerrahi",
+      "from": "Acil",
+      "to": "Kolay",
+      "profile": "35 yaşında kadın hasta, genel cerrahi polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, dışkılama sırasında cam kesiği tarzında ağrı ve az miktarda parlak kırmızı kanama nedeniyle başvuruyor."
+    },
+    {
+      "id": "v187-new-242-tiroid-ameliyati-sonrasi-ses-kisikligi",
+      "title": "Tiroid ameliyatı sonrası ses kısıklığı",
+      "branch": "Anatomi",
+      "from": "Zor",
+      "to": "Kolay",
+      "profile": "52 yaşında kadın hasta, endokrin cerrahi kontrolünde değerlendiriliyor.",
+      "presentation": "Hasta, tiroid ameliyatı sonrası başlayan ses kısıklığı ve çabuk yorulan ses nedeniyle başvuruyor."
+    },
+    {
+      "id": "v187-new-245-hipertansiyon-ve-hipokalemi",
+      "title": "Hipertansiyon ve hipokalemi",
+      "branch": "Fizyoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "49 yaşında erkek hasta, endokrinoloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, dirençli hipertansiyon ve kas güçsüzlüğü nedeniyle başvuruyor."
+    },
+    {
+      "id": "v187-new-250-hemolitik-hastada-ani-anemi",
+      "title": "Hemolitik hastada ani anemi",
+      "branch": "Tıbbi Mikrobiyoloji",
+      "from": "Kolay",
+      "to": "Zor",
+      "profile": "12 yaşında erkek çocuk, hematoloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Çocuk, orak hücreli anemi zemininde ani halsizlik ve solukluk nedeniyle getiriliyor."
+    },
+    {
+      "id": "v187-new-253-siddetli-karin-agrisi-ve-hafif-muayene-bulgusu",
+      "title": "Şiddetli karın ağrısı ve hafif muayene bulgusu",
+      "branch": "Genel Cerrahi",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "76 yaşında erkek hasta, acil serviste genel cerrahi tarafından değerlendiriliyor.",
+      "presentation": "Hasta, ani başlayan şiddetli karın ağrısı ve bulantı nedeniyle acile başvuruyor."
+    },
+    {
+      "id": "v188-new-257-parotis-kitlesi-ameliyati-sonrasi-yuz-asimetrisi",
+      "title": "Parotis kitlesi ameliyatı sonrası yüz asimetrisi",
+      "branch": "Anatomi",
+      "from": "Zor",
+      "to": "Kolay",
+      "profile": "58 yaşında erkek hasta, kulak burun boğaz polikliniğinde postoperatif kontrolde değerlendiriliyor.",
+      "presentation": "Hasta, parotis bezi ameliyatı sonrası ağız köşesinde düşüklük ve gözünü tam kapatamama nedeniyle başvuruyor."
+    },
+    {
+      "id": "v188-new-262-oksidatif-stres-ve-eritrosit-korunmasi",
+      "title": "Oksidatif stres ve eritrosit korunması",
+      "branch": "Tıbbi Biyokimya",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "21 yaşında erkek hasta, biyokimya laboratuvarı değerlendirmesinde inceleniyor.",
+      "presentation": "Hastada oksidatif ilaç maruziyeti sonrası eritrositlerin antioksidan savunma kapasitesi tartışılıyor."
+    },
+    {
+      "id": "v188-new-264-ates-ve-petesiyal-dokuntu",
+      "title": "Ateş ve peteşiyal döküntü",
+      "branch": "Tıbbi Mikrobiyoloji",
+      "from": "Kolay",
+      "to": "Acil",
+      "profile": "19 yaşında erkek öğrenci, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, yüksek ateş, baş ağrısı, ense sertliği ve yaygın peteşiyal döküntü nedeniyle başvuruyor."
+    },
+    {
+      "id": "v188-new-266-gogus-agrisi-sonrasi-miyokard-hasari",
+      "title": "Göğüs ağrısı sonrası miyokard hasarı",
+      "branch": "Tıbbi Patoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "61 yaşında erkek hasta, kardiyoloji servisinde değerlendiriliyor.",
+      "presentation": "Hasta, uzun süren baskı tarzı göğüs ağrısı sonrası miyokard enfarktüsü tanısıyla yatırılıyor."
+    },
+    {
+      "id": "v188-new-268-epigastrik-agri-ve-lipaz-yuksekligi",
+      "title": "Epigastrik ağrı ve lipaz yüksekliği",
+      "branch": "Genel Cerrahi",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "45 yaşında erkek hasta, acil serviste genel cerrahi tarafından değerlendiriliyor.",
+      "presentation": "Hasta, sırta yayılan şiddetli epigastrik ağrı, bulantı ve kusma nedeniyle başvuruyor."
+    },
+    {
+      "id": "v189-new-272-temporal-travma-sonrasi-bilinc-kotulesmesi",
+      "title": "Temporal travma sonrası bilinç kötüleşmesi",
+      "branch": "Anatomi",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "23 yaşında erkek hasta, acil serviste travma ekibi tarafından değerlendiriliyor.",
+      "presentation": "Hasta, başına darbe aldıktan sonra kısa süre düzelen ancak sonra kötüleşen bilinç durumu nedeniyle getiriliyor."
+    },
+    {
+      "id": "v189-new-279-yenidoganda-solunum-sikintisi-ve-barsak-sesleri",
+      "title": "Yenidoğanda solunum sıkıntısı ve barsak sesleri",
+      "branch": "Histoloji ve Embriyoloji",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "1 saatlik erkek yenidoğan, yenidoğan yoğun bakımda değerlendiriliyor.",
+      "presentation": "Bebek, doğumdan hemen sonra ağır solunum sıkıntısı ve siyanoz nedeniyle entübe ediliyor."
+    },
+    {
+      "id": "v189-new-282-cig-yumurta-tuketimi-sonrasi-dermatit",
+      "title": "Çiğ yumurta tüketimi sonrası dermatit",
+      "branch": "Tıbbi Biyokimya",
+      "from": "Orta",
+      "to": "Zor",
+      "profile": "24 yaşında erkek hasta, iç hastalıkları polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, saç dökülmesi, dermatit ve halsizlik nedeniyle başvuruyor."
+    },
+    {
+      "id": "v189-new-283-otel-konaklamasi-sonrasi-pnomoni",
+      "title": "Otel konaklaması sonrası pnömoni",
+      "branch": "Tıbbi Mikrobiyoloji",
+      "from": "Kolay",
+      "to": "Acil",
+      "profile": "57 yaşında erkek hasta, acil serviste göğüs hastalıkları tarafından değerlendiriliyor.",
+      "presentation": "Hasta, ateş, kuru öksürük, ishal ve bilinç bulanıklığı nedeniyle başvuruyor."
+    },
+    {
+      "id": "v189-new-285-akintisiz-dizuri-ve-uretrit",
+      "title": "Akıntısız dizüri ve üretrit",
+      "branch": "Tıbbi Mikrobiyoloji",
+      "from": "Kolay",
+      "to": "Zor",
+      "profile": "22 yaşında erkek hasta, üroloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, dizüri ve hafif üretral rahatsızlık nedeniyle başvuruyor."
+    },
+    {
+      "id": "v189-new-287-uzun-suren-gastrit-sonrasi-metaplazi",
+      "title": "Uzun süren gastrit sonrası metaplazi",
+      "branch": "Tıbbi Patoloji",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "62 yaşında erkek hasta, gastroenteroloji polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, kronik dispepsi nedeniyle yapılan endoskopik biyopsi sonucuyla başvuruyor."
+    },
+    {
+      "id": "v189-new-290-heparin-sonrasi-trombosit-dususu-ve-bacak-agrisi",
+      "title": "Heparin sonrası trombosit düşüşü ve bacak ağrısı",
+      "branch": "Tıbbi Farmakoloji",
+      "from": "Acil",
+      "to": "Zor",
+      "profile": "62 yaşında erkek hasta, hastanede yatarken hematoloji tarafından değerlendiriliyor.",
+      "presentation": "Hasta, heparin tedavisinin altıncı gününde trombosit düşüşü ve yeni gelişen bacak ağrısı nedeniyle inceleniyor."
+    },
+    {
+      "id": "v189-new-291-vagal-bradikardi-atagi",
+      "title": "Vagal bradikardi atağı",
+      "branch": "Tıbbi Farmakoloji",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "55 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, ani baş dönmesi ve bayılacak gibi olma hissi sırasında belirgin bradikardi saptanması nedeniyle izleniyor."
+    },
+    {
+      "id": "v189-new-295-erken-gebelikte-asiri-bulanti-ve-kanama",
+      "title": "Erken gebelikte aşırı bulantı ve kanama",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "24 yaşında kadın hasta, kadın doğum polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, erken gebelik döneminde vajinal kanama, aşırı bulantı ve kusma nedeniyle başvuruyor."
+    },
+    {
+      "id": "v189-new-296-erken-membran-rupturu",
+      "title": "Erken membran rüptürü",
+      "branch": "Kadın Hastalıkları ve Doğum",
+      "from": "Acil",
+      "to": "Orta",
+      "profile": "28 yaşında gebe hasta, gebeliğinin 31. haftasında doğum acil ünitesinde değerlendiriliyor.",
+      "presentation": "Hasta, vajenden ani sıvı gelmesi nedeniyle başvuruyor."
+    },
+    {
+      "id": "v192-new-301-halsizlik-ve-direncli-hipotansiyon",
+      "title": "Halsizlik ve dirençli hipotansiyon",
+      "branch": "İç Hastalıkları",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "42 yaşında kadın hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, kusma, yaygın halsizlik ve ayakta duramama nedeniyle acile getiriliyor."
+    },
+    {
+      "id": "v192-new-302-yasli-hastada-bilinc-bulanikligi-ve-hiperglisemi",
+      "title": "Yaşlı hastada bilinç bulanıklığı ve hiperglisemi",
+      "branch": "İç Hastalıkları",
+      "from": "Orta",
+      "to": "Acil",
+      "profile": "74 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, bilinç bulanıklığı, ağız kuruluğu ve birkaç gündür artan idrar miktarı nedeniyle getiriliyor."
+    },
+    {
+      "id": "v192-new-303-kabizlik-poliuri-ve-konfuzyon",
+      "title": "Kabızlık, poliüri ve konfüzyon",
+      "branch": "İç Hastalıkları",
+      "from": "Zor",
+      "to": "Acil",
+      "profile": "66 yaşında erkek hasta, acil serviste değerlendiriliyor.",
+      "presentation": "Hasta, halsizlik, kabızlık, sık idrara çıkma ve bilinç bulanıklığı nedeniyle getiriliyor."
+    },
+    {
+      "id": "v192-new-304-halsizlik-ve-pika",
+      "title": "Halsizlik ve pika",
+      "branch": "İç Hastalıkları",
+      "from": "Orta",
+      "to": "Kolay",
+      "profile": "38 yaşında kadın hasta, iç hastalıkları polikliniğinde değerlendiriliyor.",
+      "presentation": "Hasta, halsizlik, çabuk yorulma ve buz yeme isteği nedeniyle başvuruyor."
+    },
+    {
+      "id": "v192-new-305-hemoptizi-ve-bobrek-yetmezligi",
+      "title": "Hemoptizi ve böbrek yetmezliği",
+      "branch": "İç Hastalıkları",
+      "from": "Zor",
+      "to": "Zor",
+      "profile": "29 yaşında erkek hasta, acil serviste nefroloji tarafından değerlendiriliyor.",
+      "presentation": "Hasta, kanlı balgam, nefes darlığı ve idrar renginde koyulaşma nedeniyle başvuruyor."
+    }
+  ]
+}

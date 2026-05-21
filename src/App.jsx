@@ -33,6 +33,7 @@ const BRANCH_TRANSITION_FADE_MS = 180;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
+const SOLVED_CASES_STORAGE_KEY = 'klinikiq-solved-cases-v1';
 const BRANCH_DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor', 'Acil'];
 
 const DEMO_CASE_IDS = [
@@ -107,6 +108,7 @@ function sanitizeUser(user) {
     stats: user.stats ?? defaultStats,
     examHistory: Array.isArray(user.examHistory) ? user.examHistory : [],
     wrongAnswers: Array.isArray(user.wrongAnswers) ? user.wrongAnswers : [],
+    solvedCaseIds: Array.isArray(user.solvedCaseIds) ? user.solvedCaseIds : [],
   };
 }
 
@@ -210,6 +212,16 @@ function buildDifficultyCountsForCases(caseItems = []) {
   return counts;
 }
 
+function sortCasesBySolvedStatus(caseItems = [], solvedSet = new Set()) {
+  return caseItems
+    .map((clinicalCase, index) => ({ clinicalCase, index, isSolved: solvedSet.has(clinicalCase.id) }))
+    .sort((a, b) => {
+      if (a.isSolved !== b.isSolved) return a.isSolved ? 1 : -1;
+      return a.index - b.index;
+    })
+    .map(({ clinicalCase }) => clinicalCase);
+}
+
 function buildAIWrongQuestionPreview(clinicalCase = {}) {
   return compactText(
     clinicalCase.question
@@ -241,6 +253,7 @@ function App() {
   const [sessionStats, setSessionStats] = useState(() => currentUser?.stats ?? loadStoredValue(STATS_STORAGE_KEY, defaultStats));
   const [examHistory, setExamHistory] = useState(() => currentUser?.examHistory ?? loadStoredValue(EXAM_HISTORY_STORAGE_KEY, []));
   const [wrongAnswers, setWrongAnswers] = useState(() => currentUser?.wrongAnswers ?? []);
+  const [solvedCaseIds, setSolvedCaseIds] = useState(() => currentUser?.solvedCaseIds ?? loadStoredValue(SOLVED_CASES_STORAGE_KEY, []));
   const [aiPracticeStats, setAIPracticeStats] = useState(() => loadStoredValue(AI_PRACTICE_STATS_STORAGE_KEY, defaultAIPracticeStats));
   const [aiPracticeState, setAIPracticeState] = useState(defaultAIPracticeState);
   const [pearlStudyState, setPearlStudyState] = useState({ active: false, filter: 'all', branchFilter: 'all', catalogId: '' });
@@ -268,6 +281,7 @@ function App() {
   const accessibleCases = useMemo(() => (isDemoUser ? demoCases : cases), [isDemoUser, demoCases]);
   const accessibleCaseIndex = useMemo(() => buildAccessibleCaseIndex(accessibleCases), [accessibleCases]);
   const accessibleCaseIds = accessibleCaseIndex.ids;
+  const solvedCaseIdSet = useMemo(() => new Set(solvedCaseIds), [solvedCaseIds]);
   const visibleBranches = useMemo(() => {
     if (!isDemoUser) return branches;
     const branchIds = new Set(accessibleCases.map((clinicalCase) => clinicalCase.branchId));
@@ -279,9 +293,14 @@ function App() {
     [selectedBranchId],
   );
 
-  const branchCases = useMemo(
+  const rawBranchCases = useMemo(
     () => (selectedBranchId ? accessibleCaseIndex.byBranchId.get(selectedBranchId) ?? [] : []),
     [selectedBranchId, accessibleCaseIndex],
+  );
+
+  const branchCases = useMemo(
+    () => sortCasesBySolvedStatus(rawBranchCases, solvedCaseIdSet),
+    [rawBranchCases, solvedCaseIdSet],
   );
 
   const branchDifficultyCounts = useMemo(
@@ -340,6 +359,12 @@ function App() {
   }, [wrongAnswers, currentUser?.id]);
 
   useEffect(() => {
+    localBackend.write(SOLVED_CASES_STORAGE_KEY, solvedCaseIds);
+    if (!currentUser?.id) return;
+    persistCurrentUser({ solvedCaseIds });
+  }, [solvedCaseIds, currentUser?.id]);
+
+  useEffect(() => {
     localBackend.write(AI_PRACTICE_STATS_STORAGE_KEY, aiPracticeStats);
   }, [aiPracticeStats]);
 
@@ -385,6 +410,7 @@ function App() {
     setSessionStats(newUser.stats);
     setExamHistory([]);
     setWrongAnswers([]);
+    setSolvedCaseIds([]);
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
     setSelectedBranchId(null);
@@ -406,6 +432,7 @@ function App() {
     setSessionStats(user.stats ?? defaultStats);
     setExamHistory(user.examHistory ?? []);
     setWrongAnswers(user.wrongAnswers ?? []);
+    setSolvedCaseIds(user.solvedCaseIds ?? []);
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
     setSelectedBranchId(null);
@@ -422,6 +449,7 @@ function App() {
     setSessionStats(user.stats ?? defaultStats);
     setExamHistory(user.examHistory ?? []);
     setWrongAnswers(user.wrongAnswers ?? []);
+    setSolvedCaseIds(user.solvedCaseIds ?? []);
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
     setSelectedBranchId(null);
@@ -524,6 +552,7 @@ function App() {
     setSessionStats(defaultStats);
     setExamHistory([]);
     setWrongAnswers([]);
+    setSolvedCaseIds([]);
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
     setSelectedBranchId(null);
@@ -769,7 +798,8 @@ function App() {
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
     if (isDemoUser && !visibleBranches.some((branch) => branch.id === branchId)) return;
-    const branchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
+    const rawBranchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
+    const branchPool = sortCasesBySolvedStatus(rawBranchPool, solvedCaseIdSet);
     if (!branchPool.length) return;
     const branchMeta = resolveBranchById(branchId);
 
@@ -798,7 +828,7 @@ function App() {
     }, BRANCH_TRANSITION_MS + BRANCH_TRANSITION_FADE_MS);
 
     branchRouteTimers.current = [selectTimer, finishTimer];
-  }, [accessibleCaseIndex, clearBranchRouteTimers, closePearlStudy, isDemoUser, visibleBranches]);
+  }, [accessibleCaseIndex, clearBranchRouteTimers, closePearlStudy, isDemoUser, solvedCaseIdSet, visibleBranches]);
 
   const handleSelectCase = useCallback((caseId) => {
     if (!accessibleCaseIds.has(caseId)) return;
@@ -808,10 +838,12 @@ function App() {
 
   const handleRandomCase = useCallback(() => {
     if (!activeBranchCasePool.length) return;
-    const nextCase = pickRandom(activeBranchCasePool, selectedCaseId) ?? activeBranchCasePool[0];
+    const unsolvedPool = activeBranchCasePool.filter((clinicalCase) => !solvedCaseIdSet.has(clinicalCase.id));
+    const preferredPool = unsolvedPool.length ? unsolvedPool : activeBranchCasePool;
+    const nextCase = pickRandom(preferredPool, selectedCaseId) ?? preferredPool[0];
     setSelectedCaseId(nextCase.id);
     scrollToTopSmart({ smooth: false });
-  }, [activeBranchCasePool, selectedCaseId]);
+  }, [activeBranchCasePool, selectedCaseId, solvedCaseIdSet]);
 
 
   const handleBranchDifficultyFilterChange = useCallback((nextFilter) => {
@@ -824,10 +856,16 @@ function App() {
     window.setTimeout(() => scrollToTopSmart({ smooth: false }), 0);
   }, [branchDifficultyCounts]);
 
+  const markCaseSolved = useCallback((caseId) => {
+    if (!caseId) return;
+    setSolvedCaseIds((current) => (current.includes(caseId) ? current : [...current, caseId]));
+  }, []);
+
   const handleSubmitAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
     const existingExamAnswer = examState?.active ? examState.answers?.[clinicalCase.id] : null;
     if (existingExamAnswer) return existingExamAnswer.attemptResult;
 
+    markCaseSolved(clinicalCase.id);
     const scored = scoreAttempt(clinicalCase.difficulty, isCorrect, sessionStats.streak);
 
     if (!isCorrect) {
@@ -883,7 +921,7 @@ function App() {
     }
 
     return scored;
-  }, [addWrongAnswer, examState, sessionStats.streak]);
+  }, [addWrongAnswer, examState, markCaseSolved, sessionStats.streak]);
 
 
   const generateNextAIQuestion = useCallback((previousQuestionId = null, branchFilterOverride = aiBranchFilter, difficultyOverride = aiDifficulty) => {
@@ -1368,6 +1406,7 @@ function App() {
               tutorMode={tutorMode}
               onToggleTutorMode={handleToggleTutorMode}
               hardMode={hardMode}
+              isSolved={solvedCaseIdSet.has(selectedCase.id)}
               examMeta={activeExamCaseMeta}
               onAdvanceExam={goToNextExamCase}
               onPreviousExam={goToPreviousExamCase}
@@ -1442,6 +1481,7 @@ function App() {
                 tutorMode={tutorMode}
                 onToggleTutorMode={handleToggleTutorMode}
                 hardMode={hardMode}
+                isSolved={solvedCaseIdSet.has(selectedCase.id)}
               />
             </div>
 
@@ -1452,7 +1492,7 @@ function App() {
                 </div>
                 <span className="bottom-case-browser-count">{activeBranchCasePool.length} olgu</span>
               </div>
-              <CaseList cases={activeBranchCasePool} selectedCaseId={selectedCase.id} onSelectCase={handleSelectCase} layout="horizontal" />
+              <CaseList cases={activeBranchCasePool} selectedCaseId={selectedCase.id} onSelectCase={handleSelectCase} layout="horizontal" solvedCaseIds={solvedCaseIdSet} />
             </section>
           </section>
         </section>

@@ -554,6 +554,7 @@ function CasePlayer({
   tutorMode,
   onToggleTutorMode,
   hardMode = false,
+  isSolved = false,
   examMeta = null,
   onAdvanceExam,
   onPreviousExam,
@@ -563,6 +564,7 @@ function CasePlayer({
 }) {
   const displayFocus = useMemo(() => buildNonRevealingFocus(clinicalCase), [clinicalCase]);
   const difficultyMeta = useMemo(() => getDifficultyMeta(clinicalCase.difficulty), [clinicalCase.difficulty]);
+  const difficultyLabel = isSolved ? `${difficultyMeta.label}-Çözüldü` : difficultyMeta.label;
   const patientSummary = useMemo(() => buildPatientSummary(clinicalCase), [clinicalCase]);
   const caseExamSignal = useMemo(() => resolveExamSignal(clinicalCase), [clinicalCase]);
   const vitalEntries = useMemo(() => buildDerivedVitalEntries(clinicalCase.vitals), [clinicalCase.vitals]);
@@ -715,7 +717,7 @@ function CasePlayer({
             <div className="case-hero-topline">
               <span className="case-eyebrow">{heroEyebrow}</span>
               <div className="qbank-actions">
-                <span className={`case-hero-meta difficulty-tag-pill ${difficultyMeta.tone}`}>{difficultyMeta.label} · {difficultyMeta.points}p</span>
+                <span className={`case-hero-meta difficulty-tag-pill ${difficultyMeta.tone} ${isSolved ? 'is-solved' : ''}`}>{difficultyLabel} · {difficultyMeta.points}p</span>
                 {!examMeta?.active ? (
                   <button className="btn btn-secondary compact case-refresh-btn" type="button" onClick={onRandomCase}>{heroActionLabel}</button>
                 ) : null}

@@ -47109,3 +47109,45 @@ html[data-theme="dark"] :where(.difficulty-tag-pill, .branch-difficulty-filter .
     font-size: 13px !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   V197 — Solved clinical case state in branch detail
+   -------------------------------------------------------------------------- */
+.case-list-item.is-solved-case {
+  opacity: .86;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 88%, #f8fafc 12%), var(--surface-1)) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 78%, #94a3b8 22%) !important;
+}
+
+.case-list-item.is-solved-case strong {
+  color: color-mix(in srgb, var(--text-primary) 78%, var(--text-muted) 22%);
+}
+
+.case-list-item.is-solved-case .case-list-footer {
+  color: color-mix(in srgb, var(--success) 76%, var(--text-secondary) 24%) !important;
+}
+
+.difficulty-tag-pill.is-solved {
+  border-style: solid !important;
+  border-color: color-mix(in srgb, var(--diff-dot) 50%, var(--diff-border) 50%) !important;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--diff-bg-strong) 82%, #fff 18%), var(--diff-bg)) !important;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 60%, transparent),
+    0 8px 20px color-mix(in srgb, var(--diff-dot) 15%, transparent) !important;
+}
+
+.difficulty-tag-pill.is-solved::before {
+  background: var(--diff-dot) !important;
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--diff-dot) 16%, transparent),
+    inset 0 0 0 2px color-mix(in srgb, #fff 40%, transparent) !important;
+}
+
+html[data-theme="dark"] .case-list-item.is-solved-case,
+.app-shell[data-theme="dark"] .case-list-item.is-solved-case {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 82%, rgba(255,255,255,.06) 18%), var(--surface-1)) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 76%, rgba(255,255,255,.22) 24%) !important;
+}
