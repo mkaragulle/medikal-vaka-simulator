@@ -48338,3 +48338,149 @@ html[data-theme="dark"] .branch-card[data-branch]:not([data-branch="tus-spot-olg
     stroke-width: 1.58 !important;
   }
 }
+
+/* ==========================================================
+   KlinikIQ V223 — Refined branch icon system hard fix
+   Rebuilds the visual language around larger, cleaner, low-noise SVGs.
+   Removes the cramped dot/orbit feeling and keeps each icon readable at
+   small card size while preserving the existing card layout and route flow.
+   ========================================================== */
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-icon {
+  width: 62px !important;
+  height: 62px !important;
+  min-width: 62px !important;
+  border-radius: 21px !important;
+  overflow: visible !important;
+  background:
+    radial-gradient(circle at 31% 18%, rgba(255,255,255,.58), transparent 35%),
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--branch-motion-accent) 10%, var(--surface-2)),
+      color-mix(in srgb, var(--branch-motion-accent) 4%, var(--surface-1))) !important;
+  border-color: color-mix(in srgb, var(--branch-motion-accent) 31%, var(--border-subtle)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.38),
+    0 14px 30px color-mix(in srgb, var(--branch-motion-accent) 9%, transparent) !important;
+}
+
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-svg.branch-animated-svg-card,
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-icon > .branch-animated-svg {
+  width: 39px !important;
+  height: 39px !important;
+  stroke-width: 1.72 !important;
+  overflow: visible !important;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--branch-motion-accent) 10%, transparent)) !important;
+}
+
+.branch-animated-svg .branch-svg-main {
+  opacity: .98 !important;
+}
+
+.branch-animated-svg .branch-svg-secondary {
+  opacity: .56 !important;
+}
+
+.branch-animated-svg .branch-svg-detail {
+  opacity: .74 !important;
+}
+
+.branch-animated-svg .branch-svg-particles {
+  opacity: .46 !important;
+}
+
+.branch-animated-svg .physiology-ring,
+.branch-animated-svg .obgyn-protect-ring,
+.branch-animated-svg .branch-svg-scan {
+  opacity: 0 !important;
+}
+
+.branch-animated-svg .peds-sparkles,
+.branch-animated-svg .surgery-glint {
+  opacity: .28 !important;
+}
+
+.branch-card[data-branch="medical-microbiology"] .branch-animated-svg .branch-svg-secondary,
+.branch-card[data-branch="medical-pharmacology"] .branch-animated-svg .branch-svg-particles,
+.branch-card[data-branch="histology-embryology"] .branch-animated-svg .branch-svg-detail {
+  opacity: .48 !important;
+}
+
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]):hover .branch-animated-svg .branch-svg-secondary,
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]):focus-visible .branch-animated-svg .branch-svg-secondary,
+.branch-card.is-launching[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-svg .branch-svg-secondary {
+  opacity: .78 !important;
+}
+
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]):hover .branch-animated-svg .branch-svg-detail,
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]):focus-visible .branch-animated-svg .branch-svg-detail,
+.branch-card.is-launching[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-svg .branch-svg-detail {
+  opacity: .9 !important;
+}
+
+.branch-card.is-launching[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-svg .branch-svg-particles,
+.branch-card.is-launching[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-svg .peds-sparkles,
+.branch-card.is-launching[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-svg .surgery-glint {
+  opacity: .82 !important;
+}
+
+.branch-card.is-launching[data-branch="physiology"] .physiology-ring,
+.branch-card.is-launching[data-branch="obstetrics-gynecology"] .obgyn-protect-ring,
+.branch-card.is-launching[data-branch="anatomy"] .branch-svg-scan,
+.branch-card.is-launching[data-branch="medical-pathology"] .branch-svg-scan,
+.branch-card.is-launching[data-branch="internal-medicine"] .branch-svg-scan {
+  opacity: .38 !important;
+}
+
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]):hover .branch-animated-icon,
+.branch-card[data-branch]:not([data-branch="tus-spot-olgular"]):focus-visible .branch-animated-icon {
+  transform: translateY(-2px) scale(1.018) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.42),
+    0 18px 36px color-mix(in srgb, var(--branch-motion-accent) 14%, transparent) !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .branch-card[data-branch]:not([data-branch="tus-spot-olgular"]):hover .branch-animated-svg *,
+  .branch-card[data-branch]:not([data-branch="tus-spot-olgular"]):focus-visible .branch-animated-svg * {
+    animation-iteration-count: 1 !important;
+  }
+
+  .branch-card[data-branch="medical-biochemistry"]:hover .biochem-flask,
+  .branch-card[data-branch="medical-pharmacology"]:hover .pharma-capsule,
+  .branch-card[data-branch="physiology"]:hover .physiology-heart,
+  .branch-card[data-branch="internal-medicine"]:hover .internal-lungs,
+  .branch-card[data-branch="pediatrics"]:hover .peds-bear,
+  .branch-card[data-branch="minor-rotations"]:hover .minor-tile {
+    animation-duration: 900ms !important;
+  }
+}
+
+.branch-transition-visual[data-branch] .branch-animated-svg {
+  width: 88px !important;
+  height: 88px !important;
+  stroke-width: 1.62 !important;
+}
+
+html[data-theme="dark"] .branch-card[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-icon,
+.app-shell[data-theme="dark"] .branch-card[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-icon {
+  background:
+    radial-gradient(circle at 31% 18%, rgba(255,255,255,.13), transparent 35%),
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--branch-motion-accent) 14%, #0b1420),
+      color-mix(in srgb, var(--branch-motion-accent) 6%, #050b12)) !important;
+}
+
+@media (max-width: 560px) {
+  .branch-card[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-icon {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    border-radius: 19px !important;
+  }
+
+  .branch-card[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-svg.branch-animated-svg-card,
+  .branch-card[data-branch]:not([data-branch="tus-spot-olgular"]) .branch-animated-icon > .branch-animated-svg {
+    width: 35px !important;
+    height: 35px !important;
+    stroke-width: 1.66 !important;
+  }
+}
