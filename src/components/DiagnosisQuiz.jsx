@@ -134,8 +134,8 @@ function DiagnosisQuiz({
   const defaultQuestionSubtext = isSpotCase
     ? (submitted && clinicalCase.clinicalFocus
       ? clinicalCase.clinicalFocus
-      : 'Kısa TUS olgusunda öykü, muayene ve objektif verileri yorumlayarak en doğru yanıtı seç.')
-    : 'Öykü, muayene ve objektif verileri birlikte değerlendirerek en uygun seçeneği işaretle.';
+      : '')
+    : '';
   const questionSubtext = questionSubtextOverride || defaultQuestionSubtext;
   const showInlineQuestionStem = Boolean(questionPrompt) && hideSpotQuestionCallout;
 
@@ -150,13 +150,12 @@ function DiagnosisQuiz({
       <div className="question-panel-head diagnostic-head">
         <div>
           <h2>{questionHeading}</h2>
-          <p><GlossaryText text={questionSubtext} enabled={!hardMode && !examMeta?.active} /></p>
+          {questionSubtext ? <p><GlossaryText text={questionSubtext} enabled={!hardMode && !examMeta?.active} /></p> : null}
         </div>
 
         {!hideQuestionScoreChip ? (
-          <div className="question-score-chip compact-meta-pill">
-            <span>{examMeta?.active ? `${examMeta.currentIndex + 1}/${examMeta.total}` : '1 soru'}</span>
-            <strong>{difficultyMeta.points} p</strong>
+          <div className="question-score-chip compact-meta-pill single-score-chip">
+            <strong>{difficultyMeta.points} Puan</strong>
           </div>
         ) : null}
       </div>

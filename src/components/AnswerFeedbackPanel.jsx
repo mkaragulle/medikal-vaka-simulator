@@ -651,7 +651,7 @@ function ReasoningCard({ reasoningText, isCorrect = true, glossaryEnabled = true
       icon={minimal ? null : (isCorrect ? 'Brain' : 'AlertTriangle')}
       tone={isCorrect ? 'blue' : 'warning'}
       eyebrow={minimal ? '' : 'Klinik/Bilimsel gerekçe'}
-      title={minimal ? '' : (isCorrect ? 'Gerekçe' : 'Seçim değerlendirmesi')}
+      title={minimal ? '' : (isCorrect ? 'Gerekçe' : '')}
       className={`reasoning-evidence-card clinical-reasoning-card ${minimal ? 'minimal-reasoning-card' : ''}`.trim()}
       minimal={minimal}
     >
@@ -684,7 +684,7 @@ function EvidenceChainCard({ evidenceChain, glossaryEnabled = true, minimal = fa
       icon={minimal ? null : 'ClipboardList'}
       tone="teal"
       eyebrow={minimal ? '' : 'Kanıt zinciri'}
-      title={minimal ? '' : 'Vakadaki ipuçları'}
+      title={minimal ? '' : ''}
       className={`evidence-chain-card ${minimal ? 'minimal-evidence-card' : ''}`.trim()}
       minimal={minimal}
     >
@@ -727,7 +727,7 @@ function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase 
       icon={minimal ? null : 'Target'}
       tone="warning"
       eyebrow={minimal ? '' : 'Seçenek karşılaştırması'}
-      title={minimal ? '' : (isSpotCase ? 'Şıklar nasıl elenir?' : 'Ayırıcı karar')}
+      title={minimal ? '' : ''}
       className={`option-comparison-card differential-comparison-card ${minimal ? 'minimal-option-comparison-card' : ''}`.trim()}
       minimal={minimal}
     >

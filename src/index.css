@@ -47314,3 +47314,158 @@ html[data-theme="dark"] .case-list-item.is-solved-case,
     white-space: nowrap !important;
   }
 }
+
+
+/* V201 clinical branch question-panel cleanup */
+.clinical-tools-panel .tools-state-grid {
+  margin-top: 0;
+}
+
+.question-panel-head.diagnostic-head {
+  align-items: center;
+}
+
+.question-score-chip.single-score-chip {
+  min-width: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  text-align: center;
+}
+
+.question-score-chip.single-score-chip strong {
+  font-size: 14px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.right-workspace-shell .option-grid,
+.diagnostic-decision-panel .option-grid {
+  gap: 12px;
+}
+
+.right-workspace-shell .answer-option,
+.diagnostic-decision-panel .answer-option {
+  grid-template-columns: 56px minmax(0, 1fr) 38px;
+  gap: 14px;
+  min-height: 92px;
+  padding: 16px 18px;
+  align-items: center;
+}
+
+.right-workspace-shell .answer-content,
+.diagnostic-decision-panel .answer-content {
+  min-width: 0;
+  width: 100%;
+}
+
+.right-workspace-shell .answer-title,
+.diagnostic-decision-panel .answer-title {
+  display: block;
+  min-width: 0;
+  width: 100%;
+  font-size: 16px;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.right-workspace-shell .answer-status-icon,
+.diagnostic-decision-panel .answer-status-icon {
+  justify-self: end;
+  flex-shrink: 0;
+}
+
+.diagnostic-decision-panel .quiz-actions {
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+.diagnostic-decision-panel .quiz-actions .btn {
+  justify-content: center;
+  text-align: center;
+}
+
+.diagnostic-decision-panel .answer-next-case-btn {
+  justify-content: center;
+}
+
+.diagnostic-decision-panel .answer-next-case-btn span {
+  flex: 0 1 auto;
+  text-align: center;
+}
+
+.diagnostic-decision-panel .answer-next-case-arrow {
+  margin-left: 2px;
+}
+
+.feedback-card {
+  overflow: hidden;
+}
+
+.clinical-reasoning-card .feedback-card-head,
+.evidence-chain-card .feedback-card-head,
+.option-comparison-card .feedback-card-head {
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.clinical-reasoning-card .feedback-card-head h4,
+.evidence-chain-card .feedback-card-head h4,
+.option-comparison-card .feedback-card-head h4 {
+  display: none;
+}
+
+.clinical-reasoning-card .feedback-body-copy {
+  margin-top: 2px;
+}
+
+.evidence-chain-card .evidence-chain-list-pro {
+  margin-top: 4px;
+}
+
+.evidence-chain-card .evidence-chain-list-pro li {
+  padding: 14px 16px;
+  border-radius: 16px;
+}
+
+.option-comparison-card .option-comparison-list {
+  margin-top: 4px;
+  gap: 12px;
+}
+
+.option-comparison-item {
+  border-radius: 18px;
+  padding: 16px 18px;
+}
+
+.option-comparison-head {
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.option-comparison-head strong {
+  line-height: 1.35;
+}
+
+@media (max-width: 900px) {
+  .diagnostic-decision-panel .quiz-actions {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .right-workspace-shell .answer-option,
+  .diagnostic-decision-panel .answer-option {
+    grid-template-columns: 48px minmax(0, 1fr) 34px;
+    min-height: 84px;
+    padding: 14px;
+  }
+
+  .right-workspace-shell .answer-title,
+  .diagnostic-decision-panel .answer-title {
+    font-size: 15px;
+  }
+}

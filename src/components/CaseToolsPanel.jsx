@@ -69,7 +69,7 @@ function CaseToolsPanel({
   }, [examMeta]);
 
   const checklist = useMemo(() => buildChecklist(), []);
-  const statusText = examMeta?.active ? `${formatTime(examMeta.remainingSeconds)} · ${progress}` : highlightCount ? `${highlightCount} vurgu` : 'Eğitim modu';
+  const statusText = examMeta?.active ? `${formatTime(examMeta.remainingSeconds)} · ${progress}` : highlightCount ? `${highlightCount} vurgu` : '';
 
   const appendSnippet = (snippet) => {
     setNotes((current) => current.trim() ? `${current.trim()}
@@ -90,11 +90,6 @@ ${snippet}` : snippet);
 
   return (
     <aside className="tools-panel clinical-tools-panel" aria-label="Klinik çalışma araçları">
-      <div className="compact-tool-status-row" aria-label="Çalışma durumu">
-        <span className="muted-section-label">Çalışma araçları</span>
-        <span className="panel-status-chip" aria-live="polite">{statusText}</span>
-      </div>
-
       <div className="tools-state-grid" aria-label="Destek aracı durumları">
         <button
           type="button"
