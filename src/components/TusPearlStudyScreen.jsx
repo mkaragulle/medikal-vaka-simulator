@@ -427,8 +427,11 @@ function TusPearlStudyScreen({
   const [editorState, setEditorState] = useState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
   const [catalogMenuOpen, setCatalogMenuOpen] = useState(false);
   const [branchMenuOpen, setBranchMenuOpen] = useState(false);
+  const [branchMenuPosition, setBranchMenuPosition] = useState({ placement: 'popover', top: 0, left: 0, width: 300 });
   const pointerStartX = useRef(null);
   const lastDeckSignature = useRef('');
+  const branchMenuTriggerRef = useRef(null);
+  const branchMenuRef = useRef(null);
 
   const allCards = useMemo(() => [...SYSTEM_PEARL_CARDS, ...(pearlState.userPearlCards || [])], [pearlState.userPearlCards]);
   const cardById = useMemo(() => new Map(allCards.map((card) => [card.id, card])), [allCards]);
@@ -558,6 +561,62 @@ function TusPearlStudyScreen({
     setCatalogMenuOpen(false);
     setBranchMenuOpen(false);
   }, [activeCard?.id, viewMode]);
+
+
+  const updateBranchMenuPosition = useCallback(() => {
+    setBranchMenuPosition(getMoreMenuPosition(branchMenuTriggerRef.current, {
+      align: 'end',
+      width: 300,
+      estimatedHeight: 360,
+      preferBelow: true,
+      gap: 10,
+    }));
+  }, []);
+
+  useLayoutEffect(() => {
+    if (!branchMenuOpen) return undefined;
+    updateBranchMenuPosition();
+    const frame = window.requestAnimationFrame(() => {
+      updateBranchMenuPosition();
+      const menuNode = branchMenuRef.current;
+      if (!menuNode || window.innerWidth <= 640) return;
+      const margin = 12;
+      const menuRect = menuNode.getBoundingClientRect();
+      if (menuRect.bottom > window.innerHeight - margin) {
+        setBranchMenuPosition((current) => ({
+          ...current,
+          top: Math.max(margin, window.innerHeight - margin - menuRect.height),
+        }));
+      }
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [branchMenuOpen, updateBranchMenuPosition]);
+
+  useEffect(() => {
+    if (!branchMenuOpen) return undefined;
+    const handlePointerDown = (event) => {
+      const target = event.target;
+      if (branchMenuTriggerRef.current?.contains(target) || branchMenuRef.current?.contains(target)) return;
+      setBranchMenuOpen(false);
+    };
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setBranchMenuOpen(false);
+        branchMenuTriggerRef.current?.focus();
+      }
+    };
+    const handleReposition = () => updateBranchMenuPosition();
+    document.addEventListener('pointerdown', handlePointerDown, true);
+    document.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('resize', handleReposition);
+    window.addEventListener('scroll', handleReposition, true);
+    return () => {
+      document.removeEventListener('pointerdown', handlePointerDown, true);
+      document.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleReposition);
+      window.removeEventListener('scroll', handleReposition, true);
+    };
+  }, [branchMenuOpen, updateBranchMenuPosition]);
 
   const moveCard = useCallback((direction) => {
     if (!sessionCards.length) return;
@@ -767,6 +826,45 @@ function TusPearlStudyScreen({
     moveCard(delta < 0 ? 1 : -1);
   }
 
+  const branchMenuPortal = branchMenuOpen ? createPortal(
+    <div
+      ref={branchMenuRef}
+      id="pearl-study-branch-menu"
+      className={`pearl-study-branch-menu pearl-study-branch-menu-portal ${branchMenuPosition.placement === 'sheet' ? 'mobile-sheet' : ''}`}
+      role="listbox"
+      aria-label="Branş seç"
+      style={branchMenuPosition.placement === 'sheet'
+        ? { left: branchMenuPosition.left, right: branchMenuPosition.right, bottom: branchMenuPosition.bottom, width: 'auto' }
+        : { top: branchMenuPosition.top, left: branchMenuPosition.left, width: branchMenuPosition.width }}
+    >
+      {[{ id: 'all', shortName: 'Tüm branşlar' }, ...branchOptions].map((branch) => {
+        const value = branch.id;
+        const label = branch.shortName || branch.name;
+        const active = branchFilter === value;
+        return (
+          <button
+            key={value}
+            type="button"
+            role="option"
+            aria-selected={active}
+            className={active ? 'active' : ''}
+            onClick={() => {
+              setBranchFilter(value);
+              setCurrentIndex(0);
+              setFlipped(false);
+              setBranchMenuOpen(false);
+              lastDeckSignature.current = '';
+            }}
+          >
+            <span>{label}</span>
+            {active ? <Icon name="CheckCircle" size={15} /> : null}
+          </button>
+        );
+      })}
+    </div>,
+    document.body,
+  ) : null;
+
   return (
     <section className="page-shell tus-pearl-study-shell" aria-label="Hap Bilgi Kartları çalışma ekranı">
       <header className="tus-pearl-study-top card-surface">
@@ -781,46 +879,19 @@ function TusPearlStudyScreen({
         </div>
         {viewMode === 'study' ? (
           <div className="pearl-study-branch-filter pearl-study-branch-picker" aria-label="Hap kart branş filtresi">
-            <span>Branş</span>
             <div className="pearl-study-branch-menu-wrap">
               <button
+                ref={branchMenuTriggerRef}
                 type="button"
                 className="pearl-study-branch-menu-trigger"
                 onClick={() => setBranchMenuOpen((open) => !open)}
                 aria-haspopup="listbox"
                 aria-expanded={branchMenuOpen}
+                aria-controls="pearl-study-branch-menu"
               >
                 <strong>{branchFilter === 'all' ? 'Tüm branşlar' : getBranchName(branchFilter)}</strong>
                 <Icon name="ChevronDown" size={15} />
               </button>
-              {branchMenuOpen ? (
-                <div className="pearl-study-branch-menu" role="listbox" aria-label="Branş seç">
-                  {[{ id: 'all', shortName: 'Tüm branşlar' }, ...branchOptions].map((branch) => {
-                    const value = branch.id;
-                    const label = branch.shortName || branch.name;
-                    const active = branchFilter === value;
-                    return (
-                      <button
-                        key={value}
-                        type="button"
-                        role="option"
-                        aria-selected={active}
-                        className={active ? 'active' : ''}
-                        onClick={() => {
-                          setBranchFilter(value);
-                          setCurrentIndex(0);
-                          setFlipped(false);
-                          setBranchMenuOpen(false);
-                          lastDeckSignature.current = '';
-                        }}
-                      >
-                        <span>{label}</span>
-                        {active ? <Icon name="CheckCircle" size={15} /> : null}
-                      </button>
-                    );
-                  })}
-                </div>
-              ) : null}
             </div>
           </div>
         ) : null}
@@ -829,6 +900,7 @@ function TusPearlStudyScreen({
           <div><span style={{ width: `${viewMode === 'study' ? progress : 100}%` }} /></div>
         </div>
       </header>
+      {branchMenuPortal}
 
       {viewMode === 'catalogs' ? (
         <div className="tus-pearl-mode-switch card-surface compact-mode-switch" aria-label="Katalog yönetimi üst aksiyonları">
