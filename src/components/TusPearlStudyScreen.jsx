@@ -872,7 +872,7 @@ function TusPearlStudyScreen({
           <span className="pearl-study-back-icon" aria-hidden="true">
             <Icon name="ArrowRight" className="pearl-study-back-arrow" size={18} strokeWidth={2.35} />
           </span>
-          <span>Tekrar merkezi</span>
+          <span>Tekrar merkezine dön</span>
         </button>
         <div className="tus-pearl-study-title">
           <h1>{viewMode === 'catalogs' ? 'Kataloglarım' : 'Hap Bilgi Çalış'}</h1>

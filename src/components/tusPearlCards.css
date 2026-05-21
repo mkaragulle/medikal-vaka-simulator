@@ -11199,3 +11199,153 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
     width: 100% !important;
   }
 }
+
+
+/* V215 — compact Hap Bilgi Çalış header alignment fix */
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+  --pearl-study-header-height-v215: 58px;
+  grid-template-rows: var(--pearl-study-header-height-v215) minmax(0, 1fr) !important;
+  gap: 10px !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top,
+.tus-pearl-study-top {
+  min-height: var(--pearl-study-header-height-v215) !important;
+  height: var(--pearl-study-header-height-v215) !important;
+  max-height: var(--pearl-study-header-height-v215) !important;
+  grid-template-columns: minmax(260px, 330px) minmax(260px, 1fr) minmax(270px, 360px) minmax(130px, 180px) !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 7px 18px !important;
+  margin: 0 0 16px !important;
+  border-radius: 20px !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136,
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 {
+  width: 100% !important;
+  max-width: 330px !important;
+  min-width: 0 !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  padding: 0 16px 0 8px !important;
+  gap: 10px !important;
+  align-self: center !important;
+  justify-content: flex-start !important;
+  box-sizing: border-box !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon,
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > .pearl-study-back-icon {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  flex: 0 0 32px !important;
+}
+
+.tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > span:not([aria-hidden='true']),
+.tus-pearl-study-top .branch-back-v8.pearl-study-return-v136 > span:not([aria-hidden='true']) {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 13.5px !important;
+  line-height: 1.1 !important;
+  font-weight: 850 !important;
+  text-align: left !important;
+}
+
+.tus-pearl-study-title h1 {
+  font-size: clamp(24px, 2.1vw, 34px) !important;
+  line-height: 1 !important;
+}
+
+.pearl-study-branch-filter.pearl-study-branch-picker {
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
+  padding: 3px !important;
+  align-self: center !important;
+  justify-self: stretch !important;
+}
+
+.pearl-study-branch-menu-wrap {
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.pearl-study-branch-menu-trigger {
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  padding: 0 13px 0 16px !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) 18px !important;
+  align-items: center !important;
+  align-content: center !important;
+  gap: 8px !important;
+  box-sizing: border-box !important;
+}
+
+.pearl-study-branch-menu-trigger strong {
+  display: block !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: 13.5px !important;
+  line-height: 1.05 !important;
+  font-weight: 850 !important;
+}
+
+.pearl-study-branch-menu-trigger svg {
+  width: 14px !important;
+  height: 14px !important;
+}
+
+.tus-pearl-study-progress {
+  align-self: center !important;
+  justify-self: end !important;
+  gap: 6px !important;
+}
+
+.tus-pearl-study-progress strong {
+  font-size: 15px !important;
+  line-height: 1 !important;
+}
+
+.tus-pearl-study-progress > div {
+  height: 5px !important;
+  width: min(100%, 150px) !important;
+}
+
+@media (max-width: 1180px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top,
+  .tus-pearl-study-top {
+    grid-template-columns: minmax(230px, 290px) minmax(220px, 1fr) minmax(230px, 310px) minmax(110px, 150px) !important;
+    gap: 10px !important;
+    padding-inline: 14px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) {
+    grid-template-rows: auto minmax(0, 1fr) !important;
+  }
+
+  .tus-pearl-study-shell:has(.pearl-study-control-panel-v93) .tus-pearl-study-top,
+  .tus-pearl-study-top {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+    padding: 12px !important;
+  }
+}
