@@ -1,17 +1,11 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './index.css';
 import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
 import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
-import CasePlayer from './components/CasePlayer.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
-import KomiteModeWorkspace from './components/KomiteModeWorkspace.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
-import StudyReviewHub from './components/StudyReviewHub.jsx';
-import TusPearlStudyScreen from './components/TusPearlStudyScreen.jsx';
-import ExamResults from './components/ExamResults.jsx';
-import AIGeneratedQuestionView from './components/AIGeneratedQuestionView.jsx';
 import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
 import { branches } from './data/branches.js';
 import { cases, getCaseById } from './data/cases.js';
@@ -22,14 +16,21 @@ import { createAIQuestion } from './services/aiQuestionService.js';
 import { listAIQuestionBranches } from './utils/aiQuestionGenerator.js';
 import { isGoogleAuthConfigured, signInWithGoogle } from './services/googleAuth.js';
 
+const CasePlayer = lazy(() => import('./components/CasePlayer.jsx'));
+const KomiteModeWorkspace = lazy(() => import('./components/KomiteModeWorkspace.jsx'));
+const StudyReviewHub = lazy(() => import('./components/StudyReviewHub.jsx'));
+const TusPearlStudyScreen = lazy(() => import('./components/TusPearlStudyScreen.jsx'));
+const ExamResults = lazy(() => import('./components/ExamResults.jsx'));
+const AIGeneratedQuestionView = lazy(() => import('./components/AIGeneratedQuestionView.jsx'));
+
 const STATS_STORAGE_KEY = 'klinikiq-session-stats-v2';
 const EXAM_HISTORY_STORAGE_KEY = 'klinikiq-exam-history-v2';
 const THEME_STORAGE_KEY = 'klinikiq-theme-v1';
 const AI_PRACTICE_STATS_STORAGE_KEY = 'klinikiq-ai-practice-stats-v1';
 const AI_BRANCH_FILTER_STORAGE_KEY = 'klinikiq-ai-branch-filter-v1';
 const AI_DIFFICULTY_STORAGE_KEY = 'klinikiq-ai-difficulty-v1';
-const BRANCH_TRANSITION_MS = 920;
-const BRANCH_TRANSITION_FADE_MS = 180;
+const BRANCH_TRANSITION_MS = 360;
+const BRANCH_TRANSITION_FADE_MS = 120;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
@@ -240,6 +241,16 @@ function buildAIWrongTitle(clinicalCase = {}) {
   return target || `${branch} · AI TUS spot sorusu`;
 }
 
+
+
+function RouteFallback({ label = 'Arayüz hazırlanıyor…' }) {
+  return (
+    <section className="route-fallback card-surface" role="status" aria-live="polite">
+      <span className="route-fallback-spinner" aria-hidden="true" />
+      <strong>{label}</strong>
+    </section>
+  );
+}
 
 function App() {
   const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
@@ -1348,16 +1359,21 @@ function App() {
       ) : null}
 
       {productMode === 'komite' ? (
-        <KomiteModeWorkspace currentUser={currentUser} />
+        <Suspense fallback={<RouteFallback label="Komite arayüzü hazırlanıyor…" />}>
+          <KomiteModeWorkspace currentUser={currentUser} />
+        </Suspense>
       ) : pearlStudyState.active ? (
-        <TusPearlStudyScreen
-          initialFilter={pearlStudyState.filter}
-          initialBranchFilter={pearlStudyState.branchFilter}
-          initialCatalogId={pearlStudyState.catalogId}
-          onBack={resetExamToHome}
-        />
+        <Suspense fallback={<RouteFallback label="Hap kart arayüzü hazırlanıyor…" />}>
+          <TusPearlStudyScreen
+            initialFilter={pearlStudyState.filter}
+            initialBranchFilter={pearlStudyState.branchFilter}
+            initialCatalogId={pearlStudyState.catalogId}
+            onBack={resetExamToHome}
+          />
+        </Suspense>
       ) : aiPracticeState.active ? (
-        <AIGeneratedQuestionView
+        <Suspense fallback={<RouteFallback label="AI soru arayüzü hazırlanıyor…" />}>
+          <AIGeneratedQuestionView
           question={aiPracticeState.question}
           loading={aiPracticeState.loading}
           error={aiPracticeState.error}
@@ -1376,13 +1392,16 @@ function App() {
           tutorMode={tutorMode}
           onToggleTutorMode={handleToggleTutorMode}
           hardMode={hardMode}
-        />
+          />
+        </Suspense>
       ) : examState?.result ? (
-        <ExamResults
+        <Suspense fallback={<RouteFallback label="Sonuç ekranı hazırlanıyor…" />}>
+          <ExamResults
           result={examState.result}
           onRestart={() => startBlockExam(accessibleCases, isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı')}
-          onHome={resetExamToHome}
-        />
+            onHome={resetExamToHome}
+          />
+        </Suspense>
       ) : examState?.active && selectedCase ? (
         <section className="page-shell exam-active-shell stable-case-page-shell">
           <section className="exam-banner-card card-surface">
@@ -1397,21 +1416,23 @@ function App() {
           </section>
 
           <div className="case-route-transition" data-case-id={selectedCase.id}>
-            <CasePlayer
-              clinicalCase={selectedCase}
-              branch={resolveBranchById(selectedCase.branchId)}
-              mode="exam"
-              onRandomCase={noopRandomCase}
-              onSubmitAnswer={handleSubmitAnswer}
-              tutorMode={tutorMode}
-              onToggleTutorMode={handleToggleTutorMode}
-              hardMode={hardMode}
-              isSolved={solvedCaseIdSet.has(selectedCase.id)}
-              examMeta={activeExamCaseMeta}
-              onAdvanceExam={goToNextExamCase}
-              onPreviousExam={goToPreviousExamCase}
-              onFinishExam={finalizeExam}
-            />
+            <Suspense fallback={<RouteFallback label="Vaka ekranı hazırlanıyor…" />}>
+              <CasePlayer
+                clinicalCase={selectedCase}
+                branch={resolveBranchById(selectedCase.branchId)}
+                mode="exam"
+                onRandomCase={noopRandomCase}
+                onSubmitAnswer={handleSubmitAnswer}
+                tutorMode={tutorMode}
+                onToggleTutorMode={handleToggleTutorMode}
+                hardMode={hardMode}
+                isSolved={solvedCaseIdSet.has(selectedCase.id)}
+                examMeta={activeExamCaseMeta}
+                onAdvanceExam={goToNextExamCase}
+                onPreviousExam={goToPreviousExamCase}
+                onFinishExam={finalizeExam}
+              />
+            </Suspense>
           </div>
         </section>
       ) : selectedBranch && selectedCase ? (
@@ -1472,17 +1493,19 @@ function App() {
             </section>
 
             <div className="case-route-transition" data-case-id={selectedCase.id}>
-              <CasePlayer
-                clinicalCase={selectedCase}
-                branch={selectedBranch}
-                mode={mode}
-                onRandomCase={handleRandomCase}
-                onSubmitAnswer={handleSubmitAnswer}
-                tutorMode={tutorMode}
-                onToggleTutorMode={handleToggleTutorMode}
-                hardMode={hardMode}
-                isSolved={solvedCaseIdSet.has(selectedCase.id)}
-              />
+              <Suspense fallback={<RouteFallback label="Vaka ekranı hazırlanıyor…" />}>
+                <CasePlayer
+                  clinicalCase={selectedCase}
+                  branch={selectedBranch}
+                  mode={mode}
+                  onRandomCase={handleRandomCase}
+                  onSubmitAnswer={handleSubmitAnswer}
+                  tutorMode={tutorMode}
+                  onToggleTutorMode={handleToggleTutorMode}
+                  hardMode={hardMode}
+                  isSolved={solvedCaseIdSet.has(selectedCase.id)}
+                />
+              </Suspense>
             </div>
 
             <section className="bottom-case-browser card-surface">
@@ -1522,13 +1545,15 @@ function App() {
             examCount={examHistory.length}
           />
           <section id="wrong-answers-section" className="study-review-anchor section-anchor" aria-label="Yanlışlar ve hap bilgi tekrar merkezi">
-            <StudyReviewHub
-              wrongAnswers={visibleWrongAnswers}
-              onOpenCase={openWrongCase}
-              onRemoveCase={removeWrongAnswer}
-              onClearAll={clearWrongAnswers}
-              onOpenPearlStudy={openPearlStudy}
-            />
+            <Suspense fallback={<RouteFallback label="Tekrar merkezi hazırlanıyor…" />}>
+              <StudyReviewHub
+                wrongAnswers={visibleWrongAnswers}
+                onOpenCase={openWrongCase}
+                onRemoveCase={removeWrongAnswer}
+                onClearAll={clearWrongAnswers}
+                onOpenPearlStudy={openPearlStudy}
+              />
+            </Suspense>
           </section>
           <BranchSelector
             branches={visibleBranches}

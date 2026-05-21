@@ -1,3 +1,4 @@
+import { useLayoutEffect, useMemo, useRef } from 'react';
 import { getDifficultyMeta } from '../utils/scoring.js';
 import { Icon } from './ui.jsx';
 
@@ -9,8 +10,29 @@ function isSolvedCase(solvedCaseIds, caseId) {
 }
 
 function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical', solvedCaseIds = new Set() }) {
+  const listRef = useRef(null);
+  const horizontalResetKey = useMemo(() => {
+    if (layout !== 'horizontal') return '';
+    return cases
+      .map((clinicalCase) => `${clinicalCase.id}:${isSolvedCase(solvedCaseIds, clinicalCase.id) ? 'solved' : 'open'}`)
+      .join('|');
+  }, [cases, layout, solvedCaseIds]);
+
+  useLayoutEffect(() => {
+    if (layout !== 'horizontal') return undefined;
+    const listNode = listRef.current;
+    if (!listNode) return undefined;
+
+    listNode.scrollLeft = 0;
+    const frameId = window.requestAnimationFrame(() => {
+      if (listRef.current) listRef.current.scrollLeft = 0;
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, [horizontalResetKey, layout]);
+
   return (
-    <div className={layout === 'horizontal' ? 'case-list horizontal-case-list' : 'case-list'} aria-label="Olgu listesi">
+    <div ref={listRef} className={layout === 'horizontal' ? 'case-list horizontal-case-list' : 'case-list'} aria-label="Olgu listesi">
       {cases.map((clinicalCase) => {
         const difficultyMeta = getDifficultyMeta(clinicalCase.difficulty);
         const solved = isSolvedCase(solvedCaseIds, clinicalCase.id);

@@ -47151,3 +47151,77 @@ html[data-theme="dark"] .case-list-item.is-solved-case,
     linear-gradient(180deg, color-mix(in srgb, var(--surface-1) 82%, rgba(255,255,255,.06) 18%), var(--surface-1)) !important;
   border-color: color-mix(in srgb, var(--border-subtle) 76%, rgba(255,255,255,.22) 24%) !important;
 }
+
+/* V199 performance pass: reduce repaint-heavy effects without changing features */
+.route-fallback {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  padding: 28px;
+  color: var(--text-muted, #64748b);
+}
+
+.route-fallback-spinner {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 3px solid rgba(148, 163, 184, 0.28);
+  border-top-color: rgba(15, 23, 42, 0.68);
+  animation: klinikiq-soft-spin 0.8s linear infinite;
+}
+
+@keyframes klinikiq-soft-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Keep premium look but avoid expensive continuous glow/blur on large grids. */
+.branch-card,
+.case-list-item,
+.card-surface,
+.tus-pearl-hub-panel,
+.tus-pearl-focus-card {
+  will-change: auto;
+  transform: translateZ(0);
+}
+
+.branch-card:not(.is-launching) .branch-launch-wave,
+.branch-card:not(.is-launching)::before,
+.branch-card:not(.is-launching)::after,
+.nav-brand-mark-pulse::before,
+.nav-brand-mark-pulse::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+}
+
+.branch-route-overlay {
+  contain: layout paint style;
+}
+
+.case-route-transition,
+.bottom-case-browser,
+.branch-grid,
+.study-review-hub,
+.tus-pearl-study-shell {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 720px;
+}
+
+.horizontal-case-list {
+  overscroll-behavior-x: contain;
+  scroll-behavior: auto;
+  contain: layout paint;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .branch-route-overlay,
+  .branch-route-ring,
+  .branch-route-glow,
+  .branch-card,
+  .case-list-item,
+  .tus-pearl-focus-card,
+  .route-fallback-spinner {
+    animation: none !important;
+    transition-duration: 0.001ms !important;
+  }
+}
