@@ -19,7 +19,7 @@ function CaseList({ cases, selectedCaseId, onSelectCase, layout = 'vertical' }) 
           >
             <div className="case-list-topline">
               <small className="case-list-meta-text">{difficultyMeta.points} puan</small>
-              <small className={`difficulty-badge ${difficultyMeta.tone}`}>{difficultyMeta.label}</small>
+              <small className={`difficulty-badge difficulty-tag-pill ${difficultyMeta.tone}`}>{difficultyMeta.label}</small>
             </div>
             <strong>{clinicalCase.title}</strong>
             <span className="case-list-footer" aria-hidden="true"><span>Olguyu aç</span><Icon name="ArrowRight" /></span>

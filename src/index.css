@@ -46869,3 +46869,243 @@ body:not(.klinikiq-auth-lock) .case-page-shell .branch-header-v8 {
     max-width: none !important;
   }
 }
+
+/* V190 — Branch detail difficulty filter */
+.branch-difficulty-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 40px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: color-mix(in srgb, var(--surface-2) 82%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 42%, transparent);
+  white-space: nowrap;
+}
+
+.branch-difficulty-filter button {
+  appearance: none;
+  border: 0;
+  min-height: 31px;
+  padding: 0 11px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: -0.01em;
+  cursor: pointer;
+  transition: background .16s ease, color .16s ease, box-shadow .16s ease, opacity .16s ease;
+}
+
+.branch-difficulty-filter button:hover:not(:disabled) {
+  color: var(--text-primary);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+}
+
+.branch-difficulty-filter button.active {
+  color: var(--accent-strong, var(--accent));
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface-1) 74%);
+  box-shadow: 0 6px 16px color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.branch-difficulty-filter button:disabled {
+  opacity: .38;
+  cursor: not-allowed;
+}
+
+html[data-theme="dark"] .branch-difficulty-filter,
+.app-shell[data-theme="dark"] .branch-difficulty-filter {
+  box-shadow: inset 0 1px 0 color-mix(in srgb, #fff 8%, transparent);
+}
+
+@media (max-width: 1100px) {
+  .branch-header-v8 {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .branch-inline-actions {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .branch-difficulty-filter {
+    max-width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .branch-difficulty-filter::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   V191 — Unified soft difficulty pills for branch filters and case tags
+   -------------------------------------------------------------------------- */
+:where(.difficulty-tag-pill, .branch-difficulty-filter .difficulty-filter-pill) {
+  --diff-bg: color-mix(in srgb, var(--surface-2) 86%, transparent);
+  --diff-bg-strong: color-mix(in srgb, var(--surface-1) 90%, transparent);
+  --diff-border: var(--border-subtle);
+  --diff-text: var(--text-secondary);
+  --diff-dot: var(--text-muted);
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  width: max-content !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--diff-border) !important;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--diff-bg) 86%, #fff 14%), var(--diff-bg)) !important;
+  color: var(--diff-text) !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 52%, transparent),
+    0 8px 22px color-mix(in srgb, var(--diff-dot) 10%, transparent) !important;
+}
+
+:where(.difficulty-tag-pill, .branch-difficulty-filter .difficulty-filter-pill)::before {
+  content: '' !important;
+  display: inline-block !important;
+  width: 10px !important;
+  height: 10px !important;
+  flex: 0 0 10px !important;
+  border-radius: 999px !important;
+  background: var(--diff-dot) !important;
+  opacity: .95 !important;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--diff-dot) 13%, transparent) !important;
+}
+
+.case-hero-meta.difficulty-tag-pill {
+  min-height: 42px !important;
+  padding: 0 16px !important;
+  font-size: 14.5px !important;
+}
+
+.case-hero-meta.difficulty-tag-pill::before {
+  width: 12px !important;
+  height: 12px !important;
+  flex-basis: 12px !important;
+}
+
+.difficulty-badge.difficulty-tag-pill {
+  min-height: 30px !important;
+  padding: 0 12px !important;
+  font-size: 12px !important;
+}
+
+.branch-difficulty-filter {
+  gap: 7px !important;
+  min-height: 48px !important;
+  padding: 5px !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--surface-1) 72%, #eef8f7 28%) !important;
+  border-color: color-mix(in srgb, var(--border-subtle) 72%, #d7ece9 28%) !important;
+}
+
+.branch-difficulty-filter .difficulty-filter-pill {
+  appearance: none !important;
+  min-height: 38px !important;
+  padding: 0 14px !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease, background .16s ease, color .16s ease, opacity .16s ease !important;
+}
+
+.branch-difficulty-filter .difficulty-filter-pill:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 58%, transparent),
+    0 10px 22px color-mix(in srgb, var(--diff-dot) 16%, transparent) !important;
+}
+
+.branch-difficulty-filter .difficulty-filter-pill.active {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--diff-bg-strong) 78%, #fff 22%), var(--diff-bg)) !important;
+  border-color: color-mix(in srgb, var(--diff-dot) 42%, var(--diff-border) 58%) !important;
+  color: var(--diff-text) !important;
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, #fff 62%, transparent),
+    0 10px 26px color-mix(in srgb, var(--diff-dot) 20%, transparent) !important;
+}
+
+.branch-difficulty-filter .difficulty-filter-pill:disabled {
+  opacity: .38 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+.branch-difficulty-filter .difficulty-all {
+  --diff-bg: color-mix(in srgb, var(--surface-2) 86%, #f8fafc 14%);
+  --diff-bg-strong: color-mix(in srgb, var(--surface-1) 84%, #f8fafc 16%);
+  --diff-border: color-mix(in srgb, var(--border-subtle) 86%, #cbd5e1 14%);
+  --diff-text: color-mix(in srgb, var(--text-primary) 82%, #64748b 18%);
+  --diff-dot: #64748b;
+}
+
+.branch-difficulty-filter .difficulty-all::before {
+  display: none !important;
+}
+
+:where(.difficulty-kolay, .difficulty-badge.foundation, .case-hero-meta.foundation) {
+  --diff-bg: #edf9ff;
+  --diff-bg-strong: #e5f5ff;
+  --diff-border: #b7def3;
+  --diff-text: #16769d;
+  --diff-dot: #36a6d5;
+}
+
+:where(.difficulty-orta, .difficulty-badge.intermediate, .case-hero-meta.intermediate) {
+  --diff-bg: #eaf7f4;
+  --diff-bg-strong: #dff2ef;
+  --diff-border: #acd8d2;
+  --diff-text: #13756f;
+  --diff-dot: #2e9b94;
+}
+
+:where(.difficulty-zor, .difficulty-badge.advanced, .case-hero-meta.advanced) {
+  --diff-bg: #f3edff;
+  --diff-bg-strong: #eee5ff;
+  --diff-border: #c7b3ee;
+  --diff-text: #6b45c7;
+  --diff-dot: #7c52d9;
+}
+
+:where(.difficulty-acil, .difficulty-badge.urgent, .difficulty-badge.critical, .case-hero-meta.urgent, .case-hero-meta.critical) {
+  --diff-bg: #fff0f3;
+  --diff-bg-strong: #ffe8ed;
+  --diff-border: #ffc1cd;
+  --diff-text: #c93551;
+  --diff-dot: #f05c73;
+}
+
+html[data-theme="dark"] :where(.difficulty-tag-pill, .branch-difficulty-filter .difficulty-filter-pill),
+.app-shell[data-theme="dark"] :where(.difficulty-tag-pill, .branch-difficulty-filter .difficulty-filter-pill) {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--diff-bg) 76%, rgba(255,255,255,.08) 24%), color-mix(in srgb, var(--diff-bg) 78%, rgba(2,8,16,.68) 22%)) !important;
+  border-color: color-mix(in srgb, var(--diff-border) 78%, rgba(255,255,255,.14) 22%) !important;
+  color: color-mix(in srgb, var(--diff-text) 76%, #fff 24%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.08),
+    0 8px 20px rgba(2,8,16,.18) !important;
+}
+
+@media (max-width: 760px) {
+  .branch-difficulty-filter .difficulty-filter-pill {
+    min-height: 36px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+  }
+
+  .case-hero-meta.difficulty-tag-pill {
+    min-height: 38px !important;
+    padding: 0 14px !important;
+    font-size: 13px !important;
+  }
+}

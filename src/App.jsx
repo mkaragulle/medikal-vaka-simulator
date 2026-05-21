@@ -33,6 +33,7 @@ const BRANCH_TRANSITION_FADE_MS = 180;
 const USERS_STORAGE_KEY = 'klinikiq-auth-users-v1';
 const CURRENT_USER_STORAGE_KEY = 'klinikiq-auth-current-user-v1';
 const PRODUCT_MODE_STORAGE_KEY = 'klinikiq-product-mode-v1';
+const BRANCH_DIFFICULTY_OPTIONS = ['Kolay', 'Orta', 'Zor', 'Acil'];
 
 const DEMO_CASE_IDS = [
   'tus-spot-forensic-stab-wound-001',
@@ -185,6 +186,30 @@ function compactText(value = '', limit = 150) {
   return `${text.slice(0, limit).replace(/\s+\S*$/u, '').trim()}…`;
 }
 
+
+function normalizeBranchDifficulty(value = '') {
+  const normalized = String(value || '').toLocaleLowerCase('tr');
+  if (normalized.includes('acil') || normalized.includes('urgent')) return 'Acil';
+  if (normalized.includes('zor') || normalized.includes('hard') || normalized.includes('kritik')) return 'Zor';
+  if (normalized.includes('kolay') || normalized.includes('easy') || normalized.includes('temel')) return 'Kolay';
+  if (normalized.includes('orta') || normalized.includes('medium')) return 'Orta';
+  return 'Orta';
+}
+
+function matchesBranchDifficulty(clinicalCase = {}, filter = 'all') {
+  if (!filter || filter === 'all') return true;
+  return normalizeBranchDifficulty(clinicalCase.difficultyTag || clinicalCase.difficulty) === filter;
+}
+
+function buildDifficultyCountsForCases(caseItems = []) {
+  const counts = Object.fromEntries(BRANCH_DIFFICULTY_OPTIONS.map((option) => [option, 0]));
+  caseItems.forEach((clinicalCase) => {
+    const level = normalizeBranchDifficulty(clinicalCase.difficultyTag || clinicalCase.difficulty);
+    if (Object.prototype.hasOwnProperty.call(counts, level)) counts[level] += 1;
+  });
+  return counts;
+}
+
 function buildAIWrongQuestionPreview(clinicalCase = {}) {
   return compactText(
     clinicalCase.question
@@ -208,6 +233,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(() => sanitizeUser(loadCurrentUser()));
   const [selectedBranchId, setSelectedBranchId] = useState(null);
   const [selectedCaseId, setSelectedCaseId] = useState(null);
+  const [branchDifficultyFilter, setBranchDifficultyFilter] = useState('all');
   const [mode, setMode] = useState('study');
   const [hardMode, setHardMode] = useState(false);
   const [theme, setTheme] = useState(() => loadStoredValue(THEME_STORAGE_KEY, 'light'));
@@ -258,16 +284,30 @@ function App() {
     [selectedBranchId, accessibleCaseIndex],
   );
 
+  const branchDifficultyCounts = useMemo(
+    () => buildDifficultyCountsForCases(branchCases),
+    [branchCases],
+  );
+
+  const filteredBranchCases = useMemo(
+    () => branchCases.filter((clinicalCase) => matchesBranchDifficulty(clinicalCase, branchDifficultyFilter)),
+    [branchCases, branchDifficultyFilter],
+  );
+
+  const activeBranchCasePool = filteredBranchCases.length ? filteredBranchCases : branchCases;
+
   const selectedCase = useMemo(() => {
     if (examState?.active) {
       const examCaseId = examState.caseIds[examState.currentIndex];
       if (!accessibleCaseIds.has(examCaseId)) return accessibleCases[0] ?? null;
       return accessibleCaseIndex.byId.get(examCaseId) ?? accessibleCases[0] ?? null;
     }
-    if (!selectedCaseId) return branchCases[0] ?? null;
-    if (!accessibleCaseIds.has(selectedCaseId)) return branchCases[0] ?? null;
-    return accessibleCaseIndex.byId.get(selectedCaseId) ?? branchCases[0] ?? null;
-  }, [selectedCaseId, branchCases, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
+    if (!selectedCaseId) return activeBranchCasePool[0] ?? null;
+    if (!accessibleCaseIds.has(selectedCaseId)) return activeBranchCasePool[0] ?? null;
+    const candidate = accessibleCaseIndex.byId.get(selectedCaseId);
+    if (candidate && activeBranchCasePool.some((clinicalCase) => clinicalCase.id === candidate.id)) return candidate;
+    return activeBranchCasePool[0] ?? null;
+  }, [selectedCaseId, activeBranchCasePool, examState, accessibleCaseIds, accessibleCases, accessibleCaseIndex]);
 
   const persistCurrentUser = (patch) => {
     setCurrentUser((current) => {
@@ -633,10 +673,10 @@ function App() {
       setSelectedCaseId(null);
       return;
     }
-    if (!branchCases.some((clinicalCase) => clinicalCase.id === selectedCaseId)) {
-      setSelectedCaseId(branchCases[0]?.id ?? null);
+    if (!activeBranchCasePool.some((clinicalCase) => clinicalCase.id === selectedCaseId)) {
+      setSelectedCaseId(activeBranchCasePool[0]?.id ?? null);
     }
-  }, [selectedBranchId, branchCases, selectedCaseId, visibleBranches]);
+  }, [selectedBranchId, activeBranchCasePool, selectedCaseId, visibleBranches]);
 
   useEffect(() => {
     if (!examState?.active) return undefined;
@@ -745,6 +785,7 @@ function App() {
     });
 
     const selectTimer = window.setTimeout(() => {
+      setBranchDifficultyFilter('all');
       setSelectedBranchId(branchId);
       setSelectedCaseId(branchPool[0]?.id ?? null);
       setIsCaseSidebarOpen(true);
@@ -766,11 +807,22 @@ function App() {
   }, [accessibleCaseIds]);
 
   const handleRandomCase = useCallback(() => {
-    if (!branchCases.length) return;
-    const nextCase = pickRandom(branchCases, selectedCaseId) ?? branchCases[0];
+    if (!activeBranchCasePool.length) return;
+    const nextCase = pickRandom(activeBranchCasePool, selectedCaseId) ?? activeBranchCasePool[0];
     setSelectedCaseId(nextCase.id);
     scrollToTopSmart({ smooth: false });
-  }, [branchCases, selectedCaseId]);
+  }, [activeBranchCasePool, selectedCaseId]);
+
+
+  const handleBranchDifficultyFilterChange = useCallback((nextFilter) => {
+    if (nextFilter !== 'all') {
+      const nextCount = branchDifficultyCounts[nextFilter] || 0;
+      if (nextCount < 1) return;
+    }
+    const normalizedFilter = nextFilter === 'all' ? 'all' : nextFilter;
+    setBranchDifficultyFilter((current) => current === normalizedFilter ? 'all' : normalizedFilter);
+    window.setTimeout(() => scrollToTopSmart({ smooth: false }), 0);
+  }, [branchDifficultyCounts]);
 
   const handleSubmitAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
     const existingExamAnswer = examState?.active ? examState.answers?.[clinicalCase.id] : null;
@@ -1328,7 +1380,7 @@ function App() {
           <section className="content-layout full-width-content-layout">
             <section className="branch-header-v8 card-surface">
               <div className="branch-header-v8-main">
-                <button className="branch-back-v8" type="button" onClick={() => setSelectedBranchId(null)}>
+                <button className="branch-back-v8" type="button" onClick={() => { setSelectedBranchId(null); setBranchDifficultyFilter('all'); }}>
                   <span aria-hidden="true">←</span>
                   <span>Branşlara dön</span>
                 </button>
@@ -1338,8 +1390,43 @@ function App() {
                 </div>
               </div>
               <div className="branch-inline-actions">
-                <span className="branch-case-count">{branchCases.length} olgu</span>
-                <button type="button" className="btn btn-primary" onClick={() => startBlockExam(branchCases, isDemoUser ? DEMO_EXAM_TITLE : `${selectedBranch.name} blok sınavı`)}>
+                <div className="branch-difficulty-filter" role="group" aria-label="Zorluk filtresi">
+                  <button
+                    type="button"
+                    className={['difficulty-filter-pill', 'difficulty-all', branchDifficultyFilter === 'all' ? 'active' : ''].filter(Boolean).join(' ')}
+                    onClick={() => handleBranchDifficultyFilterChange('all')}
+                    aria-pressed={branchDifficultyFilter === 'all'}
+                  >
+                    Tümü
+                  </button>
+                  {BRANCH_DIFFICULTY_OPTIONS.map((difficultyOption) => {
+                    const optionCount = branchDifficultyCounts[difficultyOption] || 0;
+                    const disabled = optionCount < 1;
+                    return (
+                      <button
+                        key={difficultyOption}
+                        type="button"
+                        className={[
+                          'difficulty-filter-pill',
+                          `difficulty-${difficultyOption.toLocaleLowerCase('tr')}`,
+                          branchDifficultyFilter === difficultyOption ? 'active' : '',
+                        ].filter(Boolean).join(' ')}
+                        onClick={() => handleBranchDifficultyFilterChange(difficultyOption)}
+                        disabled={disabled}
+                        aria-pressed={branchDifficultyFilter === difficultyOption}
+                        title={`${difficultyOption}: ${optionCount} olgu`}
+                      >
+                        {difficultyOption}
+                      </button>
+                    );
+                  })}
+                </div>
+                <span className="branch-case-count">
+                  {branchDifficultyFilter === 'all'
+                    ? `${branchCases.length} olgu`
+                    : `${activeBranchCasePool.length}/${branchCases.length} olgu`}
+                </span>
+                <button type="button" className="btn btn-primary" onClick={() => startBlockExam(activeBranchCasePool, isDemoUser ? DEMO_EXAM_TITLE : `${selectedBranch.name} blok sınavı`)} disabled={!activeBranchCasePool.length}>
                   {isDemoUser ? 'Demo bloku aç' : 'Branş bloku oluştur'}
                 </button>
               </div>
@@ -1363,9 +1450,9 @@ function App() {
                 <div>
                   <h3>Diğer olgular</h3>
                 </div>
-                <span className="bottom-case-browser-count">{branchCases.length} olgu</span>
+                <span className="bottom-case-browser-count">{activeBranchCasePool.length} olgu</span>
               </div>
-              <CaseList cases={branchCases} selectedCaseId={selectedCase.id} onSelectCase={handleSelectCase} layout="horizontal" />
+              <CaseList cases={activeBranchCasePool} selectedCaseId={selectedCase.id} onSelectCase={handleSelectCase} layout="horizontal" />
             </section>
           </section>
         </section>

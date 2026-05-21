@@ -1,0 +1,100 @@
+{
+  "new_count": 30,
+  "total": 300,
+  "branch_counts": {
+    "Acil Tıp / İmmünoloji": 1,
+    "Dahiliye / Kardiyoloji": 1,
+    "Pediatri / Enfeksiyon Hastalıkları": 1,
+    "Kadın Hastalıkları ve Doğum": 22,
+    "Nöroloji": 3,
+    "Genel Cerrahi": 21,
+    "Farmakoloji": 1,
+    "Patoloji / Gastroenteroloji": 1,
+    "Anatomi / Ortopedi": 1,
+    "Biyokimya / Metabolizma": 1,
+    "Dahiliye / Endokrinoloji": 6,
+    "Pediatri / Çocuk Cerrahisi": 1,
+    "Ortopedi / Enfeksiyon Hastalıkları": 1,
+    "Dahiliye / Hematoloji": 1,
+    "Üroloji": 1,
+    "Dahiliye / Romatoloji": 1,
+    "Dahiliye / Nefroloji": 1,
+    "Psikiyatri / Farmakoloji": 1,
+    "Enfeksiyon Hastalıkları / Gastroenteroloji": 1,
+    "Pediatri / Neonatoloji": 2,
+    "Enfeksiyon Hastalıkları / Kardiyoloji": 2,
+    "Farmakoloji / Acil Tıp": 2,
+    "Pediatri / Nefroloji / Patoloji": 1,
+    "Anatomi / Genel Cerrahi": 1,
+    "Kardiyoloji / Acil Tıp": 1,
+    "Pediatri / Nefroloji": 1,
+    "Nöroloji / İmmünoloji": 1,
+    "Pediatri / Acil Tıp": 1,
+    "Anatomi / Kadın Hastalıkları ve Doğum": 1,
+    "Hematoloji": 2,
+    "Acil Tıp / Toksikoloji": 1,
+    "Enfeksiyon Hastalıkları": 1,
+    "Genel Cerrahi / Gastroenteroloji": 1,
+    "Üroloji / Nefroloji": 1,
+    "Kardiyoloji": 1,
+    "Anatomi": 20,
+    "Fizyoloji": 24,
+    "Histoloji ve Embriyoloji": 23,
+    "Tıbbi Biyokimya": 23,
+    "Tıbbi Mikrobiyoloji": 24,
+    "Tıbbi Patoloji": 21,
+    "Tıbbi Farmakoloji": 19,
+    "İç Hastalıkları": 2,
+    "Küçük Stajlar / Dermatoloji": 1,
+    "Çocuk Sağlığı ve Hastalıkları": 44,
+    "Küçük Stajlar / Göz Hastalıkları": 1,
+    "Küçük Stajlar": 11
+  },
+  "new_branch_counts": {
+    "Anatomi": 3,
+    "Fizyoloji": 3,
+    "Histoloji ve Embriyoloji": 3,
+    "Tıbbi Biyokimya": 3,
+    "Tıbbi Mikrobiyoloji": 3,
+    "Tıbbi Patoloji": 3,
+    "Tıbbi Farmakoloji": 3,
+    "Genel Cerrahi": 3,
+    "Kadın Hastalıkları ve Doğum": 3,
+    "Küçük Stajlar": 3
+  },
+  "validation_errors": [],
+  "checks": {
+    "src/data/cases.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "src/utils/tusLanguageStandard.js": {
+      "returncode": 0,
+      "stderr": ""
+    },
+    "sanitized_import": {
+      "returncode": 0,
+      "stdout": "{\"rawCases\":300,\"cases\":300}",
+      "stderr": ""
+    },
+    "npm_build": {
+      "returncode": 127,
+      "stdout": "\n> klinikiq@1.0.0 build\n> vite build --minify false\n\n",
+      "stderr": "sh: 1: vite: not found\n"
+    }
+  },
+  "branch_id_counts_human": {
+    "Küçük Stajlar": 22,
+    "İç Hastalıkları": 21,
+    "Çocuk Sağlığı ve Hastalıkları": 51,
+    "Kadın Hastalıkları ve Doğum": 22,
+    "Genel Cerrahi": 22,
+    "Tıbbi Farmakoloji": 22,
+    "Tıbbi Patoloji": 22,
+    "Anatomi": 23,
+    "Tıbbi Biyokimya": 24,
+    "Fizyoloji": 24,
+    "Histoloji ve Embriyoloji": 23,
+    "Tıbbi Mikrobiyoloji": 24
+  }
+}

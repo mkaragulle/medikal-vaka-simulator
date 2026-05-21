@@ -84,6 +84,41 @@ function normalizeItem(value, key = '') {
   return value;
 }
 
+
+
+function normalizeOptionMapKeys(map = {}) {
+  if (!map || typeof map !== 'object' || Array.isArray(map)) return map;
+  return Object.fromEntries(
+    Object.entries(map).map(([key, value]) => [normalizeTusLanguageText(key), value])
+  );
+}
+
+function alignOptionFeedbackMaps(caseItem = {}) {
+  const diagnosis = caseItem.diagnosis;
+  if (!diagnosis || typeof diagnosis !== 'object') return caseItem;
+  const mapFields = [
+    'optionComparison',
+    'optionFeedback',
+    'optionRationales',
+    'feedbackByOption',
+    'whyWrong',
+    'optionComparisonByText',
+  ];
+  for (const field of mapFields) {
+    if (diagnosis[field]) diagnosis[field] = normalizeOptionMapKeys(diagnosis[field]);
+  }
+  const feedback = diagnosis.answerFeedback;
+  if (feedback && typeof feedback === 'object') {
+    for (const field of mapFields) {
+      if (feedback[field]) feedback[field] = normalizeOptionMapKeys(feedback[field]);
+    }
+    if (feedback.differentialComparison) {
+      feedback.differentialComparison = normalizeOptionMapKeys(feedback.differentialComparison);
+    }
+  }
+  return caseItem;
+}
+
 function normalizeManagementSteps(steps = []) {
   if (!Array.isArray(steps)) return steps;
   let treatmentIndex = 0;
@@ -102,7 +137,7 @@ function normalizeManagementSteps(steps = []) {
 }
 
 export function applyTusLanguageStandardToCase(caseItem = {}) {
-  const normalized = normalizeItem(caseItem);
+  const normalized = alignOptionFeedbackMaps(normalizeItem(caseItem));
   const feedback = normalized.diagnosis?.answerFeedback;
   if (feedback) {
     const managementSteps = normalizeManagementSteps(feedback.managementSteps || feedback.management || []);

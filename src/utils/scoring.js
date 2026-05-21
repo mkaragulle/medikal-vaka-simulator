@@ -4,33 +4,23 @@ export function getDifficultyMeta(difficulty = '') {
   if (normalized.includes('kritik')) {
     return { label: 'Kritik', points: 20, tone: 'critical' };
   }
-  if (normalized.includes('zor') && normalized.includes('orta')) {
-    return { label: 'Orta-zor', points: 18, tone: 'advanced' };
+  if (normalized.includes('acil') || normalized.includes('urgent')) {
+    return { label: 'Acil', points: 20, tone: 'urgent' };
   }
-  if (normalized.startsWith('zor')) {
+  if (normalized.includes('zor') && normalized.includes('orta')) {
     return { label: 'Zor', points: 19, tone: 'advanced' };
   }
-  if (normalized.includes('acil')) {
-    return { label: 'Acil', points: 17, tone: 'urgent' };
-  }
-  if (normalized.includes('temel-orta')) {
-    return { label: 'Temel-orta', points: 12, tone: 'intermediate' };
-  }
-  if (normalized.startsWith('temel')) {
-    return { label: 'Temel', points: 10, tone: 'foundation' };
-  }
-  if (normalized.includes('kolay') || normalized.includes('easy')) {
-    return { label: 'Kolay', points: 10, tone: 'foundation' };
-  }
-  if (normalized.includes('orta') || normalized.includes('medium')) {
-    return { label: 'Orta', points: 15, tone: 'intermediate' };
-  }
-
   if (normalized.includes('zor') || normalized.includes('hard')) {
     return { label: 'Zor', points: 19, tone: 'advanced' };
   }
+  if (normalized.includes('kolay') || normalized.includes('easy') || normalized.startsWith('temel')) {
+    return { label: 'Kolay', points: 10, tone: 'foundation' };
+  }
+  if (normalized.includes('orta') || normalized.includes('medium') || normalized.includes('temel-orta')) {
+    return { label: 'Orta', points: 15, tone: 'intermediate' };
+  }
 
-  return { label: 'Standart', points: 14, tone: 'intermediate' };
+  return { label: 'Orta', points: 15, tone: 'intermediate' };
 }
 
 export function scoreAttempt(difficulty, isCorrect, currentStreak = 0) {

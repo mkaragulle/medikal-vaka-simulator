@@ -715,7 +715,7 @@ function CasePlayer({
             <div className="case-hero-topline">
               <span className="case-eyebrow">{heroEyebrow}</span>
               <div className="qbank-actions">
-                <span className={`case-hero-meta ${difficultyMeta.tone}`}>{difficultyMeta.label} · {difficultyMeta.points}p</span>
+                <span className={`case-hero-meta difficulty-tag-pill ${difficultyMeta.tone}`}>{difficultyMeta.label} · {difficultyMeta.points}p</span>
                 {!examMeta?.active ? (
                   <button className="btn btn-secondary compact case-refresh-btn" type="button" onClick={onRandomCase}>{heroActionLabel}</button>
                 ) : null}
