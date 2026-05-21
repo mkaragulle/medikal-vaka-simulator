@@ -47534,3 +47534,22 @@ body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list::-webkit-sc
   margin-inline: 2px !important;
   border-radius: 999px !important;
 }
+
+
+/* V210 — show one more item in wrong answers panel without increasing visual clutter */
+body:not(.klinikiq-auth-lock) .wrong-answers-panel .wrong-answers-list {
+  gap: 8px;
+}
+
+body:not(.klinikiq-auth-lock) .wrong-answers-panel .wrong-answer-card {
+  padding: 12px 14px;
+  min-height: 76px;
+}
+
+body:not(.klinikiq-auth-lock) .wrong-answers-panel .wrong-answer-card h3 {
+  line-height: 1.28;
+}
+
+body:not(.klinikiq-auth-lock) .wrong-answers-panel .wrong-answer-more-row {
+  margin-top: 2px;
+}

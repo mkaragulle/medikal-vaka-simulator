@@ -426,6 +426,7 @@ function TusPearlStudyScreen({
   const [studySession, setStudySession] = useState(null);
   const [editorState, setEditorState] = useState({ open: false, mode: 'create', card: null, defaultCatalogId: '' });
   const [catalogMenuOpen, setCatalogMenuOpen] = useState(false);
+  const [branchMenuOpen, setBranchMenuOpen] = useState(false);
   const pointerStartX = useRef(null);
   const lastDeckSignature = useRef('');
 
@@ -555,6 +556,7 @@ function TusPearlStudyScreen({
 
   useEffect(() => {
     setCatalogMenuOpen(false);
+    setBranchMenuOpen(false);
   }, [activeCard?.id, viewMode]);
 
   const moveCard = useCallback((direction) => {
@@ -778,23 +780,49 @@ function TusPearlStudyScreen({
           <h1>{viewMode === 'catalogs' ? 'Kataloglarım' : 'Hap Bilgi Çalış'}</h1>
         </div>
         {viewMode === 'study' ? (
-          <label className="pearl-study-branch-filter" aria-label="Hap kart branş filtresi">
+          <div className="pearl-study-branch-filter pearl-study-branch-picker" aria-label="Hap kart branş filtresi">
             <span>Branş</span>
-            <select
-              value={branchFilter}
-              onChange={(event) => {
-                setBranchFilter(event.target.value);
-                setCurrentIndex(0);
-                setFlipped(false);
-                lastDeckSignature.current = '';
-              }}
-            >
-              <option value="all">Tüm branşlar</option>
-              {branchOptions.map((branch) => (
-                <option key={branch.id} value={branch.id}>{branch.shortName || branch.name}</option>
-              ))}
-            </select>
-          </label>
+            <div className="pearl-study-branch-menu-wrap">
+              <button
+                type="button"
+                className="pearl-study-branch-menu-trigger"
+                onClick={() => setBranchMenuOpen((open) => !open)}
+                aria-haspopup="listbox"
+                aria-expanded={branchMenuOpen}
+              >
+                <strong>{branchFilter === 'all' ? 'Tüm branşlar' : getBranchName(branchFilter)}</strong>
+                <Icon name="ChevronDown" size={15} />
+              </button>
+              {branchMenuOpen ? (
+                <div className="pearl-study-branch-menu" role="listbox" aria-label="Branş seç">
+                  {[{ id: 'all', shortName: 'Tüm branşlar' }, ...branchOptions].map((branch) => {
+                    const value = branch.id;
+                    const label = branch.shortName || branch.name;
+                    const active = branchFilter === value;
+                    return (
+                      <button
+                        key={value}
+                        type="button"
+                        role="option"
+                        aria-selected={active}
+                        className={active ? 'active' : ''}
+                        onClick={() => {
+                          setBranchFilter(value);
+                          setCurrentIndex(0);
+                          setFlipped(false);
+                          setBranchMenuOpen(false);
+                          lastDeckSignature.current = '';
+                        }}
+                      >
+                        <span>{label}</span>
+                        {active ? <Icon name="CheckCircle" size={15} /> : null}
+                      </button>
+                    );
+                  })}
+                </div>
+              ) : null}
+            </div>
+          </div>
         ) : null}
         <div className="tus-pearl-study-progress" aria-label="Kart ilerlemesi">
           <strong>{viewMode === 'study' ? `${sessionCards.length ? currentIndex + 1 : 0} / ${sessionCards.length}` : `${pearlState.customCatalogs.length} katalog`}</strong>
