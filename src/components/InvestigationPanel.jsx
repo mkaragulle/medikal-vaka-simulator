@@ -663,7 +663,6 @@ function InvestigationPanel({
       <div className="panel-title-row compact investigation-order-head refined-investigation-order-head smart-investigation-order-head">
         <div>
           <h2>Objektif Veri / Tetkik</h2>
-          <p><GlossaryText text="Laboratuvar, EKG, görüntüleme, kültür, patoloji ve diğer teknik inceleme sonuçları." enabled={mode !== 'exam' && !hardMode} /></p>
         </div>
         <span className="ordered-count-chip refined-count-chip smart-count-chip">{orderedInvestigationIds.length} istem seçildi</span>
       </div>

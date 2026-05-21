@@ -47225,3 +47225,92 @@ html[data-theme="dark"] .case-list-item.is-solved-case,
     transition-duration: 0.001ms !important;
   }
 }
+
+/* V200 branch case cleanup: remove noisy subtitles and fix back button overflow */
+.branch-header-v8 {
+  align-items: center;
+}
+
+.branch-header-v8-main {
+  align-items: center;
+  min-width: 0;
+}
+
+.branch-header-v8 .branch-header-text {
+  min-width: 0;
+}
+
+.branch-header-v8 .branch-header-text h2 {
+  margin-bottom: 0 !important;
+  line-height: 1.08 !important;
+}
+
+.branch-header-v8 .branch-header-text p {
+  display: none !important;
+}
+
+.branch-back-v8 {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 154px !important;
+  max-width: 176px !important;
+  min-height: 48px !important;
+  padding: 0 18px !important;
+  border-radius: 18px !important;
+  justify-content: center !important;
+  gap: 9px !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1 !important;
+}
+
+.branch-back-v8 > span[aria-hidden="true"] {
+  display: inline-grid !important;
+  place-items: center !important;
+  width: 18px !important;
+  height: 18px !important;
+  flex: 0 0 18px !important;
+  font-size: 17px !important;
+  line-height: 1 !important;
+}
+
+.branch-back-v8 > span:not([aria-hidden="true"]) {
+  display: block !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: clip !important;
+  white-space: nowrap !important;
+  font-size: 14px !important;
+}
+
+.case-title-copy > p {
+  display: none !important;
+}
+
+.patient-summary-head-copy p {
+  display: none !important;
+}
+
+.investigation-order-head p,
+.refined-investigation-order-head p,
+.smart-investigation-order-head p {
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .branch-back-v8 {
+    min-width: 48px !important;
+    max-width: 48px !important;
+    padding: 0 !important;
+  }
+
+  .branch-back-v8 > span:not([aria-hidden="true"]) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+  }
+}

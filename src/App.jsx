@@ -1446,7 +1446,6 @@ function App() {
                 </button>
                 <div className="branch-header-text">
                   <h2>{selectedBranch.name}</h2>
-                  <p>{selectedBranch.description}</p>
                 </div>
               </div>
               <div className="branch-inline-actions">

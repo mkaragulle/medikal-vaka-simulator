@@ -727,7 +727,6 @@ function CasePlayer({
             <div className="case-hero-main clean-case-hero-main">
               <div className="case-title-copy">
                 <h1><GlossaryText text={clinicalCase.title} enabled={!hardMode && !examMeta?.active} /></h1>
-                <p><GlossaryText text={displayFocus} enabled={!hardMode && !examMeta?.active} /></p>
                 <ExamSignalBox signal={caseExamSignal} compact={isSpotCase} />
                 <div className="patient-summary-card professional-patient-summary-card clinical-summary-card premium-reference-summary-card">
                   {/* Hasta özeti, referans görseldeki tek, premium ve okunabilir klinik çerçeve tasarımına göre yeniden düzenlendi. */}
@@ -737,7 +736,6 @@ function CasePlayer({
                     </span>
                     <div className="patient-summary-head-copy">
                       <strong>Olgu sunumu</strong>
-                      <p>Profil, başvuru ve öykü</p>
                     </div>
                   </header>
 
@@ -825,7 +823,6 @@ function CasePlayer({
                     <AccordionItem
                       defaultOpen
                       prefix={<Icon name="Stethoscope" />}
-                      badge="Objektif veri"
                       title="Fizik muayene"
                     >
                       <div className="detail-block exam-finding-block">
