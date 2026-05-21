@@ -11,7 +11,7 @@ function isAIWrongAnswer(item) {
 
 function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy, onOpenAllWrongAnswers }) {
   const hasItems = wrongAnswers.length > 0;
-  const visibleItems = wrongAnswers.slice(0, 8);
+  const visibleItems = wrongAnswers.slice(0, 9);
   const hiddenCount = Math.max(0, wrongAnswers.length - visibleItems.length);
 
   return (

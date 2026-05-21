@@ -777,6 +777,25 @@ function TusPearlStudyScreen({
         <div className="tus-pearl-study-title">
           <h1>{viewMode === 'catalogs' ? 'Kataloglarım' : 'Hap Bilgi Çalış'}</h1>
         </div>
+        {viewMode === 'study' ? (
+          <label className="pearl-study-branch-filter" aria-label="Hap kart branş filtresi">
+            <span>Branş</span>
+            <select
+              value={branchFilter}
+              onChange={(event) => {
+                setBranchFilter(event.target.value);
+                setCurrentIndex(0);
+                setFlipped(false);
+                lastDeckSignature.current = '';
+              }}
+            >
+              <option value="all">Tüm branşlar</option>
+              {branchOptions.map((branch) => (
+                <option key={branch.id} value={branch.id}>{branch.shortName || branch.name}</option>
+              ))}
+            </select>
+          </label>
+        ) : null}
         <div className="tus-pearl-study-progress" aria-label="Kart ilerlemesi">
           <strong>{viewMode === 'study' ? `${sessionCards.length ? currentIndex + 1 : 0} / ${sessionCards.length}` : `${pearlState.customCatalogs.length} katalog`}</strong>
           <div><span style={{ width: `${viewMode === 'study' ? progress : 100}%` }} /></div>
@@ -966,6 +985,7 @@ function TusPearlStudyScreen({
                       </span>
 
                       <span className="pearl-card-face-footer minimal">
+                        <span className="pearl-card-branch-pill">{activeCardBranchName}</span>
                         <span className="pearl-card-progress-pill">{sessionCards.length ? `${currentIndex + 1} / ${sessionCards.length}` : '0 / 0'}</span>
                       </span>
                     </span>

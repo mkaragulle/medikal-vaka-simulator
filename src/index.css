@@ -47494,3 +47494,43 @@ html[data-theme="dark"] .case-list-item.is-solved-case,
 .case-section-nav.professional-section-nav .section-nav-btn svg {
   flex-shrink: 0 !important;
 }
+
+/* V207 — bottom rail clipping fix for branch case screen */
+body:not(.klinikiq-auth-lock) .case-page-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell .case-route-transition,
+body:not(.klinikiq-auth-lock) .case-page-shell > .content-layout,
+body:not(.klinikiq-auth-lock) .case-page-shell > .full-width-content-layout {
+  overflow: visible !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell {
+  padding-bottom: clamp(56px, 5vw, 88px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .bottom-case-browser {
+  overflow: visible !important;
+  padding-bottom: 34px !important;
+  margin-bottom: clamp(28px, 3vw, 52px) !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list {
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  padding-bottom: 24px !important;
+  margin-bottom: -4px !important;
+  scrollbar-gutter: stable !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-card,
+body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list .case-list-item {
+  min-height: 182px !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list::-webkit-scrollbar {
+  height: 9px !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .horizontal-case-list::-webkit-scrollbar-track {
+  margin-inline: 2px !important;
+  border-radius: 999px !important;
+}
