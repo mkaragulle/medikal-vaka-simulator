@@ -4448,3 +4448,28 @@ body:not(.klinikiq-auth-lock) .tus-pearl-study-shell > :first-child {
     --kiq-unified-first-card-gap: 6px !important;
   }
 }
+
+/* V205 — section nav Turkish glyph clipping fix */
+.case-section-nav .section-nav-btn,
+.case-section-nav.professional-section-nav .section-nav-btn {
+  min-height: 48px !important;
+  padding-block: 10px !important;
+  line-height: 1.25 !important;
+  overflow: visible !important;
+}
+
+.case-section-nav .section-nav-btn span,
+.case-section-nav.professional-section-nav .section-nav-btn span {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 1.45em !important;
+  line-height: 1.3 !important;
+  padding-block: 2px !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}
+
+.case-section-nav .section-nav-btn svg,
+.case-section-nav.professional-section-nav .section-nav-btn svg {
+  flex-shrink: 0 !important;
+}

@@ -706,12 +706,12 @@ function EvidenceChainCard({ evidenceChain, glossaryEnabled = true, minimal = fa
 function ClinicalPearlsList({ pearls, glossaryEnabled = true }) {
   if (!pearls.length) return null;
   return (
-    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="Sınav notu" title="Kritik ipuçları" className="clinical-pearls-card">
+    <FeedbackSection icon="Sparkles" tone="accent" eyebrow="Sınav notu" title="" className="clinical-pearls-card">
       <div className="clinical-pearl-list">
         {pearls.map((pearl, index) => (
           <div className="clinical-pearl-item clinical-pearl-item-pro" key={`${pearl.label}-${pearl.text}-${index}`}>
             <span aria-hidden="true" />
-            <p><strong><GlossaryText text={pearl.label} enabled={glossaryEnabled} /></strong>{' '}<GlossaryText text={ensureSentence(pearl.text)} enabled={glossaryEnabled} /></p>
+            <p><GlossaryText text={ensureSentence(pearl.text)} enabled={glossaryEnabled} /></p>
           </div>
         ))}
       </div>

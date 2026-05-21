@@ -3,7 +3,7 @@ import WrongAnswersPanel from './WrongAnswersPanel.jsx';
 import TusPearlHubPanel from './TusPearlHubPanel.jsx';
 import './tusPearlCards.css';
 
-function StudyReviewHub({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy }) {
+function StudyReviewHub({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy, onOpenAllWrongAnswers }) {
   return (
     <section className="study-review-hub" aria-label="Yanlışlar ve hap bilgi çalışma paneli">
       <div className="study-review-hub-intro">
@@ -19,6 +19,7 @@ function StudyReviewHub({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAl
           onRemoveCase={onRemoveCase}
           onClearAll={onClearAll}
           onOpenPearlStudy={onOpenPearlStudy}
+          onOpenAllWrongAnswers={onOpenAllWrongAnswers}
         />
         <TusPearlHubPanel wrongAnswers={wrongAnswers} onOpenStudy={onOpenPearlStudy} />
       </div>

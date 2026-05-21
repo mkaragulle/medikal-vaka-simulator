@@ -9,9 +9,9 @@ function isAIWrongAnswer(item) {
   );
 }
 
-function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy }) {
+function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClearAll, onOpenPearlStudy, onOpenAllWrongAnswers }) {
   const hasItems = wrongAnswers.length > 0;
-  const visibleItems = wrongAnswers.slice(0, 6);
+  const visibleItems = wrongAnswers.slice(0, 8);
   const hiddenCount = Math.max(0, wrongAnswers.length - visibleItems.length);
 
   return (
@@ -21,7 +21,6 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
           <span className="review-panel-icon danger" aria-hidden="true"><Icon name="RotateCcw" /></span>
           <div>
             <h2>Yanlış çözülenler</h2>
-            <p>Yanlış çözdüğün olguları tekrar et.</p>
           </div>
         </div>
         {hasItems ? (
@@ -61,7 +60,15 @@ function WrongAnswersPanel({ wrongAnswers = [], onOpenCase, onRemoveCase, onClea
               </article>
             );
           })}
-          {hiddenCount ? <span className="wrong-answer-more">+{hiddenCount} kayıt daha listende saklanıyor.</span> : null}
+          {hiddenCount ? (
+            <div className="wrong-answer-more-row">
+              <span className="wrong-answer-more">+{hiddenCount} kayıt daha listende saklanıyor.</span>
+              <button type="button" className="wrong-answer-view-all-btn" onClick={onOpenAllWrongAnswers}>
+                <Icon name="ArrowRight" size={15} />
+                <span>Tüm Yanlışları Gör</span>
+              </button>
+            </div>
+          ) : null}
         </div>
       ) : (
         <div className="wrong-answers-empty">

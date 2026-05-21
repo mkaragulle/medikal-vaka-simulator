@@ -4,6 +4,7 @@ import './styles/klinikiq-system.css';
 import './styles/klinikiq-refine.css';
 import BranchSelector from './components/BranchSelector.jsx';
 import CaseList from './components/CaseList.jsx';
+import WrongAnswersFullPage from './components/WrongAnswersFullPage.jsx';
 import HomeCommandCenter from './components/HomeCommandCenter.jsx';
 import AuthPanel from './components/AuthPanel.jsx';
 import { Icon, BrandMark, ThemeToggle, BranchTransitionVisual, branchIconById } from './components/ui.jsx';
@@ -264,6 +265,7 @@ function App() {
   const [sessionStats, setSessionStats] = useState(() => currentUser?.stats ?? loadStoredValue(STATS_STORAGE_KEY, defaultStats));
   const [examHistory, setExamHistory] = useState(() => currentUser?.examHistory ?? loadStoredValue(EXAM_HISTORY_STORAGE_KEY, []));
   const [wrongAnswers, setWrongAnswers] = useState(() => currentUser?.wrongAnswers ?? []);
+  const [wrongAnswersPageOpen, setWrongAnswersPageOpen] = useState(false);
   const [solvedCaseIds, setSolvedCaseIds] = useState(() => currentUser?.solvedCaseIds ?? loadStoredValue(SOLVED_CASES_STORAGE_KEY, []));
   const [aiPracticeStats, setAIPracticeStats] = useState(() => loadStoredValue(AI_PRACTICE_STATS_STORAGE_KEY, defaultAIPracticeStats));
   const [aiPracticeState, setAIPracticeState] = useState(defaultAIPracticeState);
@@ -424,6 +426,7 @@ function App() {
     setSolvedCaseIds([]);
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
+    setWrongAnswersPageOpen(false);
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setExamState(null);
@@ -621,6 +624,8 @@ function App() {
       ? caseIdOrEntry
       : wrongAnswers.find((entry) => entry.caseId === caseIdOrEntry);
 
+    setWrongAnswersPageOpen(false);
+
     if (isAIWrongAnswerEntry(wrongAnswerEntry)) {
       const restoredQuestion = wrongAnswerEntry?.questionSnapshot;
       if (!restoredQuestion?.diagnosis?.options?.length || !restoredQuestion?.diagnosis?.correct) return;
@@ -650,6 +655,7 @@ function App() {
     clearAIQuestionTimer();
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
+    setWrongAnswersPageOpen(false);
     setMode('study');
     setExamState(null);
     setSelectedBranchId(clinicalCase.branchId);
@@ -794,9 +800,30 @@ function App() {
     setAIPracticeState(defaultAIPracticeState);
     setSelectedBranchId(null);
     setSelectedCaseId(null);
+    setWrongAnswersPageOpen(false);
     setMode('study');
     setPearlStudyState({ active: true, filter, branchFilter, catalogId });
     scrollToTopSmart({ smooth: false });
+  }, []);
+
+  const openAllWrongAnswers = useCallback(() => {
+    clearAIQuestionTimer();
+    closePearlStudy();
+    setExamState(null);
+    setAIPracticeState(defaultAIPracticeState);
+    setSelectedBranchId(null);
+    setSelectedCaseId(null);
+    setMode('study');
+    setWrongAnswersPageOpen(true);
+    scrollToTopSmart({ smooth: false });
+  }, [closePearlStudy]);
+
+  const closeAllWrongAnswers = useCallback(() => {
+    setWrongAnswersPageOpen(false);
+    window.setTimeout(() => {
+      const wrongPanel = document.getElementById('wrong-answers-section');
+      if (wrongPanel) wrongPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 40);
   }, []);
 
   const clearBranchRouteTimers = useCallback(() => {
@@ -808,6 +835,7 @@ function App() {
     clearAIQuestionTimer();
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
+    setWrongAnswersPageOpen(false);
     if (isDemoUser && !visibleBranches.some((branch) => branch.id === branchId)) return;
     const rawBranchPool = accessibleCaseIndex.byBranchId.get(branchId) ?? [];
     const branchPool = sortCasesBySolvedStatus(rawBranchPool, solvedCaseIdSet);
@@ -989,6 +1017,7 @@ function App() {
     setSelectedCaseId(null);
     setIsCaseSidebarOpen(true);
     closePearlStudy();
+    setWrongAnswersPageOpen(false);
     setAIPracticeState({
       ...defaultAIPracticeState,
       active: true,
@@ -1181,6 +1210,7 @@ function App() {
     setExamState(null);
     setAIPracticeState(defaultAIPracticeState);
     closePearlStudy();
+    setWrongAnswersPageOpen(false);
     setMode('study');
     setSelectedBranchId(null);
     setSelectedCaseId(null);
@@ -1195,6 +1225,7 @@ function App() {
     setAIPracticeState(defaultAIPracticeState);
     setExamState(null);
     closePearlStudy();
+    setWrongAnswersPageOpen(false);
     setSelectedBranchId(null);
     setSelectedCaseId(null);
     setMode('study');
@@ -1296,6 +1327,7 @@ function App() {
               setExamState(null);
               setAIPracticeState(defaultAIPracticeState);
               closePearlStudy();
+              setWrongAnswersPageOpen(false);
               setMode('study');
               window.setTimeout(() => {
                 const wrongPanel = document.getElementById('wrong-answers-section');
@@ -1362,6 +1394,14 @@ function App() {
         <Suspense fallback={<RouteFallback label="Komite arayüzü hazırlanıyor…" />}>
           <KomiteModeWorkspace currentUser={currentUser} />
         </Suspense>
+      ) : wrongAnswersPageOpen ? (
+        <WrongAnswersFullPage
+          wrongAnswers={visibleWrongAnswers}
+          onBack={closeAllWrongAnswers}
+          onOpenCase={openWrongCase}
+          onRemoveCase={removeWrongAnswer}
+          onClearAll={clearWrongAnswers}
+        />
       ) : pearlStudyState.active ? (
         <Suspense fallback={<RouteFallback label="Hap kart arayüzü hazırlanıyor…" />}>
           <TusPearlStudyScreen
@@ -1440,7 +1480,7 @@ function App() {
           <section className="content-layout full-width-content-layout">
             <section className="branch-header-v8 card-surface">
               <div className="branch-header-v8-main">
-                <button className="branch-back-v8" type="button" onClick={() => { setSelectedBranchId(null); setBranchDifficultyFilter('all'); }}>
+                <button className="branch-back-v8" type="button" onClick={() => { setWrongAnswersPageOpen(false); setSelectedBranchId(null); setBranchDifficultyFilter('all'); }}>
                   <span aria-hidden="true">←</span>
                   <span>Branşlara dön</span>
                 </button>
@@ -1551,6 +1591,7 @@ function App() {
                 onRemoveCase={removeWrongAnswer}
                 onClearAll={clearWrongAnswers}
                 onOpenPearlStudy={openPearlStudy}
+                onOpenAllWrongAnswers={openAllWrongAnswers}
               />
             </Suspense>
           </section>
