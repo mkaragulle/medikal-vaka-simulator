@@ -16,17 +16,17 @@ export const BRANCH_ANIMATED_ICON_IDS = new Set([
 function AnatomyIcon() {
   return (
     <>
-      <g className="branch-anatomy-shell">
-        <path d="M16 4.7c-2.75 0-4.94 1.92-4.94 4.46 0 1 .35 1.92.95 2.67l-1.55 10.06c-.18 1.18.73 2.25 1.92 2.25h7.24c1.19 0 2.1-1.07 1.92-2.25l-1.55-10.06c.6-.75.95-1.67.95-2.67 0-2.54-2.19-4.46-4.94-4.46Z" />
-        <path d="M16 7.6v15.1" />
-        <path className="branch-anatomy-ribs" d="M12.5 10.25c1.12 1.04 2.28 1.56 3.5 1.56s2.38-.52 3.5-1.56M11.75 13.2h8.5M12.15 16.2h7.7M12.9 19.15h6.2" />
-        <path d="M12.85 11.45 10.1 13.2M19.15 11.45l2.75 1.75" />
+      <g className="kq-branch-core anatomy-core">
+        <path className="kq-outline" d="M16 6.1v19.2" />
+        <path className="kq-detail" d="M12.2 8.2c1.3 1.12 2.57 1.68 3.8 1.68s2.5-.56 3.8-1.68" />
+        <path className="kq-detail" d="M11.1 11.2c1.35 1.1 2.98 1.68 4.9 1.68s3.55-.58 4.9-1.68" />
+        <path className="kq-detail" d="M10.5 14.4c1.72 1.12 3.55 1.68 5.5 1.68s3.78-.56 5.5-1.68" />
+        <path className="kq-detail" d="M11.05 17.65c1.55.9 3.2 1.35 4.95 1.35s3.4-.45 4.95-1.35" />
+        <path className="kq-detail" d="M12.2 20.72c1.18.62 2.45.93 3.8.93s2.62-.31 3.8-.93" />
+        <path className="kq-outline" d="M12.7 9.35c-2.52 1.1-4.05 3.25-4.35 5.95-.23 2.08.58 4.2 2.18 5.77" />
+        <path className="kq-outline" d="M19.3 9.35c2.52 1.1 4.05 3.25 4.35 5.95.23 2.08-.58 4.2-2.18 5.77" />
       </g>
-      <path className="branch-anatomy-scan" d="M8.45 16h15.1" />
-      <g className="branch-anatomy-points">
-        <circle cx="10.25" cy="11.05" r=".62" />
-        <circle cx="21.75" cy="19.2" r=".62" />
-      </g>
+      <path className="kq-scan anatomy-scan" d="M8.35 15.98h15.3" />
     </>
   );
 }
@@ -34,12 +34,12 @@ function AnatomyIcon() {
 function PhysiologyIcon() {
   return (
     <>
-      <g className="branch-physiology-heart">
-        <path d="M16 25c-5.35-3.8-8.9-7.1-8.9-11.18 0-2.67 1.93-4.63 4.4-4.63 1.86 0 3.42.93 4.5 2.39 1.08-1.46 2.64-2.39 4.5-2.39 2.47 0 4.4 1.96 4.4 4.63 0 4.08-3.55 7.38-8.9 11.18Z" />
-        <path className="branch-physiology-ecg" d="M6.3 16.15h4.75l1.42-3.1 3.1 6.8 2.08-4.75 1.58 3.07h6.45" />
+      <g className="kq-branch-core physiology-core">
+        <path className="kq-outline physiology-heart" d="M16 25.15c-5.72-4.1-9.35-7.55-9.35-11.7 0-2.62 1.92-4.58 4.36-4.58 1.86 0 3.45.97 4.99 2.74 1.54-1.77 3.13-2.74 4.99-2.74 2.44 0 4.36 1.96 4.36 4.58 0 4.15-3.63 7.6-9.35 11.7Z" />
+        <path className="kq-active-line physiology-ecg" d="M6.7 16.1h4.55l1.22-2.85 3.06 6.78 2.3-5.12 1.48 2.68h5.99" />
       </g>
-      <circle className="branch-physiology-ring ring-one" cx="16" cy="16" r="9.8" />
-      <circle className="branch-physiology-ring ring-two" cx="16" cy="16" r="12.1" />
+      <circle className="kq-pulse-ring physiology-ring physiology-ring-one" cx="16" cy="16" r="9.8" />
+      <circle className="kq-pulse-ring physiology-ring physiology-ring-two" cx="16" cy="16" r="12" />
     </>
   );
 }
@@ -47,14 +47,13 @@ function PhysiologyIcon() {
 function HistologyIcon() {
   return (
     <>
-      <path className="branch-histo-orbit" d="M8.5 22.45c2-1.62 4.18-2.42 6.48-2.42M23.85 13.7c-.64-2.38-2.02-4.4-4.15-5.98" />
-      <g className="branch-histo-cell">
-        <path d="M8.25 9.15c2.65-2.56 6.95-2.98 10.27-1.12 3.77 2.1 5.15 6.87 3.18 10.62-1.92 3.66-6.24 5.7-10.18 4.72-4.11-1.02-6.79-4.76-6.31-8.84.22-2 1.14-3.85 3.04-5.38Z" />
-        <path className="branch-histo-nucleus" d="M12.1 12.2c1.18-1.34 3.18-1.72 4.76-.9 1.78.92 2.56 3.03 1.84 4.84-.74 1.86-2.78 2.98-4.67 2.54-1.98-.46-3.33-2.28-3.16-4.22.09-.83.45-1.58 1.23-2.26Z" />
-        <circle className="branch-histo-particle p1" cx="16.15" cy="15.45" r=".8" />
-        <circle className="branch-histo-particle p2" cx="20.75" cy="12.2" r=".62" />
-        <circle className="branch-histo-particle p3" cx="10.75" cy="19.65" r=".62" />
+      <g className="kq-branch-core histology-core">
+        <path className="kq-outline" d="M8.2 10.15c2.15-3.18 6.48-4.38 10.15-2.8 3.82 1.65 5.82 5.95 4.62 9.9-1.14 3.78-4.92 6.3-8.82 5.88-4.12-.45-7.25-3.75-7.28-7.72-.02-1.9.45-3.68 1.33-5.26Z" />
+        <path className="kq-detail histology-nucleus" d="M13.05 12.1c1.48-1.22 3.82-.98 5.02.55 1.18 1.5.85 3.8-.72 4.9-1.55 1.1-3.83.68-4.86-.9-.95-1.45-.72-3.42.56-4.55Z" />
+        <circle className="kq-node histology-organelle histology-organelle-one" cx="10.95" cy="16.95" r=".72" />
+        <circle className="kq-node histology-organelle histology-organelle-two" cx="20.15" cy="12.95" r=".64" />
       </g>
+      <path className="kq-subtle-line histology-division" d="M15.9 8.2c2.6 2.12 3.48 5.7 2.12 8.75" />
     </>
   );
 }
@@ -62,16 +61,15 @@ function HistologyIcon() {
 function BiochemistryIcon() {
   return (
     <>
-      <g className="branch-biochem-flask">
-        <path d="M12.15 4.55h7.7" />
-        <path d="M13.55 4.55v6.1L8.4 21.2a3.98 3.98 0 0 0 3.58 5.75h8.04a3.98 3.98 0 0 0 3.58-5.75l-5.15-10.55v-6.1" />
-        <path d="M12.25 13.9h7.5" />
-        <path className="branch-biochem-liquid" d="M11.15 20.2c1.55-.88 3.05-1.08 4.46-.6 1.48.5 2.94 1.14 5.02.42" />
+      <g className="kq-branch-core biochem-core">
+        <path className="kq-outline" d="M12.25 5.25h7.5" />
+        <path className="kq-outline biochem-flask-body" d="M13.7 5.35v5.78L8.6 21.55a3.88 3.88 0 0 0 3.5 5.58h7.8a3.88 3.88 0 0 0 3.5-5.58l-5.1-10.42V5.35" />
+        <path className="kq-active-line biochem-liquid" d="M11.15 20.8c1.62-.78 3.1-.92 4.43-.42 1.6.6 3.1.58 4.62-.08" />
       </g>
-      <g className="branch-biochem-bubbles">
-        <circle className="b1" cx="12.95" cy="18.25" r=".72" />
-        <circle className="b2" cx="18.95" cy="22.4" r=".78" />
-        <circle className="b3" cx="20.7" cy="16.6" r=".55" />
+      <g className="biochem-bubbles">
+        <circle className="kq-bubble bubble-one" cx="14.15" cy="17.25" r=".66" />
+        <circle className="kq-bubble bubble-two" cx="18.65" cy="22.55" r=".72" />
+        <circle className="kq-bubble bubble-three" cx="19.25" cy="15.55" r=".54" />
       </g>
     </>
   );
@@ -80,18 +78,14 @@ function BiochemistryIcon() {
 function MicrobiologyIcon() {
   return (
     <>
-      <g className="branch-micro-petri">
-        <circle cx="16" cy="16" r="10.2" />
-        <path d="M9.6 12.05c2.68-1.82 5.95-2.28 9.72-1.36" />
-        <path d="M11.2 22.25c2.84.98 6 .58 9.42-1.12" />
-        <circle className="branch-micro-colony c1" cx="12.35" cy="15" r="1.12" />
-        <circle className="branch-micro-colony c2" cx="18.9" cy="14.1" r=".95" />
-        <circle className="branch-micro-colony c3" cx="16.2" cy="20.15" r="1.02" />
-        <path className="branch-micro-germ" d="M21.55 17.55c-.68.4-1.35.4-2.02 0M20.55 16.52v2.08" />
-      </g>
-      <g className="branch-micro-orbit">
-        <circle cx="6.7" cy="16" r=".56" />
-        <circle cx="25.3" cy="16" r=".56" />
+      <g className="kq-branch-core microbiology-core">
+        <circle className="kq-outline" cx="16" cy="16" r="10.15" />
+        <path className="kq-subtle-line" d="M9.45 12.4c3.25-1.65 6.9-1.82 10.95-.52" />
+        <path className="kq-subtle-line" d="M10.25 21.15c3.35 1.2 7.02 1.02 11-.55" />
+        <circle className="kq-colony colony-one" cx="12.35" cy="16.2" r="1.3" />
+        <circle className="kq-colony colony-two" cx="18.75" cy="14.05" r="1.02" />
+        <circle className="kq-colony colony-three" cx="17.2" cy="20.25" r=".92" />
+        <path className="kq-detail micro-symbol" d="M20.8 17.35c-.52.48-1.05.48-1.57 0M20.02 16.58v1.55" />
       </g>
     </>
   );
@@ -100,14 +94,12 @@ function MicrobiologyIcon() {
 function PathologyIcon() {
   return (
     <>
-      <g className="branch-path-slide">
-        <rect x="8" y="6.15" width="16" height="19.7" rx="3" />
-        <path d="M11.2 10.2h9.6" />
-        <path className="branch-path-focus" d="M12.15 17.05c.12-2.08 2.08-3.5 4.08-3.06 1.82.4 2.44 1.72 3.44 2.76 1.1 1.15 1.74 2.86.66 4.22-1.28 1.62-3.64 1.14-5.04.6-1.84-.7-3.26-2.16-3.14-4.52Z" />
-        <circle className="branch-path-cell cell-one" cx="15.15" cy="17.2" r=".56" />
-        <circle className="branch-path-cell cell-two" cx="18.25" cy="19.25" r=".56" />
+      <g className="kq-branch-core pathology-core">
+        <rect className="kq-outline" x="8.15" y="5.7" width="15.7" height="20.6" rx="3.2" />
+        <path className="kq-subtle-line" d="M11.2 10.15h9.6" />
+        <path className="kq-stain pathology-stain" d="M12.05 17.95c.06-2.05 1.82-3.55 3.88-3.32 1.5.17 2.38 1.02 3.32 1.98 1.08 1.08 1.48 2.7.55 3.92-1.12 1.48-3.18 1.42-4.82.72-1.7-.72-2.98-1.82-2.93-3.3Z" />
       </g>
-      <path className="branch-path-scan" d="M9.65 15.85h12.7" />
+      <path className="kq-scan pathology-scan" d="M10.15 16h11.7" />
     </>
   );
 }
@@ -115,19 +107,19 @@ function PathologyIcon() {
 function PharmacologyIcon() {
   return (
     <>
-      <g className="branch-pharma-capsule">
-        <path d="M9.35 22.75 22.75 9.35a4.14 4.14 0 1 0-5.86-5.86L3.49 16.89a4.14 4.14 0 1 0 5.86 5.86Z" />
-        <path d="m12.45 13.65 5.9 5.9" />
+      <g className="kq-branch-core pharmacology-core">
+        <g className="pharma-capsule">
+          <path className="kq-outline" d="M8.1 21.9 20.9 9.1a4.04 4.04 0 0 1 5.72 5.72l-12.8 12.8A4.04 4.04 0 0 1 8.1 21.9Z" />
+          <path className="kq-active-line" d="m13.15 16.85 4 4" />
+        </g>
+        <g className="pharma-target">
+          <circle className="kq-outline" cx="23" cy="22.95" r="2.25" />
+          <circle className="kq-node" cx="23" cy="22.95" r=".55" />
+        </g>
       </g>
-      <g className="branch-pharma-receptor">
-        <circle cx="23.25" cy="22.25" r="1.2" />
-        <circle cx="25.95" cy="18.8" r="1" />
-        <path d="M23.95 21.15 25.35 19.75" />
-      </g>
-      <g className="branch-pharma-dots">
-        <circle className="d1" cx="13.75" cy="17.25" r=".58" />
-        <circle className="d2" cx="16.05" cy="14.85" r=".5" />
-        <circle className="d3" cx="18.1" cy="12.85" r=".45" />
+      <g className="pharma-binding-particles">
+        <circle className="kq-binding-particle particle-one" cx="16.2" cy="15.9" r=".45" />
+        <circle className="kq-binding-particle particle-two" cx="18.05" cy="17.85" r=".42" />
       </g>
     </>
   );
@@ -136,13 +128,14 @@ function PharmacologyIcon() {
 function InternalMedicineIcon() {
   return (
     <>
-      <g className="branch-internal-body">
-        <path d="M16 4.7c-2.54 0-4.58 1.7-4.58 4.08 0 1.04.37 1.98 1.02 2.72l-1.85 10.95c-.24 1.38.81 2.64 2.2 2.64h6.42c1.39 0 2.44-1.26 2.2-2.64l-1.85-10.95c.65-.74 1.02-1.68 1.02-2.72 0-2.38-2.04-4.08-4.58-4.08Z" />
-        <path d="M16 8.05v15.95" />
-        <path className="branch-internal-lungs" d="M15.9 12.15c-1.9-2.18-4.72-2.05-5.7.32v3.12a3.52 3.52 0 0 0 3.52 3.52c1.34 0 2.24-1.52 2.18-4.1M16.1 12.15c1.9-2.18 4.72-2.05 5.7.32v3.12a3.52 3.52 0 0 1-3.52 3.52c-1.34 0-2.24-1.52-2.18-4.1" />
-        <path className="branch-internal-wave" d="M11.55 21.25h2.55l.82-1.65 1.52 3.06 1.02-2.2.72 1.33h2.28" />
+      <g className="kq-branch-core internal-core">
+        <path className="kq-outline" d="M16 5.25c-2.7 0-4.65 1.78-4.65 4.2 0 1.05.36 1.95.98 2.65l-1.72 10.02a2.6 2.6 0 0 0 2.56 3.04h5.66a2.6 2.6 0 0 0 2.56-3.04L19.67 12.1c.62-.7.98-1.6.98-2.65 0-2.42-1.95-4.2-4.65-4.2Z" />
+        <path className="kq-subtle-line" d="M16 9.3v15.05" />
+        <path className="kq-detail internal-lung" d="M15.85 13.05c-1.82-2.18-4.52-2.05-5.45.28v3.12a3.28 3.28 0 0 0 3.28 3.28c1.27 0 2.12-1.38 2.17-3.72" />
+        <path className="kq-detail internal-lung" d="M16.15 13.05c1.82-2.18 4.52-2.05 5.45.28v3.12a3.28 3.28 0 0 1-3.28 3.28c-1.27 0-2.12-1.38-2.17-3.72" />
+        <path className="kq-active-line internal-wave" d="M11.55 22.08h2.45l.72-1.45 1.4 2.85.98-2.12.68 1.24h2.67" />
       </g>
-      <path className="branch-internal-scan" d="M10.4 15.95h11.2" />
+      <path className="kq-scan internal-scan" d="M10.65 15.9h10.7" />
     </>
   );
 }
@@ -150,17 +143,16 @@ function InternalMedicineIcon() {
 function PediatricsIcon() {
   return (
     <>
-      <g className="branch-peds-figure">
-        <circle className="branch-peds-head" cx="16" cy="10.2" r="3.75" />
-        <path d="M12.9 21.15c.55-3.08 1.8-5.55 3.1-5.55s2.55 2.47 3.1 5.55" />
-        <path d="M14.4 21.25h3.2" />
-        <path d="M12.75 14.25c.9 1 2.04 1.52 3.25 1.52 1.21 0 2.35-.52 3.25-1.52" />
-        <path d="M13.25 15.3 9.8 18.25M18.75 15.3l3.45 2.95" />
+      <g className="kq-branch-core pediatrics-core">
+        <circle className="kq-outline" cx="10.25" cy="9.75" r="2.3" />
+        <circle className="kq-outline" cx="21.75" cy="9.75" r="2.3" />
+        <circle className="kq-outline peds-face" cx="16" cy="15.55" r="6.75" />
+        <circle className="kq-node" cx="13.55" cy="14.85" r=".5" />
+        <circle className="kq-node" cx="18.45" cy="14.85" r=".5" />
+        <path className="kq-detail" d="M13.9 17.8c1.38.92 2.82.92 4.2 0" />
+        <path className="kq-active-line peds-cross" d="M16 10.75v3.32M14.34 12.41h3.32" />
       </g>
-      <g className="branch-peds-sparkles">
-        <path className="s1" d="M24.8 7.3l.55 1.38 1.38.55-1.38.55-.55 1.38-.55-1.38-1.38-.55 1.38-.55.55-1.38Z" />
-        <path className="s2" d="M7.2 21.45l.44 1.1 1.1.44-1.1.44-.44 1.1-.44-1.1-1.1-.44 1.1-.44.44-1.1Z" />
-      </g>
+      <path className="kq-spark peds-spark" d="M24.3 7.75l.48 1.2 1.2.48-1.2.48-.48 1.2-.48-1.2-1.2-.48 1.2-.48.48-1.2Z" />
     </>
   );
 }
@@ -168,13 +160,13 @@ function PediatricsIcon() {
 function SurgeryIcon() {
   return (
     <>
-      <g className="branch-surgery-blade">
-        <path d="M20.55 4.95 26.05 10.45" />
-        <path d="M6.2 25.8 23.2 8.8a2.15 2.15 0 0 1 3.04 0l.9.9a2.15 2.15 0 0 1 0 3.04l-17 17-3.96-3.94Z" />
-        <path d="M11.55 20.45 8.9 17.8M16.45 15.55l3.02 3.02" />
+      <g className="kq-branch-core surgery-core">
+        <path className="kq-outline surgery-scalpel" d="M6.1 25.9 22.8 9.2a2.15 2.15 0 0 1 3.04 0l.96.96a2.15 2.15 0 0 1 0 3.04L10.1 29.9 6.1 25.9Z" />
+        <path className="kq-detail" d="m18.2 13.8 3.2 3.2" />
+        <path className="kq-detail" d="M22 6.35 26.65 11" />
       </g>
-      <path className="branch-surgery-cut" d="M8.5 26.15c3.3-1.2 6.38-2.82 9.18-4.82" />
-      <path className="branch-surgery-glint" d="M24.7 5.15l.58 1.46 1.46.58-1.46.58-.58 1.46-.58-1.46-1.46-.58 1.46-.58.58-1.46Z" />
+      <path className="kq-active-line surgery-incision" d="M8.6 25.95c3.72-1.06 6.8-2.5 9.22-4.32" />
+      <path className="kq-spark surgery-glint" d="M25.5 5.05l.5 1.22 1.22.5-1.22.5-.5 1.22-.5-1.22-1.22-.5 1.22-.5.5-1.22Z" />
     </>
   );
 }
@@ -182,16 +174,16 @@ function SurgeryIcon() {
 function ObgynIcon() {
   return (
     <>
-      <g className="branch-obgyn-uterus">
-        <path d="M12.2 6.55v6.9a3.8 3.8 0 0 0 7.6 0v-6.9" />
-        <path d="M12.2 6.55C9.55 6.85 7.55 8.8 7.18 11.4" />
-        <path d="M19.8 6.55c2.65.3 4.65 2.25 5.02 4.85" />
-        <circle cx="8.2" cy="13.05" r="1.75" />
-        <circle cx="23.8" cy="13.05" r="1.75" />
-        <path d="M16 17.75v7.5M12.95 25.25h6.1" />
-        <path className="branch-obgyn-heart" d="M16 16.05c-1.24-.86-1.98-1.58-1.98-2.52 0-.62.44-1.08 1-1.08.37 0 .7.2.98.56.28-.36.61-.56.98-.56.56 0 1 .46 1 1.08 0 .94-.74 1.66-1.98 2.52Z" />
+      <g className="kq-branch-core obgyn-core">
+        <path className="kq-outline" d="M12.35 6.65v6.8a3.65 3.65 0 0 0 7.3 0v-6.8" />
+        <path className="kq-outline" d="M12.35 6.65C9.82 6.88 7.92 8.65 7.55 11.2" />
+        <path className="kq-outline" d="M19.65 6.65c2.53.23 4.43 2 4.8 4.55" />
+        <circle className="kq-outline" cx="8.35" cy="12.82" r="1.66" />
+        <circle className="kq-outline" cx="23.65" cy="12.82" r="1.66" />
+        <path className="kq-subtle-line" d="M16 17.68v7.2M13.35 24.88h5.3" />
+        <path className="kq-active-line obgyn-heart" d="M16 16.02c-1.18-.82-1.88-1.5-1.88-2.4 0-.58.42-1.02.98-1.02.36 0 .66.18.9.5.24-.32.54-.5.9-.5.56 0 .98.44.98 1.02 0 .9-.7 1.58-1.88 2.4Z" />
       </g>
-      <circle className="branch-obgyn-ring" cx="16" cy="15.9" r="8.8" />
+      <circle className="kq-pulse-ring obgyn-ring" cx="16" cy="15.8" r="8.8" />
     </>
   );
 }
@@ -199,14 +191,13 @@ function ObgynIcon() {
 function MinorRotationsIcon() {
   return (
     <>
-      <g className="branch-minor-grid">
-        <rect className="branch-minor-tile tile-one" x="7" y="7" width="6.15" height="6.15" rx="1.45" />
-        <rect className="branch-minor-tile tile-two" x="18.85" y="7" width="6.15" height="6.15" rx="1.45" />
-        <rect className="branch-minor-tile tile-three" x="7" y="18.85" width="6.15" height="6.15" rx="1.45" />
-        <rect className="branch-minor-tile tile-four" x="18.85" y="18.85" width="6.15" height="6.15" rx="1.45" />
-        <path className="branch-minor-link" d="M13.15 10.08h5.7M21.92 13.15v5.7M18.85 21.92h-5.7M10.08 18.85v-5.7" />
+      <g className="kq-branch-core minor-core">
+        <rect className="kq-outline minor-tile tile-one" x="7" y="7" width="6.05" height="6.05" rx="1.65" />
+        <rect className="kq-outline minor-tile tile-two" x="18.95" y="7" width="6.05" height="6.05" rx="1.65" />
+        <rect className="kq-outline minor-tile tile-three" x="7" y="18.95" width="6.05" height="6.05" rx="1.65" />
+        <rect className="kq-outline minor-tile tile-four" x="18.95" y="18.95" width="6.05" height="6.05" rx="1.65" />
+        <path className="kq-active-line minor-arrow" d="M14.45 16h3.1M16.22 14.26 17.96 16l-1.74 1.74" />
       </g>
-      <path className="branch-minor-arrow" d="M14.75 16h2.9M16.4 14.35 18.05 16l-1.65 1.65" />
     </>
   );
 }
@@ -226,7 +217,7 @@ const branchIconRenderers = {
   'minor-rotations': MinorRotationsIcon,
 };
 
-export function BranchIconSvg({ branchId, className = '', mode = 'card', size = 32, strokeWidth = 1.8 }) {
+export function BranchIconSvg({ branchId, className = '', mode = 'card', size = 32, strokeWidth = 1.88 }) {
   const IconContent = branchIconRenderers[branchId];
   if (!IconContent) return null;
 
@@ -249,6 +240,7 @@ export function BranchIconSvg({ branchId, className = '', mode = 'card', size = 
       strokeWidth={strokeWidth}
       strokeLinecap="round"
       strokeLinejoin="round"
+      focusable="false"
     >
       <IconContent />
     </svg>
@@ -269,8 +261,7 @@ export function BranchAnimatedIcon({ branchId, isLaunching = false, className = 
       data-branch-icon={branchId}
       aria-hidden="true"
     >
-      <span className="branch-icon-ambient" />
-      <span className="branch-icon-core" />
+      <span className="branch-icon-soft-light" />
       <BranchIconSvg branchId={branchId} mode="card" />
     </span>
   );

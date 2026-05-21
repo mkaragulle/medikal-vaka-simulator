@@ -47555,33 +47555,33 @@ body:not(.klinikiq-auth-lock) .wrong-answers-panel .wrong-answer-more-row {
 }
 
 /* ==========================================================
-   V218 — Klinik branch animated SVG icon system
-   Premium 12-branch icon family with branch-specific hover/click micro-motions.
+   V220 — KlinikIQ branch icon system rebuilt from zero
+   Clean SVGs, no random dots/lines, premium badge + controlled micro-motion.
    ========================================================== */
 .branch-card[data-branch="anatomy"],
-.branch-route-overlay.branch-route-anatomy { --branch-motion-accent: #0e9aa7; --route-accent: #0e9aa7; }
+.branch-route-overlay.branch-route-anatomy { --branch-motion-accent: #0d9488; --route-accent: #0d9488; }
 .branch-card[data-branch="physiology"],
-.branch-route-overlay.branch-route-physiology { --branch-motion-accent: #d95f5f; --route-accent: #d95f5f; }
+.branch-route-overlay.branch-route-physiology { --branch-motion-accent: #dc5f62; --route-accent: #dc5f62; }
 .branch-card[data-branch="histology-embryology"],
-.branch-route-overlay.branch-route-histology-embryology { --branch-motion-accent: #8b5cf6; --route-accent: #8b5cf6; }
+.branch-route-overlay.branch-route-histology-embryology { --branch-motion-accent: #7c5ce7; --route-accent: #7c5ce7; }
 .branch-card[data-branch="medical-biochemistry"],
-.branch-route-overlay.branch-route-medical-biochemistry { --branch-motion-accent: #0ea5c7; --route-accent: #0ea5c7; }
+.branch-route-overlay.branch-route-medical-biochemistry { --branch-motion-accent: #0891b2; --route-accent: #0891b2; }
 .branch-card[data-branch="medical-microbiology"],
-.branch-route-overlay.branch-route-medical-microbiology { --branch-motion-accent: #63a923; --route-accent: #63a923; }
+.branch-route-overlay.branch-route-medical-microbiology { --branch-motion-accent: #4f9b2f; --route-accent: #4f9b2f; }
 .branch-card[data-branch="medical-pathology"],
-.branch-route-overlay.branch-route-medical-pathology { --branch-motion-accent: #c47a17; --route-accent: #c47a17; }
+.branch-route-overlay.branch-route-medical-pathology { --branch-motion-accent: #b87318; --route-accent: #b87318; }
 .branch-card[data-branch="medical-pharmacology"],
-.branch-route-overlay.branch-route-medical-pharmacology { --branch-motion-accent: #15956b; --route-accent: #15956b; }
+.branch-route-overlay.branch-route-medical-pharmacology { --branch-motion-accent: #12906f; --route-accent: #12906f; }
 .branch-card[data-branch="internal-medicine"],
-.branch-route-overlay.branch-route-internal-medicine { --branch-motion-accent: #0b83c5; --route-accent: #0b83c5; }
+.branch-route-overlay.branch-route-internal-medicine { --branch-motion-accent: #0a7db7; --route-accent: #0a7db7; }
 .branch-card[data-branch="pediatrics"],
-.branch-route-overlay.branch-route-pediatrics { --branch-motion-accent: #d66f8d; --route-accent: #d66f8d; }
+.branch-route-overlay.branch-route-pediatrics { --branch-motion-accent: #d66788; --route-accent: #d66788; }
 .branch-card[data-branch="general-surgery"],
-.branch-route-overlay.branch-route-general-surgery { --branch-motion-accent: #3f7fa7; --route-accent: #3f7fa7; }
+.branch-route-overlay.branch-route-general-surgery { --branch-motion-accent: #477fa3; --route-accent: #477fa3; }
 .branch-card[data-branch="obstetrics-gynecology"],
-.branch-route-overlay.branch-route-obstetrics-gynecology { --branch-motion-accent: #c95c78; --route-accent: #c95c78; }
+.branch-route-overlay.branch-route-obstetrics-gynecology { --branch-motion-accent: #c85d7c; --route-accent: #c85d7c; }
 .branch-card[data-branch="minor-rotations"],
-.branch-route-overlay.branch-route-minor-rotations { --branch-motion-accent: #557f8a; --route-accent: #557f8a; }
+.branch-route-overlay.branch-route-minor-rotations { --branch-motion-accent: #4f7f86; --route-accent: #4f7f86; }
 
 .tus-branch-grid .branch-card[data-branch] .branch-progress span {
   background: linear-gradient(90deg, var(--branch-motion-accent), color-mix(in srgb, var(--branch-motion-accent) 58%, var(--accent-blue) 42%)) !important;
@@ -47591,295 +47591,325 @@ body:not(.klinikiq-auth-lock) .wrong-answers-panel .wrong-answer-more-row {
   position: relative;
   display: inline-grid;
   place-items: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 18px;
-  color: var(--branch-motion-accent);
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
   overflow: visible;
   isolation: isolate;
+  color: var(--branch-motion-accent);
   background:
-    radial-gradient(circle at 30% 18%, rgba(255,255,255,.48), transparent 34%),
-    linear-gradient(180deg, color-mix(in srgb, var(--branch-motion-accent) 13%, var(--surface-2)), color-mix(in srgb, var(--branch-motion-accent) 5%, var(--surface-1)));
-  border: 1px solid color-mix(in srgb, var(--branch-motion-accent) 35%, var(--border-subtle));
+    radial-gradient(circle at 28% 18%, rgba(255,255,255,.62), transparent 38%),
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--branch-motion-accent) 10%, rgba(255,255,255,.92)),
+      color-mix(in srgb, var(--branch-motion-accent) 4%, rgba(255,255,255,.82))
+    );
+  border: 1px solid color-mix(in srgb, var(--branch-motion-accent) 28%, rgba(148,163,184,.42));
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.32),
-    0 12px 26px color-mix(in srgb, var(--branch-motion-accent) 12%, transparent);
-  transform-origin: center;
-  transition: transform 240ms cubic-bezier(.22,1,.36,1), border-color 240ms cubic-bezier(.22,1,.36,1), box-shadow 240ms cubic-bezier(.22,1,.36,1), background 240ms cubic-bezier(.22,1,.36,1);
-  will-change: transform, filter;
+    inset 0 1px 0 rgba(255,255,255,.72),
+    0 10px 24px color-mix(in srgb, var(--branch-motion-accent) 12%, transparent);
+  transform: translateZ(0);
+  transition:
+    transform 240ms cubic-bezier(.22,1,.36,1),
+    border-color 240ms cubic-bezier(.22,1,.36,1),
+    box-shadow 240ms cubic-bezier(.22,1,.36,1),
+    background 240ms cubic-bezier(.22,1,.36,1);
 }
 
-.branch-animated-icon::before,
+.branch-animated-icon::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  z-index: -2;
+  border-radius: inherit;
+  background: radial-gradient(circle, color-mix(in srgb, var(--branch-motion-accent) 18%, transparent), transparent 68%);
+  opacity: 0;
+  transform: scale(.86);
+  pointer-events: none;
+}
+
 .branch-animated-icon::after {
   content: "";
   position: absolute;
-  inset: -7px;
+  inset: -1px;
   z-index: -1;
   border-radius: inherit;
-  border: 1px solid currentColor;
-  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--branch-motion-accent) 28%, transparent);
   opacity: 0;
-  transform: scale(.82);
+  transform: scale(.9);
+  pointer-events: none;
 }
 
-.branch-icon-ambient {
+.branch-icon-soft-light {
   position: absolute;
-  inset: 7px;
+  inset: 9px;
   z-index: -1;
   border-radius: 999px;
-  background: radial-gradient(circle, color-mix(in srgb, currentColor 18%, transparent), transparent 70%);
-  opacity: .42;
+  background: radial-gradient(circle, color-mix(in srgb, currentColor 16%, transparent), transparent 72%);
+  opacity: .44;
   filter: blur(7px);
   transform: scale(.92);
-  transition: opacity 220ms ease, transform 220ms ease;
+  transition: opacity 240ms ease, transform 240ms ease;
 }
 
 .branch-animated-svg {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   overflow: visible;
-  stroke-width: 1.68;
-  filter: drop-shadow(0 0 7px color-mix(in srgb, var(--branch-motion-accent) 18%, transparent));
+  color: inherit;
+  stroke-width: 1.84;
+  filter: drop-shadow(0 0 5px color-mix(in srgb, currentColor 14%, transparent));
+  transform: translateZ(0);
+  transform-origin: 50% 50%;
+}
+
+.branch-animated-svg *,
+.branch-animated-svg *::before,
+.branch-animated-svg *::after {
+  transform-box: fill-box;
   transform-origin: center;
   vector-effect: non-scaling-stroke;
 }
 
-.branch-animated-svg * {
-  transform-box: fill-box;
-  transform-origin: center;
+.branch-animated-svg .kq-outline {
+  stroke: currentColor;
+  opacity: .98;
+}
+.branch-animated-svg .kq-detail {
+  stroke: currentColor;
+  opacity: .72;
+}
+.branch-animated-svg .kq-subtle-line {
+  stroke: currentColor;
+  opacity: .38;
+}
+.branch-animated-svg .kq-active-line {
+  stroke: currentColor;
+  opacity: .9;
+}
+.branch-animated-svg .kq-node,
+.branch-animated-svg .kq-colony,
+.branch-animated-svg .kq-bubble,
+.branch-animated-svg .kq-binding-particle {
+  fill: currentColor;
+  stroke: none;
+  opacity: .78;
+}
+.branch-animated-svg .kq-stain {
+  fill: color-mix(in srgb, currentColor 12%, transparent);
+  stroke: currentColor;
+  opacity: .82;
+}
+.branch-animated-svg .kq-spark {
+  fill: color-mix(in srgb, currentColor 11%, transparent);
+  stroke: currentColor;
+  opacity: 0;
+}
+.branch-animated-svg .kq-pulse-ring,
+.branch-animated-svg .kq-scan {
+  opacity: 0;
+  stroke: currentColor;
+}
+.branch-animated-svg .kq-scan {
+  stroke-dasharray: 18;
+  stroke-dashoffset: 18;
+}
+.branch-animated-svg .physiology-ecg,
+.branch-animated-svg .internal-wave,
+.branch-animated-svg .surgery-incision,
+.branch-animated-svg .minor-arrow {
+  stroke-dasharray: 42;
+  stroke-dashoffset: 0;
 }
 
 .branch-card[data-branch]:hover .branch-animated-icon,
 .branch-card[data-branch]:focus-visible .branch-animated-icon {
-  transform: translateY(-2px) scale(1.035);
-  border-color: color-mix(in srgb, var(--branch-motion-accent) 52%, var(--border-subtle));
+  transform: translateY(-2px) scale(1.025);
+  border-color: color-mix(in srgb, var(--branch-motion-accent) 44%, rgba(148,163,184,.42));
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.36),
-    0 18px 34px color-mix(in srgb, var(--branch-motion-accent) 18%, transparent);
+    inset 0 1px 0 rgba(255,255,255,.78),
+    0 16px 30px color-mix(in srgb, var(--branch-motion-accent) 16%, transparent);
 }
-
-.branch-card[data-branch]:hover .branch-icon-ambient,
-.branch-card[data-branch]:focus-visible .branch-icon-ambient {
-  opacity: .64;
-  transform: scale(1.08);
+.branch-card[data-branch]:hover .branch-icon-soft-light,
+.branch-card[data-branch]:focus-visible .branch-icon-soft-light {
+  opacity: .62;
+  transform: scale(1.06);
+}
+.branch-card[data-branch]:hover .branch-animated-svg,
+.branch-card[data-branch]:focus-visible .branch-animated-svg {
+  filter: drop-shadow(0 0 7px color-mix(in srgb, currentColor 18%, transparent));
 }
 
 .branch-card.is-launching[data-branch] .branch-animated-icon {
-  animation: branchAnimatedBadgeEnter 640ms cubic-bezier(.22,1,.36,1) 1 both !important;
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.38),
-    0 20px 42px color-mix(in srgb, var(--branch-motion-accent) 23%, transparent) !important;
+  animation: kqProBadgeEnter 560ms cubic-bezier(.22,1,.36,1) 1 both !important;
 }
-.branch-card.is-launching[data-branch] .branch-animated-icon::before { animation: branchAnimatedRingStrong 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-.branch-card.is-launching[data-branch] .branch-animated-icon::after { animation: branchAnimatedRingSoft 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-.branch-card.is-launching[data-branch] .branch-icon-ambient { animation: branchAnimatedCoreGlow 640ms ease-out 1 both; }
+.branch-card.is-launching[data-branch] .branch-animated-icon::before {
+  animation: kqProBadgeGlow 560ms cubic-bezier(.22,1,.36,1) 1 both !important;
+}
+.branch-card.is-launching[data-branch] .branch-animated-icon::after {
+  animation: kqProBadgeRing 560ms cubic-bezier(.22,1,.36,1) 1 both !important;
+}
+.branch-card.is-launching[data-branch] .branch-icon-soft-light {
+  animation: kqProInnerGlow 560ms ease-out 1 both !important;
+}
 .branch-card.is-launching[data-branch] .branch-launch-wave {
-  background: radial-gradient(circle at 21% 22%, color-mix(in srgb, var(--branch-motion-accent) 23%, transparent), transparent 45%) !important;
+  background: radial-gradient(circle at 22% 23%, color-mix(in srgb, var(--branch-motion-accent) 18%, transparent), transparent 48%) !important;
 }
-.branch-card.is-launching[data-branch] .branch-progress span { animation: branchLaunchProgressShine 640ms cubic-bezier(.22,1,.36,1) 1 both !important; }
-.branch-card.is-launching[data-branch] .branch-card-footer svg { animation: branchLaunchArrowNudge 640ms cubic-bezier(.22,1,.36,1) 1 both !important; }
+.branch-card.is-launching[data-branch] .branch-progress span { animation: branchLaunchProgressShine 560ms cubic-bezier(.22,1,.36,1) 1 both !important; }
+.branch-card.is-launching[data-branch] .branch-card-footer svg { animation: branchLaunchArrowNudge 560ms cubic-bezier(.22,1,.36,1) 1 both !important; }
 
-/* SVG element setup */
-.anatomy-scan,
-.pathology-scan,
-.internal-scan { opacity: 0; stroke-dasharray: 16; stroke-dashoffset: 16; }
-.physiology-ecg,
-.internal-wave,
-.minor-connector,
-.minor-arrow,
-.surgery-incision { stroke-dasharray: 42; stroke-dashoffset: 0; }
-.physiology-ring,
-.obgyn-protect-ring { opacity: 0; }
-.biochem-bubbles .bubble,
-.pharma-particles .dose,
-.peds-sparkles .spark,
-.pathology-cell,
-.micro-colony { transform-origin: center; }
-.surgery-glint { opacity: .34; transform: scale(.78); }
-.obgyn-heart { fill: color-mix(in srgb, currentColor 10%, transparent); }
-
-@media (prefers-reduced-motion: no-preference) {
-  .branch-card[data-branch="anatomy"]:hover .anatomy-ribs { animation: kqHoverAnatomyClarify 960ms ease-out 1; }
-  .branch-card[data-branch="physiology"]:hover .physiology-heart { animation: kqHoverHeartBeat 1100ms ease-in-out infinite; }
-  .branch-card[data-branch="histology-embryology"]:hover .histology-dot { animation: kqHoverDotPulse 1200ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-biochemistry"]:hover .biochem-flask { animation: kqHoverFlaskSway 1200ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-biochemistry"]:hover .biochem-bubbles .bubble { animation: kqHoverBubbleFloat 1250ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-microbiology"]:hover .micro-colony { animation: kqHoverColonyPulse 1200ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-pathology"]:hover .pathology-tissue { animation: kqHoverTissueFocus 1250ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-pharmacology"]:hover .pharma-capsule { animation: kqHoverPharmaSway 1300ms ease-in-out infinite; }
-  .branch-card[data-branch="internal-medicine"]:hover .internal-lungs { animation: kqHoverInternalBreath 1300ms ease-in-out infinite; }
-  .branch-card[data-branch="pediatrics"]:hover .peds-bear { animation: kqHoverPedsWarmth 1400ms ease-in-out infinite; }
-  .branch-card[data-branch="general-surgery"]:hover .surgery-glint { animation: kqHoverGlint 1350ms ease-in-out infinite; }
-  .branch-card[data-branch="obstetrics-gynecology"]:hover .obgyn-heart { animation: kqHoverObgynHeart 1300ms ease-in-out infinite; }
-  .branch-card[data-branch="minor-rotations"]:hover .minor-tile { animation: kqHoverMinorTile 1500ms ease-in-out infinite; }
-
-  .branch-card.is-launching[data-branch="anatomy"] .anatomy-frame { animation: kqLaunchAnatomyBuild 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="anatomy"] .anatomy-scan { animation: kqLaunchScanLine 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="anatomy"] .anatomy-dots circle { animation: kqLaunchParticlePop 640ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="physiology"] .physiology-heart { animation: kqLaunchHeartPulse 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="physiology"] .physiology-ecg { animation: kqLaunchStrokeDraw 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="physiology"] .physiology-ring-one { animation: kqLaunchPulseRing 640ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="physiology"] .physiology-ring-two { animation: kqLaunchPulseRing 640ms ease-out 90ms 1 both; }
-
-  .branch-card.is-launching[data-branch="histology-embryology"] .histology-cell { animation: kqLaunchCellDivide 640ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="histology-embryology"] .histology-dot { animation: kqLaunchCellDot 640ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="histology-embryology"] .histology-orbit { animation: kqLaunchCellOrbit 640ms ease-in-out 1 both; }
-
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .biochem-flask { animation: kqLaunchFlaskReact 640ms cubic-bezier(.22,1,.36,1) 1 both; transform-origin: 50% 80%; }
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .biochem-liquid { animation: kqLaunchLiquidWave 640ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .bubble-one { animation: kqLaunchBubbleOne 640ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .bubble-two { animation: kqLaunchBubbleTwo 640ms ease-out 55ms 1 both; }
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .bubble-three { animation: kqLaunchBubbleThree 640ms ease-out 105ms 1 both; }
-
-  .branch-card.is-launching[data-branch="medical-microbiology"] .microbiology-petri { animation: kqLaunchPetriGlow 640ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-microbiology"] .micro-colony { animation: kqLaunchColonyBloom 640ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-microbiology"] .micro-orbit-dots { animation: kqLaunchMicroOrbit 640ms ease-in-out 1 both; transform-origin: 16px 16px; }
-
-  .branch-card.is-launching[data-branch="medical-pathology"] .pathology-tissue { animation: kqLaunchTissueStain 640ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-pathology"] .pathology-scan { animation: kqLaunchScanLine 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="medical-pathology"] .pathology-cell { animation: kqLaunchParticlePop 640ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .pharma-capsule { animation: kqLaunchPharmaDissolve 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .pharma-receptor { animation: kqLaunchReceptorPulse 640ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .dose-one { animation: kqLaunchDoseOne 640ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .dose-two { animation: kqLaunchDoseTwo 640ms ease-out 45ms 1 both; }
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .dose-three { animation: kqLaunchDoseThree 640ms ease-out 85ms 1 both; }
-
-  .branch-card.is-launching[data-branch="internal-medicine"] .internal-torso { animation: kqLaunchInternalGlow 640ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="internal-medicine"] .internal-wave { animation: kqLaunchStrokeDraw 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="internal-medicine"] .internal-scan { animation: kqLaunchScanLine 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-
-  .branch-card.is-launching[data-branch="pediatrics"] .peds-bear { animation: kqLaunchPedsBounce 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="pediatrics"] .peds-sparkles .spark { animation: kqLaunchSparklePop 640ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="general-surgery"] .surgery-scalpel { animation: kqLaunchScalpelSwipe 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="general-surgery"] .surgery-incision { animation: kqLaunchIncisionDraw 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="general-surgery"] .surgery-glint { animation: kqLaunchGlintPop 640ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .obgyn-heart { animation: kqLaunchObgynHeart 640ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .obgyn-protect-ring { animation: kqLaunchObgynRing 640ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .obgyn-uterus { animation: kqLaunchObgynOutline 640ms ease-in-out 1 both; }
-
-  .branch-card.is-launching[data-branch="minor-rotations"] .minor-tile { animation: kqLaunchMinorTiles 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="minor-rotations"] .minor-connector,
-  .branch-card.is-launching[data-branch="minor-rotations"] .minor-arrow { animation: kqLaunchStrokeDraw 640ms cubic-bezier(.22,1,.36,1) 1 both; }
-
-  .route-icon-anatomy .anatomy-scan,
-  .route-icon-medical-pathology .pathology-scan,
-  .route-icon-internal-medicine .internal-scan { animation: kqRouteScan 1.45s ease-in-out infinite; }
-  .route-icon-physiology .physiology-heart { animation: kqRouteHeartBeat 1.22s ease-in-out infinite; }
-  .route-icon-physiology .physiology-ecg { animation: kqRouteStrokeFlow 1.22s ease-in-out infinite; }
-  .route-icon-histology-embryology .histology-cell { animation: kqRouteCellDrift 1.65s ease-in-out infinite; }
-  .route-icon-histology-embryology .histology-dot { animation: kqHoverDotPulse 1.35s ease-in-out infinite; }
-  .route-icon-medical-biochemistry .biochem-flask { animation: kqRouteFlaskSway 1.25s ease-in-out infinite; transform-origin: 50% 80%; }
-  .route-icon-medical-biochemistry .biochem-bubbles .bubble { animation: kqRouteBubbleFloat 1.25s ease-in-out infinite; }
-  .route-icon-medical-microbiology .micro-colony { animation: kqHoverColonyPulse 1.2s ease-in-out infinite; }
-  .route-icon-medical-microbiology .micro-orbit-dots { animation: kqRouteMicroOrbit 1.6s linear infinite; transform-origin: 16px 16px; }
-  .route-icon-medical-pathology .pathology-tissue { animation: kqHoverTissueFocus 1.3s ease-in-out infinite; }
-  .route-icon-medical-pharmacology .pharma-capsule { animation: kqRoutePharmaSway 1.4s ease-in-out infinite; }
-  .route-icon-medical-pharmacology .pharma-receptor { animation: kqRouteReceptorPulse 1.4s ease-in-out infinite; }
-  .route-icon-internal-medicine .internal-lungs { animation: kqHoverInternalBreath 1.35s ease-in-out infinite; }
-  .route-icon-internal-medicine .internal-wave { animation: kqRouteStrokeFlow 1.35s ease-in-out infinite; }
-  .route-icon-pediatrics .peds-bear { animation: kqRoutePedsBounce 1.42s ease-in-out infinite; }
-  .route-icon-pediatrics .peds-sparkles .spark { animation: kqRouteSparkle 1.42s ease-in-out infinite; }
-  .route-icon-general-surgery .surgery-scalpel { animation: kqRouteSurgeryPrecision 1.18s ease-in-out infinite; }
-  .route-icon-general-surgery .surgery-glint { animation: kqHoverGlint 1.18s ease-in-out infinite; }
-  .route-icon-obstetrics-gynecology .obgyn-heart { animation: kqHoverObgynHeart 1.32s ease-in-out infinite; }
-  .route-icon-obstetrics-gynecology .obgyn-protect-ring { animation: kqRouteObgynRing 1.6s ease-in-out infinite; }
-  .route-icon-minor-rotations .minor-tile { animation: kqRouteMinorTiles 1.45s ease-in-out infinite; }
-  .route-icon-minor-rotations .minor-connector { animation: kqRouteStrokeFlow 1.45s ease-in-out infinite; }
+/* Route transition cleanup: remove old noisy decorative spans around rebuilt branch icons. */
+.branch-transition-visual[data-branch="anatomy"] .branch-motion-effect,
+.branch-transition-visual[data-branch="physiology"] .branch-motion-effect,
+.branch-transition-visual[data-branch="histology-embryology"] .branch-motion-effect,
+.branch-transition-visual[data-branch="medical-biochemistry"] .branch-motion-effect,
+.branch-transition-visual[data-branch="medical-microbiology"] .branch-motion-effect,
+.branch-transition-visual[data-branch="medical-pathology"] .branch-motion-effect,
+.branch-transition-visual[data-branch="medical-pharmacology"] .branch-motion-effect,
+.branch-transition-visual[data-branch="internal-medicine"] .branch-motion-effect,
+.branch-transition-visual[data-branch="pediatrics"] .branch-motion-effect,
+.branch-transition-visual[data-branch="general-surgery"] .branch-motion-effect,
+.branch-transition-visual[data-branch="obstetrics-gynecology"] .branch-motion-effect,
+.branch-transition-visual[data-branch="minor-rotations"] .branch-motion-effect {
+  display: none !important;
 }
-
-@keyframes branchAnimatedBadgeEnter { 0%,100%{transform:translateY(-2px) scale(1.035)} 22%{transform:translateY(-4px) scale(1.13)} 48%{transform:translateY(-1px) scale(.985)} 72%{transform:translateY(-2px) scale(1.055)} }
-@keyframes branchAnimatedRingStrong { 0%{opacity:0;transform:scale(.72)} 24%{opacity:.32;transform:scale(1)} 100%{opacity:0;transform:scale(1.58)} }
-@keyframes branchAnimatedRingSoft { 0%,18%{opacity:0;transform:scale(.8)} 42%{opacity:.18;transform:scale(1.22)} 100%{opacity:0;transform:scale(1.88)} }
-@keyframes branchAnimatedCoreGlow { 0%{opacity:.36;transform:scale(.9)} 36%{opacity:.82;transform:scale(1.18)} 100%{opacity:.32;transform:scale(1.02)} }
-@keyframes kqHoverAnatomyClarify { 0%,100%{opacity:1} 45%{opacity:.68} }
-@keyframes kqHoverHeartBeat { 0%,100%{transform:scale(1)} 30%{transform:scale(1.06)} 52%{transform:scale(.99)} 72%{transform:scale(1.035)} }
-@keyframes kqHoverDotPulse { 0%,100%{opacity:.55;transform:scale(.85)} 48%{opacity:1;transform:scale(1.18)} }
-@keyframes kqHoverFlaskSway { 0%,100%{transform:rotate(0)} 42%{transform:rotate(-2.2deg)} 70%{transform:rotate(1.4deg)} }
-@keyframes kqHoverBubbleFloat { 0%,100%{opacity:.54;transform:translateY(0) scale(.9)} 52%{opacity:1;transform:translateY(-1.8px) scale(1.08)} }
-@keyframes kqHoverColonyPulse { 0%,100%{opacity:.68;transform:scale(.92)} 50%{opacity:1;transform:scale(1.18)} }
-@keyframes kqHoverTissueFocus { 0%,100%{transform:scale(1);opacity:.92} 48%{transform:scale(1.055);opacity:1} }
-@keyframes kqHoverPharmaSway { 0%,100%{transform:rotate(0)} 48%{transform:rotate(-2.4deg) translateY(-.4px)} 72%{transform:rotate(1.2deg)} }
-@keyframes kqHoverInternalBreath { 0%,100%{transform:scale(1)} 50%{transform:scale(1.055)} }
-@keyframes kqHoverPedsWarmth { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-.9px) scale(1.028)} }
-@keyframes kqHoverGlint { 0%,65%,100%{opacity:.18;transform:scale(.6) rotate(0)} 38%{opacity:1;transform:scale(1.18) rotate(42deg)} }
-@keyframes kqHoverObgynHeart { 0%,100%{transform:scale(1);opacity:.72} 44%{transform:scale(1.18);opacity:1} }
-@keyframes kqHoverMinorTile { 0%,100%{transform:scale(1)} 45%{transform:scale(1.055)} }
-
-@keyframes kqLaunchAnatomyBuild { 0%{opacity:.62;transform:scale(.94)} 30%{opacity:1;transform:scale(1.08)} 100%{opacity:1;transform:scale(1)} }
-@keyframes kqLaunchScanLine { 0%{opacity:0;stroke-dashoffset:16;transform:translateX(-7px)} 22%{opacity:1} 76%{opacity:.95;stroke-dashoffset:0;transform:translateX(7px)} 100%{opacity:0;transform:translateX(10px)} }
-@keyframes kqLaunchParticlePop { 0%{opacity:0;transform:scale(.4)} 36%{opacity:1;transform:scale(1.2)} 100%{opacity:0;transform:scale(.82)} }
-@keyframes kqLaunchHeartPulse { 0%,100%{transform:scale(1)} 22%{transform:scale(1.18)} 44%{transform:scale(.94)} 70%{transform:scale(1.08)} }
-@keyframes kqLaunchStrokeDraw { 0%{stroke-dashoffset:42;opacity:.25} 44%{opacity:1} 100%{stroke-dashoffset:0;opacity:1} }
-@keyframes kqLaunchPulseRing { 0%{opacity:0;transform:scale(.62)} 28%{opacity:.36} 100%{opacity:0;transform:scale(1.5)} }
-@keyframes kqLaunchCellDivide { 0%,100%{transform:rotate(0) scale(1)} 30%{transform:rotate(8deg) scale(1.06)} 58%{transform:rotate(-4deg) scale(.96)} }
-@keyframes kqLaunchCellDot { 0%{opacity:.42;transform:scale(.65) translate(0,0)} 42%{opacity:1;transform:scale(1.25) translate(1px,-1px)} 100%{opacity:.74;transform:scale(1) translate(0,0)} }
-@keyframes kqLaunchCellOrbit { 0%,100%{transform:rotate(0);opacity:.7} 52%{transform:rotate(12deg);opacity:1} }
-@keyframes kqLaunchFlaskReact { 0%,100%{transform:rotate(0) translateY(0)} 20%{transform:rotate(-6deg) translateY(-.5px)} 44%{transform:rotate(5deg)} 68%{transform:rotate(-2deg)} }
-@keyframes kqLaunchLiquidWave { 0%,100%{transform:translateY(0) scaleX(1)} 45%{transform:translateY(-.8px) scaleX(1.04)} 70%{transform:translateY(.5px) scaleX(.98)} }
-@keyframes kqLaunchBubbleOne { 0%{opacity:0;transform:translateY(0) scale(.45)} 28%{opacity:1} 100%{opacity:0;transform:translateY(-8px) translateX(-1px) scale(1.1)} }
-@keyframes kqLaunchBubbleTwo { 0%{opacity:0;transform:translateY(0) scale(.45)} 28%{opacity:1} 100%{opacity:0;transform:translateY(-10px) translateX(1px) scale(1.12)} }
-@keyframes kqLaunchBubbleThree { 0%{opacity:0;transform:translateY(0) scale(.45)} 28%{opacity:1} 100%{opacity:0;transform:translateY(-7px) scale(1.05)} }
-@keyframes kqLaunchPetriGlow { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 46%{transform:scale(1.07);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 30%,transparent))} }
-@keyframes kqLaunchColonyBloom { 0%{transform:scale(.62);opacity:.45} 42%{transform:scale(1.28);opacity:1} 100%{transform:scale(1);opacity:.85} }
-@keyframes kqLaunchMicroOrbit { 0%{transform:rotate(0);opacity:.18} 46%{opacity:1} 100%{transform:rotate(92deg);opacity:.38} }
-@keyframes kqLaunchTissueStain { 0%{transform:scale(.82);opacity:.5} 45%{transform:scale(1.14);opacity:1} 100%{transform:scale(1);opacity:.95} }
-@keyframes kqLaunchPharmaDissolve { 0%,100%{transform:rotate(0) scale(1)} 24%{transform:rotate(-6deg) scale(1.08)} 52%{transform:rotate(3deg) scale(.96)} }
-@keyframes kqLaunchReceptorPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 50%{transform:scale(1.18);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 34%,transparent))} }
-@keyframes kqLaunchDoseOne { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(8px,4px) scale(1)} }
-@keyframes kqLaunchDoseTwo { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(7px,5px) scale(1)} }
-@keyframes kqLaunchDoseThree { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(6px,6px) scale(1)} }
-@keyframes kqLaunchInternalGlow { 0%,100%{transform:scale(1)} 42%{transform:scale(1.07);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 28%,transparent))} }
-@keyframes kqLaunchPedsBounce { 0%,100%{transform:translateY(0) scale(1)} 24%{transform:translateY(-2px) scale(1.1)} 50%{transform:translateY(1px) scale(.97)} 75%{transform:translateY(-.5px) scale(1.03)} }
-@keyframes kqLaunchSparklePop { 0%{opacity:0;transform:scale(.42) rotate(0)} 44%{opacity:1;transform:scale(1.28) rotate(45deg)} 100%{opacity:.55;transform:scale(.88) rotate(0)} }
-@keyframes kqLaunchScalpelSwipe { 0%,100%{transform:translateX(0) rotate(0)} 24%{transform:translateX(3px) rotate(-7deg)} 48%{transform:translateX(-2px) rotate(4deg)} 72%{transform:translateX(1px) rotate(-1deg)} }
-@keyframes kqLaunchIncisionDraw { 0%{stroke-dashoffset:42;opacity:0} 28%{opacity:.9} 100%{stroke-dashoffset:0;opacity:.9} }
-@keyframes kqLaunchGlintPop { 0%{opacity:0;transform:scale(.4) rotate(0)} 42%{opacity:1;transform:scale(1.25) rotate(45deg)} 100%{opacity:.34;transform:scale(.75) rotate(0)} }
-@keyframes kqLaunchObgynHeart { 0%,100%{transform:scale(1);opacity:.75} 34%{transform:scale(1.25);opacity:1} 58%{transform:scale(.94)} }
-@keyframes kqLaunchObgynRing { 0%{opacity:0;transform:scale(.7) rotate(0)} 30%{opacity:.36} 100%{opacity:0;transform:scale(1.36) rotate(38deg)} }
-@keyframes kqLaunchObgynOutline { 0%,100%{filter:drop-shadow(0 0 0 transparent)} 48%{filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 28%,transparent))} }
-@keyframes kqLaunchMinorTiles { 0%,100%{transform:translate(0,0) scale(1)} 38%{transform:translate(var(--minor-x, 0), var(--minor-y, 0)) scale(1.08)} 65%{transform:translate(0,0) scale(.98)} }
-.branch-card.is-launching[data-branch="minor-rotations"] .tile-one { --minor-x: -1.5px; --minor-y: -1.5px; }
-.branch-card.is-launching[data-branch="minor-rotations"] .tile-two { --minor-x: 1.5px; --minor-y: -1.5px; }
-.branch-card.is-launching[data-branch="minor-rotations"] .tile-three { --minor-x: -1.5px; --minor-y: 1.5px; }
-.branch-card.is-launching[data-branch="minor-rotations"] .tile-four { --minor-x: 1.5px; --minor-y: 1.5px; }
-
-@keyframes kqRouteScan { 0%,100%{opacity:0;stroke-dashoffset:16;transform:translateX(-8px)} 45%{opacity:1;stroke-dashoffset:0;transform:translateX(8px)} }
-@keyframes kqRouteHeartBeat { 0%,100%{transform:scale(1)} 32%{transform:scale(1.11)} 52%{transform:scale(.98)} 70%{transform:scale(1.04)} }
-@keyframes kqRouteStrokeFlow { 0%{stroke-dashoffset:42;opacity:.42} 55%{opacity:1} 100%{stroke-dashoffset:0;opacity:.78} }
-@keyframes kqRouteCellDrift { 0%,100%{transform:rotate(0) scale(1)} 48%{transform:rotate(6deg) scale(1.04)} }
-@keyframes kqRouteFlaskSway { 0%,100%{transform:rotate(0)} 42%{transform:rotate(-4deg)} 70%{transform:rotate(2.5deg)} }
-@keyframes kqRouteBubbleFloat { 0%,100%{opacity:.18;transform:translateY(0) scale(.72)} 50%{opacity:1;transform:translateY(-7px) scale(1.1)} }
-@keyframes kqRouteMicroOrbit { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-@keyframes kqRoutePharmaSway { 0%,100%{transform:rotate(0)} 48%{transform:rotate(-5deg) translateY(-.5px)} 72%{transform:rotate(2deg)} }
-@keyframes kqRouteReceptorPulse { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 48%{transform:scale(1.15);filter:drop-shadow(0 0 8px color-mix(in srgb,currentColor 36%,transparent))} }
-@keyframes kqRoutePedsBounce { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-1.8px) scale(1.045)} 72%{transform:translateY(.5px) scale(.99)} }
-@keyframes kqRouteSparkle { 0%,100%{opacity:.18;transform:scale(.62) rotate(0)} 44%{opacity:1;transform:scale(1.22) rotate(45deg)} }
-@keyframes kqRouteSurgeryPrecision { 0%,100%{transform:translateX(0) rotate(0)} 45%{transform:translateX(3px) rotate(-5deg)} 72%{transform:translateX(-1px) rotate(2deg)} }
-@keyframes kqRouteObgynRing { 0%,100%{opacity:0;transform:scale(.78) rotate(0)} 45%{opacity:.35;transform:scale(1.1) rotate(28deg)} }
-@keyframes kqRouteMinorTiles { 0%,100%{transform:scale(1)} 45%{transform:scale(1.08)} 70%{transform:scale(.99)} }
 
 .branch-transition-visual[data-branch] .branch-icon-glyph,
 .branch-transition-visual[data-branch] .branch-animated-svg {
   width: 82px !important;
   height: 82px !important;
-  stroke-width: 1.62 !important;
-  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--route-accent) 30%, transparent)) !important;
+  stroke-width: 1.68 !important;
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--route-accent) 24%, transparent)) !important;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .branch-card[data-branch="anatomy"]:hover .anatomy-core { animation: kqProHoverClarify 900ms ease-out 1; }
+  .branch-card[data-branch="physiology"]:hover .physiology-core { animation: kqProHoverPulse 1100ms ease-in-out infinite; }
+  .branch-card[data-branch="histology-embryology"]:hover .histology-core { animation: kqProHoverBreath 1300ms ease-in-out infinite; }
+  .branch-card[data-branch="medical-biochemistry"]:hover .biochem-core { animation: kqProHoverFlask 1300ms ease-in-out infinite; transform-origin: 50% 84%; }
+  .branch-card[data-branch="medical-microbiology"]:hover .kq-colony { animation: kqProHoverColony 1300ms ease-in-out infinite; }
+  .branch-card[data-branch="medical-pathology"]:hover .pathology-stain { animation: kqProHoverFocus 1300ms ease-in-out infinite; }
+  .branch-card[data-branch="medical-pharmacology"]:hover .pharma-capsule { animation: kqProHoverPharma 1300ms ease-in-out infinite; transform-origin: 50% 50%; }
+  .branch-card[data-branch="internal-medicine"]:hover .internal-lung { animation: kqProHoverBreath 1300ms ease-in-out infinite; }
+  .branch-card[data-branch="pediatrics"]:hover .pediatrics-core { animation: kqProHoverPeds 1400ms ease-in-out infinite; }
+  .branch-card[data-branch="general-surgery"]:hover .surgery-glint { animation: kqProHoverGlint 1500ms ease-in-out infinite; }
+  .branch-card[data-branch="obstetrics-gynecology"]:hover .obgyn-heart { animation: kqProHoverHeart 1300ms ease-in-out infinite; }
+  .branch-card[data-branch="minor-rotations"]:hover .minor-tile { animation: kqProHoverTile 1500ms ease-in-out infinite; }
+
+  .branch-card.is-launching[data-branch="anatomy"] .anatomy-core { animation: kqLaunchAnatomyClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="anatomy"] .anatomy-scan { animation: kqLaunchCleanScan 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+
+  .branch-card.is-launching[data-branch="physiology"] .physiology-core { animation: kqLaunchHeartClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="physiology"] .physiology-ecg { animation: kqLaunchStrokeDrawClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="physiology"] .physiology-ring-one { animation: kqLaunchRingClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="physiology"] .physiology-ring-two { animation: kqLaunchRingClean 560ms ease-out 80ms 1 both; }
+
+  .branch-card.is-launching[data-branch="histology-embryology"] .histology-core { animation: kqLaunchCellClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="histology-embryology"] .histology-organelle { animation: kqLaunchOrganelleClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="histology-embryology"] .histology-division { animation: kqLaunchDivisionClean 560ms ease-out 1 both; }
+
+  .branch-card.is-launching[data-branch="medical-biochemistry"] .biochem-core { animation: kqLaunchFlaskClean 560ms cubic-bezier(.22,1,.36,1) 1 both; transform-origin: 50% 84%; }
+  .branch-card.is-launching[data-branch="medical-biochemistry"] .biochem-liquid { animation: kqLaunchLiquidClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="medical-biochemistry"] .bubble-one { animation: kqLaunchBubbleClean 560ms ease-out 40ms 1 both; }
+  .branch-card.is-launching[data-branch="medical-biochemistry"] .bubble-two { animation: kqLaunchBubbleClean 560ms ease-out 90ms 1 both; }
+  .branch-card.is-launching[data-branch="medical-biochemistry"] .bubble-three { animation: kqLaunchBubbleClean 560ms ease-out 130ms 1 both; }
+
+  .branch-card.is-launching[data-branch="medical-microbiology"] .microbiology-core { animation: kqLaunchPetriClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="medical-microbiology"] .colony-one { animation: kqLaunchColonyClean 560ms ease-out 0ms 1 both; }
+  .branch-card.is-launching[data-branch="medical-microbiology"] .colony-two { animation: kqLaunchColonyClean 560ms ease-out 70ms 1 both; }
+  .branch-card.is-launching[data-branch="medical-microbiology"] .colony-three { animation: kqLaunchColonyClean 560ms ease-out 120ms 1 both; }
+
+  .branch-card.is-launching[data-branch="medical-pathology"] .pathology-stain { animation: kqLaunchStainClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="medical-pathology"] .pathology-scan { animation: kqLaunchCleanScan 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+
+  .branch-card.is-launching[data-branch="medical-pharmacology"] .pharma-capsule { animation: kqLaunchPharmaCapsuleClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="medical-pharmacology"] .pharma-target { animation: kqLaunchTargetClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="medical-pharmacology"] .particle-one { animation: kqLaunchParticleToTargetOne 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="medical-pharmacology"] .particle-two { animation: kqLaunchParticleToTargetTwo 560ms ease-out 35ms 1 both; }
+
+  .branch-card.is-launching[data-branch="internal-medicine"] .internal-core { animation: kqLaunchInternalClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="internal-medicine"] .internal-wave { animation: kqLaunchStrokeDrawClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="internal-medicine"] .internal-scan { animation: kqLaunchCleanScan 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+
+  .branch-card.is-launching[data-branch="pediatrics"] .pediatrics-core { animation: kqLaunchPedsClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="pediatrics"] .peds-spark { animation: kqLaunchGlintClean 560ms ease-out 1 both; }
+
+  .branch-card.is-launching[data-branch="general-surgery"] .surgery-core { animation: kqLaunchSurgeryClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="general-surgery"] .surgery-incision { animation: kqLaunchStrokeDrawClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+  .branch-card.is-launching[data-branch="general-surgery"] .surgery-glint { animation: kqLaunchGlintClean 560ms ease-out 1 both; }
+
+  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .obgyn-core { animation: kqLaunchObgynClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .obgyn-heart { animation: kqLaunchHeartMarkClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .obgyn-ring { animation: kqLaunchRingClean 560ms ease-out 1 both; }
+
+  .branch-card.is-launching[data-branch="minor-rotations"] .minor-core { animation: kqLaunchMinorClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="minor-rotations"] .tile-one { --tile-x: -1.25px; --tile-y: -1.25px; }
+  .branch-card.is-launching[data-branch="minor-rotations"] .tile-two { --tile-x: 1.25px; --tile-y: -1.25px; }
+  .branch-card.is-launching[data-branch="minor-rotations"] .tile-three { --tile-x: -1.25px; --tile-y: 1.25px; }
+  .branch-card.is-launching[data-branch="minor-rotations"] .tile-four { --tile-x: 1.25px; --tile-y: 1.25px; }
+  .branch-card.is-launching[data-branch="minor-rotations"] .minor-tile { animation: kqLaunchTileClean 560ms ease-out 1 both; }
+  .branch-card.is-launching[data-branch="minor-rotations"] .minor-arrow { animation: kqLaunchStrokeDrawClean 560ms cubic-bezier(.22,1,.36,1) 1 both; }
+
+  .branch-transition-visual[data-branch] .branch-animated-svg { animation: kqRouteIconClean 900ms cubic-bezier(.22,1,.36,1) infinite; }
+  .branch-transition-visual[data-branch="medical-biochemistry"] .biochem-core { animation: kqLaunchFlaskClean 900ms cubic-bezier(.22,1,.36,1) infinite; transform-origin: 50% 84%; }
+  .branch-transition-visual[data-branch="physiology"] .physiology-core { animation: kqProHoverPulse 900ms ease-in-out infinite; }
+  .branch-transition-visual[data-branch="medical-pharmacology"] .pharma-target { animation: kqLaunchTargetClean 900ms ease-in-out infinite; }
+}
+
+@keyframes kqProBadgeEnter { 0%{transform:translateY(-2px) scale(1.02)} 38%{transform:translateY(-3px) scale(1.095)} 100%{transform:translateY(-2px) scale(1.035)} }
+@keyframes kqProBadgeGlow { 0%{opacity:0;transform:scale(.82)} 36%{opacity:.46;transform:scale(1.12)} 100%{opacity:0;transform:scale(1.28)} }
+@keyframes kqProBadgeRing { 0%{opacity:0;transform:scale(.86)} 34%{opacity:.42;transform:scale(1.03)} 100%{opacity:0;transform:scale(1.2)} }
+@keyframes kqProInnerGlow { 0%,100%{opacity:.48;transform:scale(.95)} 42%{opacity:.86;transform:scale(1.18)} }
+
+@keyframes kqProHoverClarify { 0%,100%{opacity:1} 46%{opacity:.82} }
+@keyframes kqProHoverPulse { 0%,100%{transform:scale(1)} 45%{transform:scale(1.055)} 65%{transform:scale(.985)} }
+@keyframes kqProHoverBreath { 0%,100%{transform:scale(1)} 50%{transform:scale(1.035)} }
+@keyframes kqProHoverFlask { 0%,100%{transform:rotate(0deg)} 45%{transform:rotate(-2.2deg)} 70%{transform:rotate(1.2deg)} }
+@keyframes kqProHoverColony { 0%,100%{transform:scale(1);opacity:.78} 50%{transform:scale(1.14);opacity:.95} }
+@keyframes kqProHoverFocus { 0%,100%{transform:scale(1);opacity:.82} 50%{transform:scale(1.045);opacity:.98} }
+@keyframes kqProHoverPharma { 0%,100%{transform:translate(0,0) rotate(0)} 48%{transform:translate(.35px,-.35px) rotate(-1.8deg)} }
+@keyframes kqProHoverPeds { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-.7px)} }
+@keyframes kqProHoverGlint { 0%,70%,100%{opacity:0;transform:scale(.65) rotate(0)} 42%{opacity:.9;transform:scale(1.1) rotate(35deg)} }
+@keyframes kqProHoverHeart { 0%,100%{transform:scale(1)} 45%{transform:scale(1.13)} }
+@keyframes kqProHoverTile { 0%,100%{transform:scale(1)} 50%{transform:scale(1.055)} }
+
+@keyframes kqLaunchAnatomyClean { 0%{opacity:.76;transform:scale(.96)} 40%{opacity:1;transform:scale(1.065)} 100%{opacity:1;transform:scale(1)} }
+@keyframes kqLaunchCleanScan { 0%{opacity:0;stroke-dashoffset:18;transform:translateX(-7px)} 24%{opacity:.9} 76%{stroke-dashoffset:0;transform:translateX(7px)} 100%{opacity:0;transform:translateX(9px)} }
+@keyframes kqLaunchHeartClean { 0%,100%{transform:scale(1)} 22%{transform:scale(1.12)} 48%{transform:scale(.97)} 74%{transform:scale(1.04)} }
+@keyframes kqLaunchStrokeDrawClean { 0%{stroke-dashoffset:42;opacity:.18} 45%{opacity:1} 100%{stroke-dashoffset:0;opacity:.92} }
+@keyframes kqLaunchRingClean { 0%{opacity:0;transform:scale(.68)} 28%{opacity:.34} 100%{opacity:0;transform:scale(1.45)} }
+@keyframes kqLaunchCellClean { 0%,100%{transform:rotate(0deg) scale(1)} 34%{transform:rotate(6deg) scale(1.055)} 66%{transform:rotate(-2deg) scale(.985)} }
+@keyframes kqLaunchOrganelleClean { 0%{opacity:.52;transform:scale(.78)} 42%{opacity:.95;transform:scale(1.18)} 100%{opacity:.78;transform:scale(1)} }
+@keyframes kqLaunchDivisionClean { 0%{opacity:0;stroke-dashoffset:14} 50%{opacity:.48} 100%{opacity:.18;stroke-dashoffset:0} }
+@keyframes kqLaunchFlaskClean { 0%,100%{transform:rotate(0deg) translateY(0)} 22%{transform:rotate(-4.8deg) translateY(-.3px)} 50%{transform:rotate(3.8deg)} 75%{transform:rotate(-1.2deg)} }
+@keyframes kqLaunchLiquidClean { 0%,100%{transform:translateY(0) scaleX(1)} 42%{transform:translateY(-.6px) scaleX(1.035)} 70%{transform:translateY(.35px) scaleX(.985)} }
+@keyframes kqLaunchBubbleClean { 0%{opacity:0;transform:translateY(0) scale(.55)} 28%{opacity:.95} 100%{opacity:0;transform:translateY(-7px) scale(1.05)} }
+@keyframes kqLaunchPetriClean { 0%,100%{transform:scale(1)} 44%{transform:scale(1.045)} }
+@keyframes kqLaunchColonyClean { 0%{opacity:.46;transform:scale(.7)} 46%{opacity:.95;transform:scale(1.22)} 100%{opacity:.78;transform:scale(1)} }
+@keyframes kqLaunchStainClean { 0%{opacity:.45;transform:scale(.86)} 48%{opacity:.96;transform:scale(1.12)} 100%{opacity:.82;transform:scale(1)} }
+@keyframes kqLaunchPharmaCapsuleClean { 0%,100%{transform:rotate(0deg) translate(0,0)} 30%{transform:rotate(-4.4deg) translate(-.25px,-.35px)} 60%{transform:rotate(2deg) translate(.25px,.15px)} }
+@keyframes kqLaunchTargetClean { 0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 transparent)} 52%{transform:scale(1.16);filter:drop-shadow(0 0 7px color-mix(in srgb,currentColor 34%,transparent))} }
+@keyframes kqLaunchParticleToTargetOne { 0%{opacity:0;transform:translate(0,0) scale(.55)} 28%{opacity:.9} 100%{opacity:0;transform:translate(6.7px,6.6px) scale(.95)} }
+@keyframes kqLaunchParticleToTargetTwo { 0%{opacity:0;transform:translate(0,0) scale(.55)} 28%{opacity:.85} 100%{opacity:0;transform:translate(4.8px,5px) scale(.9)} }
+@keyframes kqLaunchInternalClean { 0%,100%{transform:scale(1)} 44%{transform:scale(1.055);filter:drop-shadow(0 0 7px color-mix(in srgb,currentColor 22%,transparent))} }
+@keyframes kqLaunchPedsClean { 0%,100%{transform:translateY(0) scale(1)} 28%{transform:translateY(-1.8px) scale(1.075)} 54%{transform:translateY(.6px) scale(.985)} 78%{transform:translateY(-.4px) scale(1.025)} }
+@keyframes kqLaunchGlintClean { 0%{opacity:0;transform:scale(.45) rotate(0)} 45%{opacity:.92;transform:scale(1.16) rotate(38deg)} 100%{opacity:0;transform:scale(.75) rotate(0)} }
+@keyframes kqLaunchSurgeryClean { 0%,100%{transform:translate(0,0) rotate(0)} 28%{transform:translate(2px,-.5px) rotate(-4.5deg)} 58%{transform:translate(-.9px,.25px) rotate(1.8deg)} }
+@keyframes kqLaunchObgynClean { 0%,100%{transform:scale(1)} 44%{transform:scale(1.052)} }
+@keyframes kqLaunchHeartMarkClean { 0%,100%{transform:scale(1);opacity:.88} 42%{transform:scale(1.2);opacity:1} }
+@keyframes kqLaunchMinorClean { 0%,100%{transform:scale(1)} 44%{transform:scale(1.035)} }
+@keyframes kqLaunchTileClean { 0%,100%{transform:translate(0,0) scale(1)} 42%{transform:translate(var(--tile-x, 0), var(--tile-y, 0)) scale(1.08)} 70%{transform:translate(0,0) scale(.985)} }
+@keyframes kqRouteIconClean { 0%,100%{transform:scale(1)} 48%{transform:scale(1.035)} }
+
 @media (max-width: 560px) {
-  .branch-animated-icon { width: 48px; height: 48px; border-radius: 16px; }
-  .branch-animated-svg { width: 25px; height: 25px; }
+  .branch-animated-icon { width: 50px; height: 50px; border-radius: 17px; }
+  .branch-animated-svg { width: 28px; height: 28px; stroke-width: 1.82; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .branch-card[data-branch] .branch-animated-icon,
   .branch-card[data-branch] .branch-animated-icon::before,
   .branch-card[data-branch] .branch-animated-icon::after,
-  .branch-card[data-branch] .branch-icon-ambient,
+  .branch-card[data-branch] .branch-icon-soft-light,
   .branch-card[data-branch] .branch-animated-svg,
   .branch-card[data-branch] .branch-animated-svg *,
   .branch-route-overlay .branch-icon-glyph,
@@ -47887,385 +47917,8 @@ body:not(.klinikiq-auth-lock) .wrong-answers-panel .wrong-answer-more-row {
     animation: none !important;
     transition-duration: 1ms !important;
   }
-
   .branch-card.is-launching[data-branch] .branch-animated-icon {
-    transform: scale(1.035) !important;
+    transform: scale(1.025) !important;
     filter: none !important;
-  }
-}
-
-/* === Branch icon system rebuilt from scratch === */
-.branch-card[data-branch] .branch-card-head {
-  align-items: flex-start;
-}
-
-.branch-animated-icon {
-  position: relative;
-  display: inline-grid;
-  place-items: center;
-  width: 58px;
-  height: 58px;
-  border-radius: 18px;
-  color: var(--branch-motion-accent, var(--accent));
-  isolation: isolate;
-  overflow: visible;
-  background:
-    radial-gradient(circle at 30% 22%, rgba(255,255,255,.42), transparent 32%),
-    linear-gradient(180deg,
-      color-mix(in srgb, var(--branch-motion-accent, var(--accent)) 14%, var(--surface-2)),
-      color-mix(in srgb, var(--branch-motion-accent, var(--accent)) 6%, var(--surface-1))
-    );
-  border: 1px solid color-mix(in srgb, var(--branch-motion-accent, var(--accent)) 34%, var(--border-subtle));
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.34),
-    0 12px 28px color-mix(in srgb, var(--branch-motion-accent, var(--accent)) 15%, transparent);
-  transition:
-    transform 260ms cubic-bezier(.22,1,.36,1),
-    border-color 260ms cubic-bezier(.22,1,.36,1),
-    box-shadow 260ms cubic-bezier(.22,1,.36,1),
-    background 260ms cubic-bezier(.22,1,.36,1);
-  will-change: transform;
-}
-
-.branch-animated-icon::before,
-.branch-animated-icon::after {
-  content: "";
-  position: absolute;
-  inset: -7px;
-  border-radius: 22px;
-  border: 1px solid color-mix(in srgb, var(--branch-motion-accent, var(--accent)) 40%, transparent);
-  opacity: 0;
-  transform: scale(.82);
-  pointer-events: none;
-  z-index: -1;
-}
-
-.branch-icon-ambient,
-.branch-icon-core {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  pointer-events: none;
-}
-
-.branch-icon-ambient {
-  inset: 8px;
-  z-index: -1;
-  border-radius: 999px;
-  opacity: .48;
-  background: radial-gradient(circle, color-mix(in srgb, currentColor 18%, transparent), transparent 72%);
-  filter: blur(9px);
-  transform: scale(.94);
-  transition: opacity 220ms ease, transform 220ms ease;
-}
-
-.branch-icon-core {
-  inset: 10px;
-  background: radial-gradient(circle at 50% 50%, color-mix(in srgb, currentColor 10%, transparent), transparent 72%);
-  opacity: .7;
-}
-
-.branch-animated-svg {
-  width: 31px;
-  height: 31px;
-  overflow: visible;
-  stroke: currentColor;
-  fill: none;
-  vector-effect: non-scaling-stroke;
-  filter: drop-shadow(0 0 10px color-mix(in srgb, currentColor 13%, transparent));
-}
-
-.branch-animated-svg * {
-  transform-box: fill-box;
-  transform-origin: center;
-}
-
-.branch-card[data-branch]:hover .branch-animated-icon,
-.branch-card[data-branch]:focus-visible .branch-animated-icon {
-  transform: translateY(-2px) scale(1.04);
-  border-color: color-mix(in srgb, var(--branch-motion-accent, var(--accent)) 48%, var(--border-subtle));
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.38),
-    0 18px 36px color-mix(in srgb, var(--branch-motion-accent, var(--accent)) 19%, transparent);
-}
-
-.branch-card[data-branch]:hover .branch-icon-ambient,
-.branch-card[data-branch]:focus-visible .branch-icon-ambient {
-  opacity: .72;
-  transform: scale(1.08);
-}
-
-.branch-card.is-launching[data-branch] .branch-animated-icon {
-  animation: branchIconLaunchBadge 620ms cubic-bezier(.22,1,.36,1) 1 both !important;
-}
-
-.branch-card.is-launching[data-branch] .branch-animated-icon::before {
-  animation: branchIconRingStrong 620ms cubic-bezier(.22,1,.36,1) 1 both;
-}
-
-.branch-card.is-launching[data-branch] .branch-animated-icon::after {
-  animation: branchIconRingSoft 620ms cubic-bezier(.22,1,.36,1) 1 both;
-}
-
-.branch-card.is-launching[data-branch] .branch-icon-ambient {
-  animation: branchIconGlowBurst 620ms ease-out 1 both;
-}
-
-.branch-anatomy-scan,
-.branch-path-scan,
-.branch-internal-scan {
-  opacity: 0;
-  stroke-dasharray: 18;
-  stroke-dashoffset: 18;
-}
-
-.branch-physiology-ring,
-.branch-obgyn-ring {
-  opacity: 0;
-}
-
-.branch-physiology-ecg,
-.branch-internal-wave,
-.branch-minor-link,
-.branch-minor-arrow,
-.branch-surgery-cut {
-  stroke-dasharray: 44;
-}
-
-.branch-obgyn-heart {
-  fill: color-mix(in srgb, currentColor 16%, transparent);
-}
-
-.branch-surgery-glint,
-.branch-peds-sparkles path,
-.branch-pharma-dots circle,
-.branch-biochem-bubbles circle,
-.branch-path-cell,
-.branch-histo-particle,
-.branch-micro-colony,
-.branch-micro-orbit circle,
-.branch-anatomy-points circle {
-  fill: currentColor;
-}
-
-.branch-surgery-glint {
-  stroke: currentColor;
-  fill: color-mix(in srgb, currentColor 14%, transparent);
-  opacity: .45;
-}
-
-.branch-histo-nucleus,
-.branch-path-focus {
-  fill: color-mix(in srgb, currentColor 10%, transparent);
-}
-
-.branch-micro-petri circle:first-child,
-.branch-obgyn-ring,
-.branch-physiology-ring,
-.branch-minor-tile {
-  fill: color-mix(in srgb, currentColor 4%, transparent);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .branch-card[data-branch="anatomy"]:hover .branch-anatomy-shell { animation: branchAnatomyHover 1450ms ease-in-out infinite; }
-  .branch-card[data-branch="anatomy"]:hover .branch-anatomy-points circle { animation: branchPingDot 1250ms ease-in-out infinite; }
-
-  .branch-card[data-branch="physiology"]:hover .branch-physiology-heart { animation: branchHeartHover 1200ms ease-in-out infinite; }
-  .branch-card[data-branch="physiology"]:hover .branch-physiology-ring.ring-one { animation: branchPulseHover 1600ms ease-out infinite; }
-
-  .branch-card[data-branch="histology-embryology"]:hover .branch-histo-cell { animation: branchCellHover 1500ms ease-in-out infinite; }
-  .branch-card[data-branch="histology-embryology"]:hover .branch-histo-particle { animation: branchParticleHover 1250ms ease-in-out infinite; }
-
-  .branch-card[data-branch="medical-biochemistry"]:hover .branch-biochem-flask { animation: branchFlaskHover 1300ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-biochemistry"]:hover .branch-biochem-bubbles circle { animation: branchBubbleHover 1200ms ease-in-out infinite; }
-
-  .branch-card[data-branch="medical-microbiology"]:hover .branch-micro-colony { animation: branchColonyHover 1250ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-microbiology"]:hover .branch-micro-orbit { animation: branchOrbitHover 1800ms linear infinite; }
-
-  .branch-card[data-branch="medical-pathology"]:hover .branch-path-focus { animation: branchPathHover 1280ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-pathology"]:hover .branch-path-cell { animation: branchPathCellHover 1250ms ease-in-out infinite; }
-
-  .branch-card[data-branch="medical-pharmacology"]:hover .branch-pharma-capsule { animation: branchCapsuleHover 1280ms ease-in-out infinite; }
-  .branch-card[data-branch="medical-pharmacology"]:hover .branch-pharma-receptor { animation: branchReceptorHover 1450ms ease-in-out infinite; }
-
-  .branch-card[data-branch="internal-medicine"]:hover .branch-internal-lungs { animation: branchBreathHover 1320ms ease-in-out infinite; }
-  .branch-card[data-branch="internal-medicine"]:hover .branch-internal-wave { animation: branchWaveDraw 1600ms ease-in-out infinite; }
-
-  .branch-card[data-branch="pediatrics"]:hover .branch-peds-figure { animation: branchPedsHover 1400ms ease-in-out infinite; }
-  .branch-card[data-branch="pediatrics"]:hover .branch-peds-sparkles path { animation: branchSparkHover 1200ms ease-in-out infinite; }
-
-  .branch-card[data-branch="general-surgery"]:hover .branch-surgery-blade { animation: branchBladeHover 1300ms ease-in-out infinite; }
-  .branch-card[data-branch="general-surgery"]:hover .branch-surgery-glint { animation: branchGlintHover 1100ms ease-in-out infinite; }
-
-  .branch-card[data-branch="obstetrics-gynecology"]:hover .branch-obgyn-heart { animation: branchObgynHeartHover 1250ms ease-in-out infinite; }
-  .branch-card[data-branch="obstetrics-gynecology"]:hover .branch-obgyn-ring { animation: branchObgynRingHover 1600ms ease-out infinite; }
-
-  .branch-card[data-branch="minor-rotations"]:hover .branch-minor-tile { animation: branchMinorTileHover 1450ms ease-in-out infinite; }
-  .branch-card[data-branch="minor-rotations"]:hover .branch-minor-arrow { animation: branchMinorArrowHover 1200ms ease-in-out infinite; }
-
-  .branch-card.is-launching[data-branch="anatomy"] .branch-anatomy-shell { animation: branchAnatomyLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="anatomy"] .branch-anatomy-scan { animation: branchScanLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="anatomy"] .branch-anatomy-points circle { animation: branchDotLaunch 620ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="physiology"] .branch-physiology-heart { animation: branchHeartLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="physiology"] .branch-physiology-ecg { animation: branchStrokeLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="physiology"] .ring-one { animation: branchRingLaunch 620ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="physiology"] .ring-two { animation: branchRingLaunch 620ms ease-out 80ms 1 both; }
-
-  .branch-card.is-launching[data-branch="histology-embryology"] .branch-histo-cell { animation: branchCellLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="histology-embryology"] .branch-histo-particle { animation: branchParticleLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="histology-embryology"] .branch-histo-orbit { animation: branchOrbitStrokeLaunch 620ms ease-in-out 1 both; }
-
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .branch-biochem-flask { animation: branchFlaskLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .branch-biochem-liquid { animation: branchLiquidLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .branch-biochem-bubbles .b1 { animation: branchBubbleUpOne 620ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .branch-biochem-bubbles .b2 { animation: branchBubbleUpTwo 620ms ease-out 40ms 1 both; }
-  .branch-card.is-launching[data-branch="medical-biochemistry"] .branch-biochem-bubbles .b3 { animation: branchBubbleUpThree 620ms ease-out 90ms 1 both; }
-
-  .branch-card.is-launching[data-branch="medical-microbiology"] .branch-micro-petri { animation: branchPetriLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-microbiology"] .branch-micro-colony { animation: branchColonyLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-microbiology"] .branch-micro-orbit { animation: branchOrbitLaunch 620ms ease-in-out 1 both; }
-
-  .branch-card.is-launching[data-branch="medical-pathology"] .branch-path-focus { animation: branchPathLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-pathology"] .branch-path-scan { animation: branchScanLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="medical-pathology"] .branch-path-cell { animation: branchDotLaunch 620ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .branch-pharma-capsule { animation: branchCapsuleLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .branch-pharma-receptor { animation: branchReceptorLaunch 620ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .branch-pharma-dots .d1 { animation: branchDoseLaunchOne 620ms ease-out 1 both; }
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .branch-pharma-dots .d2 { animation: branchDoseLaunchTwo 620ms ease-out 35ms 1 both; }
-  .branch-card.is-launching[data-branch="medical-pharmacology"] .branch-pharma-dots .d3 { animation: branchDoseLaunchThree 620ms ease-out 70ms 1 both; }
-
-  .branch-card.is-launching[data-branch="internal-medicine"] .branch-internal-body { animation: branchBodyLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="internal-medicine"] .branch-internal-lungs { animation: branchBreathLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="internal-medicine"] .branch-internal-scan { animation: branchScanLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="internal-medicine"] .branch-internal-wave { animation: branchStrokeLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-
-  .branch-card.is-launching[data-branch="pediatrics"] .branch-peds-figure { animation: branchPedsLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="pediatrics"] .branch-peds-sparkles path { animation: branchSparkLaunch 620ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="general-surgery"] .branch-surgery-blade { animation: branchBladeLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="general-surgery"] .branch-surgery-cut { animation: branchStrokeLaunch 620ms cubic-bezier(.22,1,.36,1) 1 both; }
-  .branch-card.is-launching[data-branch="general-surgery"] .branch-surgery-glint { animation: branchGlintLaunch 620ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .branch-obgyn-uterus { animation: branchBodyLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .branch-obgyn-heart { animation: branchObgynHeartLaunch 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="obstetrics-gynecology"] .branch-obgyn-ring { animation: branchRingLaunch 620ms ease-out 1 both; }
-
-  .branch-card.is-launching[data-branch="minor-rotations"] .branch-minor-tile.tile-one { animation: branchMinorTileLaunchOne 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="minor-rotations"] .branch-minor-tile.tile-two { animation: branchMinorTileLaunchTwo 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="minor-rotations"] .branch-minor-tile.tile-three { animation: branchMinorTileLaunchThree 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="minor-rotations"] .branch-minor-tile.tile-four { animation: branchMinorTileLaunchFour 620ms ease-in-out 1 both; }
-  .branch-card.is-launching[data-branch="minor-rotations"] .branch-minor-arrow { animation: branchMinorArrowLaunch 620ms ease-in-out 1 both; }
-}
-
-@keyframes branchIconLaunchBadge {
-  0% { transform: scale(.94) translateY(0); }
-  40% { transform: scale(1.1) translateY(-2px); }
-  100% { transform: scale(1.03) translateY(-1px); }
-}
-@keyframes branchIconRingStrong {
-  0% { opacity: 0; transform: scale(.8); }
-  28% { opacity: .38; }
-  100% { opacity: 0; transform: scale(1.38); }
-}
-@keyframes branchIconRingSoft {
-  0% { opacity: 0; transform: scale(.82); }
-  34% { opacity: .2; }
-  100% { opacity: 0; transform: scale(1.56); }
-}
-@keyframes branchIconGlowBurst {
-  0% { opacity: .45; transform: scale(.92); }
-  42% { opacity: .92; transform: scale(1.14); }
-  100% { opacity: .62; transform: scale(1.06); }
-}
-
-@keyframes branchAnatomyHover { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-.6px)} }
-@keyframes branchPingDot { 0%,100%{opacity:.45;transform:scale(.8)} 50%{opacity:1;transform:scale(1.25)} }
-@keyframes branchHeartHover { 0%,100%{transform:scale(1)} 22%{transform:scale(1.14)} 44%{transform:scale(.96)} 70%{transform:scale(1.05)} }
-@keyframes branchPulseHover { 0%{opacity:0;transform:scale(.78)} 30%{opacity:.22} 100%{opacity:0;transform:scale(1.28)} }
-@keyframes branchCellHover { 0%,100%{transform:rotate(0) scale(1)} 48%{transform:rotate(5deg) scale(1.04)} }
-@keyframes branchParticleHover { 0%,100%{opacity:.55;transform:scale(.85)} 50%{opacity:1;transform:scale(1.18)} }
-@keyframes branchFlaskHover { 0%,100%{transform:rotate(0)} 42%{transform:rotate(-2.4deg)} 72%{transform:rotate(1.4deg)} }
-@keyframes branchBubbleHover { 0%,100%{opacity:.62;transform:translateY(0) scale(.92)} 52%{opacity:1;transform:translateY(-1.8px) scale(1.08)} }
-@keyframes branchColonyHover { 0%,100%{opacity:.72;transform:scale(.92)} 50%{opacity:1;transform:scale(1.14)} }
-@keyframes branchOrbitHover { from{transform:rotate(0)} to{transform:rotate(360deg)} }
-@keyframes branchPathHover { 0%,100%{transform:scale(1);opacity:.92} 48%{transform:scale(1.06);opacity:1} }
-@keyframes branchPathCellHover { 0%,100%{opacity:.64;transform:scale(.9)} 50%{opacity:1;transform:scale(1.2)} }
-@keyframes branchCapsuleHover { 0%,100%{transform:rotate(0)} 44%{transform:rotate(-2.6deg) translateY(-.4px)} 74%{transform:rotate(1.4deg)} }
-@keyframes branchReceptorHover { 0%,100%{transform:scale(1)} 48%{transform:scale(1.15)} }
-@keyframes branchBreathHover { 0%,100%{transform:scale(1)} 50%{transform:scale(1.06)} }
-@keyframes branchWaveDraw { 0%,100%{stroke-dashoffset:0} 50%{stroke-dashoffset:-8} }
-@keyframes branchPedsHover { 0%,100%{transform:translateY(0) scale(1)} 48%{transform:translateY(-.8px) scale(1.03)} }
-@keyframes branchSparkHover { 0%,100%{opacity:.42;transform:scale(.76) rotate(0)} 50%{opacity:1;transform:scale(1.14) rotate(36deg)} }
-@keyframes branchBladeHover { 0%,100%{transform:translateX(0) rotate(0)} 45%{transform:translateX(1.8px) rotate(-3deg)} 72%{transform:translateX(-.6px) rotate(1deg)} }
-@keyframes branchGlintHover { 0%,100%{opacity:.2;transform:scale(.65) rotate(0)} 46%{opacity:1;transform:scale(1.18) rotate(42deg)} }
-@keyframes branchObgynHeartHover { 0%,100%{transform:scale(1);opacity:.78} 48%{transform:scale(1.18);opacity:1} }
-@keyframes branchObgynRingHover { 0%{opacity:0;transform:scale(.82)} 30%{opacity:.24} 100%{opacity:0;transform:scale(1.24)} }
-@keyframes branchMinorTileHover { 0%,100%{transform:scale(1)} 48%{transform:scale(1.06)} }
-@keyframes branchMinorArrowHover { 0%,100%{transform:translateX(0)} 50%{transform:translateX(1.2px)} }
-
-@keyframes branchAnatomyLaunch { 0%{opacity:.6;transform:scale(.92)} 34%{opacity:1;transform:scale(1.08)} 100%{opacity:1;transform:scale(1)} }
-@keyframes branchScanLaunch { 0%{opacity:0;stroke-dashoffset:18;transform:translateX(-8px)} 26%{opacity:1} 80%{opacity:.9;stroke-dashoffset:0;transform:translateX(8px)} 100%{opacity:0;transform:translateX(10px)} }
-@keyframes branchDotLaunch { 0%{opacity:0;transform:scale(.35)} 38%{opacity:1;transform:scale(1.22)} 100%{opacity:0;transform:scale(.85)} }
-@keyframes branchHeartLaunch { 0%,100%{transform:scale(1)} 26%{transform:scale(1.18)} 48%{transform:scale(.95)} 72%{transform:scale(1.08)} }
-@keyframes branchStrokeLaunch { 0%{stroke-dashoffset:44;opacity:.22} 45%{opacity:1} 100%{stroke-dashoffset:0;opacity:1} }
-@keyframes branchRingLaunch { 0%{opacity:0;transform:scale(.62)} 30%{opacity:.34} 100%{opacity:0;transform:scale(1.5)} }
-@keyframes branchCellLaunch { 0%,100%{transform:rotate(0) scale(1)} 30%{transform:rotate(7deg) scale(1.06)} 58%{transform:rotate(-4deg) scale(.97)} }
-@keyframes branchParticleLaunch { 0%{opacity:.35;transform:scale(.55)} 42%{opacity:1;transform:scale(1.24)} 100%{opacity:.75;transform:scale(1)} }
-@keyframes branchOrbitStrokeLaunch { 0%,100%{transform:rotate(0);opacity:.7} 52%{transform:rotate(11deg);opacity:1} }
-@keyframes branchFlaskLaunch { 0%,100%{transform:rotate(0) translateY(0)} 22%{transform:rotate(-6deg) translateY(-.5px)} 44%{transform:rotate(5deg)} 68%{transform:rotate(-2deg)} }
-@keyframes branchLiquidLaunch { 0%,100%{transform:translateY(0) scaleX(1)} 45%{transform:translateY(-.8px) scaleX(1.04)} 70%{transform:translateY(.5px) scaleX(.98)} }
-@keyframes branchBubbleUpOne { 0%{opacity:0;transform:translateY(0) scale(.42)} 30%{opacity:1} 100%{opacity:0;transform:translateY(-8px) translateX(-1px) scale(1.08)} }
-@keyframes branchBubbleUpTwo { 0%{opacity:0;transform:translateY(0) scale(.42)} 30%{opacity:1} 100%{opacity:0;transform:translateY(-10px) translateX(1px) scale(1.1)} }
-@keyframes branchBubbleUpThree { 0%{opacity:0;transform:translateY(0) scale(.42)} 30%{opacity:1} 100%{opacity:0;transform:translateY(-7px) scale(1.03)} }
-@keyframes branchPetriLaunch { 0%,100%{transform:scale(1)} 46%{transform:scale(1.07)} }
-@keyframes branchColonyLaunch { 0%{transform:scale(.62);opacity:.48} 42%{transform:scale(1.24);opacity:1} 100%{transform:scale(1);opacity:.86} }
-@keyframes branchOrbitLaunch { 0%{transform:rotate(0);opacity:.18} 46%{opacity:1} 100%{transform:rotate(92deg);opacity:.36} }
-@keyframes branchPathLaunch { 0%{transform:scale(.84);opacity:.5} 45%{transform:scale(1.14);opacity:1} 100%{transform:scale(1);opacity:.95} }
-@keyframes branchCapsuleLaunch { 0%,100%{transform:rotate(0) scale(1)} 24%{transform:rotate(-6deg) scale(1.08)} 52%{transform:rotate(3deg) scale(.97)} }
-@keyframes branchReceptorLaunch { 0%,100%{transform:scale(1)} 50%{transform:scale(1.18)} }
-@keyframes branchDoseLaunchOne { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(8px,4px) scale(1)} }
-@keyframes branchDoseLaunchTwo { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(7px,5px) scale(1)} }
-@keyframes branchDoseLaunchThree { 0%{opacity:0;transform:translate(0,0) scale(.4)} 28%{opacity:1} 100%{opacity:0;transform:translate(6px,6px) scale(1)} }
-@keyframes branchBodyLaunch { 0%,100%{transform:scale(1)} 42%{transform:scale(1.07)} }
-@keyframes branchBreathLaunch { 0%,100%{transform:scale(1)} 50%{transform:scale(1.08)} }
-@keyframes branchPedsLaunch { 0%,100%{transform:translateY(0) scale(1)} 26%{transform:translateY(-2px) scale(1.08)} 52%{transform:translateY(1px) scale(.97)} 76%{transform:translateY(-.4px) scale(1.02)} }
-@keyframes branchSparkLaunch { 0%{opacity:0;transform:scale(.42) rotate(0)} 44%{opacity:1;transform:scale(1.28) rotate(45deg)} 100%{opacity:.52;transform:scale(.88) rotate(0)} }
-@keyframes branchBladeLaunch { 0%,100%{transform:translateX(0) rotate(0)} 24%{transform:translateX(3px) rotate(-7deg)} 48%{transform:translateX(-2px) rotate(4deg)} 72%{transform:translateX(1px) rotate(-1deg)} }
-@keyframes branchGlintLaunch { 0%{opacity:0;transform:scale(.4) rotate(0)} 42%{opacity:1;transform:scale(1.24) rotate(45deg)} 100%{opacity:.4;transform:scale(.76) rotate(0)} }
-@keyframes branchObgynHeartLaunch { 0%,100%{transform:scale(1);opacity:.76} 34%{transform:scale(1.24);opacity:1} 58%{transform:scale(.95)} }
-@keyframes branchMinorTileLaunchOne { 0%,100%{transform:translate(0,0) scale(1)} 38%{transform:translate(-1.6px,-1.6px) scale(1.08)} 64%{transform:scale(.98)} }
-@keyframes branchMinorTileLaunchTwo { 0%,100%{transform:translate(0,0) scale(1)} 38%{transform:translate(1.6px,-1.6px) scale(1.08)} 64%{transform:scale(.98)} }
-@keyframes branchMinorTileLaunchThree { 0%,100%{transform:translate(0,0) scale(1)} 38%{transform:translate(-1.6px,1.6px) scale(1.08)} 64%{transform:scale(.98)} }
-@keyframes branchMinorTileLaunchFour { 0%,100%{transform:translate(0,0) scale(1)} 38%{transform:translate(1.6px,1.6px) scale(1.08)} 64%{transform:scale(.98)} }
-@keyframes branchMinorArrowLaunch { 0%,100%{transform:translateX(0)} 44%{transform:translateX(2px)} }
-
-@media (max-width: 560px) {
-  .branch-animated-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 16px;
-  }
-
-  .branch-animated-svg {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .branch-card[data-branch] .branch-animated-icon,
-  .branch-card[data-branch] .branch-animated-icon::before,
-  .branch-card[data-branch] .branch-animated-icon::after,
-  .branch-card[data-branch] .branch-icon-ambient,
-  .branch-card[data-branch] .branch-animated-svg,
-  .branch-card[data-branch] .branch-animated-svg * {
-    animation: none !important;
-    transition-duration: 1ms !important;
-  }
-
-  .branch-card.is-launching[data-branch] .branch-animated-icon {
-    transform: scale(1.03) !important;
   }
 }
