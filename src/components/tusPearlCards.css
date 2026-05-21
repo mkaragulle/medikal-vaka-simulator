@@ -11695,3 +11695,384 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
     padding: 0.08em 0.24em 0.22em 0 !important;
   }
 }
+
+/* ==========================================================
+   V226 — Pearl editor pop-up compact refinement + scoped dim
+   Purpose: cleaner create/copy modals, lighter gray backdrop,
+   keep top navigation visible and undimmed.
+   ========================================================== */
+.pearl-editor-backdrop-balanced {
+  position: fixed !important;
+  inset: calc(var(--kiq-page-pad-top, 92px) + 6px) 0 0 0 !important;
+  min-height: auto !important;
+  z-index: 2147483600 !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 18px 22px 18px !important;
+  overflow-y: auto !important;
+  background: rgba(100, 116, 139, 0.24) !important;
+  backdrop-filter: blur(7px) saturate(118%) !important;
+  -webkit-backdrop-filter: blur(7px) saturate(118%) !important;
+}
+
+.pearl-editor-modal-balanced {
+  display: flex !important;
+  flex-direction: column !important;
+  width: min(100%, 980px) !important;
+  max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 36px) !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  border-radius: 26px !important;
+  border: 1px solid rgba(15, 118, 110, 0.10) !important;
+  background:
+    radial-gradient(circle at 14% 0%, rgba(20, 184, 166, 0.07), transparent 32%),
+    linear-gradient(180deg, rgba(255,255,255,0.985), rgba(248,252,252,0.965)) !important;
+  box-shadow:
+    0 26px 70px rgba(15, 23, 42, 0.16),
+    inset 0 1px 0 rgba(255,255,255,0.78) !important;
+}
+
+.pearl-editor-head-compact {
+  padding: 14px 18px 8px !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12) !important;
+}
+
+.pearl-editor-head-compact h2 {
+  margin: 0 !important;
+  font-size: clamp(1.95rem, 1.55rem + 1vw, 2.45rem) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -0.045em !important;
+}
+
+.pearl-editor-close-compact {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 16px !important;
+}
+
+.pearl-editor-form-compact {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  padding: 10px 18px 16px !important;
+}
+
+.pearl-editor-primary-grid-compact {
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr) !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+
+.pearl-editor-primary-stack-compact {
+  gap: 12px !important;
+}
+
+.pearl-editor-panel-compact-xl,
+.pearl-editor-panel-sm,
+.pearl-editor-select-panel,
+.pearl-editor-advanced-launch {
+  padding: 12px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(148, 163, 184, 0.14) !important;
+  background: linear-gradient(180deg, rgba(248, 252, 252, 0.94), rgba(241, 247, 247, 0.92)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.72) !important;
+}
+
+.pearl-editor-panel-compact-xl,
+.pearl-editor-panel-sm {
+  gap: 10px !important;
+}
+
+.pearl-editor-panel-compact-xl {
+  min-height: 256px !important;
+}
+
+.pearl-editor-panel-sm {
+  min-height: 116px !important;
+}
+
+.pearl-editor-panel-compact-xl textarea,
+.pearl-editor-panel-sm textarea,
+.pearl-editor-select-panel select,
+.pearl-editor-advanced-grid-popup input,
+.pearl-editor-advanced-grid-popup select {
+  border-radius: 15px !important;
+}
+
+.pearl-editor-panel-compact-xl textarea {
+  min-height: 156px !important;
+}
+
+.pearl-editor-panel-sm textarea {
+  min-height: 72px !important;
+}
+
+.pearl-editor-meta-row-balanced {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 200px !important;
+  gap: 12px !important;
+}
+
+.pearl-editor-select-panel select {
+  min-height: 54px !important;
+}
+
+.pearl-editor-advanced-launch {
+  min-height: 88px !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+}
+
+.pearl-editor-advanced-launch b {
+  min-width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--primary-600, #0f766e) 12%, white 88%);
+  color: var(--primary-700, #0f766e);
+}
+
+.pearl-editor-error {
+  margin: 0 !important;
+}
+
+.pearl-editor-actions-balanced {
+  margin-top: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 12px 0 0 !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.12) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.94) 34%) !important;
+}
+
+.pearl-editor-actions-balanced .btn,
+.pearl-editor-secondary-actions .btn {
+  min-height: 44px !important;
+  padding-inline: 16px !important;
+  border-radius: 14px !important;
+}
+
+.pearl-editor-secondary-backdrop {
+  position: fixed !important;
+  inset: calc(var(--kiq-page-pad-top, 92px) + 6px) 0 0 0 !important;
+  z-index: 2147483650 !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  padding: 18px 22px 18px !important;
+  overflow-y: auto !important;
+  background: rgba(100, 116, 139, 0.30) !important;
+  backdrop-filter: blur(8px) saturate(118%) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(118%) !important;
+}
+
+.pearl-editor-secondary-modal {
+  width: min(100%, 760px) !important;
+  max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 40px) !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(15, 118, 110, 0.10) !important;
+  background:
+    radial-gradient(circle at 18% 0%, rgba(20, 184, 166, 0.06), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.985), rgba(248,252,252,0.97)) !important;
+  box-shadow:
+    0 24px 58px rgba(15, 23, 42, 0.16),
+    inset 0 1px 0 rgba(255,255,255,0.78) !important;
+}
+
+.pearl-editor-secondary-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  padding: 16px 18px 10px !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12) !important;
+}
+
+.pearl-editor-secondary-head h3 {
+  margin: 0 !important;
+}
+
+.pearl-editor-secondary-head p {
+  display: none !important;
+}
+
+.pearl-editor-advanced-grid-popup {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 10px 12px !important;
+  padding: 12px 18px 12px !important;
+}
+
+.pearl-editor-advanced-grid-popup label {
+  gap: 8px !important;
+}
+
+.pearl-editor-secondary-actions {
+  margin-top: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 12px 18px 16px !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.12) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.96) 34%) !important;
+}
+
+[data-theme='dark'] .pearl-editor-backdrop-balanced {
+  background: rgba(51, 65, 85, 0.42) !important;
+}
+
+[data-theme='dark'] .pearl-editor-secondary-backdrop {
+  background: rgba(51, 65, 85, 0.48) !important;
+}
+
+@media (max-width: 980px) {
+  .pearl-editor-modal-balanced {
+    width: min(100%, 920px) !important;
+  }
+
+  .pearl-editor-panel-compact-xl {
+    min-height: 236px !important;
+  }
+
+  .pearl-editor-panel-compact-xl textarea {
+    min-height: 144px !important;
+  }
+}
+
+@media (max-width: 860px) {
+  .pearl-editor-modal-balanced,
+  .pearl-editor-secondary-modal {
+    max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 24px) !important;
+    overflow: auto !important;
+  }
+
+  .pearl-editor-primary-grid-compact,
+  .pearl-editor-meta-row-balanced,
+  .pearl-editor-advanced-grid-popup {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pearl-editor-panel-compact-xl,
+  .pearl-editor-panel-sm {
+    min-height: unset !important;
+  }
+
+  .pearl-editor-panel-compact-xl textarea {
+    min-height: 136px !important;
+  }
+
+  .pearl-editor-panel-sm textarea {
+    min-height: 70px !important;
+  }
+
+  .pearl-editor-advanced-launch {
+    min-height: 68px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .pearl-editor-backdrop-balanced,
+  .pearl-editor-secondary-backdrop {
+    inset: calc(var(--kiq-page-pad-top, 92px) + 4px) 0 0 0 !important;
+    padding: 10px !important;
+  }
+
+  .pearl-editor-head-compact,
+  .pearl-editor-secondary-head {
+    padding-inline: 14px !important;
+  }
+
+  .pearl-editor-form-compact,
+  .pearl-editor-advanced-grid-popup,
+  .pearl-editor-secondary-actions {
+    padding-inline: 14px !important;
+  }
+
+  .pearl-editor-modal-balanced,
+  .pearl-editor-secondary-modal {
+    border-radius: 20px !important;
+  }
+}
+
+/* ==========================================================
+   V227 — Catalog manager cleanup + smoother card list scrolling
+   ========================================================== */
+.tus-pearl-mode-switch.compact-mode-switch {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  width: min(100%, 560px) !important;
+}
+
+.tus-pearl-catalog-detail-head {
+  align-items: center !important;
+  min-height: 72px !important;
+  padding: 14px 16px !important;
+}
+
+.tus-pearl-catalog-detail-head h2 {
+  margin: 0 !important;
+}
+
+.tus-pearl-catalog-list > button {
+  min-height: 64px !important;
+}
+
+.tus-pearl-catalog-card-list {
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  contain: content;
+  will-change: scroll-position;
+  transform: translateZ(0);
+}
+
+.tus-pearl-catalog-card-list.addable {
+  max-height: 360px !important;
+}
+
+.tus-pearl-catalog-card-list.addable .tus-pearl-library-card,
+.tus-pearl-catalog-card-list .tus-pearl-library-card {
+  content-visibility: auto;
+  contain-intrinsic-size: 78px;
+  contain: layout paint style;
+  box-shadow: none !important;
+  transition: background-color 140ms ease, border-color 140ms ease !important;
+}
+
+.tus-pearl-catalog-card-list.addable .tus-pearl-library-card:hover,
+.tus-pearl-catalog-card-list .tus-pearl-library-card:hover {
+  transform: none !important;
+}
+
+.catalog-card-library .tus-pearl-catalog-section-head {
+  min-height: 0 !important;
+}
+
+.catalog-card-library .tus-pearl-catalog-section-head strong {
+  line-height: 1.15 !important;
+}
+
+@media (max-width: 640px) {
+  .tus-pearl-mode-switch.compact-mode-switch {
+    width: 100% !important;
+  }
+
+  .tus-pearl-catalog-detail-head {
+    align-items: flex-start !important;
+  }
+}
+
+/* V227.1 — keep two-item catalog switch compact after removing create card CTA */
+.tus-pearl-mode-switch.compact-mode-switch {
+  display: inline-flex !important;
+  width: max-content !important;
+  max-width: 100% !important;
+}

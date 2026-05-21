@@ -499,11 +499,11 @@ function TusPearlStudyScreen({
       if (sourceLibraryFilter === 'system' && card.source === 'user') return false;
       return true;
     });
-    if (!query) return pool.slice(0, 36);
+    if (!query) return pool.slice(0, 16);
     return pool.filter((card) => [card.front, card.back, card.subject, card.topic, card.source, ...(card.keywords || []), ...(card.tags || [])]
       .join(' ')
       .toLocaleLowerCase('tr')
-      .includes(query)).slice(0, 48);
+      .includes(query)).slice(0, 24);
   }, [activeCatalog, allCards, librarySearch, sourceLibraryFilter]);
 
   function commitState(updater) {
@@ -912,10 +912,6 @@ function TusPearlStudyScreen({
             <Icon name="ClipboardList" />
             <span>Kataloglarım</span>
           </button>
-          <button type="button" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>
-            <Icon name="Notes" />
-            <span>Kendi kartını oluştur</span>
-          </button>
         </div>
       ) : (
         null
@@ -934,8 +930,6 @@ function TusPearlStudyScreen({
             </div>
             <div className="tus-pearl-catalog-list" aria-label="Katalog listesi">
               {pearlState.customCatalogs.length ? pearlState.customCatalogs.map((catalog) => {
-                const catalogWrongCount = (catalog.cardIds || []).filter((id) => wrongSet.has(id)).length;
-                const userCount = (catalog.cardIds || []).filter((id) => cardById.get(id)?.source === 'user').length;
                 return (
                   <button
                     key={catalog.id}
@@ -945,7 +939,6 @@ function TusPearlStudyScreen({
                   >
                     <span>
                       <strong>{catalog.name}</strong>
-                      <em>{catalog.cardIds.length} kart · {catalogWrongCount} zorlandığın · {userCount} kişisel</em>
                       <em>{formatDateLabel(catalog.lastStudiedAt)}</em>
                     </span>
                     <Icon name="ArrowRight" size={16} />
@@ -965,9 +958,7 @@ function TusPearlStudyScreen({
               <>
                 <div className="tus-pearl-catalog-detail-head">
                   <div>
-                    <p className="auth-eyebrow">Katalog detayı</p>
                     <h2>{activeCatalog.name}</h2>
-                    <span>{catalogCards.length} kart · {catalogCards.filter((card) => card.source === 'user').length} kişisel · {formatDateLabel(activeCatalog.lastStudiedAt)}</span>
                   </div>
                   <div className="tus-pearl-catalog-detail-actions">
                     <button type="button" className="btn btn-primary compact" onClick={() => openCatalogForStudy(activeCatalog.id)} disabled={!catalogCards.length}>Bu seti çalış</button>
@@ -1021,7 +1012,6 @@ function TusPearlStudyScreen({
                 <div id="catalog-card-library" className="tus-pearl-catalog-card-section catalog-card-library">
                   <div className="tus-pearl-catalog-section-head">
                     <strong>Tüm kartlardan ekle</strong>
-                    <span>Sistem ve kişisel kartlar</span>
                   </div>
                   <div className="pearl-library-toolbar">
                     <input className="tus-pearl-library-search" value={librarySearch} onChange={(event) => setLibrarySearch(event.target.value)} placeholder="Kart ara: sinir, farmakoloji, tuzak..." />
@@ -1056,10 +1046,9 @@ function TusPearlStudyScreen({
               <div className="tus-pearl-study-empty compact actionable-empty">
                 <Icon name="LayeredCards" />
                 <strong>Katalog seç veya oluştur.</strong>
-                <p>Kendi tekrar setlerini oluşturabilir, tüm kart havuzuna dönebilir veya kişisel kart oluşturabilirsin.</p>
+                <p>Kendi tekrar setlerini oluşturabilir veya tüm kart havuzuna dönebilirsin.</p>
                 <div className="empty-action-row">
                   <button type="button" className="btn btn-primary compact" onClick={() => { setViewMode('study'); setFilter('all'); setBranchFilter('all'); lastDeckSignature.current = ''; }}>Tüm kartlara geç</button>
-                  <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'create', defaultCatalogId: activeCatalogId })}>Kendi kartını oluştur</button>
                 </div>
               </div>
             )}

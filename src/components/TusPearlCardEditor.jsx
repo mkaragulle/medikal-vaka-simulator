@@ -265,7 +265,6 @@ function TusPearlCardEditor({
             <header className="pearl-editor-secondary-head">
               <div>
                 <h3>Opsiyonel alanlar</h3>
-                <p>İstersen kartı daha zengin hale getir; boş bırakman da sorun değil.</p>
               </div>
               <button type="button" className="btn btn-icon quiet pearl-editor-close pearl-editor-close-compact" onClick={closeAdvancedDialog} aria-label="Opsiyonel alanları kapat">
                 <Icon name="X" />

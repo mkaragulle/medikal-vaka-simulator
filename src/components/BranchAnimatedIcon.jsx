@@ -195,13 +195,13 @@ function MinorRotationsIcon() {
   return (
     <>
       <g className="branch-svg-main minor-grid">
-        <rect className="minor-tile tile-one" x="12.6" y="12.6" width="9" height="9" rx="2.2" />
-        <rect className="minor-tile tile-two" x="26.4" y="12.6" width="9" height="9" rx="2.2" />
-        <rect className="minor-tile tile-three" x="12.6" y="26.4" width="9" height="9" rx="2.2" />
-        <rect className="minor-tile tile-four" x="26.4" y="26.4" width="9" height="9" rx="2.2" />
-        <path className="minor-connector branch-svg-secondary" d="M21.6 17.1h4.8M30.9 21.6v4.8M26.4 30.9h-4.8M17.1 26.4v-4.8" />
+        <rect className="minor-tile tile-one" x="12.8" y="12.8" width="8.4" height="8.4" rx="2.35" />
+        <rect className="minor-tile tile-two" x="26.8" y="12.8" width="8.4" height="8.4" rx="2.35" />
+        <rect className="minor-tile tile-three" x="12.8" y="26.8" width="8.4" height="8.4" rx="2.35" />
+        <rect className="minor-tile tile-four" x="26.8" y="26.8" width="8.4" height="8.4" rx="2.35" />
+        <path className="minor-connector branch-svg-secondary" d="M21.2 17h2.8v2.8M26.8 17h-2.8v2.8M21.2 31h2.8v-2.8M26.8 31h-2.8v-2.8" />
       </g>
-      <path className="minor-arrow branch-svg-detail" d="M22.2 24h4.1M24.2 21.95 26.3 24l-2.1 2.05" />
+      <path className="minor-arrow branch-svg-detail" d="M21.8 24h4.8M24.7 21.7 27 24l-2.3 2.3" />
     </>
   );
 }
