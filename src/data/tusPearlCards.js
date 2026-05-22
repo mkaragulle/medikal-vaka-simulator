@@ -21765,15 +21765,23 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
 function applyRevisedPearlCardText(card = {}) {
   const override = TUS_PEARL_REVISED_TEXT_OVERRIDES[card.id];
   if (!override) return card;
+
+  // V235 — Back-side de-duplication guard.
+  // The V233 PDF/text override block expanded the answer field with the same
+  // rationale, trap and TUS-tip sentences. In the study UI this produced the
+  // same content under “Yanıt”, “Kısa gerekçe” and “TUS ipucu”.
+  // Keep the improved front prompts and keyword updates, but preserve the
+  // schema-generated atomic back/answer/explanation/tusTip fields so each
+  // section has a single, non-repeating educational purpose.
   return {
     ...card,
-    front: override.front,
-    back: override.back,
-    answer: override.answer || override.back,
-    explanation: override.explanation,
-    tusTip: override.tusTip,
-    differentialNote: override.differentialNote,
-    keywords: Array.isArray(override.keywords) ? override.keywords : card.keywords,
+    front: cleanQuestion(override.front || card.front),
+    back: cleanSentence(card.back),
+    answer: cleanSentence(card.answer || card.back),
+    explanation: cleanSentence(stripTusBoilerplate(card.explanation)),
+    tusTip: cleanSentence(stripTusBoilerplate(card.tusTip)),
+    differentialNote: cleanSentence(card.differentialNote),
+    keywords: Array.isArray(override.keywords) ? override.keywords.map((keyword) => cleanText(keyword)).filter(Boolean) : card.keywords,
   };
 }
 
