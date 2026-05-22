@@ -12945,3 +12945,90 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
     max-height: calc(100dvh - 20px) !important;
   }
 }
+
+/* ==========================================================
+   V93 — Center card editor and optional-fields popup in viewport
+   Purpose: both the main flashcard editor and the nested optional
+   fields dialog must sit on the real viewport center, while the
+   dim overlay covers the top bar and the full page edges.
+   ========================================================== */
+.pearl-editor-backdrop-balanced {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483600 !important;
+  display: grid !important;
+  place-items: center !important;
+  align-content: center !important;
+  justify-content: initial !important;
+  align-items: initial !important;
+  width: 100vw !important;
+  min-height: 100dvh !important;
+  padding: clamp(14px, 2.4vw, 28px) !important;
+  overflow-y: auto !important;
+  background: rgba(2, 6, 23, 0.64) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  box-sizing: border-box !important;
+}
+
+.pearl-editor-modal-balanced {
+  width: min(100%, 1120px) !important;
+  max-height: calc(100dvh - clamp(28px, 4.8vw, 56px)) !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+}
+
+.pearl-editor-secondary-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483650 !important;
+  display: grid !important;
+  place-items: center !important;
+  align-content: center !important;
+  justify-items: center !important;
+  width: 100vw !important;
+  min-height: 100dvh !important;
+  padding: clamp(14px, 2.4vw, 28px) !important;
+  overflow-y: auto !important;
+  background: rgba(2, 6, 23, 0.68) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  box-sizing: border-box !important;
+}
+
+.pearl-editor-secondary-modal {
+  width: min(100%, 920px) !important;
+  max-height: calc(100dvh - clamp(28px, 4.8vw, 56px)) !important;
+  margin: 0 auto !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  border-radius: 28px !important;
+  transform: translateZ(0);
+}
+
+.pearl-editor-advanced-grid-popup {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+}
+
+.pearl-editor-secondary-actions {
+  flex: 0 0 auto !important;
+}
+
+@media (max-width: 860px) {
+  .pearl-editor-backdrop-balanced,
+  .pearl-editor-secondary-backdrop {
+    place-items: center !important;
+    align-content: center !important;
+    padding: 12px !important;
+  }
+
+  .pearl-editor-modal-balanced,
+  .pearl-editor-secondary-modal {
+    width: min(100%, calc(100vw - 24px)) !important;
+    max-height: calc(100dvh - 24px) !important;
+    overflow: auto !important;
+  }
+}
