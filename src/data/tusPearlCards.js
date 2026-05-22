@@ -418,26 +418,26 @@ export const TUS_PEARL_TOPICS = [
   {
     "branchId": "medical-microbiology",
     "subject": "Tıbbi Mikrobiyoloji",
-    "topic": "S. aureus absesi",
+    "topic": "Staphylococcus aureus absesi",
     "mainQuestion": "Deri apsesi ve pürülan enfeksiyonda en klasik etken hangisidir?",
     "mainAnswer": "Staphylococcus aureus.",
     "explanation": "Koagülaz pozitif, katalaz pozitif gram pozitif koktur; apse ve toksin ilişkili tablolarla sorulur.",
     "keywords": "apse; pürülan; koagülaz pozitif; katalaz pozitif",
     "trap": "S. epidermidis koagülaz negatiftir ve protez/kateter enfeksiyonu ile daha çok sorulur.",
-    "extraQuestion": "S. aureus’u S. epidermidis’ten ayıran test hangisidir?",
+    "extraQuestion": "Staphylococcus aureus’u S. epidermidis’ten ayıran test hangisidir?",
     "extraAnswer": "Koagülaz testi.",
     "difficulty": "orta"
   },
   {
     "branchId": "medical-microbiology",
     "subject": "Tıbbi Mikrobiyoloji",
-    "topic": "S. pneumoniae",
+    "topic": "Streptococcus pneumoniae",
     "mainQuestion": "Optokin duyarlı ve safra ile eriyen alfa hemolitik diplokok hangisidir?",
     "mainAnswer": "Streptococcus pneumoniae.",
     "explanation": "Lober pnömoni, otitis media, menenjit ve kapsül bilgisi yüksek verimlidir.",
     "keywords": "optochin duyarlı; safra erir; alfa hemoliz; diplokok",
     "trap": "Viridans streptokok optokin dirençlidir ve diş kaynaklı endokarditle karışır.",
-    "extraQuestion": "S. pneumoniae’nin temel virülans faktörü nedir?",
+    "extraQuestion": "Streptococcus pneumoniae’nin temel virülans faktörü nedir?",
     "extraAnswer": "Polisakkarit kapsül.",
     "difficulty": "orta"
   },
@@ -462,7 +462,7 @@ export const TUS_PEARL_TOPICS = [
     "mainAnswer": "Neisseria meningitidis.",
     "explanation": "Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur.",
     "keywords": "peteşi; meningokoksemi; gram negatif diplokok; kapsül",
-    "trap": "S. pneumoniae menenjit yapabilir ama peteşiyal sepsis paterni meningokok lehinedir.",
+    "trap": "Streptococcus pneumoniae menenjit yapabilir ama peteşiyal sepsis paterni meningokok lehinedir.",
     "extraQuestion": "Meningokok temaslı profilaksisinde hangi ilaçlardan biri kullanılır?",
     "extraAnswer": "Rifampisin, siprofloksasin veya seftriakson.",
     "difficulty": "orta"
@@ -470,12 +470,12 @@ export const TUS_PEARL_TOPICS = [
   {
     "branchId": "medical-microbiology",
     "subject": "Tıbbi Mikrobiyoloji",
-    "topic": "C. difficile",
+    "topic": "Clostridioides difficile",
     "mainQuestion": "Antibiyotik sonrası psödomembranöz kolitte toksin üreten etken hangisidir?",
     "mainAnswer": "Clostridioides difficile.",
     "explanation": "Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir.",
     "keywords": "antibiyotik sonrası; psödomembran; toksin A/B; sulu diyare",
-    "trap": "İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; C. difficile antibiyotik öyküsüyle sorulur.",
+    "trap": "İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; Clostridioides difficile antibiyotik öyküsüyle sorulur.",
     "extraQuestion": "Clostridioides difficile enfeksiyonunda ilk basamak oral tedavi seçeneklerinden biri hangisidir?",
     "extraAnswer": "Oral vankomisin veya fidaksomisin.",
     "difficulty": "orta"
@@ -1565,7 +1565,7 @@ export const TUS_PEARL_TOPICS = [
     "topic": "Akut otitis media",
     "mainQuestion": "Çocukta kulak ağrısı, ateş ve bombeleşmiş timpan membran ne düşündürür?",
     "mainAnswer": "Akut otitis media.",
-    "explanation": "En sık etkenler S. pneumoniae, H. influenzae ve Moraxella catarrhalis’tir.",
+    "explanation": "En sık etkenler Streptococcus pneumoniae, H. influenzae ve Moraxella catarrhalis’tir.",
     "keywords": "kulak ağrısı; ateş; bombeleşmiş zar; çocuk",
     "trap": "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
     "extraQuestion": "Akut otitis mediada ilk tercih edilen antibiyotik nedir?",
@@ -3274,14 +3274,14 @@ export const TUS_PEARL_TOPICS = [
     "branchId": "medical-biochemistry",
     "subject": "Tıbbi Biyokimya",
     "topic": "Klasik galaktozemi",
-    "mainQuestion": "Süt alımı sonrası kusma, sarılık ve E. coli sepsisi riski hangi enzim eksikliğini düşündürür?",
+    "mainQuestion": "Süt alımı sonrası kusma, sarılık ve Escherichia coli sepsisi riski hangi enzim eksikliğini düşündürür?",
     "mainAnswer": "Galaktoz-1-fosfat üridiltransferaz eksikliği.",
     "explanation": "Klasik galaktozemide galaktoz-1-fosfat birikir; karaciğer ve lens etkilenir.",
     "keywords": [
       "galaktozemi",
       "GALT",
       "süt",
-      "E. coli sepsisi"
+      "Escherichia coli sepsisi"
     ],
     "trap": "Galaktokinaz eksikliği daha çok izole katarakt yapar.",
     "extraQuestion": "Vaka kökünde galaktozemi, GALT ve süt birlikte verilirse hangi mekanizma, enzim veya molekül öncelikle düşünülür?",
@@ -3904,8 +3904,8 @@ export const TUS_PEARL_TOPICS = [
     "branchId": "medical-microbiology",
     "subject": "Tıbbi Mikrobiyoloji",
     "topic": "ETEC gezgin ishali",
-    "mainQuestion": "Seyahat sonrası sulu ishal ve invazyon bulgusu olmaması en çok hangi E. coli tipini düşündürür?",
-    "mainAnswer": "Enterotoksijenik E. coli.",
+    "mainQuestion": "Seyahat sonrası sulu ishal ve invazyon bulgusu olmaması en çok hangi Escherichia coli tipini düşündürür?",
+    "mainAnswer": "Enterotoksijenik Escherichia coli.",
     "explanation": "ETEC ısıya duyarlı ve ısıya dayanıklı toksinlerle sekretuvar ishal yapar.",
     "keywords": [
       "ETEC",
@@ -3915,7 +3915,7 @@ export const TUS_PEARL_TOPICS = [
     ],
     "trap": "EHEC kanlı ishal ve HUS riskiyle ayrılır.",
     "extraQuestion": "Vaka kökünde ETEC, gezgin ishali ve sulu dışkı birlikte verilirse hangi tanı öncelikle düşünülür?",
-    "extraAnswer": "Enterotoksijenik E. coli.",
+    "extraAnswer": "Enterotoksijenik Escherichia coli.",
     "difficulty": "orta"
   },
   {
@@ -3926,13 +3926,13 @@ export const TUS_PEARL_TOPICS = [
     "mainAnswer": "Üreaz.",
     "explanation": "Üreaz üreyi amonyağa çevirerek bakterinin çevresindeki asidi tamponlar.",
     "keywords": [
-      "H. pylori",
+      "Helicobacter pylori",
       "üreaz",
       "peptik ülser",
       "amonyak"
     ],
-    "trap": "Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
-    "extraQuestion": "Vaka kökünde H. pylori, peptik ülser ve amonyak birlikte verilirse hangi mekanizma, enzim veya molekül öncelikle düşünülür?",
+    "trap": "Katalaz pozitiflik tek başına Helicobacter pylori için seçici değildir.",
+    "extraQuestion": "Vaka kökünde Helicobacter pylori, peptik ülser ve amonyak birlikte verilirse hangi mekanizma, enzim veya molekül öncelikle düşünülür?",
     "extraAnswer": "Üreaz.",
     "difficulty": "orta"
   },
@@ -5563,17 +5563,17 @@ export const TUS_PEARL_TOPICS = [
     "branchId": "internal-medicine",
     "subject": "İç Hastalıkları",
     "topic": "Helicobacter pylori test et tedavi",
-    "mainQuestion": "Alarm bulgusu olmayan genç dispepsi hastasında H. pylori için uygun yaklaşım nedir?",
+    "mainQuestion": "Alarm bulgusu olmayan genç dispepsi hastasında Helicobacter pylori için uygun yaklaşım nedir?",
     "mainAnswer": "Test et ve pozitifse eradikasyon tedavisi ver.",
-    "explanation": "Noninvaziv H. pylori testi ve eradikasyon stratejisi seçilmiş düşük riskli hastalarda uygundur.",
+    "explanation": "Noninvaziv Helicobacter pylori testi ve eradikasyon stratejisi seçilmiş düşük riskli hastalarda uygundur.",
     "keywords": [
-      "H. pylori",
+      "Helicobacter pylori",
       "dispepsi",
       "test et tedavi",
       "üre nefes testi"
     ],
     "trap": "İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
-    "extraQuestion": "Vaka kökünde H. pylori, dispepsi ve üre nefes testi birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
+    "extraQuestion": "Vaka kökünde Helicobacter pylori, dispepsi ve üre nefes testi birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
     "extraAnswer": "Test et ve pozitifse eradikasyon tedavisi ver.",
     "difficulty": "orta"
   },
@@ -9123,7 +9123,7 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-medical-microbiology-027-extra": {
-    "front": "S. aureus’u S. epidermidis’ten ayıran test hangisidir?",
+    "front": "Staphylococcus aureus’u S. epidermidis’ten ayıran test hangisidir?",
     "keywords": [
       "apse; pürülan; koagülaz pozitif; katalaz pozitif"
     ]
@@ -9135,7 +9135,7 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-medical-microbiology-028-extra": {
-    "front": "S. pneumoniae’nin temel virülans faktörü nedir?",
+    "front": "Streptococcus pneumoniae’nin temel virülans faktörü nedir?",
     "keywords": [
       "optochin duyarlı; safra erir; alfa hemoliz; diplokok"
     ]
@@ -11823,12 +11823,12 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-medical-biochemistry-227-spot": {
-    "front": "Süt alımı sonrası kusma, sarılık ve E. coli sepsisi riski hangi enzim eksikliğini düşündürür?",
+    "front": "Süt alımı sonrası kusma, sarılık ve Escherichia coli sepsisi riski hangi enzim eksikliğini düşündürür?",
     "keywords": [
       "galaktozemi",
       "GALT",
       "süt",
-      "E. coli sepsisi"
+      "Escherichia coli sepsisi"
     ]
   },
   "tus-pearl-medical-biochemistry-227-extra": {
@@ -11837,7 +11837,7 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
       "galaktozemi",
       "GALT",
       "süt",
-      "E. coli sepsisi"
+      "Escherichia coli sepsisi"
     ]
   },
   "tus-pearl-medical-biochemistry-228-spot": {
@@ -12453,7 +12453,7 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-medical-microbiology-262-spot": {
-    "front": "Seyahat sonrası sulu ishal ve invazyon bulgusu olmaması en çok hangi E. coli tipini düşündürür?",
+    "front": "Seyahat sonrası sulu ishal ve invazyon bulgusu olmaması en çok hangi Escherichia coli tipini düşündürür?",
     "keywords": [
       "ETEC",
       "gezgin ishali",
@@ -12473,16 +12473,16 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
   "tus-pearl-medical-microbiology-263-spot": {
     "front": "Mide mukozasında yaşamı kolaylaştıran Helicobacter pylori enzimi hangisidir?",
     "keywords": [
-      "H. pylori",
+      "Helicobacter pylori",
       "üreaz",
       "peptik ülser",
       "amonyak"
     ]
   },
   "tus-pearl-medical-microbiology-263-extra": {
-    "front": "Vaka kökünde H. pylori, peptik ülser ve amonyak birlikte verilirse hangi mekanizma, enzim veya molekül öncelikle düşünülür?",
+    "front": "Vaka kökünde Helicobacter pylori, peptik ülser ve amonyak birlikte verilirse hangi mekanizma, enzim veya molekül öncelikle düşünülür?",
     "keywords": [
-      "H. pylori",
+      "Helicobacter pylori",
       "üreaz",
       "peptik ülser",
       "amonyak"
@@ -14115,18 +14115,18 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
     ]
   },
   "tus-pearl-internal-medicine-354-spot": {
-    "front": "Alarm bulgusu olmayan genç dispepsi hastasında H. pylori için uygun yaklaşım nedir?",
+    "front": "Alarm bulgusu olmayan genç dispepsi hastasında Helicobacter pylori için uygun yaklaşım nedir?",
     "keywords": [
-      "H. pylori",
+      "Helicobacter pylori",
       "dispepsi",
       "test et tedavi",
       "üre nefes testi"
     ]
   },
   "tus-pearl-internal-medicine-354-extra": {
-    "front": "Vaka kökünde H. pylori, dispepsi ve üre nefes testi birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
+    "front": "Vaka kökünde Helicobacter pylori, dispepsi ve üre nefes testi birlikte verilirse hangi tedavi veya klinik yaklaşım öncelikle düşünülür?",
     "keywords": [
-      "H. pylori",
+      "Helicobacter pylori",
       "dispepsi",
       "test et tedavi",
       "üre nefes testi"

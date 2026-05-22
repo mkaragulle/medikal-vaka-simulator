@@ -45,6 +45,15 @@ const TITLE_REPLACEMENTS = new Map([
 function normalizeMedicalAbbreviations(value = '') {
   let text = String(value ?? '');
   const replacements = [
+    [/\b[Cc]\.\s*[Dd]ifficile([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Clostridioides difficile${suffix}`],
+    [/\b[Ee]\.\s*[Cc]oli([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Escherichia coli${suffix}`],
+    [/\b[Ss]\.\s*[Aa]ureus([’'`]?un|[’'`]?ta|[’'`]?tan|[’'`]?a|[’'`]?u)?\b/gu, (_match, suffix = '') => `Staphylococcus aureus${suffix}`],
+    [/\b[Ss]\.\s*[Pp]neumoniae([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Streptococcus pneumoniae${suffix}`],
+    [/\b[Hh]\.\s*[Pp]ylori([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Helicobacter pylori${suffix}`],
+    [/\b[Nn]\.\s*[Mm]eningitidis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Neisseria meningitidis${suffix}`],
+    [/\b[Pp]\.\s*[Aa]eruginosa([’'`]?n[ıi]n|[’'`]?da|[’'`]?dan|[’'`]?ya|[’'`]?y[ıi])?\b/gu, (_match, suffix = '') => `Pseudomonas aeruginosa${suffix}`],
+    [/\b[Mm]\.\s*[Tt]uberculosis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Mycobacterium tuberculosis${suffix}`],
+    [/\b[Bb]\.\s*[Pp]ertussis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Bordetella pertussis${suffix}`],
     [/\b[nN]\.\s*facialisin\b/gu, 'fasiyal sinirin'], [/\b[nN]\.\s*facialis\b/gu, 'fasiyal sinir'],
     [/\b[nN]\.\s*maxillarisin\b/gu, 'maksiller sinirin'], [/\b[nN]\.\s*maxillaris\b/gu, 'maksiller sinir'],
     [/\b[nN]\.\s*mandibularisin\b/gu, 'mandibular sinirin'], [/\b[nN]\.\s*mandibularis\b/gu, 'mandibular sinir'],
@@ -94,6 +103,8 @@ export function normalizeTusLanguageText(value = '') {
     .replace(/\bçeldirici\b/giu, 'alternatif')
     .replace(/\bÇeldirici\b/giu, 'Alternatif')
     .replace(/\bAI\s*Spot\b/gu, 'TUS Spot')
+    .replace(/\bE\.\s*Coli\b/gu, 'Escherichia coli')
+    .replace(/\bC\.\s*Difficile\b/gu, 'Clostridioides difficile')
     .replace(/\s+\.\s*/gu, '. ')
     .replace(/\s+;\s*/gu, '; ');
   return compactSpaces(text);

@@ -56,6 +56,17 @@ function normalizeMedicalAbbreviations(value = '') {
   let text = String(value ?? '');
 
   const replacements = [
+    // Microbiology genus abbreviations: prevent sentence splitters from reading
+    // "C. difficile" or "E. coli" as a one-letter sentence.
+    [/\b[Cc]\.\s*[Dd]ifficile([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Clostridioides difficile${suffix}`],
+    [/\b[Ee]\.\s*[Cc]oli([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Escherichia coli${suffix}`],
+    [/\b[Ss]\.\s*[Aa]ureus([’'`]?un|[’'`]?ta|[’'`]?tan|[’'`]?a|[’'`]?u)?\b/gu, (_match, suffix = '') => `Staphylococcus aureus${suffix}`],
+    [/\b[Ss]\.\s*[Pp]neumoniae([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Streptococcus pneumoniae${suffix}`],
+    [/\b[Hh]\.\s*[Pp]ylori([’'`]?nin|[’'`]?de|[’'`]?den|[’'`]?ye|[’'`]?yi|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Helicobacter pylori${suffix}`],
+    [/\b[Nn]\.\s*[Mm]eningitidis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Neisseria meningitidis${suffix}`],
+    [/\b[Pp]\.\s*[Aa]eruginosa([’'`]?n[ıi]n|[’'`]?da|[’'`]?dan|[’'`]?ya|[’'`]?y[ıi])?\b/gu, (_match, suffix = '') => `Pseudomonas aeruginosa${suffix}`],
+    [/\b[Mm]\.\s*[Tt]uberculosis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Mycobacterium tuberculosis${suffix}`],
+    [/\b[Bb]\.\s*[Pp]ertussis([’'`]?in|[’'`]?te|[’'`]?ten|[’'`]?e|[’'`]?i)?\b/gu, (_match, suffix = '') => `Bordetella pertussis${suffix}`],
     [/\b[nN]\.\s*maxillarisin\b/gu, 'maksiller sinirin'],
     [/\b[nN]\.\s*maxillaris\b/gu, 'maksiller sinir'],
     [/\b[nN]\.\s*mandibularisin\b/gu, 'mandibular sinirin'],
@@ -195,7 +206,15 @@ function deriveSingleLinePearl(clinicalCase = {}, reasoningText = '') {
     || clinicalCase.examPearls?.[0]
     || clinicalCase.diagnosis?.pearls?.[0]
     || '';
-  const pearl = singleSentence(stripFeedbackHeading(itemText(raw)), 230);
+  const source = stripFeedbackHeading(itemText(raw));
+  let pearl = singleSentence(source, 260);
+
+  // Safety: if a dotted abbreviation slipped through and the first-sentence
+  // extractor produced only "C.", "E.", etc., fall back to the full note.
+  if (/^[A-ZÇĞİÖŞÜ]\.$/u.test(pearl) || pearl.length < 12 || /\b[A-ZÇĞİÖŞÜ]\.$/u.test(pearl)) {
+    pearl = truncateSentence(source, 320);
+  }
+
   if (!pearl || textLooksSame(pearl, reasoningText, 0.86)) return '';
   return pearl;
 }
@@ -238,10 +257,14 @@ function truncateSentence(value = '', limit = 230) {
 function splitIntoSentences(text = '') {
   const normalized = normalizeText(text);
   if (!normalized) return [];
-  return normalized
+
+  const protectedText = normalized
+    .replace(/\b([A-ZÇĞİÖŞÜ])\.\s+(?=[A-ZÇĞİÖŞÜa-zçğıöşü])/gu, '$1<abbr-dot> ');
+
+  return protectedText
     .split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ0-9])/u)
-    .map((sentence) => sentence.trim())
-    .filter(Boolean);
+    .map((sentence) => sentence.replace(/<abbr-dot>/g, '.').trim())
+    .filter((sentence) => sentence && !/^[A-ZÇĞİÖŞÜ]\.$/u.test(sentence));
 }
 
 function compactParagraph(value = '', maxSentences = 4, maxLength = 620) {
