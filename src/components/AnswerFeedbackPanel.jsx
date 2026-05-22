@@ -805,24 +805,27 @@ function buildAISpotScienceText(clinicalCase = {}, whyCorrect = '') {
   ], 12, 2600);
 }
 
+function groupSentencesForAISpotScience(sentences = []) {
+  const clean = sentences.map((sentence) => ensureSentence(sentence)).filter(Boolean);
+  if (clean.length <= 2) return [{ title: 'Temel mantık', text: clean.join(' ') }];
 
-function inferAISpotSciencePointLabel(sentence = '', index = 0) {
-  const normalized = normalizeText(sentence).toLocaleLowerCase('tr');
-  if (/\b(c\d|t\d|l\d|s\d)[-–—]?\s*(c\d|t\d|l\d|s\d)\b|köklerinden|innerve eder|inhib[eı]|aktive|reseptör|enzim|sentez|fosforil|transkripsiyon|mekanizma|primer|temel bozukluk|normalde|üzerinden/iu.test(normalized)) return 'Mekanizma';
-  if (/hasarında|hasarı|görülür|beklenir|neden olur|sonuç|klinik|bulgu|paralizi|kanatlan|hiper|hipo|artış|azalma|düşer|yükselir/iu.test(normalized)) return 'Klinik sonuç';
-  if (/buna karşılık|deltoid|latissimus|supraspinatus|rhomboid|aksiller|torakodorsal|supraskapular|dorsal skapular|florokinolon|warfarin|kohort|sekonder|ayır|karış|ilişkilidir|değildir|aittir|seçenek/iu.test(normalized)) return 'Ayırıcı not';
-  if (/tus|sınav|sorularında|akılda|düşünülmelidir/iu.test(normalized)) return 'Sınav mantığı';
-  return index === 0 ? 'Ana fikir' : 'Detay';
+  const firstBlockSize = clean.length >= 6 ? 2 : 1;
+  const secondBlockSize = clean.length >= 5 ? 2 : 1;
+  const blocks = [
+    { title: 'Temel mantık', sentences: clean.slice(0, firstBlockSize) },
+    { title: 'Klinik sonuç', sentences: clean.slice(firstBlockSize, firstBlockSize + secondBlockSize) },
+    { title: 'Ayırıcı ayrım', sentences: clean.slice(firstBlockSize + secondBlockSize) },
+  ]
+    .map((block) => ({ title: block.title, text: block.sentences.join(' ') }))
+    .filter((block) => normalizeText(block.text));
+
+  return blocks.length ? blocks : [{ title: 'Temel mantık', text: clean.join(' ') }];
 }
 
-function buildAISpotSciencePoints(text = '') {
-  return splitIntoSentences(text)
-    .map((sentence) => removeMetaLanguage(sentence))
-    .filter(Boolean)
-    .map((sentence, index) => ({
-      label: inferAISpotSciencePointLabel(sentence, index),
-      text: ensureSentence(sentence),
-    }));
+function buildAISpotScienceBlocks(scienceText = '') {
+  const sentences = splitIntoSentences(scienceText);
+  if (!sentences.length) return [];
+  return groupSentencesForAISpotScience(sentences);
 }
 
 function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCorrect, whyWrong, pearl, children, glossaryEnabled = true }) {
@@ -834,7 +837,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
   const selectedExplanation = decorateAISpotSelectedExplanation(clinicalCase, selectedRow, isCorrect) || whyWrong;
   const correctExplanation = decorateAISpotCorrectExplanation(clinicalCase, correctRow) || whyCorrect;
   const scienceText = buildAISpotScienceText(clinicalCase, whyCorrect);
-  const sciencePoints = buildAISpotSciencePoints(scienceText);
+  const scienceBlocks = buildAISpotScienceBlocks(scienceText);
   return (
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v246`} aria-live="polite">
       <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
@@ -854,23 +857,19 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
           ) : null}
         </div>
 
-        {scienceText ? (
-          <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246">
+        {scienceBlocks.length ? (
+          <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246 ai-spot-feedback-science-card-v249">
             <header>
               <h4>Mekanizma ve sınav mantığı</h4>
             </header>
-            {sciencePoints.length > 1 ? (
-              <div className="ai-spot-science-point-grid ai-spot-science-point-grid-v249" aria-label="Mekanizma açıklaması">
-                {sciencePoints.map((point, index) => (
-                  <article className="ai-spot-science-point-card" key={`${point.label}-${index}-${point.text.slice(0, 24)}`}>
-                    <span>{point.label}</span>
-                    <p><GlossaryText text={point.text} enabled={glossaryEnabled} /></p>
-                  </article>
-                ))}
-              </div>
-            ) : (
-              <p><GlossaryText text={ensureSentence(scienceText)} enabled={glossaryEnabled} /></p>
-            )}
+            <div className="ai-spot-science-flow-v249">
+              {scienceBlocks.map((block, index) => (
+                <article className="ai-spot-science-item-v249" key={`${block.title}-${index}`}>
+                  <span className="ai-spot-science-step-v249">{block.title}</span>
+                  <p><GlossaryText text={block.text} enabled={glossaryEnabled} /></p>
+                </article>
+              ))}
+            </div>
             {pearl ? (
               <div className="ai-spot-feedback-pearl-card ai-spot-feedback-pearl-card-v246">
                 <div className="ai-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
