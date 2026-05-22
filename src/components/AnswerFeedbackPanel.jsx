@@ -802,7 +802,27 @@ function buildAISpotScienceText(clinicalCase = {}, whyCorrect = '') {
     feedback.rationale,
     whyCorrect,
     ...evidenceTexts,
-  ], 8, 1550);
+  ], 12, 2600);
+}
+
+
+function inferAISpotSciencePointLabel(sentence = '', index = 0) {
+  const normalized = normalizeText(sentence).toLocaleLowerCase('tr');
+  if (/\b(c\d|t\d|l\d|s\d)[-–—]?\s*(c\d|t\d|l\d|s\d)\b|köklerinden|innerve eder|inhib[eı]|aktive|reseptör|enzim|sentez|fosforil|transkripsiyon|mekanizma|primer|temel bozukluk|normalde|üzerinden/iu.test(normalized)) return 'Mekanizma';
+  if (/hasarında|hasarı|görülür|beklenir|neden olur|sonuç|klinik|bulgu|paralizi|kanatlan|hiper|hipo|artış|azalma|düşer|yükselir/iu.test(normalized)) return 'Klinik sonuç';
+  if (/buna karşılık|deltoid|latissimus|supraspinatus|rhomboid|aksiller|torakodorsal|supraskapular|dorsal skapular|florokinolon|warfarin|kohort|sekonder|ayır|karış|ilişkilidir|değildir|aittir|seçenek/iu.test(normalized)) return 'Ayırıcı not';
+  if (/tus|sınav|sorularında|akılda|düşünülmelidir/iu.test(normalized)) return 'Sınav mantığı';
+  return index === 0 ? 'Ana fikir' : 'Detay';
+}
+
+function buildAISpotSciencePoints(text = '') {
+  return splitIntoSentences(text)
+    .map((sentence) => removeMetaLanguage(sentence))
+    .filter(Boolean)
+    .map((sentence, index) => ({
+      label: inferAISpotSciencePointLabel(sentence, index),
+      text: ensureSentence(sentence),
+    }));
 }
 
 function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCorrect, whyWrong, pearl, children, glossaryEnabled = true }) {
@@ -814,6 +834,7 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
   const selectedExplanation = decorateAISpotSelectedExplanation(clinicalCase, selectedRow, isCorrect) || whyWrong;
   const correctExplanation = decorateAISpotCorrectExplanation(clinicalCase, correctRow) || whyCorrect;
   const scienceText = buildAISpotScienceText(clinicalCase, whyCorrect);
+  const sciencePoints = buildAISpotSciencePoints(scienceText);
   return (
     <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v246`} aria-live="polite">
       <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
@@ -838,13 +859,24 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
             <header>
               <h4>Mekanizma ve sınav mantığı</h4>
             </header>
-            <p><GlossaryText text={ensureSentence(scienceText)} enabled={glossaryEnabled} /></p>
+            {sciencePoints.length > 1 ? (
+              <div className="ai-spot-science-point-grid ai-spot-science-point-grid-v249" aria-label="Mekanizma açıklaması">
+                {sciencePoints.map((point, index) => (
+                  <article className="ai-spot-science-point-card" key={`${point.label}-${index}-${point.text.slice(0, 24)}`}>
+                    <span>{point.label}</span>
+                    <p><GlossaryText text={point.text} enabled={glossaryEnabled} /></p>
+                  </article>
+                ))}
+              </div>
+            ) : (
+              <p><GlossaryText text={ensureSentence(scienceText)} enabled={glossaryEnabled} /></p>
+            )}
             {pearl ? (
               <div className="ai-spot-feedback-pearl-card ai-spot-feedback-pearl-card-v246">
                 <div className="ai-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
                 <div>
                   <span>TUS ipucu</span>
-                  <p><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} /></p>
+                  <p><GlossaryText text={ensureSentence(pearl)} enabled={false} /></p>
                 </div>
               </div>
             ) : null}
