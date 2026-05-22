@@ -49373,3 +49373,84 @@ html[data-theme="dark"] .answer-feedback-panel-pro .option-comparison-item,
   border-color: rgba(148, 163, 184, .14) !important;
   box-shadow: inset 0 1px 0 rgba(255,255,255,.035) !important;
 }
+
+/* ==========================================================
+   KlinikIQ V233 — Timed exam workspace parity + solved-aware pool
+   Purpose: make "Zamanlı Sınav Oluştur" use the same wide clinical
+   case frame as Klinik Branş Seç and keep the exam question pool focused
+   on unsolved clinical branch cases. UI-only CSS section.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .page-shell.exam-active-shell.stable-case-page-shell {
+  width: min(calc(100vw - 32px), 1920px) !important;
+  max-width: 1920px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell .exam-banner-card,
+body:not(.klinikiq-auth-lock) .exam-active-shell .case-route-transition,
+body:not(.klinikiq-auth-lock) .exam-active-shell .clinical-case.qbank-case,
+body:not(.klinikiq-auth-lock) .exam-active-shell .professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .exam-active-shell .qbank-shell {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+@media (min-width: 1181px) {
+  body:not(.klinikiq-auth-lock) .exam-active-shell .professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .exam-active-shell .qbank-shell {
+    grid-template-columns: minmax(0, 1.54fr) minmax(440px, 520px) !important;
+    gap: clamp(22px, 1.65vw, 32px) !important;
+    align-items: start !important;
+  }
+
+  body:not(.klinikiq-auth-lock) .exam-active-shell .professional-right-column {
+    min-width: 0 !important;
+  }
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell .right-workspace-shell {
+  padding: 16px !important;
+  border-radius: 26px !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell .right-workspace-shell .diagnostic-decision-panel {
+  gap: 14px !important;
+  padding: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell .right-workspace-shell .question-panel-head.diagnostic-head {
+  gap: 10px !important;
+  align-items: center !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell .right-workspace-shell .option-grid {
+  gap: 10px !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell .right-workspace-shell .answer-option {
+  min-height: 58px !important;
+  grid-template-columns: 42px minmax(0, 1fr) 24px !important;
+  gap: 11px !important;
+  padding: 12px 14px !important;
+  border-radius: 18px !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell .right-workspace-shell .answer-title,
+body:not(.klinikiq-auth-lock) .exam-active-shell .right-workspace-shell .answer-title * {
+  font-size: 15px !important;
+  line-height: 1.26 !important;
+}
+
+body:not(.klinikiq-auth-lock) .exam-active-shell .exam-progress-box {
+  margin-bottom: 4px !important;
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .page-shell.exam-active-shell.stable-case-page-shell {
+    width: min(calc(100vw - 24px), 100%) !important;
+    max-width: none !important;
+  }
+}
