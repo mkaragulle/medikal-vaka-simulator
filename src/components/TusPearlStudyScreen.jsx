@@ -475,6 +475,27 @@ function TusPearlStudyScreen({
   const isSecondaryListActive = ['known', 'user'].includes(filter);
   const emptyState = useMemo(() => getPearlEmptyState(filter), [filter]);
   const activeCardContent = useMemo(() => getPearlBackContent(activeCard || {}), [activeCard]);
+  const activeFrontLength = String(activeCardContent.frontText || activeCard?.front || '').length;
+  const activeBackLength = [
+    activeCardContent.backText,
+    activeCardContent.detailText,
+    activeCardContent.tusTipText,
+    activeCardContent.noteText,
+  ].filter(Boolean).join(' ').length;
+  const activeFrontDensityClass = activeFrontLength > 260
+    ? 'pearl-text-density-xxl'
+    : activeFrontLength > 190
+      ? 'pearl-text-density-xl'
+      : activeFrontLength > 130
+        ? 'pearl-text-density-lg'
+        : '';
+  const activeBackDensityClass = activeBackLength > 520
+    ? 'pearl-back-density-xxl'
+    : activeBackLength > 380
+      ? 'pearl-back-density-xl'
+      : activeBackLength > 260
+        ? 'pearl-back-density-lg'
+        : '';
   const activeCardBranchName = activeCard ? getBranchName(activeCard.branchId) : 'TUS';
   const activeCardTopicLabel = activeCard?.subject || activeCard?.topic || 'Hap bilgi kartı';
   const activeCardTypeLabel = activeCard?.cardType || 'Spot kart';
@@ -1092,7 +1113,7 @@ function TusPearlStudyScreen({
             <div className="pearl-study-spotlight">
               {activeCard ? (
                 <article
-                  className={`tus-pearl-focus-card card-surface pearl-study-premium-card ${flipped ? 'is-flipped' : ''} motion-${motion}`.trim()}
+                  className={`tus-pearl-focus-card card-surface pearl-study-premium-card ${activeFrontDensityClass} ${activeBackDensityClass} ${flipped ? 'is-flipped' : ''} motion-${motion}`.trim()}
                   onPointerDown={handlePointerDown}
                   onPointerUp={handlePointerUp}
                 >

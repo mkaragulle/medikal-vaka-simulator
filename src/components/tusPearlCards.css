@@ -12732,3 +12732,193 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
     min-height: 106px !important;
   }
 }
+
+
+/* ==========================================================
+   V234 — Hap Bilgi card text fit / overflow safety
+   Long TUS pearl cards now scale typography by content length
+   and keep front/back text readable without clipping.
+   ========================================================== */
+
+.tus-pearl-focus-card.pearl-study-premium-card {
+  --pearl-front-font: clamp(1.62rem, 2.35vw, 2.65rem);
+  --pearl-front-line: 1.12;
+  --pearl-back-answer-font: clamp(1.24rem, 1.85vw, 1.82rem);
+  --pearl-back-body-font: clamp(0.88rem, 0.95vw, 1rem);
+  --pearl-back-body-line: 1.38;
+  --pearl-card-inner-gap: clamp(8px, 1.1vw, 14px);
+}
+
+.tus-pearl-focus-card.pearl-text-density-lg {
+  --pearl-front-font: clamp(1.44rem, 2.05vw, 2.28rem);
+  --pearl-front-line: 1.11;
+}
+
+.tus-pearl-focus-card.pearl-text-density-xl {
+  --pearl-front-font: clamp(1.26rem, 1.74vw, 1.92rem);
+  --pearl-front-line: 1.10;
+}
+
+.tus-pearl-focus-card.pearl-text-density-xxl {
+  --pearl-front-font: clamp(1.08rem, 1.46vw, 1.58rem);
+  --pearl-front-line: 1.10;
+}
+
+.tus-pearl-focus-card.pearl-back-density-lg {
+  --pearl-back-answer-font: clamp(1.12rem, 1.58vw, 1.56rem);
+  --pearl-back-body-font: clamp(0.82rem, 0.9vw, 0.94rem);
+  --pearl-back-body-line: 1.34;
+  --pearl-card-inner-gap: 9px;
+}
+
+.tus-pearl-focus-card.pearl-back-density-xl {
+  --pearl-back-answer-font: clamp(1rem, 1.38vw, 1.34rem);
+  --pearl-back-body-font: clamp(0.78rem, 0.84vw, 0.88rem);
+  --pearl-back-body-line: 1.30;
+  --pearl-card-inner-gap: 8px;
+}
+
+.tus-pearl-focus-card.pearl-back-density-xxl {
+  --pearl-back-answer-font: clamp(0.92rem, 1.18vw, 1.18rem);
+  --pearl-back-body-font: clamp(0.74rem, 0.78vw, 0.82rem);
+  --pearl-back-body-line: 1.26;
+  --pearl-card-inner-gap: 7px;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-card-face {
+  min-height: 0 !important;
+  overflow: hidden !important;
+  padding: clamp(14px, 2vw, 24px) !important;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-card-question-block {
+  width: min(100%, 860px) !important;
+  max-height: calc(100% - 58px) !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  padding: 2px 8px !important;
+  scrollbar-gutter: stable both-edges;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-card-question-block > strong,
+.pearl-study-stage-v92 .pearl-study-spotlight .tus-pearl-focus-card.pearl-study-premium-card .pearl-card-question-block > strong {
+  display: block !important;
+  font-size: var(--pearl-front-font) !important;
+  line-height: var(--pearl-front-line) !important;
+  letter-spacing: -0.035em !important;
+  max-width: 100% !important;
+  text-wrap: balance;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  hyphens: auto;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-focus-back {
+  align-items: stretch !important;
+  justify-content: center !important;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-back-premium-stack {
+  width: min(100%, 860px) !important;
+  max-height: 100% !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+  scrollbar-gutter: stable both-edges;
+  gap: var(--pearl-card-inner-gap) !important;
+  padding-right: 4px !important;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-answer-panel,
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-detail-panel,
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-tip-panel,
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-note-panel {
+  padding: clamp(10px, 1.35vw, 15px) clamp(12px, 1.6vw, 18px) !important;
+  gap: 6px !important;
+}
+
+.tus-pearl-focus-card.pearl-back-density-xl .pearl-answer-panel,
+.tus-pearl-focus-card.pearl-back-density-xl .pearl-detail-panel,
+.tus-pearl-focus-card.pearl-back-density-xl .pearl-tip-panel,
+.tus-pearl-focus-card.pearl-back-density-xl .pearl-note-panel,
+.tus-pearl-focus-card.pearl-back-density-xxl .pearl-answer-panel,
+.tus-pearl-focus-card.pearl-back-density-xxl .pearl-detail-panel,
+.tus-pearl-focus-card.pearl-back-density-xxl .pearl-tip-panel,
+.tus-pearl-focus-card.pearl-back-density-xxl .pearl-note-panel {
+  padding: 9px 12px !important;
+  border-radius: 16px !important;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-answer-panel > strong,
+.tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-answer-block.focus > strong,
+.tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-answer-block > strong.compact {
+  font-size: var(--pearl-back-answer-font) !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.028em !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  hyphens: auto;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-detail-text,
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-tip-panel > span:last-child,
+.tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-note-box-text {
+  font-size: var(--pearl-back-body-font) !important;
+  line-height: var(--pearl-back-body-line) !important;
+  letter-spacing: -0.006em !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  hyphens: auto;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-back-kicker,
+.tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-note-box-label {
+  font-size: clamp(0.62rem, 0.7vw, 0.74rem) !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-card-question-block::-webkit-scrollbar,
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-back-premium-stack::-webkit-scrollbar {
+  width: 6px;
+}
+
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-card-question-block::-webkit-scrollbar-thumb,
+.tus-pearl-focus-card.pearl-study-premium-card .pearl-back-premium-stack::-webkit-scrollbar-thumb {
+  background: rgba(15, 118, 110, 0.18);
+  border-radius: 999px;
+}
+
+@media (max-height: 820px) {
+  .tus-pearl-focus-card.pearl-study-premium-card {
+    --pearl-front-font: clamp(1.28rem, 1.88vw, 2.1rem);
+    --pearl-back-answer-font: clamp(1.02rem, 1.45vw, 1.42rem);
+    --pearl-back-body-font: clamp(0.76rem, 0.84vw, 0.9rem);
+  }
+
+  .tus-pearl-focus-card.pearl-text-density-xl,
+  .tus-pearl-focus-card.pearl-text-density-xxl {
+    --pearl-front-font: clamp(0.98rem, 1.34vw, 1.42rem);
+  }
+
+  .tus-pearl-focus-card.pearl-study-premium-card .pearl-card-face {
+    padding: 12px 14px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .tus-pearl-focus-card.pearl-study-premium-card {
+    --pearl-front-font: clamp(1.12rem, 5.4vw, 1.7rem);
+    --pearl-back-answer-font: clamp(1rem, 4.3vw, 1.35rem);
+    --pearl-back-body-font: clamp(0.78rem, 3.4vw, 0.94rem);
+  }
+
+  .tus-pearl-focus-card.pearl-text-density-xl,
+  .tus-pearl-focus-card.pearl-text-density-xxl {
+    --pearl-front-font: clamp(0.94rem, 4.1vw, 1.26rem);
+  }
+
+  .tus-pearl-focus-card.pearl-study-premium-card .pearl-card-question-block,
+  .tus-pearl-focus-card.pearl-study-premium-card .pearl-back-premium-stack {
+    width: 100% !important;
+  }
+}
