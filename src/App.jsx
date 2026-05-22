@@ -122,15 +122,37 @@ function resolveDemoCases() {
   return DEMO_CASE_IDS.map((caseId) => getCaseById(caseId)).filter(Boolean);
 }
 
-function buildExamPool(sourceCases = [], maxQuestionCount = 10, fallbackCases = cases) {
+function buildExamPriorityPool(sourceCases = [], solvedCaseIds = []) {
+  const safeCases = Array.isArray(sourceCases) ? sourceCases.filter(Boolean) : [];
+  const solvedOrder = new Map((Array.isArray(solvedCaseIds) ? solvedCaseIds : []).map((caseId, index) => [caseId, index]));
+  const solvedSet = new Set(solvedOrder.keys());
+
+  const unsolvedCases = safeCases.filter((clinicalCase) => !solvedSet.has(clinicalCase.id));
+  const solvedCases = safeCases.filter((clinicalCase) => solvedSet.has(clinicalCase.id));
+  const recentSolvedThreshold = Math.max(4, Math.ceil(solvedCases.length * 0.25));
+
+  const solvedOldestFirst = [...solvedCases].sort((a, b) => (solvedOrder.get(a.id) ?? 0) - (solvedOrder.get(b.id) ?? 0));
+  const olderSolvedCases = solvedOldestFirst.slice(0, Math.max(0, solvedOldestFirst.length - recentSolvedThreshold));
+  const recentSolvedCases = solvedOldestFirst.slice(Math.max(0, solvedOldestFirst.length - recentSolvedThreshold));
+
+  return [
+    ...shuffleArray(unsolvedCases),
+    ...shuffleArray(olderSolvedCases),
+    ...shuffleArray(recentSolvedCases),
+  ];
+}
+
+function buildExamPool(sourceCases = [], maxQuestionCount = 10, fallbackCases = cases, options = {}) {
   const safeSource = Array.isArray(sourceCases) ? sourceCases.filter(Boolean) : [];
   const safeFallback = Array.isArray(fallbackCases) ? fallbackCases.filter(Boolean) : [];
+  const solvedCaseIds = Array.isArray(options.solvedCaseIds) ? options.solvedCaseIds : [];
   const targetCount = Math.min(maxQuestionCount, Math.max(safeSource.length, safeFallback.length));
-  const primary = shuffleArray(safeSource).slice(0, Math.min(targetCount, safeSource.length));
+  const prioritizedSource = buildExamPriorityPool(safeSource, solvedCaseIds);
+  const primary = prioritizedSource.slice(0, Math.min(targetCount, prioritizedSource.length));
   if (primary.length >= targetCount) return primary;
 
   const usedIds = new Set(primary.map((item) => item.id));
-  const backup = shuffleArray(safeFallback)
+  const backup = buildExamPriorityPool(safeFallback, solvedCaseIds)
     .filter((item) => !usedIds.has(item.id))
     .slice(0, targetCount - primary.length);
   return [...primary, ...backup];
@@ -1096,7 +1118,7 @@ function App() {
       .filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id));
     const pool = isDemoUser
       ? accessibleCases
-      : buildExamPool(safeSourceCases.length ? safeSourceCases : accessibleCases, 10, cases);
+      : buildExamPool(safeSourceCases.length ? safeSourceCases : accessibleCases, 10, cases, { solvedCaseIds });
     if (!pool.length) return;
     clearAIQuestionTimer();
     setMode('exam');
@@ -1443,7 +1465,7 @@ function App() {
           />
         </Suspense>
       ) : examState?.active && selectedCase ? (
-        <section className="page-shell exam-active-shell stable-case-page-shell">
+        <section className="page-shell exam-active-shell exam-case-page-shell stable-case-page-shell">
           <section className="exam-banner-card card-surface">
             <div>
               <h2>{examState.title}</h2>

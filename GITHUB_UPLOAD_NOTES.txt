@@ -1,0 +1,18 @@
+KlinikIQ V236 GitHub-ready package
+
+Bu paket source-only olarak hazırlanmıştır.
+GitHub'a node_modules, dist, build, .vite veya .vercel klasörlerini yüklemeyin.
+
+Önceki uzun yükleme büyük ihtimalle local npm install/build sonrası oluşan node_modules veya dist klasörünün de repo uploadına dahil edilmesinden kaynaklandı.
+Bu zip içinde bu klasörler yoktur ve .gitignore eklendi.
+
+Son işlevsel değişiklikler sadece şu dosyalardadır:
+- src/App.jsx
+- src/index.css
+
+Kurulum:
+1) Zip'i açın.
+2) Mevcut repo içeriğinizin üzerine kopyalayın.
+3) npm install
+4) npm run build
+5) git status ile node_modules/dist görünmediğini kontrol edin.
