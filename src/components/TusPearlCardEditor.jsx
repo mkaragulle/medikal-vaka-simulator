@@ -193,10 +193,7 @@ function TusPearlCardEditor({
 
   if (!open) return null;
 
-  const portalTarget = typeof document !== 'undefined' ? document.body : null;
-  if (!portalTarget) return null;
-
-  const editorDialog = (
+  const editorModal = (
     <div className="pearl-editor-backdrop pearl-editor-backdrop-balanced" role="presentation" onClick={onClose}>
       <section
         className="pearl-editor-modal pearl-editor-modal-compact pearl-editor-modal-balanced card-surface"
@@ -357,7 +354,8 @@ function TusPearlCardEditor({
     </div>
   );
 
-  return createPortal(editorDialog, portalTarget);
+  if (typeof document === 'undefined') return editorModal;
+  return createPortal(editorModal, document.body);
 }
 
 export default memo(TusPearlCardEditor);
