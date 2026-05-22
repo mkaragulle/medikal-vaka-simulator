@@ -12838,3 +12838,20 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
     flex-direction: column-reverse !important;
   }
 }
+
+
+/* ==========================================================
+   V233 — Portal-mounted pearl editor overlay centering
+   Purpose: ensure create/copy modals are centered relative to the full viewport
+   and dim the entire app shell including top bar and page gutters.
+   ========================================================== */
+.pearl-editor-backdrop.pearl-editor-backdrop-balanced {
+  align-content: center !important;
+  justify-items: center !important;
+  isolation: isolate !important;
+}
+
+.pearl-editor-modal.pearl-editor-modal-balanced,
+.pearl-editor-secondary-modal {
+  margin-inline: auto !important;
+}

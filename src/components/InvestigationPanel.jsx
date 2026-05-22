@@ -578,7 +578,6 @@ function OrderCategorySection({ group, orderedInvestigationIds, openResultIds, o
       <header className="order-category-head smart-order-category-head">
         <div>
           <h3 id={`order-category-${group.id}`}><GlossaryText text={group.meta.label} enabled={mode !== 'exam' && !hardMode} /></h3>
-          {group.meta.description ? <p><GlossaryText text={group.meta.description} enabled={mode !== 'exam' && !hardMode} /></p> : null}
         </div>
       </header>
       <div className="order-category-grid smart-order-category-grid">
@@ -664,7 +663,6 @@ function InvestigationPanel({
         <div>
           <h2>Objektif Veri / Tetkik</h2>
         </div>
-        <span className="ordered-count-chip refined-count-chip smart-count-chip">{orderedInvestigationIds.length} istem seçildi</span>
       </div>
 
       <DiagnosticOrdersPanel
