@@ -49080,3 +49080,69 @@ html[data-theme="dark"] .tus-spot-bank-main .option-grid > .answer-option,
     width: 100% !important;
   }
 }
+
+/* ==========================================================
+   V242 — Centered TUS Spot single-column question bank
+   Purpose: keep the spot-question surface compact and centered
+   instead of left-stacked or stretched across the full workspace.
+   ========================================================== */
+body:not(.klinikiq-auth-lock) .case-page-shell .clinical-case.qbank-case.tus-spot-bank-case,
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .clinical-case.qbank-case.tus-spot-bank-case,
+body:not(.klinikiq-auth-lock) .clinical-case.qbank-case.tus-spot-bank-case {
+  width: min(100%, 1080px) !important;
+  max-width: 1080px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  justify-self: center !important;
+  align-self: start !important;
+}
+
+body:not(.klinikiq-auth-lock) .case-page-shell .tus-spot-bank-shell.professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .case-page-shell .tus-spot-bank-shell.qbank-shell,
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .tus-spot-bank-shell.professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .stable-case-page-shell .tus-spot-bank-shell.qbank-shell,
+body:not(.klinikiq-auth-lock) .tus-spot-bank-shell.professional-qbank-shell,
+body:not(.klinikiq-auth-lock) .tus-spot-bank-shell.qbank-shell {
+  width: 100% !important;
+  max-width: 1080px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-spot-bank-main {
+  width: 100% !important;
+  max-width: 1080px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+body:not(.klinikiq-auth-lock) .tus-spot-bank-main .question-panel.diagnostic-decision-panel {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (min-width: 1440px) {
+  body:not(.klinikiq-auth-lock) .case-page-shell .clinical-case.qbank-case.tus-spot-bank-case,
+  body:not(.klinikiq-auth-lock) .stable-case-page-shell .clinical-case.qbank-case.tus-spot-bank-case,
+  body:not(.klinikiq-auth-lock) .clinical-case.qbank-case.tus-spot-bank-case,
+  body:not(.klinikiq-auth-lock) .tus-spot-bank-shell.professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .tus-spot-bank-shell.qbank-shell,
+  body:not(.klinikiq-auth-lock) .tus-spot-bank-main {
+    max-width: 1040px !important;
+  }
+}
+
+@media (max-width: 1180px) {
+  body:not(.klinikiq-auth-lock) .case-page-shell .clinical-case.qbank-case.tus-spot-bank-case,
+  body:not(.klinikiq-auth-lock) .stable-case-page-shell .clinical-case.qbank-case.tus-spot-bank-case,
+  body:not(.klinikiq-auth-lock) .clinical-case.qbank-case.tus-spot-bank-case,
+  body:not(.klinikiq-auth-lock) .tus-spot-bank-shell.professional-qbank-shell,
+  body:not(.klinikiq-auth-lock) .tus-spot-bank-shell.qbank-shell,
+  body:not(.klinikiq-auth-lock) .tus-spot-bank-main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
