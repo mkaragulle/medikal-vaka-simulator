@@ -271,11 +271,12 @@ function getMainClue(clinicalCase) {
 
 function deriveWhyCorrect(clinicalCase) {
   const feedback = getFeedback(clinicalCase);
+  const isSpotCase = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
   const explicit = normalizeText(feedback.whyCorrect || '');
-  if (explicit) return compactParagraph(removeMetaLanguage(explicit), 4, 620);
+  if (explicit) return compactParagraph(removeMetaLanguage(explicit), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
 
-  const explanation = normalizeText(clinicalCase.diagnosis?.explanation || '');
-  if (explanation) return compactParagraph(removeMetaLanguage(explanation), 4, 620);
+  const explanation = normalizeText(clinicalCase.diagnosis?.explanation || clinicalCase.explanation || '');
+  if (explanation) return compactParagraph(removeMetaLanguage(explanation), isSpotCase ? 6 : 4, isSpotCase ? 900 : 620);
 
   const clue = getMainClue(clinicalCase);
   const correct = clinicalCase.diagnosis?.correct || 'doğru seçenek';
@@ -545,7 +546,7 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
     accumulator[normalizeForCompare(key)] = value;
     return accumulator;
   }, {});
-  const clue = getMainClue(clinicalCase);
+  const isAISpot = clinicalCase.caseType === 'ai-spot' || clinicalCase.branchId === 'tus-spot-olgular';
 
   return options.slice(0, MAX_COMPARISON_ITEMS).map((option) => {
     const isCorrectOption = option === correct;
@@ -555,13 +556,16 @@ function buildOptionComparisons(clinicalCase, selectedOption, evidenceChain = []
         status: 'correct',
         isSelected: selectedOption === option,
         title: 'En iyi seçenek',
-        explanation: singleSentence(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain), 210),
+        explanation: isAISpot
+          ? compactParagraph(removeMetaLanguage(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain)), 3, 420)
+          : singleSentence(deriveCorrectOptionSummary(clinicalCase, option, evidenceChain), 210),
         comparisonPoints: [],
       };
     }
 
     const explicit = wrongMap[option] || normalizedWrongMap[normalizeForCompare(option)] || {};
-    const explanation = singleSentence(removeMetaLanguage(explicit.explanation || 'Bu seçenek için ayırt ettirici açıklama üretilemedi.'), 190);
+    const rawExplanation = removeMetaLanguage(explicit.explanation || 'Bu seçenek için ayırt ettirici açıklama üretilemedi.');
+    const explanation = isAISpot ? compactParagraph(rawExplanation, 3, 360) : singleSentence(rawExplanation, 190);
     return {
       option,
       status: 'wrong',
@@ -797,12 +801,14 @@ function AnswerFeedbackPanel({
   const aiSpotFocusedComparisons = buildAISpotFocusedComparisons(optionComparisons, selectedDiagnosis, isCorrect);
 
   if (isAISpot) {
+    const aiSpotReasoningText = isCorrect
+      ? whyCorrect
+      : compactParagraph(`${whyWrong} ${whyCorrect}`, 7, 1100);
     return (
       <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro`} aria-live="polite">
-        <div className="answer-feedback-grid answer-feedback-grid-pro ai-spot-compact-feedback-grid">
-          <ReasoningCard reasoningText={reasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} minimal />
+        <div className="answer-feedback-grid answer-feedback-grid-pro ai-spot-compact-feedback-grid ai-spot-clean-feedback-grid">
+          <ReasoningCard reasoningText={aiSpotReasoningText} isCorrect={isCorrect} glossaryEnabled={glossaryEnabled} minimal />
           <TusTipCard pearl={singleLinePearl} glossaryEnabled={glossaryEnabled} minimal />
-          <EvidenceChainCard evidenceChain={evidenceChain} glossaryEnabled={glossaryEnabled} minimal />
           <OptionComparisonCard comparisons={aiSpotFocusedComparisons} glossaryEnabled={glossaryEnabled} isSpotCase minimal />
         </div>
 

@@ -17,6 +17,60 @@ function buildOptions(options, correct, shouldShuffle = false) {
   return shuffled;
 }
 
+const ROMAN_MARKER_PATTERN = /(?:^|\s)(I{1,3}|IV|V|VI{0,3}|IX|X)[.)]\s+/g;
+
+function parseRomanQuestionPrompt(text = '') {
+  const source = String(text || '')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  if (!source) return null;
+
+  const matches = Array.from(source.matchAll(ROMAN_MARKER_PATTERN));
+  if (matches.length < 2) return null;
+
+  const items = matches.map((match, index) => {
+    const marker = match[1];
+    const start = match.index + match[0].length;
+    const end = matches[index + 1]?.index ?? source.length;
+    const textValue = source.slice(start, end).trim();
+    return { marker, text: textValue };
+  }).filter((item) => item.text);
+
+  if (items.length < 2) return null;
+
+  const intro = source.slice(0, matches[0].index).trim();
+  return { intro, items };
+}
+
+function FormattedQuestionPrompt({ text = '', glossaryEnabled = true }) {
+  const formatted = useMemo(() => parseRomanQuestionPrompt(text), [text]);
+
+  if (!formatted) {
+    return <GlossaryText text={text} enabled={glossaryEnabled} />;
+  }
+
+  return (
+    <span className="formatted-question-prompt has-roman-items">
+      {formatted.intro ? (
+        <span className="formatted-question-intro">
+          <GlossaryText text={formatted.intro} enabled={glossaryEnabled} />
+        </span>
+      ) : null}
+      <span className="formatted-question-roman-list" role="list" aria-label="Numaralandırılmış önermeler">
+        {formatted.items.map((item) => (
+          <span className="formatted-question-roman-row" role="listitem" key={`${item.marker}-${item.text}`}>
+            <span className="formatted-question-roman-marker">{item.marker}.</span>
+            <span className="formatted-question-roman-text">
+              <GlossaryText text={item.text} enabled={glossaryEnabled} />
+            </span>
+          </span>
+        ))}
+      </span>
+    </span>
+  );
+}
+
 const AnswerOption = memo(function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true }) {
   const isSelected = selected === option;
   const isCorrectOption = option === correctAnswer;
@@ -150,7 +204,11 @@ function DiagnosisQuiz({
       <div className="question-panel-head diagnostic-head">
         <div>
           <h2>{questionHeading}</h2>
-          {questionSubtext ? <p><GlossaryText text={questionSubtext} enabled={!hardMode && !examMeta?.active} /></p> : null}
+          {questionSubtext ? (
+            <p>
+              <FormattedQuestionPrompt text={questionSubtext} glossaryEnabled={!hardMode && !examMeta?.active} />
+            </p>
+          ) : null}
         </div>
 
         {!hideQuestionScoreChip ? (
@@ -182,14 +240,18 @@ function DiagnosisQuiz({
       {showInlineQuestionStem ? (
         <div className="ai-spot-inline-question-stem" role="note" aria-label="Soru kökü">
           <span className="ai-spot-inline-question-stem-label">Soru kökü</span>
-          <strong><GlossaryText text={questionPrompt} enabled={!hardMode && !examMeta?.active} /></strong>
+          <strong>
+            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={!hardMode && !examMeta?.active} />
+          </strong>
         </div>
       ) : null}
 
       {questionPrompt && !hideSpotQuestionCallout ? (
         <div className="tus-spot-olgular-question-callout" role="note">
           <Icon name="Target" size={16} />
-          <strong><GlossaryText text={questionPrompt} enabled={!hardMode && !examMeta?.active} /></strong>
+          <strong>
+            <FormattedQuestionPrompt text={questionPrompt} glossaryEnabled={!hardMode && !examMeta?.active} />
+          </strong>
         </div>
       ) : null}
 
