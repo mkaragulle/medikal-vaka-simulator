@@ -8710,9 +8710,14048 @@ function isPearlCardQualityApproved(card = {}) {
   return false;
 }
 
+
+// V232 — Revised PDF text overrides for the 1000 Hap Bilgi cards.
+// Source: KlinikIQ_1000_Hap_Kart_Revize_Edilmis_Tam_Liste(1).pdf
+// Only card text fields are overridden; ID, branch metadata, topic, card type and order remain generated from the original schema.
+const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
+  "tus-pearl-anatomy-001-spot": {
+    "front": "El pençesi ve 4-5. parmak duyu kaybı en çok hangi sinir lezyonunu düşündürür?",
+    "back": "Ulnar sinir lezyonu. Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir.",
+    "answer": "Ulnar sinir lezyonu. Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir.",
+    "explanation": "Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir. Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.",
+    "tusTip": "Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir. Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.",
+    "differentialNote": "Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.",
+    "keywords": [
+      "4-5. parmak duyu kaybı",
+      "pençe el",
+      "interosseöz zayıflık",
+      "Froment belirtisi"
+    ]
+  },
+  "tus-pearl-anatomy-001-extra": {
+    "front": "Froment belirtisi hangi sinir lezyonunu destekler?",
+    "back": "Froment belirtisi ulnar sinir lezyonunu destekler.",
+    "answer": "Froment belirtisi ulnar sinir lezyonunu destekler.",
+    "explanation": "Ulnar sinir hipotenar kaslar, interosseözler ve medial 1,5 parmak duyusu ile ilişkilidir. Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.",
+    "tusTip": "Ulnar sinir lezyonu için sınavda hedeflenen ayrım genellikle şudur: Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.",
+    "differentialNote": "Median sinir karpal tünelde başparmak-opozisyon ve ilk 3,5 parmak duyusu ile daha çok sorulur.",
+    "keywords": [
+      "4-5. parmak duyu kaybı",
+      "pençe el",
+      "interosseöz zayıflık",
+      "Froment belirtisi"
+    ]
+  },
+  "tus-pearl-anatomy-002-spot": {
+    "front": "Düşük el bileği hangi periferik sinir lezyonunun klasik bulgusudur?",
+    "back": "Radial sinir lezyonu. Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir.",
+    "answer": "Radial sinir lezyonu. Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir.",
+    "explanation": "Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir. Median sinir lezyonu düşük el değil, thenar atrofi ve maymun eli ile karışır.",
+    "tusTip": "Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir. Median sinir lezyonu düşük el değil, thenar atrofi ve maymun eli ile karışır.",
+    "differentialNote": "Median sinir lezyonu düşük el değil, thenar atrofi ve maymun eli ile karışır.",
+    "keywords": [
+      "düşük el",
+      "humerus şaft kırığı",
+      "ekstansiyon kaybı",
+      "posterior kol"
+    ]
+  },
+  "tus-pearl-anatomy-002-extra": {
+    "front": "Humerus şaft kırığında en çok risk altındaki sinir hangisidir?",
+    "back": "Radial sinir. Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir.",
+    "answer": "Radial sinir. Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir.",
+    "explanation": "Radial sinir el bileği ve parmak ekstansörlerini innerve eder; humerus şaft kırıklarında yaralanabilir. Median sinir lezyonu düşük el değil, thenar atrofi ve maymun eli ile karışır.",
+    "tusTip": "Radial sinir lezyonu karıştırıldığında cevabı netleştiren karşılaştırma: Median sinir lezyonu düşük el değil, thenar atrofi ve maymun eli ile karışır.",
+    "differentialNote": "Median sinir lezyonu düşük el değil, thenar atrofi ve maymun eli ile karışır.",
+    "keywords": [
+      "düşük el",
+      "humerus şaft kırığı",
+      "ekstansiyon kaybı",
+      "posterior kol"
+    ]
+  },
+  "tus-pearl-anatomy-003-spot": {
+    "front": "Düşük ayak ve steppage yürüyüş en çok hangi sinir lezyonunu düşündürür?",
+    "back": "Nervus fibularis communis lezyonu. Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
+    "answer": "Nervus fibularis communis lezyonu. Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
+    "explanation": "Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur. Nervus tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
+    "tusTip": "Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur. Nervus tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
+    "differentialNote": "Nervus tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
+    "keywords": [
+      "düşük ayak",
+      "steppage yürüyüş",
+      "fibula boynu",
+      "dorsifleksiyon kaybı"
+    ]
+  },
+  "tus-pearl-anatomy-003-extra": {
+    "front": "Fibula boynu kırığında klasik olarak hangi sinir risk altındadır?",
+    "back": "Nervus fibularis communis. Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
+    "answer": "Nervus fibularis communis. Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
+    "explanation": "Nervus fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur. Nervus tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
+    "tusTip": "Nervus fibularis communis lezyonu kartında ayırıcı değer taşıyan nokta: Nervus tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
+    "differentialNote": "Nervus tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
+    "keywords": [
+      "düşük ayak",
+      "steppage yürüyüş",
+      "fibula boynu",
+      "dorsifleksiyon kaybı"
+    ]
+  },
+  "tus-pearl-anatomy-004-spot": {
+    "front": "Parotis cerrahisinde korunması gereken temel motor sinir hangisidir?",
+    "back": "Nervus facialis. Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder.",
+    "answer": "Nervus facialis. Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder.",
+    "explanation": "Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder. Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir.",
+    "tusTip": "Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder. Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir.",
+    "differentialNote": "Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir.",
+    "keywords": [
+      "parotis",
+      "mimik kasları",
+      "fasiyal sinir",
+      "cerrahi risk"
+    ]
+  },
+  "tus-pearl-anatomy-004-extra": {
+    "front": "Parotis bezinin parasempatik sekresyonu hangi ganglion üzerinden olur?",
+    "back": "Otic ganglion. Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder.",
+    "answer": "Otic ganglion. Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder.",
+    "explanation": "Fasiyal sinir parotis bezinden geçer; parotis sekresyonunu parasempatik olarak innerve etmez ama mimik kaslarını innerve eder. Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir.",
+    "tusTip": "Parotis ve fasiyal sinir için sınavda hedeflenen ayrım genellikle şudur: Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir.",
+    "differentialNote": "Glossopharyngeal sinir parotise parasempatik lif sağlar; cerrahide motor dalların korunması fasiyal sinirle ilişkilidir.",
+    "keywords": [
+      "parotis",
+      "mimik kasları",
+      "fasiyal sinir",
+      "cerrahi risk"
+    ]
+  },
+  "tus-pearl-anatomy-005-spot": {
+    "front": "Kavernöz sinüs içinde internal karotis arterle birlikte seyreden kraniyal sinir hangisidir?",
+    "back": "Nervus abducens. III, IV, V1 ve V2 lateral duvardadır; VI.",
+    "answer": "Nervus abducens. III, IV, V1 ve V2 lateral duvardadır; VI.",
+    "explanation": "III, IV, V1 ve V2 lateral duvardadır; VI. sinir kavernöz sinüs içinde internal karotis arter komşuluğunda seyreder. Okülomotor sinir tutulabilir fakat internal karotisle birlikte sinüs içinde serbest seyreden klasik sinir abducens’tir.",
+    "tusTip": "III, IV, V1 ve V2 lateral duvardadır; VI. sinir kavernöz sinüs içinde internal karotis arter komşuluğunda seyreder. Okülomotor sinir tutulabilir fakat internal karotisle birlikte sinüs içinde serbest seyreden klasik sinir abducens’tir.",
+    "differentialNote": "Okülomotor sinir tutulabilir fakat internal karotisle birlikte sinüs içinde serbest seyreden klasik sinir abducens’tir.",
+    "keywords": [
+      "kavernöz sinüs",
+      "abducens",
+      "internal karotis",
+      "lateral duvar"
+    ]
+  },
+  "tus-pearl-anatomy-005-extra": {
+    "front": "Kavernöz sinüs trombozunda lateral rektus paralizisi hangi sinir tutulumunu gösterir?",
+    "back": "Abducens siniri. III, IV, V1 ve V2 lateral duvardadır; VI.",
+    "answer": "Abducens siniri. III, IV, V1 ve V2 lateral duvardadır; VI.",
+    "explanation": "III, IV, V1 ve V2 lateral duvardadır; VI. sinir kavernöz sinüs içinde internal karotis arter komşuluğunda seyreder. Okülomotor sinir tutulabilir fakat internal karotisle birlikte sinüs içinde serbest seyreden klasik sinir abducens’tir.",
+    "tusTip": "Kavernöz sinüs karıştırıldığında cevabı netleştiren karşılaştırma: Okülomotor sinir tutulabilir fakat internal karotisle birlikte sinüs içinde serbest seyreden klasik sinir abducens’tir.",
+    "differentialNote": "Okülomotor sinir tutulabilir fakat internal karotisle birlikte sinüs içinde serbest seyreden klasik sinir abducens’tir.",
+    "keywords": [
+      "kavernöz sinüs",
+      "abducens",
+      "internal karotis",
+      "lateral duvar Fizyoloji (physiology)"
+    ]
+  },
+  "tus-pearl-physiology-006-spot": {
+    "front": "Normal koşullarda ventilasyonu en güçlü uyaran fizyolojik parametre hangisidir?",
+    "back": "PaCO₂ artışı. Santral kemoreseptörler CO₂ artışına bağlı BOS pH düşüşünü algılar.",
+    "answer": "PaCO₂ artışı. Santral kemoreseptörler CO₂ artışına bağlı BOS pH düşüşünü algılar.",
+    "explanation": "Santral kemoreseptörler CO₂ artışına bağlı BOS pH düşüşünü algılar. Hipoksemi önemlidir ancak periferik kemoreseptörleri belirgin olarak PaO₂ çok düştüğünde uyarır.",
+    "tusTip": "Santral kemoreseptörler CO₂ artışına bağlı BOS pH düşüşünü algılar. Hipoksemi önemlidir ancak periferik kemoreseptörleri belirgin olarak PaO₂ çok düştüğünde uyarır.",
+    "differentialNote": "Hipoksemi önemlidir ancak periferik kemoreseptörleri belirgin olarak PaO₂ çok düştüğünde uyarır.",
+    "keywords": [
+      "PaCO₂",
+      "santral kemoreseptör",
+      "BOS pH",
+      "ventilasyon"
+    ]
+  },
+  "tus-pearl-physiology-006-extra": {
+    "front": "Kronik CO₂ retansiyonunda solunum dürtüsünde hangi uyarı görece önem kazanır?",
+    "back": "Hipoksemiye bağlı periferik kemoreseptör uyarısı. Santral kemoreseptörler CO₂ artışına bağlı BOS pH düşüşünü algılar.",
+    "answer": "Hipoksemiye bağlı periferik kemoreseptör uyarısı. Santral kemoreseptörler CO₂ artışına bağlı BOS pH düşüşünü algılar.",
+    "explanation": "Santral kemoreseptörler CO₂ artışına bağlı BOS pH düşüşünü algılar. Hipoksemi önemlidir ancak periferik kemoreseptörleri belirgin olarak PaO₂ çok düştüğünde uyarır.",
+    "tusTip": "Solunum merkezi ve CO₂ kartında ayırıcı değer taşıyan nokta: Hipoksemi önemlidir ancak periferik kemoreseptörleri belirgin olarak PaO₂ çok düştüğünde uyarır.",
+    "differentialNote": "Hipoksemi önemlidir ancak periferik kemoreseptörleri belirgin olarak PaO₂ çok düştüğünde uyarır.",
+    "keywords": [
+      "PaCO₂",
+      "santral kemoreseptör",
+      "BOS pH",
+      "ventilasyon"
+    ]
+  },
+  "tus-pearl-physiology-007-spot": {
+    "front": "Aldosteronun distal nefrondaki temel etkisi nedir?",
+    "back": "Na⁺ geri emilimini artırır, K⁺ ve H⁺ atılımını artırır.",
+    "answer": "Na⁺ geri emilimini artırır, K⁺ ve H⁺ atılımını artırır.",
+    "explanation": "Toplayıcı kanal principal ve interkale hücre etkileri hipokalemik metabolik alkaloz paternini açıklar. ADH su geri emilimini artırır; aldosteronun temel sınav paterni sodyum-potasyum-hidrojen iyonudur.",
+    "tusTip": "Toplayıcı kanal principal ve interkale hücre etkileri hipokalemik metabolik alkaloz paternini açıklar. ADH su geri emilimini artırır; aldosteronun temel sınav paterni sodyum-potasyum-hidrojen iyonudur.",
+    "differentialNote": "ADH su geri emilimini artırır; aldosteronun temel sınav paterni sodyum-potasyum-hidrojen iyonudur.",
+    "keywords": [
+      "aldosteron",
+      "Na geri emilim",
+      "K atılım",
+      "metabolik alkaloz"
+    ]
+  },
+  "tus-pearl-physiology-007-extra": {
+    "front": "Primer hiperaldosteronizmde beklenen potasyum ve asit-baz paterni nedir?",
+    "back": "Hipokalemi ve metabolik alkaloz. Toplayıcı kanal principal ve interkale hücre etkileri hipokalemik metabolik alkaloz paternini açıklar.",
+    "answer": "Hipokalemi ve metabolik alkaloz. Toplayıcı kanal principal ve interkale hücre etkileri hipokalemik metabolik alkaloz paternini açıklar.",
+    "explanation": "Toplayıcı kanal principal ve interkale hücre etkileri hipokalemik metabolik alkaloz paternini açıklar. ADH su geri emilimini artırır; aldosteronun temel sınav paterni sodyum-potasyum-hidrojen iyonudur.",
+    "tusTip": "Aldosteron etkisi için sınavda hedeflenen ayrım genellikle şudur: ADH su geri emilimini artırır; aldosteronun temel sınav paterni sodyum-potasyum-hidrojen iyonudur.",
+    "differentialNote": "ADH su geri emilimini artırır; aldosteronun temel sınav paterni sodyum-potasyum-hidrojen iyonudur.",
+    "keywords": [
+      "aldosteron",
+      "Na geri emilim",
+      "K atılım",
+      "metabolik alkaloz"
+    ]
+  },
+  "tus-pearl-physiology-008-spot": {
+    "front": "ADH böbrekte hangi kanalı artırarak su geri emilimini sağlar?",
+    "back": "Aquaporin-2. ADH V2 reseptörü üzerinden toplayıcı kanalda aquaporin-2 yerleşimini artırır.",
+    "answer": "Aquaporin-2. ADH V2 reseptörü üzerinden toplayıcı kanalda aquaporin-2 yerleşimini artırır.",
+    "explanation": "ADH V2 reseptörü üzerinden toplayıcı kanalda aquaporin-2 yerleşimini artırır. Aldosteron sodyum-kanal etkisiyle karışır; saf su tutulumu ADH ile ilişkilidir.",
+    "tusTip": "ADH V2 reseptörü üzerinden toplayıcı kanalda aquaporin-2 yerleşimini artırır. Aldosteron sodyum-kanal etkisiyle karışır; saf su tutulumu ADH ile ilişkilidir.",
+    "differentialNote": "Aldosteron sodyum-kanal etkisiyle karışır; saf su tutulumu ADH ile ilişkilidir.",
+    "keywords": [
+      "ADH",
+      "V2",
+      "aquaporin-2",
+      "toplayıcı kanal"
+    ]
+  },
+  "tus-pearl-physiology-008-extra": {
+    "front": "Santral diabetes insipidusta temel eksik hormon hangisidir?",
+    "back": "ADH. ADH V2 reseptörü üzerinden toplayıcı kanalda aquaporin-2 yerleşimini artırır.",
+    "answer": "ADH. ADH V2 reseptörü üzerinden toplayıcı kanalda aquaporin-2 yerleşimini artırır.",
+    "explanation": "ADH V2 reseptörü üzerinden toplayıcı kanalda aquaporin-2 yerleşimini artırır. Aldosteron sodyum-kanal etkisiyle karışır; saf su tutulumu ADH ile ilişkilidir.",
+    "tusTip": "ADH ve su dengesi karıştırıldığında cevabı netleştiren karşılaştırma: Aldosteron sodyum-kanal etkisiyle karışır; saf su tutulumu ADH ile ilişkilidir.",
+    "differentialNote": "Aldosteron sodyum-kanal etkisiyle karışır; saf su tutulumu ADH ile ilişkilidir.",
+    "keywords": [
+      "ADH",
+      "V2",
+      "aquaporin-2",
+      "toplayıcı kanal"
+    ]
+  },
+  "tus-pearl-physiology-009-spot": {
+    "front": "Preload artışı kalp kasında atım hacmini hangi mekanizma ile artırır?",
+    "back": "Frank-Starling mekanizması. Artan diyastol sonu lif uzunluğu uygun sınırlar içinde kasılma gücünü artırır.",
+    "answer": "Frank-Starling mekanizması. Artan diyastol sonu lif uzunluğu uygun sınırlar içinde kasılma gücünü artırır.",
+    "explanation": "Artan diyastol sonu lif uzunluğu uygun sınırlar içinde kasılma gücünü artırır. Afterload artışı genellikle atım hacmini azaltır; preload artışı Frank-Starling ile sorulur.",
+    "tusTip": "Artan diyastol sonu lif uzunluğu uygun sınırlar içinde kasılma gücünü artırır. Afterload artışı genellikle atım hacmini azaltır; preload artışı Frank-Starling ile sorulur.",
+    "differentialNote": "Afterload artışı genellikle atım hacmini azaltır; preload artışı Frank-Starling ile sorulur.",
+    "keywords": [
+      "preload",
+      "EDV",
+      "atım hacmi",
+      "lif uzunluğu"
+    ]
+  },
+  "tus-pearl-physiology-009-extra": {
+    "front": "Kalpte afterload kavramı en çok hangi basınç yüküyle ilişkilidir?",
+    "back": "Ventrikülün kanı atmak için yenmesi gereken direnç.",
+    "answer": "Ventrikülün kanı atmak için yenmesi gereken direnç.",
+    "explanation": "Artan diyastol sonu lif uzunluğu uygun sınırlar içinde kasılma gücünü artırır. Afterload artışı genellikle atım hacmini azaltır; preload artışı Frank-Starling ile sorulur.",
+    "tusTip": "Frank-Starling mekanizması kartında ayırıcı değer taşıyan nokta: Afterload artışı genellikle atım hacmini azaltır; preload artışı Frank-Starling ile sorulur.",
+    "differentialNote": "Afterload artışı genellikle atım hacmini azaltır; preload artışı Frank-Starling ile sorulur.",
+    "keywords": [
+      "preload",
+      "EDV",
+      "atım hacmi",
+      "lif uzunluğu"
+    ]
+  },
+  "tus-pearl-physiology-010-spot": {
+    "front": "Pulmoner embolide tipik ventilasyon/perfüzyon değişikliği nasıldır?",
+    "back": "Ventilasyon korunur, perfüzyon azalır; V/Q artar.",
+    "answer": "Ventilasyon korunur, perfüzyon azalır; V/Q artar.",
+    "explanation": "Emboli perfüzyonu düşürür ve ölü boşluk ventilasyonunu artırır. Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır.",
+    "tusTip": "Emboli perfüzyonu düşürür ve ölü boşluk ventilasyonunu artırır. Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır.",
+    "differentialNote": "Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır.",
+    "keywords": [
+      "pulmoner emboli",
+      "perfüzyon azalır",
+      "V/Q artar",
+      "ölü boşluk"
+    ]
+  },
+  "tus-pearl-physiology-010-extra": {
+    "front": "Atelektazide V/Q oranı hangi yöne gider?",
+    "back": "V/Q azalır; şant benzeri patern oluşur.",
+    "answer": "V/Q azalır; şant benzeri patern oluşur.",
+    "explanation": "Emboli perfüzyonu düşürür ve ölü boşluk ventilasyonunu artırır. Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır.",
+    "tusTip": "V/Q uyumsuzluğu için sınavda hedeflenen ayrım genellikle şudur: Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır.",
+    "differentialNote": "Şantta perfüzyon vardır ama ventilasyon yoktur; embolide temel problem perfüzyon kaybıdır.",
+    "keywords": [
+      "pulmoner emboli",
+      "perfüzyon azalır",
+      "V/Q artar",
+      "ölü boşluk Histoloji ve Embriyoloji (histology-embryology)"
+    ]
+  },
+  "tus-pearl-histology-embryology-011-spot": {
+    "front": "Schwann hücresi ve adrenal medulla hangi embriyolojik yapıdan gelişir?",
+    "back": "Nöral krest. Nöral krest periferik sinir sistemi, melanosit, adrenal medulla ve konotrunkal septum gibi yapılara katkı verir.",
+    "answer": "Nöral krest. Nöral krest periferik sinir sistemi, melanosit, adrenal medulla ve konotrunkal septum gibi yapılara katkı verir.",
+    "explanation": "Nöral krest periferik sinir sistemi, melanosit, adrenal medulla ve konotrunkal septum gibi yapılara katkı verir. Nöral tüp MSS ile ilişkilidir; periferik ganglionlar ve Schwann hücreleri nöral kresttir.",
+    "tusTip": "Nöral krest periferik sinir sistemi, melanosit, adrenal medulla ve konotrunkal septum gibi yapılara katkı verir. Nöral tüp MSS ile ilişkilidir; periferik ganglionlar ve Schwann hücreleri nöral kresttir.",
+    "differentialNote": "Nöral tüp MSS ile ilişkilidir; periferik ganglionlar ve Schwann hücreleri nöral kresttir.",
+    "keywords": [
+      "nöral krest",
+      "Schwann",
+      "adrenal medulla",
+      "melanosit"
+    ]
+  },
+  "tus-pearl-histology-embryology-011-extra": {
+    "front": "Konotrunkal kalp defektlerinde hangi embriyolojik yapı akla gelir?",
+    "back": "Nöral krest migrasyonu. Nöral krest periferik sinir sistemi, melanosit, adrenal medulla ve konotrunkal septum gibi yapılara katkı verir.",
+    "answer": "Nöral krest migrasyonu. Nöral krest periferik sinir sistemi, melanosit, adrenal medulla ve konotrunkal septum gibi yapılara katkı verir.",
+    "explanation": "Nöral krest periferik sinir sistemi, melanosit, adrenal medulla ve konotrunkal septum gibi yapılara katkı verir. Nöral tüp MSS ile ilişkilidir; periferik ganglionlar ve Schwann hücreleri nöral kresttir.",
+    "tusTip": "Nöral krest türevleri karıştırıldığında cevabı netleştiren karşılaştırma: Nöral tüp MSS ile ilişkilidir; periferik ganglionlar ve Schwann hücreleri nöral kresttir.",
+    "differentialNote": "Nöral tüp MSS ile ilişkilidir; periferik ganglionlar ve Schwann hücreleri nöral kresttir.",
+    "keywords": [
+      "nöral krest",
+      "Schwann",
+      "adrenal medulla",
+      "melanosit"
+    ]
+  },
+  "tus-pearl-histology-embryology-012-spot": {
+    "front": "Meckel divertikülü hangi embriyolojik kalıntının persistansı ile oluşur?",
+    "back": "Vitellin/omfalomezenterik kanal. Ağrısız alt GİS kanama ve ektopik gastrik mukoza ile sorulabilir.",
+    "answer": "Vitellin/omfalomezenterik kanal. Ağrısız alt GİS kanama ve ektopik gastrik mukoza ile sorulabilir.",
+    "explanation": "Ağrısız alt GİS kanama ve ektopik gastrik mukoza ile sorulabilir. Urakus kalıntısı göbekten idrar gelmesiyle karışır; Meckel bağırsakla ilişkilidir.",
+    "tusTip": "Ağrısız alt GİS kanama ve ektopik gastrik mukoza ile sorulabilir. Urakus kalıntısı göbekten idrar gelmesiyle karışır; Meckel bağırsakla ilişkilidir.",
+    "differentialNote": "Urakus kalıntısı göbekten idrar gelmesiyle karışır; Meckel bağırsakla ilişkilidir.",
+    "keywords": [
+      "Meckel",
+      "vitellin kanal",
+      "ağrısız kanama",
+      "ektopik gastrik mukoza"
+    ]
+  },
+  "tus-pearl-histology-embryology-012-extra": {
+    "front": "Meckel divertikülü tanısında hangi nükleer tıp testi kullanılabilir?",
+    "back": "Teknesyum-99m perteknetat sintigrafisi. Ağrısız alt GİS kanama ve ektopik gastrik mukoza ile sorulabilir.",
+    "answer": "Teknesyum-99m perteknetat sintigrafisi. Ağrısız alt GİS kanama ve ektopik gastrik mukoza ile sorulabilir.",
+    "explanation": "Ağrısız alt GİS kanama ve ektopik gastrik mukoza ile sorulabilir. Urakus kalıntısı göbekten idrar gelmesiyle karışır; Meckel bağırsakla ilişkilidir.",
+    "tusTip": "Meckel divertikülü kartında ayırıcı değer taşıyan nokta: Urakus kalıntısı göbekten idrar gelmesiyle karışır; Meckel bağırsakla ilişkilidir.",
+    "differentialNote": "Urakus kalıntısı göbekten idrar gelmesiyle karışır; Meckel bağırsakla ilişkilidir.",
+    "keywords": [
+      "Meckel",
+      "vitellin kanal",
+      "ağrısız kanama",
+      "ektopik gastrik mukoza"
+    ]
+  },
+  "tus-pearl-histology-embryology-013-spot": {
+    "front": "Üçüncü faringeal poş hangi yapılara gelişir?",
+    "back": "İnferior paratiroid ve timus. Üçüncü poş inferior paratiroid ve timusu, dördüncü poş superior paratiroidi verir.",
+    "answer": "İnferior paratiroid ve timus. Üçüncü poş inferior paratiroid ve timusu, dördüncü poş superior paratiroidi verir.",
+    "explanation": "Üçüncü poş inferior paratiroid ve timusu, dördüncü poş superior paratiroidi verir. Superior-inferior paratiroid sıralaması ters gibi geldiği için sık karışır.",
+    "tusTip": "Üçüncü poş inferior paratiroid ve timusu, dördüncü poş superior paratiroidi verir. Superior-inferior paratiroid sıralaması ters gibi geldiği için sık karışır.",
+    "differentialNote": "Superior-inferior paratiroid sıralaması ters gibi geldiği için sık karışır.",
+    "keywords": [
+      "3. poş",
+      "timus",
+      "inferior paratiroid",
+      "DiGeorge"
+    ]
+  },
+  "tus-pearl-histology-embryology-013-extra": {
+    "front": "DiGeorge sendromunda temel embriyolojik problem nedir?",
+    "back": "3. ve 4. faringeal poş gelişim kusuru.",
+    "answer": "3. ve 4. faringeal poş gelişim kusuru.",
+    "explanation": "Üçüncü poş inferior paratiroid ve timusu, dördüncü poş superior paratiroidi verir. Superior-inferior paratiroid sıralaması ters gibi geldiği için sık karışır.",
+    "tusTip": "Faringeal poşlar için sınavda hedeflenen ayrım genellikle şudur: Superior-inferior paratiroid sıralaması ters gibi geldiği için sık karışır.",
+    "differentialNote": "Superior-inferior paratiroid sıralaması ters gibi geldiği için sık karışır.",
+    "keywords": [
+      "3. poş",
+      "timus",
+      "inferior paratiroid",
+      "DiGeorge"
+    ]
+  },
+  "tus-pearl-histology-embryology-014-spot": {
+    "front": "Pulmoner surfaktanı hangi alveoler hücre üretir?",
+    "back": "Tip II pnömosit. Surfaktan yüzey gerilimini azaltır; prematürelerde eksikliği RDS yapar.",
+    "answer": "Tip II pnömosit. Surfaktan yüzey gerilimini azaltır; prematürelerde eksikliği RDS yapar.",
+    "explanation": "Surfaktan yüzey gerilimini azaltır; prematürelerde eksikliği RDS yapar. Tip I pnömosit gaz değişim yüzeyidir; surfaktan üretimi Tip II hücreye aittir.",
+    "tusTip": "Surfaktan yüzey gerilimini azaltır; prematürelerde eksikliği RDS yapar. Tip I pnömosit gaz değişim yüzeyidir; surfaktan üretimi Tip II hücreye aittir.",
+    "differentialNote": "Tip I pnömosit gaz değişim yüzeyidir; surfaktan üretimi Tip II hücreye aittir.",
+    "keywords": [
+      "Tip II pnömosit",
+      "surfaktan",
+      "prematüre",
+      "RDS"
+    ]
+  },
+  "tus-pearl-histology-embryology-014-extra": {
+    "front": "Surfaktanın temel fizyolojik etkisi nedir?",
+    "back": "Alveoler yüzey gerilimini azaltmak. Surfaktan yüzey gerilimini azaltır; prematürelerde eksikliği RDS yapar.",
+    "answer": "Alveoler yüzey gerilimini azaltmak. Surfaktan yüzey gerilimini azaltır; prematürelerde eksikliği RDS yapar.",
+    "explanation": "Surfaktan yüzey gerilimini azaltır; prematürelerde eksikliği RDS yapar. Tip I pnömosit gaz değişim yüzeyidir; surfaktan üretimi Tip II hücreye aittir.",
+    "tusTip": "Tip II pnömosit karıştırıldığında cevabı netleştiren karşılaştırma: Tip I pnömosit gaz değişim yüzeyidir; surfaktan üretimi Tip II hücreye aittir.",
+    "differentialNote": "Tip I pnömosit gaz değişim yüzeyidir; surfaktan üretimi Tip II hücreye aittir.",
+    "keywords": [
+      "Tip II pnömosit",
+      "surfaktan",
+      "prematüre",
+      "RDS"
+    ]
+  },
+  "tus-pearl-histology-embryology-015-spot": {
+    "front": "Gebeliğin erken döneminde korpus luteumu sürdüren hormon hangisidir?",
+    "back": "hCG. Trofoblast kaynaklı hCG LH benzeri etkiyle korpus luteumdan progesteron salınımını sürdürür.",
+    "answer": "hCG. Trofoblast kaynaklı hCG LH benzeri etkiyle korpus luteumdan progesteron salınımını sürdürür.",
+    "explanation": "Trofoblast kaynaklı hCG LH benzeri etkiyle korpus luteumdan progesteron salınımını sürdürür. Progesteron gebeliği sürdürür; erken dönemde korpus luteumu sürdüren sinyal hCG’dir.",
+    "tusTip": "Trofoblast kaynaklı hCG LH benzeri etkiyle korpus luteumdan progesteron salınımını sürdürür. Progesteron gebeliği sürdürür; erken dönemde korpus luteumu sürdüren sinyal hCG’dir.",
+    "differentialNote": "Progesteron gebeliği sürdürür; erken dönemde korpus luteumu sürdüren sinyal hCG’dir.",
+    "keywords": [
+      "hCG",
+      "trofoblast",
+      "korpus luteum",
+      "progesteron"
+    ]
+  },
+  "tus-pearl-histology-embryology-015-extra": {
+    "front": "hCG hangi hipofiz hormonuna benzer reseptör etkisi gösterir?",
+    "back": "LH. Trofoblast kaynaklı hCG LH benzeri etkiyle korpus luteumdan progesteron salınımını sürdürür.",
+    "answer": "LH. Trofoblast kaynaklı hCG LH benzeri etkiyle korpus luteumdan progesteron salınımını sürdürür.",
+    "explanation": "Trofoblast kaynaklı hCG LH benzeri etkiyle korpus luteumdan progesteron salınımını sürdürür. Progesteron gebeliği sürdürür; erken dönemde korpus luteumu sürdüren sinyal hCG’dir.",
+    "tusTip": "Plasenta ve hCG kartında ayırıcı değer taşıyan nokta: Progesteron gebeliği sürdürür; erken dönemde korpus luteumu sürdüren sinyal hCG’dir.",
+    "differentialNote": "Progesteron gebeliği sürdürür; erken dönemde korpus luteumu sürdüren sinyal hCG’dir.",
+    "keywords": [
+      "hCG",
+      "trofoblast",
+      "korpus luteum",
+      "progesteron Tıbbi Biyokimya (medical-biochemistry)"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-016-spot": {
+    "front": "Fenilketonüride eksik enzim en sık hangisidir?",
+    "back": "Fenilalanin hidroksilaz. Fenilalanin tirozine çevrilemez; açık ten, nörolojik gerilik ve küf kokusu ipucudur.",
+    "answer": "Fenilalanin hidroksilaz. Fenilalanin tirozine çevrilemez; açık ten, nörolojik gerilik ve küf kokusu ipucudur.",
+    "explanation": "Fenilalanin tirozine çevrilemez; açık ten, nörolojik gerilik ve küf kokusu ipucudur. Tirozin bu hastada esansiyel hale gelir; tirozinemi ile karıştırma.",
+    "tusTip": "Fenilalanin tirozine çevrilemez; açık ten, nörolojik gerilik ve küf kokusu ipucudur. Tirozin bu hastada esansiyel hale gelir; tirozinemi ile karıştırma.",
+    "differentialNote": "Tirozin bu hastada esansiyel hale gelir; tirozinemi ile karıştırma.",
+    "keywords": [
+      "fenilalanin",
+      "açık ten",
+      "küf kokusu",
+      "nörolojik gerilik"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-016-extra": {
+    "front": "Fenilketonüride diyette kısıtlanması gereken aminoasit hangisidir?",
+    "back": "Fenilalanin. Fenilalanin tirozine çevrilemez; açık ten, nörolojik gerilik ve küf kokusu ipucudur.",
+    "answer": "Fenilalanin. Fenilalanin tirozine çevrilemez; açık ten, nörolojik gerilik ve küf kokusu ipucudur.",
+    "explanation": "Fenilalanin tirozine çevrilemez; açık ten, nörolojik gerilik ve küf kokusu ipucudur. Tirozin bu hastada esansiyel hale gelir; tirozinemi ile karıştırma.",
+    "tusTip": "Fenilketonüri için sınavda hedeflenen ayrım genellikle şudur: Tirozin bu hastada esansiyel hale gelir; tirozinemi ile karıştırma.",
+    "differentialNote": "Tirozin bu hastada esansiyel hale gelir; tirozinemi ile karıştırma.",
+    "keywords": [
+      "fenilalanin",
+      "açık ten",
+      "küf kokusu",
+      "nörolojik gerilik"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-017-spot": {
+    "front": "Homosistinüride tipik lens ve damar komplikasyonu nedir?",
+    "back": "Aşağı lens subluksasyonu ve tromboz eğilimi.",
+    "answer": "Aşağı lens subluksasyonu ve tromboz eğilimi.",
+    "explanation": "Sistationin beta-sentaz kusuru marfanoid habitus ve tromboemboli ile sorulur. Marfan’da lens genellikle yukarı-dışa; homosistinüride aşağı yönde sorulur.",
+    "tusTip": "Sistationin beta-sentaz kusuru marfanoid habitus ve tromboemboli ile sorulur. Marfan’da lens genellikle yukarı-dışa; homosistinüride aşağı yönde sorulur.",
+    "differentialNote": "Marfan’da lens genellikle yukarı-dışa; homosistinüride aşağı yönde sorulur.",
+    "keywords": [
+      "marfanoid",
+      "tromboz",
+      "lens subluksasyonu",
+      "CBS"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-017-extra": {
+    "front": "Homosistinüride hangi vitamin yanıtı görülebilir?",
+    "back": "Piridoksin/B6 yanıtı bazı olgularda görülebilir.",
+    "answer": "Piridoksin/B6 yanıtı bazı olgularda görülebilir.",
+    "explanation": "Sistationin beta-sentaz kusuru marfanoid habitus ve tromboemboli ile sorulur. Marfan’da lens genellikle yukarı-dışa; homosistinüride aşağı yönde sorulur.",
+    "tusTip": "Homosistinüri karıştırıldığında cevabı netleştiren karşılaştırma: Marfan’da lens genellikle yukarı-dışa; homosistinüride aşağı yönde sorulur.",
+    "differentialNote": "Marfan’da lens genellikle yukarı-dışa; homosistinüride aşağı yönde sorulur.",
+    "keywords": [
+      "marfanoid",
+      "tromboz",
+      "lens subluksasyonu",
+      "CBS"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-018-spot": {
+    "front": "Maple syrup urine disease’de hangi metabolit grubu birikir?",
+    "back": "Dallı zincirli aminoasitler. Lösin, izolösin ve valin katabolizmasında alfa-ketoasit dehidrogenaz kusuru vardır.",
+    "answer": "Dallı zincirli aminoasitler. Lösin, izolösin ve valin katabolizmasında alfa-ketoasit dehidrogenaz kusuru vardır.",
+    "explanation": "Lösin, izolösin ve valin katabolizmasında alfa-ketoasit dehidrogenaz kusuru vardır. Fenilketonüri küf kokusuyla, MSUD akçaağaç şurubu kokusuyla ayrılır.",
+    "tusTip": "Lösin, izolösin ve valin katabolizmasında alfa-ketoasit dehidrogenaz kusuru vardır. Fenilketonüri küf kokusuyla, MSUD akçaağaç şurubu kokusuyla ayrılır.",
+    "differentialNote": "Fenilketonüri küf kokusuyla, MSUD akçaağaç şurubu kokusuyla ayrılır.",
+    "keywords": [
+      "akçaağaç kokusu",
+      "lösin",
+      "izolösin",
+      "valin"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-018-extra": {
+    "front": "MSUD’de eksik enzim kompleksi hangisidir?",
+    "back": "Dallı zincirli alfa-ketoasit dehidrogenaz. Lösin, izolösin ve valin katabolizmasında alfa-ketoasit dehidrogenaz kusuru vardır.",
+    "answer": "Dallı zincirli alfa-ketoasit dehidrogenaz. Lösin, izolösin ve valin katabolizmasında alfa-ketoasit dehidrogenaz kusuru vardır.",
+    "explanation": "Lösin, izolösin ve valin katabolizmasında alfa-ketoasit dehidrogenaz kusuru vardır. Fenilketonüri küf kokusuyla, MSUD akçaağaç şurubu kokusuyla ayrılır.",
+    "tusTip": "MSUD kartında ayırıcı değer taşıyan nokta: Fenilketonüri küf kokusuyla, MSUD akçaağaç şurubu kokusuyla ayrılır.",
+    "differentialNote": "Fenilketonüri küf kokusuyla, MSUD akçaağaç şurubu kokusuyla ayrılır.",
+    "keywords": [
+      "akçaağaç kokusu",
+      "lösin",
+      "izolösin",
+      "valin"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-019-spot": {
+    "front": "Ornitin transkarbamilaz eksikliğinde idrarda hangi madde artar?",
+    "back": "Orotik asit. Üre siklusu kusurunda hiperamonyemi olur; OTC eksikliğinde orotik asit artışı ayırt ettiricidir.",
+    "answer": "Orotik asit. Üre siklusu kusurunda hiperamonyemi olur; OTC eksikliğinde orotik asit artışı ayırt ettiricidir.",
+    "explanation": "Üre siklusu kusurunda hiperamonyemi olur; OTC eksikliğinde orotik asit artışı ayırt ettiricidir. Orotik asidüri de orotik asit artırır ama megaloblastik anemi ve hiperamonyemi olmamasıyla ayrılır.",
+    "tusTip": "Üre siklusu kusurunda hiperamonyemi olur; OTC eksikliğinde orotik asit artışı ayırt ettiricidir. Orotik asidüri de orotik asit artırır ama megaloblastik anemi ve hiperamonyemi olmamasıyla ayrılır.",
+    "differentialNote": "Orotik asidüri de orotik asit artırır ama megaloblastik anemi ve hiperamonyemi olmamasıyla ayrılır.",
+    "keywords": [
+      "hiperamonyemi",
+      "orotik asit",
+      "üre siklusu",
+      "erkek çocuk"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-019-extra": {
+    "front": "OTC eksikliği hangi kalıtım tipiyle klasik olarak sorulur?",
+    "back": "X’e bağlı resesif. Üre siklusu kusurunda hiperamonyemi olur; OTC eksikliğinde orotik asit artışı ayırt ettiricidir.",
+    "answer": "X’e bağlı resesif. Üre siklusu kusurunda hiperamonyemi olur; OTC eksikliğinde orotik asit artışı ayırt ettiricidir.",
+    "explanation": "Üre siklusu kusurunda hiperamonyemi olur; OTC eksikliğinde orotik asit artışı ayırt ettiricidir. Orotik asidüri de orotik asit artırır ama megaloblastik anemi ve hiperamonyemi olmamasıyla ayrılır.",
+    "tusTip": "OTC eksikliği için sınavda hedeflenen ayrım genellikle şudur: Orotik asidüri de orotik asit artırır ama megaloblastik anemi ve hiperamonyemi olmamasıyla ayrılır.",
+    "differentialNote": "Orotik asidüri de orotik asit artırır ama megaloblastik anemi ve hiperamonyemi olmamasıyla ayrılır.",
+    "keywords": [
+      "hiperamonyemi",
+      "orotik asit",
+      "üre siklusu",
+      "erkek çocuk"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-020-spot": {
+    "front": "Von Gierke hastalığında eksik enzim hangisidir?",
+    "back": "Glukoz-6-fosfataz. Açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali tipiktir.",
+    "answer": "Glukoz-6-fosfataz. Açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali tipiktir.",
+    "explanation": "Açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali tipiktir. McArdle egzersiz intoleransı ve kas fosforilaz kusuruyla ayrılır.",
+    "tusTip": "Açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali tipiktir. McArdle egzersiz intoleransı ve kas fosforilaz kusuruyla ayrılır.",
+    "differentialNote": "McArdle egzersiz intoleransı ve kas fosforilaz kusuruyla ayrılır.",
+    "keywords": [
+      "açlık hipoglisemisi",
+      "hepatomegali",
+      "laktik asidoz",
+      "hiperürisemi"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-020-extra": {
+    "front": "Von Gierke hangi glikojen depo hastalığı tipidir?",
+    "back": "Tip I. Açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali tipiktir.",
+    "answer": "Tip I. Açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali tipiktir.",
+    "explanation": "Açlık hipoglisemisi, laktik asidoz, hiperürisemi ve hepatomegali tipiktir. McArdle egzersiz intoleransı ve kas fosforilaz kusuruyla ayrılır.",
+    "tusTip": "Von Gierke karıştırıldığında cevabı netleştiren karşılaştırma: McArdle egzersiz intoleransı ve kas fosforilaz kusuruyla ayrılır.",
+    "differentialNote": "McArdle egzersiz intoleransı ve kas fosforilaz kusuruyla ayrılır.",
+    "keywords": [
+      "açlık hipoglisemisi",
+      "hepatomegali",
+      "laktik asidoz",
+      "hiperürisemi"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-021-spot": {
+    "front": "Egzersiz intoleransı ve ikinci nefes fenomeni hangi glikojen depo hastalığını düşündürür?",
+    "back": "McArdle hastalığı. Kas glikojen fosforilaz eksikliği egzersizle kramp ve miyoglobinüri yapabilir.",
+    "answer": "McArdle hastalığı. Kas glikojen fosforilaz eksikliği egzersizle kramp ve miyoglobinüri yapabilir.",
+    "explanation": "Kas glikojen fosforilaz eksikliği egzersizle kramp ve miyoglobinüri yapabilir. Pompe lizozomal asit maltaz eksikliğidir ve kardiyomiyopatiyle sorulur.",
+    "tusTip": "Kas glikojen fosforilaz eksikliği egzersizle kramp ve miyoglobinüri yapabilir. Pompe lizozomal asit maltaz eksikliğidir ve kardiyomiyopatiyle sorulur.",
+    "differentialNote": "Pompe lizozomal asit maltaz eksikliğidir ve kardiyomiyopatiyle sorulur.",
+    "keywords": [
+      "egzersiz intoleransı",
+      "kas krampı",
+      "ikinci nefes",
+      "miyoglobinüri"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-021-extra": {
+    "front": "McArdle hastalığında eksik enzim hangisidir?",
+    "back": "Kas glikojen fosforilaz. Kas glikojen fosforilaz eksikliği egzersizle kramp ve miyoglobinüri yapabilir.",
+    "answer": "Kas glikojen fosforilaz. Kas glikojen fosforilaz eksikliği egzersizle kramp ve miyoglobinüri yapabilir.",
+    "explanation": "Kas glikojen fosforilaz eksikliği egzersizle kramp ve miyoglobinüri yapabilir. Pompe lizozomal asit maltaz eksikliğidir ve kardiyomiyopatiyle sorulur.",
+    "tusTip": "McArdle kartında ayırıcı değer taşıyan nokta: Pompe lizozomal asit maltaz eksikliğidir ve kardiyomiyopatiyle sorulur.",
+    "differentialNote": "Pompe lizozomal asit maltaz eksikliğidir ve kardiyomiyopatiyle sorulur.",
+    "keywords": [
+      "egzersiz intoleransı",
+      "kas krampı",
+      "ikinci nefes",
+      "miyoglobinüri"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-022-spot": {
+    "front": "Kendini yaralama ve hiperürisemi hangi pürin metabolizma bozukluğunu düşündürür?",
+    "back": "Lesch-Nyhan sendromu. HGPRT eksikliği pürin kurtarma yolunu bozar ve ürik asit artışı yapar.",
+    "answer": "Lesch-Nyhan sendromu. HGPRT eksikliği pürin kurtarma yolunu bozar ve ürik asit artışı yapar.",
+    "explanation": "HGPRT eksikliği pürin kurtarma yolunu bozar ve ürik asit artışı yapar. ADA eksikliği SCID ile, HGPRT eksikliği nörodavranışsal bulgularla ayrılır.",
+    "tusTip": "HGPRT eksikliği pürin kurtarma yolunu bozar ve ürik asit artışı yapar. ADA eksikliği SCID ile, HGPRT eksikliği nörodavranışsal bulgularla ayrılır.",
+    "differentialNote": "ADA eksikliği SCID ile, HGPRT eksikliği nörodavranışsal bulgularla ayrılır.",
+    "keywords": [
+      "kendini yaralama",
+      "hiperürisemi",
+      "distoni",
+      "HGPRT"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-022-extra": {
+    "front": "Lesch-Nyhan’da eksik enzim hangisidir?",
+    "back": "HGPRT. HGPRT eksikliği pürin kurtarma yolunu bozar ve ürik asit artışı yapar.",
+    "answer": "HGPRT. HGPRT eksikliği pürin kurtarma yolunu bozar ve ürik asit artışı yapar.",
+    "explanation": "HGPRT eksikliği pürin kurtarma yolunu bozar ve ürik asit artışı yapar. ADA eksikliği SCID ile, HGPRT eksikliği nörodavranışsal bulgularla ayrılır.",
+    "tusTip": "Lesch-Nyhan için sınavda hedeflenen ayrım genellikle şudur: ADA eksikliği SCID ile, HGPRT eksikliği nörodavranışsal bulgularla ayrılır.",
+    "differentialNote": "ADA eksikliği SCID ile, HGPRT eksikliği nörodavranışsal bulgularla ayrılır.",
+    "keywords": [
+      "kendini yaralama",
+      "hiperürisemi",
+      "distoni",
+      "HGPRT"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-023-spot": {
+    "front": "Dermatit, diyare ve demans triadı hangi vitamin eksikliğini düşündürür?",
+    "back": "Niasin/B3 eksikliği. Pellagra “3D” ile sorulur; ileri olgularda ölüm de eklenir.",
+    "answer": "Niasin/B3 eksikliği. Pellagra “3D” ile sorulur; ileri olgularda ölüm de eklenir.",
+    "explanation": "Pellagra “3D” ile sorulur; ileri olgularda ölüm de eklenir. Tiamin eksikliği Wernicke-Korsakoff ve beriberi ile karışır.",
+    "tusTip": "Pellagra “3D” ile sorulur; ileri olgularda ölüm de eklenir. Tiamin eksikliği Wernicke-Korsakoff ve beriberi ile karışır.",
+    "differentialNote": "Tiamin eksikliği Wernicke-Korsakoff ve beriberi ile karışır.",
+    "keywords": [
+      "dermatit",
+      "diyare",
+      "demans",
+      "pellagra"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-023-extra": {
+    "front": "Hartnup hastalığı hangi vitamin eksikliğine benzer tablo oluşturabilir?",
+    "back": "Niasin eksikliği. Pellagra “3D” ile sorulur; ileri olgularda ölüm de eklenir.",
+    "answer": "Niasin eksikliği. Pellagra “3D” ile sorulur; ileri olgularda ölüm de eklenir.",
+    "explanation": "Pellagra “3D” ile sorulur; ileri olgularda ölüm de eklenir. Tiamin eksikliği Wernicke-Korsakoff ve beriberi ile karışır.",
+    "tusTip": "Niasin eksikliği karıştırıldığında cevabı netleştiren karşılaştırma: Tiamin eksikliği Wernicke-Korsakoff ve beriberi ile karışır.",
+    "differentialNote": "Tiamin eksikliği Wernicke-Korsakoff ve beriberi ile karışır.",
+    "keywords": [
+      "dermatit",
+      "diyare",
+      "demans",
+      "pellagra"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-024-spot": {
+    "front": "Ataksi, oftalmopleji ve konfüzyon triadı hangi vitamin eksikliğidir?",
+    "back": "Tiamin/B1 eksikliği. Wernicke ensefalopatisinde glukozdan önce tiamin verilmesi kritik sınav bilgisidir.",
+    "answer": "Tiamin/B1 eksikliği. Wernicke ensefalopatisinde glukozdan önce tiamin verilmesi kritik sınav bilgisidir.",
+    "explanation": "Wernicke ensefalopatisinde glukozdan önce tiamin verilmesi kritik sınav bilgisidir. B12 eksikliği nöropati yapabilir ama Wernicke triadı tiaminle sorulur.",
+    "tusTip": "Wernicke ensefalopatisinde glukozdan önce tiamin verilmesi kritik sınav bilgisidir. B12 eksikliği nöropati yapabilir ama Wernicke triadı tiaminle sorulur.",
+    "differentialNote": "B12 eksikliği nöropati yapabilir ama Wernicke triadı tiaminle sorulur.",
+    "keywords": [
+      "alkolizm",
+      "ataksi",
+      "oftalmopleji",
+      "konfüzyon"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-024-extra": {
+    "front": "Alkol kullanım bozukluğu olan hastada glukozdan önce ne verilmelidir?",
+    "back": "Tiamin. Wernicke ensefalopatisinde glukozdan önce tiamin verilmesi kritik sınav bilgisidir.",
+    "answer": "Tiamin. Wernicke ensefalopatisinde glukozdan önce tiamin verilmesi kritik sınav bilgisidir.",
+    "explanation": "Wernicke ensefalopatisinde glukozdan önce tiamin verilmesi kritik sınav bilgisidir. B12 eksikliği nöropati yapabilir ama Wernicke triadı tiaminle sorulur.",
+    "tusTip": "Tiamin eksikliği kartında ayırıcı değer taşıyan nokta: B12 eksikliği nöropati yapabilir ama Wernicke triadı tiaminle sorulur.",
+    "differentialNote": "B12 eksikliği nöropati yapabilir ama Wernicke triadı tiaminle sorulur.",
+    "keywords": [
+      "alkolizm",
+      "ataksi",
+      "oftalmopleji",
+      "konfüzyon"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-025-spot": {
+    "front": "Megaloblastik anemiye nörolojik bulgular eşlik ediyorsa hangi vitamin eksikliği öne çıkar?",
+    "back": "Vitamin B12 eksikliği. B12 eksikliğinde metilmalonik asit ve homosistein artar; folat eksikliğinde MMA artmaz.",
+    "answer": "Vitamin B12 eksikliği. B12 eksikliğinde metilmalonik asit ve homosistein artar; folat eksikliğinde MMA artmaz.",
+    "explanation": "B12 eksikliğinde metilmalonik asit ve homosistein artar; folat eksikliğinde MMA artmaz. Folat eksikliği megaloblastik anemi yapar ancak nörolojik bulgu ve MMA artışı beklenmez.",
+    "tusTip": "B12 eksikliğinde metilmalonik asit ve homosistein artar; folat eksikliğinde MMA artmaz. Folat eksikliği megaloblastik anemi yapar ancak nörolojik bulgu ve MMA artışı beklenmez.",
+    "differentialNote": "Folat eksikliği megaloblastik anemi yapar ancak nörolojik bulgu ve MMA artışı beklenmez.",
+    "keywords": [
+      "makrositoz",
+      "nörolojik bulgu",
+      "MMA artışı",
+      "homosistein"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-025-extra": {
+    "front": "B12 eksikliğinde folattan farklı olarak hangi metabolit artar?",
+    "back": "Metilmalonik asit. B12 eksikliğinde metilmalonik asit ve homosistein artar; folat eksikliğinde MMA artmaz.",
+    "answer": "Metilmalonik asit. B12 eksikliğinde metilmalonik asit ve homosistein artar; folat eksikliğinde MMA artmaz.",
+    "explanation": "B12 eksikliğinde metilmalonik asit ve homosistein artar; folat eksikliğinde MMA artmaz. Folat eksikliği megaloblastik anemi yapar ancak nörolojik bulgu ve MMA artışı beklenmez.",
+    "tusTip": "B12 eksikliği için sınavda hedeflenen ayrım genellikle şudur: Folat eksikliği megaloblastik anemi yapar ancak nörolojik bulgu ve MMA artışı beklenmez.",
+    "differentialNote": "Folat eksikliği megaloblastik anemi yapar ancak nörolojik bulgu ve MMA artışı beklenmez.",
+    "keywords": [
+      "makrositoz",
+      "nörolojik bulgu",
+      "MMA artışı",
+      "homosistein Tıbbi Mikrobiyoloji (medical-microbiology)"
+    ]
+  },
+  "tus-pearl-medical-microbiology-026-spot": {
+    "front": "Keskin sınırlı parlak kırmızı plak yapan erizipelde en sık etken hangisidir?",
+    "back": "Streptococcus pyogenes (A grubu beta-hemolitik streptokok).",
+    "answer": "Streptococcus pyogenes (A grubu beta-hemolitik streptokok).",
+    "explanation": "Erizipel daha yüzeyel dermal lenfatik tutulumla keskin sınırlı ve parlak eritem yapar. Selülit daha derin ve sınırları daha belirsiz olabilir.",
+    "tusTip": "Erizipel daha yüzeyel dermal lenfatik tutulumla keskin sınırlı ve parlak eritem yapar. Selülit daha derin ve sınırları daha belirsiz olabilir.",
+    "differentialNote": "Selülit daha derin ve sınırları daha belirsiz olabilir.",
+    "keywords": [
+      "keskin sınırlı plak",
+      "parlak eritem",
+      "ateş",
+      "Streptococcus pyogenes"
+    ]
+  },
+  "tus-pearl-medical-microbiology-026-extra": {
+    "front": "Streptococcus pyogenes hangi hemoliz tipini gösterir?",
+    "back": "Beta hemoliz. Erizipel daha yüzeyel dermal lenfatik tutulumla keskin sınırlı ve parlak eritem yapar.",
+    "answer": "Beta hemoliz. Erizipel daha yüzeyel dermal lenfatik tutulumla keskin sınırlı ve parlak eritem yapar.",
+    "explanation": "Erizipel daha yüzeyel dermal lenfatik tutulumla keskin sınırlı ve parlak eritem yapar. Selülit daha derin ve sınırları daha belirsiz olabilir.",
+    "tusTip": "Erizipel karıştırıldığında cevabı netleştiren karşılaştırma: Selülit daha derin ve sınırları daha belirsiz olabilir.",
+    "differentialNote": "Selülit daha derin ve sınırları daha belirsiz olabilir.",
+    "keywords": [
+      "keskin sınırlı plak",
+      "parlak eritem",
+      "ateş",
+      "Streptococcus pyogenes"
+    ]
+  },
+  "tus-pearl-medical-microbiology-027-spot": {
+    "front": "Deri apsesi ve pürülan enfeksiyonda en klasik etken hangisidir?",
+    "back": "Staphylococcus aureus. Koagülaz pozitif, katalaz pozitif gram pozitif koktur; apse ve toksin ilişkili tablolarla sorulur.",
+    "answer": "Staphylococcus aureus. Koagülaz pozitif, katalaz pozitif gram pozitif koktur; apse ve toksin ilişkili tablolarla sorulur.",
+    "explanation": "Koagülaz pozitif, katalaz pozitif gram pozitif koktur; apse ve toksin ilişkili tablolarla sorulur. Staphylococcus epidermidis koagülaz negatiftir ve protez/kateter enfeksiyonu ile daha çok sorulur.",
+    "tusTip": "Koagülaz pozitif, katalaz pozitif gram pozitif koktur; apse ve toksin ilişkili tablolarla sorulur. Staphylococcus epidermidis koagülaz negatiftir ve protez/kateter enfeksiyonu ile daha çok sorulur.",
+    "differentialNote": "Staphylococcus epidermidis koagülaz negatiftir ve protez/kateter enfeksiyonu ile daha çok sorulur.",
+    "keywords": [
+      "apse",
+      "pürülan",
+      "koagülaz pozitif",
+      "katalaz pozitif"
+    ]
+  },
+  "tus-pearl-medical-microbiology-027-extra": {
+    "front": "Staphylococcus aureus’u Staphylococcus epidermidis’ten ayıran test hangisidir?",
+    "back": "Koagülaz testi. Koagülaz pozitif, katalaz pozitif gram pozitif koktur; apse ve toksin ilişkili tablolarla sorulur.",
+    "answer": "Koagülaz testi. Koagülaz pozitif, katalaz pozitif gram pozitif koktur; apse ve toksin ilişkili tablolarla sorulur.",
+    "explanation": "Koagülaz pozitif, katalaz pozitif gram pozitif koktur; apse ve toksin ilişkili tablolarla sorulur. Staphylococcus epidermidis koagülaz negatiftir ve protez/kateter enfeksiyonu ile daha çok sorulur.",
+    "tusTip": "Staphylococcus aureus absesi kartında ayırıcı değer taşıyan nokta: Staphylococcus epidermidis koagülaz negatiftir ve protez/kateter enfeksiyonu ile daha çok sorulur.",
+    "differentialNote": "Staphylococcus epidermidis koagülaz negatiftir ve protez/kateter enfeksiyonu ile daha çok sorulur.",
+    "keywords": [
+      "apse",
+      "pürülan",
+      "koagülaz pozitif",
+      "katalaz pozitif"
+    ]
+  },
+  "tus-pearl-medical-microbiology-028-spot": {
+    "front": "Optokin duyarlı ve safra ile eriyen alfa hemolitik diplokok hangisidir?",
+    "back": "Streptococcus pneumoniae. Lober pnömoni, otitis media, menenjit ve kapsül bilgisi yüksek verimlidir.",
+    "answer": "Streptococcus pneumoniae. Lober pnömoni, otitis media, menenjit ve kapsül bilgisi yüksek verimlidir.",
+    "explanation": "Lober pnömoni, otitis media, menenjit ve kapsül bilgisi yüksek verimlidir. Viridans streptokok optokin dirençlidir ve diş kaynaklı endokarditle karışır.",
+    "tusTip": "Lober pnömoni, otitis media, menenjit ve kapsül bilgisi yüksek verimlidir. Viridans streptokok optokin dirençlidir ve diş kaynaklı endokarditle karışır.",
+    "differentialNote": "Viridans streptokok optokin dirençlidir ve diş kaynaklı endokarditle karışır.",
+    "keywords": [
+      "optokin duyarlı",
+      "safra erir",
+      "alfa hemoliz",
+      "diplokok"
+    ]
+  },
+  "tus-pearl-medical-microbiology-028-extra": {
+    "front": "Streptococcus pneumoniae’nin temel virülans faktörü nedir?",
+    "back": "Polisakkarit kapsül. Lober pnömoni, otitis media, menenjit ve kapsül bilgisi yüksek verimlidir.",
+    "answer": "Polisakkarit kapsül. Lober pnömoni, otitis media, menenjit ve kapsül bilgisi yüksek verimlidir.",
+    "explanation": "Lober pnömoni, otitis media, menenjit ve kapsül bilgisi yüksek verimlidir. Viridans streptokok optokin dirençlidir ve diş kaynaklı endokarditle karışır.",
+    "tusTip": "Streptococcus pneumoniae için sınavda hedeflenen ayrım genellikle şudur: Viridans streptokok optokin dirençlidir ve diş kaynaklı endokarditle karışır.",
+    "differentialNote": "Viridans streptokok optokin dirençlidir ve diş kaynaklı endokarditle karışır.",
+    "keywords": [
+      "optokin duyarlı",
+      "safra erir",
+      "alfa hemoliz",
+      "diplokok"
+    ]
+  },
+  "tus-pearl-medical-microbiology-029-spot": {
+    "front": "Epiglottit ve kapsüllü gram negatif kokobasil denince hangi etken akla gelir?",
+    "back": "Haemophilus influenzae tip b. Aşısız çocukta epiglottit ve menenjit klasik klinik bilgidir.",
+    "answer": "Haemophilus influenzae tip b. Aşısız çocukta epiglottit ve menenjit klasik klinik bilgidir.",
+    "explanation": "Aşısız çocukta epiglottit ve menenjit klasik klinik bilgidir. Croup parainfluenza ile ve havlar tarzda öksürükle ayrılır.",
+    "tusTip": "Aşısız çocukta epiglottit ve menenjit klasik klinik bilgidir. Croup parainfluenza ile ve havlar tarzda öksürükle ayrılır.",
+    "differentialNote": "Croup parainfluenza ile ve havlar tarzda öksürükle ayrılır.",
+    "keywords": [
+      "epiglottit",
+      "aşısız çocuk",
+      "çikolata agar",
+      "faktör V ve X"
+    ]
+  },
+  "tus-pearl-medical-microbiology-029-extra": {
+    "front": "Haemophilus influenzae üremesi için hangi faktörlere ihtiyaç duyar?",
+    "back": "Faktör V ve X. Aşısız çocukta epiglottit ve menenjit klasik klinik bilgidir.",
+    "answer": "Faktör V ve X. Aşısız çocukta epiglottit ve menenjit klasik klinik bilgidir.",
+    "explanation": "Aşısız çocukta epiglottit ve menenjit klasik klinik bilgidir. Croup parainfluenza ile ve havlar tarzda öksürükle ayrılır.",
+    "tusTip": "Haemophilus influenzae tip b karıştırıldığında cevabı netleştiren karşılaştırma: Croup parainfluenza ile ve havlar tarzda öksürükle ayrılır.",
+    "differentialNote": "Croup parainfluenza ile ve havlar tarzda öksürükle ayrılır.",
+    "keywords": [
+      "epiglottit",
+      "aşısız çocuk",
+      "çikolata agar",
+      "faktör V ve X"
+    ]
+  },
+  "tus-pearl-medical-microbiology-030-spot": {
+    "front": "Peteşiyal döküntü ve meningokoksemi hangi bakteriyi düşündürür?",
+    "back": "Neisseria meningitidis. Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur.",
+    "answer": "Neisseria meningitidis. Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur.",
+    "explanation": "Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur. Streptococcus pneumoniae menenjit yapabilir ama peteşiyal sepsis paterni meningokok lehinedir.",
+    "tusTip": "Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur. Streptococcus pneumoniae menenjit yapabilir ama peteşiyal sepsis paterni meningokok lehinedir.",
+    "differentialNote": "Streptococcus pneumoniae menenjit yapabilir ama peteşiyal sepsis paterni meningokok lehinedir.",
+    "keywords": [
+      "peteşi",
+      "meningokoksemi",
+      "gram negatif diplokok",
+      "kapsül"
+    ]
+  },
+  "tus-pearl-medical-microbiology-030-extra": {
+    "front": "Meningokok temaslı profilaksisinde hangi ilaçlardan biri kullanılır?",
+    "back": "Rifampisin, siprofloksasin veya seftriakson. Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur.",
+    "answer": "Rifampisin, siprofloksasin veya seftriakson. Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur.",
+    "explanation": "Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur. Streptococcus pneumoniae menenjit yapabilir ama peteşiyal sepsis paterni meningokok lehinedir.",
+    "tusTip": "Neisseria meningitidis kartında ayırıcı değer taşıyan nokta: Streptococcus pneumoniae menenjit yapabilir ama peteşiyal sepsis paterni meningokok lehinedir.",
+    "differentialNote": "Streptococcus pneumoniae menenjit yapabilir ama peteşiyal sepsis paterni meningokok lehinedir.",
+    "keywords": [
+      "peteşi",
+      "meningokoksemi",
+      "gram negatif diplokok",
+      "kapsül"
+    ]
+  },
+  "tus-pearl-medical-microbiology-031-spot": {
+    "front": "Antibiyotik sonrası psödomembranöz kolitte toksin üreten etken hangisidir?",
+    "back": "Clostridioides difficile. Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir.",
+    "answer": "Clostridioides difficile. Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir.",
+    "explanation": "Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir. İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; Clostridioides difficile antibiyotik öyküsüyle sorulur.",
+    "tusTip": "Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir. İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; Clostridioides difficile antibiyotik öyküsüyle sorulur.",
+    "differentialNote": "İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; Clostridioides difficile antibiyotik öyküsüyle sorulur.",
+    "keywords": [
+      "antibiyotik sonrası",
+      "psödomembran",
+      "toksin A/B",
+      "sulu diyare"
+    ]
+  },
+  "tus-pearl-medical-microbiology-031-extra": {
+    "front": "Clostridioides difficile enfeksiyonunda ilk basamak oral tedavi seçeneklerinden biri hangisidir?",
+    "back": "Oral vankomisin veya fidaksomisin. Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir.",
+    "answer": "Oral vankomisin veya fidaksomisin. Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir.",
+    "explanation": "Toksin A/B, sulu diyare ve psödomembranlar klasik ayırt ettiricidir. İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; Clostridioides difficile antibiyotik öyküsüyle sorulur.",
+    "tusTip": "Clostridioides difficile için sınavda hedeflenen ayrım genellikle şudur: İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; Clostridioides difficile antibiyotik öyküsüyle sorulur.",
+    "differentialNote": "İnvazif bakteriyel dizanteride kanlı dışkı öne çıkar; Clostridioides difficile antibiyotik öyküsüyle sorulur.",
+    "keywords": [
+      "antibiyotik sonrası",
+      "psödomembran",
+      "toksin A/B",
+      "sulu diyare"
+    ]
+  },
+  "tus-pearl-medical-microbiology-032-spot": {
+    "front": "Spastik paralizi ve trismus yapan toksin hangi bakteriye aittir?",
+    "back": "Clostridium tetani. Tetanospazmin inhibitör nöronlardan GABA ve glisin salınımını engeller.",
+    "answer": "Clostridium tetani. Tetanospazmin inhibitör nöronlardan GABA ve glisin salınımını engeller.",
+    "explanation": "Tetanospazmin inhibitör nöronlardan GABA ve glisin salınımını engeller. Botulinum gevşek paralizi yapar; tetanoz spastik paralizi ile ayrılır.",
+    "tusTip": "Tetanospazmin inhibitör nöronlardan GABA ve glisin salınımını engeller. Botulinum gevşek paralizi yapar; tetanoz spastik paralizi ile ayrılır.",
+    "differentialNote": "Botulinum gevşek paralizi yapar; tetanoz spastik paralizi ile ayrılır.",
+    "keywords": [
+      "trismus",
+      "risus sardonicus",
+      "spastik paralizi",
+      "GABA/glisin"
+    ]
+  },
+  "tus-pearl-medical-microbiology-032-extra": {
+    "front": "Tetanoz toksini hangi nörotransmitterlerin salınımını engeller?",
+    "back": "GABA ve glisin. Tetanospazmin inhibitör nöronlardan GABA ve glisin salınımını engeller.",
+    "answer": "GABA ve glisin. Tetanospazmin inhibitör nöronlardan GABA ve glisin salınımını engeller.",
+    "explanation": "Tetanospazmin inhibitör nöronlardan GABA ve glisin salınımını engeller. Botulinum gevşek paralizi yapar; tetanoz spastik paralizi ile ayrılır.",
+    "tusTip": "Clostridium tetani karıştırıldığında cevabı netleştiren karşılaştırma: Botulinum gevşek paralizi yapar; tetanoz spastik paralizi ile ayrılır.",
+    "differentialNote": "Botulinum gevşek paralizi yapar; tetanoz spastik paralizi ile ayrılır.",
+    "keywords": [
+      "trismus",
+      "risus sardonicus",
+      "spastik paralizi",
+      "GABA/glisin"
+    ]
+  },
+  "tus-pearl-medical-microbiology-033-spot": {
+    "front": "Pirinç suyu dışkı ve hızlı dehidratasyon hangi etkeni düşündürür?",
+    "back": "Vibrio cholerae. Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur.",
+    "answer": "Vibrio cholerae. Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur.",
+    "explanation": "Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur. İnvazyon değil toksin aracılı sekretuar diyare ana mekanizmadır.",
+    "tusTip": "Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur. İnvazyon değil toksin aracılı sekretuar diyare ana mekanizmadır.",
+    "differentialNote": "İnvazyon değil toksin aracılı sekretuar diyare ana mekanizmadır.",
+    "keywords": [
+      "pirinç suyu dışkı",
+      "dehidratasyon",
+      "Gs",
+      "cAMP"
+    ]
+  },
+  "tus-pearl-medical-microbiology-033-extra": {
+    "front": "Kolera toksini hangi ikinci habercide artış yapar?",
+    "back": "cAMP. Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur.",
+    "answer": "cAMP. Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur.",
+    "explanation": "Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur. İnvazyon değil toksin aracılı sekretuar diyare ana mekanizmadır.",
+    "tusTip": "Vibrio cholerae kartında ayırıcı değer taşıyan nokta: İnvazyon değil toksin aracılı sekretuar diyare ana mekanizmadır.",
+    "differentialNote": "İnvazyon değil toksin aracılı sekretuar diyare ana mekanizmadır.",
+    "keywords": [
+      "pirinç suyu dışkı",
+      "dehidratasyon",
+      "Gs",
+      "cAMP"
+    ]
+  },
+  "tus-pearl-medical-microbiology-034-spot": {
+    "front": "Heterofil antikor pozitifliği ve atipik lenfositoz hangi enfeksiyonu düşündürür?",
+    "back": "EBV enfeksiyonu. Enfeksiyöz mononükleozda ateş, farenjit, lenfadenopati ve splenomegali sorulur.",
+    "answer": "EBV enfeksiyonu. Enfeksiyöz mononükleozda ateş, farenjit, lenfadenopati ve splenomegali sorulur.",
+    "explanation": "Enfeksiyöz mononükleozda ateş, farenjit, lenfadenopati ve splenomegali sorulur. CMV mononükleoz benzeri tablo yapabilir ama heterofil antikor sıklıkla negatiftir.",
+    "tusTip": "Enfeksiyöz mononükleozda ateş, farenjit, lenfadenopati ve splenomegali sorulur. CMV mononükleoz benzeri tablo yapabilir ama heterofil antikor sıklıkla negatiftir.",
+    "differentialNote": "CMV mononükleoz benzeri tablo yapabilir ama heterofil antikor sıklıkla negatiftir.",
+    "keywords": [
+      "ateş",
+      "farenjit",
+      "posterior LAP",
+      "atipik lenfosit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-034-extra": {
+    "front": "EBV hangi reseptör üzerinden B hücrelerine girer?",
+    "back": "CD21. Enfeksiyöz mononükleozda ateş, farenjit, lenfadenopati ve splenomegali sorulur.",
+    "answer": "CD21. Enfeksiyöz mononükleozda ateş, farenjit, lenfadenopati ve splenomegali sorulur.",
+    "explanation": "Enfeksiyöz mononükleozda ateş, farenjit, lenfadenopati ve splenomegali sorulur. CMV mononükleoz benzeri tablo yapabilir ama heterofil antikor sıklıkla negatiftir.",
+    "tusTip": "EBV için sınavda hedeflenen ayrım genellikle şudur: CMV mononükleoz benzeri tablo yapabilir ama heterofil antikor sıklıkla negatiftir.",
+    "differentialNote": "CMV mononükleoz benzeri tablo yapabilir ama heterofil antikor sıklıkla negatiftir.",
+    "keywords": [
+      "ateş",
+      "farenjit",
+      "posterior LAP",
+      "atipik lenfosit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-035-spot": {
+    "front": "Baykuş gözü intranükleer inklüzyon hangi virüsle ilişkilidir?",
+    "back": "CMV. İmmünsüpresyonda retinit, kolit ve pnömoni; konjenitalde periventriküler kalsifikasyon sorulur.",
+    "answer": "CMV. İmmünsüpresyonda retinit, kolit ve pnömoni; konjenitalde periventriküler kalsifikasyon sorulur.",
+    "explanation": "İmmünsüpresyonda retinit, kolit ve pnömoni; konjenitalde periventriküler kalsifikasyon sorulur. Toksoplazma diffüz intrakraniyal kalsifikasyonla karışabilir; CMV periventriküler vurgulanır.",
+    "tusTip": "İmmünsüpresyonda retinit, kolit ve pnömoni; konjenitalde periventriküler kalsifikasyon sorulur. Toksoplazma diffüz intrakraniyal kalsifikasyonla karışabilir; CMV periventriküler vurgulanır.",
+    "differentialNote": "Toksoplazma diffüz intrakraniyal kalsifikasyonla karışabilir; CMV periventriküler vurgulanır.",
+    "keywords": [
+      "baykuş gözü",
+      "immünsüpresyon",
+      "retinit",
+      "periventriküler kalsifikasyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-035-extra": {
+    "front": "CMV tedavisinde kullanılan temel antiviral hangisidir?",
+    "back": "Gansiklovir veya valgansiklovir. İmmünsüpresyonda retinit, kolit ve pnömoni; konjenitalde periventriküler kalsifikasyon sorulur.",
+    "answer": "Gansiklovir veya valgansiklovir. İmmünsüpresyonda retinit, kolit ve pnömoni; konjenitalde periventriküler kalsifikasyon sorulur.",
+    "explanation": "İmmünsüpresyonda retinit, kolit ve pnömoni; konjenitalde periventriküler kalsifikasyon sorulur. Toksoplazma diffüz intrakraniyal kalsifikasyonla karışabilir; CMV periventriküler vurgulanır.",
+    "tusTip": "CMV karıştırıldığında cevabı netleştiren karşılaştırma: Toksoplazma diffüz intrakraniyal kalsifikasyonla karışabilir; CMV periventriküler vurgulanır.",
+    "differentialNote": "Toksoplazma diffüz intrakraniyal kalsifikasyonla karışabilir; CMV periventriküler vurgulanır.",
+    "keywords": [
+      "baykuş gözü",
+      "immünsüpresyon",
+      "retinit",
+      "periventriküler kalsifikasyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-036-spot": {
+    "front": "Akut hepatit A enfeksiyonunda beklenen serolojik belirteç hangisidir?",
+    "back": "Anti-HAV IgM pozitifliği. HAV fekal-oral bulaşır ve kronikleşmez; IgM akut enfeksiyonu gösterir.",
+    "answer": "Anti-HAV IgM pozitifliği. HAV fekal-oral bulaşır ve kronikleşmez; IgM akut enfeksiyonu gösterir.",
+    "explanation": "HAV fekal-oral bulaşır ve kronikleşmez; IgM akut enfeksiyonu gösterir. Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir; akut enfeksiyon için IgM gerekir.",
+    "tusTip": "HAV fekal-oral bulaşır ve kronikleşmez; IgM akut enfeksiyonu gösterir. Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir; akut enfeksiyon için IgM gerekir.",
+    "differentialNote": "Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir; akut enfeksiyon için IgM gerekir.",
+    "keywords": [
+      "Anti-HAV IgM",
+      "fekal-oral",
+      "akut hepatit",
+      "kronikleşmez"
+    ]
+  },
+  "tus-pearl-medical-microbiology-036-extra": {
+    "front": "HAV enfeksiyonu kronik hepatit yapar mı?",
+    "back": "Hayır, HAV kronikleşmez. HAV fekal-oral bulaşır ve kronikleşmez; IgM akut enfeksiyonu gösterir.",
+    "answer": "Hayır, HAV kronikleşmez. HAV fekal-oral bulaşır ve kronikleşmez; IgM akut enfeksiyonu gösterir.",
+    "explanation": "HAV fekal-oral bulaşır ve kronikleşmez; IgM akut enfeksiyonu gösterir. Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir; akut enfeksiyon için IgM gerekir.",
+    "tusTip": "HAV serolojisi kartında ayırıcı değer taşıyan nokta: Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir; akut enfeksiyon için IgM gerekir.",
+    "differentialNote": "Anti-HAV IgG geçirilmiş enfeksiyon veya bağışıklığı gösterir; akut enfeksiyon için IgM gerekir.",
+    "keywords": [
+      "Anti-HAV IgM",
+      "fekal-oral",
+      "akut hepatit",
+      "kronikleşmez Tıbbi Patoloji (medical-pathology)"
+    ]
+  },
+  "tus-pearl-medical-pathology-037-spot": {
+    "front": "Solid organ iskemisinde beyin dışında en sık beklenen nekroz tipi hangisidir?",
+    "back": "Koagülasyon nekrozu. Miyokard ve böbrek infarktı koagülasyon nekrozu ile klasik sorulur.",
+    "answer": "Koagülasyon nekrozu. Miyokard ve böbrek infarktı koagülasyon nekrozu ile klasik sorulur.",
+    "explanation": "Miyokard ve böbrek infarktı koagülasyon nekrozu ile klasik sorulur. Beyin infarktı sıvılaşma nekrozu yapar; bu en sık sınav tuzağıdır.",
+    "tusTip": "Miyokard ve böbrek infarktı koagülasyon nekrozu ile klasik sorulur. Beyin infarktı sıvılaşma nekrozu yapar; bu en sık sınav tuzağıdır.",
+    "differentialNote": "Beyin infarktı sıvılaşma nekrozu yapar; bu en sık sınav tuzağıdır.",
+    "keywords": [
+      "iskemi",
+      "solid organ",
+      "miyokard",
+      "böbrek"
+    ]
+  },
+  "tus-pearl-medical-pathology-037-extra": {
+    "front": "Miyokard infarktında beklenen nekroz tipi hangisidir?",
+    "back": "Miyokard infarktında koagülasyon nekrozu görülür. Miyokard ve böbrek infarktı koagülasyon nekrozu ile klasik sorulur.",
+    "answer": "Miyokard infarktında koagülasyon nekrozu görülür. Miyokard ve böbrek infarktı koagülasyon nekrozu ile klasik sorulur.",
+    "explanation": "Miyokard ve böbrek infarktı koagülasyon nekrozu ile klasik sorulur. Beyin infarktı sıvılaşma nekrozu yapar; bu en sık sınav tuzağıdır.",
+    "tusTip": "Koagülasyon nekrozu için sınavda hedeflenen ayrım genellikle şudur: Beyin infarktı sıvılaşma nekrozu yapar; bu en sık sınav tuzağıdır.",
+    "differentialNote": "Beyin infarktı sıvılaşma nekrozu yapar; bu en sık sınav tuzağıdır.",
+    "keywords": [
+      "iskemi",
+      "solid organ",
+      "miyokard",
+      "böbrek"
+    ]
+  },
+  "tus-pearl-medical-pathology-038-spot": {
+    "front": "Beyin infarktı ve apse için tipik nekroz tipi hangisidir?",
+    "back": "Sıvılaşma nekrozu. Enzimatik sindirim baskın olduğu için beyin dokusu ve apselerde sıvılaşma görülür.",
+    "answer": "Sıvılaşma nekrozu. Enzimatik sindirim baskın olduğu için beyin dokusu ve apselerde sıvılaşma görülür.",
+    "explanation": "Enzimatik sindirim baskın olduğu için beyin dokusu ve apselerde sıvılaşma görülür. Solid organ iskemisi genel kural olarak koagülasyon nekrozudur; beyin istisnadır.",
+    "tusTip": "Enzimatik sindirim baskın olduğu için beyin dokusu ve apselerde sıvılaşma görülür. Solid organ iskemisi genel kural olarak koagülasyon nekrozudur; beyin istisnadır.",
+    "differentialNote": "Solid organ iskemisi genel kural olarak koagülasyon nekrozudur; beyin istisnadır.",
+    "keywords": [
+      "beyin infarktı",
+      "apse",
+      "nötrofil enzimleri",
+      "sıvılaşma"
+    ]
+  },
+  "tus-pearl-medical-pathology-038-extra": {
+    "front": "Bakteriyel apsede nekroz tipini belirleyen temel süreç nedir?",
+    "back": "Nötrofil enzimleriyle dokunun sindirilmesi. Enzimatik sindirim baskın olduğu için beyin dokusu ve apselerde sıvılaşma görülür.",
+    "answer": "Nötrofil enzimleriyle dokunun sindirilmesi. Enzimatik sindirim baskın olduğu için beyin dokusu ve apselerde sıvılaşma görülür.",
+    "explanation": "Enzimatik sindirim baskın olduğu için beyin dokusu ve apselerde sıvılaşma görülür. Solid organ iskemisi genel kural olarak koagülasyon nekrozudur; beyin istisnadır.",
+    "tusTip": "Sıvılaşma nekrozu karıştırıldığında cevabı netleştiren karşılaştırma: Solid organ iskemisi genel kural olarak koagülasyon nekrozudur; beyin istisnadır.",
+    "differentialNote": "Solid organ iskemisi genel kural olarak koagülasyon nekrozudur; beyin istisnadır.",
+    "keywords": [
+      "beyin infarktı",
+      "apse",
+      "nötrofil enzimleri",
+      "sıvılaşma"
+    ]
+  },
+  "tus-pearl-medical-pathology-039-spot": {
+    "front": "Peynirsi görünüm ve granülom hangi nekroz tipini düşündürür?",
+    "back": "Kazeifikasyon nekrozu. Tüberküloz granülomunda merkezde kazeifikasyon klasik patoloji bilgisidir.",
+    "answer": "Kazeifikasyon nekrozu. Tüberküloz granülomunda merkezde kazeifikasyon klasik patoloji bilgisidir.",
+    "explanation": "Tüberküloz granülomunda merkezde kazeifikasyon klasik patoloji bilgisidir. Sarkoidoz nonkazeifiye granülomla ayrılır.",
+    "tusTip": "Tüberküloz granülomunda merkezde kazeifikasyon klasik patoloji bilgisidir. Sarkoidoz nonkazeifiye granülomla ayrılır.",
+    "differentialNote": "Sarkoidoz nonkazeifiye granülomla ayrılır.",
+    "keywords": [
+      "tüberküloz",
+      "granülom",
+      "peynirsi",
+      "Langhans"
+    ]
+  },
+  "tus-pearl-medical-pathology-039-extra": {
+    "front": "Tüberkülozda beklenen granülom tipi nedir?",
+    "back": "Kazeifiye granülom. Tüberküloz granülomunda merkezde kazeifikasyon klasik patoloji bilgisidir.",
+    "answer": "Kazeifiye granülom. Tüberküloz granülomunda merkezde kazeifikasyon klasik patoloji bilgisidir.",
+    "explanation": "Tüberküloz granülomunda merkezde kazeifikasyon klasik patoloji bilgisidir. Sarkoidoz nonkazeifiye granülomla ayrılır.",
+    "tusTip": "Kazeifikasyon nekrozu kartında ayırıcı değer taşıyan nokta: Sarkoidoz nonkazeifiye granülomla ayrılır.",
+    "differentialNote": "Sarkoidoz nonkazeifiye granülomla ayrılır.",
+    "keywords": [
+      "tüberküloz",
+      "granülom",
+      "peynirsi",
+      "Langhans"
+    ]
+  },
+  "tus-pearl-medical-pathology-040-spot": {
+    "front": "Akut pankreatitte sabunlaşma hangi nekroz tipiyle ilişkilidir?",
+    "back": "Enzimatik yağ nekrozu. Pankreatik lipaz yağ dokusunda kalsiyum sabunları oluşturur.",
+    "answer": "Enzimatik yağ nekrozu. Pankreatik lipaz yağ dokusunda kalsiyum sabunları oluşturur.",
+    "explanation": "Pankreatik lipaz yağ dokusunda kalsiyum sabunları oluşturur. Travmatik yağ nekrozu memede kitle yapabilir; pankreatitte enzimatik yağ nekrozu sorulur.",
+    "tusTip": "Pankreatik lipaz yağ dokusunda kalsiyum sabunları oluşturur. Travmatik yağ nekrozu memede kitle yapabilir; pankreatitte enzimatik yağ nekrozu sorulur.",
+    "differentialNote": "Travmatik yağ nekrozu memede kitle yapabilir; pankreatitte enzimatik yağ nekrozu sorulur.",
+    "keywords": [
+      "pankreatit",
+      "lipaz",
+      "sabunlaşma",
+      "kalsifikasyon"
+    ]
+  },
+  "tus-pearl-medical-pathology-040-extra": {
+    "front": "Akut pankreatitte hipokalsemi hangi mekanizmayla gelişebilir?",
+    "back": "Yağ nekrozuna bağlı kalsiyum sabunlaşması. Pankreatik lipaz yağ dokusunda kalsiyum sabunları oluşturur.",
+    "answer": "Yağ nekrozuna bağlı kalsiyum sabunlaşması. Pankreatik lipaz yağ dokusunda kalsiyum sabunları oluşturur.",
+    "explanation": "Pankreatik lipaz yağ dokusunda kalsiyum sabunları oluşturur. Travmatik yağ nekrozu memede kitle yapabilir; pankreatitte enzimatik yağ nekrozu sorulur.",
+    "tusTip": "Yağ nekrozu için sınavda hedeflenen ayrım genellikle şudur: Travmatik yağ nekrozu memede kitle yapabilir; pankreatitte enzimatik yağ nekrozu sorulur.",
+    "differentialNote": "Travmatik yağ nekrozu memede kitle yapabilir; pankreatitte enzimatik yağ nekrozu sorulur.",
+    "keywords": [
+      "pankreatit",
+      "lipaz",
+      "sabunlaşma",
+      "kalsifikasyon"
+    ]
+  },
+  "tus-pearl-medical-pathology-041-spot": {
+    "front": "İmmün kompleks vaskülitlerinde damar duvarında beklenen nekroz tipi hangisidir?",
+    "back": "Fibrinoid nekroz. Damar duvarında immün kompleks ve fibrin benzeri materyal birikimiyle sorulur.",
+    "answer": "Fibrinoid nekroz. Damar duvarında immün kompleks ve fibrin benzeri materyal birikimiyle sorulur.",
+    "explanation": "Damar duvarında immün kompleks ve fibrin benzeri materyal birikimiyle sorulur. Fibrinoid nekroz damar duvarına özgü bağlamla ayırt edilir.",
+    "tusTip": "Damar duvarında immün kompleks ve fibrin benzeri materyal birikimiyle sorulur. Fibrinoid nekroz damar duvarına özgü bağlamla ayırt edilir.",
+    "differentialNote": "Fibrinoid nekroz damar duvarına özgü bağlamla ayırt edilir.",
+    "keywords": [
+      "vaskülit",
+      "immün kompleks",
+      "damar duvarı",
+      "fibrinoid"
+    ]
+  },
+  "tus-pearl-medical-pathology-041-extra": {
+    "front": "Malign hipertansiyonda arteriollerde hangi nekroz tipi görülebilir?",
+    "back": "Malign hipertansiyonda fibrinoid nekroz görülebilir. Damar duvarında immün kompleks ve fibrin benzeri materyal birikimiyle sorulur.",
+    "answer": "Malign hipertansiyonda fibrinoid nekroz görülebilir. Damar duvarında immün kompleks ve fibrin benzeri materyal birikimiyle sorulur.",
+    "explanation": "Damar duvarında immün kompleks ve fibrin benzeri materyal birikimiyle sorulur. Fibrinoid nekroz damar duvarına özgü bağlamla ayırt edilir.",
+    "tusTip": "Fibrinoid nekroz karıştırıldığında cevabı netleştiren karşılaştırma: Fibrinoid nekroz damar duvarına özgü bağlamla ayırt edilir.",
+    "differentialNote": "Fibrinoid nekroz damar duvarına özgü bağlamla ayırt edilir.",
+    "keywords": [
+      "vaskülit",
+      "immün kompleks",
+      "damar duvarı",
+      "fibrinoid"
+    ]
+  },
+  "tus-pearl-medical-pathology-042-spot": {
+    "front": "Hücre membranı bütünlüğü korunarak inflamasyon oluşturmayan programlı hücre ölümü nedir?",
+    "back": "Apoptoz. Kaspaz aktivasyonu ve apoptotik cisimcikler temel morfolojik ipuçlarıdır.",
+    "answer": "Apoptoz. Kaspaz aktivasyonu ve apoptotik cisimcikler temel morfolojik ipuçlarıdır.",
+    "explanation": "Kaspaz aktivasyonu ve apoptotik cisimcikler temel morfolojik ipuçlarıdır. Nekroz membran hasarı ve inflamasyonla ayrılır.",
+    "tusTip": "Kaspaz aktivasyonu ve apoptotik cisimcikler temel morfolojik ipuçlarıdır. Nekroz membran hasarı ve inflamasyonla ayrılır.",
+    "differentialNote": "Nekroz membran hasarı ve inflamasyonla ayrılır.",
+    "keywords": [
+      "kaspaz",
+      "apoptotik cisim",
+      "inflamasyon yok",
+      "programlı ölüm"
+    ]
+  },
+  "tus-pearl-medical-pathology-042-extra": {
+    "front": "Apoptozda DNA parçalanması hangi görünümü oluşturur?",
+    "back": "Ladder pattern. Kaspaz aktivasyonu ve apoptotik cisimcikler temel morfolojik ipuçlarıdır.",
+    "answer": "Ladder pattern. Kaspaz aktivasyonu ve apoptotik cisimcikler temel morfolojik ipuçlarıdır.",
+    "explanation": "Kaspaz aktivasyonu ve apoptotik cisimcikler temel morfolojik ipuçlarıdır. Nekroz membran hasarı ve inflamasyonla ayrılır.",
+    "tusTip": "Apoptoz kartında ayırıcı değer taşıyan nokta: Nekroz membran hasarı ve inflamasyonla ayrılır.",
+    "differentialNote": "Nekroz membran hasarı ve inflamasyonla ayrılır.",
+    "keywords": [
+      "kaspaz",
+      "apoptotik cisim",
+      "inflamasyon yok",
+      "programlı ölüm"
+    ]
+  },
+  "tus-pearl-medical-pathology-043-spot": {
+    "front": "Congo red ile elma yeşili çift kırınım hangi birikimi gösterir?",
+    "back": "Amiloid. Beta-pleated sheet yapısı ve Congo red boyanması klasik ayırt ettiricidir.",
+    "answer": "Amiloid. Beta-pleated sheet yapısı ve Congo red boyanması klasik ayırt ettiricidir.",
+    "explanation": "Beta-pleated sheet yapısı ve Congo red boyanması klasik ayırt ettiricidir. Hiyalin değişiklik genel bir görünüm olabilir; tanısal boya Congo red’dir.",
+    "tusTip": "Beta-pleated sheet yapısı ve Congo red boyanması klasik ayırt ettiricidir. Hiyalin değişiklik genel bir görünüm olabilir; tanısal boya Congo red’dir.",
+    "differentialNote": "Hiyalin değişiklik genel bir görünüm olabilir; tanısal boya Congo red’dir.",
+    "keywords": [
+      "Congo red",
+      "elma yeşili",
+      "beta-pleated",
+      "ekstraselüler birikim"
+    ]
+  },
+  "tus-pearl-medical-pathology-043-extra": {
+    "front": "AL amiloidoz hangi hücre kökenli proteinle ilişkilidir?",
+    "back": "İmmünoglobulin hafif zinciri. Beta-pleated sheet yapısı ve Congo red boyanması klasik ayırt ettiricidir.",
+    "answer": "İmmünoglobulin hafif zinciri. Beta-pleated sheet yapısı ve Congo red boyanması klasik ayırt ettiricidir.",
+    "explanation": "Beta-pleated sheet yapısı ve Congo red boyanması klasik ayırt ettiricidir. Hiyalin değişiklik genel bir görünüm olabilir; tanısal boya Congo red’dir.",
+    "tusTip": "Amiloidoz için sınavda hedeflenen ayrım genellikle şudur: Hiyalin değişiklik genel bir görünüm olabilir; tanısal boya Congo red’dir.",
+    "differentialNote": "Hiyalin değişiklik genel bir görünüm olabilir; tanısal boya Congo red’dir.",
+    "keywords": [
+      "Congo red",
+      "elma yeşili",
+      "beta-pleated",
+      "ekstraselüler birikim"
+    ]
+  },
+  "tus-pearl-medical-pathology-044-spot": {
+    "front": "Kronik GERD zemininde distal özofagusta intestinal metaplazi hangi lezyondur?",
+    "back": "Barrett özofagusu. Adenokarsinom riskini artıran premalign metaplazidir.",
+    "answer": "Barrett özofagusu. Adenokarsinom riskini artıran premalign metaplazidir.",
+    "explanation": "Adenokarsinom riskini artıran premalign metaplazidir. Skuamöz hücreli karsinom riskleri sigara/alkol ve orta özofagusla daha çok sorulur.",
+    "tusTip": "Adenokarsinom riskini artıran premalign metaplazidir. Skuamöz hücreli karsinom riskleri sigara/alkol ve orta özofagusla daha çok sorulur.",
+    "differentialNote": "Skuamöz hücreli karsinom riskleri sigara/alkol ve orta özofagusla daha çok sorulur.",
+    "keywords": [
+      "GERD",
+      "distal özofagus",
+      "intestinal metaplazi",
+      "adenokarsinom"
+    ]
+  },
+  "tus-pearl-medical-pathology-044-extra": {
+    "front": "Barrett özofagusunda kanser riski hangi tipe artar?",
+    "back": "Özofagus adenokarsinomu. Adenokarsinom riskini artıran premalign metaplazidir.",
+    "answer": "Özofagus adenokarsinomu. Adenokarsinom riskini artıran premalign metaplazidir.",
+    "explanation": "Adenokarsinom riskini artıran premalign metaplazidir. Skuamöz hücreli karsinom riskleri sigara/alkol ve orta özofagusla daha çok sorulur.",
+    "tusTip": "Barrett özofagusu karıştırıldığında cevabı netleştiren karşılaştırma: Skuamöz hücreli karsinom riskleri sigara/alkol ve orta özofagusla daha çok sorulur.",
+    "differentialNote": "Skuamöz hücreli karsinom riskleri sigara/alkol ve orta özofagusla daha çok sorulur.",
+    "keywords": [
+      "GERD",
+      "distal özofagus",
+      "intestinal metaplazi",
+      "adenokarsinom"
+    ]
+  },
+  "tus-pearl-medical-pathology-045-spot": {
+    "front": "Orphan Annie eye nükleus ve psammoma cisimcikleri hangi tiroid kanserini düşündürür?",
+    "back": "Papiller tiroid karsinomu. En sık tiroid kanseridir; lenfatik yayılım ve radyasyon öyküsü ile sorulur.",
+    "answer": "Papiller tiroid karsinomu. En sık tiroid kanseridir; lenfatik yayılım ve radyasyon öyküsü ile sorulur.",
+    "explanation": "En sık tiroid kanseridir; lenfatik yayılım ve radyasyon öyküsü ile sorulur. Folliküler kanser hematolojik yayılır ve kapsül/damar invazyonuyla ayrılır.",
+    "tusTip": "En sık tiroid kanseridir; lenfatik yayılım ve radyasyon öyküsü ile sorulur. Folliküler kanser hematolojik yayılır ve kapsül/damar invazyonuyla ayrılır.",
+    "differentialNote": "Folliküler kanser hematolojik yayılır ve kapsül/damar invazyonuyla ayrılır.",
+    "keywords": [
+      "Orphan Annie",
+      "psammoma",
+      "lenfatik yayılım",
+      "tiroid"
+    ]
+  },
+  "tus-pearl-medical-pathology-045-extra": {
+    "front": "Papiller tiroid karsinomu genellikle hangi yolla yayılır?",
+    "back": "Lenfatik yayılım. En sık tiroid kanseridir; lenfatik yayılım ve radyasyon öyküsü ile sorulur.",
+    "answer": "Lenfatik yayılım. En sık tiroid kanseridir; lenfatik yayılım ve radyasyon öyküsü ile sorulur.",
+    "explanation": "En sık tiroid kanseridir; lenfatik yayılım ve radyasyon öyküsü ile sorulur. Folliküler kanser hematolojik yayılır ve kapsül/damar invazyonuyla ayrılır.",
+    "tusTip": "Papiller tiroid karsinomu kartında ayırıcı değer taşıyan nokta: Folliküler kanser hematolojik yayılır ve kapsül/damar invazyonuyla ayrılır.",
+    "differentialNote": "Folliküler kanser hematolojik yayılır ve kapsül/damar invazyonuyla ayrılır.",
+    "keywords": [
+      "Orphan Annie",
+      "psammoma",
+      "lenfatik yayılım",
+      "tiroid"
+    ]
+  },
+  "tus-pearl-medical-pathology-046-spot": {
+    "front": "Santral yerleşim ve PTHrP ilişkili hiperkalsemi hangi akciğer kanseriyle klasikleşir?",
+    "back": "Skuamöz hücreli karsinom. Sigara ilişkili, keratin incileri ve interselüler köprüler ile sorulur.",
+    "answer": "Skuamöz hücreli karsinom. Sigara ilişkili, keratin incileri ve interselüler köprüler ile sorulur.",
+    "explanation": "Sigara ilişkili, keratin incileri ve interselüler köprüler ile sorulur. Küçük hücreli kanser SIADH/ACTH paraneoplastik sendromlarıyla daha çok sorulur.",
+    "tusTip": "Sigara ilişkili, keratin incileri ve interselüler köprüler ile sorulur. Küçük hücreli kanser SIADH/ACTH paraneoplastik sendromlarıyla daha çok sorulur.",
+    "differentialNote": "Küçük hücreli kanser SIADH/ACTH paraneoplastik sendromlarıyla daha çok sorulur.",
+    "keywords": [
+      "santral akciğer",
+      "sigara",
+      "PTHrP",
+      "hiperkalsemi"
+    ]
+  },
+  "tus-pearl-medical-pathology-046-extra": {
+    "front": "Skuamöz hücreli karsinomda beklenen histolojik bulgu nedir?",
+    "back": "Keratin incileri ve interselüler köprüler. Sigara ilişkili, keratin incileri ve interselüler köprüler ile sorulur.",
+    "answer": "Keratin incileri ve interselüler köprüler. Sigara ilişkili, keratin incileri ve interselüler köprüler ile sorulur.",
+    "explanation": "Sigara ilişkili, keratin incileri ve interselüler köprüler ile sorulur. Küçük hücreli kanser SIADH/ACTH paraneoplastik sendromlarıyla daha çok sorulur.",
+    "tusTip": "Akciğer skuamöz karsinom için sınavda hedeflenen ayrım genellikle şudur: Küçük hücreli kanser SIADH/ACTH paraneoplastik sendromlarıyla daha çok sorulur.",
+    "differentialNote": "Küçük hücreli kanser SIADH/ACTH paraneoplastik sendromlarıyla daha çok sorulur.",
+    "keywords": [
+      "santral akciğer",
+      "sigara",
+      "PTHrP",
+      "hiperkalsemi"
+    ]
+  },
+  "tus-pearl-medical-pathology-047-spot": {
+    "front": "SIADH veya ektopik ACTH ile paraneoplastik sendrom yapan akciğer kanseri hangisidir?",
+    "back": "Küçük hücreli akciğer kanseri. Nöroendokrin kökenli, santral ve sigara ilişkili agresif tümördür.",
+    "answer": "Küçük hücreli akciğer kanseri. Nöroendokrin kökenli, santral ve sigara ilişkili agresif tümördür.",
+    "explanation": "Nöroendokrin kökenli, santral ve sigara ilişkili agresif tümördür. PTHrP hiperkalsemi daha çok skuamöz karsinomla sorulur.",
+    "tusTip": "Nöroendokrin kökenli, santral ve sigara ilişkili agresif tümördür. PTHrP hiperkalsemi daha çok skuamöz karsinomla sorulur.",
+    "differentialNote": "PTHrP hiperkalsemi daha çok skuamöz karsinomla sorulur.",
+    "keywords": [
+      "SIADH",
+      "ektopik ACTH",
+      "nöroendokrin",
+      "sigara"
+    ]
+  },
+  "tus-pearl-medical-pathology-047-extra": {
+    "front": "Küçük hücreli akciğer kanserinde tedavi yaklaşımı genellikle nasıldır?",
+    "back": "Kemoterapi/radyoterapi ağırlıklıdır; cerrahi çoğu olguda ön planda değildir.",
+    "answer": "Kemoterapi/radyoterapi ağırlıklıdır; cerrahi çoğu olguda ön planda değildir.",
+    "explanation": "Nöroendokrin kökenli, santral ve sigara ilişkili agresif tümördür. PTHrP hiperkalsemi daha çok skuamöz karsinomla sorulur.",
+    "tusTip": "Küçük hücreli akciğer kanseri karıştırıldığında cevabı netleştiren karşılaştırma: PTHrP hiperkalsemi daha çok skuamöz karsinomla sorulur.",
+    "differentialNote": "PTHrP hiperkalsemi daha çok skuamöz karsinomla sorulur.",
+    "keywords": [
+      "SIADH",
+      "ektopik ACTH",
+      "nöroendokrin",
+      "sigara Tıbbi Farmakoloji (medical-pharmacology)"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-048-spot": {
+    "front": "Organofosfat zehirlenmesinde antidotal yaklaşım nasıl olmalıdır?",
+    "back": "Atropin + pralidoksim. Atropin muskarinik etkileri baskılar; pralidoksim asetilkolinesterazı reaktive eder.",
+    "answer": "Atropin + pralidoksim. Atropin muskarinik etkileri baskılar; pralidoksim asetilkolinesterazı reaktive eder.",
+    "explanation": "Atropin muskarinik etkileri baskılar; pralidoksim asetilkolinesterazı reaktive eder. Sadece atropin nikotinik kas bulgularını düzeltmez; pralidoksim bu yüzden eklenir.",
+    "tusTip": "Atropin muskarinik etkileri baskılar; pralidoksim asetilkolinesterazı reaktive eder. Sadece atropin nikotinik kas bulgularını düzeltmez; pralidoksim bu yüzden eklenir.",
+    "differentialNote": "Sadece atropin nikotinik kas bulgularını düzeltmez; pralidoksim bu yüzden eklenir.",
+    "keywords": [
+      "miyozis",
+      "bronkore",
+      "salivasyon",
+      "fasikülasyon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-048-extra": {
+    "front": "Organofosfat zehirlenmesinde hangi enzim inhibe olur?",
+    "back": "Asetilkolinesteraz. Atropin muskarinik etkileri baskılar; pralidoksim asetilkolinesterazı reaktive eder.",
+    "answer": "Asetilkolinesteraz. Atropin muskarinik etkileri baskılar; pralidoksim asetilkolinesterazı reaktive eder.",
+    "explanation": "Atropin muskarinik etkileri baskılar; pralidoksim asetilkolinesterazı reaktive eder. Sadece atropin nikotinik kas bulgularını düzeltmez; pralidoksim bu yüzden eklenir.",
+    "tusTip": "Organofosfat zehirlenmesi kartında ayırıcı değer taşıyan nokta: Sadece atropin nikotinik kas bulgularını düzeltmez; pralidoksim bu yüzden eklenir.",
+    "differentialNote": "Sadece atropin nikotinik kas bulgularını düzeltmez; pralidoksim bu yüzden eklenir.",
+    "keywords": [
+      "miyozis",
+      "bronkore",
+      "salivasyon",
+      "fasikülasyon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-049-spot": {
+    "front": "Parasetamol zehirlenmesinde temel antidot hangisidir?",
+    "back": "N-asetilsistein. Glutatyon depolarını yenileyerek toksik NAPQI metabolitini detoksifiye eder.",
+    "answer": "N-asetilsistein. Glutatyon depolarını yenileyerek toksik NAPQI metabolitini detoksifiye eder.",
+    "explanation": "Glutatyon depolarını yenileyerek toksik NAPQI metabolitini detoksifiye eder. Aktif kömür erken dönemde yararlı olabilir ama özgül antidot NAC’dir.",
+    "tusTip": "Glutatyon depolarını yenileyerek toksik NAPQI metabolitini detoksifiye eder. Aktif kömür erken dönemde yararlı olabilir ama özgül antidot NAC’dir.",
+    "differentialNote": "Aktif kömür erken dönemde yararlı olabilir ama özgül antidot NAC’dir.",
+    "keywords": [
+      "parasetamol",
+      "NAPQI",
+      "glutatyon",
+      "NAC"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-049-extra": {
+    "front": "Parasetamol toksisitesinde hepatotoksik metabolit hangisidir?",
+    "back": "NAPQI. Glutatyon depolarını yenileyerek toksik NAPQI metabolitini detoksifiye eder.",
+    "answer": "NAPQI. Glutatyon depolarını yenileyerek toksik NAPQI metabolitini detoksifiye eder.",
+    "explanation": "Glutatyon depolarını yenileyerek toksik NAPQI metabolitini detoksifiye eder. Aktif kömür erken dönemde yararlı olabilir ama özgül antidot NAC’dir.",
+    "tusTip": "Parasetamol toksisitesi için sınavda hedeflenen ayrım genellikle şudur: Aktif kömür erken dönemde yararlı olabilir ama özgül antidot NAC’dir.",
+    "differentialNote": "Aktif kömür erken dönemde yararlı olabilir ama özgül antidot NAC’dir.",
+    "keywords": [
+      "parasetamol",
+      "NAPQI",
+      "glutatyon",
+      "NAC"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-050-spot": {
+    "front": "Beta bloker zehirlenmesinde hipoglisemi ve bradikardi varsa özgül tedavide ne kullanılır?",
+    "back": "Glukagon. Glukagon beta reseptörden bağımsız cAMP artırarak kardiyak inotropi/ kronotropiyi destekler.",
+    "answer": "Glukagon. Glukagon beta reseptörden bağımsız cAMP artırarak kardiyak inotropi/ kronotropiyi destekler.",
+    "explanation": "Glukagon beta reseptörden bağımsız cAMP artırarak kardiyak inotropi/ kronotropiyi destekler. Kalsiyum kanal bloker toksisitesinde hiperglisemi daha tipiktir; beta blokerde hipoglisemi ipucu olabilir.",
+    "tusTip": "Glukagon beta reseptörden bağımsız cAMP artırarak kardiyak inotropi/ kronotropiyi destekler. Kalsiyum kanal bloker toksisitesinde hiperglisemi daha tipiktir; beta blokerde hipoglisemi ipucu olabilir.",
+    "differentialNote": "Kalsiyum kanal bloker toksisitesinde hiperglisemi daha tipiktir; beta blokerde hipoglisemi ipucu olabilir.",
+    "keywords": [
+      "bradikardi",
+      "hipotansiyon",
+      "hipoglisemi",
+      "glukagon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-050-extra": {
+    "front": "Beta blokerler diyabet hastasında hangi adrenerjik belirtiyi maskeleyebilir?",
+    "back": "Hipoglisemi taşikardisini. Glukagon beta reseptörden bağımsız cAMP artırarak kardiyak inotropi/ kronotropiyi destekler.",
+    "answer": "Hipoglisemi taşikardisini. Glukagon beta reseptörden bağımsız cAMP artırarak kardiyak inotropi/ kronotropiyi destekler.",
+    "explanation": "Glukagon beta reseptörden bağımsız cAMP artırarak kardiyak inotropi/ kronotropiyi destekler. Kalsiyum kanal bloker toksisitesinde hiperglisemi daha tipiktir; beta blokerde hipoglisemi ipucu olabilir.",
+    "tusTip": "Beta bloker toksisitesi karıştırıldığında cevabı netleştiren karşılaştırma: Kalsiyum kanal bloker toksisitesinde hiperglisemi daha tipiktir; beta blokerde hipoglisemi ipucu olabilir.",
+    "differentialNote": "Kalsiyum kanal bloker toksisitesinde hiperglisemi daha tipiktir; beta blokerde hipoglisemi ipucu olabilir.",
+    "keywords": [
+      "bradikardi",
+      "hipotansiyon",
+      "hipoglisemi",
+      "glukagon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-051-spot": {
+    "front": "ACE inhibitörlerinin kuru öksürük ve anjiyoödem yapma mekanizması nedir?",
+    "back": "Bradikinin artışı. ACE bradikinin yıkımına katkı verdiği için inhibisyon bradikinin birikimine yol açabilir.",
+    "answer": "Bradikinin artışı. ACE bradikinin yıkımına katkı verdiği için inhibisyon bradikinin birikimine yol açabilir.",
+    "explanation": "ACE bradikinin yıkımına katkı verdiği için inhibisyon bradikinin birikimine yol açabilir. ARB’lerde bradikinin artışı belirgin olmadığından öksürük daha az beklenir.",
+    "tusTip": "ACE bradikinin yıkımına katkı verdiği için inhibisyon bradikinin birikimine yol açabilir. ARB’lerde bradikinin artışı belirgin olmadığından öksürük daha az beklenir.",
+    "differentialNote": "ARB’lerde bradikinin artışı belirgin olmadığından öksürük daha az beklenir.",
+    "keywords": [
+      "ACE inhibitörü",
+      "kuru öksürük",
+      "anjiyoödem",
+      "bradikinin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-051-extra": {
+    "front": "ACE inhibitörleri gebelikte kullanılabilir mi?",
+    "back": "Hayır, gebelikte kontrendikedir. ACE bradikinin yıkımına katkı verdiği için inhibisyon bradikinin birikimine yol açabilir.",
+    "answer": "Hayır, gebelikte kontrendikedir. ACE bradikinin yıkımına katkı verdiği için inhibisyon bradikinin birikimine yol açabilir.",
+    "explanation": "ACE bradikinin yıkımına katkı verdiği için inhibisyon bradikinin birikimine yol açabilir. ARB’lerde bradikinin artışı belirgin olmadığından öksürük daha az beklenir.",
+    "tusTip": "ACE inhibitörleri kartında ayırıcı değer taşıyan nokta: ARB’lerde bradikinin artışı belirgin olmadığından öksürük daha az beklenir.",
+    "differentialNote": "ARB’lerde bradikinin artışı belirgin olmadığından öksürük daha az beklenir.",
+    "keywords": [
+      "ACE inhibitörü",
+      "kuru öksürük",
+      "anjiyoödem",
+      "bradikinin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-052-spot": {
+    "front": "Heparin etkisini geri çevirmek için hangi ajan kullanılır?",
+    "back": "Protamin sülfat. Pozitif yüklü protamin negatif yüklü heparini bağlar.",
+    "answer": "Protamin sülfat. Pozitif yüklü protamin negatif yüklü heparini bağlar.",
+    "explanation": "Pozitif yüklü protamin negatif yüklü heparini bağlar. Warfarin antidotu vitamin K/PCC ile karışır; heparin için protamin sorulur.",
+    "tusTip": "Pozitif yüklü protamin negatif yüklü heparini bağlar. Warfarin antidotu vitamin K/PCC ile karışır; heparin için protamin sorulur.",
+    "differentialNote": "Warfarin antidotu vitamin K/PCC ile karışır; heparin için protamin sorulur.",
+    "keywords": [
+      "heparin",
+      "protamin",
+      "aPTT",
+      "antidot"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-052-extra": {
+    "front": "Heparin tedavisinde en sık izlenen koagülasyon testi hangisidir?",
+    "back": "APTT. Pozitif yüklü protamin negatif yüklü heparini bağlar.",
+    "answer": "APTT. Pozitif yüklü protamin negatif yüklü heparini bağlar.",
+    "explanation": "Pozitif yüklü protamin negatif yüklü heparini bağlar. Warfarin antidotu vitamin K/PCC ile karışır; heparin için protamin sorulur.",
+    "tusTip": "Heparin antidotu için sınavda hedeflenen ayrım genellikle şudur: Warfarin antidotu vitamin K/PCC ile karışır; heparin için protamin sorulur.",
+    "differentialNote": "Warfarin antidotu vitamin K/PCC ile karışır; heparin için protamin sorulur.",
+    "keywords": [
+      "heparin",
+      "protamin",
+      "aPTT",
+      "antidot"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-053-spot": {
+    "front": "Warfarin hangi vitaminin döngüsünü inhibe eder?",
+    "back": "Vitamin K epoksit redüktaz inhibisyonu. Faktör II, VII, IX, X ile protein C/S sentezi azalır; INR izlemi ve gebelikte teratojenite sınavda birlikte sorulur.",
+    "answer": "Vitamin K epoksit redüktaz inhibisyonu. Faktör II, VII, IX, X ile protein C/S sentezi azalır; INR izlemi ve gebelikte teratojenite sınavda birlikte sorulur.",
+    "explanation": "Faktör II, VII, IX, X ile protein C/S sentezi azalır; INR izlemi ve gebelikte teratojenite sınavda birlikte sorulur. Heparin gebelikte kullanılabilirken warfarin plasentayı geçer ve teratojendir.",
+    "tusTip": "Faktör II, VII, IX, X ile protein C/S sentezi azalır; INR izlemi ve gebelikte teratojenite sınavda birlikte sorulur. Heparin gebelikte kullanılabilirken warfarin plasentayı geçer ve teratojendir.",
+    "differentialNote": "Heparin gebelikte kullanılabilirken warfarin plasentayı geçer ve teratojendir.",
+    "keywords": [
+      "warfarin",
+      "vitamin K",
+      "INR",
+      "teratojen"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-053-extra": {
+    "front": "Warfarin tedavisinde izlenen test hangisidir?",
+    "back": "PT/INR. Faktör II, VII, IX, X ile protein C/S sentezi azalır; INR izlemi ve gebelikte teratojenite sınavda birlikte sorulur.",
+    "answer": "PT/INR. Faktör II, VII, IX, X ile protein C/S sentezi azalır; INR izlemi ve gebelikte teratojenite sınavda birlikte sorulur.",
+    "explanation": "Faktör II, VII, IX, X ile protein C/S sentezi azalır; INR izlemi ve gebelikte teratojenite sınavda birlikte sorulur. Heparin gebelikte kullanılabilirken warfarin plasentayı geçer ve teratojendir.",
+    "tusTip": "Warfarin karıştırıldığında cevabı netleştiren karşılaştırma: Heparin gebelikte kullanılabilirken warfarin plasentayı geçer ve teratojendir.",
+    "differentialNote": "Heparin gebelikte kullanılabilirken warfarin plasentayı geçer ve teratojendir.",
+    "keywords": [
+      "warfarin",
+      "vitamin K",
+      "INR",
+      "teratojen"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-054-spot": {
+    "front": "Aminoglikozidlerin iki klasik ciddi toksisitesi nedir?",
+    "back": "Nefrotoksisite ve ototoksisite. Gentamisin/amikasin gibi ilaçlar aerob gram negatiflerde etkilidir; 30S ribozomu hedefler.",
+    "answer": "Nefrotoksisite ve ototoksisite. Gentamisin/amikasin gibi ilaçlar aerob gram negatiflerde etkilidir; 30S ribozomu hedefler.",
+    "explanation": "Gentamisin/amikasin gibi ilaçlar aerob gram negatiflerde etkilidir; 30S ribozomu hedefler. Makrolidler QT uzaması ve CYP etkisiyle karışır; oto-nefro toksisite aminoglikozid için yüksek verimdir.",
+    "tusTip": "Gentamisin/amikasin gibi ilaçlar aerob gram negatiflerde etkilidir; 30S ribozomu hedefler. Makrolidler QT uzaması ve CYP etkisiyle karışır; oto-nefro toksisite aminoglikozid için yüksek verimdir.",
+    "differentialNote": "Makrolidler QT uzaması ve CYP etkisiyle karışır; oto-nefro toksisite aminoglikozid için yüksek verimdir.",
+    "keywords": [
+      "aminoglikozid",
+      "30S",
+      "nefrotoksisite",
+      "ototoksisite"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-054-extra": {
+    "front": "Aminoglikozidler hangi ribozomal alt birime bağlanır?",
+    "back": "30S. Gentamisin/amikasin gibi ilaçlar aerob gram negatiflerde etkilidir; 30S ribozomu hedefler.",
+    "answer": "30S. Gentamisin/amikasin gibi ilaçlar aerob gram negatiflerde etkilidir; 30S ribozomu hedefler.",
+    "explanation": "Gentamisin/amikasin gibi ilaçlar aerob gram negatiflerde etkilidir; 30S ribozomu hedefler. Makrolidler QT uzaması ve CYP etkisiyle karışır; oto-nefro toksisite aminoglikozid için yüksek verimdir.",
+    "tusTip": "Aminoglikozid toksisitesi kartında ayırıcı değer taşıyan nokta: Makrolidler QT uzaması ve CYP etkisiyle karışır; oto-nefro toksisite aminoglikozid için yüksek verimdir.",
+    "differentialNote": "Makrolidler QT uzaması ve CYP etkisiyle karışır; oto-nefro toksisite aminoglikozid için yüksek verimdir.",
+    "keywords": [
+      "aminoglikozid",
+      "30S",
+      "nefrotoksisite",
+      "ototoksisite"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-055-spot": {
+    "front": "Vankomisin hızlı infüzyonda hangi reaksiyona yol açabilir?",
+    "back": "Kızarma (red man) sendromu. Histamin salınımına bağlı flushing ve hipotansiyon görülebilir; infüzyon yavaşlatılır.",
+    "answer": "Kızarma (red man) sendromu. Histamin salınımına bağlı flushing ve hipotansiyon görülebilir; infüzyon yavaşlatılır.",
+    "explanation": "Histamin salınımına bağlı flushing ve hipotansiyon görülebilir; infüzyon yavaşlatılır. Anafilaksiyle karıştırma; red man infüzyon hızıyla ilişkilidir.",
+    "tusTip": "Histamin salınımına bağlı flushing ve hipotansiyon görülebilir; infüzyon yavaşlatılır. Anafilaksiyle karıştırma; red man infüzyon hızıyla ilişkilidir.",
+    "differentialNote": "Anafilaksiyle karıştırma; red man infüzyon hızıyla ilişkilidir.",
+    "keywords": [
+      "vankomisin",
+      "hızlı infüzyon",
+      "flushing",
+      "histamin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-055-extra": {
+    "front": "Vankomisin hangi hücre duvarı hedefine bağlanır?",
+    "back": "D-Ala-D-Ala. Histamin salınımına bağlı flushing ve hipotansiyon görülebilir; infüzyon yavaşlatılır.",
+    "answer": "D-Ala-D-Ala. Histamin salınımına bağlı flushing ve hipotansiyon görülebilir; infüzyon yavaşlatılır.",
+    "explanation": "Histamin salınımına bağlı flushing ve hipotansiyon görülebilir; infüzyon yavaşlatılır. Anafilaksiyle karıştırma; red man infüzyon hızıyla ilişkilidir.",
+    "tusTip": "Vankomisin için sınavda hedeflenen ayrım genellikle şudur: Anafilaksiyle karıştırma; red man infüzyon hızıyla ilişkilidir.",
+    "differentialNote": "Anafilaksiyle karıştırma; red man infüzyon hızıyla ilişkilidir.",
+    "keywords": [
+      "vankomisin",
+      "hızlı infüzyon",
+      "flushing",
+      "histamin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-056-spot": {
+    "front": "Eritromisin ve klaritromisin hangi CYP enzimini inhibe eder?",
+    "back": "CYP3A4. Makrolidler QT uzaması ve ilaç etkileşimi ile sık sorulur.",
+    "answer": "CYP3A4. Makrolidler QT uzaması ve ilaç etkileşimi ile sık sorulur.",
+    "explanation": "Makrolidler QT uzaması ve ilaç etkileşimi ile sık sorulur. Azitromisin CYP etkileşimi daha azdır; eritro/klaritro daha klasik inhibitörlerdir.",
+    "tusTip": "Makrolidler QT uzaması ve ilaç etkileşimi ile sık sorulur. Azitromisin CYP etkileşimi daha azdır; eritro/klaritro daha klasik inhibitörlerdir.",
+    "differentialNote": "Azitromisin CYP etkileşimi daha azdır; eritro/klaritro daha klasik inhibitörlerdir.",
+    "keywords": [
+      "makrolid",
+      "CYP3A4",
+      "QT uzaması",
+      "etkileşim"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-056-extra": {
+    "front": "Makrolidler ribozomda hangi alt birimi hedefler?",
+    "back": "50S. Makrolidler QT uzaması ve ilaç etkileşimi ile sık sorulur.",
+    "answer": "50S. Makrolidler QT uzaması ve ilaç etkileşimi ile sık sorulur.",
+    "explanation": "Makrolidler QT uzaması ve ilaç etkileşimi ile sık sorulur. Azitromisin CYP etkileşimi daha azdır; eritro/klaritro daha klasik inhibitörlerdir.",
+    "tusTip": "Makrolidler karıştırıldığında cevabı netleştiren karşılaştırma: Azitromisin CYP etkileşimi daha azdır; eritro/klaritro daha klasik inhibitörlerdir.",
+    "differentialNote": "Azitromisin CYP etkileşimi daha azdır; eritro/klaritro daha klasik inhibitörlerdir.",
+    "keywords": [
+      "makrolid",
+      "CYP3A4",
+      "QT uzaması",
+      "etkileşim"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-057-spot": {
+    "front": "Statin kullanımında kas ağrısı ve CK artışı hangi yan etkiyi düşündürür?",
+    "back": "Miyopati/rabdomiyoliz. HMG-CoA redüktaz inhibisyonu yaparlar; karaciğer enzimleri ve kas toksisitesi izlenir.",
+    "answer": "Miyopati/rabdomiyoliz. HMG-CoA redüktaz inhibisyonu yaparlar; karaciğer enzimleri ve kas toksisitesi izlenir.",
+    "explanation": "HMG-CoA redüktaz inhibisyonu yaparlar; karaciğer enzimleri ve kas toksisitesi izlenir. Fibratlar da miyopati riskini artırabilir; kombinasyon risklidir.",
+    "tusTip": "HMG-CoA redüktaz inhibisyonu yaparlar; karaciğer enzimleri ve kas toksisitesi izlenir. Fibratlar da miyopati riskini artırabilir; kombinasyon risklidir.",
+    "differentialNote": "Fibratlar da miyopati riskini artırabilir; kombinasyon risklidir.",
+    "keywords": [
+      "statin",
+      "CK artışı",
+      "miyalji",
+      "rabdomiyoliz"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-057-extra": {
+    "front": "Statinlerin hedef enzimi hangisidir?",
+    "back": "HMG-CoA redüktaz. HMG-CoA redüktaz inhibisyonu yaparlar; karaciğer enzimleri ve kas toksisitesi izlenir.",
+    "answer": "HMG-CoA redüktaz. HMG-CoA redüktaz inhibisyonu yaparlar; karaciğer enzimleri ve kas toksisitesi izlenir.",
+    "explanation": "HMG-CoA redüktaz inhibisyonu yaparlar; karaciğer enzimleri ve kas toksisitesi izlenir. Fibratlar da miyopati riskini artırabilir; kombinasyon risklidir.",
+    "tusTip": "Statin toksisitesi kartında ayırıcı değer taşıyan nokta: Fibratlar da miyopati riskini artırabilir; kombinasyon risklidir.",
+    "differentialNote": "Fibratlar da miyopati riskini artırabilir; kombinasyon risklidir.",
+    "keywords": [
+      "statin",
+      "CK artışı",
+      "miyalji",
+      "rabdomiyoliz"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-058-spot": {
+    "front": "Klozapin kullanımında hangi ciddi hematolojik yan etki nedeniyle takip gerekir?",
+    "back": "Agranülositoz. Dirençli şizofrenide etkilidir; nötrofil takibi sınavda sık sorulur.",
+    "answer": "Agranülositoz. Dirençli şizofrenide etkilidir; nötrofil takibi sınavda sık sorulur.",
+    "explanation": "Dirençli şizofrenide etkilidir; nötrofil takibi sınavda sık sorulur. Olanzapin metabolik sendrom yapabilir; agranülositoz klozapine özgü yüksek verimdir.",
+    "tusTip": "Dirençli şizofrenide etkilidir; nötrofil takibi sınavda sık sorulur. Olanzapin metabolik sendrom yapabilir; agranülositoz klozapine özgü yüksek verimdir.",
+    "differentialNote": "Olanzapin metabolik sendrom yapabilir; agranülositoz klozapine özgü yüksek verimdir.",
+    "keywords": [
+      "klozapin",
+      "agranülositoz",
+      "nötrofil",
+      "dirençli şizofreni"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-058-extra": {
+    "front": "Klozapinin ayrıca hangi kardiyak yan etkisi akılda tutulur?",
+    "back": "Miyokardit. Dirençli şizofrenide etkilidir; nötrofil takibi sınavda sık sorulur.",
+    "answer": "Miyokardit. Dirençli şizofrenide etkilidir; nötrofil takibi sınavda sık sorulur.",
+    "explanation": "Dirençli şizofrenide etkilidir; nötrofil takibi sınavda sık sorulur. Olanzapin metabolik sendrom yapabilir; agranülositoz klozapine özgü yüksek verimdir.",
+    "tusTip": "Klozapin için sınavda hedeflenen ayrım genellikle şudur: Olanzapin metabolik sendrom yapabilir; agranülositoz klozapine özgü yüksek verimdir.",
+    "differentialNote": "Olanzapin metabolik sendrom yapabilir; agranülositoz klozapine özgü yüksek verimdir.",
+    "keywords": [
+      "klozapin",
+      "agranülositoz",
+      "nötrofil",
+      "dirençli şizofreni"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-059-spot": {
+    "front": "Lityum toksisitesi riskini artıran böbrek/elektrolit durumu nedir?",
+    "back": "Dehidratasyon veya sodyum azalması. Lityum böbrekten sodyum gibi geri emilir; NSAİİ, ACE inhibitörü ve tiyazidler düzeyi artırabilir.",
+    "answer": "Dehidratasyon veya sodyum azalması. Lityum böbrekten sodyum gibi geri emilir; NSAİİ, ACE inhibitörü ve tiyazidler düzeyi artırabilir.",
+    "explanation": "Lityum böbrekten sodyum gibi geri emilir; NSAİİ, ACE inhibitörü ve tiyazidler düzeyi artırabilir. Valproat hepatotoksisite ve nöral tüp defektiyle; lityum nefrojenik DI ve tiroidle karışır.",
+    "tusTip": "Lityum böbrekten sodyum gibi geri emilir; NSAİİ, ACE inhibitörü ve tiyazidler düzeyi artırabilir. Valproat hepatotoksisite ve nöral tüp defektiyle; lityum nefrojenik DI ve tiroidle karışır.",
+    "differentialNote": "Valproat hepatotoksisite ve nöral tüp defektiyle; lityum nefrojenik DI ve tiroidle karışır.",
+    "keywords": [
+      "lityum",
+      "tremor",
+      "poliüri",
+      "dar terapötik aralık"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-059-extra": {
+    "front": "Lityumun klasik endokrin yan etkilerinden biri nedir?",
+    "back": "Hipotiroidi. Lityum böbrekten sodyum gibi geri emilir; NSAİİ, ACE inhibitörü ve tiyazidler düzeyi artırabilir.",
+    "answer": "Hipotiroidi. Lityum böbrekten sodyum gibi geri emilir; NSAİİ, ACE inhibitörü ve tiyazidler düzeyi artırabilir.",
+    "explanation": "Lityum böbrekten sodyum gibi geri emilir; NSAİİ, ACE inhibitörü ve tiyazidler düzeyi artırabilir. Valproat hepatotoksisite ve nöral tüp defektiyle; lityum nefrojenik DI ve tiroidle karışır.",
+    "tusTip": "Lityum karıştırıldığında cevabı netleştiren karşılaştırma: Valproat hepatotoksisite ve nöral tüp defektiyle; lityum nefrojenik DI ve tiroidle karışır.",
+    "differentialNote": "Valproat hepatotoksisite ve nöral tüp defektiyle; lityum nefrojenik DI ve tiroidle karışır.",
+    "keywords": [
+      "lityum",
+      "tremor",
+      "poliüri",
+      "dar terapötik aralık"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-060-spot": {
+    "front": "Metformin için en çok korkulan nadir ciddi yan etki nedir?",
+    "back": "Laktik asidoz. Böbrek yetmezliği ve hipoksi durumlarında risk artar; insülin salınımını artırmaz.",
+    "answer": "Laktik asidoz. Böbrek yetmezliği ve hipoksi durumlarında risk artar; insülin salınımını artırmaz.",
+    "explanation": "Böbrek yetmezliği ve hipoksi durumlarında risk artar; insülin salınımını artırmaz. Sülfonilüre hipoglisemi yapar; metformin tek başına hipoglisemi yapma eğilimi düşük olan ilaçtır.",
+    "tusTip": "Böbrek yetmezliği ve hipoksi durumlarında risk artar; insülin salınımını artırmaz. Sülfonilüre hipoglisemi yapar; metformin tek başına hipoglisemi yapma eğilimi düşük olan ilaçtır.",
+    "differentialNote": "Sülfonilüre hipoglisemi yapar; metformin tek başına hipoglisemi yapma eğilimi düşük olan ilaçtır.",
+    "keywords": [
+      "metformin",
+      "laktik asidoz",
+      "böbrek yetmezliği",
+      "insülin yok"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-060-extra": {
+    "front": "Metforminin temel etki mekanizması nedir?",
+    "back": "Hepatik glukoneogenezi azaltmak ve insülin duyarlılığını artırmak.",
+    "answer": "Hepatik glukoneogenezi azaltmak ve insülin duyarlılığını artırmak.",
+    "explanation": "Böbrek yetmezliği ve hipoksi durumlarında risk artar; insülin salınımını artırmaz. Sülfonilüre hipoglisemi yapar; metformin tek başına hipoglisemi yapma eğilimi düşük olan ilaçtır.",
+    "tusTip": "Metformin kartında ayırıcı değer taşıyan nokta: Sülfonilüre hipoglisemi yapar; metformin tek başına hipoglisemi yapma eğilimi düşük olan ilaçtır.",
+    "differentialNote": "Sülfonilüre hipoglisemi yapar; metformin tek başına hipoglisemi yapma eğilimi düşük olan ilaçtır.",
+    "keywords": [
+      "metformin",
+      "laktik asidoz",
+      "böbrek yetmezliği",
+      "insülin yok İç Hastalıkları (internal-medicine)"
+    ]
+  },
+  "tus-pearl-internal-medicine-061-spot": {
+    "front": "ST elevasyonlu miyokard infarktında uygun merkezde tercih edilen reperfüzyon yöntemi nedir?",
+    "back": "Primer PCI. Zamanında yapılabiliyorsa primer perkütan koroner girişim fibrinolize tercih edilir.",
+    "answer": "Primer PCI. Zamanında yapılabiliyorsa primer perkütan koroner girişim fibrinolize tercih edilir.",
+    "explanation": "Zamanında yapılabiliyorsa primer perkütan koroner girişim fibrinolize tercih edilir. NSTEMI’de rutin fibrinoliz yapılmaz; ST elevasyonu reperfüzyon kararını belirler.",
+    "tusTip": "Zamanında yapılabiliyorsa primer perkütan koroner girişim fibrinolize tercih edilir. NSTEMI’de rutin fibrinoliz yapılmaz; ST elevasyonu reperfüzyon kararını belirler.",
+    "differentialNote": "NSTEMI’de rutin fibrinoliz yapılmaz; ST elevasyonu reperfüzyon kararını belirler.",
+    "keywords": [
+      "ST elevasyonu",
+      "göğüs ağrısı",
+      "troponin",
+      "primer PCI"
+    ]
+  },
+  "tus-pearl-internal-medicine-061-extra": {
+    "front": "STEMI’de aspirin neden erken verilir?",
+    "back": "Trombosit agregasyonunu azaltmak için. Zamanında yapılabiliyorsa primer perkütan koroner girişim fibrinolize tercih edilir.",
+    "answer": "Trombosit agregasyonunu azaltmak için. Zamanında yapılabiliyorsa primer perkütan koroner girişim fibrinolize tercih edilir.",
+    "explanation": "Zamanında yapılabiliyorsa primer perkütan koroner girişim fibrinolize tercih edilir. NSTEMI’de rutin fibrinoliz yapılmaz; ST elevasyonu reperfüzyon kararını belirler.",
+    "tusTip": "STEMI reperfüzyon için sınavda hedeflenen ayrım genellikle şudur: NSTEMI’de rutin fibrinoliz yapılmaz; ST elevasyonu reperfüzyon kararını belirler.",
+    "differentialNote": "NSTEMI’de rutin fibrinoliz yapılmaz; ST elevasyonu reperfüzyon kararını belirler.",
+    "keywords": [
+      "ST elevasyonu",
+      "göğüs ağrısı",
+      "troponin",
+      "primer PCI"
+    ]
+  },
+  "tus-pearl-internal-medicine-062-spot": {
+    "front": "Diyabetik ketoasidoz tedavisinde ilk temel basamak nedir?",
+    "back": "İzotonik sıvı resüsitasyonu. İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir.",
+    "answer": "İzotonik sıvı resüsitasyonu. İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir.",
+    "explanation": "İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir. Belirgin hipokalemide insülin ertelenip potasyum replasmanı öncelenir. DKA’da insülin şarttır; ancak sıvı resüsitasyonu ve potasyum güvenliği atlanırsa aritmi riski doğar.",
+    "tusTip": "İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir. Belirgin hipokalemide insülin ertelenip potasyum replasmanı öncelenir. DKA’da insülin şarttır; ancak sıvı resüsitasyonu ve potasyum güvenliği atlanırsa aritmi riski doğar.",
+    "differentialNote": "DKA’da insülin şarttır; ancak sıvı resüsitasyonu ve potasyum güvenliği atlanırsa aritmi riski doğar.",
+    "keywords": [
+      "hiperglisemi",
+      "keton",
+      "asidoz",
+      "dehidratasyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-062-extra": {
+    "front": "DKA’da insülin başlamadan önce mutlaka hangi elektrolit değerlendirilir?",
+    "back": "Potasyum. İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir.",
+    "answer": "Potasyum. İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir.",
+    "explanation": "İlk yaklaşım dolaşımı düzeltmek için izotonik sıvıdır; insülin başlamadan önce potasyum mutlaka değerlendirilir. Belirgin hipokalemide insülin ertelenip potasyum replasmanı öncelenir. DKA’da insülin şarttır; ancak sıvı resüsitasyonu ve potasyum güvenliği atlanırsa aritmi riski doğar.",
+    "tusTip": "DKA karıştırıldığında cevabı netleştiren karşılaştırma: DKA’da insülin şarttır; ancak sıvı resüsitasyonu ve potasyum güvenliği atlanırsa aritmi riski doğar.",
+    "differentialNote": "DKA’da insülin şarttır; ancak sıvı resüsitasyonu ve potasyum güvenliği atlanırsa aritmi riski doğar.",
+    "keywords": [
+      "hiperglisemi",
+      "keton",
+      "asidoz",
+      "dehidratasyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-063-spot": {
+    "front": "Hipotansiyon, hiponatremi, hiperkalemi ve hipoglisemide acil tedavi basamağı nedir?",
+    "back": "İntravenöz hidrokortizon ve izotonik salin. Adrenal kriz yaşamı tehdit eder; tedavi tanısal doğrulamayı beklememelidir.",
+    "answer": "İntravenöz hidrokortizon ve izotonik salin. Adrenal kriz yaşamı tehdit eder; tedavi tanısal doğrulamayı beklememelidir.",
+    "explanation": "Adrenal kriz yaşamı tehdit eder; tedavi tanısal doğrulamayı beklememelidir. Sepsis benzer görünebilir; hiperkalemi ve steroid yanıtı adrenal krizi öne çıkarır.",
+    "tusTip": "Adrenal kriz yaşamı tehdit eder; tedavi tanısal doğrulamayı beklememelidir. Sepsis benzer görünebilir; hiperkalemi ve steroid yanıtı adrenal krizi öne çıkarır.",
+    "differentialNote": "Sepsis benzer görünebilir; hiperkalemi ve steroid yanıtı adrenal krizi öne çıkarır.",
+    "keywords": [
+      "hipotansiyon",
+      "hiponatremi",
+      "hiperkalemi",
+      "hipoglisemi"
+    ]
+  },
+  "tus-pearl-internal-medicine-063-extra": {
+    "front": "Primer adrenal yetmezlikte ACTH düzeyi nasıl beklenir?",
+    "back": "Yüksek. Adrenal kriz yaşamı tehdit eder; tedavi tanısal doğrulamayı beklememelidir.",
+    "answer": "Yüksek. Adrenal kriz yaşamı tehdit eder; tedavi tanısal doğrulamayı beklememelidir.",
+    "explanation": "Adrenal kriz yaşamı tehdit eder; tedavi tanısal doğrulamayı beklememelidir. Sepsis benzer görünebilir; hiperkalemi ve steroid yanıtı adrenal krizi öne çıkarır.",
+    "tusTip": "Adrenal kriz kartında ayırıcı değer taşıyan nokta: Sepsis benzer görünebilir; hiperkalemi ve steroid yanıtı adrenal krizi öne çıkarır.",
+    "differentialNote": "Sepsis benzer görünebilir; hiperkalemi ve steroid yanıtı adrenal krizi öne çıkarır.",
+    "keywords": [
+      "hipotansiyon",
+      "hiponatremi",
+      "hiperkalemi",
+      "hipoglisemi"
+    ]
+  },
+  "tus-pearl-internal-medicine-064-spot": {
+    "front": "EKG değişikliği olan hiperkalemide ilk tedavi basamağı nedir?",
+    "back": "İntravenöz kalsiyum glukonat. Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır.",
+    "answer": "İntravenöz kalsiyum glukonat. Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır.",
+    "explanation": "Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır. İnsülin + glukoz potasyumu hücre içine kaydırır; EKG değişikliği varsa önce kardiyak membran stabilizasyonu gerekir.",
+    "tusTip": "Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır. İnsülin + glukoz potasyumu hücre içine kaydırır; EKG değişikliği varsa önce kardiyak membran stabilizasyonu gerekir.",
+    "differentialNote": "İnsülin + glukoz potasyumu hücre içine kaydırır; EKG değişikliği varsa önce kardiyak membran stabilizasyonu gerekir.",
+    "keywords": [
+      "hiperkalemi",
+      "sivri T",
+      "geniş QRS",
+      "İntravenöz kalsiyum glukonat"
+    ]
+  },
+  "tus-pearl-internal-medicine-064-keywords": {
+    "front": "EKG değişikliği olan ağır hiperkalemide ilk tedavi basamağı nedir?",
+    "back": "İntravenöz kalsiyum glukonat. EKG değişikliği olan ağır hiperkalemide öncelik kardiyak membran stabilizasyonudur.",
+    "answer": "İntravenöz kalsiyum glukonat. EKG değişikliği olan ağır hiperkalemide öncelik kardiyak membran stabilizasyonudur.",
+    "explanation": "EKG değişikliği olan ağır hiperkalemide öncelik kardiyak membran stabilizasyonudur. İnsülin-glukoz potasyumu hücre içine kaydırır; ancak EKG değişikliği varsa membran stabilizasyonunun yerine geçmez.",
+    "tusTip": "K⁺ 6,5 mEq/L ile sivri T dalgası, P dalgasında silinme veya QRS genişlemesi varsa ilk basamak kalsiyumdur.",
+    "differentialNote": "İnsülin-glukoz potasyumu hücre içine kaydırır; ancak EKG değişikliği varsa membran stabilizasyonunun yerine geçmez.",
+    "keywords": [
+      "hiperkalemi",
+      "sivri T",
+      "geniş QRS",
+      "İntravenöz kalsiyum glukonat"
+    ]
+  },
+  "tus-pearl-internal-medicine-064-extra": {
+    "front": "Hiperkalemide insülin + glukoz tedavisinin temel amacı nedir?",
+    "back": "Potasyumu hücre içine kaydırmak. Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır.",
+    "answer": "Potasyumu hücre içine kaydırmak. Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır.",
+    "explanation": "Kalsiyum glukonat serum potasyumunu düşürmez; miyokard membranını stabilize ederek geniş QRS ve ölümcül aritmi riskini azaltır. İnsülin + glukoz potasyumu hücre içine kaydırır; EKG değişikliği varsa önce kardiyak membran stabilizasyonu gerekir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: İnsülin + glukoz potasyumu hücre içine kaydırır; EKG değişikliği varsa önce kardiyak membran stabilizasyonu gerekir.",
+    "differentialNote": "İnsülin + glukoz potasyumu hücre içine kaydırır; EKG değişikliği varsa önce kardiyak membran stabilizasyonu gerekir.",
+    "keywords": [
+      "hiperkalemi",
+      "sivri T",
+      "geniş QRS",
+      "İntravenöz kalsiyum glukonat"
+    ]
+  },
+  "tus-pearl-internal-medicine-065-spot": {
+    "front": "Övolemik hiponatremi, yüksek idrar ozmolalitesi ve yüksek idrar sodyumu ne düşündürür?",
+    "back": "SIADH. ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır.",
+    "answer": "SIADH. ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır.",
+    "explanation": "ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır. Primer polidipside idrar ozmolalitesi düşük beklenir; SIADH’de idrar konsantredir.",
+    "tusTip": "ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır. Primer polidipside idrar ozmolalitesi düşük beklenir; SIADH’de idrar konsantredir.",
+    "differentialNote": "Primer polidipside idrar ozmolalitesi düşük beklenir; SIADH’de idrar konsantredir.",
+    "keywords": [
+      "övolemik hiponatremi",
+      "idrar osm yüksek",
+      "idrar Na yüksek",
+      "ADH"
+    ]
+  },
+  "tus-pearl-internal-medicine-065-extra": {
+    "front": "Ağır semptomatik hiponatremide hangi sıvı kullanılır?",
+    "back": "Hipertonik salin. ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır.",
+    "answer": "Hipertonik salin. ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır.",
+    "explanation": "ADH uygunsuz yüksekliğine bağlı serbest su tutulumu vardır. Primer polidipside idrar ozmolalitesi düşük beklenir; SIADH’de idrar konsantredir.",
+    "tusTip": "Pratik karar noktası: Primer polidipside idrar ozmolalitesi düşük beklenir; SIADH’de idrar konsantredir.",
+    "differentialNote": "Primer polidipside idrar ozmolalitesi düşük beklenir; SIADH’de idrar konsantredir.",
+    "keywords": [
+      "övolemik hiponatremi",
+      "idrar osm yüksek",
+      "idrar Na yüksek",
+      "ADH"
+    ]
+  },
+  "tus-pearl-internal-medicine-066-spot": {
+    "front": "Dirençli hipertansiyon ve hipokalemide tarama için hangi oran kullanılır?",
+    "back": "Aldosteron/renin oranı. Primer hiperaldosteronizmde aldosteron yüksek, renin baskılıdır.",
+    "answer": "Aldosteron/renin oranı. Primer hiperaldosteronizmde aldosteron yüksek, renin baskılıdır.",
+    "explanation": "Primer hiperaldosteronizmde aldosteron yüksek, renin baskılıdır. Renal arter stenozunda renin genellikle artar; primer hiperaldosteronizmde renin baskılıdır.",
+    "tusTip": "Primer hiperaldosteronizmde aldosteron yüksek, renin baskılıdır. Renal arter stenozunda renin genellikle artar; primer hiperaldosteronizmde renin baskılıdır.",
+    "differentialNote": "Renal arter stenozunda renin genellikle artar; primer hiperaldosteronizmde renin baskılıdır.",
+    "keywords": [
+      "dirençli HT",
+      "hipokalemi",
+      "renin düşük",
+      "aldosteron yüksek"
+    ]
+  },
+  "tus-pearl-internal-medicine-066-extra": {
+    "front": "Conn sendromunda asit-baz paterni nedir?",
+    "back": "Metabolik alkaloz. Primer hiperaldosteronizmde aldosteron yüksek, renin baskılıdır.",
+    "answer": "Metabolik alkaloz. Primer hiperaldosteronizmde aldosteron yüksek, renin baskılıdır.",
+    "explanation": "Primer hiperaldosteronizmde aldosteron yüksek, renin baskılıdır. Renal arter stenozunda renin genellikle artar; primer hiperaldosteronizmde renin baskılıdır.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Renal arter stenozunda renin genellikle artar; primer hiperaldosteronizmde renin baskılıdır.",
+    "differentialNote": "Renal arter stenozunda renin genellikle artar; primer hiperaldosteronizmde renin baskılıdır.",
+    "keywords": [
+      "dirençli HT",
+      "hipokalemi",
+      "renin düşük",
+      "aldosteron yüksek"
+    ]
+  },
+  "tus-pearl-internal-medicine-067-spot": {
+    "front": "Cushing sendromunda ilk tarama testlerinden biri nedir?",
+    "back": "Gece 1 mg deksametazon supresyon testi.",
+    "answer": "Gece 1 mg deksametazon supresyon testi.",
+    "explanation": "Ayrıca 24 saat idrar serbest kortizol veya gece tükürük kortizolü kullanılabilir. Basit obeziteden ayıran ipuçları mor stria, proksimal miyopati ve kolay morarmadır.",
+    "tusTip": "Ayrıca 24 saat idrar serbest kortizol veya gece tükürük kortizolü kullanılabilir. Basit obeziteden ayıran ipuçları mor stria, proksimal miyopati ve kolay morarmadır.",
+    "differentialNote": "Basit obeziteden ayıran ipuçları mor stria, proksimal miyopati ve kolay morarmadır.",
+    "keywords": [
+      "santral obezite",
+      "mor stria",
+      "proksimal güçsüzlük",
+      "deksametazon"
+    ]
+  },
+  "tus-pearl-internal-medicine-067-extra": {
+    "front": "Cushing hastalığı neyi ifade eder?",
+    "back": "Hipofiz ACTH salgılayan adenomuna bağlı Cushing sendromu.",
+    "answer": "Hipofiz ACTH salgılayan adenomuna bağlı Cushing sendromu.",
+    "explanation": "Ayrıca 24 saat idrar serbest kortizol veya gece tükürük kortizolü kullanılabilir. Basit obeziteden ayıran ipuçları mor stria, proksimal miyopati ve kolay morarmadır.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Basit obeziteden ayıran ipuçları mor stria, proksimal miyopati ve kolay morarmadır.",
+    "differentialNote": "Basit obeziteden ayıran ipuçları mor stria, proksimal miyopati ve kolay morarmadır.",
+    "keywords": [
+      "santral obezite",
+      "mor stria",
+      "proksimal güçsüzlük",
+      "deksametazon"
+    ]
+  },
+  "tus-pearl-internal-medicine-068-spot": {
+    "front": "Hipertiroidiye oftalmopati eşlik ediyorsa en olası tanı nedir?",
+    "back": "Graves hastalığı. TSH reseptör antikoru uyarıcı etki yapar; diffüz guatr ve oftalmopati klasik ipucudur.",
+    "answer": "Graves hastalığı. TSH reseptör antikoru uyarıcı etki yapar; diffüz guatr ve oftalmopati klasik ipucudur.",
+    "explanation": "TSH reseptör antikoru uyarıcı etki yapar; diffüz guatr ve oftalmopati klasik ipucudur. Toksik multinodüler guatr oftalmopati yapmaz; bu ayırt ettiricidir.",
+    "tusTip": "TSH reseptör antikoru uyarıcı etki yapar; diffüz guatr ve oftalmopati klasik ipucudur. Toksik multinodüler guatr oftalmopati yapmaz; bu ayırt ettiricidir.",
+    "differentialNote": "Toksik multinodüler guatr oftalmopati yapmaz; bu ayırt ettiricidir.",
+    "keywords": [
+      "düşük TSH",
+      "yüksek T4",
+      "oftalmopati",
+      "diffüz guatr"
+    ]
+  },
+  "tus-pearl-internal-medicine-068-extra": {
+    "front": "Graves hastalığında beklenen otoantikor hangisidir?",
+    "back": "TSH reseptör antikoru/TRAb. TSH reseptör antikoru uyarıcı etki yapar; diffüz guatr ve oftalmopati klasik ipucudur.",
+    "answer": "TSH reseptör antikoru/TRAb. TSH reseptör antikoru uyarıcı etki yapar; diffüz guatr ve oftalmopati klasik ipucudur.",
+    "explanation": "TSH reseptör antikoru uyarıcı etki yapar; diffüz guatr ve oftalmopati klasik ipucudur. Toksik multinodüler guatr oftalmopati yapmaz; bu ayırt ettiricidir.",
+    "tusTip": "Pratik karar noktası: Toksik multinodüler guatr oftalmopati yapmaz; bu ayırt ettiricidir.",
+    "differentialNote": "Toksik multinodüler guatr oftalmopati yapmaz; bu ayırt ettiricidir.",
+    "keywords": [
+      "düşük TSH",
+      "yüksek T4",
+      "oftalmopati",
+      "diffüz guatr"
+    ]
+  },
+  "tus-pearl-internal-medicine-069-spot": {
+    "front": "SLE aktivitesini destekleyen iki laboratuvar bulgusu hangisidir?",
+    "back": "Anti-dsDNA artışı ve kompleman düşüklüğü.",
+    "answer": "Anti-dsDNA artışı ve kompleman düşüklüğü.",
+    "explanation": "C3/C4 düşüklüğü immün kompleks aktivitesini, anti-dsDNA özellikle lupus nefritiyle ilişkiyi destekler. ANA duyarlıdır ama aktivite takibinde anti-dsDNA ve kompleman daha yüksek verimlidir.",
+    "tusTip": "C3/C4 düşüklüğü immün kompleks aktivitesini, anti-dsDNA özellikle lupus nefritiyle ilişkiyi destekler. ANA duyarlıdır ama aktivite takibinde anti-dsDNA ve kompleman daha yüksek verimlidir.",
+    "differentialNote": "ANA duyarlıdır ama aktivite takibinde anti-dsDNA ve kompleman daha yüksek verimlidir.",
+    "keywords": [
+      "SLE",
+      "anti-dsDNA",
+      "C3/C4 düşük",
+      "nefrit"
+    ]
+  },
+  "tus-pearl-internal-medicine-069-keywords": {
+    "front": "SLE hastalık aktivitesinin izleminde hangi laboratuvar paterni kullanılır?",
+    "back": "Anti-dsDNA artışı ve C3/C4 düşüklüğü.",
+    "answer": "Anti-dsDNA artışı ve C3/C4 düşüklüğü.",
+    "explanation": "Bu patern özellikle lupus nefriti veya alevlenme bağlamında hastalık aktivitesini destekler. ANA tanıda duyarlı olabilir; aktivite izlemi için anti-dsDNA ve C3/C4 paterni daha değerlidir.",
+    "tusTip": "Aktivite izlemi için anti-dsDNA ve kompleman düzeyleri birlikte yorumlanır.",
+    "differentialNote": "ANA tanıda duyarlı olabilir; aktivite izlemi için anti-dsDNA ve C3/C4 paterni daha değerlidir.",
+    "keywords": [
+      "SLE",
+      "anti-dsDNA",
+      "C3/C4 düşük",
+      "nefrit"
+    ]
+  },
+  "tus-pearl-internal-medicine-069-extra": {
+    "front": "SLE taramasında duyarlılığı yüksek antikor hangisidir?",
+    "back": "ANA. C3/C4 düşüklüğü immün kompleks aktivitesini, anti-dsDNA özellikle lupus nefritiyle ilişkiyi destekler.",
+    "answer": "ANA. C3/C4 düşüklüğü immün kompleks aktivitesini, anti-dsDNA özellikle lupus nefritiyle ilişkiyi destekler.",
+    "explanation": "C3/C4 düşüklüğü immün kompleks aktivitesini, anti-dsDNA özellikle lupus nefritiyle ilişkiyi destekler. ANA duyarlıdır ama aktivite takibinde anti-dsDNA ve kompleman daha yüksek verimlidir.",
+    "tusTip": "SLE aktivite için sınavda hedeflenen ayrım genellikle şudur: ANA duyarlıdır ama aktivite takibinde anti-dsDNA ve kompleman daha yüksek verimlidir.",
+    "differentialNote": "ANA duyarlıdır ama aktivite takibinde anti-dsDNA ve kompleman daha yüksek verimlidir.",
+    "keywords": [
+      "SLE",
+      "anti-dsDNA",
+      "C3/C4 düşük",
+      "nefrit"
+    ]
+  },
+  "tus-pearl-internal-medicine-070-spot": {
+    "front": "Üst-alt solunum yolu ve böbrek tutulumu olan nekrotizan vaskülitte hangi antikor beklenir?",
+    "back": "PR3-ANCA/c-ANCA. Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur.",
+    "answer": "PR3-ANCA/c-ANCA. Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur.",
+    "explanation": "Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur. MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir.",
+    "tusTip": "Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur. MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir.",
+    "differentialNote": "MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir.",
+    "keywords": [
+      "sinüzit",
+      "hemoptizi",
+      "glomerülonefrit",
+      "c-ANCA"
+    ]
+  },
+  "tus-pearl-internal-medicine-070-extra": {
+    "front": "GPA’da tipik histolojik bulgu nedir?",
+    "back": "Nekrotizan granülomatöz inflamasyon ve vaskülit. Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur.",
+    "answer": "Nekrotizan granülomatöz inflamasyon ve vaskülit. Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur.",
+    "explanation": "Granülomatozis polianjitis sinüzit, akciğer nodülü/hemoptizi ve hızlı ilerleyen glomerülonefrit üçlüsüyle sorulur. MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir.",
+    "tusTip": "GPA karıştırıldığında cevabı netleştiren karşılaştırma: MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir.",
+    "differentialNote": "MPO-ANCA mikroskopik polianjitis/EGPA ile daha çok ilişkilidir.",
+    "keywords": [
+      "sinüzit",
+      "hemoptizi",
+      "glomerülonefrit",
+      "c-ANCA"
+    ]
+  },
+  "tus-pearl-internal-medicine-071-spot": {
+    "front": "Hemoptizi ve hızlı ilerleyen glomerülonefritte hangi antikor düşünülür?",
+    "back": "Anti-GBM antikoru. Goodpasture spektrumu akciğer-böbrek sendromu ile sorulur.",
+    "answer": "Anti-GBM antikoru. Goodpasture spektrumu akciğer-böbrek sendromu ile sorulur.",
+    "explanation": "Goodpasture spektrumu akciğer-böbrek sendromu ile sorulur. SLE granüler immün birikim yapabilir; anti-GBM’de lineer boyanma beklenir.",
+    "tusTip": "Goodpasture spektrumu akciğer-böbrek sendromu ile sorulur. SLE granüler immün birikim yapabilir; anti-GBM’de lineer boyanma beklenir.",
+    "differentialNote": "SLE granüler immün birikim yapabilir; anti-GBM’de lineer boyanma beklenir.",
+    "keywords": [
+      "hemoptizi",
+      "RPGN",
+      "anti-GBM",
+      "lineer IF"
+    ]
+  },
+  "tus-pearl-internal-medicine-071-extra": {
+    "front": "Anti-GBM hastalığında immünfloresan patern nasıldır?",
+    "back": "Lineer IgG birikimi. Goodpasture spektrumu akciğer-böbrek sendromu ile sorulur.",
+    "answer": "Lineer IgG birikimi. Goodpasture spektrumu akciğer-böbrek sendromu ile sorulur.",
+    "explanation": "Goodpasture spektrumu akciğer-böbrek sendromu ile sorulur. SLE granüler immün birikim yapabilir; anti-GBM’de lineer boyanma beklenir.",
+    "tusTip": "Anti-GBM kartında ayırıcı değer taşıyan nokta: SLE granüler immün birikim yapabilir; anti-GBM’de lineer boyanma beklenir.",
+    "differentialNote": "SLE granüler immün birikim yapabilir; anti-GBM’de lineer boyanma beklenir.",
+    "keywords": [
+      "hemoptizi",
+      "RPGN",
+      "anti-GBM",
+      "lineer IF"
+    ]
+  },
+  "tus-pearl-internal-medicine-072-spot": {
+    "front": "Çocukta nefrotik sendromun en sık nedeni nedir?",
+    "back": "Minimal değişiklik hastalığı. Selektif albuminüri ve steroid yanıtı klasik pediatrik nefrotik sendrom bilgisidir.",
+    "answer": "Minimal değişiklik hastalığı. Selektif albuminüri ve steroid yanıtı klasik pediatrik nefrotik sendrom bilgisidir.",
+    "explanation": "Selektif albuminüri ve steroid yanıtı klasik pediatrik nefrotik sendrom bilgisidir. FSGS erişkinlerde ve HIV/obezite ile daha çok sorulur; çocukta ilk akla MCD gelir.",
+    "tusTip": "Selektif albuminüri ve steroid yanıtı klasik pediatrik nefrotik sendrom bilgisidir. FSGS erişkinlerde ve HIV/obezite ile daha çok sorulur; çocukta ilk akla MCD gelir.",
+    "differentialNote": "FSGS erişkinlerde ve HIV/obezite ile daha çok sorulur; çocukta ilk akla MCD gelir.",
+    "keywords": [
+      "çocuk",
+      "nefrotik sendrom",
+      "steroid yanıtı",
+      "podosit"
+    ]
+  },
+  "tus-pearl-internal-medicine-072-extra": {
+    "front": "Minimal değişiklikte elektron mikroskobunda ne görülür?",
+    "back": "Podosit ayaksı çıkıntılarında silinme. Selektif albuminüri ve steroid yanıtı klasik pediatrik nefrotik sendrom bilgisidir.",
+    "answer": "Podosit ayaksı çıkıntılarında silinme. Selektif albuminüri ve steroid yanıtı klasik pediatrik nefrotik sendrom bilgisidir.",
+    "explanation": "Selektif albuminüri ve steroid yanıtı klasik pediatrik nefrotik sendrom bilgisidir. FSGS erişkinlerde ve HIV/obezite ile daha çok sorulur; çocukta ilk akla MCD gelir.",
+    "tusTip": "Minimal değişiklik hastalığı için sınavda hedeflenen ayrım genellikle şudur: FSGS erişkinlerde ve HIV/obezite ile daha çok sorulur; çocukta ilk akla MCD gelir.",
+    "differentialNote": "FSGS erişkinlerde ve HIV/obezite ile daha çok sorulur; çocukta ilk akla MCD gelir.",
+    "keywords": [
+      "çocuk",
+      "nefrotik sendrom",
+      "steroid yanıtı",
+      "podosit"
+    ]
+  },
+  "tus-pearl-internal-medicine-073-spot": {
+    "front": "Çok yüksek glukoz, belirgin hiperozmolarite ve minimal ketozis hangi tabloyu düşündürür?",
+    "back": "Hiperozmolar hiperglisemik durum. Tip 2 diyabette ağır dehidratasyon ve nörolojik bulgularla sorulur.",
+    "answer": "Hiperozmolar hiperglisemik durum. Tip 2 diyabette ağır dehidratasyon ve nörolojik bulgularla sorulur.",
+    "explanation": "Tip 2 diyabette ağır dehidratasyon ve nörolojik bulgularla sorulur. DKA’da ketozis ve asidoz belirgindir; HHS’de osmolalite ve dehidratasyon öne çıkar.",
+    "tusTip": "Tip 2 diyabette ağır dehidratasyon ve nörolojik bulgularla sorulur. DKA’da ketozis ve asidoz belirgindir; HHS’de osmolalite ve dehidratasyon öne çıkar.",
+    "differentialNote": "DKA’da ketozis ve asidoz belirgindir; HHS’de osmolalite ve dehidratasyon öne çıkar.",
+    "keywords": [
+      "çok yüksek glukoz",
+      "hiperozmolarite",
+      "minimal keton",
+      "Tip 2 DM"
+    ]
+  },
+  "tus-pearl-internal-medicine-073-extra": {
+    "front": "HHS tedavisinde ilk yaklaşım nasıl olmalıdır?",
+    "back": "Agresif izotonik sıvı replasmanı. Tip 2 diyabette ağır dehidratasyon ve nörolojik bulgularla sorulur.",
+    "answer": "Agresif izotonik sıvı replasmanı. Tip 2 diyabette ağır dehidratasyon ve nörolojik bulgularla sorulur.",
+    "explanation": "Tip 2 diyabette ağır dehidratasyon ve nörolojik bulgularla sorulur. DKA’da ketozis ve asidoz belirgindir; HHS’de osmolalite ve dehidratasyon öne çıkar.",
+    "tusTip": "HHS karıştırıldığında cevabı netleştiren karşılaştırma: DKA’da ketozis ve asidoz belirgindir; HHS’de osmolalite ve dehidratasyon öne çıkar.",
+    "differentialNote": "DKA’da ketozis ve asidoz belirgindir; HHS’de osmolalite ve dehidratasyon öne çıkar.",
+    "keywords": [
+      "çok yüksek glukoz",
+      "hiperozmolarite",
+      "minimal keton",
+      "Tip 2 DM"
+    ]
+  },
+  "tus-pearl-internal-medicine-074-spot": {
+    "front": "Akut pankreatitte tanıyı destekleyen temel enzim hangisidir?",
+    "back": "Lipaz. Epigastrik sırta vuran ağrı ve lipaz yüksekliği klasik paterndir.",
+    "answer": "Lipaz. Epigastrik sırta vuran ağrı ve lipaz yüksekliği klasik paterndir.",
+    "explanation": "Epigastrik sırta vuran ağrı ve lipaz yüksekliği klasik paterndir. Amilaz da artabilir ama lipaz daha özgül ve daha uzun süre yüksek kalır.",
+    "tusTip": "Epigastrik sırta vuran ağrı ve lipaz yüksekliği klasik paterndir. Amilaz da artabilir ama lipaz daha özgül ve daha uzun süre yüksek kalır.",
+    "differentialNote": "Amilaz da artabilir ama lipaz daha özgül ve daha uzun süre yüksek kalır.",
+    "keywords": [
+      "epigastrik ağrı",
+      "sırta yayılım",
+      "lipaz",
+      "alkol/safra taşı"
+    ]
+  },
+  "tus-pearl-internal-medicine-074-extra": {
+    "front": "Akut pankreatitin en sık iki nedeni nedir?",
+    "back": "Safra taşı ve alkol. Epigastrik sırta vuran ağrı ve lipaz yüksekliği klasik paterndir.",
+    "answer": "Safra taşı ve alkol. Epigastrik sırta vuran ağrı ve lipaz yüksekliği klasik paterndir.",
+    "explanation": "Epigastrik sırta vuran ağrı ve lipaz yüksekliği klasik paterndir. Amilaz da artabilir ama lipaz daha özgül ve daha uzun süre yüksek kalır.",
+    "tusTip": "Akut pankreatit kartında ayırıcı değer taşıyan nokta: Amilaz da artabilir ama lipaz daha özgül ve daha uzun süre yüksek kalır.",
+    "differentialNote": "Amilaz da artabilir ama lipaz daha özgül ve daha uzun süre yüksek kalır.",
+    "keywords": [
+      "epigastrik ağrı",
+      "sırta yayılım",
+      "lipaz",
+      "alkol/safra taşı"
+    ]
+  },
+  "tus-pearl-internal-medicine-075-spot": {
+    "front": "Siroz ve asitte karın ağrısı/ensefalopati varsa ilk tanısal işlem nedir?",
+    "back": "Tanısal parasentez. Ateş olmasa bile SBP dışlanmalıdır; PMN 250/mm³ tanısal eşiktir.",
+    "answer": "Tanısal parasentez. Ateş olmasa bile SBP dışlanmalıdır; PMN 250/mm³ tanısal eşiktir.",
+    "explanation": "Ateş olmasa bile SBP dışlanmalıdır; PMN 250/mm³ tanısal eşiktir. Antibiyotik önemli ama tanısal parasentez geciktirilmemelidir.",
+    "tusTip": "Ateş olmasa bile SBP dışlanmalıdır; PMN 250/mm³ tanısal eşiktir. Antibiyotik önemli ama tanısal parasentez geciktirilmemelidir.",
+    "differentialNote": "Antibiyotik önemli ama tanısal parasentez geciktirilmemelidir.",
+    "keywords": [
+      "siroz",
+      "asit",
+      "karın ağrısı",
+      "parasentez"
+    ]
+  },
+  "tus-pearl-internal-medicine-075-extra": {
+    "front": "SBP tanısında asit PMN eşiği nedir?",
+    "back": "250/mm³. Ateş olmasa bile SBP dışlanmalıdır; PMN 250/mm³ tanısal eşiktir.",
+    "answer": "250/mm³. Ateş olmasa bile SBP dışlanmalıdır; PMN 250/mm³ tanısal eşiktir.",
+    "explanation": "Ateş olmasa bile SBP dışlanmalıdır; PMN 250/mm³ tanısal eşiktir. Antibiyotik önemli ama tanısal parasentez geciktirilmemelidir.",
+    "tusTip": "SBP için sınavda hedeflenen ayrım genellikle şudur: Antibiyotik önemli ama tanısal parasentez geciktirilmemelidir.",
+    "differentialNote": "Antibiyotik önemli ama tanısal parasentez geciktirilmemelidir.",
+    "keywords": [
+      "siroz",
+      "asit",
+      "karın ağrısı",
+      "parasentez Çocuk Sağlığı ve Hastalıkları (pediatrics)"
+    ]
+  },
+  "tus-pearl-pediatrics-076-spot": {
+    "front": "2-8 haftalık erkek bebekte safrasız fışkırır kusma hangi tanıyı düşündürür?",
+    "back": "Hipertrofik pilor stenozu. Hipokloremik hipokalemik metabolik alkaloz ve pilor USG bulguları klasikleşmiştir.",
+    "answer": "Hipertrofik pilor stenozu. Hipokloremik hipokalemik metabolik alkaloz ve pilor USG bulguları klasikleşmiştir.",
+    "explanation": "Hipokloremik hipokalemik metabolik alkaloz ve pilor USG bulguları klasikleşmiştir. Bilious kusma malrotasyon/volvulus lehine acil cerrahi ipucudur.",
+    "tusTip": "Hipokloremik hipokalemik metabolik alkaloz ve pilor USG bulguları klasikleşmiştir. Bilious kusma malrotasyon/volvulus lehine acil cerrahi ipucudur.",
+    "differentialNote": "Bilious kusma malrotasyon/volvulus lehine acil cerrahi ipucudur.",
+    "keywords": [
+      "2-8 hafta",
+      "erkek bebek",
+      "safrasız fışkırır kusma",
+      "metabolik alkaloz"
+    ]
+  },
+  "tus-pearl-pediatrics-076-extra": {
+    "front": "Hipertrofik pilor stenozunda tipik asit-baz bozukluğu nedir?",
+    "back": "Hipokloremik, hipokalemik metabolik alkaloz. Hipokloremik hipokalemik metabolik alkaloz ve pilor USG bulguları klasikleşmiştir.",
+    "answer": "Hipokloremik, hipokalemik metabolik alkaloz. Hipokloremik hipokalemik metabolik alkaloz ve pilor USG bulguları klasikleşmiştir.",
+    "explanation": "Hipokloremik hipokalemik metabolik alkaloz ve pilor USG bulguları klasikleşmiştir. Bilious kusma malrotasyon/volvulus lehine acil cerrahi ipucudur.",
+    "tusTip": "Hipertrofik pilor stenozu karıştırıldığında cevabı netleştiren karşılaştırma: Bilious kusma malrotasyon/volvulus lehine acil cerrahi ipucudur.",
+    "differentialNote": "Bilious kusma malrotasyon/volvulus lehine acil cerrahi ipucudur.",
+    "keywords": [
+      "2-8 hafta",
+      "erkek bebek",
+      "safrasız fışkırır kusma",
+      "metabolik alkaloz"
+    ]
+  },
+  "tus-pearl-pediatrics-077-spot": {
+    "front": "Aralıklı kolik ağrı ve currant jelly dışkı hangi pediatrik acili düşündürür?",
+    "back": "İnvajinasyon. USG’de target/donut sign ve pnömatik/hidrostatik redüksiyon bilgisi yüksek verimdir.",
+    "answer": "İnvajinasyon. USG’de target/donut sign ve pnömatik/hidrostatik redüksiyon bilgisi yüksek verimdir.",
+    "explanation": "USG’de target/donut sign ve pnömatik/hidrostatik redüksiyon bilgisi yüksek verimdir. Pilor stenozu kusma ile gelir ama dışkı kanlı mukus paterni invajinasyon lehinedir.",
+    "tusTip": "USG’de target/donut sign ve pnömatik/hidrostatik redüksiyon bilgisi yüksek verimdir. Pilor stenozu kusma ile gelir ama dışkı kanlı mukus paterni invajinasyon lehinedir.",
+    "differentialNote": "Pilor stenozu kusma ile gelir ama dışkı kanlı mukus paterni invajinasyon lehinedir.",
+    "keywords": [
+      "kolik ağrı",
+      "dizleri karna çekme",
+      "currant jelly",
+      "target sign"
+    ]
+  },
+  "tus-pearl-pediatrics-077-extra": {
+    "front": "İnvajinasyon tanısında ilk tercih edilen görüntüleme yöntemi hangisidir?",
+    "back": "Abdominal ultrasonografi. USG’de target/donut sign ve pnömatik/hidrostatik redüksiyon bilgisi yüksek verimdir.",
+    "answer": "Abdominal ultrasonografi. USG’de target/donut sign ve pnömatik/hidrostatik redüksiyon bilgisi yüksek verimdir.",
+    "explanation": "USG’de target/donut sign ve pnömatik/hidrostatik redüksiyon bilgisi yüksek verimdir. Pilor stenozu kusma ile gelir ama dışkı kanlı mukus paterni invajinasyon lehinedir.",
+    "tusTip": "İnvajinasyon kartında ayırıcı değer taşıyan nokta: Pilor stenozu kusma ile gelir ama dışkı kanlı mukus paterni invajinasyon lehinedir.",
+    "differentialNote": "Pilor stenozu kusma ile gelir ama dışkı kanlı mukus paterni invajinasyon lehinedir.",
+    "keywords": [
+      "kolik ağrı",
+      "dizleri karna çekme",
+      "currant jelly",
+      "target sign"
+    ]
+  },
+  "tus-pearl-pediatrics-078-spot": {
+    "front": "Kawasaki hastalığında koroner anevrizma riskini azaltan tedavi nedir?",
+    "back": "IVIG + aspirin. Uzamış ateş ve mukokutanöz bulgularla sorulur; IVIG ilk 10 gün içinde önemlidir.",
+    "answer": "IVIG + aspirin. Uzamış ateş ve mukokutanöz bulgularla sorulur; IVIG ilk 10 gün içinde önemlidir.",
+    "explanation": "Uzamış ateş ve mukokutanöz bulgularla sorulur; IVIG ilk 10 gün içinde önemlidir. Kızıl da çilek dili yapabilir; bilateral nonpürülan konjonktivit ve ekstremite bulguları Kawasaki lehinedir.",
+    "tusTip": "Uzamış ateş ve mukokutanöz bulgularla sorulur; IVIG ilk 10 gün içinde önemlidir. Kızıl da çilek dili yapabilir; bilateral nonpürülan konjonktivit ve ekstremite bulguları Kawasaki lehinedir.",
+    "differentialNote": "Kızıl da çilek dili yapabilir; bilateral nonpürülan konjonktivit ve ekstremite bulguları Kawasaki lehinedir.",
+    "keywords": [
+      "5 günden uzun ateş",
+      "konjonktivit",
+      "çilek dili",
+      "döküntü"
+    ]
+  },
+  "tus-pearl-pediatrics-078-extra": {
+    "front": "Kawasaki hastalığının en önemli kardiyak komplikasyonu nedir?",
+    "back": "Koroner arter anevrizması. Uzamış ateş ve mukokutanöz bulgularla sorulur; IVIG ilk 10 gün içinde önemlidir.",
+    "answer": "Koroner arter anevrizması. Uzamış ateş ve mukokutanöz bulgularla sorulur; IVIG ilk 10 gün içinde önemlidir.",
+    "explanation": "Uzamış ateş ve mukokutanöz bulgularla sorulur; IVIG ilk 10 gün içinde önemlidir. Kızıl da çilek dili yapabilir; bilateral nonpürülan konjonktivit ve ekstremite bulguları Kawasaki lehinedir.",
+    "tusTip": "Kawasaki için sınavda hedeflenen ayrım genellikle şudur: Kızıl da çilek dili yapabilir; bilateral nonpürülan konjonktivit ve ekstremite bulguları Kawasaki lehinedir.",
+    "differentialNote": "Kızıl da çilek dili yapabilir; bilateral nonpürülan konjonktivit ve ekstremite bulguları Kawasaki lehinedir.",
+    "keywords": [
+      "5 günden uzun ateş",
+      "konjonktivit",
+      "çilek dili",
+      "döküntü"
+    ]
+  },
+  "tus-pearl-pediatrics-079-spot": {
+    "front": "Havlar tarzda öksürük ve inspiratuvar stridor yapan en sık viral tablo hangisidir?",
+    "back": "Croup/laringotrakeit. Parainfluenza virüs, steeple sign ve deksametazon/nebül adrenalin yaklaşımı ile sorulur.",
+    "answer": "Croup/laringotrakeit. Parainfluenza virüs, steeple sign ve deksametazon/nebül adrenalin yaklaşımı ile sorulur.",
+    "explanation": "Parainfluenza virüs, steeple sign ve deksametazon/nebül adrenalin yaklaşımı ile sorulur. Epiglottitte salya akması ve toksik görünüm daha belirgindir; boğaz muayenesi zorlanmaz.",
+    "tusTip": "Parainfluenza virüs, steeple sign ve deksametazon/nebül adrenalin yaklaşımı ile sorulur. Epiglottitte salya akması ve toksik görünüm daha belirgindir; boğaz muayenesi zorlanmaz.",
+    "differentialNote": "Epiglottitte salya akması ve toksik görünüm daha belirgindir; boğaz muayenesi zorlanmaz.",
+    "keywords": [
+      "havlar öksürük",
+      "stridor",
+      "parainfluenza",
+      "steeple sign"
+    ]
+  },
+  "tus-pearl-pediatrics-079-extra": {
+    "front": "Croup tedavisinde kullanılan steroid hangisidir?",
+    "back": "Deksametazon. Parainfluenza virüs, steeple sign ve deksametazon/nebül adrenalin yaklaşımı ile sorulur.",
+    "answer": "Deksametazon. Parainfluenza virüs, steeple sign ve deksametazon/nebül adrenalin yaklaşımı ile sorulur.",
+    "explanation": "Parainfluenza virüs, steeple sign ve deksametazon/nebül adrenalin yaklaşımı ile sorulur. Epiglottitte salya akması ve toksik görünüm daha belirgindir; boğaz muayenesi zorlanmaz.",
+    "tusTip": "Croup karıştırıldığında cevabı netleştiren karşılaştırma: Epiglottitte salya akması ve toksik görünüm daha belirgindir; boğaz muayenesi zorlanmaz.",
+    "differentialNote": "Epiglottitte salya akması ve toksik görünüm daha belirgindir; boğaz muayenesi zorlanmaz.",
+    "keywords": [
+      "havlar öksürük",
+      "stridor",
+      "parainfluenza",
+      "steeple sign"
+    ]
+  },
+  "tus-pearl-pediatrics-080-spot": {
+    "front": "Ateş, salya akması, tripod pozisyonu ve toksik görünüm hangi tabloyu düşündürür?",
+    "back": "Epiglottit. Hava yolu güvenliği önceliklidir; klasik etken Hib’dir.",
+    "answer": "Epiglottit. Hava yolu güvenliği önceliklidir; klasik etken Hib’dir.",
+    "explanation": "Hava yolu güvenliği önceliklidir; klasik etken Hib’dir. Croup daha yavaş ve havlar öksürükle gelir; epiglottit akut toksik görünümle ayrılır.",
+    "tusTip": "Hava yolu güvenliği önceliklidir; klasik etken Hib’dir. Croup daha yavaş ve havlar öksürükle gelir; epiglottit akut toksik görünümle ayrılır.",
+    "differentialNote": "Croup daha yavaş ve havlar öksürükle gelir; epiglottit akut toksik görünümle ayrılır.",
+    "keywords": [
+      "drooling",
+      "tripod",
+      "toksik çocuk",
+      "Hib"
+    ]
+  },
+  "tus-pearl-pediatrics-080-extra": {
+    "front": "Epiglottitte ilk öncelik nedir?",
+    "back": "Hava yolunu güvenceye almak. Hava yolu güvenliği önceliklidir; klasik etken Hib’dir.",
+    "answer": "Hava yolunu güvenceye almak. Hava yolu güvenliği önceliklidir; klasik etken Hib’dir.",
+    "explanation": "Hava yolu güvenliği önceliklidir; klasik etken Hib’dir. Croup daha yavaş ve havlar öksürükle gelir; epiglottit akut toksik görünümle ayrılır.",
+    "tusTip": "Epiglottit kartında ayırıcı değer taşıyan nokta: Croup daha yavaş ve havlar öksürükle gelir; epiglottit akut toksik görünümle ayrılır.",
+    "differentialNote": "Croup daha yavaş ve havlar öksürükle gelir; epiglottit akut toksik görünümle ayrılır.",
+    "keywords": [
+      "drooling",
+      "tripod",
+      "toksik çocuk",
+      "Hib"
+    ]
+  },
+  "tus-pearl-pediatrics-081-spot": {
+    "front": "2 yaş altı bebekte hışıltı, taşipne ve viral üst solunum yolu öyküsü en çok neyi düşündürür?",
+    "back": "Bronşiolit. En sık etken RSV’dir; tedavide destek ve oksijenasyon ön plandadır.",
+    "answer": "Bronşiolit. En sık etken RSV’dir; tedavide destek ve oksijenasyon ön plandadır.",
+    "explanation": "En sık etken RSV’dir; tedavide destek ve oksijenasyon ön plandadır. Astım tekrarlayan atak ve daha büyük yaşla; bronşiolit ilk epizod bebekle sorulur.",
+    "tusTip": "En sık etken RSV’dir; tedavide destek ve oksijenasyon ön plandadır. Astım tekrarlayan atak ve daha büyük yaşla; bronşiolit ilk epizod bebekle sorulur.",
+    "differentialNote": "Astım tekrarlayan atak ve daha büyük yaşla; bronşiolit ilk epizod bebekle sorulur.",
+    "keywords": [
+      "2 yaş altı",
+      "RSV",
+      "hışıltı",
+      "taşipne"
+    ]
+  },
+  "tus-pearl-pediatrics-081-extra": {
+    "front": "Bronşiolitin en sık etkeni nedir?",
+    "back": "RSV. En sık etken RSV’dir; tedavide destek ve oksijenasyon ön plandadır.",
+    "answer": "RSV. En sık etken RSV’dir; tedavide destek ve oksijenasyon ön plandadır.",
+    "explanation": "En sık etken RSV’dir; tedavide destek ve oksijenasyon ön plandadır. Astım tekrarlayan atak ve daha büyük yaşla; bronşiolit ilk epizod bebekle sorulur.",
+    "tusTip": "Bronşiolit için sınavda hedeflenen ayrım genellikle şudur: Astım tekrarlayan atak ve daha büyük yaşla; bronşiolit ilk epizod bebekle sorulur.",
+    "differentialNote": "Astım tekrarlayan atak ve daha büyük yaşla; bronşiolit ilk epizod bebekle sorulur.",
+    "keywords": [
+      "2 yaş altı",
+      "RSV",
+      "hışıltı",
+      "taşipne"
+    ]
+  },
+  "tus-pearl-pediatrics-082-spot": {
+    "front": "Koplik lekeleri hangi döküntülü hastalık için patognomonik kabul edilir?",
+    "back": "Kızamık. Ateş, öksürük, konjonktivit, koriza ve kraniokaudal makülopapüler döküntü tipiktir.",
+    "answer": "Kızamık. Ateş, öksürük, konjonktivit, koriza ve kraniokaudal makülopapüler döküntü tipiktir.",
+    "explanation": "Ateş, öksürük, konjonktivit, koriza ve kraniokaudal makülopapüler döküntü tipiktir. Kızamıkçık posterior auriküler LAP ile; kızamık Koplik ve 3C ile ayrılır.",
+    "tusTip": "Ateş, öksürük, konjonktivit, koriza ve kraniokaudal makülopapüler döküntü tipiktir. Kızamıkçık posterior auriküler LAP ile; kızamık Koplik ve 3C ile ayrılır.",
+    "differentialNote": "Kızamıkçık posterior auriküler LAP ile; kızamık Koplik ve 3C ile ayrılır.",
+    "keywords": [
+      "Koplik",
+      "öksürük",
+      "koriza",
+      "konjonktivit"
+    ]
+  },
+  "tus-pearl-pediatrics-082-extra": {
+    "front": "Kızamıkta döküntü genellikle hangi yönde yayılır?",
+    "back": "Kraniokaudal. Ateş, öksürük, konjonktivit, koriza ve kraniokaudal makülopapüler döküntü tipiktir.",
+    "answer": "Kraniokaudal. Ateş, öksürük, konjonktivit, koriza ve kraniokaudal makülopapüler döküntü tipiktir.",
+    "explanation": "Ateş, öksürük, konjonktivit, koriza ve kraniokaudal makülopapüler döküntü tipiktir. Kızamıkçık posterior auriküler LAP ile; kızamık Koplik ve 3C ile ayrılır.",
+    "tusTip": "Kızamık karıştırıldığında cevabı netleştiren karşılaştırma: Kızamıkçık posterior auriküler LAP ile; kızamık Koplik ve 3C ile ayrılır.",
+    "differentialNote": "Kızamıkçık posterior auriküler LAP ile; kızamık Koplik ve 3C ile ayrılır.",
+    "keywords": [
+      "Koplik",
+      "öksürük",
+      "koriza",
+      "konjonktivit"
+    ]
+  },
+  "tus-pearl-pediatrics-083-spot": {
+    "front": "Zımpara kâğıdı döküntüsü ve çilek dili hangi etkenle ilişkilidir?",
+    "back": "Streptococcus pyogenes. Kızıl eritrojenik toksin ile gelişir; farenjit sonrası döküntü klasik ipucudur.",
+    "answer": "Streptococcus pyogenes. Kızıl eritrojenik toksin ile gelişir; farenjit sonrası döküntü klasik ipucudur.",
+    "explanation": "Kızıl eritrojenik toksin ile gelişir; farenjit sonrası döküntü klasik ipucudur. Kawasaki çilek dili yapabilir ama uzamış ateş ve konjonktivit/ekstremite bulguları ayrımı sağlar.",
+    "tusTip": "Kızıl eritrojenik toksin ile gelişir; farenjit sonrası döküntü klasik ipucudur. Kawasaki çilek dili yapabilir ama uzamış ateş ve konjonktivit/ekstremite bulguları ayrımı sağlar.",
+    "differentialNote": "Kawasaki çilek dili yapabilir ama uzamış ateş ve konjonktivit/ekstremite bulguları ayrımı sağlar.",
+    "keywords": [
+      "zımpara döküntü",
+      "çilek dili",
+      "Pastia çizgileri",
+      "Streptococcus pyogenes"
+    ]
+  },
+  "tus-pearl-pediatrics-083-extra": {
+    "front": "Kızıl tedavisinde tercih edilen antibiyotik grubu hangisidir?",
+    "back": "Penisilin grubu. Kızıl eritrojenik toksin ile gelişir; farenjit sonrası döküntü klasik ipucudur.",
+    "answer": "Penisilin grubu. Kızıl eritrojenik toksin ile gelişir; farenjit sonrası döküntü klasik ipucudur.",
+    "explanation": "Kızıl eritrojenik toksin ile gelişir; farenjit sonrası döküntü klasik ipucudur. Kawasaki çilek dili yapabilir ama uzamış ateş ve konjonktivit/ekstremite bulguları ayrımı sağlar.",
+    "tusTip": "Kızıl kartında ayırıcı değer taşıyan nokta: Kawasaki çilek dili yapabilir ama uzamış ateş ve konjonktivit/ekstremite bulguları ayrımı sağlar.",
+    "differentialNote": "Kawasaki çilek dili yapabilir ama uzamış ateş ve konjonktivit/ekstremite bulguları ayrımı sağlar.",
+    "keywords": [
+      "zımpara döküntü",
+      "çilek dili",
+      "Pastia çizgileri",
+      "Streptococcus pyogenes"
+    ]
+  },
+  "tus-pearl-pediatrics-084-spot": {
+    "front": "Yenidoğanda uzamış sarılık, makroglossi ve kabızlık hangi endokrin tabloyu düşündürür?",
+    "back": "Konjenital hipotiroidi. Erken tanı ve levotiroksin nörogelişim için kritiktir.",
+    "answer": "Konjenital hipotiroidi. Erken tanı ve levotiroksin nörogelişim için kritiktir.",
+    "explanation": "Erken tanı ve levotiroksin nörogelişim için kritiktir. Down sendromu hipotoni yapabilir; metabolik/endokrin tarama hipotiroidiyi yakalar.",
+    "tusTip": "Erken tanı ve levotiroksin nörogelişim için kritiktir. Down sendromu hipotoni yapabilir; metabolik/endokrin tarama hipotiroidiyi yakalar.",
+    "differentialNote": "Down sendromu hipotoni yapabilir; metabolik/endokrin tarama hipotiroidiyi yakalar.",
+    "keywords": [
+      "uzamış sarılık",
+      "makroglossi",
+      "kabızlık",
+      "hipotoni"
+    ]
+  },
+  "tus-pearl-pediatrics-084-extra": {
+    "front": "Konjenital hipotiroidide temel tedavi nedir?",
+    "back": "Levotiroksin. Erken tanı ve levotiroksin nörogelişim için kritiktir.",
+    "answer": "Levotiroksin. Erken tanı ve levotiroksin nörogelişim için kritiktir.",
+    "explanation": "Erken tanı ve levotiroksin nörogelişim için kritiktir. Down sendromu hipotoni yapabilir; metabolik/endokrin tarama hipotiroidiyi yakalar.",
+    "tusTip": "Konjenital hipotiroidi için sınavda hedeflenen ayrım genellikle şudur: Down sendromu hipotoni yapabilir; metabolik/endokrin tarama hipotiroidiyi yakalar.",
+    "differentialNote": "Down sendromu hipotoni yapabilir; metabolik/endokrin tarama hipotiroidiyi yakalar.",
+    "keywords": [
+      "uzamış sarılık",
+      "makroglossi",
+      "kabızlık",
+      "hipotoni"
+    ]
+  },
+  "tus-pearl-pediatrics-085-spot": {
+    "front": "Tekrarlayan akciğer enfeksiyonu ve pankreas yetmezliği hangi hastalığı düşündürür?",
+    "back": "Kistik fibrozis. CFTR klor kanalı defekti, terde klor yüksekliği ve mekonium ileusu ile sorulur.",
+    "answer": "Kistik fibrozis. CFTR klor kanalı defekti, terde klor yüksekliği ve mekonium ileusu ile sorulur.",
+    "explanation": "CFTR klor kanalı defekti, terde klor yüksekliği ve mekonium ileusu ile sorulur. Primer siliyer diskinezi infertilite/situs inversus ile ayrılır; CF’de pankreas ve ter testi öne çıkar.",
+    "tusTip": "CFTR klor kanalı defekti, terde klor yüksekliği ve mekonium ileusu ile sorulur. Primer siliyer diskinezi infertilite/situs inversus ile ayrılır; CF’de pankreas ve ter testi öne çıkar.",
+    "differentialNote": "Primer siliyer diskinezi infertilite/situs inversus ile ayrılır; CF’de pankreas ve ter testi öne çıkar.",
+    "keywords": [
+      "terde klor yüksek",
+      "pankreas yetmezliği",
+      "bronşiektazi",
+      "mekonium ileus"
+    ]
+  },
+  "tus-pearl-pediatrics-085-extra": {
+    "front": "Kistik fibroziste tanıyı destekleyen test nedir?",
+    "back": "Ter klor testi. CFTR klor kanalı defekti, terde klor yüksekliği ve mekonium ileusu ile sorulur.",
+    "answer": "Ter klor testi. CFTR klor kanalı defekti, terde klor yüksekliği ve mekonium ileusu ile sorulur.",
+    "explanation": "CFTR klor kanalı defekti, terde klor yüksekliği ve mekonium ileusu ile sorulur. Primer siliyer diskinezi infertilite/situs inversus ile ayrılır; CF’de pankreas ve ter testi öne çıkar.",
+    "tusTip": "Kistik fibrozis karıştırıldığında cevabı netleştiren karşılaştırma: Primer siliyer diskinezi infertilite/situs inversus ile ayrılır; CF’de pankreas ve ter testi öne çıkar.",
+    "differentialNote": "Primer siliyer diskinezi infertilite/situs inversus ile ayrılır; CF’de pankreas ve ter testi öne çıkar.",
+    "keywords": [
+      "terde klor yüksek",
+      "pankreas yetmezliği",
+      "bronşiektazi",
+      "mekonium ileus"
+    ]
+  },
+  "tus-pearl-pediatrics-086-spot": {
+    "front": "Palpabl purpura, karın ağrısı ve artralji çocukta hangi vasküliti düşündürür?",
+    "back": "IgA vasküliti/Henoch-Schönlein purpurası. Alt ekstremite purpurası ve renal tutulum takibi yüksek verimlidir.",
+    "answer": "IgA vasküliti/Henoch-Schönlein purpurası. Alt ekstremite purpurası ve renal tutulum takibi yüksek verimlidir.",
+    "explanation": "Alt ekstremite purpurası ve renal tutulum takibi yüksek verimlidir. ITP izole trombositopeni ve purpura yapar; karın ağrısı/artralji HSP lehinedir.",
+    "tusTip": "Alt ekstremite purpurası ve renal tutulum takibi yüksek verimlidir. ITP izole trombositopeni ve purpura yapar; karın ağrısı/artralji HSP lehinedir.",
+    "differentialNote": "ITP izole trombositopeni ve purpura yapar; karın ağrısı/artralji HSP lehinedir.",
+    "keywords": [
+      "palpabl purpura",
+      "karın ağrısı",
+      "artralji",
+      "IgA"
+    ]
+  },
+  "tus-pearl-pediatrics-086-extra": {
+    "front": "IgA vaskülitinde izlenmesi gereken önemli organ tutulumu nedir?",
+    "back": "Böbrek tutulumu. Alt ekstremite purpurası ve renal tutulum takibi yüksek verimlidir.",
+    "answer": "Böbrek tutulumu. Alt ekstremite purpurası ve renal tutulum takibi yüksek verimlidir.",
+    "explanation": "Alt ekstremite purpurası ve renal tutulum takibi yüksek verimlidir. ITP izole trombositopeni ve purpura yapar; karın ağrısı/artralji HSP lehinedir.",
+    "tusTip": "IgA vasküliti kartında ayırıcı değer taşıyan nokta: ITP izole trombositopeni ve purpura yapar; karın ağrısı/artralji HSP lehinedir.",
+    "differentialNote": "ITP izole trombositopeni ve purpura yapar; karın ağrısı/artralji HSP lehinedir.",
+    "keywords": [
+      "palpabl purpura",
+      "karın ağrısı",
+      "artralji",
+      "IgA"
+    ]
+  },
+  "tus-pearl-pediatrics-087-spot": {
+    "front": "6 ay-5 yaşta kısa, jeneralize ve tek ateşli nöbet ne olarak sınıflanır?",
+    "back": "Basit febril nöbet. 15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir.",
+    "answer": "Basit febril nöbet. 15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir.",
+    "explanation": "15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir. Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
+    "tusTip": "15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir. Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
+    "differentialNote": "Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
+    "keywords": [
+      "6 ay-5 yaş",
+      "ateş",
+      "jeneralize",
+      "<15 dakika"
+    ]
+  },
+  "tus-pearl-pediatrics-087-extra": {
+    "front": "Basit febril nöbette rutin uzun süreli antiepileptik gerekir mi?",
+    "back": "Genellikle gerekmez. 15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir.",
+    "answer": "Genellikle gerekmez. 15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir.",
+    "explanation": "15 dakikadan kısa, 24 saatte tekrarlamayan ve fokal olmayan nöbettir. Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
+    "tusTip": "Basit febril nöbet için sınavda hedeflenen ayrım genellikle şudur: Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
+    "differentialNote": "Fokal, uzamış veya tekrarlayan nöbet kompleks febril nöbettir.",
+    "keywords": [
+      "6 ay-5 yaş",
+      "ateş",
+      "jeneralize",
+      "<15 dakika"
+    ]
+  },
+  "tus-pearl-pediatrics-088-spot": {
+    "front": "Prematüre yenidoğanda surfaktan eksikliğine bağlı solunum sıkıntısı hangi tablodur?",
+    "back": "Neonatal RDS. Tip II pnömosit immatüritesi; ground-glass görünüm ve antenatal steroid bilgisi sorulur.",
+    "answer": "Neonatal RDS. Tip II pnömosit immatüritesi; ground-glass görünüm ve antenatal steroid bilgisi sorulur.",
+    "explanation": "Tip II pnömosit immatüritesi; ground-glass görünüm ve antenatal steroid bilgisi sorulur. Mekonyum aspirasyonu postmatürite ve mekonyumlu sıvı ile ayrılır.",
+    "tusTip": "Tip II pnömosit immatüritesi; ground-glass görünüm ve antenatal steroid bilgisi sorulur. Mekonyum aspirasyonu postmatürite ve mekonyumlu sıvı ile ayrılır.",
+    "differentialNote": "Mekonyum aspirasyonu postmatürite ve mekonyumlu sıvı ile ayrılır.",
+    "keywords": [
+      "prematüre",
+      "surfaktan eksikliği",
+      "ground-glass",
+      "tip II pnömosit"
+    ]
+  },
+  "tus-pearl-pediatrics-088-extra": {
+    "front": "Neonatal RDS riskini azaltmak için anneye ne verilebilir?",
+    "back": "Antenatal kortikosteroid. Tip II pnömosit immatüritesi; ground-glass görünüm ve antenatal steroid bilgisi sorulur.",
+    "answer": "Antenatal kortikosteroid. Tip II pnömosit immatüritesi; ground-glass görünüm ve antenatal steroid bilgisi sorulur.",
+    "explanation": "Tip II pnömosit immatüritesi; ground-glass görünüm ve antenatal steroid bilgisi sorulur. Mekonyum aspirasyonu postmatürite ve mekonyumlu sıvı ile ayrılır.",
+    "tusTip": "Neonatal RDS karıştırıldığında cevabı netleştiren karşılaştırma: Mekonyum aspirasyonu postmatürite ve mekonyumlu sıvı ile ayrılır.",
+    "differentialNote": "Mekonyum aspirasyonu postmatürite ve mekonyumlu sıvı ile ayrılır.",
+    "keywords": [
+      "prematüre",
+      "surfaktan eksikliği",
+      "ground-glass",
+      "tip II pnömosit"
+    ]
+  },
+  "tus-pearl-pediatrics-089-spot": {
+    "front": "Prematüre bebekte beslenme intoleransı, karın distansiyonu ve pnömatozis intestinalis ne düşündürür?",
+    "back": "Nekrotizan enterokolit. Prematürite ve enteral beslenme sonrası intestinal iskemi/enflamasyon ile sorulur.",
+    "answer": "Nekrotizan enterokolit. Prematürite ve enteral beslenme sonrası intestinal iskemi/enflamasyon ile sorulur.",
+    "explanation": "Prematürite ve enteral beslenme sonrası intestinal iskemi/enflamasyon ile sorulur. İnvajinasyon daha büyük bebekte kolik ağrı ve target sign ile gelir.",
+    "tusTip": "Prematürite ve enteral beslenme sonrası intestinal iskemi/enflamasyon ile sorulur. İnvajinasyon daha büyük bebekte kolik ağrı ve target sign ile gelir.",
+    "differentialNote": "İnvajinasyon daha büyük bebekte kolik ağrı ve target sign ile gelir.",
+    "keywords": [
+      "prematüre",
+      "karın distansiyonu",
+      "kanlı dışkı",
+      "pnömatozis"
+    ]
+  },
+  "tus-pearl-pediatrics-089-extra": {
+    "front": "NEK’te tipik grafi bulgusu hangisidir?",
+    "back": "Pnömatozis intestinalis. Prematürite ve enteral beslenme sonrası intestinal iskemi/enflamasyon ile sorulur.",
+    "answer": "Pnömatozis intestinalis. Prematürite ve enteral beslenme sonrası intestinal iskemi/enflamasyon ile sorulur.",
+    "explanation": "Prematürite ve enteral beslenme sonrası intestinal iskemi/enflamasyon ile sorulur. İnvajinasyon daha büyük bebekte kolik ağrı ve target sign ile gelir.",
+    "tusTip": "NEK kartında ayırıcı değer taşıyan nokta: İnvajinasyon daha büyük bebekte kolik ağrı ve target sign ile gelir.",
+    "differentialNote": "İnvajinasyon daha büyük bebekte kolik ağrı ve target sign ile gelir.",
+    "keywords": [
+      "prematüre",
+      "karın distansiyonu",
+      "kanlı dışkı",
+      "pnömatozis Genel Cerrahi (general-surgery)"
+    ]
+  },
+  "tus-pearl-general-surgery-090-spot": {
+    "front": "Periumbilikal başlayıp sağ alt kadrana göç eden ağrı ne düşündürür?",
+    "back": "Akut apandisit. Visseral ağrı başlangıçta periumbilikal, parietal irritasyonla sağ alt kadrana lokalize olur.",
+    "answer": "Akut apandisit. Visseral ağrı başlangıçta periumbilikal, parietal irritasyonla sağ alt kadrana lokalize olur.",
+    "explanation": "Visseral ağrı başlangıçta periumbilikal, parietal irritasyonla sağ alt kadrana lokalize olur. Gastroenteritte yaygın kramp ve diyare öne çıkar; migrasyon apandisit lehinedir.",
+    "tusTip": "Visseral ağrı başlangıçta periumbilikal, parietal irritasyonla sağ alt kadrana lokalize olur. Gastroenteritte yaygın kramp ve diyare öne çıkar; migrasyon apandisit lehinedir.",
+    "differentialNote": "Gastroenteritte yaygın kramp ve diyare öne çıkar; migrasyon apandisit lehinedir.",
+    "keywords": [
+      "periumbilikal ağrı",
+      "sağ alt kadran",
+      "rebound",
+      "iştahsızlık"
+    ]
+  },
+  "tus-pearl-general-surgery-090-extra": {
+    "front": "Apandisitte görüntüleme için çocuk/gebede öncelikli yöntem nedir?",
+    "back": "Çocuk ve gebede ultrasonografi önceliklidir. Visseral ağrı başlangıçta periumbilikal, parietal irritasyonla sağ alt kadrana lokalize olur.",
+    "answer": "Çocuk ve gebede ultrasonografi önceliklidir. Visseral ağrı başlangıçta periumbilikal, parietal irritasyonla sağ alt kadrana lokalize olur.",
+    "explanation": "Visseral ağrı başlangıçta periumbilikal, parietal irritasyonla sağ alt kadrana lokalize olur. Gastroenteritte yaygın kramp ve diyare öne çıkar; migrasyon apandisit lehinedir.",
+    "tusTip": "Akut apandisit için sınavda hedeflenen ayrım genellikle şudur: Gastroenteritte yaygın kramp ve diyare öne çıkar; migrasyon apandisit lehinedir.",
+    "differentialNote": "Gastroenteritte yaygın kramp ve diyare öne çıkar; migrasyon apandisit lehinedir.",
+    "keywords": [
+      "periumbilikal ağrı",
+      "sağ alt kadran",
+      "rebound",
+      "iştahsızlık"
+    ]
+  },
+  "tus-pearl-general-surgery-091-spot": {
+    "front": "Ateş, sarılık ve sağ üst kadran ağrısı triadı nedir?",
+    "back": "Charcot triadı; akut kolanjiti düşündürür. Biliyer obstrüksiyon ve enfeksiyon birlikteliğinde ERCP gerekebilir.",
+    "answer": "Charcot triadı; akut kolanjiti düşündürür. Biliyer obstrüksiyon ve enfeksiyon birlikteliğinde ERCP gerekebilir.",
+    "explanation": "Biliyer obstrüksiyon ve enfeksiyon birlikteliğinde ERCP gerekebilir. Akut kolesistit sarılık olmadan Murphy pozitifliğiyle gelebilir; sarılık kolanjit lehinedir.",
+    "tusTip": "Biliyer obstrüksiyon ve enfeksiyon birlikteliğinde ERCP gerekebilir. Akut kolesistit sarılık olmadan Murphy pozitifliğiyle gelebilir; sarılık kolanjit lehinedir.",
+    "differentialNote": "Akut kolesistit sarılık olmadan Murphy pozitifliğiyle gelebilir; sarılık kolanjit lehinedir.",
+    "keywords": [
+      "ateş",
+      "sarılık",
+      "sağ üst kadran ağrısı",
+      "Charcot"
+    ]
+  },
+  "tus-pearl-general-surgery-091-extra": {
+    "front": "Akut kolanjitte dekompresyon için kullanılan yöntem nedir?",
+    "back": "ERCP. Biliyer obstrüksiyon ve enfeksiyon birlikteliğinde ERCP gerekebilir.",
+    "answer": "ERCP. Biliyer obstrüksiyon ve enfeksiyon birlikteliğinde ERCP gerekebilir.",
+    "explanation": "Biliyer obstrüksiyon ve enfeksiyon birlikteliğinde ERCP gerekebilir. Akut kolesistit sarılık olmadan Murphy pozitifliğiyle gelebilir; sarılık kolanjit lehinedir.",
+    "tusTip": "Akut kolanjit karıştırıldığında cevabı netleştiren karşılaştırma: Akut kolesistit sarılık olmadan Murphy pozitifliğiyle gelebilir; sarılık kolanjit lehinedir.",
+    "differentialNote": "Akut kolesistit sarılık olmadan Murphy pozitifliğiyle gelebilir; sarılık kolanjit lehinedir.",
+    "keywords": [
+      "ateş",
+      "sarılık",
+      "sağ üst kadran ağrısı",
+      "Charcot"
+    ]
+  },
+  "tus-pearl-general-surgery-092-spot": {
+    "front": "Sağ üst kadran ağrısı ve Murphy pozitifliği hangi tabloyu düşündürür?",
+    "back": "Akut kolesistit. Sistik kanal obstrüksiyonu ve safra taşı ilişkisi klasik sorulur.",
+    "answer": "Akut kolesistit. Sistik kanal obstrüksiyonu ve safra taşı ilişkisi klasik sorulur.",
+    "explanation": "Sistik kanal obstrüksiyonu ve safra taşı ilişkisi klasik sorulur. Kolanjitte sarılık ve Charcot triadı; kolesistitte Murphy öne çıkar.",
+    "tusTip": "Sistik kanal obstrüksiyonu ve safra taşı ilişkisi klasik sorulur. Kolanjitte sarılık ve Charcot triadı; kolesistitte Murphy öne çıkar.",
+    "differentialNote": "Kolanjitte sarılık ve Charcot triadı; kolesistitte Murphy öne çıkar.",
+    "keywords": [
+      "RUQ ağrı",
+      "Murphy",
+      "safra taşı",
+      "ateş"
+    ]
+  },
+  "tus-pearl-general-surgery-092-extra": {
+    "front": "Akut kolesistitte ilk tercih edilen görüntüleme yöntemi hangisidir?",
+    "back": "Sağ üst kadran ultrasonografisi. Sistik kanal obstrüksiyonu ve safra taşı ilişkisi klasik sorulur.",
+    "answer": "Sağ üst kadran ultrasonografisi. Sistik kanal obstrüksiyonu ve safra taşı ilişkisi klasik sorulur.",
+    "explanation": "Sistik kanal obstrüksiyonu ve safra taşı ilişkisi klasik sorulur. Kolanjitte sarılık ve Charcot triadı; kolesistitte Murphy öne çıkar.",
+    "tusTip": "Akut kolesistit kartında ayırıcı değer taşıyan nokta: Kolanjitte sarılık ve Charcot triadı; kolesistitte Murphy öne çıkar.",
+    "differentialNote": "Kolanjitte sarılık ve Charcot triadı; kolesistitte Murphy öne çıkar.",
+    "keywords": [
+      "RUQ ağrı",
+      "Murphy",
+      "safra taşı",
+      "ateş"
+    ]
+  },
+  "tus-pearl-general-surgery-093-spot": {
+    "front": "Travma sonrası pasif germe ile şiddetli ağrı hangi acil cerrahi tabloyu düşündürür?",
+    "back": "Kompartman sendromu. Ağrı erken ve en duyarlı bulgudur; geç bulguları beklemek iskemiye yol açar.",
+    "answer": "Kompartman sendromu. Ağrı erken ve en duyarlı bulgudur; geç bulguları beklemek iskemiye yol açar.",
+    "explanation": "Ağrı erken ve en duyarlı bulgudur; geç bulguları beklemek iskemiye yol açar. Nabız kaybı geç olabilir; nabız var diye kompartman sendromu dışlanmaz.",
+    "tusTip": "Ağrı erken ve en duyarlı bulgudur; geç bulguları beklemek iskemiye yol açar. Nabız kaybı geç olabilir; nabız var diye kompartman sendromu dışlanmaz.",
+    "differentialNote": "Nabız kaybı geç olabilir; nabız var diye kompartman sendromu dışlanmaz.",
+    "keywords": [
+      "pasif germe ağrısı",
+      "travma",
+      "gergin kompartman",
+      "parestezi"
+    ]
+  },
+  "tus-pearl-general-surgery-093-extra": {
+    "front": "Kompartman sendromunda kesin tedavi basamağı nedir?",
+    "back": "Acil fasyotomi. Ağrı erken ve en duyarlı bulgudur; geç bulguları beklemek iskemiye yol açar.",
+    "answer": "Acil fasyotomi. Ağrı erken ve en duyarlı bulgudur; geç bulguları beklemek iskemiye yol açar.",
+    "explanation": "Ağrı erken ve en duyarlı bulgudur; geç bulguları beklemek iskemiye yol açar. Nabız kaybı geç olabilir; nabız var diye kompartman sendromu dışlanmaz.",
+    "tusTip": "Kompartman sendromu için sınavda hedeflenen ayrım genellikle şudur: Nabız kaybı geç olabilir; nabız var diye kompartman sendromu dışlanmaz.",
+    "differentialNote": "Nabız kaybı geç olabilir; nabız var diye kompartman sendromu dışlanmaz.",
+    "keywords": [
+      "pasif germe ağrısı",
+      "travma",
+      "gergin kompartman",
+      "parestezi"
+    ]
+  },
+  "tus-pearl-general-surgery-094-spot": {
+    "front": "Yaşlı erkek, hipotansiyon, sırt/karın ağrısı ve pulsatif kitle ne düşündürür?",
+    "back": "Rüptüre abdominal aort anevrizması. Hemodinamik instabilitede görüntüleme beklenmeden acil cerrahi yaklaşım gerekebilir.",
+    "answer": "Rüptüre abdominal aort anevrizması. Hemodinamik instabilitede görüntüleme beklenmeden acil cerrahi yaklaşım gerekebilir.",
+    "explanation": "Hemodinamik instabilitede görüntüleme beklenmeden acil cerrahi yaklaşım gerekebilir. Renal kolik ağrı yapabilir ama şok ve pulsatif kitle AAA lehinedir.",
+    "tusTip": "Hemodinamik instabilitede görüntüleme beklenmeden acil cerrahi yaklaşım gerekebilir. Renal kolik ağrı yapabilir ama şok ve pulsatif kitle AAA lehinedir.",
+    "differentialNote": "Renal kolik ağrı yapabilir ama şok ve pulsatif kitle AAA lehinedir.",
+    "keywords": [
+      "hipotansiyon",
+      "sırt ağrısı",
+      "pulsatif kitle",
+      "yaşlı erkek"
+    ]
+  },
+  "tus-pearl-general-surgery-094-extra": {
+    "front": "AAA taraması hangi grupta klasik olarak önerilir?",
+    "back": "Sigara öyküsü olan 65-75 yaş erkeklerde tek sefer USG.",
+    "answer": "Sigara öyküsü olan 65-75 yaş erkeklerde tek sefer USG.",
+    "explanation": "Hemodinamik instabilitede görüntüleme beklenmeden acil cerrahi yaklaşım gerekebilir. Renal kolik ağrı yapabilir ama şok ve pulsatif kitle AAA lehinedir.",
+    "tusTip": "Rüptüre AAA karıştırıldığında cevabı netleştiren karşılaştırma: Renal kolik ağrı yapabilir ama şok ve pulsatif kitle AAA lehinedir.",
+    "differentialNote": "Renal kolik ağrı yapabilir ama şok ve pulsatif kitle AAA lehinedir.",
+    "keywords": [
+      "hipotansiyon",
+      "sırt ağrısı",
+      "pulsatif kitle",
+      "yaşlı erkek"
+    ]
+  },
+  "tus-pearl-general-surgery-095-spot": {
+    "front": "Genç kadında hareketli, düzgün sınırlı, lastik kıvamlı meme kitlesi ne düşündürür?",
+    "back": "Fibroadenom. Benign meme kitlesidir; genç yaş ve hareketlilik ayırt ettirir.",
+    "answer": "Fibroadenom. Benign meme kitlesidir; genç yaş ve hareketlilik ayırt ettirir.",
+    "explanation": "Benign meme kitlesidir; genç yaş ve hareketlilik ayırt ettirir. Meme kanseri sert, fikse ve düzensiz sınırlı olabilir; yaş/risk ve fizik bulgu ayrımı sağlar.",
+    "tusTip": "Benign meme kitlesidir; genç yaş ve hareketlilik ayırt ettirir. Meme kanseri sert, fikse ve düzensiz sınırlı olabilir; yaş/risk ve fizik bulgu ayrımı sağlar.",
+    "differentialNote": "Meme kanseri sert, fikse ve düzensiz sınırlı olabilir; yaş/risk ve fizik bulgu ayrımı sağlar.",
+    "keywords": [
+      "genç kadın",
+      "hareketli kitle",
+      "düzgün sınır",
+      "lastik kıvam"
+    ]
+  },
+  "tus-pearl-general-surgery-095-extra": {
+    "front": "Fibroadenom hangi stromal-epitelyal benign tümördür?",
+    "back": "Benign fibroepitelyal meme tümörü. Benign meme kitlesidir; genç yaş ve hareketlilik ayırt ettirir.",
+    "answer": "Benign fibroepitelyal meme tümörü. Benign meme kitlesidir; genç yaş ve hareketlilik ayırt ettirir.",
+    "explanation": "Benign meme kitlesidir; genç yaş ve hareketlilik ayırt ettirir. Meme kanseri sert, fikse ve düzensiz sınırlı olabilir; yaş/risk ve fizik bulgu ayrımı sağlar.",
+    "tusTip": "Fibroadenom kartında ayırıcı değer taşıyan nokta: Meme kanseri sert, fikse ve düzensiz sınırlı olabilir; yaş/risk ve fizik bulgu ayrımı sağlar.",
+    "differentialNote": "Meme kanseri sert, fikse ve düzensiz sınırlı olabilir; yaş/risk ve fizik bulgu ayrımı sağlar.",
+    "keywords": [
+      "genç kadın",
+      "hareketli kitle",
+      "düzgün sınır",
+      "lastik kıvam"
+    ]
+  },
+  "tus-pearl-general-surgery-096-spot": {
+    "front": "Direkt inguinal herni inferior epigastrik damarlara göre nereden çıkar?",
+    "back": "Medialden. Direkt herni Hesselbach üçgeninden, indirekt herni lateralden ve derin inguinal halkadan çıkar.",
+    "answer": "Medialden. Direkt herni Hesselbach üçgeninden, indirekt herni lateralden ve derin inguinal halkadan çıkar.",
+    "explanation": "Direkt herni Hesselbach üçgeninden, indirekt herni lateralden ve derin inguinal halkadan çıkar. İndirekt herni lateralden çıkar ve skrotuma inme eğilimi daha fazladır.",
+    "tusTip": "Direkt herni Hesselbach üçgeninden, indirekt herni lateralden ve derin inguinal halkadan çıkar. İndirekt herni lateralden çıkar ve skrotuma inme eğilimi daha fazladır.",
+    "differentialNote": "İndirekt herni lateralden çıkar ve skrotuma inme eğilimi daha fazladır.",
+    "keywords": [
+      "direkt herni",
+      "medial",
+      "Hesselbach",
+      "inferior epigastrik"
+    ]
+  },
+  "tus-pearl-general-surgery-096-extra": {
+    "front": "İndirekt inguinal herni inferior epigastrik damarlara göre nereden çıkar?",
+    "back": "Lateralden. Direkt herni Hesselbach üçgeninden, indirekt herni lateralden ve derin inguinal halkadan çıkar.",
+    "answer": "Lateralden. Direkt herni Hesselbach üçgeninden, indirekt herni lateralden ve derin inguinal halkadan çıkar.",
+    "explanation": "Direkt herni Hesselbach üçgeninden, indirekt herni lateralden ve derin inguinal halkadan çıkar. İndirekt herni lateralden çıkar ve skrotuma inme eğilimi daha fazladır.",
+    "tusTip": "İnguinal herni için sınavda hedeflenen ayrım genellikle şudur: İndirekt herni lateralden çıkar ve skrotuma inme eğilimi daha fazladır.",
+    "differentialNote": "İndirekt herni lateralden çıkar ve skrotuma inme eğilimi daha fazladır.",
+    "keywords": [
+      "direkt herni",
+      "medial",
+      "Hesselbach",
+      "inferior epigastrik"
+    ]
+  },
+  "tus-pearl-general-surgery-097-spot": {
+    "front": "Travma hastasında ilk değerlendirme hangi sırayla yapılır?",
+    "back": "ABCDE yaklaşımı. Airway, Breathing, Circulation, Disability, Exposure travma yönetiminin temel sırasıdır.",
+    "answer": "ABCDE yaklaşımı. Airway, Breathing, Circulation, Disability, Exposure travma yönetiminin temel sırasıdır.",
+    "explanation": "Airway, Breathing, Circulation, Disability, Exposure travma yönetiminin temel sırasıdır. Detaylı öykü ve görüntüleme primer survey tamamlanmadan öncelik değildir.",
+    "tusTip": "Airway, Breathing, Circulation, Disability, Exposure travma yönetiminin temel sırasıdır. Detaylı öykü ve görüntüleme primer survey tamamlanmadan öncelik değildir.",
+    "differentialNote": "Detaylı öykü ve görüntüleme primer survey tamamlanmadan öncelik değildir.",
+    "keywords": [
+      "travma",
+      "airway",
+      "breathing",
+      "circulation",
+      "ABCDE"
+    ]
+  },
+  "tus-pearl-general-surgery-097-extra": {
+    "front": "ATLS’de masif dış kanama hangi basamakta kontrol edilir?",
+    "back": "Circulation basamağında. Airway, Breathing, Circulation, Disability, Exposure travma yönetiminin temel sırasıdır.",
+    "answer": "Circulation basamağında. Airway, Breathing, Circulation, Disability, Exposure travma yönetiminin temel sırasıdır.",
+    "explanation": "Airway, Breathing, Circulation, Disability, Exposure travma yönetiminin temel sırasıdır. Detaylı öykü ve görüntüleme primer survey tamamlanmadan öncelik değildir.",
+    "tusTip": "ATLS önceliği karıştırıldığında cevabı netleştiren karşılaştırma: Detaylı öykü ve görüntüleme primer survey tamamlanmadan öncelik değildir.",
+    "differentialNote": "Detaylı öykü ve görüntüleme primer survey tamamlanmadan öncelik değildir.",
+    "keywords": [
+      "travma",
+      "airway",
+      "breathing",
+      "circulation",
+      "ABCDE"
+    ]
+  },
+  "tus-pearl-general-surgery-098-spot": {
+    "front": "Tiroid nodülünde malignite riskini değerlendirmede temel ilk görüntüleme hangisidir?",
+    "back": "Tiroid ultrasonografisi. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
+    "answer": "Tiroid ultrasonografisi. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
+    "explanation": "USG özelliklerine göre ince iğne aspirasyon kararı verilir. Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
+    "tusTip": "USG özelliklerine göre ince iğne aspirasyon kararı verilir. Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
+    "differentialNote": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
+    "keywords": [
+      "tiroid nodülü",
+      "USG",
+      "FNA",
+      "hipoekoik/mikrokalsifikasyon"
+    ]
+  },
+  "tus-pearl-general-surgery-098-extra": {
+    "front": "Tiroid nodülünde düşük TSH varsa hangi test düşünülür?",
+    "back": "Tiroid sintigrafisi. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
+    "answer": "Tiroid sintigrafisi. USG özelliklerine göre ince iğne aspirasyon kararı verilir.",
+    "explanation": "USG özelliklerine göre ince iğne aspirasyon kararı verilir. Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
+    "tusTip": "Tiroid nodülü kartında ayırıcı değer taşıyan nokta: Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
+    "differentialNote": "Tiroid sintigrafisi düşük TSH varsa sıcak-soğuk nodül ayrımı için kullanılır; her nodülde ilk test değildir.",
+    "keywords": [
+      "tiroid nodülü",
+      "USG",
+      "FNA",
+      "hipoekoik/mikrokalsifikasyon Kadın Hastalıkları ve Doğum (obstetrics-gynecology)"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-099-spot": {
+    "front": "Amenore, karın ağrısı ve vajinal kanama triadı hangi acili düşündürür?",
+    "back": "Ektopik gebelik. β-hCG ve transvajinal USG ile değerlendirilir; rüptürde şok gelişebilir.",
+    "answer": "Ektopik gebelik. β-hCG ve transvajinal USG ile değerlendirilir; rüptürde şok gelişebilir.",
+    "explanation": "β-hCG ve transvajinal USG ile değerlendirilir; rüptürde şok gelişebilir. Düşük de kanama yapabilir; intrauterin gebelik görülmemesi ve risk faktörleri ektopik lehinedir.",
+    "tusTip": "β-hCG ve transvajinal USG ile değerlendirilir; rüptürde şok gelişebilir. Düşük de kanama yapabilir; intrauterin gebelik görülmemesi ve risk faktörleri ektopik lehinedir.",
+    "differentialNote": "Düşük de kanama yapabilir; intrauterin gebelik görülmemesi ve risk faktörleri ektopik lehinedir.",
+    "keywords": [
+      "amenore",
+      "karın ağrısı",
+      "vajinal kanama",
+      "β-hCG"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-099-extra": {
+    "front": "Ektopik gebelikte stabil uygun hastada medikal tedavi seçeneği nedir?",
+    "back": "Metotreksat. β-hCG ve transvajinal USG ile değerlendirilir; rüptürde şok gelişebilir.",
+    "answer": "Metotreksat. β-hCG ve transvajinal USG ile değerlendirilir; rüptürde şok gelişebilir.",
+    "explanation": "β-hCG ve transvajinal USG ile değerlendirilir; rüptürde şok gelişebilir. Düşük de kanama yapabilir; intrauterin gebelik görülmemesi ve risk faktörleri ektopik lehinedir.",
+    "tusTip": "Ektopik gebelik için sınavda hedeflenen ayrım genellikle şudur: Düşük de kanama yapabilir; intrauterin gebelik görülmemesi ve risk faktörleri ektopik lehinedir.",
+    "differentialNote": "Düşük de kanama yapabilir; intrauterin gebelik görülmemesi ve risk faktörleri ektopik lehinedir.",
+    "keywords": [
+      "amenore",
+      "karın ağrısı",
+      "vajinal kanama",
+      "β-hCG"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-100-spot": {
+    "front": "20. gebelik haftasından sonra hipertansiyon ve proteinüri ne düşündürür?",
+    "back": "Preeklampsi. Şiddet bulguları nörolojik semptom, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ile değerlendirilir.",
+    "answer": "Preeklampsi. Şiddet bulguları nörolojik semptom, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ile değerlendirilir.",
+    "explanation": "Şiddet bulguları nörolojik semptom, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ile değerlendirilir. Kronik hipertansiyon 20. haftadan önce de vardır; zamanlama önemlidir.",
+    "tusTip": "Şiddet bulguları nörolojik semptom, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ile değerlendirilir. Kronik hipertansiyon 20. haftadan önce de vardır; zamanlama önemlidir.",
+    "differentialNote": "Kronik hipertansiyon 20. haftadan önce de vardır; zamanlama önemlidir.",
+    "keywords": [
+      ">20 hafta",
+      "hipertansiyon",
+      "proteinüri",
+      "ödem"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-100-extra": {
+    "front": "Preeklampsinin kesin tedavisi nedir?",
+    "back": "Doğum/gebeliğin sonlandırılması; zamanlama anne-fetal duruma göre belirlenir.",
+    "answer": "Doğum/gebeliğin sonlandırılması; zamanlama anne-fetal duruma göre belirlenir.",
+    "explanation": "Şiddet bulguları nörolojik semptom, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ile değerlendirilir. Kronik hipertansiyon 20. haftadan önce de vardır; zamanlama önemlidir.",
+    "tusTip": "Preeklampsi karıştırıldığında cevabı netleştiren karşılaştırma: Kronik hipertansiyon 20. haftadan önce de vardır; zamanlama önemlidir.",
+    "differentialNote": "Kronik hipertansiyon 20. haftadan önce de vardır; zamanlama önemlidir.",
+    "keywords": [
+      ">20 hafta",
+      "hipertansiyon",
+      "proteinüri",
+      "ödem"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-101-spot": {
+    "front": "Preeklampsi zemininde nöbet gelişirse tanı nedir?",
+    "back": "Eklampsi. Nöbet profilaksisi ve tedavisinde magnezyum sülfat kullanılır.",
+    "answer": "Eklampsi. Nöbet profilaksisi ve tedavisinde magnezyum sülfat kullanılır.",
+    "explanation": "Nöbet profilaksisi ve tedavisinde magnezyum sülfat kullanılır. Diazepam nöbeti durdurabilir ama eklampside temel ilaç magnezyum sülfattır.",
+    "tusTip": "Nöbet profilaksisi ve tedavisinde magnezyum sülfat kullanılır. Diazepam nöbeti durdurabilir ama eklampside temel ilaç magnezyum sülfattır.",
+    "differentialNote": "Diazepam nöbeti durdurabilir ama eklampside temel ilaç magnezyum sülfattır.",
+    "keywords": [
+      "preeklampsi",
+      "nöbet",
+      "MgSO4",
+      "hipertansiyon"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-101-extra": {
+    "front": "Magnezyum sülfat toksisitesinde antidot nedir?",
+    "back": "Kalsiyum glukonat. Nöbet profilaksisi ve tedavisinde magnezyum sülfat kullanılır.",
+    "answer": "Kalsiyum glukonat. Nöbet profilaksisi ve tedavisinde magnezyum sülfat kullanılır.",
+    "explanation": "Nöbet profilaksisi ve tedavisinde magnezyum sülfat kullanılır. Diazepam nöbeti durdurabilir ama eklampside temel ilaç magnezyum sülfattır.",
+    "tusTip": "Eklampsi kartında ayırıcı değer taşıyan nokta: Diazepam nöbeti durdurabilir ama eklampside temel ilaç magnezyum sülfattır.",
+    "differentialNote": "Diazepam nöbeti durdurabilir ama eklampside temel ilaç magnezyum sülfattır.",
+    "keywords": [
+      "preeklampsi",
+      "nöbet",
+      "MgSO4",
+      "hipertansiyon"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-102-spot": {
+    "front": "Ağrısız vajinal kanama ve plasentanın servikal osu kapatması hangi tanıdır?",
+    "back": "Plasenta previa. Vajinal muayene kanamayı artırabileceği için USG ile yerleşim değerlendirilir.",
+    "answer": "Plasenta previa. Vajinal muayene kanamayı artırabileceği için USG ile yerleşim değerlendirilir.",
+    "explanation": "Vajinal muayene kanamayı artırabileceği için USG ile yerleşim değerlendirilir. Ablasyo plasenta ağrılı kanama ve hassas uterus ile ayrılır.",
+    "tusTip": "Vajinal muayene kanamayı artırabileceği için USG ile yerleşim değerlendirilir. Ablasyo plasenta ağrılı kanama ve hassas uterus ile ayrılır.",
+    "differentialNote": "Ablasyo plasenta ağrılı kanama ve hassas uterus ile ayrılır.",
+    "keywords": [
+      "ağrısız kanama",
+      "plasenta previa",
+      "servikal os",
+      "USG"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-102-extra": {
+    "front": "Plasenta previa şüphesinde hangi muayeneden kaçınılır?",
+    "back": "Dijital vajinal muayene. Vajinal muayene kanamayı artırabileceği için USG ile yerleşim değerlendirilir.",
+    "answer": "Dijital vajinal muayene. Vajinal muayene kanamayı artırabileceği için USG ile yerleşim değerlendirilir.",
+    "explanation": "Vajinal muayene kanamayı artırabileceği için USG ile yerleşim değerlendirilir. Ablasyo plasenta ağrılı kanama ve hassas uterus ile ayrılır.",
+    "tusTip": "Plasenta previa için sınavda hedeflenen ayrım genellikle şudur: Ablasyo plasenta ağrılı kanama ve hassas uterus ile ayrılır.",
+    "differentialNote": "Ablasyo plasenta ağrılı kanama ve hassas uterus ile ayrılır.",
+    "keywords": [
+      "ağrısız kanama",
+      "plasenta previa",
+      "servikal os",
+      "USG"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-103-spot": {
+    "front": "Ağrılı vajinal kanama, hassas/sert uterus ve fetal distres ne düşündürür?",
+    "back": "Ablasyo plasenta. Plasentanın erken ayrılması anne-fetal acildir.",
+    "answer": "Ablasyo plasenta. Plasentanın erken ayrılması anne-fetal acildir.",
+    "explanation": "Plasentanın erken ayrılması anne-fetal acildir. Previa ağrısız kanama ile; ablasyo ağrılı ve uterin hassasiyetle ayrılır.",
+    "tusTip": "Plasentanın erken ayrılması anne-fetal acildir. Previa ağrısız kanama ile; ablasyo ağrılı ve uterin hassasiyetle ayrılır.",
+    "differentialNote": "Previa ağrısız kanama ile; ablasyo ağrılı ve uterin hassasiyetle ayrılır.",
+    "keywords": [
+      "ağrılı kanama",
+      "sert uterus",
+      "fetal distres",
+      "hipertansiyon"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-103-extra": {
+    "front": "Ablasyo plasenta için önemli maternal risk faktörlerinden biri nedir?",
+    "back": "Hipertansiyon/preeklampsi. Plasentanın erken ayrılması anne-fetal acildir.",
+    "answer": "Hipertansiyon/preeklampsi. Plasentanın erken ayrılması anne-fetal acildir.",
+    "explanation": "Plasentanın erken ayrılması anne-fetal acildir. Previa ağrısız kanama ile; ablasyo ağrılı ve uterin hassasiyetle ayrılır.",
+    "tusTip": "Ablasyo plasenta karıştırıldığında cevabı netleştiren karşılaştırma: Previa ağrısız kanama ile; ablasyo ağrılı ve uterin hassasiyetle ayrılır.",
+    "differentialNote": "Previa ağrısız kanama ile; ablasyo ağrılı ve uterin hassasiyetle ayrılır.",
+    "keywords": [
+      "ağrılı kanama",
+      "sert uterus",
+      "fetal distres",
+      "hipertansiyon"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-104-spot": {
+    "front": "Doğumda turtle sign görüldüğünde ilk manevra hangisidir?",
+    "back": "McRoberts manevrası ve suprapubik bası. Omuz distosisinde fundal bası yapılmaz; brakiyal pleksus yaralanması riski vardır.",
+    "answer": "McRoberts manevrası ve suprapubik bası. Omuz distosisinde fundal bası yapılmaz; brakiyal pleksus yaralanması riski vardır.",
+    "explanation": "Omuz distosisinde fundal bası yapılmaz; brakiyal pleksus yaralanması riski vardır. Fundal bası impaksiyonu artırabileceği için tuzaktır.",
+    "tusTip": "Omuz distosisinde fundal bası yapılmaz; brakiyal pleksus yaralanması riski vardır. Fundal bası impaksiyonu artırabileceği için tuzaktır.",
+    "differentialNote": "Fundal bası impaksiyonu artırabileceği için tuzaktır.",
+    "keywords": [
+      "turtle sign",
+      "omuz distosisi",
+      "McRoberts",
+      "suprapubik bası"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-104-extra": {
+    "front": "Omuz distosisinde kaçınılması gereken bası hangisidir?",
+    "back": "Fundal bası. Omuz distosisinde fundal bası yapılmaz; brakiyal pleksus yaralanması riski vardır.",
+    "answer": "Fundal bası. Omuz distosisinde fundal bası yapılmaz; brakiyal pleksus yaralanması riski vardır.",
+    "explanation": "Omuz distosisinde fundal bası yapılmaz; brakiyal pleksus yaralanması riski vardır. Fundal bası impaksiyonu artırabileceği için tuzaktır.",
+    "tusTip": "Omuz distosisi kartında ayırıcı değer taşıyan nokta: Fundal bası impaksiyonu artırabileceği için tuzaktır.",
+    "differentialNote": "Fundal bası impaksiyonu artırabileceği için tuzaktır.",
+    "keywords": [
+      "turtle sign",
+      "omuz distosisi",
+      "McRoberts",
+      "suprapubik bası"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-105-spot": {
+    "front": "Siklik pelvik ağrı, disparoni ve infertilite hangi hastalığı düşündürür?",
+    "back": "Endometriozis. Ektopik endometrial doku; over endometrioması ve laparoskopi bilgisi sorulur.",
+    "answer": "Endometriozis. Ektopik endometrial doku; over endometrioması ve laparoskopi bilgisi sorulur.",
+    "explanation": "Ektopik endometrial doku; over endometrioması ve laparoskopi bilgisi sorulur. PID ateş ve servikal hareket hassasiyeti ile daha akut enfeksiyöz tablodur.",
+    "tusTip": "Ektopik endometrial doku; over endometrioması ve laparoskopi bilgisi sorulur. PID ateş ve servikal hareket hassasiyeti ile daha akut enfeksiyöz tablodur.",
+    "differentialNote": "PID ateş ve servikal hareket hassasiyeti ile daha akut enfeksiyöz tablodur.",
+    "keywords": [
+      "siklik ağrı",
+      "disparoni",
+      "infertilite",
+      "endometrioma"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-105-extra": {
+    "front": "Endometrioziste overde görülen kist için kullanılan ifade nedir?",
+    "back": "Çikolata kisti/endometrioma. Ektopik endometrial doku; over endometrioması ve laparoskopi bilgisi sorulur.",
+    "answer": "Çikolata kisti/endometrioma. Ektopik endometrial doku; over endometrioması ve laparoskopi bilgisi sorulur.",
+    "explanation": "Ektopik endometrial doku; over endometrioması ve laparoskopi bilgisi sorulur. PID ateş ve servikal hareket hassasiyeti ile daha akut enfeksiyöz tablodur.",
+    "tusTip": "Endometriozis için sınavda hedeflenen ayrım genellikle şudur: PID ateş ve servikal hareket hassasiyeti ile daha akut enfeksiyöz tablodur.",
+    "differentialNote": "PID ateş ve servikal hareket hassasiyeti ile daha akut enfeksiyöz tablodur.",
+    "keywords": [
+      "siklik ağrı",
+      "disparoni",
+      "infertilite",
+      "endometrioma"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-106-spot": {
+    "front": "Oligo/anovulasyon, hiperandrojenizm ve polikistik over görünümü hangi sendromdur?",
+    "back": "Polikistik over sendromu. İnsülin direnci, hirsutizm ve infertilite ile sorulur.",
+    "answer": "Polikistik over sendromu. İnsülin direnci, hirsutizm ve infertilite ile sorulur.",
+    "explanation": "İnsülin direnci, hirsutizm ve infertilite ile sorulur. Adrenal tümörde hızlı virilizasyon ve çok yüksek androjenler beklenir; PCOS daha kroniktir.",
+    "tusTip": "İnsülin direnci, hirsutizm ve infertilite ile sorulur. Adrenal tümörde hızlı virilizasyon ve çok yüksek androjenler beklenir; PCOS daha kroniktir.",
+    "differentialNote": "Adrenal tümörde hızlı virilizasyon ve çok yüksek androjenler beklenir; PCOS daha kroniktir.",
+    "keywords": [
+      "oligomenore",
+      "hirsutizm",
+      "insülin direnci",
+      "polikistik over"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-106-extra": {
+    "front": "PCOS’ta LH/FSH oranı genellikle nasıl değişir?",
+    "back": "LH/FSH oranı artmış olabilir. İnsülin direnci, hirsutizm ve infertilite ile sorulur.",
+    "answer": "LH/FSH oranı artmış olabilir. İnsülin direnci, hirsutizm ve infertilite ile sorulur.",
+    "explanation": "İnsülin direnci, hirsutizm ve infertilite ile sorulur. Adrenal tümörde hızlı virilizasyon ve çok yüksek androjenler beklenir; PCOS daha kroniktir.",
+    "tusTip": "PCOS karıştırıldığında cevabı netleştiren karşılaştırma: Adrenal tümörde hızlı virilizasyon ve çok yüksek androjenler beklenir; PCOS daha kroniktir.",
+    "differentialNote": "Adrenal tümörde hızlı virilizasyon ve çok yüksek androjenler beklenir; PCOS daha kroniktir.",
+    "keywords": [
+      "oligomenore",
+      "hirsutizm",
+      "insülin direnci",
+      "polikistik over Küçük Stajlar (minor-rotations)"
+    ]
+  },
+  "tus-pearl-minor-rotations-107-spot": {
+    "front": "Ateş, davranış değişikliği, nöbet ve temporal lob tutulumu hangi ensefaliti düşündürür?",
+    "back": "HSV ensefaliti. Acil asiklovir başlanır; temporal lob nekrotizan ensefalit klasik ipucudur.",
+    "answer": "HSV ensefaliti. Acil asiklovir başlanır; temporal lob nekrotizan ensefalit klasik ipucudur.",
+    "explanation": "Acil asiklovir başlanır; temporal lob nekrotizan ensefalit klasik ipucudur. Bakteriyel menenjitte ense sertliği ve BOS paterni farklıdır; temporal lob HSV için yüksek verimdir.",
+    "tusTip": "Acil asiklovir başlanır; temporal lob nekrotizan ensefalit klasik ipucudur. Bakteriyel menenjitte ense sertliği ve BOS paterni farklıdır; temporal lob HSV için yüksek verimdir.",
+    "differentialNote": "Bakteriyel menenjitte ense sertliği ve BOS paterni farklıdır; temporal lob HSV için yüksek verimdir.",
+    "keywords": [
+      "ateş",
+      "davranış değişikliği",
+      "temporal lob",
+      "nöbet"
+    ]
+  },
+  "tus-pearl-minor-rotations-107-extra": {
+    "front": "HSV ensefalitinde ilk tedavi basamağı nedir?",
+    "back": "İntravenöz asiklovir. Acil asiklovir başlanır; temporal lob nekrotizan ensefalit klasik ipucudur.",
+    "answer": "İntravenöz asiklovir. Acil asiklovir başlanır; temporal lob nekrotizan ensefalit klasik ipucudur.",
+    "explanation": "Acil asiklovir başlanır; temporal lob nekrotizan ensefalit klasik ipucudur. Bakteriyel menenjitte ense sertliği ve BOS paterni farklıdır; temporal lob HSV için yüksek verimdir.",
+    "tusTip": "HSV ensefaliti kartında ayırıcı değer taşıyan nokta: Bakteriyel menenjitte ense sertliği ve BOS paterni farklıdır; temporal lob HSV için yüksek verimdir.",
+    "differentialNote": "Bakteriyel menenjitte ense sertliği ve BOS paterni farklıdır; temporal lob HSV için yüksek verimdir.",
+    "keywords": [
+      "ateş",
+      "davranış değişikliği",
+      "temporal lob",
+      "nöbet"
+    ]
+  },
+  "tus-pearl-minor-rotations-108-spot": {
+    "front": "Genç kadında internükleer oftalmopleji ve ataklarla seyreden nörolojik bulgular ne düşündürür?",
+    "back": "Multipl skleroz. MSS demiyelinizasyonu, oligoklonal bant ve zamanda-mekânda yayılım ile sorulur.",
+    "answer": "Multipl skleroz. MSS demiyelinizasyonu, oligoklonal bant ve zamanda-mekânda yayılım ile sorulur.",
+    "explanation": "MSS demiyelinizasyonu, oligoklonal bant ve zamanda-mekânda yayılım ile sorulur. Guillain-Barré periferik simetrik güçsüzlük ve arefleksi ile ayrılır.",
+    "tusTip": "MSS demiyelinizasyonu, oligoklonal bant ve zamanda-mekânda yayılım ile sorulur. Guillain-Barré periferik simetrik güçsüzlük ve arefleksi ile ayrılır.",
+    "differentialNote": "Guillain-Barré periferik simetrik güçsüzlük ve arefleksi ile ayrılır.",
+    "keywords": [
+      "genç kadın",
+      "atak",
+      "INO",
+      "oligoklonal bant"
+    ]
+  },
+  "tus-pearl-minor-rotations-108-extra": {
+    "front": "MS’te BOS’ta beklenen bulgu nedir?",
+    "back": "Oligoklonal IgG bantları. MSS demiyelinizasyonu, oligoklonal bant ve zamanda-mekânda yayılım ile sorulur.",
+    "answer": "Oligoklonal IgG bantları. MSS demiyelinizasyonu, oligoklonal bant ve zamanda-mekânda yayılım ile sorulur.",
+    "explanation": "MSS demiyelinizasyonu, oligoklonal bant ve zamanda-mekânda yayılım ile sorulur. Guillain-Barré periferik simetrik güçsüzlük ve arefleksi ile ayrılır.",
+    "tusTip": "Multipl skleroz için sınavda hedeflenen ayrım genellikle şudur: Guillain-Barré periferik simetrik güçsüzlük ve arefleksi ile ayrılır.",
+    "differentialNote": "Guillain-Barré periferik simetrik güçsüzlük ve arefleksi ile ayrılır.",
+    "keywords": [
+      "genç kadın",
+      "atak",
+      "INO",
+      "oligoklonal bant"
+    ]
+  },
+  "tus-pearl-minor-rotations-109-spot": {
+    "front": "Gün içinde artan pitoz ve diplopi hangi nöromüsküler hastalığı düşündürür?",
+    "back": "Myasthenia gravis. Asetilkolin reseptör antikoru ve timus ilişkisi yüksek verimdir.",
+    "answer": "Myasthenia gravis. Asetilkolin reseptör antikoru ve timus ilişkisi yüksek verimdir.",
+    "explanation": "Asetilkolin reseptör antikoru ve timus ilişkisi yüksek verimdir. Lambert-Eaton’da güç kullanım ile artabilir ve akciğer kanseri ilişkisi vardır.",
+    "tusTip": "Asetilkolin reseptör antikoru ve timus ilişkisi yüksek verimdir. Lambert-Eaton’da güç kullanım ile artabilir ve akciğer kanseri ilişkisi vardır.",
+    "differentialNote": "Lambert-Eaton’da güç kullanım ile artabilir ve akciğer kanseri ilişkisi vardır.",
+    "keywords": [
+      "pitoz",
+      "diplopi",
+      "yorulmakla artma",
+      "AChR antikoru"
+    ]
+  },
+  "tus-pearl-minor-rotations-109-extra": {
+    "front": "Myasthenia gravis tedavisinde semptomatik ilaç hangisidir?",
+    "back": "Piridostigmin. Asetilkolin reseptör antikoru ve timus ilişkisi yüksek verimdir.",
+    "answer": "Piridostigmin. Asetilkolin reseptör antikoru ve timus ilişkisi yüksek verimdir.",
+    "explanation": "Asetilkolin reseptör antikoru ve timus ilişkisi yüksek verimdir. Lambert-Eaton’da güç kullanım ile artabilir ve akciğer kanseri ilişkisi vardır.",
+    "tusTip": "Myasthenia gravis karıştırıldığında cevabı netleştiren karşılaştırma: Lambert-Eaton’da güç kullanım ile artabilir ve akciğer kanseri ilişkisi vardır.",
+    "differentialNote": "Lambert-Eaton’da güç kullanım ile artabilir ve akciğer kanseri ilişkisi vardır.",
+    "keywords": [
+      "pitoz",
+      "diplopi",
+      "yorulmakla artma",
+      "AChR antikoru"
+    ]
+  },
+  "tus-pearl-minor-rotations-110-spot": {
+    "front": "İstirahat tremoru, bradikinezi ve rijidite hangi bazal ganglion hastalığıdır?",
+    "back": "Parkinson hastalığı. Substantia nigra dopaminerjik nöron kaybı ve Lewy cisimcikleri ile sorulur.",
+    "answer": "Parkinson hastalığı. Substantia nigra dopaminerjik nöron kaybı ve Lewy cisimcikleri ile sorulur.",
+    "explanation": "Substantia nigra dopaminerjik nöron kaybı ve Lewy cisimcikleri ile sorulur. Esansiyel tremor aksiyon tremorudur; Parkinson tremoru istirahatte belirgindir.",
+    "tusTip": "Substantia nigra dopaminerjik nöron kaybı ve Lewy cisimcikleri ile sorulur. Esansiyel tremor aksiyon tremorudur; Parkinson tremoru istirahatte belirgindir.",
+    "differentialNote": "Esansiyel tremor aksiyon tremorudur; Parkinson tremoru istirahatte belirgindir.",
+    "keywords": [
+      "istirahat tremoru",
+      "bradikinezi",
+      "rijidite",
+      "Lewy cismi"
+    ]
+  },
+  "tus-pearl-minor-rotations-110-extra": {
+    "front": "Parkinson hastalığında patolojik protein birikimi nedir?",
+    "back": "Alfa-sinüklein/Lewy cisimciği. Substantia nigra dopaminerjik nöron kaybı ve Lewy cisimcikleri ile sorulur.",
+    "answer": "Alfa-sinüklein/Lewy cisimciği. Substantia nigra dopaminerjik nöron kaybı ve Lewy cisimcikleri ile sorulur.",
+    "explanation": "Substantia nigra dopaminerjik nöron kaybı ve Lewy cisimcikleri ile sorulur. Esansiyel tremor aksiyon tremorudur; Parkinson tremoru istirahatte belirgindir.",
+    "tusTip": "Parkinson kartında ayırıcı değer taşıyan nokta: Esansiyel tremor aksiyon tremorudur; Parkinson tremoru istirahatte belirgindir.",
+    "differentialNote": "Esansiyel tremor aksiyon tremorudur; Parkinson tremoru istirahatte belirgindir.",
+    "keywords": [
+      "istirahat tremoru",
+      "bradikinezi",
+      "rijidite",
+      "Lewy cismi"
+    ]
+  },
+  "tus-pearl-minor-rotations-111-spot": {
+    "front": "Herald patch ve Christmas tree dağılımı hangi dermatolojik tabloyu düşündürür?",
+    "back": "Pitriyazis rosea. Benign, kendini sınırlayan papüloskuamöz döküntüdür.",
+    "answer": "Pitriyazis rosea. Benign, kendini sınırlayan papüloskuamöz döküntüdür.",
+    "explanation": "Benign, kendini sınırlayan papüloskuamöz döküntüdür. Tinea corporis halka şeklinde aktif kenarlı lezyon yapar; pitriyaziste dağılım ve herald patch tipiktir.",
+    "tusTip": "Benign, kendini sınırlayan papüloskuamöz döküntüdür. Tinea corporis halka şeklinde aktif kenarlı lezyon yapar; pitriyaziste dağılım ve herald patch tipiktir.",
+    "differentialNote": "Tinea corporis halka şeklinde aktif kenarlı lezyon yapar; pitriyaziste dağılım ve herald patch tipiktir.",
+    "keywords": [
+      "herald patch",
+      "Christmas tree",
+      "gövde",
+      "papüloskuamöz"
+    ]
+  },
+  "tus-pearl-minor-rotations-111-extra": {
+    "front": "Pitriyazis rosea genellikle nasıl seyreder?",
+    "back": "Kendini sınırlayan benign seyir. Benign, kendini sınırlayan papüloskuamöz döküntüdür.",
+    "answer": "Kendini sınırlayan benign seyir. Benign, kendini sınırlayan papüloskuamöz döküntüdür.",
+    "explanation": "Benign, kendini sınırlayan papüloskuamöz döküntüdür. Tinea corporis halka şeklinde aktif kenarlı lezyon yapar; pitriyaziste dağılım ve herald patch tipiktir.",
+    "tusTip": "Pitriyazis rosea için sınavda hedeflenen ayrım genellikle şudur: Tinea corporis halka şeklinde aktif kenarlı lezyon yapar; pitriyaziste dağılım ve herald patch tipiktir.",
+    "differentialNote": "Tinea corporis halka şeklinde aktif kenarlı lezyon yapar; pitriyaziste dağılım ve herald patch tipiktir.",
+    "keywords": [
+      "herald patch",
+      "Christmas tree",
+      "gövde",
+      "papüloskuamöz"
+    ]
+  },
+  "tus-pearl-minor-rotations-112-spot": {
+    "front": "Ayakta kaşıntılı skuamlı lezyonda ilk tedavi seçeneklerinden biri hangisidir?",
+    "back": "Topikal terbinafin veya azol antifungal. Dermatofit enfeksiyonlarında KOH inceleme destekleyicidir.",
+    "answer": "Topikal terbinafin veya azol antifungal. Dermatofit enfeksiyonlarında KOH inceleme destekleyicidir.",
+    "explanation": "Dermatofit enfeksiyonlarında KOH inceleme destekleyicidir. Egzama benzer olabilir; mantar için KOH’da hif görülmesi destekler.",
+    "tusTip": "Dermatofit enfeksiyonlarında KOH inceleme destekleyicidir. Egzama benzer olabilir; mantar için KOH’da hif görülmesi destekler.",
+    "differentialNote": "Egzama benzer olabilir; mantar için KOH’da hif görülmesi destekler.",
+    "keywords": [
+      "kaşıntı",
+      "skuam",
+      "interdigital",
+      "dermatofit"
+    ]
+  },
+  "tus-pearl-minor-rotations-112-extra": {
+    "front": "Dermatofit tanısında hızlı ofis testi nedir?",
+    "back": "KOH preparatı. Dermatofit enfeksiyonlarında KOH inceleme destekleyicidir.",
+    "answer": "KOH preparatı. Dermatofit enfeksiyonlarında KOH inceleme destekleyicidir.",
+    "explanation": "Dermatofit enfeksiyonlarında KOH inceleme destekleyicidir. Egzama benzer olabilir; mantar için KOH’da hif görülmesi destekler.",
+    "tusTip": "Tinea pedis karıştırıldığında cevabı netleştiren karşılaştırma: Egzama benzer olabilir; mantar için KOH’da hif görülmesi destekler.",
+    "differentialNote": "Egzama benzer olabilir; mantar için KOH’da hif görülmesi destekler.",
+    "keywords": [
+      "kaşıntı",
+      "skuam",
+      "interdigital",
+      "dermatofit"
+    ]
+  },
+  "tus-pearl-minor-rotations-113-spot": {
+    "front": "Yaşlı hastada aktiviteyle artan eklem ağrısı ve osteofit hangi hastalıktır?",
+    "back": "Osteoartrit. Eklem aralığı daralması, subkondral skleroz ve osteofitler klasik grafi bulgularıdır.",
+    "answer": "Osteoartrit. Eklem aralığı daralması, subkondral skleroz ve osteofitler klasik grafi bulgularıdır.",
+    "explanation": "Eklem aralığı daralması, subkondral skleroz ve osteofitler klasik grafi bulgularıdır. Romatoid artritte sabah tutukluğu uzun ve simetrik küçük eklem tutulumu beklenir.",
+    "tusTip": "Eklem aralığı daralması, subkondral skleroz ve osteofitler klasik grafi bulgularıdır. Romatoid artritte sabah tutukluğu uzun ve simetrik küçük eklem tutulumu beklenir.",
+    "differentialNote": "Romatoid artritte sabah tutukluğu uzun ve simetrik küçük eklem tutulumu beklenir.",
+    "keywords": [
+      "yaşlı",
+      "aktiviteyle ağrı",
+      "osteofit",
+      "sabah tutukluğu kısa"
+    ]
+  },
+  "tus-pearl-minor-rotations-113-extra": {
+    "front": "Osteoartritte grafide beklenen bulgulardan biri nedir?",
+    "back": "Osteofit veya eklem aralığı daralması. Eklem aralığı daralması, subkondral skleroz ve osteofitler klasik grafi bulgularıdır.",
+    "answer": "Osteofit veya eklem aralığı daralması. Eklem aralığı daralması, subkondral skleroz ve osteofitler klasik grafi bulgularıdır.",
+    "explanation": "Eklem aralığı daralması, subkondral skleroz ve osteofitler klasik grafi bulgularıdır. Romatoid artritte sabah tutukluğu uzun ve simetrik küçük eklem tutulumu beklenir.",
+    "tusTip": "Osteoartrit kartında ayırıcı değer taşıyan nokta: Romatoid artritte sabah tutukluğu uzun ve simetrik küçük eklem tutulumu beklenir.",
+    "differentialNote": "Romatoid artritte sabah tutukluğu uzun ve simetrik küçük eklem tutulumu beklenir.",
+    "keywords": [
+      "yaşlı",
+      "aktiviteyle ağrı",
+      "osteofit",
+      "sabah tutukluğu kısa"
+    ]
+  },
+  "tus-pearl-minor-rotations-114-spot": {
+    "front": "İğne şeklinde negatif çift kırınımlı kristal hangi artriti düşündürür?",
+    "back": "Gut artriti. Monosodyum ürat kristalleri podagra ve akut monoartrit ile sorulur.",
+    "answer": "Gut artriti. Monosodyum ürat kristalleri podagra ve akut monoartrit ile sorulur.",
+    "explanation": "Monosodyum ürat kristalleri podagra ve akut monoartrit ile sorulur. Psödogutta romboid ve pozitif çift kırınımlı kalsiyum pirofosfat kristali vardır.",
+    "tusTip": "Monosodyum ürat kristalleri podagra ve akut monoartrit ile sorulur. Psödogutta romboid ve pozitif çift kırınımlı kalsiyum pirofosfat kristali vardır.",
+    "differentialNote": "Psödogutta romboid ve pozitif çift kırınımlı kalsiyum pirofosfat kristali vardır.",
+    "keywords": [
+      "podagra",
+      "ürat",
+      "iğne kristal",
+      "negatif çift kırınım"
+    ]
+  },
+  "tus-pearl-minor-rotations-114-extra": {
+    "front": "Psödogutta kristal şekli nasıldır?",
+    "back": "Romboid, pozitif çift kırınımlı CPPD kristali.",
+    "answer": "Romboid, pozitif çift kırınımlı CPPD kristali.",
+    "explanation": "Monosodyum ürat kristalleri podagra ve akut monoartrit ile sorulur. Psödogutta romboid ve pozitif çift kırınımlı kalsiyum pirofosfat kristali vardır.",
+    "tusTip": "Gut için sınavda hedeflenen ayrım genellikle şudur: Psödogutta romboid ve pozitif çift kırınımlı kalsiyum pirofosfat kristali vardır.",
+    "differentialNote": "Psödogutta romboid ve pozitif çift kırınımlı kalsiyum pirofosfat kristali vardır.",
+    "keywords": [
+      "podagra",
+      "ürat",
+      "iğne kristal",
+      "negatif çift kırınım"
+    ]
+  },
+  "tus-pearl-minor-rotations-115-spot": {
+    "front": "Çocukta kulak ağrısı, ateş ve bombeleşmiş timpan membran ne düşündürür?",
+    "back": "Akut otitis media. En sık etkenler Streptococcus pneumoniae, Haemophilus influenzae ve Moraxella catarrhalis’tir.",
+    "answer": "Akut otitis media. En sık etkenler Streptococcus pneumoniae, Haemophilus influenzae ve Moraxella catarrhalis’tir.",
+    "explanation": "En sık etkenler Streptococcus pneumoniae, Haemophilus influenzae ve Moraxella catarrhalis’tir. Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
+    "tusTip": "En sık etkenler Streptococcus pneumoniae, Haemophilus influenzae ve Moraxella catarrhalis’tir. Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
+    "differentialNote": "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
+    "keywords": [
+      "kulak ağrısı",
+      "ateş",
+      "bombeleşmiş zar",
+      "çocuk"
+    ]
+  },
+  "tus-pearl-minor-rotations-115-extra": {
+    "front": "Akut otitis mediada ilk tercih edilen antibiyotik nedir?",
+    "back": "Amoksisilin. En sık etkenler Streptococcus pneumoniae, Haemophilus influenzae ve Moraxella catarrhalis’tir.",
+    "answer": "Amoksisilin. En sık etkenler Streptococcus pneumoniae, Haemophilus influenzae ve Moraxella catarrhalis’tir.",
+    "explanation": "En sık etkenler Streptococcus pneumoniae, Haemophilus influenzae ve Moraxella catarrhalis’tir. Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
+    "tusTip": "Akut otitis media karıştırıldığında cevabı netleştiren karşılaştırma: Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
+    "differentialNote": "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
+    "keywords": [
+      "kulak ağrısı",
+      "ateş",
+      "bombeleşmiş zar",
+      "çocuk"
+    ]
+  },
+  "tus-pearl-minor-rotations-116-spot": {
+    "front": "Şiddetli göz ağrısı, halo, bulantı ve mid-dilate pupil ne düşündürür?",
+    "back": "Akut açı kapanması glokomu. Göz içi basıncı hızla yükselir; acil göz hastalıkları yaklaşımı gerekir.",
+    "answer": "Akut açı kapanması glokomu. Göz içi basıncı hızla yükselir; acil göz hastalıkları yaklaşımı gerekir.",
+    "explanation": "Göz içi basıncı hızla yükselir; acil göz hastalıkları yaklaşımı gerekir. Konjonktivit kızarıklık yapar ama şiddetli ağrı, halo ve pupil bulgusu beklenmez.",
+    "tusTip": "Göz içi basıncı hızla yükselir; acil göz hastalıkları yaklaşımı gerekir. Konjonktivit kızarıklık yapar ama şiddetli ağrı, halo ve pupil bulgusu beklenmez.",
+    "differentialNote": "Konjonktivit kızarıklık yapar ama şiddetli ağrı, halo ve pupil bulgusu beklenmez.",
+    "keywords": [
+      "göz ağrısı",
+      "halo",
+      "bulantı",
+      "mid-dilate pupil"
+    ]
+  },
+  "tus-pearl-minor-rotations-116-extra": {
+    "front": "Akut açı kapanması glokomunda temel aciliyet nedir?",
+    "back": "Göz içi basıncını hızla düşürmek ve kalıcı görme kaybını önlemek.",
+    "answer": "Göz içi basıncını hızla düşürmek ve kalıcı görme kaybını önlemek.",
+    "explanation": "Göz içi basıncı hızla yükselir; acil göz hastalıkları yaklaşımı gerekir. Konjonktivit kızarıklık yapar ama şiddetli ağrı, halo ve pupil bulgusu beklenmez.",
+    "tusTip": "Akut açı kapanması glokomu kartında ayırıcı değer taşıyan nokta: Konjonktivit kızarıklık yapar ama şiddetli ağrı, halo ve pupil bulgusu beklenmez.",
+    "differentialNote": "Konjonktivit kızarıklık yapar ama şiddetli ağrı, halo ve pupil bulgusu beklenmez.",
+    "keywords": [
+      "göz ağrısı",
+      "halo",
+      "bulantı",
+      "mid-dilate pupil TUS Spot Olgular / Karma (tus-spot-olgular)"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-117-spot": {
+    "front": "Anafilakside ilk ve en önemli ilaç nedir?",
+    "back": "İntramüsküler adrenalin. İlk tedavi IM adrenalindir; hava yolu, oksijen ve intravenöz sıvı desteği eklenir.",
+    "answer": "İntramüsküler adrenalin. İlk tedavi IM adrenalindir; hava yolu, oksijen ve intravenöz sıvı desteği eklenir.",
+    "explanation": "İlk tedavi IM adrenalindir; hava yolu, oksijen ve intravenöz sıvı desteği eklenir. Antihistaminik kaşıntı/ürtiker için yardımcıdır ama şok ve bronkospazmı tek başına düzeltmez. Antihistaminik semptomatik yardımcıdır; yaşam kurtarıcı ilk ilaç adrenalinidir.",
+    "tusTip": "İlk tedavi IM adrenalindir; hava yolu, oksijen ve intravenöz sıvı desteği eklenir. Antihistaminik kaşıntı/ürtiker için yardımcıdır ama şok ve bronkospazmı tek başına düzeltmez. Antihistaminik semptomatik yardımcıdır; yaşam kurtarıcı ilk ilaç adrenalinidir.",
+    "differentialNote": "Antihistaminik semptomatik yardımcıdır; yaşam kurtarıcı ilk ilaç adrenalinidir.",
+    "keywords": [
+      "ürtiker",
+      "hipotansiyon",
+      "bronkospazm",
+      "IM adrenalin"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-117-keywords": {
+    "front": "Anafilakside hayat kurtarıcı ilk tedavi basamağı nedir?",
+    "back": "İntramüsküler adrenalin. Alerjen maruziyeti sonrası hipotansiyon, ürtiker, bronkospazm veya laringeal ödem varsa ilk ilaç adrenalindir.",
+    "answer": "İntramüsküler adrenalin. Alerjen maruziyeti sonrası hipotansiyon, ürtiker, bronkospazm veya laringeal ödem varsa ilk ilaç adrenalindir.",
+    "explanation": "Alerjen maruziyeti sonrası hipotansiyon, ürtiker, bronkospazm veya laringeal ödem varsa ilk ilaç adrenalindir. Astım atağında ürtiker/hipotansiyon beklenmez; herediter anjiyoödemde ürtiker tipik değildir ve adrenalin yanıtı sınırlı olabilir.",
+    "tusTip": "Anafilakside antihistaminik ve steroid destek tedavidir; ilk hayat kurtarıcı basamak adrenalin uygulamasıdır.",
+    "differentialNote": "Astım atağında ürtiker/hipotansiyon beklenmez; herediter anjiyoödemde ürtiker tipik değildir ve adrenalin yanıtı sınırlı olabilir.",
+    "keywords": [
+      "ürtiker",
+      "hipotansiyon",
+      "bronkospazm",
+      "IM adrenalin"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-117-extra": {
+    "front": "Anafilakside adrenalin hangi yoldan verilir?",
+    "back": "Uyluk anterolateralinden intramüsküler. İlk tedavi IM adrenalindir; hava yolu, oksijen ve intravenöz sıvı desteği eklenir.",
+    "answer": "Uyluk anterolateralinden intramüsküler. İlk tedavi IM adrenalindir; hava yolu, oksijen ve intravenöz sıvı desteği eklenir.",
+    "explanation": "İlk tedavi IM adrenalindir; hava yolu, oksijen ve intravenöz sıvı desteği eklenir. Antihistaminik kaşıntı/ürtiker için yardımcıdır ama şok ve bronkospazmı tek başına düzeltmez. Antihistaminik semptomatik yardımcıdır; yaşam kurtarıcı ilk ilaç adrenalinidir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Antihistaminik semptomatik yardımcıdır; yaşam kurtarıcı ilk ilaç adrenalinidir.",
+    "differentialNote": "Antihistaminik semptomatik yardımcıdır; yaşam kurtarıcı ilk ilaç adrenalinidir.",
+    "keywords": [
+      "ürtiker",
+      "hipotansiyon",
+      "bronkospazm",
+      "IM adrenalin"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-118-spot": {
+    "front": "HCV pozitif iğne batmasında aşı veya immünoglobulin var mıdır?",
+    "back": "Hayır, HCV için aşı/Ig yoktur; erken HCV RNA takibi yapılır.",
+    "answer": "Hayır, HCV için aşı/Ig yoktur; erken HCV RNA takibi yapılır.",
+    "explanation": "Maruziyet sonrası HBV’den farklı olarak immünoprofilaksi yoktur. HBV’de aşı ve HBIG düşünülebilir; HCV’de bu seçenek yoktur.",
+    "tusTip": "Maruziyet sonrası HBV’den farklı olarak immünoprofilaksi yoktur. HBV’de aşı ve HBIG düşünülebilir; HCV’de bu seçenek yoktur.",
+    "differentialNote": "HBV’de aşı ve HBIG düşünülebilir; HCV’de bu seçenek yoktur.",
+    "keywords": [
+      "iğne batması",
+      "HCV",
+      "aşı yok",
+      "RNA takibi"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-118-extra": {
+    "front": "HCV maruziyeti sonrası erken takipte hangi test değerlidir?",
+    "back": "HCV RNA. Maruziyet sonrası HBV’den farklı olarak immünoprofilaksi yoktur.",
+    "answer": "HCV RNA. Maruziyet sonrası HBV’den farklı olarak immünoprofilaksi yoktur.",
+    "explanation": "Maruziyet sonrası HBV’den farklı olarak immünoprofilaksi yoktur. HBV’de aşı ve HBIG düşünülebilir; HCV’de bu seçenek yoktur.",
+    "tusTip": "Pratik karar noktası: HBV’de aşı ve HBIG düşünülebilir; HCV’de bu seçenek yoktur.",
+    "differentialNote": "HBV’de aşı ve HBIG düşünülebilir; HCV’de bu seçenek yoktur.",
+    "keywords": [
+      "iğne batması",
+      "HCV",
+      "aşı yok",
+      "RNA takibi"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-119-spot": {
+    "front": "Aktif akciğer tüberkülozu şüphesinde hangi izolasyon gerekir?",
+    "back": "Hava yolu izolasyonu ve N95/FFP2 maske.",
+    "answer": "Hava yolu izolasyonu ve N95/FFP2 maske.",
+    "explanation": "Öksürük, kaviter lezyon ve asit-fast basil şüphesinde damlacık değil hava yolu izolasyonu uygulanır. Damlacık izolasyonu influenza/meningokok gibi etkenlerle karışır; TB airborne’dur.",
+    "tusTip": "Öksürük, kaviter lezyon ve asit-fast basil şüphesinde damlacık değil hava yolu izolasyonu uygulanır. Damlacık izolasyonu influenza/meningokok gibi etkenlerle karışır; TB airborne’dur.",
+    "differentialNote": "Damlacık izolasyonu influenza/meningokok gibi etkenlerle karışır; TB airborne’dur.",
+    "keywords": [
+      "öksürük",
+      "kavite",
+      "AFB",
+      "N95"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-119-extra": {
+    "front": "Tüberkülozda tanıyı destekleyen mikroskobik boya nedir?",
+    "back": "Aside dirençli basil boyası/ARB. Öksürük, kaviter lezyon ve asit-fast basil şüphesinde damlacık değil hava yolu izolasyonu uygulanır.",
+    "answer": "Aside dirençli basil boyası/ARB. Öksürük, kaviter lezyon ve asit-fast basil şüphesinde damlacık değil hava yolu izolasyonu uygulanır.",
+    "explanation": "Öksürük, kaviter lezyon ve asit-fast basil şüphesinde damlacık değil hava yolu izolasyonu uygulanır. Damlacık izolasyonu influenza/meningokok gibi etkenlerle karışır; TB airborne’dur.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Damlacık izolasyonu influenza/meningokok gibi etkenlerle karışır; TB airborne’dur.",
+    "differentialNote": "Damlacık izolasyonu influenza/meningokok gibi etkenlerle karışır; TB airborne’dur.",
+    "keywords": [
+      "öksürük",
+      "kavite",
+      "AFB",
+      "N95"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-120-spot": {
+    "front": "Tutarsız öykü ve farklı yaşlarda ekimozları olan çocukta hekimin öncelikli yaklaşımı ne olmalıdır?",
+    "back": "Çocuğun güvenliğini sağlamak, objektif kayıt tutmak ve adli bildirim sürecini başlatmak.",
+    "answer": "Çocuğun güvenliğini sağlamak, objektif kayıt tutmak ve adli bildirim sürecini başlatmak.",
+    "explanation": "Öyküyle uyumsuz yaralanmalar ve farklı yaşlarda ekimozlar çocuk istismarı açısından kırmızı bayraktır. Aile beyanıyla yetinip beklemek doğru değildir; güçlü şüphede güvenlik ve bildirim süreci geciktirilmez.",
+    "tusTip": "Öyküyle uyumsuz yaralanmalar ve farklı yaşlarda ekimozlar çocuk istismarı açısından kırmızı bayraktır. Aile beyanıyla yetinip beklemek doğru değildir; güçlü şüphede güvenlik ve bildirim süreci geciktirilmez.",
+    "differentialNote": "Aile beyanıyla yetinip beklemek doğru değildir; güçlü şüphede güvenlik ve bildirim süreci geciktirilmez.",
+    "keywords": [
+      "tutarsız öykü",
+      "farklı yaş ekimoz",
+      "çocuk",
+      "adli bildirim"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-120-extra": {
+    "front": "Çocuk istismarı şüphesinde yalnızca kesin tanı beklemek neden doğru değildir?",
+    "back": "Güçlü şüphe varsa çocuğun güvenliği ve adli bildirim süreci tanısal kesinlik beklenmeden başlatılmalıdır.",
+    "answer": "Güçlü şüphe varsa çocuğun güvenliği ve adli bildirim süreci tanısal kesinlik beklenmeden başlatılmalıdır.",
+    "explanation": "Öyküyle uyumsuz yaralanmalar ve farklı yaşlarda ekimozlar çocuk istismarı açısından kırmızı bayraktır. Aile beyanıyla yetinip beklemek doğru değildir; güçlü şüphede güvenlik ve bildirim süreci geciktirilmez.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Aile beyanıyla yetinip beklemek doğru değildir; güçlü şüphede güvenlik ve bildirim süreci geciktirilmez.",
+    "differentialNote": "Aile beyanıyla yetinip beklemek doğru değildir; güçlü şüphede güvenlik ve bildirim süreci geciktirilmez.",
+    "keywords": [
+      "tutarsız öykü",
+      "farklı yaş ekimoz",
+      "çocuk",
+      "adli bildirim"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-121-spot": {
+    "front": "Cinsel saldırı sonrası muayene ve örnek alma için temel etik koşul nedir?",
+    "back": "Bilgilendirilmiş onam. Mahremiyet, güvenlik, delil zinciri ve profilaksi birlikte düşünülür.",
+    "answer": "Bilgilendirilmiş onam. Mahremiyet, güvenlik, delil zinciri ve profilaksi birlikte düşünülür.",
+    "explanation": "Mahremiyet, güvenlik, delil zinciri ve profilaksi birlikte düşünülür. Zorla muayene yapılmaz; hastanın güvenliği ve onamı merkezi ilkedir.",
+    "tusTip": "Mahremiyet, güvenlik, delil zinciri ve profilaksi birlikte düşünülür. Zorla muayene yapılmaz; hastanın güvenliği ve onamı merkezi ilkedir.",
+    "differentialNote": "Zorla muayene yapılmaz; hastanın güvenliği ve onamı merkezi ilkedir.",
+    "keywords": [
+      "onam",
+      "mahremiyet",
+      "delil zinciri",
+      "profilaksi"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-121-extra": {
+    "front": "Cinsel saldırı olgusunda deliller için temel kayıt ilkesi nedir?",
+    "back": "Delil zincirini koruyacak objektif kayıt. Mahremiyet, güvenlik, delil zinciri ve profilaksi birlikte düşünülür.",
+    "answer": "Delil zincirini koruyacak objektif kayıt. Mahremiyet, güvenlik, delil zinciri ve profilaksi birlikte düşünülür.",
+    "explanation": "Mahremiyet, güvenlik, delil zinciri ve profilaksi birlikte düşünülür. Zorla muayene yapılmaz; hastanın güvenliği ve onamı merkezi ilkedir.",
+    "tusTip": "Pratik karar noktası: Zorla muayene yapılmaz; hastanın güvenliği ve onamı merkezi ilkedir.",
+    "differentialNote": "Zorla muayene yapılmaz; hastanın güvenliği ve onamı merkezi ilkedir.",
+    "keywords": [
+      "onam",
+      "mahremiyet",
+      "delil zinciri",
+      "profilaksi"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-122-spot": {
+    "front": "Sıcak çarpmasında en kritik tedavi basamağı nedir?",
+    "back": "Hızlı soğutma. Santral sıcaklık yüksekliği ve nörolojik bulgu varsa gecikmeden soğutma yapılır.",
+    "answer": "Hızlı soğutma. Santral sıcaklık yüksekliği ve nörolojik bulgu varsa gecikmeden soğutma yapılır.",
+    "explanation": "Santral sıcaklık yüksekliği ve nörolojik bulgu varsa gecikmeden soğutma yapılır. Antipiretikler sıcak çarpmasının mekanizmasını düzeltmez.",
+    "tusTip": "Santral sıcaklık yüksekliği ve nörolojik bulgu varsa gecikmeden soğutma yapılır. Antipiretikler sıcak çarpmasının mekanizmasını düzeltmez.",
+    "differentialNote": "Antipiretikler sıcak çarpmasının mekanizmasını düzeltmez.",
+    "keywords": [
+      "hipertermi",
+      "nörolojik bulgu",
+      "egzersiz/sıcak",
+      "hızlı soğutma"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-122-extra": {
+    "front": "Sıcak çarpmasını ateşten ayıran temel nokta nedir?",
+    "back": "Termoregülasyon bozulması ve çevresel/egzersiz ilişkili ısı yükü.",
+    "answer": "Termoregülasyon bozulması ve çevresel/egzersiz ilişkili ısı yükü.",
+    "explanation": "Santral sıcaklık yüksekliği ve nörolojik bulgu varsa gecikmeden soğutma yapılır. Antipiretikler sıcak çarpmasının mekanizmasını düzeltmez.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Antipiretikler sıcak çarpmasının mekanizmasını düzeltmez.",
+    "differentialNote": "Antipiretikler sıcak çarpmasının mekanizmasını düzeltmez.",
+    "keywords": [
+      "hipertermi",
+      "nörolojik bulgu",
+      "egzersiz/sıcak",
+      "hızlı soğutma"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-123-spot": {
+    "front": "Bilinç değişikliği olan diyabet hastasında yatak başında ilk ne kontrol edilmelidir?",
+    "back": "Kapiller kan şekeri. Hipoglisemi hızlı geri döndürülebilir ve nörolojik tabloyu taklit edebilir.",
+    "answer": "Kapiller kan şekeri. Hipoglisemi hızlı geri döndürülebilir ve nörolojik tabloyu taklit edebilir.",
+    "explanation": "Hipoglisemi hızlı geri döndürülebilir ve nörolojik tabloyu taklit edebilir. BT görüntüleme önemli olabilir ama hızlı dışlanması gereken geri döndürülebilir neden hipoglisemidir.",
+    "tusTip": "Hipoglisemi hızlı geri döndürülebilir ve nörolojik tabloyu taklit edebilir. BT görüntüleme önemli olabilir ama hızlı dışlanması gereken geri döndürülebilir neden hipoglisemidir.",
+    "differentialNote": "BT görüntüleme önemli olabilir ama hızlı dışlanması gereken geri döndürülebilir neden hipoglisemidir.",
+    "keywords": [
+      "bilinç değişikliği",
+      "diyabet",
+      "terleme",
+      "glukoz"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-123-extra": {
+    "front": "Ağır hipoglisemide bilinç kapalıysa hangi tedavi verilir?",
+    "back": "İntravenöz dekstroz veya glukagon. Hipoglisemi hızlı geri döndürülebilir ve nörolojik tabloyu taklit edebilir.",
+    "answer": "İntravenöz dekstroz veya glukagon. Hipoglisemi hızlı geri döndürülebilir ve nörolojik tabloyu taklit edebilir.",
+    "explanation": "Hipoglisemi hızlı geri döndürülebilir ve nörolojik tabloyu taklit edebilir. BT görüntüleme önemli olabilir ama hızlı dışlanması gereken geri döndürülebilir neden hipoglisemidir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: BT görüntüleme önemli olabilir ama hızlı dışlanması gereken geri döndürülebilir neden hipoglisemidir.",
+    "differentialNote": "BT görüntüleme önemli olabilir ama hızlı dışlanması gereken geri döndürülebilir neden hipoglisemidir.",
+    "keywords": [
+      "bilinç değişikliği",
+      "diyabet",
+      "terleme",
+      "glukoz"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-124-spot": {
+    "front": "Zehirlenme olgusunda örnek alma veya antidottan önce ilk yaklaşım nedir?",
+    "back": "ABC stabilizasyonu. Hava yolu, solunum ve dolaşım güvenceye alınmadan tanısal ayrıntıya geçilmez.",
+    "answer": "ABC stabilizasyonu. Hava yolu, solunum ve dolaşım güvenceye alınmadan tanısal ayrıntıya geçilmez.",
+    "explanation": "Hava yolu, solunum ve dolaşım güvenceye alınmadan tanısal ayrıntıya geçilmez. Toksikoloji örneği değerli olabilir ama stabilizasyonun önüne geçmez.",
+    "tusTip": "Hava yolu, solunum ve dolaşım güvenceye alınmadan tanısal ayrıntıya geçilmez. Toksikoloji örneği değerli olabilir ama stabilizasyonun önüne geçmez.",
+    "differentialNote": "Toksikoloji örneği değerli olabilir ama stabilizasyonun önüne geçmez.",
+    "keywords": [
+      "zehirlenme",
+      "ABC",
+      "hava yolu",
+      "dolaşım"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-124-extra": {
+    "front": "Opioid zehirlenmesinde solunum depresyonu varsa antidot nedir?",
+    "back": "Nalokson. Hava yolu, solunum ve dolaşım güvenceye alınmadan tanısal ayrıntıya geçilmez.",
+    "answer": "Nalokson. Hava yolu, solunum ve dolaşım güvenceye alınmadan tanısal ayrıntıya geçilmez.",
+    "explanation": "Hava yolu, solunum ve dolaşım güvenceye alınmadan tanısal ayrıntıya geçilmez. Toksikoloji örneği değerli olabilir ama stabilizasyonun önüne geçmez.",
+    "tusTip": "Pratik karar noktası: Toksikoloji örneği değerli olabilir ama stabilizasyonun önüne geçmez.",
+    "differentialNote": "Toksikoloji örneği değerli olabilir ama stabilizasyonun önüne geçmez.",
+    "keywords": [
+      "zehirlenme",
+      "ABC",
+      "hava yolu",
+      "dolaşım"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-125-spot": {
+    "front": "Kesici-delici yaralanma hangi açıdan mutlaka değerlendirilmelidir?",
+    "back": "Adli olgu bildirimi ve objektif kayıt.",
+    "answer": "Adli olgu bildirimi ve objektif kayıt.",
+    "explanation": "Yaşam tehdidi tedavisi geciktirilmez; tıbbi bakım ve adli süreç birlikte yürütülür. Sadece pansuman yapıp kayıt/bildirim sürecini atlamak temel sınav tuzağıdır.",
+    "tusTip": "Yaşam tehdidi tedavisi geciktirilmez; tıbbi bakım ve adli süreç birlikte yürütülür. Sadece pansuman yapıp kayıt/bildirim sürecini atlamak temel sınav tuzağıdır.",
+    "differentialNote": "Sadece pansuman yapıp kayıt/bildirim sürecini atlamak temel sınav tuzağıdır.",
+    "keywords": [
+      "kesici-delici",
+      "adli olgu",
+      "objektif kayıt",
+      "yaşam tehdidi"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-125-extra": {
+    "front": "Adli olguda tıbbi müdahale ne zaman geciktirilir?",
+    "back": "Yaşamı tehdit eden durumda geciktirilmez; tedavi önceliklidir.",
+    "answer": "Yaşamı tehdit eden durumda geciktirilmez; tedavi önceliklidir.",
+    "explanation": "Yaşam tehdidi tedavisi geciktirilmez; tıbbi bakım ve adli süreç birlikte yürütülür. Sadece pansuman yapıp kayıt/bildirim sürecini atlamak temel sınav tuzağıdır.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Sadece pansuman yapıp kayıt/bildirim sürecini atlamak temel sınav tuzağıdır.",
+    "differentialNote": "Sadece pansuman yapıp kayıt/bildirim sürecini atlamak temel sınav tuzağıdır.",
+    "keywords": [
+      "kesici-delici",
+      "adli olgu",
+      "objektif kayıt",
+      "yaşam tehdidi Anatomi (anatomy)"
+    ]
+  },
+  "tus-pearl-anatomy-126-spot": {
+    "front": "Mastektomi ve aksiller diseksiyon sonrası kol medialinde uyuşukluk hangi sinir hasarını düşündürür?",
+    "back": "Nervus intercostobrachialis hasarı. Nervus intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir.",
+    "answer": "Nervus intercostobrachialis hasarı. Nervus intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir.",
+    "explanation": "Nervus intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir. Nervus axillaris omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
+    "tusTip": "Nervus intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir. Nervus axillaris omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
+    "differentialNote": "Nervus axillaris omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
+    "keywords": [
+      "mastektomi",
+      "aksiller diseksiyon",
+      "medial kol uyuşukluğu",
+      "Nervus intercostobrachialis"
+    ]
+  },
+  "tus-pearl-anatomy-126-extra": {
+    "front": "Nervus intercostobrachialis hangi temel fonksiyonu taşır?",
+    "back": "Üst medial kolun cilt duyusu. Nervus intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir.",
+    "answer": "Üst medial kolun cilt duyusu. Nervus intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir.",
+    "explanation": "Nervus intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir. Nervus axillaris omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Nervus axillaris omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
+    "differentialNote": "Nervus axillaris omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
+    "keywords": [
+      "mastektomi",
+      "aksiller diseksiyon",
+      "medial kol uyuşukluğu",
+      "Nervus intercostobrachialis"
+    ]
+  },
+  "tus-pearl-anatomy-127-spot": {
+    "front": "Ani baş ağrısı sonrası pitozis ve midriyazis hangi anevrizma lokalizasyonunu düşündürür?",
+    "back": "Arteria communicans posterior anevrizması. Posterior communicating arter anevrizması nervus oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir.",
+    "answer": "Arteria communicans posterior anevrizması. Posterior communicating arter anevrizması nervus oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir.",
+    "explanation": "Posterior communicating arter anevrizması nervus oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir. Nervus abducens paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
+    "tusTip": "Posterior communicating arter anevrizması nervus oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir. Nervus abducens paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
+    "differentialNote": "Nervus abducens paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
+    "keywords": [
+      "subaraknoid kanama",
+      "pitozis",
+      "midriyazis",
+      "Nervus oculomotorius"
+    ]
+  },
+  "tus-pearl-anatomy-127-extra": {
+    "front": "Nervus oculomotorius parasempatik lif hasarında pupilla nasıl etkilenir?",
+    "back": "Midriyazis gelişir. Posterior communicating arter anevrizması nervus oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir.",
+    "answer": "Midriyazis gelişir. Posterior communicating arter anevrizması nervus oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir.",
+    "explanation": "Posterior communicating arter anevrizması nervus oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir. Nervus abducens paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
+    "tusTip": "Pratik karar noktası: Nervus abducens paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
+    "differentialNote": "Nervus abducens paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
+    "keywords": [
+      "subaraknoid kanama",
+      "pitozis",
+      "midriyazis",
+      "Nervus oculomotorius"
+    ]
+  },
+  "tus-pearl-anatomy-128-spot": {
+    "front": "Vena saphena magna acil damar yolu için ayak bileğinde hangi anatomik noktada aranır?",
+    "back": "Malleolus medialisin önünde. Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
+    "answer": "Malleolus medialisin önünde. Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
+    "explanation": "Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır. Vena saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
+    "tusTip": "Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır. Vena saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
+    "differentialNote": "Vena saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
+    "keywords": [
+      "Vena saphena magna",
+      "medial malleol önü",
+      "venöz erişim",
+      "greft"
+    ]
+  },
+  "tus-pearl-anatomy-128-extra": {
+    "front": "Vena saphena parva ayak bileğinde hangi tarafta seyreder?",
+    "back": "Lateral malleol arkasında. Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
+    "answer": "Lateral malleol arkasında. Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
+    "explanation": "Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır. Vena saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Vena saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
+    "differentialNote": "Vena saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
+    "keywords": [
+      "Vena saphena magna",
+      "medial malleol önü",
+      "venöz erişim",
+      "greft"
+    ]
+  },
+  "tus-pearl-anatomy-129-spot": {
+    "front": "Tarsal tünelde sıkışan sinir hangisidir?",
+    "back": "Nervus tibialis. Retinaculum flexorum altında nervus tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar.",
+    "answer": "Nervus tibialis. Retinaculum flexorum altında nervus tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar.",
+    "explanation": "Retinaculum flexorum altında nervus tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar. Nervus fibularis communis fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
+    "tusTip": "Retinaculum flexorum altında nervus tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar. Nervus fibularis communis fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
+    "differentialNote": "Nervus fibularis communis fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
+    "keywords": [
+      "tarsal tünel",
+      "retinaculum flexorum",
+      "Nervus tibialis",
+      "taban parestezisi"
+    ]
+  },
+  "tus-pearl-anatomy-129-extra": {
+    "front": "Tarsal tünel basısında duyusal yakınma en çok nerede beklenir?",
+    "back": "Ayak tabanında. Retinaculum flexorum altında nervus tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar.",
+    "answer": "Ayak tabanında. Retinaculum flexorum altında nervus tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar.",
+    "explanation": "Retinaculum flexorum altında nervus tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar. Nervus fibularis communis fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Nervus fibularis communis fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
+    "differentialNote": "Nervus fibularis communis fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
+    "keywords": [
+      "tarsal tünel",
+      "retinaculum flexorum",
+      "Nervus tibialis",
+      "taban parestezisi"
+    ]
+  },
+  "tus-pearl-anatomy-130-spot": {
+    "front": "Median epizyotomide en çok risk altındaki destek yapısı hangisidir?",
+    "back": "Corpus perineale. Corpus perineale pelvik taban kaslarının birleşme noktasıdır; median kesi bu merkezi destek yapıyı zedeleyebilir.",
+    "answer": "Corpus perineale. Corpus perineale pelvik taban kaslarının birleşme noktasıdır; median kesi bu merkezi destek yapıyı zedeleyebilir.",
+    "explanation": "Corpus perineale pelvik taban kaslarının birleşme noktasıdır; median kesi bu merkezi destek yapıyı zedeleyebilir. Mediolateral epizyotomi m. bulbospongiosus ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
+    "tusTip": "Corpus perineale pelvik taban kaslarının birleşme noktasıdır; median kesi bu merkezi destek yapıyı zedeleyebilir. Mediolateral epizyotomi m. bulbospongiosus ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
+    "differentialNote": "Mediolateral epizyotomi m. bulbospongiosus ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
+    "keywords": [
+      "median epizyotomi",
+      "corpus perineale",
+      "pelvik taban",
+      "destek yapısı"
+    ]
+  },
+  "tus-pearl-anatomy-130-extra": {
+    "front": "Corpus perineale neden klinik olarak önemlidir?",
+    "back": "Pelvik taban desteğinin merkezi bağlantı noktasıdır.",
+    "answer": "Pelvik taban desteğinin merkezi bağlantı noktasıdır.",
+    "explanation": "Corpus perineale pelvik taban kaslarının birleşme noktasıdır; median kesi bu merkezi destek yapıyı zedeleyebilir. Mediolateral epizyotomi m. bulbospongiosus ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
+    "tusTip": "Pratik karar noktası: Mediolateral epizyotomi m. bulbospongiosus ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
+    "differentialNote": "Mediolateral epizyotomi m. bulbospongiosus ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
+    "keywords": [
+      "median epizyotomi",
+      "corpus perineale",
+      "pelvik taban",
+      "destek yapısı Fizyoloji (physiology)"
+    ]
+  },
+  "tus-pearl-physiology-131-spot": {
+    "front": "2,3-BPG artışı hemoglobin-oksijen ayrışma eğrisini hangi yöne kaydırır?",
+    "back": "Sağa kaydırır. Sağa kayma hemoglobinin oksijene afinitesini azaltır ve dokulara oksijen bırakılmasını kolaylaştırır.",
+    "answer": "Sağa kaydırır. Sağa kayma hemoglobinin oksijene afinitesini azaltır ve dokulara oksijen bırakılmasını kolaylaştırır.",
+    "explanation": "Sağa kayma hemoglobinin oksijene afinitesini azaltır ve dokulara oksijen bırakılmasını kolaylaştırır. CO zehirlenmesi sola kayma ve doku hipoksisiyle sorulur; 2,3-BPG artışı kompansatuvar oksijen bırakımıdır.",
+    "tusTip": "Sağa kayma hemoglobinin oksijene afinitesini azaltır ve dokulara oksijen bırakılmasını kolaylaştırır. CO zehirlenmesi sola kayma ve doku hipoksisiyle sorulur; 2,3-BPG artışı kompansatuvar oksijen bırakımıdır.",
+    "differentialNote": "CO zehirlenmesi sola kayma ve doku hipoksisiyle sorulur; 2,3-BPG artışı kompansatuvar oksijen bırakımıdır.",
+    "keywords": [
+      "2",
+      "3-BPG",
+      "sağa kayma",
+      "düşük afinite",
+      "dokuya oksijen bırakma"
+    ]
+  },
+  "tus-pearl-physiology-131-extra": {
+    "front": "Sağa kaymada P50 nasıl değişir?",
+    "back": "P50 artar. Sağa kayma hemoglobinin oksijene afinitesini azaltır ve dokulara oksijen bırakılmasını kolaylaştırır.",
+    "answer": "P50 artar. Sağa kayma hemoglobinin oksijene afinitesini azaltır ve dokulara oksijen bırakılmasını kolaylaştırır.",
+    "explanation": "Sağa kayma hemoglobinin oksijene afinitesini azaltır ve dokulara oksijen bırakılmasını kolaylaştırır. CO zehirlenmesi sola kayma ve doku hipoksisiyle sorulur; 2,3-BPG artışı kompansatuvar oksijen bırakımıdır.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: CO zehirlenmesi sola kayma ve doku hipoksisiyle sorulur; 2,3-BPG artışı kompansatuvar oksijen bırakımıdır.",
+    "differentialNote": "CO zehirlenmesi sola kayma ve doku hipoksisiyle sorulur; 2,3-BPG artışı kompansatuvar oksijen bırakımıdır.",
+    "keywords": [
+      "2",
+      "3-BPG",
+      "sağa kayma",
+      "düşük afinite",
+      "dokuya oksijen bırakma"
+    ]
+  },
+  "tus-pearl-physiology-132-spot": {
+    "front": "Karbonmonoksit zehirlenmesi oksijen satürasyonunu ve doku oksijenlenmesini nasıl etkiler?",
+    "back": "Oksijen taşıma kapasitesini azaltır ve eğriyi sola kaydırır.",
+    "answer": "Oksijen taşıma kapasitesini azaltır ve eğriyi sola kaydırır.",
+    "explanation": "CO hemoglobine yüksek afiniteyle bağlanır; kalan bağlanma bölgeleri oksijeni daha sıkı tutar, dokulara bırakım azalır. PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesidir.",
+    "tusTip": "CO hemoglobine yüksek afiniteyle bağlanır; kalan bağlanma bölgeleri oksijeni daha sıkı tutar, dokulara bırakım azalır. PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesidir.",
+    "differentialNote": "PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesidir.",
+    "keywords": [
+      "CO",
+      "karboksihemoglobin",
+      "sola kayma",
+      "pulse oksimetre yanıltıcı"
+    ]
+  },
+  "tus-pearl-physiology-132-keywords": {
+    "front": "Karbonmonoksit zehirlenmesinde PaO₂ normal olsa bile doku hipoksisi neden gelişir?",
+    "back": "CO, hemoglobine yüksek afiniteyle bağlanarak karboksihemoglobin oluşturur ve oksijenin dokulara bırakılmasını azaltır.",
+    "answer": "CO, hemoglobine yüksek afiniteyle bağlanarak karboksihemoglobin oluşturur ve oksijenin dokulara bırakılmasını azaltır.",
+    "explanation": "Bu nedenle pulse oksimetre normal görünebilse bile dokular oksijenlenemez. PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesindedir.",
+    "tusTip": "CO karboksihemoglobin oluşturur; oksijen dokulara daha zor bırakılır ve pulse oksimetre yanıltıcı biçimde normal görünebilir.",
+    "differentialNote": "PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesindedir.",
+    "keywords": [
+      "CO",
+      "karboksihemoglobin",
+      "sola kayma",
+      "pulse oksimetre yanıltıcı"
+    ]
+  },
+  "tus-pearl-physiology-132-extra": {
+    "front": "CO zehirlenmesinde ilk tedavi yaklaşımı nasıl olmalıdır?",
+    "back": "Yüksek akımlı yüzde yüz oksijen. CO hemoglobine yüksek afiniteyle bağlanır; kalan bağlanma bölgeleri oksijeni daha sıkı tutar, dokulara bırakım azalır.",
+    "answer": "Yüksek akımlı yüzde yüz oksijen. CO hemoglobine yüksek afiniteyle bağlanır; kalan bağlanma bölgeleri oksijeni daha sıkı tutar, dokulara bırakım azalır.",
+    "explanation": "CO hemoglobine yüksek afiniteyle bağlanır; kalan bağlanma bölgeleri oksijeni daha sıkı tutar, dokulara bırakım azalır. PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesidir.",
+    "tusTip": "Karbonmonoksit zehirlenmesi karıştırıldığında cevabı netleştiren karşılaştırma: PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesidir.",
+    "differentialNote": "PaO₂ normal olabilir; sorun plazmada çözünmüş oksijen değil hemoglobinin oksijen taşıma ve bırakma kapasitesidir.",
+    "keywords": [
+      "CO",
+      "karboksihemoglobin",
+      "sola kayma",
+      "pulse oksimetre yanıltıcı Tıbbi Biyokimya (medical-biochemistry)"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-133-spot": {
+    "front": "Kompetitif inhibitör Vmax ve Km üzerinde nasıl etki yapar?",
+    "back": "Vmax değişmez, Km artar. Substrat artırılarak inhibisyon aşılabilir; bu nedenle maksimum hız korunur ama aynı hıza ulaşmak için daha fazla substrat gerekir.",
+    "answer": "Vmax değişmez, Km artar. Substrat artırılarak inhibisyon aşılabilir; bu nedenle maksimum hız korunur ama aynı hıza ulaşmak için daha fazla substrat gerekir.",
+    "explanation": "Substrat artırılarak inhibisyon aşılabilir; bu nedenle maksimum hız korunur ama aynı hıza ulaşmak için daha fazla substrat gerekir. Nonkompetitif inhibitörde Vmax azalır; Km genellikle değişmez.",
+    "tusTip": "Substrat artırılarak inhibisyon aşılabilir; bu nedenle maksimum hız korunur ama aynı hıza ulaşmak için daha fazla substrat gerekir. Nonkompetitif inhibitörde Vmax azalır; Km genellikle değişmez.",
+    "differentialNote": "Nonkompetitif inhibitörde Vmax azalır; Km genellikle değişmez.",
+    "keywords": [
+      "kompetitif inhibitör",
+      "Vmax aynı",
+      "Km artar",
+      "substratla aşılır"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-133-extra": {
+    "front": "Kompetitif inhibisyonda Lineweaver-Burk grafiğinde x-kesişimi nasıl etkilenir?",
+    "back": "-1/Km sıfıra yaklaşır. Substrat artırılarak inhibisyon aşılabilir; bu nedenle maksimum hız korunur ama aynı hıza ulaşmak için daha fazla substrat gerekir.",
+    "answer": "-1/Km sıfıra yaklaşır. Substrat artırılarak inhibisyon aşılabilir; bu nedenle maksimum hız korunur ama aynı hıza ulaşmak için daha fazla substrat gerekir.",
+    "explanation": "Substrat artırılarak inhibisyon aşılabilir; bu nedenle maksimum hız korunur ama aynı hıza ulaşmak için daha fazla substrat gerekir. Nonkompetitif inhibitörde Vmax azalır; Km genellikle değişmez.",
+    "tusTip": "Kompetitif inhibitör kartında ayırıcı değer taşıyan nokta: Nonkompetitif inhibitörde Vmax azalır; Km genellikle değişmez.",
+    "differentialNote": "Nonkompetitif inhibitörde Vmax azalır; Km genellikle değişmez.",
+    "keywords": [
+      "kompetitif inhibitör",
+      "Vmax aynı",
+      "Km artar",
+      "substratla aşılır"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-134-spot": {
+    "front": "Oksidan ilaç sonrası hemoliz ve Heinz cisimcikleri hangi enzim eksikliğini düşündürür?",
+    "back": "G6PD eksikliği. G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir.",
+    "answer": "G6PD eksikliği. G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir.",
+    "explanation": "G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir. Piruvat kinaz eksikliği enerji üretim bozukluğu ile hemoliz yapar; oksidan tetik ve Heinz cismi G6PD lehinedir.",
+    "tusTip": "G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir. Piruvat kinaz eksikliği enerji üretim bozukluğu ile hemoliz yapar; oksidan tetik ve Heinz cismi G6PD lehinedir.",
+    "differentialNote": "Piruvat kinaz eksikliği enerji üretim bozukluğu ile hemoliz yapar; oksidan tetik ve Heinz cismi G6PD lehinedir.",
+    "keywords": [
+      "bakla",
+      "dapson/primaquine",
+      "Heinz cisimciği",
+      "NADPH"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-134-extra": {
+    "front": "G6PD eksikliğinde eritrositte hangi koruyucu molekülün yenilenmesi bozulur?",
+    "back": "Redükte glutatyon. G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir.",
+    "answer": "Redükte glutatyon. G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir.",
+    "explanation": "G6PD pentoz fosfat yolunda NADPH üretir; NADPH azalınca eritrosit oksidan strese duyarlı hale gelir. Piruvat kinaz eksikliği enerji üretim bozukluğu ile hemoliz yapar; oksidan tetik ve Heinz cismi G6PD lehinedir.",
+    "tusTip": "G6PD eksikliği için sınavda hedeflenen ayrım genellikle şudur: Piruvat kinaz eksikliği enerji üretim bozukluğu ile hemoliz yapar; oksidan tetik ve Heinz cismi G6PD lehinedir.",
+    "differentialNote": "Piruvat kinaz eksikliği enerji üretim bozukluğu ile hemoliz yapar; oksidan tetik ve Heinz cismi G6PD lehinedir.",
+    "keywords": [
+      "bakla",
+      "dapson/primaquine",
+      "Heinz cisimciği",
+      "NADPH"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-135-spot": {
+    "front": "Hiperammonemi ile birlikte idrarda orotik asit artışı hangi üre döngüsü bozukluğunu düşündürür?",
+    "back": "Ornitin transkarbamilaz eksikliği. Karbamoil fosfat mitokondride birikir ve pirimidin sentezine kayarak orotik asidi artırır.",
+    "answer": "Ornitin transkarbamilaz eksikliği. Karbamoil fosfat mitokondride birikir ve pirimidin sentezine kayarak orotik asidi artırır.",
+    "explanation": "Karbamoil fosfat mitokondride birikir ve pirimidin sentezine kayarak orotik asidi artırır. Karbamoil fosfat sentetaz I eksikliğinde orotik asit artışı beklenmez.",
+    "tusTip": "Karbamoil fosfat mitokondride birikir ve pirimidin sentezine kayarak orotik asidi artırır. Karbamoil fosfat sentetaz I eksikliğinde orotik asit artışı beklenmez.",
+    "differentialNote": "Karbamoil fosfat sentetaz I eksikliğinde orotik asit artışı beklenmez.",
+    "keywords": [
+      "hiperammonemi",
+      "orotik asit",
+      "OTC",
+      "X’e bağlı"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-135-extra": {
+    "front": "OTC eksikliğinin klasik kalıtım tipi nedir?",
+    "back": "OTC eksikliği klasik olarak X’e bağlı resesif geçer.",
+    "answer": "OTC eksikliği klasik olarak X’e bağlı resesif geçer.",
+    "explanation": "Karbamoil fosfat mitokondride birikir ve pirimidin sentezine kayarak orotik asidi artırır. Karbamoil fosfat sentetaz I eksikliğinde orotik asit artışı beklenmez.",
+    "tusTip": "Üre döngüsü ve orotik asit karıştırıldığında cevabı netleştiren karşılaştırma: Karbamoil fosfat sentetaz I eksikliğinde orotik asit artışı beklenmez.",
+    "differentialNote": "Karbamoil fosfat sentetaz I eksikliğinde orotik asit artışı beklenmez.",
+    "keywords": [
+      "hiperammonemi",
+      "orotik asit",
+      "OTC",
+      "X’e bağlı Tıbbi Mikrobiyoloji (medical-microbiology)"
+    ]
+  },
+  "tus-pearl-medical-microbiology-136-spot": {
+    "front": "Karbapenemlere dirençli, TMP-SMX duyarlı non-fermenter gram negatif basil hangi etkeni düşündürür?",
+    "back": "Stenotrophomonas maltophilia. Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir.",
+    "answer": "Stenotrophomonas maltophilia. Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir.",
+    "explanation": "Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir. Pseudomonas antipsödomonal beta-laktamlarla tedavi edilebilir; karbapenem direnci ve TMP-SMX ipucu Stenotrophomonas lehinedir.",
+    "tusTip": "Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir. Pseudomonas antipsödomonal beta-laktamlarla tedavi edilebilir; karbapenem direnci ve TMP-SMX ipucu Stenotrophomonas lehinedir.",
+    "differentialNote": "Pseudomonas antipsödomonal beta-laktamlarla tedavi edilebilir; karbapenem direnci ve TMP-SMX ipucu Stenotrophomonas lehinedir.",
+    "keywords": [
+      "non-fermenter",
+      "karbapenem dirençli",
+      "TMP-SMX",
+      "hastane enfeksiyonu"
+    ]
+  },
+  "tus-pearl-medical-microbiology-136-extra": {
+    "front": "Stenotrophomonas maltophilia tedavisinde klasik ilk tercih nedir?",
+    "back": "TMP-SMX, yani ko-trimoksazol. Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir.",
+    "answer": "TMP-SMX, yani ko-trimoksazol. Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir.",
+    "explanation": "Non-fermenter gram negatif basil olması, hastane ilişkili enfeksiyon yapması ve TMP-SMX duyarlılığı ayırt ettiricidir. Pseudomonas antipsödomonal beta-laktamlarla tedavi edilebilir; karbapenem direnci ve TMP-SMX ipucu Stenotrophomonas lehinedir.",
+    "tusTip": "Stenotrophomonas maltophilia kartında ayırıcı değer taşıyan nokta: Pseudomonas antipsödomonal beta-laktamlarla tedavi edilebilir; karbapenem direnci ve TMP-SMX ipucu Stenotrophomonas lehinedir.",
+    "differentialNote": "Pseudomonas antipsödomonal beta-laktamlarla tedavi edilebilir; karbapenem direnci ve TMP-SMX ipucu Stenotrophomonas lehinedir.",
+    "keywords": [
+      "non-fermenter",
+      "karbapenem dirençli",
+      "TMP-SMX",
+      "hastane enfeksiyonu"
+    ]
+  },
+  "tus-pearl-medical-microbiology-137-spot": {
+    "front": "İmmünsüprese hastada kaviter akciğer lezyonu ve beyin apsesi hangi bakteriyi düşündürür?",
+    "back": "Nocardia spp. Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım klinik ipucudur.",
+    "answer": "Nocardia spp. Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım klinik ipucudur.",
+    "explanation": "Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım klinik ipucudur. Actinomyces anaerobdur ve sülfür granülleriyle sorulur; Nocardia aerob, zayıf aside dirençli ve TMP-SMX duyarlıdır.",
+    "tusTip": "Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım klinik ipucudur. Actinomyces anaerobdur ve sülfür granülleriyle sorulur; Nocardia aerob, zayıf aside dirençli ve TMP-SMX duyarlıdır.",
+    "differentialNote": "Actinomyces anaerobdur ve sülfür granülleriyle sorulur; Nocardia aerob, zayıf aside dirençli ve TMP-SMX duyarlıdır.",
+    "keywords": [
+      "immünsüpresyon",
+      "kaviter akciğer",
+      "beyin apsesi",
+      "TMP-SMX"
+    ]
+  },
+  "tus-pearl-medical-microbiology-137-extra": {
+    "front": "Nocardia tedavisinde klasik tedavi ilacı hangisidir?",
+    "back": "Uzun süreli TMP-SMX tedavisi. Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım klinik ipucudur.",
+    "answer": "Uzun süreli TMP-SMX tedavisi. Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım klinik ipucudur.",
+    "explanation": "Nocardia dallanan filamentöz gram pozitif, zayıf aside dirençli aerob bakteridir; akciğerden beyne yayılım klinik ipucudur. Actinomyces anaerobdur ve sülfür granülleriyle sorulur; Nocardia aerob, zayıf aside dirençli ve TMP-SMX duyarlıdır.",
+    "tusTip": "Nocardia enfeksiyonu için sınavda hedeflenen ayrım genellikle şudur: Actinomyces anaerobdur ve sülfür granülleriyle sorulur; Nocardia aerob, zayıf aside dirençli ve TMP-SMX duyarlıdır.",
+    "differentialNote": "Actinomyces anaerobdur ve sülfür granülleriyle sorulur; Nocardia aerob, zayıf aside dirençli ve TMP-SMX duyarlıdır.",
+    "keywords": [
+      "immünsüpresyon",
+      "kaviter akciğer",
+      "beyin apsesi",
+      "TMP-SMX"
+    ]
+  },
+  "tus-pearl-medical-microbiology-138-spot": {
+    "front": "Pnömoniyle birlikte hiponatremi, karaciğer enzim yüksekliği ve klima öyküsü hangi etkeni düşündürür?",
+    "back": "Legionella pneumophila. Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir.",
+    "answer": "Legionella pneumophila. Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir.",
+    "explanation": "Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir. Mycoplasma genç erişkinde kuru öksürük ve soğuk aglutininle sorulur; hiponatremi-klima paterni Legionella için daha ayırt edicidir.",
+    "tusTip": "Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir. Mycoplasma genç erişkinde kuru öksürük ve soğuk aglutininle sorulur; hiponatremi-klima paterni Legionella için daha ayırt edicidir.",
+    "differentialNote": "Mycoplasma genç erişkinde kuru öksürük ve soğuk aglutininle sorulur; hiponatremi-klima paterni Legionella için daha ayırt edicidir.",
+    "keywords": [
+      "klima",
+      "hiponatremi",
+      "transaminaz yüksekliği",
+      "idrar antijeni"
+    ]
+  },
+  "tus-pearl-medical-microbiology-138-extra": {
+    "front": "Legionella tanısında hızlı kullanılan testlerden biri nedir?",
+    "back": "İdrar Legionella antijen testi. Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir.",
+    "answer": "İdrar Legionella antijen testi. Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir.",
+    "explanation": "Atipik pnömoni, gastrointestinal bulgu, hiponatremi ve su sistemi/klima maruziyeti birlikteliği Legionella lehinedir. Mycoplasma genç erişkinde kuru öksürük ve soğuk aglutininle sorulur; hiponatremi-klima paterni Legionella için daha ayırt edicidir.",
+    "tusTip": "Legionella pnömonisi karıştırıldığında cevabı netleştiren karşılaştırma: Mycoplasma genç erişkinde kuru öksürük ve soğuk aglutininle sorulur; hiponatremi-klima paterni Legionella için daha ayırt edicidir.",
+    "differentialNote": "Mycoplasma genç erişkinde kuru öksürük ve soğuk aglutininle sorulur; hiponatremi-klima paterni Legionella için daha ayırt edicidir.",
+    "keywords": [
+      "klima",
+      "hiponatremi",
+      "transaminaz yüksekliği",
+      "idrar antijeni"
+    ]
+  },
+  "tus-pearl-medical-microbiology-139-spot": {
+    "front": "CD4 düşük HIV hastasında bulanık görme ve retinal nekroz hangi fırsatçı enfeksiyonu düşündürür?",
+    "back": "CMV retiniti. CMV retiniti ileri immünsüpresyonda görme kaybı yapabilir; gansiklovir temel tedavi, miyelosupresyonda foskarnet alternatiftir.",
+    "answer": "CMV retiniti. CMV retiniti ileri immünsüpresyonda görme kaybı yapabilir; gansiklovir temel tedavi, miyelosupresyonda foskarnet alternatiftir.",
+    "explanation": "CMV retiniti ileri immünsüpresyonda görme kaybı yapabilir; gansiklovir temel tedavi, miyelosupresyonda foskarnet alternatiftir. Toksoplazma daha çok halka şeklinde beyin lezyonu ile sorulur; retina tutulumu ve görme şikâyeti CMV lehinedir.",
+    "tusTip": "CMV retiniti ileri immünsüpresyonda görme kaybı yapabilir; gansiklovir temel tedavi, miyelosupresyonda foskarnet alternatiftir. Toksoplazma daha çok halka şeklinde beyin lezyonu ile sorulur; retina tutulumu ve görme şikâyeti CMV lehinedir.",
+    "differentialNote": "Toksoplazma daha çok halka şeklinde beyin lezyonu ile sorulur; retina tutulumu ve görme şikâyeti CMV lehinedir.",
+    "keywords": [
+      "HIV",
+      "CD4 düşük",
+      "retinal nekroz",
+      "gansiklovir"
+    ]
+  },
+  "tus-pearl-medical-microbiology-139-extra": {
+    "front": "Gansiklovir nedeniyle lökopeni gelişirse hangi antiviral alternatif düşünülebilir?",
+    "back": "Foskarnet. CMV retiniti ileri immünsüpresyonda görme kaybı yapabilir; gansiklovir temel tedavi, miyelosupresyonda foskarnet alternatiftir.",
+    "answer": "Foskarnet. CMV retiniti ileri immünsüpresyonda görme kaybı yapabilir; gansiklovir temel tedavi, miyelosupresyonda foskarnet alternatiftir.",
+    "explanation": "CMV retiniti ileri immünsüpresyonda görme kaybı yapabilir; gansiklovir temel tedavi, miyelosupresyonda foskarnet alternatiftir. Toksoplazma daha çok halka şeklinde beyin lezyonu ile sorulur; retina tutulumu ve görme şikâyeti CMV lehinedir.",
+    "tusTip": "HIV hastasında CMV retiniti kartında ayırıcı değer taşıyan nokta: Toksoplazma daha çok halka şeklinde beyin lezyonu ile sorulur; retina tutulumu ve görme şikâyeti CMV lehinedir.",
+    "differentialNote": "Toksoplazma daha çok halka şeklinde beyin lezyonu ile sorulur; retina tutulumu ve görme şikâyeti CMV lehinedir.",
+    "keywords": [
+      "HIV",
+      "CD4 düşük",
+      "retinal nekroz",
+      "gansiklovir"
+    ]
+  },
+  "tus-pearl-medical-microbiology-140-spot": {
+    "front": "Akut HBV enfeksiyonunu pencere döneminde gösteren en yararlı serolojik belirteç hangisidir?",
+    "back": "Anti-HBc IgM. Pencere döneminde HBsAg kaybolmuş, anti-HBs henüz oluşmamış olabilir; anti-HBc IgM akut enfeksiyonu destekler.",
+    "answer": "Anti-HBc IgM. Pencere döneminde HBsAg kaybolmuş, anti-HBs henüz oluşmamış olabilir; anti-HBc IgM akut enfeksiyonu destekler.",
+    "explanation": "Pencere döneminde HBsAg kaybolmuş, anti-HBs henüz oluşmamış olabilir; anti-HBc IgM akut enfeksiyonu destekler. Anti-HBs bağışıklığı gösterir; pencere döneminde akut enfeksiyon kanıtı olarak anti-HBc IgM aranır.",
+    "tusTip": "Pencere döneminde HBsAg kaybolmuş, anti-HBs henüz oluşmamış olabilir; anti-HBc IgM akut enfeksiyonu destekler. Anti-HBs bağışıklığı gösterir; pencere döneminde akut enfeksiyon kanıtı olarak anti-HBc IgM aranır.",
+    "differentialNote": "Anti-HBs bağışıklığı gösterir; pencere döneminde akut enfeksiyon kanıtı olarak anti-HBc IgM aranır.",
+    "keywords": [
+      "HBV",
+      "pencere dönemi",
+      "anti-HBc IgM",
+      "akut enfeksiyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-140-extra": {
+    "front": "HBV aşısı sonrası beklenen tek pozitif belirteç hangisidir?",
+    "back": "Anti-HBs. Pencere döneminde HBsAg kaybolmuş, anti-HBs henüz oluşmamış olabilir; anti-HBc IgM akut enfeksiyonu destekler.",
+    "answer": "Anti-HBs. Pencere döneminde HBsAg kaybolmuş, anti-HBs henüz oluşmamış olabilir; anti-HBc IgM akut enfeksiyonu destekler.",
+    "explanation": "Pencere döneminde HBsAg kaybolmuş, anti-HBs henüz oluşmamış olabilir; anti-HBc IgM akut enfeksiyonu destekler. Anti-HBs bağışıklığı gösterir; pencere döneminde akut enfeksiyon kanıtı olarak anti-HBc IgM aranır.",
+    "tusTip": "Hepatit B serolojisi için sınavda hedeflenen ayrım genellikle şudur: Anti-HBs bağışıklığı gösterir; pencere döneminde akut enfeksiyon kanıtı olarak anti-HBc IgM aranır.",
+    "differentialNote": "Anti-HBs bağışıklığı gösterir; pencere döneminde akut enfeksiyon kanıtı olarak anti-HBc IgM aranır.",
+    "keywords": [
+      "HBV",
+      "pencere dönemi",
+      "anti-HBc IgM",
+      "akut enfeksiyon Tıbbi Patoloji (medical-pathology)"
+    ]
+  },
+  "tus-pearl-medical-pathology-141-spot": {
+    "front": "Beyin infarktında diğer solid organlardan farklı olarak hangi nekroz tipi beklenir?",
+    "back": "Sıvılaşma nekrozu. Beyinde iskemik hasar enzimatik sindirim ve yumuşama ile sıvılaşma nekrozu yapar.",
+    "answer": "Sıvılaşma nekrozu. Beyinde iskemik hasar enzimatik sindirim ve yumuşama ile sıvılaşma nekrozu yapar.",
+    "explanation": "Beyinde iskemik hasar enzimatik sindirim ve yumuşama ile sıvılaşma nekrozu yapar. Miyokard ve böbrek infarktında koagülasyon nekrozu beklenir; beyin bu kuralın klasik istisnasıdır.",
+    "tusTip": "Beyinde iskemik hasar enzimatik sindirim ve yumuşama ile sıvılaşma nekrozu yapar. Miyokard ve böbrek infarktında koagülasyon nekrozu beklenir; beyin bu kuralın klasik istisnasıdır.",
+    "differentialNote": "Miyokard ve böbrek infarktında koagülasyon nekrozu beklenir; beyin bu kuralın klasik istisnasıdır.",
+    "keywords": [
+      "beyin",
+      "infarkt",
+      "sıvılaşma",
+      "solid organ ayrımı"
+    ]
+  },
+  "tus-pearl-medical-pathology-141-extra": {
+    "front": "Solid organ infarktlarında beyin dışındaki klasik nekroz tipi hangisidir?",
+    "back": "Beyin dışındaki çoğu solid organ infarktında koagülasyon nekrozu beklenir.",
+    "answer": "Beyin dışındaki çoğu solid organ infarktında koagülasyon nekrozu beklenir.",
+    "explanation": "Beyinde iskemik hasar enzimatik sindirim ve yumuşama ile sıvılaşma nekrozu yapar. Miyokard ve böbrek infarktında koagülasyon nekrozu beklenir; beyin bu kuralın klasik istisnasıdır.",
+    "tusTip": "Beyin infarktında nekroz karıştırıldığında cevabı netleştiren karşılaştırma: Miyokard ve böbrek infarktında koagülasyon nekrozu beklenir; beyin bu kuralın klasik istisnasıdır.",
+    "differentialNote": "Miyokard ve böbrek infarktında koagülasyon nekrozu beklenir; beyin bu kuralın klasik istisnasıdır.",
+    "keywords": [
+      "beyin",
+      "infarkt",
+      "sıvılaşma",
+      "solid organ ayrımı Tıbbi Farmakoloji (medical-pharmacology)"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-142-spot": {
+    "front": "Digoksin toksisitesinde hayatı tehdit eden aritmi veya ağır hiperkalemide antidot nedir?",
+    "back": "Digoksin spesifik Fab antikoru. Bulantı, sarı-yeşil görme, aritmi ve hiperkalemi digoksin toksisitesini düşündürür; ciddi tabloda Fab antidotu kullanılır.",
+    "answer": "Digoksin spesifik Fab antikoru. Bulantı, sarı-yeşil görme, aritmi ve hiperkalemi digoksin toksisitesini düşündürür; ciddi tabloda Fab antidotu kullanılır.",
+    "explanation": "Bulantı, sarı-yeşil görme, aritmi ve hiperkalemi digoksin toksisitesini düşündürür; ciddi tabloda Fab antidotu kullanılır. Atropin bradikardiye geçici destek olabilir; toksinin bağlanması gereken ağır tabloda Fab antikoru esastır.",
+    "tusTip": "Bulantı, sarı-yeşil görme, aritmi ve hiperkalemi digoksin toksisitesini düşündürür; ciddi tabloda Fab antidotu kullanılır. Atropin bradikardiye geçici destek olabilir; toksinin bağlanması gereken ağır tabloda Fab antikoru esastır.",
+    "differentialNote": "Atropin bradikardiye geçici destek olabilir; toksinin bağlanması gereken ağır tabloda Fab antikoru esastır.",
+    "keywords": [
+      "digoksin",
+      "aritmi",
+      "sarı-yeşil görme",
+      "Fab antikoru"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-142-extra": {
+    "front": "Digoksin toksisitesi hangi elektrolit bozukluğunda kolaylaşır?",
+    "back": "Hipokalemi. Bulantı, sarı-yeşil görme, aritmi ve hiperkalemi digoksin toksisitesini düşündürür; ciddi tabloda Fab antidotu kullanılır.",
+    "answer": "Hipokalemi. Bulantı, sarı-yeşil görme, aritmi ve hiperkalemi digoksin toksisitesini düşündürür; ciddi tabloda Fab antidotu kullanılır.",
+    "explanation": "Bulantı, sarı-yeşil görme, aritmi ve hiperkalemi digoksin toksisitesini düşündürür; ciddi tabloda Fab antidotu kullanılır. Atropin bradikardiye geçici destek olabilir; toksinin bağlanması gereken ağır tabloda Fab antikoru esastır.",
+    "tusTip": "Digoksin toksisitesi kartında ayırıcı değer taşıyan nokta: Atropin bradikardiye geçici destek olabilir; toksinin bağlanması gereken ağır tabloda Fab antikoru esastır.",
+    "differentialNote": "Atropin bradikardiye geçici destek olabilir; toksinin bağlanması gereken ağır tabloda Fab antikoru esastır.",
+    "keywords": [
+      "digoksin",
+      "aritmi",
+      "sarı-yeşil görme",
+      "Fab antikoru"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-143-spot": {
+    "front": "Kalsiyum kanal bloker zehirlenmesinde dirençli hipotansiyon/bradikardide metabolik destek tedavisi nedir?",
+    "back": "Yüksek doz insülin-euglisemi tedavisi. Yüksek doz insülin miyokardın karbonhidrat kullanımını ve inotropiyi destekler; glukoz ve potasyum yakın izlenir.",
+    "answer": "Yüksek doz insülin-euglisemi tedavisi. Yüksek doz insülin miyokardın karbonhidrat kullanımını ve inotropiyi destekler; glukoz ve potasyum yakın izlenir.",
+    "explanation": "Yüksek doz insülin miyokardın karbonhidrat kullanımını ve inotropiyi destekler; glukoz ve potasyum yakın izlenir. Glukagon beta bloker zehirlenmesinin klasik antidotudur; CCB toksisitesinde yüksek doz insülin-euglisemi sık sorulur.",
+    "tusTip": "Yüksek doz insülin miyokardın karbonhidrat kullanımını ve inotropiyi destekler; glukoz ve potasyum yakın izlenir. Glukagon beta bloker zehirlenmesinin klasik antidotudur; CCB toksisitesinde yüksek doz insülin-euglisemi sık sorulur.",
+    "differentialNote": "Glukagon beta bloker zehirlenmesinin klasik antidotudur; CCB toksisitesinde yüksek doz insülin-euglisemi sık sorulur.",
+    "keywords": [
+      "CCB zehirlenmesi",
+      "bradikardi",
+      "hipotansiyon",
+      "yüksek doz insülin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-143-extra": {
+    "front": "Kalsiyum kanal bloker toksisitesinde hangi elektrolit tedavi sırasında yakından izlenir?",
+    "back": "Serum potasyumu ve glukoz yakından izlenir.",
+    "answer": "Serum potasyumu ve glukoz yakından izlenir.",
+    "explanation": "Yüksek doz insülin miyokardın karbonhidrat kullanımını ve inotropiyi destekler; glukoz ve potasyum yakın izlenir. Glukagon beta bloker zehirlenmesinin klasik antidotudur; CCB toksisitesinde yüksek doz insülin-euglisemi sık sorulur.",
+    "tusTip": "Kalsiyum kanal bloker zehirlenmesi için sınavda hedeflenen ayrım genellikle şudur: Glukagon beta bloker zehirlenmesinin klasik antidotudur; CCB toksisitesinde yüksek doz insülin-euglisemi sık sorulur.",
+    "differentialNote": "Glukagon beta bloker zehirlenmesinin klasik antidotudur; CCB toksisitesinde yüksek doz insülin-euglisemi sık sorulur.",
+    "keywords": [
+      "CCB zehirlenmesi",
+      "bradikardi",
+      "hipotansiyon",
+      "yüksek doz insülin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-144-spot": {
+    "front": "SSRI/MAOI kullanımı sonrası hipertermi, klonus ve hiperrefleksi hangi toksidromu düşündürür?",
+    "back": "Serotonin sendromu. Serotonin fazlalığı nöromüsküler hiperaktivite yapar; klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir.",
+    "answer": "Serotonin sendromu. Serotonin fazlalığı nöromüsküler hiperaktivite yapar; klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir.",
+    "explanation": "Serotonin fazlalığı nöromüsküler hiperaktivite yapar; klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir. Nöroleptik malign sendromda rijidite ve kreatin kinaz yüksekliği baskındır; klonus serotonin sendromunu güçlendirir.",
+    "tusTip": "Serotonin fazlalığı nöromüsküler hiperaktivite yapar; klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir. Nöroleptik malign sendromda rijidite ve kreatin kinaz yüksekliği baskındır; klonus serotonin sendromunu güçlendirir.",
+    "differentialNote": "Nöroleptik malign sendromda rijidite ve kreatin kinaz yüksekliği baskındır; klonus serotonin sendromunu güçlendirir.",
+    "keywords": [
+      "SSRI/MAOI",
+      "hipertermi",
+      "klonus",
+      "hiperrefleksi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-144-extra": {
+    "front": "Serotonin sendromunda kullanılan antidotal ajan hangisidir?",
+    "back": "Siproheptadin. Serotonin fazlalığı nöromüsküler hiperaktivite yapar; klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir.",
+    "answer": "Siproheptadin. Serotonin fazlalığı nöromüsküler hiperaktivite yapar; klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir.",
+    "explanation": "Serotonin fazlalığı nöromüsküler hiperaktivite yapar; klonus ve hiperrefleksi nöroleptik malign sendromdan ayrımda değerlidir. Nöroleptik malign sendromda rijidite ve kreatin kinaz yüksekliği baskındır; klonus serotonin sendromunu güçlendirir.",
+    "tusTip": "Serotonin sendromu karıştırıldığında cevabı netleştiren karşılaştırma: Nöroleptik malign sendromda rijidite ve kreatin kinaz yüksekliği baskındır; klonus serotonin sendromunu güçlendirir.",
+    "differentialNote": "Nöroleptik malign sendromda rijidite ve kreatin kinaz yüksekliği baskındır; klonus serotonin sendromunu güçlendirir.",
+    "keywords": [
+      "SSRI/MAOI",
+      "hipertermi",
+      "klonus",
+      "hiperrefleksi İç Hastalıkları (internal-medicine)"
+    ]
+  },
+  "tus-pearl-internal-medicine-145-spot": {
+    "front": "Hipotansiyon ve laktat yüksekliği olan sepsis şüphesinde ilk yaklaşımın temel ikilisi nedir?",
+    "back": "Geniş spektrumlu antibiyotik ve 30 mL/kg kristaloid sıvı.",
+    "answer": "Geniş spektrumlu antibiyotik ve 30 mL/kg kristaloid sıvı.",
+    "explanation": "Septik şokta tedavi geciktirilmez; kaynak kontrolü planlanırken erken antibiyotik ve kristaloid resüsitasyon mortaliteyi azaltmaya yöneliktir. Vazopressör sıvıya rağmen MAP hedefi sağlanamazsa eklenir; ilk dakikalarda antibiyotik ve sıvı geciktirilmemelidir.",
+    "tusTip": "Septik şokta tedavi geciktirilmez; kaynak kontrolü planlanırken erken antibiyotik ve kristaloid resüsitasyon mortaliteyi azaltmaya yöneliktir. Vazopressör sıvıya rağmen MAP hedefi sağlanamazsa eklenir; ilk dakikalarda antibiyotik ve sıvı geciktirilmemelidir.",
+    "differentialNote": "Vazopressör sıvıya rağmen MAP hedefi sağlanamazsa eklenir; ilk dakikalarda antibiyotik ve sıvı geciktirilmemelidir.",
+    "keywords": [
+      "sepsis",
+      "hipotansiyon",
+      "laktat yüksek",
+      "antibiyotik + kristaloid"
+    ]
+  },
+  "tus-pearl-internal-medicine-145-keywords": {
+    "front": "Septik şok şüphesinde ilk yaklaşım hangi iki basamağı içermelidir?",
+    "back": "Geniş spektrumlu antibiyotik başlanması ve hızlı kristaloid resüsitasyonu.",
+    "answer": "Geniş spektrumlu antibiyotik başlanması ve hızlı kristaloid resüsitasyonu.",
+    "explanation": "Hipotansiyon, laktat yüksekliği ve enfeksiyon odağı birlikteyse erken antibiyotik ve sıvı tedavisi önceliklidir. Vazopressör, yeterli sıvı resüsitasyonuna rağmen hipotansiyon sürerse gündeme gelir.",
+    "tusTip": "Sepsis/şok sorularında ilk yaklaşım yalnız antibiyotik veya yalnız sıvı değildir; erken kombine resüsitasyon düşünülür.",
+    "differentialNote": "Vazopressör, yeterli sıvı resüsitasyonuna rağmen hipotansiyon sürerse gündeme gelir.",
+    "keywords": [
+      "sepsis",
+      "hipotansiyon",
+      "laktat yüksek",
+      "antibiyotik + kristaloid"
+    ]
+  },
+  "tus-pearl-internal-medicine-145-extra": {
+    "front": "Sepsiste ilk tercih vazopressör genellikle hangisidir?",
+    "back": "Norepinefrin. Septik şokta tedavi geciktirilmez; kaynak kontrolü planlanırken erken antibiyotik ve kristaloid resüsitasyon mortaliteyi azaltmaya yöneliktir.",
+    "answer": "Norepinefrin. Septik şokta tedavi geciktirilmez; kaynak kontrolü planlanırken erken antibiyotik ve kristaloid resüsitasyon mortaliteyi azaltmaya yöneliktir.",
+    "explanation": "Septik şokta tedavi geciktirilmez; kaynak kontrolü planlanırken erken antibiyotik ve kristaloid resüsitasyon mortaliteyi azaltmaya yöneliktir. Vazopressör sıvıya rağmen MAP hedefi sağlanamazsa eklenir; ilk dakikalarda antibiyotik ve sıvı geciktirilmemelidir.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Vazopressör sıvıya rağmen MAP hedefi sağlanamazsa eklenir; ilk dakikalarda antibiyotik ve sıvı geciktirilmemelidir.",
+    "differentialNote": "Vazopressör sıvıya rağmen MAP hedefi sağlanamazsa eklenir; ilk dakikalarda antibiyotik ve sıvı geciktirilmemelidir.",
+    "keywords": [
+      "sepsis",
+      "hipotansiyon",
+      "laktat yüksek",
+      "antibiyotik + kristaloid"
+    ]
+  },
+  "tus-pearl-internal-medicine-146-spot": {
+    "front": "Pulmoner embolide hemodinamik instabilite risk sınıflamasını nasıl belirler?",
+    "back": "Hasta doğrudan yüksek riskli pulmoner emboli kabul edilir.",
+    "answer": "Hasta doğrudan yüksek riskli pulmoner emboli kabul edilir.",
+    "explanation": "Ciddi hipotansiyon veya şok varsa PESI sınıfı beklenmeden yüksek risk PE düşünülür; acil reperfüzyon yaklaşımı gündeme gelir. PESI mortalite tahmini için kullanılır; hemodinamik instabil hastayı “PESI IV” diye sınırlamak hatalıdır.",
+    "tusTip": "Ciddi hipotansiyon veya şok varsa PESI sınıfı beklenmeden yüksek risk PE düşünülür; acil reperfüzyon yaklaşımı gündeme gelir. PESI mortalite tahmini için kullanılır; hemodinamik instabil hastayı “PESI IV” diye sınırlamak hatalıdır.",
+    "differentialNote": "PESI mortalite tahmini için kullanılır; hemodinamik instabil hastayı “PESI IV” diye sınırlamak hatalıdır.",
+    "keywords": [
+      "pulmoner emboli",
+      "hipotansiyon",
+      "yüksek risk",
+      "reperfüzyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-146-extra": {
+    "front": "Hemodinamik instabil PE’de kontrendikasyon yoksa hangi tedavi düşünülür?",
+    "back": "Sistemik trombolitik tedavi. Ciddi hipotansiyon veya şok varsa PESI sınıfı beklenmeden yüksek risk PE düşünülür; acil reperfüzyon yaklaşımı gündeme gelir.",
+    "answer": "Sistemik trombolitik tedavi. Ciddi hipotansiyon veya şok varsa PESI sınıfı beklenmeden yüksek risk PE düşünülür; acil reperfüzyon yaklaşımı gündeme gelir.",
+    "explanation": "Ciddi hipotansiyon veya şok varsa PESI sınıfı beklenmeden yüksek risk PE düşünülür; acil reperfüzyon yaklaşımı gündeme gelir. PESI mortalite tahmini için kullanılır; hemodinamik instabil hastayı “PESI IV” diye sınırlamak hatalıdır.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: PESI mortalite tahmini için kullanılır; hemodinamik instabil hastayı “PESI IV” diye sınırlamak hatalıdır.",
+    "differentialNote": "PESI mortalite tahmini için kullanılır; hemodinamik instabil hastayı “PESI IV” diye sınırlamak hatalıdır.",
+    "keywords": [
+      "pulmoner emboli",
+      "hipotansiyon",
+      "yüksek risk",
+      "reperfüzyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-147-spot": {
+    "front": "Pulmoner hipertansiyon tedavisinde vazoreaktivite kanıtı yoksa hangi ilaç tuzak seçenektir?",
+    "back": "Verapamil gibi non-dihidropiridin kalsiyum kanal blokerleri.",
+    "answer": "Verapamil gibi non-dihidropiridin kalsiyum kanal blokerleri.",
+    "explanation": "Pulmoner arteriyel hipertansiyonda CCB yalnız vazoreaktivite testi pozitif seçilmiş hastalarda düşünülür; verapamil sağ kalp yetmezliğini kötüleştirebilir. Bosentan, tadalafil veya prostasiklin analogları PAH tedavi seçenekleridir; verapamil her hastaya otomatik verilmez.",
+    "tusTip": "Pulmoner arteriyel hipertansiyonda CCB yalnız vazoreaktivite testi pozitif seçilmiş hastalarda düşünülür; verapamil sağ kalp yetmezliğini kötüleştirebilir. Bosentan, tadalafil veya prostasiklin analogları PAH tedavi seçenekleridir; verapamil her hastaya otomatik verilmez.",
+    "differentialNote": "Bosentan, tadalafil veya prostasiklin analogları PAH tedavi seçenekleridir; verapamil her hastaya otomatik verilmez.",
+    "keywords": [
+      "pulmoner HT",
+      "vazoreaktivite",
+      "verapamil",
+      "kontraendikasyon tuzağı"
+    ]
+  },
+  "tus-pearl-internal-medicine-147-extra": {
+    "front": "Pulmoner arteriyel hipertansiyon tanısını kesinleştiren yöntem nedir?",
+    "back": "Sağ kalp kateterizasyonu. Pulmoner arteriyel hipertansiyonda CCB yalnız vazoreaktivite testi pozitif seçilmiş hastalarda düşünülür; verapamil sağ kalp yetmezliğini kötüleştirebilir.",
+    "answer": "Sağ kalp kateterizasyonu. Pulmoner arteriyel hipertansiyonda CCB yalnız vazoreaktivite testi pozitif seçilmiş hastalarda düşünülür; verapamil sağ kalp yetmezliğini kötüleştirebilir.",
+    "explanation": "Pulmoner arteriyel hipertansiyonda CCB yalnız vazoreaktivite testi pozitif seçilmiş hastalarda düşünülür; verapamil sağ kalp yetmezliğini kötüleştirebilir. Bosentan, tadalafil veya prostasiklin analogları PAH tedavi seçenekleridir; verapamil her hastaya otomatik verilmez.",
+    "tusTip": "Pratik karar noktası: Bosentan, tadalafil veya prostasiklin analogları PAH tedavi seçenekleridir; verapamil her hastaya otomatik verilmez.",
+    "differentialNote": "Bosentan, tadalafil veya prostasiklin analogları PAH tedavi seçenekleridir; verapamil her hastaya otomatik verilmez.",
+    "keywords": [
+      "pulmoner HT",
+      "vazoreaktivite",
+      "verapamil",
+      "kontraendikasyon tuzağı"
+    ]
+  },
+  "tus-pearl-internal-medicine-148-spot": {
+    "front": "TSH düşük, T4 yüksek, tiroglobulin düşük ve RAI tutulumu düşükse hangi tanı düşünülür?",
+    "back": "Tirotoksikozis faktitisya. Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür.",
+    "answer": "Tirotoksikozis faktitisya. Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür.",
+    "explanation": "Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür. Graves’te TRAb pozitifliği ve artmış RAI tutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
+    "tusTip": "Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür. Graves’te TRAb pozitifliği ve artmış RAI tutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
+    "differentialNote": "Graves’te TRAb pozitifliği ve artmış RAI tutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
+    "keywords": [
+      "TSH düşük",
+      "T4 yüksek",
+      "tiroglobulin düşük",
+      "RAI düşük"
+    ]
+  },
+  "tus-pearl-internal-medicine-148-extra": {
+    "front": "Subakut tiroiditi faktitisyadan ayıran tipik klinik bulgu nedir?",
+    "back": "Ağrılı tiroid ve yüksek sedimentasyon. Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür.",
+    "answer": "Ağrılı tiroid ve yüksek sedimentasyon. Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür.",
+    "explanation": "Eksojen tiroid hormonu alımında bez hormon üretmediği için tiroglobulin ve radyoaktif iyot tutulumu düşüktür. Graves’te TRAb pozitifliği ve artmış RAI tutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Graves’te TRAb pozitifliği ve artmış RAI tutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
+    "differentialNote": "Graves’te TRAb pozitifliği ve artmış RAI tutulumu beklenir; faktitisyada dışarıdan hormon alımı vardır.",
+    "keywords": [
+      "TSH düşük",
+      "T4 yüksek",
+      "tiroglobulin düşük",
+      "RAI düşük"
+    ]
+  },
+  "tus-pearl-internal-medicine-149-spot": {
+    "front": "Yeni başlayan dirençli hipertansiyon, abdominal üfürüm ve flash akciğer ödemi hangi tanıyı düşündürür?",
+    "back": "Renovasküler hipertansiyon. Renal arter stenozu renin-anjiyotensin sistemini aktive eder; özellikle yaşlı aterosklerotik hastada flash akciğer ödemi ipucu değerlidir.",
+    "answer": "Renovasküler hipertansiyon. Renal arter stenozu renin-anjiyotensin sistemini aktive eder; özellikle yaşlı aterosklerotik hastada flash akciğer ödemi ipucu değerlidir.",
+    "explanation": "Renal arter stenozu renin-anjiyotensin sistemini aktive eder; özellikle yaşlı aterosklerotik hastada flash akciğer ödemi ipucu değerlidir. Primer hiperaldosteronizm hipokalemik hipertansiyon yapar; abdominal üfürüm ve flash ödem renovasküler nedeni güçlendirir.",
+    "tusTip": "Renal arter stenozu renin-anjiyotensin sistemini aktive eder; özellikle yaşlı aterosklerotik hastada flash akciğer ödemi ipucu değerlidir. Primer hiperaldosteronizm hipokalemik hipertansiyon yapar; abdominal üfürüm ve flash ödem renovasküler nedeni güçlendirir.",
+    "differentialNote": "Primer hiperaldosteronizm hipokalemik hipertansiyon yapar; abdominal üfürüm ve flash ödem renovasküler nedeni güçlendirir.",
+    "keywords": [
+      "dirençli HT",
+      "abdominal üfürüm",
+      "flash akciğer ödemi",
+      "renal arter stenozu"
+    ]
+  },
+  "tus-pearl-internal-medicine-149-extra": {
+    "front": "Renovasküler hipertansiyonda görüntüleme için hangi noninvaziv yöntemler kullanılabilir?",
+    "back": "BT veya MR anjiyografi. Renal arter stenozu renin-anjiyotensin sistemini aktive eder; özellikle yaşlı aterosklerotik hastada flash akciğer ödemi ipucu değerlidir.",
+    "answer": "BT veya MR anjiyografi. Renal arter stenozu renin-anjiyotensin sistemini aktive eder; özellikle yaşlı aterosklerotik hastada flash akciğer ödemi ipucu değerlidir.",
+    "explanation": "Renal arter stenozu renin-anjiyotensin sistemini aktive eder; özellikle yaşlı aterosklerotik hastada flash akciğer ödemi ipucu değerlidir. Primer hiperaldosteronizm hipokalemik hipertansiyon yapar; abdominal üfürüm ve flash ödem renovasküler nedeni güçlendirir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Primer hiperaldosteronizm hipokalemik hipertansiyon yapar; abdominal üfürüm ve flash ödem renovasküler nedeni güçlendirir.",
+    "differentialNote": "Primer hiperaldosteronizm hipokalemik hipertansiyon yapar; abdominal üfürüm ve flash ödem renovasküler nedeni güçlendirir.",
+    "keywords": [
+      "dirençli HT",
+      "abdominal üfürüm",
+      "flash akciğer ödemi",
+      "renal arter stenozu"
+    ]
+  },
+  "tus-pearl-internal-medicine-150-spot": {
+    "front": "Katı ve sıvıya disfaji, regürjitasyon ve kuş gagası görünümü hangi hastalığı düşündürür?",
+    "back": "Akalazya. Alt özofagus sfinkteri gevşeyemez ve peristaltizm kaybolur; manometri tanıyı doğrulayan temel testtir.",
+    "answer": "Akalazya. Alt özofagus sfinkteri gevşeyemez ve peristaltizm kaybolur; manometri tanıyı doğrulayan temel testtir.",
+    "explanation": "Alt özofagus sfinkteri gevşeyemez ve peristaltizm kaybolur; manometri tanıyı doğrulayan temel testtir. Özofagus kanserinde progresif katı disfaji ve kilo kaybı baskındır; akalazyada katı-sıvı birlikte disfaji tipiktir.",
+    "tusTip": "Alt özofagus sfinkteri gevşeyemez ve peristaltizm kaybolur; manometri tanıyı doğrulayan temel testtir. Özofagus kanserinde progresif katı disfaji ve kilo kaybı baskındır; akalazyada katı-sıvı birlikte disfaji tipiktir.",
+    "differentialNote": "Özofagus kanserinde progresif katı disfaji ve kilo kaybı baskındır; akalazyada katı-sıvı birlikte disfaji tipiktir.",
+    "keywords": [
+      "katı+sıvı disfaji",
+      "regürjitasyon",
+      "kuş gagası",
+      "manometri"
+    ]
+  },
+  "tus-pearl-internal-medicine-150-extra": {
+    "front": "Akalazya tanısını kesinleştiren test nedir?",
+    "back": "Özofagus manometrisi. Alt özofagus sfinkteri gevşeyemez ve peristaltizm kaybolur; manometri tanıyı doğrulayan temel testtir.",
+    "answer": "Özofagus manometrisi. Alt özofagus sfinkteri gevşeyemez ve peristaltizm kaybolur; manometri tanıyı doğrulayan temel testtir.",
+    "explanation": "Alt özofagus sfinkteri gevşeyemez ve peristaltizm kaybolur; manometri tanıyı doğrulayan temel testtir. Özofagus kanserinde progresif katı disfaji ve kilo kaybı baskındır; akalazyada katı-sıvı birlikte disfaji tipiktir.",
+    "tusTip": "Pratik karar noktası: Özofagus kanserinde progresif katı disfaji ve kilo kaybı baskındır; akalazyada katı-sıvı birlikte disfaji tipiktir.",
+    "differentialNote": "Özofagus kanserinde progresif katı disfaji ve kilo kaybı baskındır; akalazyada katı-sıvı birlikte disfaji tipiktir.",
+    "keywords": [
+      "katı+sıvı disfaji",
+      "regürjitasyon",
+      "kuş gagası",
+      "manometri"
+    ]
+  },
+  "tus-pearl-internal-medicine-151-spot": {
+    "front": "Ülseratif kolitli hastada kolestatik enzim yüksekliği ve kaşıntı hangi hastalığı düşündürür?",
+    "back": "Primer sklerozan kolanjit. PSK intra/ekstrahepatik safra yollarında multifokal darlıklarla seyreder; ülseratif kolit birlikteliği sınav için ayırt ettiricidir.",
+    "answer": "Primer sklerozan kolanjit. PSK intra/ekstrahepatik safra yollarında multifokal darlıklarla seyreder; ülseratif kolit birlikteliği sınav için ayırt ettiricidir.",
+    "explanation": "PSK intra/ekstrahepatik safra yollarında multifokal darlıklarla seyreder; ülseratif kolit birlikteliği sınav için ayırt ettiricidir. Primer biliyer kolanjit daha çok orta yaş kadın, AMA pozitifliği ve küçük intrahepatik kanallar ile sorulur.",
+    "tusTip": "PSK intra/ekstrahepatik safra yollarında multifokal darlıklarla seyreder; ülseratif kolit birlikteliği sınav için ayırt ettiricidir. Primer biliyer kolanjit daha çok orta yaş kadın, AMA pozitifliği ve küçük intrahepatik kanallar ile sorulur.",
+    "differentialNote": "Primer biliyer kolanjit daha çok orta yaş kadın, AMA pozitifliği ve küçük intrahepatik kanallar ile sorulur.",
+    "keywords": [
+      "ülseratif kolit",
+      "ALP yüksek",
+      "kaşıntı",
+      "MR kolanjiyografi"
+    ]
+  },
+  "tus-pearl-internal-medicine-151-extra": {
+    "front": "Primer sklerozan kolanjitte tercih edilen tanısal görüntüleme nedir?",
+    "back": "MR kolanjiyografi. PSK intra/ekstrahepatik safra yollarında multifokal darlıklarla seyreder; ülseratif kolit birlikteliği sınav için ayırt ettiricidir.",
+    "answer": "MR kolanjiyografi. PSK intra/ekstrahepatik safra yollarında multifokal darlıklarla seyreder; ülseratif kolit birlikteliği sınav için ayırt ettiricidir.",
+    "explanation": "PSK intra/ekstrahepatik safra yollarında multifokal darlıklarla seyreder; ülseratif kolit birlikteliği sınav için ayırt ettiricidir. Primer biliyer kolanjit daha çok orta yaş kadın, AMA pozitifliği ve küçük intrahepatik kanallar ile sorulur.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Primer biliyer kolanjit daha çok orta yaş kadın, AMA pozitifliği ve küçük intrahepatik kanallar ile sorulur.",
+    "differentialNote": "Primer biliyer kolanjit daha çok orta yaş kadın, AMA pozitifliği ve küçük intrahepatik kanallar ile sorulur.",
+    "keywords": [
+      "ülseratif kolit",
+      "ALP yüksek",
+      "kaşıntı",
+      "MR kolanjiyografi"
+    ]
+  },
+  "tus-pearl-internal-medicine-152-spot": {
+    "front": "Hemoliz bulgularına direkt Coombs pozitifliği eşlik ediyorsa hangi tanı öne çıkar?",
+    "back": "Otoimmün hemolitik anemi. Retikülosit, LDH ve indirekt bilirübin artışı hemolizi; direkt Coombs pozitifliği antikor aracılı yıkımı destekler.",
+    "answer": "Otoimmün hemolitik anemi. Retikülosit, LDH ve indirekt bilirübin artışı hemolizi; direkt Coombs pozitifliği antikor aracılı yıkımı destekler.",
+    "explanation": "Retikülosit, LDH ve indirekt bilirübin artışı hemolizi; direkt Coombs pozitifliği antikor aracılı yıkımı destekler. Mikroanjiyopatik hemolizde Coombs negatif ve periferik yaymada şistosit beklenir.",
+    "tusTip": "Retikülosit, LDH ve indirekt bilirübin artışı hemolizi; direkt Coombs pozitifliği antikor aracılı yıkımı destekler. Mikroanjiyopatik hemolizde Coombs negatif ve periferik yaymada şistosit beklenir.",
+    "differentialNote": "Mikroanjiyopatik hemolizde Coombs negatif ve periferik yaymada şistosit beklenir.",
+    "keywords": [
+      "anemi",
+      "retikülosit yüksek",
+      "direkt Coombs pozitif",
+      "indirekt bilirübin"
+    ]
+  },
+  "tus-pearl-internal-medicine-152-extra": {
+    "front": "Sıcak otoimmün hemolitik anemide en sık antikor tipi hangisidir?",
+    "back": "IgG. Retikülosit, LDH ve indirekt bilirübin artışı hemolizi; direkt Coombs pozitifliği antikor aracılı yıkımı destekler.",
+    "answer": "IgG. Retikülosit, LDH ve indirekt bilirübin artışı hemolizi; direkt Coombs pozitifliği antikor aracılı yıkımı destekler.",
+    "explanation": "Retikülosit, LDH ve indirekt bilirübin artışı hemolizi; direkt Coombs pozitifliği antikor aracılı yıkımı destekler. Mikroanjiyopatik hemolizde Coombs negatif ve periferik yaymada şistosit beklenir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Mikroanjiyopatik hemolizde Coombs negatif ve periferik yaymada şistosit beklenir.",
+    "differentialNote": "Mikroanjiyopatik hemolizde Coombs negatif ve periferik yaymada şistosit beklenir.",
+    "keywords": [
+      "anemi",
+      "retikülosit yüksek",
+      "direkt Coombs pozitif",
+      "indirekt bilirübin Pediatri (pediatrics)"
+    ]
+  },
+  "tus-pearl-pediatrics-153-spot": {
+    "front": "Çocukta ateş, ense sertliği ve bakteriyel BOS paterni varsa ampirik tedavide temel yaklaşım nedir?",
+    "back": "Uygun yaşa göre intravenöz üçüncü kuşak sefalosporin temelli ampirik antibiyotik.",
+    "answer": "Uygun yaşa göre intravenöz üçüncü kuşak sefalosporin temelli ampirik antibiyotik.",
+    "explanation": "Bakteriyel menenjit acildir; BOS kültürü beklenmeden yaş ve risk faktörüne uygun ampirik tedavi başlanır. Viral menenjitte destek tedavi yeterli olabilir; nötrofil baskın düşük glukozlu BOS bakteriyel menenjiti destekler.",
+    "tusTip": "Bakteriyel menenjit acildir; BOS kültürü beklenmeden yaş ve risk faktörüne uygun ampirik tedavi başlanır. Viral menenjitte destek tedavi yeterli olabilir; nötrofil baskın düşük glukozlu BOS bakteriyel menenjiti destekler.",
+    "differentialNote": "Viral menenjitte destek tedavi yeterli olabilir; nötrofil baskın düşük glukozlu BOS bakteriyel menenjiti destekler.",
+    "keywords": [
+      "ateş",
+      "ense sertliği",
+      "nötrofilik BOS",
+      "erken antibiyotik"
+    ]
+  },
+  "tus-pearl-pediatrics-153-extra": {
+    "front": "Yenidoğan menenjitinde Listeria kapsaması için hangi antibiyotik eklenir?",
+    "back": "Ampisilin. Bakteriyel menenjit acildir; BOS kültürü beklenmeden yaş ve risk faktörüne uygun ampirik tedavi başlanır.",
+    "answer": "Ampisilin. Bakteriyel menenjit acildir; BOS kültürü beklenmeden yaş ve risk faktörüne uygun ampirik tedavi başlanır.",
+    "explanation": "Bakteriyel menenjit acildir; BOS kültürü beklenmeden yaş ve risk faktörüne uygun ampirik tedavi başlanır. Viral menenjitte destek tedavi yeterli olabilir; nötrofil baskın düşük glukozlu BOS bakteriyel menenjiti destekler.",
+    "tusTip": "Pratik karar noktası: Viral menenjitte destek tedavi yeterli olabilir; nötrofil baskın düşük glukozlu BOS bakteriyel menenjiti destekler.",
+    "differentialNote": "Viral menenjitte destek tedavi yeterli olabilir; nötrofil baskın düşük glukozlu BOS bakteriyel menenjiti destekler.",
+    "keywords": [
+      "ateş",
+      "ense sertliği",
+      "nötrofilik BOS",
+      "erken antibiyotik"
+    ]
+  },
+  "tus-pearl-pediatrics-154-spot": {
+    "front": "Retinal kanama ve subdural kanama birlikteliği çocukta hangi durumu düşündürür?",
+    "back": "Kaza dışı travma/çocuk istismarı. Açıklanamayan çoklu yaralanmalar, farklı yaşta kırıklar, retinal kanama ve subdural kanama istismar açısından adli değerlendirme gerektirir.",
+    "answer": "Kaza dışı travma/çocuk istismarı. Açıklanamayan çoklu yaralanmalar, farklı yaşta kırıklar, retinal kanama ve subdural kanama istismar açısından adli değerlendirme gerektirir.",
+    "explanation": "Açıklanamayan çoklu yaralanmalar, farklı yaşta kırıklar, retinal kanama ve subdural kanama istismar açısından adli değerlendirme gerektirir. Yalnız nöbet veya düşme öyküsüyle açıklamak güvenli değildir; yaralanma paterni öyküyle uyumsuzsa bildirim gerekir.",
+    "tusTip": "Açıklanamayan çoklu yaralanmalar, farklı yaşta kırıklar, retinal kanama ve subdural kanama istismar açısından adli değerlendirme gerektirir. Yalnız nöbet veya düşme öyküsüyle açıklamak güvenli değildir; yaralanma paterni öyküyle uyumsuzsa bildirim gerekir.",
+    "differentialNote": "Yalnız nöbet veya düşme öyküsüyle açıklamak güvenli değildir; yaralanma paterni öyküyle uyumsuzsa bildirim gerekir.",
+    "keywords": [
+      "retinal kanama",
+      "subdural kanama",
+      "çoklu kırık",
+      "adli bildirim"
+    ]
+  },
+  "tus-pearl-pediatrics-154-extra": {
+    "front": "Çocuk istismarından şüphelenildiğinde hekim açısından temel yükümlülük nedir?",
+    "back": "Tıbbi güvenliği sağlayıp adli bildirim yapmak.",
+    "answer": "Tıbbi güvenliği sağlayıp adli bildirim yapmak.",
+    "explanation": "Açıklanamayan çoklu yaralanmalar, farklı yaşta kırıklar, retinal kanama ve subdural kanama istismar açısından adli değerlendirme gerektirir. Yalnız nöbet veya düşme öyküsüyle açıklamak güvenli değildir; yaralanma paterni öyküyle uyumsuzsa bildirim gerekir.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Yalnız nöbet veya düşme öyküsüyle açıklamak güvenli değildir; yaralanma paterni öyküyle uyumsuzsa bildirim gerekir.",
+    "differentialNote": "Yalnız nöbet veya düşme öyküsüyle açıklamak güvenli değildir; yaralanma paterni öyküyle uyumsuzsa bildirim gerekir.",
+    "keywords": [
+      "retinal kanama",
+      "subdural kanama",
+      "çoklu kırık",
+      "adli bildirim"
+    ]
+  },
+  "tus-pearl-pediatrics-155-spot": {
+    "front": "İnfantta viral bronşiolitte temel tedavi yaklaşımı nedir?",
+    "back": "Destek tedavisi. Oksijen ihtiyacı, hidrasyon ve solunum eforu izlenir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir.",
+    "answer": "Destek tedavisi. Oksijen ihtiyacı, hidrasyon ve solunum eforu izlenir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir.",
+    "explanation": "Oksijen ihtiyacı, hidrasyon ve solunum eforu izlenir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir. Pnömonide fokal ral ve bakteriyel bulgular öne çıkar; tipik bronşiolitte antibiyotik refleks değildir.",
+    "tusTip": "Oksijen ihtiyacı, hidrasyon ve solunum eforu izlenir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir. Pnömonide fokal ral ve bakteriyel bulgular öne çıkar; tipik bronşiolitte antibiyotik refleks değildir.",
+    "differentialNote": "Pnömonide fokal ral ve bakteriyel bulgular öne çıkar; tipik bronşiolitte antibiyotik refleks değildir.",
+    "keywords": [
+      "infant",
+      "RSV",
+      "hışıltı",
+      "destek tedavisi"
+    ]
+  },
+  "tus-pearl-pediatrics-155-extra": {
+    "front": "Bronşiolitte yatış kararında en önemli klinik göstergelerden biri nedir?",
+    "back": "Hipoksemi veya belirgin solunum sıkıntısı. Oksijen ihtiyacı, hidrasyon ve solunum eforu izlenir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir.",
+    "answer": "Hipoksemi veya belirgin solunum sıkıntısı. Oksijen ihtiyacı, hidrasyon ve solunum eforu izlenir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir.",
+    "explanation": "Oksijen ihtiyacı, hidrasyon ve solunum eforu izlenir; rutin antibiyotik veya bronkodilatör her hastada gerekli değildir. Pnömonide fokal ral ve bakteriyel bulgular öne çıkar; tipik bronşiolitte antibiyotik refleks değildir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Pnömonide fokal ral ve bakteriyel bulgular öne çıkar; tipik bronşiolitte antibiyotik refleks değildir.",
+    "differentialNote": "Pnömonide fokal ral ve bakteriyel bulgular öne çıkar; tipik bronşiolitte antibiyotik refleks değildir.",
+    "keywords": [
+      "infant",
+      "RSV",
+      "hışıltı",
+      "destek tedavisi Kadın Hastalıkları ve Doğum (obstetrics-gynecology)"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-156-spot": {
+    "front": "Gebelik testi pozitif hastada amenore, tek taraflı pelvik ağrı ve şok ne düşündürür?",
+    "back": "Rüptüre ektopik gebelik. Hemodinamik instabilite varsa tanısal süreci uzatmadan acil cerrahi değerlendirme gerekir.",
+    "answer": "Rüptüre ektopik gebelik. Hemodinamik instabilite varsa tanısal süreci uzatmadan acil cerrahi değerlendirme gerekir.",
+    "explanation": "Hemodinamik instabilite varsa tanısal süreci uzatmadan acil cerrahi değerlendirme gerekir. Stabil hastada seri β-hCG ve transvajinal USG değerlidir; şokta öncelik acil müdahaledir.",
+    "tusTip": "Hemodinamik instabilite varsa tanısal süreci uzatmadan acil cerrahi değerlendirme gerekir. Stabil hastada seri β-hCG ve transvajinal USG değerlidir; şokta öncelik acil müdahaledir.",
+    "differentialNote": "Stabil hastada seri β-hCG ve transvajinal USG değerlidir; şokta öncelik acil müdahaledir.",
+    "keywords": [
+      "amenore",
+      "pozitif β-hCG",
+      "pelvik ağrı",
+      "şok"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-156-extra": {
+    "front": "Stabil şüpheli ektopik gebelikte ilk değerlendirme kombinasyonu nedir?",
+    "back": "Serum β-hCG ve transvajinal ultrasonografi.",
+    "answer": "Serum β-hCG ve transvajinal ultrasonografi.",
+    "explanation": "Hemodinamik instabilite varsa tanısal süreci uzatmadan acil cerrahi değerlendirme gerekir. Stabil hastada seri β-hCG ve transvajinal USG değerlidir; şokta öncelik acil müdahaledir.",
+    "tusTip": "Pratik karar noktası: Stabil hastada seri β-hCG ve transvajinal USG değerlidir; şokta öncelik acil müdahaledir.",
+    "differentialNote": "Stabil hastada seri β-hCG ve transvajinal USG değerlidir; şokta öncelik acil müdahaledir.",
+    "keywords": [
+      "amenore",
+      "pozitif β-hCG",
+      "pelvik ağrı",
+      "şok"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-157-spot": {
+    "front": "Preeklampside şiddet bulgusu sayılan nörolojik yakınma hangisidir?",
+    "back": "Şiddetli baş ağrısı veya görme bozukluğu.",
+    "answer": "Şiddetli baş ağrısı veya görme bozukluğu.",
+    "explanation": "Nörolojik semptomlar, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ve pulmoner ödem ağır hastalık lehinedir. Gebelik öncesi veya 20. haftadan önce hipertansiyon kronik hipertansiyonu düşündürür; zamanlama ayrımı önemlidir.",
+    "tusTip": "Nörolojik semptomlar, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ve pulmoner ödem ağır hastalık lehinedir. Gebelik öncesi veya 20. haftadan önce hipertansiyon kronik hipertansiyonu düşündürür; zamanlama ayrımı önemlidir.",
+    "differentialNote": "Gebelik öncesi veya 20. haftadan önce hipertansiyon kronik hipertansiyonu düşündürür; zamanlama ayrımı önemlidir.",
+    "keywords": [
+      "20. hafta sonrası",
+      "hipertansiyon",
+      "baş ağrısı",
+      "görme bozukluğu"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-157-extra": {
+    "front": "Eklampsi preeklampsiye hangi bulgunun eklenmesiyle tanımlanır?",
+    "back": "Nöbet. Nörolojik semptomlar, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ve pulmoner ödem ağır hastalık lehinedir.",
+    "answer": "Nöbet. Nörolojik semptomlar, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ve pulmoner ödem ağır hastalık lehinedir.",
+    "explanation": "Nörolojik semptomlar, trombosit düşüklüğü, karaciğer/böbrek etkilenimi ve pulmoner ödem ağır hastalık lehinedir. Gebelik öncesi veya 20. haftadan önce hipertansiyon kronik hipertansiyonu düşündürür; zamanlama ayrımı önemlidir.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Gebelik öncesi veya 20. haftadan önce hipertansiyon kronik hipertansiyonu düşündürür; zamanlama ayrımı önemlidir.",
+    "differentialNote": "Gebelik öncesi veya 20. haftadan önce hipertansiyon kronik hipertansiyonu düşündürür; zamanlama ayrımı önemlidir.",
+    "keywords": [
+      "20. hafta sonrası",
+      "hipertansiyon",
+      "baş ağrısı",
+      "görme bozukluğu"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-158-spot": {
+    "front": "Doğum sonrası yumuşak, gevşek uterusla masif kanama en çok hangi nedeni düşündürür?",
+    "back": "Uterin atoni. Postpartum kanamanın en sık nedeni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir.",
+    "answer": "Uterin atoni. Postpartum kanamanın en sık nedeni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir.",
+    "explanation": "Postpartum kanamanın en sık nedeni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir. Travma kaynaklı kanamada uterus sert/toparlanmış olabilir; yumuşak uterus atoni lehinedir.",
+    "tusTip": "Postpartum kanamanın en sık nedeni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir. Travma kaynaklı kanamada uterus sert/toparlanmış olabilir; yumuşak uterus atoni lehinedir.",
+    "differentialNote": "Travma kaynaklı kanamada uterus sert/toparlanmış olabilir; yumuşak uterus atoni lehinedir.",
+    "keywords": [
+      "postpartum kanama",
+      "yumuşak uterus",
+      "uterin atoni",
+      "oksitosin"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-158-extra": {
+    "front": "Uterin atonide ilk uterotonik ilaç genellikle hangisidir?",
+    "back": "Oksitosin. Postpartum kanamanın en sık nedeni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir.",
+    "answer": "Oksitosin. Postpartum kanamanın en sık nedeni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir.",
+    "explanation": "Postpartum kanamanın en sık nedeni uterin atonidir; ilk yaklaşım uterin masaj ve uterotonik tedavidir. Travma kaynaklı kanamada uterus sert/toparlanmış olabilir; yumuşak uterus atoni lehinedir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Travma kaynaklı kanamada uterus sert/toparlanmış olabilir; yumuşak uterus atoni lehinedir.",
+    "differentialNote": "Travma kaynaklı kanamada uterus sert/toparlanmış olabilir; yumuşak uterus atoni lehinedir.",
+    "keywords": [
+      "postpartum kanama",
+      "yumuşak uterus",
+      "uterin atoni",
+      "oksitosin Küçük Stajlar (minor-rotations)"
+    ]
+  },
+  "tus-pearl-minor-rotations-159-spot": {
+    "front": "Akut iskemik inmede trombolitik tedavi için klasik zaman penceresi nedir?",
+    "back": "Semptom başlangıcından itibaren 4,5 saat içinde uygun hasta.",
+    "answer": "Semptom başlangıcından itibaren 4,5 saat içinde uygun hasta.",
+    "explanation": "Kontrendikasyon yoksa erken başvuran seçilmiş hastalarda intravenöz alteplaz düşünülür; kanama dışlanmadan trombolitik verilmez. Hemorajik inmede trombolitik kontrendikedir; ilk kritik ayrım görüntüleme ile kanama dışlamaktır.",
+    "tusTip": "Kontrendikasyon yoksa erken başvuran seçilmiş hastalarda intravenöz alteplaz düşünülür; kanama dışlanmadan trombolitik verilmez. Hemorajik inmede trombolitik kontrendikedir; ilk kritik ayrım görüntüleme ile kanama dışlamaktır.",
+    "differentialNote": "Hemorajik inmede trombolitik kontrendikedir; ilk kritik ayrım görüntüleme ile kanama dışlamaktır.",
+    "keywords": [
+      "iskemik inme",
+      "4",
+      "5 saat",
+      "BT ile kanama dışla",
+      "alteplaz"
+    ]
+  },
+  "tus-pearl-minor-rotations-159-extra": {
+    "front": "İnme şüphesinde trombolitik öncesi acil görüntülemenin temel amacı nedir?",
+    "back": "İntrakraniyal kanamayı dışlamak. Kontrendikasyon yoksa erken başvuran seçilmiş hastalarda intravenöz alteplaz düşünülür; kanama dışlanmadan trombolitik verilmez.",
+    "answer": "İntrakraniyal kanamayı dışlamak. Kontrendikasyon yoksa erken başvuran seçilmiş hastalarda intravenöz alteplaz düşünülür; kanama dışlanmadan trombolitik verilmez.",
+    "explanation": "Kontrendikasyon yoksa erken başvuran seçilmiş hastalarda intravenöz alteplaz düşünülür; kanama dışlanmadan trombolitik verilmez. Hemorajik inmede trombolitik kontrendikedir; ilk kritik ayrım görüntüleme ile kanama dışlamaktır.",
+    "tusTip": "Pratik karar noktası: Hemorajik inmede trombolitik kontrendikedir; ilk kritik ayrım görüntüleme ile kanama dışlamaktır.",
+    "differentialNote": "Hemorajik inmede trombolitik kontrendikedir; ilk kritik ayrım görüntüleme ile kanama dışlamaktır.",
+    "keywords": [
+      "iskemik inme",
+      "4",
+      "5 saat",
+      "BT ile kanama dışla",
+      "alteplaz"
+    ]
+  },
+  "tus-pearl-minor-rotations-160-spot": {
+    "front": "Konvülzif status epileptikusta ilk ilaç basamağı nedir?",
+    "back": "Benzodiazepin. Hava yolu ve glukoz değerlendirmesiyle birlikte nöbeti hızla durdurmak için lorazepam/diazepam/midazolam kullanılır.",
+    "answer": "Benzodiazepin. Hava yolu ve glukoz değerlendirmesiyle birlikte nöbeti hızla durdurmak için lorazepam/diazepam/midazolam kullanılır.",
+    "explanation": "Hava yolu ve glukoz değerlendirmesiyle birlikte nöbeti hızla durdurmak için lorazepam/diazepam/midazolam kullanılır. Fenitoin veya levetirasetam ikinci basamak yükleme için düşünülür; ilk akut durdurucu benzodiazepindir.",
+    "tusTip": "Hava yolu ve glukoz değerlendirmesiyle birlikte nöbeti hızla durdurmak için lorazepam/diazepam/midazolam kullanılır. Fenitoin veya levetirasetam ikinci basamak yükleme için düşünülür; ilk akut durdurucu benzodiazepindir.",
+    "differentialNote": "Fenitoin veya levetirasetam ikinci basamak yükleme için düşünülür; ilk akut durdurucu benzodiazepindir.",
+    "keywords": [
+      "status epileptikus",
+      "benzodiazepin",
+      "hava yolu",
+      "glukoz"
+    ]
+  },
+  "tus-pearl-minor-rotations-160-extra": {
+    "front": "Status epileptikusta hipoglisemi şüphesinde hangi tedavi geciktirilmemelidir?",
+    "back": "İntravenöz glukoz. Hava yolu ve glukoz değerlendirmesiyle birlikte nöbeti hızla durdurmak için lorazepam/diazepam/midazolam kullanılır.",
+    "answer": "İntravenöz glukoz. Hava yolu ve glukoz değerlendirmesiyle birlikte nöbeti hızla durdurmak için lorazepam/diazepam/midazolam kullanılır.",
+    "explanation": "Hava yolu ve glukoz değerlendirmesiyle birlikte nöbeti hızla durdurmak için lorazepam/diazepam/midazolam kullanılır. Fenitoin veya levetirasetam ikinci basamak yükleme için düşünülür; ilk akut durdurucu benzodiazepindir.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Fenitoin veya levetirasetam ikinci basamak yükleme için düşünülür; ilk akut durdurucu benzodiazepindir.",
+    "differentialNote": "Fenitoin veya levetirasetam ikinci basamak yükleme için düşünülür; ilk akut durdurucu benzodiazepindir.",
+    "keywords": [
+      "status epileptikus",
+      "benzodiazepin",
+      "hava yolu",
+      "glukoz"
+    ]
+  },
+  "tus-pearl-minor-rotations-161-spot": {
+    "front": "Göğüs duvarında emici açık yara ile gelişen açık pnömotoraksta ilk kapatma nasıl yapılır?",
+    "back": "Üç tarafı bantlı oklüzif pansuman. Üç taraflı kapatma hava girişini azaltırken havanın çıkışına izin vererek tansiyon pnömotoraks riskini azaltır.",
+    "answer": "Üç tarafı bantlı oklüzif pansuman. Üç taraflı kapatma hava girişini azaltırken havanın çıkışına izin vererek tansiyon pnömotoraks riskini azaltır.",
+    "explanation": "Üç taraflı kapatma hava girişini azaltırken havanın çıkışına izin vererek tansiyon pnömotoraks riskini azaltır. Dört tarafı tamamen kapatmak içeride hava hapsine ve tansiyon fizyolojisine yol açabilir.",
+    "tusTip": "Üç taraflı kapatma hava girişini azaltırken havanın çıkışına izin vererek tansiyon pnömotoraks riskini azaltır. Dört tarafı tamamen kapatmak içeride hava hapsine ve tansiyon fizyolojisine yol açabilir.",
+    "differentialNote": "Dört tarafı tamamen kapatmak içeride hava hapsine ve tansiyon fizyolojisine yol açabilir.",
+    "keywords": [
+      "açık pnömotoraks",
+      "emici yara",
+      "üç taraflı pansuman",
+      "hava çıkışı"
+    ]
+  },
+  "tus-pearl-minor-rotations-161-extra": {
+    "front": "Tansiyon pnömotoraksta beklenen hemodinamik problem nedir?",
+    "back": "Venöz dönüş azalmasına bağlı obstrüktif şok.",
+    "answer": "Venöz dönüş azalmasına bağlı obstrüktif şok.",
+    "explanation": "Üç taraflı kapatma hava girişini azaltırken havanın çıkışına izin vererek tansiyon pnömotoraks riskini azaltır. Dört tarafı tamamen kapatmak içeride hava hapsine ve tansiyon fizyolojisine yol açabilir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Dört tarafı tamamen kapatmak içeride hava hapsine ve tansiyon fizyolojisine yol açabilir.",
+    "differentialNote": "Dört tarafı tamamen kapatmak içeride hava hapsine ve tansiyon fizyolojisine yol açabilir.",
+    "keywords": [
+      "açık pnömotoraks",
+      "emici yara",
+      "üç taraflı pansuman",
+      "hava çıkışı TUS Spot Olgular / Karma (tus-spot-olgular)"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-162-spot": {
+    "front": "HBsAg pozitif anneden doğan bebeğe doğumda hangi profilaksi verilir?",
+    "back": "HBV aşısı + HBIG. Yenidoğanda pasif ve aktif immünizasyon birlikte uygulanır; bu bilgi HCV maruziyetinden ayrılır çünkü HCV için aşı/Ig yoktur.",
+    "answer": "HBV aşısı + HBIG. Yenidoğanda pasif ve aktif immünizasyon birlikte uygulanır; bu bilgi HCV maruziyetinden ayrılır çünkü HCV için aşı/Ig yoktur.",
+    "explanation": "Yenidoğanda pasif ve aktif immünizasyon birlikte uygulanır; bu bilgi HCV maruziyetinden ayrılır çünkü HCV için aşı/Ig yoktur. HCV pozitif annede HBIG veya HCV aşısı yoktur; HBV’de profilaksi doğumda birlikte yapılır.",
+    "tusTip": "Yenidoğanda pasif ve aktif immünizasyon birlikte uygulanır; bu bilgi HCV maruziyetinden ayrılır çünkü HCV için aşı/Ig yoktur. HCV pozitif annede HBIG veya HCV aşısı yoktur; HBV’de profilaksi doğumda birlikte yapılır.",
+    "differentialNote": "HCV pozitif annede HBIG veya HCV aşısı yoktur; HBV’de profilaksi doğumda birlikte yapılır.",
+    "keywords": [
+      "HBsAg pozitif anne",
+      "yenidoğan",
+      "HBV aşısı",
+      "HBIG"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-162-extra": {
+    "front": "HBV aşısı aktif mi pasif immünizasyon mu sağlar?",
+    "back": "Aktif immünizasyon. Yenidoğanda pasif ve aktif immünizasyon birlikte uygulanır; bu bilgi HCV maruziyetinden ayrılır çünkü HCV için aşı/Ig yoktur.",
+    "answer": "Aktif immünizasyon. Yenidoğanda pasif ve aktif immünizasyon birlikte uygulanır; bu bilgi HCV maruziyetinden ayrılır çünkü HCV için aşı/Ig yoktur.",
+    "explanation": "Yenidoğanda pasif ve aktif immünizasyon birlikte uygulanır; bu bilgi HCV maruziyetinden ayrılır çünkü HCV için aşı/Ig yoktur. HCV pozitif annede HBIG veya HCV aşısı yoktur; HBV’de profilaksi doğumda birlikte yapılır.",
+    "tusTip": "Pratik karar noktası: HCV pozitif annede HBIG veya HCV aşısı yoktur; HBV’de profilaksi doğumda birlikte yapılır.",
+    "differentialNote": "HCV pozitif annede HBIG veya HCV aşısı yoktur; HBV’de profilaksi doğumda birlikte yapılır.",
+    "keywords": [
+      "HBsAg pozitif anne",
+      "yenidoğan",
+      "HBV aşısı",
+      "HBIG"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-163-spot": {
+    "front": "Hiperkalemide kalsiyum glukonat ile insülin + glukoz arasındaki temel fark nedir?",
+    "back": "Kalsiyum kalbi stabilize eder; insülin + glukoz potasyumu hücre içine kaydırır.",
+    "answer": "Kalsiyum kalbi stabilize eder; insülin + glukoz potasyumu hücre içine kaydırır.",
+    "explanation": "EKG değişikliği varsa ilk amaç aritmiyi önlemek için membran stabilizasyonudur; potasyumu düşürücü/kaydırıcı tedaviler ardından eklenir. İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "tusTip": "EKG değişikliği varsa ilk amaç aritmiyi önlemek için membran stabilizasyonudur; potasyumu düşürücü/kaydırıcı tedaviler ardından eklenir. İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "differentialNote": "İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "keywords": [
+      "EKG değişikliği",
+      "kalsiyum",
+      "membran stabilizasyonu",
+      "insülin-glukoz"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-163-keywords": {
+    "front": "Hiperkalemide kalsiyum glukonat ile insülin-glukozun temel farkı nedir?",
+    "back": "Kalsiyum membranı stabilize eder; insülin-glukoz potasyumu hücre içine kaydırır.",
+    "answer": "Kalsiyum membranı stabilize eder; insülin-glukoz potasyumu hücre içine kaydırır.",
+    "explanation": "EKG bulgusu varsa ilk hedef aritmiyi önlemek için kardiyak membran stabilizasyonudur. Diyaliz potasyumu vücuttan uzaklaştırır; ancak acil EKG değişikliğinde ilk saniyeler içinde membran stabilizasyonunun yerini tutmaz.",
+    "tusTip": "Ağır hiperkalemiye EKG değişikliği eşlik ediyorsa önce intravenöz kalsiyum verilir; hücre içine kaydırıcı tedaviler ardından eklenir.",
+    "differentialNote": "Diyaliz potasyumu vücuttan uzaklaştırır; ancak acil EKG değişikliğinde ilk saniyeler içinde membran stabilizasyonunun yerini tutmaz.",
+    "keywords": [
+      "EKG değişikliği",
+      "kalsiyum",
+      "membran stabilizasyonu",
+      "insülin-glukoz"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-163-trap": {
+    "front": "EKG değişikliği olan hiperkalemide insülin-glukoz neden ilk basamak değildir?",
+    "back": "İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "answer": "İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "explanation": "EKG değişikliği varsa ilk amaç aritmiyi önlemek için membran stabilizasyonudur; potasyumu düşürücü/kaydırıcı tedaviler ardından eklenir. EKG değişiklikli hiperkalemi: önce intravenöz kalsiyum ile membran stabilizasyonu; insülin-glukoz: potasyumu hücre içine kaydıran sonraki adımdır.",
+    "tusTip": "Hiperkalemi tedavi sırası için sınavda hedeflenen ayrım genellikle şudur: EKG değişiklikli hiperkalemi: önce intravenöz kalsiyum ile membran stabilizasyonu; insülin-glukoz: potasyumu hücre içine kaydıran sonraki adımdır.",
+    "differentialNote": "EKG değişiklikli hiperkalemi: önce intravenöz kalsiyum ile membran stabilizasyonu; insülin-glukoz: potasyumu hücre içine kaydıran sonraki adımdır.",
+    "keywords": [
+      "EKG değişikliği",
+      "kalsiyum",
+      "membran stabilizasyonu",
+      "insülin-glukoz"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-163-extra": {
+    "front": "Hiperkalemide kalsiyum glukonatın asıl etkisi nedir?",
+    "back": "Kalsiyum glukonat serum potasyumunu düşürmez; kardiyak membranı stabilize ederek aritmi riskini azaltır.",
+    "answer": "Kalsiyum glukonat serum potasyumunu düşürmez; kardiyak membranı stabilize ederek aritmi riskini azaltır.",
+    "explanation": "EKG değişikliği varsa ilk amaç aritmiyi önlemek için membran stabilizasyonudur; potasyumu düşürücü/kaydırıcı tedaviler ardından eklenir. İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "differentialNote": "İnsülin + glukoz doğru tedavidir ama EKG değişikliği olan hastada ilk basamak olarak kalsiyumun önüne geçmez.",
+    "keywords": [
+      "EKG değişikliği",
+      "kalsiyum",
+      "membran stabilizasyonu",
+      "insülin-glukoz"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-164-spot": {
+    "front": "Anafilakside antihistaminik neden ilk tedavi değildir?",
+    "back": "Şok ve bronkospazmı hızla düzeltmez; ilk tedavi IM adrenalindir.",
+    "answer": "Şok ve bronkospazmı hızla düzeltmez; ilk tedavi IM adrenalindir.",
+    "explanation": "Antihistaminikler ürtiker/kaşıntıyı azaltabilir fakat hava yolu ödemi, hipotansiyon ve bronkospazm için yaşam kurtarıcı tedavi adrenalinidir. Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "tusTip": "Antihistaminikler ürtiker/kaşıntıyı azaltabilir fakat hava yolu ödemi, hipotansiyon ve bronkospazm için yaşam kurtarıcı tedavi adrenalinidir. Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "differentialNote": "Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "keywords": [
+      "anafilaksi",
+      "hipotansiyon",
+      "bronkospazm",
+      "IM adrenalin"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-164-keywords": {
+    "front": "Anafilakside antihistaminiklerin tedavideki yeri nedir?",
+    "back": "Antihistaminikler kaşıntı ve ürtikeri azaltan destek tedavilerdir; hava yolu ödemi, bronkospazm ve şokta adrenalin yerine geçmez.",
+    "answer": "Antihistaminikler kaşıntı ve ürtikeri azaltan destek tedavilerdir; hava yolu ödemi, bronkospazm ve şokta adrenalin yerine geçmez.",
+    "explanation": "Anafilakside mortaliteyi azaltan ilk farmakolojik basamak adrenalin uygulamasıdır. Antihistaminik destek tedavi olarak eklenebilir; adrenalinin yerine geçmez.",
+    "tusTip": "Ürtiker + bronkospazm/hipotansiyon varsa antihistaminik değil adrenalin önceliklidir.",
+    "differentialNote": "Antihistaminik destek tedavi olarak eklenebilir; adrenalinin yerine geçmez.",
+    "keywords": [
+      "anafilaksi",
+      "hipotansiyon",
+      "bronkospazm",
+      "IM adrenalin"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-164-trap": {
+    "front": "Anafilakside antihistaminik ve steroid neden adrenalinin yerine geçmez?",
+    "back": "Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "answer": "Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "explanation": "Antihistaminikler ürtiker/kaşıntıyı azaltabilir fakat hava yolu ödemi, hipotansiyon ve bronkospazm için yaşam kurtarıcı tedavi adrenalinidir. Anafilaksi: ilk ve yaşam kurtarıcı tedavi intramüsküler adrenalindir; antihistaminik ve steroid yalnızca destek tedavidir.",
+    "tusTip": "Anafilaksi antihistaminik tuzağı kartında ayırıcı değer taşıyan nokta: Anafilaksi: ilk ve yaşam kurtarıcı tedavi intramüsküler adrenalindir; antihistaminik ve steroid yalnızca destek tedavidir.",
+    "differentialNote": "Anafilaksi: ilk ve yaşam kurtarıcı tedavi intramüsküler adrenalindir; antihistaminik ve steroid yalnızca destek tedavidir.",
+    "keywords": [
+      "anafilaksi",
+      "hipotansiyon",
+      "bronkospazm",
+      "IM adrenalin"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-164-extra": {
+    "front": "Anafilakside adrenalin için tercih edilen uygulama bölgesi neresidir?",
+    "back": "Uyluk anterolateral bölgesi. Antihistaminikler ürtiker/kaşıntıyı azaltabilir fakat hava yolu ödemi, hipotansiyon ve bronkospazm için yaşam kurtarıcı tedavi adrenalinidir.",
+    "answer": "Uyluk anterolateral bölgesi. Antihistaminikler ürtiker/kaşıntıyı azaltabilir fakat hava yolu ödemi, hipotansiyon ve bronkospazm için yaşam kurtarıcı tedavi adrenalinidir.",
+    "explanation": "Antihistaminikler ürtiker/kaşıntıyı azaltabilir fakat hava yolu ödemi, hipotansiyon ve bronkospazm için yaşam kurtarıcı tedavi adrenalinidir. Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "tusTip": "Klinik/TUS mantığında bu başlık, şu fark üzerinden yakalanır: Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "differentialNote": "Steroid ve antihistaminik destek olabilir; adrenalin geciktirilirse mortalite riski artar.",
+    "keywords": [
+      "anafilaksi",
+      "hipotansiyon",
+      "bronkospazm",
+      "IM adrenalin"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-165-spot": {
+    "front": "Pulmoner embolide PESI neyi sınıflar, neyi tek başına tanımlamaz?",
+    "back": "PESI mortalite riskini tahmin eder; hemodinamik instabil PE’yi “PESI IV” diye tanımlamaz.",
+    "answer": "PESI mortalite riskini tahmin eder; hemodinamik instabil PE’yi “PESI IV” diye tanımlamaz.",
+    "explanation": "Şok veya ciddi hipotansiyon varsa hasta yüksek risk PE kabul edilir; PESI daha çok stabil hastalarda risk tabakalandırmasına yardım eder. Sadece tansiyon ve satürasyonla PESI sınıfı kesin hesaplanamaz; yaş, komorbidite ve ek klinik veriler gerekir.",
+    "tusTip": "Şok veya ciddi hipotansiyon varsa hasta yüksek risk PE kabul edilir; PESI daha çok stabil hastalarda risk tabakalandırmasına yardım eder. Sadece tansiyon ve satürasyonla PESI sınıfı kesin hesaplanamaz; yaş, komorbidite ve ek klinik veriler gerekir.",
+    "differentialNote": "Sadece tansiyon ve satürasyonla PESI sınıfı kesin hesaplanamaz; yaş, komorbidite ve ek klinik veriler gerekir.",
+    "keywords": [
+      "PESI",
+      "mortalite tahmini",
+      "hemodinamik instabilite",
+      "yüksek risk PE"
+    ]
+  },
+  "tus-pearl-tus-spot-olgular-165-extra": {
+    "front": "PE’de yüksek risk sınıfını doğrudan belirleyen ana klinik bulgu nedir?",
+    "back": "Hemodinamik instabilite. Şok veya ciddi hipotansiyon varsa hasta yüksek risk PE kabul edilir; PESI daha çok stabil hastalarda risk tabakalandırmasına yardım eder.",
+    "answer": "Hemodinamik instabilite. Şok veya ciddi hipotansiyon varsa hasta yüksek risk PE kabul edilir; PESI daha çok stabil hastalarda risk tabakalandırmasına yardım eder.",
+    "explanation": "Şok veya ciddi hipotansiyon varsa hasta yüksek risk PE kabul edilir; PESI daha çok stabil hastalarda risk tabakalandırmasına yardım eder. Sadece tansiyon ve satürasyonla PESI sınıfı kesin hesaplanamaz; yaş, komorbidite ve ek klinik veriler gerekir.",
+    "tusTip": "Bu kartın yüksek verimli mesajı: Sadece tansiyon ve satürasyonla PESI sınıfı kesin hesaplanamaz; yaş, komorbidite ve ek klinik veriler gerekir.",
+    "differentialNote": "Sadece tansiyon ve satürasyonla PESI sınıfı kesin hesaplanamaz; yaş, komorbidite ve ek klinik veriler gerekir.",
+    "keywords": [
+      "PESI",
+      "mortalite tahmini",
+      "hemodinamik instabilite",
+      "yüksek risk PE Tıbbi Farmakoloji (medical-pharmacology)"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-166-spot": {
+    "front": "Tinnitus, takipne ve karma asit-baz bozukluğu hangi zehirlenmeyi düşündürür?",
+    "back": "Salisilat zehirlenmesi. Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir.",
+    "answer": "Salisilat zehirlenmesi. Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir.",
+    "explanation": "Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir. Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "tusTip": "Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir. Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "differentialNote": "Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "keywords": [
+      "tinnitus",
+      "takipne",
+      "respiratuvar alkaloz",
+      "metabolik asidoz"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-166-trap": {
+    "front": "Salisilat zehirlenmesi opioid toksidromundan hangi solunum paterniyle ayrılır?",
+    "back": "Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "answer": "Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "explanation": "Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir. Salisilat zehirlenmesi: erken hiperventilasyon ve respiratuvar alkaloz; opioid toksidromu: solunum depresyonu ve miyozis.",
+    "tusTip": "Pratik karar noktası: Salisilat zehirlenmesi: erken hiperventilasyon ve respiratuvar alkaloz; opioid toksidromu: solunum depresyonu ve miyozis.",
+    "differentialNote": "Salisilat zehirlenmesi: erken hiperventilasyon ve respiratuvar alkaloz; opioid toksidromu: solunum depresyonu ve miyozis.",
+    "keywords": [
+      "tinnitus",
+      "takipne",
+      "respiratuvar alkaloz",
+      "metabolik asidoz"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-166-extra": {
+    "front": "Ciddi salisilat zehirlenmesinde eliminasyonu artırmak için hangi yaklaşım kullanılır?",
+    "back": "İdrar alkalinizasyonu. Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir.",
+    "answer": "İdrar alkalinizasyonu. Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir.",
+    "explanation": "Erken solunum merkezi uyarısı respiratuvar alkaloz yapar; ilerleyen tabloda anyon açıklıklı metabolik asidoz eklenebilir. Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "tusTip": "Salisilat zehirlenmesi kartında ayırıcı değer taşıyan nokta: Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "differentialNote": "Opioid toksidromunda solunum depresyonu beklenir; salisilat zehirlenmesinde erken hiperventilasyon tipiktir.",
+    "keywords": [
+      "tinnitus",
+      "takipne",
+      "respiratuvar alkaloz",
+      "metabolik asidoz Kadın Hastalıkları ve Doğum (obstetrics-gynecology)"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-167-spot": {
+    "front": "Membran rüptürü sonrası ağrısız kanama ve fetal bradikardi hangi obstetrik acili düşündürür?",
+    "back": "Vasa previa. Fetal damarların membranlar içinde servikal os üzerinden geçmesi rüptürde fetal kan kaybına yol açabilir.",
+    "answer": "Vasa previa. Fetal damarların membranlar içinde servikal os üzerinden geçmesi rüptürde fetal kan kaybına yol açabilir.",
+    "explanation": "Fetal damarların membranlar içinde servikal os üzerinden geçmesi rüptürde fetal kan kaybına yol açabilir. Plasenta previa maternal ağrısız kanama yapar; vasa previa membran rüptürü sonrası fetal distresle öne çıkar.",
+    "tusTip": "Fetal damarların membranlar içinde servikal os üzerinden geçmesi rüptürde fetal kan kaybına yol açabilir. Plasenta previa maternal ağrısız kanama yapar; vasa previa membran rüptürü sonrası fetal distresle öne çıkar.",
+    "differentialNote": "Plasenta previa maternal ağrısız kanama yapar; vasa previa membran rüptürü sonrası fetal distresle öne çıkar.",
+    "keywords": [
+      "membran rüptürü",
+      "ağrısız kanama",
+      "fetal bradikardi",
+      "fetal damar"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-167-extra": {
+    "front": "Vasa previada kanama esas olarak kime aittir?",
+    "back": "Fetüse ait kanamadır. Fetal damarların membranlar içinde servikal os üzerinden geçmesi rüptürde fetal kan kaybına yol açabilir.",
+    "answer": "Fetüse ait kanamadır. Fetal damarların membranlar içinde servikal os üzerinden geçmesi rüptürde fetal kan kaybına yol açabilir.",
+    "explanation": "Fetal damarların membranlar içinde servikal os üzerinden geçmesi rüptürde fetal kan kaybına yol açabilir. Plasenta previa maternal ağrısız kanama yapar; vasa previa membran rüptürü sonrası fetal distresle öne çıkar.",
+    "tusTip": "Vasa previa için sınavda hedeflenen ayrım genellikle şudur: Plasenta previa maternal ağrısız kanama yapar; vasa previa membran rüptürü sonrası fetal distresle öne çıkar.",
+    "differentialNote": "Plasenta previa maternal ağrısız kanama yapar; vasa previa membran rüptürü sonrası fetal distresle öne çıkar.",
+    "keywords": [
+      "membran rüptürü",
+      "ağrısız kanama",
+      "fetal bradikardi",
+      "fetal damar Çocuk Sağlığı ve Hastalıkları (pediatrics)"
+    ]
+  },
+  "tus-pearl-pediatrics-168-spot": {
+    "front": "Altıncı aydan sonra tekrarlayan pyojenik enfeksiyon ve çok düşük immünoglobulin düzeyleri hangi immün yetmezliği düşündürür?",
+    "back": "Bruton agammaglobulinemisi. Maternal IgG etkisi azaldıktan sonra tekrarlayan otitis, sinüzit ve pnömoni gelişir; B hücreleri ve immünoglobulinler belirgin düşüktür.",
+    "answer": "Bruton agammaglobulinemisi. Maternal IgG etkisi azaldıktan sonra tekrarlayan otitis, sinüzit ve pnömoni gelişir; B hücreleri ve immünoglobulinler belirgin düşüktür.",
+    "explanation": "Maternal IgG etkisi azaldıktan sonra tekrarlayan otitis, sinüzit ve pnömoni gelişir; B hücreleri ve immünoglobulinler belirgin düşüktür. SCID daha erken ve ağır viral, fungal, bakteriyel enfeksiyonlarla seyreder; Bruton’da T hücre fonksiyonu görece korunur.",
+    "tusTip": "Maternal IgG etkisi azaldıktan sonra tekrarlayan otitis, sinüzit ve pnömoni gelişir; B hücreleri ve immünoglobulinler belirgin düşüktür. SCID daha erken ve ağır viral, fungal, bakteriyel enfeksiyonlarla seyreder; Bruton’da T hücre fonksiyonu görece korunur.",
+    "differentialNote": "SCID daha erken ve ağır viral, fungal, bakteriyel enfeksiyonlarla seyreder; Bruton’da T hücre fonksiyonu görece korunur.",
+    "keywords": [
+      "erkek bebek",
+      "altıncı aydan sonra",
+      "tekrarlayan pyojenik enfeksiyon",
+      "B hücre azlığı"
+    ]
+  },
+  "tus-pearl-pediatrics-168-extra": {
+    "front": "Bruton agammaglobulinemisinde temel genetik kusur hangi molekülle ilişkilidir?",
+    "back": "BTK mutasyonu. Maternal IgG etkisi azaldıktan sonra tekrarlayan otitis, sinüzit ve pnömoni gelişir; B hücreleri ve immünoglobulinler belirgin düşüktür.",
+    "answer": "BTK mutasyonu. Maternal IgG etkisi azaldıktan sonra tekrarlayan otitis, sinüzit ve pnömoni gelişir; B hücreleri ve immünoglobulinler belirgin düşüktür.",
+    "explanation": "Maternal IgG etkisi azaldıktan sonra tekrarlayan otitis, sinüzit ve pnömoni gelişir; B hücreleri ve immünoglobulinler belirgin düşüktür. SCID daha erken ve ağır viral, fungal, bakteriyel enfeksiyonlarla seyreder; Bruton’da T hücre fonksiyonu görece korunur.",
+    "tusTip": "Bruton agammaglobulinemisi karıştırıldığında cevabı netleştiren karşılaştırma: SCID daha erken ve ağır viral, fungal, bakteriyel enfeksiyonlarla seyreder; Bruton’da T hücre fonksiyonu görece korunur.",
+    "differentialNote": "SCID daha erken ve ağır viral, fungal, bakteriyel enfeksiyonlarla seyreder; Bruton’da T hücre fonksiyonu görece korunur.",
+    "keywords": [
+      "erkek bebek",
+      "altıncı aydan sonra",
+      "tekrarlayan pyojenik enfeksiyon",
+      "B hücre azlığı"
+    ]
+  },
+  "tus-pearl-pediatrics-169-spot": {
+    "front": "Term yenidoğanda perinatal asfiksi, ağır metabolik asidoz ve orta-ağır ensefalopati varsa nörolojik sekel riskini azaltan yaklaşım hangisidir?",
+    "back": "İlk 6 saat içinde terapötik hipotermi.",
+    "answer": "İlk 6 saat içinde terapötik hipotermi.",
+    "explanation": "Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır. Rutin antibiyotik veya yalnız destek tedavisi, HİE için nöroprotektif zaman penceresinin yerini tutmaz.",
+    "tusTip": "Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır. Rutin antibiyotik veya yalnız destek tedavisi, HİE için nöroprotektif zaman penceresinin yerini tutmaz.",
+    "differentialNote": "Rutin antibiyotik veya yalnız destek tedavisi, HİE için nöroprotektif zaman penceresinin yerini tutmaz.",
+    "keywords": [
+      "term yenidoğan",
+      "perinatal asfiksi",
+      "baz açığı yüksek",
+      "ilk 6 saat"
+    ]
+  },
+  "tus-pearl-pediatrics-169-extra": {
+    "front": "Terapötik hipotermi için kritik başlangıç penceresi kaç saattir?",
+    "back": "İlk 6 saat. Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır.",
+    "answer": "İlk 6 saat. Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır.",
+    "explanation": "Uygun term veya near-term yenidoğanda perinatal asfiksi sonrası orta-ağır HİE saptanırsa nöroprotektif hipotermi zaman penceresi kaçırılmamalıdır. Rutin antibiyotik veya yalnız destek tedavisi, HİE için nöroprotektif zaman penceresinin yerini tutmaz.",
+    "tusTip": "Hipoksik iskemik ensefalopati ve hipotermi kartında ayırıcı değer taşıyan nokta: Rutin antibiyotik veya yalnız destek tedavisi, HİE için nöroprotektif zaman penceresinin yerini tutmaz.",
+    "differentialNote": "Rutin antibiyotik veya yalnız destek tedavisi, HİE için nöroprotektif zaman penceresinin yerini tutmaz.",
+    "keywords": [
+      "term yenidoğan",
+      "perinatal asfiksi",
+      "baz açığı yüksek",
+      "ilk 6 saat"
+    ]
+  },
+  "tus-pearl-pediatrics-170-spot": {
+    "front": "Yaşamın ilk günlerinde ateşsiz, iyi görünen yenidoğanda eozinofilli papülopüstüler döküntü hangi benign tabloyu düşündürür?",
+    "back": "Eritema toksikum neonatorum. İyi görünen yenidoğanda ilk günlerde başlayan, kendiliğinden gerileyen papülopüstüler döküntü benign kabul edilir.",
+    "answer": "Eritema toksikum neonatorum. İyi görünen yenidoğanda ilk günlerde başlayan, kendiliğinden gerileyen papülopüstüler döküntü benign kabul edilir.",
+    "explanation": "İyi görünen yenidoğanda ilk günlerde başlayan, kendiliğinden gerileyen papülopüstüler döküntü benign kabul edilir. Veziküler lezyon, toksik görünüm veya ateş varsa HSV ve bakteriyel enfeksiyon gibi ciddi nedenler öncelenir.",
+    "tusTip": "İyi görünen yenidoğanda ilk günlerde başlayan, kendiliğinden gerileyen papülopüstüler döküntü benign kabul edilir. Veziküler lezyon, toksik görünüm veya ateş varsa HSV ve bakteriyel enfeksiyon gibi ciddi nedenler öncelenir.",
+    "differentialNote": "Veziküler lezyon, toksik görünüm veya ateş varsa HSV ve bakteriyel enfeksiyon gibi ciddi nedenler öncelenir.",
+    "keywords": [
+      "ilk günler",
+      "iyi görünüm",
+      "papülopüstül",
+      "eozinofil"
+    ]
+  },
+  "tus-pearl-pediatrics-170-extra": {
+    "front": "Eritema toksikum neonatorumda aileye temel yaklaşım nedir?",
+    "back": "Güvence verme ve izlem. İyi görünen yenidoğanda ilk günlerde başlayan, kendiliğinden gerileyen papülopüstüler döküntü benign kabul edilir.",
+    "answer": "Güvence verme ve izlem. İyi görünen yenidoğanda ilk günlerde başlayan, kendiliğinden gerileyen papülopüstüler döküntü benign kabul edilir.",
+    "explanation": "İyi görünen yenidoğanda ilk günlerde başlayan, kendiliğinden gerileyen papülopüstüler döküntü benign kabul edilir. Veziküler lezyon, toksik görünüm veya ateş varsa HSV ve bakteriyel enfeksiyon gibi ciddi nedenler öncelenir.",
+    "tusTip": "Eritema toksikum neonatorum için sınavda hedeflenen ayrım genellikle şudur: Veziküler lezyon, toksik görünüm veya ateş varsa HSV ve bakteriyel enfeksiyon gibi ciddi nedenler öncelenir.",
+    "differentialNote": "Veziküler lezyon, toksik görünüm veya ateş varsa HSV ve bakteriyel enfeksiyon gibi ciddi nedenler öncelenir.",
+    "keywords": [
+      "ilk günler",
+      "iyi görünüm",
+      "papülopüstül",
+      "eozinofil İç Hastalıkları (internal-medicine)"
+    ]
+  },
+  "tus-pearl-internal-medicine-171-spot": {
+    "front": "ALP ve GGT belirgin yüksek, aminotransferaz artışı daha sınırlıysa baskın karaciğer biyokimyası paterni nedir?",
+    "back": "Kolestatik patern. Kolestaz sorularında ALP-GGT artışı bilirübin ve görüntüleme bulgularıyla birlikte yorumlanır; yalnız ALT/AST yüksekliği hepatoselüler paterni öne çıkarır.",
+    "answer": "Kolestatik patern. Kolestaz sorularında ALP-GGT artışı bilirübin ve görüntüleme bulgularıyla birlikte yorumlanır; yalnız ALT/AST yüksekliği hepatoselüler paterni öne çıkarır.",
+    "explanation": "Kolestaz sorularında ALP-GGT artışı bilirübin ve görüntüleme bulgularıyla birlikte yorumlanır; yalnız ALT/AST yüksekliği hepatoselüler paterni öne çıkarır. Hepatoselüler patern ALT/AST artışıyla baskındır; izole GGT artışı alkol veya ilaç etkisiyle de görülebilir.",
+    "tusTip": "Kolestaz sorularında ALP-GGT artışı bilirübin ve görüntüleme bulgularıyla birlikte yorumlanır; yalnız ALT/AST yüksekliği hepatoselüler paterni öne çıkarır. Hepatoselüler patern ALT/AST artışıyla baskındır; izole GGT artışı alkol veya ilaç etkisiyle de görülebilir.",
+    "differentialNote": "Hepatoselüler patern ALT/AST artışıyla baskındır; izole GGT artışı alkol veya ilaç etkisiyle de görülebilir.",
+    "keywords": [
+      "ALP yüksek",
+      "GGT yüksek",
+      "direkt bilirübin",
+      "kolestaz"
+    ]
+  },
+  "tus-pearl-internal-medicine-171-extra": {
+    "front": "Kolestaz paterninde safra yolu dilatasyonunu ilk değerlendirmede hangi görüntüleme sık kullanılır?",
+    "back": "Abdominal ultrasonografi. Kolestaz sorularında ALP-GGT artışı bilirübin ve görüntüleme bulgularıyla birlikte yorumlanır; yalnız ALT/AST yüksekliği hepatoselüler paterni öne çıkarır.",
+    "answer": "Abdominal ultrasonografi. Kolestaz sorularında ALP-GGT artışı bilirübin ve görüntüleme bulgularıyla birlikte yorumlanır; yalnız ALT/AST yüksekliği hepatoselüler paterni öne çıkarır.",
+    "explanation": "Kolestaz sorularında ALP-GGT artışı bilirübin ve görüntüleme bulgularıyla birlikte yorumlanır; yalnız ALT/AST yüksekliği hepatoselüler paterni öne çıkarır. Hepatoselüler patern ALT/AST artışıyla baskındır; izole GGT artışı alkol veya ilaç etkisiyle de görülebilir.",
+    "tusTip": "Kolestatik karaciğer enzim paterni karıştırıldığında cevabı netleştiren karşılaştırma: Hepatoselüler patern ALT/AST artışıyla baskındır; izole GGT artışı alkol veya ilaç etkisiyle de görülebilir.",
+    "differentialNote": "Hepatoselüler patern ALT/AST artışıyla baskındır; izole GGT artışı alkol veya ilaç etkisiyle de görülebilir.",
+    "keywords": [
+      "ALP yüksek",
+      "GGT yüksek",
+      "direkt bilirübin",
+      "kolestaz"
+    ]
+  },
+  "tus-pearl-internal-medicine-172-spot": {
+    "front": "Yaşlı hastada olgun lenfositoz ve yaygın lenfadenopati varsa tanıyı desteklemek için hangi test yüksek verimlidir?",
+    "back": "Periferik kan akım sitometrisi. KLL’de kalıcı olgun lenfositoz ve tipik immünfenotip tanısal değerdedir; lenf nodu biyopsisi her olguda ilk basamak değildir.",
+    "answer": "Periferik kan akım sitometrisi. KLL’de kalıcı olgun lenfositoz ve tipik immünfenotip tanısal değerdedir; lenf nodu biyopsisi her olguda ilk basamak değildir.",
+    "explanation": "KLL’de kalıcı olgun lenfositoz ve tipik immünfenotip tanısal değerdedir; lenf nodu biyopsisi her olguda ilk basamak değildir. CML’de miyeloid seri artışı ve BCR-ABL ilişkisi beklenir; izole olgun lenfositoz KLL lehinedir.",
+    "tusTip": "KLL’de kalıcı olgun lenfositoz ve tipik immünfenotip tanısal değerdedir; lenf nodu biyopsisi her olguda ilk basamak değildir. CML’de miyeloid seri artışı ve BCR-ABL ilişkisi beklenir; izole olgun lenfositoz KLL lehinedir.",
+    "differentialNote": "CML’de miyeloid seri artışı ve BCR-ABL ilişkisi beklenir; izole olgun lenfositoz KLL lehinedir.",
+    "keywords": [
+      "yaşlı hasta",
+      "olgun lenfositoz",
+      "lenfadenopati",
+      "akım sitometri"
+    ]
+  },
+  "tus-pearl-internal-medicine-172-extra": {
+    "front": "KLL’de periferik yaymada klasik olarak görülebilen hücre kırıntısı hangisidir?",
+    "back": "Smudge cell. KLL’de kalıcı olgun lenfositoz ve tipik immünfenotip tanısal değerdedir; lenf nodu biyopsisi her olguda ilk basamak değildir.",
+    "answer": "Smudge cell. KLL’de kalıcı olgun lenfositoz ve tipik immünfenotip tanısal değerdedir; lenf nodu biyopsisi her olguda ilk basamak değildir.",
+    "explanation": "KLL’de kalıcı olgun lenfositoz ve tipik immünfenotip tanısal değerdedir; lenf nodu biyopsisi her olguda ilk basamak değildir. CML’de miyeloid seri artışı ve BCR-ABL ilişkisi beklenir; izole olgun lenfositoz KLL lehinedir.",
+    "tusTip": "KLL tanı yaklaşımı kartında ayırıcı değer taşıyan nokta: CML’de miyeloid seri artışı ve BCR-ABL ilişkisi beklenir; izole olgun lenfositoz KLL lehinedir.",
+    "differentialNote": "CML’de miyeloid seri artışı ve BCR-ABL ilişkisi beklenir; izole olgun lenfositoz KLL lehinedir.",
+    "keywords": [
+      "yaşlı hasta",
+      "olgun lenfositoz",
+      "lenfadenopati",
+      "akım sitometri Çocuk Sağlığı ve Hastalıkları (pediatrics)"
+    ]
+  },
+  "tus-pearl-pediatrics-173-spot": {
+    "front": "Çocukta viral enfeksiyon sonrası izole trombositopeni ve peteşi geliştiğinde en olası tanı hangisidir?",
+    "back": "İmmün trombositopeni. ITP’de trombositopeni izoledir; anemi, lökosit bozukluğu veya organomegali varsa lösemi ve kemik iliği hastalıkları dışlanmalıdır.",
+    "answer": "İmmün trombositopeni. ITP’de trombositopeni izoledir; anemi, lökosit bozukluğu veya organomegali varsa lösemi ve kemik iliği hastalıkları dışlanmalıdır.",
+    "explanation": "ITP’de trombositopeni izoledir; anemi, lökosit bozukluğu veya organomegali varsa lösemi ve kemik iliği hastalıkları dışlanmalıdır. Pansitopeni, hepatosplenomegali veya kemik ağrısı varsa ITP yerine malignite/kök hücre patolojisi düşünülür.",
+    "tusTip": "ITP’de trombositopeni izoledir; anemi, lökosit bozukluğu veya organomegali varsa lösemi ve kemik iliği hastalıkları dışlanmalıdır. Pansitopeni, hepatosplenomegali veya kemik ağrısı varsa ITP yerine malignite/kök hücre patolojisi düşünülür.",
+    "differentialNote": "Pansitopeni, hepatosplenomegali veya kemik ağrısı varsa ITP yerine malignite/kök hücre patolojisi düşünülür.",
+    "keywords": [
+      "viral enfeksiyon sonrası",
+      "peteşi",
+      "izole trombositopeni",
+      "çocuk"
+    ]
+  },
+  "tus-pearl-pediatrics-173-extra": {
+    "front": "ITP’de tam kan sayımında beklenen temel patern nedir?",
+    "back": "İzole trombositopeni. ITP’de trombositopeni izoledir; anemi, lökosit bozukluğu veya organomegali varsa lösemi ve kemik iliği hastalıkları dışlanmalıdır.",
+    "answer": "İzole trombositopeni. ITP’de trombositopeni izoledir; anemi, lökosit bozukluğu veya organomegali varsa lösemi ve kemik iliği hastalıkları dışlanmalıdır.",
+    "explanation": "ITP’de trombositopeni izoledir; anemi, lökosit bozukluğu veya organomegali varsa lösemi ve kemik iliği hastalıkları dışlanmalıdır. Pansitopeni, hepatosplenomegali veya kemik ağrısı varsa ITP yerine malignite/kök hücre patolojisi düşünülür.",
+    "tusTip": "ITP ilk yaklaşım için sınavda hedeflenen ayrım genellikle şudur: Pansitopeni, hepatosplenomegali veya kemik ağrısı varsa ITP yerine malignite/kök hücre patolojisi düşünülür.",
+    "differentialNote": "Pansitopeni, hepatosplenomegali veya kemik ağrısı varsa ITP yerine malignite/kök hücre patolojisi düşünülür.",
+    "keywords": [
+      "viral enfeksiyon sonrası",
+      "peteşi",
+      "izole trombositopeni",
+      "çocuk Tıbbi Farmakoloji (medical-pharmacology)"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-174-spot": {
+    "front": "Siyanotik görünüm, normal PaO₂ ve çikolata rengi kan ile seyreden methemoglobinemide temel antidot hangisidir?",
+    "back": "Metilen mavisi. Methemoglobinemi oksijen satürasyon ölçümünü yanıltabilir; antidot olarak metilen mavisi kullanılır.",
+    "answer": "Metilen mavisi. Methemoglobinemi oksijen satürasyon ölçümünü yanıltabilir; antidot olarak metilen mavisi kullanılır.",
+    "explanation": "Methemoglobinemi oksijen satürasyon ölçümünü yanıltabilir; antidot olarak metilen mavisi kullanılır. G6PD eksikliğinde metilen mavisi etkisiz veya riskli olabilir; ağır olguda alternatif yaklaşımlar gerekir.",
+    "tusTip": "Methemoglobinemi oksijen satürasyon ölçümünü yanıltabilir; antidot olarak metilen mavisi kullanılır. G6PD eksikliğinde metilen mavisi etkisiz veya riskli olabilir; ağır olguda alternatif yaklaşımlar gerekir.",
+    "differentialNote": "G6PD eksikliğinde metilen mavisi etkisiz veya riskli olabilir; ağır olguda alternatif yaklaşımlar gerekir.",
+    "keywords": [
+      "çikolata rengi kan",
+      "normal PaO₂",
+      "satürasyon açığı",
+      "metilen mavisi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-174-extra": {
+    "front": "Methemoglobinemide pulse oksimetre ile arter kan gazı arasındaki uyumsuzluk neyi destekler?",
+    "back": "Satürasyon açığı. Methemoglobinemi oksijen satürasyon ölçümünü yanıltabilir; antidot olarak metilen mavisi kullanılır.",
+    "answer": "Satürasyon açığı. Methemoglobinemi oksijen satürasyon ölçümünü yanıltabilir; antidot olarak metilen mavisi kullanılır.",
+    "explanation": "Methemoglobinemi oksijen satürasyon ölçümünü yanıltabilir; antidot olarak metilen mavisi kullanılır. G6PD eksikliğinde metilen mavisi etkisiz veya riskli olabilir; ağır olguda alternatif yaklaşımlar gerekir.",
+    "tusTip": "Methemoglobinemi antidotu karıştırıldığında cevabı netleştiren karşılaştırma: G6PD eksikliğinde metilen mavisi etkisiz veya riskli olabilir; ağır olguda alternatif yaklaşımlar gerekir.",
+    "differentialNote": "G6PD eksikliğinde metilen mavisi etkisiz veya riskli olabilir; ağır olguda alternatif yaklaşımlar gerekir.",
+    "keywords": [
+      "çikolata rengi kan",
+      "normal PaO₂",
+      "satürasyon açığı",
+      "metilen mavisi Tıbbi Patoloji (medical-pathology)"
+    ]
+  },
+  "tus-pearl-medical-pathology-175-spot": {
+    "front": "Granülomatöz inflamasyon içinde amorf, peynirimsi nekroz en çok hangi nekroz tipini düşündürür?",
+    "back": "Kazeifikasyon nekrozu. Tüberkülozla ilişkili granülomlarda merkezde kazeifikasyon nekrozu klasik bir patoloji ipucudur.",
+    "answer": "Kazeifikasyon nekrozu. Tüberkülozla ilişkili granülomlarda merkezde kazeifikasyon nekrozu klasik bir patoloji ipucudur.",
+    "explanation": "Tüberkülozla ilişkili granülomlarda merkezde kazeifikasyon nekrozu klasik bir patoloji ipucudur. Sıvılaşma nekrozu beyin enfarktı ve apse ile, koagülasyon nekrozu çoğu solid organ enfarktıyla sorulur.",
+    "tusTip": "Tüberkülozla ilişkili granülomlarda merkezde kazeifikasyon nekrozu klasik bir patoloji ipucudur. Sıvılaşma nekrozu beyin enfarktı ve apse ile, koagülasyon nekrozu çoğu solid organ enfarktıyla sorulur.",
+    "differentialNote": "Sıvılaşma nekrozu beyin enfarktı ve apse ile, koagülasyon nekrozu çoğu solid organ enfarktıyla sorulur.",
+    "keywords": [
+      "granülom",
+      "tüberküloz",
+      "peynirimsi görünüm",
+      "amorf nekroz"
+    ]
+  },
+  "tus-pearl-medical-pathology-175-extra": {
+    "front": "Beyin enfarktında beklenen nekroz tipi hangisidir?",
+    "back": "Sıvılaşma nekrozu. Tüberkülozla ilişkili granülomlarda merkezde kazeifikasyon nekrozu klasik bir patoloji ipucudur.",
+    "answer": "Sıvılaşma nekrozu. Tüberkülozla ilişkili granülomlarda merkezde kazeifikasyon nekrozu klasik bir patoloji ipucudur.",
+    "explanation": "Tüberkülozla ilişkili granülomlarda merkezde kazeifikasyon nekrozu klasik bir patoloji ipucudur. Sıvılaşma nekrozu beyin enfarktı ve apse ile, koagülasyon nekrozu çoğu solid organ enfarktıyla sorulur.",
+    "tusTip": "Kazeifikasyon nekrozu kartında ayırıcı değer taşıyan nokta: Sıvılaşma nekrozu beyin enfarktı ve apse ile, koagülasyon nekrozu çoğu solid organ enfarktıyla sorulur.",
+    "differentialNote": "Sıvılaşma nekrozu beyin enfarktı ve apse ile, koagülasyon nekrozu çoğu solid organ enfarktıyla sorulur.",
+    "keywords": [
+      "granülom",
+      "tüberküloz",
+      "peynirimsi görünüm",
+      "amorf nekroz Anatomi (anatomy)"
+    ]
+  },
+  "tus-pearl-anatomy-176-spot": {
+    "front": "Omuz çıkığı sonrası deltoid güçsüzlüğü ve lateral omuz duyu kaybı hangi sinir lezyonunu düşündürür?",
+    "back": "Nervus axillaris lezyonu. Nervus axillaris quadrangular aralıktan geçer, deltoid ve teres minor kaslarını innerve eder.",
+    "answer": "Nervus axillaris lezyonu. Nervus axillaris quadrangular aralıktan geçer, deltoid ve teres minor kaslarını innerve eder.",
+    "explanation": "Nervus axillaris quadrangular aralıktan geçer, deltoid ve teres minor kaslarını innerve eder. Radial sinir düşük el yapar; deltoid zayıflığı ve lateral omuz duyusu axillaris için daha seçicidir.",
+    "tusTip": "Nervus axillaris quadrangular aralıktan geçer, deltoid ve teres minor kaslarını innerve eder. Radial sinir düşük el yapar; deltoid zayıflığı ve lateral omuz duyusu axillaris için daha seçicidir.",
+    "differentialNote": "Radial sinir düşük el yapar; deltoid zayıflığı ve lateral omuz duyusu axillaris için daha seçicidir.",
+    "keywords": [
+      "omuz çıkığı",
+      "deltoid zayıflığı",
+      "lateral omuz duyu kaybı",
+      "quadrangular aralık"
+    ]
+  },
+  "tus-pearl-anatomy-176-extra": {
+    "front": "Nervus axillaris lezyonu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Radial sinir düşük el yapar; deltoid zayıflığı ve lateral omuz duyusu axillaris için daha seçicidir.",
+    "answer": "Radial sinir düşük el yapar; deltoid zayıflığı ve lateral omuz duyusu axillaris için daha seçicidir.",
+    "explanation": "Nervus axillaris quadrangular aralıktan geçer, deltoid ve teres minor kaslarını innerve eder. Radial sinir düşük el yapar; deltoid zayıflığı ve lateral omuz duyusu axillaris için daha seçicidir.",
+    "tusTip": "Nervus axillaris lezyonu için sınavda hedeflenen ayrım genellikle şudur: Radial sinir düşük el yapar; deltoid zayıflığı ve lateral omuz duyusu axillaris için daha seçicidir.",
+    "differentialNote": "Radial sinir düşük el yapar; deltoid zayıflığı ve lateral omuz duyusu axillaris için daha seçicidir.",
+    "keywords": [
+      "omuz çıkığı",
+      "deltoid zayıflığı",
+      "lateral omuz duyu kaybı",
+      "quadrangular aralık"
+    ]
+  },
+  "tus-pearl-anatomy-177-spot": {
+    "front": "Skapula kanatlanması ve kolu baş üzerine kaldırmada güçlük hangi sinir hasarında beklenir?",
+    "back": "Nervus thoracicus longus lezyonu. Bu sinir serratus anterior kasını innerve eder; serratus anterior kaybı medial skapula kanatlanmasına yol açar.",
+    "answer": "Nervus thoracicus longus lezyonu. Bu sinir serratus anterior kasını innerve eder; serratus anterior kaybı medial skapula kanatlanmasına yol açar.",
+    "explanation": "Bu sinir serratus anterior kasını innerve eder; serratus anterior kaybı medial skapula kanatlanmasına yol açar. Spinal aksesuar sinir trapezius zayıflığı yapar; tipik medial kanatlanma serratus anterior kaybıdır.",
+    "tusTip": "Bu sinir serratus anterior kasını innerve eder; serratus anterior kaybı medial skapula kanatlanmasına yol açar. Spinal aksesuar sinir trapezius zayıflığı yapar; tipik medial kanatlanma serratus anterior kaybıdır.",
+    "differentialNote": "Spinal aksesuar sinir trapezius zayıflığı yapar; tipik medial kanatlanma serratus anterior kaybıdır.",
+    "keywords": [
+      "kanat skapula",
+      "serratus anterior",
+      "mastektomi",
+      "duvar itme testi"
+    ]
+  },
+  "tus-pearl-anatomy-177-extra": {
+    "front": "Nervus thoracicus longus lezyonu için en kritik ayırıcı nokta nedir?",
+    "back": "Spinal aksesuar sinir trapezius zayıflığı yapar; tipik medial kanatlanma serratus anterior kaybıdır.",
+    "answer": "Spinal aksesuar sinir trapezius zayıflığı yapar; tipik medial kanatlanma serratus anterior kaybıdır.",
+    "explanation": "Bu sinir serratus anterior kasını innerve eder; serratus anterior kaybı medial skapula kanatlanmasına yol açar. Spinal aksesuar sinir trapezius zayıflığı yapar; tipik medial kanatlanma serratus anterior kaybıdır.",
+    "tusTip": "Nervus thoracicus longus lezyonu karıştırıldığında cevabı netleştiren karşılaştırma: Spinal aksesuar sinir trapezius zayıflığı yapar; tipik medial kanatlanma serratus anterior kaybıdır.",
+    "differentialNote": "Spinal aksesuar sinir trapezius zayıflığı yapar; tipik medial kanatlanma serratus anterior kaybıdır.",
+    "keywords": [
+      "kanat skapula",
+      "serratus anterior",
+      "mastektomi",
+      "duvar itme testi"
+    ]
+  },
+  "tus-pearl-anatomy-178-spot": {
+    "front": "Tiroid cerrahisi sonrası ses kısıklığı en çok hangi sinirin yaralanmasıyla ilişkilidir?",
+    "back": "Nervus laryngeus recurrens lezyonu. Rekürren laringeal sinir intrensek larinks kaslarının çoğunu innerve eder ve vokal kord hareketi için kritiktir.",
+    "answer": "Nervus laryngeus recurrens lezyonu. Rekürren laringeal sinir intrensek larinks kaslarının çoğunu innerve eder ve vokal kord hareketi için kritiktir.",
+    "explanation": "Rekürren laringeal sinir intrensek larinks kaslarının çoğunu innerve eder ve vokal kord hareketi için kritiktir. Superior laringeal sinir yaralanması tiz ses kaybı ile daha çok ilişkilidir.",
+    "tusTip": "Rekürren laringeal sinir intrensek larinks kaslarının çoğunu innerve eder ve vokal kord hareketi için kritiktir. Superior laringeal sinir yaralanması tiz ses kaybı ile daha çok ilişkilidir.",
+    "differentialNote": "Superior laringeal sinir yaralanması tiz ses kaybı ile daha çok ilişkilidir.",
+    "keywords": [
+      "tiroid cerrahisi",
+      "ses kısıklığı",
+      "vokal kord paralizisi",
+      "rekürren sinir"
+    ]
+  },
+  "tus-pearl-anatomy-178-extra": {
+    "front": "Nervus laryngeus recurrens lezyonu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Superior laringeal sinir yaralanması tiz ses kaybı ile daha çok ilişkilidir.",
+    "answer": "Superior laringeal sinir yaralanması tiz ses kaybı ile daha çok ilişkilidir.",
+    "explanation": "Rekürren laringeal sinir intrensek larinks kaslarının çoğunu innerve eder ve vokal kord hareketi için kritiktir. Superior laringeal sinir yaralanması tiz ses kaybı ile daha çok ilişkilidir.",
+    "tusTip": "Nervus laryngeus recurrens lezyonu kartında ayırıcı değer taşıyan nokta: Superior laringeal sinir yaralanması tiz ses kaybı ile daha çok ilişkilidir.",
+    "differentialNote": "Superior laringeal sinir yaralanması tiz ses kaybı ile daha çok ilişkilidir.",
+    "keywords": [
+      "tiroid cerrahisi",
+      "ses kısıklığı",
+      "vokal kord paralizisi",
+      "rekürren sinir"
+    ]
+  },
+  "tus-pearl-anatomy-179-spot": {
+    "front": "Sol üst ekstremite ve alt vücudun lenfi en çok hangi lenfatik kanal ile venöz sisteme döner?",
+    "back": "Duktus torasikus. Duktus torasikus sağ üst kadran dışındaki vücut bölgelerinin lenfini sol venöz açıya taşır.",
+    "answer": "Duktus torasikus. Duktus torasikus sağ üst kadran dışındaki vücut bölgelerinin lenfini sol venöz açıya taşır.",
+    "explanation": "Duktus torasikus sağ üst kadran dışındaki vücut bölgelerinin lenfini sol venöz açıya taşır. Sağ lenfatik kanal yalnızca sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder.",
+    "tusTip": "Duktus torasikus sağ üst kadran dışındaki vücut bölgelerinin lenfini sol venöz açıya taşır. Sağ lenfatik kanal yalnızca sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder.",
+    "differentialNote": "Sağ lenfatik kanal yalnızca sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder.",
+    "keywords": [
+      "sol venöz açı",
+      "lenf drenajı",
+      "alt ekstremite",
+      "torasik kanal"
+    ]
+  },
+  "tus-pearl-anatomy-179-extra": {
+    "front": "Duktus torasikus drenajı başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Sağ lenfatik kanal yalnızca sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder.",
+    "answer": "Sağ lenfatik kanal yalnızca sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder.",
+    "explanation": "Duktus torasikus sağ üst kadran dışındaki vücut bölgelerinin lenfini sol venöz açıya taşır. Sağ lenfatik kanal yalnızca sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder.",
+    "tusTip": "Duktus torasikus drenajı için sınavda hedeflenen ayrım genellikle şudur: Sağ lenfatik kanal yalnızca sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder.",
+    "differentialNote": "Sağ lenfatik kanal yalnızca sağ baş-boyun, sağ üst ekstremite ve sağ toraksın bir bölümünü drene eder.",
+    "keywords": [
+      "sol venöz açı",
+      "lenf drenajı",
+      "alt ekstremite",
+      "torasik kanal"
+    ]
+  },
+  "tus-pearl-anatomy-180-spot": {
+    "front": "Kontralateral saf motor hemiparezi en sık internal kapsülün hangi bölüm lezyonunda görülür?",
+    "back": "Capsula interna posterior bacağı. Kortikospinal lifler posterior bacaktan geçer; küçük laküner infarktlar belirgin motor defisit yapabilir.",
+    "answer": "Capsula interna posterior bacağı. Kortikospinal lifler posterior bacaktan geçer; küçük laküner infarktlar belirgin motor defisit yapabilir.",
+    "explanation": "Kortikospinal lifler posterior bacaktan geçer; küçük laküner infarktlar belirgin motor defisit yapabilir. Anterior bacak daha çok frontopontin lifler ve bilişsel-davranışsal ağlarla ilişkilidir.",
+    "tusTip": "Kortikospinal lifler posterior bacaktan geçer; küçük laküner infarktlar belirgin motor defisit yapabilir. Anterior bacak daha çok frontopontin lifler ve bilişsel-davranışsal ağlarla ilişkilidir.",
+    "differentialNote": "Anterior bacak daha çok frontopontin lifler ve bilişsel-davranışsal ağlarla ilişkilidir.",
+    "keywords": [
+      "saf motor inme",
+      "posterior bacak",
+      "kortikospinal trakt",
+      "laküner infarkt"
+    ]
+  },
+  "tus-pearl-anatomy-180-extra": {
+    "front": "Capsula interna posterior bacağı sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Anterior bacak daha çok frontopontin lifler ve bilişsel-davranışsal ağlarla ilişkilidir.",
+    "answer": "Anterior bacak daha çok frontopontin lifler ve bilişsel-davranışsal ağlarla ilişkilidir.",
+    "explanation": "Kortikospinal lifler posterior bacaktan geçer; küçük laküner infarktlar belirgin motor defisit yapabilir. Anterior bacak daha çok frontopontin lifler ve bilişsel-davranışsal ağlarla ilişkilidir.",
+    "tusTip": "Capsula interna posterior bacağı karıştırıldığında cevabı netleştiren karşılaştırma: Anterior bacak daha çok frontopontin lifler ve bilişsel-davranışsal ağlarla ilişkilidir.",
+    "differentialNote": "Anterior bacak daha çok frontopontin lifler ve bilişsel-davranışsal ağlarla ilişkilidir.",
+    "keywords": [
+      "saf motor inme",
+      "posterior bacak",
+      "kortikospinal trakt",
+      "laküner infarkt"
+    ]
+  },
+  "tus-pearl-anatomy-181-spot": {
+    "front": "Akıcı olmayan konuşma ve korunmuş anlama hangi kortikal alan lezyonunu düşündürür?",
+    "back": "Broca alanı. Broca alanı dominant hemisfer inferior frontal girusta yer alır ve motor konuşma üretimiyle ilişkilidir.",
+    "answer": "Broca alanı. Broca alanı dominant hemisfer inferior frontal girusta yer alır ve motor konuşma üretimiyle ilişkilidir.",
+    "explanation": "Broca alanı dominant hemisfer inferior frontal girusta yer alır ve motor konuşma üretimiyle ilişkilidir. Wernicke afazisinde konuşma akıcıdır ancak anlama belirgin bozulur.",
+    "tusTip": "Broca alanı dominant hemisfer inferior frontal girusta yer alır ve motor konuşma üretimiyle ilişkilidir. Wernicke afazisinde konuşma akıcıdır ancak anlama belirgin bozulur.",
+    "differentialNote": "Wernicke afazisinde konuşma akıcıdır ancak anlama belirgin bozulur.",
+    "keywords": [
+      "akıcı olmayan afazi",
+      "inferior frontal girus",
+      "dominant hemisfer",
+      "konuşma üretimi"
+    ]
+  },
+  "tus-pearl-anatomy-181-extra": {
+    "front": "Broca alanı için en kritik ayırıcı nokta nedir?",
+    "back": "Wernicke afazisinde konuşma akıcıdır ancak anlama belirgin bozulur.",
+    "answer": "Wernicke afazisinde konuşma akıcıdır ancak anlama belirgin bozulur.",
+    "explanation": "Broca alanı dominant hemisfer inferior frontal girusta yer alır ve motor konuşma üretimiyle ilişkilidir. Wernicke afazisinde konuşma akıcıdır ancak anlama belirgin bozulur.",
+    "tusTip": "Broca alanı kartında ayırıcı değer taşıyan nokta: Wernicke afazisinde konuşma akıcıdır ancak anlama belirgin bozulur.",
+    "differentialNote": "Wernicke afazisinde konuşma akıcıdır ancak anlama belirgin bozulur.",
+    "keywords": [
+      "akıcı olmayan afazi",
+      "inferior frontal girus",
+      "dominant hemisfer",
+      "konuşma üretimi"
+    ]
+  },
+  "tus-pearl-anatomy-182-spot": {
+    "front": "Akıcı fakat anlamsız konuşma ve anlama bozukluğu hangi kortikal alan lezyonunu düşündürür?",
+    "back": "Wernicke alanı. Wernicke alanı dominant superior temporal girusta bulunur ve dil anlamlandırması için önemlidir.",
+    "answer": "Wernicke alanı. Wernicke alanı dominant superior temporal girusta bulunur ve dil anlamlandırması için önemlidir.",
+    "explanation": "Wernicke alanı dominant superior temporal girusta bulunur ve dil anlamlandırması için önemlidir. Broca lezyonunda hasta ne söylemek istediğini bilir ancak akıcı konuşamaz.",
+    "tusTip": "Wernicke alanı dominant superior temporal girusta bulunur ve dil anlamlandırması için önemlidir. Broca lezyonunda hasta ne söylemek istediğini bilir ancak akıcı konuşamaz.",
+    "differentialNote": "Broca lezyonunda hasta ne söylemek istediğini bilir ancak akıcı konuşamaz.",
+    "keywords": [
+      "akıcı afazi",
+      "anlama bozukluğu",
+      "superior temporal girus",
+      "dominant hemisfer"
+    ]
+  },
+  "tus-pearl-anatomy-182-extra": {
+    "front": "Wernicke alanı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Broca lezyonunda hasta ne söylemek istediğini bilir ancak akıcı konuşamaz.",
+    "answer": "Broca lezyonunda hasta ne söylemek istediğini bilir ancak akıcı konuşamaz.",
+    "explanation": "Wernicke alanı dominant superior temporal girusta bulunur ve dil anlamlandırması için önemlidir. Broca lezyonunda hasta ne söylemek istediğini bilir ancak akıcı konuşamaz.",
+    "tusTip": "Wernicke alanı için sınavda hedeflenen ayrım genellikle şudur: Broca lezyonunda hasta ne söylemek istediğini bilir ancak akıcı konuşamaz.",
+    "differentialNote": "Broca lezyonunda hasta ne söylemek istediğini bilir ancak akıcı konuşamaz.",
+    "keywords": [
+      "akıcı afazi",
+      "anlama bozukluğu",
+      "superior temporal girus",
+      "dominant hemisfer"
+    ]
+  },
+  "tus-pearl-anatomy-183-spot": {
+    "front": "Temporal bölge travması sonrası epidural hematom gelişiminde en çok hangi damar yaralanır?",
+    "back": "Orta meningeal arter. Pterion bölgesi incedir ve orta meningeal arter burada kemiğe yakın seyreder.",
+    "answer": "Orta meningeal arter. Pterion bölgesi incedir ve orta meningeal arter burada kemiğe yakın seyreder.",
+    "explanation": "Pterion bölgesi incedir ve orta meningeal arter burada kemiğe yakın seyreder. Subdural hematom daha çok köprü venlerin yırtılmasıyla oluşur.",
+    "tusTip": "Pterion bölgesi incedir ve orta meningeal arter burada kemiğe yakın seyreder. Subdural hematom daha çok köprü venlerin yırtılmasıyla oluşur.",
+    "differentialNote": "Subdural hematom daha çok köprü venlerin yırtılmasıyla oluşur.",
+    "keywords": [
+      "pterion",
+      "epidural hematom",
+      "lucid interval",
+      "orta meningeal arter"
+    ]
+  },
+  "tus-pearl-anatomy-183-extra": {
+    "front": "Pterion ve orta meningeal arter sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Subdural hematom daha çok köprü venlerin yırtılmasıyla oluşur.",
+    "answer": "Subdural hematom daha çok köprü venlerin yırtılmasıyla oluşur.",
+    "explanation": "Pterion bölgesi incedir ve orta meningeal arter burada kemiğe yakın seyreder. Subdural hematom daha çok köprü venlerin yırtılmasıyla oluşur.",
+    "tusTip": "Pterion ve orta meningeal arter karıştırıldığında cevabı netleştiren karşılaştırma: Subdural hematom daha çok köprü venlerin yırtılmasıyla oluşur.",
+    "differentialNote": "Subdural hematom daha çok köprü venlerin yırtılmasıyla oluşur.",
+    "keywords": [
+      "pterion",
+      "epidural hematom",
+      "lucid interval",
+      "orta meningeal arter"
+    ]
+  },
+  "tus-pearl-anatomy-184-spot": {
+    "front": "Mide, dalak ve karaciğerin ana arteriyel kaynağı hangi arter gövdesidir?",
+    "back": "Truncus coeliacus. Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
+    "answer": "Truncus coeliacus. Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir.",
+    "explanation": "Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir. Süperior mezenterik arter midgut; inferior mezenterik arter hindgut beslenmesiyle ilişkilidir.",
+    "tusTip": "Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir. Süperior mezenterik arter midgut; inferior mezenterik arter hindgut beslenmesiyle ilişkilidir.",
+    "differentialNote": "Süperior mezenterik arter midgut; inferior mezenterik arter hindgut beslenmesiyle ilişkilidir.",
+    "keywords": [
+      "foregut",
+      "sol gastrik",
+      "splenik",
+      "common hepatik"
+    ]
+  },
+  "tus-pearl-anatomy-184-extra": {
+    "front": "Truncus coeliacus dalları için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Süperior mezenterik arter midgut; inferior mezenterik arter hindgut beslenmesiyle ilişkilidir.",
+    "answer": "Süperior mezenterik arter midgut; inferior mezenterik arter hindgut beslenmesiyle ilişkilidir.",
+    "explanation": "Truncus coeliacus foregut organlarını besler ve gastrik, splenik, hepatik arter dallarını verir. Süperior mezenterik arter midgut; inferior mezenterik arter hindgut beslenmesiyle ilişkilidir.",
+    "tusTip": "Truncus coeliacus dalları kartında ayırıcı değer taşıyan nokta: Süperior mezenterik arter midgut; inferior mezenterik arter hindgut beslenmesiyle ilişkilidir.",
+    "differentialNote": "Süperior mezenterik arter midgut; inferior mezenterik arter hindgut beslenmesiyle ilişkilidir.",
+    "keywords": [
+      "foregut",
+      "sol gastrik",
+      "splenik",
+      "common hepatik"
+    ]
+  },
+  "tus-pearl-anatomy-185-spot": {
+    "front": "Distal duodenumdan proksimal transvers kolona kadar olan bağırsak segmenti en çok hangi arterle beslenir?",
+    "back": "Süperior mezenterik arter. Süperior mezenterik arter midgut türevlerini besleyen ana damardır.",
+    "answer": "Süperior mezenterik arter. Süperior mezenterik arter midgut türevlerini besleyen ana damardır.",
+    "explanation": "Süperior mezenterik arter midgut türevlerini besleyen ana damardır. İnferior mezenterik arter distal transvers kolon ve rektumun üst kısmına giden hindgut damarlarıyla ilişkilidir.",
+    "tusTip": "Süperior mezenterik arter midgut türevlerini besleyen ana damardır. İnferior mezenterik arter distal transvers kolon ve rektumun üst kısmına giden hindgut damarlarıyla ilişkilidir.",
+    "differentialNote": "İnferior mezenterik arter distal transvers kolon ve rektumun üst kısmına giden hindgut damarlarıyla ilişkilidir.",
+    "keywords": [
+      "midgut",
+      "distal duodenum",
+      "jejunum",
+      "proksimal transvers kolon"
+    ]
+  },
+  "tus-pearl-anatomy-185-extra": {
+    "front": "Süperior mezenterik arter alanı için en kritik ayırıcı nokta nedir?",
+    "back": "İnferior mezenterik arter distal transvers kolon ve rektumun üst kısmına giden hindgut damarlarıyla ilişkilidir.",
+    "answer": "İnferior mezenterik arter distal transvers kolon ve rektumun üst kısmına giden hindgut damarlarıyla ilişkilidir.",
+    "explanation": "Süperior mezenterik arter midgut türevlerini besleyen ana damardır. İnferior mezenterik arter distal transvers kolon ve rektumun üst kısmına giden hindgut damarlarıyla ilişkilidir.",
+    "tusTip": "Süperior mezenterik arter alanı için sınavda hedeflenen ayrım genellikle şudur: İnferior mezenterik arter distal transvers kolon ve rektumun üst kısmına giden hindgut damarlarıyla ilişkilidir.",
+    "differentialNote": "İnferior mezenterik arter distal transvers kolon ve rektumun üst kısmına giden hindgut damarlarıyla ilişkilidir.",
+    "keywords": [
+      "midgut",
+      "distal duodenum",
+      "jejunum",
+      "proksimal transvers kolon"
+    ]
+  },
+  "tus-pearl-anatomy-186-spot": {
+    "front": "Distal transvers kolon ve sigmoid kolonun ana arteriyel kaynağı hangisidir?",
+    "back": "İnferior mezenterik arter. İnferior mezenterik arter hindgut türevlerini besler.",
+    "answer": "İnferior mezenterik arter. İnferior mezenterik arter hindgut türevlerini besler.",
+    "explanation": "İnferior mezenterik arter hindgut türevlerini besler. Süperior mezenterik arter midgut segmentlerinin ana besleyicisidir.",
+    "tusTip": "İnferior mezenterik arter hindgut türevlerini besler. Süperior mezenterik arter midgut segmentlerinin ana besleyicisidir.",
+    "differentialNote": "Süperior mezenterik arter midgut segmentlerinin ana besleyicisidir.",
+    "keywords": [
+      "hindgut",
+      "distal transvers kolon",
+      "sigmoid kolon",
+      "superior rektal arter"
+    ]
+  },
+  "tus-pearl-anatomy-186-extra": {
+    "front": "İnferior mezenterik arter alanı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Süperior mezenterik arter midgut segmentlerinin ana besleyicisidir.",
+    "answer": "Süperior mezenterik arter midgut segmentlerinin ana besleyicisidir.",
+    "explanation": "İnferior mezenterik arter hindgut türevlerini besler. Süperior mezenterik arter midgut segmentlerinin ana besleyicisidir.",
+    "tusTip": "İnferior mezenterik arter alanı karıştırıldığında cevabı netleştiren karşılaştırma: Süperior mezenterik arter midgut segmentlerinin ana besleyicisidir.",
+    "differentialNote": "Süperior mezenterik arter midgut segmentlerinin ana besleyicisidir.",
+    "keywords": [
+      "hindgut",
+      "distal transvers kolon",
+      "sigmoid kolon",
+      "superior rektal arter"
+    ]
+  },
+  "tus-pearl-anatomy-187-spot": {
+    "front": "Sol varikoselin sağa göre daha sık görülmesi hangi venöz drenaj özelliğiyle açıklanır?",
+    "back": "Sol testiküler venin sol renal vene dik açıyla dökülmesi.",
+    "answer": "Sol testiküler venin sol renal vene dik açıyla dökülmesi.",
+    "explanation": "Sol testiküler ven önce sol renal vene açılır; bu anatomik drenaj basınç artışına yatkınlık oluşturur. Sağ testiküler ven doğrudan inferior vena kavaya dökülür.",
+    "tusTip": "Sol testiküler ven önce sol renal vene açılır; bu anatomik drenaj basınç artışına yatkınlık oluşturur. Sağ testiküler ven doğrudan inferior vena kavaya dökülür.",
+    "differentialNote": "Sağ testiküler ven doğrudan inferior vena kavaya dökülür.",
+    "keywords": [
+      "sol varikosel",
+      "sol renal ven",
+      "testiküler ven",
+      "venöz basınç"
+    ]
+  },
+  "tus-pearl-anatomy-187-extra": {
+    "front": "Sol varikosel anatomisi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Sağ testiküler ven doğrudan inferior vena kavaya dökülür.",
+    "answer": "Sağ testiküler ven doğrudan inferior vena kavaya dökülür.",
+    "explanation": "Sol testiküler ven önce sol renal vene açılır; bu anatomik drenaj basınç artışına yatkınlık oluşturur. Sağ testiküler ven doğrudan inferior vena kavaya dökülür.",
+    "tusTip": "Sol varikosel anatomisi kartında ayırıcı değer taşıyan nokta: Sağ testiküler ven doğrudan inferior vena kavaya dökülür.",
+    "differentialNote": "Sağ testiküler ven doğrudan inferior vena kavaya dökülür.",
+    "keywords": [
+      "sol varikosel",
+      "sol renal ven",
+      "testiküler ven",
+      "venöz basınç"
+    ]
+  },
+  "tus-pearl-anatomy-188-spot": {
+    "front": "Femoral herninin boğulmaya yatkın olması en çok hangi anatomik özellikten kaynaklanır?",
+    "back": "Femoral kanalın dar ve sınırlı bir halka olması.",
+    "answer": "Femoral kanalın dar ve sınırlı bir halka olması.",
+    "explanation": "Femoral kanal sert bağ dokusu sınırları arasında yer alır; genişleme kapasitesi sınırlıdır. İnguinal herniler daha sık görülür ancak femoral hernide strangülasyon riski daha yüksektir.",
+    "tusTip": "Femoral kanal sert bağ dokusu sınırları arasında yer alır; genişleme kapasitesi sınırlıdır. İnguinal herniler daha sık görülür ancak femoral hernide strangülasyon riski daha yüksektir.",
+    "differentialNote": "İnguinal herniler daha sık görülür ancak femoral hernide strangülasyon riski daha yüksektir.",
+    "keywords": [
+      "femoral herni",
+      "femoral kanal",
+      "laküner ligament",
+      "boğulma riski"
+    ]
+  },
+  "tus-pearl-anatomy-188-extra": {
+    "front": "Femoral kanal klinik önemi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "İnguinal herniler daha sık görülür ancak femoral hernide strangülasyon riski daha yüksektir.",
+    "answer": "İnguinal herniler daha sık görülür ancak femoral hernide strangülasyon riski daha yüksektir.",
+    "explanation": "Femoral kanal sert bağ dokusu sınırları arasında yer alır; genişleme kapasitesi sınırlıdır. İnguinal herniler daha sık görülür ancak femoral hernide strangülasyon riski daha yüksektir.",
+    "tusTip": "Femoral kanal klinik önemi için sınavda hedeflenen ayrım genellikle şudur: İnguinal herniler daha sık görülür ancak femoral hernide strangülasyon riski daha yüksektir.",
+    "differentialNote": "İnguinal herniler daha sık görülür ancak femoral hernide strangülasyon riski daha yüksektir.",
+    "keywords": [
+      "femoral herni",
+      "femoral kanal",
+      "laküner ligament",
+      "boğulma riski"
+    ]
+  },
+  "tus-pearl-anatomy-189-spot": {
+    "front": "Karpal tünelden geçen temel sinir hangisidir?",
+    "back": "Median sinir. Median sinir fleksör tendonlarla birlikte karpal tünelden geçer ve sıkışması parestezi ile thenar güçsüzlüğe yol açar.",
+    "answer": "Median sinir. Median sinir fleksör tendonlarla birlikte karpal tünelden geçer ve sıkışması parestezi ile thenar güçsüzlüğe yol açar.",
+    "explanation": "Median sinir fleksör tendonlarla birlikte karpal tünelden geçer ve sıkışması parestezi ile thenar güçsüzlüğe yol açar. Ulnar sinir Guyon kanalından geçer; karpal tünel içeriği değildir.",
+    "tusTip": "Median sinir fleksör tendonlarla birlikte karpal tünelden geçer ve sıkışması parestezi ile thenar güçsüzlüğe yol açar. Ulnar sinir Guyon kanalından geçer; karpal tünel içeriği değildir.",
+    "differentialNote": "Ulnar sinir Guyon kanalından geçer; karpal tünel içeriği değildir.",
+    "keywords": [
+      "karpal tünel",
+      "median sinir",
+      "thenar zayıflık",
+      "gece parestezisi"
+    ]
+  },
+  "tus-pearl-anatomy-189-extra": {
+    "front": "Karpal tünel içeriği için en kritik ayırıcı nokta nedir?",
+    "back": "Ulnar sinir Guyon kanalından geçer; karpal tünel içeriği değildir.",
+    "answer": "Ulnar sinir Guyon kanalından geçer; karpal tünel içeriği değildir.",
+    "explanation": "Median sinir fleksör tendonlarla birlikte karpal tünelden geçer ve sıkışması parestezi ile thenar güçsüzlüğe yol açar. Ulnar sinir Guyon kanalından geçer; karpal tünel içeriği değildir.",
+    "tusTip": "Karpal tünel içeriği karıştırıldığında cevabı netleştiren karşılaştırma: Ulnar sinir Guyon kanalından geçer; karpal tünel içeriği değildir.",
+    "differentialNote": "Ulnar sinir Guyon kanalından geçer; karpal tünel içeriği değildir.",
+    "keywords": [
+      "karpal tünel",
+      "median sinir",
+      "thenar zayıflık",
+      "gece parestezisi"
+    ]
+  },
+  "tus-pearl-anatomy-190-spot": {
+    "front": "Doğum sırasında perine analjezisi için hedeflenen sinir hangisidir?",
+    "back": "Pudendal sinir. Pudendal sinir sakrospinal ligament ve iskial spina komşuluğunda bloke edilebilir.",
+    "answer": "Pudendal sinir. Pudendal sinir sakrospinal ligament ve iskial spina komşuluğunda bloke edilebilir.",
+    "explanation": "Pudendal sinir sakrospinal ligament ve iskial spina komşuluğunda bloke edilebilir. Femoral sinir ön uyluk ve quadricepsle ilişkilidir, perine analjezisi için hedef değildir.",
+    "tusTip": "Pudendal sinir sakrospinal ligament ve iskial spina komşuluğunda bloke edilebilir. Femoral sinir ön uyluk ve quadricepsle ilişkilidir, perine analjezisi için hedef değildir.",
+    "differentialNote": "Femoral sinir ön uyluk ve quadricepsle ilişkilidir, perine analjezisi için hedef değildir.",
+    "keywords": [
+      "pudendal blok",
+      "iskial spina",
+      "perine analjezisi",
+      "S2-S4"
+    ]
+  },
+  "tus-pearl-anatomy-190-extra": {
+    "front": "Pudendal sinir bloğu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Femoral sinir ön uyluk ve quadricepsle ilişkilidir, perine analjezisi için hedef değildir.",
+    "answer": "Femoral sinir ön uyluk ve quadricepsle ilişkilidir, perine analjezisi için hedef değildir.",
+    "explanation": "Pudendal sinir sakrospinal ligament ve iskial spina komşuluğunda bloke edilebilir. Femoral sinir ön uyluk ve quadricepsle ilişkilidir, perine analjezisi için hedef değildir.",
+    "tusTip": "Pudendal sinir bloğu kartında ayırıcı değer taşıyan nokta: Femoral sinir ön uyluk ve quadricepsle ilişkilidir, perine analjezisi için hedef değildir.",
+    "differentialNote": "Femoral sinir ön uyluk ve quadricepsle ilişkilidir, perine analjezisi için hedef değildir.",
+    "keywords": [
+      "pudendal blok",
+      "iskial spina",
+      "perine analjezisi",
+      "S2-S4"
+    ]
+  },
+  "tus-pearl-anatomy-191-spot": {
+    "front": "Üst dudak-burun bölgesindeki enfeksiyonların kavernöz sinüse yayılabilmesi hangi venöz özellik ile açıklanır?",
+    "back": "Yüz venlerinde kapakçıkların olmaması ve oftalmik venlerle bağlantı.",
+    "answer": "Yüz venlerinde kapakçıkların olmaması ve oftalmik venlerle bağlantı.",
+    "explanation": "Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir. Lenfatik drenaj tek başına kavernöz sinüs trombozu mekanizmasını açıklamaz.",
+    "tusTip": "Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir. Lenfatik drenaj tek başına kavernöz sinüs trombozu mekanizmasını açıklamaz.",
+    "differentialNote": "Lenfatik drenaj tek başına kavernöz sinüs trombozu mekanizmasını açıklamaz.",
+    "keywords": [
+      "tehlikeli yüz üçgeni",
+      "kavernöz sinüs",
+      "oftalmik ven",
+      "kapakçıksız ven"
+    ]
+  },
+  "tus-pearl-anatomy-191-extra": {
+    "front": "Yüz venleri ve kavernöz sinüs başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Lenfatik drenaj tek başına kavernöz sinüs trombozu mekanizmasını açıklamaz.",
+    "answer": "Lenfatik drenaj tek başına kavernöz sinüs trombozu mekanizmasını açıklamaz.",
+    "explanation": "Kapakçıksız venöz bağlantılar enfeksiyonun retrograd yayılımına izin verebilir. Lenfatik drenaj tek başına kavernöz sinüs trombozu mekanizmasını açıklamaz.",
+    "tusTip": "Yüz venleri ve kavernöz sinüs için sınavda hedeflenen ayrım genellikle şudur: Lenfatik drenaj tek başına kavernöz sinüs trombozu mekanizmasını açıklamaz.",
+    "differentialNote": "Lenfatik drenaj tek başına kavernöz sinüs trombozu mekanizmasını açıklamaz.",
+    "keywords": [
+      "tehlikeli yüz üçgeni",
+      "kavernöz sinüs",
+      "oftalmik ven",
+      "kapakçıksız ven"
+    ]
+  },
+  "tus-pearl-anatomy-192-spot": {
+    "front": "Patella refleksinde azalma ve diz ekstansiyon kaybı hangi sinir hasarını düşündürür?",
+    "back": "Femoral sinir lezyonu. Femoral sinir quadriceps kasını innerve eder ve patella refleksinin afferent-efferent arkında yer alır.",
+    "answer": "Femoral sinir lezyonu. Femoral sinir quadriceps kasını innerve eder ve patella refleksinin afferent-efferent arkında yer alır.",
+    "explanation": "Femoral sinir quadriceps kasını innerve eder ve patella refleksinin afferent-efferent arkında yer alır. Obturator sinir uyluk adduksiyonuyla daha çok ilişkilidir.",
+    "tusTip": "Femoral sinir quadriceps kasını innerve eder ve patella refleksinin afferent-efferent arkında yer alır. Obturator sinir uyluk adduksiyonuyla daha çok ilişkilidir.",
+    "differentialNote": "Obturator sinir uyluk adduksiyonuyla daha çok ilişkilidir.",
+    "keywords": [
+      "patella refleksi",
+      "quadriceps",
+      "diz ekstansiyonu",
+      "L2-L4"
+    ]
+  },
+  "tus-pearl-anatomy-192-extra": {
+    "front": "Femoral sinir lezyonu sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Obturator sinir uyluk adduksiyonuyla daha çok ilişkilidir.",
+    "answer": "Obturator sinir uyluk adduksiyonuyla daha çok ilişkilidir.",
+    "explanation": "Femoral sinir quadriceps kasını innerve eder ve patella refleksinin afferent-efferent arkında yer alır. Obturator sinir uyluk adduksiyonuyla daha çok ilişkilidir.",
+    "tusTip": "Femoral sinir lezyonu karıştırıldığında cevabı netleştiren karşılaştırma: Obturator sinir uyluk adduksiyonuyla daha çok ilişkilidir.",
+    "differentialNote": "Obturator sinir uyluk adduksiyonuyla daha çok ilişkilidir.",
+    "keywords": [
+      "patella refleksi",
+      "quadriceps",
+      "diz ekstansiyonu",
+      "L2-L4"
+    ]
+  },
+  "tus-pearl-anatomy-193-spot": {
+    "front": "Diz çıkığı sonrası distal nabız kaybı hangi damar yaralanmasını öncelikle düşündürür?",
+    "back": "Popliteal arter yaralanması. Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır.",
+    "answer": "Popliteal arter yaralanması. Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır.",
+    "explanation": "Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır. Peroneal sinir düşük ayak yapabilir; nabız kaybı vasküler yaralanmayı öne çıkarır.",
+    "tusTip": "Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır. Peroneal sinir düşük ayak yapabilir; nabız kaybı vasküler yaralanmayı öne çıkarır.",
+    "differentialNote": "Peroneal sinir düşük ayak yapabilir; nabız kaybı vasküler yaralanmayı öne çıkarır.",
+    "keywords": [
+      "diz çıkığı",
+      "distal nabız kaybı",
+      "popliteal arter",
+      "akut iskemi"
+    ]
+  },
+  "tus-pearl-anatomy-193-extra": {
+    "front": "Popliteal arter yaralanması için en kritik ayırıcı nokta nedir?",
+    "back": "Peroneal sinir düşük ayak yapabilir; nabız kaybı vasküler yaralanmayı öne çıkarır.",
+    "answer": "Peroneal sinir düşük ayak yapabilir; nabız kaybı vasküler yaralanmayı öne çıkarır.",
+    "explanation": "Popliteal arter diz arkasında sabit seyri nedeniyle diz çıkıklarında gerilme ve yırtılma riski taşır. Peroneal sinir düşük ayak yapabilir; nabız kaybı vasküler yaralanmayı öne çıkarır.",
+    "tusTip": "Popliteal arter yaralanması kartında ayırıcı değer taşıyan nokta: Peroneal sinir düşük ayak yapabilir; nabız kaybı vasküler yaralanmayı öne çıkarır.",
+    "differentialNote": "Peroneal sinir düşük ayak yapabilir; nabız kaybı vasküler yaralanmayı öne çıkarır.",
+    "keywords": [
+      "diz çıkığı",
+      "distal nabız kaybı",
+      "popliteal arter",
+      "akut iskemi Fizyoloji (physiology)"
+    ]
+  },
+  "tus-pearl-physiology-194-spot": {
+    "front": "Ani kan basıncı düşüşünde kalp hızının artması hangi refleks mekanizmayla açıklanır?",
+    "back": "Baroreseptör refleksi. Karotis sinüsü ve aort kavsindeki baroreseptörlerin azalmış gerilimi sempatik aktiviteyi artırır.",
+    "answer": "Baroreseptör refleksi. Karotis sinüsü ve aort kavsindeki baroreseptörlerin azalmış gerilimi sempatik aktiviteyi artırır.",
+    "explanation": "Karotis sinüsü ve aort kavsindeki baroreseptörlerin azalmış gerilimi sempatik aktiviteyi artırır. Kemoreseptörler özellikle O2, CO2 ve pH değişikliklerine yanıt verir.",
+    "tusTip": "Karotis sinüsü ve aort kavsindeki baroreseptörlerin azalmış gerilimi sempatik aktiviteyi artırır. Kemoreseptörler özellikle O2, CO2 ve pH değişikliklerine yanıt verir.",
+    "differentialNote": "Kemoreseptörler özellikle O2, CO2 ve pH değişikliklerine yanıt verir.",
+    "keywords": [
+      "karotis sinüsü",
+      "aort kavsi",
+      "sempatik yanıt",
+      "taşikardi"
+    ]
+  },
+  "tus-pearl-physiology-194-extra": {
+    "front": "Baroreseptör refleksi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Kemoreseptörler özellikle O2, CO2 ve pH değişikliklerine yanıt verir.",
+    "answer": "Kemoreseptörler özellikle O2, CO2 ve pH değişikliklerine yanıt verir.",
+    "explanation": "Karotis sinüsü ve aort kavsindeki baroreseptörlerin azalmış gerilimi sempatik aktiviteyi artırır. Kemoreseptörler özellikle O2, CO2 ve pH değişikliklerine yanıt verir.",
+    "tusTip": "Baroreseptör refleksi için sınavda hedeflenen ayrım genellikle şudur: Kemoreseptörler özellikle O2, CO2 ve pH değişikliklerine yanıt verir.",
+    "differentialNote": "Kemoreseptörler özellikle O2, CO2 ve pH değişikliklerine yanıt verir.",
+    "keywords": [
+      "karotis sinüsü",
+      "aort kavsi",
+      "sempatik yanıt",
+      "taşikardi"
+    ]
+  },
+  "tus-pearl-physiology-195-spot": {
+    "front": "Renal perfüzyon azalınca jukstaglomerüler hücrelerden hangi hormon salınır?",
+    "back": "Renin. Renin anjiyotensinojeni anjiyotensin I’e çevirerek RAAS aktivasyonunu başlatır.",
+    "answer": "Renin. Renin anjiyotensinojeni anjiyotensin I’e çevirerek RAAS aktivasyonunu başlatır.",
+    "explanation": "Renin anjiyotensinojeni anjiyotensin I’e çevirerek RAAS aktivasyonunu başlatır. ADH su tutulumunu artırır ancak RAAS basamağını başlatan hormon renindir.",
+    "tusTip": "Renin anjiyotensinojeni anjiyotensin I’e çevirerek RAAS aktivasyonunu başlatır. ADH su tutulumunu artırır ancak RAAS basamağını başlatan hormon renindir.",
+    "differentialNote": "ADH su tutulumunu artırır ancak RAAS basamağını başlatan hormon renindir.",
+    "keywords": [
+      "renin",
+      "RAAS",
+      "jukstaglomerüler hücre",
+      "renal perfüzyon"
+    ]
+  },
+  "tus-pearl-physiology-195-extra": {
+    "front": "Renin salınımı sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "ADH su tutulumunu artırır ancak RAAS basamağını başlatan hormon renindir.",
+    "answer": "ADH su tutulumunu artırır ancak RAAS basamağını başlatan hormon renindir.",
+    "explanation": "Renin anjiyotensinojeni anjiyotensin I’e çevirerek RAAS aktivasyonunu başlatır. ADH su tutulumunu artırır ancak RAAS basamağını başlatan hormon renindir.",
+    "tusTip": "Renin salınımı karıştırıldığında cevabı netleştiren karşılaştırma: ADH su tutulumunu artırır ancak RAAS basamağını başlatan hormon renindir.",
+    "differentialNote": "ADH su tutulumunu artırır ancak RAAS basamağını başlatan hormon renindir.",
+    "keywords": [
+      "renin",
+      "RAAS",
+      "jukstaglomerüler hücre",
+      "renal perfüzyon"
+    ]
+  },
+  "tus-pearl-physiology-196-spot": {
+    "front": "Plazma glukozu çok yükseldiğinde glukozürinin başlaması hangi renal kavramla açıklanır?",
+    "back": "Taşıma maksimumunun aşılması. Proksimal tübüldeki SGLT taşıyıcıları doyduğunda filtrelenen glukozun tamamı geri emilemez.",
+    "answer": "Taşıma maksimumunun aşılması. Proksimal tübüldeki SGLT taşıyıcıları doyduğunda filtrelenen glukozun tamamı geri emilemez.",
+    "explanation": "Proksimal tübüldeki SGLT taşıyıcıları doyduğunda filtrelenen glukozun tamamı geri emilemez. Glomerüler filtrasyon azalması tek başına glukozüriyi açıklamaz.",
+    "tusTip": "Proksimal tübüldeki SGLT taşıyıcıları doyduğunda filtrelenen glukozun tamamı geri emilemez. Glomerüler filtrasyon azalması tek başına glukozüriyi açıklamaz.",
+    "differentialNote": "Glomerüler filtrasyon azalması tek başına glukozüriyi açıklamaz.",
+    "keywords": [
+      "glukozüri",
+      "SGLT",
+      "proksimal tübül",
+      "taşıma maksimumu"
+    ]
+  },
+  "tus-pearl-physiology-196-extra": {
+    "front": "Glukoz taşıma maksimumu için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Glomerüler filtrasyon azalması tek başına glukozüriyi açıklamaz.",
+    "answer": "Glomerüler filtrasyon azalması tek başına glukozüriyi açıklamaz.",
+    "explanation": "Proksimal tübüldeki SGLT taşıyıcıları doyduğunda filtrelenen glukozun tamamı geri emilemez. Glomerüler filtrasyon azalması tek başına glukozüriyi açıklamaz.",
+    "tusTip": "Glukoz taşıma maksimumu kartında ayırıcı değer taşıyan nokta: Glomerüler filtrasyon azalması tek başına glukozüriyi açıklamaz.",
+    "differentialNote": "Glomerüler filtrasyon azalması tek başına glukozüriyi açıklamaz.",
+    "keywords": [
+      "glukozüri",
+      "SGLT",
+      "proksimal tübül",
+      "taşıma maksimumu"
+    ]
+  },
+  "tus-pearl-physiology-197-spot": {
+    "front": "Metabolik asidozda distal nefronda hangi hücre tipi asit atılımını artırır?",
+    "back": "Alfa interkale hücre. Alfa interkale hücreler H+ sekresyonu ve bikarbonat geri emilimiyle asidoza yanıt verir.",
+    "answer": "Alfa interkale hücre. Alfa interkale hücreler H+ sekresyonu ve bikarbonat geri emilimiyle asidoza yanıt verir.",
+    "explanation": "Alfa interkale hücreler H+ sekresyonu ve bikarbonat geri emilimiyle asidoza yanıt verir. Beta interkale hücreler daha çok bikarbonat sekresyonu ile alkaloz yanıtında önemlidir.",
+    "tusTip": "Alfa interkale hücreler H+ sekresyonu ve bikarbonat geri emilimiyle asidoza yanıt verir. Beta interkale hücreler daha çok bikarbonat sekresyonu ile alkaloz yanıtında önemlidir.",
+    "differentialNote": "Beta interkale hücreler daha çok bikarbonat sekresyonu ile alkaloz yanıtında önemlidir.",
+    "keywords": [
+      "alfa interkale hücre",
+      "H sekresyonu",
+      "bikarbonat",
+      "asidoz"
+    ]
+  },
+  "tus-pearl-physiology-197-extra": {
+    "front": "Alfa interkale hücre için en kritik ayırıcı nokta nedir?",
+    "back": "Beta interkale hücreler daha çok bikarbonat sekresyonu ile alkaloz yanıtında önemlidir.",
+    "answer": "Beta interkale hücreler daha çok bikarbonat sekresyonu ile alkaloz yanıtında önemlidir.",
+    "explanation": "Alfa interkale hücreler H+ sekresyonu ve bikarbonat geri emilimiyle asidoza yanıt verir. Beta interkale hücreler daha çok bikarbonat sekresyonu ile alkaloz yanıtında önemlidir.",
+    "tusTip": "Alfa interkale hücre için sınavda hedeflenen ayrım genellikle şudur: Beta interkale hücreler daha çok bikarbonat sekresyonu ile alkaloz yanıtında önemlidir.",
+    "differentialNote": "Beta interkale hücreler daha çok bikarbonat sekresyonu ile alkaloz yanıtında önemlidir.",
+    "keywords": [
+      "alfa interkale hücre",
+      "H sekresyonu",
+      "bikarbonat",
+      "asidoz"
+    ]
+  },
+  "tus-pearl-physiology-198-spot": {
+    "front": "Amfizemde akciğer kompliyansı nasıl değişir?",
+    "back": "Artar. Alveoler duvar yıkımı elastik geri çekim gücünü azaltır ve akciğerin daha kolay genişlemesine neden olur.",
+    "answer": "Artar. Alveoler duvar yıkımı elastik geri çekim gücünü azaltır ve akciğerin daha kolay genişlemesine neden olur.",
+    "explanation": "Alveoler duvar yıkımı elastik geri çekim gücünü azaltır ve akciğerin daha kolay genişlemesine neden olur. Pulmoner fibroziste kompliyans azalır; amfizemle karıştırılmamalıdır.",
+    "tusTip": "Alveoler duvar yıkımı elastik geri çekim gücünü azaltır ve akciğerin daha kolay genişlemesine neden olur. Pulmoner fibroziste kompliyans azalır; amfizemle karıştırılmamalıdır.",
+    "differentialNote": "Pulmoner fibroziste kompliyans azalır; amfizemle karıştırılmamalıdır.",
+    "keywords": [
+      "amfizem",
+      "kompliyans artışı",
+      "elastik recoil azalması",
+      "hava hapsi"
+    ]
+  },
+  "tus-pearl-physiology-198-extra": {
+    "front": "Akciğer kompliyansı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Pulmoner fibroziste kompliyans azalır; amfizemle karıştırılmamalıdır.",
+    "answer": "Pulmoner fibroziste kompliyans azalır; amfizemle karıştırılmamalıdır.",
+    "explanation": "Alveoler duvar yıkımı elastik geri çekim gücünü azaltır ve akciğerin daha kolay genişlemesine neden olur. Pulmoner fibroziste kompliyans azalır; amfizemle karıştırılmamalıdır.",
+    "tusTip": "Akciğer kompliyansı karıştırıldığında cevabı netleştiren karşılaştırma: Pulmoner fibroziste kompliyans azalır; amfizemle karıştırılmamalıdır.",
+    "differentialNote": "Pulmoner fibroziste kompliyans azalır; amfizemle karıştırılmamalıdır.",
+    "keywords": [
+      "amfizem",
+      "kompliyans artışı",
+      "elastik recoil azalması",
+      "hava hapsi"
+    ]
+  },
+  "tus-pearl-physiology-199-spot": {
+    "front": "Amfizemde karbonmonoksit difüzyon kapasitesi neden azalır?",
+    "back": "Gaz değişim yüzey alanı azaldığı için.",
+    "answer": "Gaz değişim yüzey alanı azaldığı için.",
+    "explanation": "Alveoler septa yıkımı difüzyon için kullanılabilir yüzeyi azaltır. Astımda atak dışında DLCO genellikle korunur veya artabilir.",
+    "tusTip": "Alveoler septa yıkımı difüzyon için kullanılabilir yüzeyi azaltır. Astımda atak dışında DLCO genellikle korunur veya artabilir.",
+    "differentialNote": "Astımda atak dışında DLCO genellikle korunur veya artabilir.",
+    "keywords": [
+      "DLCO",
+      "amfizem",
+      "alveoler septa",
+      "yüzey alanı"
+    ]
+  },
+  "tus-pearl-physiology-199-extra": {
+    "front": "DLCO azalması için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Astımda atak dışında DLCO genellikle korunur veya artabilir.",
+    "answer": "Astımda atak dışında DLCO genellikle korunur veya artabilir.",
+    "explanation": "Alveoler septa yıkımı difüzyon için kullanılabilir yüzeyi azaltır. Astımda atak dışında DLCO genellikle korunur veya artabilir.",
+    "tusTip": "DLCO azalması kartında ayırıcı değer taşıyan nokta: Astımda atak dışında DLCO genellikle korunur veya artabilir.",
+    "differentialNote": "Astımda atak dışında DLCO genellikle korunur veya artabilir.",
+    "keywords": [
+      "DLCO",
+      "amfizem",
+      "alveoler septa",
+      "yüzey alanı"
+    ]
+  },
+  "tus-pearl-physiology-200-spot": {
+    "front": "Dokularda CO2 ve H+ artışı hemoglobinin oksijen bırakmasını nasıl etkiler?",
+    "back": "Oksijen salınımını artırır. Asidoz hemoglobinin oksijene afinitesini azaltır ve oksijen disosiasyon eğrisini sağa kaydırır.",
+    "answer": "Oksijen salınımını artırır. Asidoz hemoglobinin oksijene afinitesini azaltır ve oksijen disosiasyon eğrisini sağa kaydırır.",
+    "explanation": "Asidoz hemoglobinin oksijene afinitesini azaltır ve oksijen disosiasyon eğrisini sağa kaydırır. Fetal hemoglobin yüksek afinitesiyle eğriyi sola kaydırır.",
+    "tusTip": "Asidoz hemoglobinin oksijene afinitesini azaltır ve oksijen disosiasyon eğrisini sağa kaydırır. Fetal hemoglobin yüksek afinitesiyle eğriyi sola kaydırır.",
+    "differentialNote": "Fetal hemoglobin yüksek afinitesiyle eğriyi sola kaydırır.",
+    "keywords": [
+      "Bohr etkisi",
+      "sağa kayma",
+      "CO2",
+      "H iyonu"
+    ]
+  },
+  "tus-pearl-physiology-200-extra": {
+    "front": "Bohr etkisi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Fetal hemoglobin yüksek afinitesiyle eğriyi sola kaydırır.",
+    "answer": "Fetal hemoglobin yüksek afinitesiyle eğriyi sola kaydırır.",
+    "explanation": "Asidoz hemoglobinin oksijene afinitesini azaltır ve oksijen disosiasyon eğrisini sağa kaydırır. Fetal hemoglobin yüksek afinitesiyle eğriyi sola kaydırır.",
+    "tusTip": "Bohr etkisi için sınavda hedeflenen ayrım genellikle şudur: Fetal hemoglobin yüksek afinitesiyle eğriyi sola kaydırır.",
+    "differentialNote": "Fetal hemoglobin yüksek afinitesiyle eğriyi sola kaydırır.",
+    "keywords": [
+      "Bohr etkisi",
+      "sağa kayma",
+      "CO2",
+      "H iyonu"
+    ]
+  },
+  "tus-pearl-physiology-201-spot": {
+    "front": "Fetal hemoglobinin anne hemoglobininden daha yüksek oksijen afinitesi hangi özellikten kaynaklanır?",
+    "back": "2,3-BPG’ye daha zayıf bağlanması.",
+    "answer": "2,3-BPG’ye daha zayıf bağlanması.",
+    "explanation": "Fetal hemoglobin 2,3-BPG etkisine daha dirençlidir ve oksijeni plasentadan daha iyi alır. Erişkin hemoglobinde 2,3-BPG afinitesi daha fazla düşürür.",
+    "tusTip": "Fetal hemoglobin 2,3-BPG etkisine daha dirençlidir ve oksijeni plasentadan daha iyi alır. Erişkin hemoglobinde 2,3-BPG afinitesi daha fazla düşürür.",
+    "differentialNote": "Erişkin hemoglobinde 2,3-BPG afinitesi daha fazla düşürür.",
+    "keywords": [
+      "HbF",
+      "2",
+      "3-BPG",
+      "sola kayma",
+      "plasental oksijen"
+    ]
+  },
+  "tus-pearl-physiology-201-extra": {
+    "front": "Fetal hemoglobin oksijen afinitesi için en kritik ayırıcı nokta nedir?",
+    "back": "Erişkin hemoglobinde 2,3-BPG afinitesi daha fazla düşürür.",
+    "answer": "Erişkin hemoglobinde 2,3-BPG afinitesi daha fazla düşürür.",
+    "explanation": "Fetal hemoglobin 2,3-BPG etkisine daha dirençlidir ve oksijeni plasentadan daha iyi alır. Erişkin hemoglobinde 2,3-BPG afinitesi daha fazla düşürür.",
+    "tusTip": "Fetal hemoglobin oksijen afinitesi karıştırıldığında cevabı netleştiren karşılaştırma: Erişkin hemoglobinde 2,3-BPG afinitesi daha fazla düşürür.",
+    "differentialNote": "Erişkin hemoglobinde 2,3-BPG afinitesi daha fazla düşürür.",
+    "keywords": [
+      "HbF",
+      "2",
+      "3-BPG",
+      "sola kayma",
+      "plasental oksijen"
+    ]
+  },
+  "tus-pearl-physiology-202-spot": {
+    "front": "Akciğerde oksijenlenme arttığında karbondioksit taşınması nasıl etkilenir?",
+    "back": "Hemoglobinden CO2 salınımı artar. Oksijenlenen hemoglobin CO2 ve H+ taşıma kapasitesini azaltır; bu Haldane etkisidir.",
+    "answer": "Hemoglobinden CO2 salınımı artar. Oksijenlenen hemoglobin CO2 ve H+ taşıma kapasitesini azaltır; bu Haldane etkisidir.",
+    "explanation": "Oksijenlenen hemoglobin CO2 ve H+ taşıma kapasitesini azaltır; bu Haldane etkisidir. Bohr etkisi dokuda CO2 artışının oksijen salınımını artırmasıdır.",
+    "tusTip": "Oksijenlenen hemoglobin CO2 ve H+ taşıma kapasitesini azaltır; bu Haldane etkisidir. Bohr etkisi dokuda CO2 artışının oksijen salınımını artırmasıdır.",
+    "differentialNote": "Bohr etkisi dokuda CO2 artışının oksijen salınımını artırmasıdır.",
+    "keywords": [
+      "Haldane etkisi",
+      "akciğer",
+      "CO2 salınımı",
+      "oksijenlenme"
+    ]
+  },
+  "tus-pearl-physiology-202-extra": {
+    "front": "Haldane etkisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Bohr etkisi dokuda CO2 artışının oksijen salınımını artırmasıdır.",
+    "answer": "Bohr etkisi dokuda CO2 artışının oksijen salınımını artırmasıdır.",
+    "explanation": "Oksijenlenen hemoglobin CO2 ve H+ taşıma kapasitesini azaltır; bu Haldane etkisidir. Bohr etkisi dokuda CO2 artışının oksijen salınımını artırmasıdır.",
+    "tusTip": "Haldane etkisi kartında ayırıcı değer taşıyan nokta: Bohr etkisi dokuda CO2 artışının oksijen salınımını artırmasıdır.",
+    "differentialNote": "Bohr etkisi dokuda CO2 artışının oksijen salınımını artırmasıdır.",
+    "keywords": [
+      "Haldane etkisi",
+      "akciğer",
+      "CO2 salınımı",
+      "oksijenlenme"
+    ]
+  },
+  "tus-pearl-physiology-203-spot": {
+    "front": "Periferik ödem oluşumunda kapiller hidrostatik basınç artışı hangi etkiyi yapar?",
+    "back": "Sıvının interstisyuma geçişini artırır. Hidrostatik basınç filtrasyonu artırır; onkotik basınç ise sıvıyı kapiller içinde tutmaya çalışır.",
+    "answer": "Sıvının interstisyuma geçişini artırır. Hidrostatik basınç filtrasyonu artırır; onkotik basınç ise sıvıyı kapiller içinde tutmaya çalışır.",
+    "explanation": "Hidrostatik basınç filtrasyonu artırır; onkotik basınç ise sıvıyı kapiller içinde tutmaya çalışır. Hipoproteinemi ödemi hidrostatik değil onkotik basınç azalmasıyla yapar.",
+    "tusTip": "Hidrostatik basınç filtrasyonu artırır; onkotik basınç ise sıvıyı kapiller içinde tutmaya çalışır. Hipoproteinemi ödemi hidrostatik değil onkotik basınç azalmasıyla yapar.",
+    "differentialNote": "Hipoproteinemi ödemi hidrostatik değil onkotik basınç azalmasıyla yapar.",
+    "keywords": [
+      "ödem",
+      "hidrostatik basınç",
+      "onkotik basınç",
+      "filtrasyon"
+    ]
+  },
+  "tus-pearl-physiology-203-extra": {
+    "front": "Kapiller Starling kuvvetleri başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Hipoproteinemi ödemi hidrostatik değil onkotik basınç azalmasıyla yapar.",
+    "answer": "Hipoproteinemi ödemi hidrostatik değil onkotik basınç azalmasıyla yapar.",
+    "explanation": "Hidrostatik basınç filtrasyonu artırır; onkotik basınç ise sıvıyı kapiller içinde tutmaya çalışır. Hipoproteinemi ödemi hidrostatik değil onkotik basınç azalmasıyla yapar.",
+    "tusTip": "Kapiller Starling kuvvetleri için sınavda hedeflenen ayrım genellikle şudur: Hipoproteinemi ödemi hidrostatik değil onkotik basınç azalmasıyla yapar.",
+    "differentialNote": "Hipoproteinemi ödemi hidrostatik değil onkotik basınç azalmasıyla yapar.",
+    "keywords": [
+      "ödem",
+      "hidrostatik basınç",
+      "onkotik basınç",
+      "filtrasyon"
+    ]
+  },
+  "tus-pearl-physiology-204-spot": {
+    "front": "Gastrin mide asit sekresyonunu hangi hücre üzerinden artırır?",
+    "back": "Parietal hücreyi doğrudan ve ECL hücresini dolaylı uyararak.",
+    "answer": "Parietal hücreyi doğrudan ve ECL hücresini dolaylı uyararak.",
+    "explanation": "Gastrin histamin salınımını artırır ve parietal hücre HCl sekresyonunu güçlendirir. Sekretin duodenal asit yüküne yanıt verir ve pankreatik bikarbonatı artırır.",
+    "tusTip": "Gastrin histamin salınımını artırır ve parietal hücre HCl sekresyonunu güçlendirir. Sekretin duodenal asit yüküne yanıt verir ve pankreatik bikarbonatı artırır.",
+    "differentialNote": "Sekretin duodenal asit yüküne yanıt verir ve pankreatik bikarbonatı artırır.",
+    "keywords": [
+      "gastrin",
+      "ECL hücresi",
+      "histamin",
+      "HCl"
+    ]
+  },
+  "tus-pearl-physiology-204-extra": {
+    "front": "Gastrin etkisi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Sekretin duodenal asit yüküne yanıt verir ve pankreatik bikarbonatı artırır.",
+    "answer": "Sekretin duodenal asit yüküne yanıt verir ve pankreatik bikarbonatı artırır.",
+    "explanation": "Gastrin histamin salınımını artırır ve parietal hücre HCl sekresyonunu güçlendirir. Sekretin duodenal asit yüküne yanıt verir ve pankreatik bikarbonatı artırır.",
+    "tusTip": "Gastrin etkisi karıştırıldığında cevabı netleştiren karşılaştırma: Sekretin duodenal asit yüküne yanıt verir ve pankreatik bikarbonatı artırır.",
+    "differentialNote": "Sekretin duodenal asit yüküne yanıt verir ve pankreatik bikarbonatı artırır.",
+    "keywords": [
+      "gastrin",
+      "ECL hücresi",
+      "histamin",
+      "HCl"
+    ]
+  },
+  "tus-pearl-physiology-205-spot": {
+    "front": "Duodenuma asitli kimus geldiğinde pankreastan en çok hangi sekresyon artar?",
+    "back": "Bikarbonat sekresyonu. Sekretin pankreatik kanal hücrelerinden bikarbonat salınımını artırarak asidi nötralize eder.",
+    "answer": "Bikarbonat sekresyonu. Sekretin pankreatik kanal hücrelerinden bikarbonat salınımını artırarak asidi nötralize eder.",
+    "explanation": "Sekretin pankreatik kanal hücrelerinden bikarbonat salınımını artırarak asidi nötralize eder. CCK daha çok safra kesesi kasılması ve pankreatik enzim salınımı ile ilişkilidir.",
+    "tusTip": "Sekretin pankreatik kanal hücrelerinden bikarbonat salınımını artırarak asidi nötralize eder. CCK daha çok safra kesesi kasılması ve pankreatik enzim salınımı ile ilişkilidir.",
+    "differentialNote": "CCK daha çok safra kesesi kasılması ve pankreatik enzim salınımı ile ilişkilidir.",
+    "keywords": [
+      "sekretin",
+      "duodenum",
+      "asit",
+      "bikarbonat"
+    ]
+  },
+  "tus-pearl-physiology-205-extra": {
+    "front": "Sekretin etkisi için en kritik ayırıcı nokta nedir?",
+    "back": "CCK daha çok safra kesesi kasılması ve pankreatik enzim salınımı ile ilişkilidir.",
+    "answer": "CCK daha çok safra kesesi kasılması ve pankreatik enzim salınımı ile ilişkilidir.",
+    "explanation": "Sekretin pankreatik kanal hücrelerinden bikarbonat salınımını artırarak asidi nötralize eder. CCK daha çok safra kesesi kasılması ve pankreatik enzim salınımı ile ilişkilidir.",
+    "tusTip": "Sekretin etkisi kartında ayırıcı değer taşıyan nokta: CCK daha çok safra kesesi kasılması ve pankreatik enzim salınımı ile ilişkilidir.",
+    "differentialNote": "CCK daha çok safra kesesi kasılması ve pankreatik enzim salınımı ile ilişkilidir.",
+    "keywords": [
+      "sekretin",
+      "duodenum",
+      "asit",
+      "bikarbonat"
+    ]
+  },
+  "tus-pearl-physiology-206-spot": {
+    "front": "Yağlı besin sonrası safra kesesi kasılması ve pankreatik enzim salınımını artıran hormon hangisidir?",
+    "back": "Kolesistokinin. CCK duodenal yağ ve aminoasitlere yanıt verir; safra kesesini kasar, Oddi sfinkterini gevşetir.",
+    "answer": "Kolesistokinin. CCK duodenal yağ ve aminoasitlere yanıt verir; safra kesesini kasar, Oddi sfinkterini gevşetir.",
+    "explanation": "CCK duodenal yağ ve aminoasitlere yanıt verir; safra kesesini kasar, Oddi sfinkterini gevşetir. Sekretin pankreatik bikarbonat sekresyonunu artırır.",
+    "tusTip": "CCK duodenal yağ ve aminoasitlere yanıt verir; safra kesesini kasar, Oddi sfinkterini gevşetir. Sekretin pankreatik bikarbonat sekresyonunu artırır.",
+    "differentialNote": "Sekretin pankreatik bikarbonat sekresyonunu artırır.",
+    "keywords": [
+      "CCK",
+      "yağlı besin",
+      "safra kesesi",
+      "pankreatik enzim"
+    ]
+  },
+  "tus-pearl-physiology-206-extra": {
+    "front": "Kolesistokinin etkisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Sekretin pankreatik bikarbonat sekresyonunu artırır. CCK duodenal yağ ve aminoasitlere yanıt verir; safra kesesini kasar, Oddi sfinkterini gevşetir.",
+    "answer": "Sekretin pankreatik bikarbonat sekresyonunu artırır. CCK duodenal yağ ve aminoasitlere yanıt verir; safra kesesini kasar, Oddi sfinkterini gevşetir.",
+    "explanation": "CCK duodenal yağ ve aminoasitlere yanıt verir; safra kesesini kasar, Oddi sfinkterini gevşetir. Sekretin pankreatik bikarbonat sekresyonunu artırır.",
+    "tusTip": "Kolesistokinin etkisi için sınavda hedeflenen ayrım genellikle şudur: Sekretin pankreatik bikarbonat sekresyonunu artırır.",
+    "differentialNote": "Sekretin pankreatik bikarbonat sekresyonunu artırır.",
+    "keywords": [
+      "CCK",
+      "yağlı besin",
+      "safra kesesi",
+      "pankreatik enzim"
+    ]
+  },
+  "tus-pearl-physiology-207-spot": {
+    "front": "Makula densanın artmış NaCl algılaması glomerüler filtrasyonu nasıl etkiler?",
+    "back": "Afferent arteriyolü daraltarak GFR’yi azaltır.",
+    "answer": "Afferent arteriyolü daraltarak GFR’yi azaltır.",
+    "explanation": "Makula densa NaCl artışını yüksek filtrasyon göstergesi olarak algılar ve afferent tonusu artırır. Efferent arteriyol daralması belirli sınırlar içinde GFR’yi koruyabilir veya artırabilir.",
+    "tusTip": "Makula densa NaCl artışını yüksek filtrasyon göstergesi olarak algılar ve afferent tonusu artırır. Efferent arteriyol daralması belirli sınırlar içinde GFR’yi koruyabilir veya artırabilir.",
+    "differentialNote": "Efferent arteriyol daralması belirli sınırlar içinde GFR’yi koruyabilir veya artırabilir.",
+    "keywords": [
+      "makula densa",
+      "NaCl",
+      "afferent arteriyol",
+      "GFR azalması"
+    ]
+  },
+  "tus-pearl-physiology-207-extra": {
+    "front": "Tübüloglomerüler geri bildirim sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Efferent arteriyol daralması belirli sınırlar içinde GFR’yi koruyabilir veya artırabilir.",
+    "answer": "Efferent arteriyol daralması belirli sınırlar içinde GFR’yi koruyabilir veya artırabilir.",
+    "explanation": "Makula densa NaCl artışını yüksek filtrasyon göstergesi olarak algılar ve afferent tonusu artırır. Efferent arteriyol daralması belirli sınırlar içinde GFR’yi koruyabilir veya artırabilir.",
+    "tusTip": "Tübüloglomerüler geri bildirim karıştırıldığında cevabı netleştiren karşılaştırma: Efferent arteriyol daralması belirli sınırlar içinde GFR’yi koruyabilir veya artırabilir.",
+    "differentialNote": "Efferent arteriyol daralması belirli sınırlar içinde GFR’yi koruyabilir veya artırabilir.",
+    "keywords": [
+      "makula densa",
+      "NaCl",
+      "afferent arteriyol",
+      "GFR azalması"
+    ]
+  },
+  "tus-pearl-physiology-208-spot": {
+    "front": "Parathormon böbrekte fosfat dengesini nasıl etkiler?",
+    "back": "Fosfat atılımını artırır. PTH proksimal tübülde fosfat geri emilimini azaltır ve serum fosfatını düşürme eğilimindedir.",
+    "answer": "Fosfat atılımını artırır. PTH proksimal tübülde fosfat geri emilimini azaltır ve serum fosfatını düşürme eğilimindedir.",
+    "explanation": "PTH proksimal tübülde fosfat geri emilimini azaltır ve serum fosfatını düşürme eğilimindedir. PTH kalsiyum geri emilimini artırır; fosfat için etkisi ters yöndedir.",
+    "tusTip": "PTH proksimal tübülde fosfat geri emilimini azaltır ve serum fosfatını düşürme eğilimindedir. PTH kalsiyum geri emilimini artırır; fosfat için etkisi ters yöndedir.",
+    "differentialNote": "PTH kalsiyum geri emilimini artırır; fosfat için etkisi ters yöndedir.",
+    "keywords": [
+      "PTH",
+      "fosfatüri",
+      "proksimal tübül",
+      "kalsiyum"
+    ]
+  },
+  "tus-pearl-physiology-208-extra": {
+    "front": "Parathormon böbrek etkisi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "PTH kalsiyum geri emilimini artırır; fosfat için etkisi ters yöndedir.",
+    "answer": "PTH kalsiyum geri emilimini artırır; fosfat için etkisi ters yöndedir.",
+    "explanation": "PTH proksimal tübülde fosfat geri emilimini azaltır ve serum fosfatını düşürme eğilimindedir. PTH kalsiyum geri emilimini artırır; fosfat için etkisi ters yöndedir.",
+    "tusTip": "Parathormon böbrek etkisi kartında ayırıcı değer taşıyan nokta: PTH kalsiyum geri emilimini artırır; fosfat için etkisi ters yöndedir.",
+    "differentialNote": "PTH kalsiyum geri emilimini artırır; fosfat için etkisi ters yöndedir.",
+    "keywords": [
+      "PTH",
+      "fosfatüri",
+      "proksimal tübül",
+      "kalsiyum"
+    ]
+  },
+  "tus-pearl-physiology-209-spot": {
+    "front": "İnsülin tedavisi serum potasyumunu neden düşürür?",
+    "back": "Potasyumu hücre içine taşıdığı için. İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır.",
+    "answer": "Potasyumu hücre içine taşıdığı için. İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır.",
+    "explanation": "İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır. Toplam vücut potasyumu azalmasa bile serum potasyumu hızlı düşebilir.",
+    "tusTip": "İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır. Toplam vücut potasyumu azalmasa bile serum potasyumu hızlı düşebilir.",
+    "differentialNote": "Toplam vücut potasyumu azalmasa bile serum potasyumu hızlı düşebilir.",
+    "keywords": [
+      "insülin",
+      "hipokalemi",
+      "Na/K-ATPaz",
+      "hücre içi kayma"
+    ]
+  },
+  "tus-pearl-physiology-209-extra": {
+    "front": "İnsülin ve potasyum kayması için en kritik ayırıcı nokta nedir?",
+    "back": "Toplam vücut potasyumu azalmasa bile serum potasyumu hızlı düşebilir.",
+    "answer": "Toplam vücut potasyumu azalmasa bile serum potasyumu hızlı düşebilir.",
+    "explanation": "İnsülin Na/K-ATPaz aktivitesini artırır ve potasyumun hücre içine girmesini kolaylaştırır. Toplam vücut potasyumu azalmasa bile serum potasyumu hızlı düşebilir.",
+    "tusTip": "İnsülin ve potasyum kayması için sınavda hedeflenen ayrım genellikle şudur: Toplam vücut potasyumu azalmasa bile serum potasyumu hızlı düşebilir.",
+    "differentialNote": "Toplam vücut potasyumu azalmasa bile serum potasyumu hızlı düşebilir.",
+    "keywords": [
+      "insülin",
+      "hipokalemi",
+      "Na/K-ATPaz",
+      "hücre içi kayma Histoloji ve Embriyoloji (histology-embryology)"
+    ]
+  },
+  "tus-pearl-histology-embryology-210-spot": {
+    "front": "Kaudal nöral tüp kapanma kusuru en çok hangi malformasyonla ilişkilidir?",
+    "back": "Spina bifida. Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
+    "answer": "Spina bifida. Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
+    "explanation": "Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir. Anensefali kranial nöropor kapanma bozukluğudur.",
+    "tusTip": "Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir. Anensefali kranial nöropor kapanma bozukluğudur.",
+    "differentialNote": "Anensefali kranial nöropor kapanma bozukluğudur.",
+    "keywords": [
+      "kaudal nöropor",
+      "spina bifida",
+      "folat",
+      "AFP yüksekliği"
+    ]
+  },
+  "tus-pearl-histology-embryology-210-extra": {
+    "front": "Nöral tüp kaudal kapanma defekti karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Anensefali kranial nöropor kapanma bozukluğudur. Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
+    "answer": "Anensefali kranial nöropor kapanma bozukluğudur. Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir.",
+    "explanation": "Kaudal nöropor kapanma kusuru omurga arklarının ve nöral dokuların kapanma bozukluğuna yol açabilir. Anensefali kranial nöropor kapanma bozukluğudur.",
+    "tusTip": "Nöral tüp kaudal kapanma defekti karıştırıldığında cevabı netleştiren karşılaştırma: Anensefali kranial nöropor kapanma bozukluğudur.",
+    "differentialNote": "Anensefali kranial nöropor kapanma bozukluğudur.",
+    "keywords": [
+      "kaudal nöropor",
+      "spina bifida",
+      "folat",
+      "AFP yüksekliği"
+    ]
+  },
+  "tus-pearl-histology-embryology-211-spot": {
+    "front": "Adrenal medulla embriyolojik olarak hangi yapıdan gelişir?",
+    "back": "Nöral krest hücrelerinden. Kromaffin hücreler modifiye sempatik nöron kökenlidir ve katekolamin salgılar.",
+    "answer": "Nöral krest hücrelerinden. Kromaffin hücreler modifiye sempatik nöron kökenlidir ve katekolamin salgılar.",
+    "explanation": "Kromaffin hücreler modifiye sempatik nöron kökenlidir ve katekolamin salgılar. Adrenal korteks mezoderm kökenlidir.",
+    "tusTip": "Kromaffin hücreler modifiye sempatik nöron kökenlidir ve katekolamin salgılar. Adrenal korteks mezoderm kökenlidir.",
+    "differentialNote": "Adrenal korteks mezoderm kökenlidir.",
+    "keywords": [
+      "adrenal medulla",
+      "nöral krest",
+      "kromaffin hücre",
+      "katekolamin"
+    ]
+  },
+  "tus-pearl-histology-embryology-211-extra": {
+    "front": "Adrenal medulla kökeni için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Adrenal korteks mezoderm kökenlidir. Kromaffin hücreler modifiye sempatik nöron kökenlidir ve katekolamin salgılar.",
+    "answer": "Adrenal korteks mezoderm kökenlidir. Kromaffin hücreler modifiye sempatik nöron kökenlidir ve katekolamin salgılar.",
+    "explanation": "Kromaffin hücreler modifiye sempatik nöron kökenlidir ve katekolamin salgılar. Adrenal korteks mezoderm kökenlidir.",
+    "tusTip": "Adrenal medulla kökeni kartında ayırıcı değer taşıyan nokta: Adrenal korteks mezoderm kökenlidir.",
+    "differentialNote": "Adrenal korteks mezoderm kökenlidir.",
+    "keywords": [
+      "adrenal medulla",
+      "nöral krest",
+      "kromaffin hücre",
+      "katekolamin"
+    ]
+  },
+  "tus-pearl-histology-embryology-212-spot": {
+    "front": "Midgut gelişiminde normal dönüş yaklaşık kaç derecedir?",
+    "back": "Saat yönünün tersine 270 derece. Midgut superior mezenterik arter etrafında fizyolojik herniasyon ve rotasyon geçirir.",
+    "answer": "Saat yönünün tersine 270 derece. Midgut superior mezenterik arter etrafında fizyolojik herniasyon ve rotasyon geçirir.",
+    "explanation": "Midgut superior mezenterik arter etrafında fizyolojik herniasyon ve rotasyon geçirir. Omfalosel ve gastroskizis rotasyon kusurundan farklı karın duvarı defektleridir.",
+    "tusTip": "Midgut superior mezenterik arter etrafında fizyolojik herniasyon ve rotasyon geçirir. Omfalosel ve gastroskizis rotasyon kusurundan farklı karın duvarı defektleridir.",
+    "differentialNote": "Omfalosel ve gastroskizis rotasyon kusurundan farklı karın duvarı defektleridir.",
+    "keywords": [
+      "midgut rotasyonu",
+      "270 derece",
+      "SMA",
+      "malrotasyon"
+    ]
+  },
+  "tus-pearl-histology-embryology-212-extra": {
+    "front": "Bağırsak rotasyonu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Omfalosel ve gastroskizis rotasyon kusurundan farklı karın duvarı defektleridir.",
+    "answer": "Omfalosel ve gastroskizis rotasyon kusurundan farklı karın duvarı defektleridir.",
+    "explanation": "Midgut superior mezenterik arter etrafında fizyolojik herniasyon ve rotasyon geçirir. Omfalosel ve gastroskizis rotasyon kusurundan farklı karın duvarı defektleridir.",
+    "tusTip": "Bağırsak rotasyonu için sınavda hedeflenen ayrım genellikle şudur: Omfalosel ve gastroskizis rotasyon kusurundan farklı karın duvarı defektleridir.",
+    "differentialNote": "Omfalosel ve gastroskizis rotasyon kusurundan farklı karın duvarı defektleridir.",
+    "keywords": [
+      "midgut rotasyonu",
+      "270 derece",
+      "SMA",
+      "malrotasyon"
+    ]
+  },
+  "tus-pearl-histology-embryology-213-spot": {
+    "front": "Umbilikal kord içinde membranla örtülü barsak herniasyonu hangi defekti düşündürür?",
+    "back": "Omfalosel. Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir.",
+    "answer": "Omfalosel. Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir.",
+    "explanation": "Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir. Gastroskizis genellikle sağ paraumbilikal ve membransızdır.",
+    "tusTip": "Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir. Gastroskizis genellikle sağ paraumbilikal ve membransızdır.",
+    "differentialNote": "Gastroskizis genellikle sağ paraumbilikal ve membransızdır.",
+    "keywords": [
+      "omfalosel",
+      "membranla örtülü",
+      "umbilikal kord",
+      "orta hat"
+    ]
+  },
+  "tus-pearl-histology-embryology-213-extra": {
+    "front": "Omfalosel ayrımı için en kritik ayırıcı nokta nedir?",
+    "back": "Gastroskizis genellikle sağ paraumbilikal ve membransızdır.",
+    "answer": "Gastroskizis genellikle sağ paraumbilikal ve membransızdır.",
+    "explanation": "Omfaloselde herniye organlar periton ve amniyonla örtülüdür ve orta hatta yerleşir. Gastroskizis genellikle sağ paraumbilikal ve membransızdır.",
+    "tusTip": "Omfalosel ayrımı karıştırıldığında cevabı netleştiren karşılaştırma: Gastroskizis genellikle sağ paraumbilikal ve membransızdır.",
+    "differentialNote": "Gastroskizis genellikle sağ paraumbilikal ve membransızdır.",
+    "keywords": [
+      "omfalosel",
+      "membranla örtülü",
+      "umbilikal kord",
+      "orta hat"
+    ]
+  },
+  "tus-pearl-histology-embryology-214-spot": {
+    "front": "Distal kolonda ganglion hücresi yokluğu hangi embriyolojik migrasyon kusuruyla açıklanır?",
+    "back": "Nöral krest hücre migrasyon kusuru. Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir.",
+    "answer": "Nöral krest hücre migrasyon kusuru. Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir.",
+    "explanation": "Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir. Mekonyum ileusu kistik fibrozisle ilişkilidir; ganglion yokluğu Hirschsprung için belirleyicidir.",
+    "tusTip": "Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir. Mekonyum ileusu kistik fibrozisle ilişkilidir; ganglion yokluğu Hirschsprung için belirleyicidir.",
+    "differentialNote": "Mekonyum ileusu kistik fibrozisle ilişkilidir; ganglion yokluğu Hirschsprung için belirleyicidir.",
+    "keywords": [
+      "aganglionozis",
+      "nöral krest",
+      "mekonyum gecikmesi",
+      "distal kolon"
+    ]
+  },
+  "tus-pearl-histology-embryology-214-extra": {
+    "front": "Hirschsprung hastalığı kökeni karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Mekonyum ileusu kistik fibrozisle ilişkilidir; ganglion yokluğu Hirschsprung için belirleyicidir.",
+    "answer": "Mekonyum ileusu kistik fibrozisle ilişkilidir; ganglion yokluğu Hirschsprung için belirleyicidir.",
+    "explanation": "Enterik ganglionlar nöral krest kökenlidir; migrasyon bozulursa aganglionik segment gelişir. Mekonyum ileusu kistik fibrozisle ilişkilidir; ganglion yokluğu Hirschsprung için belirleyicidir.",
+    "tusTip": "Hirschsprung hastalığı kökeni kartında ayırıcı değer taşıyan nokta: Mekonyum ileusu kistik fibrozisle ilişkilidir; ganglion yokluğu Hirschsprung için belirleyicidir.",
+    "differentialNote": "Mekonyum ileusu kistik fibrozisle ilişkilidir; ganglion yokluğu Hirschsprung için belirleyicidir.",
+    "keywords": [
+      "aganglionozis",
+      "nöral krest",
+      "mekonyum gecikmesi",
+      "distal kolon"
+    ]
+  },
+  "tus-pearl-histology-embryology-215-spot": {
+    "front": "Timus ve paratiroid hipoplazisi hangi faringeal poş gelişim kusuruyla ilişkilidir?",
+    "back": "Üçüncü ve dördüncü faringeal poşlar. Bu poşların gelişim bozukluğu T hücre immün yetmezliği ve hipokalsemiye yol açabilir.",
+    "answer": "Üçüncü ve dördüncü faringeal poşlar. Bu poşların gelişim bozukluğu T hücre immün yetmezliği ve hipokalsemiye yol açabilir.",
+    "explanation": "Bu poşların gelişim bozukluğu T hücre immün yetmezliği ve hipokalsemiye yol açabilir. Birinci faringeal poş orta kulak ve östaki tüpüyle ilişkilidir.",
+    "tusTip": "Bu poşların gelişim bozukluğu T hücre immün yetmezliği ve hipokalsemiye yol açabilir. Birinci faringeal poş orta kulak ve östaki tüpüyle ilişkilidir.",
+    "differentialNote": "Birinci faringeal poş orta kulak ve östaki tüpüyle ilişkilidir.",
+    "keywords": [
+      "DiGeorge",
+      "timus",
+      "paratiroid",
+      "hipokalsemi"
+    ]
+  },
+  "tus-pearl-histology-embryology-215-extra": {
+    "front": "DiGeorge sendromu embriyolojisi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Birinci faringeal poş orta kulak ve östaki tüpüyle ilişkilidir.",
+    "answer": "Birinci faringeal poş orta kulak ve östaki tüpüyle ilişkilidir.",
+    "explanation": "Bu poşların gelişim bozukluğu T hücre immün yetmezliği ve hipokalsemiye yol açabilir. Birinci faringeal poş orta kulak ve östaki tüpüyle ilişkilidir.",
+    "tusTip": "DiGeorge sendromu embriyolojisi için sınavda hedeflenen ayrım genellikle şudur: Birinci faringeal poş orta kulak ve östaki tüpüyle ilişkilidir.",
+    "differentialNote": "Birinci faringeal poş orta kulak ve östaki tüpüyle ilişkilidir.",
+    "keywords": [
+      "DiGeorge",
+      "timus",
+      "paratiroid",
+      "hipokalsemi"
+    ]
+  },
+  "tus-pearl-histology-embryology-216-spot": {
+    "front": "Surfaktan hangi hücredeki lameller cisimciklerden salınır?",
+    "back": "Tip II pnömositlerden. Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar.",
+    "answer": "Tip II pnömositlerden. Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar.",
+    "explanation": "Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar. Tip I pnömositler gaz değişim yüzeyinin çoğunu oluşturur.",
+    "tusTip": "Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar. Tip I pnömositler gaz değişim yüzeyinin çoğunu oluşturur.",
+    "differentialNote": "Tip I pnömositler gaz değişim yüzeyinin çoğunu oluşturur.",
+    "keywords": [
+      "tip II pnömosit",
+      "lameller cisimcik",
+      "surfaktan",
+      "alveol"
+    ]
+  },
+  "tus-pearl-histology-embryology-216-extra": {
+    "front": "Tip II pnömosit lameller cisimcikler sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Tip I pnömositler gaz değişim yüzeyinin çoğunu oluşturur.",
+    "answer": "Tip I pnömositler gaz değişim yüzeyinin çoğunu oluşturur.",
+    "explanation": "Tip II pnömositler surfaktan sentezler ve alveoler epitelin yenilenmesinde progenitör rol oynar. Tip I pnömositler gaz değişim yüzeyinin çoğunu oluşturur.",
+    "tusTip": "Tip II pnömosit lameller cisimcikler karıştırıldığında cevabı netleştiren karşılaştırma: Tip I pnömositler gaz değişim yüzeyinin çoğunu oluşturur.",
+    "differentialNote": "Tip I pnömositler gaz değişim yüzeyinin çoğunu oluşturur.",
+    "keywords": [
+      "tip II pnömosit",
+      "lameller cisimcik",
+      "surfaktan",
+      "alveol"
+    ]
+  },
+  "tus-pearl-histology-embryology-217-spot": {
+    "front": "Kan-testis bariyerini oluşturan temel hücre tipi hangisidir?",
+    "back": "Sertoli hücresi. Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır.",
+    "answer": "Sertoli hücresi. Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır.",
+    "explanation": "Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır. Leydig hücreleri testosteron üretir; bariyerin ana yapısal hücresi değildir.",
+    "tusTip": "Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır. Leydig hücreleri testosteron üretir; bariyerin ana yapısal hücresi değildir.",
+    "differentialNote": "Leydig hücreleri testosteron üretir; bariyerin ana yapısal hücresi değildir.",
+    "keywords": [
+      "Sertoli",
+      "kan-testis bariyeri",
+      "sıkı bağlantı",
+      "spermatogenez"
+    ]
+  },
+  "tus-pearl-histology-embryology-217-extra": {
+    "front": "Sertoli hücresi bariyeri için en kritik ayırıcı nokta nedir?",
+    "back": "Leydig hücreleri testosteron üretir; bariyerin ana yapısal hücresi değildir.",
+    "answer": "Leydig hücreleri testosteron üretir; bariyerin ana yapısal hücresi değildir.",
+    "explanation": "Sertoli hücreleri sıkı bağlantılarla spermatogenetik hücreleri immün sistemden ayırır. Leydig hücreleri testosteron üretir; bariyerin ana yapısal hücresi değildir.",
+    "tusTip": "Sertoli hücresi bariyeri kartında ayırıcı değer taşıyan nokta: Leydig hücreleri testosteron üretir; bariyerin ana yapısal hücresi değildir.",
+    "differentialNote": "Leydig hücreleri testosteron üretir; bariyerin ana yapısal hücresi değildir.",
+    "keywords": [
+      "Sertoli",
+      "kan-testis bariyeri",
+      "sıkı bağlantı",
+      "spermatogenez"
+    ]
+  },
+  "tus-pearl-histology-embryology-218-spot": {
+    "front": "Testiste testosteron üretiminden sorumlu temel hücre hangisidir?",
+    "back": "Leydig hücresi. Leydig hücreleri LH uyarısıyla testosteron sentezler.",
+    "answer": "Leydig hücresi. Leydig hücreleri LH uyarısıyla testosteron sentezler.",
+    "explanation": "Leydig hücreleri LH uyarısıyla testosteron sentezler. Sertoli hücreleri FSH yanıtı ve spermatogenez desteğiyle öne çıkar.",
+    "tusTip": "Leydig hücreleri LH uyarısıyla testosteron sentezler. Sertoli hücreleri FSH yanıtı ve spermatogenez desteğiyle öne çıkar.",
+    "differentialNote": "Sertoli hücreleri FSH yanıtı ve spermatogenez desteğiyle öne çıkar.",
+    "keywords": [
+      "Leydig hücresi",
+      "LH",
+      "testosteron",
+      "interstisyum"
+    ]
+  },
+  "tus-pearl-histology-embryology-218-extra": {
+    "front": "Leydig hücresi fonksiyonu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Sertoli hücreleri FSH yanıtı ve spermatogenez desteğiyle öne çıkar.",
+    "answer": "Sertoli hücreleri FSH yanıtı ve spermatogenez desteğiyle öne çıkar.",
+    "explanation": "Leydig hücreleri LH uyarısıyla testosteron sentezler. Sertoli hücreleri FSH yanıtı ve spermatogenez desteğiyle öne çıkar.",
+    "tusTip": "Leydig hücresi fonksiyonu için sınavda hedeflenen ayrım genellikle şudur: Sertoli hücreleri FSH yanıtı ve spermatogenez desteğiyle öne çıkar.",
+    "differentialNote": "Sertoli hücreleri FSH yanıtı ve spermatogenez desteğiyle öne çıkar.",
+    "keywords": [
+      "Leydig hücresi",
+      "LH",
+      "testosteron",
+      "interstisyum"
+    ]
+  },
+  "tus-pearl-histology-embryology-219-spot": {
+    "front": "Trakea ve büyük bronşların tipik epiteli hangisidir?",
+    "back": "Yalancı çok katlı silli prizmatik epitel.",
+    "answer": "Yalancı çok katlı silli prizmatik epitel.",
+    "explanation": "Silli hücreler ve goblet hücreleri mukosiliyer temizliği sağlar. Alveoller yassı epitel ve pnömositlerle ilişkilidir.",
+    "tusTip": "Silli hücreler ve goblet hücreleri mukosiliyer temizliği sağlar. Alveoller yassı epitel ve pnömositlerle ilişkilidir.",
+    "differentialNote": "Alveoller yassı epitel ve pnömositlerle ilişkilidir.",
+    "keywords": [
+      "trakea",
+      "sil",
+      "goblet hücresi",
+      "mukosiliyer klirens"
+    ]
+  },
+  "tus-pearl-histology-embryology-219-extra": {
+    "front": "Solunum epiteli sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Alveoller yassı epitel ve pnömositlerle ilişkilidir.",
+    "answer": "Alveoller yassı epitel ve pnömositlerle ilişkilidir.",
+    "explanation": "Silli hücreler ve goblet hücreleri mukosiliyer temizliği sağlar. Alveoller yassı epitel ve pnömositlerle ilişkilidir.",
+    "tusTip": "Solunum epiteli karıştırıldığında cevabı netleştiren karşılaştırma: Alveoller yassı epitel ve pnömositlerle ilişkilidir.",
+    "differentialNote": "Alveoller yassı epitel ve pnömositlerle ilişkilidir.",
+    "keywords": [
+      "trakea",
+      "sil",
+      "goblet hücresi",
+      "mukosiliyer klirens"
+    ]
+  },
+  "tus-pearl-histology-embryology-220-spot": {
+    "front": "Epididim, vas deferens ve seminal vezikül hangi embriyolojik kanaldan gelişir?",
+    "back": "Mezonefrik kanal. Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir.",
+    "answer": "Mezonefrik kanal. Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir.",
+    "explanation": "Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir. Paramezonefrik kanal kadın iç genital yollarını oluşturur.",
+    "tusTip": "Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir. Paramezonefrik kanal kadın iç genital yollarını oluşturur.",
+    "differentialNote": "Paramezonefrik kanal kadın iç genital yollarını oluşturur.",
+    "keywords": [
+      "mezonefrik kanal",
+      "vas deferens",
+      "epididim",
+      "seminal vezikül"
+    ]
+  },
+  "tus-pearl-histology-embryology-220-extra": {
+    "front": "Mezonefrik kanal türevleri için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Paramezonefrik kanal kadın iç genital yollarını oluşturur.",
+    "answer": "Paramezonefrik kanal kadın iç genital yollarını oluşturur.",
+    "explanation": "Erkek iç genital yolları testosteron etkisiyle mezonefrik kanaldan gelişir. Paramezonefrik kanal kadın iç genital yollarını oluşturur.",
+    "tusTip": "Mezonefrik kanal türevleri kartında ayırıcı değer taşıyan nokta: Paramezonefrik kanal kadın iç genital yollarını oluşturur.",
+    "differentialNote": "Paramezonefrik kanal kadın iç genital yollarını oluşturur.",
+    "keywords": [
+      "mezonefrik kanal",
+      "vas deferens",
+      "epididim",
+      "seminal vezikül"
+    ]
+  },
+  "tus-pearl-histology-embryology-221-spot": {
+    "front": "Uterus, fallop tüpleri ve üst vajen hangi embriyolojik kanaldan gelişir?",
+    "back": "Paramezonefrik kanal. Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır.",
+    "answer": "Paramezonefrik kanal. Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır.",
+    "explanation": "Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır. Mezonefrik kanal erkek iç genital yolları ile ilişkilidir.",
+    "tusTip": "Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır. Mezonefrik kanal erkek iç genital yolları ile ilişkilidir.",
+    "differentialNote": "Mezonefrik kanal erkek iç genital yolları ile ilişkilidir.",
+    "keywords": [
+      "paramezonefrik kanal",
+      "Müller",
+      "uterus",
+      "tuba uterina"
+    ]
+  },
+  "tus-pearl-histology-embryology-221-extra": {
+    "front": "Paramezonefrik kanal türevleri için en kritik ayırıcı nokta nedir?",
+    "back": "Mezonefrik kanal erkek iç genital yolları ile ilişkilidir.",
+    "answer": "Mezonefrik kanal erkek iç genital yolları ile ilişkilidir.",
+    "explanation": "Müller kanalı olarak da bilinen paramezonefrik kanal kadın iç genital sisteminin ana kaynağıdır. Mezonefrik kanal erkek iç genital yolları ile ilişkilidir.",
+    "tusTip": "Paramezonefrik kanal türevleri için sınavda hedeflenen ayrım genellikle şudur: Mezonefrik kanal erkek iç genital yolları ile ilişkilidir.",
+    "differentialNote": "Mezonefrik kanal erkek iç genital yolları ile ilişkilidir.",
+    "keywords": [
+      "paramezonefrik kanal",
+      "Müller",
+      "uterus",
+      "tuba uterina Tıbbi Biyokimya (medical-biochemistry)"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-222-spot": {
+    "front": "Kolesterol sentezinin hız kısıtlayıcı enzimi hangisidir?",
+    "back": "HMG-CoA redüktaz. Bu enzim HMG-CoA’yı mevalonata çevirir ve statinlerin temel hedefidir.",
+    "answer": "HMG-CoA redüktaz. Bu enzim HMG-CoA’yı mevalonata çevirir ve statinlerin temel hedefidir.",
+    "explanation": "Bu enzim HMG-CoA’yı mevalonata çevirir ve statinlerin temel hedefidir. HMG-CoA liyaz keton cisimciği üretimiyle ilişkilidir.",
+    "tusTip": "Bu enzim HMG-CoA’yı mevalonata çevirir ve statinlerin temel hedefidir. HMG-CoA liyaz keton cisimciği üretimiyle ilişkilidir.",
+    "differentialNote": "HMG-CoA liyaz keton cisimciği üretimiyle ilişkilidir.",
+    "keywords": [
+      "kolesterol sentezi",
+      "HMG-CoA redüktaz",
+      "mevalonat",
+      "statin"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-222-extra": {
+    "front": "HMG-CoA redüktaz karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "HMG-CoA liyaz keton cisimciği üretimiyle ilişkilidir.",
+    "answer": "HMG-CoA liyaz keton cisimciği üretimiyle ilişkilidir.",
+    "explanation": "Bu enzim HMG-CoA’yı mevalonata çevirir ve statinlerin temel hedefidir. HMG-CoA liyaz keton cisimciği üretimiyle ilişkilidir.",
+    "tusTip": "HMG-CoA redüktaz karıştırıldığında cevabı netleştiren karşılaştırma: HMG-CoA liyaz keton cisimciği üretimiyle ilişkilidir.",
+    "differentialNote": "HMG-CoA liyaz keton cisimciği üretimiyle ilişkilidir.",
+    "keywords": [
+      "kolesterol sentezi",
+      "HMG-CoA redüktaz",
+      "mevalonat",
+      "statin"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-223-spot": {
+    "front": "Pirüvat karboksilaz enzimi hangi vitamini kofaktör olarak kullanır?",
+    "back": "Biotin. Pirüvat karboksilaz glukoneogenezde pirüvatı oksaloasetata çevirir ve biotin bağımlıdır.",
+    "answer": "Biotin. Pirüvat karboksilaz glukoneogenezde pirüvatı oksaloasetata çevirir ve biotin bağımlıdır.",
+    "explanation": "Pirüvat karboksilaz glukoneogenezde pirüvatı oksaloasetata çevirir ve biotin bağımlıdır. Pirüvat dehidrogenaz tiamin, lipoat, FAD, NAD ve CoA gerektirir.",
+    "tusTip": "Pirüvat karboksilaz glukoneogenezde pirüvatı oksaloasetata çevirir ve biotin bağımlıdır. Pirüvat dehidrogenaz tiamin, lipoat, FAD, NAD ve CoA gerektirir.",
+    "differentialNote": "Pirüvat dehidrogenaz tiamin, lipoat, FAD, NAD ve CoA gerektirir.",
+    "keywords": [
+      "pirüvat karboksilaz",
+      "biotin",
+      "oksaloasetat",
+      "glukoneogenez"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-223-extra": {
+    "front": "Pirüvat karboksilaz kofaktörü için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Pirüvat dehidrogenaz tiamin, lipoat, FAD, NAD ve CoA gerektirir.",
+    "answer": "Pirüvat dehidrogenaz tiamin, lipoat, FAD, NAD ve CoA gerektirir.",
+    "explanation": "Pirüvat karboksilaz glukoneogenezde pirüvatı oksaloasetata çevirir ve biotin bağımlıdır. Pirüvat dehidrogenaz tiamin, lipoat, FAD, NAD ve CoA gerektirir.",
+    "tusTip": "Pirüvat karboksilaz kofaktörü kartında ayırıcı değer taşıyan nokta: Pirüvat dehidrogenaz tiamin, lipoat, FAD, NAD ve CoA gerektirir.",
+    "differentialNote": "Pirüvat dehidrogenaz tiamin, lipoat, FAD, NAD ve CoA gerektirir.",
+    "keywords": [
+      "pirüvat karboksilaz",
+      "biotin",
+      "oksaloasetat",
+      "glukoneogenez"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-224-spot": {
+    "front": "Laktik asidoz ve nörolojik bulgularla giden pirüvat dehidrogenaz kusurunda hangi metabolit artar?",
+    "back": "Laktat. Pirüvat asetil-CoA’ya giremediğinde laktata yönelir ve laktik asidoz gelişir.",
+    "answer": "Laktat. Pirüvat asetil-CoA’ya giremediğinde laktata yönelir ve laktik asidoz gelişir.",
+    "explanation": "Pirüvat asetil-CoA’ya giremediğinde laktata yönelir ve laktik asidoz gelişir. Pirüvat karboksilaz kusurunda glukoneogenez de belirgin etkilenir.",
+    "tusTip": "Pirüvat asetil-CoA’ya giremediğinde laktata yönelir ve laktik asidoz gelişir. Pirüvat karboksilaz kusurunda glukoneogenez de belirgin etkilenir.",
+    "differentialNote": "Pirüvat karboksilaz kusurunda glukoneogenez de belirgin etkilenir.",
+    "keywords": [
+      "pirüvat dehidrogenaz",
+      "laktik asidoz",
+      "alanin artışı",
+      "tiamin"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-224-extra": {
+    "front": "Pirüvat dehidrogenaz eksikliği başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Pirüvat karboksilaz kusurunda glukoneogenez de belirgin etkilenir.",
+    "answer": "Pirüvat karboksilaz kusurunda glukoneogenez de belirgin etkilenir.",
+    "explanation": "Pirüvat asetil-CoA’ya giremediğinde laktata yönelir ve laktik asidoz gelişir. Pirüvat karboksilaz kusurunda glukoneogenez de belirgin etkilenir.",
+    "tusTip": "Pirüvat dehidrogenaz eksikliği için sınavda hedeflenen ayrım genellikle şudur: Pirüvat karboksilaz kusurunda glukoneogenez de belirgin etkilenir.",
+    "differentialNote": "Pirüvat karboksilaz kusurunda glukoneogenez de belirgin etkilenir.",
+    "keywords": [
+      "pirüvat dehidrogenaz",
+      "laktik asidoz",
+      "alanin artışı",
+      "tiamin"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-225-spot": {
+    "front": "Açlık hipoglisemisi ve laktik asidozla giden tip I glikojen depo hastalığında eksik enzim hangisidir?",
+    "back": "Glukoz-6-fosfataz. Karaciğer glukozu kana veremez; hipoglisemi, laktik asidoz ve hiperürisemi gelişebilir.",
+    "answer": "Glukoz-6-fosfataz. Karaciğer glukozu kana veremez; hipoglisemi, laktik asidoz ve hiperürisemi gelişebilir.",
+    "explanation": "Karaciğer glukozu kana veremez; hipoglisemi, laktik asidoz ve hiperürisemi gelişebilir. Kas krampları ve egzersiz intoleransı daha çok McArdle hastalığı ile ilişkilidir.",
+    "tusTip": "Karaciğer glukozu kana veremez; hipoglisemi, laktik asidoz ve hiperürisemi gelişebilir. Kas krampları ve egzersiz intoleransı daha çok McArdle hastalığı ile ilişkilidir.",
+    "differentialNote": "Kas krampları ve egzersiz intoleransı daha çok McArdle hastalığı ile ilişkilidir.",
+    "keywords": [
+      "tip I GSD",
+      "glukoz-6-fosfataz",
+      "hipoglisemi",
+      "laktik asidoz"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-225-extra": {
+    "front": "Glukoz-6-fosfataz için en kritik ayırıcı nokta nedir?",
+    "back": "Kas krampları ve egzersiz intoleransı daha çok McArdle hastalığı ile ilişkilidir.",
+    "answer": "Kas krampları ve egzersiz intoleransı daha çok McArdle hastalığı ile ilişkilidir.",
+    "explanation": "Karaciğer glukozu kana veremez; hipoglisemi, laktik asidoz ve hiperürisemi gelişebilir. Kas krampları ve egzersiz intoleransı daha çok McArdle hastalığı ile ilişkilidir.",
+    "tusTip": "Glukoz-6-fosfataz karıştırıldığında cevabı netleştiren karşılaştırma: Kas krampları ve egzersiz intoleransı daha çok McArdle hastalığı ile ilişkilidir.",
+    "differentialNote": "Kas krampları ve egzersiz intoleransı daha çok McArdle hastalığı ile ilişkilidir.",
+    "keywords": [
+      "tip I GSD",
+      "glukoz-6-fosfataz",
+      "hipoglisemi",
+      "laktik asidoz"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-226-spot": {
+    "front": "Uzamış açlıkta hipoglisemi ve laktik asidoz yapan glukoneogenez kusuru hangi enzim eksikliğidir?",
+    "back": "Fruktoz-1,6-bisfosfataz eksikliği. Bu enzim glukoneogenez için gereklidir; açlık ve enfeksiyon dönemlerinde hipoglisemi belirginleşir.",
+    "answer": "Fruktoz-1,6-bisfosfataz eksikliği. Bu enzim glukoneogenez için gereklidir; açlık ve enfeksiyon dönemlerinde hipoglisemi belirginleşir.",
+    "explanation": "Bu enzim glukoneogenez için gereklidir; açlık ve enfeksiyon dönemlerinde hipoglisemi belirginleşir. Aldolaz B eksikliği fruktoz alımı sonrası kusma ve hipoglisemiyle tipiktir.",
+    "tusTip": "Bu enzim glukoneogenez için gereklidir; açlık ve enfeksiyon dönemlerinde hipoglisemi belirginleşir. Aldolaz B eksikliği fruktoz alımı sonrası kusma ve hipoglisemiyle tipiktir.",
+    "differentialNote": "Aldolaz B eksikliği fruktoz alımı sonrası kusma ve hipoglisemiyle tipiktir.",
+    "keywords": [
+      "glukoneogenez",
+      "fruktoz-1",
+      "6-bisfosfataz",
+      "hipoglisemi",
+      "laktik asidoz"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-226-extra": {
+    "front": "Fruktoz-1,6-bisfosfataz eksikliği karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Aldolaz B eksikliği fruktoz alımı sonrası kusma ve hipoglisemiyle tipiktir.",
+    "answer": "Aldolaz B eksikliği fruktoz alımı sonrası kusma ve hipoglisemiyle tipiktir.",
+    "explanation": "Bu enzim glukoneogenez için gereklidir; açlık ve enfeksiyon dönemlerinde hipoglisemi belirginleşir. Aldolaz B eksikliği fruktoz alımı sonrası kusma ve hipoglisemiyle tipiktir.",
+    "tusTip": "Fruktoz-1,6-bisfosfataz eksikliği kartında ayırıcı değer taşıyan nokta: Aldolaz B eksikliği fruktoz alımı sonrası kusma ve hipoglisemiyle tipiktir.",
+    "differentialNote": "Aldolaz B eksikliği fruktoz alımı sonrası kusma ve hipoglisemiyle tipiktir.",
+    "keywords": [
+      "glukoneogenez",
+      "fruktoz-1",
+      "6-bisfosfataz",
+      "hipoglisemi",
+      "laktik asidoz"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-227-spot": {
+    "front": "Süt alımı sonrası kusma, sarılık ve E. coli sepsisi riski hangi enzim eksikliğini düşündürür?",
+    "back": "Galaktoz-1-fosfat üridiltransferaz eksikliği. Klasik galaktozemide galaktoz-1-fosfat birikir; karaciğer ve lens etkilenir.",
+    "answer": "Galaktoz-1-fosfat üridiltransferaz eksikliği. Klasik galaktozemide galaktoz-1-fosfat birikir; karaciğer ve lens etkilenir.",
+    "explanation": "Klasik galaktozemide galaktoz-1-fosfat birikir; karaciğer ve lens etkilenir. Galaktokinaz eksikliği daha çok izole katarakt yapar.",
+    "tusTip": "Klasik galaktozemide galaktoz-1-fosfat birikir; karaciğer ve lens etkilenir. Galaktokinaz eksikliği daha çok izole katarakt yapar.",
+    "differentialNote": "Galaktokinaz eksikliği daha çok izole katarakt yapar.",
+    "keywords": [
+      "galaktozemi",
+      "GALT",
+      "süt",
+      "E. coli sepsisi"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-227-extra": {
+    "front": "Klasik galaktozemi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Galaktokinaz eksikliği daha çok izole katarakt yapar.",
+    "answer": "Galaktokinaz eksikliği daha çok izole katarakt yapar.",
+    "explanation": "Klasik galaktozemide galaktoz-1-fosfat birikir; karaciğer ve lens etkilenir. Galaktokinaz eksikliği daha çok izole katarakt yapar.",
+    "tusTip": "Klasik galaktozemi için sınavda hedeflenen ayrım genellikle şudur: Galaktokinaz eksikliği daha çok izole katarakt yapar.",
+    "differentialNote": "Galaktokinaz eksikliği daha çok izole katarakt yapar.",
+    "keywords": [
+      "galaktozemi",
+      "GALT",
+      "süt",
+      "E. coli sepsisi"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-228-spot": {
+    "front": "Fruktoz alımı sonrası hipoglisemi, kusma ve karaciğer hasarı hangi enzim eksikliğini düşündürür?",
+    "back": "Aldolaz B eksikliği. Fruktoz-1-fosfat birikimi fosfat tuzaklanmasına ve glukoneogenez glikojenoliz blokajına yol açar.",
+    "answer": "Aldolaz B eksikliği. Fruktoz-1-fosfat birikimi fosfat tuzaklanmasına ve glukoneogenez glikojenoliz blokajına yol açar.",
+    "explanation": "Fruktoz-1-fosfat birikimi fosfat tuzaklanmasına ve glukoneogenez glikojenoliz blokajına yol açar. Esansiyel fruktozüri genellikle benign fruktokinaz eksikliğidir.",
+    "tusTip": "Fruktoz-1-fosfat birikimi fosfat tuzaklanmasına ve glukoneogenez glikojenoliz blokajına yol açar. Esansiyel fruktozüri genellikle benign fruktokinaz eksikliğidir.",
+    "differentialNote": "Esansiyel fruktozüri genellikle benign fruktokinaz eksikliğidir.",
+    "keywords": [
+      "aldolaz B",
+      "fruktoz",
+      "hipoglisemi",
+      "karaciğer hasarı"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-228-extra": {
+    "front": "Herediter fruktoz intoleransı sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Esansiyel fruktozüri genellikle benign fruktokinaz eksikliğidir.",
+    "answer": "Esansiyel fruktozüri genellikle benign fruktokinaz eksikliğidir.",
+    "explanation": "Fruktoz-1-fosfat birikimi fosfat tuzaklanmasına ve glukoneogenez glikojenoliz blokajına yol açar. Esansiyel fruktozüri genellikle benign fruktokinaz eksikliğidir.",
+    "tusTip": "Herediter fruktoz intoleransı karıştırıldığında cevabı netleştiren karşılaştırma: Esansiyel fruktozüri genellikle benign fruktokinaz eksikliğidir.",
+    "differentialNote": "Esansiyel fruktozüri genellikle benign fruktokinaz eksikliğidir.",
+    "keywords": [
+      "aldolaz B",
+      "fruktoz",
+      "hipoglisemi",
+      "karaciğer hasarı"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-229-spot": {
+    "front": "Nöbet, alopesi ve dermatit birlikteliğinde tedavi edilebilir metabolik kusur hangisidir?",
+    "back": "Biotinidaz eksikliği. Biotin geri dönüşümü bozulur; biyotin tedavisiyle klinik düzelebilir.",
+    "answer": "Biotinidaz eksikliği. Biotin geri dönüşümü bozulur; biyotin tedavisiyle klinik düzelebilir.",
+    "explanation": "Biotin geri dönüşümü bozulur; biyotin tedavisiyle klinik düzelebilir. Çinko eksikliği dermatit yapabilir ancak nöbet ve biyotin yanıtı biotinidaz eksikliğini destekler.",
+    "tusTip": "Biotin geri dönüşümü bozulur; biyotin tedavisiyle klinik düzelebilir. Çinko eksikliği dermatit yapabilir ancak nöbet ve biyotin yanıtı biotinidaz eksikliğini destekler.",
+    "differentialNote": "Çinko eksikliği dermatit yapabilir ancak nöbet ve biyotin yanıtı biotinidaz eksikliğini destekler.",
+    "keywords": [
+      "biotinidaz",
+      "nöbet",
+      "alopesi",
+      "dermatit"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-229-extra": {
+    "front": "Biotinidaz eksikliği için en kritik ayırıcı nokta nedir?",
+    "back": "Çinko eksikliği dermatit yapabilir ancak nöbet ve biyotin yanıtı biotinidaz eksikliğini destekler.",
+    "answer": "Çinko eksikliği dermatit yapabilir ancak nöbet ve biyotin yanıtı biotinidaz eksikliğini destekler.",
+    "explanation": "Biotin geri dönüşümü bozulur; biyotin tedavisiyle klinik düzelebilir. Çinko eksikliği dermatit yapabilir ancak nöbet ve biyotin yanıtı biotinidaz eksikliğini destekler.",
+    "tusTip": "Biotinidaz eksikliği kartında ayırıcı değer taşıyan nokta: Çinko eksikliği dermatit yapabilir ancak nöbet ve biyotin yanıtı biotinidaz eksikliğini destekler.",
+    "differentialNote": "Çinko eksikliği dermatit yapabilir ancak nöbet ve biyotin yanıtı biotinidaz eksikliğini destekler.",
+    "keywords": [
+      "biotinidaz",
+      "nöbet",
+      "alopesi",
+      "dermatit"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-230-spot": {
+    "front": "Hipotoni, nöbet ve çok uzun zincirli yağ asidi artışı hangi organel bozukluğunu düşündürür?",
+    "back": "Peroksizom biyogenez bozukluğu. Zellweger spektrumunda peroksizomal fonksiyon bozulur ve çok uzun zincirli yağ asitleri birikir.",
+    "answer": "Peroksizom biyogenez bozukluğu. Zellweger spektrumunda peroksizomal fonksiyon bozulur ve çok uzun zincirli yağ asitleri birikir.",
+    "explanation": "Zellweger spektrumunda peroksizomal fonksiyon bozulur ve çok uzun zincirli yağ asitleri birikir. Mitokondriyal hastalıklarda laktik asidoz daha baskın olabilir.",
+    "tusTip": "Zellweger spektrumunda peroksizomal fonksiyon bozulur ve çok uzun zincirli yağ asitleri birikir. Mitokondriyal hastalıklarda laktik asidoz daha baskın olabilir.",
+    "differentialNote": "Mitokondriyal hastalıklarda laktik asidoz daha baskın olabilir.",
+    "keywords": [
+      "Zellweger",
+      "peroksizom",
+      "VLCFA",
+      "hipotoni"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-230-extra": {
+    "front": "Zellweger sendromu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Mitokondriyal hastalıklarda laktik asidoz daha baskın olabilir.",
+    "answer": "Mitokondriyal hastalıklarda laktik asidoz daha baskın olabilir.",
+    "explanation": "Zellweger spektrumunda peroksizomal fonksiyon bozulur ve çok uzun zincirli yağ asitleri birikir. Mitokondriyal hastalıklarda laktik asidoz daha baskın olabilir.",
+    "tusTip": "Zellweger sendromu için sınavda hedeflenen ayrım genellikle şudur: Mitokondriyal hastalıklarda laktik asidoz daha baskın olabilir.",
+    "differentialNote": "Mitokondriyal hastalıklarda laktik asidoz daha baskın olabilir.",
+    "keywords": [
+      "Zellweger",
+      "peroksizom",
+      "VLCFA",
+      "hipotoni"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-231-spot": {
+    "front": "Fitannik asit birikimi, retinitis pigmentosa ve periferik nöropati hangi hastalığı düşündürür?",
+    "back": "Refsum hastalığı. Alfa oksidasyon bozukluğu fitannik asit birikimine yol açar.",
+    "answer": "Refsum hastalığı. Alfa oksidasyon bozukluğu fitannik asit birikimine yol açar.",
+    "explanation": "Alfa oksidasyon bozukluğu fitannik asit birikimine yol açar. Zellweger daha ağır infantil peroksizom biyogenez bozukluğudur.",
+    "tusTip": "Alfa oksidasyon bozukluğu fitannik asit birikimine yol açar. Zellweger daha ağır infantil peroksizom biyogenez bozukluğudur.",
+    "differentialNote": "Zellweger daha ağır infantil peroksizom biyogenez bozukluğudur.",
+    "keywords": [
+      "Refsum",
+      "fitannik asit",
+      "retinitis pigmentosa",
+      "nöropati"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-231-extra": {
+    "front": "Refsum hastalığı sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Zellweger daha ağır infantil peroksizom biyogenez bozukluğudur.",
+    "answer": "Zellweger daha ağır infantil peroksizom biyogenez bozukluğudur.",
+    "explanation": "Alfa oksidasyon bozukluğu fitannik asit birikimine yol açar. Zellweger daha ağır infantil peroksizom biyogenez bozukluğudur.",
+    "tusTip": "Refsum hastalığı karıştırıldığında cevabı netleştiren karşılaştırma: Zellweger daha ağır infantil peroksizom biyogenez bozukluğudur.",
+    "differentialNote": "Zellweger daha ağır infantil peroksizom biyogenez bozukluğudur.",
+    "keywords": [
+      "Refsum",
+      "fitannik asit",
+      "retinitis pigmentosa",
+      "nöropati"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-232-spot": {
+    "front": "Anne hasta olduğunda tüm çocuklara geçebilen ancak baba hasta olduğunda geçmeyen kalıtım tipi hangisidir?",
+    "back": "Mitokondriyal kalıtım. Mitokondriyal DNA ovum sitoplazmasıyla aktarılır.",
+    "answer": "Mitokondriyal kalıtım. Mitokondriyal DNA ovum sitoplazmasıyla aktarılır.",
+    "explanation": "Mitokondriyal DNA ovum sitoplazmasıyla aktarılır. Otozomal dominant kalıtımda baba da hastalığı çocuklarına aktarabilir.",
+    "tusTip": "Mitokondriyal DNA ovum sitoplazmasıyla aktarılır. Otozomal dominant kalıtımda baba da hastalığı çocuklarına aktarabilir.",
+    "differentialNote": "Otozomal dominant kalıtımda baba da hastalığı çocuklarına aktarabilir.",
+    "keywords": [
+      "mitokondriyal DNA",
+      "maternal kalıtım",
+      "heteroplazmi",
+      "MELAS"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-232-extra": {
+    "front": "Mitokondriyal kalıtım için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Otozomal dominant kalıtımda baba da hastalığı çocuklarına aktarabilir.",
+    "answer": "Otozomal dominant kalıtımda baba da hastalığı çocuklarına aktarabilir.",
+    "explanation": "Mitokondriyal DNA ovum sitoplazmasıyla aktarılır. Otozomal dominant kalıtımda baba da hastalığı çocuklarına aktarabilir.",
+    "tusTip": "Mitokondriyal kalıtım kartında ayırıcı değer taşıyan nokta: Otozomal dominant kalıtımda baba da hastalığı çocuklarına aktarabilir.",
+    "differentialNote": "Otozomal dominant kalıtımda baba da hastalığı çocuklarına aktarabilir.",
+    "keywords": [
+      "mitokondriyal DNA",
+      "maternal kalıtım",
+      "heteroplazmi",
+      "MELAS"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-233-spot": {
+    "front": "Megaloblastik anemi ve idrarda orotik asit artışı olup amonyak normal ise hangi enzim kusuru düşünülür?",
+    "back": "UMP sentaz eksikliği. Pirimidin sentez kusurunda orotik asit birikir; üre döngüsü bozulmadığı için hiperamonyemi beklenmez.",
+    "answer": "UMP sentaz eksikliği. Pirimidin sentez kusurunda orotik asit birikir; üre döngüsü bozulmadığı için hiperamonyemi beklenmez.",
+    "explanation": "Pirimidin sentez kusurunda orotik asit birikir; üre döngüsü bozulmadığı için hiperamonyemi beklenmez. OTC eksikliğinde orotik asit artışı hiperamonyemi ile birliktedir.",
+    "tusTip": "Pirimidin sentez kusurunda orotik asit birikir; üre döngüsü bozulmadığı için hiperamonyemi beklenmez. OTC eksikliğinde orotik asit artışı hiperamonyemi ile birliktedir.",
+    "differentialNote": "OTC eksikliğinde orotik asit artışı hiperamonyemi ile birliktedir.",
+    "keywords": [
+      "orotik asidüri",
+      "UMP sentaz",
+      "megaloblastik anemi",
+      "normal amonyak"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-233-extra": {
+    "front": "Orotik asidüri için en kritik ayırıcı nokta nedir?",
+    "back": "OTC eksikliğinde orotik asit artışı hiperamonyemi ile birliktedir.",
+    "answer": "OTC eksikliğinde orotik asit artışı hiperamonyemi ile birliktedir.",
+    "explanation": "Pirimidin sentez kusurunda orotik asit birikir; üre döngüsü bozulmadığı için hiperamonyemi beklenmez. OTC eksikliğinde orotik asit artışı hiperamonyemi ile birliktedir.",
+    "tusTip": "Orotik asidüri için sınavda hedeflenen ayrım genellikle şudur: OTC eksikliğinde orotik asit artışı hiperamonyemi ile birliktedir.",
+    "differentialNote": "OTC eksikliğinde orotik asit artışı hiperamonyemi ile birliktedir.",
+    "keywords": [
+      "orotik asidüri",
+      "UMP sentaz",
+      "megaloblastik anemi",
+      "normal amonyak"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-234-spot": {
+    "front": "Ağır kombine immün yetmezlik oluşturan purin yıkım enzimi eksikliği hangisidir?",
+    "back": "Adenozin deaminaz eksikliği. Toksik purin metabolitleri lenfosit gelişimini bozar.",
+    "answer": "Adenozin deaminaz eksikliği. Toksik purin metabolitleri lenfosit gelişimini bozar.",
+    "explanation": "Toksik purin metabolitleri lenfosit gelişimini bozar. Bruton agammaglobulinemisi B hücre olgunlaşma kusurudur; T hücreler korunabilir.",
+    "tusTip": "Toksik purin metabolitleri lenfosit gelişimini bozar. Bruton agammaglobulinemisi B hücre olgunlaşma kusurudur; T hücreler korunabilir.",
+    "differentialNote": "Bruton agammaglobulinemisi B hücre olgunlaşma kusurudur; T hücreler korunabilir.",
+    "keywords": [
+      "ADA eksikliği",
+      "SCID",
+      "purin metabolizması",
+      "lenfopeni"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-234-extra": {
+    "front": "Adenozin deaminaz eksikliği karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Bruton agammaglobulinemisi B hücre olgunlaşma kusurudur; T hücreler korunabilir.",
+    "answer": "Bruton agammaglobulinemisi B hücre olgunlaşma kusurudur; T hücreler korunabilir.",
+    "explanation": "Toksik purin metabolitleri lenfosit gelişimini bozar. Bruton agammaglobulinemisi B hücre olgunlaşma kusurudur; T hücreler korunabilir.",
+    "tusTip": "Adenozin deaminaz eksikliği karıştırıldığında cevabı netleştiren karşılaştırma: Bruton agammaglobulinemisi B hücre olgunlaşma kusurudur; T hücreler korunabilir.",
+    "differentialNote": "Bruton agammaglobulinemisi B hücre olgunlaşma kusurudur; T hücreler korunabilir.",
+    "keywords": [
+      "ADA eksikliği",
+      "SCID",
+      "purin metabolizması",
+      "lenfopeni"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-235-spot": {
+    "front": "Uzun ekstremiteler, lens subluksasyonu ve aort kökü dilatasyonu hangi protein kusurunu düşündürür?",
+    "back": "Fibrillin-1 kusuru. FBN1 mutasyonu elastik dokuların yapısını ve TGF-beta sinyalini etkiler.",
+    "answer": "Fibrillin-1 kusuru. FBN1 mutasyonu elastik dokuların yapısını ve TGF-beta sinyalini etkiler.",
+    "explanation": "FBN1 mutasyonu elastik dokuların yapısını ve TGF-beta sinyalini etkiler. Ehlers-Danlos sendromunda kollajen sentez veya yapısal kusurlar daha ön plandadır.",
+    "tusTip": "FBN1 mutasyonu elastik dokuların yapısını ve TGF-beta sinyalini etkiler. Ehlers-Danlos sendromunda kollajen sentez veya yapısal kusurlar daha ön plandadır.",
+    "differentialNote": "Ehlers-Danlos sendromunda kollajen sentez veya yapısal kusurlar daha ön plandadır.",
+    "keywords": [
+      "Marfan",
+      "fibrillin-1",
+      "aort kökü",
+      "ektopia lentis"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-235-extra": {
+    "front": "Marfan sendromu proteini için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Ehlers-Danlos sendromunda kollajen sentez veya yapısal kusurlar daha ön plandadır.",
+    "answer": "Ehlers-Danlos sendromunda kollajen sentez veya yapısal kusurlar daha ön plandadır.",
+    "explanation": "FBN1 mutasyonu elastik dokuların yapısını ve TGF-beta sinyalini etkiler. Ehlers-Danlos sendromunda kollajen sentez veya yapısal kusurlar daha ön plandadır.",
+    "tusTip": "Marfan sendromu proteini kartında ayırıcı değer taşıyan nokta: Ehlers-Danlos sendromunda kollajen sentez veya yapısal kusurlar daha ön plandadır.",
+    "differentialNote": "Ehlers-Danlos sendromunda kollajen sentez veya yapısal kusurlar daha ön plandadır.",
+    "keywords": [
+      "Marfan",
+      "fibrillin-1",
+      "aort kökü",
+      "ektopia lentis"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-236-spot": {
+    "front": "Aşırı eklem hareketliliği ve cilt hiperelastisitesi en çok hangi yapı bozukluğuyla ilişkilidir?",
+    "back": "Kollajen yapım veya işlenme bozukluğu. Ehlers-Danlos sendromları kollajen sentezi, çapraz bağlanması veya yapısal genleri etkileyebilir.",
+    "answer": "Kollajen yapım veya işlenme bozukluğu. Ehlers-Danlos sendromları kollajen sentezi, çapraz bağlanması veya yapısal genleri etkileyebilir.",
+    "explanation": "Ehlers-Danlos sendromları kollajen sentezi, çapraz bağlanması veya yapısal genleri etkileyebilir. Marfan sendromu fibrillin-1 ve aort kökü dilatasyonu ile ayrılır.",
+    "tusTip": "Ehlers-Danlos sendromları kollajen sentezi, çapraz bağlanması veya yapısal genleri etkileyebilir. Marfan sendromu fibrillin-1 ve aort kökü dilatasyonu ile ayrılır.",
+    "differentialNote": "Marfan sendromu fibrillin-1 ve aort kökü dilatasyonu ile ayrılır.",
+    "keywords": [
+      "Ehlers-Danlos",
+      "kollajen",
+      "hiperelastik cilt",
+      "eklem hipermobilitesi"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-236-extra": {
+    "front": "Ehlers-Danlos sendromu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Marfan sendromu fibrillin-1 ve aort kökü dilatasyonu ile ayrılır.",
+    "answer": "Marfan sendromu fibrillin-1 ve aort kökü dilatasyonu ile ayrılır.",
+    "explanation": "Ehlers-Danlos sendromları kollajen sentezi, çapraz bağlanması veya yapısal genleri etkileyebilir. Marfan sendromu fibrillin-1 ve aort kökü dilatasyonu ile ayrılır.",
+    "tusTip": "Ehlers-Danlos sendromu için sınavda hedeflenen ayrım genellikle şudur: Marfan sendromu fibrillin-1 ve aort kökü dilatasyonu ile ayrılır.",
+    "differentialNote": "Marfan sendromu fibrillin-1 ve aort kökü dilatasyonu ile ayrılır.",
+    "keywords": [
+      "Ehlers-Danlos",
+      "kollajen",
+      "hiperelastik cilt",
+      "eklem hipermobilitesi"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-237-spot": {
+    "front": "Mavi sklera ve tekrarlayan kırıklar hangi kollajen kusurunu düşündürür?",
+    "back": "Tip I kollajen kusuru. Osteogenezis imperfektada kemik matriksinin ana kollajeni etkilenir.",
+    "answer": "Tip I kollajen kusuru. Osteogenezis imperfektada kemik matriksinin ana kollajeni etkilenir.",
+    "explanation": "Osteogenezis imperfektada kemik matriksinin ana kollajeni etkilenir. Osteopetrozda kırık olabilir ancak osteoklast fonksiyon bozukluğu ve kemik yoğunluğu artışı beklenir.",
+    "tusTip": "Osteogenezis imperfektada kemik matriksinin ana kollajeni etkilenir. Osteopetrozda kırık olabilir ancak osteoklast fonksiyon bozukluğu ve kemik yoğunluğu artışı beklenir.",
+    "differentialNote": "Osteopetrozda kırık olabilir ancak osteoklast fonksiyon bozukluğu ve kemik yoğunluğu artışı beklenir.",
+    "keywords": [
+      "osteogenezis imperfekta",
+      "tip I kollajen",
+      "mavi sklera",
+      "kırık"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-237-extra": {
+    "front": "Osteogenezis imperfekta için en kritik ayırıcı nokta nedir?",
+    "back": "Osteopetrozda kırık olabilir ancak osteoklast fonksiyon bozukluğu ve kemik yoğunluğu artışı beklenir.",
+    "answer": "Osteopetrozda kırık olabilir ancak osteoklast fonksiyon bozukluğu ve kemik yoğunluğu artışı beklenir.",
+    "explanation": "Osteogenezis imperfektada kemik matriksinin ana kollajeni etkilenir. Osteopetrozda kırık olabilir ancak osteoklast fonksiyon bozukluğu ve kemik yoğunluğu artışı beklenir.",
+    "tusTip": "Osteogenezis imperfekta karıştırıldığında cevabı netleştiren karşılaştırma: Osteopetrozda kırık olabilir ancak osteoklast fonksiyon bozukluğu ve kemik yoğunluğu artışı beklenir.",
+    "differentialNote": "Osteopetrozda kırık olabilir ancak osteoklast fonksiyon bozukluğu ve kemik yoğunluğu artışı beklenir.",
+    "keywords": [
+      "osteogenezis imperfekta",
+      "tip I kollajen",
+      "mavi sklera",
+      "kırık"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-238-spot": {
+    "front": "Kıvrımlı saç, nörolojik gerilik ve düşük bakır düzeyi hangi taşıyıcı kusurunu düşündürür?",
+    "back": "ATP7A kusuru. Menkes hastalığında bağırsaktan bakır taşınması bozulur; bakır bağımlı enzimler etkilenir.",
+    "answer": "ATP7A kusuru. Menkes hastalığında bağırsaktan bakır taşınması bozulur; bakır bağımlı enzimler etkilenir.",
+    "explanation": "Menkes hastalığında bağırsaktan bakır taşınması bozulur; bakır bağımlı enzimler etkilenir. Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar.",
+    "tusTip": "Menkes hastalığında bağırsaktan bakır taşınması bozulur; bakır bağımlı enzimler etkilenir. Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar.",
+    "differentialNote": "Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar.",
+    "keywords": [
+      "Menkes",
+      "ATP7A",
+      "kinky hair",
+      "bakır eksikliği"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-238-extra": {
+    "front": "Menkes hastalığı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar.",
+    "answer": "Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar.",
+    "explanation": "Menkes hastalığında bağırsaktan bakır taşınması bozulur; bakır bağımlı enzimler etkilenir. Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar.",
+    "tusTip": "Menkes hastalığı kartında ayırıcı değer taşıyan nokta: Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar.",
+    "differentialNote": "Wilson hastalığı ATP7B kusuruyla karaciğer ve bazal ganglionlarda bakır birikimi yapar.",
+    "keywords": [
+      "Menkes",
+      "ATP7A",
+      "kinky hair",
+      "bakır eksikliği"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-239-spot": {
+    "front": "Kayser-Fleischer halkası ve karaciğer-nörolojik bulgular hangi bakır taşıma kusurunu düşündürür?",
+    "back": "ATP7B kusuru. Bakırın safraya atılımı bozulur ve dokularda birikir.",
+    "answer": "ATP7B kusuru. Bakırın safraya atılımı bozulur ve dokularda birikir.",
+    "explanation": "Bakırın safraya atılımı bozulur ve dokularda birikir. Menkes bakır eksikliği ve ATP7A kusuruyla seyreder.",
+    "tusTip": "Bakırın safraya atılımı bozulur ve dokularda birikir. Menkes bakır eksikliği ve ATP7A kusuruyla seyreder.",
+    "differentialNote": "Menkes bakır eksikliği ve ATP7A kusuruyla seyreder.",
+    "keywords": [
+      "Wilson",
+      "ATP7B",
+      "Kayser-Fleischer",
+      "seruloplazmin düşük"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-239-extra": {
+    "front": "Wilson hastalığı başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Menkes bakır eksikliği ve ATP7A kusuruyla seyreder.",
+    "answer": "Menkes bakır eksikliği ve ATP7A kusuruyla seyreder.",
+    "explanation": "Bakırın safraya atılımı bozulur ve dokularda birikir. Menkes bakır eksikliği ve ATP7A kusuruyla seyreder.",
+    "tusTip": "Wilson hastalığı için sınavda hedeflenen ayrım genellikle şudur: Menkes bakır eksikliği ve ATP7A kusuruyla seyreder.",
+    "differentialNote": "Menkes bakır eksikliği ve ATP7A kusuruyla seyreder.",
+    "keywords": [
+      "Wilson",
+      "ATP7B",
+      "Kayser-Fleischer",
+      "seruloplazmin düşük"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-240-spot": {
+    "front": "Bronz diyabet ve karaciğer demir birikimi en çok hangi genle ilişkilidir?",
+    "back": "HFE mutasyonu. Artmış intestinal demir emilimi çoklu organ demir birikimine yol açar.",
+    "answer": "HFE mutasyonu. Artmış intestinal demir emilimi çoklu organ demir birikimine yol açar.",
+    "explanation": "Artmış intestinal demir emilimi çoklu organ demir birikimine yol açar. Wilson hastalığı demir değil bakır metabolizması bozukluğudur.",
+    "tusTip": "Artmış intestinal demir emilimi çoklu organ demir birikimine yol açar. Wilson hastalığı demir değil bakır metabolizması bozukluğudur.",
+    "differentialNote": "Wilson hastalığı demir değil bakır metabolizması bozukluğudur.",
+    "keywords": [
+      "hemokromatoz",
+      "HFE",
+      "bronz diyabet",
+      "ferritin artışı"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-240-extra": {
+    "front": "Herediter hemokromatoz sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Wilson hastalığı demir değil bakır metabolizması bozukluğudur.",
+    "answer": "Wilson hastalığı demir değil bakır metabolizması bozukluğudur.",
+    "explanation": "Artmış intestinal demir emilimi çoklu organ demir birikimine yol açar. Wilson hastalığı demir değil bakır metabolizması bozukluğudur.",
+    "tusTip": "Herediter hemokromatoz karıştırıldığında cevabı netleştiren karşılaştırma: Wilson hastalığı demir değil bakır metabolizması bozukluğudur.",
+    "differentialNote": "Wilson hastalığı demir değil bakır metabolizması bozukluğudur.",
+    "keywords": [
+      "hemokromatoz",
+      "HFE",
+      "bronz diyabet",
+      "ferritin artışı"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-241-spot": {
+    "front": "Karın ağrısı, nöropsikiyatrik bulgu ve koyulaşan idrar hangi enzim eksikliğini düşündürür?",
+    "back": "Porfobilinojen deaminaz eksikliği. Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar.",
+    "answer": "Porfobilinojen deaminaz eksikliği. Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar.",
+    "explanation": "Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar. Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
+    "tusTip": "Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar. Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
+    "differentialNote": "Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
+    "keywords": [
+      "akut intermittan porfiri",
+      "PBG deaminaz",
+      "karın ağrısı",
+      "nöropsikiyatrik bulgu"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-241-extra": {
+    "front": "Akut intermittan porfiri için en kritik ayırıcı nokta nedir?",
+    "back": "Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
+    "answer": "Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
+    "explanation": "Hem sentezinde erken basamak bozulur; ALA ve PBG artışı nörovisseral ataklara yol açar. Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
+    "tusTip": "Akut intermittan porfiri kartında ayırıcı değer taşıyan nokta: Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
+    "differentialNote": "Porphyria cutanea tarda daha çok fotosensitivite ve üroporfirinojen dekarboksilaz ile ilişkilidir.",
+    "keywords": [
+      "akut intermittan porfiri",
+      "PBG deaminaz",
+      "karın ağrısı",
+      "nöropsikiyatrik bulgu"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-242-spot": {
+    "front": "Fotosensitivite ve büllöz deri lezyonlarıyla giden en sık porfiri tipi hangi enzim kusurudur?",
+    "back": "Üroporfirinojen dekarboksilaz eksikliği. Porfirin birikimi güneşe maruz kalan alanlarda kırılganlık ve bül oluşturur.",
+    "answer": "Üroporfirinojen dekarboksilaz eksikliği. Porfirin birikimi güneşe maruz kalan alanlarda kırılganlık ve bül oluşturur.",
+    "explanation": "Porfirin birikimi güneşe maruz kalan alanlarda kırılganlık ve bül oluşturur. Akut intermittan porfiri nörovisseral ataklarla daha belirgindir.",
+    "tusTip": "Porfirin birikimi güneşe maruz kalan alanlarda kırılganlık ve bül oluşturur. Akut intermittan porfiri nörovisseral ataklarla daha belirgindir.",
+    "differentialNote": "Akut intermittan porfiri nörovisseral ataklarla daha belirgindir.",
+    "keywords": [
+      "porphyria cutanea tarda",
+      "fotosensitivite",
+      "bül",
+      "üroporfirinojen dekarboksilaz"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-242-extra": {
+    "front": "Porphyria cutanea tarda karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Akut intermittan porfiri nörovisseral ataklarla daha belirgindir.",
+    "answer": "Akut intermittan porfiri nörovisseral ataklarla daha belirgindir.",
+    "explanation": "Porfirin birikimi güneşe maruz kalan alanlarda kırılganlık ve bül oluşturur. Akut intermittan porfiri nörovisseral ataklarla daha belirgindir.",
+    "tusTip": "Porphyria cutanea tarda için sınavda hedeflenen ayrım genellikle şudur: Akut intermittan porfiri nörovisseral ataklarla daha belirgindir.",
+    "differentialNote": "Akut intermittan porfiri nörovisseral ataklarla daha belirgindir.",
+    "keywords": [
+      "porphyria cutanea tarda",
+      "fotosensitivite",
+      "bül",
+      "üroporfirinojen dekarboksilaz"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-243-spot": {
+    "front": "Uzun süreli egzersiz veya açlık sonrası miyalji ve miyoglobinüri hangi yağ asidi oksidasyon kusurunu düşündürür?",
+    "back": "Karnitin palmitoiltransferaz II eksikliği. Uzun zincirli yağ asitlerinin mitokondri içinde oksidasyonu bozulur.",
+    "answer": "Karnitin palmitoiltransferaz II eksikliği. Uzun zincirli yağ asitlerinin mitokondri içinde oksidasyonu bozulur.",
+    "explanation": "Uzun zincirli yağ asitlerinin mitokondri içinde oksidasyonu bozulur. McArdle hastalığında glikojen yıkımı bozulur ve ikinci nefes fenomeni görülebilir.",
+    "tusTip": "Uzun zincirli yağ asitlerinin mitokondri içinde oksidasyonu bozulur. McArdle hastalığında glikojen yıkımı bozulur ve ikinci nefes fenomeni görülebilir.",
+    "differentialNote": "McArdle hastalığında glikojen yıkımı bozulur ve ikinci nefes fenomeni görülebilir.",
+    "keywords": [
+      "CPT II",
+      "miyoglobinüri",
+      "egzersiz",
+      "açlık"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-243-extra": {
+    "front": "CPT II eksikliği sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "McArdle hastalığında glikojen yıkımı bozulur ve ikinci nefes fenomeni görülebilir.",
+    "answer": "McArdle hastalığında glikojen yıkımı bozulur ve ikinci nefes fenomeni görülebilir.",
+    "explanation": "Uzun zincirli yağ asitlerinin mitokondri içinde oksidasyonu bozulur. McArdle hastalığında glikojen yıkımı bozulur ve ikinci nefes fenomeni görülebilir.",
+    "tusTip": "CPT II eksikliği karıştırıldığında cevabı netleştiren karşılaştırma: McArdle hastalığında glikojen yıkımı bozulur ve ikinci nefes fenomeni görülebilir.",
+    "differentialNote": "McArdle hastalığında glikojen yıkımı bozulur ve ikinci nefes fenomeni görülebilir.",
+    "keywords": [
+      "CPT II",
+      "miyoglobinüri",
+      "egzersiz",
+      "açlık"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-244-spot": {
+    "front": "Açlık sonrası hipoketotik hipoglisemi hangi yağ asidi oksidasyon kusurunu düşündürür?",
+    "back": "Orta zincirli açil-CoA dehidrogenaz eksikliği.",
+    "answer": "Orta zincirli açil-CoA dehidrogenaz eksikliği.",
+    "explanation": "Orta zincirli yağ asitlerinin beta oksidasyonu bozulur; keton üretimi yetersiz kalır. Üre döngüsü kusurlarında hipoglisemiden çok hiperamonyemi ön plandadır.",
+    "tusTip": "Orta zincirli yağ asitlerinin beta oksidasyonu bozulur; keton üretimi yetersiz kalır. Üre döngüsü kusurlarında hipoglisemiden çok hiperamonyemi ön plandadır.",
+    "differentialNote": "Üre döngüsü kusurlarında hipoglisemiden çok hiperamonyemi ön plandadır.",
+    "keywords": [
+      "MCAD",
+      "hipoketotik hipoglisemi",
+      "açlık",
+      "beta oksidasyon"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-244-extra": {
+    "front": "MCAD eksikliği için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Üre döngüsü kusurlarında hipoglisemiden çok hiperamonyemi ön plandadır.",
+    "answer": "Üre döngüsü kusurlarında hipoglisemiden çok hiperamonyemi ön plandadır.",
+    "explanation": "Orta zincirli yağ asitlerinin beta oksidasyonu bozulur; keton üretimi yetersiz kalır. Üre döngüsü kusurlarında hipoglisemiden çok hiperamonyemi ön plandadır.",
+    "tusTip": "MCAD eksikliği kartında ayırıcı değer taşıyan nokta: Üre döngüsü kusurlarında hipoglisemiden çok hiperamonyemi ön plandadır.",
+    "differentialNote": "Üre döngüsü kusurlarında hipoglisemiden çok hiperamonyemi ön plandadır.",
+    "keywords": [
+      "MCAD",
+      "hipoketotik hipoglisemi",
+      "açlık",
+      "beta oksidasyon"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-245-spot": {
+    "front": "En sık üre döngüsü bozukluğu olan OTC eksikliği hangi kalıtım paterniyle geçer?",
+    "back": "X’e bağlı resesif. OTC eksikliğinde karbamoil fosfat pirimidin yoluna kayar ve orotik asit artabilir.",
+    "answer": "X’e bağlı resesif. OTC eksikliğinde karbamoil fosfat pirimidin yoluna kayar ve orotik asit artabilir.",
+    "explanation": "OTC eksikliğinde karbamoil fosfat pirimidin yoluna kayar ve orotik asit artabilir. UMP sentaz eksikliğinde orotik asit artar ancak hiperamonyemi beklenmez.",
+    "tusTip": "OTC eksikliğinde karbamoil fosfat pirimidin yoluna kayar ve orotik asit artabilir. UMP sentaz eksikliğinde orotik asit artar ancak hiperamonyemi beklenmez.",
+    "differentialNote": "UMP sentaz eksikliğinde orotik asit artar ancak hiperamonyemi beklenmez.",
+    "keywords": [
+      "OTC",
+      "X’e bağlı",
+      "hiperamonyemi",
+      "orotik asit"
+    ]
+  },
+  "tus-pearl-medical-biochemistry-245-extra": {
+    "front": "Ornitin transkarbamilaz kalıtımı için en kritik ayırıcı nokta nedir?",
+    "back": "UMP sentaz eksikliğinde orotik asit artar ancak hiperamonyemi beklenmez.",
+    "answer": "UMP sentaz eksikliğinde orotik asit artar ancak hiperamonyemi beklenmez.",
+    "explanation": "OTC eksikliğinde karbamoil fosfat pirimidin yoluna kayar ve orotik asit artabilir. UMP sentaz eksikliğinde orotik asit artar ancak hiperamonyemi beklenmez.",
+    "tusTip": "Ornitin transkarbamilaz kalıtımı için sınavda hedeflenen ayrım genellikle şudur: UMP sentaz eksikliğinde orotik asit artar ancak hiperamonyemi beklenmez.",
+    "differentialNote": "UMP sentaz eksikliğinde orotik asit artar ancak hiperamonyemi beklenmez.",
+    "keywords": [
+      "OTC",
+      "X’e bağlı",
+      "hiperamonyemi",
+      "orotik asit Tıbbi Mikrobiyoloji (medical-microbiology)"
+    ]
+  },
+  "tus-pearl-medical-microbiology-246-spot": {
+    "front": "Kriptik tonsillit ve akut romatizmal ateş riski hangi bakteriyel etkenle ilişkilidir?",
+    "back": "Streptococcus pyogenes. A grubu beta-hemolitik streptokok farenjit sonrası immün aracılı romatizmal ateş gelişebilir.",
+    "answer": "Streptococcus pyogenes. A grubu beta-hemolitik streptokok farenjit sonrası immün aracılı romatizmal ateş gelişebilir.",
+    "explanation": "A grubu beta-hemolitik streptokok farenjit sonrası immün aracılı romatizmal ateş gelişebilir. Viral farenjitte antibiyotik romatizmal ateş önleme amacı taşımaz.",
+    "tusTip": "A grubu beta-hemolitik streptokok farenjit sonrası immün aracılı romatizmal ateş gelişebilir. Viral farenjitte antibiyotik romatizmal ateş önleme amacı taşımaz.",
+    "differentialNote": "Viral farenjitte antibiyotik romatizmal ateş önleme amacı taşımaz.",
+    "keywords": [
+      "kriptik tonsillit",
+      "A grubu streptokok",
+      "romatizmal ateş",
+      "penisilin"
+    ]
+  },
+  "tus-pearl-medical-microbiology-246-extra": {
+    "front": "A grubu streptokok farenjiti karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Viral farenjitte antibiyotik romatizmal ateş önleme amacı taşımaz.",
+    "answer": "Viral farenjitte antibiyotik romatizmal ateş önleme amacı taşımaz.",
+    "explanation": "A grubu beta-hemolitik streptokok farenjit sonrası immün aracılı romatizmal ateş gelişebilir. Viral farenjitte antibiyotik romatizmal ateş önleme amacı taşımaz.",
+    "tusTip": "A grubu streptokok farenjiti karıştırıldığında cevabı netleştiren karşılaştırma: Viral farenjitte antibiyotik romatizmal ateş önleme amacı taşımaz.",
+    "differentialNote": "Viral farenjitte antibiyotik romatizmal ateş önleme amacı taşımaz.",
+    "keywords": [
+      "kriptik tonsillit",
+      "A grubu streptokok",
+      "romatizmal ateş",
+      "penisilin"
+    ]
+  },
+  "tus-pearl-medical-microbiology-247-spot": {
+    "front": "Yenidoğan sepsisi ve menenjitinde maternal vajinal kolonizasyonla ilişkili başlıca etken hangisidir?",
+    "back": "Streptococcus agalactiae. Grup B streptokok doğum sırasında bulaşabilir; intrapartum profilaksi riski azaltır.",
+    "answer": "Streptococcus agalactiae. Grup B streptokok doğum sırasında bulaşabilir; intrapartum profilaksi riski azaltır.",
+    "explanation": "Grup B streptokok doğum sırasında bulaşabilir; intrapartum profilaksi riski azaltır. Listeria da yenidoğanda sepsis yapabilir ancak GBS kolonizasyon taraması klinikte belirgindir.",
+    "tusTip": "Grup B streptokok doğum sırasında bulaşabilir; intrapartum profilaksi riski azaltır. Listeria da yenidoğanda sepsis yapabilir ancak GBS kolonizasyon taraması klinikte belirgindir.",
+    "differentialNote": "Listeria da yenidoğanda sepsis yapabilir ancak GBS kolonizasyon taraması klinikte belirgindir.",
+    "keywords": [
+      "grup B streptokok",
+      "yenidoğan sepsisi",
+      "vajinal kolonizasyon",
+      "intrapartum profilaksi"
+    ]
+  },
+  "tus-pearl-medical-microbiology-247-extra": {
+    "front": "Streptococcus agalactiae için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Listeria da yenidoğanda sepsis yapabilir ancak GBS kolonizasyon taraması klinikte belirgindir.",
+    "answer": "Listeria da yenidoğanda sepsis yapabilir ancak GBS kolonizasyon taraması klinikte belirgindir.",
+    "explanation": "Grup B streptokok doğum sırasında bulaşabilir; intrapartum profilaksi riski azaltır. Listeria da yenidoğanda sepsis yapabilir ancak GBS kolonizasyon taraması klinikte belirgindir.",
+    "tusTip": "Streptococcus agalactiae kartında ayırıcı değer taşıyan nokta: Listeria da yenidoğanda sepsis yapabilir ancak GBS kolonizasyon taraması klinikte belirgindir.",
+    "differentialNote": "Listeria da yenidoğanda sepsis yapabilir ancak GBS kolonizasyon taraması klinikte belirgindir.",
+    "keywords": [
+      "grup B streptokok",
+      "yenidoğan sepsisi",
+      "vajinal kolonizasyon",
+      "intrapartum profilaksi"
+    ]
+  },
+  "tus-pearl-medical-microbiology-248-spot": {
+    "front": "Safra yolu ve üriner sistem kaynaklı sağlık bakımı ilişkili enfeksiyonlarda, doğal sefalosporin direnciyle bilinen kok hangisidir?",
+    "back": "Enterococcus faecalis. Enterokoklar sefalosporinlere doğal dirençlidir ve endokardit ile intraabdominal enfeksiyonlarda da görülebilir.",
+    "answer": "Enterococcus faecalis. Enterokoklar sefalosporinlere doğal dirençlidir ve endokardit ile intraabdominal enfeksiyonlarda da görülebilir.",
+    "explanation": "Enterokoklar sefalosporinlere doğal dirençlidir ve endokardit ile intraabdominal enfeksiyonlarda da görülebilir. Stafilokoklar katalaz pozitif kümelenen koklardır; enterokoklar safra eskülin pozitifliğiyle ayrılır.",
+    "tusTip": "Enterokoklar sefalosporinlere doğal dirençlidir ve endokardit ile intraabdominal enfeksiyonlarda da görülebilir. Stafilokoklar katalaz pozitif kümelenen koklardır; enterokoklar safra eskülin pozitifliğiyle ayrılır.",
+    "differentialNote": "Stafilokoklar katalaz pozitif kümelenen koklardır; enterokoklar safra eskülin pozitifliğiyle ayrılır.",
+    "keywords": [
+      "enterokok",
+      "sefalosporin direnci",
+      "üriner enfeksiyon",
+      "endokardit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-248-extra": {
+    "front": "Enterococcus faecalis başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Stafilokoklar katalaz pozitif kümelenen koklardır; enterokoklar safra eskülin pozitifliğiyle ayrılır.",
+    "answer": "Stafilokoklar katalaz pozitif kümelenen koklardır; enterokoklar safra eskülin pozitifliğiyle ayrılır.",
+    "explanation": "Enterokoklar sefalosporinlere doğal dirençlidir ve endokardit ile intraabdominal enfeksiyonlarda da görülebilir. Stafilokoklar katalaz pozitif kümelenen koklardır; enterokoklar safra eskülin pozitifliğiyle ayrılır.",
+    "tusTip": "Enterococcus faecalis için sınavda hedeflenen ayrım genellikle şudur: Stafilokoklar katalaz pozitif kümelenen koklardır; enterokoklar safra eskülin pozitifliğiyle ayrılır.",
+    "differentialNote": "Stafilokoklar katalaz pozitif kümelenen koklardır; enterokoklar safra eskülin pozitifliğiyle ayrılır.",
+    "keywords": [
+      "enterokok",
+      "sefalosporin direnci",
+      "üriner enfeksiyon",
+      "endokardit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-249-spot": {
+    "front": "Tampon kullanımı veya yara enfeksiyonu sonrası ateş, hipotansiyon ve yaygın döküntü hangi toksin aracılı tabloyu düşündürür?",
+    "back": "Staphylococcus aureus toksik şok sendromu. TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur.",
+    "answer": "Staphylococcus aureus toksik şok sendromu. TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur.",
+    "explanation": "TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur. Streptokokal toksik şok daha ağır yumuşak doku enfeksiyonu ile birlikte olabilir.",
+    "tusTip": "TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur. Streptokokal toksik şok daha ağır yumuşak doku enfeksiyonu ile birlikte olabilir.",
+    "differentialNote": "Streptokokal toksik şok daha ağır yumuşak doku enfeksiyonu ile birlikte olabilir.",
+    "keywords": [
+      "toksik şok",
+      "TSST-1",
+      "süperantijen",
+      "hipotansiyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-249-extra": {
+    "front": "Staphylococcus aureus toksik şok için en kritik ayırıcı nokta nedir?",
+    "back": "Streptokokal toksik şok daha ağır yumuşak doku enfeksiyonu ile birlikte olabilir.",
+    "answer": "Streptokokal toksik şok daha ağır yumuşak doku enfeksiyonu ile birlikte olabilir.",
+    "explanation": "TSST-1 süperantijen gibi davranır ve yaygın sitokin salınımı oluşturur. Streptokokal toksik şok daha ağır yumuşak doku enfeksiyonu ile birlikte olabilir.",
+    "tusTip": "Staphylococcus aureus toksik şok karıştırıldığında cevabı netleştiren karşılaştırma: Streptokokal toksik şok daha ağır yumuşak doku enfeksiyonu ile birlikte olabilir.",
+    "differentialNote": "Streptokokal toksik şok daha ağır yumuşak doku enfeksiyonu ile birlikte olabilir.",
+    "keywords": [
+      "toksik şok",
+      "TSST-1",
+      "süperantijen",
+      "hipotansiyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-250-spot": {
+    "front": "Protez kapak ve kateter enfeksiyonlarında biyofilm oluşturan koagülaz negatif stafilokok hangisidir?",
+    "back": "Staphylococcus epidermidis. Biyofilm yabancı cisim yüzeyine tutunmayı ve tedavi direncini artırır.",
+    "answer": "Staphylococcus epidermidis. Biyofilm yabancı cisim yüzeyine tutunmayı ve tedavi direncini artırır.",
+    "explanation": "Biyofilm yabancı cisim yüzeyine tutunmayı ve tedavi direncini artırır. Staphylococcus aureus koagülaz pozitiftir ve daha invaziv doku enfeksiyonları yapar.",
+    "tusTip": "Biyofilm yabancı cisim yüzeyine tutunmayı ve tedavi direncini artırır. Staphylococcus aureus koagülaz pozitiftir ve daha invaziv doku enfeksiyonları yapar.",
+    "differentialNote": "Staphylococcus aureus koagülaz pozitiftir ve daha invaziv doku enfeksiyonları yapar.",
+    "keywords": [
+      "biyofilm",
+      "protez kapak",
+      "kateter",
+      "koagülaz negatif"
+    ]
+  },
+  "tus-pearl-medical-microbiology-250-extra": {
+    "front": "Staphylococcus epidermidis karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Staphylococcus aureus koagülaz pozitiftir ve daha invaziv doku enfeksiyonları yapar.",
+    "answer": "Staphylococcus aureus koagülaz pozitiftir ve daha invaziv doku enfeksiyonları yapar.",
+    "explanation": "Biyofilm yabancı cisim yüzeyine tutunmayı ve tedavi direncini artırır. Staphylococcus aureus koagülaz pozitiftir ve daha invaziv doku enfeksiyonları yapar.",
+    "tusTip": "Staphylococcus epidermidis kartında ayırıcı değer taşıyan nokta: Staphylococcus aureus koagülaz pozitiftir ve daha invaziv doku enfeksiyonları yapar.",
+    "differentialNote": "Staphylococcus aureus koagülaz pozitiftir ve daha invaziv doku enfeksiyonları yapar.",
+    "keywords": [
+      "biyofilm",
+      "protez kapak",
+      "kateter",
+      "koagülaz negatif"
+    ]
+  },
+  "tus-pearl-medical-microbiology-251-spot": {
+    "front": "Gebeler, yenidoğanlar ve yaşlılarda menenjit yapan, hücre içinde hareket için aktin kullanan bakteri hangisidir?",
+    "back": "Listeria monocytogenes. Listeria fakültatif intraselülerdir ve soğukta üreyebilmesiyle gıda kaynaklı bulaş gösterebilir.",
+    "answer": "Listeria monocytogenes. Listeria fakültatif intraselülerdir ve soğukta üreyebilmesiyle gıda kaynaklı bulaş gösterebilir.",
+    "explanation": "Listeria fakültatif intraselülerdir ve soğukta üreyebilmesiyle gıda kaynaklı bulaş gösterebilir. Ampirik menenjit tedavisinde ileri yaş ve immünsüpresyonda ampisilin eklenmesi bu nedenle önemlidir.",
+    "tusTip": "Listeria fakültatif intraselülerdir ve soğukta üreyebilmesiyle gıda kaynaklı bulaş gösterebilir. Ampirik menenjit tedavisinde ileri yaş ve immünsüpresyonda ampisilin eklenmesi bu nedenle önemlidir.",
+    "differentialNote": "Ampirik menenjit tedavisinde ileri yaş ve immünsüpresyonda ampisilin eklenmesi bu nedenle önemlidir.",
+    "keywords": [
+      "Listeria",
+      "gebelik",
+      "yenidoğan menenjiti",
+      "aktin kuyruğu"
+    ]
+  },
+  "tus-pearl-medical-microbiology-251-extra": {
+    "front": "Listeria monocytogenes başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Ampirik menenjit tedavisinde ileri yaş ve immünsüpresyonda ampisilin eklenmesi bu nedenle önemlidir.",
+    "answer": "Ampirik menenjit tedavisinde ileri yaş ve immünsüpresyonda ampisilin eklenmesi bu nedenle önemlidir.",
+    "explanation": "Listeria fakültatif intraselülerdir ve soğukta üreyebilmesiyle gıda kaynaklı bulaş gösterebilir. Ampirik menenjit tedavisinde ileri yaş ve immünsüpresyonda ampisilin eklenmesi bu nedenle önemlidir.",
+    "tusTip": "Listeria monocytogenes için sınavda hedeflenen ayrım genellikle şudur: Ampirik menenjit tedavisinde ileri yaş ve immünsüpresyonda ampisilin eklenmesi bu nedenle önemlidir.",
+    "differentialNote": "Ampirik menenjit tedavisinde ileri yaş ve immünsüpresyonda ampisilin eklenmesi bu nedenle önemlidir.",
+    "keywords": [
+      "Listeria",
+      "gebelik",
+      "yenidoğan menenjiti",
+      "aktin kuyruğu"
+    ]
+  },
+  "tus-pearl-medical-microbiology-252-spot": {
+    "front": "İnen simetrik flask paralizi ve pupilla tutulumu hangi toksini düşündürür?",
+    "back": "Botulinum toksini. Botulinum toksini presinaptik asetilkolin salınımını engeller.",
+    "answer": "Botulinum toksini. Botulinum toksini presinaptik asetilkolin salınımını engeller.",
+    "explanation": "Botulinum toksini presinaptik asetilkolin salınımını engeller. Tetanozda inhibitör nörotransmitter salınımı engellenir ve spastik paralizi görülür.",
+    "tusTip": "Botulinum toksini presinaptik asetilkolin salınımını engeller. Tetanozda inhibitör nörotransmitter salınımı engellenir ve spastik paralizi görülür.",
+    "differentialNote": "Tetanozda inhibitör nörotransmitter salınımı engellenir ve spastik paralizi görülür.",
+    "keywords": [
+      "botulizm",
+      "inen paralizi",
+      "asetilkolin salınımı",
+      "konserve"
+    ]
+  },
+  "tus-pearl-medical-microbiology-252-extra": {
+    "front": "Clostridium botulinum sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Tetanozda inhibitör nörotransmitter salınımı engellenir ve spastik paralizi görülür.",
+    "answer": "Tetanozda inhibitör nörotransmitter salınımı engellenir ve spastik paralizi görülür.",
+    "explanation": "Botulinum toksini presinaptik asetilkolin salınımını engeller. Tetanozda inhibitör nörotransmitter salınımı engellenir ve spastik paralizi görülür.",
+    "tusTip": "Clostridium botulinum karıştırıldığında cevabı netleştiren karşılaştırma: Tetanozda inhibitör nörotransmitter salınımı engellenir ve spastik paralizi görülür.",
+    "differentialNote": "Tetanozda inhibitör nörotransmitter salınımı engellenir ve spastik paralizi görülür.",
+    "keywords": [
+      "botulizm",
+      "inen paralizi",
+      "asetilkolin salınımı",
+      "konserve"
+    ]
+  },
+  "tus-pearl-medical-microbiology-253-spot": {
+    "front": "Travma sonrası krepitasyonlu kas nekrozu ve gazlı gangren hangi etkeni düşündürür?",
+    "back": "Clostridium perfringens. Alfa toksin lesitinaz aktivitesiyle miyonekroz ve hemolize katkı sağlar.",
+    "answer": "Clostridium perfringens. Alfa toksin lesitinaz aktivitesiyle miyonekroz ve hemolize katkı sağlar.",
+    "explanation": "Alfa toksin lesitinaz aktivitesiyle miyonekroz ve hemolize katkı sağlar. Clostridium tetani yara enfeksiyonundan çok nörotoksinle spastik paralizi yapar.",
+    "tusTip": "Alfa toksin lesitinaz aktivitesiyle miyonekroz ve hemolize katkı sağlar. Clostridium tetani yara enfeksiyonundan çok nörotoksinle spastik paralizi yapar.",
+    "differentialNote": "Clostridium tetani yara enfeksiyonundan çok nörotoksinle spastik paralizi yapar.",
+    "keywords": [
+      "gazlı gangren",
+      "miyonekroz",
+      "alfa toksin",
+      "anaerop"
+    ]
+  },
+  "tus-pearl-medical-microbiology-253-extra": {
+    "front": "Clostridium perfringens için en kritik ayırıcı nokta nedir?",
+    "back": "Clostridium tetani yara enfeksiyonundan çok nörotoksinle spastik paralizi yapar.",
+    "answer": "Clostridium tetani yara enfeksiyonundan çok nörotoksinle spastik paralizi yapar.",
+    "explanation": "Alfa toksin lesitinaz aktivitesiyle miyonekroz ve hemolize katkı sağlar. Clostridium tetani yara enfeksiyonundan çok nörotoksinle spastik paralizi yapar.",
+    "tusTip": "Clostridium perfringens kartında ayırıcı değer taşıyan nokta: Clostridium tetani yara enfeksiyonundan çok nörotoksinle spastik paralizi yapar.",
+    "differentialNote": "Clostridium tetani yara enfeksiyonundan çok nörotoksinle spastik paralizi yapar.",
+    "keywords": [
+      "gazlı gangren",
+      "miyonekroz",
+      "alfa toksin",
+      "anaerop"
+    ]
+  },
+  "tus-pearl-medical-microbiology-254-spot": {
+    "front": "Yün veya hayvan ürünleri teması sonrası siyah eskar hangi bakteriyi düşündürür?",
+    "back": "Bacillus anthracis. Antraks toksinleri ödem ve doku nekrozuna yol açar; kapsülü polipeptid yapıdadır.",
+    "answer": "Bacillus anthracis. Antraks toksinleri ödem ve doku nekrozuna yol açar; kapsülü polipeptid yapıdadır.",
+    "explanation": "Antraks toksinleri ödem ve doku nekrozuna yol açar; kapsülü polipeptid yapıdadır. Bacillus cereus daha çok besin zehirlenmesiyle sorulur.",
+    "tusTip": "Antraks toksinleri ödem ve doku nekrozuna yol açar; kapsülü polipeptid yapıdadır. Bacillus cereus daha çok besin zehirlenmesiyle sorulur.",
+    "differentialNote": "Bacillus cereus daha çok besin zehirlenmesiyle sorulur.",
+    "keywords": [
+      "siyah eskar",
+      "antraks",
+      "polipeptid kapsül",
+      "hayvan teması"
+    ]
+  },
+  "tus-pearl-medical-microbiology-254-extra": {
+    "front": "Bacillus anthracis karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Bacillus cereus daha çok besin zehirlenmesiyle sorulur.",
+    "answer": "Bacillus cereus daha çok besin zehirlenmesiyle sorulur.",
+    "explanation": "Antraks toksinleri ödem ve doku nekrozuna yol açar; kapsülü polipeptid yapıdadır. Bacillus cereus daha çok besin zehirlenmesiyle sorulur.",
+    "tusTip": "Bacillus anthracis için sınavda hedeflenen ayrım genellikle şudur: Bacillus cereus daha çok besin zehirlenmesiyle sorulur.",
+    "differentialNote": "Bacillus cereus daha çok besin zehirlenmesiyle sorulur.",
+    "keywords": [
+      "siyah eskar",
+      "antraks",
+      "polipeptid kapsül",
+      "hayvan teması"
+    ]
+  },
+  "tus-pearl-medical-microbiology-255-spot": {
+    "front": "Boğazda gri psödomembran ve miyokardit riski hangi bakteriyel toksinle ilişkilidir?",
+    "back": "Difteri toksini. Difteri toksini EF-2’yi inhibe ederek protein sentezini durdurur.",
+    "answer": "Difteri toksini. Difteri toksini EF-2’yi inhibe ederek protein sentezini durdurur.",
+    "explanation": "Difteri toksini EF-2’yi inhibe ederek protein sentezini durdurur. Streptokok farenjitte psödomembran ve EF-2 inhibisyonu beklenmez.",
+    "tusTip": "Difteri toksini EF-2’yi inhibe ederek protein sentezini durdurur. Streptokok farenjitte psödomembran ve EF-2 inhibisyonu beklenmez.",
+    "differentialNote": "Streptokok farenjitte psödomembran ve EF-2 inhibisyonu beklenmez.",
+    "keywords": [
+      "difteri",
+      "psödomembran",
+      "EF-2",
+      "miyokardit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-255-extra": {
+    "front": "Corynebacterium diphtheriae sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Streptokok farenjitte psödomembran ve EF-2 inhibisyonu beklenmez.",
+    "answer": "Streptokok farenjitte psödomembran ve EF-2 inhibisyonu beklenmez.",
+    "explanation": "Difteri toksini EF-2’yi inhibe ederek protein sentezini durdurur. Streptokok farenjitte psödomembran ve EF-2 inhibisyonu beklenmez.",
+    "tusTip": "Corynebacterium diphtheriae karıştırıldığında cevabı netleştiren karşılaştırma: Streptokok farenjitte psödomembran ve EF-2 inhibisyonu beklenmez.",
+    "differentialNote": "Streptokok farenjitte psödomembran ve EF-2 inhibisyonu beklenmez.",
+    "keywords": [
+      "difteri",
+      "psödomembran",
+      "EF-2",
+      "miyokardit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-256-spot": {
+    "front": "Paroksismal öksürük ve lenfositoz yapan solunum yolu enfeksiyonunda klasik etken hangisidir?",
+    "back": "Bordetella pertussis. Pertussis toksini Gi proteinini ADP-ribozilleyerek cAMP artışına katkı sağlar.",
+    "answer": "Bordetella pertussis. Pertussis toksini Gi proteinini ADP-ribozilleyerek cAMP artışına katkı sağlar.",
+    "explanation": "Pertussis toksini Gi proteinini ADP-ribozilleyerek cAMP artışına katkı sağlar. Krup havlar tarzda öksürük ve inspiratuvar stridorla ayrılır.",
+    "tusTip": "Pertussis toksini Gi proteinini ADP-ribozilleyerek cAMP artışına katkı sağlar. Krup havlar tarzda öksürük ve inspiratuvar stridorla ayrılır.",
+    "differentialNote": "Krup havlar tarzda öksürük ve inspiratuvar stridorla ayrılır.",
+    "keywords": [
+      "boğmaca",
+      "paroksismal öksürük",
+      "lenfositoz",
+      "pertussis toksini"
+    ]
+  },
+  "tus-pearl-medical-microbiology-256-extra": {
+    "front": "Bordetella pertussis için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Krup havlar tarzda öksürük ve inspiratuvar stridorla ayrılır.",
+    "answer": "Krup havlar tarzda öksürük ve inspiratuvar stridorla ayrılır.",
+    "explanation": "Pertussis toksini Gi proteinini ADP-ribozilleyerek cAMP artışına katkı sağlar. Krup havlar tarzda öksürük ve inspiratuvar stridorla ayrılır.",
+    "tusTip": "Bordetella pertussis kartında ayırıcı değer taşıyan nokta: Krup havlar tarzda öksürük ve inspiratuvar stridorla ayrılır.",
+    "differentialNote": "Krup havlar tarzda öksürük ve inspiratuvar stridorla ayrılır.",
+    "keywords": [
+      "boğmaca",
+      "paroksismal öksürük",
+      "lenfositoz",
+      "pertussis toksini"
+    ]
+  },
+  "tus-pearl-medical-microbiology-257-spot": {
+    "front": "Brucella aşısı veya kültürüyle yüksek riskli mesleki temas sonrası profilakside hangi kombinasyon kullanılır?",
+    "back": "Doksisiklin ve rifampisin. Brucella intraselüler yerleşim gösterebildiği için kombine ve hücre içine etkili tedavi tercih edilir.",
+    "answer": "Doksisiklin ve rifampisin. Brucella intraselüler yerleşim gösterebildiği için kombine ve hücre içine etkili tedavi tercih edilir.",
+    "explanation": "Brucella intraselüler yerleşim gösterebildiği için kombine ve hücre içine etkili tedavi tercih edilir. Kısa süreli tek doz beta-laktam profilaksisi Brucella teması için uygun değildir.",
+    "tusTip": "Brucella intraselüler yerleşim gösterebildiği için kombine ve hücre içine etkili tedavi tercih edilir. Kısa süreli tek doz beta-laktam profilaksisi Brucella teması için uygun değildir.",
+    "differentialNote": "Kısa süreli tek doz beta-laktam profilaksisi Brucella teması için uygun değildir.",
+    "keywords": [
+      "Brucella",
+      "veteriner temas",
+      "doksisiklin",
+      "rifampisin"
+    ]
+  },
+  "tus-pearl-medical-microbiology-257-extra": {
+    "front": "Brucella temas profilaksisi için en kritik ayırıcı nokta nedir?",
+    "back": "Kısa süreli tek doz beta-laktam profilaksisi Brucella teması için uygun değildir.",
+    "answer": "Kısa süreli tek doz beta-laktam profilaksisi Brucella teması için uygun değildir.",
+    "explanation": "Brucella intraselüler yerleşim gösterebildiği için kombine ve hücre içine etkili tedavi tercih edilir. Kısa süreli tek doz beta-laktam profilaksisi Brucella teması için uygun değildir.",
+    "tusTip": "Brucella temas profilaksisi için sınavda hedeflenen ayrım genellikle şudur: Kısa süreli tek doz beta-laktam profilaksisi Brucella teması için uygun değildir.",
+    "differentialNote": "Kısa süreli tek doz beta-laktam profilaksisi Brucella teması için uygun değildir.",
+    "keywords": [
+      "Brucella",
+      "veteriner temas",
+      "doksisiklin",
+      "rifampisin"
+    ]
+  },
+  "tus-pearl-medical-microbiology-258-spot": {
+    "front": "Deferoksamin kullanan talasemi hastasında sepsis ve sulu ishal hangi etkeni düşündürür?",
+    "back": "Yersinia enterocolitica. Deferoksamin siderofor gibi davranarak Yersinia büyümesini kolaylaştırabilir.",
+    "answer": "Yersinia enterocolitica. Deferoksamin siderofor gibi davranarak Yersinia büyümesini kolaylaştırabilir.",
+    "explanation": "Deferoksamin siderofor gibi davranarak Yersinia büyümesini kolaylaştırabilir. Vibrio kolera bol sulu ishal yapar ancak deferoksamin ilişkisi Yersinia için tipiktir.",
+    "tusTip": "Deferoksamin siderofor gibi davranarak Yersinia büyümesini kolaylaştırabilir. Vibrio kolera bol sulu ishal yapar ancak deferoksamin ilişkisi Yersinia için tipiktir.",
+    "differentialNote": "Vibrio kolera bol sulu ishal yapar ancak deferoksamin ilişkisi Yersinia için tipiktir.",
+    "keywords": [
+      "deferoksamin",
+      "talasemi",
+      "Yersinia",
+      "siderofor"
+    ]
+  },
+  "tus-pearl-medical-microbiology-258-extra": {
+    "front": "Yersinia ve deferoksamin karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Vibrio kolera bol sulu ishal yapar ancak deferoksamin ilişkisi Yersinia için tipiktir.",
+    "answer": "Vibrio kolera bol sulu ishal yapar ancak deferoksamin ilişkisi Yersinia için tipiktir.",
+    "explanation": "Deferoksamin siderofor gibi davranarak Yersinia büyümesini kolaylaştırabilir. Vibrio kolera bol sulu ishal yapar ancak deferoksamin ilişkisi Yersinia için tipiktir.",
+    "tusTip": "Yersinia ve deferoksamin karıştırıldığında cevabı netleştiren karşılaştırma: Vibrio kolera bol sulu ishal yapar ancak deferoksamin ilişkisi Yersinia için tipiktir.",
+    "differentialNote": "Vibrio kolera bol sulu ishal yapar ancak deferoksamin ilişkisi Yersinia için tipiktir.",
+    "keywords": [
+      "deferoksamin",
+      "talasemi",
+      "Yersinia",
+      "siderofor"
+    ]
+  },
+  "tus-pearl-medical-microbiology-259-spot": {
+    "front": "Kanlı ishal sonrası Guillain-Barré sendromuyla ilişkilendirilen eğri gram negatif bakteri hangisidir?",
+    "back": "Campylobacter jejuni. Moleküler benzerlik periferik sinir immün yanıtını tetikleyebilir.",
+    "answer": "Campylobacter jejuni. Moleküler benzerlik periferik sinir immün yanıtını tetikleyebilir.",
+    "explanation": "Moleküler benzerlik periferik sinir immün yanıtını tetikleyebilir. Shigella dizanteri ve HUS ile ilişkilendirilebilir ancak GBS bağlantısı Campylobacter için daha tipiktir.",
+    "tusTip": "Moleküler benzerlik periferik sinir immün yanıtını tetikleyebilir. Shigella dizanteri ve HUS ile ilişkilendirilebilir ancak GBS bağlantısı Campylobacter için daha tipiktir.",
+    "differentialNote": "Shigella dizanteri ve HUS ile ilişkilendirilebilir ancak GBS bağlantısı Campylobacter için daha tipiktir.",
+    "keywords": [
+      "Campylobacter",
+      "kanlı ishal",
+      "Guillain-Barre",
+      "az pişmiş tavuk"
+    ]
+  },
+  "tus-pearl-medical-microbiology-259-extra": {
+    "front": "Campylobacter jejuni için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Shigella dizanteri ve HUS ile ilişkilendirilebilir ancak GBS bağlantısı Campylobacter için daha tipiktir.",
+    "answer": "Shigella dizanteri ve HUS ile ilişkilendirilebilir ancak GBS bağlantısı Campylobacter için daha tipiktir.",
+    "explanation": "Moleküler benzerlik periferik sinir immün yanıtını tetikleyebilir. Shigella dizanteri ve HUS ile ilişkilendirilebilir ancak GBS bağlantısı Campylobacter için daha tipiktir.",
+    "tusTip": "Campylobacter jejuni kartında ayırıcı değer taşıyan nokta: Shigella dizanteri ve HUS ile ilişkilendirilebilir ancak GBS bağlantısı Campylobacter için daha tipiktir.",
+    "differentialNote": "Shigella dizanteri ve HUS ile ilişkilendirilebilir ancak GBS bağlantısı Campylobacter için daha tipiktir.",
+    "keywords": [
+      "Campylobacter",
+      "kanlı ishal",
+      "Guillain-Barre",
+      "az pişmiş tavuk"
+    ]
+  },
+  "tus-pearl-medical-microbiology-260-spot": {
+    "front": "Düşük inokulumla bulaşan, kanlı mukuslu ishal ve tenesmus yapan etkenlerden biri hangisidir?",
+    "back": "Shigella. Shigella kolonik mukozayı invaze eder ve inflamatuvar dizanteri tablosu oluşturur.",
+    "answer": "Shigella. Shigella kolonik mukozayı invaze eder ve inflamatuvar dizanteri tablosu oluşturur.",
+    "explanation": "Shigella kolonik mukozayı invaze eder ve inflamatuvar dizanteri tablosu oluşturur. ETEC invazyon yapmadan sulu gezgin ishali oluşturur.",
+    "tusTip": "Shigella kolonik mukozayı invaze eder ve inflamatuvar dizanteri tablosu oluşturur. ETEC invazyon yapmadan sulu gezgin ishali oluşturur.",
+    "differentialNote": "ETEC invazyon yapmadan sulu gezgin ishali oluşturur.",
+    "keywords": [
+      "Shigella",
+      "dizanteri",
+      "tenesmus",
+      "düşük inokulum"
+    ]
+  },
+  "tus-pearl-medical-microbiology-260-extra": {
+    "front": "Shigella dizanterisi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "ETEC invazyon yapmadan sulu gezgin ishali oluşturur.",
+    "answer": "ETEC invazyon yapmadan sulu gezgin ishali oluşturur.",
+    "explanation": "Shigella kolonik mukozayı invaze eder ve inflamatuvar dizanteri tablosu oluşturur. ETEC invazyon yapmadan sulu gezgin ishali oluşturur.",
+    "tusTip": "Shigella dizanterisi için sınavda hedeflenen ayrım genellikle şudur: ETEC invazyon yapmadan sulu gezgin ishali oluşturur.",
+    "differentialNote": "ETEC invazyon yapmadan sulu gezgin ishali oluşturur.",
+    "keywords": [
+      "Shigella",
+      "dizanteri",
+      "tenesmus",
+      "düşük inokulum"
+    ]
+  },
+  "tus-pearl-medical-microbiology-261-spot": {
+    "front": "Kanlı ishal ve HUS riski olan EHEC enfeksiyonunda antibiyotik kullanımından neden kaçınılır?",
+    "back": "Shiga toksin salınımını ve HUS riskini artırabileceği için.",
+    "answer": "Shiga toksin salınımını ve HUS riskini artırabileceği için.",
+    "explanation": "EHEC O157:H7 sorbitol fermente etmez ve shiga benzeri toksin üretir. Shigella dizanterisinde antibiyotik bazı durumlarda kullanılabilir; EHEC yaklaşımı ayrıdır.",
+    "tusTip": "EHEC O157:H7 sorbitol fermente etmez ve shiga benzeri toksin üretir. Shigella dizanterisinde antibiyotik bazı durumlarda kullanılabilir; EHEC yaklaşımı ayrıdır.",
+    "differentialNote": "Shigella dizanterisinde antibiyotik bazı durumlarda kullanılabilir; EHEC yaklaşımı ayrıdır.",
+    "keywords": [
+      "EHEC",
+      "HUS",
+      "shiga toksin",
+      "sorbitol negatif"
+    ]
+  },
+  "tus-pearl-medical-microbiology-261-extra": {
+    "front": "EHEC tedavi tuzağı için en kritik ayırıcı nokta nedir?",
+    "back": "Shigella dizanterisinde antibiyotik bazı durumlarda kullanılabilir; EHEC yaklaşımı ayrıdır.",
+    "answer": "Shigella dizanterisinde antibiyotik bazı durumlarda kullanılabilir; EHEC yaklaşımı ayrıdır.",
+    "explanation": "EHEC O157:H7 sorbitol fermente etmez ve shiga benzeri toksin üretir. Shigella dizanterisinde antibiyotik bazı durumlarda kullanılabilir; EHEC yaklaşımı ayrıdır.",
+    "tusTip": "EHEC tedavi tuzağı karıştırıldığında cevabı netleştiren karşılaştırma: Shigella dizanterisinde antibiyotik bazı durumlarda kullanılabilir; EHEC yaklaşımı ayrıdır.",
+    "differentialNote": "Shigella dizanterisinde antibiyotik bazı durumlarda kullanılabilir; EHEC yaklaşımı ayrıdır.",
+    "keywords": [
+      "EHEC",
+      "HUS",
+      "shiga toksin",
+      "sorbitol negatif"
+    ]
+  },
+  "tus-pearl-medical-microbiology-262-spot": {
+    "front": "Seyahat sonrası sulu ishal ve invazyon bulgusu olmaması en çok hangi E. coli tipini düşündürür?",
+    "back": "Enterotoksijenik E. coli. ETEC ısıya duyarlı ve ısıya dayanıklı toksinlerle sekretuvar ishal yapar.",
+    "answer": "Enterotoksijenik E. coli. ETEC ısıya duyarlı ve ısıya dayanıklı toksinlerle sekretuvar ishal yapar.",
+    "explanation": "ETEC ısıya duyarlı ve ısıya dayanıklı toksinlerle sekretuvar ishal yapar. EHEC kanlı ishal ve HUS riskiyle ayrılır.",
+    "tusTip": "ETEC ısıya duyarlı ve ısıya dayanıklı toksinlerle sekretuvar ishal yapar. EHEC kanlı ishal ve HUS riskiyle ayrılır.",
+    "differentialNote": "EHEC kanlı ishal ve HUS riskiyle ayrılır.",
+    "keywords": [
+      "ETEC",
+      "gezgin ishali",
+      "sulu dışkı",
+      "enterotoksin"
+    ]
+  },
+  "tus-pearl-medical-microbiology-262-extra": {
+    "front": "ETEC gezgin ishali karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "EHEC kanlı ishal ve HUS riskiyle ayrılır.",
+    "answer": "EHEC kanlı ishal ve HUS riskiyle ayrılır.",
+    "explanation": "ETEC ısıya duyarlı ve ısıya dayanıklı toksinlerle sekretuvar ishal yapar. EHEC kanlı ishal ve HUS riskiyle ayrılır.",
+    "tusTip": "ETEC gezgin ishali kartında ayırıcı değer taşıyan nokta: EHEC kanlı ishal ve HUS riskiyle ayrılır.",
+    "differentialNote": "EHEC kanlı ishal ve HUS riskiyle ayrılır.",
+    "keywords": [
+      "ETEC",
+      "gezgin ishali",
+      "sulu dışkı",
+      "enterotoksin"
+    ]
+  },
+  "tus-pearl-medical-microbiology-263-spot": {
+    "front": "Mide mukozasında yaşamı kolaylaştıran Helicobacter pylori enzimi hangisidir?",
+    "back": "Üreaz. Üreaz üreyi amonyağa çevirerek bakterinin çevresindeki asidi tamponlar.",
+    "answer": "Üreaz. Üreaz üreyi amonyağa çevirerek bakterinin çevresindeki asidi tamponlar.",
+    "explanation": "Üreaz üreyi amonyağa çevirerek bakterinin çevresindeki asidi tamponlar. Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
+    "tusTip": "Üreaz üreyi amonyağa çevirerek bakterinin çevresindeki asidi tamponlar. Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
+    "differentialNote": "Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
+    "keywords": [
+      "H. pylori",
+      "üreaz",
+      "peptik ülser",
+      "amonyak"
+    ]
+  },
+  "tus-pearl-medical-microbiology-263-extra": {
+    "front": "Helicobacter pylori üreaz başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
+    "answer": "Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
+    "explanation": "Üreaz üreyi amonyağa çevirerek bakterinin çevresindeki asidi tamponlar. Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
+    "tusTip": "Helicobacter pylori üreaz için sınavda hedeflenen ayrım genellikle şudur: Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
+    "differentialNote": "Katalaz pozitiflik tek başına H. pylori için seçici değildir.",
+    "keywords": [
+      "H. pylori",
+      "üreaz",
+      "peptik ülser",
+      "amonyak"
+    ]
+  },
+  "tus-pearl-medical-microbiology-264-spot": {
+    "front": "Pnömoniyle birlikte hiponatremi ve gastrointestinal yakınmalar hangi atipik etkeni düşündürür?",
+    "back": "Legionella pneumophila. Legionella su sistemlerinden aerosol yoluyla bulaşır ve idrar antijeniyle tanınabilir.",
+    "answer": "Legionella pneumophila. Legionella su sistemlerinden aerosol yoluyla bulaşır ve idrar antijeniyle tanınabilir.",
+    "explanation": "Legionella su sistemlerinden aerosol yoluyla bulaşır ve idrar antijeniyle tanınabilir. Mycoplasma pnömonisi soğuk aglutininlerle daha çok ilişkilidir.",
+    "tusTip": "Legionella su sistemlerinden aerosol yoluyla bulaşır ve idrar antijeniyle tanınabilir. Mycoplasma pnömonisi soğuk aglutininlerle daha çok ilişkilidir.",
+    "differentialNote": "Mycoplasma pnömonisi soğuk aglutininlerle daha çok ilişkilidir.",
+    "keywords": [
+      "Legionella",
+      "hiponatremi",
+      "idrar antijeni",
+      "atipik pnömoni"
+    ]
+  },
+  "tus-pearl-medical-microbiology-264-extra": {
+    "front": "Legionella idrar antijeni sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Mycoplasma pnömonisi soğuk aglutininlerle daha çok ilişkilidir.",
+    "answer": "Mycoplasma pnömonisi soğuk aglutininlerle daha çok ilişkilidir.",
+    "explanation": "Legionella su sistemlerinden aerosol yoluyla bulaşır ve idrar antijeniyle tanınabilir. Mycoplasma pnömonisi soğuk aglutininlerle daha çok ilişkilidir.",
+    "tusTip": "Legionella idrar antijeni karıştırıldığında cevabı netleştiren karşılaştırma: Mycoplasma pnömonisi soğuk aglutininlerle daha çok ilişkilidir.",
+    "differentialNote": "Mycoplasma pnömonisi soğuk aglutininlerle daha çok ilişkilidir.",
+    "keywords": [
+      "Legionella",
+      "hiponatremi",
+      "idrar antijeni",
+      "atipik pnömoni"
+    ]
+  },
+  "tus-pearl-medical-microbiology-265-spot": {
+    "front": "Okul çağında atipik pnömoni ve soğuk aglutinin pozitifliği hangi etkeni düşündürür?",
+    "back": "Mycoplasma pneumoniae. Hücre duvarı olmadığı için beta-laktamlara doğal dirençlidir.",
+    "answer": "Mycoplasma pneumoniae. Hücre duvarı olmadığı için beta-laktamlara doğal dirençlidir.",
+    "explanation": "Hücre duvarı olmadığı için beta-laktamlara doğal dirençlidir. Legionella hiponatremi ve su kaynağı maruziyetiyle daha çok sorulur.",
+    "tusTip": "Hücre duvarı olmadığı için beta-laktamlara doğal dirençlidir. Legionella hiponatremi ve su kaynağı maruziyetiyle daha çok sorulur.",
+    "differentialNote": "Legionella hiponatremi ve su kaynağı maruziyetiyle daha çok sorulur.",
+    "keywords": [
+      "Mycoplasma",
+      "soğuk aglutinin",
+      "atipik pnömoni",
+      "hücre duvarı yok"
+    ]
+  },
+  "tus-pearl-medical-microbiology-265-extra": {
+    "front": "Mycoplasma pneumoniae için en kritik ayırıcı nokta nedir?",
+    "back": "Legionella hiponatremi ve su kaynağı maruziyetiyle daha çok sorulur.",
+    "answer": "Legionella hiponatremi ve su kaynağı maruziyetiyle daha çok sorulur.",
+    "explanation": "Hücre duvarı olmadığı için beta-laktamlara doğal dirençlidir. Legionella hiponatremi ve su kaynağı maruziyetiyle daha çok sorulur.",
+    "tusTip": "Mycoplasma pneumoniae kartında ayırıcı değer taşıyan nokta: Legionella hiponatremi ve su kaynağı maruziyetiyle daha çok sorulur.",
+    "differentialNote": "Legionella hiponatremi ve su kaynağı maruziyetiyle daha çok sorulur.",
+    "keywords": [
+      "Mycoplasma",
+      "soğuk aglutinin",
+      "atipik pnömoni",
+      "hücre duvarı yok"
+    ]
+  },
+  "tus-pearl-medical-microbiology-266-spot": {
+    "front": "Afebril yenidoğan pnömonisi ve konjonktivit birlikteliği hangi etkeni düşündürür?",
+    "back": "Chlamydia trachomatis. Doğum kanalından bulaşabilir; bilateral konjonktivit ve pnömoni yapabilir.",
+    "answer": "Chlamydia trachomatis. Doğum kanalından bulaşabilir; bilateral konjonktivit ve pnömoni yapabilir.",
+    "explanation": "Doğum kanalından bulaşabilir; bilateral konjonktivit ve pnömoni yapabilir. Grup B streptokok erken başlangıçlı sepsis ve ağır sistemik tabloyla daha çok ilişkilidir.",
+    "tusTip": "Doğum kanalından bulaşabilir; bilateral konjonktivit ve pnömoni yapabilir. Grup B streptokok erken başlangıçlı sepsis ve ağır sistemik tabloyla daha çok ilişkilidir.",
+    "differentialNote": "Grup B streptokok erken başlangıçlı sepsis ve ağır sistemik tabloyla daha çok ilişkilidir.",
+    "keywords": [
+      "yenidoğan pnömonisi",
+      "konjonktivit",
+      "Chlamydia trachomatis",
+      "afebril"
+    ]
+  },
+  "tus-pearl-medical-microbiology-266-extra": {
+    "front": "Chlamydia trachomatis yenidoğan pnömonisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Grup B streptokok erken başlangıçlı sepsis ve ağır sistemik tabloyla daha çok ilişkilidir.",
+    "answer": "Grup B streptokok erken başlangıçlı sepsis ve ağır sistemik tabloyla daha çok ilişkilidir.",
+    "explanation": "Doğum kanalından bulaşabilir; bilateral konjonktivit ve pnömoni yapabilir. Grup B streptokok erken başlangıçlı sepsis ve ağır sistemik tabloyla daha çok ilişkilidir.",
+    "tusTip": "Chlamydia trachomatis yenidoğan pnömonisi için sınavda hedeflenen ayrım genellikle şudur: Grup B streptokok erken başlangıçlı sepsis ve ağır sistemik tabloyla daha çok ilişkilidir.",
+    "differentialNote": "Grup B streptokok erken başlangıçlı sepsis ve ağır sistemik tabloyla daha çok ilişkilidir.",
+    "keywords": [
+      "yenidoğan pnömonisi",
+      "konjonktivit",
+      "Chlamydia trachomatis",
+      "afebril"
+    ]
+  },
+  "tus-pearl-medical-microbiology-267-spot": {
+    "front": "Meningokok menenjitiyle yakın temas eden sağlık çalışanında tek doz oral profilaksi seçeneklerinden biri hangisidir?",
+    "back": "Siprofloksasin. Neisseria meningitidis damlacıkla bulaşır; yakın temaslılarda kemoprofilaksi gerekir.",
+    "answer": "Siprofloksasin. Neisseria meningitidis damlacıkla bulaşır; yakın temaslılarda kemoprofilaksi gerekir.",
+    "explanation": "Neisseria meningitidis damlacıkla bulaşır; yakın temaslılarda kemoprofilaksi gerekir. Pnömokok menenjit temaslılarında rutin kemoprofilaksi uygulanmaz.",
+    "tusTip": "Neisseria meningitidis damlacıkla bulaşır; yakın temaslılarda kemoprofilaksi gerekir. Pnömokok menenjit temaslılarında rutin kemoprofilaksi uygulanmaz.",
+    "differentialNote": "Pnömokok menenjit temaslılarında rutin kemoprofilaksi uygulanmaz.",
+    "keywords": [
+      "meningokok",
+      "yakın temas",
+      "siprofloksasin",
+      "profilaksi"
+    ]
+  },
+  "tus-pearl-medical-microbiology-267-extra": {
+    "front": "Meningokok temas profilaksisi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Pnömokok menenjit temaslılarında rutin kemoprofilaksi uygulanmaz.",
+    "answer": "Pnömokok menenjit temaslılarında rutin kemoprofilaksi uygulanmaz.",
+    "explanation": "Neisseria meningitidis damlacıkla bulaşır; yakın temaslılarda kemoprofilaksi gerekir. Pnömokok menenjit temaslılarında rutin kemoprofilaksi uygulanmaz.",
+    "tusTip": "Meningokok temas profilaksisi karıştırıldığında cevabı netleştiren karşılaştırma: Pnömokok menenjit temaslılarında rutin kemoprofilaksi uygulanmaz.",
+    "differentialNote": "Pnömokok menenjit temaslılarında rutin kemoprofilaksi uygulanmaz.",
+    "keywords": [
+      "meningokok",
+      "yakın temas",
+      "siprofloksasin",
+      "profilaksi"
+    ]
+  },
+  "tus-pearl-medical-microbiology-268-spot": {
+    "front": "Nötropenik hastada siyah nekrotik merkezli cilt lezyonları hangi etkeni düşündürür?",
+    "back": "Pseudomonas aeruginosa. Ecthyma gangrenosum Pseudomonas bakteriyemisiyle ilişkili nekrotik vasküler deri lezyonudur.",
+    "answer": "Pseudomonas aeruginosa. Ecthyma gangrenosum Pseudomonas bakteriyemisiyle ilişkili nekrotik vasküler deri lezyonudur.",
+    "explanation": "Ecthyma gangrenosum Pseudomonas bakteriyemisiyle ilişkili nekrotik vasküler deri lezyonudur. Staphylococcus aureus abse yapabilir ancak ecthyma gangrenosum için klasik değildir.",
+    "tusTip": "Ecthyma gangrenosum Pseudomonas bakteriyemisiyle ilişkili nekrotik vasküler deri lezyonudur. Staphylococcus aureus abse yapabilir ancak ecthyma gangrenosum için klasik değildir.",
+    "differentialNote": "Staphylococcus aureus abse yapabilir ancak ecthyma gangrenosum için klasik değildir.",
+    "keywords": [
+      "nötropeni",
+      "ecthyma gangrenosum",
+      "Pseudomonas",
+      "nekrotik lezyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-268-extra": {
+    "front": "Pseudomonas ecthyma gangrenosum için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Staphylococcus aureus abse yapabilir ancak ecthyma gangrenosum için klasik değildir.",
+    "answer": "Staphylococcus aureus abse yapabilir ancak ecthyma gangrenosum için klasik değildir.",
+    "explanation": "Ecthyma gangrenosum Pseudomonas bakteriyemisiyle ilişkili nekrotik vasküler deri lezyonudur. Staphylococcus aureus abse yapabilir ancak ecthyma gangrenosum için klasik değildir.",
+    "tusTip": "Pseudomonas ecthyma gangrenosum kartında ayırıcı değer taşıyan nokta: Staphylococcus aureus abse yapabilir ancak ecthyma gangrenosum için klasik değildir.",
+    "differentialNote": "Staphylococcus aureus abse yapabilir ancak ecthyma gangrenosum için klasik değildir.",
+    "keywords": [
+      "nötropeni",
+      "ecthyma gangrenosum",
+      "Pseudomonas",
+      "nekrotik lezyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-269-spot": {
+    "front": "Doku invazyonu yapan septalı, dar açılı dallanan hifler hangi mantarı düşündürür?",
+    "back": "Aspergillus. Aspergillus özellikle nötropenik hastada damar invazyonu ve pulmoner nodüller yapabilir.",
+    "answer": "Aspergillus. Aspergillus özellikle nötropenik hastada damar invazyonu ve pulmoner nodüller yapabilir.",
+    "explanation": "Aspergillus özellikle nötropenik hastada damar invazyonu ve pulmoner nodüller yapabilir. Mucor geniş, septasız ve dik açıya yakın dallanan hiflerle ayrılır.",
+    "tusTip": "Aspergillus özellikle nötropenik hastada damar invazyonu ve pulmoner nodüller yapabilir. Mucor geniş, septasız ve dik açıya yakın dallanan hiflerle ayrılır.",
+    "differentialNote": "Mucor geniş, septasız ve dik açıya yakın dallanan hiflerle ayrılır.",
+    "keywords": [
+      "Aspergillus",
+      "septalı hif",
+      "dar açılı dallanma",
+      "nötropeni"
+    ]
+  },
+  "tus-pearl-medical-microbiology-269-extra": {
+    "front": "Aspergillus hifleri için en kritik ayırıcı nokta nedir?",
+    "back": "Mucor geniş, septasız ve dik açıya yakın dallanan hiflerle ayrılır.",
+    "answer": "Mucor geniş, septasız ve dik açıya yakın dallanan hiflerle ayrılır.",
+    "explanation": "Aspergillus özellikle nötropenik hastada damar invazyonu ve pulmoner nodüller yapabilir. Mucor geniş, septasız ve dik açıya yakın dallanan hiflerle ayrılır.",
+    "tusTip": "Aspergillus hifleri için sınavda hedeflenen ayrım genellikle şudur: Mucor geniş, septasız ve dik açıya yakın dallanan hiflerle ayrılır.",
+    "differentialNote": "Mucor geniş, septasız ve dik açıya yakın dallanan hiflerle ayrılır.",
+    "keywords": [
+      "Aspergillus",
+      "septalı hif",
+      "dar açılı dallanma",
+      "nötropeni"
+    ]
+  },
+  "tus-pearl-medical-microbiology-270-spot": {
+    "front": "Diyabetik ketoasidozlu hastada rinoserebral enfeksiyon yapan geniş septasız hifli mantar hangisidir?",
+    "back": "Mucorales türleri. Mukormikoz damar invazyonu ve nekroz yapar; DKA önemli risk faktörüdür.",
+    "answer": "Mucorales türleri. Mukormikoz damar invazyonu ve nekroz yapar; DKA önemli risk faktörüdür.",
+    "explanation": "Mukormikoz damar invazyonu ve nekroz yapar; DKA önemli risk faktörüdür. Aspergillus dar açılı septalı hiflerle ayırt edilir.",
+    "tusTip": "Mukormikoz damar invazyonu ve nekroz yapar; DKA önemli risk faktörüdür. Aspergillus dar açılı septalı hiflerle ayırt edilir.",
+    "differentialNote": "Aspergillus dar açılı septalı hiflerle ayırt edilir.",
+    "keywords": [
+      "mukormikoz",
+      "DKA",
+      "rinoserebral",
+      "geniş septasız hif"
+    ]
+  },
+  "tus-pearl-medical-microbiology-270-extra": {
+    "front": "Mukormikoz karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Aspergillus dar açılı septalı hiflerle ayırt edilir.",
+    "answer": "Aspergillus dar açılı septalı hiflerle ayırt edilir.",
+    "explanation": "Mukormikoz damar invazyonu ve nekroz yapar; DKA önemli risk faktörüdür. Aspergillus dar açılı septalı hiflerle ayırt edilir.",
+    "tusTip": "Mukormikoz karıştırıldığında cevabı netleştiren karşılaştırma: Aspergillus dar açılı septalı hiflerle ayırt edilir.",
+    "differentialNote": "Aspergillus dar açılı septalı hiflerle ayırt edilir.",
+    "keywords": [
+      "mukormikoz",
+      "DKA",
+      "rinoserebral",
+      "geniş septasız hif"
+    ]
+  },
+  "tus-pearl-medical-microbiology-271-spot": {
+    "front": "Germ tüp testi pozitifliği en çok hangi Candida türünü destekler?",
+    "back": "Candida albicans. Candida albicans serumda germ tüp oluşturabilir ve mukokutanöz enfeksiyonlarda sık görülür.",
+    "answer": "Candida albicans. Candida albicans serumda germ tüp oluşturabilir ve mukokutanöz enfeksiyonlarda sık görülür.",
+    "explanation": "Candida albicans serumda germ tüp oluşturabilir ve mukokutanöz enfeksiyonlarda sık görülür. Cryptococcus kapsüllü maya olup çini mürekkebiyle gösterilebilir.",
+    "tusTip": "Candida albicans serumda germ tüp oluşturabilir ve mukokutanöz enfeksiyonlarda sık görülür. Cryptococcus kapsüllü maya olup çini mürekkebiyle gösterilebilir.",
+    "differentialNote": "Cryptococcus kapsüllü maya olup çini mürekkebiyle gösterilebilir.",
+    "keywords": [
+      "Candida albicans",
+      "germ tüp",
+      "psödohif",
+      "mukokutanöz kandidiyaz"
+    ]
+  },
+  "tus-pearl-medical-microbiology-271-extra": {
+    "front": "Candida germ tüp testi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Cryptococcus kapsüllü maya olup çini mürekkebiyle gösterilebilir.",
+    "answer": "Cryptococcus kapsüllü maya olup çini mürekkebiyle gösterilebilir.",
+    "explanation": "Candida albicans serumda germ tüp oluşturabilir ve mukokutanöz enfeksiyonlarda sık görülür. Cryptococcus kapsüllü maya olup çini mürekkebiyle gösterilebilir.",
+    "tusTip": "Candida germ tüp testi kartında ayırıcı değer taşıyan nokta: Cryptococcus kapsüllü maya olup çini mürekkebiyle gösterilebilir.",
+    "differentialNote": "Cryptococcus kapsüllü maya olup çini mürekkebiyle gösterilebilir.",
+    "keywords": [
+      "Candida albicans",
+      "germ tüp",
+      "psödohif",
+      "mukokutanöz kandidiyaz"
+    ]
+  },
+  "tus-pearl-medical-microbiology-272-spot": {
+    "front": "AIDS hastasında menenjit ve kapsüllü maya görünümü hangi etkeni düşündürür?",
+    "back": "Cryptococcus neoformans. Kalın polisakkarit kapsül çini mürekkebi veya kriptokok antijeniyle saptanabilir.",
+    "answer": "Cryptococcus neoformans. Kalın polisakkarit kapsül çini mürekkebi veya kriptokok antijeniyle saptanabilir.",
+    "explanation": "Kalın polisakkarit kapsül çini mürekkebi veya kriptokok antijeniyle saptanabilir. Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
+    "tusTip": "Kalın polisakkarit kapsül çini mürekkebi veya kriptokok antijeniyle saptanabilir. Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
+    "differentialNote": "Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
+    "keywords": [
+      "Cryptococcus",
+      "kapsül",
+      "AIDS",
+      "menenjit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-272-extra": {
+    "front": "Cryptococcus neoformans başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
+    "answer": "Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
+    "explanation": "Kalın polisakkarit kapsül çini mürekkebi veya kriptokok antijeniyle saptanabilir. Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
+    "tusTip": "Cryptococcus neoformans için sınavda hedeflenen ayrım genellikle şudur: Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
+    "differentialNote": "Candida kan dolaşımı ve mukozal enfeksiyonlarda daha sık karşımıza çıkar.",
+    "keywords": [
+      "Cryptococcus",
+      "kapsül",
+      "AIDS",
+      "menenjit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-273-spot": {
+    "front": "HIV hastasında hipoksemi ve bilateral interstisyel pnömonide ilk tedavi seçeneklerinden biri hangisidir?",
+    "back": "Trimetoprim-sulfametoksazol. Pneumocystis pnömonisi CD4 düşüklüğünde gelişir; TMP-SMX hem tedavi hem profilakside kullanılır.",
+    "answer": "Trimetoprim-sulfametoksazol. Pneumocystis pnömonisi CD4 düşüklüğünde gelişir; TMP-SMX hem tedavi hem profilakside kullanılır.",
+    "explanation": "Pneumocystis pnömonisi CD4 düşüklüğünde gelişir; TMP-SMX hem tedavi hem profilakside kullanılır. Bakteriyel pnömonide lober konsolidasyon ve nötrofilik balgam daha belirgin olabilir.",
+    "tusTip": "Pneumocystis pnömonisi CD4 düşüklüğünde gelişir; TMP-SMX hem tedavi hem profilakside kullanılır. Bakteriyel pnömonide lober konsolidasyon ve nötrofilik balgam daha belirgin olabilir.",
+    "differentialNote": "Bakteriyel pnömonide lober konsolidasyon ve nötrofilik balgam daha belirgin olabilir.",
+    "keywords": [
+      "Pneumocystis",
+      "HIV",
+      "bilateral interstisyel pnömoni",
+      "TMP-SMX"
+    ]
+  },
+  "tus-pearl-medical-microbiology-273-extra": {
+    "front": "Pneumocystis jirovecii için en kritik ayırıcı nokta nedir?",
+    "back": "Bakteriyel pnömonide lober konsolidasyon ve nötrofilik balgam daha belirgin olabilir.",
+    "answer": "Bakteriyel pnömonide lober konsolidasyon ve nötrofilik balgam daha belirgin olabilir.",
+    "explanation": "Pneumocystis pnömonisi CD4 düşüklüğünde gelişir; TMP-SMX hem tedavi hem profilakside kullanılır. Bakteriyel pnömonide lober konsolidasyon ve nötrofilik balgam daha belirgin olabilir.",
+    "tusTip": "Pneumocystis jirovecii karıştırıldığında cevabı netleştiren karşılaştırma: Bakteriyel pnömonide lober konsolidasyon ve nötrofilik balgam daha belirgin olabilir.",
+    "differentialNote": "Bakteriyel pnömonide lober konsolidasyon ve nötrofilik balgam daha belirgin olabilir.",
+    "keywords": [
+      "Pneumocystis",
+      "HIV",
+      "bilateral interstisyel pnömoni",
+      "TMP-SMX"
+    ]
+  },
+  "tus-pearl-medical-microbiology-274-spot": {
+    "front": "AIDS hastasında halka şeklinde kontrastlanan beyin lezyonları hangi enfeksiyonu düşündürür?",
+    "back": "Toxoplasma gondii ensefaliti. Toxoplasma latent enfeksiyonun reaktivasyonu ile çoklu beyin lezyonları yapabilir.",
+    "answer": "Toxoplasma gondii ensefaliti. Toxoplasma latent enfeksiyonun reaktivasyonu ile çoklu beyin lezyonları yapabilir.",
+    "explanation": "Toxoplasma latent enfeksiyonun reaktivasyonu ile çoklu beyin lezyonları yapabilir. Primer santral sinir sistemi lenfoması genellikle EBV ile ilişkili tek kitle şeklinde olabilir.",
+    "tusTip": "Toxoplasma latent enfeksiyonun reaktivasyonu ile çoklu beyin lezyonları yapabilir. Primer santral sinir sistemi lenfoması genellikle EBV ile ilişkili tek kitle şeklinde olabilir.",
+    "differentialNote": "Primer santral sinir sistemi lenfoması genellikle EBV ile ilişkili tek kitle şeklinde olabilir.",
+    "keywords": [
+      "Toxoplasma",
+      "AIDS",
+      "ring lezyon",
+      "ensefalit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-274-extra": {
+    "front": "Toxoplasma ensefaliti karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Primer santral sinir sistemi lenfoması genellikle EBV ile ilişkili tek kitle şeklinde olabilir.",
+    "answer": "Primer santral sinir sistemi lenfoması genellikle EBV ile ilişkili tek kitle şeklinde olabilir.",
+    "explanation": "Toxoplasma latent enfeksiyonun reaktivasyonu ile çoklu beyin lezyonları yapabilir. Primer santral sinir sistemi lenfoması genellikle EBV ile ilişkili tek kitle şeklinde olabilir.",
+    "tusTip": "Toxoplasma ensefaliti kartında ayırıcı değer taşıyan nokta: Primer santral sinir sistemi lenfoması genellikle EBV ile ilişkili tek kitle şeklinde olabilir.",
+    "differentialNote": "Primer santral sinir sistemi lenfoması genellikle EBV ile ilişkili tek kitle şeklinde olabilir.",
+    "keywords": [
+      "Toxoplasma",
+      "AIDS",
+      "ring lezyon",
+      "ensefalit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-275-spot": {
+    "front": "Kötü kokulu yağlı ishal ve kamp suyu öyküsü hangi protozoonu düşündürür?",
+    "back": "Giardia lamblia. Giardia duodenuma tutunarak malabsorpsiyon ve steatore yapabilir.",
+    "answer": "Giardia lamblia. Giardia duodenuma tutunarak malabsorpsiyon ve steatore yapabilir.",
+    "explanation": "Giardia duodenuma tutunarak malabsorpsiyon ve steatore yapabilir. Entamoeba histolytica kanlı ishal ve karaciğer absesiyle daha çok ilişkilidir.",
+    "tusTip": "Giardia duodenuma tutunarak malabsorpsiyon ve steatore yapabilir. Entamoeba histolytica kanlı ishal ve karaciğer absesiyle daha çok ilişkilidir.",
+    "differentialNote": "Entamoeba histolytica kanlı ishal ve karaciğer absesiyle daha çok ilişkilidir.",
+    "keywords": [
+      "Giardia",
+      "yağlı ishal",
+      "kamp suyu",
+      "malabsorpsiyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-275-extra": {
+    "front": "Giardia lamblia başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Entamoeba histolytica kanlı ishal ve karaciğer absesiyle daha çok ilişkilidir.",
+    "answer": "Entamoeba histolytica kanlı ishal ve karaciğer absesiyle daha çok ilişkilidir.",
+    "explanation": "Giardia duodenuma tutunarak malabsorpsiyon ve steatore yapabilir. Entamoeba histolytica kanlı ishal ve karaciğer absesiyle daha çok ilişkilidir.",
+    "tusTip": "Giardia lamblia için sınavda hedeflenen ayrım genellikle şudur: Entamoeba histolytica kanlı ishal ve karaciğer absesiyle daha çok ilişkilidir.",
+    "differentialNote": "Entamoeba histolytica kanlı ishal ve karaciğer absesiyle daha çok ilişkilidir.",
+    "keywords": [
+      "Giardia",
+      "yağlı ishal",
+      "kamp suyu",
+      "malabsorpsiyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-276-spot": {
+    "front": "Amipli dizanteri sonrası sağ üst kadran ağrısı ve karaciğer absesi hangi etkeni düşündürür?",
+    "back": "Entamoeba histolytica. Portal dolaşımla karaciğere ulaşarak nekrotik abse oluşturabilir.",
+    "answer": "Entamoeba histolytica. Portal dolaşımla karaciğere ulaşarak nekrotik abse oluşturabilir.",
+    "explanation": "Portal dolaşımla karaciğere ulaşarak nekrotik abse oluşturabilir. Giardia karaciğer absesi değil yağlı ishal yapar.",
+    "tusTip": "Portal dolaşımla karaciğere ulaşarak nekrotik abse oluşturabilir. Giardia karaciğer absesi değil yağlı ishal yapar.",
+    "differentialNote": "Giardia karaciğer absesi değil yağlı ishal yapar.",
+    "keywords": [
+      "Entamoeba",
+      "karaciğer absesi",
+      "kanlı ishal",
+      "trofozoit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-276-extra": {
+    "front": "Entamoeba histolytica karaciğer absesi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Giardia karaciğer absesi değil yağlı ishal yapar.",
+    "answer": "Giardia karaciğer absesi değil yağlı ishal yapar.",
+    "explanation": "Portal dolaşımla karaciğere ulaşarak nekrotik abse oluşturabilir. Giardia karaciğer absesi değil yağlı ishal yapar.",
+    "tusTip": "Entamoeba histolytica karaciğer absesi karıştırıldığında cevabı netleştiren karşılaştırma: Giardia karaciğer absesi değil yağlı ishal yapar.",
+    "differentialNote": "Giardia karaciğer absesi değil yağlı ishal yapar.",
+    "keywords": [
+      "Entamoeba",
+      "karaciğer absesi",
+      "kanlı ishal",
+      "trofozoit"
+    ]
+  },
+  "tus-pearl-medical-microbiology-277-spot": {
+    "front": "Köpek teması ve karaciğerde kist hidatik lezyonu hangi paraziti düşündürür?",
+    "back": "Echinococcus granulosus. İnsan ara konaktır; hidatik kist rüptüründe anafilaksi gelişebilir.",
+    "answer": "Echinococcus granulosus. İnsan ara konaktır; hidatik kist rüptüründe anafilaksi gelişebilir.",
+    "explanation": "İnsan ara konaktır; hidatik kist rüptüründe anafilaksi gelişebilir. Taenia saginata erişkin barsak paraziti yapar; kist hidatik paterni farklıdır.",
+    "tusTip": "İnsan ara konaktır; hidatik kist rüptüründe anafilaksi gelişebilir. Taenia saginata erişkin barsak paraziti yapar; kist hidatik paterni farklıdır.",
+    "differentialNote": "Taenia saginata erişkin barsak paraziti yapar; kist hidatik paterni farklıdır.",
+    "keywords": [
+      "Echinococcus",
+      "hidatik kist",
+      "köpek",
+      "karaciğer"
+    ]
+  },
+  "tus-pearl-medical-microbiology-277-extra": {
+    "front": "Echinococcus granulosus için en kritik ayırıcı nokta nedir?",
+    "back": "Taenia saginata erişkin barsak paraziti yapar; kist hidatik paterni farklıdır.",
+    "answer": "Taenia saginata erişkin barsak paraziti yapar; kist hidatik paterni farklıdır.",
+    "explanation": "İnsan ara konaktır; hidatik kist rüptüründe anafilaksi gelişebilir. Taenia saginata erişkin barsak paraziti yapar; kist hidatik paterni farklıdır.",
+    "tusTip": "Echinococcus granulosus kartında ayırıcı değer taşıyan nokta: Taenia saginata erişkin barsak paraziti yapar; kist hidatik paterni farklıdır.",
+    "differentialNote": "Taenia saginata erişkin barsak paraziti yapar; kist hidatik paterni farklıdır.",
+    "keywords": [
+      "Echinococcus",
+      "hidatik kist",
+      "köpek",
+      "karaciğer"
+    ]
+  },
+  "tus-pearl-medical-microbiology-278-spot": {
+    "front": "Doğuma yakın dönemde annede suçiçeği döküntüsü gelişirse yenidoğana ne verilmelidir?",
+    "back": "Varicella-zoster immünoglobulini. Doğum çevresindeki maternal varisella yenidoğanda ağır enfeksiyon riski taşır.",
+    "answer": "Varicella-zoster immünoglobulini. Doğum çevresindeki maternal varisella yenidoğanda ağır enfeksiyon riski taşır.",
+    "explanation": "Doğum çevresindeki maternal varisella yenidoğanda ağır enfeksiyon riski taşır. Canlı suçiçeği aşısı yenidoğanda ilk yaklaşım değildir.",
+    "tusTip": "Doğum çevresindeki maternal varisella yenidoğanda ağır enfeksiyon riski taşır. Canlı suçiçeği aşısı yenidoğanda ilk yaklaşım değildir.",
+    "differentialNote": "Canlı suçiçeği aşısı yenidoğanda ilk yaklaşım değildir.",
+    "keywords": [
+      "varisella",
+      "yenidoğan",
+      "VZIG",
+      "peripartum enfeksiyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-278-extra": {
+    "front": "Varicella neonatal profilaksi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Canlı suçiçeği aşısı yenidoğanda ilk yaklaşım değildir.",
+    "answer": "Canlı suçiçeği aşısı yenidoğanda ilk yaklaşım değildir.",
+    "explanation": "Doğum çevresindeki maternal varisella yenidoğanda ağır enfeksiyon riski taşır. Canlı suçiçeği aşısı yenidoğanda ilk yaklaşım değildir.",
+    "tusTip": "Varicella neonatal profilaksi için sınavda hedeflenen ayrım genellikle şudur: Canlı suçiçeği aşısı yenidoğanda ilk yaklaşım değildir.",
+    "differentialNote": "Canlı suçiçeği aşısı yenidoğanda ilk yaklaşım değildir.",
+    "keywords": [
+      "varisella",
+      "yenidoğan",
+      "VZIG",
+      "peripartum enfeksiyon"
+    ]
+  },
+  "tus-pearl-medical-microbiology-279-spot": {
+    "front": "Orak hücreli hastada ani ağır anemi ve retikülosit düşüklüğü hangi virüsü düşündürür?",
+    "back": "Parvovirus B19. Parvovirus eritroid prekürsörleri enfekte ederek geçici aplastik kriz yapabilir.",
+    "answer": "Parvovirus B19. Parvovirus eritroid prekürsörleri enfekte ederek geçici aplastik kriz yapabilir.",
+    "explanation": "Parvovirus eritroid prekürsörleri enfekte ederek geçici aplastik kriz yapabilir. Hemolitik krizlerde retikülosit artışı beklenir.",
+    "tusTip": "Parvovirus eritroid prekürsörleri enfekte ederek geçici aplastik kriz yapabilir. Hemolitik krizlerde retikülosit artışı beklenir.",
+    "differentialNote": "Hemolitik krizlerde retikülosit artışı beklenir.",
+    "keywords": [
+      "Parvovirus B19",
+      "aplastik kriz",
+      "retikülosit düşüklüğü",
+      "orak hücre"
+    ]
+  },
+  "tus-pearl-medical-microbiology-279-extra": {
+    "front": "Parvovirus B19 aplastik kriz sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Hemolitik krizlerde retikülosit artışı beklenir. Parvovirus eritroid prekürsörleri enfekte ederek geçici aplastik kriz yapabilir.",
+    "answer": "Hemolitik krizlerde retikülosit artışı beklenir. Parvovirus eritroid prekürsörleri enfekte ederek geçici aplastik kriz yapabilir.",
+    "explanation": "Parvovirus eritroid prekürsörleri enfekte ederek geçici aplastik kriz yapabilir. Hemolitik krizlerde retikülosit artışı beklenir.",
+    "tusTip": "Parvovirus B19 aplastik kriz karıştırıldığında cevabı netleştiren karşılaştırma: Hemolitik krizlerde retikülosit artışı beklenir.",
+    "differentialNote": "Hemolitik krizlerde retikülosit artışı beklenir.",
+    "keywords": [
+      "Parvovirus B19",
+      "aplastik kriz",
+      "retikülosit düşüklüğü",
+      "orak hücre"
+    ]
+  },
+  "tus-pearl-medical-microbiology-280-spot": {
+    "front": "Süt çocuklarında bronşiolitin en sık viral etkeni hangisidir?",
+    "back": "Respiratuvar sinsityal virüs. RSV küçük hava yollarında inflamasyon ve mukus tıkaçlarıyla hışıltı ve takipne yapar.",
+    "answer": "Respiratuvar sinsityal virüs. RSV küçük hava yollarında inflamasyon ve mukus tıkaçlarıyla hışıltı ve takipne yapar.",
+    "explanation": "RSV küçük hava yollarında inflamasyon ve mukus tıkaçlarıyla hışıltı ve takipne yapar. Parainfluenza virüs daha çok krup tablosuyla ilişkilidir.",
+    "tusTip": "RSV küçük hava yollarında inflamasyon ve mukus tıkaçlarıyla hışıltı ve takipne yapar. Parainfluenza virüs daha çok krup tablosuyla ilişkilidir.",
+    "differentialNote": "Parainfluenza virüs daha çok krup tablosuyla ilişkilidir.",
+    "keywords": [
+      "RSV",
+      "bronşiolit",
+      "süt çocuğu",
+      "hışıltı"
+    ]
+  },
+  "tus-pearl-medical-microbiology-280-extra": {
+    "front": "RSV bronşioliti için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Parainfluenza virüs daha çok krup tablosuyla ilişkilidir.",
+    "answer": "Parainfluenza virüs daha çok krup tablosuyla ilişkilidir.",
+    "explanation": "RSV küçük hava yollarında inflamasyon ve mukus tıkaçlarıyla hışıltı ve takipne yapar. Parainfluenza virüs daha çok krup tablosuyla ilişkilidir.",
+    "tusTip": "RSV bronşioliti kartında ayırıcı değer taşıyan nokta: Parainfluenza virüs daha çok krup tablosuyla ilişkilidir.",
+    "differentialNote": "Parainfluenza virüs daha çok krup tablosuyla ilişkilidir.",
+    "keywords": [
+      "RSV",
+      "bronşiolit",
+      "süt çocuğu",
+      "hışıltı"
+    ]
+  },
+  "tus-pearl-medical-microbiology-281-spot": {
+    "front": "Kemirgen dışkısı teması sonrası ateş ve hızla gelişen pulmoner ödem hangi virüsü düşündürür?",
+    "back": "Hantavirus. Hantavirus kapiller kaçak ve ağır pulmoner sendroma neden olabilir.",
+    "answer": "Hantavirus. Hantavirus kapiller kaçak ve ağır pulmoner sendroma neden olabilir.",
+    "explanation": "Hantavirus kapiller kaçak ve ağır pulmoner sendroma neden olabilir. Leptospiroz da hayvan idrarıyla bulaşabilir ancak konjonktival suffüzyon ve böbrek-karaciğer tutulumu daha tipiktir.",
+    "tusTip": "Hantavirus kapiller kaçak ve ağır pulmoner sendroma neden olabilir. Leptospiroz da hayvan idrarıyla bulaşabilir ancak konjonktival suffüzyon ve böbrek-karaciğer tutulumu daha tipiktir.",
+    "differentialNote": "Leptospiroz da hayvan idrarıyla bulaşabilir ancak konjonktival suffüzyon ve böbrek-karaciğer tutulumu daha tipiktir.",
+    "keywords": [
+      "Hantavirus",
+      "kemirgen teması",
+      "pulmoner ödem",
+      "kapiller kaçak"
+    ]
+  },
+  "tus-pearl-medical-microbiology-281-extra": {
+    "front": "Hantavirus pulmoner sendrom için en kritik ayırıcı nokta nedir?",
+    "back": "Leptospiroz da hayvan idrarıyla bulaşabilir ancak konjonktival suffüzyon ve böbrek-karaciğer tutulumu daha tipiktir.",
+    "answer": "Leptospiroz da hayvan idrarıyla bulaşabilir ancak konjonktival suffüzyon ve böbrek-karaciğer tutulumu daha tipiktir.",
+    "explanation": "Hantavirus kapiller kaçak ve ağır pulmoner sendroma neden olabilir. Leptospiroz da hayvan idrarıyla bulaşabilir ancak konjonktival suffüzyon ve böbrek-karaciğer tutulumu daha tipiktir.",
+    "tusTip": "Hantavirus pulmoner sendrom için sınavda hedeflenen ayrım genellikle şudur: Leptospiroz da hayvan idrarıyla bulaşabilir ancak konjonktival suffüzyon ve böbrek-karaciğer tutulumu daha tipiktir.",
+    "differentialNote": "Leptospiroz da hayvan idrarıyla bulaşabilir ancak konjonktival suffüzyon ve böbrek-karaciğer tutulumu daha tipiktir.",
+    "keywords": [
+      "Hantavirus",
+      "kemirgen teması",
+      "pulmoner ödem",
+      "kapiller kaçak Tıbbi Patoloji (medical-pathology)"
+    ]
+  },
+  "tus-pearl-medical-pathology-282-spot": {
+    "front": "Kronik granülomatöz inflamasyonda temel hücresel yapı nedir?",
+    "back": "Epiteloid histiyosit kümeleri. Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur.",
+    "answer": "Epiteloid histiyosit kümeleri. Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur.",
+    "explanation": "Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur. Akut inflamasyonda nötrofiller baskındır; granülom kronik immün yanıtı düşündürür.",
+    "tusTip": "Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur. Akut inflamasyonda nötrofiller baskındır; granülom kronik immün yanıtı düşündürür.",
+    "differentialNote": "Akut inflamasyonda nötrofiller baskındır; granülom kronik immün yanıtı düşündürür.",
+    "keywords": [
+      "granülom",
+      "epiteloid histiyosit",
+      "dev hücre",
+      "kronik inflamasyon"
+    ]
+  },
+  "tus-pearl-medical-pathology-282-extra": {
+    "front": "Granülom yapısı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Akut inflamasyonda nötrofiller baskındır; granülom kronik immün yanıtı düşündürür.",
+    "answer": "Akut inflamasyonda nötrofiller baskındır; granülom kronik immün yanıtı düşündürür.",
+    "explanation": "Makrofajların epiteloid dönüşümü ve dev hücreler granülom morfolojisini oluşturur. Akut inflamasyonda nötrofiller baskındır; granülom kronik immün yanıtı düşündürür.",
+    "tusTip": "Granülom yapısı karıştırıldığında cevabı netleştiren karşılaştırma: Akut inflamasyonda nötrofiller baskındır; granülom kronik immün yanıtı düşündürür.",
+    "differentialNote": "Akut inflamasyonda nötrofiller baskındır; granülom kronik immün yanıtı düşündürür.",
+    "keywords": [
+      "granülom",
+      "epiteloid histiyosit",
+      "dev hücre",
+      "kronik inflamasyon"
+    ]
+  },
+  "tus-pearl-medical-pathology-283-spot": {
+    "front": "Transplantasyondan dakikalar-saatler sonra greft kaybı hangi rejeksiyon tipini düşündürür?",
+    "back": "Hiperakut rejeksiyon. Alıcıda önceden var olan anti-donör antikorlar kompleman aktivasyonu ve tromboza yol açar.",
+    "answer": "Hiperakut rejeksiyon. Alıcıda önceden var olan anti-donör antikorlar kompleman aktivasyonu ve tromboza yol açar.",
+    "explanation": "Alıcıda önceden var olan anti-donör antikorlar kompleman aktivasyonu ve tromboza yol açar. Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir.",
+    "tusTip": "Alıcıda önceden var olan anti-donör antikorlar kompleman aktivasyonu ve tromboza yol açar. Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir.",
+    "differentialNote": "Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir.",
+    "keywords": [
+      "hiperakut rejeksiyon",
+      "önceden antikor",
+      "kompleman",
+      "tromboz"
+    ]
+  },
+  "tus-pearl-medical-pathology-283-extra": {
+    "front": "Hiperakut greft rejeksiyonu için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir.",
+    "answer": "Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir.",
+    "explanation": "Alıcıda önceden var olan anti-donör antikorlar kompleman aktivasyonu ve tromboza yol açar. Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir.",
+    "tusTip": "Hiperakut greft rejeksiyonu kartında ayırıcı değer taşıyan nokta: Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir.",
+    "differentialNote": "Akut hücresel rejeksiyon genellikle günler-haftalar içinde T hücre aracılı gelişir.",
+    "keywords": [
+      "hiperakut rejeksiyon",
+      "önceden antikor",
+      "kompleman",
+      "tromboz"
+    ]
+  },
+  "tus-pearl-medical-pathology-284-spot": {
+    "front": "Transplant sonrası interstisyel lenfosit infiltrasyonu ve tübülit hangi rejeksiyon mekanizmasını düşündürür?",
+    "back": "Akut hücresel rejeksiyon. T lenfositler donör antijenlerini tanıyarak doku hasarı oluşturur.",
+    "answer": "Akut hücresel rejeksiyon. T lenfositler donör antijenlerini tanıyarak doku hasarı oluşturur.",
+    "explanation": "T lenfositler donör antijenlerini tanıyarak doku hasarı oluşturur. Hiperakut rejeksiyon önceden var olan antikorlarla dakikalar-saatler içinde ortaya çıkar.",
+    "tusTip": "T lenfositler donör antijenlerini tanıyarak doku hasarı oluşturur. Hiperakut rejeksiyon önceden var olan antikorlarla dakikalar-saatler içinde ortaya çıkar.",
+    "differentialNote": "Hiperakut rejeksiyon önceden var olan antikorlarla dakikalar-saatler içinde ortaya çıkar.",
+    "keywords": [
+      "akut rejeksiyon",
+      "T hücre",
+      "tübülit",
+      "interstisyel infiltrasyon"
+    ]
+  },
+  "tus-pearl-medical-pathology-284-extra": {
+    "front": "Akut hücresel rejeksiyon başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Hiperakut rejeksiyon önceden var olan antikorlarla dakikalar-saatler içinde ortaya çıkar.",
+    "answer": "Hiperakut rejeksiyon önceden var olan antikorlarla dakikalar-saatler içinde ortaya çıkar.",
+    "explanation": "T lenfositler donör antijenlerini tanıyarak doku hasarı oluşturur. Hiperakut rejeksiyon önceden var olan antikorlarla dakikalar-saatler içinde ortaya çıkar.",
+    "tusTip": "Akut hücresel rejeksiyon için sınavda hedeflenen ayrım genellikle şudur: Hiperakut rejeksiyon önceden var olan antikorlarla dakikalar-saatler içinde ortaya çıkar.",
+    "differentialNote": "Hiperakut rejeksiyon önceden var olan antikorlarla dakikalar-saatler içinde ortaya çıkar.",
+    "keywords": [
+      "akut rejeksiyon",
+      "T hücre",
+      "tübülit",
+      "interstisyel infiltrasyon"
+    ]
+  },
+  "tus-pearl-medical-pathology-285-spot": {
+    "front": "Geç dönemde damar intimal kalınlaşması ve progresif greft fonksiyon kaybı hangi rejeksiyon tipine uyar?",
+    "back": "Kronik rejeksiyon. Uzun süreli immün hasar vasküler daralma ve fibrozisle greft işlevini bozar.",
+    "answer": "Kronik rejeksiyon. Uzun süreli immün hasar vasküler daralma ve fibrozisle greft işlevini bozar.",
+    "explanation": "Uzun süreli immün hasar vasküler daralma ve fibrozisle greft işlevini bozar. Akut rejeksiyon daha hızlı gelişir ve inflamatuvar infiltrasyon baskındır.",
+    "tusTip": "Uzun süreli immün hasar vasküler daralma ve fibrozisle greft işlevini bozar. Akut rejeksiyon daha hızlı gelişir ve inflamatuvar infiltrasyon baskındır.",
+    "differentialNote": "Akut rejeksiyon daha hızlı gelişir ve inflamatuvar infiltrasyon baskındır.",
+    "keywords": [
+      "kronik rejeksiyon",
+      "intimal fibrozis",
+      "geç dönem",
+      "greft kaybı"
+    ]
+  },
+  "tus-pearl-medical-pathology-285-extra": {
+    "front": "Kronik greft rejeksiyonu için en kritik ayırıcı nokta nedir?",
+    "back": "Akut rejeksiyon daha hızlı gelişir ve inflamatuvar infiltrasyon baskındır.",
+    "answer": "Akut rejeksiyon daha hızlı gelişir ve inflamatuvar infiltrasyon baskındır.",
+    "explanation": "Uzun süreli immün hasar vasküler daralma ve fibrozisle greft işlevini bozar. Akut rejeksiyon daha hızlı gelişir ve inflamatuvar infiltrasyon baskındır.",
+    "tusTip": "Kronik greft rejeksiyonu karıştırıldığında cevabı netleştiren karşılaştırma: Akut rejeksiyon daha hızlı gelişir ve inflamatuvar infiltrasyon baskındır.",
+    "differentialNote": "Akut rejeksiyon daha hızlı gelişir ve inflamatuvar infiltrasyon baskındır.",
+    "keywords": [
+      "kronik rejeksiyon",
+      "intimal fibrozis",
+      "geç dönem",
+      "greft kaybı"
+    ]
+  },
+  "tus-pearl-medical-pathology-286-spot": {
+    "front": "İmmün trombositopenide kemik iliğinde hangi bulgu beklenir?",
+    "back": "Megakaryosit artışı. Periferik trombosit yıkımı arttığı için kemik iliği kompansatuvar megakaryosit artışı gösterebilir.",
+    "answer": "Megakaryosit artışı. Periferik trombosit yıkımı arttığı için kemik iliği kompansatuvar megakaryosit artışı gösterebilir.",
+    "explanation": "Periferik trombosit yıkımı arttığı için kemik iliği kompansatuvar megakaryosit artışı gösterebilir. Aplastik anemide kemik iliği hiposelülerdir ve pansitopeni beklenir.",
+    "tusTip": "Periferik trombosit yıkımı arttığı için kemik iliği kompansatuvar megakaryosit artışı gösterebilir. Aplastik anemide kemik iliği hiposelülerdir ve pansitopeni beklenir.",
+    "differentialNote": "Aplastik anemide kemik iliği hiposelülerdir ve pansitopeni beklenir.",
+    "keywords": [
+      "İTP",
+      "megakaryosit artışı",
+      "trombosit yıkımı",
+      "peteşi"
+    ]
+  },
+  "tus-pearl-medical-pathology-286-extra": {
+    "front": "İTP kemik iliği karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Aplastik anemide kemik iliği hiposelülerdir ve pansitopeni beklenir.",
+    "answer": "Aplastik anemide kemik iliği hiposelülerdir ve pansitopeni beklenir.",
+    "explanation": "Periferik trombosit yıkımı arttığı için kemik iliği kompansatuvar megakaryosit artışı gösterebilir. Aplastik anemide kemik iliği hiposelülerdir ve pansitopeni beklenir.",
+    "tusTip": "İTP kemik iliği kartında ayırıcı değer taşıyan nokta: Aplastik anemide kemik iliği hiposelülerdir ve pansitopeni beklenir.",
+    "differentialNote": "Aplastik anemide kemik iliği hiposelülerdir ve pansitopeni beklenir.",
+    "keywords": [
+      "İTP",
+      "megakaryosit artışı",
+      "trombosit yıkımı",
+      "peteşi"
+    ]
+  },
+  "tus-pearl-medical-pathology-287-spot": {
+    "front": "Mikroanjiyopatik hemolitik anemi, trombositopeni ve nörolojik bulgular hangi proteaz eksikliğiyle ilişkilidir?",
+    "back": "ADAMTS13 eksikliği veya inhibisyonu. VWF multimerleri parçalanamaz ve mikrotrombüs oluşumu artar.",
+    "answer": "ADAMTS13 eksikliği veya inhibisyonu. VWF multimerleri parçalanamaz ve mikrotrombüs oluşumu artar.",
+    "explanation": "VWF multimerleri parçalanamaz ve mikrotrombüs oluşumu artar. DIC’de PT ve aPTT uzaması daha belirgindir; TTP’de koagülasyon testleri daha korunabilir.",
+    "tusTip": "VWF multimerleri parçalanamaz ve mikrotrombüs oluşumu artar. DIC’de PT ve aPTT uzaması daha belirgindir; TTP’de koagülasyon testleri daha korunabilir.",
+    "differentialNote": "DIC’de PT ve aPTT uzaması daha belirgindir; TTP’de koagülasyon testleri daha korunabilir.",
+    "keywords": [
+      "TTP",
+      "ADAMTS13",
+      "şistosit",
+      "nörolojik bulgu"
+    ]
+  },
+  "tus-pearl-medical-pathology-287-extra": {
+    "front": "TTP patogenezi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "DIC’de PT ve aPTT uzaması daha belirgindir; TTP’de koagülasyon testleri daha korunabilir.",
+    "answer": "DIC’de PT ve aPTT uzaması daha belirgindir; TTP’de koagülasyon testleri daha korunabilir.",
+    "explanation": "VWF multimerleri parçalanamaz ve mikrotrombüs oluşumu artar. DIC’de PT ve aPTT uzaması daha belirgindir; TTP’de koagülasyon testleri daha korunabilir.",
+    "tusTip": "TTP patogenezi için sınavda hedeflenen ayrım genellikle şudur: DIC’de PT ve aPTT uzaması daha belirgindir; TTP’de koagülasyon testleri daha korunabilir.",
+    "differentialNote": "DIC’de PT ve aPTT uzaması daha belirgindir; TTP’de koagülasyon testleri daha korunabilir.",
+    "keywords": [
+      "TTP",
+      "ADAMTS13",
+      "şistosit",
+      "nörolojik bulgu"
+    ]
+  },
+  "tus-pearl-medical-pathology-288-spot": {
+    "front": "Yaygın damar içi pıhtılaşmada beklenen laboratuvar paterni nasıldır?",
+    "back": "Trombosit düşüklüğü, PT/aPTT uzaması, fibrinojen düşüklüğü ve D-dimer artışı.",
+    "answer": "Trombosit düşüklüğü, PT/aPTT uzaması, fibrinojen düşüklüğü ve D-dimer artışı.",
+    "explanation": "Koagülasyon faktörleri ve trombositler tüketilir; fibrin yıkım ürünleri artar. TTP’de temel sorun trombosit mikrotrombüsleridir; PT/aPTT genellikle belirgin uzamaz.",
+    "tusTip": "Koagülasyon faktörleri ve trombositler tüketilir; fibrin yıkım ürünleri artar. TTP’de temel sorun trombosit mikrotrombüsleridir; PT/aPTT genellikle belirgin uzamaz.",
+    "differentialNote": "TTP’de temel sorun trombosit mikrotrombüsleridir; PT/aPTT genellikle belirgin uzamaz.",
+    "keywords": [
+      "DIC",
+      "trombositopeni",
+      "D-dimer",
+      "fibrinojen düşük"
+    ]
+  },
+  "tus-pearl-medical-pathology-288-extra": {
+    "front": "DIC laboratuvar paterni sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "TTP’de temel sorun trombosit mikrotrombüsleridir; PT/aPTT genellikle belirgin uzamaz.",
+    "answer": "TTP’de temel sorun trombosit mikrotrombüsleridir; PT/aPTT genellikle belirgin uzamaz.",
+    "explanation": "Koagülasyon faktörleri ve trombositler tüketilir; fibrin yıkım ürünleri artar. TTP’de temel sorun trombosit mikrotrombüsleridir; PT/aPTT genellikle belirgin uzamaz.",
+    "tusTip": "DIC laboratuvar paterni karıştırıldığında cevabı netleştiren karşılaştırma: TTP’de temel sorun trombosit mikrotrombüsleridir; PT/aPTT genellikle belirgin uzamaz.",
+    "differentialNote": "TTP’de temel sorun trombosit mikrotrombüsleridir; PT/aPTT genellikle belirgin uzamaz.",
+    "keywords": [
+      "DIC",
+      "trombositopeni",
+      "D-dimer",
+      "fibrinojen düşük"
+    ]
+  },
+  "tus-pearl-medical-pathology-289-spot": {
+    "front": "Mikrositik anemide ferritin düşüklüğü en çok hangi tanıyı destekler?",
+    "back": "Demir eksikliği anemisi. Ferritin demir depolarını yansıtır; demir eksikliğinde depo azalır.",
+    "answer": "Demir eksikliği anemisi. Ferritin demir depolarını yansıtır; demir eksikliğinde depo azalır.",
+    "explanation": "Ferritin demir depolarını yansıtır; demir eksikliğinde depo azalır. Talasemi taşıyıcılığında eritrosit sayısı görece korunabilir ve ferritin genellikle düşük değildir.",
+    "tusTip": "Ferritin demir depolarını yansıtır; demir eksikliğinde depo azalır. Talasemi taşıyıcılığında eritrosit sayısı görece korunabilir ve ferritin genellikle düşük değildir.",
+    "differentialNote": "Talasemi taşıyıcılığında eritrosit sayısı görece korunabilir ve ferritin genellikle düşük değildir.",
+    "keywords": [
+      "mikrositik anemi",
+      "ferritin düşük",
+      "demir eksikliği",
+      "TDBK artışı"
+    ]
+  },
+  "tus-pearl-medical-pathology-289-extra": {
+    "front": "Demir eksikliği anemisi ayırımı için en kritik ayırıcı nokta nedir?",
+    "back": "Talasemi taşıyıcılığında eritrosit sayısı görece korunabilir ve ferritin genellikle düşük değildir.",
+    "answer": "Talasemi taşıyıcılığında eritrosit sayısı görece korunabilir ve ferritin genellikle düşük değildir.",
+    "explanation": "Ferritin demir depolarını yansıtır; demir eksikliğinde depo azalır. Talasemi taşıyıcılığında eritrosit sayısı görece korunabilir ve ferritin genellikle düşük değildir.",
+    "tusTip": "Demir eksikliği anemisi ayırımı kartında ayırıcı değer taşıyan nokta: Talasemi taşıyıcılığında eritrosit sayısı görece korunabilir ve ferritin genellikle düşük değildir.",
+    "differentialNote": "Talasemi taşıyıcılığında eritrosit sayısı görece korunabilir ve ferritin genellikle düşük değildir.",
+    "keywords": [
+      "mikrositik anemi",
+      "ferritin düşük",
+      "demir eksikliği",
+      "TDBK artışı"
+    ]
+  },
+  "tus-pearl-medical-pathology-290-spot": {
+    "front": "Makrositoz ve hipersegmente nötrofiller hangi anemi grubunu düşündürür?",
+    "back": "Megaloblastik anemi. DNA sentez bozukluğu çekirdek-sitoplazma uyumsuzluğu ve hipersegmente nötrofil oluşturur.",
+    "answer": "Megaloblastik anemi. DNA sentez bozukluğu çekirdek-sitoplazma uyumsuzluğu ve hipersegmente nötrofil oluşturur.",
+    "explanation": "DNA sentez bozukluğu çekirdek-sitoplazma uyumsuzluğu ve hipersegmente nötrofil oluşturur. Retikülositoz da MCV’yi artırabilir ancak hipersegmente nötrofil megaloblastik anemi için daha seçicidir.",
+    "tusTip": "DNA sentez bozukluğu çekirdek-sitoplazma uyumsuzluğu ve hipersegmente nötrofil oluşturur. Retikülositoz da MCV’yi artırabilir ancak hipersegmente nötrofil megaloblastik anemi için daha seçicidir.",
+    "differentialNote": "Retikülositoz da MCV’yi artırabilir ancak hipersegmente nötrofil megaloblastik anemi için daha seçicidir.",
+    "keywords": [
+      "makrositoz",
+      "hipersegmente nötrofil",
+      "B12",
+      "folat"
+    ]
+  },
+  "tus-pearl-medical-pathology-290-extra": {
+    "front": "Megaloblastik anemi morfolojisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Retikülositoz da MCV’yi artırabilir ancak hipersegmente nötrofil megaloblastik anemi için daha seçicidir.",
+    "answer": "Retikülositoz da MCV’yi artırabilir ancak hipersegmente nötrofil megaloblastik anemi için daha seçicidir.",
+    "explanation": "DNA sentez bozukluğu çekirdek-sitoplazma uyumsuzluğu ve hipersegmente nötrofil oluşturur. Retikülositoz da MCV’yi artırabilir ancak hipersegmente nötrofil megaloblastik anemi için daha seçicidir.",
+    "tusTip": "Megaloblastik anemi morfolojisi için sınavda hedeflenen ayrım genellikle şudur: Retikülositoz da MCV’yi artırabilir ancak hipersegmente nötrofil megaloblastik anemi için daha seçicidir.",
+    "differentialNote": "Retikülositoz da MCV’yi artırabilir ancak hipersegmente nötrofil megaloblastik anemi için daha seçicidir.",
+    "keywords": [
+      "makrositoz",
+      "hipersegmente nötrofil",
+      "B12",
+      "folat"
+    ]
+  },
+  "tus-pearl-medical-pathology-291-spot": {
+    "front": "Pansitopeni ve yağlı hiposelüler kemik iliği hangi tanıyı düşündürür?",
+    "back": "Aplastik anemi. Hematopoietik kök hücre hasarı tüm serilerde azalmaya neden olur.",
+    "answer": "Aplastik anemi. Hematopoietik kök hücre hasarı tüm serilerde azalmaya neden olur.",
+    "explanation": "Hematopoietik kök hücre hasarı tüm serilerde azalmaya neden olur. İTP izole trombositopeni yapar; tüm serilerin azalması beklenmez.",
+    "tusTip": "Hematopoietik kök hücre hasarı tüm serilerde azalmaya neden olur. İTP izole trombositopeni yapar; tüm serilerin azalması beklenmez.",
+    "differentialNote": "İTP izole trombositopeni yapar; tüm serilerin azalması beklenmez.",
+    "keywords": [
+      "aplastik anemi",
+      "pansitopeni",
+      "hiposelüler ilik",
+      "yağlı ilik"
+    ]
+  },
+  "tus-pearl-medical-pathology-291-extra": {
+    "front": "Aplastik anemi iliği sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "İTP izole trombositopeni yapar; tüm serilerin azalması beklenmez.",
+    "answer": "İTP izole trombositopeni yapar; tüm serilerin azalması beklenmez.",
+    "explanation": "Hematopoietik kök hücre hasarı tüm serilerde azalmaya neden olur. İTP izole trombositopeni yapar; tüm serilerin azalması beklenmez.",
+    "tusTip": "Aplastik anemi iliği karıştırıldığında cevabı netleştiren karşılaştırma: İTP izole trombositopeni yapar; tüm serilerin azalması beklenmez.",
+    "differentialNote": "İTP izole trombositopeni yapar; tüm serilerin azalması beklenmez.",
+    "keywords": [
+      "aplastik anemi",
+      "pansitopeni",
+      "hiposelüler ilik",
+      "yağlı ilik"
+    ]
+  },
+  "tus-pearl-medical-pathology-292-spot": {
+    "front": "Hodgkin lenfomada tanısal önemi olan klasik hücre hangisidir?",
+    "back": "Reed-Sternberg hücresi. Çift çekirdekli baykuş gözü görünümü klasik Hodgkin lenfoma morfolojisini destekler.",
+    "answer": "Reed-Sternberg hücresi. Çift çekirdekli baykuş gözü görünümü klasik Hodgkin lenfoma morfolojisini destekler.",
+    "explanation": "Çift çekirdekli baykuş gözü görünümü klasik Hodgkin lenfoma morfolojisini destekler. Non-Hodgkin lenfomalarda yayılım genellikle daha atlamalı olmayan ve ekstranodal olabilir.",
+    "tusTip": "Çift çekirdekli baykuş gözü görünümü klasik Hodgkin lenfoma morfolojisini destekler. Non-Hodgkin lenfomalarda yayılım genellikle daha atlamalı olmayan ve ekstranodal olabilir.",
+    "differentialNote": "Non-Hodgkin lenfomalarda yayılım genellikle daha atlamalı olmayan ve ekstranodal olabilir.",
+    "keywords": [
+      "Hodgkin",
+      "Reed-Sternberg",
+      "CD15",
+      "CD30"
+    ]
+  },
+  "tus-pearl-medical-pathology-292-extra": {
+    "front": "Hodgkin lenfoma hücresi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Non-Hodgkin lenfomalarda yayılım genellikle daha atlamalı olmayan ve ekstranodal olabilir.",
+    "answer": "Non-Hodgkin lenfomalarda yayılım genellikle daha atlamalı olmayan ve ekstranodal olabilir.",
+    "explanation": "Çift çekirdekli baykuş gözü görünümü klasik Hodgkin lenfoma morfolojisini destekler. Non-Hodgkin lenfomalarda yayılım genellikle daha atlamalı olmayan ve ekstranodal olabilir.",
+    "tusTip": "Hodgkin lenfoma hücresi kartında ayırıcı değer taşıyan nokta: Non-Hodgkin lenfomalarda yayılım genellikle daha atlamalı olmayan ve ekstranodal olabilir.",
+    "differentialNote": "Non-Hodgkin lenfomalarda yayılım genellikle daha atlamalı olmayan ve ekstranodal olabilir.",
+    "keywords": [
+      "Hodgkin",
+      "Reed-Sternberg",
+      "CD15",
+      "CD30"
+    ]
+  },
+  "tus-pearl-medical-pathology-293-spot": {
+    "front": "BCL2 aşırı ekspresyonu ve t(14;18) en çok hangi lenfomayla ilişkilidir?",
+    "back": "Foliküler lenfoma. BCL2 apoptozu azaltır ve germinal merkez B hücrelerinin birikmesine yol açar.",
+    "answer": "Foliküler lenfoma. BCL2 apoptozu azaltır ve germinal merkez B hücrelerinin birikmesine yol açar.",
+    "explanation": "BCL2 apoptozu azaltır ve germinal merkez B hücrelerinin birikmesine yol açar. Burkitt lenfoma MYC ve t(8;14) ile ilişkilidir.",
+    "tusTip": "BCL2 apoptozu azaltır ve germinal merkez B hücrelerinin birikmesine yol açar. Burkitt lenfoma MYC ve t(8;14) ile ilişkilidir.",
+    "differentialNote": "Burkitt lenfoma MYC ve t(8;14) ile ilişkilidir.",
+    "keywords": [
+      "foliküler lenfoma",
+      "t(14",
+      "18)",
+      "BCL2",
+      "apoptoz azalması"
+    ]
+  },
+  "tus-pearl-medical-pathology-293-extra": {
+    "front": "Foliküler lenfoma translokasyonu için en kritik ayırıcı nokta nedir?",
+    "back": "Burkitt lenfoma MYC ve t(8;14) ile ilişkilidir.",
+    "answer": "Burkitt lenfoma MYC ve t(8;14) ile ilişkilidir.",
+    "explanation": "BCL2 apoptozu azaltır ve germinal merkez B hücrelerinin birikmesine yol açar. Burkitt lenfoma MYC ve t(8;14) ile ilişkilidir.",
+    "tusTip": "Foliküler lenfoma translokasyonu için sınavda hedeflenen ayrım genellikle şudur: Burkitt lenfoma MYC ve t(8;14) ile ilişkilidir.",
+    "differentialNote": "Burkitt lenfoma MYC ve t(8;14) ile ilişkilidir.",
+    "keywords": [
+      "foliküler lenfoma",
+      "t(14",
+      "18)",
+      "BCL2",
+      "apoptoz azalması"
+    ]
+  },
+  "tus-pearl-medical-pathology-294-spot": {
+    "front": "MYC aktivasyonu ve t(8;14) hangi lenfomayı düşündürür?",
+    "back": "Burkitt lenfoma. MYC artışı çok hızlı proliferasyon ve yıldızlı gökyüzü görünümüne neden olur.",
+    "answer": "Burkitt lenfoma. MYC artışı çok hızlı proliferasyon ve yıldızlı gökyüzü görünümüne neden olur.",
+    "explanation": "MYC artışı çok hızlı proliferasyon ve yıldızlı gökyüzü görünümüne neden olur. Foliküler lenfoma BCL2 ve t(14;18) ile ayrılır.",
+    "tusTip": "MYC artışı çok hızlı proliferasyon ve yıldızlı gökyüzü görünümüne neden olur. Foliküler lenfoma BCL2 ve t(14;18) ile ayrılır.",
+    "differentialNote": "Foliküler lenfoma BCL2 ve t(14;18) ile ayrılır.",
+    "keywords": [
+      "Burkitt",
+      "MYC",
+      "t(8",
+      "14)",
+      "starry sky"
+    ]
+  },
+  "tus-pearl-medical-pathology-294-extra": {
+    "front": "Burkitt lenfoma karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Foliküler lenfoma BCL2 ve t(14;18) ile ayrılır.",
+    "answer": "Foliküler lenfoma BCL2 ve t(14;18) ile ayrılır.",
+    "explanation": "MYC artışı çok hızlı proliferasyon ve yıldızlı gökyüzü görünümüne neden olur. Foliküler lenfoma BCL2 ve t(14;18) ile ayrılır.",
+    "tusTip": "Burkitt lenfoma karıştırıldığında cevabı netleştiren karşılaştırma: Foliküler lenfoma BCL2 ve t(14;18) ile ayrılır.",
+    "differentialNote": "Foliküler lenfoma BCL2 ve t(14;18) ile ayrılır.",
+    "keywords": [
+      "Burkitt",
+      "MYC",
+      "t(8",
+      "14)",
+      "starry sky"
+    ]
+  },
+  "tus-pearl-medical-pathology-295-spot": {
+    "front": "Hematokrit artışı, düşük eritropoietin ve JAK2 mutasyonu hangi miyeloproliferatif neoplaziyi düşündürür?",
+    "back": "Polisitemia vera. Klonal eritroid proliferasyon eritropoietinden bağımsızdır.",
+    "answer": "Polisitemia vera. Klonal eritroid proliferasyon eritropoietinden bağımsızdır.",
+    "explanation": "Klonal eritroid proliferasyon eritropoietinden bağımsızdır. Sekonder polisitemide eritropoietin genellikle artmıştır.",
+    "tusTip": "Klonal eritroid proliferasyon eritropoietinden bağımsızdır. Sekonder polisitemide eritropoietin genellikle artmıştır.",
+    "differentialNote": "Sekonder polisitemide eritropoietin genellikle artmıştır.",
+    "keywords": [
+      "polisitemia vera",
+      "JAK2",
+      "EPO düşük",
+      "eritrositoz"
+    ]
+  },
+  "tus-pearl-medical-pathology-295-extra": {
+    "front": "Polisitemia vera için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Sekonder polisitemide eritropoietin genellikle artmıştır. Klonal eritroid proliferasyon eritropoietinden bağımsızdır.",
+    "answer": "Sekonder polisitemide eritropoietin genellikle artmıştır. Klonal eritroid proliferasyon eritropoietinden bağımsızdır.",
+    "explanation": "Klonal eritroid proliferasyon eritropoietinden bağımsızdır. Sekonder polisitemide eritropoietin genellikle artmıştır.",
+    "tusTip": "Polisitemia vera kartında ayırıcı değer taşıyan nokta: Sekonder polisitemide eritropoietin genellikle artmıştır.",
+    "differentialNote": "Sekonder polisitemide eritropoietin genellikle artmıştır.",
+    "keywords": [
+      "polisitemia vera",
+      "JAK2",
+      "EPO düşük",
+      "eritrositoz"
+    ]
+  },
+  "tus-pearl-medical-pathology-296-spot": {
+    "front": "İzole belirgin trombositoz ve megakaryosit proliferasyonu hangi hastalığı düşündürür?",
+    "back": "Esansiyel trombositemi. Miyeloproliferatif klonal süreç tromboz ve kanama riskini artırabilir.",
+    "answer": "Esansiyel trombositemi. Miyeloproliferatif klonal süreç tromboz ve kanama riskini artırabilir.",
+    "explanation": "Miyeloproliferatif klonal süreç tromboz ve kanama riskini artırabilir. Reaktif trombositozda inflamasyon, demir eksikliği veya enfeksiyon gibi ikincil neden aranır.",
+    "tusTip": "Miyeloproliferatif klonal süreç tromboz ve kanama riskini artırabilir. Reaktif trombositozda inflamasyon, demir eksikliği veya enfeksiyon gibi ikincil neden aranır.",
+    "differentialNote": "Reaktif trombositozda inflamasyon, demir eksikliği veya enfeksiyon gibi ikincil neden aranır.",
+    "keywords": [
+      "esansiyel trombositemi",
+      "trombositoz",
+      "JAK2",
+      "megakaryosit"
+    ]
+  },
+  "tus-pearl-medical-pathology-296-extra": {
+    "front": "Esansiyel trombositemi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Reaktif trombositozda inflamasyon, demir eksikliği veya enfeksiyon gibi ikincil neden aranır.",
+    "answer": "Reaktif trombositozda inflamasyon, demir eksikliği veya enfeksiyon gibi ikincil neden aranır.",
+    "explanation": "Miyeloproliferatif klonal süreç tromboz ve kanama riskini artırabilir. Reaktif trombositozda inflamasyon, demir eksikliği veya enfeksiyon gibi ikincil neden aranır.",
+    "tusTip": "Esansiyel trombositemi için sınavda hedeflenen ayrım genellikle şudur: Reaktif trombositozda inflamasyon, demir eksikliği veya enfeksiyon gibi ikincil neden aranır.",
+    "differentialNote": "Reaktif trombositozda inflamasyon, demir eksikliği veya enfeksiyon gibi ikincil neden aranır.",
+    "keywords": [
+      "esansiyel trombositemi",
+      "trombositoz",
+      "JAK2",
+      "megakaryosit"
+    ]
+  },
+  "tus-pearl-medical-pathology-297-spot": {
+    "front": "Miyokart infarktında hücresel nekrozun temel tipi hangisidir?",
+    "back": "Koagülasyon nekrozu. İskemik solid organ hasarında doku mimarisi başlangıçta korunarak protein denatürasyonu baskın olur.",
+    "answer": "Koagülasyon nekrozu. İskemik solid organ hasarında doku mimarisi başlangıçta korunarak protein denatürasyonu baskın olur.",
+    "explanation": "İskemik solid organ hasarında doku mimarisi başlangıçta korunarak protein denatürasyonu baskın olur. Beyin infarktında sıvılaşma nekrozu tipiktir.",
+    "tusTip": "İskemik solid organ hasarında doku mimarisi başlangıçta korunarak protein denatürasyonu baskın olur. Beyin infarktında sıvılaşma nekrozu tipiktir.",
+    "differentialNote": "Beyin infarktında sıvılaşma nekrozu tipiktir.",
+    "keywords": [
+      "miyokart infarktı",
+      "koagülasyon nekrozu",
+      "iskemi",
+      "solid organ"
+    ]
+  },
+  "tus-pearl-medical-pathology-297-extra": {
+    "front": "Miyokart infarktı erken nekroz için en kritik ayırıcı nokta nedir?",
+    "back": "Beyin infarktında sıvılaşma nekrozu tipiktir. İskemik solid organ hasarında doku mimarisi başlangıçta korunarak protein denatürasyonu baskın olur.",
+    "answer": "Beyin infarktında sıvılaşma nekrozu tipiktir. İskemik solid organ hasarında doku mimarisi başlangıçta korunarak protein denatürasyonu baskın olur.",
+    "explanation": "İskemik solid organ hasarında doku mimarisi başlangıçta korunarak protein denatürasyonu baskın olur. Beyin infarktında sıvılaşma nekrozu tipiktir.",
+    "tusTip": "Miyokart infarktı erken nekroz karıştırıldığında cevabı netleştiren karşılaştırma: Beyin infarktında sıvılaşma nekrozu tipiktir.",
+    "differentialNote": "Beyin infarktında sıvılaşma nekrozu tipiktir.",
+    "keywords": [
+      "miyokart infarktı",
+      "koagülasyon nekrozu",
+      "iskemi",
+      "solid organ"
+    ]
+  },
+  "tus-pearl-medical-pathology-298-spot": {
+    "front": "Romatizmal karditte görülen karakteristik granülomatöz lezyon hangisidir?",
+    "back": "Aschoff cisimciği. Aschoff cisimcikleri romatizmal karditin histolojik bulgusudur.",
+    "answer": "Aschoff cisimciği. Aschoff cisimcikleri romatizmal karditin histolojik bulgusudur.",
+    "explanation": "Aschoff cisimcikleri romatizmal karditin histolojik bulgusudur. Enfektif endokarditte vejetasyon içinde mikroorganizma ve fibrin-trombosit birikimi beklenir.",
+    "tusTip": "Aschoff cisimcikleri romatizmal karditin histolojik bulgusudur. Enfektif endokarditte vejetasyon içinde mikroorganizma ve fibrin-trombosit birikimi beklenir.",
+    "differentialNote": "Enfektif endokarditte vejetasyon içinde mikroorganizma ve fibrin-trombosit birikimi beklenir.",
+    "keywords": [
+      "romatizmal ateş",
+      "Aschoff cisimciği",
+      "pankardit",
+      "streptokok sonrası"
+    ]
+  },
+  "tus-pearl-medical-pathology-298-extra": {
+    "front": "Romatizmal ateş patolojisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Enfektif endokarditte vejetasyon içinde mikroorganizma ve fibrin-trombosit birikimi beklenir.",
+    "answer": "Enfektif endokarditte vejetasyon içinde mikroorganizma ve fibrin-trombosit birikimi beklenir.",
+    "explanation": "Aschoff cisimcikleri romatizmal karditin histolojik bulgusudur. Enfektif endokarditte vejetasyon içinde mikroorganizma ve fibrin-trombosit birikimi beklenir.",
+    "tusTip": "Romatizmal ateş patolojisi kartında ayırıcı değer taşıyan nokta: Enfektif endokarditte vejetasyon içinde mikroorganizma ve fibrin-trombosit birikimi beklenir.",
+    "differentialNote": "Enfektif endokarditte vejetasyon içinde mikroorganizma ve fibrin-trombosit birikimi beklenir.",
+    "keywords": [
+      "romatizmal ateş",
+      "Aschoff cisimciği",
+      "pankardit",
+      "streptokok sonrası"
+    ]
+  },
+  "tus-pearl-medical-pathology-299-spot": {
+    "front": "Ateş, yeni üfürüm ve kan kültürü pozitifliği olan hastada kapak üzerindeki frajil kitle nasıl adlandırılır?",
+    "back": "Vejetasyon. Enfektif endokarditte fibrin, trombosit ve mikroorganizmalardan oluşan vejetasyonlar gelişir.",
+    "answer": "Vejetasyon. Enfektif endokarditte fibrin, trombosit ve mikroorganizmalardan oluşan vejetasyonlar gelişir.",
+    "explanation": "Enfektif endokarditte fibrin, trombosit ve mikroorganizmalardan oluşan vejetasyonlar gelişir. Libman-Sacks endokarditi SLE ile ilişkili steril vejetasyonlarla ayrılır.",
+    "tusTip": "Enfektif endokarditte fibrin, trombosit ve mikroorganizmalardan oluşan vejetasyonlar gelişir. Libman-Sacks endokarditi SLE ile ilişkili steril vejetasyonlarla ayrılır.",
+    "differentialNote": "Libman-Sacks endokarditi SLE ile ilişkili steril vejetasyonlarla ayrılır.",
+    "keywords": [
+      "endokardit",
+      "vejetasyon",
+      "kan kültürü",
+      "kapak hasarı"
+    ]
+  },
+  "tus-pearl-medical-pathology-299-extra": {
+    "front": "Enfektif endokardit vejetasyonu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Libman-Sacks endokarditi SLE ile ilişkili steril vejetasyonlarla ayrılır.",
+    "answer": "Libman-Sacks endokarditi SLE ile ilişkili steril vejetasyonlarla ayrılır.",
+    "explanation": "Enfektif endokarditte fibrin, trombosit ve mikroorganizmalardan oluşan vejetasyonlar gelişir. Libman-Sacks endokarditi SLE ile ilişkili steril vejetasyonlarla ayrılır.",
+    "tusTip": "Enfektif endokardit vejetasyonu için sınavda hedeflenen ayrım genellikle şudur: Libman-Sacks endokarditi SLE ile ilişkili steril vejetasyonlarla ayrılır.",
+    "differentialNote": "Libman-Sacks endokarditi SLE ile ilişkili steril vejetasyonlarla ayrılır.",
+    "keywords": [
+      "endokardit",
+      "vejetasyon",
+      "kan kültürü",
+      "kapak hasarı"
+    ]
+  },
+  "tus-pearl-medical-pathology-300-spot": {
+    "front": "Genç yaşta panasinüler amfizem ve karaciğer hastalığı hangi protein eksikliğini düşündürür?",
+    "back": "Alfa-1 antitripsin eksikliği. Elastaz inhibisyonu azalır ve özellikle alt loblarda panasinüler amfizem gelişir.",
+    "answer": "Alfa-1 antitripsin eksikliği. Elastaz inhibisyonu azalır ve özellikle alt loblarda panasinüler amfizem gelişir.",
+    "explanation": "Elastaz inhibisyonu azalır ve özellikle alt loblarda panasinüler amfizem gelişir. Sigara ilişkili sentriasiner amfizem daha çok üst loblarda belirgindir.",
+    "tusTip": "Elastaz inhibisyonu azalır ve özellikle alt loblarda panasinüler amfizem gelişir. Sigara ilişkili sentriasiner amfizem daha çok üst loblarda belirgindir.",
+    "differentialNote": "Sigara ilişkili sentriasiner amfizem daha çok üst loblarda belirgindir.",
+    "keywords": [
+      "alfa-1 antitripsin",
+      "panasinüler amfizem",
+      "alt lob",
+      "karaciğer"
+    ]
+  },
+  "tus-pearl-medical-pathology-300-extra": {
+    "front": "Alfa-1 antitripsin eksikliği sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Sigara ilişkili sentriasiner amfizem daha çok üst loblarda belirgindir.",
+    "answer": "Sigara ilişkili sentriasiner amfizem daha çok üst loblarda belirgindir.",
+    "explanation": "Elastaz inhibisyonu azalır ve özellikle alt loblarda panasinüler amfizem gelişir. Sigara ilişkili sentriasiner amfizem daha çok üst loblarda belirgindir.",
+    "tusTip": "Alfa-1 antitripsin eksikliği karıştırıldığında cevabı netleştiren karşılaştırma: Sigara ilişkili sentriasiner amfizem daha çok üst loblarda belirgindir.",
+    "differentialNote": "Sigara ilişkili sentriasiner amfizem daha çok üst loblarda belirgindir.",
+    "keywords": [
+      "alfa-1 antitripsin",
+      "panasinüler amfizem",
+      "alt lob",
+      "karaciğer"
+    ]
+  },
+  "tus-pearl-medical-pathology-301-spot": {
+    "front": "Hiler lenf nodlarında yumurta kabuğu kalsifikasyonu hangi pnömokonyozla ilişkilidir?",
+    "back": "Silikozis. Silika maruziyeti üst lob fibrozisi ve tüberküloz riskinde artışla ilişkilidir.",
+    "answer": "Silikozis. Silika maruziyeti üst lob fibrozisi ve tüberküloz riskinde artışla ilişkilidir.",
+    "explanation": "Silika maruziyeti üst lob fibrozisi ve tüberküloz riskinde artışla ilişkilidir. Asbest plevral plak ve mezotelyoma riskiyle daha çok sorulur.",
+    "tusTip": "Silika maruziyeti üst lob fibrozisi ve tüberküloz riskinde artışla ilişkilidir. Asbest plevral plak ve mezotelyoma riskiyle daha çok sorulur.",
+    "differentialNote": "Asbest plevral plak ve mezotelyoma riskiyle daha çok sorulur.",
+    "keywords": [
+      "silikozis",
+      "eggshell kalsifikasyon",
+      "üst lob",
+      "TB riski"
+    ]
+  },
+  "tus-pearl-medical-pathology-301-extra": {
+    "front": "Silikozis için en kritik ayırıcı nokta nedir?",
+    "back": "Asbest plevral plak ve mezotelyoma riskiyle daha çok sorulur.",
+    "answer": "Asbest plevral plak ve mezotelyoma riskiyle daha çok sorulur.",
+    "explanation": "Silika maruziyeti üst lob fibrozisi ve tüberküloz riskinde artışla ilişkilidir. Asbest plevral plak ve mezotelyoma riskiyle daha çok sorulur.",
+    "tusTip": "Silikozis kartında ayırıcı değer taşıyan nokta: Asbest plevral plak ve mezotelyoma riskiyle daha çok sorulur.",
+    "differentialNote": "Asbest plevral plak ve mezotelyoma riskiyle daha çok sorulur.",
+    "keywords": [
+      "silikozis",
+      "eggshell kalsifikasyon",
+      "üst lob",
+      "TB riski"
+    ]
+  },
+  "tus-pearl-medical-pathology-302-spot": {
+    "front": "Plevral malign mezotelyoma gelişimi en çok hangi çevresel maruziyetle ilişkilidir?",
+    "back": "Asbest maruziyeti. Asbest lifleri plevrada kronik hasar ve malign dönüşüm riskini artırır.",
+    "answer": "Asbest maruziyeti. Asbest lifleri plevrada kronik hasar ve malign dönüşüm riskini artırır.",
+    "explanation": "Asbest lifleri plevrada kronik hasar ve malign dönüşüm riskini artırır. Sigara asbestle akciğer karsinomu riskini artırır; mezotelyoma için asbest belirleyicidir.",
+    "tusTip": "Asbest lifleri plevrada kronik hasar ve malign dönüşüm riskini artırır. Sigara asbestle akciğer karsinomu riskini artırır; mezotelyoma için asbest belirleyicidir.",
+    "differentialNote": "Sigara asbestle akciğer karsinomu riskini artırır; mezotelyoma için asbest belirleyicidir.",
+    "keywords": [
+      "mezotelyoma",
+      "asbest",
+      "plevra",
+      "tersiyer maruziyet"
+    ]
+  },
+  "tus-pearl-medical-pathology-302-extra": {
+    "front": "Mezotelyoma ilişkisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Sigara asbestle akciğer karsinomu riskini artırır; mezotelyoma için asbest belirleyicidir.",
+    "answer": "Sigara asbestle akciğer karsinomu riskini artırır; mezotelyoma için asbest belirleyicidir.",
+    "explanation": "Asbest lifleri plevrada kronik hasar ve malign dönüşüm riskini artırır. Sigara asbestle akciğer karsinomu riskini artırır; mezotelyoma için asbest belirleyicidir.",
+    "tusTip": "Mezotelyoma ilişkisi için sınavda hedeflenen ayrım genellikle şudur: Sigara asbestle akciğer karsinomu riskini artırır; mezotelyoma için asbest belirleyicidir.",
+    "differentialNote": "Sigara asbestle akciğer karsinomu riskini artırır; mezotelyoma için asbest belirleyicidir.",
+    "keywords": [
+      "mezotelyoma",
+      "asbest",
+      "plevra",
+      "tersiyer maruziyet"
+    ]
+  },
+  "tus-pearl-medical-pathology-303-spot": {
+    "front": "Erişkinde nefrotik sendrom ve anti-PLA2R pozitifliği hangi glomerülopatiyi düşündürür?",
+    "back": "Primer membranöz nefropati. Subepitelyal immün kompleks birikimi kapiller duvar kalınlaşmasına yol açar.",
+    "answer": "Primer membranöz nefropati. Subepitelyal immün kompleks birikimi kapiller duvar kalınlaşmasına yol açar.",
+    "explanation": "Subepitelyal immün kompleks birikimi kapiller duvar kalınlaşmasına yol açar. Minimal değişiklik hastalığı çocuklarda selektif proteinüri ve steroid yanıtıyla öne çıkar.",
+    "tusTip": "Subepitelyal immün kompleks birikimi kapiller duvar kalınlaşmasına yol açar. Minimal değişiklik hastalığı çocuklarda selektif proteinüri ve steroid yanıtıyla öne çıkar.",
+    "differentialNote": "Minimal değişiklik hastalığı çocuklarda selektif proteinüri ve steroid yanıtıyla öne çıkar.",
+    "keywords": [
+      "membranöz nefropati",
+      "anti-PLA2R",
+      "nefrotik sendrom",
+      "subepitelyal"
+    ]
+  },
+  "tus-pearl-medical-pathology-303-extra": {
+    "front": "Membranöz nefropati PLA2R sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Minimal değişiklik hastalığı çocuklarda selektif proteinüri ve steroid yanıtıyla öne çıkar.",
+    "answer": "Minimal değişiklik hastalığı çocuklarda selektif proteinüri ve steroid yanıtıyla öne çıkar.",
+    "explanation": "Subepitelyal immün kompleks birikimi kapiller duvar kalınlaşmasına yol açar. Minimal değişiklik hastalığı çocuklarda selektif proteinüri ve steroid yanıtıyla öne çıkar.",
+    "tusTip": "Membranöz nefropati PLA2R karıştırıldığında cevabı netleştiren karşılaştırma: Minimal değişiklik hastalığı çocuklarda selektif proteinüri ve steroid yanıtıyla öne çıkar.",
+    "differentialNote": "Minimal değişiklik hastalığı çocuklarda selektif proteinüri ve steroid yanıtıyla öne çıkar.",
+    "keywords": [
+      "membranöz nefropati",
+      "anti-PLA2R",
+      "nefrotik sendrom",
+      "subepitelyal"
+    ]
+  },
+  "tus-pearl-medical-pathology-304-spot": {
+    "front": "Üst solunum yolu enfeksiyonuyla eş zamanlı makroskopik hematüri hangi nefropatiyi düşündürür?",
+    "back": "IgA nefropatisi. Mezangial IgA birikimi sinfarenjit hematuri paterni oluşturabilir.",
+    "answer": "IgA nefropatisi. Mezangial IgA birikimi sinfarenjit hematuri paterni oluşturabilir.",
+    "explanation": "Mezangial IgA birikimi sinfarenjit hematuri paterni oluşturabilir. Poststreptokoksik glomerülonefrit genellikle enfeksiyondan haftalar sonra ve düşük C3 ile ortaya çıkar.",
+    "tusTip": "Mezangial IgA birikimi sinfarenjit hematuri paterni oluşturabilir. Poststreptokoksik glomerülonefrit genellikle enfeksiyondan haftalar sonra ve düşük C3 ile ortaya çıkar.",
+    "differentialNote": "Poststreptokoksik glomerülonefrit genellikle enfeksiyondan haftalar sonra ve düşük C3 ile ortaya çıkar.",
+    "keywords": [
+      "IgA nefropatisi",
+      "sinfarenjit hematüri",
+      "mezangial IgA",
+      "normal C3"
+    ]
+  },
+  "tus-pearl-medical-pathology-304-extra": {
+    "front": "IgA nefropatisi hematüri zamanı için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Poststreptokoksik glomerülonefrit genellikle enfeksiyondan haftalar sonra ve düşük C3 ile ortaya çıkar.",
+    "answer": "Poststreptokoksik glomerülonefrit genellikle enfeksiyondan haftalar sonra ve düşük C3 ile ortaya çıkar.",
+    "explanation": "Mezangial IgA birikimi sinfarenjit hematuri paterni oluşturabilir. Poststreptokoksik glomerülonefrit genellikle enfeksiyondan haftalar sonra ve düşük C3 ile ortaya çıkar.",
+    "tusTip": "IgA nefropatisi hematüri zamanı kartında ayırıcı değer taşıyan nokta: Poststreptokoksik glomerülonefrit genellikle enfeksiyondan haftalar sonra ve düşük C3 ile ortaya çıkar.",
+    "differentialNote": "Poststreptokoksik glomerülonefrit genellikle enfeksiyondan haftalar sonra ve düşük C3 ile ortaya çıkar.",
+    "keywords": [
+      "IgA nefropatisi",
+      "sinfarenjit hematüri",
+      "mezangial IgA",
+      "normal C3"
+    ]
+  },
+  "tus-pearl-medical-pathology-305-spot": {
+    "front": "Streptokok enfeksiyonundan haftalar sonra nefritik sendrom ve düşük C3 hangi tanıyı düşündürür?",
+    "back": "Poststreptokoksik glomerülonefrit. İmmün kompleks birikimi kompleman tüketimi ve nefritik tablo oluşturur.",
+    "answer": "Poststreptokoksik glomerülonefrit. İmmün kompleks birikimi kompleman tüketimi ve nefritik tablo oluşturur.",
+    "explanation": "İmmün kompleks birikimi kompleman tüketimi ve nefritik tablo oluşturur. IgA nefropatisi enfeksiyonla eş zamanlı hematüri yapabilir ve C3 genellikle normaldir.",
+    "tusTip": "İmmün kompleks birikimi kompleman tüketimi ve nefritik tablo oluşturur. IgA nefropatisi enfeksiyonla eş zamanlı hematüri yapabilir ve C3 genellikle normaldir.",
+    "differentialNote": "IgA nefropatisi enfeksiyonla eş zamanlı hematüri yapabilir ve C3 genellikle normaldir.",
+    "keywords": [
+      "poststreptokoksik GN",
+      "düşük C3",
+      "nefritik sendrom",
+      "gecikmiş hematüri"
+    ]
+  },
+  "tus-pearl-medical-pathology-305-extra": {
+    "front": "Poststreptokoksik glomerülonefrit için en kritik ayırıcı nokta nedir?",
+    "back": "IgA nefropatisi enfeksiyonla eş zamanlı hematüri yapabilir ve C3 genellikle normaldir.",
+    "answer": "IgA nefropatisi enfeksiyonla eş zamanlı hematüri yapabilir ve C3 genellikle normaldir.",
+    "explanation": "İmmün kompleks birikimi kompleman tüketimi ve nefritik tablo oluşturur. IgA nefropatisi enfeksiyonla eş zamanlı hematüri yapabilir ve C3 genellikle normaldir.",
+    "tusTip": "Poststreptokoksik glomerülonefrit için sınavda hedeflenen ayrım genellikle şudur: IgA nefropatisi enfeksiyonla eş zamanlı hematüri yapabilir ve C3 genellikle normaldir.",
+    "differentialNote": "IgA nefropatisi enfeksiyonla eş zamanlı hematüri yapabilir ve C3 genellikle normaldir.",
+    "keywords": [
+      "poststreptokoksik GN",
+      "düşük C3",
+      "nefritik sendrom",
+      "gecikmiş hematüri"
+    ]
+  },
+  "tus-pearl-medical-pathology-306-spot": {
+    "front": "Erişkinde hematüri, yan ağrısı ve böbrekte sarı-kahverengi kitle hangi tümörü düşündürür?",
+    "back": "Renal hücreli karsinom. Proksimal tübül kökenli tümörler lipid ve glikojen içeriği nedeniyle berrak hücreli görünüm gösterebilir.",
+    "answer": "Renal hücreli karsinom. Proksimal tübül kökenli tümörler lipid ve glikojen içeriği nedeniyle berrak hücreli görünüm gösterebilir.",
+    "explanation": "Proksimal tübül kökenli tümörler lipid ve glikojen içeriği nedeniyle berrak hücreli görünüm gösterebilir. Wilms tümörü çocukluk çağı böbrek tümörüdür.",
+    "tusTip": "Proksimal tübül kökenli tümörler lipid ve glikojen içeriği nedeniyle berrak hücreli görünüm gösterebilir. Wilms tümörü çocukluk çağı böbrek tümörüdür.",
+    "differentialNote": "Wilms tümörü çocukluk çağı böbrek tümörüdür.",
+    "keywords": [
+      "RCC",
+      "hematüri",
+      "berrak hücre",
+      "proksimal tübül"
+    ]
+  },
+  "tus-pearl-medical-pathology-306-extra": {
+    "front": "Renal hücreli karsinom karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Wilms tümörü çocukluk çağı böbrek tümörüdür.",
+    "answer": "Wilms tümörü çocukluk çağı böbrek tümörüdür.",
+    "explanation": "Proksimal tübül kökenli tümörler lipid ve glikojen içeriği nedeniyle berrak hücreli görünüm gösterebilir. Wilms tümörü çocukluk çağı böbrek tümörüdür.",
+    "tusTip": "Renal hücreli karsinom karıştırıldığında cevabı netleştiren karşılaştırma: Wilms tümörü çocukluk çağı böbrek tümörüdür.",
+    "differentialNote": "Wilms tümörü çocukluk çağı böbrek tümörüdür.",
+    "keywords": [
+      "RCC",
+      "hematüri",
+      "berrak hücre",
+      "proksimal tübül"
+    ]
+  },
+  "tus-pearl-medical-pathology-307-spot": {
+    "front": "Çocukta abdominal kitle ve WT1 ilişkisi hangi böbrek tümörünü düşündürür?",
+    "back": "Wilms tümörü. Nefroblastom çocukluk çağının önemli renal malignitesidir ve WT1 yolaklarıyla ilişkilendirilebilir.",
+    "answer": "Wilms tümörü. Nefroblastom çocukluk çağının önemli renal malignitesidir ve WT1 yolaklarıyla ilişkilendirilebilir.",
+    "explanation": "Nefroblastom çocukluk çağının önemli renal malignitesidir ve WT1 yolaklarıyla ilişkilendirilebilir. Renal hücreli karsinom erişkinlerde daha sık görülür.",
+    "tusTip": "Nefroblastom çocukluk çağının önemli renal malignitesidir ve WT1 yolaklarıyla ilişkilendirilebilir. Renal hücreli karsinom erişkinlerde daha sık görülür.",
+    "differentialNote": "Renal hücreli karsinom erişkinlerde daha sık görülür.",
+    "keywords": [
+      "Wilms",
+      "çocuk",
+      "abdominal kitle",
+      "WT1"
+    ]
+  },
+  "tus-pearl-medical-pathology-307-extra": {
+    "front": "Wilms tümörü için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Renal hücreli karsinom erişkinlerde daha sık görülür.",
+    "answer": "Renal hücreli karsinom erişkinlerde daha sık görülür.",
+    "explanation": "Nefroblastom çocukluk çağının önemli renal malignitesidir ve WT1 yolaklarıyla ilişkilendirilebilir. Renal hücreli karsinom erişkinlerde daha sık görülür.",
+    "tusTip": "Wilms tümörü kartında ayırıcı değer taşıyan nokta: Renal hücreli karsinom erişkinlerde daha sık görülür.",
+    "differentialNote": "Renal hücreli karsinom erişkinlerde daha sık görülür.",
+    "keywords": [
+      "Wilms",
+      "çocuk",
+      "abdominal kitle",
+      "WT1"
+    ]
+  },
+  "tus-pearl-medical-pathology-308-spot": {
+    "front": "Adölesanda diz çevresinde ağrılı metafizer kitle ve osteoid üretimi hangi tümörü düşündürür?",
+    "back": "Osteosarkom. Malign osteoblastlar osteoid üretir; grafide güneş ışını görünümü olabilir.",
+    "answer": "Osteosarkom. Malign osteoblastlar osteoid üretir; grafide güneş ışını görünümü olabilir.",
+    "explanation": "Malign osteoblastlar osteoid üretir; grafide güneş ışını görünümü olabilir. Ewing sarkomu diyafiz yerleşimi ve küçük yuvarlak mavi hücrelerle ayrılır.",
+    "tusTip": "Malign osteoblastlar osteoid üretir; grafide güneş ışını görünümü olabilir. Ewing sarkomu diyafiz yerleşimi ve küçük yuvarlak mavi hücrelerle ayrılır.",
+    "differentialNote": "Ewing sarkomu diyafiz yerleşimi ve küçük yuvarlak mavi hücrelerle ayrılır.",
+    "keywords": [
+      "osteosarkom",
+      "metafiz",
+      "diz çevresi",
+      "osteoid"
+    ]
+  },
+  "tus-pearl-medical-pathology-308-extra": {
+    "front": "Osteosarkom başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Ewing sarkomu diyafiz yerleşimi ve küçük yuvarlak mavi hücrelerle ayrılır.",
+    "answer": "Ewing sarkomu diyafiz yerleşimi ve küçük yuvarlak mavi hücrelerle ayrılır.",
+    "explanation": "Malign osteoblastlar osteoid üretir; grafide güneş ışını görünümü olabilir. Ewing sarkomu diyafiz yerleşimi ve küçük yuvarlak mavi hücrelerle ayrılır.",
+    "tusTip": "Osteosarkom için sınavda hedeflenen ayrım genellikle şudur: Ewing sarkomu diyafiz yerleşimi ve küçük yuvarlak mavi hücrelerle ayrılır.",
+    "differentialNote": "Ewing sarkomu diyafiz yerleşimi ve küçük yuvarlak mavi hücrelerle ayrılır.",
+    "keywords": [
+      "osteosarkom",
+      "metafiz",
+      "diz çevresi",
+      "osteoid"
+    ]
+  },
+  "tus-pearl-medical-pathology-309-spot": {
+    "front": "Çocukta diyafizer kemik kitlesi, soğan zarı periost reaksiyonu ve t(11;22) hangi tümörü düşündürür?",
+    "back": "Ewing sarkomu. EWSR1-FLI1 füzyonu küçük yuvarlak mavi hücreli tümör paterni oluşturur.",
+    "answer": "Ewing sarkomu. EWSR1-FLI1 füzyonu küçük yuvarlak mavi hücreli tümör paterni oluşturur.",
+    "explanation": "EWSR1-FLI1 füzyonu küçük yuvarlak mavi hücreli tümör paterni oluşturur. Osteosarkom metafizde osteoid üretimiyle daha çok ilişkilidir.",
+    "tusTip": "EWSR1-FLI1 füzyonu küçük yuvarlak mavi hücreli tümör paterni oluşturur. Osteosarkom metafizde osteoid üretimiyle daha çok ilişkilidir.",
+    "differentialNote": "Osteosarkom metafizde osteoid üretimiyle daha çok ilişkilidir.",
+    "keywords": [
+      "Ewing",
+      "t(11",
+      "22)",
+      "diyafiz",
+      "soğan zarı"
+    ]
+  },
+  "tus-pearl-medical-pathology-309-extra": {
+    "front": "Ewing sarkomu için en kritik ayırıcı nokta nedir?",
+    "back": "Osteosarkom metafizde osteoid üretimiyle daha çok ilişkilidir.",
+    "answer": "Osteosarkom metafizde osteoid üretimiyle daha çok ilişkilidir.",
+    "explanation": "EWSR1-FLI1 füzyonu küçük yuvarlak mavi hücreli tümör paterni oluşturur. Osteosarkom metafizde osteoid üretimiyle daha çok ilişkilidir.",
+    "tusTip": "Ewing sarkomu karıştırıldığında cevabı netleştiren karşılaştırma: Osteosarkom metafizde osteoid üretimiyle daha çok ilişkilidir.",
+    "differentialNote": "Osteosarkom metafizde osteoid üretimiyle daha çok ilişkilidir.",
+    "keywords": [
+      "Ewing",
+      "t(11",
+      "22)",
+      "diyafiz",
+      "soğan zarı"
+    ]
+  },
+  "tus-pearl-medical-pathology-310-spot": {
+    "front": "Çocukta lökokori ve RB1 tümör baskılayıcı gen kaybı hangi tümörü düşündürür?",
+    "back": "Retinoblastom. RB1 kaybı G1/S hücre döngüsü kontrolünü bozar.",
+    "answer": "Retinoblastom. RB1 kaybı G1/S hücre döngüsü kontrolünü bozar.",
+    "explanation": "RB1 kaybı G1/S hücre döngüsü kontrolünü bozar. Konjenital katarakt lökokori yapabilir ancak RB1 ilişkisi retinoblastom için belirleyicidir.",
+    "tusTip": "RB1 kaybı G1/S hücre döngüsü kontrolünü bozar. Konjenital katarakt lökokori yapabilir ancak RB1 ilişkisi retinoblastom için belirleyicidir.",
+    "differentialNote": "Konjenital katarakt lökokori yapabilir ancak RB1 ilişkisi retinoblastom için belirleyicidir.",
+    "keywords": [
+      "retinoblastom",
+      "lökokori",
+      "RB1",
+      "G1/S kontrol"
+    ]
+  },
+  "tus-pearl-medical-pathology-310-extra": {
+    "front": "Retinoblastom genetiği karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Konjenital katarakt lökokori yapabilir ancak RB1 ilişkisi retinoblastom için belirleyicidir.",
+    "answer": "Konjenital katarakt lökokori yapabilir ancak RB1 ilişkisi retinoblastom için belirleyicidir.",
+    "explanation": "RB1 kaybı G1/S hücre döngüsü kontrolünü bozar. Konjenital katarakt lökokori yapabilir ancak RB1 ilişkisi retinoblastom için belirleyicidir.",
+    "tusTip": "Retinoblastom genetiği kartında ayırıcı değer taşıyan nokta: Konjenital katarakt lökokori yapabilir ancak RB1 ilişkisi retinoblastom için belirleyicidir.",
+    "differentialNote": "Konjenital katarakt lökokori yapabilir ancak RB1 ilişkisi retinoblastom için belirleyicidir.",
+    "keywords": [
+      "retinoblastom",
+      "lökokori",
+      "RB1",
+      "G1/S kontrol Tıbbi Farmakoloji (medical-pharmacology)"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-311-spot": {
+    "front": "Dar kompleks paroksismal supraventriküler taşikardide akut sonlandırma için kullanılan kısa etkili ilaç hangisidir?",
+    "back": "Adenozin. Adenozin AV nod iletimini geçici olarak bloke eder.",
+    "answer": "Adenozin. Adenozin AV nod iletimini geçici olarak bloke eder.",
+    "explanation": "Adenozin AV nod iletimini geçici olarak bloke eder. Atriyal fibrilasyonda ritim ve hız kontrol stratejisi farklıdır.",
+    "tusTip": "Adenozin AV nod iletimini geçici olarak bloke eder. Atriyal fibrilasyonda ritim ve hız kontrol stratejisi farklıdır.",
+    "differentialNote": "Atriyal fibrilasyonda ritim ve hız kontrol stratejisi farklıdır.",
+    "keywords": [
+      "adenozin",
+      "SVT",
+      "AV nod",
+      "kısa yarı ömür"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-311-extra": {
+    "front": "Adenozin ve SVT başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Atriyal fibrilasyonda ritim ve hız kontrol stratejisi farklıdır.",
+    "answer": "Atriyal fibrilasyonda ritim ve hız kontrol stratejisi farklıdır.",
+    "explanation": "Adenozin AV nod iletimini geçici olarak bloke eder. Atriyal fibrilasyonda ritim ve hız kontrol stratejisi farklıdır.",
+    "tusTip": "Adenozin ve SVT için sınavda hedeflenen ayrım genellikle şudur: Atriyal fibrilasyonda ritim ve hız kontrol stratejisi farklıdır.",
+    "differentialNote": "Atriyal fibrilasyonda ritim ve hız kontrol stratejisi farklıdır.",
+    "keywords": [
+      "adenozin",
+      "SVT",
+      "AV nod",
+      "kısa yarı ömür"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-312-spot": {
+    "front": "Uzun süreli amiodaron kullanımında akciğerde hangi ciddi toksisite gelişebilir?",
+    "back": "Pulmoner fibrozis. Amiodaron çok dokuda birikir; akciğer, tiroid, karaciğer ve kornea yan etkileri izlenebilir.",
+    "answer": "Pulmoner fibrozis. Amiodaron çok dokuda birikir; akciğer, tiroid, karaciğer ve kornea yan etkileri izlenebilir.",
+    "explanation": "Amiodaron çok dokuda birikir; akciğer, tiroid, karaciğer ve kornea yan etkileri izlenebilir. Lidokain daha çok akut ventriküler aritmi ve nörolojik yan etkilerle ilişkilidir.",
+    "tusTip": "Amiodaron çok dokuda birikir; akciğer, tiroid, karaciğer ve kornea yan etkileri izlenebilir. Lidokain daha çok akut ventriküler aritmi ve nörolojik yan etkilerle ilişkilidir.",
+    "differentialNote": "Lidokain daha çok akut ventriküler aritmi ve nörolojik yan etkilerle ilişkilidir.",
+    "keywords": [
+      "amiodaron",
+      "pulmoner fibrozis",
+      "tiroid",
+      "korneal depo"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-312-extra": {
+    "front": "Amiodaron toksisitesi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Lidokain daha çok akut ventriküler aritmi ve nörolojik yan etkilerle ilişkilidir.",
+    "answer": "Lidokain daha çok akut ventriküler aritmi ve nörolojik yan etkilerle ilişkilidir.",
+    "explanation": "Amiodaron çok dokuda birikir; akciğer, tiroid, karaciğer ve kornea yan etkileri izlenebilir. Lidokain daha çok akut ventriküler aritmi ve nörolojik yan etkilerle ilişkilidir.",
+    "tusTip": "Amiodaron toksisitesi karıştırıldığında cevabı netleştiren karşılaştırma: Lidokain daha çok akut ventriküler aritmi ve nörolojik yan etkilerle ilişkilidir.",
+    "differentialNote": "Lidokain daha çok akut ventriküler aritmi ve nörolojik yan etkilerle ilişkilidir.",
+    "keywords": [
+      "amiodaron",
+      "pulmoner fibrozis",
+      "tiroid",
+      "korneal depo"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-313-spot": {
+    "front": "Nitratlar damar düz kasında hangi ikinci haberciyi artırarak vazodilatasyon yapar?",
+    "back": "CGMP. Nitrik oksit guanilat siklazı aktive eder ve cGMP aracılığıyla düz kas gevşer.",
+    "answer": "CGMP. Nitrik oksit guanilat siklazı aktive eder ve cGMP aracılığıyla düz kas gevşer.",
+    "explanation": "Nitrik oksit guanilat siklazı aktive eder ve cGMP aracılığıyla düz kas gevşer. PDE-5 inhibitörleriyle birlikte ciddi hipotansiyon riski artar.",
+    "tusTip": "Nitrik oksit guanilat siklazı aktive eder ve cGMP aracılığıyla düz kas gevşer. PDE-5 inhibitörleriyle birlikte ciddi hipotansiyon riski artar.",
+    "differentialNote": "PDE-5 inhibitörleriyle birlikte ciddi hipotansiyon riski artar.",
+    "keywords": [
+      "nitrat",
+      "cGMP",
+      "NO",
+      "venodilatasyon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-313-extra": {
+    "front": "Nitrat mekanizması için en kritik ayırıcı nokta nedir?",
+    "back": "PDE-5 inhibitörleriyle birlikte ciddi hipotansiyon riski artar.",
+    "answer": "PDE-5 inhibitörleriyle birlikte ciddi hipotansiyon riski artar.",
+    "explanation": "Nitrik oksit guanilat siklazı aktive eder ve cGMP aracılığıyla düz kas gevşer. PDE-5 inhibitörleriyle birlikte ciddi hipotansiyon riski artar.",
+    "tusTip": "Nitrat mekanizması kartında ayırıcı değer taşıyan nokta: PDE-5 inhibitörleriyle birlikte ciddi hipotansiyon riski artar.",
+    "differentialNote": "PDE-5 inhibitörleriyle birlikte ciddi hipotansiyon riski artar.",
+    "keywords": [
+      "nitrat",
+      "cGMP",
+      "NO",
+      "venodilatasyon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-314-spot": {
+    "front": "Hidralazin kullanımı hangi otoimmün benzeri tabloyu tetikleyebilir?",
+    "back": "İlaç ilişkili lupus benzeri sendrom. Hidralazin özellikle yavaş asetilatörlerde lupus benzeri bulgular yapabilir.",
+    "answer": "İlaç ilişkili lupus benzeri sendrom. Hidralazin özellikle yavaş asetilatörlerde lupus benzeri bulgular yapabilir.",
+    "explanation": "Hidralazin özellikle yavaş asetilatörlerde lupus benzeri bulgular yapabilir. ACE inhibitörleri öksürük ve anjiyoödemle daha çok ilişkilidir.",
+    "tusTip": "Hidralazin özellikle yavaş asetilatörlerde lupus benzeri bulgular yapabilir. ACE inhibitörleri öksürük ve anjiyoödemle daha çok ilişkilidir.",
+    "differentialNote": "ACE inhibitörleri öksürük ve anjiyoödemle daha çok ilişkilidir.",
+    "keywords": [
+      "hidralazin",
+      "ilaç ilişkili lupus",
+      "ANA",
+      "antihiston"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-314-extra": {
+    "front": "Hidralazin yan etkisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "ACE inhibitörleri öksürük ve anjiyoödemle daha çok ilişkilidir.",
+    "answer": "ACE inhibitörleri öksürük ve anjiyoödemle daha çok ilişkilidir.",
+    "explanation": "Hidralazin özellikle yavaş asetilatörlerde lupus benzeri bulgular yapabilir. ACE inhibitörleri öksürük ve anjiyoödemle daha çok ilişkilidir.",
+    "tusTip": "Hidralazin yan etkisi için sınavda hedeflenen ayrım genellikle şudur: ACE inhibitörleri öksürük ve anjiyoödemle daha çok ilişkilidir.",
+    "differentialNote": "ACE inhibitörleri öksürük ve anjiyoödemle daha çok ilişkilidir.",
+    "keywords": [
+      "hidralazin",
+      "ilaç ilişkili lupus",
+      "ANA",
+      "antihiston"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-315-spot": {
+    "front": "Minoksidilin belirgin kozmetik yan etkisi nedir?",
+    "back": "Hipertrikoz. Güçlü arterioler vazodilatör olan minoksidil kıllanma artışı yapabilir.",
+    "answer": "Hipertrikoz. Güçlü arterioler vazodilatör olan minoksidil kıllanma artışı yapabilir.",
+    "explanation": "Güçlü arterioler vazodilatör olan minoksidil kıllanma artışı yapabilir. Hidralazin lupus benzeri sendromla daha çok ilişkilidir.",
+    "tusTip": "Güçlü arterioler vazodilatör olan minoksidil kıllanma artışı yapabilir. Hidralazin lupus benzeri sendromla daha çok ilişkilidir.",
+    "differentialNote": "Hidralazin lupus benzeri sendromla daha çok ilişkilidir.",
+    "keywords": [
+      "minoksidil",
+      "hipertrikoz",
+      "arteriol vazodilatasyon",
+      "hipertansiyon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-315-extra": {
+    "front": "Minoksidil yan etkisi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Hidralazin lupus benzeri sendromla daha çok ilişkilidir.",
+    "answer": "Hidralazin lupus benzeri sendromla daha çok ilişkilidir.",
+    "explanation": "Güçlü arterioler vazodilatör olan minoksidil kıllanma artışı yapabilir. Hidralazin lupus benzeri sendromla daha çok ilişkilidir.",
+    "tusTip": "Minoksidil yan etkisi karıştırıldığında cevabı netleştiren karşılaştırma: Hidralazin lupus benzeri sendromla daha çok ilişkilidir.",
+    "differentialNote": "Hidralazin lupus benzeri sendromla daha çok ilişkilidir.",
+    "keywords": [
+      "minoksidil",
+      "hipertrikoz",
+      "arteriol vazodilatasyon",
+      "hipertansiyon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-316-spot": {
+    "front": "Spironolakton erkek hastada hangi endokrin yan etkiye yol açabilir?",
+    "back": "Jinekomasti. Antiandrojenik etkisi nedeniyle jinekomasti ve libido azalması görülebilir.",
+    "answer": "Jinekomasti. Antiandrojenik etkisi nedeniyle jinekomasti ve libido azalması görülebilir.",
+    "explanation": "Antiandrojenik etkisi nedeniyle jinekomasti ve libido azalması görülebilir. Eplerenon daha selektif olduğu için antiandrojenik yan etki daha azdır.",
+    "tusTip": "Antiandrojenik etkisi nedeniyle jinekomasti ve libido azalması görülebilir. Eplerenon daha selektif olduğu için antiandrojenik yan etki daha azdır.",
+    "differentialNote": "Eplerenon daha selektif olduğu için antiandrojenik yan etki daha azdır.",
+    "keywords": [
+      "spironolakton",
+      "jinekomasti",
+      "aldosteron antagonisti",
+      "hiperkalemi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-316-extra": {
+    "front": "Spironolakton yan etkisi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Eplerenon daha selektif olduğu için antiandrojenik yan etki daha azdır.",
+    "answer": "Eplerenon daha selektif olduğu için antiandrojenik yan etki daha azdır.",
+    "explanation": "Antiandrojenik etkisi nedeniyle jinekomasti ve libido azalması görülebilir. Eplerenon daha selektif olduğu için antiandrojenik yan etki daha azdır.",
+    "tusTip": "Spironolakton yan etkisi kartında ayırıcı değer taşıyan nokta: Eplerenon daha selektif olduğu için antiandrojenik yan etki daha azdır.",
+    "differentialNote": "Eplerenon daha selektif olduğu için antiandrojenik yan etki daha azdır.",
+    "keywords": [
+      "spironolakton",
+      "jinekomasti",
+      "aldosteron antagonisti",
+      "hiperkalemi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-317-spot": {
+    "front": "Furosemid gibi loop diüretiklerin önemli ototoksik yan etkisi nedir?",
+    "back": "İşitme toksisitesi. Loop diüretikler Na-K-2Cl kotransporterini inhibe eder ve yüksek dozda ototoksisite yapabilir.",
+    "answer": "İşitme toksisitesi. Loop diüretikler Na-K-2Cl kotransporterini inhibe eder ve yüksek dozda ototoksisite yapabilir.",
+    "explanation": "Loop diüretikler Na-K-2Cl kotransporterini inhibe eder ve yüksek dozda ototoksisite yapabilir. Tiyazidler hiperkalsemi yapma eğilimindedir.",
+    "tusTip": "Loop diüretikler Na-K-2Cl kotransporterini inhibe eder ve yüksek dozda ototoksisite yapabilir. Tiyazidler hiperkalsemi yapma eğilimindedir.",
+    "differentialNote": "Tiyazidler hiperkalsemi yapma eğilimindedir.",
+    "keywords": [
+      "furosemid",
+      "ototoksisite",
+      "NKCC2",
+      "hipokalemi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-317-extra": {
+    "front": "Loop diüretik toksisitesi için en kritik ayırıcı nokta nedir?",
+    "back": "Tiyazidler hiperkalsemi yapma eğilimindedir. Loop diüretikler Na-K-2Cl kotransporterini inhibe eder ve yüksek dozda ototoksisite yapabilir.",
+    "answer": "Tiyazidler hiperkalsemi yapma eğilimindedir. Loop diüretikler Na-K-2Cl kotransporterini inhibe eder ve yüksek dozda ototoksisite yapabilir.",
+    "explanation": "Loop diüretikler Na-K-2Cl kotransporterini inhibe eder ve yüksek dozda ototoksisite yapabilir. Tiyazidler hiperkalsemi yapma eğilimindedir.",
+    "tusTip": "Loop diüretik toksisitesi için sınavda hedeflenen ayrım genellikle şudur: Tiyazidler hiperkalsemi yapma eğilimindedir.",
+    "differentialNote": "Tiyazidler hiperkalsemi yapma eğilimindedir.",
+    "keywords": [
+      "furosemid",
+      "ototoksisite",
+      "NKCC2",
+      "hipokalemi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-318-spot": {
+    "front": "Tiyazid diüretikler serum kalsiyumunu nasıl etkiler?",
+    "back": "Artırır. Distal tübülde kalsiyum geri emilimini artırırlar.",
+    "answer": "Artırır. Distal tübülde kalsiyum geri emilimini artırırlar.",
+    "explanation": "Distal tübülde kalsiyum geri emilimini artırırlar. Loop diüretikler kalsiyum atılımını artırabilir.",
+    "tusTip": "Distal tübülde kalsiyum geri emilimini artırırlar. Loop diüretikler kalsiyum atılımını artırabilir.",
+    "differentialNote": "Loop diüretikler kalsiyum atılımını artırabilir.",
+    "keywords": [
+      "tiyazid",
+      "hiperkalsemi",
+      "distal tübül",
+      "hipokalemi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-318-extra": {
+    "front": "Tiyazid ve kalsiyum karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Loop diüretikler kalsiyum atılımını artırabilir. Distal tübülde kalsiyum geri emilimini artırırlar.",
+    "answer": "Loop diüretikler kalsiyum atılımını artırabilir. Distal tübülde kalsiyum geri emilimini artırırlar.",
+    "explanation": "Distal tübülde kalsiyum geri emilimini artırırlar. Loop diüretikler kalsiyum atılımını artırabilir.",
+    "tusTip": "Tiyazid ve kalsiyum karıştırıldığında cevabı netleştiren karşılaştırma: Loop diüretikler kalsiyum atılımını artırabilir.",
+    "differentialNote": "Loop diüretikler kalsiyum atılımını artırabilir.",
+    "keywords": [
+      "tiyazid",
+      "hiperkalsemi",
+      "distal tübül",
+      "hipokalemi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-319-spot": {
+    "front": "Asetazolamid hangi enzim inhibisyonu ile glokom ve irtifa hastalığında kullanılabilir?",
+    "back": "Karbonik anhidraz inhibisyonu. Bikarbonat geri emilimi azalır ve hafif metabolik asidoz ventilasyonu uyarabilir.",
+    "answer": "Karbonik anhidraz inhibisyonu. Bikarbonat geri emilimi azalır ve hafif metabolik asidoz ventilasyonu uyarabilir.",
+    "explanation": "Bikarbonat geri emilimi azalır ve hafif metabolik asidoz ventilasyonu uyarabilir. Loop diüretikler ödem tedavisinde daha güçlü natriürez sağlar.",
+    "tusTip": "Bikarbonat geri emilimi azalır ve hafif metabolik asidoz ventilasyonu uyarabilir. Loop diüretikler ödem tedavisinde daha güçlü natriürez sağlar.",
+    "differentialNote": "Loop diüretikler ödem tedavisinde daha güçlü natriürez sağlar.",
+    "keywords": [
+      "asetazolamid",
+      "karbonik anhidraz",
+      "glokom",
+      "irtifa hastalığı"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-319-extra": {
+    "front": "Asetazolamid kullanımı için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Loop diüretikler ödem tedavisinde daha güçlü natriürez sağlar.",
+    "answer": "Loop diüretikler ödem tedavisinde daha güçlü natriürez sağlar.",
+    "explanation": "Bikarbonat geri emilimi azalır ve hafif metabolik asidoz ventilasyonu uyarabilir. Loop diüretikler ödem tedavisinde daha güçlü natriürez sağlar.",
+    "tusTip": "Asetazolamid kullanımı kartında ayırıcı değer taşıyan nokta: Loop diüretikler ödem tedavisinde daha güçlü natriürez sağlar.",
+    "differentialNote": "Loop diüretikler ödem tedavisinde daha güçlü natriürez sağlar.",
+    "keywords": [
+      "asetazolamid",
+      "karbonik anhidraz",
+      "glokom",
+      "irtifa hastalığı"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-320-spot": {
+    "front": "Mannitol hangi klinik durumda pulmoner ödemi kötüleştirebilir?",
+    "back": "Kalp yetmezliği veya akciğer ödemi olan hastada.",
+    "answer": "Kalp yetmezliği veya akciğer ödemi olan hastada.",
+    "explanation": "Osmotik yük intravasküler hacmi artırarak konjesyonu artırabilir. Böbrek fonksiyonu ve hacim durumu mannitol öncesi değerlendirilmelidir.",
+    "tusTip": "Osmotik yük intravasküler hacmi artırarak konjesyonu artırabilir. Böbrek fonksiyonu ve hacim durumu mannitol öncesi değerlendirilmelidir.",
+    "differentialNote": "Böbrek fonksiyonu ve hacim durumu mannitol öncesi değerlendirilmelidir.",
+    "keywords": [
+      "mannitol",
+      "osmotik diüretik",
+      "pulmoner ödem",
+      "intrakraniyal basınç"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-320-extra": {
+    "front": "Mannitol kontrendikasyonu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Böbrek fonksiyonu ve hacim durumu mannitol öncesi değerlendirilmelidir.",
+    "answer": "Böbrek fonksiyonu ve hacim durumu mannitol öncesi değerlendirilmelidir.",
+    "explanation": "Osmotik yük intravasküler hacmi artırarak konjesyonu artırabilir. Böbrek fonksiyonu ve hacim durumu mannitol öncesi değerlendirilmelidir.",
+    "tusTip": "Mannitol kontrendikasyonu için sınavda hedeflenen ayrım genellikle şudur: Böbrek fonksiyonu ve hacim durumu mannitol öncesi değerlendirilmelidir.",
+    "differentialNote": "Böbrek fonksiyonu ve hacim durumu mannitol öncesi değerlendirilmelidir.",
+    "keywords": [
+      "mannitol",
+      "osmotik diüretik",
+      "pulmoner ödem",
+      "intrakraniyal basınç"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-321-spot": {
+    "front": "GLP-1 reseptör agonistleri glisemiyi hangi temel mekanizmalarla düşürür?",
+    "back": "Glukoz bağımlı insülin salınımını artırır ve glukagonu azaltır.",
+    "answer": "Glukoz bağımlı insülin salınımını artırır ve glukagonu azaltır.",
+    "explanation": "Ayrıca mide boşalmasını yavaşlatır ve iştahı azaltabilir. Sülfonilüreler insülini glukozdan bağımsız artırdığı için hipoglisemi riski daha belirgin olabilir.",
+    "tusTip": "Ayrıca mide boşalmasını yavaşlatır ve iştahı azaltabilir. Sülfonilüreler insülini glukozdan bağımsız artırdığı için hipoglisemi riski daha belirgin olabilir.",
+    "differentialNote": "Sülfonilüreler insülini glukozdan bağımsız artırdığı için hipoglisemi riski daha belirgin olabilir.",
+    "keywords": [
+      "GLP-1",
+      "insülin artışı",
+      "glukagon azalması",
+      "mide boşalması"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-321-extra": {
+    "front": "GLP-1 reseptör agonistleri için en kritik ayırıcı nokta nedir?",
+    "back": "Sülfonilüreler insülini glukozdan bağımsız artırdığı için hipoglisemi riski daha belirgin olabilir.",
+    "answer": "Sülfonilüreler insülini glukozdan bağımsız artırdığı için hipoglisemi riski daha belirgin olabilir.",
+    "explanation": "Ayrıca mide boşalmasını yavaşlatır ve iştahı azaltabilir. Sülfonilüreler insülini glukozdan bağımsız artırdığı için hipoglisemi riski daha belirgin olabilir.",
+    "tusTip": "GLP-1 reseptör agonistleri karıştırıldığında cevabı netleştiren karşılaştırma: Sülfonilüreler insülini glukozdan bağımsız artırdığı için hipoglisemi riski daha belirgin olabilir.",
+    "differentialNote": "Sülfonilüreler insülini glukozdan bağımsız artırdığı için hipoglisemi riski daha belirgin olabilir.",
+    "keywords": [
+      "GLP-1",
+      "insülin artışı",
+      "glukagon azalması",
+      "mide boşalması"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-322-spot": {
+    "front": "SGLT2 inhibitörleri hangi atipik ketoasidoz tablosuyla ilişkilendirilebilir?",
+    "back": "Öglisemik diyabetik ketoasidoz. İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir.",
+    "answer": "Öglisemik diyabetik ketoasidoz. İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir.",
+    "explanation": "İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir. Metformin laktik asidoz riskiyle daha çok ilişkilidir.",
+    "tusTip": "İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir. Metformin laktik asidoz riskiyle daha çok ilişkilidir.",
+    "differentialNote": "Metformin laktik asidoz riskiyle daha çok ilişkilidir.",
+    "keywords": [
+      "SGLT2",
+      "öglisemik DKA",
+      "glukozüri",
+      "ketoz"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-322-extra": {
+    "front": "SGLT2 inhibitörü riski karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Metformin laktik asidoz riskiyle daha çok ilişkilidir.",
+    "answer": "Metformin laktik asidoz riskiyle daha çok ilişkilidir.",
+    "explanation": "İdrarla glukoz kaybı ve insülin ihtiyacının azalması ketogenezi maskeleyebilir. Metformin laktik asidoz riskiyle daha çok ilişkilidir.",
+    "tusTip": "SGLT2 inhibitörü riski kartında ayırıcı değer taşıyan nokta: Metformin laktik asidoz riskiyle daha çok ilişkilidir.",
+    "differentialNote": "Metformin laktik asidoz riskiyle daha çok ilişkilidir.",
+    "keywords": [
+      "SGLT2",
+      "öglisemik DKA",
+      "glukozüri",
+      "ketoz"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-323-spot": {
+    "front": "Metimazol kullanan hastada ateş ve boğaz ağrısı gelişirse hangi ciddi yan etki düşünülmelidir?",
+    "back": "Agranülositoz. Antitiroid ilaçlar nadiren ağır nötropeni yapabilir; enfeksiyon belirtileri önemlidir.",
+    "answer": "Agranülositoz. Antitiroid ilaçlar nadiren ağır nötropeni yapabilir; enfeksiyon belirtileri önemlidir.",
+    "explanation": "Antitiroid ilaçlar nadiren ağır nötropeni yapabilir; enfeksiyon belirtileri önemlidir. Beta blokerler tirotoksik semptomları azaltır ancak hormon sentezini engellemez.",
+    "tusTip": "Antitiroid ilaçlar nadiren ağır nötropeni yapabilir; enfeksiyon belirtileri önemlidir. Beta blokerler tirotoksik semptomları azaltır ancak hormon sentezini engellemez.",
+    "differentialNote": "Beta blokerler tirotoksik semptomları azaltır ancak hormon sentezini engellemez.",
+    "keywords": [
+      "metimazol",
+      "agranülositoz",
+      "ateş",
+      "boğaz ağrısı"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-323-extra": {
+    "front": "Metimazol yan etkisi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Beta blokerler tirotoksik semptomları azaltır ancak hormon sentezini engellemez.",
+    "answer": "Beta blokerler tirotoksik semptomları azaltır ancak hormon sentezini engellemez.",
+    "explanation": "Antitiroid ilaçlar nadiren ağır nötropeni yapabilir; enfeksiyon belirtileri önemlidir. Beta blokerler tirotoksik semptomları azaltır ancak hormon sentezini engellemez.",
+    "tusTip": "Metimazol yan etkisi için sınavda hedeflenen ayrım genellikle şudur: Beta blokerler tirotoksik semptomları azaltır ancak hormon sentezini engellemez.",
+    "differentialNote": "Beta blokerler tirotoksik semptomları azaltır ancak hormon sentezini engellemez.",
+    "keywords": [
+      "metimazol",
+      "agranülositoz",
+      "ateş",
+      "boğaz ağrısı"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-324-spot": {
+    "front": "Tiroid fırtınasında antitiroid ilaç olarak PTU’nun ek avantajı nedir?",
+    "back": "T4’ün T3’e periferik dönüşümünü azaltması.",
+    "answer": "T4’ün T3’e periferik dönüşümünü azaltması.",
+    "explanation": "PTU tiroid hormon sentezini inhibe eder ve periferik dönüşümü de baskılar. Metimazol genellikle rutin tedavide tercih edilebilir; tiroid fırtınasında PTU avantaj sağlar.",
+    "tusTip": "PTU tiroid hormon sentezini inhibe eder ve periferik dönüşümü de baskılar. Metimazol genellikle rutin tedavide tercih edilebilir; tiroid fırtınasında PTU avantaj sağlar.",
+    "differentialNote": "Metimazol genellikle rutin tedavide tercih edilebilir; tiroid fırtınasında PTU avantaj sağlar.",
+    "keywords": [
+      "PTU",
+      "tiroid fırtınası",
+      "T4-T3 dönüşümü",
+      "antitiroid"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-324-extra": {
+    "front": "Propiltiourasil kullanımı sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Metimazol genellikle rutin tedavide tercih edilebilir; tiroid fırtınasında PTU avantaj sağlar.",
+    "answer": "Metimazol genellikle rutin tedavide tercih edilebilir; tiroid fırtınasında PTU avantaj sağlar.",
+    "explanation": "PTU tiroid hormon sentezini inhibe eder ve periferik dönüşümü de baskılar. Metimazol genellikle rutin tedavide tercih edilebilir; tiroid fırtınasında PTU avantaj sağlar.",
+    "tusTip": "Propiltiourasil kullanımı karıştırıldığında cevabı netleştiren karşılaştırma: Metimazol genellikle rutin tedavide tercih edilebilir; tiroid fırtınasında PTU avantaj sağlar.",
+    "differentialNote": "Metimazol genellikle rutin tedavide tercih edilebilir; tiroid fırtınasında PTU avantaj sağlar.",
+    "keywords": [
+      "PTU",
+      "tiroid fırtınası",
+      "T4-T3 dönüşümü",
+      "antitiroid"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-325-spot": {
+    "front": "Primer hipotiroidi tedavisinde temel replasman ilacı hangisidir?",
+    "back": "Levotiroksin. Sentetik T4 kararlı yarı ömrü nedeniyle fizyolojik replasman sağlar.",
+    "answer": "Levotiroksin. Sentetik T4 kararlı yarı ömrü nedeniyle fizyolojik replasman sağlar.",
+    "explanation": "Sentetik T4 kararlı yarı ömrü nedeniyle fizyolojik replasman sağlar. Liotironin daha kısa etkili T3 preparatıdır ve rutin uzun süreli replasmanda ilk seçenek değildir.",
+    "tusTip": "Sentetik T4 kararlı yarı ömrü nedeniyle fizyolojik replasman sağlar. Liotironin daha kısa etkili T3 preparatıdır ve rutin uzun süreli replasmanda ilk seçenek değildir.",
+    "differentialNote": "Liotironin daha kısa etkili T3 preparatıdır ve rutin uzun süreli replasmanda ilk seçenek değildir.",
+    "keywords": [
+      "levotiroksin",
+      "T4",
+      "primer hipotiroidi",
+      "TSH izlemi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-325-extra": {
+    "front": "Levotiroksin kullanımı için en kritik ayırıcı nokta nedir?",
+    "back": "Liotironin daha kısa etkili T3 preparatıdır ve rutin uzun süreli replasmanda ilk seçenek değildir.",
+    "answer": "Liotironin daha kısa etkili T3 preparatıdır ve rutin uzun süreli replasmanda ilk seçenek değildir.",
+    "explanation": "Sentetik T4 kararlı yarı ömrü nedeniyle fizyolojik replasman sağlar. Liotironin daha kısa etkili T3 preparatıdır ve rutin uzun süreli replasmanda ilk seçenek değildir.",
+    "tusTip": "Levotiroksin kullanımı kartında ayırıcı değer taşıyan nokta: Liotironin daha kısa etkili T3 preparatıdır ve rutin uzun süreli replasmanda ilk seçenek değildir.",
+    "differentialNote": "Liotironin daha kısa etkili T3 preparatıdır ve rutin uzun süreli replasmanda ilk seçenek değildir.",
+    "keywords": [
+      "levotiroksin",
+      "T4",
+      "primer hipotiroidi",
+      "TSH izlemi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-326-spot": {
+    "front": "Aspirin trombositlerde hangi enzimi geri dönüşümsüz inhibe eder?",
+    "back": "Siklooksijenaz. Trombositler çekirdeksiz olduğu için yeni COX sentezleyemez; etki trombosit ömrü boyunca sürer.",
+    "answer": "Siklooksijenaz. Trombositler çekirdeksiz olduğu için yeni COX sentezleyemez; etki trombosit ömrü boyunca sürer.",
+    "explanation": "Trombositler çekirdeksiz olduğu için yeni COX sentezleyemez; etki trombosit ömrü boyunca sürer. Klopidogrel P2Y12 ADP reseptörünü inhibe eder.",
+    "tusTip": "Trombositler çekirdeksiz olduğu için yeni COX sentezleyemez; etki trombosit ömrü boyunca sürer. Klopidogrel P2Y12 ADP reseptörünü inhibe eder.",
+    "differentialNote": "Klopidogrel P2Y12 ADP reseptörünü inhibe eder.",
+    "keywords": [
+      "aspirin",
+      "COX",
+      "TXA2",
+      "trombosit"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-326-extra": {
+    "front": "Aspirin mekanizması karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Klopidogrel P2Y12 ADP reseptörünü inhibe eder.",
+    "answer": "Klopidogrel P2Y12 ADP reseptörünü inhibe eder.",
+    "explanation": "Trombositler çekirdeksiz olduğu için yeni COX sentezleyemez; etki trombosit ömrü boyunca sürer. Klopidogrel P2Y12 ADP reseptörünü inhibe eder.",
+    "tusTip": "Aspirin mekanizması için sınavda hedeflenen ayrım genellikle şudur: Klopidogrel P2Y12 ADP reseptörünü inhibe eder.",
+    "differentialNote": "Klopidogrel P2Y12 ADP reseptörünü inhibe eder.",
+    "keywords": [
+      "aspirin",
+      "COX",
+      "TXA2",
+      "trombosit"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-327-spot": {
+    "front": "Klopidogrel antiplatelet etkisini hangi reseptörü inhibe ederek gösterir?",
+    "back": "P2Y12 ADP reseptörü. ADP aracılı trombosit aktivasyonu azalır.",
+    "answer": "P2Y12 ADP reseptörü. ADP aracılı trombosit aktivasyonu azalır.",
+    "explanation": "ADP aracılı trombosit aktivasyonu azalır. Aspirin tromboksan A2 üretimini COX üzerinden azaltır.",
+    "tusTip": "ADP aracılı trombosit aktivasyonu azalır. Aspirin tromboksan A2 üretimini COX üzerinden azaltır.",
+    "differentialNote": "Aspirin tromboksan A2 üretimini COX üzerinden azaltır.",
+    "keywords": [
+      "klopidogrel",
+      "P2Y12",
+      "ADP",
+      "trombosit"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-327-extra": {
+    "front": "Klopidogrel mekanizması sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Aspirin tromboksan A2 üretimini COX üzerinden azaltır.",
+    "answer": "Aspirin tromboksan A2 üretimini COX üzerinden azaltır.",
+    "explanation": "ADP aracılı trombosit aktivasyonu azalır. Aspirin tromboksan A2 üretimini COX üzerinden azaltır.",
+    "tusTip": "Klopidogrel mekanizması karıştırıldığında cevabı netleştiren karşılaştırma: Aspirin tromboksan A2 üretimini COX üzerinden azaltır.",
+    "differentialNote": "Aspirin tromboksan A2 üretimini COX üzerinden azaltır.",
+    "keywords": [
+      "klopidogrel",
+      "P2Y12",
+      "ADP",
+      "trombosit"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-328-spot": {
+    "front": "Alteplaz hangi fibrinolitik mekanizmayla pıhtı çözülmesini sağlar?",
+    "back": "Plazminojenin plazmine dönüşümünü artırır. Plazmin fibrini parçalar; bu nedenle ciddi kanama temel risktir.",
+    "answer": "Plazminojenin plazmine dönüşümünü artırır. Plazmin fibrini parçalar; bu nedenle ciddi kanama temel risktir.",
+    "explanation": "Plazmin fibrini parçalar; bu nedenle ciddi kanama temel risktir. Heparin pıhtıyı çözmez, yeni pıhtı oluşumunu azaltır.",
+    "tusTip": "Plazmin fibrini parçalar; bu nedenle ciddi kanama temel risktir. Heparin pıhtıyı çözmez, yeni pıhtı oluşumunu azaltır.",
+    "differentialNote": "Heparin pıhtıyı çözmez, yeni pıhtı oluşumunu azaltır.",
+    "keywords": [
+      "alteplaz",
+      "tPA",
+      "plazmin",
+      "kanama"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-328-extra": {
+    "front": "Alteplaz kanama riski için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Heparin pıhtıyı çözmez, yeni pıhtı oluşumunu azaltır.",
+    "answer": "Heparin pıhtıyı çözmez, yeni pıhtı oluşumunu azaltır.",
+    "explanation": "Plazmin fibrini parçalar; bu nedenle ciddi kanama temel risktir. Heparin pıhtıyı çözmez, yeni pıhtı oluşumunu azaltır.",
+    "tusTip": "Alteplaz kanama riski kartında ayırıcı değer taşıyan nokta: Heparin pıhtıyı çözmez, yeni pıhtı oluşumunu azaltır.",
+    "differentialNote": "Heparin pıhtıyı çözmez, yeni pıhtı oluşumunu azaltır.",
+    "keywords": [
+      "alteplaz",
+      "tPA",
+      "plazmin",
+      "kanama"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-329-spot": {
+    "front": "Dabigatran aşırı antikoagülasyonunda özgül geri çevirici ajan hangisidir?",
+    "back": "İdarucizumab. Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder.",
+    "answer": "İdarucizumab. Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder.",
+    "explanation": "Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder. Faktör Xa inhibitörleri için andexanet alfa düşünülür.",
+    "tusTip": "Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder. Faktör Xa inhibitörleri için andexanet alfa düşünülür.",
+    "differentialNote": "Faktör Xa inhibitörleri için andexanet alfa düşünülür.",
+    "keywords": [
+      "dabigatran",
+      "idarucizumab",
+      "trombin inhibitörü",
+      "antidot"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-329-extra": {
+    "front": "Dabigatran antidotu için en kritik ayırıcı nokta nedir?",
+    "back": "Faktör Xa inhibitörleri için andexanet alfa düşünülür.",
+    "answer": "Faktör Xa inhibitörleri için andexanet alfa düşünülür.",
+    "explanation": "Dabigatran direkt trombin inhibitörüdür; idarucizumab ilacı bağlayarak etkisini nötralize eder. Faktör Xa inhibitörleri için andexanet alfa düşünülür.",
+    "tusTip": "Dabigatran antidotu için sınavda hedeflenen ayrım genellikle şudur: Faktör Xa inhibitörleri için andexanet alfa düşünülür.",
+    "differentialNote": "Faktör Xa inhibitörleri için andexanet alfa düşünülür.",
+    "keywords": [
+      "dabigatran",
+      "idarucizumab",
+      "trombin inhibitörü",
+      "antidot"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-330-spot": {
+    "front": "Apiksaban veya rivaroksaban etkisini geri çevirmek için kullanılan özgül ajan hangisidir?",
+    "back": "Andexanet alfa. Andexanet alfa faktör Xa inhibitörlerini bağlayan decoy proteindir.",
+    "answer": "Andexanet alfa. Andexanet alfa faktör Xa inhibitörlerini bağlayan decoy proteindir.",
+    "explanation": "Andexanet alfa faktör Xa inhibitörlerini bağlayan decoy proteindir. Dabigatran için özgül ajan idarucizumabdır.",
+    "tusTip": "Andexanet alfa faktör Xa inhibitörlerini bağlayan decoy proteindir. Dabigatran için özgül ajan idarucizumabdır.",
+    "differentialNote": "Dabigatran için özgül ajan idarucizumabdır.",
+    "keywords": [
+      "apiksaban",
+      "rivaroksaban",
+      "andexanet alfa",
+      "faktör Xa"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-330-extra": {
+    "front": "Faktör Xa inhibitörü antidotu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Dabigatran için özgül ajan idarucizumabdır. Andexanet alfa faktör Xa inhibitörlerini bağlayan decoy proteindir.",
+    "answer": "Dabigatran için özgül ajan idarucizumabdır. Andexanet alfa faktör Xa inhibitörlerini bağlayan decoy proteindir.",
+    "explanation": "Andexanet alfa faktör Xa inhibitörlerini bağlayan decoy proteindir. Dabigatran için özgül ajan idarucizumabdır.",
+    "tusTip": "Faktör Xa inhibitörü antidotu karıştırıldığında cevabı netleştiren karşılaştırma: Dabigatran için özgül ajan idarucizumabdır.",
+    "differentialNote": "Dabigatran için özgül ajan idarucizumabdır.",
+    "keywords": [
+      "apiksaban",
+      "rivaroksaban",
+      "andexanet alfa",
+      "faktör Xa"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-331-spot": {
+    "front": "Yüksek doz metotreksat toksisitesinde kullanılan folat formu hangisidir?",
+    "back": "Folinik asit. Folinik asit tetrahidrofolat havuzunu destekleyerek normal hücreleri korur.",
+    "answer": "Folinik asit. Folinik asit tetrahidrofolat havuzunu destekleyerek normal hücreleri korur.",
+    "explanation": "Folinik asit tetrahidrofolat havuzunu destekleyerek normal hücreleri korur. Folik asit bazı yan etkileri azaltabilir ancak yüksek doz kurtarmada folinik asit kullanılır.",
+    "tusTip": "Folinik asit tetrahidrofolat havuzunu destekleyerek normal hücreleri korur. Folik asit bazı yan etkileri azaltabilir ancak yüksek doz kurtarmada folinik asit kullanılır.",
+    "differentialNote": "Folik asit bazı yan etkileri azaltabilir ancak yüksek doz kurtarmada folinik asit kullanılır.",
+    "keywords": [
+      "metotreksat",
+      "folinik asit",
+      "lökovorin",
+      "DHFR"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-331-extra": {
+    "front": "Metotreksat kurtarma tedavisi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Folik asit bazı yan etkileri azaltabilir ancak yüksek doz kurtarmada folinik asit kullanılır.",
+    "answer": "Folik asit bazı yan etkileri azaltabilir ancak yüksek doz kurtarmada folinik asit kullanılır.",
+    "explanation": "Folinik asit tetrahidrofolat havuzunu destekleyerek normal hücreleri korur. Folik asit bazı yan etkileri azaltabilir ancak yüksek doz kurtarmada folinik asit kullanılır.",
+    "tusTip": "Metotreksat kurtarma tedavisi kartında ayırıcı değer taşıyan nokta: Folik asit bazı yan etkileri azaltabilir ancak yüksek doz kurtarmada folinik asit kullanılır.",
+    "differentialNote": "Folik asit bazı yan etkileri azaltabilir ancak yüksek doz kurtarmada folinik asit kullanılır.",
+    "keywords": [
+      "metotreksat",
+      "folinik asit",
+      "lökovorin",
+      "DHFR"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-332-spot": {
+    "front": "Vinkristinin doz sınırlayıcı önemli yan etkisi nedir?",
+    "back": "Periferik nöropati. Mikrotübül dinamiğini bozması aksonal taşınmayı etkiler.",
+    "answer": "Periferik nöropati. Mikrotübül dinamiğini bozması aksonal taşınmayı etkiler.",
+    "explanation": "Mikrotübül dinamiğini bozması aksonal taşınmayı etkiler. Sisplatin nefrotoksisite ve ototoksisiteyle daha çok ilişkilidir.",
+    "tusTip": "Mikrotübül dinamiğini bozması aksonal taşınmayı etkiler. Sisplatin nefrotoksisite ve ototoksisiteyle daha çok ilişkilidir.",
+    "differentialNote": "Sisplatin nefrotoksisite ve ototoksisiteyle daha çok ilişkilidir.",
+    "keywords": [
+      "vinkristin",
+      "periferik nöropati",
+      "mikrotübül",
+      "konstipasyon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-332-extra": {
+    "front": "Vinkristin toksisitesi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Sisplatin nefrotoksisite ve ototoksisiteyle daha çok ilişkilidir.",
+    "answer": "Sisplatin nefrotoksisite ve ototoksisiteyle daha çok ilişkilidir.",
+    "explanation": "Mikrotübül dinamiğini bozması aksonal taşınmayı etkiler. Sisplatin nefrotoksisite ve ototoksisiteyle daha çok ilişkilidir.",
+    "tusTip": "Vinkristin toksisitesi için sınavda hedeflenen ayrım genellikle şudur: Sisplatin nefrotoksisite ve ototoksisiteyle daha çok ilişkilidir.",
+    "differentialNote": "Sisplatin nefrotoksisite ve ototoksisiteyle daha çok ilişkilidir.",
+    "keywords": [
+      "vinkristin",
+      "periferik nöropati",
+      "mikrotübül",
+      "konstipasyon"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-333-spot": {
+    "front": "Sisplatin kullanımında hangi iki organ toksisitesi özellikle izlenir?",
+    "back": "Nefrotoksisite ve ototoksisite. Platin bileşikleri böbrek tübülleri ve işitme sistemi üzerinde toksik etki gösterebilir.",
+    "answer": "Nefrotoksisite ve ototoksisite. Platin bileşikleri böbrek tübülleri ve işitme sistemi üzerinde toksik etki gösterebilir.",
+    "explanation": "Platin bileşikleri böbrek tübülleri ve işitme sistemi üzerinde toksik etki gösterebilir. Doksorubisin kardiyomiyopati riskiyle daha çok ilişkilidir.",
+    "tusTip": "Platin bileşikleri böbrek tübülleri ve işitme sistemi üzerinde toksik etki gösterebilir. Doksorubisin kardiyomiyopati riskiyle daha çok ilişkilidir.",
+    "differentialNote": "Doksorubisin kardiyomiyopati riskiyle daha çok ilişkilidir.",
+    "keywords": [
+      "sisplatin",
+      "nefrotoksisite",
+      "ototoksisite",
+      "platin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-333-extra": {
+    "front": "Sisplatin toksisitesi için en kritik ayırıcı nokta nedir?",
+    "back": "Doksorubisin kardiyomiyopati riskiyle daha çok ilişkilidir.",
+    "answer": "Doksorubisin kardiyomiyopati riskiyle daha çok ilişkilidir.",
+    "explanation": "Platin bileşikleri böbrek tübülleri ve işitme sistemi üzerinde toksik etki gösterebilir. Doksorubisin kardiyomiyopati riskiyle daha çok ilişkilidir.",
+    "tusTip": "Sisplatin toksisitesi karıştırıldığında cevabı netleştiren karşılaştırma: Doksorubisin kardiyomiyopati riskiyle daha çok ilişkilidir.",
+    "differentialNote": "Doksorubisin kardiyomiyopati riskiyle daha çok ilişkilidir.",
+    "keywords": [
+      "sisplatin",
+      "nefrotoksisite",
+      "ototoksisite",
+      "platin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-334-spot": {
+    "front": "Doksorubisin ilişkili kardiyomiyopatiyi azaltmak için kullanılan koruyucu ajan hangisidir?",
+    "back": "Deksrazoksan. Serbest radikal hasarı ve demir ilişkili mekanizmalar kardiyotoksisiteye katkı sağlar.",
+    "answer": "Deksrazoksan. Serbest radikal hasarı ve demir ilişkili mekanizmalar kardiyotoksisiteye katkı sağlar.",
+    "explanation": "Serbest radikal hasarı ve demir ilişkili mekanizmalar kardiyotoksisiteye katkı sağlar. Bleomisin pulmoner fibrozis riskiyle daha çok ilişkilidir.",
+    "tusTip": "Serbest radikal hasarı ve demir ilişkili mekanizmalar kardiyotoksisiteye katkı sağlar. Bleomisin pulmoner fibrozis riskiyle daha çok ilişkilidir.",
+    "differentialNote": "Bleomisin pulmoner fibrozis riskiyle daha çok ilişkilidir.",
+    "keywords": [
+      "doksorubisin",
+      "kardiyomiyopati",
+      "deksrazoksan",
+      "antrasiklin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-334-extra": {
+    "front": "Doksorubisin kardiyotoksisitesi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Bleomisin pulmoner fibrozis riskiyle daha çok ilişkilidir.",
+    "answer": "Bleomisin pulmoner fibrozis riskiyle daha çok ilişkilidir.",
+    "explanation": "Serbest radikal hasarı ve demir ilişkili mekanizmalar kardiyotoksisiteye katkı sağlar. Bleomisin pulmoner fibrozis riskiyle daha çok ilişkilidir.",
+    "tusTip": "Doksorubisin kardiyotoksisitesi kartında ayırıcı değer taşıyan nokta: Bleomisin pulmoner fibrozis riskiyle daha çok ilişkilidir.",
+    "differentialNote": "Bleomisin pulmoner fibrozis riskiyle daha çok ilişkilidir.",
+    "keywords": [
+      "doksorubisin",
+      "kardiyomiyopati",
+      "deksrazoksan",
+      "antrasiklin"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-335-spot": {
+    "front": "İzoniazid kullanan hastaya periferik nöropatiyi önlemek için hangi vitamin verilir?",
+    "back": "Piridoksin. İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır.",
+    "answer": "Piridoksin. İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır.",
+    "explanation": "İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır. Rifampisin sitokrom P450 indüksiyonu ve turuncu vücut sıvılarıyla öne çıkar.",
+    "tusTip": "İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır. Rifampisin sitokrom P450 indüksiyonu ve turuncu vücut sıvılarıyla öne çıkar.",
+    "differentialNote": "Rifampisin sitokrom P450 indüksiyonu ve turuncu vücut sıvılarıyla öne çıkar.",
+    "keywords": [
+      "izoniazid",
+      "piridoksin",
+      "B6",
+      "nöropati"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-335-extra": {
+    "front": "İzoniazid ve B6 başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Rifampisin sitokrom P450 indüksiyonu ve turuncu vücut sıvılarıyla öne çıkar.",
+    "answer": "Rifampisin sitokrom P450 indüksiyonu ve turuncu vücut sıvılarıyla öne çıkar.",
+    "explanation": "İzoniazid B6 metabolizmasını etkileyerek nöropati riskini artırır. Rifampisin sitokrom P450 indüksiyonu ve turuncu vücut sıvılarıyla öne çıkar.",
+    "tusTip": "İzoniazid ve B6 için sınavda hedeflenen ayrım genellikle şudur: Rifampisin sitokrom P450 indüksiyonu ve turuncu vücut sıvılarıyla öne çıkar.",
+    "differentialNote": "Rifampisin sitokrom P450 indüksiyonu ve turuncu vücut sıvılarıyla öne çıkar.",
+    "keywords": [
+      "izoniazid",
+      "piridoksin",
+      "B6",
+      "nöropati"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-336-spot": {
+    "front": "Rifampisin hangi farmakokinetik özelliği nedeniyle çok sayıda ilaç etkileşimi yapar?",
+    "back": "Güçlü sitokrom P450 indüksiyonu. Hepatik enzim indüksiyonu birçok ilacın plazma düzeyini düşürebilir.",
+    "answer": "Güçlü sitokrom P450 indüksiyonu. Hepatik enzim indüksiyonu birçok ilacın plazma düzeyini düşürebilir.",
+    "explanation": "Hepatik enzim indüksiyonu birçok ilacın plazma düzeyini düşürebilir. İzoniazid bazı CYP enzimlerini inhibe edebilir ve nöropati yapabilir.",
+    "tusTip": "Hepatik enzim indüksiyonu birçok ilacın plazma düzeyini düşürebilir. İzoniazid bazı CYP enzimlerini inhibe edebilir ve nöropati yapabilir.",
+    "differentialNote": "İzoniazid bazı CYP enzimlerini inhibe edebilir ve nöropati yapabilir.",
+    "keywords": [
+      "rifampisin",
+      "CYP indüksiyonu",
+      "ilaç etkileşimi",
+      "turuncu sıvı"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-336-extra": {
+    "front": "Rifampisin etkileşimi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "İzoniazid bazı CYP enzimlerini inhibe edebilir ve nöropati yapabilir.",
+    "answer": "İzoniazid bazı CYP enzimlerini inhibe edebilir ve nöropati yapabilir.",
+    "explanation": "Hepatik enzim indüksiyonu birçok ilacın plazma düzeyini düşürebilir. İzoniazid bazı CYP enzimlerini inhibe edebilir ve nöropati yapabilir.",
+    "tusTip": "Rifampisin etkileşimi karıştırıldığında cevabı netleştiren karşılaştırma: İzoniazid bazı CYP enzimlerini inhibe edebilir ve nöropati yapabilir.",
+    "differentialNote": "İzoniazid bazı CYP enzimlerini inhibe edebilir ve nöropati yapabilir.",
+    "keywords": [
+      "rifampisin",
+      "CYP indüksiyonu",
+      "ilaç etkileşimi",
+      "turuncu sıvı"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-337-spot": {
+    "front": "Etambutol kullanımında izlenmesi gereken temel görme yan etkisi nedir?",
+    "back": "Optik nörit. Renk görme bozukluğu ve görme keskinliği azalması gelişebilir.",
+    "answer": "Optik nörit. Renk görme bozukluğu ve görme keskinliği azalması gelişebilir.",
+    "explanation": "Renk görme bozukluğu ve görme keskinliği azalması gelişebilir. Pirazinamid hiperürisemi ve hepatotoksisiteyle öne çıkar.",
+    "tusTip": "Renk görme bozukluğu ve görme keskinliği azalması gelişebilir. Pirazinamid hiperürisemi ve hepatotoksisiteyle öne çıkar.",
+    "differentialNote": "Pirazinamid hiperürisemi ve hepatotoksisiteyle öne çıkar.",
+    "keywords": [
+      "etambutol",
+      "optik nörit",
+      "kırmızı-yeşil",
+      "TB tedavisi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-337-extra": {
+    "front": "Etambutol toksisitesi için en kritik ayırıcı nokta nedir?",
+    "back": "Pirazinamid hiperürisemi ve hepatotoksisiteyle öne çıkar.",
+    "answer": "Pirazinamid hiperürisemi ve hepatotoksisiteyle öne çıkar.",
+    "explanation": "Renk görme bozukluğu ve görme keskinliği azalması gelişebilir. Pirazinamid hiperürisemi ve hepatotoksisiteyle öne çıkar.",
+    "tusTip": "Etambutol toksisitesi kartında ayırıcı değer taşıyan nokta: Pirazinamid hiperürisemi ve hepatotoksisiteyle öne çıkar.",
+    "differentialNote": "Pirazinamid hiperürisemi ve hepatotoksisiteyle öne çıkar.",
+    "keywords": [
+      "etambutol",
+      "optik nörit",
+      "kırmızı-yeşil",
+      "TB tedavisi"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-338-spot": {
+    "front": "Pirazinamid hangi metabolik yan etkiyi artırabilir?",
+    "back": "Hiperürisemi. Ürik asit atılımını azaltabilir ve gut benzeri yakınmaları tetikleyebilir.",
+    "answer": "Hiperürisemi. Ürik asit atılımını azaltabilir ve gut benzeri yakınmaları tetikleyebilir.",
+    "explanation": "Ürik asit atılımını azaltabilir ve gut benzeri yakınmaları tetikleyebilir. Etambutol için belirleyici yan etki optik nörittir.",
+    "tusTip": "Ürik asit atılımını azaltabilir ve gut benzeri yakınmaları tetikleyebilir. Etambutol için belirleyici yan etki optik nörittir.",
+    "differentialNote": "Etambutol için belirleyici yan etki optik nörittir.",
+    "keywords": [
+      "pirazinamid",
+      "hiperürisemi",
+      "gut",
+      "TB"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-338-extra": {
+    "front": "Pirazinamid yan etkisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Etambutol için belirleyici yan etki optik nörittir.",
+    "answer": "Etambutol için belirleyici yan etki optik nörittir.",
+    "explanation": "Ürik asit atılımını azaltabilir ve gut benzeri yakınmaları tetikleyebilir. Etambutol için belirleyici yan etki optik nörittir.",
+    "tusTip": "Pirazinamid yan etkisi için sınavda hedeflenen ayrım genellikle şudur: Etambutol için belirleyici yan etki optik nörittir.",
+    "differentialNote": "Etambutol için belirleyici yan etki optik nörittir.",
+    "keywords": [
+      "pirazinamid",
+      "hiperürisemi",
+      "gut",
+      "TB"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-339-spot": {
+    "front": "Florokinolonlar hangi tendon komplikasyonuyla ilişkilidir?",
+    "back": "Tendinit ve tendon rüptürü. Kollajen yapılar üzerinde toksik etki özellikle yaşlılarda ve steroid kullananlarda önemlidir.",
+    "answer": "Tendinit ve tendon rüptürü. Kollajen yapılar üzerinde toksik etki özellikle yaşlılarda ve steroid kullananlarda önemlidir.",
+    "explanation": "Kollajen yapılar üzerinde toksik etki özellikle yaşlılarda ve steroid kullananlarda önemlidir. Makrolidler de QT uzatabilir ancak tendon rüptürü florokinolonlar için daha belirgindir.",
+    "tusTip": "Kollajen yapılar üzerinde toksik etki özellikle yaşlılarda ve steroid kullananlarda önemlidir. Makrolidler de QT uzatabilir ancak tendon rüptürü florokinolonlar için daha belirgindir.",
+    "differentialNote": "Makrolidler de QT uzatabilir ancak tendon rüptürü florokinolonlar için daha belirgindir.",
+    "keywords": [
+      "florokinolon",
+      "tendon rüptürü",
+      "QT uzaması",
+      "kıkırdak"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-339-extra": {
+    "front": "Florokinolon yan etkisi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Makrolidler de QT uzatabilir ancak tendon rüptürü florokinolonlar için daha belirgindir.",
+    "answer": "Makrolidler de QT uzatabilir ancak tendon rüptürü florokinolonlar için daha belirgindir.",
+    "explanation": "Kollajen yapılar üzerinde toksik etki özellikle yaşlılarda ve steroid kullananlarda önemlidir. Makrolidler de QT uzatabilir ancak tendon rüptürü florokinolonlar için daha belirgindir.",
+    "tusTip": "Florokinolon yan etkisi karıştırıldığında cevabı netleştiren karşılaştırma: Makrolidler de QT uzatabilir ancak tendon rüptürü florokinolonlar için daha belirgindir.",
+    "differentialNote": "Makrolidler de QT uzatabilir ancak tendon rüptürü florokinolonlar için daha belirgindir.",
+    "keywords": [
+      "florokinolon",
+      "tendon rüptürü",
+      "QT uzaması",
+      "kıkırdak"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-340-spot": {
+    "front": "Karbamazepin başlamadan önce bazı Asya kökenli hastalarda hangi HLA alleli ciddi deri reaksiyonu açısından önemlidir?",
+    "back": "HLA-B*1502. Bu allel Stevens-Johnson sendromu ve toksik epidermal nekroliz riskini artırabilir.",
+    "answer": "HLA-B*1502. Bu allel Stevens-Johnson sendromu ve toksik epidermal nekroliz riskini artırabilir.",
+    "explanation": "Bu allel Stevens-Johnson sendromu ve toksik epidermal nekroliz riskini artırabilir. Valproat daha çok hepatotoksisite ve nöral tüp defekti riskiyle ilişkilidir.",
+    "tusTip": "Bu allel Stevens-Johnson sendromu ve toksik epidermal nekroliz riskini artırabilir. Valproat daha çok hepatotoksisite ve nöral tüp defekti riskiyle ilişkilidir.",
+    "differentialNote": "Valproat daha çok hepatotoksisite ve nöral tüp defekti riskiyle ilişkilidir.",
+    "keywords": [
+      "karbamazepin",
+      "HLA-B*1502",
+      "SJS",
+      "TEN"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-340-extra": {
+    "front": "Karbamazepin ciddi deri reaksiyonu için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Valproat daha çok hepatotoksisite ve nöral tüp defekti riskiyle ilişkilidir.",
+    "answer": "Valproat daha çok hepatotoksisite ve nöral tüp defekti riskiyle ilişkilidir.",
+    "explanation": "Bu allel Stevens-Johnson sendromu ve toksik epidermal nekroliz riskini artırabilir. Valproat daha çok hepatotoksisite ve nöral tüp defekti riskiyle ilişkilidir.",
+    "tusTip": "Karbamazepin ciddi deri reaksiyonu kartında ayırıcı değer taşıyan nokta: Valproat daha çok hepatotoksisite ve nöral tüp defekti riskiyle ilişkilidir.",
+    "differentialNote": "Valproat daha çok hepatotoksisite ve nöral tüp defekti riskiyle ilişkilidir.",
+    "keywords": [
+      "karbamazepin",
+      "HLA-B*1502",
+      "SJS",
+      "TEN"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-341-spot": {
+    "front": "Gebelikte valproat kullanımı hangi konjenital malformasyon riskini artırır?",
+    "back": "Nöral tüp defekti. Valproat teratojeniktir ve özellikle ilk trimesterde nöral tüp kapanma kusuru riskini artırır.",
+    "answer": "Nöral tüp defekti. Valproat teratojeniktir ve özellikle ilk trimesterde nöral tüp kapanma kusuru riskini artırır.",
+    "explanation": "Valproat teratojeniktir ve özellikle ilk trimesterde nöral tüp kapanma kusuru riskini artırır. Lamotrijin gebelikte daha güvenli seçeneklerden biri olarak değerlendirilebilir.",
+    "tusTip": "Valproat teratojeniktir ve özellikle ilk trimesterde nöral tüp kapanma kusuru riskini artırır. Lamotrijin gebelikte daha güvenli seçeneklerden biri olarak değerlendirilebilir.",
+    "differentialNote": "Lamotrijin gebelikte daha güvenli seçeneklerden biri olarak değerlendirilebilir.",
+    "keywords": [
+      "valproat",
+      "nöral tüp defekti",
+      "teratojenite",
+      "antiepileptik"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-341-extra": {
+    "front": "Valproat gebelik riski için en kritik ayırıcı nokta nedir?",
+    "back": "Lamotrijin gebelikte daha güvenli seçeneklerden biri olarak değerlendirilebilir.",
+    "answer": "Lamotrijin gebelikte daha güvenli seçeneklerden biri olarak değerlendirilebilir.",
+    "explanation": "Valproat teratojeniktir ve özellikle ilk trimesterde nöral tüp kapanma kusuru riskini artırır. Lamotrijin gebelikte daha güvenli seçeneklerden biri olarak değerlendirilebilir.",
+    "tusTip": "Valproat gebelik riski için sınavda hedeflenen ayrım genellikle şudur: Lamotrijin gebelikte daha güvenli seçeneklerden biri olarak değerlendirilebilir.",
+    "differentialNote": "Lamotrijin gebelikte daha güvenli seçeneklerden biri olarak değerlendirilebilir.",
+    "keywords": [
+      "valproat",
+      "nöral tüp defekti",
+      "teratojenite",
+      "antiepileptik"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-342-spot": {
+    "front": "Opioid toksisitesinde solunum depresyonunu hızlı düzeltmek için verilen antagonist hangisidir?",
+    "back": "Nalokson. Nalokson opioid reseptörlerini kompetitif olarak bloke eder.",
+    "answer": "Nalokson. Nalokson opioid reseptörlerini kompetitif olarak bloke eder.",
+    "explanation": "Nalokson opioid reseptörlerini kompetitif olarak bloke eder. Flumazenil benzodiazepin antagonisti olup opioid toksisitesinde etkili değildir.",
+    "tusTip": "Nalokson opioid reseptörlerini kompetitif olarak bloke eder. Flumazenil benzodiazepin antagonisti olup opioid toksisitesinde etkili değildir.",
+    "differentialNote": "Flumazenil benzodiazepin antagonisti olup opioid toksisitesinde etkili değildir.",
+    "keywords": [
+      "nalokson",
+      "opioid toksisitesi",
+      "solunum depresyonu",
+      "miyozis"
+    ]
+  },
+  "tus-pearl-medical-pharmacology-342-extra": {
+    "front": "Nalokson endikasyonu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Flumazenil benzodiazepin antagonisti olup opioid toksisitesinde etkili değildir.",
+    "answer": "Flumazenil benzodiazepin antagonisti olup opioid toksisitesinde etkili değildir.",
+    "explanation": "Nalokson opioid reseptörlerini kompetitif olarak bloke eder. Flumazenil benzodiazepin antagonisti olup opioid toksisitesinde etkili değildir.",
+    "tusTip": "Nalokson endikasyonu karıştırıldığında cevabı netleştiren karşılaştırma: Flumazenil benzodiazepin antagonisti olup opioid toksisitesinde etkili değildir.",
+    "differentialNote": "Flumazenil benzodiazepin antagonisti olup opioid toksisitesinde etkili değildir.",
+    "keywords": [
+      "nalokson",
+      "opioid toksisitesi",
+      "solunum depresyonu",
+      "miyozis İç Hastalıkları (internal-medicine)"
+    ]
+  },
+  "tus-pearl-internal-medicine-343-spot": {
+    "front": "Pnömonide CURB-65 skorunda yer alan değişkenlerden biri hangisidir?",
+    "back": "Bilinç bulanıklığı. CURB-65; bilinç durumu, üre, solunum sayısı, kan basıncı ve 65 yaş üzerini değerlendirir.",
+    "answer": "Bilinç bulanıklığı. CURB-65; bilinç durumu, üre, solunum sayısı, kan basıncı ve 65 yaş üzerini değerlendirir.",
+    "explanation": "CURB-65; bilinç durumu, üre, solunum sayısı, kan basıncı ve 65 yaş üzerini değerlendirir. Ateş yüksekliği tek başına CURB-65 bileşeni değildir.",
+    "tusTip": "CURB-65; bilinç durumu, üre, solunum sayısı, kan basıncı ve 65 yaş üzerini değerlendirir. Ateş yüksekliği tek başına CURB-65 bileşeni değildir.",
+    "differentialNote": "Ateş yüksekliği tek başına CURB-65 bileşeni değildir.",
+    "keywords": [
+      "CURB-65",
+      "bilinç",
+      "üre",
+      "solunum sayısı"
+    ]
+  },
+  "tus-pearl-internal-medicine-343-extra": {
+    "front": "CURB-65 bileşenleri için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Ateş yüksekliği tek başına CURB-65 bileşeni değildir.",
+    "answer": "Ateş yüksekliği tek başına CURB-65 bileşeni değildir.",
+    "explanation": "CURB-65; bilinç durumu, üre, solunum sayısı, kan basıncı ve 65 yaş üzerini değerlendirir. Ateş yüksekliği tek başına CURB-65 bileşeni değildir.",
+    "tusTip": "CURB-65 bileşenleri kartında ayırıcı değer taşıyan nokta: Ateş yüksekliği tek başına CURB-65 bileşeni değildir.",
+    "differentialNote": "Ateş yüksekliği tek başına CURB-65 bileşeni değildir.",
+    "keywords": [
+      "CURB-65",
+      "bilinç",
+      "üre",
+      "solunum sayısı"
+    ]
+  },
+  "tus-pearl-internal-medicine-344-spot": {
+    "front": "Akut alerjik reaksiyon sonrası tanıyı desteklemek için bakılabilen mast hücre belirteci hangisidir?",
+    "back": "Serum triptaz düzeyi. Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz.",
+    "answer": "Serum triptaz düzeyi. Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz.",
+    "explanation": "Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz. Total IgE akut anafilaksi tanısında daha az yararlıdır.",
+    "tusTip": "Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz. Total IgE akut anafilaksi tanısında daha az yararlıdır.",
+    "differentialNote": "Total IgE akut anafilaksi tanısında daha az yararlıdır.",
+    "keywords": [
+      "anafilaksi",
+      "triptaz",
+      "mast hücre",
+      "akut alerji"
+    ]
+  },
+  "tus-pearl-internal-medicine-344-extra": {
+    "front": "Anafilakside triptaz başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Total IgE akut anafilaksi tanısında daha az yararlıdır.",
+    "answer": "Total IgE akut anafilaksi tanısında daha az yararlıdır.",
+    "explanation": "Triptaz mast hücre aktivasyonunu gösterir; klinik acil tedavinin yerini tutmaz. Total IgE akut anafilaksi tanısında daha az yararlıdır.",
+    "tusTip": "Anafilakside triptaz için sınavda hedeflenen ayrım genellikle şudur: Total IgE akut anafilaksi tanısında daha az yararlıdır.",
+    "differentialNote": "Total IgE akut anafilaksi tanısında daha az yararlıdır.",
+    "keywords": [
+      "anafilaksi",
+      "triptaz",
+      "mast hücre",
+      "akut alerji"
+    ]
+  },
+  "tus-pearl-internal-medicine-345-spot": {
+    "front": "Çok yüksek kan basıncı, raller ve korunmuş sistolik fonksiyonla gelen akut akciğer ödeminde başlangıç tedavisi ne olmalıdır?",
+    "back": "İntravenöz vazodilatör tedavi. Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar.",
+    "answer": "İntravenöz vazodilatör tedavi. Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar.",
+    "explanation": "Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar. Pozitif inotrop, sistolik fonksiyon korunmuş hipertansif tabloda ilk hedef değildir.",
+    "tusTip": "Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar. Pozitif inotrop, sistolik fonksiyon korunmuş hipertansif tabloda ilk hedef değildir.",
+    "differentialNote": "Pozitif inotrop, sistolik fonksiyon korunmuş hipertansif tabloda ilk hedef değildir.",
+    "keywords": [
+      "hipertansif akciğer ödemi",
+      "IV nitrat",
+      "afterload",
+      "raller"
+    ]
+  },
+  "tus-pearl-internal-medicine-345-extra": {
+    "front": "Akut hipertansif akciğer ödemi için en kritik ayırıcı nokta nedir?",
+    "back": "Pozitif inotrop, sistolik fonksiyon korunmuş hipertansif tabloda ilk hedef değildir.",
+    "answer": "Pozitif inotrop, sistolik fonksiyon korunmuş hipertansif tabloda ilk hedef değildir.",
+    "explanation": "Hipertansif akciğer ödeminde afterload düşürülmesi hızlı hemodinamik rahatlama sağlar. Pozitif inotrop, sistolik fonksiyon korunmuş hipertansif tabloda ilk hedef değildir.",
+    "tusTip": "Akut hipertansif akciğer ödemi karıştırıldığında cevabı netleştiren karşılaştırma: Pozitif inotrop, sistolik fonksiyon korunmuş hipertansif tabloda ilk hedef değildir.",
+    "differentialNote": "Pozitif inotrop, sistolik fonksiyon korunmuş hipertansif tabloda ilk hedef değildir.",
+    "keywords": [
+      "hipertansif akciğer ödemi",
+      "IV nitrat",
+      "afterload",
+      "raller"
+    ]
+  },
+  "tus-pearl-internal-medicine-346-spot": {
+    "front": "Altmış yaşında yeni başlayan dispepside ilk değerlendirme için hangi yaklaşım daha uygundur?",
+    "back": "Üst gastrointestinal endoskopi. İleri yaşta yeni başlayan dispepsi alarm bulgusu kabul edilir ve endoskopi ile değerlendirilir.",
+    "answer": "Üst gastrointestinal endoskopi. İleri yaşta yeni başlayan dispepsi alarm bulgusu kabul edilir ve endoskopi ile değerlendirilir.",
+    "explanation": "İleri yaşta yeni başlayan dispepsi alarm bulgusu kabul edilir ve endoskopi ile değerlendirilir. Genç ve alarm bulgusu olmayan hastada test-et-tedavi veya PPI denemesi düşünülebilir.",
+    "tusTip": "İleri yaşta yeni başlayan dispepsi alarm bulgusu kabul edilir ve endoskopi ile değerlendirilir. Genç ve alarm bulgusu olmayan hastada test-et-tedavi veya PPI denemesi düşünülebilir.",
+    "differentialNote": "Genç ve alarm bulgusu olmayan hastada test-et-tedavi veya PPI denemesi düşünülebilir.",
+    "keywords": [
+      "dispepsi",
+      "ileri yaş",
+      "endoskopi",
+      "alarm bulgusu"
+    ]
+  },
+  "tus-pearl-internal-medicine-346-extra": {
+    "front": "Yeni başlangıç dispepsi yaşı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Genç ve alarm bulgusu olmayan hastada test-et-tedavi veya PPI denemesi düşünülebilir.",
+    "answer": "Genç ve alarm bulgusu olmayan hastada test-et-tedavi veya PPI denemesi düşünülebilir.",
+    "explanation": "İleri yaşta yeni başlayan dispepsi alarm bulgusu kabul edilir ve endoskopi ile değerlendirilir. Genç ve alarm bulgusu olmayan hastada test-et-tedavi veya PPI denemesi düşünülebilir.",
+    "tusTip": "Yeni başlangıç dispepsi yaşı kartında ayırıcı değer taşıyan nokta: Genç ve alarm bulgusu olmayan hastada test-et-tedavi veya PPI denemesi düşünülebilir.",
+    "differentialNote": "Genç ve alarm bulgusu olmayan hastada test-et-tedavi veya PPI denemesi düşünülebilir.",
+    "keywords": [
+      "dispepsi",
+      "ileri yaş",
+      "endoskopi",
+      "alarm bulgusu"
+    ]
+  },
+  "tus-pearl-internal-medicine-347-spot": {
+    "front": "Safra kesesi taşı ve geniş koledok saptanan hastada noninvaziv kanal değerlendirmesi için hangi tetkik uygundur?",
+    "back": "MR kolanjiyopankreatografi. MRCP safra yollarını invaziv işlem yapmadan gösterebilir.",
+    "answer": "MR kolanjiyopankreatografi. MRCP safra yollarını invaziv işlem yapmadan gösterebilir.",
+    "explanation": "MRCP safra yollarını invaziv işlem yapmadan gösterebilir. Üst endoskopi safra kanalını doğrudan değerlendirmek için yeterli değildir.",
+    "tusTip": "MRCP safra yollarını invaziv işlem yapmadan gösterebilir. Üst endoskopi safra kanalını doğrudan değerlendirmek için yeterli değildir.",
+    "differentialNote": "Üst endoskopi safra kanalını doğrudan değerlendirmek için yeterli değildir.",
+    "keywords": [
+      "MRCP",
+      "koledok genişliği",
+      "safra taşı",
+      "kolanjiyografi"
+    ]
+  },
+  "tus-pearl-internal-medicine-347-extra": {
+    "front": "Koledok taşı şüphesi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Üst endoskopi safra kanalını doğrudan değerlendirmek için yeterli değildir.",
+    "answer": "Üst endoskopi safra kanalını doğrudan değerlendirmek için yeterli değildir.",
+    "explanation": "MRCP safra yollarını invaziv işlem yapmadan gösterebilir. Üst endoskopi safra kanalını doğrudan değerlendirmek için yeterli değildir.",
+    "tusTip": "Koledok taşı şüphesi için sınavda hedeflenen ayrım genellikle şudur: Üst endoskopi safra kanalını doğrudan değerlendirmek için yeterli değildir.",
+    "differentialNote": "Üst endoskopi safra kanalını doğrudan değerlendirmek için yeterli değildir.",
+    "keywords": [
+      "MRCP",
+      "koledok genişliği",
+      "safra taşı",
+      "kolanjiyografi"
+    ]
+  },
+  "tus-pearl-internal-medicine-348-spot": {
+    "front": "Sirozlu asit hastasında spontan bakteriyel peritonit tanısı için asit PMN eşiği kaçtır?",
+    "back": "250/mm3 ve üzeri. Asit sıvısında polimorfonükleer hücre artışı SBP tanısı için temel ölçüttür.",
+    "answer": "250/mm3 ve üzeri. Asit sıvısında polimorfonükleer hücre artışı SBP tanısı için temel ölçüttür.",
+    "explanation": "Asit sıvısında polimorfonükleer hücre artışı SBP tanısı için temel ölçüttür. Kültür negatif olsa bile PMN yüksekliği tedavi kararını destekleyebilir.",
+    "tusTip": "Asit sıvısında polimorfonükleer hücre artışı SBP tanısı için temel ölçüttür. Kültür negatif olsa bile PMN yüksekliği tedavi kararını destekleyebilir.",
+    "differentialNote": "Kültür negatif olsa bile PMN yüksekliği tedavi kararını destekleyebilir.",
+    "keywords": [
+      "SBP",
+      "asit PMN",
+      "250",
+      "dekompanse siroz"
+    ]
+  },
+  "tus-pearl-internal-medicine-348-extra": {
+    "front": "Asit sıvısı PMN eşiği sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Kültür negatif olsa bile PMN yüksekliği tedavi kararını destekleyebilir.",
+    "answer": "Kültür negatif olsa bile PMN yüksekliği tedavi kararını destekleyebilir.",
+    "explanation": "Asit sıvısında polimorfonükleer hücre artışı SBP tanısı için temel ölçüttür. Kültür negatif olsa bile PMN yüksekliği tedavi kararını destekleyebilir.",
+    "tusTip": "Asit sıvısı PMN eşiği karıştırıldığında cevabı netleştiren karşılaştırma: Kültür negatif olsa bile PMN yüksekliği tedavi kararını destekleyebilir.",
+    "differentialNote": "Kültür negatif olsa bile PMN yüksekliği tedavi kararını destekleyebilir.",
+    "keywords": [
+      "SBP",
+      "asit PMN",
+      "250",
+      "dekompanse siroz"
+    ]
+  },
+  "tus-pearl-internal-medicine-349-spot": {
+    "front": "Sirozlu hastada yeni başlayan bilinç değişikliğinde asit varsa öncelikle hangi komplikasyon dışlanmalıdır?",
+    "back": "Spontan bakteriyel peritonit. Enfeksiyon hepatik ensefalopatiyi tetikleyebilir; asit varlığında parasentez kritik değerlendirmedir.",
+    "answer": "Spontan bakteriyel peritonit. Enfeksiyon hepatik ensefalopatiyi tetikleyebilir; asit varlığında parasentez kritik değerlendirmedir.",
+    "explanation": "Enfeksiyon hepatik ensefalopatiyi tetikleyebilir; asit varlığında parasentez kritik değerlendirmedir. Sadece amonyak düzeyiyle karar vermek enfeksiyon odağını atlatabilir.",
+    "tusTip": "Enfeksiyon hepatik ensefalopatiyi tetikleyebilir; asit varlığında parasentez kritik değerlendirmedir. Sadece amonyak düzeyiyle karar vermek enfeksiyon odağını atlatabilir.",
+    "differentialNote": "Sadece amonyak düzeyiyle karar vermek enfeksiyon odağını atlatabilir.",
+    "keywords": [
+      "siroz",
+      "ensefalopati",
+      "asit",
+      "parasentez"
+    ]
+  },
+  "tus-pearl-internal-medicine-349-extra": {
+    "front": "Hepatik ensefalopati tetikleyicisi için en kritik ayırıcı nokta nedir?",
+    "back": "Sadece amonyak düzeyiyle karar vermek enfeksiyon odağını atlatabilir.",
+    "answer": "Sadece amonyak düzeyiyle karar vermek enfeksiyon odağını atlatabilir.",
+    "explanation": "Enfeksiyon hepatik ensefalopatiyi tetikleyebilir; asit varlığında parasentez kritik değerlendirmedir. Sadece amonyak düzeyiyle karar vermek enfeksiyon odağını atlatabilir.",
+    "tusTip": "Hepatik ensefalopati tetikleyicisi kartında ayırıcı değer taşıyan nokta: Sadece amonyak düzeyiyle karar vermek enfeksiyon odağını atlatabilir.",
+    "differentialNote": "Sadece amonyak düzeyiyle karar vermek enfeksiyon odağını atlatabilir.",
+    "keywords": [
+      "siroz",
+      "ensefalopati",
+      "asit",
+      "parasentez"
+    ]
+  },
+  "tus-pearl-internal-medicine-350-spot": {
+    "front": "Kolestatik enzim yüksekliği ve antimitochondrial antikor pozitifliği hangi hastalığı düşündürür?",
+    "back": "Primer biliyer kolanjit. Küçük intrahepatik safra kanallarının otoimmün yıkımı kolestaza yol açar.",
+    "answer": "Primer biliyer kolanjit. Küçük intrahepatik safra kanallarının otoimmün yıkımı kolestaza yol açar.",
+    "explanation": "Küçük intrahepatik safra kanallarının otoimmün yıkımı kolestaza yol açar. PSC daha çok inflamatuvar bağırsak hastalığı ve büyük safra kanalı darlıklarıyla ilişkilidir.",
+    "tusTip": "Küçük intrahepatik safra kanallarının otoimmün yıkımı kolestaza yol açar. PSC daha çok inflamatuvar bağırsak hastalığı ve büyük safra kanalı darlıklarıyla ilişkilidir.",
+    "differentialNote": "PSC daha çok inflamatuvar bağırsak hastalığı ve büyük safra kanalı darlıklarıyla ilişkilidir.",
+    "keywords": [
+      "PBC",
+      "AMA",
+      "kolestaz",
+      "kaşıntı"
+    ]
+  },
+  "tus-pearl-internal-medicine-350-extra": {
+    "front": "Primer biliyer kolanjit karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "PSC daha çok inflamatuvar bağırsak hastalığı ve büyük safra kanalı darlıklarıyla ilişkilidir.",
+    "answer": "PSC daha çok inflamatuvar bağırsak hastalığı ve büyük safra kanalı darlıklarıyla ilişkilidir.",
+    "explanation": "Küçük intrahepatik safra kanallarının otoimmün yıkımı kolestaza yol açar. PSC daha çok inflamatuvar bağırsak hastalığı ve büyük safra kanalı darlıklarıyla ilişkilidir.",
+    "tusTip": "Primer biliyer kolanjit için sınavda hedeflenen ayrım genellikle şudur: PSC daha çok inflamatuvar bağırsak hastalığı ve büyük safra kanalı darlıklarıyla ilişkilidir.",
+    "differentialNote": "PSC daha çok inflamatuvar bağırsak hastalığı ve büyük safra kanalı darlıklarıyla ilişkilidir.",
+    "keywords": [
+      "PBC",
+      "AMA",
+      "kolestaz",
+      "kaşıntı"
+    ]
+  },
+  "tus-pearl-internal-medicine-351-spot": {
+    "front": "İnflamatuvar bağırsak hastalığı olan hastada boncuk dizisi görünümü hangi safra yolu hastalığını düşündürür?",
+    "back": "Primer sklerozan kolanjit. İntra ve ekstrahepatik safra yollarında darlık-genişleme alanları oluşur.",
+    "answer": "Primer sklerozan kolanjit. İntra ve ekstrahepatik safra yollarında darlık-genişleme alanları oluşur.",
+    "explanation": "İntra ve ekstrahepatik safra yollarında darlık-genişleme alanları oluşur. PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır.",
+    "tusTip": "İntra ve ekstrahepatik safra yollarında darlık-genişleme alanları oluşur. PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır.",
+    "differentialNote": "PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır.",
+    "keywords": [
+      "PSC",
+      "boncuk dizisi",
+      "ülseratif kolit",
+      "kolanjiyokarsinom"
+    ]
+  },
+  "tus-pearl-internal-medicine-351-extra": {
+    "front": "Primer sklerozan kolanjit görüntüsü sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır.",
+    "answer": "PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır.",
+    "explanation": "İntra ve ekstrahepatik safra yollarında darlık-genişleme alanları oluşur. PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır.",
+    "tusTip": "Primer sklerozan kolanjit görüntüsü karıştırıldığında cevabı netleştiren karşılaştırma: PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır.",
+    "differentialNote": "PBC daha çok küçük intrahepatik kanallar ve AMA pozitifliği ile ayrılır.",
+    "keywords": [
+      "PSC",
+      "boncuk dizisi",
+      "ülseratif kolit",
+      "kolanjiyokarsinom"
+    ]
+  },
+  "tus-pearl-internal-medicine-352-spot": {
+    "front": "Ateş, sarılık ve sağ üst kadran ağrısı birlikteliği hangi tabloyu düşündürür?",
+    "back": "Akut kolanjit. Safra yolu tıkanıklığına enfeksiyon eklenmesi Charcot triadını oluşturur.",
+    "answer": "Akut kolanjit. Safra yolu tıkanıklığına enfeksiyon eklenmesi Charcot triadını oluşturur.",
+    "explanation": "Safra yolu tıkanıklığına enfeksiyon eklenmesi Charcot triadını oluşturur. Akut kolesistit çoğunlukla sarılıksız sağ üst kadran ağrısı ve Murphy bulgusuyla seyreder.",
+    "tusTip": "Safra yolu tıkanıklığına enfeksiyon eklenmesi Charcot triadını oluşturur. Akut kolesistit çoğunlukla sarılıksız sağ üst kadran ağrısı ve Murphy bulgusuyla seyreder.",
+    "differentialNote": "Akut kolesistit çoğunlukla sarılıksız sağ üst kadran ağrısı ve Murphy bulgusuyla seyreder.",
+    "keywords": [
+      "Charcot triadı",
+      "akut kolanjit",
+      "sarılık",
+      "sağ üst kadran ağrısı"
+    ]
+  },
+  "tus-pearl-internal-medicine-352-extra": {
+    "front": "Charcot triadı için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Akut kolesistit çoğunlukla sarılıksız sağ üst kadran ağrısı ve Murphy bulgusuyla seyreder.",
+    "answer": "Akut kolesistit çoğunlukla sarılıksız sağ üst kadran ağrısı ve Murphy bulgusuyla seyreder.",
+    "explanation": "Safra yolu tıkanıklığına enfeksiyon eklenmesi Charcot triadını oluşturur. Akut kolesistit çoğunlukla sarılıksız sağ üst kadran ağrısı ve Murphy bulgusuyla seyreder.",
+    "tusTip": "Charcot triadı kartında ayırıcı değer taşıyan nokta: Akut kolesistit çoğunlukla sarılıksız sağ üst kadran ağrısı ve Murphy bulgusuyla seyreder.",
+    "differentialNote": "Akut kolesistit çoğunlukla sarılıksız sağ üst kadran ağrısı ve Murphy bulgusuyla seyreder.",
+    "keywords": [
+      "Charcot triadı",
+      "akut kolanjit",
+      "sarılık",
+      "sağ üst kadran ağrısı"
+    ]
+  },
+  "tus-pearl-internal-medicine-353-spot": {
+    "front": "Akut pankreatitte tanıyı destekleyen temel laboratuvar bulgusu nedir?",
+    "back": "Serum lipaz yüksekliği. Lipaz pankreatik inflamasyonda yükselir ve amilaza göre daha özgül kabul edilir.",
+    "answer": "Serum lipaz yüksekliği. Lipaz pankreatik inflamasyonda yükselir ve amilaza göre daha özgül kabul edilir.",
+    "explanation": "Lipaz pankreatik inflamasyonda yükselir ve amilaza göre daha özgül kabul edilir. ALT yüksekliği biliyer etiyolojiyi düşündürebilir ancak pankreatit tanısı için tek başına yeterli değildir.",
+    "tusTip": "Lipaz pankreatik inflamasyonda yükselir ve amilaza göre daha özgül kabul edilir. ALT yüksekliği biliyer etiyolojiyi düşündürebilir ancak pankreatit tanısı için tek başına yeterli değildir.",
+    "differentialNote": "ALT yüksekliği biliyer etiyolojiyi düşündürebilir ancak pankreatit tanısı için tek başına yeterli değildir.",
+    "keywords": [
+      "akut pankreatit",
+      "lipaz",
+      "epigastrik ağrı",
+      "arkaya vurma"
+    ]
+  },
+  "tus-pearl-internal-medicine-353-extra": {
+    "front": "Akut pankreatit tanısı için en kritik ayırıcı nokta nedir?",
+    "back": "ALT yüksekliği biliyer etiyolojiyi düşündürebilir ancak pankreatit tanısı için tek başına yeterli değildir.",
+    "answer": "ALT yüksekliği biliyer etiyolojiyi düşündürebilir ancak pankreatit tanısı için tek başına yeterli değildir.",
+    "explanation": "Lipaz pankreatik inflamasyonda yükselir ve amilaza göre daha özgül kabul edilir. ALT yüksekliği biliyer etiyolojiyi düşündürebilir ancak pankreatit tanısı için tek başına yeterli değildir.",
+    "tusTip": "Akut pankreatit tanısı için sınavda hedeflenen ayrım genellikle şudur: ALT yüksekliği biliyer etiyolojiyi düşündürebilir ancak pankreatit tanısı için tek başına yeterli değildir.",
+    "differentialNote": "ALT yüksekliği biliyer etiyolojiyi düşündürebilir ancak pankreatit tanısı için tek başına yeterli değildir.",
+    "keywords": [
+      "akut pankreatit",
+      "lipaz",
+      "epigastrik ağrı",
+      "arkaya vurma"
+    ]
+  },
+  "tus-pearl-internal-medicine-354-spot": {
+    "front": "Alarm bulgusu olmayan genç dispepsi hastasında H. pylori için uygun yaklaşım nedir?",
+    "back": "Test et ve pozitifse eradikasyon tedavisi ver.",
+    "answer": "Test et ve pozitifse eradikasyon tedavisi ver.",
+    "explanation": "Noninvaziv H. pylori testi ve eradikasyon stratejisi seçilmiş düşük riskli hastalarda uygundur. İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
+    "tusTip": "Noninvaziv H. pylori testi ve eradikasyon stratejisi seçilmiş düşük riskli hastalarda uygundur. İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
+    "differentialNote": "İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
+    "keywords": [
+      "H. pylori",
+      "dispepsi",
+      "test et tedavi",
+      "üre nefes testi"
+    ]
+  },
+  "tus-pearl-internal-medicine-354-extra": {
+    "front": "Helicobacter pylori test et tedavi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
+    "answer": "İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
+    "explanation": "Noninvaziv H. pylori testi ve eradikasyon stratejisi seçilmiş düşük riskli hastalarda uygundur. İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
+    "tusTip": "Helicobacter pylori test et tedavi karıştırıldığında cevabı netleştiren karşılaştırma: İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
+    "differentialNote": "İleri yaş veya alarm bulgusunda doğrudan endoskopi tercih edilir.",
+    "keywords": [
+      "H. pylori",
+      "dispepsi",
+      "test et tedavi",
+      "üre nefes testi"
+    ]
+  },
+  "tus-pearl-internal-medicine-355-spot": {
+    "front": "Disfaji ve özofagus alt sfinkter gevşeme kusurunda tanıyı doğrulayan temel test hangisidir?",
+    "back": "Özofagus manometrisi. Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir.",
+    "answer": "Özofagus manometrisi. Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir.",
+    "explanation": "Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir. Endoskopi malignite dışlamak için önemlidir ancak motilite tanısını manometri koyar.",
+    "tusTip": "Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir. Endoskopi malignite dışlamak için önemlidir ancak motilite tanısını manometri koyar.",
+    "differentialNote": "Endoskopi malignite dışlamak için önemlidir ancak motilite tanısını manometri koyar.",
+    "keywords": [
+      "akalazya",
+      "manometri",
+      "disfaji",
+      "LES gevşeme kusuru"
+    ]
+  },
+  "tus-pearl-internal-medicine-355-extra": {
+    "front": "Akalazya manometrisi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Endoskopi malignite dışlamak için önemlidir ancak motilite tanısını manometri koyar.",
+    "answer": "Endoskopi malignite dışlamak için önemlidir ancak motilite tanısını manometri koyar.",
+    "explanation": "Akalazyada aperistaltizm ve alt özofagus sfinkter relaksasyon bozukluğu manometride gösterilir. Endoskopi malignite dışlamak için önemlidir ancak motilite tanısını manometri koyar.",
+    "tusTip": "Akalazya manometrisi kartında ayırıcı değer taşıyan nokta: Endoskopi malignite dışlamak için önemlidir ancak motilite tanısını manometri koyar.",
+    "differentialNote": "Endoskopi malignite dışlamak için önemlidir ancak motilite tanısını manometri koyar.",
+    "keywords": [
+      "akalazya",
+      "manometri",
+      "disfaji",
+      "LES gevşeme kusuru"
+    ]
+  },
+  "tus-pearl-internal-medicine-356-spot": {
+    "front": "Barrett özofagusunda hangi epitel değişimi görülür?",
+    "back": "Skuamöz epitelin intestinal tip kolumnar epitele metaplazisi.",
+    "answer": "Skuamöz epitelin intestinal tip kolumnar epitele metaplazisi.",
+    "explanation": "Kronik reflü distal özofagusta intestinal metaplaziye yol açabilir. Kandida özofajiti beyaz plaklar ve immünsüpresyonla ilişkilidir.",
+    "tusTip": "Kronik reflü distal özofagusta intestinal metaplaziye yol açabilir. Kandida özofajiti beyaz plaklar ve immünsüpresyonla ilişkilidir.",
+    "differentialNote": "Kandida özofajiti beyaz plaklar ve immünsüpresyonla ilişkilidir.",
+    "keywords": [
+      "Barrett",
+      "intestinal metaplazi",
+      "reflü",
+      "adenokarsinom riski"
+    ]
+  },
+  "tus-pearl-internal-medicine-356-extra": {
+    "front": "Barrett metaplazisi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Kandida özofajiti beyaz plaklar ve immünsüpresyonla ilişkilidir.",
+    "answer": "Kandida özofajiti beyaz plaklar ve immünsüpresyonla ilişkilidir.",
+    "explanation": "Kronik reflü distal özofagusta intestinal metaplaziye yol açabilir. Kandida özofajiti beyaz plaklar ve immünsüpresyonla ilişkilidir.",
+    "tusTip": "Barrett metaplazisi için sınavda hedeflenen ayrım genellikle şudur: Kandida özofajiti beyaz plaklar ve immünsüpresyonla ilişkilidir.",
+    "differentialNote": "Kandida özofajiti beyaz plaklar ve immünsüpresyonla ilişkilidir.",
+    "keywords": [
+      "Barrett",
+      "intestinal metaplazi",
+      "reflü",
+      "adenokarsinom riski"
+    ]
+  },
+  "tus-pearl-internal-medicine-357-spot": {
+    "front": "Metastatik kolorektal kanserde anti-EGFR tedavi planlanırken hangi mutasyonlar özellikle değerlendirilir?",
+    "back": "KRAS ve NRAS mutasyonları. RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır.",
+    "answer": "KRAS ve NRAS mutasyonları. RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır.",
+    "explanation": "RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır. CD20 kolorektal adenokarsinom tedavi seçiminde temel biyobelirteç değildir.",
+    "tusTip": "RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır. CD20 kolorektal adenokarsinom tedavi seçiminde temel biyobelirteç değildir.",
+    "differentialNote": "CD20 kolorektal adenokarsinom tedavi seçiminde temel biyobelirteç değildir.",
+    "keywords": [
+      "kolorektal kanser",
+      "KRAS",
+      "NRAS",
+      "anti-EGFR"
+    ]
+  },
+  "tus-pearl-internal-medicine-357-extra": {
+    "front": "Kolorektal kanser biyobelirteçleri için en kritik ayırıcı nokta nedir?",
+    "back": "CD20 kolorektal adenokarsinom tedavi seçiminde temel biyobelirteç değildir.",
+    "answer": "CD20 kolorektal adenokarsinom tedavi seçiminde temel biyobelirteç değildir.",
+    "explanation": "RAS mutasyonu varsa EGFR hedefli tedaviden beklenen yanıt azalır. CD20 kolorektal adenokarsinom tedavi seçiminde temel biyobelirteç değildir.",
+    "tusTip": "Kolorektal kanser biyobelirteçleri karıştırıldığında cevabı netleştiren karşılaştırma: CD20 kolorektal adenokarsinom tedavi seçiminde temel biyobelirteç değildir.",
+    "differentialNote": "CD20 kolorektal adenokarsinom tedavi seçiminde temel biyobelirteç değildir.",
+    "keywords": [
+      "kolorektal kanser",
+      "KRAS",
+      "NRAS",
+      "anti-EGFR"
+    ]
+  },
+  "tus-pearl-internal-medicine-358-spot": {
+    "front": "Yaşlı hastada lenfositoz ve yaygın lenfadenopati varsa tanıyı doğrulamak için en uygun test hangisidir?",
+    "back": "Periferik kanda akım sitometri ile immünfenotiplendirme.",
+    "answer": "Periferik kanda akım sitometri ile immünfenotiplendirme.",
+    "explanation": "KLL olgun görünümlü klonal B lenfositlerin saptanmasıyla tanınır. PET-BT evreleme için kullanılabilir ancak ilk tanısal test değildir.",
+    "tusTip": "KLL olgun görünümlü klonal B lenfositlerin saptanmasıyla tanınır. PET-BT evreleme için kullanılabilir ancak ilk tanısal test değildir.",
+    "differentialNote": "PET-BT evreleme için kullanılabilir ancak ilk tanısal test değildir.",
+    "keywords": [
+      "KLL",
+      "akım sitometri",
+      "olgun lenfosit",
+      "CD5 B hücre"
+    ]
+  },
+  "tus-pearl-internal-medicine-358-extra": {
+    "front": "KLL tanısı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "PET-BT evreleme için kullanılabilir ancak ilk tanısal test değildir.",
+    "answer": "PET-BT evreleme için kullanılabilir ancak ilk tanısal test değildir.",
+    "explanation": "KLL olgun görünümlü klonal B lenfositlerin saptanmasıyla tanınır. PET-BT evreleme için kullanılabilir ancak ilk tanısal test değildir.",
+    "tusTip": "KLL tanısı kartında ayırıcı değer taşıyan nokta: PET-BT evreleme için kullanılabilir ancak ilk tanısal test değildir.",
+    "differentialNote": "PET-BT evreleme için kullanılabilir ancak ilk tanısal test değildir.",
+    "keywords": [
+      "KLL",
+      "akım sitometri",
+      "olgun lenfosit",
+      "CD5 B hücre"
+    ]
+  },
+  "tus-pearl-internal-medicine-359-spot": {
+    "front": "Retikülositoz, indirekt hiperbilirubinemi ve yüksek LDH ile hemoliz düşündüğünde hangi test otoimmün nedeni gösterir?",
+    "back": "Direkt Coombs testi. Eritrosit yüzeyindeki antikor veya kompleman varlığı direkt antiglobulin testiyle saptanır.",
+    "answer": "Direkt Coombs testi. Eritrosit yüzeyindeki antikor veya kompleman varlığı direkt antiglobulin testiyle saptanır.",
+    "explanation": "Eritrosit yüzeyindeki antikor veya kompleman varlığı direkt antiglobulin testiyle saptanır. Ozmotik frajilite herediter sferositoz için daha uygundur.",
+    "tusTip": "Eritrosit yüzeyindeki antikor veya kompleman varlığı direkt antiglobulin testiyle saptanır. Ozmotik frajilite herediter sferositoz için daha uygundur.",
+    "differentialNote": "Ozmotik frajilite herediter sferositoz için daha uygundur.",
+    "keywords": [
+      "AIHA",
+      "Direkt Coombs",
+      "retikülositoz",
+      "indirekt bilirubin"
+    ]
+  },
+  "tus-pearl-internal-medicine-359-extra": {
+    "front": "Otoimmün hemolitik anemi testi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Ozmotik frajilite herediter sferositoz için daha uygundur.",
+    "answer": "Ozmotik frajilite herediter sferositoz için daha uygundur.",
+    "explanation": "Eritrosit yüzeyindeki antikor veya kompleman varlığı direkt antiglobulin testiyle saptanır. Ozmotik frajilite herediter sferositoz için daha uygundur.",
+    "tusTip": "Otoimmün hemolitik anemi testi için sınavda hedeflenen ayrım genellikle şudur: Ozmotik frajilite herediter sferositoz için daha uygundur.",
+    "differentialNote": "Ozmotik frajilite herediter sferositoz için daha uygundur.",
+    "keywords": [
+      "AIHA",
+      "Direkt Coombs",
+      "retikülositoz",
+      "indirekt bilirubin"
+    ]
+  },
+  "tus-pearl-internal-medicine-360-spot": {
+    "front": "Kemik ağrısı, anemi, böbrek yetmezliği ve hiperkalsemi hangi plazma hücre hastalığını düşündürür?",
+    "back": "Multipl miyelom. Klonal plazma hücreleri monoklonal protein ve osteolitik lezyonlar oluşturabilir.",
+    "answer": "Multipl miyelom. Klonal plazma hücreleri monoklonal protein ve osteolitik lezyonlar oluşturabilir.",
+    "explanation": "Klonal plazma hücreleri monoklonal protein ve osteolitik lezyonlar oluşturabilir. Waldenström makroglobulinemisi IgM ve hiperviskozite ile öne çıkar.",
+    "tusTip": "Klonal plazma hücreleri monoklonal protein ve osteolitik lezyonlar oluşturabilir. Waldenström makroglobulinemisi IgM ve hiperviskozite ile öne çıkar.",
+    "differentialNote": "Waldenström makroglobulinemisi IgM ve hiperviskozite ile öne çıkar.",
+    "keywords": [
+      "multipl miyelom",
+      "CRAB",
+      "M proteini",
+      "litik lezyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-360-extra": {
+    "front": "Multipl miyelom bulguları sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Waldenström makroglobulinemisi IgM ve hiperviskozite ile öne çıkar.",
+    "answer": "Waldenström makroglobulinemisi IgM ve hiperviskozite ile öne çıkar.",
+    "explanation": "Klonal plazma hücreleri monoklonal protein ve osteolitik lezyonlar oluşturabilir. Waldenström makroglobulinemisi IgM ve hiperviskozite ile öne çıkar.",
+    "tusTip": "Multipl miyelom bulguları karıştırıldığında cevabı netleştiren karşılaştırma: Waldenström makroglobulinemisi IgM ve hiperviskozite ile öne çıkar.",
+    "differentialNote": "Waldenström makroglobulinemisi IgM ve hiperviskozite ile öne çıkar.",
+    "keywords": [
+      "multipl miyelom",
+      "CRAB",
+      "M proteini",
+      "litik lezyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-361-spot": {
+    "front": "Büyük hipofiz adenomu olan hastada prolaktin beklenenden düşük-orta düzeydeyse hangi laboratuvar sorunu düşünülür?",
+    "back": "Hook etkisi. Çok yüksek prolaktin immünoassayde antikor bağlanmasını bozabilir; serum dilüsyonu gerçek düzeyi ortaya çıkarır.",
+    "answer": "Hook etkisi. Çok yüksek prolaktin immünoassayde antikor bağlanmasını bozabilir; serum dilüsyonu gerçek düzeyi ortaya çıkarır.",
+    "explanation": "Çok yüksek prolaktin immünoassayde antikor bağlanmasını bozabilir; serum dilüsyonu gerçek düzeyi ortaya çıkarır. Stalk etkisi genellikle daha orta düzey prolaktin artışı yapar.",
+    "tusTip": "Çok yüksek prolaktin immünoassayde antikor bağlanmasını bozabilir; serum dilüsyonu gerçek düzeyi ortaya çıkarır. Stalk etkisi genellikle daha orta düzey prolaktin artışı yapar.",
+    "differentialNote": "Stalk etkisi genellikle daha orta düzey prolaktin artışı yapar.",
+    "keywords": [
+      "prolaktinoma",
+      "hook etkisi",
+      "serum dilüsyonu",
+      "makroadenom"
+    ]
+  },
+  "tus-pearl-internal-medicine-361-extra": {
+    "front": "Prolaktinoma hook etkisi için en kritik ayırıcı nokta nedir?",
+    "back": "Stalk etkisi genellikle daha orta düzey prolaktin artışı yapar.",
+    "answer": "Stalk etkisi genellikle daha orta düzey prolaktin artışı yapar.",
+    "explanation": "Çok yüksek prolaktin immünoassayde antikor bağlanmasını bozabilir; serum dilüsyonu gerçek düzeyi ortaya çıkarır. Stalk etkisi genellikle daha orta düzey prolaktin artışı yapar.",
+    "tusTip": "Prolaktinoma hook etkisi kartında ayırıcı değer taşıyan nokta: Stalk etkisi genellikle daha orta düzey prolaktin artışı yapar.",
+    "differentialNote": "Stalk etkisi genellikle daha orta düzey prolaktin artışı yapar.",
+    "keywords": [
+      "prolaktinoma",
+      "hook etkisi",
+      "serum dilüsyonu",
+      "makroadenom"
+    ]
+  },
+  "tus-pearl-internal-medicine-362-spot": {
+    "front": "Aktif ciddi Graves oftalmopatisinde antitiroid tedaviye ek olarak hangi tedavi kullanılabilir?",
+    "back": "Sistemik glukokortikoid. Aktif inflamatuvar oftalmopati immünsüpresif tedavi gerektirebilir.",
+    "answer": "Sistemik glukokortikoid. Aktif inflamatuvar oftalmopati immünsüpresif tedavi gerektirebilir.",
+    "explanation": "Aktif inflamatuvar oftalmopati immünsüpresif tedavi gerektirebilir. Radyoaktif iyot aktif oftalmopatiyi kötüleştirebilir.",
+    "tusTip": "Aktif inflamatuvar oftalmopati immünsüpresif tedavi gerektirebilir. Radyoaktif iyot aktif oftalmopatiyi kötüleştirebilir.",
+    "differentialNote": "Radyoaktif iyot aktif oftalmopatiyi kötüleştirebilir.",
+    "keywords": [
+      "Graves oftalmopati",
+      "prednizolon",
+      "ekzoftalmus",
+      "kemozis"
+    ]
+  },
+  "tus-pearl-internal-medicine-362-extra": {
+    "front": "Graves oftalmopati tedavisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Radyoaktif iyot aktif oftalmopatiyi kötüleştirebilir. Aktif inflamatuvar oftalmopati immünsüpresif tedavi gerektirebilir.",
+    "answer": "Radyoaktif iyot aktif oftalmopatiyi kötüleştirebilir. Aktif inflamatuvar oftalmopati immünsüpresif tedavi gerektirebilir.",
+    "explanation": "Aktif inflamatuvar oftalmopati immünsüpresif tedavi gerektirebilir. Radyoaktif iyot aktif oftalmopatiyi kötüleştirebilir.",
+    "tusTip": "Graves oftalmopati tedavisi için sınavda hedeflenen ayrım genellikle şudur: Radyoaktif iyot aktif oftalmopatiyi kötüleştirebilir.",
+    "differentialNote": "Radyoaktif iyot aktif oftalmopatiyi kötüleştirebilir.",
+    "keywords": [
+      "Graves oftalmopati",
+      "prednizolon",
+      "ekzoftalmus",
+      "kemozis"
+    ]
+  },
+  "tus-pearl-internal-medicine-363-spot": {
+    "front": "Diyabetli hastada nefropatinin başka bir nedene bağlı olabileceğini düşündüren bulgu hangisidir?",
+    "back": "Makroskopik hematüri. Diyabetik nefropati tipik olarak albuminüri ile ilerler; belirgin hematüri alternatif glomerüler hastalıkları düşündürür.",
+    "answer": "Makroskopik hematüri. Diyabetik nefropati tipik olarak albuminüri ile ilerler; belirgin hematüri alternatif glomerüler hastalıkları düşündürür.",
+    "explanation": "Diyabetik nefropati tipik olarak albuminüri ile ilerler; belirgin hematüri alternatif glomerüler hastalıkları düşündürür. Diyabetik retinopati varlığı diyabetik nefropatiyi destekler.",
+    "tusTip": "Diyabetik nefropati tipik olarak albuminüri ile ilerler; belirgin hematüri alternatif glomerüler hastalıkları düşündürür. Diyabetik retinopati varlığı diyabetik nefropatiyi destekler.",
+    "differentialNote": "Diyabetik retinopati varlığı diyabetik nefropatiyi destekler.",
+    "keywords": [
+      "diyabet",
+      "makroskopik hematüri",
+      "nefropati",
+      "alternatif etiyoloji"
+    ]
+  },
+  "tus-pearl-internal-medicine-363-extra": {
+    "front": "Diyabetik nefropati dışı ipucu sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Diyabetik retinopati varlığı diyabetik nefropatiyi destekler.",
+    "answer": "Diyabetik retinopati varlığı diyabetik nefropatiyi destekler.",
+    "explanation": "Diyabetik nefropati tipik olarak albuminüri ile ilerler; belirgin hematüri alternatif glomerüler hastalıkları düşündürür. Diyabetik retinopati varlığı diyabetik nefropatiyi destekler.",
+    "tusTip": "Diyabetik nefropati dışı ipucu karıştırıldığında cevabı netleştiren karşılaştırma: Diyabetik retinopati varlığı diyabetik nefropatiyi destekler.",
+    "differentialNote": "Diyabetik retinopati varlığı diyabetik nefropatiyi destekler.",
+    "keywords": [
+      "diyabet",
+      "makroskopik hematüri",
+      "nefropati",
+      "alternatif etiyoloji"
+    ]
+  },
+  "tus-pearl-internal-medicine-364-spot": {
+    "front": "Hipotonik hiponatremide idrar osmolalitesinin yüksek olması neyi gösterir?",
+    "back": "ADH etkisinin sürdüğünü. İdrar seyreltilemiyorsa su atılımı baskılanmıştır; SIADH gibi durumlar düşünülür.",
+    "answer": "ADH etkisinin sürdüğünü. İdrar seyreltilemiyorsa su atılımı baskılanmıştır; SIADH gibi durumlar düşünülür.",
+    "explanation": "İdrar seyreltilemiyorsa su atılımı baskılanmıştır; SIADH gibi durumlar düşünülür. Primer polidipside idrar osmolalitesi genellikle düşüktür.",
+    "tusTip": "İdrar seyreltilemiyorsa su atılımı baskılanmıştır; SIADH gibi durumlar düşünülür. Primer polidipside idrar osmolalitesi genellikle düşüktür.",
+    "differentialNote": "Primer polidipside idrar osmolalitesi genellikle düşüktür.",
+    "keywords": [
+      "hipotonik hiponatremi",
+      "idrar osmolalitesi",
+      "ADH",
+      "SIADH"
+    ]
+  },
+  "tus-pearl-internal-medicine-364-extra": {
+    "front": "Hipotonik hiponatremide idrar osmolalitesi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Primer polidipside idrar osmolalitesi genellikle düşüktür.",
+    "answer": "Primer polidipside idrar osmolalitesi genellikle düşüktür.",
+    "explanation": "İdrar seyreltilemiyorsa su atılımı baskılanmıştır; SIADH gibi durumlar düşünülür. Primer polidipside idrar osmolalitesi genellikle düşüktür.",
+    "tusTip": "Hipotonik hiponatremide idrar osmolalitesi kartında ayırıcı değer taşıyan nokta: Primer polidipside idrar osmolalitesi genellikle düşüktür.",
+    "differentialNote": "Primer polidipside idrar osmolalitesi genellikle düşüktür.",
+    "keywords": [
+      "hipotonik hiponatremi",
+      "idrar osmolalitesi",
+      "ADH",
+      "SIADH"
+    ]
+  },
+  "tus-pearl-internal-medicine-365-spot": {
+    "front": "Nefrotik sendromlu hastada renal ven trombozu en çok hangi primer glomerülopatiyle ilişkilidir?",
+    "back": "Membranöz nefropati. Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır.",
+    "answer": "Membranöz nefropati. Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır.",
+    "explanation": "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır. Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
+    "tusTip": "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır. Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
+    "differentialNote": "Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
+    "keywords": [
+      "membranöz nefropati",
+      "renal ven trombozu",
+      "nefrotik sendrom",
+      "hiperkoagülabilite"
+    ]
+  },
+  "tus-pearl-internal-medicine-365-extra": {
+    "front": "Membranöz nefropatide tromboz için en kritik ayırıcı nokta nedir?",
+    "back": "Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
+    "answer": "Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
+    "explanation": "Nefrotik sendromda antitrombin kaybı ve hiperkoagülabilite tromboz riskini artırır. Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
+    "tusTip": "Membranöz nefropatide tromboz için sınavda hedeflenen ayrım genellikle şudur: Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
+    "differentialNote": "Minimal değişiklik hastalığı çocukta sık olsa da renal ven trombozu klasik olarak membranözle anılır.",
+    "keywords": [
+      "membranöz nefropati",
+      "renal ven trombozu",
+      "nefrotik sendrom",
+      "hiperkoagülabilite"
+    ]
+  },
+  "tus-pearl-internal-medicine-366-spot": {
+    "front": "Hızlı böbrek fonksiyon kaybı ve kresent oluşumu hangi glomerüler sendromu düşündürür?",
+    "back": "Hızlı ilerleyen glomerülonefrit. Pariyetal epitel proliferasyonu ve fibrin kaçağı kresent oluşumuna yol açar.",
+    "answer": "Hızlı ilerleyen glomerülonefrit. Pariyetal epitel proliferasyonu ve fibrin kaçağı kresent oluşumuna yol açar.",
+    "explanation": "Pariyetal epitel proliferasyonu ve fibrin kaçağı kresent oluşumuna yol açar. Nefrotik sendromda masif proteinüri öne çıkar; kresent hızlı nefritik hasarı gösterir.",
+    "tusTip": "Pariyetal epitel proliferasyonu ve fibrin kaçağı kresent oluşumuna yol açar. Nefrotik sendromda masif proteinüri öne çıkar; kresent hızlı nefritik hasarı gösterir.",
+    "differentialNote": "Nefrotik sendromda masif proteinüri öne çıkar; kresent hızlı nefritik hasarı gösterir.",
+    "keywords": [
+      "RPGN",
+      "kresent",
+      "hızlı böbrek yetmezliği",
+      "nefritik sendrom"
+    ]
+  },
+  "tus-pearl-internal-medicine-366-extra": {
+    "front": "Kresentik glomerülonefrit karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Nefrotik sendromda masif proteinüri öne çıkar; kresent hızlı nefritik hasarı gösterir.",
+    "answer": "Nefrotik sendromda masif proteinüri öne çıkar; kresent hızlı nefritik hasarı gösterir.",
+    "explanation": "Pariyetal epitel proliferasyonu ve fibrin kaçağı kresent oluşumuna yol açar. Nefrotik sendromda masif proteinüri öne çıkar; kresent hızlı nefritik hasarı gösterir.",
+    "tusTip": "Kresentik glomerülonefrit karıştırıldığında cevabı netleştiren karşılaştırma: Nefrotik sendromda masif proteinüri öne çıkar; kresent hızlı nefritik hasarı gösterir.",
+    "differentialNote": "Nefrotik sendromda masif proteinüri öne çıkar; kresent hızlı nefritik hasarı gösterir.",
+    "keywords": [
+      "RPGN",
+      "kresent",
+      "hızlı böbrek yetmezliği",
+      "nefritik sendrom"
+    ]
+  },
+  "tus-pearl-internal-medicine-367-spot": {
+    "front": "Hemoptizi ve hızlı ilerleyen glomerülonefrit birlikteliği hangi klinik sendromu düşündürür?",
+    "back": "Pulmoner-renal sendrom. Akciğer kapillerleri ve glomerüllerin birlikte tutulduğu vaskülit veya anti-GBM hastalıkları düşünülür.",
+    "answer": "Pulmoner-renal sendrom. Akciğer kapillerleri ve glomerüllerin birlikte tutulduğu vaskülit veya anti-GBM hastalıkları düşünülür.",
+    "explanation": "Akciğer kapillerleri ve glomerüllerin birlikte tutulduğu vaskülit veya anti-GBM hastalıkları düşünülür. İzole pnömoni böbrek kresentleriyle açıklanmaz.",
+    "tusTip": "Akciğer kapillerleri ve glomerüllerin birlikte tutulduğu vaskülit veya anti-GBM hastalıkları düşünülür. İzole pnömoni böbrek kresentleriyle açıklanmaz.",
+    "differentialNote": "İzole pnömoni böbrek kresentleriyle açıklanmaz.",
+    "keywords": [
+      "hemoptizi",
+      "RPGN",
+      "anti-GBM",
+      "ANCA vasküliti"
+    ]
+  },
+  "tus-pearl-internal-medicine-367-extra": {
+    "front": "Pulmoner renal sendrom için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "İzole pnömoni böbrek kresentleriyle açıklanmaz. Akciğer kapillerleri ve glomerüllerin birlikte tutulduğu vaskülit veya anti-GBM hastalıkları düşünülür.",
+    "answer": "İzole pnömoni böbrek kresentleriyle açıklanmaz. Akciğer kapillerleri ve glomerüllerin birlikte tutulduğu vaskülit veya anti-GBM hastalıkları düşünülür.",
+    "explanation": "Akciğer kapillerleri ve glomerüllerin birlikte tutulduğu vaskülit veya anti-GBM hastalıkları düşünülür. İzole pnömoni böbrek kresentleriyle açıklanmaz.",
+    "tusTip": "Pulmoner renal sendrom kartında ayırıcı değer taşıyan nokta: İzole pnömoni böbrek kresentleriyle açıklanmaz.",
+    "differentialNote": "İzole pnömoni böbrek kresentleriyle açıklanmaz.",
+    "keywords": [
+      "hemoptizi",
+      "RPGN",
+      "anti-GBM",
+      "ANCA vasküliti"
+    ]
+  },
+  "tus-pearl-internal-medicine-368-spot": {
+    "front": "Sistemik sklerozlu hastada ani ağır hipertansiyon ve akut böbrek yetmezliğinde ilk tercih tedavi nedir?",
+    "back": "ACE inhibitörü. Skleroderma renal krizinde renin-anjiyotensin sistemi aktivasyonu belirgindir; ACE inhibitörü prognozu iyileştirir.",
+    "answer": "ACE inhibitörü. Skleroderma renal krizinde renin-anjiyotensin sistemi aktivasyonu belirgindir; ACE inhibitörü prognozu iyileştirir.",
+    "explanation": "Skleroderma renal krizinde renin-anjiyotensin sistemi aktivasyonu belirgindir; ACE inhibitörü prognozu iyileştirir. Yüksek doz steroid skleroderma renal kriz riskini artırabilir.",
+    "tusTip": "Skleroderma renal krizinde renin-anjiyotensin sistemi aktivasyonu belirgindir; ACE inhibitörü prognozu iyileştirir. Yüksek doz steroid skleroderma renal kriz riskini artırabilir.",
+    "differentialNote": "Yüksek doz steroid skleroderma renal kriz riskini artırabilir.",
+    "keywords": [
+      "skleroderma renal kriz",
+      "ACE inhibitörü",
+      "malign hipertansiyon",
+      "AKI"
+    ]
+  },
+  "tus-pearl-internal-medicine-368-extra": {
+    "front": "Skleroderma renal kriz başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Yüksek doz steroid skleroderma renal kriz riskini artırabilir.",
+    "answer": "Yüksek doz steroid skleroderma renal kriz riskini artırabilir.",
+    "explanation": "Skleroderma renal krizinde renin-anjiyotensin sistemi aktivasyonu belirgindir; ACE inhibitörü prognozu iyileştirir. Yüksek doz steroid skleroderma renal kriz riskini artırabilir.",
+    "tusTip": "Skleroderma renal kriz için sınavda hedeflenen ayrım genellikle şudur: Yüksek doz steroid skleroderma renal kriz riskini artırabilir.",
+    "differentialNote": "Yüksek doz steroid skleroderma renal kriz riskini artırabilir.",
+    "keywords": [
+      "skleroderma renal kriz",
+      "ACE inhibitörü",
+      "malign hipertansiyon",
+      "AKI"
+    ]
+  },
+  "tus-pearl-internal-medicine-369-spot": {
+    "front": "Sistemik sklerozda ağır dijital iskemi ve ülserde kullanılan vazodilatör seçeneklerden biri hangisidir?",
+    "back": "İloprost. Prostasiklin analoğu vazodilatasyon sağlar ve dijital iskemi tedavisinde kullanılabilir.",
+    "answer": "İloprost. Prostasiklin analoğu vazodilatasyon sağlar ve dijital iskemi tedavisinde kullanılabilir.",
+    "explanation": "Prostasiklin analoğu vazodilatasyon sağlar ve dijital iskemi tedavisinde kullanılabilir. Erlotinib veya trastuzumab dijital iskemi tedavisinin parçası değildir.",
+    "tusTip": "Prostasiklin analoğu vazodilatasyon sağlar ve dijital iskemi tedavisinde kullanılabilir. Erlotinib veya trastuzumab dijital iskemi tedavisinin parçası değildir.",
+    "differentialNote": "Erlotinib veya trastuzumab dijital iskemi tedavisinin parçası değildir.",
+    "keywords": [
+      "sistemik skleroz",
+      "dijital ülser",
+      "iloprost",
+      "Raynaud"
+    ]
+  },
+  "tus-pearl-internal-medicine-369-extra": {
+    "front": "Sistemik skleroz dijital ülser için en kritik ayırıcı nokta nedir?",
+    "back": "Erlotinib veya trastuzumab dijital iskemi tedavisinin parçası değildir.",
+    "answer": "Erlotinib veya trastuzumab dijital iskemi tedavisinin parçası değildir.",
+    "explanation": "Prostasiklin analoğu vazodilatasyon sağlar ve dijital iskemi tedavisinde kullanılabilir. Erlotinib veya trastuzumab dijital iskemi tedavisinin parçası değildir.",
+    "tusTip": "Sistemik skleroz dijital ülser karıştırıldığında cevabı netleştiren karşılaştırma: Erlotinib veya trastuzumab dijital iskemi tedavisinin parçası değildir.",
+    "differentialNote": "Erlotinib veya trastuzumab dijital iskemi tedavisinin parçası değildir.",
+    "keywords": [
+      "sistemik skleroz",
+      "dijital ülser",
+      "iloprost",
+      "Raynaud"
+    ]
+  },
+  "tus-pearl-internal-medicine-370-spot": {
+    "front": "SLE hastalık aktivitesini izlemek için özellikle hangi iki laboratuvar belirteci kullanılır?",
+    "back": "Anti-dsDNA ve kompleman düzeyleri. Aktivite artışında anti-dsDNA yükselebilir, C3-C4 azalabilir.",
+    "answer": "Anti-dsDNA ve kompleman düzeyleri. Aktivite artışında anti-dsDNA yükselebilir, C3-C4 azalabilir.",
+    "explanation": "Aktivite artışında anti-dsDNA yükselebilir, C3-C4 azalabilir. Anti-Sm tanıda özgül olabilir ancak aktivite izlemi için anti-dsDNA ve kompleman daha kullanışlıdır.",
+    "tusTip": "Aktivite artışında anti-dsDNA yükselebilir, C3-C4 azalabilir. Anti-Sm tanıda özgül olabilir ancak aktivite izlemi için anti-dsDNA ve kompleman daha kullanışlıdır.",
+    "differentialNote": "Anti-Sm tanıda özgül olabilir ancak aktivite izlemi için anti-dsDNA ve kompleman daha kullanışlıdır.",
+    "keywords": [
+      "SLE",
+      "anti-dsDNA",
+      "kompleman",
+      "aktivite"
+    ]
+  },
+  "tus-pearl-internal-medicine-370-extra": {
+    "front": "SLE aktivite izlemi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Anti-Sm tanıda özgül olabilir ancak aktivite izlemi için anti-dsDNA ve kompleman daha kullanışlıdır.",
+    "answer": "Anti-Sm tanıda özgül olabilir ancak aktivite izlemi için anti-dsDNA ve kompleman daha kullanışlıdır.",
+    "explanation": "Aktivite artışında anti-dsDNA yükselebilir, C3-C4 azalabilir. Anti-Sm tanıda özgül olabilir ancak aktivite izlemi için anti-dsDNA ve kompleman daha kullanışlıdır.",
+    "tusTip": "SLE aktivite izlemi kartında ayırıcı değer taşıyan nokta: Anti-Sm tanıda özgül olabilir ancak aktivite izlemi için anti-dsDNA ve kompleman daha kullanışlıdır.",
+    "differentialNote": "Anti-Sm tanıda özgül olabilir ancak aktivite izlemi için anti-dsDNA ve kompleman daha kullanışlıdır.",
+    "keywords": [
+      "SLE",
+      "anti-dsDNA",
+      "kompleman",
+      "aktivite"
+    ]
+  },
+  "tus-pearl-internal-medicine-371-spot": {
+    "front": "Erken romatoid artritte daha özgül kabul edilen antikor hangisidir?",
+    "back": "Anti-CCP. Anti-CCP RA için özgüllüğü yüksek bir belirteçtir ve eroziv hastalıkla ilişkilendirilebilir.",
+    "answer": "Anti-CCP. Anti-CCP RA için özgüllüğü yüksek bir belirteçtir ve eroziv hastalıkla ilişkilendirilebilir.",
+    "explanation": "Anti-CCP RA için özgüllüğü yüksek bir belirteçtir ve eroziv hastalıkla ilişkilendirilebilir. Romatoid faktör başka hastalıklarda ve yaşlılarda da pozitifleşebilir.",
+    "tusTip": "Anti-CCP RA için özgüllüğü yüksek bir belirteçtir ve eroziv hastalıkla ilişkilendirilebilir. Romatoid faktör başka hastalıklarda ve yaşlılarda da pozitifleşebilir.",
+    "differentialNote": "Romatoid faktör başka hastalıklarda ve yaşlılarda da pozitifleşebilir.",
+    "keywords": [
+      "romatoid artrit",
+      "anti-CCP",
+      "sabah tutukluğu",
+      "erozyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-371-extra": {
+    "front": "Romatoid artrit özgül antikor başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Romatoid faktör başka hastalıklarda ve yaşlılarda da pozitifleşebilir.",
+    "answer": "Romatoid faktör başka hastalıklarda ve yaşlılarda da pozitifleşebilir.",
+    "explanation": "Anti-CCP RA için özgüllüğü yüksek bir belirteçtir ve eroziv hastalıkla ilişkilendirilebilir. Romatoid faktör başka hastalıklarda ve yaşlılarda da pozitifleşebilir.",
+    "tusTip": "Romatoid artrit özgül antikor için sınavda hedeflenen ayrım genellikle şudur: Romatoid faktör başka hastalıklarda ve yaşlılarda da pozitifleşebilir.",
+    "differentialNote": "Romatoid faktör başka hastalıklarda ve yaşlılarda da pozitifleşebilir.",
+    "keywords": [
+      "romatoid artrit",
+      "anti-CCP",
+      "sabah tutukluğu",
+      "erozyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-372-spot": {
+    "front": "Akut gut atağında böbrek fonksiyonu uygunsa ilk basamak semptomatik tedavilerden biri nedir?",
+    "back": "NSAİİ. Akut inflamasyonun baskılanması hedeflenir; kolşisin veya steroid de klinik duruma göre kullanılabilir.",
+    "answer": "NSAİİ. Akut inflamasyonun baskılanması hedeflenir; kolşisin veya steroid de klinik duruma göre kullanılabilir.",
+    "explanation": "Akut inflamasyonun baskılanması hedeflenir; kolşisin veya steroid de klinik duruma göre kullanılabilir. Allopurinol akut atağı hemen kesmek için başlanmaz; ürat düşürücü uzun dönem stratejisidir.",
+    "tusTip": "Akut inflamasyonun baskılanması hedeflenir; kolşisin veya steroid de klinik duruma göre kullanılabilir. Allopurinol akut atağı hemen kesmek için başlanmaz; ürat düşürücü uzun dönem stratejisidir.",
+    "differentialNote": "Allopurinol akut atağı hemen kesmek için başlanmaz; ürat düşürücü uzun dönem stratejisidir.",
+    "keywords": [
+      "akut gut",
+      "NSAİİ",
+      "kolşisin",
+      "monoartrit"
+    ]
+  },
+  "tus-pearl-internal-medicine-372-extra": {
+    "front": "Akut gut atağı tedavisi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Allopurinol akut atağı hemen kesmek için başlanmaz; ürat düşürücü uzun dönem stratejisidir.",
+    "answer": "Allopurinol akut atağı hemen kesmek için başlanmaz; ürat düşürücü uzun dönem stratejisidir.",
+    "explanation": "Akut inflamasyonun baskılanması hedeflenir; kolşisin veya steroid de klinik duruma göre kullanılabilir. Allopurinol akut atağı hemen kesmek için başlanmaz; ürat düşürücü uzun dönem stratejisidir.",
+    "tusTip": "Akut gut atağı tedavisi karıştırıldığında cevabı netleştiren karşılaştırma: Allopurinol akut atağı hemen kesmek için başlanmaz; ürat düşürücü uzun dönem stratejisidir.",
+    "differentialNote": "Allopurinol akut atağı hemen kesmek için başlanmaz; ürat düşürücü uzun dönem stratejisidir.",
+    "keywords": [
+      "akut gut",
+      "NSAİİ",
+      "kolşisin",
+      "monoartrit"
+    ]
+  },
+  "tus-pearl-internal-medicine-373-spot": {
+    "front": "Yeni başlayan temporal baş ağrısı ve görme riski olan yaşlı hastada biyopsi beklenmeden hangi tedavi başlanır?",
+    "back": "Yüksek doz glukokortikoid. Görme kaybını önlemek için klinik şüphede tedavi geciktirilmemelidir.",
+    "answer": "Yüksek doz glukokortikoid. Görme kaybını önlemek için klinik şüphede tedavi geciktirilmemelidir.",
+    "explanation": "Görme kaybını önlemek için klinik şüphede tedavi geciktirilmemelidir. Polimiyalji romatika omuz-kalça kuşağı ağrısıyla ilişkilidir ancak görme riski dev hücreli arteritte kritiktir.",
+    "tusTip": "Görme kaybını önlemek için klinik şüphede tedavi geciktirilmemelidir. Polimiyalji romatika omuz-kalça kuşağı ağrısıyla ilişkilidir ancak görme riski dev hücreli arteritte kritiktir.",
+    "differentialNote": "Polimiyalji romatika omuz-kalça kuşağı ağrısıyla ilişkilidir ancak görme riski dev hücreli arteritte kritiktir.",
+    "keywords": [
+      "dev hücreli arterit",
+      "temporal baş ağrısı",
+      "ESR",
+      "steroid"
+    ]
+  },
+  "tus-pearl-internal-medicine-373-extra": {
+    "front": "Dev hücreli arterit için en kritik ayırıcı nokta nedir?",
+    "back": "Polimiyalji romatika omuz-kalça kuşağı ağrısıyla ilişkilidir ancak görme riski dev hücreli arteritte kritiktir.",
+    "answer": "Polimiyalji romatika omuz-kalça kuşağı ağrısıyla ilişkilidir ancak görme riski dev hücreli arteritte kritiktir.",
+    "explanation": "Görme kaybını önlemek için klinik şüphede tedavi geciktirilmemelidir. Polimiyalji romatika omuz-kalça kuşağı ağrısıyla ilişkilidir ancak görme riski dev hücreli arteritte kritiktir.",
+    "tusTip": "Dev hücreli arterit kartında ayırıcı değer taşıyan nokta: Polimiyalji romatika omuz-kalça kuşağı ağrısıyla ilişkilidir ancak görme riski dev hücreli arteritte kritiktir.",
+    "differentialNote": "Polimiyalji romatika omuz-kalça kuşağı ağrısıyla ilişkilidir ancak görme riski dev hücreli arteritte kritiktir.",
+    "keywords": [
+      "dev hücreli arterit",
+      "temporal baş ağrısı",
+      "ESR",
+      "steroid"
+    ]
+  },
+  "tus-pearl-internal-medicine-374-spot": {
+    "front": "Yaşlı hastada omuz ve kalça kuşağında sabah tutukluğu ile yüksek ESR hangi hastalığı düşündürür?",
+    "back": "Polimiyalji romatika. Proksimal kas ağrısı ve tutukluk tipiktir; gerçek kas güçsüzlüğü beklenmez.",
+    "answer": "Polimiyalji romatika. Proksimal kas ağrısı ve tutukluk tipiktir; gerçek kas güçsüzlüğü beklenmez.",
+    "explanation": "Proksimal kas ağrısı ve tutukluk tipiktir; gerçek kas güçsüzlüğü beklenmez. Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir.",
+    "tusTip": "Proksimal kas ağrısı ve tutukluk tipiktir; gerçek kas güçsüzlüğü beklenmez. Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir.",
+    "differentialNote": "Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir.",
+    "keywords": [
+      "polimiyalji romatika",
+      "omuz kuşağı",
+      "kalça kuşağı",
+      "ESR yüksek"
+    ]
+  },
+  "tus-pearl-internal-medicine-374-extra": {
+    "front": "Polimiyalji romatika karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir.",
+    "answer": "Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir.",
+    "explanation": "Proksimal kas ağrısı ve tutukluk tipiktir; gerçek kas güçsüzlüğü beklenmez. Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir.",
+    "tusTip": "Polimiyalji romatika için sınavda hedeflenen ayrım genellikle şudur: Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir.",
+    "differentialNote": "Polimiyozitte CK yüksekliği ve gerçek kas güçsüzlüğü daha belirgindir.",
+    "keywords": [
+      "polimiyalji romatika",
+      "omuz kuşağı",
+      "kalça kuşağı",
+      "ESR yüksek"
+    ]
+  },
+  "tus-pearl-internal-medicine-375-spot": {
+    "front": "Standart acil astım tedavisine rağmen hipoksemi süren ağır atakta hangi ek tedavi düşünülebilir?",
+    "back": "İntravenöz magnezyum sülfat. Magnezyum bronkodilatör etki sağlayabilir ve ağır atakta ek tedavi olarak kullanılabilir.",
+    "answer": "İntravenöz magnezyum sülfat. Magnezyum bronkodilatör etki sağlayabilir ve ağır atakta ek tedavi olarak kullanılabilir.",
+    "explanation": "Magnezyum bronkodilatör etki sağlayabilir ve ağır atakta ek tedavi olarak kullanılabilir. Uzun etkili bronkodilatörler akut ağır atağı hızlı düzeltmek için uygun ek seçenek değildir.",
+    "tusTip": "Magnezyum bronkodilatör etki sağlayabilir ve ağır atakta ek tedavi olarak kullanılabilir. Uzun etkili bronkodilatörler akut ağır atağı hızlı düzeltmek için uygun ek seçenek değildir.",
+    "differentialNote": "Uzun etkili bronkodilatörler akut ağır atağı hızlı düzeltmek için uygun ek seçenek değildir.",
+    "keywords": [
+      "ağır astım",
+      "magnezyum sülfat",
+      "beta-agonist",
+      "hipoksemi"
+    ]
+  },
+  "tus-pearl-internal-medicine-375-extra": {
+    "front": "Ağır astımda magnezyum sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Uzun etkili bronkodilatörler akut ağır atağı hızlı düzeltmek için uygun ek seçenek değildir.",
+    "answer": "Uzun etkili bronkodilatörler akut ağır atağı hızlı düzeltmek için uygun ek seçenek değildir.",
+    "explanation": "Magnezyum bronkodilatör etki sağlayabilir ve ağır atakta ek tedavi olarak kullanılabilir. Uzun etkili bronkodilatörler akut ağır atağı hızlı düzeltmek için uygun ek seçenek değildir.",
+    "tusTip": "Ağır astımda magnezyum karıştırıldığında cevabı netleştiren karşılaştırma: Uzun etkili bronkodilatörler akut ağır atağı hızlı düzeltmek için uygun ek seçenek değildir.",
+    "differentialNote": "Uzun etkili bronkodilatörler akut ağır atağı hızlı düzeltmek için uygun ek seçenek değildir.",
+    "keywords": [
+      "ağır astım",
+      "magnezyum sülfat",
+      "beta-agonist",
+      "hipoksemi"
+    ]
+  },
+  "tus-pearl-internal-medicine-376-spot": {
+    "front": "KOAH alevlenmesinde antibiyotik gereksinimini destekleyen klasik bulgu hangisidir?",
+    "back": "Balgam pürülansında artış. Dispne, balgam miktarı ve pürülansındaki artış bakteriyel alevlenme olasılığını artırır.",
+    "answer": "Balgam pürülansında artış. Dispne, balgam miktarı ve pürülansındaki artış bakteriyel alevlenme olasılığını artırır.",
+    "explanation": "Dispne, balgam miktarı ve pürülansındaki artış bakteriyel alevlenme olasılığını artırır. Sadece kuru öksürük antibiyotik için tek başına yeterli olmayabilir.",
+    "tusTip": "Dispne, balgam miktarı ve pürülansındaki artış bakteriyel alevlenme olasılığını artırır. Sadece kuru öksürük antibiyotik için tek başına yeterli olmayabilir.",
+    "differentialNote": "Sadece kuru öksürük antibiyotik için tek başına yeterli olmayabilir.",
+    "keywords": [
+      "KOAH alevlenmesi",
+      "balgam pürülansı",
+      "dispne",
+      "antibiyotik"
+    ]
+  },
+  "tus-pearl-internal-medicine-376-extra": {
+    "front": "KOAH alevlenmesinde antibiyotik için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Sadece kuru öksürük antibiyotik için tek başına yeterli olmayabilir.",
+    "answer": "Sadece kuru öksürük antibiyotik için tek başına yeterli olmayabilir.",
+    "explanation": "Dispne, balgam miktarı ve pürülansındaki artış bakteriyel alevlenme olasılığını artırır. Sadece kuru öksürük antibiyotik için tek başına yeterli olmayabilir.",
+    "tusTip": "KOAH alevlenmesinde antibiyotik kartında ayırıcı değer taşıyan nokta: Sadece kuru öksürük antibiyotik için tek başına yeterli olmayabilir.",
+    "differentialNote": "Sadece kuru öksürük antibiyotik için tek başına yeterli olmayabilir.",
+    "keywords": [
+      "KOAH alevlenmesi",
+      "balgam pürülansı",
+      "dispne",
+      "antibiyotik"
+    ]
+  },
+  "tus-pearl-internal-medicine-377-spot": {
+    "front": "Düşük klinik olasılıklı pulmoner emboli şüphesinde negatif D-dimer ne sağlar?",
+    "back": "Pulmoner emboliyi dışlamaya yardımcı olur. D-dimer duyarlılığı yüksek ancak özgüllüğü düşük bir testtir; düşük olasılıkta dışlama için değerlidir.",
+    "answer": "Pulmoner emboliyi dışlamaya yardımcı olur. D-dimer duyarlılığı yüksek ancak özgüllüğü düşük bir testtir; düşük olasılıkta dışlama için değerlidir.",
+    "explanation": "D-dimer duyarlılığı yüksek ancak özgüllüğü düşük bir testtir; düşük olasılıkta dışlama için değerlidir. Yüksek klinik olasılıkta negatiflik güvenilir dışlama sağlamaz; görüntüleme gerekir.",
+    "tusTip": "D-dimer duyarlılığı yüksek ancak özgüllüğü düşük bir testtir; düşük olasılıkta dışlama için değerlidir. Yüksek klinik olasılıkta negatiflik güvenilir dışlama sağlamaz; görüntüleme gerekir.",
+    "differentialNote": "Yüksek klinik olasılıkta negatiflik güvenilir dışlama sağlamaz; görüntüleme gerekir.",
+    "keywords": [
+      "pulmoner emboli",
+      "D-dimer",
+      "düşük olasılık",
+      "dışlama"
+    ]
+  },
+  "tus-pearl-internal-medicine-377-extra": {
+    "front": "Pulmoner embolide D-dimer için en kritik ayırıcı nokta nedir?",
+    "back": "Yüksek klinik olasılıkta negatiflik güvenilir dışlama sağlamaz; görüntüleme gerekir.",
+    "answer": "Yüksek klinik olasılıkta negatiflik güvenilir dışlama sağlamaz; görüntüleme gerekir.",
+    "explanation": "D-dimer duyarlılığı yüksek ancak özgüllüğü düşük bir testtir; düşük olasılıkta dışlama için değerlidir. Yüksek klinik olasılıkta negatiflik güvenilir dışlama sağlamaz; görüntüleme gerekir.",
+    "tusTip": "Pulmoner embolide D-dimer için sınavda hedeflenen ayrım genellikle şudur: Yüksek klinik olasılıkta negatiflik güvenilir dışlama sağlamaz; görüntüleme gerekir.",
+    "differentialNote": "Yüksek klinik olasılıkta negatiflik güvenilir dışlama sağlamaz; görüntüleme gerekir.",
+    "keywords": [
+      "pulmoner emboli",
+      "D-dimer",
+      "düşük olasılık",
+      "dışlama"
+    ]
+  },
+  "tus-pearl-internal-medicine-378-spot": {
+    "front": "Atriyal fibrilasyonda antikoagülasyon kararında hangi skor kullanılır?",
+    "back": "CHA2DS2-VASc skoru. Skor inme riskini tahmin ederek antikoagülasyon kararını destekler.",
+    "answer": "CHA2DS2-VASc skoru. Skor inme riskini tahmin ederek antikoagülasyon kararını destekler.",
+    "explanation": "Skor inme riskini tahmin ederek antikoagülasyon kararını destekler. HAS-BLED kanama riskini değerlendirmeye yardım eder; inme riski skoru değildir.",
+    "tusTip": "Skor inme riskini tahmin ederek antikoagülasyon kararını destekler. HAS-BLED kanama riskini değerlendirmeye yardım eder; inme riski skoru değildir.",
+    "differentialNote": "HAS-BLED kanama riskini değerlendirmeye yardım eder; inme riski skoru değildir.",
+    "keywords": [
+      "atriyal fibrilasyon",
+      "CHA2DS2-VASc",
+      "inme riski",
+      "antikoagülasyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-378-extra": {
+    "front": "Atriyal fibrilasyonda inme riski karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "HAS-BLED kanama riskini değerlendirmeye yardım eder; inme riski skoru değildir.",
+    "answer": "HAS-BLED kanama riskini değerlendirmeye yardım eder; inme riski skoru değildir.",
+    "explanation": "Skor inme riskini tahmin ederek antikoagülasyon kararını destekler. HAS-BLED kanama riskini değerlendirmeye yardım eder; inme riski skoru değildir.",
+    "tusTip": "Atriyal fibrilasyonda inme riski karıştırıldığında cevabı netleştiren karşılaştırma: HAS-BLED kanama riskini değerlendirmeye yardım eder; inme riski skoru değildir.",
+    "differentialNote": "HAS-BLED kanama riskini değerlendirmeye yardım eder; inme riski skoru değildir.",
+    "keywords": [
+      "atriyal fibrilasyon",
+      "CHA2DS2-VASc",
+      "inme riski",
+      "antikoagülasyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-379-spot": {
+    "front": "Enfektif endokardit şüphesinde antibiyotik öncesi yapılması gereken temel işlem nedir?",
+    "back": "Uygun sayıda kan kültürü almak. Etkenin saptanması tedavi seçimini belirler; mümkünse antibiyotik öncesi kültür alınır.",
+    "answer": "Uygun sayıda kan kültürü almak. Etkenin saptanması tedavi seçimini belirler; mümkünse antibiyotik öncesi kültür alınır.",
+    "explanation": "Etkenin saptanması tedavi seçimini belirler; mümkünse antibiyotik öncesi kültür alınır. Hemodinamik instabilitede tedavi geciktirilmez ancak kültür mümkün olduğunca önce alınır.",
+    "tusTip": "Etkenin saptanması tedavi seçimini belirler; mümkünse antibiyotik öncesi kültür alınır. Hemodinamik instabilitede tedavi geciktirilmez ancak kültür mümkün olduğunca önce alınır.",
+    "differentialNote": "Hemodinamik instabilitede tedavi geciktirilmez ancak kültür mümkün olduğunca önce alınır.",
+    "keywords": [
+      "endokardit",
+      "kan kültürü",
+      "üfürüm",
+      "ateş"
+    ]
+  },
+  "tus-pearl-internal-medicine-379-extra": {
+    "front": "Endokarditte kan kültürü için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Hemodinamik instabilitede tedavi geciktirilmez ancak kültür mümkün olduğunca önce alınır.",
+    "answer": "Hemodinamik instabilitede tedavi geciktirilmez ancak kültür mümkün olduğunca önce alınır.",
+    "explanation": "Etkenin saptanması tedavi seçimini belirler; mümkünse antibiyotik öncesi kültür alınır. Hemodinamik instabilitede tedavi geciktirilmez ancak kültür mümkün olduğunca önce alınır.",
+    "tusTip": "Endokarditte kan kültürü kartında ayırıcı değer taşıyan nokta: Hemodinamik instabilitede tedavi geciktirilmez ancak kültür mümkün olduğunca önce alınır.",
+    "differentialNote": "Hemodinamik instabilitede tedavi geciktirilmez ancak kültür mümkün olduğunca önce alınır.",
+    "keywords": [
+      "endokardit",
+      "kan kültürü",
+      "üfürüm",
+      "ateş"
+    ]
+  },
+  "tus-pearl-internal-medicine-380-spot": {
+    "front": "Ani yırtılır tarzda göğüs-sırt ağrısı ve nabız farkı hangi acil tanıyı düşündürür?",
+    "back": "Aort diseksiyonu. İntimal yırtıkla kan damar duvarı katmanları arasına ilerler.",
+    "answer": "Aort diseksiyonu. İntimal yırtıkla kan damar duvarı katmanları arasına ilerler.",
+    "explanation": "İntimal yırtıkla kan damar duvarı katmanları arasına ilerler. Akut koroner sendrom göğüs ağrısı yapar ancak nabız farkı ve yırtılır sırt ağrısı diseksiyonu güçlendirir.",
+    "tusTip": "İntimal yırtıkla kan damar duvarı katmanları arasına ilerler. Akut koroner sendrom göğüs ağrısı yapar ancak nabız farkı ve yırtılır sırt ağrısı diseksiyonu güçlendirir.",
+    "differentialNote": "Akut koroner sendrom göğüs ağrısı yapar ancak nabız farkı ve yırtılır sırt ağrısı diseksiyonu güçlendirir.",
+    "keywords": [
+      "aort diseksiyonu",
+      "yırtılır ağrı",
+      "nabız farkı",
+      "hipertansiyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-380-extra": {
+    "front": "Aort diseksiyonu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Akut koroner sendrom göğüs ağrısı yapar ancak nabız farkı ve yırtılır sırt ağrısı diseksiyonu güçlendirir.",
+    "answer": "Akut koroner sendrom göğüs ağrısı yapar ancak nabız farkı ve yırtılır sırt ağrısı diseksiyonu güçlendirir.",
+    "explanation": "İntimal yırtıkla kan damar duvarı katmanları arasına ilerler. Akut koroner sendrom göğüs ağrısı yapar ancak nabız farkı ve yırtılır sırt ağrısı diseksiyonu güçlendirir.",
+    "tusTip": "Aort diseksiyonu için sınavda hedeflenen ayrım genellikle şudur: Akut koroner sendrom göğüs ağrısı yapar ancak nabız farkı ve yırtılır sırt ağrısı diseksiyonu güçlendirir.",
+    "differentialNote": "Akut koroner sendrom göğüs ağrısı yapar ancak nabız farkı ve yırtılır sırt ağrısı diseksiyonu güçlendirir.",
+    "keywords": [
+      "aort diseksiyonu",
+      "yırtılır ağrı",
+      "nabız farkı",
+      "hipertansiyon"
+    ]
+  },
+  "tus-pearl-internal-medicine-381-spot": {
+    "front": "Transfüzyondan saatler sonra hipoksemi ve nonkardiyojenik pulmoner ödem hangi reaksiyonu düşündürür?",
+    "back": "TRALI. Donör antikorları alıcı nötrofillerini aktive ederek akciğer kapiller hasarı yapabilir.",
+    "answer": "TRALI. Donör antikorları alıcı nötrofillerini aktive ederek akciğer kapiller hasarı yapabilir.",
+    "explanation": "Donör antikorları alıcı nötrofillerini aktive ederek akciğer kapiller hasarı yapabilir. TACO hacim yüklenmesine bağlıdır ve diüretik yanıtı daha belirgin olabilir.",
+    "tusTip": "Donör antikorları alıcı nötrofillerini aktive ederek akciğer kapiller hasarı yapabilir. TACO hacim yüklenmesine bağlıdır ve diüretik yanıtı daha belirgin olabilir.",
+    "differentialNote": "TACO hacim yüklenmesine bağlıdır ve diüretik yanıtı daha belirgin olabilir.",
+    "keywords": [
+      "TRALI",
+      "transfüzyon",
+      "hipoksemi",
+      "nonkardiyojenik ödem"
+    ]
+  },
+  "tus-pearl-internal-medicine-381-extra": {
+    "front": "Transfüzyon ilişkili akut akciğer hasarı için en kritik ayırıcı nokta nedir?",
+    "back": "TACO hacim yüklenmesine bağlıdır ve diüretik yanıtı daha belirgin olabilir.",
+    "answer": "TACO hacim yüklenmesine bağlıdır ve diüretik yanıtı daha belirgin olabilir.",
+    "explanation": "Donör antikorları alıcı nötrofillerini aktive ederek akciğer kapiller hasarı yapabilir. TACO hacim yüklenmesine bağlıdır ve diüretik yanıtı daha belirgin olabilir.",
+    "tusTip": "Transfüzyon ilişkili akut akciğer hasarı karıştırıldığında cevabı netleştiren karşılaştırma: TACO hacim yüklenmesine bağlıdır ve diüretik yanıtı daha belirgin olabilir.",
+    "differentialNote": "TACO hacim yüklenmesine bağlıdır ve diüretik yanıtı daha belirgin olabilir.",
+    "keywords": [
+      "TRALI",
+      "transfüzyon",
+      "hipoksemi",
+      "nonkardiyojenik ödem"
+    ]
+  },
+  "tus-pearl-internal-medicine-382-spot": {
+    "front": "Kemoterapi sonrası hiperürisemi, hiperfosfatemi, hiperkalemi ve hipokalsemi hangi komplikasyonu düşündürür?",
+    "back": "Tümör lizis sendromu. Hızlı hücre yıkımı hücre içi iyon ve nükleik asit ürünlerinin kana geçmesine yol açar.",
+    "answer": "Tümör lizis sendromu. Hızlı hücre yıkımı hücre içi iyon ve nükleik asit ürünlerinin kana geçmesine yol açar.",
+    "explanation": "Hızlı hücre yıkımı hücre içi iyon ve nükleik asit ürünlerinin kana geçmesine yol açar. Hiperkalsemi tümör lizis sendromunun tipik bulgusu değildir; hipokalsemi beklenir.",
+    "tusTip": "Hızlı hücre yıkımı hücre içi iyon ve nükleik asit ürünlerinin kana geçmesine yol açar. Hiperkalsemi tümör lizis sendromunun tipik bulgusu değildir; hipokalsemi beklenir.",
+    "differentialNote": "Hiperkalsemi tümör lizis sendromunun tipik bulgusu değildir; hipokalsemi beklenir.",
+    "keywords": [
+      "tümör lizis",
+      "hiperürisemi",
+      "hiperfosfatemi",
+      "hiperkalemi"
+    ]
+  },
+  "tus-pearl-internal-medicine-382-extra": {
+    "front": "Tümör lizis sendromu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Hiperkalsemi tümör lizis sendromunun tipik bulgusu değildir; hipokalsemi beklenir.",
+    "answer": "Hiperkalsemi tümör lizis sendromunun tipik bulgusu değildir; hipokalsemi beklenir.",
+    "explanation": "Hızlı hücre yıkımı hücre içi iyon ve nükleik asit ürünlerinin kana geçmesine yol açar. Hiperkalsemi tümör lizis sendromunun tipik bulgusu değildir; hipokalsemi beklenir.",
+    "tusTip": "Tümör lizis sendromu kartında ayırıcı değer taşıyan nokta: Hiperkalsemi tümör lizis sendromunun tipik bulgusu değildir; hipokalsemi beklenir.",
+    "differentialNote": "Hiperkalsemi tümör lizis sendromunun tipik bulgusu değildir; hipokalsemi beklenir.",
+    "keywords": [
+      "tümör lizis",
+      "hiperürisemi",
+      "hiperfosfatemi",
+      "hiperkalemi"
+    ]
+  },
+  "tus-pearl-internal-medicine-383-spot": {
+    "front": "Paroksismal hipertansiyon, baş ağrısı ve terleme ataklarında ilk biyokimyasal testlerden biri hangisidir?",
+    "back": "Plazma serbest metanefrin düzeyi. Katekolamin metabolitleri feokromositoma taramasında duyarlı belirteçlerdir.",
+    "answer": "Plazma serbest metanefrin düzeyi. Katekolamin metabolitleri feokromositoma taramasında duyarlı belirteçlerdir.",
+    "explanation": "Katekolamin metabolitleri feokromositoma taramasında duyarlı belirteçlerdir. Aldosteron-renin oranı primer hiperaldosteronizm taramasında kullanılır.",
+    "tusTip": "Katekolamin metabolitleri feokromositoma taramasında duyarlı belirteçlerdir. Aldosteron-renin oranı primer hiperaldosteronizm taramasında kullanılır.",
+    "differentialNote": "Aldosteron-renin oranı primer hiperaldosteronizm taramasında kullanılır.",
+    "keywords": [
+      "feokromositoma",
+      "metanefrin",
+      "paroksismal hipertansiyon",
+      "terleme"
+    ]
+  },
+  "tus-pearl-internal-medicine-383-extra": {
+    "front": "Feokromositoma taraması başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Aldosteron-renin oranı primer hiperaldosteronizm taramasında kullanılır.",
+    "answer": "Aldosteron-renin oranı primer hiperaldosteronizm taramasında kullanılır.",
+    "explanation": "Katekolamin metabolitleri feokromositoma taramasında duyarlı belirteçlerdir. Aldosteron-renin oranı primer hiperaldosteronizm taramasında kullanılır.",
+    "tusTip": "Feokromositoma taraması için sınavda hedeflenen ayrım genellikle şudur: Aldosteron-renin oranı primer hiperaldosteronizm taramasında kullanılır.",
+    "differentialNote": "Aldosteron-renin oranı primer hiperaldosteronizm taramasında kullanılır.",
+    "keywords": [
+      "feokromositoma",
+      "metanefrin",
+      "paroksismal hipertansiyon",
+      "terleme"
+    ]
+  },
+  "tus-pearl-internal-medicine-384-spot": {
+    "front": "Hiperpigmentasyon, hiponatremi ve hiperkalemi hangi endokrin yetmezliği düşündürür?",
+    "back": "Primer adrenal yetmezlik. Kortizol ve aldosteron eksikliği ACTH artışıyla birlikte pigmentasyon ve elektrolit bozukluğu yapar.",
+    "answer": "Primer adrenal yetmezlik. Kortizol ve aldosteron eksikliği ACTH artışıyla birlikte pigmentasyon ve elektrolit bozukluğu yapar.",
+    "explanation": "Kortizol ve aldosteron eksikliği ACTH artışıyla birlikte pigmentasyon ve elektrolit bozukluğu yapar. Sekonder adrenal yetmezlikte aldosteron genellikle korunur ve hiperkalemi beklenmeyebilir.",
+    "tusTip": "Kortizol ve aldosteron eksikliği ACTH artışıyla birlikte pigmentasyon ve elektrolit bozukluğu yapar. Sekonder adrenal yetmezlikte aldosteron genellikle korunur ve hiperkalemi beklenmeyebilir.",
+    "differentialNote": "Sekonder adrenal yetmezlikte aldosteron genellikle korunur ve hiperkalemi beklenmeyebilir.",
+    "keywords": [
+      "Addison",
+      "hiperpigmentasyon",
+      "hiponatremi",
+      "hiperkalemi"
+    ]
+  },
+  "tus-pearl-internal-medicine-384-extra": {
+    "front": "Primer adrenal yetmezlik sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Sekonder adrenal yetmezlikte aldosteron genellikle korunur ve hiperkalemi beklenmeyebilir.",
+    "answer": "Sekonder adrenal yetmezlikte aldosteron genellikle korunur ve hiperkalemi beklenmeyebilir.",
+    "explanation": "Kortizol ve aldosteron eksikliği ACTH artışıyla birlikte pigmentasyon ve elektrolit bozukluğu yapar. Sekonder adrenal yetmezlikte aldosteron genellikle korunur ve hiperkalemi beklenmeyebilir.",
+    "tusTip": "Primer adrenal yetmezlik karıştırıldığında cevabı netleştiren karşılaştırma: Sekonder adrenal yetmezlikte aldosteron genellikle korunur ve hiperkalemi beklenmeyebilir.",
+    "differentialNote": "Sekonder adrenal yetmezlikte aldosteron genellikle korunur ve hiperkalemi beklenmeyebilir.",
+    "keywords": [
+      "Addison",
+      "hiperpigmentasyon",
+      "hiponatremi",
+      "hiperkalemi"
+    ]
+  },
+  "tus-pearl-internal-medicine-385-spot": {
+    "front": "Hiperkalsemi saptanan hastada ilk ayrım için hangi hormon ölçümü kritiktir?",
+    "back": "Parathormon. PTH yüksekliği primer hiperparatiroidizmi, baskılanması malignite gibi PTH dışı nedenleri düşündürür.",
+    "answer": "Parathormon. PTH yüksekliği primer hiperparatiroidizmi, baskılanması malignite gibi PTH dışı nedenleri düşündürür.",
+    "explanation": "PTH yüksekliği primer hiperparatiroidizmi, baskılanması malignite gibi PTH dışı nedenleri düşündürür. Kalsitonin hiperkalsemi neden ayrımında ilk basamak değildir.",
+    "tusTip": "PTH yüksekliği primer hiperparatiroidizmi, baskılanması malignite gibi PTH dışı nedenleri düşündürür. Kalsitonin hiperkalsemi neden ayrımında ilk basamak değildir.",
+    "differentialNote": "Kalsitonin hiperkalsemi neden ayrımında ilk basamak değildir.",
+    "keywords": [
+      "hiperkalsemi",
+      "PTH",
+      "primer hiperparatiroidi",
+      "malignite"
+    ]
+  },
+  "tus-pearl-internal-medicine-385-extra": {
+    "front": "Hiperkalsemide PTH ayrımı için en kritik ayırıcı nokta nedir?",
+    "back": "Kalsitonin hiperkalsemi neden ayrımında ilk basamak değildir.",
+    "answer": "Kalsitonin hiperkalsemi neden ayrımında ilk basamak değildir.",
+    "explanation": "PTH yüksekliği primer hiperparatiroidizmi, baskılanması malignite gibi PTH dışı nedenleri düşündürür. Kalsitonin hiperkalsemi neden ayrımında ilk basamak değildir.",
+    "tusTip": "Hiperkalsemide PTH ayrımı kartında ayırıcı değer taşıyan nokta: Kalsitonin hiperkalsemi neden ayrımında ilk basamak değildir.",
+    "differentialNote": "Kalsitonin hiperkalsemi neden ayrımında ilk basamak değildir.",
+    "keywords": [
+      "hiperkalsemi",
+      "PTH",
+      "primer hiperparatiroidi",
+      "malignite"
+    ]
+  },
+  "tus-pearl-internal-medicine-386-spot": {
+    "front": "Erişkin erkekte demir eksikliği anemisi saptandığında gastrointestinal açıdan ne araştırılmalıdır?",
+    "back": "Gizli kan kaybı ve kolorektal malignite.",
+    "answer": "Gizli kan kaybı ve kolorektal malignite.",
+    "explanation": "Erişkin erkekte demir eksikliği çoğu zaman kan kaybı kabul edilerek GI kaynak araştırılır. Sadece oral demir verip nedeni araştırmamak maligniteyi geciktirebilir.",
+    "tusTip": "Erişkin erkekte demir eksikliği çoğu zaman kan kaybı kabul edilerek GI kaynak araştırılır. Sadece oral demir verip nedeni araştırmamak maligniteyi geciktirebilir.",
+    "differentialNote": "Sadece oral demir verip nedeni araştırmamak maligniteyi geciktirebilir.",
+    "keywords": [
+      "demir eksikliği",
+      "erkek hasta",
+      "kolonoskopi",
+      "gizli kan"
+    ]
+  },
+  "tus-pearl-internal-medicine-386-extra": {
+    "front": "Demir eksikliği ve kolon kanseri karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Sadece oral demir verip nedeni araştırmamak maligniteyi geciktirebilir.",
+    "answer": "Sadece oral demir verip nedeni araştırmamak maligniteyi geciktirebilir.",
+    "explanation": "Erişkin erkekte demir eksikliği çoğu zaman kan kaybı kabul edilerek GI kaynak araştırılır. Sadece oral demir verip nedeni araştırmamak maligniteyi geciktirebilir.",
+    "tusTip": "Demir eksikliği ve kolon kanseri için sınavda hedeflenen ayrım genellikle şudur: Sadece oral demir verip nedeni araştırmamak maligniteyi geciktirebilir.",
+    "differentialNote": "Sadece oral demir verip nedeni araştırmamak maligniteyi geciktirebilir.",
+    "keywords": [
+      "demir eksikliği",
+      "erkek hasta",
+      "kolonoskopi",
+      "gizli kan"
+    ]
+  },
+  "tus-pearl-internal-medicine-387-spot": {
+    "front": "Hipotermi, bradikardi ve bilinç bozukluğu olan ağır hipotiroidi tablosunda ne düşünülür?",
+    "back": "Miksödem koması. Ağır tiroid hormon eksikliği metabolik yavaşlama ve hayatı tehdit eden bilinç bozukluğu yapar.",
+    "answer": "Miksödem koması. Ağır tiroid hormon eksikliği metabolik yavaşlama ve hayatı tehdit eden bilinç bozukluğu yapar.",
+    "explanation": "Ağır tiroid hormon eksikliği metabolik yavaşlama ve hayatı tehdit eden bilinç bozukluğu yapar. Basit primer hipotiroidi genellikle bu kadar ağır akut tablo oluşturmaz.",
+    "tusTip": "Ağır tiroid hormon eksikliği metabolik yavaşlama ve hayatı tehdit eden bilinç bozukluğu yapar. Basit primer hipotiroidi genellikle bu kadar ağır akut tablo oluşturmaz.",
+    "differentialNote": "Basit primer hipotiroidi genellikle bu kadar ağır akut tablo oluşturmaz.",
+    "keywords": [
+      "miksödem koması",
+      "hipotermi",
+      "bradikardi",
+      "bilinç bozukluğu"
+    ]
+  },
+  "tus-pearl-internal-medicine-387-extra": {
+    "front": "Hipotiroidide miksödem koması sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Basit primer hipotiroidi genellikle bu kadar ağır akut tablo oluşturmaz.",
+    "answer": "Basit primer hipotiroidi genellikle bu kadar ağır akut tablo oluşturmaz.",
+    "explanation": "Ağır tiroid hormon eksikliği metabolik yavaşlama ve hayatı tehdit eden bilinç bozukluğu yapar. Basit primer hipotiroidi genellikle bu kadar ağır akut tablo oluşturmaz.",
+    "tusTip": "Hipotiroidide miksödem koması karıştırıldığında cevabı netleştiren karşılaştırma: Basit primer hipotiroidi genellikle bu kadar ağır akut tablo oluşturmaz.",
+    "differentialNote": "Basit primer hipotiroidi genellikle bu kadar ağır akut tablo oluşturmaz.",
+    "keywords": [
+      "miksödem koması",
+      "hipotermi",
+      "bradikardi",
+      "bilinç bozukluğu"
+    ]
+  },
+  "tus-pearl-internal-medicine-388-spot": {
+    "front": "Akromegali şüphesinde ilk tarama için hangi laboratuvar testi kullanılır?",
+    "back": "IGF-1 düzeyi. IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır.",
+    "answer": "IGF-1 düzeyi. IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır.",
+    "explanation": "IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır. Rastgele GH düzeyi pulsatif salınım nedeniyle tek başına güvenilir değildir.",
+    "tusTip": "IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır. Rastgele GH düzeyi pulsatif salınım nedeniyle tek başına güvenilir değildir.",
+    "differentialNote": "Rastgele GH düzeyi pulsatif salınım nedeniyle tek başına güvenilir değildir.",
+    "keywords": [
+      "akromegali",
+      "IGF-1",
+      "büyüme hormonu",
+      "hipofiz adenomu"
+    ]
+  },
+  "tus-pearl-internal-medicine-388-extra": {
+    "front": "Akromegali taraması için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Rastgele GH düzeyi pulsatif salınım nedeniyle tek başına güvenilir değildir.",
+    "answer": "Rastgele GH düzeyi pulsatif salınım nedeniyle tek başına güvenilir değildir.",
+    "explanation": "IGF-1 gün içinde daha stabildir ve büyüme hormonu fazlalığını yansıtır. Rastgele GH düzeyi pulsatif salınım nedeniyle tek başına güvenilir değildir.",
+    "tusTip": "Akromegali taraması kartında ayırıcı değer taşıyan nokta: Rastgele GH düzeyi pulsatif salınım nedeniyle tek başına güvenilir değildir.",
+    "differentialNote": "Rastgele GH düzeyi pulsatif salınım nedeniyle tek başına güvenilir değildir.",
+    "keywords": [
+      "akromegali",
+      "IGF-1",
+      "büyüme hormonu",
+      "hipofiz adenomu"
+    ]
+  },
+  "tus-pearl-internal-medicine-389-spot": {
+    "front": "Cushing sendromu şüphesinde kullanılan tarama testlerinden biri hangisidir?",
+    "back": "Gece 1 mg deksametazon supresyon testi.",
+    "answer": "Gece 1 mg deksametazon supresyon testi.",
+    "explanation": "Normalde deksametazon kortizolü baskılar; baskılanmama hiperkortizolizmi destekler. ACTH düzeyi daha çok Cushing doğrulandıktan sonra etiyoloji ayrımında kullanılır.",
+    "tusTip": "Normalde deksametazon kortizolü baskılar; baskılanmama hiperkortizolizmi destekler. ACTH düzeyi daha çok Cushing doğrulandıktan sonra etiyoloji ayrımında kullanılır.",
+    "differentialNote": "ACTH düzeyi daha çok Cushing doğrulandıktan sonra etiyoloji ayrımında kullanılır.",
+    "keywords": [
+      "Cushing",
+      "deksametazon supresyon",
+      "kortizol",
+      "tarama"
+    ]
+  },
+  "tus-pearl-internal-medicine-389-extra": {
+    "front": "Cushing tarama testi için en kritik ayırıcı nokta nedir?",
+    "back": "ACTH düzeyi daha çok Cushing doğrulandıktan sonra etiyoloji ayrımında kullanılır.",
+    "answer": "ACTH düzeyi daha çok Cushing doğrulandıktan sonra etiyoloji ayrımında kullanılır.",
+    "explanation": "Normalde deksametazon kortizolü baskılar; baskılanmama hiperkortizolizmi destekler. ACTH düzeyi daha çok Cushing doğrulandıktan sonra etiyoloji ayrımında kullanılır.",
+    "tusTip": "Cushing tarama testi için sınavda hedeflenen ayrım genellikle şudur: ACTH düzeyi daha çok Cushing doğrulandıktan sonra etiyoloji ayrımında kullanılır.",
+    "differentialNote": "ACTH düzeyi daha çok Cushing doğrulandıktan sonra etiyoloji ayrımında kullanılır.",
+    "keywords": [
+      "Cushing",
+      "deksametazon supresyon",
+      "kortizol",
+      "tarama"
+    ]
+  },
+  "tus-pearl-internal-medicine-390-spot": {
+    "front": "Çölyak hastalığı taramasında IgA yeterliyse en uygun serolojik testlerden biri hangisidir?",
+    "back": "Anti-doku transglutaminaz IgA. TTG-IgA duyarlılığı ve özgüllüğü yüksek bir tarama testidir.",
+    "answer": "Anti-doku transglutaminaz IgA. TTG-IgA duyarlılığı ve özgüllüğü yüksek bir tarama testidir.",
+    "explanation": "TTG-IgA duyarlılığı ve özgüllüğü yüksek bir tarama testidir. IgA eksikliği varsa IgG temelli testler düşünülmelidir.",
+    "tusTip": "TTG-IgA duyarlılığı ve özgüllüğü yüksek bir tarama testidir. IgA eksikliği varsa IgG temelli testler düşünülmelidir.",
+    "differentialNote": "IgA eksikliği varsa IgG temelli testler düşünülmelidir.",
+    "keywords": [
+      "çölyak",
+      "tTG IgA",
+      "malabsorpsiyon",
+      "gluten"
+    ]
+  },
+  "tus-pearl-internal-medicine-390-extra": {
+    "front": "Çölyak serolojisi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "IgA eksikliği varsa IgG temelli testler düşünülmelidir.",
+    "answer": "IgA eksikliği varsa IgG temelli testler düşünülmelidir.",
+    "explanation": "TTG-IgA duyarlılığı ve özgüllüğü yüksek bir tarama testidir. IgA eksikliği varsa IgG temelli testler düşünülmelidir.",
+    "tusTip": "Çölyak serolojisi karıştırıldığında cevabı netleştiren karşılaştırma: IgA eksikliği varsa IgG temelli testler düşünülmelidir.",
+    "differentialNote": "IgA eksikliği varsa IgG temelli testler düşünülmelidir.",
+    "keywords": [
+      "çölyak",
+      "tTG IgA",
+      "malabsorpsiyon",
+      "gluten"
+    ]
+  },
+  "tus-pearl-internal-medicine-391-spot": {
+    "front": "Malabsorpsiyon, artrit ve PAS pozitif makrofajlar hangi enfeksiyonu düşündürür?",
+    "back": "Tropheryma whipplei enfeksiyonu. İnce bağırsak lamina propriasında PAS pozitif makrofajlar tipiktir.",
+    "answer": "Tropheryma whipplei enfeksiyonu. İnce bağırsak lamina propriasında PAS pozitif makrofajlar tipiktir.",
+    "explanation": "İnce bağırsak lamina propriasında PAS pozitif makrofajlar tipiktir. Çölyakta villöz atrofi ve anti-tTG pozitifliği beklenir.",
+    "tusTip": "İnce bağırsak lamina propriasında PAS pozitif makrofajlar tipiktir. Çölyakta villöz atrofi ve anti-tTG pozitifliği beklenir.",
+    "differentialNote": "Çölyakta villöz atrofi ve anti-tTG pozitifliği beklenir.",
+    "keywords": [
+      "Whipple",
+      "PAS pozitif makrofaj",
+      "malabsorpsiyon",
+      "artrit"
+    ]
+  },
+  "tus-pearl-internal-medicine-391-extra": {
+    "front": "Whipple hastalığı için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Çölyakta villöz atrofi ve anti-tTG pozitifliği beklenir.",
+    "answer": "Çölyakta villöz atrofi ve anti-tTG pozitifliği beklenir.",
+    "explanation": "İnce bağırsak lamina propriasında PAS pozitif makrofajlar tipiktir. Çölyakta villöz atrofi ve anti-tTG pozitifliği beklenir.",
+    "tusTip": "Whipple hastalığı kartında ayırıcı değer taşıyan nokta: Çölyakta villöz atrofi ve anti-tTG pozitifliği beklenir.",
+    "differentialNote": "Çölyakta villöz atrofi ve anti-tTG pozitifliği beklenir.",
+    "keywords": [
+      "Whipple",
+      "PAS pozitif makrofaj",
+      "malabsorpsiyon",
+      "artrit"
+    ]
+  },
+  "tus-pearl-internal-medicine-392-spot": {
+    "front": "Bilateral hiler lenfadenopati ve nonkazeifiye granülom hangi sistemik hastalığı düşündürür?",
+    "back": "Sarkoidoz. T hücre aracılı granülomatöz inflamasyon akciğer ve lenf nodlarını sık tutar.",
+    "answer": "Sarkoidoz. T hücre aracılı granülomatöz inflamasyon akciğer ve lenf nodlarını sık tutar.",
+    "explanation": "T hücre aracılı granülomatöz inflamasyon akciğer ve lenf nodlarını sık tutar. Tüberkülozda kazeifiye granülom ve mikrobiyolojik kanıt aranır.",
+    "tusTip": "T hücre aracılı granülomatöz inflamasyon akciğer ve lenf nodlarını sık tutar. Tüberkülozda kazeifiye granülom ve mikrobiyolojik kanıt aranır.",
+    "differentialNote": "Tüberkülozda kazeifiye granülom ve mikrobiyolojik kanıt aranır.",
+    "keywords": [
+      "sarkoidoz",
+      "nonkazeifiye granülom",
+      "bilateral hiler LAP",
+      "ACE"
+    ]
+  },
+  "tus-pearl-internal-medicine-392-extra": {
+    "front": "Sarkoidoz ACE başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Tüberkülozda kazeifiye granülom ve mikrobiyolojik kanıt aranır.",
+    "answer": "Tüberkülozda kazeifiye granülom ve mikrobiyolojik kanıt aranır.",
+    "explanation": "T hücre aracılı granülomatöz inflamasyon akciğer ve lenf nodlarını sık tutar. Tüberkülozda kazeifiye granülom ve mikrobiyolojik kanıt aranır.",
+    "tusTip": "Sarkoidoz ACE için sınavda hedeflenen ayrım genellikle şudur: Tüberkülozda kazeifiye granülom ve mikrobiyolojik kanıt aranır.",
+    "differentialNote": "Tüberkülozda kazeifiye granülom ve mikrobiyolojik kanıt aranır.",
+    "keywords": [
+      "sarkoidoz",
+      "nonkazeifiye granülom",
+      "bilateral hiler LAP",
+      "ACE"
+    ]
+  },
+  "tus-pearl-internal-medicine-393-spot": {
+    "front": "Hemoptizi ve glomerülonefritle birlikte lineer IgG birikimi hangi hastalığı düşündürür?",
+    "back": "Anti-GBM hastalığı. Glomerül ve alveol bazal membranına karşı antikorlar pulmoner renal sendrom oluşturur.",
+    "answer": "Anti-GBM hastalığı. Glomerül ve alveol bazal membranına karşı antikorlar pulmoner renal sendrom oluşturur.",
+    "explanation": "Glomerül ve alveol bazal membranına karşı antikorlar pulmoner renal sendrom oluşturur. ANCA vaskülitlerinde immün birikim pauci-immün olabilir.",
+    "tusTip": "Glomerül ve alveol bazal membranına karşı antikorlar pulmoner renal sendrom oluşturur. ANCA vaskülitlerinde immün birikim pauci-immün olabilir.",
+    "differentialNote": "ANCA vaskülitlerinde immün birikim pauci-immün olabilir.",
+    "keywords": [
+      "anti-GBM",
+      "Goodpasture",
+      "lineer IgG",
+      "hemoptizi"
+    ]
+  },
+  "tus-pearl-internal-medicine-393-extra": {
+    "front": "Goodpasture paterni için en kritik ayırıcı nokta nedir?",
+    "back": "ANCA vaskülitlerinde immün birikim pauci-immün olabilir.",
+    "answer": "ANCA vaskülitlerinde immün birikim pauci-immün olabilir.",
+    "explanation": "Glomerül ve alveol bazal membranına karşı antikorlar pulmoner renal sendrom oluşturur. ANCA vaskülitlerinde immün birikim pauci-immün olabilir.",
+    "tusTip": "Goodpasture paterni karıştırıldığında cevabı netleştiren karşılaştırma: ANCA vaskülitlerinde immün birikim pauci-immün olabilir.",
+    "differentialNote": "ANCA vaskülitlerinde immün birikim pauci-immün olabilir.",
+    "keywords": [
+      "anti-GBM",
+      "Goodpasture",
+      "lineer IgG",
+      "hemoptizi"
+    ]
+  },
+  "tus-pearl-internal-medicine-394-spot": {
+    "front": "Üst-alt solunum yolu ve böbrek tutulumu ile PR3-ANCA pozitifliği hangi vasküliti düşündürür?",
+    "back": "Granülomatoz polianjit. Nekrotizan granülomatöz inflamasyon ve küçük damar vasküliti tipiktir.",
+    "answer": "Granülomatoz polianjit. Nekrotizan granülomatöz inflamasyon ve küçük damar vasküliti tipiktir.",
+    "explanation": "Nekrotizan granülomatöz inflamasyon ve küçük damar vasküliti tipiktir. Mikroskopik polianjit granülom yapmadan p-ANCA ile daha çok ilişkilidir.",
+    "tusTip": "Nekrotizan granülomatöz inflamasyon ve küçük damar vasküliti tipiktir. Mikroskopik polianjit granülom yapmadan p-ANCA ile daha çok ilişkilidir.",
+    "differentialNote": "Mikroskopik polianjit granülom yapmadan p-ANCA ile daha çok ilişkilidir.",
+    "keywords": [
+      "GPA",
+      "PR3-ANCA",
+      "sinüzit",
+      "RPGN"
+    ]
+  },
+  "tus-pearl-internal-medicine-394-extra": {
+    "front": "ANCA vasküliti ayrımı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Mikroskopik polianjit granülom yapmadan p-ANCA ile daha çok ilişkilidir.",
+    "answer": "Mikroskopik polianjit granülom yapmadan p-ANCA ile daha çok ilişkilidir.",
+    "explanation": "Nekrotizan granülomatöz inflamasyon ve küçük damar vasküliti tipiktir. Mikroskopik polianjit granülom yapmadan p-ANCA ile daha çok ilişkilidir.",
+    "tusTip": "ANCA vasküliti ayrımı kartında ayırıcı değer taşıyan nokta: Mikroskopik polianjit granülom yapmadan p-ANCA ile daha çok ilişkilidir.",
+    "differentialNote": "Mikroskopik polianjit granülom yapmadan p-ANCA ile daha çok ilişkilidir.",
+    "keywords": [
+      "GPA",
+      "PR3-ANCA",
+      "sinüzit",
+      "RPGN"
+    ]
+  },
+  "tus-pearl-internal-medicine-395-spot": {
+    "front": "Alkolik hepatitte AST/ALT oranı genellikle nasıl beklenir?",
+    "back": "AST ALT’den yüksek, çoğu kez 2’nin üzerinde.",
+    "answer": "AST ALT’den yüksek, çoğu kez 2’nin üzerinde.",
+    "explanation": "Mitokondriyal hasar ve piridoksal fosfat eksikliği AST baskınlığını açıklar. Viral hepatitte transaminazlar çok daha yüksek olabilir ve ALT baskınlığı görülebilir.",
+    "tusTip": "Mitokondriyal hasar ve piridoksal fosfat eksikliği AST baskınlığını açıklar. Viral hepatitte transaminazlar çok daha yüksek olabilir ve ALT baskınlığı görülebilir.",
+    "differentialNote": "Viral hepatitte transaminazlar çok daha yüksek olabilir ve ALT baskınlığı görülebilir.",
+    "keywords": [
+      "alkolik hepatit",
+      "AST/ALT",
+      "2 üzeri",
+      "sarılık"
+    ]
+  },
+  "tus-pearl-internal-medicine-395-extra": {
+    "front": "Alkolik hepatit paterni başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Viral hepatitte transaminazlar çok daha yüksek olabilir ve ALT baskınlığı görülebilir.",
+    "answer": "Viral hepatitte transaminazlar çok daha yüksek olabilir ve ALT baskınlığı görülebilir.",
+    "explanation": "Mitokondriyal hasar ve piridoksal fosfat eksikliği AST baskınlığını açıklar. Viral hepatitte transaminazlar çok daha yüksek olabilir ve ALT baskınlığı görülebilir.",
+    "tusTip": "Alkolik hepatit paterni için sınavda hedeflenen ayrım genellikle şudur: Viral hepatitte transaminazlar çok daha yüksek olabilir ve ALT baskınlığı görülebilir.",
+    "differentialNote": "Viral hepatitte transaminazlar çok daha yüksek olabilir ve ALT baskınlığı görülebilir.",
+    "keywords": [
+      "alkolik hepatit",
+      "AST/ALT",
+      "2 üzeri",
+      "sarılık Çocuk Sağlığı ve Hastalıkları (pediatrics)"
+    ]
+  },
+  "tus-pearl-pediatrics-396-spot": {
+    "front": "Febril nöbetin kompleks kabul edilmesini sağlayan özelliklerden biri nedir?",
+    "back": "Fokal olması, 15 dakikadan uzun sürmesi veya 24 saat içinde tekrarlaması.",
+    "answer": "Fokal olması, 15 dakikadan uzun sürmesi veya 24 saat içinde tekrarlaması.",
+    "explanation": "Bu özelliklerden herhangi biri basit febril nöbet tanımını bozar. Kısa, jeneralize ve tek nöbet basit febril nöbetle uyumludur.",
+    "tusTip": "Bu özelliklerden herhangi biri basit febril nöbet tanımını bozar. Kısa, jeneralize ve tek nöbet basit febril nöbetle uyumludur.",
+    "differentialNote": "Kısa, jeneralize ve tek nöbet basit febril nöbetle uyumludur.",
+    "keywords": [
+      "kompleks febril nöbet",
+      "fokal nöbet",
+      "15 dakikadan uzun",
+      "24 saatte tekrar"
+    ]
+  },
+  "tus-pearl-pediatrics-396-extra": {
+    "front": "Kompleks febril nöbet sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Kısa, jeneralize ve tek nöbet basit febril nöbetle uyumludur.",
+    "answer": "Kısa, jeneralize ve tek nöbet basit febril nöbetle uyumludur.",
+    "explanation": "Bu özelliklerden herhangi biri basit febril nöbet tanımını bozar. Kısa, jeneralize ve tek nöbet basit febril nöbetle uyumludur.",
+    "tusTip": "Kompleks febril nöbet karıştırıldığında cevabı netleştiren karşılaştırma: Kısa, jeneralize ve tek nöbet basit febril nöbetle uyumludur.",
+    "differentialNote": "Kısa, jeneralize ve tek nöbet basit febril nöbetle uyumludur.",
+    "keywords": [
+      "kompleks febril nöbet",
+      "fokal nöbet",
+      "15 dakikadan uzun",
+      "24 saatte tekrar"
+    ]
+  },
+  "tus-pearl-pediatrics-397-spot": {
+    "front": "Ağlama sonrası morarma, kısa bilinç kaybı ve hızlı düzelme hangi benign çocukluk çağı olayını düşündürür?",
+    "back": "Katılma nöbeti. Katılma nöbetleri emosyonel tetiklenme sonrası gelişebilir ve demir eksikliğiyle ilişkili olabilir.",
+    "answer": "Katılma nöbeti. Katılma nöbetleri emosyonel tetiklenme sonrası gelişebilir ve demir eksikliğiyle ilişkili olabilir.",
+    "explanation": "Katılma nöbetleri emosyonel tetiklenme sonrası gelişebilir ve demir eksikliğiyle ilişkili olabilir. Epilepside olay genellikle ağlama tetiklenmesi ve hızlı tam düzelme paterni göstermez.",
+    "tusTip": "Katılma nöbetleri emosyonel tetiklenme sonrası gelişebilir ve demir eksikliğiyle ilişkili olabilir. Epilepside olay genellikle ağlama tetiklenmesi ve hızlı tam düzelme paterni göstermez.",
+    "differentialNote": "Epilepside olay genellikle ağlama tetiklenmesi ve hızlı tam düzelme paterni göstermez.",
+    "keywords": [
+      "katılma nöbeti",
+      "ağlama",
+      "morarma",
+      "demir eksikliği"
+    ]
+  },
+  "tus-pearl-pediatrics-397-extra": {
+    "front": "Katılma nöbeti için en kritik ayırıcı nokta nedir?",
+    "back": "Epilepside olay genellikle ağlama tetiklenmesi ve hızlı tam düzelme paterni göstermez.",
+    "answer": "Epilepside olay genellikle ağlama tetiklenmesi ve hızlı tam düzelme paterni göstermez.",
+    "explanation": "Katılma nöbetleri emosyonel tetiklenme sonrası gelişebilir ve demir eksikliğiyle ilişkili olabilir. Epilepside olay genellikle ağlama tetiklenmesi ve hızlı tam düzelme paterni göstermez.",
+    "tusTip": "Katılma nöbeti kartında ayırıcı değer taşıyan nokta: Epilepside olay genellikle ağlama tetiklenmesi ve hızlı tam düzelme paterni göstermez.",
+    "differentialNote": "Epilepside olay genellikle ağlama tetiklenmesi ve hızlı tam düzelme paterni göstermez.",
+    "keywords": [
+      "katılma nöbeti",
+      "ağlama",
+      "morarma",
+      "demir eksikliği"
+    ]
+  },
+  "tus-pearl-pediatrics-398-spot": {
+    "front": "Kawasaki hastalığında koroner komplikasyon riskini azaltan temel tedavi hangisidir?",
+    "back": "İntravenöz immünoglobulin. İlk 10 gün içinde IVIG verilmesi koroner arter anevrizması riskini azaltır.",
+    "answer": "İntravenöz immünoglobulin. İlk 10 gün içinde IVIG verilmesi koroner arter anevrizması riskini azaltır.",
+    "explanation": "İlk 10 gün içinde IVIG verilmesi koroner arter anevrizması riskini azaltır. Antibiyotik tedavisi Kawasaki’nin inflamatuvar vaskülit mekanizmasını hedeflemez.",
+    "tusTip": "İlk 10 gün içinde IVIG verilmesi koroner arter anevrizması riskini azaltır. Antibiyotik tedavisi Kawasaki’nin inflamatuvar vaskülit mekanizmasını hedeflemez.",
+    "differentialNote": "Antibiyotik tedavisi Kawasaki’nin inflamatuvar vaskülit mekanizmasını hedeflemez.",
+    "keywords": [
+      "Kawasaki",
+      "IVIG",
+      "koroner anevrizma",
+      "ateş"
+    ]
+  },
+  "tus-pearl-pediatrics-398-extra": {
+    "front": "Kawasaki koroner korunma karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Antibiyotik tedavisi Kawasaki’nin inflamatuvar vaskülit mekanizmasını hedeflemez.",
+    "answer": "Antibiyotik tedavisi Kawasaki’nin inflamatuvar vaskülit mekanizmasını hedeflemez.",
+    "explanation": "İlk 10 gün içinde IVIG verilmesi koroner arter anevrizması riskini azaltır. Antibiyotik tedavisi Kawasaki’nin inflamatuvar vaskülit mekanizmasını hedeflemez.",
+    "tusTip": "Kawasaki koroner korunma için sınavda hedeflenen ayrım genellikle şudur: Antibiyotik tedavisi Kawasaki’nin inflamatuvar vaskülit mekanizmasını hedeflemez.",
+    "differentialNote": "Antibiyotik tedavisi Kawasaki’nin inflamatuvar vaskülit mekanizmasını hedeflemez.",
+    "keywords": [
+      "Kawasaki",
+      "IVIG",
+      "koroner anevrizma",
+      "ateş"
+    ]
+  },
+  "tus-pearl-pediatrics-399-spot": {
+    "front": "Gezici poliartrit ve kardit hangi tanı kriterleri grubunda yer alır?",
+    "back": "Jones majör kriterleri. Akut romatizmal ateş streptokok sonrası immün aracılı gelişir; majör kriterler tanıyı destekler.",
+    "answer": "Jones majör kriterleri. Akut romatizmal ateş streptokok sonrası immün aracılı gelişir; majör kriterler tanıyı destekler.",
+    "explanation": "Akut romatizmal ateş streptokok sonrası immün aracılı gelişir; majör kriterler tanıyı destekler. ASO yüksekliği geçirilmiş streptokok kanıtıdır; tek başına majör kriter değildir.",
+    "tusTip": "Akut romatizmal ateş streptokok sonrası immün aracılı gelişir; majör kriterler tanıyı destekler. ASO yüksekliği geçirilmiş streptokok kanıtıdır; tek başına majör kriter değildir.",
+    "differentialNote": "ASO yüksekliği geçirilmiş streptokok kanıtıdır; tek başına majör kriter değildir.",
+    "keywords": [
+      "Jones kriterleri",
+      "kardit",
+      "gezici poliartrit",
+      "streptokok"
+    ]
+  },
+  "tus-pearl-pediatrics-399-extra": {
+    "front": "Akut romatizmal ateş Jones sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "ASO yüksekliği geçirilmiş streptokok kanıtıdır; tek başına majör kriter değildir.",
+    "answer": "ASO yüksekliği geçirilmiş streptokok kanıtıdır; tek başına majör kriter değildir.",
+    "explanation": "Akut romatizmal ateş streptokok sonrası immün aracılı gelişir; majör kriterler tanıyı destekler. ASO yüksekliği geçirilmiş streptokok kanıtıdır; tek başına majör kriter değildir.",
+    "tusTip": "Akut romatizmal ateş Jones karıştırıldığında cevabı netleştiren karşılaştırma: ASO yüksekliği geçirilmiş streptokok kanıtıdır; tek başına majör kriter değildir.",
+    "differentialNote": "ASO yüksekliği geçirilmiş streptokok kanıtıdır; tek başına majör kriter değildir.",
+    "keywords": [
+      "Jones kriterleri",
+      "kardit",
+      "gezici poliartrit",
+      "streptokok"
+    ]
+  },
+  "tus-pearl-pediatrics-400-spot": {
+    "front": "Yenidoğanda tuz kaybı, kusma ve ambigus genitalya en çok hangi enzim eksikliğini düşündürür?",
+    "back": "21-hidroksilaz eksikliği. Kortizol ve aldosteron sentezi azalır; androjen üretimi artar.",
+    "answer": "21-hidroksilaz eksikliği. Kortizol ve aldosteron sentezi azalır; androjen üretimi artar.",
+    "explanation": "Kortizol ve aldosteron sentezi azalır; androjen üretimi artar. 11-hidroksilaz eksikliğinde hipertansiyon daha belirgin olabilir.",
+    "tusTip": "Kortizol ve aldosteron sentezi azalır; androjen üretimi artar. 11-hidroksilaz eksikliğinde hipertansiyon daha belirgin olabilir.",
+    "differentialNote": "11-hidroksilaz eksikliğinde hipertansiyon daha belirgin olabilir.",
+    "keywords": [
+      "21-hidroksilaz",
+      "CAH",
+      "tuz kaybı",
+      "ambigus genitalya"
+    ]
+  },
+  "tus-pearl-pediatrics-400-extra": {
+    "front": "Konjenital adrenal hiperplazi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "11-hidroksilaz eksikliğinde hipertansiyon daha belirgin olabilir.",
+    "answer": "11-hidroksilaz eksikliğinde hipertansiyon daha belirgin olabilir.",
+    "explanation": "Kortizol ve aldosteron sentezi azalır; androjen üretimi artar. 11-hidroksilaz eksikliğinde hipertansiyon daha belirgin olabilir.",
+    "tusTip": "Konjenital adrenal hiperplazi kartında ayırıcı değer taşıyan nokta: 11-hidroksilaz eksikliğinde hipertansiyon daha belirgin olabilir.",
+    "differentialNote": "11-hidroksilaz eksikliğinde hipertansiyon daha belirgin olabilir.",
+    "keywords": [
+      "21-hidroksilaz",
+      "CAH",
+      "tuz kaybı",
+      "ambigus genitalya"
+    ]
+  },
+  "tus-pearl-pediatrics-401-spot": {
+    "front": "Yenidoğanda metabolik asidoz, ketozis ve hiperamonyemi hangi organik asidemi grubunu düşündürür?",
+    "back": "Propiyonik asidemi. Propionil-CoA metabolizması bozulur ve toksik organik asitler birikir.",
+    "answer": "Propiyonik asidemi. Propionil-CoA metabolizması bozulur ve toksik organik asitler birikir.",
+    "explanation": "Propionil-CoA metabolizması bozulur ve toksik organik asitler birikir. Üre döngüsü kusurlarında belirgin ketotik metabolik asidoz beklenmez.",
+    "tusTip": "Propionil-CoA metabolizması bozulur ve toksik organik asitler birikir. Üre döngüsü kusurlarında belirgin ketotik metabolik asidoz beklenmez.",
+    "differentialNote": "Üre döngüsü kusurlarında belirgin ketotik metabolik asidoz beklenmez.",
+    "keywords": [
+      "propiyonik asidemi",
+      "metabolik asidoz",
+      "ketozis",
+      "hiperamonyemi"
+    ]
+  },
+  "tus-pearl-pediatrics-401-extra": {
+    "front": "Propiyonik asidemi için en kritik ayırıcı nokta nedir?",
+    "back": "Üre döngüsü kusurlarında belirgin ketotik metabolik asidoz beklenmez.",
+    "answer": "Üre döngüsü kusurlarında belirgin ketotik metabolik asidoz beklenmez.",
+    "explanation": "Propionil-CoA metabolizması bozulur ve toksik organik asitler birikir. Üre döngüsü kusurlarında belirgin ketotik metabolik asidoz beklenmez.",
+    "tusTip": "Propiyonik asidemi için sınavda hedeflenen ayrım genellikle şudur: Üre döngüsü kusurlarında belirgin ketotik metabolik asidoz beklenmez.",
+    "differentialNote": "Üre döngüsü kusurlarında belirgin ketotik metabolik asidoz beklenmez.",
+    "keywords": [
+      "propiyonik asidemi",
+      "metabolik asidoz",
+      "ketozis",
+      "hiperamonyemi"
+    ]
+  },
+  "tus-pearl-pediatrics-402-spot": {
+    "front": "Metabolik asidozla birlikte metilmalonik asit artışı hangi metabolik hastalığı düşündürür?",
+    "back": "Metilmalonik asidemi. Metilmalonil-CoA mutaz veya kobalamin metabolizması kusurları bu tabloya yol açabilir.",
+    "answer": "Metilmalonik asidemi. Metilmalonil-CoA mutaz veya kobalamin metabolizması kusurları bu tabloya yol açabilir.",
+    "explanation": "Metilmalonil-CoA mutaz veya kobalamin metabolizması kusurları bu tabloya yol açabilir. Propiyonik asidemide metilmalonik asit artışı belirleyici değildir.",
+    "tusTip": "Metilmalonil-CoA mutaz veya kobalamin metabolizması kusurları bu tabloya yol açabilir. Propiyonik asidemide metilmalonik asit artışı belirleyici değildir.",
+    "differentialNote": "Propiyonik asidemide metilmalonik asit artışı belirleyici değildir.",
+    "keywords": [
+      "metilmalonik asidemi",
+      "B12",
+      "metabolik asidoz",
+      "organik asidemi"
+    ]
+  },
+  "tus-pearl-pediatrics-402-extra": {
+    "front": "Metilmalonik asidemi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Propiyonik asidemide metilmalonik asit artışı belirleyici değildir.",
+    "answer": "Propiyonik asidemide metilmalonik asit artışı belirleyici değildir.",
+    "explanation": "Metilmalonil-CoA mutaz veya kobalamin metabolizması kusurları bu tabloya yol açabilir. Propiyonik asidemide metilmalonik asit artışı belirleyici değildir.",
+    "tusTip": "Metilmalonik asidemi karıştırıldığında cevabı netleştiren karşılaştırma: Propiyonik asidemide metilmalonik asit artışı belirleyici değildir.",
+    "differentialNote": "Propiyonik asidemide metilmalonik asit artışı belirleyici değildir.",
+    "keywords": [
+      "metilmalonik asidemi",
+      "B12",
+      "metabolik asidoz",
+      "organik asidemi"
+    ]
+  },
+  "tus-pearl-pediatrics-403-spot": {
+    "front": "Egzama, trombositopeni ve tekrarlayan enfeksiyon birlikteliği hangi immün yetmezliği düşündürür?",
+    "back": "Wiskott-Aldrich sendromu. X’e bağlı WAS protein kusuru küçük trombositler ve kombine immün yetmezlik yapar.",
+    "answer": "Wiskott-Aldrich sendromu. X’e bağlı WAS protein kusuru küçük trombositler ve kombine immün yetmezlik yapar.",
+    "explanation": "X’e bağlı WAS protein kusuru küçük trombositler ve kombine immün yetmezlik yapar. ITP’de egzama ve tekrarlayan enfeksiyon beklenmez.",
+    "tusTip": "X’e bağlı WAS protein kusuru küçük trombositler ve kombine immün yetmezlik yapar. ITP’de egzama ve tekrarlayan enfeksiyon beklenmez.",
+    "differentialNote": "ITP’de egzama ve tekrarlayan enfeksiyon beklenmez.",
+    "keywords": [
+      "Wiskott-Aldrich",
+      "egzama",
+      "trombositopeni",
+      "küçük trombosit"
+    ]
+  },
+  "tus-pearl-pediatrics-403-extra": {
+    "front": "Wiskott-Aldrich sendromu için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "ITP’de egzama ve tekrarlayan enfeksiyon beklenmez.",
+    "answer": "ITP’de egzama ve tekrarlayan enfeksiyon beklenmez.",
+    "explanation": "X’e bağlı WAS protein kusuru küçük trombositler ve kombine immün yetmezlik yapar. ITP’de egzama ve tekrarlayan enfeksiyon beklenmez.",
+    "tusTip": "Wiskott-Aldrich sendromu kartında ayırıcı değer taşıyan nokta: ITP’de egzama ve tekrarlayan enfeksiyon beklenmez.",
+    "differentialNote": "ITP’de egzama ve tekrarlayan enfeksiyon beklenmez.",
+    "keywords": [
+      "Wiskott-Aldrich",
+      "egzama",
+      "trombositopeni",
+      "küçük trombosit"
+    ]
+  },
+  "tus-pearl-pediatrics-404-spot": {
+    "front": "Erken bebeklikte ağır enfeksiyonlar, kandidiyaz ve belirgin lenfopeni hangi immün yetmezliği düşündürür?",
+    "back": "Ağır kombine immün yetmezlik. T hücre fonksiyon bozukluğu B hücre yanıtını da etkiler; kesin tedavi kök hücre nakli olabilir.",
+    "answer": "Ağır kombine immün yetmezlik. T hücre fonksiyon bozukluğu B hücre yanıtını da etkiler; kesin tedavi kök hücre nakli olabilir.",
+    "explanation": "T hücre fonksiyon bozukluğu B hücre yanıtını da etkiler; kesin tedavi kök hücre nakli olabilir. Bruton agammaglobulinemisinde T hücreler genellikle korunur ve bulgular 6 aydan sonra belirginleşir.",
+    "tusTip": "T hücre fonksiyon bozukluğu B hücre yanıtını da etkiler; kesin tedavi kök hücre nakli olabilir. Bruton agammaglobulinemisinde T hücreler genellikle korunur ve bulgular 6 aydan sonra belirginleşir.",
+    "differentialNote": "Bruton agammaglobulinemisinde T hücreler genellikle korunur ve bulgular 6 aydan sonra belirginleşir.",
+    "keywords": [
+      "SCID",
+      "lenfopeni",
+      "kandidiyaz",
+      "kök hücre nakli"
+    ]
+  },
+  "tus-pearl-pediatrics-404-extra": {
+    "front": "Ağır kombine immün yetmezlik başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Bruton agammaglobulinemisinde T hücreler genellikle korunur ve bulgular 6 aydan sonra belirginleşir.",
+    "answer": "Bruton agammaglobulinemisinde T hücreler genellikle korunur ve bulgular 6 aydan sonra belirginleşir.",
+    "explanation": "T hücre fonksiyon bozukluğu B hücre yanıtını da etkiler; kesin tedavi kök hücre nakli olabilir. Bruton agammaglobulinemisinde T hücreler genellikle korunur ve bulgular 6 aydan sonra belirginleşir.",
+    "tusTip": "Ağır kombine immün yetmezlik için sınavda hedeflenen ayrım genellikle şudur: Bruton agammaglobulinemisinde T hücreler genellikle korunur ve bulgular 6 aydan sonra belirginleşir.",
+    "differentialNote": "Bruton agammaglobulinemisinde T hücreler genellikle korunur ve bulgular 6 aydan sonra belirginleşir.",
+    "keywords": [
+      "SCID",
+      "lenfopeni",
+      "kandidiyaz",
+      "kök hücre nakli"
+    ]
+  },
+  "tus-pearl-pediatrics-405-spot": {
+    "front": "Katalaz pozitif mikroorganizmalarla tekrarlayan enfeksiyon ve abse hangi fagosit kusurunu düşündürür?",
+    "back": "Kronik granülomatöz hastalık. NADPH oksidaz kusuru respiratuvar patlamayı bozar; DHR testi tanıda kullanılır.",
+    "answer": "Kronik granülomatöz hastalık. NADPH oksidaz kusuru respiratuvar patlamayı bozar; DHR testi tanıda kullanılır.",
+    "explanation": "NADPH oksidaz kusuru respiratuvar patlamayı bozar; DHR testi tanıda kullanılır. Lökosit adezyon defektinde nötrofiller dokuya geçemez ve irin oluşumu azdır.",
+    "tusTip": "NADPH oksidaz kusuru respiratuvar patlamayı bozar; DHR testi tanıda kullanılır. Lökosit adezyon defektinde nötrofiller dokuya geçemez ve irin oluşumu azdır.",
+    "differentialNote": "Lökosit adezyon defektinde nötrofiller dokuya geçemez ve irin oluşumu azdır.",
+    "keywords": [
+      "CGD",
+      "NADPH oksidaz",
+      "katalaz pozitif",
+      "DHR testi"
+    ]
+  },
+  "tus-pearl-pediatrics-405-extra": {
+    "front": "Kronik granülomatöz hastalık için en kritik ayırıcı nokta nedir?",
+    "back": "Lökosit adezyon defektinde nötrofiller dokuya geçemez ve irin oluşumu azdır.",
+    "answer": "Lökosit adezyon defektinde nötrofiller dokuya geçemez ve irin oluşumu azdır.",
+    "explanation": "NADPH oksidaz kusuru respiratuvar patlamayı bozar; DHR testi tanıda kullanılır. Lökosit adezyon defektinde nötrofiller dokuya geçemez ve irin oluşumu azdır.",
+    "tusTip": "Kronik granülomatöz hastalık karıştırıldığında cevabı netleştiren karşılaştırma: Lökosit adezyon defektinde nötrofiller dokuya geçemez ve irin oluşumu azdır.",
+    "differentialNote": "Lökosit adezyon defektinde nötrofiller dokuya geçemez ve irin oluşumu azdır.",
+    "keywords": [
+      "CGD",
+      "NADPH oksidaz",
+      "katalaz pozitif",
+      "DHR testi"
+    ]
+  },
+  "tus-pearl-pediatrics-406-spot": {
+    "front": "Gecikmiş göbek kordonu düşmesi, irin azlığı ve nötrofili hangi immün yetmezliği düşündürür?",
+    "back": "Lökosit adezyon defekti. Adezyon molekül kusuru nötrofillerin damar dışına çıkmasını bozar.",
+    "answer": "Lökosit adezyon defekti. Adezyon molekül kusuru nötrofillerin damar dışına çıkmasını bozar.",
+    "explanation": "Adezyon molekül kusuru nötrofillerin damar dışına çıkmasını bozar. Kronik granülomatöz hastalıkta nötrofil geçişi değil oksidatif öldürme bozulur.",
+    "tusTip": "Adezyon molekül kusuru nötrofillerin damar dışına çıkmasını bozar. Kronik granülomatöz hastalıkta nötrofil geçişi değil oksidatif öldürme bozulur.",
+    "differentialNote": "Kronik granülomatöz hastalıkta nötrofil geçişi değil oksidatif öldürme bozulur.",
+    "keywords": [
+      "LAD",
+      "gecikmiş kordon düşmesi",
+      "nötrofili",
+      "irin azlığı"
+    ]
+  },
+  "tus-pearl-pediatrics-406-extra": {
+    "front": "Lökosit adezyon defekti karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Kronik granülomatöz hastalıkta nötrofil geçişi değil oksidatif öldürme bozulur.",
+    "answer": "Kronik granülomatöz hastalıkta nötrofil geçişi değil oksidatif öldürme bozulur.",
+    "explanation": "Adezyon molekül kusuru nötrofillerin damar dışına çıkmasını bozar. Kronik granülomatöz hastalıkta nötrofil geçişi değil oksidatif öldürme bozulur.",
+    "tusTip": "Lökosit adezyon defekti kartında ayırıcı değer taşıyan nokta: Kronik granülomatöz hastalıkta nötrofil geçişi değil oksidatif öldürme bozulur.",
+    "differentialNote": "Kronik granülomatöz hastalıkta nötrofil geçişi değil oksidatif öldürme bozulur.",
+    "keywords": [
+      "LAD",
+      "gecikmiş kordon düşmesi",
+      "nötrofili",
+      "irin azlığı"
+    ]
+  },
+  "tus-pearl-pediatrics-407-spot": {
+    "front": "Konotrunkal kalp defekti, hipokalsemi ve timus hipoplazisi hangi sendromu düşündürür?",
+    "back": "DiGeorge sendromu. 22q11 delesyonu faringeal poş gelişimini etkileyerek T hücre yetmezliği oluşturabilir.",
+    "answer": "DiGeorge sendromu. 22q11 delesyonu faringeal poş gelişimini etkileyerek T hücre yetmezliği oluşturabilir.",
+    "explanation": "22q11 delesyonu faringeal poş gelişimini etkileyerek T hücre yetmezliği oluşturabilir. Bruton agammaglobulinemisi B hücre gelişim kusurudur ve hipokalsemi yapmaz.",
+    "tusTip": "22q11 delesyonu faringeal poş gelişimini etkileyerek T hücre yetmezliği oluşturabilir. Bruton agammaglobulinemisi B hücre gelişim kusurudur ve hipokalsemi yapmaz.",
+    "differentialNote": "Bruton agammaglobulinemisi B hücre gelişim kusurudur ve hipokalsemi yapmaz.",
+    "keywords": [
+      "DiGeorge",
+      "22q11",
+      "hipokalsemi",
+      "timus hipoplazisi"
+    ]
+  },
+  "tus-pearl-pediatrics-407-extra": {
+    "front": "DiGeorge sendromu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Bruton agammaglobulinemisi B hücre gelişim kusurudur ve hipokalsemi yapmaz.",
+    "answer": "Bruton agammaglobulinemisi B hücre gelişim kusurudur ve hipokalsemi yapmaz.",
+    "explanation": "22q11 delesyonu faringeal poş gelişimini etkileyerek T hücre yetmezliği oluşturabilir. Bruton agammaglobulinemisi B hücre gelişim kusurudur ve hipokalsemi yapmaz.",
+    "tusTip": "DiGeorge sendromu için sınavda hedeflenen ayrım genellikle şudur: Bruton agammaglobulinemisi B hücre gelişim kusurudur ve hipokalsemi yapmaz.",
+    "differentialNote": "Bruton agammaglobulinemisi B hücre gelişim kusurudur ve hipokalsemi yapmaz.",
+    "keywords": [
+      "DiGeorge",
+      "22q11",
+      "hipokalsemi",
+      "timus hipoplazisi"
+    ]
+  },
+  "tus-pearl-pediatrics-408-spot": {
+    "front": "Tekrarlayan mukozal enfeksiyon ve anafilaktik transfüzyon reaksiyonu riski hangi immün yetmezlikte görülür?",
+    "back": "Selektif IgA eksikliği. IgA mukozal bağışıklık için önemlidir; anti-IgA antikorları transfüzyonda reaksiyon yapabilir.",
+    "answer": "Selektif IgA eksikliği. IgA mukozal bağışıklık için önemlidir; anti-IgA antikorları transfüzyonda reaksiyon yapabilir.",
+    "explanation": "IgA mukozal bağışıklık için önemlidir; anti-IgA antikorları transfüzyonda reaksiyon yapabilir. SCID’de ağır opportunistik enfeksiyonlar ve lenfopeni daha belirgindir.",
+    "tusTip": "IgA mukozal bağışıklık için önemlidir; anti-IgA antikorları transfüzyonda reaksiyon yapabilir. SCID’de ağır opportunistik enfeksiyonlar ve lenfopeni daha belirgindir.",
+    "differentialNote": "SCID’de ağır opportunistik enfeksiyonlar ve lenfopeni daha belirgindir.",
+    "keywords": [
+      "IgA eksikliği",
+      "mukozal enfeksiyon",
+      "transfüzyon reaksiyonu",
+      "anafilaksi"
+    ]
+  },
+  "tus-pearl-pediatrics-408-extra": {
+    "front": "Selektif IgA eksikliği sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "SCID’de ağır opportunistik enfeksiyonlar ve lenfopeni daha belirgindir.",
+    "answer": "SCID’de ağır opportunistik enfeksiyonlar ve lenfopeni daha belirgindir.",
+    "explanation": "IgA mukozal bağışıklık için önemlidir; anti-IgA antikorları transfüzyonda reaksiyon yapabilir. SCID’de ağır opportunistik enfeksiyonlar ve lenfopeni daha belirgindir.",
+    "tusTip": "Selektif IgA eksikliği karıştırıldığında cevabı netleştiren karşılaştırma: SCID’de ağır opportunistik enfeksiyonlar ve lenfopeni daha belirgindir.",
+    "differentialNote": "SCID’de ağır opportunistik enfeksiyonlar ve lenfopeni daha belirgindir.",
+    "keywords": [
+      "IgA eksikliği",
+      "mukozal enfeksiyon",
+      "transfüzyon reaksiyonu",
+      "anafilaksi"
+    ]
+  },
+  "tus-pearl-pediatrics-409-spot": {
+    "front": "Serebellar ataksi, okülokutanöz telenjiektazi ve yüksek AFP hangi hastalığı düşündürür?",
+    "back": "Ataksi telenjiektazi. ATM gen kusuru DNA hasar yanıtını bozar ve immün yetmezlik ile malignite riskini artırır.",
+    "answer": "Ataksi telenjiektazi. ATM gen kusuru DNA hasar yanıtını bozar ve immün yetmezlik ile malignite riskini artırır.",
+    "explanation": "ATM gen kusuru DNA hasar yanıtını bozar ve immün yetmezlik ile malignite riskini artırır. Friedreich ataksisinde telenjiektazi ve AFP yüksekliği beklenmez.",
+    "tusTip": "ATM gen kusuru DNA hasar yanıtını bozar ve immün yetmezlik ile malignite riskini artırır. Friedreich ataksisinde telenjiektazi ve AFP yüksekliği beklenmez.",
+    "differentialNote": "Friedreich ataksisinde telenjiektazi ve AFP yüksekliği beklenmez.",
+    "keywords": [
+      "ataksi telenjiektazi",
+      "ATM",
+      "AFP yüksek",
+      "telenjiektazi"
+    ]
+  },
+  "tus-pearl-pediatrics-409-extra": {
+    "front": "Ataksi telenjiektazi için en kritik ayırıcı nokta nedir?",
+    "back": "Friedreich ataksisinde telenjiektazi ve AFP yüksekliği beklenmez.",
+    "answer": "Friedreich ataksisinde telenjiektazi ve AFP yüksekliği beklenmez.",
+    "explanation": "ATM gen kusuru DNA hasar yanıtını bozar ve immün yetmezlik ile malignite riskini artırır. Friedreich ataksisinde telenjiektazi ve AFP yüksekliği beklenmez.",
+    "tusTip": "Ataksi telenjiektazi kartında ayırıcı değer taşıyan nokta: Friedreich ataksisinde telenjiektazi ve AFP yüksekliği beklenmez.",
+    "differentialNote": "Friedreich ataksisinde telenjiektazi ve AFP yüksekliği beklenmez.",
+    "keywords": [
+      "ataksi telenjiektazi",
+      "ATM",
+      "AFP yüksek",
+      "telenjiektazi"
+    ]
+  },
+  "tus-pearl-pediatrics-410-spot": {
+    "front": "Çocukta livedoid döküntü, erken inme ve inflamasyon hangi monojenik vasküliti düşündürür?",
+    "back": "Adenozin deaminaz 2 eksikliği. ADA2 eksikliği vaskülopati, immün yetmezlik ve inflamatuvar ataklarla seyredebilir.",
+    "answer": "Adenozin deaminaz 2 eksikliği. ADA2 eksikliği vaskülopati, immün yetmezlik ve inflamatuvar ataklarla seyredebilir.",
+    "explanation": "ADA2 eksikliği vaskülopati, immün yetmezlik ve inflamatuvar ataklarla seyredebilir. Ailesel Akdeniz ateşi serozit ataklarıyla daha çok ilişkilidir; erken inme paterni ADA2 lehinedir.",
+    "tusTip": "ADA2 eksikliği vaskülopati, immün yetmezlik ve inflamatuvar ataklarla seyredebilir. Ailesel Akdeniz ateşi serozit ataklarıyla daha çok ilişkilidir; erken inme paterni ADA2 lehinedir.",
+    "differentialNote": "Ailesel Akdeniz ateşi serozit ataklarıyla daha çok ilişkilidir; erken inme paterni ADA2 lehinedir.",
+    "keywords": [
+      "ADA2 eksikliği",
+      "livedo",
+      "çocukluk çağı inme",
+      "inflamasyon"
+    ]
+  },
+  "tus-pearl-pediatrics-410-extra": {
+    "front": "ADA2 eksikliği karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Ailesel Akdeniz ateşi serozit ataklarıyla daha çok ilişkilidir; erken inme paterni ADA2 lehinedir.",
+    "answer": "Ailesel Akdeniz ateşi serozit ataklarıyla daha çok ilişkilidir; erken inme paterni ADA2 lehinedir.",
+    "explanation": "ADA2 eksikliği vaskülopati, immün yetmezlik ve inflamatuvar ataklarla seyredebilir. Ailesel Akdeniz ateşi serozit ataklarıyla daha çok ilişkilidir; erken inme paterni ADA2 lehinedir.",
+    "tusTip": "ADA2 eksikliği için sınavda hedeflenen ayrım genellikle şudur: Ailesel Akdeniz ateşi serozit ataklarıyla daha çok ilişkilidir; erken inme paterni ADA2 lehinedir.",
+    "differentialNote": "Ailesel Akdeniz ateşi serozit ataklarıyla daha çok ilişkilidir; erken inme paterni ADA2 lehinedir.",
+    "keywords": [
+      "ADA2 eksikliği",
+      "livedo",
+      "çocukluk çağı inme",
+      "inflamasyon"
+    ]
+  },
+  "tus-pearl-pediatrics-411-spot": {
+    "front": "Enfeksiyon sonrası multifokal nörolojik bulgular ve ensefalopati hangi demiyelinizan tabloyu düşündürür?",
+    "back": "Akut dissemine ensefalomiyelit. ADEM genellikle postenfeksiyöz immün mekanizmayla gelişir ve yüksek doz steroidle tedavi edilir.",
+    "answer": "Akut dissemine ensefalomiyelit. ADEM genellikle postenfeksiyöz immün mekanizmayla gelişir ve yüksek doz steroidle tedavi edilir.",
+    "explanation": "ADEM genellikle postenfeksiyöz immün mekanizmayla gelişir ve yüksek doz steroidle tedavi edilir. Multiple sklerozda tekrarlayıcı ataklar ve ensefalopatinin olmaması daha tipiktir.",
+    "tusTip": "ADEM genellikle postenfeksiyöz immün mekanizmayla gelişir ve yüksek doz steroidle tedavi edilir. Multiple sklerozda tekrarlayıcı ataklar ve ensefalopatinin olmaması daha tipiktir.",
+    "differentialNote": "Multiple sklerozda tekrarlayıcı ataklar ve ensefalopatinin olmaması daha tipiktir.",
+    "keywords": [
+      "ADEM",
+      "enfeksiyon sonrası",
+      "ensefalopati",
+      "steroid"
+    ]
+  },
+  "tus-pearl-pediatrics-411-extra": {
+    "front": "Akut dissemine ensefalomiyelit sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Multiple sklerozda tekrarlayıcı ataklar ve ensefalopatinin olmaması daha tipiktir.",
+    "answer": "Multiple sklerozda tekrarlayıcı ataklar ve ensefalopatinin olmaması daha tipiktir.",
+    "explanation": "ADEM genellikle postenfeksiyöz immün mekanizmayla gelişir ve yüksek doz steroidle tedavi edilir. Multiple sklerozda tekrarlayıcı ataklar ve ensefalopatinin olmaması daha tipiktir.",
+    "tusTip": "Akut dissemine ensefalomiyelit karıştırıldığında cevabı netleştiren karşılaştırma: Multiple sklerozda tekrarlayıcı ataklar ve ensefalopatinin olmaması daha tipiktir.",
+    "differentialNote": "Multiple sklerozda tekrarlayıcı ataklar ve ensefalopatinin olmaması daha tipiktir.",
+    "keywords": [
+      "ADEM",
+      "enfeksiyon sonrası",
+      "ensefalopati",
+      "steroid"
+    ]
+  },
+  "tus-pearl-pediatrics-412-spot": {
+    "front": "Bebekte hipotoni, dil fasikülasyonu ve arefleksi hangi motor nöron hastalığını düşündürür?",
+    "back": "Werdnig-Hoffmann hastalığı. SMA tip 1 ön boynuz motor nöron kaybıyla ağır proksimal güçsüzlük yapar.",
+    "answer": "Werdnig-Hoffmann hastalığı. SMA tip 1 ön boynuz motor nöron kaybıyla ağır proksimal güçsüzlük yapar.",
+    "explanation": "SMA tip 1 ön boynuz motor nöron kaybıyla ağır proksimal güçsüzlük yapar. Duchenne musküler distrofisinde CK belirgin yüksektir ve daha geç çocuklukta bulgu verir.",
+    "tusTip": "SMA tip 1 ön boynuz motor nöron kaybıyla ağır proksimal güçsüzlük yapar. Duchenne musküler distrofisinde CK belirgin yüksektir ve daha geç çocuklukta bulgu verir.",
+    "differentialNote": "Duchenne musküler distrofisinde CK belirgin yüksektir ve daha geç çocuklukta bulgu verir.",
+    "keywords": [
+      "SMA tip 1",
+      "dil fasikülasyonu",
+      "hipotoni",
+      "arefleksi"
+    ]
+  },
+  "tus-pearl-pediatrics-412-extra": {
+    "front": "Werdnig-Hoffmann hastalığı için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Duchenne musküler distrofisinde CK belirgin yüksektir ve daha geç çocuklukta bulgu verir.",
+    "answer": "Duchenne musküler distrofisinde CK belirgin yüksektir ve daha geç çocuklukta bulgu verir.",
+    "explanation": "SMA tip 1 ön boynuz motor nöron kaybıyla ağır proksimal güçsüzlük yapar. Duchenne musküler distrofisinde CK belirgin yüksektir ve daha geç çocuklukta bulgu verir.",
+    "tusTip": "Werdnig-Hoffmann hastalığı kartında ayırıcı değer taşıyan nokta: Duchenne musküler distrofisinde CK belirgin yüksektir ve daha geç çocuklukta bulgu verir.",
+    "differentialNote": "Duchenne musküler distrofisinde CK belirgin yüksektir ve daha geç çocuklukta bulgu verir.",
+    "keywords": [
+      "SMA tip 1",
+      "dil fasikülasyonu",
+      "hipotoni",
+      "arefleksi"
+    ]
+  },
+  "tus-pearl-pediatrics-413-spot": {
+    "front": "Gowers bulgusu ve baldır psödohipertrofisi hangi kas hastalığını düşündürür?",
+    "back": "Duchenne musküler distrofi. Distrofin yokluğu kas membran stabilitesini bozar ve CK yüksekliği yapar.",
+    "answer": "Duchenne musküler distrofi. Distrofin yokluğu kas membran stabilitesini bozar ve CK yüksekliği yapar.",
+    "explanation": "Distrofin yokluğu kas membran stabilitesini bozar ve CK yüksekliği yapar. Becker musküler distrofi daha hafif ve geç başlangıçlıdır.",
+    "tusTip": "Distrofin yokluğu kas membran stabilitesini bozar ve CK yüksekliği yapar. Becker musküler distrofi daha hafif ve geç başlangıçlıdır.",
+    "differentialNote": "Becker musküler distrofi daha hafif ve geç başlangıçlıdır.",
+    "keywords": [
+      "Duchenne",
+      "Gowers",
+      "baldır psödohipertrofisi",
+      "distrofin"
+    ]
+  },
+  "tus-pearl-pediatrics-413-extra": {
+    "front": "Duchenne musküler distrofi için en kritik ayırıcı nokta nedir?",
+    "back": "Becker musküler distrofi daha hafif ve geç başlangıçlıdır.",
+    "answer": "Becker musküler distrofi daha hafif ve geç başlangıçlıdır.",
+    "explanation": "Distrofin yokluğu kas membran stabilitesini bozar ve CK yüksekliği yapar. Becker musküler distrofi daha hafif ve geç başlangıçlıdır.",
+    "tusTip": "Duchenne musküler distrofi için sınavda hedeflenen ayrım genellikle şudur: Becker musküler distrofi daha hafif ve geç başlangıçlıdır.",
+    "differentialNote": "Becker musküler distrofi daha hafif ve geç başlangıçlıdır.",
+    "keywords": [
+      "Duchenne",
+      "Gowers",
+      "baldır psödohipertrofisi",
+      "distrofin"
+    ]
+  },
+  "tus-pearl-pediatrics-414-spot": {
+    "front": "Yumruğunu açmakta güçlük, frontal kellik ve temporal atrofi hangi hastalığı düşündürür?",
+    "back": "Miyotonik distrofi. Miyotonik gevşeme güçlüğü ve multisistem bulgular tanıyı destekler.",
+    "answer": "Miyotonik distrofi. Miyotonik gevşeme güçlüğü ve multisistem bulgular tanıyı destekler.",
+    "explanation": "Miyotonik gevşeme güçlüğü ve multisistem bulgular tanıyı destekler. Myasthenia graviste kas kullanımıyla artan güçsüzlük vardır, myotoni beklenmez.",
+    "tusTip": "Miyotonik gevşeme güçlüğü ve multisistem bulgular tanıyı destekler. Myasthenia graviste kas kullanımıyla artan güçsüzlük vardır, myotoni beklenmez.",
+    "differentialNote": "Myasthenia graviste kas kullanımıyla artan güçsüzlük vardır, myotoni beklenmez.",
+    "keywords": [
+      "miyotonik distrofi",
+      "myotoni",
+      "frontal kellik",
+      "temporal atrofi"
+    ]
+  },
+  "tus-pearl-pediatrics-414-extra": {
+    "front": "Miyotonik distrofi çocukluk ipucu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Myasthenia graviste kas kullanımıyla artan güçsüzlük vardır, myotoni beklenmez.",
+    "answer": "Myasthenia graviste kas kullanımıyla artan güçsüzlük vardır, myotoni beklenmez.",
+    "explanation": "Miyotonik gevşeme güçlüğü ve multisistem bulgular tanıyı destekler. Myasthenia graviste kas kullanımıyla artan güçsüzlük vardır, myotoni beklenmez.",
+    "tusTip": "Miyotonik distrofi çocukluk ipucu karıştırıldığında cevabı netleştiren karşılaştırma: Myasthenia graviste kas kullanımıyla artan güçsüzlük vardır, myotoni beklenmez.",
+    "differentialNote": "Myasthenia graviste kas kullanımıyla artan güçsüzlük vardır, myotoni beklenmez.",
+    "keywords": [
+      "miyotonik distrofi",
+      "myotoni",
+      "frontal kellik",
+      "temporal atrofi"
+    ]
+  },
+  "tus-pearl-pediatrics-415-spot": {
+    "front": "Tipik İTP düşünülen çocukta hangi bulgu kemik iliği incelemesini daha gerekli kılar?",
+    "back": "Açıklanamayan anemi veya başka hücre serisi bozukluğu.",
+    "answer": "Açıklanamayan anemi veya başka hücre serisi bozukluğu.",
+    "explanation": "İzole trombositopeni İTP lehineyken ek sitopeniler lösemi gibi tanıları dışlamayı gerektirir. Sadece düşük trombosit sayısı tipik olguda kemik iliği için tek başına yeterli olmayabilir.",
+    "tusTip": "İzole trombositopeni İTP lehineyken ek sitopeniler lösemi gibi tanıları dışlamayı gerektirir. Sadece düşük trombosit sayısı tipik olguda kemik iliği için tek başına yeterli olmayabilir.",
+    "differentialNote": "Sadece düşük trombosit sayısı tipik olguda kemik iliği için tek başına yeterli olmayabilir.",
+    "keywords": [
+      "İTP",
+      "izole trombositopeni",
+      "anemi",
+      "kemik iliği"
+    ]
+  },
+  "tus-pearl-pediatrics-415-extra": {
+    "front": "Çocukta İTP kemik iliği endikasyonu için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Sadece düşük trombosit sayısı tipik olguda kemik iliği için tek başına yeterli olmayabilir.",
+    "answer": "Sadece düşük trombosit sayısı tipik olguda kemik iliği için tek başına yeterli olmayabilir.",
+    "explanation": "İzole trombositopeni İTP lehineyken ek sitopeniler lösemi gibi tanıları dışlamayı gerektirir. Sadece düşük trombosit sayısı tipik olguda kemik iliği için tek başına yeterli olmayabilir.",
+    "tusTip": "Çocukta İTP kemik iliği endikasyonu kartında ayırıcı değer taşıyan nokta: Sadece düşük trombosit sayısı tipik olguda kemik iliği için tek başına yeterli olmayabilir.",
+    "differentialNote": "Sadece düşük trombosit sayısı tipik olguda kemik iliği için tek başına yeterli olmayabilir.",
+    "keywords": [
+      "İTP",
+      "izole trombositopeni",
+      "anemi",
+      "kemik iliği"
+    ]
+  },
+  "tus-pearl-pediatrics-416-spot": {
+    "front": "Kanlı ishal sonrası akut böbrek yetmezliği, trombositopeni ve hemolitik anemi hangi sendromu düşündürür?",
+    "back": "Hemolitik üremik sendrom. Shiga toksin ilişkili endotel hasarı mikroanjiyopatik hemolize yol açar.",
+    "answer": "Hemolitik üremik sendrom. Shiga toksin ilişkili endotel hasarı mikroanjiyopatik hemolize yol açar.",
+    "explanation": "Shiga toksin ilişkili endotel hasarı mikroanjiyopatik hemolize yol açar. İTP izole trombositopeni yapar; böbrek yetmezliği ve şistosit beklenmez.",
+    "tusTip": "Shiga toksin ilişkili endotel hasarı mikroanjiyopatik hemolize yol açar. İTP izole trombositopeni yapar; böbrek yetmezliği ve şistosit beklenmez.",
+    "differentialNote": "İTP izole trombositopeni yapar; böbrek yetmezliği ve şistosit beklenmez.",
+    "keywords": [
+      "HUS",
+      "kanlı ishal",
+      "AKI",
+      "trombositopeni"
+    ]
+  },
+  "tus-pearl-pediatrics-416-extra": {
+    "front": "Hemolitik üremik sendrom başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "İTP izole trombositopeni yapar; böbrek yetmezliği ve şistosit beklenmez.",
+    "answer": "İTP izole trombositopeni yapar; böbrek yetmezliği ve şistosit beklenmez.",
+    "explanation": "Shiga toksin ilişkili endotel hasarı mikroanjiyopatik hemolize yol açar. İTP izole trombositopeni yapar; böbrek yetmezliği ve şistosit beklenmez.",
+    "tusTip": "Hemolitik üremik sendrom için sınavda hedeflenen ayrım genellikle şudur: İTP izole trombositopeni yapar; böbrek yetmezliği ve şistosit beklenmez.",
+    "differentialNote": "İTP izole trombositopeni yapar; böbrek yetmezliği ve şistosit beklenmez.",
+    "keywords": [
+      "HUS",
+      "kanlı ishal",
+      "AKI",
+      "trombositopeni"
+    ]
+  },
+  "tus-pearl-pediatrics-417-spot": {
+    "front": "IgA vasküliti olan çocukta şiddetli kolik karın ağrısı hangi komplikasyonu düşündürmelidir?",
+    "back": "İnvajinasyon. Barsak duvarı ödemi ve purpura invajinasyon için odak oluşturabilir.",
+    "answer": "İnvajinasyon. Barsak duvarı ödemi ve purpura invajinasyon için odak oluşturabilir.",
+    "explanation": "Barsak duvarı ödemi ve purpura invajinasyon için odak oluşturabilir. Basit gastroenterit purpura ve eklem bulgularıyla açıklanmaz.",
+    "tusTip": "Barsak duvarı ödemi ve purpura invajinasyon için odak oluşturabilir. Basit gastroenterit purpura ve eklem bulgularıyla açıklanmaz.",
+    "differentialNote": "Basit gastroenterit purpura ve eklem bulgularıyla açıklanmaz.",
+    "keywords": [
+      "IgA vasküliti",
+      "kolik karın ağrısı",
+      "invajinasyon",
+      "purpura"
+    ]
+  },
+  "tus-pearl-pediatrics-417-extra": {
+    "front": "IgA vaskülitinde invajinasyon için en kritik ayırıcı nokta nedir?",
+    "back": "Basit gastroenterit purpura ve eklem bulgularıyla açıklanmaz.",
+    "answer": "Basit gastroenterit purpura ve eklem bulgularıyla açıklanmaz.",
+    "explanation": "Barsak duvarı ödemi ve purpura invajinasyon için odak oluşturabilir. Basit gastroenterit purpura ve eklem bulgularıyla açıklanmaz.",
+    "tusTip": "IgA vaskülitinde invajinasyon karıştırıldığında cevabı netleştiren karşılaştırma: Basit gastroenterit purpura ve eklem bulgularıyla açıklanmaz.",
+    "differentialNote": "Basit gastroenterit purpura ve eklem bulgularıyla açıklanmaz.",
+    "keywords": [
+      "IgA vasküliti",
+      "kolik karın ağrısı",
+      "invajinasyon",
+      "purpura"
+    ]
+  },
+  "tus-pearl-pediatrics-418-spot": {
+    "front": "Anne O, bebek A veya B ise erken yenidoğan sarılığının sık nedeni nedir?",
+    "back": "ABO uygunsuzluğu. Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir.",
+    "answer": "ABO uygunsuzluğu. Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir.",
+    "explanation": "Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir. Anne sütü sarılığı genellikle daha geç dönemde ve bebeğin iyi olduğu tabloda görülür.",
+    "tusTip": "Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir. Anne sütü sarılığı genellikle daha geç dönemde ve bebeğin iyi olduğu tabloda görülür.",
+    "differentialNote": "Anne sütü sarılığı genellikle daha geç dönemde ve bebeğin iyi olduğu tabloda görülür.",
+    "keywords": [
+      "ABO uygunsuzluğu",
+      "erken sarılık",
+      "direkt Coombs",
+      "hemoliz"
+    ]
+  },
+  "tus-pearl-pediatrics-418-extra": {
+    "front": "ABO hemolitik hastalık karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Anne sütü sarılığı genellikle daha geç dönemde ve bebeğin iyi olduğu tabloda görülür.",
+    "answer": "Anne sütü sarılığı genellikle daha geç dönemde ve bebeğin iyi olduğu tabloda görülür.",
+    "explanation": "Maternal IgG anti-A veya anti-B antikorları yenidoğanda hemoliz yapabilir. Anne sütü sarılığı genellikle daha geç dönemde ve bebeğin iyi olduğu tabloda görülür.",
+    "tusTip": "ABO hemolitik hastalık kartında ayırıcı değer taşıyan nokta: Anne sütü sarılığı genellikle daha geç dönemde ve bebeğin iyi olduğu tabloda görülür.",
+    "differentialNote": "Anne sütü sarılığı genellikle daha geç dönemde ve bebeğin iyi olduğu tabloda görülür.",
+    "keywords": [
+      "ABO uygunsuzluğu",
+      "erken sarılık",
+      "direkt Coombs",
+      "hemoliz"
+    ]
+  },
+  "tus-pearl-pediatrics-419-spot": {
+    "front": "İyi beslenen sağlıklı bebekte ikinci haftadan sonra uzayan indirekt hiperbilirubinemi hangi durumu düşündürür?",
+    "back": "Anne sütü sarılığı. Anne sütündeki bazı maddeler bilirubin konjugasyonunu veya enterohepatik dolaşımı etkileyebilir.",
+    "answer": "Anne sütü sarılığı. Anne sütündeki bazı maddeler bilirubin konjugasyonunu veya enterohepatik dolaşımı etkileyebilir.",
+    "explanation": "Anne sütündeki bazı maddeler bilirubin konjugasyonunu veya enterohepatik dolaşımı etkileyebilir. Akut bilirubin ensefalopatisi letarji ve nörolojik bulgularla acil durumdur.",
+    "tusTip": "Anne sütündeki bazı maddeler bilirubin konjugasyonunu veya enterohepatik dolaşımı etkileyebilir. Akut bilirubin ensefalopatisi letarji ve nörolojik bulgularla acil durumdur.",
+    "differentialNote": "Akut bilirubin ensefalopatisi letarji ve nörolojik bulgularla acil durumdur.",
+    "keywords": [
+      "anne sütü sarılığı",
+      "indirekt bilirubin",
+      "iyi bebek",
+      "uzamış sarılık"
+    ]
+  },
+  "tus-pearl-pediatrics-419-extra": {
+    "front": "Anne sütü sarılığı başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Akut bilirubin ensefalopatisi letarji ve nörolojik bulgularla acil durumdur.",
+    "answer": "Akut bilirubin ensefalopatisi letarji ve nörolojik bulgularla acil durumdur.",
+    "explanation": "Anne sütündeki bazı maddeler bilirubin konjugasyonunu veya enterohepatik dolaşımı etkileyebilir. Akut bilirubin ensefalopatisi letarji ve nörolojik bulgularla acil durumdur.",
+    "tusTip": "Anne sütü sarılığı için sınavda hedeflenen ayrım genellikle şudur: Akut bilirubin ensefalopatisi letarji ve nörolojik bulgularla acil durumdur.",
+    "differentialNote": "Akut bilirubin ensefalopatisi letarji ve nörolojik bulgularla acil durumdur.",
+    "keywords": [
+      "anne sütü sarılığı",
+      "indirekt bilirubin",
+      "iyi bebek",
+      "uzamış sarılık"
+    ]
+  },
+  "tus-pearl-pediatrics-420-spot": {
+    "front": "Uzamış sarılık, akolik dışkı ve koyu idrar hangi yenidoğan kolestaz nedenini düşündürür?",
+    "back": "Biliyer atrezi. Ekstrahepatik safra yollarının obliterasyonu konjuge hiperbilirubinemi oluşturur.",
+    "answer": "Biliyer atrezi. Ekstrahepatik safra yollarının obliterasyonu konjuge hiperbilirubinemi oluşturur.",
+    "explanation": "Ekstrahepatik safra yollarının obliterasyonu konjuge hiperbilirubinemi oluşturur. Fizyolojik sarılık indirekt bilirubin artışıyla seyreder ve akolik dışkı yapmaz.",
+    "tusTip": "Ekstrahepatik safra yollarının obliterasyonu konjuge hiperbilirubinemi oluşturur. Fizyolojik sarılık indirekt bilirubin artışıyla seyreder ve akolik dışkı yapmaz.",
+    "differentialNote": "Fizyolojik sarılık indirekt bilirubin artışıyla seyreder ve akolik dışkı yapmaz.",
+    "keywords": [
+      "biliyer atrezi",
+      "akolik dışkı",
+      "koyu idrar",
+      "kolestaz"
+    ]
+  },
+  "tus-pearl-pediatrics-420-extra": {
+    "front": "Biliyer atrezi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Fizyolojik sarılık indirekt bilirubin artışıyla seyreder ve akolik dışkı yapmaz.",
+    "answer": "Fizyolojik sarılık indirekt bilirubin artışıyla seyreder ve akolik dışkı yapmaz.",
+    "explanation": "Ekstrahepatik safra yollarının obliterasyonu konjuge hiperbilirubinemi oluşturur. Fizyolojik sarılık indirekt bilirubin artışıyla seyreder ve akolik dışkı yapmaz.",
+    "tusTip": "Biliyer atrezi karıştırıldığında cevabı netleştiren karşılaştırma: Fizyolojik sarılık indirekt bilirubin artışıyla seyreder ve akolik dışkı yapmaz.",
+    "differentialNote": "Fizyolojik sarılık indirekt bilirubin artışıyla seyreder ve akolik dışkı yapmaz.",
+    "keywords": [
+      "biliyer atrezi",
+      "akolik dışkı",
+      "koyu idrar",
+      "kolestaz"
+    ]
+  },
+  "tus-pearl-pediatrics-421-spot": {
+    "front": "Yenidoğanda mekonyum çıkaramama ve bağırsak tıkanıklığı hangi genetik hastalığı düşündürür?",
+    "back": "Kistik fibrozis. Yoğun sekresyonlar ileumda tıkaç oluşturabilir.",
+    "answer": "Kistik fibrozis. Yoğun sekresyonlar ileumda tıkaç oluşturabilir.",
+    "explanation": "Yoğun sekresyonlar ileumda tıkaç oluşturabilir. Hirschsprung hastalığı da mekonyum gecikmesi yapar ancak mukus tıkaç ve CF ilişkisi farklıdır.",
+    "tusTip": "Yoğun sekresyonlar ileumda tıkaç oluşturabilir. Hirschsprung hastalığı da mekonyum gecikmesi yapar ancak mukus tıkaç ve CF ilişkisi farklıdır.",
+    "differentialNote": "Hirschsprung hastalığı da mekonyum gecikmesi yapar ancak mukus tıkaç ve CF ilişkisi farklıdır.",
+    "keywords": [
+      "mekonyum ileusu",
+      "kistik fibrozis",
+      "CFTR",
+      "yenidoğan obstrüksiyonu"
+    ]
+  },
+  "tus-pearl-pediatrics-421-extra": {
+    "front": "Mekonyum ileusu için en kritik ayırıcı nokta nedir?",
+    "back": "Hirschsprung hastalığı da mekonyum gecikmesi yapar ancak mukus tıkaç ve CF ilişkisi farklıdır.",
+    "answer": "Hirschsprung hastalığı da mekonyum gecikmesi yapar ancak mukus tıkaç ve CF ilişkisi farklıdır.",
+    "explanation": "Yoğun sekresyonlar ileumda tıkaç oluşturabilir. Hirschsprung hastalığı da mekonyum gecikmesi yapar ancak mukus tıkaç ve CF ilişkisi farklıdır.",
+    "tusTip": "Mekonyum ileusu kartında ayırıcı değer taşıyan nokta: Hirschsprung hastalığı da mekonyum gecikmesi yapar ancak mukus tıkaç ve CF ilişkisi farklıdır.",
+    "differentialNote": "Hirschsprung hastalığı da mekonyum gecikmesi yapar ancak mukus tıkaç ve CF ilişkisi farklıdır.",
+    "keywords": [
+      "mekonyum ileusu",
+      "kistik fibrozis",
+      "CFTR",
+      "yenidoğan obstrüksiyonu"
+    ]
+  },
+  "tus-pearl-pediatrics-422-spot": {
+    "front": "Ani başlayan hışıltı ve tek taraflı solunum sesinde azalma hangi tanıyı düşündürür?",
+    "back": "Yabancı cisim aspirasyonu. Hava yolu obstrüksiyonu tek taraflı havalanma artışı veya atelektazi yapabilir.",
+    "answer": "Yabancı cisim aspirasyonu. Hava yolu obstrüksiyonu tek taraflı havalanma artışı veya atelektazi yapabilir.",
+    "explanation": "Hava yolu obstrüksiyonu tek taraflı havalanma artışı veya atelektazi yapabilir. Bronşiolit genellikle yaygın hışıltı ve viral prodromla seyreder.",
+    "tusTip": "Hava yolu obstrüksiyonu tek taraflı havalanma artışı veya atelektazi yapabilir. Bronşiolit genellikle yaygın hışıltı ve viral prodromla seyreder.",
+    "differentialNote": "Bronşiolit genellikle yaygın hışıltı ve viral prodromla seyreder.",
+    "keywords": [
+      "yabancı cisim",
+      "ani hışıltı",
+      "tek taraflı azalmış ses",
+      "çocuk"
+    ]
+  },
+  "tus-pearl-pediatrics-422-extra": {
+    "front": "Yabancı cisim aspirasyonu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Bronşiolit genellikle yaygın hışıltı ve viral prodromla seyreder.",
+    "answer": "Bronşiolit genellikle yaygın hışıltı ve viral prodromla seyreder.",
+    "explanation": "Hava yolu obstrüksiyonu tek taraflı havalanma artışı veya atelektazi yapabilir. Bronşiolit genellikle yaygın hışıltı ve viral prodromla seyreder.",
+    "tusTip": "Yabancı cisim aspirasyonu için sınavda hedeflenen ayrım genellikle şudur: Bronşiolit genellikle yaygın hışıltı ve viral prodromla seyreder.",
+    "differentialNote": "Bronşiolit genellikle yaygın hışıltı ve viral prodromla seyreder.",
+    "keywords": [
+      "yabancı cisim",
+      "ani hışıltı",
+      "tek taraflı azalmış ses",
+      "çocuk"
+    ]
+  },
+  "tus-pearl-pediatrics-423-spot": {
+    "front": "İnspiratuvar stridorun süt çocuklarında en sık kronik nedeni nedir?",
+    "back": "Laringomalazi. Supraglottik yapıların gevşekliği inspirasyonda kollapsa neden olur.",
+    "answer": "Laringomalazi. Supraglottik yapıların gevşekliği inspirasyonda kollapsa neden olur.",
+    "explanation": "Supraglottik yapıların gevşekliği inspirasyonda kollapsa neden olur. Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "tusTip": "Supraglottik yapıların gevşekliği inspirasyonda kollapsa neden olur. Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "differentialNote": "Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "keywords": [
+      "laringomalazi",
+      "inspiratuvar stridor",
+      "süt çocuğu",
+      "supraglottik kollaps"
+    ]
+  },
+  "tus-pearl-pediatrics-423-extra": {
+    "front": "Laringomalazi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "answer": "Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "explanation": "Supraglottik yapıların gevşekliği inspirasyonda kollapsa neden olur. Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "tusTip": "Laringomalazi karıştırıldığında cevabı netleştiren karşılaştırma: Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "differentialNote": "Koanal atrezi özellikle beslenmeyle artan siyanoz ve burundan sonda geçememe ile ayrılır.",
+    "keywords": [
+      "laringomalazi",
+      "inspiratuvar stridor",
+      "süt çocuğu",
+      "supraglottik kollaps"
+    ]
+  },
+  "tus-pearl-pediatrics-424-spot": {
+    "front": "Uzun süreli entübasyon öyküsü sonrası kronik stridor hangi hava yolu darlığını düşündürür?",
+    "back": "Subglottik stenoz. Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir.",
+    "answer": "Subglottik stenoz. Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir.",
+    "explanation": "Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir. Laringomalazi genellikle doğumsal ve erken süt çocukluğu döneminde başlar.",
+    "tusTip": "Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir. Laringomalazi genellikle doğumsal ve erken süt çocukluğu döneminde başlar.",
+    "differentialNote": "Laringomalazi genellikle doğumsal ve erken süt çocukluğu döneminde başlar.",
+    "keywords": [
+      "subglottik stenoz",
+      "entübasyon",
+      "stridor",
+      "hava yolu darlığı"
+    ]
+  },
+  "tus-pearl-pediatrics-424-extra": {
+    "front": "Subglottik stenoz için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Laringomalazi genellikle doğumsal ve erken süt çocukluğu döneminde başlar.",
+    "answer": "Laringomalazi genellikle doğumsal ve erken süt çocukluğu döneminde başlar.",
+    "explanation": "Entübasyon travması subglottik bölgede skar ve daralma oluşturabilir. Laringomalazi genellikle doğumsal ve erken süt çocukluğu döneminde başlar.",
+    "tusTip": "Subglottik stenoz kartında ayırıcı değer taşıyan nokta: Laringomalazi genellikle doğumsal ve erken süt çocukluğu döneminde başlar.",
+    "differentialNote": "Laringomalazi genellikle doğumsal ve erken süt çocukluğu döneminde başlar.",
+    "keywords": [
+      "subglottik stenoz",
+      "entübasyon",
+      "stridor",
+      "hava yolu darlığı"
+    ]
+  },
+  "tus-pearl-pediatrics-425-spot": {
+    "front": "Yenidoğanda beslenirken morarma ve ağlarken düzelme hangi nazal obstrüksiyonu düşündürür?",
+    "back": "Koanal atrezi. Yenidoğanlar burundan solumaya bağımlı olduğundan bilateral atrezi belirgin solunum sıkıntısı yapar.",
+    "answer": "Koanal atrezi. Yenidoğanlar burundan solumaya bağımlı olduğundan bilateral atrezi belirgin solunum sıkıntısı yapar.",
+    "explanation": "Yenidoğanlar burundan solumaya bağımlı olduğundan bilateral atrezi belirgin solunum sıkıntısı yapar. Krup daha büyük çocukta viral üst hava yolu enfeksiyonuyla ilişkilidir.",
+    "tusTip": "Yenidoğanlar burundan solumaya bağımlı olduğundan bilateral atrezi belirgin solunum sıkıntısı yapar. Krup daha büyük çocukta viral üst hava yolu enfeksiyonuyla ilişkilidir.",
+    "differentialNote": "Krup daha büyük çocukta viral üst hava yolu enfeksiyonuyla ilişkilidir.",
+    "keywords": [
+      "koanal atrezi",
+      "beslenirken siyanoz",
+      "ağlayınca düzelme",
+      "yenidoğan"
+    ]
+  },
+  "tus-pearl-pediatrics-425-extra": {
+    "front": "Koanal atrezi için en kritik ayırıcı nokta nedir?",
+    "back": "Krup daha büyük çocukta viral üst hava yolu enfeksiyonuyla ilişkilidir.",
+    "answer": "Krup daha büyük çocukta viral üst hava yolu enfeksiyonuyla ilişkilidir.",
+    "explanation": "Yenidoğanlar burundan solumaya bağımlı olduğundan bilateral atrezi belirgin solunum sıkıntısı yapar. Krup daha büyük çocukta viral üst hava yolu enfeksiyonuyla ilişkilidir.",
+    "tusTip": "Koanal atrezi için sınavda hedeflenen ayrım genellikle şudur: Krup daha büyük çocukta viral üst hava yolu enfeksiyonuyla ilişkilidir.",
+    "differentialNote": "Krup daha büyük çocukta viral üst hava yolu enfeksiyonuyla ilişkilidir.",
+    "keywords": [
+      "koanal atrezi",
+      "beslenirken siyanoz",
+      "ağlayınca düzelme",
+      "yenidoğan"
+    ]
+  },
+  "tus-pearl-pediatrics-426-spot": {
+    "front": "Geniş VSD izlem dışı kalırsa üfürümün azalması ve sert P2 neyi düşündürür?",
+    "back": "Pulmoner hipertansiyon ve Eisenmenger gelişimini. Artan pulmoner vasküler direnç şantı azaltabilir ve siyanoz gelişimine yol açabilir.",
+    "answer": "Pulmoner hipertansiyon ve Eisenmenger gelişimini. Artan pulmoner vasküler direnç şantı azaltabilir ve siyanoz gelişimine yol açabilir.",
+    "explanation": "Artan pulmoner vasküler direnç şantı azaltabilir ve siyanoz gelişimine yol açabilir. Spontan kapanmada pulmoner hipertansiyon bulguları beklenmez.",
+    "tusTip": "Artan pulmoner vasküler direnç şantı azaltabilir ve siyanoz gelişimine yol açabilir. Spontan kapanmada pulmoner hipertansiyon bulguları beklenmez.",
+    "differentialNote": "Spontan kapanmada pulmoner hipertansiyon bulguları beklenmez.",
+    "keywords": [
+      "VSD",
+      "pulmoner hipertansiyon",
+      "sert P2",
+      "Eisenmenger"
+    ]
+  },
+  "tus-pearl-pediatrics-426-extra": {
+    "front": "VSD ve Eisenmenger karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Spontan kapanmada pulmoner hipertansiyon bulguları beklenmez.",
+    "answer": "Spontan kapanmada pulmoner hipertansiyon bulguları beklenmez.",
+    "explanation": "Artan pulmoner vasküler direnç şantı azaltabilir ve siyanoz gelişimine yol açabilir. Spontan kapanmada pulmoner hipertansiyon bulguları beklenmez.",
+    "tusTip": "VSD ve Eisenmenger karıştırıldığında cevabı netleştiren karşılaştırma: Spontan kapanmada pulmoner hipertansiyon bulguları beklenmez.",
+    "differentialNote": "Spontan kapanmada pulmoner hipertansiyon bulguları beklenmez.",
+    "keywords": [
+      "VSD",
+      "pulmoner hipertansiyon",
+      "sert P2",
+      "Eisenmenger"
+    ]
+  },
+  "tus-pearl-pediatrics-427-spot": {
+    "front": "Sabit çift ikinci kalp sesi ve sağ kalp dilatasyonu hangi doğumsal kalp hastalığını düşündürür?",
+    "back": "Atriyal septal defekt. Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur.",
+    "answer": "Atriyal septal defekt. Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur.",
+    "explanation": "Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur. VSD’de pansistolik üfürüm daha tipiktir.",
+    "tusTip": "Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur. VSD’de pansistolik üfürüm daha tipiktir.",
+    "differentialNote": "VSD’de pansistolik üfürüm daha tipiktir.",
+    "keywords": [
+      "ASD",
+      "sabit çift S2",
+      "sağ kalp dilatasyonu",
+      "sol-sağ şant"
+    ]
+  },
+  "tus-pearl-pediatrics-427-extra": {
+    "front": "ASD sabit çift S2 için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "VSD’de pansistolik üfürüm daha tipiktir.",
+    "answer": "VSD’de pansistolik üfürüm daha tipiktir.",
+    "explanation": "Sol-sağ atriyal şant sağ kalp hacim yükü ve pulmoner akım artışı oluşturur. VSD’de pansistolik üfürüm daha tipiktir.",
+    "tusTip": "ASD sabit çift S2 kartında ayırıcı değer taşıyan nokta: VSD’de pansistolik üfürüm daha tipiktir.",
+    "differentialNote": "VSD’de pansistolik üfürüm daha tipiktir.",
+    "keywords": [
+      "ASD",
+      "sabit çift S2",
+      "sağ kalp dilatasyonu",
+      "sol-sağ şant"
+    ]
+  },
+  "tus-pearl-pediatrics-428-spot": {
+    "front": "Yenidoğanda beslenme güçlüğü, metabolik asidoz ve femoral nabız alınamaması hangi tanıyı düşündürür?",
+    "back": "Kritik aort koarktasyonu. Duktus kapanması sonrası alt vücut perfüzyonu bozulur.",
+    "answer": "Kritik aort koarktasyonu. Duktus kapanması sonrası alt vücut perfüzyonu bozulur.",
+    "explanation": "Duktus kapanması sonrası alt vücut perfüzyonu bozulur. Fallot tetralojisinde siyanoz daha belirgin olabilir; femoral nabız kaybı koarktasyon lehinedir.",
+    "tusTip": "Duktus kapanması sonrası alt vücut perfüzyonu bozulur. Fallot tetralojisinde siyanoz daha belirgin olabilir; femoral nabız kaybı koarktasyon lehinedir.",
+    "differentialNote": "Fallot tetralojisinde siyanoz daha belirgin olabilir; femoral nabız kaybı koarktasyon lehinedir.",
+    "keywords": [
+      "aort koarktasyonu",
+      "femoral nabız yokluğu",
+      "duktus",
+      "asidoz"
+    ]
+  },
+  "tus-pearl-pediatrics-428-extra": {
+    "front": "Kritik aort koarktasyonu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Fallot tetralojisinde siyanoz daha belirgin olabilir; femoral nabız kaybı koarktasyon lehinedir.",
+    "answer": "Fallot tetralojisinde siyanoz daha belirgin olabilir; femoral nabız kaybı koarktasyon lehinedir.",
+    "explanation": "Duktus kapanması sonrası alt vücut perfüzyonu bozulur. Fallot tetralojisinde siyanoz daha belirgin olabilir; femoral nabız kaybı koarktasyon lehinedir.",
+    "tusTip": "Kritik aort koarktasyonu için sınavda hedeflenen ayrım genellikle şudur: Fallot tetralojisinde siyanoz daha belirgin olabilir; femoral nabız kaybı koarktasyon lehinedir.",
+    "differentialNote": "Fallot tetralojisinde siyanoz daha belirgin olabilir; femoral nabız kaybı koarktasyon lehinedir.",
+    "keywords": [
+      "aort koarktasyonu",
+      "femoral nabız yokluğu",
+      "duktus",
+      "asidoz"
+    ]
+  },
+  "tus-pearl-pediatrics-429-spot": {
+    "front": "Prematüre bebekte patent duktus arteriozus kapanmasını destekleyen ilaç hangisidir?",
+    "back": "İndometazin veya ibuprofen. Prostaglandin sentezinin azaltılması duktusun kapanmasını kolaylaştırır.",
+    "answer": "İndometazin veya ibuprofen. Prostaglandin sentezinin azaltılması duktusun kapanmasını kolaylaştırır.",
+    "explanation": "Prostaglandin sentezinin azaltılması duktusun kapanmasını kolaylaştırır. Prostaglandin E1 duktusu açık tutmak için kullanılır.",
+    "tusTip": "Prostaglandin sentezinin azaltılması duktusun kapanmasını kolaylaştırır. Prostaglandin E1 duktusu açık tutmak için kullanılır.",
+    "differentialNote": "Prostaglandin E1 duktusu açık tutmak için kullanılır.",
+    "keywords": [
+      "PDA",
+      "indometazin",
+      "ibuprofen",
+      "prostaglandin"
+    ]
+  },
+  "tus-pearl-pediatrics-429-extra": {
+    "front": "PDA kapatma tedavisi için en kritik ayırıcı nokta nedir?",
+    "back": "Prostaglandin E1 duktusu açık tutmak için kullanılır.",
+    "answer": "Prostaglandin E1 duktusu açık tutmak için kullanılır.",
+    "explanation": "Prostaglandin sentezinin azaltılması duktusun kapanmasını kolaylaştırır. Prostaglandin E1 duktusu açık tutmak için kullanılır.",
+    "tusTip": "PDA kapatma tedavisi karıştırıldığında cevabı netleştiren karşılaştırma: Prostaglandin E1 duktusu açık tutmak için kullanılır.",
+    "differentialNote": "Prostaglandin E1 duktusu açık tutmak için kullanılır.",
+    "keywords": [
+      "PDA",
+      "indometazin",
+      "ibuprofen",
+      "prostaglandin"
+    ]
+  },
+  "tus-pearl-pediatrics-430-spot": {
+    "front": "Siyanotik çocukta çömelme davranışı hangi kalp hastalığında hipoksiyi azaltabilir?",
+    "back": "Fallot tetralojisi. Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir.",
+    "answer": "Fallot tetralojisi. Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir.",
+    "explanation": "Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir. ASD genellikle asiyanotik sol-sağ şanttır.",
+    "tusTip": "Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir. ASD genellikle asiyanotik sol-sağ şanttır.",
+    "differentialNote": "ASD genellikle asiyanotik sol-sağ şanttır.",
+    "keywords": [
+      "Fallot",
+      "çömelme",
+      "siyanoz",
+      "sağdan sola şant"
+    ]
+  },
+  "tus-pearl-pediatrics-430-extra": {
+    "front": "Fallot tetralojisi çömelme karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "ASD genellikle asiyanotik sol-sağ şanttır.",
+    "answer": "ASD genellikle asiyanotik sol-sağ şanttır.",
+    "explanation": "Çömelme sistemik vasküler direnci artırarak sağdan sola şantı azaltabilir. ASD genellikle asiyanotik sol-sağ şanttır.",
+    "tusTip": "Fallot tetralojisi çömelme kartında ayırıcı değer taşıyan nokta: ASD genellikle asiyanotik sol-sağ şanttır.",
+    "differentialNote": "ASD genellikle asiyanotik sol-sağ şanttır.",
+    "keywords": [
+      "Fallot",
+      "çömelme",
+      "siyanoz",
+      "sağdan sola şant"
+    ]
+  },
+  "tus-pearl-pediatrics-431-spot": {
+    "front": "Annenin doğuma çok yakın suçiçeği geçirmesi yenidoğanda neden yüksek risklidir?",
+    "back": "Koruyucu maternal antikor transferi için yeterli süre olmadığı için.",
+    "answer": "Koruyucu maternal antikor transferi için yeterli süre olmadığı için.",
+    "explanation": "Peripartum varisella ağır neonatal enfeksiyon riski taşır ve immünoglobulin gerekebilir. Gebelik başında geçirilen varisella farklı fetal risklerle değerlendirilir.",
+    "tusTip": "Peripartum varisella ağır neonatal enfeksiyon riski taşır ve immünoglobulin gerekebilir. Gebelik başında geçirilen varisella farklı fetal risklerle değerlendirilir.",
+    "differentialNote": "Gebelik başında geçirilen varisella farklı fetal risklerle değerlendirilir.",
+    "keywords": [
+      "neonatal varisella",
+      "maternal antikor",
+      "VZIG",
+      "peripartum"
+    ]
+  },
+  "tus-pearl-pediatrics-431-extra": {
+    "front": "Neonatal varisella riski başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Gebelik başında geçirilen varisella farklı fetal risklerle değerlendirilir.",
+    "answer": "Gebelik başında geçirilen varisella farklı fetal risklerle değerlendirilir.",
+    "explanation": "Peripartum varisella ağır neonatal enfeksiyon riski taşır ve immünoglobulin gerekebilir. Gebelik başında geçirilen varisella farklı fetal risklerle değerlendirilir.",
+    "tusTip": "Neonatal varisella riski için sınavda hedeflenen ayrım genellikle şudur: Gebelik başında geçirilen varisella farklı fetal risklerle değerlendirilir.",
+    "differentialNote": "Gebelik başında geçirilen varisella farklı fetal risklerle değerlendirilir.",
+    "keywords": [
+      "neonatal varisella",
+      "maternal antikor",
+      "VZIG",
+      "peripartum"
+    ]
+  },
+  "tus-pearl-pediatrics-432-spot": {
+    "front": "Eritema toksikum neonatorum püstül içeriğinde hangi hücre baskındır?",
+    "back": "Eozinofil. Benign yenidoğan döküntüsüdür ve genellikle kendiliğinden düzelir.",
+    "answer": "Eozinofil. Benign yenidoğan döküntüsüdür ve genellikle kendiliğinden düzelir.",
+    "explanation": "Benign yenidoğan döküntüsüdür ve genellikle kendiliğinden düzelir. Bakteriyel püstüler enfeksiyonda kültür pozitifliği ve sistemik bulgular beklenebilir.",
+    "tusTip": "Benign yenidoğan döküntüsüdür ve genellikle kendiliğinden düzelir. Bakteriyel püstüler enfeksiyonda kültür pozitifliği ve sistemik bulgular beklenebilir.",
+    "differentialNote": "Bakteriyel püstüler enfeksiyonda kültür pozitifliği ve sistemik bulgular beklenebilir.",
+    "keywords": [
+      "eritema toksikum",
+      "eozinofil",
+      "yenidoğan",
+      "püstül"
+    ]
+  },
+  "tus-pearl-pediatrics-432-extra": {
+    "front": "Eritema toksikum boyası sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Bakteriyel püstüler enfeksiyonda kültür pozitifliği ve sistemik bulgular beklenebilir.",
+    "answer": "Bakteriyel püstüler enfeksiyonda kültür pozitifliği ve sistemik bulgular beklenebilir.",
+    "explanation": "Benign yenidoğan döküntüsüdür ve genellikle kendiliğinden düzelir. Bakteriyel püstüler enfeksiyonda kültür pozitifliği ve sistemik bulgular beklenebilir.",
+    "tusTip": "Eritema toksikum boyası karıştırıldığında cevabı netleştiren karşılaştırma: Bakteriyel püstüler enfeksiyonda kültür pozitifliği ve sistemik bulgular beklenebilir.",
+    "differentialNote": "Bakteriyel püstüler enfeksiyonda kültür pozitifliği ve sistemik bulgular beklenebilir.",
+    "keywords": [
+      "eritema toksikum",
+      "eozinofil",
+      "yenidoğan",
+      "püstül"
+    ]
+  },
+  "tus-pearl-pediatrics-433-spot": {
+    "front": "Fetomaternal kanamayı doğrulamak için kullanılan test hangisidir?",
+    "back": "Kleihauer-Betke testi. Fetal hemoglobinin asit elüsyona dirençli olması fetal eritrositlerin sayılmasını sağlar.",
+    "answer": "Kleihauer-Betke testi. Fetal hemoglobinin asit elüsyona dirençli olması fetal eritrositlerin sayılmasını sağlar.",
+    "explanation": "Fetal hemoglobinin asit elüsyona dirençli olması fetal eritrositlerin sayılmasını sağlar. Direkt Coombs immün hemolizi değerlendirmede kullanılır.",
+    "tusTip": "Fetal hemoglobinin asit elüsyona dirençli olması fetal eritrositlerin sayılmasını sağlar. Direkt Coombs immün hemolizi değerlendirmede kullanılır.",
+    "differentialNote": "Direkt Coombs immün hemolizi değerlendirmede kullanılır.",
+    "keywords": [
+      "fetomaternal kanama",
+      "Kleihauer-Betke",
+      "fetal Hb",
+      "yenidoğan anemisi"
+    ]
+  },
+  "tus-pearl-pediatrics-433-extra": {
+    "front": "Kleihauer-Betke testi için en kritik ayırıcı nokta nedir?",
+    "back": "Direkt Coombs immün hemolizi değerlendirmede kullanılır.",
+    "answer": "Direkt Coombs immün hemolizi değerlendirmede kullanılır.",
+    "explanation": "Fetal hemoglobinin asit elüsyona dirençli olması fetal eritrositlerin sayılmasını sağlar. Direkt Coombs immün hemolizi değerlendirmede kullanılır.",
+    "tusTip": "Kleihauer-Betke testi kartında ayırıcı değer taşıyan nokta: Direkt Coombs immün hemolizi değerlendirmede kullanılır.",
+    "differentialNote": "Direkt Coombs immün hemolizi değerlendirmede kullanılır.",
+    "keywords": [
+      "fetomaternal kanama",
+      "Kleihauer-Betke",
+      "fetal Hb",
+      "yenidoğan anemisi"
+    ]
+  },
+  "tus-pearl-pediatrics-434-spot": {
+    "front": "Orta-ağır hipoksik iskemik ensefalopatide nörolojik sekeli azaltan tedavi nedir?",
+    "back": "Terapötik hipotermi. Uygun zaman penceresinde soğutma ikincil beyin hasarını azaltabilir.",
+    "answer": "Terapötik hipotermi. Uygun zaman penceresinde soğutma ikincil beyin hasarını azaltabilir.",
+    "explanation": "Uygun zaman penceresinde soğutma ikincil beyin hasarını azaltabilir. Hiperbarik oksijen rutin standart yaklaşım değildir.",
+    "tusTip": "Uygun zaman penceresinde soğutma ikincil beyin hasarını azaltabilir. Hiperbarik oksijen rutin standart yaklaşım değildir.",
+    "differentialNote": "Hiperbarik oksijen rutin standart yaklaşım değildir.",
+    "keywords": [
+      "HIE",
+      "terapötik hipotermi",
+      "asidoz",
+      "yenidoğan"
+    ]
+  },
+  "tus-pearl-pediatrics-434-extra": {
+    "front": "Hipoksik iskemik ensefalopati hipotermi karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Hiperbarik oksijen rutin standart yaklaşım değildir.",
+    "answer": "Hiperbarik oksijen rutin standart yaklaşım değildir.",
+    "explanation": "Uygun zaman penceresinde soğutma ikincil beyin hasarını azaltabilir. Hiperbarik oksijen rutin standart yaklaşım değildir.",
+    "tusTip": "Hipoksik iskemik ensefalopati hipotermi için sınavda hedeflenen ayrım genellikle şudur: Hiperbarik oksijen rutin standart yaklaşım değildir.",
+    "differentialNote": "Hiperbarik oksijen rutin standart yaklaşım değildir.",
+    "keywords": [
+      "HIE",
+      "terapötik hipotermi",
+      "asidoz",
+      "yenidoğan"
+    ]
+  },
+  "tus-pearl-pediatrics-435-spot": {
+    "front": "Normal B12 düzeyine rağmen megaloblastik anemi ve enfeksiyon eğilimi hangi taşıyıcı eksikliğini düşündürür?",
+    "back": "Transkobalamin II eksikliği. B12 hücre içine taşınamaz; fonksiyonel kobalamin eksikliği gelişir.",
+    "answer": "Transkobalamin II eksikliği. B12 hücre içine taşınamaz; fonksiyonel kobalamin eksikliği gelişir.",
+    "explanation": "B12 hücre içine taşınamaz; fonksiyonel kobalamin eksikliği gelişir. İntrensek faktör eksikliği daha çok B12 emilimini bozar.",
+    "tusTip": "B12 hücre içine taşınamaz; fonksiyonel kobalamin eksikliği gelişir. İntrensek faktör eksikliği daha çok B12 emilimini bozar.",
+    "differentialNote": "İntrensek faktör eksikliği daha çok B12 emilimini bozar.",
+    "keywords": [
+      "transkobalamin II",
+      "normal B12",
+      "megaloblastik anemi",
+      "immün sorun"
+    ]
+  },
+  "tus-pearl-pediatrics-435-extra": {
+    "front": "Transkobalamin II eksikliği sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "İntrensek faktör eksikliği daha çok B12 emilimini bozar.",
+    "answer": "İntrensek faktör eksikliği daha çok B12 emilimini bozar.",
+    "explanation": "B12 hücre içine taşınamaz; fonksiyonel kobalamin eksikliği gelişir. İntrensek faktör eksikliği daha çok B12 emilimini bozar.",
+    "tusTip": "Transkobalamin II eksikliği karıştırıldığında cevabı netleştiren karşılaştırma: İntrensek faktör eksikliği daha çok B12 emilimini bozar.",
+    "differentialNote": "İntrensek faktör eksikliği daha çok B12 emilimini bozar.",
+    "keywords": [
+      "transkobalamin II",
+      "normal B12",
+      "megaloblastik anemi",
+      "immün sorun"
+    ]
+  },
+  "tus-pearl-pediatrics-436-spot": {
+    "front": "Tırnak distrofisi, oral lökoplaki ve retiküler pigmentasyonla birlikte kemik iliği yetmezliği hangi tanıyı düşündürür?",
+    "back": "Diskeratozis konjenita. Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir.",
+    "answer": "Diskeratozis konjenita. Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir.",
+    "explanation": "Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir. Fanconi anemisinde radial anomaliler ve kromozom kırılganlığı daha çok vurgulanır.",
+    "tusTip": "Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir. Fanconi anemisinde radial anomaliler ve kromozom kırılganlığı daha çok vurgulanır.",
+    "differentialNote": "Fanconi anemisinde radial anomaliler ve kromozom kırılganlığı daha çok vurgulanır.",
+    "keywords": [
+      "diskeratozis konjenita",
+      "tırnak distrofisi",
+      "oral lökoplaki",
+      "pansitopeni"
+    ]
+  },
+  "tus-pearl-pediatrics-436-extra": {
+    "front": "Diskeratozis konjenita için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Fanconi anemisinde radial anomaliler ve kromozom kırılganlığı daha çok vurgulanır.",
+    "answer": "Fanconi anemisinde radial anomaliler ve kromozom kırılganlığı daha çok vurgulanır.",
+    "explanation": "Telomer biyolojisi bozukluğu mukokutanöz bulgular ve kemik iliği yetmezliği yapabilir. Fanconi anemisinde radial anomaliler ve kromozom kırılganlığı daha çok vurgulanır.",
+    "tusTip": "Diskeratozis konjenita kartında ayırıcı değer taşıyan nokta: Fanconi anemisinde radial anomaliler ve kromozom kırılganlığı daha çok vurgulanır.",
+    "differentialNote": "Fanconi anemisinde radial anomaliler ve kromozom kırılganlığı daha çok vurgulanır.",
+    "keywords": [
+      "diskeratozis konjenita",
+      "tırnak distrofisi",
+      "oral lökoplaki",
+      "pansitopeni"
+    ]
+  },
+  "tus-pearl-pediatrics-437-spot": {
+    "front": "Çocukta davranış değişikliği, adrenal yetmezlik ve çok uzun zincirli yağ asidi artışı hangi hastalığı düşündürür?",
+    "back": "X bağlı adrenolökodistrofi. Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler.",
+    "answer": "X bağlı adrenolökodistrofi. Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler.",
+    "explanation": "Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler. İzole gri cevher hastalığı değildir; beyaz cevher tutulumu belirgindir.",
+    "tusTip": "Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler. İzole gri cevher hastalığı değildir; beyaz cevher tutulumu belirgindir.",
+    "differentialNote": "İzole gri cevher hastalığı değildir; beyaz cevher tutulumu belirgindir.",
+    "keywords": [
+      "adrenolökodistrofi",
+      "VLCFA",
+      "adrenal yetmezlik",
+      "beyaz cevher"
+    ]
+  },
+  "tus-pearl-pediatrics-437-extra": {
+    "front": "X bağlı adrenolökodistrofi için en kritik ayırıcı nokta nedir?",
+    "back": "İzole gri cevher hastalığı değildir; beyaz cevher tutulumu belirgindir.",
+    "answer": "İzole gri cevher hastalığı değildir; beyaz cevher tutulumu belirgindir.",
+    "explanation": "Peroksizomal beta oksidasyon bozukluğu beyaz cevher ve adrenal korteksi etkiler. İzole gri cevher hastalığı değildir; beyaz cevher tutulumu belirgindir.",
+    "tusTip": "X bağlı adrenolökodistrofi için sınavda hedeflenen ayrım genellikle şudur: İzole gri cevher hastalığı değildir; beyaz cevher tutulumu belirgindir.",
+    "differentialNote": "İzole gri cevher hastalığı değildir; beyaz cevher tutulumu belirgindir.",
+    "keywords": [
+      "adrenolökodistrofi",
+      "VLCFA",
+      "adrenal yetmezlik",
+      "beyaz cevher Genel Cerrahi (general-surgery)"
+    ]
+  },
+  "tus-pearl-general-surgery-438-spot": {
+    "front": "Künt travma sonrası hipotansiyon ve peritonit bulguları varsa en uygun yaklaşım nedir?",
+    "back": "Acil laparotomi. Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir.",
+    "answer": "Acil laparotomi. Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir.",
+    "explanation": "Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir. Stabil hastada BT ile değerlendirme yapılabilir; instabil peritonitte gecikme zararlıdır.",
+    "tusTip": "Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir. Stabil hastada BT ile değerlendirme yapılabilir; instabil peritonitte gecikme zararlıdır.",
+    "differentialNote": "Stabil hastada BT ile değerlendirme yapılabilir; instabil peritonitte gecikme zararlıdır.",
+    "keywords": [
+      "travma",
+      "hipotansiyon",
+      "peritonit",
+      "laparotomi"
+    ]
+  },
+  "tus-pearl-general-surgery-438-extra": {
+    "front": "Travmada peritonit karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Stabil hastada BT ile değerlendirme yapılabilir; instabil peritonitte gecikme zararlıdır.",
+    "answer": "Stabil hastada BT ile değerlendirme yapılabilir; instabil peritonitte gecikme zararlıdır.",
+    "explanation": "Hemodinamik instabilite ve peritonit görüntüleme beklemeden cerrahi eksplorasyon gerektirir. Stabil hastada BT ile değerlendirme yapılabilir; instabil peritonitte gecikme zararlıdır.",
+    "tusTip": "Travmada peritonit karıştırıldığında cevabı netleştiren karşılaştırma: Stabil hastada BT ile değerlendirme yapılabilir; instabil peritonitte gecikme zararlıdır.",
+    "differentialNote": "Stabil hastada BT ile değerlendirme yapılabilir; instabil peritonitte gecikme zararlıdır.",
+    "keywords": [
+      "travma",
+      "hipotansiyon",
+      "peritonit",
+      "laparotomi"
+    ]
+  },
+  "tus-pearl-general-surgery-439-spot": {
+    "front": "Hemodinamik instabil karın travmasında yatak başı serbest sıvı değerlendirmesi için hangi yöntem kullanılır?",
+    "back": "FAST ultrasonografi. FAST hızlı şekilde intraperitoneal veya perikardiyal sıvı varlığını araştırır.",
+    "answer": "FAST ultrasonografi. FAST hızlı şekilde intraperitoneal veya perikardiyal sıvı varlığını araştırır.",
+    "explanation": "FAST hızlı şekilde intraperitoneal veya perikardiyal sıvı varlığını araştırır. Stabil hastada kontrastlı BT daha ayrıntılı bilgi sağlar.",
+    "tusTip": "FAST hızlı şekilde intraperitoneal veya perikardiyal sıvı varlığını araştırır. Stabil hastada kontrastlı BT daha ayrıntılı bilgi sağlar.",
+    "differentialNote": "Stabil hastada kontrastlı BT daha ayrıntılı bilgi sağlar.",
+    "keywords": [
+      "FAST",
+      "travma",
+      "serbest sıvı",
+      "instabil hasta"
+    ]
+  },
+  "tus-pearl-general-surgery-439-extra": {
+    "front": "FAST kullanımı için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Stabil hastada kontrastlı BT daha ayrıntılı bilgi sağlar.",
+    "answer": "Stabil hastada kontrastlı BT daha ayrıntılı bilgi sağlar.",
+    "explanation": "FAST hızlı şekilde intraperitoneal veya perikardiyal sıvı varlığını araştırır. Stabil hastada kontrastlı BT daha ayrıntılı bilgi sağlar.",
+    "tusTip": "FAST kullanımı kartında ayırıcı değer taşıyan nokta: Stabil hastada kontrastlı BT daha ayrıntılı bilgi sağlar.",
+    "differentialNote": "Stabil hastada kontrastlı BT daha ayrıntılı bilgi sağlar.",
+    "keywords": [
+      "FAST",
+      "travma",
+      "serbest sıvı",
+      "instabil hasta"
+    ]
+  },
+  "tus-pearl-general-surgery-440-spot": {
+    "front": "Travma hastasında hipotansiyon, trakeal deviasyon ve tek taraflı solunum sesinde azalma varsa ilk işlem nedir?",
+    "back": "Acil iğne dekompresyonu. Tansiyon pnömotoraks dolaşımı bozduğu için görüntüleme beklenmeden basınç boşaltılır.",
+    "answer": "Acil iğne dekompresyonu. Tansiyon pnömotoraks dolaşımı bozduğu için görüntüleme beklenmeden basınç boşaltılır.",
+    "explanation": "Tansiyon pnömotoraks dolaşımı bozduğu için görüntüleme beklenmeden basınç boşaltılır. Basit pnömotoraksta hasta stabilse görüntüleme ve tüp torakostomi planlanabilir.",
+    "tusTip": "Tansiyon pnömotoraks dolaşımı bozduğu için görüntüleme beklenmeden basınç boşaltılır. Basit pnömotoraksta hasta stabilse görüntüleme ve tüp torakostomi planlanabilir.",
+    "differentialNote": "Basit pnömotoraksta hasta stabilse görüntüleme ve tüp torakostomi planlanabilir.",
+    "keywords": [
+      "tansiyon pnömotoraks",
+      "iğne dekompresyon",
+      "hipotansiyon",
+      "trakeal deviasyon"
+    ]
+  },
+  "tus-pearl-general-surgery-440-extra": {
+    "front": "Tansiyon pnömotoraks başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Basit pnömotoraksta hasta stabilse görüntüleme ve tüp torakostomi planlanabilir.",
+    "answer": "Basit pnömotoraksta hasta stabilse görüntüleme ve tüp torakostomi planlanabilir.",
+    "explanation": "Tansiyon pnömotoraks dolaşımı bozduğu için görüntüleme beklenmeden basınç boşaltılır. Basit pnömotoraksta hasta stabilse görüntüleme ve tüp torakostomi planlanabilir.",
+    "tusTip": "Tansiyon pnömotoraks için sınavda hedeflenen ayrım genellikle şudur: Basit pnömotoraksta hasta stabilse görüntüleme ve tüp torakostomi planlanabilir.",
+    "differentialNote": "Basit pnömotoraksta hasta stabilse görüntüleme ve tüp torakostomi planlanabilir.",
+    "keywords": [
+      "tansiyon pnömotoraks",
+      "iğne dekompresyon",
+      "hipotansiyon",
+      "trakeal deviasyon"
+    ]
+  },
+  "tus-pearl-general-surgery-441-spot": {
+    "front": "Tüp torakostomi sonrası çok yüksek başlangıç kan drenajı hangi yaklaşımı gerektirir?",
+    "back": "Acil torakotomi değerlendirmesi. Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür.",
+    "answer": "Acil torakotomi değerlendirmesi. Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür.",
+    "explanation": "Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür. Küçük hemotoraks konservatif izlenebilir; masif kanama cerrahi acildir.",
+    "tusTip": "Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür. Küçük hemotoraks konservatif izlenebilir; masif kanama cerrahi acildir.",
+    "differentialNote": "Küçük hemotoraks konservatif izlenebilir; masif kanama cerrahi acildir.",
+    "keywords": [
+      "masif hemotoraks",
+      "tüp torakostomi",
+      "torakotomi",
+      "devam eden kanama"
+    ]
+  },
+  "tus-pearl-general-surgery-441-extra": {
+    "front": "Masif hemotoraks için en kritik ayırıcı nokta nedir?",
+    "back": "Küçük hemotoraks konservatif izlenebilir; masif kanama cerrahi acildir.",
+    "answer": "Küçük hemotoraks konservatif izlenebilir; masif kanama cerrahi acildir.",
+    "explanation": "Masif veya devam eden kanama büyük damar ya da akciğer yaralanmasını düşündürür. Küçük hemotoraks konservatif izlenebilir; masif kanama cerrahi acildir.",
+    "tusTip": "Masif hemotoraks karıştırıldığında cevabı netleştiren karşılaştırma: Küçük hemotoraks konservatif izlenebilir; masif kanama cerrahi acildir.",
+    "differentialNote": "Küçük hemotoraks konservatif izlenebilir; masif kanama cerrahi acildir.",
+    "keywords": [
+      "masif hemotoraks",
+      "tüp torakostomi",
+      "torakotomi",
+      "devam eden kanama"
+    ]
+  },
+  "tus-pearl-general-surgery-442-spot": {
+    "front": "Çoklu komşu kot kırıkları sonrası paradoksal göğüs duvarı hareketi hangi tabloyu düşündürür?",
+    "back": "Flail chest. Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir.",
+    "answer": "Flail chest. Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir.",
+    "explanation": "Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir. Basit kot kırığında göğüs duvarı segmenti serbestleşmez.",
+    "tusTip": "Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir. Basit kot kırığında göğüs duvarı segmenti serbestleşmez.",
+    "differentialNote": "Basit kot kırığında göğüs duvarı segmenti serbestleşmez.",
+    "keywords": [
+      "flail chest",
+      "paradoks hareket",
+      "çoklu kot kırığı",
+      "kontüzyon"
+    ]
+  },
+  "tus-pearl-general-surgery-442-extra": {
+    "front": "Flail chest karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Basit kot kırığında göğüs duvarı segmenti serbestleşmez.",
+    "answer": "Basit kot kırığında göğüs duvarı segmenti serbestleşmez.",
+    "explanation": "Göğüs duvarı segmenti ventilasyon sırasında ters hareket eder ve pulmoner kontüzyon eşlik edebilir. Basit kot kırığında göğüs duvarı segmenti serbestleşmez.",
+    "tusTip": "Flail chest kartında ayırıcı değer taşıyan nokta: Basit kot kırığında göğüs duvarı segmenti serbestleşmez.",
+    "differentialNote": "Basit kot kırığında göğüs duvarı segmenti serbestleşmez.",
+    "keywords": [
+      "flail chest",
+      "paradoks hareket",
+      "çoklu kot kırığı",
+      "kontüzyon"
+    ]
+  },
+  "tus-pearl-general-surgery-443-spot": {
+    "front": "Şiddetli karın ağrısına rağmen muayene bulgularının başlangıçta silik olması hangi vasküler acili düşündürür?",
+    "back": "Akut mezenter iskemi. Barsak iskemisinde ağrı muayene bulgusuna göre orantısız olabilir.",
+    "answer": "Akut mezenter iskemi. Barsak iskemisinde ağrı muayene bulgusuna göre orantısız olabilir.",
+    "explanation": "Barsak iskemisinde ağrı muayene bulgusuna göre orantısız olabilir. Akut apandisitte lokal periton bulguları daha erken belirginleşebilir.",
+    "tusTip": "Barsak iskemisinde ağrı muayene bulgusuna göre orantısız olabilir. Akut apandisitte lokal periton bulguları daha erken belirginleşebilir.",
+    "differentialNote": "Akut apandisitte lokal periton bulguları daha erken belirginleşebilir.",
+    "keywords": [
+      "mezenter iskemi",
+      "orantısız ağrı",
+      "atriyal fibrilasyon",
+      "laktat"
+    ]
+  },
+  "tus-pearl-general-surgery-443-extra": {
+    "front": "Akut mezenter iskemi başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Akut apandisitte lokal periton bulguları daha erken belirginleşebilir.",
+    "answer": "Akut apandisitte lokal periton bulguları daha erken belirginleşebilir.",
+    "explanation": "Barsak iskemisinde ağrı muayene bulgusuna göre orantısız olabilir. Akut apandisitte lokal periton bulguları daha erken belirginleşebilir.",
+    "tusTip": "Akut mezenter iskemi için sınavda hedeflenen ayrım genellikle şudur: Akut apandisitte lokal periton bulguları daha erken belirginleşebilir.",
+    "differentialNote": "Akut apandisitte lokal periton bulguları daha erken belirginleşebilir.",
+    "keywords": [
+      "mezenter iskemi",
+      "orantısız ağrı",
+      "atriyal fibrilasyon",
+      "laktat"
+    ]
+  },
+  "tus-pearl-general-surgery-444-spot": {
+    "front": "Fluktuasyon veren ağrılı perianal şişlikte temel tedavi nedir?",
+    "back": "İnsizyon ve drenaj. Apse tedavisinde antibiyotik tek başına yeterli değildir; kaynak kontrolü gerekir.",
+    "answer": "İnsizyon ve drenaj. Apse tedavisinde antibiyotik tek başına yeterli değildir; kaynak kontrolü gerekir.",
+    "explanation": "Apse tedavisinde antibiyotik tek başına yeterli değildir; kaynak kontrolü gerekir. Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez.",
+    "tusTip": "Apse tedavisinde antibiyotik tek başına yeterli değildir; kaynak kontrolü gerekir. Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez.",
+    "differentialNote": "Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez.",
+    "keywords": [
+      "perianal apse",
+      "insizyon",
+      "drenaj",
+      "fluktuasyon"
+    ]
+  },
+  "tus-pearl-general-surgery-444-extra": {
+    "front": "Perianal apse sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez.",
+    "answer": "Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez.",
+    "explanation": "Apse tedavisinde antibiyotik tek başına yeterli değildir; kaynak kontrolü gerekir. Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez.",
+    "tusTip": "Perianal apse karıştırıldığında cevabı netleştiren karşılaştırma: Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez.",
+    "differentialNote": "Anal fissürde şiddetli defekasyon ağrısı olur ancak fluktuasyon veren apse beklenmez.",
+    "keywords": [
+      "perianal apse",
+      "insizyon",
+      "drenaj",
+      "fluktuasyon"
+    ]
+  },
+  "tus-pearl-general-surgery-445-spot": {
+    "front": "Şiddetli ağrı, hızlı ilerleyen yumuşak doku enfeksiyonu ve sistemik toksisite varsa temel yaklaşım nedir?",
+    "back": "Acil cerrahi debridman. Nekrotizan fasiitte nekrotik dokunun hızla uzaklaştırılması hayat kurtarıcıdır.",
+    "answer": "Acil cerrahi debridman. Nekrotizan fasiitte nekrotik dokunun hızla uzaklaştırılması hayat kurtarıcıdır.",
+    "explanation": "Nekrotizan fasiitte nekrotik dokunun hızla uzaklaştırılması hayat kurtarıcıdır. Sadece antibiyotik tedavisi kaynak kontrolü olmadan yeterli değildir.",
+    "tusTip": "Nekrotizan fasiitte nekrotik dokunun hızla uzaklaştırılması hayat kurtarıcıdır. Sadece antibiyotik tedavisi kaynak kontrolü olmadan yeterli değildir.",
+    "differentialNote": "Sadece antibiyotik tedavisi kaynak kontrolü olmadan yeterli değildir.",
+    "keywords": [
+      "nekrotizan fasiit",
+      "cerrahi debridman",
+      "şiddetli ağrı",
+      "toksisite"
+    ]
+  },
+  "tus-pearl-general-surgery-445-extra": {
+    "front": "Nekrotizan fasiit için en kritik ayırıcı nokta nedir?",
+    "back": "Sadece antibiyotik tedavisi kaynak kontrolü olmadan yeterli değildir.",
+    "answer": "Sadece antibiyotik tedavisi kaynak kontrolü olmadan yeterli değildir.",
+    "explanation": "Nekrotizan fasiitte nekrotik dokunun hızla uzaklaştırılması hayat kurtarıcıdır. Sadece antibiyotik tedavisi kaynak kontrolü olmadan yeterli değildir.",
+    "tusTip": "Nekrotizan fasiit kartında ayırıcı değer taşıyan nokta: Sadece antibiyotik tedavisi kaynak kontrolü olmadan yeterli değildir.",
+    "differentialNote": "Sadece antibiyotik tedavisi kaynak kontrolü olmadan yeterli değildir.",
+    "keywords": [
+      "nekrotizan fasiit",
+      "cerrahi debridman",
+      "şiddetli ağrı",
+      "toksisite"
+    ]
+  },
+  "tus-pearl-general-surgery-446-spot": {
+    "front": "Perineal bölgede nekrotizan enfeksiyon ve sepsis hangi cerrahi acili düşündürür?",
+    "back": "Fournier gangreni. Polimikrobiyal nekrotizan fasiit acil debridman ve geniş spektrumlu antibiyotik gerektirir.",
+    "answer": "Fournier gangreni. Polimikrobiyal nekrotizan fasiit acil debridman ve geniş spektrumlu antibiyotik gerektirir.",
+    "explanation": "Polimikrobiyal nekrotizan fasiit acil debridman ve geniş spektrumlu antibiyotik gerektirir. Basit selülitte hızlı nekroz ve krepitasyon beklenmez.",
+    "tusTip": "Polimikrobiyal nekrotizan fasiit acil debridman ve geniş spektrumlu antibiyotik gerektirir. Basit selülitte hızlı nekroz ve krepitasyon beklenmez.",
+    "differentialNote": "Basit selülitte hızlı nekroz ve krepitasyon beklenmez.",
+    "keywords": [
+      "Fournier",
+      "perine",
+      "nekrotizan fasiit",
+      "debridman"
+    ]
+  },
+  "tus-pearl-general-surgery-446-extra": {
+    "front": "Fournier gangreni karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Basit selülitte hızlı nekroz ve krepitasyon beklenmez.",
+    "answer": "Basit selülitte hızlı nekroz ve krepitasyon beklenmez.",
+    "explanation": "Polimikrobiyal nekrotizan fasiit acil debridman ve geniş spektrumlu antibiyotik gerektirir. Basit selülitte hızlı nekroz ve krepitasyon beklenmez.",
+    "tusTip": "Fournier gangreni için sınavda hedeflenen ayrım genellikle şudur: Basit selülitte hızlı nekroz ve krepitasyon beklenmez.",
+    "differentialNote": "Basit selülitte hızlı nekroz ve krepitasyon beklenmez.",
+    "keywords": [
+      "Fournier",
+      "perine",
+      "nekrotizan fasiit",
+      "debridman"
+    ]
+  },
+  "tus-pearl-general-surgery-447-spot": {
+    "front": "BI-RADS 4 meme lezyonunda ilk uygun yaklaşım nedir?",
+    "back": "Görüntüleme eşliğinde biyopsi. BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir.",
+    "answer": "Görüntüleme eşliğinde biyopsi. BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir.",
+    "explanation": "BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir. Altı ay izlem BI-RADS 3 olası benign lezyonlar için daha uygundur.",
+    "tusTip": "BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir. Altı ay izlem BI-RADS 3 olası benign lezyonlar için daha uygundur.",
+    "differentialNote": "Altı ay izlem BI-RADS 3 olası benign lezyonlar için daha uygundur.",
+    "keywords": [
+      "BI-RADS 4",
+      "meme biyopsisi",
+      "şüpheli lezyon",
+      "core biyopsi"
+    ]
+  },
+  "tus-pearl-general-surgery-447-extra": {
+    "front": "BI-RADS 4 yaklaşımı sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Altı ay izlem BI-RADS 3 olası benign lezyonlar için daha uygundur.",
+    "answer": "Altı ay izlem BI-RADS 3 olası benign lezyonlar için daha uygundur.",
+    "explanation": "BI-RADS 4 şüpheli lezyondur; histolojik doğrulama gerekir. Altı ay izlem BI-RADS 3 olası benign lezyonlar için daha uygundur.",
+    "tusTip": "BI-RADS 4 yaklaşımı karıştırıldığında cevabı netleştiren karşılaştırma: Altı ay izlem BI-RADS 3 olası benign lezyonlar için daha uygundur.",
+    "differentialNote": "Altı ay izlem BI-RADS 3 olası benign lezyonlar için daha uygundur.",
+    "keywords": [
+      "BI-RADS 4",
+      "meme biyopsisi",
+      "şüpheli lezyon",
+      "core biyopsi"
+    ]
+  },
+  "tus-pearl-general-surgery-448-spot": {
+    "front": "Tiroidde foliküler neoplazide benign-malign ayrımı için hangi özellik gerekir?",
+    "back": "Kapsül veya damar invazyonunun histolojik gösterilmesi.",
+    "answer": "Kapsül veya damar invazyonunun histolojik gösterilmesi.",
+    "explanation": "İİAB foliküler mimariyi gösterir ancak invazyonu güvenilir biçimde değerlendiremez. Papiller karsinom nükleer özelliklerle İİAB’de daha kolay tanınabilir.",
+    "tusTip": "İİAB foliküler mimariyi gösterir ancak invazyonu güvenilir biçimde değerlendiremez. Papiller karsinom nükleer özelliklerle İİAB’de daha kolay tanınabilir.",
+    "differentialNote": "Papiller karsinom nükleer özelliklerle İİAB’de daha kolay tanınabilir.",
+    "keywords": [
+      "foliküler neoplazi",
+      "kapsül invazyonu",
+      "damar invazyonu",
+      "lobektomi"
+    ]
+  },
+  "tus-pearl-general-surgery-448-extra": {
+    "front": "Foliküler tiroid neoplazisi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Papiller karsinom nükleer özelliklerle İİAB’de daha kolay tanınabilir.",
+    "answer": "Papiller karsinom nükleer özelliklerle İİAB’de daha kolay tanınabilir.",
+    "explanation": "İİAB foliküler mimariyi gösterir ancak invazyonu güvenilir biçimde değerlendiremez. Papiller karsinom nükleer özelliklerle İİAB’de daha kolay tanınabilir.",
+    "tusTip": "Foliküler tiroid neoplazisi kartında ayırıcı değer taşıyan nokta: Papiller karsinom nükleer özelliklerle İİAB’de daha kolay tanınabilir.",
+    "differentialNote": "Papiller karsinom nükleer özelliklerle İİAB’de daha kolay tanınabilir.",
+    "keywords": [
+      "foliküler neoplazi",
+      "kapsül invazyonu",
+      "damar invazyonu",
+      "lobektomi"
+    ]
+  },
+  "tus-pearl-general-surgery-449-spot": {
+    "front": "Kalsitonin yüksekliği hangi tiroid kanserini düşündürür?",
+    "back": "Medüller tiroid karsinomu. Parafoliküler C hücrelerinden köken alır ve MEN2 ile ilişkili olabilir.",
+    "answer": "Medüller tiroid karsinomu. Parafoliküler C hücrelerinden köken alır ve MEN2 ile ilişkili olabilir.",
+    "explanation": "Parafoliküler C hücrelerinden köken alır ve MEN2 ile ilişkili olabilir. Papiller tiroid kanseri lenfatik yayılım ve nükleer özelliklerle öne çıkar.",
+    "tusTip": "Parafoliküler C hücrelerinden köken alır ve MEN2 ile ilişkili olabilir. Papiller tiroid kanseri lenfatik yayılım ve nükleer özelliklerle öne çıkar.",
+    "differentialNote": "Papiller tiroid kanseri lenfatik yayılım ve nükleer özelliklerle öne çıkar.",
+    "keywords": [
+      "medüller tiroid",
+      "kalsitonin",
+      "C hücresi",
+      "MEN2"
+    ]
+  },
+  "tus-pearl-general-surgery-449-extra": {
+    "front": "Medüller tiroid karsinomu için en kritik ayırıcı nokta nedir?",
+    "back": "Papiller tiroid kanseri lenfatik yayılım ve nükleer özelliklerle öne çıkar.",
+    "answer": "Papiller tiroid kanseri lenfatik yayılım ve nükleer özelliklerle öne çıkar.",
+    "explanation": "Parafoliküler C hücrelerinden köken alır ve MEN2 ile ilişkili olabilir. Papiller tiroid kanseri lenfatik yayılım ve nükleer özelliklerle öne çıkar.",
+    "tusTip": "Medüller tiroid karsinomu için sınavda hedeflenen ayrım genellikle şudur: Papiller tiroid kanseri lenfatik yayılım ve nükleer özelliklerle öne çıkar.",
+    "differentialNote": "Papiller tiroid kanseri lenfatik yayılım ve nükleer özelliklerle öne çıkar.",
+    "keywords": [
+      "medüller tiroid",
+      "kalsitonin",
+      "C hücresi",
+      "MEN2"
+    ]
+  },
+  "tus-pearl-general-surgery-450-spot": {
+    "front": "Feokromositoma cerrahisi öncesi önce hangi adrenerjik blokaj yapılmalıdır?",
+    "back": "Alfa blokaj. Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir.",
+    "answer": "Alfa blokaj. Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir.",
+    "explanation": "Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir. Beta blokaj taşikardi için alfa blokajdan sonra eklenebilir.",
+    "tusTip": "Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir. Beta blokaj taşikardi için alfa blokajdan sonra eklenebilir.",
+    "differentialNote": "Beta blokaj taşikardi için alfa blokajdan sonra eklenebilir.",
+    "keywords": [
+      "feokromositoma",
+      "alfa blokaj",
+      "fenoksibenzamin",
+      "beta blokaj"
+    ]
+  },
+  "tus-pearl-general-surgery-450-extra": {
+    "front": "Feokromositomada ameliyat öncesi blokaj karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Beta blokaj taşikardi için alfa blokajdan sonra eklenebilir.",
+    "answer": "Beta blokaj taşikardi için alfa blokajdan sonra eklenebilir.",
+    "explanation": "Önce alfa blokaj yapılmadan beta blokaj verilmesi hipertansif krizi ağırlaştırabilir. Beta blokaj taşikardi için alfa blokajdan sonra eklenebilir.",
+    "tusTip": "Feokromositomada ameliyat öncesi blokaj karıştırıldığında cevabı netleştiren karşılaştırma: Beta blokaj taşikardi için alfa blokajdan sonra eklenebilir.",
+    "differentialNote": "Beta blokaj taşikardi için alfa blokajdan sonra eklenebilir.",
+    "keywords": [
+      "feokromositoma",
+      "alfa blokaj",
+      "fenoksibenzamin",
+      "beta blokaj"
+    ]
+  },
+  "tus-pearl-general-surgery-451-spot": {
+    "front": "Semptomatik primer hiperparatiroidide küratif tedavi nedir?",
+    "back": "Paratiroidektomi. Otonom PTH salgısı hiperkalsemi ve kemik-böbrek bulgularına yol açar.",
+    "answer": "Paratiroidektomi. Otonom PTH salgısı hiperkalsemi ve kemik-böbrek bulgularına yol açar.",
+    "explanation": "Otonom PTH salgısı hiperkalsemi ve kemik-böbrek bulgularına yol açar. Kalsimimetikler seçilmiş hastalarda kullanılabilir ancak cerrahi küratif yaklaşımdır.",
+    "tusTip": "Otonom PTH salgısı hiperkalsemi ve kemik-böbrek bulgularına yol açar. Kalsimimetikler seçilmiş hastalarda kullanılabilir ancak cerrahi küratif yaklaşımdır.",
+    "differentialNote": "Kalsimimetikler seçilmiş hastalarda kullanılabilir ancak cerrahi küratif yaklaşımdır.",
+    "keywords": [
+      "primer hiperparatiroidi",
+      "paratiroidektomi",
+      "hiperkalsemi",
+      "PTH"
+    ]
+  },
+  "tus-pearl-general-surgery-451-extra": {
+    "front": "Primer hiperparatiroidi cerrahisi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Kalsimimetikler seçilmiş hastalarda kullanılabilir ancak cerrahi küratif yaklaşımdır.",
+    "answer": "Kalsimimetikler seçilmiş hastalarda kullanılabilir ancak cerrahi küratif yaklaşımdır.",
+    "explanation": "Otonom PTH salgısı hiperkalsemi ve kemik-böbrek bulgularına yol açar. Kalsimimetikler seçilmiş hastalarda kullanılabilir ancak cerrahi küratif yaklaşımdır.",
+    "tusTip": "Primer hiperparatiroidi cerrahisi kartında ayırıcı değer taşıyan nokta: Kalsimimetikler seçilmiş hastalarda kullanılabilir ancak cerrahi küratif yaklaşımdır.",
+    "differentialNote": "Kalsimimetikler seçilmiş hastalarda kullanılabilir ancak cerrahi küratif yaklaşımdır.",
+    "keywords": [
+      "primer hiperparatiroidi",
+      "paratiroidektomi",
+      "hiperkalsemi",
+      "PTH"
+    ]
+  },
+  "tus-pearl-general-surgery-452-spot": {
+    "front": "Hernide sürekli ağrı, hassasiyet ve sistemik bulgu gelişmesi neyi düşündürür?",
+    "back": "Strangülasyon. Kan akımı bozulduğunda barsak iskemisi ve nekroz riski oluşur.",
+    "answer": "Strangülasyon. Kan akımı bozulduğunda barsak iskemisi ve nekroz riski oluşur.",
+    "explanation": "Kan akımı bozulduğunda barsak iskemisi ve nekroz riski oluşur. Redükte edilemeyen herni inkarsere olabilir; iskemi bulguları strangülasyonu düşündürür.",
+    "tusTip": "Kan akımı bozulduğunda barsak iskemisi ve nekroz riski oluşur. Redükte edilemeyen herni inkarsere olabilir; iskemi bulguları strangülasyonu düşündürür.",
+    "differentialNote": "Redükte edilemeyen herni inkarsere olabilir; iskemi bulguları strangülasyonu düşündürür.",
+    "keywords": [
+      "strangüle herni",
+      "sürekli ağrı",
+      "iskemi",
+      "acil cerrahi"
+    ]
+  },
+  "tus-pearl-general-surgery-452-extra": {
+    "front": "Strangüle herni başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Redükte edilemeyen herni inkarsere olabilir; iskemi bulguları strangülasyonu düşündürür.",
+    "answer": "Redükte edilemeyen herni inkarsere olabilir; iskemi bulguları strangülasyonu düşündürür.",
+    "explanation": "Kan akımı bozulduğunda barsak iskemisi ve nekroz riski oluşur. Redükte edilemeyen herni inkarsere olabilir; iskemi bulguları strangülasyonu düşündürür.",
+    "tusTip": "Strangüle herni için sınavda hedeflenen ayrım genellikle şudur: Redükte edilemeyen herni inkarsere olabilir; iskemi bulguları strangülasyonu düşündürür.",
+    "differentialNote": "Redükte edilemeyen herni inkarsere olabilir; iskemi bulguları strangülasyonu düşündürür.",
+    "keywords": [
+      "strangüle herni",
+      "sürekli ağrı",
+      "iskemi",
+      "acil cerrahi"
+    ]
+  },
+  "tus-pearl-general-surgery-453-spot": {
+    "front": "Sol alt kadran ağrısı ve ateşle gelen divertikülit şüphesinde en yararlı görüntüleme hangisidir?",
+    "back": "Kontrastlı abdominal BT. BT inflamasyonun yaygınlığını, apse ve perforasyonu değerlendirebilir.",
+    "answer": "Kontrastlı abdominal BT. BT inflamasyonun yaygınlığını, apse ve perforasyonu değerlendirebilir.",
+    "explanation": "BT inflamasyonun yaygınlığını, apse ve perforasyonu değerlendirebilir. Akut dönemde kolonoskopi perforasyon riskini artırabilir.",
+    "tusTip": "BT inflamasyonun yaygınlığını, apse ve perforasyonu değerlendirebilir. Akut dönemde kolonoskopi perforasyon riskini artırabilir.",
+    "differentialNote": "Akut dönemde kolonoskopi perforasyon riskini artırabilir.",
+    "keywords": [
+      "divertikülit",
+      "sol alt kadran",
+      "BT",
+      "apse"
+    ]
+  },
+  "tus-pearl-general-surgery-453-extra": {
+    "front": "Akut divertikülit tanısı için en kritik ayırıcı nokta nedir?",
+    "back": "Akut dönemde kolonoskopi perforasyon riskini artırabilir.",
+    "answer": "Akut dönemde kolonoskopi perforasyon riskini artırabilir.",
+    "explanation": "BT inflamasyonun yaygınlığını, apse ve perforasyonu değerlendirebilir. Akut dönemde kolonoskopi perforasyon riskini artırabilir.",
+    "tusTip": "Akut divertikülit tanısı karıştırıldığında cevabı netleştiren karşılaştırma: Akut dönemde kolonoskopi perforasyon riskini artırabilir.",
+    "differentialNote": "Akut dönemde kolonoskopi perforasyon riskini artırabilir.",
+    "keywords": [
+      "divertikülit",
+      "sol alt kadran",
+      "BT",
+      "apse"
+    ]
+  },
+  "tus-pearl-general-surgery-454-spot": {
+    "front": "Sınırlı ve rezektabl karaciğer metastazı olan kolorektal kanserde hangi yaklaşım sağkalımı artırabilir?",
+    "back": "Metastaz rezeksiyonu. Seçilmiş hastalarda karaciğer metastazektomisi küratif niyetli tedavinin parçası olabilir.",
+    "answer": "Metastaz rezeksiyonu. Seçilmiş hastalarda karaciğer metastazektomisi küratif niyetli tedavinin parçası olabilir.",
+    "explanation": "Seçilmiş hastalarda karaciğer metastazektomisi küratif niyetli tedavinin parçası olabilir. Yaygın kontrolsüz metastazda sistemik tedavi öncelikli olur.",
+    "tusTip": "Seçilmiş hastalarda karaciğer metastazektomisi küratif niyetli tedavinin parçası olabilir. Yaygın kontrolsüz metastazda sistemik tedavi öncelikli olur.",
+    "differentialNote": "Yaygın kontrolsüz metastazda sistemik tedavi öncelikli olur.",
+    "keywords": [
+      "kolorektal kanser",
+      "karaciğer metastazı",
+      "metastazektomi",
+      "rezektabl"
+    ]
+  },
+  "tus-pearl-general-surgery-454-extra": {
+    "front": "Kolorektal kanserde karaciğer metastazı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Yaygın kontrolsüz metastazda sistemik tedavi öncelikli olur.",
+    "answer": "Yaygın kontrolsüz metastazda sistemik tedavi öncelikli olur.",
+    "explanation": "Seçilmiş hastalarda karaciğer metastazektomisi küratif niyetli tedavinin parçası olabilir. Yaygın kontrolsüz metastazda sistemik tedavi öncelikli olur.",
+    "tusTip": "Kolorektal kanserde karaciğer metastazı kartında ayırıcı değer taşıyan nokta: Yaygın kontrolsüz metastazda sistemik tedavi öncelikli olur.",
+    "differentialNote": "Yaygın kontrolsüz metastazda sistemik tedavi öncelikli olur.",
+    "keywords": [
+      "kolorektal kanser",
+      "karaciğer metastazı",
+      "metastazektomi",
+      "rezektabl"
+    ]
+  },
+  "tus-pearl-general-surgery-455-spot": {
+    "front": "Ağrısız sarılık ve Courvoisier bulgusu en çok hangi maligniteyi düşündürür?",
+    "back": "Pankreas başı kanseri. Pankreas başındaki kitle distal koledoku tıkayarak sarılık yapabilir.",
+    "answer": "Pankreas başı kanseri. Pankreas başındaki kitle distal koledoku tıkayarak sarılık yapabilir.",
+    "explanation": "Pankreas başındaki kitle distal koledoku tıkayarak sarılık yapabilir. Safra taşı kolanjiti genellikle ağrı ve ateşle birlikte seyreder.",
+    "tusTip": "Pankreas başındaki kitle distal koledoku tıkayarak sarılık yapabilir. Safra taşı kolanjiti genellikle ağrı ve ateşle birlikte seyreder.",
+    "differentialNote": "Safra taşı kolanjiti genellikle ağrı ve ateşle birlikte seyreder.",
+    "keywords": [
+      "pankreas başı kanseri",
+      "ağrısız sarılık",
+      "Courvoisier",
+      "koledok obstrüksiyonu"
+    ]
+  },
+  "tus-pearl-general-surgery-455-extra": {
+    "front": "Pankreas başı kanseri başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Safra taşı kolanjiti genellikle ağrı ve ateşle birlikte seyreder.",
+    "answer": "Safra taşı kolanjiti genellikle ağrı ve ateşle birlikte seyreder.",
+    "explanation": "Pankreas başındaki kitle distal koledoku tıkayarak sarılık yapabilir. Safra taşı kolanjiti genellikle ağrı ve ateşle birlikte seyreder.",
+    "tusTip": "Pankreas başı kanseri için sınavda hedeflenen ayrım genellikle şudur: Safra taşı kolanjiti genellikle ağrı ve ateşle birlikte seyreder.",
+    "differentialNote": "Safra taşı kolanjiti genellikle ağrı ve ateşle birlikte seyreder.",
+    "keywords": [
+      "pankreas başı kanseri",
+      "ağrısız sarılık",
+      "Courvoisier",
+      "koledok obstrüksiyonu"
+    ]
+  },
+  "tus-pearl-general-surgery-456-spot": {
+    "front": "Alt ekstremitede ani ağrı, solukluk, nabızsızlık ve parestezi varsa ilk medikal tedavi seçeneği nedir?",
+    "back": "İntravenöz heparin. Akut arter tıkanıklığında trombüs ilerlemesini azaltmak için antikoagülasyon başlanır.",
+    "answer": "İntravenöz heparin. Akut arter tıkanıklığında trombüs ilerlemesini azaltmak için antikoagülasyon başlanır.",
+    "explanation": "Akut arter tıkanıklığında trombüs ilerlemesini azaltmak için antikoagülasyon başlanır. Kronik periferik arter hastalığında kladikasyon yavaş gelişir ve akut 6P tablosu beklenmez.",
+    "tusTip": "Akut arter tıkanıklığında trombüs ilerlemesini azaltmak için antikoagülasyon başlanır. Kronik periferik arter hastalığında kladikasyon yavaş gelişir ve akut 6P tablosu beklenmez.",
+    "differentialNote": "Kronik periferik arter hastalığında kladikasyon yavaş gelişir ve akut 6P tablosu beklenmez.",
+    "keywords": [
+      "akut ekstremite iskemisi",
+      "6P",
+      "heparin",
+      "nabızsızlık"
+    ]
+  },
+  "tus-pearl-general-surgery-456-extra": {
+    "front": "Akut ekstremite iskemisi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Kronik periferik arter hastalığında kladikasyon yavaş gelişir ve akut 6P tablosu beklenmez.",
+    "answer": "Kronik periferik arter hastalığında kladikasyon yavaş gelişir ve akut 6P tablosu beklenmez.",
+    "explanation": "Akut arter tıkanıklığında trombüs ilerlemesini azaltmak için antikoagülasyon başlanır. Kronik periferik arter hastalığında kladikasyon yavaş gelişir ve akut 6P tablosu beklenmez.",
+    "tusTip": "Akut ekstremite iskemisi karıştırıldığında cevabı netleştiren karşılaştırma: Kronik periferik arter hastalığında kladikasyon yavaş gelişir ve akut 6P tablosu beklenmez.",
+    "differentialNote": "Kronik periferik arter hastalığında kladikasyon yavaş gelişir ve akut 6P tablosu beklenmez.",
+    "keywords": [
+      "akut ekstremite iskemisi",
+      "6P",
+      "heparin",
+      "nabızsızlık"
+    ]
+  },
+  "tus-pearl-general-surgery-457-spot": {
+    "front": "İlk 24 saatte yanık sıvı resüsitasyonunda sık kullanılan formül hangisidir?",
+    "back": "Parkland formülü. Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır.",
+    "answer": "Parkland formülü. Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır.",
+    "explanation": "Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır. Yüzeyel küçük yanıklar geniş sıvı resüsitasyonu gerektirmeyebilir.",
+    "tusTip": "Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır. Yüzeyel küçük yanıklar geniş sıvı resüsitasyonu gerektirmeyebilir.",
+    "differentialNote": "Yüzeyel küçük yanıklar geniş sıvı resüsitasyonu gerektirmeyebilir.",
+    "keywords": [
+      "yanık",
+      "Parkland",
+      "Ringer laktat",
+      "ilk 24 saat"
+    ]
+  },
+  "tus-pearl-general-surgery-457-extra": {
+    "front": "Yanıkta sıvı formülü için en kritik ayırıcı nokta nedir?",
+    "back": "Yüzeyel küçük yanıklar geniş sıvı resüsitasyonu gerektirmeyebilir.",
+    "answer": "Yüzeyel küçük yanıklar geniş sıvı resüsitasyonu gerektirmeyebilir.",
+    "explanation": "Kristalloid gereksinimi vücut ağırlığı ve yanık yüzdesine göre hesaplanır. Yüzeyel küçük yanıklar geniş sıvı resüsitasyonu gerektirmeyebilir.",
+    "tusTip": "Yanıkta sıvı formülü kartında ayırıcı değer taşıyan nokta: Yüzeyel küçük yanıklar geniş sıvı resüsitasyonu gerektirmeyebilir.",
+    "differentialNote": "Yüzeyel küçük yanıklar geniş sıvı resüsitasyonu gerektirmeyebilir.",
+    "keywords": [
+      "yanık",
+      "Parkland",
+      "Ringer laktat",
+      "ilk 24 saat"
+    ]
+  },
+  "tus-pearl-general-surgery-458-spot": {
+    "front": "Ateş, sağ alt kadran ağrısı ve lökositoza peritonit eklenmesi neyi düşündürür?",
+    "back": "Perfore apandisit. Perforasyon sonrası lokal veya yaygın peritoneal irritasyon gelişebilir.",
+    "answer": "Perfore apandisit. Perforasyon sonrası lokal veya yaygın peritoneal irritasyon gelişebilir.",
+    "explanation": "Perforasyon sonrası lokal veya yaygın peritoneal irritasyon gelişebilir. Basit gastroenteritte lokal periton bulgusu beklenmez.",
+    "tusTip": "Perforasyon sonrası lokal veya yaygın peritoneal irritasyon gelişebilir. Basit gastroenteritte lokal periton bulgusu beklenmez.",
+    "differentialNote": "Basit gastroenteritte lokal periton bulgusu beklenmez.",
+    "keywords": [
+      "apandisit",
+      "perforasyon",
+      "peritonit",
+      "lökositoz"
+    ]
+  },
+  "tus-pearl-general-surgery-458-extra": {
+    "front": "Akut apandisit komplikasyonu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Basit gastroenteritte lokal periton bulgusu beklenmez.",
+    "answer": "Basit gastroenteritte lokal periton bulgusu beklenmez.",
+    "explanation": "Perforasyon sonrası lokal veya yaygın peritoneal irritasyon gelişebilir. Basit gastroenteritte lokal periton bulgusu beklenmez.",
+    "tusTip": "Akut apandisit komplikasyonu için sınavda hedeflenen ayrım genellikle şudur: Basit gastroenteritte lokal periton bulgusu beklenmez.",
+    "differentialNote": "Basit gastroenteritte lokal periton bulgusu beklenmez.",
+    "keywords": [
+      "apandisit",
+      "perforasyon",
+      "peritonit",
+      "lökositoz"
+    ]
+  },
+  "tus-pearl-general-surgery-459-spot": {
+    "front": "Yaşlı hastada mekanik ileus ve pnömobilia birlikteliği hangi tabloyu düşündürür?",
+    "back": "Safra taşı ileusu. Kolesistoenterik fistül ile geçen taş barsak obstrüksiyonu yapabilir.",
+    "answer": "Safra taşı ileusu. Kolesistoenterik fistül ile geçen taş barsak obstrüksiyonu yapabilir.",
+    "explanation": "Kolesistoenterik fistül ile geçen taş barsak obstrüksiyonu yapabilir. Adinamik ileusta mekanik tıkanıklık bulguları ve pnömobilia paterni beklenmez.",
+    "tusTip": "Kolesistoenterik fistül ile geçen taş barsak obstrüksiyonu yapabilir. Adinamik ileusta mekanik tıkanıklık bulguları ve pnömobilia paterni beklenmez.",
+    "differentialNote": "Adinamik ileusta mekanik tıkanıklık bulguları ve pnömobilia paterni beklenmez.",
+    "keywords": [
+      "safra taşı ileusu",
+      "pnömobilia",
+      "mekanik obstrüksiyon",
+      "fistül"
+    ]
+  },
+  "tus-pearl-general-surgery-459-extra": {
+    "front": "Safra taşı ileus sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Adinamik ileusta mekanik tıkanıklık bulguları ve pnömobilia paterni beklenmez.",
+    "answer": "Adinamik ileusta mekanik tıkanıklık bulguları ve pnömobilia paterni beklenmez.",
+    "explanation": "Kolesistoenterik fistül ile geçen taş barsak obstrüksiyonu yapabilir. Adinamik ileusta mekanik tıkanıklık bulguları ve pnömobilia paterni beklenmez.",
+    "tusTip": "Safra taşı ileus karıştırıldığında cevabı netleştiren karşılaştırma: Adinamik ileusta mekanik tıkanıklık bulguları ve pnömobilia paterni beklenmez.",
+    "differentialNote": "Adinamik ileusta mekanik tıkanıklık bulguları ve pnömobilia paterni beklenmez.",
+    "keywords": [
+      "safra taşı ileusu",
+      "pnömobilia",
+      "mekanik obstrüksiyon",
+      "fistül Kadın Hastalıkları ve Doğum (obstetrics-gynecology)"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-460-spot": {
+    "front": "Preterm prematür membran rüptüründe fetal akciğer matürasyonu için hangi tedavi verilir?",
+    "back": "Antenatal kortikosteroid. Uygun gestasyon haftasında steroid neonatal solunum morbiditesini azaltır.",
+    "answer": "Antenatal kortikosteroid. Uygun gestasyon haftasında steroid neonatal solunum morbiditesini azaltır.",
+    "explanation": "Uygun gestasyon haftasında steroid neonatal solunum morbiditesini azaltır. Koryoamniyonit varsa gebeliği uzatma yaklaşımı uygun değildir.",
+    "tusTip": "Uygun gestasyon haftasında steroid neonatal solunum morbiditesini azaltır. Koryoamniyonit varsa gebeliği uzatma yaklaşımı uygun değildir.",
+    "differentialNote": "Koryoamniyonit varsa gebeliği uzatma yaklaşımı uygun değildir.",
+    "keywords": [
+      "PPROM",
+      "antenatal steroid",
+      "preterm",
+      "akciğer maturasyonu"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-460-extra": {
+    "front": "PPROM yönetimi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Koryoamniyonit varsa gebeliği uzatma yaklaşımı uygun değildir.",
+    "answer": "Koryoamniyonit varsa gebeliği uzatma yaklaşımı uygun değildir.",
+    "explanation": "Uygun gestasyon haftasında steroid neonatal solunum morbiditesini azaltır. Koryoamniyonit varsa gebeliği uzatma yaklaşımı uygun değildir.",
+    "tusTip": "PPROM yönetimi kartında ayırıcı değer taşıyan nokta: Koryoamniyonit varsa gebeliği uzatma yaklaşımı uygun değildir.",
+    "differentialNote": "Koryoamniyonit varsa gebeliği uzatma yaklaşımı uygun değildir.",
+    "keywords": [
+      "PPROM",
+      "antenatal steroid",
+      "preterm",
+      "akciğer maturasyonu"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-461-spot": {
+    "front": "Ateş, uterin hassasiyet ve kötü kokulu amniyotik sıvı varsa obstetrik yaklaşım nedir?",
+    "back": "Antibiyotik başlanması ve doğumun sağlanması. Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir.",
+    "answer": "Antibiyotik başlanması ve doğumun sağlanması. Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir.",
+    "explanation": "Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir. Sadece tokoliz enfekte gebelikte riski artırabilir.",
+    "tusTip": "Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir. Sadece tokoliz enfekte gebelikte riski artırabilir.",
+    "differentialNote": "Sadece tokoliz enfekte gebelikte riski artırabilir.",
+    "keywords": [
+      "koryoamniyonit",
+      "ateş",
+      "uterin hassasiyet",
+      "doğum"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-461-extra": {
+    "front": "Koryoamniyonit yaklaşımı için en kritik ayırıcı nokta nedir?",
+    "back": "Sadece tokoliz enfekte gebelikte riski artırabilir.",
+    "answer": "Sadece tokoliz enfekte gebelikte riski artırabilir.",
+    "explanation": "Koryoamniyonit maternal ve fetal enfeksiyon riskini artırır; gebeliği sürdürmek uygun değildir. Sadece tokoliz enfekte gebelikte riski artırabilir.",
+    "tusTip": "Koryoamniyonit yaklaşımı için sınavda hedeflenen ayrım genellikle şudur: Sadece tokoliz enfekte gebelikte riski artırabilir.",
+    "differentialNote": "Sadece tokoliz enfekte gebelikte riski artırabilir.",
+    "keywords": [
+      "koryoamniyonit",
+      "ateş",
+      "uterin hassasiyet",
+      "doğum"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-462-spot": {
+    "front": "Geçirilmiş sezaryen ve plasenta previa birlikteliği hangi plasental invazyon bozukluğu riskini artırır?",
+    "back": "Plasenta akreata spektrumu. Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir.",
+    "answer": "Plasenta akreata spektrumu. Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir.",
+    "explanation": "Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir. Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "tusTip": "Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir. Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "differentialNote": "Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "keywords": [
+      "plasenta akreata",
+      "sezaryen skarı",
+      "plasenta previa",
+      "invazyon"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-462-extra": {
+    "front": "Plasenta akreata riski karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "answer": "Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "explanation": "Uterin skar alanında desidua bozukluğu plasentanın invaziv tutunmasına yol açabilir. Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "tusTip": "Plasenta akreata riski karıştırıldığında cevabı netleştiren karşılaştırma: Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "differentialNote": "Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "keywords": [
+      "plasenta akreata",
+      "sezaryen skarı",
+      "plasenta previa",
+      "invazyon"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-463-spot": {
+    "front": "Gebelikte inatçı kusma, kilo kaybı ve ketonüri hangi tabloyu düşündürür?",
+    "back": "Hiperemezis gravidarum. Ağır kusma dehidratasyon ve ketozise yol açabilir.",
+    "answer": "Hiperemezis gravidarum. Ağır kusma dehidratasyon ve ketozise yol açabilir.",
+    "explanation": "Ağır kusma dehidratasyon ve ketozise yol açabilir. Basit gebelik bulantısı genellikle belirgin ketonüri ve kilo kaybı yapmaz.",
+    "tusTip": "Ağır kusma dehidratasyon ve ketozise yol açabilir. Basit gebelik bulantısı genellikle belirgin ketonüri ve kilo kaybı yapmaz.",
+    "differentialNote": "Basit gebelik bulantısı genellikle belirgin ketonüri ve kilo kaybı yapmaz.",
+    "keywords": [
+      "hiperemezis gravidarum",
+      "ketonüri",
+      "kilo kaybı",
+      "gebelik"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-463-extra": {
+    "front": "Hiperemezis gravidarum için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Basit gebelik bulantısı genellikle belirgin ketonüri ve kilo kaybı yapmaz.",
+    "answer": "Basit gebelik bulantısı genellikle belirgin ketonüri ve kilo kaybı yapmaz.",
+    "explanation": "Ağır kusma dehidratasyon ve ketozise yol açabilir. Basit gebelik bulantısı genellikle belirgin ketonüri ve kilo kaybı yapmaz.",
+    "tusTip": "Hiperemezis gravidarum kartında ayırıcı değer taşıyan nokta: Basit gebelik bulantısı genellikle belirgin ketonüri ve kilo kaybı yapmaz.",
+    "differentialNote": "Basit gebelik bulantısı genellikle belirgin ketonüri ve kilo kaybı yapmaz.",
+    "keywords": [
+      "hiperemezis gravidarum",
+      "ketonüri",
+      "kilo kaybı",
+      "gebelik"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-464-spot": {
+    "front": "Rüptür bulgusu olmayan seçilmiş ektopik gebelikte medikal tedavi için hangi ilaç kullanılır?",
+    "back": "Metotreksat. Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir.",
+    "answer": "Metotreksat. Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir.",
+    "explanation": "Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir. Hemodinamik instabilite veya rüptür şüphesinde cerrahi önceliklidir.",
+    "tusTip": "Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir. Hemodinamik instabilite veya rüptür şüphesinde cerrahi önceliklidir.",
+    "differentialNote": "Hemodinamik instabilite veya rüptür şüphesinde cerrahi önceliklidir.",
+    "keywords": [
+      "ektopik gebelik",
+      "metotreksat",
+      "stabil hasta",
+      "beta-hCG"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-464-extra": {
+    "front": "Ektopik gebelik metotreksat başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Hemodinamik instabilite veya rüptür şüphesinde cerrahi önceliklidir.",
+    "answer": "Hemodinamik instabilite veya rüptür şüphesinde cerrahi önceliklidir.",
+    "explanation": "Metotreksat trofoblast proliferasyonunu durdurur; stabil ve uygun hastalarda seçilir. Hemodinamik instabilite veya rüptür şüphesinde cerrahi önceliklidir.",
+    "tusTip": "Ektopik gebelik metotreksat için sınavda hedeflenen ayrım genellikle şudur: Hemodinamik instabilite veya rüptür şüphesinde cerrahi önceliklidir.",
+    "differentialNote": "Hemodinamik instabilite veya rüptür şüphesinde cerrahi önceliklidir.",
+    "keywords": [
+      "ektopik gebelik",
+      "metotreksat",
+      "stabil hasta",
+      "beta-hCG"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-465-spot": {
+    "front": "Çok yüksek beta-hCG ve üzüm tanesi benzeri veziküller hangi tanıyı düşündürür?",
+    "back": "Hidatidiform mol. Anormal trofoblast proliferasyonu ve villöz ödem mol gebeliği oluşturur.",
+    "answer": "Hidatidiform mol. Anormal trofoblast proliferasyonu ve villöz ödem mol gebeliği oluşturur.",
+    "explanation": "Anormal trofoblast proliferasyonu ve villöz ödem mol gebeliği oluşturur. Ektopik gebelikte beta-hCG artışı genellikle beklenen şekilde yükselmez ancak mol kadar aşırı olmayabilir.",
+    "tusTip": "Anormal trofoblast proliferasyonu ve villöz ödem mol gebeliği oluşturur. Ektopik gebelikte beta-hCG artışı genellikle beklenen şekilde yükselmez ancak mol kadar aşırı olmayabilir.",
+    "differentialNote": "Ektopik gebelikte beta-hCG artışı genellikle beklenen şekilde yükselmez ancak mol kadar aşırı olmayabilir.",
+    "keywords": [
+      "mol gebelik",
+      "beta-hCG yüksek",
+      "vezikül",
+      "trofoblast"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-465-extra": {
+    "front": "Mol gebelik için en kritik ayırıcı nokta nedir?",
+    "back": "Ektopik gebelikte beta-hCG artışı genellikle beklenen şekilde yükselmez ancak mol kadar aşırı olmayabilir.",
+    "answer": "Ektopik gebelikte beta-hCG artışı genellikle beklenen şekilde yükselmez ancak mol kadar aşırı olmayabilir.",
+    "explanation": "Anormal trofoblast proliferasyonu ve villöz ödem mol gebeliği oluşturur. Ektopik gebelikte beta-hCG artışı genellikle beklenen şekilde yükselmez ancak mol kadar aşırı olmayabilir.",
+    "tusTip": "Mol gebelik karıştırıldığında cevabı netleştiren karşılaştırma: Ektopik gebelikte beta-hCG artışı genellikle beklenen şekilde yükselmez ancak mol kadar aşırı olmayabilir.",
+    "differentialNote": "Ektopik gebelikte beta-hCG artışı genellikle beklenen şekilde yükselmez ancak mol kadar aşırı olmayabilir.",
+    "keywords": [
+      "mol gebelik",
+      "beta-hCG yüksek",
+      "vezikül",
+      "trofoblast"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-466-spot": {
+    "front": "Gestasyonel koryokarsinom en sık hangi yolla metastaz yapar?",
+    "back": "Hematojen yolla. Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir.",
+    "answer": "Hematojen yolla. Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir.",
+    "explanation": "Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir. Serviks kanserinde lenfatik yayılım daha ön plandadır.",
+    "tusTip": "Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir. Serviks kanserinde lenfatik yayılım daha ön plandadır.",
+    "differentialNote": "Serviks kanserinde lenfatik yayılım daha ön plandadır.",
+    "keywords": [
+      "koryokarsinom",
+      "hematojen metastaz",
+      "akciğer",
+      "beta-hCG"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-466-extra": {
+    "front": "Koryokarsinom yayılımı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Serviks kanserinde lenfatik yayılım daha ön plandadır.",
+    "answer": "Serviks kanserinde lenfatik yayılım daha ön plandadır.",
+    "explanation": "Trofoblastik tümörler erken kan damar invazyonu ve özellikle akciğer metastazı yapabilir. Serviks kanserinde lenfatik yayılım daha ön plandadır.",
+    "tusTip": "Koryokarsinom yayılımı kartında ayırıcı değer taşıyan nokta: Serviks kanserinde lenfatik yayılım daha ön plandadır.",
+    "differentialNote": "Serviks kanserinde lenfatik yayılım daha ön plandadır.",
+    "keywords": [
+      "koryokarsinom",
+      "hematojen metastaz",
+      "akciğer",
+      "beta-hCG"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-467-spot": {
+    "front": "Preeklampsi zemininde hemoliz, karaciğer enzim yüksekliği ve trombosit düşüklüğü hangi sendromu tanımlar?",
+    "back": "HELLP sendromu. Mikroanjiyopatik hasar hemoliz ve karaciğer-trombosit bulgularını oluşturur.",
+    "answer": "HELLP sendromu. Mikroanjiyopatik hasar hemoliz ve karaciğer-trombosit bulgularını oluşturur.",
+    "explanation": "Mikroanjiyopatik hasar hemoliz ve karaciğer-trombosit bulgularını oluşturur. Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
+    "tusTip": "Mikroanjiyopatik hasar hemoliz ve karaciğer-trombosit bulgularını oluşturur. Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
+    "differentialNote": "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
+    "keywords": [
+      "HELLP",
+      "hemoliz",
+      "AST ALT",
+      "trombositopeni"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-467-extra": {
+    "front": "HELLP sendromu başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
+    "answer": "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
+    "explanation": "Mikroanjiyopatik hasar hemoliz ve karaciğer-trombosit bulgularını oluşturur. Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
+    "tusTip": "HELLP sendromu için sınavda hedeflenen ayrım genellikle şudur: Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
+    "differentialNote": "Gebeliğin intrahepatik kolestazında kaşıntı ve safra asidi artışı daha belirgindir.",
+    "keywords": [
+      "HELLP",
+      "hemoliz",
+      "AST ALT",
+      "trombositopeni"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-468-spot": {
+    "front": "Magnezyum sülfat toksisitesinde antidot olarak ne verilir?",
+    "back": "Kalsiyum glukonat. Derin tendon refleksi kaybı ve solunum depresyonu magnezyum toksisitesini düşündürür.",
+    "answer": "Kalsiyum glukonat. Derin tendon refleksi kaybı ve solunum depresyonu magnezyum toksisitesini düşündürür.",
+    "explanation": "Derin tendon refleksi kaybı ve solunum depresyonu magnezyum toksisitesini düşündürür. Hidralazin hipertansiyon tedavisinde kullanılabilir ancak magnezyum antidotu değildir.",
+    "tusTip": "Derin tendon refleksi kaybı ve solunum depresyonu magnezyum toksisitesini düşündürür. Hidralazin hipertansiyon tedavisinde kullanılabilir ancak magnezyum antidotu değildir.",
+    "differentialNote": "Hidralazin hipertansiyon tedavisinde kullanılabilir ancak magnezyum antidotu değildir.",
+    "keywords": [
+      "magnezyum toksisitesi",
+      "kalsiyum glukonat",
+      "refleks kaybı",
+      "solunum depresyonu"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-468-extra": {
+    "front": "Magnezyum toksisitesi antidotu sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Hidralazin hipertansiyon tedavisinde kullanılabilir ancak magnezyum antidotu değildir.",
+    "answer": "Hidralazin hipertansiyon tedavisinde kullanılabilir ancak magnezyum antidotu değildir.",
+    "explanation": "Derin tendon refleksi kaybı ve solunum depresyonu magnezyum toksisitesini düşündürür. Hidralazin hipertansiyon tedavisinde kullanılabilir ancak magnezyum antidotu değildir.",
+    "tusTip": "Magnezyum toksisitesi antidotu karıştırıldığında cevabı netleştiren karşılaştırma: Hidralazin hipertansiyon tedavisinde kullanılabilir ancak magnezyum antidotu değildir.",
+    "differentialNote": "Hidralazin hipertansiyon tedavisinde kullanılabilir ancak magnezyum antidotu değildir.",
+    "keywords": [
+      "magnezyum toksisitesi",
+      "kalsiyum glukonat",
+      "refleks kaybı",
+      "solunum depresyonu"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-469-spot": {
+    "front": "Gebede doğum sırasında GBS profilaksisinde ilk tercih antibiyotik hangisidir?",
+    "back": "Penisilin G. İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır.",
+    "answer": "Penisilin G. İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır.",
+    "explanation": "İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır. Sezaryen öncesi standart profilaksi GBS intrapartum profilaksisinin yerine her durumda geçmez.",
+    "tusTip": "İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır. Sezaryen öncesi standart profilaksi GBS intrapartum profilaksisinin yerine her durumda geçmez.",
+    "differentialNote": "Sezaryen öncesi standart profilaksi GBS intrapartum profilaksisinin yerine her durumda geçmez.",
+    "keywords": [
+      "GBS",
+      "intrapartum profilaksi",
+      "penisilin G",
+      "yenidoğan sepsisi"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-469-extra": {
+    "front": "Grup B streptokok profilaksisi için en kritik ayırıcı nokta nedir?",
+    "back": "Sezaryen öncesi standart profilaksi GBS intrapartum profilaksisinin yerine her durumda geçmez.",
+    "answer": "Sezaryen öncesi standart profilaksi GBS intrapartum profilaksisinin yerine her durumda geçmez.",
+    "explanation": "İntrapartum antibiyotik yenidoğan erken GBS hastalığı riskini azaltır. Sezaryen öncesi standart profilaksi GBS intrapartum profilaksisinin yerine her durumda geçmez.",
+    "tusTip": "Grup B streptokok profilaksisi kartında ayırıcı değer taşıyan nokta: Sezaryen öncesi standart profilaksi GBS intrapartum profilaksisinin yerine her durumda geçmez.",
+    "differentialNote": "Sezaryen öncesi standart profilaksi GBS intrapartum profilaksisinin yerine her durumda geçmez.",
+    "keywords": [
+      "GBS",
+      "intrapartum profilaksi",
+      "penisilin G",
+      "yenidoğan sepsisi"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-470-spot": {
+    "front": "Rh negatif gebeye fetomaternal kanama riskinde hangi profilaksi uygulanır?",
+    "back": "Anti-D immün globulin. Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler.",
+    "answer": "Anti-D immün globulin. Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler.",
+    "explanation": "Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler. Direkt Coombs profilaksi değil, antikorla kaplı eritrositleri gösteren testtir.",
+    "tusTip": "Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler. Direkt Coombs profilaksi değil, antikorla kaplı eritrositleri gösteren testtir.",
+    "differentialNote": "Direkt Coombs profilaksi değil, antikorla kaplı eritrositleri gösteren testtir.",
+    "keywords": [
+      "Rh uygunsuzluğu",
+      "anti-D",
+      "alloimmünizasyon",
+      "28 hafta"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-470-extra": {
+    "front": "Rh immün globulin karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Direkt Coombs profilaksi değil, antikorla kaplı eritrositleri gösteren testtir.",
+    "answer": "Direkt Coombs profilaksi değil, antikorla kaplı eritrositleri gösteren testtir.",
+    "explanation": "Anti-D fetal Rh pozitif eritrositlere karşı maternal alloimmünizasyonu önler. Direkt Coombs profilaksi değil, antikorla kaplı eritrositleri gösteren testtir.",
+    "tusTip": "Rh immün globulin için sınavda hedeflenen ayrım genellikle şudur: Direkt Coombs profilaksi değil, antikorla kaplı eritrositleri gösteren testtir.",
+    "differentialNote": "Direkt Coombs profilaksi değil, antikorla kaplı eritrositleri gösteren testtir.",
+    "keywords": [
+      "Rh uygunsuzluğu",
+      "anti-D",
+      "alloimmünizasyon",
+      "28 hafta"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-471-spot": {
+    "front": "Sezaryen sonrası ateş ve uterin hassasiyette ampirik tedavi seçeneklerinden biri hangisidir?",
+    "back": "Klindamisin ve gentamisin. Postpartum endometrit polimikrobiyaldir; anaerop ve gram negatif kapsama gerekir.",
+    "answer": "Klindamisin ve gentamisin. Postpartum endometrit polimikrobiyaldir; anaerop ve gram negatif kapsama gerekir.",
+    "explanation": "Postpartum endometrit polimikrobiyaldir; anaerop ve gram negatif kapsama gerekir. Basit sistitte uterin hassasiyet beklenmez.",
+    "tusTip": "Postpartum endometrit polimikrobiyaldir; anaerop ve gram negatif kapsama gerekir. Basit sistitte uterin hassasiyet beklenmez.",
+    "differentialNote": "Basit sistitte uterin hassasiyet beklenmez.",
+    "keywords": [
+      "postpartum endometrit",
+      "sezaryen",
+      "uterin hassasiyet",
+      "klindamisin gentamisin"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-471-extra": {
+    "front": "Postpartum endometrit tedavisi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Basit sistitte uterin hassasiyet beklenmez. Postpartum endometrit polimikrobiyaldir; anaerop ve gram negatif kapsama gerekir.",
+    "answer": "Basit sistitte uterin hassasiyet beklenmez. Postpartum endometrit polimikrobiyaldir; anaerop ve gram negatif kapsama gerekir.",
+    "explanation": "Postpartum endometrit polimikrobiyaldir; anaerop ve gram negatif kapsama gerekir. Basit sistitte uterin hassasiyet beklenmez.",
+    "tusTip": "Postpartum endometrit tedavisi karıştırıldığında cevabı netleştiren karşılaştırma: Basit sistitte uterin hassasiyet beklenmez.",
+    "differentialNote": "Basit sistitte uterin hassasiyet beklenmez.",
+    "keywords": [
+      "postpartum endometrit",
+      "sezaryen",
+      "uterin hassasiyet",
+      "klindamisin gentamisin"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-472-spot": {
+    "front": "Ani başlayan tek taraflı pelvik ağrı ve adneksiyal kitle hangi acili düşündürür?",
+    "back": "Ovaryan torsiyon. Over pedikülünün dönmesi venöz dönüşü ve arteriyel akımı bozabilir; cerrahi acildir.",
+    "answer": "Ovaryan torsiyon. Over pedikülünün dönmesi venöz dönüşü ve arteriyel akımı bozabilir; cerrahi acildir.",
+    "explanation": "Over pedikülünün dönmesi venöz dönüşü ve arteriyel akımı bozabilir; cerrahi acildir. PID genellikle ateş, servikal hareket hassasiyeti ve enfeksiyon bulgularıyla seyreder.",
+    "tusTip": "Over pedikülünün dönmesi venöz dönüşü ve arteriyel akımı bozabilir; cerrahi acildir. PID genellikle ateş, servikal hareket hassasiyeti ve enfeksiyon bulgularıyla seyreder.",
+    "differentialNote": "PID genellikle ateş, servikal hareket hassasiyeti ve enfeksiyon bulgularıyla seyreder.",
+    "keywords": [
+      "ovaryan torsiyon",
+      "tek taraflı ağrı",
+      "adneksiyal kitle",
+      "cerrahi"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-472-extra": {
+    "front": "Ovaryan torsiyon için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "PID genellikle ateş, servikal hareket hassasiyeti ve enfeksiyon bulgularıyla seyreder.",
+    "answer": "PID genellikle ateş, servikal hareket hassasiyeti ve enfeksiyon bulgularıyla seyreder.",
+    "explanation": "Over pedikülünün dönmesi venöz dönüşü ve arteriyel akımı bozabilir; cerrahi acildir. PID genellikle ateş, servikal hareket hassasiyeti ve enfeksiyon bulgularıyla seyreder.",
+    "tusTip": "Ovaryan torsiyon kartında ayırıcı değer taşıyan nokta: PID genellikle ateş, servikal hareket hassasiyeti ve enfeksiyon bulgularıyla seyreder.",
+    "differentialNote": "PID genellikle ateş, servikal hareket hassasiyeti ve enfeksiyon bulgularıyla seyreder.",
+    "keywords": [
+      "ovaryan torsiyon",
+      "tek taraflı ağrı",
+      "adneksiyal kitle",
+      "cerrahi"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-473-spot": {
+    "front": "Postmenopozal kanamada öncelikle dışlanması gereken malignite hangisidir?",
+    "back": "Endometrium kanseri. Postmenopozal kanama endometrial hiperplazi veya malignite açısından değerlendirilmelidir.",
+    "answer": "Endometrium kanseri. Postmenopozal kanama endometrial hiperplazi veya malignite açısından değerlendirilmelidir.",
+    "explanation": "Postmenopozal kanama endometrial hiperplazi veya malignite açısından değerlendirilmelidir. Ovulasyon kanaması postmenopozal dönemde beklenmez.",
+    "tusTip": "Postmenopozal kanama endometrial hiperplazi veya malignite açısından değerlendirilmelidir. Ovulasyon kanaması postmenopozal dönemde beklenmez.",
+    "differentialNote": "Ovulasyon kanaması postmenopozal dönemde beklenmez.",
+    "keywords": [
+      "postmenopozal kanama",
+      "endometrium kanseri",
+      "biyopsi",
+      "hiperplazi"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-473-extra": {
+    "front": "Endometrium kanseri uyarısı için en kritik ayırıcı nokta nedir?",
+    "back": "Ovulasyon kanaması postmenopozal dönemde beklenmez. Postmenopozal kanama endometrial hiperplazi veya malignite açısından değerlendirilmelidir.",
+    "answer": "Ovulasyon kanaması postmenopozal dönemde beklenmez. Postmenopozal kanama endometrial hiperplazi veya malignite açısından değerlendirilmelidir.",
+    "explanation": "Postmenopozal kanama endometrial hiperplazi veya malignite açısından değerlendirilmelidir. Ovulasyon kanaması postmenopozal dönemde beklenmez.",
+    "tusTip": "Endometrium kanseri uyarısı için sınavda hedeflenen ayrım genellikle şudur: Ovulasyon kanaması postmenopozal dönemde beklenmez.",
+    "differentialNote": "Ovulasyon kanaması postmenopozal dönemde beklenmez.",
+    "keywords": [
+      "postmenopozal kanama",
+      "endometrium kanseri",
+      "biyopsi",
+      "hiperplazi"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-474-spot": {
+    "front": "Serviks kanseri taramasında yüksek riskli HPV testinin önemi nedir?",
+    "back": "Onkojenik HPV enfeksiyonunu saptaması. Persistan yüksek riskli HPV enfeksiyonu CIN ve serviks kanseri gelişiminde ana nedendir.",
+    "answer": "Onkojenik HPV enfeksiyonunu saptaması. Persistan yüksek riskli HPV enfeksiyonu CIN ve serviks kanseri gelişiminde ana nedendir.",
+    "explanation": "Persistan yüksek riskli HPV enfeksiyonu CIN ve serviks kanseri gelişiminde ana nedendir. Candida enfeksiyonu serviks kanseri taramasının hedefi değildir.",
+    "tusTip": "Persistan yüksek riskli HPV enfeksiyonu CIN ve serviks kanseri gelişiminde ana nedendir. Candida enfeksiyonu serviks kanseri taramasının hedefi değildir.",
+    "differentialNote": "Candida enfeksiyonu serviks kanseri taramasının hedefi değildir.",
+    "keywords": [
+      "serviks taraması",
+      "HPV",
+      "CIN",
+      "Pap smear"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-474-extra": {
+    "front": "Serviks kanseri taraması karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Candida enfeksiyonu serviks kanseri taramasının hedefi değildir.",
+    "answer": "Candida enfeksiyonu serviks kanseri taramasının hedefi değildir.",
+    "explanation": "Persistan yüksek riskli HPV enfeksiyonu CIN ve serviks kanseri gelişiminde ana nedendir. Candida enfeksiyonu serviks kanseri taramasının hedefi değildir.",
+    "tusTip": "Serviks kanseri taraması karıştırıldığında cevabı netleştiren karşılaştırma: Candida enfeksiyonu serviks kanseri taramasının hedefi değildir.",
+    "differentialNote": "Candida enfeksiyonu serviks kanseri taramasının hedefi değildir.",
+    "keywords": [
+      "serviks taraması",
+      "HPV",
+      "CIN",
+      "Pap smear"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-475-spot": {
+    "front": "PID ampirik tedavisinde hangi patojenleri kapsamak gerekir?",
+    "back": "Gonokok, klamidya ve anaeroplar. Üst genital sistem enfeksiyonu çoğu kez polimikrobiyaldir; geniş kapsama gerekir.",
+    "answer": "Gonokok, klamidya ve anaeroplar. Üst genital sistem enfeksiyonu çoğu kez polimikrobiyaldir; geniş kapsama gerekir.",
+    "explanation": "Üst genital sistem enfeksiyonu çoğu kez polimikrobiyaldir; geniş kapsama gerekir. Sadece antifungal tedavi PID’nin tipik etkenlerini kapsamaz.",
+    "tusTip": "Üst genital sistem enfeksiyonu çoğu kez polimikrobiyaldir; geniş kapsama gerekir. Sadece antifungal tedavi PID’nin tipik etkenlerini kapsamaz.",
+    "differentialNote": "Sadece antifungal tedavi PID’nin tipik etkenlerini kapsamaz.",
+    "keywords": [
+      "PID",
+      "gonokok",
+      "klamidya",
+      "anaerop"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-475-extra": {
+    "front": "Pelvik inflamatuvar hastalık tedavisi için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Sadece antifungal tedavi PID’nin tipik etkenlerini kapsamaz.",
+    "answer": "Sadece antifungal tedavi PID’nin tipik etkenlerini kapsamaz.",
+    "explanation": "Üst genital sistem enfeksiyonu çoğu kez polimikrobiyaldir; geniş kapsama gerekir. Sadece antifungal tedavi PID’nin tipik etkenlerini kapsamaz.",
+    "tusTip": "Pelvik inflamatuvar hastalık tedavisi kartında ayırıcı değer taşıyan nokta: Sadece antifungal tedavi PID’nin tipik etkenlerini kapsamaz.",
+    "differentialNote": "Sadece antifungal tedavi PID’nin tipik etkenlerini kapsamaz.",
+    "keywords": [
+      "PID",
+      "gonokok",
+      "klamidya",
+      "anaerop"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-476-spot": {
+    "front": "Kırk yaş altında amenore ve yüksek FSH hangi tanıyı düşündürür?",
+    "back": "Prematür over yetmezliği. Follikül rezervi veya fonksiyonu azalınca hipergonadotropik hipogonadizm gelişir.",
+    "answer": "Prematür over yetmezliği. Follikül rezervi veya fonksiyonu azalınca hipergonadotropik hipogonadizm gelişir.",
+    "explanation": "Follikül rezervi veya fonksiyonu azalınca hipergonadotropik hipogonadizm gelişir. Hipotalamik amenorede FSH genellikle düşük veya normaldir.",
+    "tusTip": "Follikül rezervi veya fonksiyonu azalınca hipergonadotropik hipogonadizm gelişir. Hipotalamik amenorede FSH genellikle düşük veya normaldir.",
+    "differentialNote": "Hipotalamik amenorede FSH genellikle düşük veya normaldir.",
+    "keywords": [
+      "prematür over yetmezliği",
+      "amenore",
+      "FSH yüksek",
+      "hipogonadizm"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-476-extra": {
+    "front": "Prematür over yetmezliği başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Hipotalamik amenorede FSH genellikle düşük veya normaldir.",
+    "answer": "Hipotalamik amenorede FSH genellikle düşük veya normaldir.",
+    "explanation": "Follikül rezervi veya fonksiyonu azalınca hipergonadotropik hipogonadizm gelişir. Hipotalamik amenorede FSH genellikle düşük veya normaldir.",
+    "tusTip": "Prematür over yetmezliği için sınavda hedeflenen ayrım genellikle şudur: Hipotalamik amenorede FSH genellikle düşük veya normaldir.",
+    "differentialNote": "Hipotalamik amenorede FSH genellikle düşük veya normaldir.",
+    "keywords": [
+      "prematür over yetmezliği",
+      "amenore",
+      "FSH yüksek",
+      "hipogonadizm"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-477-spot": {
+    "front": "Küretaj sonrası amenore ve infertilite hangi intrauterin patolojiyi düşündürür?",
+    "back": "Asherman sendromu. İntrauterin adezyonlar endometrial kaviteyi bozarak amenore ve infertilite yapabilir.",
+    "answer": "Asherman sendromu. İntrauterin adezyonlar endometrial kaviteyi bozarak amenore ve infertilite yapabilir.",
+    "explanation": "İntrauterin adezyonlar endometrial kaviteyi bozarak amenore ve infertilite yapabilir. PCOS oligomenore yapabilir ancak küretaj sonrası adezyon paterni Asherman lehinedir.",
+    "tusTip": "İntrauterin adezyonlar endometrial kaviteyi bozarak amenore ve infertilite yapabilir. PCOS oligomenore yapabilir ancak küretaj sonrası adezyon paterni Asherman lehinedir.",
+    "differentialNote": "PCOS oligomenore yapabilir ancak küretaj sonrası adezyon paterni Asherman lehinedir.",
+    "keywords": [
+      "Asherman",
+      "küretaj",
+      "amenore",
+      "intrauterin adezyon"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-477-extra": {
+    "front": "Asherman sendromu için en kritik ayırıcı nokta nedir?",
+    "back": "PCOS oligomenore yapabilir ancak küretaj sonrası adezyon paterni Asherman lehinedir.",
+    "answer": "PCOS oligomenore yapabilir ancak küretaj sonrası adezyon paterni Asherman lehinedir.",
+    "explanation": "İntrauterin adezyonlar endometrial kaviteyi bozarak amenore ve infertilite yapabilir. PCOS oligomenore yapabilir ancak küretaj sonrası adezyon paterni Asherman lehinedir.",
+    "tusTip": "Asherman sendromu karıştırıldığında cevabı netleştiren karşılaştırma: PCOS oligomenore yapabilir ancak küretaj sonrası adezyon paterni Asherman lehinedir.",
+    "differentialNote": "PCOS oligomenore yapabilir ancak küretaj sonrası adezyon paterni Asherman lehinedir.",
+    "keywords": [
+      "Asherman",
+      "küretaj",
+      "amenore",
+      "intrauterin adezyon"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-478-spot": {
+    "front": "Gebelikte kaşıntı ve safra asidi yüksekliği hangi tabloyu düşündürür?",
+    "back": "Gebeliğin intrahepatik kolestazı. Safra asidi birikimi özellikle avuç içi ve ayak tabanında kaşıntı yapabilir.",
+    "answer": "Gebeliğin intrahepatik kolestazı. Safra asidi birikimi özellikle avuç içi ve ayak tabanında kaşıntı yapabilir.",
+    "explanation": "Safra asidi birikimi özellikle avuç içi ve ayak tabanında kaşıntı yapabilir. Döküntülü kaşıntı daha çok dermatolojik gebelik hastalıklarını düşündürür.",
+    "tusTip": "Safra asidi birikimi özellikle avuç içi ve ayak tabanında kaşıntı yapabilir. Döküntülü kaşıntı daha çok dermatolojik gebelik hastalıklarını düşündürür.",
+    "differentialNote": "Döküntülü kaşıntı daha çok dermatolojik gebelik hastalıklarını düşündürür.",
+    "keywords": [
+      "gebelik kolestazı",
+      "kaşıntı",
+      "safra asidi",
+      "fetal risk"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-478-extra": {
+    "front": "Gebeliğin intrahepatik kolestazı karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Döküntülü kaşıntı daha çok dermatolojik gebelik hastalıklarını düşündürür.",
+    "answer": "Döküntülü kaşıntı daha çok dermatolojik gebelik hastalıklarını düşündürür.",
+    "explanation": "Safra asidi birikimi özellikle avuç içi ve ayak tabanında kaşıntı yapabilir. Döküntülü kaşıntı daha çok dermatolojik gebelik hastalıklarını düşündürür.",
+    "tusTip": "Gebeliğin intrahepatik kolestazı kartında ayırıcı değer taşıyan nokta: Döküntülü kaşıntı daha çok dermatolojik gebelik hastalıklarını düşündürür.",
+    "differentialNote": "Döküntülü kaşıntı daha çok dermatolojik gebelik hastalıklarını düşündürür.",
+    "keywords": [
+      "gebelik kolestazı",
+      "kaşıntı",
+      "safra asidi",
+      "fetal risk"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-479-spot": {
+    "front": "Ağrısız parlak vajinal kanama ve yumuşak uterus hangi obstetrik durumu düşündürür?",
+    "back": "Plasenta previa. Plasentanın servikal os üzerine yerleşmesi ağrısız kanamaya yol açar.",
+    "answer": "Plasenta previa. Plasentanın servikal os üzerine yerleşmesi ağrısız kanamaya yol açar.",
+    "explanation": "Plasentanın servikal os üzerine yerleşmesi ağrısız kanamaya yol açar. Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "tusTip": "Plasentanın servikal os üzerine yerleşmesi ağrısız kanamaya yol açar. Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "differentialNote": "Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "keywords": [
+      "plasenta previa",
+      "ağrısız kanama",
+      "üçüncü trimester",
+      "yumuşak uterus"
+    ]
+  },
+  "tus-pearl-obstetrics-gynecology-479-extra": {
+    "front": "Ağrısız üçüncü trimester kanaması başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "answer": "Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "explanation": "Plasentanın servikal os üzerine yerleşmesi ağrısız kanamaya yol açar. Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "tusTip": "Ağrısız üçüncü trimester kanaması için sınavda hedeflenen ayrım genellikle şudur: Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "differentialNote": "Ablasyo plasenta ağrılı kanama ve uterin hassasiyetle ayrılır.",
+    "keywords": [
+      "plasenta previa",
+      "ağrısız kanama",
+      "üçüncü trimester",
+      "yumuşak uterus Küçük Stajlar (minor-rotations)"
+    ]
+  },
+  "tus-pearl-minor-rotations-480-spot": {
+    "front": "Kendi kabul edilemeyen duygusunu başkasına aitmiş gibi görme hangi savunma mekanizmasıdır?",
+    "back": "Yansıtma. Kişi kendi kıskançlık veya öfkesini karşı tarafa atfederek iç çatışmayı azaltır.",
+    "answer": "Yansıtma. Kişi kendi kıskançlık veya öfkesini karşı tarafa atfederek iç çatışmayı azaltır.",
+    "explanation": "Kişi kendi kıskançlık veya öfkesini karşı tarafa atfederek iç çatışmayı azaltır. Bastırma, rahatsız edici düşüncenin bilinç dışında tutulmasıdır.",
+    "tusTip": "Kişi kendi kıskançlık veya öfkesini karşı tarafa atfederek iç çatışmayı azaltır. Bastırma, rahatsız edici düşüncenin bilinç dışında tutulmasıdır.",
+    "differentialNote": "Bastırma, rahatsız edici düşüncenin bilinç dışında tutulmasıdır.",
+    "keywords": [
+      "yansıtma",
+      "savunma mekanizması",
+      "kıskançlık",
+      "psikiyatri"
+    ]
+  },
+  "tus-pearl-minor-rotations-480-extra": {
+    "front": "Yansıtma savunma mekanizması sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Bastırma, rahatsız edici düşüncenin bilinç dışında tutulmasıdır.",
+    "answer": "Bastırma, rahatsız edici düşüncenin bilinç dışında tutulmasıdır.",
+    "explanation": "Kişi kendi kıskançlık veya öfkesini karşı tarafa atfederek iç çatışmayı azaltır. Bastırma, rahatsız edici düşüncenin bilinç dışında tutulmasıdır.",
+    "tusTip": "Yansıtma savunma mekanizması karıştırıldığında cevabı netleştiren karşılaştırma: Bastırma, rahatsız edici düşüncenin bilinç dışında tutulmasıdır.",
+    "differentialNote": "Bastırma, rahatsız edici düşüncenin bilinç dışında tutulmasıdır.",
+    "keywords": [
+      "yansıtma",
+      "savunma mekanizması",
+      "kıskançlık",
+      "psikiyatri"
+    ]
+  },
+  "tus-pearl-minor-rotations-481-spot": {
+    "front": "Alkol kullanım bozukluğunda anterograd amnezi ve konfabulasyon hangi yapı hasarıyla ilişkilidir?",
+    "back": "Mamiller cisimler. Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir.",
+    "answer": "Mamiller cisimler. Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir.",
+    "explanation": "Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir. Oksipital korteks hasarı primer görsel bulgularla daha çok ilişkilidir.",
+    "tusTip": "Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir. Oksipital korteks hasarı primer görsel bulgularla daha çok ilişkilidir.",
+    "differentialNote": "Oksipital korteks hasarı primer görsel bulgularla daha çok ilişkilidir.",
+    "keywords": [
+      "Wernicke-Korsakoff",
+      "mamiller cisim",
+      "konfabulasyon",
+      "anterograd amnezi"
+    ]
+  },
+  "tus-pearl-minor-rotations-481-extra": {
+    "front": "Wernicke-Korsakoff anatomisi için en kritik ayırıcı nokta nedir?",
+    "back": "Oksipital korteks hasarı primer görsel bulgularla daha çok ilişkilidir.",
+    "answer": "Oksipital korteks hasarı primer görsel bulgularla daha çok ilişkilidir.",
+    "explanation": "Tiamin eksikliği limbik bellek devrelerini etkiler ve Korsakoff sendromuna yol açabilir. Oksipital korteks hasarı primer görsel bulgularla daha çok ilişkilidir.",
+    "tusTip": "Wernicke-Korsakoff anatomisi kartında ayırıcı değer taşıyan nokta: Oksipital korteks hasarı primer görsel bulgularla daha çok ilişkilidir.",
+    "differentialNote": "Oksipital korteks hasarı primer görsel bulgularla daha çok ilişkilidir.",
+    "keywords": [
+      "Wernicke-Korsakoff",
+      "mamiller cisim",
+      "konfabulasyon",
+      "anterograd amnezi"
+    ]
+  },
+  "tus-pearl-minor-rotations-482-spot": {
+    "front": "Yaşlı hastada motivasyon kaybı, serbest hatırlama bozukluğu ve ipucuyla düzelme hangi tanıyı düşündürür?",
+    "back": "Geriatrik depresyon. Depresyonda dikkat ve motivasyon azalması bilişsel performansı düşürür; ipucuyla hatırlama korunabilir.",
+    "answer": "Geriatrik depresyon. Depresyonda dikkat ve motivasyon azalması bilişsel performansı düşürür; ipucuyla hatırlama korunabilir.",
+    "explanation": "Depresyonda dikkat ve motivasyon azalması bilişsel performansı düşürür; ipucuyla hatırlama korunabilir. Alzheimer hastalığında ipucuyla hatırlama da giderek bozulur.",
+    "tusTip": "Depresyonda dikkat ve motivasyon azalması bilişsel performansı düşürür; ipucuyla hatırlama korunabilir. Alzheimer hastalığında ipucuyla hatırlama da giderek bozulur.",
+    "differentialNote": "Alzheimer hastalığında ipucuyla hatırlama da giderek bozulur.",
+    "keywords": [
+      "geriatrik depresyon",
+      "psödodemans",
+      "ipucuyla hatırlama",
+      "motivasyon kaybı"
+    ]
+  },
+  "tus-pearl-minor-rotations-482-extra": {
+    "front": "Geriatrik depresyon psödodemans karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Alzheimer hastalığında ipucuyla hatırlama da giderek bozulur.",
+    "answer": "Alzheimer hastalığında ipucuyla hatırlama da giderek bozulur.",
+    "explanation": "Depresyonda dikkat ve motivasyon azalması bilişsel performansı düşürür; ipucuyla hatırlama korunabilir. Alzheimer hastalığında ipucuyla hatırlama da giderek bozulur.",
+    "tusTip": "Geriatrik depresyon psödodemans için sınavda hedeflenen ayrım genellikle şudur: Alzheimer hastalığında ipucuyla hatırlama da giderek bozulur.",
+    "differentialNote": "Alzheimer hastalığında ipucuyla hatırlama da giderek bozulur.",
+    "keywords": [
+      "geriatrik depresyon",
+      "psödodemans",
+      "ipucuyla hatırlama",
+      "motivasyon kaybı"
+    ]
+  },
+  "tus-pearl-minor-rotations-483-spot": {
+    "front": "Antipsikotik kullanımı sonrası rijidite, ateş ve CK yüksekliği hangi acil tabloyu düşündürür?",
+    "back": "Nöroleptik malign sendrom. Dopamin blokajı kas rijiditesi ve otonom instabiliteye yol açar.",
+    "answer": "Nöroleptik malign sendrom. Dopamin blokajı kas rijiditesi ve otonom instabiliteye yol açar.",
+    "explanation": "Dopamin blokajı kas rijiditesi ve otonom instabiliteye yol açar. Serotonin sendromunda hiperrefleksi ve klonus daha belirgindir.",
+    "tusTip": "Dopamin blokajı kas rijiditesi ve otonom instabiliteye yol açar. Serotonin sendromunda hiperrefleksi ve klonus daha belirgindir.",
+    "differentialNote": "Serotonin sendromunda hiperrefleksi ve klonus daha belirgindir.",
+    "keywords": [
+      "NMS",
+      "antipsikotik",
+      "rijidite",
+      "CK yüksekliği"
+    ]
+  },
+  "tus-pearl-minor-rotations-483-extra": {
+    "front": "Nöroleptik malign sendrom sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Serotonin sendromunda hiperrefleksi ve klonus daha belirgindir.",
+    "answer": "Serotonin sendromunda hiperrefleksi ve klonus daha belirgindir.",
+    "explanation": "Dopamin blokajı kas rijiditesi ve otonom instabiliteye yol açar. Serotonin sendromunda hiperrefleksi ve klonus daha belirgindir.",
+    "tusTip": "Nöroleptik malign sendrom karıştırıldığında cevabı netleştiren karşılaştırma: Serotonin sendromunda hiperrefleksi ve klonus daha belirgindir.",
+    "differentialNote": "Serotonin sendromunda hiperrefleksi ve klonus daha belirgindir.",
+    "keywords": [
+      "NMS",
+      "antipsikotik",
+      "rijidite",
+      "CK yüksekliği"
+    ]
+  },
+  "tus-pearl-minor-rotations-484-spot": {
+    "front": "Ağız mukozası erozyonları ve gevşek büller hangi otoimmün büllöz hastalığı düşündürür?",
+    "back": "Pemfigus vulgaris. Desmogleinlere karşı antikorlar intraepidermal ayrışma ve akantoliz yapar.",
+    "answer": "Pemfigus vulgaris. Desmogleinlere karşı antikorlar intraepidermal ayrışma ve akantoliz yapar.",
+    "explanation": "Desmogleinlere karşı antikorlar intraepidermal ayrışma ve akantoliz yapar. Büllöz pemfigoid daha gergin büller ve genellikle yaşlı hastayla ilişkilidir.",
+    "tusTip": "Desmogleinlere karşı antikorlar intraepidermal ayrışma ve akantoliz yapar. Büllöz pemfigoid daha gergin büller ve genellikle yaşlı hastayla ilişkilidir.",
+    "differentialNote": "Büllöz pemfigoid daha gergin büller ve genellikle yaşlı hastayla ilişkilidir.",
+    "keywords": [
+      "pemfigus vulgaris",
+      "mukoza",
+      "gevşek bül",
+      "desmoglein"
+    ]
+  },
+  "tus-pearl-minor-rotations-484-extra": {
+    "front": "Pemfigus vulgaris için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Büllöz pemfigoid daha gergin büller ve genellikle yaşlı hastayla ilişkilidir.",
+    "answer": "Büllöz pemfigoid daha gergin büller ve genellikle yaşlı hastayla ilişkilidir.",
+    "explanation": "Desmogleinlere karşı antikorlar intraepidermal ayrışma ve akantoliz yapar. Büllöz pemfigoid daha gergin büller ve genellikle yaşlı hastayla ilişkilidir.",
+    "tusTip": "Pemfigus vulgaris kartında ayırıcı değer taşıyan nokta: Büllöz pemfigoid daha gergin büller ve genellikle yaşlı hastayla ilişkilidir.",
+    "differentialNote": "Büllöz pemfigoid daha gergin büller ve genellikle yaşlı hastayla ilişkilidir.",
+    "keywords": [
+      "pemfigus vulgaris",
+      "mukoza",
+      "gevşek bül",
+      "desmoglein"
+    ]
+  },
+  "tus-pearl-minor-rotations-485-spot": {
+    "front": "Yaşlı hastada kaşıntılı gergin büller ve hemidesmozom antikorları hangi hastalığı düşündürür?",
+    "back": "Büllöz pemfigoid. Bazal membran düzeyindeki ayrışma gergin bül oluşturur.",
+    "answer": "Büllöz pemfigoid. Bazal membran düzeyindeki ayrışma gergin bül oluşturur.",
+    "explanation": "Bazal membran düzeyindeki ayrışma gergin bül oluşturur. Pemfigus vulgariste büller gevşek ve mukoza tutulumu daha belirgindir.",
+    "tusTip": "Bazal membran düzeyindeki ayrışma gergin bül oluşturur. Pemfigus vulgariste büller gevşek ve mukoza tutulumu daha belirgindir.",
+    "differentialNote": "Pemfigus vulgariste büller gevşek ve mukoza tutulumu daha belirgindir.",
+    "keywords": [
+      "büllöz pemfigoid",
+      "gergin bül",
+      "hemidesmozom",
+      "yaşlı"
+    ]
+  },
+  "tus-pearl-minor-rotations-485-extra": {
+    "front": "Büllöz pemfigoid için en kritik ayırıcı nokta nedir?",
+    "back": "Pemfigus vulgariste büller gevşek ve mukoza tutulumu daha belirgindir.",
+    "answer": "Pemfigus vulgariste büller gevşek ve mukoza tutulumu daha belirgindir.",
+    "explanation": "Bazal membran düzeyindeki ayrışma gergin bül oluşturur. Pemfigus vulgariste büller gevşek ve mukoza tutulumu daha belirgindir.",
+    "tusTip": "Büllöz pemfigoid için sınavda hedeflenen ayrım genellikle şudur: Pemfigus vulgariste büller gevşek ve mukoza tutulumu daha belirgindir.",
+    "differentialNote": "Pemfigus vulgariste büller gevşek ve mukoza tutulumu daha belirgindir.",
+    "keywords": [
+      "büllöz pemfigoid",
+      "gergin bül",
+      "hemidesmozom",
+      "yaşlı"
+    ]
+  },
+  "tus-pearl-minor-rotations-486-spot": {
+    "front": "İlaç sonrası hedef benzeri lezyonlar, mukozal erozyon ve epidermal ayrışma hangi tabloyu düşündürür?",
+    "back": "Stevens-Johnson sendromu. Keratinocyte apoptozu mukokutanöz nekroza neden olur; ağır form TEN olarak değerlendirilir.",
+    "answer": "Stevens-Johnson sendromu. Keratinocyte apoptozu mukokutanöz nekroza neden olur; ağır form TEN olarak değerlendirilir.",
+    "explanation": "Keratinocyte apoptozu mukokutanöz nekroza neden olur; ağır form TEN olarak değerlendirilir. Basit ürtiker epidermal nekroz ve mukozal erozyon yapmaz.",
+    "tusTip": "Keratinocyte apoptozu mukokutanöz nekroza neden olur; ağır form TEN olarak değerlendirilir. Basit ürtiker epidermal nekroz ve mukozal erozyon yapmaz.",
+    "differentialNote": "Basit ürtiker epidermal nekroz ve mukozal erozyon yapmaz.",
+    "keywords": [
+      "SJS",
+      "mukoza",
+      "ilaç reaksiyonu",
+      "epidermal nekroz"
+    ]
+  },
+  "tus-pearl-minor-rotations-486-extra": {
+    "front": "Stevens-Johnson sendromu karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Basit ürtiker epidermal nekroz ve mukozal erozyon yapmaz.",
+    "answer": "Basit ürtiker epidermal nekroz ve mukozal erozyon yapmaz.",
+    "explanation": "Keratinocyte apoptozu mukokutanöz nekroza neden olur; ağır form TEN olarak değerlendirilir. Basit ürtiker epidermal nekroz ve mukozal erozyon yapmaz.",
+    "tusTip": "Stevens-Johnson sendromu karıştırıldığında cevabı netleştiren karşılaştırma: Basit ürtiker epidermal nekroz ve mukozal erozyon yapmaz.",
+    "differentialNote": "Basit ürtiker epidermal nekroz ve mukozal erozyon yapmaz.",
+    "keywords": [
+      "SJS",
+      "mukoza",
+      "ilaç reaksiyonu",
+      "epidermal nekroz"
+    ]
+  },
+  "tus-pearl-minor-rotations-487-spot": {
+    "front": "El bileği dorsale açılanma ile çatal sırtı deformitesi hangi distal radius kırığını düşündürür?",
+    "back": "Kolles kırığı. El açıkken düşme sonrası distal radius kırığı dorsal deplasmanla seyreder.",
+    "answer": "Kolles kırığı. El açıkken düşme sonrası distal radius kırığı dorsal deplasmanla seyreder.",
+    "explanation": "El açıkken düşme sonrası distal radius kırığı dorsal deplasmanla seyreder. Smith kırığında distal parça volar yöne deplase olur.",
+    "tusTip": "El açıkken düşme sonrası distal radius kırığı dorsal deplasmanla seyreder. Smith kırığında distal parça volar yöne deplase olur.",
+    "differentialNote": "Smith kırığında distal parça volar yöne deplase olur.",
+    "keywords": [
+      "Kolles kırığı",
+      "distal radius",
+      "dorsal deplasman",
+      "çatal sırtı"
+    ]
+  },
+  "tus-pearl-minor-rotations-487-extra": {
+    "front": "Kolles kırığı için karışabilecek seçeneklerden ayrımı sağlayan temel özellik nedir?",
+    "back": "Smith kırığında distal parça volar yöne deplase olur.",
+    "answer": "Smith kırığında distal parça volar yöne deplase olur.",
+    "explanation": "El açıkken düşme sonrası distal radius kırığı dorsal deplasmanla seyreder. Smith kırığında distal parça volar yöne deplase olur.",
+    "tusTip": "Kolles kırığı kartında ayırıcı değer taşıyan nokta: Smith kırığında distal parça volar yöne deplase olur.",
+    "differentialNote": "Smith kırığında distal parça volar yöne deplase olur.",
+    "keywords": [
+      "Kolles kırığı",
+      "distal radius",
+      "dorsal deplasman",
+      "çatal sırtı"
+    ]
+  },
+  "tus-pearl-minor-rotations-488-spot": {
+    "front": "Ön omuz ağrısı ve Speed-Yergason test pozitifliği hangi tanıyı düşündürür?",
+    "back": "Biseps tendiniti. Biseps uzun başı tendonu ön omuz ağrısı ve provokasyon testleriyle değerlendirilir.",
+    "answer": "Biseps tendiniti. Biseps uzun başı tendonu ön omuz ağrısı ve provokasyon testleriyle değerlendirilir.",
+    "explanation": "Biseps uzun başı tendonu ön omuz ağrısı ve provokasyon testleriyle değerlendirilir. Rotator cuff yırtığında özellikle abduksiyon güçsüzlüğü öne çıkabilir.",
+    "tusTip": "Biseps uzun başı tendonu ön omuz ağrısı ve provokasyon testleriyle değerlendirilir. Rotator cuff yırtığında özellikle abduksiyon güçsüzlüğü öne çıkabilir.",
+    "differentialNote": "Rotator cuff yırtığında özellikle abduksiyon güçsüzlüğü öne çıkabilir.",
+    "keywords": [
+      "biseps tendiniti",
+      "Speed testi",
+      "Yergason",
+      "ön omuz ağrısı"
+    ]
+  },
+  "tus-pearl-minor-rotations-488-extra": {
+    "front": "Biseps tendiniti testleri başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "Rotator cuff yırtığında özellikle abduksiyon güçsüzlüğü öne çıkabilir.",
+    "answer": "Rotator cuff yırtığında özellikle abduksiyon güçsüzlüğü öne çıkabilir.",
+    "explanation": "Biseps uzun başı tendonu ön omuz ağrısı ve provokasyon testleriyle değerlendirilir. Rotator cuff yırtığında özellikle abduksiyon güçsüzlüğü öne çıkabilir.",
+    "tusTip": "Biseps tendiniti testleri için sınavda hedeflenen ayrım genellikle şudur: Rotator cuff yırtığında özellikle abduksiyon güçsüzlüğü öne çıkabilir.",
+    "differentialNote": "Rotator cuff yırtığında özellikle abduksiyon güçsüzlüğü öne çıkabilir.",
+    "keywords": [
+      "biseps tendiniti",
+      "Speed testi",
+      "Yergason",
+      "ön omuz ağrısı"
+    ]
+  },
+  "tus-pearl-minor-rotations-489-spot": {
+    "front": "Işık çakmaları, uçuşmalar ve perde inmesi hissi hangi göz acilini düşündürür?",
+    "back": "Retina dekolmanı. Retina pigment epiteli ile nörosensoryal retina ayrılır; hızlı oftalmolojik değerlendirme gerekir.",
+    "answer": "Retina dekolmanı. Retina pigment epiteli ile nörosensoryal retina ayrılır; hızlı oftalmolojik değerlendirme gerekir.",
+    "explanation": "Retina pigment epiteli ile nörosensoryal retina ayrılır; hızlı oftalmolojik değerlendirme gerekir. Akut açı kapanması glokomunda ağrılı kırmızı göz ve halo görme daha belirgindir.",
+    "tusTip": "Retina pigment epiteli ile nörosensoryal retina ayrılır; hızlı oftalmolojik değerlendirme gerekir. Akut açı kapanması glokomunda ağrılı kırmızı göz ve halo görme daha belirgindir.",
+    "differentialNote": "Akut açı kapanması glokomunda ağrılı kırmızı göz ve halo görme daha belirgindir.",
+    "keywords": [
+      "retina dekolmanı",
+      "ışık çakması",
+      "uçuşma",
+      "perde inmesi"
+    ]
+  },
+  "tus-pearl-minor-rotations-489-extra": {
+    "front": "Retina dekolmanı için en kritik ayırıcı nokta nedir?",
+    "back": "Akut açı kapanması glokomunda ağrılı kırmızı göz ve halo görme daha belirgindir.",
+    "answer": "Akut açı kapanması glokomunda ağrılı kırmızı göz ve halo görme daha belirgindir.",
+    "explanation": "Retina pigment epiteli ile nörosensoryal retina ayrılır; hızlı oftalmolojik değerlendirme gerekir. Akut açı kapanması glokomunda ağrılı kırmızı göz ve halo görme daha belirgindir.",
+    "tusTip": "Retina dekolmanı karıştırıldığında cevabı netleştiren karşılaştırma: Akut açı kapanması glokomunda ağrılı kırmızı göz ve halo görme daha belirgindir.",
+    "differentialNote": "Akut açı kapanması glokomunda ağrılı kırmızı göz ve halo görme daha belirgindir.",
+    "keywords": [
+      "retina dekolmanı",
+      "ışık çakması",
+      "uçuşma",
+      "perde inmesi"
+    ]
+  },
+  "tus-pearl-minor-rotations-490-spot": {
+    "front": "Kulak kepçesi hareketiyle artan ağrı ve dış kulak yolu ödemi hangi tanıyı düşündürür?",
+    "back": "Otitis eksterna. Dış kulak yolu inflamasyonu tragus veya aurikula hareketiyle ağrıyı artırır.",
+    "answer": "Otitis eksterna. Dış kulak yolu inflamasyonu tragus veya aurikula hareketiyle ağrıyı artırır.",
+    "explanation": "Dış kulak yolu inflamasyonu tragus veya aurikula hareketiyle ağrıyı artırır. Akut otitis media orta kulak efüzyonu ve timpan zar bulgularıyla ayrılır.",
+    "tusTip": "Dış kulak yolu inflamasyonu tragus veya aurikula hareketiyle ağrıyı artırır. Akut otitis media orta kulak efüzyonu ve timpan zar bulgularıyla ayrılır.",
+    "differentialNote": "Akut otitis media orta kulak efüzyonu ve timpan zar bulgularıyla ayrılır.",
+    "keywords": [
+      "otitis eksterna",
+      "tragus ağrısı",
+      "dış kulak yolu",
+      "yüzücü kulağı"
+    ]
+  },
+  "tus-pearl-minor-rotations-490-extra": {
+    "front": "Otitis eksterna karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Akut otitis media orta kulak efüzyonu ve timpan zar bulgularıyla ayrılır.",
+    "answer": "Akut otitis media orta kulak efüzyonu ve timpan zar bulgularıyla ayrılır.",
+    "explanation": "Dış kulak yolu inflamasyonu tragus veya aurikula hareketiyle ağrıyı artırır. Akut otitis media orta kulak efüzyonu ve timpan zar bulgularıyla ayrılır.",
+    "tusTip": "Otitis eksterna kartında ayırıcı değer taşıyan nokta: Akut otitis media orta kulak efüzyonu ve timpan zar bulgularıyla ayrılır.",
+    "differentialNote": "Akut otitis media orta kulak efüzyonu ve timpan zar bulgularıyla ayrılır.",
+    "keywords": [
+      "otitis eksterna",
+      "tragus ağrısı",
+      "dış kulak yolu",
+      "yüzücü kulağı"
+    ]
+  },
+  "tus-pearl-minor-rotations-491-spot": {
+    "front": "Tekrarlayan vertigo atakları, fluktuan işitme kaybı ve tinnitus hangi hastalığı düşündürür?",
+    "back": "Meniere hastalığı. Endolenfatik hidrops iç kulak basıncını etkileyerek ataklar oluşturur.",
+    "answer": "Meniere hastalığı. Endolenfatik hidrops iç kulak basıncını etkileyerek ataklar oluşturur.",
+    "explanation": "Endolenfatik hidrops iç kulak basıncını etkileyerek ataklar oluşturur. BPPV saniyeler süren pozisyonel vertigo ataklarıyla ayrılır.",
+    "tusTip": "Endolenfatik hidrops iç kulak basıncını etkileyerek ataklar oluşturur. BPPV saniyeler süren pozisyonel vertigo ataklarıyla ayrılır.",
+    "differentialNote": "BPPV saniyeler süren pozisyonel vertigo ataklarıyla ayrılır.",
+    "keywords": [
+      "Meniere",
+      "vertigo",
+      "tinnitus",
+      "fluktuan işitme kaybı"
+    ]
+  },
+  "tus-pearl-minor-rotations-491-extra": {
+    "front": "Meniere hastalığı başlığında doğru cevabı belirleyen ana ayırt edici özellik nedir?",
+    "back": "BPPV saniyeler süren pozisyonel vertigo ataklarıyla ayrılır.",
+    "answer": "BPPV saniyeler süren pozisyonel vertigo ataklarıyla ayrılır.",
+    "explanation": "Endolenfatik hidrops iç kulak basıncını etkileyerek ataklar oluşturur. BPPV saniyeler süren pozisyonel vertigo ataklarıyla ayrılır.",
+    "tusTip": "Meniere hastalığı için sınavda hedeflenen ayrım genellikle şudur: BPPV saniyeler süren pozisyonel vertigo ataklarıyla ayrılır.",
+    "differentialNote": "BPPV saniyeler süren pozisyonel vertigo ataklarıyla ayrılır.",
+    "keywords": [
+      "Meniere",
+      "vertigo",
+      "tinnitus",
+      "fluktuan işitme kaybı"
+    ]
+  },
+  "tus-pearl-minor-rotations-492-spot": {
+    "front": "Akut periferik fasiyal paralizide ilk günlerde verilen temel tedavi nedir?",
+    "back": "Kortikosteroid. Erken steroid tedavisi fasiyal sinir inflamasyonunu azaltarak iyileşme olasılığını artırır.",
+    "answer": "Kortikosteroid. Erken steroid tedavisi fasiyal sinir inflamasyonunu azaltarak iyileşme olasılığını artırır.",
+    "explanation": "Erken steroid tedavisi fasiyal sinir inflamasyonunu azaltarak iyileşme olasılığını artırır. Santral fasiyal paralizide alın kasları genellikle korunur.",
+    "tusTip": "Erken steroid tedavisi fasiyal sinir inflamasyonunu azaltarak iyileşme olasılığını artırır. Santral fasiyal paralizide alın kasları genellikle korunur.",
+    "differentialNote": "Santral fasiyal paralizide alın kasları genellikle korunur.",
+    "keywords": [
+      "Bell paralizisi",
+      "periferik fasiyal paralizi",
+      "steroid",
+      "alın tutulumu"
+    ]
+  },
+  "tus-pearl-minor-rotations-492-extra": {
+    "front": "Bell paralizisi sorusunda öğrenciyi doğru sonuca götüren en güçlü ayırıcı ipucu nedir?",
+    "back": "Santral fasiyal paralizide alın kasları genellikle korunur.",
+    "answer": "Santral fasiyal paralizide alın kasları genellikle korunur.",
+    "explanation": "Erken steroid tedavisi fasiyal sinir inflamasyonunu azaltarak iyileşme olasılığını artırır. Santral fasiyal paralizide alın kasları genellikle korunur.",
+    "tusTip": "Bell paralizisi karıştırıldığında cevabı netleştiren karşılaştırma: Santral fasiyal paralizide alın kasları genellikle korunur.",
+    "differentialNote": "Santral fasiyal paralizide alın kasları genellikle korunur.",
+    "keywords": [
+      "Bell paralizisi",
+      "periferik fasiyal paralizi",
+      "steroid",
+      "alın tutulumu"
+    ]
+  },
+  "tus-pearl-minor-rotations-493-spot": {
+    "front": "Kafa travması sonrası bilinç, dikkat veya hafıza bozukluğu olup BT normal ise hangi tanı düşünülür?",
+    "back": "Serebral konküzyon. Konküzyon yapısal görüntüleme bulgusu olmadan geçici beyin fonksiyon bozukluğu oluşturabilir.",
+    "answer": "Serebral konküzyon. Konküzyon yapısal görüntüleme bulgusu olmadan geçici beyin fonksiyon bozukluğu oluşturabilir.",
+    "explanation": "Konküzyon yapısal görüntüleme bulgusu olmadan geçici beyin fonksiyon bozukluğu oluşturabilir. Epidural hematomda görüntülemede kanama saptanması beklenir.",
+    "tusTip": "Konküzyon yapısal görüntüleme bulgusu olmadan geçici beyin fonksiyon bozukluğu oluşturabilir. Epidural hematomda görüntülemede kanama saptanması beklenir.",
+    "differentialNote": "Epidural hematomda görüntülemede kanama saptanması beklenir.",
+    "keywords": [
+      "konküzyon",
+      "kafa travması",
+      "BT normal",
+      "amnezi"
+    ]
+  },
+  "tus-pearl-minor-rotations-493-extra": {
+    "front": "Serebral konküzyon için en kritik ayırıcı nokta nedir?",
+    "back": "Epidural hematomda görüntülemede kanama saptanması beklenir.",
+    "answer": "Epidural hematomda görüntülemede kanama saptanması beklenir.",
+    "explanation": "Konküzyon yapısal görüntüleme bulgusu olmadan geçici beyin fonksiyon bozukluğu oluşturabilir. Epidural hematomda görüntülemede kanama saptanması beklenir.",
+    "tusTip": "Serebral konküzyon kartında ayırıcı değer taşıyan nokta: Epidural hematomda görüntülemede kanama saptanması beklenir.",
+    "differentialNote": "Epidural hematomda görüntülemede kanama saptanması beklenir.",
+    "keywords": [
+      "konküzyon",
+      "kafa travması",
+      "BT normal",
+      "amnezi"
+    ]
+  },
+  "tus-pearl-minor-rotations-494-spot": {
+    "front": "Yürüme bozukluğu, idrar kaçırma ve bilişsel yıkım üçlüsü hangi tanıyı düşündürür?",
+    "back": "Normal basınçlı hidrosefali. Ventrikül genişlemesi özellikle yürüyüşü etkiler; uygun hastada şant düşünülebilir.",
+    "answer": "Normal basınçlı hidrosefali. Ventrikül genişlemesi özellikle yürüyüşü etkiler; uygun hastada şant düşünülebilir.",
+    "explanation": "Ventrikül genişlemesi özellikle yürüyüşü etkiler; uygun hastada şant düşünülebilir. Geriatrik depresyonda ventrikülomegali ve manyetik yürüyüş beklenmez.",
+    "tusTip": "Ventrikül genişlemesi özellikle yürüyüşü etkiler; uygun hastada şant düşünülebilir. Geriatrik depresyonda ventrikülomegali ve manyetik yürüyüş beklenmez.",
+    "differentialNote": "Geriatrik depresyonda ventrikülomegali ve manyetik yürüyüş beklenmez.",
+    "keywords": [
+      "NPH",
+      "yürüme bozukluğu",
+      "idrar inkontinansı",
+      "demans"
+    ]
+  },
+  "tus-pearl-minor-rotations-494-extra": {
+    "front": "Normal basınçlı hidrosefali karışabilecek klinik durumlardan nasıl ayrılır?",
+    "back": "Geriatrik depresyonda ventrikülomegali ve manyetik yürüyüş beklenmez.",
+    "answer": "Geriatrik depresyonda ventrikülomegali ve manyetik yürüyüş beklenmez.",
+    "explanation": "Ventrikül genişlemesi özellikle yürüyüşü etkiler; uygun hastada şant düşünülebilir. Geriatrik depresyonda ventrikülomegali ve manyetik yürüyüş beklenmez.",
+    "tusTip": "Normal basınçlı hidrosefali için sınavda hedeflenen ayrım genellikle şudur: Geriatrik depresyonda ventrikülomegali ve manyetik yürüyüş beklenmez.",
+    "differentialNote": "Geriatrik depresyonda ventrikülomegali ve manyetik yürüyüş beklenmez.",
+    "keywords": [
+      "NPH",
+      "yürüme bozukluğu",
+      "idrar inkontinansı",
+      "demans"
+    ]
+  },
+  "tus-pearl-minor-rotations-495-spot": {
+    "front": "Genel anestezi sonrası hiperkapni, kas rijiditesi ve hızlı ateş yükselmesi hangi tabloyu düşündürür?",
+    "back": "Malign hipertermi. Ryanodin reseptör ilişkili kalsiyum salınımı artar; dantrolen tedavisi gerekir.",
+    "answer": "Malign hipertermi. Ryanodin reseptör ilişkili kalsiyum salınımı artar; dantrolen tedavisi gerekir.",
+    "explanation": "Ryanodin reseptör ilişkili kalsiyum salınımı artar; dantrolen tedavisi gerekir. Nöroleptik malign sendrom antipsikotik kullanımı sonrası gelişir ve başlangıcı genellikle daha yavaştır.",
+    "tusTip": "Ryanodin reseptör ilişkili kalsiyum salınımı artar; dantrolen tedavisi gerekir. Nöroleptik malign sendrom antipsikotik kullanımı sonrası gelişir ve başlangıcı genellikle daha yavaştır.",
+    "differentialNote": "Nöroleptik malign sendrom antipsikotik kullanımı sonrası gelişir ve başlangıcı genellikle daha yavaştır.",
+    "keywords": [
+      "malign hipertermi",
+      "dantrolen",
+      "kas rijiditesi",
+      "anestezi"
+    ]
+  },
+  "tus-pearl-minor-rotations-495-extra": {
+    "front": "Malign hipertermi ile nöroleptik malign sendromu ayırmada hangi öykü ve başlangıç hızı farkı daha belirleyicidir?",
+    "back": "Nöroleptik malign sendrom antipsikotik kullanımı sonrası gelişir ve başlangıcı genellikle daha yavaştır.",
+    "answer": "Nöroleptik malign sendrom antipsikotik kullanımı sonrası gelişir ve başlangıcı genellikle daha yavaştır.",
+    "explanation": "Ryanodin reseptör ilişkili kalsiyum salınımı artar; dantrolen tedavisi gerekir. Nöroleptik malign sendrom antipsikotik kullanımı sonrası gelişir ve başlangıcı genellikle daha yavaştır.",
+    "tusTip": "Malign hipertermi karıştırıldığında cevabı netleştiren karşılaştırma: Nöroleptik malign sendrom antipsikotik kullanımı sonrası gelişir ve başlangıcı genellikle daha yavaştır.",
+    "differentialNote": "Nöroleptik malign sendrom antipsikotik kullanımı sonrası gelişir ve başlangıcı genellikle daha yavaştır.",
+    "keywords": [
+      "malign hipertermi",
+      "dantrolen",
+      "kas rijiditesi",
+      "anestezi"
+    ]
+  }
+});
+
+function applyRevisedPearlCardText(card = {}) {
+  const override = TUS_PEARL_REVISED_TEXT_OVERRIDES[card.id];
+  if (!override) return card;
+  return {
+    ...card,
+    front: override.front,
+    back: override.back,
+    answer: override.answer || override.back,
+    explanation: override.explanation,
+    tusTip: override.tusTip,
+    differentialNote: override.differentialNote,
+    keywords: Array.isArray(override.keywords) ? override.keywords : card.keywords,
+  };
+}
+
 export function buildTusPearlCards() {
   return TUS_PEARL_TOPICS.flatMap((topic, topicIndex) => VARIANT_LABELS.map((_, variantIndex) => buildCard(topic, topicIndex, variantIndex)))
-    .filter((card) => isPearlCardQualityApproved(card));
+    .filter((card) => isPearlCardQualityApproved(card))
+    .map(applyRevisedPearlCardText);
 }
 
 export const TUS_PEARL_CARDS = buildTusPearlCards();

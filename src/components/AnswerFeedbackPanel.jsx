@@ -586,19 +586,17 @@ function buildAISpotFocusedComparisons(optionComparisons = [], selectedOption = 
 function FeedbackSection({ icon, tone = 'blue', eyebrow, title, children, className = '', minimal = false }) {
   const shouldRenderHead = !minimal && (icon || eyebrow || title);
   return (
-    <section className={`feedback-card clinical-feedback-section clinical-feedback-card ${minimal ? 'feedback-card-minimal clinical-feedback-minimal' : ''} ${className}`.trim()}>
+    <section className={`feedback-card ${minimal ? 'feedback-card-minimal' : ''} ${className}`.trim()}>
       {shouldRenderHead ? (
-        <header className="feedback-card-head feedback-section-header">
+        <header className="feedback-card-head">
           {icon ? <IconBadge icon={icon} tone={tone} size="sm" /> : null}
-          <div className="feedback-section-title-stack">
-            {eyebrow ? <span className="feedback-section-eyebrow">{eyebrow}</span> : null}
+          <div>
+            {eyebrow ? <span>{eyebrow}</span> : null}
             {title ? <h4>{title}</h4> : null}
           </div>
         </header>
       ) : null}
-      <div className="feedback-section-body">
-        {children}
-      </div>
+      {children}
     </section>
   );
 }
@@ -692,11 +690,11 @@ function EvidenceChainCard({ evidenceChain, glossaryEnabled = true, minimal = fa
     >
       <ol className={`evidence-chain-list evidence-chain-list-pro ${minimal ? 'minimal-evidence-list' : ''}`.trim()}>
         {evidenceChain.map((item, index) => (
-          <li className="evidence-chain-item evidence-chain-card-item" key={`${item.title}-${item.text}-${index}`}>
-            <b className="evidence-chain-number">{index + 1}</b>
+          <li key={`${item.title}-${item.text}-${index}`}>
+            <b>{index + 1}</b>
             <div className="evidence-chain-copy">
-              {!minimal && item.title ? <strong className="evidence-chain-title"><GlossaryText text={item.title} enabled={glossaryEnabled} /></strong> : null}
-              <p className="evidence-chain-description"><GlossaryText text={ensureSentence(item.text)} enabled={glossaryEnabled} /></p>
+              {!minimal && item.title ? <strong><GlossaryText text={item.title} enabled={glossaryEnabled} /></strong> : null}
+              <p><GlossaryText text={ensureSentence(item.text)} enabled={glossaryEnabled} /></p>
             </div>
           </li>
         ))}
@@ -735,12 +733,12 @@ function OptionComparisonCard({ comparisons, glossaryEnabled = true, isSpotCase 
     >
       <div className={`option-comparison-list ${comparisonCountClass} ${minimal ? 'minimal-option-comparison-list' : ''}`.trim()}>
         {comparisons.map((item, index) => (
-          <article className={`option-comparison-item option-comparison-card-item ${item.status} ${item.isSelected ? 'selected-option' : ''} ${minimal ? 'minimal-option-card' : ''}`.trim()} key={`${item.option}-${index}`}>
+          <article className={`option-comparison-item ${item.status} ${item.isSelected ? 'selected-option' : ''} ${minimal ? 'minimal-option-card' : ''}`.trim()} key={`${item.option}-${index}`}>
             <div className={`option-comparison-head ${minimal ? 'minimal' : ''}`.trim()}>
-              {minimal ? (item.status === 'correct' ? <div className="option-comparison-kicker feedback-status-badge correct">Doğru cevap</div> : item.isSelected ? <div className="option-comparison-kicker feedback-status-badge selected">Seçimin</div> : null) : <span className={`option-comparison-status feedback-status-badge ${item.status} ${item.isSelected ? 'selected' : ''}`}>{item.status === 'correct' ? 'Doğru' : item.isSelected ? 'Seçimin' : 'Alternatif'}</span>}
-              <strong className="option-comparison-title"><GlossaryText text={item.option} enabled={glossaryEnabled} /></strong>
+              {minimal ? (item.status === 'correct' ? <div className="option-comparison-kicker">Doğru cevap</div> : item.isSelected ? <div className="option-comparison-kicker">Seçimin</div> : null) : <span className={`option-comparison-status ${item.status}`}>{item.status === 'correct' ? 'Doğru' : item.isSelected ? 'Seçimin' : 'Alternatif'}</span>}
+              <strong><GlossaryText text={item.option} enabled={glossaryEnabled} /></strong>
             </div>
-            <p className="option-comparison-explanation"><GlossaryText text={ensureSentence(item.explanation)} enabled={glossaryEnabled} /></p>
+            <p><GlossaryText text={ensureSentence(item.explanation)} enabled={glossaryEnabled} /></p>
           </article>
         ))}
       </div>
@@ -756,7 +754,7 @@ function FeedbackManagementCard({ managementSteps, glossaryEnabled = true, clini
       <div className="management-action-list">
         {managementSteps.map((step, index) => (
           <div className="management-action-item management-action-item-pro" key={`${step.title}-${step.text}-${index}`}>
-            <b className="management-action-number">{index + 1}</b>
+            <b>{index + 1}</b>
             <p><strong><GlossaryText text={step.title} enabled={glossaryEnabled} /></strong>{' '}<GlossaryText text={ensureSentence(step.text)} enabled={glossaryEnabled} /></p>
           </div>
         ))}

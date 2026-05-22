@@ -12392,643 +12392,343 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 }
 
 /* ==========================================================
-   V231 — Rebuilt Hap Bilgi card editor modals
+   V231 — Pearl editor popups full rebuild
+   Clean, compact, theme-aligned main/secondary modals.
    ========================================================== */
-.pearl-editor-backdrop.pearl-editor-backdrop-balanced {
+.pearl-editor-backdrop-v231 {
   position: fixed !important;
-  inset: 0 !important;
+  inset: calc(var(--kiq-page-pad-top, 92px) + 2px) 0 0 0 !important;
   z-index: 2147483600 !important;
-  display: grid !important;
-  place-items: center !important;
-  min-height: 100dvh !important;
-  padding: 24px !important;
-  overflow: hidden !important;
-  background: rgba(15, 23, 42, 0.40) !important;
-  backdrop-filter: blur(14px) saturate(118%) !important;
-  -webkit-backdrop-filter: blur(14px) saturate(118%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 18px !important;
+  overflow: auto !important;
+  background: rgba(94, 110, 128, 0.22) !important;
+  backdrop-filter: blur(8px) saturate(110%) !important;
+  -webkit-backdrop-filter: blur(8px) saturate(110%) !important;
 }
 
-.pearl-editor-modal.pearl-editor-modal-balanced {
-  width: min(920px, calc(100vw - 48px)) !important;
-  max-height: min(720px, calc(100dvh - 48px)) !important;
-  margin: 0 !important;
+.pearl-editor-modal-v231 {
+  width: min(100%, 780px) !important;
+  max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 36px) !important;
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
-  border-radius: 28px !important;
-  border: 1px solid rgba(125, 158, 156, 0.34) !important;
-  background:
-    radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.08), transparent 32%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.992), rgba(247, 251, 251, 0.982)) !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(177, 196, 196, 0.58) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.985), rgba(248,251,251,0.975)) !important;
   box-shadow:
-    0 34px 90px rgba(15, 23, 42, 0.24),
-    0 8px 24px rgba(15, 23, 42, 0.10),
-    inset 0 1px 0 rgba(255, 255, 255, 0.84) !important;
+    0 28px 64px rgba(15, 23, 42, 0.16),
+    0 10px 24px rgba(15, 23, 42, 0.06),
+    inset 0 1px 0 rgba(255,255,255,0.84) !important;
 }
 
-.pearl-editor-head.pearl-editor-head-compact {
-  flex: 0 0 auto !important;
+.pearl-editor-head-v231 {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
   gap: 16px !important;
-  padding: 20px 24px 16px !important;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.16) !important;
-  background: linear-gradient(180deg, rgba(255,255,255,0.74), rgba(255,255,255,0.32)) !important;
+  padding: 18px 20px 12px !important;
+  border-bottom: 1px solid rgba(202, 214, 214, 0.72) !important;
 }
 
-.pearl-editor-head-compact .pearl-editor-head-copy {
-  min-width: 0 !important;
-}
-
-.pearl-editor-head-compact h2 {
+.pearl-editor-head-v231 h2 {
   margin: 0 !important;
-  font-size: clamp(1.55rem, 1.16rem + 1.45vw, 2.15rem) !important;
-  line-height: 1.04 !important;
-  letter-spacing: -0.045em !important;
-  font-weight: 850 !important;
-  color: #0f172a !important;
+  font-size: clamp(1.45rem, 1.18rem + 0.9vw, 2rem) !important;
+  line-height: 1.06 !important;
+  letter-spacing: -0.04em !important;
+  font-weight: 800 !important;
+  color: #0f1d2f !important;
 }
 
-.pearl-editor-close.pearl-editor-close-compact {
+.pearl-editor-head-v231 .pearl-editor-close-compact {
   width: 44px !important;
   height: 44px !important;
   min-width: 44px !important;
-  border-radius: 16px !important;
-  color: #0f766e !important;
-  border: 1px solid rgba(15, 118, 110, 0.18) !important;
-  background: rgba(248, 253, 253, 0.92) !important;
-  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06) !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(187, 202, 202, 0.7) !important;
+  background: rgba(248, 252, 252, 0.9) !important;
+  color: var(--primary-700, #0f766e) !important;
 }
 
-.pearl-editor-close.pearl-editor-close-compact:hover {
-  background: rgba(236, 253, 245, 0.96) !important;
-  transform: translateY(-1px) !important;
-}
-
-.pearl-editor-form.pearl-editor-form-compact {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
+.pearl-editor-form-v231 {
   display: flex !important;
   flex-direction: column !important;
-  gap: 14px !important;
-  padding: 18px 24px 20px !important;
-  overflow-y: auto !important;
-  overscroll-behavior: contain !important;
-  scrollbar-gutter: stable !important;
+  gap: 12px !important;
+  padding: 14px 20px 16px !important;
 }
 
-.pearl-editor-primary-grid.pearl-editor-primary-grid-compact {
+.pearl-editor-primary-grid-v231 {
   display: grid !important;
-  grid-template-columns: minmax(0, 1.06fr) minmax(0, 0.94fr) !important;
-  gap: 14px !important;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr) !important;
+  gap: 12px !important;
   align-items: stretch !important;
 }
 
-.pearl-editor-primary-stack.pearl-editor-primary-stack-compact {
+.pearl-editor-primary-stack-v231 {
   display: grid !important;
-  grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
-  gap: 14px !important;
-  min-height: 0 !important;
+  gap: 12px !important;
 }
 
-.pearl-editor-panel-compact-xl,
-.pearl-editor-panel-sm,
-.pearl-editor-select-panel,
-.pearl-editor-advanced-launch,
-.pearl-editor-advanced-launch-v229 {
-  min-height: 0 !important;
-  padding: 14px !important;
-  border-radius: 20px !important;
-  border: 1px solid rgba(190, 205, 205, 0.76) !important;
-  background: linear-gradient(180deg, rgba(252, 254, 254, 0.99), rgba(245, 250, 250, 0.98)) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.86) !important;
+.pearl-editor-panel-v231 {
+  padding: 12px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(205, 217, 217, 0.78) !important;
+  background: linear-gradient(180deg, rgba(250,253,253,0.98), rgba(244,248,248,0.96)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.78) !important;
 }
 
-.pearl-editor-panel-compact-xl,
-.pearl-editor-panel-sm,
-.pearl-editor-select-panel {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 8px !important;
+.pearl-editor-panel-v231 > span,
+.pearl-editor-select-v231 > span,
+.pearl-editor-advanced-launch-v231 .pearl-editor-advanced-launch-copy,
+.pearl-editor-secondary-head-v231 h3,
+.pearl-editor-advanced-grid-v231 label > span {
+  display: block !important;
+  margin: 0 0 8px !important;
+  font-size: 0.92rem !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  color: #4b6378 !important;
 }
 
-.pearl-editor-panel-compact-xl > span,
-.pearl-editor-panel-sm > span,
-.pearl-editor-select-panel > span,
-.pearl-editor-advanced-launch-copy,
-.pearl-editor-advanced-grid-popup label > span {
-  font-size: 0.82rem !important;
-  line-height: 1.18 !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.005em !important;
-  color: #526575 !important;
+.pearl-editor-panel-front-v231 {
+  min-height: 214px !important;
 }
 
-.pearl-editor-panel-compact-xl textarea,
-.pearl-editor-panel-sm textarea,
-.pearl-editor-select-panel select,
-.pearl-editor-advanced-grid-popup input,
-.pearl-editor-advanced-grid-popup select {
+.pearl-editor-panel-small-v231 {
+  min-height: 102px !important;
+}
+
+.pearl-editor-panel-v231 textarea,
+.pearl-editor-select-v231 select,
+.pearl-editor-advanced-grid-v231 input,
+.pearl-editor-advanced-grid-v231 select {
   width: 100% !important;
-  min-height: 46px !important;
-  padding: 11px 13px !important;
-  border-radius: 15px !important;
-  border: 1px solid rgba(210, 222, 222, 0.95) !important;
-  background: rgba(255, 255, 255, 0.96) !important;
-  color: #1e293b !important;
-  font-size: 0.98rem !important;
-  line-height: 1.4 !important;
-  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.025) !important;
-  outline: none !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(214, 223, 223, 0.98) !important;
+  background: rgba(255,255,255,0.95) !important;
+  padding: 12px 14px !important;
+  font-size: 1rem !important;
+  line-height: 1.42 !important;
+  color: #203348 !important;
+  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.03) !important;
 }
 
-.pearl-editor-panel-compact-xl textarea:focus,
-.pearl-editor-panel-sm textarea:focus,
-.pearl-editor-select-panel select:focus,
-.pearl-editor-advanced-grid-popup input:focus,
-.pearl-editor-advanced-grid-popup select:focus {
-  border-color: rgba(13, 148, 136, 0.46) !important;
-  box-shadow: 0 0 0 4px rgba(20, 184, 166, 0.10), inset 0 1px 2px rgba(15, 23, 42, 0.025) !important;
-}
-
-.pearl-editor-panel-compact-xl textarea::placeholder,
-.pearl-editor-panel-sm textarea::placeholder,
-.pearl-editor-advanced-grid-popup input::placeholder {
-  color: #95a3b8 !important;
-}
-
-.pearl-editor-panel-compact-xl textarea {
-  min-height: 132px !important;
+.pearl-editor-panel-front-v231 textarea {
+  min-height: 124px !important;
   resize: vertical !important;
 }
 
-.pearl-editor-panel-sm textarea {
-  min-height: 62px !important;
+.pearl-editor-panel-small-v231 textarea {
+  min-height: 68px !important;
   resize: vertical !important;
 }
 
-.pearl-editor-meta-row.pearl-editor-meta-row-v229,
-.pearl-editor-meta-row.pearl-editor-meta-row-balanced {
+.pearl-editor-panel-v231 textarea::placeholder,
+.pearl-editor-advanced-grid-v231 input::placeholder {
+  color: #90a1b6 !important;
+}
+
+.pearl-editor-meta-row-v231 {
   display: grid !important;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 176px !important;
-  gap: 14px !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 154px !important;
+  gap: 12px !important;
   align-items: stretch !important;
 }
 
-.pearl-editor-select-panel select {
+.pearl-editor-select-v231 select {
   min-height: 50px !important;
 }
 
-.pearl-editor-advanced-launch,
-.pearl-editor-advanced-launch-v229 {
-  min-height: 100% !important;
+.pearl-editor-advanced-launch-v231 {
+  min-height: 84px !important;
+  padding: 12px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(205, 217, 217, 0.78) !important;
+  background: linear-gradient(180deg, rgba(246,252,251,0.96), rgba(237,247,246,0.96)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.75) !important;
   display: flex !important;
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: space-between !important;
-  gap: 10px !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: center !important;
+  gap: 6px !important;
   text-align: left !important;
-  color: #0f766e !important;
-  cursor: pointer !important;
 }
 
-.pearl-editor-advanced-launch-meta {
+.pearl-editor-advanced-launch-v231 .pearl-editor-advanced-launch-copy {
+  margin: 0 !important;
+}
+
+.pearl-editor-advanced-launch-v231 .pearl-editor-advanced-launch-meta {
   display: inline-flex !important;
   align-items: center !important;
-  justify-content: center !important;
   gap: 8px !important;
-  color: #0f766e !important;
-  font-weight: 800 !important;
-}
-
-.pearl-editor-advanced-launch b {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-width: 22px !important;
-  height: 22px !important;
-  padding: 0 7px !important;
-  border-radius: 999px !important;
-  background: rgba(20, 184, 166, 0.13) !important;
-  color: #0f766e !important;
-  font-size: 0.78rem !important;
-}
-
-.pearl-editor-error {
-  margin: -2px 2px 0 !important;
-  color: #b42318 !important;
+  color: var(--primary-700, #0f766e) !important;
   font-size: 0.92rem !important;
   font-weight: 700 !important;
 }
 
-.pearl-editor-actions.pearl-editor-actions-balanced {
-  position: sticky !important;
-  bottom: -20px !important;
-  z-index: 2 !important;
-  flex: 0 0 auto !important;
+.pearl-editor-advanced-launch-v231 b {
+  min-width: 22px !important;
+  height: 22px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  background: rgba(20, 184, 166, 0.12) !important;
+  color: var(--primary-700, #0f766e) !important;
+  font-size: 0.82rem !important;
+  line-height: 1 !important;
+}
+
+.pearl-editor-error {
+  margin: 0 !important;
+  font-size: 0.92rem !important;
+}
+
+.pearl-editor-actions-v231 {
+  margin-top: 2px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
   gap: 10px !important;
-  margin: 2px -24px -20px !important;
-  padding: 14px 24px 18px !important;
-  border-top: 1px solid rgba(148, 163, 184, 0.14) !important;
-  background: linear-gradient(180deg, rgba(248, 251, 251, 0.90), rgba(255, 255, 255, 0.99)) !important;
+  padding-top: 10px !important;
+  border-top: 1px solid rgba(202, 214, 214, 0.7) !important;
 }
 
-.pearl-editor-actions-balanced .btn,
-.pearl-editor-secondary-actions .btn {
-  min-height: 44px !important;
-  border-radius: 14px !important;
+.pearl-editor-actions-v231 .btn,
+.pearl-editor-secondary-actions-v231 .btn {
+  min-height: 42px !important;
   padding-inline: 16px !important;
+  border-radius: 14px !important;
 }
 
-.pearl-editor-secondary-backdrop {
+.pearl-editor-secondary-backdrop-v231 {
   position: fixed !important;
-  inset: 0 !important;
-  z-index: 2147483650 !important;
-  display: grid !important;
-  place-items: center !important;
-  min-height: 100dvh !important;
-  padding: 24px !important;
-  overflow: hidden !important;
-  background: rgba(15, 23, 42, 0.48) !important;
-  backdrop-filter: blur(16px) saturate(118%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(118%) !important;
+  inset: calc(var(--kiq-page-pad-top, 92px) + 2px) 0 0 0 !important;
+  z-index: 2147483660 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 18px !important;
+  background: rgba(87, 102, 120, 0.28) !important;
+  backdrop-filter: blur(9px) saturate(110%) !important;
+  -webkit-backdrop-filter: blur(9px) saturate(110%) !important;
 }
 
-.pearl-editor-secondary-modal {
-  width: min(720px, calc(100vw - 48px)) !important;
-  max-height: min(640px, calc(100dvh - 48px)) !important;
+.pearl-editor-secondary-modal-v231 {
+  width: min(100%, 660px) !important;
+  max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 40px) !important;
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
-  border-radius: 26px !important;
-  border: 1px solid rgba(125, 158, 156, 0.34) !important;
-  background:
-    radial-gradient(circle at 16% 0%, rgba(20, 184, 166, 0.08), transparent 34%),
-    linear-gradient(180deg, rgba(255,255,255,0.992), rgba(247, 251, 251, 0.985)) !important;
-  box-shadow:
-    0 32px 84px rgba(15, 23, 42, 0.28),
-    0 8px 24px rgba(15, 23, 42, 0.10),
-    inset 0 1px 0 rgba(255,255,255,0.86) !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(177, 196, 196, 0.58) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.988), rgba(248,251,251,0.978)) !important;
+  box-shadow: 0 24px 56px rgba(15, 23, 42, 0.18), inset 0 1px 0 rgba(255,255,255,0.82) !important;
 }
 
-.pearl-editor-secondary-head {
-  flex: 0 0 auto !important;
+.pearl-editor-secondary-head-v231 {
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 16px !important;
-  padding: 18px 22px 14px !important;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.14) !important;
-  background: linear-gradient(180deg, rgba(255,255,255,0.74), rgba(255,255,255,0.32)) !important;
+  gap: 14px !important;
+  padding: 16px 18px 12px !important;
+  border-bottom: 1px solid rgba(202, 214, 214, 0.72) !important;
 }
 
-.pearl-editor-secondary-head h3 {
+.pearl-editor-secondary-head-v231 h3 {
   margin: 0 !important;
-  font-size: clamp(1.2rem, 0.95rem + 0.7vw, 1.5rem) !important;
-  line-height: 1.08 !important;
-  letter-spacing: -0.035em !important;
-  font-weight: 850 !important;
-  color: #0f172a !important;
+  font-size: 1.08rem !important;
 }
 
-.pearl-editor-secondary-head p {
-  display: none !important;
-}
-
-.pearl-editor-advanced-grid.pearl-editor-advanced-grid-popup {
+.pearl-editor-secondary-body-v231 {
   flex: 1 1 auto !important;
   min-height: 0 !important;
+  overflow-y: auto !important;
+}
+
+.pearl-editor-advanced-grid-v231 {
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px 14px !important;
-  padding: 16px 22px !important;
-  overflow-y: auto !important;
-  overscroll-behavior: contain !important;
-  scrollbar-gutter: stable !important;
+  gap: 12px !important;
+  padding: 14px 18px !important;
 }
 
-.pearl-editor-advanced-grid-popup label {
-  display: flex !important;
-  flex-direction: column !important;
+.pearl-editor-advanced-grid-v231 label {
+  display: grid !important;
   gap: 7px !important;
-  min-width: 0 !important;
 }
 
-.pearl-editor-secondary-actions {
-  flex: 0 0 auto !important;
+.pearl-editor-advanced-grid-v231 label > span {
+  margin-bottom: 0 !important;
+}
+
+.pearl-editor-secondary-actions-v231 {
+  flex-shrink: 0 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
   gap: 10px !important;
-  padding: 14px 22px 18px !important;
-  border-top: 1px solid rgba(148, 163, 184, 0.14) !important;
-  background: linear-gradient(180deg, rgba(248, 251, 251, 0.90), rgba(255, 255, 255, 0.99)) !important;
+  padding: 12px 18px 16px !important;
+  border-top: 1px solid rgba(202, 214, 214, 0.72) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.96) 34%) !important;
 }
 
-[data-theme='dark'] .pearl-editor-backdrop.pearl-editor-backdrop-balanced,
-[data-theme='dark'] .pearl-editor-secondary-backdrop {
-  background: rgba(2, 6, 23, 0.64) !important;
+[data-theme='dark'] .pearl-editor-backdrop-v231 {
+  background: rgba(51, 65, 85, 0.40) !important;
 }
 
-[data-theme='dark'] .pearl-editor-modal.pearl-editor-modal-balanced,
-[data-theme='dark'] .pearl-editor-secondary-modal {
-  border-color: rgba(94, 234, 212, 0.14) !important;
-  background:
-    radial-gradient(circle at 12% 0%, rgba(20, 184, 166, 0.12), transparent 34%),
-    linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.94)) !important;
-}
-
-[data-theme='dark'] .pearl-editor-head-compact h2,
-[data-theme='dark'] .pearl-editor-secondary-head h3 {
-  color: #f8fafc !important;
-}
-
-[data-theme='dark'] .pearl-editor-panel-compact-xl,
-[data-theme='dark'] .pearl-editor-panel-sm,
-[data-theme='dark'] .pearl-editor-select-panel,
-[data-theme='dark'] .pearl-editor-advanced-launch,
-[data-theme='dark'] .pearl-editor-advanced-launch-v229 {
-  border-color: rgba(94, 234, 212, 0.12) !important;
-  background: linear-gradient(180deg, rgba(30, 41, 59, 0.74), rgba(15, 23, 42, 0.72)) !important;
-}
-
-[data-theme='dark'] .pearl-editor-panel-compact-xl textarea,
-[data-theme='dark'] .pearl-editor-panel-sm textarea,
-[data-theme='dark'] .pearl-editor-select-panel select,
-[data-theme='dark'] .pearl-editor-advanced-grid-popup input,
-[data-theme='dark'] .pearl-editor-advanced-grid-popup select,
-[data-theme='dark'] .pearl-editor-close.pearl-editor-close-compact {
-  border-color: rgba(94, 234, 212, 0.13) !important;
-  background: rgba(15, 23, 42, 0.82) !important;
-  color: #f8fafc !important;
-}
-
-[data-theme='dark'] .pearl-editor-panel-compact-xl > span,
-[data-theme='dark'] .pearl-editor-panel-sm > span,
-[data-theme='dark'] .pearl-editor-select-panel > span,
-[data-theme='dark'] .pearl-editor-advanced-launch-copy,
-[data-theme='dark'] .pearl-editor-advanced-grid-popup label > span {
-  color: #cbd5e1 !important;
-}
-
-@media (max-width: 920px) {
-  .pearl-editor-primary-grid.pearl-editor-primary-grid-compact,
-  .pearl-editor-meta-row.pearl-editor-meta-row-v229,
-  .pearl-editor-meta-row.pearl-editor-meta-row-balanced,
-  .pearl-editor-advanced-grid.pearl-editor-advanced-grid-popup {
-    grid-template-columns: 1fr !important;
-  }
-
-  .pearl-editor-modal.pearl-editor-modal-balanced,
-  .pearl-editor-secondary-modal {
-    max-height: calc(100dvh - 32px) !important;
-  }
-
-  .pearl-editor-advanced-launch,
-  .pearl-editor-advanced-launch-v229 {
-    min-height: 56px !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .pearl-editor-backdrop.pearl-editor-backdrop-balanced,
-  .pearl-editor-secondary-backdrop {
-    padding: 10px !important;
-    overflow-y: auto !important;
-  }
-
-  .pearl-editor-modal.pearl-editor-modal-balanced,
-  .pearl-editor-secondary-modal {
-    width: 100% !important;
-    max-height: calc(100dvh - 20px) !important;
-    border-radius: 20px !important;
-  }
-
-  .pearl-editor-head.pearl-editor-head-compact,
-  .pearl-editor-secondary-head {
-    padding: 16px 16px 12px !important;
-  }
-
-  .pearl-editor-form.pearl-editor-form-compact {
-    padding: 14px 16px 16px !important;
-  }
-
-  .pearl-editor-actions.pearl-editor-actions-balanced {
-    margin: 2px -16px -16px !important;
-    padding: 12px 16px 14px !important;
-    flex-direction: column-reverse !important;
-  }
-
-  .pearl-editor-actions-balanced .btn,
-  .pearl-editor-secondary-actions .btn {
-    width: 100% !important;
-  }
-
-  .pearl-editor-advanced-grid.pearl-editor-advanced-grid-popup,
-  .pearl-editor-secondary-actions {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
-  }
-
-  .pearl-editor-secondary-actions {
-    flex-direction: column-reverse !important;
-  }
-}
-
-/* ==========================================================
-   V232 — Card editor modal portal/fullsreen overlay alignment fix
-   Ensures the create/copy popups cover the whole app chrome and stay centered.
-   ========================================================== */
-.pearl-editor-backdrop.pearl-editor-backdrop-balanced {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 2147483640 !important;
-  display: grid !important;
-  place-items: center !important;
-  width: 100vw !important;
-  min-width: 100vw !important;
-  height: 100dvh !important;
-  min-height: 100dvh !important;
-  padding: clamp(14px, 2.6vw, 32px) !important;
-  overflow: auto !important;
-  overscroll-behavior: contain !important;
-  background: rgba(15, 23, 42, 0.56) !important;
-  backdrop-filter: blur(16px) saturate(112%) !important;
-  -webkit-backdrop-filter: blur(16px) saturate(112%) !important;
-  isolation: isolate !important;
-}
-
-.pearl-editor-modal.pearl-editor-modal-balanced {
-  margin: auto !important;
-  transform: none !important;
-  width: min(980px, calc(100vw - 48px)) !important;
-  max-height: min(700px, calc(100dvh - 48px)) !important;
-}
-
-.pearl-editor-primary-grid.pearl-editor-primary-grid-compact {
-  align-items: stretch !important;
-}
-
-.pearl-editor-panel-compact-xl,
-.pearl-editor-panel-sm {
-  gap: 9px !important;
-}
-
-.pearl-editor-panel-compact-xl > span,
-.pearl-editor-panel-sm > span,
-.pearl-editor-select-panel > span {
-  display: block !important;
-  min-height: 17px !important;
-  padding-left: 1px !important;
-}
-
-.pearl-editor-panel-compact-xl textarea {
-  flex: 1 1 auto !important;
-  min-height: 150px !important;
-  margin: 0 !important;
-}
-
-.pearl-editor-panel-sm textarea {
-  margin: 0 !important;
-}
-
-.pearl-editor-secondary-backdrop {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 2147483645 !important;
-  display: grid !important;
-  place-items: center !important;
-  width: 100vw !important;
-  min-width: 100vw !important;
-  height: 100dvh !important;
-  min-height: 100dvh !important;
-  padding: clamp(14px, 2.6vw, 32px) !important;
-  overflow: auto !important;
-  overscroll-behavior: contain !important;
-  background: rgba(15, 23, 42, 0.60) !important;
-  backdrop-filter: blur(18px) saturate(112%) !important;
-  -webkit-backdrop-filter: blur(18px) saturate(112%) !important;
-}
-
-.pearl-editor-secondary-modal {
-  margin: auto !important;
-  max-height: min(640px, calc(100dvh - 48px)) !important;
-}
-
-[data-theme='dark'] .pearl-editor-backdrop.pearl-editor-backdrop-balanced,
-[data-theme='dark'] .pearl-editor-secondary-backdrop {
-  background: rgba(2, 6, 23, 0.72) !important;
-}
-
-@media (max-width: 920px) {
-  .pearl-editor-modal.pearl-editor-modal-balanced,
-  .pearl-editor-secondary-modal {
-    width: min(100%, calc(100vw - 28px)) !important;
-    max-height: calc(100dvh - 28px) !important;
-  }
-}
-
-@media (max-width: 640px) {
-  .pearl-editor-backdrop.pearl-editor-backdrop-balanced,
-  .pearl-editor-secondary-backdrop {
-    padding: 10px !important;
-    place-items: center !important;
-  }
-
-  .pearl-editor-modal.pearl-editor-modal-balanced,
-  .pearl-editor-secondary-modal {
-    width: 100% !important;
-    max-height: calc(100dvh - 20px) !important;
-  }
-}
-
-/* ==========================================================
-   V93 — Center card editor and optional-fields popup in viewport
-   Purpose: both the main flashcard editor and the nested optional
-   fields dialog must sit on the real viewport center, while the
-   dim overlay covers the top bar and the full page edges.
-   ========================================================== */
-.pearl-editor-backdrop-balanced {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 2147483600 !important;
-  display: grid !important;
-  place-items: center !important;
-  align-content: center !important;
-  justify-content: initial !important;
-  align-items: initial !important;
-  width: 100vw !important;
-  min-height: 100dvh !important;
-  padding: clamp(14px, 2.4vw, 28px) !important;
-  overflow-y: auto !important;
-  background: rgba(2, 6, 23, 0.64) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  box-sizing: border-box !important;
-}
-
-.pearl-editor-modal-balanced {
-  width: min(100%, 1120px) !important;
-  max-height: calc(100dvh - clamp(28px, 4.8vw, 56px)) !important;
-  margin: 0 auto !important;
-  overflow: hidden !important;
-}
-
-.pearl-editor-secondary-backdrop {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: 2147483650 !important;
-  display: grid !important;
-  place-items: center !important;
-  align-content: center !important;
-  justify-items: center !important;
-  width: 100vw !important;
-  min-height: 100dvh !important;
-  padding: clamp(14px, 2.4vw, 28px) !important;
-  overflow-y: auto !important;
-  background: rgba(2, 6, 23, 0.68) !important;
-  backdrop-filter: blur(18px) !important;
-  -webkit-backdrop-filter: blur(18px) !important;
-  box-sizing: border-box !important;
-}
-
-.pearl-editor-secondary-modal {
-  width: min(100%, 920px) !important;
-  max-height: calc(100dvh - clamp(28px, 4.8vw, 56px)) !important;
-  margin: 0 auto !important;
-  overflow: hidden !important;
-  display: flex !important;
-  flex-direction: column !important;
-  border-radius: 28px !important;
-  transform: translateZ(0);
-}
-
-.pearl-editor-advanced-grid-popup {
-  flex: 1 1 auto !important;
-  min-height: 0 !important;
-  overflow-y: auto !important;
-}
-
-.pearl-editor-secondary-actions {
-  flex: 0 0 auto !important;
+[data-theme='dark'] .pearl-editor-secondary-backdrop-v231 {
+  background: rgba(51, 65, 85, 0.48) !important;
 }
 
 @media (max-width: 860px) {
-  .pearl-editor-backdrop-balanced,
-  .pearl-editor-secondary-backdrop {
-    place-items: center !important;
-    align-content: center !important;
-    padding: 12px !important;
+  .pearl-editor-primary-grid-v231,
+  .pearl-editor-meta-row-v231,
+  .pearl-editor-advanced-grid-v231 {
+    grid-template-columns: 1fr !important;
   }
 
-  .pearl-editor-modal-balanced,
-  .pearl-editor-secondary-modal {
-    width: min(100%, calc(100vw - 24px)) !important;
-    max-height: calc(100dvh - 24px) !important;
-    overflow: auto !important;
+  .pearl-editor-modal-v231,
+  .pearl-editor-secondary-modal-v231 {
+    max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 24px) !important;
+  }
+
+  .pearl-editor-advanced-launch-v231 {
+    min-height: 64px !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .pearl-editor-backdrop-v231,
+  .pearl-editor-secondary-backdrop-v231 {
+    padding: 10px !important;
+  }
+
+  .pearl-editor-modal-v231,
+  .pearl-editor-secondary-modal-v231 {
+    width: 100% !important;
+    border-radius: 18px !important;
+  }
+
+  .pearl-editor-head-v231,
+  .pearl-editor-form-v231,
+  .pearl-editor-secondary-head-v231,
+  .pearl-editor-advanced-grid-v231,
+  .pearl-editor-secondary-actions-v231 {
+    padding-inline: 14px !important;
+  }
+
+  .pearl-editor-panel-front-v231 {
+    min-height: 192px !important;
+  }
+
+  .pearl-editor-panel-front-v231 textarea {
+    min-height: 106px !important;
   }
 }

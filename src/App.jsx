@@ -122,46 +122,15 @@ function resolveDemoCases() {
   return DEMO_CASE_IDS.map((caseId) => getCaseById(caseId)).filter(Boolean);
 }
 
-function isClinicalBranchExamCase(clinicalCase = {}) {
-  if (!clinicalCase?.id) return false;
-  if (clinicalCase.branchId === 'tus-spot-olgular') return false;
-  if (clinicalCase.caseType === 'ai-spot' || clinicalCase.caseType === 'ai-generated') return false;
-  return true;
-}
-
-function orderExamCandidatesBySolvedState(caseItems = [], solvedCaseIds = []) {
-  const solvedOrder = new Map((Array.isArray(solvedCaseIds) ? solvedCaseIds : []).map((caseId, index) => [caseId, index]));
-  const unsolved = [];
-  const solved = [];
-
-  caseItems.filter(isClinicalBranchExamCase).forEach((clinicalCase, index) => {
-    const meta = { clinicalCase, index, solvedAt: solvedOrder.get(clinicalCase.id) };
-    if (solvedOrder.has(clinicalCase.id)) solved.push(meta);
-    else unsolved.push(meta);
-  });
-
-  const unsolvedRandomized = shuffleArray(unsolved).map((item) => item.clinicalCase);
-  const staleSolvedFirst = solved
-    .sort((a, b) => {
-      if (a.solvedAt !== b.solvedAt) return a.solvedAt - b.solvedAt;
-      return a.index - b.index;
-    })
-    .map((item) => item.clinicalCase);
-
-  return [...unsolvedRandomized, ...staleSolvedFirst];
-}
-
-function buildExamPool(sourceCases = [], maxQuestionCount = 10, fallbackCases = cases, solvedCaseIds = []) {
+function buildExamPool(sourceCases = [], maxQuestionCount = 10, fallbackCases = cases) {
   const safeSource = Array.isArray(sourceCases) ? sourceCases.filter(Boolean) : [];
   const safeFallback = Array.isArray(fallbackCases) ? fallbackCases.filter(Boolean) : [];
-  const orderedSource = orderExamCandidatesBySolvedState(safeSource, solvedCaseIds);
-  const orderedFallback = orderExamCandidatesBySolvedState(safeFallback, solvedCaseIds);
-  const targetCount = Math.min(maxQuestionCount, Math.max(orderedSource.length, orderedFallback.length));
-  const primary = orderedSource.slice(0, Math.min(targetCount, orderedSource.length));
+  const targetCount = Math.min(maxQuestionCount, Math.max(safeSource.length, safeFallback.length));
+  const primary = shuffleArray(safeSource).slice(0, Math.min(targetCount, safeSource.length));
   if (primary.length >= targetCount) return primary;
 
   const usedIds = new Set(primary.map((item) => item.id));
-  const backup = orderedFallback
+  const backup = shuffleArray(safeFallback)
     .filter((item) => !usedIds.has(item.id))
     .slice(0, targetCount - primary.length);
   return [...primary, ...backup];
@@ -928,10 +897,7 @@ function App() {
 
   const markCaseSolved = useCallback((caseId) => {
     if (!caseId) return;
-    setSolvedCaseIds((current) => {
-      const existing = Array.isArray(current) ? current : [];
-      return [...existing.filter((storedCaseId) => storedCaseId !== caseId), caseId];
-    });
+    setSolvedCaseIds((current) => (current.includes(caseId) ? current : [...current, caseId]));
   }, []);
 
   const handleSubmitAnswer = useCallback(({ clinicalCase, selected, isCorrect }) => {
@@ -1127,14 +1093,10 @@ function App() {
 
   function startBlockExam(sourceCases = accessibleCases, title = isDemoUser ? DEMO_EXAM_TITLE : 'Genel klinik blok sınavı') {
     const safeSourceCases = (Array.isArray(sourceCases) ? sourceCases : accessibleCases)
-      .filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id) && isClinicalBranchExamCase(clinicalCase));
-    const safeFallbackCases = accessibleCases.filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id) && isClinicalBranchExamCase(clinicalCase));
-    const pool = buildExamPool(
-      safeSourceCases.length ? safeSourceCases : safeFallbackCases,
-      10,
-      safeFallbackCases,
-      solvedCaseIds,
-    );
+      .filter((clinicalCase) => accessibleCaseIds.has(clinicalCase.id));
+    const pool = isDemoUser
+      ? accessibleCases
+      : buildExamPool(safeSourceCases.length ? safeSourceCases : accessibleCases, 10, cases);
     if (!pool.length) return;
     clearAIQuestionTimer();
     setMode('exam');
