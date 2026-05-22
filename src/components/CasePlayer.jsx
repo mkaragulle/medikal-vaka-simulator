@@ -707,6 +707,32 @@ function CasePlayer({
 
   const existingAnswer = useMemo(() => examMeta?.answers?.[clinicalCase.id] ?? null, [clinicalCase.id, examMeta]);
 
+  if (isSpotCase) {
+    return (
+      <article className="clinical-case qbank-case tus-spot-bank-case" data-branch={branch.id} data-case-type="spot" data-mode={mode} data-hard-mode={hardMode ? 'true' : 'false'}>
+        <section className="qbank-shell professional-qbank-shell tus-spot-bank-shell" aria-label="TUS spot soru bankası">
+          <div className="tus-spot-bank-main ai-spot-answer-flow">
+            <DiagnosisQuiz
+              clinicalCase={clinicalCase}
+              onRandomCase={onRandomCase}
+              onSubmitAnswer={onSubmitAnswer}
+              tutorMode={tutorMode}
+              examMeta={examPanelMeta}
+              onAdvanceExam={onAdvanceExam}
+              onPreviousExam={onPreviousExam}
+              onFinishExam={onFinishExam}
+              existingAnswer={existingAnswer}
+              orderedInvestigationIds={orderedInvestigationIds}
+              investigationOrders={investigationOrders}
+              hardMode={hardMode}
+              randomActionLabel={randomActionLabel}
+            />
+          </div>
+        </section>
+      </article>
+    );
+  }
+
   return (
     <article className="clinical-case qbank-case" data-branch={branch.id} data-case-type={isSpotCase ? 'spot' : 'standard'} data-mode={mode} data-hard-mode={hardMode ? 'true' : 'false'}>
       <section className="qbank-shell professional-qbank-shell">

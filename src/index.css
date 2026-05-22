@@ -48837,3 +48837,246 @@ html[data-theme="dark"] .branch-card[data-branch]:not([data-branch="tus-spot-olg
     stroke-width: 2.1 !important;
   }
 }
+
+/* ==========================================================
+   V241 — TUS Spot Olgular question-bank layout
+   Spot questions are no longer rendered as clinical case stories.
+   Removes the Öykü/Muayene/Tetkik rail, patient-summary blocks and
+   right/left split; keeps AI prompt/generation logic untouched.
+   ========================================================== */
+.tus-spot-bank-case {
+  width: 100% !important;
+}
+
+.tus-spot-bank-shell.professional-qbank-shell,
+.tus-spot-bank-shell.qbank-shell {
+  display: block !important;
+  width: min(100%, 1240px) !important;
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  animation: subtleFadeIn var(--duration-normal) var(--ease-standard) !important;
+}
+
+.tus-spot-bank-main {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+.tus-spot-bank-main .question-panel.diagnostic-decision-panel {
+  width: min(100%, 1080px) !important;
+  max-width: 1080px !important;
+  margin: 0 auto !important;
+  padding: clamp(22px, 2.5vw, 34px) !important;
+  border-radius: 28px !important;
+  display: grid !important;
+  gap: 18px !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.07), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,252,252,0.965)) !important;
+  border: 1px solid rgba(15, 118, 110, 0.12) !important;
+  box-shadow:
+    0 22px 58px rgba(15, 23, 42, 0.075),
+    inset 0 1px 0 rgba(255,255,255,0.82) !important;
+}
+
+.tus-spot-bank-main .question-panel-head.diagnostic-head {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  gap: 16px !important;
+  align-items: center !important;
+  padding: 0 0 14px !important;
+  border-bottom: 1px solid rgba(15, 118, 110, 0.10) !important;
+}
+
+.tus-spot-bank-main .question-panel-head.diagnostic-head h2 {
+  margin: 0 !important;
+  font-size: clamp(1.25rem, 1.05rem + 0.65vw, 1.75rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.035em !important;
+  color: #111827 !important;
+}
+
+.tus-spot-bank-main .question-panel-head.diagnostic-head h2::after {
+  display: none !important;
+}
+
+.tus-spot-bank-main .question-score-chip.single-score-chip {
+  min-height: 40px !important;
+  border-radius: 999px !important;
+  padding: 0 16px !important;
+  background: rgba(240, 253, 250, 0.88) !important;
+  border: 1px solid rgba(20, 184, 166, 0.20) !important;
+  color: var(--primary-700, #0f766e) !important;
+}
+
+.tus-spot-bank-main .tus-spot-olgular-question-callout {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 36px minmax(0, 1fr) !important;
+  align-items: start !important;
+  gap: 14px !important;
+  width: 100% !important;
+  max-width: none !important;
+  padding: clamp(18px, 2vw, 24px) !important;
+  border-radius: 22px !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(241,249,248,0.92)) !important;
+  border: 1px solid rgba(15, 118, 110, 0.15) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.75) !important;
+}
+
+.tus-spot-bank-main .tus-spot-olgular-question-callout svg {
+  width: 22px !important;
+  height: 22px !important;
+  margin-top: 2px !important;
+  color: var(--primary-700, #0f766e) !important;
+}
+
+.tus-spot-bank-main .tus-spot-olgular-question-callout strong {
+  display: block !important;
+  color: #111827 !important;
+  font-size: clamp(1.05rem, 0.96rem + 0.32vw, 1.28rem) !important;
+  line-height: 1.42 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.tus-spot-bank-main .option-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 11px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.tus-spot-bank-main .option-grid > .answer-option {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 66px !important;
+  display: grid !important;
+  grid-template-columns: 46px minmax(0, 1fr) 34px !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 16px !important;
+  border-radius: 18px !important;
+  background: rgba(255,255,255,0.90) !important;
+  border: 1px solid rgba(203, 213, 225, 0.72) !important;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.035) !important;
+}
+
+.tus-spot-bank-main .option-grid > .answer-option:hover:not(:disabled) {
+  transform: translateY(-1px) !important;
+  border-color: rgba(15, 118, 110, 0.28) !important;
+  background: rgba(240, 253, 250, 0.52) !important;
+}
+
+.tus-spot-bank-main .answer-letter {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  border-radius: 14px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  font-size: 0.96rem !important;
+  font-weight: 850 !important;
+}
+
+.tus-spot-bank-main .answer-title {
+  color: #172033 !important;
+  font-size: clamp(0.98rem, 0.95rem + 0.12vw, 1.08rem) !important;
+  line-height: 1.36 !important;
+  font-weight: 770 !important;
+  letter-spacing: -0.015em !important;
+  overflow-wrap: anywhere !important;
+}
+
+.tus-spot-bank-main .answer-status-icon {
+  justify-self: end !important;
+}
+
+.tus-spot-bank-main .quiz-actions {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding-top: 4px !important;
+}
+
+.tus-spot-bank-main .quiz-actions .btn {
+  min-height: 46px !important;
+  border-radius: 15px !important;
+}
+
+.tus-spot-bank-main .answer-feedback-panel,
+.tus-spot-bank-main .answer-feedback-panel-pro,
+.tus-spot-bank-main .feedback,
+.tus-spot-bank-main .exam-feedback-compact {
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: 2px !important;
+}
+
+html[data-theme="dark"] .tus-spot-bank-main .question-panel.diagnostic-decision-panel,
+.app-shell[data-theme="dark"] .tus-spot-bank-main .question-panel.diagnostic-decision-panel {
+  background:
+    radial-gradient(circle at 0% 0%, rgba(20, 184, 166, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(15,23,42,0.92), rgba(8,13,26,0.90)) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+}
+
+html[data-theme="dark"] .tus-spot-bank-main .question-panel-head.diagnostic-head h2,
+html[data-theme="dark"] .tus-spot-bank-main .tus-spot-olgular-question-callout strong,
+html[data-theme="dark"] .tus-spot-bank-main .answer-title,
+.app-shell[data-theme="dark"] .tus-spot-bank-main .question-panel-head.diagnostic-head h2,
+.app-shell[data-theme="dark"] .tus-spot-bank-main .tus-spot-olgular-question-callout strong,
+.app-shell[data-theme="dark"] .tus-spot-bank-main .answer-title {
+  color: #e5edf6 !important;
+}
+
+html[data-theme="dark"] .tus-spot-bank-main .tus-spot-olgular-question-callout,
+.app-shell[data-theme="dark"] .tus-spot-bank-main .tus-spot-olgular-question-callout,
+html[data-theme="dark"] .tus-spot-bank-main .option-grid > .answer-option,
+.app-shell[data-theme="dark"] .tus-spot-bank-main .option-grid > .answer-option {
+  background: rgba(15, 23, 42, 0.64) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+}
+
+@media (max-width: 760px) {
+  .tus-spot-bank-main .question-panel.diagnostic-decision-panel {
+    padding: 18px !important;
+    border-radius: 22px !important;
+  }
+
+  .tus-spot-bank-main .question-panel-head.diagnostic-head {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .tus-spot-bank-main .tus-spot-olgular-question-callout {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .tus-spot-bank-main .option-grid > .answer-option {
+    grid-template-columns: 40px minmax(0, 1fr) 28px !important;
+    gap: 10px !important;
+    padding: 11px 12px !important;
+  }
+
+  .tus-spot-bank-main .answer-letter {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+  }
+
+  .tus-spot-bank-main .quiz-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .tus-spot-bank-main .quiz-actions .btn {
+    width: 100% !important;
+  }
+}
