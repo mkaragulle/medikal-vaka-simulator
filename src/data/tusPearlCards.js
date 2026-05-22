@@ -41,19 +41,19 @@ export const TUS_PEARL_TOPICS = [
   {
     "branchId": "anatomy",
     "subject": "Anatomi",
-    "topic": "N. fibularis communis lezyonu",
+    "topic": "common fibular sinir lezyonu",
     "mainQuestion": "Düşük ayak ve steppage yürüyüş en çok hangi sinir lezyonunu düşündürür?",
-    "mainAnswer": "N. fibularis communis lezyonu.",
-    "explanation": "N. fibularis communis fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
+    "mainAnswer": "common fibular sinir lezyonu.",
+    "explanation": "common fibular sinir fibula boynu çevresinde yüzeyel seyreder; dorsifleksiyon kaybı düşük ayak ve steppage yürüyüş oluşturur.",
     "keywords": [
       "düşük ayak",
       "steppage yürüyüş",
       "fibula boynu",
       "dorsifleksiyon kaybı"
     ],
-    "trap": "N. tibialis lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
+    "trap": "tibial sinir lezyonu plantar fleksiyon ve taban duyusu ile ilişkilidir; düşük ayak daha çok fibular sinir lezyonudur.",
     "extraQuestion": "Fibula boynu kırığında klasik olarak hangi sinir risk altındadır?",
-    "extraAnswer": "N. fibularis communis.",
+    "extraAnswer": "common fibular sinir.",
     "difficulty": "orta"
   },
   {
@@ -79,7 +79,7 @@ export const TUS_PEARL_TOPICS = [
     "subject": "Anatomi",
     "topic": "Kavernöz sinüs",
     "mainQuestion": "Kavernöz sinüs içinde internal karotis arterle birlikte seyreden kraniyal sinir hangisidir?",
-    "mainAnswer": "N. abducens.",
+    "mainAnswer": "abdusens siniri.",
     "explanation": "III, IV, V1 ve V2 lateral duvardadır; VI. sinir kavernöz sinüs içinde internal karotis arter komşuluğunda seyreder.",
     "keywords": [
       "kavernöz sinüs",
@@ -457,7 +457,7 @@ export const TUS_PEARL_TOPICS = [
   {
     "branchId": "medical-microbiology",
     "subject": "Tıbbi Mikrobiyoloji",
-    "topic": "N. meningitidis",
+    "topic": "Neisseria meningitidis",
     "mainQuestion": "Peteşiyal döküntü ve meningokoksemi hangi bakteriyi düşündürür?",
     "mainAnswer": "Neisseria meningitidis.",
     "explanation": "Gram negatif diplokok, kapsül ve yakın temas profilaksisi ile sorulur.",
@@ -496,7 +496,7 @@ export const TUS_PEARL_TOPICS = [
   {
     "branchId": "medical-microbiology",
     "subject": "Tıbbi Mikrobiyoloji",
-    "topic": "V. cholerae",
+    "topic": "Vibrio cholerae",
     "mainQuestion": "Pirinç suyu dışkı ve hızlı dehidratasyon hangi etkeni düşündürür?",
     "mainAnswer": "Vibrio cholerae.",
     "explanation": "Kolera toksini Gs üzerinden adenilat siklazı artırır; sekretuar diyare oluşur.",
@@ -1565,7 +1565,7 @@ export const TUS_PEARL_TOPICS = [
     "topic": "Akut otitis media",
     "mainQuestion": "Çocukta kulak ağrısı, ateş ve bombeleşmiş timpan membran ne düşündürür?",
     "mainAnswer": "Akut otitis media.",
-    "explanation": "En sık etkenler S. pneumoniae, H. influenzae ve M. catarrhalis’tir.",
+    "explanation": "En sık etkenler S. pneumoniae, H. influenzae ve Moraxella catarrhalis’tir.",
     "keywords": "kulak ağrısı; ateş; bombeleşmiş zar; çocuk",
     "trap": "Otitis eksterna kulak kepçesi hareketiyle ağrı ve dış kanal hassasiyetiyle ayrılır.",
     "extraQuestion": "Akut otitis mediada ilk tercih edilen antibiyotik nedir?",
@@ -1705,39 +1705,39 @@ export const TUS_PEARL_TOPICS = [
   {
     "branchId": "anatomy",
     "subject": "Anatomi",
-    "topic": "N. intercostobrachialis hasarı",
+    "topic": "interkostobrakiyal sinir hasarı",
     "mainQuestion": "Mastektomi ve aksiller diseksiyon sonrası kol medialinde uyuşukluk hangi sinir hasarını düşündürür?",
-    "mainAnswer": "N. intercostobrachialis hasarı.",
-    "explanation": "N. intercostobrachialis üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir.",
-    "keywords": "mastektomi; aksiller diseksiyon; medial kol uyuşukluğu; n. intercostobrachialis",
-    "trap": "N. axillaris omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
-    "extraQuestion": "N. intercostobrachialis hangi temel fonksiyonu taşır?",
+    "mainAnswer": "interkostobrakiyal sinir hasarı.",
+    "explanation": "interkostobrakiyal sinir üst medial kol cilt duyusunu taşır ve aksiller diseksiyonda kolay zedelenir.",
+    "keywords": "mastektomi; aksiller diseksiyon; medial kol uyuşukluğu; interkostobrakiyal sinir",
+    "trap": "aksiller sinir omuz abduksiyonu ve deltoid bölge duyusu ile sorulur; medial kol uyuşukluğu intercostobrachialis lehinedir.",
+    "extraQuestion": "interkostobrakiyal sinir hangi temel fonksiyonu taşır?",
     "extraAnswer": "Üst medial kolun cilt duyusu.",
     "difficulty": "orta"
   },
   {
     "branchId": "anatomy",
     "subject": "Anatomi",
-    "topic": "A. communicans posterior anevrizması",
+    "topic": "posterior communicating arter anevrizması",
     "mainQuestion": "Ani baş ağrısı sonrası pitozis ve midriyazis hangi anevrizma lokalizasyonunu düşündürür?",
-    "mainAnswer": "A. communicans posterior anevrizması.",
-    "explanation": "Posterior communicating arter anevrizması n. oculomotorius basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir.",
-    "keywords": "subaraknoid kanama; pitozis; midriyazis; n. oculomotorius",
-    "trap": "N. abducens paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
-    "extraQuestion": "N. oculomotorius parasempatik lif hasarında pupilla nasıl etkilenir?",
+    "mainAnswer": "posterior communicating arter anevrizması.",
+    "explanation": "Posterior communicating arter anevrizması okulomotor sinir basısı yaparak pitozis, dışa-aşağı bakış ve midriyazis oluşturabilir.",
+    "keywords": "subaraknoid kanama; pitozis; midriyazis; okulomotor sinir",
+    "trap": "abdusens siniri paralizisi lateral bakış kaybı yapar; midriyazis ve pitozis üçüncü sinir basısını destekler.",
+    "extraQuestion": "okulomotor sinir parasempatik lif hasarında pupilla nasıl etkilenir?",
     "extraAnswer": "Midriyazis gelişir.",
     "difficulty": "orta"
   },
   {
     "branchId": "anatomy",
     "subject": "Anatomi",
-    "topic": "V. saphena magna lokalizasyonu",
-    "mainQuestion": "V. saphena magna acil damar yolu için ayak bileğinde hangi anatomik noktada aranır?",
+    "topic": "vena saphena magna lokalizasyonu",
+    "mainQuestion": "vena saphena magna acil damar yolu için ayak bileğinde hangi anatomik noktada aranır?",
     "mainAnswer": "Malleolus medialisin önünde.",
     "explanation": "Safen ven medial malleol önünden geçer; bu sabit nokta venöz erişim ve greft sorularında kullanılır.",
-    "keywords": "v. saphena magna; medial malleol önü; venöz erişim; greft",
-    "trap": "V. saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
-    "extraQuestion": "V. saphena parva ayak bileğinde hangi tarafta seyreder?",
+    "keywords": "vena saphena magna; medial malleol önü; venöz erişim; greft",
+    "trap": "vena saphena parva lateral malleol arkasından seyreder; medial malleol önü magna için ayırt ettiricidir.",
+    "extraQuestion": "vena saphena parva ayak bileğinde hangi tarafta seyreder?",
     "extraAnswer": "Lateral malleol arkasında.",
     "difficulty": "orta"
   },
@@ -1746,10 +1746,10 @@ export const TUS_PEARL_TOPICS = [
     "subject": "Anatomi",
     "topic": "Tarsal tünel sendromu",
     "mainQuestion": "Tarsal tünelde sıkışan sinir hangisidir?",
-    "mainAnswer": "N. tibialis.",
-    "explanation": "Retinaculum flexorum altında n. tibialis ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar.",
-    "keywords": "tarsal tünel; retinaculum flexorum; n. tibialis; taban parestezisi",
-    "trap": "N. fibularis communis fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
+    "mainAnswer": "tibial sinir.",
+    "explanation": "Retinaculum flexorum altında tibial sinir ve posterior tibial damarlar seyreder; bası taban ağrısı ve parestezi yapar.",
+    "keywords": "tarsal tünel; retinaculum flexorum; tibial sinir; taban parestezisi",
+    "trap": "common fibular sinir fibula boynunda düşük ayakla sorulur; tarsal tünel tibial sinirdir.",
     "extraQuestion": "Tarsal tünel basısında duyusal yakınma en çok nerede beklenir?",
     "extraAnswer": "Ayak tabanında.",
     "difficulty": "orta"
@@ -1762,7 +1762,7 @@ export const TUS_PEARL_TOPICS = [
     "mainAnswer": "Corpus perineale.",
     "explanation": "Corpus perineale pelvik taban kaslarının birleşme noktasıdır; median kesi bu merkezi destek yapıyı zedeleyebilir.",
     "keywords": "median epizyotomi; corpus perineale; pelvik taban; destek yapısı",
-    "trap": "Mediolateral epizyotomi m. bulbospongiosus ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
+    "trap": "Mediolateral epizyotomi bulbospongiosus kası ve levator lifleriyle karışabilir; median keside klasik yapı corpus perinealedir.",
     "extraQuestion": "Corpus perineale neden klinik olarak önemlidir?",
     "extraAnswer": "Pelvik taban desteğinin merkezi bağlantı noktasıdır.",
     "difficulty": "orta"
@@ -10307,49 +10307,49 @@ const TUS_PEARL_REVISED_TEXT_OVERRIDES = Object.freeze({
   "tus-pearl-anatomy-126-spot": {
     "front": "Mastektomi ve aksiller diseksiyon sonrası kol medialinde uyuşukluk hangi sinir hasarını düşündürür?",
     "keywords": [
-      "mastektomi; aksiller diseksiyon; medial kol uyuşukluğu; n. intercostobrachialis"
+      "mastektomi; aksiller diseksiyon; medial kol uyuşukluğu; interkostobrakiyal sinir"
     ]
   },
   "tus-pearl-anatomy-126-extra": {
-    "front": "N. intercostobrachialis hangi temel fonksiyonu taşır?",
+    "front": "interkostobrakiyal sinir hangi temel fonksiyonu taşır?",
     "keywords": [
-      "mastektomi; aksiller diseksiyon; medial kol uyuşukluğu; n. intercostobrachialis"
+      "mastektomi; aksiller diseksiyon; medial kol uyuşukluğu; interkostobrakiyal sinir"
     ]
   },
   "tus-pearl-anatomy-127-spot": {
     "front": "Ani baş ağrısı sonrası pitozis ve midriyazis hangi anevrizma lokalizasyonunu düşündürür?",
     "keywords": [
-      "subaraknoid kanama; pitozis; midriyazis; n. oculomotorius"
+      "subaraknoid kanama; pitozis; midriyazis; okulomotor sinir"
     ]
   },
   "tus-pearl-anatomy-127-extra": {
-    "front": "N. oculomotorius parasempatik lif hasarında pupilla nasıl etkilenir?",
+    "front": "okulomotor sinir parasempatik lif hasarında pupilla nasıl etkilenir?",
     "keywords": [
-      "subaraknoid kanama; pitozis; midriyazis; n. oculomotorius"
+      "subaraknoid kanama; pitozis; midriyazis; okulomotor sinir"
     ]
   },
   "tus-pearl-anatomy-128-spot": {
-    "front": "V. saphena magna acil damar yolu için ayak bileğinde hangi anatomik noktada aranır?",
+    "front": "vena saphena magna acil damar yolu için ayak bileğinde hangi anatomik noktada aranır?",
     "keywords": [
-      "v. saphena magna; medial malleol önü; venöz erişim; greft"
+      "vena saphena magna; medial malleol önü; venöz erişim; greft"
     ]
   },
   "tus-pearl-anatomy-128-extra": {
-    "front": "V. saphena parva ayak bileğinde hangi tarafta seyreder?",
+    "front": "vena saphena parva ayak bileğinde hangi tarafta seyreder?",
     "keywords": [
-      "v. saphena magna; medial malleol önü; venöz erişim; greft"
+      "vena saphena magna; medial malleol önü; venöz erişim; greft"
     ]
   },
   "tus-pearl-anatomy-129-spot": {
     "front": "Tarsal tünelde sıkışan sinir hangisidir?",
     "keywords": [
-      "tarsal tünel; retinaculum flexorum; n. tibialis; taban parestezisi"
+      "tarsal tünel; retinaculum flexorum; tibial sinir; taban parestezisi"
     ]
   },
   "tus-pearl-anatomy-129-extra": {
     "front": "Tarsal tünel basısında duyusal yakınma en çok nerede beklenir?",
     "keywords": [
-      "tarsal tünel; retinaculum flexorum; n. tibialis; taban parestezisi"
+      "tarsal tünel; retinaculum flexorum; tibial sinir; taban parestezisi"
     ]
   },
   "tus-pearl-anatomy-130-spot": {

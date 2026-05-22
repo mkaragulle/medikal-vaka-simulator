@@ -50,8 +50,84 @@ function allowsManagementFeedback(clinicalCase = {}) {
   return !isGenericNextStep(clinicalCase.diagnosis?.nextStep || '');
 }
 
+
+
+function normalizeMedicalAbbreviations(value = '') {
+  let text = String(value ?? '');
+
+  const replacements = [
+    [/\b[nN]\.\s*maxillarisin\b/gu, 'maksiller sinirin'],
+    [/\b[nN]\.\s*maxillaris\b/gu, 'maksiller sinir'],
+    [/\b[nN]\.\s*mandibularisin\b/gu, 'mandibular sinirin'],
+    [/\b[nN]\.\s*mandibularis\b/gu, 'mandibular sinir'],
+    [/\b[nN]\.\s*hypoglossusun\b/gu, 'hipoglossal sinirin'],
+    [/\b[nN]\.\s*hypoglossus\b/gu, 'hipoglossal sinir'],
+    [/\b[nN]\.\s*facialisin\b/gu, 'fasiyal sinirin'],
+    [/\b[nN]\.\s*facialis\b/gu, 'fasiyal sinir'],
+    [/\b[nN]\.\s*thoracicus\s+longusun\b/gu, 'uzun torasik sinirin'],
+    [/\b[nN]\.\s*thoracicus\s+longus\b/gu, 'uzun torasik sinir'],
+    [/\b[nN]\.\s*axillaris\b/gu, 'aksiller sinir'],
+    [/\b[nN]\.\s*suprascapularis\b/gu, 'supraskapular sinir'],
+    [/\b[nN]\.\s*abducens\b/gu, 'abdusens siniri'],
+    [/\b[nN]\.\s*oculomotorius\b/gu, 'okulomotor sinir'],
+    [/\b[nN]\.\s*trochlearis\b/gu, 'troklear sinir'],
+    [/\b[nN]\.\s*ophthalmicus\b/gu, 'oftalmik sinir'],
+    [/\b[nN]\.\s*opticus\b/gu, 'optik sinir'],
+    [/\b[nN]\.\s*femoralis\b/gu, 'femoral sinir'],
+    [/\b[nN]\.\s*saphenus\b/gu, 'safen sinir'],
+    [/\b[nN]\.\s*laryngeus\s+recurrens\b/gu, 'rekürren laringeal sinir'],
+    [/\b[nN]\.\s*laryngeus\s+superior\b/gu, 'superior laringeal sinir'],
+    [/\b[aA]\.\s*meningea\s+media[-–—]?spinosum\b/gu, 'orta meningeal arter–foramen spinosum'],
+    [/\b[aA]\.\s*meningea\s+media\b/gu, 'orta meningeal arter'],
+    [/\b[aA]\.\s*carotis\s+interna\b/gu, 'internal karotis arter'],
+    [/\b[aA]\.\s*femoralis\b/gu, 'femoral arter'],
+    [/\b[vV]\.\s*jugularis\s+interna\b/gu, 'internal juguler ven'],
+    [/\b[vV]\.\s*femoralis\b/gu, 'femoral ven'],
+    [/\b[mM]\.\s*serratus\s+anterior\b/gu, 'serratus anterior kası'],
+    [/\b[mM]\.\s*deltoideus\b/gu, 'deltoid kas'],
+    [/\b[mM]\.\s*latissimus\s+dorsi\b/gu, 'latissimus dorsi kası'],
+    [/\b[mM]\.\s*supraspinatus\b/gu, 'supraspinatus kası'],
+    [/\b[mM]\.\s*rhomboideus\s+major\b/gu, 'rhomboid major kası'],
+    [/\b[mM]\.\s*sternocleidomastoideus\b/gu, 'sternokleidomastoid kas'],
+    [/\b[mM]\.\s*posterior\s+cricoarytenoideus\b/gu, 'posterior krikoaritenoid kas'],
+    [/\b[mM]\.\s*lateral\s+cricoarytenoideus\b/gu, 'lateral krikoaritenoid kas'],
+    [/\b[mM]\.\s*transversus\s+arytenoideus\b/gu, 'transvers aritenoid kas'],
+    [/\b[mM]\.\s*thyroarytenoideus\b/gu, 'tiroaritenoid kas'],
+    [/\b[mM]\.\s*cricothyroideus\b/gu, 'krikotiroid kas'],
+    [/\b[Ll]ig\.\s*/gu, 'ligamentum '],
+    [/\b[Pp]roc\.\s*/gu, 'processus '],
+    [/\b[Ff]or\.\s*/gu, 'foramen '],
+    [/\b[Aa]rt\.\s*/gu, 'articulatio '],
+    [/\bNervus thoracicus longus\b/gu, 'Uzun torasik sinir'],
+    [/\bnervus thoracicus longus\b/gu, 'uzun torasik sinir'],
+    [/\bMusculus serratus anterior\b/gu, 'Serratus anterior kası'],
+    [/\bmusculus serratus anterior\b/gu, 'serratus anterior kası'],
+    [/\bMusculus deltoideus\b/gu, 'Deltoid kas'],
+    [/\bmusculus deltoideus\b/gu, 'deltoid kas'],
+    [/\bMusculus latissimus dorsi\b/gu, 'Latissimus dorsi kası'],
+    [/\bmusculus latissimus dorsi\b/gu, 'latissimus dorsi kası'],
+    [/\bMusculus supraspinatus\b/gu, 'Supraspinatus kası'],
+    [/\bmusculus supraspinatus\b/gu, 'supraspinatus kası'],
+    [/\bMusculus rhomboideus major\b/gu, 'Rhomboid major kası'],
+    [/\bmusculus rhomboideus major\b/gu, 'rhomboid major kası'],
+  ];
+
+  replacements.forEach(([pattern, replacement]) => {
+    text = text.replace(pattern, replacement);
+  });
+
+  return text
+    .replace(/\bn\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'nervus $1')
+    .replace(/\bm\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'musculus $1')
+    .replace(/\ba\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'arteria $1')
+    .replace(/\bv\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'vena $1');
+}
+
 function normalizeText(value = '') {
-  return repairAIGeneratedText(String(value ?? ''), { fallback: String(value ?? '') })
+  return normalizeMedicalAbbreviations(repairAIGeneratedText(String(value ?? ''), { fallback: String(value ?? '') }))
+    .replace(/\bASİT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
+    .replace(/\bASIT\s*[-–—]?\s*baz\b/giu, 'Asit-baz')
+    .replace(/\bASİT\s*[-–—]?\s*BAZ\b/giu, 'Asit-baz')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .trim();
@@ -160,8 +236,10 @@ function truncateSentence(value = '', limit = 230) {
 }
 
 function splitIntoSentences(text = '') {
-  return normalizeText(text)
-    .split(/(?<=[.!?])\s+/u)
+  const normalized = normalizeText(text);
+  if (!normalized) return [];
+  return normalized
+    .split(/(?<=[.!?])\s+(?=[A-ZÇĞİÖŞÜ0-9])/u)
     .map((sentence) => sentence.trim())
     .filter(Boolean);
 }
@@ -213,6 +291,9 @@ function removeMetaLanguage(value = '') {
     .replace(/Bu spot olguda\s+/giu, '')
     .replace(/öğrenci\s+[^.]*\.?/giu, '')
     .replace(/Bu vaka,?\s*/giu, '')
+    .replace(/Bu\s+seçenek\s+soru\s+kökündeki\s+(?:hatalı\/?istisna|hatalı|istisna)\s+ifadeyi\s+karşılar\.?/giu, '')
+    .replace(/^\s*(?:Seçilmelidir|Yanlıştır|Doğrudur)\s*[;:.-]?\s*/giu, '')
+    .replace(/\s+(?:Seçilmelidir|Yanlıştır|Doğrudur)\s*;\s*/giu, ' ')
     .replace(/klinik bağlamda değerlendirilir/giu, 'öykü ve objektif bulgularla birlikte yorumlanır')
     .replace(/Morfolojik patern\.\s*Morfolojik patern\.?/giu, '')
     .replace(/karar verdirici paternyla/giu, 'karar verdirici paternle')
@@ -692,11 +773,11 @@ function isAISpotExceptionQuestion(clinicalCase = {}) {
 }
 
 function decorateAISpotSelectedExplanation(clinicalCase = {}, row = {}, isCorrect = false) {
-  const text = row?.explanation || '';
+  const text = removeMetaLanguage(row?.explanation || '');
   if (isCorrect) return text;
   if (isAISpotExceptionQuestion(clinicalCase) && /do[ğg]rudur|ifade do[ğg]rudur|seçenek do[ğg]ru/iu.test(text)) {
     return mergeUniqueSentences([
-      `Bu seçenek hatalı ifade değildir; bu nedenle “yanlıştır/değildir” tipindeki soru kökünde seçilmemelidir.`,
+      `Seçtiğin ifade bilimsel olarak doğrudur; ancak soru kökü yanlış veya istisna olan ifadeyi sorduğu için bu yanıt elenir.`,
       text,
     ], 4, 760);
   }
@@ -704,13 +785,7 @@ function decorateAISpotSelectedExplanation(clinicalCase = {}, row = {}, isCorrec
 }
 
 function decorateAISpotCorrectExplanation(clinicalCase = {}, row = {}) {
-  const text = row?.explanation || '';
-  if (isAISpotExceptionQuestion(clinicalCase)) {
-    return mergeUniqueSentences([
-      `Bu seçenek soru kökündeki hatalı/istisna ifadeyi karşılar.`,
-      text,
-    ], 4, 760);
-  }
+  const text = removeMetaLanguage(row?.explanation || '');
   return text;
 }
 
@@ -739,31 +814,19 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
   const selectedExplanation = decorateAISpotSelectedExplanation(clinicalCase, selectedRow, isCorrect) || whyWrong;
   const correctExplanation = decorateAISpotCorrectExplanation(clinicalCase, correctRow) || whyCorrect;
   const scienceText = buildAISpotScienceText(clinicalCase, whyCorrect);
-  const summaryText = isCorrect
-    ? 'Seçtiğin yanıt doğru. Aşağıdaki açıklama, doğru seçeneğin mekanizmasını ve diğer seçeneklerin neden elendiğini özetler.'
-    : 'Seçtiğin yanıt doğru cevap değil. Bu bölümde önce seçiminin neden elendiğini, ardından doğru cevabın mekanizmasını ve tüm seçeneklerin ayrımını görebilirsin.';
-
   return (
-    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel`} aria-live="polite">
-      <div className="ai-spot-detailed-feedback-shell">
-        <section className="ai-spot-feedback-summary-card">
-          <div className="ai-spot-feedback-summary-icon"><Icon name={isCorrect ? 'CheckCircle' : 'AlertTriangle'} size={18} /></div>
-          <div>
-            <span>Yanıt analizi</span>
-            <p><GlossaryText text={summaryText} enabled={glossaryEnabled} /></p>
-          </div>
-        </section>
-
-        <div className={`ai-spot-feedback-choice-grid ${isCorrect ? 'single' : ''}`.trim()}>
+    <div className={`feedback answer-feedback-panel ${isCorrect ? 'success' : 'danger'} answer-feedback-panel-pro ai-spot-detailed-feedback-panel ai-spot-detailed-feedback-panel-v246`} aria-live="polite">
+      <div className="ai-spot-detailed-feedback-shell ai-spot-detailed-feedback-shell-v246">
+        <div className={`ai-spot-feedback-choice-grid ai-spot-feedback-choice-grid-v246 ${isCorrect ? 'single' : ''}`.trim()}>
           <article className={`ai-spot-feedback-choice-card ${isCorrect ? 'is-correct' : 'is-selected-wrong'}`.trim()}>
-            <span>Seçimin</span>
+            <span className="ai-spot-choice-kicker">Seçimin</span>
             <strong><GlossaryText text={selectedText || 'Seçim bulunamadı'} enabled={glossaryEnabled} /></strong>
             <p><GlossaryText text={ensureSentence(selectedExplanation || 'Seçilen seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
           </article>
 
           {!isCorrect ? (
             <article className="ai-spot-feedback-choice-card is-correct">
-              <span>Doğru cevap</span>
+              <span className="ai-spot-choice-kicker">Doğru cevap</span>
               <strong><GlossaryText text={correctText || 'Doğru cevap bulunamadı'} enabled={glossaryEnabled} /></strong>
               <p><GlossaryText text={ensureSentence(correctExplanation || 'Doğru seçenek için açıklama bulunamadı.')} enabled={glossaryEnabled} /></p>
             </article>
@@ -771,24 +834,25 @@ function AISpotDetailedFeedback({ clinicalCase, selectedOption, isCorrect, whyCo
         </div>
 
         {scienceText ? (
-          <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card">
+          <section className="ai-spot-feedback-section-card ai-spot-feedback-science-card ai-spot-feedback-science-card-v246">
             <header>
-              <span>Bilimsel açıklama</span>
               <h4>Mekanizma ve sınav mantığı</h4>
             </header>
             <p><GlossaryText text={ensureSentence(scienceText)} enabled={glossaryEnabled} /></p>
             {pearl ? (
-              <div className="ai-spot-feedback-pearl-card">
-                <span>TUS ipucu</span>
-                <p><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} /></p>
+              <div className="ai-spot-feedback-pearl-card ai-spot-feedback-pearl-card-v246">
+                <div className="ai-spot-pearl-icon"><Icon name="Sparkles" size={15} /></div>
+                <div>
+                  <span>TUS ipucu</span>
+                  <p><GlossaryText text={ensureSentence(pearl)} enabled={glossaryEnabled} /></p>
+                </div>
               </div>
             ) : null}
           </section>
         ) : null}
 
-        <section className="ai-spot-feedback-section-card ai-spot-feedback-options-card">
+        <section className="ai-spot-feedback-section-card ai-spot-feedback-options-card ai-spot-feedback-options-card-v246">
           <header>
-            <span>Seçenek karşılaştırması</span>
             <h4>Seçenekleri nasıl elemeliydin?</h4>
           </header>
           <div className="ai-spot-feedback-option-list">

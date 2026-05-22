@@ -41,6 +41,38 @@ const TITLE_REPLACEMENTS = new Map([
   ['Kanıt 4', 'Klinik ipucu'],
 ]);
 
+
+function normalizeMedicalAbbreviations(value = '') {
+  let text = String(value ?? '');
+  const replacements = [
+    [/\b[nN]\.\s*facialisin\b/gu, 'fasiyal sinirin'], [/\b[nN]\.\s*facialis\b/gu, 'fasiyal sinir'],
+    [/\b[nN]\.\s*maxillarisin\b/gu, 'maksiller sinirin'], [/\b[nN]\.\s*maxillaris\b/gu, 'maksiller sinir'],
+    [/\b[nN]\.\s*mandibularisin\b/gu, 'mandibular sinirin'], [/\b[nN]\.\s*mandibularis\b/gu, 'mandibular sinir'],
+    [/\b[nN]\.\s*hypoglossusun\b/gu, 'hipoglossal sinirin'], [/\b[nN]\.\s*hypoglossus\b/gu, 'hipoglossal sinir'],
+    [/\b[nN]\.\s*thoracicus\s+longusun\b/gu, 'uzun torasik sinirin'], [/\b[nN]\.\s*thoracicus\s+longus\b/gu, 'uzun torasik sinir'],
+    [/\b[aA]\.\s*meningea\s+media\b/gu, 'orta meningeal arter'],
+    [/\b[mM]\.\s*serratus\s+anterior\b/gu, 'serratus anterior kası'], [/\b[mM]\.\s*deltoideus\b/gu, 'deltoid kas'],
+    [/\b[mM]\.\s*latissimus\s+dorsi\b/gu, 'latissimus dorsi kası'], [/\b[mM]\.\s*supraspinatus\b/gu, 'supraspinatus kası'],
+    [/\b[mM]\.\s*rhomboideus\s+major\b/gu, 'rhomboid major kası'],
+    [/\b[vV]\.\s*jugularis\s+interna\b/gu, 'internal juguler ven'],
+    [/\b[Ll]ig\.\s*/gu, 'ligamentum '], [/\b[Pp]roc\.\s*/gu, 'processus '], [/\b[Ff]or\.\s*/gu, 'foramen '], [/\b[Aa]rt\.\s*/gu, 'articulatio '],
+    [/\bNervus thoracicus longus\b/gu, 'Uzun torasik sinir'], [/\bnervus thoracicus longus\b/gu, 'uzun torasik sinir'],
+    [/\bMusculus serratus anterior\b/gu, 'Serratus anterior kası'], [/\bmusculus serratus anterior\b/gu, 'serratus anterior kası'],
+    [/\bMusculus deltoideus\b/gu, 'Deltoid kas'], [/\bmusculus deltoideus\b/gu, 'deltoid kas'],
+    [/\bMusculus latissimus dorsi\b/gu, 'Latissimus dorsi kası'], [/\bmusculus latissimus dorsi\b/gu, 'latissimus dorsi kası'],
+    [/\bMusculus supraspinatus\b/gu, 'Supraspinatus kası'], [/\bmusculus supraspinatus\b/gu, 'supraspinatus kası'],
+    [/\bMusculus rhomboideus major\b/gu, 'Rhomboid major kası'], [/\bmusculus rhomboideus major\b/gu, 'rhomboid major kası'],
+  ];
+  replacements.forEach(([pattern, replacement]) => {
+    text = text.replace(pattern, replacement);
+  });
+  return text
+    .replace(/\bn\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'nervus $1')
+    .replace(/\bm\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'musculus $1')
+    .replace(/\ba\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'arteria $1')
+    .replace(/\bv\.\s*([A-Za-zÇĞİÖŞÜçğıöşü-]+)/gu, 'vena $1');
+}
+
 function compactSpaces(text = '') {
   return String(text || '')
     .replace(/\s+([,.;:!?])/gu, '$1')
@@ -50,7 +82,7 @@ function compactSpaces(text = '') {
 }
 
 export function normalizeTusLanguageText(value = '') {
-  let text = String(value || '');
+  let text = normalizeMedicalAbbreviations(String(value || ''));
   WEAK_TEXT_REPLACEMENTS.forEach(([pattern, replacement]) => {
     text = text.replace(pattern, replacement);
   });

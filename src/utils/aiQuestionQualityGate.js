@@ -83,9 +83,14 @@ export const AI_QUALITY_FORBIDDEN_PHRASES = [
   'bu veri klinik bağlamda değerlendirilir',
   'nedeniyle ameliyathane',
   'sağlayarak.',
+  'bu seçenek soru kökündeki hatalı/istisna ifadeyi karşılar',
+  'bu seçenek soru kökündeki hatalı ifadeyi karşılar',
+  'bu seçenek soru kökündeki istisna ifadeyi karşılar',
 ];
 
 const HARD_FORBIDDEN_REGEXES = [
+  /\b(?:n|m|a|v|lig|proc|for|art|r|rr)\.\s/iu,
+  /\bBu seçenek soru kökündeki (?:hatalı\/?istisna|hatalı|istisna) ifadeyi karşılar\.?/iu,
   /\bhangi tedavi yöntemi ilk sırada uygulanmalıdır\b/iu,
   /\bkendi tipik öykü, muayene veya tetkik paterni varsa güç kazanır\b/iu,
   /\bdoğru yanıta götüren ana bulgudur\b/iu,
