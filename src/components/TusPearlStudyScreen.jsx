@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useDeferredValue, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import { Icon } from './ui.jsx';
 import { TUS_PEARL_CARDS, TUS_PEARL_CARD_STATS } from '../data/tusPearlCards.js';
@@ -492,19 +492,24 @@ function TusPearlStudyScreen({
     (activeCatalog?.cardIds || []).map((id) => cardById.get(id)).filter(Boolean)
   ), [activeCatalog, cardById]);
 
+  const deferredLibrarySearch = useDeferredValue(librarySearch);
+  const librarySearchIndex = useMemo(() => allCards.map((card) => ({
+    card,
+    searchText: [card.front, card.back, card.subject, card.topic, card.source, ...(card.keywords || []), ...(card.tags || [])]
+      .join(' ')
+      .toLocaleLowerCase('tr'),
+  })), [allCards]);
+
   const searchableCards = useMemo(() => {
-    const query = librarySearch.trim().toLocaleLowerCase('tr');
-    const pool = allCards.filter((card) => {
+    const query = deferredLibrarySearch.trim().toLocaleLowerCase('tr');
+    const pool = librarySearchIndex.filter(({ card }) => {
       if (sourceLibraryFilter === 'user' && card.source !== 'user') return false;
       if (sourceLibraryFilter === 'system' && card.source === 'user') return false;
       return true;
     });
-    if (!query) return pool.slice(0, 16);
-    return pool.filter((card) => [card.front, card.back, card.subject, card.topic, card.source, ...(card.keywords || []), ...(card.tags || [])]
-      .join(' ')
-      .toLocaleLowerCase('tr')
-      .includes(query)).slice(0, 24);
-  }, [activeCatalog, allCards, librarySearch, sourceLibraryFilter]);
+    if (!query) return pool.map(({ card }) => card);
+    return pool.filter(({ searchText }) => searchText.includes(query)).map(({ card }) => card);
+  }, [deferredLibrarySearch, librarySearchIndex, sourceLibraryFilter]);
 
   function commitState(updater) {
     setPearlState((current) => savePearlState(updater(current || defaultPearlState)));
@@ -561,6 +566,18 @@ function TusPearlStudyScreen({
     setCatalogMenuOpen(false);
     setBranchMenuOpen(false);
   }, [activeCard?.id, viewMode]);
+
+  useEffect(() => {
+    if (viewMode !== 'study') return undefined;
+    const frame = window.requestAnimationFrame(() => {
+      const scrollingElement = document.scrollingElement || document.documentElement;
+      scrollingElement?.scrollTo?.({ top: 0, left: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      document.querySelector('.tus-pearl-study-shell')?.scrollTo?.({ top: 0, left: 0, behavior: 'auto' });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [activeCatalogId, filter, viewMode]);
 
 
   const updateBranchMenuPosition = useCallback(() => {
@@ -755,6 +772,10 @@ function TusPearlStudyScreen({
 
   function openCatalogForStudy(catalogId = activeCatalogId) {
     if (!catalogId) return;
+    const scrollingElement = document.scrollingElement || document.documentElement;
+    scrollingElement?.scrollTo?.({ top: 0, left: 0, behavior: 'auto' });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     setActiveCatalogId(catalogId);
     setFilter('catalog');
     setBranchFilter('all');
@@ -866,7 +887,15 @@ function TusPearlStudyScreen({
   ) : null;
 
   return (
-    <section className="page-shell tus-pearl-study-shell" aria-label="Hap Bilgi Kartları çalışma ekranı">
+    <section
+      className={[
+        'page-shell',
+        'tus-pearl-study-shell',
+        viewMode === 'study' ? 'pearl-study-shell-mode-study' : 'pearl-study-shell-mode-catalogs',
+        filter === 'catalog' ? 'pearl-study-shell-catalog-session' : '',
+      ].filter(Boolean).join(' ')}
+      aria-label="Hap Bilgi Kartları çalışma ekranı"
+    >
       <header className="tus-pearl-study-top card-surface">
         <button type="button" className="branch-back-v8 pearl-study-return-v136" onClick={onBack} aria-label="Tekrar merkezine dön">
           <span className="pearl-study-back-icon" aria-hidden="true">

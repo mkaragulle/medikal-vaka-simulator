@@ -88,6 +88,27 @@ function TusPearlCardEditor({
     setError('');
   }, [defaultCatalogId, initialCard, open]);
 
+  useEffect(() => {
+    if (!open) return undefined;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    function handleKeyDown(event) {
+      if (event.key !== 'Escape') return;
+      if (advancedDialogOpen) {
+        setAdvancedDialogOpen(false);
+        return;
+      }
+      onClose?.();
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [advancedDialogOpen, onClose, open]);
+
   const title = useMemo(() => {
     if (mode === 'edit') return 'Kartı düzenle';
     if (mode === 'copy') return 'Kendi kartıma kopyala';
@@ -224,7 +245,7 @@ function TusPearlCardEditor({
             </div>
           </div>
 
-          <div className="pearl-editor-meta-row pearl-editor-meta-row-balanced">
+          <div className="pearl-editor-meta-row pearl-editor-meta-row-balanced pearl-editor-meta-row-v229">
             <label className="pearl-editor-panel pearl-editor-panel-inline pearl-editor-select-panel">
               <span>Branş</span>
               <select value={form.branchId} onChange={(event) => updateField('branchId', event.target.value)}>
@@ -240,10 +261,12 @@ function TusPearlCardEditor({
               </select>
             </label>
 
-            <button type="button" className="pearl-editor-advanced-toggle pearl-editor-advanced-toggle-compact pearl-editor-advanced-launch" onClick={openAdvancedDialog}>
-              <Icon name="Sparkles" size={16} />
-              <span>Opsiyonel alanlar</span>
-              {filledAdvancedCount ? <b>{filledAdvancedCount}</b> : null}
+            <button type="button" className="pearl-editor-advanced-toggle pearl-editor-advanced-toggle-compact pearl-editor-advanced-launch pearl-editor-advanced-launch-v229" onClick={openAdvancedDialog}>
+              <span className="pearl-editor-advanced-launch-copy">Opsiyonel alanlar</span>
+              <span className="pearl-editor-advanced-launch-meta">
+                <Icon name="Sparkles" size={15} />
+                {filledAdvancedCount ? <b>{filledAdvancedCount}</b> : null}
+              </span>
             </button>
           </div>
 
@@ -260,7 +283,14 @@ function TusPearlCardEditor({
       </section>
 
       {advancedDialogOpen ? (
-        <div className="pearl-editor-secondary-backdrop" role="presentation" onClick={closeAdvancedDialog}>
+        <div
+          className="pearl-editor-secondary-backdrop"
+          role="presentation"
+          onClick={(event) => {
+            event.stopPropagation();
+            closeAdvancedDialog();
+          }}
+        >
           <section className="pearl-editor-secondary-modal card-surface" role="dialog" aria-modal="true" aria-label="Opsiyonel alanlar" onClick={(event) => event.stopPropagation()}>
             <header className="pearl-editor-secondary-head">
               <div>
