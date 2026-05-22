@@ -12839,19 +12839,106 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   }
 }
 
-
 /* ==========================================================
-   V233 — Portal-mounted pearl editor overlay centering
-   Purpose: ensure create/copy modals are centered relative to the full viewport
-   and dim the entire app shell including top bar and page gutters.
+   V238 — Hap Bilgi editor full-viewport overlay + true centering
+   Purpose: center create/copy card modals on the full viewport and dim
+   the complete app shell, including the global topbar and page gutters.
    ========================================================== */
 .pearl-editor-backdrop.pearl-editor-backdrop-balanced {
+  position: fixed !important;
+  inset: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  z-index: 2147483645 !important;
+  display: grid !important;
+  place-items: center !important;
   align-content: center !important;
   justify-items: center !important;
+  padding: clamp(16px, 2.2vw, 28px) !important;
+  box-sizing: border-box !important;
+  overflow: auto !important;
+  overscroll-behavior: contain !important;
+  background: rgba(15, 23, 42, 0.54) !important;
+  backdrop-filter: blur(18px) saturate(116%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(116%) !important;
   isolation: isolate !important;
 }
 
-.pearl-editor-modal.pearl-editor-modal-balanced,
+.pearl-editor-modal.pearl-editor-modal-balanced {
+  position: relative !important;
+  align-self: center !important;
+  justify-self: center !important;
+  margin: 0 auto !important;
+  width: min(920px, calc(100vw - 56px)) !important;
+  max-height: calc(100dvh - 56px) !important;
+  transform: none !important;
+}
+
+.pearl-editor-secondary-backdrop {
+  position: fixed !important;
+  inset: 0 !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  z-index: 2147483646 !important;
+  display: grid !important;
+  place-items: center !important;
+  align-content: center !important;
+  justify-items: center !important;
+  padding: clamp(16px, 2.2vw, 28px) !important;
+  box-sizing: border-box !important;
+  overflow: auto !important;
+  overscroll-behavior: contain !important;
+  background: rgba(15, 23, 42, 0.58) !important;
+  backdrop-filter: blur(20px) saturate(116%) !important;
+  -webkit-backdrop-filter: blur(20px) saturate(116%) !important;
+}
+
 .pearl-editor-secondary-modal {
-  margin-inline: auto !important;
+  align-self: center !important;
+  justify-self: center !important;
+  margin: 0 auto !important;
+  width: min(720px, calc(100vw - 56px)) !important;
+  max-height: calc(100dvh - 56px) !important;
+  transform: none !important;
+}
+
+.pearl-editor-advanced-grid.pearl-editor-advanced-grid-popup {
+  min-height: 0 !important;
+  overflow-y: auto !important;
+}
+
+.pearl-editor-secondary-actions {
+  flex: 0 0 auto !important;
+}
+
+[data-theme='dark'] .pearl-editor-backdrop.pearl-editor-backdrop-balanced {
+  background: rgba(2, 6, 23, 0.70) !important;
+}
+
+[data-theme='dark'] .pearl-editor-secondary-backdrop {
+  background: rgba(2, 6, 23, 0.76) !important;
+}
+
+@media (max-width: 640px) {
+  .pearl-editor-backdrop.pearl-editor-backdrop-balanced,
+  .pearl-editor-secondary-backdrop {
+    padding: 10px !important;
+    place-items: center !important;
+  }
+
+  .pearl-editor-modal.pearl-editor-modal-balanced,
+  .pearl-editor-secondary-modal {
+    width: calc(100vw - 20px) !important;
+    max-height: calc(100dvh - 20px) !important;
+  }
 }

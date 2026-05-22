@@ -1,5 +1,4 @@
 import { memo, useEffect, useMemo, useState } from 'react';
-import { createPortal } from 'react-dom';
 import { Icon } from './ui.jsx';
 import { branches } from '../data/branches.js';
 import { createUserPearlCardId, normalizeUserPearlCard } from '../utils/pearlCardStorage.js';
@@ -193,7 +192,7 @@ function TusPearlCardEditor({
 
   if (!open) return null;
 
-  const modalTree = (
+  return (
     <div className="pearl-editor-backdrop pearl-editor-backdrop-balanced" role="presentation" onClick={onClose}>
       <section
         className="pearl-editor-modal pearl-editor-modal-compact pearl-editor-modal-balanced card-surface"
@@ -353,8 +352,6 @@ function TusPearlCardEditor({
       ) : null}
     </div>
   );
-
-  return typeof document !== 'undefined' ? createPortal(modalTree, document.body) : modalTree;
 }
 
 export default memo(TusPearlCardEditor);
