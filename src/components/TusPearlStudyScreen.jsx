@@ -1032,15 +1032,19 @@ function TusPearlStudyScreen({
                   {catalogCards.length ? (
                     <div className="tus-pearl-catalog-card-list">
                       {catalogCards.map((card) => (
-                        <article key={card.id} className="tus-pearl-library-card in-catalog">
-                          <div>
-                            <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'} · {getBranchName(card.branchId)} · {card.cardType || 'Spot'}</span>
-                            <strong><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
-                            <p><GlossaryText text={card.back} enabled revealMode="postAnswer" maxTerms={2} /></p>
+                        <article key={card.id} className="tus-pearl-library-card in-catalog catalog-card-row">
+                          <div className="catalog-card-content">
+                            <div className="catalog-card-meta" aria-label="Kart bilgisi">
+                              <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'}</span>
+                              <span>{getBranchName(card.branchId)}</span>
+                              <span>{card.cardType || 'Spot'}</span>
+                            </div>
+                            <strong className="catalog-card-question"><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
+                            <p className="catalog-card-answer"><span className="catalog-answer-label">Yanıt</span><GlossaryText text={card.back} enabled revealMode="postAnswer" maxTerms={2} /></p>
                           </div>
-                          <div className="pearl-card-row-actions">
-                            {card.source === 'user' ? <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
-                            <button type="button" className="btn btn-icon quiet" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar">
+                          <div className="pearl-card-row-actions catalog-card-action">
+                            {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
+                            <button type="button" className="btn btn-icon quiet catalog-remove-action" onClick={() => removeCardFromCatalog(card.id)} aria-label="Kartı katalogdan çıkar">
                               <Icon name="X" />
                             </button>
                           </div>
@@ -1075,17 +1079,21 @@ function TusPearlStudyScreen({
                   </div>
                   <div className="tus-pearl-catalog-card-list addable">
                     {searchableCards.map((card) => (
-                      <article key={card.id} className="tus-pearl-library-card">
-                        <div>
-                          <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'} · {getBranchName(card.branchId)} · {card.cardType || 'Spot'}</span>
-                          <strong><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
+                      <article key={card.id} className="tus-pearl-library-card catalog-card-row">
+                        <div className="catalog-card-content">
+                          <div className="catalog-card-meta" aria-label="Kart bilgisi">
+                            <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'}</span>
+                            <span>{getBranchName(card.branchId)}</span>
+                            <span>{card.cardType || 'Spot'}</span>
+                          </div>
+                          <strong className="catalog-card-question"><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
                         </div>
-                        <div className="pearl-card-row-actions">
-                          {card.source === 'user' ? <button type="button" className="btn btn-secondary compact" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
+                        <div className="pearl-card-row-actions catalog-card-action">
+                          {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
                           {activeCatalog?.cardIds?.includes(card.id) ? (
-                            <button type="button" className="btn btn-secondary compact" disabled>Eklendi</button>
+                            <button type="button" className="btn btn-secondary compact catalog-added-action" disabled>Eklendi</button>
                           ) : (
-                            <button type="button" className="btn btn-secondary compact" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
+                            <button type="button" className="btn btn-secondary compact catalog-add-action" onClick={() => addCardToCatalog(card.id)}>Kataloğa ekle</button>
                           )}
                         </div>
                       </article>
