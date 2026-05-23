@@ -14496,3 +14496,60 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   text-decoration-color: rgba(94, 234, 212, 0.38) !important;
   text-underline-offset: 0.18em !important;
 }
+
+/* ========================================================================== 
+   V303 — Lazy Hap Kart glossary mint unification
+   tusPearlCards.css can be loaded after the global dark-mode file, so repeat
+   only the final dark glossary-word rule here to prevent stale card/catalog
+   overrides from reintroducing muted or chip-like glossary styles.
+   ========================================================================== */
+
+.app-shell[data-theme='dark'] :where(.tus-pearl-focus-card, .tus-pearl-hub-panel, .tus-pearl-study-shell, .tus-pearl-catalog-card-list, .ai-spot-answer-flow, .answer-feedback-panel) :where(.glossary-term, .smart-glossary-term, .glossary-word, .nested-glossary-term, .smart-glossary-term--drilldown) {
+  color: var(--ki-glossary-dark-text, #b2f6ea) !important;
+  -webkit-text-fill-color: var(--ki-glossary-dark-text, #b2f6ea) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.18em !important;
+  text-decoration-color: var(--ki-glossary-dark-underline, rgba(178, 246, 234, 0.55)) !important;
+  text-shadow: none !important;
+  cursor: help;
+}
+
+.app-shell[data-theme='dark'] :where(.tus-pearl-focus-card, .tus-pearl-hub-panel, .tus-pearl-study-shell, .tus-pearl-catalog-card-list, .ai-spot-answer-flow, .answer-feedback-panel) :where(.glossary-term:hover, .smart-glossary-term:hover, .glossary-word:hover, .nested-glossary-term:hover, .smart-glossary-term--drilldown:hover, .glossary-term:active, .smart-glossary-term:active) {
+  color: var(--ki-glossary-dark-hover, #c7fff4) !important;
+  -webkit-text-fill-color: var(--ki-glossary-dark-hover, #c7fff4) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-bottom: 0 !important;
+  box-shadow: none !important;
+  text-decoration-style: solid !important;
+  text-decoration-color: var(--ki-glossary-dark-hover, #c7fff4) !important;
+}
+
+.app-shell[data-theme='dark'] :where(.tus-pearl-focus-card, .tus-pearl-hub-panel, .tus-pearl-study-shell, .tus-pearl-catalog-card-list, .ai-spot-answer-flow, .answer-feedback-panel) :where(.glossary-term:focus-visible, .smart-glossary-term:focus-visible, .glossary-word:focus-visible, .nested-glossary-term:focus-visible, .smart-glossary-term--drilldown:focus-visible) {
+  color: var(--ki-glossary-dark-hover, #c7fff4) !important;
+  -webkit-text-fill-color: var(--ki-glossary-dark-hover, #c7fff4) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  outline: 2px solid var(--ki-glossary-dark-focus, rgba(178, 246, 234, 0.28)) !important;
+  outline-offset: 2px !important;
+  border-radius: 3px !important;
+  text-decoration-style: solid !important;
+  text-decoration-color: var(--ki-glossary-dark-hover, #c7fff4) !important;
+}
+
