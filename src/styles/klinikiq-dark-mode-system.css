@@ -619,291 +619,289 @@ html[data-theme="dark"] :where(.smart-glossary-category, .smart-glossary-difficu
 }
 
 /* ========================================================================== 
-   V301 — Focused dark-mode remediation layer
-   Scope: visual-only correction for topbar, hero CTA, dashboard stats,
-   personal review, feedback tags, glossary overlays and shared controls.
-   This layer intentionally keeps React state/data flows untouched.
+   V301 — Global dark-mode visual hardening
+   Scope: topbar, hero CTA, dashboard metrics, personal repeat, AI/TUS feedback
+   and glossary overlays. Keeps all rules inside dark theme to protect light mode.
    ========================================================================== */
-:root {
-  --ki-icon-surface: rgba(255, 255, 255, 0.78);
-  --ki-icon-border: rgba(15, 23, 42, 0.10);
-  --ki-button-secondary: rgba(255, 255, 255, 0.78);
-  --ki-button-secondary-hover: rgba(236, 253, 245, 0.92);
-  --ki-button-disabled: rgba(100, 116, 139, 0.12);
-  --ki-chip-neutral: rgba(241, 245, 249, 0.84);
-  --ki-tag-info-soft: rgba(239, 246, 255, 0.90);
-  --ki-tag-info-text: #1d4ed8;
-  --ki-action-success-soft: rgba(236, 253, 245, 0.92);
-  --ki-action-warning-soft: rgba(255, 251, 235, 0.92);
-  --ki-action-danger-soft: rgba(254, 242, 242, 0.92);
-}
-
-html[data-theme="dark"],
-html[data-theme="dark"] body,
 .app-shell[data-theme="dark"] {
-  --ki-dark-bg: #03110f;
-  --ki-dark-surface: #071a21;
-  --ki-dark-surface-elevated: #0b2230;
-  --ki-dark-surface-soft: #102a35;
-  --ki-dark-surface-muted: #142f3a;
-  --ki-dark-surface-disabled: rgba(148, 163, 184, 0.135);
-  --ki-dark-text: #f4f7fb;
-  --ki-dark-text-secondary: #c8d3df;
-  --ki-dark-text-muted: #9caebe;
-  --ki-dark-text-disabled: #7f8d9d;
-  --ki-dark-border: rgba(148, 163, 184, 0.18);
-  --ki-dark-border-strong: rgba(94, 234, 212, 0.28);
-  --ki-dark-accent: #16b8a6;
-  --ki-dark-accent-soft: rgba(20, 184, 166, 0.14);
-  --ki-dark-success-soft: rgba(6, 78, 59, 0.32);
-  --ki-dark-danger-soft: rgba(127, 29, 29, 0.34);
-  --ki-dark-warning-soft: rgba(120, 53, 15, 0.34);
-  --ki-dark-focus-ring: rgba(94, 234, 212, 0.26);
-  --ki-dark-icon-surface: rgba(16, 42, 53, 0.78);
-  --ki-dark-button-secondary: rgba(16, 42, 53, 0.74);
-  --ki-dark-button-disabled: rgba(148, 163, 184, 0.135);
-  --ki-icon-surface: var(--ki-dark-icon-surface);
-  --ki-icon-border: rgba(148, 163, 184, 0.18);
-  --ki-button-secondary: var(--ki-dark-button-secondary);
-  --ki-button-secondary-hover: rgba(20, 184, 166, 0.20);
-  --ki-button-disabled: var(--ki-dark-button-disabled);
-  --ki-chip-neutral: rgba(148, 163, 184, 0.105);
-  --ki-tag-info-soft: rgba(30, 64, 175, 0.28);
-  --ki-tag-info-text: #bfdbfe;
-  --ki-action-success-soft: rgba(6, 78, 59, 0.34);
-  --ki-action-warning-soft: rgba(120, 53, 15, 0.34);
-  --ki-action-danger-soft: rgba(127, 29, 29, 0.34);
+  --ki-dark-bg: var(--ki-bg);
+  --ki-dark-surface: var(--ki-surface);
+  --ki-dark-surface-elevated: var(--ki-surface-elevated);
+  --ki-dark-surface-soft: var(--ki-surface-soft);
+  --ki-dark-surface-muted: var(--ki-surface-muted);
+  --ki-dark-surface-disabled: var(--ki-surface-disabled);
+  --ki-dark-text: var(--ki-text);
+  --ki-dark-text-secondary: var(--ki-text-secondary);
+  --ki-dark-text-muted: var(--ki-text-muted);
+  --ki-dark-text-disabled: var(--ki-text-disabled);
+  --ki-dark-border: var(--ki-border);
+  --ki-dark-border-strong: var(--ki-border-strong);
+  --ki-dark-accent: var(--ki-accent);
+  --ki-dark-accent-soft: var(--ki-accent-soft);
+  --ki-dark-success-soft: var(--ki-success-soft);
+  --ki-dark-danger-soft: var(--ki-danger-soft);
+  --ki-dark-warning-soft: var(--ki-warning-soft);
+  --ki-dark-focus-ring: rgba(94, 234, 212, 0.28);
+  --ki-dark-icon-surface: rgba(16, 42, 53, 0.74);
+  --ki-dark-button-secondary: rgba(16, 42, 53, 0.76);
+  --ki-dark-button-disabled: rgba(148, 163, 184, 0.13);
+  --ki-icon-soft-border: rgba(94, 234, 212, 0.18);
+  --ki-chip-neutral-bg: rgba(148, 163, 184, 0.10);
 }
 
-/* Topbar: brand, mode switches, stat badges, icon buttons */
-.app-shell[data-theme="dark"] .global-topbar-v55.top-shell-nav {
-  border-color: rgba(148, 163, 184, 0.16) !important;
+/* 1) Global topbar / mode switches --------------------------------------- */
+.app-shell[data-theme="dark"] .top-shell-nav.global-topbar-v55.global-topbar-v55 {
+  color: var(--ki-dark-text) !important;
+  border-color: rgba(148, 163, 184, 0.18) !important;
   background:
-    radial-gradient(circle at 8% 0%, rgba(20, 184, 166, 0.10), transparent 35%),
-    linear-gradient(180deg, rgba(6, 19, 24, 0.94), rgba(3, 13, 16, 0.86)) !important;
-  color: var(--ki-text) !important;
+    radial-gradient(circle at 7% 0%, rgba(20, 184, 166, 0.10), transparent 42%),
+    linear-gradient(180deg, rgba(7, 26, 33, 0.92), rgba(3, 17, 15, 0.84)) !important;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255,255,255,0.045) !important;
 }
 
-.app-shell[data-theme="dark"] .global-topbar-v55 :where(
-  .nav-brand,
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 :where(
+  .global-nav-brand-v55,
+  .global-product-switch-v55,
+  .global-context-switch-v55,
+  .global-nav-actions-v55,
   .nav-user-chip,
   .nav-stat-chip,
-  .nav-actions .btn.btn-icon,
-  .nav-actions .nav-cta-icon-only,
+  .nav-actions .btn,
   .nav-actions .nav-logout-btn,
-  .nav-actions .klinikiq-theme-toggle.nav-theme-toggle,
-  .global-product-switch-v55,
-  .global-context-switch-v55
+  .nav-actions .klinikiq-theme-toggle.nav-theme-toggle
 ) {
-  border-color: var(--ki-border) !important;
-  background: rgba(16, 42, 53, 0.76) !important;
-  color: var(--ki-text-secondary) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.045), 0 8px 22px rgba(0, 0, 0, 0.16) !important;
+  border-color: var(--ki-dark-border) !important;
+  background: rgba(16, 42, 53, 0.68) !important;
+  color: var(--ki-dark-text-secondary) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04) !important;
 }
 
-.app-shell[data-theme="dark"] .global-topbar-v55 :where(.nav-brand-wordmark, .nav-stat-chip strong, .nav-user-chip svg, .nav-actions .btn svg, .nav-actions .klinikiq-theme-toggle svg) {
-  color: var(--ki-text) !important;
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 .nav-brand-wordmark,
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 .global-nav-brand-v55 strong {
+  color: var(--ki-dark-text) !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 :where(.nav-stat-chip strong, .nav-stat-chip span, .nav-user-chip span, .nav-actions .btn span) {
+  color: currentColor !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 :where(.nav-stat-chip svg, .nav-user-chip svg, .nav-actions .btn svg, .nav-theme-toggle svg, .global-product-switch-v55 svg, .global-context-switch-v55 svg) {
+  color: currentColor !important;
   stroke: currentColor !important;
 }
 
-.app-shell[data-theme="dark"] .global-topbar-v55 :where(.nav-stat-chip span, .global-context-switch-v55 button span, .global-product-switch-v55 button span) {
-  color: var(--ki-text-secondary) !important;
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 :where(.global-product-switch-v55 > button, .global-context-switch-v55 > button) {
+  color: var(--ki-dark-text-muted) !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
 }
 
-.app-shell[data-theme="dark"] .global-topbar-v55 :where(.nav-brand-mark, .nav-brand-mark .brand-symbol, .nav-brand-mark img) {
-  background: transparent !important;
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 :where(.global-product-switch-v55 > button.active, .global-context-switch-v55 > button.active, .global-product-switch-v55 > button[aria-pressed="true"], .global-context-switch-v55 > button[aria-pressed="true"]) {
+  color: var(--ki-dark-text) !important;
+  border-color: rgba(94, 234, 212, 0.22) !important;
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.18), rgba(16, 42, 53, 0.82)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.045), 0 10px 24px rgba(20,184,166,0.12) !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 :where(.hard-mode-tab, .hard-mode-active) {
+  color: #fca5a5 !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 :where(.hard-mode-tab.active, .hard-mode-active) {
+  color: #fecaca !important;
+  border-color: rgba(248, 113, 113, 0.30) !important;
+  background: linear-gradient(180deg, rgba(127, 29, 29, 0.34), rgba(16, 42, 53, 0.72)) !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 :where(.nav-wrong-chip, .nav-score-chip) {
+  background: rgba(16, 42, 53, 0.78) !important;
+  color: var(--ki-dark-text-secondary) !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 .nav-wrong-chip strong {
+  min-width: 24px !important;
+  min-height: 24px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(248, 113, 113, 0.24) !important;
+  background: rgba(127, 29, 29, 0.28) !important;
+  color: #fecaca !important;
+}
+
+.app-shell[data-theme="dark"] .global-topbar-v55.global-topbar-v55 .nav-score-chip strong {
+  color: #fef3c7 !important;
+}
+
+/* 2) Hero CTA + learning/exam segmented control ------------------------- */
+.app-shell[data-theme="dark"] :where(.home-action-panel-v10.tus-action-panel-redesign, .tus-actions-redesign) {
+  border-color: rgba(94, 234, 212, 0.16) !important;
+  background: linear-gradient(180deg, rgba(7, 26, 33, 0.72), rgba(3, 17, 15, 0.52)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.tus-primary-action-redesign, .tus-secondary-action-redesign, .tus-ai-action-redesign) {
+  border-color: var(--ki-dark-border) !important;
+  color: var(--ki-dark-text) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.86), rgba(8, 26, 33, 0.92)) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.04) !important;
+}
+
+.app-shell[data-theme="dark"] .tus-primary-action-redesign {
+  color: #021715 !important;
+  border-color: rgba(94, 234, 212, 0.30) !important;
+  background: var(--ki-control-primary-bg) !important;
+  box-shadow: 0 18px 42px rgba(20, 184, 166, 0.24) !important;
+}
+
+.app-shell[data-theme="dark"] .tus-ai-action-redesign {
+  border-color: rgba(94, 234, 212, 0.24) !important;
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.16), rgba(16, 42, 53, 0.86)) !important;
+}
+
+.app-shell[data-theme="dark"] :where(.tus-action-icon, .tus-secondary-action-redesign .tus-action-icon, .tus-ai-action-redesign .tus-action-icon) {
+  border: 1px solid var(--ki-icon-soft-border) !important;
+  background: rgba(7, 26, 33, 0.56) !important;
+  color: var(--ki-accent-strong) !important;
   box-shadow: none !important;
 }
 
-.app-shell[data-theme="dark"] .global-topbar-v55 :where(.segmented-control button, .global-context-switch-v55 > button, .global-product-switch-v55 > button) {
-  color: var(--ki-text-muted) !important;
+.app-shell[data-theme="dark"] .tus-primary-action-redesign .tus-action-icon {
+  border-color: rgba(2, 23, 21, 0.18) !important;
+  background: rgba(2, 23, 21, 0.12) !important;
+  color: #021715 !important;
+}
+
+.app-shell[data-theme="dark"] .home-mode-v8.home-mode-v10.tus-mode-redesign {
+  border-color: var(--ki-dark-border) !important;
+  background: rgba(7, 26, 33, 0.70) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+.app-shell[data-theme="dark"] .home-mode-v8.home-mode-v10.tus-mode-redesign button {
+  color: var(--ki-dark-text-muted) !important;
   background: transparent !important;
   border-color: transparent !important;
 }
 
-.app-shell[data-theme="dark"] .global-topbar-v55 :where(.segmented-control button.active, .segmented-control button[aria-pressed="true"], .global-context-switch-v55 > button.active, .global-product-switch-v55 > button.active) {
-  color: var(--ki-text) !important;
+.app-shell[data-theme="dark"] .home-mode-v8.home-mode-v10.tus-mode-redesign button.active {
+  color: var(--ki-dark-text) !important;
   border-color: rgba(94, 234, 212, 0.22) !important;
-  background: linear-gradient(180deg, rgba(20, 184, 166, 0.20), rgba(16, 42, 53, 0.86)) !important;
-  box-shadow: inset 0 0 0 1px rgba(94, 234, 212, 0.13) !important;
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.18), rgba(16, 42, 53, 0.84)) !important;
+  box-shadow: 0 10px 24px rgba(20,184,166,0.12), inset 0 1px 0 rgba(255,255,255,0.04) !important;
 }
 
-.app-shell[data-theme="dark"] .global-topbar-v55 :where(.hard-mode-tab, .hard-mode-tab.active, .hard-mode-active) {
+/* 3) Dashboard stat cards ------------------------------------------------ */
+.app-shell[data-theme="dark"] .tus-stat-card-redesign.tus-stat-card-redesign {
+  border-color: rgba(var(--metric-accent-rgb), 0.22) !important;
+  background:
+    radial-gradient(circle at 11% 24%, rgba(var(--metric-accent-rgb), 0.12), transparent 34%),
+    linear-gradient(135deg, rgba(11,34,48,0.94), rgba(7,26,33,0.94)) !important;
+  box-shadow: 0 18px 42px rgba(0,0,0,0.26), inset 0 1px 0 rgba(255,255,255,0.045) !important;
+}
+
+.app-shell[data-theme="dark"] .tus-stat-icon-wrap.tus-stat-icon-wrap {
+  color: color-mix(in srgb, var(--metric-accent) 78%, var(--ki-dark-text) 22%) !important;
+  border-color: rgba(var(--metric-accent-rgb), 0.24) !important;
+  background:
+    radial-gradient(circle at 26% 18%, rgba(255,255,255,0.08), transparent 38%),
+    linear-gradient(145deg, rgba(var(--metric-accent-rgb), 0.16), rgba(16,42,53,0.78)) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.045) !important;
+}
+
+.app-shell[data-theme="dark"] .tus-stat-sparkline.tus-stat-svg {
+  color: color-mix(in srgb, var(--metric-accent) 78%, var(--ki-dark-text) 22%) !important;
+  border-color: rgba(var(--metric-accent-rgb), 0.18) !important;
+  background: linear-gradient(135deg, rgba(var(--metric-accent-rgb), 0.10), rgba(7,26,33,0.58)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+/* 4) Personal repeat / wrong answers ------------------------------------ */
+.app-shell[data-theme="dark"] .wrong-answers-panel.card-surface,
+.app-shell[data-theme="dark"] .wrong-full-list,
+.app-shell[data-theme="dark"] .wrong-full-toolbar,
+.app-shell[data-theme="dark"] .wrong-full-header {
+  border-color: var(--ki-dark-border) !important;
+  background: linear-gradient(180deg, rgba(11, 34, 48, 0.92), rgba(7, 26, 33, 0.94)) !important;
+}
+
+.app-shell[data-theme="dark"] .wrong-answer-card.wrong-answer-card {
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.82), rgba(8, 26, 33, 0.88)) !important;
+  color: var(--ki-dark-text) !important;
+}
+
+.app-shell[data-theme="dark"] .wrong-answer-card :where(h3, strong) { color: var(--ki-dark-text) !important; }
+.app-shell[data-theme="dark"] .wrong-answer-card :where(p, small) { color: var(--ki-dark-text-secondary) !important; }
+
+.app-shell[data-theme="dark"] .wrong-answer-actions .btn.btn-icon.quiet,
+.app-shell[data-theme="dark"] .wrong-answer-actions .btn-icon.quiet,
+.app-shell[data-theme="dark"] .wrong-answer-card .btn-icon.quiet {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 13px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  background: rgba(16, 42, 53, 0.64) !important;
+  color: var(--ki-dark-text-muted) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+.app-shell[data-theme="dark"] .wrong-answer-actions .btn.btn-icon.quiet:hover,
+.app-shell[data-theme="dark"] .wrong-answer-card .btn-icon.quiet:hover {
   border-color: rgba(248, 113, 113, 0.28) !important;
-  color: #fecaca !important;
-  background: rgba(127, 29, 29, 0.24) !important;
-}
-
-.app-shell[data-theme="dark"] .global-topbar-v55 :where(.nav-wrong-chip strong, .nav-score-chip strong) {
-  min-width: 1.55rem;
-  color: var(--ki-text) !important;
-  background: rgba(20, 184, 166, 0.14) !important;
-  border: 1px solid rgba(94, 234, 212, 0.20) !important;
-}
-
-/* Hero CTA and learning/exam segment */
-.app-shell[data-theme="dark"] :where(.tus-action-panel-redesign, .home-action-panel-v10, .tus-actions-redesign) {
-  border-color: rgba(148, 163, 184, 0.16) !important;
-  background: linear-gradient(180deg, rgba(16, 42, 53, 0.72), rgba(5, 18, 23, 0.74)) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
-}
-
-.app-shell[data-theme="dark"] .tus-actions-redesign :where(a, button) {
-  border-color: var(--ki-border) !important;
-  background: rgba(16, 42, 53, 0.78) !important;
-  color: var(--ki-text) !important;
-}
-
-.app-shell[data-theme="dark"] .tus-actions-redesign :where(a, button) .tus-action-icon {
-  border-color: rgba(94, 234, 212, 0.20) !important;
-  background: var(--ki-icon-surface) !important;
-  color: var(--ki-accent-strong) !important;
-}
-
-.app-shell[data-theme="dark"] .tus-actions-redesign .tus-primary-action-redesign {
-  color: var(--ki-control-primary-text) !important;
-  border-color: rgba(94, 234, 212, 0.34) !important;
-  background: var(--ki-control-primary-bg) !important;
-}
-
-.app-shell[data-theme="dark"] .tus-actions-redesign .tus-ai-action-redesign {
-  border-color: rgba(94, 234, 212, 0.24) !important;
-  background: linear-gradient(135deg, rgba(20, 184, 166, 0.17), rgba(56, 189, 248, 0.10), rgba(16, 42, 53, 0.80)) !important;
-}
-
-.app-shell[data-theme="dark"] :where(.home-mode-v8, .home-mode-v10, .tus-mode-redesign) {
-  border-color: var(--ki-border) !important;
-  background: rgba(7, 26, 33, 0.76) !important;
-}
-
-.app-shell[data-theme="dark"] :where(.home-mode-v8, .home-mode-v10, .tus-mode-redesign) button {
-  color: var(--ki-text-muted) !important;
-  background: transparent !important;
-}
-
-.app-shell[data-theme="dark"] :where(.home-mode-v8, .home-mode-v10, .tus-mode-redesign) button.active {
-  color: var(--ki-text) !important;
-  border-color: rgba(94, 234, 212, 0.22) !important;
-  background: linear-gradient(180deg, rgba(20, 184, 166, 0.17), rgba(16, 42, 53, 0.88)) !important;
-}
-
-/* Dashboard metrics */
-.app-shell[data-theme="dark"] :where(.home-metric-card, .tus-stat-card-redesign) {
-  border-color: var(--ki-border) !important;
-  background: linear-gradient(180deg, rgba(11, 34, 48, 0.92), rgba(7, 26, 33, 0.95)) !important;
-  color: var(--ki-text) !important;
-}
-
-.app-shell[data-theme="dark"] :where(.tus-stat-icon-wrap, .home-metric-top .icon-badge, .review-panel-icon, .repeat-list-icon, .ai-spot-pearl-icon) {
-  border-color: rgba(94, 234, 212, 0.20) !important;
-  background: var(--ki-icon-surface) !important;
-  color: var(--ki-accent-strong) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
-}
-
-.app-shell[data-theme="dark"] .home-metric-card-blue .tus-stat-icon-wrap { color: #93c5fd !important; border-color: rgba(147, 197, 253, 0.22) !important; }
-.app-shell[data-theme="dark"] .home-metric-card-warning .tus-stat-icon-wrap { color: #fde68a !important; border-color: rgba(253, 230, 138, 0.22) !important; }
-.app-shell[data-theme="dark"] .home-metric-card-accent .tus-stat-icon-wrap { color: #c4b5fd !important; border-color: rgba(196, 181, 253, 0.22) !important; }
-
-.app-shell[data-theme="dark"] :where(.tus-stat-label, .tus-stat-copy span, .home-metric-card small) {
-  color: var(--ki-text-muted) !important;
-}
-
-.app-shell[data-theme="dark"] :where(.tus-stat-copy strong, .home-metric-card strong) {
-  color: var(--ki-text) !important;
-}
-
-.app-shell[data-theme="dark"] .tus-stat-sparkline {
-  color: rgba(94, 234, 212, 0.74) !important;
-  background: transparent !important;
-}
-
-/* Personal repeat / wrong answers */
-.app-shell[data-theme="dark"] :where(.wrong-answers-panel, .wrong-full-header, .wrong-full-toolbar, .wrong-full-list) {
-  border-color: var(--ki-border) !important;
-  background: linear-gradient(180deg, rgba(11, 34, 48, 0.92), rgba(7, 26, 33, 0.95)) !important;
-}
-
-.app-shell[data-theme="dark"] :where(.wrong-answer-card, .wrong-full-card) {
-  border-color: rgba(148, 163, 184, 0.16) !important;
-  background: linear-gradient(180deg, rgba(16, 42, 53, 0.78), rgba(7, 26, 33, 0.88)) !important;
-}
-
-.app-shell[data-theme="dark"] :where(.wrong-answer-actions .btn.btn-icon.quiet, .wrong-full-card-actions .btn.btn-icon.quiet, .catalog-remove-action.btn.btn-icon.quiet) {
-  border-color: rgba(148, 163, 184, 0.16) !important;
-  background: rgba(16, 42, 53, 0.60) !important;
-  color: var(--ki-text-muted) !important;
-}
-
-.app-shell[data-theme="dark"] :where(.wrong-answer-actions .btn.btn-icon.quiet:hover, .wrong-full-card-actions .btn.btn-icon.quiet:hover, .catalog-remove-action.btn.btn-icon.quiet:hover) {
-  border-color: rgba(248, 113, 113, 0.30) !important;
-  background: rgba(127, 29, 29, 0.30) !important;
+  background: rgba(127, 29, 29, 0.28) !important;
   color: #fecaca !important;
 }
 
-.app-shell[data-theme="dark"] :where(.wrong-clear-btn, .wrong-full-toolbar .btn-secondary) {
-  border-color: var(--ki-border) !important;
-  background: var(--ki-button-secondary) !important;
-  color: var(--ki-text-secondary) !important;
+.app-shell[data-theme="dark"] .wrong-clear-btn.wrong-clear-btn:disabled,
+.app-shell[data-theme="dark"] .wrong-clear-btn.wrong-clear-btn[disabled] {
+  background: var(--ki-dark-button-disabled) !important;
+  color: var(--ki-dark-text-disabled) !important;
+  border-color: rgba(148, 163, 184, 0.12) !important;
 }
 
-.app-shell[data-theme="dark"] :where(.wrong-clear-btn:disabled, .wrong-full-toolbar .btn-secondary:disabled) {
-  background: var(--ki-button-disabled) !important;
-  color: var(--ki-text-disabled) !important;
-}
-
-/* Feedback answer tags */
-.app-shell[data-theme="dark"] :where(.ai-spot-choice-kicker, .option-comparison-kicker, .ai-spot-feedback-option-head em) {
+/* 5) Feedback labels: Seçimin / Doğru cevap ------------------------------ */
+.app-shell[data-theme="dark"] :where(.ai-spot-choice-kicker, .option-comparison-kicker, .option-comparison-status, .ai-spot-feedback-option-head em) {
   border: 1px solid rgba(96, 165, 250, 0.22) !important;
-  background: var(--ki-tag-info-soft) !important;
-  color: var(--ki-tag-info-text) !important;
+  background: rgba(30, 64, 175, 0.22) !important;
+  color: #bfdbfe !important;
+  box-shadow: none !important;
 }
 
-.app-shell[data-theme="dark"] :where(.ai-spot-feedback-choice-card.is-correct .ai-spot-choice-kicker, .ai-spot-feedback-option-head em.correct, .option-comparison-status.correct) {
-  border-color: rgba(52, 211, 153, 0.26) !important;
-  background: var(--ki-success-soft) !important;
-  color: var(--ki-success-contrast) !important;
+.app-shell[data-theme="dark"] :where(.ai-spot-feedback-choice-card.is-correct .ai-spot-choice-kicker, .option-comparison-status.correct, .ai-spot-feedback-option-head em.correct) {
+  border-color: rgba(52, 211, 153, 0.24) !important;
+  background: rgba(6, 78, 59, 0.28) !important;
+  color: #a7f3d0 !important;
 }
 
-.app-shell[data-theme="dark"] :where(.ai-spot-feedback-choice-card.is-selected-wrong .ai-spot-choice-kicker, .option-comparison-item.wrong.selected-option .option-comparison-kicker) {
-  border-color: rgba(248, 113, 113, 0.26) !important;
-  background: var(--ki-danger-soft) !important;
-  color: var(--ki-danger-contrast) !important;
+.app-shell[data-theme="dark"] :where(.ai-spot-feedback-choice-card.is-selected-wrong .ai-spot-choice-kicker, .option-comparison-status.wrong, .option-comparison-status.incorrect) {
+  border-color: rgba(248, 113, 113, 0.24) !important;
+  background: rgba(127, 29, 29, 0.28) !important;
+  color: #fecaca !important;
 }
 
-/* Glossary terms and popovers, including portal-rendered tooltips */
+/* 6) Glossary and overlay cleanup ---------------------------------------- */
 .app-shell[data-theme="dark"] :where(.glossary-term, .smart-glossary-term) {
-  color: color-mix(in srgb, var(--ki-accent-strong) 62%, var(--ki-text) 38%) !important;
-  text-decoration: underline dotted rgba(94, 234, 212, 0.44) !important;
-  text-underline-offset: 3px !important;
-  border-bottom: 0 !important;
+  color: color-mix(in srgb, var(--ki-accent-strong) 62%, var(--ki-dark-text) 38%) !important;
   background: transparent !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 0.18em !important;
+  text-decoration-color: rgba(94, 234, 212, 0.38) !important;
+  border-bottom: 0 !important;
 }
 
 .app-shell[data-theme="dark"] :where(.glossary-term:hover, .smart-glossary-term:hover, .glossary-term:focus-visible, .smart-glossary-term:focus-visible) {
-  color: var(--ki-glossary-hover-text) !important;
+  color: #ccfbf1 !important;
   background: rgba(20, 184, 166, 0.10) !important;
+  border-radius: 5px !important;
 }
 
-html[data-theme="dark"] #klinikiq-tooltip-layer :where(.smart-glossary-popover, .floating-glossary-tooltip, .glossary-tooltip),
-html[data-theme="dark"] :where(.smart-glossary-popover, .floating-glossary-tooltip, .glossary-tooltip) {
-  border-color: rgba(94, 234, 212, 0.18) !important;
-  background: linear-gradient(180deg, rgba(11, 34, 48, 0.98), rgba(5, 18, 23, 0.99)) !important;
-  color: var(--ki-text-secondary) !important;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.42) !important;
-}
-
-html[data-theme="dark"] :where(.smart-glossary-card, .smart-glossary-detail-block, .smart-glossary-detail-panel) {
-  background: transparent !important;
-  color: var(--ki-text-secondary) !important;
-}
-
-html[data-theme="dark"] :where(.smart-glossary-title, .smart-glossary-title-wrap strong, .smart-glossary-definition strong) {
-  color: var(--ki-text) !important;
-}
-
-html[data-theme="dark"] :where(.smart-glossary-category, .smart-glossary-breadcrumb, .smart-glossary-back, .smart-glossary-detail-toggle) {
-  border-color: rgba(94, 234, 212, 0.16) !important;
-  background: rgba(20, 184, 166, 0.10) !important;
-  color: var(--ki-chip-accent-text) !important;
+html[data-theme="dark"] :where(#klinikiq-tooltip-layer .floating-glossary-tooltip.smart-glossary-popover, .glossary-tooltip.floating-glossary-tooltip.smart-glossary-popover, .glossary-tooltip, .smart-glossary-card),
+.app-shell[data-theme="dark"] :where(.smart-glossary-card, .pearl-catalog-popover, .dropdown-menu, .popover, .modal, .floating-panel) {
+  border-color: rgba(94, 234, 212, 0.20) !important;
+  background: linear-gradient(180deg, rgba(11,34,48,0.985), rgba(5,18,23,0.985)) !important;
+  color: var(--ki-dark-text-secondary) !important;
+  box-shadow: 0 26px 74px rgba(0,0,0,0.46), inset 0 1px 0 rgba(255,255,255,0.04) !important;
 }

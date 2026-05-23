@@ -1,0 +1,63 @@
+{
+  "version": "V301",
+  "task": "Targeted global dark-mode UI hardening",
+  "rootCause": "Legacy high-specificity Vxx CSS blocks and lazy-loaded Hap Bilgi CSS were reintroducing light-mode surfaces and weak contrast after the previous global token bridge.",
+  "changedFiles": [
+    "src/styles/klinikiq-dark-mode-system.css",
+    "src/components/tusPearlCards.css",
+    "reports/dark-mode-v301-targeted-fix-report.md",
+    "reports/dark-mode-v301-targeted-fix-report.json"
+  ],
+  "componentGroupsFixed": [
+    "topbar/navigation",
+    "product/context switches",
+    "hero CTA cards",
+    "dashboard stat cards",
+    "personal repeat/wrong answers",
+    "wrong answer X icon button",
+    "Hap Bilgi hub callout",
+    "Hap Bilgi Çalış header",
+    "Tekrar Araçları and Kart Araçları panels",
+    "flashcard front/back faces",
+    "decision buttons",
+    "selected/correct/wrong feedback tags",
+    "glossary inline terms and popovers"
+  ],
+  "semanticTokensUsed": [
+    "--ki-dark-bg",
+    "--ki-dark-surface",
+    "--ki-dark-surface-elevated",
+    "--ki-dark-surface-soft",
+    "--ki-dark-surface-muted",
+    "--ki-dark-surface-disabled",
+    "--ki-dark-text",
+    "--ki-dark-text-secondary",
+    "--ki-dark-text-muted",
+    "--ki-dark-text-disabled",
+    "--ki-dark-border",
+    "--ki-dark-border-strong",
+    "--ki-dark-accent",
+    "--ki-dark-accent-soft",
+    "--ki-dark-success-soft",
+    "--ki-dark-danger-soft",
+    "--ki-dark-warning-soft",
+    "--ki-dark-focus-ring",
+    "--ki-dark-icon-surface",
+    "--ki-dark-button-secondary",
+    "--ki-dark-button-disabled"
+  ],
+  "hardCodedLightColorCleanup": [
+    "topbar icon/button light surfaces neutralized in dark mode",
+    "CTA icon white/gray surfaces neutralized in dark mode",
+    "stat icon white radial gradient neutralized in dark mode",
+    "sparkline light background neutralized in dark mode",
+    "wrong answer X button light-gray state neutralized in dark mode",
+    "Hap Bilgi study card/section light surfaces neutralized in lazy CSS",
+    "glossary inline background removed in dark mode"
+  ],
+  "lightModeRegressionRisk": "low; new rules are dark scoped",
+  "functionalityTouched": false,
+  "buildStatus": "npm run build attempted, failed because vite/node_modules are not available in the zip environment",
+  "cssSyntaxCheck": "passed brace/comment balance check",
+  "remainingRisk": "Very large legacy index.css still contains high-specificity Vxx rules; V301 avoids destructive cleanup and adds scoped dark-mode final-layer rules for listed problem areas."
+}

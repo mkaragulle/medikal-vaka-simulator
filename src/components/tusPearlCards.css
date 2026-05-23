@@ -14122,213 +14122,377 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 }
 
 /* ========================================================================== 
-   V301 — Hap Bilgi study dark-mode hardening
-   This file loads lazily after the global theme, so the focused dark selectors
-   below keep the study topbar, tool panels, flashcard faces and decisions from
-   reverting to older light-mode surfaces.
+   V299 — Lazy Hap Kart / Personal Review dark-mode bridge
+   tusPearlCards.css is loaded by lazy screens after the global theme file.
+   This scoped bridge keeps those late-loaded screens token-aligned without
+   duplicating the previous [data-theme] + .app-shell selector matrix.
    ========================================================================== */
-.app-shell[data-theme='dark'] .tus-pearl-study-shell.pearl-study-shell-mode-study {
+.app-shell[data-theme='dark'] :where(
+  .study-review-hub-grid > .wrong-answers-panel,
+  .study-review-hub-grid > .tus-pearl-hub-panel,
+  .wrong-full-header,
+  .wrong-full-toolbar,
+  .wrong-full-list,
+  .tus-pearl-study-shell,
+  .tus-pearl-catalog-manager,
+  .tus-pearl-catalog-sidebar,
+  .tus-pearl-catalog-detail,
+  .tus-pearl-catalog-create-card
+) {
+  border-color: var(--ki-border) !important;
+  background: linear-gradient(180deg, rgba(11, 34, 48, 0.94), rgba(7, 26, 33, 0.96)) !important;
+  color: var(--ki-text) !important;
+  box-shadow: var(--ki-shadow-card) !important;
+}
+
+.app-shell[data-theme='dark'] :where(
+  .wrong-answer-card,
+  .wrong-full-card,
+  .wrong-answer-more-row,
+  .tus-pearl-hub-stats > *,
+  .tus-pearl-action-grid > *,
+  .tus-pearl-library-card,
+  .tus-pearl-library-card.catalog-card-row,
+  .tus-pearl-card-face,
+  .tus-pearl-card-front,
+  .tus-pearl-card-back,
+  .tus-pearl-focus-card,
+  .tus-pearl-focus-face,
+  .tus-pearl-focus-front,
+  .pearl-card-question-block,
+  .pearl-back-premium-stack > *,
+  .tus-pearl-answer-block,
+  .tus-pearl-detail-block,
+  .tus-pearl-catalog-row,
+  .catalog-create-box,
+  .pearl-detail-panel,
+  .pearl-answer-panel
+) {
+  border-color: var(--ki-border) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.82), rgba(8, 26, 33, 0.88)) !important;
+  color: var(--ki-text) !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.20) !important;
+}
+
+.app-shell[data-theme='dark'] :where(
+  .wrong-answer-card h3,
+  .wrong-full-card h2,
+  .tus-pearl-hub-head h2,
+  .tus-pearl-card-question-block,
+  .catalog-card-question,
+  .tus-pearl-focus-front,
+  .pearl-card-face strong
+) {
+  color: var(--ki-text) !important;
+}
+
+.app-shell[data-theme='dark'] :where(
+  .wrong-full-header p,
+  .wrong-answer-more,
+  .wrong-full-card p,
+  .tus-pearl-hub-head p,
+  .tus-pearl-meta-row,
+  .catalog-card-meta,
+  .tus-pearl-detail-text,
+  .pearl-answer-panel p
+) {
+  color: var(--ki-text-secondary) !important;
+}
+
+.app-shell[data-theme='dark'] :where(
+  .wrong-answer-branch,
+  .catalog-card-branch,
+  .tus-pearl-badge,
+  .tus-pearl-chip,
+  .pearl-card-branch-pill,
+  .wrong-full-meta span
+) {
+  border-color: rgba(94, 234, 212, 0.18) !important;
+  background: var(--ki-accent-soft) !important;
+  color: var(--ki-chip-accent-text) !important;
+}
+
+.app-shell[data-theme='dark'] .wrong-full-summary {
+  border-color: rgba(248, 113, 113, 0.24) !important;
   background:
-    radial-gradient(circle at 76% 4%, rgba(20, 184, 166, 0.10), transparent 34%),
-    linear-gradient(180deg, var(--ki-bg, #03110f), var(--ki-bg-soft, #07171c)) !important;
+    radial-gradient(circle at 22% 16%, rgba(248, 113, 113, 0.14), transparent 42%),
+    linear-gradient(135deg, rgba(127, 29, 29, 0.28), rgba(11, 34, 48, 0.86)) !important;
+  color: var(--ki-danger-contrast) !important;
+  box-shadow: 0 16px 34px rgba(127, 29, 29, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+.app-shell[data-theme='dark'] .wrong-full-summary :where(svg, strong, span) {
+  color: var(--ki-danger-contrast) !important;
+}
+
+.app-shell[data-theme='dark'] :where(
+  .wrong-full-search,
+  .tus-pearl-library-search,
+  .pearl-study-branch-filter,
+  .tus-pearl-filter-row,
+  .tus-pearl-catalog-select-row,
+  .tus-pearl-catalog-rename-row
+) {
+  border-color: var(--ki-border) !important;
+  background: var(--ki-input-surface) !important;
+  color: var(--ki-text) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.app-shell[data-theme='dark'] :where(
+  .wrong-full-search input,
+  .tus-pearl-library-search input,
+  .pearl-study-branch-filter select
+) {
+  color: var(--ki-text) !important;
+  background: transparent !important;
+}
+
+.app-shell[data-theme='dark'] :where(
+  .btn-secondary,
+  .btn-icon,
+  .wrong-clear-btn,
+  .catalog-edit-action,
+  .catalog-remove-action,
+  .catalog-added-action,
+  .branch-back-v8,
+  .pearl-study-nav-button,
+  .tus-pearl-side-nav
+) {
+  border-color: var(--ki-border) !important;
+  background: var(--ki-control-secondary-bg) !important;
+  color: var(--ki-text-secondary) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.app-shell[data-theme='dark'] :where(.btn-primary, .wrong-answer-view-all-btn, .catalog-add-action) {
+  border-color: var(--ki-border-strong) !important;
+  background: var(--ki-control-primary-bg) !important;
+  color: var(--ki-control-primary-text) !important;
+  box-shadow: 0 12px 28px rgba(20, 184, 166, 0.20) !important;
+}
+
+.app-shell[data-theme='dark'] :where(button:disabled, .btn:disabled, .catalog-added-action.btn.btn-secondary.compact:disabled) {
+  opacity: 1 !important;
+  border-color: rgba(148, 163, 184, 0.12) !important;
+  background: var(--ki-surface-disabled) !important;
+  color: var(--ki-text-disabled) !important;
+  box-shadow: none !important;
+}
+
+.app-shell[data-theme='dark'] .catalog-added-action.btn.btn-secondary.compact:disabled {
+  border-color: rgba(52, 211, 153, 0.20) !important;
+  background: var(--ki-success-soft) !important;
+  color: var(--ki-success-contrast) !important;
+}
+
+/* ========================================================================== 
+   V301 — Lazy Hap Bilgi dark-mode hardening
+   Loaded after the global theme file, so these scoped rules protect the study
+   screen, repeat tools, card faces and catalog actions from older light tokens.
+   ========================================================================== */
+.app-shell[data-theme='dark'] .tus-pearl-study-shell.tus-pearl-study-shell,
+.app-shell[data-theme='dark'] .study-review-hub-grid > .tus-pearl-hub-panel.card-surface,
+.app-shell[data-theme='dark'] .study-review-hub-grid > .wrong-answers-panel.card-surface {
+  background:
+    radial-gradient(circle at 84% 4%, rgba(20, 184, 166, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(11, 34, 48, 0.94), rgba(7, 26, 33, 0.96)) !important;
+  border-color: var(--ki-border, rgba(148, 163, 184, 0.18)) !important;
   color: var(--ki-text, #f4f7fb) !important;
 }
 
-.app-shell[data-theme='dark'] .tus-pearl-study-top.card-surface {
-  border-color: rgba(148, 163, 184, 0.16) !important;
+.app-shell[data-theme='dark'] .tus-pearl-study-top.card-surface.card-surface {
+  border-color: rgba(148, 163, 184, 0.18) !important;
   background: linear-gradient(180deg, rgba(11, 34, 48, 0.94), rgba(7, 26, 33, 0.92)) !important;
-  color: var(--ki-text, #f4f7fb) !important;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255,255,255,.04) !important;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255,255,255,0.04) !important;
 }
 
-.app-shell[data-theme='dark'] .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136,
+.app-shell[data-theme='dark'] .pearl-study-return-v136.branch-back-v8,
 .app-shell[data-theme='dark'] .pearl-study-branch-menu-trigger,
 .app-shell[data-theme='dark'] .tus-pearl-study-progress,
-html[data-theme='dark'] .pearl-study-branch-menu-portal {
-  border-color: var(--ki-border, rgba(148,163,184,.18)) !important;
-  background: rgba(16, 42, 53, 0.76) !important;
+.app-shell[data-theme='dark'] .pearl-study-session-actions-v93 .btn,
+.app-shell[data-theme='dark'] .pearl-study-nav-button.tus-pearl-side-nav {
+  border-color: var(--ki-border, rgba(148, 163, 184, 0.18)) !important;
+  background: rgba(16, 42, 53, 0.74) !important;
   color: var(--ki-text-secondary, #c8d3df) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.035) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
 }
 
-.app-shell[data-theme='dark'] .tus-pearl-study-top .branch-back-v8.pearl-study-return-v136:hover,
-.app-shell[data-theme='dark'] .pearl-study-branch-menu-trigger:hover {
-  border-color: var(--ki-border-strong, rgba(94,234,212,.28)) !important;
-  background: var(--ki-accent-hover, rgba(20,184,166,.22)) !important;
+.app-shell[data-theme='dark'] .pearl-study-return-v136.branch-back-v8:hover,
+.app-shell[data-theme='dark'] .pearl-study-branch-menu-trigger:hover,
+.app-shell[data-theme='dark'] .pearl-study-session-actions-v93 .btn:hover,
+.app-shell[data-theme='dark'] .pearl-study-nav-button.tus-pearl-side-nav:hover {
+  border-color: var(--ki-border-strong, rgba(94, 234, 212, 0.28)) !important;
+  background: var(--ki-accent-hover, rgba(20, 184, 166, 0.22)) !important;
   color: var(--ki-text, #f4f7fb) !important;
 }
 
-.app-shell[data-theme='dark'] .tus-pearl-study-top :where(.tus-pearl-study-title h1, .tus-pearl-study-progress strong, .pearl-study-branch-menu-trigger strong) {
-  color: var(--ki-text, #f4f7fb) !important;
-}
-
-.app-shell[data-theme='dark'] .tus-pearl-study-progress > div {
-  border-color: rgba(148, 163, 184, 0.12) !important;
-  background: rgba(2, 6, 23, 0.42) !important;
-}
-
-.app-shell[data-theme='dark'] .tus-pearl-study-progress > div > span {
-  background: var(--ki-progress-gradient, linear-gradient(90deg,#5eead4,#38bdf8)) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-workspace-v92,
-.app-shell[data-theme='dark'] .pearl-study-left-v92,
-.app-shell[data-theme='dark'] .tus-pearl-study-main.pearl-study-stage,
-.app-shell[data-theme='dark'] .pearl-study-right-v92.pearl-study-control-panel-v93.card-surface {
-  color: var(--ki-text, #f4f7fb) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-right-v92.pearl-study-control-panel-v93.card-surface,
-.app-shell[data-theme='dark'] .pearl-study-control-section-v93 {
-  border-color: rgba(148, 163, 184, 0.16) !important;
-  background: linear-gradient(180deg, rgba(11, 34, 48, 0.92), rgba(7, 26, 33, 0.94)) !important;
-  box-shadow: 0 14px 34px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.035) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-section-title-v93,
-.app-shell[data-theme='dark'] .pearl-study-section-title-v93 svg {
-  color: var(--ki-text-secondary, #c8d3df) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-tabs.pearl-study-row-list-v97 button,
-.app-shell[data-theme='dark'] .pearl-study-compact-actions .pearl-study-more-trigger,
-.app-shell[data-theme='dark'] .pearl-study-compact-actions .btn.btn-secondary.compact,
-.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions.pearl-study-tools-grid-v93 button,
-.app-shell[data-theme='dark'] .tus-pearl-mode-switch.compact-mode-switch button,
-html[data-theme='dark'] .pearl-study-more-panel button,
-html[data-theme='dark'] .pearl-study-branch-menu-portal button {
-  border-color: rgba(148, 163, 184, 0.16) !important;
-  background: rgba(16, 42, 53, 0.72) !important;
-  color: var(--ki-text-secondary, #c8d3df) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.035) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-tabs.pearl-study-row-list-v97 button.active,
-.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions.pearl-study-tools-grid-v93 button.active,
-.app-shell[data-theme='dark'] .tus-pearl-mode-switch.compact-mode-switch button.active,
-html[data-theme='dark'] .pearl-study-more-panel button.active,
-html[data-theme='dark'] .pearl-study-branch-menu-portal button.active {
-  border-color: rgba(94, 234, 212, 0.26) !important;
-  background: linear-gradient(180deg, rgba(20, 184, 166, 0.17), rgba(16, 42, 53, 0.88)) !important;
-  color: var(--ki-text, #f4f7fb) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-tabs.pearl-study-row-list-v97 button em,
-.app-shell[data-theme='dark'] .repeat-list-count,
-.app-shell[data-theme='dark'] .pearl-study-compact-actions em {
+.app-shell[data-theme='dark'] .pearl-study-back-icon,
+.app-shell[data-theme='dark'] .pearl-study-section-title-v93 > svg,
+.app-shell[data-theme='dark'] .tus-pearl-action-grid > button > svg,
+.app-shell[data-theme='dark'] .pearl-study-tabs button > svg,
+.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions button > svg,
+.app-shell[data-theme='dark'] .repeat-list-icon {
   border-color: rgba(94, 234, 212, 0.18) !important;
   background: rgba(20, 184, 166, 0.12) !important;
-  color: var(--ki-chip-accent-text, #99f6e4) !important;
+  color: var(--ki-accent-strong, #5eead4) !important;
+  box-shadow: none !important;
 }
 
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card,
-.app-shell[data-theme='dark'] .pearl-study-stage-v92 .pearl-study-spotlight .tus-pearl-focus-card.pearl-study-premium-card {
-  border-color: rgba(94, 234, 212, 0.18) !important;
-  background:
-    radial-gradient(circle at 85% 8%, rgba(20, 184, 166, 0.12), transparent 34%),
-    linear-gradient(180deg, rgba(11, 34, 48, 0.96), rgba(5, 18, 23, 0.98)) !important;
-  color: var(--ki-text, #f4f7fb) !important;
-  box-shadow: 0 26px 74px rgba(0,0,0,.36), inset 0 1px 0 rgba(255,255,255,.04) !important;
-}
-
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card .pearl-card-face,
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card .pearl-card-question-block,
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card .tus-pearl-focus-back,
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card .pearl-answer-panel,
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card .pearl-detail-panel,
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card .pearl-tip-panel,
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card .pearl-note-panel {
-  border-color: rgba(148, 163, 184, 0.15) !important;
-  background: linear-gradient(180deg, rgba(16, 42, 53, 0.78), rgba(7, 26, 33, 0.88)) !important;
+.app-shell[data-theme='dark'] .tus-pearl-study-title h1,
+.app-shell[data-theme='dark'] .pearl-study-section-title-v93 span,
+.app-shell[data-theme='dark'] .tus-pearl-hub-head h2,
+.app-shell[data-theme='dark'] .tus-pearl-hub-stats > span b,
+.app-shell[data-theme='dark'] .pearl-card-face strong,
+.app-shell[data-theme='dark'] .tus-pearl-back-stack strong,
+.app-shell[data-theme='dark'] .tus-pearl-detail-block strong {
   color: var(--ki-text, #f4f7fb) !important;
 }
 
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card :where(.pearl-card-question-block > strong, .tus-pearl-answer-block > strong, .tus-pearl-answer-block.focus > strong, .pearl-answer-panel > strong) {
-  color: var(--ki-text, #f4f7fb) !important;
-}
-
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card :where(.tus-pearl-detail-text, .pearl-tip-panel > span:last-child, .tus-pearl-note-box-text) {
+.app-shell[data-theme='dark'] .tus-pearl-hub-head p,
+.app-shell[data-theme='dark'] .tus-pearl-hub-stats > span em,
+.app-shell[data-theme='dark'] .pearl-bridge-callout.compact p,
+.app-shell[data-theme='dark'] .pearl-study-tabs button span em,
+.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions button span,
+.app-shell[data-theme='dark'] .tus-pearl-detail-text,
+.app-shell[data-theme='dark'] .tus-pearl-note-box-text,
+.app-shell[data-theme='dark'] .tus-pearl-answer-chain span:not(.tus-pearl-back-kicker) {
   color: var(--ki-text-secondary, #c8d3df) !important;
 }
 
-.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card :where(.tus-pearl-back-kicker, .tus-pearl-note-box-label, .pearl-card-branch-pill, .pearl-card-progress-pill) {
-  border-color: rgba(94, 234, 212, 0.16) !important;
-  background: rgba(20, 184, 166, 0.10) !important;
-  color: var(--ki-chip-accent-text, #99f6e4) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 {
-  border-color: rgba(148, 163, 184, 0.16) !important;
-  background: rgba(7, 26, 33, 0.76) !important;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,.035) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 .decision-btn {
-  border-color: rgba(148, 163, 184, 0.16) !important;
-  background: rgba(16, 42, 53, 0.72) !important;
-  color: var(--ki-text-secondary, #c8d3df) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 .decision-btn.known.active,
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 .decision-btn.known:hover:not(:disabled) {
-  border-color: rgba(52, 211, 153, 0.30) !important;
-  background: var(--ki-success-soft, rgba(6,78,59,.32)) !important;
-  color: var(--ki-success-contrast, #a7f3d0) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 .decision-btn.review.active,
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 .decision-btn.review:hover:not(:disabled) {
-  border-color: rgba(94, 234, 212, 0.28) !important;
-  background: var(--ki-accent-soft, rgba(20,184,166,.14)) !important;
-  color: var(--ki-chip-accent-text, #99f6e4) !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 .decision-btn.wrong.active,
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 .decision-btn.wrong:hover:not(:disabled) {
-  border-color: rgba(251, 191, 36, 0.30) !important;
-  background: var(--ki-warning-soft, rgba(120,53,15,.34)) !important;
-  color: #fde68a !important;
-}
-
-.app-shell[data-theme='dark'] .pearl-bridge-callout,
-.app-shell[data-theme='dark'] .tus-pearl-repeat-center,
-.app-shell[data-theme='dark'] .tus-pearl-own-card-mini,
-.app-shell[data-theme='dark'] .tus-pearl-action-grid > button,
+.app-shell[data-theme='dark'] .pearl-bridge-callout.compact,
 .app-shell[data-theme='dark'] .tus-pearl-hub-stats > span,
-.app-shell[data-theme='dark'] .tus-pearl-repeat-list > button {
+.app-shell[data-theme='dark'] .tus-pearl-action-grid > button,
+.app-shell[data-theme='dark'] .tus-pearl-repeat-list > button,
+.app-shell[data-theme='dark'] .tus-pearl-own-card-mini,
+.app-shell[data-theme='dark'] .pearl-study-control-panel-v93.card-surface,
+.app-shell[data-theme='dark'] .pearl-study-control-section-v93,
+.app-shell[data-theme='dark'] .pearl-study-tabs button,
+.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions button {
   border-color: rgba(148, 163, 184, 0.16) !important;
-  background: linear-gradient(180deg, rgba(16, 42, 53, 0.76), rgba(7, 26, 33, 0.88)) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.78), rgba(8, 26, 33, 0.86)) !important;
   color: var(--ki-text-secondary, #c8d3df) !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.035) !important;
 }
 
-.app-shell[data-theme='dark'] .pearl-bridge-callout .btn.btn-secondary.compact,
-.app-shell[data-theme='dark'] .tus-pearl-hub-panel .btn.btn-secondary.compact {
-  border-color: rgba(94, 234, 212, 0.22) !important;
+.app-shell[data-theme='dark'] .pearl-study-tabs button.active,
+.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions button.active,
+.app-shell[data-theme='dark'] .tus-pearl-action-grid > button.primary,
+.app-shell[data-theme='dark'] .tus-pearl-repeat-list > button:hover,
+.app-shell[data-theme='dark'] .tus-pearl-action-grid > button:hover,
+.app-shell[data-theme='dark'] .pearl-study-tabs button:hover:not(:disabled),
+.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions button:hover:not(:disabled) {
+  border-color: rgba(94, 234, 212, 0.24) !important;
+  background: linear-gradient(180deg, rgba(20, 184, 166, 0.16), rgba(16, 42, 53, 0.88)) !important;
+  color: var(--ki-text, #f4f7fb) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-bridge-callout.compact .btn,
+.app-shell[data-theme='dark'] .tus-pearl-hub-head .btn,
+.app-shell[data-theme='dark'] .tus-pearl-repeat-center-head .btn,
+.app-shell[data-theme='dark'] .tus-pearl-own-card-mini .btn {
+  border-color: rgba(94, 234, 212, 0.20) !important;
   background: rgba(20, 184, 166, 0.14) !important;
   color: var(--ki-chip-accent-text, #99f6e4) !important;
 }
 
-.app-shell[data-theme='dark'] .pearl-bridge-callout .btn.btn-secondary.compact:disabled,
-.app-shell[data-theme='dark'] .tus-pearl-hub-panel .btn.btn-secondary.compact:disabled {
-  border-color: rgba(148, 163, 184, 0.12) !important;
-  background: var(--ki-surface-disabled, rgba(148,163,184,.135)) !important;
-  color: var(--ki-text-disabled, #7f8d9d) !important;
-}
-
-html[data-theme='dark'] .pearl-study-more-panel,
-html[data-theme='dark'] .pearl-catalog-popover,
-.app-shell[data-theme='dark'] .pearl-catalog-popover {
-  border-color: rgba(94, 234, 212, 0.18) !important;
-  background: linear-gradient(180deg, rgba(11, 34, 48, 0.98), rgba(5, 18, 23, 0.98)) !important;
-  color: var(--ki-text-secondary, #c8d3df) !important;
-  box-shadow: 0 24px 70px rgba(0,0,0,.40) !important;
-}
-
-.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions.pearl-study-tools-grid-v93 button:disabled,
-.app-shell[data-theme='dark'] .pearl-study-answer-dock-v93 .decision-btn:disabled {
+.app-shell[data-theme='dark'] .pearl-bridge-callout.compact .btn:disabled {
   opacity: 1 !important;
   border-color: rgba(148, 163, 184, 0.12) !important;
-  background: var(--ki-surface-disabled, rgba(148,163,184,.135)) !important;
+  background: var(--ki-surface-disabled, rgba(148, 163, 184, 0.13)) !important;
+  color: var(--ki-text-disabled, #7f8d9d) !important;
+}
+
+.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card,
+.app-shell[data-theme='dark'] .tus-pearl-focus-face.pearl-card-face,
+.app-shell[data-theme='dark'] .pearl-card-question-block,
+.app-shell[data-theme='dark'] .pearl-answer-panel,
+.app-shell[data-theme='dark'] .pearl-detail-panel,
+.app-shell[data-theme='dark'] .pearl-tip-panel,
+.app-shell[data-theme='dark'] .pearl-note-panel,
+.app-shell[data-theme='dark'] .tus-pearl-answer-chain.focus,
+.app-shell[data-theme='dark'] .tus-pearl-note-box.focus {
+  border-color: rgba(148, 163, 184, 0.17) !important;
+  background: linear-gradient(180deg, rgba(16, 42, 53, 0.84), rgba(7, 26, 33, 0.92)) !important;
+  color: var(--ki-text, #f4f7fb) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+.app-shell[data-theme='dark'] .tus-pearl-focus-card.pearl-study-premium-card {
+  box-shadow: 0 24px 70px rgba(0,0,0,0.34), inset 0 1px 0 rgba(255,255,255,0.04) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-card-branch-pill,
+.app-shell[data-theme='dark'] .pearl-card-progress-pill,
+.app-shell[data-theme='dark'] .tus-pearl-back-kicker,
+.app-shell[data-theme='dark'] .tus-pearl-note-box-label,
+.app-shell[data-theme='dark'] .repeat-list-count,
+.app-shell[data-theme='dark'] .repeat-list-action {
+  border-color: rgba(94, 234, 212, 0.18) !important;
+  background: rgba(20, 184, 166, 0.105) !important;
+  color: var(--ki-chip-accent-text, #99f6e4) !important;
+}
+
+.app-shell[data-theme='dark'] .decision-btn.decision-btn {
+  border-color: rgba(148, 163, 184, 0.16) !important;
+  background: rgba(16, 42, 53, 0.74) !important;
+  color: var(--ki-text-secondary, #c8d3df) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.035) !important;
+}
+
+.app-shell[data-theme='dark'] .decision-btn.known:hover:not(:disabled),
+.app-shell[data-theme='dark'] .decision-btn.known.active {
+  border-color: rgba(52, 211, 153, 0.30) !important;
+  background: rgba(6, 78, 59, 0.30) !important;
+  color: #a7f3d0 !important;
+}
+
+.app-shell[data-theme='dark'] .decision-btn.review:hover:not(:disabled),
+.app-shell[data-theme='dark'] .decision-btn.review.active {
+  border-color: rgba(96, 165, 250, 0.28) !important;
+  background: rgba(30, 64, 175, 0.26) !important;
+  color: #bfdbfe !important;
+}
+
+.app-shell[data-theme='dark'] .decision-btn.wrong:hover:not(:disabled),
+.app-shell[data-theme='dark'] .decision-btn.wrong.active {
+  border-color: rgba(251, 191, 36, 0.30) !important;
+  background: rgba(120, 53, 15, 0.30) !important;
+  color: #fde68a !important;
+}
+
+.app-shell[data-theme='dark'] .decision-btn:disabled,
+.app-shell[data-theme='dark'] .pearl-study-tabs button:disabled,
+.app-shell[data-theme='dark'] .tus-pearl-study-secondary-actions button:disabled {
+  opacity: 1 !important;
+  border-color: rgba(148, 163, 184, 0.12) !important;
+  background: var(--ki-surface-disabled, rgba(148, 163, 184, 0.13)) !important;
   color: var(--ki-text-disabled, #7f8d9d) !important;
   box-shadow: none !important;
+}
+
+.app-shell[data-theme='dark'] .wrong-answer-actions .btn.btn-icon.quiet,
+.app-shell[data-theme='dark'] .catalog-remove-action.btn.btn-icon.quiet {
+  border-color: rgba(148, 163, 184, 0.18) !important;
+  background: rgba(16, 42, 53, 0.64) !important;
+  color: var(--ki-text-muted, #9caebe) !important;
+}
+
+.app-shell[data-theme='dark'] .wrong-answer-actions .btn.btn-icon.quiet:hover,
+.app-shell[data-theme='dark'] .catalog-remove-action.btn.btn-icon.quiet:hover {
+  border-color: rgba(248, 113, 113, 0.28) !important;
+  background: rgba(127, 29, 29, 0.28) !important;
+  color: #fecaca !important;
+}
+
+.app-shell[data-theme='dark'] .tus-pearl-focus-card .smart-glossary-term,
+.app-shell[data-theme='dark'] .tus-pearl-hub-panel .smart-glossary-term,
+.app-shell[data-theme='dark'] .tus-pearl-study-shell .smart-glossary-term {
+  color: color-mix(in srgb, var(--ki-accent-strong, #5eead4) 62%, var(--ki-text, #f4f7fb) 38%) !important;
+  background: transparent !important;
+  border-bottom: 0 !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-color: rgba(94, 234, 212, 0.38) !important;
+  text-underline-offset: 0.18em !important;
 }
