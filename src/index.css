@@ -50617,3 +50617,25 @@ html[data-theme="dark"] .bottom-case-browser-tools .bottom-case-browser-count,
     gap: 11px !important;
   }
 }
+
+/* V286 — balanced nested glossary styling.
+   Tooltip/toolbox body links are intentionally subtler than normal clinical text links. */
+.smart-glossary-card [data-glossary-context-mode="tooltip-body"] .smart-glossary-term,
+.smart-glossary-card [data-glossary-context-mode="tooltip-body"] .glossary-term {
+  color: inherit !important;
+  font-weight: 700 !important;
+  text-decoration-line: underline !important;
+  text-decoration-style: dotted !important;
+  text-decoration-thickness: 1px !important;
+  text-underline-offset: 3px !important;
+  text-decoration-color: rgba(15, 118, 110, 0.36) !important;
+  background: linear-gradient(180deg, transparent 62%, rgba(20, 184, 166, 0.08) 0) !important;
+  border-radius: 4px !important;
+}
+
+.smart-glossary-card [data-glossary-context-mode="tooltip-body"] .smart-glossary-term:hover,
+.smart-glossary-card [data-glossary-context-mode="tooltip-body"] .smart-glossary-term:focus-visible {
+  color: #0f766e !important;
+  text-decoration-color: rgba(15, 118, 110, 0.62) !important;
+  background: rgba(20, 184, 166, 0.10) !important;
+}

@@ -9,6 +9,7 @@ import { TUS_GLOSSARY_CONTEXTUAL_PHRASE_TERMS } from '../data/tusGlossaryContext
 import { TUS_GLOSSARY_BINDING_CORRECTION_TERMS } from '../data/tusGlossaryBindingCorrectionsIndex.js';
 import { TUS_GLOSSARY_CONTEXT_SAFETY_TERMS } from '../data/tusGlossaryContextSafetyIndex.js';
 import { TUS_GLOSSARY_GLOBAL_QUALITY_TERMS } from '../data/tusGlossaryGlobalQualityIndex.js';
+import { TUS_GLOSSARY_NESTED_COVERAGE_TERMS } from '../data/tusGlossaryNestedCoverageIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9475,6 +9476,7 @@ const STATIC_GLOSSARY_SOURCES = [
   // the eosinophil explanation). This prevents title/definition mismatches.
   ...TUS_GLOSSARY_CONTEXT_SAFETY_TERMS,
   ...TUS_GLOSSARY_GLOBAL_QUALITY_TERMS,
+  ...TUS_GLOSSARY_NESTED_COVERAGE_TERMS,
   ...TUS_GLOSSARY_BINDING_CORRECTION_TERMS,
   // Contextual phrase layer comes next so exact clinical phrases such as
   // "defans", "aktif elevasyon" or "sağ inguinal insizyon" do not get
@@ -9976,6 +9978,7 @@ function normalizeEntry(entry = {}) {
     LatinName: entry.LatinName || entry.latinName || '',
     abbreviation: entry.abbreviation || '',
     relatedTerms: entry.relatedTerms || [],
+    safeNestedTerms: entry.safeNestedTerms || [],
     relatedCases: entry.relatedCases || entry.relatedCaseIds || [],
     relatedQuestions: entry.relatedQuestions || [],
     relatedFlashcards: entry.relatedFlashcards || [],
@@ -9990,7 +9993,7 @@ function normalizeEntry(entry = {}) {
     blockedContexts: entry.blockedContexts || [],
     requiredCoTerms: entry.requiredCoTerms || [],
     forbiddenCoTerms: entry.forbiddenCoTerms || [],
-    nestedGlossaryAllowed: Boolean(entry.nestedGlossaryAllowed),
+    nestedGlossaryAllowed: entry.nestedGlossaryAllowed !== false,
     disabledAsStandaloneAlias: Boolean(entry.disabledAsStandaloneAlias),
     answerLeakRisk: entry.answerLeakRisk || 'medium',
     caseSensitiveDisplay: Boolean(entry.caseSensitiveDisplay || aliases.some(isShortCaseSensitiveMedicalToken)),

@@ -8,9 +8,12 @@ import {
   isInsideProtectedUnitRange,
   isLowSignalGlossaryAlias,
   normalizeGlossaryText,
+  isGenericStandaloneAlias,
 } from '../utils/glossary.js';
 
 const DEFAULT_MAX_TERMS_PER_TEXT = 8;
+const TOOLTIP_BODY_MAX_NESTED_TERMS = 5;
+const TOOLTIP_BODY_MAX_NESTED_DEPTH = 1;
 const PREANSWER_MAX_TERMS_PER_TEXT = 6;
 const VIEWPORT_PADDING = 12;
 const SAFE_TOP_PADDING = 12;
@@ -298,7 +301,7 @@ function makeMatcher(terms = []) {
 function splitByGlossary(text = '', terms = [], maxTerms = DEFAULT_MAX_TERMS_PER_TEXT, excludedTermKeys = null, contextMode = 'default') {
   const source = String(text);
   const limit = Number.isFinite(maxTerms) ? Math.max(0, maxTerms) : DEFAULT_MAX_TERMS_PER_TEXT;
-  if (!source || contextMode === 'tooltip-body' || !Array.isArray(terms) || !terms.length || limit <= 0 || !isLikelyGlossaryCandidateText(source)) return [{ type: 'text', value: source }];
+  if (!source || !Array.isArray(terms) || !terms.length || limit <= 0 || !isLikelyGlossaryCandidateText(source)) return [{ type: 'text', value: source }];
 
   const excludedKey = Array.isArray(excludedTermKeys) && excludedTermKeys.length
     ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
@@ -639,6 +642,110 @@ function getPreAnswerDefinition(entry = {}) {
   return hasPreAnswerLeakageSignal(raw) ? neutralPreAnswerDefinition(entry) : raw;
 }
 
+
+function getEntryIdentityKeys(entry = {}) {
+  return Array.from(new Set([
+    entry.id,
+    entry.term,
+    entry.canonicalTerm,
+    entry.displayTerm,
+    entry.normalizedTerm,
+    ...(Array.isArray(entry.aliases) ? entry.aliases : []),
+  ].filter(Boolean).map((item) => normalizeGlossaryText(item))));
+}
+
+function getSafeNestedLabels(entry = {}) {
+  return Array.from(new Set([
+    ...(Array.isArray(entry.safeNestedTerms) ? entry.safeNestedTerms : []),
+    ...(Array.isArray(entry.relatedTerms) ? entry.relatedTerms : []),
+  ].map((item) => String(item || '').trim()).filter(Boolean)));
+}
+
+function isSameGlossaryEntry(a = {}, b = {}) {
+  if (!a || !b) return false;
+  if (a.id && b.id && a.id === b.id) return true;
+  const aTerm = normalizeGlossaryText(a.canonicalTerm || a.displayTerm || a.term || '');
+  const bTerm = normalizeGlossaryText(b.canonicalTerm || b.displayTerm || b.term || '');
+  return Boolean(aTerm && bTerm && aTerm === bTerm);
+}
+
+function isExplicitNestedLabelMatch(candidate = {}, allowedKeys = new Set()) {
+  if (!candidate || !allowedKeys?.size) return false;
+  return getEntryIdentityKeys(candidate).some((key) => allowedKeys.has(key));
+}
+
+function sourceContainsCandidate(sourceNormalized = '', candidate = {}) {
+  if (!sourceNormalized || !candidate) return false;
+  const keys = getEntryIdentityKeys(candidate)
+    .filter((key) => key && key.length >= 4)
+    .sort((a, b) => b.length - a.length);
+  return keys.some((key) => sourceNormalized.includes(key));
+}
+
+function isSafeAutoNestedCandidate(candidate = {}, parent = {}, sourceNormalized = '') {
+  if (!candidate || isSameGlossaryEntry(candidate, parent)) return false;
+  if (candidate.nestedGlossaryAllowed === false) return false;
+  if (candidate.isGenericConcept || candidate.isContextSensitive) return false;
+  const canonical = candidate.canonicalTerm || candidate.displayTerm || candidate.term || '';
+  const wordCount = canonical.trim().split(/\s+/).filter(Boolean).length;
+  const priority = Number(candidate.matchingPriority || 0);
+  if (isGenericStandaloneAlias(canonical) && wordCount < 2) return false;
+  if (wordCount < 2 && priority < 120) return false;
+  return sourceContainsCandidate(sourceNormalized, candidate);
+}
+
+function buildSafeNestedTermPool(parentEntry = {}, allTerms = [], sourceText = '', options = {}) {
+  const { revealMode = 'postAnswer', maxTerms = TOOLTIP_BODY_MAX_NESTED_TERMS } = options || {};
+  if (!parentEntry || !Array.isArray(allTerms) || !allTerms.length) return [];
+  const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
+  const labels = getSafeNestedLabels(parentEntry);
+  const allowedKeys = new Set(labels.map((item) => normalizeGlossaryText(item)).filter(Boolean));
+  const sourceNormalized = normalizeGlossaryText(sourceText || '');
+  const selected = [];
+  const selectedKeys = new Set();
+
+  const addCandidate = (candidate, explicit = false) => {
+    if (!candidate || isSameGlossaryEntry(candidate, parentEntry)) return;
+    if (candidate.nestedGlossaryAllowed === false && !explicit) return;
+    if (isPreAnswer && candidate.answerLeakRisk === 'high' && !explicit) return;
+    const keys = getEntryIdentityKeys(candidate);
+    if (!keys.length || keys.some((key) => selectedKeys.has(key))) return;
+    if (!sourceContainsCandidate(sourceNormalized, candidate)) return;
+    if (!explicit && !isSafeAutoNestedCandidate(candidate, parentEntry, sourceNormalized)) return;
+    if (explicit && (candidate.isGenericConcept || candidate.isContextSensitive)) {
+      const canonical = candidate.canonicalTerm || candidate.displayTerm || candidate.term || '';
+      const wordCount = canonical.trim().split(/\s+/).filter(Boolean).length;
+      if (wordCount < 2 && !isGenericStandaloneAlias(canonical)) return;
+    }
+    selected.push(candidate);
+    keys.forEach((key) => selectedKeys.add(key));
+  };
+
+  // 1) Explicit safeNestedTerms / relatedTerms are the safest source of nested links.
+  allTerms.forEach((candidate) => {
+    if (isExplicitNestedLabelMatch(candidate, allowedKeys)) addCandidate(candidate, true);
+  });
+
+  // 2) If the entry has only a sparse relation list, add a few high-priority,
+  // multi-word terms that literally occur in the explanation. This restores
+  // learning coverage without allowing broad standalone words to hijack tooltips.
+  if (selected.length < maxTerms) {
+    [...allTerms]
+      .filter((candidate) => !selectedKeys.has(normalizeGlossaryText(candidate?.id || '')))
+      .sort((a, b) => {
+        const ap = Number(a?.matchingPriority || 0) + (a?.isMultiWordTerm ? 40 : 0);
+        const bp = Number(b?.matchingPriority || 0) + (b?.isMultiWordTerm ? 40 : 0);
+        return bp - ap;
+      })
+      .forEach((candidate) => {
+        if (selected.length >= maxTerms) return;
+        addCandidate(candidate, false);
+      });
+  }
+
+  return selected.slice(0, maxTerms);
+}
+
 function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [], nestingLevel = 0 }) {
   const [expanded, setExpanded] = useState(false);
   const isPreAnswer = revealMode === 'preAnswer' || revealMode === 'neutral';
@@ -672,15 +779,38 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
 
   const canExpand = !isPreAnswer && Boolean(detailed || relevance || mechanism || relatedTerms.length);
 
-  // Safety-first nested tooltip policy: tooltip body text is rendered as plain
-  // medical prose by default. Normal case text, options, feedback and flashcards
-  // still use GlossaryText, but inside a glossary card we do not re-highlight
-  // broad words such as "obstrüksiyon", "inflamasyon" or "yetmezlik".
-  // This prevents context-free nested previews from binding a general term to a
-  // specific unrelated disease. Wrong tooltip is worse than no nested tooltip.
-  const renderGlossaryInline = (value) => {
+  const nestedSourceText = [shortDefinition, tusPearl, differential, detailed, mechanism, relevance, relatedTerms.join(' ')]
+    .filter(Boolean)
+    .join(' ');
+  const allGlossaryTerms = useMemo(() => getGlossaryTerms(), []);
+  const safeNestedTerms = useMemo(() => buildSafeNestedTermPool(entry, allGlossaryTerms, nestedSourceText, {
+    revealMode,
+    maxTerms: TOOLTIP_BODY_MAX_NESTED_TERMS,
+  }), [entry, allGlossaryTerms, nestedSourceText, revealMode]);
+  const canUseNestedGlossary = nestingLevel < TOOLTIP_BODY_MAX_NESTED_DEPTH && safeNestedTerms.length > 0;
+
+  // Balanced nested tooltip policy: tooltip/toolbox bodies keep meaningful,
+  // explicitly safe concept links, but broad standalone words and ambiguous
+  // aliases are not matched by the global dictionary. Second-level tooltip
+  // bodies render as plain text, preventing endless nested chains.
+  const renderGlossaryInline = (value, maxTerms = TOOLTIP_BODY_MAX_NESTED_TERMS) => {
     if (!value) return null;
-    return <span className="smart-glossary-plain-inline">{String(value)}</span>;
+    if (!canUseNestedGlossary) return <span className="smart-glossary-plain-inline">{String(value)}</span>;
+    return (
+      <GlossaryText
+        text={String(value)}
+        enabled
+        terms={safeNestedTerms}
+        termsMode="only"
+        revealMode={revealMode}
+        maxTerms={maxTerms}
+        excludedTermKeys={blockedKeys}
+        nestingLevel={nestingLevel + 1}
+        contextMode="tooltip-body"
+        maxNestedDepth={TOOLTIP_BODY_MAX_NESTED_DEPTH}
+        enableNestedGlossary
+      />
+    );
   };
 
   return (
@@ -900,6 +1030,10 @@ function GlossaryText({
   contextMode = '',
   maxNestedDepth = 0,
   enableNestedGlossary = false,
+  termsMode = 'augment',
+  allowedNestedEntryIds = null,
+  blockedNestedEntryIds = null,
+  strictEntryBinding = true,
 }) {
   const excludedKey = Array.isArray(excludedTermKeys)
     ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
@@ -909,15 +1043,22 @@ function GlossaryText({
     : '';
   const terms = useMemo(() => {
     if (!enabled) return [];
+    if (termsMode === 'only' && Array.isArray(extraTerms)) return extraTerms;
     return getGlossaryTerms(extraTerms, { branchId });
-  }, [enabled, extraTermsKey, branchId]);
+  }, [enabled, extraTermsKey, branchId, termsMode, extraTerms]);
   const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
   const sourceText = String(text || '');
   const effectiveContextMode = contextMode || (nestingLevel > 0 ? 'tooltip-body' : (revealMode === 'preAnswer' ? 'case-pre-answer' : 'case-post-answer'));
-  const nestedAllowed = enableNestedGlossary || nestingLevel <= maxNestedDepth;
+  const isTooltipBodyMode = effectiveContextMode === 'tooltip-body' || effectiveContextMode === 'nested-tooltip-body';
+  const nestedAllowed = !isTooltipBodyMode || (enableNestedGlossary && Number(nestingLevel || 0) <= Number(maxNestedDepth || 0));
+  const effectiveExcludedTermKeys = useMemo(() => {
+    const base = Array.isArray(excludedTermKeys) ? excludedTermKeys : [];
+    const blocked = Array.isArray(blockedNestedEntryIds) ? blockedNestedEntryIds : [];
+    return [...base, ...blocked];
+  }, [excludedKey, blockedNestedEntryIds]);
   const parts = useMemo(
-    () => splitByGlossary(sourceText, enabled && nestedAllowed ? terms : [], effectiveMaxTerms, excludedTermKeys, effectiveContextMode),
-    [sourceText, enabled, nestedAllowed, terms, effectiveMaxTerms, excludedKey, effectiveContextMode],
+    () => splitByGlossary(sourceText, enabled && nestedAllowed ? terms : [], effectiveMaxTerms, effectiveExcludedTermKeys, effectiveContextMode),
+    [sourceText, enabled, nestedAllowed, terms, effectiveMaxTerms, effectiveExcludedTermKeys, effectiveContextMode],
   );
 
   if (!enabled) return <span className="glossary-text-flow">{sourceText}</span>;
