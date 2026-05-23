@@ -16,6 +16,7 @@ import { TUS_GLOSSARY_RECURSIVE_NESTED_TERMS } from '../data/tusGlossaryRecursiv
 import { TUS_GLOSSARY_CANDIDATE_AUDIT_TERMS } from '../data/tusGlossaryCandidateAuditIndex.js';
 import { TUS_GLOSSARY_DEFINITION_QUALITY_TERMS } from '../data/tusGlossaryDefinitionQualityIndex.js';
 import { TUS_GLOSSARY_V300_SUPPLEMENTAL_TERMS } from '../data/tusGlossaryV300SupplementalIndex.js';
+import { TUS_GLOSSARY_V304_EXTRA_TERMS } from '../data/tusGlossaryV304ExtraIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -9479,6 +9480,7 @@ export const defaultGlossaryTerms = globalGlossaryTerms;
 const STATIC_GLOSSARY_SOURCES = [
   // Highest-priority quality layer: removes placeholder/filler definitions while preserving aliases and matching behavior.
   ...TUS_GLOSSARY_DEFINITION_QUALITY_TERMS,
+  ...TUS_GLOSSARY_V304_EXTRA_TERMS,
   ...TUS_GLOSSARY_V300_SUPPLEMENTAL_TERMS,
   ...TUS_GLOSSARY_CANDIDATE_AUDIT_TERMS,
   ...TUS_GLOSSARY_RECURSIVE_NESTED_TERMS,
