@@ -191,6 +191,104 @@ function compactText(value = '', limit = 150) {
 }
 
 
+function normalizeSearchText(value = '') {
+  return String(value || '')
+    .toLocaleLowerCase('tr')
+    .replace(/[ıİ]/g, 'i')
+    .replace(/[şŞ]/g, 's')
+    .replace(/[ğĞ]/g, 'g')
+    .replace(/[üÜ]/g, 'u')
+    .replace(/[öÖ]/g, 'o')
+    .replace(/[çÇ]/g, 'c')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9β₂αğüşöçıİŞĞÜÖÇ\s-]+/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function collectCaseSearchText(value, bucket = []) {
+  if (value == null) return bucket;
+  if (typeof value === 'string' || typeof value === 'number') {
+    const text = String(value).trim();
+    if (text) bucket.push(text);
+    return bucket;
+  }
+  if (Array.isArray(value)) {
+    value.forEach((item) => collectCaseSearchText(item, bucket));
+    return bucket;
+  }
+  if (typeof value === 'object') {
+    Object.entries(value).forEach(([key, item]) => {
+      if (['id', 'branchId', 'caseType'].includes(key)) return;
+      collectCaseSearchText(item, bucket);
+    });
+  }
+  return bucket;
+}
+
+function getCaseSearchTitle(clinicalCase = {}) {
+  return compactText(
+    clinicalCase.cardTitle
+      || clinicalCase.listTitle
+      || clinicalCase.menuTitle
+      || clinicalCase.displayTitle
+      || clinicalCase.title
+      || clinicalCase.learningTarget
+      || clinicalCase.clinicalFocus
+      || clinicalCase.question
+      || clinicalCase.diagnosis?.question
+      || '',
+    120,
+  );
+}
+
+function getCaseSearchScore(clinicalCase = {}, rawQuery = '') {
+  const query = normalizeSearchText(rawQuery);
+  if (!query) return 1;
+
+  const tokens = query.split(' ').filter((token) => token.length > 1);
+  if (!tokens.length) return 1;
+
+  const titleText = normalizeSearchText(getCaseSearchTitle(clinicalCase));
+  const keywordText = normalizeSearchText([
+    clinicalCase.keywords,
+    clinicalCase.searchKeywords,
+    clinicalCase.tags,
+    clinicalCase.learningTarget,
+    clinicalCase.clinicalFocus,
+    clinicalCase.relatedBranch,
+    clinicalCase.branchName,
+  ].flat(Infinity).filter(Boolean).join(' '));
+  const questionText = normalizeSearchText([clinicalCase.question, clinicalCase.stem, clinicalCase.narrativeStem, clinicalCase.diagnosis?.question].filter(Boolean).join(' '));
+  const fullText = normalizeSearchText(collectCaseSearchText(clinicalCase).join(' '));
+
+  if (!fullText) return 0;
+  if (!tokens.every((token) => fullText.includes(token))) return 0;
+
+  let score = 10;
+  if (titleText.includes(query)) score += 90;
+  if (questionText.includes(query)) score += 70;
+  if (keywordText.includes(query)) score += 60;
+  tokens.forEach((token) => {
+    if (titleText.includes(token)) score += 18;
+    if (keywordText.includes(token)) score += 14;
+    if (questionText.includes(token)) score += 12;
+  });
+  return score;
+}
+
+function filterCasesBySearch(caseItems = [], query = '') {
+  const normalizedQuery = normalizeSearchText(query);
+  if (!normalizedQuery) return caseItems;
+
+  return caseItems
+    .map((clinicalCase, index) => ({ clinicalCase, index, score: getCaseSearchScore(clinicalCase, normalizedQuery) }))
+    .filter((item) => item.score > 0)
+    .sort((a, b) => (b.score - a.score) || (a.index - b.index))
+    .map((item) => item.clinicalCase);
+}
+
 function normalizeBranchDifficulty(value = '') {
   const normalized = String(value || '').toLocaleLowerCase('tr');
   if (normalized.includes('acil') || normalized.includes('urgent')) return 'Acil';
@@ -258,6 +356,7 @@ function App() {
   const [selectedBranchId, setSelectedBranchId] = useState(null);
   const [selectedCaseId, setSelectedCaseId] = useState(null);
   const [branchDifficultyFilter, setBranchDifficultyFilter] = useState('all');
+  const [bottomCaseSearchQuery, setBottomCaseSearchQuery] = useState('');
   const [mode, setMode] = useState('study');
   const [hardMode, setHardMode] = useState(false);
   const [theme, setTheme] = useState(() => loadStoredValue(THEME_STORAGE_KEY, 'light'));
@@ -327,6 +426,13 @@ function App() {
   );
 
   const activeBranchCasePool = filteredBranchCases.length ? filteredBranchCases : branchCases;
+
+  const searchedBranchCasePool = useMemo(
+    () => filterCasesBySearch(activeBranchCasePool, bottomCaseSearchQuery),
+    [activeBranchCasePool, bottomCaseSearchQuery],
+  );
+
+  const hasBottomCaseSearch = Boolean(normalizeSearchText(bottomCaseSearchQuery));
 
   const selectedCase = useMemo(() => {
     if (examState?.active) {
@@ -711,6 +817,10 @@ function App() {
     if (currentUser?.id) return;
     localBackend.write(EXAM_HISTORY_STORAGE_KEY, examHistory);
   }, [examHistory, currentUser?.id]);
+
+  useEffect(() => {
+    setBottomCaseSearchQuery('');
+  }, [selectedBranchId]);
 
   useEffect(() => {
     if (!selectedBranchId) return;
@@ -1552,9 +1662,35 @@ function App() {
                 <div>
                   <h3>Diğer olgular</h3>
                 </div>
-                <span className="bottom-case-browser-count">{activeBranchCasePool.length} olgu</span>
+                <div className="bottom-case-browser-tools">
+                  <label className="bottom-case-search" aria-label="Diğer olgular içinde ara">
+                    <Icon name="Search" />
+                    <input
+                      type="search"
+                      value={bottomCaseSearchQuery}
+                      onChange={(event) => setBottomCaseSearchQuery(event.target.value)}
+                      placeholder="Olgu, tanı, mekanizma ara..."
+                      autoComplete="off"
+                    />
+                    {bottomCaseSearchQuery ? (
+                      <button type="button" className="bottom-case-search-clear" onClick={() => setBottomCaseSearchQuery('')} aria-label="Aramayı temizle">
+                        ×
+                      </button>
+                    ) : null}
+                  </label>
+                  <span className="bottom-case-browser-count">
+                    {hasBottomCaseSearch ? `${searchedBranchCasePool.length}/${activeBranchCasePool.length} olgu` : `${activeBranchCasePool.length} olgu`}
+                  </span>
+                </div>
               </div>
-              <CaseList cases={activeBranchCasePool} selectedCaseId={selectedCase.id} onSelectCase={handleSelectCase} layout="horizontal" solvedCaseIds={solvedCaseIdSet} />
+              {hasBottomCaseSearch && searchedBranchCasePool.length === 0 ? (
+                <div className="bottom-case-search-empty" role="status">
+                  <strong>Sonuç bulunamadı.</strong>
+                  <span>Başlık, soru kökü, anahtar terim ve açıklama alanlarında eşleşme aranıyor.</span>
+                </div>
+              ) : (
+                <CaseList cases={searchedBranchCasePool} selectedCaseId={selectedCase.id} onSelectCase={handleSelectCase} layout="horizontal" solvedCaseIds={solvedCaseIdSet} />
+              )}
             </section>
           </section>
         </section>

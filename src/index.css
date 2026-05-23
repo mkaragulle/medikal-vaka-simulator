@@ -49454,3 +49454,151 @@ html[data-theme="dark"] .tus-spot-bank-main .option-grid > .answer-option:hover:
     margin-inline: -6px !important;
   }
 }
+
+/* ==========================================================
+   V257 — Global search inside "Diğer olgular"
+   Search runs against title, stem/question, keywords, options and feedback text.
+   ========================================================== */
+.bottom-case-browser-tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.bottom-case-search {
+  display: inline-grid;
+  grid-template-columns: 20px minmax(160px, 280px) auto;
+  align-items: center;
+  min-height: 38px;
+  max-width: min(360px, 44vw);
+  padding: 0 9px 0 13px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--border-subtle) 86%, var(--primary-300) 14%);
+  background: color-mix(in srgb, var(--surface-1) 90%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.72), 0 10px 24px rgba(15, 118, 110, 0.06);
+  color: var(--text-secondary);
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.bottom-case-search:focus-within {
+  border-color: color-mix(in srgb, var(--primary-500) 52%, var(--border-subtle));
+  background: color-mix(in srgb, var(--surface-1) 96%, white 4%);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-200) 34%, transparent), 0 14px 30px rgba(15, 118, 110, 0.09);
+}
+
+.bottom-case-search svg {
+  width: 17px;
+  height: 17px;
+  color: var(--primary-700);
+  opacity: 0.78;
+}
+
+.bottom-case-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-primary);
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 690;
+  letter-spacing: -0.01em;
+  padding: 8px 8px;
+}
+
+.bottom-case-search input::placeholder {
+  color: color-mix(in srgb, var(--text-secondary) 70%, transparent);
+  font-weight: 650;
+}
+
+.bottom-case-search-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface-2) 88%, transparent);
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 850;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+.bottom-case-search-clear:hover {
+  background: color-mix(in srgb, var(--primary-100) 78%, transparent);
+  color: var(--primary-800);
+  transform: scale(1.04);
+}
+
+.bottom-case-search-empty {
+  display: grid;
+  place-items: center;
+  gap: 5px;
+  min-height: 118px;
+  border-radius: 24px;
+  border: 1px dashed color-mix(in srgb, var(--border-subtle) 70%, var(--primary-300) 30%);
+  background: color-mix(in srgb, var(--surface-2) 72%, transparent);
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 24px;
+}
+
+.bottom-case-search-empty strong {
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.bottom-case-search-empty span {
+  max-width: 520px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+html[data-theme="dark"] .bottom-case-search,
+.app-shell[data-theme="dark"] .bottom-case-search {
+  background: color-mix(in srgb, rgba(15, 23, 42, 0.88) 88%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04), 0 12px 26px rgba(0,0,0,0.18);
+}
+
+html[data-theme="dark"] .bottom-case-search:focus-within,
+.app-shell[data-theme="dark"] .bottom-case-search:focus-within {
+  background: color-mix(in srgb, rgba(15, 23, 42, 0.96) 92%, var(--primary-900) 8%);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary-700) 22%, transparent), 0 14px 30px rgba(0,0,0,0.24);
+}
+
+@media (max-width: 860px) {
+  .bottom-case-browser-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .bottom-case-browser-tools {
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .bottom-case-search {
+    max-width: none;
+    flex: 1 1 auto;
+    grid-template-columns: 20px minmax(0, 1fr) auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .bottom-case-browser-tools {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .bottom-case-browser-count {
+    width: max-content;
+  }
+}
