@@ -671,18 +671,14 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
   const mechanism = !isDuplicateSection(rawMechanism, [...baseShownValues, tusPearl, differential, detailed, relevance]) ? rawMechanism : '';
 
   const canExpand = !isPreAnswer && Boolean(detailed || relevance || mechanism || relatedTerms.length);
-  const nestedMaxTerms = isPreAnswer ? 2 : 4;
-  const renderGlossaryInline = (value, localMaxTerms = nestedMaxTerms) => {
+  const renderGlossaryInline = (value) => {
     if (!value) return null;
-    return (
-      <GlossaryText
-        text={value}
-        revealMode={revealMode}
-        maxTerms={localMaxTerms}
-        excludedTermKeys={blockedKeys}
-        nestingLevel={nestingLevel + 1}
-      />
-    );
+    // Tooltip cards are intentionally rendered as plain text. Running the full
+    // highlighter inside another tooltip can bind broad words (for example
+    // “obstrüksiyon”) to unrelated disease entries. Normal case/flashcard text
+    // still uses GlossaryText; tooltip definitions do not create nested hover
+    // targets unless a future allowlisted implementation explicitly opts in.
+    return <span className="glossary-plain-segment">{String(value)}</span>;
   };
 
   return (
@@ -898,7 +894,9 @@ function GlossaryText({
   maxTerms = undefined,
   excludedTermKeys = null,
   nestingLevel = 0,
+  enableNestedGlossary = true,
 }) {
+  const safeEnabled = Boolean(enabled && (Number(nestingLevel || 0) <= 0 || enableNestedGlossary));
   const excludedKey = Array.isArray(excludedTermKeys)
     ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
     : '';
@@ -906,17 +904,17 @@ function GlossaryText({
     ? extraTerms.map((term) => `${term?.id || ''}:${term?.term || ''}:${term?.aliases?.length || 0}`).join('|')
     : '';
   const terms = useMemo(() => {
-    if (!enabled) return [];
+    if (!safeEnabled) return [];
     return getGlossaryTerms(extraTerms, { branchId });
-  }, [enabled, extraTermsKey, branchId]);
+  }, [safeEnabled, extraTermsKey, branchId]);
   const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
   const sourceText = String(text || '');
   const parts = useMemo(
-    () => splitByGlossary(sourceText, enabled ? terms : [], effectiveMaxTerms, excludedTermKeys),
-    [sourceText, enabled, terms, effectiveMaxTerms, excludedKey],
+    () => splitByGlossary(sourceText, safeEnabled ? terms : [], effectiveMaxTerms, excludedTermKeys),
+    [sourceText, safeEnabled, terms, effectiveMaxTerms, excludedKey],
   );
 
-  if (!enabled) return <span className="glossary-text-flow">{sourceText}</span>;
+  if (!safeEnabled) return <span className="glossary-text-flow" data-nesting-level={nestingLevel}>{sourceText}</span>;
 
   return (
     <span className="glossary-text-flow" data-nesting-level={nestingLevel}>

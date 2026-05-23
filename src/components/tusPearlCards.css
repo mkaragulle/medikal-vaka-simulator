@@ -13612,7 +13612,7 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 }
 
 /* =========================================================
-   V282 — Premium catalog card rows for Kataloglarım
+   V284 — Minimal premium catalog card rows for Kataloglarım
    Scope: only catalog management lists in TusPearlStudyScreen.
    ========================================================= */
 .tus-pearl-catalog-detail .tus-pearl-catalog-card-section {
@@ -13651,12 +13651,11 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   align-items: center !important;
   gap: 16px !important;
   min-width: 0 !important;
-  padding: 15px 16px !important;
-  border: 1px solid rgba(15, 118, 110, 0.105) !important;
-  border-radius: 20px !important;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.88)) !important;
-  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.035) !important;
+  padding: 16px 18px !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.96) !important;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.035) !important;
   transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease !important;
   content-visibility: visible !important;
   contain: layout paint style !important;
@@ -13665,83 +13664,62 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 
 .tus-pearl-catalog-card-list .tus-pearl-library-card.catalog-card-row:hover,
 .tus-pearl-catalog-card-list.addable .tus-pearl-library-card.catalog-card-row:hover {
-  border-color: rgba(15, 118, 110, 0.18) !important;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.99), rgba(240, 253, 250, 0.42)) !important;
-  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.055) !important;
+  border-color: rgba(15, 118, 110, 0.16) !important;
+  background: rgba(255, 255, 255, 0.99) !important;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.055) !important;
   transform: none !important;
 }
 
-.tus-pearl-catalog-card-list .catalog-card-content {
+/* Legacy metadata/source/type chips are intentionally hidden in catalog list rows. */
+.tus-pearl-catalog-card-list .catalog-card-content,
+.tus-pearl-catalog-card-list .catalog-card-main {
   min-width: 0;
   display: grid;
   gap: 7px;
 }
 
-.tus-pearl-catalog-card-list .catalog-card-meta {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0;
-  min-width: 0;
+.tus-pearl-catalog-card-list .catalog-card-meta,
+.tus-pearl-catalog-card-list .catalog-card-answer,
+.tus-pearl-catalog-card-list .catalog-answer-label {
+  display: none !important;
 }
 
-.tus-pearl-catalog-card-list .catalog-card-meta span {
+.tus-pearl-catalog-card-list .catalog-card-branch {
   display: inline-flex;
   align-items: center;
-  min-height: 20px;
+  width: fit-content;
   max-width: 100%;
-  padding: 0 7px;
+  margin: 0 0 1px;
+  padding: 3px 8px;
   border-radius: 999px;
-  border: 1px solid rgba(15, 118, 110, 0.08);
-  background: rgba(15, 118, 110, 0.045);
-  color: #64748b !important;
-  font-size: 0.705rem !important;
+  border: 1px solid rgba(15, 118, 110, 0.1);
+  background: rgba(15, 118, 110, 0.055);
+  color: #0f766e !important;
+  font-size: 0.69rem !important;
   font-weight: 760 !important;
-  letter-spacing: 0.006em !important;
+  letter-spacing: 0.01em !important;
   line-height: 1.2;
-  text-transform: none !important;
-}
-
-.tus-pearl-catalog-card-list .catalog-card-meta span:first-child {
-  background: transparent;
-  border-color: transparent;
-  padding-left: 0;
-  color: #718096 !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tus-pearl-catalog-card-list .catalog-card-question {
   display: block !important;
   margin: 0 !important;
-  color: #172033 !important;
-  font-size: 0.91rem !important;
-  font-weight: 790 !important;
+  color: #111827 !important;
+  font-size: 0.94rem !important;
+  font-weight: 760 !important;
   line-height: 1.45 !important;
   letter-spacing: -0.006em;
   overflow-wrap: break-word;
   word-break: normal;
 }
 
-.tus-pearl-catalog-card-list .catalog-card-answer {
-  display: block;
-  margin: 0 !important;
-  color: #334155 !important;
-  font-size: 0.84rem !important;
-  font-weight: 620 !important;
-  line-height: 1.48 !important;
-  overflow-wrap: break-word;
-  word-break: normal;
-}
-
+/* Answer/back text is not rendered in catalog management lists; keep a CSS guard as safety. */
+.tus-pearl-catalog-card-list .catalog-card-answer,
 .tus-pearl-catalog-card-list .catalog-answer-label {
-  margin-right: 7px;
-  color: #0f766e !important;
-  font-size: 0.66rem !important;
-  font-weight: 850 !important;
-  line-height: 1;
-  letter-spacing: 0.06em !important;
-  text-transform: uppercase !important;
+  display: none !important;
 }
 
 .tus-pearl-catalog-card-list .catalog-card-action,
@@ -13756,14 +13734,14 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 }
 
 .tus-pearl-catalog-card-list .catalog-remove-action.btn.btn-icon.quiet {
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
-  border-radius: 14px;
-  border: 1px solid rgba(15, 118, 110, 0.13);
-  background: rgba(255, 255, 255, 0.76);
-  color: #0f766e;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.035);
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.82);
+  color: #64748b;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.035);
 }
 
 .tus-pearl-catalog-card-list .catalog-remove-action.btn.btn-icon.quiet:hover {
@@ -13776,16 +13754,16 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 .tus-pearl-catalog-card-list .catalog-edit-action.btn.btn-secondary.compact,
 .tus-pearl-catalog-card-list .catalog-added-action.btn.btn-secondary.compact {
   min-height: 36px;
-  border-radius: 14px;
-  padding: 8px 13px;
+  border-radius: 999px;
+  padding: 8px 14px;
   font-size: 0.78rem;
-  font-weight: 820;
+  font-weight: 780;
   white-space: nowrap;
 }
 
 .tus-pearl-catalog-card-list .catalog-add-action.btn.btn-secondary.compact {
-  border-color: rgba(15, 118, 110, 0.18);
-  background: rgba(240, 253, 250, 0.78);
+  border-color: rgba(15, 118, 110, 0.16);
+  background: rgba(240, 253, 250, 0.72);
   color: #0f766e;
 }
 
@@ -13838,7 +13816,7 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 /* Catalog management is an organization surface; keep glossary markers subtle here. */
 .tus-pearl-catalog-card-list .smart-glossary-term {
   color: inherit !important;
-  text-decoration-color: rgba(15, 118, 110, 0.24) !important;
+  text-decoration-color: rgba(15, 118, 110, 0.18) !important;
   text-decoration-thickness: 1px !important;
   text-underline-offset: 3px !important;
   background: transparent !important;
@@ -13847,8 +13825,8 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
 
 .tus-pearl-catalog-card-list .smart-glossary-term:hover,
 .tus-pearl-catalog-card-list .smart-glossary-term:focus-visible {
-  color: #0f766e !important;
-  background: rgba(20, 184, 166, 0.045) !important;
+  color: #172033 !important;
+  background: rgba(20, 184, 166, 0.035) !important;
 }
 
 [data-theme='dark'] .tus-pearl-catalog-detail .tus-pearl-catalog-card-section {
@@ -13870,14 +13848,10 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   color: #e5edf7 !important;
 }
 
-[data-theme='dark'] .tus-pearl-catalog-card-list .catalog-card-answer {
-  color: #cbd5e1 !important;
-}
-
-[data-theme='dark'] .tus-pearl-catalog-card-list .catalog-card-meta span {
-  color: #94a3b8 !important;
-  border-color: rgba(94, 234, 212, 0.12);
-  background: rgba(45, 212, 191, 0.055);
+[data-theme='dark'] .tus-pearl-catalog-card-list .catalog-card-branch {
+  color: #99f6e4 !important;
+  border-color: rgba(94, 234, 212, 0.14);
+  background: rgba(45, 212, 191, 0.07);
 }
 
 [data-theme='dark'] .tus-pearl-catalog-card-list .catalog-remove-action.btn.btn-icon.quiet {

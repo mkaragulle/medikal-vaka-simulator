@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "audit:glossary": "node scripts/audit-glossary-integrity.mjs"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.4",

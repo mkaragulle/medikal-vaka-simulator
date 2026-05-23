@@ -1033,14 +1033,9 @@ function TusPearlStudyScreen({
                     <div className="tus-pearl-catalog-card-list">
                       {catalogCards.map((card) => (
                         <article key={card.id} className="tus-pearl-library-card in-catalog catalog-card-row">
-                          <div className="catalog-card-content">
-                            <div className="catalog-card-meta" aria-label="Kart bilgisi">
-                              <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'}</span>
-                              <span>{getBranchName(card.branchId)}</span>
-                              <span>{card.cardType || 'Spot'}</span>
-                            </div>
+                          <div className="catalog-card-main">
+                            <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
                             <strong className="catalog-card-question"><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
-                            <p className="catalog-card-answer"><span className="catalog-answer-label">Yanıt</span><GlossaryText text={card.back} enabled revealMode="postAnswer" maxTerms={2} /></p>
                           </div>
                           <div className="pearl-card-row-actions catalog-card-action">
                             {card.source === 'user' ? <button type="button" className="btn btn-secondary compact catalog-edit-action" onClick={() => openEditor({ mode: 'edit', card, defaultCatalogId: activeCatalog.id })}>Düzenle</button> : null}
@@ -1080,12 +1075,8 @@ function TusPearlStudyScreen({
                   <div className="tus-pearl-catalog-card-list addable">
                     {searchableCards.map((card) => (
                       <article key={card.id} className="tus-pearl-library-card catalog-card-row">
-                        <div className="catalog-card-content">
-                          <div className="catalog-card-meta" aria-label="Kart bilgisi">
-                            <span>{card.source === 'user' ? 'Kişisel kart' : 'Sistem kartı'}</span>
-                            <span>{getBranchName(card.branchId)}</span>
-                            <span>{card.cardType || 'Spot'}</span>
-                          </div>
+                        <div className="catalog-card-main">
+                          <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
                           <strong className="catalog-card-question"><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
                         </div>
                         <div className="pearl-card-row-actions catalog-card-action">

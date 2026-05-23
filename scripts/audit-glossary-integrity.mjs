@@ -1,39 +1,60 @@
-import { auditGlossaryIntegrity, getGlossaryTerms, normalizeGlossaryText } from '../src/utils/glossary.js';
+import {
+  auditGlossaryIntegrity,
+  getGlossaryTerms,
+  normalizeGlossaryText,
+} from '../src/utils/glossary.js';
 
 const terms = getGlossaryTerms();
 const audit = auditGlossaryIntegrity(terms);
+const probes = [
+  'astım',
+  'obstrüksiyon',
+  'hava yolu obstrüksiyonu',
+  'bronş hiperreaktivitesi',
+  'bağırsak obstrüksiyonu',
+  'mekanik bağırsak obstrüksiyonu',
+  'mesane çıkım obstrüksiyonu',
+  'safra yolu obstrüksiyonu',
+  'ileus',
+  'hiperkalemi',
+  'Doppler ultrasonografi',
+  'aktif elevasyon',
+  'sağ inguinal insizyon',
+];
 
-const aliasOwner = new Map();
-for (const entry of terms) {
-  for (const alias of entry.aliases || []) {
-    const normalized = normalizeGlossaryText(alias);
-    if (!normalized) continue;
-    const list = aliasOwner.get(normalized) || [];
-    list.push({ id: entry.id, term: entry.term, alias });
-    aliasOwner.set(normalized, list);
-  }
+function ownersForAlias(alias) {
+  const normalized = normalizeGlossaryText(alias);
+  return terms
+    .filter((entry) => (entry.aliases || []).some((item) => normalizeGlossaryText(item) === normalized))
+    .map((entry) => ({ id: entry.id, term: entry.term, category: entry.category }));
 }
 
-const collisions = Array.from(aliasOwner.entries())
-  .filter(([, list]) => new Set(list.map((item) => item.id)).size > 1)
-  .map(([normalizedAlias, entries]) => ({ normalizedAlias, entries }));
-
-const shortDefinitions = terms
-  .filter((entry) => String(entry.shortDefinition || entry.definition || '').trim().length < 24)
-  .map((entry) => ({ id: entry.id, term: entry.term, definition: entry.shortDefinition || entry.definition || '' }));
+const probeReport = probes.map((probe) => ({ probe, owners: ownersForAlias(probe) }));
+const dangerousBindings = [
+  { alias: 'obstrüksiyon', forbiddenTerm: 'İleus' },
+  { alias: 'tıkanıklık', forbiddenTerm: 'İleus' },
+  { alias: 'hava yolu obstrüksiyonu', forbiddenTerm: 'İleus' },
+  { alias: 'mesane çıkım obstrüksiyonu', forbiddenTerm: 'İleus' },
+  { alias: 'safra yolu obstrüksiyonu', forbiddenTerm: 'İleus' },
+].map((rule) => {
+  const owners = ownersForAlias(rule.alias);
+  return {
+    ...rule,
+    passed: !owners.some((owner) => normalizeGlossaryText(owner.term) === normalizeGlossaryText(rule.forbiddenTerm)),
+    owners,
+  };
+});
 
 const report = {
-  totalEntries: terms.length,
+  totalEntries: audit.totalEntries,
   issueCount: audit.issueCount,
-  duplicateAliasCollisions: collisions.length,
-  shortDefinitionCount: shortDefinitions.length,
-  issues: audit.issues.slice(0, 100),
-  duplicateAliasExamples: collisions.slice(0, 50),
-  shortDefinitionExamples: shortDefinitions.slice(0, 50),
+  riskyAliasCount: audit.riskyAliasCount,
+  probes: probeReport,
+  dangerousBindings,
 };
 
 console.log(JSON.stringify(report, null, 2));
 
-if (audit.issueCount > 0 || collisions.length > 0) {
+if (audit.issueCount > 0 || dangerousBindings.some((item) => !item.passed)) {
   process.exitCode = 1;
 }
