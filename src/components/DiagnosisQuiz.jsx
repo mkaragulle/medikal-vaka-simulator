@@ -71,9 +71,24 @@ function FormattedQuestionPrompt({ text = '', glossaryEnabled = true }) {
   );
 }
 
+function parseOptionFlow(text = '') {
+  const source = String(text || '').replace(/\s+/g, ' ').trim();
+  if (!source) return null;
+
+  const segments = source
+    .split(/\s*(?:→|->|➜|⇒)\s*/g)
+    .map((part) => part.trim())
+    .filter(Boolean);
+
+  if (segments.length < 3) return null;
+  return segments;
+}
+
 const AnswerOption = memo(function AnswerOption({ option, index, selected, submitted, correctAnswer, onSelect, glossaryEnabled = true }) {
   const isSelected = selected === option;
   const isCorrectOption = option === correctAnswer;
+  const flowSegments = useMemo(() => parseOptionFlow(option), [option]);
+  const isFlowOption = Array.isArray(flowSegments) && flowSegments.length > 0;
   const stateClass = submitted
     ? isCorrectOption
       ? 'correct solved'
@@ -103,7 +118,7 @@ const AnswerOption = memo(function AnswerOption({ option, index, selected, submi
   return (
     <button
       type="button"
-      className={`answer-option ${stateClass}`.trim()}
+      className={`answer-option ${isFlowOption ? 'flow-option' : ''} ${stateClass}`.trim()}
       onClick={() => onSelect(option)}
       disabled={submitted}
       aria-pressed={isSelected}
@@ -111,8 +126,23 @@ const AnswerOption = memo(function AnswerOption({ option, index, selected, submi
       data-answer-state={stateClass}
     >
       <span className="answer-letter">{OPTION_LETTERS[index] ?? index + 1}</span>
-      <span className="answer-content">
-        <span className="answer-title"><GlossaryText text={option} enabled={glossaryEnabled} /></span>
+      <span className={`answer-content ${isFlowOption ? 'has-flow' : ''}`.trim()}>
+        {isFlowOption ? (
+          <span className="answer-flow" role="list" aria-label="Nedensel seçenek akışı">
+            {flowSegments.map((segment, segmentIndex) => (
+              <span className="answer-flow-item" key={`${segmentIndex}-${segment}`}>
+                <span className="answer-flow-segment" role="listitem">
+                  <GlossaryText text={segment} enabled={glossaryEnabled} />
+                </span>
+                {segmentIndex < flowSegments.length - 1 ? (
+                  <span className="answer-flow-arrow" aria-hidden="true">→</span>
+                ) : null}
+              </span>
+            ))}
+          </span>
+        ) : (
+          <span className="answer-title"><GlossaryText text={option} enabled={glossaryEnabled} /></span>
+        )}
       </span>
       <span className="answer-status-icon" aria-hidden="true">
         {statusIcon ? <Icon name={statusIcon} /> : <span className="answer-radio-dot" />}
