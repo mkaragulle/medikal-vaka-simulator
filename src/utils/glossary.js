@@ -7,6 +7,7 @@ import { TUS_GLOSSARY_CASE_DERIVED_TERMS } from '../data/tusGlossaryCaseDerivedI
 import { TUS_GLOSSARY_CLINICAL_BRANCH_DEEP_TERMS } from '../data/tusGlossaryClinicalBranchDeepIndex.js';
 import { TUS_GLOSSARY_CONTEXTUAL_PHRASE_TERMS } from '../data/tusGlossaryContextualPhraseIndex.js';
 import { TUS_GLOSSARY_BINDING_CORRECTION_TERMS } from '../data/tusGlossaryBindingCorrectionsIndex.js';
+import { TUS_GLOSSARY_CONTEXT_SAFETY_TERMS } from '../data/tusGlossaryContextSafetyIndex.js';
 
 const teachingOnly = 'teachingOnly';
 
@@ -175,24 +176,6 @@ export function isLowSignalGlossaryAlias(alias = '') {
   if (/^[A-ZÇĞİÖŞÜ0-9./+-]{2,5}$/.test(raw) && /[A-ZÇĞİÖŞÜ]/.test(raw)) return false;
   const normalized = normalizeGlossaryText(alias);
   return LOW_SIGNAL_GLOSSARY_ALIASES.has(normalized);
-}
-
-
-// Broad, context-sensitive medical words must not be claimed as standalone
-// aliases by specific diseases. They may be linked only to their own neutral
-// concept entry or as part of a curated multi-word phrase such as
-// "hava yolu obstrüksiyonu" or "mekanik bağırsak obstrüksiyonu".
-export const CONTEXT_SENSITIVE_STANDALONE_ALIASES = new Set([
-  'obstruksiyon', 'tikaniklik', 'inflamasyon', 'enfeksiyon', 'yetmezlik',
-  'iskemi', 'nekroz', 'odem', 'lezyon', 'kitle', 'nodul', 'infiltrasyon',
-  'darlik', 'basi', 'hiperreaktivite', 'hassasiyet', 'agri', 'dispne',
-  'hipoksi', 'asidoz', 'alkaloz', 'sok', 'kanama', 'perforasyon', 'torsiyon',
-  'elevasyon', 'defisit', 'tutulum', 'yanit',
-]);
-
-export function isContextSensitiveStandaloneAlias(alias = '') {
-  const normalized = normalizeGlossaryText(alias);
-  return Boolean(normalized && CONTEXT_SENSITIVE_STANDALONE_ALIASES.has(normalized));
 }
 
 function isShortCaseSensitiveMedicalToken(value = '') {
@@ -9483,117 +9466,13 @@ export const globalGlossaryTerms = [
 
 export const branchGlossaryTerms = {};
 
-
-export const glossaryBindingSafetyTerms = [
-  {
-    id: 'concept-obstruksiyon-genel',
-    term: 'Obstrüksiyon',
-    canonicalTerm: 'Obstrüksiyon',
-    displayTerm: 'Obstrüksiyon',
-    aliases: ['obstrüksiyon', 'tıkanıklık'],
-    category: 'Genel patofizyolojik kavram',
-    isGenericConcept: true,
-    isContextSensitive: true,
-    matchingPriority: 20,
-    previewDefinition: 'Lümenli bir yapıdan akımın veya geçişin kısmen ya da tamamen engellenmesini ifade eder.',
-    preAnswerSafeDefinition: 'Lümenli bir yapıdan akımın veya geçişin kısmen ya da tamamen engellenmesini ifade eder.',
-    shortDefinition: 'Lümenli bir yapıdan akımın veya geçişin kısmen ya da tamamen engellenmesini ifade eder.',
-    detailedExplanation: 'Obstrüksiyon hava yolu, bağırsak, safra yolu, damar veya üriner sistem gibi farklı yapılarda farklı klinik anlam kazanır; tek başına belirli bir hastalık adı değildir.',
-    postAnswerExpandedExplanation: 'Bağlamına göre astımda hava yolu obstrüksiyonu, ileusta bağırsak pasaj obstrüksiyonu, BPH’de mesane çıkım obstrüksiyonu veya kolestazda safra yolu obstrüksiyonu anlamına gelebilir.',
-    tusPearl: '“Obstrüksiyon” tek başına ileus demek değildir; anatomik bağlam belirleyicidir.',
-    differentialPoint: 'Spesifik hastalık tooltipi için hava yolu, bağırsak, safra yolu veya mesane çıkımı gibi eşlik eden bağlam gerekir.',
-    relatedTerms: ['Hava yolu obstrüksiyonu', 'Bağırsak obstrüksiyonu', 'Safra yolu obstrüksiyonu', 'Mesane çıkım obstrüksiyonu'],
-    answerLeakRisk: 'low',
-  },
-  {
-    id: 'concept-hava-yolu-obstruksiyonu',
-    term: 'Hava yolu obstrüksiyonu',
-    canonicalTerm: 'Hava yolu obstrüksiyonu',
-    displayTerm: 'Hava yolu obstrüksiyonu',
-    aliases: ['hava yolu obstrüksiyonu', 'geri dönüşümlü hava yolu obstrüksiyonu', 'airway obstruction', 'bronşiyal obstrüksiyon'],
-    category: 'Solunum fizyopatolojisi',
-    isGenericConcept: false,
-    isContextSensitive: true,
-    matchingPriority: 260,
-    previewDefinition: 'Trakeobronşiyal sistemde hava akımının daralma, bronkokonstriksiyon, mukus veya ödem nedeniyle kısıtlanmasıdır.',
-    preAnswerSafeDefinition: 'Hava akımının hava yolları düzeyinde kısmen engellenmesini ifade eden solunum fizyopatolojisi kavramıdır.',
-    shortDefinition: 'Trakeobronşiyal sistemde hava akımının daralma, bronkokonstriksiyon, mukus veya ödem nedeniyle kısıtlanmasıdır.',
-    detailedExplanation: 'Astımda çoğu zaman değişken ve geri dönüşümlüdür; KOAH’ta daha kalıcı hava akımı kısıtlılığı ön plandadır.',
-    tusPearl: 'Obstrüktif solunum hastalıklarında ekspiratuvar akım kısıtlanır; bağlam astım/KOAH ayrımını belirler.',
-    relatedTerms: ['Astım', 'Bronş hiperreaktivitesi', 'Bronkokonstriksiyon'],
-    answerLeakRisk: 'low',
-  },
-  {
-    id: 'concept-brons-hiperreaktivitesi',
-    term: 'Bronş hiperreaktivitesi',
-    canonicalTerm: 'Bronş hiperreaktivitesi',
-    displayTerm: 'Bronş hiperreaktivitesi',
-    aliases: ['bronş hiperreaktivitesi', 'bronşiyal hiperreaktivite', 'bronchial hyperresponsiveness'],
-    category: 'Solunum fizyopatolojisi',
-    matchingPriority: 250,
-    previewDefinition: 'Bronşların egzersiz, alerjen, soğuk hava veya irritanlara abartılı daralma yanıtı vermesidir.',
-    preAnswerSafeDefinition: 'Bronşların çeşitli uyarılara abartılı daralma yanıtı vermesidir.',
-    shortDefinition: 'Bronşların egzersiz, alerjen, soğuk hava veya irritanlara abartılı daralma yanıtı vermesidir.',
-    detailedExplanation: 'Astım patofizyolojisinde değişken hava yolu daralması ve semptom dalgalanmasının temel mekanizmalarından biridir.',
-    tusPearl: 'Astımda değişken semptom + bronş hiperreaktivitesi + geri dönüşümlü obstrüksiyon birlikte düşünülür.',
-    relatedTerms: ['Astım', 'Hava yolu obstrüksiyonu', 'Bronkokonstriksiyon'],
-    answerLeakRisk: 'low',
-  },
-  {
-    id: 'concept-bagirsak-obstruksiyonu',
-    term: 'Bağırsak obstrüksiyonu',
-    canonicalTerm: 'Bağırsak obstrüksiyonu',
-    displayTerm: 'Bağırsak obstrüksiyonu',
-    aliases: ['bağırsak obstrüksiyonu', 'barsak obstrüksiyonu', 'intestinal obstrüksiyon', 'intestinal obstruction', 'mekanik bağırsak tıkanıklığı', 'mekanik bağırsak obstrüksiyonu', 'bağırsak tıkanıklığı'],
-    category: 'Genel cerrahi',
-    matchingPriority: 270,
-    previewDefinition: 'Bağırsak pasajının mekanik veya fonksiyonel nedenle engellenmesidir.',
-    preAnswerSafeDefinition: 'Bağırsak pasajının mekanik veya fonksiyonel nedenle engellenmesidir.',
-    shortDefinition: 'Bağırsak pasajının mekanik veya fonksiyonel nedenle engellenmesidir.',
-    detailedExplanation: 'Karın distansiyonu, kusma, gaz-gaita çıkaramama ve hava-sıvı seviyeleriyle ilişkilidir; tek başına “obstrüksiyon” kelimesinden ayrılmalıdır.',
-    tusPearl: 'Bağırsak obstrüksiyonu için bağırsak/intestinal/pasaj bağlamı gerekir; genel obstrüksiyon kelimesi ileus’a otomatik bağlanmaz.',
-    relatedTerms: ['İleus', 'Volvulus', 'Gaz-gaita çıkaramama'],
-    answerLeakRisk: 'low',
-  },
-  {
-    id: 'concept-safra-yolu-obstruksiyonu',
-    term: 'Safra yolu obstrüksiyonu',
-    canonicalTerm: 'Safra yolu obstrüksiyonu',
-    displayTerm: 'Safra yolu obstrüksiyonu',
-    aliases: ['safra yolu obstrüksiyonu', 'biliyer obstrüksiyon', 'koledok obstrüksiyonu', 'biliary obstruction'],
-    category: 'Hepatobiliyer patofizyoloji',
-    matchingPriority: 265,
-    previewDefinition: 'Safranın intrahepatik veya ekstrahepatik safra yollarından akışının engellenmesidir.',
-    preAnswerSafeDefinition: 'Safra akımının safra yolları düzeyinde engellenmesini ifade eder.',
-    shortDefinition: 'Safranın intrahepatik veya ekstrahepatik safra yollarından akışının engellenmesidir.',
-    detailedExplanation: 'Kolestatik enzim yüksekliği, direkt hiperbilirubinemi ve sarılık bağlamında değerlendirilir.',
-    tusPearl: 'ALP/GGT yüksekliği + direkt hiperbilirubinemi safra yolu obstrüksiyonu bağlamında önemlidir.',
-    answerLeakRisk: 'low',
-  },
-  {
-    id: 'concept-mesane-cikim-obstruksiyonu',
-    term: 'Mesane çıkım obstrüksiyonu',
-    canonicalTerm: 'Mesane çıkım obstrüksiyonu',
-    displayTerm: 'Mesane çıkım obstrüksiyonu',
-    aliases: ['mesane çıkım obstrüksiyonu', 'bladder outlet obstruction', 'üriner çıkım obstrüksiyonu'],
-    category: 'Ürolojik patofizyoloji',
-    matchingPriority: 265,
-    previewDefinition: 'Mesaneden üretraya idrar akışının çıkım düzeyinde engellenmesidir.',
-    preAnswerSafeDefinition: 'Mesaneden idrar çıkışının çıkım düzeyinde kısıtlanmasını ifade eder.',
-    shortDefinition: 'Mesaneden üretraya idrar akışının çıkım düzeyinde engellenmesidir.',
-    detailedExplanation: 'BPH gibi durumlarda alt üriner sistem semptomları ve postrenal obstrüksiyonla ilişkili olabilir.',
-    tusPearl: 'Mesane çıkım obstrüksiyonu ürolojik bağlam gerektirir; bağırsak obstrüksiyonu veya ileus değildir.',
-    answerLeakRisk: 'low',
-  },
-];
-
 export const defaultGlossaryTerms = globalGlossaryTerms;
 
 const STATIC_GLOSSARY_SOURCES = [
-  ...glossaryBindingSafetyTerms,
   // Binding corrections come first: they define true canonical owners for terms
   // that legacy rows sometimes used only as context clues (e.g. asthma inside
   // the eosinophil explanation). This prevents title/definition mismatches.
+  ...TUS_GLOSSARY_CONTEXT_SAFETY_TERMS,
   ...TUS_GLOSSARY_BINDING_CORRECTION_TERMS,
   // Contextual phrase layer comes next so exact clinical phrases such as
   // "defans", "aktif elevasyon" or "sağ inguinal insizyon" do not get
@@ -9659,6 +9538,24 @@ const UNSAFE_CONTEXT_ALIAS_PATTERNS = [
   /\b(?:parazit|alerji|astım)\s*\/\s*/iu,
 ];
 
+// These words are real medical concepts, but they are too broad to be used as
+// standalone aliases for a specific disease. Example: "obstrüksiyon" may mean
+// airway, intestinal, biliary, vascular or urinary obstruction depending on
+// context. It must not point to "İleus" unless the phrase is explicitly
+// intestinal/bowel obstruction.
+const GENERIC_STANDALONE_ALIAS_SET = new Set([
+  'obstruksiyon', 'tikaniklik', 'inflamasyon', 'enfeksiyon', 'yetmezlik',
+  'iskemi', 'nekroz', 'odem', 'lezyon', 'kitle', 'nodul', 'infiltrasyon',
+  'darlik', 'basi', 'hiperreaktivite', 'hassasiyet', 'agri', 'dispne',
+  'hipoksi', 'asidoz', 'alkaloz', 'sok', 'kanama', 'perforasyon', 'torsiyon',
+  'elevasyon', 'defisit', 'tutulum', 'yanit',
+]);
+
+function isGenericStandaloneAlias(alias = '') {
+  const normalized = normalizeGlossaryText(alias);
+  return Boolean(normalized && GENERIC_STANDALONE_ALIAS_SET.has(normalized));
+}
+
 function normalizeEntryOwnerKey(entry = {}) {
   return normalizeGlossaryText(entry.canonicalTerm || entry.displayTerm || entry.term || '');
 }
@@ -9685,12 +9582,14 @@ function isUnsafeContextAlias(entry = {}, alias = '') {
   if (!raw) return true;
   if (isExactCanonicalAlias(entry, raw) || isNamedFieldAlias(entry, raw)) return false;
 
-  // A single broad pathophysiology word cannot be a standalone alias for a
-  // specific disease. This prevents bindings like “obstrüksiyon” → “İleus”.
-  // Specific multi-word phrases are still allowed and are prioritized by the
-  // matcher (e.g. “hava yolu obstrüksiyonu”, “bağırsak obstrüksiyonu”).
-  if (!/\s/.test(raw) && isContextSensitiveStandaloneAlias(raw) && !entry.isGenericConcept) return true;
-  if (entry.blockedAliases?.some((item) => normalizeGlossaryText(item) === normalizeGlossaryText(raw))) return true;
+  // Broad standalone words are allowed only when the entry is the broad concept
+  // itself. They are removed from specific disease entries such as "İleus".
+  if (isGenericStandaloneAlias(raw) && !entry.isGenericConcept) return true;
+
+  // Context-sensitive entries can explicitly require co-terms before a broad
+  // alias is used. The standalone alias is therefore unsafe at alias-build time;
+  // precise phrase aliases such as "bağırsak obstrüksiyonu" stay valid.
+  if (Array.isArray(entry.requiredCoTerms) && entry.requiredCoTerms.length && raw.trim().split(/\s+/).length === 1) return true;
 
   // Legacy rows sometimes stored clue phrases as aliases. Those phrases should
   // not hijack the tooltip binding of true terms appearing in case text.
@@ -9810,25 +9709,11 @@ export function auditGlossaryIntegrity(entries = getGlossaryTerms()) {
   aliases.forEach((list, normalizedAlias) => {
     const ownerIds = Array.from(new Set(list.map((item) => item.id)));
     if (ownerIds.length > 1) issues.push({ type: 'duplicate-normalized-alias', normalizedAlias, entries: list });
-    if (isContextSensitiveStandaloneAlias(normalizedAlias)) {
-      const nonGenericOwners = list.filter((item) => {
-        const entry = entries.find((candidate) => candidate.id === item.id);
-        return entry && !entry.isGenericConcept && normalizeGlossaryText(entry.canonicalTerm || entry.term || '') !== normalizedAlias;
-      });
-      if (nonGenericOwners.length) issues.push({ type: 'context-sensitive-alias-on-specific-entry', normalizedAlias, entries: nonGenericOwners });
-    }
   });
-
-  const riskyAliases = issues.filter((issue) => (
-    issue.type === 'duplicate-normalized-alias'
-    || issue.type === 'context-sensitive-alias-on-specific-entry'
-  ));
 
   return {
     totalEntries: entries.length,
     issueCount: issues.length,
-    riskyAliasCount: riskyAliases.length,
-    riskyAliases,
     issues,
   };
 }

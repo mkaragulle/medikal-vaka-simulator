@@ -1033,7 +1033,7 @@ function TusPearlStudyScreen({
                     <div className="tus-pearl-catalog-card-list">
                       {catalogCards.map((card) => (
                         <article key={card.id} className="tus-pearl-library-card in-catalog catalog-card-row">
-                          <div className="catalog-card-main">
+                          <div className="catalog-card-content">
                             <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
                             <strong className="catalog-card-question"><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
                           </div>
@@ -1075,7 +1075,7 @@ function TusPearlStudyScreen({
                   <div className="tus-pearl-catalog-card-list addable">
                     {searchableCards.map((card) => (
                       <article key={card.id} className="tus-pearl-library-card catalog-card-row">
-                        <div className="catalog-card-main">
+                        <div className="catalog-card-content">
                           <span className="catalog-card-branch">{getBranchName(card.branchId)}</span>
                           <strong className="catalog-card-question"><GlossaryText text={card.front} enabled revealMode="preAnswer" maxTerms={2} /></strong>
                         </div>

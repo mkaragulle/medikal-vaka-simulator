@@ -671,14 +671,16 @@ function GlossaryCard({ entry, revealMode = 'postAnswer', excludedTermKeys = [],
   const mechanism = !isDuplicateSection(rawMechanism, [...baseShownValues, tusPearl, differential, detailed, relevance]) ? rawMechanism : '';
 
   const canExpand = !isPreAnswer && Boolean(detailed || relevance || mechanism || relatedTerms.length);
+
+  // Safety-first nested tooltip policy: tooltip body text is rendered as plain
+  // medical prose by default. Normal case text, options, feedback and flashcards
+  // still use GlossaryText, but inside a glossary card we do not re-highlight
+  // broad words such as "obstrüksiyon", "inflamasyon" or "yetmezlik".
+  // This prevents context-free nested previews from binding a general term to a
+  // specific unrelated disease. Wrong tooltip is worse than no nested tooltip.
   const renderGlossaryInline = (value) => {
     if (!value) return null;
-    // Tooltip cards are intentionally rendered as plain text. Running the full
-    // highlighter inside another tooltip can bind broad words (for example
-    // “obstrüksiyon”) to unrelated disease entries. Normal case/flashcard text
-    // still uses GlossaryText; tooltip definitions do not create nested hover
-    // targets unless a future allowlisted implementation explicitly opts in.
-    return <span className="glossary-plain-segment">{String(value)}</span>;
+    return <span className="smart-glossary-plain-inline">{String(value)}</span>;
   };
 
   return (
@@ -894,9 +896,7 @@ function GlossaryText({
   maxTerms = undefined,
   excludedTermKeys = null,
   nestingLevel = 0,
-  enableNestedGlossary = true,
 }) {
-  const safeEnabled = Boolean(enabled && (Number(nestingLevel || 0) <= 0 || enableNestedGlossary));
   const excludedKey = Array.isArray(excludedTermKeys)
     ? excludedTermKeys.map((item) => normalizeGlossaryText(item)).filter(Boolean).sort().join('|')
     : '';
@@ -904,17 +904,17 @@ function GlossaryText({
     ? extraTerms.map((term) => `${term?.id || ''}:${term?.term || ''}:${term?.aliases?.length || 0}`).join('|')
     : '';
   const terms = useMemo(() => {
-    if (!safeEnabled) return [];
+    if (!enabled) return [];
     return getGlossaryTerms(extraTerms, { branchId });
-  }, [safeEnabled, extraTermsKey, branchId]);
+  }, [enabled, extraTermsKey, branchId]);
   const effectiveMaxTerms = maxTerms ?? (revealMode === 'preAnswer' || revealMode === 'neutral' ? PREANSWER_MAX_TERMS_PER_TEXT : DEFAULT_MAX_TERMS_PER_TEXT);
   const sourceText = String(text || '');
   const parts = useMemo(
-    () => splitByGlossary(sourceText, safeEnabled ? terms : [], effectiveMaxTerms, excludedTermKeys),
-    [sourceText, safeEnabled, terms, effectiveMaxTerms, excludedKey],
+    () => splitByGlossary(sourceText, enabled ? terms : [], effectiveMaxTerms, excludedTermKeys),
+    [sourceText, enabled, terms, effectiveMaxTerms, excludedKey],
   );
 
-  if (!safeEnabled) return <span className="glossary-text-flow" data-nesting-level={nestingLevel}>{sourceText}</span>;
+  if (!enabled) return <span className="glossary-text-flow">{sourceText}</span>;
 
   return (
     <span className="glossary-text-flow" data-nesting-level={nestingLevel}>
