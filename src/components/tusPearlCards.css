@@ -14553,3 +14553,331 @@ body:has(.tus-pearl-study-shell .pearl-study-control-panel-v93) {
   text-decoration-color: var(--ki-glossary-dark-hover, #c7fff4) !important;
 }
 
+
+/* ========================================================================== 
+   V305 — Custom Pearl Card editor popup centering and modal polish
+   Applies to both “Kendi kartını oluştur” and “Kendi kartıma kopyala”.
+   Functional behavior is untouched; this is only modal geometry/surface cleanup.
+   ========================================================================== */
+
+.pearl-editor-backdrop.pearl-editor-backdrop-balanced.pearl-editor-backdrop-v231 {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483600 !important;
+  min-height: 100dvh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: calc(var(--kiq-page-pad-top, 92px) + 10px) clamp(14px, 2vw, 28px) clamp(14px, 2vw, 28px) !important;
+  overflow: auto !important;
+  background: rgba(15, 23, 42, 0.42) !important;
+  backdrop-filter: blur(13px) saturate(1.05) !important;
+  -webkit-backdrop-filter: blur(13px) saturate(1.05) !important;
+}
+
+.pearl-editor-modal.pearl-editor-modal-balanced.pearl-editor-modal-v231 {
+  width: min(94vw, 1040px) !important;
+  max-height: min(82dvh, 720px) !important;
+  margin: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  border: 1px solid rgba(15, 118, 110, 0.13) !important;
+  background:
+    radial-gradient(circle at 96% 0%, rgba(20, 184, 166, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.985), rgba(248, 250, 252, 0.965)) !important;
+  box-shadow: 0 34px 92px rgba(15, 23, 42, 0.24), 0 1px 0 rgba(255, 255, 255, 0.72) inset !important;
+}
+
+.pearl-editor-modal-v231 .pearl-editor-head-compact {
+  flex: 0 0 auto !important;
+  padding: 22px 26px 14px !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+.pearl-editor-modal-v231 .pearl-editor-head-compact h2 {
+  font-size: clamp(1.55rem, 2vw, 2rem) !important;
+  letter-spacing: -0.035em !important;
+}
+
+.pearl-editor-modal-v231 .pearl-editor-close-compact {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(15, 118, 110, 0.15) !important;
+  background: rgba(255, 255, 255, 0.72) !important;
+  color: rgb(15, 118, 110) !important;
+}
+
+.pearl-editor-modal-v231 .pearl-editor-close-compact:hover {
+  background: rgba(240, 253, 250, 0.92) !important;
+  border-color: rgba(15, 118, 110, 0.24) !important;
+}
+
+.pearl-editor-form.pearl-editor-form-v231 {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow: auto !important;
+  padding: 16px 26px 22px !important;
+  gap: 16px !important;
+  scrollbar-gutter: stable both-edges;
+}
+
+.pearl-editor-primary-grid.pearl-editor-primary-grid-v231 {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) !important;
+  gap: 16px !important;
+  align-items: stretch !important;
+}
+
+.pearl-editor-primary-stack.pearl-editor-primary-stack-v231 {
+  display: grid !important;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 16px !important;
+}
+
+.pearl-editor-panel.pearl-editor-panel-v231,
+.pearl-editor-advanced-launch.pearl-editor-advanced-launch-v231 {
+  border: 1px solid rgba(15, 23, 42, 0.09) !important;
+  background: rgba(248, 250, 252, 0.58) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.58) !important;
+}
+
+.pearl-editor-panel-compact-xl.pearl-editor-panel-v231 {
+  min-height: 260px !important;
+}
+
+.pearl-editor-panel-sm.pearl-editor-panel-v231 {
+  min-height: 122px !important;
+}
+
+.pearl-editor-panel-compact-xl.pearl-editor-panel-v231 textarea {
+  min-height: 156px !important;
+}
+
+.pearl-editor-panel-sm.pearl-editor-panel-v231 textarea {
+  min-height: 78px !important;
+}
+
+.pearl-editor-meta-row.pearl-editor-meta-row-v231 {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(176px, 0.58fr) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+}
+
+.pearl-editor-select-panel.pearl-editor-panel-v231 select {
+  min-height: 54px !important;
+}
+
+.pearl-editor-advanced-launch.pearl-editor-advanced-launch-v231 {
+  min-height: auto !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  justify-content: center !important;
+  color: rgb(15, 118, 110) !important;
+  background:
+    linear-gradient(180deg, rgba(240, 253, 250, 0.72), rgba(236, 253, 245, 0.52)) !important;
+}
+
+.pearl-editor-actions.pearl-editor-actions-v231 {
+  position: sticky !important;
+  bottom: -22px !important;
+  z-index: 2 !important;
+  margin-top: auto !important;
+  padding: 14px 0 0 !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.98) 32%) !important;
+}
+
+.pearl-editor-secondary-backdrop.pearl-editor-secondary-backdrop-v231 {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483650 !important;
+  min-height: 100dvh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: calc(var(--kiq-page-pad-top, 92px) + 10px) clamp(14px, 2vw, 28px) clamp(14px, 2vw, 28px) !important;
+  overflow: auto !important;
+  background: rgba(15, 23, 42, 0.48) !important;
+  backdrop-filter: blur(14px) saturate(1.05) !important;
+  -webkit-backdrop-filter: blur(14px) saturate(1.05) !important;
+}
+
+.pearl-editor-secondary-modal.pearl-editor-secondary-modal-v231 {
+  width: min(92vw, 820px) !important;
+  max-height: min(78dvh, 640px) !important;
+  margin: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  border-radius: 26px !important;
+  border: 1px solid rgba(15, 118, 110, 0.14) !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.10), transparent 32%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.985), rgba(248, 250, 252, 0.965)) !important;
+  box-shadow: 0 30px 80px rgba(15, 23, 42, 0.25) !important;
+}
+
+.pearl-editor-secondary-head.pearl-editor-secondary-head-v231 {
+  flex: 0 0 auto !important;
+  padding: 20px 24px 14px !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+}
+
+.pearl-editor-secondary-body-v231 {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  overflow: auto !important;
+}
+
+.pearl-editor-advanced-grid-popup.pearl-editor-advanced-grid-v231 {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+  padding: 18px 24px !important;
+}
+
+.pearl-editor-advanced-grid-popup.pearl-editor-advanced-grid-v231 label {
+  min-width: 0 !important;
+  padding: 12px !important;
+  border: 1px solid rgba(15, 23, 42, 0.08) !important;
+  border-radius: 18px !important;
+  background: rgba(248, 250, 252, 0.58) !important;
+}
+
+.pearl-editor-secondary-actions.pearl-editor-secondary-actions-v231 {
+  flex: 0 0 auto !important;
+  padding: 14px 24px 20px !important;
+  border-top: 1px solid rgba(15, 23, 42, 0.08) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.98) 30%) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-backdrop.pearl-editor-backdrop-balanced.pearl-editor-backdrop-v231,
+[data-theme='dark'] .pearl-editor-backdrop.pearl-editor-backdrop-balanced.pearl-editor-backdrop-v231 {
+  background: rgba(2, 6, 23, 0.78) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-modal.pearl-editor-modal-balanced.pearl-editor-modal-v231,
+[data-theme='dark'] .pearl-editor-modal.pearl-editor-modal-balanced.pearl-editor-modal-v231,
+.app-shell[data-theme='dark'] .pearl-editor-secondary-modal.pearl-editor-secondary-modal-v231,
+[data-theme='dark'] .pearl-editor-secondary-modal.pearl-editor-secondary-modal-v231 {
+  border-color: var(--ki-border, rgba(148, 163, 184, 0.18)) !important;
+  background:
+    radial-gradient(circle at 96% 0%, rgba(20, 184, 166, 0.12), transparent 34%),
+    linear-gradient(180deg, var(--ki-surface-elevated, #0b2230), var(--ki-surface, #071a21)) !important;
+  box-shadow: 0 34px 94px rgba(0, 0, 0, 0.46), inset 0 1px 0 rgba(255, 255, 255, 0.045) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-modal-v231 .pearl-editor-head-compact,
+[data-theme='dark'] .pearl-editor-modal-v231 .pearl-editor-head-compact,
+.app-shell[data-theme='dark'] .pearl-editor-secondary-head.pearl-editor-secondary-head-v231,
+[data-theme='dark'] .pearl-editor-secondary-head.pearl-editor-secondary-head-v231 {
+  border-color: var(--ki-border, rgba(148, 163, 184, 0.18)) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-modal-v231 .pearl-editor-head-compact h2,
+[data-theme='dark'] .pearl-editor-modal-v231 .pearl-editor-head-compact h2,
+.app-shell[data-theme='dark'] .pearl-editor-secondary-head-v231 h3,
+[data-theme='dark'] .pearl-editor-secondary-head-v231 h3 {
+  color: var(--ki-text, #f4f7fb) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-panel.pearl-editor-panel-v231,
+[data-theme='dark'] .pearl-editor-panel.pearl-editor-panel-v231,
+.app-shell[data-theme='dark'] .pearl-editor-advanced-grid-popup.pearl-editor-advanced-grid-v231 label,
+[data-theme='dark'] .pearl-editor-advanced-grid-popup.pearl-editor-advanced-grid-v231 label,
+.app-shell[data-theme='dark'] .pearl-editor-advanced-launch.pearl-editor-advanced-launch-v231,
+[data-theme='dark'] .pearl-editor-advanced-launch.pearl-editor-advanced-launch-v231 {
+  border-color: var(--ki-border, rgba(148, 163, 184, 0.18)) !important;
+  background: color-mix(in srgb, var(--ki-surface-soft, #102a35) 76%, transparent) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-advanced-launch.pearl-editor-advanced-launch-v231,
+[data-theme='dark'] .pearl-editor-advanced-launch.pearl-editor-advanced-launch-v231 {
+  color: var(--ki-glossary-dark-text, #b2f6ea) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-modal-v231 .pearl-editor-close-compact,
+[data-theme='dark'] .pearl-editor-modal-v231 .pearl-editor-close-compact {
+  border-color: var(--ki-border, rgba(148, 163, 184, 0.18)) !important;
+  background: color-mix(in srgb, var(--ki-surface-soft, #102a35) 68%, transparent) !important;
+  color: var(--ki-glossary-dark-text, #b2f6ea) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-form-v231 input,
+.app-shell[data-theme='dark'] .pearl-editor-form-v231 select,
+.app-shell[data-theme='dark'] .pearl-editor-form-v231 textarea,
+.app-shell[data-theme='dark'] .pearl-editor-advanced-grid-v231 input,
+.app-shell[data-theme='dark'] .pearl-editor-advanced-grid-v231 select,
+[data-theme='dark'] .pearl-editor-form-v231 input,
+[data-theme='dark'] .pearl-editor-form-v231 select,
+[data-theme='dark'] .pearl-editor-form-v231 textarea,
+[data-theme='dark'] .pearl-editor-advanced-grid-v231 input,
+[data-theme='dark'] .pearl-editor-advanced-grid-v231 select {
+  border-color: var(--ki-border, rgba(148, 163, 184, 0.18)) !important;
+  background: color-mix(in srgb, var(--ki-surface, #071a21) 82%, black 8%) !important;
+  color: var(--ki-text, #f4f7fb) !important;
+}
+
+.app-shell[data-theme='dark'] .pearl-editor-actions.pearl-editor-actions-v231,
+[data-theme='dark'] .pearl-editor-actions.pearl-editor-actions-v231,
+.app-shell[data-theme='dark'] .pearl-editor-secondary-actions.pearl-editor-secondary-actions-v231,
+[data-theme='dark'] .pearl-editor-secondary-actions.pearl-editor-secondary-actions-v231 {
+  border-color: var(--ki-border, rgba(148, 163, 184, 0.18)) !important;
+  background: linear-gradient(180deg, rgba(7, 26, 33, 0), var(--ki-surface, #071a21) 30%) !important;
+}
+
+@media (max-width: 920px) {
+  .pearl-editor-modal.pearl-editor-modal-balanced.pearl-editor-modal-v231 {
+    width: min(96vw, 760px) !important;
+    max-height: calc(100dvh - var(--kiq-page-pad-top, 92px) - 24px) !important;
+  }
+
+  .pearl-editor-primary-grid.pearl-editor-primary-grid-v231,
+  .pearl-editor-meta-row.pearl-editor-meta-row-v231,
+  .pearl-editor-advanced-grid-popup.pearl-editor-advanced-grid-v231 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pearl-editor-panel-compact-xl.pearl-editor-panel-v231,
+  .pearl-editor-panel-sm.pearl-editor-panel-v231 {
+    min-height: auto !important;
+  }
+
+  .pearl-editor-panel-compact-xl.pearl-editor-panel-v231 textarea {
+    min-height: 150px !important;
+  }
+
+  .pearl-editor-panel-sm.pearl-editor-panel-v231 textarea {
+    min-height: 84px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .pearl-editor-backdrop.pearl-editor-backdrop-balanced.pearl-editor-backdrop-v231,
+  .pearl-editor-secondary-backdrop.pearl-editor-secondary-backdrop-v231 {
+    align-items: stretch !important;
+    padding: calc(var(--kiq-page-pad-top, 82px) + 8px) 10px 10px !important;
+  }
+
+  .pearl-editor-modal.pearl-editor-modal-balanced.pearl-editor-modal-v231,
+  .pearl-editor-secondary-modal.pearl-editor-secondary-modal-v231 {
+    width: 100% !important;
+    max-height: calc(100dvh - var(--kiq-page-pad-top, 82px) - 18px) !important;
+    border-radius: 22px !important;
+  }
+
+  .pearl-editor-form.pearl-editor-form-v231,
+  .pearl-editor-modal-v231 .pearl-editor-head-compact,
+  .pearl-editor-secondary-head.pearl-editor-secondary-head-v231,
+  .pearl-editor-advanced-grid-popup.pearl-editor-advanced-grid-v231,
+  .pearl-editor-secondary-actions.pearl-editor-secondary-actions-v231 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
