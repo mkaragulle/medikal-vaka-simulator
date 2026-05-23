@@ -15449,3 +15449,418 @@ html[data-theme='dark'] .pearl-editor-secondary-actions,
     width: 100% !important;
   }
 }
+
+/* ==========================================================
+   V309 — full rebuild for custom card modal + optional fields popup
+   Goal: true viewport centering, cleaner proportions, more compact premium UI.
+   ========================================================== */
+.pearl-editor-backdrop.pearl-editor-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483600 !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 100vw !important;
+  min-height: 100dvh !important;
+  padding: clamp(16px, 2vw, 28px) !important;
+  overflow: auto !important;
+  background: rgba(15, 23, 42, 0.44) !important;
+  backdrop-filter: blur(16px) saturate(118%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(118%) !important;
+  isolation: isolate !important;
+}
+
+.pearl-editor-modal.pearl-editor-surface {
+  width: min(980px, calc(100vw - 40px)) !important;
+  max-height: min(700px, calc(100dvh - 40px)) !important;
+  margin: auto !important;
+  display: grid !important;
+  grid-template-rows: auto 1fr !important;
+  overflow: hidden !important;
+  border-radius: 26px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.10), transparent 31%),
+    linear-gradient(180deg, rgba(255,255,255,0.99), rgba(248,250,252,0.985)) !important;
+  box-shadow:
+    0 34px 90px rgba(15, 23, 42, 0.24),
+    0 10px 32px rgba(15, 23, 42, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.86) !important;
+}
+
+.pearl-editor-head.pearl-editor-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  padding: 20px 26px 14px !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14) !important;
+}
+
+.pearl-editor-header .pearl-editor-head-copy {
+  min-width: 0 !important;
+}
+
+.pearl-editor-head.pearl-editor-header h2 {
+  margin: 0 !important;
+  font-size: clamp(1.75rem, 2vw, 2.15rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.045em !important;
+  color: #0f172a !important;
+}
+
+.pearl-editor-close.pearl-editor-close-compact {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  background: rgba(248, 250, 252, 0.92) !important;
+  color: rgb(15, 118, 110) !important;
+  box-shadow: none !important;
+}
+
+.pearl-editor-form.pearl-editor-layout {
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-rows: auto auto auto auto !important;
+  gap: 14px !important;
+  padding: 14px 26px 18px !important;
+  overflow: auto !important;
+}
+
+.pearl-editor-primary-grid.pearl-editor-compose-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.95fr) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+}
+
+.pearl-editor-primary-stack.pearl-editor-side-stack {
+  display: grid !important;
+  grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+  gap: 14px !important;
+}
+
+.pearl-editor-panel.pearl-editor-card,
+.pearl-editor-advanced-toggle.pearl-editor-advanced-trigger {
+  display: grid !important;
+  align-content: start !important;
+  gap: 10px !important;
+  padding: 14px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(203, 213, 225, 0.86) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.76), rgba(248,250,252,0.88)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.72) !important;
+}
+
+.pearl-editor-panel.pearl-editor-card-front {
+  min-height: 278px !important;
+}
+
+.pearl-editor-panel.pearl-editor-card-compact {
+  min-height: 132px !important;
+}
+
+.pearl-editor-panel.pearl-editor-select-card {
+  min-height: 118px !important;
+}
+
+.pearl-editor-form .pearl-editor-card > span,
+.pearl-editor-advanced-trigger .pearl-editor-advanced-launch-copy,
+.pearl-editor-sub-grid label > span {
+  margin: 0 !important;
+  color: #475569 !important;
+  font-size: 0.82rem !important;
+  font-weight: 780 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.pearl-editor-form.pearl-editor-layout textarea,
+.pearl-editor-form.pearl-editor-layout input,
+.pearl-editor-form.pearl-editor-layout select,
+.pearl-editor-sub-grid input,
+.pearl-editor-sub-grid select {
+  width: 100% !important;
+  min-width: 0 !important;
+  border-radius: 16px !important;
+  border: 1px solid rgba(203, 213, 225, 0.95) !important;
+  background: rgba(255,255,255,0.95) !important;
+  padding: 14px 16px !important;
+  color: #0f172a !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.72) !important;
+}
+
+.pearl-editor-form.pearl-editor-layout textarea::placeholder,
+.pearl-editor-form.pearl-editor-layout input::placeholder,
+.pearl-editor-sub-grid input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.pearl-editor-card-front textarea {
+  min-height: 170px !important;
+  resize: vertical !important;
+}
+
+.pearl-editor-card-compact textarea {
+  min-height: 78px !important;
+  resize: vertical !important;
+}
+
+.pearl-editor-select-card select,
+.pearl-editor-sub-grid select,
+.pearl-editor-sub-grid input {
+  min-height: 54px !important;
+}
+
+.pearl-editor-meta-row.pearl-editor-meta-strip {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(180px, 208px) !important;
+  gap: 14px !important;
+  align-items: stretch !important;
+}
+
+.pearl-editor-advanced-toggle.pearl-editor-advanced-trigger {
+  grid-template-columns: minmax(0, 1fr) auto !important;
+  align-items: center !important;
+  align-content: center !important;
+  min-height: 118px !important;
+  text-align: left !important;
+  color: #0f172a !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20,184,166,0.10), transparent 46%),
+    linear-gradient(180deg, rgba(245,255,253,0.95), rgba(240,253,250,0.85)) !important;
+  border-color: rgba(148, 163, 184, 0.16) !important;
+}
+
+.pearl-editor-advanced-trigger .pearl-editor-advanced-launch-meta {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  color: rgb(15, 118, 110) !important;
+}
+
+.pearl-editor-advanced-trigger .pearl-editor-advanced-launch-meta b {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 26px !important;
+  height: 26px !important;
+  border-radius: 999px !important;
+  background: rgba(20,184,166,0.14) !important;
+  font-size: 0.82rem !important;
+}
+
+.pearl-editor-error {
+  margin: -2px 2px 0 !important;
+}
+
+.pearl-editor-actions.pearl-editor-footer {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 12px 0 0 !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.12) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.58), rgba(255,255,255,0)) !important;
+  position: sticky !important;
+  bottom: 0 !important;
+}
+
+.pearl-editor-actions.pearl-editor-footer .btn {
+  min-width: 118px !important;
+}
+
+.pearl-editor-secondary-backdrop.pearl-editor-sub-layer {
+  position: fixed !important;
+  inset: 0 !important;
+  z-index: 2147483605 !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 100vw !important;
+  min-height: 100dvh !important;
+  padding: 16px !important;
+  overflow: auto !important;
+  background: rgba(2, 6, 23, 0.34) !important;
+  backdrop-filter: blur(16px) saturate(116%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(116%) !important;
+}
+
+.pearl-editor-secondary-modal.pearl-editor-sub-surface {
+  width: min(760px, calc(100vw - 32px)) !important;
+  max-height: min(620px, calc(100dvh - 32px)) !important;
+  margin: auto !important;
+  display: grid !important;
+  grid-template-rows: auto 1fr auto !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20, 184, 166, 0.09), transparent 34%),
+    linear-gradient(180deg, rgba(255,255,255,0.99), rgba(248,250,252,0.985)) !important;
+  box-shadow:
+    0 30px 80px rgba(15, 23, 42, 0.25),
+    0 8px 26px rgba(15, 23, 42, 0.10),
+    inset 0 1px 0 rgba(255,255,255,0.82) !important;
+}
+
+.pearl-editor-secondary-head.pearl-editor-sub-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  padding: 18px 20px 14px !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14) !important;
+}
+
+.pearl-editor-secondary-head.pearl-editor-sub-header h3 {
+  margin: 0 !important;
+  font-size: clamp(1.35rem, 1.7vw, 1.65rem) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -0.03em !important;
+  color: #0f172a !important;
+}
+
+.pearl-editor-advanced-grid.pearl-editor-advanced-grid-popup.pearl-editor-sub-grid {
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  padding: 14px 20px 16px !important;
+  overflow-y: auto !important;
+  overscroll-behavior: contain !important;
+}
+
+.pearl-editor-sub-grid label {
+  display: grid !important;
+  gap: 8px !important;
+  padding: 12px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(203, 213, 225, 0.82) !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(248,250,252,0.82)) !important;
+}
+
+.pearl-editor-secondary-actions.pearl-editor-sub-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 10px !important;
+  padding: 14px 20px 18px !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.14) !important;
+  background: linear-gradient(180deg, rgba(248,250,252,0.84), rgba(255,255,255,0.99)) !important;
+}
+
+.pearl-editor-secondary-actions.pearl-editor-sub-footer .btn {
+  min-width: 106px !important;
+}
+
+[data-theme='dark'] .pearl-editor-backdrop.pearl-editor-layer,
+[data-theme='dark'] .pearl-editor-secondary-backdrop.pearl-editor-sub-layer {
+  background: rgba(2, 6, 23, 0.68) !important;
+}
+
+[data-theme='dark'] .pearl-editor-modal.pearl-editor-surface,
+[data-theme='dark'] .pearl-editor-secondary-modal.pearl-editor-sub-surface {
+  border-color: rgba(94, 234, 212, 0.14) !important;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(20,184,166,0.12), transparent 34%),
+    linear-gradient(180deg, rgba(15,23,42,0.985), rgba(15,23,42,0.95)) !important;
+  box-shadow:
+    0 34px 90px rgba(2, 6, 23, 0.58),
+    0 8px 26px rgba(2, 6, 23, 0.28),
+    inset 0 1px 0 rgba(255,255,255,0.03) !important;
+}
+
+[data-theme='dark'] .pearl-editor-head.pearl-editor-header,
+[data-theme='dark'] .pearl-editor-secondary-head.pearl-editor-sub-header,
+[data-theme='dark'] .pearl-editor-actions.pearl-editor-footer,
+[data-theme='dark'] .pearl-editor-secondary-actions.pearl-editor-sub-footer {
+  border-color: rgba(94, 234, 212, 0.10) !important;
+}
+
+[data-theme='dark'] .pearl-editor-head.pearl-editor-header h2,
+[data-theme='dark'] .pearl-editor-secondary-head.pearl-editor-sub-header h3,
+[data-theme='dark'] .pearl-editor-form .pearl-editor-card > span,
+[data-theme='dark'] .pearl-editor-sub-grid label > span,
+[data-theme='dark'] .pearl-editor-advanced-trigger .pearl-editor-advanced-launch-copy {
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .pearl-editor-panel.pearl-editor-card,
+[data-theme='dark'] .pearl-editor-advanced-toggle.pearl-editor-advanced-trigger,
+[data-theme='dark'] .pearl-editor-sub-grid label,
+[data-theme='dark'] .pearl-editor-close.pearl-editor-close-compact {
+  border-color: rgba(94, 234, 212, 0.12) !important;
+  background: linear-gradient(180deg, rgba(15,23,42,0.62), rgba(15,23,42,0.78)) !important;
+}
+
+[data-theme='dark'] .pearl-editor-form.pearl-editor-layout textarea,
+[data-theme='dark'] .pearl-editor-form.pearl-editor-layout input,
+[data-theme='dark'] .pearl-editor-form.pearl-editor-layout select,
+[data-theme='dark'] .pearl-editor-sub-grid input,
+[data-theme='dark'] .pearl-editor-sub-grid select {
+  border-color: rgba(94, 234, 212, 0.12) !important;
+  background: rgba(15, 23, 42, 0.88) !important;
+  color: #f8fafc !important;
+}
+
+[data-theme='dark'] .pearl-editor-form.pearl-editor-layout textarea::placeholder,
+[data-theme='dark'] .pearl-editor-form.pearl-editor-layout input::placeholder,
+[data-theme='dark'] .pearl-editor-sub-grid input::placeholder {
+  color: #94a3b8 !important;
+}
+
+@media (max-width: 980px) {
+  .pearl-editor-modal.pearl-editor-surface {
+    width: min(920px, calc(100vw - 32px)) !important;
+  }
+
+  .pearl-editor-primary-grid.pearl-editor-compose-grid,
+  .pearl-editor-meta-row.pearl-editor-meta-strip,
+  .pearl-editor-advanced-grid.pearl-editor-advanced-grid-popup.pearl-editor-sub-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .pearl-editor-advanced-toggle.pearl-editor-advanced-trigger,
+  .pearl-editor-panel.pearl-editor-select-card {
+    min-height: 98px !important;
+  }
+}
+
+@media (max-width: 700px) {
+  .pearl-editor-backdrop.pearl-editor-layer,
+  .pearl-editor-secondary-backdrop.pearl-editor-sub-layer {
+    padding: 10px !important;
+  }
+
+  .pearl-editor-modal.pearl-editor-surface,
+  .pearl-editor-secondary-modal.pearl-editor-sub-surface {
+    width: 100% !important;
+    max-height: calc(100dvh - 20px) !important;
+    border-radius: 20px !important;
+  }
+
+  .pearl-editor-head.pearl-editor-header,
+  .pearl-editor-form.pearl-editor-layout,
+  .pearl-editor-secondary-head.pearl-editor-sub-header,
+  .pearl-editor-advanced-grid.pearl-editor-advanced-grid-popup.pearl-editor-sub-grid,
+  .pearl-editor-secondary-actions.pearl-editor-sub-footer {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .pearl-editor-actions.pearl-editor-footer {
+    flex-direction: column-reverse !important;
+    justify-content: stretch !important;
+    gap: 8px !important;
+    background: transparent !important;
+  }
+
+  .pearl-editor-actions.pearl-editor-footer .btn,
+  .pearl-editor-secondary-actions.pearl-editor-sub-footer .btn {
+    width: 100% !important;
+  }
+
+  .pearl-editor-secondary-actions.pearl-editor-sub-footer {
+    flex-direction: column-reverse !important;
+  }
+}

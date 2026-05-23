@@ -197,18 +197,18 @@ function TusPearlCardEditor({
 
   const modalTree = (
     <div
-      className="pearl-editor-backdrop pearl-editor-backdrop-balanced pearl-editor-backdrop-v231"
+      className="pearl-editor-backdrop pearl-editor-layer"
       role="presentation"
       onClick={() => onClose?.()}
     >
       <section
-        className="pearl-editor-modal pearl-editor-modal-compact pearl-editor-modal-balanced pearl-editor-modal-v231 card-surface"
+        className="pearl-editor-modal pearl-editor-surface card-surface"
         role="dialog"
         aria-modal="true"
         aria-label={title}
         onClick={(event) => event.stopPropagation()}
       >
-        <header className="pearl-editor-head pearl-editor-head-compact pearl-editor-head-v231">
+        <header className="pearl-editor-head pearl-editor-header">
           <div className="pearl-editor-head-copy">
             <h2>{title}</h2>
           </div>
@@ -217,9 +217,9 @@ function TusPearlCardEditor({
           </button>
         </header>
 
-        <form className="pearl-editor-form pearl-editor-form-compact pearl-editor-form-v231" onSubmit={handleSubmit}>
-          <div className="pearl-editor-primary-grid pearl-editor-primary-grid-compact pearl-editor-primary-grid-v231">
-            <label className="pearl-editor-panel pearl-editor-panel-compact-xl pearl-editor-panel-v231 pearl-editor-panel-front-v231">
+        <form className="pearl-editor-form pearl-editor-layout" onSubmit={handleSubmit}>
+          <div className="pearl-editor-primary-grid pearl-editor-compose-grid">
+            <label className="pearl-editor-panel pearl-editor-card pearl-editor-card-front">
               <span>Ön yüz</span>
               <textarea
                 value={form.front}
@@ -229,8 +229,8 @@ function TusPearlCardEditor({
               />
             </label>
 
-            <div className="pearl-editor-primary-stack pearl-editor-primary-stack-compact pearl-editor-primary-stack-v231">
-              <label className="pearl-editor-panel pearl-editor-panel-sm pearl-editor-panel-v231 pearl-editor-panel-small-v231">
+            <div className="pearl-editor-primary-stack pearl-editor-side-stack">
+              <label className="pearl-editor-panel pearl-editor-card pearl-editor-card-compact">
                 <span>Yanıt</span>
                 <textarea
                   value={form.back}
@@ -240,7 +240,7 @@ function TusPearlCardEditor({
                 />
               </label>
 
-              <label className="pearl-editor-panel pearl-editor-panel-sm pearl-editor-panel-v231 pearl-editor-panel-small-v231">
+              <label className="pearl-editor-panel pearl-editor-card pearl-editor-card-compact">
                 <span>Kısa gerekçe</span>
                 <textarea
                   value={form.explanation}
@@ -252,15 +252,15 @@ function TusPearlCardEditor({
             </div>
           </div>
 
-          <div className="pearl-editor-meta-row pearl-editor-meta-row-balanced pearl-editor-meta-row-v229 pearl-editor-meta-row-v231">
-            <label className="pearl-editor-panel pearl-editor-panel-inline pearl-editor-select-panel pearl-editor-panel-v231 pearl-editor-select-v231">
+          <div className="pearl-editor-meta-row pearl-editor-meta-strip">
+            <label className="pearl-editor-panel pearl-editor-card pearl-editor-select-card">
               <span>Branş</span>
               <select value={form.branchId} onChange={(event) => updateField('branchId', event.target.value)}>
                 {branches.map((branch) => <option key={branch.id} value={branch.id}>{branch.shortName || branch.name}</option>)}
               </select>
             </label>
 
-            <label className="pearl-editor-panel pearl-editor-panel-inline pearl-editor-select-panel pearl-editor-panel-v231 pearl-editor-select-v231">
+            <label className="pearl-editor-panel pearl-editor-card pearl-editor-select-card">
               <span>Katalog</span>
               <select value={form.catalogId} onChange={(event) => updateField('catalogId', event.target.value)}>
                 <option value="">Kendi kartlarım</option>
@@ -268,7 +268,7 @@ function TusPearlCardEditor({
               </select>
             </label>
 
-            <button type="button" className="pearl-editor-advanced-toggle pearl-editor-advanced-toggle-compact pearl-editor-advanced-launch pearl-editor-advanced-launch-v229 pearl-editor-advanced-launch-v231" onClick={openAdvancedDialog}>
+            <button type="button" className="pearl-editor-advanced-toggle pearl-editor-advanced-trigger" onClick={openAdvancedDialog}>
               <span className="pearl-editor-advanced-launch-copy">Opsiyonel alanlar</span>
               <span className="pearl-editor-advanced-launch-meta">
                 <Icon name="Sparkles" size={15} />
@@ -279,7 +279,7 @@ function TusPearlCardEditor({
 
           {error ? <p className="pearl-editor-error">{error}</p> : null}
 
-          <footer className="pearl-editor-actions pearl-editor-actions-compact pearl-editor-actions-balanced pearl-editor-actions-v231">
+          <footer className="pearl-editor-actions pearl-editor-footer">
             <button type="button" className="btn btn-secondary" onClick={onClose}>Vazgeç</button>
             <button type="submit" className="btn btn-primary">
               <Icon name="LayeredCards" />
@@ -293,7 +293,7 @@ function TusPearlCardEditor({
 
   const advancedDialogTree = advancedDialogOpen ? (
     <div
-      className="pearl-editor-secondary-backdrop pearl-editor-secondary-backdrop-v231"
+      className="pearl-editor-secondary-backdrop pearl-editor-sub-layer"
       role="presentation"
       onClick={(event) => {
         event.stopPropagation();
@@ -301,13 +301,13 @@ function TusPearlCardEditor({
       }}
     >
       <section
-        className="pearl-editor-secondary-modal pearl-editor-secondary-modal-v231 card-surface"
+        className="pearl-editor-secondary-modal pearl-editor-sub-surface card-surface"
         role="dialog"
         aria-modal="true"
         aria-label="Opsiyonel alanlar"
         onClick={(event) => event.stopPropagation()}
       >
-        <header className="pearl-editor-secondary-head pearl-editor-secondary-head-v231">
+        <header className="pearl-editor-secondary-head pearl-editor-sub-header">
           <div>
             <h3>Opsiyonel alanlar</h3>
           </div>
@@ -316,7 +316,7 @@ function TusPearlCardEditor({
           </button>
         </header>
 
-        <div className="pearl-editor-advanced-grid pearl-editor-advanced-grid-popup pearl-editor-advanced-grid-v231">
+        <div className="pearl-editor-advanced-grid pearl-editor-advanced-grid-popup pearl-editor-sub-grid">
           <label>
             <span>TUS ipucu</span>
             <input value={advancedDraft.tusTip} onChange={(event) => updateAdvancedDraft('tusTip', event.target.value)} placeholder="Kısa patern" />
@@ -355,7 +355,7 @@ function TusPearlCardEditor({
           </label>
         </div>
 
-        <footer className="pearl-editor-secondary-actions pearl-editor-secondary-actions-v231">
+        <footer className="pearl-editor-secondary-actions pearl-editor-sub-footer">
           <button type="button" className="btn btn-secondary" onClick={closeAdvancedDialog}>Vazgeç</button>
           <button type="button" className="btn btn-primary" onClick={saveAdvancedDraft}>
             <Icon name="CheckCircle" />
